@@ -9,12 +9,6 @@ import androidx.core.util.Pair;
 public abstract class PaintCompat {
     private static final ThreadLocal sRectThreadLocal = new ThreadLocal();
 
-    static class Api23Impl {
-        static boolean hasGlyph(Paint paint, String str) {
-            return paint.hasGlyph(str);
-        }
-    }
-
     public static boolean hasGlyph(Paint paint, String str) {
         if (Build.VERSION.SDK_INT >= 23) {
             return Api23Impl.hasGlyph(paint, str);
@@ -64,5 +58,11 @@ public abstract class PaintCompat {
         ((Rect) pair.first).setEmpty();
         ((Rect) pair.second).setEmpty();
         return pair;
+    }
+
+    static class Api23Impl {
+        static boolean hasGlyph(Paint paint, String str) {
+            return paint.hasGlyph(str);
+        }
     }
 }

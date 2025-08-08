@@ -1,6 +1,6 @@
 package com.google.firebase.crashlytics.internal.stacktrace;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class MiddleOutFallbackStrategy implements StackTraceTrimmingStrategy {
     private final int maximumStackSize;
     private final MiddleOutStrategy middleOutStrategy;

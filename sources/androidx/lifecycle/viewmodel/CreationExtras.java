@@ -8,19 +8,6 @@ import kotlin.jvm.internal.Intrinsics;
 public abstract class CreationExtras {
     private final Map map = new LinkedHashMap();
 
-    public static final class Empty extends CreationExtras {
-        public static final Empty INSTANCE = new Empty();
-
-        private Empty() {
-        }
-
-        @Override // androidx.lifecycle.viewmodel.CreationExtras
-        public Object get(Key key) {
-            Intrinsics.checkNotNullParameter(key, "key");
-            return null;
-        }
-    }
-
     public interface Key {
     }
 
@@ -28,5 +15,18 @@ public abstract class CreationExtras {
 
     public final Map getMap$lifecycle_viewmodel_release() {
         return this.map;
+    }
+
+    public static final class Empty extends CreationExtras {
+        public static final Empty INSTANCE = new Empty();
+
+        @Override // androidx.lifecycle.viewmodel.CreationExtras
+        public Object get(Key key) {
+            Intrinsics.checkNotNullParameter(key, "key");
+            return null;
+        }
+
+        private Empty() {
+        }
     }
 }

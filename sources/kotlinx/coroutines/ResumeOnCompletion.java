@@ -4,18 +4,18 @@ import kotlin.Result;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class ResumeOnCompletion extends JobNode {
     private final Continuation continuation;
-
-    public ResumeOnCompletion(Continuation continuation) {
-        this.continuation = continuation;
-    }
 
     @Override // kotlin.jvm.functions.Function1
     public /* bridge */ /* synthetic */ Object invoke(Object obj) {
         invoke((Throwable) obj);
         return Unit.INSTANCE;
+    }
+
+    public ResumeOnCompletion(Continuation continuation) {
+        this.continuation = continuation;
     }
 
     @Override // kotlinx.coroutines.CompletionHandlerBase

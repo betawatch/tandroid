@@ -17,6 +17,18 @@ public class MediaConstraints {
             this.value = str2;
         }
 
+        public String getKey() {
+            return this.key;
+        }
+
+        public String getValue() {
+            return this.value;
+        }
+
+        public String toString() {
+            return this.key + ": " + this.value;
+        }
+
         public boolean equals(Object obj) {
             if (this == obj) {
                 return true;
@@ -28,20 +40,8 @@ public class MediaConstraints {
             return this.key.equals(keyValuePair.key) && this.value.equals(keyValuePair.value);
         }
 
-        public String getKey() {
-            return this.key;
-        }
-
-        public String getValue() {
-            return this.value;
-        }
-
         public int hashCode() {
             return this.key.hashCode() + this.value.hashCode();
-        }
-
-        public String toString() {
-            return this.key + ": " + this.value;
         }
     }
 
@@ -57,15 +57,15 @@ public class MediaConstraints {
         return sb.toString();
     }
 
+    public String toString() {
+        return "mandatory: " + stringifyKeyValuePairList(this.mandatory) + ", optional: " + stringifyKeyValuePairList(this.optional);
+    }
+
     List<KeyValuePair> getMandatory() {
         return this.mandatory;
     }
 
     List<KeyValuePair> getOptional() {
         return this.optional;
-    }
-
-    public String toString() {
-        return "mandatory: " + stringifyKeyValuePairList(this.mandatory) + ", optional: " + stringifyKeyValuePairList(this.optional);
     }
 }

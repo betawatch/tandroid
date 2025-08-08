@@ -5,6 +5,12 @@ import java.util.Locale;
 
 /* loaded from: classes2.dex */
 public abstract class a implements e {
+    @Override // java.lang.Comparable
+    public final int compareTo(Object obj) {
+        ((e) obj).getClass();
+        return 0;
+    }
+
     static {
         new ConcurrentHashMap();
         new ConcurrentHashMap();
@@ -12,12 +18,6 @@ public abstract class a implements e {
     }
 
     protected a() {
-    }
-
-    @Override // java.lang.Comparable
-    public final int compareTo(Object obj) {
-        ((e) obj).getClass();
-        return 0;
     }
 
     public final boolean equals(Object obj) {

@@ -3,12 +3,15 @@ package kotlin.internal.jdk7;
 import kotlin.internal.PlatformImplementations;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class JDK7PlatformImplementations extends PlatformImplementations {
 
     private static final class ReflectSdkVersion {
         public static final ReflectSdkVersion INSTANCE = new ReflectSdkVersion();
         public static final Integer sdkVersion;
+
+        private ReflectSdkVersion() {
+        }
 
         static {
             Integer num;
@@ -30,9 +33,6 @@ public class JDK7PlatformImplementations extends PlatformImplementations {
                 num2 = num;
             }
             sdkVersion = num2;
-        }
-
-        private ReflectSdkVersion() {
         }
     }
 

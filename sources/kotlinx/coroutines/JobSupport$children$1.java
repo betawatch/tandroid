@@ -3,7 +3,7 @@ package kotlinx.coroutines;
 import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.RestrictedSuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
@@ -11,7 +11,7 @@ import kotlin.sequences.SequenceScope;
 import kotlinx.coroutines.internal.LockFreeLinkedListHead;
 import kotlinx.coroutines.internal.LockFreeLinkedListNode;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class JobSupport$children$1 extends RestrictedSuspendLambda implements Function2 {
     private /* synthetic */ Object L$0;
     Object L$1;
@@ -45,12 +45,11 @@ final class JobSupport$children$1 extends RestrictedSuspendLambda implements Fun
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        Object coroutine_suspended;
         NodeList list;
         SequenceScope sequenceScope;
         LockFreeLinkedListHead lockFreeLinkedListHead;
         LockFreeLinkedListNode lockFreeLinkedListNode;
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);

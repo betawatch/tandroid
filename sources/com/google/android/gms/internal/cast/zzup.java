@@ -24,40 +24,8 @@ final class zzup implements zzvj {
 
     @Override // com.google.android.gms.internal.cast.zzvj
     public final zzvi zza(Class cls) {
-        zzvc zza2;
-        zzul zzc;
-        zzvz zzm;
-        zztf zza3;
-        zzus zza4;
-        zzvz zzm2;
-        zztf zza5;
         zzvk.zzp(cls);
         zzuu zzb = this.zzb.zzb(cls);
-        if (zzb.zzb()) {
-            if (zztp.class.isAssignableFrom(cls)) {
-                zzm2 = zzvk.zzn();
-                zza5 = zzth.zzb();
-            } else {
-                zzm2 = zzvk.zzm();
-                zza5 = zzth.zza();
-            }
-            return zzvb.zzi(zzm2, zza5, zzb.zza());
-        }
-        if (zztp.class.isAssignableFrom(cls)) {
-            boolean zzb2 = zzb(zzb);
-            zza2 = zzvd.zzb();
-            zzc = zzul.zzd();
-            zzm = zzvk.zzn();
-            zza3 = zzb2 ? zzth.zzb() : null;
-            zza4 = zzut.zzb();
-        } else {
-            boolean zzb3 = zzb(zzb);
-            zza2 = zzvd.zza();
-            zzc = zzul.zzc();
-            zzm = zzvk.zzm();
-            zza3 = zzb3 ? zzth.zza() : null;
-            zza4 = zzut.zza();
-        }
-        return zzva.zzi(cls, zzb, zza2, zzc, zzm, zza3, zza4);
+        return zzb.zzb() ? zztp.class.isAssignableFrom(cls) ? zzvb.zzi(zzvk.zzn(), zzth.zzb(), zzb.zza()) : zzvb.zzi(zzvk.zzm(), zzth.zza(), zzb.zza()) : zztp.class.isAssignableFrom(cls) ? zzb(zzb) ? zzva.zzi(cls, zzb, zzvd.zzb(), zzul.zzd(), zzvk.zzn(), zzth.zzb(), zzut.zzb()) : zzva.zzi(cls, zzb, zzvd.zzb(), zzul.zzd(), zzvk.zzn(), null, zzut.zzb()) : zzb(zzb) ? zzva.zzi(cls, zzb, zzvd.zza(), zzul.zzc(), zzvk.zzm(), zzth.zza(), zzut.zza()) : zzva.zzi(cls, zzb, zzvd.zza(), zzul.zzc(), zzvk.zzm(), null, zzut.zza());
     }
 }

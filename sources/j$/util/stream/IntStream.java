@@ -9,6 +9,7 @@ import java.util.IntSummaryStatistics;
 import java.util.Iterator;
 import java.util.OptionalDouble;
 import java.util.OptionalInt;
+import java.util.Spliterator;
 import java.util.function.IntBinaryOperator;
 import java.util.function.IntConsumer;
 import java.util.function.IntPredicate;
@@ -20,251 +21,79 @@ import java.util.stream.DoubleStream;
 
 /* loaded from: classes2.dex */
 public interface IntStream extends BaseStream<Integer, IntStream> {
+    void A(j$.util.function.G g);
 
-    public final /* synthetic */ class VivifiedWrapper implements IntStream {
-        public final /* synthetic */ java.util.stream.IntStream a;
+    Stream B(IntFunction intFunction);
 
-        private /* synthetic */ VivifiedWrapper(java.util.stream.IntStream intStream) {
-            this.a = intStream;
-        }
+    IntStream F(j$.util.function.P p);
 
-        public static /* synthetic */ IntStream convert(java.util.stream.IntStream intStream) {
-            if (intStream == null) {
-                return null;
-            }
-            return intStream instanceof Wrapper ? IntStream.this : new VivifiedWrapper(intStream);
-        }
+    int H(int i, j$.util.function.C c);
 
-        @Override // j$.util.stream.IntStream
-        public final /* synthetic */ void A(j$.util.function.E e) {
-            this.a.forEachOrdered(j$.util.function.D.a(e));
-        }
+    IntStream I(IntFunction intFunction);
 
-        @Override // j$.util.stream.IntStream
-        public final /* synthetic */ Stream B(IntFunction intFunction) {
-            return Stream.VivifiedWrapper.convert(this.a.mapToObj(j$.util.function.F.a(intFunction)));
-        }
+    void J(j$.util.function.G g);
 
-        @Override // j$.util.stream.IntStream
-        public final /* synthetic */ IntStream F(j$.util.function.L l) {
-            return convert(this.a.map(l == null ? null : l.a));
-        }
+    IntStream O(j$.util.function.I i);
 
-        @Override // j$.util.stream.IntStream
-        public final /* synthetic */ int H(int i, j$.util.function.A a) {
-            return this.a.reduce(i, j$.util.function.z.a(a));
-        }
+    boolean R(j$.util.function.I i);
 
-        @Override // j$.util.stream.IntStream
-        public final /* synthetic */ IntStream I(IntFunction intFunction) {
-            return convert(this.a.flatMap(j$.util.function.F.a(intFunction)));
-        }
+    j$.util.k U(j$.util.function.C c);
 
-        @Override // j$.util.stream.IntStream
-        public final /* synthetic */ void J(j$.util.function.E e) {
-            this.a.forEach(j$.util.function.D.a(e));
-        }
+    IntStream V(j$.util.function.G g);
 
-        @Override // j$.util.stream.IntStream
-        public final /* synthetic */ IntStream O(j$.util.function.G g) {
-            return convert(this.a.filter(g == null ? null : g.a));
-        }
+    boolean X(j$.util.function.I i);
 
-        @Override // j$.util.stream.IntStream
-        public final /* synthetic */ boolean R(j$.util.function.G g) {
-            return this.a.allMatch(g == null ? null : g.a);
-        }
+    boolean Y(j$.util.function.I i);
 
-        @Override // j$.util.stream.IntStream
-        public final /* synthetic */ j$.util.k U(j$.util.function.A a) {
-            return j$.util.A.r(this.a.reduce(j$.util.function.z.a(a)));
-        }
+    D asDoubleStream();
 
-        @Override // j$.util.stream.IntStream
-        public final /* synthetic */ IntStream V(j$.util.function.E e) {
-            return convert(this.a.peek(j$.util.function.D.a(e)));
-        }
+    LongStream asLongStream();
 
-        @Override // j$.util.stream.IntStream
-        public final /* synthetic */ boolean X(j$.util.function.G g) {
-            return this.a.anyMatch(g == null ? null : g.a);
-        }
+    j$.util.j average();
 
-        @Override // j$.util.stream.IntStream
-        public final /* synthetic */ boolean Y(j$.util.function.G g) {
-            return this.a.noneMatch(g == null ? null : g.a);
-        }
+    Object b0(Supplier supplier, j$.util.function.q0 q0Var, BiConsumer biConsumer);
 
-        @Override // j$.util.stream.IntStream
-        public final /* synthetic */ E asDoubleStream() {
-            return C.f0(this.a.asDoubleStream());
-        }
+    Stream boxed();
 
-        @Override // j$.util.stream.IntStream
-        public final /* synthetic */ LongStream asLongStream() {
-            return j0.f0(this.a.asLongStream());
-        }
+    long count();
 
-        @Override // j$.util.stream.IntStream
-        public final /* synthetic */ j$.util.j average() {
-            return j$.util.A.q(this.a.average());
-        }
+    D d(j$.util.function.K k);
 
-        @Override // j$.util.stream.IntStream
-        public final /* synthetic */ Object b0(Supplier supplier, j$.util.function.i0 i0Var, BiConsumer biConsumer) {
-            return this.a.collect(j$.util.function.q0.a(supplier), j$.util.function.h0.a(i0Var), j$.util.function.a.a(biConsumer));
-        }
+    IntStream distinct();
 
-        @Override // j$.util.stream.IntStream
-        public final /* synthetic */ Stream boxed() {
-            return Stream.VivifiedWrapper.convert(this.a.boxed());
-        }
+    LongStream f(j$.util.function.O o);
 
-        @Override // j$.util.stream.BaseStream, java.lang.AutoCloseable
-        public final /* synthetic */ void close() {
-            this.a.close();
-        }
+    j$.util.k findAny();
 
-        @Override // j$.util.stream.IntStream
-        public final /* synthetic */ long count() {
-            return this.a.count();
-        }
+    j$.util.k findFirst();
 
-        @Override // j$.util.stream.IntStream
-        public final /* synthetic */ E d(j$.util.function.H h) {
-            return C.f0(this.a.mapToDouble(h == null ? null : h.a));
-        }
+    @Override // j$.util.stream.BaseStream, j$.util.stream.D
+    j$.util.t iterator();
 
-        @Override // j$.util.stream.IntStream
-        public final /* synthetic */ IntStream distinct() {
-            return convert(this.a.distinct());
-        }
+    IntStream limit(long j);
 
-        public final /* synthetic */ boolean equals(Object obj) {
-            java.util.stream.IntStream intStream = this.a;
-            if (obj instanceof VivifiedWrapper) {
-                obj = ((VivifiedWrapper) obj).a;
-            }
-            return intStream.equals(obj);
-        }
+    j$.util.k max();
 
-        @Override // j$.util.stream.IntStream
-        public final /* synthetic */ LongStream f(j$.util.function.K k) {
-            return j0.f0(this.a.mapToLong(j$.util.function.J.a(k)));
-        }
+    j$.util.k min();
 
-        @Override // j$.util.stream.IntStream
-        public final /* synthetic */ j$.util.k findAny() {
-            return j$.util.A.r(this.a.findAny());
-        }
+    @Override // j$.util.stream.BaseStream
+    IntStream parallel();
 
-        @Override // j$.util.stream.IntStream
-        public final /* synthetic */ j$.util.k findFirst() {
-            return j$.util.A.r(this.a.findFirst());
-        }
+    @Override // j$.util.stream.BaseStream
+    IntStream sequential();
 
-        public final /* synthetic */ int hashCode() {
-            return this.a.hashCode();
-        }
+    IntStream skip(long j);
 
-        @Override // j$.util.stream.BaseStream
-        public final /* synthetic */ boolean isParallel() {
-            return this.a.isParallel();
-        }
+    IntStream sorted();
 
-        /* JADX WARN: Type inference failed for: r0v1, types: [java.util.PrimitiveIterator$OfInt] */
-        @Override // j$.util.stream.IntStream, j$.util.stream.BaseStream, j$.util.stream.E
-        public final /* synthetic */ j$.util.t iterator() {
-            return j$.util.r.b(this.a.iterator());
-        }
+    @Override // j$.util.stream.BaseStream, j$.util.stream.D
+    j$.util.G spliterator();
 
-        @Override // j$.util.stream.BaseStream, j$.util.stream.E
-        public final /* synthetic */ Iterator iterator() {
-            return this.a.iterator();
-        }
+    int sum();
 
-        @Override // j$.util.stream.IntStream
-        public final /* synthetic */ IntStream limit(long j) {
-            return convert(this.a.limit(j));
-        }
+    j$.util.g summaryStatistics();
 
-        @Override // j$.util.stream.IntStream
-        public final /* synthetic */ j$.util.k max() {
-            return j$.util.A.r(this.a.max());
-        }
-
-        @Override // j$.util.stream.IntStream
-        public final /* synthetic */ j$.util.k min() {
-            return j$.util.A.r(this.a.min());
-        }
-
-        @Override // j$.util.stream.BaseStream
-        public final /* synthetic */ BaseStream onClose(Runnable runnable) {
-            return f.f0(this.a.onClose(runnable));
-        }
-
-        @Override // j$.util.stream.BaseStream, j$.util.stream.E
-        public final /* synthetic */ BaseStream parallel() {
-            return f.f0(this.a.parallel());
-        }
-
-        @Override // j$.util.stream.IntStream, j$.util.stream.BaseStream, j$.util.stream.E
-        public final /* synthetic */ IntStream parallel() {
-            return convert(this.a.parallel());
-        }
-
-        @Override // j$.util.stream.BaseStream, j$.util.stream.E
-        public final /* synthetic */ BaseStream sequential() {
-            return f.f0(this.a.sequential());
-        }
-
-        @Override // j$.util.stream.IntStream, j$.util.stream.BaseStream, j$.util.stream.E
-        public final /* synthetic */ IntStream sequential() {
-            return convert(this.a.sequential());
-        }
-
-        @Override // j$.util.stream.IntStream
-        public final /* synthetic */ IntStream skip(long j) {
-            return convert(this.a.skip(j));
-        }
-
-        @Override // j$.util.stream.IntStream
-        public final /* synthetic */ IntStream sorted() {
-            return convert(this.a.sorted());
-        }
-
-        /* JADX WARN: Type inference failed for: r0v1, types: [java.util.Spliterator$OfInt] */
-        @Override // j$.util.stream.IntStream, j$.util.stream.BaseStream, j$.util.stream.E
-        public final /* synthetic */ j$.util.G spliterator() {
-            return j$.util.E.b(this.a.spliterator());
-        }
-
-        @Override // j$.util.stream.BaseStream, j$.util.stream.E
-        public final /* synthetic */ Spliterator spliterator() {
-            return j$.util.N.b(this.a.spliterator());
-        }
-
-        @Override // j$.util.stream.IntStream
-        public final /* synthetic */ int sum() {
-            return this.a.sum();
-        }
-
-        @Override // j$.util.stream.IntStream
-        public final j$.util.g summaryStatistics() {
-            this.a.summaryStatistics();
-            throw new Error("Java 8+ API desugaring (library desugaring) cannot convert from java.util.IntSummaryStatistics");
-        }
-
-        @Override // j$.util.stream.IntStream
-        public final /* synthetic */ int[] toArray() {
-            return this.a.toArray();
-        }
-
-        @Override // j$.util.stream.BaseStream
-        public final /* synthetic */ BaseStream unordered() {
-            return f.f0(this.a.unordered());
-        }
-    }
+    int[] toArray();
 
     public final /* synthetic */ class Wrapper implements java.util.stream.IntStream {
         private /* synthetic */ Wrapper() {
@@ -279,22 +108,22 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
         @Override // java.util.stream.IntStream
         public final /* synthetic */ boolean allMatch(IntPredicate intPredicate) {
-            return IntStream.this.R(j$.util.function.G.a(intPredicate));
+            return IntStream.this.R(j$.util.function.I.a(intPredicate));
         }
 
         @Override // java.util.stream.IntStream
         public final /* synthetic */ boolean anyMatch(IntPredicate intPredicate) {
-            return IntStream.this.X(j$.util.function.G.a(intPredicate));
+            return IntStream.this.X(j$.util.function.I.a(intPredicate));
         }
 
         @Override // java.util.stream.IntStream
         public final /* synthetic */ DoubleStream asDoubleStream() {
-            return D.f0(IntStream.this.asDoubleStream());
+            return C.f0(IntStream.this.asDoubleStream());
         }
 
         @Override // java.util.stream.IntStream
         public final /* synthetic */ java.util.stream.LongStream asLongStream() {
-            return k0.f0(IntStream.this.asLongStream());
+            return j0.f0(IntStream.this.asLongStream());
         }
 
         @Override // java.util.stream.IntStream
@@ -314,7 +143,7 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
         @Override // java.util.stream.IntStream
         public final /* synthetic */ Object collect(java.util.function.Supplier supplier, ObjIntConsumer objIntConsumer, java.util.function.BiConsumer biConsumer) {
-            return IntStream.this.b0(j$.util.function.p0.a(supplier), j$.util.function.g0.a(objIntConsumer), BiConsumer.VivifiedWrapper.convert(biConsumer));
+            return IntStream.this.b0(j$.util.function.x0.a(supplier), j$.util.function.o0.a(objIntConsumer), BiConsumer.VivifiedWrapper.convert(biConsumer));
         }
 
         @Override // java.util.stream.IntStream
@@ -337,7 +166,7 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
         @Override // java.util.stream.IntStream
         public final /* synthetic */ java.util.stream.IntStream filter(IntPredicate intPredicate) {
-            return convert(IntStream.this.O(j$.util.function.G.a(intPredicate)));
+            return convert(IntStream.this.O(j$.util.function.I.a(intPredicate)));
         }
 
         @Override // java.util.stream.IntStream
@@ -357,12 +186,12 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
         @Override // java.util.stream.IntStream
         public final /* synthetic */ void forEach(IntConsumer intConsumer) {
-            IntStream.this.J(j$.util.function.C.a(intConsumer));
+            IntStream.this.J(j$.util.function.E.a(intConsumer));
         }
 
         @Override // java.util.stream.IntStream
         public final /* synthetic */ void forEachOrdered(IntConsumer intConsumer) {
-            IntStream.this.A(j$.util.function.C.a(intConsumer));
+            IntStream.this.A(j$.util.function.E.a(intConsumer));
         }
 
         public final /* synthetic */ int hashCode() {
@@ -391,17 +220,17 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
         @Override // java.util.stream.IntStream
         public final /* synthetic */ java.util.stream.IntStream map(IntUnaryOperator intUnaryOperator) {
-            return convert(IntStream.this.F(j$.util.function.L.a(intUnaryOperator)));
+            return convert(IntStream.this.F(j$.util.function.P.a(intUnaryOperator)));
         }
 
         @Override // java.util.stream.IntStream
         public final /* synthetic */ DoubleStream mapToDouble(IntToDoubleFunction intToDoubleFunction) {
-            return D.f0(IntStream.this.d(j$.util.function.H.a(intToDoubleFunction)));
+            return C.f0(IntStream.this.d(j$.util.function.K.a(intToDoubleFunction)));
         }
 
         @Override // java.util.stream.IntStream
         public final /* synthetic */ java.util.stream.LongStream mapToLong(IntToLongFunction intToLongFunction) {
-            return k0.f0(IntStream.this.f(j$.util.function.I.a(intToLongFunction)));
+            return j0.f0(IntStream.this.f(j$.util.function.M.a(intToLongFunction)));
         }
 
         @Override // java.util.stream.IntStream
@@ -421,7 +250,7 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
         @Override // java.util.stream.IntStream
         public final /* synthetic */ boolean noneMatch(IntPredicate intPredicate) {
-            return IntStream.this.Y(j$.util.function.G.a(intPredicate));
+            return IntStream.this.Y(j$.util.function.I.a(intPredicate));
         }
 
         /* JADX WARN: Type inference failed for: r2v2, types: [java.util.stream.BaseStream, java.util.stream.IntStream] */
@@ -443,17 +272,17 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
         @Override // java.util.stream.IntStream
         public final /* synthetic */ java.util.stream.IntStream peek(IntConsumer intConsumer) {
-            return convert(IntStream.this.V(j$.util.function.C.a(intConsumer)));
+            return convert(IntStream.this.V(j$.util.function.E.a(intConsumer)));
         }
 
         @Override // java.util.stream.IntStream
         public final /* synthetic */ int reduce(int i, IntBinaryOperator intBinaryOperator) {
-            return IntStream.this.H(i, j$.util.function.y.a(intBinaryOperator));
+            return IntStream.this.H(i, j$.util.function.A.a(intBinaryOperator));
         }
 
         @Override // java.util.stream.IntStream
         public final /* synthetic */ OptionalInt reduce(IntBinaryOperator intBinaryOperator) {
-            return j$.util.A.w(IntStream.this.U(j$.util.function.y.a(intBinaryOperator)));
+            return j$.util.A.w(IntStream.this.U(j$.util.function.A.a(intBinaryOperator)));
         }
 
         /* JADX WARN: Type inference failed for: r0v2, types: [java.util.stream.BaseStream, java.util.stream.IntStream] */
@@ -478,24 +307,18 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
         }
 
         @Override // java.util.stream.IntStream, java.util.stream.BaseStream
-        public final /* synthetic */ java.util.Spliterator<Integer> spliterator() {
+        public final /* synthetic */ Spliterator<Integer> spliterator() {
             return j$.util.F.a(IntStream.this.spliterator());
         }
 
         @Override // java.util.stream.IntStream, java.util.stream.BaseStream
-        public final /* synthetic */ java.util.Spliterator<Integer> spliterator() {
+        public final /* synthetic */ Spliterator<Integer> spliterator() {
             return Spliterator.Wrapper.convert(IntStream.this.spliterator());
         }
 
         @Override // java.util.stream.IntStream
         public final /* synthetic */ int sum() {
             return IntStream.this.sum();
-        }
-
-        @Override // java.util.stream.IntStream
-        public final IntSummaryStatistics summaryStatistics() {
-            IntStream.this.summaryStatistics();
-            throw new Error("Java 8+ API desugaring (library desugaring) cannot convert to java.util.IntSummaryStatistics");
         }
 
         @Override // java.util.stream.IntStream
@@ -508,79 +331,256 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
         public final /* synthetic */ java.util.stream.IntStream unordered() {
             return g.f0(IntStream.this.unordered());
         }
+
+        @Override // java.util.stream.IntStream
+        public final IntSummaryStatistics summaryStatistics() {
+            IntStream.this.summaryStatistics();
+            throw new Error("Java 8+ API desugaring (library desugaring) cannot convert to java.util.IntSummaryStatistics");
+        }
     }
 
-    void A(j$.util.function.E e);
+    public final /* synthetic */ class VivifiedWrapper implements IntStream {
+        public final /* synthetic */ java.util.stream.IntStream a;
 
-    Stream B(IntFunction intFunction);
+        private /* synthetic */ VivifiedWrapper(java.util.stream.IntStream intStream) {
+            this.a = intStream;
+        }
 
-    IntStream F(j$.util.function.L l);
+        public static /* synthetic */ IntStream convert(java.util.stream.IntStream intStream) {
+            if (intStream == null) {
+                return null;
+            }
+            return intStream instanceof Wrapper ? IntStream.this : new VivifiedWrapper(intStream);
+        }
 
-    int H(int i, j$.util.function.A a);
+        @Override // j$.util.stream.IntStream
+        public final /* synthetic */ void A(j$.util.function.G g) {
+            this.a.forEachOrdered(j$.util.function.F.a(g));
+        }
 
-    IntStream I(IntFunction intFunction);
+        @Override // j$.util.stream.IntStream
+        public final /* synthetic */ Stream B(IntFunction intFunction) {
+            return Stream.VivifiedWrapper.convert(this.a.mapToObj(j$.util.function.H.a(intFunction)));
+        }
 
-    void J(j$.util.function.E e);
+        @Override // j$.util.stream.IntStream
+        public final /* synthetic */ IntStream F(j$.util.function.P p) {
+            return convert(this.a.map(p == null ? null : p.a));
+        }
 
-    IntStream O(j$.util.function.G g);
+        @Override // j$.util.stream.IntStream
+        public final /* synthetic */ int H(int i, j$.util.function.C c) {
+            return this.a.reduce(i, j$.util.function.B.a(c));
+        }
 
-    boolean R(j$.util.function.G g);
+        @Override // j$.util.stream.IntStream
+        public final /* synthetic */ IntStream I(IntFunction intFunction) {
+            return convert(this.a.flatMap(j$.util.function.H.a(intFunction)));
+        }
 
-    j$.util.k U(j$.util.function.A a);
+        @Override // j$.util.stream.IntStream
+        public final /* synthetic */ void J(j$.util.function.G g) {
+            this.a.forEach(j$.util.function.F.a(g));
+        }
 
-    IntStream V(j$.util.function.E e);
+        @Override // j$.util.stream.IntStream
+        public final /* synthetic */ IntStream O(j$.util.function.I i) {
+            return convert(this.a.filter(i == null ? null : i.a));
+        }
 
-    boolean X(j$.util.function.G g);
+        @Override // j$.util.stream.IntStream
+        public final /* synthetic */ boolean R(j$.util.function.I i) {
+            return this.a.allMatch(i == null ? null : i.a);
+        }
 
-    boolean Y(j$.util.function.G g);
+        @Override // j$.util.stream.IntStream
+        public final /* synthetic */ j$.util.k U(j$.util.function.C c) {
+            return j$.util.A.r(this.a.reduce(j$.util.function.B.a(c)));
+        }
 
-    E asDoubleStream();
+        @Override // j$.util.stream.IntStream
+        public final /* synthetic */ IntStream V(j$.util.function.G g) {
+            return convert(this.a.peek(j$.util.function.F.a(g)));
+        }
 
-    LongStream asLongStream();
+        @Override // j$.util.stream.IntStream
+        public final /* synthetic */ boolean X(j$.util.function.I i) {
+            return this.a.anyMatch(i == null ? null : i.a);
+        }
 
-    j$.util.j average();
+        @Override // j$.util.stream.IntStream
+        public final /* synthetic */ boolean Y(j$.util.function.I i) {
+            return this.a.noneMatch(i == null ? null : i.a);
+        }
 
-    Object b0(Supplier supplier, j$.util.function.i0 i0Var, BiConsumer biConsumer);
+        @Override // j$.util.stream.IntStream
+        public final /* synthetic */ D asDoubleStream() {
+            return B.f0(this.a.asDoubleStream());
+        }
 
-    Stream boxed();
+        @Override // j$.util.stream.IntStream
+        public final /* synthetic */ LongStream asLongStream() {
+            return i0.f0(this.a.asLongStream());
+        }
 
-    long count();
+        @Override // j$.util.stream.IntStream
+        public final /* synthetic */ j$.util.j average() {
+            return j$.util.A.q(this.a.average());
+        }
 
-    E d(j$.util.function.H h);
+        @Override // j$.util.stream.IntStream
+        public final /* synthetic */ Object b0(Supplier supplier, j$.util.function.q0 q0Var, BiConsumer biConsumer) {
+            return this.a.collect(j$.util.function.y0.a(supplier), j$.util.function.p0.a(q0Var), j$.util.function.a.a(biConsumer));
+        }
 
-    IntStream distinct();
+        @Override // j$.util.stream.IntStream
+        public final /* synthetic */ Stream boxed() {
+            return Stream.VivifiedWrapper.convert(this.a.boxed());
+        }
 
-    LongStream f(j$.util.function.K k);
+        @Override // j$.util.stream.BaseStream, java.lang.AutoCloseable
+        public final /* synthetic */ void close() {
+            this.a.close();
+        }
 
-    j$.util.k findAny();
+        @Override // j$.util.stream.IntStream
+        public final /* synthetic */ long count() {
+            return this.a.count();
+        }
 
-    j$.util.k findFirst();
+        @Override // j$.util.stream.IntStream
+        public final /* synthetic */ D d(j$.util.function.K k) {
+            return B.f0(this.a.mapToDouble(k == null ? null : k.a));
+        }
 
-    @Override // j$.util.stream.BaseStream, j$.util.stream.E
-    j$.util.t iterator();
+        @Override // j$.util.stream.IntStream
+        public final /* synthetic */ IntStream distinct() {
+            return convert(this.a.distinct());
+        }
 
-    IntStream limit(long j);
+        public final /* synthetic */ boolean equals(Object obj) {
+            java.util.stream.IntStream intStream = this.a;
+            if (obj instanceof VivifiedWrapper) {
+                obj = ((VivifiedWrapper) obj).a;
+            }
+            return intStream.equals(obj);
+        }
 
-    j$.util.k max();
+        @Override // j$.util.stream.IntStream
+        public final /* synthetic */ LongStream f(j$.util.function.O o) {
+            return i0.f0(this.a.mapToLong(j$.util.function.N.a(o)));
+        }
 
-    j$.util.k min();
+        @Override // j$.util.stream.IntStream
+        public final /* synthetic */ j$.util.k findAny() {
+            return j$.util.A.r(this.a.findAny());
+        }
 
-    @Override // j$.util.stream.BaseStream, j$.util.stream.E
-    IntStream parallel();
+        @Override // j$.util.stream.IntStream
+        public final /* synthetic */ j$.util.k findFirst() {
+            return j$.util.A.r(this.a.findFirst());
+        }
 
-    @Override // j$.util.stream.BaseStream, j$.util.stream.E
-    IntStream sequential();
+        public final /* synthetic */ int hashCode() {
+            return this.a.hashCode();
+        }
 
-    IntStream skip(long j);
+        @Override // j$.util.stream.BaseStream
+        public final /* synthetic */ boolean isParallel() {
+            return this.a.isParallel();
+        }
 
-    IntStream sorted();
+        /* JADX WARN: Type inference failed for: r0v1, types: [java.util.PrimitiveIterator$OfInt] */
+        @Override // j$.util.stream.IntStream, j$.util.stream.BaseStream, j$.util.stream.D
+        public final /* synthetic */ j$.util.t iterator() {
+            return j$.util.r.b(this.a.iterator());
+        }
 
-    @Override // j$.util.stream.BaseStream, j$.util.stream.E
-    j$.util.G spliterator();
+        @Override // j$.util.stream.BaseStream, j$.util.stream.D
+        public final /* synthetic */ Iterator iterator() {
+            return this.a.iterator();
+        }
 
-    int sum();
+        @Override // j$.util.stream.IntStream
+        public final /* synthetic */ IntStream limit(long j) {
+            return convert(this.a.limit(j));
+        }
 
-    j$.util.g summaryStatistics();
+        @Override // j$.util.stream.IntStream
+        public final /* synthetic */ j$.util.k max() {
+            return j$.util.A.r(this.a.max());
+        }
 
-    int[] toArray();
+        @Override // j$.util.stream.IntStream
+        public final /* synthetic */ j$.util.k min() {
+            return j$.util.A.r(this.a.min());
+        }
+
+        @Override // j$.util.stream.BaseStream
+        public final /* synthetic */ BaseStream onClose(Runnable runnable) {
+            return f.f0(this.a.onClose(runnable));
+        }
+
+        @Override // j$.util.stream.BaseStream
+        public final /* synthetic */ BaseStream parallel() {
+            return f.f0(this.a.parallel());
+        }
+
+        @Override // j$.util.stream.IntStream, j$.util.stream.BaseStream
+        public final /* synthetic */ IntStream parallel() {
+            return convert(this.a.parallel());
+        }
+
+        @Override // j$.util.stream.BaseStream
+        public final /* synthetic */ BaseStream sequential() {
+            return f.f0(this.a.sequential());
+        }
+
+        @Override // j$.util.stream.IntStream, j$.util.stream.BaseStream
+        public final /* synthetic */ IntStream sequential() {
+            return convert(this.a.sequential());
+        }
+
+        @Override // j$.util.stream.IntStream
+        public final /* synthetic */ IntStream skip(long j) {
+            return convert(this.a.skip(j));
+        }
+
+        @Override // j$.util.stream.IntStream
+        public final /* synthetic */ IntStream sorted() {
+            return convert(this.a.sorted());
+        }
+
+        /* JADX WARN: Type inference failed for: r0v1, types: [java.util.Spliterator$OfInt] */
+        @Override // j$.util.stream.IntStream, j$.util.stream.BaseStream, j$.util.stream.D
+        public final /* synthetic */ j$.util.G spliterator() {
+            return j$.util.E.b(this.a.spliterator());
+        }
+
+        @Override // j$.util.stream.BaseStream, j$.util.stream.D
+        public final /* synthetic */ j$.util.Spliterator spliterator() {
+            return j$.util.N.b(this.a.spliterator());
+        }
+
+        @Override // j$.util.stream.IntStream
+        public final /* synthetic */ int sum() {
+            return this.a.sum();
+        }
+
+        @Override // j$.util.stream.IntStream
+        public final /* synthetic */ int[] toArray() {
+            return this.a.toArray();
+        }
+
+        @Override // j$.util.stream.BaseStream
+        public final /* synthetic */ BaseStream unordered() {
+            return f.f0(this.a.unordered());
+        }
+
+        @Override // j$.util.stream.IntStream
+        public final j$.util.g summaryStatistics() {
+            this.a.summaryStatistics();
+            throw new Error("Java 8+ API desugaring (library desugaring) cannot convert from java.util.IntSummaryStatistics");
+        }
+    }
 }

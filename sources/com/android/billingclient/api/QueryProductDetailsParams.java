@@ -6,16 +6,19 @@ import java.util.List;
 
 /* loaded from: classes.dex */
 public final class QueryProductDetailsParams {
-    private final com.google.android.gms.internal.play_billing.zzu zza;
+    private final com.google.android.gms.internal.play_billing.zzco zza;
 
     public static class Builder {
-        private com.google.android.gms.internal.play_billing.zzu zza;
+        private com.google.android.gms.internal.play_billing.zzco zza;
 
-        /* synthetic */ Builder(zzbm zzbmVar) {
+        /* synthetic */ Builder(zzcz zzczVar) {
         }
 
         public QueryProductDetailsParams build() {
-            return new QueryProductDetailsParams(this, null);
+            if (this.zza != null) {
+                return new QueryProductDetailsParams(this, null);
+            }
+            throw new IllegalArgumentException("Product list must be set to a non empty list.");
         }
 
         public Builder setProductList(List list) {
@@ -33,7 +36,7 @@ public final class QueryProductDetailsParams {
             if (hashSet.size() > 1) {
                 throw new IllegalArgumentException("All products should be of the same product type.");
             }
-            this.zza = com.google.android.gms.internal.play_billing.zzu.zzj(list);
+            this.zza = com.google.android.gms.internal.play_billing.zzco.zzk(list);
             return this;
         }
     }
@@ -46,7 +49,7 @@ public final class QueryProductDetailsParams {
             private String zza;
             private String zzb;
 
-            /* synthetic */ Builder(zzbn zzbnVar) {
+            /* synthetic */ Builder(zzcz zzczVar) {
             }
 
             public Product build() {
@@ -73,7 +76,7 @@ public final class QueryProductDetailsParams {
             }
         }
 
-        /* synthetic */ Product(Builder builder, zzbo zzboVar) {
+        /* synthetic */ Product(Builder builder, zzcz zzczVar) {
             this.zza = builder.zza;
             this.zzb = builder.zzb;
         }
@@ -91,7 +94,7 @@ public final class QueryProductDetailsParams {
         }
     }
 
-    /* synthetic */ QueryProductDetailsParams(Builder builder, zzbp zzbpVar) {
+    /* synthetic */ QueryProductDetailsParams(Builder builder, zzcz zzczVar) {
         this.zza = builder.zza;
     }
 
@@ -99,7 +102,7 @@ public final class QueryProductDetailsParams {
         return new Builder(null);
     }
 
-    public final com.google.android.gms.internal.play_billing.zzu zza() {
+    public final com.google.android.gms.internal.play_billing.zzco zza() {
         return this.zza;
     }
 

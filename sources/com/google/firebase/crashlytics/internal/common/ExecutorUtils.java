@@ -11,32 +11,8 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class ExecutorUtils {
-    private static void addDelayedShutdownHook(String str, ExecutorService executorService) {
-        addDelayedShutdownHook(str, executorService, 2L, TimeUnit.SECONDS);
-    }
-
-    private static void addDelayedShutdownHook(final String str, final ExecutorService executorService, final long j, final TimeUnit timeUnit) {
-        Runtime.getRuntime().addShutdownHook(new Thread(new BackgroundPriorityRunnable() { // from class: com.google.firebase.crashlytics.internal.common.ExecutorUtils.2
-            @Override // com.google.firebase.crashlytics.internal.common.BackgroundPriorityRunnable
-            public void onRun() {
-                try {
-                    Logger.getLogger().d("Executing shutdown hook for " + str);
-                    executorService.shutdown();
-                    if (executorService.awaitTermination(j, timeUnit)) {
-                        return;
-                    }
-                    Logger.getLogger().d(str + " did not shut down in the allocated time. Requesting immediate shutdown.");
-                    executorService.shutdownNow();
-                } catch (InterruptedException unused) {
-                    Logger.getLogger().d(String.format(Locale.US, "Interrupted while waiting for %s to shut down. Requesting immediate shutdown.", str));
-                    executorService.shutdownNow();
-                }
-            }
-        }, "Crashlytics Shutdown Hook for " + str));
-    }
-
     public static ExecutorService buildSingleThreadExecutorService(String str) {
         ExecutorService newSingleThreadExecutor = newSingleThreadExecutor(getNamedThreadFactory(str), new ThreadPoolExecutor.DiscardPolicy());
         addDelayedShutdownHook(str, newSingleThreadExecutor);
@@ -62,5 +38,29 @@ public abstract class ExecutorUtils {
 
     private static ExecutorService newSingleThreadExecutor(ThreadFactory threadFactory, RejectedExecutionHandler rejectedExecutionHandler) {
         return Executors.unconfigurableExecutorService(new ThreadPoolExecutor(1, 1, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue(), threadFactory, rejectedExecutionHandler));
+    }
+
+    private static void addDelayedShutdownHook(String str, ExecutorService executorService) {
+        addDelayedShutdownHook(str, executorService, 2L, TimeUnit.SECONDS);
+    }
+
+    private static void addDelayedShutdownHook(final String str, final ExecutorService executorService, final long j, final TimeUnit timeUnit) {
+        Runtime.getRuntime().addShutdownHook(new Thread(new BackgroundPriorityRunnable() { // from class: com.google.firebase.crashlytics.internal.common.ExecutorUtils.2
+            @Override // com.google.firebase.crashlytics.internal.common.BackgroundPriorityRunnable
+            public void onRun() {
+                try {
+                    Logger.getLogger().d("Executing shutdown hook for " + str);
+                    executorService.shutdown();
+                    if (executorService.awaitTermination(j, timeUnit)) {
+                        return;
+                    }
+                    Logger.getLogger().d(str + " did not shut down in the allocated time. Requesting immediate shutdown.");
+                    executorService.shutdownNow();
+                } catch (InterruptedException unused) {
+                    Logger.getLogger().d(String.format(Locale.US, "Interrupted while waiting for %s to shut down. Requesting immediate shutdown.", str));
+                    executorService.shutdownNow();
+                }
+            }
+        }, "Crashlytics Shutdown Hook for " + str));
     }
 }

@@ -3,8 +3,8 @@ package com.google.android.recaptcha.internal;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import kotlin.collections.ArraysKt___ArraysKt;
-import kotlin.collections.CollectionsKt__IterablesKt;
+import kotlin.collections.ArraysKt;
+import kotlin.collections.CollectionsKt;
 
 /* loaded from: classes.dex */
 public final class zzde implements zzdd {
@@ -14,37 +14,25 @@ public final class zzde implements zzdd {
     }
 
     private static final List zzc(Object obj) {
-        List list;
-        List list2;
-        List list3;
-        List list4;
-        List list5;
-        List list6;
         if (obj instanceof byte[]) {
-            list6 = ArraysKt___ArraysKt.toList((byte[]) obj);
-            return list6;
+            return ArraysKt.toList((byte[]) obj);
         }
         if (obj instanceof short[]) {
-            list5 = ArraysKt___ArraysKt.toList((short[]) obj);
-            return list5;
+            return ArraysKt.toList((short[]) obj);
         }
         if (obj instanceof int[]) {
-            list4 = ArraysKt___ArraysKt.toList((int[]) obj);
-            return list4;
+            return ArraysKt.toList((int[]) obj);
         }
         if (obj instanceof long[]) {
-            list3 = ArraysKt___ArraysKt.toList((long[]) obj);
-            return list3;
+            return ArraysKt.toList((long[]) obj);
         }
         if (obj instanceof float[]) {
-            list2 = ArraysKt___ArraysKt.toList((float[]) obj);
-            return list2;
+            return ArraysKt.toList((float[]) obj);
         }
-        if (!(obj instanceof double[])) {
-            return null;
+        if (obj instanceof double[]) {
+            return ArraysKt.toList((double[]) obj);
         }
-        list = ArraysKt___ArraysKt.toList((double[]) obj);
-        return list;
+        return null;
     }
 
     @Override // com.google.android.recaptcha.internal.zzdd
@@ -77,7 +65,7 @@ public final class zzde implements zzdd {
                 return Double.valueOf(Math.pow(((Number) obj).doubleValue(), ((Number) obj2).doubleValue()));
             }
             if (zzc2 != null) {
-                ArrayList arrayList = new ArrayList(CollectionsKt__IterablesKt.collectionSizeOrDefault(zzc2, 10));
+                ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(zzc2, 10));
                 Iterator it = zzc2.iterator();
                 while (it.hasNext()) {
                     arrayList.add(Double.valueOf(Math.pow(((Number) it.next()).doubleValue(), ((Number) obj).doubleValue())));
@@ -86,7 +74,7 @@ public final class zzde implements zzdd {
             }
         }
         if (zzc != null && (obj2 instanceof Number)) {
-            ArrayList arrayList2 = new ArrayList(CollectionsKt__IterablesKt.collectionSizeOrDefault(zzc, 10));
+            ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(zzc, 10));
             Iterator it2 = zzc.iterator();
             while (it2.hasNext()) {
                 arrayList2.add(Double.valueOf(Math.pow(((Number) it2.next()).doubleValue(), ((Number) obj2).doubleValue())));

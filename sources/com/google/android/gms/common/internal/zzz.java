@@ -1,11 +1,28 @@
 package com.google.android.gms.common.internal;
 
-import android.os.IInterface;
+import android.os.Parcel;
 import com.google.android.gms.dynamic.IObjectWrapper;
 
 /* loaded from: classes.dex */
-public interface zzz extends IInterface {
-    int zzc();
+public abstract class zzz extends com.google.android.gms.internal.common.zzb implements zzaa {
+    public zzz() {
+        super("com.google.android.gms.common.internal.ICertData");
+    }
 
-    IObjectWrapper zzd();
+    @Override // com.google.android.gms.internal.common.zzb
+    protected final boolean zza(int i, Parcel parcel, Parcel parcel2, int i2) {
+        if (i == 1) {
+            IObjectWrapper zzd = zzd();
+            parcel2.writeNoException();
+            com.google.android.gms.internal.common.zzc.zze(parcel2, zzd);
+        } else {
+            if (i != 2) {
+                return false;
+            }
+            int zzc = zzc();
+            parcel2.writeNoException();
+            parcel2.writeInt(zzc);
+        }
+        return true;
+    }
 }

@@ -11,16 +11,16 @@ public final class PaymentMethodToken extends AbstractSafeParcelable {
     int zza;
     String zzb;
 
-    PaymentMethodToken(int i, String str) {
-        this.zza = i;
-        this.zzb = str;
-    }
-
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
         SafeParcelWriter.writeInt(parcel, 2, this.zza);
         SafeParcelWriter.writeString(parcel, 3, this.zzb, false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    PaymentMethodToken(int i, String str) {
+        this.zza = i;
+        this.zzb = str;
     }
 }

@@ -10,7 +10,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.Bulletin;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class SelectSendAsPremiumHintBulletinLayout extends Bulletin.MultiLineLayout {
     public SelectSendAsPremiumHintBulletinLayout(Context context, Theme.ResourcesProvider resourcesProvider, boolean z, Runnable runnable) {
         super(context, resourcesProvider);

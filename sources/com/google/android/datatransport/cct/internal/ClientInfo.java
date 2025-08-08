@@ -13,6 +13,10 @@ public abstract class ClientInfo {
         public abstract Builder setClientType(ClientType clientType);
     }
 
+    public abstract AndroidClientInfo getAndroidClientInfo();
+
+    public abstract ClientType getClientType();
+
     public enum ClientType {
         UNKNOWN(0),
         ANDROID_FIREBASE(23);
@@ -27,8 +31,4 @@ public abstract class ClientInfo {
     public static Builder builder() {
         return new AutoValue_ClientInfo.Builder();
     }
-
-    public abstract AndroidClientInfo getAndroidClientInfo();
-
-    public abstract ClientType getClientType();
 }

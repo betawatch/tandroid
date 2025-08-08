@@ -1,13 +1,11 @@
 package com.google.mlkit.nl.languageid;
 
 import com.google.android.gms.common.internal.Objects;
-import com.google.android.gms.internal.mlkit_language_id.zzeo;
-import com.google.android.gms.internal.mlkit_language_id.zzy$zzai;
 import java.util.concurrent.Executor;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class LanguageIdentificationOptions {
-    static final LanguageIdentificationOptions zza = new Builder().build();
+    public static final LanguageIdentificationOptions zza = new Builder().build();
     private final Float zzb;
     private final Executor zzc;
 
@@ -16,11 +14,11 @@ public class LanguageIdentificationOptions {
         private Executor zzb;
 
         public LanguageIdentificationOptions build() {
-            return new LanguageIdentificationOptions(this.zza, this.zzb);
+            return new LanguageIdentificationOptions(this.zza, this.zzb, null);
         }
     }
 
-    private LanguageIdentificationOptions(Float f, Executor executor) {
+    /* synthetic */ LanguageIdentificationOptions(Float f, Executor executor, zza zzaVar) {
         this.zzb = f;
         this.zzc = executor;
     }
@@ -29,25 +27,22 @@ public class LanguageIdentificationOptions {
         if (this == obj) {
             return true;
         }
-        if (obj instanceof LanguageIdentificationOptions) {
-            return Objects.equal(((LanguageIdentificationOptions) obj).zzb, this.zzb);
+        if (!(obj instanceof LanguageIdentificationOptions)) {
+            return false;
         }
-        return false;
+        LanguageIdentificationOptions languageIdentificationOptions = (LanguageIdentificationOptions) obj;
+        return Objects.equal(languageIdentificationOptions.zzb, this.zzb) && Objects.equal(languageIdentificationOptions.zzc, this.zzc);
     }
 
-    public int hashCode() {
-        return Objects.hashCode(this.zzb);
-    }
-
-    final zzy$zzai zza() {
-        return this.zzb == null ? zzy$zzai.zzb() : (zzy$zzai) ((zzeo) zzy$zzai.zza().zza(this.zzb.floatValue()).zzg());
-    }
-
-    public final Float zzb() {
+    public Float getConfidenceThreshold() {
         return this.zzb;
     }
 
-    public final Executor zzc() {
+    public Executor getExecutor() {
         return this.zzc;
+    }
+
+    public int hashCode() {
+        return Objects.hashCode(this.zzb, this.zzc);
     }
 }

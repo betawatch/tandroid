@@ -20,7 +20,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicReference;
 import org.json.JSONObject;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class SettingsController implements SettingsProvider {
     private final CachedSettingsIo cachedSettingsIo;
     private final Context context;
@@ -50,6 +50,50 @@ public class SettingsController implements SettingsProvider {
         String installerPackageName = idManager.getInstallerPackageName();
         SystemCurrentTimeProvider systemCurrentTimeProvider = new SystemCurrentTimeProvider();
         return new SettingsController(context, new SettingsRequest(str, idManager.getModelName(), idManager.getOsBuildVersionString(), idManager.getOsDisplayVersionString(), idManager, CommonUtils.createInstanceIdFrom(CommonUtils.getMappingFileId(context), str, str3, str2), str3, str2, DeliveryMechanism.determineFrom(installerPackageName).getId()), systemCurrentTimeProvider, new SettingsJsonParser(systemCurrentTimeProvider), new CachedSettingsIo(fileStore), new DefaultSettingsSpiCall(String.format(Locale.US, "https://firebase-settings.crashlytics.com/spi/v2/platforms/android/gmp/%s/settings", str), httpRequestFactory), dataCollectionArbiter);
+    }
+
+    @Override // com.google.firebase.crashlytics.internal.settings.SettingsProvider
+    public Task getSettingsAsync() {
+        return ((TaskCompletionSource) this.settingsTask.get()).getTask();
+    }
+
+    @Override // com.google.firebase.crashlytics.internal.settings.SettingsProvider
+    public Settings getSettingsSync() {
+        return (Settings) this.settings.get();
+    }
+
+    public Task loadSettingsData(Executor executor) {
+        return loadSettingsData(SettingsCacheBehavior.USE_CACHE, executor);
+    }
+
+    public Task loadSettingsData(SettingsCacheBehavior settingsCacheBehavior, Executor executor) {
+        Settings cachedSettingsData;
+        if (!buildInstanceIdentifierChanged() && (cachedSettingsData = getCachedSettingsData(settingsCacheBehavior)) != null) {
+            this.settings.set(cachedSettingsData);
+            ((TaskCompletionSource) this.settingsTask.get()).trySetResult(cachedSettingsData);
+            return Tasks.forResult(null);
+        }
+        Settings cachedSettingsData2 = getCachedSettingsData(SettingsCacheBehavior.IGNORE_CACHE_EXPIRATION);
+        if (cachedSettingsData2 != null) {
+            this.settings.set(cachedSettingsData2);
+            ((TaskCompletionSource) this.settingsTask.get()).trySetResult(cachedSettingsData2);
+        }
+        return this.dataCollectionArbiter.waitForDataCollectionPermission(executor).onSuccessTask(executor, new SuccessContinuation() { // from class: com.google.firebase.crashlytics.internal.settings.SettingsController.1
+            @Override // com.google.android.gms.tasks.SuccessContinuation
+            public Task then(Void r5) {
+                JSONObject invoke = SettingsController.this.settingsSpiCall.invoke(SettingsController.this.settingsRequest, true);
+                if (invoke != null) {
+                    Settings parseSettingsJson = SettingsController.this.settingsJsonParser.parseSettingsJson(invoke);
+                    SettingsController.this.cachedSettingsIo.writeCachedSettings(parseSettingsJson.expiresAtMillis, invoke);
+                    SettingsController.this.logSettings(invoke, "Loaded settings: ");
+                    SettingsController settingsController = SettingsController.this;
+                    settingsController.setStoredBuildInstanceIdentifier(settingsController.settingsRequest.instanceId);
+                    SettingsController.this.settings.set(parseSettingsJson);
+                    ((TaskCompletionSource) SettingsController.this.settingsTask.get()).trySetResult(parseSettingsJson);
+                }
+                return Tasks.forResult(null);
+            }
+        });
     }
 
     private Settings getCachedSettingsData(SettingsCacheBehavior settingsCacheBehavior) {
@@ -87,13 +131,13 @@ public class SettingsController implements SettingsProvider {
         return settings;
     }
 
-    private String getStoredBuildInstanceIdentifier() {
-        return CommonUtils.getSharedPrefs(this.context).getString("existing_instance_identifier", "");
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
     public void logSettings(JSONObject jSONObject, String str) {
         Logger.getLogger().d(str + jSONObject.toString());
+    }
+
+    private String getStoredBuildInstanceIdentifier() {
+        return CommonUtils.getSharedPrefs(this.context).getString("existing_instance_identifier", "");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -106,49 +150,5 @@ public class SettingsController implements SettingsProvider {
 
     boolean buildInstanceIdentifierChanged() {
         return !getStoredBuildInstanceIdentifier().equals(this.settingsRequest.instanceId);
-    }
-
-    @Override // com.google.firebase.crashlytics.internal.settings.SettingsProvider
-    public Task getSettingsAsync() {
-        return ((TaskCompletionSource) this.settingsTask.get()).getTask();
-    }
-
-    @Override // com.google.firebase.crashlytics.internal.settings.SettingsProvider
-    public Settings getSettingsSync() {
-        return (Settings) this.settings.get();
-    }
-
-    public Task loadSettingsData(SettingsCacheBehavior settingsCacheBehavior, Executor executor) {
-        Settings cachedSettingsData;
-        if (!buildInstanceIdentifierChanged() && (cachedSettingsData = getCachedSettingsData(settingsCacheBehavior)) != null) {
-            this.settings.set(cachedSettingsData);
-            ((TaskCompletionSource) this.settingsTask.get()).trySetResult(cachedSettingsData);
-            return Tasks.forResult(null);
-        }
-        Settings cachedSettingsData2 = getCachedSettingsData(SettingsCacheBehavior.IGNORE_CACHE_EXPIRATION);
-        if (cachedSettingsData2 != null) {
-            this.settings.set(cachedSettingsData2);
-            ((TaskCompletionSource) this.settingsTask.get()).trySetResult(cachedSettingsData2);
-        }
-        return this.dataCollectionArbiter.waitForDataCollectionPermission(executor).onSuccessTask(executor, new SuccessContinuation() { // from class: com.google.firebase.crashlytics.internal.settings.SettingsController.1
-            @Override // com.google.android.gms.tasks.SuccessContinuation
-            public Task then(Void r5) {
-                JSONObject invoke = SettingsController.this.settingsSpiCall.invoke(SettingsController.this.settingsRequest, true);
-                if (invoke != null) {
-                    Settings parseSettingsJson = SettingsController.this.settingsJsonParser.parseSettingsJson(invoke);
-                    SettingsController.this.cachedSettingsIo.writeCachedSettings(parseSettingsJson.expiresAtMillis, invoke);
-                    SettingsController.this.logSettings(invoke, "Loaded settings: ");
-                    SettingsController settingsController = SettingsController.this;
-                    settingsController.setStoredBuildInstanceIdentifier(settingsController.settingsRequest.instanceId);
-                    SettingsController.this.settings.set(parseSettingsJson);
-                    ((TaskCompletionSource) SettingsController.this.settingsTask.get()).trySetResult(parseSettingsJson);
-                }
-                return Tasks.forResult(null);
-            }
-        });
-    }
-
-    public Task loadSettingsData(Executor executor) {
-        return loadSettingsData(SettingsCacheBehavior.USE_CACHE, executor);
     }
 }

@@ -13,13 +13,13 @@ public final class l {
         this.b = 0L;
     }
 
+    public static l a() {
+        return c;
+    }
+
     private l(long j) {
         this.a = true;
         this.b = j;
-    }
-
-    public static l a() {
-        return c;
     }
 
     public static l d(long j) {
@@ -27,10 +27,10 @@ public final class l {
     }
 
     public final long b() {
-        if (this.a) {
-            return this.b;
+        if (!this.a) {
+            throw new NoSuchElementException("No value present");
         }
-        throw new NoSuchElementException("No value present");
+        return this.b;
     }
 
     public final boolean c() {
@@ -65,9 +65,9 @@ public final class l {
     }
 
     public final String toString() {
-        if (!this.a) {
-            return "OptionalLong.empty";
+        if (this.a) {
+            return "OptionalLong[" + this.b + "]";
         }
-        return "OptionalLong[" + this.b + "]";
+        return "OptionalLong.empty";
     }
 }

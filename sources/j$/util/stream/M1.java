@@ -3,31 +3,21 @@ package j$.util.stream;
 import j$.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-final class M1 implements O1, d2 {
-    private long a;
-    final /* synthetic */ long b;
-    final /* synthetic */ j$.util.function.O c;
+final class M1 implements N1, c2 {
+    private boolean a;
+    private long b;
+    final /* synthetic */ j$.util.function.U c;
 
-    M1(long j, j$.util.function.O o) {
-        this.b = j;
-        this.c = o;
-    }
-
-    @Override // j$.util.stream.e2, j$.util.function.m
+    @Override // j$.util.stream.d2, j$.util.function.l
     public final /* synthetic */ void accept(double d) {
-        u0.b();
+        t0.b();
         throw null;
     }
 
-    @Override // j$.util.stream.e2
+    @Override // j$.util.stream.d2
     public final /* synthetic */ void accept(int i) {
-        u0.k();
+        t0.k();
         throw null;
-    }
-
-    @Override // j$.util.stream.e2
-    public final void accept(long j) {
-        this.a = this.c.applyAsLong(this.a, j);
     }
 
     @Override // j$.util.function.Consumer
@@ -41,37 +31,56 @@ final class M1 implements O1, d2 {
         return Consumer.-CC.$default$andThen(this, consumer);
     }
 
-    @Override // j$.util.function.T
-    public final /* synthetic */ j$.util.function.T f(j$.util.function.T t) {
-        return j$.com.android.tools.r8.a.d(this, t);
+    @Override // j$.util.function.Y
+    public final /* synthetic */ j$.util.function.Y f(j$.util.function.Y y) {
+        return j$.com.android.tools.r8.a.c(this, y);
+    }
+
+    @Override // j$.util.stream.c2
+    public final /* synthetic */ void j(Long l) {
+        t0.i(this, l);
+    }
+
+    @Override // j$.util.stream.d2
+    public final /* synthetic */ void m() {
+    }
+
+    @Override // j$.util.stream.d2
+    public final /* synthetic */ boolean q() {
+        return false;
+    }
+
+    M1(j$.util.function.U u) {
+        this.c = u;
+    }
+
+    @Override // j$.util.stream.N1
+    public final void h(N1 n1) {
+        M1 m1 = (M1) n1;
+        if (m1.a) {
+            return;
+        }
+        accept(m1.b);
+    }
+
+    @Override // j$.util.stream.d2
+    public final void n(long j) {
+        this.a = true;
+        this.b = 0L;
+    }
+
+    @Override // j$.util.stream.d2
+    public final void accept(long j) {
+        if (this.a) {
+            this.a = false;
+            this.b = j;
+        } else {
+            this.b = this.c.applyAsLong(this.b, j);
+        }
     }
 
     @Override // j$.util.function.Supplier
     public final Object get() {
-        return Long.valueOf(this.a);
-    }
-
-    @Override // j$.util.stream.O1
-    public final void h(O1 o1) {
-        accept(((M1) o1).a);
-    }
-
-    @Override // j$.util.stream.d2
-    public final /* synthetic */ void j(Long l) {
-        u0.i(this, l);
-    }
-
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ void m() {
-    }
-
-    @Override // j$.util.stream.e2
-    public final void n(long j) {
-        this.a = this.b;
-    }
-
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ boolean q() {
-        return false;
+        return this.a ? j$.util.l.a() : j$.util.l.d(this.b);
     }
 }

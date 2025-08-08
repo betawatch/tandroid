@@ -14,7 +14,10 @@ public final /* synthetic */ class r {
         if (doubleToIntFunction == null) {
             return null;
         }
-        return new r(doubleToIntFunction);
+        if (!(doubleToIntFunction instanceof s)) {
+            return new r(doubleToIntFunction);
+        }
+        throw null;
     }
 
     public final /* synthetic */ boolean equals(Object obj) {

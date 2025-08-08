@@ -14,7 +14,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.ChatMessageCell;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class SlotsDrawable extends RLottieDrawable {
     private ReelValue center;
     private int[] frameCounts;
@@ -49,22 +49,6 @@ public class SlotsDrawable extends RLottieDrawable {
                 SlotsDrawable.this.lambda$new$0();
             }
         };
-    }
-
-    private void init(int i) {
-        int i2 = i - 1;
-        ReelValue reelValue = reelValue(i2 & 3);
-        ReelValue reelValue2 = reelValue((i2 >> 2) & 3);
-        ReelValue reelValue3 = reelValue(i2 >> 4);
-        ReelValue reelValue4 = ReelValue.seven;
-        if (reelValue == reelValue4 && reelValue2 == reelValue4 && reelValue3 == reelValue4) {
-            reelValue = ReelValue.sevenWin;
-            reelValue3 = reelValue;
-            reelValue2 = reelValue3;
-        }
-        this.left = reelValue;
-        this.center = reelValue2;
-        this.right = reelValue3;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -172,17 +156,19 @@ public class SlotsDrawable extends RLottieDrawable {
                     }
                     ReelValue reelValue = this.left;
                     ReelValue reelValue2 = this.right;
-                    if (reelValue != reelValue2 || reelValue2 != this.center) {
-                        this.frameNums[0] = -1;
-                    } else if (this.secondFrameNums[0] == this.secondFrameCounts[0] - 100) {
-                        this.playWinAnimation = true;
-                        if (reelValue == ReelValue.sevenWin) {
-                            WeakReference weakReference = this.onFinishCallback;
-                            Runnable runnable = weakReference == null ? null : (Runnable) weakReference.get();
-                            if (runnable != null) {
-                                AndroidUtilities.runOnUIThread(runnable);
+                    if (reelValue == reelValue2 && reelValue2 == this.center) {
+                        if (this.secondFrameNums[0] == this.secondFrameCounts[0] - 100) {
+                            this.playWinAnimation = true;
+                            if (reelValue == ReelValue.sevenWin) {
+                                WeakReference weakReference = this.onFinishCallback;
+                                Runnable runnable = weakReference == null ? null : (Runnable) weakReference.get();
+                                if (runnable != null) {
+                                    AndroidUtilities.runOnUIThread(runnable);
+                                }
                             }
                         }
+                    } else {
+                        this.frameNums[0] = -1;
                     }
                 }
                 if (frame == -1) {
@@ -203,6 +189,116 @@ public class SlotsDrawable extends RLottieDrawable {
         CountDownLatch countDownLatch3 = this.frameWaitSync;
         if (countDownLatch3 != null) {
             countDownLatch3.countDown();
+        }
+    }
+
+    private ReelValue reelValue(int i) {
+        if (i == 0) {
+            return ReelValue.bar;
+        }
+        if (i == 1) {
+            return ReelValue.berries;
+        }
+        if (i == 2) {
+            return ReelValue.lemon;
+        }
+        return ReelValue.seven;
+    }
+
+    private void init(int i) {
+        int i2 = i - 1;
+        ReelValue reelValue = reelValue(i2 & 3);
+        ReelValue reelValue2 = reelValue((i2 >> 2) & 3);
+        ReelValue reelValue3 = reelValue(i2 >> 4);
+        ReelValue reelValue4 = ReelValue.seven;
+        if (reelValue == reelValue4 && reelValue2 == reelValue4 && reelValue3 == reelValue4) {
+            reelValue = ReelValue.sevenWin;
+            reelValue3 = reelValue;
+            reelValue2 = reelValue3;
+        }
+        this.left = reelValue;
+        this.center = reelValue2;
+        this.right = reelValue3;
+    }
+
+    public boolean setBaseDice(final ChatMessageCell chatMessageCell, final TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
+        if (this.nativePtr == 0 && !this.loadingInBackground) {
+            this.loadingInBackground = true;
+            final MessageObject messageObject = chatMessageCell.getMessageObject();
+            final int i = chatMessageCell.getMessageObject().currentAccount;
+            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.SlotsDrawable$$ExternalSyntheticLambda0
+                @Override // java.lang.Runnable
+                public final void run() {
+                    SlotsDrawable.this.lambda$setBaseDice$5(tL_messages_stickerSet, i, messageObject, chatMessageCell);
+                }
+            });
+        }
+        return true;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setBaseDice$5(final TLRPC.TL_messages_stickerSet tL_messages_stickerSet, final int i, final MessageObject messageObject, final ChatMessageCell chatMessageCell) {
+        int i2;
+        if (this.destroyAfterLoading) {
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.SlotsDrawable$$ExternalSyntheticLambda7
+                @Override // java.lang.Runnable
+                public final void run() {
+                    SlotsDrawable.this.lambda$setBaseDice$1();
+                }
+            });
+            return;
+        }
+        int i3 = 0;
+        boolean z = false;
+        while (true) {
+            long[] jArr = this.nativePtrs;
+            if (i3 >= jArr.length) {
+                break;
+            }
+            if (jArr[i3] == 0) {
+                if (i3 == 0) {
+                    i2 = 1;
+                } else if (i3 == 1) {
+                    i2 = 8;
+                } else {
+                    i2 = 2;
+                    if (i3 == 2) {
+                        i2 = 14;
+                    } else if (i3 == 3) {
+                        i2 = 20;
+                    }
+                }
+                final TLRPC.Document document = tL_messages_stickerSet.documents.get(i2);
+                String readRes = AndroidUtilities.readRes(FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(document, true), 0);
+                if (TextUtils.isEmpty(readRes)) {
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.SlotsDrawable$$ExternalSyntheticLambda8
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            SlotsDrawable.lambda$setBaseDice$2(TLRPC.Document.this, i, messageObject, chatMessageCell, tL_messages_stickerSet);
+                        }
+                    });
+                    z = true;
+                } else {
+                    this.nativePtrs[i3] = RLottieDrawable.createWithJson(readRes, "dice", this.metaData, null);
+                    this.frameCounts[i3] = this.metaData[0];
+                }
+            }
+            i3++;
+        }
+        if (z) {
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.SlotsDrawable$$ExternalSyntheticLambda9
+                @Override // java.lang.Runnable
+                public final void run() {
+                    SlotsDrawable.this.lambda$setBaseDice$3();
+                }
+            });
+        } else {
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.SlotsDrawable$$ExternalSyntheticLambda10
+                @Override // java.lang.Runnable
+                public final void run() {
+                    SlotsDrawable.this.lambda$setBaseDice$4(i, chatMessageCell);
+                }
+            });
         }
     }
 
@@ -240,168 +336,138 @@ public class SlotsDrawable extends RLottieDrawable {
         invalidateInternal();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setBaseDice$5(final TLRPC.TL_messages_stickerSet tL_messages_stickerSet, final int i, final MessageObject messageObject, final ChatMessageCell chatMessageCell) {
-        Runnable runnable;
-        int i2;
-        if (this.destroyAfterLoading) {
-            runnable = new Runnable() { // from class: org.telegram.ui.Components.SlotsDrawable$$ExternalSyntheticLambda7
+    public boolean setDiceNumber(final ChatMessageCell chatMessageCell, int i, final TLRPC.TL_messages_stickerSet tL_messages_stickerSet, final boolean z) {
+        if (this.secondNativePtr == 0 && !this.secondLoadingInBackground) {
+            init(i);
+            final MessageObject messageObject = chatMessageCell.getMessageObject();
+            final int i2 = chatMessageCell.getMessageObject().currentAccount;
+            this.secondLoadingInBackground = true;
+            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.SlotsDrawable$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SlotsDrawable.this.lambda$setBaseDice$1();
+                    SlotsDrawable.this.lambda$setDiceNumber$10(tL_messages_stickerSet, i2, messageObject, chatMessageCell, z);
                 }
-            };
-        } else {
-            int i3 = 0;
-            boolean z = false;
-            while (true) {
-                long[] jArr = this.nativePtrs;
-                if (i3 >= jArr.length) {
-                    break;
-                }
-                if (jArr[i3] == 0) {
-                    if (i3 == 0) {
-                        i2 = 1;
-                    } else if (i3 == 1) {
-                        i2 = 8;
-                    } else {
-                        i2 = 2;
-                        if (i3 == 2) {
-                            i2 = 14;
-                        } else if (i3 == 3) {
-                            i2 = 20;
-                        }
-                    }
-                    final TLRPC.Document document = tL_messages_stickerSet.documents.get(i2);
-                    String readRes = AndroidUtilities.readRes(FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(document, true), 0);
-                    if (TextUtils.isEmpty(readRes)) {
-                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.SlotsDrawable$$ExternalSyntheticLambda8
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                SlotsDrawable.lambda$setBaseDice$2(TLRPC.Document.this, i, messageObject, chatMessageCell, tL_messages_stickerSet);
-                            }
-                        });
-                        z = true;
-                    } else {
-                        this.nativePtrs[i3] = RLottieDrawable.createWithJson(readRes, "dice", this.metaData, null);
-                        this.frameCounts[i3] = this.metaData[0];
-                    }
-                }
-                i3++;
-            }
-            runnable = z ? new Runnable() { // from class: org.telegram.ui.Components.SlotsDrawable$$ExternalSyntheticLambda9
-                @Override // java.lang.Runnable
-                public final void run() {
-                    SlotsDrawable.this.lambda$setBaseDice$3();
-                }
-            } : new Runnable() { // from class: org.telegram.ui.Components.SlotsDrawable$$ExternalSyntheticLambda10
-                @Override // java.lang.Runnable
-                public final void run() {
-                    SlotsDrawable.this.lambda$setBaseDice$4(i, chatMessageCell);
-                }
-            };
+            });
         }
-        AndroidUtilities.runOnUIThread(runnable);
+        return true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x00c1  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x00d4  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x00c1  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x00d4  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public /* synthetic */ void lambda$setDiceNumber$10(final TLRPC.TL_messages_stickerSet tL_messages_stickerSet, final int i, final MessageObject messageObject, final ChatMessageCell chatMessageCell, final boolean z) {
-        Runnable runnable;
         TLRPC.TL_messages_stickerSet tL_messages_stickerSet2;
         int i2;
         String readRes;
         if (this.destroyAfterLoading) {
-            runnable = new Runnable() { // from class: org.telegram.ui.Components.SlotsDrawable$$ExternalSyntheticLambda3
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.SlotsDrawable$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
                     SlotsDrawable.this.lambda$setDiceNumber$6();
                 }
-            };
-        } else {
-            int i3 = 0;
-            boolean z2 = false;
-            while (true) {
-                long[] jArr = this.secondNativePtrs;
-                if (i3 >= jArr.length + 2) {
-                    break;
-                }
-                if (i3 <= 2) {
-                    if (jArr[i3] == 0) {
-                        if (i3 == 0) {
-                            ReelValue reelValue = this.left;
-                            if (reelValue == ReelValue.bar) {
-                                i2 = 5;
-                            } else if (reelValue == ReelValue.berries) {
-                                i2 = 6;
-                            } else if (reelValue == ReelValue.lemon) {
-                                i2 = 7;
-                            } else {
-                                if (reelValue == ReelValue.seven) {
-                                    tL_messages_stickerSet2 = tL_messages_stickerSet;
-                                    i2 = 4;
-                                } else {
-                                    tL_messages_stickerSet2 = tL_messages_stickerSet;
-                                    i2 = 3;
-                                }
-                                final TLRPC.Document document = tL_messages_stickerSet2.documents.get(i2);
-                                readRes = AndroidUtilities.readRes(FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(document, true), 0);
-                                if (TextUtils.isEmpty(readRes)) {
-                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.SlotsDrawable$$ExternalSyntheticLambda4
-                                        @Override // java.lang.Runnable
-                                        public final void run() {
-                                            SlotsDrawable.lambda$setDiceNumber$7(TLRPC.Document.this, i, messageObject, chatMessageCell, tL_messages_stickerSet);
-                                        }
-                                    });
-                                    z2 = true;
-                                } else if (i3 <= 2) {
-                                    this.secondNativePtrs[i3] = RLottieDrawable.createWithJson(readRes, "dice", this.metaData, null);
-                                    this.secondFrameCounts[i3] = this.metaData[0];
-                                } else {
-                                    this.nativePtrs[i3 == 3 ? (char) 0 : (char) 4] = RLottieDrawable.createWithJson(readRes, "dice", this.metaData, null);
-                                    this.frameCounts[i3 == 3 ? (char) 0 : (char) 4] = this.metaData[0];
-                                }
-                            }
-                        } else if (i3 == 1) {
-                            ReelValue reelValue2 = this.center;
-                            i2 = reelValue2 == ReelValue.bar ? 11 : reelValue2 == ReelValue.berries ? 12 : reelValue2 == ReelValue.lemon ? 13 : reelValue2 == ReelValue.seven ? 10 : 9;
+            });
+            return;
+        }
+        int i3 = 0;
+        boolean z2 = false;
+        while (true) {
+            long[] jArr = this.secondNativePtrs;
+            if (i3 >= jArr.length + 2) {
+                break;
+            }
+            if (i3 <= 2) {
+                if (jArr[i3] == 0) {
+                    if (i3 == 0) {
+                        ReelValue reelValue = this.left;
+                        if (reelValue == ReelValue.bar) {
+                            i2 = 5;
+                        } else if (reelValue == ReelValue.berries) {
+                            i2 = 6;
+                        } else if (reelValue == ReelValue.lemon) {
+                            i2 = 7;
                         } else {
-                            ReelValue reelValue3 = this.right;
-                            i2 = reelValue3 == ReelValue.bar ? 17 : reelValue3 == ReelValue.berries ? 18 : reelValue3 == ReelValue.lemon ? 19 : reelValue3 == ReelValue.seven ? 16 : 15;
+                            if (reelValue == ReelValue.seven) {
+                                tL_messages_stickerSet2 = tL_messages_stickerSet;
+                                i2 = 4;
+                            } else {
+                                tL_messages_stickerSet2 = tL_messages_stickerSet;
+                                i2 = 3;
+                            }
+                            final TLRPC.Document document = tL_messages_stickerSet2.documents.get(i2);
+                            readRes = AndroidUtilities.readRes(FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(document, true), 0);
+                            if (TextUtils.isEmpty(readRes)) {
+                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.SlotsDrawable$$ExternalSyntheticLambda4
+                                    @Override // java.lang.Runnable
+                                    public final void run() {
+                                        SlotsDrawable.lambda$setDiceNumber$7(TLRPC.Document.this, i, messageObject, chatMessageCell, tL_messages_stickerSet);
+                                    }
+                                });
+                                z2 = true;
+                            } else if (i3 <= 2) {
+                                this.secondNativePtrs[i3] = RLottieDrawable.createWithJson(readRes, "dice", this.metaData, null);
+                                this.secondFrameCounts[i3] = this.metaData[0];
+                            } else {
+                                this.nativePtrs[i3 == 3 ? (char) 0 : (char) 4] = RLottieDrawable.createWithJson(readRes, "dice", this.metaData, null);
+                                this.frameCounts[i3 == 3 ? (char) 0 : (char) 4] = this.metaData[0];
+                            }
                         }
-                        tL_messages_stickerSet2 = tL_messages_stickerSet;
-                        final TLRPC.Document document2 = tL_messages_stickerSet2.documents.get(i2);
-                        readRes = AndroidUtilities.readRes(FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(document2, true), 0);
-                        if (TextUtils.isEmpty(readRes)) {
+                    } else if (i3 == 1) {
+                        ReelValue reelValue2 = this.center;
+                        if (reelValue2 == ReelValue.bar) {
+                            i2 = 11;
+                        } else if (reelValue2 == ReelValue.berries) {
+                            i2 = 12;
+                        } else if (reelValue2 == ReelValue.lemon) {
+                            i2 = 13;
+                        } else {
+                            i2 = reelValue2 == ReelValue.seven ? 10 : 9;
+                        }
+                    } else {
+                        ReelValue reelValue3 = this.right;
+                        if (reelValue3 == ReelValue.bar) {
+                            i2 = 17;
+                        } else if (reelValue3 == ReelValue.berries) {
+                            i2 = 18;
+                        } else if (reelValue3 == ReelValue.lemon) {
+                            i2 = 19;
+                        } else {
+                            i2 = reelValue3 == ReelValue.seven ? 16 : 15;
                         }
                     }
-                } else if (this.nativePtrs[i3] == 0) {
                     tL_messages_stickerSet2 = tL_messages_stickerSet;
-                    i2 = i3 == 3 ? 1 : 2;
-                    final TLRPC.Document document22 = tL_messages_stickerSet2.documents.get(i2);
-                    readRes = AndroidUtilities.readRes(FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(document22, true), 0);
+                    final TLRPC.Document document2 = tL_messages_stickerSet2.documents.get(i2);
+                    readRes = AndroidUtilities.readRes(FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(document2, true), 0);
                     if (TextUtils.isEmpty(readRes)) {
                     }
                 }
-                i3++;
+            } else if (this.nativePtrs[i3] == 0) {
+                tL_messages_stickerSet2 = tL_messages_stickerSet;
+                i2 = i3 == 3 ? 1 : 2;
+                final TLRPC.Document document22 = tL_messages_stickerSet2.documents.get(i2);
+                readRes = AndroidUtilities.readRes(FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(document22, true), 0);
+                if (TextUtils.isEmpty(readRes)) {
+                }
             }
-            runnable = z2 ? new Runnable() { // from class: org.telegram.ui.Components.SlotsDrawable$$ExternalSyntheticLambda5
+            i3++;
+        }
+        if (z2) {
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.SlotsDrawable$$ExternalSyntheticLambda5
                 @Override // java.lang.Runnable
                 public final void run() {
                     SlotsDrawable.this.lambda$setDiceNumber$8();
                 }
-            } : new Runnable() { // from class: org.telegram.ui.Components.SlotsDrawable$$ExternalSyntheticLambda6
+            });
+        } else {
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.SlotsDrawable$$ExternalSyntheticLambda6
                 @Override // java.lang.Runnable
                 public final void run() {
                     SlotsDrawable.this.lambda$setDiceNumber$9(z, i, chatMessageCell);
                 }
-            };
+            });
         }
-        AndroidUtilities.runOnUIThread(runnable);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -442,8 +508,53 @@ public class SlotsDrawable extends RLottieDrawable {
         invalidateInternal();
     }
 
-    private ReelValue reelValue(int i) {
-        return i != 0 ? i != 1 ? i != 2 ? ReelValue.seven : ReelValue.lemon : ReelValue.berries : ReelValue.bar;
+    @Override // org.telegram.ui.Components.RLottieDrawable
+    public void recycle(boolean z) {
+        int i = 0;
+        this.isRunning = false;
+        this.isRecycled = true;
+        checkRunningTasks();
+        if (this.loadingInBackground || this.secondLoadingInBackground) {
+            this.destroyAfterLoading = true;
+            return;
+        }
+        if (this.loadFrameTask != null || this.cacheGenerateTask != null) {
+            this.destroyWhenDone = true;
+            return;
+        }
+        int i2 = 0;
+        while (true) {
+            long[] jArr = this.nativePtrs;
+            if (i2 >= jArr.length) {
+                break;
+            }
+            long j = jArr[i2];
+            if (j != 0) {
+                if (j == this.nativePtr) {
+                    this.nativePtr = 0L;
+                }
+                RLottieDrawable.destroy(this.nativePtrs[i2]);
+                this.nativePtrs[i2] = 0;
+            }
+            i2++;
+        }
+        while (true) {
+            long[] jArr2 = this.secondNativePtrs;
+            if (i < jArr2.length) {
+                long j2 = jArr2[i];
+                if (j2 != 0) {
+                    if (j2 == this.secondNativePtr) {
+                        this.secondNativePtr = 0L;
+                    }
+                    RLottieDrawable.destroy(this.secondNativePtrs[i]);
+                    this.secondNativePtrs[i] = 0;
+                }
+                i++;
+            } else {
+                recycleResources();
+                return;
+            }
+        }
     }
 
     @Override // org.telegram.ui.Components.RLottieDrawable
@@ -488,84 +599,5 @@ public class SlotsDrawable extends RLottieDrawable {
             stop();
         }
         scheduleNextGetFrame();
-    }
-
-    @Override // org.telegram.ui.Components.RLottieDrawable
-    public void recycle(boolean z) {
-        int i = 0;
-        this.isRunning = false;
-        this.isRecycled = true;
-        checkRunningTasks();
-        if (this.loadingInBackground || this.secondLoadingInBackground) {
-            this.destroyAfterLoading = true;
-            return;
-        }
-        if (this.loadFrameTask != null || this.cacheGenerateTask != null) {
-            this.destroyWhenDone = true;
-            return;
-        }
-        int i2 = 0;
-        while (true) {
-            long[] jArr = this.nativePtrs;
-            if (i2 >= jArr.length) {
-                break;
-            }
-            long j = jArr[i2];
-            if (j != 0) {
-                if (j == this.nativePtr) {
-                    this.nativePtr = 0L;
-                }
-                RLottieDrawable.destroy(this.nativePtrs[i2]);
-                this.nativePtrs[i2] = 0;
-            }
-            i2++;
-        }
-        while (true) {
-            long[] jArr2 = this.secondNativePtrs;
-            if (i >= jArr2.length) {
-                recycleResources();
-                return;
-            }
-            long j2 = jArr2[i];
-            if (j2 != 0) {
-                if (j2 == this.secondNativePtr) {
-                    this.secondNativePtr = 0L;
-                }
-                RLottieDrawable.destroy(this.secondNativePtrs[i]);
-                this.secondNativePtrs[i] = 0;
-            }
-            i++;
-        }
-    }
-
-    public boolean setBaseDice(final ChatMessageCell chatMessageCell, final TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
-        if (this.nativePtr == 0 && !this.loadingInBackground) {
-            this.loadingInBackground = true;
-            final MessageObject messageObject = chatMessageCell.getMessageObject();
-            final int i = chatMessageCell.getMessageObject().currentAccount;
-            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.SlotsDrawable$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    SlotsDrawable.this.lambda$setBaseDice$5(tL_messages_stickerSet, i, messageObject, chatMessageCell);
-                }
-            });
-        }
-        return true;
-    }
-
-    public boolean setDiceNumber(final ChatMessageCell chatMessageCell, int i, final TLRPC.TL_messages_stickerSet tL_messages_stickerSet, final boolean z) {
-        if (this.secondNativePtr == 0 && !this.secondLoadingInBackground) {
-            init(i);
-            final MessageObject messageObject = chatMessageCell.getMessageObject();
-            final int i2 = chatMessageCell.getMessageObject().currentAccount;
-            this.secondLoadingInBackground = true;
-            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.SlotsDrawable$$ExternalSyntheticLambda2
-                @Override // java.lang.Runnable
-                public final void run() {
-                    SlotsDrawable.this.lambda$setDiceNumber$10(tL_messages_stickerSet, i2, messageObject, chatMessageCell, z);
-                }
-            });
-        }
-        return true;
     }
 }

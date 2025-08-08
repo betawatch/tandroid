@@ -6,9 +6,19 @@ import com.google.firebase.encoders.ObjectEncoderContext;
 import com.google.firebase.encoders.config.Configurator;
 import com.google.firebase.encoders.config.EncoderConfig;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class AutoRolloutAssignmentEncoder implements Configurator {
     public static final Configurator CONFIG = new AutoRolloutAssignmentEncoder();
+
+    private AutoRolloutAssignmentEncoder() {
+    }
+
+    @Override // com.google.firebase.encoders.config.Configurator
+    public void configure(EncoderConfig encoderConfig) {
+        RolloutAssignmentEncoder rolloutAssignmentEncoder = RolloutAssignmentEncoder.INSTANCE;
+        encoderConfig.registerEncoder(RolloutAssignment.class, rolloutAssignmentEncoder);
+        encoderConfig.registerEncoder(AutoValue_RolloutAssignment.class, rolloutAssignmentEncoder);
+    }
 
     private static final class RolloutAssignmentEncoder implements ObjectEncoder {
         static final RolloutAssignmentEncoder INSTANCE = new RolloutAssignmentEncoder();
@@ -29,15 +39,5 @@ public final class AutoRolloutAssignmentEncoder implements Configurator {
             objectEncoderContext.add(VARIANTID_DESCRIPTOR, rolloutAssignment.getVariantId());
             objectEncoderContext.add(TEMPLATEVERSION_DESCRIPTOR, rolloutAssignment.getTemplateVersion());
         }
-    }
-
-    private AutoRolloutAssignmentEncoder() {
-    }
-
-    @Override // com.google.firebase.encoders.config.Configurator
-    public void configure(EncoderConfig encoderConfig) {
-        RolloutAssignmentEncoder rolloutAssignmentEncoder = RolloutAssignmentEncoder.INSTANCE;
-        encoderConfig.registerEncoder(RolloutAssignment.class, rolloutAssignmentEncoder);
-        encoderConfig.registerEncoder(AutoValue_RolloutAssignment.class, rolloutAssignmentEncoder);
     }
 }

@@ -1,31 +1,33 @@
 package j$.time.zone;
 
-import java.security.PrivilegedAction;
-import java.util.ArrayList;
-import java.util.List;
+import j$.time.temporal.p;
+import java.util.Collections;
+import java.util.LinkedHashSet;
+import java.util.Set;
+import java.util.TimeZone;
 
 /* loaded from: classes2.dex */
-final class d implements PrivilegedAction {
-    final /* synthetic */ List a;
+final class d extends e {
+    private final Set c;
 
-    d(ArrayList arrayList) {
-        this.a = arrayList;
+    d() {
+        LinkedHashSet linkedHashSet = new LinkedHashSet();
+        for (String str : TimeZone.getAvailableIDs()) {
+            linkedHashSet.add(str);
+        }
+        this.c = Collections.unmodifiableSet(linkedHashSet);
     }
 
-    @Override // java.security.PrivilegedAction
-    public final Object run() {
-        String property = System.getProperty("java.time.zone.DefaultZoneRulesProvider");
-        if (property == null) {
-            f.d(new e());
-            return null;
+    @Override // j$.time.zone.e
+    protected final Set c() {
+        return this.c;
+    }
+
+    @Override // j$.time.zone.e
+    protected final ZoneRules b(String str) {
+        if (this.c.contains(str)) {
+            return new ZoneRules(TimeZone.getTimeZone(str));
         }
-        try {
-            f fVar = (f) f.class.cast(Class.forName(property, true, f.class.getClassLoader()).newInstance());
-            f.d(fVar);
-            this.a.add(fVar);
-            return null;
-        } catch (Exception e) {
-            throw new Error(e);
-        }
+        throw new p("Not a built-in time zone: " + str);
     }
 }

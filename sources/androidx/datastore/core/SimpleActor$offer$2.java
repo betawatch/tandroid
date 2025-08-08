@@ -106,13 +106,8 @@ final class SimpleActor$offer$2 extends SuspendLambda implements Function2 {
         L71:
             java.lang.IllegalStateException r6 = new java.lang.IllegalStateException
             java.lang.String r0 = "Check failed."
-            java.lang.String r0 = r0.toString()
             r6.<init>(r0)
-            goto L7e
-        L7d:
             throw r6
-        L7e:
-            goto L7d
         */
         throw new UnsupportedOperationException("Method not decompiled: androidx.datastore.core.SimpleActor$offer$2.invokeSuspend(java.lang.Object):java.lang.Object");
     }

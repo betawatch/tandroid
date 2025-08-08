@@ -12,7 +12,6 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.text.TextUtils;
 import android.util.Property;
 import android.view.MotionEvent;
@@ -41,7 +40,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.DialogsActivity;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class FiltersListBottomSheet extends BottomSheet implements NotificationCenter.NotificationCenterDelegate {
     private ListAdapter adapter;
     private FiltersListBottomSheetDelegate delegate;
@@ -59,86 +58,9 @@ public class FiltersListBottomSheet extends BottomSheet implements NotificationC
         void didSelectFilter(MessagesController.DialogFilter dialogFilter, boolean z);
     }
 
-    private class ListAdapter extends RecyclerListView.SelectionAdapter {
-        private Context context;
-
-        public ListAdapter(Context context) {
-            this.context = context;
-        }
-
-        public MessagesController.DialogFilter getItem(int i) {
-            if (i < FiltersListBottomSheet.this.dialogFilters.size()) {
-                return (MessagesController.DialogFilter) FiltersListBottomSheet.this.dialogFilters.get(i);
-            }
-            return null;
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public int getItemCount() {
-            int size = FiltersListBottomSheet.this.dialogFilters.size();
-            return size < 10 ? size + 1 : size;
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public int getItemViewType(int i) {
-            return 0;
-        }
-
-        @Override // org.telegram.ui.Components.RecyclerListView.SelectionAdapter
-        public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
-            return true;
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
-            int i2;
-            BottomSheet.BottomSheetCell bottomSheetCell = (BottomSheet.BottomSheetCell) viewHolder.itemView;
-            if (i >= FiltersListBottomSheet.this.dialogFilters.size()) {
-                bottomSheetCell.getImageView().setColorFilter((ColorFilter) null);
-                Drawable drawable = this.context.getResources().getDrawable(R.drawable.poll_add_circle);
-                Drawable drawable2 = this.context.getResources().getDrawable(R.drawable.poll_add_plus);
-                int color = Theme.getColor(Theme.key_switchTrackChecked);
-                PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-                drawable.setColorFilter(new PorterDuffColorFilter(color, mode));
-                drawable2.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_checkboxCheck), mode));
-                CombinedDrawable combinedDrawable = new CombinedDrawable(drawable, drawable2);
-                bottomSheetCell.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlueText4));
-                bottomSheetCell.setTextAndIcon(LocaleController.getString(R.string.CreateNewFilter), combinedDrawable);
-                return;
-            }
-            bottomSheetCell.getImageView().setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_dialogIcon), PorterDuff.Mode.MULTIPLY));
-            MessagesController.DialogFilter dialogFilter = (MessagesController.DialogFilter) FiltersListBottomSheet.this.dialogFilters.get(i);
-            bottomSheetCell.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
-            int i3 = dialogFilter.flags;
-            if ((MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS & i3) == (MessagesController.DIALOG_FILTER_FLAG_CONTACTS | MessagesController.DIALOG_FILTER_FLAG_NON_CONTACTS)) {
-                i2 = R.drawable.msg_openprofile;
-            } else {
-                if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_READ & i3) != 0) {
-                    int i4 = MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS;
-                    if ((i3 & i4) == i4) {
-                        i2 = R.drawable.msg_markunread;
-                    }
-                }
-                i2 = (MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS & i3) == MessagesController.DIALOG_FILTER_FLAG_CHANNELS ? R.drawable.msg_channel : (MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS & i3) == MessagesController.DIALOG_FILTER_FLAG_GROUPS ? R.drawable.msg_groups : (MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS & i3) == MessagesController.DIALOG_FILTER_FLAG_CONTACTS ? R.drawable.msg_contacts : (i3 & MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS) == MessagesController.DIALOG_FILTER_FLAG_BOTS ? R.drawable.msg_bots : R.drawable.msg_folders;
-            }
-            bottomSheetCell.setTextAndIcon(MessageObject.replaceAnimatedEmoji(Emoji.replaceEmoji(dialogFilter.name, bottomSheetCell.getTextView().getPaint().getFontMetricsInt(), false), dialogFilter.entities, bottomSheetCell.getTextView().getPaint().getFontMetricsInt()), 0, new FolderDrawable(FiltersListBottomSheet.this.getContext(), i2, dialogFilter.color), false);
-            bottomSheetCell.getTextView().setEmojiColor(Theme.getColor(Theme.key_featuredStickers_addButton, ((BottomSheet) FiltersListBottomSheet.this).resourcesProvider));
-            boolean z = true;
-            for (int i5 = 0; i5 < FiltersListBottomSheet.this.selectedDialogs.size(); i5++) {
-                if (!dialogFilter.includesDialog(AccountInstance.getInstance(((BottomSheet) FiltersListBottomSheet.this).currentAccount), ((Long) FiltersListBottomSheet.this.selectedDialogs.get(i5)).longValue())) {
-                    z = false;
-                }
-            }
-            bottomSheetCell.setChecked(z);
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-            BottomSheet.BottomSheetCell bottomSheetCell = new BottomSheet.BottomSheetCell(this.context, 0);
-            bottomSheetCell.setBackground(null);
-            bottomSheetCell.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
-            return new RecyclerListView.Holder(bottomSheetCell);
-        }
+    @Override // org.telegram.ui.ActionBar.BottomSheet
+    protected boolean canDismissWithSwipe() {
+        return false;
     }
 
     public FiltersListBottomSheet(DialogsActivity dialogsActivity, ArrayList arrayList) {
@@ -161,114 +83,29 @@ public class FiltersListBottomSheet extends BottomSheet implements NotificationC
             private RectF rect = new RectF();
             private Boolean statusBarOpen;
 
-            private void updateLightStatusBar(boolean z) {
-                Boolean bool = this.statusBarOpen;
-                if (bool == null || bool.booleanValue() != z) {
-                    boolean z2 = AndroidUtilities.computePerceivedBrightness(FiltersListBottomSheet.this.getThemedColor(Theme.key_dialogBackground)) > 0.721f;
-                    boolean z3 = AndroidUtilities.computePerceivedBrightness(Theme.blendOver(FiltersListBottomSheet.this.getThemedColor(Theme.key_actionBarDefault), AndroidUtilities.DARK_STATUS_BAR_OVERLAY)) > 0.721f;
-                    this.statusBarOpen = Boolean.valueOf(z);
-                    if (!z) {
-                        z2 = z3;
-                    }
-                    AndroidUtilities.setLightStatusBar(FiltersListBottomSheet.this.getWindow(), z2);
-                }
-            }
-
-            /* JADX WARN: Removed duplicated region for block: B:13:0x009a  */
-            /* JADX WARN: Removed duplicated region for block: B:15:0x00ed  */
-            /* JADX WARN: Removed duplicated region for block: B:18:0x011e  */
-            @Override // android.view.View
-            /*
-                Code decompiled incorrectly, please refer to instructions dump.
-            */
-            protected void onDraw(Canvas canvas) {
-                float f;
-                int i2;
-                int dp = (FiltersListBottomSheet.this.scrollOffsetY - ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingTop) - AndroidUtilities.dp(8.0f);
-                int measuredHeight = getMeasuredHeight() + AndroidUtilities.dp(36.0f) + ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingTop;
-                if (Build.VERSION.SDK_INT >= 21) {
-                    int i3 = AndroidUtilities.statusBarHeight;
-                    dp += i3;
-                    measuredHeight -= i3;
-                    if (this.fullHeight) {
-                        int i4 = ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingTop + dp;
-                        int i5 = AndroidUtilities.statusBarHeight;
-                        int i6 = i5 * 2;
-                        if (i4 < i6) {
-                            int min = Math.min(i5, (i6 - dp) - ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingTop);
-                            dp -= min;
-                            measuredHeight += min;
-                            f = 1.0f - Math.min(1.0f, (min * 2) / AndroidUtilities.statusBarHeight);
-                        } else {
-                            f = 1.0f;
-                        }
-                        int i7 = ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingTop + dp;
-                        int i8 = AndroidUtilities.statusBarHeight;
-                        if (i7 < i8) {
-                            i2 = Math.min(i8, (i8 - dp) - ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingTop);
-                            ((BottomSheet) FiltersListBottomSheet.this).shadowDrawable.setBounds(0, dp, getMeasuredWidth(), measuredHeight);
-                            ((BottomSheet) FiltersListBottomSheet.this).shadowDrawable.draw(canvas);
-                            if (f != 1.0f) {
-                                Theme.dialogs_onlineCirclePaint.setColor(Theme.getColor(Theme.key_dialogBackground));
-                                this.rect.set(((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingLeft, ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingTop + dp, getMeasuredWidth() - ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingLeft, ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingTop + dp + AndroidUtilities.dp(24.0f));
-                                canvas.drawRoundRect(this.rect, AndroidUtilities.dp(12.0f) * f, AndroidUtilities.dp(12.0f) * f, Theme.dialogs_onlineCirclePaint);
-                            }
-                            if (i2 > 0) {
-                                Theme.dialogs_onlineCirclePaint.setColor(Theme.getColor(Theme.key_dialogBackground));
-                                canvas.drawRect(((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingLeft, AndroidUtilities.statusBarHeight - i2, getMeasuredWidth() - ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingLeft, AndroidUtilities.statusBarHeight, Theme.dialogs_onlineCirclePaint);
-                            }
-                            updateLightStatusBar(i2 > AndroidUtilities.statusBarHeight / 2);
-                        }
-                        i2 = 0;
-                        ((BottomSheet) FiltersListBottomSheet.this).shadowDrawable.setBounds(0, dp, getMeasuredWidth(), measuredHeight);
-                        ((BottomSheet) FiltersListBottomSheet.this).shadowDrawable.draw(canvas);
-                        if (f != 1.0f) {
-                        }
-                        if (i2 > 0) {
-                        }
-                        updateLightStatusBar(i2 > AndroidUtilities.statusBarHeight / 2);
-                    }
-                }
-                f = 1.0f;
-                i2 = 0;
-                ((BottomSheet) FiltersListBottomSheet.this).shadowDrawable.setBounds(0, dp, getMeasuredWidth(), measuredHeight);
-                ((BottomSheet) FiltersListBottomSheet.this).shadowDrawable.draw(canvas);
-                if (f != 1.0f) {
-                }
-                if (i2 > 0) {
-                }
-                updateLightStatusBar(i2 > AndroidUtilities.statusBarHeight / 2);
-            }
-
             @Override // android.view.ViewGroup
             public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-                if (motionEvent.getAction() != 0 || FiltersListBottomSheet.this.scrollOffsetY == 0 || motionEvent.getY() >= FiltersListBottomSheet.this.scrollOffsetY) {
-                    return super.onInterceptTouchEvent(motionEvent);
+                if (motionEvent.getAction() == 0 && FiltersListBottomSheet.this.scrollOffsetY != 0 && motionEvent.getY() < FiltersListBottomSheet.this.scrollOffsetY) {
+                    FiltersListBottomSheet.this.lambda$new$0();
+                    return true;
                 }
-                FiltersListBottomSheet.this.lambda$new$0();
-                return true;
+                return super.onInterceptTouchEvent(motionEvent);
             }
 
-            @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-            protected void onLayout(boolean z, int i2, int i3, int i4, int i5) {
-                super.onLayout(z, i2, i3, i4, i5);
-                FiltersListBottomSheet.this.updateLayout();
+            @Override // android.view.View
+            public boolean onTouchEvent(MotionEvent motionEvent) {
+                return !FiltersListBottomSheet.this.isDismissed() && super.onTouchEvent(motionEvent);
             }
 
             @Override // android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i2, int i3) {
                 int size = View.MeasureSpec.getSize(i3);
-                if (Build.VERSION.SDK_INT >= 21) {
-                    FiltersListBottomSheet.this.ignoreLayout = true;
-                    setPadding(((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingLeft, AndroidUtilities.statusBarHeight, ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingLeft, 0);
-                    FiltersListBottomSheet.this.ignoreLayout = false;
-                }
+                FiltersListBottomSheet.this.ignoreLayout = true;
+                setPadding(((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingLeft, AndroidUtilities.statusBarHeight, ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingLeft, 0);
+                FiltersListBottomSheet.this.ignoreLayout = false;
                 int dp = AndroidUtilities.dp(48.0f) + (AndroidUtilities.dp(48.0f) * FiltersListBottomSheet.this.adapter.getItemCount()) + ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingTop + AndroidUtilities.statusBarHeight;
-                double d = dp;
                 int i4 = size / 5;
-                double d2 = i4;
-                Double.isNaN(d2);
-                int i5 = d < d2 * 3.2d ? 0 : i4 * 2;
+                int i5 = ((double) dp) < ((double) i4) * 3.2d ? 0 : i4 * 2;
                 if (i5 != 0 && dp < size) {
                     i5 -= size - dp;
                 }
@@ -284,9 +121,10 @@ public class FiltersListBottomSheet extends BottomSheet implements NotificationC
                 super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(Math.min(dp, size), TLObject.FLAG_30));
             }
 
-            @Override // android.view.View
-            public boolean onTouchEvent(MotionEvent motionEvent) {
-                return !FiltersListBottomSheet.this.isDismissed() && super.onTouchEvent(motionEvent);
+            @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+            protected void onLayout(boolean z, int i2, int i3, int i4, int i5) {
+                super.onLayout(z, i2, i3, i4, i5);
+                FiltersListBottomSheet.this.updateLayout();
             }
 
             @Override // android.view.View, android.view.ViewParent
@@ -295,6 +133,76 @@ public class FiltersListBottomSheet extends BottomSheet implements NotificationC
                     return;
                 }
                 super.requestLayout();
+            }
+
+            /* JADX WARN: Removed duplicated region for block: B:11:0x0094  */
+            /* JADX WARN: Removed duplicated region for block: B:13:0x00e7  */
+            /* JADX WARN: Removed duplicated region for block: B:16:0x0118  */
+            @Override // android.view.View
+            /*
+                Code decompiled incorrectly, please refer to instructions dump.
+            */
+            protected void onDraw(Canvas canvas) {
+                float f;
+                int i2;
+                int dp = (FiltersListBottomSheet.this.scrollOffsetY - ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingTop) - AndroidUtilities.dp(8.0f);
+                int measuredHeight = getMeasuredHeight() + AndroidUtilities.dp(36.0f) + ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingTop;
+                int i3 = AndroidUtilities.statusBarHeight;
+                int i4 = dp + i3;
+                int i5 = measuredHeight - i3;
+                if (this.fullHeight) {
+                    int i6 = ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingTop + i4;
+                    int i7 = AndroidUtilities.statusBarHeight;
+                    int i8 = i7 * 2;
+                    if (i6 < i8) {
+                        int min = Math.min(i7, (i8 - i4) - ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingTop);
+                        i4 -= min;
+                        i5 += min;
+                        f = 1.0f - Math.min(1.0f, (min * 2) / AndroidUtilities.statusBarHeight);
+                    } else {
+                        f = 1.0f;
+                    }
+                    int i9 = ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingTop + i4;
+                    int i10 = AndroidUtilities.statusBarHeight;
+                    if (i9 < i10) {
+                        i2 = Math.min(i10, (i10 - i4) - ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingTop);
+                        ((BottomSheet) FiltersListBottomSheet.this).shadowDrawable.setBounds(0, i4, getMeasuredWidth(), i5);
+                        ((BottomSheet) FiltersListBottomSheet.this).shadowDrawable.draw(canvas);
+                        if (f != 1.0f) {
+                            Theme.dialogs_onlineCirclePaint.setColor(Theme.getColor(Theme.key_dialogBackground));
+                            this.rect.set(((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingLeft, ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingTop + i4, getMeasuredWidth() - ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingLeft, ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingTop + i4 + AndroidUtilities.dp(24.0f));
+                            canvas.drawRoundRect(this.rect, AndroidUtilities.dp(12.0f) * f, AndroidUtilities.dp(12.0f) * f, Theme.dialogs_onlineCirclePaint);
+                        }
+                        if (i2 > 0) {
+                            Theme.dialogs_onlineCirclePaint.setColor(Theme.getColor(Theme.key_dialogBackground));
+                            canvas.drawRect(((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingLeft, AndroidUtilities.statusBarHeight - i2, getMeasuredWidth() - ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingLeft, AndroidUtilities.statusBarHeight, Theme.dialogs_onlineCirclePaint);
+                        }
+                        updateLightStatusBar(i2 > AndroidUtilities.statusBarHeight / 2);
+                    }
+                } else {
+                    f = 1.0f;
+                }
+                i2 = 0;
+                ((BottomSheet) FiltersListBottomSheet.this).shadowDrawable.setBounds(0, i4, getMeasuredWidth(), i5);
+                ((BottomSheet) FiltersListBottomSheet.this).shadowDrawable.draw(canvas);
+                if (f != 1.0f) {
+                }
+                if (i2 > 0) {
+                }
+                updateLightStatusBar(i2 > AndroidUtilities.statusBarHeight / 2);
+            }
+
+            private void updateLightStatusBar(boolean z) {
+                Boolean bool = this.statusBarOpen;
+                if (bool == null || bool.booleanValue() != z) {
+                    boolean z2 = AndroidUtilities.computePerceivedBrightness(FiltersListBottomSheet.this.getThemedColor(Theme.key_dialogBackground)) > 0.721f;
+                    boolean z3 = AndroidUtilities.computePerceivedBrightness(Theme.blendOver(FiltersListBottomSheet.this.getThemedColor(Theme.key_actionBarDefault), AndroidUtilities.DARK_STATUS_BAR_OVERLAY)) > 0.721f;
+                    this.statusBarOpen = Boolean.valueOf(z);
+                    if (!z) {
+                        z2 = z3;
+                    }
+                    AndroidUtilities.setLightStatusBar(FiltersListBottomSheet.this.getWindow(), z2);
+                }
             }
         };
         this.containerView = frameLayout;
@@ -361,6 +269,115 @@ public class FiltersListBottomSheet extends BottomSheet implements NotificationC
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.emojiLoaded);
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$0(View view, int i) {
+        this.delegate.didSelectFilter(this.adapter.getItem(i), view instanceof BottomSheet.BottomSheetCell ? ((BottomSheet.BottomSheetCell) view).isChecked() : false);
+        lambda$new$0();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void updateLayout() {
+        if (this.listView.getChildCount() <= 0) {
+            RecyclerListView recyclerListView = this.listView;
+            int paddingTop = recyclerListView.getPaddingTop();
+            this.scrollOffsetY = paddingTop;
+            recyclerListView.setTopGlowOffset(paddingTop);
+            this.titleTextView.setTranslationY(this.scrollOffsetY);
+            this.shadow.setTranslationY(this.scrollOffsetY);
+            this.containerView.invalidate();
+            return;
+        }
+        int i = 0;
+        View childAt = this.listView.getChildAt(0);
+        RecyclerListView.Holder holder = (RecyclerListView.Holder) this.listView.findContainingViewHolder(childAt);
+        int top = childAt.getTop();
+        if (top >= 0 && holder != null && holder.getAdapterPosition() == 0) {
+            runShadowAnimation(false);
+            i = top;
+        } else {
+            runShadowAnimation(true);
+        }
+        if (this.scrollOffsetY != i) {
+            RecyclerListView recyclerListView2 = this.listView;
+            this.scrollOffsetY = i;
+            recyclerListView2.setTopGlowOffset(i);
+            this.titleTextView.setTranslationY(this.scrollOffsetY);
+            this.shadow.setTranslationY(this.scrollOffsetY);
+            this.containerView.invalidate();
+        }
+    }
+
+    private void runShadowAnimation(final boolean z) {
+        if ((!z || this.shadow.getTag() == null) && (z || this.shadow.getTag() != null)) {
+            return;
+        }
+        this.shadow.setTag(z ? null : 1);
+        if (z) {
+            this.shadow.setVisibility(0);
+        }
+        AnimatorSet animatorSet = this.shadowAnimation;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+        }
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        this.shadowAnimation = animatorSet2;
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.shadow, (Property<View, Float>) View.ALPHA, z ? 1.0f : 0.0f));
+        this.shadowAnimation.setDuration(150L);
+        this.shadowAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.FiltersListBottomSheet.4
+            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+            public void onAnimationEnd(Animator animator) {
+                if (FiltersListBottomSheet.this.shadowAnimation == null || !FiltersListBottomSheet.this.shadowAnimation.equals(animator)) {
+                    return;
+                }
+                if (!z) {
+                    FiltersListBottomSheet.this.shadow.setVisibility(4);
+                }
+                FiltersListBottomSheet.this.shadowAnimation = null;
+            }
+
+            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+            public void onAnimationCancel(Animator animator) {
+                if (FiltersListBottomSheet.this.shadowAnimation == null || !FiltersListBottomSheet.this.shadowAnimation.equals(animator)) {
+                    return;
+                }
+                FiltersListBottomSheet.this.shadowAnimation = null;
+            }
+        });
+        this.shadowAnimation.start();
+    }
+
+    @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
+    /* renamed from: dismiss */
+    public void lambda$new$0() {
+        super.lambda$new$0();
+        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.emojiLoaded);
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public void didReceivedNotification(int i, int i2, Object... objArr) {
+        if (i == NotificationCenter.emojiLoaded) {
+            AndroidUtilities.forEachViews((RecyclerView) this.listView, new Consumer() { // from class: org.telegram.ui.Components.FiltersListBottomSheet$$ExternalSyntheticLambda1
+                @Override // com.google.android.exoplayer2.util.Consumer
+                public final void accept(Object obj) {
+                    FiltersListBottomSheet.lambda$didReceivedNotification$1((View) obj);
+                }
+            });
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$didReceivedNotification$1(View view) {
+        if (view instanceof BottomSheet.BottomSheetCell) {
+            ((BottomSheet.BottomSheetCell) view).getTextView().invalidate();
+        } else {
+            view.invalidate();
+        }
+    }
+
+    public void setDelegate(FiltersListBottomSheetDelegate filtersListBottomSheetDelegate) {
+        this.delegate = filtersListBottomSheetDelegate;
+    }
+
     public static ArrayList getCanAddDialogFilters(BaseFragment baseFragment, ArrayList arrayList) {
         ArrayList arrayList2 = new ArrayList();
         ArrayList<MessagesController.DialogFilter> arrayList3 = baseFragment.getMessagesController().dialogFilters;
@@ -400,116 +417,95 @@ public class FiltersListBottomSheet extends BottomSheet implements NotificationC
         return arrayList2;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$didReceivedNotification$1(View view) {
-        if (view instanceof BottomSheet.BottomSheetCell) {
-            view = ((BottomSheet.BottomSheetCell) view).getTextView();
-        }
-        view.invalidate();
-    }
+    private class ListAdapter extends RecyclerListView.SelectionAdapter {
+        private Context context;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view, int i) {
-        this.delegate.didSelectFilter(this.adapter.getItem(i), view instanceof BottomSheet.BottomSheetCell ? ((BottomSheet.BottomSheetCell) view).isChecked() : false);
-        lambda$new$0();
-    }
+        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+        public int getItemViewType(int i) {
+            return 0;
+        }
 
-    private void runShadowAnimation(final boolean z) {
-        if ((!z || this.shadow.getTag() == null) && (z || this.shadow.getTag() != null)) {
-            return;
+        @Override // org.telegram.ui.Components.RecyclerListView.SelectionAdapter
+        public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
+            return true;
         }
-        this.shadow.setTag(z ? null : 1);
-        if (z) {
-            this.shadow.setVisibility(0);
+
+        public ListAdapter(Context context) {
+            this.context = context;
         }
-        AnimatorSet animatorSet = this.shadowAnimation;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-        }
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        this.shadowAnimation = animatorSet2;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.shadow, (Property<View, Float>) View.ALPHA, z ? 1.0f : 0.0f));
-        this.shadowAnimation.setDuration(150L);
-        this.shadowAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.FiltersListBottomSheet.4
-            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-            public void onAnimationCancel(Animator animator) {
-                if (FiltersListBottomSheet.this.shadowAnimation == null || !FiltersListBottomSheet.this.shadowAnimation.equals(animator)) {
-                    return;
-                }
-                FiltersListBottomSheet.this.shadowAnimation = null;
+
+        public MessagesController.DialogFilter getItem(int i) {
+            if (i < FiltersListBottomSheet.this.dialogFilters.size()) {
+                return (MessagesController.DialogFilter) FiltersListBottomSheet.this.dialogFilters.get(i);
             }
+            return null;
+        }
 
-            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-            public void onAnimationEnd(Animator animator) {
-                if (FiltersListBottomSheet.this.shadowAnimation == null || !FiltersListBottomSheet.this.shadowAnimation.equals(animator)) {
-                    return;
+        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+        public int getItemCount() {
+            int size = FiltersListBottomSheet.this.dialogFilters.size();
+            return size < 10 ? size + 1 : size;
+        }
+
+        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+        public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+            BottomSheet.BottomSheetCell bottomSheetCell = new BottomSheet.BottomSheetCell(this.context, 0);
+            bottomSheetCell.setBackground(null);
+            bottomSheetCell.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
+            return new RecyclerListView.Holder(bottomSheetCell);
+        }
+
+        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+        public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
+            int i2;
+            BottomSheet.BottomSheetCell bottomSheetCell = (BottomSheet.BottomSheetCell) viewHolder.itemView;
+            if (i < FiltersListBottomSheet.this.dialogFilters.size()) {
+                bottomSheetCell.getImageView().setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_dialogIcon), PorterDuff.Mode.MULTIPLY));
+                MessagesController.DialogFilter dialogFilter = (MessagesController.DialogFilter) FiltersListBottomSheet.this.dialogFilters.get(i);
+                bottomSheetCell.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
+                int i3 = dialogFilter.flags;
+                if ((MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS & i3) == (MessagesController.DIALOG_FILTER_FLAG_CONTACTS | MessagesController.DIALOG_FILTER_FLAG_NON_CONTACTS)) {
+                    i2 = R.drawable.msg_openprofile;
+                } else {
+                    if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_READ & i3) != 0) {
+                        int i4 = MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS;
+                        if ((i3 & i4) == i4) {
+                            i2 = R.drawable.msg_markunread;
+                        }
+                    }
+                    if ((MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS & i3) == MessagesController.DIALOG_FILTER_FLAG_CHANNELS) {
+                        i2 = R.drawable.msg_channel;
+                    } else if ((MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS & i3) == MessagesController.DIALOG_FILTER_FLAG_GROUPS) {
+                        i2 = R.drawable.msg_groups;
+                    } else if ((MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS & i3) == MessagesController.DIALOG_FILTER_FLAG_CONTACTS) {
+                        i2 = R.drawable.msg_contacts;
+                    } else if ((i3 & MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS) == MessagesController.DIALOG_FILTER_FLAG_BOTS) {
+                        i2 = R.drawable.msg_bots;
+                    } else {
+                        i2 = R.drawable.msg_folders;
+                    }
                 }
-                if (!z) {
-                    FiltersListBottomSheet.this.shadow.setVisibility(4);
+                bottomSheetCell.setTextAndIcon(MessageObject.replaceAnimatedEmoji(Emoji.replaceEmoji(dialogFilter.name, bottomSheetCell.getTextView().getPaint().getFontMetricsInt(), false), dialogFilter.entities, bottomSheetCell.getTextView().getPaint().getFontMetricsInt()), 0, new FolderDrawable(FiltersListBottomSheet.this.getContext(), i2, dialogFilter.color), false);
+                bottomSheetCell.getTextView().setEmojiColor(Theme.getColor(Theme.key_featuredStickers_addButton, ((BottomSheet) FiltersListBottomSheet.this).resourcesProvider));
+                boolean z = true;
+                for (int i5 = 0; i5 < FiltersListBottomSheet.this.selectedDialogs.size(); i5++) {
+                    if (!dialogFilter.includesDialog(AccountInstance.getInstance(((BottomSheet) FiltersListBottomSheet.this).currentAccount), ((Long) FiltersListBottomSheet.this.selectedDialogs.get(i5)).longValue())) {
+                        z = false;
+                    }
                 }
-                FiltersListBottomSheet.this.shadowAnimation = null;
+                bottomSheetCell.setChecked(z);
+                return;
             }
-        });
-        this.shadowAnimation.start();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public void updateLayout() {
-        if (this.listView.getChildCount() <= 0) {
-            RecyclerListView recyclerListView = this.listView;
-            int paddingTop = recyclerListView.getPaddingTop();
-            this.scrollOffsetY = paddingTop;
-            recyclerListView.setTopGlowOffset(paddingTop);
-            this.titleTextView.setTranslationY(this.scrollOffsetY);
-            this.shadow.setTranslationY(this.scrollOffsetY);
-            this.containerView.invalidate();
-            return;
+            bottomSheetCell.getImageView().setColorFilter((ColorFilter) null);
+            Drawable drawable = this.context.getResources().getDrawable(R.drawable.poll_add_circle);
+            Drawable drawable2 = this.context.getResources().getDrawable(R.drawable.poll_add_plus);
+            int color = Theme.getColor(Theme.key_switchTrackChecked);
+            PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
+            drawable.setColorFilter(new PorterDuffColorFilter(color, mode));
+            drawable2.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_checkboxCheck), mode));
+            CombinedDrawable combinedDrawable = new CombinedDrawable(drawable, drawable2);
+            bottomSheetCell.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlueText4));
+            bottomSheetCell.setTextAndIcon(LocaleController.getString(R.string.CreateNewFilter), combinedDrawable);
         }
-        int i = 0;
-        View childAt = this.listView.getChildAt(0);
-        RecyclerListView.Holder holder = (RecyclerListView.Holder) this.listView.findContainingViewHolder(childAt);
-        int top = childAt.getTop();
-        if (top < 0 || holder == null || holder.getAdapterPosition() != 0) {
-            runShadowAnimation(true);
-        } else {
-            runShadowAnimation(false);
-            i = top;
-        }
-        if (this.scrollOffsetY != i) {
-            RecyclerListView recyclerListView2 = this.listView;
-            this.scrollOffsetY = i;
-            recyclerListView2.setTopGlowOffset(i);
-            this.titleTextView.setTranslationY(this.scrollOffsetY);
-            this.shadow.setTranslationY(this.scrollOffsetY);
-            this.containerView.invalidate();
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.BottomSheet
-    protected boolean canDismissWithSwipe() {
-        return false;
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i == NotificationCenter.emojiLoaded) {
-            AndroidUtilities.forEachViews((RecyclerView) this.listView, new Consumer() { // from class: org.telegram.ui.Components.FiltersListBottomSheet$$ExternalSyntheticLambda1
-                @Override // com.google.android.exoplayer2.util.Consumer
-                public final void accept(Object obj) {
-                    FiltersListBottomSheet.lambda$didReceivedNotification$1((View) obj);
-                }
-            });
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
-    /* renamed from: dismiss */
-    public void lambda$new$0() {
-        super.lambda$new$0();
-        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.emojiLoaded);
-    }
-
-    public void setDelegate(FiltersListBottomSheetDelegate filtersListBottomSheetDelegate) {
-        this.delegate = filtersListBottomSheetDelegate;
     }
 }

@@ -1,16 +1,13 @@
 package com.google.android.gms.internal.play_billing;
 
 /* loaded from: classes.dex */
-final class zzs extends zzo {
-    private final zzu zza;
-
-    zzs(zzu zzuVar, int i) {
-        super(zzuVar.size(), i);
-        this.zza = zzuVar;
+final class zzs extends Throwable {
+    zzs(String str) {
+        super(str);
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzo
-    protected final Object zza(int i) {
-        return this.zza.get(i);
+    @Override // java.lang.Throwable
+    public final synchronized Throwable fillInStackTrace() {
+        return this;
     }
 }

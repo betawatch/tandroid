@@ -15,7 +15,7 @@ public final /* synthetic */ class b implements java.util.function.BiFunction {
         if (biFunction == null) {
             return null;
         }
-        return biFunction instanceof BiFunction.VivifiedWrapper ? ((BiFunction.VivifiedWrapper) biFunction).a : biFunction instanceof f ? e.a((f) biFunction) : new b(biFunction);
+        return biFunction instanceof BiFunction.VivifiedWrapper ? ((BiFunction.VivifiedWrapper) biFunction).a : biFunction instanceof BinaryOperator ? e.a((BinaryOperator) biFunction) : new b(biFunction);
     }
 
     @Override // java.util.function.BiFunction

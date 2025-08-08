@@ -4,20 +4,20 @@ import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class CleanInputStream extends FilterInputStream {
     int prev;
     int prevprev;
+
+    @Override // java.io.FilterInputStream, java.io.InputStream
+    public boolean markSupported() {
+        return false;
+    }
 
     public CleanInputStream(InputStream inputStream) {
         super(inputStream);
         this.prevprev = -1;
         this.prev = -1;
-    }
-
-    @Override // java.io.FilterInputStream, java.io.InputStream
-    public boolean markSupported() {
-        return false;
     }
 
     @Override // java.io.FilterInputStream, java.io.InputStream

@@ -7,9 +7,6 @@ import java.io.Serializable;
 final class ReverseNaturalOrdering extends Ordering implements Serializable {
     static final ReverseNaturalOrdering INSTANCE = new ReverseNaturalOrdering();
 
-    private ReverseNaturalOrdering() {
-    }
-
     @Override // com.google.common.collect.Ordering, java.util.Comparator
     public int compare(Comparable comparable, Comparable comparable2) {
         Preconditions.checkNotNull(comparable);
@@ -26,5 +23,8 @@ final class ReverseNaturalOrdering extends Ordering implements Serializable {
 
     public String toString() {
         return "Ordering.natural().reverse()";
+    }
+
+    private ReverseNaturalOrdering() {
     }
 }

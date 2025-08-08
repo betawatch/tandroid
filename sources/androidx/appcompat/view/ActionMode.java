@@ -30,15 +30,7 @@ public abstract class ActionMode {
 
     public abstract CharSequence getSubtitle();
 
-    public Object getTag() {
-        return this.mTag;
-    }
-
     public abstract CharSequence getTitle();
-
-    public boolean getTitleOptionalHint() {
-        return this.mTitleOptionalHint;
-    }
 
     public abstract void invalidate();
 
@@ -50,15 +42,23 @@ public abstract class ActionMode {
 
     public abstract void setSubtitle(CharSequence charSequence);
 
-    public void setTag(Object obj) {
-        this.mTag = obj;
-    }
-
     public abstract void setTitle(int i);
 
     public abstract void setTitle(CharSequence charSequence);
 
+    public void setTag(Object obj) {
+        this.mTag = obj;
+    }
+
+    public Object getTag() {
+        return this.mTag;
+    }
+
     public void setTitleOptionalHint(boolean z) {
         this.mTitleOptionalHint = z;
+    }
+
+    public boolean getTitleOptionalHint() {
+        return this.mTitleOptionalHint;
     }
 }

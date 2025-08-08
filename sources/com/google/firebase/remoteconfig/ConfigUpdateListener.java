@@ -1,6 +1,6 @@
 package com.google.firebase.remoteconfig;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public interface ConfigUpdateListener {
     void onError(FirebaseRemoteConfigException firebaseRemoteConfigException);
 

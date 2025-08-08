@@ -1,7 +1,7 @@
 package kotlin.comparisons;
 
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class ComparisonsKt__ComparisonsKt {
     public static int compareValues(Comparable comparable, Comparable comparable2) {
         if (comparable == comparable2) {

@@ -34,6 +34,30 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
     private LongSparseArray dialogs = new LongSparseArray();
     private LongSparseArray messageObjects = new LongSparseArray();
 
+    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
+    public long getItemId(int i) {
+        return i;
+    }
+
+    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
+    public RemoteViews getLoadingView() {
+        return null;
+    }
+
+    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
+    public int getViewTypeCount() {
+        return 2;
+    }
+
+    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
+    public boolean hasStableIds() {
+        return true;
+    }
+
+    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
+    public void onDestroy() {
+    }
+
     public ChatsRemoteViewsFactory(Context context, Intent intent) {
         this.mContext = context;
         Theme.createDialogsResources(context);
@@ -50,6 +74,11 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
     }
 
     @Override // android.widget.RemoteViewsService.RemoteViewsFactory
+    public void onCreate() {
+        ApplicationLoader.postInitApplication();
+    }
+
+    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
     public int getCount() {
         if (this.deleted) {
             return 1;
@@ -57,48 +86,34 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
         return this.dids.size() + 1;
     }
 
-    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
-    public long getItemId(int i) {
-        return i;
-    }
-
-    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
-    public RemoteViews getLoadingView() {
-        return null;
-    }
-
-    /* JADX WARN: Can't wrap try/catch for region: R(8:118|(1:120)(2:128|(1:130)(8:131|(1:133)(1:135)|134|122|123|124|100|101))|121|122|123|124|100|101) */
-    /* JADX WARN: Code restructure failed: missing block: B:126:0x03c7, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(8:114|(1:116)(2:124|(1:126)(8:127|(1:129)(1:131)|130|118|119|120|96|97))|117|118|119|120|96|97) */
+    /* JADX WARN: Code restructure failed: missing block: B:122:0x03e2, code lost:
     
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:127:0x03c8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:123:0x03e3, code lost:
     
         org.telegram.messenger.FileLog.e(r0);
         r10 = r10;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:183:0x04e7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:230:0x0134, code lost:
     
-        if (r3.isMediaEmpty() == false) goto L217;
+        if (r13.local_id != 0) goto L53;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:234:0x012c, code lost:
-    
-        if (r13.local_id != 0) goto L54;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:235:0x012e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:231:0x0136, code lost:
     
         r14 = r13;
         r13 = r12;
         r12 = r0;
         r0 = null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:244:0x014a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:240:0x0152, code lost:
     
-        if (r13.local_id != 0) goto L54;
+        if (r13.local_id != 0) goto L53;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:54:0x0288, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x0290, code lost:
     
-        if ((r0 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChannelMigrateFrom) != false) goto L217;
+        if ((r0 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChannelMigrateFrom) != false) goto L105;
      */
     @Override // android.widget.RemoteViewsService.RemoteViewsFactory
     /*
@@ -113,17 +128,14 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
         TLRPC.FileLocation fileLocation2;
         Bitmap decodeFile;
         int i2;
-        String str3;
         int i3;
-        int i4;
         TLRPC.Chat chat2;
         TLRPC.User user2;
         CharSequence charSequence;
-        int i5;
+        String str3;
         SpannableStringBuilder valueOf;
-        String format;
         char c;
-        int i6;
+        int i4;
         String charSequence2;
         char c2;
         SpannableStringBuilder spannableStringBuilder;
@@ -131,7 +143,6 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
         CharSequence charSequence4;
         AvatarDrawable avatarDrawable;
         String formatName;
-        int i7;
         TLRPC.UserProfilePhoto userProfilePhoto;
         TLRPC.FileLocation fileLocation3;
         if (this.deleted) {
@@ -157,29 +168,23 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
             user = this.accountInstance.getMessagesController().getUser(l);
             if (user != null) {
                 if (UserObject.isUserSelf(user)) {
-                    i7 = R.string.SavedMessages;
+                    formatName = LocaleController.getString(R.string.SavedMessages);
                 } else if (UserObject.isReplyUser(user)) {
-                    i7 = R.string.RepliesTitle;
+                    formatName = LocaleController.getString(R.string.RepliesTitle);
                 } else if (UserObject.isDeleted(user)) {
-                    i7 = R.string.HiddenName;
+                    formatName = LocaleController.getString(R.string.HiddenName);
                 } else {
                     formatName = ContactsController.formatName(user.first_name, user.last_name);
-                    if (!UserObject.isReplyUser(user) || UserObject.isUserSelf(user) || (userProfilePhoto = user.photo) == null || (fileLocation3 = userProfilePhoto.photo_small) == null || fileLocation3.volume_id == 0 || fileLocation3.local_id == 0) {
-                        fileLocation = null;
-                        str = formatName;
-                        chat = null;
-                    } else {
-                        fileLocation = fileLocation3;
-                        str = formatName;
-                        chat = null;
-                    }
                 }
-                formatName = LocaleController.getString(i7);
-                if (UserObject.isReplyUser(user)) {
+                if (UserObject.isReplyUser(user) || UserObject.isUserSelf(user) || (userProfilePhoto = user.photo) == null || (fileLocation3 = userProfilePhoto.photo_small) == null || fileLocation3.volume_id == 0 || fileLocation3.local_id == 0) {
+                    fileLocation = null;
+                    str = formatName;
+                    chat = null;
+                } else {
+                    fileLocation = fileLocation3;
+                    str = formatName;
+                    chat = null;
                 }
-                fileLocation = null;
-                str = formatName;
-                chat = null;
             } else {
                 str = "";
                 chat = null;
@@ -290,16 +295,107 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
                     if (!(messageAction instanceof TLRPC.TL_messageActionHistoryClear)) {
                         charSequence4 = charSequence5;
                     }
+                    color = this.mContext.getResources().getColor(R.color.widget_action_text);
+                    charSequence3 = charSequence4;
                 }
                 charSequence4 = messageObject.messageText;
+                color = this.mContext.getResources().getColor(R.color.widget_action_text);
+                charSequence3 = charSequence4;
             } else {
                 String str4 = "📎 ";
-                if (chat == null || chat2 != null || (ChatObject.isChannel(chat) && !ChatObject.isMegagroup(chat))) {
-                    TLRPC.MessageMedia messageMedia = messageObject.messageOwner.media;
-                    if ((messageMedia instanceof TLRPC.TL_messageMediaPhoto) && (messageMedia.photo instanceof TLRPC.TL_photoEmpty) && messageMedia.ttl_seconds != 0) {
-                        i5 = R.string.AttachPhotoExpired;
-                    } else if ((messageMedia instanceof TLRPC.TL_messageMediaDocument) && (messageMedia.document instanceof TLRPC.TL_documentEmpty) && messageMedia.ttl_seconds != 0) {
-                        i5 = R.string.AttachVideoExpired;
+                if (chat != null && chat2 == null && (!ChatObject.isChannel(chat) || ChatObject.isMegagroup(chat))) {
+                    if (messageObject.isOutOwner()) {
+                        str3 = LocaleController.getString(R.string.FromYou);
+                    } else if (user2 != null) {
+                        str3 = UserObject.getFirstName(user2).replace("\n", "");
+                    } else {
+                        str3 = "DELETED";
+                    }
+                    String str5 = str3;
+                    CharSequence charSequence6 = messageObject.caption;
+                    char c3 = ' ';
+                    try {
+                        if (charSequence6 != null) {
+                            String charSequence7 = charSequence6.toString();
+                            if (charSequence7.length() > 150) {
+                                charSequence7 = charSequence7.substring(0, 150);
+                            }
+                            if (messageObject.isVideo()) {
+                                str4 = "📹 ";
+                            } else if (messageObject.isVoice()) {
+                                str4 = "🎤 ";
+                            } else if (messageObject.isMusic()) {
+                                str4 = "🎧 ";
+                            } else if (messageObject.isPhoto()) {
+                                str4 = "🖼 ";
+                            }
+                            valueOf = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", str4 + charSequence7.replace('\n', ' '), str5));
+                        } else if (messageObject.messageOwner.media != null && !messageObject.isMediaEmpty()) {
+                            color = this.mContext.getResources().getColor(R.color.widget_action_text);
+                            TLRPC.MessageMedia messageMedia = messageObject.messageOwner.media;
+                            if (messageMedia instanceof TLRPC.TL_messageMediaPoll) {
+                                c = 1;
+                                charSequence2 = String.format("📊 \u2068%s\u2069", ((TLRPC.TL_messageMediaPoll) messageMedia).poll.question.text);
+                            } else {
+                                c = 1;
+                                if (messageMedia instanceof TLRPC.TL_messageMediaGame) {
+                                    charSequence2 = String.format("🎮 \u2068%s\u2069", messageMedia.game.title);
+                                } else {
+                                    if (messageObject.type == 14) {
+                                        i4 = 2;
+                                        charSequence2 = String.format("🎧 \u2068%s - %s\u2069", messageObject.getMusicAuthor(), messageObject.getMusicTitle());
+                                    } else {
+                                        i4 = 2;
+                                        charSequence2 = messageObject.messageText.toString();
+                                    }
+                                    c3 = ' ';
+                                    c2 = '\n';
+                                    String replace = charSequence2.replace(c2, c3);
+                                    Object[] objArr = new Object[i4];
+                                    objArr[0] = replace;
+                                    objArr[c] = str5;
+                                    SpannableStringBuilder valueOf2 = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", objArr));
+                                    valueOf2.setSpan(new ForegroundColorSpanThemable(Theme.key_chats_attachMessage), str5.length() + 2, valueOf2.length(), 33);
+                                    spannableStringBuilder = valueOf2;
+                                    spannableStringBuilder.setSpan(new ForegroundColorSpanThemable(Theme.key_chats_nameMessage), 0, str5.length() + 1, 33);
+                                    charSequence3 = spannableStringBuilder;
+                                }
+                            }
+                            c2 = '\n';
+                            i4 = 2;
+                            String replace2 = charSequence2.replace(c2, c3);
+                            Object[] objArr2 = new Object[i4];
+                            objArr2[0] = replace2;
+                            objArr2[c] = str5;
+                            SpannableStringBuilder valueOf22 = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", objArr2));
+                            valueOf22.setSpan(new ForegroundColorSpanThemable(Theme.key_chats_attachMessage), str5.length() + 2, valueOf22.length(), 33);
+                            spannableStringBuilder = valueOf22;
+                            spannableStringBuilder.setSpan(new ForegroundColorSpanThemable(Theme.key_chats_nameMessage), 0, str5.length() + 1, 33);
+                            charSequence3 = spannableStringBuilder;
+                        } else {
+                            String str6 = messageObject.messageOwner.message;
+                            if (str6 != null) {
+                                if (str6.length() > 150) {
+                                    str6 = str6.substring(0, 150);
+                                }
+                                valueOf = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", str6.replace('\n', ' ').trim(), str5));
+                            } else {
+                                valueOf = SpannableStringBuilder.valueOf("");
+                            }
+                        }
+                        spannableStringBuilder.setSpan(new ForegroundColorSpanThemable(Theme.key_chats_nameMessage), 0, str5.length() + 1, 33);
+                        charSequence3 = spannableStringBuilder;
+                    } catch (Exception e) {
+                        FileLog.e(e);
+                        charSequence3 = spannableStringBuilder;
+                    }
+                    spannableStringBuilder = valueOf;
+                } else {
+                    TLRPC.MessageMedia messageMedia2 = messageObject.messageOwner.media;
+                    if ((messageMedia2 instanceof TLRPC.TL_messageMediaPhoto) && (messageMedia2.photo instanceof TLRPC.TL_photoEmpty) && messageMedia2.ttl_seconds != 0) {
+                        charSequence3 = LocaleController.getString(R.string.AttachPhotoExpired);
+                    } else if ((messageMedia2 instanceof TLRPC.TL_messageMediaDocument) && (messageMedia2.document instanceof TLRPC.TL_documentEmpty) && messageMedia2.ttl_seconds != 0) {
+                        charSequence3 = LocaleController.getString(R.string.AttachVideoExpired);
                     } else if (messageObject.caption != null) {
                         if (messageObject.isVideo()) {
                             str4 = "📹 ";
@@ -312,9 +408,9 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
                         }
                         charSequence3 = str4 + ((Object) messageObject.caption);
                     } else {
-                        if (messageMedia instanceof TLRPC.TL_messageMediaPoll) {
-                            charSequence = "📊 " + ((TLRPC.TL_messageMediaPoll) messageMedia).poll.question.text;
-                        } else if (messageMedia instanceof TLRPC.TL_messageMediaGame) {
+                        if (messageMedia2 instanceof TLRPC.TL_messageMediaPoll) {
+                            charSequence = "📊 " + ((TLRPC.TL_messageMediaPoll) messageMedia2).poll.question.text;
+                        } else if (messageMedia2 instanceof TLRPC.TL_messageMediaGame) {
                             charSequence = "🎮 " + messageObject.messageOwner.media.game.title;
                         } else if (messageObject.type == 14) {
                             charSequence = String.format("🎧 %s - %s", messageObject.getMusicAuthor(), messageObject.getMusicTitle());
@@ -322,164 +418,56 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
                             charSequence = messageObject.messageText;
                             AndroidUtilities.highlightText(charSequence, messageObject.highlightedWords, (Theme.ResourcesProvider) null);
                         }
-                        CharSequence charSequence6 = charSequence;
-                        charSequence3 = charSequence6;
+                        CharSequence charSequence8 = charSequence;
+                        charSequence3 = charSequence8;
                         if (messageObject.messageOwner.media != null) {
-                            charSequence4 = charSequence6;
-                            charSequence3 = charSequence6;
+                            charSequence3 = charSequence8;
+                            if (!messageObject.isMediaEmpty()) {
+                                color = this.mContext.getResources().getColor(R.color.widget_action_text);
+                                charSequence3 = charSequence8;
+                            }
                         }
                     }
-                    charSequence3 = LocaleController.getString(i5);
-                } else {
-                    String string = messageObject.isOutOwner() ? LocaleController.getString(R.string.FromYou) : user2 != null ? UserObject.getFirstName(user2).replace("\n", "") : "DELETED";
-                    CharSequence charSequence7 = messageObject.caption;
-                    char c3 = ' ';
-                    try {
-                        if (charSequence7 != null) {
-                            String charSequence8 = charSequence7.toString();
-                            if (charSequence8.length() > 150) {
-                                charSequence8 = charSequence8.substring(0, 150);
-                            }
-                            if (messageObject.isVideo()) {
-                                str4 = "📹 ";
-                            } else if (messageObject.isVoice()) {
-                                str4 = "🎤 ";
-                            } else if (messageObject.isMusic()) {
-                                str4 = "🎧 ";
-                            } else if (messageObject.isPhoto()) {
-                                str4 = "🖼 ";
-                            }
-                            format = String.format("%2$s: \u2068%1$s\u2069", str4 + charSequence8.replace('\n', ' '), string);
-                        } else if (messageObject.messageOwner.media == null || messageObject.isMediaEmpty()) {
-                            String str5 = messageObject.messageOwner.message;
-                            if (str5 != null) {
-                                if (str5.length() > 150) {
-                                    str5 = str5.substring(0, 150);
-                                }
-                                format = String.format("%2$s: \u2068%1$s\u2069", str5.replace('\n', ' ').trim(), string);
-                            } else {
-                                valueOf = SpannableStringBuilder.valueOf("");
-                                spannableStringBuilder = valueOf;
-                                spannableStringBuilder.setSpan(new ForegroundColorSpanThemable(Theme.key_chats_nameMessage), 0, string.length() + 1, 33);
-                                charSequence3 = spannableStringBuilder;
-                            }
-                        } else {
-                            color = this.mContext.getResources().getColor(R.color.widget_action_text);
-                            TLRPC.MessageMedia messageMedia2 = messageObject.messageOwner.media;
-                            if (messageMedia2 instanceof TLRPC.TL_messageMediaPoll) {
-                                c = 1;
-                                charSequence2 = String.format("📊 \u2068%s\u2069", ((TLRPC.TL_messageMediaPoll) messageMedia2).poll.question.text);
-                            } else {
-                                c = 1;
-                                if (messageMedia2 instanceof TLRPC.TL_messageMediaGame) {
-                                    charSequence2 = String.format("🎮 \u2068%s\u2069", messageMedia2.game.title);
-                                } else {
-                                    if (messageObject.type == 14) {
-                                        i6 = 2;
-                                        charSequence2 = String.format("🎧 \u2068%s - %s\u2069", messageObject.getMusicAuthor(), messageObject.getMusicTitle());
-                                    } else {
-                                        i6 = 2;
-                                        charSequence2 = messageObject.messageText.toString();
-                                    }
-                                    c3 = ' ';
-                                    c2 = '\n';
-                                    String replace = charSequence2.replace(c2, c3);
-                                    Object[] objArr = new Object[i6];
-                                    objArr[0] = replace;
-                                    objArr[c] = string;
-                                    SpannableStringBuilder valueOf2 = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", objArr));
-                                    valueOf2.setSpan(new ForegroundColorSpanThemable(Theme.key_chats_attachMessage), string.length() + 2, valueOf2.length(), 33);
-                                    spannableStringBuilder = valueOf2;
-                                    spannableStringBuilder.setSpan(new ForegroundColorSpanThemable(Theme.key_chats_nameMessage), 0, string.length() + 1, 33);
-                                    charSequence3 = spannableStringBuilder;
-                                }
-                            }
-                            c2 = '\n';
-                            i6 = 2;
-                            String replace2 = charSequence2.replace(c2, c3);
-                            Object[] objArr2 = new Object[i6];
-                            objArr2[0] = replace2;
-                            objArr2[c] = string;
-                            SpannableStringBuilder valueOf22 = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", objArr2));
-                            valueOf22.setSpan(new ForegroundColorSpanThemable(Theme.key_chats_attachMessage), string.length() + 2, valueOf22.length(), 33);
-                            spannableStringBuilder = valueOf22;
-                            spannableStringBuilder.setSpan(new ForegroundColorSpanThemable(Theme.key_chats_nameMessage), 0, string.length() + 1, 33);
-                            charSequence3 = spannableStringBuilder;
-                        }
-                        spannableStringBuilder.setSpan(new ForegroundColorSpanThemable(Theme.key_chats_nameMessage), 0, string.length() + 1, 33);
-                        charSequence3 = spannableStringBuilder;
-                    } catch (Exception e) {
-                        FileLog.e(e);
-                        charSequence3 = spannableStringBuilder;
-                    }
-                    valueOf = SpannableStringBuilder.valueOf(format);
-                    spannableStringBuilder = valueOf;
                 }
-                remoteViews3.setTextViewText(R.id.shortcut_widget_item_time, LocaleController.stringForMessageListDate(messageObject.messageOwner.date));
-                int i8 = R.id.shortcut_widget_item_message;
-                remoteViews3.setTextViewText(i8, charSequence3.toString());
-                remoteViews3.setTextColor(i8, color);
             }
-            color = this.mContext.getResources().getColor(R.color.widget_action_text);
-            charSequence3 = charSequence4;
             remoteViews3.setTextViewText(R.id.shortcut_widget_item_time, LocaleController.stringForMessageListDate(messageObject.messageOwner.date));
-            int i82 = R.id.shortcut_widget_item_message;
-            remoteViews3.setTextViewText(i82, charSequence3.toString());
-            remoteViews3.setTextColor(i82, color);
+            int i5 = R.id.shortcut_widget_item_message;
+            remoteViews3.setTextViewText(i5, charSequence3.toString());
+            remoteViews3.setTextColor(i5, color);
         } else {
-            if (dialog == null || (i2 = dialog.last_message_date) == 0) {
-                remoteViews3.setTextViewText(R.id.shortcut_widget_item_time, "");
-            } else {
+            if (dialog != null && (i2 = dialog.last_message_date) != 0) {
                 remoteViews3.setTextViewText(R.id.shortcut_widget_item_time, LocaleController.stringForMessageListDate(i2));
+            } else {
+                remoteViews3.setTextViewText(R.id.shortcut_widget_item_time, "");
             }
             remoteViews3.setTextViewText(R.id.shortcut_widget_item_message, "");
         }
-        if (dialog == null || (i3 = dialog.unread_count) <= 0) {
-            remoteViews3.setViewVisibility(R.id.shortcut_widget_item_badge, 8);
-        } else {
-            int i9 = R.id.shortcut_widget_item_badge;
-            remoteViews3.setTextViewText(i9, String.format("%d", Integer.valueOf(i3)));
-            remoteViews3.setViewVisibility(i9, 0);
+        if (dialog != null && (i3 = dialog.unread_count) > 0) {
+            int i6 = R.id.shortcut_widget_item_badge;
+            remoteViews3.setTextViewText(i6, String.format("%d", Integer.valueOf(i3)));
+            remoteViews3.setViewVisibility(i6, 0);
             if (this.accountInstance.getMessagesController().isDialogMuted(dialog.id, 0L)) {
-                remoteViews3.setBoolean(i9, "setEnabled", false);
-                i4 = R.drawable.widget_badge_muted_background;
+                remoteViews3.setBoolean(i6, "setEnabled", false);
+                remoteViews3.setInt(i6, "setBackgroundResource", R.drawable.widget_badge_muted_background);
             } else {
-                remoteViews3.setBoolean(i9, "setEnabled", true);
-                i4 = R.drawable.widget_badge_background;
+                remoteViews3.setBoolean(i6, "setEnabled", true);
+                remoteViews3.setInt(i6, "setBackgroundResource", R.drawable.widget_badge_background);
             }
-            remoteViews3.setInt(i9, "setBackgroundResource", i4);
+        } else {
+            remoteViews3.setViewVisibility(R.id.shortcut_widget_item_badge, 8);
         }
         Bundle bundle2 = new Bundle();
-        boolean isUserDialog = DialogObject.isUserDialog(l.longValue());
-        long longValue = l.longValue();
-        if (isUserDialog) {
-            str3 = "userId";
+        if (DialogObject.isUserDialog(l.longValue())) {
+            bundle2.putLong("userId", l.longValue());
         } else {
-            longValue = -longValue;
-            str3 = "chatId";
+            bundle2.putLong("chatId", -l.longValue());
         }
-        bundle2.putLong(str3, longValue);
         bundle2.putInt("currentAccount", this.accountInstance.getCurrentAccount());
         Intent intent2 = new Intent();
         intent2.putExtras(bundle2);
         remoteViews3.setOnClickFillInIntent(R.id.shortcut_widget_item, intent2);
         remoteViews3.setViewVisibility(R.id.shortcut_widget_item_divider, i == getCount() ? 8 : 0);
         return remoteViews3;
-    }
-
-    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
-    public int getViewTypeCount() {
-        return 2;
-    }
-
-    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
-    public boolean hasStableIds() {
-        return true;
-    }
-
-    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
-    public void onCreate() {
-        ApplicationLoader.postInitApplication();
     }
 
     @Override // android.widget.RemoteViewsService.RemoteViewsFactory
@@ -501,9 +489,5 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
         for (int i = 0; i < size; i++) {
             this.messageObjects.put(longSparseArray.keyAt(i), new MessageObject(this.accountInstance.getCurrentAccount(), (TLRPC.Message) longSparseArray.valueAt(i), (LongSparseArray) null, (LongSparseArray) null, false, true));
         }
-    }
-
-    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
-    public void onDestroy() {
     }
 }

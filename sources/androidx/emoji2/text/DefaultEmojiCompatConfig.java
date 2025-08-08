@@ -19,6 +19,9 @@ import java.util.List;
 
 /* loaded from: classes.dex */
 public abstract class DefaultEmojiCompatConfig {
+    public static FontRequestEmojiCompatConfig create(Context context) {
+        return (FontRequestEmojiCompatConfig) new DefaultEmojiCompatConfigFactory(null).create(context);
+    }
 
     public static class DefaultEmojiCompatConfigFactory {
         private final DefaultEmojiCompatConfigHelper mHelper;
@@ -27,49 +30,15 @@ public abstract class DefaultEmojiCompatConfig {
             this.mHelper = defaultEmojiCompatConfigHelper == null ? getHelperForApi() : defaultEmojiCompatConfigHelper;
         }
 
+        public EmojiCompat.Config create(Context context) {
+            return configOrNull(context, queryForDefaultFontRequest(context));
+        }
+
         private EmojiCompat.Config configOrNull(Context context, FontRequest fontRequest) {
             if (fontRequest == null) {
                 return null;
             }
             return new FontRequestEmojiCompatConfig(context, fontRequest);
-        }
-
-        private List convertToByteArray(Signature[] signatureArr) {
-            ArrayList arrayList = new ArrayList();
-            for (Signature signature : signatureArr) {
-                arrayList.add(signature.toByteArray());
-            }
-            return Collections.singletonList(arrayList);
-        }
-
-        private FontRequest generateFontRequestFrom(ProviderInfo providerInfo, PackageManager packageManager) {
-            String str = providerInfo.authority;
-            String str2 = providerInfo.packageName;
-            return new FontRequest(str, str2, "emojicompat-emoji-font", convertToByteArray(this.mHelper.getSigningSignatures(packageManager, str2)));
-        }
-
-        private static DefaultEmojiCompatConfigHelper getHelperForApi() {
-            return Build.VERSION.SDK_INT >= 28 ? new DefaultEmojiCompatConfigHelper_API28() : new DefaultEmojiCompatConfigHelper_API19();
-        }
-
-        private boolean hasFlagSystem(ProviderInfo providerInfo) {
-            ApplicationInfo applicationInfo;
-            return (providerInfo == null || (applicationInfo = providerInfo.applicationInfo) == null || (applicationInfo.flags & 1) != 1) ? false : true;
-        }
-
-        private ProviderInfo queryDefaultInstalledContentProvider(PackageManager packageManager) {
-            Iterator it = this.mHelper.queryIntentContentProviders(packageManager, new Intent("androidx.content.action.LOAD_EMOJI_FONT"), 0).iterator();
-            while (it.hasNext()) {
-                ProviderInfo providerInfo = this.mHelper.getProviderInfo((ResolveInfo) it.next());
-                if (hasFlagSystem(providerInfo)) {
-                    return providerInfo;
-                }
-            }
-            return null;
-        }
-
-        public EmojiCompat.Config create(Context context) {
-            return configOrNull(context, queryForDefaultFontRequest(context));
         }
 
         FontRequest queryForDefaultFontRequest(Context context) {
@@ -86,27 +55,64 @@ public abstract class DefaultEmojiCompatConfig {
                 return null;
             }
         }
+
+        private ProviderInfo queryDefaultInstalledContentProvider(PackageManager packageManager) {
+            Iterator it = this.mHelper.queryIntentContentProviders(packageManager, new Intent("androidx.content.action.LOAD_EMOJI_FONT"), 0).iterator();
+            while (it.hasNext()) {
+                ProviderInfo providerInfo = this.mHelper.getProviderInfo((ResolveInfo) it.next());
+                if (hasFlagSystem(providerInfo)) {
+                    return providerInfo;
+                }
+            }
+            return null;
+        }
+
+        private boolean hasFlagSystem(ProviderInfo providerInfo) {
+            ApplicationInfo applicationInfo;
+            return (providerInfo == null || (applicationInfo = providerInfo.applicationInfo) == null || (applicationInfo.flags & 1) != 1) ? false : true;
+        }
+
+        private FontRequest generateFontRequestFrom(ProviderInfo providerInfo, PackageManager packageManager) {
+            String str = providerInfo.authority;
+            String str2 = providerInfo.packageName;
+            return new FontRequest(str, str2, "emojicompat-emoji-font", convertToByteArray(this.mHelper.getSigningSignatures(packageManager, str2)));
+        }
+
+        private List convertToByteArray(Signature[] signatureArr) {
+            ArrayList arrayList = new ArrayList();
+            for (Signature signature : signatureArr) {
+                arrayList.add(signature.toByteArray());
+            }
+            return Collections.singletonList(arrayList);
+        }
+
+        private static DefaultEmojiCompatConfigHelper getHelperForApi() {
+            if (Build.VERSION.SDK_INT >= 28) {
+                return new DefaultEmojiCompatConfigHelper_API28();
+            }
+            return new DefaultEmojiCompatConfigHelper_API19();
+        }
     }
 
     public static class DefaultEmojiCompatConfigHelper {
         public abstract ProviderInfo getProviderInfo(ResolveInfo resolveInfo);
 
+        public abstract List queryIntentContentProviders(PackageManager packageManager, Intent intent, int i);
+
         public Signature[] getSigningSignatures(PackageManager packageManager, String str) {
             return packageManager.getPackageInfo(str, 64).signatures;
         }
-
-        public abstract List queryIntentContentProviders(PackageManager packageManager, Intent intent, int i);
     }
 
     public static class DefaultEmojiCompatConfigHelper_API19 extends DefaultEmojiCompatConfigHelper {
         @Override // androidx.emoji2.text.DefaultEmojiCompatConfig.DefaultEmojiCompatConfigHelper
-        public ProviderInfo getProviderInfo(ResolveInfo resolveInfo) {
-            return resolveInfo.providerInfo;
+        public List queryIntentContentProviders(PackageManager packageManager, Intent intent, int i) {
+            return packageManager.queryIntentContentProviders(intent, i);
         }
 
         @Override // androidx.emoji2.text.DefaultEmojiCompatConfig.DefaultEmojiCompatConfigHelper
-        public List queryIntentContentProviders(PackageManager packageManager, Intent intent, int i) {
-            return packageManager.queryIntentContentProviders(intent, i);
+        public ProviderInfo getProviderInfo(ResolveInfo resolveInfo) {
+            return resolveInfo.providerInfo;
         }
     }
 
@@ -115,9 +121,5 @@ public abstract class DefaultEmojiCompatConfig {
         public Signature[] getSigningSignatures(PackageManager packageManager, String str) {
             return packageManager.getPackageInfo(str, 64).signatures;
         }
-    }
-
-    public static FontRequestEmojiCompatConfig create(Context context) {
-        return (FontRequestEmojiCompatConfig) new DefaultEmojiCompatConfigFactory(null).create(context);
     }
 }

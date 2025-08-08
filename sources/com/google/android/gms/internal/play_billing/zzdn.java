@@ -1,32 +1,39 @@
 package com.google.android.gms.internal.play_billing;
 
-import j$.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
+import java.util.Iterator;
 
 /* loaded from: classes.dex */
-final class zzdn {
-    private static final zzdn zza = new zzdn();
-    private final ConcurrentMap zzc = new ConcurrentHashMap();
-    private final zzdq zzb = new zzcx();
+final class zzdn extends zzcv {
+    private final transient zzcr zza;
+    private final transient zzco zzb;
 
-    private zzdn() {
+    zzdn(zzcr zzcrVar, zzco zzcoVar) {
+        this.zza = zzcrVar;
+        this.zzb = zzcoVar;
     }
 
-    public static zzdn zza() {
-        return zza;
+    @Override // com.google.android.gms.internal.play_billing.zzcj, java.util.AbstractCollection, java.util.Collection
+    public final boolean contains(Object obj) {
+        return this.zza.get(obj) != null;
     }
 
-    public final zzdp zzb(Class cls) {
-        zzcg.zzc(cls, "messageType");
-        zzdp zzdpVar = (zzdp) this.zzc.get(cls);
-        if (zzdpVar == null) {
-            zzdpVar = this.zzb.zza(cls);
-            zzcg.zzc(cls, "messageType");
-            zzdp zzdpVar2 = (zzdp) this.zzc.putIfAbsent(cls, zzdpVar);
-            if (zzdpVar2 != null) {
-                return zzdpVar2;
-            }
-        }
-        return zzdpVar;
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final /* synthetic */ Iterator iterator() {
+        return this.zzb.listIterator(0);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return this.zza.size();
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.zzcj
+    final int zza(Object[] objArr, int i) {
+        return this.zzb.zza(objArr, 0);
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.zzcv, com.google.android.gms.internal.play_billing.zzcj
+    public final zzco zzd() {
+        return this.zzb;
     }
 }

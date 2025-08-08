@@ -23,30 +23,9 @@ public class VorbisComment implements Metadata.Entry {
     public final String key;
     public final String value;
 
-    protected VorbisComment(Parcel parcel) {
-        this.key = (String) Util.castNonNull(parcel.readString());
-        this.value = (String) Util.castNonNull(parcel.readString());
-    }
-
-    public VorbisComment(String str, String str2) {
-        this.key = str;
-        this.value = str2;
-    }
-
     @Override // android.os.Parcelable
     public int describeContents() {
         return 0;
-    }
-
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
-        }
-        VorbisComment vorbisComment = (VorbisComment) obj;
-        return this.key.equals(vorbisComment.key) && this.value.equals(vorbisComment.value);
     }
 
     @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
@@ -59,8 +38,14 @@ public class VorbisComment implements Metadata.Entry {
         return Metadata.Entry.-CC.$default$getWrappedMetadataFormat(this);
     }
 
-    public int hashCode() {
-        return ((this.key.hashCode() + 527) * 31) + this.value.hashCode();
+    public VorbisComment(String str, String str2) {
+        this.key = str;
+        this.value = str2;
+    }
+
+    protected VorbisComment(Parcel parcel) {
+        this.key = (String) Util.castNonNull(parcel.readString());
+        this.value = (String) Util.castNonNull(parcel.readString());
     }
 
     @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
@@ -88,6 +73,21 @@ public class VorbisComment implements Metadata.Entry {
 
     public String toString() {
         return "VC: " + this.key + "=" + this.value;
+    }
+
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        VorbisComment vorbisComment = (VorbisComment) obj;
+        return this.key.equals(vorbisComment.key) && this.value.equals(vorbisComment.value);
+    }
+
+    public int hashCode() {
+        return ((this.key.hashCode() + 527) * 31) + this.value.hashCode();
     }
 
     @Override // android.os.Parcelable

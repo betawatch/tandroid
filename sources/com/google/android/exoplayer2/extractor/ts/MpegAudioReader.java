@@ -23,6 +23,10 @@ public final class MpegAudioReader implements ElementaryStreamReader {
     private int state;
     private long timeUs;
 
+    @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
+    public void packetFinished() {
+    }
+
     public MpegAudioReader() {
         this(null);
     }
@@ -35,6 +39,45 @@ public final class MpegAudioReader implements ElementaryStreamReader {
         this.header = new MpegAudioUtil.Header();
         this.timeUs = -9223372036854775807L;
         this.language = str;
+    }
+
+    @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
+    public void seek() {
+        this.state = 0;
+        this.frameBytesRead = 0;
+        this.lastByteWasFF = false;
+        this.timeUs = -9223372036854775807L;
+    }
+
+    @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
+    public void createTracks(ExtractorOutput extractorOutput, TsPayloadReader.TrackIdGenerator trackIdGenerator) {
+        trackIdGenerator.generateNewId();
+        this.formatId = trackIdGenerator.getFormatId();
+        this.output = extractorOutput.track(trackIdGenerator.getTrackId(), 1);
+    }
+
+    @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
+    public void packetStarted(long j, int i) {
+        if (j != -9223372036854775807L) {
+            this.timeUs = j;
+        }
+    }
+
+    @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
+    public void consume(ParsableByteArray parsableByteArray) {
+        Assertions.checkStateNotNull(this.output);
+        while (parsableByteArray.bytesLeft() > 0) {
+            int i = this.state;
+            if (i == 0) {
+                findHeader(parsableByteArray);
+            } else if (i == 1) {
+                readHeaderRemainder(parsableByteArray);
+            } else if (i == 2) {
+                readFrameRemainder(parsableByteArray);
+            } else {
+                throw new IllegalStateException();
+            }
+        }
     }
 
     private void findHeader(ParsableByteArray parsableByteArray) {
@@ -55,24 +98,6 @@ public final class MpegAudioReader implements ElementaryStreamReader {
             }
         }
         parsableByteArray.setPosition(limit);
-    }
-
-    private void readFrameRemainder(ParsableByteArray parsableByteArray) {
-        int min = Math.min(parsableByteArray.bytesLeft(), this.frameSize - this.frameBytesRead);
-        this.output.sampleData(parsableByteArray, min);
-        int i = this.frameBytesRead + min;
-        this.frameBytesRead = i;
-        int i2 = this.frameSize;
-        if (i < i2) {
-            return;
-        }
-        long j = this.timeUs;
-        if (j != -9223372036854775807L) {
-            this.output.sampleMetadata(j, 1, i2, 0, null);
-            this.timeUs += this.frameDurationUs;
-        }
-        this.frameBytesRead = 0;
-        this.state = 0;
     }
 
     private void readHeaderRemainder(ParsableByteArray parsableByteArray) {
@@ -100,47 +125,21 @@ public final class MpegAudioReader implements ElementaryStreamReader {
         this.state = 2;
     }
 
-    @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
-    public void consume(ParsableByteArray parsableByteArray) {
-        Assertions.checkStateNotNull(this.output);
-        while (parsableByteArray.bytesLeft() > 0) {
-            int i = this.state;
-            if (i == 0) {
-                findHeader(parsableByteArray);
-            } else if (i == 1) {
-                readHeaderRemainder(parsableByteArray);
-            } else {
-                if (i != 2) {
-                    throw new IllegalStateException();
-                }
-                readFrameRemainder(parsableByteArray);
-            }
+    private void readFrameRemainder(ParsableByteArray parsableByteArray) {
+        int min = Math.min(parsableByteArray.bytesLeft(), this.frameSize - this.frameBytesRead);
+        this.output.sampleData(parsableByteArray, min);
+        int i = this.frameBytesRead + min;
+        this.frameBytesRead = i;
+        int i2 = this.frameSize;
+        if (i < i2) {
+            return;
         }
-    }
-
-    @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
-    public void createTracks(ExtractorOutput extractorOutput, TsPayloadReader.TrackIdGenerator trackIdGenerator) {
-        trackIdGenerator.generateNewId();
-        this.formatId = trackIdGenerator.getFormatId();
-        this.output = extractorOutput.track(trackIdGenerator.getTrackId(), 1);
-    }
-
-    @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
-    public void packetFinished() {
-    }
-
-    @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
-    public void packetStarted(long j, int i) {
+        long j = this.timeUs;
         if (j != -9223372036854775807L) {
-            this.timeUs = j;
+            this.output.sampleMetadata(j, 1, i2, 0, null);
+            this.timeUs += this.frameDurationUs;
         }
-    }
-
-    @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
-    public void seek() {
-        this.state = 0;
         this.frameBytesRead = 0;
-        this.lastByteWasFF = false;
-        this.timeUs = -9223372036854775807L;
+        this.state = 0;
     }
 }

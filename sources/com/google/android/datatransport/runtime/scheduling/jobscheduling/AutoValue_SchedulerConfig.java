@@ -19,6 +19,20 @@ final class AutoValue_SchedulerConfig extends SchedulerConfig {
         this.values = map;
     }
 
+    @Override // com.google.android.datatransport.runtime.scheduling.jobscheduling.SchedulerConfig
+    Clock getClock() {
+        return this.clock;
+    }
+
+    @Override // com.google.android.datatransport.runtime.scheduling.jobscheduling.SchedulerConfig
+    Map getValues() {
+        return this.values;
+    }
+
+    public String toString() {
+        return "SchedulerConfig{clock=" + this.clock + ", values=" + this.values + "}";
+    }
+
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -30,21 +44,7 @@ final class AutoValue_SchedulerConfig extends SchedulerConfig {
         return this.clock.equals(schedulerConfig.getClock()) && this.values.equals(schedulerConfig.getValues());
     }
 
-    @Override // com.google.android.datatransport.runtime.scheduling.jobscheduling.SchedulerConfig
-    Clock getClock() {
-        return this.clock;
-    }
-
-    @Override // com.google.android.datatransport.runtime.scheduling.jobscheduling.SchedulerConfig
-    Map getValues() {
-        return this.values;
-    }
-
     public int hashCode() {
         return ((this.clock.hashCode() ^ 1000003) * 1000003) ^ this.values.hashCode();
-    }
-
-    public String toString() {
-        return "SchedulerConfig{clock=" + this.clock + ", values=" + this.values + "}";
     }
 }

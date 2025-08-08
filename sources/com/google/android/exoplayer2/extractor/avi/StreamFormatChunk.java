@@ -11,69 +11,9 @@ import org.telegram.messenger.MediaController;
 final class StreamFormatChunk implements AviChunk {
     public final Format format;
 
-    public StreamFormatChunk(Format format) {
-        this.format = format;
-    }
-
-    private static String getMimeTypeFromCompression(int i) {
-        switch (i) {
-            case 808802372:
-            case 877677894:
-            case 1145656883:
-            case 1145656920:
-            case 1482049860:
-            case 1684633208:
-            case 2021026148:
-                return "video/mp4v-es";
-            case 826496577:
-            case 828601953:
-            case 875967048:
-                return MediaController.VIDEO_MIME_TYPE;
-            case 842289229:
-                return "video/mp42";
-            case 859066445:
-                return "video/mp43";
-            case 1196444237:
-            case 1735420525:
-                return "video/mjpeg";
-            default:
-                return null;
-        }
-    }
-
-    private static String getMimeTypeFromTag(int i) {
-        if (i == 1) {
-            return "audio/raw";
-        }
-        if (i == 85) {
-            return "audio/mpeg";
-        }
-        if (i == 255) {
-            return MediaController.AUDIO_MIME_TYPE;
-        }
-        if (i == 8192) {
-            return "audio/ac3";
-        }
-        if (i != 8193) {
-            return null;
-        }
-        return "audio/vnd.dts";
-    }
-
-    private static AviChunk parseBitmapInfoHeader(ParsableByteArray parsableByteArray) {
-        parsableByteArray.skipBytes(4);
-        int readLittleEndianInt = parsableByteArray.readLittleEndianInt();
-        int readLittleEndianInt2 = parsableByteArray.readLittleEndianInt();
-        parsableByteArray.skipBytes(4);
-        int readLittleEndianInt3 = parsableByteArray.readLittleEndianInt();
-        String mimeTypeFromCompression = getMimeTypeFromCompression(readLittleEndianInt3);
-        if (mimeTypeFromCompression != null) {
-            Format.Builder builder = new Format.Builder();
-            builder.setWidth(readLittleEndianInt).setHeight(readLittleEndianInt2).setSampleMimeType(mimeTypeFromCompression);
-            return new StreamFormatChunk(builder.build());
-        }
-        Log.w("StreamFormatChunk", "Ignoring track with unsupported compression " + readLittleEndianInt3);
-        return null;
+    @Override // com.google.android.exoplayer2.extractor.avi.AviChunk
+    public int getType() {
+        return 1718776947;
     }
 
     public static AviChunk parseFrom(int i, ParsableByteArray parsableByteArray) {
@@ -85,6 +25,26 @@ final class StreamFormatChunk implements AviChunk {
         }
         Log.w("StreamFormatChunk", "Ignoring strf box for unsupported track type: " + Util.getTrackTypeString(i));
         return null;
+    }
+
+    public StreamFormatChunk(Format format) {
+        this.format = format;
+    }
+
+    private static AviChunk parseBitmapInfoHeader(ParsableByteArray parsableByteArray) {
+        parsableByteArray.skipBytes(4);
+        int readLittleEndianInt = parsableByteArray.readLittleEndianInt();
+        int readLittleEndianInt2 = parsableByteArray.readLittleEndianInt();
+        parsableByteArray.skipBytes(4);
+        int readLittleEndianInt3 = parsableByteArray.readLittleEndianInt();
+        String mimeTypeFromCompression = getMimeTypeFromCompression(readLittleEndianInt3);
+        if (mimeTypeFromCompression == null) {
+            Log.w("StreamFormatChunk", "Ignoring track with unsupported compression " + readLittleEndianInt3);
+            return null;
+        }
+        Format.Builder builder = new Format.Builder();
+        builder.setWidth(readLittleEndianInt).setHeight(readLittleEndianInt2).setSampleMimeType(mimeTypeFromCompression);
+        return new StreamFormatChunk(builder.build());
     }
 
     private static AviChunk parseWaveFormatEx(ParsableByteArray parsableByteArray) {
@@ -112,8 +72,48 @@ final class StreamFormatChunk implements AviChunk {
         return new StreamFormatChunk(builder.build());
     }
 
-    @Override // com.google.android.exoplayer2.extractor.avi.AviChunk
-    public int getType() {
-        return 1718776947;
+    private static String getMimeTypeFromTag(int i) {
+        if (i == 1) {
+            return "audio/raw";
+        }
+        if (i == 85) {
+            return "audio/mpeg";
+        }
+        if (i == 255) {
+            return MediaController.AUDIO_MIME_TYPE;
+        }
+        if (i == 8192) {
+            return "audio/ac3";
+        }
+        if (i != 8193) {
+            return null;
+        }
+        return "audio/vnd.dts";
+    }
+
+    private static String getMimeTypeFromCompression(int i) {
+        switch (i) {
+            case 808802372:
+            case 877677894:
+            case 1145656883:
+            case 1145656920:
+            case 1482049860:
+            case 1684633208:
+            case 2021026148:
+                return "video/mp4v-es";
+            case 826496577:
+            case 828601953:
+            case 875967048:
+                return MediaController.VIDEO_MIME_TYPE;
+            case 842289229:
+                return "video/mp42";
+            case 859066445:
+                return "video/mp43";
+            case 1196444237:
+            case 1735420525:
+                return "video/mjpeg";
+            default:
+                return null;
+        }
     }
 }

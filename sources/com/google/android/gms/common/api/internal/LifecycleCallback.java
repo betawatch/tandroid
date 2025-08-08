@@ -24,20 +24,6 @@ public class LifecycleCallback {
         return getFragment(new LifecycleActivity(activity));
     }
 
-    public static LifecycleFragment getFragment(ContextWrapper contextWrapper) {
-        throw new UnsupportedOperationException();
-    }
-
-    protected static LifecycleFragment getFragment(LifecycleActivity lifecycleActivity) {
-        if (lifecycleActivity.zzd()) {
-            return zzd.zzc(lifecycleActivity.zzb());
-        }
-        if (lifecycleActivity.zzc()) {
-            return zzb.zzc(lifecycleActivity.zza());
-        }
-        throw new IllegalArgumentException("Can't get fragment for unexpected activity.");
-    }
-
     public void dump(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
     }
 
@@ -66,5 +52,19 @@ public class LifecycleCallback {
     }
 
     public void onStop() {
+    }
+
+    public static LifecycleFragment getFragment(ContextWrapper contextWrapper) {
+        throw new UnsupportedOperationException();
+    }
+
+    protected static LifecycleFragment getFragment(LifecycleActivity lifecycleActivity) {
+        if (lifecycleActivity.zzd()) {
+            return zzd.zzc(lifecycleActivity.zzb());
+        }
+        if (lifecycleActivity.zzc()) {
+            return zzb.zzc(lifecycleActivity.zza());
+        }
+        throw new IllegalArgumentException("Can't get fragment for unexpected activity.");
     }
 }

@@ -16,27 +16,37 @@ final class ProtobufArrayList extends AbstractProtobufList implements RandomAcce
         protobufArrayList.makeImmutable();
     }
 
+    public static ProtobufArrayList emptyList() {
+        return EMPTY_LIST;
+    }
+
     private ProtobufArrayList(Object[] objArr, int i) {
         this.array = objArr;
         this.size = i;
     }
 
-    private static Object[] createArray(int i) {
-        return new Object[i];
-    }
-
-    public static ProtobufArrayList emptyList() {
-        return EMPTY_LIST;
-    }
-
-    private void ensureIndexInRange(int i) {
-        if (i < 0 || i >= this.size) {
-            throw new IndexOutOfBoundsException(makeOutOfBoundsExceptionMessage(i));
+    @Override // androidx.datastore.preferences.protobuf.Internal.ProtobufList
+    public ProtobufArrayList mutableCopyWithCapacity(int i) {
+        if (i < this.size) {
+            throw new IllegalArgumentException();
         }
+        return new ProtobufArrayList(Arrays.copyOf(this.array, i), this.size);
     }
 
-    private String makeOutOfBoundsExceptionMessage(int i) {
-        return "Index:" + i + ", Size:" + this.size;
+    @Override // androidx.datastore.preferences.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public boolean add(Object obj) {
+        ensureIsMutable();
+        int i = this.size;
+        Object[] objArr = this.array;
+        if (i == objArr.length) {
+            this.array = Arrays.copyOf(objArr, ((i * 3) / 2) + 1);
+        }
+        Object[] objArr2 = this.array;
+        int i2 = this.size;
+        this.size = i2 + 1;
+        objArr2[i2] = obj;
+        ((AbstractList) this).modCount++;
+        return true;
     }
 
     @Override // java.util.AbstractList, java.util.List
@@ -60,34 +70,10 @@ final class ProtobufArrayList extends AbstractProtobufList implements RandomAcce
         ((AbstractList) this).modCount++;
     }
 
-    @Override // androidx.datastore.preferences.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public boolean add(Object obj) {
-        ensureIsMutable();
-        int i = this.size;
-        Object[] objArr = this.array;
-        if (i == objArr.length) {
-            this.array = Arrays.copyOf(objArr, ((i * 3) / 2) + 1);
-        }
-        Object[] objArr2 = this.array;
-        int i2 = this.size;
-        this.size = i2 + 1;
-        objArr2[i2] = obj;
-        ((AbstractList) this).modCount++;
-        return true;
-    }
-
     @Override // java.util.AbstractList, java.util.List
     public Object get(int i) {
         ensureIndexInRange(i);
         return this.array[i];
-    }
-
-    @Override // androidx.datastore.preferences.protobuf.Internal.ProtobufList
-    public ProtobufArrayList mutableCopyWithCapacity(int i) {
-        if (i >= this.size) {
-            return new ProtobufArrayList(Arrays.copyOf(this.array, i), this.size);
-        }
-        throw new IllegalArgumentException();
     }
 
     @Override // java.util.AbstractList, java.util.List
@@ -118,5 +104,19 @@ final class ProtobufArrayList extends AbstractProtobufList implements RandomAcce
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public int size() {
         return this.size;
+    }
+
+    private static Object[] createArray(int i) {
+        return new Object[i];
+    }
+
+    private void ensureIndexInRange(int i) {
+        if (i < 0 || i >= this.size) {
+            throw new IndexOutOfBoundsException(makeOutOfBoundsExceptionMessage(i));
+        }
+    }
+
+    private String makeOutOfBoundsExceptionMessage(int i) {
+        return "Index:" + i + ", Size:" + this.size;
     }
 }

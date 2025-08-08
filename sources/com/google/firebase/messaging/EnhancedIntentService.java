@@ -12,7 +12,7 @@ import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.messaging.WithinAppServiceBinder;
 import java.util.concurrent.ExecutorService;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class EnhancedIntentService extends Service {
     static final long MESSAGE_TIMEOUT_S = 20;
     private static final String TAG = "EnhancedIntentService";
@@ -21,52 +21,6 @@ public abstract class EnhancedIntentService extends Service {
     final ExecutorService executor = FcmExecutors.newIntentHandleExecutor();
     private final Object lock = new Object();
     private int runningTasks = 0;
-
-    private void finishTask(Intent intent) {
-        if (intent != null) {
-            WakeLockHolder.completeWakefulIntent(intent);
-        }
-        synchronized (this.lock) {
-            try {
-                int i = this.runningTasks - 1;
-                this.runningTasks = i;
-                if (i == 0) {
-                    stopSelfResultHook(this.lastStartId);
-                }
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onStartCommand$1(Intent intent, Task task) {
-        finishTask(intent);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processIntent$0(Intent intent, TaskCompletionSource taskCompletionSource) {
-        try {
-            handleIntent(intent);
-        } finally {
-            taskCompletionSource.setResult(null);
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public Task processIntent(final Intent intent) {
-        if (handleIntentOnMainThread(intent)) {
-            return Tasks.forResult(null);
-        }
-        final TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        this.executor.execute(new Runnable() { // from class: com.google.firebase.messaging.EnhancedIntentService$$ExternalSyntheticLambda2
-            @Override // java.lang.Runnable
-            public final void run() {
-                EnhancedIntentService.this.lambda$processIntent$0(intent, taskCompletionSource);
-            }
-        });
-        return taskCompletionSource.getTask();
-    }
 
     protected abstract Intent getStartCommandIntent(Intent intent);
 
@@ -96,10 +50,28 @@ public abstract class EnhancedIntentService extends Service {
         return this.binder;
     }
 
-    @Override // android.app.Service
-    public void onDestroy() {
-        this.executor.shutdown();
-        super.onDestroy();
+    /* JADX INFO: Access modifiers changed from: private */
+    public Task processIntent(final Intent intent) {
+        if (handleIntentOnMainThread(intent)) {
+            return Tasks.forResult(null);
+        }
+        final TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
+        this.executor.execute(new Runnable() { // from class: com.google.firebase.messaging.EnhancedIntentService$$ExternalSyntheticLambda2
+            @Override // java.lang.Runnable
+            public final void run() {
+                EnhancedIntentService.this.lambda$processIntent$0(intent, taskCompletionSource);
+            }
+        });
+        return taskCompletionSource.getTask();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$processIntent$0(Intent intent, TaskCompletionSource taskCompletionSource) {
+        try {
+            handleIntent(intent);
+        } finally {
+            taskCompletionSource.setResult(null);
+        }
     }
 
     @Override // android.app.Service
@@ -125,6 +97,34 @@ public abstract class EnhancedIntentService extends Service {
             }
         });
         return 3;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$onStartCommand$1(Intent intent, Task task) {
+        finishTask(intent);
+    }
+
+    @Override // android.app.Service
+    public void onDestroy() {
+        this.executor.shutdown();
+        super.onDestroy();
+    }
+
+    private void finishTask(Intent intent) {
+        if (intent != null) {
+            WakeLockHolder.completeWakefulIntent(intent);
+        }
+        synchronized (this.lock) {
+            try {
+                int i = this.runningTasks - 1;
+                this.runningTasks = i;
+                if (i == 0) {
+                    stopSelfResultHook(this.lastStartId);
+                }
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
     }
 
     boolean stopSelfResultHook(int i) {

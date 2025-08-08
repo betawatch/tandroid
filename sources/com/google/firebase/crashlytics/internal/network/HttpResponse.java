@@ -1,6 +1,6 @@
 package com.google.firebase.crashlytics.internal.network;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class HttpResponse {
     private final String body;
     private final int code;
@@ -10,11 +10,11 @@ public class HttpResponse {
         this.body = str;
     }
 
-    public String body() {
-        return this.body;
-    }
-
     public int code() {
         return this.code;
+    }
+
+    public String body() {
+        return this.body;
     }
 }

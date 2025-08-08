@@ -35,31 +35,6 @@ final class zzft {
         }
     }
 
-    private zzft(String str, char[] cArr, byte[] bArr, boolean z) {
-        this.zze = str;
-        cArr.getClass();
-        this.zzf = cArr;
-        try {
-            int length = cArr.length;
-            int zzb = zzga.zzb(length, RoundingMode.UNNECESSARY);
-            this.zzb = zzb;
-            int numberOfTrailingZeros = Integer.numberOfTrailingZeros(zzb);
-            int i = 1 << (3 - numberOfTrailingZeros);
-            this.zzc = i;
-            this.zzd = zzb >> numberOfTrailingZeros;
-            this.zza = length - 1;
-            this.zzg = bArr;
-            boolean[] zArr = new boolean[i];
-            for (int i2 = 0; i2 < this.zzd; i2++) {
-                zArr[zzga.zza(i2 * 8, this.zzb, RoundingMode.CEILING)] = true;
-            }
-            this.zzh = zArr;
-            this.zzi = false;
-        } catch (ArithmeticException e) {
-            throw new IllegalArgumentException("Illegal alphabet length " + cArr.length, e);
-        }
-    }
-
     public final boolean equals(Object obj) {
         if (obj instanceof zzft) {
             zzft zzftVar = (zzft) obj;
@@ -103,5 +78,30 @@ final class zzft {
 
     public final boolean zzd(char c) {
         return this.zzg[61] != -1;
+    }
+
+    private zzft(String str, char[] cArr, byte[] bArr, boolean z) {
+        this.zze = str;
+        cArr.getClass();
+        this.zzf = cArr;
+        try {
+            int length = cArr.length;
+            int zzb = zzga.zzb(length, RoundingMode.UNNECESSARY);
+            this.zzb = zzb;
+            int numberOfTrailingZeros = Integer.numberOfTrailingZeros(zzb);
+            int i = 1 << (3 - numberOfTrailingZeros);
+            this.zzc = i;
+            this.zzd = zzb >> numberOfTrailingZeros;
+            this.zza = length - 1;
+            this.zzg = bArr;
+            boolean[] zArr = new boolean[i];
+            for (int i2 = 0; i2 < this.zzd; i2++) {
+                zArr[zzga.zza(i2 * 8, this.zzb, RoundingMode.CEILING)] = true;
+            }
+            this.zzh = zArr;
+            this.zzi = false;
+        } catch (ArithmeticException e) {
+            throw new IllegalArgumentException("Illegal alphabet length " + cArr.length, e);
+        }
     }
 }

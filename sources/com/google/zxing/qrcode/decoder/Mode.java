@@ -1,6 +1,6 @@
 package com.google.zxing.qrcode.decoder;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public enum Mode {
     TERMINATOR(new int[]{0, 0, 0}, 0),
     NUMERIC(new int[]{10, 12, 14}, 1),
@@ -55,12 +55,12 @@ public enum Mode {
         throw new IllegalArgumentException();
     }
 
-    public int getBits() {
-        return this.bits;
-    }
-
     public int getCharacterCountBits(Version version) {
         int versionNumber = version.getVersionNumber();
         return this.characterCountBitsForVersions[versionNumber <= 9 ? (char) 0 : versionNumber <= 26 ? (char) 1 : (char) 2];
+    }
+
+    public int getBits() {
+        return this.bits;
     }
 }

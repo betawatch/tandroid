@@ -167,6 +167,14 @@ public abstract class zztp extends zzsh {
         return (zztp) zzb(6, null, null);
     }
 
+    protected final zztm zzv() {
+        return (zztm) zzb(5, null, null);
+    }
+
+    final zztp zzx() {
+        return (zztp) zzb(4, null, null);
+    }
+
     @Override // com.google.android.gms.internal.cast.zzux
     public final int zzu() {
         int i;
@@ -186,13 +194,5 @@ public abstract class zztp extends zzsh {
             }
         }
         return i;
-    }
-
-    protected final zztm zzv() {
-        return (zztm) zzb(5, null, null);
-    }
-
-    final zztp zzx() {
-        return (zztp) zzb(4, null, null);
     }
 }

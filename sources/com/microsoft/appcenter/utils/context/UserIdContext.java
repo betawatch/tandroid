@@ -1,25 +1,32 @@
 package com.microsoft.appcenter.utils.context;
 
 import android.text.TextUtils;
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import com.microsoft.appcenter.utils.AppCenterLog;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.Set;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class UserIdContext {
     private static UserIdContext sInstance;
     private final Set mListeners = Collections.newSetFromMap(new ConcurrentHashMap());
     private String mUserId;
 
-    public static boolean checkUserIdValidForAppCenter(String str) {
-        if (str == null || str.length() <= 256) {
-            return true;
+    public static synchronized UserIdContext getInstance() {
+        UserIdContext userIdContext;
+        synchronized (UserIdContext.class) {
+            try {
+                if (sInstance == null) {
+                    sInstance = new UserIdContext();
+                }
+                userIdContext = sInstance;
+            } catch (Throwable th) {
+                throw th;
+            }
         }
-        AppCenterLog.error("AppCenter", "userId is limited to 256 characters.");
-        return false;
+        return userIdContext;
     }
 
     public static boolean checkUserIdValidForOneCollector(String str) {
@@ -45,19 +52,12 @@ public class UserIdContext {
         return true;
     }
 
-    public static synchronized UserIdContext getInstance() {
-        UserIdContext userIdContext;
-        synchronized (UserIdContext.class) {
-            try {
-                if (sInstance == null) {
-                    sInstance = new UserIdContext();
-                }
-                userIdContext = sInstance;
-            } catch (Throwable th) {
-                throw th;
-            }
+    public static boolean checkUserIdValidForAppCenter(String str) {
+        if (str == null || str.length() <= 256) {
+            return true;
         }
-        return userIdContext;
+        AppCenterLog.error("AppCenter", "userId is limited to 256 characters.");
+        return false;
     }
 
     public static String getPrefixedUserId(String str) {
@@ -65,14 +65,6 @@ public class UserIdContext {
             return str;
         }
         return "c:" + str;
-    }
-
-    private synchronized boolean updateUserId(String str) {
-        if (TextUtils.equals(this.mUserId, str)) {
-            return false;
-        }
-        this.mUserId = str;
-        return true;
     }
 
     public synchronized String getUserId() {
@@ -83,9 +75,17 @@ public class UserIdContext {
         if (updateUserId(str)) {
             Iterator it = this.mListeners.iterator();
             if (it.hasNext()) {
-                ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
+                WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
                 throw null;
             }
         }
+    }
+
+    private synchronized boolean updateUserId(String str) {
+        if (TextUtils.equals(this.mUserId, str)) {
+            return false;
+        }
+        this.mUserId = str;
+        return true;
     }
 }

@@ -49,6 +49,23 @@ class MediaRouteVolumeSlider extends AppCompatSeekBar {
         progressDrawable.setAlpha(i);
     }
 
+    @Override // android.widget.AbsSeekBar
+    public void setThumb(Drawable drawable) {
+        this.mThumb = drawable;
+        if (this.mHideThumb) {
+            drawable = null;
+        }
+        super.setThumb(drawable);
+    }
+
+    public void setHideThumb(boolean z) {
+        if (this.mHideThumb == z) {
+            return;
+        }
+        this.mHideThumb = z;
+        super.setThumb(z ? null : this.mThumb);
+    }
+
     public void setColor(int i) {
         setColor(i, i);
     }
@@ -66,22 +83,5 @@ class MediaRouteVolumeSlider extends AppCompatSeekBar {
             }
             this.mBackgroundColor = i2;
         }
-    }
-
-    public void setHideThumb(boolean z) {
-        if (this.mHideThumb == z) {
-            return;
-        }
-        this.mHideThumb = z;
-        super.setThumb(z ? null : this.mThumb);
-    }
-
-    @Override // android.widget.AbsSeekBar
-    public void setThumb(Drawable drawable) {
-        this.mThumb = drawable;
-        if (this.mHideThumb) {
-            drawable = null;
-        }
-        super.setThumb(drawable);
     }
 }

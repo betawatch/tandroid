@@ -1,6 +1,6 @@
 package kotlinx.coroutines;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class ThreadPoolDispatcherKt {
     public static final ExecutorCoroutineDispatcher newFixedThreadPoolContext(int i, String str) {
         return ThreadPoolDispatcherKt__ThreadPoolDispatcherKt.newFixedThreadPoolContext(i, str);

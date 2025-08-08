@@ -1,16 +1,16 @@
 package com.google.mlkit.common.internal.model;
 
+import com.google.android.gms.internal.mlkit_common.zzsh;
 import com.google.android.gms.internal.mlkit_common.zzss;
-import com.google.android.gms.internal.mlkit_common.zztd;
 import com.google.mlkit.common.sdkinternal.MlKitContext;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class zzg {
     private final MlKitContext zza;
-    private final zzss zzb;
+    private final zzsh zzb;
 
     public zzg(MlKitContext mlKitContext) {
-        zzss zzb = zztd.zzb("common");
+        zzsh zzb = zzss.zzb("common");
         this.zza = mlKitContext;
         this.zzb = zzb;
     }

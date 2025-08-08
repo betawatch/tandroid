@@ -5,10 +5,6 @@ import java.util.NoSuchElementException;
 
 /* loaded from: classes2.dex */
 final class d extends a implements Iterator {
-    d(k[] kVarArr, int i, int i2, ConcurrentHashMap concurrentHashMap) {
-        super(kVarArr, i, i2, concurrentHashMap);
-    }
-
     @Override // java.util.Iterator
     public final Object next() {
         k kVar = this.b;

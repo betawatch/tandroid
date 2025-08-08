@@ -5,13 +5,22 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.io.StringWriter;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class JsonElement {
-    public JsonArray getAsJsonArray() {
-        if (isJsonArray()) {
-            return (JsonArray) this;
-        }
-        throw new IllegalStateException("Not a JSON Array: " + this);
+    public boolean isJsonArray() {
+        return this instanceof JsonArray;
+    }
+
+    public boolean isJsonObject() {
+        return this instanceof JsonObject;
+    }
+
+    public boolean isJsonPrimitive() {
+        return this instanceof JsonPrimitive;
+    }
+
+    public boolean isJsonNull() {
+        return this instanceof JsonNull;
     }
 
     public JsonObject getAsJsonObject() {
@@ -19,6 +28,13 @@ public abstract class JsonElement {
             return (JsonObject) this;
         }
         throw new IllegalStateException("Not a JSON Object: " + this);
+    }
+
+    public JsonArray getAsJsonArray() {
+        if (isJsonArray()) {
+            return (JsonArray) this;
+        }
+        throw new IllegalStateException("Not a JSON Array: " + this);
     }
 
     public JsonPrimitive getAsJsonPrimitive() {
@@ -30,22 +46,6 @@ public abstract class JsonElement {
 
     public String getAsString() {
         throw new UnsupportedOperationException(getClass().getSimpleName());
-    }
-
-    public boolean isJsonArray() {
-        return this instanceof JsonArray;
-    }
-
-    public boolean isJsonNull() {
-        return this instanceof JsonNull;
-    }
-
-    public boolean isJsonObject() {
-        return this instanceof JsonObject;
-    }
-
-    public boolean isJsonPrimitive() {
-        return this instanceof JsonPrimitive;
     }
 
     public String toString() {

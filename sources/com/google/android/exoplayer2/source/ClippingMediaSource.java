@@ -22,79 +22,6 @@ public final class ClippingMediaSource extends WrappingMediaSource {
     private final long startUs;
     private final Timeline.Window window;
 
-    private static final class ClippingTimeline extends ForwardingTimeline {
-        private final long durationUs;
-        private final long endUs;
-        private final boolean isDynamic;
-        private final long startUs;
-
-        public ClippingTimeline(Timeline timeline, long j, long j2) {
-            super(timeline);
-            boolean z = false;
-            if (timeline.getPeriodCount() != 1) {
-                throw new IllegalClippingException(0);
-            }
-            Timeline.Window window = timeline.getWindow(0, new Timeline.Window());
-            long max = Math.max(0L, j);
-            if (!window.isPlaceholder && max != 0 && !window.isSeekable) {
-                throw new IllegalClippingException(1);
-            }
-            long max2 = j2 == Long.MIN_VALUE ? window.durationUs : Math.max(0L, j2);
-            long j3 = window.durationUs;
-            if (j3 != -9223372036854775807L) {
-                max2 = max2 > j3 ? j3 : max2;
-                if (max > max2) {
-                    throw new IllegalClippingException(2);
-                }
-            }
-            this.startUs = max;
-            this.endUs = max2;
-            this.durationUs = max2 == -9223372036854775807L ? -9223372036854775807L : max2 - max;
-            if (window.isDynamic && (max2 == -9223372036854775807L || (j3 != -9223372036854775807L && max2 == j3))) {
-                z = true;
-            }
-            this.isDynamic = z;
-        }
-
-        @Override // com.google.android.exoplayer2.source.ForwardingTimeline, com.google.android.exoplayer2.Timeline
-        public Timeline.Period getPeriod(int i, Timeline.Period period, boolean z) {
-            this.timeline.getPeriod(0, period, z);
-            long positionInWindowUs = period.getPositionInWindowUs() - this.startUs;
-            long j = this.durationUs;
-            return period.set(period.id, period.uid, 0, j == -9223372036854775807L ? -9223372036854775807L : j - positionInWindowUs, positionInWindowUs);
-        }
-
-        @Override // com.google.android.exoplayer2.source.ForwardingTimeline, com.google.android.exoplayer2.Timeline
-        public Timeline.Window getWindow(int i, Timeline.Window window, long j) {
-            this.timeline.getWindow(0, window, 0L);
-            long j2 = window.positionInFirstPeriodUs;
-            long j3 = this.startUs;
-            window.positionInFirstPeriodUs = j2 + j3;
-            window.durationUs = this.durationUs;
-            window.isDynamic = this.isDynamic;
-            long j4 = window.defaultPositionUs;
-            if (j4 != -9223372036854775807L) {
-                long max = Math.max(j4, j3);
-                window.defaultPositionUs = max;
-                long j5 = this.endUs;
-                if (j5 != -9223372036854775807L) {
-                    max = Math.min(max, j5);
-                }
-                window.defaultPositionUs = max - this.startUs;
-            }
-            long usToMs = Util.usToMs(this.startUs);
-            long j6 = window.presentationStartTimeMs;
-            if (j6 != -9223372036854775807L) {
-                window.presentationStartTimeMs = j6 + usToMs;
-            }
-            long j7 = window.windowStartTimeMs;
-            if (j7 != -9223372036854775807L) {
-                window.windowStartTimeMs = j7 + usToMs;
-            }
-            return window;
-        }
-    }
-
     public static final class IllegalClippingException extends IOException {
         public final int reason;
 
@@ -104,7 +31,16 @@ public final class ClippingMediaSource extends WrappingMediaSource {
         }
 
         private static String getReasonDescription(int i) {
-            return i != 0 ? i != 1 ? i != 2 ? "unknown" : "start exceeds end" : "not seekable to start" : "invalid period count";
+            if (i == 0) {
+                return "invalid period count";
+            }
+            if (i == 1) {
+                return "not seekable to start";
+            }
+            if (i == 2) {
+                return "start exceeds end";
+            }
+            return "unknown";
         }
     }
 
@@ -118,6 +54,47 @@ public final class ClippingMediaSource extends WrappingMediaSource {
         this.relativeToDefaultPosition = z3;
         this.mediaPeriods = new ArrayList();
         this.window = new Timeline.Window();
+    }
+
+    @Override // com.google.android.exoplayer2.source.CompositeMediaSource, com.google.android.exoplayer2.source.MediaSource
+    public void maybeThrowSourceInfoRefreshError() {
+        IllegalClippingException illegalClippingException = this.clippingError;
+        if (illegalClippingException != null) {
+            throw illegalClippingException;
+        }
+        super.maybeThrowSourceInfoRefreshError();
+    }
+
+    @Override // com.google.android.exoplayer2.source.MediaSource
+    public MediaPeriod createPeriod(MediaSource.MediaPeriodId mediaPeriodId, Allocator allocator, long j) {
+        ClippingMediaPeriod clippingMediaPeriod = new ClippingMediaPeriod(this.mediaSource.createPeriod(mediaPeriodId, allocator, j), this.enableInitialDiscontinuity, this.periodStartUs, this.periodEndUs);
+        this.mediaPeriods.add(clippingMediaPeriod);
+        return clippingMediaPeriod;
+    }
+
+    @Override // com.google.android.exoplayer2.source.MediaSource
+    public void releasePeriod(MediaPeriod mediaPeriod) {
+        Assertions.checkState(this.mediaPeriods.remove(mediaPeriod));
+        this.mediaSource.releasePeriod(((ClippingMediaPeriod) mediaPeriod).mediaPeriod);
+        if (!this.mediaPeriods.isEmpty() || this.allowDynamicClippingUpdates) {
+            return;
+        }
+        refreshClippedTimeline(((ClippingTimeline) Assertions.checkNotNull(this.clippingTimeline)).timeline);
+    }
+
+    @Override // com.google.android.exoplayer2.source.CompositeMediaSource, com.google.android.exoplayer2.source.BaseMediaSource
+    protected void releaseSourceInternal() {
+        super.releaseSourceInternal();
+        this.clippingError = null;
+        this.clippingTimeline = null;
+    }
+
+    @Override // com.google.android.exoplayer2.source.WrappingMediaSource
+    protected void onChildSourceInfoRefreshed(Timeline timeline) {
+        if (this.clippingError != null) {
+            return;
+        }
+        refreshClippedTimeline(timeline);
     }
 
     private void refreshClippedTimeline(Timeline timeline) {
@@ -158,44 +135,76 @@ public final class ClippingMediaSource extends WrappingMediaSource {
         }
     }
 
-    @Override // com.google.android.exoplayer2.source.MediaSource
-    public MediaPeriod createPeriod(MediaSource.MediaPeriodId mediaPeriodId, Allocator allocator, long j) {
-        ClippingMediaPeriod clippingMediaPeriod = new ClippingMediaPeriod(this.mediaSource.createPeriod(mediaPeriodId, allocator, j), this.enableInitialDiscontinuity, this.periodStartUs, this.periodEndUs);
-        this.mediaPeriods.add(clippingMediaPeriod);
-        return clippingMediaPeriod;
-    }
+    private static final class ClippingTimeline extends ForwardingTimeline {
+        private final long durationUs;
+        private final long endUs;
+        private final boolean isDynamic;
+        private final long startUs;
 
-    @Override // com.google.android.exoplayer2.source.CompositeMediaSource, com.google.android.exoplayer2.source.MediaSource
-    public void maybeThrowSourceInfoRefreshError() {
-        IllegalClippingException illegalClippingException = this.clippingError;
-        if (illegalClippingException != null) {
-            throw illegalClippingException;
+        public ClippingTimeline(Timeline timeline, long j, long j2) {
+            super(timeline);
+            boolean z = false;
+            if (timeline.getPeriodCount() != 1) {
+                throw new IllegalClippingException(0);
+            }
+            Timeline.Window window = timeline.getWindow(0, new Timeline.Window());
+            long max = Math.max(0L, j);
+            if (!window.isPlaceholder && max != 0 && !window.isSeekable) {
+                throw new IllegalClippingException(1);
+            }
+            long max2 = j2 == Long.MIN_VALUE ? window.durationUs : Math.max(0L, j2);
+            long j3 = window.durationUs;
+            if (j3 != -9223372036854775807L) {
+                max2 = max2 > j3 ? j3 : max2;
+                if (max > max2) {
+                    throw new IllegalClippingException(2);
+                }
+            }
+            this.startUs = max;
+            this.endUs = max2;
+            this.durationUs = max2 != -9223372036854775807L ? max2 - max : -9223372036854775807L;
+            if (window.isDynamic && (max2 == -9223372036854775807L || (j3 != -9223372036854775807L && max2 == j3))) {
+                z = true;
+            }
+            this.isDynamic = z;
         }
-        super.maybeThrowSourceInfoRefreshError();
-    }
 
-    @Override // com.google.android.exoplayer2.source.WrappingMediaSource
-    protected void onChildSourceInfoRefreshed(Timeline timeline) {
-        if (this.clippingError != null) {
-            return;
+        @Override // com.google.android.exoplayer2.source.ForwardingTimeline, com.google.android.exoplayer2.Timeline
+        public Timeline.Window getWindow(int i, Timeline.Window window, long j) {
+            this.timeline.getWindow(0, window, 0L);
+            long j2 = window.positionInFirstPeriodUs;
+            long j3 = this.startUs;
+            window.positionInFirstPeriodUs = j2 + j3;
+            window.durationUs = this.durationUs;
+            window.isDynamic = this.isDynamic;
+            long j4 = window.defaultPositionUs;
+            if (j4 != -9223372036854775807L) {
+                long max = Math.max(j4, j3);
+                window.defaultPositionUs = max;
+                long j5 = this.endUs;
+                if (j5 != -9223372036854775807L) {
+                    max = Math.min(max, j5);
+                }
+                window.defaultPositionUs = max - this.startUs;
+            }
+            long usToMs = Util.usToMs(this.startUs);
+            long j6 = window.presentationStartTimeMs;
+            if (j6 != -9223372036854775807L) {
+                window.presentationStartTimeMs = j6 + usToMs;
+            }
+            long j7 = window.windowStartTimeMs;
+            if (j7 != -9223372036854775807L) {
+                window.windowStartTimeMs = j7 + usToMs;
+            }
+            return window;
         }
-        refreshClippedTimeline(timeline);
-    }
 
-    @Override // com.google.android.exoplayer2.source.MediaSource
-    public void releasePeriod(MediaPeriod mediaPeriod) {
-        Assertions.checkState(this.mediaPeriods.remove(mediaPeriod));
-        this.mediaSource.releasePeriod(((ClippingMediaPeriod) mediaPeriod).mediaPeriod);
-        if (!this.mediaPeriods.isEmpty() || this.allowDynamicClippingUpdates) {
-            return;
+        @Override // com.google.android.exoplayer2.source.ForwardingTimeline, com.google.android.exoplayer2.Timeline
+        public Timeline.Period getPeriod(int i, Timeline.Period period, boolean z) {
+            this.timeline.getPeriod(0, period, z);
+            long positionInWindowUs = period.getPositionInWindowUs() - this.startUs;
+            long j = this.durationUs;
+            return period.set(period.id, period.uid, 0, j == -9223372036854775807L ? -9223372036854775807L : j - positionInWindowUs, positionInWindowUs);
         }
-        refreshClippedTimeline(((ClippingTimeline) Assertions.checkNotNull(this.clippingTimeline)).timeline);
-    }
-
-    @Override // com.google.android.exoplayer2.source.CompositeMediaSource, com.google.android.exoplayer2.source.BaseMediaSource
-    protected void releaseSourceInternal() {
-        super.releaseSourceInternal();
-        this.clippingError = null;
-        this.clippingTimeline = null;
     }
 }

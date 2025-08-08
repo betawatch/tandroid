@@ -2,7 +2,7 @@ package androidx.core.content.res;
 
 /* loaded from: classes.dex */
 final class ViewingConditions {
-    static final ViewingConditions DEFAULT;
+    static final ViewingConditions DEFAULT = make(CamUtils.WHITE_POINT_D65, (float) ((CamUtils.yFromLStar(50.0f) * 63.66197723675813d) / 100.0d), 50.0f, 2.0f, false);
     private final float mAw;
     private final float mC;
     private final float mFl;
@@ -14,11 +14,44 @@ final class ViewingConditions {
     private final float[] mRgbD;
     private final float mZ;
 
-    static {
-        float[] fArr = CamUtils.WHITE_POINT_D65;
-        double yFromLStar = CamUtils.yFromLStar(50.0f);
-        Double.isNaN(yFromLStar);
-        DEFAULT = make(fArr, (float) ((yFromLStar * 63.66197723675813d) / 100.0d), 50.0f, 2.0f, false);
+    float getAw() {
+        return this.mAw;
+    }
+
+    float getN() {
+        return this.mN;
+    }
+
+    float getNbb() {
+        return this.mNbb;
+    }
+
+    float getNcb() {
+        return this.mNcb;
+    }
+
+    float getC() {
+        return this.mC;
+    }
+
+    float getNc() {
+        return this.mNc;
+    }
+
+    float[] getRgbD() {
+        return this.mRgbD;
+    }
+
+    float getFl() {
+        return this.mFl;
+    }
+
+    float getFlRoot() {
+        return this.mFlRoot;
+    }
+
+    float getZ() {
+        return this.mZ;
     }
 
     private ViewingConditions(float f, float f2, float f3, float f4, float f5, float f6, float[] fArr, float f7, float f8, float f9) {
@@ -60,22 +93,12 @@ final class ViewingConditions {
         float f13 = 1.0f / ((5.0f * f) + 1.0f);
         float f14 = f13 * f13 * f13 * f13;
         float f15 = 1.0f - f14;
-        double d2 = f;
-        Double.isNaN(d2);
-        float cbrt = (f14 * f) + (0.1f * f15 * f15 * ((float) Math.cbrt(d2 * 5.0d)));
+        float cbrt = (f14 * f) + (0.1f * f15 * f15 * ((float) Math.cbrt(f * 5.0d)));
         float yFromLStar = CamUtils.yFromLStar(f2) / fArr[1];
-        double d3 = yFromLStar;
-        float sqrt = ((float) Math.sqrt(d3)) + 1.48f;
-        float pow = 0.725f / ((float) Math.pow(d3, 0.2d));
-        double d4 = fArr6[0] * cbrt * f9;
-        Double.isNaN(d4);
-        float pow2 = (float) Math.pow(d4 / 100.0d, 0.42d);
-        double d5 = fArr6[1] * cbrt * f10;
-        Double.isNaN(d5);
-        float pow3 = (float) Math.pow(d5 / 100.0d, 0.42d);
-        double d6 = fArr6[2] * cbrt * f11;
-        Double.isNaN(d6);
-        float[] fArr7 = {pow2, pow3, (float) Math.pow(d6 / 100.0d, 0.42d)};
+        double d2 = yFromLStar;
+        float sqrt = ((float) Math.sqrt(d2)) + 1.48f;
+        float pow = 0.725f / ((float) Math.pow(d2, 0.2d));
+        float[] fArr7 = {(float) Math.pow(((fArr6[0] * cbrt) * f9) / 100.0d, 0.42d), (float) Math.pow(((fArr6[1] * cbrt) * f10) / 100.0d, 0.42d), (float) Math.pow(((fArr6[2] * cbrt) * f11) / 100.0d, 0.42d)};
         float f16 = fArr7[0];
         float f17 = (f16 * 400.0f) / (f16 + 27.13f);
         float f18 = fArr7[1];
@@ -83,45 +106,5 @@ final class ViewingConditions {
         float f20 = fArr7[2];
         float[] fArr8 = {f17, f19, (400.0f * f20) / (f20 + 27.13f)};
         return new ViewingConditions(yFromLStar, ((fArr8[0] * 2.0f) + fArr8[1] + (fArr8[2] * 0.05f)) * pow, pow, pow, lerp, f12, fArr6, cbrt, (float) Math.pow(cbrt, 0.25d), sqrt);
-    }
-
-    float getAw() {
-        return this.mAw;
-    }
-
-    float getC() {
-        return this.mC;
-    }
-
-    float getFl() {
-        return this.mFl;
-    }
-
-    float getFlRoot() {
-        return this.mFlRoot;
-    }
-
-    float getN() {
-        return this.mN;
-    }
-
-    float getNbb() {
-        return this.mNbb;
-    }
-
-    float getNc() {
-        return this.mNc;
-    }
-
-    float getNcb() {
-        return this.mNcb;
-    }
-
-    float[] getRgbD() {
-        return this.mRgbD;
-    }
-
-    float getZ() {
-        return this.mZ;
     }
 }

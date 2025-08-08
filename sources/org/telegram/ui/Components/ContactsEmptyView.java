@@ -15,7 +15,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.LinkSpanDrawable;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class ContactsEmptyView extends LinearLayout {
     private LinkSpanDrawable.LinksTextView buttonTextView;
     private int currentAccount;
@@ -76,16 +76,6 @@ public class ContactsEmptyView extends LinearLayout {
         addView(this.buttonTextView, LayoutHelper.createLinear(-2, -2, 49, 0, 0, 0, 14));
     }
 
-    private void setSticker() {
-        this.stickerView.setImageDrawable(new RLottieDrawable(R.raw.utyan_empty, "utyan_empty", AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    protected void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        setSticker();
-    }
-
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: onInviteClick, reason: merged with bridge method [inline-methods] */
     public void lambda$new$0() {
@@ -98,5 +88,15 @@ public class ContactsEmptyView extends LinearLayout {
         String inviteText = ContactsController.getInstance(this.currentAccount).getInviteText(0);
         intent.putExtra("android.intent.extra.TEXT", inviteText);
         findActivity.startActivityForResult(Intent.createChooser(intent, inviteText), 500);
+    }
+
+    private void setSticker() {
+        this.stickerView.setImageDrawable(new RLottieDrawable(R.raw.utyan_empty, "utyan_empty", AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        setSticker();
     }
 }

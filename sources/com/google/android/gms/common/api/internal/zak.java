@@ -48,7 +48,8 @@ public final class zak extends zap {
     @Override // com.google.android.gms.common.api.internal.zap, com.google.android.gms.common.api.internal.LifecycleCallback
     public final void onStart() {
         super.onStart();
-        Log.d("AutoManageHelper", "onStart " + this.zaa + " " + String.valueOf(this.zad));
+        SparseArray sparseArray = this.zad;
+        Log.d("AutoManageHelper", "onStart " + this.zaa + " " + String.valueOf(sparseArray));
         if (this.zab.get() == null) {
             for (int i = 0; i < this.zad.size(); i++) {
                 zaj zai = zai(i);

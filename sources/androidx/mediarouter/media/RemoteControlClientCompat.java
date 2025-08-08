@@ -12,39 +12,45 @@ abstract class RemoteControlClientCompat {
     protected final RemoteControlClient mRcc;
     protected VolumeCallback mVolumeCallback;
 
+    public static final class PlaybackInfo {
+        public int volume;
+        public String volumeControlId;
+        public int volumeMax;
+        public int volumeHandling = 0;
+        public int playbackStream = 3;
+        public int playbackType = 1;
+    }
+
+    public interface VolumeCallback {
+        void onVolumeSetRequest(int i);
+
+        void onVolumeUpdateRequest(int i);
+    }
+
+    public abstract void setPlaybackInfo(PlaybackInfo playbackInfo);
+
+    protected RemoteControlClientCompat(Context context, RemoteControlClient remoteControlClient) {
+        this.mContext = context;
+        this.mRcc = remoteControlClient;
+    }
+
+    public static RemoteControlClientCompat obtain(Context context, RemoteControlClient remoteControlClient) {
+        return new JellybeanImpl(context, remoteControlClient);
+    }
+
+    public RemoteControlClient getRemoteControlClient() {
+        return this.mRcc;
+    }
+
+    public void setVolumeCallback(VolumeCallback volumeCallback) {
+        this.mVolumeCallback = volumeCallback;
+    }
+
     static class JellybeanImpl extends RemoteControlClientCompat {
         private boolean mRegistered;
         private final android.media.MediaRouter mRouter;
         private final MediaRouter.UserRouteInfo mUserRoute;
         private final MediaRouter.RouteCategory mUserRouteCategory;
-
-        private static final class VolumeCallbackWrapper implements MediaRouterUtils.VolumeCallback {
-            private final WeakReference mImplWeak;
-
-            public VolumeCallbackWrapper(JellybeanImpl jellybeanImpl) {
-                this.mImplWeak = new WeakReference(jellybeanImpl);
-            }
-
-            @Override // androidx.mediarouter.media.MediaRouterUtils.VolumeCallback
-            public void onVolumeSetRequest(MediaRouter.RouteInfo routeInfo, int i) {
-                VolumeCallback volumeCallback;
-                JellybeanImpl jellybeanImpl = (JellybeanImpl) this.mImplWeak.get();
-                if (jellybeanImpl == null || (volumeCallback = jellybeanImpl.mVolumeCallback) == null) {
-                    return;
-                }
-                volumeCallback.onVolumeSetRequest(i);
-            }
-
-            @Override // androidx.mediarouter.media.MediaRouterUtils.VolumeCallback
-            public void onVolumeUpdateRequest(MediaRouter.RouteInfo routeInfo, int i) {
-                VolumeCallback volumeCallback;
-                JellybeanImpl jellybeanImpl = (JellybeanImpl) this.mImplWeak.get();
-                if (jellybeanImpl == null || (volumeCallback = jellybeanImpl.mVolumeCallback) == null) {
-                    return;
-                }
-                volumeCallback.onVolumeUpdateRequest(i);
-            }
-        }
 
         JellybeanImpl(Context context, RemoteControlClient remoteControlClient) {
             super(context, remoteControlClient);
@@ -69,39 +75,33 @@ abstract class RemoteControlClientCompat {
             this.mUserRoute.setVolumeCallback(MediaRouterUtils.createVolumeCallback(new VolumeCallbackWrapper(this)));
             this.mUserRoute.setRemoteControlClient(this.mRcc);
         }
-    }
 
-    public static final class PlaybackInfo {
-        public int volume;
-        public String volumeControlId;
-        public int volumeMax;
-        public int volumeHandling = 0;
-        public int playbackStream = 3;
-        public int playbackType = 1;
-    }
+        private static final class VolumeCallbackWrapper implements MediaRouterUtils.VolumeCallback {
+            private final WeakReference mImplWeak;
 
-    public interface VolumeCallback {
-        void onVolumeSetRequest(int i);
+            public VolumeCallbackWrapper(JellybeanImpl jellybeanImpl) {
+                this.mImplWeak = new WeakReference(jellybeanImpl);
+            }
 
-        void onVolumeUpdateRequest(int i);
-    }
+            @Override // androidx.mediarouter.media.MediaRouterUtils.VolumeCallback
+            public void onVolumeUpdateRequest(MediaRouter.RouteInfo routeInfo, int i) {
+                VolumeCallback volumeCallback;
+                JellybeanImpl jellybeanImpl = (JellybeanImpl) this.mImplWeak.get();
+                if (jellybeanImpl == null || (volumeCallback = jellybeanImpl.mVolumeCallback) == null) {
+                    return;
+                }
+                volumeCallback.onVolumeUpdateRequest(i);
+            }
 
-    protected RemoteControlClientCompat(Context context, RemoteControlClient remoteControlClient) {
-        this.mContext = context;
-        this.mRcc = remoteControlClient;
-    }
-
-    public static RemoteControlClientCompat obtain(Context context, RemoteControlClient remoteControlClient) {
-        return new JellybeanImpl(context, remoteControlClient);
-    }
-
-    public RemoteControlClient getRemoteControlClient() {
-        return this.mRcc;
-    }
-
-    public abstract void setPlaybackInfo(PlaybackInfo playbackInfo);
-
-    public void setVolumeCallback(VolumeCallback volumeCallback) {
-        this.mVolumeCallback = volumeCallback;
+            @Override // androidx.mediarouter.media.MediaRouterUtils.VolumeCallback
+            public void onVolumeSetRequest(MediaRouter.RouteInfo routeInfo, int i) {
+                VolumeCallback volumeCallback;
+                JellybeanImpl jellybeanImpl = (JellybeanImpl) this.mImplWeak.get();
+                if (jellybeanImpl == null || (volumeCallback = jellybeanImpl.mVolumeCallback) == null) {
+                    return;
+                }
+                volumeCallback.onVolumeSetRequest(i);
+            }
+        }
     }
 }

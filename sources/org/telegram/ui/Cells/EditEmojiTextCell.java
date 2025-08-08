@@ -46,6 +46,85 @@ public abstract class EditEmojiTextCell extends FrameLayout {
     private boolean showLimitWhenFocused;
     private int showLimitWhenNear;
 
+    protected void onFocusChanged(boolean z) {
+    }
+
+    protected void onTextChanged(CharSequence charSequence) {
+    }
+
+    public void setShowLimitWhenEmpty(boolean z) {
+        this.showLimitWhenEmpty = z;
+        if (z) {
+            updateLimitText();
+        }
+    }
+
+    public void setShowLimitWhenNear(int i) {
+        this.showLimitWhenNear = i;
+        updateLimitText();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void updateLimitText() {
+        int i;
+        EditTextEmoji editTextEmoji = this.editTextEmoji;
+        if (editTextEmoji == null || editTextEmoji.getEditText() == null) {
+            return;
+        }
+        this.limitCount = this.maxLength - getText().length();
+        AnimatedTextView.AnimatedTextDrawable animatedTextDrawable = this.limit;
+        String str = "";
+        if ((!TextUtils.isEmpty(getText()) || this.showLimitWhenEmpty) && ((!this.showLimitWhenFocused || (this.focused && !this.autofocused)) && ((i = this.showLimitWhenNear) == -1 || this.limitCount <= i))) {
+            str = "" + this.limitCount;
+        }
+        animatedTextDrawable.setText(str);
+    }
+
+    public void whenHitEnter(final Runnable runnable) {
+        this.editTextEmoji.getEditText().setImeOptions(6);
+        this.editTextEmoji.getEditText().setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.Cells.EditEmojiTextCell.1
+            @Override // android.widget.TextView.OnEditorActionListener
+            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+                if (i != 6) {
+                    return false;
+                }
+                runnable.run();
+                return true;
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$hideKeyboardOnEnter$0() {
+        AndroidUtilities.hideKeyboard(this.editTextEmoji.getEditText());
+    }
+
+    public void hideKeyboardOnEnter() {
+        whenHitEnter(new Runnable() { // from class: org.telegram.ui.Cells.EditEmojiTextCell$$ExternalSyntheticLambda0
+            @Override // java.lang.Runnable
+            public final void run() {
+                EditEmojiTextCell.this.lambda$hideKeyboardOnEnter$0();
+            }
+        });
+    }
+
+    public void setShowLimitOnFocus(boolean z) {
+        this.showLimitWhenFocused = z;
+    }
+
+    public int emojiCacheType() {
+        return AnimatedEmojiDrawable.getCacheTypeForEnterView();
+    }
+
+    public void setEmojiViewCacheType(int i) {
+        this.editTextEmoji.setEmojiViewCacheType(i);
+    }
+
+    public EditEmojiTextCell setAllowEntities(boolean z) {
+        this.allowEntities = z;
+        return this;
+    }
+
     public EditEmojiTextCell(Context context, SizeNotifierFrameLayout sizeNotifierFrameLayout, String str, final boolean z, final int i, int i2, final Theme.ResourcesProvider resourcesProvider) {
         super(context);
         float f;
@@ -58,14 +137,26 @@ public abstract class EditEmojiTextCell extends FrameLayout {
         animatedTextDrawable.setGravity(5);
         this.maxLength = i;
         EditTextEmoji editTextEmoji = new EditTextEmoji(context, sizeNotifierFrameLayout, null, i2, true) { // from class: org.telegram.ui.Cells.EditEmojiTextCell.2
-            @Override // org.telegram.ui.Components.EditTextEmoji
-            protected boolean allowEntities() {
-                return EditEmojiTextCell.this.allowEntities && super.allowEntities();
+            @Override // android.view.View
+            protected boolean verifyDrawable(Drawable drawable) {
+                return drawable == EditEmojiTextCell.this.limit || super.verifyDrawable(drawable);
             }
 
-            @Override // org.telegram.ui.Components.EditTextEmoji
-            public int emojiCacheType() {
-                return EditEmojiTextCell.this.emojiCacheType();
+            @Override // android.view.View
+            protected void onDraw(Canvas canvas) {
+                canvas.save();
+                canvas.clipRect(getScrollX() + getPaddingLeft(), 0, (getScrollX() + getWidth()) - getPaddingRight(), getHeight());
+                super.onDraw(canvas);
+                canvas.restore();
+                EditEmojiTextCell editEmojiTextCell = EditEmojiTextCell.this;
+                AnimatedColor animatedColor = editEmojiTextCell.limitColor;
+                if (animatedColor != null) {
+                    editEmojiTextCell.limit.setTextColor(animatedColor.set(Theme.getColor(editEmojiTextCell.limitCount <= 0 ? Theme.key_text_RedRegular : Theme.key_dialogSearchHint, resourcesProvider)));
+                }
+                int min = Math.min(AndroidUtilities.dp(48.0f), getHeight());
+                float f2 = z ? 0.0f : -AndroidUtilities.dp(1.0f);
+                EditEmojiTextCell.this.limit.setBounds(getScrollX(), (getHeight() + f2) - min, (getScrollX() + getWidth()) - AndroidUtilities.dp((z ? 0 : 44) + 12), f2 + getHeight());
+                EditEmojiTextCell.this.limit.draw(canvas);
             }
 
             @Override // org.telegram.ui.Components.EditTextEmoji
@@ -93,26 +184,14 @@ public abstract class EditEmojiTextCell extends FrameLayout {
                 menu.add(i4, R.id.menu_regular, 10, LocaleController.getString(R.string.Regular));
             }
 
-            @Override // android.view.View
-            protected void onDraw(Canvas canvas) {
-                canvas.save();
-                canvas.clipRect(getScrollX() + getPaddingLeft(), 0, (getScrollX() + getWidth()) - getPaddingRight(), getHeight());
-                super.onDraw(canvas);
-                canvas.restore();
-                EditEmojiTextCell editEmojiTextCell = EditEmojiTextCell.this;
-                AnimatedColor animatedColor = editEmojiTextCell.limitColor;
-                if (animatedColor != null) {
-                    editEmojiTextCell.limit.setTextColor(animatedColor.set(Theme.getColor(editEmojiTextCell.limitCount <= 0 ? Theme.key_text_RedRegular : Theme.key_dialogSearchHint, resourcesProvider)));
-                }
-                int min = Math.min(AndroidUtilities.dp(48.0f), getHeight());
-                float f2 = z ? 0.0f : -AndroidUtilities.dp(1.0f);
-                EditEmojiTextCell.this.limit.setBounds(getScrollX(), (getHeight() + f2) - min, (getScrollX() + getWidth()) - AndroidUtilities.dp((z ? 0 : 44) + 12), f2 + getHeight());
-                EditEmojiTextCell.this.limit.draw(canvas);
+            @Override // org.telegram.ui.Components.EditTextEmoji
+            protected boolean allowEntities() {
+                return EditEmojiTextCell.this.allowEntities && super.allowEntities();
             }
 
-            @Override // android.view.View
-            protected boolean verifyDrawable(Drawable drawable) {
-                return drawable == EditEmojiTextCell.this.limit || super.verifyDrawable(drawable);
+            @Override // org.telegram.ui.Components.EditTextEmoji
+            public int emojiCacheType() {
+                return EditEmojiTextCell.this.emojiCacheType();
             }
         };
         this.editTextEmoji = editTextEmoji;
@@ -155,6 +234,18 @@ public abstract class EditEmojiTextCell extends FrameLayout {
         editText.setCursorWidth(1.5f);
         editText.addTextChangedListener(new TextWatcher() { // from class: org.telegram.ui.Cells.EditEmojiTextCell.4
             @Override // android.text.TextWatcher
+            public void onTextChanged(CharSequence charSequence, int i4, int i5, int i6) {
+            }
+
+            @Override // android.text.TextWatcher
+            public void beforeTextChanged(CharSequence charSequence, int i4, int i5, int i6) {
+                if (EditEmojiTextCell.this.ignoreEditText) {
+                    return;
+                }
+                EditEmojiTextCell.this.autofocused = false;
+            }
+
+            @Override // android.text.TextWatcher
             public void afterTextChanged(Editable editable) {
                 if (!EditEmojiTextCell.this.ignoreEditText) {
                     if (i > 0 && editable != null && editable.length() > i) {
@@ -183,18 +274,6 @@ public abstract class EditEmojiTextCell extends FrameLayout {
                 animatedTextDrawable2.cancelAnimation();
                 EditEmojiTextCell.this.updateLimitText();
             }
-
-            @Override // android.text.TextWatcher
-            public void beforeTextChanged(CharSequence charSequence, int i4, int i5, int i6) {
-                if (EditEmojiTextCell.this.ignoreEditText) {
-                    return;
-                }
-                EditEmojiTextCell.this.autofocused = false;
-            }
-
-            @Override // android.text.TextWatcher
-            public void onTextChanged(CharSequence charSequence, int i4, int i5, int i6) {
-            }
         });
         editText.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: org.telegram.ui.Cells.EditEmojiTextCell.5
             @Override // android.view.View.OnFocusChangeListener
@@ -210,42 +289,21 @@ public abstract class EditEmojiTextCell extends FrameLayout {
         updateLimitText();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$hideKeyboardOnEnter$0() {
-        AndroidUtilities.hideKeyboard(this.editTextEmoji.getEditText());
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public void updateLimitText() {
-        int i;
+    public void setText(CharSequence charSequence) {
+        this.ignoreEditText = true;
+        this.editTextEmoji.setText(charSequence);
         EditTextEmoji editTextEmoji = this.editTextEmoji;
-        if (editTextEmoji == null || editTextEmoji.getEditText() == null) {
-            return;
-        }
-        this.limitCount = this.maxLength - getText().length();
-        AnimatedTextView.AnimatedTextDrawable animatedTextDrawable = this.limit;
-        String str = "";
-        if ((!TextUtils.isEmpty(getText()) || this.showLimitWhenEmpty) && ((!this.showLimitWhenFocused || (this.focused && !this.autofocused)) && ((i = this.showLimitWhenNear) == -1 || this.limitCount <= i))) {
-            str = "" + this.limitCount;
-        }
-        animatedTextDrawable.setText(str);
-    }
-
-    public int emojiCacheType() {
-        return AnimatedEmojiDrawable.getCacheTypeForEnterView();
+        editTextEmoji.setSelection(editTextEmoji.getText().length());
+        this.ignoreEditText = false;
     }
 
     public CharSequence getText() {
         return this.editTextEmoji.getText();
     }
 
-    public void hideKeyboardOnEnter() {
-        whenHitEnter(new Runnable() { // from class: org.telegram.ui.Cells.EditEmojiTextCell$$ExternalSyntheticLambda0
-            @Override // java.lang.Runnable
-            public final void run() {
-                EditEmojiTextCell.this.lambda$hideKeyboardOnEnter$0();
-            }
-        });
+    public void setDivider(boolean z) {
+        this.needDivider = z;
+        setWillNotDraw(!z);
     }
 
     @Override // android.view.View
@@ -256,66 +314,8 @@ public abstract class EditEmojiTextCell extends FrameLayout {
         }
     }
 
-    protected void onFocusChanged(boolean z) {
-    }
-
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
-    }
-
-    protected void onTextChanged(CharSequence charSequence) {
-    }
-
-    public EditEmojiTextCell setAllowEntities(boolean z) {
-        this.allowEntities = z;
-        return this;
-    }
-
-    public void setDivider(boolean z) {
-        this.needDivider = z;
-        setWillNotDraw(!z);
-    }
-
-    public void setEmojiViewCacheType(int i) {
-        this.editTextEmoji.setEmojiViewCacheType(i);
-    }
-
-    public void setShowLimitOnFocus(boolean z) {
-        this.showLimitWhenFocused = z;
-    }
-
-    public void setShowLimitWhenEmpty(boolean z) {
-        this.showLimitWhenEmpty = z;
-        if (z) {
-            updateLimitText();
-        }
-    }
-
-    public void setShowLimitWhenNear(int i) {
-        this.showLimitWhenNear = i;
-        updateLimitText();
-    }
-
-    public void setText(CharSequence charSequence) {
-        this.ignoreEditText = true;
-        this.editTextEmoji.setText(charSequence);
-        EditTextEmoji editTextEmoji = this.editTextEmoji;
-        editTextEmoji.setSelection(editTextEmoji.getText().length());
-        this.ignoreEditText = false;
-    }
-
-    public void whenHitEnter(final Runnable runnable) {
-        this.editTextEmoji.getEditText().setImeOptions(6);
-        this.editTextEmoji.getEditText().setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.Cells.EditEmojiTextCell.1
-            @Override // android.widget.TextView.OnEditorActionListener
-            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
-                if (i != 6) {
-                    return false;
-                }
-                runnable.run();
-                return true;
-            }
-        });
     }
 }

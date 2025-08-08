@@ -17,7 +17,10 @@ public abstract class NavUtils {
             return null;
         }
         ComponentName componentName2 = new ComponentName(componentName.getPackageName(), parentActivityName);
-        return getParentActivityName(context, componentName2) == null ? Intent.makeMainActivity(componentName2) : new Intent().setComponent(componentName2);
+        if (getParentActivityName(context, componentName2) == null) {
+            return Intent.makeMainActivity(componentName2);
+        }
+        return new Intent().setComponent(componentName2);
     }
 
     public static String getParentActivityName(Activity activity) {

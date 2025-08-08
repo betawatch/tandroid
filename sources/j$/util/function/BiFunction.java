@@ -1,7 +1,5 @@
 package j$.util.function;
 
-import java.util.function.BinaryOperator;
-
 /* loaded from: classes2.dex */
 public interface BiFunction<T, U, R> {
 
@@ -16,12 +14,12 @@ public interface BiFunction<T, U, R> {
             if (biFunction == null) {
                 return null;
             }
-            return biFunction instanceof b ? ((b) biFunction).a : biFunction instanceof BinaryOperator ? d.a((BinaryOperator) biFunction) : new VivifiedWrapper(biFunction);
+            return biFunction instanceof b ? ((b) biFunction).a : biFunction instanceof java.util.function.BinaryOperator ? d.a((java.util.function.BinaryOperator) biFunction) : new VivifiedWrapper(biFunction);
         }
 
         @Override // j$.util.function.BiFunction
         public final /* synthetic */ BiFunction andThen(Function function) {
-            return convert(this.a.andThen(x.a(function)));
+            return convert(this.a.andThen(z.a(function)));
         }
 
         @Override // j$.util.function.BiFunction
@@ -42,7 +40,14 @@ public interface BiFunction<T, U, R> {
         }
     }
 
-    BiFunction andThen(Function function);
+    <V> BiFunction<T, U, V> andThen(Function<? super R, ? extends V> function);
 
-    Object apply(Object obj, Object obj2);
+    R apply(T t, U u);
+
+    public final /* synthetic */ class -CC {
+        public static BiFunction $default$andThen(BiFunction biFunction, Function function) {
+            function.getClass();
+            return new j$.util.concurrent.s(biFunction, function);
+        }
+    }
 }

@@ -17,6 +17,10 @@ public final class LoadEventInfo {
     public final Map responseHeaders;
     public final Uri uri;
 
+    public static long getNewId() {
+        return idSource.getAndIncrement();
+    }
+
     public LoadEventInfo(long j, DataSpec dataSpec, long j2) {
         this(j, dataSpec, dataSpec.uri, Collections.emptyMap(), j2, 0L, 0L);
     }
@@ -29,9 +33,5 @@ public final class LoadEventInfo {
         this.elapsedRealtimeMs = j2;
         this.loadDurationMs = j3;
         this.bytesLoaded = j4;
-    }
-
-    public static long getNewId() {
-        return idSource.getAndIncrement();
     }
 }

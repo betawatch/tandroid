@@ -19,16 +19,16 @@ public final class zaf extends com.google.android.gms.internal.base.zaa implemen
 
     public final void zaf(IAccountAccessor iAccountAccessor, int i, boolean z) {
         Parcel zaa = zaa();
-        com.google.android.gms.internal.base.zac.zae(zaa, iAccountAccessor);
+        com.google.android.gms.internal.base.zac.zad(zaa, iAccountAccessor);
         zaa.writeInt(i);
-        com.google.android.gms.internal.base.zac.zac(zaa, z);
+        zaa.writeInt(z ? 1 : 0);
         zac(9, zaa);
     }
 
     public final void zag(zai zaiVar, zae zaeVar) {
         Parcel zaa = zaa();
-        com.google.android.gms.internal.base.zac.zad(zaa, zaiVar);
-        com.google.android.gms.internal.base.zac.zae(zaa, zaeVar);
+        com.google.android.gms.internal.base.zac.zac(zaa, zaiVar);
+        com.google.android.gms.internal.base.zac.zad(zaa, zaeVar);
         zac(12, zaa);
     }
 }

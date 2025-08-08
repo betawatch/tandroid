@@ -36,22 +36,9 @@ final class BackStackState implements Parcelable {
     final ArrayList mSharedElementTargetNames;
     final int mTransition;
 
-    public BackStackState(Parcel parcel) {
-        this.mOps = parcel.createIntArray();
-        this.mFragmentWhos = parcel.createStringArrayList();
-        this.mOldMaxLifecycleStates = parcel.createIntArray();
-        this.mCurrentMaxLifecycleStates = parcel.createIntArray();
-        this.mTransition = parcel.readInt();
-        this.mName = parcel.readString();
-        this.mIndex = parcel.readInt();
-        this.mBreadCrumbTitleRes = parcel.readInt();
-        Parcelable.Creator creator = TextUtils.CHAR_SEQUENCE_CREATOR;
-        this.mBreadCrumbTitleText = (CharSequence) creator.createFromParcel(parcel);
-        this.mBreadCrumbShortTitleRes = parcel.readInt();
-        this.mBreadCrumbShortTitleText = (CharSequence) creator.createFromParcel(parcel);
-        this.mSharedElementSourceNames = parcel.createStringArrayList();
-        this.mSharedElementTargetNames = parcel.createStringArrayList();
-        this.mReorderingAllowed = parcel.readInt() != 0;
+    @Override // android.os.Parcelable
+    public int describeContents() {
+        return 0;
     }
 
     public BackStackState(BackStackRecord backStackRecord) {
@@ -93,9 +80,22 @@ final class BackStackState implements Parcelable {
         this.mReorderingAllowed = backStackRecord.mReorderingAllowed;
     }
 
-    @Override // android.os.Parcelable
-    public int describeContents() {
-        return 0;
+    public BackStackState(Parcel parcel) {
+        this.mOps = parcel.createIntArray();
+        this.mFragmentWhos = parcel.createStringArrayList();
+        this.mOldMaxLifecycleStates = parcel.createIntArray();
+        this.mCurrentMaxLifecycleStates = parcel.createIntArray();
+        this.mTransition = parcel.readInt();
+        this.mName = parcel.readString();
+        this.mIndex = parcel.readInt();
+        this.mBreadCrumbTitleRes = parcel.readInt();
+        Parcelable.Creator creator = TextUtils.CHAR_SEQUENCE_CREATOR;
+        this.mBreadCrumbTitleText = (CharSequence) creator.createFromParcel(parcel);
+        this.mBreadCrumbShortTitleRes = parcel.readInt();
+        this.mBreadCrumbShortTitleText = (CharSequence) creator.createFromParcel(parcel);
+        this.mSharedElementSourceNames = parcel.createStringArrayList();
+        this.mSharedElementTargetNames = parcel.createStringArrayList();
+        this.mReorderingAllowed = parcel.readInt() != 0;
     }
 
     public BackStackRecord instantiate(FragmentManager fragmentManager) {
@@ -110,7 +110,11 @@ final class BackStackState implements Parcelable {
                 Log.v("FragmentManager", "Instantiate " + backStackRecord + " op #" + i2 + " base fragment #" + this.mOps[i3]);
             }
             String str = (String) this.mFragmentWhos.get(i2);
-            op.mFragment = str != null ? fragmentManager.findActiveFragment(str) : null;
+            if (str != null) {
+                op.mFragment = fragmentManager.findActiveFragment(str);
+            } else {
+                op.mFragment = null;
+            }
             op.mOldMaxState = Lifecycle.State.values()[this.mOldMaxLifecycleStates[i2]];
             op.mCurrentMaxState = Lifecycle.State.values()[this.mCurrentMaxLifecycleStates[i2]];
             int[] iArr = this.mOps;

@@ -16,14 +16,11 @@ class MediaRouterActiveScanThrottlingHelper {
         this.mUpdateDiscoveryRequestRunnable = runnable;
     }
 
-    public boolean finalizeActiveScanAndScheduleSuppressActiveScanRunnable() {
-        if (this.mActiveScan) {
-            long j = this.mSuppressActiveScanTimeout;
-            if (j > 0) {
-                this.mHandler.postDelayed(this.mUpdateDiscoveryRequestRunnable, j);
-            }
-        }
-        return this.mActiveScan;
+    public void reset() {
+        this.mSuppressActiveScanTimeout = 0L;
+        this.mActiveScan = false;
+        this.mCurrentTime = SystemClock.elapsedRealtime();
+        this.mHandler.removeCallbacks(this.mUpdateDiscoveryRequestRunnable);
     }
 
     public void requestActiveScan(boolean z, long j) {
@@ -37,10 +34,13 @@ class MediaRouterActiveScanThrottlingHelper {
         }
     }
 
-    public void reset() {
-        this.mSuppressActiveScanTimeout = 0L;
-        this.mActiveScan = false;
-        this.mCurrentTime = SystemClock.elapsedRealtime();
-        this.mHandler.removeCallbacks(this.mUpdateDiscoveryRequestRunnable);
+    public boolean finalizeActiveScanAndScheduleSuppressActiveScanRunnable() {
+        if (this.mActiveScan) {
+            long j = this.mSuppressActiveScanTimeout;
+            if (j > 0) {
+                this.mHandler.postDelayed(this.mUpdateDiscoveryRequestRunnable, j);
+            }
+        }
+        return this.mActiveScan;
     }
 }

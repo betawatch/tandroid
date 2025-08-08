@@ -3,8 +3,8 @@ package androidx.sharetarget;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.IntentFilter;
+import android.graphics.drawable.Icon;
 import android.os.Bundle;
-import android.service.chooser.ChooserTarget;
 import android.service.chooser.ChooserTargetService;
 import android.util.Log;
 import androidx.core.content.pm.ShortcutInfoCompat;
@@ -18,60 +18,6 @@ import java.util.List;
 
 /* loaded from: classes.dex */
 public class ChooserTargetServiceCompat extends ChooserTargetService {
-
-    static class ShortcutHolder implements Comparable {
-        private final ShortcutInfoCompat mShortcut;
-        private final ComponentName mTargetClass;
-
-        ShortcutHolder(ShortcutInfoCompat shortcutInfoCompat, ComponentName componentName) {
-            this.mShortcut = shortcutInfoCompat;
-            this.mTargetClass = componentName;
-        }
-
-        @Override // java.lang.Comparable
-        public int compareTo(ShortcutHolder shortcutHolder) {
-            return getShortcut().getRank() - shortcutHolder.getShortcut().getRank();
-        }
-
-        ShortcutInfoCompat getShortcut() {
-            return this.mShortcut;
-        }
-
-        ComponentName getTargetClass() {
-            return this.mTargetClass;
-        }
-    }
-
-    static List convertShortcutsToChooserTargets(ShortcutInfoCompatSaverImpl shortcutInfoCompatSaverImpl, List list) {
-        IconCompat iconCompat;
-        if (list.isEmpty()) {
-            return new ArrayList();
-        }
-        Collections.sort(list);
-        ArrayList arrayList = new ArrayList();
-        int rank = ((ShortcutHolder) list.get(0)).getShortcut().getRank();
-        Iterator it = list.iterator();
-        float f = 1.0f;
-        while (it.hasNext()) {
-            ShortcutHolder shortcutHolder = (ShortcutHolder) it.next();
-            ShortcutInfoCompat shortcut = shortcutHolder.getShortcut();
-            try {
-                iconCompat = shortcutInfoCompatSaverImpl.getShortcutIcon(shortcut.getId());
-            } catch (Exception e) {
-                Log.e("ChooserServiceCompat", "Failed to retrieve shortcut icon: ", e);
-                iconCompat = null;
-            }
-            Bundle bundle = new Bundle();
-            bundle.putString("android.intent.extra.shortcut.ID", shortcut.getId());
-            if (rank != shortcut.getRank()) {
-                f -= 0.01f;
-                rank = shortcut.getRank();
-            }
-            arrayList.add(new ChooserTarget(shortcut.getShortLabel(), iconCompat != null ? iconCompat.toIcon() : null, f, shortcutHolder.getTargetClass(), bundle));
-        }
-        return arrayList;
-    }
-
     @Override // android.service.chooser.ChooserTargetService
     public List onGetChooserTargets(ComponentName componentName, IntentFilter intentFilter) {
         Context applicationContext;
@@ -121,6 +67,65 @@ public class ChooserTargetServiceCompat extends ChooserTargetService {
         } catch (Exception e) {
             Log.e("ChooserServiceCompat", "Failed to retrieve shortcuts: ", e);
             return Collections.emptyList();
+        }
+    }
+
+    static List convertShortcutsToChooserTargets(ShortcutInfoCompatSaverImpl shortcutInfoCompatSaverImpl, List list) {
+        IconCompat iconCompat;
+        if (list.isEmpty()) {
+            return new ArrayList();
+        }
+        Collections.sort(list);
+        ArrayList arrayList = new ArrayList();
+        int rank = ((ShortcutHolder) list.get(0)).getShortcut().getRank();
+        Iterator it = list.iterator();
+        float f = 1.0f;
+        while (it.hasNext()) {
+            ShortcutHolder shortcutHolder = (ShortcutHolder) it.next();
+            ShortcutInfoCompat shortcut = shortcutHolder.getShortcut();
+            Icon icon = null;
+            try {
+                iconCompat = shortcutInfoCompatSaverImpl.getShortcutIcon(shortcut.getId());
+            } catch (Exception e) {
+                Log.e("ChooserServiceCompat", "Failed to retrieve shortcut icon: ", e);
+                iconCompat = null;
+            }
+            Bundle bundle = new Bundle();
+            bundle.putString("android.intent.extra.shortcut.ID", shortcut.getId());
+            if (rank != shortcut.getRank()) {
+                f -= 0.01f;
+                rank = shortcut.getRank();
+            }
+            ChooserTargetServiceCompat$$ExternalSyntheticApiModelOutline2.m();
+            CharSequence shortLabel = shortcut.getShortLabel();
+            if (iconCompat != null) {
+                icon = iconCompat.toIcon();
+            }
+            arrayList.add(ChooserTargetServiceCompat$$ExternalSyntheticApiModelOutline1.m(shortLabel, icon, f, shortcutHolder.getTargetClass(), bundle));
+        }
+        return arrayList;
+    }
+
+    static class ShortcutHolder implements Comparable {
+        private final ShortcutInfoCompat mShortcut;
+        private final ComponentName mTargetClass;
+
+        ShortcutHolder(ShortcutInfoCompat shortcutInfoCompat, ComponentName componentName) {
+            this.mShortcut = shortcutInfoCompat;
+            this.mTargetClass = componentName;
+        }
+
+        ShortcutInfoCompat getShortcut() {
+            return this.mShortcut;
+        }
+
+        ComponentName getTargetClass() {
+            return this.mTargetClass;
+        }
+
+        @Override // java.lang.Comparable
+        public int compareTo(ShortcutHolder shortcutHolder) {
+            return getShortcut().getRank() - shortcutHolder.getShortcut().getRank();
         }
     }
 }

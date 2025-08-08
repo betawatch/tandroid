@@ -15,26 +15,6 @@ public class SoftwareVideoEncoderFactory implements VideoEncoderFactory {
     private static native List<VideoCodecInfo> nativeGetSupportedCodecs(long j);
 
     @Override // org.webrtc.VideoEncoderFactory
-    public VideoEncoder createEncoder(VideoCodecInfo videoCodecInfo) {
-        final long nativeCreateEncoder = nativeCreateEncoder(this.nativeFactory, videoCodecInfo);
-        if (nativeCreateEncoder != 0) {
-            return new WrappedNativeVideoEncoder() { // from class: org.webrtc.SoftwareVideoEncoderFactory.1
-                @Override // org.webrtc.WrappedNativeVideoEncoder, org.webrtc.VideoEncoder
-                public long createNativeVideoEncoder() {
-                    return nativeCreateEncoder;
-                }
-
-                @Override // org.webrtc.WrappedNativeVideoEncoder, org.webrtc.VideoEncoder
-                public boolean isHardwareEncoder() {
-                    return false;
-                }
-            };
-        }
-        Logging.w(TAG, "Trying to create encoder for unsupported format. " + videoCodecInfo);
-        return null;
-    }
-
-    @Override // org.webrtc.VideoEncoderFactory
     public /* synthetic */ VideoEncoderFactory.VideoEncoderSelector getEncoderSelector() {
         return VideoEncoderFactory.-CC.$default$getEncoderSelector(this);
     }
@@ -44,6 +24,26 @@ public class SoftwareVideoEncoderFactory implements VideoEncoderFactory {
         VideoCodecInfo[] supportedCodecs;
         supportedCodecs = getSupportedCodecs();
         return supportedCodecs;
+    }
+
+    @Override // org.webrtc.VideoEncoderFactory
+    public VideoEncoder createEncoder(VideoCodecInfo videoCodecInfo) {
+        final long nativeCreateEncoder = nativeCreateEncoder(this.nativeFactory, videoCodecInfo);
+        if (nativeCreateEncoder == 0) {
+            Logging.w(TAG, "Trying to create encoder for unsupported format. " + videoCodecInfo);
+            return null;
+        }
+        return new WrappedNativeVideoEncoder() { // from class: org.webrtc.SoftwareVideoEncoderFactory.1
+            @Override // org.webrtc.WrappedNativeVideoEncoder, org.webrtc.VideoEncoder
+            public boolean isHardwareEncoder() {
+                return false;
+            }
+
+            @Override // org.webrtc.WrappedNativeVideoEncoder, org.webrtc.VideoEncoder
+            public long createNativeVideoEncoder() {
+                return nativeCreateEncoder;
+            }
+        };
     }
 
     @Override // org.webrtc.VideoEncoderFactory

@@ -20,31 +20,6 @@ final class AutoValue_Event extends Event {
         this.productData = productData;
     }
 
-    public boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof Event)) {
-            return false;
-        }
-        Event event = (Event) obj;
-        Integer num = this.code;
-        if (num != null ? num.equals(event.getCode()) : event.getCode() == null) {
-            if (this.payload.equals(event.getPayload()) && this.priority.equals(event.getPriority())) {
-                ProductData productData = this.productData;
-                ProductData productData2 = event.getProductData();
-                if (productData == null) {
-                    if (productData2 == null) {
-                        return true;
-                    }
-                } else if (productData.equals(productData2)) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
     @Override // com.google.android.datatransport.Event
     public Integer getCode() {
         return this.code;
@@ -65,14 +40,38 @@ final class AutoValue_Event extends Event {
         return this.productData;
     }
 
+    public String toString() {
+        return "Event{code=" + this.code + ", payload=" + this.payload + ", priority=" + this.priority + ", productData=" + this.productData + "}";
+    }
+
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof Event)) {
+            return false;
+        }
+        Event event = (Event) obj;
+        Integer num = this.code;
+        if (num != null ? num.equals(event.getCode()) : event.getCode() == null) {
+            if (this.payload.equals(event.getPayload()) && this.priority.equals(event.getPriority())) {
+                ProductData productData = this.productData;
+                if (productData == null) {
+                    if (event.getProductData() == null) {
+                        return true;
+                    }
+                } else if (productData.equals(event.getProductData())) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     public int hashCode() {
         Integer num = this.code;
         int hashCode = ((((((num == null ? 0 : num.hashCode()) ^ 1000003) * 1000003) ^ this.payload.hashCode()) * 1000003) ^ this.priority.hashCode()) * 1000003;
         ProductData productData = this.productData;
         return hashCode ^ (productData != null ? productData.hashCode() : 0);
-    }
-
-    public String toString() {
-        return "Event{code=" + this.code + ", payload=" + this.payload + ", priority=" + this.priority + ", productData=" + this.productData + "}";
     }
 }

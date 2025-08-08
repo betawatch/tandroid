@@ -1,10 +1,8 @@
 package j$.time.format;
 
-import java.util.Locale;
-
 /* loaded from: classes2.dex */
 final class m implements f {
-    private final j$.time.temporal.l a;
+    private final j$.time.temporal.a a;
     private final TextStyle b;
     private final u c;
     private volatile i d;
@@ -23,17 +21,13 @@ final class m implements f {
         if (e == null) {
             return false;
         }
-        j$.time.chrono.e eVar = (j$.time.chrono.e) rVar.d().i(j$.time.temporal.j.d());
+        j$.time.chrono.e eVar = (j$.time.chrono.e) rVar.d().g(j$.time.temporal.j.d());
         if (eVar == null || eVar == (fVar = j$.time.chrono.f.a)) {
             c = this.c.c(this.a, e.longValue(), this.b, rVar.c());
         } else {
             u uVar = this.c;
-            j$.time.temporal.l lVar = this.a;
-            long longValue = e.longValue();
-            TextStyle textStyle = this.b;
-            Locale c2 = rVar.c();
-            uVar.getClass();
-            c = (eVar == fVar || !(lVar instanceof j$.time.temporal.a)) ? uVar.c(lVar, longValue, textStyle, c2) : null;
+            j$.time.temporal.a aVar = this.a;
+            c = (eVar == fVar || !(aVar instanceof j$.time.temporal.a)) ? uVar.c(aVar, e.longValue(), this.b, rVar.c()) : null;
         }
         if (c != null) {
             sb.append(c);
@@ -46,20 +40,12 @@ final class m implements f {
     }
 
     public final String toString() {
-        StringBuilder sb;
         TextStyle textStyle = TextStyle.FULL;
-        j$.time.temporal.l lVar = this.a;
+        j$.time.temporal.a aVar = this.a;
         TextStyle textStyle2 = this.b;
         if (textStyle2 == textStyle) {
-            sb = new StringBuilder("Text(");
-            sb.append(lVar);
-        } else {
-            sb = new StringBuilder("Text(");
-            sb.append(lVar);
-            sb.append(",");
-            sb.append(textStyle2);
+            return "Text(" + aVar + ")";
         }
-        sb.append(")");
-        return sb.toString();
+        return "Text(" + aVar + "," + textStyle2 + ")";
     }
 }

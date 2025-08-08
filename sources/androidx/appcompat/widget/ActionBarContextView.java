@@ -34,6 +34,41 @@ public class ActionBarContextView extends AbsActionBarView {
     private int mTitleStyleRes;
     private TextView mTitleView;
 
+    @Override // android.view.ViewGroup
+    public boolean shouldDelayChildPressedState() {
+        return false;
+    }
+
+    @Override // androidx.appcompat.widget.AbsActionBarView
+    public /* bridge */ /* synthetic */ int getAnimatedVisibility() {
+        return super.getAnimatedVisibility();
+    }
+
+    @Override // androidx.appcompat.widget.AbsActionBarView
+    public /* bridge */ /* synthetic */ int getContentHeight() {
+        return super.getContentHeight();
+    }
+
+    @Override // androidx.appcompat.widget.AbsActionBarView, android.view.View
+    public /* bridge */ /* synthetic */ boolean onHoverEvent(MotionEvent motionEvent) {
+        return super.onHoverEvent(motionEvent);
+    }
+
+    @Override // androidx.appcompat.widget.AbsActionBarView, android.view.View
+    public /* bridge */ /* synthetic */ boolean onTouchEvent(MotionEvent motionEvent) {
+        return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // androidx.appcompat.widget.AbsActionBarView, android.view.View
+    public /* bridge */ /* synthetic */ void setVisibility(int i) {
+        super.setVisibility(i);
+    }
+
+    @Override // androidx.appcompat.widget.AbsActionBarView
+    public /* bridge */ /* synthetic */ ViewPropertyAnimatorCompat setupAnimatorToVisibility(int i, long j) {
+        return super.setupAnimatorToVisibility(i, j);
+    }
+
     public ActionBarContextView(Context context) {
         this(context, null);
     }
@@ -53,6 +88,57 @@ public class ActionBarContextView extends AbsActionBarView {
         obtainStyledAttributes.recycle();
     }
 
+    @Override // android.view.ViewGroup, android.view.View
+    public void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        ActionMenuPresenter actionMenuPresenter = this.mActionMenuPresenter;
+        if (actionMenuPresenter != null) {
+            actionMenuPresenter.hideOverflowMenu();
+            this.mActionMenuPresenter.hideSubMenus();
+        }
+    }
+
+    @Override // androidx.appcompat.widget.AbsActionBarView
+    public void setContentHeight(int i) {
+        this.mContentHeight = i;
+    }
+
+    public void setCustomView(View view) {
+        LinearLayout linearLayout;
+        View view2 = this.mCustomView;
+        if (view2 != null) {
+            removeView(view2);
+        }
+        this.mCustomView = view;
+        if (view != null && (linearLayout = this.mTitleLayout) != null) {
+            removeView(linearLayout);
+            this.mTitleLayout = null;
+        }
+        if (view != null) {
+            addView(view);
+        }
+        requestLayout();
+    }
+
+    public void setTitle(CharSequence charSequence) {
+        this.mTitle = charSequence;
+        initTitle();
+        ViewCompat.setAccessibilityPaneTitle(this, charSequence);
+    }
+
+    public void setSubtitle(CharSequence charSequence) {
+        this.mSubtitle = charSequence;
+        initTitle();
+    }
+
+    public CharSequence getTitle() {
+        return this.mTitle;
+    }
+
+    public CharSequence getSubtitle() {
+        return this.mSubtitle;
+    }
+
     private void initTitle() {
         if (this.mTitleLayout == null) {
             LayoutInflater.from(getContext()).inflate(R$layout.abc_action_bar_title_item, this);
@@ -69,112 +155,52 @@ public class ActionBarContextView extends AbsActionBarView {
         }
         this.mTitleView.setText(this.mTitle);
         this.mSubtitleView.setText(this.mSubtitle);
-        boolean z = !TextUtils.isEmpty(this.mTitle);
-        boolean z2 = !TextUtils.isEmpty(this.mSubtitle);
-        this.mSubtitleView.setVisibility(z2 ? 0 : 8);
-        this.mTitleLayout.setVisibility((z || z2) ? 0 : 8);
+        boolean isEmpty = TextUtils.isEmpty(this.mTitle);
+        boolean isEmpty2 = TextUtils.isEmpty(this.mSubtitle);
+        this.mSubtitleView.setVisibility(!isEmpty2 ? 0 : 8);
+        this.mTitleLayout.setVisibility((isEmpty && isEmpty2) ? 8 : 0);
         if (this.mTitleLayout.getParent() == null) {
             addView(this.mTitleLayout);
         }
+    }
+
+    public void initForMode(final ActionMode actionMode) {
+        View view = this.mClose;
+        if (view == null) {
+            View inflate = LayoutInflater.from(getContext()).inflate(this.mCloseItemLayout, (ViewGroup) this, false);
+            this.mClose = inflate;
+            addView(inflate);
+        } else if (view.getParent() == null) {
+            addView(this.mClose);
+        }
+        View findViewById = this.mClose.findViewById(R$id.action_mode_close_button);
+        this.mCloseButton = findViewById;
+        findViewById.setOnClickListener(new View.OnClickListener() { // from class: androidx.appcompat.widget.ActionBarContextView.1
+            @Override // android.view.View.OnClickListener
+            public void onClick(View view2) {
+                actionMode.finish();
+            }
+        });
+        MenuBuilder menuBuilder = (MenuBuilder) actionMode.getMenu();
+        ActionMenuPresenter actionMenuPresenter = this.mActionMenuPresenter;
+        if (actionMenuPresenter != null) {
+            actionMenuPresenter.dismissPopupMenus();
+        }
+        ActionMenuPresenter actionMenuPresenter2 = new ActionMenuPresenter(getContext());
+        this.mActionMenuPresenter = actionMenuPresenter2;
+        actionMenuPresenter2.setReserveOverflow(true);
+        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(-2, -1);
+        menuBuilder.addMenuPresenter(this.mActionMenuPresenter, this.mPopupContext);
+        ActionMenuView actionMenuView = (ActionMenuView) this.mActionMenuPresenter.getMenuView(this);
+        this.mMenuView = actionMenuView;
+        ViewCompat.setBackground(actionMenuView, null);
+        addView(this.mMenuView, layoutParams);
     }
 
     public void closeMode() {
         if (this.mClose == null) {
             killMode();
         }
-    }
-
-    @Override // android.view.ViewGroup
-    protected ViewGroup.LayoutParams generateDefaultLayoutParams() {
-        return new ViewGroup.MarginLayoutParams(-1, -2);
-    }
-
-    @Override // android.view.ViewGroup
-    public ViewGroup.LayoutParams generateLayoutParams(AttributeSet attributeSet) {
-        return new ViewGroup.MarginLayoutParams(getContext(), attributeSet);
-    }
-
-    @Override // androidx.appcompat.widget.AbsActionBarView
-    public /* bridge */ /* synthetic */ int getAnimatedVisibility() {
-        return super.getAnimatedVisibility();
-    }
-
-    @Override // androidx.appcompat.widget.AbsActionBarView
-    public /* bridge */ /* synthetic */ int getContentHeight() {
-        return super.getContentHeight();
-    }
-
-    public CharSequence getSubtitle() {
-        return this.mSubtitle;
-    }
-
-    public CharSequence getTitle() {
-        return this.mTitle;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:7:0x003e  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void initForMode(final ActionMode actionMode) {
-        View view;
-        ActionMenuPresenter actionMenuPresenter;
-        View view2 = this.mClose;
-        if (view2 != null) {
-            if (view2.getParent() == null) {
-                view = this.mClose;
-            }
-            View findViewById = this.mClose.findViewById(R$id.action_mode_close_button);
-            this.mCloseButton = findViewById;
-            findViewById.setOnClickListener(new View.OnClickListener() { // from class: androidx.appcompat.widget.ActionBarContextView.1
-                @Override // android.view.View.OnClickListener
-                public void onClick(View view3) {
-                    actionMode.finish();
-                }
-            });
-            MenuBuilder menuBuilder = (MenuBuilder) actionMode.getMenu();
-            actionMenuPresenter = this.mActionMenuPresenter;
-            if (actionMenuPresenter != null) {
-                actionMenuPresenter.dismissPopupMenus();
-            }
-            ActionMenuPresenter actionMenuPresenter2 = new ActionMenuPresenter(getContext());
-            this.mActionMenuPresenter = actionMenuPresenter2;
-            actionMenuPresenter2.setReserveOverflow(true);
-            ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(-2, -1);
-            menuBuilder.addMenuPresenter(this.mActionMenuPresenter, this.mPopupContext);
-            ActionMenuView actionMenuView = (ActionMenuView) this.mActionMenuPresenter.getMenuView(this);
-            this.mMenuView = actionMenuView;
-            ViewCompat.setBackground(actionMenuView, null);
-            addView(this.mMenuView, layoutParams);
-        }
-        view = LayoutInflater.from(getContext()).inflate(this.mCloseItemLayout, (ViewGroup) this, false);
-        this.mClose = view;
-        addView(view);
-        View findViewById2 = this.mClose.findViewById(R$id.action_mode_close_button);
-        this.mCloseButton = findViewById2;
-        findViewById2.setOnClickListener(new View.OnClickListener() { // from class: androidx.appcompat.widget.ActionBarContextView.1
-            @Override // android.view.View.OnClickListener
-            public void onClick(View view3) {
-                actionMode.finish();
-            }
-        });
-        MenuBuilder menuBuilder2 = (MenuBuilder) actionMode.getMenu();
-        actionMenuPresenter = this.mActionMenuPresenter;
-        if (actionMenuPresenter != null) {
-        }
-        ActionMenuPresenter actionMenuPresenter22 = new ActionMenuPresenter(getContext());
-        this.mActionMenuPresenter = actionMenuPresenter22;
-        actionMenuPresenter22.setReserveOverflow(true);
-        ViewGroup.LayoutParams layoutParams2 = new ViewGroup.LayoutParams(-2, -1);
-        menuBuilder2.addMenuPresenter(this.mActionMenuPresenter, this.mPopupContext);
-        ActionMenuView actionMenuView2 = (ActionMenuView) this.mActionMenuPresenter.getMenuView(this);
-        this.mMenuView = actionMenuView2;
-        ViewCompat.setBackground(actionMenuView2, null);
-        addView(this.mMenuView, layoutParams2);
-    }
-
-    public boolean isTitleOptional() {
-        return this.mTitleOptional;
     }
 
     public void killMode() {
@@ -188,50 +214,22 @@ public class ActionBarContextView extends AbsActionBarView {
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
+    public boolean showOverflowMenu() {
         ActionMenuPresenter actionMenuPresenter = this.mActionMenuPresenter;
         if (actionMenuPresenter != null) {
-            actionMenuPresenter.hideOverflowMenu();
-            this.mActionMenuPresenter.hideSubMenus();
+            return actionMenuPresenter.showOverflowMenu();
         }
+        return false;
     }
 
-    @Override // androidx.appcompat.widget.AbsActionBarView, android.view.View
-    public /* bridge */ /* synthetic */ boolean onHoverEvent(MotionEvent motionEvent) {
-        return super.onHoverEvent(motionEvent);
+    @Override // android.view.ViewGroup
+    protected ViewGroup.LayoutParams generateDefaultLayoutParams() {
+        return new ViewGroup.MarginLayoutParams(-1, -2);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        boolean isLayoutRtl = ViewUtils.isLayoutRtl(this);
-        int paddingRight = isLayoutRtl ? (i3 - i) - getPaddingRight() : getPaddingLeft();
-        int paddingTop = getPaddingTop();
-        int paddingTop2 = ((i4 - i2) - getPaddingTop()) - getPaddingBottom();
-        View view = this.mClose;
-        if (view != null && view.getVisibility() != 8) {
-            ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) this.mClose.getLayoutParams();
-            int i5 = isLayoutRtl ? marginLayoutParams.rightMargin : marginLayoutParams.leftMargin;
-            int i6 = isLayoutRtl ? marginLayoutParams.leftMargin : marginLayoutParams.rightMargin;
-            int next = AbsActionBarView.next(paddingRight, i5, isLayoutRtl);
-            paddingRight = AbsActionBarView.next(next + positionChild(this.mClose, next, paddingTop, paddingTop2, isLayoutRtl), i6, isLayoutRtl);
-        }
-        int i7 = paddingRight;
-        LinearLayout linearLayout = this.mTitleLayout;
-        if (linearLayout != null && this.mCustomView == null && linearLayout.getVisibility() != 8) {
-            i7 += positionChild(this.mTitleLayout, i7, paddingTop, paddingTop2, isLayoutRtl);
-        }
-        int i8 = i7;
-        View view2 = this.mCustomView;
-        if (view2 != null) {
-            positionChild(view2, i8, paddingTop, paddingTop2, isLayoutRtl);
-        }
-        int paddingLeft = isLayoutRtl ? getPaddingLeft() : (i3 - i) - getPaddingRight();
-        ActionMenuView actionMenuView = this.mMenuView;
-        if (actionMenuView != null) {
-            positionChild(actionMenuView, paddingLeft, paddingTop, paddingTop2, !isLayoutRtl);
-        }
+    @Override // android.view.ViewGroup
+    public ViewGroup.LayoutParams generateLayoutParams(AttributeSet attributeSet) {
+        return new ViewGroup.MarginLayoutParams(getContext(), attributeSet);
     }
 
     @Override // android.view.View
@@ -294,57 +292,50 @@ public class ActionBarContextView extends AbsActionBarView {
             }
             this.mCustomView.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, i7), View.MeasureSpec.makeMeasureSpec(i5, i3));
         }
-        if (this.mContentHeight > 0) {
-            setMeasuredDimension(size, i4);
+        if (this.mContentHeight <= 0) {
+            int childCount = getChildCount();
+            int i9 = 0;
+            for (int i10 = 0; i10 < childCount; i10++) {
+                int measuredHeight = getChildAt(i10).getMeasuredHeight() + paddingTop;
+                if (measuredHeight > i9) {
+                    i9 = measuredHeight;
+                }
+            }
+            setMeasuredDimension(size, i9);
             return;
         }
-        int childCount = getChildCount();
-        int i9 = 0;
-        for (int i10 = 0; i10 < childCount; i10++) {
-            int measuredHeight = getChildAt(i10).getMeasuredHeight() + paddingTop;
-            if (measuredHeight > i9) {
-                i9 = measuredHeight;
-            }
+        setMeasuredDimension(size, i4);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        boolean isLayoutRtl = ViewUtils.isLayoutRtl(this);
+        int paddingRight = isLayoutRtl ? (i3 - i) - getPaddingRight() : getPaddingLeft();
+        int paddingTop = getPaddingTop();
+        int paddingTop2 = ((i4 - i2) - getPaddingTop()) - getPaddingBottom();
+        View view = this.mClose;
+        if (view != null && view.getVisibility() != 8) {
+            ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) this.mClose.getLayoutParams();
+            int i5 = isLayoutRtl ? marginLayoutParams.rightMargin : marginLayoutParams.leftMargin;
+            int i6 = isLayoutRtl ? marginLayoutParams.leftMargin : marginLayoutParams.rightMargin;
+            int next = AbsActionBarView.next(paddingRight, i5, isLayoutRtl);
+            paddingRight = AbsActionBarView.next(next + positionChild(this.mClose, next, paddingTop, paddingTop2, isLayoutRtl), i6, isLayoutRtl);
         }
-        setMeasuredDimension(size, i9);
-    }
-
-    @Override // androidx.appcompat.widget.AbsActionBarView, android.view.View
-    public /* bridge */ /* synthetic */ boolean onTouchEvent(MotionEvent motionEvent) {
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // androidx.appcompat.widget.AbsActionBarView
-    public void setContentHeight(int i) {
-        this.mContentHeight = i;
-    }
-
-    public void setCustomView(View view) {
-        LinearLayout linearLayout;
+        int i7 = paddingRight;
+        LinearLayout linearLayout = this.mTitleLayout;
+        if (linearLayout != null && this.mCustomView == null && linearLayout.getVisibility() != 8) {
+            i7 += positionChild(this.mTitleLayout, i7, paddingTop, paddingTop2, isLayoutRtl);
+        }
+        int i8 = i7;
         View view2 = this.mCustomView;
         if (view2 != null) {
-            removeView(view2);
+            positionChild(view2, i8, paddingTop, paddingTop2, isLayoutRtl);
         }
-        this.mCustomView = view;
-        if (view != null && (linearLayout = this.mTitleLayout) != null) {
-            removeView(linearLayout);
-            this.mTitleLayout = null;
+        int paddingLeft = isLayoutRtl ? getPaddingLeft() : (i3 - i) - getPaddingRight();
+        ActionMenuView actionMenuView = this.mMenuView;
+        if (actionMenuView != null) {
+            positionChild(actionMenuView, paddingLeft, paddingTop, paddingTop2, !isLayoutRtl);
         }
-        if (view != null) {
-            addView(view);
-        }
-        requestLayout();
-    }
-
-    public void setSubtitle(CharSequence charSequence) {
-        this.mSubtitle = charSequence;
-        initTitle();
-    }
-
-    public void setTitle(CharSequence charSequence) {
-        this.mTitle = charSequence;
-        initTitle();
-        ViewCompat.setAccessibilityPaneTitle(this, charSequence);
     }
 
     public void setTitleOptional(boolean z) {
@@ -354,26 +345,7 @@ public class ActionBarContextView extends AbsActionBarView {
         this.mTitleOptional = z;
     }
 
-    @Override // androidx.appcompat.widget.AbsActionBarView, android.view.View
-    public /* bridge */ /* synthetic */ void setVisibility(int i) {
-        super.setVisibility(i);
-    }
-
-    @Override // androidx.appcompat.widget.AbsActionBarView
-    public /* bridge */ /* synthetic */ ViewPropertyAnimatorCompat setupAnimatorToVisibility(int i, long j) {
-        return super.setupAnimatorToVisibility(i, j);
-    }
-
-    @Override // android.view.ViewGroup
-    public boolean shouldDelayChildPressedState() {
-        return false;
-    }
-
-    public boolean showOverflowMenu() {
-        ActionMenuPresenter actionMenuPresenter = this.mActionMenuPresenter;
-        if (actionMenuPresenter != null) {
-            return actionMenuPresenter.showOverflowMenu();
-        }
-        return false;
+    public boolean isTitleOptional() {
+        return this.mTitleOptional;
     }
 }

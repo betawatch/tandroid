@@ -94,6 +94,67 @@ public class StarReactionsOverlay extends View {
         };
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$0() {
+        this.counterShown = false;
+        invalidate();
+        checkBalance();
+        hide();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$1(ChatActivity chatActivity) {
+        MessageObject messageObject;
+        TLRPC.TL_messageReactions tL_messageReactions;
+        TLRPC.TL_messageReactions tL_messageReactions2;
+        BaseCell baseCell = this.cell;
+        if (baseCell == null) {
+            return;
+        }
+        try {
+            baseCell.performHapticFeedback(0);
+        } catch (Exception unused) {
+        }
+        onTouchEvent(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
+        BaseCell baseCell2 = this.cell;
+        ArrayList<TLRPC.MessageReactor> arrayList = null;
+        if (baseCell2 instanceof ChatMessageCell) {
+            messageObject = ((ChatMessageCell) baseCell2).getPrimaryMessageObject();
+            if (messageObject == null) {
+                return;
+            }
+            TLRPC.Message message = messageObject.messageOwner;
+            if (message != null && (tL_messageReactions2 = message.reactions) != null) {
+                arrayList = tL_messageReactions2.top_reactors;
+            }
+        } else {
+            if (!(baseCell2 instanceof ChatActionCell) || (messageObject = ((ChatActionCell) baseCell2).getMessageObject()) == null) {
+                return;
+            }
+            TLRPC.Message message2 = messageObject.messageOwner;
+            if (message2 != null && (tL_messageReactions = message2.reactions) != null) {
+                arrayList = tL_messageReactions.top_reactors;
+            }
+        }
+        ArrayList<TLRPC.MessageReactor> arrayList2 = arrayList;
+        StarsController.getInstance(messageObject.currentAccount).commitPaidReaction();
+        TLRPC.ChatFull currentChatInfo = chatActivity.getCurrentChatInfo();
+        StarsReactionsSheet starsReactionsSheet = new StarsReactionsSheet(getContext(), chatActivity.getCurrentAccount(), chatActivity.getDialogId(), chatActivity, messageObject, arrayList2, currentChatInfo == null || currentChatInfo.paid_reactions_available, chatActivity.getResourceProvider());
+        starsReactionsSheet.setMessageCell(chatActivity, messageObject.getId(), this.cell);
+        starsReactionsSheet.show();
+    }
+
+    private MessageObject getMessageObject() {
+        BaseCell baseCell = this.cell;
+        if (baseCell instanceof ChatMessageCell) {
+            return ((ChatMessageCell) baseCell).getPrimaryMessageObject();
+        }
+        if (baseCell instanceof ChatActionCell) {
+            return ((ChatActionCell) baseCell).getMessageObject();
+        }
+        return null;
+    }
+
     private void checkBalance() {
         String str;
         if (getMessageObject() != null) {
@@ -120,109 +181,46 @@ public class StarReactionsOverlay extends View {
         }
     }
 
-    private MessageObject getMessageObject() {
-        BaseCell baseCell = this.cell;
-        if (baseCell instanceof ChatMessageCell) {
-            return ((ChatMessageCell) baseCell).getPrimaryMessageObject();
-        }
-        if (baseCell instanceof ChatActionCell) {
-            return ((ChatActionCell) baseCell).getMessageObject();
-        }
-        return null;
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkBalance$2(StarsController starsController, MessageObject messageObject, long j) {
         starsController.sendPaidReaction(messageObject, this.chatActivity, j, true, true, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$focusTo$3(ValueAnimator valueAnimator) {
-        this.focus = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        invalidate();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$hide$4() {
-        setMessageCell(null);
-        clearEffects();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        this.counterShown = false;
-        invalidate();
-        checkBalance();
-        hide();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x0030, code lost:
-    
-        if (r2 != null) goto L29;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x004a, code lost:
-    
-        r3 = r2.top_reactors;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:35:0x0048, code lost:
-    
-        if (r2 != null) goto L29;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public /* synthetic */ void lambda$new$1(ChatActivity chatActivity) {
-        MessageObject messageObject;
-        TLRPC.TL_messageReactions tL_messageReactions;
-        BaseCell baseCell = this.cell;
-        if (baseCell == null) {
-            return;
-        }
-        try {
-            baseCell.performHapticFeedback(0);
-        } catch (Exception unused) {
-        }
-        onTouchEvent(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
+    public void setMessageCell(BaseCell baseCell) {
         BaseCell baseCell2 = this.cell;
-        ArrayList<TLRPC.MessageReactor> arrayList = null;
-        if (baseCell2 instanceof ChatMessageCell) {
-            messageObject = ((ChatMessageCell) baseCell2).getPrimaryMessageObject();
-            if (messageObject == null) {
-                return;
-            }
-            TLRPC.Message message = messageObject.messageOwner;
-            if (message != null) {
-                tL_messageReactions = message.reactions;
-            }
-            ArrayList<TLRPC.MessageReactor> arrayList2 = arrayList;
-            StarsController.getInstance(messageObject.currentAccount).commitPaidReaction();
-            TLRPC.ChatFull currentChatInfo = chatActivity.getCurrentChatInfo();
-            StarsReactionsSheet starsReactionsSheet = new StarsReactionsSheet(getContext(), chatActivity.getCurrentAccount(), chatActivity.getDialogId(), chatActivity, messageObject, arrayList2, currentChatInfo != null || currentChatInfo.paid_reactions_available, chatActivity.getResourceProvider());
-            starsReactionsSheet.setMessageCell(chatActivity, messageObject.getId(), this.cell);
-            starsReactionsSheet.show();
-        }
-        if (!(baseCell2 instanceof ChatActionCell) || (messageObject = ((ChatActionCell) baseCell2).getMessageObject()) == null) {
+        if (baseCell2 == baseCell) {
             return;
         }
-        TLRPC.Message message2 = messageObject.messageOwner;
-        if (message2 != null) {
-            tL_messageReactions = message2.reactions;
+        if (baseCell2 instanceof ChatMessageCell) {
+            ((ChatMessageCell) baseCell2).setScrimReaction(null);
+            ((ChatMessageCell) this.cell).setInvalidateListener(null);
+            this.cell.invalidate();
+        } else if (baseCell2 instanceof ChatActionCell) {
+            ((ChatActionCell) baseCell2).setScrimReaction(null);
+            ((ChatActionCell) this.cell).setInvalidateListener(null);
+            this.cell.invalidate();
         }
-        ArrayList<TLRPC.MessageReactor> arrayList22 = arrayList;
-        StarsController.getInstance(messageObject.currentAccount).commitPaidReaction();
-        TLRPC.ChatFull currentChatInfo2 = chatActivity.getCurrentChatInfo();
-        StarsReactionsSheet starsReactionsSheet2 = new StarsReactionsSheet(getContext(), chatActivity.getCurrentAccount(), chatActivity.getDialogId(), chatActivity, messageObject, arrayList22, currentChatInfo2 != null || currentChatInfo2.paid_reactions_available, chatActivity.getResourceProvider());
-        starsReactionsSheet2.setMessageCell(chatActivity, messageObject.getId(), this.cell);
-        starsReactionsSheet2.show();
-    }
-
-    public void clearEffects() {
-        Iterator it = this.effects.iterator();
-        while (it.hasNext()) {
-            ((RLottieDrawable) it.next()).recycle(true);
+        this.cell = baseCell;
+        this.messageId = getMessageObject() == null ? 0 : getMessageObject().getId();
+        BaseCell baseCell3 = this.cell;
+        if (baseCell3 instanceof ChatMessageCell) {
+            baseCell3.invalidate();
+            ((ChatMessageCell) this.cell).setInvalidateListener(new Runnable() { // from class: org.telegram.ui.Stars.StarReactionsOverlay$$ExternalSyntheticLambda4
+                @Override // java.lang.Runnable
+                public final void run() {
+                    StarReactionsOverlay.this.invalidate();
+                }
+            });
+        } else if (baseCell3 instanceof ChatActionCell) {
+            baseCell3.invalidate();
+            ((ChatActionCell) this.cell).setInvalidateListener(new Runnable() { // from class: org.telegram.ui.Stars.StarReactionsOverlay$$ExternalSyntheticLambda4
+                @Override // java.lang.Runnable
+                public final void run() {
+                    StarReactionsOverlay.this.invalidate();
+                }
+            });
         }
-        this.effects.clear();
+        invalidate();
     }
 
     @Override // android.view.View
@@ -341,37 +339,6 @@ public class StarReactionsOverlay extends View {
         invalidate();
     }
 
-    public void focusTo(final float f, final Runnable runnable) {
-        ValueAnimator valueAnimator = this.focusAnimator;
-        if (valueAnimator != null) {
-            this.focusAnimator = null;
-            valueAnimator.cancel();
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.focus, f);
-        this.focusAnimator = ofFloat;
-        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stars.StarReactionsOverlay$$ExternalSyntheticLambda0
-            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-            public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                StarReactionsOverlay.this.lambda$focusTo$3(valueAnimator2);
-            }
-        });
-        this.focusAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stars.StarReactionsOverlay.1
-            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-            public void onAnimationEnd(Animator animator) {
-                Runnable runnable2;
-                StarReactionsOverlay.this.focus = f;
-                StarReactionsOverlay.this.invalidate();
-                if (animator != StarReactionsOverlay.this.focusAnimator || (runnable2 = runnable) == null) {
-                    return;
-                }
-                runnable2.run();
-            }
-        });
-        this.focusAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
-        this.focusAnimator.setDuration(320L);
-        this.focusAnimator.start();
-    }
-
     public ReactionsLayoutInBubble getReactionsLayoutInBubble() {
         BaseCell baseCell = this.cell;
         if (baseCell instanceof ChatMessageCell) {
@@ -381,24 +348,6 @@ public class StarReactionsOverlay extends View {
             return ((ChatActionCell) baseCell).reactionsLayoutInBubble;
         }
         return null;
-    }
-
-    public void hide() {
-        this.hidden = true;
-        AndroidUtilities.cancelRunOnUIThread(this.hideCounterRunnable);
-        this.counter.setText("");
-        this.counterShown = false;
-        invalidate();
-        focusTo(0.0f, new Runnable() { // from class: org.telegram.ui.Stars.StarReactionsOverlay$$ExternalSyntheticLambda5
-            @Override // java.lang.Runnable
-            public final void run() {
-                StarReactionsOverlay.this.lambda$hide$4();
-            }
-        });
-    }
-
-    public boolean isShowing(MessageObject messageObject) {
-        return messageObject != null && messageObject.getId() == this.messageId;
     }
 
     @Override // android.view.View
@@ -431,75 +380,41 @@ public class StarReactionsOverlay extends View {
         return this.pressed;
     }
 
-    public void playEffect() {
-        while (this.effects.size() > 4) {
-            ((RLottieDrawable) this.effects.remove(0)).recycle(true);
+    public void focusTo(final float f, final Runnable runnable) {
+        ValueAnimator valueAnimator = this.focusAnimator;
+        if (valueAnimator != null) {
+            this.focusAnimator = null;
+            valueAnimator.cancel();
         }
-        int[] iArr = this.effectAssets;
-        int i = iArr[Utilities.fastRandom.nextInt(iArr.length)];
-        RLottieDrawable rLottieDrawable = new RLottieDrawable(i, "" + i, AndroidUtilities.dp(70.0f), AndroidUtilities.dp(70.0f));
-        rLottieDrawable.setMasterParent(this);
-        rLottieDrawable.setAllowDecodeSingleFrame(true);
-        rLottieDrawable.setAutoRepeat(0);
-        rLottieDrawable.start();
-        this.effects.add(rLottieDrawable);
-        invalidate();
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.focus, f);
+        this.focusAnimator = ofFloat;
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stars.StarReactionsOverlay$$ExternalSyntheticLambda0
+            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+            public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
+                StarReactionsOverlay.this.lambda$focusTo$3(valueAnimator2);
+            }
+        });
+        this.focusAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stars.StarReactionsOverlay.1
+            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+            public void onAnimationEnd(Animator animator) {
+                Runnable runnable2;
+                StarReactionsOverlay.this.focus = f;
+                StarReactionsOverlay.this.invalidate();
+                if (animator != StarReactionsOverlay.this.focusAnimator || (runnable2 = runnable) == null) {
+                    return;
+                }
+                runnable2.run();
+            }
+        });
+        this.focusAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
+        this.focusAnimator.setDuration(320L);
+        this.focusAnimator.start();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x0035  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0047  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0057  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0037  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void setMessageCell(BaseCell baseCell) {
-        BaseCell baseCell2;
-        BaseCell baseCell3 = this.cell;
-        if (baseCell3 == baseCell) {
-            return;
-        }
-        if (!(baseCell3 instanceof ChatMessageCell)) {
-            if (baseCell3 instanceof ChatActionCell) {
-                ((ChatActionCell) baseCell3).setScrimReaction(null);
-                ((ChatActionCell) this.cell).setInvalidateListener(null);
-            }
-            this.cell = baseCell;
-            this.messageId = getMessageObject() != null ? 0 : getMessageObject().getId();
-            baseCell2 = this.cell;
-            if (!(baseCell2 instanceof ChatMessageCell)) {
-                baseCell2.invalidate();
-                ((ChatMessageCell) this.cell).setInvalidateListener(new Runnable() { // from class: org.telegram.ui.Stars.StarReactionsOverlay$$ExternalSyntheticLambda4
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        StarReactionsOverlay.this.invalidate();
-                    }
-                });
-            } else if (baseCell2 instanceof ChatActionCell) {
-                baseCell2.invalidate();
-                ((ChatActionCell) this.cell).setInvalidateListener(new Runnable() { // from class: org.telegram.ui.Stars.StarReactionsOverlay$$ExternalSyntheticLambda4
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        StarReactionsOverlay.this.invalidate();
-                    }
-                });
-            }
-            invalidate();
-        }
-        ((ChatMessageCell) baseCell3).setScrimReaction(null);
-        ((ChatMessageCell) this.cell).setInvalidateListener(null);
-        this.cell.invalidate();
-        this.cell = baseCell;
-        this.messageId = getMessageObject() != null ? 0 : getMessageObject().getId();
-        baseCell2 = this.cell;
-        if (!(baseCell2 instanceof ChatMessageCell)) {
-        }
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$focusTo$3(ValueAnimator valueAnimator) {
+        this.focus = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         invalidate();
-    }
-
-    public void show() {
-        this.hidden = false;
-        focusTo(1.0f, null);
     }
 
     public void tap(float f, float f2, boolean z, boolean z2) {
@@ -536,15 +451,67 @@ public class StarReactionsOverlay extends View {
                 return;
             }
             this.accumulatedRippleIntensity *= Utilities.clamp(1.0f - ((r0 - 100) / 200.0f), 1.0f, 0.0f);
-            if (getMeasuredWidth() != 0 || this.chatActivity.getLayoutContainer() == null) {
-                getLocationInWindow(this.pos2);
-            } else {
+            if (getMeasuredWidth() == 0 && this.chatActivity.getLayoutContainer() != null) {
                 this.chatActivity.getLayoutContainer().getLocationInWindow(this.pos2);
+            } else {
+                getLocationInWindow(this.pos2);
             }
             int[] iArr = this.pos2;
             LaunchActivity.makeRipple(iArr[0] + f, iArr[1] + f2, Utilities.clamp(this.accumulatedRippleIntensity, 0.9f, 0.3f));
             this.accumulatedRippleIntensity = 0.0f;
             this.lastRippleTime = currentTimeMillis;
         }
+    }
+
+    public void hide() {
+        this.hidden = true;
+        AndroidUtilities.cancelRunOnUIThread(this.hideCounterRunnable);
+        this.counter.setText("");
+        this.counterShown = false;
+        invalidate();
+        focusTo(0.0f, new Runnable() { // from class: org.telegram.ui.Stars.StarReactionsOverlay$$ExternalSyntheticLambda5
+            @Override // java.lang.Runnable
+            public final void run() {
+                StarReactionsOverlay.this.lambda$hide$4();
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$hide$4() {
+        setMessageCell(null);
+        clearEffects();
+    }
+
+    public boolean isShowing(MessageObject messageObject) {
+        return messageObject != null && messageObject.getId() == this.messageId;
+    }
+
+    public void show() {
+        this.hidden = false;
+        focusTo(1.0f, null);
+    }
+
+    public void playEffect() {
+        while (this.effects.size() > 4) {
+            ((RLottieDrawable) this.effects.remove(0)).recycle(true);
+        }
+        int[] iArr = this.effectAssets;
+        int i = iArr[Utilities.fastRandom.nextInt(iArr.length)];
+        RLottieDrawable rLottieDrawable = new RLottieDrawable(i, "" + i, AndroidUtilities.dp(70.0f), AndroidUtilities.dp(70.0f));
+        rLottieDrawable.setMasterParent(this);
+        rLottieDrawable.setAllowDecodeSingleFrame(true);
+        rLottieDrawable.setAutoRepeat(0);
+        rLottieDrawable.start();
+        this.effects.add(rLottieDrawable);
+        invalidate();
+    }
+
+    public void clearEffects() {
+        Iterator it = this.effects.iterator();
+        while (it.hasNext()) {
+            ((RLottieDrawable) it.next()).recycle(true);
+        }
+        this.effects.clear();
     }
 }

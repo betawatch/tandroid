@@ -53,7 +53,11 @@ public class zzjk {
                 if (this.zzc != null) {
                     return this.zzc;
                 }
-                this.zzc = this.zza == null ? zzgw.zzb : this.zza.zzb();
+                if (this.zza == null) {
+                    this.zzc = zzgw.zzb;
+                } else {
+                    this.zzc = this.zza.zzb();
+                }
                 return this.zzc;
             } catch (Throwable th) {
                 throw th;

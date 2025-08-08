@@ -3,7 +3,7 @@ package com.googlecode.mp4parser.h264.read;
 import com.googlecode.mp4parser.h264.CharCache;
 import java.io.InputStream;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class BitstreamReader {
     protected static int bitsRead;
     private int curByte;
@@ -18,10 +18,8 @@ public abstract class BitstreamReader {
         this.nextByte = inputStream.read();
     }
 
-    private void advance() {
-        this.curByte = this.nextByte;
-        this.nextByte = this.is.read();
-        this.nBit = 0;
+    public boolean readBool() {
+        return read1Bit() == 1;
     }
 
     public int read1Bit() {
@@ -40,19 +38,6 @@ public abstract class BitstreamReader {
         return i3;
     }
 
-    public boolean readBool() {
-        return read1Bit() == 1;
-    }
-
-    public int readByte() {
-        if (this.nBit > 0) {
-            advance();
-        }
-        int i = this.curByte;
-        advance();
-        return i;
-    }
-
     public long readNBit(int i) {
         if (i > 64) {
             throw new IllegalArgumentException("Can not readByte more then 64 bit");
@@ -62,5 +47,20 @@ public abstract class BitstreamReader {
             j = (j << 1) | read1Bit();
         }
         return j;
+    }
+
+    private void advance() {
+        this.curByte = this.nextByte;
+        this.nextByte = this.is.read();
+        this.nBit = 0;
+    }
+
+    public int readByte() {
+        if (this.nBit > 0) {
+            advance();
+        }
+        int i = this.curByte;
+        advance();
+        return i;
     }
 }

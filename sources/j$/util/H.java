@@ -31,8 +31,8 @@ public final /* synthetic */ class H implements J {
 
     @Override // j$.util.J
     /* renamed from: d */
-    public final /* synthetic */ void forEachRemaining(j$.util.function.T t) {
-        this.a.forEachRemaining(j$.util.function.S.a(t));
+    public final /* synthetic */ void forEachRemaining(j$.util.function.Y y) {
+        this.a.forEachRemaining(j$.util.function.X.a(y));
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
@@ -75,8 +75,8 @@ public final /* synthetic */ class H implements J {
 
     @Override // j$.util.J
     /* renamed from: i */
-    public final /* synthetic */ boolean tryAdvance(j$.util.function.T t) {
-        return this.a.tryAdvance(j$.util.function.S.a(t));
+    public final /* synthetic */ boolean tryAdvance(j$.util.function.Y y) {
+        return this.a.tryAdvance(j$.util.function.X.a(y));
     }
 
     @Override // j$.util.Spliterator

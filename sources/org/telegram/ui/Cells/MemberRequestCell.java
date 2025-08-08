@@ -116,34 +116,7 @@ public class MemberRequestCell extends FrameLayout {
         onClickListener.onDismissClicked(tL_chatInviteImporter);
     }
 
-    public BackupImageView getAvatarImageView() {
-        return this.avatarImageView;
-    }
-
-    public TLRPC.TL_chatInviteImporter getImporter() {
-        return this.importer;
-    }
-
-    public String getStatus() {
-        return this.statusTextView.getText().toString();
-    }
-
-    @Override // android.view.View
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (this.isNeedDivider) {
-            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(72.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(72.0f) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(107.0f), TLObject.FLAG_30));
-    }
-
     public void setData(LongSparseArray longSparseArray, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, boolean z) {
-        SimpleTextView simpleTextView;
-        String str;
         this.importer = tL_chatInviteImporter;
         this.isNeedDivider = z;
         setWillNotDraw(!z);
@@ -153,24 +126,44 @@ public class MemberRequestCell extends FrameLayout {
         this.nameTextView.setText(UserObject.getUserName(user));
         String formatDateAudio = LocaleController.formatDateAudio(tL_chatInviteImporter.date, false);
         if (tL_chatInviteImporter.via_chatlist) {
-            simpleTextView = this.statusTextView;
-            str = LocaleController.getString(R.string.JoinedViaFolder);
-        } else {
-            long j = tL_chatInviteImporter.approved_by;
-            if (j == 0) {
-                simpleTextView = this.statusTextView;
-                str = LocaleController.formatString("RequestedToJoinAt", R.string.RequestedToJoinAt, formatDateAudio);
-            } else {
-                TLRPC.User user2 = (TLRPC.User) longSparseArray.get(j);
-                if (user2 != null) {
-                    this.statusTextView.setText(LocaleController.formatString("AddedBy", R.string.AddedBy, UserObject.getFirstName(user2), formatDateAudio));
-                    return;
-                } else {
-                    simpleTextView = this.statusTextView;
-                    str = "";
-                }
-            }
+            this.statusTextView.setText(LocaleController.getString(R.string.JoinedViaFolder));
+            return;
         }
-        simpleTextView.setText(str);
+        long j = tL_chatInviteImporter.approved_by;
+        if (j == 0) {
+            this.statusTextView.setText(LocaleController.formatString("RequestedToJoinAt", R.string.RequestedToJoinAt, formatDateAudio));
+            return;
+        }
+        TLRPC.User user2 = (TLRPC.User) longSparseArray.get(j);
+        if (user2 != null) {
+            this.statusTextView.setText(LocaleController.formatString("AddedBy", R.string.AddedBy, UserObject.getFirstName(user2), formatDateAudio));
+        } else {
+            this.statusTextView.setText("");
+        }
+    }
+
+    public TLRPC.TL_chatInviteImporter getImporter() {
+        return this.importer;
+    }
+
+    public BackupImageView getAvatarImageView() {
+        return this.avatarImageView;
+    }
+
+    public String getStatus() {
+        return this.statusTextView.getText().toString();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    protected void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(107.0f), TLObject.FLAG_30));
+    }
+
+    @Override // android.view.View
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.isNeedDivider) {
+            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(72.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(72.0f) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
+        }
     }
 }

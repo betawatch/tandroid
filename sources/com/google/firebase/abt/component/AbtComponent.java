@@ -17,10 +17,6 @@ public class AbtComponent {
         this.analyticsConnector = provider;
     }
 
-    protected FirebaseABTesting createAbtInstance(String str) {
-        return new FirebaseABTesting(this.appContext, this.analyticsConnector, str);
-    }
-
     public synchronized FirebaseABTesting get(String str) {
         try {
             if (!this.abtOriginInstances.containsKey(str)) {
@@ -30,5 +26,9 @@ public class AbtComponent {
             throw th;
         }
         return (FirebaseABTesting) this.abtOriginInstances.get(str);
+    }
+
+    protected FirebaseABTesting createAbtInstance(String str) {
+        return new FirebaseABTesting(this.appContext, this.analyticsConnector, str);
     }
 }

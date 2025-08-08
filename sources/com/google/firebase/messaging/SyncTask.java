@@ -16,40 +16,12 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 class SyncTask implements Runnable {
     private final FirebaseMessaging firebaseMessaging;
     private final long nextDelaySeconds;
     ExecutorService processorExecutor = new ThreadPoolExecutor(0, 1, 30, TimeUnit.SECONDS, new LinkedBlockingQueue(), new NamedThreadFactory("firebase-iid-executor"));
     private final PowerManager.WakeLock syncWakeLock;
-
-    static class ConnectivityChangeReceiver extends BroadcastReceiver {
-        private SyncTask task;
-
-        public ConnectivityChangeReceiver(SyncTask syncTask) {
-            this.task = syncTask;
-        }
-
-        @Override // android.content.BroadcastReceiver
-        public void onReceive(Context context, Intent intent) {
-            SyncTask syncTask = this.task;
-            if (syncTask != null && syncTask.isDeviceConnected()) {
-                if (SyncTask.isDebugLogEnabled()) {
-                    Log.d("FirebaseMessaging", "Connectivity changed. Starting background sync.");
-                }
-                this.task.firebaseMessaging.enqueueTaskWithDelaySeconds(this.task, 0L);
-                this.task.getContext().unregisterReceiver(this);
-                this.task = null;
-            }
-        }
-
-        public void registerReceiver() {
-            if (SyncTask.isDebugLogEnabled()) {
-                Log.d("FirebaseMessaging", "Connectivity change received registered");
-            }
-            this.task.getContext().registerReceiver(this, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
-        }
-    }
 
     public SyncTask(FirebaseMessaging firebaseMessaging, long j) {
         this.firebaseMessaging = firebaseMessaging;
@@ -57,50 +29,6 @@ class SyncTask implements Runnable {
         PowerManager.WakeLock newWakeLock = ((PowerManager) getContext().getSystemService("power")).newWakeLock(1, "fiid-sync");
         this.syncWakeLock = newWakeLock;
         newWakeLock.setReferenceCounted(false);
-    }
-
-    static boolean isDebugLogEnabled() {
-        return Log.isLoggable("FirebaseMessaging", 3) || (Build.VERSION.SDK_INT == 23 && Log.isLoggable("FirebaseMessaging", 3));
-    }
-
-    Context getContext() {
-        return this.firebaseMessaging.getApplicationContext();
-    }
-
-    boolean isDeviceConnected() {
-        ConnectivityManager connectivityManager = (ConnectivityManager) getContext().getSystemService("connectivity");
-        NetworkInfo activeNetworkInfo = connectivityManager != null ? connectivityManager.getActiveNetworkInfo() : null;
-        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
-    }
-
-    boolean maybeRefreshToken() {
-        String str;
-        try {
-            if (this.firebaseMessaging.blockingGetToken() == null) {
-                Log.e("FirebaseMessaging", "Token retrieval failed: null");
-                return false;
-            }
-            if (!Log.isLoggable("FirebaseMessaging", 3)) {
-                return true;
-            }
-            Log.d("FirebaseMessaging", "Token successfully retrieved");
-            return true;
-        } catch (IOException e) {
-            if (GmsRpc.isErrorMessageForRetryableError(e.getMessage())) {
-                str = "Token retrieval failed: " + e.getMessage() + ". Will retry token retrieval";
-            } else {
-                if (e.getMessage() != null) {
-                    throw e;
-                }
-                str = "Token retrieval failed without exception message. Will retry token retrieval";
-            }
-            Log.w("FirebaseMessaging", str);
-            return false;
-        } catch (SecurityException unused) {
-            str = "Token retrieval failed with SecurityException. Will retry token retrieval";
-            Log.w("FirebaseMessaging", str);
-            return false;
-        }
     }
 
     @Override // java.lang.Runnable
@@ -149,5 +77,74 @@ class SyncTask implements Runnable {
             }
             throw th;
         }
+    }
+
+    boolean maybeRefreshToken() {
+        try {
+            if (this.firebaseMessaging.blockingGetToken() == null) {
+                Log.e("FirebaseMessaging", "Token retrieval failed: null");
+                return false;
+            }
+            if (!Log.isLoggable("FirebaseMessaging", 3)) {
+                return true;
+            }
+            Log.d("FirebaseMessaging", "Token successfully retrieved");
+            return true;
+        } catch (IOException e) {
+            if (GmsRpc.isErrorMessageForRetryableError(e.getMessage())) {
+                Log.w("FirebaseMessaging", "Token retrieval failed: " + e.getMessage() + ". Will retry token retrieval");
+                return false;
+            }
+            if (e.getMessage() == null) {
+                Log.w("FirebaseMessaging", "Token retrieval failed without exception message. Will retry token retrieval");
+                return false;
+            }
+            throw e;
+        } catch (SecurityException unused) {
+            Log.w("FirebaseMessaging", "Token retrieval failed with SecurityException. Will retry token retrieval");
+            return false;
+        }
+    }
+
+    Context getContext() {
+        return this.firebaseMessaging.getApplicationContext();
+    }
+
+    boolean isDeviceConnected() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) getContext().getSystemService("connectivity");
+        NetworkInfo activeNetworkInfo = connectivityManager != null ? connectivityManager.getActiveNetworkInfo() : null;
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
+
+    static class ConnectivityChangeReceiver extends BroadcastReceiver {
+        private SyncTask task;
+
+        public ConnectivityChangeReceiver(SyncTask syncTask) {
+            this.task = syncTask;
+        }
+
+        public void registerReceiver() {
+            if (SyncTask.isDebugLogEnabled()) {
+                Log.d("FirebaseMessaging", "Connectivity change received registered");
+            }
+            this.task.getContext().registerReceiver(this, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
+        }
+
+        @Override // android.content.BroadcastReceiver
+        public void onReceive(Context context, Intent intent) {
+            SyncTask syncTask = this.task;
+            if (syncTask != null && syncTask.isDeviceConnected()) {
+                if (SyncTask.isDebugLogEnabled()) {
+                    Log.d("FirebaseMessaging", "Connectivity changed. Starting background sync.");
+                }
+                this.task.firebaseMessaging.enqueueTaskWithDelaySeconds(this.task, 0L);
+                this.task.getContext().unregisterReceiver(this);
+                this.task = null;
+            }
+        }
+    }
+
+    static boolean isDebugLogEnabled() {
+        return Log.isLoggable("FirebaseMessaging", 3) || (Build.VERSION.SDK_INT == 23 && Log.isLoggable("FirebaseMessaging", 3));
     }
 }

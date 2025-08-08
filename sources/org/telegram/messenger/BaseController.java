@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.Paint.PersistColorPalette;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class BaseController {
     protected final int currentAccount;
     private AccountInstance parentAccountInstance;
@@ -17,20 +17,60 @@ public class BaseController {
         return this.parentAccountInstance;
     }
 
-    protected final PersistColorPalette getColorPalette() {
-        return this.parentAccountInstance.getColorPalette();
-    }
-
-    protected final ConnectionsManager getConnectionsManager() {
-        return this.parentAccountInstance.getConnectionsManager();
+    protected final MessagesController getMessagesController() {
+        return this.parentAccountInstance.getMessagesController();
     }
 
     protected final ContactsController getContactsController() {
         return this.parentAccountInstance.getContactsController();
     }
 
+    protected final PersistColorPalette getColorPalette() {
+        return this.parentAccountInstance.getColorPalette();
+    }
+
+    protected final MediaDataController getMediaDataController() {
+        return this.parentAccountInstance.getMediaDataController();
+    }
+
+    protected final ConnectionsManager getConnectionsManager() {
+        return this.parentAccountInstance.getConnectionsManager();
+    }
+
+    protected final LocationController getLocationController() {
+        return this.parentAccountInstance.getLocationController();
+    }
+
+    protected final NotificationsController getNotificationsController() {
+        return this.parentAccountInstance.getNotificationsController();
+    }
+
+    protected final NotificationCenter getNotificationCenter() {
+        return this.parentAccountInstance.getNotificationCenter();
+    }
+
+    protected final UserConfig getUserConfig() {
+        return this.parentAccountInstance.getUserConfig();
+    }
+
+    protected final MessagesStorage getMessagesStorage() {
+        return this.parentAccountInstance.getMessagesStorage();
+    }
+
     protected final DownloadController getDownloadController() {
         return this.parentAccountInstance.getDownloadController();
+    }
+
+    protected final SendMessagesHelper getSendMessagesHelper() {
+        return this.parentAccountInstance.getSendMessagesHelper();
+    }
+
+    protected final SecretChatHelper getSecretChatHelper() {
+        return this.parentAccountInstance.getSecretChatHelper();
+    }
+
+    protected final StatsController getStatsController() {
+        return this.parentAccountInstance.getStatsController();
     }
 
     protected final FileLoader getFileLoader() {
@@ -41,47 +81,7 @@ public class BaseController {
         return this.parentAccountInstance.getFileRefController();
     }
 
-    protected final LocationController getLocationController() {
-        return this.parentAccountInstance.getLocationController();
-    }
-
-    protected final MediaDataController getMediaDataController() {
-        return this.parentAccountInstance.getMediaDataController();
-    }
-
     protected final MemberRequestsController getMemberRequestsController() {
         return this.parentAccountInstance.getMemberRequestsController();
-    }
-
-    protected final MessagesController getMessagesController() {
-        return this.parentAccountInstance.getMessagesController();
-    }
-
-    protected final MessagesStorage getMessagesStorage() {
-        return this.parentAccountInstance.getMessagesStorage();
-    }
-
-    protected final NotificationCenter getNotificationCenter() {
-        return this.parentAccountInstance.getNotificationCenter();
-    }
-
-    protected final NotificationsController getNotificationsController() {
-        return this.parentAccountInstance.getNotificationsController();
-    }
-
-    protected final SecretChatHelper getSecretChatHelper() {
-        return this.parentAccountInstance.getSecretChatHelper();
-    }
-
-    protected final SendMessagesHelper getSendMessagesHelper() {
-        return this.parentAccountInstance.getSendMessagesHelper();
-    }
-
-    protected final StatsController getStatsController() {
-        return this.parentAccountInstance.getStatsController();
-    }
-
-    protected final UserConfig getUserConfig() {
-        return this.parentAccountInstance.getUserConfig();
     }
 }

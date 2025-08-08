@@ -25,11 +25,10 @@ final class zzwb extends zzvz {
         if (zzwa.zzc().equals(obj2)) {
             return obj;
         }
-        zzwa zzwaVar = (zzwa) obj2;
         if (zzwa.zzc().equals(obj)) {
-            return zzwa.zze((zzwa) obj, zzwaVar);
+            return zzwa.zze((zzwa) obj, (zzwa) obj2);
         }
-        ((zzwa) obj).zzd(zzwaVar);
+        ((zzwa) obj).zzd((zzwa) obj2);
         return obj;
     }
 

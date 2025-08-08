@@ -2,17 +2,30 @@ package com.android.billingclient.api;
 
 import android.app.Activity;
 import android.content.Context;
+import com.android.billingclient.api.PendingPurchasesParams;
+import com.google.android.gms.internal.play_billing.zze;
 
 /* loaded from: classes.dex */
 public abstract class BillingClient {
 
     public static final class Builder {
-        private volatile zzbe zzb;
+        private volatile PendingPurchasesParams zzb;
         private final Context zzc;
         private volatile PurchasesUpdatedListener zzd;
+        private volatile boolean zzj;
+        private volatile boolean zzk;
 
-        /* synthetic */ Builder(Context context, zzi zziVar) {
+        /* synthetic */ Builder(Context context, zzo zzoVar) {
             this.zzc = context;
+        }
+
+        private final boolean zza() {
+            try {
+                return this.zzc.getPackageManager().getApplicationInfo(this.zzc.getPackageName(), 128).metaData.getBoolean("com.google.android.play.billingclient.enableBillingOverridesTesting", false);
+            } catch (Exception e) {
+                zze.zzm("BillingClient", "Unable to retrieve metadata value for enableBillingOverridesTesting.", e);
+                return false;
+            }
         }
 
         public BillingClient build() {
@@ -20,18 +33,35 @@ public abstract class BillingClient {
                 throw new IllegalArgumentException("Please provide a valid Context.");
             }
             if (this.zzd == null) {
-                throw new IllegalArgumentException("Please provide a valid listener for purchases updates.");
+                if (!this.zzj && !this.zzk) {
+                    throw new IllegalArgumentException("Please provide a valid listener for purchases updates.");
+                }
+                Context context = this.zzc;
+                return zza() ? new zzcc(null, context, null, null) : new BillingClientImpl(null, context, null, null);
             }
-            if (this.zzb != null) {
-                return this.zzd != null ? new BillingClientImpl(null, this.zzb, this.zzc, this.zzd, null, null) : new BillingClientImpl(null, this.zzb, this.zzc, null, null);
+            if (this.zzb == null || !this.zzb.isEnabledForOneTimeProducts()) {
+                throw new IllegalArgumentException("Pending purchases for one-time products must be supported.");
             }
-            throw new IllegalArgumentException("Pending purchases for one-time products must be supported.");
+            if (this.zzd == null) {
+                PendingPurchasesParams pendingPurchasesParams = this.zzb;
+                Context context2 = this.zzc;
+                return zza() ? new zzcc(null, pendingPurchasesParams, context2, null, null, null) : new BillingClientImpl(null, pendingPurchasesParams, context2, null, null, null);
+            }
+            PendingPurchasesParams pendingPurchasesParams2 = this.zzb;
+            Context context3 = this.zzc;
+            PurchasesUpdatedListener purchasesUpdatedListener = this.zzd;
+            return zza() ? new zzcc(null, pendingPurchasesParams2, context3, purchasesUpdatedListener, null, null, null) : new BillingClientImpl(null, pendingPurchasesParams2, context3, purchasesUpdatedListener, null, null, null);
         }
 
         public Builder enablePendingPurchases() {
-            zzbc zzbcVar = new zzbc(null);
-            zzbcVar.zza();
-            this.zzb = zzbcVar.zzb();
+            PendingPurchasesParams.Builder newBuilder = PendingPurchasesParams.newBuilder();
+            newBuilder.enableOneTimeProducts();
+            enablePendingPurchases(newBuilder.build());
+            return this;
+        }
+
+        public Builder enablePendingPurchases(PendingPurchasesParams pendingPurchasesParams) {
+            this.zzb = pendingPurchasesParams;
             return this;
         }
 

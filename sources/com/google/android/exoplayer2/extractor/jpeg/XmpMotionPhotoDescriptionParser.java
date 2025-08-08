@@ -26,8 +26,6 @@ abstract class XmpMotionPhotoDescriptionParser {
     }
 
     private static MotionPhotoDescription parseInternal(String str) {
-        String str2;
-        String str3;
         XmlPullParser newPullParser = XmlPullParserFactory.newInstance().newPullParser();
         newPullParser.setInput(new StringReader(str));
         newPullParser.next();
@@ -38,37 +36,22 @@ abstract class XmpMotionPhotoDescriptionParser {
         long j = -9223372036854775807L;
         do {
             newPullParser.next();
-            if (!XmlPullParserUtil.isStartTag(newPullParser, "rdf:Description")) {
-                if (XmlPullParserUtil.isStartTag(newPullParser, "Container:Directory")) {
-                    str2 = "Container";
-                    str3 = "Item";
-                } else if (XmlPullParserUtil.isStartTag(newPullParser, "GContainer:Directory")) {
-                    str2 = "GContainer";
-                    str3 = "GContainerItem";
-                }
-                of = parseMotionPhotoV1Directory(newPullParser, str2, str3);
-            } else {
+            if (XmlPullParserUtil.isStartTag(newPullParser, "rdf:Description")) {
                 if (!parseMotionPhotoFlagFromDescription(newPullParser)) {
                     return null;
                 }
                 j = parseMotionPhotoPresentationTimestampUsFromDescription(newPullParser);
                 of = parseMicroVideoOffsetFromDescription(newPullParser);
+            } else if (XmlPullParserUtil.isStartTag(newPullParser, "Container:Directory")) {
+                of = parseMotionPhotoV1Directory(newPullParser, "Container", "Item");
+            } else if (XmlPullParserUtil.isStartTag(newPullParser, "GContainer:Directory")) {
+                of = parseMotionPhotoV1Directory(newPullParser, "GContainer", "GContainerItem");
             }
         } while (!XmlPullParserUtil.isEndTag(newPullParser, "x:xmpmeta"));
         if (of.isEmpty()) {
             return null;
         }
         return new MotionPhotoDescription(j, of);
-    }
-
-    private static ImmutableList parseMicroVideoOffsetFromDescription(XmlPullParser xmlPullParser) {
-        for (String str : DESCRIPTION_MICRO_VIDEO_OFFSET_ATTRIBUTE_NAMES) {
-            String attributeValue = XmlPullParserUtil.getAttributeValue(xmlPullParser, str);
-            if (attributeValue != null) {
-                return ImmutableList.of((Object) new MotionPhotoDescription.ContainerItem("image/jpeg", "Primary", 0L, 0L), (Object) new MotionPhotoDescription.ContainerItem("video/mp4", "MotionPhoto", Long.parseLong(attributeValue), 0L));
-            }
-        }
-        return ImmutableList.of();
     }
 
     private static boolean parseMotionPhotoFlagFromDescription(XmlPullParser xmlPullParser) {
@@ -93,6 +76,16 @@ abstract class XmpMotionPhotoDescriptionParser {
             }
         }
         return -9223372036854775807L;
+    }
+
+    private static ImmutableList parseMicroVideoOffsetFromDescription(XmlPullParser xmlPullParser) {
+        for (String str : DESCRIPTION_MICRO_VIDEO_OFFSET_ATTRIBUTE_NAMES) {
+            String attributeValue = XmlPullParserUtil.getAttributeValue(xmlPullParser, str);
+            if (attributeValue != null) {
+                return ImmutableList.of((Object) new MotionPhotoDescription.ContainerItem("image/jpeg", "Primary", 0L, 0L), (Object) new MotionPhotoDescription.ContainerItem("video/mp4", "MotionPhoto", Long.parseLong(attributeValue), 0L));
+            }
+        }
+        return ImmutableList.of();
     }
 
     private static ImmutableList parseMotionPhotoV1Directory(XmlPullParser xmlPullParser, String str, String str2) {

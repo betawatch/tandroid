@@ -1,21 +1,20 @@
 package j$.util.function;
 
 import j$.util.function.Function;
-import java.util.function.BinaryOperator;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class e implements BinaryOperator {
-    public final /* synthetic */ f a;
+public final /* synthetic */ class e implements java.util.function.BinaryOperator {
+    public final /* synthetic */ BinaryOperator a;
 
-    private /* synthetic */ e(f fVar) {
-        this.a = fVar;
+    private /* synthetic */ e(BinaryOperator binaryOperator) {
+        this.a = binaryOperator;
     }
 
-    public static /* synthetic */ BinaryOperator a(f fVar) {
-        if (fVar == null) {
+    public static /* synthetic */ java.util.function.BinaryOperator a(BinaryOperator binaryOperator) {
+        if (binaryOperator == null) {
             return null;
         }
-        return fVar instanceof d ? ((d) fVar).a : new e(fVar);
+        return binaryOperator instanceof d ? ((d) binaryOperator).a : new e(binaryOperator);
     }
 
     @Override // java.util.function.BiFunction
@@ -29,11 +28,11 @@ public final /* synthetic */ class e implements BinaryOperator {
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        f fVar = this.a;
+        BinaryOperator binaryOperator = this.a;
         if (obj instanceof e) {
             obj = ((e) obj).a;
         }
-        return fVar.equals(obj);
+        return binaryOperator.equals(obj);
     }
 
     public final /* synthetic */ int hashCode() {

@@ -193,7 +193,13 @@ public final class zztk {
         this.zzac = i2;
         this.zzab = zzubVar;
         int i4 = i3 - 1;
-        this.zzad = (i4 == 1 || i4 == 3) ? zzubVar.zza() : null;
+        if (i4 == 1) {
+            this.zzad = zzubVar.zza();
+        } else if (i4 != 3) {
+            this.zzad = null;
+        } else {
+            this.zzad = zzubVar.zza();
+        }
         if (i3 == 1) {
             zzub zzubVar2 = zzub.zza;
             zzubVar.ordinal();

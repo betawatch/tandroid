@@ -13,22 +13,10 @@ abstract class zzsi extends AbstractList implements zztx {
         this.zza = z;
     }
 
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public boolean add(Object obj) {
-        zza();
-        return super.add(obj);
-    }
-
     @Override // java.util.AbstractList, java.util.List
     public boolean addAll(int i, Collection collection) {
         zza();
         return super.addAll(i, collection);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public boolean addAll(Collection collection) {
-        zza();
-        return super.addAll(collection);
     }
 
     @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
@@ -75,17 +63,6 @@ abstract class zzsi extends AbstractList implements zztx {
     public abstract Object remove(int i);
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean remove(Object obj) {
-        zza();
-        int indexOf = indexOf(obj);
-        if (indexOf == -1) {
-            return false;
-        }
-        remove(indexOf);
-        return true;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final boolean removeAll(Collection collection) {
         zza();
         return super.removeAll(collection);
@@ -113,5 +90,28 @@ abstract class zzsi extends AbstractList implements zztx {
     @Override // com.google.android.gms.internal.cast.zztx
     public final boolean zzc() {
         return this.zza;
+    }
+
+    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public boolean add(Object obj) {
+        zza();
+        return super.add(obj);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public boolean addAll(Collection collection) {
+        zza();
+        return super.addAll(collection);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final boolean remove(Object obj) {
+        zza();
+        int indexOf = indexOf(obj);
+        if (indexOf == -1) {
+            return false;
+        }
+        remove(indexOf);
+        return true;
     }
 }

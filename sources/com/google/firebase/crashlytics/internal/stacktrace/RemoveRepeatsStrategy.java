@@ -2,7 +2,7 @@ package com.google.firebase.crashlytics.internal.stacktrace;
 
 import java.util.HashMap;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class RemoveRepeatsStrategy implements StackTraceTrimmingStrategy {
     private final int maxRepetitions;
 
@@ -10,17 +10,10 @@ public class RemoveRepeatsStrategy implements StackTraceTrimmingStrategy {
         this.maxRepetitions = i;
     }
 
-    private static boolean isRepeatingSequence(StackTraceElement[] stackTraceElementArr, int i, int i2) {
-        int i3 = i2 - i;
-        if (i2 + i3 > stackTraceElementArr.length) {
-            return false;
-        }
-        for (int i4 = 0; i4 < i3; i4++) {
-            if (!stackTraceElementArr[i + i4].equals(stackTraceElementArr[i2 + i4])) {
-                return false;
-            }
-        }
-        return true;
+    @Override // com.google.firebase.crashlytics.internal.stacktrace.StackTraceTrimmingStrategy
+    public StackTraceElement[] getTrimmedStackTrace(StackTraceElement[] stackTraceElementArr) {
+        StackTraceElement[] trimRepeats = trimRepeats(stackTraceElementArr, this.maxRepetitions);
+        return trimRepeats.length < stackTraceElementArr.length ? trimRepeats : stackTraceElementArr;
     }
 
     private static StackTraceElement[] trimRepeats(StackTraceElement[] stackTraceElementArr, int i) {
@@ -55,9 +48,16 @@ public class RemoveRepeatsStrategy implements StackTraceTrimmingStrategy {
         return stackTraceElementArr3;
     }
 
-    @Override // com.google.firebase.crashlytics.internal.stacktrace.StackTraceTrimmingStrategy
-    public StackTraceElement[] getTrimmedStackTrace(StackTraceElement[] stackTraceElementArr) {
-        StackTraceElement[] trimRepeats = trimRepeats(stackTraceElementArr, this.maxRepetitions);
-        return trimRepeats.length < stackTraceElementArr.length ? trimRepeats : stackTraceElementArr;
+    private static boolean isRepeatingSequence(StackTraceElement[] stackTraceElementArr, int i, int i2) {
+        int i3 = i2 - i;
+        if (i2 + i3 > stackTraceElementArr.length) {
+            return false;
+        }
+        for (int i4 = 0; i4 < i3; i4++) {
+            if (!stackTraceElementArr[i + i4].equals(stackTraceElementArr[i2 + i4])) {
+                return false;
+            }
+        }
+        return true;
     }
 }

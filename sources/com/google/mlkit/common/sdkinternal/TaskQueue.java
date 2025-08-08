@@ -7,7 +7,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class TaskQueue {
     private boolean zzb;
     private final Object zza = new Object();
@@ -43,10 +43,7 @@ public class TaskQueue {
                         try {
                             zzxVar.close();
                         } catch (Throwable th2) {
-                            try {
-                                Throwable.class.getDeclaredMethod("addSuppressed", Throwable.class).invoke(th, th2);
-                            } catch (Exception unused) {
-                            }
+                            th.addSuppressed(th2);
                         }
                         throw th;
                     }

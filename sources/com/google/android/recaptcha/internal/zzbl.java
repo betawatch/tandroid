@@ -4,9 +4,9 @@ import android.content.ContentValues;
 import java.util.List;
 import kotlin.ResultKt;
 import kotlin.Unit;
-import kotlin.collections.CollectionsKt___CollectionsKt;
+import kotlin.collections.CollectionsKt;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
@@ -40,9 +40,8 @@ final class zzbl extends SuspendLambda implements Function2 {
         zzaz zzazVar3;
         zzaz zzazVar4;
         zzaz zzazVar5;
-        List take;
         zzaz zzazVar6;
-        IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        IntrinsicsKt.getCOROUTINE_SUSPENDED();
         ResultKt.throwOnFailure(obj);
         zzbm zzbmVar = this.zza;
         zzpd zzpdVar = this.zzb;
@@ -61,7 +60,7 @@ final class zzbl extends SuspendLambda implements Function2 {
                     int zzb = zzazVar3.zzb() - 500;
                     if (zzb > 0) {
                         zzazVar5 = zzbmVar.zze;
-                        take = CollectionsKt___CollectionsKt.take(zzazVar5.zzd(), zzb);
+                        List take = CollectionsKt.take(zzazVar5.zzd(), zzb);
                         zzazVar6 = zzbmVar.zze;
                         zzazVar6.zza(take);
                     }

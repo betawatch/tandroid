@@ -9,23 +9,7 @@ public abstract class Task<TResult> {
         throw new UnsupportedOperationException("addOnCanceledListener is not implemented.");
     }
 
-    public Task<TResult> addOnCanceledListener(OnCanceledListener onCanceledListener) {
-        throw new UnsupportedOperationException("addOnCanceledListener is not implemented.");
-    }
-
-    public Task<TResult> addOnCanceledListener(Executor executor, OnCanceledListener onCanceledListener) {
-        throw new UnsupportedOperationException("addOnCanceledListener is not implemented");
-    }
-
     public Task<TResult> addOnCompleteListener(Activity activity, OnCompleteListener<TResult> onCompleteListener) {
-        throw new UnsupportedOperationException("addOnCompleteListener is not implemented");
-    }
-
-    public Task<TResult> addOnCompleteListener(OnCompleteListener<TResult> onCompleteListener) {
-        throw new UnsupportedOperationException("addOnCompleteListener is not implemented");
-    }
-
-    public Task<TResult> addOnCompleteListener(Executor executor, OnCompleteListener<TResult> onCompleteListener) {
         throw new UnsupportedOperationException("addOnCompleteListener is not implemented");
     }
 
@@ -45,15 +29,7 @@ public abstract class Task<TResult> {
         throw new UnsupportedOperationException("continueWith is not implemented");
     }
 
-    public <TContinuationResult> Task<TContinuationResult> continueWith(Executor executor, Continuation<TResult, TContinuationResult> continuation) {
-        throw new UnsupportedOperationException("continueWith is not implemented");
-    }
-
     public <TContinuationResult> Task<TContinuationResult> continueWithTask(Continuation<TResult, Task<TContinuationResult>> continuation) {
-        throw new UnsupportedOperationException("continueWithTask is not implemented");
-    }
-
-    public <TContinuationResult> Task<TContinuationResult> continueWithTask(Executor executor, Continuation<TResult, Task<TContinuationResult>> continuation) {
         throw new UnsupportedOperationException("continueWithTask is not implemented");
     }
 
@@ -73,7 +49,31 @@ public abstract class Task<TResult> {
         throw new UnsupportedOperationException("onSuccessTask is not implemented");
     }
 
+    public Task<TResult> addOnCanceledListener(OnCanceledListener onCanceledListener) {
+        throw new UnsupportedOperationException("addOnCanceledListener is not implemented.");
+    }
+
+    public Task<TResult> addOnCompleteListener(OnCompleteListener<TResult> onCompleteListener) {
+        throw new UnsupportedOperationException("addOnCompleteListener is not implemented");
+    }
+
+    public <TContinuationResult> Task<TContinuationResult> continueWith(Executor executor, Continuation<TResult, TContinuationResult> continuation) {
+        throw new UnsupportedOperationException("continueWith is not implemented");
+    }
+
+    public <TContinuationResult> Task<TContinuationResult> continueWithTask(Executor executor, Continuation<TResult, Task<TContinuationResult>> continuation) {
+        throw new UnsupportedOperationException("continueWithTask is not implemented");
+    }
+
     public <TContinuationResult> Task<TContinuationResult> onSuccessTask(Executor executor, SuccessContinuation<TResult, TContinuationResult> successContinuation) {
         throw new UnsupportedOperationException("onSuccessTask is not implemented");
+    }
+
+    public Task<TResult> addOnCanceledListener(Executor executor, OnCanceledListener onCanceledListener) {
+        throw new UnsupportedOperationException("addOnCanceledListener is not implemented");
+    }
+
+    public Task<TResult> addOnCompleteListener(Executor executor, OnCompleteListener<TResult> onCompleteListener) {
+        throw new UnsupportedOperationException("addOnCompleteListener is not implemented");
     }
 }

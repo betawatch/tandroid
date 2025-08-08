@@ -128,7 +128,6 @@ public final class zabe extends GoogleApiClient implements zabz {
     }
 
     private final void zal(int i) {
-        zaca zabiVar;
         Integer num = this.zaw;
         if (num == null) {
             this.zaw = Integer.valueOf(i);
@@ -153,11 +152,10 @@ public final class zabe extends GoogleApiClient implements zabz {
                 throw new IllegalStateException("Cannot use SIGN_IN_MODE_REQUIRED with GOOGLE_SIGN_IN_API. Use connect(SIGN_IN_MODE_OPTIONAL) instead.");
             }
         } else if (intValue == 2 && z) {
-            zabiVar = zaaa.zag(this.zan, this, this.zaj, this.zao, this.zat, this.zac, this.zae, this.zaf, this.zag, this.zav);
-            this.zal = zabiVar;
+            this.zal = zaaa.zag(this.zan, this, this.zaj, this.zao, this.zat, this.zac, this.zae, this.zaf, this.zag, this.zav);
+            return;
         }
-        zabiVar = new zabi(this.zan, this, this.zaj, this.zao, this.zat, this.zac, this.zae, this.zaf, this.zag, this.zav, this);
-        this.zal = zabiVar;
+        this.zal = new zabi(this.zan, this, this.zaj, this.zao, this.zat, this.zac, this.zae, this.zaf, this.zag, this.zav, this);
     }
 
     private final void zan() {
@@ -258,16 +256,19 @@ public final class zabe extends GoogleApiClient implements zabz {
             } else {
                 baseImplementation$ApiMethodImpl = zacaVar.zae(baseImplementation$ApiMethodImpl);
             }
-            return baseImplementation$ApiMethodImpl;
-        } finally {
             this.zaj.unlock();
+            return baseImplementation$ApiMethodImpl;
+        } catch (Throwable th) {
+            this.zaj.unlock();
+            throw th;
         }
     }
 
     @Override // com.google.android.gms.common.api.GoogleApiClient
     public final BaseImplementation$ApiMethodImpl execute(BaseImplementation$ApiMethodImpl baseImplementation$ApiMethodImpl) {
+        Map map = this.zac;
         Api api = baseImplementation$ApiMethodImpl.getApi();
-        Preconditions.checkArgument(this.zac.containsKey(baseImplementation$ApiMethodImpl.getClientKey()), "GoogleApiClient is not configured to use " + (api != null ? api.zad() : "the API") + " required for this call.");
+        Preconditions.checkArgument(map.containsKey(baseImplementation$ApiMethodImpl.getClientKey()), "GoogleApiClient is not configured to use " + (api != null ? api.zad() : "the API") + " required for this call.");
         this.zaj.lock();
         try {
             zaca zacaVar = this.zal;
@@ -284,9 +285,11 @@ public final class zabe extends GoogleApiClient implements zabz {
             } else {
                 baseImplementation$ApiMethodImpl = zacaVar.zaf(baseImplementation$ApiMethodImpl);
             }
-            return baseImplementation$ApiMethodImpl;
-        } finally {
             this.zaj.unlock();
+            return baseImplementation$ApiMethodImpl;
+        } catch (Throwable th) {
+            this.zaj.unlock();
+            throw th;
         }
     }
 
@@ -344,6 +347,27 @@ public final class zabe extends GoogleApiClient implements zabz {
         this.zak.zad(bundle);
     }
 
+    final String zaf() {
+        StringWriter stringWriter = new StringWriter();
+        dump("", null, new PrintWriter(stringWriter), null);
+        return stringWriter.toString();
+    }
+
+    final boolean zak() {
+        if (!this.zap) {
+            return false;
+        }
+        this.zap = false;
+        this.zas.removeMessages(2);
+        this.zas.removeMessages(1);
+        zabx zabxVar = this.zab;
+        if (zabxVar != null) {
+            zabxVar.zab();
+            this.zab = null;
+        }
+        return true;
+    }
+
     @Override // com.google.android.gms.common.api.internal.zabz
     public final void zac(int i, boolean z) {
         if (i == 1) {
@@ -370,26 +394,5 @@ public final class zabe extends GoogleApiClient implements zabz {
         if (i == 2) {
             zan();
         }
-    }
-
-    final String zaf() {
-        StringWriter stringWriter = new StringWriter();
-        dump("", null, new PrintWriter(stringWriter), null);
-        return stringWriter.toString();
-    }
-
-    final boolean zak() {
-        if (!this.zap) {
-            return false;
-        }
-        this.zap = false;
-        this.zas.removeMessages(2);
-        this.zas.removeMessages(1);
-        zabx zabxVar = this.zab;
-        if (zabxVar != null) {
-            zabxVar.zab();
-            this.zab = null;
-        }
-        return true;
     }
 }

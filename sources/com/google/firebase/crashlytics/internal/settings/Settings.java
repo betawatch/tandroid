@@ -1,6 +1,6 @@
 package com.google.firebase.crashlytics.internal.settings;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class Settings {
     public final int cacheDuration;
     public final long expiresAtMillis;
@@ -11,6 +11,16 @@ public class Settings {
     public final SessionData sessionData;
     public final int settingsVersion;
 
+    public static class SessionData {
+        public final int maxCompleteSessionsCount;
+        public final int maxCustomExceptionEvents;
+
+        public SessionData(int i, int i2) {
+            this.maxCustomExceptionEvents = i;
+            this.maxCompleteSessionsCount = i2;
+        }
+    }
+
     public static class FeatureFlagData {
         public final boolean collectAnrs;
         public final boolean collectBuildIds;
@@ -20,16 +30,6 @@ public class Settings {
             this.collectReports = z;
             this.collectAnrs = z2;
             this.collectBuildIds = z3;
-        }
-    }
-
-    public static class SessionData {
-        public final int maxCompleteSessionsCount;
-        public final int maxCustomExceptionEvents;
-
-        public SessionData(int i, int i2) {
-            this.maxCustomExceptionEvents = i;
-            this.maxCompleteSessionsCount = i2;
         }
     }
 

@@ -165,10 +165,6 @@ abstract class zzvk {
         return i;
     }
 
-    static int zzh(int i, Object obj, zzvi zzviVar) {
-        return zztc.zzx(i << 3) + zztc.zzv((zzux) obj, zzviVar);
-    }
-
     static int zzi(List list) {
         int i;
         int size = list.size();
@@ -356,5 +352,9 @@ abstract class zzvk {
             return;
         }
         zzwqVar.zzy(i, list, z);
+    }
+
+    static int zzh(int i, Object obj, zzvi zzviVar) {
+        return zztc.zzx(i << 3) + zztc.zzv((zzux) obj, zzviVar);
     }
 }

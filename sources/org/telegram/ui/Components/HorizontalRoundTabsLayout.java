@@ -15,7 +15,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class HorizontalRoundTabsLayout extends HorizontalScrollView {
     private static final RectF tmpRect = new RectF();
     private final Paint bgPaint;
@@ -26,30 +26,6 @@ public class HorizontalRoundTabsLayout extends HorizontalScrollView {
     private final AnimatedFloat selectorEndX;
     private final AnimatedFloat selectorStartX;
     private final TextPaint textPaint;
-
-    private static class RoundTabView extends View {
-        private Text text;
-
-        public RoundTabView(Context context) {
-            super(context);
-            setDrawingCacheEnabled(false);
-        }
-
-        @Override // android.view.View
-        public void draw(Canvas canvas) {
-            super.draw(canvas);
-            this.text.draw(canvas, (getMeasuredWidth() - this.text.getWidth()) / 2.0f, getMeasuredHeight() / 2.0f);
-        }
-
-        @Override // android.view.View
-        protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.round(this.text.getWidth()) + getPaddingLeft() + getPaddingRight(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.max(Math.round(this.text.getHeight()) + getPaddingTop() + getPaddingBottom(), AndroidUtilities.dp(26.0f)), TLObject.FLAG_30));
-        }
-
-        public void setText(Text text) {
-            this.text = text;
-        }
-    }
 
     public HorizontalRoundTabsLayout(Context context) {
         super(context);
@@ -103,12 +79,46 @@ public class HorizontalRoundTabsLayout extends HorizontalScrollView {
         }
     }
 
+    public void setTabs(ArrayList arrayList, final MessagesStorage.IntCallback intCallback) {
+        this.linearLayout.removeAllViews();
+        for (final int i = 0; i < arrayList.size(); i++) {
+            CharSequence charSequence = (CharSequence) arrayList.get(i);
+            RoundTabView roundTabView = new RoundTabView(getContext());
+            roundTabView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.HorizontalRoundTabsLayout$$ExternalSyntheticLambda2
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    HorizontalRoundTabsLayout.this.lambda$setTabs$2(i, intCallback, view);
+                }
+            });
+            roundTabView.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(5.0f));
+            LinearLayout.LayoutParams createLinear = LayoutHelper.createLinear(-2, -2);
+            if (i < arrayList.size() - 1) {
+                createLinear.rightMargin = AndroidUtilities.dp(4.0f);
+            }
+            roundTabView.setText(new Text(charSequence, this.textPaint));
+            this.linearLayout.addView(roundTabView, createLinear);
+        }
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$setTabs$2(int i, MessagesStorage.IntCallback intCallback, View view) {
         this.selectedIndex = i;
         this.selectorStartX.set(view.getLeft(), false);
         this.selectorEndX.set(view.getRight(), false);
         intCallback.run(i);
+    }
+
+    public void setSelectedIndex(int i, boolean z) {
+        this.selectedIndex = i;
+        boolean z2 = !z;
+        this.selectorStartX.set(this.linearLayout.getChildAt(i).getLeft(), z2);
+        this.selectorEndX.set(this.linearLayout.getChildAt(i).getRight(), z2);
+    }
+
+    @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        setSelectedIndex(this.selectedIndex, false);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -151,37 +161,27 @@ public class HorizontalRoundTabsLayout extends HorizontalScrollView {
         canvas.restore();
     }
 
-    @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        setSelectedIndex(this.selectedIndex, false);
-    }
+    private static class RoundTabView extends View {
+        private Text text;
 
-    public void setSelectedIndex(int i, boolean z) {
-        this.selectedIndex = i;
-        boolean z2 = !z;
-        this.selectorStartX.set(this.linearLayout.getChildAt(i).getLeft(), z2);
-        this.selectorEndX.set(this.linearLayout.getChildAt(i).getRight(), z2);
-    }
+        public RoundTabView(Context context) {
+            super(context);
+            setDrawingCacheEnabled(false);
+        }
 
-    public void setTabs(ArrayList arrayList, final MessagesStorage.IntCallback intCallback) {
-        this.linearLayout.removeAllViews();
-        for (final int i = 0; i < arrayList.size(); i++) {
-            CharSequence charSequence = (CharSequence) arrayList.get(i);
-            RoundTabView roundTabView = new RoundTabView(getContext());
-            roundTabView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.HorizontalRoundTabsLayout$$ExternalSyntheticLambda2
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    HorizontalRoundTabsLayout.this.lambda$setTabs$2(i, intCallback, view);
-                }
-            });
-            roundTabView.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(5.0f));
-            LinearLayout.LayoutParams createLinear = LayoutHelper.createLinear(-2, -2);
-            if (i < arrayList.size() - 1) {
-                createLinear.rightMargin = AndroidUtilities.dp(4.0f);
-            }
-            roundTabView.setText(new Text(charSequence, this.textPaint));
-            this.linearLayout.addView(roundTabView, createLinear);
+        public void setText(Text text) {
+            this.text = text;
+        }
+
+        @Override // android.view.View
+        protected void onMeasure(int i, int i2) {
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.round(this.text.getWidth()) + getPaddingLeft() + getPaddingRight(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.max(Math.round(this.text.getHeight()) + getPaddingTop() + getPaddingBottom(), AndroidUtilities.dp(26.0f)), TLObject.FLAG_30));
+        }
+
+        @Override // android.view.View
+        public void draw(Canvas canvas) {
+            super.draw(canvas);
+            this.text.draw(canvas, (getMeasuredWidth() - this.text.getWidth()) / 2.0f, getMeasuredHeight() / 2.0f);
         }
     }
 }

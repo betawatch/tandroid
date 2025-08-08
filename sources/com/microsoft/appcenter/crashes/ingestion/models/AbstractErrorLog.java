@@ -8,7 +8,7 @@ import java.util.UUID;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class AbstractErrorLog extends AbstractLog {
     private Date appLaunchTimestamp;
     private String architecture;
@@ -20,6 +20,116 @@ public abstract class AbstractErrorLog extends AbstractLog {
     private String parentProcessName;
     private Integer processId;
     private String processName;
+
+    public UUID getId() {
+        return this.id;
+    }
+
+    public void setId(UUID uuid) {
+        this.id = uuid;
+    }
+
+    public Integer getProcessId() {
+        return this.processId;
+    }
+
+    public void setProcessId(Integer num) {
+        this.processId = num;
+    }
+
+    public String getProcessName() {
+        return this.processName;
+    }
+
+    public void setProcessName(String str) {
+        this.processName = str;
+    }
+
+    public Integer getParentProcessId() {
+        return this.parentProcessId;
+    }
+
+    public void setParentProcessId(Integer num) {
+        this.parentProcessId = num;
+    }
+
+    public String getParentProcessName() {
+        return this.parentProcessName;
+    }
+
+    public void setParentProcessName(String str) {
+        this.parentProcessName = str;
+    }
+
+    public Long getErrorThreadId() {
+        return this.errorThreadId;
+    }
+
+    public void setErrorThreadId(Long l) {
+        this.errorThreadId = l;
+    }
+
+    public String getErrorThreadName() {
+        return this.errorThreadName;
+    }
+
+    public void setErrorThreadName(String str) {
+        this.errorThreadName = str;
+    }
+
+    public Boolean getFatal() {
+        return this.fatal;
+    }
+
+    public void setFatal(Boolean bool) {
+        this.fatal = bool;
+    }
+
+    public Date getAppLaunchTimestamp() {
+        return this.appLaunchTimestamp;
+    }
+
+    public void setAppLaunchTimestamp(Date date) {
+        this.appLaunchTimestamp = date;
+    }
+
+    public String getArchitecture() {
+        return this.architecture;
+    }
+
+    public void setArchitecture(String str) {
+        this.architecture = str;
+    }
+
+    @Override // com.microsoft.appcenter.ingestion.models.AbstractLog, com.microsoft.appcenter.ingestion.models.Model
+    public void read(JSONObject jSONObject) {
+        super.read(jSONObject);
+        setId(UUID.fromString(jSONObject.getString("id")));
+        setProcessId(JSONUtils.readInteger(jSONObject, "processId"));
+        setProcessName(jSONObject.optString("processName", null));
+        setParentProcessId(JSONUtils.readInteger(jSONObject, "parentProcessId"));
+        setParentProcessName(jSONObject.optString("parentProcessName", null));
+        setErrorThreadId(JSONUtils.readLong(jSONObject, "errorThreadId"));
+        setErrorThreadName(jSONObject.optString("errorThreadName", null));
+        setFatal(JSONUtils.readBoolean(jSONObject, "fatal"));
+        setAppLaunchTimestamp(JSONDateUtils.toDate(jSONObject.getString("appLaunchTimestamp")));
+        setArchitecture(jSONObject.optString("architecture", null));
+    }
+
+    @Override // com.microsoft.appcenter.ingestion.models.AbstractLog, com.microsoft.appcenter.ingestion.models.Model
+    public void write(JSONStringer jSONStringer) {
+        super.write(jSONStringer);
+        JSONUtils.write(jSONStringer, "id", getId());
+        JSONUtils.write(jSONStringer, "processId", getProcessId());
+        JSONUtils.write(jSONStringer, "processName", getProcessName());
+        JSONUtils.write(jSONStringer, "parentProcessId", getParentProcessId());
+        JSONUtils.write(jSONStringer, "parentProcessName", getParentProcessName());
+        JSONUtils.write(jSONStringer, "errorThreadId", getErrorThreadId());
+        JSONUtils.write(jSONStringer, "errorThreadName", getErrorThreadName());
+        JSONUtils.write(jSONStringer, "fatal", getFatal());
+        JSONUtils.write(jSONStringer, "appLaunchTimestamp", JSONDateUtils.toString(getAppLaunchTimestamp()));
+        JSONUtils.write(jSONStringer, "architecture", getArchitecture());
+    }
 
     @Override // com.microsoft.appcenter.ingestion.models.AbstractLog
     public boolean equals(Object obj) {
@@ -71,46 +181,6 @@ public abstract class AbstractErrorLog extends AbstractLog {
         return str4 != null ? str4.equals(str5) : str5 == null;
     }
 
-    public Date getAppLaunchTimestamp() {
-        return this.appLaunchTimestamp;
-    }
-
-    public String getArchitecture() {
-        return this.architecture;
-    }
-
-    public Long getErrorThreadId() {
-        return this.errorThreadId;
-    }
-
-    public String getErrorThreadName() {
-        return this.errorThreadName;
-    }
-
-    public Boolean getFatal() {
-        return this.fatal;
-    }
-
-    public UUID getId() {
-        return this.id;
-    }
-
-    public Integer getParentProcessId() {
-        return this.parentProcessId;
-    }
-
-    public String getParentProcessName() {
-        return this.parentProcessName;
-    }
-
-    public Integer getProcessId() {
-        return this.processId;
-    }
-
-    public String getProcessName() {
-        return this.processName;
-    }
-
     @Override // com.microsoft.appcenter.ingestion.models.AbstractLog
     public int hashCode() {
         int hashCode = super.hashCode() * 31;
@@ -134,75 +204,5 @@ public abstract class AbstractErrorLog extends AbstractLog {
         int hashCode10 = (hashCode9 + (date != null ? date.hashCode() : 0)) * 31;
         String str4 = this.architecture;
         return hashCode10 + (str4 != null ? str4.hashCode() : 0);
-    }
-
-    @Override // com.microsoft.appcenter.ingestion.models.AbstractLog, com.microsoft.appcenter.ingestion.models.Model
-    public void read(JSONObject jSONObject) {
-        super.read(jSONObject);
-        setId(UUID.fromString(jSONObject.getString("id")));
-        setProcessId(JSONUtils.readInteger(jSONObject, "processId"));
-        setProcessName(jSONObject.optString("processName", null));
-        setParentProcessId(JSONUtils.readInteger(jSONObject, "parentProcessId"));
-        setParentProcessName(jSONObject.optString("parentProcessName", null));
-        setErrorThreadId(JSONUtils.readLong(jSONObject, "errorThreadId"));
-        setErrorThreadName(jSONObject.optString("errorThreadName", null));
-        setFatal(JSONUtils.readBoolean(jSONObject, "fatal"));
-        setAppLaunchTimestamp(JSONDateUtils.toDate(jSONObject.getString("appLaunchTimestamp")));
-        setArchitecture(jSONObject.optString("architecture", null));
-    }
-
-    public void setAppLaunchTimestamp(Date date) {
-        this.appLaunchTimestamp = date;
-    }
-
-    public void setArchitecture(String str) {
-        this.architecture = str;
-    }
-
-    public void setErrorThreadId(Long l) {
-        this.errorThreadId = l;
-    }
-
-    public void setErrorThreadName(String str) {
-        this.errorThreadName = str;
-    }
-
-    public void setFatal(Boolean bool) {
-        this.fatal = bool;
-    }
-
-    public void setId(UUID uuid) {
-        this.id = uuid;
-    }
-
-    public void setParentProcessId(Integer num) {
-        this.parentProcessId = num;
-    }
-
-    public void setParentProcessName(String str) {
-        this.parentProcessName = str;
-    }
-
-    public void setProcessId(Integer num) {
-        this.processId = num;
-    }
-
-    public void setProcessName(String str) {
-        this.processName = str;
-    }
-
-    @Override // com.microsoft.appcenter.ingestion.models.AbstractLog, com.microsoft.appcenter.ingestion.models.Model
-    public void write(JSONStringer jSONStringer) {
-        super.write(jSONStringer);
-        JSONUtils.write(jSONStringer, "id", getId());
-        JSONUtils.write(jSONStringer, "processId", getProcessId());
-        JSONUtils.write(jSONStringer, "processName", getProcessName());
-        JSONUtils.write(jSONStringer, "parentProcessId", getParentProcessId());
-        JSONUtils.write(jSONStringer, "parentProcessName", getParentProcessName());
-        JSONUtils.write(jSONStringer, "errorThreadId", getErrorThreadId());
-        JSONUtils.write(jSONStringer, "errorThreadName", getErrorThreadName());
-        JSONUtils.write(jSONStringer, "fatal", getFatal());
-        JSONUtils.write(jSONStringer, "appLaunchTimestamp", JSONDateUtils.toString(getAppLaunchTimestamp()));
-        JSONUtils.write(jSONStringer, "architecture", getArchitecture());
     }
 }

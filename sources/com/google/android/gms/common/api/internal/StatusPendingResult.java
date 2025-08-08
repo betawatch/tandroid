@@ -6,12 +6,12 @@ import com.google.android.gms.common.api.Status;
 
 /* loaded from: classes.dex */
 public class StatusPendingResult extends BasePendingResult {
-    public StatusPendingResult(GoogleApiClient googleApiClient) {
-        super(googleApiClient);
-    }
-
     @Override // com.google.android.gms.common.api.internal.BasePendingResult
     protected final /* bridge */ /* synthetic */ Result createFailedResult(Status status) {
         return status;
+    }
+
+    public StatusPendingResult(GoogleApiClient googleApiClient) {
+        super(googleApiClient);
     }
 }

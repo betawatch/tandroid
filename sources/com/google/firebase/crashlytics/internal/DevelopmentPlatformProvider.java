@@ -5,38 +5,21 @@ import com.google.firebase.crashlytics.internal.common.CommonUtils;
 import java.io.IOException;
 import java.io.InputStream;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class DevelopmentPlatformProvider {
     private final Context context;
     private DevelopmentPlatform developmentPlatform = null;
 
-    private class DevelopmentPlatform {
-        private final String developmentPlatform;
-        private final String developmentPlatformVersion;
-
-        private DevelopmentPlatform() {
-            int resourcesIdentifier = CommonUtils.getResourcesIdentifier(DevelopmentPlatformProvider.this.context, "com.google.firebase.crashlytics.unity_version", "string");
-            if (resourcesIdentifier == 0) {
-                if (!DevelopmentPlatformProvider.this.assetFileExists("flutter_assets/NOTICES.Z")) {
-                    this.developmentPlatform = null;
-                    this.developmentPlatformVersion = null;
-                    return;
-                } else {
-                    this.developmentPlatform = "Flutter";
-                    this.developmentPlatformVersion = null;
-                    Logger.getLogger().v("Development platform is: Flutter");
-                    return;
-                }
-            }
-            this.developmentPlatform = "Unity";
-            String string = DevelopmentPlatformProvider.this.context.getResources().getString(resourcesIdentifier);
-            this.developmentPlatformVersion = string;
-            Logger.getLogger().v("Unity Editor version is: " + string);
-        }
-    }
-
     public DevelopmentPlatformProvider(Context context) {
         this.context = context;
+    }
+
+    public String getDevelopmentPlatform() {
+        return initDevelopmentPlatform().developmentPlatform;
+    }
+
+    public String getDevelopmentPlatformVersion() {
+        return initDevelopmentPlatform().developmentPlatformVersion;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -63,11 +46,28 @@ public class DevelopmentPlatformProvider {
         return this.developmentPlatform;
     }
 
-    public String getDevelopmentPlatform() {
-        return initDevelopmentPlatform().developmentPlatform;
-    }
+    private class DevelopmentPlatform {
+        private final String developmentPlatform;
+        private final String developmentPlatformVersion;
 
-    public String getDevelopmentPlatformVersion() {
-        return initDevelopmentPlatform().developmentPlatformVersion;
+        private DevelopmentPlatform() {
+            int resourcesIdentifier = CommonUtils.getResourcesIdentifier(DevelopmentPlatformProvider.this.context, "com.google.firebase.crashlytics.unity_version", "string");
+            if (resourcesIdentifier == 0) {
+                if (DevelopmentPlatformProvider.this.assetFileExists("flutter_assets/NOTICES.Z")) {
+                    this.developmentPlatform = "Flutter";
+                    this.developmentPlatformVersion = null;
+                    Logger.getLogger().v("Development platform is: Flutter");
+                    return;
+                } else {
+                    this.developmentPlatform = null;
+                    this.developmentPlatformVersion = null;
+                    return;
+                }
+            }
+            this.developmentPlatform = "Unity";
+            String string = DevelopmentPlatformProvider.this.context.getResources().getString(resourcesIdentifier);
+            this.developmentPlatformVersion = string;
+            Logger.getLogger().v("Unity Editor version is: " + string);
+        }
     }
 }

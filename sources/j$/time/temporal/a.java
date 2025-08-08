@@ -50,41 +50,35 @@ public enum a implements l {
         this.b = qVar;
     }
 
-    @Override // j$.time.temporal.l
-    public final q f() {
+    public final q m() {
         return this.b;
     }
 
     @Override // j$.time.temporal.l
-    public final long h(k kVar) {
-        return kVar.h(this);
-    }
-
-    @Override // j$.time.temporal.l
-    public final boolean i(k kVar) {
-        return kVar.k(this);
-    }
-
-    @Override // j$.time.temporal.l
-    public final q j(k kVar) {
-        return kVar.f(this);
-    }
-
-    @Override // j$.time.temporal.l
-    public final boolean k() {
+    public final boolean h() {
         return ordinal() >= DAY_OF_WEEK.ordinal() && ordinal() <= ERA.ordinal();
     }
 
-    public final int m(long j) {
-        return this.b.a(j, this);
+    public final boolean l() {
+        return ordinal() < DAY_OF_WEEK.ordinal();
     }
 
-    public final void n(long j) {
+    public final void j(long j) {
         this.b.b(j, this);
     }
 
-    public final boolean o() {
-        return ordinal() < DAY_OF_WEEK.ordinal();
+    public final int i(long j) {
+        return this.b.a(j, this);
+    }
+
+    @Override // j$.time.temporal.l
+    public final boolean g(k kVar) {
+        return kVar.j(this);
+    }
+
+    @Override // j$.time.temporal.l
+    public final long f(k kVar) {
+        return kVar.f(this);
     }
 
     @Override // java.lang.Enum

@@ -8,7 +8,7 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.runtime.internal.Conversions;
 import org.aspectj.runtime.reflect.Factory;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class AbstractFullBox extends AbstractBox implements Box {
     private static final /* synthetic */ JoinPoint.StaticPart ajc$tjp_0 = null;
     private static final /* synthetic */ JoinPoint.StaticPart ajc$tjp_1 = null;
@@ -19,21 +19,14 @@ public abstract class AbstractFullBox extends AbstractBox implements Box {
         ajc$preClinit();
     }
 
-    protected AbstractFullBox(String str) {
-        super(str);
-    }
-
     private static /* synthetic */ void ajc$preClinit() {
         Factory factory = new Factory("AbstractFullBox.java", AbstractFullBox.class);
         ajc$tjp_0 = factory.makeSJP("method-execution", factory.makeMethodSig("1", "setVersion", "com.googlecode.mp4parser.AbstractFullBox", "int", "version", "", "void"), 51);
         ajc$tjp_1 = factory.makeSJP("method-execution", factory.makeMethodSig("1", "setFlags", "com.googlecode.mp4parser.AbstractFullBox", "int", "flags", "", "void"), 64);
     }
 
-    public int getFlags() {
-        if (!this.isParsed) {
-            parseDetails();
-        }
-        return this.flags;
+    protected AbstractFullBox(String str) {
+        super(str);
     }
 
     public int getVersion() {
@@ -43,10 +36,16 @@ public abstract class AbstractFullBox extends AbstractBox implements Box {
         return this.version;
     }
 
-    protected final long parseVersionAndFlags(ByteBuffer byteBuffer) {
-        this.version = IsoTypeReader.readUInt8(byteBuffer);
-        this.flags = IsoTypeReader.readUInt24(byteBuffer);
-        return 4L;
+    public void setVersion(int i) {
+        RequiresParseDetailAspect.aspectOf().before(Factory.makeJP(ajc$tjp_0, this, this, Conversions.intObject(i)));
+        this.version = i;
+    }
+
+    public int getFlags() {
+        if (!this.isParsed) {
+            parseDetails();
+        }
+        return this.flags;
     }
 
     public void setFlags(int i) {
@@ -54,9 +53,10 @@ public abstract class AbstractFullBox extends AbstractBox implements Box {
         this.flags = i;
     }
 
-    public void setVersion(int i) {
-        RequiresParseDetailAspect.aspectOf().before(Factory.makeJP(ajc$tjp_0, this, this, Conversions.intObject(i)));
-        this.version = i;
+    protected final long parseVersionAndFlags(ByteBuffer byteBuffer) {
+        this.version = IsoTypeReader.readUInt8(byteBuffer);
+        this.flags = IsoTypeReader.readUInt24(byteBuffer);
+        return 4L;
     }
 
     protected final void writeVersionAndFlags(ByteBuffer byteBuffer) {

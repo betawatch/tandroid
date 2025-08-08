@@ -6,9 +6,9 @@ import java.util.concurrent.Executor;
 
 /* loaded from: classes.dex */
 public final class ExecutionModule_ExecutorFactory implements Factory {
-
-    private static final class InstanceHolder {
-        private static final ExecutionModule_ExecutorFactory INSTANCE = new ExecutionModule_ExecutorFactory();
+    @Override // javax.inject.Provider
+    public Executor get() {
+        return executor();
     }
 
     public static ExecutionModule_ExecutorFactory create() {
@@ -19,8 +19,7 @@ public final class ExecutionModule_ExecutorFactory implements Factory {
         return (Executor) Preconditions.checkNotNull(ExecutionModule.executor(), "Cannot return null from a non-@Nullable @Provides method");
     }
 
-    @Override // javax.inject.Provider
-    public Executor get() {
-        return executor();
+    private static final class InstanceHolder {
+        private static final ExecutionModule_ExecutorFactory INSTANCE = new ExecutionModule_ExecutorFactory();
     }
 }

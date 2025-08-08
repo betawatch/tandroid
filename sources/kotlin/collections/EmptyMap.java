@@ -6,12 +6,9 @@ import java.util.Map;
 import java.util.Set;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class EmptyMap implements Map, Serializable {
     public static final EmptyMap INSTANCE = new EmptyMap();
-
-    private EmptyMap() {
-    }
 
     @Override // java.util.Map
     public void clear() {
@@ -23,27 +20,9 @@ final class EmptyMap implements Map, Serializable {
         return false;
     }
 
-    @Override // java.util.Map
-    public final /* bridge */ boolean containsValue(Object obj) {
-        if (obj instanceof Void) {
-            return containsValue((Void) obj);
-        }
-        return false;
-    }
-
     public boolean containsValue(Void value) {
         Intrinsics.checkNotNullParameter(value, "value");
         return false;
-    }
-
-    @Override // java.util.Map
-    public final /* bridge */ Set entrySet() {
-        return getEntries();
-    }
-
-    @Override // java.util.Map
-    public boolean equals(Object obj) {
-        return (obj instanceof Map) && ((Map) obj).isEmpty();
     }
 
     @Override // java.util.Map
@@ -51,20 +30,8 @@ final class EmptyMap implements Map, Serializable {
         return null;
     }
 
-    public Set getEntries() {
-        return EmptySet.INSTANCE;
-    }
-
-    public Set getKeys() {
-        return EmptySet.INSTANCE;
-    }
-
     public int getSize() {
         return 0;
-    }
-
-    public Collection getValues() {
-        return EmptyList.INSTANCE;
     }
 
     @Override // java.util.Map
@@ -75,11 +42,6 @@ final class EmptyMap implements Map, Serializable {
     @Override // java.util.Map
     public boolean isEmpty() {
         return true;
-    }
-
-    @Override // java.util.Map
-    public final /* bridge */ Set keySet() {
-        return getKeys();
     }
 
     @Override // java.util.Map
@@ -97,17 +59,55 @@ final class EmptyMap implements Map, Serializable {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
+    private EmptyMap() {
+    }
+
+    @Override // java.util.Map
+    public final /* bridge */ boolean containsValue(Object obj) {
+        if (obj instanceof Void) {
+            return containsValue((Void) obj);
+        }
+        return false;
+    }
+
+    @Override // java.util.Map
+    public final /* bridge */ Set entrySet() {
+        return getEntries();
+    }
+
+    @Override // java.util.Map
+    public final /* bridge */ Set keySet() {
+        return getKeys();
+    }
+
     @Override // java.util.Map
     public final /* bridge */ int size() {
         return getSize();
+    }
+
+    @Override // java.util.Map
+    public final /* bridge */ Collection values() {
+        return getValues();
+    }
+
+    @Override // java.util.Map
+    public boolean equals(Object obj) {
+        return (obj instanceof Map) && ((Map) obj).isEmpty();
     }
 
     public String toString() {
         return "{}";
     }
 
-    @Override // java.util.Map
-    public final /* bridge */ Collection values() {
-        return getValues();
+    public Set getEntries() {
+        return EmptySet.INSTANCE;
+    }
+
+    public Set getKeys() {
+        return EmptySet.INSTANCE;
+    }
+
+    public Collection getValues() {
+        return EmptyList.INSTANCE;
     }
 }

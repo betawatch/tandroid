@@ -56,46 +56,6 @@ public class ExecutorsRegistrar implements ComponentRegistrar {
         }
     });
 
-    private static StrictMode.ThreadPolicy bgPolicy() {
-        StrictMode.ThreadPolicy.Builder detectNetwork = new StrictMode.ThreadPolicy.Builder().detectNetwork();
-        int i = Build.VERSION.SDK_INT;
-        if (i >= 23) {
-            detectNetwork.detectResourceMismatches();
-            if (i >= 26) {
-                detectNetwork.detectUnbufferedIo();
-            }
-        }
-        return detectNetwork.penaltyLog().build();
-    }
-
-    private static ThreadFactory factory(String str, int i) {
-        return new CustomThreadFactory(str, i, null);
-    }
-
-    private static ThreadFactory factory(String str, int i, StrictMode.ThreadPolicy threadPolicy) {
-        return new CustomThreadFactory(str, i, threadPolicy);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ ScheduledExecutorService lambda$getComponents$4(ComponentContainer componentContainer) {
-        return (ScheduledExecutorService) BG_EXECUTOR.get();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ ScheduledExecutorService lambda$getComponents$5(ComponentContainer componentContainer) {
-        return (ScheduledExecutorService) BLOCKING_EXECUTOR.get();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ ScheduledExecutorService lambda$getComponents$6(ComponentContainer componentContainer) {
-        return (ScheduledExecutorService) LITE_EXECUTOR.get();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Executor lambda$getComponents$7(ComponentContainer componentContainer) {
-        return UiExecutor.INSTANCE;
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ ScheduledExecutorService lambda$static$0() {
         return scheduled(Executors.newFixedThreadPool(4, factory("Firebase Background", 10, bgPolicy())));
@@ -114,14 +74,6 @@ public class ExecutorsRegistrar implements ComponentRegistrar {
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ ScheduledExecutorService lambda$static$3() {
         return Executors.newSingleThreadScheduledExecutor(factory("Firebase Scheduler", 0));
-    }
-
-    private static StrictMode.ThreadPolicy litePolicy() {
-        return new StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build();
-    }
-
-    private static ScheduledExecutorService scheduled(ExecutorService executorService) {
-        return new DelegatingScheduledExecutorService(executorService, (ScheduledExecutorService) SCHEDULER.get());
     }
 
     @Override // com.google.firebase.components.ComponentRegistrar
@@ -155,5 +107,53 @@ public class ExecutorsRegistrar implements ComponentRegistrar {
                 return lambda$getComponents$7;
             }
         }).build());
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ ScheduledExecutorService lambda$getComponents$4(ComponentContainer componentContainer) {
+        return (ScheduledExecutorService) BG_EXECUTOR.get();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ ScheduledExecutorService lambda$getComponents$5(ComponentContainer componentContainer) {
+        return (ScheduledExecutorService) BLOCKING_EXECUTOR.get();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ ScheduledExecutorService lambda$getComponents$6(ComponentContainer componentContainer) {
+        return (ScheduledExecutorService) LITE_EXECUTOR.get();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ Executor lambda$getComponents$7(ComponentContainer componentContainer) {
+        return UiExecutor.INSTANCE;
+    }
+
+    private static ScheduledExecutorService scheduled(ExecutorService executorService) {
+        return new DelegatingScheduledExecutorService(executorService, (ScheduledExecutorService) SCHEDULER.get());
+    }
+
+    private static ThreadFactory factory(String str, int i) {
+        return new CustomThreadFactory(str, i, null);
+    }
+
+    private static ThreadFactory factory(String str, int i, StrictMode.ThreadPolicy threadPolicy) {
+        return new CustomThreadFactory(str, i, threadPolicy);
+    }
+
+    private static StrictMode.ThreadPolicy bgPolicy() {
+        StrictMode.ThreadPolicy.Builder detectNetwork = new StrictMode.ThreadPolicy.Builder().detectNetwork();
+        int i = Build.VERSION.SDK_INT;
+        if (i >= 23) {
+            detectNetwork.detectResourceMismatches();
+            if (i >= 26) {
+                detectNetwork.detectUnbufferedIo();
+            }
+        }
+        return detectNetwork.penaltyLog().build();
+    }
+
+    private static StrictMode.ThreadPolicy litePolicy() {
+        return new StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build();
     }
 }

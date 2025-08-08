@@ -12,6 +12,8 @@ public abstract class DataChunk extends Chunk {
     private byte[] data;
     private volatile boolean loadCanceled;
 
+    protected abstract void consume(byte[] bArr, int i);
+
     public DataChunk(DataSource dataSource, DataSpec dataSpec, int i, Format format, int i2, Object obj, byte[] bArr) {
         super(dataSource, dataSpec, i, format, i2, obj, -9223372036854775807L, -9223372036854775807L);
         DataChunk dataChunk;
@@ -26,22 +28,13 @@ public abstract class DataChunk extends Chunk {
         dataChunk.data = bArr2;
     }
 
-    private void maybeExpandData(int i) {
-        byte[] bArr = this.data;
-        if (bArr.length < i + 16384) {
-            this.data = Arrays.copyOf(bArr, bArr.length + 16384);
-        }
+    public byte[] getDataHolder() {
+        return this.data;
     }
 
     @Override // com.google.android.exoplayer2.upstream.Loader.Loadable
     public final void cancelLoad() {
         this.loadCanceled = true;
-    }
-
-    protected abstract void consume(byte[] bArr, int i);
-
-    public byte[] getDataHolder() {
-        return this.data;
     }
 
     @Override // com.google.android.exoplayer2.upstream.Loader.Loadable
@@ -64,6 +57,13 @@ public abstract class DataChunk extends Chunk {
         } catch (Throwable th) {
             DataSourceUtil.closeQuietly(this.dataSource);
             throw th;
+        }
+    }
+
+    private void maybeExpandData(int i) {
+        byte[] bArr = this.data;
+        if (bArr.length < i + 16384) {
+            this.data = Arrays.copyOf(bArr, bArr.length + 16384);
         }
     }
 }

@@ -1,44 +1,31 @@
 package j$.util.function;
 
-import j$.util.function.Function;
-import j$.util.function.UnaryOperator;
-
 /* loaded from: classes2.dex */
-public final /* synthetic */ class x0 implements java.util.function.UnaryOperator {
-    public final /* synthetic */ UnaryOperator a;
+public final /* synthetic */ class x0 implements Supplier {
+    public final /* synthetic */ java.util.function.Supplier a;
 
-    private /* synthetic */ x0(UnaryOperator unaryOperator) {
-        this.a = unaryOperator;
+    private /* synthetic */ x0(java.util.function.Supplier supplier) {
+        this.a = supplier;
     }
 
-    public static /* synthetic */ java.util.function.UnaryOperator a(UnaryOperator unaryOperator) {
-        if (unaryOperator == null) {
+    public static /* synthetic */ Supplier a(java.util.function.Supplier supplier) {
+        if (supplier == null) {
             return null;
         }
-        return unaryOperator instanceof UnaryOperator.VivifiedWrapper ? ((UnaryOperator.VivifiedWrapper) unaryOperator).a : new x0(unaryOperator);
-    }
-
-    @Override // java.util.function.Function
-    public final /* synthetic */ java.util.function.Function andThen(java.util.function.Function function) {
-        return x.a(this.a.andThen(Function.VivifiedWrapper.convert(function)));
-    }
-
-    @Override // java.util.function.Function
-    public final /* synthetic */ Object apply(Object obj) {
-        return this.a.apply(obj);
-    }
-
-    @Override // java.util.function.Function
-    public final /* synthetic */ java.util.function.Function compose(java.util.function.Function function) {
-        return x.a(this.a.compose(Function.VivifiedWrapper.convert(function)));
+        return supplier instanceof y0 ? ((y0) supplier).a : new x0(supplier);
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        UnaryOperator unaryOperator = this.a;
+        java.util.function.Supplier supplier = this.a;
         if (obj instanceof x0) {
             obj = ((x0) obj).a;
         }
-        return unaryOperator.equals(obj);
+        return supplier.equals(obj);
+    }
+
+    @Override // j$.util.function.Supplier
+    public final /* synthetic */ Object get() {
+        return this.a.get();
     }
 
     public final /* synthetic */ int hashCode() {

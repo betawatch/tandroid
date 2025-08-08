@@ -1,50 +1,34 @@
 package j$.util.function;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class Z implements c0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ c0 b;
-    public final /* synthetic */ c0 c;
+public final /* synthetic */ class Z implements LongFunction {
+    public final /* synthetic */ java.util.function.LongFunction a;
 
-    public /* synthetic */ Z(c0 c0Var, c0 c0Var2, int i) {
-        this.a = i;
-        this.b = c0Var;
-        this.c = c0Var2;
+    private /* synthetic */ Z(java.util.function.LongFunction longFunction) {
+        this.a = longFunction;
     }
 
-    @Override // j$.util.function.c0
-    public final c0 a(c0 c0Var) {
-        switch (this.a) {
-            case 0:
-                c0Var.getClass();
-                break;
-            default:
-                c0Var.getClass();
-                break;
+    public static /* synthetic */ LongFunction a(java.util.function.LongFunction longFunction) {
+        if (longFunction == null) {
+            return null;
         }
-        return new Z(this, c0Var, 0);
+        return longFunction instanceof a0 ? ((a0) longFunction).a : new Z(longFunction);
     }
 
-    @Override // j$.util.function.c0
-    public final long applyAsLong(long j) {
-        switch (this.a) {
-            case 0:
-                return this.c.applyAsLong(this.b.applyAsLong(j));
-            default:
-                return this.b.applyAsLong(this.c.applyAsLong(j));
-        }
+    @Override // j$.util.function.LongFunction
+    public final /* synthetic */ Object apply(long j) {
+        return this.a.apply(j);
     }
 
-    @Override // j$.util.function.c0
-    public final c0 b(c0 c0Var) {
-        switch (this.a) {
-            case 0:
-                c0Var.getClass();
-                break;
-            default:
-                c0Var.getClass();
-                break;
+    public final /* synthetic */ boolean equals(Object obj) {
+        java.util.function.LongFunction longFunction = this.a;
+        if (obj instanceof Z) {
+            obj = ((Z) obj).a;
         }
-        return new Z(this, c0Var, 1);
+        return longFunction.equals(obj);
+    }
+
+    public final /* synthetic */ int hashCode() {
+        return this.a.hashCode();
     }
 }

@@ -2,9 +2,29 @@ package com.google.firebase.remoteconfig;
 
 import com.google.firebase.FirebaseException;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class FirebaseRemoteConfigException extends FirebaseException {
     private final Code code;
+
+    public FirebaseRemoteConfigException(String str) {
+        super(str);
+        this.code = Code.UNKNOWN;
+    }
+
+    public FirebaseRemoteConfigException(String str, Throwable th) {
+        super(str, th);
+        this.code = Code.UNKNOWN;
+    }
+
+    public FirebaseRemoteConfigException(String str, Code code) {
+        super(str);
+        this.code = code;
+    }
+
+    public FirebaseRemoteConfigException(String str, Throwable th, Code code) {
+        super(str, th);
+        this.code = code;
+    }
 
     public enum Code {
         UNKNOWN(0),
@@ -18,25 +38,5 @@ public class FirebaseRemoteConfigException extends FirebaseException {
         Code(int i) {
             this.value = i;
         }
-    }
-
-    public FirebaseRemoteConfigException(String str) {
-        super(str);
-        this.code = Code.UNKNOWN;
-    }
-
-    public FirebaseRemoteConfigException(String str, Code code) {
-        super(str);
-        this.code = code;
-    }
-
-    public FirebaseRemoteConfigException(String str, Throwable th) {
-        super(str, th);
-        this.code = Code.UNKNOWN;
-    }
-
-    public FirebaseRemoteConfigException(String str, Throwable th, Code code) {
-        super(str, th);
-        this.code = code;
     }
 }

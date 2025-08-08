@@ -18,6 +18,24 @@ public final class Mp4WebvttDecoder extends SimpleSubtitleDecoder {
         this.sampleData = new ParsableByteArray();
     }
 
+    @Override // com.google.android.exoplayer2.text.SimpleSubtitleDecoder
+    protected Subtitle decode(byte[] bArr, int i, boolean z) {
+        this.sampleData.reset(bArr, i);
+        ArrayList arrayList = new ArrayList();
+        while (this.sampleData.bytesLeft() > 0) {
+            if (this.sampleData.bytesLeft() < 8) {
+                throw new SubtitleDecoderException("Incomplete Mp4Webvtt Top Level box header found.");
+            }
+            int readInt = this.sampleData.readInt();
+            if (this.sampleData.readInt() == 1987343459) {
+                arrayList.add(parseVttCueBox(this.sampleData, readInt - 8));
+            } else {
+                this.sampleData.skipBytes(readInt - 8);
+            }
+        }
+        return new Mp4WebvttSubtitle(arrayList);
+    }
+
     private static Cue parseVttCueBox(ParsableByteArray parsableByteArray, int i) {
         CharSequence charSequence = null;
         Cue.Builder builder = null;
@@ -40,24 +58,9 @@ public final class Mp4WebvttDecoder extends SimpleSubtitleDecoder {
         if (charSequence == null) {
             charSequence = "";
         }
-        return builder != null ? builder.setText(charSequence).build() : WebvttCueParser.newCueForText(charSequence);
-    }
-
-    @Override // com.google.android.exoplayer2.text.SimpleSubtitleDecoder
-    protected Subtitle decode(byte[] bArr, int i, boolean z) {
-        this.sampleData.reset(bArr, i);
-        ArrayList arrayList = new ArrayList();
-        while (this.sampleData.bytesLeft() > 0) {
-            if (this.sampleData.bytesLeft() < 8) {
-                throw new SubtitleDecoderException("Incomplete Mp4Webvtt Top Level box header found.");
-            }
-            int readInt = this.sampleData.readInt();
-            if (this.sampleData.readInt() == 1987343459) {
-                arrayList.add(parseVttCueBox(this.sampleData, readInt - 8));
-            } else {
-                this.sampleData.skipBytes(readInt - 8);
-            }
+        if (builder != null) {
+            return builder.setText(charSequence).build();
         }
-        return new Mp4WebvttSubtitle(arrayList);
+        return WebvttCueParser.newCueForText(charSequence);
     }
 }

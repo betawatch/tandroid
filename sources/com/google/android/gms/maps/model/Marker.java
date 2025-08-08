@@ -48,14 +48,6 @@ public final class Marker {
         }
     }
 
-    public void remove() {
-        try {
-            this.zza.zzn();
-        } catch (RemoteException e) {
-            throw new RuntimeRemoteException(e);
-        }
-    }
-
     public void setIcon(BitmapDescriptor bitmapDescriptor) {
         try {
             if (bitmapDescriptor == null) {
@@ -68,12 +60,9 @@ public final class Marker {
         }
     }
 
-    public void setPosition(LatLng latLng) {
-        if (latLng == null) {
-            throw new IllegalArgumentException("latlng cannot be null - a position is required.");
-        }
+    public void remove() {
         try {
-            this.zza.zzu(latLng);
+            this.zza.zzn();
         } catch (RemoteException e) {
             throw new RuntimeRemoteException(e);
         }
@@ -90,6 +79,17 @@ public final class Marker {
     public void setTag(Object obj) {
         try {
             this.zza.zzx(ObjectWrapper.wrap(obj));
+        } catch (RemoteException e) {
+            throw new RuntimeRemoteException(e);
+        }
+    }
+
+    public void setPosition(LatLng latLng) {
+        if (latLng == null) {
+            throw new IllegalArgumentException("latlng cannot be null - a position is required.");
+        }
+        try {
+            this.zza.zzu(latLng);
         } catch (RemoteException e) {
             throw new RuntimeRemoteException(e);
         }

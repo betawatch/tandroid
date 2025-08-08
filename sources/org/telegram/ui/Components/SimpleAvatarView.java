@@ -14,7 +14,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class SimpleAvatarView extends View {
     private ValueAnimator animator;
     private AvatarDrawable avatarDrawable;
@@ -31,17 +31,6 @@ public class SimpleAvatarView extends View {
         this.avatarImage.setRoundRadius(AndroidUtilities.dp(28.0f));
         this.selectPaint.setStrokeWidth(AndroidUtilities.dp(2.0f));
         this.selectPaint.setStyle(Paint.Style.STROKE);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setSelected$0(ValueAnimator valueAnimator) {
-        this.selectProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public boolean isSelected() {
-        return this.selectProgress == 1.0f;
     }
 
     @Override // android.view.View
@@ -83,9 +72,9 @@ public class SimpleAvatarView extends View {
         this.avatarImage.setForUserOrChat(tLObject, this.avatarDrawable);
     }
 
-    public void setHideAvatar(boolean z) {
-        this.isAvatarHidden = z;
-        invalidate();
+    @Override // android.view.View
+    public boolean isSelected() {
+        return this.selectProgress == 1.0f;
     }
 
     public void setSelected(boolean z, boolean z2) {
@@ -93,28 +82,39 @@ public class SimpleAvatarView extends View {
         if (valueAnimator != null) {
             valueAnimator.cancel();
         }
-        if (!z2) {
-            this.selectProgress = z ? 1.0f : 0.0f;
-            invalidate();
+        if (z2) {
+            ValueAnimator duration = ValueAnimator.ofFloat(this.selectProgress, z ? 1.0f : 0.0f).setDuration(200L);
+            duration.setInterpolator(CubicBezierInterpolator.DEFAULT);
+            duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.SimpleAvatarView$$ExternalSyntheticLambda0
+                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
+                    SimpleAvatarView.this.lambda$setSelected$0(valueAnimator2);
+                }
+            });
+            duration.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.SimpleAvatarView.1
+                @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+                public void onAnimationEnd(Animator animator) {
+                    if (SimpleAvatarView.this.animator == animator) {
+                        SimpleAvatarView.this.animator = null;
+                    }
+                }
+            });
+            duration.start();
+            this.animator = duration;
             return;
         }
-        ValueAnimator duration = ValueAnimator.ofFloat(this.selectProgress, z ? 1.0f : 0.0f).setDuration(200L);
-        duration.setInterpolator(CubicBezierInterpolator.DEFAULT);
-        duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.SimpleAvatarView$$ExternalSyntheticLambda0
-            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-            public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                SimpleAvatarView.this.lambda$setSelected$0(valueAnimator2);
-            }
-        });
-        duration.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.SimpleAvatarView.1
-            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-            public void onAnimationEnd(Animator animator) {
-                if (SimpleAvatarView.this.animator == animator) {
-                    SimpleAvatarView.this.animator = null;
-                }
-            }
-        });
-        duration.start();
-        this.animator = duration;
+        this.selectProgress = z ? 1.0f : 0.0f;
+        invalidate();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setSelected$0(ValueAnimator valueAnimator) {
+        this.selectProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        invalidate();
+    }
+
+    public void setHideAvatar(boolean z) {
+        this.isAvatarHidden = z;
+        invalidate();
     }
 }

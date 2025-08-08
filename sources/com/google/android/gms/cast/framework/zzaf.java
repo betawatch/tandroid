@@ -19,29 +19,30 @@ public abstract class zzaf extends zzb implements zzag {
             String readString2 = parcel.readString();
             zzc.zzb(parcel);
             zzc(readString, readString2);
+            parcel2.writeNoException();
         } else if (i == 2) {
             String readString3 = parcel.readString();
             LaunchOptions launchOptions = (LaunchOptions) zzc.zza(parcel, LaunchOptions.CREATOR);
             zzc.zzb(parcel);
             zzd(readString3, launchOptions);
+            parcel2.writeNoException();
         } else if (i == 3) {
             String readString4 = parcel.readString();
             zzc.zzb(parcel);
             zze(readString4);
-        } else {
-            if (i != 4) {
-                if (i != 5) {
-                    return false;
-                }
-                parcel2.writeNoException();
-                parcel2.writeInt(GooglePlayServicesUtilLight.GOOGLE_PLAY_SERVICES_VERSION_CODE);
-                return true;
-            }
+            parcel2.writeNoException();
+        } else if (i == 4) {
             int readInt = parcel.readInt();
             zzc.zzb(parcel);
             zzb(readInt);
+            parcel2.writeNoException();
+        } else {
+            if (i != 5) {
+                return false;
+            }
+            parcel2.writeNoException();
+            parcel2.writeInt(GooglePlayServicesUtilLight.GOOGLE_PLAY_SERVICES_VERSION_CODE);
         }
-        parcel2.writeNoException();
         return true;
     }
 }

@@ -1,6 +1,18 @@
 package j$.util.stream;
 
+import j$.util.function.Consumer;
+
 /* loaded from: classes2.dex */
-public interface d2 extends e2, j$.util.function.T {
-    void j(Long l);
+interface d2 extends Consumer {
+    void accept(double d);
+
+    void accept(int i);
+
+    void accept(long j);
+
+    void m();
+
+    void n(long j);
+
+    boolean q();
 }

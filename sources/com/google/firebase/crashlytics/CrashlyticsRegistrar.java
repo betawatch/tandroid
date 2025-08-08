@@ -16,15 +16,10 @@ import com.google.firebase.sessions.api.SessionSubscriber;
 import java.util.Arrays;
 import java.util.List;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class CrashlyticsRegistrar implements ComponentRegistrar {
     static {
         FirebaseSessionsDependencies.INSTANCE.addDependency(SessionSubscriber.Name.CRASHLYTICS);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public FirebaseCrashlytics buildCrashlytics(ComponentContainer componentContainer) {
-        return FirebaseCrashlytics.init((FirebaseApp) componentContainer.get(FirebaseApp.class), (FirebaseInstallationsApi) componentContainer.get(FirebaseInstallationsApi.class), componentContainer.getDeferred(CrashlyticsNativeComponent.class), componentContainer.getDeferred(AnalyticsConnector.class), componentContainer.getDeferred(FirebaseRemoteConfigInterop.class));
     }
 
     @Override // com.google.firebase.components.ComponentRegistrar
@@ -37,5 +32,10 @@ public class CrashlyticsRegistrar implements ComponentRegistrar {
                 return buildCrashlytics;
             }
         }).eagerInDefaultApp().build(), LibraryVersionComponent.create("fire-cls", "18.6.0"));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public FirebaseCrashlytics buildCrashlytics(ComponentContainer componentContainer) {
+        return FirebaseCrashlytics.init((FirebaseApp) componentContainer.get(FirebaseApp.class), (FirebaseInstallationsApi) componentContainer.get(FirebaseInstallationsApi.class), componentContainer.getDeferred(CrashlyticsNativeComponent.class), componentContainer.getDeferred(AnalyticsConnector.class), componentContainer.getDeferred(FirebaseRemoteConfigInterop.class));
     }
 }

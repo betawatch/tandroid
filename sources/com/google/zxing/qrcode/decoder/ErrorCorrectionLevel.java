@@ -7,7 +7,7 @@ jadx.core.utils.exceptions.JadxRuntimeException: Can't remove SSA var: r0v0 com.
   (r0v0 com.google.zxing.qrcode.decoder.ErrorCorrectionLevel)
   (r5v1 com.google.zxing.qrcode.decoder.ErrorCorrectionLevel)
   (r4v1 com.google.zxing.qrcode.decoder.ErrorCorrectionLevel)
- A[WRAPPED] elemType: com.google.zxing.qrcode.decoder.ErrorCorrectionLevel
+ A[WRAPPED] (LINE:36) elemType: com.google.zxing.qrcode.decoder.ErrorCorrectionLevel
 	at jadx.core.utils.InsnRemover.removeSsaVar(InsnRemover.java:162)
 	at jadx.core.utils.InsnRemover.unbindResult(InsnRemover.java:127)
 	at jadx.core.utils.InsnRemover.lambda$unbindInsns$1(InsnRemover.java:99)
@@ -18,7 +18,7 @@ jadx.core.utils.exceptions.JadxRuntimeException: Can't remove SSA var: r0v0 com.
 	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
  */
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class ErrorCorrectionLevel {
     L(1),
     M(0),
@@ -28,12 +28,24 @@ public final class ErrorCorrectionLevel {
     private static final ErrorCorrectionLevel[] FOR_BITS;
     private final int bits;
 
+    public static ErrorCorrectionLevel valueOf(String str) {
+        return (ErrorCorrectionLevel) Enum.valueOf(ErrorCorrectionLevel.class, str);
+    }
+
+    public static ErrorCorrectionLevel[] values() {
+        return (ErrorCorrectionLevel[]) $VALUES.clone();
+    }
+
     static {
         FOR_BITS = new ErrorCorrectionLevel[]{r1, new ErrorCorrectionLevel(1), r5, new ErrorCorrectionLevel(3)};
     }
 
     private ErrorCorrectionLevel(int i) {
         this.bits = i;
+    }
+
+    public int getBits() {
+        return this.bits;
     }
 
     public static ErrorCorrectionLevel forBits(int i) {
@@ -44,17 +56,5 @@ public final class ErrorCorrectionLevel {
             }
         }
         throw new IllegalArgumentException();
-    }
-
-    public static ErrorCorrectionLevel valueOf(String str) {
-        return (ErrorCorrectionLevel) Enum.valueOf(ErrorCorrectionLevel.class, str);
-    }
-
-    public static ErrorCorrectionLevel[] values() {
-        return (ErrorCorrectionLevel[]) $VALUES.clone();
-    }
-
-    public int getBits() {
-        return this.bits;
     }
 }

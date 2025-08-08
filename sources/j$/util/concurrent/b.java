@@ -10,71 +10,11 @@ import java.util.Iterator;
 abstract class b implements Collection, Serializable {
     final ConcurrentHashMap a;
 
-    b(ConcurrentHashMap concurrentHashMap) {
-        this.a = concurrentHashMap;
-    }
-
-    @Override // java.util.Collection
-    public final void clear() {
-        this.a.clear();
-    }
-
     @Override // java.util.Collection
     public abstract boolean contains(Object obj);
 
-    @Override // java.util.Collection
-    public final boolean containsAll(Collection collection) {
-        if (collection == this) {
-            return true;
-        }
-        for (Object obj : collection) {
-            if (obj == null || !contains(obj)) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    @Override // java.util.Collection
-    public final boolean isEmpty() {
-        return this.a.isEmpty();
-    }
-
     @Override // java.util.Collection, java.lang.Iterable
     public abstract Iterator iterator();
-
-    @Override // java.util.Collection
-    public final boolean removeAll(Collection collection) {
-        collection.getClass();
-        Iterator it = iterator();
-        boolean z = false;
-        while (it.hasNext()) {
-            if (collection.contains(it.next())) {
-                it.remove();
-                z = true;
-            }
-        }
-        return z;
-    }
-
-    @Override // java.util.Collection
-    public final boolean retainAll(Collection collection) {
-        collection.getClass();
-        Iterator it = iterator();
-        boolean z = false;
-        while (it.hasNext()) {
-            if (!collection.contains(it.next())) {
-                it.remove();
-                z = true;
-            }
-        }
-        return z;
-    }
-
-    @Override // java.util.Collection
-    public final int size() {
-        return this.a.size();
-    }
 
     @Override // java.util.Collection
     public final Object[] toArray() {
@@ -139,6 +79,25 @@ abstract class b implements Collection, Serializable {
         return objArr2;
     }
 
+    b(ConcurrentHashMap concurrentHashMap) {
+        this.a = concurrentHashMap;
+    }
+
+    @Override // java.util.Collection
+    public final void clear() {
+        this.a.clear();
+    }
+
+    @Override // java.util.Collection
+    public final int size() {
+        return this.a.size();
+    }
+
+    @Override // java.util.Collection
+    public final boolean isEmpty() {
+        return this.a.isEmpty();
+    }
+
     public final String toString() {
         StringBuilder sb = new StringBuilder("[");
         Iterator it = iterator();
@@ -157,5 +116,46 @@ abstract class b implements Collection, Serializable {
         }
         sb.append(']');
         return sb.toString();
+    }
+
+    @Override // java.util.Collection
+    public final boolean containsAll(Collection collection) {
+        if (collection == this) {
+            return true;
+        }
+        for (Object obj : collection) {
+            if (obj == null || !contains(obj)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override // java.util.Collection
+    public final boolean removeAll(Collection collection) {
+        collection.getClass();
+        Iterator it = iterator();
+        boolean z = false;
+        while (it.hasNext()) {
+            if (collection.contains(it.next())) {
+                it.remove();
+                z = true;
+            }
+        }
+        return z;
+    }
+
+    @Override // java.util.Collection
+    public final boolean retainAll(Collection collection) {
+        collection.getClass();
+        Iterator it = iterator();
+        boolean z = false;
+        while (it.hasNext()) {
+            if (!collection.contains(it.next())) {
+                it.remove();
+                z = true;
+            }
+        }
+        return z;
     }
 }

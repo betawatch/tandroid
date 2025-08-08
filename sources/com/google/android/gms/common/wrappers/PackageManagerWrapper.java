@@ -27,7 +27,8 @@ public class PackageManagerWrapper {
     }
 
     public CharSequence getApplicationLabel(String str) {
-        return this.zza.getPackageManager().getApplicationLabel(this.zza.getPackageManager().getApplicationInfo(str, 0));
+        Context context = this.zza;
+        return context.getPackageManager().getApplicationLabel(context.getPackageManager().getApplicationInfo(str, 0));
     }
 
     public PackageInfo getPackageInfo(String str, int i) {

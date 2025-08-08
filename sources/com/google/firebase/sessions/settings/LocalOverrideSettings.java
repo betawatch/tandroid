@@ -10,19 +10,10 @@ import kotlin.time.Duration;
 import kotlin.time.DurationKt;
 import kotlin.time.DurationUnit;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class LocalOverrideSettings implements SettingsProvider {
     private static final Companion Companion = new Companion(null);
     private final Bundle metadata;
-
-    private static final class Companion {
-        private Companion() {
-        }
-
-        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
-            this();
-        }
-    }
 
     public LocalOverrideSettings(Context context) {
         Intrinsics.checkNotNullParameter(context, "context");
@@ -31,11 +22,8 @@ public final class LocalOverrideSettings implements SettingsProvider {
     }
 
     @Override // com.google.firebase.sessions.settings.SettingsProvider
-    public Double getSamplingRate() {
-        if (this.metadata.containsKey("firebase_sessions_sampling_rate")) {
-            return Double.valueOf(this.metadata.getDouble("firebase_sessions_sampling_rate"));
-        }
-        return null;
+    public Object updateSettings(Continuation continuation) {
+        return SettingsProvider.DefaultImpls.updateSettings(this, continuation);
     }
 
     @Override // com.google.firebase.sessions.settings.SettingsProvider
@@ -55,7 +43,19 @@ public final class LocalOverrideSettings implements SettingsProvider {
     }
 
     @Override // com.google.firebase.sessions.settings.SettingsProvider
-    public Object updateSettings(Continuation continuation) {
-        return SettingsProvider.DefaultImpls.updateSettings(this, continuation);
+    public Double getSamplingRate() {
+        if (this.metadata.containsKey("firebase_sessions_sampling_rate")) {
+            return Double.valueOf(this.metadata.getDouble("firebase_sessions_sampling_rate"));
+        }
+        return null;
+    }
+
+    private static final class Companion {
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        private Companion() {
+        }
     }
 }

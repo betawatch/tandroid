@@ -28,62 +28,6 @@ public class BiometricFragment extends Fragment {
     Handler mHandler = new Handler(Looper.getMainLooper());
     BiometricViewModel mViewModel;
 
-    private static class Api21Impl {
-        static Intent createConfirmDeviceCredentialIntent(KeyguardManager keyguardManager, CharSequence charSequence, CharSequence charSequence2) {
-            return keyguardManager.createConfirmDeviceCredentialIntent(charSequence, charSequence2);
-        }
-    }
-
-    private static class Api28Impl {
-        static void authenticate(android.hardware.biometrics.BiometricPrompt biometricPrompt, BiometricPrompt.CryptoObject cryptoObject, CancellationSignal cancellationSignal, Executor executor, BiometricPrompt.AuthenticationCallback authenticationCallback) {
-            biometricPrompt.authenticate(cryptoObject, cancellationSignal, executor, authenticationCallback);
-        }
-
-        static void authenticate(android.hardware.biometrics.BiometricPrompt biometricPrompt, CancellationSignal cancellationSignal, Executor executor, BiometricPrompt.AuthenticationCallback authenticationCallback) {
-            biometricPrompt.authenticate(cancellationSignal, executor, authenticationCallback);
-        }
-
-        static android.hardware.biometrics.BiometricPrompt buildPrompt(BiometricPrompt.Builder builder) {
-            return builder.build();
-        }
-
-        static BiometricPrompt.Builder createPromptBuilder(Context context) {
-            return new BiometricPrompt.Builder(context);
-        }
-
-        static void setDescription(BiometricPrompt.Builder builder, CharSequence charSequence) {
-            builder.setDescription(charSequence);
-        }
-
-        static void setNegativeButton(BiometricPrompt.Builder builder, CharSequence charSequence, Executor executor, DialogInterface.OnClickListener onClickListener) {
-            builder.setNegativeButton(charSequence, executor, onClickListener);
-        }
-
-        static void setSubtitle(BiometricPrompt.Builder builder, CharSequence charSequence) {
-            builder.setSubtitle(charSequence);
-        }
-
-        static void setTitle(BiometricPrompt.Builder builder, CharSequence charSequence) {
-            builder.setTitle(charSequence);
-        }
-    }
-
-    private static class Api29Impl {
-        static void setConfirmationRequired(BiometricPrompt.Builder builder, boolean z) {
-            builder.setConfirmationRequired(z);
-        }
-
-        static void setDeviceCredentialAllowed(BiometricPrompt.Builder builder, boolean z) {
-            builder.setDeviceCredentialAllowed(z);
-        }
-    }
-
-    private static class Api30Impl {
-        static void setAllowedAuthenticators(BiometricPrompt.Builder builder, int i) {
-            builder.setAllowedAuthenticators(i);
-        }
-    }
-
     private static class PromptExecutor implements Executor {
         private final Handler mPromptHandler = new Handler(Looper.getMainLooper());
 
@@ -141,11 +85,41 @@ public class BiometricFragment extends Fragment {
         }
     }
 
-    private static int checkForFingerprintPreAuthenticationErrors(FingerprintManagerCompat fingerprintManagerCompat) {
-        if (fingerprintManagerCompat.isHardwareDetected()) {
-            return !fingerprintManagerCompat.hasEnrolledFingerprints() ? 11 : 0;
+    static BiometricFragment newInstance() {
+        return new BiometricFragment();
+    }
+
+    @Override // androidx.fragment.app.Fragment
+    public void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        connectViewModel();
+    }
+
+    @Override // androidx.fragment.app.Fragment
+    public void onStart() {
+        super.onStart();
+        if (Build.VERSION.SDK_INT == 29 && AuthenticatorUtils.isDeviceCredentialAllowed(this.mViewModel.getAllowedAuthenticators())) {
+            this.mViewModel.setIgnoringCancel(true);
+            this.mHandler.postDelayed(new StopIgnoringCancelRunnable(this.mViewModel), 250L);
         }
-        return 12;
+    }
+
+    @Override // androidx.fragment.app.Fragment
+    public void onStop() {
+        super.onStop();
+        if (Build.VERSION.SDK_INT >= 29 || this.mViewModel.isConfirmingDeviceCredential() || isChangingConfigurations()) {
+            return;
+        }
+        cancelAuthentication(0);
+    }
+
+    @Override // androidx.fragment.app.Fragment
+    public void onActivityResult(int i, int i2, Intent intent) {
+        super.onActivityResult(i, i2, intent);
+        if (i == 1) {
+            this.mViewModel.setConfirmingDeviceCredential(false);
+            handleConfirmCredentialResult(i2);
+        }
     }
 
     private void connectViewModel() {
@@ -215,131 +189,73 @@ public class BiometricFragment extends Fragment {
         });
     }
 
-    private void dismissFingerprintDialog() {
-        this.mViewModel.setPromptShowing(false);
-        if (isAdded()) {
-            FragmentManager parentFragmentManager = getParentFragmentManager();
-            FingerprintDialogFragment fingerprintDialogFragment = (FingerprintDialogFragment) parentFragmentManager.findFragmentByTag("androidx.biometric.FingerprintDialogFragment");
-            if (fingerprintDialogFragment != null) {
-                if (fingerprintDialogFragment.isAdded()) {
-                    fingerprintDialogFragment.dismissAllowingStateLoss();
-                } else {
-                    parentFragmentManager.beginTransaction().remove(fingerprintDialogFragment).commitAllowingStateLoss();
-                }
-            }
-        }
-    }
-
-    private int getDismissDialogDelay() {
-        Context context = getContext();
-        return (context == null || !DeviceUtils.shouldHideFingerprintDialog(context, Build.MODEL)) ? 2000 : 0;
-    }
-
-    private void handleConfirmCredentialResult(int i) {
-        if (i == -1) {
-            sendSuccessAndDismiss(new BiometricPrompt.AuthenticationResult(null, 1));
-        } else {
-            sendErrorAndDismiss(10, getString(R$string.generic_error_user_canceled));
-        }
-    }
-
-    private boolean isChangingConfigurations() {
-        FragmentActivity activity = getActivity();
-        return activity != null && activity.isChangingConfigurations();
-    }
-
-    private boolean isFingerprintDialogNeededForCrypto() {
-        FragmentActivity activity = getActivity();
-        return (activity == null || this.mViewModel.getCryptoObject() == null || !DeviceUtils.shouldUseFingerprintForCrypto(activity, Build.MANUFACTURER, Build.MODEL)) ? false : true;
-    }
-
-    private boolean isFingerprintDialogNeededForErrorHandling() {
-        return Build.VERSION.SDK_INT == 28 && !PackageUtils.hasSystemFeatureFingerprint(getContext());
-    }
-
-    private boolean isUsingFingerprintDialog() {
-        return Build.VERSION.SDK_INT < 28 || isFingerprintDialogNeededForCrypto() || isFingerprintDialogNeededForErrorHandling();
-    }
-
-    private void launchConfirmCredentialActivity() {
+    void authenticate(BiometricPrompt.PromptInfo promptInfo, BiometricPrompt.CryptoObject cryptoObject) {
         FragmentActivity activity = getActivity();
         if (activity == null) {
-            Log.e("BiometricFragment", "Failed to check device credential. Client FragmentActivity not found.");
+            Log.e("BiometricFragment", "Not launching prompt. Client activity was null.");
             return;
         }
-        KeyguardManager keyguardManager = KeyguardUtils.getKeyguardManager(activity);
-        if (keyguardManager == null) {
-            sendErrorAndDismiss(12, getString(R$string.generic_error_no_keyguard));
+        this.mViewModel.setPromptInfo(promptInfo);
+        int consolidatedAuthenticators = AuthenticatorUtils.getConsolidatedAuthenticators(promptInfo, cryptoObject);
+        int i = Build.VERSION.SDK_INT;
+        if (i >= 23 && i < 30 && consolidatedAuthenticators == 15 && cryptoObject == null) {
+            this.mViewModel.setCryptoObject(CryptoObjectUtils.createFakeCryptoObject());
+        } else {
+            this.mViewModel.setCryptoObject(cryptoObject);
+        }
+        if (isManagingDeviceCredentialButton()) {
+            this.mViewModel.setNegativeButtonTextOverride(getString(R$string.confirm_device_credential_password));
+        } else {
+            this.mViewModel.setNegativeButtonTextOverride(null);
+        }
+        if (isManagingDeviceCredentialButton() && BiometricManager.from(activity).canAuthenticate(NotificationCenter.goingToPreviewTheme) != 0) {
+            this.mViewModel.setAwaitingResult(true);
+            launchConfirmCredentialActivity();
+        } else if (this.mViewModel.isDelayingPrompt()) {
+            this.mHandler.postDelayed(new ShowPromptForAuthenticationRunnable(this), 600L);
+        } else {
+            showPromptForAuthentication();
+        }
+    }
+
+    void showPromptForAuthentication() {
+        if (this.mViewModel.isPromptShowing()) {
             return;
         }
-        CharSequence title = this.mViewModel.getTitle();
-        CharSequence subtitle = this.mViewModel.getSubtitle();
-        CharSequence description = this.mViewModel.getDescription();
-        if (subtitle == null) {
-            subtitle = description;
-        }
-        Intent createConfirmDeviceCredentialIntent = Api21Impl.createConfirmDeviceCredentialIntent(keyguardManager, title, subtitle);
-        if (createConfirmDeviceCredentialIntent == null) {
-            sendErrorAndDismiss(14, getString(R$string.generic_error_no_device_credential));
+        if (getContext() == null) {
+            Log.w("BiometricFragment", "Not showing biometric prompt. Context is null.");
             return;
         }
-        this.mViewModel.setConfirmingDeviceCredential(true);
+        this.mViewModel.setPromptShowing(true);
+        this.mViewModel.setAwaitingResult(true);
         if (isUsingFingerprintDialog()) {
-            dismissFingerprintDialog();
-        }
-        createConfirmDeviceCredentialIntent.setFlags(134742016);
-        startActivityForResult(createConfirmDeviceCredentialIntent, 1);
-    }
-
-    static BiometricFragment newInstance() {
-        return new BiometricFragment();
-    }
-
-    private void sendErrorToClient(final int i, final CharSequence charSequence) {
-        if (this.mViewModel.isConfirmingDeviceCredential()) {
-            Log.v("BiometricFragment", "Error not sent to client. User is confirming their device credential.");
-        } else if (!this.mViewModel.isAwaitingResult()) {
-            Log.w("BiometricFragment", "Error not sent to client. Client is not awaiting a result.");
+            showFingerprintDialogForAuthentication();
         } else {
-            this.mViewModel.setAwaitingResult(false);
-            this.mViewModel.getClientExecutor().execute(new Runnable() { // from class: androidx.biometric.BiometricFragment.10
-                @Override // java.lang.Runnable
-                public void run() {
-                    BiometricFragment.this.mViewModel.getClientCallback().onAuthenticationError(i, charSequence);
-                }
-            });
+            showBiometricPromptForAuthentication();
         }
     }
 
-    private void sendFailureToClient() {
-        if (this.mViewModel.isAwaitingResult()) {
-            this.mViewModel.getClientExecutor().execute(new Runnable() { // from class: androidx.biometric.BiometricFragment.11
-                @Override // java.lang.Runnable
-                public void run() {
-                    BiometricFragment.this.mViewModel.getClientCallback().onAuthenticationFailed();
-                }
-            });
-        } else {
-            Log.w("BiometricFragment", "Failure not sent to client. Client is not awaiting a result.");
+    private void showFingerprintDialogForAuthentication() {
+        Context applicationContext = requireContext().getApplicationContext();
+        FingerprintManagerCompat from = FingerprintManagerCompat.from(applicationContext);
+        int checkForFingerprintPreAuthenticationErrors = checkForFingerprintPreAuthenticationErrors(from);
+        if (checkForFingerprintPreAuthenticationErrors != 0) {
+            sendErrorAndDismiss(checkForFingerprintPreAuthenticationErrors, ErrorUtils.getFingerprintErrorString(applicationContext, checkForFingerprintPreAuthenticationErrors));
+            return;
         }
-    }
-
-    private void sendSuccessAndDismiss(BiometricPrompt.AuthenticationResult authenticationResult) {
-        sendSuccessToClient(authenticationResult);
-        dismiss();
-    }
-
-    private void sendSuccessToClient(final BiometricPrompt.AuthenticationResult authenticationResult) {
-        if (!this.mViewModel.isAwaitingResult()) {
-            Log.w("BiometricFragment", "Success not sent to client. Client is not awaiting a result.");
-        } else {
-            this.mViewModel.setAwaitingResult(false);
-            this.mViewModel.getClientExecutor().execute(new Runnable() { // from class: androidx.biometric.BiometricFragment.9
-                @Override // java.lang.Runnable
-                public void run() {
-                    BiometricFragment.this.mViewModel.getClientCallback().onAuthenticationSucceeded(authenticationResult);
-                }
-            });
+        if (isAdded()) {
+            this.mViewModel.setFingerprintDialogDismissedInstantly(true);
+            if (!DeviceUtils.shouldHideFingerprintDialog(applicationContext, Build.MODEL)) {
+                this.mHandler.postDelayed(new Runnable() { // from class: androidx.biometric.BiometricFragment.7
+                    @Override // java.lang.Runnable
+                    public void run() {
+                        BiometricFragment.this.mViewModel.setFingerprintDialogDismissedInstantly(false);
+                    }
+                }, 500L);
+                FingerprintDialogFragment.newInstance().show(getParentFragmentManager(), "androidx.biometric.FingerprintDialogFragment");
+            }
+            this.mViewModel.setCanceledFrom(0);
+            authenticateWithFingerprint(from, applicationContext);
         }
     }
 
@@ -374,76 +290,17 @@ public class BiometricFragment extends Fragment {
         authenticateWithBiometricPrompt(Api28Impl.buildPrompt(createPromptBuilder), getContext());
     }
 
-    private void showFingerprintDialogForAuthentication() {
-        Context applicationContext = requireContext().getApplicationContext();
-        FingerprintManagerCompat from = FingerprintManagerCompat.from(applicationContext);
-        int checkForFingerprintPreAuthenticationErrors = checkForFingerprintPreAuthenticationErrors(from);
-        if (checkForFingerprintPreAuthenticationErrors != 0) {
-            sendErrorAndDismiss(checkForFingerprintPreAuthenticationErrors, ErrorUtils.getFingerprintErrorString(applicationContext, checkForFingerprintPreAuthenticationErrors));
-            return;
-        }
-        if (isAdded()) {
-            this.mViewModel.setFingerprintDialogDismissedInstantly(true);
-            if (!DeviceUtils.shouldHideFingerprintDialog(applicationContext, Build.MODEL)) {
-                this.mHandler.postDelayed(new Runnable() { // from class: androidx.biometric.BiometricFragment.7
-                    @Override // java.lang.Runnable
-                    public void run() {
-                        BiometricFragment.this.mViewModel.setFingerprintDialogDismissedInstantly(false);
-                    }
-                }, 500L);
-                FingerprintDialogFragment.newInstance().show(getParentFragmentManager(), "androidx.biometric.FingerprintDialogFragment");
-            }
-            this.mViewModel.setCanceledFrom(0);
-            authenticateWithFingerprint(from, applicationContext);
-        }
-    }
-
-    private void showFingerprintErrorMessage(CharSequence charSequence) {
-        if (charSequence == null) {
-            charSequence = getString(R$string.default_error_msg);
-        }
-        this.mViewModel.setFingerprintDialogState(2);
-        this.mViewModel.setFingerprintDialogHelpMessage(charSequence);
-    }
-
-    void authenticate(BiometricPrompt.PromptInfo promptInfo, BiometricPrompt.CryptoObject cryptoObject) {
-        BiometricViewModel biometricViewModel;
-        BiometricViewModel biometricViewModel2;
-        String str;
-        FragmentActivity activity = getActivity();
-        if (activity == null) {
-            Log.e("BiometricFragment", "Not launching prompt. Client activity was null.");
-            return;
-        }
-        this.mViewModel.setPromptInfo(promptInfo);
-        int consolidatedAuthenticators = AuthenticatorUtils.getConsolidatedAuthenticators(promptInfo, cryptoObject);
-        int i = Build.VERSION.SDK_INT;
-        if (i < 23 || i >= 30 || consolidatedAuthenticators != 15 || cryptoObject != null) {
-            biometricViewModel = this.mViewModel;
-        } else {
-            biometricViewModel = this.mViewModel;
-            cryptoObject = CryptoObjectUtils.createFakeCryptoObject();
-        }
-        biometricViewModel.setCryptoObject(cryptoObject);
-        if (isManagingDeviceCredentialButton()) {
-            biometricViewModel2 = this.mViewModel;
-            str = getString(R$string.confirm_device_credential_password);
-        } else {
-            biometricViewModel2 = this.mViewModel;
-            str = null;
-        }
-        biometricViewModel2.setNegativeButtonTextOverride(str);
-        if (i >= 21 && isManagingDeviceCredentialButton() && BiometricManager.from(activity).canAuthenticate(NotificationCenter.goingToPreviewTheme) != 0) {
-            this.mViewModel.setAwaitingResult(true);
-            launchConfirmCredentialActivity();
-        } else if (this.mViewModel.isDelayingPrompt()) {
-            this.mHandler.postDelayed(new ShowPromptForAuthenticationRunnable(this), 600L);
-        } else {
-            showPromptForAuthentication();
+    void authenticateWithFingerprint(FingerprintManagerCompat fingerprintManagerCompat, Context context) {
+        try {
+            fingerprintManagerCompat.authenticate(CryptoObjectUtils.wrapForFingerprintManager(this.mViewModel.getCryptoObject()), 0, this.mViewModel.getCancellationSignalProvider().getFingerprintCancellationSignal(), this.mViewModel.getAuthenticationCallbackProvider().getFingerprintCallback(), null);
+        } catch (NullPointerException e) {
+            Log.e("BiometricFragment", "Got NPE while authenticating with fingerprint.", e);
+            sendErrorAndDismiss(1, ErrorUtils.getFingerprintErrorString(context, 1));
         }
     }
 
     void authenticateWithBiometricPrompt(android.hardware.biometrics.BiometricPrompt biometricPrompt, Context context) {
+        String str;
         BiometricPrompt.CryptoObject wrapForBiometricPrompt = CryptoObjectUtils.wrapForBiometricPrompt(this.mViewModel.getCryptoObject());
         CancellationSignal biometricCancellationSignal = this.mViewModel.getCancellationSignalProvider().getBiometricCancellationSignal();
         PromptExecutor promptExecutor = new PromptExecutor();
@@ -456,16 +313,12 @@ public class BiometricFragment extends Fragment {
             }
         } catch (NullPointerException e) {
             Log.e("BiometricFragment", "Got NPE while authenticating with biometric prompt.", e);
-            sendErrorAndDismiss(1, context != null ? context.getString(R$string.default_error_msg) : "");
-        }
-    }
-
-    void authenticateWithFingerprint(FingerprintManagerCompat fingerprintManagerCompat, Context context) {
-        try {
-            fingerprintManagerCompat.authenticate(CryptoObjectUtils.wrapForFingerprintManager(this.mViewModel.getCryptoObject()), 0, this.mViewModel.getCancellationSignalProvider().getFingerprintCancellationSignal(), this.mViewModel.getAuthenticationCallbackProvider().getFingerprintCallback(), null);
-        } catch (NullPointerException e) {
-            Log.e("BiometricFragment", "Got NPE while authenticating with fingerprint.", e);
-            sendErrorAndDismiss(1, ErrorUtils.getFingerprintErrorString(context, 1));
+            if (context != null) {
+                str = context.getString(R$string.default_error_msg);
+            } else {
+                str = "";
+            }
+            sendErrorAndDismiss(1, str);
         }
     }
 
@@ -495,17 +348,23 @@ public class BiometricFragment extends Fragment {
         this.mHandler.postDelayed(new StopDelayingPromptRunnable(this.mViewModel), 600L);
     }
 
-    boolean isManagingDeviceCredentialButton() {
-        return Build.VERSION.SDK_INT <= 28 && AuthenticatorUtils.isDeviceCredentialAllowed(this.mViewModel.getAllowedAuthenticators());
+    private void dismissFingerprintDialog() {
+        this.mViewModel.setPromptShowing(false);
+        if (isAdded()) {
+            FragmentManager parentFragmentManager = getParentFragmentManager();
+            FingerprintDialogFragment fingerprintDialogFragment = (FingerprintDialogFragment) parentFragmentManager.findFragmentByTag("androidx.biometric.FingerprintDialogFragment");
+            if (fingerprintDialogFragment != null) {
+                if (fingerprintDialogFragment.isAdded()) {
+                    fingerprintDialogFragment.dismissAllowingStateLoss();
+                } else {
+                    parentFragmentManager.beginTransaction().remove(fingerprintDialogFragment).commitAllowingStateLoss();
+                }
+            }
+        }
     }
 
-    @Override // androidx.fragment.app.Fragment
-    public void onActivityResult(int i, int i2, Intent intent) {
-        super.onActivityResult(i, i2, intent);
-        if (i == 1) {
-            this.mViewModel.setConfirmingDeviceCredential(false);
-            handleConfirmCredentialResult(i2);
-        }
+    void onAuthenticationSucceeded(BiometricPrompt.AuthenticationResult authenticationResult) {
+        sendSuccessAndDismiss(authenticationResult);
     }
 
     void onAuthenticationError(final int i, final CharSequence charSequence) {
@@ -513,8 +372,7 @@ public class BiometricFragment extends Fragment {
             i = 8;
         }
         Context context = getContext();
-        int i2 = Build.VERSION.SDK_INT;
-        if (i2 >= 21 && i2 < 29 && ErrorUtils.isLockoutError(i) && context != null && KeyguardUtils.isDeviceSecuredWithCredential(context) && AuthenticatorUtils.isDeviceCredentialAllowed(this.mViewModel.getAllowedAuthenticators())) {
+        if (Build.VERSION.SDK_INT < 29 && ErrorUtils.isLockoutError(i) && context != null && KeyguardUtils.isDeviceSecuredWithCredential(context) && AuthenticatorUtils.isDeviceCredentialAllowed(this.mViewModel.getAllowedAuthenticators())) {
             launchConfirmCredentialActivity();
             return;
         }
@@ -550,6 +408,12 @@ public class BiometricFragment extends Fragment {
         this.mViewModel.setFingerprintDialogDismissedInstantly(true);
     }
 
+    void onAuthenticationHelp(CharSequence charSequence) {
+        if (isUsingFingerprintDialog()) {
+            showFingerprintErrorMessage(charSequence);
+        }
+    }
+
     void onAuthenticationFailed() {
         if (isUsingFingerprintDialog()) {
             showFingerprintErrorMessage(getString(R$string.fingerprint_not_recognized));
@@ -557,14 +421,8 @@ public class BiometricFragment extends Fragment {
         sendFailureToClient();
     }
 
-    void onAuthenticationHelp(CharSequence charSequence) {
-        if (isUsingFingerprintDialog()) {
-            showFingerprintErrorMessage(charSequence);
-        }
-    }
-
-    void onAuthenticationSucceeded(BiometricPrompt.AuthenticationResult authenticationResult) {
-        sendSuccessAndDismiss(authenticationResult);
+    void onDeviceCredentialButtonPressed() {
+        launchConfirmCredentialActivity();
     }
 
     void onCancelButtonPressed() {
@@ -576,36 +434,55 @@ public class BiometricFragment extends Fragment {
         cancelAuthentication(2);
     }
 
-    @Override // androidx.fragment.app.Fragment
-    public void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
-        connectViewModel();
-    }
-
-    void onDeviceCredentialButtonPressed() {
-        if (Build.VERSION.SDK_INT < 21) {
-            Log.e("BiometricFragment", "Failed to check device credential. Not supported prior to API 21.");
-        } else {
-            launchConfirmCredentialActivity();
-        }
-    }
-
-    @Override // androidx.fragment.app.Fragment
-    public void onStart() {
-        super.onStart();
-        if (Build.VERSION.SDK_INT == 29 && AuthenticatorUtils.isDeviceCredentialAllowed(this.mViewModel.getAllowedAuthenticators())) {
-            this.mViewModel.setIgnoringCancel(true);
-            this.mHandler.postDelayed(new StopIgnoringCancelRunnable(this.mViewModel), 250L);
-        }
-    }
-
-    @Override // androidx.fragment.app.Fragment
-    public void onStop() {
-        super.onStop();
-        if (Build.VERSION.SDK_INT >= 29 || this.mViewModel.isConfirmingDeviceCredential() || isChangingConfigurations()) {
+    private void launchConfirmCredentialActivity() {
+        FragmentActivity activity = getActivity();
+        if (activity == null) {
+            Log.e("BiometricFragment", "Failed to check device credential. Client FragmentActivity not found.");
             return;
         }
-        cancelAuthentication(0);
+        KeyguardManager keyguardManager = KeyguardUtils.getKeyguardManager(activity);
+        if (keyguardManager == null) {
+            sendErrorAndDismiss(12, getString(R$string.generic_error_no_keyguard));
+            return;
+        }
+        CharSequence title = this.mViewModel.getTitle();
+        CharSequence subtitle = this.mViewModel.getSubtitle();
+        CharSequence description = this.mViewModel.getDescription();
+        if (subtitle == null) {
+            subtitle = description;
+        }
+        Intent createConfirmDeviceCredentialIntent = Api21Impl.createConfirmDeviceCredentialIntent(keyguardManager, title, subtitle);
+        if (createConfirmDeviceCredentialIntent == null) {
+            sendErrorAndDismiss(14, getString(R$string.generic_error_no_device_credential));
+            return;
+        }
+        this.mViewModel.setConfirmingDeviceCredential(true);
+        if (isUsingFingerprintDialog()) {
+            dismissFingerprintDialog();
+        }
+        createConfirmDeviceCredentialIntent.setFlags(134742016);
+        startActivityForResult(createConfirmDeviceCredentialIntent, 1);
+    }
+
+    private void handleConfirmCredentialResult(int i) {
+        if (i == -1) {
+            sendSuccessAndDismiss(new BiometricPrompt.AuthenticationResult(null, 1));
+        } else {
+            sendErrorAndDismiss(10, getString(R$string.generic_error_user_canceled));
+        }
+    }
+
+    private void showFingerprintErrorMessage(CharSequence charSequence) {
+        if (charSequence == null) {
+            charSequence = getString(R$string.default_error_msg);
+        }
+        this.mViewModel.setFingerprintDialogState(2);
+        this.mViewModel.setFingerprintDialogHelpMessage(charSequence);
+    }
+
+    private void sendSuccessAndDismiss(BiometricPrompt.AuthenticationResult authenticationResult) {
+        sendSuccessToClient(authenticationResult);
+        dismiss();
     }
 
     void sendErrorAndDismiss(int i, CharSequence charSequence) {
@@ -613,20 +490,136 @@ public class BiometricFragment extends Fragment {
         dismiss();
     }
 
-    void showPromptForAuthentication() {
-        if (this.mViewModel.isPromptShowing()) {
-            return;
-        }
-        if (getContext() == null) {
-            Log.w("BiometricFragment", "Not showing biometric prompt. Context is null.");
-            return;
-        }
-        this.mViewModel.setPromptShowing(true);
-        this.mViewModel.setAwaitingResult(true);
-        if (isUsingFingerprintDialog()) {
-            showFingerprintDialogForAuthentication();
+    private void sendSuccessToClient(final BiometricPrompt.AuthenticationResult authenticationResult) {
+        if (!this.mViewModel.isAwaitingResult()) {
+            Log.w("BiometricFragment", "Success not sent to client. Client is not awaiting a result.");
         } else {
-            showBiometricPromptForAuthentication();
+            this.mViewModel.setAwaitingResult(false);
+            this.mViewModel.getClientExecutor().execute(new Runnable() { // from class: androidx.biometric.BiometricFragment.9
+                @Override // java.lang.Runnable
+                public void run() {
+                    BiometricFragment.this.mViewModel.getClientCallback().onAuthenticationSucceeded(authenticationResult);
+                }
+            });
+        }
+    }
+
+    private void sendErrorToClient(final int i, final CharSequence charSequence) {
+        if (this.mViewModel.isConfirmingDeviceCredential()) {
+            Log.v("BiometricFragment", "Error not sent to client. User is confirming their device credential.");
+        } else if (!this.mViewModel.isAwaitingResult()) {
+            Log.w("BiometricFragment", "Error not sent to client. Client is not awaiting a result.");
+        } else {
+            this.mViewModel.setAwaitingResult(false);
+            this.mViewModel.getClientExecutor().execute(new Runnable() { // from class: androidx.biometric.BiometricFragment.10
+                @Override // java.lang.Runnable
+                public void run() {
+                    BiometricFragment.this.mViewModel.getClientCallback().onAuthenticationError(i, charSequence);
+                }
+            });
+        }
+    }
+
+    private void sendFailureToClient() {
+        if (!this.mViewModel.isAwaitingResult()) {
+            Log.w("BiometricFragment", "Failure not sent to client. Client is not awaiting a result.");
+        } else {
+            this.mViewModel.getClientExecutor().execute(new Runnable() { // from class: androidx.biometric.BiometricFragment.11
+                @Override // java.lang.Runnable
+                public void run() {
+                    BiometricFragment.this.mViewModel.getClientCallback().onAuthenticationFailed();
+                }
+            });
+        }
+    }
+
+    private static int checkForFingerprintPreAuthenticationErrors(FingerprintManagerCompat fingerprintManagerCompat) {
+        if (fingerprintManagerCompat.isHardwareDetected()) {
+            return !fingerprintManagerCompat.hasEnrolledFingerprints() ? 11 : 0;
+        }
+        return 12;
+    }
+
+    boolean isManagingDeviceCredentialButton() {
+        return Build.VERSION.SDK_INT <= 28 && AuthenticatorUtils.isDeviceCredentialAllowed(this.mViewModel.getAllowedAuthenticators());
+    }
+
+    private boolean isUsingFingerprintDialog() {
+        return Build.VERSION.SDK_INT < 28 || isFingerprintDialogNeededForCrypto() || isFingerprintDialogNeededForErrorHandling();
+    }
+
+    private boolean isFingerprintDialogNeededForCrypto() {
+        FragmentActivity activity = getActivity();
+        return (activity == null || this.mViewModel.getCryptoObject() == null || !DeviceUtils.shouldUseFingerprintForCrypto(activity, Build.MANUFACTURER, Build.MODEL)) ? false : true;
+    }
+
+    private boolean isFingerprintDialogNeededForErrorHandling() {
+        return Build.VERSION.SDK_INT == 28 && !PackageUtils.hasSystemFeatureFingerprint(getContext());
+    }
+
+    private boolean isChangingConfigurations() {
+        FragmentActivity activity = getActivity();
+        return activity != null && activity.isChangingConfigurations();
+    }
+
+    private int getDismissDialogDelay() {
+        Context context = getContext();
+        return (context == null || !DeviceUtils.shouldHideFingerprintDialog(context, Build.MODEL)) ? 2000 : 0;
+    }
+
+    private static class Api30Impl {
+        static void setAllowedAuthenticators(BiometricPrompt.Builder builder, int i) {
+            builder.setAllowedAuthenticators(i);
+        }
+    }
+
+    private static class Api29Impl {
+        static void setConfirmationRequired(BiometricPrompt.Builder builder, boolean z) {
+            builder.setConfirmationRequired(z);
+        }
+
+        static void setDeviceCredentialAllowed(BiometricPrompt.Builder builder, boolean z) {
+            builder.setDeviceCredentialAllowed(z);
+        }
+    }
+
+    private static class Api28Impl {
+        static BiometricPrompt.Builder createPromptBuilder(Context context) {
+            return new BiometricPrompt.Builder(context);
+        }
+
+        static void setTitle(BiometricPrompt.Builder builder, CharSequence charSequence) {
+            builder.setTitle(charSequence);
+        }
+
+        static void setSubtitle(BiometricPrompt.Builder builder, CharSequence charSequence) {
+            builder.setSubtitle(charSequence);
+        }
+
+        static void setDescription(BiometricPrompt.Builder builder, CharSequence charSequence) {
+            builder.setDescription(charSequence);
+        }
+
+        static void setNegativeButton(BiometricPrompt.Builder builder, CharSequence charSequence, Executor executor, DialogInterface.OnClickListener onClickListener) {
+            builder.setNegativeButton(charSequence, executor, onClickListener);
+        }
+
+        static android.hardware.biometrics.BiometricPrompt buildPrompt(BiometricPrompt.Builder builder) {
+            return builder.build();
+        }
+
+        static void authenticate(android.hardware.biometrics.BiometricPrompt biometricPrompt, CancellationSignal cancellationSignal, Executor executor, BiometricPrompt.AuthenticationCallback authenticationCallback) {
+            biometricPrompt.authenticate(cancellationSignal, executor, authenticationCallback);
+        }
+
+        static void authenticate(android.hardware.biometrics.BiometricPrompt biometricPrompt, BiometricPrompt.CryptoObject cryptoObject, CancellationSignal cancellationSignal, Executor executor, BiometricPrompt.AuthenticationCallback authenticationCallback) {
+            biometricPrompt.authenticate(cryptoObject, cancellationSignal, executor, authenticationCallback);
+        }
+    }
+
+    private static class Api21Impl {
+        static Intent createConfirmDeviceCredentialIntent(KeyguardManager keyguardManager, CharSequence charSequence, CharSequence charSequence2) {
+            return keyguardManager.createConfirmDeviceCredentialIntent(charSequence, charSequence2);
         }
     }
 }

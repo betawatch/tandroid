@@ -19,10 +19,33 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Map;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class MapTypeAdapterFactory implements TypeAdapterFactory {
     final boolean complexMapKeySerialization;
     private final ConstructorConstructor constructorConstructor;
+
+    public MapTypeAdapterFactory(ConstructorConstructor constructorConstructor, boolean z) {
+        this.constructorConstructor = constructorConstructor;
+        this.complexMapKeySerialization = z;
+    }
+
+    @Override // com.google.gson.TypeAdapterFactory
+    public TypeAdapter create(Gson gson, TypeToken typeToken) {
+        Type type = typeToken.getType();
+        Class rawType = typeToken.getRawType();
+        if (!Map.class.isAssignableFrom(rawType)) {
+            return null;
+        }
+        Type[] mapKeyAndValueTypes = $Gson$Types.getMapKeyAndValueTypes(type, rawType);
+        return new Adapter(gson, mapKeyAndValueTypes[0], getKeyAdapter(gson, mapKeyAndValueTypes[0]), mapKeyAndValueTypes[1], gson.getAdapter(TypeToken.get(mapKeyAndValueTypes[1])), this.constructorConstructor.get(typeToken));
+    }
+
+    private TypeAdapter getKeyAdapter(Gson gson, Type type) {
+        if (type == Boolean.TYPE || type == Boolean.class) {
+            return TypeAdapters.BOOLEAN_AS_STRING;
+        }
+        return gson.getAdapter(TypeToken.get(type));
+    }
 
     private final class Adapter extends TypeAdapter {
         private final ObjectConstructor constructor;
@@ -33,26 +56,6 @@ public final class MapTypeAdapterFactory implements TypeAdapterFactory {
             this.keyTypeAdapter = new TypeAdapterRuntimeTypeWrapper(gson, typeAdapter, type);
             this.valueTypeAdapter = new TypeAdapterRuntimeTypeWrapper(gson, typeAdapter2, type2);
             this.constructor = objectConstructor;
-        }
-
-        private String keyToString(JsonElement jsonElement) {
-            if (!jsonElement.isJsonPrimitive()) {
-                if (jsonElement.isJsonNull()) {
-                    return "null";
-                }
-                throw new AssertionError();
-            }
-            JsonPrimitive asJsonPrimitive = jsonElement.getAsJsonPrimitive();
-            if (asJsonPrimitive.isNumber()) {
-                return String.valueOf(asJsonPrimitive.getAsNumber());
-            }
-            if (asJsonPrimitive.isBoolean()) {
-                return Boolean.toString(asJsonPrimitive.getAsBoolean());
-            }
-            if (asJsonPrimitive.isString()) {
-                return asJsonPrimitive.getAsString();
-            }
-            throw new AssertionError();
         }
 
         @Override // com.google.gson.TypeAdapter
@@ -113,47 +116,47 @@ public final class MapTypeAdapterFactory implements TypeAdapterFactory {
                 arrayList2.add(entry2.getValue());
                 z |= jsonTree.isJsonArray() || jsonTree.isJsonObject();
             }
-            if (!z) {
-                jsonWriter.beginObject();
+            if (z) {
+                jsonWriter.beginArray();
                 int size = arrayList.size();
                 while (i < size) {
-                    jsonWriter.name(keyToString((JsonElement) arrayList.get(i)));
+                    jsonWriter.beginArray();
+                    Streams.write((JsonElement) arrayList.get(i), jsonWriter);
                     this.valueTypeAdapter.write(jsonWriter, arrayList2.get(i));
+                    jsonWriter.endArray();
                     i++;
                 }
-                jsonWriter.endObject();
+                jsonWriter.endArray();
                 return;
             }
-            jsonWriter.beginArray();
+            jsonWriter.beginObject();
             int size2 = arrayList.size();
             while (i < size2) {
-                jsonWriter.beginArray();
-                Streams.write((JsonElement) arrayList.get(i), jsonWriter);
+                jsonWriter.name(keyToString((JsonElement) arrayList.get(i)));
                 this.valueTypeAdapter.write(jsonWriter, arrayList2.get(i));
-                jsonWriter.endArray();
                 i++;
             }
-            jsonWriter.endArray();
+            jsonWriter.endObject();
         }
-    }
 
-    public MapTypeAdapterFactory(ConstructorConstructor constructorConstructor, boolean z) {
-        this.constructorConstructor = constructorConstructor;
-        this.complexMapKeySerialization = z;
-    }
-
-    private TypeAdapter getKeyAdapter(Gson gson, Type type) {
-        return (type == Boolean.TYPE || type == Boolean.class) ? TypeAdapters.BOOLEAN_AS_STRING : gson.getAdapter(TypeToken.get(type));
-    }
-
-    @Override // com.google.gson.TypeAdapterFactory
-    public TypeAdapter create(Gson gson, TypeToken typeToken) {
-        Type type = typeToken.getType();
-        Class rawType = typeToken.getRawType();
-        if (!Map.class.isAssignableFrom(rawType)) {
-            return null;
+        private String keyToString(JsonElement jsonElement) {
+            if (jsonElement.isJsonPrimitive()) {
+                JsonPrimitive asJsonPrimitive = jsonElement.getAsJsonPrimitive();
+                if (asJsonPrimitive.isNumber()) {
+                    return String.valueOf(asJsonPrimitive.getAsNumber());
+                }
+                if (asJsonPrimitive.isBoolean()) {
+                    return Boolean.toString(asJsonPrimitive.getAsBoolean());
+                }
+                if (asJsonPrimitive.isString()) {
+                    return asJsonPrimitive.getAsString();
+                }
+                throw new AssertionError();
+            }
+            if (jsonElement.isJsonNull()) {
+                return "null";
+            }
+            throw new AssertionError();
         }
-        Type[] mapKeyAndValueTypes = $Gson$Types.getMapKeyAndValueTypes(type, rawType);
-        return new Adapter(gson, mapKeyAndValueTypes[0], getKeyAdapter(gson, mapKeyAndValueTypes[0]), mapKeyAndValueTypes[1], gson.getAdapter(TypeToken.get(mapKeyAndValueTypes[1])), this.constructorConstructor.get(typeToken));
     }
 }

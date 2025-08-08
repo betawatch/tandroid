@@ -11,18 +11,8 @@ public abstract class ForwardingTimeline extends Timeline {
     }
 
     @Override // com.google.android.exoplayer2.Timeline
-    public int getFirstWindowIndex(boolean z) {
-        return this.timeline.getFirstWindowIndex(z);
-    }
-
-    @Override // com.google.android.exoplayer2.Timeline
-    public int getIndexOfPeriod(Object obj) {
-        return this.timeline.getIndexOfPeriod(obj);
-    }
-
-    @Override // com.google.android.exoplayer2.Timeline
-    public int getLastWindowIndex(boolean z) {
-        return this.timeline.getLastWindowIndex(z);
+    public int getWindowCount() {
+        return this.timeline.getWindowCount();
     }
 
     @Override // com.google.android.exoplayer2.Timeline
@@ -31,23 +21,18 @@ public abstract class ForwardingTimeline extends Timeline {
     }
 
     @Override // com.google.android.exoplayer2.Timeline
-    public Timeline.Period getPeriod(int i, Timeline.Period period, boolean z) {
-        return this.timeline.getPeriod(i, period, z);
-    }
-
-    @Override // com.google.android.exoplayer2.Timeline
-    public int getPeriodCount() {
-        return this.timeline.getPeriodCount();
-    }
-
-    @Override // com.google.android.exoplayer2.Timeline
     public int getPreviousWindowIndex(int i, int i2, boolean z) {
         return this.timeline.getPreviousWindowIndex(i, i2, z);
     }
 
     @Override // com.google.android.exoplayer2.Timeline
-    public Object getUidOfPeriod(int i) {
-        return this.timeline.getUidOfPeriod(i);
+    public int getLastWindowIndex(boolean z) {
+        return this.timeline.getLastWindowIndex(z);
+    }
+
+    @Override // com.google.android.exoplayer2.Timeline
+    public int getFirstWindowIndex(boolean z) {
+        return this.timeline.getFirstWindowIndex(z);
     }
 
     @Override // com.google.android.exoplayer2.Timeline
@@ -56,7 +41,22 @@ public abstract class ForwardingTimeline extends Timeline {
     }
 
     @Override // com.google.android.exoplayer2.Timeline
-    public int getWindowCount() {
-        return this.timeline.getWindowCount();
+    public int getPeriodCount() {
+        return this.timeline.getPeriodCount();
+    }
+
+    @Override // com.google.android.exoplayer2.Timeline
+    public Timeline.Period getPeriod(int i, Timeline.Period period, boolean z) {
+        return this.timeline.getPeriod(i, period, z);
+    }
+
+    @Override // com.google.android.exoplayer2.Timeline
+    public int getIndexOfPeriod(Object obj) {
+        return this.timeline.getIndexOfPeriod(obj);
+    }
+
+    @Override // com.google.android.exoplayer2.Timeline
+    public Object getUidOfPeriod(int i) {
+        return this.timeline.getUidOfPeriod(i);
     }
 }

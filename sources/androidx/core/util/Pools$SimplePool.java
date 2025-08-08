@@ -12,15 +12,6 @@ public class Pools$SimplePool implements Pools$Pool {
         this.mPool = new Object[i];
     }
 
-    private boolean isInPool(Object obj) {
-        for (int i = 0; i < this.mPoolSize; i++) {
-            if (this.mPool[i] == obj) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     @Override // androidx.core.util.Pools$Pool
     public Object acquire() {
         int i = this.mPoolSize;
@@ -48,5 +39,14 @@ public class Pools$SimplePool implements Pools$Pool {
         objArr[i] = obj;
         this.mPoolSize = i + 1;
         return true;
+    }
+
+    private boolean isInPool(Object obj) {
+        for (int i = 0; i < this.mPoolSize; i++) {
+            if (this.mPool[i] == obj) {
+                return true;
+            }
+        }
+        return false;
     }
 }

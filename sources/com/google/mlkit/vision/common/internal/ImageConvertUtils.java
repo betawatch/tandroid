@@ -14,7 +14,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class ImageConvertUtils {
     private static final ImageConvertUtils zza = new ImageConvertUtils();
 

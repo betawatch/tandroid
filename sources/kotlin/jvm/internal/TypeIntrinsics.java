@@ -6,13 +6,22 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class TypeIntrinsics {
-    public static Object beforeCheckcastToFunctionOfArity(Object obj, int i) {
-        if (obj != null && !isFunctionOfArity(obj, i)) {
-            throwCce(obj, "kotlin.jvm.functions.Function" + i);
-        }
-        return obj;
+    private static Throwable sanitizeStackTrace(Throwable th) {
+        return Intrinsics.sanitizeStackTrace(th, TypeIntrinsics.class.getName());
+    }
+
+    public static void throwCce(Object obj, String str) {
+        throwCce((obj == null ? "null" : obj.getClass().getName()) + " cannot be cast to " + str);
+    }
+
+    public static void throwCce(String str) {
+        throw throwCce(new ClassCastException(str));
+    }
+
+    public static ClassCastException throwCce(ClassCastException classCastException) {
+        throw ((ClassCastException) sanitizeStackTrace(classCastException));
     }
 
     public static int getFunctionArity(Object obj) {
@@ -35,19 +44,10 @@ public abstract class TypeIntrinsics {
         return (obj instanceof Function) && getFunctionArity(obj) == i;
     }
 
-    private static Throwable sanitizeStackTrace(Throwable th) {
-        return Intrinsics.sanitizeStackTrace(th, TypeIntrinsics.class.getName());
-    }
-
-    public static ClassCastException throwCce(ClassCastException classCastException) {
-        throw ((ClassCastException) sanitizeStackTrace(classCastException));
-    }
-
-    public static void throwCce(Object obj, String str) {
-        throwCce((obj == null ? "null" : obj.getClass().getName()) + " cannot be cast to " + str);
-    }
-
-    public static void throwCce(String str) {
-        throw throwCce(new ClassCastException(str));
+    public static Object beforeCheckcastToFunctionOfArity(Object obj, int i) {
+        if (obj != null && !isFunctionOfArity(obj, i)) {
+            throwCce(obj, "kotlin.jvm.functions.Function" + i);
+        }
+        return obj;
     }
 }

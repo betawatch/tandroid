@@ -4,15 +4,15 @@ import android.content.Intent;
 
 /* loaded from: classes3.dex */
 public abstract class PipActions {
-    public static int getActionId(Intent intent) {
-        return intent.getIntExtra("action_id", -1);
+    public static boolean isPipIntent(Intent intent) {
+        return "PIP_CUSTOM_EVENT".equals(intent.getAction());
     }
 
     public static String getSourceId(Intent intent) {
         return intent.getStringExtra("source_id");
     }
 
-    public static boolean isPipIntent(Intent intent) {
-        return "PIP_CUSTOM_EVENT".equals(intent.getAction());
+    public static int getActionId(Intent intent) {
+        return intent.getIntExtra("action_id", -1);
     }
 }

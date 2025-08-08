@@ -27,10 +27,6 @@ public final class TextInformationFrame extends Id3Frame {
     public final String value;
     public final ImmutableList values;
 
-    private TextInformationFrame(Parcel parcel) {
-        this((String) Assertions.checkNotNull(parcel.readString()), parcel.readString(), ImmutableList.copyOf((String[]) Assertions.checkNotNull(parcel.createStringArray())));
-    }
-
     public TextInformationFrame(String str, String str2, List list) {
         super(str);
         Assertions.checkArgument(!list.isEmpty());
@@ -40,46 +36,8 @@ public final class TextInformationFrame extends Id3Frame {
         this.value = (String) copyOf.get(0);
     }
 
-    private static List parseId3v2point4TimestampFrameForDate(String str) {
-        String substring;
-        ArrayList arrayList = new ArrayList();
-        try {
-            if (str.length() >= 10) {
-                arrayList.add(Integer.valueOf(Integer.parseInt(str.substring(0, 4))));
-                arrayList.add(Integer.valueOf(Integer.parseInt(str.substring(5, 7))));
-                substring = str.substring(8, 10);
-            } else {
-                if (str.length() < 7) {
-                    if (str.length() >= 4) {
-                        substring = str.substring(0, 4);
-                    }
-                    return arrayList;
-                }
-                arrayList.add(Integer.valueOf(Integer.parseInt(str.substring(0, 4))));
-                substring = str.substring(5, 7);
-            }
-            arrayList.add(Integer.valueOf(Integer.parseInt(substring)));
-            return arrayList;
-        } catch (NumberFormatException unused) {
-            return new ArrayList();
-        }
-    }
-
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || TextInformationFrame.class != obj.getClass()) {
-            return false;
-        }
-        TextInformationFrame textInformationFrame = (TextInformationFrame) obj;
-        return Util.areEqual(this.id, textInformationFrame.id) && Util.areEqual(this.description, textInformationFrame.description) && this.values.equals(textInformationFrame.values);
-    }
-
-    public int hashCode() {
-        int hashCode = (this.id.hashCode() + 527) * 31;
-        String str = this.description;
-        return ((hashCode + (str != null ? str.hashCode() : 0)) * 31) + this.values.hashCode();
+    private TextInformationFrame(Parcel parcel) {
+        this((String) Assertions.checkNotNull(parcel.readString()), parcel.readString(), ImmutableList.copyOf((String[]) Assertions.checkNotNull(parcel.createStringArray())));
     }
 
     /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
@@ -297,6 +255,23 @@ public final class TextInformationFrame extends Id3Frame {
         }
     }
 
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || TextInformationFrame.class != obj.getClass()) {
+            return false;
+        }
+        TextInformationFrame textInformationFrame = (TextInformationFrame) obj;
+        return Util.areEqual(this.id, textInformationFrame.id) && Util.areEqual(this.description, textInformationFrame.description) && this.values.equals(textInformationFrame.values);
+    }
+
+    public int hashCode() {
+        int hashCode = (this.id.hashCode() + 527) * 31;
+        String str = this.description;
+        return ((hashCode + (str != null ? str.hashCode() : 0)) * 31) + this.values.hashCode();
+    }
+
     @Override // com.google.android.exoplayer2.metadata.id3.Id3Frame
     public String toString() {
         return this.id + ": description=" + this.description + ": values=" + this.values;
@@ -307,5 +282,24 @@ public final class TextInformationFrame extends Id3Frame {
         parcel.writeString(this.id);
         parcel.writeString(this.description);
         parcel.writeStringArray((String[]) this.values.toArray(new String[0]));
+    }
+
+    private static List parseId3v2point4TimestampFrameForDate(String str) {
+        ArrayList arrayList = new ArrayList();
+        try {
+            if (str.length() >= 10) {
+                arrayList.add(Integer.valueOf(Integer.parseInt(str.substring(0, 4))));
+                arrayList.add(Integer.valueOf(Integer.parseInt(str.substring(5, 7))));
+                arrayList.add(Integer.valueOf(Integer.parseInt(str.substring(8, 10))));
+            } else if (str.length() >= 7) {
+                arrayList.add(Integer.valueOf(Integer.parseInt(str.substring(0, 4))));
+                arrayList.add(Integer.valueOf(Integer.parseInt(str.substring(5, 7))));
+            } else if (str.length() >= 4) {
+                arrayList.add(Integer.valueOf(Integer.parseInt(str.substring(0, 4))));
+            }
+            return arrayList;
+        } catch (NumberFormatException unused) {
+            return new ArrayList();
+        }
     }
 }

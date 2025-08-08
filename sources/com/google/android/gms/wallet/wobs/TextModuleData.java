@@ -11,16 +11,16 @@ public final class TextModuleData extends AbstractSafeParcelable {
     String zza;
     String zzb;
 
-    public TextModuleData(String str, String str2) {
-        this.zza = str;
-        this.zzb = str2;
-    }
-
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
         SafeParcelWriter.writeString(parcel, 2, this.zza, false);
         SafeParcelWriter.writeString(parcel, 3, this.zzb, false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    public TextModuleData(String str, String str2) {
+        this.zza = str;
+        this.zzb = str2;
     }
 }

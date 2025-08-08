@@ -14,16 +14,16 @@ public final class SchedulingConfigModule_ConfigFactory implements Factory {
         this.clockProvider = provider;
     }
 
-    public static SchedulerConfig config(Clock clock) {
-        return (SchedulerConfig) Preconditions.checkNotNull(SchedulingConfigModule.config(clock), "Cannot return null from a non-@Nullable @Provides method");
+    @Override // javax.inject.Provider
+    public SchedulerConfig get() {
+        return config((Clock) this.clockProvider.get());
     }
 
     public static SchedulingConfigModule_ConfigFactory create(Provider provider) {
         return new SchedulingConfigModule_ConfigFactory(provider);
     }
 
-    @Override // javax.inject.Provider
-    public SchedulerConfig get() {
-        return config((Clock) this.clockProvider.get());
+    public static SchedulerConfig config(Clock clock) {
+        return (SchedulerConfig) Preconditions.checkNotNull(SchedulingConfigModule.config(clock), "Cannot return null from a non-@Nullable @Provides method");
     }
 }

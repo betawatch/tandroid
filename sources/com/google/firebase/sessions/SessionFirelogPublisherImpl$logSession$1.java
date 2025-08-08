@@ -9,13 +9,13 @@ import java.util.Map;
 import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CoroutineScope;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class SessionFirelogPublisherImpl$logSession$1 extends SuspendLambda implements Function2 {
     final /* synthetic */ SessionDetails $sessionDetails;
     Object L$0;
@@ -53,7 +53,6 @@ final class SessionFirelogPublisherImpl$logSession$1 extends SuspendLambda imple
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        Object coroutine_suspended;
         FirebaseApp firebaseApp;
         SessionDetails sessionDetails;
         SessionsSettings sessionsSettings;
@@ -73,7 +72,7 @@ final class SessionFirelogPublisherImpl$logSession$1 extends SuspendLambda imple
         FirebaseApp firebaseApp5;
         ProcessDetails processDetails2;
         SessionsSettings sessionsSettings3;
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
@@ -86,28 +85,28 @@ final class SessionFirelogPublisherImpl$logSession$1 extends SuspendLambda imple
         } else {
             if (i != 1) {
                 if (i != 2) {
-                    if (i != 3) {
-                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    if (i == 3) {
+                        Map map2 = (Map) this.L$7;
+                        List list3 = (List) this.L$6;
+                        ProcessDetails processDetails3 = (ProcessDetails) this.L$5;
+                        sessionsSettings3 = (SessionsSettings) this.L$4;
+                        SessionDetails sessionDetails3 = (SessionDetails) this.L$3;
+                        FirebaseApp firebaseApp6 = (FirebaseApp) this.L$2;
+                        SessionEvents sessionEvents3 = (SessionEvents) this.L$1;
+                        SessionFirelogPublisherImpl sessionFirelogPublisherImpl3 = (SessionFirelogPublisherImpl) this.L$0;
+                        ResultKt.throwOnFailure(obj);
+                        sessionFirelogPublisherImpl = sessionFirelogPublisherImpl3;
+                        map = map2;
+                        sessionEvents2 = sessionEvents3;
+                        list2 = list3;
+                        firebaseApp5 = firebaseApp6;
+                        processDetails2 = processDetails3;
+                        sessionDetails2 = sessionDetails3;
+                        Intrinsics.checkNotNullExpressionValue(obj, "getFirebaseInstallationId()");
+                        sessionFirelogPublisherImpl.attemptLoggingSessionEvent(sessionEvents2.buildSession(firebaseApp5, sessionDetails2, sessionsSettings3, processDetails2, list2, map, (String) obj));
+                        return Unit.INSTANCE;
                     }
-                    Map map2 = (Map) this.L$7;
-                    List list3 = (List) this.L$6;
-                    ProcessDetails processDetails3 = (ProcessDetails) this.L$5;
-                    sessionsSettings3 = (SessionsSettings) this.L$4;
-                    SessionDetails sessionDetails3 = (SessionDetails) this.L$3;
-                    FirebaseApp firebaseApp6 = (FirebaseApp) this.L$2;
-                    SessionEvents sessionEvents3 = (SessionEvents) this.L$1;
-                    SessionFirelogPublisherImpl sessionFirelogPublisherImpl3 = (SessionFirelogPublisherImpl) this.L$0;
-                    ResultKt.throwOnFailure(obj);
-                    sessionFirelogPublisherImpl = sessionFirelogPublisherImpl3;
-                    map = map2;
-                    sessionEvents2 = sessionEvents3;
-                    list2 = list3;
-                    firebaseApp5 = firebaseApp6;
-                    processDetails2 = processDetails3;
-                    sessionDetails2 = sessionDetails3;
-                    Intrinsics.checkNotNullExpressionValue(obj, "getFirebaseInstallationId()");
-                    sessionFirelogPublisherImpl.attemptLoggingSessionEvent(sessionEvents2.buildSession(firebaseApp5, sessionDetails2, sessionsSettings3, processDetails2, list2, map, (String) obj));
-                    return Unit.INSTANCE;
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 }
                 list = (List) this.L$6;
                 processDetails = (ProcessDetails) this.L$5;

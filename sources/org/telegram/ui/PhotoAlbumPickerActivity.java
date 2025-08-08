@@ -10,7 +10,6 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextPaint;
@@ -52,7 +51,6 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ActionBar.ThemeDescription;
 import org.telegram.ui.Cells.PhotoPickerAlbumsCell;
 import org.telegram.ui.Components.AlertsCreator;
-import org.telegram.ui.Components.CombinedDrawable;
 import org.telegram.ui.Components.EditTextCaption;
 import org.telegram.ui.Components.EditTextEmoji;
 import org.telegram.ui.Components.LayoutHelper;
@@ -103,102 +101,10 @@ public class PhotoAlbumPickerActivity extends BaseFragment implements Notificati
     private RectF rect = new RectF();
     private Paint paint = new Paint(1);
 
-    /* JADX INFO: Access modifiers changed from: private */
-    class ListAdapter extends RecyclerListView.SelectionAdapter {
-        private Context mContext;
-
-        public ListAdapter(Context context) {
-            this.mContext = context;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onCreateViewHolder$0(MediaController.AlbumEntry albumEntry) {
-            PhotoAlbumPickerActivity.this.openPhotoPicker(albumEntry, 0);
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public int getItemCount() {
-            if (PhotoAlbumPickerActivity.this.albumsSorted != null) {
-                return (int) Math.ceil(PhotoAlbumPickerActivity.this.albumsSorted.size() / PhotoAlbumPickerActivity.this.columnsCount);
-            }
-            return 0;
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public int getItemViewType(int i) {
-            return 0;
-        }
-
-        @Override // org.telegram.ui.Components.RecyclerListView.SelectionAdapter
-        public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
-            return true;
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
-            PhotoPickerAlbumsCell photoPickerAlbumsCell = (PhotoPickerAlbumsCell) viewHolder.itemView;
-            photoPickerAlbumsCell.setAlbumsCount(PhotoAlbumPickerActivity.this.columnsCount);
-            for (int i2 = 0; i2 < PhotoAlbumPickerActivity.this.columnsCount; i2++) {
-                int i3 = (PhotoAlbumPickerActivity.this.columnsCount * i) + i2;
-                photoPickerAlbumsCell.setAlbum(i2, i3 < PhotoAlbumPickerActivity.this.albumsSorted.size() ? (MediaController.AlbumEntry) PhotoAlbumPickerActivity.this.albumsSorted.get(i3) : null);
-            }
-            photoPickerAlbumsCell.requestLayout();
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-            PhotoPickerAlbumsCell photoPickerAlbumsCell = new PhotoPickerAlbumsCell(this.mContext);
-            photoPickerAlbumsCell.setDelegate(new PhotoPickerAlbumsCell.PhotoPickerAlbumsCellDelegate() { // from class: org.telegram.ui.PhotoAlbumPickerActivity$ListAdapter$$ExternalSyntheticLambda0
-                @Override // org.telegram.ui.Cells.PhotoPickerAlbumsCell.PhotoPickerAlbumsCellDelegate
-                public final void didSelectAlbum(MediaController.AlbumEntry albumEntry) {
-                    PhotoAlbumPickerActivity.ListAdapter.this.lambda$onCreateViewHolder$0(albumEntry);
-                }
-            });
-            return new RecyclerListView.Holder(photoPickerAlbumsCell);
-        }
-    }
-
     public interface PhotoAlbumPickerActivityDelegate {
         void didSelectPhotos(ArrayList arrayList, boolean z, int i);
 
         void startPhotoSelectActivity();
-    }
-
-    public PhotoAlbumPickerActivity(int i, boolean z, boolean z2, ChatActivity chatActivity) {
-        this.chatActivity = chatActivity;
-        this.selectPhotoType = i;
-        this.allowGifs = z;
-        this.allowCaption = z2;
-    }
-
-    private void fixLayout() {
-        RecyclerListView recyclerListView = this.listView;
-        if (recyclerListView != null) {
-            recyclerListView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() { // from class: org.telegram.ui.PhotoAlbumPickerActivity.7
-                @Override // android.view.ViewTreeObserver.OnPreDrawListener
-                public boolean onPreDraw() {
-                    PhotoAlbumPickerActivity.this.fixLayoutInternal();
-                    if (PhotoAlbumPickerActivity.this.listView == null) {
-                        return true;
-                    }
-                    PhotoAlbumPickerActivity.this.listView.getViewTreeObserver().removeOnPreDrawListener(this);
-                    return true;
-                }
-            });
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public void fixLayoutInternal() {
-        if (getParentActivity() == null) {
-            return;
-        }
-        int rotation = ((WindowManager) ApplicationLoader.applicationContext.getSystemService("window")).getDefaultDisplay().getRotation();
-        this.columnsCount = 2;
-        if (!AndroidUtilities.isTablet() && (rotation == 3 || rotation == 1)) {
-            this.columnsCount = 4;
-        }
-        this.listAdapter.notifyDataSetChanged();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -211,370 +117,41 @@ public class PhotoAlbumPickerActivity extends BaseFragment implements Notificati
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$2(boolean z, int i) {
-        sendSelectedPhotos(this.selectedPhotos, this.selectedPhotosOrder, z, i);
-        lambda$onBackPressed$355();
+    public PhotoAlbumPickerActivity(int i, boolean z, boolean z2, ChatActivity chatActivity) {
+        this.chatActivity = chatActivity;
+        this.selectPhotoType = i;
+        this.allowGifs = z;
+        this.allowCaption = z2;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$3(View view) {
-        ChatActivity chatActivity = this.chatActivity;
-        if (chatActivity != null && chatActivity.isInScheduleMode()) {
-            AlertsCreator.createScheduleDatePickerDialog(getParentActivity(), this.chatActivity.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.PhotoAlbumPickerActivity$$ExternalSyntheticLambda4
-                @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
-                public final void didSelectDate(boolean z, int i) {
-                    PhotoAlbumPickerActivity.this.lambda$createView$2(z, i);
-                }
-            });
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean onFragmentCreate() {
+        int i = this.selectPhotoType;
+        if (i == SELECT_TYPE_AVATAR || i == SELECT_TYPE_WALLPAPER || i == SELECT_TYPE_QR || !this.allowSearchImages) {
+            this.albumsSorted = MediaController.allPhotoAlbums;
         } else {
-            sendSelectedPhotos(this.selectedPhotos, this.selectedPhotosOrder, true, 0);
-            lambda$onBackPressed$355();
+            this.albumsSorted = MediaController.allMediaAlbums;
         }
+        this.loading = this.albumsSorted == null;
+        MediaController.loadGalleryPhotosAlbums(this.classGuid);
+        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.albumsDidLoad);
+        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.closeChats);
+        return super.onFragmentCreate();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$4(KeyEvent keyEvent) {
-        ActionBarPopupWindow actionBarPopupWindow;
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (actionBarPopupWindow = this.sendPopupWindow) != null && actionBarPopupWindow.isShowing()) {
-            this.sendPopupWindow.dismiss();
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public void onFragmentDestroy() {
+        EditTextEmoji editTextEmoji = this.commentTextView;
+        if (editTextEmoji != null) {
+            editTextEmoji.onDestroy();
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$5(boolean z, int i) {
-        sendSelectedPhotos(this.selectedPhotos, this.selectedPhotosOrder, z, i);
-        lambda$onBackPressed$355();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$6(int i, View view) {
-        ActionBarPopupWindow actionBarPopupWindow = this.sendPopupWindow;
-        if (actionBarPopupWindow != null && actionBarPopupWindow.isShowing()) {
-            this.sendPopupWindow.dismiss();
-        }
-        if (i == 0) {
-            AlertsCreator.createScheduleDatePickerDialog(getParentActivity(), this.chatActivity.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.PhotoAlbumPickerActivity$$ExternalSyntheticLambda7
-                @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
-                public final void didSelectDate(boolean z, int i2) {
-                    PhotoAlbumPickerActivity.this.lambda$createView$5(z, i2);
-                }
-            });
-        } else {
-            sendSelectedPhotos(this.selectedPhotos, this.selectedPhotosOrder, true, 0);
-            lambda$onBackPressed$355();
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$createView$7(View view) {
-        ActionBarMenuSubItem actionBarMenuSubItem;
-        String string;
-        int i;
-        int i2;
-        ChatActivity chatActivity = this.chatActivity;
-        if (chatActivity != null && this.maxSelectedPhotos != 1) {
-            chatActivity.getCurrentChat();
-            TLRPC.User currentUser = this.chatActivity.getCurrentUser();
-            if (this.sendPopupLayout == null) {
-                ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(getParentActivity());
-                this.sendPopupLayout = actionBarPopupWindowLayout;
-                actionBarPopupWindowLayout.setAnimationEnabled(false);
-                this.sendPopupLayout.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.PhotoAlbumPickerActivity.5
-                    private Rect popupRect = new Rect();
-
-                    @Override // android.view.View.OnTouchListener
-                    public boolean onTouch(View view2, MotionEvent motionEvent) {
-                        if (motionEvent.getActionMasked() != 0 || PhotoAlbumPickerActivity.this.sendPopupWindow == null || !PhotoAlbumPickerActivity.this.sendPopupWindow.isShowing()) {
-                            return false;
-                        }
-                        view2.getHitRect(this.popupRect);
-                        if (this.popupRect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                            return false;
-                        }
-                        PhotoAlbumPickerActivity.this.sendPopupWindow.dismiss();
-                        return false;
-                    }
-                });
-                this.sendPopupLayout.setDispatchKeyEventListener(new ActionBarPopupWindow.OnDispatchKeyEventListener() { // from class: org.telegram.ui.PhotoAlbumPickerActivity$$ExternalSyntheticLambda5
-                    @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow.OnDispatchKeyEventListener
-                    public final void onDispatchKeyEvent(KeyEvent keyEvent) {
-                        PhotoAlbumPickerActivity.this.lambda$createView$4(keyEvent);
-                    }
-                });
-                this.sendPopupLayout.setShownFromBottom(false);
-                this.itemCells = new ActionBarMenuSubItem[2];
-                final int i3 = 0;
-                while (i3 < 2) {
-                    if ((i3 != 0 || this.chatActivity.canScheduleMessage()) && (i3 != 1 || !UserObject.isUserSelf(currentUser))) {
-                        this.itemCells[i3] = new ActionBarMenuSubItem(getParentActivity(), i3 == 0, i3 == 1);
-                        if (i3 == 0) {
-                            if (UserObject.isUserSelf(currentUser)) {
-                                actionBarMenuSubItem = this.itemCells[i3];
-                                i2 = R.string.SetReminder;
-                            } else {
-                                actionBarMenuSubItem = this.itemCells[i3];
-                                i2 = R.string.ScheduleMessage;
-                            }
-                            string = LocaleController.getString(i2);
-                            i = R.drawable.msg_calendar2;
-                        } else {
-                            actionBarMenuSubItem = this.itemCells[i3];
-                            string = LocaleController.getString(R.string.SendWithoutSound);
-                            i = R.drawable.input_notify_off;
-                        }
-                        actionBarMenuSubItem.setTextAndIcon(string, i);
-                        this.itemCells[i3].setMinimumWidth(AndroidUtilities.dp(196.0f));
-                        this.sendPopupLayout.addView((View) this.itemCells[i3], LayoutHelper.createLinear(-1, 48));
-                        this.itemCells[i3].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.PhotoAlbumPickerActivity$$ExternalSyntheticLambda6
-                            @Override // android.view.View.OnClickListener
-                            public final void onClick(View view2) {
-                                PhotoAlbumPickerActivity.this.lambda$createView$6(i3, view2);
-                            }
-                        });
-                    }
-                    i3++;
-                }
-                this.sendPopupLayout.setupRadialSelectors(Theme.getColor(Theme.key_dialogButtonSelector));
-                ActionBarPopupWindow actionBarPopupWindow = new ActionBarPopupWindow(this.sendPopupLayout, -2, -2);
-                this.sendPopupWindow = actionBarPopupWindow;
-                actionBarPopupWindow.setAnimationEnabled(false);
-                this.sendPopupWindow.setAnimationStyle(R.style.PopupContextAnimation2);
-                this.sendPopupWindow.setOutsideTouchable(true);
-                this.sendPopupWindow.setClippingEnabled(true);
-                this.sendPopupWindow.setInputMethodMode(2);
-                this.sendPopupWindow.setSoftInputMode(0);
-                this.sendPopupWindow.getContentView().setFocusableInTouchMode(true);
-            }
-            this.sendPopupLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
-            this.sendPopupWindow.setFocusable(true);
-            int[] iArr = new int[2];
-            view.getLocationInWindow(iArr);
-            this.sendPopupWindow.showAtLocation(view, 51, ((iArr[0] + view.getMeasuredWidth()) - this.sendPopupLayout.getMeasuredWidth()) + AndroidUtilities.dp(8.0f), (iArr[1] - this.sendPopupLayout.getMeasuredHeight()) - AndroidUtilities.dp(2.0f));
-            this.sendPopupWindow.dimBehind();
-            try {
-                view.performHapticFeedback(3, 2);
-            } catch (Exception unused) {
-            }
-        }
-        return false;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public void openPhotoPicker(MediaController.AlbumEntry albumEntry, int i) {
-        if (albumEntry != null) {
-            PhotoPickerActivity photoPickerActivity = new PhotoPickerActivity(i, albumEntry, this.selectedPhotos, this.selectedPhotosOrder, this.selectPhotoType, this.allowCaption, this.chatActivity, false);
-            Editable text = this.commentTextView.getText();
-            this.caption = text;
-            photoPickerActivity.setCaption(text);
-            photoPickerActivity.setDelegate(new PhotoPickerActivity.PhotoPickerActivityDelegate() { // from class: org.telegram.ui.PhotoAlbumPickerActivity.8
-                @Override // org.telegram.ui.PhotoPickerActivity.PhotoPickerActivityDelegate
-                public void actionButtonPressed(boolean z, boolean z2, int i2) {
-                    PhotoAlbumPickerActivity.this.removeSelfFromStack();
-                    if (z) {
-                        return;
-                    }
-                    PhotoAlbumPickerActivity photoAlbumPickerActivity = PhotoAlbumPickerActivity.this;
-                    photoAlbumPickerActivity.sendSelectedPhotos(photoAlbumPickerActivity.selectedPhotos, PhotoAlbumPickerActivity.this.selectedPhotosOrder, z2, i2);
-                }
-
-                @Override // org.telegram.ui.PhotoPickerActivity.PhotoPickerActivityDelegate
-                public /* synthetic */ boolean canFinishFragment() {
-                    return PhotoPickerActivity.PhotoPickerActivityDelegate.-CC.$default$canFinishFragment(this);
-                }
-
-                @Override // org.telegram.ui.PhotoPickerActivity.PhotoPickerActivityDelegate
-                public void onCaptionChanged(CharSequence charSequence) {
-                    PhotoAlbumPickerActivity.this.commentTextView.setText(PhotoAlbumPickerActivity.this.caption = charSequence);
-                }
-
-                @Override // org.telegram.ui.PhotoPickerActivity.PhotoPickerActivityDelegate
-                public /* synthetic */ void onOpenInPressed() {
-                    PhotoPickerActivity.PhotoPickerActivityDelegate.-CC.$default$onOpenInPressed(this);
-                }
-
-                @Override // org.telegram.ui.PhotoPickerActivity.PhotoPickerActivityDelegate
-                public void selectedPhotosChanged() {
-                    PhotoAlbumPickerActivity.this.updatePhotosButton();
-                }
-            });
-            photoPickerActivity.setMaxSelectedPhotos(this.maxSelectedPhotos, this.allowOrder);
-            presentFragment(photoPickerActivity);
-            return;
-        }
-        final HashMap hashMap = new HashMap();
-        final ArrayList arrayList = new ArrayList();
-        if (this.allowGifs) {
-            PhotoPickerSearchActivity photoPickerSearchActivity = new PhotoPickerSearchActivity(hashMap, arrayList, this.selectPhotoType, this.allowCaption, this.chatActivity);
-            Editable text2 = this.commentTextView.getText();
-            this.caption = text2;
-            photoPickerSearchActivity.setCaption(text2);
-            photoPickerSearchActivity.setDelegate(new PhotoPickerActivity.PhotoPickerActivityDelegate() { // from class: org.telegram.ui.PhotoAlbumPickerActivity.9
-                @Override // org.telegram.ui.PhotoPickerActivity.PhotoPickerActivityDelegate
-                public void actionButtonPressed(boolean z, boolean z2, int i2) {
-                    PhotoAlbumPickerActivity.this.removeSelfFromStack();
-                    if (z) {
-                        return;
-                    }
-                    PhotoAlbumPickerActivity.this.sendSelectedPhotos(hashMap, arrayList, z2, i2);
-                }
-
-                @Override // org.telegram.ui.PhotoPickerActivity.PhotoPickerActivityDelegate
-                public /* synthetic */ boolean canFinishFragment() {
-                    return PhotoPickerActivity.PhotoPickerActivityDelegate.-CC.$default$canFinishFragment(this);
-                }
-
-                @Override // org.telegram.ui.PhotoPickerActivity.PhotoPickerActivityDelegate
-                public void onCaptionChanged(CharSequence charSequence) {
-                    PhotoAlbumPickerActivity.this.commentTextView.setText(PhotoAlbumPickerActivity.this.caption = charSequence);
-                }
-
-                @Override // org.telegram.ui.PhotoPickerActivity.PhotoPickerActivityDelegate
-                public /* synthetic */ void onOpenInPressed() {
-                    PhotoPickerActivity.PhotoPickerActivityDelegate.-CC.$default$onOpenInPressed(this);
-                }
-
-                @Override // org.telegram.ui.PhotoPickerActivity.PhotoPickerActivityDelegate
-                public void selectedPhotosChanged() {
-                }
-            });
-            photoPickerSearchActivity.setMaxSelectedPhotos(this.maxSelectedPhotos, this.allowOrder);
-            presentFragment(photoPickerSearchActivity);
-            return;
-        }
-        PhotoPickerActivity photoPickerActivity2 = new PhotoPickerActivity(0, albumEntry, hashMap, arrayList, this.selectPhotoType, this.allowCaption, this.chatActivity, false);
-        Editable text3 = this.commentTextView.getText();
-        this.caption = text3;
-        photoPickerActivity2.setCaption(text3);
-        photoPickerActivity2.setDelegate(new PhotoPickerActivity.PhotoPickerActivityDelegate() { // from class: org.telegram.ui.PhotoAlbumPickerActivity.10
-            @Override // org.telegram.ui.PhotoPickerActivity.PhotoPickerActivityDelegate
-            public void actionButtonPressed(boolean z, boolean z2, int i2) {
-                PhotoAlbumPickerActivity.this.removeSelfFromStack();
-                if (z) {
-                    return;
-                }
-                PhotoAlbumPickerActivity.this.sendSelectedPhotos(hashMap, arrayList, z2, i2);
-            }
-
-            @Override // org.telegram.ui.PhotoPickerActivity.PhotoPickerActivityDelegate
-            public /* synthetic */ boolean canFinishFragment() {
-                return PhotoPickerActivity.PhotoPickerActivityDelegate.-CC.$default$canFinishFragment(this);
-            }
-
-            @Override // org.telegram.ui.PhotoPickerActivity.PhotoPickerActivityDelegate
-            public void onCaptionChanged(CharSequence charSequence) {
-                PhotoAlbumPickerActivity.this.commentTextView.setText(PhotoAlbumPickerActivity.this.caption = charSequence);
-            }
-
-            @Override // org.telegram.ui.PhotoPickerActivity.PhotoPickerActivityDelegate
-            public /* synthetic */ void onOpenInPressed() {
-                PhotoPickerActivity.PhotoPickerActivityDelegate.-CC.$default$onOpenInPressed(this);
-            }
-
-            @Override // org.telegram.ui.PhotoPickerActivity.PhotoPickerActivityDelegate
-            public void selectedPhotosChanged() {
-            }
-        });
-        photoPickerActivity2.setMaxSelectedPhotos(this.maxSelectedPhotos, this.allowOrder);
-        presentFragment(photoPickerActivity2);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public void sendSelectedPhotos(HashMap hashMap, ArrayList arrayList, boolean z, int i) {
-        if (hashMap.isEmpty() || this.delegate == null || this.sendPressed) {
-            return;
-        }
-        this.sendPressed = true;
-        ArrayList arrayList2 = new ArrayList();
-        for (int i2 = 0; i2 < arrayList.size(); i2++) {
-            Object obj = hashMap.get(arrayList.get(i2));
-            SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
-            arrayList2.add(sendingMediaInfo);
-            if (obj instanceof MediaController.PhotoEntry) {
-                MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) obj;
-                String str = photoEntry.imagePath;
-                if (str == null) {
-                    str = photoEntry.path;
-                }
-                sendingMediaInfo.path = str;
-                sendingMediaInfo.thumbPath = photoEntry.thumbPath;
-                sendingMediaInfo.coverPath = photoEntry.coverPath;
-                sendingMediaInfo.videoEditedInfo = photoEntry.editedInfo;
-                sendingMediaInfo.isVideo = photoEntry.isVideo;
-                CharSequence charSequence = photoEntry.caption;
-                sendingMediaInfo.caption = charSequence != null ? charSequence.toString() : null;
-                sendingMediaInfo.entities = photoEntry.entities;
-                sendingMediaInfo.masks = photoEntry.stickers;
-                sendingMediaInfo.ttl = photoEntry.ttl;
-            } else if (obj instanceof MediaController.SearchImage) {
-                MediaController.SearchImage searchImage = (MediaController.SearchImage) obj;
-                String str2 = searchImage.imagePath;
-                if (str2 != null) {
-                    sendingMediaInfo.path = str2;
-                } else {
-                    sendingMediaInfo.searchImage = searchImage;
-                }
-                sendingMediaInfo.thumbPath = searchImage.thumbPath;
-                sendingMediaInfo.coverPath = searchImage.coverPath;
-                sendingMediaInfo.videoEditedInfo = searchImage.editedInfo;
-                CharSequence charSequence2 = searchImage.caption;
-                sendingMediaInfo.caption = charSequence2 != null ? charSequence2.toString() : null;
-                sendingMediaInfo.entities = searchImage.entities;
-                sendingMediaInfo.masks = searchImage.stickers;
-                sendingMediaInfo.ttl = searchImage.ttl;
-                TLRPC.BotInlineResult botInlineResult = searchImage.inlineResult;
-                if (botInlineResult != null && searchImage.type == 1) {
-                    sendingMediaInfo.inlineResult = botInlineResult;
-                    sendingMediaInfo.params = searchImage.params;
-                }
-                searchImage.date = (int) (System.currentTimeMillis() / 1000);
-            }
-        }
-        this.delegate.didSelectPhotos(arrayList2, z, i);
-    }
-
-    private boolean showCommentTextView(boolean z) {
-        if (z == (this.frameLayout2.getTag() != null)) {
-            return false;
-        }
-        this.frameLayout2.setTag(z ? 1 : null);
-        if (this.commentTextView.getEditText().isFocused()) {
-            AndroidUtilities.hideKeyboard(this.commentTextView.getEditText());
-        }
-        this.commentTextView.hidePopup(true);
-        FrameLayout frameLayout = this.frameLayout2;
-        int i = z ? 0 : 4;
-        frameLayout.setVisibility(i);
-        this.writeButtonContainer.setVisibility(i);
-        this.writeButtonContainer.setScaleX(z ? 1.0f : 0.2f);
-        this.writeButtonContainer.setScaleY(z ? 1.0f : 0.2f);
-        this.writeButtonContainer.setAlpha(z ? 1.0f : 0.0f);
-        this.selectedCountView.setScaleX(z ? 1.0f : 0.2f);
-        this.selectedCountView.setScaleY(z ? 1.0f : 0.2f);
-        this.selectedCountView.setAlpha(z ? 1.0f : 0.0f);
-        this.frameLayout2.setTranslationY(z ? 0.0f : AndroidUtilities.dp(48.0f));
-        this.shadow.setTranslationY(z ? 0.0f : AndroidUtilities.dp(48.0f));
-        return true;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public void updatePhotosButton() {
-        boolean z;
-        if (this.selectedPhotos.size() == 0) {
-            this.selectedCountView.setPivotX(0.0f);
-            this.selectedCountView.setPivotY(0.0f);
-            z = false;
-        } else {
-            this.selectedCountView.invalidate();
-            z = true;
-        }
-        showCommentTextView(z);
+        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.albumsDidLoad);
+        NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.closeChats);
+        super.onFragmentDestroy();
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public View createView(Context context) {
-        RecyclerListView recyclerListView;
-        TextView textView;
         ArrayList arrayList;
         ActionBar actionBar = this.actionBar;
         int i = Theme.key_dialogBackground;
@@ -613,9 +190,47 @@ public class PhotoAlbumPickerActivity extends BaseFragment implements Notificati
             private boolean ignoreLayout;
             private int lastNotifyWidth;
 
+            @Override // android.widget.FrameLayout, android.view.View
+            protected void onMeasure(int i3, int i4) {
+                int size = View.MeasureSpec.getSize(i3);
+                int size2 = View.MeasureSpec.getSize(i4);
+                setMeasuredDimension(size, size2);
+                if (AndroidUtilities.dp(20.0f) >= 0) {
+                    if (!AndroidUtilities.isInMultiwindow) {
+                        size2 -= PhotoAlbumPickerActivity.this.commentTextView.getEmojiPadding();
+                        i4 = View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30);
+                    }
+                } else {
+                    this.ignoreLayout = true;
+                    PhotoAlbumPickerActivity.this.commentTextView.hideEmojiView();
+                    this.ignoreLayout = false;
+                }
+                int childCount = getChildCount();
+                for (int i5 = 0; i5 < childCount; i5++) {
+                    View childAt = getChildAt(i5);
+                    if (childAt != null && childAt.getVisibility() != 8) {
+                        if (PhotoAlbumPickerActivity.this.commentTextView != null && PhotoAlbumPickerActivity.this.commentTextView.isPopupView(childAt)) {
+                            if (AndroidUtilities.isInMultiwindow || AndroidUtilities.isTablet()) {
+                                if (AndroidUtilities.isTablet()) {
+                                    childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(AndroidUtilities.isTablet() ? 200.0f : 320.0f), (size2 - AndroidUtilities.statusBarHeight) + getPaddingTop()), TLObject.FLAG_30));
+                                } else {
+                                    childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((size2 - AndroidUtilities.statusBarHeight) + getPaddingTop(), TLObject.FLAG_30));
+                                }
+                            } else {
+                                childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(childAt.getLayoutParams().height, TLObject.FLAG_30));
+                            }
+                        } else {
+                            measureChildWithMargins(childAt, i3, 0, i4, 0);
+                        }
+                    }
+                }
+            }
+
             /* JADX WARN: Removed duplicated region for block: B:29:0x009a  */
-            /* JADX WARN: Removed duplicated region for block: B:36:0x00c8  */
-            /* JADX WARN: Removed duplicated region for block: B:45:0x00b6  */
+            /* JADX WARN: Removed duplicated region for block: B:36:0x00ca  */
+            /* JADX WARN: Removed duplicated region for block: B:40:0x00dc  */
+            /* JADX WARN: Removed duplicated region for block: B:42:0x00e6  */
+            /* JADX WARN: Removed duplicated region for block: B:49:0x00b6  */
             @Override // org.telegram.ui.Components.SizeNotifierFrameLayout, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
@@ -626,9 +241,12 @@ public class PhotoAlbumPickerActivity extends BaseFragment implements Notificati
                 int i9;
                 int i10;
                 int i11;
-                int i12 = i5 - i3;
-                if (this.lastNotifyWidth != i12) {
-                    this.lastNotifyWidth = i12;
+                int i12;
+                int measuredHeight;
+                int measuredHeight2;
+                int i13 = i5 - i3;
+                if (this.lastNotifyWidth != i13) {
+                    this.lastNotifyWidth = i13;
                     if (PhotoAlbumPickerActivity.this.sendPopupWindow != null && PhotoAlbumPickerActivity.this.sendPopupWindow.isShowing()) {
                         PhotoAlbumPickerActivity.this.sendPopupWindow.dismiss();
                     }
@@ -636,97 +254,68 @@ public class PhotoAlbumPickerActivity extends BaseFragment implements Notificati
                 int childCount = getChildCount();
                 int emojiPadding = (AndroidUtilities.dp(20.0f) < 0 || AndroidUtilities.isInMultiwindow || AndroidUtilities.isTablet()) ? 0 : PhotoAlbumPickerActivity.this.commentTextView.getEmojiPadding();
                 setBottomClip(emojiPadding);
-                for (int i13 = 0; i13 < childCount; i13++) {
-                    View childAt = getChildAt(i13);
+                for (int i14 = 0; i14 < childCount; i14++) {
+                    View childAt = getChildAt(i14);
                     if (childAt.getVisibility() != 8) {
                         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
                         int measuredWidth = childAt.getMeasuredWidth();
-                        int measuredHeight = childAt.getMeasuredHeight();
-                        int i14 = layoutParams.gravity;
-                        if (i14 == -1) {
-                            i14 = 51;
+                        int measuredHeight3 = childAt.getMeasuredHeight();
+                        int i15 = layoutParams.gravity;
+                        if (i15 == -1) {
+                            i15 = 51;
                         }
-                        int i15 = i14 & 112;
-                        int i16 = i14 & 7;
-                        if (i16 == 1) {
-                            i7 = ((i12 - measuredWidth) / 2) + layoutParams.leftMargin;
+                        int i16 = i15 & 112;
+                        int i17 = i15 & 7;
+                        if (i17 == 1) {
+                            i7 = ((i13 - measuredWidth) / 2) + layoutParams.leftMargin;
                             i8 = layoutParams.rightMargin;
-                        } else if (i16 != 5) {
+                        } else if (i17 == 5) {
+                            i7 = (i13 - measuredWidth) - layoutParams.rightMargin;
+                            i8 = getPaddingRight();
+                        } else {
                             i9 = layoutParams.leftMargin + getPaddingLeft();
-                            if (i15 == 16) {
-                                if (i15 == 48) {
-                                    i11 = layoutParams.topMargin + getPaddingTop();
-                                } else if (i15 != 80) {
-                                    i11 = layoutParams.topMargin;
+                            if (i16 == 16) {
+                                if (i16 == 48) {
+                                    i12 = layoutParams.topMargin + getPaddingTop();
+                                } else if (i16 == 80) {
+                                    i10 = ((i6 - emojiPadding) - i4) - measuredHeight3;
+                                    i11 = layoutParams.bottomMargin;
                                 } else {
-                                    i10 = ((i6 - emojiPadding) - i4) - measuredHeight;
+                                    i12 = layoutParams.topMargin;
                                 }
                                 if (PhotoAlbumPickerActivity.this.commentTextView != null && PhotoAlbumPickerActivity.this.commentTextView.isPopupView(childAt)) {
-                                    AndroidUtilities.isTablet();
-                                    i11 = getMeasuredHeight() - childAt.getMeasuredHeight();
+                                    if (!AndroidUtilities.isTablet()) {
+                                        measuredHeight = getMeasuredHeight();
+                                        measuredHeight2 = childAt.getMeasuredHeight();
+                                    } else {
+                                        measuredHeight = getMeasuredHeight();
+                                        measuredHeight2 = childAt.getMeasuredHeight();
+                                    }
+                                    i12 = measuredHeight - measuredHeight2;
                                 }
-                                childAt.layout(i9, i11, measuredWidth + i9, measuredHeight + i11);
+                                childAt.layout(i9, i12, measuredWidth + i9, measuredHeight3 + i12);
                             } else {
-                                i10 = ((((i6 - emojiPadding) - i4) - measuredHeight) / 2) + layoutParams.topMargin;
+                                i10 = ((((i6 - emojiPadding) - i4) - measuredHeight3) / 2) + layoutParams.topMargin;
+                                i11 = layoutParams.bottomMargin;
                             }
-                            i11 = i10 - layoutParams.bottomMargin;
+                            i12 = i10 - i11;
                             if (PhotoAlbumPickerActivity.this.commentTextView != null) {
-                                AndroidUtilities.isTablet();
-                                i11 = getMeasuredHeight() - childAt.getMeasuredHeight();
+                                if (!AndroidUtilities.isTablet()) {
+                                }
+                                i12 = measuredHeight - measuredHeight2;
                             }
-                            childAt.layout(i9, i11, measuredWidth + i9, measuredHeight + i11);
-                        } else {
-                            i7 = (i12 - measuredWidth) - layoutParams.rightMargin;
-                            i8 = getPaddingRight();
+                            childAt.layout(i9, i12, measuredWidth + i9, measuredHeight3 + i12);
                         }
                         i9 = i7 - i8;
-                        if (i15 == 16) {
+                        if (i16 == 16) {
                         }
-                        i11 = i10 - layoutParams.bottomMargin;
+                        i12 = i10 - i11;
                         if (PhotoAlbumPickerActivity.this.commentTextView != null) {
                         }
-                        childAt.layout(i9, i11, measuredWidth + i9, measuredHeight + i11);
+                        childAt.layout(i9, i12, measuredWidth + i9, measuredHeight3 + i12);
                     }
                 }
                 notifyHeightChanged();
-            }
-
-            @Override // android.widget.FrameLayout, android.view.View
-            protected void onMeasure(int i3, int i4) {
-                int makeMeasureSpec;
-                int paddingTop;
-                int size = View.MeasureSpec.getSize(i3);
-                int size2 = View.MeasureSpec.getSize(i4);
-                setMeasuredDimension(size, size2);
-                if (AndroidUtilities.dp(20.0f) < 0) {
-                    this.ignoreLayout = true;
-                    PhotoAlbumPickerActivity.this.commentTextView.hideEmojiView();
-                    this.ignoreLayout = false;
-                } else if (!AndroidUtilities.isInMultiwindow) {
-                    size2 -= PhotoAlbumPickerActivity.this.commentTextView.getEmojiPadding();
-                    i4 = View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30);
-                }
-                int childCount = getChildCount();
-                for (int i5 = 0; i5 < childCount; i5++) {
-                    View childAt = getChildAt(i5);
-                    if (childAt != null && childAt.getVisibility() != 8) {
-                        if (PhotoAlbumPickerActivity.this.commentTextView == null || !PhotoAlbumPickerActivity.this.commentTextView.isPopupView(childAt)) {
-                            measureChildWithMargins(childAt, i3, 0, i4, 0);
-                        } else {
-                            if (!AndroidUtilities.isInMultiwindow && !AndroidUtilities.isTablet()) {
-                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
-                                paddingTop = childAt.getLayoutParams().height;
-                            } else if (AndroidUtilities.isTablet()) {
-                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
-                                paddingTop = Math.min(AndroidUtilities.dp(AndroidUtilities.isTablet() ? 200.0f : 320.0f), (size2 - AndroidUtilities.statusBarHeight) + getPaddingTop());
-                            } else {
-                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
-                                paddingTop = (size2 - AndroidUtilities.statusBarHeight) + getPaddingTop();
-                            }
-                            childAt.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(paddingTop, TLObject.FLAG_30));
-                        }
-                    }
-                }
             }
 
             @Override // android.view.View, android.view.ViewParent
@@ -741,23 +330,23 @@ public class PhotoAlbumPickerActivity extends BaseFragment implements Notificati
         sizeNotifierFrameLayout.setBackgroundColor(Theme.getColor(i));
         this.fragmentView = this.sizeNotifierFrameLayout;
         this.actionBar.setTitle(LocaleController.getString(R.string.Gallery));
-        RecyclerListView recyclerListView2 = new RecyclerListView(context);
-        this.listView = recyclerListView2;
-        recyclerListView2.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(54.0f));
+        RecyclerListView recyclerListView = new RecyclerListView(context);
+        this.listView = recyclerListView;
+        recyclerListView.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(54.0f));
         this.listView.setClipToPadding(false);
         this.listView.setHorizontalScrollBarEnabled(false);
         this.listView.setVerticalScrollBarEnabled(false);
         this.listView.setLayoutManager(new LinearLayoutManager(context, 1, false));
         this.listView.setDrawingCacheEnabled(false);
         this.sizeNotifierFrameLayout.addView(this.listView, LayoutHelper.createFrame(-1, -1, 51));
-        RecyclerListView recyclerListView3 = this.listView;
+        RecyclerListView recyclerListView2 = this.listView;
         ListAdapter listAdapter = new ListAdapter(context);
         this.listAdapter = listAdapter;
-        recyclerListView3.setAdapter(listAdapter);
+        recyclerListView2.setAdapter(listAdapter);
         this.listView.setGlowColor(Theme.getColor(i));
-        TextView textView2 = new TextView(context);
-        this.emptyView = textView2;
-        textView2.setTextColor(-8355712);
+        TextView textView = new TextView(context);
+        this.emptyView = textView;
+        textView.setTextColor(-8355712);
         this.emptyView.setTextSize(1, 20.0f);
         this.emptyView.setGravity(17);
         this.emptyView.setVisibility(8);
@@ -831,35 +420,20 @@ public class PhotoAlbumPickerActivity extends BaseFragment implements Notificati
         this.writeButtonContainer.setAlpha(0.0f);
         this.sizeNotifierFrameLayout.addView(this.writeButtonContainer, LayoutHelper.createFrame(60, 60.0f, 85, 0.0f, 0.0f, 12.0f, 10.0f));
         this.writeButton = new ImageView(context);
-        int dp = AndroidUtilities.dp(56.0f);
-        int i3 = Theme.key_dialogFloatingButton;
-        int color = Theme.getColor(i3);
-        int i4 = Build.VERSION.SDK_INT;
-        if (i4 >= 21) {
-            i3 = Theme.key_dialogFloatingButtonPressed;
-        }
-        this.writeButtonDrawable = Theme.createSimpleSelectorCircleDrawable(dp, color, Theme.getColor(i3));
-        if (i4 < 21) {
-            Drawable mutate = context.getResources().getDrawable(R.drawable.floating_shadow_profile).mutate();
-            mutate.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
-            CombinedDrawable combinedDrawable = new CombinedDrawable(mutate, this.writeButtonDrawable, 0, 0);
-            combinedDrawable.setIconSize(AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f));
-            this.writeButtonDrawable = combinedDrawable;
-        }
-        this.writeButton.setBackgroundDrawable(this.writeButtonDrawable);
+        Drawable createSimpleSelectorCircleDrawable = Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.dp(56.0f), Theme.getColor(Theme.key_dialogFloatingButton), Theme.getColor(Theme.key_dialogFloatingButtonPressed));
+        this.writeButtonDrawable = createSimpleSelectorCircleDrawable;
+        this.writeButton.setBackgroundDrawable(createSimpleSelectorCircleDrawable);
         this.writeButton.setImageResource(R.drawable.attach_send);
         this.writeButton.setImportantForAccessibility(2);
         this.writeButton.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_dialogFloatingIcon), PorterDuff.Mode.MULTIPLY));
         this.writeButton.setScaleType(ImageView.ScaleType.CENTER);
-        if (i4 >= 21) {
-            this.writeButton.setOutlineProvider(new ViewOutlineProvider() { // from class: org.telegram.ui.PhotoAlbumPickerActivity.4
-                @Override // android.view.ViewOutlineProvider
-                public void getOutline(View view2, Outline outline) {
-                    outline.setOval(0, 0, AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f));
-                }
-            });
-        }
-        this.writeButtonContainer.addView(this.writeButton, LayoutHelper.createFrame(i4 >= 21 ? 56 : 60, i4 >= 21 ? 56.0f : 60.0f, 51, i4 >= 21 ? 2.0f : 0.0f, 0.0f, 0.0f, 0.0f));
+        this.writeButton.setOutlineProvider(new ViewOutlineProvider() { // from class: org.telegram.ui.PhotoAlbumPickerActivity.4
+            @Override // android.view.ViewOutlineProvider
+            public void getOutline(View view2, Outline outline) {
+                outline.setOval(0, 0, AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f));
+            }
+        });
+        this.writeButtonContainer.addView(this.writeButton, LayoutHelper.createFrame(56, 56.0f, 51, 2.0f, 0.0f, 0.0f, 0.0f));
         this.writeButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.PhotoAlbumPickerActivity$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
@@ -885,8 +459,8 @@ public class PhotoAlbumPickerActivity extends BaseFragment implements Notificati
                 getMeasuredHeight();
                 PhotoAlbumPickerActivity.this.textPaint.setColor(Theme.getColor(Theme.key_dialogRoundCheckBoxCheck));
                 PhotoAlbumPickerActivity.this.paint.setColor(Theme.getColor(Theme.key_dialogBackground));
-                int i5 = max / 2;
-                PhotoAlbumPickerActivity.this.rect.set(measuredWidth - i5, 0.0f, i5 + measuredWidth, getMeasuredHeight());
+                int i3 = max / 2;
+                PhotoAlbumPickerActivity.this.rect.set(measuredWidth - i3, 0.0f, i3 + measuredWidth, getMeasuredHeight());
                 canvas.drawRoundRect(PhotoAlbumPickerActivity.this.rect, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), PhotoAlbumPickerActivity.this.paint);
                 PhotoAlbumPickerActivity.this.paint.setColor(Theme.getColor(Theme.key_dialogRoundCheckBox));
                 PhotoAlbumPickerActivity.this.rect.set(r5 + AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), r2 - AndroidUtilities.dp(2.0f), getMeasuredHeight() - AndroidUtilities.dp(2.0f));
@@ -904,42 +478,531 @@ public class PhotoAlbumPickerActivity extends BaseFragment implements Notificati
         }
         if (this.loading && ((arrayList = this.albumsSorted) == null || arrayList.isEmpty())) {
             this.progressView.setVisibility(0);
-            recyclerListView = this.listView;
-            textView = null;
+            this.listView.setEmptyView(null);
         } else {
             this.progressView.setVisibility(8);
-            recyclerListView = this.listView;
-            textView = this.emptyView;
+            this.listView.setEmptyView(this.emptyView);
         }
-        recyclerListView.setEmptyView(textView);
         return this.fragmentView;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$createView$3(View view) {
+        ChatActivity chatActivity = this.chatActivity;
+        if (chatActivity != null && chatActivity.isInScheduleMode()) {
+            AlertsCreator.createScheduleDatePickerDialog(getParentActivity(), this.chatActivity.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.PhotoAlbumPickerActivity$$ExternalSyntheticLambda4
+                @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
+                public final void didSelectDate(boolean z, int i) {
+                    PhotoAlbumPickerActivity.this.lambda$createView$2(z, i);
+                }
+            });
+        } else {
+            sendSelectedPhotos(this.selectedPhotos, this.selectedPhotosOrder, true, 0);
+            lambda$onBackPressed$355();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$createView$2(boolean z, int i) {
+        sendSelectedPhotos(this.selectedPhotos, this.selectedPhotosOrder, z, i);
+        lambda$onBackPressed$355();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ boolean lambda$createView$7(View view) {
+        ChatActivity chatActivity = this.chatActivity;
+        if (chatActivity != null && this.maxSelectedPhotos != 1) {
+            chatActivity.getCurrentChat();
+            TLRPC.User currentUser = this.chatActivity.getCurrentUser();
+            if (this.sendPopupLayout == null) {
+                ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(getParentActivity());
+                this.sendPopupLayout = actionBarPopupWindowLayout;
+                actionBarPopupWindowLayout.setAnimationEnabled(false);
+                this.sendPopupLayout.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.PhotoAlbumPickerActivity.5
+                    private Rect popupRect = new Rect();
+
+                    @Override // android.view.View.OnTouchListener
+                    public boolean onTouch(View view2, MotionEvent motionEvent) {
+                        if (motionEvent.getActionMasked() != 0 || PhotoAlbumPickerActivity.this.sendPopupWindow == null || !PhotoAlbumPickerActivity.this.sendPopupWindow.isShowing()) {
+                            return false;
+                        }
+                        view2.getHitRect(this.popupRect);
+                        if (this.popupRect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                            return false;
+                        }
+                        PhotoAlbumPickerActivity.this.sendPopupWindow.dismiss();
+                        return false;
+                    }
+                });
+                this.sendPopupLayout.setDispatchKeyEventListener(new ActionBarPopupWindow.OnDispatchKeyEventListener() { // from class: org.telegram.ui.PhotoAlbumPickerActivity$$ExternalSyntheticLambda5
+                    @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow.OnDispatchKeyEventListener
+                    public final void onDispatchKeyEvent(KeyEvent keyEvent) {
+                        PhotoAlbumPickerActivity.this.lambda$createView$4(keyEvent);
+                    }
+                });
+                this.sendPopupLayout.setShownFromBottom(false);
+                this.itemCells = new ActionBarMenuSubItem[2];
+                final int i = 0;
+                while (i < 2) {
+                    if ((i != 0 || this.chatActivity.canScheduleMessage()) && (i != 1 || !UserObject.isUserSelf(currentUser))) {
+                        this.itemCells[i] = new ActionBarMenuSubItem(getParentActivity(), i == 0, i == 1);
+                        if (i == 0) {
+                            if (UserObject.isUserSelf(currentUser)) {
+                                this.itemCells[i].setTextAndIcon(LocaleController.getString(R.string.SetReminder), R.drawable.msg_calendar2);
+                            } else {
+                                this.itemCells[i].setTextAndIcon(LocaleController.getString(R.string.ScheduleMessage), R.drawable.msg_calendar2);
+                            }
+                        } else {
+                            this.itemCells[i].setTextAndIcon(LocaleController.getString(R.string.SendWithoutSound), R.drawable.input_notify_off);
+                        }
+                        this.itemCells[i].setMinimumWidth(AndroidUtilities.dp(196.0f));
+                        this.sendPopupLayout.addView((View) this.itemCells[i], LayoutHelper.createLinear(-1, 48));
+                        this.itemCells[i].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.PhotoAlbumPickerActivity$$ExternalSyntheticLambda6
+                            @Override // android.view.View.OnClickListener
+                            public final void onClick(View view2) {
+                                PhotoAlbumPickerActivity.this.lambda$createView$6(i, view2);
+                            }
+                        });
+                    }
+                    i++;
+                }
+                this.sendPopupLayout.setupRadialSelectors(Theme.getColor(Theme.key_dialogButtonSelector));
+                ActionBarPopupWindow actionBarPopupWindow = new ActionBarPopupWindow(this.sendPopupLayout, -2, -2);
+                this.sendPopupWindow = actionBarPopupWindow;
+                actionBarPopupWindow.setAnimationEnabled(false);
+                this.sendPopupWindow.setAnimationStyle(R.style.PopupContextAnimation2);
+                this.sendPopupWindow.setOutsideTouchable(true);
+                this.sendPopupWindow.setClippingEnabled(true);
+                this.sendPopupWindow.setInputMethodMode(2);
+                this.sendPopupWindow.setSoftInputMode(0);
+                this.sendPopupWindow.getContentView().setFocusableInTouchMode(true);
+            }
+            this.sendPopupLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
+            this.sendPopupWindow.setFocusable(true);
+            int[] iArr = new int[2];
+            view.getLocationInWindow(iArr);
+            this.sendPopupWindow.showAtLocation(view, 51, ((iArr[0] + view.getMeasuredWidth()) - this.sendPopupLayout.getMeasuredWidth()) + AndroidUtilities.dp(8.0f), (iArr[1] - this.sendPopupLayout.getMeasuredHeight()) - AndroidUtilities.dp(2.0f));
+            this.sendPopupWindow.dimBehind();
+            try {
+                view.performHapticFeedback(3, 2);
+            } catch (Exception unused) {
+            }
+        }
+        return false;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$createView$4(KeyEvent keyEvent) {
+        ActionBarPopupWindow actionBarPopupWindow;
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (actionBarPopupWindow = this.sendPopupWindow) != null && actionBarPopupWindow.isShowing()) {
+            this.sendPopupWindow.dismiss();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$createView$6(int i, View view) {
+        ActionBarPopupWindow actionBarPopupWindow = this.sendPopupWindow;
+        if (actionBarPopupWindow != null && actionBarPopupWindow.isShowing()) {
+            this.sendPopupWindow.dismiss();
+        }
+        if (i == 0) {
+            AlertsCreator.createScheduleDatePickerDialog(getParentActivity(), this.chatActivity.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.PhotoAlbumPickerActivity$$ExternalSyntheticLambda7
+                @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
+                public final void didSelectDate(boolean z, int i2) {
+                    PhotoAlbumPickerActivity.this.lambda$createView$5(z, i2);
+                }
+            });
+        } else {
+            sendSelectedPhotos(this.selectedPhotos, this.selectedPhotosOrder, true, 0);
+            lambda$onBackPressed$355();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$createView$5(boolean z, int i) {
+        sendSelectedPhotos(this.selectedPhotos, this.selectedPhotosOrder, z, i);
+        lambda$onBackPressed$355();
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public void onResume() {
+        super.onResume();
+        ListAdapter listAdapter = this.listAdapter;
+        if (listAdapter != null) {
+            listAdapter.notifyDataSetChanged();
+        }
+        EditTextEmoji editTextEmoji = this.commentTextView;
+        if (editTextEmoji != null) {
+            editTextEmoji.onResume();
+        }
+        fixLayout();
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public void onPause() {
+        super.onPause();
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public void onConfigurationChanged(Configuration configuration) {
+        super.onConfigurationChanged(configuration);
+        fixLayout();
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i != NotificationCenter.albumsDidLoad) {
-            if (i == NotificationCenter.closeChats) {
-                removeSelfFromStack(true);
+        if (i == NotificationCenter.albumsDidLoad) {
+            if (this.classGuid == ((Integer) objArr[0]).intValue()) {
+                int i3 = this.selectPhotoType;
+                if (i3 == SELECT_TYPE_AVATAR || i3 == SELECT_TYPE_WALLPAPER || i3 == SELECT_TYPE_QR || !this.allowSearchImages) {
+                    this.albumsSorted = (ArrayList) objArr[2];
+                } else {
+                    this.albumsSorted = (ArrayList) objArr[1];
+                }
+                FrameLayout frameLayout = this.progressView;
+                if (frameLayout != null) {
+                    frameLayout.setVisibility(8);
+                }
+                RecyclerListView recyclerListView = this.listView;
+                if (recyclerListView != null && recyclerListView.getEmptyView() == null) {
+                    this.listView.setEmptyView(this.emptyView);
+                }
+                ListAdapter listAdapter = this.listAdapter;
+                if (listAdapter != null) {
+                    listAdapter.notifyDataSetChanged();
+                }
+                this.loading = false;
                 return;
             }
             return;
         }
-        if (this.classGuid == ((Integer) objArr[0]).intValue()) {
-            int i3 = this.selectPhotoType;
-            this.albumsSorted = (ArrayList) ((i3 == SELECT_TYPE_AVATAR || i3 == SELECT_TYPE_WALLPAPER || i3 == SELECT_TYPE_QR || !this.allowSearchImages) ? objArr[2] : objArr[1]);
-            FrameLayout frameLayout = this.progressView;
-            if (frameLayout != null) {
-                frameLayout.setVisibility(8);
+        if (i == NotificationCenter.closeChats) {
+            removeSelfFromStack(true);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean onBackPressed() {
+        EditTextEmoji editTextEmoji = this.commentTextView;
+        if (editTextEmoji != null && editTextEmoji.isPopupShowing()) {
+            this.commentTextView.hidePopup(true);
+            return false;
+        }
+        return super.onBackPressed();
+    }
+
+    public void setMaxSelectedPhotos(int i, boolean z) {
+        this.maxSelectedPhotos = i;
+        this.allowOrder = z;
+    }
+
+    public void setAllowSearchImages(boolean z) {
+        this.allowSearchImages = z;
+    }
+
+    public void setDelegate(PhotoAlbumPickerActivityDelegate photoAlbumPickerActivityDelegate) {
+        this.delegate = photoAlbumPickerActivityDelegate;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void sendSelectedPhotos(HashMap hashMap, ArrayList arrayList, boolean z, int i) {
+        if (hashMap.isEmpty() || this.delegate == null || this.sendPressed) {
+            return;
+        }
+        this.sendPressed = true;
+        ArrayList arrayList2 = new ArrayList();
+        for (int i2 = 0; i2 < arrayList.size(); i2++) {
+            Object obj = hashMap.get(arrayList.get(i2));
+            SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
+            arrayList2.add(sendingMediaInfo);
+            if (obj instanceof MediaController.PhotoEntry) {
+                MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) obj;
+                String str = photoEntry.imagePath;
+                if (str != null) {
+                    sendingMediaInfo.path = str;
+                } else {
+                    sendingMediaInfo.path = photoEntry.path;
+                }
+                sendingMediaInfo.thumbPath = photoEntry.thumbPath;
+                sendingMediaInfo.coverPath = photoEntry.coverPath;
+                sendingMediaInfo.videoEditedInfo = photoEntry.editedInfo;
+                sendingMediaInfo.isVideo = photoEntry.isVideo;
+                CharSequence charSequence = photoEntry.caption;
+                sendingMediaInfo.caption = charSequence != null ? charSequence.toString() : null;
+                sendingMediaInfo.entities = photoEntry.entities;
+                sendingMediaInfo.masks = photoEntry.stickers;
+                sendingMediaInfo.ttl = photoEntry.ttl;
+            } else if (obj instanceof MediaController.SearchImage) {
+                MediaController.SearchImage searchImage = (MediaController.SearchImage) obj;
+                String str2 = searchImage.imagePath;
+                if (str2 != null) {
+                    sendingMediaInfo.path = str2;
+                } else {
+                    sendingMediaInfo.searchImage = searchImage;
+                }
+                sendingMediaInfo.thumbPath = searchImage.thumbPath;
+                sendingMediaInfo.coverPath = searchImage.coverPath;
+                sendingMediaInfo.videoEditedInfo = searchImage.editedInfo;
+                CharSequence charSequence2 = searchImage.caption;
+                sendingMediaInfo.caption = charSequence2 != null ? charSequence2.toString() : null;
+                sendingMediaInfo.entities = searchImage.entities;
+                sendingMediaInfo.masks = searchImage.stickers;
+                sendingMediaInfo.ttl = searchImage.ttl;
+                TLRPC.BotInlineResult botInlineResult = searchImage.inlineResult;
+                if (botInlineResult != null && searchImage.type == 1) {
+                    sendingMediaInfo.inlineResult = botInlineResult;
+                    sendingMediaInfo.params = searchImage.params;
+                }
+                searchImage.date = (int) (System.currentTimeMillis() / 1000);
             }
-            RecyclerListView recyclerListView = this.listView;
-            if (recyclerListView != null && recyclerListView.getEmptyView() == null) {
-                this.listView.setEmptyView(this.emptyView);
+        }
+        this.delegate.didSelectPhotos(arrayList2, z, i);
+    }
+
+    private void fixLayout() {
+        RecyclerListView recyclerListView = this.listView;
+        if (recyclerListView != null) {
+            recyclerListView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() { // from class: org.telegram.ui.PhotoAlbumPickerActivity.7
+                @Override // android.view.ViewTreeObserver.OnPreDrawListener
+                public boolean onPreDraw() {
+                    PhotoAlbumPickerActivity.this.fixLayoutInternal();
+                    if (PhotoAlbumPickerActivity.this.listView == null) {
+                        return true;
+                    }
+                    PhotoAlbumPickerActivity.this.listView.getViewTreeObserver().removeOnPreDrawListener(this);
+                    return true;
+                }
+            });
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void fixLayoutInternal() {
+        if (getParentActivity() == null) {
+            return;
+        }
+        int rotation = ((WindowManager) ApplicationLoader.applicationContext.getSystemService("window")).getDefaultDisplay().getRotation();
+        this.columnsCount = 2;
+        if (!AndroidUtilities.isTablet() && (rotation == 3 || rotation == 1)) {
+            this.columnsCount = 4;
+        }
+        this.listAdapter.notifyDataSetChanged();
+    }
+
+    private boolean showCommentTextView(boolean z) {
+        if (z == (this.frameLayout2.getTag() != null)) {
+            return false;
+        }
+        this.frameLayout2.setTag(z ? 1 : null);
+        if (this.commentTextView.getEditText().isFocused()) {
+            AndroidUtilities.hideKeyboard(this.commentTextView.getEditText());
+        }
+        this.commentTextView.hidePopup(true);
+        if (z) {
+            this.frameLayout2.setVisibility(0);
+            this.writeButtonContainer.setVisibility(0);
+        } else {
+            this.frameLayout2.setVisibility(4);
+            this.writeButtonContainer.setVisibility(4);
+        }
+        this.writeButtonContainer.setScaleX(z ? 1.0f : 0.2f);
+        this.writeButtonContainer.setScaleY(z ? 1.0f : 0.2f);
+        this.writeButtonContainer.setAlpha(z ? 1.0f : 0.0f);
+        this.selectedCountView.setScaleX(z ? 1.0f : 0.2f);
+        this.selectedCountView.setScaleY(z ? 1.0f : 0.2f);
+        this.selectedCountView.setAlpha(z ? 1.0f : 0.0f);
+        this.frameLayout2.setTranslationY(z ? 0.0f : AndroidUtilities.dp(48.0f));
+        this.shadow.setTranslationY(z ? 0.0f : AndroidUtilities.dp(48.0f));
+        return true;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void updatePhotosButton() {
+        if (this.selectedPhotos.size() == 0) {
+            this.selectedCountView.setPivotX(0.0f);
+            this.selectedCountView.setPivotY(0.0f);
+            showCommentTextView(false);
+        } else {
+            this.selectedCountView.invalidate();
+            showCommentTextView(true);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void openPhotoPicker(MediaController.AlbumEntry albumEntry, int i) {
+        if (albumEntry != null) {
+            PhotoPickerActivity photoPickerActivity = new PhotoPickerActivity(i, albumEntry, this.selectedPhotos, this.selectedPhotosOrder, this.selectPhotoType, this.allowCaption, this.chatActivity, false);
+            Editable text = this.commentTextView.getText();
+            this.caption = text;
+            photoPickerActivity.setCaption(text);
+            photoPickerActivity.setDelegate(new PhotoPickerActivity.PhotoPickerActivityDelegate() { // from class: org.telegram.ui.PhotoAlbumPickerActivity.8
+                @Override // org.telegram.ui.PhotoPickerActivity.PhotoPickerActivityDelegate
+                public /* synthetic */ boolean canFinishFragment() {
+                    return PhotoPickerActivity.PhotoPickerActivityDelegate.-CC.$default$canFinishFragment(this);
+                }
+
+                @Override // org.telegram.ui.PhotoPickerActivity.PhotoPickerActivityDelegate
+                public /* synthetic */ void onOpenInPressed() {
+                    PhotoPickerActivity.PhotoPickerActivityDelegate.-CC.$default$onOpenInPressed(this);
+                }
+
+                @Override // org.telegram.ui.PhotoPickerActivity.PhotoPickerActivityDelegate
+                public void selectedPhotosChanged() {
+                    PhotoAlbumPickerActivity.this.updatePhotosButton();
+                }
+
+                @Override // org.telegram.ui.PhotoPickerActivity.PhotoPickerActivityDelegate
+                public void actionButtonPressed(boolean z, boolean z2, int i2) {
+                    PhotoAlbumPickerActivity.this.removeSelfFromStack();
+                    if (z) {
+                        return;
+                    }
+                    PhotoAlbumPickerActivity photoAlbumPickerActivity = PhotoAlbumPickerActivity.this;
+                    photoAlbumPickerActivity.sendSelectedPhotos(photoAlbumPickerActivity.selectedPhotos, PhotoAlbumPickerActivity.this.selectedPhotosOrder, z2, i2);
+                }
+
+                @Override // org.telegram.ui.PhotoPickerActivity.PhotoPickerActivityDelegate
+                public void onCaptionChanged(CharSequence charSequence) {
+                    PhotoAlbumPickerActivity.this.commentTextView.setText(PhotoAlbumPickerActivity.this.caption = charSequence);
+                }
+            });
+            photoPickerActivity.setMaxSelectedPhotos(this.maxSelectedPhotos, this.allowOrder);
+            presentFragment(photoPickerActivity);
+            return;
+        }
+        final HashMap hashMap = new HashMap();
+        final ArrayList arrayList = new ArrayList();
+        if (this.allowGifs) {
+            PhotoPickerSearchActivity photoPickerSearchActivity = new PhotoPickerSearchActivity(hashMap, arrayList, this.selectPhotoType, this.allowCaption, this.chatActivity);
+            Editable text2 = this.commentTextView.getText();
+            this.caption = text2;
+            photoPickerSearchActivity.setCaption(text2);
+            photoPickerSearchActivity.setDelegate(new PhotoPickerActivity.PhotoPickerActivityDelegate() { // from class: org.telegram.ui.PhotoAlbumPickerActivity.9
+                @Override // org.telegram.ui.PhotoPickerActivity.PhotoPickerActivityDelegate
+                public /* synthetic */ boolean canFinishFragment() {
+                    return PhotoPickerActivity.PhotoPickerActivityDelegate.-CC.$default$canFinishFragment(this);
+                }
+
+                @Override // org.telegram.ui.PhotoPickerActivity.PhotoPickerActivityDelegate
+                public /* synthetic */ void onOpenInPressed() {
+                    PhotoPickerActivity.PhotoPickerActivityDelegate.-CC.$default$onOpenInPressed(this);
+                }
+
+                @Override // org.telegram.ui.PhotoPickerActivity.PhotoPickerActivityDelegate
+                public void selectedPhotosChanged() {
+                }
+
+                @Override // org.telegram.ui.PhotoPickerActivity.PhotoPickerActivityDelegate
+                public void actionButtonPressed(boolean z, boolean z2, int i2) {
+                    PhotoAlbumPickerActivity.this.removeSelfFromStack();
+                    if (z) {
+                        return;
+                    }
+                    PhotoAlbumPickerActivity.this.sendSelectedPhotos(hashMap, arrayList, z2, i2);
+                }
+
+                @Override // org.telegram.ui.PhotoPickerActivity.PhotoPickerActivityDelegate
+                public void onCaptionChanged(CharSequence charSequence) {
+                    PhotoAlbumPickerActivity.this.commentTextView.setText(PhotoAlbumPickerActivity.this.caption = charSequence);
+                }
+            });
+            photoPickerSearchActivity.setMaxSelectedPhotos(this.maxSelectedPhotos, this.allowOrder);
+            presentFragment(photoPickerSearchActivity);
+            return;
+        }
+        PhotoPickerActivity photoPickerActivity2 = new PhotoPickerActivity(0, albumEntry, hashMap, arrayList, this.selectPhotoType, this.allowCaption, this.chatActivity, false);
+        Editable text3 = this.commentTextView.getText();
+        this.caption = text3;
+        photoPickerActivity2.setCaption(text3);
+        photoPickerActivity2.setDelegate(new PhotoPickerActivity.PhotoPickerActivityDelegate() { // from class: org.telegram.ui.PhotoAlbumPickerActivity.10
+            @Override // org.telegram.ui.PhotoPickerActivity.PhotoPickerActivityDelegate
+            public /* synthetic */ boolean canFinishFragment() {
+                return PhotoPickerActivity.PhotoPickerActivityDelegate.-CC.$default$canFinishFragment(this);
             }
-            ListAdapter listAdapter = this.listAdapter;
-            if (listAdapter != null) {
-                listAdapter.notifyDataSetChanged();
+
+            @Override // org.telegram.ui.PhotoPickerActivity.PhotoPickerActivityDelegate
+            public /* synthetic */ void onOpenInPressed() {
+                PhotoPickerActivity.PhotoPickerActivityDelegate.-CC.$default$onOpenInPressed(this);
             }
-            this.loading = false;
+
+            @Override // org.telegram.ui.PhotoPickerActivity.PhotoPickerActivityDelegate
+            public void selectedPhotosChanged() {
+            }
+
+            @Override // org.telegram.ui.PhotoPickerActivity.PhotoPickerActivityDelegate
+            public void actionButtonPressed(boolean z, boolean z2, int i2) {
+                PhotoAlbumPickerActivity.this.removeSelfFromStack();
+                if (z) {
+                    return;
+                }
+                PhotoAlbumPickerActivity.this.sendSelectedPhotos(hashMap, arrayList, z2, i2);
+            }
+
+            @Override // org.telegram.ui.PhotoPickerActivity.PhotoPickerActivityDelegate
+            public void onCaptionChanged(CharSequence charSequence) {
+                PhotoAlbumPickerActivity.this.commentTextView.setText(PhotoAlbumPickerActivity.this.caption = charSequence);
+            }
+        });
+        photoPickerActivity2.setMaxSelectedPhotos(this.maxSelectedPhotos, this.allowOrder);
+        presentFragment(photoPickerActivity2);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    class ListAdapter extends RecyclerListView.SelectionAdapter {
+        private Context mContext;
+
+        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+        public int getItemViewType(int i) {
+            return 0;
+        }
+
+        @Override // org.telegram.ui.Components.RecyclerListView.SelectionAdapter
+        public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
+            return true;
+        }
+
+        public ListAdapter(Context context) {
+            this.mContext = context;
+        }
+
+        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+        public int getItemCount() {
+            if (PhotoAlbumPickerActivity.this.albumsSorted != null) {
+                return (int) Math.ceil(PhotoAlbumPickerActivity.this.albumsSorted.size() / PhotoAlbumPickerActivity.this.columnsCount);
+            }
+            return 0;
+        }
+
+        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+        public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+            PhotoPickerAlbumsCell photoPickerAlbumsCell = new PhotoPickerAlbumsCell(this.mContext);
+            photoPickerAlbumsCell.setDelegate(new PhotoPickerAlbumsCell.PhotoPickerAlbumsCellDelegate() { // from class: org.telegram.ui.PhotoAlbumPickerActivity$ListAdapter$$ExternalSyntheticLambda0
+                @Override // org.telegram.ui.Cells.PhotoPickerAlbumsCell.PhotoPickerAlbumsCellDelegate
+                public final void didSelectAlbum(MediaController.AlbumEntry albumEntry) {
+                    PhotoAlbumPickerActivity.ListAdapter.this.lambda$onCreateViewHolder$0(albumEntry);
+                }
+            });
+            return new RecyclerListView.Holder(photoPickerAlbumsCell);
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$onCreateViewHolder$0(MediaController.AlbumEntry albumEntry) {
+            PhotoAlbumPickerActivity.this.openPhotoPicker(albumEntry, 0);
+        }
+
+        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+        public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
+            PhotoPickerAlbumsCell photoPickerAlbumsCell = (PhotoPickerAlbumsCell) viewHolder.itemView;
+            photoPickerAlbumsCell.setAlbumsCount(PhotoAlbumPickerActivity.this.columnsCount);
+            for (int i2 = 0; i2 < PhotoAlbumPickerActivity.this.columnsCount; i2++) {
+                int i3 = (PhotoAlbumPickerActivity.this.columnsCount * i) + i2;
+                if (i3 < PhotoAlbumPickerActivity.this.albumsSorted.size()) {
+                    photoPickerAlbumsCell.setAlbum(i2, (MediaController.AlbumEntry) PhotoAlbumPickerActivity.this.albumsSorted.get(i3));
+                } else {
+                    photoPickerAlbumsCell.setAlbum(i2, null);
+                }
+            }
+            photoPickerAlbumsCell.requestLayout();
         }
     }
 
@@ -961,75 +1024,5 @@ public class PhotoAlbumPickerActivity extends BaseFragment implements Notificati
         arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{View.class}, null, new Drawable[]{Theme.chat_attachEmptyDrawable}, null, Theme.key_chat_attachEmptyImage));
         arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{View.class}, null, null, null, Theme.key_chat_attachPhotoBackground));
         return arrayList;
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public boolean onBackPressed() {
-        EditTextEmoji editTextEmoji = this.commentTextView;
-        if (editTextEmoji == null || !editTextEmoji.isPopupShowing()) {
-            return super.onBackPressed();
-        }
-        this.commentTextView.hidePopup(true);
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public void onConfigurationChanged(Configuration configuration) {
-        super.onConfigurationChanged(configuration);
-        fixLayout();
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public boolean onFragmentCreate() {
-        int i = this.selectPhotoType;
-        this.albumsSorted = (i == SELECT_TYPE_AVATAR || i == SELECT_TYPE_WALLPAPER || i == SELECT_TYPE_QR || !this.allowSearchImages) ? MediaController.allPhotoAlbums : MediaController.allMediaAlbums;
-        this.loading = this.albumsSorted == null;
-        MediaController.loadGalleryPhotosAlbums(this.classGuid);
-        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.albumsDidLoad);
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.closeChats);
-        return super.onFragmentCreate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public void onFragmentDestroy() {
-        EditTextEmoji editTextEmoji = this.commentTextView;
-        if (editTextEmoji != null) {
-            editTextEmoji.onDestroy();
-        }
-        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.albumsDidLoad);
-        NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.closeChats);
-        super.onFragmentDestroy();
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public void onPause() {
-        super.onPause();
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public void onResume() {
-        super.onResume();
-        ListAdapter listAdapter = this.listAdapter;
-        if (listAdapter != null) {
-            listAdapter.notifyDataSetChanged();
-        }
-        EditTextEmoji editTextEmoji = this.commentTextView;
-        if (editTextEmoji != null) {
-            editTextEmoji.onResume();
-        }
-        fixLayout();
-    }
-
-    public void setAllowSearchImages(boolean z) {
-        this.allowSearchImages = z;
-    }
-
-    public void setDelegate(PhotoAlbumPickerActivityDelegate photoAlbumPickerActivityDelegate) {
-        this.delegate = photoAlbumPickerActivityDelegate;
-    }
-
-    public void setMaxSelectedPhotos(int i, boolean z) {
-        this.maxSelectedPhotos = i;
-        this.allowOrder = z;
     }
 }

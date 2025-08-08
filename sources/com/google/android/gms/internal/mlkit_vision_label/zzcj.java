@@ -19,6 +19,10 @@ final class zzcj extends OutputStream {
         this.zza += bArr.length;
     }
 
+    final long zza() {
+        return this.zza;
+    }
+
     @Override // java.io.OutputStream
     public final void write(byte[] bArr, int i, int i2) {
         int length;
@@ -27,9 +31,5 @@ final class zzcj extends OutputStream {
             throw new IndexOutOfBoundsException();
         }
         this.zza += i2;
-    }
-
-    final long zza() {
-        return this.zza;
     }
 }

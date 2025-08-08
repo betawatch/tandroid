@@ -17,31 +17,11 @@ final class OggPacket {
     OggPacket() {
     }
 
-    private int calculatePacketSize(int i) {
-        int i2;
-        int i3 = 0;
-        this.segmentCount = 0;
-        do {
-            int i4 = this.segmentCount;
-            int i5 = i + i4;
-            OggPageHeader oggPageHeader = this.pageHeader;
-            if (i5 >= oggPageHeader.pageSegmentCount) {
-                break;
-            }
-            int[] iArr = oggPageHeader.laces;
-            this.segmentCount = i4 + 1;
-            i2 = iArr[i5];
-            i3 += i2;
-        } while (i2 == 255);
-        return i3;
-    }
-
-    public OggPageHeader getPageHeader() {
-        return this.pageHeader;
-    }
-
-    public ParsableByteArray getPayload() {
-        return this.packetArray;
+    public void reset() {
+        this.pageHeader.reset();
+        this.packetArray.reset(0);
+        this.currentSegmentIndex = -1;
+        this.populated = false;
     }
 
     public boolean populate(ExtractorInput extractorInput) {
@@ -89,11 +69,12 @@ final class OggPacket {
         return true;
     }
 
-    public void reset() {
-        this.pageHeader.reset();
-        this.packetArray.reset(0);
-        this.currentSegmentIndex = -1;
-        this.populated = false;
+    public OggPageHeader getPageHeader() {
+        return this.pageHeader;
+    }
+
+    public ParsableByteArray getPayload() {
+        return this.packetArray;
     }
 
     public void trimPayload() {
@@ -102,5 +83,24 @@ final class OggPacket {
         }
         ParsableByteArray parsableByteArray = this.packetArray;
         parsableByteArray.reset(Arrays.copyOf(parsableByteArray.getData(), Math.max(65025, this.packetArray.limit())), this.packetArray.limit());
+    }
+
+    private int calculatePacketSize(int i) {
+        int i2;
+        int i3 = 0;
+        this.segmentCount = 0;
+        do {
+            int i4 = this.segmentCount;
+            int i5 = i + i4;
+            OggPageHeader oggPageHeader = this.pageHeader;
+            if (i5 >= oggPageHeader.pageSegmentCount) {
+                break;
+            }
+            int[] iArr = oggPageHeader.laces;
+            this.segmentCount = i4 + 1;
+            i2 = iArr[i5];
+            i3 += i2;
+        } while (i2 == 255);
+        return i3;
     }
 }

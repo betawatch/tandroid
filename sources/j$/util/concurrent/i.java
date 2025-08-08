@@ -18,55 +18,12 @@ final class i extends o implements Spliterator {
     }
 
     @Override // j$.util.Spliterator
-    public final void a(Consumer consumer) {
-        switch (this.i) {
-            case 0:
-                consumer.getClass();
-                while (true) {
-                    k b = b();
-                    if (b == null) {
-                        break;
-                    } else {
-                        consumer.r(b.b);
-                    }
-                }
-            default:
-                consumer.getClass();
-                while (true) {
-                    k b2 = b();
-                    if (b2 == null) {
-                        break;
-                    } else {
-                        consumer.r(b2.c);
-                    }
-                }
-        }
-    }
-
-    @Override // j$.util.Spliterator
     public final int characteristics() {
         switch (this.i) {
             case 0:
                 return 4353;
             default:
                 return 4352;
-        }
-    }
-
-    @Override // j$.util.Spliterator
-    public final long estimateSize() {
-        switch (this.i) {
-        }
-        return this.j;
-    }
-
-    @Override // j$.util.Spliterator
-    public final Comparator getComparator() {
-        switch (this.i) {
-            case 0:
-                throw new IllegalStateException();
-            default:
-                throw new IllegalStateException();
         }
     }
 
@@ -85,26 +42,13 @@ final class i extends o implements Spliterator {
     }
 
     @Override // j$.util.Spliterator
-    public final boolean s(Consumer consumer) {
+    public final Comparator getComparator() {
         switch (this.i) {
             case 0:
-                consumer.getClass();
-                k b = b();
-                if (b != null) {
-                    consumer.r(b.b);
-                    break;
-                }
-                break;
+                throw new IllegalStateException();
             default:
-                consumer.getClass();
-                k b2 = b();
-                if (b2 != null) {
-                    consumer.r(b2.c);
-                    break;
-                }
-                break;
+                throw new IllegalStateException();
         }
-        return true;
     }
 
     @Override // j$.util.Spliterator
@@ -135,5 +79,61 @@ final class i extends o implements Spliterator {
                 this.j = j2;
                 return new i(kVarArr2, this.h, i6, i5, j2, 1);
         }
+    }
+
+    @Override // j$.util.Spliterator
+    public final void a(Consumer consumer) {
+        switch (this.i) {
+            case 0:
+                consumer.getClass();
+                while (true) {
+                    k b = b();
+                    if (b == null) {
+                        break;
+                    } else {
+                        consumer.r(b.b);
+                    }
+                }
+            default:
+                consumer.getClass();
+                while (true) {
+                    k b2 = b();
+                    if (b2 == null) {
+                        break;
+                    } else {
+                        consumer.r(b2.c);
+                    }
+                }
+        }
+    }
+
+    @Override // j$.util.Spliterator
+    public final boolean s(Consumer consumer) {
+        switch (this.i) {
+            case 0:
+                consumer.getClass();
+                k b = b();
+                if (b != null) {
+                    consumer.r(b.b);
+                    break;
+                }
+                break;
+            default:
+                consumer.getClass();
+                k b2 = b();
+                if (b2 != null) {
+                    consumer.r(b2.c);
+                    break;
+                }
+                break;
+        }
+        return true;
+    }
+
+    @Override // j$.util.Spliterator
+    public final long estimateSize() {
+        switch (this.i) {
+        }
+        return this.j;
     }
 }

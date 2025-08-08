@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class GsonBuilder {
     private Excluder excluder = Excluder.DEFAULT;
     private LongSerializationPolicy longSerializationPolicy = LongSerializationPolicy.DEFAULT;
@@ -38,6 +38,65 @@ public final class GsonBuilder {
     private ToNumberStrategy objectToNumberStrategy = Gson.DEFAULT_OBJECT_TO_NUMBER_STRATEGY;
     private ToNumberStrategy numberToNumberStrategy = Gson.DEFAULT_NUMBER_TO_NUMBER_STRATEGY;
     private final ArrayDeque reflectionFilters = new ArrayDeque();
+
+    public GsonBuilder addSerializationExclusionStrategy(ExclusionStrategy exclusionStrategy) {
+        Objects.requireNonNull(exclusionStrategy);
+        this.excluder = this.excluder.withExclusionStrategy(exclusionStrategy, true, false);
+        return this;
+    }
+
+    public GsonBuilder registerTypeAdapter(Type type, Object obj) {
+        Objects.requireNonNull(type);
+        boolean z = obj instanceof JsonSerializer;
+        $Gson$Preconditions.checkArgument(z || (obj instanceof TypeAdapter));
+        if (isTypeObjectOrJsonElement(type)) {
+            throw new IllegalArgumentException("Cannot override built-in adapter for " + type);
+        }
+        if (z) {
+            this.factories.add(TreeTypeAdapter.newFactoryWithMatchRawType(TypeToken.get(type), obj));
+        }
+        if (obj instanceof TypeAdapter) {
+            this.factories.add(TypeAdapters.newFactory(TypeToken.get(type), (TypeAdapter) obj));
+        }
+        return this;
+    }
+
+    private static boolean isTypeObjectOrJsonElement(Type type) {
+        return (type instanceof Class) && (type == Object.class || JsonElement.class.isAssignableFrom((Class) type));
+    }
+
+    public GsonBuilder registerTypeAdapterFactory(TypeAdapterFactory typeAdapterFactory) {
+        Objects.requireNonNull(typeAdapterFactory);
+        this.factories.add(typeAdapterFactory);
+        return this;
+    }
+
+    public GsonBuilder registerTypeHierarchyAdapter(Class cls, Object obj) {
+        Objects.requireNonNull(cls);
+        boolean z = obj instanceof JsonSerializer;
+        $Gson$Preconditions.checkArgument(z || (obj instanceof TypeAdapter));
+        if (JsonElement.class.isAssignableFrom(cls)) {
+            throw new IllegalArgumentException("Cannot override built-in adapter for " + cls);
+        }
+        if (z) {
+            this.hierarchyFactories.add(TreeTypeAdapter.newTypeHierarchyFactory(cls, obj));
+        }
+        if (obj instanceof TypeAdapter) {
+            this.factories.add(TypeAdapters.newTypeHierarchyFactory(cls, (TypeAdapter) obj));
+        }
+        return this;
+    }
+
+    public Gson create() {
+        ArrayList arrayList = new ArrayList(this.factories.size() + this.hierarchyFactories.size() + 3);
+        arrayList.addAll(this.factories);
+        Collections.reverse(arrayList);
+        ArrayList arrayList2 = new ArrayList(this.hierarchyFactories);
+        Collections.reverse(arrayList2);
+        arrayList.addAll(arrayList2);
+        addTypeAdaptersForDate(this.datePattern, this.dateStyle, this.timeStyle, arrayList);
+        return new Gson(this.excluder, this.fieldNamingPolicy, new HashMap(this.instanceCreators), this.serializeNulls, this.complexMapKeySerialization, this.generateNonExecutableJson, this.escapeHtmlChars, this.formattingStyle, this.strictness, this.serializeSpecialFloatingPointValues, this.useJdkUnsafe, this.longSerializationPolicy, this.datePattern, this.dateStyle, this.timeStyle, new ArrayList(this.factories), new ArrayList(this.hierarchyFactories), arrayList, this.objectToNumberStrategy, this.numberToNumberStrategy, new ArrayList(this.reflectionFilters));
+    }
 
     private static void addTypeAdaptersForDate(String str, int i, int i2, List list) {
         TypeAdapterFactory typeAdapterFactory;
@@ -71,64 +130,5 @@ public final class GsonBuilder {
             list.add(typeAdapterFactory3);
             list.add(typeAdapterFactory2);
         }
-    }
-
-    private static boolean isTypeObjectOrJsonElement(Type type) {
-        return (type instanceof Class) && (type == Object.class || JsonElement.class.isAssignableFrom((Class) type));
-    }
-
-    public GsonBuilder addSerializationExclusionStrategy(ExclusionStrategy exclusionStrategy) {
-        Objects.requireNonNull(exclusionStrategy);
-        this.excluder = this.excluder.withExclusionStrategy(exclusionStrategy, true, false);
-        return this;
-    }
-
-    public Gson create() {
-        ArrayList arrayList = new ArrayList(this.factories.size() + this.hierarchyFactories.size() + 3);
-        arrayList.addAll(this.factories);
-        Collections.reverse(arrayList);
-        ArrayList arrayList2 = new ArrayList(this.hierarchyFactories);
-        Collections.reverse(arrayList2);
-        arrayList.addAll(arrayList2);
-        addTypeAdaptersForDate(this.datePattern, this.dateStyle, this.timeStyle, arrayList);
-        return new Gson(this.excluder, this.fieldNamingPolicy, new HashMap(this.instanceCreators), this.serializeNulls, this.complexMapKeySerialization, this.generateNonExecutableJson, this.escapeHtmlChars, this.formattingStyle, this.strictness, this.serializeSpecialFloatingPointValues, this.useJdkUnsafe, this.longSerializationPolicy, this.datePattern, this.dateStyle, this.timeStyle, new ArrayList(this.factories), new ArrayList(this.hierarchyFactories), arrayList, this.objectToNumberStrategy, this.numberToNumberStrategy, new ArrayList(this.reflectionFilters));
-    }
-
-    public GsonBuilder registerTypeAdapter(Type type, Object obj) {
-        Objects.requireNonNull(type);
-        boolean z = obj instanceof JsonSerializer;
-        $Gson$Preconditions.checkArgument(z || (obj instanceof TypeAdapter));
-        if (isTypeObjectOrJsonElement(type)) {
-            throw new IllegalArgumentException("Cannot override built-in adapter for " + type);
-        }
-        if (z) {
-            this.factories.add(TreeTypeAdapter.newFactoryWithMatchRawType(TypeToken.get(type), obj));
-        }
-        if (obj instanceof TypeAdapter) {
-            this.factories.add(TypeAdapters.newFactory(TypeToken.get(type), (TypeAdapter) obj));
-        }
-        return this;
-    }
-
-    public GsonBuilder registerTypeAdapterFactory(TypeAdapterFactory typeAdapterFactory) {
-        Objects.requireNonNull(typeAdapterFactory);
-        this.factories.add(typeAdapterFactory);
-        return this;
-    }
-
-    public GsonBuilder registerTypeHierarchyAdapter(Class cls, Object obj) {
-        Objects.requireNonNull(cls);
-        boolean z = obj instanceof JsonSerializer;
-        $Gson$Preconditions.checkArgument(z || (obj instanceof TypeAdapter));
-        if (JsonElement.class.isAssignableFrom(cls)) {
-            throw new IllegalArgumentException("Cannot override built-in adapter for " + cls);
-        }
-        if (z) {
-            this.hierarchyFactories.add(TreeTypeAdapter.newTypeHierarchyFactory(cls, obj));
-        }
-        if (obj instanceof TypeAdapter) {
-            this.factories.add(TypeAdapters.newTypeHierarchyFactory(cls, (TypeAdapter) obj));
-        }
-        return this;
     }
 }

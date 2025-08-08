@@ -1,17 +1,16 @@
 package j$.util.function;
 
 import j$.util.function.BiFunction;
-import java.util.function.BinaryOperator;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class d implements f {
-    public final /* synthetic */ BinaryOperator a;
+public final /* synthetic */ class d implements BinaryOperator {
+    public final /* synthetic */ java.util.function.BinaryOperator a;
 
-    private /* synthetic */ d(BinaryOperator binaryOperator) {
+    private /* synthetic */ d(java.util.function.BinaryOperator binaryOperator) {
         this.a = binaryOperator;
     }
 
-    public static /* synthetic */ f a(BinaryOperator binaryOperator) {
+    public static /* synthetic */ BinaryOperator a(java.util.function.BinaryOperator binaryOperator) {
         if (binaryOperator == null) {
             return null;
         }
@@ -20,7 +19,7 @@ public final /* synthetic */ class d implements f {
 
     @Override // j$.util.function.BiFunction
     public final /* synthetic */ BiFunction andThen(Function function) {
-        return BiFunction.VivifiedWrapper.convert(this.a.andThen(x.a(function)));
+        return BiFunction.VivifiedWrapper.convert(this.a.andThen(z.a(function)));
     }
 
     @Override // j$.util.function.BiFunction
@@ -29,7 +28,7 @@ public final /* synthetic */ class d implements f {
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        BinaryOperator binaryOperator = this.a;
+        java.util.function.BinaryOperator binaryOperator = this.a;
         if (obj instanceof d) {
             obj = ((d) obj).a;
         }

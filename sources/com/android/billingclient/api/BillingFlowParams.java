@@ -1,8 +1,17 @@
 package com.android.billingclient.api;
 
 import android.text.TextUtils;
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
+import com.android.billingclient.api.BillingFlowParams;
+import com.android.billingclient.api.ProductDetails;
+import com.google.android.gms.internal.play_billing.zzbe;
+import j$.lang.Iterable$-EL;
+import j$.util.Collection;
+import j$.util.function.Consumer;
+import j$.util.function.Predicate;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 
 /* loaded from: classes.dex */
@@ -11,7 +20,7 @@ public class BillingFlowParams {
     private String zzb;
     private String zzc;
     private SubscriptionUpdateParams zzd;
-    private com.google.android.gms.internal.play_billing.zzu zze;
+    private com.google.android.gms.internal.play_billing.zzco zze;
     private ArrayList zzf;
     private boolean zzg;
 
@@ -22,12 +31,6 @@ public class BillingFlowParams {
         private ArrayList zzd;
         private boolean zze;
         private SubscriptionUpdateParams.Builder zzf;
-
-        /* synthetic */ Builder(zzak zzakVar) {
-            SubscriptionUpdateParams.Builder newBuilder = SubscriptionUpdateParams.newBuilder();
-            SubscriptionUpdateParams.Builder.zza(newBuilder);
-            this.zzf = newBuilder;
-        }
 
         public BillingFlowParams build() {
             ArrayList arrayList = this.zzd;
@@ -40,36 +43,34 @@ public class BillingFlowParams {
             if (z && z2) {
                 throw new IllegalArgumentException("Set SkuDetails or ProductDetailsParams, not both.");
             }
-            zzap zzapVar = null;
+            zzcf zzcfVar = null;
             if (!z) {
-                ProductDetailsParams productDetailsParams = (ProductDetailsParams) this.zzc.get(0);
-                for (int i = 0; i < this.zzc.size(); i++) {
-                    ProductDetailsParams productDetailsParams2 = (ProductDetailsParams) this.zzc.get(i);
-                    if (productDetailsParams2 == null) {
-                        throw new IllegalArgumentException("ProductDetailsParams cannot be null.");
+                Iterable$-EL.forEach(this.zzc, new Consumer() { // from class: com.android.billingclient.api.zzce
+                    @Override // j$.util.function.Consumer
+                    /* renamed from: accept */
+                    public final void r(Object obj) {
+                        if (((BillingFlowParams.ProductDetailsParams) obj) == null) {
+                            throw new IllegalArgumentException("ProductDetailsParams cannot be null.");
+                        }
                     }
-                    if (i != 0 && !productDetailsParams2.zza().getProductType().equals(productDetailsParams.zza().getProductType()) && !productDetailsParams2.zza().getProductType().equals("play_pass_subs")) {
-                        throw new IllegalArgumentException("All products should have same ProductType.");
+
+                    @Override // j$.util.function.Consumer
+                    public /* synthetic */ Consumer andThen(Consumer consumer) {
+                        return Consumer.-CC.$default$andThen(this, consumer);
                     }
-                }
-                String zza = productDetailsParams.zza().zza();
-                for (ProductDetailsParams productDetailsParams3 : this.zzc) {
-                    if (!productDetailsParams.zza().getProductType().equals("play_pass_subs") && !productDetailsParams3.zza().getProductType().equals("play_pass_subs") && !zza.equals(productDetailsParams3.zza().zza())) {
-                        throw new IllegalArgumentException("All products must have the same package name.");
-                    }
-                }
+                });
             } else {
                 if (this.zzd.contains(null)) {
                     throw new IllegalArgumentException("SKU cannot be null.");
                 }
                 if (this.zzd.size() > 1) {
-                    ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(this.zzd.get(0));
+                    WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(this.zzd.get(0));
                     throw null;
                 }
             }
-            BillingFlowParams billingFlowParams = new BillingFlowParams(zzapVar);
+            BillingFlowParams billingFlowParams = new BillingFlowParams(zzcfVar);
             if (z) {
-                ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(this.zzd.get(0));
+                WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(this.zzd.get(0));
                 throw null;
             }
             billingFlowParams.zza = z2 && !((ProductDetailsParams) this.zzc.get(0)).zza().zza().isEmpty();
@@ -80,7 +81,7 @@ public class BillingFlowParams {
             billingFlowParams.zzf = arrayList2 != null ? new ArrayList(arrayList2) : new ArrayList();
             billingFlowParams.zzg = this.zze;
             List list2 = this.zzc;
-            billingFlowParams.zze = list2 != null ? com.google.android.gms.internal.play_billing.zzu.zzj(list2) : com.google.android.gms.internal.play_billing.zzu.zzk();
+            billingFlowParams.zze = list2 != null ? com.google.android.gms.internal.play_billing.zzco.zzk(list2) : com.google.android.gms.internal.play_billing.zzco.zzl();
             return billingFlowParams;
         }
 
@@ -100,8 +101,14 @@ public class BillingFlowParams {
         }
 
         public Builder setSubscriptionUpdateParams(SubscriptionUpdateParams subscriptionUpdateParams) {
-            this.zzf = SubscriptionUpdateParams.zzc(subscriptionUpdateParams);
+            this.zzf = SubscriptionUpdateParams.zzb(subscriptionUpdateParams);
             return this;
+        }
+
+        /* synthetic */ Builder(zzcf zzcfVar) {
+            SubscriptionUpdateParams.Builder newBuilder = SubscriptionUpdateParams.newBuilder();
+            SubscriptionUpdateParams.Builder.zza(newBuilder);
+            this.zzf = newBuilder;
         }
     }
 
@@ -113,16 +120,21 @@ public class BillingFlowParams {
             private ProductDetails zza;
             private String zzb;
 
-            /* synthetic */ Builder(zzal zzalVar) {
+            /* synthetic */ Builder(zzcf zzcfVar) {
             }
 
             public ProductDetailsParams build() {
-                com.google.android.gms.internal.play_billing.zzm.zzc(this.zza, "ProductDetails is required for constructing ProductDetailsParams.");
-                com.google.android.gms.internal.play_billing.zzm.zzc(this.zzb, "offerToken is required for constructing ProductDetailsParams.");
+                zzbe.zzc(this.zza, "ProductDetails is required for constructing ProductDetailsParams.");
+                if (this.zza.getSubscriptionOfferDetails() != null) {
+                    zzbe.zzc(this.zzb, "offerToken is required for constructing ProductDetailsParams for subscriptions.");
+                }
                 return new ProductDetailsParams(this, null);
             }
 
             public Builder setOfferToken(String str) {
+                if (TextUtils.isEmpty(str)) {
+                    throw new IllegalArgumentException("offerToken can not be empty");
+                }
                 this.zzb = str;
                 return this;
             }
@@ -131,13 +143,16 @@ public class BillingFlowParams {
                 this.zza = productDetails;
                 if (productDetails.getOneTimePurchaseOfferDetails() != null) {
                     productDetails.getOneTimePurchaseOfferDetails().getClass();
-                    this.zzb = productDetails.getOneTimePurchaseOfferDetails().zza();
+                    ProductDetails.OneTimePurchaseOfferDetails oneTimePurchaseOfferDetails = productDetails.getOneTimePurchaseOfferDetails();
+                    if (oneTimePurchaseOfferDetails.zzb() != null) {
+                        this.zzb = oneTimePurchaseOfferDetails.zzb();
+                    }
                 }
                 return this;
             }
         }
 
-        /* synthetic */ ProductDetailsParams(Builder builder, zzam zzamVar) {
+        /* synthetic */ ProductDetailsParams(Builder builder, zzcf zzcfVar) {
             this.zza = builder.zza;
             this.zzb = builder.zzb;
         }
@@ -159,16 +174,14 @@ public class BillingFlowParams {
         private String zza;
         private String zzb;
         private int zzc = 0;
-        private int zzd = 0;
 
         public static class Builder {
             private String zza;
             private String zzb;
             private boolean zzc;
             private int zzd = 0;
-            private int zze = 0;
 
-            /* synthetic */ Builder(zzan zzanVar) {
+            /* synthetic */ Builder(zzcf zzcfVar) {
             }
 
             static /* synthetic */ Builder zza(Builder builder) {
@@ -177,19 +190,21 @@ public class BillingFlowParams {
             }
 
             public SubscriptionUpdateParams build() {
-                zzao zzaoVar = null;
-                boolean z = (TextUtils.isEmpty(this.zza) && TextUtils.isEmpty(null)) ? false : true;
-                boolean isEmpty = true ^ TextUtils.isEmpty(this.zzb);
-                if (z && isEmpty) {
+                boolean z = true;
+                zzcf zzcfVar = null;
+                if (TextUtils.isEmpty(this.zza) && TextUtils.isEmpty(null)) {
+                    z = false;
+                }
+                boolean isEmpty = TextUtils.isEmpty(this.zzb);
+                if (z && !isEmpty) {
                     throw new IllegalArgumentException("Please provide Old SKU purchase information(token/id) or original external transaction id, not both.");
                 }
-                if (!this.zzc && !z && !isEmpty) {
+                if (!this.zzc && !z && isEmpty) {
                     throw new IllegalArgumentException("Old SKU purchase information(token/id) or original external transaction id must be provided.");
                 }
-                SubscriptionUpdateParams subscriptionUpdateParams = new SubscriptionUpdateParams(zzaoVar);
+                SubscriptionUpdateParams subscriptionUpdateParams = new SubscriptionUpdateParams(zzcfVar);
                 subscriptionUpdateParams.zza = this.zza;
                 subscriptionUpdateParams.zzc = this.zzd;
-                subscriptionUpdateParams.zzd = this.zze;
                 subscriptionUpdateParams.zzb = this.zzb;
                 return subscriptionUpdateParams;
             }
@@ -199,39 +214,33 @@ public class BillingFlowParams {
                 return this;
             }
 
-            public Builder setOldSkuPurchaseToken(String str) {
-                this.zza = str;
-                return this;
-            }
-
             public Builder setOriginalExternalTransactionId(String str) {
                 this.zzb = str;
                 return this;
             }
 
-            public Builder setReplaceSkusProrationMode(int i) {
+            public Builder setSubscriptionReplacementMode(int i) {
                 this.zzd = i;
                 return this;
             }
 
-            public Builder setSubscriptionReplacementMode(int i) {
-                this.zze = i;
+            public final Builder zzb(String str) {
+                this.zza = str;
                 return this;
             }
         }
 
-        /* synthetic */ SubscriptionUpdateParams(zzao zzaoVar) {
+        /* synthetic */ SubscriptionUpdateParams(zzcf zzcfVar) {
         }
 
         public static Builder newBuilder() {
             return new Builder(null);
         }
 
-        static /* bridge */ /* synthetic */ Builder zzc(SubscriptionUpdateParams subscriptionUpdateParams) {
+        static /* bridge */ /* synthetic */ Builder zzb(SubscriptionUpdateParams subscriptionUpdateParams) {
             Builder newBuilder = newBuilder();
-            newBuilder.setOldSkuPurchaseToken(subscriptionUpdateParams.zza);
-            newBuilder.setReplaceSkusProrationMode(subscriptionUpdateParams.zzc);
-            newBuilder.setSubscriptionReplacementMode(subscriptionUpdateParams.zzd);
+            newBuilder.zzb(subscriptionUpdateParams.zza);
+            newBuilder.setSubscriptionReplacementMode(subscriptionUpdateParams.zzc);
             newBuilder.setOriginalExternalTransactionId(subscriptionUpdateParams.zzb);
             return newBuilder;
         }
@@ -240,20 +249,16 @@ public class BillingFlowParams {
             return this.zzc;
         }
 
-        final int zzb() {
-            return this.zzd;
-        }
-
-        final String zzd() {
+        final String zzc() {
             return this.zza;
         }
 
-        final String zze() {
+        final String zzd() {
             return this.zzb;
         }
     }
 
-    /* synthetic */ BillingFlowParams(zzap zzapVar) {
+    /* synthetic */ BillingFlowParams(zzcf zzcfVar) {
     }
 
     public static Builder newBuilder() {
@@ -264,8 +269,42 @@ public class BillingFlowParams {
         return this.zzd.zza();
     }
 
-    public final int zzb() {
-        return this.zzd.zzb();
+    final BillingResult zzb() {
+        if (this.zze.isEmpty()) {
+            return zzcj.zzl;
+        }
+        ProductDetailsParams productDetailsParams = (ProductDetailsParams) this.zze.get(0);
+        for (int i = 1; i < this.zze.size(); i++) {
+            ProductDetailsParams productDetailsParams2 = (ProductDetailsParams) this.zze.get(i);
+            if (!productDetailsParams2.zza().getProductType().equals(productDetailsParams.zza().getProductType()) && !productDetailsParams2.zza().getProductType().equals("play_pass_subs")) {
+                return zzcj.zza(5, "All products should have same ProductType.");
+            }
+        }
+        String zza = productDetailsParams.zza().zza();
+        HashSet hashSet = new HashSet();
+        HashSet hashSet2 = new HashSet();
+        com.google.android.gms.internal.play_billing.zzco zzcoVar = this.zze;
+        int size = zzcoVar.size();
+        for (int i2 = 0; i2 < size; i2++) {
+            ProductDetailsParams productDetailsParams3 = (ProductDetailsParams) zzcoVar.get(i2);
+            productDetailsParams3.zza().getProductType().equals("subs");
+            if (hashSet.contains(productDetailsParams3.zza().getProductId())) {
+                return zzcj.zza(5, String.format("ProductId can not be duplicated. Invalid product id: %s.", productDetailsParams3.zza().getProductId()));
+            }
+            hashSet.add(productDetailsParams3.zza().getProductId());
+            if (!productDetailsParams.zza().getProductType().equals("play_pass_subs") && !productDetailsParams3.zza().getProductType().equals("play_pass_subs") && !zza.equals(productDetailsParams3.zza().zza())) {
+                return zzcj.zza(5, "All products must have the same package name.");
+            }
+        }
+        Iterator it = hashSet2.iterator();
+        while (it.hasNext()) {
+            String str = (String) it.next();
+            if (hashSet.contains(str)) {
+                return zzcj.zza(5, String.format("OldProductId must not be one of the products to be purchased. Invalid old product id: %s.", str));
+            }
+        }
+        ProductDetails.OneTimePurchaseOfferDetails oneTimePurchaseOfferDetails = productDetailsParams.zza().getOneTimePurchaseOfferDetails();
+        return (oneTimePurchaseOfferDetails == null || oneTimePurchaseOfferDetails.zza() == null) ? zzcj.zzl : zzcj.zza(5, "Both autoPayDetails and autoPayBalanceThreshold is required for constructing ProductDetailsParams for autopay.");
     }
 
     public final String zzc() {
@@ -277,11 +316,11 @@ public class BillingFlowParams {
     }
 
     public final String zze() {
-        return this.zzd.zzd();
+        return this.zzd.zzc();
     }
 
     public final String zzf() {
-        return this.zzd.zze();
+        return this.zzd.zzd();
     }
 
     public final ArrayList zzg() {
@@ -299,6 +338,26 @@ public class BillingFlowParams {
     }
 
     final boolean zzq() {
-        return (this.zzb == null && this.zzc == null && this.zzd.zze() == null && this.zzd.zza() == 0 && this.zzd.zzb() == 0 && !this.zza && !this.zzg) ? false : true;
+        return (this.zzb == null && this.zzc == null && this.zzd.zzd() == null && this.zzd.zza() == 0 && !Collection.-EL.stream(this.zze).anyMatch(new Predicate() { // from class: com.android.billingclient.api.zzcd
+            @Override // j$.util.function.Predicate
+            public /* synthetic */ Predicate and(Predicate predicate) {
+                return Predicate.-CC.$default$and(this, predicate);
+            }
+
+            @Override // j$.util.function.Predicate
+            public /* synthetic */ Predicate negate() {
+                return Predicate.-CC.$default$negate(this);
+            }
+
+            @Override // j$.util.function.Predicate
+            public /* synthetic */ Predicate or(Predicate predicate) {
+                return Predicate.-CC.$default$or(this, predicate);
+            }
+
+            @Override // j$.util.function.Predicate
+            public final boolean test(Object obj) {
+                return false;
+            }
+        }) && !this.zza && !this.zzg) ? false : true;
     }
 }

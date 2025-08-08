@@ -9,7 +9,7 @@ import androidx.core.graphics.ColorUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class MsgClockDrawable extends Drawable {
     private int alpha;
     private int color;
@@ -17,6 +17,15 @@ public class MsgClockDrawable extends Drawable {
     private Drawable.ConstantState constantState;
     private Paint paint;
     private long startTime;
+
+    @Override // android.graphics.drawable.Drawable
+    public int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setColorFilter(ColorFilter colorFilter) {
+    }
 
     public MsgClockDrawable() {
         Paint paint = new Paint(1);
@@ -44,6 +53,33 @@ public class MsgClockDrawable extends Drawable {
         canvas.restore();
     }
 
+    public void setColor(int i) {
+        if (i != this.color) {
+            int alpha = Color.alpha(i);
+            this.colorAlpha = alpha;
+            this.paint.setColor(ColorUtils.setAlphaComponent(i, (int) (this.alpha * (alpha / 255.0f))));
+        }
+        this.color = i;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int getIntrinsicHeight() {
+        return AndroidUtilities.dp(12.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int getIntrinsicWidth() {
+        return AndroidUtilities.dp(12.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setAlpha(int i) {
+        if (this.alpha != i) {
+            this.alpha = i;
+            this.paint.setAlpha((int) (i * (this.colorAlpha / 255.0f)));
+        }
+    }
+
     @Override // android.graphics.drawable.Drawable
     public Drawable.ConstantState getConstantState() {
         if (this.constantState == null) {
@@ -60,41 +96,5 @@ public class MsgClockDrawable extends Drawable {
             };
         }
         return this.constantState;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int getIntrinsicHeight() {
-        return AndroidUtilities.dp(12.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int getIntrinsicWidth() {
-        return AndroidUtilities.dp(12.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setAlpha(int i) {
-        if (this.alpha != i) {
-            this.alpha = i;
-            this.paint.setAlpha((int) (i * (this.colorAlpha / 255.0f)));
-        }
-    }
-
-    public void setColor(int i) {
-        if (i != this.color) {
-            int alpha = Color.alpha(i);
-            this.colorAlpha = alpha;
-            this.paint.setColor(ColorUtils.setAlphaComponent(i, (int) (this.alpha * (alpha / 255.0f))));
-        }
-        this.color = i;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setColorFilter(ColorFilter colorFilter) {
     }
 }

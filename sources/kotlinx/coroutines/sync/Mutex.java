@@ -2,8 +2,13 @@ package kotlinx.coroutines.sync;
 
 import kotlin.coroutines.Continuation;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public interface Mutex {
+    boolean isLocked();
+
+    Object lock(Object obj, Continuation continuation);
+
+    void unlock(Object obj);
 
     public static final class DefaultImpls {
         public static /* synthetic */ void unlock$default(Mutex mutex, Object obj, int i, Object obj2) {
@@ -16,10 +21,4 @@ public interface Mutex {
             mutex.unlock(obj);
         }
     }
-
-    boolean isLocked();
-
-    Object lock(Object obj, Continuation continuation);
-
-    void unlock(Object obj);
 }

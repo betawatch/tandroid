@@ -22,6 +22,10 @@ public final class ParsingLoadable implements Loader.Loadable {
         Object parse(Uri uri, InputStream inputStream);
     }
 
+    @Override // com.google.android.exoplayer2.upstream.Loader.Loadable
+    public final void cancelLoad() {
+    }
+
     public ParsingLoadable(DataSource dataSource, Uri uri, int i, Parser parser) {
         this(dataSource, new DataSpec.Builder().setUri(uri).setFlags(1).build(), i, parser);
     }
@@ -34,24 +38,20 @@ public final class ParsingLoadable implements Loader.Loadable {
         this.loadTaskId = LoadEventInfo.getNewId();
     }
 
-    public long bytesLoaded() {
-        return this.dataSource.getBytesRead();
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.Loader.Loadable
-    public final void cancelLoad() {
-    }
-
-    public Map getResponseHeaders() {
-        return this.dataSource.getLastResponseHeaders();
-    }
-
     public final Object getResult() {
         return this.result;
     }
 
+    public long bytesLoaded() {
+        return this.dataSource.getBytesRead();
+    }
+
     public Uri getUri() {
         return this.dataSource.getLastOpenedUri();
+    }
+
+    public Map getResponseHeaders() {
+        return this.dataSource.getLastResponseHeaders();
     }
 
     @Override // com.google.android.exoplayer2.upstream.Loader.Loadable

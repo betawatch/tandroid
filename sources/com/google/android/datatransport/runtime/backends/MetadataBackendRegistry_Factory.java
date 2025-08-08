@@ -14,16 +14,16 @@ public final class MetadataBackendRegistry_Factory implements Factory {
         this.creationContextFactoryProvider = provider2;
     }
 
+    @Override // javax.inject.Provider
+    public MetadataBackendRegistry get() {
+        return newInstance((Context) this.applicationContextProvider.get(), this.creationContextFactoryProvider.get());
+    }
+
     public static MetadataBackendRegistry_Factory create(Provider provider, Provider provider2) {
         return new MetadataBackendRegistry_Factory(provider, provider2);
     }
 
     public static MetadataBackendRegistry newInstance(Context context, Object obj) {
         return new MetadataBackendRegistry(context, (CreationContextFactory) obj);
-    }
-
-    @Override // javax.inject.Provider
-    public MetadataBackendRegistry get() {
-        return newInstance((Context) this.applicationContextProvider.get(), this.creationContextFactoryProvider.get());
     }
 }

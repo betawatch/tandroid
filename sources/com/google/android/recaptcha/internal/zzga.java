@@ -4,6 +4,31 @@ import java.math.RoundingMode;
 
 /* loaded from: classes.dex */
 public final class zzga {
+    public static int zzb(int i, RoundingMode roundingMode) {
+        if (i <= 0) {
+            throw new IllegalArgumentException("x (0) must be > 0");
+        }
+        switch (zzfz.zza[roundingMode.ordinal()]) {
+            case 1:
+                zzgc.zzb(((i + (-1)) & i) == 0);
+                break;
+            case 2:
+            case 3:
+                break;
+            case 4:
+            case 5:
+                return 32 - Integer.numberOfLeadingZeros(i - 1);
+            case 6:
+            case 7:
+            case 8:
+                int numberOfLeadingZeros = Integer.numberOfLeadingZeros(i);
+                return (31 - numberOfLeadingZeros) + ((((-1257966797) >>> numberOfLeadingZeros) - i) >>> 31);
+            default:
+                throw new AssertionError();
+        }
+        return 31 - Integer.numberOfLeadingZeros(i);
+    }
+
     /* JADX WARN: Code restructure failed: missing block: B:18:0x003e, code lost:
     
         if (((r0 & 1) & (r7 != java.math.RoundingMode.HALF_EVEN ? 0 : 1)) != 0) goto L27;
@@ -60,30 +85,5 @@ public final class zzga {
             }
         }
         return i3;
-    }
-
-    public static int zzb(int i, RoundingMode roundingMode) {
-        if (i <= 0) {
-            throw new IllegalArgumentException("x (0) must be > 0");
-        }
-        switch (zzfz.zza[roundingMode.ordinal()]) {
-            case 1:
-                zzgc.zzb(((i + (-1)) & i) == 0);
-                break;
-            case 2:
-            case 3:
-                break;
-            case 4:
-            case 5:
-                return 32 - Integer.numberOfLeadingZeros(i - 1);
-            case 6:
-            case 7:
-            case 8:
-                int numberOfLeadingZeros = Integer.numberOfLeadingZeros(i);
-                return (31 - numberOfLeadingZeros) + ((((-1257966797) >>> numberOfLeadingZeros) - i) >>> 31);
-            default:
-                throw new AssertionError();
-        }
-        return 31 - Integer.numberOfLeadingZeros(i);
     }
 }

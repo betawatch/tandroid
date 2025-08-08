@@ -11,28 +11,48 @@ public final class ParsableNalUnitBitArray {
         reset(bArr, i, i2);
     }
 
-    private void assertValidOffset() {
-        int i;
-        int i2 = this.byteOffset;
-        Assertions.checkState(i2 >= 0 && (i2 < (i = this.byteLimit) || (i2 == i && this.bitOffset == 0)));
+    public void reset(byte[] bArr, int i, int i2) {
+        this.data = bArr;
+        this.byteOffset = i;
+        this.byteLimit = i2;
+        this.bitOffset = 0;
+        assertValidOffset();
     }
 
-    private int readExpGolombCodeNum() {
-        int i = 0;
-        while (!readBit()) {
-            i++;
+    public void skipBit() {
+        int i = this.bitOffset + 1;
+        this.bitOffset = i;
+        if (i == 8) {
+            this.bitOffset = 0;
+            int i2 = this.byteOffset;
+            this.byteOffset = i2 + (shouldSkipByte(i2 + 1) ? 2 : 1);
         }
-        return ((1 << i) - 1) + (i > 0 ? readBits(i) : 0);
+        assertValidOffset();
     }
 
-    private boolean shouldSkipByte(int i) {
-        if (2 <= i && i < this.byteLimit) {
-            byte[] bArr = this.data;
-            if (bArr[i] == 3 && bArr[i - 2] == 0 && bArr[i - 1] == 0) {
-                return true;
+    public void skipBits(int i) {
+        int i2 = this.byteOffset;
+        int i3 = i / 8;
+        int i4 = i2 + i3;
+        this.byteOffset = i4;
+        int i5 = this.bitOffset + (i - (i3 * 8));
+        this.bitOffset = i5;
+        if (i5 > 7) {
+            this.byteOffset = i4 + 1;
+            this.bitOffset = i5 - 8;
+        }
+        while (true) {
+            i2++;
+            if (i2 <= this.byteOffset) {
+                if (shouldSkipByte(i2)) {
+                    this.byteOffset++;
+                    i2 += 2;
+                }
+            } else {
+                assertValidOffset();
+                return;
             }
         }
-        return false;
     }
 
     public boolean canReadBits(int i) {
@@ -58,19 +78,6 @@ public final class ParsableNalUnitBitArray {
         }
         int i7 = this.byteLimit;
         return i4 < i7 || (i4 == i7 && i5 == 0);
-    }
-
-    public boolean canReadExpGolombCodedNum() {
-        int i = this.byteOffset;
-        int i2 = this.bitOffset;
-        int i3 = 0;
-        while (this.byteOffset < this.byteLimit && !readBit()) {
-            i3++;
-        }
-        boolean z = this.byteOffset == this.byteLimit;
-        this.byteOffset = i;
-        this.bitOffset = i2;
-        return !z && canReadBits((i3 * 2) + 1);
     }
 
     public boolean readBit() {
@@ -109,54 +116,49 @@ public final class ParsableNalUnitBitArray {
         return i7;
     }
 
-    public int readSignedExpGolombCodedInt() {
-        int readExpGolombCodeNum = readExpGolombCodeNum();
-        return (readExpGolombCodeNum % 2 == 0 ? -1 : 1) * ((readExpGolombCodeNum + 1) / 2);
+    public boolean canReadExpGolombCodedNum() {
+        int i = this.byteOffset;
+        int i2 = this.bitOffset;
+        int i3 = 0;
+        while (this.byteOffset < this.byteLimit && !readBit()) {
+            i3++;
+        }
+        boolean z = this.byteOffset == this.byteLimit;
+        this.byteOffset = i;
+        this.bitOffset = i2;
+        return !z && canReadBits((i3 * 2) + 1);
     }
 
     public int readUnsignedExpGolombCodedInt() {
         return readExpGolombCodeNum();
     }
 
-    public void reset(byte[] bArr, int i, int i2) {
-        this.data = bArr;
-        this.byteOffset = i;
-        this.byteLimit = i2;
-        this.bitOffset = 0;
-        assertValidOffset();
+    public int readSignedExpGolombCodedInt() {
+        int readExpGolombCodeNum = readExpGolombCodeNum();
+        return (readExpGolombCodeNum % 2 == 0 ? -1 : 1) * ((readExpGolombCodeNum + 1) / 2);
     }
 
-    public void skipBit() {
-        int i = this.bitOffset + 1;
-        this.bitOffset = i;
-        if (i == 8) {
-            this.bitOffset = 0;
-            int i2 = this.byteOffset;
-            this.byteOffset = i2 + (shouldSkipByte(i2 + 1) ? 2 : 1);
+    private int readExpGolombCodeNum() {
+        int i = 0;
+        while (!readBit()) {
+            i++;
         }
-        assertValidOffset();
+        return ((1 << i) - 1) + (i > 0 ? readBits(i) : 0);
     }
 
-    public void skipBits(int i) {
-        int i2 = this.byteOffset;
-        int i3 = i / 8;
-        int i4 = i2 + i3;
-        this.byteOffset = i4;
-        int i5 = this.bitOffset + (i - (i3 * 8));
-        this.bitOffset = i5;
-        if (i5 > 7) {
-            this.byteOffset = i4 + 1;
-            this.bitOffset = i5 - 8;
-        }
-        while (true) {
-            i2++;
-            if (i2 > this.byteOffset) {
-                assertValidOffset();
-                return;
-            } else if (shouldSkipByte(i2)) {
-                this.byteOffset++;
-                i2 += 2;
+    private boolean shouldSkipByte(int i) {
+        if (2 <= i && i < this.byteLimit) {
+            byte[] bArr = this.data;
+            if (bArr[i] == 3 && bArr[i - 2] == 0 && bArr[i - 1] == 0) {
+                return true;
             }
         }
+        return false;
+    }
+
+    private void assertValidOffset() {
+        int i;
+        int i2 = this.byteOffset;
+        Assertions.checkState(i2 >= 0 && (i2 < (i = this.byteLimit) || (i2 == i && this.bitOffset == 0)));
     }
 }

@@ -15,21 +15,23 @@ abstract class zzj extends zzk {
     private final void zzb(int i) {
         Object[] objArr = this.zza;
         int length = objArr.length;
-        if (length < i) {
-            int i2 = length + (length >> 1) + 1;
-            if (i2 < i) {
-                int highestOneBit = Integer.highestOneBit(i - 1);
-                i2 = highestOneBit + highestOneBit;
+        if (length >= i) {
+            if (this.zzc) {
+                this.zza = (Object[]) objArr.clone();
+                this.zzc = false;
+                return;
             }
-            if (i2 < 0) {
-                i2 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-            }
-            this.zza = Arrays.copyOf(objArr, i2);
-        } else if (!this.zzc) {
             return;
-        } else {
-            this.zza = (Object[]) objArr.clone();
         }
+        int i2 = length + (length >> 1) + 1;
+        if (i2 < i) {
+            int highestOneBit = Integer.highestOneBit(i - 1);
+            i2 = highestOneBit + highestOneBit;
+        }
+        if (i2 < 0) {
+            i2 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        }
+        this.zza = Arrays.copyOf(objArr, i2);
         this.zzc = false;
     }
 

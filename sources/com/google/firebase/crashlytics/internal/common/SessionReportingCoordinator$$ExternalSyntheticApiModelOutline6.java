@@ -1,5 +1,5 @@
 package com.google.firebase.crashlytics.internal.common;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract /* synthetic */ class SessionReportingCoordinator$$ExternalSyntheticApiModelOutline6 {
 }

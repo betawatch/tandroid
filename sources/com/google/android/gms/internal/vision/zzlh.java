@@ -20,6 +20,10 @@ abstract class zzlh extends AbstractMap {
     private Map zzf;
     private volatile zzli zzg;
 
+    static zzlh zza(int i) {
+        return new zzlg(i);
+    }
+
     private zzlh(int i) {
         this.zza = i;
         this.zzb = Collections.emptyList();
@@ -27,8 +31,129 @@ abstract class zzlh extends AbstractMap {
         this.zzf = Collections.emptyMap();
     }
 
-    /* synthetic */ zzlh(int i, zzlg zzlgVar) {
-        this(i);
+    public void zza() {
+        Map unmodifiableMap;
+        Map unmodifiableMap2;
+        if (this.zzd) {
+            return;
+        }
+        if (this.zzc.isEmpty()) {
+            unmodifiableMap = Collections.emptyMap();
+        } else {
+            unmodifiableMap = Collections.unmodifiableMap(this.zzc);
+        }
+        this.zzc = unmodifiableMap;
+        if (this.zzf.isEmpty()) {
+            unmodifiableMap2 = Collections.emptyMap();
+        } else {
+            unmodifiableMap2 = Collections.unmodifiableMap(this.zzf);
+        }
+        this.zzf = unmodifiableMap2;
+        this.zzd = true;
+    }
+
+    public final boolean zzb() {
+        return this.zzd;
+    }
+
+    public final int zzc() {
+        return this.zzb.size();
+    }
+
+    public final Map.Entry zzb(int i) {
+        return (Map.Entry) this.zzb.get(i);
+    }
+
+    public final Iterable zzd() {
+        if (this.zzc.isEmpty()) {
+            return zzll.zza();
+        }
+        return this.zzc.entrySet();
+    }
+
+    @Override // java.util.AbstractMap, java.util.Map
+    public int size() {
+        return this.zzb.size() + this.zzc.size();
+    }
+
+    @Override // java.util.AbstractMap, java.util.Map
+    public boolean containsKey(Object obj) {
+        Comparable comparable = (Comparable) obj;
+        return zza(comparable) >= 0 || this.zzc.containsKey(comparable);
+    }
+
+    @Override // java.util.AbstractMap, java.util.Map
+    public Object get(Object obj) {
+        Comparable comparable = (Comparable) obj;
+        int zza = zza(comparable);
+        if (zza >= 0) {
+            return ((zzlm) this.zzb.get(zza)).getValue();
+        }
+        return this.zzc.get(comparable);
+    }
+
+    @Override // java.util.AbstractMap, java.util.Map
+    /* renamed from: zza, reason: merged with bridge method [inline-methods] */
+    public final Object put(Comparable comparable, Object obj) {
+        zzf();
+        int zza = zza(comparable);
+        if (zza >= 0) {
+            return ((zzlm) this.zzb.get(zza)).setValue(obj);
+        }
+        zzf();
+        if (this.zzb.isEmpty() && !(this.zzb instanceof ArrayList)) {
+            this.zzb = new ArrayList(this.zza);
+        }
+        int i = -(zza + 1);
+        if (i >= this.zza) {
+            return zzg().put(comparable, obj);
+        }
+        int size = this.zzb.size();
+        int i2 = this.zza;
+        if (size == i2) {
+            zzlm zzlmVar = (zzlm) this.zzb.remove(i2 - 1);
+            zzg().put((Comparable) zzlmVar.getKey(), zzlmVar.getValue());
+        }
+        this.zzb.add(i, new zzlm(this, comparable, obj));
+        return null;
+    }
+
+    @Override // java.util.AbstractMap, java.util.Map
+    public void clear() {
+        zzf();
+        if (!this.zzb.isEmpty()) {
+            this.zzb.clear();
+        }
+        if (this.zzc.isEmpty()) {
+            return;
+        }
+        this.zzc.clear();
+    }
+
+    @Override // java.util.AbstractMap, java.util.Map
+    public Object remove(Object obj) {
+        zzf();
+        Comparable comparable = (Comparable) obj;
+        int zza = zza(comparable);
+        if (zza >= 0) {
+            return zzc(zza);
+        }
+        if (this.zzc.isEmpty()) {
+            return null;
+        }
+        return this.zzc.remove(comparable);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final Object zzc(int i) {
+        zzf();
+        Object value = ((zzlm) this.zzb.remove(i)).getValue();
+        if (!this.zzc.isEmpty()) {
+            Iterator it = zzg().entrySet().iterator();
+            this.zzb.add(new zzlm(this, (Map.Entry) it.next()));
+            it.remove();
+        }
+        return value;
     }
 
     private final int zza(Comparable comparable) {
@@ -62,20 +187,19 @@ abstract class zzlh extends AbstractMap {
         return -i;
     }
 
-    static zzlh zza(int i) {
-        return new zzlg(i);
+    @Override // java.util.AbstractMap, java.util.Map
+    public Set entrySet() {
+        if (this.zze == null) {
+            this.zze = new zzlo(this, null);
+        }
+        return this.zze;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public final Object zzc(int i) {
-        zzf();
-        Object value = ((zzlm) this.zzb.remove(i)).getValue();
-        if (!this.zzc.isEmpty()) {
-            Iterator it = zzg().entrySet().iterator();
-            this.zzb.add(new zzlm(this, (Map.Entry) it.next()));
-            it.remove();
+    final Set zze() {
+        if (this.zzg == null) {
+            this.zzg = new zzli(this, null);
         }
-        return value;
+        return this.zzg;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -93,32 +217,6 @@ abstract class zzlh extends AbstractMap {
             this.zzf = treeMap.descendingMap();
         }
         return (SortedMap) this.zzc;
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
-    public void clear() {
-        zzf();
-        if (!this.zzb.isEmpty()) {
-            this.zzb.clear();
-        }
-        if (this.zzc.isEmpty()) {
-            return;
-        }
-        this.zzc.clear();
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
-    public boolean containsKey(Object obj) {
-        Comparable comparable = (Comparable) obj;
-        return zza(comparable) >= 0 || this.zzc.containsKey(comparable);
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
-    public Set entrySet() {
-        if (this.zze == null) {
-            this.zze = new zzlo(this, null);
-        }
-        return this.zze;
     }
 
     @Override // java.util.AbstractMap, java.util.Map
@@ -150,13 +248,6 @@ abstract class zzlh extends AbstractMap {
     }
 
     @Override // java.util.AbstractMap, java.util.Map
-    public Object get(Object obj) {
-        Comparable comparable = (Comparable) obj;
-        int zza = zza(comparable);
-        return zza >= 0 ? ((zzlm) this.zzb.get(zza)).getValue() : this.zzc.get(comparable);
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
     public int hashCode() {
         int zzc = zzc();
         int i = 0;
@@ -166,80 +257,7 @@ abstract class zzlh extends AbstractMap {
         return this.zzc.size() > 0 ? i + this.zzc.hashCode() : i;
     }
 
-    @Override // java.util.AbstractMap, java.util.Map
-    public Object remove(Object obj) {
-        zzf();
-        Comparable comparable = (Comparable) obj;
-        int zza = zza(comparable);
-        if (zza >= 0) {
-            return zzc(zza);
-        }
-        if (this.zzc.isEmpty()) {
-            return null;
-        }
-        return this.zzc.remove(comparable);
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
-    public int size() {
-        return this.zzb.size() + this.zzc.size();
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
-    /* renamed from: zza, reason: merged with bridge method [inline-methods] */
-    public final Object put(Comparable comparable, Object obj) {
-        zzf();
-        int zza = zza(comparable);
-        if (zza >= 0) {
-            return ((zzlm) this.zzb.get(zza)).setValue(obj);
-        }
-        zzf();
-        if (this.zzb.isEmpty() && !(this.zzb instanceof ArrayList)) {
-            this.zzb = new ArrayList(this.zza);
-        }
-        int i = -(zza + 1);
-        if (i >= this.zza) {
-            return zzg().put(comparable, obj);
-        }
-        int size = this.zzb.size();
-        int i2 = this.zza;
-        if (size == i2) {
-            zzlm zzlmVar = (zzlm) this.zzb.remove(i2 - 1);
-            zzg().put((Comparable) zzlmVar.getKey(), zzlmVar.getValue());
-        }
-        this.zzb.add(i, new zzlm(this, comparable, obj));
-        return null;
-    }
-
-    public void zza() {
-        if (this.zzd) {
-            return;
-        }
-        this.zzc = this.zzc.isEmpty() ? Collections.emptyMap() : Collections.unmodifiableMap(this.zzc);
-        this.zzf = this.zzf.isEmpty() ? Collections.emptyMap() : Collections.unmodifiableMap(this.zzf);
-        this.zzd = true;
-    }
-
-    public final Map.Entry zzb(int i) {
-        return (Map.Entry) this.zzb.get(i);
-    }
-
-    public final boolean zzb() {
-        return this.zzd;
-    }
-
-    public final int zzc() {
-        return this.zzb.size();
-    }
-
-    public final Iterable zzd() {
-        return this.zzc.isEmpty() ? zzll.zza() : this.zzc.entrySet();
-    }
-
-    final Set zze() {
-        if (this.zzg == null) {
-            this.zzg = new zzli(this, null);
-        }
-        return this.zzg;
+    /* synthetic */ zzlh(int i, zzlg zzlgVar) {
+        this(i);
     }
 }

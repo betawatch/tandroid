@@ -28,29 +28,9 @@ public abstract class Ac4Util {
         }
     }
 
-    public static void getAc4SampleHeader(int i, ParsableByteArray parsableByteArray) {
-        parsableByteArray.reset(7);
-        byte[] data = parsableByteArray.getData();
-        data[0] = -84;
-        data[1] = 64;
-        data[2] = -1;
-        data[3] = -1;
-        data[4] = (byte) ((i >> 16) & NotificationCenter.goingToPreviewTheme);
-        data[5] = (byte) ((i >> 8) & NotificationCenter.goingToPreviewTheme);
-        data[6] = (byte) (i & NotificationCenter.goingToPreviewTheme);
-    }
-
     public static Format parseAc4AnnexEFormat(ParsableByteArray parsableByteArray, String str, String str2, DrmInitData drmInitData) {
         parsableByteArray.skipBytes(1);
         return new Format.Builder().setId(str).setSampleMimeType("audio/ac4").setChannelCount(2).setSampleRate(((parsableByteArray.readUnsignedByte() & 32) >> 5) == 1 ? 48000 : 44100).setDrmInitData(drmInitData).setLanguage(str2).build();
-    }
-
-    public static int parseAc4SyncframeAudioSampleCount(ByteBuffer byteBuffer) {
-        byte[] bArr = new byte[16];
-        int position = byteBuffer.position();
-        byteBuffer.get(bArr);
-        byteBuffer.position(position);
-        return parseAc4SyncframeInfo(new ParsableBitArray(bArr)).sampleCount;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:37:0x0084, code lost:
@@ -146,6 +126,26 @@ public abstract class Ac4Util {
             i2 += 2;
         }
         return i3 + i2;
+    }
+
+    public static int parseAc4SyncframeAudioSampleCount(ByteBuffer byteBuffer) {
+        byte[] bArr = new byte[16];
+        int position = byteBuffer.position();
+        byteBuffer.get(bArr);
+        byteBuffer.position(position);
+        return parseAc4SyncframeInfo(new ParsableBitArray(bArr)).sampleCount;
+    }
+
+    public static void getAc4SampleHeader(int i, ParsableByteArray parsableByteArray) {
+        parsableByteArray.reset(7);
+        byte[] data = parsableByteArray.getData();
+        data[0] = -84;
+        data[1] = 64;
+        data[2] = -1;
+        data[3] = -1;
+        data[4] = (byte) ((i >> 16) & NotificationCenter.goingToPreviewTheme);
+        data[5] = (byte) ((i >> 8) & NotificationCenter.goingToPreviewTheme);
+        data[6] = (byte) (i & NotificationCenter.goingToPreviewTheme);
     }
 
     private static int readVariableBits(ParsableBitArray parsableBitArray, int i) {

@@ -6,10 +6,54 @@ import java.util.List;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class ManagedErrorLog extends AbstractErrorLog {
     private Exception exception;
     private List threads;
+
+    @Override // com.microsoft.appcenter.ingestion.models.Log
+    public String getType() {
+        return "managedError";
+    }
+
+    public Exception getException() {
+        return this.exception;
+    }
+
+    public void setException(Exception exception) {
+        this.exception = exception;
+    }
+
+    public List getThreads() {
+        return this.threads;
+    }
+
+    public void setThreads(List list) {
+        this.threads = list;
+    }
+
+    @Override // com.microsoft.appcenter.crashes.ingestion.models.AbstractErrorLog, com.microsoft.appcenter.ingestion.models.AbstractLog, com.microsoft.appcenter.ingestion.models.Model
+    public void read(JSONObject jSONObject) {
+        super.read(jSONObject);
+        if (jSONObject.has("exception")) {
+            JSONObject jSONObject2 = jSONObject.getJSONObject("exception");
+            Exception exception = new Exception();
+            exception.read(jSONObject2);
+            setException(exception);
+        }
+        setThreads(JSONUtils.readArray(jSONObject, "threads", ThreadFactory.getInstance()));
+    }
+
+    @Override // com.microsoft.appcenter.crashes.ingestion.models.AbstractErrorLog, com.microsoft.appcenter.ingestion.models.AbstractLog, com.microsoft.appcenter.ingestion.models.Model
+    public void write(JSONStringer jSONStringer) {
+        super.write(jSONStringer);
+        if (getException() != null) {
+            jSONStringer.key("exception").object();
+            this.exception.write(jSONStringer);
+            jSONStringer.endObject();
+        }
+        JSONUtils.writeArray(jSONStringer, "threads", getThreads());
+    }
 
     @Override // com.microsoft.appcenter.crashes.ingestion.models.AbstractErrorLog, com.microsoft.appcenter.ingestion.models.AbstractLog
     public boolean equals(Object obj) {
@@ -29,19 +73,6 @@ public class ManagedErrorLog extends AbstractErrorLog {
         return list != null ? list.equals(list2) : list2 == null;
     }
 
-    public Exception getException() {
-        return this.exception;
-    }
-
-    public List getThreads() {
-        return this.threads;
-    }
-
-    @Override // com.microsoft.appcenter.ingestion.models.Log
-    public String getType() {
-        return "managedError";
-    }
-
     @Override // com.microsoft.appcenter.crashes.ingestion.models.AbstractErrorLog, com.microsoft.appcenter.ingestion.models.AbstractLog
     public int hashCode() {
         int hashCode = super.hashCode() * 31;
@@ -49,36 +80,5 @@ public class ManagedErrorLog extends AbstractErrorLog {
         int hashCode2 = (hashCode + (exception != null ? exception.hashCode() : 0)) * 31;
         List list = this.threads;
         return hashCode2 + (list != null ? list.hashCode() : 0);
-    }
-
-    @Override // com.microsoft.appcenter.crashes.ingestion.models.AbstractErrorLog, com.microsoft.appcenter.ingestion.models.AbstractLog, com.microsoft.appcenter.ingestion.models.Model
-    public void read(JSONObject jSONObject) {
-        super.read(jSONObject);
-        if (jSONObject.has("exception")) {
-            JSONObject jSONObject2 = jSONObject.getJSONObject("exception");
-            Exception exception = new Exception();
-            exception.read(jSONObject2);
-            setException(exception);
-        }
-        setThreads(JSONUtils.readArray(jSONObject, "threads", ThreadFactory.getInstance()));
-    }
-
-    public void setException(Exception exception) {
-        this.exception = exception;
-    }
-
-    public void setThreads(List list) {
-        this.threads = list;
-    }
-
-    @Override // com.microsoft.appcenter.crashes.ingestion.models.AbstractErrorLog, com.microsoft.appcenter.ingestion.models.AbstractLog, com.microsoft.appcenter.ingestion.models.Model
-    public void write(JSONStringer jSONStringer) {
-        super.write(jSONStringer);
-        if (getException() != null) {
-            jSONStringer.key("exception").object();
-            this.exception.write(jSONStringer);
-            jSONStringer.endObject();
-        }
-        JSONUtils.writeArray(jSONStringer, "threads", getThreads());
     }
 }

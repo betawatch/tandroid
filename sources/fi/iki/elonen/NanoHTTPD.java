@@ -1,6 +1,6 @@
 package fi.iki.elonen;
 
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import j$.util.DesugarTimeZone;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -43,7 +43,7 @@ import java.util.zip.GZIPOutputStream;
 import javax.net.ssl.SSLException;
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class NanoHTTPD {
     protected AsyncRunner asyncRunner;
     private final String hostname;
@@ -64,6 +64,28 @@ public abstract class NanoHTTPD {
 
         void exec(ClientHandler clientHandler);
     }
+
+    public interface IHTTPSession {
+        Map getHeaders();
+
+        Method getMethod();
+
+        String getUri();
+    }
+
+    public interface ServerSocketFactory {
+        ServerSocket create();
+    }
+
+    public interface TempFileManager {
+        void clear();
+    }
+
+    public interface TempFileManagerFactory {
+        TempFileManager create();
+    }
+
+    public abstract Response serve(IHTTPSession iHTTPSession);
 
     public class ClientHandler implements Runnable {
         private final Socket acceptSocket;
@@ -103,55 +125,6 @@ public abstract class NanoHTTPD {
         }
     }
 
-    protected static class ContentType {
-        private final String boundary;
-        private final String contentType;
-        private final String contentTypeHeader;
-        private final String encoding;
-        private static final Pattern MIME_PATTERN = Pattern.compile("[ |\t]*([^/^ ^;^,]+/[^ ^;^,]+)", 2);
-        private static final Pattern CHARSET_PATTERN = Pattern.compile("[ |\t]*(charset)[ |\t]*=[ |\t]*['|\"]?([^\"^'^;^,]*)['|\"]?", 2);
-        private static final Pattern BOUNDARY_PATTERN = Pattern.compile("[ |\t]*(boundary)[ |\t]*=[ |\t]*['|\"]?([^\"^'^;^,]*)['|\"]?", 2);
-
-        public ContentType(String str) {
-            String str2;
-            this.contentTypeHeader = str;
-            if (str != null) {
-                this.contentType = getDetailFromContentHeader(str, MIME_PATTERN, "", 1);
-                str2 = getDetailFromContentHeader(str, CHARSET_PATTERN, null, 2);
-            } else {
-                this.contentType = "";
-                str2 = "UTF-8";
-            }
-            this.encoding = str2;
-            if ("multipart/form-data".equalsIgnoreCase(this.contentType)) {
-                this.boundary = getDetailFromContentHeader(str, BOUNDARY_PATTERN, null, 2);
-            } else {
-                this.boundary = null;
-            }
-        }
-
-        private String getDetailFromContentHeader(String str, Pattern pattern, String str2, int i) {
-            Matcher matcher = pattern.matcher(str);
-            return matcher.find() ? matcher.group(i) : str2;
-        }
-
-        public String getContentTypeHeader() {
-            return this.contentTypeHeader;
-        }
-
-        public String getEncoding() {
-            String str = this.encoding;
-            return str == null ? "US-ASCII" : str;
-        }
-
-        public ContentType tryUTF8() {
-            if (this.encoding != null) {
-                return this;
-            }
-            return new ContentType(this.contentTypeHeader + "; charset=UTF-8");
-        }
-    }
-
     public class CookieHandler implements Iterable {
         private final HashMap cookies = new HashMap();
         private final ArrayList queue = new ArrayList();
@@ -176,7 +149,7 @@ public abstract class NanoHTTPD {
         public void unloadQueue(Response response) {
             Iterator it = this.queue.iterator();
             if (it.hasNext()) {
-                ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
+                WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
                 throw null;
             }
         }
@@ -210,13 +183,6 @@ public abstract class NanoHTTPD {
         }
     }
 
-    public static class DefaultServerSocketFactory implements ServerSocketFactory {
-        @Override // fi.iki.elonen.NanoHTTPD.ServerSocketFactory
-        public ServerSocket create() {
-            return new ServerSocket();
-        }
-    }
-
     public static class DefaultTempFileManager implements TempFileManager {
         private final List tempFiles;
         private final File tmpdir;
@@ -234,7 +200,7 @@ public abstract class NanoHTTPD {
         public void clear() {
             Iterator it = this.tempFiles.iterator();
             while (it.hasNext()) {
-                ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
+                WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
                 try {
                     throw null;
                 } catch (Exception e) {
@@ -252,6 +218,60 @@ public abstract class NanoHTTPD {
         @Override // fi.iki.elonen.NanoHTTPD.TempFileManagerFactory
         public TempFileManager create() {
             return new DefaultTempFileManager();
+        }
+    }
+
+    public static class DefaultServerSocketFactory implements ServerSocketFactory {
+        @Override // fi.iki.elonen.NanoHTTPD.ServerSocketFactory
+        public ServerSocket create() {
+            return new ServerSocket();
+        }
+    }
+
+    protected static class ContentType {
+        private final String boundary;
+        private final String contentType;
+        private final String contentTypeHeader;
+        private final String encoding;
+        private static final Pattern MIME_PATTERN = Pattern.compile("[ |\t]*([^/^ ^;^,]+/[^ ^;^,]+)", 2);
+        private static final Pattern CHARSET_PATTERN = Pattern.compile("[ |\t]*(charset)[ |\t]*=[ |\t]*['|\"]?([^\"^'^;^,]*)['|\"]?", 2);
+        private static final Pattern BOUNDARY_PATTERN = Pattern.compile("[ |\t]*(boundary)[ |\t]*=[ |\t]*['|\"]?([^\"^'^;^,]*)['|\"]?", 2);
+
+        public ContentType(String str) {
+            this.contentTypeHeader = str;
+            if (str != null) {
+                this.contentType = getDetailFromContentHeader(str, MIME_PATTERN, "", 1);
+                this.encoding = getDetailFromContentHeader(str, CHARSET_PATTERN, null, 2);
+            } else {
+                this.contentType = "";
+                this.encoding = "UTF-8";
+            }
+            if ("multipart/form-data".equalsIgnoreCase(this.contentType)) {
+                this.boundary = getDetailFromContentHeader(str, BOUNDARY_PATTERN, null, 2);
+            } else {
+                this.boundary = null;
+            }
+        }
+
+        private String getDetailFromContentHeader(String str, Pattern pattern, String str2, int i) {
+            Matcher matcher = pattern.matcher(str);
+            return matcher.find() ? matcher.group(i) : str2;
+        }
+
+        public String getContentTypeHeader() {
+            return this.contentTypeHeader;
+        }
+
+        public String getEncoding() {
+            String str = this.encoding;
+            return str == null ? "US-ASCII" : str;
+        }
+
+        public ContentType tryUTF8() {
+            if (this.encoding != null) {
+                return this;
+            }
+            return new ContentType(this.contentTypeHeader + "; charset=UTF-8");
         }
     }
 
@@ -309,15 +329,13 @@ public abstract class NanoHTTPD {
                     this.protocolVersion = "HTTP/1.1";
                     NanoHTTPD.LOG.log(Level.FINE, "no protocol version specified, strange. Assuming HTTP/1.1.");
                 }
-                while (true) {
-                    String readLine2 = bufferedReader.readLine();
-                    if (readLine2 == null || readLine2.trim().isEmpty()) {
-                        break;
-                    }
+                String readLine2 = bufferedReader.readLine();
+                while (readLine2 != null && !readLine2.trim().isEmpty()) {
                     int indexOf2 = readLine2.indexOf(58);
                     if (indexOf2 >= 0) {
                         map3.put(readLine2.substring(0, indexOf2).trim().toLowerCase(Locale.US), readLine2.substring(indexOf2 + 1).trim());
                     }
+                    readLine2 = bufferedReader.readLine();
                 }
                 map.put("uri", decodePercent);
             } catch (IOException e) {
@@ -353,27 +371,7 @@ public abstract class NanoHTTPD {
             }
         }
 
-        private int findHeaderEnd(byte[] bArr, int i) {
-            int i2;
-            int i3 = 0;
-            while (true) {
-                int i4 = i3 + 1;
-                if (i4 >= i) {
-                    return 0;
-                }
-                byte b = bArr[i3];
-                if (b == 13 && bArr[i4] == 10 && (i2 = i3 + 3) < i && bArr[i3 + 2] == 13 && bArr[i2] == 10) {
-                    return i3 + 4;
-                }
-                if (b == 10 && bArr[i4] == 10) {
-                    return i3 + 2;
-                }
-                i3 = i4;
-            }
-        }
-
         public void execute() {
-            OutputStream outputStream;
             byte[] bArr;
             boolean z;
             Response response = null;
@@ -389,17 +387,11 @@ public abstract class NanoHTTPD {
                                 this.inputStream.mark(8192);
                             } catch (ResponseException e) {
                                 NanoHTTPD.newFixedLengthResponse(e.getStatus(), "text/plain", e.getMessage()).send(this.outputStream);
-                                outputStream = this.outputStream;
-                                NanoHTTPD.safeClose(outputStream);
-                                NanoHTTPD.safeClose(response);
-                                this.tempFileManager.clear();
+                                NanoHTTPD.safeClose(this.outputStream);
                             }
                         } catch (IOException e2) {
                             NanoHTTPD.newFixedLengthResponse(Response.Status.INTERNAL_ERROR, "text/plain", "SERVER INTERNAL ERROR: IOException: " + e2.getMessage()).send(this.outputStream);
-                            outputStream = this.outputStream;
-                            NanoHTTPD.safeClose(outputStream);
-                            NanoHTTPD.safeClose(response);
-                            this.tempFileManager.clear();
+                            NanoHTTPD.safeClose(this.outputStream);
                         }
                     } catch (SocketTimeoutException e3) {
                         throw e3;
@@ -408,10 +400,7 @@ public abstract class NanoHTTPD {
                     throw e4;
                 } catch (SSLException e5) {
                     NanoHTTPD.newFixedLengthResponse(Response.Status.INTERNAL_ERROR, "text/plain", "SSL PROTOCOL FAILURE: " + e5.getMessage()).send(this.outputStream);
-                    outputStream = this.outputStream;
-                    NanoHTTPD.safeClose(outputStream);
-                    NanoHTTPD.safeClose(response);
-                    this.tempFileManager.clear();
+                    NanoHTTPD.safeClose(this.outputStream);
                 }
                 try {
                     int read = this.inputStream.read(bArr, 0, 8192);
@@ -492,6 +481,25 @@ public abstract class NanoHTTPD {
             }
         }
 
+        private int findHeaderEnd(byte[] bArr, int i) {
+            int i2;
+            int i3 = 0;
+            while (true) {
+                int i4 = i3 + 1;
+                if (i4 >= i) {
+                    return 0;
+                }
+                byte b = bArr[i3];
+                if (b == 13 && bArr[i4] == 10 && (i2 = i3 + 3) < i && bArr[i3 + 2] == 13 && bArr[i2] == 10) {
+                    return i3 + 4;
+                }
+                if (b == 10 && bArr[i4] == 10) {
+                    return i3 + 2;
+                }
+                i3 = i4;
+            }
+        }
+
         @Override // fi.iki.elonen.NanoHTTPD.IHTTPSession
         public final Map getHeaders() {
             return this.headers;
@@ -506,14 +514,6 @@ public abstract class NanoHTTPD {
         public final String getUri() {
             return this.uri;
         }
-    }
-
-    public interface IHTTPSession {
-        Map getHeaders();
-
-        Method getMethod();
-
-        String getUri();
     }
 
     public enum Method {
@@ -563,36 +563,6 @@ public abstract class NanoHTTPD {
             }
         };
         private final Map lowerCaseHeader = new HashMap();
-
-        private static class ChunkedOutputStream extends FilterOutputStream {
-            public ChunkedOutputStream(OutputStream outputStream) {
-                super(outputStream);
-            }
-
-            public void finish() {
-                ((FilterOutputStream) this).out.write("0\r\n\r\n".getBytes());
-            }
-
-            @Override // java.io.FilterOutputStream, java.io.OutputStream
-            public void write(int i) {
-                write(new byte[]{(byte) i}, 0, 1);
-            }
-
-            @Override // java.io.FilterOutputStream, java.io.OutputStream
-            public void write(byte[] bArr) {
-                write(bArr, 0, bArr.length);
-            }
-
-            @Override // java.io.FilterOutputStream, java.io.OutputStream
-            public void write(byte[] bArr, int i, int i2) {
-                if (i2 == 0) {
-                    return;
-                }
-                ((FilterOutputStream) this).out.write(String.format("%x\r\n", Integer.valueOf(i2)).getBytes());
-                ((FilterOutputStream) this).out.write(bArr, i, i2);
-                ((FilterOutputStream) this).out.write("\r\n".getBytes());
-            }
-        }
 
         public interface IStatus {
             String getDescription();
@@ -646,6 +616,36 @@ public abstract class NanoHTTPD {
             }
         }
 
+        private static class ChunkedOutputStream extends FilterOutputStream {
+            public ChunkedOutputStream(OutputStream outputStream) {
+                super(outputStream);
+            }
+
+            @Override // java.io.FilterOutputStream, java.io.OutputStream
+            public void write(int i) {
+                write(new byte[]{(byte) i}, 0, 1);
+            }
+
+            @Override // java.io.FilterOutputStream, java.io.OutputStream
+            public void write(byte[] bArr) {
+                write(bArr, 0, bArr.length);
+            }
+
+            @Override // java.io.FilterOutputStream, java.io.OutputStream
+            public void write(byte[] bArr, int i, int i2) {
+                if (i2 == 0) {
+                    return;
+                }
+                ((FilterOutputStream) this).out.write(String.format("%x\r\n", Integer.valueOf(i2)).getBytes());
+                ((FilterOutputStream) this).out.write(bArr, i, i2);
+                ((FilterOutputStream) this).out.write("\r\n".getBytes());
+            }
+
+            public void finish() {
+                ((FilterOutputStream) this).out.write("0\r\n\r\n".getBytes());
+            }
+        }
+
         protected Response(IStatus iStatus, String str, InputStream inputStream, long j) {
             this.status = iStatus;
             this.mimeType = str;
@@ -660,54 +660,20 @@ public abstract class NanoHTTPD {
             this.keepAlive = true;
         }
 
-        private void sendBody(OutputStream outputStream, long j) {
-            byte[] bArr = new byte[(int) 16384];
-            boolean z = j == -1;
-            while (true) {
-                if (j <= 0 && !z) {
-                    return;
-                }
-                int read = this.data.read(bArr, 0, (int) (z ? 16384L : Math.min(j, 16384L)));
-                if (read <= 0) {
-                    return;
-                }
-                outputStream.write(bArr, 0, read);
-                if (!z) {
-                    j -= read;
-                }
-            }
-        }
-
-        private void sendBodyWithCorrectEncoding(OutputStream outputStream, long j) {
-            if (!this.encodeAsGzip) {
-                sendBody(outputStream, j);
-                return;
-            }
-            GZIPOutputStream gZIPOutputStream = new GZIPOutputStream(outputStream);
-            sendBody(gZIPOutputStream, -1L);
-            gZIPOutputStream.finish();
-        }
-
-        private void sendBodyWithCorrectTransferAndEncoding(OutputStream outputStream, long j) {
-            if (this.requestMethod == Method.HEAD || !this.chunkedTransfer) {
-                sendBodyWithCorrectEncoding(outputStream, j);
-                return;
-            }
-            ChunkedOutputStream chunkedOutputStream = new ChunkedOutputStream(outputStream);
-            sendBodyWithCorrectEncoding(chunkedOutputStream, -1L);
-            chunkedOutputStream.finish();
-        }
-
-        public void addHeader(String str, String str2) {
-            this.header.put(str, str2);
-        }
-
         @Override // java.io.Closeable, java.lang.AutoCloseable
         public void close() {
             InputStream inputStream = this.data;
             if (inputStream != null) {
                 inputStream.close();
             }
+        }
+
+        public void addHeader(String str, String str2) {
+            this.header.put(str, str2);
+        }
+
+        public boolean isCloseConnection() {
+            return "close".equals(getHeader("connection"));
         }
 
         public String getHeader(String str) {
@@ -718,12 +684,12 @@ public abstract class NanoHTTPD {
             return this.mimeType;
         }
 
-        public boolean isCloseConnection() {
-            return "close".equals(getHeader("connection"));
+        public void setGzipEncoding(boolean z) {
+            this.encodeAsGzip = z;
         }
 
-        protected void printHeader(PrintWriter printWriter, String str, String str2) {
-            printWriter.append((CharSequence) str).append(": ").append((CharSequence) str2).append("\r\n");
+        public void setKeepAlive(boolean z) {
+            this.keepAlive = z;
         }
 
         protected void send(OutputStream outputStream) {
@@ -771,6 +737,10 @@ public abstract class NanoHTTPD {
             }
         }
 
+        protected void printHeader(PrintWriter printWriter, String str, String str2) {
+            printWriter.append((CharSequence) str).append(": ").append((CharSequence) str2).append("\r\n");
+        }
+
         protected long sendContentLengthHeaderIfNotAlreadyPresent(PrintWriter printWriter, long j) {
             String header = getHeader("content-length");
             if (header != null) {
@@ -784,16 +754,46 @@ public abstract class NanoHTTPD {
             return j;
         }
 
+        private void sendBodyWithCorrectTransferAndEncoding(OutputStream outputStream, long j) {
+            if (this.requestMethod != Method.HEAD && this.chunkedTransfer) {
+                ChunkedOutputStream chunkedOutputStream = new ChunkedOutputStream(outputStream);
+                sendBodyWithCorrectEncoding(chunkedOutputStream, -1L);
+                chunkedOutputStream.finish();
+                return;
+            }
+            sendBodyWithCorrectEncoding(outputStream, j);
+        }
+
+        private void sendBodyWithCorrectEncoding(OutputStream outputStream, long j) {
+            if (this.encodeAsGzip) {
+                GZIPOutputStream gZIPOutputStream = new GZIPOutputStream(outputStream);
+                sendBody(gZIPOutputStream, -1L);
+                gZIPOutputStream.finish();
+                return;
+            }
+            sendBody(outputStream, j);
+        }
+
+        private void sendBody(OutputStream outputStream, long j) {
+            byte[] bArr = new byte[(int) 16384];
+            boolean z = j == -1;
+            while (true) {
+                if (j <= 0 && !z) {
+                    return;
+                }
+                int read = this.data.read(bArr, 0, (int) (z ? 16384L : Math.min(j, 16384L)));
+                if (read <= 0) {
+                    return;
+                }
+                outputStream.write(bArr, 0, read);
+                if (!z) {
+                    j -= read;
+                }
+            }
+        }
+
         public void setChunkedTransfer(boolean z) {
             this.chunkedTransfer = z;
-        }
-
-        public void setGzipEncoding(boolean z) {
-            this.encodeAsGzip = z;
-        }
-
-        public void setKeepAlive(boolean z) {
-            this.keepAlive = z;
         }
 
         public void setRequestMethod(Method method) {
@@ -853,16 +853,25 @@ public abstract class NanoHTTPD {
         }
     }
 
-    public interface ServerSocketFactory {
-        ServerSocket create();
-    }
-
-    public interface TempFileManager {
-        void clear();
-    }
-
-    public interface TempFileManagerFactory {
-        TempFileManager create();
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void safeClose(Object obj) {
+        if (obj != null) {
+            try {
+                if (obj instanceof Closeable) {
+                    ((Closeable) obj).close();
+                } else if (obj instanceof Socket) {
+                    ((Socket) obj).close();
+                } else {
+                    if (obj instanceof ServerSocket) {
+                        ((ServerSocket) obj).close();
+                        return;
+                    }
+                    throw new IllegalArgumentException("Unknown object to close");
+                }
+            } catch (IOException e) {
+                LOG.log(Level.SEVERE, "Could not close", (Throwable) e);
+            }
+        }
     }
 
     public NanoHTTPD(int i) {
@@ -877,6 +886,14 @@ public abstract class NanoHTTPD {
         setAsyncRunner(new DefaultAsyncRunner());
     }
 
+    protected ClientHandler createClientHandler(Socket socket, InputStream inputStream) {
+        return new ClientHandler(inputStream, socket);
+    }
+
+    protected ServerRunnable createServerRunnable(int i) {
+        return new ServerRunnable(i);
+    }
+
     protected static String decodePercent(String str) {
         try {
             return URLDecoder.decode(str, "UTF8");
@@ -884,6 +901,14 @@ public abstract class NanoHTTPD {
             LOG.log(Level.WARNING, "Encoding not supported, ignored", (Throwable) e);
             return null;
         }
+    }
+
+    protected boolean useGzipWhenAccepted(Response response) {
+        return response.getMimeType() != null && (response.getMimeType().toLowerCase().contains("text/") || response.getMimeType().toLowerCase().contains("/json"));
+    }
+
+    public ServerSocketFactory getServerSocketFactory() {
+        return this.serverSocketFactory;
     }
 
     public static Response newFixedLengthResponse(Response.IStatus iStatus, String str, InputStream inputStream, long j) {
@@ -907,40 +932,6 @@ public abstract class NanoHTTPD {
         }
         return newFixedLengthResponse(iStatus, contentType.getContentTypeHeader(), new ByteArrayInputStream(bArr), bArr.length);
     }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void safeClose(Object obj) {
-        if (obj != null) {
-            try {
-                if (obj instanceof Closeable) {
-                    ((Closeable) obj).close();
-                } else if (obj instanceof Socket) {
-                    ((Socket) obj).close();
-                } else {
-                    if (!(obj instanceof ServerSocket)) {
-                        throw new IllegalArgumentException("Unknown object to close");
-                    }
-                    ((ServerSocket) obj).close();
-                }
-            } catch (IOException e) {
-                LOG.log(Level.SEVERE, "Could not close", (Throwable) e);
-            }
-        }
-    }
-
-    protected ClientHandler createClientHandler(Socket socket, InputStream inputStream) {
-        return new ClientHandler(inputStream, socket);
-    }
-
-    protected ServerRunnable createServerRunnable(int i) {
-        return new ServerRunnable(i);
-    }
-
-    public ServerSocketFactory getServerSocketFactory() {
-        return this.serverSocketFactory;
-    }
-
-    public abstract Response serve(IHTTPSession iHTTPSession);
 
     public void setAsyncRunner(AsyncRunner asyncRunner) {
         this.asyncRunner = asyncRunner;
@@ -981,9 +972,5 @@ public abstract class NanoHTTPD {
         } catch (Exception e) {
             LOG.log(Level.SEVERE, "Could not stop all connections", (Throwable) e);
         }
-    }
-
-    protected boolean useGzipWhenAccepted(Response response) {
-        return response.getMimeType() != null && (response.getMimeType().toLowerCase().contains("text/") || response.getMimeType().toLowerCase().contains("/json"));
     }
 }

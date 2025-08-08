@@ -30,10 +30,6 @@ public final class zzbp extends GoogleApi implements FusedLocationProviderClient
         zzb = new Api("LocationServices.API", new zzbm(), clientKey);
     }
 
-    public zzbp(Context context) {
-        super(context, zzb, Api.ApiOptions.NO_OPTIONS, GoogleApi.Settings.DEFAULT_SETTINGS);
-    }
-
     private final Task zza(final LocationRequest locationRequest, ListenerHolder listenerHolder) {
         final zzbo zzboVar = new zzbo(this, listenerHolder, new zzbn() { // from class: com.google.android.gms.internal.location.zzax
             @Override // com.google.android.gms.internal.location.zzbn
@@ -58,6 +54,10 @@ public final class zzbp extends GoogleApi implements FusedLocationProviderClient
                 ((zzda) obj).zzt(new LastLocationRequest.Builder().build(), (TaskCompletionSource) obj2);
             }
         }).setMethodKey(2414).build());
+    }
+
+    public zzbp(Context context) {
+        super(context, zzb, Api.ApiOptions.NO_OPTIONS, GoogleApi.Settings.DEFAULT_SETTINGS);
     }
 
     @Override // com.google.android.gms.location.FusedLocationProviderClient

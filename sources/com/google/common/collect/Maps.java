@@ -39,53 +39,128 @@ public abstract class Maps {
         }
     }
 
-    static abstract class EntrySet extends Sets.ImprovedAbstractSet {
-        EntrySet() {
-        }
+    static Function valueFunction() {
+        return EntryFunction.VALUE;
+    }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-        public void clear() {
-            map().clear();
-        }
-
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-        public abstract boolean contains(Object obj);
-
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-        public boolean isEmpty() {
-            return map().isEmpty();
-        }
-
-        abstract Map map();
-
-        @Override // com.google.common.collect.Sets.ImprovedAbstractSet, java.util.AbstractSet, java.util.AbstractCollection, java.util.Collection, java.util.Set
-        public boolean removeAll(Collection collection) {
-            try {
-                return super.removeAll((Collection) Preconditions.checkNotNull(collection));
-            } catch (UnsupportedOperationException unused) {
-                return Sets.removeAllImpl(this, collection.iterator());
+    static Iterator valueIterator(Iterator it) {
+        return new TransformedIterator(it) { // from class: com.google.common.collect.Maps.2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            @Override // com.google.common.collect.TransformedIterator
+            public Object transform(Map.Entry entry) {
+                return entry.getValue();
             }
+        };
+    }
+
+    static int capacity(int i) {
+        if (i >= 3) {
+            return i < 1073741824 ? (int) ((i / 0.75f) + 1.0f) : ConnectionsManager.DEFAULT_DATACENTER_ID;
+        }
+        CollectPreconditions.checkNonnegative(i, "expectedSize");
+        return i + 1;
+    }
+
+    public static IdentityHashMap newIdentityHashMap() {
+        return new IdentityHashMap();
+    }
+
+    public static Map.Entry immutableEntry(Object obj, Object obj2) {
+        return new ImmutableEntry(obj, obj2);
+    }
+
+    static abstract class ViewCachingAbstractMap extends AbstractMap {
+        private transient Set entrySet;
+        private transient Collection values;
+
+        abstract Set createEntrySet();
+
+        ViewCachingAbstractMap() {
         }
 
-        @Override // com.google.common.collect.Sets.ImprovedAbstractSet, java.util.AbstractCollection, java.util.Collection, java.util.Set
-        public boolean retainAll(Collection collection) {
-            try {
-                return super.retainAll((Collection) Preconditions.checkNotNull(collection));
-            } catch (UnsupportedOperationException unused) {
-                HashSet newHashSetWithExpectedSize = Sets.newHashSetWithExpectedSize(collection.size());
-                for (Object obj : collection) {
-                    if (contains(obj) && (obj instanceof Map.Entry)) {
-                        newHashSetWithExpectedSize.add(((Map.Entry) obj).getKey());
-                    }
-                }
-                return map().keySet().retainAll(newHashSetWithExpectedSize);
+        @Override // java.util.AbstractMap, java.util.Map
+        public Set entrySet() {
+            Set set = this.entrySet;
+            if (set != null) {
+                return set;
             }
+            Set createEntrySet = createEntrySet();
+            this.entrySet = createEntrySet;
+            return createEntrySet;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-        public int size() {
-            return map().size();
+        @Override // java.util.AbstractMap, java.util.Map
+        public Collection values() {
+            Collection collection = this.values;
+            if (collection != null) {
+                return collection;
+            }
+            Collection createValues = createValues();
+            this.values = createValues;
+            return createValues;
         }
+
+        Collection createValues() {
+            return new Values(this);
+        }
+    }
+
+    static Object safeGet(Map map, Object obj) {
+        Preconditions.checkNotNull(map);
+        try {
+            return map.get(obj);
+        } catch (ClassCastException | NullPointerException unused) {
+            return null;
+        }
+    }
+
+    static boolean safeContainsKey(Map map, Object obj) {
+        Preconditions.checkNotNull(map);
+        try {
+            return map.containsKey(obj);
+        } catch (ClassCastException | NullPointerException unused) {
+            return false;
+        }
+    }
+
+    static Object safeRemove(Map map, Object obj) {
+        Preconditions.checkNotNull(map);
+        try {
+            return map.remove(obj);
+        } catch (ClassCastException | NullPointerException unused) {
+            return null;
+        }
+    }
+
+    static boolean containsValueImpl(Map map, Object obj) {
+        return Iterators.contains(valueIterator(map.entrySet().iterator()), obj);
+    }
+
+    static boolean equalsImpl(Map map, Object obj) {
+        if (map == obj) {
+            return true;
+        }
+        if (obj instanceof Map) {
+            return map.entrySet().equals(((Map) obj).entrySet());
+        }
+        return false;
+    }
+
+    static String toStringImpl(Map map) {
+        StringBuilder newStringBuilderForCollection = Collections2.newStringBuilderForCollection(map.size());
+        newStringBuilderForCollection.append('{');
+        boolean z = true;
+        for (Map.Entry entry : map.entrySet()) {
+            if (!z) {
+                newStringBuilderForCollection.append(", ");
+            }
+            newStringBuilderForCollection.append(entry.getKey());
+            newStringBuilderForCollection.append('=');
+            newStringBuilderForCollection.append(entry.getValue());
+            z = false;
+        }
+        newStringBuilderForCollection.append('}');
+        return newStringBuilderForCollection.toString();
     }
 
     static class KeySet extends Sets.ImprovedAbstractSet {
@@ -93,16 +168,6 @@ public abstract class Maps {
 
         KeySet(Map map) {
             this.map = (Map) Preconditions.checkNotNull(map);
-        }
-
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-        public boolean contains(Object obj) {
-            return map().containsKey(obj);
-        }
-
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-        public boolean isEmpty() {
-            return map().isEmpty();
         }
 
         Map map() {
@@ -113,6 +178,16 @@ public abstract class Maps {
         public int size() {
             return map().size();
         }
+
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        public boolean isEmpty() {
+            return map().isEmpty();
+        }
+
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        public boolean contains(Object obj) {
+            return map().containsKey(obj);
+        }
     }
 
     static class Values extends AbstractCollection {
@@ -122,28 +197,13 @@ public abstract class Maps {
             this.map = (Map) Preconditions.checkNotNull(map);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection
-        public void clear() {
-            map().clear();
-        }
-
-        @Override // java.util.AbstractCollection, java.util.Collection
-        public boolean contains(Object obj) {
-            return map().containsValue(obj);
-        }
-
-        @Override // java.util.AbstractCollection, java.util.Collection
-        public boolean isEmpty() {
-            return map().isEmpty();
+        final Map map() {
+            return this.map;
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
         public Iterator iterator() {
             return Maps.valueIterator(map().entrySet().iterator());
-        }
-
-        final Map map() {
-            return this.map;
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection
@@ -195,129 +255,69 @@ public abstract class Maps {
         public int size() {
             return map().size();
         }
+
+        @Override // java.util.AbstractCollection, java.util.Collection
+        public boolean isEmpty() {
+            return map().isEmpty();
+        }
+
+        @Override // java.util.AbstractCollection, java.util.Collection
+        public boolean contains(Object obj) {
+            return map().containsValue(obj);
+        }
+
+        @Override // java.util.AbstractCollection, java.util.Collection
+        public void clear() {
+            map().clear();
+        }
     }
 
-    static abstract class ViewCachingAbstractMap extends AbstractMap {
-        private transient Set entrySet;
-        private transient Collection values;
+    static abstract class EntrySet extends Sets.ImprovedAbstractSet {
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        public abstract boolean contains(Object obj);
 
-        ViewCachingAbstractMap() {
+        abstract Map map();
+
+        EntrySet() {
         }
 
-        abstract Set createEntrySet();
-
-        Collection createValues() {
-            return new Values(this);
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        public int size() {
+            return map().size();
         }
 
-        @Override // java.util.AbstractMap, java.util.Map
-        public Set entrySet() {
-            Set set = this.entrySet;
-            if (set != null) {
-                return set;
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        public void clear() {
+            map().clear();
+        }
+
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        public boolean isEmpty() {
+            return map().isEmpty();
+        }
+
+        @Override // com.google.common.collect.Sets.ImprovedAbstractSet, java.util.AbstractSet, java.util.AbstractCollection, java.util.Collection, java.util.Set
+        public boolean removeAll(Collection collection) {
+            try {
+                return super.removeAll((Collection) Preconditions.checkNotNull(collection));
+            } catch (UnsupportedOperationException unused) {
+                return Sets.removeAllImpl(this, collection.iterator());
             }
-            Set createEntrySet = createEntrySet();
-            this.entrySet = createEntrySet;
-            return createEntrySet;
         }
 
-        @Override // java.util.AbstractMap, java.util.Map
-        public Collection values() {
-            Collection collection = this.values;
-            if (collection != null) {
-                return collection;
+        @Override // com.google.common.collect.Sets.ImprovedAbstractSet, java.util.AbstractCollection, java.util.Collection, java.util.Set
+        public boolean retainAll(Collection collection) {
+            try {
+                return super.retainAll((Collection) Preconditions.checkNotNull(collection));
+            } catch (UnsupportedOperationException unused) {
+                HashSet newHashSetWithExpectedSize = Sets.newHashSetWithExpectedSize(collection.size());
+                for (Object obj : collection) {
+                    if (contains(obj) && (obj instanceof Map.Entry)) {
+                        newHashSetWithExpectedSize.add(((Map.Entry) obj).getKey());
+                    }
+                }
+                return map().keySet().retainAll(newHashSetWithExpectedSize);
             }
-            Collection createValues = createValues();
-            this.values = createValues;
-            return createValues;
         }
-    }
-
-    static int capacity(int i) {
-        if (i >= 3) {
-            return i < 1073741824 ? (int) ((i / 0.75f) + 1.0f) : ConnectionsManager.DEFAULT_DATACENTER_ID;
-        }
-        CollectPreconditions.checkNonnegative(i, "expectedSize");
-        return i + 1;
-    }
-
-    static boolean containsValueImpl(Map map, Object obj) {
-        return Iterators.contains(valueIterator(map.entrySet().iterator()), obj);
-    }
-
-    static boolean equalsImpl(Map map, Object obj) {
-        if (map == obj) {
-            return true;
-        }
-        if (obj instanceof Map) {
-            return map.entrySet().equals(((Map) obj).entrySet());
-        }
-        return false;
-    }
-
-    public static Map.Entry immutableEntry(Object obj, Object obj2) {
-        return new ImmutableEntry(obj, obj2);
-    }
-
-    public static IdentityHashMap newIdentityHashMap() {
-        return new IdentityHashMap();
-    }
-
-    static boolean safeContainsKey(Map map, Object obj) {
-        Preconditions.checkNotNull(map);
-        try {
-            return map.containsKey(obj);
-        } catch (ClassCastException | NullPointerException unused) {
-            return false;
-        }
-    }
-
-    static Object safeGet(Map map, Object obj) {
-        Preconditions.checkNotNull(map);
-        try {
-            return map.get(obj);
-        } catch (ClassCastException | NullPointerException unused) {
-            return null;
-        }
-    }
-
-    static Object safeRemove(Map map, Object obj) {
-        Preconditions.checkNotNull(map);
-        try {
-            return map.remove(obj);
-        } catch (ClassCastException | NullPointerException unused) {
-            return null;
-        }
-    }
-
-    static String toStringImpl(Map map) {
-        StringBuilder newStringBuilderForCollection = Collections2.newStringBuilderForCollection(map.size());
-        newStringBuilderForCollection.append('{');
-        boolean z = true;
-        for (Map.Entry entry : map.entrySet()) {
-            if (!z) {
-                newStringBuilderForCollection.append(", ");
-            }
-            newStringBuilderForCollection.append(entry.getKey());
-            newStringBuilderForCollection.append('=');
-            newStringBuilderForCollection.append(entry.getValue());
-            z = false;
-        }
-        newStringBuilderForCollection.append('}');
-        return newStringBuilderForCollection.toString();
-    }
-
-    static Function valueFunction() {
-        return EntryFunction.VALUE;
-    }
-
-    static Iterator valueIterator(Iterator it) {
-        return new TransformedIterator(it) { // from class: com.google.common.collect.Maps.2
-            /* JADX INFO: Access modifiers changed from: package-private */
-            @Override // com.google.common.collect.TransformedIterator
-            public Object transform(Map.Entry entry) {
-                return entry.getValue();
-            }
-        };
     }
 }

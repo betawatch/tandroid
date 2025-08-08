@@ -2,19 +2,10 @@ package kotlin.ranges;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class LongRange extends LongProgression {
     public static final Companion Companion = new Companion(null);
     private static final LongRange EMPTY = new LongRange(1, 0);
-
-    public static final class Companion {
-        private Companion() {
-        }
-
-        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
-            this();
-        }
-    }
 
     public LongRange(long j, long j2) {
         super(j, j2, 1L);
@@ -22,6 +13,10 @@ public final class LongRange extends LongProgression {
 
     public boolean contains(long j) {
         return getFirst() <= j && j <= getLast();
+    }
+
+    public boolean isEmpty() {
+        return getFirst() > getLast();
     }
 
     public boolean equals(Object obj) {
@@ -43,11 +38,16 @@ public final class LongRange extends LongProgression {
         return (int) ((31 * (getFirst() ^ (getFirst() >>> 32))) + (getLast() ^ (getLast() >>> 32)));
     }
 
-    public boolean isEmpty() {
-        return getFirst() > getLast();
-    }
-
     public String toString() {
         return getFirst() + ".." + getLast();
+    }
+
+    public static final class Companion {
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        private Companion() {
+        }
     }
 }

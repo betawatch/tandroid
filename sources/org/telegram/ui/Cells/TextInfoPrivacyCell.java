@@ -33,8 +33,18 @@ public class TextInfoPrivacyCell extends FrameLayout {
     private LinkSpanDrawable.LinksTextView textView;
     private int topPadding;
 
+    protected void afterTextDraw() {
+    }
+
+    protected void onTextDraw() {
+    }
+
     public TextInfoPrivacyCell(Context context) {
         this(context, 21, null);
+    }
+
+    public TextInfoPrivacyCell(Context context, Theme.ResourcesProvider resourcesProvider) {
+        this(context, 21, resourcesProvider);
     }
 
     public TextInfoPrivacyCell(Context context, int i, Theme.ResourcesProvider resourcesProvider) {
@@ -55,7 +65,10 @@ public class TextInfoPrivacyCell extends FrameLayout {
 
             @Override // org.telegram.ui.Components.LinkSpanDrawable.LinksTextView
             public int overrideColor() {
-                return TextInfoPrivacyCell.this.linkTextRippleColor != null ? TextInfoPrivacyCell.this.linkTextRippleColor.intValue() : super.overrideColor();
+                if (TextInfoPrivacyCell.this.linkTextRippleColor != null) {
+                    return TextInfoPrivacyCell.this.linkTextRippleColor.intValue();
+                }
+                return super.overrideColor();
             }
         };
         this.textView = linksTextView;
@@ -75,27 +88,17 @@ public class TextInfoPrivacyCell extends FrameLayout {
         setWillNotDraw(false);
     }
 
-    public TextInfoPrivacyCell(Context context, Theme.ResourcesProvider resourcesProvider) {
-        this(context, 21, resourcesProvider);
-    }
-
-    private int getThemedColor(int i) {
-        return Theme.getColor(i, this.resourcesProvider);
-    }
-
-    protected void afterTextDraw() {
-    }
-
-    public CharSequence getText() {
-        return this.textView.getText();
-    }
-
-    public LinkSpanDrawable.LinksTextView getTextView() {
-        return this.textView;
-    }
-
-    public int length() {
-        return this.textView.length();
+    public void updateRTL() {
+        boolean z = this.isRTL;
+        boolean z2 = LocaleController.isRTL;
+        if (z == z2) {
+            return;
+        }
+        this.isRTL = z2;
+        this.textView.setGravity(z2 ? 5 : 3);
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.textView.getLayoutParams();
+        layoutParams.gravity = (LocaleController.isRTL ? 5 : 3) | 48;
+        this.textView.setLayoutParams(layoutParams);
     }
 
     @Override // android.view.View
@@ -111,44 +114,36 @@ public class TextInfoPrivacyCell extends FrameLayout {
         super.onDraw(canvas);
     }
 
-    @Override // android.view.View
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName(TextView.class.getName());
-        accessibilityNodeInfo.setText(this.text);
+    public void setLinkTextColorKey(int i) {
+        this.linkTextColorKey = i;
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
         int i3 = this.fixedSize;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i3 == -1 ? View.MeasureSpec.makeMeasureSpec(0, TLObject.FLAG_30) : i3 != 0 ? View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.fixedSize), TLObject.FLAG_30) : View.MeasureSpec.makeMeasureSpec(0, 0));
+        if (i3 == -1) {
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, TLObject.FLAG_30));
+        } else if (i3 != 0) {
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.fixedSize), TLObject.FLAG_30));
+        } else {
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
+        }
     }
 
-    protected void onTextDraw() {
+    public void setTopPadding(int i) {
+        this.topPadding = i;
     }
 
     public void setBottomPadding(int i) {
         this.bottomPadding = i;
     }
 
-    public void setEnabled(boolean z, ArrayList arrayList) {
-        if (arrayList != null) {
-            arrayList.add(ObjectAnimator.ofFloat(this.textView, (Property<LinkSpanDrawable.LinksTextView, Float>) View.ALPHA, z ? 1.0f : 0.5f));
-        } else {
-            this.textView.setAlpha(z ? 1.0f : 0.5f);
-        }
-    }
-
     public void setFixedSize(int i) {
         this.fixedSize = i;
     }
 
-    public void setLinkTextColorKey(int i) {
-        this.linkTextColorKey = i;
-    }
-
-    public void setLinkTextRippleColor(Integer num) {
-        this.linkTextRippleColor = num;
+    public CharSequence getText() {
+        return this.textView.getText();
     }
 
     public void setText(CharSequence charSequence) {
@@ -156,11 +151,10 @@ public class TextInfoPrivacyCell extends FrameLayout {
             return;
         }
         this.text = charSequence;
-        LinkSpanDrawable.LinksTextView linksTextView = this.textView;
         if (charSequence == null) {
-            linksTextView.setPadding(0, AndroidUtilities.dp(2.0f), 0, 0);
+            this.textView.setPadding(0, AndroidUtilities.dp(2.0f), 0, 0);
         } else {
-            linksTextView.setPadding(0, AndroidUtilities.dp(this.topPadding), 0, AndroidUtilities.dp(this.bottomPadding));
+            this.textView.setPadding(0, AndroidUtilities.dp(this.topPadding), 0, AndroidUtilities.dp(this.bottomPadding));
         }
         SpannableString spannableString = null;
         if (charSequence != null) {
@@ -177,11 +171,11 @@ public class TextInfoPrivacyCell extends FrameLayout {
                 }
             }
         }
-        LinkSpanDrawable.LinksTextView linksTextView2 = this.textView;
+        LinkSpanDrawable.LinksTextView linksTextView = this.textView;
         if (spannableString != null) {
             charSequence = spannableString;
         }
-        linksTextView2.setText(charSequence);
+        linksTextView.setText(charSequence);
     }
 
     public void setTextColor(int i) {
@@ -193,24 +187,38 @@ public class TextInfoPrivacyCell extends FrameLayout {
         this.textView.setTag(Integer.valueOf(i));
     }
 
+    public LinkSpanDrawable.LinksTextView getTextView() {
+        return this.textView;
+    }
+
+    public void setLinkTextRippleColor(Integer num) {
+        this.linkTextRippleColor = num;
+    }
+
+    public int length() {
+        return this.textView.length();
+    }
+
+    public void setEnabled(boolean z, ArrayList arrayList) {
+        if (arrayList != null) {
+            arrayList.add(ObjectAnimator.ofFloat(this.textView, (Property<LinkSpanDrawable.LinksTextView, Float>) View.ALPHA, z ? 1.0f : 0.5f));
+        } else {
+            this.textView.setAlpha(z ? 1.0f : 0.5f);
+        }
+    }
+
     public void setTextGravity(int i) {
         this.textView.setGravity(i);
     }
 
-    public void setTopPadding(int i) {
-        this.topPadding = i;
+    @Override // android.view.View
+    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName(TextView.class.getName());
+        accessibilityNodeInfo.setText(this.text);
     }
 
-    public void updateRTL() {
-        boolean z = this.isRTL;
-        boolean z2 = LocaleController.isRTL;
-        if (z == z2) {
-            return;
-        }
-        this.isRTL = z2;
-        this.textView.setGravity(z2 ? 5 : 3);
-        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.textView.getLayoutParams();
-        layoutParams.gravity = (LocaleController.isRTL ? 5 : 3) | 48;
-        this.textView.setLayoutParams(layoutParams);
+    private int getThemedColor(int i) {
+        return Theme.getColor(i, this.resourcesProvider);
     }
 }

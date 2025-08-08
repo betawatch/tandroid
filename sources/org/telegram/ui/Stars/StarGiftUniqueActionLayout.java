@@ -97,6 +97,179 @@ public class StarGiftUniqueActionLayout {
         this.emoji = new AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable(chatActionCell, AndroidUtilities.dp(28.0f));
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:26:0x004b A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x004c  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void set(MessageObject messageObject, boolean z) {
+        TLRPC.TL_messageActionStarGiftUnique tL_messageActionStarGiftUnique;
+        int dp;
+        TLRPC.Message message;
+        this.currentMessageObject = messageObject;
+        if (messageObject != null && (message = messageObject.messageOwner) != null) {
+            TLRPC.MessageAction messageAction = message.action;
+            if (messageAction instanceof TLRPC.TL_messageActionStarGiftUnique) {
+                tL_messageActionStarGiftUnique = (TLRPC.TL_messageActionStarGiftUnique) messageAction;
+                if (tL_messageActionStarGiftUnique != null || tL_messageActionStarGiftUnique.refunded || !(tL_messageActionStarGiftUnique.gift instanceof TL_stars.TL_starGiftUnique)) {
+                    tL_messageActionStarGiftUnique = null;
+                }
+                if (this.attached && tL_messageActionStarGiftUnique != null && this.action == null) {
+                    this.imageReceiver.onAttachedToWindow();
+                    this.emoji.attach();
+                }
+                this.action = tL_messageActionStarGiftUnique;
+                this.repost = messageObject == null && messageObject.isRepostPreview;
+                if (tL_messageActionStarGiftUnique != null) {
+                    return;
+                }
+                TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) tL_messageActionStarGiftUnique.gift;
+                this.backdrop = (TL_stars.starGiftAttributeBackdrop) StarsController.findAttribute(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
+                this.pattern = (TL_stars.starGiftAttributePattern) StarsController.findAttribute(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
+                TL_stars.starGiftAttributeModel stargiftattributemodel = this.model;
+                this.model = (TL_stars.starGiftAttributeModel) StarsController.findAttribute(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class);
+                Paint paint = this.backgroundPaint;
+                this.gradient = null;
+                paint.setShader(null);
+                TL_stars.starGiftAttributePattern stargiftattributepattern = this.pattern;
+                if (stargiftattributepattern != null) {
+                    this.emoji.set(stargiftattributepattern.document, z);
+                } else {
+                    this.emoji.set((Drawable) null, z);
+                }
+                TL_stars.starGiftAttributeModel stargiftattributemodel2 = this.model;
+                if (stargiftattributemodel2 != null && (stargiftattributemodel == null || stargiftattributemodel.document.id != stargiftattributemodel2.document.id)) {
+                    if (this.repost) {
+                        this.imageReceiver.setAllowStartLottieAnimation(true);
+                        this.imageReceiver.setAllowStartAnimation(true);
+                        this.imageReceiver.setAutoRepeat(1);
+                    } else {
+                        this.imageReceiver.setAutoRepeatCount(0);
+                        this.imageReceiver.clearDecorators();
+                        this.imageReceiver.setAutoRepeat(0);
+                    }
+                    StarsIntroActivity.setGiftImage(this.imageReceiver, this.model.document, 110);
+                }
+                this.ribbon.setBackdrop(this.backdrop, true);
+                this.ribbon.setText(11, LocaleController.getString(R.string.Gift2UniqueRibbon), true);
+                if (this.repost) {
+                    this.width = AndroidUtilities.dp(200.0f);
+                } else {
+                    this.width = Math.min((int) (AndroidUtilities.isTablet() ? AndroidUtilities.getMinTabletSide() * 0.6f : (AndroidUtilities.displaySize.x * 0.62f) - AndroidUtilities.dp(34.0f)), ((AndroidUtilities.displaySize.y - ActionBar.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(64.0f));
+                    if (!AndroidUtilities.isTablet()) {
+                        this.width = (int) (this.width * 1.2f);
+                    }
+                    this.width -= AndroidUtilities.dp(8.0f);
+                }
+                float f = this.width;
+                long clientUserId = (tL_messageActionStarGiftUnique.upgrade ^ true) == messageObject.isOutOwner() ? UserConfig.getInstance(this.currentAccount).getClientUserId() : messageObject.getDialogId();
+                TLRPC.Peer peer = tL_messageActionStarGiftUnique.from_id;
+                if (peer != null) {
+                    clientUserId = DialogObject.getPeerDialogId(peer);
+                }
+                String shortName = DialogObject.getShortName(clientUserId);
+                float dp2 = AndroidUtilities.dp(10.0f) + 0.0f + AndroidUtilities.dp(110.0f) + AndroidUtilities.dp(9.33f);
+                if (this.repost) {
+                    this.title = new Text(tL_starGiftUnique.title, 14.0f, AndroidUtilities.bold());
+                } else if (tL_messageActionStarGiftUnique.peer != null || UserObject.isService(messageObject.getDialogId())) {
+                    this.title = new Text(LocaleController.getString(R.string.Gift2UniqueTitle2), 14.0f, AndroidUtilities.bold());
+                } else if (messageObject.getDialogId() == UserConfig.getInstance(this.currentAccount).getClientUserId()) {
+                    this.title = new Text(LocaleController.getString(R.string.Gift2ActionSelfTitle), 14.0f, AndroidUtilities.bold());
+                } else {
+                    this.title = new Text(LocaleController.formatString(R.string.Gift2UniqueTitle, shortName), 14.0f, AndroidUtilities.bold());
+                }
+                this.titleY = (this.title.getHeight() / 2.0f) + dp2;
+                float height = dp2 + this.title.getHeight() + AndroidUtilities.dp(3.0f);
+                if (this.repost) {
+                    this.subtitle = new Text(LocaleController.formatPluralStringComma("Gift2CollectionNumber", tL_starGiftUnique.num), 12.0f, AndroidUtilities.bold());
+                } else {
+                    this.subtitle = new Text(tL_starGiftUnique.title + " #" + LocaleController.formatNumber(tL_starGiftUnique.num, ','), 12.0f);
+                }
+                this.subtitleY = (this.subtitle.getHeight() / 2.0f) + height;
+                float height2 = height + this.subtitle.getHeight() + AndroidUtilities.dp(this.repost ? 14.0f : 11.0f);
+                this.table.clear();
+                this.nameWidth = 0.0f;
+                this.valueWidth = 0.0f;
+                if (this.model != null) {
+                    if (!this.table.isEmpty()) {
+                        height2 += AndroidUtilities.dp(6.0f);
+                    }
+                    Row row = new Row(height2, LocaleController.getString(R.string.Gift2AttributeModel), this.model.name);
+                    this.table.add(row);
+                    float f2 = f * 0.5f;
+                    row.name.ellipsize(f2);
+                    this.nameWidth = Math.max(this.nameWidth, row.name.getCurrentWidth());
+                    row.value.ellipsize(f2);
+                    this.valueWidth = Math.max(this.valueWidth, row.value.getCurrentWidth());
+                    height2 += row.getHeight();
+                }
+                if (this.backdrop != null) {
+                    if (!this.table.isEmpty()) {
+                        height2 += AndroidUtilities.dp(6.0f);
+                    }
+                    Row row2 = new Row(height2, LocaleController.getString(R.string.Gift2AttributeBackdrop), this.backdrop.name);
+                    this.table.add(row2);
+                    float f3 = f * 0.5f;
+                    row2.name.ellipsize(f3);
+                    this.nameWidth = Math.max(this.nameWidth, row2.name.getCurrentWidth());
+                    row2.value.ellipsize(f3);
+                    this.valueWidth = Math.max(this.valueWidth, row2.value.getCurrentWidth());
+                    height2 += row2.getHeight();
+                }
+                if (this.pattern != null) {
+                    if (!this.table.isEmpty()) {
+                        height2 += AndroidUtilities.dp(6.0f);
+                    }
+                    Row row3 = new Row(height2, LocaleController.getString(R.string.Gift2AttributeSymbol), this.pattern.name);
+                    this.table.add(row3);
+                    float f4 = f * 0.5f;
+                    row3.name.ellipsize(f4);
+                    this.nameWidth = Math.max(this.nameWidth, row3.name.getCurrentWidth());
+                    row3.value.ellipsize(f4);
+                    this.valueWidth = Math.max(this.valueWidth, row3.value.getCurrentWidth());
+                    height2 += row3.getHeight();
+                }
+                float dp3 = height2 + AndroidUtilities.dp(11.66f);
+                if (!this.repost) {
+                    this.buttonY = dp3;
+                    this.buttonText = new Text(LocaleController.getString(R.string.Gift2UniqueView), 14.0f, AndroidUtilities.bold());
+                    float dp4 = AndroidUtilities.dp(30.0f);
+                    this.buttonHeight = dp4;
+                    dp3 += dp4;
+                    dp = AndroidUtilities.dp(11.0f);
+                } else {
+                    dp = AndroidUtilities.dp(10.0f);
+                }
+                this.height = (int) (dp3 + dp);
+                return;
+            }
+        }
+        tL_messageActionStarGiftUnique = null;
+        if (tL_messageActionStarGiftUnique != null) {
+        }
+        tL_messageActionStarGiftUnique = null;
+        if (this.attached) {
+            this.imageReceiver.onAttachedToWindow();
+            this.emoji.attach();
+        }
+        this.action = tL_messageActionStarGiftUnique;
+        this.repost = messageObject == null && messageObject.isRepostPreview;
+        if (tL_messageActionStarGiftUnique != null) {
+        }
+    }
+
+    public boolean has() {
+        return this.action != null;
+    }
+
+    public float getWidth() {
+        return this.width;
+    }
+
+    public float getHeight() {
+        return this.height;
+    }
+
     public void attach() {
         this.attached = true;
         if (this.action != null) {
@@ -203,207 +376,31 @@ public class StarGiftUniqueActionLayout {
         this.view.invalidateOutbounds();
     }
 
-    public float getHeight() {
-        return this.height;
-    }
-
-    public float getWidth() {
-        return this.width;
-    }
-
-    public boolean has() {
-        return this.action != null;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:42:0x00b4, code lost:
-    
-        if (r9.bounce.isPressed() != false) goto L28;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public boolean onTouchEvent(float f, float f2, MotionEvent motionEvent) {
-        ButtonBounce buttonBounce;
         boolean contains = this.buttonRect.contains(motionEvent.getX() - f, motionEvent.getY() - f2);
         boolean contains2 = this.backgroundRect.contains(motionEvent.getX() - f, motionEvent.getY() - f2);
         if (motionEvent.getAction() == 0) {
             this.bounce.setPressed(contains2 && !contains);
             this.buttonBounce.setPressed(contains);
+        } else if (motionEvent.getAction() == 2) {
+            if (this.buttonBounce.isPressed() && !contains) {
+                this.buttonBounce.setPressed(false);
+            } else if (this.bounce.isPressed() && !contains2) {
+                this.bounce.setPressed(false);
+            }
         } else {
-            if (motionEvent.getAction() != 2) {
-                if (motionEvent.getAction() == 1 && (this.buttonBounce.isPressed() || this.bounce.isPressed())) {
-                    new StarGiftSheet(this.view.getContext(), this.currentAccount, this.currentMessageObject.getDialogId(), this.resourcesProvider).set(this.currentMessageObject).show();
-                } else if (motionEvent.getAction() == 3) {
-                    if (!this.buttonBounce.isPressed()) {
-                    }
-                }
+            if (motionEvent.getAction() == 1 && (this.buttonBounce.isPressed() || this.bounce.isPressed())) {
+                new StarGiftSheet(this.view.getContext(), this.currentAccount, this.currentMessageObject.getDialogId(), this.resourcesProvider).set(this.currentMessageObject).show();
                 this.buttonBounce.setPressed(false);
                 this.bounce.setPressed(false);
                 return true;
             }
-            if (this.buttonBounce.isPressed() && !contains) {
-                buttonBounce = this.buttonBounce;
-            } else if (this.bounce.isPressed() && !contains2) {
-                buttonBounce = this.bounce;
+            if (motionEvent.getAction() == 3 && (this.buttonBounce.isPressed() || this.bounce.isPressed())) {
+                this.buttonBounce.setPressed(false);
+                this.bounce.setPressed(false);
+                return true;
             }
-            buttonBounce.setPressed(false);
         }
         return this.buttonBounce.isPressed() || this.bounce.isPressed();
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:26:0x004b A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x004c  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void set(MessageObject messageObject, boolean z) {
-        TLRPC.TL_messageActionStarGiftUnique tL_messageActionStarGiftUnique;
-        int dp;
-        Text text;
-        int dp2;
-        TLRPC.Message message;
-        this.currentMessageObject = messageObject;
-        if (messageObject != null && (message = messageObject.messageOwner) != null) {
-            TLRPC.MessageAction messageAction = message.action;
-            if (messageAction instanceof TLRPC.TL_messageActionStarGiftUnique) {
-                tL_messageActionStarGiftUnique = (TLRPC.TL_messageActionStarGiftUnique) messageAction;
-                if (tL_messageActionStarGiftUnique != null || tL_messageActionStarGiftUnique.refunded || !(tL_messageActionStarGiftUnique.gift instanceof TL_stars.TL_starGiftUnique)) {
-                    tL_messageActionStarGiftUnique = null;
-                }
-                if (this.attached && tL_messageActionStarGiftUnique != null && this.action == null) {
-                    this.imageReceiver.onAttachedToWindow();
-                    this.emoji.attach();
-                }
-                this.action = tL_messageActionStarGiftUnique;
-                this.repost = messageObject == null && messageObject.isRepostPreview;
-                if (tL_messageActionStarGiftUnique != null) {
-                    return;
-                }
-                TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) tL_messageActionStarGiftUnique.gift;
-                this.backdrop = (TL_stars.starGiftAttributeBackdrop) StarsController.findAttribute(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
-                this.pattern = (TL_stars.starGiftAttributePattern) StarsController.findAttribute(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
-                TL_stars.starGiftAttributeModel stargiftattributemodel = this.model;
-                this.model = (TL_stars.starGiftAttributeModel) StarsController.findAttribute(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class);
-                Paint paint = this.backgroundPaint;
-                this.gradient = null;
-                paint.setShader(null);
-                TL_stars.starGiftAttributePattern stargiftattributepattern = this.pattern;
-                if (stargiftattributepattern != null) {
-                    this.emoji.set(stargiftattributepattern.document, z);
-                } else {
-                    this.emoji.set((Drawable) null, z);
-                }
-                TL_stars.starGiftAttributeModel stargiftattributemodel2 = this.model;
-                if (stargiftattributemodel2 != null && (stargiftattributemodel == null || stargiftattributemodel.document.id != stargiftattributemodel2.document.id)) {
-                    if (this.repost) {
-                        this.imageReceiver.setAllowStartLottieAnimation(true);
-                        this.imageReceiver.setAllowStartAnimation(true);
-                        this.imageReceiver.setAutoRepeat(1);
-                    } else {
-                        this.imageReceiver.setAutoRepeatCount(0);
-                        this.imageReceiver.clearDecorators();
-                        this.imageReceiver.setAutoRepeat(0);
-                    }
-                    StarsIntroActivity.setGiftImage(this.imageReceiver, this.model.document, 110);
-                }
-                this.ribbon.setBackdrop(this.backdrop, true);
-                this.ribbon.setText(11, LocaleController.getString(R.string.Gift2UniqueRibbon), true);
-                if (this.repost) {
-                    dp = AndroidUtilities.dp(200.0f);
-                } else {
-                    this.width = Math.min((int) (AndroidUtilities.isTablet() ? AndroidUtilities.getMinTabletSide() * 0.6f : (AndroidUtilities.displaySize.x * 0.62f) - AndroidUtilities.dp(34.0f)), ((AndroidUtilities.displaySize.y - ActionBar.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(64.0f));
-                    if (!AndroidUtilities.isTablet()) {
-                        this.width = (int) (this.width * 1.2f);
-                    }
-                    dp = this.width - AndroidUtilities.dp(8.0f);
-                }
-                this.width = dp;
-                float f = this.width;
-                long clientUserId = (tL_messageActionStarGiftUnique.upgrade ^ true) == messageObject.isOutOwner() ? UserConfig.getInstance(this.currentAccount).getClientUserId() : messageObject.getDialogId();
-                TLRPC.Peer peer = tL_messageActionStarGiftUnique.from_id;
-                if (peer != null) {
-                    clientUserId = DialogObject.getPeerDialogId(peer);
-                }
-                float dp3 = AndroidUtilities.dp(10.0f) + 0.0f + AndroidUtilities.dp(110.0f) + AndroidUtilities.dp(9.33f);
-                this.title = this.repost ? new Text(tL_starGiftUnique.title, 14.0f, AndroidUtilities.bold()) : (tL_messageActionStarGiftUnique.peer != null || UserObject.isService(messageObject.getDialogId())) ? new Text(LocaleController.getString(R.string.Gift2UniqueTitle2), 14.0f, AndroidUtilities.bold()) : messageObject.getDialogId() == UserConfig.getInstance(this.currentAccount).getClientUserId() ? new Text(LocaleController.getString(R.string.Gift2ActionSelfTitle), 14.0f, AndroidUtilities.bold()) : new Text(LocaleController.formatString(R.string.Gift2UniqueTitle, DialogObject.getShortName(clientUserId)), 14.0f, AndroidUtilities.bold());
-                this.titleY = (this.title.getHeight() / 2.0f) + dp3;
-                float height = dp3 + this.title.getHeight() + AndroidUtilities.dp(3.0f);
-                if (this.repost) {
-                    text = new Text(LocaleController.formatPluralStringComma("Gift2CollectionNumber", tL_starGiftUnique.num), 12.0f, AndroidUtilities.bold());
-                } else {
-                    text = new Text(tL_starGiftUnique.title + " #" + LocaleController.formatNumber(tL_starGiftUnique.num, ','), 12.0f);
-                }
-                this.subtitle = text;
-                this.subtitleY = (this.subtitle.getHeight() / 2.0f) + height;
-                float height2 = height + this.subtitle.getHeight() + AndroidUtilities.dp(this.repost ? 14.0f : 11.0f);
-                this.table.clear();
-                this.nameWidth = 0.0f;
-                this.valueWidth = 0.0f;
-                if (this.model != null) {
-                    if (!this.table.isEmpty()) {
-                        height2 += AndroidUtilities.dp(6.0f);
-                    }
-                    Row row = new Row(height2, LocaleController.getString(R.string.Gift2AttributeModel), this.model.name);
-                    this.table.add(row);
-                    float f2 = f * 0.5f;
-                    row.name.ellipsize(f2);
-                    this.nameWidth = Math.max(this.nameWidth, row.name.getCurrentWidth());
-                    row.value.ellipsize(f2);
-                    this.valueWidth = Math.max(this.valueWidth, row.value.getCurrentWidth());
-                    height2 += row.getHeight();
-                }
-                if (this.backdrop != null) {
-                    if (!this.table.isEmpty()) {
-                        height2 += AndroidUtilities.dp(6.0f);
-                    }
-                    Row row2 = new Row(height2, LocaleController.getString(R.string.Gift2AttributeBackdrop), this.backdrop.name);
-                    this.table.add(row2);
-                    float f3 = f * 0.5f;
-                    row2.name.ellipsize(f3);
-                    this.nameWidth = Math.max(this.nameWidth, row2.name.getCurrentWidth());
-                    row2.value.ellipsize(f3);
-                    this.valueWidth = Math.max(this.valueWidth, row2.value.getCurrentWidth());
-                    height2 += row2.getHeight();
-                }
-                if (this.pattern != null) {
-                    if (!this.table.isEmpty()) {
-                        height2 += AndroidUtilities.dp(6.0f);
-                    }
-                    Row row3 = new Row(height2, LocaleController.getString(R.string.Gift2AttributeSymbol), this.pattern.name);
-                    this.table.add(row3);
-                    float f4 = f * 0.5f;
-                    row3.name.ellipsize(f4);
-                    this.nameWidth = Math.max(this.nameWidth, row3.name.getCurrentWidth());
-                    row3.value.ellipsize(f4);
-                    this.valueWidth = Math.max(this.valueWidth, row3.value.getCurrentWidth());
-                    height2 += row3.getHeight();
-                }
-                float dp4 = height2 + AndroidUtilities.dp(11.66f);
-                if (this.repost) {
-                    dp2 = AndroidUtilities.dp(10.0f);
-                } else {
-                    this.buttonY = dp4;
-                    this.buttonText = new Text(LocaleController.getString(R.string.Gift2UniqueView), 14.0f, AndroidUtilities.bold());
-                    float dp5 = AndroidUtilities.dp(30.0f);
-                    this.buttonHeight = dp5;
-                    dp4 += dp5;
-                    dp2 = AndroidUtilities.dp(11.0f);
-                }
-                this.height = (int) (dp4 + dp2);
-                return;
-            }
-        }
-        tL_messageActionStarGiftUnique = null;
-        if (tL_messageActionStarGiftUnique != null) {
-        }
-        tL_messageActionStarGiftUnique = null;
-        if (this.attached) {
-            this.imageReceiver.onAttachedToWindow();
-            this.emoji.attach();
-        }
-        this.action = tL_messageActionStarGiftUnique;
-        this.repost = messageObject == null && messageObject.isRepostPreview;
-        if (tL_messageActionStarGiftUnique != null) {
-        }
     }
 }

@@ -5,7 +5,7 @@ import android.os.IInterface;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.RemoteException;
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import com.google.android.gms.cast.framework.media.NotificationOptions;
 import com.google.android.gms.cast.internal.Logger;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
@@ -68,7 +68,7 @@ public class CastMediaOptions extends AbstractSafeParcelable {
         zzd zzdVar = this.zzd;
         if (zzdVar != null) {
             try {
-                ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(ObjectWrapper.unwrap(zzdVar.zzg()));
+                WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(ObjectWrapper.unwrap(zzdVar.zzg()));
                 return null;
             } catch (RemoteException e) {
                 zza.d(e, "Unable to call %s on %s.", "getWrappedClientObject", zzd.class.getSimpleName());

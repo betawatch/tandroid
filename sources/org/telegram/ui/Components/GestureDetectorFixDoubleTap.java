@@ -10,7 +10,7 @@ import android.view.ViewConfiguration;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class GestureDetectorFixDoubleTap {
     private final GestureDetectorCompatImpl mImpl;
 
@@ -20,6 +20,10 @@ public class GestureDetectorFixDoubleTap {
         void setIsLongpressEnabled(boolean z);
 
         void setLongpressDuration(long j);
+    }
+
+    public static class OnGestureListener extends GestureDetector.SimpleOnGestureListener {
+        public abstract boolean hasDoubleTap(MotionEvent motionEvent);
     }
 
     static class GestureDetectorCompatImplBase implements GestureDetectorCompatImpl {
@@ -67,18 +71,21 @@ public class GestureDetectorFixDoubleTap {
                     GestureDetectorCompatImplBase.this.dispatchLongPress();
                     return;
                 }
-                if (i != 3) {
-                    throw new RuntimeException("Unknown message " + message);
-                }
-                GestureDetectorCompatImplBase gestureDetectorCompatImplBase2 = GestureDetectorCompatImplBase.this;
-                GestureDetector.OnDoubleTapListener onDoubleTapListener = gestureDetectorCompatImplBase2.mDoubleTapListener;
-                if (onDoubleTapListener != null) {
-                    if (gestureDetectorCompatImplBase2.mStillDown) {
-                        gestureDetectorCompatImplBase2.mDeferConfirmSingleTap = true;
-                    } else {
-                        onDoubleTapListener.onSingleTapConfirmed(gestureDetectorCompatImplBase2.mCurrentDownEvent);
+                if (i == 3) {
+                    GestureDetectorCompatImplBase gestureDetectorCompatImplBase2 = GestureDetectorCompatImplBase.this;
+                    GestureDetector.OnDoubleTapListener onDoubleTapListener = gestureDetectorCompatImplBase2.mDoubleTapListener;
+                    if (onDoubleTapListener != null) {
+                        if (!gestureDetectorCompatImplBase2.mStillDown) {
+                            onDoubleTapListener.onSingleTapConfirmed(gestureDetectorCompatImplBase2.mCurrentDownEvent);
+                            return;
+                        } else {
+                            gestureDetectorCompatImplBase2.mDeferConfirmSingleTap = true;
+                            return;
+                        }
                     }
+                    return;
                 }
+                throw new RuntimeException("Unknown message " + message);
             }
         }
 
@@ -93,35 +100,6 @@ public class GestureDetectorFixDoubleTap {
                 setOnDoubleTapListener(onGestureListener);
             }
             init(context);
-        }
-
-        private void cancel() {
-            this.mHandler.removeMessages(1);
-            this.mHandler.removeMessages(2);
-            this.mHandler.removeMessages(3);
-            this.mVelocityTracker.recycle();
-            this.mVelocityTracker = null;
-            this.mIsDoubleTapping = false;
-            this.mStillDown = false;
-            this.mAlwaysInTapRegion = false;
-            this.mAlwaysInBiggerTapRegion = false;
-            this.mDeferConfirmSingleTap = false;
-            if (this.mInLongPress) {
-                this.mInLongPress = false;
-            }
-        }
-
-        private void cancelTaps() {
-            this.mHandler.removeMessages(1);
-            this.mHandler.removeMessages(2);
-            this.mHandler.removeMessages(3);
-            this.mIsDoubleTapping = false;
-            this.mAlwaysInTapRegion = false;
-            this.mAlwaysInBiggerTapRegion = false;
-            this.mDeferConfirmSingleTap = false;
-            if (this.mInLongPress) {
-                this.mInLongPress = false;
-            }
         }
 
         private void init(Context context) {
@@ -141,20 +119,18 @@ public class GestureDetectorFixDoubleTap {
             this.mDoubleTapSlopSquare = scaledDoubleTapSlop * scaledDoubleTapSlop;
         }
 
-        private boolean isConsideredDoubleTap(MotionEvent motionEvent, MotionEvent motionEvent2, MotionEvent motionEvent3) {
-            if (!this.mAlwaysInBiggerTapRegion || motionEvent3.getEventTime() - motionEvent2.getEventTime() > 220) {
-                return false;
-            }
-            int x = ((int) motionEvent.getX()) - ((int) motionEvent3.getX());
-            int y = ((int) motionEvent.getY()) - ((int) motionEvent3.getY());
-            return (x * x) + (y * y) < this.mDoubleTapSlopSquare;
+        public void setOnDoubleTapListener(GestureDetector.OnDoubleTapListener onDoubleTapListener) {
+            this.mDoubleTapListener = onDoubleTapListener;
         }
 
-        void dispatchLongPress() {
-            this.mHandler.removeMessages(3);
-            this.mDeferConfirmSingleTap = false;
-            this.mInLongPress = true;
-            this.mListener.onLongPress(this.mCurrentDownEvent);
+        @Override // org.telegram.ui.Components.GestureDetectorFixDoubleTap.GestureDetectorCompatImpl
+        public void setIsLongpressEnabled(boolean z) {
+            this.mIsLongpressEnabled = z;
+        }
+
+        @Override // org.telegram.ui.Components.GestureDetectorFixDoubleTap.GestureDetectorCompatImpl
+        public void setLongpressDuration(long j) {
+            this.mLongpressDuration = j;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:116:0x020c  */
@@ -241,48 +217,7 @@ public class GestureDetectorFixDoubleTap {
                 this.mHandler.sendEmptyMessageAtTime(1, this.mCurrentDownEvent.getDownTime() + TAP_TIMEOUT);
                 return z | this.mListener.onDown(motionEvent);
             }
-            if (i == 1) {
-                this.mStillDown = false;
-                MotionEvent obtain = MotionEvent.obtain(motionEvent);
-                if (this.mIsDoubleTapping) {
-                    onFling = this.mDoubleTapListener.onDoubleTapEvent(motionEvent);
-                } else {
-                    if (this.mInLongPress) {
-                        this.mHandler.removeMessages(3);
-                        this.mInLongPress = false;
-                    } else if (this.mAlwaysInTapRegion) {
-                        boolean onSingleTapUp = this.mListener.onSingleTapUp(motionEvent);
-                        if (this.mDeferConfirmSingleTap && (onDoubleTapListener = this.mDoubleTapListener) != null) {
-                            onDoubleTapListener.onSingleTapConfirmed(motionEvent);
-                        }
-                        onFling = onSingleTapUp;
-                    } else {
-                        VelocityTracker velocityTracker = this.mVelocityTracker;
-                        int pointerId = motionEvent.getPointerId(0);
-                        velocityTracker.computeCurrentVelocity(MediaDataController.MAX_STYLE_RUNS_COUNT, this.mMaximumFlingVelocity);
-                        float yVelocity = velocityTracker.getYVelocity(pointerId);
-                        float xVelocity = velocityTracker.getXVelocity(pointerId);
-                        if (Math.abs(yVelocity) > this.mMinimumFlingVelocity || Math.abs(xVelocity) > this.mMinimumFlingVelocity) {
-                            onFling = this.mListener.onFling(this.mCurrentDownEvent, motionEvent, xVelocity, yVelocity);
-                        }
-                    }
-                    onFling = false;
-                }
-                MotionEvent motionEvent5 = this.mPreviousUpEvent;
-                if (motionEvent5 != null) {
-                    motionEvent5.recycle();
-                }
-                this.mPreviousUpEvent = obtain;
-                VelocityTracker velocityTracker2 = this.mVelocityTracker;
-                if (velocityTracker2 != null) {
-                    velocityTracker2.recycle();
-                    this.mVelocityTracker = null;
-                }
-                this.mIsDoubleTapping = false;
-                this.mDeferConfirmSingleTap = false;
-                this.mHandler.removeMessages(1);
-                this.mHandler.removeMessages(2);
-            } else {
+            if (i != 1) {
                 if (i != 2) {
                     if (i == 3) {
                         cancel();
@@ -305,13 +240,13 @@ public class GestureDetectorFixDoubleTap {
                     this.mDownFocusY = f5;
                     this.mVelocityTracker.computeCurrentVelocity(MediaDataController.MAX_STYLE_RUNS_COUNT, this.mMaximumFlingVelocity);
                     int actionIndex2 = motionEvent.getActionIndex();
-                    int pointerId2 = motionEvent.getPointerId(actionIndex2);
-                    float xVelocity2 = this.mVelocityTracker.getXVelocity(pointerId2);
-                    float yVelocity2 = this.mVelocityTracker.getYVelocity(pointerId2);
+                    int pointerId = motionEvent.getPointerId(actionIndex2);
+                    float xVelocity = this.mVelocityTracker.getXVelocity(pointerId);
+                    float yVelocity = this.mVelocityTracker.getYVelocity(pointerId);
                     for (int i3 = 0; i3 < pointerCount; i3++) {
                         if (i3 != actionIndex2) {
-                            int pointerId3 = motionEvent.getPointerId(i3);
-                            if ((this.mVelocityTracker.getXVelocity(pointerId3) * xVelocity2) + (this.mVelocityTracker.getYVelocity(pointerId3) * yVelocity2) < 0.0f) {
+                            int pointerId2 = motionEvent.getPointerId(i3);
+                            if ((this.mVelocityTracker.getXVelocity(pointerId2) * xVelocity) + (this.mVelocityTracker.getYVelocity(pointerId2) * yVelocity) < 0.0f) {
                                 this.mVelocityTracker.clear();
                                 return false;
                             }
@@ -353,27 +288,95 @@ public class GestureDetectorFixDoubleTap {
                 if (i6 > this.mTouchSlopSquare) {
                     this.mAlwaysInBiggerTapRegion = false;
                 }
+            } else {
+                this.mStillDown = false;
+                MotionEvent obtain = MotionEvent.obtain(motionEvent);
+                if (this.mIsDoubleTapping) {
+                    onFling = this.mDoubleTapListener.onDoubleTapEvent(motionEvent);
+                } else {
+                    if (this.mInLongPress) {
+                        this.mHandler.removeMessages(3);
+                        this.mInLongPress = false;
+                    } else if (this.mAlwaysInTapRegion) {
+                        boolean onSingleTapUp = this.mListener.onSingleTapUp(motionEvent);
+                        if (this.mDeferConfirmSingleTap && (onDoubleTapListener = this.mDoubleTapListener) != null) {
+                            onDoubleTapListener.onSingleTapConfirmed(motionEvent);
+                        }
+                        onFling = onSingleTapUp;
+                    } else {
+                        VelocityTracker velocityTracker = this.mVelocityTracker;
+                        int pointerId3 = motionEvent.getPointerId(0);
+                        velocityTracker.computeCurrentVelocity(MediaDataController.MAX_STYLE_RUNS_COUNT, this.mMaximumFlingVelocity);
+                        float yVelocity2 = velocityTracker.getYVelocity(pointerId3);
+                        float xVelocity2 = velocityTracker.getXVelocity(pointerId3);
+                        if (Math.abs(yVelocity2) > this.mMinimumFlingVelocity || Math.abs(xVelocity2) > this.mMinimumFlingVelocity) {
+                            onFling = this.mListener.onFling(this.mCurrentDownEvent, motionEvent, xVelocity2, yVelocity2);
+                        }
+                    }
+                    onFling = false;
+                }
+                MotionEvent motionEvent5 = this.mPreviousUpEvent;
+                if (motionEvent5 != null) {
+                    motionEvent5.recycle();
+                }
+                this.mPreviousUpEvent = obtain;
+                VelocityTracker velocityTracker2 = this.mVelocityTracker;
+                if (velocityTracker2 != null) {
+                    velocityTracker2.recycle();
+                    this.mVelocityTracker = null;
+                }
+                this.mIsDoubleTapping = false;
+                this.mDeferConfirmSingleTap = false;
+                this.mHandler.removeMessages(1);
+                this.mHandler.removeMessages(2);
             }
             return onFling;
         }
 
-        @Override // org.telegram.ui.Components.GestureDetectorFixDoubleTap.GestureDetectorCompatImpl
-        public void setIsLongpressEnabled(boolean z) {
-            this.mIsLongpressEnabled = z;
+        private void cancel() {
+            this.mHandler.removeMessages(1);
+            this.mHandler.removeMessages(2);
+            this.mHandler.removeMessages(3);
+            this.mVelocityTracker.recycle();
+            this.mVelocityTracker = null;
+            this.mIsDoubleTapping = false;
+            this.mStillDown = false;
+            this.mAlwaysInTapRegion = false;
+            this.mAlwaysInBiggerTapRegion = false;
+            this.mDeferConfirmSingleTap = false;
+            if (this.mInLongPress) {
+                this.mInLongPress = false;
+            }
         }
 
-        @Override // org.telegram.ui.Components.GestureDetectorFixDoubleTap.GestureDetectorCompatImpl
-        public void setLongpressDuration(long j) {
-            this.mLongpressDuration = j;
+        private void cancelTaps() {
+            this.mHandler.removeMessages(1);
+            this.mHandler.removeMessages(2);
+            this.mHandler.removeMessages(3);
+            this.mIsDoubleTapping = false;
+            this.mAlwaysInTapRegion = false;
+            this.mAlwaysInBiggerTapRegion = false;
+            this.mDeferConfirmSingleTap = false;
+            if (this.mInLongPress) {
+                this.mInLongPress = false;
+            }
         }
 
-        public void setOnDoubleTapListener(GestureDetector.OnDoubleTapListener onDoubleTapListener) {
-            this.mDoubleTapListener = onDoubleTapListener;
+        private boolean isConsideredDoubleTap(MotionEvent motionEvent, MotionEvent motionEvent2, MotionEvent motionEvent3) {
+            if (!this.mAlwaysInBiggerTapRegion || motionEvent3.getEventTime() - motionEvent2.getEventTime() > 220) {
+                return false;
+            }
+            int x = ((int) motionEvent.getX()) - ((int) motionEvent3.getX());
+            int y = ((int) motionEvent.getY()) - ((int) motionEvent3.getY());
+            return (x * x) + (y * y) < this.mDoubleTapSlopSquare;
         }
-    }
 
-    public static class OnGestureListener extends GestureDetector.SimpleOnGestureListener {
-        public abstract boolean hasDoubleTap(MotionEvent motionEvent);
+        void dispatchLongPress() {
+            this.mHandler.removeMessages(3);
+            this.mDeferConfirmSingleTap = false;
+            this.mInLongPress = true;
+            this.mListener.onLongPress(this.mCurrentDownEvent);
+        }
     }
 
     public GestureDetectorFixDoubleTap(Context context, OnGestureListener onGestureListener) {

@@ -10,6 +10,11 @@ final class O implements Iterator, Consumer {
     Object b;
     final /* synthetic */ Spliterator c;
 
+    @Override // j$.util.function.Consumer
+    public final /* synthetic */ Consumer andThen(Consumer consumer) {
+        return Consumer.-CC.$default$andThen(this, consumer);
+    }
+
     O(Spliterator spliterator) {
         this.c = spliterator;
     }
@@ -19,11 +24,6 @@ final class O implements Iterator, Consumer {
     public final void r(Object obj) {
         this.a = true;
         this.b = obj;
-    }
-
-    @Override // j$.util.function.Consumer
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer.-CC.$default$andThen(this, consumer);
     }
 
     @Override // java.util.Iterator

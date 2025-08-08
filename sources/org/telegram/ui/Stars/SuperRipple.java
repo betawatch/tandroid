@@ -54,17 +54,11 @@ public class SuperRipple extends ISuperRipple {
         this.centerX = new float[7];
         this.centerY = new float[7];
         this.intensity = new float[7];
-        RuntimeShader runtimeShader = new RuntimeShader(AndroidUtilities.readRes(R.raw.superripple_effect));
-        this.shader = runtimeShader;
+        RuntimeShader m = SuperRipple$$ExternalSyntheticApiModelOutline0.m(AndroidUtilities.readRes(R.raw.superripple_effect));
+        this.shader = m;
         setupSizeUniforms(true);
-        createRuntimeShaderEffect = RenderEffect.createRuntimeShaderEffect(runtimeShader, "img");
+        createRuntimeShaderEffect = RenderEffect.createRuntimeShaderEffect(m, "img");
         this.effect = createRuntimeShaderEffect;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animate$0(Effect effect, ValueAnimator valueAnimator) {
-        effect.t = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        updateProperties();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:27:0x0090  */
@@ -145,6 +139,40 @@ public class SuperRipple extends ISuperRipple {
         }
     }
 
+    @Override // org.telegram.ui.Stars.ISuperRipple
+    public void animate(float f, float f2, float f3) {
+        if (this.effects.size() >= 7) {
+            return;
+        }
+        float max = (Math.max(Math.max(MathUtils.distance(0.0f, 0.0f, f, f2), MathUtils.distance(this.view.getWidth(), 0.0f, f, f2)), Math.max(MathUtils.distance(0.0f, this.view.getHeight(), f, f2), MathUtils.distance(this.view.getWidth(), this.view.getHeight(), f, f2))) * 2.0f) / (AndroidUtilities.density * 1200.0f);
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, max);
+        final Effect effect = new Effect(f, f2, f3, ofFloat);
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stars.SuperRipple$$ExternalSyntheticLambda10
+            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+            public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                SuperRipple.this.lambda$animate$0(effect, valueAnimator);
+            }
+        });
+        ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stars.SuperRipple.1
+            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+            public void onAnimationEnd(Animator animator) {
+                SuperRipple.this.effects.remove(effect);
+                SuperRipple.this.updateProperties();
+            }
+        });
+        ofFloat.setInterpolator(CubicBezierInterpolator.EASE_OUT);
+        ofFloat.setDuration((long) (max * 1000.0f));
+        this.effects.add(effect);
+        updateProperties();
+        ofFloat.start();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$animate$0(Effect effect, ValueAnimator valueAnimator) {
+        effect.t = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        updateProperties();
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     public void updateProperties() {
         RenderEffect createRuntimeShaderEffect;
@@ -183,33 +211,5 @@ public class SuperRipple extends ISuperRipple {
         if (z) {
             this.view.invalidate();
         }
-    }
-
-    @Override // org.telegram.ui.Stars.ISuperRipple
-    public void animate(float f, float f2, float f3) {
-        if (this.effects.size() >= 7) {
-            return;
-        }
-        float max = (Math.max(Math.max(MathUtils.distance(0.0f, 0.0f, f, f2), MathUtils.distance(this.view.getWidth(), 0.0f, f, f2)), Math.max(MathUtils.distance(0.0f, this.view.getHeight(), f, f2), MathUtils.distance(this.view.getWidth(), this.view.getHeight(), f, f2))) * 2.0f) / (AndroidUtilities.density * 1200.0f);
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, max);
-        final Effect effect = new Effect(f, f2, f3, ofFloat);
-        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stars.SuperRipple$$ExternalSyntheticLambda9
-            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-            public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                SuperRipple.this.lambda$animate$0(effect, valueAnimator);
-            }
-        });
-        ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stars.SuperRipple.1
-            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-            public void onAnimationEnd(Animator animator) {
-                SuperRipple.this.effects.remove(effect);
-                SuperRipple.this.updateProperties();
-            }
-        });
-        ofFloat.setInterpolator(CubicBezierInterpolator.EASE_OUT);
-        ofFloat.setDuration((long) (max * 1000.0f));
-        this.effects.add(effect);
-        updateProperties();
-        ofFloat.start();
     }
 }

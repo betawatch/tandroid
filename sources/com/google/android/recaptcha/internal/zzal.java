@@ -7,7 +7,7 @@ import java.nio.charset.Charset;
 import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
@@ -42,7 +42,7 @@ final class zzal extends SuspendLambda implements Function2 {
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        IntrinsicsKt.getCOROUTINE_SUSPENDED();
         ResultKt.throwOnFailure(obj);
         zzaf zzafVar = zzaf.zza;
         zzbd zzbdVar = this.zzc;

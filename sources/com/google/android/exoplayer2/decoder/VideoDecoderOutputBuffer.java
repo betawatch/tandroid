@@ -28,33 +28,29 @@ public class VideoDecoderOutputBuffer extends DecoderOutputBuffer {
         this.owner = owner;
     }
 
-    private static boolean isSafeToMultiply(int i, int i2) {
-        return i >= 0 && i2 >= 0 && (i2 <= 0 || i < ConnectionsManager.DEFAULT_DATACENTER_ID / i2);
+    @Override // com.google.android.exoplayer2.decoder.DecoderOutputBuffer
+    public void release() {
+        this.owner.releaseOutputBuffer(this);
     }
 
     public void init(long j, int i, ByteBuffer byteBuffer) {
         this.timeUs = j;
         this.mode = i;
-        if (byteBuffer == null || !byteBuffer.hasRemaining()) {
-            this.supplementalData = null;
+        if (byteBuffer != null && byteBuffer.hasRemaining()) {
+            addFlag(TLObject.FLAG_28);
+            int limit = byteBuffer.limit();
+            ByteBuffer byteBuffer2 = this.supplementalData;
+            if (byteBuffer2 == null || byteBuffer2.capacity() < limit) {
+                this.supplementalData = ByteBuffer.allocate(limit);
+            } else {
+                this.supplementalData.clear();
+            }
+            this.supplementalData.put(byteBuffer);
+            this.supplementalData.flip();
+            byteBuffer.position(0);
             return;
         }
-        addFlag(TLObject.FLAG_28);
-        int limit = byteBuffer.limit();
-        ByteBuffer byteBuffer2 = this.supplementalData;
-        if (byteBuffer2 == null || byteBuffer2.capacity() < limit) {
-            this.supplementalData = ByteBuffer.allocate(limit);
-        } else {
-            this.supplementalData.clear();
-        }
-        this.supplementalData.put(byteBuffer);
-        this.supplementalData.flip();
-        byteBuffer.position(0);
-    }
-
-    public void initForPrivateFrame(int i, int i2) {
-        this.width = i;
-        this.height = i2;
+        this.supplementalData = null;
     }
 
     public boolean initForYuvFrame(int i, int i2, int i3, int i4, int i5) {
@@ -103,8 +99,12 @@ public class VideoDecoderOutputBuffer extends DecoderOutputBuffer {
         return false;
     }
 
-    @Override // com.google.android.exoplayer2.decoder.DecoderOutputBuffer
-    public void release() {
-        this.owner.releaseOutputBuffer(this);
+    public void initForPrivateFrame(int i, int i2) {
+        this.width = i;
+        this.height = i2;
+    }
+
+    private static boolean isSafeToMultiply(int i, int i2) {
+        return i >= 0 && i2 >= 0 && (i2 <= 0 || i < ConnectionsManager.DEFAULT_DATACENTER_ID / i2);
     }
 }

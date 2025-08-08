@@ -30,8 +30,9 @@ final class zza implements Runnable {
             LifecycleCallback lifecycleCallback = this.zza;
             bundle = zzbVar.zzd;
             if (bundle != null) {
+                String str = this.zzb;
                 bundle3 = zzbVar.zzd;
-                bundle2 = bundle3.getBundle(this.zzb);
+                bundle2 = bundle3.getBundle(str);
             } else {
                 bundle2 = null;
             }

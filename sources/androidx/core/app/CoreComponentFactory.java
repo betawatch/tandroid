@@ -25,13 +25,13 @@ public class CoreComponentFactory extends AppComponentFactory {
     }
 
     @Override // android.app.AppComponentFactory
-    public ContentProvider instantiateProvider(ClassLoader classLoader, String str) {
-        return (ContentProvider) checkCompatWrapper(super.instantiateProvider(classLoader, str));
+    public BroadcastReceiver instantiateReceiver(ClassLoader classLoader, String str, Intent intent) {
+        return (BroadcastReceiver) checkCompatWrapper(super.instantiateReceiver(classLoader, str, intent));
     }
 
     @Override // android.app.AppComponentFactory
-    public BroadcastReceiver instantiateReceiver(ClassLoader classLoader, String str, Intent intent) {
-        return (BroadcastReceiver) checkCompatWrapper(super.instantiateReceiver(classLoader, str, intent));
+    public ContentProvider instantiateProvider(ClassLoader classLoader, String str) {
+        return (ContentProvider) checkCompatWrapper(super.instantiateProvider(classLoader, str));
     }
 
     @Override // android.app.AppComponentFactory

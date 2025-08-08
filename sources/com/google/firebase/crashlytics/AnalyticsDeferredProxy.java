@@ -1,7 +1,7 @@
 package com.google.firebase.crashlytics;
 
 import android.os.Bundle;
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import com.google.firebase.analytics.connector.AnalyticsConnector;
 import com.google.firebase.crashlytics.internal.Logger;
 import com.google.firebase.crashlytics.internal.analytics.AnalyticsEventLogger;
@@ -15,7 +15,7 @@ import com.google.firebase.inject.Provider;
 import java.util.ArrayList;
 import java.util.List;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class AnalyticsDeferredProxy {
     private final Deferred analyticsConnectorDeferred;
     private volatile AnalyticsEventLogger analyticsEventLogger;
@@ -34,18 +34,13 @@ public class AnalyticsDeferredProxy {
         init();
     }
 
-    private void init() {
-        this.analyticsConnectorDeferred.whenAvailable(new Deferred.DeferredHandler() { // from class: com.google.firebase.crashlytics.AnalyticsDeferredProxy$$ExternalSyntheticLambda2
-            @Override // com.google.firebase.inject.Deferred.DeferredHandler
-            public final void handle(Provider provider) {
-                AnalyticsDeferredProxy.this.lambda$init$2(provider);
+    public BreadcrumbSource getDeferredBreadcrumbSource() {
+        return new BreadcrumbSource() { // from class: com.google.firebase.crashlytics.AnalyticsDeferredProxy$$ExternalSyntheticLambda0
+            @Override // com.google.firebase.crashlytics.internal.breadcrumbs.BreadcrumbSource
+            public final void registerBreadcrumbHandler(BreadcrumbHandler breadcrumbHandler) {
+                AnalyticsDeferredProxy.this.lambda$getDeferredBreadcrumbSource$0(breadcrumbHandler);
             }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$getAnalyticsEventLogger$1(String str, Bundle bundle) {
-        this.analyticsEventLogger.logEvent(str, bundle);
+        };
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -63,19 +58,8 @@ public class AnalyticsDeferredProxy {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$2(Provider provider) {
-        Logger.getLogger().d("AnalyticsConnector now available.");
-        ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(provider.get());
-        new CrashlyticsOriginAnalyticsEventLogger(null);
-        subscribeToAnalyticsEvents(null, new CrashlyticsAnalyticsListener());
-        Logger.getLogger().w("Could not register Firebase Analytics listener; a listener is already registered.");
-    }
-
-    private static AnalyticsConnector.AnalyticsConnectorHandle subscribeToAnalyticsEvents(AnalyticsConnector analyticsConnector, CrashlyticsAnalyticsListener crashlyticsAnalyticsListener) {
-        analyticsConnector.registerAnalyticsConnectorListener("clx", crashlyticsAnalyticsListener);
-        Logger.getLogger().d("Could not register AnalyticsConnectorListener with Crashlytics origin.");
-        analyticsConnector.registerAnalyticsConnectorListener("crash", crashlyticsAnalyticsListener);
-        return null;
+    public /* synthetic */ void lambda$getAnalyticsEventLogger$1(String str, Bundle bundle) {
+        this.analyticsEventLogger.logEvent(str, bundle);
     }
 
     public AnalyticsEventLogger getAnalyticsEventLogger() {
@@ -87,12 +71,28 @@ public class AnalyticsDeferredProxy {
         };
     }
 
-    public BreadcrumbSource getDeferredBreadcrumbSource() {
-        return new BreadcrumbSource() { // from class: com.google.firebase.crashlytics.AnalyticsDeferredProxy$$ExternalSyntheticLambda0
-            @Override // com.google.firebase.crashlytics.internal.breadcrumbs.BreadcrumbSource
-            public final void registerBreadcrumbHandler(BreadcrumbHandler breadcrumbHandler) {
-                AnalyticsDeferredProxy.this.lambda$getDeferredBreadcrumbSource$0(breadcrumbHandler);
+    private void init() {
+        this.analyticsConnectorDeferred.whenAvailable(new Deferred.DeferredHandler() { // from class: com.google.firebase.crashlytics.AnalyticsDeferredProxy$$ExternalSyntheticLambda2
+            @Override // com.google.firebase.inject.Deferred.DeferredHandler
+            public final void handle(Provider provider) {
+                AnalyticsDeferredProxy.this.lambda$init$2(provider);
             }
-        };
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$init$2(Provider provider) {
+        Logger.getLogger().d("AnalyticsConnector now available.");
+        WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(provider.get());
+        new CrashlyticsOriginAnalyticsEventLogger(null);
+        subscribeToAnalyticsEvents(null, new CrashlyticsAnalyticsListener());
+        Logger.getLogger().w("Could not register Firebase Analytics listener; a listener is already registered.");
+    }
+
+    private static AnalyticsConnector.AnalyticsConnectorHandle subscribeToAnalyticsEvents(AnalyticsConnector analyticsConnector, CrashlyticsAnalyticsListener crashlyticsAnalyticsListener) {
+        analyticsConnector.registerAnalyticsConnectorListener("clx", crashlyticsAnalyticsListener);
+        Logger.getLogger().d("Could not register AnalyticsConnectorListener with Crashlytics origin.");
+        analyticsConnector.registerAnalyticsConnectorListener("crash", crashlyticsAnalyticsListener);
+        return null;
     }
 }

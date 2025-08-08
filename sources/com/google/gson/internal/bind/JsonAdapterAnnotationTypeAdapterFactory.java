@@ -11,7 +11,7 @@ import j$.util.concurrent.ConcurrentHashMap;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentMap;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class JsonAdapterAnnotationTypeAdapterFactory implements TypeAdapterFactory {
     private static final TypeAdapterFactory TREE_TYPE_CLASS_DUMMY_FACTORY;
     private static final TypeAdapterFactory TREE_TYPE_FIELD_DUMMY_FACTORY;
@@ -37,17 +37,8 @@ public final class JsonAdapterAnnotationTypeAdapterFactory implements TypeAdapte
         this.constructorConstructor = constructorConstructor;
     }
 
-    private static Object createAdapter(ConstructorConstructor constructorConstructor, Class cls) {
-        return constructorConstructor.get(TypeToken.get(cls)).construct();
-    }
-
     private static JsonAdapter getAnnotation(Class cls) {
         return (JsonAdapter) cls.getAnnotation(JsonAdapter.class);
-    }
-
-    private TypeAdapterFactory putFactoryAndGetCurrent(Class cls, TypeAdapterFactory typeAdapterFactory) {
-        TypeAdapterFactory typeAdapterFactory2 = (TypeAdapterFactory) this.adapterFactoryMap.putIfAbsent(cls, typeAdapterFactory);
-        return typeAdapterFactory2 != null ? typeAdapterFactory2 : typeAdapterFactory;
     }
 
     @Override // com.google.gson.TypeAdapterFactory
@@ -59,25 +50,42 @@ public final class JsonAdapterAnnotationTypeAdapterFactory implements TypeAdapte
         return getTypeAdapter(this.constructorConstructor, gson, typeToken, annotation, true);
     }
 
+    private static Object createAdapter(ConstructorConstructor constructorConstructor, Class cls) {
+        return constructorConstructor.get(TypeToken.get(cls)).construct();
+    }
+
+    private TypeAdapterFactory putFactoryAndGetCurrent(Class cls, TypeAdapterFactory typeAdapterFactory) {
+        TypeAdapterFactory typeAdapterFactory2 = (TypeAdapterFactory) this.adapterFactoryMap.putIfAbsent(cls, typeAdapterFactory);
+        return typeAdapterFactory2 != null ? typeAdapterFactory2 : typeAdapterFactory;
+    }
+
     TypeAdapter getTypeAdapter(ConstructorConstructor constructorConstructor, Gson gson, TypeToken typeToken, JsonAdapter jsonAdapter, boolean z) {
+        TypeAdapterFactory typeAdapterFactory;
         TypeAdapter treeTypeAdapter;
         Object createAdapter = createAdapter(constructorConstructor, jsonAdapter.value());
         boolean nullSafe = jsonAdapter.nullSafe();
         if (createAdapter instanceof TypeAdapter) {
             treeTypeAdapter = (TypeAdapter) createAdapter;
         } else if (createAdapter instanceof TypeAdapterFactory) {
-            TypeAdapterFactory typeAdapterFactory = (TypeAdapterFactory) createAdapter;
+            TypeAdapterFactory typeAdapterFactory2 = (TypeAdapterFactory) createAdapter;
             if (z) {
-                typeAdapterFactory = putFactoryAndGetCurrent(typeToken.getRawType(), typeAdapterFactory);
+                typeAdapterFactory2 = putFactoryAndGetCurrent(typeToken.getRawType(), typeAdapterFactory2);
             }
-            treeTypeAdapter = typeAdapterFactory.create(gson, typeToken);
+            treeTypeAdapter = typeAdapterFactory2.create(gson, typeToken);
         } else {
             boolean z2 = createAdapter instanceof JsonSerializer;
-            if (!z2) {
+            if (z2) {
+                JsonSerializer jsonSerializer = z2 ? (JsonSerializer) createAdapter : null;
+                if (z) {
+                    typeAdapterFactory = TREE_TYPE_CLASS_DUMMY_FACTORY;
+                } else {
+                    typeAdapterFactory = TREE_TYPE_FIELD_DUMMY_FACTORY;
+                }
+                treeTypeAdapter = new TreeTypeAdapter(jsonSerializer, null, gson, typeToken, typeAdapterFactory, nullSafe);
+                nullSafe = false;
+            } else {
                 throw new IllegalArgumentException("Invalid attempt to bind an instance of " + createAdapter.getClass().getName() + " as a @JsonAdapter for " + typeToken.toString() + ". @JsonAdapter value must be a TypeAdapter, TypeAdapterFactory, JsonSerializer or JsonDeserializer.");
             }
-            treeTypeAdapter = new TreeTypeAdapter(z2 ? (JsonSerializer) createAdapter : null, null, gson, typeToken, z ? TREE_TYPE_CLASS_DUMMY_FACTORY : TREE_TYPE_FIELD_DUMMY_FACTORY, nullSafe);
-            nullSafe = false;
         }
         return (treeTypeAdapter == null || !nullSafe) ? treeTypeAdapter : treeTypeAdapter.nullSafe();
     }

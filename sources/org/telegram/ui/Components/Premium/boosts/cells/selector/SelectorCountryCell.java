@@ -21,21 +21,19 @@ public class SelectorCountryCell extends BaseCell {
     private final CheckBox2 checkBox;
     private TLRPC.TL_help_country country;
 
-    private static class SpaceDrawable extends ReplacementSpan {
-        private final int size;
+    @Override // org.telegram.ui.Components.Premium.boosts.cells.BaseCell
+    protected int dividerPadding() {
+        return 22;
+    }
 
-        public SpaceDrawable(int i) {
-            this.size = i;
-        }
+    @Override // org.telegram.ui.Components.Premium.boosts.cells.BaseCell
+    protected int getFullHeight() {
+        return 44;
+    }
 
-        @Override // android.text.style.ReplacementSpan
-        public void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
-        }
-
-        @Override // android.text.style.ReplacementSpan
-        public int getSize(Paint paint, CharSequence charSequence, int i, int i2, Paint.FontMetricsInt fontMetricsInt) {
-            return AndroidUtilities.dp(this.size);
-        }
+    @Override // org.telegram.ui.Components.Premium.boosts.cells.BaseCell
+    protected boolean needCheck() {
+        return true;
     }
 
     public SelectorCountryCell(Context context, Theme.ResourcesProvider resourcesProvider) {
@@ -53,6 +51,25 @@ public class SelectorCountryCell extends BaseCell {
         checkBox2.setLayoutParams(LayoutHelper.createFrame(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
     }
 
+    @Override // org.telegram.ui.Components.Premium.boosts.cells.BaseCell
+    protected void updateLayouts() {
+        SimpleTextView simpleTextView = this.titleTextView;
+        boolean z = LocaleController.isRTL;
+        simpleTextView.setLayoutParams(LayoutHelper.createFrame(-1, -2.0f, (z ? 5 : 3) | 16, z ? 20.0f : 52.0f, 0.0f, z ? 52.0f : 20.0f, 0.0f));
+        SimpleTextView simpleTextView2 = this.subtitleTextView;
+        boolean z2 = LocaleController.isRTL;
+        simpleTextView2.setLayoutParams(LayoutHelper.createFrame(-1, -2.0f, (z2 ? 5 : 3) | 16, z2 ? 20.0f : 52.0f, 0.0f, z2 ? 52.0f : 20.0f, 0.0f));
+        RadioButton radioButton = this.radioButton;
+        boolean z3 = LocaleController.isRTL;
+        radioButton.setLayoutParams(LayoutHelper.createFrame(22, 22.0f, (z3 ? 5 : 3) | 16, z3 ? 15.0f : 20.0f, 0.0f, z3 ? 20.0f : 15.0f, 0.0f));
+    }
+
+    public void setCountry(TLRPC.TL_help_country tL_help_country, boolean z) {
+        this.country = tL_help_country;
+        this.titleTextView.setText(Emoji.replaceEmoji(getCountryNameWithFlag(tL_help_country), this.titleTextView.getPaint().getFontMetricsInt(), false));
+        setDivider(z);
+    }
+
     private CharSequence getCountryNameWithFlag(TLRPC.TL_help_country tL_help_country) {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         String languageFlag = LocaleController.getLanguageFlag(tL_help_country.iso2);
@@ -67,23 +84,8 @@ public class SelectorCountryCell extends BaseCell {
         return spannableStringBuilder;
     }
 
-    @Override // org.telegram.ui.Components.Premium.boosts.cells.BaseCell
-    protected int dividerPadding() {
-        return 22;
-    }
-
     public TLRPC.TL_help_country getCountry() {
         return this.country;
-    }
-
-    @Override // org.telegram.ui.Components.Premium.boosts.cells.BaseCell
-    protected int getFullHeight() {
-        return 44;
-    }
-
-    @Override // org.telegram.ui.Components.Premium.boosts.cells.BaseCell
-    protected boolean needCheck() {
-        return true;
     }
 
     @Override // org.telegram.ui.Components.Premium.boosts.cells.BaseCell
@@ -93,22 +95,20 @@ public class SelectorCountryCell extends BaseCell {
         }
     }
 
-    public void setCountry(TLRPC.TL_help_country tL_help_country, boolean z) {
-        this.country = tL_help_country;
-        this.titleTextView.setText(Emoji.replaceEmoji(getCountryNameWithFlag(tL_help_country), this.titleTextView.getPaint().getFontMetricsInt(), false));
-        setDivider(z);
-    }
+    private static class SpaceDrawable extends ReplacementSpan {
+        private final int size;
 
-    @Override // org.telegram.ui.Components.Premium.boosts.cells.BaseCell
-    protected void updateLayouts() {
-        SimpleTextView simpleTextView = this.titleTextView;
-        boolean z = LocaleController.isRTL;
-        simpleTextView.setLayoutParams(LayoutHelper.createFrame(-1, -2.0f, (z ? 5 : 3) | 16, z ? 20.0f : 52.0f, 0.0f, z ? 52.0f : 20.0f, 0.0f));
-        SimpleTextView simpleTextView2 = this.subtitleTextView;
-        boolean z2 = LocaleController.isRTL;
-        simpleTextView2.setLayoutParams(LayoutHelper.createFrame(-1, -2.0f, (z2 ? 5 : 3) | 16, z2 ? 20.0f : 52.0f, 0.0f, z2 ? 52.0f : 20.0f, 0.0f));
-        RadioButton radioButton = this.radioButton;
-        boolean z3 = LocaleController.isRTL;
-        radioButton.setLayoutParams(LayoutHelper.createFrame(22, 22.0f, (z3 ? 5 : 3) | 16, z3 ? 15.0f : 20.0f, 0.0f, z3 ? 20.0f : 15.0f, 0.0f));
+        @Override // android.text.style.ReplacementSpan
+        public void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
+        }
+
+        public SpaceDrawable(int i) {
+            this.size = i;
+        }
+
+        @Override // android.text.style.ReplacementSpan
+        public int getSize(Paint paint, CharSequence charSequence, int i, int i2, Paint.FontMetricsInt fontMetricsInt) {
+            return AndroidUtilities.dp(this.size);
+        }
     }
 }

@@ -12,12 +12,6 @@ public final class TransactionInfo extends AbstractSafeParcelable {
     String zzb;
     String zzc;
 
-    public TransactionInfo(int i, String str, String str2) {
-        this.zza = i;
-        this.zzb = str;
-        this.zzc = str2;
-    }
-
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
@@ -25,5 +19,11 @@ public final class TransactionInfo extends AbstractSafeParcelable {
         SafeParcelWriter.writeString(parcel, 2, this.zzb, false);
         SafeParcelWriter.writeString(parcel, 3, this.zzc, false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    public TransactionInfo(int i, String str, String str2) {
+        this.zza = i;
+        this.zzb = str;
+        this.zzc = str2;
     }
 }

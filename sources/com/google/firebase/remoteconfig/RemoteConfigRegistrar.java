@@ -18,14 +18,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class RemoteConfigRegistrar implements ComponentRegistrar {
     private static final String LIBRARY_NAME = "fire-rc";
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ RemoteConfigComponent lambda$getComponents$0(Qualified qualified, ComponentContainer componentContainer) {
-        return new RemoteConfigComponent((Context) componentContainer.get(Context.class), (ScheduledExecutorService) componentContainer.get(qualified), (FirebaseApp) componentContainer.get(FirebaseApp.class), (FirebaseInstallationsApi) componentContainer.get(FirebaseInstallationsApi.class), ((AbtComponent) componentContainer.get(AbtComponent.class)).get("frc"), componentContainer.getProvider(AnalyticsConnector.class));
-    }
 
     @Override // com.google.firebase.components.ComponentRegistrar
     public List<Component> getComponents() {
@@ -38,5 +33,10 @@ public class RemoteConfigRegistrar implements ComponentRegistrar {
                 return lambda$getComponents$0;
             }
         }).eagerInDefaultApp().build(), LibraryVersionComponent.create(LIBRARY_NAME, "21.6.0"));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ RemoteConfigComponent lambda$getComponents$0(Qualified qualified, ComponentContainer componentContainer) {
+        return new RemoteConfigComponent((Context) componentContainer.get(Context.class), (ScheduledExecutorService) componentContainer.get(qualified), (FirebaseApp) componentContainer.get(FirebaseApp.class), (FirebaseInstallationsApi) componentContainer.get(FirebaseInstallationsApi.class), ((AbtComponent) componentContainer.get(AbtComponent.class)).get("frc"), componentContainer.getProvider(AnalyticsConnector.class));
     }
 }

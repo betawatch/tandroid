@@ -17,10 +17,6 @@ public class GoogleSignInClient extends GoogleApi {
     private static final zbb zbb = new zbb(null);
     static int zba = 1;
 
-    GoogleSignInClient(Context context, GoogleSignInOptions googleSignInOptions) {
-        super(context, Auth.GOOGLE_SIGN_IN_API, googleSignInOptions, new ApiExceptionMapper());
-    }
-
     private final synchronized int zba() {
         int i;
         try {
@@ -62,5 +58,9 @@ public class GoogleSignInClient extends GoogleApi {
 
     public Task signOut() {
         return PendingResultUtil.toVoidTask(zbm.zbg(asGoogleApiClient(), getApplicationContext(), zba() == 3));
+    }
+
+    GoogleSignInClient(Context context, GoogleSignInOptions googleSignInOptions) {
+        super(context, Auth.GOOGLE_SIGN_IN_API, googleSignInOptions, new ApiExceptionMapper());
     }
 }

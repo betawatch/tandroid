@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.DrawerLayoutContainer;
 import org.telegram.ui.LaunchActivity;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class PasscodeViewDialog extends Dialog {
     public final Context context;
     public final PasscodeView passcodeView;
@@ -28,34 +28,19 @@ public class PasscodeViewDialog extends Dialog {
         this.context = context;
         FrameLayout frameLayout = new FrameLayout(context);
         this.windowView = frameLayout;
-        if (Build.VERSION.SDK_INT >= 21) {
-            frameLayout.setFitsSystemWindows(true);
-            frameLayout.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() { // from class: org.telegram.ui.Components.PasscodeViewDialog.1
-                @Override // android.view.View.OnApplyWindowInsetsListener
-                public WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-                    WindowInsets consumeSystemWindowInsets;
-                    WindowInsets windowInsets2;
-                    if (Build.VERSION.SDK_INT >= 30) {
-                        windowInsets2 = WindowInsets.CONSUMED;
-                        return windowInsets2;
-                    }
-                    consumeSystemWindowInsets = windowInsets.consumeSystemWindowInsets();
-                    return consumeSystemWindowInsets;
+        frameLayout.setFitsSystemWindows(true);
+        frameLayout.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() { // from class: org.telegram.ui.Components.PasscodeViewDialog.1
+            @Override // android.view.View.OnApplyWindowInsetsListener
+            public WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
+                WindowInsets windowInsets2;
+                if (Build.VERSION.SDK_INT >= 30) {
+                    windowInsets2 = WindowInsets.CONSUMED;
+                    return windowInsets2;
                 }
-            });
-        }
-        PasscodeView passcodeView = new PasscodeView(context) { // from class: org.telegram.ui.Components.PasscodeViewDialog.2
-            @Override // org.telegram.ui.Components.PasscodeView
-            protected void onAnimationUpdate(float f) {
-                LaunchActivity launchActivity = LaunchActivity.instance;
-                if (launchActivity == null) {
-                    return;
-                }
-                DrawerLayoutContainer drawerLayoutContainer = launchActivity.drawerLayoutContainer;
-                drawerLayoutContainer.setScaleX(AndroidUtilities.lerp(1.0f, 1.25f, f));
-                drawerLayoutContainer.setScaleY(AndroidUtilities.lerp(1.0f, 1.25f, f));
+                return windowInsets.consumeSystemWindowInsets();
             }
-
+        });
+        PasscodeView passcodeView = new PasscodeView(context) { // from class: org.telegram.ui.Components.PasscodeViewDialog.2
             @Override // org.telegram.ui.Components.PasscodeView
             protected void onHidden() {
                 PasscodeViewDialog.super.dismiss();
@@ -67,39 +52,20 @@ public class PasscodeViewDialog extends Dialog {
                 drawerLayoutContainer.setScaleX(1.0f);
                 drawerLayoutContainer.setScaleY(1.0f);
             }
+
+            @Override // org.telegram.ui.Components.PasscodeView
+            protected void onAnimationUpdate(float f) {
+                LaunchActivity launchActivity = LaunchActivity.instance;
+                if (launchActivity == null) {
+                    return;
+                }
+                DrawerLayoutContainer drawerLayoutContainer = launchActivity.drawerLayoutContainer;
+                drawerLayoutContainer.setScaleX(AndroidUtilities.lerp(1.0f, 1.25f, f));
+                drawerLayoutContainer.setScaleY(AndroidUtilities.lerp(1.0f, 1.25f, f));
+            }
         };
         this.passcodeView = passcodeView;
         frameLayout.addView(passcodeView, LayoutHelper.createFrame(-1, -1, 119));
-    }
-
-    @Override // android.app.Dialog, android.content.DialogInterface
-    public void dismiss() {
-        LaunchActivity launchActivity;
-        if (!this.passcodeView.onBackPressed() || (launchActivity = LaunchActivity.instance) == null) {
-            return;
-        }
-        launchActivity.moveTaskToBack(true);
-    }
-
-    @Override // android.app.Dialog, android.view.Window.Callback
-    public boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        LaunchActivity launchActivity;
-        if (keyEvent.getKeyCode() != 4 || keyEvent.getRepeatCount() != 0) {
-            return super.dispatchKeyEvent(keyEvent);
-        }
-        if (this.passcodeView.onBackPressed() && (launchActivity = LaunchActivity.instance) != null) {
-            launchActivity.moveTaskToBack(true);
-        }
-        return true;
-    }
-
-    @Override // android.app.Dialog
-    public void onBackPressed() {
-        LaunchActivity launchActivity;
-        if (!this.passcodeView.onBackPressed() || (launchActivity = LaunchActivity.instance) == null) {
-            return;
-        }
-        launchActivity.moveTaskToBack(true);
     }
 
     @Override // android.app.Dialog
@@ -121,15 +87,42 @@ public class PasscodeViewDialog extends Dialog {
             AndroidUtilities.logFlagSecure();
         }
         int i2 = Build.VERSION.SDK_INT;
-        if (i2 >= 21) {
-            attributes.flags |= -2013200128;
-        }
-        attributes.flags |= 1152;
+        attributes.flags |= -2013198976;
         if (i2 >= 28) {
             attributes.layoutInDisplayCutoutMode = 1;
         }
         window.setAttributes(attributes);
         this.windowView.setSystemUiVisibility(256);
         AndroidUtilities.setLightNavigationBar(window, false);
+    }
+
+    @Override // android.app.Dialog
+    public void onBackPressed() {
+        LaunchActivity launchActivity;
+        if (!this.passcodeView.onBackPressed() || (launchActivity = LaunchActivity.instance) == null) {
+            return;
+        }
+        launchActivity.moveTaskToBack(true);
+    }
+
+    @Override // android.app.Dialog, android.content.DialogInterface
+    public void dismiss() {
+        LaunchActivity launchActivity;
+        if (!this.passcodeView.onBackPressed() || (launchActivity = LaunchActivity.instance) == null) {
+            return;
+        }
+        launchActivity.moveTaskToBack(true);
+    }
+
+    @Override // android.app.Dialog, android.view.Window.Callback
+    public boolean dispatchKeyEvent(KeyEvent keyEvent) {
+        LaunchActivity launchActivity;
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0) {
+            if (this.passcodeView.onBackPressed() && (launchActivity = LaunchActivity.instance) != null) {
+                launchActivity.moveTaskToBack(true);
+            }
+            return true;
+        }
+        return super.dispatchKeyEvent(keyEvent);
     }
 }

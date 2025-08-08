@@ -41,7 +41,7 @@ import org.telegram.ui.Stars.StarsIntroActivity;
 import org.telegram.ui.Stories.DarkThemeResourceProvider;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class PostsSearchContainer extends FrameLayout {
     private ColoredImageSpan arrowSpan;
     private ForegroundColorAlphaSpan colorSpan;
@@ -74,19 +74,6 @@ public class PostsSearchContainer extends FrameLayout {
     private final Runnable updateEmptyViewRunnable;
     private boolean wasEmptyOnFloodLoad;
     private boolean wasOpen;
-
-    public static class ForegroundColorAlphaSpan extends CharacterStyle {
-        private final int color;
-
-        public ForegroundColorAlphaSpan(int i) {
-            this.color = i;
-        }
-
-        @Override // android.text.style.CharacterStyle
-        public void updateDrawState(TextPaint textPaint) {
-            textPaint.setColor(Theme.multAlpha(this.color, textPaint.getAlpha() / 255.0f));
-        }
-    }
 
     public PostsSearchContainer(Context context, final BaseFragment baseFragment) {
         super(context);
@@ -180,50 +167,20 @@ public class PostsSearchContainer extends FrameLayout {
         updateEmptyView();
     }
 
-    private void cancel() {
-        if (this.reqId >= 0) {
-            ConnectionsManager.getInstance(this.currentAccount).cancelRequest(this.reqId, true);
-            this.reqId = -1;
+    public void updateColors() {
+        this.emptyParentView.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
+        this.emptyTitleView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
+        TextView textView = this.emptyUnderButtonTextView;
+        int i = Theme.key_windowBackgroundWhiteGrayText;
+        textView.setTextColor(Theme.getColor(i));
+        this.emptyTextView.setTextColor(Theme.getColor(i));
+        this.listView.setAdapter(null);
+        UniversalRecyclerView universalRecyclerView = this.listView;
+        universalRecyclerView.setAdapter(universalRecyclerView.adapter);
+        if (this.colorSpan != null) {
+            this.colorSpan = null;
+            updateEmptyView();
         }
-        this.loading = false;
-        this.emptyButton.setLoading(false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter) {
-        boolean isEmpty;
-        if (this.flood == null) {
-            arrayList.add(UItem.asFlicker(-1, 7));
-            arrayList.add(UItem.asFlicker(-2, 7));
-            arrayList.add(UItem.asFlicker(-3, 7));
-            isEmpty = false;
-        } else {
-            boolean isEmpty2 = TextUtils.isEmpty(this.lastQuery);
-            if (isEmpty2) {
-                if (!this.newsMessages.isEmpty()) {
-                    arrayList.add(UItem.asGraySection(LocaleController.getString(R.string.SearchPostsHeaderNews)));
-                }
-                Iterator it = this.newsMessages.iterator();
-                while (it.hasNext()) {
-                    arrayList.add(UItem.asSearchMessage((MessageObject) it.next()));
-                }
-            } else {
-                if (!this.messages.isEmpty()) {
-                    arrayList.add(UItem.asGraySection(LocaleController.getString(R.string.SearchPostsHeaderFound)));
-                }
-                Iterator it2 = this.messages.iterator();
-                while (it2.hasNext()) {
-                    arrayList.add(UItem.asSearchMessage((MessageObject) it2.next()));
-                }
-            }
-            if (this.loading || ((this.floodLoading && !this.wasEmptyOnFloodLoad) || (!isEmpty2 && !this.messages.isEmpty() && !this.endReached))) {
-                arrayList.add(UItem.asFlicker(this.queryid * 3, 7));
-                arrayList.add(UItem.asFlicker((this.queryid * 3) + 1, 7));
-                arrayList.add(UItem.asFlicker((this.queryid * 3) + 2, 7));
-            }
-            isEmpty = arrayList.isEmpty();
-        }
-        this.isEmpty = isEmpty;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -237,185 +194,7 @@ public class PostsSearchContainer extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$load$0(boolean z, ArrayList arrayList) {
-        if (z) {
-            arrayList = this.newsMessages;
-        }
-        if (arrayList.isEmpty()) {
-            return;
-        }
-        if (!this.listView.canScrollVertically(1) || isLoadingVisible()) {
-            load(false);
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$load$1() {
-        load(true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$load$2(long j) {
-        Activity activity = AndroidUtilities.getActivity();
-        BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
-        new StarsIntroActivity.StarsNeededSheet(activity, (PhotoViewer.getInstance().isVisible() || (safeLastFragment != null && safeLastFragment.hasShownSheet())) ? new DarkThemeResourceProvider() : safeLastFragment != null ? safeLastFragment.getResourceProvider() : null, j, 15, "", new Runnable() { // from class: org.telegram.ui.Components.PostsSearchContainer$$ExternalSyntheticLambda12
-            @Override // java.lang.Runnable
-            public final void run() {
-                PostsSearchContainer.this.lambda$load$1();
-            }
-        }).show();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$load$3(TLObject tLObject, MessagesController messagesController, final boolean z, TLRPC.TL_channels_searchPosts tL_channels_searchPosts, boolean z2, final long j, TLRPC.TL_error tL_error, ConnectionsManager connectionsManager) {
-        this.reqId = -1;
-        this.loading = false;
-        this.emptyButton.setLoading(false);
-        if (!(tLObject instanceof TLRPC.messages_Messages)) {
-            if (tL_error != null && tL_error.text.startsWith("FLOOD_WAIT_") && tL_error.text.contains("_OR_STARS_")) {
-                Matcher matcher = Pattern.compile("FLOOD_WAIT_(\\d+)_OR_STARS_(\\d+)").matcher(tL_error.text);
-                if (matcher == null || !matcher.matches()) {
-                    return;
-                }
-                int parseInt = Integer.parseInt(matcher.group(1));
-                int parseInt2 = Integer.parseInt(matcher.group(2));
-                TLRPC.SearchPostsFlood searchPostsFlood = this.flood;
-                if (searchPostsFlood != null) {
-                    searchPostsFlood.flags = 2 | searchPostsFlood.flags;
-                    searchPostsFlood.wait_till = connectionsManager.getCurrentTime() + parseInt;
-                    this.flood.stars_amount = parseInt2;
-                }
-            } else if (tL_error == null || !"PREMIUM_ACCOUNT_REQUIRED".equalsIgnoreCase(tL_error.text)) {
-                if (tL_error == null || !"BALANCE_TOO_LOW".equalsIgnoreCase(tL_error.text)) {
-                    return;
-                }
-                updateEmptyView();
-                this.listView.adapter.update(true);
-                StarsController.getInstance(this.currentAccount).getBalance(true, new Runnable() { // from class: org.telegram.ui.Components.PostsSearchContainer$$ExternalSyntheticLambda11
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        PostsSearchContainer.this.lambda$load$2(j);
-                    }
-                }, true);
-                return;
-            }
-            updateEmptyView();
-            this.listView.adapter.update(true);
-            return;
-        }
-        TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
-        messagesController.putUsers(messages_messages.users, false);
-        messagesController.putChats(messages_messages.chats, false);
-        TLRPC.SearchPostsFlood searchPostsFlood2 = messages_messages.search_flood;
-        if (searchPostsFlood2 != null) {
-            this.flood = searchPostsFlood2;
-        }
-        final ArrayList arrayList = z ? this.newsMessages : this.messages;
-        boolean isEmpty = arrayList.isEmpty();
-        Iterator<TLRPC.Message> it = messages_messages.messages.iterator();
-        while (it.hasNext()) {
-            MessageObject messageObject = new MessageObject(this.currentAccount, it.next(), false, false);
-            if (!z) {
-                messageObject.setQuery(tL_channels_searchPosts.query);
-            }
-            arrayList.add(messageObject);
-        }
-        boolean z3 = messages_messages instanceof TLRPC.TL_messages_messagesSlice;
-        if (z) {
-            if (z3) {
-                this.newsMessagesLastRate = messages_messages.next_rate;
-                this.newsMessagesEndReached = (messages_messages.flags & 1) == 0;
-            } else if ((messages_messages instanceof TLRPC.TL_messages_messages) || (messages_messages instanceof TLRPC.TL_messages_channelMessages)) {
-                this.newsMessagesLastRate = 0;
-                this.newsMessagesEndReached = true;
-            }
-        } else if (z3) {
-            this.lastRate = messages_messages.next_rate;
-            this.endReached = (messages_messages.flags & 1) == 0;
-        } else if ((messages_messages instanceof TLRPC.TL_messages_messages) || (messages_messages instanceof TLRPC.TL_messages_channelMessages)) {
-            this.lastRate = 0;
-            this.endReached = true;
-        }
-        updateEmptyView();
-        if (isEmpty) {
-            this.listView.scrollToPosition(0);
-        }
-        this.listView.adapter.update(true);
-        if (!arrayList.isEmpty() && (!z ? !this.endReached : !this.newsMessagesEndReached)) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.PostsSearchContainer$$ExternalSyntheticLambda10
-                @Override // java.lang.Runnable
-                public final void run() {
-                    PostsSearchContainer.this.lambda$load$0(z, arrayList);
-                }
-            });
-        }
-        if (!z2 || j <= 0 || z) {
-            return;
-        }
-        BulletinFactory.of(this.fragment).createSimpleBulletin(R.raw.stars_topup, AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("SearchPaidStars", (int) j))).show();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$load$4(final MessagesController messagesController, final boolean z, final TLRPC.TL_channels_searchPosts tL_channels_searchPosts, final boolean z2, final long j, final ConnectionsManager connectionsManager, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.PostsSearchContainer$$ExternalSyntheticLambda8
-            @Override // java.lang.Runnable
-            public final void run() {
-                PostsSearchContainer.this.lambda$load$3(tLObject, messagesController, z, tL_channels_searchPosts, z2, j, tL_error, connectionsManager);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadFlood$5(TLObject tLObject) {
-        this.floodLoading = false;
-        if (tLObject instanceof TLRPC.SearchPostsFlood) {
-            TLRPC.SearchPostsFlood searchPostsFlood = (TLRPC.SearchPostsFlood) tLObject;
-            this.flood = searchPostsFlood;
-            if (searchPostsFlood.query_is_free) {
-                load(false);
-            } else {
-                updateEmptyView();
-                this.listView.adapter.update(true);
-            }
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadFlood$6(final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.PostsSearchContainer$$ExternalSyntheticLambda9
-            @Override // java.lang.Runnable
-            public final void run() {
-                PostsSearchContainer.this.lambda$loadFlood$5(tLObject);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateEmptyView$7(View view) {
-        this.fragment.presentFragment(new PremiumPreviewFragment("search"));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateEmptyView$8(View view) {
-        this.emptyButton.setLoading(true);
-        load(true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateEmptyView$9(View view) {
-        this.emptyButton.setLoading(true);
-        load(false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0094  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public void load(final boolean z) {
-        TLRPC.InputPeer tL_inputPeerEmpty;
-        MessageObject messageObject;
-        int i;
         long j;
         TLRPC.SearchPostsFlood searchPostsFlood;
         if (this.loading) {
@@ -434,78 +213,37 @@ public class PostsSearchContainer extends FrameLayout {
                 tL_channels_searchPosts.flags |= 2;
                 tL_channels_searchPosts.query = this.lastQuery;
                 tL_channels_searchPosts.limit = 30;
-                if (!isEmpty) {
-                    if (this.messages.isEmpty()) {
-                        tL_inputPeerEmpty = new TLRPC.TL_inputPeerEmpty();
-                        tL_channels_searchPosts.offset_peer = tL_inputPeerEmpty;
-                        if (z) {
-                        }
-                        j = 0;
-                        final long j2 = j;
-                        this.reqId = connectionsManager.sendRequest(tL_channels_searchPosts, new RequestDelegate() { // from class: org.telegram.ui.Components.PostsSearchContainer$$ExternalSyntheticLambda4
-                            @Override // org.telegram.tgnet.RequestDelegate
-                            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                                PostsSearchContainer.this.lambda$load$4(messagesController, isEmpty, tL_channels_searchPosts, z, j2, connectionsManager, tLObject, tL_error);
-                            }
-                        }, 1024);
-                        updateEmptyView();
-                        this.listView.adapter.update(true);
+                if (isEmpty) {
+                    if (!this.newsMessages.isEmpty()) {
+                        ArrayList arrayList = this.newsMessages;
+                        MessageObject messageObject = (MessageObject) arrayList.get(arrayList.size() - 1);
+                        tL_channels_searchPosts.offset_rate = this.newsMessagesLastRate;
+                        tL_channels_searchPosts.offset_id = messageObject.getRealId();
+                        tL_channels_searchPosts.offset_peer = messagesController.getInputPeer(messageObject.messageOwner.peer_id);
+                    } else {
+                        tL_channels_searchPosts.offset_peer = new TLRPC.TL_inputPeerEmpty();
                     }
-                    ArrayList arrayList = this.messages;
-                    messageObject = (MessageObject) arrayList.get(arrayList.size() - 1);
-                    i = this.lastRate;
-                    tL_channels_searchPosts.offset_rate = i;
-                    tL_channels_searchPosts.offset_id = messageObject.getRealId();
-                    tL_inputPeerEmpty = messagesController.getInputPeer(messageObject.messageOwner.peer_id);
-                    tL_channels_searchPosts.offset_peer = tL_inputPeerEmpty;
-                    if (z) {
-                    }
-                    j = 0;
-                    final long j22 = j;
-                    this.reqId = connectionsManager.sendRequest(tL_channels_searchPosts, new RequestDelegate() { // from class: org.telegram.ui.Components.PostsSearchContainer$$ExternalSyntheticLambda4
-                        @Override // org.telegram.tgnet.RequestDelegate
-                        public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                            PostsSearchContainer.this.lambda$load$4(messagesController, isEmpty, tL_channels_searchPosts, z, j22, connectionsManager, tLObject, tL_error);
-                        }
-                    }, 1024);
-                    updateEmptyView();
-                    this.listView.adapter.update(true);
+                } else if (!this.messages.isEmpty()) {
+                    ArrayList arrayList2 = this.messages;
+                    MessageObject messageObject2 = (MessageObject) arrayList2.get(arrayList2.size() - 1);
+                    tL_channels_searchPosts.offset_rate = this.lastRate;
+                    tL_channels_searchPosts.offset_id = messageObject2.getRealId();
+                    tL_channels_searchPosts.offset_peer = messagesController.getInputPeer(messageObject2.messageOwner.peer_id);
+                } else {
+                    tL_channels_searchPosts.offset_peer = new TLRPC.TL_inputPeerEmpty();
                 }
-                if (this.newsMessages.isEmpty()) {
-                    tL_inputPeerEmpty = new TLRPC.TL_inputPeerEmpty();
-                    tL_channels_searchPosts.offset_peer = tL_inputPeerEmpty;
-                    if (z) {
-                    }
-                    j = 0;
-                    final long j222 = j;
-                    this.reqId = connectionsManager.sendRequest(tL_channels_searchPosts, new RequestDelegate() { // from class: org.telegram.ui.Components.PostsSearchContainer$$ExternalSyntheticLambda4
-                        @Override // org.telegram.tgnet.RequestDelegate
-                        public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                            PostsSearchContainer.this.lambda$load$4(messagesController, isEmpty, tL_channels_searchPosts, z, j222, connectionsManager, tLObject, tL_error);
-                        }
-                    }, 1024);
-                    updateEmptyView();
-                    this.listView.adapter.update(true);
-                }
-                ArrayList arrayList2 = this.newsMessages;
-                messageObject = (MessageObject) arrayList2.get(arrayList2.size() - 1);
-                i = this.newsMessagesLastRate;
-                tL_channels_searchPosts.offset_rate = i;
-                tL_channels_searchPosts.offset_id = messageObject.getRealId();
-                tL_inputPeerEmpty = messagesController.getInputPeer(messageObject.messageOwner.peer_id);
-                tL_channels_searchPosts.offset_peer = tL_inputPeerEmpty;
-                if (z || (searchPostsFlood = this.flood) == null) {
+                if (!z || (searchPostsFlood = this.flood) == null) {
                     j = 0;
                 } else {
                     tL_channels_searchPosts.flags |= 4;
                     j = searchPostsFlood.stars_amount;
                     tL_channels_searchPosts.allow_paid_stars = j;
                 }
-                final long j2222 = j;
+                final long j2 = j;
                 this.reqId = connectionsManager.sendRequest(tL_channels_searchPosts, new RequestDelegate() { // from class: org.telegram.ui.Components.PostsSearchContainer$$ExternalSyntheticLambda4
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                        PostsSearchContainer.this.lambda$load$4(messagesController, isEmpty, tL_channels_searchPosts, z, j2222, connectionsManager, tLObject, tL_error);
+                        PostsSearchContainer.this.lambda$load$4(messagesController, isEmpty, tL_channels_searchPosts, z, j2, connectionsManager, tLObject, tL_error);
                     }
                 }, 1024);
                 updateEmptyView();
@@ -514,219 +252,151 @@ public class PostsSearchContainer extends FrameLayout {
         }
     }
 
-    private void loadFlood(String str) {
-        if (this.floodLoadingRequestId >= 0) {
-            ConnectionsManager.getInstance(this.currentAccount).cancelRequest(this.floodLoadingRequestId, true);
-            this.floodLoadingRequestId = -1;
-        }
-        if (!this.floodLoading) {
-            this.wasEmptyOnFloodLoad = this.isEmpty && !(this.messages.isEmpty() && this.endReached);
-        }
-        this.floodLoading = true;
-        TLRPC.TL_channels_checkSearchPostsFlood tL_channels_checkSearchPostsFlood = new TLRPC.TL_channels_checkSearchPostsFlood();
-        if (!TextUtils.isEmpty(str)) {
-            tL_channels_checkSearchPostsFlood.flags = 1 | tL_channels_checkSearchPostsFlood.flags;
-            tL_channels_checkSearchPostsFlood.query = str;
-        }
-        this.floodLoadingRequestId = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_channels_checkSearchPostsFlood, new RequestDelegate() { // from class: org.telegram.ui.Components.PostsSearchContainer$$ExternalSyntheticLambda0
-            @Override // org.telegram.tgnet.RequestDelegate
-            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                PostsSearchContainer.this.lambda$loadFlood$6(tLObject, tL_error);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$load$4(final MessagesController messagesController, final boolean z, final TLRPC.TL_channels_searchPosts tL_channels_searchPosts, final boolean z2, final long j, final ConnectionsManager connectionsManager, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.PostsSearchContainer$$ExternalSyntheticLambda8
+            @Override // java.lang.Runnable
+            public final void run() {
+                PostsSearchContainer.this.lambda$load$3(tLObject, messagesController, z, tL_channels_searchPosts, z2, j, tL_error, connectionsManager);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void onItemClick(UItem uItem, View view, int i, float f, float f2) {
-        String str;
-        Object obj = uItem.object;
-        if (obj instanceof MessageObject) {
-            MessageObject messageObject = (MessageObject) obj;
-            Bundle bundle = new Bundle();
-            long dialogId = messageObject.getDialogId();
-            long dialogId2 = messageObject.getDialogId();
-            if (dialogId >= 0) {
-                str = "user_id";
-            } else {
-                dialogId2 = -dialogId2;
-                str = "chat_id";
+    public /* synthetic */ void lambda$load$3(TLObject tLObject, MessagesController messagesController, final boolean z, TLRPC.TL_channels_searchPosts tL_channels_searchPosts, boolean z2, final long j, TLRPC.TL_error tL_error, ConnectionsManager connectionsManager) {
+        this.reqId = -1;
+        this.loading = false;
+        this.emptyButton.setLoading(false);
+        if (tLObject instanceof TLRPC.messages_Messages) {
+            TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
+            messagesController.putUsers(messages_messages.users, false);
+            messagesController.putChats(messages_messages.chats, false);
+            TLRPC.SearchPostsFlood searchPostsFlood = messages_messages.search_flood;
+            if (searchPostsFlood != null) {
+                this.flood = searchPostsFlood;
             }
-            bundle.putLong(str, dialogId2);
-            bundle.putInt("message_id", messageObject.getId());
-            this.fragment.presentFragment(DialogsActivity.highlightFoundQuote(new ChatActivity(bundle), messageObject));
+            final ArrayList arrayList = z ? this.newsMessages : this.messages;
+            boolean isEmpty = arrayList.isEmpty();
+            Iterator<TLRPC.Message> it = messages_messages.messages.iterator();
+            while (it.hasNext()) {
+                MessageObject messageObject = new MessageObject(this.currentAccount, it.next(), false, false);
+                if (!z) {
+                    messageObject.setQuery(tL_channels_searchPosts.query);
+                }
+                arrayList.add(messageObject);
+            }
+            if (!z) {
+                if (messages_messages instanceof TLRPC.TL_messages_messagesSlice) {
+                    this.lastRate = messages_messages.next_rate;
+                    this.endReached = (messages_messages.flags & 1) == 0;
+                } else if (messages_messages instanceof TLRPC.TL_messages_messages) {
+                    this.lastRate = 0;
+                    this.endReached = true;
+                } else if (messages_messages instanceof TLRPC.TL_messages_channelMessages) {
+                    this.lastRate = 0;
+                    this.endReached = true;
+                }
+            } else if (messages_messages instanceof TLRPC.TL_messages_messagesSlice) {
+                this.newsMessagesLastRate = messages_messages.next_rate;
+                this.newsMessagesEndReached = (messages_messages.flags & 1) == 0;
+            } else if (messages_messages instanceof TLRPC.TL_messages_messages) {
+                this.newsMessagesLastRate = 0;
+                this.newsMessagesEndReached = true;
+            } else if (messages_messages instanceof TLRPC.TL_messages_channelMessages) {
+                this.newsMessagesLastRate = 0;
+                this.newsMessagesEndReached = true;
+            }
+            updateEmptyView();
+            if (isEmpty) {
+                this.listView.scrollToPosition(0);
+            }
+            this.listView.adapter.update(true);
+            if (!arrayList.isEmpty() && (!z ? !this.endReached : !this.newsMessagesEndReached)) {
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.PostsSearchContainer$$ExternalSyntheticLambda10
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        PostsSearchContainer.this.lambda$load$0(z, arrayList);
+                    }
+                });
+            }
+            if (!z2 || j <= 0 || z) {
+                return;
+            }
+            BulletinFactory.of(this.fragment).createSimpleBulletin(R.raw.stars_topup, AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("SearchPaidStars", (int) j))).show();
+            return;
+        }
+        if (tL_error != null && tL_error.text.startsWith("FLOOD_WAIT_") && tL_error.text.contains("_OR_STARS_")) {
+            Matcher matcher = Pattern.compile("FLOOD_WAIT_(\\d+)_OR_STARS_(\\d+)").matcher(tL_error.text);
+            if (matcher == null || !matcher.matches()) {
+                return;
+            }
+            int parseInt = Integer.parseInt(matcher.group(1));
+            int parseInt2 = Integer.parseInt(matcher.group(2));
+            TLRPC.SearchPostsFlood searchPostsFlood2 = this.flood;
+            if (searchPostsFlood2 != null) {
+                searchPostsFlood2.flags = 2 | searchPostsFlood2.flags;
+                searchPostsFlood2.wait_till = connectionsManager.getCurrentTime() + parseInt;
+                this.flood.stars_amount = parseInt2;
+            }
+            updateEmptyView();
+            this.listView.adapter.update(true);
+            return;
+        }
+        if (tL_error != null && "PREMIUM_ACCOUNT_REQUIRED".equalsIgnoreCase(tL_error.text)) {
+            updateEmptyView();
+            this.listView.adapter.update(true);
+        } else {
+            if (tL_error == null || !"BALANCE_TOO_LOW".equalsIgnoreCase(tL_error.text)) {
+                return;
+            }
+            updateEmptyView();
+            this.listView.adapter.update(true);
+            StarsController.getInstance(this.currentAccount).getBalance(true, new Runnable() { // from class: org.telegram.ui.Components.PostsSearchContainer$$ExternalSyntheticLambda11
+                @Override // java.lang.Runnable
+                public final void run() {
+                    PostsSearchContainer.this.lambda$load$2(j);
+                }
+            }, true);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:58:0x02bf, code lost:
-    
-        if (r2 < 1) goto L62;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:59:0x02f5, code lost:
-    
-        r1 = org.telegram.messenger.LocaleController.formatPluralStringComma("SearchPostsFreeSearches", r2);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:60:0x02f3, code lost:
-    
-        r2 = r1.total_daily;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:64:0x02f1, code lost:
-    
-        if (r2 < 1) goto L62;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void updateEmptyView() {
-        TextView textView;
-        TLRPC.SearchPostsFlood searchPostsFlood;
-        int i;
-        String formatPluralStringComma;
-        TLRPC.SearchPostsFlood searchPostsFlood2;
-        String str;
-        Object valueOf;
-        Object valueOf2;
-        AndroidUtilities.cancelRunOnUIThread(this.updateEmptyViewRunnable);
-        int currentTime = ConnectionsManager.getInstance(this.currentAccount).getCurrentTime();
-        if (UserConfig.getInstance(this.currentAccount).isPremium()) {
-            if (!TextUtils.isEmpty(this.lastQuery) && this.messages.isEmpty() && this.endReached) {
-                if (this.emptyImageView.getImageReceiver().getImageDrawable() == null) {
-                    this.emptyImageView.setImageDrawable(new RLottieDrawable(R.raw.utyan_empty, "utyan_empty", AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
-                }
-                this.emptyImageView.setVisibility(0);
-                this.emptyTitleView.setText(LocaleController.getString(R.string.SearchPostsNotFound));
-                TextView textView2 = this.emptyTextView;
-                textView2.setText(LocaleController.formatString(R.string.SearchPostsNotFoundText, TextUtils.ellipsize(this.lastQuery, textView2.getPaint(), AndroidUtilities.dp(100.0f), TextUtils.TruncateAt.END)));
-                this.emptyButton.setVisibility(8);
-            } else if (!TextUtils.isEmpty(this.lastQuery) && (searchPostsFlood2 = this.flood) != null && (searchPostsFlood2.flags & 2) != 0 && currentTime < searchPostsFlood2.wait_till) {
-                this.emptyImageView.setVisibility(8);
-                this.emptyTitleView.setText(LocaleController.getString(R.string.SearchPostsLimitReached));
-                this.emptyTextView.setText(LocaleController.formatPluralStringComma("SearchPostsLimitReachedText", this.flood.total_daily));
-                int i2 = this.flood.wait_till - currentTime;
-                int i3 = i2 / 3600;
-                int i4 = i2 - (i3 * 3600);
-                int i5 = i4 / 60;
-                int i6 = i4 - (i5 * 60);
-                this.emptyButton.setVisibility(0);
-                this.emptyButton.setText(StarsIntroActivity.replaceStars(LocaleController.formatPluralStringComma("SearchPostsButtonPay", (int) this.flood.stars_amount), 1.13f, this.starSpan), true);
-                ButtonWithCounterView buttonWithCounterView = this.emptyButton;
-                int i7 = R.string.SearchPostsFreeSearchUnlocksIn;
-                StringBuilder sb = new StringBuilder();
-                if (i3 > 0) {
-                    str = i3 + ":";
-                } else {
-                    str = "";
-                }
-                sb.append(str);
-                if (i5 < 10) {
-                    valueOf = "0" + i5;
-                } else {
-                    valueOf = Integer.valueOf(i5);
-                }
-                sb.append(valueOf);
-                sb.append(":");
-                if (i6 < 10) {
-                    valueOf2 = "0" + i6;
-                } else {
-                    valueOf2 = Integer.valueOf(i6);
-                }
-                sb.append(valueOf2);
-                buttonWithCounterView.setSubText(LocaleController.formatString(i7, sb.toString()), true);
-                this.emptyButton.subText.setHacks(false, true, true);
-                this.emptyButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.PostsSearchContainer$$ExternalSyntheticLambda2
-                    @Override // android.view.View.OnClickListener
-                    public final void onClick(View view) {
-                        PostsSearchContainer.this.lambda$updateEmptyView$8(view);
-                    }
-                });
-                AndroidUtilities.runOnUIThread(this.updateEmptyViewRunnable, 1000L);
-            } else if (!this.messages.isEmpty() || this.loading || TextUtils.isEmpty(this.lastQuery)) {
-                this.emptyImageView.setVisibility(8);
-                this.emptyTitleView.setText(LocaleController.getString(R.string.SearchPostsTitle));
-                this.emptyTextView.setText(LocaleController.getString(R.string.SearchPostsText));
-                this.emptyButton.setVisibility(8);
-                if (this.flood != null) {
-                    this.emptyUnderButtonTextView.setVisibility(0);
-                    textView = this.emptyUnderButtonTextView;
-                    searchPostsFlood = this.flood;
-                    i = searchPostsFlood.remains;
-                }
-            } else {
-                this.emptyImageView.setVisibility(8);
-                this.emptyTitleView.setText(LocaleController.getString(R.string.SearchPostsTitle));
-                this.emptyTextView.setText(LocaleController.getString(R.string.SearchPostsText));
-                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("s ");
-                if (this.searchSpan == null) {
-                    ColoredImageSpan coloredImageSpan = new ColoredImageSpan(R.drawable.smiles_tab_search);
-                    this.searchSpan = coloredImageSpan;
-                    coloredImageSpan.setScale(0.79f, 0.79f);
-                }
-                if (this.colorSpan == null) {
-                    this.colorSpan = new ForegroundColorAlphaSpan(Theme.blendOver(Theme.getColor(Theme.key_featuredStickers_addButton), Theme.multAlpha(Theme.getColor(Theme.key_featuredStickers_buttonText), 0.75f)));
-                }
-                spannableStringBuilder.setSpan(this.searchSpan, 0, 1, 0);
-                spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.SearchPostsButton));
-                spannableStringBuilder.append((CharSequence) " ");
-                int length = spannableStringBuilder.length();
-                spannableStringBuilder.append(TextUtils.ellipsize(this.lastQuery, this.emptyButton.getTextPaint(), AndroidUtilities.dp(100.0f), TextUtils.TruncateAt.END));
-                spannableStringBuilder.setSpan(this.colorSpan, length, spannableStringBuilder.length(), 33);
-                spannableStringBuilder.append((CharSequence) " >");
-                if (this.arrowSpan == null) {
-                    ColoredImageSpan coloredImageSpan2 = new ColoredImageSpan(R.drawable.msg_mini_forumarrow);
-                    this.arrowSpan = coloredImageSpan2;
-                    coloredImageSpan2.setScale(1.05f, 1.05f);
-                }
-                spannableStringBuilder.setSpan(this.arrowSpan, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
-                this.emptyButton.setVisibility(0);
-                this.emptyButton.setText(spannableStringBuilder, true);
-                this.emptyButton.text.setHacks(false, true, false);
-                this.emptyButton.setSubText(null, true);
-                this.emptyButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.PostsSearchContainer$$ExternalSyntheticLambda3
-                    @Override // android.view.View.OnClickListener
-                    public final void onClick(View view) {
-                        PostsSearchContainer.this.lambda$updateEmptyView$9(view);
-                    }
-                });
-                if (this.flood != null) {
-                    this.emptyUnderButtonTextView.setVisibility(0);
-                    textView = this.emptyUnderButtonTextView;
-                    searchPostsFlood = this.flood;
-                    i = searchPostsFlood.remains;
-                }
-            }
-            this.emptyUnderButtonTextView.setVisibility(8);
+    public /* synthetic */ void lambda$load$0(boolean z, ArrayList arrayList) {
+        if (z) {
+            arrayList = this.newsMessages;
+        }
+        if (arrayList.isEmpty()) {
             return;
         }
-        this.emptyImageView.setVisibility(8);
-        this.emptyTitleView.setText(LocaleController.getString(R.string.SearchPostsTitle));
-        this.emptyTextView.setText(LocaleController.getString(R.string.SearchPostsText));
-        this.emptyButton.setVisibility(0);
-        this.emptyButton.setText(LocaleController.getString(R.string.SearchPostsButtonPremium), true);
-        this.emptyButton.setSubText(null, true);
-        this.emptyButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.PostsSearchContainer$$ExternalSyntheticLambda1
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                PostsSearchContainer.this.lambda$updateEmptyView$7(view);
-            }
-        });
-        this.emptyUnderButtonTextView.setVisibility(0);
-        textView = this.emptyUnderButtonTextView;
-        formatPluralStringComma = LocaleController.getString(R.string.SearchPostsPremium);
-        textView.setText(formatPluralStringComma);
+        if (!this.listView.canScrollVertically(1) || isLoadingVisible()) {
+            load(false);
+        }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    protected void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        if (this.flood == null) {
-            loadFlood(null);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$load$2(long j) {
+        Activity activity = AndroidUtilities.getActivity();
+        BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
+        new StarsIntroActivity.StarsNeededSheet(activity, (PhotoViewer.getInstance().isVisible() || (safeLastFragment != null && safeLastFragment.hasShownSheet())) ? new DarkThemeResourceProvider() : safeLastFragment != null ? safeLastFragment.getResourceProvider() : null, j, 15, "", new Runnable() { // from class: org.telegram.ui.Components.PostsSearchContainer$$ExternalSyntheticLambda12
+            @Override // java.lang.Runnable
+            public final void run() {
+                PostsSearchContainer.this.lambda$load$1();
+            }
+        }).show();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$load$1() {
+        load(true);
+    }
+
+    private void cancel() {
+        if (this.reqId >= 0) {
+            ConnectionsManager.getInstance(this.currentAccount).cancelRequest(this.reqId, true);
+            this.reqId = -1;
         }
-        if (this.wasOpen) {
-            return;
-        }
-        this.wasOpen = true;
-        MessagesController.getGlobalMainSettings().edit().putInt("searchpostsnew", MessagesController.getGlobalMainSettings().getInt("searchpostsnew", 0) + 1).apply();
-        StarsController.getInstance(this.currentAccount).getBalance();
+        this.loading = false;
+        this.emptyButton.setLoading(false);
     }
 
     public void search(String str) {
@@ -753,23 +423,299 @@ public class PostsSearchContainer extends FrameLayout {
         this.listView.adapter.update(true);
     }
 
+    private void loadFlood(String str) {
+        if (this.floodLoadingRequestId >= 0) {
+            ConnectionsManager.getInstance(this.currentAccount).cancelRequest(this.floodLoadingRequestId, true);
+            this.floodLoadingRequestId = -1;
+        }
+        if (!this.floodLoading) {
+            this.wasEmptyOnFloodLoad = this.isEmpty && !(this.messages.isEmpty() && this.endReached);
+        }
+        this.floodLoading = true;
+        TLRPC.TL_channels_checkSearchPostsFlood tL_channels_checkSearchPostsFlood = new TLRPC.TL_channels_checkSearchPostsFlood();
+        if (!TextUtils.isEmpty(str)) {
+            tL_channels_checkSearchPostsFlood.flags = 1 | tL_channels_checkSearchPostsFlood.flags;
+            tL_channels_checkSearchPostsFlood.query = str;
+        }
+        this.floodLoadingRequestId = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_channels_checkSearchPostsFlood, new RequestDelegate() { // from class: org.telegram.ui.Components.PostsSearchContainer$$ExternalSyntheticLambda0
+            @Override // org.telegram.tgnet.RequestDelegate
+            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                PostsSearchContainer.this.lambda$loadFlood$6(tLObject, tL_error);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$loadFlood$6(final TLObject tLObject, TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.PostsSearchContainer$$ExternalSyntheticLambda9
+            @Override // java.lang.Runnable
+            public final void run() {
+                PostsSearchContainer.this.lambda$loadFlood$5(tLObject);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$loadFlood$5(TLObject tLObject) {
+        this.floodLoading = false;
+        if (tLObject instanceof TLRPC.SearchPostsFlood) {
+            TLRPC.SearchPostsFlood searchPostsFlood = (TLRPC.SearchPostsFlood) tLObject;
+            this.flood = searchPostsFlood;
+            if (searchPostsFlood.query_is_free) {
+                load(false);
+            } else {
+                updateEmptyView();
+                this.listView.adapter.update(true);
+            }
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        if (this.flood == null) {
+            loadFlood(null);
+        }
+        if (this.wasOpen) {
+            return;
+        }
+        this.wasOpen = true;
+        MessagesController.getGlobalMainSettings().edit().putInt("searchpostsnew", MessagesController.getGlobalMainSettings().getInt("searchpostsnew", 0) + 1).apply();
+        StarsController.getInstance(this.currentAccount).getBalance();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter) {
+        if (this.flood == null) {
+            arrayList.add(UItem.asFlicker(-1, 7));
+            arrayList.add(UItem.asFlicker(-2, 7));
+            arrayList.add(UItem.asFlicker(-3, 7));
+            this.isEmpty = false;
+            return;
+        }
+        boolean isEmpty = TextUtils.isEmpty(this.lastQuery);
+        if (isEmpty) {
+            if (!this.newsMessages.isEmpty()) {
+                arrayList.add(UItem.asGraySection(LocaleController.getString(R.string.SearchPostsHeaderNews)));
+            }
+            Iterator it = this.newsMessages.iterator();
+            while (it.hasNext()) {
+                arrayList.add(UItem.asSearchMessage((MessageObject) it.next()));
+            }
+        } else {
+            if (!this.messages.isEmpty()) {
+                arrayList.add(UItem.asGraySection(LocaleController.getString(R.string.SearchPostsHeaderFound)));
+            }
+            Iterator it2 = this.messages.iterator();
+            while (it2.hasNext()) {
+                arrayList.add(UItem.asSearchMessage((MessageObject) it2.next()));
+            }
+        }
+        if (this.loading || ((this.floodLoading && !this.wasEmptyOnFloodLoad) || (!isEmpty && !this.messages.isEmpty() && !this.endReached))) {
+            arrayList.add(UItem.asFlicker(this.queryid * 3, 7));
+            arrayList.add(UItem.asFlicker((this.queryid * 3) + 1, 7));
+            arrayList.add(UItem.asFlicker((this.queryid * 3) + 2, 7));
+        }
+        this.isEmpty = arrayList.isEmpty();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void onItemClick(UItem uItem, View view, int i, float f, float f2) {
+        Object obj = uItem.object;
+        if (obj instanceof MessageObject) {
+            MessageObject messageObject = (MessageObject) obj;
+            Bundle bundle = new Bundle();
+            if (messageObject.getDialogId() >= 0) {
+                bundle.putLong("user_id", messageObject.getDialogId());
+            } else {
+                bundle.putLong("chat_id", -messageObject.getDialogId());
+            }
+            bundle.putInt("message_id", messageObject.getId());
+            this.fragment.presentFragment(DialogsActivity.highlightFoundQuote(new ChatActivity(bundle), messageObject));
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void updateEmptyView() {
+        TLRPC.SearchPostsFlood searchPostsFlood;
+        String str;
+        Object valueOf;
+        Object valueOf2;
+        AndroidUtilities.cancelRunOnUIThread(this.updateEmptyViewRunnable);
+        int currentTime = ConnectionsManager.getInstance(this.currentAccount).getCurrentTime();
+        if (!UserConfig.getInstance(this.currentAccount).isPremium()) {
+            this.emptyImageView.setVisibility(8);
+            this.emptyTitleView.setText(LocaleController.getString(R.string.SearchPostsTitle));
+            this.emptyTextView.setText(LocaleController.getString(R.string.SearchPostsText));
+            this.emptyButton.setVisibility(0);
+            this.emptyButton.setText(LocaleController.getString(R.string.SearchPostsButtonPremium), true);
+            this.emptyButton.setSubText(null, true);
+            this.emptyButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.PostsSearchContainer$$ExternalSyntheticLambda1
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    PostsSearchContainer.this.lambda$updateEmptyView$7(view);
+                }
+            });
+            this.emptyUnderButtonTextView.setVisibility(0);
+            this.emptyUnderButtonTextView.setText(LocaleController.getString(R.string.SearchPostsPremium));
+            return;
+        }
+        if (!TextUtils.isEmpty(this.lastQuery) && this.messages.isEmpty() && this.endReached) {
+            if (this.emptyImageView.getImageReceiver().getImageDrawable() == null) {
+                this.emptyImageView.setImageDrawable(new RLottieDrawable(R.raw.utyan_empty, "utyan_empty", AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
+            }
+            this.emptyImageView.setVisibility(0);
+            this.emptyTitleView.setText(LocaleController.getString(R.string.SearchPostsNotFound));
+            TextView textView = this.emptyTextView;
+            textView.setText(LocaleController.formatString(R.string.SearchPostsNotFoundText, TextUtils.ellipsize(this.lastQuery, textView.getPaint(), AndroidUtilities.dp(100.0f), TextUtils.TruncateAt.END)));
+            this.emptyButton.setVisibility(8);
+            this.emptyUnderButtonTextView.setVisibility(8);
+            return;
+        }
+        if (!TextUtils.isEmpty(this.lastQuery) && (searchPostsFlood = this.flood) != null && (searchPostsFlood.flags & 2) != 0 && currentTime < searchPostsFlood.wait_till) {
+            this.emptyImageView.setVisibility(8);
+            this.emptyTitleView.setText(LocaleController.getString(R.string.SearchPostsLimitReached));
+            this.emptyTextView.setText(LocaleController.formatPluralStringComma("SearchPostsLimitReachedText", this.flood.total_daily));
+            int i = this.flood.wait_till - currentTime;
+            int i2 = i / 3600;
+            int i3 = i - (i2 * 3600);
+            int i4 = i3 / 60;
+            int i5 = i3 - (i4 * 60);
+            this.emptyButton.setVisibility(0);
+            this.emptyButton.setText(StarsIntroActivity.replaceStars(LocaleController.formatPluralStringComma("SearchPostsButtonPay", (int) this.flood.stars_amount), 1.13f, this.starSpan), true);
+            ButtonWithCounterView buttonWithCounterView = this.emptyButton;
+            int i6 = R.string.SearchPostsFreeSearchUnlocksIn;
+            StringBuilder sb = new StringBuilder();
+            if (i2 > 0) {
+                str = i2 + ":";
+            } else {
+                str = "";
+            }
+            sb.append(str);
+            if (i4 < 10) {
+                valueOf = "0" + i4;
+            } else {
+                valueOf = Integer.valueOf(i4);
+            }
+            sb.append(valueOf);
+            sb.append(":");
+            if (i5 < 10) {
+                valueOf2 = "0" + i5;
+            } else {
+                valueOf2 = Integer.valueOf(i5);
+            }
+            sb.append(valueOf2);
+            buttonWithCounterView.setSubText(LocaleController.formatString(i6, sb.toString()), true);
+            this.emptyButton.subText.setHacks(false, true, true);
+            this.emptyButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.PostsSearchContainer$$ExternalSyntheticLambda2
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    PostsSearchContainer.this.lambda$updateEmptyView$8(view);
+                }
+            });
+            AndroidUtilities.runOnUIThread(this.updateEmptyViewRunnable, 1000L);
+            this.emptyUnderButtonTextView.setVisibility(8);
+            return;
+        }
+        if (this.messages.isEmpty() && !this.loading && !TextUtils.isEmpty(this.lastQuery)) {
+            this.emptyImageView.setVisibility(8);
+            this.emptyTitleView.setText(LocaleController.getString(R.string.SearchPostsTitle));
+            this.emptyTextView.setText(LocaleController.getString(R.string.SearchPostsText));
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("s ");
+            if (this.searchSpan == null) {
+                ColoredImageSpan coloredImageSpan = new ColoredImageSpan(R.drawable.smiles_tab_search);
+                this.searchSpan = coloredImageSpan;
+                coloredImageSpan.setScale(0.79f, 0.79f);
+            }
+            if (this.colorSpan == null) {
+                this.colorSpan = new ForegroundColorAlphaSpan(Theme.blendOver(Theme.getColor(Theme.key_featuredStickers_addButton), Theme.multAlpha(Theme.getColor(Theme.key_featuredStickers_buttonText), 0.75f)));
+            }
+            spannableStringBuilder.setSpan(this.searchSpan, 0, 1, 0);
+            spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.SearchPostsButton));
+            spannableStringBuilder.append((CharSequence) " ");
+            int length = spannableStringBuilder.length();
+            spannableStringBuilder.append(TextUtils.ellipsize(this.lastQuery, this.emptyButton.getTextPaint(), AndroidUtilities.dp(100.0f), TextUtils.TruncateAt.END));
+            spannableStringBuilder.setSpan(this.colorSpan, length, spannableStringBuilder.length(), 33);
+            spannableStringBuilder.append((CharSequence) " >");
+            if (this.arrowSpan == null) {
+                ColoredImageSpan coloredImageSpan2 = new ColoredImageSpan(R.drawable.msg_mini_forumarrow);
+                this.arrowSpan = coloredImageSpan2;
+                coloredImageSpan2.setScale(1.05f, 1.05f);
+            }
+            spannableStringBuilder.setSpan(this.arrowSpan, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
+            this.emptyButton.setVisibility(0);
+            this.emptyButton.setText(spannableStringBuilder, true);
+            this.emptyButton.text.setHacks(false, true, false);
+            this.emptyButton.setSubText(null, true);
+            this.emptyButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.PostsSearchContainer$$ExternalSyntheticLambda3
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    PostsSearchContainer.this.lambda$updateEmptyView$9(view);
+                }
+            });
+            if (this.flood != null) {
+                this.emptyUnderButtonTextView.setVisibility(0);
+                TextView textView2 = this.emptyUnderButtonTextView;
+                TLRPC.SearchPostsFlood searchPostsFlood2 = this.flood;
+                int i7 = searchPostsFlood2.remains;
+                if (i7 < 1) {
+                    i7 = searchPostsFlood2.total_daily;
+                }
+                textView2.setText(LocaleController.formatPluralStringComma("SearchPostsFreeSearches", i7));
+                return;
+            }
+            this.emptyUnderButtonTextView.setVisibility(8);
+            return;
+        }
+        this.emptyImageView.setVisibility(8);
+        this.emptyTitleView.setText(LocaleController.getString(R.string.SearchPostsTitle));
+        this.emptyTextView.setText(LocaleController.getString(R.string.SearchPostsText));
+        this.emptyButton.setVisibility(8);
+        if (this.flood != null) {
+            this.emptyUnderButtonTextView.setVisibility(0);
+            TextView textView3 = this.emptyUnderButtonTextView;
+            TLRPC.SearchPostsFlood searchPostsFlood3 = this.flood;
+            int i8 = searchPostsFlood3.remains;
+            if (i8 < 1) {
+                i8 = searchPostsFlood3.total_daily;
+            }
+            textView3.setText(LocaleController.formatPluralStringComma("SearchPostsFreeSearches", i8));
+            return;
+        }
+        this.emptyUnderButtonTextView.setVisibility(8);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$updateEmptyView$7(View view) {
+        this.fragment.presentFragment(new PremiumPreviewFragment("search"));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$updateEmptyView$8(View view) {
+        this.emptyButton.setLoading(true);
+        load(true);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$updateEmptyView$9(View view) {
+        this.emptyButton.setLoading(true);
+        load(false);
+    }
+
     public void setKeyboardHeight(int i) {
         this.emptyView.animate().translationY((-i) / 2.0f).setDuration(250L).setInterpolator(AdjustPanLayoutHelper.keyboardInterpolator).start();
     }
 
-    public void updateColors() {
-        this.emptyParentView.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-        this.emptyTitleView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
-        TextView textView = this.emptyUnderButtonTextView;
-        int i = Theme.key_windowBackgroundWhiteGrayText;
-        textView.setTextColor(Theme.getColor(i));
-        this.emptyTextView.setTextColor(Theme.getColor(i));
-        this.listView.setAdapter(null);
-        UniversalRecyclerView universalRecyclerView = this.listView;
-        universalRecyclerView.setAdapter(universalRecyclerView.adapter);
-        if (this.colorSpan != null) {
-            this.colorSpan = null;
-            updateEmptyView();
+    public static class ForegroundColorAlphaSpan extends CharacterStyle {
+        private final int color;
+
+        public ForegroundColorAlphaSpan(int i) {
+            this.color = i;
+        }
+
+        @Override // android.text.style.CharacterStyle
+        public void updateDrawState(TextPaint textPaint) {
+            textPaint.setColor(Theme.multAlpha(this.color, textPaint.getAlpha() / 255.0f));
         }
     }
 }

@@ -5,10 +5,18 @@ import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.util.UUID;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class RandomFidGenerator {
     private static final byte FID_4BIT_PREFIX = Byte.parseByte("01110000", 2);
     private static final byte REMOVE_PREFIX_MASK = Byte.parseByte("00001111", 2);
+
+    public String createRandomFid() {
+        byte[] bytesFromUUID = getBytesFromUUID(UUID.randomUUID(), new byte[17]);
+        byte b = bytesFromUUID[0];
+        bytesFromUUID[16] = b;
+        bytesFromUUID[0] = (byte) ((b & REMOVE_PREFIX_MASK) | FID_4BIT_PREFIX);
+        return encodeFidBase64UrlSafe(bytesFromUUID);
+    }
 
     private static String encodeFidBase64UrlSafe(byte[] bArr) {
         return new String(Base64.encode(bArr, 11), Charset.defaultCharset()).substring(0, 22);
@@ -19,13 +27,5 @@ public class RandomFidGenerator {
         wrap.putLong(uuid.getMostSignificantBits());
         wrap.putLong(uuid.getLeastSignificantBits());
         return wrap.array();
-    }
-
-    public String createRandomFid() {
-        byte[] bytesFromUUID = getBytesFromUUID(UUID.randomUUID(), new byte[17]);
-        byte b = bytesFromUUID[0];
-        bytesFromUUID[16] = b;
-        bytesFromUUID[0] = (byte) ((b & REMOVE_PREFIX_MASK) | FID_4BIT_PREFIX);
-        return encodeFidBase64UrlSafe(bytesFromUUID);
     }
 }

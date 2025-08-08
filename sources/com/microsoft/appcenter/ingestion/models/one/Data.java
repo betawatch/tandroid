@@ -6,26 +6,12 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class Data implements Model {
     private final JSONObject mProperties = new JSONObject();
 
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
-        }
-        return this.mProperties.toString().equals(((Data) obj).mProperties.toString());
-    }
-
     public JSONObject getProperties() {
         return this.mProperties;
-    }
-
-    public int hashCode() {
-        return this.mProperties.toString().hashCode();
     }
 
     @Override // com.microsoft.appcenter.ingestion.models.Model
@@ -52,5 +38,19 @@ public class Data implements Model {
                 }
             }
         }
+    }
+
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        return this.mProperties.toString().equals(((Data) obj).mProperties.toString());
+    }
+
+    public int hashCode() {
+        return this.mProperties.toString().hashCode();
     }
 }

@@ -14,33 +14,6 @@ import org.telegram.messenger.MediaDataController;
 
 /* loaded from: classes.dex */
 abstract class MediaRouter2Utils {
-
-    private static final class Api34Impl {
-        public static void copyDescriptorVisibilityToBuilder(MediaRoute2Info.Builder builder, MediaRouteDescriptor mediaRouteDescriptor) {
-            if (mediaRouteDescriptor.isVisibilityPublic()) {
-                builder.setVisibilityPublic();
-            } else {
-                builder.setVisibilityRestricted(mediaRouteDescriptor.getAllowedPackages());
-            }
-        }
-
-        public static Set<String> getDeduplicationIds(MediaRoute2Info mediaRoute2Info) {
-            return mediaRoute2Info.getDeduplicationIds();
-        }
-
-        public static int getType(MediaRoute2Info mediaRoute2Info) {
-            return mediaRoute2Info.getType();
-        }
-
-        public static void setDeduplicationIds(MediaRoute2Info.Builder builder, Set<String> set) {
-            builder.setDeduplicationIds(set);
-        }
-
-        public static void setDeviceType(MediaRoute2Info.Builder builder, int i) {
-            builder.setType(i);
-        }
-    }
-
     private static int fwkDeviceTypeToAndroidXDeviceType(int i) {
         if (i == 2) {
             return 12;
@@ -107,41 +80,6 @@ abstract class MediaRouter2Utils {
         }
     }
 
-    static List getRouteIds(List list) {
-        String id;
-        if (list == null) {
-            return new ArrayList();
-        }
-        ArrayList arrayList = new ArrayList();
-        Iterator it = list.iterator();
-        while (it.hasNext()) {
-            MediaRoute2Info m = MediaRoute2Provider$$ExternalSyntheticApiModelOutline10.m(it.next());
-            if (m != null) {
-                id = m.getId();
-                arrayList.add(id);
-            }
-        }
-        return arrayList;
-    }
-
-    static RouteDiscoveryPreference toDiscoveryPreference(MediaRouteDiscoveryRequest mediaRouteDiscoveryRequest) {
-        RouteDiscoveryPreference.Builder builder;
-        RouteDiscoveryPreference build;
-        if (mediaRouteDiscoveryRequest == null || !mediaRouteDiscoveryRequest.isValid()) {
-            builder = new RouteDiscoveryPreference.Builder(new ArrayList(), false);
-        } else {
-            boolean isActiveScan = mediaRouteDiscoveryRequest.isActiveScan();
-            ArrayList arrayList = new ArrayList();
-            Iterator it = mediaRouteDiscoveryRequest.getSelector().getControlCategories().iterator();
-            while (it.hasNext()) {
-                arrayList.add(toRouteFeature((String) it.next()));
-            }
-            builder = new RouteDiscoveryPreference.Builder(arrayList, isActiveScan);
-        }
-        build = builder.build();
-        return build;
-    }
-
     public static MediaRouteDescriptor toMediaRouteDescriptor(MediaRoute2Info mediaRoute2Info) {
         String id;
         CharSequence name;
@@ -201,6 +139,41 @@ abstract class MediaRouter2Utils {
         return canDisconnect.build();
     }
 
+    static List getRouteIds(List list) {
+        String id;
+        if (list == null) {
+            return new ArrayList();
+        }
+        ArrayList arrayList = new ArrayList();
+        Iterator it = list.iterator();
+        while (it.hasNext()) {
+            MediaRoute2Info m = MediaRoute2Provider$$ExternalSyntheticApiModelOutline11.m(it.next());
+            if (m != null) {
+                id = m.getId();
+                arrayList.add(id);
+            }
+        }
+        return arrayList;
+    }
+
+    static RouteDiscoveryPreference toDiscoveryPreference(MediaRouteDiscoveryRequest mediaRouteDiscoveryRequest) {
+        RouteDiscoveryPreference build;
+        RouteDiscoveryPreference build2;
+        if (mediaRouteDiscoveryRequest == null || !mediaRouteDiscoveryRequest.isValid()) {
+            MediaRouter2Utils$$ExternalSyntheticApiModelOutline1.m();
+            build = MediaRouter2Utils$$ExternalSyntheticApiModelOutline0.m(new ArrayList(), false).build();
+            return build;
+        }
+        boolean isActiveScan = mediaRouteDiscoveryRequest.isActiveScan();
+        ArrayList arrayList = new ArrayList();
+        Iterator it = mediaRouteDiscoveryRequest.getSelector().getControlCategories().iterator();
+        while (it.hasNext()) {
+            arrayList.add(toRouteFeature((String) it.next()));
+        }
+        build2 = MediaRouter2Utils$$ExternalSyntheticApiModelOutline0.m(arrayList, isActiveScan).build();
+        return build2;
+    }
+
     static String toRouteFeature(String str) {
         str.hashCode();
         switch (str) {
@@ -212,6 +185,32 @@ abstract class MediaRouter2Utils {
                 return "android.media.route.feature.LIVE_VIDEO";
             default:
                 return str;
+        }
+    }
+
+    private static final class Api34Impl {
+        public static void setDeduplicationIds(MediaRoute2Info.Builder builder, Set<String> set) {
+            builder.setDeduplicationIds(set);
+        }
+
+        public static Set<String> getDeduplicationIds(MediaRoute2Info mediaRoute2Info) {
+            return mediaRoute2Info.getDeduplicationIds();
+        }
+
+        public static void copyDescriptorVisibilityToBuilder(MediaRoute2Info.Builder builder, MediaRouteDescriptor mediaRouteDescriptor) {
+            if (mediaRouteDescriptor.isVisibilityPublic()) {
+                builder.setVisibilityPublic();
+            } else {
+                builder.setVisibilityRestricted(mediaRouteDescriptor.getAllowedPackages());
+            }
+        }
+
+        public static void setDeviceType(MediaRoute2Info.Builder builder, int i) {
+            builder.setType(i);
+        }
+
+        public static int getType(MediaRoute2Info mediaRoute2Info) {
+            return mediaRoute2Info.getType();
         }
     }
 }

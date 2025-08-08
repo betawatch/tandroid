@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class FillLastGridLayoutManager extends GridLayoutManager {
     private int additionalHeight;
     private boolean bind;
@@ -17,6 +17,14 @@ public class FillLastGridLayoutManager extends GridLayoutManager {
     private int listHeight;
     private RecyclerView listView;
     private int listWidth;
+
+    protected boolean shouldCalcLastItemHeight() {
+        return true;
+    }
+
+    public void setBind(boolean z) {
+        this.bind = z;
+    }
 
     public FillLastGridLayoutManager(Context context, int i, int i2, RecyclerView recyclerView) {
         super(context, i);
@@ -82,17 +90,16 @@ public class FillLastGridLayoutManager extends GridLayoutManager {
         this.lastItemHeight = Math.max(0, ((this.listHeight - i2) - this.additionalHeight) - this.listView.getPaddingBottom());
     }
 
-    @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
-    public boolean canScrollVertically() {
-        return this.canScrollVertically;
-    }
-
-    @Override // androidx.recyclerview.widget.GridLayoutManager
-    protected void measureChild(View view, int i, boolean z) {
-        if (this.listView.findContainingViewHolder(view).getAdapterPosition() == getItemCount() - 1) {
-            ((ViewGroup.MarginLayoutParams) ((RecyclerView.LayoutParams) view.getLayoutParams())).height = Math.max(this.lastItemHeight, 0);
+    @Override // androidx.recyclerview.widget.RecyclerView.LayoutManager
+    public void onMeasure(RecyclerView.Recycler recycler, RecyclerView.State state, int i, int i2) {
+        int i3 = this.listHeight;
+        this.listWidth = View.MeasureSpec.getSize(i);
+        int size = View.MeasureSpec.getSize(i2);
+        this.listHeight = size;
+        if (i3 != size) {
+            calcLastItemHeight();
         }
-        super.measureChild(view, i, z);
+        super.onMeasure(recycler, state, i, i2);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.LayoutManager
@@ -103,12 +110,6 @@ public class FillLastGridLayoutManager extends GridLayoutManager {
     }
 
     @Override // androidx.recyclerview.widget.GridLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
-    public void onItemsAdded(RecyclerView recyclerView, int i, int i2) {
-        super.onItemsAdded(recyclerView, i, i2);
-        calcLastItemHeight();
-    }
-
-    @Override // androidx.recyclerview.widget.GridLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
     public void onItemsChanged(RecyclerView recyclerView) {
         this.heights.clear();
         calcLastItemHeight();
@@ -116,14 +117,20 @@ public class FillLastGridLayoutManager extends GridLayoutManager {
     }
 
     @Override // androidx.recyclerview.widget.GridLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
-    public void onItemsMoved(RecyclerView recyclerView, int i, int i2, int i3) {
-        super.onItemsMoved(recyclerView, i, i2, i3);
+    public void onItemsAdded(RecyclerView recyclerView, int i, int i2) {
+        super.onItemsAdded(recyclerView, i, i2);
         calcLastItemHeight();
     }
 
     @Override // androidx.recyclerview.widget.GridLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
     public void onItemsRemoved(RecyclerView recyclerView, int i, int i2) {
         super.onItemsRemoved(recyclerView, i, i2);
+        calcLastItemHeight();
+    }
+
+    @Override // androidx.recyclerview.widget.GridLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
+    public void onItemsMoved(RecyclerView recyclerView, int i, int i2, int i3) {
+        super.onItemsMoved(recyclerView, i, i2, i3);
         calcLastItemHeight();
     }
 
@@ -139,27 +146,20 @@ public class FillLastGridLayoutManager extends GridLayoutManager {
         calcLastItemHeight();
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.LayoutManager
-    public void onMeasure(RecyclerView.Recycler recycler, RecyclerView.State state, int i, int i2) {
-        int i3 = this.listHeight;
-        this.listWidth = View.MeasureSpec.getSize(i);
-        int size = View.MeasureSpec.getSize(i2);
-        this.listHeight = size;
-        if (i3 != size) {
-            calcLastItemHeight();
+    @Override // androidx.recyclerview.widget.GridLayoutManager
+    protected void measureChild(View view, int i, boolean z) {
+        if (this.listView.findContainingViewHolder(view).getAdapterPosition() == getItemCount() - 1) {
+            ((ViewGroup.MarginLayoutParams) ((RecyclerView.LayoutParams) view.getLayoutParams())).height = Math.max(this.lastItemHeight, 0);
         }
-        super.onMeasure(recycler, state, i, i2);
-    }
-
-    public void setBind(boolean z) {
-        this.bind = z;
+        super.measureChild(view, i, z);
     }
 
     public void setCanScrollVertically(boolean z) {
         this.canScrollVertically = z;
     }
 
-    protected boolean shouldCalcLastItemHeight() {
-        return true;
+    @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
+    public boolean canScrollVertically() {
+        return this.canScrollVertically;
     }
 }

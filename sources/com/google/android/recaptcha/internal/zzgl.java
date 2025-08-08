@@ -16,12 +16,6 @@ final class zzgl extends zzgh implements RandomAccess, zzjb, zzkm {
         this(new boolean[10], 0, true);
     }
 
-    private zzgl(boolean[] zArr, int i, boolean z) {
-        super(z);
-        this.zzb = zArr;
-        this.zzc = i;
-    }
-
     private final String zzf(int i) {
         return "Index:" + i + ", Size:" + this.zzc;
     }
@@ -53,12 +47,6 @@ final class zzgl extends zzgh implements RandomAccess, zzjb, zzkm {
         this.zzb[i] = booleanValue;
         this.zzc++;
         ((AbstractList) this).modCount++;
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzgh, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final /* bridge */ /* synthetic */ boolean add(Object obj) {
-        zze(((Boolean) obj).booleanValue());
-        return true;
     }
 
     @Override // com.google.android.recaptcha.internal.zzgh, java.util.AbstractCollection, java.util.Collection, java.util.List
@@ -208,5 +196,17 @@ final class zzgl extends zzgh implements RandomAccess, zzjb, zzkm {
         int i2 = this.zzc;
         this.zzc = i2 + 1;
         zArr3[i2] = z;
+    }
+
+    private zzgl(boolean[] zArr, int i, boolean z) {
+        super(z);
+        this.zzb = zArr;
+        this.zzc = i;
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzgh, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final /* bridge */ /* synthetic */ boolean add(Object obj) {
+        zze(((Boolean) obj).booleanValue());
+        return true;
     }
 }

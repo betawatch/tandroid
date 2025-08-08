@@ -9,7 +9,6 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.os.Build;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
 import android.util.Property;
@@ -49,7 +48,7 @@ import org.telegram.ui.Components.ChatAttachAlert;
 import org.telegram.ui.Components.ChatAttachAlertContactsLayout;
 import org.telegram.ui.Components.RecyclerListView;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLayout implements NotificationCenter.NotificationCenterDelegate {
     private PhonebookShareAlertDelegate delegate;
     private EmptyTextProgressView emptyView;
@@ -67,46 +66,6 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
     private View shadow;
     private AnimatorSet shadowAnimation;
 
-    private static class ListItemID {
-        private final long id;
-        private final Type type;
-
-        public enum Type {
-            USER,
-            CONTACT
-        }
-
-        public ListItemID(Type type, long j) {
-            this.type = type;
-            this.id = j;
-        }
-
-        public static ListItemID of(Object obj) {
-            if (obj instanceof ContactsController.Contact) {
-                return new ListItemID(Type.CONTACT, ((ContactsController.Contact) obj).contact_id);
-            }
-            if (obj instanceof TLRPC.User) {
-                return new ListItemID(Type.USER, ((TLRPC.User) obj).id);
-            }
-            return null;
-        }
-
-        public boolean equals(Object obj) {
-            if (this == obj) {
-                return true;
-            }
-            if (obj == null || getClass() != obj.getClass()) {
-                return false;
-            }
-            ListItemID listItemID = (ListItemID) obj;
-            return this.id == listItemID.id && this.type == listItemID.type;
-        }
-
-        public int hashCode() {
-            return Objects.hash(this.type, Long.valueOf(this.id));
-        }
-    }
-
     public interface PhonebookShareAlertDelegate {
 
         public abstract /* synthetic */ class -CC {
@@ -117,518 +76,6 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
         void didSelectContact(TLRPC.User user, boolean z, int i, long j, boolean z2, long j2);
 
         void didSelectContacts(ArrayList arrayList, String str, boolean z, int i, long j, boolean z2, long j2);
-    }
-
-    public class ShareAdapter extends RecyclerListView.SectionsAdapter {
-        private int currentAccount = UserConfig.selectedAccount;
-        private Context mContext;
-
-        public ShareAdapter(Context context) {
-            this.mContext = context;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ CharSequence lambda$onBindViewHolder$0(ContactsController.Contact contact) {
-            return contact.phones.isEmpty() ? "" : PhoneFormat.getInstance().format(contact.phones.get(0));
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ CharSequence lambda$onBindViewHolder$1(TLRPC.User user) {
-            return PhoneFormat.getInstance().format("+" + user.phone);
-        }
-
-        @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter
-        public int getCountForSection(int i) {
-            if (i == 0 || i == getSectionCount() - 1) {
-                return 1;
-            }
-            int i2 = i - 1;
-            HashMap<String, ArrayList<Object>> hashMap = ContactsController.getInstance(this.currentAccount).phoneBookSectionsDict;
-            ArrayList<String> arrayList = ContactsController.getInstance(this.currentAccount).phoneBookSectionsArray;
-            if (i2 < arrayList.size()) {
-                return hashMap.get(arrayList.get(i2)).size();
-            }
-            return 0;
-        }
-
-        @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter
-        public Object getItem(int i, int i2) {
-            if (i == 0) {
-                return null;
-            }
-            int i3 = i - 1;
-            HashMap<String, ArrayList<Object>> hashMap = ContactsController.getInstance(this.currentAccount).phoneBookSectionsDict;
-            ArrayList<String> arrayList = ContactsController.getInstance(this.currentAccount).phoneBookSectionsArray;
-            if (i3 < arrayList.size()) {
-                ArrayList<Object> arrayList2 = hashMap.get(arrayList.get(i3));
-                if (i2 < arrayList2.size()) {
-                    return arrayList2.get(i2);
-                }
-            }
-            return null;
-        }
-
-        @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter
-        public int getItemViewType(int i, int i2) {
-            if (i == 0) {
-                return 1;
-            }
-            return i == getSectionCount() - 1 ? 2 : 0;
-        }
-
-        @Override // org.telegram.ui.Components.RecyclerListView.FastScrollAdapter
-        public String getLetter(int i) {
-            return null;
-        }
-
-        @Override // org.telegram.ui.Components.RecyclerListView.FastScrollAdapter
-        public void getPositionForScrollProgress(RecyclerListView recyclerListView, float f, int[] iArr) {
-            iArr[0] = 0;
-            iArr[1] = 0;
-        }
-
-        @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter
-        public int getSectionCount() {
-            return ContactsController.getInstance(this.currentAccount).phoneBookSectionsArray.size() + 2;
-        }
-
-        @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter
-        public View getSectionHeaderView(int i, View view) {
-            return null;
-        }
-
-        @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter
-        public boolean isEnabled(RecyclerView.ViewHolder viewHolder, int i, int i2) {
-            if (i == 0 || i == getSectionCount() - 1) {
-                return false;
-            }
-            return i2 < ContactsController.getInstance(this.currentAccount).phoneBookSectionsDict.get(ContactsController.getInstance(this.currentAccount).phoneBookSectionsArray.get(i + (-1))).size();
-        }
-
-        @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter, androidx.recyclerview.widget.RecyclerView.Adapter
-        public void notifyDataSetChanged() {
-            super.notifyDataSetChanged();
-            ChatAttachAlertContactsLayout.this.updateEmptyView();
-        }
-
-        @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter
-        public void onBindViewHolder(int i, int i2, RecyclerView.ViewHolder viewHolder) {
-            final TLRPC.User user;
-            if (viewHolder.getItemViewType() == 0) {
-                UserCell userCell = (UserCell) viewHolder.itemView;
-                Object item = getItem(i, i2);
-                boolean z = true;
-                if (i == getSectionCount() - 2 && i2 == getCountForSection(i) - 1) {
-                    z = false;
-                }
-                if (item instanceof ContactsController.Contact) {
-                    final ContactsController.Contact contact = (ContactsController.Contact) item;
-                    user = contact.user;
-                    if (user == null) {
-                        userCell.setCurrentId(contact.contact_id);
-                        userCell.setData((TLRPC.User) null, ContactsController.formatName(contact.first_name, contact.last_name), new UserCell.CharSequenceCallback() { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout$ShareAdapter$$ExternalSyntheticLambda0
-                            @Override // org.telegram.ui.Components.ChatAttachAlertContactsLayout.UserCell.CharSequenceCallback
-                            public final CharSequence run() {
-                                CharSequence lambda$onBindViewHolder$0;
-                                lambda$onBindViewHolder$0 = ChatAttachAlertContactsLayout.ShareAdapter.lambda$onBindViewHolder$0(ContactsController.Contact.this);
-                                return lambda$onBindViewHolder$0;
-                            }
-                        }, z);
-                        user = null;
-                    }
-                } else {
-                    user = (TLRPC.User) item;
-                }
-                if (user != null) {
-                    userCell.setData(user, (CharSequence) null, new UserCell.CharSequenceCallback() { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout$ShareAdapter$$ExternalSyntheticLambda1
-                        @Override // org.telegram.ui.Components.ChatAttachAlertContactsLayout.UserCell.CharSequenceCallback
-                        public final CharSequence run() {
-                            CharSequence lambda$onBindViewHolder$1;
-                            lambda$onBindViewHolder$1 = ChatAttachAlertContactsLayout.ShareAdapter.lambda$onBindViewHolder$1(TLRPC.User.this);
-                            return lambda$onBindViewHolder$1;
-                        }
-                    }, z);
-                }
-                userCell.setChecked(ChatAttachAlertContactsLayout.this.selectedContacts.containsKey(ListItemID.of(item)), false);
-            }
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-            View userCell;
-            if (i == 0) {
-                userCell = new UserCell(this.mContext, ChatAttachAlertContactsLayout.this.resourcesProvider);
-            } else if (i != 1) {
-                userCell = new View(this.mContext);
-            } else {
-                userCell = new View(this.mContext);
-                userCell.setLayoutParams(new RecyclerView.LayoutParams(-1, AndroidUtilities.dp(56.0f)));
-            }
-            return new RecyclerListView.Holder(userCell);
-        }
-    }
-
-    public class ShareSearchAdapter extends RecyclerListView.SelectionAdapter {
-        private int lastSearchId;
-        private Context mContext;
-        private ArrayList searchResult = new ArrayList();
-        private ArrayList searchResultNames = new ArrayList();
-        private Runnable searchRunnable;
-
-        public ShareSearchAdapter(Context context) {
-            this.mContext = context;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ CharSequence lambda$onBindViewHolder$4(ContactsController.Contact contact) {
-            return contact.phones.isEmpty() ? "" : PhoneFormat.getInstance().format(contact.phones.get(0));
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ CharSequence lambda$onBindViewHolder$5(TLRPC.User user) {
-            return PhoneFormat.getInstance().format("+" + user.phone);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        /* JADX WARN: Code restructure failed: missing block: B:107:0x022f, code lost:
-        
-            if (r6.contains(" " + r12) != false) goto L108;
-         */
-        /* JADX WARN: Code restructure failed: missing block: B:32:0x00c4, code lost:
-        
-            if (r5.contains(" " + r0) == false) goto L36;
-         */
-        /* JADX WARN: Code restructure failed: missing block: B:64:0x00e1, code lost:
-        
-            if (r6.contains(" " + r0) != false) goto L41;
-         */
-        /* JADX WARN: Code restructure failed: missing block: B:80:0x012d, code lost:
-        
-            if (r12.contains(" " + r0) != false) goto L60;
-         */
-        /* JADX WARN: Multi-variable type inference failed */
-        /* JADX WARN: Removed duplicated region for block: B:36:0x0138  */
-        /* JADX WARN: Removed duplicated region for block: B:48:0x018f  */
-        /* JADX WARN: Removed duplicated region for block: B:59:0x0199 A[ADDED_TO_REGION, SYNTHETIC] */
-        /* JADX WARN: Type inference failed for: r1v10 */
-        /* JADX WARN: Type inference failed for: r1v17 */
-        /* JADX WARN: Type inference failed for: r1v22 */
-        /* JADX WARN: Type inference failed for: r1v30 */
-        /* JADX WARN: Type inference failed for: r1v6 */
-        /*
-            Code decompiled incorrectly, please refer to instructions dump.
-        */
-        public /* synthetic */ void lambda$processSearch$1(String str, ArrayList arrayList, ArrayList arrayList2, int i, int i2) {
-            String str2;
-            String str3;
-            ?? r1;
-            String publicUsername;
-            String str4;
-            String str5;
-            CharSequence generateSearchName;
-            TLRPC.User user;
-            String lowerCase = str.trim().toLowerCase();
-            if (lowerCase.length() == 0) {
-                this.lastSearchId = -1;
-                updateSearchResults(str, new ArrayList(), new ArrayList(), this.lastSearchId);
-                return;
-            }
-            String translitString = LocaleController.getInstance().getTranslitString(lowerCase);
-            if (lowerCase.equals(translitString) || translitString.length() == 0) {
-                translitString = null;
-            }
-            int i3 = (translitString != null ? 1 : 0) + 1;
-            String[] strArr = new String[i3];
-            strArr[0] = lowerCase;
-            if (translitString != null) {
-                strArr[1] = translitString;
-            }
-            ArrayList arrayList3 = new ArrayList();
-            ArrayList arrayList4 = new ArrayList();
-            LongSparseIntArray longSparseIntArray = new LongSparseIntArray();
-            for (int i4 = 0; i4 < arrayList.size(); i4++) {
-                ContactsController.Contact contact = (ContactsController.Contact) arrayList.get(i4);
-                String lowerCase2 = ContactsController.formatName(contact.first_name, contact.last_name).toLowerCase();
-                String translitString2 = LocaleController.getInstance().getTranslitString(lowerCase2);
-                TLRPC.User user2 = contact.user;
-                if (user2 != null) {
-                    str2 = ContactsController.formatName(user2.first_name, user2.last_name).toLowerCase();
-                    str3 = LocaleController.getInstance().getTranslitString(lowerCase2);
-                } else {
-                    str2 = null;
-                    str3 = null;
-                }
-                if (lowerCase2.equals(translitString2)) {
-                    translitString2 = null;
-                }
-                int i5 = 0;
-                boolean z = false;
-                while (i5 < i3) {
-                    String str6 = strArr[i5];
-                    if (str2 != null) {
-                        if (!str2.startsWith(str6)) {
-                        }
-                        r1 = 1;
-                        String str7 = lowerCase2;
-                        if (r1 == 0 || (contact.phones.isEmpty() && contact.shortPhones.isEmpty())) {
-                            i5++;
-                            lowerCase2 = str7;
-                            z = r1;
-                        } else {
-                            if (r1 == 3) {
-                                str4 = contact.first_name;
-                                str5 = contact.last_name;
-                            } else if (r1 == 1) {
-                                TLRPC.User user3 = contact.user;
-                                generateSearchName = AndroidUtilities.generateSearchName(user3.first_name, user3.last_name, str6);
-                                arrayList4.add(generateSearchName);
-                                user = contact.user;
-                                if (user != null) {
-                                    longSparseIntArray.put(user.id, 1);
-                                }
-                                arrayList3.add(contact);
-                            } else {
-                                str4 = "@" + UserObject.getPublicUsername(contact.user);
-                                str6 = "@" + str6;
-                                str5 = null;
-                            }
-                            generateSearchName = AndroidUtilities.generateSearchName(str4, str5, str6);
-                            arrayList4.add(generateSearchName);
-                            user = contact.user;
-                            if (user != null) {
-                            }
-                            arrayList3.add(contact);
-                        }
-                    }
-                    if (str3 != null) {
-                        if (!str3.startsWith(str6)) {
-                        }
-                        r1 = 1;
-                        String str72 = lowerCase2;
-                        if (r1 == 0) {
-                        }
-                        i5++;
-                        lowerCase2 = str72;
-                        z = r1;
-                    }
-                    TLRPC.User user4 = contact.user;
-                    if (user4 == null || (publicUsername = UserObject.getPublicUsername(user4)) == null || !publicUsername.startsWith(str6)) {
-                        if (!lowerCase2.startsWith(str6)) {
-                            if (!lowerCase2.contains(" " + str6)) {
-                                if (translitString2 != null) {
-                                    if (!translitString2.startsWith(str6)) {
-                                    }
-                                }
-                                r1 = z;
-                            }
-                        }
-                        r1 = 3;
-                    } else {
-                        r1 = 2;
-                    }
-                    String str722 = lowerCase2;
-                    if (r1 == 0) {
-                    }
-                    i5++;
-                    lowerCase2 = str722;
-                    z = r1;
-                }
-            }
-            for (int i6 = 0; i6 < arrayList2.size(); i6++) {
-                TLRPC.TL_contact tL_contact = (TLRPC.TL_contact) arrayList2.get(i6);
-                if (longSparseIntArray.indexOfKey(tL_contact.user_id) < 0) {
-                    TLRPC.User user5 = MessagesController.getInstance(i).getUser(Long.valueOf(tL_contact.user_id));
-                    String lowerCase3 = ContactsController.formatName(user5.first_name, user5.last_name).toLowerCase();
-                    String translitString3 = LocaleController.getInstance().getTranslitString(lowerCase3);
-                    if (lowerCase3.equals(translitString3)) {
-                        translitString3 = null;
-                    }
-                    char c = 0;
-                    for (int i7 = 0; i7 < i3; i7++) {
-                        String str8 = strArr[i7];
-                        if (!lowerCase3.startsWith(str8)) {
-                            if (!lowerCase3.contains(" " + str8)) {
-                                if (translitString3 != null) {
-                                    if (!translitString3.startsWith(str8)) {
-                                    }
-                                }
-                                String publicUsername2 = UserObject.getPublicUsername(user5);
-                                if (publicUsername2 != null && publicUsername2.startsWith(str8)) {
-                                    c = 2;
-                                }
-                                if (c == 0 && user5.phone != null) {
-                                    if (c == 1) {
-                                        arrayList4.add(AndroidUtilities.generateSearchName(user5.first_name, user5.last_name, str8));
-                                    } else {
-                                        arrayList4.add(AndroidUtilities.generateSearchName("@" + UserObject.getPublicUsername(user5), null, "@" + str8));
-                                    }
-                                    arrayList3.add(user5);
-                                }
-                            }
-                        }
-                        c = 1;
-                        if (c == 0) {
-                        }
-                    }
-                }
-            }
-            updateSearchResults(str, arrayList3, arrayList4, i2);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$processSearch$2(final String str, final int i) {
-            final int i2 = UserConfig.selectedAccount;
-            final ArrayList arrayList = new ArrayList(ContactsController.getInstance(i2).contactsBook.values());
-            final ArrayList arrayList2 = new ArrayList(ContactsController.getInstance(i2).contacts);
-            Utilities.searchQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout$ShareSearchAdapter$$ExternalSyntheticLambda4
-                @Override // java.lang.Runnable
-                public final void run() {
-                    ChatAttachAlertContactsLayout.ShareSearchAdapter.this.lambda$processSearch$1(str, arrayList, arrayList2, i2, i);
-                }
-            });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$updateSearchResults$3(int i, ArrayList arrayList, ArrayList arrayList2) {
-            if (i != this.lastSearchId) {
-                return;
-            }
-            if (i != -1 && ChatAttachAlertContactsLayout.this.listView.getAdapter() != ChatAttachAlertContactsLayout.this.searchAdapter) {
-                ChatAttachAlertContactsLayout.this.listView.setAdapter(ChatAttachAlertContactsLayout.this.searchAdapter);
-            }
-            this.searchResult = arrayList;
-            this.searchResultNames = arrayList2;
-            notifyDataSetChanged();
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        /* renamed from: processSearch, reason: merged with bridge method [inline-methods] */
-        public void lambda$search$0(final String str, final int i) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout$ShareSearchAdapter$$ExternalSyntheticLambda3
-                @Override // java.lang.Runnable
-                public final void run() {
-                    ChatAttachAlertContactsLayout.ShareSearchAdapter.this.lambda$processSearch$2(str, i);
-                }
-            });
-        }
-
-        private void updateSearchResults(String str, final ArrayList arrayList, final ArrayList arrayList2, final int i) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout$ShareSearchAdapter$$ExternalSyntheticLambda5
-                @Override // java.lang.Runnable
-                public final void run() {
-                    ChatAttachAlertContactsLayout.ShareSearchAdapter.this.lambda$updateSearchResults$3(i, arrayList, arrayList2);
-                }
-            });
-        }
-
-        public Object getItem(int i) {
-            int i2 = i - 1;
-            if (i2 < 0 || i2 >= this.searchResult.size()) {
-                return null;
-            }
-            return this.searchResult.get(i2);
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public int getItemCount() {
-            return this.searchResult.size() + 2;
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public int getItemViewType(int i) {
-            if (i == 0) {
-                return 1;
-            }
-            return i == getItemCount() - 1 ? 2 : 0;
-        }
-
-        @Override // org.telegram.ui.Components.RecyclerListView.SelectionAdapter
-        public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
-            return viewHolder.getItemViewType() == 0;
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public void notifyDataSetChanged() {
-            super.notifyDataSetChanged();
-            ChatAttachAlertContactsLayout.this.updateEmptyView();
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
-            final TLRPC.User user;
-            if (viewHolder.getItemViewType() == 0) {
-                UserCell userCell = (UserCell) viewHolder.itemView;
-                boolean z = i != getItemCount() + (-2);
-                Object item = getItem(i);
-                if (item instanceof ContactsController.Contact) {
-                    final ContactsController.Contact contact = (ContactsController.Contact) item;
-                    user = contact.user;
-                    if (user == null) {
-                        userCell.setCurrentId(contact.contact_id);
-                        userCell.setData((TLRPC.User) null, (CharSequence) this.searchResultNames.get(i - 1), new UserCell.CharSequenceCallback() { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout$ShareSearchAdapter$$ExternalSyntheticLambda0
-                            @Override // org.telegram.ui.Components.ChatAttachAlertContactsLayout.UserCell.CharSequenceCallback
-                            public final CharSequence run() {
-                                CharSequence lambda$onBindViewHolder$4;
-                                lambda$onBindViewHolder$4 = ChatAttachAlertContactsLayout.ShareSearchAdapter.lambda$onBindViewHolder$4(ContactsController.Contact.this);
-                                return lambda$onBindViewHolder$4;
-                            }
-                        }, z);
-                        user = null;
-                    }
-                } else {
-                    user = (TLRPC.User) item;
-                }
-                if (user != null) {
-                    userCell.setData(user, (CharSequence) this.searchResultNames.get(i - 1), new UserCell.CharSequenceCallback() { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout$ShareSearchAdapter$$ExternalSyntheticLambda1
-                        @Override // org.telegram.ui.Components.ChatAttachAlertContactsLayout.UserCell.CharSequenceCallback
-                        public final CharSequence run() {
-                            CharSequence lambda$onBindViewHolder$5;
-                            lambda$onBindViewHolder$5 = ChatAttachAlertContactsLayout.ShareSearchAdapter.lambda$onBindViewHolder$5(TLRPC.User.this);
-                            return lambda$onBindViewHolder$5;
-                        }
-                    }, z);
-                }
-                userCell.setChecked(ChatAttachAlertContactsLayout.this.selectedContacts.containsKey(ListItemID.of(item)), false);
-            }
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-            View userCell;
-            if (i == 0) {
-                userCell = new UserCell(this.mContext, ChatAttachAlertContactsLayout.this.resourcesProvider);
-            } else if (i != 1) {
-                userCell = new View(this.mContext);
-            } else {
-                userCell = new View(this.mContext);
-                userCell.setLayoutParams(new RecyclerView.LayoutParams(-1, AndroidUtilities.dp(56.0f)));
-            }
-            return new RecyclerListView.Holder(userCell);
-        }
-
-        public void search(final String str) {
-            if (this.searchRunnable != null) {
-                Utilities.searchQueue.cancelRunnable(this.searchRunnable);
-                this.searchRunnable = null;
-            }
-            if (str == null) {
-                this.searchResult.clear();
-                this.searchResultNames.clear();
-                notifyDataSetChanged();
-            } else {
-                final int i = this.lastSearchId + 1;
-                this.lastSearchId = i;
-                DispatchQueue dispatchQueue = Utilities.searchQueue;
-                Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout$ShareSearchAdapter$$ExternalSyntheticLambda2
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        ChatAttachAlertContactsLayout.ShareSearchAdapter.this.lambda$search$0(str, i);
-                    }
-                };
-                this.searchRunnable = runnable;
-                dispatchQueue.postRunnable(runnable, 300L);
-            }
-        }
     }
 
     public static class UserCell extends FrameLayout {
@@ -652,6 +99,11 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
 
         public interface CharSequenceCallback {
             CharSequence run();
+        }
+
+        @Override // android.view.View
+        public boolean hasOverlappingRendering() {
+            return false;
         }
 
         public UserCell(Context context, Theme.ResourcesProvider resourcesProvider) {
@@ -698,64 +150,6 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
             addView(checkBox22, LayoutHelper.createFrame(24, 24.0f, (z4 ? 5 : 3) | 48, z4 ? 0.0f : 44.0f, 37.0f, z4 ? 44.0f : 0.0f, 0.0f));
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setData$1(CharSequenceCallback charSequenceCallback) {
-            final CharSequence run = charSequenceCallback.run();
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout$UserCell$$ExternalSyntheticLambda3
-                @Override // java.lang.Runnable
-                public final void run() {
-                    ChatAttachAlertContactsLayout.UserCell.this.lambda$setData$0(run);
-                }
-            });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setStatus$2() {
-            this.statusTextView.setText(this.formattedPhoneNumber);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setStatus$3() {
-            if (this.currentUser != null) {
-                this.formattedPhoneNumber = PhoneFormat.getInstance().format("+" + this.currentUser.phone);
-                this.formattedPhoneNumberUser = this.currentUser;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout$UserCell$$ExternalSyntheticLambda1
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        ChatAttachAlertContactsLayout.UserCell.this.lambda$setStatus$2();
-                    }
-                });
-            }
-        }
-
-        protected int getThemedColor(int i) {
-            return Theme.getColor(i, this.resourcesProvider);
-        }
-
-        @Override // android.view.View
-        public boolean hasOverlappingRendering() {
-            return false;
-        }
-
-        @Override // android.view.View
-        protected void onDraw(Canvas canvas) {
-            if (this.needDivider) {
-                canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(70.0f) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
-            }
-        }
-
-        @Override // android.widget.FrameLayout, android.view.View
-        protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f) + (this.needDivider ? 1 : 0), TLObject.FLAG_30));
-        }
-
-        public void setChecked(boolean z, boolean z2) {
-            if (this.checkBox.getVisibility() != 0) {
-                this.checkBox.setVisibility(0);
-            }
-            this.checkBox.setChecked(z, z2);
-        }
-
         public void setCurrentId(int i) {
             this.currentId = i;
         }
@@ -787,18 +181,39 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
             });
         }
 
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$setData$1(CharSequenceCallback charSequenceCallback) {
+            final CharSequence run = charSequenceCallback.run();
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout$UserCell$$ExternalSyntheticLambda3
+                @Override // java.lang.Runnable
+                public final void run() {
+                    ChatAttachAlertContactsLayout.UserCell.this.lambda$setData$0(run);
+                }
+            });
+        }
+
+        public void setChecked(boolean z, boolean z2) {
+            if (this.checkBox.getVisibility() != 0) {
+                this.checkBox.setVisibility(0);
+            }
+            this.checkBox.setChecked(z, z2);
+        }
+
         /* renamed from: setStatus, reason: merged with bridge method [inline-methods] */
         public void lambda$setData$0(CharSequence charSequence) {
+            CharSequence charSequence2;
             this.currentStatus = charSequence;
-            if (charSequence == null) {
-                TLRPC.User user = this.currentUser;
-                if (user == null) {
-                    return;
-                }
+            if (charSequence != null) {
+                this.statusTextView.setText(charSequence);
+                return;
+            }
+            TLRPC.User user = this.currentUser;
+            if (user != null) {
                 if (TextUtils.isEmpty(user.phone)) {
                     this.statusTextView.setText(LocaleController.getString(R.string.NumberUnknown));
-                    return;
-                } else if (this.formattedPhoneNumberUser == this.currentUser || (charSequence = this.formattedPhoneNumber) == null) {
+                } else if (this.formattedPhoneNumberUser != this.currentUser && (charSequence2 = this.formattedPhoneNumber) != null) {
+                    this.statusTextView.setText(charSequence2);
+                } else {
                     this.statusTextView.setText("");
                     Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout$UserCell$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
@@ -806,10 +221,32 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
                             ChatAttachAlertContactsLayout.UserCell.this.lambda$setStatus$3();
                         }
                     });
-                    return;
                 }
             }
-            this.statusTextView.setText(charSequence);
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$setStatus$3() {
+            if (this.currentUser != null) {
+                this.formattedPhoneNumber = PhoneFormat.getInstance().format("+" + this.currentUser.phone);
+                this.formattedPhoneNumberUser = this.currentUser;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout$UserCell$$ExternalSyntheticLambda1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        ChatAttachAlertContactsLayout.UserCell.this.lambda$setStatus$2();
+                    }
+                });
+            }
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$setStatus$2() {
+            this.statusTextView.setText(this.formattedPhoneNumber);
+        }
+
+        @Override // android.widget.FrameLayout, android.view.View
+        protected void onMeasure(int i, int i2) {
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f) + (this.needDivider ? 1 : 0), TLObject.FLAG_30));
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:35:0x0068, code lost:
@@ -821,7 +258,6 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
         */
         public void update(int i) {
             String str;
-            SimpleTextView simpleTextView;
             TLRPC.FileLocation fileLocation;
             TLRPC.UserProfilePhoto userProfilePhoto;
             TLRPC.User user = this.currentUser;
@@ -867,19 +303,19 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
             CharSequence charSequence2 = this.currentName;
             if (charSequence2 != null) {
                 this.lastName = null;
-                simpleTextView = this.nameTextView;
+                this.nameTextView.setText(charSequence2);
             } else {
                 TLRPC.User user3 = this.currentUser;
-                if (user3 == null) {
-                    str = "";
-                } else if (str == null) {
-                    str = UserObject.getUserName(user3);
+                if (user3 != null) {
+                    if (str == null) {
+                        str = UserObject.getUserName(user3);
+                    }
+                    this.lastName = str;
+                } else {
+                    this.lastName = "";
                 }
-                this.lastName = str;
-                simpleTextView = this.nameTextView;
-                charSequence2 = this.lastName;
+                this.nameTextView.setText(this.lastName);
             }
-            simpleTextView.setText(charSequence2);
             lambda$setData$0(this.currentStatus);
             this.lastAvatar = fileLocation2;
             TLRPC.User user4 = this.currentUser;
@@ -888,6 +324,57 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
             } else {
                 this.avatarImageView.setImageDrawable(this.avatarDrawable);
             }
+        }
+
+        @Override // android.view.View
+        protected void onDraw(Canvas canvas) {
+            if (this.needDivider) {
+                canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(70.0f) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
+            }
+        }
+
+        protected int getThemedColor(int i) {
+            return Theme.getColor(i, this.resourcesProvider);
+        }
+    }
+
+    private static class ListItemID {
+        private final long id;
+        private final Type type;
+
+        public enum Type {
+            USER,
+            CONTACT
+        }
+
+        public static ListItemID of(Object obj) {
+            if (obj instanceof ContactsController.Contact) {
+                return new ListItemID(Type.CONTACT, ((ContactsController.Contact) obj).contact_id);
+            }
+            if (obj instanceof TLRPC.User) {
+                return new ListItemID(Type.USER, ((TLRPC.User) obj).id);
+            }
+            return null;
+        }
+
+        public ListItemID(Type type, long j) {
+            this.type = type;
+            this.id = j;
+        }
+
+        public boolean equals(Object obj) {
+            if (this == obj) {
+                return true;
+            }
+            if (obj == null || getClass() != obj.getClass()) {
+                return false;
+            }
+            ListItemID listItemID = (ListItemID) obj;
+            return this.id == listItemID.id && this.type == listItemID.type;
+        }
+
+        public int hashCode() {
+            return Objects.hash(this.type, Long.valueOf(this.id));
         }
     }
 
@@ -901,17 +388,6 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
         this.frameLayout = frameLayout;
         frameLayout.setBackgroundColor(getThemedColor(Theme.key_dialogBackground));
         SearchField searchField = new SearchField(context, false, resourcesProvider) { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout.1
-            @Override // org.telegram.ui.Components.SearchField
-            protected void onFieldTouchUp(EditTextBoldCursor editTextBoldCursor) {
-                ChatAttachAlertContactsLayout.this.parentAlert.makeFocusable(editTextBoldCursor, true);
-            }
-
-            @Override // android.view.ViewGroup
-            public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-                ChatAttachAlertContactsLayout.this.parentAlert.makeFocusable(getSearchEditText(), true);
-                return super.onInterceptTouchEvent(motionEvent);
-            }
-
             @Override // org.telegram.ui.Components.SearchField
             public void onTextChange(String str) {
                 if (str.length() != 0) {
@@ -933,12 +409,23 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
                 }
             }
 
+            @Override // android.view.ViewGroup
+            public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+                ChatAttachAlertContactsLayout.this.parentAlert.makeFocusable(getSearchEditText(), true);
+                return super.onInterceptTouchEvent(motionEvent);
+            }
+
             @Override // org.telegram.ui.Components.SearchField
             public void processTouchEvent(MotionEvent motionEvent) {
                 MotionEvent obtain = MotionEvent.obtain(motionEvent);
                 obtain.setLocation(obtain.getRawX(), (obtain.getRawY() - ChatAttachAlertContactsLayout.this.parentAlert.getSheetContainer().getTranslationY()) - AndroidUtilities.dp(58.0f));
                 ChatAttachAlertContactsLayout.this.listView.dispatchTouchEvent(obtain);
                 obtain.recycle();
+            }
+
+            @Override // org.telegram.ui.Components.SearchField
+            protected void onFieldTouchUp(EditTextBoldCursor editTextBoldCursor) {
+                ChatAttachAlertContactsLayout.this.parentAlert.makeFocusable(editTextBoldCursor, true);
             }
         };
         this.searchField = searchField;
@@ -952,7 +439,7 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
         RecyclerListView recyclerListView = new RecyclerListView(context, resourcesProvider) { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout.2
             @Override // org.telegram.ui.Components.RecyclerListView
             protected boolean allowSelectChildAtPosition(float f, float f2) {
-                return f2 >= ((float) ((ChatAttachAlertContactsLayout.this.parentAlert.scrollOffsetY[0] + AndroidUtilities.dp(30.0f)) + ((Build.VERSION.SDK_INT < 21 || ChatAttachAlertContactsLayout.this.parentAlert.inBubbleMode) ? 0 : AndroidUtilities.statusBarHeight)));
+                return f2 >= ((float) ((ChatAttachAlertContactsLayout.this.parentAlert.scrollOffsetY[0] + AndroidUtilities.dp(30.0f)) + (!ChatAttachAlertContactsLayout.this.parentAlert.inBubbleMode ? AndroidUtilities.statusBarHeight : 0)));
             }
         };
         this.listView = recyclerListView;
@@ -1025,44 +512,6 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public int getCurrentTop() {
-        if (this.listView.getChildCount() == 0) {
-            return -1000;
-        }
-        int i = 0;
-        View childAt = this.listView.getChildAt(0);
-        RecyclerListView.Holder holder = (RecyclerListView.Holder) this.listView.findContainingViewHolder(childAt);
-        if (holder == null) {
-            return -1000;
-        }
-        int paddingTop = this.listView.getPaddingTop();
-        if (holder.getAdapterPosition() == 0 && childAt.getTop() >= 0) {
-            i = childAt.getTop();
-        }
-        return paddingTop - i;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$getThemeDescriptions$4() {
-        RecyclerListView recyclerListView = this.listView;
-        if (recyclerListView != null) {
-            int childCount = recyclerListView.getChildCount();
-            for (int i = 0; i < childCount; i++) {
-                View childAt = this.listView.getChildAt(i);
-                if (childAt instanceof UserCell) {
-                    ((UserCell) childAt).update(0);
-                }
-            }
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(TLRPC.User user, boolean z, int i, long j, boolean z2, long j2) {
-        this.parentAlert.dismiss(true);
-        this.delegate.didSelectContact(user, z, i, j, z2, j2);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$1(Theme.ResourcesProvider resourcesProvider, View view, int i) {
         Object item;
         ContactsController.Contact contact;
@@ -1131,10 +580,21 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$0(TLRPC.User user, boolean z, int i, long j, boolean z2, long j2) {
+        this.parentAlert.dismiss(true);
+        this.delegate.didSelectContact(user, z, i, j, z2, j2);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ boolean lambda$new$2(View view, int i) {
+        Object item;
         RecyclerView.Adapter adapter = this.listView.getAdapter();
         ShareSearchAdapter shareSearchAdapter = this.searchAdapter;
-        Object item = adapter == shareSearchAdapter ? shareSearchAdapter.getItem(i) : this.listAdapter.getItem(i);
+        if (adapter == shareSearchAdapter) {
+            item = shareSearchAdapter.getItem(i);
+        } else {
+            item = this.listAdapter.getItem(i);
+        }
         if (item == null) {
             return false;
         }
@@ -1142,10 +602,36 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$sendSelectedItems$3(ArrayList arrayList, boolean z, int i, long j, boolean z2, Long l) {
-        this.delegate.didSelectContacts(arrayList, this.parentAlert.getCommentView().getText().toString(), z, i, j, z2, l.longValue());
-        this.parentAlert.lambda$new$0();
+    public void addOrRemoveSelectedContact(UserCell userCell, Object obj) {
+        boolean z = false;
+        if (this.selectedContacts.isEmpty() && !this.multipleSelectionAllowed) {
+            showErrorBox(LocaleController.formatString("AttachContactsSlowMode", R.string.AttachContactsSlowMode, new Object[0]));
+            return;
+        }
+        ListItemID of = ListItemID.of(obj);
+        if (this.selectedContacts.containsKey(of)) {
+            this.selectedContacts.remove(of);
+            this.selectedContactsOrder.remove(of);
+        } else {
+            this.selectedContacts.put(of, obj);
+            this.selectedContactsOrder.add(of);
+            z = true;
+        }
+        userCell.setChecked(z, true);
+        this.parentAlert.updateCountButton(z ? 1 : 2);
+    }
+
+    public void setMultipleSelectionAllowed(boolean z) {
+        this.multipleSelectionAllowed = z;
+    }
+
+    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
+    public int getSelectedItemsCount() {
+        return this.selectedContacts.size();
+    }
+
+    private void showErrorBox(String str) {
+        new AlertDialog.Builder(getContext(), this.resourcesProvider).setTitle(LocaleController.getString(R.string.AppName)).setMessage(str).setPositiveButton(LocaleController.getString(R.string.OK), null).show();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:39:0x00dd  */
@@ -1162,6 +648,8 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
         String str2;
         ArrayList<TLRPC.User> arrayList;
         ArrayList<TLRPC.RestrictionReason> arrayList2;
+        TLRPC.TL_userContact_old2 tL_userContact_old2;
+        StringBuilder sb;
         int lastIndexOf;
         if (obj instanceof ContactsController.Contact) {
             contact = (ContactsController.Contact) obj;
@@ -1209,15 +697,16 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
                 if (vcardItem2.type == 0) {
                     int i2 = 0;
                     while (true) {
-                        if (i2 >= arrayList4.size()) {
+                        if (i2 < arrayList4.size()) {
+                            if (((AndroidUtilities.VcardItem) arrayList4.get(i2)).getValue(false).equals(vcardItem2.getValue(false))) {
+                                vcardItem2.checked = false;
+                                break;
+                            }
+                            i2++;
+                        } else {
                             arrayList4.add(vcardItem2);
                             break;
                         }
-                        if (((AndroidUtilities.VcardItem) arrayList4.get(i2)).getValue(false).equals(vcardItem2.getValue(false))) {
-                            vcardItem2.checked = false;
-                            break;
-                        }
-                        i2++;
                     }
                 } else {
                     arrayList5.add(vcardItem2);
@@ -1230,7 +719,7 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
                     str = user4.first_name;
                     str2 = user4.last_name;
                 }
-                TLRPC.TL_userContact_old2 tL_userContact_old2 = new TLRPC.TL_userContact_old2();
+                tL_userContact_old2 = new TLRPC.TL_userContact_old2();
                 if (user3 == null) {
                     tL_userContact_old2.id = user3.id;
                     tL_userContact_old2.access_hash = user3.access_hash;
@@ -1246,7 +735,11 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
                     tL_userContact_old2.first_name = str;
                     tL_userContact_old2.last_name = str2;
                 }
-                StringBuilder sb = tL_userContact_old2.restriction_reason.isEmpty() ? new StringBuilder(tL_userContact_old2.restriction_reason.get(0).text) : new StringBuilder(String.format(Locale.US, "BEGIN:VCARD\nVERSION:3.0\nFN:%1$s\nEND:VCARD", ContactsController.formatName(tL_userContact_old2.first_name, tL_userContact_old2.last_name)));
+                if (tL_userContact_old2.restriction_reason.isEmpty()) {
+                    sb = new StringBuilder(tL_userContact_old2.restriction_reason.get(0).text);
+                } else {
+                    sb = new StringBuilder(String.format(Locale.US, "BEGIN:VCARD\nVERSION:3.0\nFN:%1$s\nEND:VCARD", ContactsController.formatName(tL_userContact_old2.first_name, tL_userContact_old2.last_name)));
+                }
                 lastIndexOf = sb.lastIndexOf("END:VCARD");
                 if (lastIndexOf >= 0) {
                     tL_userContact_old2.phone = null;
@@ -1280,15 +773,122 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
             }
         }
         arrayList2 = null;
-        TLRPC.TL_userContact_old2 tL_userContact_old22 = new TLRPC.TL_userContact_old2();
+        tL_userContact_old2 = new TLRPC.TL_userContact_old2();
         if (user3 == null) {
         }
-        if (tL_userContact_old22.restriction_reason.isEmpty()) {
+        if (tL_userContact_old2.restriction_reason.isEmpty()) {
         }
         lastIndexOf = sb.lastIndexOf("END:VCARD");
         if (lastIndexOf >= 0) {
         }
-        return tL_userContact_old22;
+        return tL_userContact_old2;
+    }
+
+    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
+    public boolean sendSelectedItems(final boolean z, final int i, final long j, final boolean z2) {
+        if ((this.selectedContacts.size() == 0 && this.delegate == null) || this.sendPressed) {
+            return false;
+        }
+        this.sendPressed = true;
+        final ArrayList arrayList = new ArrayList(this.selectedContacts.size());
+        Iterator it = this.selectedContactsOrder.iterator();
+        while (it.hasNext()) {
+            arrayList.add(prepareContact(this.selectedContacts.get((ListItemID) it.next())));
+        }
+        ChatAttachAlert chatAttachAlert = this.parentAlert;
+        return AlertsCreator.ensurePaidMessageConfirmation(chatAttachAlert.currentAccount, chatAttachAlert.getDialogId(), arrayList.size() + this.parentAlert.getAdditionalMessagesCount(), new Utilities.Callback() { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout$$ExternalSyntheticLambda4
+            @Override // org.telegram.messenger.Utilities.Callback
+            public final void run(Object obj) {
+                ChatAttachAlertContactsLayout.this.lambda$sendSelectedItems$3(arrayList, z, i, j, z2, (Long) obj);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$sendSelectedItems$3(ArrayList arrayList, boolean z, int i, long j, boolean z2, Long l) {
+        this.delegate.didSelectContacts(arrayList, this.parentAlert.getCommentView().getText().toString(), z, i, j, z2, l.longValue());
+        this.parentAlert.lambda$new$0();
+    }
+
+    public ArrayList<TLRPC.User> getSelected() {
+        ArrayList<TLRPC.User> arrayList = new ArrayList<>(this.selectedContacts.size());
+        Iterator it = this.selectedContactsOrder.iterator();
+        while (it.hasNext()) {
+            arrayList.add(prepareContact(this.selectedContacts.get((ListItemID) it.next())));
+        }
+        return arrayList;
+    }
+
+    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
+    public void scrollToTop() {
+        this.listView.smoothScrollToPosition(0);
+    }
+
+    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
+    public int getCurrentItemTop() {
+        if (this.listView.getChildCount() <= 0) {
+            return ConnectionsManager.DEFAULT_DATACENTER_ID;
+        }
+        View childAt = this.listView.getChildAt(0);
+        RecyclerListView.Holder holder = (RecyclerListView.Holder) this.listView.findContainingViewHolder(childAt);
+        int top = childAt.getTop() - AndroidUtilities.dp(8.0f);
+        int i = (top <= 0 || holder == null || holder.getAdapterPosition() != 0) ? 0 : top;
+        if (top >= 0 && holder != null && holder.getAdapterPosition() == 0) {
+            runShadowAnimation(false);
+        } else {
+            runShadowAnimation(true);
+            top = i;
+        }
+        this.frameLayout.setTranslationY(top);
+        return top + AndroidUtilities.dp(12.0f);
+    }
+
+    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
+    public int getFirstOffset() {
+        return getListTopPadding() + AndroidUtilities.dp(4.0f);
+    }
+
+    @Override // android.view.View
+    public void setTranslationY(float f) {
+        super.setTranslationY(f);
+        this.parentAlert.getSheetContainer().invalidate();
+    }
+
+    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
+    public int getListTopPadding() {
+        return this.listView.getPaddingTop();
+    }
+
+    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
+    public void onPreMeasure(int i, int i2) {
+        int i3;
+        if (this.parentAlert.sizeNotifierFrameLayout.measureKeyboardHeight() > AndroidUtilities.dp(20.0f)) {
+            i3 = AndroidUtilities.dp(8.0f);
+            this.parentAlert.setAllowNestedScroll(false);
+        } else {
+            if (!AndroidUtilities.isTablet()) {
+                android.graphics.Point point = AndroidUtilities.displaySize;
+                if (point.x > point.y) {
+                    i3 = (int) (i2 / 3.5f);
+                    this.parentAlert.setAllowNestedScroll(true);
+                }
+            }
+            i3 = (i2 / 5) * 2;
+            this.parentAlert.setAllowNestedScroll(true);
+        }
+        if (this.listView.getPaddingTop() != i3) {
+            this.ignoreLayout = true;
+            this.listView.setPadding(0, i3, 0, AndroidUtilities.dp(48.0f));
+            this.ignoreLayout = false;
+        }
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public void requestLayout() {
+        if (this.ignoreLayout) {
+            return;
+        }
+        super.requestLayout();
     }
 
     private void runShadowAnimation(final boolean z) {
@@ -1309,14 +909,6 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
         this.shadowAnimation.setDuration(150L);
         this.shadowAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout.5
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-            public void onAnimationCancel(Animator animator) {
-                if (ChatAttachAlertContactsLayout.this.shadowAnimation == null || !ChatAttachAlertContactsLayout.this.shadowAnimation.equals(animator)) {
-                    return;
-                }
-                ChatAttachAlertContactsLayout.this.shadowAnimation = null;
-            }
-
-            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 if (ChatAttachAlertContactsLayout.this.shadowAnimation == null || !ChatAttachAlertContactsLayout.this.shadowAnimation.equals(animator)) {
                     return;
@@ -1326,45 +918,38 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
                 }
                 ChatAttachAlertContactsLayout.this.shadowAnimation = null;
             }
+
+            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+            public void onAnimationCancel(Animator animator) {
+                if (ChatAttachAlertContactsLayout.this.shadowAnimation == null || !ChatAttachAlertContactsLayout.this.shadowAnimation.equals(animator)) {
+                    return;
+                }
+                ChatAttachAlertContactsLayout.this.shadowAnimation = null;
+            }
         });
         this.shadowAnimation.start();
     }
 
-    private void showErrorBox(String str) {
-        new AlertDialog.Builder(getContext(), this.resourcesProvider).setTitle(LocaleController.getString(R.string.AppName)).setMessage(str).setPositiveButton(LocaleController.getString(R.string.OK), null).show();
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
-    public void updateEmptyView() {
-        this.emptyView.setVisibility(this.listView.getAdapter().getItemCount() == 2 ? 0 : 8);
-        updateEmptyViewPosition();
+    public int getCurrentTop() {
+        if (this.listView.getChildCount() == 0) {
+            return -1000;
+        }
+        int i = 0;
+        View childAt = this.listView.getChildAt(0);
+        RecyclerListView.Holder holder = (RecyclerListView.Holder) this.listView.findContainingViewHolder(childAt);
+        if (holder == null) {
+            return -1000;
+        }
+        int paddingTop = this.listView.getPaddingTop();
+        if (holder.getAdapterPosition() == 0 && childAt.getTop() >= 0) {
+            i = childAt.getTop();
+        }
+        return paddingTop - i;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public void updateEmptyViewPosition() {
-        View childAt;
-        if (this.emptyView.getVisibility() == 0 && (childAt = this.listView.getChildAt(0)) != null) {
-            this.emptyView.setTranslationY(((r1.getMeasuredHeight() - getMeasuredHeight()) + childAt.getTop()) / 2);
-        }
-    }
-
-    public void addOrRemoveSelectedContact(UserCell userCell, Object obj) {
-        boolean z = false;
-        if (this.selectedContacts.isEmpty() && !this.multipleSelectionAllowed) {
-            showErrorBox(LocaleController.formatString("AttachContactsSlowMode", R.string.AttachContactsSlowMode, new Object[0]));
-            return;
-        }
-        ListItemID of = ListItemID.of(obj);
-        if (this.selectedContacts.containsKey(of)) {
-            this.selectedContacts.remove(of);
-            this.selectedContactsOrder.remove(of);
-        } else {
-            this.selectedContacts.put(of, obj);
-            this.selectedContactsOrder.add(of);
-            z = true;
-        }
-        userCell.setChecked(z, true);
-        this.parentAlert.updateCountButton(z ? 1 : 2);
+    public void setDelegate(PhonebookShareAlertDelegate phonebookShareAlertDelegate) {
+        this.delegate = phonebookShareAlertDelegate;
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
@@ -1377,46 +962,530 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
     }
 
     @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public int getCurrentItemTop() {
-        if (this.listView.getChildCount() <= 0) {
-            return ConnectionsManager.DEFAULT_DATACENTER_ID;
-        }
-        View childAt = this.listView.getChildAt(0);
-        RecyclerListView.Holder holder = (RecyclerListView.Holder) this.listView.findContainingViewHolder(childAt);
-        int top = childAt.getTop() - AndroidUtilities.dp(8.0f);
-        int i = (top <= 0 || holder == null || holder.getAdapterPosition() != 0) ? 0 : top;
-        if (top < 0 || holder == null || holder.getAdapterPosition() != 0) {
-            runShadowAnimation(true);
-            top = i;
-        } else {
-            runShadowAnimation(false);
-        }
-        this.frameLayout.setTranslationY(top);
-        return top + AndroidUtilities.dp(12.0f);
+    public void onDestroy() {
+        NotificationCenter.getInstance(this.parentAlert.currentAccount).removeObserver(this, NotificationCenter.contactsDidLoad);
     }
 
     @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public int getFirstOffset() {
-        return getListTopPadding() + AndroidUtilities.dp(4.0f);
+    public void onShow(ChatAttachAlert.AttachAlertLayout attachAlertLayout) {
+        this.layoutManager.scrollToPositionWithOffset(0, 0);
     }
 
-    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public int getListTopPadding() {
-        return this.listView.getPaddingTop();
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        updateEmptyViewPosition();
     }
 
-    public ArrayList<TLRPC.User> getSelected() {
-        ArrayList<TLRPC.User> arrayList = new ArrayList<>(this.selectedContacts.size());
-        Iterator it = this.selectedContactsOrder.iterator();
-        while (it.hasNext()) {
-            arrayList.add(prepareContact(this.selectedContacts.get((ListItemID) it.next())));
+    /* JADX INFO: Access modifiers changed from: private */
+    public void updateEmptyViewPosition() {
+        View childAt;
+        if (this.emptyView.getVisibility() == 0 && (childAt = this.listView.getChildAt(0)) != null) {
+            this.emptyView.setTranslationY(((r1.getMeasuredHeight() - getMeasuredHeight()) + childAt.getTop()) / 2);
         }
-        return arrayList;
     }
 
-    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public int getSelectedItemsCount() {
-        return this.selectedContacts.size();
+    /* JADX INFO: Access modifiers changed from: private */
+    public void updateEmptyView() {
+        this.emptyView.setVisibility(this.listView.getAdapter().getItemCount() == 2 ? 0 : 8);
+        updateEmptyViewPosition();
+    }
+
+    public class ShareAdapter extends RecyclerListView.SectionsAdapter {
+        private int currentAccount = UserConfig.selectedAccount;
+        private Context mContext;
+
+        @Override // org.telegram.ui.Components.RecyclerListView.FastScrollAdapter
+        public String getLetter(int i) {
+            return null;
+        }
+
+        @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter
+        public View getSectionHeaderView(int i, View view) {
+            return null;
+        }
+
+        public ShareAdapter(Context context) {
+            this.mContext = context;
+        }
+
+        @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter
+        public Object getItem(int i, int i2) {
+            if (i == 0) {
+                return null;
+            }
+            int i3 = i - 1;
+            HashMap<String, ArrayList<Object>> hashMap = ContactsController.getInstance(this.currentAccount).phoneBookSectionsDict;
+            ArrayList<String> arrayList = ContactsController.getInstance(this.currentAccount).phoneBookSectionsArray;
+            if (i3 < arrayList.size()) {
+                ArrayList<Object> arrayList2 = hashMap.get(arrayList.get(i3));
+                if (i2 < arrayList2.size()) {
+                    return arrayList2.get(i2);
+                }
+            }
+            return null;
+        }
+
+        @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter
+        public boolean isEnabled(RecyclerView.ViewHolder viewHolder, int i, int i2) {
+            if (i == 0 || i == getSectionCount() - 1) {
+                return false;
+            }
+            return i2 < ContactsController.getInstance(this.currentAccount).phoneBookSectionsDict.get(ContactsController.getInstance(this.currentAccount).phoneBookSectionsArray.get(i + (-1))).size();
+        }
+
+        @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter
+        public int getSectionCount() {
+            return ContactsController.getInstance(this.currentAccount).phoneBookSectionsArray.size() + 2;
+        }
+
+        @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter
+        public int getCountForSection(int i) {
+            if (i == 0 || i == getSectionCount() - 1) {
+                return 1;
+            }
+            int i2 = i - 1;
+            HashMap<String, ArrayList<Object>> hashMap = ContactsController.getInstance(this.currentAccount).phoneBookSectionsDict;
+            ArrayList<String> arrayList = ContactsController.getInstance(this.currentAccount).phoneBookSectionsArray;
+            if (i2 < arrayList.size()) {
+                return hashMap.get(arrayList.get(i2)).size();
+            }
+            return 0;
+        }
+
+        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+        public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+            View userCell;
+            if (i == 0) {
+                userCell = new UserCell(this.mContext, ChatAttachAlertContactsLayout.this.resourcesProvider);
+            } else if (i == 1) {
+                userCell = new View(this.mContext);
+                userCell.setLayoutParams(new RecyclerView.LayoutParams(-1, AndroidUtilities.dp(56.0f)));
+            } else {
+                userCell = new View(this.mContext);
+            }
+            return new RecyclerListView.Holder(userCell);
+        }
+
+        @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter
+        public void onBindViewHolder(int i, int i2, RecyclerView.ViewHolder viewHolder) {
+            final TLRPC.User user;
+            if (viewHolder.getItemViewType() == 0) {
+                UserCell userCell = (UserCell) viewHolder.itemView;
+                Object item = getItem(i, i2);
+                boolean z = true;
+                if (i == getSectionCount() - 2 && i2 == getCountForSection(i) - 1) {
+                    z = false;
+                }
+                if (item instanceof ContactsController.Contact) {
+                    final ContactsController.Contact contact = (ContactsController.Contact) item;
+                    user = contact.user;
+                    if (user == null) {
+                        userCell.setCurrentId(contact.contact_id);
+                        userCell.setData((TLRPC.User) null, ContactsController.formatName(contact.first_name, contact.last_name), new UserCell.CharSequenceCallback() { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout$ShareAdapter$$ExternalSyntheticLambda0
+                            @Override // org.telegram.ui.Components.ChatAttachAlertContactsLayout.UserCell.CharSequenceCallback
+                            public final CharSequence run() {
+                                CharSequence lambda$onBindViewHolder$0;
+                                lambda$onBindViewHolder$0 = ChatAttachAlertContactsLayout.ShareAdapter.lambda$onBindViewHolder$0(ContactsController.Contact.this);
+                                return lambda$onBindViewHolder$0;
+                            }
+                        }, z);
+                        user = null;
+                    }
+                } else {
+                    user = (TLRPC.User) item;
+                }
+                if (user != null) {
+                    userCell.setData(user, (CharSequence) null, new UserCell.CharSequenceCallback() { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout$ShareAdapter$$ExternalSyntheticLambda1
+                        @Override // org.telegram.ui.Components.ChatAttachAlertContactsLayout.UserCell.CharSequenceCallback
+                        public final CharSequence run() {
+                            CharSequence lambda$onBindViewHolder$1;
+                            lambda$onBindViewHolder$1 = ChatAttachAlertContactsLayout.ShareAdapter.lambda$onBindViewHolder$1(TLRPC.User.this);
+                            return lambda$onBindViewHolder$1;
+                        }
+                    }, z);
+                }
+                userCell.setChecked(ChatAttachAlertContactsLayout.this.selectedContacts.containsKey(ListItemID.of(item)), false);
+            }
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static /* synthetic */ CharSequence lambda$onBindViewHolder$0(ContactsController.Contact contact) {
+            return contact.phones.isEmpty() ? "" : PhoneFormat.getInstance().format(contact.phones.get(0));
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static /* synthetic */ CharSequence lambda$onBindViewHolder$1(TLRPC.User user) {
+            return PhoneFormat.getInstance().format("+" + user.phone);
+        }
+
+        @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter
+        public int getItemViewType(int i, int i2) {
+            if (i == 0) {
+                return 1;
+            }
+            return i == getSectionCount() - 1 ? 2 : 0;
+        }
+
+        @Override // org.telegram.ui.Components.RecyclerListView.FastScrollAdapter
+        public void getPositionForScrollProgress(RecyclerListView recyclerListView, float f, int[] iArr) {
+            iArr[0] = 0;
+            iArr[1] = 0;
+        }
+
+        @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter, androidx.recyclerview.widget.RecyclerView.Adapter
+        public void notifyDataSetChanged() {
+            super.notifyDataSetChanged();
+            ChatAttachAlertContactsLayout.this.updateEmptyView();
+        }
+    }
+
+    public class ShareSearchAdapter extends RecyclerListView.SelectionAdapter {
+        private int lastSearchId;
+        private Context mContext;
+        private ArrayList searchResult = new ArrayList();
+        private ArrayList searchResultNames = new ArrayList();
+        private Runnable searchRunnable;
+
+        public ShareSearchAdapter(Context context) {
+            this.mContext = context;
+        }
+
+        public void search(final String str) {
+            if (this.searchRunnable != null) {
+                Utilities.searchQueue.cancelRunnable(this.searchRunnable);
+                this.searchRunnable = null;
+            }
+            if (str == null) {
+                this.searchResult.clear();
+                this.searchResultNames.clear();
+                notifyDataSetChanged();
+            } else {
+                final int i = this.lastSearchId + 1;
+                this.lastSearchId = i;
+                DispatchQueue dispatchQueue = Utilities.searchQueue;
+                Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout$ShareSearchAdapter$$ExternalSyntheticLambda2
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        ChatAttachAlertContactsLayout.ShareSearchAdapter.this.lambda$search$0(str, i);
+                    }
+                };
+                this.searchRunnable = runnable;
+                dispatchQueue.postRunnable(runnable, 300L);
+            }
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        /* renamed from: processSearch, reason: merged with bridge method [inline-methods] */
+        public void lambda$search$0(final String str, final int i) {
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout$ShareSearchAdapter$$ExternalSyntheticLambda3
+                @Override // java.lang.Runnable
+                public final void run() {
+                    ChatAttachAlertContactsLayout.ShareSearchAdapter.this.lambda$processSearch$2(str, i);
+                }
+            });
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$processSearch$2(final String str, final int i) {
+            final int i2 = UserConfig.selectedAccount;
+            final ArrayList arrayList = new ArrayList(ContactsController.getInstance(i2).contactsBook.values());
+            final ArrayList arrayList2 = new ArrayList(ContactsController.getInstance(i2).contacts);
+            Utilities.searchQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout$ShareSearchAdapter$$ExternalSyntheticLambda4
+                @Override // java.lang.Runnable
+                public final void run() {
+                    ChatAttachAlertContactsLayout.ShareSearchAdapter.this.lambda$processSearch$1(str, arrayList, arrayList2, i2, i);
+                }
+            });
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX WARN: Code restructure failed: missing block: B:105:0x0238, code lost:
+        
+            if (r6.contains(" " + r12) != false) goto L106;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:32:0x00c4, code lost:
+        
+            if (r5.contains(" " + r0) == false) goto L36;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:62:0x00e1, code lost:
+        
+            if (r6.contains(" " + r0) != false) goto L41;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:78:0x012d, code lost:
+        
+            if (r12.contains(" " + r0) != false) goto L60;
+         */
+        /* JADX WARN: Multi-variable type inference failed */
+        /* JADX WARN: Removed duplicated region for block: B:36:0x0138  */
+        /* JADX WARN: Removed duplicated region for block: B:57:0x01a2 A[ADDED_TO_REGION, SYNTHETIC] */
+        /* JADX WARN: Type inference failed for: r1v10 */
+        /* JADX WARN: Type inference failed for: r1v17 */
+        /* JADX WARN: Type inference failed for: r1v22 */
+        /* JADX WARN: Type inference failed for: r1v29 */
+        /* JADX WARN: Type inference failed for: r1v6 */
+        /*
+            Code decompiled incorrectly, please refer to instructions dump.
+        */
+        public /* synthetic */ void lambda$processSearch$1(String str, ArrayList arrayList, ArrayList arrayList2, int i, int i2) {
+            String str2;
+            String str3;
+            ?? r1;
+            String publicUsername;
+            String lowerCase = str.trim().toLowerCase();
+            if (lowerCase.length() == 0) {
+                this.lastSearchId = -1;
+                updateSearchResults(str, new ArrayList(), new ArrayList(), this.lastSearchId);
+                return;
+            }
+            String translitString = LocaleController.getInstance().getTranslitString(lowerCase);
+            if (lowerCase.equals(translitString) || translitString.length() == 0) {
+                translitString = null;
+            }
+            int i3 = (translitString != null ? 1 : 0) + 1;
+            String[] strArr = new String[i3];
+            strArr[0] = lowerCase;
+            if (translitString != null) {
+                strArr[1] = translitString;
+            }
+            ArrayList arrayList3 = new ArrayList();
+            ArrayList arrayList4 = new ArrayList();
+            LongSparseIntArray longSparseIntArray = new LongSparseIntArray();
+            for (int i4 = 0; i4 < arrayList.size(); i4++) {
+                ContactsController.Contact contact = (ContactsController.Contact) arrayList.get(i4);
+                String lowerCase2 = ContactsController.formatName(contact.first_name, contact.last_name).toLowerCase();
+                String translitString2 = LocaleController.getInstance().getTranslitString(lowerCase2);
+                TLRPC.User user = contact.user;
+                if (user != null) {
+                    str2 = ContactsController.formatName(user.first_name, user.last_name).toLowerCase();
+                    str3 = LocaleController.getInstance().getTranslitString(lowerCase2);
+                } else {
+                    str2 = null;
+                    str3 = null;
+                }
+                if (lowerCase2.equals(translitString2)) {
+                    translitString2 = null;
+                }
+                int i5 = 0;
+                boolean z = false;
+                while (i5 < i3) {
+                    String str4 = strArr[i5];
+                    if (str2 != null) {
+                        if (!str2.startsWith(str4)) {
+                        }
+                        r1 = 1;
+                        String str5 = lowerCase2;
+                        if (r1 == 0 || (contact.phones.isEmpty() && contact.shortPhones.isEmpty())) {
+                            i5++;
+                            lowerCase2 = str5;
+                            z = r1;
+                        } else {
+                            if (r1 == 3) {
+                                arrayList4.add(AndroidUtilities.generateSearchName(contact.first_name, contact.last_name, str4));
+                            } else if (r1 == 1) {
+                                TLRPC.User user2 = contact.user;
+                                arrayList4.add(AndroidUtilities.generateSearchName(user2.first_name, user2.last_name, str4));
+                            } else {
+                                arrayList4.add(AndroidUtilities.generateSearchName("@" + UserObject.getPublicUsername(contact.user), null, "@" + str4));
+                            }
+                            TLRPC.User user3 = contact.user;
+                            if (user3 != null) {
+                                longSparseIntArray.put(user3.id, 1);
+                            }
+                            arrayList3.add(contact);
+                        }
+                    }
+                    if (str3 != null) {
+                        if (!str3.startsWith(str4)) {
+                        }
+                        r1 = 1;
+                        String str52 = lowerCase2;
+                        if (r1 == 0) {
+                        }
+                        i5++;
+                        lowerCase2 = str52;
+                        z = r1;
+                    }
+                    TLRPC.User user4 = contact.user;
+                    if (user4 == null || (publicUsername = UserObject.getPublicUsername(user4)) == null || !publicUsername.startsWith(str4)) {
+                        if (!lowerCase2.startsWith(str4)) {
+                            if (!lowerCase2.contains(" " + str4)) {
+                                if (translitString2 != null) {
+                                    if (!translitString2.startsWith(str4)) {
+                                    }
+                                }
+                                r1 = z;
+                            }
+                        }
+                        r1 = 3;
+                    } else {
+                        r1 = 2;
+                    }
+                    String str522 = lowerCase2;
+                    if (r1 == 0) {
+                    }
+                    i5++;
+                    lowerCase2 = str522;
+                    z = r1;
+                }
+            }
+            for (int i6 = 0; i6 < arrayList2.size(); i6++) {
+                TLRPC.TL_contact tL_contact = (TLRPC.TL_contact) arrayList2.get(i6);
+                if (longSparseIntArray.indexOfKey(tL_contact.user_id) < 0) {
+                    TLRPC.User user5 = MessagesController.getInstance(i).getUser(Long.valueOf(tL_contact.user_id));
+                    String lowerCase3 = ContactsController.formatName(user5.first_name, user5.last_name).toLowerCase();
+                    String translitString3 = LocaleController.getInstance().getTranslitString(lowerCase3);
+                    if (lowerCase3.equals(translitString3)) {
+                        translitString3 = null;
+                    }
+                    char c = 0;
+                    for (int i7 = 0; i7 < i3; i7++) {
+                        String str6 = strArr[i7];
+                        if (!lowerCase3.startsWith(str6)) {
+                            if (!lowerCase3.contains(" " + str6)) {
+                                if (translitString3 != null) {
+                                    if (!translitString3.startsWith(str6)) {
+                                    }
+                                }
+                                String publicUsername2 = UserObject.getPublicUsername(user5);
+                                if (publicUsername2 != null && publicUsername2.startsWith(str6)) {
+                                    c = 2;
+                                }
+                                if (c == 0 && user5.phone != null) {
+                                    if (c == 1) {
+                                        arrayList4.add(AndroidUtilities.generateSearchName(user5.first_name, user5.last_name, str6));
+                                    } else {
+                                        arrayList4.add(AndroidUtilities.generateSearchName("@" + UserObject.getPublicUsername(user5), null, "@" + str6));
+                                    }
+                                    arrayList3.add(user5);
+                                }
+                            }
+                        }
+                        c = 1;
+                        if (c == 0) {
+                        }
+                    }
+                }
+            }
+            updateSearchResults(str, arrayList3, arrayList4, i2);
+        }
+
+        private void updateSearchResults(String str, final ArrayList arrayList, final ArrayList arrayList2, final int i) {
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout$ShareSearchAdapter$$ExternalSyntheticLambda5
+                @Override // java.lang.Runnable
+                public final void run() {
+                    ChatAttachAlertContactsLayout.ShareSearchAdapter.this.lambda$updateSearchResults$3(i, arrayList, arrayList2);
+                }
+            });
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$updateSearchResults$3(int i, ArrayList arrayList, ArrayList arrayList2) {
+            if (i != this.lastSearchId) {
+                return;
+            }
+            if (i != -1 && ChatAttachAlertContactsLayout.this.listView.getAdapter() != ChatAttachAlertContactsLayout.this.searchAdapter) {
+                ChatAttachAlertContactsLayout.this.listView.setAdapter(ChatAttachAlertContactsLayout.this.searchAdapter);
+            }
+            this.searchResult = arrayList;
+            this.searchResultNames = arrayList2;
+            notifyDataSetChanged();
+        }
+
+        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+        public int getItemCount() {
+            return this.searchResult.size() + 2;
+        }
+
+        public Object getItem(int i) {
+            int i2 = i - 1;
+            if (i2 < 0 || i2 >= this.searchResult.size()) {
+                return null;
+            }
+            return this.searchResult.get(i2);
+        }
+
+        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+        public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+            View userCell;
+            if (i == 0) {
+                userCell = new UserCell(this.mContext, ChatAttachAlertContactsLayout.this.resourcesProvider);
+            } else if (i == 1) {
+                userCell = new View(this.mContext);
+                userCell.setLayoutParams(new RecyclerView.LayoutParams(-1, AndroidUtilities.dp(56.0f)));
+            } else {
+                userCell = new View(this.mContext);
+            }
+            return new RecyclerListView.Holder(userCell);
+        }
+
+        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+        public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
+            final TLRPC.User user;
+            if (viewHolder.getItemViewType() == 0) {
+                UserCell userCell = (UserCell) viewHolder.itemView;
+                boolean z = i != getItemCount() + (-2);
+                Object item = getItem(i);
+                if (item instanceof ContactsController.Contact) {
+                    final ContactsController.Contact contact = (ContactsController.Contact) item;
+                    user = contact.user;
+                    if (user == null) {
+                        userCell.setCurrentId(contact.contact_id);
+                        userCell.setData((TLRPC.User) null, (CharSequence) this.searchResultNames.get(i - 1), new UserCell.CharSequenceCallback() { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout$ShareSearchAdapter$$ExternalSyntheticLambda0
+                            @Override // org.telegram.ui.Components.ChatAttachAlertContactsLayout.UserCell.CharSequenceCallback
+                            public final CharSequence run() {
+                                CharSequence lambda$onBindViewHolder$4;
+                                lambda$onBindViewHolder$4 = ChatAttachAlertContactsLayout.ShareSearchAdapter.lambda$onBindViewHolder$4(ContactsController.Contact.this);
+                                return lambda$onBindViewHolder$4;
+                            }
+                        }, z);
+                        user = null;
+                    }
+                } else {
+                    user = (TLRPC.User) item;
+                }
+                if (user != null) {
+                    userCell.setData(user, (CharSequence) this.searchResultNames.get(i - 1), new UserCell.CharSequenceCallback() { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout$ShareSearchAdapter$$ExternalSyntheticLambda1
+                        @Override // org.telegram.ui.Components.ChatAttachAlertContactsLayout.UserCell.CharSequenceCallback
+                        public final CharSequence run() {
+                            CharSequence lambda$onBindViewHolder$5;
+                            lambda$onBindViewHolder$5 = ChatAttachAlertContactsLayout.ShareSearchAdapter.lambda$onBindViewHolder$5(TLRPC.User.this);
+                            return lambda$onBindViewHolder$5;
+                        }
+                    }, z);
+                }
+                userCell.setChecked(ChatAttachAlertContactsLayout.this.selectedContacts.containsKey(ListItemID.of(item)), false);
+            }
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static /* synthetic */ CharSequence lambda$onBindViewHolder$4(ContactsController.Contact contact) {
+            return contact.phones.isEmpty() ? "" : PhoneFormat.getInstance().format(contact.phones.get(0));
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static /* synthetic */ CharSequence lambda$onBindViewHolder$5(TLRPC.User user) {
+            return PhoneFormat.getInstance().format("+" + user.phone);
+        }
+
+        @Override // org.telegram.ui.Components.RecyclerListView.SelectionAdapter
+        public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
+            return viewHolder.getItemViewType() == 0;
+        }
+
+        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+        public int getItemViewType(int i) {
+            if (i == 0) {
+                return 1;
+            }
+            return i == getItemCount() - 1 ? 2 : 0;
+        }
+
+        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+        public void notifyDataSetChanged() {
+            super.notifyDataSetChanged();
+            ChatAttachAlertContactsLayout.this.updateEmptyView();
+        }
     }
 
     @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
@@ -1461,90 +1530,17 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
         return arrayList;
     }
 
-    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public void onDestroy() {
-        NotificationCenter.getInstance(this.parentAlert.currentAccount).removeObserver(this, NotificationCenter.contactsDidLoad);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        updateEmptyViewPosition();
-    }
-
-    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public void onPreMeasure(int i, int i2) {
-        int i3;
-        if (this.parentAlert.sizeNotifierFrameLayout.measureKeyboardHeight() > AndroidUtilities.dp(20.0f)) {
-            i3 = AndroidUtilities.dp(8.0f);
-            this.parentAlert.setAllowNestedScroll(false);
-        } else {
-            if (!AndroidUtilities.isTablet()) {
-                android.graphics.Point point = AndroidUtilities.displaySize;
-                if (point.x > point.y) {
-                    i3 = (int) (i2 / 3.5f);
-                    this.parentAlert.setAllowNestedScroll(true);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$getThemeDescriptions$4() {
+        RecyclerListView recyclerListView = this.listView;
+        if (recyclerListView != null) {
+            int childCount = recyclerListView.getChildCount();
+            for (int i = 0; i < childCount; i++) {
+                View childAt = this.listView.getChildAt(i);
+                if (childAt instanceof UserCell) {
+                    ((UserCell) childAt).update(0);
                 }
             }
-            i3 = (i2 / 5) * 2;
-            this.parentAlert.setAllowNestedScroll(true);
         }
-        if (this.listView.getPaddingTop() != i3) {
-            this.ignoreLayout = true;
-            this.listView.setPadding(0, i3, 0, AndroidUtilities.dp(48.0f));
-            this.ignoreLayout = false;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public void onShow(ChatAttachAlert.AttachAlertLayout attachAlertLayout) {
-        this.layoutManager.scrollToPositionWithOffset(0, 0);
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public void requestLayout() {
-        if (this.ignoreLayout) {
-            return;
-        }
-        super.requestLayout();
-    }
-
-    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public void scrollToTop() {
-        this.listView.smoothScrollToPosition(0);
-    }
-
-    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public boolean sendSelectedItems(final boolean z, final int i, final long j, final boolean z2) {
-        if ((this.selectedContacts.size() == 0 && this.delegate == null) || this.sendPressed) {
-            return false;
-        }
-        this.sendPressed = true;
-        final ArrayList arrayList = new ArrayList(this.selectedContacts.size());
-        Iterator it = this.selectedContactsOrder.iterator();
-        while (it.hasNext()) {
-            arrayList.add(prepareContact(this.selectedContacts.get((ListItemID) it.next())));
-        }
-        ChatAttachAlert chatAttachAlert = this.parentAlert;
-        return AlertsCreator.ensurePaidMessageConfirmation(chatAttachAlert.currentAccount, chatAttachAlert.getDialogId(), arrayList.size() + this.parentAlert.getAdditionalMessagesCount(), new Utilities.Callback() { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout$$ExternalSyntheticLambda4
-            @Override // org.telegram.messenger.Utilities.Callback
-            public final void run(Object obj) {
-                ChatAttachAlertContactsLayout.this.lambda$sendSelectedItems$3(arrayList, z, i, j, z2, (Long) obj);
-            }
-        });
-    }
-
-    public void setDelegate(PhonebookShareAlertDelegate phonebookShareAlertDelegate) {
-        this.delegate = phonebookShareAlertDelegate;
-    }
-
-    public void setMultipleSelectionAllowed(boolean z) {
-        this.multipleSelectionAllowed = z;
-    }
-
-    @Override // android.view.View
-    public void setTranslationY(float f) {
-        super.setTranslationY(f);
-        this.parentAlert.getSheetContainer().invalidate();
     }
 }

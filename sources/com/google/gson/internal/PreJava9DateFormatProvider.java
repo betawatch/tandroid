@@ -4,8 +4,12 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class PreJava9DateFormatProvider {
+    public static DateFormat getUsDateTimeFormat(int i, int i2) {
+        return new SimpleDateFormat(getDatePartOfDateTimePattern(i) + " " + getTimePartOfDateTimePattern(i2), Locale.US);
+    }
+
     private static String getDatePartOfDateTimePattern(int i) {
         if (i == 0) {
             return "EEEE, MMMM d, yyyy";
@@ -33,9 +37,5 @@ public abstract class PreJava9DateFormatProvider {
             return "h:mm a";
         }
         throw new IllegalArgumentException("Unknown DateFormat style: " + i);
-    }
-
-    public static DateFormat getUsDateTimeFormat(int i, int i2) {
-        return new SimpleDateFormat(getDatePartOfDateTimePattern(i) + " " + getTimePartOfDateTimePattern(i2), Locale.US);
     }
 }

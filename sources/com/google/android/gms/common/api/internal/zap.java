@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import com.google.android.exoplayer2.mediacodec.AsynchronousMediaCodecBufferEnqueuer$$ExternalSyntheticBackportWithForwarding0;
+import com.google.android.exoplayer2.mediacodec.AsynchronousMediaCodecBufferEnqueuer$$ExternalSyntheticBackportWithForwarding1;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import java.util.concurrent.atomic.AtomicReference;
@@ -66,10 +66,10 @@ public abstract class zap extends LifecycleCallback implements DialogInterface.O
             zad();
             return;
         } else if (i2 == 0) {
-            if (zamVar == null) {
+            if (zamVar != null) {
+                zaa(new ConnectionResult(intent != null ? intent.getIntExtra("<<ResolutionFailureErrorDetail>>", 13) : 13, null, zamVar.zab().toString()), zae(zamVar));
                 return;
             }
-            zaa(new ConnectionResult(intent != null ? intent.getIntExtra("<<ResolutionFailureErrorDetail>>", 13) : 13, null, zamVar.zab().toString()), zae(zamVar));
             return;
         }
         if (zamVar != null) {
@@ -120,13 +120,14 @@ public abstract class zap extends LifecycleCallback implements DialogInterface.O
     protected abstract void zac();
 
     public final void zah(ConnectionResult connectionResult, int i) {
+        AtomicReference atomicReference;
         zam zamVar = new zam(connectionResult, i);
-        AtomicReference atomicReference = this.zab;
-        while (!AsynchronousMediaCodecBufferEnqueuer$$ExternalSyntheticBackportWithForwarding0.m(atomicReference, null, zamVar)) {
-            if (atomicReference.get() != null) {
+        do {
+            atomicReference = this.zab;
+            if (AsynchronousMediaCodecBufferEnqueuer$$ExternalSyntheticBackportWithForwarding1.m(atomicReference, null, zamVar)) {
+                this.zad.post(new zao(this, zamVar));
                 return;
             }
-        }
-        this.zad.post(new zao(this, zamVar));
+        } while (atomicReference.get() == null);
     }
 }

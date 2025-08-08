@@ -12,6 +12,12 @@ import org.telegram.ui.Components.URLSpanReplacement;
 
 /* loaded from: classes3.dex */
 public abstract class CustomHtml {
+    public static String toHtml(Spanned spanned) {
+        StringBuilder sb = new StringBuilder();
+        toHTML_0_wrapQuote(sb, spanned, 0, spanned.length());
+        return sb.toString();
+    }
+
     private static void toHTML_0_wrapQuote(StringBuilder sb, Spanned spanned, int i, int i2) {
         while (i < i2) {
             int nextSpanTransition = spanned.nextSpanTransition(i, i2, QuoteSpan.class);
@@ -35,7 +41,6 @@ public abstract class CustomHtml {
     }
 
     private static void toHTML_1_wrapTextStyle(StringBuilder sb, Spanned spanned, int i, int i2) {
-        String str;
         while (i < i2) {
             int nextSpanTransition = spanned.nextSpanTransition(i, i2, TextStyleSpan.class);
             if (nextSpanTransition < 0) {
@@ -64,12 +69,8 @@ public abstract class CustomHtml {
                         if ((styleFlags & 128) > 0 && textStyleSpan.getTextStyleRun() != null && textStyleSpan.getTextStyleRun().urlEntity != null) {
                             sb.append("<a href=\"");
                             sb.append(textStyleSpan.getTextStyleRun().urlEntity.url);
-                            str = "\">";
-                            sb.append(str);
+                            sb.append("\">");
                         }
-                    } else if (textStyleSpan instanceof URLSpanMono) {
-                        str = "<pre>";
-                        sb.append(str);
                     }
                 }
             }
@@ -154,7 +155,6 @@ public abstract class CustomHtml {
     }
 
     private static void toHTML_4_wrapMonoscape2(StringBuilder sb, Spanned spanned, int i, int i2) {
-        String str;
         while (i < i2) {
             int nextSpanTransition = spanned.nextSpanTransition(i, i2, CodeHighlighting.Span.class);
             if (nextSpanTransition < 0) {
@@ -165,13 +165,12 @@ public abstract class CustomHtml {
                 for (CodeHighlighting.Span span : spanArr) {
                     if (span != null) {
                         if (TextUtils.isEmpty(span.lng)) {
-                            str = "<pre>";
+                            sb.append("<pre>");
                         } else {
                             sb.append("<pre lang=\"");
                             sb.append(span.lng);
-                            str = "\">";
+                            sb.append("\">");
                         }
-                        sb.append(str);
                     }
                 }
             }
@@ -216,53 +215,42 @@ public abstract class CustomHtml {
     private static void toHTML_7_withinStyle(StringBuilder sb, CharSequence charSequence, int i, int i2) {
         int i3;
         char charAt;
-        String str;
         while (i < i2) {
             char charAt2 = charSequence.charAt(i);
             if (charAt2 == '\n') {
-                str = "<br>";
+                sb.append("<br>");
             } else if (charAt2 == '<') {
-                str = "&lt;";
+                sb.append("&lt;");
             } else if (charAt2 == '>') {
-                str = "&gt;";
+                sb.append("&gt;");
             } else if (charAt2 == '&') {
-                str = "&amp;";
-            } else {
-                if (charAt2 < 55296 || charAt2 > 57343) {
-                    if (charAt2 > '~' || charAt2 < ' ') {
-                        sb.append("&#");
-                        sb.append((int) charAt2);
-                        sb.append(";");
-                    } else if (charAt2 == ' ') {
-                        while (true) {
-                            int i4 = i + 1;
-                            if (i4 >= i2 || charSequence.charAt(i4) != ' ') {
-                                break;
-                            }
-                            sb.append("&nbsp;");
-                            i = i4;
-                        }
-                        sb.append(' ');
-                    } else {
-                        sb.append(charAt2);
-                    }
-                } else if (charAt2 < 56320 && (i3 = i + 1) < i2 && (charAt = charSequence.charAt(i3)) >= 56320 && charAt <= 57343) {
-                    int i5 = ((charAt2 - CharacterCompat.MIN_HIGH_SURROGATE) << 10) | 65536 | (charAt - CharacterCompat.MIN_LOW_SURROGATE);
+                sb.append("&amp;");
+            } else if (charAt2 < 55296 || charAt2 > 57343) {
+                if (charAt2 > '~' || charAt2 < ' ') {
                     sb.append("&#");
-                    sb.append(i5);
+                    sb.append((int) charAt2);
                     sb.append(";");
-                    i = i3;
+                } else if (charAt2 == ' ') {
+                    while (true) {
+                        int i4 = i + 1;
+                        if (i4 >= i2 || charSequence.charAt(i4) != ' ') {
+                            break;
+                        }
+                        sb.append("&nbsp;");
+                        i = i4;
+                    }
+                    sb.append(' ');
+                } else {
+                    sb.append(charAt2);
                 }
-                i++;
+            } else if (charAt2 < 56320 && (i3 = i + 1) < i2 && (charAt = charSequence.charAt(i3)) >= 56320 && charAt <= 57343) {
+                int i5 = ((charAt2 - CharacterCompat.MIN_HIGH_SURROGATE) << 10) | 65536 | (charAt - CharacterCompat.MIN_LOW_SURROGATE);
+                sb.append("&#");
+                sb.append(i5);
+                sb.append(";");
+                i = i3;
             }
-            sb.append(str);
             i++;
         }
-    }
-
-    public static String toHtml(Spanned spanned) {
-        StringBuilder sb = new StringBuilder();
-        toHTML_0_wrapQuote(sb, spanned, 0, spanned.length());
-        return sb.toString();
     }
 }

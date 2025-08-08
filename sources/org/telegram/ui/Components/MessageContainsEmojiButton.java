@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class MessageContainsEmojiButton extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public boolean checkWidth;
     private int currentAccount;
@@ -69,13 +69,22 @@ public class MessageContainsEmojiButton extends FrameLayout implements Notificat
         }
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x010c, code lost:
+    
+        r4 = null;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public MessageContainsEmojiButton(int i, Context context, Theme.ResourcesProvider resourcesProvider, ArrayList arrayList, int i2) {
         super(context);
+        String string;
         String str;
         TLRPC.Document document;
         TLRPC.TL_messages_stickerSet stickerSet;
         TLRPC.StickerSet stickerSet2;
         ArrayList<TLRPC.Document> arrayList2;
+        String formatPluralString;
         this.emojiDrawableBounds = new android.graphics.Rect();
         this.loadingDrawableBoundsSet = false;
         this.lastWidth = -1;
@@ -89,9 +98,12 @@ public class MessageContainsEmojiButton extends FrameLayout implements Notificat
         textPaint.setTextSize(AndroidUtilities.dp(13.0f));
         this.textPaint.setColor(Theme.getColor(Theme.key_actionBarDefaultSubmenuItem, resourcesProvider));
         if (arrayList.size() > 1) {
-            int size = arrayList.size();
-            Object[] objArr = new Object[0];
-            SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(i2 == 0 ? LocaleController.formatPluralString("MessageContainsEmojiPacks", size, objArr) : LocaleController.formatPluralString("MessageContainsReactionsPacks", size, objArr));
+            if (i2 == 0) {
+                formatPluralString = LocaleController.formatPluralString("MessageContainsEmojiPacks", arrayList.size(), new Object[0]);
+            } else {
+                formatPluralString = LocaleController.formatPluralString("MessageContainsReactionsPacks", arrayList.size(), new Object[0]);
+            }
+            SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(formatPluralString);
             this.mainText = replaceTags;
             TypefaceSpan[] typefaceSpanArr = (TypefaceSpan[]) replaceTags.getSpans(0, replaceTags.length(), TypefaceSpan.class);
             for (int i3 = 0; typefaceSpanArr != null && i3 < typefaceSpanArr.length; i3++) {
@@ -109,7 +121,13 @@ public class MessageContainsEmojiButton extends FrameLayout implements Notificat
             }
             return;
         }
-        String string = LocaleController.getString(i2 == 0 ? R.string.MessageContainsEmojiPack : i2 == 3 ? R.string.MessageContainsReactionPack : R.string.MessageContainsReactionsPack);
+        if (i2 == 0) {
+            string = LocaleController.getString(R.string.MessageContainsEmojiPack);
+        } else if (i2 == 3) {
+            string = LocaleController.getString(R.string.MessageContainsReactionPack);
+        } else {
+            string = LocaleController.getString(R.string.MessageContainsReactionsPack);
+        }
         String[] split = string.split("%s");
         if (split.length <= 1) {
             this.mainText = string;
@@ -134,48 +152,38 @@ public class MessageContainsEmojiButton extends FrameLayout implements Notificat
                 }
                 i4++;
             }
-            document = null;
             if (document == null && (arrayList2 = stickerSet.documents) != null && arrayList2.size() > 0) {
                 document = stickerSet.documents.get(0);
             }
         }
-        if (str == null || document == null) {
-            this.mainText = split[0];
-            this.endText = split[1];
-            LoadingDrawable loadingDrawable = new LoadingDrawable(resourcesProvider);
-            this.loadingDrawable = loadingDrawable;
-            loadingDrawable.colorKey1 = Theme.key_actionBarDefaultSubmenuBackground;
-            loadingDrawable.colorKey2 = Theme.key_listSelector;
-            loadingDrawable.setRadiiDp(4.0f);
+        if (str != null && document != null) {
+            SpannableString spannableString = new SpannableString(MessageObject.findAnimatedEmojiEmoticon(document));
+            spannableString.setSpan(new AnimatedEmojiSpan(document, this.textPaint.getFontMetricsInt()) { // from class: org.telegram.ui.Components.MessageContainsEmojiButton.1
+                @Override // org.telegram.ui.Components.AnimatedEmojiSpan, android.text.style.ReplacementSpan
+                public void draw(Canvas canvas, CharSequence charSequence, int i5, int i6, float f, int i7, int i8, int i9, Paint paint) {
+                    int i10 = i9 + i7;
+                    int i11 = this.measuredSize;
+                    MessageContainsEmojiButton.this.emojiDrawableBounds.set((int) f, (i10 - i11) / 2, (int) (f + i11), (i10 + i11) / 2);
+                }
+            }, 0, spannableString.length(), 33);
+            AnimatedEmojiDrawable make = AnimatedEmojiDrawable.make(i, 0, document);
+            this.emojiDrawable = make;
+            make.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteBlueText, resourcesProvider), PorterDuff.Mode.SRC_IN));
+            this.emojiDrawable.addView(this);
+            SpannableString spannableString2 = new SpannableString(str);
+            spannableString2.setSpan(new BoldAndAccent(), 0, spannableString2.length(), 33);
+            this.mainText = new SpannableStringBuilder().append((CharSequence) split[0]).append((CharSequence) spannableString).append(' ').append((CharSequence) spannableString2).append((CharSequence) split[1]);
+            this.loadT = 1.0f;
+            this.inputStickerSet = null;
             return;
         }
-        SpannableString spannableString = new SpannableString(MessageObject.findAnimatedEmojiEmoticon(document));
-        spannableString.setSpan(new AnimatedEmojiSpan(document, this.textPaint.getFontMetricsInt()) { // from class: org.telegram.ui.Components.MessageContainsEmojiButton.1
-            @Override // org.telegram.ui.Components.AnimatedEmojiSpan, android.text.style.ReplacementSpan
-            public void draw(Canvas canvas, CharSequence charSequence, int i5, int i6, float f, int i7, int i8, int i9, Paint paint) {
-                int i10 = i9 + i7;
-                int i11 = this.measuredSize;
-                MessageContainsEmojiButton.this.emojiDrawableBounds.set((int) f, (i10 - i11) / 2, (int) (f + i11), (i10 + i11) / 2);
-            }
-        }, 0, spannableString.length(), 33);
-        AnimatedEmojiDrawable make = AnimatedEmojiDrawable.make(i, 0, document);
-        this.emojiDrawable = make;
-        make.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteBlueText, resourcesProvider), PorterDuff.Mode.SRC_IN));
-        this.emojiDrawable.addView(this);
-        SpannableString spannableString2 = new SpannableString(str);
-        spannableString2.setSpan(new BoldAndAccent(), 0, spannableString2.length(), 33);
-        this.mainText = new SpannableStringBuilder().append((CharSequence) split[0]).append((CharSequence) spannableString).append(' ').append((CharSequence) spannableString2).append((CharSequence) split[1]);
-        this.loadT = 1.0f;
-        this.inputStickerSet = null;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$didReceivedNotification$0(boolean z, ValueAnimator valueAnimator) {
-        this.loadT = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        invalidate();
-        if (z) {
-            requestLayout();
-        }
+        this.mainText = split[0];
+        this.endText = split[1];
+        LoadingDrawable loadingDrawable = new LoadingDrawable(resourcesProvider);
+        this.loadingDrawable = loadingDrawable;
+        loadingDrawable.colorKey1 = Theme.key_actionBarDefaultSubmenuBackground;
+        loadingDrawable.colorKey2 = Theme.key_listSelector;
+        loadingDrawable.setRadiiDp(4.0f);
     }
 
     private int updateLayout(int i, boolean z) {
@@ -230,6 +238,61 @@ public class MessageContainsEmojiButton extends FrameLayout implements Notificat
             f = 0.0f;
         }
         return height + ((int) f);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    protected void onMeasure(int i, int i2) {
+        int i3;
+        setPadding(AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f));
+        int size = View.MeasureSpec.getSize(i);
+        if (this.checkWidth && (i3 = this.lastWidth) > 0) {
+            size = Math.min(size, i3);
+        }
+        this.lastWidth = size;
+        int paddingLeft = (size - getPaddingLeft()) - getPaddingRight();
+        if (paddingLeft < 0) {
+            paddingLeft = 0;
+        }
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(updateLayout(paddingLeft, false) + getPaddingTop() + getPaddingBottom(), TLObject.FLAG_30));
+    }
+
+    @Override // android.view.View
+    protected void onDraw(Canvas canvas) {
+        android.graphics.Rect rect;
+        super.onDraw(canvas);
+        if (this.mainTextLayout != null) {
+            canvas.save();
+            canvas.translate(getPaddingLeft(), getPaddingTop());
+            this.textPaint.setAlpha(NotificationCenter.goingToPreviewTheme);
+            this.mainTextLayout.draw(canvas);
+            LoadingDrawable loadingDrawable = this.loadingDrawable;
+            if (loadingDrawable != null && this.loadingDrawableBoundsSet) {
+                loadingDrawable.setAlpha((int) ((1.0f - this.loadT) * 255.0f));
+                android.graphics.Rect rect2 = this.loadingBoundsFrom;
+                if (rect2 != null && (rect = this.loadingBoundsTo) != null) {
+                    float f = this.loadT;
+                    android.graphics.Rect rect3 = AndroidUtilities.rectTmp2;
+                    AndroidUtilities.lerp(rect2, rect, f, rect3);
+                    this.loadingDrawable.setBounds(rect3);
+                }
+                this.loadingDrawable.draw(canvas);
+                invalidate();
+            }
+            if (this.secondPartTextLayout != null) {
+                canvas.save();
+                canvas.translate(0.0f, this.lastLineTop);
+                this.textPaint.setAlpha((int) (this.loadT * 255.0f));
+                this.secondPartTextLayout.draw(canvas);
+                canvas.restore();
+            }
+            AnimatedEmojiDrawable animatedEmojiDrawable = this.emojiDrawable;
+            if (animatedEmojiDrawable != null) {
+                animatedEmojiDrawable.setAlpha((int) (this.loadT * 255.0f));
+                this.emojiDrawable.setBounds(this.emojiDrawableBounds);
+                this.emojiDrawable.draw(canvas);
+            }
+            canvas.restore();
+        }
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:49:0x0048, code lost:
@@ -333,14 +396,13 @@ public class MessageContainsEmojiButton extends FrameLayout implements Notificat
         this.loadAnimator.start();
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    protected void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        AnimatedEmojiDrawable animatedEmojiDrawable = this.emojiDrawable;
-        if (animatedEmojiDrawable != null) {
-            animatedEmojiDrawable.addView(this);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$didReceivedNotification$0(boolean z, ValueAnimator valueAnimator) {
+        this.loadT = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        invalidate();
+        if (z) {
+            requestLayout();
         }
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.groupStickersDidLoad);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -353,58 +415,13 @@ public class MessageContainsEmojiButton extends FrameLayout implements Notificat
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.groupStickersDidLoad);
     }
 
-    @Override // android.view.View
-    protected void onDraw(Canvas canvas) {
-        android.graphics.Rect rect;
-        super.onDraw(canvas);
-        if (this.mainTextLayout != null) {
-            canvas.save();
-            canvas.translate(getPaddingLeft(), getPaddingTop());
-            this.textPaint.setAlpha(NotificationCenter.goingToPreviewTheme);
-            this.mainTextLayout.draw(canvas);
-            LoadingDrawable loadingDrawable = this.loadingDrawable;
-            if (loadingDrawable != null && this.loadingDrawableBoundsSet) {
-                loadingDrawable.setAlpha((int) ((1.0f - this.loadT) * 255.0f));
-                android.graphics.Rect rect2 = this.loadingBoundsFrom;
-                if (rect2 != null && (rect = this.loadingBoundsTo) != null) {
-                    float f = this.loadT;
-                    android.graphics.Rect rect3 = AndroidUtilities.rectTmp2;
-                    AndroidUtilities.lerp(rect2, rect, f, rect3);
-                    this.loadingDrawable.setBounds(rect3);
-                }
-                this.loadingDrawable.draw(canvas);
-                invalidate();
-            }
-            if (this.secondPartTextLayout != null) {
-                canvas.save();
-                canvas.translate(0.0f, this.lastLineTop);
-                this.textPaint.setAlpha((int) (this.loadT * 255.0f));
-                this.secondPartTextLayout.draw(canvas);
-                canvas.restore();
-            }
-            AnimatedEmojiDrawable animatedEmojiDrawable = this.emojiDrawable;
-            if (animatedEmojiDrawable != null) {
-                animatedEmojiDrawable.setAlpha((int) (this.loadT * 255.0f));
-                this.emojiDrawable.setBounds(this.emojiDrawableBounds);
-                this.emojiDrawable.draw(canvas);
-            }
-            canvas.restore();
+    @Override // android.view.ViewGroup, android.view.View
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        AnimatedEmojiDrawable animatedEmojiDrawable = this.emojiDrawable;
+        if (animatedEmojiDrawable != null) {
+            animatedEmojiDrawable.addView(this);
         }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    protected void onMeasure(int i, int i2) {
-        int i3;
-        setPadding(AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f));
-        int size = View.MeasureSpec.getSize(i);
-        if (this.checkWidth && (i3 = this.lastWidth) > 0) {
-            size = Math.min(size, i3);
-        }
-        this.lastWidth = size;
-        int paddingLeft = (size - getPaddingLeft()) - getPaddingRight();
-        if (paddingLeft < 0) {
-            paddingLeft = 0;
-        }
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(updateLayout(paddingLeft, false) + getPaddingTop() + getPaddingBottom(), TLObject.FLAG_30));
+        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.groupStickersDidLoad);
     }
 }

@@ -8,23 +8,27 @@ final class zzlm implements Comparable, Map.Entry {
     private Object zzb;
     private final /* synthetic */ zzlh zzc;
 
+    zzlm(zzlh zzlhVar, Map.Entry entry) {
+        this(zzlhVar, (Comparable) entry.getKey(), entry.getValue());
+    }
+
     zzlm(zzlh zzlhVar, Comparable comparable, Object obj) {
         this.zzc = zzlhVar;
         this.zza = comparable;
         this.zzb = obj;
     }
 
-    zzlm(zzlh zzlhVar, Map.Entry entry) {
-        this(zzlhVar, (Comparable) entry.getKey(), entry.getValue());
+    @Override // java.util.Map.Entry
+    public final Object getValue() {
+        return this.zzb;
     }
 
-    private static boolean zza(Object obj, Object obj2) {
-        return obj == null ? obj2 == null : obj.equals(obj2);
-    }
-
-    @Override // java.lang.Comparable
-    public final /* synthetic */ int compareTo(Object obj) {
-        return ((Comparable) getKey()).compareTo((Comparable) ((zzlm) obj).getKey());
+    @Override // java.util.Map.Entry
+    public final Object setValue(Object obj) {
+        this.zzc.zzf();
+        Object obj2 = this.zzb;
+        this.zzb = obj;
+        return obj2;
     }
 
     @Override // java.util.Map.Entry
@@ -40,29 +44,11 @@ final class zzlm implements Comparable, Map.Entry {
     }
 
     @Override // java.util.Map.Entry
-    public final /* synthetic */ Object getKey() {
-        return this.zza;
-    }
-
-    @Override // java.util.Map.Entry
-    public final Object getValue() {
-        return this.zzb;
-    }
-
-    @Override // java.util.Map.Entry
     public final int hashCode() {
         Comparable comparable = this.zza;
         int hashCode = comparable == null ? 0 : comparable.hashCode();
         Object obj = this.zzb;
         return hashCode ^ (obj != null ? obj.hashCode() : 0);
-    }
-
-    @Override // java.util.Map.Entry
-    public final Object setValue(Object obj) {
-        this.zzc.zzf();
-        Object obj2 = this.zzb;
-        this.zzb = obj;
-        return obj2;
     }
 
     public final String toString() {
@@ -73,5 +59,22 @@ final class zzlm implements Comparable, Map.Entry {
         sb.append("=");
         sb.append(valueOf2);
         return sb.toString();
+    }
+
+    private static boolean zza(Object obj, Object obj2) {
+        if (obj == null) {
+            return obj2 == null;
+        }
+        return obj.equals(obj2);
+    }
+
+    @Override // java.util.Map.Entry
+    public final /* synthetic */ Object getKey() {
+        return this.zza;
+    }
+
+    @Override // java.lang.Comparable
+    public final /* synthetic */ int compareTo(Object obj) {
+        return ((Comparable) getKey()).compareTo((Comparable) ((zzlm) obj).getKey());
     }
 }

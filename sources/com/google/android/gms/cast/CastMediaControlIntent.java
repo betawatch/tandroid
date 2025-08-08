@@ -17,12 +17,12 @@ public abstract class CastMediaControlIntent {
         if (str == null) {
             throw new IllegalArgumentException("applicationId cannot be null");
         }
-        if (collection == null) {
-            throw new IllegalArgumentException("namespaces cannot be null");
+        if (collection != null) {
+            zzu zzuVar = new zzu(null);
+            zzu.zza(zzuVar, str);
+            zzu.zzc(zzuVar, collection);
+            return zzw.zza(zzu.zzd(zzuVar));
         }
-        zzu zzuVar = new zzu(null);
-        zzu.zza(zzuVar, str);
-        zzu.zzc(zzuVar, collection);
-        return zzw.zza(zzu.zzd(zzuVar));
+        throw new IllegalArgumentException("namespaces cannot be null");
     }
 }

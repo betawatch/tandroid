@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
@@ -38,7 +38,7 @@ final class zzey extends SuspendLambda implements Function2 {
         zzbg zzbgVar;
         zzbd zzbdVar;
         zzt zztVar;
-        IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        IntrinsicsKt.getCOROUTINE_SUSPENDED();
         ResultKt.throwOnFailure(obj);
         try {
             zzez zzezVar = this.zza;

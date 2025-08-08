@@ -1,5 +1,6 @@
 package com.google.android.exoplayer2.mediacodec;
 
+import android.media.MediaCodec;
 import com.google.android.exoplayer2.decoder.DecoderException;
 import com.google.android.exoplayer2.util.Util;
 
@@ -22,11 +23,9 @@ public class MediaCodecDecoderException extends DecoderException {
     }
 
     private static String getDiagnosticInfoV21(Throwable th) {
-        String diagnosticInfo;
-        if (!MediaCodecDecoderException$$ExternalSyntheticApiModelOutline0.m(th)) {
-            return null;
+        if (th instanceof MediaCodec.CodecException) {
+            return ((MediaCodec.CodecException) th).getDiagnosticInfo();
         }
-        diagnosticInfo = MediaCodecDecoderException$$ExternalSyntheticApiModelOutline1.m(th).getDiagnosticInfo();
-        return diagnosticInfo;
+        return null;
     }
 }

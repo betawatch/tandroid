@@ -11,6 +11,35 @@ public class MediaRouterParams {
     final boolean mOutputSwitcherEnabled;
     final boolean mTransferToLocalEnabled;
 
+    MediaRouterParams(Builder builder) {
+        this.mDialogType = builder.mDialogType;
+        this.mMediaTransferReceiverEnabled = builder.mMediaTransferEnabled;
+        this.mOutputSwitcherEnabled = builder.mOutputSwitcherEnabled;
+        this.mTransferToLocalEnabled = builder.mTransferToLocalEnabled;
+        Bundle bundle = builder.mExtras;
+        this.mExtras = bundle == null ? Bundle.EMPTY : new Bundle(bundle);
+    }
+
+    public int getDialogType() {
+        return this.mDialogType;
+    }
+
+    public boolean isMediaTransferReceiverEnabled() {
+        return this.mMediaTransferReceiverEnabled;
+    }
+
+    public boolean isOutputSwitcherEnabled() {
+        return this.mOutputSwitcherEnabled;
+    }
+
+    public boolean isTransferToLocalEnabled() {
+        return this.mTransferToLocalEnabled;
+    }
+
+    public Bundle getExtras() {
+        return this.mExtras;
+    }
+
     public static final class Builder {
         int mDialogType;
         Bundle mExtras;
@@ -34,10 +63,6 @@ public class MediaRouterParams {
             this.mTransferToLocalEnabled = mediaRouterParams.mTransferToLocalEnabled;
             this.mMediaTransferEnabled = mediaRouterParams.mMediaTransferReceiverEnabled;
             this.mExtras = mediaRouterParams.mExtras == null ? null : new Bundle(mediaRouterParams.mExtras);
-        }
-
-        public MediaRouterParams build() {
-            return new MediaRouterParams(this);
         }
 
         public Builder setDialogType(int i) {
@@ -65,34 +90,9 @@ public class MediaRouterParams {
             }
             return this;
         }
-    }
 
-    MediaRouterParams(Builder builder) {
-        this.mDialogType = builder.mDialogType;
-        this.mMediaTransferReceiverEnabled = builder.mMediaTransferEnabled;
-        this.mOutputSwitcherEnabled = builder.mOutputSwitcherEnabled;
-        this.mTransferToLocalEnabled = builder.mTransferToLocalEnabled;
-        Bundle bundle = builder.mExtras;
-        this.mExtras = bundle == null ? Bundle.EMPTY : new Bundle(bundle);
-    }
-
-    public int getDialogType() {
-        return this.mDialogType;
-    }
-
-    public Bundle getExtras() {
-        return this.mExtras;
-    }
-
-    public boolean isMediaTransferReceiverEnabled() {
-        return this.mMediaTransferReceiverEnabled;
-    }
-
-    public boolean isOutputSwitcherEnabled() {
-        return this.mOutputSwitcherEnabled;
-    }
-
-    public boolean isTransferToLocalEnabled() {
-        return this.mTransferToLocalEnabled;
+        public MediaRouterParams build() {
+            return new MediaRouterParams(this);
+        }
     }
 }

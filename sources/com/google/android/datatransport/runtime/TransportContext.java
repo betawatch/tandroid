@@ -17,10 +17,6 @@ public abstract class TransportContext {
         public abstract Builder setPriority(Priority priority);
     }
 
-    public static Builder builder() {
-        return new AutoValue_TransportContext.Builder().setPriority(Priority.DEFAULT);
-    }
-
     public abstract String getBackendName();
 
     public abstract byte[] getExtras();
@@ -33,6 +29,10 @@ public abstract class TransportContext {
 
     public final String toString() {
         return String.format("TransportContext(%s, %s, %s)", getBackendName(), getPriority(), getExtras() == null ? "" : Base64.encodeToString(getExtras(), 2));
+    }
+
+    public static Builder builder() {
+        return new AutoValue_TransportContext.Builder().setPriority(Priority.DEFAULT);
     }
 
     public TransportContext withPriority(Priority priority) {

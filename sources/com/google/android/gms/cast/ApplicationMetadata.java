@@ -23,18 +23,6 @@ public class ApplicationMetadata extends AbstractSafeParcelable {
     private Boolean zzh;
     private Boolean zzi;
 
-    ApplicationMetadata(String str, String str2, List list, List list2, String str3, Uri uri, String str4, String str5, Boolean bool, Boolean bool2) {
-        this.zza = str;
-        this.zzb = str2;
-        this.zzc = list2;
-        this.zzd = str3;
-        this.zze = uri;
-        this.zzf = str4;
-        this.zzg = str5;
-        this.zzh = bool;
-        this.zzi = bool2;
-    }
-
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -95,5 +83,17 @@ public class ApplicationMetadata extends AbstractSafeParcelable {
         SafeParcelWriter.writeBooleanObject(parcel, 10, this.zzh, false);
         SafeParcelWriter.writeBooleanObject(parcel, 11, this.zzi, false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    ApplicationMetadata(String str, String str2, List list, List list2, String str3, Uri uri, String str4, String str5, Boolean bool, Boolean bool2) {
+        this.zza = str;
+        this.zzb = str2;
+        this.zzc = list2;
+        this.zzd = str3;
+        this.zze = uri;
+        this.zzf = str4;
+        this.zzg = str5;
+        this.zzh = bool;
+        this.zzi = bool2;
     }
 }

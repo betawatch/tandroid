@@ -36,16 +36,16 @@ public abstract class Auth {
                 this.zba = Boolean.FALSE;
             }
 
+            public final Builder zba(String str) {
+                this.zbb = str;
+                return this;
+            }
+
             public Builder(AuthCredentialsOptions authCredentialsOptions) {
                 this.zba = Boolean.FALSE;
                 AuthCredentialsOptions.zbb(authCredentialsOptions);
                 this.zba = Boolean.valueOf(authCredentialsOptions.zbc);
                 this.zbb = authCredentialsOptions.zbd;
-            }
-
-            public final Builder zba(String str) {
-                this.zbb = str;
-                return this;
             }
         }
 

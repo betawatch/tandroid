@@ -8,6 +8,11 @@ import com.google.android.gms.vision.barcode.Barcode;
 /* loaded from: classes.dex */
 public final class zze implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
+    public final /* synthetic */ Object[] newArray(int i) {
+        return new Barcode.ContactInfo[i];
+    }
+
+    @Override // android.os.Parcelable.Creator
     public final /* synthetic */ Object createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
         Barcode.PersonName personName = null;
@@ -48,10 +53,5 @@ public final class zze implements Parcelable.Creator {
         }
         SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
         return new Barcode.ContactInfo(personName, str, str2, phoneArr, emailArr, strArr, addressArr);
-    }
-
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i) {
-        return new Barcode.ContactInfo[i];
     }
 }

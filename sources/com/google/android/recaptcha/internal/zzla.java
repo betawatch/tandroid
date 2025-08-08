@@ -40,19 +40,16 @@ final class zzla implements Iterator {
     @Override // java.util.Iterator
     public final /* bridge */ /* synthetic */ Object next() {
         List list;
-        Object next;
         List list2;
         this.zzc = true;
         int i = this.zzb + 1;
         this.zzb = i;
         list = this.zza.zzb;
-        if (i < list.size()) {
-            list2 = this.zza.zzb;
-            next = list2.get(this.zzb);
-        } else {
-            next = zza().next();
+        if (i >= list.size()) {
+            return (Map.Entry) zza().next();
         }
-        return (Map.Entry) next;
+        list2 = this.zza.zzb;
+        return (Map.Entry) list2.get(this.zzb);
     }
 
     @Override // java.util.Iterator

@@ -4,7 +4,7 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.Job;
 import kotlinx.coroutines.JobKt;
@@ -14,15 +14,11 @@ import kotlinx.coroutines.flow.internal.NullSurrogateKt;
 import kotlinx.coroutines.internal.Symbol;
 import org.telegram.tgnet.TLObject;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class StateFlowImpl extends AbstractSharedFlow implements MutableStateFlow, Flow {
     private static final AtomicReferenceFieldUpdater _state$FU = AtomicReferenceFieldUpdater.newUpdater(StateFlowImpl.class, Object.class, "_state");
     private volatile Object _state;
     private int sequence;
-
-    public StateFlowImpl(Object obj) {
-        this._state = obj;
-    }
 
     private final boolean updateState(Object obj, Object obj2) {
         int i;
@@ -70,6 +66,34 @@ final class StateFlowImpl extends AbstractSharedFlow implements MutableStateFlow
         }
     }
 
+    public StateFlowImpl(Object obj) {
+        this._state = obj;
+    }
+
+    @Override // kotlinx.coroutines.flow.MutableStateFlow
+    public Object getValue() {
+        Symbol symbol = NullSurrogateKt.NULL;
+        Object obj = _state$FU.get(this);
+        if (obj == symbol) {
+            return null;
+        }
+        return obj;
+    }
+
+    @Override // kotlinx.coroutines.flow.MutableStateFlow
+    public void setValue(Object obj) {
+        if (obj == null) {
+            obj = NullSurrogateKt.NULL;
+        }
+        updateState(null, obj);
+    }
+
+    @Override // kotlinx.coroutines.flow.FlowCollector
+    public Object emit(Object obj, Continuation continuation) {
+        setValue(obj);
+        return Unit.INSTANCE;
+    }
+
     /* JADX WARN: Removed duplicated region for block: B:17:0x0097 A[Catch: all -> 0x0042, TryCatch #0 {all -> 0x0042, blocks: (B:14:0x003e, B:15:0x008f, B:17:0x0097, B:19:0x009c, B:21:0x00bd, B:23:0x00c3, B:27:0x00a2, B:30:0x00a9, B:39:0x005f, B:41:0x0071, B:42:0x0080), top: B:7:0x0023 }] */
     /* JADX WARN: Removed duplicated region for block: B:19:0x009c A[Catch: all -> 0x0042, TryCatch #0 {all -> 0x0042, blocks: (B:14:0x003e, B:15:0x008f, B:17:0x0097, B:19:0x009c, B:21:0x00bd, B:23:0x00c3, B:27:0x00a2, B:30:0x00a9, B:39:0x005f, B:41:0x0071, B:42:0x0080), top: B:7:0x0023 }] */
     /* JADX WARN: Removed duplicated region for block: B:23:0x00c3 A[Catch: all -> 0x0042, TRY_LEAVE, TryCatch #0 {all -> 0x0042, blocks: (B:14:0x003e, B:15:0x008f, B:17:0x0097, B:19:0x009c, B:21:0x00bd, B:23:0x00c3, B:27:0x00a2, B:30:0x00a9, B:39:0x005f, B:41:0x0071, B:42:0x0080), top: B:7:0x0023 }] */
@@ -103,7 +127,7 @@ final class StateFlowImpl extends AbstractSharedFlow implements MutableStateFlow
                 if ((i2 & TLObject.FLAG_31) != 0) {
                     stateFlowImpl$collect$1.label = i2 - TLObject.FLAG_31;
                     Object obj4 = stateFlowImpl$collect$1.result;
-                    coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                    coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                     i = stateFlowImpl$collect$1.label;
                     if (i != 0) {
                         ResultKt.throwOnFailure(obj4);
@@ -238,7 +262,7 @@ final class StateFlowImpl extends AbstractSharedFlow implements MutableStateFlow
         }
         stateFlowImpl$collect$1 = new StateFlowImpl$collect$1(this, continuation);
         Object obj42 = stateFlowImpl$collect$1.result;
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = stateFlowImpl$collect$1.label;
     }
 
@@ -252,29 +276,5 @@ final class StateFlowImpl extends AbstractSharedFlow implements MutableStateFlow
     @Override // kotlinx.coroutines.flow.internal.AbstractSharedFlow
     public StateFlowSlot[] createSlotArray(int i) {
         return new StateFlowSlot[i];
-    }
-
-    @Override // kotlinx.coroutines.flow.FlowCollector
-    public Object emit(Object obj, Continuation continuation) {
-        setValue(obj);
-        return Unit.INSTANCE;
-    }
-
-    @Override // kotlinx.coroutines.flow.MutableStateFlow
-    public Object getValue() {
-        Symbol symbol = NullSurrogateKt.NULL;
-        Object obj = _state$FU.get(this);
-        if (obj == symbol) {
-            return null;
-        }
-        return obj;
-    }
-
-    @Override // kotlinx.coroutines.flow.MutableStateFlow
-    public void setValue(Object obj) {
-        if (obj == null) {
-            obj = NullSurrogateKt.NULL;
-        }
-        updateState(null, obj);
     }
 }

@@ -3,14 +3,14 @@ package kotlinx.coroutines.flow;
 import java.util.NoSuchElementException;
 import kotlin.ResultKt;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.jvm.internal.Ref$ObjectRef;
 import kotlinx.coroutines.flow.internal.AbortFlowException;
 import kotlinx.coroutines.flow.internal.FlowExceptions_commonKt;
 import kotlinx.coroutines.flow.internal.NullSurrogateKt;
 import org.telegram.tgnet.TLObject;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 abstract /* synthetic */ class FlowKt__ReduceKt {
     /* JADX WARN: Removed duplicated region for block: B:14:0x0068 A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:16:0x0069  */
@@ -21,7 +21,6 @@ abstract /* synthetic */ class FlowKt__ReduceKt {
     */
     public static final Object first(Flow flow, Continuation continuation) {
         FlowKt__ReduceKt$first$1 flowKt__ReduceKt$first$1;
-        Object coroutine_suspended;
         int i;
         Ref$ObjectRef ref$ObjectRef;
         AbortFlowException e;
@@ -33,7 +32,7 @@ abstract /* synthetic */ class FlowKt__ReduceKt {
             if ((i2 & TLObject.FLAG_31) != 0) {
                 flowKt__ReduceKt$first$1.label = i2 - TLObject.FLAG_31;
                 Object obj2 = flowKt__ReduceKt$first$1.result;
-                coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = flowKt__ReduceKt$first$1.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj2);
@@ -88,7 +87,7 @@ abstract /* synthetic */ class FlowKt__ReduceKt {
         }
         flowKt__ReduceKt$first$1 = new FlowKt__ReduceKt$first$1(continuation);
         Object obj22 = flowKt__ReduceKt$first$1.result;
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = flowKt__ReduceKt$first$1.label;
         if (i != 0) {
         }

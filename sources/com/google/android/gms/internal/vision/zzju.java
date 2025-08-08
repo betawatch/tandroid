@@ -5,14 +5,12 @@ abstract class zzju {
     private static final zzju zza;
     private static final zzju zzb;
 
-    static {
-        zzjx zzjxVar = null;
-        zza = new zzjw();
-        zzb = new zzjz();
-    }
-
     private zzju() {
     }
+
+    abstract void zza(Object obj, Object obj2, long j);
+
+    abstract void zzb(Object obj, long j);
 
     static zzju zza() {
         return zza;
@@ -22,7 +20,9 @@ abstract class zzju {
         return zzb;
     }
 
-    abstract void zza(Object obj, Object obj2, long j);
-
-    abstract void zzb(Object obj, long j);
+    static {
+        zzjx zzjxVar = null;
+        zza = new zzjw();
+        zzb = new zzjz();
+    }
 }

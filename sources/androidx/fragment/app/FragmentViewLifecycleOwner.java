@@ -24,16 +24,47 @@ class FragmentViewLifecycleOwner implements HasDefaultViewModelProviderFactory, 
     private SavedStateRegistryController mSavedStateRegistryController = null;
     private final ViewModelStore mViewModelStore;
 
-    FragmentViewLifecycleOwner(Fragment fragment, ViewModelStore viewModelStore) {
-        this.mFragment = fragment;
-        this.mViewModelStore = viewModelStore;
-    }
-
     @Override // androidx.lifecycle.HasDefaultViewModelProviderFactory
     public /* synthetic */ CreationExtras getDefaultViewModelCreationExtras() {
         CreationExtras creationExtras;
         creationExtras = CreationExtras.Empty.INSTANCE;
         return creationExtras;
+    }
+
+    FragmentViewLifecycleOwner(Fragment fragment, ViewModelStore viewModelStore) {
+        this.mFragment = fragment;
+        this.mViewModelStore = viewModelStore;
+    }
+
+    @Override // androidx.lifecycle.ViewModelStoreOwner
+    public ViewModelStore getViewModelStore() {
+        initialize();
+        return this.mViewModelStore;
+    }
+
+    void initialize() {
+        if (this.mLifecycleRegistry == null) {
+            this.mLifecycleRegistry = new LifecycleRegistry(this);
+            this.mSavedStateRegistryController = SavedStateRegistryController.create(this);
+        }
+    }
+
+    boolean isInitialized() {
+        return this.mLifecycleRegistry != null;
+    }
+
+    @Override // androidx.lifecycle.LifecycleOwner
+    public Lifecycle getLifecycle() {
+        initialize();
+        return this.mLifecycleRegistry;
+    }
+
+    void setCurrentState(Lifecycle.State state) {
+        this.mLifecycleRegistry.setCurrentState(state);
+    }
+
+    void handleLifecycleEvent(Lifecycle.Event event) {
+        this.mLifecycleRegistry.handleLifecycleEvent(event);
     }
 
     @Override // androidx.lifecycle.HasDefaultViewModelProviderFactory
@@ -62,37 +93,10 @@ class FragmentViewLifecycleOwner implements HasDefaultViewModelProviderFactory, 
         return this.mDefaultFactory;
     }
 
-    @Override // androidx.lifecycle.LifecycleOwner
-    public Lifecycle getLifecycle() {
-        initialize();
-        return this.mLifecycleRegistry;
-    }
-
     @Override // androidx.savedstate.SavedStateRegistryOwner
     public SavedStateRegistry getSavedStateRegistry() {
         initialize();
         return this.mSavedStateRegistryController.getSavedStateRegistry();
-    }
-
-    @Override // androidx.lifecycle.ViewModelStoreOwner
-    public ViewModelStore getViewModelStore() {
-        initialize();
-        return this.mViewModelStore;
-    }
-
-    void handleLifecycleEvent(Lifecycle.Event event) {
-        this.mLifecycleRegistry.handleLifecycleEvent(event);
-    }
-
-    void initialize() {
-        if (this.mLifecycleRegistry == null) {
-            this.mLifecycleRegistry = new LifecycleRegistry(this);
-            this.mSavedStateRegistryController = SavedStateRegistryController.create(this);
-        }
-    }
-
-    boolean isInitialized() {
-        return this.mLifecycleRegistry != null;
     }
 
     void performRestore(Bundle bundle) {
@@ -101,9 +105,5 @@ class FragmentViewLifecycleOwner implements HasDefaultViewModelProviderFactory, 
 
     void performSave(Bundle bundle) {
         this.mSavedStateRegistryController.performSave(bundle);
-    }
-
-    void setCurrentState(Lifecycle.State state) {
-        this.mLifecycleRegistry.setCurrentState(state);
     }
 }

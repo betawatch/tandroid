@@ -12,16 +12,16 @@ public final class zaf extends com.google.android.gms.internal.base.zaa implemen
 
     public final void zae(zae zaeVar, ApiFeatureRequest apiFeatureRequest) {
         Parcel zaa = zaa();
-        com.google.android.gms.internal.base.zac.zae(zaa, zaeVar);
-        com.google.android.gms.internal.base.zac.zad(zaa, apiFeatureRequest);
+        com.google.android.gms.internal.base.zac.zad(zaa, zaeVar);
+        com.google.android.gms.internal.base.zac.zac(zaa, apiFeatureRequest);
         zac(1, zaa);
     }
 
     public final void zag(zae zaeVar, ApiFeatureRequest apiFeatureRequest, zah zahVar) {
         Parcel zaa = zaa();
-        com.google.android.gms.internal.base.zac.zae(zaa, zaeVar);
-        com.google.android.gms.internal.base.zac.zad(zaa, apiFeatureRequest);
-        com.google.android.gms.internal.base.zac.zae(zaa, zahVar);
+        com.google.android.gms.internal.base.zac.zad(zaa, zaeVar);
+        com.google.android.gms.internal.base.zac.zac(zaa, apiFeatureRequest);
+        com.google.android.gms.internal.base.zac.zad(zaa, zahVar);
         zac(2, zaa);
     }
 }

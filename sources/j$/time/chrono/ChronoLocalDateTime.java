@@ -13,7 +13,7 @@ public interface ChronoLocalDateTime<D extends b> extends k, Comparable<ChronoLo
 
     e b();
 
-    LocalDate d();
+    LocalDate c();
 
     Instant toInstant(ZoneOffset zoneOffset);
 }

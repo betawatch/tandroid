@@ -10,7 +10,6 @@ import android.graphics.Outline;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
-import android.os.Build;
 import android.text.SpannableStringBuilder;
 import android.text.method.LinkMovementMethod;
 import android.view.View;
@@ -81,6 +80,12 @@ public class HeaderCell extends FrameLayout {
         gLIconRenderer.updateColors();
         linearLayout.addView(gLIconTextureView, LayoutHelper.createLinear(NotificationCenter.audioRecordTooShort, NotificationCenter.audioRecordTooShort, 1));
         StarParticlesView starParticlesView = new StarParticlesView(context) { // from class: org.telegram.ui.Components.Premium.boosts.cells.HeaderCell.2
+            @Override // org.telegram.ui.Components.Premium.StarParticlesView, android.view.View
+            protected void onMeasure(int i2, int i3) {
+                super.onMeasure(i2, i3);
+                this.drawable.rect2.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - AndroidUtilities.dp(52.0f));
+            }
+
             @Override // android.view.View
             protected void onAttachedToWindow() {
                 super.onAttachedToWindow();
@@ -91,12 +96,6 @@ public class HeaderCell extends FrameLayout {
             protected void onDetachedFromWindow() {
                 super.onDetachedFromWindow();
                 HeaderCell.this.starParticlesView.setPaused(true);
-            }
-
-            @Override // org.telegram.ui.Components.Premium.StarParticlesView, android.view.View
-            protected void onMeasure(int i2, int i3) {
-                super.onMeasure(i2, i3);
-                this.drawable.rect2.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - AndroidUtilities.dp(52.0f));
             }
         };
         this.starParticlesView = starParticlesView;
@@ -147,67 +146,15 @@ public class HeaderCell extends FrameLayout {
         return this.paints[num.intValue() % this.paints.length];
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setStars$2(float[] fArr, float f, float f2, boolean z, ValueAnimator valueAnimator) {
-        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        float f3 = floatValue - fArr[0];
-        fArr[0] = floatValue;
-        this.iconTextureView.mRenderer.golden = AndroidUtilities.lerp(f, f2, floatValue);
-        GLIconRenderer gLIconRenderer = this.iconTextureView.mRenderer;
-        gLIconRenderer.angleX3 += f3 * 360.0f * (z ? 1 : -1);
-        gLIconRenderer.updateColors();
-        updatePaints(this.iconTextureView.mRenderer.golden);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public void updatePaints(float f) {
-        int color = Theme.getColor(Theme.key_premiumGradient1, this.resourcesProvider);
-        int color2 = Theme.getColor(Theme.key_premiumGradient2, this.resourcesProvider);
-        int blendARGB = ColorUtils.blendARGB(color, -371690, f);
-        int blendARGB2 = ColorUtils.blendARGB(color2, -14281, f);
-        int i = 0;
-        while (true) {
-            Paint[] paintArr = this.paints;
-            if (i >= paintArr.length) {
-                return;
-            }
-            paintArr[i] = new Paint(1);
-            this.paints[i].setColorFilter(new PorterDuffColorFilter(ColorUtils.blendARGB(blendARGB, blendARGB2, i / (this.paints.length - 1)), PorterDuff.Mode.SRC_IN));
-            i++;
-        }
-    }
-
-    @Override // android.view.View
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (this.links != null) {
-            canvas.save();
-            canvas.translate(this.subtitleView.getLeft(), this.subtitleView.getTop());
-            if (this.links.draw(canvas)) {
-                invalidate();
-            }
-            canvas.restore();
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    protected void onMeasure(int i, int i2) {
-        super.onMeasure(i, i2);
-        StarParticlesView starParticlesView = this.starParticlesView;
-        starParticlesView.setTranslationY((this.iconTextureView.getTop() + (this.iconTextureView.getMeasuredHeight() / 2.0f)) - (starParticlesView.getMeasuredHeight() / 2.0f));
-    }
-
     public void setBoostViaGifsText(TLRPC.Chat chat) {
-        if (Build.VERSION.SDK_INT >= 21) {
-            setOutlineProvider(new ViewOutlineProvider() { // from class: org.telegram.ui.Components.Premium.boosts.cells.HeaderCell.3
-                @Override // android.view.ViewOutlineProvider
-                public void getOutline(View view, Outline outline) {
-                    float dp = AndroidUtilities.dp(12.0f);
-                    outline.setRoundRect(0, 0, view.getWidth(), (int) (view.getHeight() + dp), dp);
-                }
-            });
-            setClipToOutline(true);
-        }
+        setOutlineProvider(new ViewOutlineProvider() { // from class: org.telegram.ui.Components.Premium.boosts.cells.HeaderCell.3
+            @Override // android.view.ViewOutlineProvider
+            public void getOutline(View view, Outline outline) {
+                float dp = AndroidUtilities.dp(12.0f);
+                outline.setRoundRect(0, 0, view.getWidth(), (int) (view.getHeight() + dp), dp);
+            }
+        });
+        setClipToOutline(true);
         ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) getLayoutParams();
         marginLayoutParams.topMargin = -AndroidUtilities.dp(6.0f);
         setLayoutParams(marginLayoutParams);
@@ -217,9 +164,19 @@ public class HeaderCell extends FrameLayout {
         this.subtitleView.setTextColor(Theme.getColor(Theme.key_dialogTextGray3, this.resourcesProvider));
     }
 
+    public void setUsedGiftLinkText() {
+        this.titleView.setText(LocaleController.formatString("BoostingUsedGiftLink", R.string.BoostingUsedGiftLink, new Object[0]));
+        this.subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("BoostingLinkUsed", R.string.BoostingLinkUsed, new Object[0])));
+    }
+
     public void setGiftLinkText() {
         this.titleView.setText(LocaleController.formatString("BoostingGiftLink", R.string.BoostingGiftLink, new Object[0]));
         this.subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("BoostingLinkAllows", R.string.BoostingLinkAllows, new Object[0])));
+    }
+
+    public void setUnclaimedText() {
+        this.titleView.setText(LocaleController.formatString("BoostingGiftLink", R.string.BoostingGiftLink, new Object[0]));
+        this.subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("BoostingLinkAllowsAnyone", R.string.BoostingLinkAllowsAnyone, new Object[0])));
     }
 
     public void setGiftLinkToUserText(long j, final Utilities.Callback callback) {
@@ -232,6 +189,13 @@ public class HeaderCell extends FrameLayout {
                 Utilities.Callback.this.run(user);
             }
         }, this.resourcesProvider)));
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    protected void onMeasure(int i, int i2) {
+        super.onMeasure(i, i2);
+        StarParticlesView starParticlesView = this.starParticlesView;
+        starParticlesView.setTranslationY((this.iconTextureView.getTop() + (this.iconTextureView.getMeasuredHeight() / 2.0f)) - (starParticlesView.getMeasuredHeight() / 2.0f));
     }
 
     public void setPaused(boolean z) {
@@ -277,13 +241,46 @@ public class HeaderCell extends FrameLayout {
         this.goldenAnimator.start();
     }
 
-    public void setUnclaimedText() {
-        this.titleView.setText(LocaleController.formatString("BoostingGiftLink", R.string.BoostingGiftLink, new Object[0]));
-        this.subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("BoostingLinkAllowsAnyone", R.string.BoostingLinkAllowsAnyone, new Object[0])));
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setStars$2(float[] fArr, float f, float f2, boolean z, ValueAnimator valueAnimator) {
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        float f3 = floatValue - fArr[0];
+        fArr[0] = floatValue;
+        this.iconTextureView.mRenderer.golden = AndroidUtilities.lerp(f, f2, floatValue);
+        GLIconRenderer gLIconRenderer = this.iconTextureView.mRenderer;
+        gLIconRenderer.angleX3 += f3 * 360.0f * (z ? 1 : -1);
+        gLIconRenderer.updateColors();
+        updatePaints(this.iconTextureView.mRenderer.golden);
     }
 
-    public void setUsedGiftLinkText() {
-        this.titleView.setText(LocaleController.formatString("BoostingUsedGiftLink", R.string.BoostingUsedGiftLink, new Object[0]));
-        this.subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("BoostingLinkUsed", R.string.BoostingLinkUsed, new Object[0])));
+    /* JADX INFO: Access modifiers changed from: private */
+    public void updatePaints(float f) {
+        int color = Theme.getColor(Theme.key_premiumGradient1, this.resourcesProvider);
+        int color2 = Theme.getColor(Theme.key_premiumGradient2, this.resourcesProvider);
+        int blendARGB = ColorUtils.blendARGB(color, -371690, f);
+        int blendARGB2 = ColorUtils.blendARGB(color2, -14281, f);
+        int i = 0;
+        while (true) {
+            Paint[] paintArr = this.paints;
+            if (i >= paintArr.length) {
+                return;
+            }
+            paintArr[i] = new Paint(1);
+            this.paints[i].setColorFilter(new PorterDuffColorFilter(ColorUtils.blendARGB(blendARGB, blendARGB2, i / (this.paints.length - 1)), PorterDuff.Mode.SRC_IN));
+            i++;
+        }
+    }
+
+    @Override // android.view.View
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.links != null) {
+            canvas.save();
+            canvas.translate(this.subtitleView.getLeft(), this.subtitleView.getTop());
+            if (this.links.draw(canvas)) {
+                invalidate();
+            }
+            canvas.restore();
+        }
     }
 }

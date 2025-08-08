@@ -26,13 +26,27 @@ public final class DefaultAllocator implements Allocator {
         this.individualAllocationSize = i;
         this.availableCount = i2;
         this.availableAllocations = new Allocation[i2 + 100];
-        if (i2 <= 0) {
-            this.initialAllocationBlock = null;
+        if (i2 > 0) {
+            this.initialAllocationBlock = new byte[i2 * i];
+            for (int i3 = 0; i3 < i2; i3++) {
+                this.availableAllocations[i3] = new Allocation(this.initialAllocationBlock, i3 * i);
+            }
             return;
         }
-        this.initialAllocationBlock = new byte[i2 * i];
-        for (int i3 = 0; i3 < i2; i3++) {
-            this.availableAllocations[i3] = new Allocation(this.initialAllocationBlock, i3 * i);
+        this.initialAllocationBlock = null;
+    }
+
+    public synchronized void reset() {
+        if (this.trimOnReset) {
+            setTargetBufferSize(0);
+        }
+    }
+
+    public synchronized void setTargetBufferSize(int i) {
+        boolean z = i < this.targetBufferSize;
+        this.targetBufferSize = i;
+        if (z) {
+            trim();
         }
     }
 
@@ -63,15 +77,6 @@ public final class DefaultAllocator implements Allocator {
     }
 
     @Override // com.google.android.exoplayer2.upstream.Allocator
-    public int getIndividualAllocationLength() {
-        return this.individualAllocationSize;
-    }
-
-    public synchronized int getTotalBytesAllocated() {
-        return this.allocatedCount * this.individualAllocationSize;
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.Allocator
     public synchronized void release(Allocation allocation) {
         Allocation[] allocationArr = this.availableAllocations;
         int i = this.availableCount;
@@ -96,20 +101,6 @@ public final class DefaultAllocator implements Allocator {
             }
         }
         notifyAll();
-    }
-
-    public synchronized void reset() {
-        if (this.trimOnReset) {
-            setTargetBufferSize(0);
-        }
-    }
-
-    public synchronized void setTargetBufferSize(int i) {
-        boolean z = i < this.targetBufferSize;
-        this.targetBufferSize = i;
-        if (z) {
-            trim();
-        }
     }
 
     @Override // com.google.android.exoplayer2.upstream.Allocator
@@ -150,5 +141,14 @@ public final class DefaultAllocator implements Allocator {
         } catch (Throwable th) {
             throw th;
         }
+    }
+
+    public synchronized int getTotalBytesAllocated() {
+        return this.allocatedCount * this.individualAllocationSize;
+    }
+
+    @Override // com.google.android.exoplayer2.upstream.Allocator
+    public int getIndividualAllocationLength() {
+        return this.individualAllocationSize;
     }
 }

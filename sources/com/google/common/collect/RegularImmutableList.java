@@ -9,9 +9,34 @@ class RegularImmutableList extends ImmutableList {
     final transient Object[] array;
     private final transient int size;
 
+    @Override // com.google.common.collect.ImmutableCollection
+    int internalArrayStart() {
+        return 0;
+    }
+
+    @Override // com.google.common.collect.ImmutableCollection
+    boolean isPartialView() {
+        return false;
+    }
+
     RegularImmutableList(Object[] objArr, int i) {
         this.array = objArr;
         this.size = i;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public int size() {
+        return this.size;
+    }
+
+    @Override // com.google.common.collect.ImmutableCollection
+    Object[] internalArray() {
+        return this.array;
+    }
+
+    @Override // com.google.common.collect.ImmutableCollection
+    int internalArrayEnd() {
+        return this.size;
     }
 
     @Override // com.google.common.collect.ImmutableList, com.google.common.collect.ImmutableCollection
@@ -26,30 +51,5 @@ class RegularImmutableList extends ImmutableList {
         Object obj = this.array[i];
         Objects.requireNonNull(obj);
         return obj;
-    }
-
-    @Override // com.google.common.collect.ImmutableCollection
-    Object[] internalArray() {
-        return this.array;
-    }
-
-    @Override // com.google.common.collect.ImmutableCollection
-    int internalArrayEnd() {
-        return this.size;
-    }
-
-    @Override // com.google.common.collect.ImmutableCollection
-    int internalArrayStart() {
-        return 0;
-    }
-
-    @Override // com.google.common.collect.ImmutableCollection
-    boolean isPartialView() {
-        return false;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public int size() {
-        return this.size;
     }
 }

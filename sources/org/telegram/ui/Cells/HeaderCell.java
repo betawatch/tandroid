@@ -35,53 +35,32 @@ public class HeaderCell extends FrameLayout {
         this(context, Theme.key_windowBackgroundWhiteBlueHeader, 21, 15, false, null);
     }
 
+    public HeaderCell(Context context, Theme.ResourcesProvider resourcesProvider) {
+        this(context, Theme.key_windowBackgroundWhiteBlueHeader, 21, 15, false, resourcesProvider);
+    }
+
     public HeaderCell(Context context, int i) {
         this(context, Theme.key_windowBackgroundWhiteBlueHeader, i, 15, false, null);
+    }
+
+    public HeaderCell(Context context, int i, Theme.ResourcesProvider resourcesProvider) {
+        this(context, Theme.key_windowBackgroundWhiteBlueHeader, i, 15, false, resourcesProvider);
+    }
+
+    public HeaderCell(Context context, int i, int i2, int i3, boolean z) {
+        this(context, i, i2, i3, z, null);
+    }
+
+    public HeaderCell(Context context, int i, int i2, int i3, boolean z, Theme.ResourcesProvider resourcesProvider) {
+        this(context, i, i2, i3, 0, z, resourcesProvider);
     }
 
     public HeaderCell(Context context, int i, int i2, int i3, int i4, boolean z, Theme.ResourcesProvider resourcesProvider) {
         this(context, i, i2, i3, i4, z, false, resourcesProvider);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x007b, code lost:
-    
-        if (r23 != false) goto L25;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x00e2, code lost:
-    
-        r14 = r3;
-        r12 = r6;
-        r15 = r10;
-        r16 = r22;
-        r11 = r5;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:25:0x00da, code lost:
-    
-        r14 = r3;
-        r11 = r5;
-        r12 = r6;
-        r15 = r10;
-        r16 = 0.0f;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:35:0x00d8, code lost:
-    
-        if (r23 != false) goto L25;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public HeaderCell(Context context, int i, int i2, int i3, int i4, boolean z, boolean z2, Theme.ResourcesProvider resourcesProvider) {
         super(context);
-        View view;
-        int i5;
-        float f;
-        float f2;
-        float f3;
-        float f4;
-        float f5;
-        int i6;
-        float f6;
-        float f7;
         this.height = 40;
         this.resourcesProvider = resourcesProvider;
         this.padding = i2;
@@ -96,11 +75,8 @@ public class HeaderCell extends FrameLayout {
             this.animatedTextView.setTextColor(getThemedColor(i));
             this.animatedTextView.setTag(Integer.valueOf(i));
             this.animatedTextView.getDrawable().setHacks(true, true, false);
-            view = this.animatedTextView;
-            f3 = this.height - i3;
-            i5 = (LocaleController.isRTL ? 5 : 3) | 48;
-            f = i2;
-            f2 = i3;
+            float f = i2;
+            addView(this.animatedTextView, LayoutHelper.createFrame(-1, this.height - i3, (LocaleController.isRTL ? 5 : 3) | 48, f, i3, f, z ? 0.0f : i4));
         } else {
             TextView textView = new TextView(getContext());
             this.textView = textView;
@@ -111,69 +87,32 @@ public class HeaderCell extends FrameLayout {
             this.textView.setMinHeight(AndroidUtilities.dp(this.height - i3));
             this.textView.setTextColor(getThemedColor(i));
             this.textView.setTag(Integer.valueOf(i));
-            view = this.textView;
-            i5 = (LocaleController.isRTL ? 5 : 3) | 48;
-            f = i2;
-            f2 = i3;
-            f3 = -1.0f;
+            float f2 = i2;
+            addView(this.textView, LayoutHelper.createFrame(-1, -1.0f, (LocaleController.isRTL ? 5 : 3) | 48, f2, i3, f2, z ? 0.0f : i4));
         }
-        addView(view, LayoutHelper.createFrame(-1, f5, i6, f6, f4, f6, f7));
         if (z) {
             SimpleTextView simpleTextView = new SimpleTextView(getContext());
             this.textView2 = simpleTextView;
             simpleTextView.setTextSize(13);
             this.textView2.setGravity((LocaleController.isRTL ? 3 : 5) | 48);
-            float f8 = i2;
-            addView(this.textView2, LayoutHelper.createFrame(-1, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, f8, 21.0f, f8, i4));
+            float f3 = i2;
+            addView(this.textView2, LayoutHelper.createFrame(-1, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, f3, 21.0f, f3, i4));
         }
         ViewCompat.setAccessibilityHeading(this, true);
     }
 
-    public HeaderCell(Context context, int i, int i2, int i3, boolean z) {
-        this(context, i, i2, i3, z, null);
-    }
-
-    public HeaderCell(Context context, int i, int i2, int i3, boolean z, Theme.ResourcesProvider resourcesProvider) {
-        this(context, i, i2, i3, 0, z, resourcesProvider);
-    }
-
-    public HeaderCell(Context context, int i, Theme.ResourcesProvider resourcesProvider) {
-        this(context, Theme.key_windowBackgroundWhiteBlueHeader, i, 15, false, resourcesProvider);
-    }
-
-    public HeaderCell(Context context, Theme.ResourcesProvider resourcesProvider) {
-        this(context, Theme.key_windowBackgroundWhiteBlueHeader, 21, 15, false, resourcesProvider);
-    }
-
-    private int getThemedColor(int i) {
-        return Theme.getColor(i, this.resourcesProvider);
-    }
-
-    public TextView getTextView() {
-        return this.textView;
-    }
-
-    public SimpleTextView getTextView2() {
-        return this.textView2;
-    }
-
-    @Override // android.view.View
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        if (Build.VERSION.SDK_INT >= 28) {
-            accessibilityNodeInfo.setHeading(true);
-        } else {
-            AccessibilityNodeInfo.CollectionItemInfo collectionItemInfo = accessibilityNodeInfo.getCollectionItemInfo();
-            if (collectionItemInfo != null) {
-                accessibilityNodeInfo.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(collectionItemInfo.getRowIndex(), collectionItemInfo.getRowSpan(), collectionItemInfo.getColumnIndex(), collectionItemInfo.getColumnSpan(), true));
-            }
+    public void setHeight(int i) {
+        this.height = i;
+        int dp = AndroidUtilities.dp(i) - ((FrameLayout.LayoutParams) this.textView.getLayoutParams()).topMargin;
+        if (this.textView.getMinHeight() != dp) {
+            this.textView.setMinHeight(dp);
+            requestLayout();
         }
-        accessibilityNodeInfo.setEnabled(true);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
+    public void setTopMargin(int i) {
+        ((FrameLayout.LayoutParams) this.textView.getLayoutParams()).topMargin = AndroidUtilities.dp(i);
+        setHeight(this.height);
     }
 
     public void setBottomMargin(int i) {
@@ -193,13 +132,21 @@ public class HeaderCell extends FrameLayout {
         }
     }
 
-    public void setHeight(int i) {
-        this.height = i;
-        int dp = AndroidUtilities.dp(i) - ((FrameLayout.LayoutParams) this.textView.getLayoutParams()).topMargin;
-        if (this.textView.getMinHeight() != dp) {
-            this.textView.setMinHeight(dp);
-            requestLayout();
+    @Override // android.widget.FrameLayout, android.view.View
+    protected void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
+    }
+
+    public void setTextSize(float f) {
+        if (this.animated) {
+            this.animatedTextView.setTextSize(AndroidUtilities.dp(f));
+        } else {
+            this.textView.setTextSize(1, f);
         }
+    }
+
+    public void setTextColor(int i) {
+        this.textView.setTextColor(i);
     }
 
     public void setText(CharSequence charSequence) {
@@ -224,20 +171,29 @@ public class HeaderCell extends FrameLayout {
         simpleTextView.setText(charSequence);
     }
 
-    public void setTextColor(int i) {
-        this.textView.setTextColor(i);
+    public TextView getTextView() {
+        return this.textView;
     }
 
-    public void setTextSize(float f) {
-        if (this.animated) {
-            this.animatedTextView.setTextSize(AndroidUtilities.dp(f));
+    public SimpleTextView getTextView2() {
+        return this.textView2;
+    }
+
+    @Override // android.view.View
+    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        if (Build.VERSION.SDK_INT >= 28) {
+            accessibilityNodeInfo.setHeading(true);
         } else {
-            this.textView.setTextSize(1, f);
+            AccessibilityNodeInfo.CollectionItemInfo collectionItemInfo = accessibilityNodeInfo.getCollectionItemInfo();
+            if (collectionItemInfo != null) {
+                accessibilityNodeInfo.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(collectionItemInfo.getRowIndex(), collectionItemInfo.getRowSpan(), collectionItemInfo.getColumnIndex(), collectionItemInfo.getColumnSpan(), true));
+            }
         }
+        accessibilityNodeInfo.setEnabled(true);
     }
 
-    public void setTopMargin(int i) {
-        ((FrameLayout.LayoutParams) this.textView.getLayoutParams()).topMargin = AndroidUtilities.dp(i);
-        setHeight(this.height);
+    private int getThemedColor(int i) {
+        return Theme.getColor(i, this.resourcesProvider);
     }
 }

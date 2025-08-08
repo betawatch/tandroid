@@ -1,52 +1,11 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
+import j$.util.function.Consumer;
 import java.util.Comparator;
 
 /* loaded from: classes2.dex */
-abstract class k3 extends m3 implements j$.util.M {
-    k3(j$.util.M m, long j, long j2) {
-        super(m, j, j2, 0L, Math.min(m.estimateSize(), j2));
-    }
-
-    k3(j$.util.M m, long j, long j2, long j3, long j4) {
-        super(m, j, j2, j3, j4);
-    }
-
-    protected abstract Object f();
-
-    @Override // j$.util.M
-    /* renamed from: forEachRemaining, reason: merged with bridge method [inline-methods] and merged with bridge method [inline-methods] and merged with bridge method [inline-methods] */
-    public final void e(Object obj) {
-        obj.getClass();
-        long j = this.e;
-        long j2 = this.a;
-        if (j2 >= j) {
-            return;
-        }
-        long j3 = this.d;
-        if (j3 >= j) {
-            return;
-        }
-        if (j3 >= j2 && ((j$.util.M) this.c).estimateSize() + j3 <= this.b) {
-            ((j$.util.M) this.c).e(obj);
-            this.d = this.e;
-            return;
-        }
-        while (j2 > this.d) {
-            ((j$.util.M) this.c).p(f());
-            this.d++;
-        }
-        while (this.d < this.e) {
-            ((j$.util.M) this.c).p(obj);
-            this.d++;
-        }
-    }
-
-    @Override // j$.util.Spliterator
-    public final Comparator getComparator() {
-        throw new IllegalStateException();
-    }
-
+final class k3 extends l3 implements Spliterator {
     @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
         return j$.util.A.j(this);
@@ -57,11 +16,37 @@ abstract class k3 extends m3 implements j$.util.M {
         return j$.util.A.k(this, i);
     }
 
-    @Override // j$.util.M
-    /* renamed from: tryAdvance, reason: merged with bridge method [inline-methods] and merged with bridge method [inline-methods] and merged with bridge method [inline-methods] */
-    public final boolean p(Object obj) {
+    @Override // j$.util.Spliterator
+    public final void a(Consumer consumer) {
+        consumer.getClass();
+        long j = this.e;
+        long j2 = this.a;
+        if (j2 >= j) {
+            return;
+        }
+        long j3 = this.d;
+        if (j3 >= j) {
+            return;
+        }
+        if (j3 >= j2 && this.c.estimateSize() + j3 <= this.b) {
+            this.c.a(consumer);
+            this.d = this.e;
+            return;
+        }
+        while (j2 > this.d) {
+            this.c.s(new c0(11));
+            this.d++;
+        }
+        while (this.d < this.e) {
+            this.c.s(consumer);
+            this.d++;
+        }
+    }
+
+    @Override // j$.util.Spliterator
+    public final boolean s(Consumer consumer) {
         long j;
-        obj.getClass();
+        consumer.getClass();
         long j2 = this.e;
         long j3 = this.a;
         if (j3 >= j2) {
@@ -72,13 +57,27 @@ abstract class k3 extends m3 implements j$.util.M {
             if (j3 <= j) {
                 break;
             }
-            ((j$.util.M) this.c).p(f());
+            this.c.s(new c0(10));
             this.d++;
         }
         if (j >= this.e) {
             return false;
         }
         this.d = j + 1;
-        return ((j$.util.M) this.c).p(obj);
+        return this.c.s(consumer);
+    }
+
+    @Override // j$.util.Spliterator
+    public final Comparator getComparator() {
+        throw new IllegalStateException();
+    }
+
+    k3(Spliterator spliterator, long j, long j2) {
+        super(spliterator, j, j2, 0L, Math.min(spliterator.estimateSize(), j2));
+    }
+
+    @Override // j$.util.stream.l3
+    protected final Spliterator b(Spliterator spliterator, long j, long j2, long j3, long j4) {
+        return new k3(spliterator, j, j2, j3, j4);
     }
 }

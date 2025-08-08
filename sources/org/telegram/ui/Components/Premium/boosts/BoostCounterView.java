@@ -74,6 +74,34 @@ public class BoostCounterView extends View {
         invalidate();
     }
 
+    public void setCount(int i, boolean z) {
+        if (!BoostRepository.isMultiBoostsAvailable()) {
+            i = 0;
+        }
+        if (i > 0) {
+            setVisibility(0);
+        }
+        if (z) {
+            this.countText.cancelAnimation();
+        }
+        if (z && i != this.lastCount && i > 0) {
+            animateCount();
+        }
+        this.lastCount = i;
+        int length = this.countText.getText().length();
+        this.countText.setText("x" + i, z);
+        int length2 = this.countText.getText().length();
+        invalidate();
+        if (length != length2) {
+            requestLayout();
+        }
+    }
+
+    @Override // android.view.View
+    protected void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) (AndroidUtilities.dp(15.0f) + this.countText.getWidth()), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(26.0f), TLObject.FLAG_30));
+    }
+
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
@@ -96,33 +124,5 @@ public class BoostCounterView extends View {
             canvas.restore();
         }
         canvas.restore();
-    }
-
-    @Override // android.view.View
-    protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) (AndroidUtilities.dp(15.0f) + this.countText.getWidth()), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(26.0f), TLObject.FLAG_30));
-    }
-
-    public void setCount(int i, boolean z) {
-        if (!BoostRepository.isMultiBoostsAvailable()) {
-            i = 0;
-        }
-        if (i > 0) {
-            setVisibility(0);
-        }
-        if (z) {
-            this.countText.cancelAnimation();
-        }
-        if (z && i != this.lastCount && i > 0) {
-            animateCount();
-        }
-        this.lastCount = i;
-        int length = this.countText.getText().length();
-        this.countText.setText("x" + i, z);
-        int length2 = this.countText.getText().length();
-        invalidate();
-        if (length != length2) {
-            requestLayout();
-        }
     }
 }

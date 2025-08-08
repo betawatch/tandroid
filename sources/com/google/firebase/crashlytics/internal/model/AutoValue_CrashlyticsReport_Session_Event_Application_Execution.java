@@ -3,7 +3,7 @@ package com.google.firebase.crashlytics.internal.model;
 import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
 import java.util.List;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class AutoValue_CrashlyticsReport_Session_Event_Application_Execution extends CrashlyticsReport.Session.Event.Application.Execution {
     private final CrashlyticsReport.ApplicationExitInfo appExitInfo;
     private final List binaries;
@@ -11,74 +11,41 @@ final class AutoValue_CrashlyticsReport_Session_Event_Application_Execution exte
     private final CrashlyticsReport.Session.Event.Application.Execution.Signal signal;
     private final List threads;
 
-    static final class Builder extends CrashlyticsReport.Session.Event.Application.Execution.Builder {
-        private CrashlyticsReport.ApplicationExitInfo appExitInfo;
-        private List binaries;
-        private CrashlyticsReport.Session.Event.Application.Execution.Exception exception;
-        private CrashlyticsReport.Session.Event.Application.Execution.Signal signal;
-        private List threads;
-
-        Builder() {
-        }
-
-        @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event.Application.Execution.Builder
-        public CrashlyticsReport.Session.Event.Application.Execution build() {
-            String str = "";
-            if (this.signal == null) {
-                str = " signal";
-            }
-            if (this.binaries == null) {
-                str = str + " binaries";
-            }
-            if (str.isEmpty()) {
-                return new AutoValue_CrashlyticsReport_Session_Event_Application_Execution(this.threads, this.exception, this.appExitInfo, this.signal, this.binaries);
-            }
-            throw new IllegalStateException("Missing required properties:" + str);
-        }
-
-        @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event.Application.Execution.Builder
-        public CrashlyticsReport.Session.Event.Application.Execution.Builder setAppExitInfo(CrashlyticsReport.ApplicationExitInfo applicationExitInfo) {
-            this.appExitInfo = applicationExitInfo;
-            return this;
-        }
-
-        @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event.Application.Execution.Builder
-        public CrashlyticsReport.Session.Event.Application.Execution.Builder setBinaries(List list) {
-            if (list == null) {
-                throw new NullPointerException("Null binaries");
-            }
-            this.binaries = list;
-            return this;
-        }
-
-        @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event.Application.Execution.Builder
-        public CrashlyticsReport.Session.Event.Application.Execution.Builder setException(CrashlyticsReport.Session.Event.Application.Execution.Exception exception) {
-            this.exception = exception;
-            return this;
-        }
-
-        @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event.Application.Execution.Builder
-        public CrashlyticsReport.Session.Event.Application.Execution.Builder setSignal(CrashlyticsReport.Session.Event.Application.Execution.Signal signal) {
-            if (signal == null) {
-                throw new NullPointerException("Null signal");
-            }
-            this.signal = signal;
-            return this;
-        }
-
-        @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event.Application.Execution.Builder
-        public CrashlyticsReport.Session.Event.Application.Execution.Builder setThreads(List list) {
-            this.threads = list;
-            return this;
-        }
-    }
-
     private AutoValue_CrashlyticsReport_Session_Event_Application_Execution(List list, CrashlyticsReport.Session.Event.Application.Execution.Exception exception, CrashlyticsReport.ApplicationExitInfo applicationExitInfo, CrashlyticsReport.Session.Event.Application.Execution.Signal signal, List list2) {
         this.threads = list;
         this.exception = exception;
         this.appExitInfo = applicationExitInfo;
         this.signal = signal;
         this.binaries = list2;
+    }
+
+    @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event.Application.Execution
+    public List getThreads() {
+        return this.threads;
+    }
+
+    @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event.Application.Execution
+    public CrashlyticsReport.Session.Event.Application.Execution.Exception getException() {
+        return this.exception;
+    }
+
+    @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event.Application.Execution
+    public CrashlyticsReport.ApplicationExitInfo getAppExitInfo() {
+        return this.appExitInfo;
+    }
+
+    @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event.Application.Execution
+    public CrashlyticsReport.Session.Event.Application.Execution.Signal getSignal() {
+        return this.signal;
+    }
+
+    @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event.Application.Execution
+    public List getBinaries() {
+        return this.binaries;
+    }
+
+    public String toString() {
+        return "Execution{threads=" + this.threads + ", exception=" + this.exception + ", appExitInfo=" + this.appExitInfo + ", signal=" + this.signal + ", binaries=" + this.binaries + "}";
     }
 
     public boolean equals(Object obj) {
@@ -104,31 +71,6 @@ final class AutoValue_CrashlyticsReport_Session_Event_Application_Execution exte
         return false;
     }
 
-    @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event.Application.Execution
-    public CrashlyticsReport.ApplicationExitInfo getAppExitInfo() {
-        return this.appExitInfo;
-    }
-
-    @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event.Application.Execution
-    public List getBinaries() {
-        return this.binaries;
-    }
-
-    @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event.Application.Execution
-    public CrashlyticsReport.Session.Event.Application.Execution.Exception getException() {
-        return this.exception;
-    }
-
-    @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event.Application.Execution
-    public CrashlyticsReport.Session.Event.Application.Execution.Signal getSignal() {
-        return this.signal;
-    }
-
-    @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event.Application.Execution
-    public List getThreads() {
-        return this.threads;
-    }
-
     public int hashCode() {
         List list = this.threads;
         int hashCode = ((list == null ? 0 : list.hashCode()) ^ 1000003) * 1000003;
@@ -138,7 +80,65 @@ final class AutoValue_CrashlyticsReport_Session_Event_Application_Execution exte
         return ((((hashCode2 ^ (applicationExitInfo != null ? applicationExitInfo.hashCode() : 0)) * 1000003) ^ this.signal.hashCode()) * 1000003) ^ this.binaries.hashCode();
     }
 
-    public String toString() {
-        return "Execution{threads=" + this.threads + ", exception=" + this.exception + ", appExitInfo=" + this.appExitInfo + ", signal=" + this.signal + ", binaries=" + this.binaries + "}";
+    static final class Builder extends CrashlyticsReport.Session.Event.Application.Execution.Builder {
+        private CrashlyticsReport.ApplicationExitInfo appExitInfo;
+        private List binaries;
+        private CrashlyticsReport.Session.Event.Application.Execution.Exception exception;
+        private CrashlyticsReport.Session.Event.Application.Execution.Signal signal;
+        private List threads;
+
+        Builder() {
+        }
+
+        @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event.Application.Execution.Builder
+        public CrashlyticsReport.Session.Event.Application.Execution.Builder setThreads(List list) {
+            this.threads = list;
+            return this;
+        }
+
+        @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event.Application.Execution.Builder
+        public CrashlyticsReport.Session.Event.Application.Execution.Builder setException(CrashlyticsReport.Session.Event.Application.Execution.Exception exception) {
+            this.exception = exception;
+            return this;
+        }
+
+        @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event.Application.Execution.Builder
+        public CrashlyticsReport.Session.Event.Application.Execution.Builder setAppExitInfo(CrashlyticsReport.ApplicationExitInfo applicationExitInfo) {
+            this.appExitInfo = applicationExitInfo;
+            return this;
+        }
+
+        @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event.Application.Execution.Builder
+        public CrashlyticsReport.Session.Event.Application.Execution.Builder setSignal(CrashlyticsReport.Session.Event.Application.Execution.Signal signal) {
+            if (signal == null) {
+                throw new NullPointerException("Null signal");
+            }
+            this.signal = signal;
+            return this;
+        }
+
+        @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event.Application.Execution.Builder
+        public CrashlyticsReport.Session.Event.Application.Execution.Builder setBinaries(List list) {
+            if (list == null) {
+                throw new NullPointerException("Null binaries");
+            }
+            this.binaries = list;
+            return this;
+        }
+
+        @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event.Application.Execution.Builder
+        public CrashlyticsReport.Session.Event.Application.Execution build() {
+            String str = "";
+            if (this.signal == null) {
+                str = " signal";
+            }
+            if (this.binaries == null) {
+                str = str + " binaries";
+            }
+            if (!str.isEmpty()) {
+                throw new IllegalStateException("Missing required properties:" + str);
+            }
+            return new AutoValue_CrashlyticsReport_Session_Event_Application_Execution(this.threads, this.exception, this.appExitInfo, this.signal, this.binaries);
+        }
     }
 }

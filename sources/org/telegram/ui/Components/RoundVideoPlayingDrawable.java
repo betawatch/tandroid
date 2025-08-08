@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class RoundVideoPlayingDrawable extends Drawable {
     public float colorProgress;
     private View parentView;
@@ -27,13 +27,22 @@ public class RoundVideoPlayingDrawable extends Drawable {
     private int progress3Direction = 1;
     int alpha = NotificationCenter.goingToPreviewTheme;
 
+    @Override // android.graphics.drawable.Drawable
+    public int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setColorFilter(ColorFilter colorFilter) {
+    }
+
     public RoundVideoPlayingDrawable(View view, Theme.ResourcesProvider resourcesProvider) {
         this.resourcesProvider = resourcesProvider;
         this.parentView = view;
     }
 
-    private int getThemedColor(int i) {
-        return Theme.getColor(i, this.resourcesProvider);
+    public void setResourcesProvider(Theme.ResourcesProvider resourcesProvider) {
+        this.resourcesProvider = resourcesProvider;
     }
 
     private void update() {
@@ -74,6 +83,21 @@ public class RoundVideoPlayingDrawable extends Drawable {
         this.parentView.invalidate();
     }
 
+    public void start() {
+        if (this.started) {
+            return;
+        }
+        this.lastUpdateTime = System.currentTimeMillis();
+        this.started = true;
+        this.parentView.invalidate();
+    }
+
+    public void stop() {
+        if (this.started) {
+            this.started = false;
+        }
+    }
+
     @Override // android.graphics.drawable.Drawable
     public void draw(Canvas canvas) {
         this.paint.setColor(ColorUtils.blendARGB(getThemedColor(Theme.key_chat_serviceText), this.timeColor, this.colorProgress));
@@ -94,8 +118,8 @@ public class RoundVideoPlayingDrawable extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public int getIntrinsicHeight() {
-        return AndroidUtilities.dp(12.0f);
+    public void setAlpha(int i) {
+        this.alpha = i;
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -104,35 +128,11 @@ public class RoundVideoPlayingDrawable extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public int getOpacity() {
-        return -2;
+    public int getIntrinsicHeight() {
+        return AndroidUtilities.dp(12.0f);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public void setAlpha(int i) {
-        this.alpha = i;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setColorFilter(ColorFilter colorFilter) {
-    }
-
-    public void setResourcesProvider(Theme.ResourcesProvider resourcesProvider) {
-        this.resourcesProvider = resourcesProvider;
-    }
-
-    public void start() {
-        if (this.started) {
-            return;
-        }
-        this.lastUpdateTime = System.currentTimeMillis();
-        this.started = true;
-        this.parentView.invalidate();
-    }
-
-    public void stop() {
-        if (this.started) {
-            this.started = false;
-        }
+    private int getThemedColor(int i) {
+        return Theme.getColor(i, this.resourcesProvider);
     }
 }

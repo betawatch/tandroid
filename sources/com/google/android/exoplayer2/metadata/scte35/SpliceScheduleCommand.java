@@ -22,27 +22,6 @@ public final class SpliceScheduleCommand extends SpliceCommand {
     };
     public final List events;
 
-    public static final class ComponentSplice {
-        public final int componentTag;
-        public final long utcSpliceTime;
-
-        private ComponentSplice(int i, long j) {
-            this.componentTag = i;
-            this.utcSpliceTime = j;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static ComponentSplice createFromParcel(Parcel parcel) {
-            return new ComponentSplice(parcel.readInt(), parcel.readLong());
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public void writeToParcel(Parcel parcel) {
-            parcel.writeInt(this.componentTag);
-            parcel.writeLong(this.utcSpliceTime);
-        }
-    }
-
     public static final class Event {
         public final boolean autoReturn;
         public final int availNum;
@@ -87,11 +66,6 @@ public final class SpliceScheduleCommand extends SpliceCommand {
             this.uniqueProgramId = parcel.readInt();
             this.availNum = parcel.readInt();
             this.availsExpected = parcel.readInt();
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static Event createFromParcel(Parcel parcel) {
-            return new Event(parcel);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -178,6 +152,36 @@ public final class SpliceScheduleCommand extends SpliceCommand {
             parcel.writeInt(this.availNum);
             parcel.writeInt(this.availsExpected);
         }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static Event createFromParcel(Parcel parcel) {
+            return new Event(parcel);
+        }
+    }
+
+    public static final class ComponentSplice {
+        public final int componentTag;
+        public final long utcSpliceTime;
+
+        private ComponentSplice(int i, long j) {
+            this.componentTag = i;
+            this.utcSpliceTime = j;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static ComponentSplice createFromParcel(Parcel parcel) {
+            return new ComponentSplice(parcel.readInt(), parcel.readLong());
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public void writeToParcel(Parcel parcel) {
+            parcel.writeInt(this.componentTag);
+            parcel.writeLong(this.utcSpliceTime);
+        }
+    }
+
+    private SpliceScheduleCommand(List list) {
+        this.events = Collections.unmodifiableList(list);
     }
 
     private SpliceScheduleCommand(Parcel parcel) {
@@ -187,10 +191,6 @@ public final class SpliceScheduleCommand extends SpliceCommand {
             arrayList.add(Event.createFromParcel(parcel));
         }
         this.events = Collections.unmodifiableList(arrayList);
-    }
-
-    private SpliceScheduleCommand(List list) {
-        this.events = Collections.unmodifiableList(list);
     }
 
     static SpliceScheduleCommand parseFromSection(ParsableByteArray parsableByteArray) {

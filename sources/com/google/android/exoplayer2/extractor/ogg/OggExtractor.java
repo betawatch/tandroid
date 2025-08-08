@@ -33,39 +33,35 @@ public class OggExtractor implements Extractor {
     private StreamReader streamReader;
     private boolean streamReaderInitialized;
 
+    @Override // com.google.android.exoplayer2.extractor.Extractor
+    public void release() {
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ Extractor[] lambda$static$0() {
         return new Extractor[]{new OggExtractor()};
     }
 
-    private static ParsableByteArray resetPosition(ParsableByteArray parsableByteArray) {
-        parsableByteArray.setPosition(0);
-        return parsableByteArray;
-    }
-
-    private boolean sniffInternal(ExtractorInput extractorInput) {
-        StreamReader opusReader;
-        OggPageHeader oggPageHeader = new OggPageHeader();
-        if (oggPageHeader.populate(extractorInput, true) && (oggPageHeader.type & 2) == 2) {
-            int min = Math.min(oggPageHeader.bodySize, 8);
-            ParsableByteArray parsableByteArray = new ParsableByteArray(min);
-            extractorInput.peekFully(parsableByteArray.getData(), 0, min);
-            if (FlacReader.verifyBitstreamType(resetPosition(parsableByteArray))) {
-                opusReader = new FlacReader();
-            } else if (VorbisReader.verifyBitstreamType(resetPosition(parsableByteArray))) {
-                opusReader = new VorbisReader();
-            } else if (OpusReader.verifyBitstreamType(resetPosition(parsableByteArray))) {
-                opusReader = new OpusReader();
-            }
-            this.streamReader = opusReader;
-            return true;
+    @Override // com.google.android.exoplayer2.extractor.Extractor
+    public boolean sniff(ExtractorInput extractorInput) {
+        try {
+            return sniffInternal(extractorInput);
+        } catch (ParserException unused) {
+            return false;
         }
-        return false;
     }
 
     @Override // com.google.android.exoplayer2.extractor.Extractor
     public void init(ExtractorOutput extractorOutput) {
         this.output = extractorOutput;
+    }
+
+    @Override // com.google.android.exoplayer2.extractor.Extractor
+    public void seek(long j, long j2) {
+        StreamReader streamReader = this.streamReader;
+        if (streamReader != null) {
+            streamReader.seek(j, j2);
+        }
     }
 
     @Override // com.google.android.exoplayer2.extractor.Extractor
@@ -86,24 +82,26 @@ public class OggExtractor implements Extractor {
         return this.streamReader.read(extractorInput, positionHolder);
     }
 
-    @Override // com.google.android.exoplayer2.extractor.Extractor
-    public void release() {
+    private boolean sniffInternal(ExtractorInput extractorInput) {
+        OggPageHeader oggPageHeader = new OggPageHeader();
+        if (oggPageHeader.populate(extractorInput, true) && (oggPageHeader.type & 2) == 2) {
+            int min = Math.min(oggPageHeader.bodySize, 8);
+            ParsableByteArray parsableByteArray = new ParsableByteArray(min);
+            extractorInput.peekFully(parsableByteArray.getData(), 0, min);
+            if (FlacReader.verifyBitstreamType(resetPosition(parsableByteArray))) {
+                this.streamReader = new FlacReader();
+            } else if (VorbisReader.verifyBitstreamType(resetPosition(parsableByteArray))) {
+                this.streamReader = new VorbisReader();
+            } else if (OpusReader.verifyBitstreamType(resetPosition(parsableByteArray))) {
+                this.streamReader = new OpusReader();
+            }
+            return true;
+        }
+        return false;
     }
 
-    @Override // com.google.android.exoplayer2.extractor.Extractor
-    public void seek(long j, long j2) {
-        StreamReader streamReader = this.streamReader;
-        if (streamReader != null) {
-            streamReader.seek(j, j2);
-        }
-    }
-
-    @Override // com.google.android.exoplayer2.extractor.Extractor
-    public boolean sniff(ExtractorInput extractorInput) {
-        try {
-            return sniffInternal(extractorInput);
-        } catch (ParserException unused) {
-            return false;
-        }
+    private static ParsableByteArray resetPosition(ParsableByteArray parsableByteArray) {
+        parsableByteArray.setPosition(0);
+        return parsableByteArray;
     }
 }

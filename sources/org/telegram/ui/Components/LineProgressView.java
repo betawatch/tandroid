@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.voip.CellFlickerDrawable;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class LineProgressView extends View {
     private static DecelerateInterpolator decelerateInterpolator;
     private static Paint progressPaint;
@@ -77,6 +77,30 @@ public class LineProgressView extends View {
         }
     }
 
+    public void setProgressColor(int i) {
+        this.progressColor = i;
+    }
+
+    public void setBackColor(int i) {
+        this.backColor = i;
+    }
+
+    public void setProgress(float f, boolean z) {
+        if (!z) {
+            this.animatedProgressValue = f;
+            this.animationProgressStart = f;
+        } else {
+            this.animationProgressStart = this.animatedProgressValue;
+        }
+        if (f != 1.0f) {
+            this.animatedAlphaValue = 1.0f;
+        }
+        this.currentProgress = f;
+        this.currentProgressTime = 0L;
+        this.lastUpdateTime = System.currentTimeMillis();
+        invalidate();
+    }
+
     public float getCurrentProgress() {
         return this.currentProgress;
     }
@@ -108,29 +132,5 @@ public class LineProgressView extends View {
             invalidate();
         }
         updateAnimation();
-    }
-
-    public void setBackColor(int i) {
-        this.backColor = i;
-    }
-
-    public void setProgress(float f, boolean z) {
-        if (z) {
-            this.animationProgressStart = this.animatedProgressValue;
-        } else {
-            this.animatedProgressValue = f;
-            this.animationProgressStart = f;
-        }
-        if (f != 1.0f) {
-            this.animatedAlphaValue = 1.0f;
-        }
-        this.currentProgress = f;
-        this.currentProgressTime = 0L;
-        this.lastUpdateTime = System.currentTimeMillis();
-        invalidate();
-    }
-
-    public void setProgressColor(int i) {
-        this.progressColor = i;
     }
 }

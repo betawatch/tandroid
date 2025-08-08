@@ -4,38 +4,31 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.Feature;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
+import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 
 /* loaded from: classes.dex */
-public final class zzk implements Parcelable.Creator {
-    @Override // android.os.Parcelable.Creator
-    public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
-        int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
-        Bundle bundle = null;
-        Feature[] featureArr = null;
-        ConnectionTelemetryConfiguration connectionTelemetryConfiguration = null;
-        int i = 0;
-        while (parcel.dataPosition() < validateObjectHeader) {
-            int readHeader = SafeParcelReader.readHeader(parcel);
-            int fieldId = SafeParcelReader.getFieldId(readHeader);
-            if (fieldId == 1) {
-                bundle = SafeParcelReader.createBundle(parcel, readHeader);
-            } else if (fieldId == 2) {
-                featureArr = (Feature[]) SafeParcelReader.createTypedArray(parcel, readHeader, Feature.CREATOR);
-            } else if (fieldId == 3) {
-                i = SafeParcelReader.readInt(parcel, readHeader);
-            } else if (fieldId != 4) {
-                SafeParcelReader.skipUnknownField(parcel, readHeader);
-            } else {
-                connectionTelemetryConfiguration = (ConnectionTelemetryConfiguration) SafeParcelReader.createParcelable(parcel, readHeader, ConnectionTelemetryConfiguration.CREATOR);
-            }
-        }
-        SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
-        return new zzj(bundle, featureArr, i, connectionTelemetryConfiguration);
+public final class zzk extends AbstractSafeParcelable {
+    public static final Parcelable.Creator<zzk> CREATOR = new zzl();
+    Bundle zza;
+    Feature[] zzb;
+    int zzc;
+    ConnectionTelemetryConfiguration zzd;
+
+    zzk(Bundle bundle, Feature[] featureArr, int i, ConnectionTelemetryConfiguration connectionTelemetryConfiguration) {
+        this.zza = bundle;
+        this.zzb = featureArr;
+        this.zzc = i;
+        this.zzd = connectionTelemetryConfiguration;
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i) {
-        return new zzj[i];
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
+        SafeParcelWriter.writeBundle(parcel, 1, this.zza, false);
+        SafeParcelWriter.writeTypedArray(parcel, 2, this.zzb, i, false);
+        SafeParcelWriter.writeInt(parcel, 3, this.zzc);
+        SafeParcelWriter.writeParcelable(parcel, 4, this.zzd, i, false);
+        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
     }
 }

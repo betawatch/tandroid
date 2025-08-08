@@ -15,13 +15,39 @@ import java.util.Map;
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class CryptoUtils {
     static final ICryptoFactory DEFAULT_CRYPTO_FACTORY = new ICryptoFactory() { // from class: com.microsoft.appcenter.utils.crypto.CryptoUtils.1
+        @Override // com.microsoft.appcenter.utils.crypto.CryptoUtils.ICryptoFactory
+        public IKeyGenerator getKeyGenerator(String str, String str2) {
+            final KeyGenerator keyGenerator = KeyGenerator.getInstance(str, str2);
+            return new IKeyGenerator() { // from class: com.microsoft.appcenter.utils.crypto.CryptoUtils.1.1
+                @Override // com.microsoft.appcenter.utils.crypto.CryptoUtils.IKeyGenerator
+                public void init(AlgorithmParameterSpec algorithmParameterSpec) {
+                    keyGenerator.init(algorithmParameterSpec);
+                }
+
+                @Override // com.microsoft.appcenter.utils.crypto.CryptoUtils.IKeyGenerator
+                public void generateKey() {
+                    keyGenerator.generateKey();
+                }
+            };
+        }
+
         @Override // com.microsoft.appcenter.utils.crypto.CryptoUtils.ICryptoFactory
         public ICipher getCipher(String str, String str2) {
             final Cipher cipher = Cipher.getInstance(str, str2);
             return new ICipher() { // from class: com.microsoft.appcenter.utils.crypto.CryptoUtils.1.2
+                @Override // com.microsoft.appcenter.utils.crypto.CryptoUtils.ICipher
+                public void init(int i, Key key) {
+                    cipher.init(i, key);
+                }
+
+                @Override // com.microsoft.appcenter.utils.crypto.CryptoUtils.ICipher
+                public void init(int i, Key key, AlgorithmParameterSpec algorithmParameterSpec) {
+                    cipher.init(i, key, algorithmParameterSpec);
+                }
+
                 @Override // com.microsoft.appcenter.utils.crypto.CryptoUtils.ICipher
                 public byte[] doFinal(byte[] bArr) {
                     return cipher.doFinal(bArr);
@@ -33,39 +59,13 @@ public class CryptoUtils {
                 }
 
                 @Override // com.microsoft.appcenter.utils.crypto.CryptoUtils.ICipher
-                public int getBlockSize() {
-                    return cipher.getBlockSize();
-                }
-
-                @Override // com.microsoft.appcenter.utils.crypto.CryptoUtils.ICipher
                 public byte[] getIV() {
                     return cipher.getIV();
                 }
 
                 @Override // com.microsoft.appcenter.utils.crypto.CryptoUtils.ICipher
-                public void init(int i, Key key) {
-                    cipher.init(i, key);
-                }
-
-                @Override // com.microsoft.appcenter.utils.crypto.CryptoUtils.ICipher
-                public void init(int i, Key key, AlgorithmParameterSpec algorithmParameterSpec) {
-                    cipher.init(i, key, algorithmParameterSpec);
-                }
-            };
-        }
-
-        @Override // com.microsoft.appcenter.utils.crypto.CryptoUtils.ICryptoFactory
-        public IKeyGenerator getKeyGenerator(String str, String str2) {
-            final KeyGenerator keyGenerator = KeyGenerator.getInstance(str, str2);
-            return new IKeyGenerator() { // from class: com.microsoft.appcenter.utils.crypto.CryptoUtils.1.1
-                @Override // com.microsoft.appcenter.utils.crypto.CryptoUtils.IKeyGenerator
-                public void generateKey() {
-                    keyGenerator.generateKey();
-                }
-
-                @Override // com.microsoft.appcenter.utils.crypto.CryptoUtils.IKeyGenerator
-                public void init(AlgorithmParameterSpec algorithmParameterSpec) {
-                    keyGenerator.init(algorithmParameterSpec);
+                public int getBlockSize() {
+                    return cipher.getBlockSize();
                 }
             };
         }
@@ -76,34 +76,6 @@ public class CryptoUtils {
     private final ICryptoFactory mCryptoFactory;
     private final Map mCryptoHandlers;
     private final KeyStore mKeyStore;
-
-    static class CryptoHandlerEntry {
-        int mAliasIndex;
-        final CryptoHandler mCryptoHandler;
-
-        CryptoHandlerEntry(int i, CryptoHandler cryptoHandler) {
-            this.mAliasIndex = i;
-            this.mCryptoHandler = cryptoHandler;
-        }
-    }
-
-    public static class DecryptedData {
-        final String mDecryptedData;
-        final String mNewEncryptedData;
-
-        public DecryptedData(String str, String str2) {
-            this.mDecryptedData = str;
-            this.mNewEncryptedData = str2;
-        }
-
-        public String getDecryptedData() {
-            return this.mDecryptedData;
-        }
-
-        public String getNewEncryptedData() {
-            return this.mNewEncryptedData;
-        }
-    }
 
     interface ICipher {
         byte[] doFinal(byte[] bArr);
@@ -186,31 +158,11 @@ public class CryptoUtils {
         this.mCryptoHandlers.put(cryptoNoOpHandler2.getAlgorithm(), new CryptoHandlerEntry(0, cryptoNoOpHandler2));
     }
 
-    private String getAlias(CryptoHandler cryptoHandler, int i) {
-        return "appcenter." + i + "." + cryptoHandler.getAlgorithm();
-    }
-
-    private DecryptedData getDecryptedData(CryptoHandler cryptoHandler, int i, String str) {
-        String str2 = new String(cryptoHandler.decrypt(this.mCryptoFactory, this.mApiLevel, getKeyStoreEntry(cryptoHandler, i), Base64.decode(str, 0)), "UTF-8");
-        return new DecryptedData(str2, cryptoHandler != ((CryptoHandlerEntry) this.mCryptoHandlers.values().iterator().next()).mCryptoHandler ? encrypt(str2) : null);
-    }
-
     public static CryptoUtils getInstance(Context context) {
         if (sInstance == null) {
             sInstance = new CryptoUtils(context);
         }
         return sInstance;
-    }
-
-    private KeyStore.Entry getKeyStoreEntry(CryptoHandler cryptoHandler, int i) {
-        if (this.mKeyStore == null) {
-            return null;
-        }
-        return this.mKeyStore.getEntry(getAlias(cryptoHandler, i), null);
-    }
-
-    private KeyStore.Entry getKeyStoreEntry(CryptoHandlerEntry cryptoHandlerEntry) {
-        return getKeyStoreEntry(cryptoHandlerEntry.mCryptoHandler, cryptoHandlerEntry.mAliasIndex);
     }
 
     private void registerHandler(CryptoHandler cryptoHandler) {
@@ -231,27 +183,19 @@ public class CryptoUtils {
         this.mCryptoHandlers.put(cryptoHandler.getAlgorithm(), new CryptoHandlerEntry(i, cryptoHandler));
     }
 
-    public DecryptedData decrypt(String str) {
-        if (str == null) {
-            return new DecryptedData(null, null);
+    private String getAlias(CryptoHandler cryptoHandler, int i) {
+        return "appcenter." + i + "." + cryptoHandler.getAlgorithm();
+    }
+
+    private KeyStore.Entry getKeyStoreEntry(CryptoHandlerEntry cryptoHandlerEntry) {
+        return getKeyStoreEntry(cryptoHandlerEntry.mCryptoHandler, cryptoHandlerEntry.mAliasIndex);
+    }
+
+    private KeyStore.Entry getKeyStoreEntry(CryptoHandler cryptoHandler, int i) {
+        if (this.mKeyStore == null) {
+            return null;
         }
-        String[] split = str.split(":");
-        CryptoHandlerEntry cryptoHandlerEntry = split.length == 2 ? (CryptoHandlerEntry) this.mCryptoHandlers.get(split[0]) : null;
-        CryptoHandler cryptoHandler = cryptoHandlerEntry == null ? null : cryptoHandlerEntry.mCryptoHandler;
-        if (cryptoHandler == null) {
-            AppCenterLog.error("AppCenter", "Failed to decrypt data.");
-            return new DecryptedData(str, null);
-        }
-        try {
-            try {
-                return getDecryptedData(cryptoHandler, cryptoHandlerEntry.mAliasIndex, split[1]);
-            } catch (Exception unused) {
-                return getDecryptedData(cryptoHandler, cryptoHandlerEntry.mAliasIndex ^ 1, split[1]);
-            }
-        } catch (Exception unused2) {
-            AppCenterLog.error("AppCenter", "Failed to decrypt data.");
-            return new DecryptedData(str, null);
-        }
+        return this.mKeyStore.getEntry(getAlias(cryptoHandler, i), null);
     }
 
     public String encrypt(String str) {
@@ -282,6 +226,62 @@ public class CryptoUtils {
         } catch (Exception unused) {
             AppCenterLog.error("AppCenter", "Failed to encrypt data.");
             return str;
+        }
+    }
+
+    public DecryptedData decrypt(String str) {
+        if (str == null) {
+            return new DecryptedData(null, null);
+        }
+        String[] split = str.split(":");
+        CryptoHandlerEntry cryptoHandlerEntry = split.length == 2 ? (CryptoHandlerEntry) this.mCryptoHandlers.get(split[0]) : null;
+        CryptoHandler cryptoHandler = cryptoHandlerEntry == null ? null : cryptoHandlerEntry.mCryptoHandler;
+        if (cryptoHandler == null) {
+            AppCenterLog.error("AppCenter", "Failed to decrypt data.");
+            return new DecryptedData(str, null);
+        }
+        try {
+            try {
+                return getDecryptedData(cryptoHandler, cryptoHandlerEntry.mAliasIndex, split[1]);
+            } catch (Exception unused) {
+                return getDecryptedData(cryptoHandler, cryptoHandlerEntry.mAliasIndex ^ 1, split[1]);
+            }
+        } catch (Exception unused2) {
+            AppCenterLog.error("AppCenter", "Failed to decrypt data.");
+            return new DecryptedData(str, null);
+        }
+    }
+
+    private DecryptedData getDecryptedData(CryptoHandler cryptoHandler, int i, String str) {
+        String str2 = new String(cryptoHandler.decrypt(this.mCryptoFactory, this.mApiLevel, getKeyStoreEntry(cryptoHandler, i), Base64.decode(str, 0)), "UTF-8");
+        return new DecryptedData(str2, cryptoHandler != ((CryptoHandlerEntry) this.mCryptoHandlers.values().iterator().next()).mCryptoHandler ? encrypt(str2) : null);
+    }
+
+    static class CryptoHandlerEntry {
+        int mAliasIndex;
+        final CryptoHandler mCryptoHandler;
+
+        CryptoHandlerEntry(int i, CryptoHandler cryptoHandler) {
+            this.mAliasIndex = i;
+            this.mCryptoHandler = cryptoHandler;
+        }
+    }
+
+    public static class DecryptedData {
+        final String mDecryptedData;
+        final String mNewEncryptedData;
+
+        public DecryptedData(String str, String str2) {
+            this.mDecryptedData = str;
+            this.mNewEncryptedData = str2;
+        }
+
+        public String getDecryptedData() {
+            return this.mDecryptedData;
+        }
+
+        public String getNewEncryptedData() {
+            return this.mNewEncryptedData;
         }
     }
 }

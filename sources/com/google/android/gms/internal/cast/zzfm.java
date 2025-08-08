@@ -8,7 +8,7 @@ import j$.util.function.Consumer;
 import j$.util.function.IntFunction;
 import j$.util.function.Predicate;
 import j$.util.stream.Stream;
-import j$.util.stream.u0;
+import j$.util.stream.t0;
 import java.io.Serializable;
 import java.util.AbstractCollection;
 import java.util.Arrays;
@@ -38,7 +38,7 @@ public abstract class zzfm extends AbstractCollection implements Serializable, C
     @Override // java.util.AbstractCollection, java.util.Collection
     public abstract boolean contains(Object obj);
 
-    @Override // j$.util.Collection
+    @Override // j$.util.Collection, j$.lang.a
     public /* synthetic */ void forEach(Consumer consumer) {
         Iterable$-CC.$default$forEach(this, consumer);
     }
@@ -51,7 +51,7 @@ public abstract class zzfm extends AbstractCollection implements Serializable, C
     @Override // java.util.Collection, j$.util.Collection
     public /* synthetic */ Stream parallelStream() {
         Stream e0;
-        e0 = u0.e0(Collection.-EL.b(this), true);
+        e0 = t0.e0(Collection.-EL.b(this), true);
         return e0;
     }
 
@@ -122,6 +122,22 @@ public abstract class zzfm extends AbstractCollection implements Serializable, C
         return toArray(IntFunction.VivifiedWrapper.convert(intFunction));
     }
 
+    abstract int zza(Object[] objArr, int i);
+
+    int zzb() {
+        throw new UnsupportedOperationException();
+    }
+
+    int zzc() {
+        throw new UnsupportedOperationException();
+    }
+
+    public abstract zzfq zzd();
+
+    Object[] zzg() {
+        return null;
+    }
+
     @Override // java.util.AbstractCollection, java.util.Collection
     public final Object[] toArray(Object[] objArr) {
         objArr.getClass();
@@ -141,21 +157,5 @@ public abstract class zzfm extends AbstractCollection implements Serializable, C
         }
         zza(objArr, 0);
         return objArr;
-    }
-
-    abstract int zza(Object[] objArr, int i);
-
-    int zzb() {
-        throw new UnsupportedOperationException();
-    }
-
-    int zzc() {
-        throw new UnsupportedOperationException();
-    }
-
-    public abstract zzfq zzd();
-
-    Object[] zzg() {
-        return null;
     }
 }

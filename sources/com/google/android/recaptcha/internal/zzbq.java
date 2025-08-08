@@ -7,7 +7,7 @@ import java.net.URLConnection;
 import java.util.zip.GZIPInputStream;
 import kotlin.io.TextStreamsKt;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.text.StringsKt__StringsJVMKt;
+import kotlin.text.StringsKt;
 
 /* loaded from: classes.dex */
 public final class zzbq {
@@ -65,7 +65,6 @@ public final class zzbq {
     */
     public final String zzb(zzoe zzoeVar, zzbd zzbdVar) {
         String str;
-        String replace$default;
         try {
             String zzk = zzoeVar.zzk();
             String zzH = zzoeVar.zzH();
@@ -122,16 +121,14 @@ public final class zzbq {
                             throw e;
                         }
                     }
-                    replace$default = StringsKt__StringsJVMKt.replace$default(zzoeVar.zzj(), "JAVASCRIPT_TAG", str, false, 4, null);
-                    return replace$default;
+                    return StringsKt.replace$default(zzoeVar.zzj(), "JAVASCRIPT_TAG", str, false, 4, null);
                 }
                 this.zzb.zzb(zza, new zzp(zzn.zzn, zzl.zzae, null), null);
             }
             str = null;
             if (str == null) {
             }
-            replace$default = StringsKt__StringsJVMKt.replace$default(zzoeVar.zzj(), "JAVASCRIPT_TAG", str, false, 4, null);
-            return replace$default;
+            return StringsKt.replace$default(zzoeVar.zzj(), "JAVASCRIPT_TAG", str, false, 4, null);
         } catch (Exception e2) {
             if (e2 instanceof zzp) {
                 throw e2;

@@ -3,7 +3,7 @@ package androidx.core.view;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -19,18 +19,18 @@ public class MenuHostHelper {
         this.mOnInvalidateMenuCallback = runnable;
     }
 
-    public void onCreateMenu(Menu menu, MenuInflater menuInflater) {
+    public void onPrepareMenu(Menu menu) {
         Iterator it = this.mMenuProviders.iterator();
         if (it.hasNext()) {
-            ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
+            WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
             throw null;
         }
     }
 
-    public void onMenuClosed(Menu menu) {
+    public void onCreateMenu(Menu menu, MenuInflater menuInflater) {
         Iterator it = this.mMenuProviders.iterator();
         if (it.hasNext()) {
-            ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
+            WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
             throw null;
         }
     }
@@ -40,14 +40,14 @@ public class MenuHostHelper {
         if (!it.hasNext()) {
             return false;
         }
-        ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
+        WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
         throw null;
     }
 
-    public void onPrepareMenu(Menu menu) {
+    public void onMenuClosed(Menu menu) {
         Iterator it = this.mMenuProviders.iterator();
         if (it.hasNext()) {
-            ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
+            WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
             throw null;
         }
     }

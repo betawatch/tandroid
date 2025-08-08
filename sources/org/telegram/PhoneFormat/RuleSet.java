@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class RuleSet {
     public static Pattern pattern = Pattern.compile("[0-9]+");
     public boolean hasRuleWithIntlPrefix;

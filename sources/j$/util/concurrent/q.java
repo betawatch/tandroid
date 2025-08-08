@@ -8,9 +8,9 @@ final class q extends k {
     q h;
     boolean i;
 
-    q(int i, Object obj, Object obj2, q qVar, q qVar2) {
-        super(i, obj, obj2, qVar);
-        this.e = qVar2;
+    q(int i, Object obj, Object obj2, k kVar, q qVar) {
+        super(i, obj, obj2, kVar);
+        this.e = qVar;
     }
 
     @Override // j$.util.concurrent.k

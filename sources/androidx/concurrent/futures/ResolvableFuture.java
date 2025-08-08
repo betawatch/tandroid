@@ -2,9 +2,6 @@ package androidx.concurrent.futures;
 
 /* loaded from: classes.dex */
 public final class ResolvableFuture extends AbstractResolvableFuture {
-    private ResolvableFuture() {
-    }
-
     public static ResolvableFuture create() {
         return new ResolvableFuture();
     }
@@ -17,5 +14,8 @@ public final class ResolvableFuture extends AbstractResolvableFuture {
     @Override // androidx.concurrent.futures.AbstractResolvableFuture
     public boolean setException(Throwable th) {
         return super.setException(th);
+    }
+
+    private ResolvableFuture() {
     }
 }

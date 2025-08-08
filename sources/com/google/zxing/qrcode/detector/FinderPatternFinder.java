@@ -14,7 +14,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class FinderPatternFinder {
     private static final EstimatedModuleComparator moduleComparator = new EstimatedModuleComparator();
     private boolean hasSkipped;
@@ -22,22 +22,128 @@ public class FinderPatternFinder {
     private final List possibleCenters = new ArrayList();
     private final int[] crossCheckStateCount = new int[5];
 
-    private static final class EstimatedModuleComparator implements Comparator, Serializable {
-        private EstimatedModuleComparator() {
-        }
-
-        @Override // java.util.Comparator
-        public int compare(FinderPattern finderPattern, FinderPattern finderPattern2) {
-            return Float.compare(finderPattern.getEstimatedModuleSize(), finderPattern2.getEstimatedModuleSize());
-        }
-    }
-
     public FinderPatternFinder(BitMatrix bitMatrix, ResultPointCallback resultPointCallback) {
         this.image = bitMatrix;
     }
 
+    final FinderPatternInfo find(Map map) {
+        boolean z = map != null && map.containsKey(DecodeHintType.TRY_HARDER);
+        int height = this.image.getHeight();
+        int width = this.image.getWidth();
+        int i = (height * 3) / 388;
+        if (i < 3 || z) {
+            i = 3;
+        }
+        int[] iArr = new int[5];
+        int i2 = i - 1;
+        boolean z2 = false;
+        while (i2 < height && !z2) {
+            clearCounts(iArr);
+            int i3 = 0;
+            int i4 = 0;
+            while (i3 < width) {
+                if (this.image.get(i3, i2)) {
+                    if ((i4 & 1) == 1) {
+                        i4++;
+                    }
+                    iArr[i4] = iArr[i4] + 1;
+                } else if ((i4 & 1) != 0) {
+                    iArr[i4] = iArr[i4] + 1;
+                } else if (i4 == 4) {
+                    if (foundPatternCross(iArr)) {
+                        if (handlePossibleCenter(iArr, i2, i3)) {
+                            if (this.hasSkipped) {
+                                z2 = haveMultiplyConfirmedCenters();
+                            } else {
+                                int findRowSkip = findRowSkip();
+                                int i5 = iArr[2];
+                                if (findRowSkip > i5) {
+                                    i2 += (findRowSkip - i5) - 2;
+                                    i3 = width - 1;
+                                }
+                            }
+                            clearCounts(iArr);
+                            i = 2;
+                            i4 = 0;
+                        } else {
+                            shiftCounts2(iArr);
+                        }
+                    } else {
+                        shiftCounts2(iArr);
+                    }
+                    i4 = 3;
+                } else {
+                    i4++;
+                    iArr[i4] = iArr[i4] + 1;
+                }
+                i3++;
+            }
+            if (foundPatternCross(iArr) && handlePossibleCenter(iArr, i2, width)) {
+                i = iArr[0];
+                if (this.hasSkipped) {
+                    z2 = haveMultiplyConfirmedCenters();
+                }
+            }
+            i2 += i;
+        }
+        FinderPattern[] selectBestPatterns = selectBestPatterns();
+        ResultPoint.orderBestPatterns(selectBestPatterns);
+        return new FinderPatternInfo(selectBestPatterns);
+    }
+
     private static float centerFromEnd(int[] iArr, int i) {
         return ((i - iArr[4]) - iArr[3]) - (iArr[2] / 2.0f);
+    }
+
+    protected static boolean foundPatternCross(int[] iArr) {
+        int i = 0;
+        for (int i2 = 0; i2 < 5; i2++) {
+            int i3 = iArr[i2];
+            if (i3 == 0) {
+                return false;
+            }
+            i += i3;
+        }
+        if (i < 7) {
+            return false;
+        }
+        float f = i / 7.0f;
+        float f2 = f / 2.0f;
+        return Math.abs(f - ((float) iArr[0])) < f2 && Math.abs(f - ((float) iArr[1])) < f2 && Math.abs((f * 3.0f) - ((float) iArr[2])) < 3.0f * f2 && Math.abs(f - ((float) iArr[3])) < f2 && Math.abs(f - ((float) iArr[4])) < f2;
+    }
+
+    protected static boolean foundPatternDiagonal(int[] iArr) {
+        int i = 0;
+        for (int i2 = 0; i2 < 5; i2++) {
+            int i3 = iArr[i2];
+            if (i3 == 0) {
+                return false;
+            }
+            i += i3;
+        }
+        if (i < 7) {
+            return false;
+        }
+        float f = i / 7.0f;
+        float f2 = f / 1.333f;
+        return Math.abs(f - ((float) iArr[0])) < f2 && Math.abs(f - ((float) iArr[1])) < f2 && Math.abs((f * 3.0f) - ((float) iArr[2])) < 3.0f * f2 && Math.abs(f - ((float) iArr[3])) < f2 && Math.abs(f - ((float) iArr[4])) < f2;
+    }
+
+    private int[] getCrossCheckStateCount() {
+        clearCounts(this.crossCheckStateCount);
+        return this.crossCheckStateCount;
+    }
+
+    protected final void clearCounts(int[] iArr) {
+        Arrays.fill(iArr, 0);
+    }
+
+    protected final void shiftCounts2(int[] iArr) {
+        iArr[0] = iArr[2];
+        iArr[1] = iArr[3];
+        iArr[2] = iArr[4];
+        iArr[3] = 1;
+        iArr[4] = 0;
     }
 
     private boolean crossCheckDiagonal(int i, int i2) {
@@ -101,117 +207,6 @@ public class FinderPatternFinder {
             return false;
         }
         return foundPatternDiagonal(crossCheckStateCount);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:51:0x0082, code lost:
-    
-        if (r2[3] < r13) goto L49;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x0086, code lost:
-    
-        if (r11 >= r1) goto L80;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:55:0x008c, code lost:
-    
-        if (r0.get(r11, r12) == false) goto L81;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:56:0x008e, code lost:
-    
-        r9 = r2[4];
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:57:0x0090, code lost:
-    
-        if (r9 >= r13) goto L79;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:58:0x0092, code lost:
-    
-        r2[4] = r9 + 1;
-        r11 = r11 + 1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:60:0x0099, code lost:
-    
-        r12 = r2[4];
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x009b, code lost:
-    
-        if (r12 < r13) goto L59;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:62:0x009d, code lost:
-    
-        return Float.NaN;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:64:0x00b1, code lost:
-    
-        if ((java.lang.Math.abs(((((r2[0] + r2[1]) + r2[2]) + r2[3]) + r12) - r14) * 5) < r14) goto L62;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:65:0x00b3, code lost:
-    
-        return Float.NaN;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:67:0x00b8, code lost:
-    
-        if (foundPatternCross(r2) == false) goto L84;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:69:0x00be, code lost:
-    
-        return centerFromEnd(r2, r11);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:70:?, code lost:
-    
-        return Float.NaN;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:73:?, code lost:
-    
-        return Float.NaN;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    private float crossCheckHorizontal(int i, int i2, int i3, int i4) {
-        int i5;
-        int i6;
-        BitMatrix bitMatrix = this.image;
-        int width = bitMatrix.getWidth();
-        int[] crossCheckStateCount = getCrossCheckStateCount();
-        int i7 = i;
-        while (i7 >= 0 && bitMatrix.get(i7, i2)) {
-            crossCheckStateCount[2] = crossCheckStateCount[2] + 1;
-            i7--;
-        }
-        if (i7 < 0) {
-            return Float.NaN;
-        }
-        while (i7 >= 0 && !bitMatrix.get(i7, i2)) {
-            int i8 = crossCheckStateCount[1];
-            if (i8 > i3) {
-                break;
-            }
-            crossCheckStateCount[1] = i8 + 1;
-            i7--;
-        }
-        if (i7 < 0 || crossCheckStateCount[1] > i3) {
-            return Float.NaN;
-        }
-        while (i7 >= 0 && bitMatrix.get(i7, i2) && (i6 = crossCheckStateCount[0]) <= i3) {
-            crossCheckStateCount[0] = i6 + 1;
-            i7--;
-        }
-        if (crossCheckStateCount[0] > i3) {
-            return Float.NaN;
-        }
-        int i9 = i + 1;
-        while (i9 < width && bitMatrix.get(i9, i2)) {
-            crossCheckStateCount[2] = crossCheckStateCount[2] + 1;
-            i9++;
-        }
-        if (i9 == width) {
-            return Float.NaN;
-        }
-        while (i9 < width && !bitMatrix.get(i9, i2) && (i5 = crossCheckStateCount[3]) < i3) {
-            crossCheckStateCount[3] = i5 + 1;
-            i9++;
-        }
-        return Float.NaN;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:51:0x0082, code lost:
@@ -325,6 +320,146 @@ public class FinderPatternFinder {
         return Float.NaN;
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:51:0x0082, code lost:
+    
+        if (r2[3] < r13) goto L49;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x0086, code lost:
+    
+        if (r11 >= r1) goto L80;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:55:0x008c, code lost:
+    
+        if (r0.get(r11, r12) == false) goto L81;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:56:0x008e, code lost:
+    
+        r9 = r2[4];
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:57:0x0090, code lost:
+    
+        if (r9 >= r13) goto L79;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:58:0x0092, code lost:
+    
+        r2[4] = r9 + 1;
+        r11 = r11 + 1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:60:0x0099, code lost:
+    
+        r12 = r2[4];
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x009b, code lost:
+    
+        if (r12 < r13) goto L59;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:62:0x009d, code lost:
+    
+        return Float.NaN;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:64:0x00b1, code lost:
+    
+        if ((java.lang.Math.abs(((((r2[0] + r2[1]) + r2[2]) + r2[3]) + r12) - r14) * 5) < r14) goto L62;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x00b3, code lost:
+    
+        return Float.NaN;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:67:0x00b8, code lost:
+    
+        if (foundPatternCross(r2) == false) goto L84;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:69:0x00be, code lost:
+    
+        return centerFromEnd(r2, r11);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:70:?, code lost:
+    
+        return Float.NaN;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:73:?, code lost:
+    
+        return Float.NaN;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    private float crossCheckHorizontal(int i, int i2, int i3, int i4) {
+        int i5;
+        int i6;
+        BitMatrix bitMatrix = this.image;
+        int width = bitMatrix.getWidth();
+        int[] crossCheckStateCount = getCrossCheckStateCount();
+        int i7 = i;
+        while (i7 >= 0 && bitMatrix.get(i7, i2)) {
+            crossCheckStateCount[2] = crossCheckStateCount[2] + 1;
+            i7--;
+        }
+        if (i7 < 0) {
+            return Float.NaN;
+        }
+        while (i7 >= 0 && !bitMatrix.get(i7, i2)) {
+            int i8 = crossCheckStateCount[1];
+            if (i8 > i3) {
+                break;
+            }
+            crossCheckStateCount[1] = i8 + 1;
+            i7--;
+        }
+        if (i7 < 0 || crossCheckStateCount[1] > i3) {
+            return Float.NaN;
+        }
+        while (i7 >= 0 && bitMatrix.get(i7, i2) && (i6 = crossCheckStateCount[0]) <= i3) {
+            crossCheckStateCount[0] = i6 + 1;
+            i7--;
+        }
+        if (crossCheckStateCount[0] > i3) {
+            return Float.NaN;
+        }
+        int i9 = i + 1;
+        while (i9 < width && bitMatrix.get(i9, i2)) {
+            crossCheckStateCount[2] = crossCheckStateCount[2] + 1;
+            i9++;
+        }
+        if (i9 == width) {
+            return Float.NaN;
+        }
+        while (i9 < width && !bitMatrix.get(i9, i2) && (i5 = crossCheckStateCount[3]) < i3) {
+            crossCheckStateCount[3] = i5 + 1;
+            i9++;
+        }
+        return Float.NaN;
+    }
+
+    protected final boolean handlePossibleCenter(int[] iArr, int i, int i2) {
+        int i3 = 0;
+        int i4 = iArr[0] + iArr[1] + iArr[2] + iArr[3] + iArr[4];
+        int centerFromEnd = (int) centerFromEnd(iArr, i2);
+        float crossCheckVertical = crossCheckVertical(i, centerFromEnd, iArr[2], i4);
+        if (!Float.isNaN(crossCheckVertical)) {
+            int i5 = (int) crossCheckVertical;
+            float crossCheckHorizontal = crossCheckHorizontal(centerFromEnd, i5, iArr[2], i4);
+            if (!Float.isNaN(crossCheckHorizontal) && crossCheckDiagonal(i5, (int) crossCheckHorizontal)) {
+                float f = i4 / 7.0f;
+                while (true) {
+                    if (i3 < this.possibleCenters.size()) {
+                        FinderPattern finderPattern = (FinderPattern) this.possibleCenters.get(i3);
+                        if (finderPattern.aboutEquals(f, crossCheckVertical, crossCheckHorizontal)) {
+                            this.possibleCenters.set(i3, finderPattern.combineEstimate(crossCheckVertical, crossCheckHorizontal, f));
+                            break;
+                        }
+                        i3++;
+                    } else {
+                        this.possibleCenters.add(new FinderPattern(crossCheckHorizontal, crossCheckVertical, f));
+                        break;
+                    }
+                }
+                return true;
+            }
+        }
+        return false;
+    }
+
     private int findRowSkip() {
         if (this.possibleCenters.size() <= 1) {
             return 0;
@@ -340,45 +475,6 @@ public class FinderPatternFinder {
             }
         }
         return 0;
-    }
-
-    protected static boolean foundPatternCross(int[] iArr) {
-        int i = 0;
-        for (int i2 = 0; i2 < 5; i2++) {
-            int i3 = iArr[i2];
-            if (i3 == 0) {
-                return false;
-            }
-            i += i3;
-        }
-        if (i < 7) {
-            return false;
-        }
-        float f = i / 7.0f;
-        float f2 = f / 2.0f;
-        return Math.abs(f - ((float) iArr[0])) < f2 && Math.abs(f - ((float) iArr[1])) < f2 && Math.abs((f * 3.0f) - ((float) iArr[2])) < 3.0f * f2 && Math.abs(f - ((float) iArr[3])) < f2 && Math.abs(f - ((float) iArr[4])) < f2;
-    }
-
-    protected static boolean foundPatternDiagonal(int[] iArr) {
-        int i = 0;
-        for (int i2 = 0; i2 < 5; i2++) {
-            int i3 = iArr[i2];
-            if (i3 == 0) {
-                return false;
-            }
-            i += i3;
-        }
-        if (i < 7) {
-            return false;
-        }
-        float f = i / 7.0f;
-        float f2 = f / 1.333f;
-        return Math.abs(f - ((float) iArr[0])) < f2 && Math.abs(f - ((float) iArr[1])) < f2 && Math.abs((f * 3.0f) - ((float) iArr[2])) < 3.0f * f2 && Math.abs(f - ((float) iArr[3])) < f2 && Math.abs(f - ((float) iArr[4])) < f2;
-    }
-
-    private int[] getCrossCheckStateCount() {
-        clearCounts(this.crossCheckStateCount);
-        return this.crossCheckStateCount;
     }
 
     private boolean haveMultiplyConfirmedCenters() {
@@ -401,6 +497,12 @@ public class FinderPatternFinder {
             f += Math.abs(((FinderPattern) it.next()).getEstimatedModuleSize() - f3);
         }
         return f <= f2 * 0.05f;
+    }
+
+    private static double squaredDistance(FinderPattern finderPattern, FinderPattern finderPattern2) {
+        double x = finderPattern.getX() - finderPattern2.getX();
+        double y = finderPattern.getY() - finderPattern2.getY();
+        return (x * x) + (y * y);
     }
 
     private FinderPattern[] selectBestPatterns() {
@@ -446,112 +548,13 @@ public class FinderPatternFinder {
         throw NotFoundException.getNotFoundInstance();
     }
 
-    private static double squaredDistance(FinderPattern finderPattern, FinderPattern finderPattern2) {
-        double x = finderPattern.getX() - finderPattern2.getX();
-        double y = finderPattern.getY() - finderPattern2.getY();
-        Double.isNaN(x);
-        Double.isNaN(x);
-        Double.isNaN(y);
-        Double.isNaN(y);
-        return (x * x) + (y * y);
-    }
-
-    protected final void clearCounts(int[] iArr) {
-        Arrays.fill(iArr, 0);
-    }
-
-    final FinderPatternInfo find(Map map) {
-        boolean z = map != null && map.containsKey(DecodeHintType.TRY_HARDER);
-        int height = this.image.getHeight();
-        int width = this.image.getWidth();
-        int i = (height * 3) / 388;
-        if (i < 3 || z) {
-            i = 3;
+    private static final class EstimatedModuleComparator implements Comparator, Serializable {
+        private EstimatedModuleComparator() {
         }
-        int[] iArr = new int[5];
-        int i2 = i - 1;
-        boolean z2 = false;
-        while (i2 < height && !z2) {
-            clearCounts(iArr);
-            int i3 = 0;
-            int i4 = 0;
-            while (i3 < width) {
-                if (this.image.get(i3, i2)) {
-                    if ((i4 & 1) == 1) {
-                        i4++;
-                    }
-                    iArr[i4] = iArr[i4] + 1;
-                } else if ((i4 & 1) != 0) {
-                    iArr[i4] = iArr[i4] + 1;
-                } else if (i4 != 4) {
-                    i4++;
-                    iArr[i4] = iArr[i4] + 1;
-                } else if (foundPatternCross(iArr) && handlePossibleCenter(iArr, i2, i3)) {
-                    if (this.hasSkipped) {
-                        z2 = haveMultiplyConfirmedCenters();
-                    } else {
-                        int findRowSkip = findRowSkip();
-                        int i5 = iArr[2];
-                        if (findRowSkip > i5) {
-                            i2 += (findRowSkip - i5) - 2;
-                            i3 = width - 1;
-                        }
-                    }
-                    clearCounts(iArr);
-                    i = 2;
-                    i4 = 0;
-                } else {
-                    shiftCounts2(iArr);
-                    i4 = 3;
-                }
-                i3++;
-            }
-            if (foundPatternCross(iArr) && handlePossibleCenter(iArr, i2, width)) {
-                i = iArr[0];
-                if (this.hasSkipped) {
-                    z2 = haveMultiplyConfirmedCenters();
-                }
-            }
-            i2 += i;
-        }
-        FinderPattern[] selectBestPatterns = selectBestPatterns();
-        ResultPoint.orderBestPatterns(selectBestPatterns);
-        return new FinderPatternInfo(selectBestPatterns);
-    }
 
-    protected final boolean handlePossibleCenter(int[] iArr, int i, int i2) {
-        int i3 = 0;
-        int i4 = iArr[0] + iArr[1] + iArr[2] + iArr[3] + iArr[4];
-        int centerFromEnd = (int) centerFromEnd(iArr, i2);
-        float crossCheckVertical = crossCheckVertical(i, centerFromEnd, iArr[2], i4);
-        if (!Float.isNaN(crossCheckVertical)) {
-            int i5 = (int) crossCheckVertical;
-            float crossCheckHorizontal = crossCheckHorizontal(centerFromEnd, i5, iArr[2], i4);
-            if (!Float.isNaN(crossCheckHorizontal) && crossCheckDiagonal(i5, (int) crossCheckHorizontal)) {
-                float f = i4 / 7.0f;
-                while (true) {
-                    if (i3 >= this.possibleCenters.size()) {
-                        this.possibleCenters.add(new FinderPattern(crossCheckHorizontal, crossCheckVertical, f));
-                        break;
-                    }
-                    FinderPattern finderPattern = (FinderPattern) this.possibleCenters.get(i3);
-                    if (finderPattern.aboutEquals(f, crossCheckVertical, crossCheckHorizontal)) {
-                        this.possibleCenters.set(i3, finderPattern.combineEstimate(crossCheckVertical, crossCheckHorizontal, f));
-                        break;
-                    }
-                    i3++;
-                }
-                return true;
-            }
+        @Override // java.util.Comparator
+        public int compare(FinderPattern finderPattern, FinderPattern finderPattern2) {
+            return Float.compare(finderPattern.getEstimatedModuleSize(), finderPattern2.getEstimatedModuleSize());
         }
-        return false;
-    }
-
-    protected final void shiftCounts2(int[] iArr) {
-        iArr[0] = iArr[2];
-        iArr[1] = iArr[3];
-        iArr[2] = iArr[4];
-        iArr[3] = 1;
-        iArr[4] = 0;
     }
 }

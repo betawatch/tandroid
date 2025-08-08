@@ -14,54 +14,31 @@ public abstract class PopupWindowCompat {
     private static Method sSetWindowLayoutTypeMethod;
     private static boolean sSetWindowLayoutTypeMethodAttempted;
 
-    static class Api19Impl {
-        static void showAsDropDown(PopupWindow popupWindow, View view, int i, int i2, int i3) {
-            popupWindow.showAsDropDown(view, i, i2, i3);
-        }
-    }
-
-    static class Api23Impl {
-        static boolean getOverlapAnchor(PopupWindow popupWindow) {
-            return popupWindow.getOverlapAnchor();
-        }
-
-        static int getWindowLayoutType(PopupWindow popupWindow) {
-            return popupWindow.getWindowLayoutType();
-        }
-
-        static void setOverlapAnchor(PopupWindow popupWindow, boolean z) {
-            popupWindow.setOverlapAnchor(z);
-        }
-
-        static void setWindowLayoutType(PopupWindow popupWindow, int i) {
-            popupWindow.setWindowLayoutType(i);
-        }
+    public static void showAsDropDown(PopupWindow popupWindow, View view, int i, int i2, int i3) {
+        Api19Impl.showAsDropDown(popupWindow, view, i, i2, i3);
     }
 
     public static void setOverlapAnchor(PopupWindow popupWindow, boolean z) {
-        int i = Build.VERSION.SDK_INT;
-        if (i >= 23) {
+        if (Build.VERSION.SDK_INT >= 23) {
             Api23Impl.setOverlapAnchor(popupWindow, z);
             return;
         }
-        if (i >= 21) {
-            if (!sOverlapAnchorFieldAttempted) {
-                try {
-                    Field declaredField = PopupWindow.class.getDeclaredField("mOverlapAnchor");
-                    sOverlapAnchorField = declaredField;
-                    declaredField.setAccessible(true);
-                } catch (NoSuchFieldException e) {
-                    Log.i("PopupWindowCompatApi21", "Could not fetch mOverlapAnchor field from PopupWindow", e);
-                }
-                sOverlapAnchorFieldAttempted = true;
+        if (!sOverlapAnchorFieldAttempted) {
+            try {
+                Field declaredField = PopupWindow.class.getDeclaredField("mOverlapAnchor");
+                sOverlapAnchorField = declaredField;
+                declaredField.setAccessible(true);
+            } catch (NoSuchFieldException e) {
+                Log.i("PopupWindowCompatApi21", "Could not fetch mOverlapAnchor field from PopupWindow", e);
             }
-            Field field = sOverlapAnchorField;
-            if (field != null) {
-                try {
-                    field.set(popupWindow, Boolean.valueOf(z));
-                } catch (IllegalAccessException e2) {
-                    Log.i("PopupWindowCompatApi21", "Could not set overlap anchor field in PopupWindow", e2);
-                }
+            sOverlapAnchorFieldAttempted = true;
+        }
+        Field field = sOverlapAnchorField;
+        if (field != null) {
+            try {
+                field.set(popupWindow, Boolean.valueOf(z));
+            } catch (IllegalAccessException e2) {
+                Log.i("PopupWindowCompatApi21", "Could not set overlap anchor field in PopupWindow", e2);
             }
         }
     }
@@ -89,7 +66,27 @@ public abstract class PopupWindowCompat {
         }
     }
 
-    public static void showAsDropDown(PopupWindow popupWindow, View view, int i, int i2, int i3) {
-        Api19Impl.showAsDropDown(popupWindow, view, i, i2, i3);
+    static class Api23Impl {
+        static void setOverlapAnchor(PopupWindow popupWindow, boolean z) {
+            popupWindow.setOverlapAnchor(z);
+        }
+
+        static boolean getOverlapAnchor(PopupWindow popupWindow) {
+            return popupWindow.getOverlapAnchor();
+        }
+
+        static void setWindowLayoutType(PopupWindow popupWindow, int i) {
+            popupWindow.setWindowLayoutType(i);
+        }
+
+        static int getWindowLayoutType(PopupWindow popupWindow) {
+            return popupWindow.getWindowLayoutType();
+        }
+    }
+
+    static class Api19Impl {
+        static void showAsDropDown(PopupWindow popupWindow, View view, int i, int i2, int i3) {
+            popupWindow.showAsDropDown(view, i, i2, i3);
+        }
     }
 }

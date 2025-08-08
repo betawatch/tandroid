@@ -13,7 +13,7 @@ public final class zzmh {
         if (i % 2 != 0) {
             return (i | i2) - (i & i2);
         }
-        return ((i ^ (-1)) & i2) | ((i2 ^ (-1)) & i);
+        return ((~i) & i2) | ((~i2) & i);
     }
 
     public static String zzb(String str, byte[] bArr, zzmi zzmiVar) {

@@ -18,7 +18,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class ForumBubbleDrawable extends Drawable {
     static final SparseArray colorsMap;
     private static SvgHelper.SvgDrawable mainDrawable;
@@ -32,6 +32,15 @@ public class ForumBubbleDrawable extends Drawable {
     Matrix gradientMatrix = new Matrix();
     ArrayList parents = new ArrayList();
     int color = -1;
+
+    @Override // android.graphics.drawable.Drawable
+    public int getOpacity() {
+        return 0;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setColorFilter(ColorFilter colorFilter) {
+    }
 
     static {
         SparseArray sparseArray = new SparseArray();
@@ -62,28 +71,6 @@ public class ForumBubbleDrawable extends Drawable {
         setColor(i);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$moveNexColor$0(int[] iArr, ValueAnimator valueAnimator) {
-        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        Paint paint = new Paint(1);
-        LinearGradient linearGradient = new LinearGradient(0.0f, 100.0f, 0.0f, 0.0f, new int[]{ColorUtils.blendARGB(iArr[0], this.currentColors[0], floatValue), ColorUtils.blendARGB(iArr[1], this.currentColors[1], floatValue)}, (float[]) null, Shader.TileMode.CLAMP);
-        this.gradient = linearGradient;
-        linearGradient.setLocalMatrix(this.gradientMatrix);
-        paint.setShader(this.gradient);
-        this.svgDrawable.setPaint(paint, 0);
-        this.topPaint.setColor(ColorUtils.blendARGB(ColorUtils.blendARGB(iArr[1], this.currentColors[1], floatValue), -1, 0.1f));
-        this.strokePaint.setColor(ColorUtils.blendARGB(ColorUtils.blendARGB(iArr[0], this.currentColors[0], floatValue), -16777216, 0.1f));
-        invalidateSelf();
-    }
-
-    public void addParent(View view) {
-        this.parents.add(view);
-    }
-
-    public int colorDistance(int i, int i2) {
-        return Math.abs(Color.red(i) - Color.red(i2)) + Math.abs(Color.green(i) - Color.green(i2)) + Math.abs(Color.blue(i) - Color.blue(i2));
-    }
-
     @Override // android.graphics.drawable.Drawable
     public void draw(Canvas canvas) {
         this.gradientMatrix.reset();
@@ -91,6 +78,11 @@ public class ForumBubbleDrawable extends Drawable {
         this.gradient.setLocalMatrix(this.gradientMatrix);
         this.svgDrawable.setBounds(getBounds());
         this.svgDrawable.draw(canvas);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setAlpha(int i) {
+        this.svgDrawable.setAlpha(i);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -103,17 +95,8 @@ public class ForumBubbleDrawable extends Drawable {
         return AndroidUtilities.dp(24.0f);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public int getOpacity() {
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void invalidateSelf() {
-        super.invalidateSelf();
-        for (int i = 0; i < this.parents.size(); i++) {
-            ((View) this.parents.get(i)).invalidate();
-        }
+    public int colorDistance(int i, int i2) {
+        return Math.abs(Color.red(i) - Color.red(i2)) + Math.abs(Color.green(i) - Color.green(i2)) + Math.abs(Color.blue(i) - Color.blue(i2));
     }
 
     public int moveNexColor() {
@@ -143,9 +126,30 @@ public class ForumBubbleDrawable extends Drawable {
         return iArr[this.colorIndex];
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$moveNexColor$0(int[] iArr, ValueAnimator valueAnimator) {
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        Paint paint = new Paint(1);
+        LinearGradient linearGradient = new LinearGradient(0.0f, 100.0f, 0.0f, 0.0f, new int[]{ColorUtils.blendARGB(iArr[0], this.currentColors[0], floatValue), ColorUtils.blendARGB(iArr[1], this.currentColors[1], floatValue)}, (float[]) null, Shader.TileMode.CLAMP);
+        this.gradient = linearGradient;
+        linearGradient.setLocalMatrix(this.gradientMatrix);
+        paint.setShader(this.gradient);
+        this.svgDrawable.setPaint(paint, 0);
+        this.topPaint.setColor(ColorUtils.blendARGB(ColorUtils.blendARGB(iArr[1], this.currentColors[1], floatValue), -1, 0.1f));
+        this.strokePaint.setColor(ColorUtils.blendARGB(ColorUtils.blendARGB(iArr[0], this.currentColors[0], floatValue), -16777216, 0.1f));
+        invalidateSelf();
+    }
+
+    public void addParent(View view) {
+        this.parents.add(view);
+    }
+
     @Override // android.graphics.drawable.Drawable
-    public void setAlpha(int i) {
-        this.svgDrawable.setAlpha(i);
+    public void invalidateSelf() {
+        super.invalidateSelf();
+        for (int i = 0; i < this.parents.size(); i++) {
+            ((View) this.parents.get(i)).invalidate();
+        }
     }
 
     public void setColor(int i) {
@@ -183,9 +187,5 @@ public class ForumBubbleDrawable extends Drawable {
         this.svgDrawable.setPaint(paint, 0);
         this.topPaint.setColor(ColorUtils.blendARGB(iArr2[1], -1, 0.1f));
         this.strokePaint.setColor(ColorUtils.blendARGB(iArr2[0], -16777216, 0.1f));
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setColorFilter(ColorFilter colorFilter) {
     }
 }

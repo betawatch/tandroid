@@ -35,34 +35,6 @@ public final class GoogleMapOptions extends AbstractSafeParcelable implements Re
     private Integer zzs;
     private String zzt;
 
-    GoogleMapOptions(byte b, byte b2, int i, CameraPosition cameraPosition, byte b3, byte b4, byte b5, byte b6, byte b7, byte b8, byte b9, byte b10, byte b11, Float f, Float f2, LatLngBounds latLngBounds, byte b12, Integer num, String str) {
-        this.zzd = -1;
-        this.zzo = null;
-        this.zzp = null;
-        this.zzq = null;
-        this.zzs = null;
-        this.zzt = null;
-        this.zzb = com.google.android.gms.maps.internal.zza.zzb(b);
-        this.zzc = com.google.android.gms.maps.internal.zza.zzb(b2);
-        this.zzd = i;
-        this.zze = cameraPosition;
-        this.zzf = com.google.android.gms.maps.internal.zza.zzb(b3);
-        this.zzg = com.google.android.gms.maps.internal.zza.zzb(b4);
-        this.zzh = com.google.android.gms.maps.internal.zza.zzb(b5);
-        this.zzi = com.google.android.gms.maps.internal.zza.zzb(b6);
-        this.zzj = com.google.android.gms.maps.internal.zza.zzb(b7);
-        this.zzk = com.google.android.gms.maps.internal.zza.zzb(b8);
-        this.zzl = com.google.android.gms.maps.internal.zza.zzb(b9);
-        this.zzm = com.google.android.gms.maps.internal.zza.zzb(b10);
-        this.zzn = com.google.android.gms.maps.internal.zza.zzb(b11);
-        this.zzo = f;
-        this.zzp = f2;
-        this.zzq = latLngBounds;
-        this.zzr = com.google.android.gms.maps.internal.zza.zzb(b12);
-        this.zzs = num;
-        this.zzt = str;
-    }
-
     public Integer getBackgroundColor() {
         return this.zzs;
     }
@@ -118,5 +90,33 @@ public final class GoogleMapOptions extends AbstractSafeParcelable implements Re
         SafeParcelWriter.writeIntegerObject(parcel, 20, getBackgroundColor(), false);
         SafeParcelWriter.writeString(parcel, 21, getMapId(), false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    GoogleMapOptions(byte b, byte b2, int i, CameraPosition cameraPosition, byte b3, byte b4, byte b5, byte b6, byte b7, byte b8, byte b9, byte b10, byte b11, Float f, Float f2, LatLngBounds latLngBounds, byte b12, Integer num, String str) {
+        this.zzd = -1;
+        this.zzo = null;
+        this.zzp = null;
+        this.zzq = null;
+        this.zzs = null;
+        this.zzt = null;
+        this.zzb = com.google.android.gms.maps.internal.zza.zzb(b);
+        this.zzc = com.google.android.gms.maps.internal.zza.zzb(b2);
+        this.zzd = i;
+        this.zze = cameraPosition;
+        this.zzf = com.google.android.gms.maps.internal.zza.zzb(b3);
+        this.zzg = com.google.android.gms.maps.internal.zza.zzb(b4);
+        this.zzh = com.google.android.gms.maps.internal.zza.zzb(b5);
+        this.zzi = com.google.android.gms.maps.internal.zza.zzb(b6);
+        this.zzj = com.google.android.gms.maps.internal.zza.zzb(b7);
+        this.zzk = com.google.android.gms.maps.internal.zza.zzb(b8);
+        this.zzl = com.google.android.gms.maps.internal.zza.zzb(b9);
+        this.zzm = com.google.android.gms.maps.internal.zza.zzb(b10);
+        this.zzn = com.google.android.gms.maps.internal.zza.zzb(b11);
+        this.zzo = f;
+        this.zzp = f2;
+        this.zzq = latLngBounds;
+        this.zzr = com.google.android.gms.maps.internal.zza.zzb(b12);
+        this.zzs = num;
+        this.zzt = str;
     }
 }

@@ -23,7 +23,7 @@ final class zzsw extends zzsy {
         this.zzc = i3;
         if (i3 > 0) {
             this.zzd = i3;
-            this.zzc = i3 - i3;
+            this.zzc = 0;
         } else {
             this.zzd = 0;
         }

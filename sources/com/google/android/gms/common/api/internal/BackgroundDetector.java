@@ -70,8 +70,9 @@ public final class BackgroundDetector implements Application.ActivityLifecycleCa
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public final void onActivityCreated(Activity activity, Bundle bundle) {
+        AtomicBoolean atomicBoolean = this.zzc;
         boolean compareAndSet = this.zzb.compareAndSet(true, false);
-        this.zzc.set(true);
+        atomicBoolean.set(true);
         if (compareAndSet) {
             zza(false);
         }
@@ -87,8 +88,9 @@ public final class BackgroundDetector implements Application.ActivityLifecycleCa
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public final void onActivityResumed(Activity activity) {
+        AtomicBoolean atomicBoolean = this.zzc;
         boolean compareAndSet = this.zzb.compareAndSet(true, false);
-        this.zzc.set(true);
+        atomicBoolean.set(true);
         if (compareAndSet) {
             zza(false);
         }

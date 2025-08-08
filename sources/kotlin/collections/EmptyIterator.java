@@ -3,12 +3,9 @@ package kotlin.collections;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class EmptyIterator implements ListIterator {
     public static final EmptyIterator INSTANCE = new EmptyIterator();
-
-    private EmptyIterator() {
-    }
 
     @Override // java.util.ListIterator
     public /* bridge */ /* synthetic */ void add(Object obj) {
@@ -25,19 +22,9 @@ public final class EmptyIterator implements ListIterator {
         return false;
     }
 
-    @Override // java.util.ListIterator, java.util.Iterator
-    public Void next() {
-        throw new NoSuchElementException();
-    }
-
     @Override // java.util.ListIterator
     public int nextIndex() {
         return 0;
-    }
-
-    @Override // java.util.ListIterator
-    public Void previous() {
-        throw new NoSuchElementException();
     }
 
     @Override // java.util.ListIterator
@@ -53,5 +40,18 @@ public final class EmptyIterator implements ListIterator {
     @Override // java.util.ListIterator
     public /* bridge */ /* synthetic */ void set(Object obj) {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    }
+
+    private EmptyIterator() {
+    }
+
+    @Override // java.util.ListIterator, java.util.Iterator
+    public Void next() {
+        throw new NoSuchElementException();
+    }
+
+    @Override // java.util.ListIterator
+    public Void previous() {
+        throw new NoSuchElementException();
     }
 }

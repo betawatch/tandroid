@@ -15,11 +15,6 @@ public final class EventMessageEncoder {
         this.dataOutputStream = new DataOutputStream(byteArrayOutputStream);
     }
 
-    private static void writeNullTerminatedString(DataOutputStream dataOutputStream, String str) {
-        dataOutputStream.writeBytes(str);
-        dataOutputStream.writeByte(0);
-    }
-
     public byte[] encode(EventMessage eventMessage) {
         this.byteArrayOutputStream.reset();
         try {
@@ -37,5 +32,10 @@ public final class EventMessageEncoder {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private static void writeNullTerminatedString(DataOutputStream dataOutputStream, String str) {
+        dataOutputStream.writeBytes(str);
+        dataOutputStream.writeByte(0);
     }
 }

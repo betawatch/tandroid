@@ -13,99 +13,6 @@ public final class Splitter {
     private final Strategy strategy;
     private final CharMatcher trimmer;
 
-    private static abstract class SplittingIterator extends AbstractIterator {
-        int limit;
-        int offset = 0;
-        final boolean omitEmptyStrings;
-        final CharSequence toSplit;
-        final CharMatcher trimmer;
-
-        protected SplittingIterator(Splitter splitter, CharSequence charSequence) {
-            this.trimmer = splitter.trimmer;
-            this.omitEmptyStrings = splitter.omitEmptyStrings;
-            this.limit = splitter.limit;
-            this.toSplit = charSequence;
-        }
-
-        /* JADX INFO: Access modifiers changed from: protected */
-        /* JADX WARN: Code restructure failed: missing block: B:17:0x002f, code lost:
-        
-            if (r0 >= r1) goto L48;
-         */
-        /* JADX WARN: Code restructure failed: missing block: B:19:0x003d, code lost:
-        
-            if (r6.trimmer.matches(r6.toSplit.charAt(r0)) == false) goto L47;
-         */
-        /* JADX WARN: Code restructure failed: missing block: B:20:0x003f, code lost:
-        
-            r0 = r0 + 1;
-         */
-        /* JADX WARN: Code restructure failed: missing block: B:23:0x0042, code lost:
-        
-            if (r1 <= r0) goto L49;
-         */
-        /* JADX WARN: Code restructure failed: missing block: B:25:0x0052, code lost:
-        
-            if (r6.trimmer.matches(r6.toSplit.charAt(r1 - 1)) == false) goto L50;
-         */
-        /* JADX WARN: Code restructure failed: missing block: B:26:0x0054, code lost:
-        
-            r1 = r1 - 1;
-         */
-        /* JADX WARN: Code restructure failed: missing block: B:29:0x0059, code lost:
-        
-            if (r6.omitEmptyStrings == false) goto L39;
-         */
-        @Override // com.google.common.base.AbstractIterator
-        /*
-            Code decompiled incorrectly, please refer to instructions dump.
-        */
-        public String computeNext() {
-            int i;
-            int separatorStart;
-            do {
-                i = this.offset;
-                while (true) {
-                    int i2 = this.offset;
-                    if (i2 == -1) {
-                        return (String) endOfData();
-                    }
-                    separatorStart = separatorStart(i2);
-                    if (separatorStart == -1) {
-                        separatorStart = this.toSplit.length();
-                        this.offset = -1;
-                    } else {
-                        this.offset = separatorEnd(separatorStart);
-                    }
-                    int i3 = this.offset;
-                    if (i3 != i) {
-                        break;
-                    }
-                    int i4 = i3 + 1;
-                    this.offset = i4;
-                    if (i4 > this.toSplit.length()) {
-                        this.offset = -1;
-                    }
-                }
-            } while (i == separatorStart);
-            int i5 = this.limit;
-            if (i5 == 1) {
-                separatorStart = this.toSplit.length();
-                this.offset = -1;
-                while (separatorStart > i && this.trimmer.matches(this.toSplit.charAt(separatorStart - 1))) {
-                    separatorStart--;
-                }
-            } else {
-                this.limit = i5 - 1;
-            }
-            return this.toSplit.subSequence(i, separatorStart).toString();
-        }
-
-        abstract int separatorEnd(int i);
-
-        abstract int separatorStart(int i);
-    }
-
     private interface Strategy {
         Iterator iterator(Splitter splitter, CharSequence charSequence);
     }
@@ -157,5 +64,75 @@ public final class Splitter {
             arrayList.add((String) splittingIterator.next());
         }
         return Collections.unmodifiableList(arrayList);
+    }
+
+    private static abstract class SplittingIterator extends AbstractIterator {
+        int limit;
+        int offset = 0;
+        final boolean omitEmptyStrings;
+        final CharSequence toSplit;
+        final CharMatcher trimmer;
+
+        abstract int separatorEnd(int i);
+
+        abstract int separatorStart(int i);
+
+        protected SplittingIterator(Splitter splitter, CharSequence charSequence) {
+            this.trimmer = splitter.trimmer;
+            this.omitEmptyStrings = splitter.omitEmptyStrings;
+            this.limit = splitter.limit;
+            this.toSplit = charSequence;
+        }
+
+        /* JADX INFO: Access modifiers changed from: protected */
+        @Override // com.google.common.base.AbstractIterator
+        public String computeNext() {
+            int separatorStart;
+            int i = this.offset;
+            while (true) {
+                int i2 = this.offset;
+                if (i2 != -1) {
+                    separatorStart = separatorStart(i2);
+                    if (separatorStart == -1) {
+                        separatorStart = this.toSplit.length();
+                        this.offset = -1;
+                    } else {
+                        this.offset = separatorEnd(separatorStart);
+                    }
+                    int i3 = this.offset;
+                    if (i3 == i) {
+                        int i4 = i3 + 1;
+                        this.offset = i4;
+                        if (i4 > this.toSplit.length()) {
+                            this.offset = -1;
+                        }
+                    } else {
+                        while (i < separatorStart && this.trimmer.matches(this.toSplit.charAt(i))) {
+                            i++;
+                        }
+                        while (separatorStart > i && this.trimmer.matches(this.toSplit.charAt(separatorStart - 1))) {
+                            separatorStart--;
+                        }
+                        if (!this.omitEmptyStrings || i != separatorStart) {
+                            break;
+                        }
+                        i = this.offset;
+                    }
+                } else {
+                    return (String) endOfData();
+                }
+            }
+            int i5 = this.limit;
+            if (i5 == 1) {
+                separatorStart = this.toSplit.length();
+                this.offset = -1;
+                while (separatorStart > i && this.trimmer.matches(this.toSplit.charAt(separatorStart - 1))) {
+                    separatorStart--;
+                }
+            } else {
+                this.limit = i5 - 1;
+            }
+            return this.toSplit.subSequence(i, separatorStart).toString();
+        }
     }
 }

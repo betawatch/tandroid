@@ -6,14 +6,19 @@ import android.widget.ListView;
 public class ListViewAutoScrollHelper extends AutoScrollHelper {
     private final ListView mTarget;
 
+    @Override // androidx.core.widget.AutoScrollHelper
+    public boolean canTargetScrollHorizontally(int i) {
+        return false;
+    }
+
     public ListViewAutoScrollHelper(ListView listView) {
         super(listView);
         this.mTarget = listView;
     }
 
     @Override // androidx.core.widget.AutoScrollHelper
-    public boolean canTargetScrollHorizontally(int i) {
-        return false;
+    public void scrollTargetBy(int i, int i2) {
+        ListViewCompat.scrollListBy(this.mTarget, i2);
     }
 
     @Override // androidx.core.widget.AutoScrollHelper
@@ -39,10 +44,5 @@ public class ListViewAutoScrollHelper extends AutoScrollHelper {
             }
         }
         return true;
-    }
-
-    @Override // androidx.core.widget.AutoScrollHelper
-    public void scrollTargetBy(int i, int i2) {
-        ListViewCompat.scrollListBy(this.mTarget, i2);
     }
 }

@@ -34,31 +34,6 @@ public final class LoyaltyWalletObject extends AbstractSafeParcelable {
     ArrayList zzu;
     LoyaltyPoints zzv;
 
-    LoyaltyWalletObject(String str, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9, String str10, int i, ArrayList arrayList, TimeInterval timeInterval, ArrayList arrayList2, String str11, String str12, ArrayList arrayList3, boolean z, ArrayList arrayList4, ArrayList arrayList5, ArrayList arrayList6, LoyaltyPoints loyaltyPoints) {
-        this.zza = str;
-        this.zzb = str2;
-        this.zzc = str3;
-        this.zzd = str4;
-        this.zze = str5;
-        this.zzf = str6;
-        this.zzg = str7;
-        this.zzh = str8;
-        this.zzi = str9;
-        this.zzj = str10;
-        this.zzk = i;
-        this.zzl = arrayList;
-        this.zzm = timeInterval;
-        this.zzn = arrayList2;
-        this.zzo = str11;
-        this.zzp = str12;
-        this.zzq = arrayList3;
-        this.zzr = z;
-        this.zzs = arrayList4;
-        this.zzt = arrayList5;
-        this.zzu = arrayList6;
-        this.zzv = loyaltyPoints;
-    }
-
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
@@ -85,5 +60,30 @@ public final class LoyaltyWalletObject extends AbstractSafeParcelable {
         SafeParcelWriter.writeTypedList(parcel, 22, this.zzu, false);
         SafeParcelWriter.writeParcelable(parcel, 23, this.zzv, i, false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    LoyaltyWalletObject(String str, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9, String str10, int i, ArrayList arrayList, TimeInterval timeInterval, ArrayList arrayList2, String str11, String str12, ArrayList arrayList3, boolean z, ArrayList arrayList4, ArrayList arrayList5, ArrayList arrayList6, LoyaltyPoints loyaltyPoints) {
+        this.zza = str;
+        this.zzb = str2;
+        this.zzc = str3;
+        this.zzd = str4;
+        this.zze = str5;
+        this.zzf = str6;
+        this.zzg = str7;
+        this.zzh = str8;
+        this.zzi = str9;
+        this.zzj = str10;
+        this.zzk = i;
+        this.zzl = arrayList;
+        this.zzm = timeInterval;
+        this.zzn = arrayList2;
+        this.zzo = str11;
+        this.zzp = str12;
+        this.zzq = arrayList3;
+        this.zzr = z;
+        this.zzs = arrayList4;
+        this.zzt = arrayList5;
+        this.zzu = arrayList6;
+        this.zzv = loyaltyPoints;
     }
 }

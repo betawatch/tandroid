@@ -22,11 +22,6 @@ public final class zzjy extends LinkedHashMap {
         this.zzb = true;
     }
 
-    private zzjy(Map map) {
-        super(map);
-        this.zzb = true;
-    }
-
     public static zzjy zza() {
         return zza;
     }
@@ -147,5 +142,10 @@ public final class zzjy extends LinkedHashMap {
 
     public final boolean zze() {
         return this.zzb;
+    }
+
+    private zzjy(Map map) {
+        super(map);
+        this.zzb = true;
     }
 }

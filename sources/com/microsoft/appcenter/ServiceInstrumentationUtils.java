@@ -3,7 +3,7 @@ package com.microsoft.appcenter;
 import com.microsoft.appcenter.utils.AppCenterLog;
 import com.microsoft.appcenter.utils.InstrumentationRegistryHelper;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 abstract class ServiceInstrumentationUtils {
     static boolean isServiceDisabledByInstrumentation(String str) {
         try {

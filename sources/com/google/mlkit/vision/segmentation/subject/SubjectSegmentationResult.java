@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 import java.nio.FloatBuffer;
 import java.util.List;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class SubjectSegmentationResult {
     private final List zza;
     private final FloatBuffer zzb;

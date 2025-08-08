@@ -8,7 +8,6 @@ import android.content.Context;
 import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.util.Property;
 import android.view.MotionEvent;
 import android.view.View;
@@ -54,213 +53,25 @@ public class ChatAttachAlertQuickRepliesLayout extends ChatAttachAlert.AttachAle
     private View shadow;
     private AnimatorSet shadowAnimation;
 
-    public class ShareAdapter extends RecyclerListView.SectionsAdapter {
-        private int currentAccount;
-        private Context mContext;
-        private ArrayList replies;
-
-        public ShareAdapter(Context context) {
-            ArrayList arrayList = new ArrayList();
-            this.replies = arrayList;
-            int i = UserConfig.selectedAccount;
-            this.currentAccount = i;
-            this.mContext = context;
-            arrayList.addAll(QuickRepliesController.getInstance(i).getFilteredReplies());
-        }
-
-        @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter
-        public int getCountForSection(int i) {
-            if (i == 0 || i == getSectionCount() - 1) {
-                return 1;
-            }
-            return this.replies.size();
-        }
-
-        @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter
-        public Object getItem(int i, int i2) {
-            if (i != 0 && i2 >= 0 && i2 < this.replies.size()) {
-                return this.replies.get(i2);
-            }
-            return null;
-        }
-
-        @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter
-        public int getItemViewType(int i, int i2) {
-            if (i == 0) {
-                return 1;
-            }
-            return i == getSectionCount() - 1 ? 2 : 0;
-        }
-
-        @Override // org.telegram.ui.Components.RecyclerListView.FastScrollAdapter
-        public String getLetter(int i) {
-            return null;
-        }
-
-        @Override // org.telegram.ui.Components.RecyclerListView.FastScrollAdapter
-        public void getPositionForScrollProgress(RecyclerListView recyclerListView, float f, int[] iArr) {
-            iArr[0] = 0;
-            iArr[1] = 0;
-        }
-
-        @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter
-        public int getSectionCount() {
-            return 3;
-        }
-
-        @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter
-        public View getSectionHeaderView(int i, View view) {
-            return null;
-        }
-
-        @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter
-        public boolean isEnabled(RecyclerView.ViewHolder viewHolder, int i, int i2) {
-            return (i == 0 || i == getSectionCount() - 1 || i2 >= this.replies.size()) ? false : true;
-        }
-
-        @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter, androidx.recyclerview.widget.RecyclerView.Adapter
-        public void notifyDataSetChanged() {
-            this.replies.clear();
-            this.replies.addAll(QuickRepliesController.getInstance(this.currentAccount).getFilteredReplies());
-            super.notifyDataSetChanged();
-            ChatAttachAlertQuickRepliesLayout.this.updateEmptyView();
-        }
-
-        @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter
-        public void onBindViewHolder(int i, int i2, RecyclerView.ViewHolder viewHolder) {
-            if (viewHolder.getItemViewType() == 0) {
-                QuickRepliesActivity.QuickReplyView quickReplyView = (QuickRepliesActivity.QuickReplyView) viewHolder.itemView;
-                Object item = getItem(i, i2);
-                boolean z = true;
-                if (i == getSectionCount() - 2 && i2 == getCountForSection(i) - 1) {
-                    z = false;
-                }
-                if (item instanceof QuickRepliesController.QuickReply) {
-                    QuickRepliesController.QuickReply quickReply = (QuickRepliesController.QuickReply) item;
-                    quickReplyView.set(quickReply, null, z);
-                    quickReplyView.setChecked(ChatAttachAlertQuickRepliesLayout.this.selectedReplies.contains(Integer.valueOf(quickReply.id)), false);
-                }
-            }
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-            View quickReplyView;
-            if (i == 0) {
-                quickReplyView = new QuickRepliesActivity.QuickReplyView(this.mContext, false, ((ChatAttachAlert.AttachAlertLayout) ChatAttachAlertQuickRepliesLayout.this).resourcesProvider);
-            } else if (i != 1) {
-                quickReplyView = new View(this.mContext);
-            } else {
-                quickReplyView = new View(this.mContext);
-                quickReplyView.setLayoutParams(new RecyclerView.LayoutParams(-1, AndroidUtilities.dp(56.0f)));
-            }
-            return new RecyclerListView.Holder(quickReplyView);
-        }
-    }
-
-    public class ShareSearchAdapter extends RecyclerListView.SelectionAdapter {
-        public String lastQuery;
-        private Context mContext;
-        private ArrayList searchResult = new ArrayList();
-        private Runnable searchRunnable;
-
-        public ShareSearchAdapter(Context context) {
-            this.mContext = context;
-        }
-
-        public Object getItem(int i) {
-            int i2 = i - 1;
-            if (i2 < 0 || i2 >= this.searchResult.size()) {
-                return null;
-            }
-            return this.searchResult.get(i2);
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public int getItemCount() {
-            return this.searchResult.size() + 2;
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public int getItemViewType(int i) {
-            if (i == 0) {
-                return 1;
-            }
-            return i == getItemCount() - 1 ? 2 : 0;
-        }
-
-        @Override // org.telegram.ui.Components.RecyclerListView.SelectionAdapter
-        public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
-            return viewHolder.getItemViewType() == 0;
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public void notifyDataSetChanged() {
-            super.notifyDataSetChanged();
-            ChatAttachAlertQuickRepliesLayout.this.updateEmptyView();
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
-            if (viewHolder.getItemViewType() == 0) {
-                QuickRepliesActivity.QuickReplyView quickReplyView = (QuickRepliesActivity.QuickReplyView) viewHolder.itemView;
-                boolean z = i != getItemCount() + (-2);
-                Object item = getItem(i);
-                if (item instanceof QuickRepliesController.QuickReply) {
-                    QuickRepliesController.QuickReply quickReply = (QuickRepliesController.QuickReply) item;
-                    quickReplyView.set(quickReply, this.lastQuery, z);
-                    quickReplyView.setChecked(ChatAttachAlertQuickRepliesLayout.this.selectedReplies.contains(Integer.valueOf(quickReply.id)), false);
-                }
-            }
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-            View quickReplyView;
-            if (i == 0) {
-                quickReplyView = new QuickRepliesActivity.QuickReplyView(this.mContext, false, ((ChatAttachAlert.AttachAlertLayout) ChatAttachAlertQuickRepliesLayout.this).resourcesProvider);
-            } else if (i != 1) {
-                quickReplyView = new View(this.mContext);
-            } else {
-                quickReplyView = new View(this.mContext);
-                quickReplyView.setLayoutParams(new RecyclerView.LayoutParams(-1, AndroidUtilities.dp(56.0f)));
-            }
-            return new RecyclerListView.Holder(quickReplyView);
-        }
-
-        public void search(String str) {
-            if (this.searchRunnable != null) {
-                Utilities.searchQueue.cancelRunnable(this.searchRunnable);
-                this.searchRunnable = null;
-            }
-            this.searchResult.clear();
-            this.lastQuery = str;
-            if (str != null) {
-                String translitSafe = AndroidUtilities.translitSafe(str);
-                if (translitSafe.startsWith("/")) {
-                    translitSafe = translitSafe.substring(1);
-                }
-                QuickRepliesController quickRepliesController = QuickRepliesController.getInstance(UserConfig.selectedAccount);
-                for (int i = 0; i < quickRepliesController.replies.size(); i++) {
-                    QuickRepliesController.QuickReply quickReply = (QuickRepliesController.QuickReply) quickRepliesController.replies.get(i);
-                    if (!quickReply.isSpecial()) {
-                        String translitSafe2 = AndroidUtilities.translitSafe(quickReply.name);
-                        if (!translitSafe2.startsWith(translitSafe)) {
-                            if (!translitSafe2.contains(" " + translitSafe)) {
-                            }
-                        }
-                        this.searchResult.add(quickReply);
-                    }
-                }
-            }
-            if (ChatAttachAlertQuickRepliesLayout.this.listView.getAdapter() != ChatAttachAlertQuickRepliesLayout.this.searchAdapter) {
-                ChatAttachAlertQuickRepliesLayout.this.listView.setAdapter(ChatAttachAlertQuickRepliesLayout.this.searchAdapter);
-            }
-            notifyDataSetChanged();
-        }
-    }
-
     public static class UserCell extends FrameLayout {
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public void didReceivedNotification(int i, int i2, Object... objArr) {
+    }
+
+    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
+    public int getSelectedItemsCount() {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
+    public void onDestroy() {
+    }
+
+    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
+    public boolean sendSelectedItems(boolean z, int i, long j, boolean z2) {
+        return false;
     }
 
     public ChatAttachAlertQuickRepliesLayout(ChatAttachAlert chatAttachAlert, Context context, Theme.ResourcesProvider resourcesProvider) {
@@ -271,17 +82,6 @@ public class ChatAttachAlertQuickRepliesLayout extends ChatAttachAlert.AttachAle
         this.frameLayout = frameLayout;
         frameLayout.setBackgroundColor(getThemedColor(Theme.key_dialogBackground));
         SearchField searchField = new SearchField(context, false, resourcesProvider) { // from class: org.telegram.ui.Business.ChatAttachAlertQuickRepliesLayout.1
-            @Override // org.telegram.ui.Components.SearchField
-            protected void onFieldTouchUp(EditTextBoldCursor editTextBoldCursor) {
-                ((ChatAttachAlert.AttachAlertLayout) ChatAttachAlertQuickRepliesLayout.this).parentAlert.makeFocusable(editTextBoldCursor, true);
-            }
-
-            @Override // android.view.ViewGroup
-            public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-                ((ChatAttachAlert.AttachAlertLayout) ChatAttachAlertQuickRepliesLayout.this).parentAlert.makeFocusable(getSearchEditText(), true);
-                return super.onInterceptTouchEvent(motionEvent);
-            }
-
             @Override // org.telegram.ui.Components.SearchField
             public void onTextChange(String str) {
                 if (str.length() != 0) {
@@ -302,12 +102,23 @@ public class ChatAttachAlertQuickRepliesLayout extends ChatAttachAlert.AttachAle
                 }
             }
 
+            @Override // android.view.ViewGroup
+            public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+                ((ChatAttachAlert.AttachAlertLayout) ChatAttachAlertQuickRepliesLayout.this).parentAlert.makeFocusable(getSearchEditText(), true);
+                return super.onInterceptTouchEvent(motionEvent);
+            }
+
             @Override // org.telegram.ui.Components.SearchField
             public void processTouchEvent(MotionEvent motionEvent) {
                 MotionEvent obtain = MotionEvent.obtain(motionEvent);
                 obtain.setLocation(obtain.getRawX(), (obtain.getRawY() - ((ChatAttachAlert.AttachAlertLayout) ChatAttachAlertQuickRepliesLayout.this).parentAlert.getSheetContainer().getTranslationY()) - AndroidUtilities.dp(58.0f));
                 ChatAttachAlertQuickRepliesLayout.this.listView.dispatchTouchEvent(obtain);
                 obtain.recycle();
+            }
+
+            @Override // org.telegram.ui.Components.SearchField
+            protected void onFieldTouchUp(EditTextBoldCursor editTextBoldCursor) {
+                ((ChatAttachAlert.AttachAlertLayout) ChatAttachAlertQuickRepliesLayout.this).parentAlert.makeFocusable(editTextBoldCursor, true);
             }
         };
         this.searchField = searchField;
@@ -320,7 +131,7 @@ public class ChatAttachAlertQuickRepliesLayout extends ChatAttachAlert.AttachAle
         this.listView = new RecyclerListView(context, resourcesProvider) { // from class: org.telegram.ui.Business.ChatAttachAlertQuickRepliesLayout.2
             @Override // org.telegram.ui.Components.RecyclerListView
             protected boolean allowSelectChildAtPosition(float f, float f2) {
-                return f2 >= ((float) ((((ChatAttachAlert.AttachAlertLayout) ChatAttachAlertQuickRepliesLayout.this).parentAlert.scrollOffsetY[0] + AndroidUtilities.dp(30.0f)) + ((Build.VERSION.SDK_INT < 21 || ((ChatAttachAlert.AttachAlertLayout) ChatAttachAlertQuickRepliesLayout.this).parentAlert.inBubbleMode) ? 0 : AndroidUtilities.statusBarHeight)));
+                return f2 >= ((float) ((((ChatAttachAlert.AttachAlertLayout) ChatAttachAlertQuickRepliesLayout.this).parentAlert.scrollOffsetY[0] + AndroidUtilities.dp(30.0f)) + (!((ChatAttachAlert.AttachAlertLayout) ChatAttachAlertQuickRepliesLayout.this).parentAlert.inBubbleMode ? AndroidUtilities.statusBarHeight : 0)));
             }
 
             @Override // androidx.recyclerview.widget.RecyclerView
@@ -393,42 +204,6 @@ public class ChatAttachAlertQuickRepliesLayout extends ChatAttachAlert.AttachAle
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public int getCurrentTop() {
-        if (this.listView.getChildCount() == 0) {
-            return -1000;
-        }
-        int i = 0;
-        View childAt = this.listView.getChildAt(0);
-        RecyclerListView.Holder holder = (RecyclerListView.Holder) this.listView.findContainingViewHolder(childAt);
-        if (holder == null) {
-            return -1000;
-        }
-        int paddingTop = this.listView.getPaddingTop();
-        if (holder.getAdapterPosition() == 0 && childAt.getTop() >= 0) {
-            i = childAt.getTop();
-        }
-        return paddingTop - i;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$getThemeDescriptions$4() {
-        RecyclerListView recyclerListView = this.listView;
-        if (recyclerListView != null) {
-            int childCount = recyclerListView.getChildCount();
-            for (int i = 0; i < childCount; i++) {
-                this.listView.getChildAt(i);
-            }
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$0(View view) {
-        if (view instanceof QuickRepliesActivity.QuickReplyView) {
-            ((QuickRepliesActivity.QuickReplyView) view).invalidateEmojis();
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$1(Object[] objArr) {
         AndroidUtilities.forEachViews((RecyclerView) this.listView, new Consumer() { // from class: org.telegram.ui.Business.ChatAttachAlertQuickRepliesLayout$$ExternalSyntheticLambda3
             @Override // com.google.android.exoplayer2.util.Consumer
@@ -439,9 +214,10 @@ public class ChatAttachAlertQuickRepliesLayout extends ChatAttachAlert.AttachAle
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(Object obj, Long l) {
-        QuickRepliesController.getInstance(UserConfig.selectedAccount).sendQuickReplyTo(this.parentAlert.getDialogId(), (QuickRepliesController.QuickReply) obj);
-        this.parentAlert.lambda$new$0();
+    public static /* synthetic */ void lambda$new$0(View view) {
+        if (view instanceof QuickRepliesActivity.QuickReplyView) {
+            ((QuickRepliesActivity.QuickReplyView) view).invalidateEmojis();
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -461,7 +237,11 @@ public class ChatAttachAlertQuickRepliesLayout extends ChatAttachAlert.AttachAle
             }
         }
         if (item instanceof QuickRepliesController.QuickReply) {
-            if (UserConfig.getInstance(this.parentAlert.currentAccount).isPremium()) {
+            if (!UserConfig.getInstance(this.parentAlert.currentAccount).isPremium()) {
+                if (this.parentAlert.baseFragment != null) {
+                    new PremiumFeatureBottomSheet(this.parentAlert.baseFragment, getContext(), this.parentAlert.currentAccount, true, 31, false, null).show();
+                }
+            } else {
                 ChatAttachAlert chatAttachAlert = this.parentAlert;
                 AlertsCreator.ensurePaidMessageConfirmation(chatAttachAlert.currentAccount, chatAttachAlert.getDialogId(), ((QuickRepliesController.QuickReply) item).getMessagesCount(), new Utilities.Callback() { // from class: org.telegram.ui.Business.ChatAttachAlertQuickRepliesLayout$$ExternalSyntheticLambda4
                     @Override // org.telegram.messenger.Utilities.Callback
@@ -469,10 +249,86 @@ public class ChatAttachAlertQuickRepliesLayout extends ChatAttachAlert.AttachAle
                         ChatAttachAlertQuickRepliesLayout.this.lambda$new$2(item, (Long) obj);
                     }
                 });
-            } else if (this.parentAlert.baseFragment != null) {
-                new PremiumFeatureBottomSheet(this.parentAlert.baseFragment, getContext(), this.parentAlert.currentAccount, true, 31, false, null).show();
             }
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$2(Object obj, Long l) {
+        QuickRepliesController.getInstance(UserConfig.selectedAccount).sendQuickReplyTo(this.parentAlert.getDialogId(), (QuickRepliesController.QuickReply) obj);
+        this.parentAlert.lambda$new$0();
+    }
+
+    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
+    public void scrollToTop() {
+        this.listView.smoothScrollToPosition(0);
+    }
+
+    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
+    public int getCurrentItemTop() {
+        if (this.listView.getChildCount() <= 0) {
+            return ConnectionsManager.DEFAULT_DATACENTER_ID;
+        }
+        View childAt = this.listView.getChildAt(0);
+        RecyclerListView.Holder holder = (RecyclerListView.Holder) this.listView.findContainingViewHolder(childAt);
+        int top = childAt.getTop() - AndroidUtilities.dp(8.0f);
+        int i = (top <= 0 || holder == null || holder.getAdapterPosition() != 0) ? 0 : top;
+        if (top >= 0 && holder != null && holder.getAdapterPosition() == 0) {
+            runShadowAnimation(false);
+        } else {
+            runShadowAnimation(true);
+            top = i;
+        }
+        this.frameLayout.setTranslationY(top);
+        return top + AndroidUtilities.dp(12.0f);
+    }
+
+    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
+    public int getFirstOffset() {
+        return getListTopPadding() + AndroidUtilities.dp(4.0f);
+    }
+
+    @Override // android.view.View
+    public void setTranslationY(float f) {
+        super.setTranslationY(f);
+        this.parentAlert.getSheetContainer().invalidate();
+    }
+
+    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
+    public int getListTopPadding() {
+        return this.listView.getPaddingTop();
+    }
+
+    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
+    public void onPreMeasure(int i, int i2) {
+        int i3;
+        if (this.parentAlert.sizeNotifierFrameLayout.measureKeyboardHeight() > AndroidUtilities.dp(20.0f)) {
+            i3 = AndroidUtilities.dp(8.0f);
+            this.parentAlert.setAllowNestedScroll(false);
+        } else {
+            if (!AndroidUtilities.isTablet()) {
+                Point point = AndroidUtilities.displaySize;
+                if (point.x > point.y) {
+                    i3 = (int) (i2 / 3.5f);
+                    this.parentAlert.setAllowNestedScroll(true);
+                }
+            }
+            i3 = (i2 / 5) * 2;
+            this.parentAlert.setAllowNestedScroll(true);
+        }
+        if (this.listView.getPaddingTop() != i3) {
+            this.ignoreLayout = true;
+            this.listView.setPadding(0, i3, 0, AndroidUtilities.dp(48.0f));
+            this.ignoreLayout = false;
+        }
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public void requestLayout() {
+        if (this.ignoreLayout) {
+            return;
+        }
+        super.requestLayout();
     }
 
     private void runShadowAnimation(final boolean z) {
@@ -493,14 +349,6 @@ public class ChatAttachAlertQuickRepliesLayout extends ChatAttachAlert.AttachAle
         this.shadowAnimation.setDuration(150L);
         this.shadowAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Business.ChatAttachAlertQuickRepliesLayout.5
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-            public void onAnimationCancel(Animator animator) {
-                if (ChatAttachAlertQuickRepliesLayout.this.shadowAnimation == null || !ChatAttachAlertQuickRepliesLayout.this.shadowAnimation.equals(animator)) {
-                    return;
-                }
-                ChatAttachAlertQuickRepliesLayout.this.shadowAnimation = null;
-            }
-
-            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 if (ChatAttachAlertQuickRepliesLayout.this.shadowAnimation == null || !ChatAttachAlertQuickRepliesLayout.this.shadowAnimation.equals(animator)) {
                     return;
@@ -510,13 +358,44 @@ public class ChatAttachAlertQuickRepliesLayout extends ChatAttachAlert.AttachAle
                 }
                 ChatAttachAlertQuickRepliesLayout.this.shadowAnimation = null;
             }
+
+            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+            public void onAnimationCancel(Animator animator) {
+                if (ChatAttachAlertQuickRepliesLayout.this.shadowAnimation == null || !ChatAttachAlertQuickRepliesLayout.this.shadowAnimation.equals(animator)) {
+                    return;
+                }
+                ChatAttachAlertQuickRepliesLayout.this.shadowAnimation = null;
+            }
         });
         this.shadowAnimation.start();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void updateEmptyView() {
-        this.emptyView.setVisibility(this.listView.getAdapter().getItemCount() == 2 ? 0 : 8);
+    public int getCurrentTop() {
+        if (this.listView.getChildCount() == 0) {
+            return -1000;
+        }
+        int i = 0;
+        View childAt = this.listView.getChildAt(0);
+        RecyclerListView.Holder holder = (RecyclerListView.Holder) this.listView.findContainingViewHolder(childAt);
+        if (holder == null) {
+            return -1000;
+        }
+        int paddingTop = this.listView.getPaddingTop();
+        if (holder.getAdapterPosition() == 0 && childAt.getTop() >= 0) {
+            i = childAt.getTop();
+        }
+        return paddingTop - i;
+    }
+
+    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
+    public void onShow(ChatAttachAlert.AttachAlertLayout attachAlertLayout) {
+        this.layoutManager.scrollToPositionWithOffset(0, 0);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
         updateEmptyViewPosition();
     }
 
@@ -528,42 +407,216 @@ public class ChatAttachAlertQuickRepliesLayout extends ChatAttachAlert.AttachAle
         }
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public void didReceivedNotification(int i, int i2, Object... objArr) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public void updateEmptyView() {
+        this.emptyView.setVisibility(this.listView.getAdapter().getItemCount() == 2 ? 0 : 8);
+        updateEmptyViewPosition();
     }
 
-    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public int getCurrentItemTop() {
-        if (this.listView.getChildCount() <= 0) {
-            return ConnectionsManager.DEFAULT_DATACENTER_ID;
+    public class ShareAdapter extends RecyclerListView.SectionsAdapter {
+        private int currentAccount;
+        private Context mContext;
+        private ArrayList replies;
+
+        @Override // org.telegram.ui.Components.RecyclerListView.FastScrollAdapter
+        public String getLetter(int i) {
+            return null;
         }
-        View childAt = this.listView.getChildAt(0);
-        RecyclerListView.Holder holder = (RecyclerListView.Holder) this.listView.findContainingViewHolder(childAt);
-        int top = childAt.getTop() - AndroidUtilities.dp(8.0f);
-        int i = (top <= 0 || holder == null || holder.getAdapterPosition() != 0) ? 0 : top;
-        if (top < 0 || holder == null || holder.getAdapterPosition() != 0) {
-            runShadowAnimation(true);
-            top = i;
-        } else {
-            runShadowAnimation(false);
+
+        @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter
+        public int getSectionCount() {
+            return 3;
         }
-        this.frameLayout.setTranslationY(top);
-        return top + AndroidUtilities.dp(12.0f);
+
+        @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter
+        public View getSectionHeaderView(int i, View view) {
+            return null;
+        }
+
+        public ShareAdapter(Context context) {
+            ArrayList arrayList = new ArrayList();
+            this.replies = arrayList;
+            int i = UserConfig.selectedAccount;
+            this.currentAccount = i;
+            this.mContext = context;
+            arrayList.addAll(QuickRepliesController.getInstance(i).getFilteredReplies());
+        }
+
+        @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter
+        public Object getItem(int i, int i2) {
+            if (i != 0 && i2 >= 0 && i2 < this.replies.size()) {
+                return this.replies.get(i2);
+            }
+            return null;
+        }
+
+        @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter
+        public boolean isEnabled(RecyclerView.ViewHolder viewHolder, int i, int i2) {
+            return (i == 0 || i == getSectionCount() - 1 || i2 >= this.replies.size()) ? false : true;
+        }
+
+        @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter
+        public int getCountForSection(int i) {
+            if (i == 0 || i == getSectionCount() - 1) {
+                return 1;
+            }
+            return this.replies.size();
+        }
+
+        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+        public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+            View quickReplyView;
+            if (i == 0) {
+                quickReplyView = new QuickRepliesActivity.QuickReplyView(this.mContext, false, ((ChatAttachAlert.AttachAlertLayout) ChatAttachAlertQuickRepliesLayout.this).resourcesProvider);
+            } else if (i == 1) {
+                quickReplyView = new View(this.mContext);
+                quickReplyView.setLayoutParams(new RecyclerView.LayoutParams(-1, AndroidUtilities.dp(56.0f)));
+            } else {
+                quickReplyView = new View(this.mContext);
+            }
+            return new RecyclerListView.Holder(quickReplyView);
+        }
+
+        @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter
+        public void onBindViewHolder(int i, int i2, RecyclerView.ViewHolder viewHolder) {
+            if (viewHolder.getItemViewType() == 0) {
+                QuickRepliesActivity.QuickReplyView quickReplyView = (QuickRepliesActivity.QuickReplyView) viewHolder.itemView;
+                Object item = getItem(i, i2);
+                boolean z = true;
+                if (i == getSectionCount() - 2 && i2 == getCountForSection(i) - 1) {
+                    z = false;
+                }
+                if (item instanceof QuickRepliesController.QuickReply) {
+                    QuickRepliesController.QuickReply quickReply = (QuickRepliesController.QuickReply) item;
+                    quickReplyView.set(quickReply, null, z);
+                    quickReplyView.setChecked(ChatAttachAlertQuickRepliesLayout.this.selectedReplies.contains(Integer.valueOf(quickReply.id)), false);
+                }
+            }
+        }
+
+        @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter
+        public int getItemViewType(int i, int i2) {
+            if (i == 0) {
+                return 1;
+            }
+            return i == getSectionCount() - 1 ? 2 : 0;
+        }
+
+        @Override // org.telegram.ui.Components.RecyclerListView.FastScrollAdapter
+        public void getPositionForScrollProgress(RecyclerListView recyclerListView, float f, int[] iArr) {
+            iArr[0] = 0;
+            iArr[1] = 0;
+        }
+
+        @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter, androidx.recyclerview.widget.RecyclerView.Adapter
+        public void notifyDataSetChanged() {
+            this.replies.clear();
+            this.replies.addAll(QuickRepliesController.getInstance(this.currentAccount).getFilteredReplies());
+            super.notifyDataSetChanged();
+            ChatAttachAlertQuickRepliesLayout.this.updateEmptyView();
+        }
     }
 
-    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public int getFirstOffset() {
-        return getListTopPadding() + AndroidUtilities.dp(4.0f);
-    }
+    public class ShareSearchAdapter extends RecyclerListView.SelectionAdapter {
+        public String lastQuery;
+        private Context mContext;
+        private ArrayList searchResult = new ArrayList();
+        private Runnable searchRunnable;
 
-    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public int getListTopPadding() {
-        return this.listView.getPaddingTop();
-    }
+        public ShareSearchAdapter(Context context) {
+            this.mContext = context;
+        }
 
-    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public int getSelectedItemsCount() {
-        return 0;
+        public void search(String str) {
+            if (this.searchRunnable != null) {
+                Utilities.searchQueue.cancelRunnable(this.searchRunnable);
+                this.searchRunnable = null;
+            }
+            this.searchResult.clear();
+            this.lastQuery = str;
+            if (str != null) {
+                String translitSafe = AndroidUtilities.translitSafe(str);
+                if (translitSafe.startsWith("/")) {
+                    translitSafe = translitSafe.substring(1);
+                }
+                QuickRepliesController quickRepliesController = QuickRepliesController.getInstance(UserConfig.selectedAccount);
+                for (int i = 0; i < quickRepliesController.replies.size(); i++) {
+                    QuickRepliesController.QuickReply quickReply = (QuickRepliesController.QuickReply) quickRepliesController.replies.get(i);
+                    if (!quickReply.isSpecial()) {
+                        String translitSafe2 = AndroidUtilities.translitSafe(quickReply.name);
+                        if (!translitSafe2.startsWith(translitSafe)) {
+                            if (!translitSafe2.contains(" " + translitSafe)) {
+                            }
+                        }
+                        this.searchResult.add(quickReply);
+                    }
+                }
+            }
+            if (ChatAttachAlertQuickRepliesLayout.this.listView.getAdapter() != ChatAttachAlertQuickRepliesLayout.this.searchAdapter) {
+                ChatAttachAlertQuickRepliesLayout.this.listView.setAdapter(ChatAttachAlertQuickRepliesLayout.this.searchAdapter);
+            }
+            notifyDataSetChanged();
+        }
+
+        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+        public int getItemCount() {
+            return this.searchResult.size() + 2;
+        }
+
+        public Object getItem(int i) {
+            int i2 = i - 1;
+            if (i2 < 0 || i2 >= this.searchResult.size()) {
+                return null;
+            }
+            return this.searchResult.get(i2);
+        }
+
+        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+        public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+            View quickReplyView;
+            if (i == 0) {
+                quickReplyView = new QuickRepliesActivity.QuickReplyView(this.mContext, false, ((ChatAttachAlert.AttachAlertLayout) ChatAttachAlertQuickRepliesLayout.this).resourcesProvider);
+            } else if (i == 1) {
+                quickReplyView = new View(this.mContext);
+                quickReplyView.setLayoutParams(new RecyclerView.LayoutParams(-1, AndroidUtilities.dp(56.0f)));
+            } else {
+                quickReplyView = new View(this.mContext);
+            }
+            return new RecyclerListView.Holder(quickReplyView);
+        }
+
+        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+        public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
+            if (viewHolder.getItemViewType() == 0) {
+                QuickRepliesActivity.QuickReplyView quickReplyView = (QuickRepliesActivity.QuickReplyView) viewHolder.itemView;
+                boolean z = i != getItemCount() + (-2);
+                Object item = getItem(i);
+                if (item instanceof QuickRepliesController.QuickReply) {
+                    QuickRepliesController.QuickReply quickReply = (QuickRepliesController.QuickReply) item;
+                    quickReplyView.set(quickReply, this.lastQuery, z);
+                    quickReplyView.setChecked(ChatAttachAlertQuickRepliesLayout.this.selectedReplies.contains(Integer.valueOf(quickReply.id)), false);
+                }
+            }
+        }
+
+        @Override // org.telegram.ui.Components.RecyclerListView.SelectionAdapter
+        public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
+            return viewHolder.getItemViewType() == 0;
+        }
+
+        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+        public int getItemViewType(int i) {
+            if (i == 0) {
+                return 1;
+            }
+            return i == getItemCount() - 1 ? 2 : 0;
+        }
+
+        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+        public void notifyDataSetChanged() {
+            super.notifyDataSetChanged();
+            ChatAttachAlertQuickRepliesLayout.this.updateEmptyView();
+        }
     }
 
     @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
@@ -608,66 +661,14 @@ public class ChatAttachAlertQuickRepliesLayout extends ChatAttachAlert.AttachAle
         return arrayList;
     }
 
-    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public void onDestroy() {
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        updateEmptyViewPosition();
-    }
-
-    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public void onPreMeasure(int i, int i2) {
-        int i3;
-        if (this.parentAlert.sizeNotifierFrameLayout.measureKeyboardHeight() > AndroidUtilities.dp(20.0f)) {
-            i3 = AndroidUtilities.dp(8.0f);
-            this.parentAlert.setAllowNestedScroll(false);
-        } else {
-            if (!AndroidUtilities.isTablet()) {
-                Point point = AndroidUtilities.displaySize;
-                if (point.x > point.y) {
-                    i3 = (int) (i2 / 3.5f);
-                    this.parentAlert.setAllowNestedScroll(true);
-                }
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$getThemeDescriptions$4() {
+        RecyclerListView recyclerListView = this.listView;
+        if (recyclerListView != null) {
+            int childCount = recyclerListView.getChildCount();
+            for (int i = 0; i < childCount; i++) {
+                this.listView.getChildAt(i);
             }
-            i3 = (i2 / 5) * 2;
-            this.parentAlert.setAllowNestedScroll(true);
         }
-        if (this.listView.getPaddingTop() != i3) {
-            this.ignoreLayout = true;
-            this.listView.setPadding(0, i3, 0, AndroidUtilities.dp(48.0f));
-            this.ignoreLayout = false;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public void onShow(ChatAttachAlert.AttachAlertLayout attachAlertLayout) {
-        this.layoutManager.scrollToPositionWithOffset(0, 0);
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public void requestLayout() {
-        if (this.ignoreLayout) {
-            return;
-        }
-        super.requestLayout();
-    }
-
-    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public void scrollToTop() {
-        this.listView.smoothScrollToPosition(0);
-    }
-
-    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public boolean sendSelectedItems(boolean z, int i, long j, boolean z2) {
-        return false;
-    }
-
-    @Override // android.view.View
-    public void setTranslationY(float f) {
-        super.setTranslationY(f);
-        this.parentAlert.getSheetContainer().invalidate();
     }
 }

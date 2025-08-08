@@ -13,10 +13,13 @@ final class ResamplingAudioProcessor extends BaseAudioProcessor {
     @Override // com.google.android.exoplayer2.audio.BaseAudioProcessor
     public AudioProcessor.AudioFormat onConfigure(AudioProcessor.AudioFormat audioFormat) {
         int i = audioFormat.encoding;
-        if (i == 3 || i == 2 || i == 268435456 || i == 536870912 || i == 805306368 || i == 4) {
-            return i != 2 ? new AudioProcessor.AudioFormat(audioFormat.sampleRate, audioFormat.channelCount, 2) : AudioProcessor.AudioFormat.NOT_SET;
+        if (i != 3 && i != 2 && i != 268435456 && i != 536870912 && i != 805306368 && i != 4) {
+            throw new AudioProcessor.UnhandledAudioFormatException(audioFormat);
         }
-        throw new AudioProcessor.UnhandledAudioFormatException(audioFormat);
+        if (i != 2) {
+            return new AudioProcessor.AudioFormat(audioFormat.sampleRate, audioFormat.channelCount, 2);
+        }
+        return AudioProcessor.AudioFormat.NOT_SET;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:13:0x0038  */

@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import kotlin.Result;
 import kotlin.ResultKt;
-import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.collections.CollectionsKt;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlinx.coroutines.CoroutineScopeKt;
 import org.telegram.tgnet.TLObject;
@@ -21,7 +21,7 @@ public final class zzg {
     }
 
     public /* synthetic */ zzg(List list, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        List emptyList = CollectionsKt__CollectionsKt.emptyList();
+        List emptyList = CollectionsKt.emptyList();
         ArrayList arrayList = new ArrayList();
         this.zza = arrayList;
         arrayList.addAll(emptyList);
@@ -38,7 +38,6 @@ public final class zzg {
     */
     public final Object zzb(long j, zzoe zzoeVar, Continuation continuation) {
         zzd zzdVar;
-        Object coroutine_suspended;
         int i;
         if (continuation instanceof zzd) {
             zzdVar = (zzd) continuation;
@@ -46,7 +45,7 @@ public final class zzg {
             if ((i2 & TLObject.FLAG_31) != 0) {
                 zzdVar.zzc = i2 - TLObject.FLAG_31;
                 Object obj = zzdVar.zza;
-                coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = zzdVar.zzc;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
@@ -67,7 +66,7 @@ public final class zzg {
         }
         zzdVar = new zzd(this, continuation);
         Object obj2 = zzdVar.zza;
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = zzdVar.zzc;
         if (i != 0) {
         }

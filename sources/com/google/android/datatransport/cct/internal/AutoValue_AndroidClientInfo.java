@@ -17,101 +17,6 @@ final class AutoValue_AndroidClientInfo extends AndroidClientInfo {
     private final String product;
     private final Integer sdkVersion;
 
-    static final class Builder extends AndroidClientInfo.Builder {
-        private String applicationBuild;
-        private String country;
-        private String device;
-        private String fingerprint;
-        private String hardware;
-        private String locale;
-        private String manufacturer;
-        private String mccMnc;
-        private String model;
-        private String osBuild;
-        private String product;
-        private Integer sdkVersion;
-
-        Builder() {
-        }
-
-        @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo.Builder
-        public AndroidClientInfo build() {
-            return new AutoValue_AndroidClientInfo(this.sdkVersion, this.model, this.hardware, this.device, this.product, this.osBuild, this.manufacturer, this.fingerprint, this.locale, this.country, this.mccMnc, this.applicationBuild);
-        }
-
-        @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo.Builder
-        public AndroidClientInfo.Builder setApplicationBuild(String str) {
-            this.applicationBuild = str;
-            return this;
-        }
-
-        @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo.Builder
-        public AndroidClientInfo.Builder setCountry(String str) {
-            this.country = str;
-            return this;
-        }
-
-        @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo.Builder
-        public AndroidClientInfo.Builder setDevice(String str) {
-            this.device = str;
-            return this;
-        }
-
-        @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo.Builder
-        public AndroidClientInfo.Builder setFingerprint(String str) {
-            this.fingerprint = str;
-            return this;
-        }
-
-        @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo.Builder
-        public AndroidClientInfo.Builder setHardware(String str) {
-            this.hardware = str;
-            return this;
-        }
-
-        @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo.Builder
-        public AndroidClientInfo.Builder setLocale(String str) {
-            this.locale = str;
-            return this;
-        }
-
-        @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo.Builder
-        public AndroidClientInfo.Builder setManufacturer(String str) {
-            this.manufacturer = str;
-            return this;
-        }
-
-        @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo.Builder
-        public AndroidClientInfo.Builder setMccMnc(String str) {
-            this.mccMnc = str;
-            return this;
-        }
-
-        @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo.Builder
-        public AndroidClientInfo.Builder setModel(String str) {
-            this.model = str;
-            return this;
-        }
-
-        @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo.Builder
-        public AndroidClientInfo.Builder setOsBuild(String str) {
-            this.osBuild = str;
-            return this;
-        }
-
-        @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo.Builder
-        public AndroidClientInfo.Builder setProduct(String str) {
-            this.product = str;
-            return this;
-        }
-
-        @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo.Builder
-        public AndroidClientInfo.Builder setSdkVersion(Integer num) {
-            this.sdkVersion = num;
-            return this;
-        }
-    }
-
     private AutoValue_AndroidClientInfo(Integer num, String str, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9, String str10, String str11) {
         this.sdkVersion = num;
         this.model = str;
@@ -125,6 +30,70 @@ final class AutoValue_AndroidClientInfo extends AndroidClientInfo {
         this.country = str9;
         this.mccMnc = str10;
         this.applicationBuild = str11;
+    }
+
+    @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo
+    public Integer getSdkVersion() {
+        return this.sdkVersion;
+    }
+
+    @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo
+    public String getModel() {
+        return this.model;
+    }
+
+    @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo
+    public String getHardware() {
+        return this.hardware;
+    }
+
+    @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo
+    public String getDevice() {
+        return this.device;
+    }
+
+    @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo
+    public String getProduct() {
+        return this.product;
+    }
+
+    @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo
+    public String getOsBuild() {
+        return this.osBuild;
+    }
+
+    @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo
+    public String getManufacturer() {
+        return this.manufacturer;
+    }
+
+    @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo
+    public String getFingerprint() {
+        return this.fingerprint;
+    }
+
+    @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo
+    public String getLocale() {
+        return this.locale;
+    }
+
+    @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo
+    public String getCountry() {
+        return this.country;
+    }
+
+    @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo
+    public String getMccMnc() {
+        return this.mccMnc;
+    }
+
+    @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo
+    public String getApplicationBuild() {
+        return this.applicationBuild;
+    }
+
+    public String toString() {
+        return "AndroidClientInfo{sdkVersion=" + this.sdkVersion + ", model=" + this.model + ", hardware=" + this.hardware + ", device=" + this.device + ", product=" + this.product + ", osBuild=" + this.osBuild + ", manufacturer=" + this.manufacturer + ", fingerprint=" + this.fingerprint + ", locale=" + this.locale + ", country=" + this.country + ", mccMnc=" + this.mccMnc + ", applicationBuild=" + this.applicationBuild + "}";
     }
 
     public boolean equals(Object obj) {
@@ -158,12 +127,11 @@ final class AutoValue_AndroidClientInfo extends AndroidClientInfo {
                                                 String str10 = this.mccMnc;
                                                 if (str10 != null ? str10.equals(androidClientInfo.getMccMnc()) : androidClientInfo.getMccMnc() == null) {
                                                     String str11 = this.applicationBuild;
-                                                    String applicationBuild = androidClientInfo.getApplicationBuild();
                                                     if (str11 == null) {
-                                                        if (applicationBuild == null) {
+                                                        if (androidClientInfo.getApplicationBuild() == null) {
                                                             return true;
                                                         }
-                                                    } else if (str11.equals(applicationBuild)) {
+                                                    } else if (str11.equals(androidClientInfo.getApplicationBuild())) {
                                                         return true;
                                                     }
                                                 }
@@ -178,66 +146,6 @@ final class AutoValue_AndroidClientInfo extends AndroidClientInfo {
             }
         }
         return false;
-    }
-
-    @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo
-    public String getApplicationBuild() {
-        return this.applicationBuild;
-    }
-
-    @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo
-    public String getCountry() {
-        return this.country;
-    }
-
-    @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo
-    public String getDevice() {
-        return this.device;
-    }
-
-    @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo
-    public String getFingerprint() {
-        return this.fingerprint;
-    }
-
-    @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo
-    public String getHardware() {
-        return this.hardware;
-    }
-
-    @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo
-    public String getLocale() {
-        return this.locale;
-    }
-
-    @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo
-    public String getManufacturer() {
-        return this.manufacturer;
-    }
-
-    @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo
-    public String getMccMnc() {
-        return this.mccMnc;
-    }
-
-    @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo
-    public String getModel() {
-        return this.model;
-    }
-
-    @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo
-    public String getOsBuild() {
-        return this.osBuild;
-    }
-
-    @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo
-    public String getProduct() {
-        return this.product;
-    }
-
-    @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo
-    public Integer getSdkVersion() {
-        return this.sdkVersion;
     }
 
     public int hashCode() {
@@ -267,7 +175,98 @@ final class AutoValue_AndroidClientInfo extends AndroidClientInfo {
         return hashCode11 ^ (str11 != null ? str11.hashCode() : 0);
     }
 
-    public String toString() {
-        return "AndroidClientInfo{sdkVersion=" + this.sdkVersion + ", model=" + this.model + ", hardware=" + this.hardware + ", device=" + this.device + ", product=" + this.product + ", osBuild=" + this.osBuild + ", manufacturer=" + this.manufacturer + ", fingerprint=" + this.fingerprint + ", locale=" + this.locale + ", country=" + this.country + ", mccMnc=" + this.mccMnc + ", applicationBuild=" + this.applicationBuild + "}";
+    static final class Builder extends AndroidClientInfo.Builder {
+        private String applicationBuild;
+        private String country;
+        private String device;
+        private String fingerprint;
+        private String hardware;
+        private String locale;
+        private String manufacturer;
+        private String mccMnc;
+        private String model;
+        private String osBuild;
+        private String product;
+        private Integer sdkVersion;
+
+        Builder() {
+        }
+
+        @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo.Builder
+        public AndroidClientInfo.Builder setSdkVersion(Integer num) {
+            this.sdkVersion = num;
+            return this;
+        }
+
+        @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo.Builder
+        public AndroidClientInfo.Builder setModel(String str) {
+            this.model = str;
+            return this;
+        }
+
+        @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo.Builder
+        public AndroidClientInfo.Builder setHardware(String str) {
+            this.hardware = str;
+            return this;
+        }
+
+        @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo.Builder
+        public AndroidClientInfo.Builder setDevice(String str) {
+            this.device = str;
+            return this;
+        }
+
+        @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo.Builder
+        public AndroidClientInfo.Builder setProduct(String str) {
+            this.product = str;
+            return this;
+        }
+
+        @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo.Builder
+        public AndroidClientInfo.Builder setOsBuild(String str) {
+            this.osBuild = str;
+            return this;
+        }
+
+        @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo.Builder
+        public AndroidClientInfo.Builder setManufacturer(String str) {
+            this.manufacturer = str;
+            return this;
+        }
+
+        @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo.Builder
+        public AndroidClientInfo.Builder setFingerprint(String str) {
+            this.fingerprint = str;
+            return this;
+        }
+
+        @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo.Builder
+        public AndroidClientInfo.Builder setLocale(String str) {
+            this.locale = str;
+            return this;
+        }
+
+        @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo.Builder
+        public AndroidClientInfo.Builder setCountry(String str) {
+            this.country = str;
+            return this;
+        }
+
+        @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo.Builder
+        public AndroidClientInfo.Builder setMccMnc(String str) {
+            this.mccMnc = str;
+            return this;
+        }
+
+        @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo.Builder
+        public AndroidClientInfo.Builder setApplicationBuild(String str) {
+            this.applicationBuild = str;
+            return this;
+        }
+
+        @Override // com.google.android.datatransport.cct.internal.AndroidClientInfo.Builder
+        public AndroidClientInfo build() {
+            return new AutoValue_AndroidClientInfo(this.sdkVersion, this.model, this.hardware, this.device, this.product, this.osBuild, this.manufacturer, this.fingerprint, this.locale, this.country, this.mccMnc, this.applicationBuild);
+        }
     }
 }

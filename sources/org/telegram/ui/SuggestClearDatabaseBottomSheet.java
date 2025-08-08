@@ -23,6 +23,14 @@ public class SuggestClearDatabaseBottomSheet extends BottomSheet {
     private static SuggestClearDatabaseBottomSheet dialog;
     BaseFragment fragment;
 
+    public static void show(BaseFragment baseFragment) {
+        if (dialog == null) {
+            SuggestClearDatabaseBottomSheet suggestClearDatabaseBottomSheet = new SuggestClearDatabaseBottomSheet(baseFragment);
+            dialog = suggestClearDatabaseBottomSheet;
+            suggestClearDatabaseBottomSheet.show();
+        }
+    }
+
     private SuggestClearDatabaseBottomSheet(final BaseFragment baseFragment) {
         super(baseFragment.getParentActivity(), false);
         this.fragment = baseFragment;
@@ -67,23 +75,6 @@ public class SuggestClearDatabaseBottomSheet extends BottomSheet {
         setCustomView(scrollView);
     }
 
-    public static void dismissDialog() {
-        SuggestClearDatabaseBottomSheet suggestClearDatabaseBottomSheet = dialog;
-        if (suggestClearDatabaseBottomSheet != null) {
-            suggestClearDatabaseBottomSheet.lambda$new$0();
-            dialog = null;
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(BaseFragment baseFragment, AlertDialog alertDialog, int i) {
-        if (baseFragment.getParentActivity() == null) {
-            return;
-        }
-        MessagesController.getInstance(this.currentAccount).clearQueryTime();
-        baseFragment.getMessagesStorage().clearLocalDatabase();
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$1(final BaseFragment baseFragment, View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(baseFragment.getParentActivity());
@@ -104,12 +95,13 @@ public class SuggestClearDatabaseBottomSheet extends BottomSheet {
         }
     }
 
-    public static void show(BaseFragment baseFragment) {
-        if (dialog == null) {
-            SuggestClearDatabaseBottomSheet suggestClearDatabaseBottomSheet = new SuggestClearDatabaseBottomSheet(baseFragment);
-            dialog = suggestClearDatabaseBottomSheet;
-            suggestClearDatabaseBottomSheet.show();
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$0(BaseFragment baseFragment, AlertDialog alertDialog, int i) {
+        if (baseFragment.getParentActivity() == null) {
+            return;
         }
+        MessagesController.getInstance(this.currentAccount).clearQueryTime();
+        baseFragment.getMessagesStorage().clearLocalDatabase();
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
@@ -117,5 +109,13 @@ public class SuggestClearDatabaseBottomSheet extends BottomSheet {
     public void lambda$new$0() {
         super.lambda$new$0();
         dialog = null;
+    }
+
+    public static void dismissDialog() {
+        SuggestClearDatabaseBottomSheet suggestClearDatabaseBottomSheet = dialog;
+        if (suggestClearDatabaseBottomSheet != null) {
+            suggestClearDatabaseBottomSheet.lambda$new$0();
+            dialog = null;
+        }
     }
 }

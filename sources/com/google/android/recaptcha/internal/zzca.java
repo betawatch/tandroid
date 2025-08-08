@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import kotlin.Unit;
-import kotlin.collections.CollectionsKt___CollectionsKt;
+import kotlin.collections.CollectionsKt;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.CoroutineScopeKt;
@@ -31,18 +31,14 @@ public final class zzca implements zzbu {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final Object zzg(List list, zzcj zzcjVar, Continuation continuation) {
-        Object coroutine_suspended;
         Object coroutineScope = CoroutineScopeKt.coroutineScope(new zzbx(zzcjVar, list, this, null), continuation);
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        return coroutineScope == coroutine_suspended ? coroutineScope : Unit.INSTANCE;
+        return coroutineScope == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? coroutineScope : Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final Object zzh(Exception exc, zzcj zzcjVar, Continuation continuation) {
-        Object coroutine_suspended;
         Object coroutineScope = CoroutineScopeKt.coroutineScope(new zzby(exc, zzcjVar, this, null), continuation);
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        return coroutineScope == coroutine_suspended ? coroutineScope : Unit.INSTANCE;
+        return coroutineScope == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? coroutineScope : Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -69,7 +65,7 @@ public final class zzca implements zzbu {
         zzv.zza(zzk - 2, zza3);
         zzprVar.zzk();
         zzprVar.zzg();
-        CollectionsKt___CollectionsKt.joinToString$default(zzprVar.zzj(), null, null, null, 0, null, new zzbw(this), 31, null);
+        CollectionsKt.joinToString$default(zzprVar.zzj(), null, null, null, 0, null, new zzbw(this), 31, null);
     }
 
     @Override // com.google.android.recaptcha.internal.zzbu

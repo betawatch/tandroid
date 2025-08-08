@@ -7,45 +7,102 @@ import java.util.OptionalLong;
 
 /* loaded from: classes2.dex */
 public abstract /* synthetic */ class A {
-    A() {
-    }
-
-    public static void b(D d, Consumer consumer) {
-        if (consumer instanceof j$.util.function.m) {
-            d.forEachRemaining((j$.util.function.m) consumer);
-        } else {
-            if (d0.a) {
-                d0.a(d.getClass(), "{0} calling Spliterator.OfDouble.forEachRemaining((DoubleConsumer) action::accept)");
-                throw null;
-            }
-            consumer.getClass();
-            d.forEachRemaining(new m(consumer));
+    public static java.util.Optional u(Optional optional) {
+        if (optional == null) {
+            return null;
         }
-    }
-
-    public static void f(G g, Consumer consumer) {
-        if (consumer instanceof j$.util.function.E) {
-            g.forEachRemaining((j$.util.function.E) consumer);
-        } else {
-            if (d0.a) {
-                d0.a(g.getClass(), "{0} calling Spliterator.OfInt.forEachRemaining((IntConsumer) action::accept)");
-                throw null;
-            }
-            consumer.getClass();
-            g.forEachRemaining(new q(consumer));
+        if (optional.isPresent()) {
+            return java.util.Optional.of(optional.get());
         }
+        return java.util.Optional.empty();
     }
 
-    public static void h(J j, Consumer consumer) {
-        if (consumer instanceof j$.util.function.T) {
-            j.forEachRemaining((j$.util.function.T) consumer);
-        } else {
-            if (d0.a) {
-                d0.a(j.getClass(), "{0} calling Spliterator.OfLong.forEachRemaining((LongConsumer) action::accept)");
-                throw null;
-            }
-            consumer.getClass();
-            j.forEachRemaining(new u(consumer));
+    public static Optional o(java.util.Optional optional) {
+        if (optional == null) {
+            return null;
+        }
+        if (optional.isPresent()) {
+            return Optional.of(optional.get());
+        }
+        return Optional.empty();
+    }
+
+    public static OptionalDouble v(j jVar) {
+        if (jVar == null) {
+            return null;
+        }
+        if (jVar.c()) {
+            return OptionalDouble.of(jVar.b());
+        }
+        return OptionalDouble.empty();
+    }
+
+    public static j q(OptionalDouble optionalDouble) {
+        if (optionalDouble == null) {
+            return null;
+        }
+        if (optionalDouble.isPresent()) {
+            return j.d(optionalDouble.getAsDouble());
+        }
+        return j.a();
+    }
+
+    public static OptionalLong x(l lVar) {
+        if (lVar == null) {
+            return null;
+        }
+        if (lVar.c()) {
+            return OptionalLong.of(lVar.b());
+        }
+        return OptionalLong.empty();
+    }
+
+    public static boolean y(Object obj, Object obj2) {
+        return obj == obj2 || (obj != null && obj.equals(obj2));
+    }
+
+    public static l t(OptionalLong optionalLong) {
+        if (optionalLong == null) {
+            return null;
+        }
+        if (optionalLong.isPresent()) {
+            return l.d(optionalLong.getAsLong());
+        }
+        return l.a();
+    }
+
+    public static OptionalInt w(k kVar) {
+        if (kVar == null) {
+            return null;
+        }
+        if (kVar.c()) {
+            return OptionalInt.of(kVar.b());
+        }
+        return OptionalInt.empty();
+    }
+
+    public static k r(OptionalInt optionalInt) {
+        if (optionalInt == null) {
+            return null;
+        }
+        if (optionalInt.isPresent()) {
+            return k.d(optionalInt.getAsInt());
+        }
+        return k.a();
+    }
+
+    public void forEachRemaining(Object obj) {
+        obj.getClass();
+    }
+
+    public boolean tryAdvance(Object obj) {
+        obj.getClass();
+        return false;
+    }
+
+    public static void z(Object obj, String str) {
+        if (obj == null) {
+            throw new NullPointerException(str);
         }
     }
 
@@ -60,126 +117,87 @@ public abstract /* synthetic */ class A {
         return (spliterator.characteristics() & i) == i;
     }
 
-    public static boolean l(D d, Consumer consumer) {
-        if (consumer instanceof j$.util.function.m) {
-            return d.tryAdvance((j$.util.function.m) consumer);
+    public static boolean m(G g, Consumer consumer) {
+        if (consumer instanceof j$.util.function.G) {
+            return g.tryAdvance((j$.util.function.G) consumer);
         }
-        if (d0.a) {
-            d0.a(d.getClass(), "{0} calling Spliterator.OfDouble.tryAdvance((DoubleConsumer) action::accept)");
-            throw null;
+        if (!d0.a) {
+            consumer.getClass();
+            return g.tryAdvance(new q(consumer));
         }
-        consumer.getClass();
-        return d.tryAdvance(new m(consumer));
+        d0.a(g.getClass(), "{0} calling Spliterator.OfInt.tryAdvance((IntConsumer) action::accept)");
+        throw null;
     }
 
-    public static boolean m(G g, Consumer consumer) {
-        if (consumer instanceof j$.util.function.E) {
-            return g.tryAdvance((j$.util.function.E) consumer);
-        }
-        if (d0.a) {
-            d0.a(g.getClass(), "{0} calling Spliterator.OfInt.tryAdvance((IntConsumer) action::accept)");
+    public static void f(G g, Consumer consumer) {
+        if (consumer instanceof j$.util.function.G) {
+            g.forEachRemaining((j$.util.function.G) consumer);
+        } else if (!d0.a) {
+            consumer.getClass();
+            g.forEachRemaining(new q(consumer));
+        } else {
+            d0.a(g.getClass(), "{0} calling Spliterator.OfInt.forEachRemaining((IntConsumer) action::accept)");
             throw null;
         }
-        consumer.getClass();
-        return g.tryAdvance(new q(consumer));
     }
 
     public static boolean n(J j, Consumer consumer) {
-        if (consumer instanceof j$.util.function.T) {
-            return j.tryAdvance((j$.util.function.T) consumer);
+        if (consumer instanceof j$.util.function.Y) {
+            return j.tryAdvance((j$.util.function.Y) consumer);
         }
-        if (d0.a) {
-            d0.a(j.getClass(), "{0} calling Spliterator.OfLong.tryAdvance((LongConsumer) action::accept)");
+        if (!d0.a) {
+            consumer.getClass();
+            return j.tryAdvance(new u(consumer));
+        }
+        d0.a(j.getClass(), "{0} calling Spliterator.OfLong.tryAdvance((LongConsumer) action::accept)");
+        throw null;
+    }
+
+    public static void h(J j, Consumer consumer) {
+        if (consumer instanceof j$.util.function.Y) {
+            j.forEachRemaining((j$.util.function.Y) consumer);
+        } else if (!d0.a) {
+            consumer.getClass();
+            j.forEachRemaining(new u(consumer));
+        } else {
+            d0.a(j.getClass(), "{0} calling Spliterator.OfLong.forEachRemaining((LongConsumer) action::accept)");
             throw null;
         }
-        consumer.getClass();
-        return j.tryAdvance(new u(consumer));
     }
 
-    public static Optional o(java.util.Optional optional) {
-        if (optional == null) {
-            return null;
+    public static boolean l(D d, Consumer consumer) {
+        if (consumer instanceof j$.util.function.l) {
+            return d.tryAdvance((j$.util.function.l) consumer);
         }
-        return optional.isPresent() ? Optional.of(optional.get()) : Optional.empty();
-    }
-
-    public static j q(OptionalDouble optionalDouble) {
-        if (optionalDouble == null) {
-            return null;
+        if (!d0.a) {
+            consumer.getClass();
+            return d.tryAdvance(new m(consumer));
         }
-        return optionalDouble.isPresent() ? j.d(optionalDouble.getAsDouble()) : j.a();
+        d0.a(d.getClass(), "{0} calling Spliterator.OfDouble.tryAdvance((DoubleConsumer) action::accept)");
+        throw null;
     }
 
-    public static k r(OptionalInt optionalInt) {
-        if (optionalInt == null) {
-            return null;
-        }
-        return optionalInt.isPresent() ? k.d(optionalInt.getAsInt()) : k.a();
-    }
-
-    public static l t(OptionalLong optionalLong) {
-        if (optionalLong == null) {
-            return null;
-        }
-        return optionalLong.isPresent() ? l.d(optionalLong.getAsLong()) : l.a();
-    }
-
-    public static java.util.Optional u(Optional optional) {
-        if (optional == null) {
-            return null;
-        }
-        return optional.isPresent() ? java.util.Optional.of(optional.get()) : java.util.Optional.empty();
-    }
-
-    public static OptionalDouble v(j jVar) {
-        if (jVar == null) {
-            return null;
-        }
-        return jVar.c() ? OptionalDouble.of(jVar.b()) : OptionalDouble.empty();
-    }
-
-    public static OptionalInt w(k kVar) {
-        if (kVar == null) {
-            return null;
-        }
-        return kVar.c() ? OptionalInt.of(kVar.b()) : OptionalInt.empty();
-    }
-
-    public static OptionalLong x(l lVar) {
-        if (lVar == null) {
-            return null;
-        }
-        return lVar.c() ? OptionalLong.of(lVar.b()) : OptionalLong.empty();
-    }
-
-    public static boolean y(Object obj, Object obj2) {
-        return obj == obj2 || (obj != null && obj.equals(obj2));
-    }
-
-    public static void z(Object obj, String str) {
-        if (obj == null) {
-            throw new NullPointerException(str);
+    public static void b(D d, Consumer consumer) {
+        if (consumer instanceof j$.util.function.l) {
+            d.forEachRemaining((j$.util.function.l) consumer);
+        } else if (!d0.a) {
+            consumer.getClass();
+            d.forEachRemaining(new m(consumer));
+        } else {
+            d0.a(d.getClass(), "{0} calling Spliterator.OfDouble.forEachRemaining((DoubleConsumer) action::accept)");
+            throw null;
         }
     }
 
-    public int characteristics() {
-        return 16448;
+    public Spliterator trySplit() {
+        return null;
     }
 
     public long estimateSize() {
         return 0L;
     }
 
-    public void forEachRemaining(Object obj) {
-        obj.getClass();
-    }
-
-    public boolean tryAdvance(Object obj) {
-        obj.getClass();
-        return false;
-    }
-
-    public Spliterator trySplit() {
-        return null;
+    public int characteristics() {
+        return 16448;
     }
 }

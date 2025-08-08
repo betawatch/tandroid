@@ -10,44 +10,6 @@ import java.util.Set;
 /* loaded from: classes.dex */
 abstract class CycleDetector {
 
-    private static class ComponentNode {
-        private final Component component;
-        private final Set dependencies = new HashSet();
-        private final Set dependents = new HashSet();
-
-        ComponentNode(Component component) {
-            this.component = component;
-        }
-
-        void addDependency(ComponentNode componentNode) {
-            this.dependencies.add(componentNode);
-        }
-
-        void addDependent(ComponentNode componentNode) {
-            this.dependents.add(componentNode);
-        }
-
-        Component getComponent() {
-            return this.component;
-        }
-
-        Set getDependencies() {
-            return this.dependencies;
-        }
-
-        boolean isLeaf() {
-            return this.dependencies.isEmpty();
-        }
-
-        boolean isRoot() {
-            return this.dependents.isEmpty();
-        }
-
-        void removeDependent(ComponentNode componentNode) {
-            this.dependents.remove(componentNode);
-        }
-    }
-
     private static class Dep {
         private final Qualified anInterface;
         private final boolean set;
@@ -67,6 +29,44 @@ abstract class CycleDetector {
 
         public int hashCode() {
             return ((this.anInterface.hashCode() ^ 1000003) * 1000003) ^ Boolean.valueOf(this.set).hashCode();
+        }
+    }
+
+    private static class ComponentNode {
+        private final Component component;
+        private final Set dependencies = new HashSet();
+        private final Set dependents = new HashSet();
+
+        ComponentNode(Component component) {
+            this.component = component;
+        }
+
+        void addDependency(ComponentNode componentNode) {
+            this.dependencies.add(componentNode);
+        }
+
+        void addDependent(ComponentNode componentNode) {
+            this.dependents.add(componentNode);
+        }
+
+        Set getDependencies() {
+            return this.dependencies;
+        }
+
+        void removeDependent(ComponentNode componentNode) {
+            this.dependents.remove(componentNode);
+        }
+
+        Component getComponent() {
+            return this.component;
+        }
+
+        boolean isRoot() {
+            return this.dependents.isEmpty();
+        }
+
+        boolean isLeaf() {
+            return this.dependencies.isEmpty();
         }
     }
 
@@ -97,32 +97,34 @@ abstract class CycleDetector {
         throw new DependencyCycleException(arrayList);
     }
 
-    private static Set getRoots(Set set) {
-        HashSet hashSet = new HashSet();
-        Iterator it = set.iterator();
-        while (it.hasNext()) {
-            ComponentNode componentNode = (ComponentNode) it.next();
-            if (componentNode.isRoot()) {
-                hashSet.add(componentNode);
-            }
-        }
-        return hashSet;
-    }
-
     private static Set toGraph(List list) {
         Set<ComponentNode> set;
         HashMap hashMap = new HashMap(list.size());
         Iterator it = list.iterator();
         while (true) {
-            if (!it.hasNext()) {
+            if (it.hasNext()) {
+                Component component = (Component) it.next();
+                ComponentNode componentNode = new ComponentNode(component);
+                for (Qualified qualified : component.getProvidedInterfaces()) {
+                    Dep dep = new Dep(qualified, !component.isValue());
+                    if (!hashMap.containsKey(dep)) {
+                        hashMap.put(dep, new HashSet());
+                    }
+                    Set set2 = (Set) hashMap.get(dep);
+                    if (!set2.isEmpty() && !dep.set) {
+                        throw new IllegalArgumentException(String.format("Multiple components provide %s.", qualified));
+                    }
+                    set2.add(componentNode);
+                }
+            } else {
                 Iterator it2 = hashMap.values().iterator();
                 while (it2.hasNext()) {
-                    for (ComponentNode componentNode : (Set) it2.next()) {
-                        for (Dependency dependency : componentNode.getComponent().getDependencies()) {
+                    for (ComponentNode componentNode2 : (Set) it2.next()) {
+                        for (Dependency dependency : componentNode2.getComponent().getDependencies()) {
                             if (dependency.isDirectInjection() && (set = (Set) hashMap.get(new Dep(dependency.getInterface(), dependency.isSet()))) != null) {
-                                for (ComponentNode componentNode2 : set) {
-                                    componentNode.addDependency(componentNode2);
-                                    componentNode2.addDependent(componentNode);
+                                for (ComponentNode componentNode3 : set) {
+                                    componentNode2.addDependency(componentNode3);
+                                    componentNode3.addDependent(componentNode2);
                                 }
                             }
                         }
@@ -135,19 +137,18 @@ abstract class CycleDetector {
                 }
                 return hashSet;
             }
-            Component component = (Component) it.next();
-            ComponentNode componentNode3 = new ComponentNode(component);
-            for (Qualified qualified : component.getProvidedInterfaces()) {
-                Dep dep = new Dep(qualified, !component.isValue());
-                if (!hashMap.containsKey(dep)) {
-                    hashMap.put(dep, new HashSet());
-                }
-                Set set2 = (Set) hashMap.get(dep);
-                if (!set2.isEmpty() && !dep.set) {
-                    throw new IllegalArgumentException(String.format("Multiple components provide %s.", qualified));
-                }
-                set2.add(componentNode3);
+        }
+    }
+
+    private static Set getRoots(Set set) {
+        HashSet hashSet = new HashSet();
+        Iterator it = set.iterator();
+        while (it.hasNext()) {
+            ComponentNode componentNode = (ComponentNode) it.next();
+            if (componentNode.isRoot()) {
+                hashSet.add(componentNode);
             }
         }
+        return hashSet;
     }
 }

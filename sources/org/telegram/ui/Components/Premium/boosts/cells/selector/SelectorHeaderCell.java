@@ -68,17 +68,8 @@ public class SelectorHeaderCell extends FrameLayout {
         canvas.drawRect(0.0f, getHeight() - AndroidUtilities.getShadowHeight(), getWidth(), getHeight(), this.dividerPaint);
     }
 
-    protected int getHeaderHeight() {
-        return AndroidUtilities.dp(56.0f);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getHeaderHeight(), TLObject.FLAG_30));
-    }
-
-    public void setBackImage(int i) {
-        this.closeView.setImageResource(i);
+    public void setText(CharSequence charSequence) {
+        this.textView.setText(charSequence);
     }
 
     public void setCloseImageVisible(boolean z) {
@@ -88,11 +79,20 @@ public class SelectorHeaderCell extends FrameLayout {
         textView.setLayoutParams(LayoutHelper.createFrame(-1, -2.0f, 23, (z2 || !z) ? 22.0f : 53.0f, 0.0f, (z2 && z) ? 53.0f : 22.0f, 0.0f));
     }
 
+    public void setBackImage(int i) {
+        this.closeView.setImageResource(i);
+    }
+
     public void setOnCloseClickListener(Runnable runnable) {
         this.onCloseClickListener = runnable;
     }
 
-    public void setText(CharSequence charSequence) {
-        this.textView.setText(charSequence);
+    @Override // android.widget.FrameLayout, android.view.View
+    protected void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getHeaderHeight(), TLObject.FLAG_30));
+    }
+
+    protected int getHeaderHeight() {
+        return AndroidUtilities.dp(56.0f);
     }
 }

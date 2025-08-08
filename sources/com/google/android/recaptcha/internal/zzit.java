@@ -288,6 +288,19 @@ public abstract class zzit<MessageType extends zzit<MessageType, BuilderType>, B
         return zzkn.zza().zzb(getClass()).zzb(this);
     }
 
+    @Override // com.google.android.recaptcha.internal.zzkf
+    public final boolean zzo() {
+        return zzF(this, true);
+    }
+
+    protected final zzin zzp() {
+        return (zzin) zzh(5, null, null);
+    }
+
+    final zzit zzs() {
+        return (zzit) zzh(4, null, null);
+    }
+
     @Override // com.google.android.recaptcha.internal.zzke
     public final int zzn() {
         int i;
@@ -307,18 +320,5 @@ public abstract class zzit<MessageType extends zzit<MessageType, BuilderType>, B
             }
         }
         return i;
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzkf
-    public final boolean zzo() {
-        return zzF(this, true);
-    }
-
-    protected final zzin zzp() {
-        return (zzin) zzh(5, null, null);
-    }
-
-    final zzit zzs() {
-        return (zzit) zzh(4, null, null);
     }
 }

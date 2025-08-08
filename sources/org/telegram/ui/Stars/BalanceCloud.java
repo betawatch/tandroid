@@ -28,6 +28,10 @@ public class BalanceCloud extends LinearLayout implements NotificationCenter.Not
     private final TextView textView1;
     private final LinkSpanDrawable.LinksTextView textView2;
 
+    public BalanceCloud(Context context, int i, Theme.ResourcesProvider resourcesProvider) {
+        this(context, i, AmountUtils$Currency.STARS, resourcesProvider);
+    }
+
     public BalanceCloud(final Context context, int i, AmountUtils$Currency amountUtils$Currency, final Theme.ResourcesProvider resourcesProvider) {
         super(context);
         this.coloredImageSpansTon = new ColoredImageSpan[1];
@@ -57,18 +61,16 @@ public class BalanceCloud extends LinearLayout implements NotificationCenter.Not
         updateBalance(false);
     }
 
-    public BalanceCloud(Context context, int i, Theme.ResourcesProvider resourcesProvider) {
-        this(context, i, AmountUtils$Currency.STARS, resourcesProvider);
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$new$0(Context context, Theme.ResourcesProvider resourcesProvider) {
         new StarsIntroActivity.StarsOptionsSheet(context, resourcesProvider).show();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateBalance$1() {
-        new StarsIntroActivity.StarsOptionsSheet(getContext(), this.resourcesProvider).show();
+    public void setCurrency(AmountUtils$Currency amountUtils$Currency, boolean z) {
+        if (this.currency != amountUtils$Currency) {
+            this.currency = amountUtils$Currency;
+            updateBalance(z);
+        }
     }
 
     private void updateBalance(boolean z) {
@@ -104,11 +106,9 @@ public class BalanceCloud extends LinearLayout implements NotificationCenter.Not
         }
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i == NotificationCenter.starBalanceUpdated) {
-            updateBalance(true);
-        }
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$updateBalance$1() {
+        new StarsIntroActivity.StarsOptionsSheet(getContext(), this.resourcesProvider).show();
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -131,10 +131,10 @@ public class BalanceCloud extends LinearLayout implements NotificationCenter.Not
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.botStarsUpdated);
     }
 
-    public void setCurrency(AmountUtils$Currency amountUtils$Currency, boolean z) {
-        if (this.currency != amountUtils$Currency) {
-            this.currency = amountUtils$Currency;
-            updateBalance(z);
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public void didReceivedNotification(int i, int i2, Object... objArr) {
+        if (i == NotificationCenter.starBalanceUpdated) {
+            updateBalance(true);
         }
     }
 }

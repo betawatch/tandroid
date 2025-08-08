@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public enum CharacterSetECI {
     Cp437(new int[]{0, 2}, new String[0]),
     ISO8859_1(new int[]{1, 3}, "ISO-8859-1"),
@@ -66,8 +66,8 @@ public enum CharacterSetECI {
         this.otherEncodingNames = strArr;
     }
 
-    public static CharacterSetECI getCharacterSetECIByName(String str) {
-        return (CharacterSetECI) NAME_TO_ECI.get(str);
+    public int getValue() {
+        return this.values[0];
     }
 
     public static CharacterSetECI getCharacterSetECIByValue(int i) {
@@ -77,7 +77,7 @@ public enum CharacterSetECI {
         return (CharacterSetECI) VALUE_TO_ECI.get(Integer.valueOf(i));
     }
 
-    public int getValue() {
-        return this.values[0];
+    public static CharacterSetECI getCharacterSetECIByName(String str) {
+        return (CharacterSetECI) NAME_TO_ECI.get(str);
     }
 }

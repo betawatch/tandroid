@@ -11,7 +11,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class LoginOrView extends View {
     private Paint linePaint;
     private View measureAfter;
@@ -29,13 +29,14 @@ public class LoginOrView extends View {
         updateColors();
     }
 
-    @Override // android.view.View
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        float width = this.measureAfter != null ? ((((getWidth() - this.textBounds.width()) - AndroidUtilities.dp(8.0f)) - this.measureAfter.getPaddingLeft()) - this.measureAfter.getPaddingRight()) / 2.0f : AndroidUtilities.dp(64.0f);
-        canvas.drawLine((((getWidth() - this.textBounds.width()) / 2.0f) - AndroidUtilities.dp(8.0f)) - width, getHeight() / 2.0f, ((getWidth() - this.textBounds.width()) / 2.0f) - AndroidUtilities.dp(8.0f), getHeight() / 2.0f, this.linePaint);
-        canvas.drawLine(((getWidth() + this.textBounds.width()) / 2.0f) + AndroidUtilities.dp(8.0f), getHeight() / 2.0f, ((getWidth() + this.textBounds.width()) / 2.0f) + AndroidUtilities.dp(8.0f) + width, getHeight() / 2.0f, this.linePaint);
-        canvas.drawText(this.string, (getWidth() - this.textBounds.width()) / 2.0f, (getHeight() + this.textBounds.height()) / 2.0f, this.textPaint);
+    public void setMeasureAfter(View view) {
+        this.measureAfter = view;
+    }
+
+    public void updateColors() {
+        this.textPaint.setColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText));
+        this.linePaint.setColor(Theme.getColor(Theme.key_sheet_scrollUp));
+        invalidate();
     }
 
     @Override // android.view.View
@@ -50,13 +51,12 @@ public class LoginOrView extends View {
         textPaint.getTextBounds(str, 0, str.length(), this.textBounds);
     }
 
-    public void setMeasureAfter(View view) {
-        this.measureAfter = view;
-    }
-
-    public void updateColors() {
-        this.textPaint.setColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText));
-        this.linePaint.setColor(Theme.getColor(Theme.key_sheet_scrollUp));
-        invalidate();
+    @Override // android.view.View
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        float width = this.measureAfter != null ? ((((getWidth() - this.textBounds.width()) - AndroidUtilities.dp(8.0f)) - this.measureAfter.getPaddingLeft()) - this.measureAfter.getPaddingRight()) / 2.0f : AndroidUtilities.dp(64.0f);
+        canvas.drawLine((((getWidth() - this.textBounds.width()) / 2.0f) - AndroidUtilities.dp(8.0f)) - width, getHeight() / 2.0f, ((getWidth() - this.textBounds.width()) / 2.0f) - AndroidUtilities.dp(8.0f), getHeight() / 2.0f, this.linePaint);
+        canvas.drawLine(((getWidth() + this.textBounds.width()) / 2.0f) + AndroidUtilities.dp(8.0f), getHeight() / 2.0f, ((getWidth() + this.textBounds.width()) / 2.0f) + AndroidUtilities.dp(8.0f) + width, getHeight() / 2.0f, this.linePaint);
+        canvas.drawText(this.string, (getWidth() - this.textBounds.width()) / 2.0f, (getHeight() + this.textBounds.height()) / 2.0f, this.textPaint);
     }
 }

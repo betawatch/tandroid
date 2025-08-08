@@ -5,13 +5,13 @@ import java.util.Iterator;
 import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.RestrictedSuspendLambda;
 import kotlin.jvm.functions.Function2;
-import kotlin.ranges.RangesKt___RangesKt;
+import kotlin.ranges.RangesKt;
 import kotlin.sequences.SequenceScope;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class SlidingWindowKt$windowedIterator$1 extends RestrictedSuspendLambda implements Function2 {
     final /* synthetic */ Iterator $iterator;
     final /* synthetic */ boolean $partialWindows;
@@ -46,24 +46,22 @@ final class SlidingWindowKt$windowedIterator$1 extends RestrictedSuspendLambda i
         return ((SlidingWindowKt$windowedIterator$1) create(sequenceScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:15:0x012f  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x014f  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x00e7  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x0125  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x012e  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x014e  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00e6  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x0124  */
     /* JADX WARN: Removed duplicated region for block: B:60:0x00a9  */
     /* JADX WARN: Removed duplicated region for block: B:65:0x0080  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x00d8 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x00d7 A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:89:0x00ad  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x0146 -> B:12:0x0149). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:42:0x0118 -> B:30:0x011b). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x0145 -> B:12:0x0148). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:42:0x0117 -> B:30:0x011a). Please report as a decompilation issue!!! */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:63:0x00a2 -> B:50:0x0055). Please report as a decompilation issue!!! */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        Object coroutine_suspended;
-        int coerceAtMost;
         RingBuffer ringBuffer;
         Iterator it;
         SequenceScope sequenceScope;
@@ -74,37 +72,37 @@ final class SlidingWindowKt$windowedIterator$1 extends RestrictedSuspendLambda i
         int i2;
         RingBuffer ringBuffer2;
         SequenceScope sequenceScope3;
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i3 = this.label;
         if (i3 == 0) {
             ResultKt.throwOnFailure(obj);
             SequenceScope sequenceScope4 = (SequenceScope) this.L$0;
-            coerceAtMost = RangesKt___RangesKt.coerceAtMost(this.$size, 1024);
+            int coerceAtMost = RangesKt.coerceAtMost(this.$size, 1024);
             int i4 = this.$step - this.$size;
-            if (i4 < 0) {
-                ringBuffer = new RingBuffer(coerceAtMost);
-                it = this.$iterator;
-                sequenceScope = sequenceScope4;
-                while (it.hasNext()) {
+            if (i4 >= 0) {
+                sequenceScope2 = sequenceScope4;
+                arrayList = new ArrayList(coerceAtMost);
+                i = 0;
+                it2 = this.$iterator;
+                i2 = i4;
+                while (it2.hasNext()) {
                 }
-                if (this.$partialWindows) {
+                if (!arrayList.isEmpty()) {
+                    this.L$0 = null;
+                    this.L$1 = null;
+                    this.L$2 = null;
+                    this.label = 2;
+                    if (sequenceScope2.yield(arrayList, this) == coroutine_suspended) {
+                    }
                 }
                 return Unit.INSTANCE;
             }
-            sequenceScope2 = sequenceScope4;
-            arrayList = new ArrayList(coerceAtMost);
-            i = 0;
-            it2 = this.$iterator;
-            i2 = i4;
-            while (it2.hasNext()) {
+            ringBuffer = new RingBuffer(coerceAtMost);
+            it = this.$iterator;
+            sequenceScope = sequenceScope4;
+            while (it.hasNext()) {
             }
-            if (!arrayList.isEmpty()) {
-                this.L$0 = null;
-                this.L$1 = null;
-                this.L$2 = null;
-                this.label = 2;
-                if (sequenceScope2.yield(arrayList, this) == coroutine_suspended) {
-                }
+            if (this.$partialWindows) {
             }
             return Unit.INSTANCE;
         }
@@ -145,7 +143,7 @@ final class SlidingWindowKt$windowedIterator$1 extends RestrictedSuspendLambda i
                     }
                 }
             }
-            if ((!arrayList.isEmpty()) && (this.$partialWindows || arrayList.size() == this.$size)) {
+            if (!arrayList.isEmpty() && (this.$partialWindows || arrayList.size() == this.$size)) {
                 this.L$0 = null;
                 this.L$1 = null;
                 this.L$2 = null;

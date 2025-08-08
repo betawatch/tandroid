@@ -3,7 +3,7 @@ package androidx.datastore.core;
 import androidx.datastore.core.handlers.NoOpCorruptionHandler;
 import androidx.datastore.core.handlers.ReplaceFileCorruptionHandler;
 import java.util.List;
-import kotlin.collections.CollectionsKt__CollectionsJVMKt;
+import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CoroutineScope;
@@ -20,6 +20,6 @@ public final class DataStoreFactory {
         Intrinsics.checkNotNullParameter(migrations, "migrations");
         Intrinsics.checkNotNullParameter(scope, "scope");
         Intrinsics.checkNotNullParameter(produceFile, "produceFile");
-        return new SingleProcessDataStore(produceFile, serializer, CollectionsKt__CollectionsJVMKt.listOf(DataMigrationInitializer.Companion.getInitializer(migrations)), new NoOpCorruptionHandler(), scope);
+        return new SingleProcessDataStore(produceFile, serializer, CollectionsKt.listOf(DataMigrationInitializer.Companion.getInitializer(migrations)), new NoOpCorruptionHandler(), scope);
     }
 }

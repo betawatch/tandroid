@@ -11,7 +11,7 @@ import com.microsoft.appcenter.utils.AppCenterLog;
 import java.io.Closeable;
 import java.util.Arrays;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class DatabaseManager implements Closeable {
     public static final String[] SELECT_PRIMARY_KEY = {"oid"};
     private final Context mContext;
@@ -52,7 +52,9 @@ public class DatabaseManager implements Closeable {
         for (int i = 0; i < cursor.getColumnCount(); i++) {
             if (!cursor.isNull(i)) {
                 String columnName = cursor.getColumnName(i);
-                if (!columnName.equals("oid")) {
+                if (columnName.equals("oid")) {
+                    contentValues2.put(columnName, Long.valueOf(cursor.getLong(i)));
+                } else {
                     Object obj = contentValues.get(columnName);
                     if (obj instanceof byte[]) {
                         contentValues2.put(columnName, cursor.getBlob(i));
@@ -62,87 +64,23 @@ public class DatabaseManager implements Closeable {
                         contentValues2.put(columnName, Float.valueOf(cursor.getFloat(i)));
                     } else if (obj instanceof Integer) {
                         contentValues2.put(columnName, Integer.valueOf(cursor.getInt(i)));
-                    } else if (!(obj instanceof Long)) {
-                        if (obj instanceof Short) {
-                            contentValues2.put(columnName, Short.valueOf(cursor.getShort(i)));
-                        } else if (obj instanceof Boolean) {
-                            contentValues2.put(columnName, Boolean.valueOf(cursor.getInt(i) == 1));
-                        } else {
-                            contentValues2.put(columnName, cursor.getString(i));
-                        }
+                    } else if (obj instanceof Long) {
+                        contentValues2.put(columnName, Long.valueOf(cursor.getLong(i)));
+                    } else if (obj instanceof Short) {
+                        contentValues2.put(columnName, Short.valueOf(cursor.getShort(i)));
+                    } else if (obj instanceof Boolean) {
+                        contentValues2.put(columnName, Boolean.valueOf(cursor.getInt(i) == 1));
+                    } else {
+                        contentValues2.put(columnName, cursor.getString(i));
                     }
                 }
-                contentValues2.put(columnName, Long.valueOf(cursor.getLong(i)));
             }
         }
         return contentValues2;
     }
 
-    private int delete(String str, String str2, Object obj) {
-        String[] strArr = {String.valueOf(obj)};
-        try {
-            return getDatabase().delete(str, str2 + " = ?", strArr);
-        } catch (RuntimeException e) {
-            AppCenterLog.error("AppCenter", String.format("Failed to delete values that match condition=\"%s\" and values=\"%s\" from database %s.", str2 + " = ?", Arrays.toString(strArr), this.mDatabase), e);
-            return 0;
-        }
-    }
-
     public ContentValues buildValues(Cursor cursor) {
         return buildValues(cursor, this.mSchema);
-    }
-
-    @Override // java.io.Closeable, java.lang.AutoCloseable
-    public void close() {
-        try {
-            this.mSQLiteOpenHelper.close();
-        } catch (RuntimeException e) {
-            AppCenterLog.error("AppCenter", "Failed to close the database.", e);
-        }
-    }
-
-    public int delete(String str, Object obj) {
-        return delete(this.mDefaultTable, str, obj);
-    }
-
-    public void delete(long j) {
-        delete(this.mDefaultTable, "oid", Long.valueOf(j));
-    }
-
-    public Cursor getCursor(SQLiteQueryBuilder sQLiteQueryBuilder, String[] strArr, String[] strArr2, String str) {
-        return getCursor(this.mDefaultTable, sQLiteQueryBuilder, strArr, strArr2, str);
-    }
-
-    Cursor getCursor(String str, SQLiteQueryBuilder sQLiteQueryBuilder, String[] strArr, String[] strArr2, String str2) {
-        if (sQLiteQueryBuilder == null) {
-            sQLiteQueryBuilder = SQLiteUtils.newSQLiteQueryBuilder();
-        }
-        SQLiteQueryBuilder sQLiteQueryBuilder2 = sQLiteQueryBuilder;
-        sQLiteQueryBuilder2.setTables(str);
-        return sQLiteQueryBuilder2.query(getDatabase(), strArr, null, strArr2, null, null, str2);
-    }
-
-    SQLiteDatabase getDatabase() {
-        try {
-            return this.mSQLiteOpenHelper.getWritableDatabase();
-        } catch (RuntimeException e) {
-            AppCenterLog.warn("AppCenter", "Failed to open database. Trying to delete database (may be corrupted).", e);
-            if (this.mContext.deleteDatabase(this.mDatabase)) {
-                AppCenterLog.info("AppCenter", "The database was successfully deleted.");
-            } else {
-                AppCenterLog.warn("AppCenter", "Failed to delete database.");
-            }
-            return this.mSQLiteOpenHelper.getWritableDatabase();
-        }
-    }
-
-    public long getMaxSize() {
-        try {
-            return getDatabase().getMaximumSize();
-        } catch (RuntimeException e) {
-            AppCenterLog.error("AppCenter", "Could not get maximum database size.", e);
-            return -1L;
-        }
     }
 
     public ContentValues nextValues(Cursor cursor) {
@@ -176,12 +114,13 @@ public class DatabaseManager implements Closeable {
                     newSQLiteQueryBuilder.appendWhere(str + " <= ?");
                     cursor = getCursor(newSQLiteQueryBuilder, SELECT_PRIMARY_KEY, new String[]{asString}, str + " , oid");
                 }
-                if (!cursor.moveToNext()) {
+                if (cursor.moveToNext()) {
+                    long j = cursor.getLong(0);
+                    delete(j);
+                    AppCenterLog.debug("AppCenter", "Deleted log id=" + j);
+                } else {
                     throw e2;
                 }
-                long j = cursor.getLong(0);
-                delete(j);
-                AppCenterLog.debug("AppCenter", "Deleted log id=" + j);
             }
         }
         if (cursor != null) {
@@ -193,8 +132,61 @@ public class DatabaseManager implements Closeable {
         return l.longValue();
     }
 
+    public void delete(long j) {
+        delete(this.mDefaultTable, "oid", Long.valueOf(j));
+    }
+
+    public int delete(String str, Object obj) {
+        return delete(this.mDefaultTable, str, obj);
+    }
+
+    private int delete(String str, String str2, Object obj) {
+        String[] strArr = {String.valueOf(obj)};
+        try {
+            return getDatabase().delete(str, str2 + " = ?", strArr);
+        } catch (RuntimeException e) {
+            AppCenterLog.error("AppCenter", String.format("Failed to delete values that match condition=\"%s\" and values=\"%s\" from database %s.", str2 + " = ?", Arrays.toString(strArr), this.mDatabase), e);
+            return 0;
+        }
+    }
+
+    @Override // java.io.Closeable, java.lang.AutoCloseable
+    public void close() {
+        try {
+            this.mSQLiteOpenHelper.close();
+        } catch (RuntimeException e) {
+            AppCenterLog.error("AppCenter", "Failed to close the database.", e);
+        }
+    }
+
+    public Cursor getCursor(SQLiteQueryBuilder sQLiteQueryBuilder, String[] strArr, String[] strArr2, String str) {
+        return getCursor(this.mDefaultTable, sQLiteQueryBuilder, strArr, strArr2, str);
+    }
+
+    Cursor getCursor(String str, SQLiteQueryBuilder sQLiteQueryBuilder, String[] strArr, String[] strArr2, String str2) {
+        if (sQLiteQueryBuilder == null) {
+            sQLiteQueryBuilder = SQLiteUtils.newSQLiteQueryBuilder();
+        }
+        SQLiteQueryBuilder sQLiteQueryBuilder2 = sQLiteQueryBuilder;
+        sQLiteQueryBuilder2.setTables(str);
+        return sQLiteQueryBuilder2.query(getDatabase(), strArr, null, strArr2, null, null, str2);
+    }
+
+    SQLiteDatabase getDatabase() {
+        try {
+            return this.mSQLiteOpenHelper.getWritableDatabase();
+        } catch (RuntimeException e) {
+            AppCenterLog.warn("AppCenter", "Failed to open database. Trying to delete database (may be corrupted).", e);
+            if (this.mContext.deleteDatabase(this.mDatabase)) {
+                AppCenterLog.info("AppCenter", "The database was successfully deleted.");
+            } else {
+                AppCenterLog.warn("AppCenter", "Failed to delete database.");
+            }
+            return this.mSQLiteOpenHelper.getWritableDatabase();
+        }
+    }
+
     public boolean setMaxSize(long j) {
-        String str;
         try {
             SQLiteDatabase database = getDatabase();
             long maximumSize = database.setMaximumSize(j);
@@ -208,15 +200,23 @@ public class DatabaseManager implements Closeable {
                 return false;
             }
             if (j == maximumSize) {
-                str = "Changed maximum database size to " + maximumSize + " bytes.";
-            } else {
-                str = "Changed maximum database size to " + maximumSize + " bytes (next multiple of page size).";
+                AppCenterLog.info("AppCenter", "Changed maximum database size to " + maximumSize + " bytes.");
+                return true;
             }
-            AppCenterLog.info("AppCenter", str);
+            AppCenterLog.info("AppCenter", "Changed maximum database size to " + maximumSize + " bytes (next multiple of page size).");
             return true;
         } catch (RuntimeException e) {
             AppCenterLog.error("AppCenter", "Could not change maximum database size.", e);
             return false;
+        }
+    }
+
+    public long getMaxSize() {
+        try {
+            return getDatabase().getMaximumSize();
+        } catch (RuntimeException e) {
+            AppCenterLog.error("AppCenter", "Could not get maximum database size.", e);
+            return -1L;
         }
     }
 }

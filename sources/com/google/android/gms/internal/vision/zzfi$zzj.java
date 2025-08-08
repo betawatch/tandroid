@@ -22,8 +22,9 @@ public final class zzfi$zzj extends zzjb implements zzkm {
         private static final zzjh zze = new zzfx();
         private final int zzf;
 
-        zza(int i) {
-            this.zzf = i;
+        @Override // com.google.android.gms.internal.vision.zzje
+        public final int zza() {
+            return this.zzf;
         }
 
         public static zza zza(int i) {
@@ -51,19 +52,17 @@ public final class zzfi$zzj extends zzjb implements zzkm {
             return "<" + zza.class.getName() + '@' + Integer.toHexString(System.identityHashCode(this)) + " number=" + this.zzf + " name=" + name() + '>';
         }
 
-        @Override // com.google.android.gms.internal.vision.zzje
-        public final int zza() {
-            return this.zzf;
+        zza(int i) {
+            this.zzf = i;
         }
+    }
+
+    private zzfi$zzj() {
     }
 
     public static final class zzb extends zzjb.zzb implements zzkm {
         private zzb() {
             super(zzfi$zzj.zzi);
-        }
-
-        /* synthetic */ zzb(zzfk zzfkVar) {
-            this();
         }
 
         public final zzb zza(long j) {
@@ -101,19 +100,10 @@ public final class zzfi$zzj extends zzjb implements zzkm {
             ((zzfi$zzj) this.zza).zzd(j);
             return this;
         }
-    }
 
-    static {
-        zzfi$zzj zzfi_zzj = new zzfi$zzj();
-        zzi = zzfi_zzj;
-        zzjb.zza(zzfi$zzj.class, zzfi_zzj);
-    }
-
-    private zzfi$zzj() {
-    }
-
-    public static zzb zza() {
-        return (zzb) zzi.zzj();
+        /* synthetic */ zzb(zzfk zzfkVar) {
+            this();
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -138,6 +128,10 @@ public final class zzfi$zzj extends zzjb implements zzkm {
     public final void zzd(long j) {
         this.zzc |= 16;
         this.zzh = j;
+    }
+
+    public static zzb zza() {
+        return (zzb) zzi.zzj();
     }
 
     /* JADX WARN: Type inference failed for: r3v18, types: [com.google.android.gms.internal.vision.zzjb$zza, com.google.android.gms.internal.vision.zzkx] */
@@ -178,5 +172,11 @@ public final class zzfi$zzj extends zzjb implements zzkm {
             default:
                 throw new UnsupportedOperationException();
         }
+    }
+
+    static {
+        zzfi$zzj zzfi_zzj = new zzfi$zzj();
+        zzi = zzfi_zzj;
+        zzjb.zza(zzfi$zzj.class, zzfi_zzj);
     }
 }

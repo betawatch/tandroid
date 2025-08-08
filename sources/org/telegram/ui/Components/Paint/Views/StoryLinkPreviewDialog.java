@@ -98,11 +98,11 @@ public class StoryLinkPreviewDialog extends Dialog {
 
             @Override // android.view.ViewGroup, android.view.View
             public boolean dispatchKeyEventPreIme(KeyEvent keyEvent) {
-                if (keyEvent == null || keyEvent.getKeyCode() != 4 || keyEvent.getAction() != 1) {
-                    return super.dispatchKeyEventPreIme(keyEvent);
+                if (keyEvent != null && keyEvent.getKeyCode() == 4 && keyEvent.getAction() == 1) {
+                    StoryLinkPreviewDialog.this.onBackPressed();
+                    return true;
                 }
-                StoryLinkPreviewDialog.this.onBackPressed();
-                return true;
+                return super.dispatchKeyEventPreIme(keyEvent);
             }
         };
         this.windowView = frameLayout;
@@ -125,14 +125,6 @@ public class StoryLinkPreviewDialog extends Dialog {
             private final Path path = new Path();
             private final RectF rect = new RectF();
 
-            @Override // android.view.View
-            public void draw(Canvas canvas) {
-                canvas.save();
-                canvas.clipPath(this.path);
-                super.draw(canvas);
-                canvas.restore();
-            }
-
             @Override // android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i2, int i3) {
                 super.onMeasure(i2, i3);
@@ -142,6 +134,14 @@ public class StoryLinkPreviewDialog extends Dialog {
                 if (StoryLinkPreviewDialog.this.linkView != null) {
                     StoryLinkPreviewDialog.this.linkView.setMaxWidth(getMeasuredWidth() - AndroidUtilities.dp(32.0f));
                 }
+            }
+
+            @Override // android.view.View
+            public void draw(Canvas canvas) {
+                canvas.save();
+                canvas.clipPath(this.path);
+                super.draw(canvas);
+                canvas.restore();
             }
         };
         this.previewContainer = frameLayout2;
@@ -176,14 +176,14 @@ public class StoryLinkPreviewDialog extends Dialog {
 
             @Override // android.view.ViewGroup
             protected boolean drawChild(Canvas canvas, View view, long j) {
-                if (view != StoryLinkPreviewDialog.this.linkView) {
-                    return super.drawChild(canvas, view, j);
+                if (view == StoryLinkPreviewDialog.this.linkView) {
+                    canvas.save();
+                    canvas.translate(this.x.set(view.getX()), this.y.set(view.getY()));
+                    StoryLinkPreviewDialog.this.linkView.drawInternal(canvas);
+                    canvas.restore();
+                    return true;
                 }
-                canvas.save();
-                canvas.translate(this.x.set(view.getX()), this.y.set(view.getY()));
-                StoryLinkPreviewDialog.this.linkView.drawInternal(canvas);
-                canvas.restore();
-                return true;
+                return super.drawChild(canvas, view, j);
             }
         };
         this.previewInnerContainer = frameLayout4;
@@ -234,50 +234,94 @@ public class StoryLinkPreviewDialog extends Dialog {
             }
         });
         linearLayout.addView(makeOptions.getLayout(), LayoutHelper.createLinear(-2, -2, 0.0f, 85));
-        if (Build.VERSION.SDK_INT >= 21) {
-            frameLayout.setFitsSystemWindows(true);
-            frameLayout.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() { // from class: org.telegram.ui.Components.Paint.Views.StoryLinkPreviewDialog.6
-                @Override // android.view.View.OnApplyWindowInsetsListener
-                public WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-                    int stableInsetLeft;
-                    int stableInsetTop;
-                    int stableInsetRight;
-                    int stableInsetBottom;
-                    WindowInsets consumeSystemWindowInsets;
-                    WindowInsets windowInsets2;
-                    Insets insets;
-                    int i2;
-                    int i3;
-                    int i4;
-                    int i5;
-                    int i6 = Build.VERSION.SDK_INT;
-                    if (i6 >= 30) {
-                        insets = windowInsets.getInsets(WindowInsetsCompat.Type.displayCutout() | WindowInsetsCompat.Type.systemBars());
-                        Rect rect = StoryLinkPreviewDialog.this.insets;
-                        i2 = insets.left;
-                        i3 = insets.top;
-                        i4 = insets.right;
-                        i5 = insets.bottom;
-                        rect.set(i2, i3, i4, i5);
-                    } else {
-                        Rect rect2 = StoryLinkPreviewDialog.this.insets;
-                        stableInsetLeft = windowInsets.getStableInsetLeft();
-                        stableInsetTop = windowInsets.getStableInsetTop();
-                        stableInsetRight = windowInsets.getStableInsetRight();
-                        stableInsetBottom = windowInsets.getStableInsetBottom();
-                        rect2.set(stableInsetLeft, stableInsetTop, stableInsetRight, stableInsetBottom);
-                    }
-                    StoryLinkPreviewDialog.this.windowView.setPadding(StoryLinkPreviewDialog.this.insets.left, StoryLinkPreviewDialog.this.insets.top, StoryLinkPreviewDialog.this.insets.right, StoryLinkPreviewDialog.this.insets.bottom);
-                    StoryLinkPreviewDialog.this.windowView.requestLayout();
-                    if (i6 >= 30) {
-                        windowInsets2 = WindowInsets.CONSUMED;
-                        return windowInsets2;
-                    }
-                    consumeSystemWindowInsets = windowInsets.consumeSystemWindowInsets();
-                    return consumeSystemWindowInsets;
+        frameLayout.setFitsSystemWindows(true);
+        frameLayout.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() { // from class: org.telegram.ui.Components.Paint.Views.StoryLinkPreviewDialog.6
+            @Override // android.view.View.OnApplyWindowInsetsListener
+            public WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
+                WindowInsets windowInsets2;
+                Insets insets;
+                int i2;
+                int i3;
+                int i4;
+                int i5;
+                int i6 = Build.VERSION.SDK_INT;
+                if (i6 < 30) {
+                    StoryLinkPreviewDialog.this.insets.set(windowInsets.getStableInsetLeft(), windowInsets.getStableInsetTop(), windowInsets.getStableInsetRight(), windowInsets.getStableInsetBottom());
+                } else {
+                    insets = windowInsets.getInsets(WindowInsetsCompat.Type.displayCutout() | WindowInsetsCompat.Type.systemBars());
+                    Rect rect = StoryLinkPreviewDialog.this.insets;
+                    i2 = insets.left;
+                    i3 = insets.top;
+                    i4 = insets.right;
+                    i5 = insets.bottom;
+                    rect.set(i2, i3, i4, i5);
                 }
-            });
+                StoryLinkPreviewDialog.this.windowView.setPadding(StoryLinkPreviewDialog.this.insets.left, StoryLinkPreviewDialog.this.insets.top, StoryLinkPreviewDialog.this.insets.right, StoryLinkPreviewDialog.this.insets.bottom);
+                StoryLinkPreviewDialog.this.windowView.requestLayout();
+                if (i6 >= 30) {
+                    windowInsets2 = WindowInsets.CONSUMED;
+                    return windowInsets2;
+                }
+                return windowInsets.consumeSystemWindowInsets();
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$0(View view) {
+        onBackPressed();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$1(int i, View view) {
+        LinkPreview.WebPagePreview webPagePreview = this.link;
+        boolean z = webPagePreview.captionAbove;
+        webPagePreview.captionAbove = !z;
+        this.captionButton.setState(z, true);
+        this.linkView.set(i, this.link, true);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$2(int i, View view) {
+        LinkPreview.WebPagePreview webPagePreview = this.link;
+        boolean z = webPagePreview.largePhoto;
+        webPagePreview.largePhoto = !z;
+        this.photoButton.setState(z, true);
+        this.linkView.set(i, this.link, true);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$3() {
+        Utilities.Callback callback = this.whenDone;
+        if (callback != null) {
+            callback.run(null);
+            this.whenDone = null;
         }
+        dismiss();
+    }
+
+    @Override // android.app.Dialog
+    protected void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        Window window = getWindow();
+        window.setWindowAnimations(R.style.DialogNoAnimation);
+        setContentView(this.windowView, new ViewGroup.LayoutParams(-1, -1));
+        WindowManager.LayoutParams attributes = window.getAttributes();
+        attributes.width = -1;
+        attributes.height = -1;
+        attributes.gravity = 119;
+        attributes.dimAmount = 0.0f;
+        int i = attributes.flags & (-3);
+        attributes.softInputMode = 16;
+        attributes.flags = 131072 | i;
+        int i2 = Build.VERSION.SDK_INT;
+        attributes.flags = i | (-1945959040);
+        if (i2 >= 28) {
+            attributes.layoutInDisplayCutoutMode = 1;
+        }
+        window.setAttributes(attributes);
+        this.windowView.setSystemUiVisibility(256);
+        AndroidUtilities.setLightNavigationBar(this.windowView, !Theme.isCurrentThemeDark());
     }
 
     private void animateOpenTo(final boolean z, final Runnable runnable) {
@@ -322,52 +366,16 @@ public class StoryLinkPreviewDialog extends Dialog {
         this.windowView.invalidate();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$dismiss$6() {
-        super.dismiss();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$dismiss$7() {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.StoryLinkPreviewDialog$$ExternalSyntheticLambda0
-            @Override // java.lang.Runnable
-            public final void run() {
-                StoryLinkPreviewDialog.this.lambda$dismiss$6();
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        onBackPressed();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(int i, View view) {
-        LinkPreview.WebPagePreview webPagePreview = this.link;
-        boolean z = webPagePreview.captionAbove;
-        webPagePreview.captionAbove = !z;
-        this.captionButton.setState(z, true);
-        this.linkView.set(i, this.link, true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(int i, View view) {
-        LinkPreview.WebPagePreview webPagePreview = this.link;
-        boolean z = webPagePreview.largePhoto;
-        webPagePreview.largePhoto = !z;
-        this.photoButton.setState(z, true);
-        this.linkView.set(i, this.link, true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3() {
-        Utilities.Callback callback = this.whenDone;
-        if (callback != null) {
-            callback.run(null);
-            this.whenDone = null;
+    private void prepareBlur(final View view) {
+        if (view != null) {
+            view.setVisibility(4);
         }
-        dismiss();
+        AndroidUtilities.makeGlobalBlurBitmap(new Utilities.Callback() { // from class: org.telegram.ui.Components.Paint.Views.StoryLinkPreviewDialog$$ExternalSyntheticLambda2
+            @Override // org.telegram.messenger.Utilities.Callback
+            public final void run(Object obj) {
+                StoryLinkPreviewDialog.this.lambda$prepareBlur$5(view, (Bitmap) obj);
+            }
+        }, 14.0f);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -390,16 +398,18 @@ public class StoryLinkPreviewDialog extends Dialog {
         this.blurMatrix = new Matrix();
     }
 
-    private void prepareBlur(final View view) {
-        if (view != null) {
-            view.setVisibility(4);
+    @Override // android.app.Dialog
+    public void show() {
+        if (AndroidUtilities.isSafeToShow(getContext())) {
+            super.show();
+            prepareBlur(null);
+            animateOpenTo(true, null);
         }
-        AndroidUtilities.makeGlobalBlurBitmap(new Utilities.Callback() { // from class: org.telegram.ui.Components.Paint.Views.StoryLinkPreviewDialog$$ExternalSyntheticLambda2
-            @Override // org.telegram.messenger.Utilities.Callback
-            public final void run(Object obj) {
-                StoryLinkPreviewDialog.this.lambda$prepareBlur$5(view, (Bitmap) obj);
-            }
-        }, 14.0f);
+    }
+
+    @Override // android.app.Dialog
+    public boolean isShowing() {
+        return !this.dismissing;
     }
 
     @Override // android.app.Dialog, android.content.DialogInterface
@@ -422,36 +432,19 @@ public class StoryLinkPreviewDialog extends Dialog {
         this.windowView.invalidate();
     }
 
-    @Override // android.app.Dialog
-    public boolean isShowing() {
-        return !this.dismissing;
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$dismiss$6() {
+        super.dismiss();
     }
 
-    @Override // android.app.Dialog
-    protected void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
-        Window window = getWindow();
-        window.setWindowAnimations(R.style.DialogNoAnimation);
-        setContentView(this.windowView, new ViewGroup.LayoutParams(-1, -1));
-        WindowManager.LayoutParams attributes = window.getAttributes();
-        attributes.width = -1;
-        attributes.height = -1;
-        attributes.gravity = 119;
-        attributes.dimAmount = 0.0f;
-        int i = attributes.flags & (-3);
-        attributes.softInputMode = 16;
-        attributes.flags = 131072 | i;
-        int i2 = Build.VERSION.SDK_INT;
-        if (i2 >= 21) {
-            attributes.flags = i | (-1945960192);
-        }
-        attributes.flags |= 1152;
-        if (i2 >= 28) {
-            attributes.layoutInDisplayCutoutMode = 1;
-        }
-        window.setAttributes(attributes);
-        this.windowView.setSystemUiVisibility(256);
-        AndroidUtilities.setLightNavigationBar(this.windowView, !Theme.isCurrentThemeDark());
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$dismiss$7() {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.StoryLinkPreviewDialog$$ExternalSyntheticLambda0
+            @Override // java.lang.Runnable
+            public final void run() {
+                StoryLinkPreviewDialog.this.lambda$dismiss$6();
+            }
+        });
     }
 
     public void set(LinkPreview.WebPagePreview webPagePreview, Utilities.Callback callback) {
@@ -467,24 +460,6 @@ public class StoryLinkPreviewDialog extends Dialog {
     public void setStoryPreviewView(final PreviewView previewView) {
         this.backgroundView.setImageDrawable(new Drawable() { // from class: org.telegram.ui.Components.Paint.Views.StoryLinkPreviewDialog.8
             @Override // android.graphics.drawable.Drawable
-            public void draw(Canvas canvas) {
-                canvas.save();
-                canvas.translate(getBounds().left, getBounds().top);
-                previewView.draw(canvas);
-                canvas.restore();
-            }
-
-            @Override // android.graphics.drawable.Drawable
-            public int getIntrinsicHeight() {
-                return previewView.getHeight();
-            }
-
-            @Override // android.graphics.drawable.Drawable
-            public int getIntrinsicWidth() {
-                return previewView.getWidth();
-            }
-
-            @Override // android.graphics.drawable.Drawable
             public int getOpacity() {
                 return -2;
             }
@@ -496,15 +471,24 @@ public class StoryLinkPreviewDialog extends Dialog {
             @Override // android.graphics.drawable.Drawable
             public void setColorFilter(ColorFilter colorFilter) {
             }
-        });
-    }
 
-    @Override // android.app.Dialog
-    public void show() {
-        if (AndroidUtilities.isSafeToShow(getContext())) {
-            super.show();
-            prepareBlur(null);
-            animateOpenTo(true, null);
-        }
+            @Override // android.graphics.drawable.Drawable
+            public void draw(Canvas canvas) {
+                canvas.save();
+                canvas.translate(getBounds().left, getBounds().top);
+                previewView.draw(canvas);
+                canvas.restore();
+            }
+
+            @Override // android.graphics.drawable.Drawable
+            public int getIntrinsicWidth() {
+                return previewView.getWidth();
+            }
+
+            @Override // android.graphics.drawable.Drawable
+            public int getIntrinsicHeight() {
+                return previewView.getHeight();
+            }
+        });
     }
 }

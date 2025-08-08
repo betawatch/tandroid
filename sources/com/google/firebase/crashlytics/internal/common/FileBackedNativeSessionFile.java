@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.zip.GZIPOutputStream;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 class FileBackedNativeSessionFile implements NativeSessionFile {
     private final String dataTransportFilename;
     private final File file;
@@ -19,6 +19,31 @@ class FileBackedNativeSessionFile implements NativeSessionFile {
         this.dataTransportFilename = str;
         this.reportsEndpointFilename = str2;
         this.file = file;
+    }
+
+    @Override // com.google.firebase.crashlytics.internal.common.NativeSessionFile
+    public String getReportsEndpointFilename() {
+        return this.reportsEndpointFilename;
+    }
+
+    @Override // com.google.firebase.crashlytics.internal.common.NativeSessionFile
+    public InputStream getStream() {
+        if (this.file.exists() && this.file.isFile()) {
+            try {
+                return new FileInputStream(this.file);
+            } catch (FileNotFoundException unused) {
+            }
+        }
+        return null;
+    }
+
+    @Override // com.google.firebase.crashlytics.internal.common.NativeSessionFile
+    public CrashlyticsReport.FilesPayload.File asFilePayload() {
+        byte[] asGzippedBytes = asGzippedBytes();
+        if (asGzippedBytes != null) {
+            return CrashlyticsReport.FilesPayload.File.builder().setContents(asGzippedBytes).setFilename(this.dataTransportFilename).build();
+        }
+        return null;
     }
 
     private byte[] asGzippedBytes() {
@@ -40,7 +65,9 @@ class FileBackedNativeSessionFile implements NativeSessionFile {
                     while (true) {
                         try {
                             int read = stream.read(bArr);
-                            if (read <= 0) {
+                            if (read > 0) {
+                                gZIPOutputStream.write(bArr, 0, read);
+                            } else {
                                 gZIPOutputStream.finish();
                                 byte[] byteArray = byteArrayOutputStream.toByteArray();
                                 gZIPOutputStream.close();
@@ -48,7 +75,6 @@ class FileBackedNativeSessionFile implements NativeSessionFile {
                                 stream.close();
                                 return byteArray;
                             }
-                            gZIPOutputStream.write(bArr, 0, read);
                         } finally {
                         }
                     }
@@ -59,30 +85,5 @@ class FileBackedNativeSessionFile implements NativeSessionFile {
         } catch (IOException unused) {
             return null;
         }
-    }
-
-    @Override // com.google.firebase.crashlytics.internal.common.NativeSessionFile
-    public CrashlyticsReport.FilesPayload.File asFilePayload() {
-        byte[] asGzippedBytes = asGzippedBytes();
-        if (asGzippedBytes != null) {
-            return CrashlyticsReport.FilesPayload.File.builder().setContents(asGzippedBytes).setFilename(this.dataTransportFilename).build();
-        }
-        return null;
-    }
-
-    @Override // com.google.firebase.crashlytics.internal.common.NativeSessionFile
-    public String getReportsEndpointFilename() {
-        return this.reportsEndpointFilename;
-    }
-
-    @Override // com.google.firebase.crashlytics.internal.common.NativeSessionFile
-    public InputStream getStream() {
-        if (this.file.exists() && this.file.isFile()) {
-            try {
-                return new FileInputStream(this.file);
-            } catch (FileNotFoundException unused) {
-            }
-        }
-        return null;
     }
 }

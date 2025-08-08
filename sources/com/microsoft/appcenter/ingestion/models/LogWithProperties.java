@@ -5,9 +5,29 @@ import java.util.Map;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class LogWithProperties extends AbstractLog {
     private Map properties;
+
+    public Map getProperties() {
+        return this.properties;
+    }
+
+    public void setProperties(Map map) {
+        this.properties = map;
+    }
+
+    @Override // com.microsoft.appcenter.ingestion.models.AbstractLog, com.microsoft.appcenter.ingestion.models.Model
+    public void read(JSONObject jSONObject) {
+        super.read(jSONObject);
+        setProperties(JSONUtils.readMap(jSONObject, "properties"));
+    }
+
+    @Override // com.microsoft.appcenter.ingestion.models.AbstractLog, com.microsoft.appcenter.ingestion.models.Model
+    public void write(JSONStringer jSONStringer) {
+        super.write(jSONStringer);
+        JSONUtils.writeMap(jSONStringer, "properties", getProperties());
+    }
 
     @Override // com.microsoft.appcenter.ingestion.models.AbstractLog
     public boolean equals(Object obj) {
@@ -22,30 +42,10 @@ public abstract class LogWithProperties extends AbstractLog {
         return map != null ? map.equals(map2) : map2 == null;
     }
 
-    public Map getProperties() {
-        return this.properties;
-    }
-
     @Override // com.microsoft.appcenter.ingestion.models.AbstractLog
     public int hashCode() {
         int hashCode = super.hashCode() * 31;
         Map map = this.properties;
         return hashCode + (map != null ? map.hashCode() : 0);
-    }
-
-    @Override // com.microsoft.appcenter.ingestion.models.AbstractLog, com.microsoft.appcenter.ingestion.models.Model
-    public void read(JSONObject jSONObject) {
-        super.read(jSONObject);
-        setProperties(JSONUtils.readMap(jSONObject, "properties"));
-    }
-
-    public void setProperties(Map map) {
-        this.properties = map;
-    }
-
-    @Override // com.microsoft.appcenter.ingestion.models.AbstractLog, com.microsoft.appcenter.ingestion.models.Model
-    public void write(JSONStringer jSONStringer) {
-        super.write(jSONStringer);
-        JSONUtils.writeMap(jSONStringer, "properties", getProperties());
     }
 }

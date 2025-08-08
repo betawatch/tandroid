@@ -6,49 +6,35 @@ abstract class zzav {
         return (i < 32 ? 4 : 2) * (i + 1);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x002a, code lost:
-    
-        r9 = r6 & r11;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x002c, code lost:
-    
-        if (r5 != (-1)) goto L15;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x002e, code lost:
-    
-        zze(r12, r1, r9);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x0039, code lost:
-    
-        return r2;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x0032, code lost:
-    
-        r13[r5] = (r9 & r11) | (r13[r5] & r4);
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     static int zzb(Object obj, Object obj2, int i, Object obj3, int[] iArr, Object[] objArr, Object[] objArr2) {
+        int i2;
+        int i3;
         int zza = zzaw.zza(obj);
-        int i2 = zza & i;
-        int zzc = zzc(obj3, i2);
+        int i4 = zza & i;
+        int zzc = zzc(obj3, i4);
         if (zzc != 0) {
-            int i3 = i ^ (-1);
-            int i4 = zza & i3;
-            int i5 = -1;
+            int i5 = ~i;
+            int i6 = zza & i5;
+            int i7 = -1;
             while (true) {
-                int i6 = zzc - 1;
-                int i7 = iArr[i6];
-                if ((i7 & i3) != i4 || !zzo.zza(obj, objArr[i6]) || (objArr2 != null && !zzo.zza(obj2, objArr2[i6]))) {
-                    int i8 = i7 & i;
+                i2 = zzc - 1;
+                i3 = iArr[i2];
+                if ((i3 & i5) != i6 || !zzo.zza(obj, objArr[i2]) || (objArr2 != null && !zzo.zza(obj2, objArr2[i2]))) {
+                    int i8 = i3 & i;
                     if (i8 == 0) {
                         break;
                     }
-                    i5 = i6;
+                    i7 = i2;
                     zzc = i8;
                 }
             }
+            int i9 = i3 & i;
+            if (i7 == -1) {
+                zze(obj3, i4, i9);
+            } else {
+                iArr[i7] = (i9 & i) | (iArr[i7] & i5);
+            }
+            return i2;
         }
         return -1;
     }

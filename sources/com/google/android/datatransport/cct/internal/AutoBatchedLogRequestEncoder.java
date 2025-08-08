@@ -10,6 +10,84 @@ import com.google.firebase.encoders.config.EncoderConfig;
 public final class AutoBatchedLogRequestEncoder implements Configurator {
     public static final Configurator CONFIG = new AutoBatchedLogRequestEncoder();
 
+    private AutoBatchedLogRequestEncoder() {
+    }
+
+    @Override // com.google.firebase.encoders.config.Configurator
+    public void configure(EncoderConfig encoderConfig) {
+        BatchedLogRequestEncoder batchedLogRequestEncoder = BatchedLogRequestEncoder.INSTANCE;
+        encoderConfig.registerEncoder(BatchedLogRequest.class, batchedLogRequestEncoder);
+        encoderConfig.registerEncoder(AutoValue_BatchedLogRequest.class, batchedLogRequestEncoder);
+        LogRequestEncoder logRequestEncoder = LogRequestEncoder.INSTANCE;
+        encoderConfig.registerEncoder(LogRequest.class, logRequestEncoder);
+        encoderConfig.registerEncoder(AutoValue_LogRequest.class, logRequestEncoder);
+        ClientInfoEncoder clientInfoEncoder = ClientInfoEncoder.INSTANCE;
+        encoderConfig.registerEncoder(ClientInfo.class, clientInfoEncoder);
+        encoderConfig.registerEncoder(AutoValue_ClientInfo.class, clientInfoEncoder);
+        AndroidClientInfoEncoder androidClientInfoEncoder = AndroidClientInfoEncoder.INSTANCE;
+        encoderConfig.registerEncoder(AndroidClientInfo.class, androidClientInfoEncoder);
+        encoderConfig.registerEncoder(AutoValue_AndroidClientInfo.class, androidClientInfoEncoder);
+        LogEventEncoder logEventEncoder = LogEventEncoder.INSTANCE;
+        encoderConfig.registerEncoder(LogEvent.class, logEventEncoder);
+        encoderConfig.registerEncoder(AutoValue_LogEvent.class, logEventEncoder);
+        NetworkConnectionInfoEncoder networkConnectionInfoEncoder = NetworkConnectionInfoEncoder.INSTANCE;
+        encoderConfig.registerEncoder(NetworkConnectionInfo.class, networkConnectionInfoEncoder);
+        encoderConfig.registerEncoder(AutoValue_NetworkConnectionInfo.class, networkConnectionInfoEncoder);
+    }
+
+    private static final class BatchedLogRequestEncoder implements ObjectEncoder {
+        static final BatchedLogRequestEncoder INSTANCE = new BatchedLogRequestEncoder();
+        private static final FieldDescriptor LOGREQUEST_DESCRIPTOR = FieldDescriptor.of("logRequest");
+
+        private BatchedLogRequestEncoder() {
+        }
+
+        @Override // com.google.firebase.encoders.ObjectEncoder
+        public void encode(BatchedLogRequest batchedLogRequest, ObjectEncoderContext objectEncoderContext) {
+            objectEncoderContext.add(LOGREQUEST_DESCRIPTOR, batchedLogRequest.getLogRequests());
+        }
+    }
+
+    private static final class LogRequestEncoder implements ObjectEncoder {
+        static final LogRequestEncoder INSTANCE = new LogRequestEncoder();
+        private static final FieldDescriptor REQUESTTIMEMS_DESCRIPTOR = FieldDescriptor.of("requestTimeMs");
+        private static final FieldDescriptor REQUESTUPTIMEMS_DESCRIPTOR = FieldDescriptor.of("requestUptimeMs");
+        private static final FieldDescriptor CLIENTINFO_DESCRIPTOR = FieldDescriptor.of("clientInfo");
+        private static final FieldDescriptor LOGSOURCE_DESCRIPTOR = FieldDescriptor.of("logSource");
+        private static final FieldDescriptor LOGSOURCENAME_DESCRIPTOR = FieldDescriptor.of("logSourceName");
+        private static final FieldDescriptor LOGEVENT_DESCRIPTOR = FieldDescriptor.of("logEvent");
+        private static final FieldDescriptor QOSTIER_DESCRIPTOR = FieldDescriptor.of("qosTier");
+
+        private LogRequestEncoder() {
+        }
+
+        @Override // com.google.firebase.encoders.ObjectEncoder
+        public void encode(LogRequest logRequest, ObjectEncoderContext objectEncoderContext) {
+            objectEncoderContext.add(REQUESTTIMEMS_DESCRIPTOR, logRequest.getRequestTimeMs());
+            objectEncoderContext.add(REQUESTUPTIMEMS_DESCRIPTOR, logRequest.getRequestUptimeMs());
+            objectEncoderContext.add(CLIENTINFO_DESCRIPTOR, logRequest.getClientInfo());
+            objectEncoderContext.add(LOGSOURCE_DESCRIPTOR, logRequest.getLogSource());
+            objectEncoderContext.add(LOGSOURCENAME_DESCRIPTOR, logRequest.getLogSourceName());
+            objectEncoderContext.add(LOGEVENT_DESCRIPTOR, logRequest.getLogEvents());
+            objectEncoderContext.add(QOSTIER_DESCRIPTOR, logRequest.getQosTier());
+        }
+    }
+
+    private static final class ClientInfoEncoder implements ObjectEncoder {
+        static final ClientInfoEncoder INSTANCE = new ClientInfoEncoder();
+        private static final FieldDescriptor CLIENTTYPE_DESCRIPTOR = FieldDescriptor.of("clientType");
+        private static final FieldDescriptor ANDROIDCLIENTINFO_DESCRIPTOR = FieldDescriptor.of("androidClientInfo");
+
+        private ClientInfoEncoder() {
+        }
+
+        @Override // com.google.firebase.encoders.ObjectEncoder
+        public void encode(ClientInfo clientInfo, ObjectEncoderContext objectEncoderContext) {
+            objectEncoderContext.add(CLIENTTYPE_DESCRIPTOR, clientInfo.getClientType());
+            objectEncoderContext.add(ANDROIDCLIENTINFO_DESCRIPTOR, clientInfo.getAndroidClientInfo());
+        }
+    }
+
     private static final class AndroidClientInfoEncoder implements ObjectEncoder {
         static final AndroidClientInfoEncoder INSTANCE = new AndroidClientInfoEncoder();
         private static final FieldDescriptor SDKVERSION_DESCRIPTOR = FieldDescriptor.of("sdkVersion");
@@ -45,34 +123,6 @@ public final class AutoBatchedLogRequestEncoder implements Configurator {
         }
     }
 
-    private static final class BatchedLogRequestEncoder implements ObjectEncoder {
-        static final BatchedLogRequestEncoder INSTANCE = new BatchedLogRequestEncoder();
-        private static final FieldDescriptor LOGREQUEST_DESCRIPTOR = FieldDescriptor.of("logRequest");
-
-        private BatchedLogRequestEncoder() {
-        }
-
-        @Override // com.google.firebase.encoders.ObjectEncoder
-        public void encode(BatchedLogRequest batchedLogRequest, ObjectEncoderContext objectEncoderContext) {
-            objectEncoderContext.add(LOGREQUEST_DESCRIPTOR, batchedLogRequest.getLogRequests());
-        }
-    }
-
-    private static final class ClientInfoEncoder implements ObjectEncoder {
-        static final ClientInfoEncoder INSTANCE = new ClientInfoEncoder();
-        private static final FieldDescriptor CLIENTTYPE_DESCRIPTOR = FieldDescriptor.of("clientType");
-        private static final FieldDescriptor ANDROIDCLIENTINFO_DESCRIPTOR = FieldDescriptor.of("androidClientInfo");
-
-        private ClientInfoEncoder() {
-        }
-
-        @Override // com.google.firebase.encoders.ObjectEncoder
-        public void encode(ClientInfo clientInfo, ObjectEncoderContext objectEncoderContext) {
-            objectEncoderContext.add(CLIENTTYPE_DESCRIPTOR, clientInfo.getClientType());
-            objectEncoderContext.add(ANDROIDCLIENTINFO_DESCRIPTOR, clientInfo.getAndroidClientInfo());
-        }
-    }
-
     private static final class LogEventEncoder implements ObjectEncoder {
         static final LogEventEncoder INSTANCE = new LogEventEncoder();
         private static final FieldDescriptor EVENTTIMEMS_DESCRIPTOR = FieldDescriptor.of("eventTimeMs");
@@ -98,31 +148,6 @@ public final class AutoBatchedLogRequestEncoder implements Configurator {
         }
     }
 
-    private static final class LogRequestEncoder implements ObjectEncoder {
-        static final LogRequestEncoder INSTANCE = new LogRequestEncoder();
-        private static final FieldDescriptor REQUESTTIMEMS_DESCRIPTOR = FieldDescriptor.of("requestTimeMs");
-        private static final FieldDescriptor REQUESTUPTIMEMS_DESCRIPTOR = FieldDescriptor.of("requestUptimeMs");
-        private static final FieldDescriptor CLIENTINFO_DESCRIPTOR = FieldDescriptor.of("clientInfo");
-        private static final FieldDescriptor LOGSOURCE_DESCRIPTOR = FieldDescriptor.of("logSource");
-        private static final FieldDescriptor LOGSOURCENAME_DESCRIPTOR = FieldDescriptor.of("logSourceName");
-        private static final FieldDescriptor LOGEVENT_DESCRIPTOR = FieldDescriptor.of("logEvent");
-        private static final FieldDescriptor QOSTIER_DESCRIPTOR = FieldDescriptor.of("qosTier");
-
-        private LogRequestEncoder() {
-        }
-
-        @Override // com.google.firebase.encoders.ObjectEncoder
-        public void encode(LogRequest logRequest, ObjectEncoderContext objectEncoderContext) {
-            objectEncoderContext.add(REQUESTTIMEMS_DESCRIPTOR, logRequest.getRequestTimeMs());
-            objectEncoderContext.add(REQUESTUPTIMEMS_DESCRIPTOR, logRequest.getRequestUptimeMs());
-            objectEncoderContext.add(CLIENTINFO_DESCRIPTOR, logRequest.getClientInfo());
-            objectEncoderContext.add(LOGSOURCE_DESCRIPTOR, logRequest.getLogSource());
-            objectEncoderContext.add(LOGSOURCENAME_DESCRIPTOR, logRequest.getLogSourceName());
-            objectEncoderContext.add(LOGEVENT_DESCRIPTOR, logRequest.getLogEvents());
-            objectEncoderContext.add(QOSTIER_DESCRIPTOR, logRequest.getQosTier());
-        }
-    }
-
     private static final class NetworkConnectionInfoEncoder implements ObjectEncoder {
         static final NetworkConnectionInfoEncoder INSTANCE = new NetworkConnectionInfoEncoder();
         private static final FieldDescriptor NETWORKTYPE_DESCRIPTOR = FieldDescriptor.of("networkType");
@@ -136,30 +161,5 @@ public final class AutoBatchedLogRequestEncoder implements Configurator {
             objectEncoderContext.add(NETWORKTYPE_DESCRIPTOR, networkConnectionInfo.getNetworkType());
             objectEncoderContext.add(MOBILESUBTYPE_DESCRIPTOR, networkConnectionInfo.getMobileSubtype());
         }
-    }
-
-    private AutoBatchedLogRequestEncoder() {
-    }
-
-    @Override // com.google.firebase.encoders.config.Configurator
-    public void configure(EncoderConfig encoderConfig) {
-        BatchedLogRequestEncoder batchedLogRequestEncoder = BatchedLogRequestEncoder.INSTANCE;
-        encoderConfig.registerEncoder(BatchedLogRequest.class, batchedLogRequestEncoder);
-        encoderConfig.registerEncoder(AutoValue_BatchedLogRequest.class, batchedLogRequestEncoder);
-        LogRequestEncoder logRequestEncoder = LogRequestEncoder.INSTANCE;
-        encoderConfig.registerEncoder(LogRequest.class, logRequestEncoder);
-        encoderConfig.registerEncoder(AutoValue_LogRequest.class, logRequestEncoder);
-        ClientInfoEncoder clientInfoEncoder = ClientInfoEncoder.INSTANCE;
-        encoderConfig.registerEncoder(ClientInfo.class, clientInfoEncoder);
-        encoderConfig.registerEncoder(AutoValue_ClientInfo.class, clientInfoEncoder);
-        AndroidClientInfoEncoder androidClientInfoEncoder = AndroidClientInfoEncoder.INSTANCE;
-        encoderConfig.registerEncoder(AndroidClientInfo.class, androidClientInfoEncoder);
-        encoderConfig.registerEncoder(AutoValue_AndroidClientInfo.class, androidClientInfoEncoder);
-        LogEventEncoder logEventEncoder = LogEventEncoder.INSTANCE;
-        encoderConfig.registerEncoder(LogEvent.class, logEventEncoder);
-        encoderConfig.registerEncoder(AutoValue_LogEvent.class, logEventEncoder);
-        NetworkConnectionInfoEncoder networkConnectionInfoEncoder = NetworkConnectionInfoEncoder.INSTANCE;
-        encoderConfig.registerEncoder(NetworkConnectionInfo.class, networkConnectionInfoEncoder);
-        encoderConfig.registerEncoder(AutoValue_NetworkConnectionInfo.class, networkConnectionInfoEncoder);
     }
 }

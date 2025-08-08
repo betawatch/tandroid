@@ -12,18 +12,6 @@ final class EmojiInputConnection extends InputConnectionWrapper {
     private final EmojiCompatDeleteHelper mEmojiCompatDeleteHelper;
     private final TextView mTextView;
 
-    public static class EmojiCompatDeleteHelper {
-        public boolean handleDeleteSurroundingText(InputConnection inputConnection, Editable editable, int i, int i2, boolean z) {
-            return EmojiCompat.handleDeleteSurroundingText(inputConnection, editable, i, i2, z);
-        }
-
-        public void updateEditorInfoAttrs(EditorInfo editorInfo) {
-            if (EmojiCompat.isConfigured()) {
-                EmojiCompat.get().updateEditorInfo(editorInfo);
-            }
-        }
-    }
-
     EmojiInputConnection(TextView textView, InputConnection inputConnection, EditorInfo editorInfo) {
         this(textView, inputConnection, editorInfo, new EmojiCompatDeleteHelper());
     }
@@ -35,10 +23,6 @@ final class EmojiInputConnection extends InputConnectionWrapper {
         emojiCompatDeleteHelper.updateEditorInfoAttrs(editorInfo);
     }
 
-    private Editable getEditable() {
-        return this.mTextView.getEditableText();
-    }
-
     @Override // android.view.inputmethod.InputConnectionWrapper, android.view.inputmethod.InputConnection
     public boolean deleteSurroundingText(int i, int i2) {
         return this.mEmojiCompatDeleteHelper.handleDeleteSurroundingText(this, getEditable(), i, i2, false) || super.deleteSurroundingText(i, i2);
@@ -47,5 +31,21 @@ final class EmojiInputConnection extends InputConnectionWrapper {
     @Override // android.view.inputmethod.InputConnectionWrapper, android.view.inputmethod.InputConnection
     public boolean deleteSurroundingTextInCodePoints(int i, int i2) {
         return this.mEmojiCompatDeleteHelper.handleDeleteSurroundingText(this, getEditable(), i, i2, true) || super.deleteSurroundingTextInCodePoints(i, i2);
+    }
+
+    private Editable getEditable() {
+        return this.mTextView.getEditableText();
+    }
+
+    public static class EmojiCompatDeleteHelper {
+        public boolean handleDeleteSurroundingText(InputConnection inputConnection, Editable editable, int i, int i2, boolean z) {
+            return EmojiCompat.handleDeleteSurroundingText(inputConnection, editable, i, i2, z);
+        }
+
+        public void updateEditorInfoAttrs(EditorInfo editorInfo) {
+            if (EmojiCompat.isConfigured()) {
+                EmojiCompat.get().updateEditorInfo(editorInfo);
+            }
+        }
     }
 }

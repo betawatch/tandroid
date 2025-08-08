@@ -12,16 +12,6 @@ public final class zzpg extends zzin implements zzkf {
         zzphVar = zzph.zzb;
     }
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    /* synthetic */ zzpg(zzor zzorVar) {
-        super(r1);
-        zzph zzphVar;
-        zzphVar = zzph.zzb;
-    }
-
     public final zzpg zzd(int i) {
         zzm();
         ((zzph) this.zza).zzf = i;
@@ -38,5 +28,15 @@ public final class zzpg extends zzin implements zzkf {
         zzm();
         zzph.zzH((zzph) this.zza, i);
         return this;
+    }
+
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    /* synthetic */ zzpg(zzor zzorVar) {
+        super(r1);
+        zzph zzphVar;
+        zzphVar = zzph.zzb;
     }
 }

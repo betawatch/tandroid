@@ -20,6 +20,40 @@ public abstract class zzjb extends zzhf {
         }
     }
 
+    public static class zze extends zzim {
+    }
+
+    public enum zzg {
+        public static final int zza = 1;
+        public static final int zzb = 2;
+        public static final int zzc = 3;
+        public static final int zzd = 4;
+        public static final int zze = 5;
+        public static final int zzf = 6;
+        public static final int zzg = 7;
+        private static final /* synthetic */ int[] zzh = {1, 2, 3, 4, 5, 6, 7};
+
+        public static int[] zza() {
+            return (int[]) zzh.clone();
+        }
+    }
+
+    protected abstract Object zza(int i, Object obj, Object obj2);
+
+    public String toString() {
+        return zzkp.zza(this, super.toString());
+    }
+
+    public int hashCode() {
+        int i = this.zza;
+        if (i != 0) {
+            return i;
+        }
+        int zza2 = zzky.zza().zza(this).zza(this);
+        this.zza = zza2;
+        return zza2;
+    }
+
     public static abstract class zzb extends zzhe {
         protected zzjb zza;
         protected boolean zzb = false;
@@ -28,48 +62,6 @@ public abstract class zzjb extends zzhf {
         protected zzb(zzjb zzjbVar) {
             this.zzc = zzjbVar;
             this.zza = (zzjb) zzjbVar.zza(zzg.zzd, (Object) null, (Object) null);
-        }
-
-        private static void zza(zzjb zzjbVar, zzjb zzjbVar2) {
-            zzky.zza().zza(zzjbVar).zzb(zzjbVar, zzjbVar2);
-        }
-
-        private final zzb zzb(byte[] bArr, int i, int i2, zzio zzioVar) {
-            if (this.zzb) {
-                zzb();
-                this.zzb = false;
-            }
-            try {
-                zzky.zza().zza(this.zza).zza(this.zza, bArr, 0, i2, new zzhn(zzioVar));
-                return this;
-            } catch (zzjk e) {
-                throw e;
-            } catch (IOException e2) {
-                throw new RuntimeException("Reading from byte array should not throw IOException.", e2);
-            } catch (IndexOutOfBoundsException unused) {
-                throw zzjk.zza();
-            }
-        }
-
-        public /* synthetic */ Object clone() {
-            zzb zzbVar = (zzb) this.zzc.zza(zzg.zze, (Object) null, (Object) null);
-            zzbVar.zza((zzjb) zze());
-            return zzbVar;
-        }
-
-        @Override // com.google.android.gms.internal.vision.zzhe
-        public final /* synthetic */ zzhe zza(byte[] bArr, int i, int i2, zzio zzioVar) {
-            return zzb(bArr, 0, i2, zzioVar);
-        }
-
-        @Override // com.google.android.gms.internal.vision.zzhe
-        public final zzb zza(zzjb zzjbVar) {
-            if (this.zzb) {
-                zzb();
-                this.zzb = false;
-            }
-            zza(this.zza, zzjbVar);
-            return this;
         }
 
         protected void zzb() {
@@ -99,28 +91,93 @@ public abstract class zzjb extends zzhf {
             throw new zzlv(zzjbVar);
         }
 
+        @Override // com.google.android.gms.internal.vision.zzhe
+        public final zzb zza(zzjb zzjbVar) {
+            if (this.zzb) {
+                zzb();
+                this.zzb = false;
+            }
+            zza(this.zza, zzjbVar);
+            return this;
+        }
+
+        private static void zza(zzjb zzjbVar, zzjb zzjbVar2) {
+            zzky.zza().zza(zzjbVar).zzb(zzjbVar, zzjbVar2);
+        }
+
+        private final zzb zzb(byte[] bArr, int i, int i2, zzio zzioVar) {
+            if (this.zzb) {
+                zzb();
+                this.zzb = false;
+            }
+            try {
+                zzky.zza().zza(this.zza).zza(this.zza, bArr, 0, i2, new zzhn(zzioVar));
+                return this;
+            } catch (zzjk e) {
+                throw e;
+            } catch (IOException e2) {
+                throw new RuntimeException("Reading from byte array should not throw IOException.", e2);
+            } catch (IndexOutOfBoundsException unused) {
+                throw zzjk.zza();
+            }
+        }
+
+        @Override // com.google.android.gms.internal.vision.zzhe
+        public final /* synthetic */ zzhe zza(byte[] bArr, int i, int i2, zzio zzioVar) {
+            return zzb(bArr, 0, i2, zzioVar);
+        }
+
         @Override // com.google.android.gms.internal.vision.zzkm
         public final /* synthetic */ zzkk zzr() {
             return this.zzc;
         }
-    }
 
-    public static class zze extends zzim {
-    }
-
-    public enum zzg {
-        public static final int zza = 1;
-        public static final int zzb = 2;
-        public static final int zzc = 3;
-        public static final int zzd = 4;
-        public static final int zze = 5;
-        public static final int zzf = 6;
-        public static final int zzg = 7;
-        private static final /* synthetic */ int[] zzh = {1, 2, 3, 4, 5, 6, 7};
-
-        public static int[] zza() {
-            return (int[]) zzh.clone();
+        public /* synthetic */ Object clone() {
+            zzb zzbVar = (zzb) this.zzc.zza(zzg.zze, (Object) null, (Object) null);
+            zzbVar.zza((zzjb) zze());
+            return zzbVar;
         }
+    }
+
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && getClass() == obj.getClass()) {
+            return zzky.zza().zza(this).zza(this, (zzjb) obj);
+        }
+        return false;
+    }
+
+    protected final zzb zzj() {
+        return (zzb) zza(zzg.zze, (Object) null, (Object) null);
+    }
+
+    public final boolean zzk() {
+        return zza(this, true);
+    }
+
+    @Override // com.google.android.gms.internal.vision.zzhf
+    final int zzi() {
+        return this.zzc;
+    }
+
+    @Override // com.google.android.gms.internal.vision.zzhf
+    final void zzb(int i) {
+        this.zzc = i;
+    }
+
+    @Override // com.google.android.gms.internal.vision.zzkk
+    public final void zza(zzii zziiVar) {
+        zzky.zza().zza(this).zza((Object) this, (zzmr) zzil.zza(zziiVar));
+    }
+
+    @Override // com.google.android.gms.internal.vision.zzkk
+    public final int zzm() {
+        if (this.zzc == -1) {
+            this.zzc = zzky.zza().zza(this).zzb(this);
+        }
+        return this.zzc;
     }
 
     static zzjb zza(Class cls) {
@@ -143,9 +200,8 @@ public abstract class zzjb extends zzhf {
         return zzjbVar;
     }
 
-    protected static zzjl zza(zzjl zzjlVar) {
-        int size = zzjlVar.size();
-        return zzjlVar.zza(size == 0 ? 10 : size << 1);
+    protected static void zza(Class cls, zzjb zzjbVar) {
+        zzd.put(cls, zzjbVar);
     }
 
     protected static Object zza(zzkk zzkkVar, String str, Object[] objArr) {
@@ -167,10 +223,6 @@ public abstract class zzjb extends zzhf {
             }
             throw new RuntimeException("Unexpected exception thrown by generated accessor method.", cause);
         }
-    }
-
-    protected static void zza(Class cls, zzjb zzjbVar) {
-        zzd.put(cls, zzjbVar);
     }
 
     protected static final boolean zza(zzjb zzjbVar, boolean z) {
@@ -197,61 +249,9 @@ public abstract class zzjb extends zzhf {
         return zzlb.zzd();
     }
 
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && getClass() == obj.getClass()) {
-            return zzky.zza().zza(this).zza(this, (zzjb) obj);
-        }
-        return false;
-    }
-
-    public int hashCode() {
-        int i = this.zza;
-        if (i != 0) {
-            return i;
-        }
-        int zza2 = zzky.zza().zza(this).zza(this);
-        this.zza = zza2;
-        return zza2;
-    }
-
-    public String toString() {
-        return zzkp.zza(this, super.toString());
-    }
-
-    protected abstract Object zza(int i, Object obj, Object obj2);
-
-    @Override // com.google.android.gms.internal.vision.zzkk
-    public final void zza(zzii zziiVar) {
-        zzky.zza().zza(this).zza((Object) this, (zzmr) zzil.zza(zziiVar));
-    }
-
-    @Override // com.google.android.gms.internal.vision.zzhf
-    final void zzb(int i) {
-        this.zzc = i;
-    }
-
-    @Override // com.google.android.gms.internal.vision.zzhf
-    final int zzi() {
-        return this.zzc;
-    }
-
-    protected final zzb zzj() {
-        return (zzb) zza(zzg.zze, (Object) null, (Object) null);
-    }
-
-    public final boolean zzk() {
-        return zza(this, true);
-    }
-
-    @Override // com.google.android.gms.internal.vision.zzkk
-    public final int zzm() {
-        if (this.zzc == -1) {
-            this.zzc = zzky.zza().zza(this).zzb(this);
-        }
-        return this.zzc;
+    protected static zzjl zza(zzjl zzjlVar) {
+        int size = zzjlVar.size();
+        return zzjlVar.zza(size == 0 ? 10 : size << 1);
     }
 
     @Override // com.google.android.gms.internal.vision.zzkk

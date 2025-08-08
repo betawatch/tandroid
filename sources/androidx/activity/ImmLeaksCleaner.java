@@ -20,23 +20,6 @@ final class ImmLeaksCleaner implements LifecycleEventObserver {
         this.mActivity = activity;
     }
 
-    private static void initializeReflectiveFields() {
-        try {
-            sReflectedFieldsInitialized = 2;
-            Field declaredField = InputMethodManager.class.getDeclaredField("mServedView");
-            sServedViewField = declaredField;
-            declaredField.setAccessible(true);
-            Field declaredField2 = InputMethodManager.class.getDeclaredField("mNextServedView");
-            sNextServedViewField = declaredField2;
-            declaredField2.setAccessible(true);
-            Field declaredField3 = InputMethodManager.class.getDeclaredField("mH");
-            sHField = declaredField3;
-            declaredField3.setAccessible(true);
-            sReflectedFieldsInitialized = 1;
-        } catch (NoSuchFieldException unused) {
-        }
-    }
-
     @Override // androidx.lifecycle.LifecycleEventObserver
     public void onStateChanged(LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
         if (event != Lifecycle.Event.ON_DESTROY) {
@@ -78,6 +61,23 @@ final class ImmLeaksCleaner implements LifecycleEventObserver {
                 }
             } catch (IllegalAccessException unused4) {
             }
+        }
+    }
+
+    private static void initializeReflectiveFields() {
+        try {
+            sReflectedFieldsInitialized = 2;
+            Field declaredField = InputMethodManager.class.getDeclaredField("mServedView");
+            sServedViewField = declaredField;
+            declaredField.setAccessible(true);
+            Field declaredField2 = InputMethodManager.class.getDeclaredField("mNextServedView");
+            sNextServedViewField = declaredField2;
+            declaredField2.setAccessible(true);
+            Field declaredField3 = InputMethodManager.class.getDeclaredField("mH");
+            sHField = declaredField3;
+            declaredField3.setAccessible(true);
+            sReflectedFieldsInitialized = 1;
+        } catch (NoSuchFieldException unused) {
         }
     }
 }

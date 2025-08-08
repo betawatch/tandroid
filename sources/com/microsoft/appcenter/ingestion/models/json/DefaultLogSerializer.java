@@ -10,22 +10,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class DefaultLogSerializer implements LogSerializer {
     private final Map mLogFactories = new HashMap();
-
-    private Log readLog(JSONObject jSONObject, String str) {
-        if (str == null) {
-            str = jSONObject.getString("type");
-        }
-        LogFactory logFactory = (LogFactory) this.mLogFactories.get(str);
-        if (logFactory != null) {
-            Log create = logFactory.create();
-            create.read(jSONObject);
-            return create;
-        }
-        throw new JSONException("Unknown log type: " + str);
-    }
 
     private JSONStringer writeLog(JSONStringer jSONStringer, Log log) {
         jSONStringer.object();
@@ -34,14 +21,32 @@ public class DefaultLogSerializer implements LogSerializer {
         return jSONStringer;
     }
 
+    private Log readLog(JSONObject jSONObject, String str) {
+        if (str == null) {
+            str = jSONObject.getString("type");
+        }
+        LogFactory logFactory = (LogFactory) this.mLogFactories.get(str);
+        if (logFactory == null) {
+            throw new JSONException("Unknown log type: " + str);
+        }
+        Log create = logFactory.create();
+        create.read(jSONObject);
+        return create;
+    }
+
     @Override // com.microsoft.appcenter.ingestion.models.json.LogSerializer
-    public void addLogFactory(String str, LogFactory logFactory) {
-        this.mLogFactories.put(str, logFactory);
+    public String serializeLog(Log log) {
+        return writeLog(new JSONStringer(), log).toString();
     }
 
     @Override // com.microsoft.appcenter.ingestion.models.json.LogSerializer
     public Log deserializeLog(String str, String str2) {
         return readLog(new JSONObject(str), str2);
+    }
+
+    @Override // com.microsoft.appcenter.ingestion.models.json.LogSerializer
+    public Collection toCommonSchemaLog(Log log) {
+        return ((LogFactory) this.mLogFactories.get(log.getType())).toCommonSchemaLogs(log);
     }
 
     @Override // com.microsoft.appcenter.ingestion.models.json.LogSerializer
@@ -59,12 +64,7 @@ public class DefaultLogSerializer implements LogSerializer {
     }
 
     @Override // com.microsoft.appcenter.ingestion.models.json.LogSerializer
-    public String serializeLog(Log log) {
-        return writeLog(new JSONStringer(), log).toString();
-    }
-
-    @Override // com.microsoft.appcenter.ingestion.models.json.LogSerializer
-    public Collection toCommonSchemaLog(Log log) {
-        return ((LogFactory) this.mLogFactories.get(log.getType())).toCommonSchemaLogs(log);
+    public void addLogFactory(String str, LogFactory logFactory) {
+        this.mLogFactories.put(str, logFactory);
     }
 }

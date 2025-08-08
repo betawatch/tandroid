@@ -9,10 +9,6 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 
 /* loaded from: classes.dex */
 public final class zzab extends SmsRetrieverClient {
-    public zzab(Context context) {
-        super(context);
-    }
-
     @Override // com.google.android.gms.auth.api.phone.SmsRetrieverClient
     public final Task startSmsRetriever() {
         return doWrite(TaskApiCall.builder().run(new RemoteCall() { // from class: com.google.android.gms.internal.auth-api-phone.zzx
@@ -21,5 +17,9 @@ public final class zzab extends SmsRetrieverClient {
                 ((zzh) ((zzw) obj).getService()).zzg(new zzz(zzab.this, (TaskCompletionSource) obj2));
             }
         }).setFeatures(zzac.zzc).setMethodKey(1567).build());
+    }
+
+    public zzab(Context context) {
+        super(context);
     }
 }

@@ -3,7 +3,7 @@ package kotlin.text;
 import kotlin.jvm.internal.Intrinsics;
 
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class StringsKt__StringNumberConversionsKt extends StringsKt__StringNumberConversionsJVMKt {
     public static Long toLongOrNull(String str) {
         Intrinsics.checkNotNullParameter(str, "<this>");

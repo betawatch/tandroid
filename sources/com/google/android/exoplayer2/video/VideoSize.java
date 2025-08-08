@@ -36,11 +36,6 @@ public final class VideoSize implements Bundleable {
         this.pixelWidthHeightRatio = f;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ VideoSize lambda$static$0(Bundle bundle) {
-        return new VideoSize(bundle.getInt(FIELD_WIDTH, 0), bundle.getInt(FIELD_HEIGHT, 0), bundle.getInt(FIELD_UNAPPLIED_ROTATION_DEGREES, 0), bundle.getFloat(FIELD_PIXEL_WIDTH_HEIGHT_RATIO, 1.0f));
-    }
-
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -64,5 +59,10 @@ public final class VideoSize implements Bundleable {
         bundle.putInt(FIELD_UNAPPLIED_ROTATION_DEGREES, this.unappliedRotationDegrees);
         bundle.putFloat(FIELD_PIXEL_WIDTH_HEIGHT_RATIO, this.pixelWidthHeightRatio);
         return bundle;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ VideoSize lambda$static$0(Bundle bundle) {
+        return new VideoSize(bundle.getInt(FIELD_WIDTH, 0), bundle.getInt(FIELD_HEIGHT, 0), bundle.getInt(FIELD_UNAPPLIED_ROTATION_DEGREES, 0), bundle.getFloat(FIELD_PIXEL_WIDTH_HEIGHT_RATIO, 1.0f));
     }
 }

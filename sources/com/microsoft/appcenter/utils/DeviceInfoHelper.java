@@ -15,15 +15,9 @@ import java.util.Locale;
 import java.util.TimeZone;
 import org.telegram.messenger.MediaDataController;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class DeviceInfoHelper {
     private static WrapperSdk sWrapperSdk;
-
-    public static class DeviceInfoException extends Exception {
-        public DeviceInfoException(String str, Throwable th) {
-            super(str, th);
-        }
-    }
 
     public static synchronized Device getDeviceInfo(Context context) {
         Device device;
@@ -83,6 +77,10 @@ public abstract class DeviceInfoHelper {
         return device;
     }
 
+    public static int getVersionCode(PackageInfo packageInfo) {
+        return packageInfo.versionCode;
+    }
+
     private static String getScreenSize(Context context) {
         int i;
         int i2;
@@ -104,7 +102,9 @@ public abstract class DeviceInfoHelper {
         return i2 + "x" + i;
     }
 
-    public static int getVersionCode(PackageInfo packageInfo) {
-        return packageInfo.versionCode;
+    public static class DeviceInfoException extends Exception {
+        public DeviceInfoException(String str, Throwable th) {
+            super(str, th);
+        }
     }
 }

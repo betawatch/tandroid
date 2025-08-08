@@ -11,12 +11,6 @@ final class EmojiKeyListener implements KeyListener {
     private final EmojiCompatHandleKeyDownHelper mEmojiCompatHandleKeyDownHelper;
     private final KeyListener mKeyListener;
 
-    public static class EmojiCompatHandleKeyDownHelper {
-        public boolean handleKeyDown(Editable editable, int i, KeyEvent keyEvent) {
-            return EmojiCompat.handleOnKeyDown(editable, i, keyEvent);
-        }
-    }
-
     EmojiKeyListener(KeyListener keyListener) {
         this(keyListener, new EmojiCompatHandleKeyDownHelper());
     }
@@ -24,11 +18,6 @@ final class EmojiKeyListener implements KeyListener {
     EmojiKeyListener(KeyListener keyListener, EmojiCompatHandleKeyDownHelper emojiCompatHandleKeyDownHelper) {
         this.mKeyListener = keyListener;
         this.mEmojiCompatHandleKeyDownHelper = emojiCompatHandleKeyDownHelper;
-    }
-
-    @Override // android.text.method.KeyListener
-    public void clearMetaKeyState(View view, Editable editable, int i) {
-        this.mKeyListener.clearMetaKeyState(view, editable, i);
     }
 
     @Override // android.text.method.KeyListener
@@ -42,12 +31,23 @@ final class EmojiKeyListener implements KeyListener {
     }
 
     @Override // android.text.method.KeyListener
+    public boolean onKeyUp(View view, Editable editable, int i, KeyEvent keyEvent) {
+        return this.mKeyListener.onKeyUp(view, editable, i, keyEvent);
+    }
+
+    @Override // android.text.method.KeyListener
     public boolean onKeyOther(View view, Editable editable, KeyEvent keyEvent) {
         return this.mKeyListener.onKeyOther(view, editable, keyEvent);
     }
 
     @Override // android.text.method.KeyListener
-    public boolean onKeyUp(View view, Editable editable, int i, KeyEvent keyEvent) {
-        return this.mKeyListener.onKeyUp(view, editable, i, keyEvent);
+    public void clearMetaKeyState(View view, Editable editable, int i) {
+        this.mKeyListener.clearMetaKeyState(view, editable, i);
+    }
+
+    public static class EmojiCompatHandleKeyDownHelper {
+        public boolean handleKeyDown(Editable editable, int i, KeyEvent keyEvent) {
+            return EmojiCompat.handleOnKeyDown(editable, i, keyEvent);
+        }
     }
 }

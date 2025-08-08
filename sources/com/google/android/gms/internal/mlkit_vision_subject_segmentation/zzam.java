@@ -6,19 +6,19 @@ abstract class zzam {
         return (i < 32 ? 4 : 2) * (i + 1);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x002b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x002a, code lost:
     
         if (r5 != (-1)) goto L14;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x002d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x002c, code lost:
     
         zze(r11, r1, r7);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x0039, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x0038, code lost:
     
         return r2;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x0031, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x0030, code lost:
     
         r12[r5] = (r12[r5] & r4) | (r7 & r10);
      */
@@ -30,7 +30,7 @@ abstract class zzam {
         int i2 = zza & i;
         int zzc = zzc(obj3, i2);
         if (zzc != 0) {
-            int i3 = i ^ (-1);
+            int i3 = ~i;
             int i4 = zza & i3;
             int i5 = -1;
             while (true) {

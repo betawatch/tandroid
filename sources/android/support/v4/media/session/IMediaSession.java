@@ -18,186 +18,112 @@ import java.util.List;
 
 /* loaded from: classes.dex */
 public interface IMediaSession extends IInterface {
+    void addQueueItem(MediaDescriptionCompat mediaDescriptionCompat);
+
+    void addQueueItemAt(MediaDescriptionCompat mediaDescriptionCompat, int i);
+
+    void adjustVolume(int i, int i2, String str);
+
+    void fastForward();
+
+    Bundle getExtras();
+
+    long getFlags();
+
+    PendingIntent getLaunchPendingIntent();
+
+    MediaMetadataCompat getMetadata();
+
+    String getPackageName();
+
+    PlaybackStateCompat getPlaybackState();
+
+    List getQueue();
+
+    CharSequence getQueueTitle();
+
+    int getRatingType();
+
+    int getRepeatMode();
+
+    Bundle getSessionInfo();
+
+    int getShuffleMode();
+
+    String getTag();
+
+    ParcelableVolumeInfo getVolumeAttributes();
+
+    boolean isCaptioningEnabled();
+
+    boolean isShuffleModeEnabledRemoved();
+
+    boolean isTransportControlEnabled();
+
+    void next();
+
+    void pause();
+
+    void play();
+
+    void playFromMediaId(String str, Bundle bundle);
+
+    void playFromSearch(String str, Bundle bundle);
+
+    void playFromUri(Uri uri, Bundle bundle);
+
+    void prepare();
+
+    void prepareFromMediaId(String str, Bundle bundle);
+
+    void prepareFromSearch(String str, Bundle bundle);
+
+    void prepareFromUri(Uri uri, Bundle bundle);
+
+    void previous();
+
+    void rate(RatingCompat ratingCompat);
+
+    void rateWithExtras(RatingCompat ratingCompat, Bundle bundle);
+
+    void registerCallbackListener(IMediaControllerCallback iMediaControllerCallback);
+
+    void removeQueueItem(MediaDescriptionCompat mediaDescriptionCompat);
+
+    void removeQueueItemAt(int i);
+
+    void rewind();
+
+    void seekTo(long j);
+
+    void sendCommand(String str, Bundle bundle, MediaSessionCompat.ResultReceiverWrapper resultReceiverWrapper);
+
+    void sendCustomAction(String str, Bundle bundle);
+
+    boolean sendMediaButton(KeyEvent keyEvent);
+
+    void setCaptioningEnabled(boolean z);
+
+    void setPlaybackSpeed(float f);
+
+    void setRepeatMode(int i);
+
+    void setShuffleMode(int i);
+
+    void setShuffleModeEnabledRemoved(boolean z);
+
+    void setVolumeTo(int i, int i2, String str);
+
+    void skipToQueueItem(long j);
+
+    void stop();
+
+    void unregisterCallbackListener(IMediaControllerCallback iMediaControllerCallback);
 
     public static abstract class Stub extends Binder implements IMediaSession {
-
-        private static class Proxy implements IMediaSession {
-            public static IMediaSession sDefaultImpl;
-            private IBinder mRemote;
-
-            Proxy(IBinder iBinder) {
-                this.mRemote = iBinder;
-            }
-
-            @Override // android.os.IInterface
-            public IBinder asBinder() {
-                return this.mRemote;
-            }
-
-            @Override // android.support.v4.media.session.IMediaSession
-            public PendingIntent getLaunchPendingIntent() {
-                Parcel obtain = Parcel.obtain();
-                Parcel obtain2 = Parcel.obtain();
-                try {
-                    obtain.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
-                    if (!this.mRemote.transact(8, obtain, obtain2, 0) && Stub.getDefaultImpl() != null) {
-                        return Stub.getDefaultImpl().getLaunchPendingIntent();
-                    }
-                    obtain2.readException();
-                    return obtain2.readInt() != 0 ? (PendingIntent) PendingIntent.CREATOR.createFromParcel(obtain2) : null;
-                } finally {
-                    obtain2.recycle();
-                    obtain.recycle();
-                }
-            }
-
-            @Override // android.support.v4.media.session.IMediaSession
-            public MediaMetadataCompat getMetadata() {
-                Parcel obtain = Parcel.obtain();
-                Parcel obtain2 = Parcel.obtain();
-                try {
-                    obtain.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
-                    if (!this.mRemote.transact(27, obtain, obtain2, 0) && Stub.getDefaultImpl() != null) {
-                        return Stub.getDefaultImpl().getMetadata();
-                    }
-                    obtain2.readException();
-                    return obtain2.readInt() != 0 ? MediaMetadataCompat.CREATOR.createFromParcel(obtain2) : null;
-                } finally {
-                    obtain2.recycle();
-                    obtain.recycle();
-                }
-            }
-
-            @Override // android.support.v4.media.session.IMediaSession
-            public PlaybackStateCompat getPlaybackState() {
-                Parcel obtain = Parcel.obtain();
-                Parcel obtain2 = Parcel.obtain();
-                try {
-                    obtain.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
-                    if (!this.mRemote.transact(28, obtain, obtain2, 0) && Stub.getDefaultImpl() != null) {
-                        return Stub.getDefaultImpl().getPlaybackState();
-                    }
-                    obtain2.readException();
-                    return obtain2.readInt() != 0 ? PlaybackStateCompat.CREATOR.createFromParcel(obtain2) : null;
-                } finally {
-                    obtain2.recycle();
-                    obtain.recycle();
-                }
-            }
-
-            @Override // android.support.v4.media.session.IMediaSession
-            public List getQueue() {
-                Parcel obtain = Parcel.obtain();
-                Parcel obtain2 = Parcel.obtain();
-                try {
-                    obtain.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
-                    if (!this.mRemote.transact(29, obtain, obtain2, 0) && Stub.getDefaultImpl() != null) {
-                        return Stub.getDefaultImpl().getQueue();
-                    }
-                    obtain2.readException();
-                    return obtain2.createTypedArrayList(MediaSessionCompat.QueueItem.CREATOR);
-                } finally {
-                    obtain2.recycle();
-                    obtain.recycle();
-                }
-            }
-
-            @Override // android.support.v4.media.session.IMediaSession
-            public void pause() {
-                Parcel obtain = Parcel.obtain();
-                Parcel obtain2 = Parcel.obtain();
-                try {
-                    obtain.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
-                    if (this.mRemote.transact(18, obtain, obtain2, 0) || Stub.getDefaultImpl() == null) {
-                        obtain2.readException();
-                    } else {
-                        Stub.getDefaultImpl().pause();
-                    }
-                } finally {
-                    obtain2.recycle();
-                    obtain.recycle();
-                }
-            }
-
-            @Override // android.support.v4.media.session.IMediaSession
-            public void play() {
-                Parcel obtain = Parcel.obtain();
-                Parcel obtain2 = Parcel.obtain();
-                try {
-                    obtain.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
-                    if (this.mRemote.transact(13, obtain, obtain2, 0) || Stub.getDefaultImpl() == null) {
-                        obtain2.readException();
-                    } else {
-                        Stub.getDefaultImpl().play();
-                    }
-                } finally {
-                    obtain2.recycle();
-                    obtain.recycle();
-                }
-            }
-
-            @Override // android.support.v4.media.session.IMediaSession
-            public void registerCallbackListener(IMediaControllerCallback iMediaControllerCallback) {
-                Parcel obtain = Parcel.obtain();
-                Parcel obtain2 = Parcel.obtain();
-                try {
-                    obtain.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
-                    obtain.writeStrongBinder(iMediaControllerCallback != null ? iMediaControllerCallback.asBinder() : null);
-                    if (this.mRemote.transact(3, obtain, obtain2, 0) || Stub.getDefaultImpl() == null) {
-                        obtain2.readException();
-                        obtain2.recycle();
-                        obtain.recycle();
-                    } else {
-                        Stub.getDefaultImpl().registerCallbackListener(iMediaControllerCallback);
-                        obtain2.recycle();
-                        obtain.recycle();
-                    }
-                } catch (Throwable th) {
-                    obtain2.recycle();
-                    obtain.recycle();
-                    throw th;
-                }
-            }
-
-            @Override // android.support.v4.media.session.IMediaSession
-            public void stop() {
-                Parcel obtain = Parcel.obtain();
-                Parcel obtain2 = Parcel.obtain();
-                try {
-                    obtain.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
-                    if (this.mRemote.transact(19, obtain, obtain2, 0) || Stub.getDefaultImpl() == null) {
-                        obtain2.readException();
-                    } else {
-                        Stub.getDefaultImpl().stop();
-                    }
-                } finally {
-                    obtain2.recycle();
-                    obtain.recycle();
-                }
-            }
-
-            @Override // android.support.v4.media.session.IMediaSession
-            public void unregisterCallbackListener(IMediaControllerCallback iMediaControllerCallback) {
-                Parcel obtain = Parcel.obtain();
-                Parcel obtain2 = Parcel.obtain();
-                try {
-                    obtain.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
-                    obtain.writeStrongBinder(iMediaControllerCallback != null ? iMediaControllerCallback.asBinder() : null);
-                    if (this.mRemote.transact(4, obtain, obtain2, 0) || Stub.getDefaultImpl() == null) {
-                        obtain2.readException();
-                        obtain2.recycle();
-                        obtain.recycle();
-                    } else {
-                        Stub.getDefaultImpl().unregisterCallbackListener(iMediaControllerCallback);
-                        obtain2.recycle();
-                        obtain.recycle();
-                    }
-                } catch (Throwable th) {
-                    obtain2.recycle();
-                    obtain.recycle();
-                    throw th;
-                }
-            }
+        @Override // android.os.IInterface
+        public IBinder asBinder() {
+            return this;
         }
 
         public Stub() {
@@ -209,16 +135,10 @@ public interface IMediaSession extends IInterface {
                 return null;
             }
             IInterface queryLocalInterface = iBinder.queryLocalInterface("android.support.v4.media.session.IMediaSession");
-            return (queryLocalInterface == null || !(queryLocalInterface instanceof IMediaSession)) ? new Proxy(iBinder) : (IMediaSession) queryLocalInterface;
-        }
-
-        public static IMediaSession getDefaultImpl() {
-            return Proxy.sDefaultImpl;
-        }
-
-        @Override // android.os.IInterface
-        public IBinder asBinder() {
-            return this;
+            if (queryLocalInterface != null && (queryLocalInterface instanceof IMediaSession)) {
+                return (IMediaSession) queryLocalInterface;
+            }
+            return new Proxy(iBinder);
         }
 
         @Override // android.os.Binder
@@ -540,107 +460,188 @@ public interface IMediaSession extends IInterface {
                     return super.onTransact(i, parcel, parcel2, i2);
             }
         }
+
+        private static class Proxy implements IMediaSession {
+            public static IMediaSession sDefaultImpl;
+            private IBinder mRemote;
+
+            Proxy(IBinder iBinder) {
+                this.mRemote = iBinder;
+            }
+
+            @Override // android.os.IInterface
+            public IBinder asBinder() {
+                return this.mRemote;
+            }
+
+            @Override // android.support.v4.media.session.IMediaSession
+            public void registerCallbackListener(IMediaControllerCallback iMediaControllerCallback) {
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
+                try {
+                    obtain.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
+                    obtain.writeStrongBinder(iMediaControllerCallback != null ? iMediaControllerCallback.asBinder() : null);
+                    if (!this.mRemote.transact(3, obtain, obtain2, 0) && Stub.getDefaultImpl() != null) {
+                        Stub.getDefaultImpl().registerCallbackListener(iMediaControllerCallback);
+                        obtain2.recycle();
+                        obtain.recycle();
+                    } else {
+                        obtain2.readException();
+                        obtain2.recycle();
+                        obtain.recycle();
+                    }
+                } catch (Throwable th) {
+                    obtain2.recycle();
+                    obtain.recycle();
+                    throw th;
+                }
+            }
+
+            @Override // android.support.v4.media.session.IMediaSession
+            public void unregisterCallbackListener(IMediaControllerCallback iMediaControllerCallback) {
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
+                try {
+                    obtain.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
+                    obtain.writeStrongBinder(iMediaControllerCallback != null ? iMediaControllerCallback.asBinder() : null);
+                    if (!this.mRemote.transact(4, obtain, obtain2, 0) && Stub.getDefaultImpl() != null) {
+                        Stub.getDefaultImpl().unregisterCallbackListener(iMediaControllerCallback);
+                        obtain2.recycle();
+                        obtain.recycle();
+                    } else {
+                        obtain2.readException();
+                        obtain2.recycle();
+                        obtain.recycle();
+                    }
+                } catch (Throwable th) {
+                    obtain2.recycle();
+                    obtain.recycle();
+                    throw th;
+                }
+            }
+
+            @Override // android.support.v4.media.session.IMediaSession
+            public PendingIntent getLaunchPendingIntent() {
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
+                try {
+                    obtain.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
+                    if (!this.mRemote.transact(8, obtain, obtain2, 0) && Stub.getDefaultImpl() != null) {
+                        return Stub.getDefaultImpl().getLaunchPendingIntent();
+                    }
+                    obtain2.readException();
+                    return obtain2.readInt() != 0 ? (PendingIntent) PendingIntent.CREATOR.createFromParcel(obtain2) : null;
+                } finally {
+                    obtain2.recycle();
+                    obtain.recycle();
+                }
+            }
+
+            @Override // android.support.v4.media.session.IMediaSession
+            public MediaMetadataCompat getMetadata() {
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
+                try {
+                    obtain.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
+                    if (!this.mRemote.transact(27, obtain, obtain2, 0) && Stub.getDefaultImpl() != null) {
+                        return Stub.getDefaultImpl().getMetadata();
+                    }
+                    obtain2.readException();
+                    return obtain2.readInt() != 0 ? MediaMetadataCompat.CREATOR.createFromParcel(obtain2) : null;
+                } finally {
+                    obtain2.recycle();
+                    obtain.recycle();
+                }
+            }
+
+            @Override // android.support.v4.media.session.IMediaSession
+            public PlaybackStateCompat getPlaybackState() {
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
+                try {
+                    obtain.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
+                    if (!this.mRemote.transact(28, obtain, obtain2, 0) && Stub.getDefaultImpl() != null) {
+                        return Stub.getDefaultImpl().getPlaybackState();
+                    }
+                    obtain2.readException();
+                    return obtain2.readInt() != 0 ? PlaybackStateCompat.CREATOR.createFromParcel(obtain2) : null;
+                } finally {
+                    obtain2.recycle();
+                    obtain.recycle();
+                }
+            }
+
+            @Override // android.support.v4.media.session.IMediaSession
+            public List getQueue() {
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
+                try {
+                    obtain.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
+                    if (!this.mRemote.transact(29, obtain, obtain2, 0) && Stub.getDefaultImpl() != null) {
+                        return Stub.getDefaultImpl().getQueue();
+                    }
+                    obtain2.readException();
+                    return obtain2.createTypedArrayList(MediaSessionCompat.QueueItem.CREATOR);
+                } finally {
+                    obtain2.recycle();
+                    obtain.recycle();
+                }
+            }
+
+            @Override // android.support.v4.media.session.IMediaSession
+            public void play() {
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
+                try {
+                    obtain.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
+                    if (!this.mRemote.transact(13, obtain, obtain2, 0) && Stub.getDefaultImpl() != null) {
+                        Stub.getDefaultImpl().play();
+                    } else {
+                        obtain2.readException();
+                    }
+                } finally {
+                    obtain2.recycle();
+                    obtain.recycle();
+                }
+            }
+
+            @Override // android.support.v4.media.session.IMediaSession
+            public void pause() {
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
+                try {
+                    obtain.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
+                    if (!this.mRemote.transact(18, obtain, obtain2, 0) && Stub.getDefaultImpl() != null) {
+                        Stub.getDefaultImpl().pause();
+                    } else {
+                        obtain2.readException();
+                    }
+                } finally {
+                    obtain2.recycle();
+                    obtain.recycle();
+                }
+            }
+
+            @Override // android.support.v4.media.session.IMediaSession
+            public void stop() {
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
+                try {
+                    obtain.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
+                    if (!this.mRemote.transact(19, obtain, obtain2, 0) && Stub.getDefaultImpl() != null) {
+                        Stub.getDefaultImpl().stop();
+                    } else {
+                        obtain2.readException();
+                    }
+                } finally {
+                    obtain2.recycle();
+                    obtain.recycle();
+                }
+            }
+        }
+
+        public static IMediaSession getDefaultImpl() {
+            return Proxy.sDefaultImpl;
+        }
     }
-
-    void addQueueItem(MediaDescriptionCompat mediaDescriptionCompat);
-
-    void addQueueItemAt(MediaDescriptionCompat mediaDescriptionCompat, int i);
-
-    void adjustVolume(int i, int i2, String str);
-
-    void fastForward();
-
-    Bundle getExtras();
-
-    long getFlags();
-
-    PendingIntent getLaunchPendingIntent();
-
-    MediaMetadataCompat getMetadata();
-
-    String getPackageName();
-
-    PlaybackStateCompat getPlaybackState();
-
-    List getQueue();
-
-    CharSequence getQueueTitle();
-
-    int getRatingType();
-
-    int getRepeatMode();
-
-    Bundle getSessionInfo();
-
-    int getShuffleMode();
-
-    String getTag();
-
-    ParcelableVolumeInfo getVolumeAttributes();
-
-    boolean isCaptioningEnabled();
-
-    boolean isShuffleModeEnabledRemoved();
-
-    boolean isTransportControlEnabled();
-
-    void next();
-
-    void pause();
-
-    void play();
-
-    void playFromMediaId(String str, Bundle bundle);
-
-    void playFromSearch(String str, Bundle bundle);
-
-    void playFromUri(Uri uri, Bundle bundle);
-
-    void prepare();
-
-    void prepareFromMediaId(String str, Bundle bundle);
-
-    void prepareFromSearch(String str, Bundle bundle);
-
-    void prepareFromUri(Uri uri, Bundle bundle);
-
-    void previous();
-
-    void rate(RatingCompat ratingCompat);
-
-    void rateWithExtras(RatingCompat ratingCompat, Bundle bundle);
-
-    void registerCallbackListener(IMediaControllerCallback iMediaControllerCallback);
-
-    void removeQueueItem(MediaDescriptionCompat mediaDescriptionCompat);
-
-    void removeQueueItemAt(int i);
-
-    void rewind();
-
-    void seekTo(long j);
-
-    void sendCommand(String str, Bundle bundle, MediaSessionCompat.ResultReceiverWrapper resultReceiverWrapper);
-
-    void sendCustomAction(String str, Bundle bundle);
-
-    boolean sendMediaButton(KeyEvent keyEvent);
-
-    void setCaptioningEnabled(boolean z);
-
-    void setPlaybackSpeed(float f);
-
-    void setRepeatMode(int i);
-
-    void setShuffleMode(int i);
-
-    void setShuffleModeEnabledRemoved(boolean z);
-
-    void setVolumeTo(int i, int i2, String str);
-
-    void skipToQueueItem(long j);
-
-    void stop();
-
-    void unregisterCallbackListener(IMediaControllerCallback iMediaControllerCallback);
 }

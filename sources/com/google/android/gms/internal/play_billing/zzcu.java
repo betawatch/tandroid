@@ -1,7 +1,14 @@
 package com.google.android.gms.internal.play_billing;
 
-import java.util.RandomAccess;
-
 /* loaded from: classes.dex */
-abstract class zzcu extends zzal implements RandomAccess, zzcf, zzdm {
+public final class zzcu extends zzch {
+    public zzcu() {
+        super(4);
+    }
+
+    public final zzcu zzd(Object obj) {
+        obj.getClass();
+        super.zza(obj);
+        return this;
+    }
 }

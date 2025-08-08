@@ -8,7 +8,7 @@ import android.hardware.SensorManager;
 import android.view.WindowManager;
 import org.telegram.messenger.AndroidUtilities;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class WallpaperParallaxEffect implements SensorEventListener {
     private Sensor accelerometer;
     private int bufferOffset;
@@ -23,11 +23,34 @@ public class WallpaperParallaxEffect implements SensorEventListener {
         void onOffsetsChanged(int i, int i2, float f);
     }
 
+    @Override // android.hardware.SensorEventListener
+    public void onAccuracyChanged(Sensor sensor, int i) {
+    }
+
     public WallpaperParallaxEffect(Context context) {
         this.wm = (WindowManager) context.getSystemService("window");
         SensorManager sensorManager = (SensorManager) context.getSystemService("sensor");
         this.sensorManager = sensorManager;
         this.accelerometer = sensorManager.getDefaultSensor(1);
+    }
+
+    public void setEnabled(boolean z) {
+        if (this.enabled != z) {
+            this.enabled = z;
+            Sensor sensor = this.accelerometer;
+            if (sensor == null) {
+                return;
+            }
+            if (z) {
+                this.sensorManager.registerListener(this, sensor, 1);
+            } else {
+                this.sensorManager.unregisterListener(this);
+            }
+        }
+    }
+
+    public void setCallback(Callback callback) {
+        this.callback = callback;
     }
 
     public float getScale(int i, int i2) {
@@ -36,10 +59,6 @@ public class WallpaperParallaxEffect implements SensorEventListener {
         float f2 = (f + dp) / f;
         float f3 = i2;
         return Math.max(f2, (dp + f3) / f3);
-    }
-
-    @Override // android.hardware.SensorEventListener
-    public void onAccuracyChanged(Sensor sensor, int i) {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:20:0x00ed  */
@@ -126,25 +145,6 @@ public class WallpaperParallaxEffect implements SensorEventListener {
         }
         callback = this.callback;
         if (callback == null) {
-        }
-    }
-
-    public void setCallback(Callback callback) {
-        this.callback = callback;
-    }
-
-    public void setEnabled(boolean z) {
-        if (this.enabled != z) {
-            this.enabled = z;
-            Sensor sensor = this.accelerometer;
-            if (sensor == null) {
-                return;
-            }
-            if (z) {
-                this.sensorManager.registerListener(this, sensor, 1);
-            } else {
-                this.sensorManager.unregisterListener(this);
-            }
         }
     }
 }

@@ -6,7 +6,7 @@ import com.google.android.gms.tasks.Tasks;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class CrashlyticsBackgroundWorker {
     private final Executor executor;
     private Task tail = Tasks.forResult(null);
@@ -23,17 +23,28 @@ public class CrashlyticsBackgroundWorker {
         });
     }
 
-    private Task ignoreResult(Task task) {
-        return task.continueWith(this.executor, new Continuation() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsBackgroundWorker.4
-            @Override // com.google.android.gms.tasks.Continuation
-            public Void then(Task task2) {
-                return null;
-            }
-        });
+    public Executor getExecutor() {
+        return this.executor;
     }
 
     private boolean isRunningOnThread() {
         return Boolean.TRUE.equals(this.isExecutorThread.get());
+    }
+
+    public void checkRunningOnThread() {
+        if (!isRunningOnThread()) {
+            throw new IllegalStateException("Not running on background worker thread as intended.");
+        }
+    }
+
+    Task submit(final Runnable runnable) {
+        return submit(new Callable() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsBackgroundWorker.2
+            @Override // java.util.concurrent.Callable
+            public Void call() {
+                runnable.run();
+                return null;
+            }
+        });
     }
 
     private Continuation newContinuation(final Callable callable) {
@@ -45,21 +56,10 @@ public class CrashlyticsBackgroundWorker {
         };
     }
 
-    public void checkRunningOnThread() {
-        if (!isRunningOnThread()) {
-            throw new IllegalStateException("Not running on background worker thread as intended.");
-        }
-    }
-
-    public Executor getExecutor() {
-        return this.executor;
-    }
-
-    Task submit(final Runnable runnable) {
-        return submit(new Callable() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsBackgroundWorker.2
-            @Override // java.util.concurrent.Callable
-            public Void call() {
-                runnable.run();
+    private Task ignoreResult(Task task) {
+        return task.continueWith(this.executor, new Continuation() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsBackgroundWorker.4
+            @Override // com.google.android.gms.tasks.Continuation
+            public Void then(Task task2) {
                 return null;
             }
         });

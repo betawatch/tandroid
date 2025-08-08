@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.Set;
 import java.util.UUID;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public interface Log extends Model {
     void addTransmissionTarget(String str);
 

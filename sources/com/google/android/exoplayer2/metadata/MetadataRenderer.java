@@ -27,6 +27,11 @@ public final class MetadataRenderer extends BaseRenderer implements Handler.Call
     private Metadata pendingMetadata;
     private long subsampleOffsetUs;
 
+    @Override // com.google.android.exoplayer2.Renderer
+    public boolean isReady() {
+        return true;
+    }
+
     public MetadataRenderer(MetadataOutput metadataOutput, Looper looper) {
         this(metadataOutput, looper, MetadataDecoderFactory.DEFAULT);
     }
@@ -45,12 +50,49 @@ public final class MetadataRenderer extends BaseRenderer implements Handler.Call
         this.outputStreamOffsetUs = -9223372036854775807L;
     }
 
+    @Override // com.google.android.exoplayer2.Renderer, com.google.android.exoplayer2.RendererCapabilities
+    public String getName() {
+        return "MetadataRenderer";
+    }
+
+    @Override // com.google.android.exoplayer2.RendererCapabilities
+    public int supportsFormat(Format format) {
+        if (this.decoderFactory.supportsFormat(format)) {
+            return RendererCapabilities.-CC.create(format.cryptoType == 0 ? 4 : 2);
+        }
+        return RendererCapabilities.-CC.create(0);
+    }
+
+    @Override // com.google.android.exoplayer2.BaseRenderer
+    protected void onStreamChanged(Format[] formatArr, long j, long j2) {
+        this.decoder = this.decoderFactory.createDecoder(formatArr[0]);
+        Metadata metadata = this.pendingMetadata;
+        if (metadata != null) {
+            this.pendingMetadata = metadata.copyWithPresentationTimeUs((metadata.presentationTimeUs + this.outputStreamOffsetUs) - j2);
+        }
+        this.outputStreamOffsetUs = j2;
+    }
+
+    @Override // com.google.android.exoplayer2.BaseRenderer
+    protected void onPositionReset(long j, boolean z) {
+        this.pendingMetadata = null;
+        this.inputStreamEnded = false;
+        this.outputStreamEnded = false;
+    }
+
+    @Override // com.google.android.exoplayer2.Renderer
+    public void render(long j, long j2) {
+        boolean z = true;
+        while (z) {
+            readMetadata();
+            z = outputMetadata(j);
+        }
+    }
+
     private void decodeWrappedMetadata(Metadata metadata, List list) {
         for (int i = 0; i < metadata.length(); i++) {
             Format wrappedMetadataFormat = metadata.get(i).getWrappedMetadataFormat();
-            if (wrappedMetadataFormat == null || !this.decoderFactory.supportsFormat(wrappedMetadataFormat)) {
-                list.add(metadata.get(i));
-            } else {
+            if (wrappedMetadataFormat != null && this.decoderFactory.supportsFormat(wrappedMetadataFormat)) {
                 MetadataDecoder createDecoder = this.decoderFactory.createDecoder(wrappedMetadataFormat);
                 byte[] bArr = (byte[]) Assertions.checkNotNull(metadata.get(i).getWrappedMetadataBytes());
                 this.buffer.clear();
@@ -61,43 +103,31 @@ public final class MetadataRenderer extends BaseRenderer implements Handler.Call
                 if (decode != null) {
                     decodeWrappedMetadata(decode, list);
                 }
+            } else {
+                list.add(metadata.get(i));
             }
         }
     }
 
-    private long getPresentationTimeUs(long j) {
-        Assertions.checkState(j != -9223372036854775807L);
-        Assertions.checkState(this.outputStreamOffsetUs != -9223372036854775807L);
-        return j - this.outputStreamOffsetUs;
+    @Override // com.google.android.exoplayer2.BaseRenderer
+    protected void onDisabled() {
+        this.pendingMetadata = null;
+        this.decoder = null;
+        this.outputStreamOffsetUs = -9223372036854775807L;
     }
 
-    private void invokeRenderer(Metadata metadata) {
-        Handler handler = this.outputHandler;
-        if (handler != null) {
-            handler.obtainMessage(0, metadata).sendToTarget();
-        } else {
-            invokeRendererInternal(metadata);
-        }
+    @Override // com.google.android.exoplayer2.Renderer
+    public boolean isEnded() {
+        return this.outputStreamEnded;
     }
 
-    private void invokeRendererInternal(Metadata metadata) {
-        this.output.onMetadata(metadata);
-    }
-
-    private boolean outputMetadata(long j) {
-        boolean z;
-        Metadata metadata = this.pendingMetadata;
-        if (metadata == null || (!this.outputMetadataEarly && metadata.presentationTimeUs > getPresentationTimeUs(j))) {
-            z = false;
-        } else {
-            invokeRenderer(this.pendingMetadata);
-            this.pendingMetadata = null;
-            z = true;
+    @Override // android.os.Handler.Callback
+    public boolean handleMessage(Message message) {
+        if (message.what == 0) {
+            invokeRendererInternal((Metadata) message.obj);
+            return true;
         }
-        if (this.inputStreamEnded && this.pendingMetadata == null) {
-            this.outputStreamEnded = true;
-        }
-        return z;
+        throw new IllegalStateException();
     }
 
     private void readMetadata() {
@@ -131,68 +161,38 @@ public final class MetadataRenderer extends BaseRenderer implements Handler.Call
         }
     }
 
-    @Override // com.google.android.exoplayer2.Renderer, com.google.android.exoplayer2.RendererCapabilities
-    public String getName() {
-        return "MetadataRenderer";
-    }
-
-    @Override // android.os.Handler.Callback
-    public boolean handleMessage(Message message) {
-        if (message.what != 0) {
-            throw new IllegalStateException();
-        }
-        invokeRendererInternal((Metadata) message.obj);
-        return true;
-    }
-
-    @Override // com.google.android.exoplayer2.Renderer
-    public boolean isEnded() {
-        return this.outputStreamEnded;
-    }
-
-    @Override // com.google.android.exoplayer2.Renderer
-    public boolean isReady() {
-        return true;
-    }
-
-    @Override // com.google.android.exoplayer2.BaseRenderer
-    protected void onDisabled() {
-        this.pendingMetadata = null;
-        this.decoder = null;
-        this.outputStreamOffsetUs = -9223372036854775807L;
-    }
-
-    @Override // com.google.android.exoplayer2.BaseRenderer
-    protected void onPositionReset(long j, boolean z) {
-        this.pendingMetadata = null;
-        this.inputStreamEnded = false;
-        this.outputStreamEnded = false;
-    }
-
-    @Override // com.google.android.exoplayer2.BaseRenderer
-    protected void onStreamChanged(Format[] formatArr, long j, long j2) {
-        this.decoder = this.decoderFactory.createDecoder(formatArr[0]);
+    private boolean outputMetadata(long j) {
+        boolean z;
         Metadata metadata = this.pendingMetadata;
-        if (metadata != null) {
-            this.pendingMetadata = metadata.copyWithPresentationTimeUs((metadata.presentationTimeUs + this.outputStreamOffsetUs) - j2);
+        if (metadata == null || (!this.outputMetadataEarly && metadata.presentationTimeUs > getPresentationTimeUs(j))) {
+            z = false;
+        } else {
+            invokeRenderer(this.pendingMetadata);
+            this.pendingMetadata = null;
+            z = true;
         }
-        this.outputStreamOffsetUs = j2;
+        if (this.inputStreamEnded && this.pendingMetadata == null) {
+            this.outputStreamEnded = true;
+        }
+        return z;
     }
 
-    @Override // com.google.android.exoplayer2.Renderer
-    public void render(long j, long j2) {
-        boolean z = true;
-        while (z) {
-            readMetadata();
-            z = outputMetadata(j);
+    private void invokeRenderer(Metadata metadata) {
+        Handler handler = this.outputHandler;
+        if (handler != null) {
+            handler.obtainMessage(0, metadata).sendToTarget();
+        } else {
+            invokeRendererInternal(metadata);
         }
     }
 
-    @Override // com.google.android.exoplayer2.RendererCapabilities
-    public int supportsFormat(Format format) {
-        if (this.decoderFactory.supportsFormat(format)) {
-            return RendererCapabilities.-CC.create(format.cryptoType == 0 ? 4 : 2);
-        }
-        return RendererCapabilities.-CC.create(0);
+    private void invokeRendererInternal(Metadata metadata) {
+        this.output.onMetadata(metadata);
+    }
+
+    private long getPresentationTimeUs(long j) {
+        Assertions.checkState(j != -9223372036854775807L);
+        Assertions.checkState(this.outputStreamOffsetUs != -9223372036854775807L);
+        return j - this.outputStreamOffsetUs;
     }
 }

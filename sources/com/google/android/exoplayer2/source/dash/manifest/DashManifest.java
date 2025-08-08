@@ -4,6 +4,7 @@ import android.net.Uri;
 import com.google.android.exoplayer2.offline.FilterableManifest;
 import com.google.android.exoplayer2.offline.StreamKey;
 import com.google.android.exoplayer2.util.Util;
+import j$.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -41,26 +42,32 @@ public class DashManifest implements FilterableManifest {
         this.periods = list == null ? Collections.emptyList() : list;
     }
 
-    private static ArrayList copyAdaptationSets(List list, LinkedList linkedList) {
-        StreamKey streamKey = (StreamKey) linkedList.poll();
-        int i = streamKey.periodIndex;
-        ArrayList arrayList = new ArrayList();
-        do {
-            int i2 = streamKey.groupIndex;
-            AdaptationSet adaptationSet = (AdaptationSet) list.get(i2);
-            List list2 = adaptationSet.representations;
-            ArrayList arrayList2 = new ArrayList();
-            do {
-                arrayList2.add((Representation) list2.get(streamKey.streamIndex));
-                streamKey = (StreamKey) linkedList.poll();
-                if (streamKey.periodIndex != i) {
-                    break;
-                }
-            } while (streamKey.groupIndex == i2);
-            arrayList.add(new AdaptationSet(adaptationSet.id, adaptationSet.type, arrayList2, adaptationSet.accessibilityDescriptors, adaptationSet.essentialProperties, adaptationSet.supplementalProperties));
-        } while (streamKey.periodIndex == i);
-        linkedList.addFirst(streamKey);
-        return arrayList;
+    public final int getPeriodCount() {
+        return this.periods.size();
+    }
+
+    public final Period getPeriod(int i) {
+        return (Period) this.periods.get(i);
+    }
+
+    public final long getPeriodDurationMs(int i) {
+        long j;
+        long j2;
+        if (i == this.periods.size() - 1) {
+            j = this.durationMs;
+            if (j == -9223372036854775807L) {
+                return -9223372036854775807L;
+            }
+            j2 = ((Period) this.periods.get(i)).startMs;
+        } else {
+            j = ((Period) this.periods.get(i + 1)).startMs;
+            j2 = ((Period) this.periods.get(i)).startMs;
+        }
+        return j - j2;
+    }
+
+    public final long getPeriodDurationUs(int i) {
+        return Util.msToUs(getPeriodDurationMs(i));
     }
 
     @Override // com.google.android.exoplayer2.offline.FilterableManifest
@@ -90,28 +97,25 @@ public class DashManifest implements FilterableManifest {
         return new DashManifest(this.availabilityStartTimeMs, j2 != -9223372036854775807L ? j2 - j : -9223372036854775807L, this.minBufferTimeMs, this.dynamic, this.minUpdatePeriodMs, this.timeShiftBufferDepthMs, this.suggestedPresentationDelayMs, this.publishTimeMs, this.programInformation, this.utcTiming, this.serviceDescription, this.location, arrayList);
     }
 
-    public final Period getPeriod(int i) {
-        return (Period) this.periods.get(i);
-    }
-
-    public final int getPeriodCount() {
-        return this.periods.size();
-    }
-
-    public final long getPeriodDurationMs(int i) {
-        long j;
-        if (i == this.periods.size() - 1) {
-            j = this.durationMs;
-            if (j == -9223372036854775807L) {
-                return -9223372036854775807L;
-            }
-        } else {
-            j = ((Period) this.periods.get(i + 1)).startMs;
-        }
-        return j - ((Period) this.periods.get(i)).startMs;
-    }
-
-    public final long getPeriodDurationUs(int i) {
-        return Util.msToUs(getPeriodDurationMs(i));
+    private static ArrayList copyAdaptationSets(List list, LinkedList linkedList) {
+        StreamKey streamKey = (StreamKey) linkedList.poll();
+        int i = streamKey.periodIndex;
+        ArrayList arrayList = new ArrayList();
+        do {
+            int i2 = streamKey.groupIndex;
+            AdaptationSet adaptationSet = (AdaptationSet) list.get(i2);
+            List list2 = adaptationSet.representations;
+            ArrayList arrayList2 = new ArrayList();
+            do {
+                arrayList2.add((Representation) list2.get(streamKey.streamIndex));
+                streamKey = (StreamKey) linkedList.poll();
+                if (streamKey.periodIndex != i) {
+                    break;
+                }
+            } while (streamKey.groupIndex == i2);
+            arrayList.add(new AdaptationSet(adaptationSet.id, adaptationSet.type, arrayList2, adaptationSet.accessibilityDescriptors, adaptationSet.essentialProperties, adaptationSet.supplementalProperties));
+        } while (streamKey.periodIndex == i);
+        List.-EL.addFirst(linkedList, streamKey);
+        return arrayList;
     }
 }

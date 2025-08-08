@@ -44,6 +44,10 @@ public class ToolbarWidgetWrapper implements DecorToolbar {
     Toolbar mToolbar;
     Window.Callback mWindowCallback;
 
+    @Override // androidx.appcompat.widget.DecorToolbar
+    public void setHomeButtonEnabled(boolean z) {
+    }
+
     public ToolbarWidgetWrapper(Toolbar toolbar, boolean z) {
         this(toolbar, z, R$string.abc_action_bar_up_description, R$drawable.abc_ic_ab_back_material);
     }
@@ -135,12 +139,60 @@ public class ToolbarWidgetWrapper implements DecorToolbar {
         });
     }
 
+    public void setDefaultNavigationContentDescription(int i) {
+        if (i == this.mDefaultNavigationContentDescription) {
+            return;
+        }
+        this.mDefaultNavigationContentDescription = i;
+        if (TextUtils.isEmpty(this.mToolbar.getNavigationContentDescription())) {
+            setNavigationContentDescription(this.mDefaultNavigationContentDescription);
+        }
+    }
+
     private int detectDisplayOptions() {
         if (this.mToolbar.getNavigationIcon() == null) {
             return 11;
         }
         this.mDefaultNavigationIcon = this.mToolbar.getNavigationIcon();
         return 15;
+    }
+
+    @Override // androidx.appcompat.widget.DecorToolbar
+    public Context getContext() {
+        return this.mToolbar.getContext();
+    }
+
+    @Override // androidx.appcompat.widget.DecorToolbar
+    public boolean hasExpandedActionView() {
+        return this.mToolbar.hasExpandedActionView();
+    }
+
+    @Override // androidx.appcompat.widget.DecorToolbar
+    public void collapseActionView() {
+        this.mToolbar.collapseActionView();
+    }
+
+    @Override // androidx.appcompat.widget.DecorToolbar
+    public void setWindowCallback(Window.Callback callback) {
+        this.mWindowCallback = callback;
+    }
+
+    @Override // androidx.appcompat.widget.DecorToolbar
+    public void setWindowTitle(CharSequence charSequence) {
+        if (this.mTitleSet) {
+            return;
+        }
+        setTitleInt(charSequence);
+    }
+
+    @Override // androidx.appcompat.widget.DecorToolbar
+    public CharSequence getTitle() {
+        return this.mToolbar.getTitle();
+    }
+
+    public void setTitle(CharSequence charSequence) {
+        this.mTitleSet = true;
+        setTitleInt(charSequence);
     }
 
     private void setTitleInt(CharSequence charSequence) {
@@ -153,30 +205,42 @@ public class ToolbarWidgetWrapper implements DecorToolbar {
         }
     }
 
-    private void updateHomeAccessibility() {
-        if ((this.mDisplayOpts & 4) != 0) {
-            if (TextUtils.isEmpty(this.mHomeDescription)) {
-                this.mToolbar.setNavigationContentDescription(this.mDefaultNavigationContentDescription);
-            } else {
-                this.mToolbar.setNavigationContentDescription(this.mHomeDescription);
-            }
+    public void setSubtitle(CharSequence charSequence) {
+        this.mSubtitle = charSequence;
+        if ((this.mDisplayOpts & 8) != 0) {
+            this.mToolbar.setSubtitle(charSequence);
         }
     }
 
-    private void updateNavigationIcon() {
-        Toolbar toolbar;
-        Drawable drawable;
-        if ((this.mDisplayOpts & 4) != 0) {
-            toolbar = this.mToolbar;
-            drawable = this.mNavIcon;
-            if (drawable == null) {
-                drawable = this.mDefaultNavigationIcon;
-            }
-        } else {
-            toolbar = this.mToolbar;
-            drawable = null;
-        }
-        toolbar.setNavigationIcon(drawable);
+    @Override // androidx.appcompat.widget.DecorToolbar
+    public void initProgress() {
+        Log.i("ToolbarWidgetWrapper", "Progress display unsupported");
+    }
+
+    @Override // androidx.appcompat.widget.DecorToolbar
+    public void initIndeterminateProgress() {
+        Log.i("ToolbarWidgetWrapper", "Progress display unsupported");
+    }
+
+    @Override // androidx.appcompat.widget.DecorToolbar
+    public void setIcon(int i) {
+        setIcon(i != 0 ? AppCompatResources.getDrawable(getContext(), i) : null);
+    }
+
+    @Override // androidx.appcompat.widget.DecorToolbar
+    public void setIcon(Drawable drawable) {
+        this.mIcon = drawable;
+        updateToolbarLogo();
+    }
+
+    @Override // androidx.appcompat.widget.DecorToolbar
+    public void setLogo(int i) {
+        setLogo(i != 0 ? AppCompatResources.getDrawable(getContext(), i) : null);
+    }
+
+    public void setLogo(Drawable drawable) {
+        this.mLogo = drawable;
+        updateToolbarLogo();
     }
 
     private void updateToolbarLogo() {
@@ -184,7 +248,12 @@ public class ToolbarWidgetWrapper implements DecorToolbar {
         int i = this.mDisplayOpts;
         if ((i & 2) == 0) {
             drawable = null;
-        } else if ((i & 1) == 0 || (drawable = this.mLogo) == null) {
+        } else if ((i & 1) != 0) {
+            drawable = this.mLogo;
+            if (drawable == null) {
+                drawable = this.mIcon;
+            }
+        } else {
             drawable = this.mIcon;
         }
         this.mToolbar.setLogo(drawable);
@@ -196,53 +265,8 @@ public class ToolbarWidgetWrapper implements DecorToolbar {
     }
 
     @Override // androidx.appcompat.widget.DecorToolbar
-    public void collapseActionView() {
-        this.mToolbar.collapseActionView();
-    }
-
-    @Override // androidx.appcompat.widget.DecorToolbar
-    public void dismissPopupMenus() {
-        this.mToolbar.dismissPopupMenus();
-    }
-
-    @Override // androidx.appcompat.widget.DecorToolbar
-    public Context getContext() {
-        return this.mToolbar.getContext();
-    }
-
-    @Override // androidx.appcompat.widget.DecorToolbar
-    public int getDisplayOptions() {
-        return this.mDisplayOpts;
-    }
-
-    @Override // androidx.appcompat.widget.DecorToolbar
-    public int getNavigationMode() {
-        return this.mNavigationMode;
-    }
-
-    @Override // androidx.appcompat.widget.DecorToolbar
-    public CharSequence getTitle() {
-        return this.mToolbar.getTitle();
-    }
-
-    @Override // androidx.appcompat.widget.DecorToolbar
-    public boolean hasExpandedActionView() {
-        return this.mToolbar.hasExpandedActionView();
-    }
-
-    @Override // androidx.appcompat.widget.DecorToolbar
-    public boolean hideOverflowMenu() {
-        return this.mToolbar.hideOverflowMenu();
-    }
-
-    @Override // androidx.appcompat.widget.DecorToolbar
-    public void initIndeterminateProgress() {
-        Log.i("ToolbarWidgetWrapper", "Progress display unsupported");
-    }
-
-    @Override // androidx.appcompat.widget.DecorToolbar
-    public void initProgress() {
-        Log.i("ToolbarWidgetWrapper", "Progress display unsupported");
+    public boolean isOverflowMenuShowing() {
+        return this.mToolbar.isOverflowMenuShowing();
     }
 
     @Override // androidx.appcompat.widget.DecorToolbar
@@ -251,42 +275,44 @@ public class ToolbarWidgetWrapper implements DecorToolbar {
     }
 
     @Override // androidx.appcompat.widget.DecorToolbar
-    public boolean isOverflowMenuShowing() {
-        return this.mToolbar.isOverflowMenuShowing();
+    public boolean showOverflowMenu() {
+        return this.mToolbar.showOverflowMenu();
     }
 
     @Override // androidx.appcompat.widget.DecorToolbar
-    public void setCollapsible(boolean z) {
-        this.mToolbar.setCollapsible(z);
+    public boolean hideOverflowMenu() {
+        return this.mToolbar.hideOverflowMenu();
     }
 
-    public void setCustomView(View view) {
-        View view2 = this.mCustomView;
-        if (view2 != null && (this.mDisplayOpts & 16) != 0) {
-            this.mToolbar.removeView(view2);
-        }
-        this.mCustomView = view;
-        if (view == null || (this.mDisplayOpts & 16) == 0) {
-            return;
-        }
-        this.mToolbar.addView(view);
+    @Override // androidx.appcompat.widget.DecorToolbar
+    public void setMenuPrepared() {
+        this.mMenuPrepared = true;
     }
 
-    public void setDefaultNavigationContentDescription(int i) {
-        if (i == this.mDefaultNavigationContentDescription) {
-            return;
+    @Override // androidx.appcompat.widget.DecorToolbar
+    public void setMenu(Menu menu, MenuPresenter.Callback callback) {
+        if (this.mActionMenuPresenter == null) {
+            ActionMenuPresenter actionMenuPresenter = new ActionMenuPresenter(this.mToolbar.getContext());
+            this.mActionMenuPresenter = actionMenuPresenter;
+            actionMenuPresenter.setId(R$id.action_menu_presenter);
         }
-        this.mDefaultNavigationContentDescription = i;
-        if (TextUtils.isEmpty(this.mToolbar.getNavigationContentDescription())) {
-            setNavigationContentDescription(this.mDefaultNavigationContentDescription);
-        }
+        this.mActionMenuPresenter.setCallback(callback);
+        this.mToolbar.setMenu((MenuBuilder) menu, this.mActionMenuPresenter);
+    }
+
+    @Override // androidx.appcompat.widget.DecorToolbar
+    public void dismissPopupMenus() {
+        this.mToolbar.dismissPopupMenus();
+    }
+
+    @Override // androidx.appcompat.widget.DecorToolbar
+    public int getDisplayOptions() {
+        return this.mDisplayOpts;
     }
 
     @Override // androidx.appcompat.widget.DecorToolbar
     public void setDisplayOptions(int i) {
         View view;
-        CharSequence charSequence;
-        Toolbar toolbar;
         int i2 = this.mDisplayOpts ^ i;
         this.mDisplayOpts = i;
         if (i2 != 0) {
@@ -302,14 +328,11 @@ public class ToolbarWidgetWrapper implements DecorToolbar {
             if ((i2 & 8) != 0) {
                 if ((i & 8) != 0) {
                     this.mToolbar.setTitle(this.mTitle);
-                    toolbar = this.mToolbar;
-                    charSequence = this.mSubtitle;
+                    this.mToolbar.setSubtitle(this.mSubtitle);
                 } else {
-                    charSequence = null;
                     this.mToolbar.setTitle((CharSequence) null);
-                    toolbar = this.mToolbar;
+                    this.mToolbar.setSubtitle((CharSequence) null);
                 }
-                toolbar.setSubtitle(charSequence);
             }
             if ((i2 & 16) == 0 || (view = this.mCustomView) == null) {
                 return;
@@ -336,88 +359,25 @@ public class ToolbarWidgetWrapper implements DecorToolbar {
     }
 
     @Override // androidx.appcompat.widget.DecorToolbar
-    public void setHomeButtonEnabled(boolean z) {
+    public void setCollapsible(boolean z) {
+        this.mToolbar.setCollapsible(z);
     }
 
     @Override // androidx.appcompat.widget.DecorToolbar
-    public void setIcon(int i) {
-        setIcon(i != 0 ? AppCompatResources.getDrawable(getContext(), i) : null);
+    public int getNavigationMode() {
+        return this.mNavigationMode;
     }
 
-    @Override // androidx.appcompat.widget.DecorToolbar
-    public void setIcon(Drawable drawable) {
-        this.mIcon = drawable;
-        updateToolbarLogo();
-    }
-
-    @Override // androidx.appcompat.widget.DecorToolbar
-    public void setLogo(int i) {
-        setLogo(i != 0 ? AppCompatResources.getDrawable(getContext(), i) : null);
-    }
-
-    public void setLogo(Drawable drawable) {
-        this.mLogo = drawable;
-        updateToolbarLogo();
-    }
-
-    @Override // androidx.appcompat.widget.DecorToolbar
-    public void setMenu(Menu menu, MenuPresenter.Callback callback) {
-        if (this.mActionMenuPresenter == null) {
-            ActionMenuPresenter actionMenuPresenter = new ActionMenuPresenter(this.mToolbar.getContext());
-            this.mActionMenuPresenter = actionMenuPresenter;
-            actionMenuPresenter.setId(R$id.action_menu_presenter);
+    public void setCustomView(View view) {
+        View view2 = this.mCustomView;
+        if (view2 != null && (this.mDisplayOpts & 16) != 0) {
+            this.mToolbar.removeView(view2);
         }
-        this.mActionMenuPresenter.setCallback(callback);
-        this.mToolbar.setMenu((MenuBuilder) menu, this.mActionMenuPresenter);
-    }
-
-    @Override // androidx.appcompat.widget.DecorToolbar
-    public void setMenuPrepared() {
-        this.mMenuPrepared = true;
-    }
-
-    public void setNavigationContentDescription(int i) {
-        setNavigationContentDescription(i == 0 ? null : getContext().getString(i));
-    }
-
-    public void setNavigationContentDescription(CharSequence charSequence) {
-        this.mHomeDescription = charSequence;
-        updateHomeAccessibility();
-    }
-
-    public void setNavigationIcon(Drawable drawable) {
-        this.mNavIcon = drawable;
-        updateNavigationIcon();
-    }
-
-    public void setSubtitle(CharSequence charSequence) {
-        this.mSubtitle = charSequence;
-        if ((this.mDisplayOpts & 8) != 0) {
-            this.mToolbar.setSubtitle(charSequence);
-        }
-    }
-
-    public void setTitle(CharSequence charSequence) {
-        this.mTitleSet = true;
-        setTitleInt(charSequence);
-    }
-
-    @Override // androidx.appcompat.widget.DecorToolbar
-    public void setVisibility(int i) {
-        this.mToolbar.setVisibility(i);
-    }
-
-    @Override // androidx.appcompat.widget.DecorToolbar
-    public void setWindowCallback(Window.Callback callback) {
-        this.mWindowCallback = callback;
-    }
-
-    @Override // androidx.appcompat.widget.DecorToolbar
-    public void setWindowTitle(CharSequence charSequence) {
-        if (this.mTitleSet) {
+        this.mCustomView = view;
+        if (view == null || (this.mDisplayOpts & 16) == 0) {
             return;
         }
-        setTitleInt(charSequence);
+        this.mToolbar.addView(view);
     }
 
     @Override // androidx.appcompat.widget.DecorToolbar
@@ -426,8 +386,8 @@ public class ToolbarWidgetWrapper implements DecorToolbar {
             private boolean mCanceled = false;
 
             @Override // androidx.core.view.ViewPropertyAnimatorListenerAdapter, androidx.core.view.ViewPropertyAnimatorListener
-            public void onAnimationCancel(View view) {
-                this.mCanceled = true;
+            public void onAnimationStart(View view) {
+                ToolbarWidgetWrapper.this.mToolbar.setVisibility(0);
             }
 
             @Override // androidx.core.view.ViewPropertyAnimatorListener
@@ -439,14 +399,51 @@ public class ToolbarWidgetWrapper implements DecorToolbar {
             }
 
             @Override // androidx.core.view.ViewPropertyAnimatorListenerAdapter, androidx.core.view.ViewPropertyAnimatorListener
-            public void onAnimationStart(View view) {
-                ToolbarWidgetWrapper.this.mToolbar.setVisibility(0);
+            public void onAnimationCancel(View view) {
+                this.mCanceled = true;
             }
         });
     }
 
+    public void setNavigationIcon(Drawable drawable) {
+        this.mNavIcon = drawable;
+        updateNavigationIcon();
+    }
+
+    private void updateNavigationIcon() {
+        if ((this.mDisplayOpts & 4) != 0) {
+            Toolbar toolbar = this.mToolbar;
+            Drawable drawable = this.mNavIcon;
+            if (drawable == null) {
+                drawable = this.mDefaultNavigationIcon;
+            }
+            toolbar.setNavigationIcon(drawable);
+            return;
+        }
+        this.mToolbar.setNavigationIcon((Drawable) null);
+    }
+
+    public void setNavigationContentDescription(CharSequence charSequence) {
+        this.mHomeDescription = charSequence;
+        updateHomeAccessibility();
+    }
+
+    public void setNavigationContentDescription(int i) {
+        setNavigationContentDescription(i == 0 ? null : getContext().getString(i));
+    }
+
+    private void updateHomeAccessibility() {
+        if ((this.mDisplayOpts & 4) != 0) {
+            if (TextUtils.isEmpty(this.mHomeDescription)) {
+                this.mToolbar.setNavigationContentDescription(this.mDefaultNavigationContentDescription);
+            } else {
+                this.mToolbar.setNavigationContentDescription(this.mHomeDescription);
+            }
+        }
+    }
+
     @Override // androidx.appcompat.widget.DecorToolbar
-    public boolean showOverflowMenu() {
-        return this.mToolbar.showOverflowMenu();
+    public void setVisibility(int i) {
+        this.mToolbar.setVisibility(i);
     }
 }

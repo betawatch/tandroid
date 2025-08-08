@@ -23,12 +23,6 @@ final class zzsb extends zzry implements ScheduledExecutorService, zzrx {
     }
 
     @Override // java.util.concurrent.ScheduledExecutorService
-    public final /* bridge */ /* synthetic */ ScheduledFuture schedule(Callable callable, long j, TimeUnit timeUnit) {
-        zzse zzseVar = new zzse(callable);
-        return new zzrz(zzseVar, this.zza.schedule(zzseVar, j, timeUnit));
-    }
-
-    @Override // java.util.concurrent.ScheduledExecutorService
     public final /* bridge */ /* synthetic */ ScheduledFuture scheduleAtFixedRate(Runnable runnable, long j, long j2, TimeUnit timeUnit) {
         zzsa zzsaVar = new zzsa(runnable);
         return new zzrz(zzsaVar, this.zza.scheduleAtFixedRate(zzsaVar, j, j2, timeUnit));
@@ -38,5 +32,11 @@ final class zzsb extends zzry implements ScheduledExecutorService, zzrx {
     public final /* bridge */ /* synthetic */ ScheduledFuture scheduleWithFixedDelay(Runnable runnable, long j, long j2, TimeUnit timeUnit) {
         zzsa zzsaVar = new zzsa(runnable);
         return new zzrz(zzsaVar, this.zza.scheduleWithFixedDelay(zzsaVar, j, j2, timeUnit));
+    }
+
+    @Override // java.util.concurrent.ScheduledExecutorService
+    public final /* bridge */ /* synthetic */ ScheduledFuture schedule(Callable callable, long j, TimeUnit timeUnit) {
+        zzse zzseVar = new zzse(callable);
+        return new zzrz(zzseVar, this.zza.schedule(zzseVar, j, timeUnit));
     }
 }

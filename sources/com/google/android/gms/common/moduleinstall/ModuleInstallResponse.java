@@ -15,11 +15,6 @@ public class ModuleInstallResponse extends AbstractSafeParcelable {
         this(i, false);
     }
 
-    public ModuleInstallResponse(int i, boolean z) {
-        this.zaa = i;
-        this.zab = z;
-    }
-
     public int getSessionId() {
         return this.zaa;
     }
@@ -30,5 +25,10 @@ public class ModuleInstallResponse extends AbstractSafeParcelable {
         SafeParcelWriter.writeInt(parcel, 1, getSessionId());
         SafeParcelWriter.writeBoolean(parcel, 2, this.zab);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    public ModuleInstallResponse(int i, boolean z) {
+        this.zaa = i;
+        this.zab = z;
     }
 }

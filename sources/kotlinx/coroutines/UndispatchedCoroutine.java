@@ -9,7 +9,7 @@ import kotlin.coroutines.CoroutineContext;
 import kotlinx.coroutines.internal.ScopeCoroutine;
 import kotlinx.coroutines.internal.ThreadContextKt;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class UndispatchedCoroutine extends ScopeCoroutine {
     private volatile boolean threadLocalIsSet;
     private final ThreadLocal threadStateToRecover;
@@ -28,6 +28,17 @@ public final class UndispatchedCoroutine extends ScopeCoroutine {
         Object updateThreadContext = ThreadContextKt.updateThreadContext(coroutineContext, null);
         ThreadContextKt.restoreThreadContext(coroutineContext, updateThreadContext);
         saveThreadContext(coroutineContext, updateThreadContext);
+    }
+
+    public final void saveThreadContext(CoroutineContext coroutineContext, Object obj) {
+        this.threadLocalIsSet = true;
+        this.threadStateToRecover.set(TuplesKt.to(coroutineContext, obj));
+    }
+
+    public final boolean clearThreadContext() {
+        boolean z = this.threadLocalIsSet && this.threadStateToRecover.get() == null;
+        this.threadStateToRecover.remove();
+        return !z;
     }
 
     @Override // kotlinx.coroutines.internal.ScopeCoroutine, kotlinx.coroutines.AbstractCoroutine
@@ -52,16 +63,5 @@ public final class UndispatchedCoroutine extends ScopeCoroutine {
                 ThreadContextKt.restoreThreadContext(context, updateThreadContext);
             }
         }
-    }
-
-    public final boolean clearThreadContext() {
-        boolean z = this.threadLocalIsSet && this.threadStateToRecover.get() == null;
-        this.threadStateToRecover.remove();
-        return !z;
-    }
-
-    public final void saveThreadContext(CoroutineContext coroutineContext, Object obj) {
-        this.threadLocalIsSet = true;
-        this.threadStateToRecover.set(TuplesKt.to(coroutineContext, obj));
     }
 }

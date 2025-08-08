@@ -57,6 +57,52 @@ public class GallerySheet extends BottomSheet {
         this.containerView.addView(galleryListView);
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$1(Object obj, Bitmap bitmap) {
+        Utilities.Callback callback;
+        if (obj == null || this.galleryListViewOpening != null || !(obj instanceof MediaController.PhotoEntry) || (callback = this.onGalleryListener) == null) {
+            return;
+        }
+        callback.run((MediaController.PhotoEntry) obj);
+    }
+
+    @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog
+    public void show() {
+        super.show();
+        animate(true, null);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$dismiss$2() {
+        super.lambda$new$0();
+    }
+
+    @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
+    /* renamed from: dismiss, reason: merged with bridge method [inline-methods] */
+    public void lambda$new$0() {
+        animate(false, new Runnable() { // from class: org.telegram.ui.Stories.recorder.GallerySheet$$ExternalSyntheticLambda4
+            @Override // java.lang.Runnable
+            public final void run() {
+                GallerySheet.this.lambda$dismiss$2();
+            }
+        });
+        super.lambda$new$0();
+    }
+
+    @Override // org.telegram.ui.ActionBar.BottomSheet
+    protected boolean canDismissWithSwipe() {
+        return !this.listView.actionBarShown;
+    }
+
+    @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.view.Window.Callback
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 0 && motionEvent.getY() < this.listView.top()) {
+            lambda$new$0();
+            return true;
+        }
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
     private void animate(boolean z, final Runnable runnable) {
         float translationY = this.listView.getTranslationY();
         final float height = z ? 0.0f : (this.containerView.getHeight() - this.listView.top()) + (AndroidUtilities.navigationBarHeight * 2.5f);
@@ -118,53 +164,7 @@ public class GallerySheet extends BottomSheet {
         this.listView.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$dismiss$2() {
-        super.lambda$new$0();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(Object obj, Bitmap bitmap) {
-        Utilities.Callback callback;
-        if (obj == null || this.galleryListViewOpening != null || !(obj instanceof MediaController.PhotoEntry) || (callback = this.onGalleryListener) == null) {
-            return;
-        }
-        callback.run((MediaController.PhotoEntry) obj);
-    }
-
-    @Override // org.telegram.ui.ActionBar.BottomSheet
-    protected boolean canDismissWithSwipe() {
-        return !this.listView.actionBarShown;
-    }
-
-    @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
-    /* renamed from: dismiss, reason: merged with bridge method [inline-methods] */
-    public void lambda$new$0() {
-        animate(false, new Runnable() { // from class: org.telegram.ui.Stories.recorder.GallerySheet$$ExternalSyntheticLambda4
-            @Override // java.lang.Runnable
-            public final void run() {
-                GallerySheet.this.lambda$dismiss$2();
-            }
-        });
-        super.lambda$new$0();
-    }
-
-    @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.view.Window.Callback
-    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() != 0 || motionEvent.getY() >= this.listView.top()) {
-            return super.dispatchTouchEvent(motionEvent);
-        }
-        lambda$new$0();
-        return true;
-    }
-
     public void setOnGalleryImage(Utilities.Callback callback) {
         this.onGalleryListener = callback;
-    }
-
-    @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog
-    public void show() {
-        super.show();
-        animate(true, null);
     }
 }

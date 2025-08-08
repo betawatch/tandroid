@@ -8,40 +8,16 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class HttpClientNetworkStateHandler extends HttpClientDecorator implements NetworkStateHelper.Listener {
     private final Set mCalls;
     private final NetworkStateHelper mNetworkStateHelper;
-
-    private class Call extends HttpClientCallDecorator {
-        Call(HttpClient httpClient, String str, String str2, Map map, HttpClient.CallTemplate callTemplate, ServiceCallback serviceCallback) {
-            super(httpClient, str, str2, map, callTemplate, serviceCallback);
-        }
-
-        @Override // com.microsoft.appcenter.http.HttpClientCallDecorator, com.microsoft.appcenter.http.ServiceCall
-        public void cancel() {
-            HttpClientNetworkStateHandler.this.cancelCall(this);
-        }
-    }
 
     public HttpClientNetworkStateHandler(HttpClient httpClient, NetworkStateHelper networkStateHelper) {
         super(httpClient);
         this.mCalls = new HashSet();
         this.mNetworkStateHelper = networkStateHelper;
         networkStateHelper.addListener(this);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public synchronized void cancelCall(Call call) {
-        try {
-            ServiceCall serviceCall = call.mServiceCall;
-            if (serviceCall != null) {
-                serviceCall.cancel();
-            }
-            this.mCalls.remove(call);
-        } catch (Throwable th) {
-            throw th;
-        }
     }
 
     @Override // com.microsoft.appcenter.http.HttpClient
@@ -68,6 +44,12 @@ public class HttpClientNetworkStateHandler extends HttpClientDecorator implement
         super.close();
     }
 
+    @Override // com.microsoft.appcenter.http.HttpClientDecorator, com.microsoft.appcenter.http.HttpClient
+    public void reopen() {
+        this.mNetworkStateHelper.addListener(this);
+        super.reopen();
+    }
+
     @Override // com.microsoft.appcenter.utils.NetworkStateHelper.Listener
     public synchronized void onNetworkStateUpdated(boolean z) {
         if (z) {
@@ -86,9 +68,27 @@ public class HttpClientNetworkStateHandler extends HttpClientDecorator implement
         }
     }
 
-    @Override // com.microsoft.appcenter.http.HttpClientDecorator, com.microsoft.appcenter.http.HttpClient
-    public void reopen() {
-        this.mNetworkStateHelper.addListener(this);
-        super.reopen();
+    /* JADX INFO: Access modifiers changed from: private */
+    public synchronized void cancelCall(Call call) {
+        try {
+            ServiceCall serviceCall = call.mServiceCall;
+            if (serviceCall != null) {
+                serviceCall.cancel();
+            }
+            this.mCalls.remove(call);
+        } catch (Throwable th) {
+            throw th;
+        }
+    }
+
+    private class Call extends HttpClientCallDecorator {
+        Call(HttpClient httpClient, String str, String str2, Map map, HttpClient.CallTemplate callTemplate, ServiceCallback serviceCallback) {
+            super(httpClient, str, str2, map, callTemplate, serviceCallback);
+        }
+
+        @Override // com.microsoft.appcenter.http.HttpClientCallDecorator, com.microsoft.appcenter.http.ServiceCall
+        public void cancel() {
+            HttpClientNetworkStateHandler.this.cancelCall(this);
+        }
     }
 }

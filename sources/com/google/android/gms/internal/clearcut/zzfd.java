@@ -356,8 +356,9 @@ abstract class zzfd {
     /* JADX INFO: Access modifiers changed from: private */
     public static void zza(Object obj, long j, byte b) {
         long j2 = (-4) & j;
-        int i = ((((int) j) ^ (-1)) & 3) << 3;
-        zza(obj, j2, ((255 & b) << i) | (zzj(obj, j2) & ((NotificationCenter.goingToPreviewTheme << i) ^ (-1))));
+        int zzj = zzj(obj, j2);
+        int i = ((~((int) j)) & 3) << 3;
+        zza(obj, j2, ((255 & b) << i) | (zzj & (~(NotificationCenter.goingToPreviewTheme << i))));
     }
 
     static void zza(Object obj, long j, double d) {
@@ -418,7 +419,7 @@ abstract class zzfd {
     public static void zzb(Object obj, long j, byte b) {
         long j2 = (-4) & j;
         int i = (((int) j) & 3) << 3;
-        zza(obj, j2, ((255 & b) << i) | (zzj(obj, j2) & ((NotificationCenter.goingToPreviewTheme << i) ^ (-1))));
+        zza(obj, j2, ((255 & b) << i) | (zzj(obj, j2) & (~(NotificationCenter.goingToPreviewTheme << i))));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -600,7 +601,7 @@ abstract class zzfd {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static byte zzp(Object obj, long j) {
-        return (byte) (zzj(obj, (-4) & j) >>> ((int) (((j ^ (-1)) & 3) << 3)));
+        return (byte) (zzj(obj, (-4) & j) >>> ((int) (((~j) & 3) << 3)));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

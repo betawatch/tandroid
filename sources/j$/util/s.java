@@ -40,7 +40,7 @@ public final /* synthetic */ class s implements PrimitiveIterator.OfInt {
 
     @Override // java.util.PrimitiveIterator.OfInt
     public final /* synthetic */ void forEachRemaining(IntConsumer intConsumer) {
-        this.a.c(j$.util.function.C.a(intConsumer));
+        this.a.c(j$.util.function.E.a(intConsumer));
     }
 
     @Override // java.util.Iterator

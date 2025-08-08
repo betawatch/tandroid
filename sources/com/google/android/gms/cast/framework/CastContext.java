@@ -117,26 +117,6 @@ public class CastContext {
         return zzd;
     }
 
-    public static CastContext getSharedInstance(Context context) {
-        Preconditions.checkMainThread("Must be called from the main thread.");
-        if (zzd == null) {
-            synchronized (zzc) {
-                if (zzd == null) {
-                    Context applicationContext = context.getApplicationContext();
-                    OptionsProvider zzf = zzf(applicationContext);
-                    CastOptions castOptions = zzf.getCastOptions(applicationContext);
-                    com.google.android.gms.cast.internal.zzn zznVar = new com.google.android.gms.cast.internal.zzn(applicationContext);
-                    try {
-                        zzd = new CastContext(applicationContext, castOptions, zzf.getAdditionalSessionProviders(applicationContext), new zzbf(applicationContext, MediaRouter.getInstance(applicationContext), castOptions, zznVar), zznVar);
-                    } catch (ModuleUnavailableException e) {
-                        throw new RuntimeException(e);
-                    }
-                }
-            }
-        }
-        return zzd;
-    }
-
     public static /* synthetic */ void zzd(CastContext castContext, Bundle bundle) {
         if (com.google.android.gms.internal.cast.zzg.zza) {
             com.google.android.gms.internal.cast.zzg.zza(castContext.zze, castContext.zzl, castContext.zzg, castContext.zzp, castContext.zza).zzc(bundle);
@@ -237,5 +217,25 @@ public class CastContext {
 
     final /* synthetic */ void zze(Bundle bundle) {
         this.zzs = new CastReasonCodes(bundle);
+    }
+
+    public static CastContext getSharedInstance(Context context) {
+        Preconditions.checkMainThread("Must be called from the main thread.");
+        if (zzd == null) {
+            synchronized (zzc) {
+                if (zzd == null) {
+                    Context applicationContext = context.getApplicationContext();
+                    OptionsProvider zzf = zzf(applicationContext);
+                    CastOptions castOptions = zzf.getCastOptions(applicationContext);
+                    com.google.android.gms.cast.internal.zzn zznVar = new com.google.android.gms.cast.internal.zzn(applicationContext);
+                    try {
+                        zzd = new CastContext(applicationContext, castOptions, zzf.getAdditionalSessionProviders(applicationContext), new zzbf(applicationContext, MediaRouter.getInstance(applicationContext), castOptions, zznVar), zznVar);
+                    } catch (ModuleUnavailableException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }
+        }
+        return zzd;
     }
 }

@@ -5,29 +5,8 @@ import android.view.accessibility.AccessibilityRecord;
 
 /* loaded from: classes.dex */
 public abstract class AccessibilityRecordCompat {
-
-    static class Api15Impl {
-        static int getMaxScrollX(AccessibilityRecord accessibilityRecord) {
-            return accessibilityRecord.getMaxScrollX();
-        }
-
-        static int getMaxScrollY(AccessibilityRecord accessibilityRecord) {
-            return accessibilityRecord.getMaxScrollY();
-        }
-
-        static void setMaxScrollX(AccessibilityRecord accessibilityRecord, int i) {
-            accessibilityRecord.setMaxScrollX(i);
-        }
-
-        static void setMaxScrollY(AccessibilityRecord accessibilityRecord, int i) {
-            accessibilityRecord.setMaxScrollY(i);
-        }
-    }
-
-    static class Api16Impl {
-        static void setSource(AccessibilityRecord accessibilityRecord, View view, int i) {
-            accessibilityRecord.setSource(view, i);
-        }
+    public static void setSource(AccessibilityRecord accessibilityRecord, View view, int i) {
+        Api16Impl.setSource(accessibilityRecord, view, i);
     }
 
     public static void setMaxScrollX(AccessibilityRecord accessibilityRecord, int i) {
@@ -38,7 +17,27 @@ public abstract class AccessibilityRecordCompat {
         Api15Impl.setMaxScrollY(accessibilityRecord, i);
     }
 
-    public static void setSource(AccessibilityRecord accessibilityRecord, View view, int i) {
-        Api16Impl.setSource(accessibilityRecord, view, i);
+    static class Api16Impl {
+        static void setSource(AccessibilityRecord accessibilityRecord, View view, int i) {
+            accessibilityRecord.setSource(view, i);
+        }
+    }
+
+    static class Api15Impl {
+        static int getMaxScrollX(AccessibilityRecord accessibilityRecord) {
+            return accessibilityRecord.getMaxScrollX();
+        }
+
+        static void setMaxScrollX(AccessibilityRecord accessibilityRecord, int i) {
+            accessibilityRecord.setMaxScrollX(i);
+        }
+
+        static int getMaxScrollY(AccessibilityRecord accessibilityRecord) {
+            return accessibilityRecord.getMaxScrollY();
+        }
+
+        static void setMaxScrollY(AccessibilityRecord accessibilityRecord, int i) {
+            accessibilityRecord.setMaxScrollY(i);
+        }
     }
 }

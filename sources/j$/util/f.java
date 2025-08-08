@@ -1,7 +1,7 @@
 package j$.util;
 
 /* loaded from: classes2.dex */
-public final class f implements j$.util.function.m {
+public final class f implements j$.util.function.l {
     private double a;
     private double b;
     private long count;
@@ -9,12 +9,18 @@ public final class f implements j$.util.function.m {
     private double min = Double.POSITIVE_INFINITY;
     private double max = Double.NEGATIVE_INFINITY;
 
-    private void c(double d) {
-        double d2 = d - this.a;
-        double d3 = this.sum;
-        double d4 = d3 + d2;
-        this.a = (d4 - d3) - d2;
-        this.sum = d4;
+    @Override // j$.util.function.l
+    public final /* synthetic */ j$.util.function.l k(j$.util.function.l lVar) {
+        return j$.com.android.tools.r8.a.a(this, lVar);
+    }
+
+    @Override // j$.util.function.l
+    public final void accept(double d) {
+        this.count++;
+        this.b += d;
+        c(d);
+        this.min = Math.min(this.min, d);
+        this.max = Math.max(this.max, d);
     }
 
     public final void a(f fVar) {
@@ -26,18 +32,12 @@ public final class f implements j$.util.function.m {
         this.max = Math.max(this.max, fVar.max);
     }
 
-    @Override // j$.util.function.m
-    public final void accept(double d) {
-        this.count++;
-        this.b += d;
-        c(d);
-        this.min = Math.min(this.min, d);
-        this.max = Math.max(this.max, d);
-    }
-
-    @Override // j$.util.function.m
-    public final /* synthetic */ j$.util.function.m k(j$.util.function.m mVar) {
-        return j$.com.android.tools.r8.a.b(this, mVar);
+    private void c(double d) {
+        double d2 = d - this.a;
+        double d3 = this.sum;
+        double d4 = d3 + d2;
+        this.a = (d4 - d3) - d2;
+        this.sum = d4;
     }
 
     public final String toString() {
@@ -55,9 +55,7 @@ public final class f implements j$.util.function.m {
             if (Double.isNaN(d3) && Double.isInfinite(this.b)) {
                 d3 = this.b;
             }
-            double d4 = this.count;
-            Double.isNaN(d4);
-            d = d3 / d4;
+            d = d3 / this.count;
         } else {
             d = 0.0d;
         }

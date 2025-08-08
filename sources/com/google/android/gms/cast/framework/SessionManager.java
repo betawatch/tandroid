@@ -18,19 +18,6 @@ public class SessionManager {
         this.zzc = context;
     }
 
-    public void addSessionManagerListener(SessionManagerListener sessionManagerListener, Class cls) {
-        if (sessionManagerListener == null) {
-            throw new NullPointerException("SessionManagerListener can't be null");
-        }
-        Preconditions.checkNotNull(cls);
-        Preconditions.checkMainThread("Must be called from the main thread.");
-        try {
-            this.zzb.zzi(new zzbj(sessionManagerListener, cls));
-        } catch (RemoteException e) {
-            zza.d(e, "Unable to call %s on %s.", "addSessionManagerListener", zzay.class.getSimpleName());
-        }
-    }
-
     public void endCurrentSession(boolean z) {
         Preconditions.checkMainThread("Must be called from the main thread.");
         try {
@@ -75,6 +62,19 @@ public class SessionManager {
             this.zzb.zzh(new zzab(castStateListener));
         } catch (RemoteException e) {
             zza.d(e, "Unable to call %s on %s.", "addCastStateListener", zzay.class.getSimpleName());
+        }
+    }
+
+    public void addSessionManagerListener(SessionManagerListener sessionManagerListener, Class cls) {
+        if (sessionManagerListener == null) {
+            throw new NullPointerException("SessionManagerListener can't be null");
+        }
+        Preconditions.checkNotNull(cls);
+        Preconditions.checkMainThread("Must be called from the main thread.");
+        try {
+            this.zzb.zzi(new zzbj(sessionManagerListener, cls));
+        } catch (RemoteException e) {
+            zza.d(e, "Unable to call %s on %s.", "addSessionManagerListener", zzay.class.getSimpleName());
         }
     }
 }

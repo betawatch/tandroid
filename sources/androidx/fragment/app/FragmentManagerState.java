@@ -28,6 +28,11 @@ final class FragmentManagerState implements Parcelable {
     ArrayList mResultKeys;
     ArrayList mResults;
 
+    @Override // android.os.Parcelable
+    public int describeContents() {
+        return 0;
+    }
+
     public FragmentManagerState() {
         this.mPrimaryNavActiveWho = null;
         this.mResultKeys = new ArrayList();
@@ -46,11 +51,6 @@ final class FragmentManagerState implements Parcelable {
         this.mResultKeys = parcel.createStringArrayList();
         this.mResults = parcel.createTypedArrayList(Bundle.CREATOR);
         this.mLaunchedFragments = parcel.createTypedArrayList(FragmentManager.LaunchedFragmentInfo.CREATOR);
-    }
-
-    @Override // android.os.Parcelable
-    public int describeContents() {
-        return 0;
     }
 
     @Override // android.os.Parcelable

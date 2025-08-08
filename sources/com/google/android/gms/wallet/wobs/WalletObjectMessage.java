@@ -14,14 +14,6 @@ public final class WalletObjectMessage extends AbstractSafeParcelable {
     UriData zzd;
     UriData zze;
 
-    WalletObjectMessage(String str, String str2, TimeInterval timeInterval, UriData uriData, UriData uriData2) {
-        this.zza = str;
-        this.zzb = str2;
-        this.zzc = timeInterval;
-        this.zzd = uriData;
-        this.zze = uriData2;
-    }
-
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
@@ -31,5 +23,13 @@ public final class WalletObjectMessage extends AbstractSafeParcelable {
         SafeParcelWriter.writeParcelable(parcel, 5, this.zzd, i, false);
         SafeParcelWriter.writeParcelable(parcel, 6, this.zze, i, false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    WalletObjectMessage(String str, String str2, TimeInterval timeInterval, UriData uriData, UriData uriData2) {
+        this.zza = str;
+        this.zzb = str2;
+        this.zzc = timeInterval;
+        this.zzd = uriData;
+        this.zze = uriData2;
     }
 }

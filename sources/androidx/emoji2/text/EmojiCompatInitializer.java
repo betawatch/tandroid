@@ -16,84 +16,6 @@ import java.util.concurrent.ThreadPoolExecutor;
 
 /* loaded from: classes.dex */
 public class EmojiCompatInitializer implements Initializer {
-
-    static class BackgroundDefaultConfig extends EmojiCompat.Config {
-        protected BackgroundDefaultConfig(Context context) {
-            super(new BackgroundDefaultLoader(context));
-            setMetadataLoadStrategy(1);
-        }
-    }
-
-    static class BackgroundDefaultLoader implements EmojiCompat.MetadataRepoLoader {
-        private final Context mContext;
-
-        BackgroundDefaultLoader(Context context) {
-            this.mContext = context.getApplicationContext();
-        }
-
-        /* JADX INFO: Access modifiers changed from: package-private */
-        /* renamed from: doLoad, reason: merged with bridge method [inline-methods] */
-        public void lambda$load$0(final EmojiCompat.MetadataRepoLoaderCallback metadataRepoLoaderCallback, final ThreadPoolExecutor threadPoolExecutor) {
-            try {
-                FontRequestEmojiCompatConfig create = DefaultEmojiCompatConfig.create(this.mContext);
-                if (create == null) {
-                    throw new RuntimeException("EmojiCompat font provider not available on this device.");
-                }
-                create.setLoadingExecutor(threadPoolExecutor);
-                create.getMetadataRepoLoader().load(new EmojiCompat.MetadataRepoLoaderCallback() { // from class: androidx.emoji2.text.EmojiCompatInitializer.BackgroundDefaultLoader.1
-                    @Override // androidx.emoji2.text.EmojiCompat.MetadataRepoLoaderCallback
-                    public void onFailed(Throwable th) {
-                        try {
-                            metadataRepoLoaderCallback.onFailed(th);
-                        } finally {
-                            threadPoolExecutor.shutdown();
-                        }
-                    }
-
-                    @Override // androidx.emoji2.text.EmojiCompat.MetadataRepoLoaderCallback
-                    public void onLoaded(MetadataRepo metadataRepo) {
-                        try {
-                            metadataRepoLoaderCallback.onLoaded(metadataRepo);
-                        } finally {
-                            threadPoolExecutor.shutdown();
-                        }
-                    }
-                });
-            } catch (Throwable th) {
-                metadataRepoLoaderCallback.onFailed(th);
-                threadPoolExecutor.shutdown();
-            }
-        }
-
-        @Override // androidx.emoji2.text.EmojiCompat.MetadataRepoLoader
-        public void load(final EmojiCompat.MetadataRepoLoaderCallback metadataRepoLoaderCallback) {
-            final ThreadPoolExecutor createBackgroundPriorityExecutor = ConcurrencyHelpers.createBackgroundPriorityExecutor("EmojiCompatInitializer");
-            createBackgroundPriorityExecutor.execute(new Runnable() { // from class: androidx.emoji2.text.EmojiCompatInitializer$BackgroundDefaultLoader$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    EmojiCompatInitializer.BackgroundDefaultLoader.this.lambda$load$0(metadataRepoLoaderCallback, createBackgroundPriorityExecutor);
-                }
-            });
-        }
-    }
-
-    static class LoadEmojiCompatRunnable implements Runnable {
-        LoadEmojiCompatRunnable() {
-        }
-
-        @Override // java.lang.Runnable
-        public void run() {
-            try {
-                TraceCompat.beginSection("EmojiCompat.EmojiCompatInitializer.run");
-                if (EmojiCompat.isConfigured()) {
-                    EmojiCompat.get().load();
-                }
-            } finally {
-                TraceCompat.endSection();
-            }
-        }
-    }
-
     @Override // androidx.startup.Initializer
     public Boolean create(Context context) {
         EmojiCompat.init(new BackgroundDefaultConfig(context));
@@ -120,12 +42,6 @@ public class EmojiCompatInitializer implements Initializer {
             }
 
             @Override // androidx.lifecycle.FullLifecycleObserver
-            public void onResume(LifecycleOwner lifecycleOwner) {
-                EmojiCompatInitializer.this.loadEmojiCompatAfterDelay();
-                lifecycle.removeObserver(this);
-            }
-
-            @Override // androidx.lifecycle.FullLifecycleObserver
             public /* synthetic */ void onStart(LifecycleOwner lifecycleOwner) {
                 DefaultLifecycleObserver.-CC.$default$onStart(this, lifecycleOwner);
             }
@@ -134,7 +50,17 @@ public class EmojiCompatInitializer implements Initializer {
             public /* synthetic */ void onStop(LifecycleOwner lifecycleOwner) {
                 DefaultLifecycleObserver.-CC.$default$onStop(this, lifecycleOwner);
             }
+
+            @Override // androidx.lifecycle.FullLifecycleObserver
+            public void onResume(LifecycleOwner lifecycleOwner) {
+                EmojiCompatInitializer.this.loadEmojiCompatAfterDelay();
+                lifecycle.removeObserver(this);
+            }
         });
+    }
+
+    void loadEmojiCompatAfterDelay() {
+        ConcurrencyHelpers.mainHandlerAsync().postDelayed(new LoadEmojiCompatRunnable(), 500L);
     }
 
     @Override // androidx.startup.Initializer
@@ -142,7 +68,80 @@ public class EmojiCompatInitializer implements Initializer {
         return Collections.singletonList(ProcessLifecycleInitializer.class);
     }
 
-    void loadEmojiCompatAfterDelay() {
-        ConcurrencyHelpers.mainHandlerAsync().postDelayed(new LoadEmojiCompatRunnable(), 500L);
+    static class LoadEmojiCompatRunnable implements Runnable {
+        LoadEmojiCompatRunnable() {
+        }
+
+        @Override // java.lang.Runnable
+        public void run() {
+            try {
+                TraceCompat.beginSection("EmojiCompat.EmojiCompatInitializer.run");
+                if (EmojiCompat.isConfigured()) {
+                    EmojiCompat.get().load();
+                }
+            } finally {
+                TraceCompat.endSection();
+            }
+        }
+    }
+
+    static class BackgroundDefaultConfig extends EmojiCompat.Config {
+        protected BackgroundDefaultConfig(Context context) {
+            super(new BackgroundDefaultLoader(context));
+            setMetadataLoadStrategy(1);
+        }
+    }
+
+    static class BackgroundDefaultLoader implements EmojiCompat.MetadataRepoLoader {
+        private final Context mContext;
+
+        BackgroundDefaultLoader(Context context) {
+            this.mContext = context.getApplicationContext();
+        }
+
+        @Override // androidx.emoji2.text.EmojiCompat.MetadataRepoLoader
+        public void load(final EmojiCompat.MetadataRepoLoaderCallback metadataRepoLoaderCallback) {
+            final ThreadPoolExecutor createBackgroundPriorityExecutor = ConcurrencyHelpers.createBackgroundPriorityExecutor("EmojiCompatInitializer");
+            createBackgroundPriorityExecutor.execute(new Runnable() { // from class: androidx.emoji2.text.EmojiCompatInitializer$BackgroundDefaultLoader$$ExternalSyntheticLambda0
+                @Override // java.lang.Runnable
+                public final void run() {
+                    EmojiCompatInitializer.BackgroundDefaultLoader.this.lambda$load$0(metadataRepoLoaderCallback, createBackgroundPriorityExecutor);
+                }
+            });
+        }
+
+        /* JADX INFO: Access modifiers changed from: package-private */
+        /* renamed from: doLoad, reason: merged with bridge method [inline-methods] */
+        public void lambda$load$0(final EmojiCompat.MetadataRepoLoaderCallback metadataRepoLoaderCallback, final ThreadPoolExecutor threadPoolExecutor) {
+            try {
+                FontRequestEmojiCompatConfig create = DefaultEmojiCompatConfig.create(this.mContext);
+                if (create == null) {
+                    throw new RuntimeException("EmojiCompat font provider not available on this device.");
+                }
+                create.setLoadingExecutor(threadPoolExecutor);
+                create.getMetadataRepoLoader().load(new EmojiCompat.MetadataRepoLoaderCallback() { // from class: androidx.emoji2.text.EmojiCompatInitializer.BackgroundDefaultLoader.1
+                    @Override // androidx.emoji2.text.EmojiCompat.MetadataRepoLoaderCallback
+                    public void onLoaded(MetadataRepo metadataRepo) {
+                        try {
+                            metadataRepoLoaderCallback.onLoaded(metadataRepo);
+                        } finally {
+                            threadPoolExecutor.shutdown();
+                        }
+                    }
+
+                    @Override // androidx.emoji2.text.EmojiCompat.MetadataRepoLoaderCallback
+                    public void onFailed(Throwable th) {
+                        try {
+                            metadataRepoLoaderCallback.onFailed(th);
+                        } finally {
+                            threadPoolExecutor.shutdown();
+                        }
+                    }
+                });
+            } catch (Throwable th) {
+                metadataRepoLoaderCallback.onFailed(th);
+                threadPoolExecutor.shutdown();
+            }
+        }
     }
 }

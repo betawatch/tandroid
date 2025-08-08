@@ -11,10 +11,6 @@ public final class zzfs {
     int zzb = 0;
     zzfr zzc;
 
-    zzfs(int i) {
-        this.zza = new Object[i + i];
-    }
-
     private final void zzb(int i) {
         Object[] objArr = this.zza;
         int length = objArr.length;
@@ -44,5 +40,9 @@ public final class zzfs {
             this.zzb = i + 1;
         }
         return this;
+    }
+
+    zzfs(int i) {
+        this.zza = new Object[i + i];
     }
 }

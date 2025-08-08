@@ -1,40 +1,34 @@
 package j$.util.function;
 
-import j$.util.function.Function;
+import java.util.function.DoubleUnaryOperator;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class w implements Function {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Function b;
-    public final /* synthetic */ Function c;
+public final /* synthetic */ class w {
+    public final /* synthetic */ DoubleUnaryOperator a;
 
-    public /* synthetic */ w(Function function, Function function2, int i) {
-        this.a = i;
-        this.b = function;
-        this.c = function2;
+    private /* synthetic */ w(DoubleUnaryOperator doubleUnaryOperator) {
+        this.a = doubleUnaryOperator;
     }
 
-    @Override // j$.util.function.Function
-    public final /* synthetic */ Function andThen(Function function) {
-        switch (this.a) {
+    public static /* synthetic */ w a(DoubleUnaryOperator doubleUnaryOperator) {
+        if (doubleUnaryOperator == null) {
+            return null;
         }
-        return Function.-CC.$default$andThen(this, function);
+        if (!(doubleUnaryOperator instanceof x)) {
+            return new w(doubleUnaryOperator);
+        }
+        throw null;
     }
 
-    @Override // j$.util.function.Function
-    public final Object apply(Object obj) {
-        switch (this.a) {
-            case 0:
-                return this.c.apply(this.b.apply(obj));
-            default:
-                return this.b.apply(this.c.apply(obj));
+    public final /* synthetic */ boolean equals(Object obj) {
+        DoubleUnaryOperator doubleUnaryOperator = this.a;
+        if (obj instanceof w) {
+            obj = ((w) obj).a;
         }
+        return doubleUnaryOperator.equals(obj);
     }
 
-    @Override // j$.util.function.Function
-    public final /* synthetic */ Function compose(Function function) {
-        switch (this.a) {
-        }
-        return Function.-CC.$default$compose(this, function);
+    public final /* synthetic */ int hashCode() {
+        return this.a.hashCode();
     }
 }

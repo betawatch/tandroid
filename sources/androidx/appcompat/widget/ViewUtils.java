@@ -27,6 +27,10 @@ public abstract class ViewUtils {
         }
     }
 
+    public static boolean isLayoutRtl(View view) {
+        return ViewCompat.getLayoutDirection(view) == 1;
+    }
+
     public static void computeFitSystemWindows(View view, Rect rect, Rect rect2) {
         Method method = sComputeFitSystemWindowsMethod;
         if (method != null) {
@@ -38,10 +42,6 @@ public abstract class ViewUtils {
         }
     }
 
-    public static boolean isLayoutRtl(View view) {
-        return ViewCompat.getLayoutDirection(view) == 1;
-    }
-
     public static void makeOptionalFitsSystemWindows(View view) {
         try {
             Method method = view.getClass().getMethod("makeOptionalFitsSystemWindows", null);
@@ -50,13 +50,11 @@ public abstract class ViewUtils {
             }
             method.invoke(view, null);
         } catch (IllegalAccessException e) {
-            e = e;
             Log.d("ViewUtils", "Could not invoke makeOptionalFitsSystemWindows", e);
         } catch (NoSuchMethodException unused) {
             Log.d("ViewUtils", "Could not find method makeOptionalFitsSystemWindows. Oh well...");
         } catch (InvocationTargetException e2) {
-            e = e2;
-            Log.d("ViewUtils", "Could not invoke makeOptionalFitsSystemWindows", e);
+            Log.d("ViewUtils", "Could not invoke makeOptionalFitsSystemWindows", e2);
         }
     }
 }

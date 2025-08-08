@@ -8,7 +8,7 @@ import java.util.List;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class Exception implements Model {
     private List frames;
     private List innerExceptions;
@@ -17,6 +17,84 @@ public class Exception implements Model {
     private String stackTrace;
     private String type;
     private String wrapperSdkName;
+
+    public String getType() {
+        return this.type;
+    }
+
+    public void setType(String str) {
+        this.type = str;
+    }
+
+    public String getMessage() {
+        return this.message;
+    }
+
+    public void setMessage(String str) {
+        this.message = str;
+    }
+
+    public String getStackTrace() {
+        return this.stackTrace;
+    }
+
+    public void setStackTrace(String str) {
+        this.stackTrace = str;
+    }
+
+    public List getFrames() {
+        return this.frames;
+    }
+
+    public void setFrames(List list) {
+        this.frames = list;
+    }
+
+    public List getInnerExceptions() {
+        return this.innerExceptions;
+    }
+
+    public void setInnerExceptions(List list) {
+        this.innerExceptions = list;
+    }
+
+    public String getWrapperSdkName() {
+        return this.wrapperSdkName;
+    }
+
+    public void setWrapperSdkName(String str) {
+        this.wrapperSdkName = str;
+    }
+
+    public String getMinidumpFilePath() {
+        return this.minidumpFilePath;
+    }
+
+    public void setMinidumpFilePath(String str) {
+        this.minidumpFilePath = str;
+    }
+
+    @Override // com.microsoft.appcenter.ingestion.models.Model
+    public void read(JSONObject jSONObject) {
+        setType(jSONObject.optString("type", null));
+        setMessage(jSONObject.optString("message", null));
+        setStackTrace(jSONObject.optString("stackTrace", null));
+        setFrames(JSONUtils.readArray(jSONObject, "frames", StackFrameFactory.getInstance()));
+        setInnerExceptions(JSONUtils.readArray(jSONObject, "innerExceptions", ExceptionFactory.getInstance()));
+        setWrapperSdkName(jSONObject.optString("wrapperSdkName", null));
+        setMinidumpFilePath(jSONObject.optString("minidumpFilePath", null));
+    }
+
+    @Override // com.microsoft.appcenter.ingestion.models.Model
+    public void write(JSONStringer jSONStringer) {
+        JSONUtils.write(jSONStringer, "type", getType());
+        JSONUtils.write(jSONStringer, "message", getMessage());
+        JSONUtils.write(jSONStringer, "stackTrace", getStackTrace());
+        JSONUtils.writeArray(jSONStringer, "frames", getFrames());
+        JSONUtils.writeArray(jSONStringer, "innerExceptions", getInnerExceptions());
+        JSONUtils.write(jSONStringer, "wrapperSdkName", getWrapperSdkName());
+        JSONUtils.write(jSONStringer, "minidumpFilePath", getMinidumpFilePath());
+    }
 
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -55,34 +133,6 @@ public class Exception implements Model {
         return str5 != null ? str5.equals(str6) : str6 == null;
     }
 
-    public List getFrames() {
-        return this.frames;
-    }
-
-    public List getInnerExceptions() {
-        return this.innerExceptions;
-    }
-
-    public String getMessage() {
-        return this.message;
-    }
-
-    public String getMinidumpFilePath() {
-        return this.minidumpFilePath;
-    }
-
-    public String getStackTrace() {
-        return this.stackTrace;
-    }
-
-    public String getType() {
-        return this.type;
-    }
-
-    public String getWrapperSdkName() {
-        return this.wrapperSdkName;
-    }
-
     public int hashCode() {
         String str = this.type;
         int hashCode = (str != null ? str.hashCode() : 0) * 31;
@@ -98,55 +148,5 @@ public class Exception implements Model {
         int hashCode6 = (hashCode5 + (str4 != null ? str4.hashCode() : 0)) * 31;
         String str5 = this.minidumpFilePath;
         return hashCode6 + (str5 != null ? str5.hashCode() : 0);
-    }
-
-    @Override // com.microsoft.appcenter.ingestion.models.Model
-    public void read(JSONObject jSONObject) {
-        setType(jSONObject.optString("type", null));
-        setMessage(jSONObject.optString("message", null));
-        setStackTrace(jSONObject.optString("stackTrace", null));
-        setFrames(JSONUtils.readArray(jSONObject, "frames", StackFrameFactory.getInstance()));
-        setInnerExceptions(JSONUtils.readArray(jSONObject, "innerExceptions", ExceptionFactory.getInstance()));
-        setWrapperSdkName(jSONObject.optString("wrapperSdkName", null));
-        setMinidumpFilePath(jSONObject.optString("minidumpFilePath", null));
-    }
-
-    public void setFrames(List list) {
-        this.frames = list;
-    }
-
-    public void setInnerExceptions(List list) {
-        this.innerExceptions = list;
-    }
-
-    public void setMessage(String str) {
-        this.message = str;
-    }
-
-    public void setMinidumpFilePath(String str) {
-        this.minidumpFilePath = str;
-    }
-
-    public void setStackTrace(String str) {
-        this.stackTrace = str;
-    }
-
-    public void setType(String str) {
-        this.type = str;
-    }
-
-    public void setWrapperSdkName(String str) {
-        this.wrapperSdkName = str;
-    }
-
-    @Override // com.microsoft.appcenter.ingestion.models.Model
-    public void write(JSONStringer jSONStringer) {
-        JSONUtils.write(jSONStringer, "type", getType());
-        JSONUtils.write(jSONStringer, "message", getMessage());
-        JSONUtils.write(jSONStringer, "stackTrace", getStackTrace());
-        JSONUtils.writeArray(jSONStringer, "frames", getFrames());
-        JSONUtils.writeArray(jSONStringer, "innerExceptions", getInnerExceptions());
-        JSONUtils.write(jSONStringer, "wrapperSdkName", getWrapperSdkName());
-        JSONUtils.write(jSONStringer, "minidumpFilePath", getMinidumpFilePath());
     }
 }

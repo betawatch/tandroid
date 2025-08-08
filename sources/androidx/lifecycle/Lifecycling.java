@@ -1,6 +1,6 @@
 package androidx.lifecycle;
 
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import androidx.lifecycle.Lifecycle;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -25,9 +25,38 @@ public abstract class Lifecycling {
         }
     }
 
+    static LifecycleEventObserver lifecycleEventObserver(Object obj) {
+        boolean z = obj instanceof LifecycleEventObserver;
+        boolean z2 = obj instanceof FullLifecycleObserver;
+        if (z && z2) {
+            return new FullLifecycleObserverAdapter((FullLifecycleObserver) obj, (LifecycleEventObserver) obj);
+        }
+        if (z2) {
+            return new FullLifecycleObserverAdapter((FullLifecycleObserver) obj, null);
+        }
+        if (z) {
+            return (LifecycleEventObserver) obj;
+        }
+        Class<?> cls = obj.getClass();
+        if (getObserverConstructorType(cls) == 2) {
+            List list = (List) sClassToAdapters.get(cls);
+            if (list.size() == 1) {
+                createGeneratedAdapter((Constructor) list.get(0), obj);
+                return new SingleGeneratedAdapterObserver(null);
+            }
+            GeneratedAdapter[] generatedAdapterArr = new GeneratedAdapter[list.size()];
+            for (int i = 0; i < list.size(); i++) {
+                createGeneratedAdapter((Constructor) list.get(i), obj);
+                generatedAdapterArr[i] = null;
+            }
+            return new CompositeGeneratedAdaptersObserver(generatedAdapterArr);
+        }
+        return new ReflectiveGenericLifecycleObserver(obj);
+    }
+
     private static GeneratedAdapter createGeneratedAdapter(Constructor constructor, Object obj) {
         try {
-            ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(constructor.newInstance(obj));
+            WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(constructor.newInstance(obj));
             return null;
         } catch (IllegalAccessException e) {
             throw new RuntimeException(e);
@@ -63,10 +92,6 @@ public abstract class Lifecycling {
         }
     }
 
-    public static String getAdapterName(String str) {
-        return str.replace(".", "_") + "_LifecycleAdapter";
-    }
-
     private static int getObserverConstructorType(Class cls) {
         Integer num = (Integer) sCallbackCache.get(cls);
         if (num != null) {
@@ -75,39 +100,6 @@ public abstract class Lifecycling {
         int resolveObserverCallbackType = resolveObserverCallbackType(cls);
         sCallbackCache.put(cls, Integer.valueOf(resolveObserverCallbackType));
         return resolveObserverCallbackType;
-    }
-
-    private static boolean isLifecycleParent(Class cls) {
-        return cls != null && LifecycleObserver.class.isAssignableFrom(cls);
-    }
-
-    static LifecycleEventObserver lifecycleEventObserver(Object obj) {
-        boolean z = obj instanceof LifecycleEventObserver;
-        boolean z2 = obj instanceof FullLifecycleObserver;
-        if (z && z2) {
-            return new FullLifecycleObserverAdapter((FullLifecycleObserver) obj, (LifecycleEventObserver) obj);
-        }
-        if (z2) {
-            return new FullLifecycleObserverAdapter((FullLifecycleObserver) obj, null);
-        }
-        if (z) {
-            return (LifecycleEventObserver) obj;
-        }
-        Class<?> cls = obj.getClass();
-        if (getObserverConstructorType(cls) != 2) {
-            return new ReflectiveGenericLifecycleObserver(obj);
-        }
-        List list = (List) sClassToAdapters.get(cls);
-        if (list.size() == 1) {
-            createGeneratedAdapter((Constructor) list.get(0), obj);
-            return new SingleGeneratedAdapterObserver(null);
-        }
-        GeneratedAdapter[] generatedAdapterArr = new GeneratedAdapter[list.size()];
-        for (int i = 0; i < list.size(); i++) {
-            createGeneratedAdapter((Constructor) list.get(i), obj);
-            generatedAdapterArr[i] = null;
-        }
-        return new CompositeGeneratedAdaptersObserver(generatedAdapterArr);
     }
 
     private static int resolveObserverCallbackType(Class cls) {
@@ -148,5 +140,13 @@ public abstract class Lifecycling {
         }
         sClassToAdapters.put(cls, arrayList);
         return 2;
+    }
+
+    private static boolean isLifecycleParent(Class cls) {
+        return cls != null && LifecycleObserver.class.isAssignableFrom(cls);
+    }
+
+    public static String getAdapterName(String str) {
+        return str.replace(".", "_") + "_LifecycleAdapter";
     }
 }

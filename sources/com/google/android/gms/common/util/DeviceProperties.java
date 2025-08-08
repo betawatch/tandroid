@@ -7,21 +7,21 @@ import com.google.android.gms.common.GooglePlayServicesUtilLight;
 
 /* loaded from: classes.dex */
 public abstract class DeviceProperties {
-    private static Boolean zzd;
     private static Boolean zze;
-    private static Boolean zzg;
-    private static Boolean zzi;
+    private static Boolean zzf;
+    private static Boolean zzh;
+    private static Boolean zzj;
 
     public static boolean isAuto(Context context) {
         PackageManager packageManager = context.getPackageManager();
-        if (zzi == null) {
+        if (zzj == null) {
             boolean z = false;
             if (PlatformVersion.isAtLeastO() && packageManager.hasSystemFeature("android.hardware.type.automotive")) {
                 z = true;
             }
-            zzi = Boolean.valueOf(z);
+            zzj = Boolean.valueOf(z);
         }
-        return zzi.booleanValue();
+        return zzj.booleanValue();
     }
 
     public static boolean isUserBuild() {
@@ -30,15 +30,7 @@ public abstract class DeviceProperties {
     }
 
     public static boolean isWearable(Context context) {
-        PackageManager packageManager = context.getPackageManager();
-        if (zzd == null) {
-            boolean z = false;
-            if (PlatformVersion.isAtLeastKitKatWatch() && packageManager.hasSystemFeature("android.hardware.type.watch")) {
-                z = true;
-            }
-            zzd = Boolean.valueOf(z);
-        }
-        return zzd.booleanValue();
+        return zzd(context.getPackageManager());
     }
 
     public static boolean isWearableWithoutPlayStore(Context context) {
@@ -52,24 +44,35 @@ public abstract class DeviceProperties {
     }
 
     public static boolean zza(Context context) {
-        if (zze == null) {
+        if (zzf == null) {
             boolean z = false;
             if (PlatformVersion.isAtLeastLollipop() && context.getPackageManager().hasSystemFeature("cn.google")) {
+                z = true;
+            }
+            zzf = Boolean.valueOf(z);
+        }
+        return zzf.booleanValue();
+    }
+
+    public static boolean zzb(Context context) {
+        if (zzh == null) {
+            boolean z = true;
+            if (!context.getPackageManager().hasSystemFeature("android.hardware.type.iot") && !context.getPackageManager().hasSystemFeature("android.hardware.type.embedded")) {
+                z = false;
+            }
+            zzh = Boolean.valueOf(z);
+        }
+        return zzh.booleanValue();
+    }
+
+    public static boolean zzd(PackageManager packageManager) {
+        if (zze == null) {
+            boolean z = false;
+            if (PlatformVersion.isAtLeastKitKatWatch() && packageManager.hasSystemFeature("android.hardware.type.watch")) {
                 z = true;
             }
             zze = Boolean.valueOf(z);
         }
         return zze.booleanValue();
-    }
-
-    public static boolean zzb(Context context) {
-        if (zzg == null) {
-            boolean z = true;
-            if (!context.getPackageManager().hasSystemFeature("android.hardware.type.iot") && !context.getPackageManager().hasSystemFeature("android.hardware.type.embedded")) {
-                z = false;
-            }
-            zzg = Boolean.valueOf(z);
-        }
-        return zzg.booleanValue();
     }
 }

@@ -1,30 +1,21 @@
 package com.google.android.gms.internal.play_billing;
 
 /* loaded from: classes.dex */
-final class zzbw implements zzdd {
-    private static final zzbw zza = new zzbw();
-
-    private zzbw() {
-    }
-
-    public static zzbw zza() {
-        return zza;
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.zzdd
-    public final zzdc zzb(Class cls) {
-        if (!zzcb.class.isAssignableFrom(cls)) {
-            throw new IllegalArgumentException("Unsupported message type: ".concat(cls.getName()));
+abstract class zzbw {
+    static int zza(int i, String str) {
+        if (i >= 0) {
+            return i;
         }
-        try {
-            return (zzdc) zzcb.zzh(cls.asSubclass(zzcb.class)).zzu(3, null, null);
-        } catch (Exception e) {
-            throw new RuntimeException("Unable to get message info for ".concat(cls.getName()), e);
-        }
+        throw new IllegalArgumentException(str + " cannot be negative but was: " + i);
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzdd
-    public final boolean zzc(Class cls) {
-        return zzcb.class.isAssignableFrom(cls);
+    static void zzb(Object obj, Object obj2) {
+        if (obj == null) {
+            throw new NullPointerException("null key in entry: null=".concat(String.valueOf(obj2)));
+        }
+        if (obj2 != null) {
+            return;
+        }
+        throw new NullPointerException("null value in entry: " + obj.toString() + "=null");
     }
 }

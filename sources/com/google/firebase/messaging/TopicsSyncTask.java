@@ -11,7 +11,7 @@ import android.os.PowerManager;
 import android.util.Log;
 import java.io.IOException;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 class TopicsSyncTask implements Runnable {
     private static final Object TOPIC_SYNC_TASK_LOCK = new Object();
     private static Boolean hasAccessNetworkStatePermission;
@@ -22,112 +22,12 @@ class TopicsSyncTask implements Runnable {
     private final PowerManager.WakeLock syncWakeLock;
     private final TopicsSubscriber topicsSubscriber;
 
-    class ConnectivityChangeReceiver extends BroadcastReceiver {
-        private TopicsSyncTask task;
-
-        public ConnectivityChangeReceiver(TopicsSyncTask topicsSyncTask) {
-            this.task = topicsSyncTask;
-        }
-
-        @Override // android.content.BroadcastReceiver
-        public synchronized void onReceive(Context context, Intent intent) {
-            try {
-                TopicsSyncTask topicsSyncTask = this.task;
-                if (topicsSyncTask == null) {
-                    return;
-                }
-                if (topicsSyncTask.isDeviceConnected()) {
-                    if (TopicsSyncTask.isLoggable()) {
-                        Log.d("FirebaseMessaging", "Connectivity changed. Starting background sync.");
-                    }
-                    this.task.topicsSubscriber.scheduleSyncTaskWithDelaySeconds(this.task, 0L);
-                    context.unregisterReceiver(this);
-                    this.task = null;
-                }
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-
-        public void registerReceiver() {
-            if (TopicsSyncTask.isLoggable()) {
-                Log.d("FirebaseMessaging", "Connectivity change received registered");
-            }
-            TopicsSyncTask.this.context.registerReceiver(this, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
-        }
-    }
-
     TopicsSyncTask(TopicsSubscriber topicsSubscriber, Context context, Metadata metadata, long j) {
         this.topicsSubscriber = topicsSubscriber;
         this.context = context;
         this.nextDelaySeconds = j;
         this.metadata = metadata;
         this.syncWakeLock = ((PowerManager) context.getSystemService("power")).newWakeLock(1, "wake:com.google.firebase.messaging");
-    }
-
-    private static String createPermissionMissingLog(String str) {
-        return "Missing Permission: " + str + ". This permission should normally be included by the manifest merger, but may needed to be manually added to your manifest";
-    }
-
-    private static boolean hasAccessNetworkStatePermission(Context context) {
-        boolean booleanValue;
-        synchronized (TOPIC_SYNC_TASK_LOCK) {
-            try {
-                Boolean bool = hasAccessNetworkStatePermission;
-                Boolean valueOf = Boolean.valueOf(bool == null ? hasPermission(context, "android.permission.ACCESS_NETWORK_STATE", bool) : bool.booleanValue());
-                hasAccessNetworkStatePermission = valueOf;
-                booleanValue = valueOf.booleanValue();
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-        return booleanValue;
-    }
-
-    private static boolean hasPermission(Context context, String str, Boolean bool) {
-        if (bool != null) {
-            return bool.booleanValue();
-        }
-        boolean z = context.checkCallingOrSelfPermission(str) == 0;
-        if (!z && Log.isLoggable("FirebaseMessaging", 3)) {
-            Log.d("FirebaseMessaging", createPermissionMissingLog(str));
-        }
-        return z;
-    }
-
-    private static boolean hasWakeLockPermission(Context context) {
-        boolean booleanValue;
-        synchronized (TOPIC_SYNC_TASK_LOCK) {
-            try {
-                Boolean bool = hasWakeLockPermission;
-                Boolean valueOf = Boolean.valueOf(bool == null ? hasPermission(context, "android.permission.WAKE_LOCK", bool) : bool.booleanValue());
-                hasWakeLockPermission = valueOf;
-                booleanValue = valueOf.booleanValue();
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-        return booleanValue;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public synchronized boolean isDeviceConnected() {
-        boolean z;
-        try {
-            ConnectivityManager connectivityManager = (ConnectivityManager) this.context.getSystemService("connectivity");
-            NetworkInfo activeNetworkInfo = connectivityManager != null ? connectivityManager.getActiveNetworkInfo() : null;
-            if (activeNetworkInfo != null) {
-                z = activeNetworkInfo.isConnected();
-            }
-        } catch (Throwable th) {
-            throw th;
-        }
-        return z;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static boolean isLoggable() {
-        return Log.isLoggable("FirebaseMessaging", 3) || (Build.VERSION.SDK_INT == 23 && Log.isLoggable("FirebaseMessaging", 3));
     }
 
     @Override // java.lang.Runnable
@@ -196,6 +96,118 @@ class TopicsSyncTask implements Runnable {
             }
         } catch (RuntimeException unused4) {
             Log.i("FirebaseMessaging", "TopicsSyncTask's wakelock was already released due to timeout.");
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public synchronized boolean isDeviceConnected() {
+        boolean z;
+        try {
+            ConnectivityManager connectivityManager = (ConnectivityManager) this.context.getSystemService("connectivity");
+            NetworkInfo activeNetworkInfo = connectivityManager != null ? connectivityManager.getActiveNetworkInfo() : null;
+            if (activeNetworkInfo != null) {
+                z = activeNetworkInfo.isConnected();
+            }
+        } catch (Throwable th) {
+            throw th;
+        }
+        return z;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static boolean isLoggable() {
+        return Log.isLoggable("FirebaseMessaging", 3) || (Build.VERSION.SDK_INT == 23 && Log.isLoggable("FirebaseMessaging", 3));
+    }
+
+    private static boolean hasWakeLockPermission(Context context) {
+        boolean booleanValue;
+        boolean booleanValue2;
+        synchronized (TOPIC_SYNC_TASK_LOCK) {
+            try {
+                Boolean bool = hasWakeLockPermission;
+                if (bool == null) {
+                    booleanValue = hasPermission(context, "android.permission.WAKE_LOCK", bool);
+                } else {
+                    booleanValue = bool.booleanValue();
+                }
+                Boolean valueOf = Boolean.valueOf(booleanValue);
+                hasWakeLockPermission = valueOf;
+                booleanValue2 = valueOf.booleanValue();
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+        return booleanValue2;
+    }
+
+    private static boolean hasAccessNetworkStatePermission(Context context) {
+        boolean booleanValue;
+        boolean booleanValue2;
+        synchronized (TOPIC_SYNC_TASK_LOCK) {
+            try {
+                Boolean bool = hasAccessNetworkStatePermission;
+                if (bool == null) {
+                    booleanValue = hasPermission(context, "android.permission.ACCESS_NETWORK_STATE", bool);
+                } else {
+                    booleanValue = bool.booleanValue();
+                }
+                Boolean valueOf = Boolean.valueOf(booleanValue);
+                hasAccessNetworkStatePermission = valueOf;
+                booleanValue2 = valueOf.booleanValue();
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+        return booleanValue2;
+    }
+
+    private static boolean hasPermission(Context context, String str, Boolean bool) {
+        if (bool != null) {
+            return bool.booleanValue();
+        }
+        boolean z = context.checkCallingOrSelfPermission(str) == 0;
+        if (!z && Log.isLoggable("FirebaseMessaging", 3)) {
+            Log.d("FirebaseMessaging", createPermissionMissingLog(str));
+        }
+        return z;
+    }
+
+    private static String createPermissionMissingLog(String str) {
+        return "Missing Permission: " + str + ". This permission should normally be included by the manifest merger, but may needed to be manually added to your manifest";
+    }
+
+    class ConnectivityChangeReceiver extends BroadcastReceiver {
+        private TopicsSyncTask task;
+
+        public ConnectivityChangeReceiver(TopicsSyncTask topicsSyncTask) {
+            this.task = topicsSyncTask;
+        }
+
+        @Override // android.content.BroadcastReceiver
+        public synchronized void onReceive(Context context, Intent intent) {
+            try {
+                TopicsSyncTask topicsSyncTask = this.task;
+                if (topicsSyncTask == null) {
+                    return;
+                }
+                if (topicsSyncTask.isDeviceConnected()) {
+                    if (TopicsSyncTask.isLoggable()) {
+                        Log.d("FirebaseMessaging", "Connectivity changed. Starting background sync.");
+                    }
+                    this.task.topicsSubscriber.scheduleSyncTaskWithDelaySeconds(this.task, 0L);
+                    context.unregisterReceiver(this);
+                    this.task = null;
+                }
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+
+        public void registerReceiver() {
+            if (TopicsSyncTask.isLoggable()) {
+                Log.d("FirebaseMessaging", "Connectivity change received registered");
+            }
+            TopicsSyncTask.this.context.registerReceiver(this, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
         }
     }
 }

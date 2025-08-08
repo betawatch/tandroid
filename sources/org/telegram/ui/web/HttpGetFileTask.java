@@ -32,14 +32,19 @@ public class HttpGetFileTask extends AsyncTask {
         this.progressCallback = callback2;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$doInBackground$0(float f) {
-        this.progressCallback.run(Float.valueOf(f));
+    public HttpGetFileTask setOverrideExtension(String str) {
+        this.overrideExt = str;
+        return this;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$doInBackground$1() {
-        this.progressCallback.run(Float.valueOf(1.0f));
+    public HttpGetFileTask setDestFile(File file) {
+        this.file = file;
+        return this;
+    }
+
+    public HttpGetFileTask setMaxSize(long j) {
+        this.max_size = j;
+        return this;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -96,6 +101,8 @@ public class HttpGetFileTask extends AsyncTask {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public File doInBackground(String... strArr) {
+        InputStream errorStream;
+        long contentLength;
         BufferedInputStream bufferedInputStream;
         Throwable th;
         FileOutputStream fileOutputStream;
@@ -117,7 +124,11 @@ public class HttpGetFileTask extends AsyncTask {
                 }
                 httpURLConnection.setDoInput(true);
                 int responseCode = httpURLConnection.getResponseCode();
-                InputStream errorStream = (responseCode < 200 || responseCode >= 300) ? httpURLConnection.getErrorStream() : httpURLConnection.getInputStream();
+                if (responseCode >= 200 && responseCode < 300) {
+                    errorStream = httpURLConnection.getInputStream();
+                } else {
+                    errorStream = httpURLConnection.getErrorStream();
+                }
                 int responseCode2 = httpURLConnection.getResponseCode();
                 if (z && responseCode2 != 206) {
                     FileLog.d("failed to resume, server doesn't support partial content. downloading from the beginning");
@@ -135,19 +146,24 @@ public class HttpGetFileTask extends AsyncTask {
                     } catch (Exception e) {
                         e = e;
                         j2 = j;
-                        if (!(e instanceof ProtocolException)) {
+                        if (e instanceof ProtocolException) {
+                            FileLog.d("got unexpected end of stream, lets try to resume");
+                            i2++;
+                            i = 0;
+                        } else {
                             this.exception = e;
                             FileLog.e(e);
                             return null;
                         }
-                        FileLog.d("got unexpected end of stream, lets try to resume");
-                        i2++;
-                        i = 0;
                     }
                 }
-                long contentLengthLong = Build.VERSION.SDK_INT >= 24 ? httpURLConnection.getContentLengthLong() : httpURLConnection.getContentLength();
+                if (Build.VERSION.SDK_INT >= 24) {
+                    contentLength = httpURLConnection.getContentLengthLong();
+                } else {
+                    contentLength = httpURLConnection.getContentLength();
+                }
                 long j3 = this.max_size;
-                if (j3 > j && contentLengthLong > j3) {
+                if (j3 > j && contentLength > j3) {
                     errorStream.close();
                     if (this.file != null) {
                         this.file = null;
@@ -184,8 +200,8 @@ public class HttpGetFileTask extends AsyncTask {
                                                 FileLog.e(e2);
                                             }
                                         } else {
-                                            if (contentLengthLong > 0) {
-                                                final float clamp01 = Utilities.clamp01(j2 / contentLengthLong);
+                                            if (contentLength > 0) {
+                                                final float clamp01 = Utilities.clamp01(j2 / contentLength);
                                                 if (this.progressCallback != null) {
                                                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.HttpGetFileTask$$ExternalSyntheticLambda0
                                                         @Override // java.lang.Runnable
@@ -244,7 +260,7 @@ public class HttpGetFileTask extends AsyncTask {
                 }
             } catch (Exception e3) {
                 e = e3;
-                if (!(e instanceof ProtocolException)) {
+                if (e instanceof ProtocolException) {
                 }
             }
         }
@@ -260,7 +276,7 @@ public class HttpGetFileTask extends AsyncTask {
                 } catch (Exception e4) {
                     e = e4;
                     j = 0;
-                    if (!(e instanceof ProtocolException)) {
+                    if (e instanceof ProtocolException) {
                     }
                 }
             } catch (Throwable th12) {
@@ -277,30 +293,26 @@ public class HttpGetFileTask extends AsyncTask {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$doInBackground$0(float f) {
+        this.progressCallback.run(Float.valueOf(f));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$doInBackground$1() {
+        this.progressCallback.run(Float.valueOf(1.0f));
+    }
+
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.os.AsyncTask
     public void onPostExecute(File file) {
         Utilities.Callback callback = this.doneCallback;
         if (callback != null) {
-            if (this.exception != null) {
-                file = null;
+            if (this.exception == null) {
+                callback.run(file);
+            } else {
+                callback.run(null);
             }
-            callback.run(file);
         }
-    }
-
-    public HttpGetFileTask setDestFile(File file) {
-        this.file = file;
-        return this;
-    }
-
-    public HttpGetFileTask setMaxSize(long j) {
-        this.max_size = j;
-        return this;
-    }
-
-    public HttpGetFileTask setOverrideExtension(String str) {
-        this.overrideExt = str;
-        return this;
     }
 }

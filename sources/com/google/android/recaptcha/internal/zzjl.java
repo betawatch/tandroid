@@ -25,23 +25,6 @@ public final class zzjl extends zzgh implements RandomAccess, zzjm {
         this(10);
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzjl(int i) {
-        super(true);
-        ArrayList arrayList = new ArrayList(i);
-        this.zzc = arrayList;
-    }
-
-    private zzjl(ArrayList arrayList) {
-        super(true);
-        this.zzc = arrayList;
-    }
-
-    private zzjl(boolean z) {
-        super(false);
-        this.zzc = Collections.emptyList();
-    }
-
     private static String zzj(Object obj) {
         return obj instanceof String ? (String) obj : obj instanceof zzgw ? ((zzgw) obj).zzn(zzjc.zzb) : zzjc.zzd((byte[]) obj);
     }
@@ -62,11 +45,6 @@ public final class zzjl extends zzgh implements RandomAccess, zzjm {
         boolean addAll = this.zzc.addAll(i, collection);
         ((AbstractList) this).modCount++;
         return addAll;
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzgh, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean addAll(Collection collection) {
-        return addAll(size(), collection);
     }
 
     @Override // com.google.android.recaptcha.internal.zzgh, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
@@ -148,5 +126,27 @@ public final class zzjl extends zzgh implements RandomAccess, zzjm {
         zza();
         this.zzc.add(zzgwVar);
         ((AbstractList) this).modCount++;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zzjl(int i) {
+        super(true);
+        ArrayList arrayList = new ArrayList(i);
+        this.zzc = arrayList;
+    }
+
+    private zzjl(ArrayList arrayList) {
+        super(true);
+        this.zzc = arrayList;
+    }
+
+    private zzjl(boolean z) {
+        super(false);
+        this.zzc = Collections.emptyList();
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzgh, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final boolean addAll(Collection collection) {
+        return addAll(size(), collection);
     }
 }

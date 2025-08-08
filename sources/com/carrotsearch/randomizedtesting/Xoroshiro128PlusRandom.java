@@ -21,8 +21,10 @@ public class Xoroshiro128PlusRandom extends Random {
     }
 
     @Override // java.util.Random
-    protected int next(int i) {
-        return ((int) nextLong()) >>> (32 - i);
+    public void setSeed(long j) {
+        if (this.s0 != 0 || this.s1 != 0) {
+            throw new RuntimeException("No seed set");
+        }
     }
 
     @Override // java.util.Random
@@ -51,19 +53,12 @@ public class Xoroshiro128PlusRandom extends Random {
 
     @Override // java.util.Random
     public double nextDouble() {
-        double nextLong = nextLong() >>> 11;
-        Double.isNaN(nextLong);
-        return nextLong * 1.1102230246251565E-16d;
+        return (nextLong() >>> 11) * 1.1102230246251565E-16d;
     }
 
     @Override // java.util.Random
     public float nextFloat() {
         return (nextInt() >>> 8) * 5.9604645E-8f;
-    }
-
-    @Override // java.util.Random
-    public double nextGaussian() {
-        return super.nextGaussian();
     }
 
     @Override // java.util.Random
@@ -74,6 +69,11 @@ public class Xoroshiro128PlusRandom extends Random {
     @Override // java.util.Random
     public int nextInt(int i) {
         return super.nextInt(i);
+    }
+
+    @Override // java.util.Random
+    public double nextGaussian() {
+        return super.nextGaussian();
     }
 
     @Override // java.util.Random
@@ -88,9 +88,7 @@ public class Xoroshiro128PlusRandom extends Random {
     }
 
     @Override // java.util.Random
-    public void setSeed(long j) {
-        if (this.s0 != 0 || this.s1 != 0) {
-            throw new RuntimeException("No seed set");
-        }
+    protected int next(int i) {
+        return ((int) nextLong()) >>> (32 - i);
     }
 }

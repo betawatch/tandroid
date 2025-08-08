@@ -99,11 +99,6 @@ public class MediaStatus extends AbstractSafeParcelable {
         this.zzw = z3;
     }
 
-    public MediaStatus(JSONObject jSONObject) {
-        this(null, 0L, 0, 0.0d, 0, 0, 0L, 0L, 0.0d, false, null, 0, 0, null, 0, null, false, null, null, null, null);
-        zza(jSONObject, 0);
-    }
-
     private final void zze(List list) {
         this.zzq.clear();
         this.zzy.clear();
@@ -244,41 +239,12 @@ public class MediaStatus extends AbstractSafeParcelable {
         return this.zzr;
     }
 
-    @Override // android.os.Parcelable
-    public void writeToParcel(Parcel parcel, int i) {
-        JSONObject jSONObject = this.zzo;
-        this.zzn = jSONObject == null ? null : jSONObject.toString();
-        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeParcelable(parcel, 2, getMediaInfo(), i, false);
-        SafeParcelWriter.writeLong(parcel, 3, this.zzb);
-        SafeParcelWriter.writeInt(parcel, 4, getCurrentItemId());
-        SafeParcelWriter.writeDouble(parcel, 5, getPlaybackRate());
-        SafeParcelWriter.writeInt(parcel, 6, getPlayerState());
-        SafeParcelWriter.writeInt(parcel, 7, getIdleReason());
-        SafeParcelWriter.writeLong(parcel, 8, getStreamPosition());
-        SafeParcelWriter.writeLong(parcel, 9, this.zzh);
-        SafeParcelWriter.writeDouble(parcel, 10, getStreamVolume());
-        SafeParcelWriter.writeBoolean(parcel, 11, isMute());
-        SafeParcelWriter.writeLongArray(parcel, 12, getActiveTrackIds(), false);
-        SafeParcelWriter.writeInt(parcel, 13, getLoadingItemId());
-        SafeParcelWriter.writeInt(parcel, 14, getPreloadedItemId());
-        SafeParcelWriter.writeString(parcel, 15, this.zzn, false);
-        SafeParcelWriter.writeInt(parcel, 16, this.zzp);
-        SafeParcelWriter.writeTypedList(parcel, 17, this.zzq, false);
-        SafeParcelWriter.writeBoolean(parcel, 18, isPlayingAd());
-        SafeParcelWriter.writeParcelable(parcel, 19, getAdBreakStatus(), i, false);
-        SafeParcelWriter.writeParcelable(parcel, 20, getVideoInfo(), i, false);
-        SafeParcelWriter.writeParcelable(parcel, 21, getLiveSeekableRange(), i, false);
-        SafeParcelWriter.writeParcelable(parcel, 22, getQueueData(), i, false);
-        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:201:0x018a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:202:0x018c, code lost:
     
-        if (r1 != null) goto L101;
+        if (r13.zzk != null) goto L103;
      */
-    /* JADX WARN: Removed duplicated region for block: B:125:0x023b  */
-    /* JADX WARN: Removed duplicated region for block: B:153:0x02ca  */
+    /* JADX WARN: Removed duplicated region for block: B:126:0x023d  */
+    /* JADX WARN: Removed duplicated region for block: B:153:0x02cf  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -287,7 +253,6 @@ public class MediaStatus extends AbstractSafeParcelable {
         MediaInfo mediaInfo;
         boolean z;
         int i3;
-        MediaQueueItem mediaQueueItem;
         MediaInfo mediaInfo2;
         int i4;
         JSONObject optJSONObject = jSONObject.optJSONObject("extendedStatus");
@@ -374,8 +339,8 @@ public class MediaStatus extends AbstractSafeParcelable {
             }
         }
         long[] zzg = CastUtils.zzg(jSONObject.has("activeTrackIds") ? jSONObject.getJSONArray("activeTrackIds") : null);
-        long[] jArr = this.zzk;
         if (zzg != null) {
+            long[] jArr = this.zzk;
             if (jArr != null) {
                 if (jArr.length == zzg.length) {
                     for (int i7 = 0; i7 < zzg.length; i7++) {
@@ -453,14 +418,12 @@ public class MediaStatus extends AbstractSafeParcelable {
                                 z |= itemById.fromJson(jSONObject5);
                                 arrayList2.add(itemById);
                                 i3 = i3 == getIndexById(num.intValue()).intValue() ? i3 + 1 : 0;
+                            } else if (num.intValue() != this.zzc || (mediaInfo2 = this.zza) == null) {
+                                arrayList2.add(new MediaQueueItem(jSONObject5));
                             } else {
-                                if (num.intValue() != this.zzc || (mediaInfo2 = this.zza) == null) {
-                                    mediaQueueItem = new MediaQueueItem(jSONObject5);
-                                } else {
-                                    mediaQueueItem = new MediaQueueItem.Builder(mediaInfo2).build();
-                                    mediaQueueItem.fromJson(jSONObject5);
-                                }
-                                arrayList2.add(mediaQueueItem);
+                                MediaQueueItem build = new MediaQueueItem.Builder(mediaInfo2).build();
+                                build.fromJson(jSONObject5);
+                                arrayList2.add(build);
                             }
                             z = true;
                         }
@@ -501,9 +464,9 @@ public class MediaStatus extends AbstractSafeParcelable {
         if (jSONObject.has("queueData")) {
             MediaQueueData.Builder builder = new MediaQueueData.Builder();
             builder.zza(jSONObject.getJSONObject("queueData"));
-            MediaQueueData build = builder.build();
-            this.zzv = build;
-            boolean zzk = build.zzk();
+            MediaQueueData build2 = builder.build();
+            this.zzv = build2;
+            boolean zzk = build2.zzk();
             if (this.zzw != zzk) {
                 this.zzw = zzk;
                 i2 |= 8;
@@ -528,5 +491,39 @@ public class MediaStatus extends AbstractSafeParcelable {
     public final boolean zzd() {
         MediaInfo mediaInfo = this.zza;
         return zzf(this.zze, this.zzf, this.zzl, mediaInfo == null ? -1 : mediaInfo.getStreamType());
+    }
+
+    @Override // android.os.Parcelable
+    public void writeToParcel(Parcel parcel, int i) {
+        JSONObject jSONObject = this.zzo;
+        this.zzn = jSONObject == null ? null : jSONObject.toString();
+        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
+        SafeParcelWriter.writeParcelable(parcel, 2, getMediaInfo(), i, false);
+        SafeParcelWriter.writeLong(parcel, 3, this.zzb);
+        SafeParcelWriter.writeInt(parcel, 4, getCurrentItemId());
+        SafeParcelWriter.writeDouble(parcel, 5, getPlaybackRate());
+        SafeParcelWriter.writeInt(parcel, 6, getPlayerState());
+        SafeParcelWriter.writeInt(parcel, 7, getIdleReason());
+        SafeParcelWriter.writeLong(parcel, 8, getStreamPosition());
+        SafeParcelWriter.writeLong(parcel, 9, this.zzh);
+        SafeParcelWriter.writeDouble(parcel, 10, getStreamVolume());
+        SafeParcelWriter.writeBoolean(parcel, 11, isMute());
+        SafeParcelWriter.writeLongArray(parcel, 12, getActiveTrackIds(), false);
+        SafeParcelWriter.writeInt(parcel, 13, getLoadingItemId());
+        SafeParcelWriter.writeInt(parcel, 14, getPreloadedItemId());
+        SafeParcelWriter.writeString(parcel, 15, this.zzn, false);
+        SafeParcelWriter.writeInt(parcel, 16, this.zzp);
+        SafeParcelWriter.writeTypedList(parcel, 17, this.zzq, false);
+        SafeParcelWriter.writeBoolean(parcel, 18, isPlayingAd());
+        SafeParcelWriter.writeParcelable(parcel, 19, getAdBreakStatus(), i, false);
+        SafeParcelWriter.writeParcelable(parcel, 20, getVideoInfo(), i, false);
+        SafeParcelWriter.writeParcelable(parcel, 21, getLiveSeekableRange(), i, false);
+        SafeParcelWriter.writeParcelable(parcel, 22, getQueueData(), i, false);
+        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    public MediaStatus(JSONObject jSONObject) {
+        this(null, 0L, 0, 0.0d, 0, 0, 0L, 0L, 0.0d, false, null, 0, 0, null, 0, null, false, null, null, null, null);
+        zza(jSONObject, 0);
     }
 }

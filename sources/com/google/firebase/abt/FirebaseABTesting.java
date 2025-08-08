@@ -1,7 +1,7 @@
 package com.google.firebase.abt;
 
 import android.content.Context;
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import com.google.firebase.analytics.connector.AnalyticsConnector;
 import com.google.firebase.inject.Provider;
 import java.util.ArrayDeque;
@@ -22,31 +22,60 @@ public class FirebaseABTesting {
         this.originService = str;
     }
 
-    private void addExperimentToAnalytics(AnalyticsConnector.ConditionalUserProperty conditionalUserProperty) {
-        ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(this.analyticsConnector.get());
-        throw null;
-    }
-
-    private void addExperiments(List list) {
-        ArrayDeque arrayDeque = new ArrayDeque(getAllExperimentsInAnalytics());
-        int maxUserPropertiesInAnalytics = getMaxUserPropertiesInAnalytics();
-        Iterator it = list.iterator();
-        while (it.hasNext()) {
-            AbtExperimentInfo abtExperimentInfo = (AbtExperimentInfo) it.next();
-            while (arrayDeque.size() >= maxUserPropertiesInAnalytics) {
-                removeExperimentFromAnalytics(((AnalyticsConnector.ConditionalUserProperty) arrayDeque.pollFirst()).name);
-            }
-            AnalyticsConnector.ConditionalUserProperty conditionalUserProperty = abtExperimentInfo.toConditionalUserProperty(this.originService);
-            addExperimentToAnalytics(conditionalUserProperty);
-            arrayDeque.offer(conditionalUserProperty);
+    public void replaceAllExperiments(List list) {
+        throwAbtExceptionIfAnalyticsIsNull();
+        if (list == null) {
+            throw new IllegalArgumentException("The replacementExperiments list is null.");
         }
+        replaceAllExperimentsWith(convertMapsToExperimentInfos(list));
     }
 
-    private static List convertMapsToExperimentInfos(List list) {
+    public void removeAllExperiments() {
+        throwAbtExceptionIfAnalyticsIsNull();
+        removeExperiments(getAllExperimentsInAnalytics());
+    }
+
+    public List getAllExperiments() {
+        throwAbtExceptionIfAnalyticsIsNull();
+        List allExperimentsInAnalytics = getAllExperimentsInAnalytics();
+        ArrayList arrayList = new ArrayList();
+        Iterator it = allExperimentsInAnalytics.iterator();
+        while (it.hasNext()) {
+            arrayList.add(AbtExperimentInfo.fromConditionalUserProperty((AnalyticsConnector.ConditionalUserProperty) it.next()));
+        }
+        return arrayList;
+    }
+
+    private void replaceAllExperimentsWith(List list) {
+        if (list.isEmpty()) {
+            removeAllExperiments();
+            return;
+        }
+        List allExperiments = getAllExperiments();
+        removeExperiments(getExperimentsToRemove(allExperiments, list));
+        addExperiments(getExperimentsToAdd(list, allExperiments));
+    }
+
+    private ArrayList getExperimentsToRemove(List list, List list2) {
         ArrayList arrayList = new ArrayList();
         Iterator it = list.iterator();
         while (it.hasNext()) {
-            arrayList.add(AbtExperimentInfo.fromMap((Map) it.next()));
+            AbtExperimentInfo abtExperimentInfo = (AbtExperimentInfo) it.next();
+            if (!experimentsListContainsExperiment(list2, abtExperimentInfo)) {
+                arrayList.add(abtExperimentInfo.toConditionalUserProperty(this.originService));
+            }
+        }
+        return arrayList;
+    }
+
+    private ArrayList getExperimentsToAdd(List list, List list2) {
+        ArrayList arrayList = new ArrayList();
+        Iterator it = list.iterator();
+        while (it.hasNext()) {
+            AbtExperimentInfo abtExperimentInfo = (AbtExperimentInfo) it.next();
+            if (!experimentsListContainsExperiment(list2, abtExperimentInfo)) {
+                arrayList.add(abtExperimentInfo);
+            }
         }
         return arrayList;
     }
@@ -64,47 +93,19 @@ public class FirebaseABTesting {
         return false;
     }
 
-    private List getAllExperimentsInAnalytics() {
-        ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(this.analyticsConnector.get());
-        throw null;
-    }
-
-    private ArrayList getExperimentsToAdd(List list, List list2) {
-        ArrayList arrayList = new ArrayList();
+    private void addExperiments(List list) {
+        ArrayDeque arrayDeque = new ArrayDeque(getAllExperimentsInAnalytics());
+        int maxUserPropertiesInAnalytics = getMaxUserPropertiesInAnalytics();
         Iterator it = list.iterator();
         while (it.hasNext()) {
             AbtExperimentInfo abtExperimentInfo = (AbtExperimentInfo) it.next();
-            if (!experimentsListContainsExperiment(list2, abtExperimentInfo)) {
-                arrayList.add(abtExperimentInfo);
+            while (arrayDeque.size() >= maxUserPropertiesInAnalytics) {
+                removeExperimentFromAnalytics(((AnalyticsConnector.ConditionalUserProperty) arrayDeque.pollFirst()).name);
             }
+            AnalyticsConnector.ConditionalUserProperty conditionalUserProperty = abtExperimentInfo.toConditionalUserProperty(this.originService);
+            addExperimentToAnalytics(conditionalUserProperty);
+            arrayDeque.offer(conditionalUserProperty);
         }
-        return arrayList;
-    }
-
-    private ArrayList getExperimentsToRemove(List list, List list2) {
-        ArrayList arrayList = new ArrayList();
-        Iterator it = list.iterator();
-        while (it.hasNext()) {
-            AbtExperimentInfo abtExperimentInfo = (AbtExperimentInfo) it.next();
-            if (!experimentsListContainsExperiment(list2, abtExperimentInfo)) {
-                arrayList.add(abtExperimentInfo.toConditionalUserProperty(this.originService));
-            }
-        }
-        return arrayList;
-    }
-
-    private int getMaxUserPropertiesInAnalytics() {
-        Integer num = this.maxUserProperties;
-        if (num != null) {
-            return num.intValue();
-        }
-        ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(this.analyticsConnector.get());
-        throw null;
-    }
-
-    private void removeExperimentFromAnalytics(String str) {
-        ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(this.analyticsConnector.get());
-        throw null;
     }
 
     private void removeExperiments(Collection collection) {
@@ -114,14 +115,18 @@ public class FirebaseABTesting {
         }
     }
 
-    private void replaceAllExperimentsWith(List list) {
-        if (list.isEmpty()) {
-            removeAllExperiments();
-            return;
+    private static List convertMapsToExperimentInfos(List list) {
+        ArrayList arrayList = new ArrayList();
+        Iterator it = list.iterator();
+        while (it.hasNext()) {
+            arrayList.add(AbtExperimentInfo.fromMap((Map) it.next()));
         }
-        List allExperiments = getAllExperiments();
-        removeExperiments(getExperimentsToRemove(allExperiments, list));
-        addExperiments(getExperimentsToAdd(list, allExperiments));
+        return arrayList;
+    }
+
+    private void addExperimentToAnalytics(AnalyticsConnector.ConditionalUserProperty conditionalUserProperty) {
+        WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(this.analyticsConnector.get());
+        throw null;
     }
 
     private void throwAbtExceptionIfAnalyticsIsNull() {
@@ -130,27 +135,22 @@ public class FirebaseABTesting {
         }
     }
 
-    public List getAllExperiments() {
-        throwAbtExceptionIfAnalyticsIsNull();
-        List allExperimentsInAnalytics = getAllExperimentsInAnalytics();
-        ArrayList arrayList = new ArrayList();
-        Iterator it = allExperimentsInAnalytics.iterator();
-        while (it.hasNext()) {
-            arrayList.add(AbtExperimentInfo.fromConditionalUserProperty((AnalyticsConnector.ConditionalUserProperty) it.next()));
-        }
-        return arrayList;
+    private void removeExperimentFromAnalytics(String str) {
+        WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(this.analyticsConnector.get());
+        throw null;
     }
 
-    public void removeAllExperiments() {
-        throwAbtExceptionIfAnalyticsIsNull();
-        removeExperiments(getAllExperimentsInAnalytics());
+    private int getMaxUserPropertiesInAnalytics() {
+        Integer num = this.maxUserProperties;
+        if (num == null) {
+            WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(this.analyticsConnector.get());
+            throw null;
+        }
+        return num.intValue();
     }
 
-    public void replaceAllExperiments(List list) {
-        throwAbtExceptionIfAnalyticsIsNull();
-        if (list == null) {
-            throw new IllegalArgumentException("The replacementExperiments list is null.");
-        }
-        replaceAllExperimentsWith(convertMapsToExperimentInfos(list));
+    private List getAllExperimentsInAnalytics() {
+        WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(this.analyticsConnector.get());
+        throw null;
     }
 }

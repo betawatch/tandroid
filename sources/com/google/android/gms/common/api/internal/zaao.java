@@ -46,33 +46,33 @@ final class zaao extends zaav {
             }
             arrayList2.add(client);
         }
-        int i = -1;
-        int i2 = 0;
+        int i = 0;
+        int i2 = -1;
         if (!arrayList.isEmpty()) {
             int size = arrayList.size();
-            while (i2 < size) {
-                Api.Client client2 = (Api.Client) arrayList.get(i2);
+            while (i < size) {
+                Api.Client client2 = (Api.Client) arrayList.get(i);
                 context = this.zaa.zac;
-                i = zalVar.zab(context, client2);
-                i2++;
-                if (i != 0) {
+                i2 = zalVar.zab(context, client2);
+                i++;
+                if (i2 != 0) {
                     break;
                 }
             }
         } else {
             int size2 = arrayList2.size();
-            while (i2 < size2) {
-                Api.Client client3 = (Api.Client) arrayList2.get(i2);
+            while (i < size2) {
+                Api.Client client3 = (Api.Client) arrayList2.get(i);
                 context3 = this.zaa.zac;
-                i = zalVar.zab(context3, client3);
-                i2++;
-                if (i == 0) {
+                i2 = zalVar.zab(context3, client3);
+                i++;
+                if (i2 == 0) {
                     break;
                 }
             }
         }
-        if (i != 0) {
-            ConnectionResult connectionResult = new ConnectionResult(i, null);
+        if (i2 != 0) {
+            ConnectionResult connectionResult = new ConnectionResult(i2, null);
             zaaw zaawVar = this.zaa;
             zabiVar2 = zaawVar.zaa;
             zabiVar2.zal(new zaam(this, zaawVar, connectionResult));

@@ -3,13 +3,35 @@ package org.telegram.PhoneFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class CallingCodeInfo {
     public ArrayList countries = new ArrayList();
     public String callingCode = "";
     public ArrayList trunkPrefixes = new ArrayList();
     public ArrayList intlPrefixes = new ArrayList();
     public ArrayList ruleSets = new ArrayList();
+
+    String matchingAccessCode(String str) {
+        Iterator it = this.intlPrefixes.iterator();
+        while (it.hasNext()) {
+            String str2 = (String) it.next();
+            if (str.startsWith(str2)) {
+                return str2;
+            }
+        }
+        return null;
+    }
+
+    String matchingTrunkCode(String str) {
+        Iterator it = this.trunkPrefixes.iterator();
+        while (it.hasNext()) {
+            String str2 = (String) it.next();
+            if (str.startsWith(str2)) {
+                return str2;
+            }
+        }
+        return null;
+    }
 
     String format(String str) {
         String str2;
@@ -44,27 +66,5 @@ public class CallingCodeInfo {
             }
         }
         return (str3 == null || str2.length() == 0) ? str : String.format("%s %s", str3, str2);
-    }
-
-    String matchingAccessCode(String str) {
-        Iterator it = this.intlPrefixes.iterator();
-        while (it.hasNext()) {
-            String str2 = (String) it.next();
-            if (str.startsWith(str2)) {
-                return str2;
-            }
-        }
-        return null;
-    }
-
-    String matchingTrunkCode(String str) {
-        Iterator it = this.trunkPrefixes.iterator();
-        while (it.hasNext()) {
-            String str2 = (String) it.next();
-            if (str.startsWith(str2)) {
-                return str2;
-            }
-        }
-        return null;
     }
 }

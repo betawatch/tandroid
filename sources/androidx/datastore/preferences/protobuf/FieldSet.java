@@ -1,6 +1,6 @@
 package androidx.datastore.preferences.protobuf;
 
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import androidx.datastore.preferences.protobuf.WireFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -13,6 +13,191 @@ final class FieldSet {
     private final SmallSortedMap fields;
     private boolean hasLazyField;
     private boolean isImmutable;
+
+    public interface FieldDescriptorLite extends Comparable {
+        WireFormat.FieldType getLiteType();
+
+        int getNumber();
+
+        boolean isPacked();
+
+        boolean isRepeated();
+    }
+
+    private FieldSet() {
+        this.fields = SmallSortedMap.newFieldMap(16);
+    }
+
+    private FieldSet(boolean z) {
+        this(SmallSortedMap.newFieldMap(0));
+        makeImmutable();
+    }
+
+    private FieldSet(SmallSortedMap smallSortedMap) {
+        this.fields = smallSortedMap;
+        makeImmutable();
+    }
+
+    public static FieldSet newFieldSet() {
+        return new FieldSet();
+    }
+
+    boolean isEmpty() {
+        return this.fields.isEmpty();
+    }
+
+    public void makeImmutable() {
+        if (this.isImmutable) {
+            return;
+        }
+        this.fields.makeImmutable();
+        this.isImmutable = true;
+    }
+
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof FieldSet) {
+            return this.fields.equals(((FieldSet) obj).fields);
+        }
+        return false;
+    }
+
+    public int hashCode() {
+        return this.fields.hashCode();
+    }
+
+    public FieldSet clone() {
+        FieldSet newFieldSet = newFieldSet();
+        for (int i = 0; i < this.fields.getNumArrayEntries(); i++) {
+            Map.Entry arrayEntryAt = this.fields.getArrayEntryAt(i);
+            WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(arrayEntryAt.getKey());
+            newFieldSet.setField(null, arrayEntryAt.getValue());
+        }
+        for (Map.Entry entry : this.fields.getOverflowEntries()) {
+            WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(entry.getKey());
+            newFieldSet.setField(null, entry.getValue());
+        }
+        newFieldSet.hasLazyField = this.hasLazyField;
+        return newFieldSet;
+    }
+
+    public Iterator iterator() {
+        if (this.hasLazyField) {
+            return new LazyField$LazyIterator(this.fields.entrySet().iterator());
+        }
+        return this.fields.entrySet().iterator();
+    }
+
+    Iterator descendingIterator() {
+        if (this.hasLazyField) {
+            return new LazyField$LazyIterator(this.fields.descendingEntrySet().iterator());
+        }
+        return this.fields.descendingEntrySet().iterator();
+    }
+
+    public void setField(FieldDescriptorLite fieldDescriptorLite, Object obj) {
+        if (fieldDescriptorLite.isRepeated()) {
+            if (!(obj instanceof List)) {
+                throw new IllegalArgumentException("Wrong object type used with protocol message reflection.");
+            }
+            ArrayList arrayList = new ArrayList();
+            arrayList.addAll((List) obj);
+            Iterator it = arrayList.iterator();
+            while (it.hasNext()) {
+                verifyType(fieldDescriptorLite.getLiteType(), it.next());
+            }
+            obj = arrayList;
+        } else {
+            verifyType(fieldDescriptorLite.getLiteType(), obj);
+        }
+        this.fields.put((Comparable) fieldDescriptorLite, obj);
+    }
+
+    private void verifyType(WireFormat.FieldType fieldType, Object obj) {
+        if (!isValidType(fieldType, obj)) {
+            throw new IllegalArgumentException("Wrong object type used with protocol message reflection.");
+        }
+    }
+
+    private static boolean isValidType(WireFormat.FieldType fieldType, Object obj) {
+        Internal.checkNotNull(obj);
+        switch (1.$SwitchMap$com$google$protobuf$WireFormat$JavaType[fieldType.getJavaType().ordinal()]) {
+            case 1:
+                return obj instanceof Integer;
+            case 2:
+                return obj instanceof Long;
+            case 3:
+                return obj instanceof Float;
+            case 4:
+                return obj instanceof Double;
+            case 5:
+                return obj instanceof Boolean;
+            case 6:
+                return obj instanceof String;
+            case 7:
+                return (obj instanceof ByteString) || (obj instanceof byte[]);
+            case 8:
+                return obj instanceof Integer;
+            case 9:
+                return obj instanceof MessageLite;
+            default:
+                return false;
+        }
+    }
+
+    public boolean isInitialized() {
+        for (int i = 0; i < this.fields.getNumArrayEntries(); i++) {
+            if (!isInitialized(this.fields.getArrayEntryAt(i))) {
+                return false;
+            }
+        }
+        Iterator it = this.fields.getOverflowEntries().iterator();
+        while (it.hasNext()) {
+            if (!isInitialized((Map.Entry) it.next())) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static boolean isInitialized(Map.Entry entry) {
+        WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(entry.getKey());
+        throw null;
+    }
+
+    static int getWireFormatForFieldType(WireFormat.FieldType fieldType, boolean z) {
+        if (z) {
+            return 2;
+        }
+        return fieldType.getWireType();
+    }
+
+    public void mergeFrom(FieldSet fieldSet) {
+        for (int i = 0; i < fieldSet.fields.getNumArrayEntries(); i++) {
+            mergeFromField(fieldSet.fields.getArrayEntryAt(i));
+        }
+        Iterator it = fieldSet.fields.getOverflowEntries().iterator();
+        while (it.hasNext()) {
+            mergeFromField((Map.Entry) it.next());
+        }
+    }
+
+    private void mergeFromField(Map.Entry entry) {
+        WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(entry.getKey());
+        entry.getValue();
+        throw null;
+    }
+
+    static void writeElement(CodedOutputStream codedOutputStream, WireFormat.FieldType fieldType, int i, Object obj) {
+        if (fieldType == WireFormat.FieldType.GROUP) {
+            codedOutputStream.writeGroup(i, (MessageLite) obj);
+        } else {
+            codedOutputStream.writeTag(i, getWireFormatForFieldType(fieldType, false));
+            writeElementNoTag(codedOutputStream, fieldType, obj);
+        }
+    }
 
     static /* synthetic */ class 1 {
         static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType;
@@ -134,28 +319,105 @@ final class FieldSet {
         }
     }
 
-    public interface FieldDescriptorLite extends Comparable {
-        WireFormat.FieldType getLiteType();
-
-        int getNumber();
-
-        boolean isPacked();
-
-        boolean isRepeated();
+    static void writeElementNoTag(CodedOutputStream codedOutputStream, WireFormat.FieldType fieldType, Object obj) {
+        switch (1.$SwitchMap$com$google$protobuf$WireFormat$FieldType[fieldType.ordinal()]) {
+            case 1:
+                codedOutputStream.writeDoubleNoTag(((Double) obj).doubleValue());
+                break;
+            case 2:
+                codedOutputStream.writeFloatNoTag(((Float) obj).floatValue());
+                break;
+            case 3:
+                codedOutputStream.writeInt64NoTag(((Long) obj).longValue());
+                break;
+            case 4:
+                codedOutputStream.writeUInt64NoTag(((Long) obj).longValue());
+                break;
+            case 5:
+                codedOutputStream.writeInt32NoTag(((Integer) obj).intValue());
+                break;
+            case 6:
+                codedOutputStream.writeFixed64NoTag(((Long) obj).longValue());
+                break;
+            case 7:
+                codedOutputStream.writeFixed32NoTag(((Integer) obj).intValue());
+                break;
+            case 8:
+                codedOutputStream.writeBoolNoTag(((Boolean) obj).booleanValue());
+                break;
+            case 9:
+                codedOutputStream.writeGroupNoTag((MessageLite) obj);
+                break;
+            case 10:
+                codedOutputStream.writeMessageNoTag((MessageLite) obj);
+                break;
+            case 11:
+                if (obj instanceof ByteString) {
+                    codedOutputStream.writeBytesNoTag((ByteString) obj);
+                    break;
+                } else {
+                    codedOutputStream.writeStringNoTag((String) obj);
+                    break;
+                }
+            case 12:
+                if (obj instanceof ByteString) {
+                    codedOutputStream.writeBytesNoTag((ByteString) obj);
+                    break;
+                } else {
+                    codedOutputStream.writeByteArrayNoTag((byte[]) obj);
+                    break;
+                }
+            case 13:
+                codedOutputStream.writeUInt32NoTag(((Integer) obj).intValue());
+                break;
+            case 14:
+                codedOutputStream.writeSFixed32NoTag(((Integer) obj).intValue());
+                break;
+            case 15:
+                codedOutputStream.writeSFixed64NoTag(((Long) obj).longValue());
+                break;
+            case 16:
+                codedOutputStream.writeSInt32NoTag(((Integer) obj).intValue());
+                break;
+            case 17:
+                codedOutputStream.writeSInt64NoTag(((Long) obj).longValue());
+                break;
+            case 18:
+                codedOutputStream.writeEnumNoTag(((Integer) obj).intValue());
+                break;
+        }
     }
 
-    private FieldSet() {
-        this.fields = SmallSortedMap.newFieldMap(16);
+    public int getSerializedSize() {
+        int i = 0;
+        for (int i2 = 0; i2 < this.fields.getNumArrayEntries(); i2++) {
+            Map.Entry arrayEntryAt = this.fields.getArrayEntryAt(i2);
+            WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(arrayEntryAt.getKey());
+            i += computeFieldSize(null, arrayEntryAt.getValue());
+        }
+        for (Map.Entry entry : this.fields.getOverflowEntries()) {
+            WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(entry.getKey());
+            i += computeFieldSize(null, entry.getValue());
+        }
+        return i;
     }
 
-    private FieldSet(SmallSortedMap smallSortedMap) {
-        this.fields = smallSortedMap;
-        makeImmutable();
+    public int getMessageSetSerializedSize() {
+        int i = 0;
+        for (int i2 = 0; i2 < this.fields.getNumArrayEntries(); i2++) {
+            i += getMessageSetSerializedSize(this.fields.getArrayEntryAt(i2));
+        }
+        Iterator it = this.fields.getOverflowEntries().iterator();
+        while (it.hasNext()) {
+            i += getMessageSetSerializedSize((Map.Entry) it.next());
+        }
+        return i;
     }
 
-    private FieldSet(boolean z) {
-        this(SmallSortedMap.newFieldMap(0));
-        makeImmutable();
+    private int getMessageSetSerializedSize(Map.Entry entry) {
+        WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(entry.getKey());
+        entry.getValue();
+        throw null;
     }
 
     static int computeElementSize(WireFormat.FieldType fieldType, int i, Object obj) {
@@ -189,9 +451,15 @@ final class FieldSet {
             case 10:
                 return CodedOutputStream.computeMessageSizeNoTag((MessageLite) obj);
             case 11:
-                return obj instanceof ByteString ? CodedOutputStream.computeBytesSizeNoTag((ByteString) obj) : CodedOutputStream.computeStringSizeNoTag((String) obj);
+                if (obj instanceof ByteString) {
+                    return CodedOutputStream.computeBytesSizeNoTag((ByteString) obj);
+                }
+                return CodedOutputStream.computeStringSizeNoTag((String) obj);
             case 12:
-                return obj instanceof ByteString ? CodedOutputStream.computeBytesSizeNoTag((ByteString) obj) : CodedOutputStream.computeByteArraySizeNoTag((byte[]) obj);
+                if (obj instanceof ByteString) {
+                    return CodedOutputStream.computeBytesSizeNoTag((ByteString) obj);
+                }
+                return CodedOutputStream.computeByteArraySizeNoTag((byte[]) obj);
             case 13:
                 return CodedOutputStream.computeUInt32SizeNoTag(((Integer) obj).intValue());
             case 14:
@@ -212,277 +480,21 @@ final class FieldSet {
     public static int computeFieldSize(FieldDescriptorLite fieldDescriptorLite, Object obj) {
         WireFormat.FieldType liteType = fieldDescriptorLite.getLiteType();
         int number = fieldDescriptorLite.getNumber();
-        if (!fieldDescriptorLite.isRepeated()) {
-            return computeElementSize(liteType, number, obj);
-        }
-        int i = 0;
-        List list = (List) obj;
-        if (fieldDescriptorLite.isPacked()) {
-            Iterator it = list.iterator();
-            while (it.hasNext()) {
-                i += computeElementSizeNoTag(liteType, it.next());
-            }
-            return CodedOutputStream.computeTagSize(number) + i + CodedOutputStream.computeRawVarint32Size(i);
-        }
-        Iterator it2 = list.iterator();
-        while (it2.hasNext()) {
-            i += computeElementSize(liteType, number, it2.next());
-        }
-        return i;
-    }
-
-    private int getMessageSetSerializedSize(Map.Entry entry) {
-        ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(entry.getKey());
-        entry.getValue();
-        throw null;
-    }
-
-    static int getWireFormatForFieldType(WireFormat.FieldType fieldType, boolean z) {
-        if (z) {
-            return 2;
-        }
-        return fieldType.getWireType();
-    }
-
-    private static boolean isInitialized(Map.Entry entry) {
-        ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(entry.getKey());
-        throw null;
-    }
-
-    private static boolean isValidType(WireFormat.FieldType fieldType, Object obj) {
-        Internal.checkNotNull(obj);
-        switch (1.$SwitchMap$com$google$protobuf$WireFormat$JavaType[fieldType.getJavaType().ordinal()]) {
-            case 1:
-                return obj instanceof Integer;
-            case 2:
-                return obj instanceof Long;
-            case 3:
-                return obj instanceof Float;
-            case 4:
-                return obj instanceof Double;
-            case 5:
-                return obj instanceof Boolean;
-            case 6:
-                return obj instanceof String;
-            case 7:
-                return (obj instanceof ByteString) || (obj instanceof byte[]);
-            case 8:
-                return obj instanceof Integer;
-            case 9:
-                return obj instanceof MessageLite;
-            default:
-                return false;
-        }
-    }
-
-    private void mergeFromField(Map.Entry entry) {
-        ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(entry.getKey());
-        entry.getValue();
-        throw null;
-    }
-
-    public static FieldSet newFieldSet() {
-        return new FieldSet();
-    }
-
-    private void verifyType(WireFormat.FieldType fieldType, Object obj) {
-        if (!isValidType(fieldType, obj)) {
-            throw new IllegalArgumentException("Wrong object type used with protocol message reflection.");
-        }
-    }
-
-    static void writeElement(CodedOutputStream codedOutputStream, WireFormat.FieldType fieldType, int i, Object obj) {
-        if (fieldType == WireFormat.FieldType.GROUP) {
-            codedOutputStream.writeGroup(i, (MessageLite) obj);
-        } else {
-            codedOutputStream.writeTag(i, getWireFormatForFieldType(fieldType, false));
-            writeElementNoTag(codedOutputStream, fieldType, obj);
-        }
-    }
-
-    static void writeElementNoTag(CodedOutputStream codedOutputStream, WireFormat.FieldType fieldType, Object obj) {
-        switch (1.$SwitchMap$com$google$protobuf$WireFormat$FieldType[fieldType.ordinal()]) {
-            case 1:
-                codedOutputStream.writeDoubleNoTag(((Double) obj).doubleValue());
-                return;
-            case 2:
-                codedOutputStream.writeFloatNoTag(((Float) obj).floatValue());
-                return;
-            case 3:
-                codedOutputStream.writeInt64NoTag(((Long) obj).longValue());
-                return;
-            case 4:
-                codedOutputStream.writeUInt64NoTag(((Long) obj).longValue());
-                return;
-            case 5:
-                codedOutputStream.writeInt32NoTag(((Integer) obj).intValue());
-                return;
-            case 6:
-                codedOutputStream.writeFixed64NoTag(((Long) obj).longValue());
-                return;
-            case 7:
-                codedOutputStream.writeFixed32NoTag(((Integer) obj).intValue());
-                return;
-            case 8:
-                codedOutputStream.writeBoolNoTag(((Boolean) obj).booleanValue());
-                return;
-            case 9:
-                codedOutputStream.writeGroupNoTag((MessageLite) obj);
-                return;
-            case 10:
-                codedOutputStream.writeMessageNoTag((MessageLite) obj);
-                return;
-            case 11:
-                if (!(obj instanceof ByteString)) {
-                    codedOutputStream.writeStringNoTag((String) obj);
-                    return;
+        if (fieldDescriptorLite.isRepeated()) {
+            int i = 0;
+            if (fieldDescriptorLite.isPacked()) {
+                Iterator it = ((List) obj).iterator();
+                while (it.hasNext()) {
+                    i += computeElementSizeNoTag(liteType, it.next());
                 }
-                break;
-            case 12:
-                if (!(obj instanceof ByteString)) {
-                    codedOutputStream.writeByteArrayNoTag((byte[]) obj);
-                    return;
-                }
-                break;
-            case 13:
-                codedOutputStream.writeUInt32NoTag(((Integer) obj).intValue());
-                return;
-            case 14:
-                codedOutputStream.writeSFixed32NoTag(((Integer) obj).intValue());
-                return;
-            case 15:
-                codedOutputStream.writeSFixed64NoTag(((Long) obj).longValue());
-                return;
-            case 16:
-                codedOutputStream.writeSInt32NoTag(((Integer) obj).intValue());
-                return;
-            case 17:
-                codedOutputStream.writeSInt64NoTag(((Long) obj).longValue());
-                return;
-            case 18:
-                codedOutputStream.writeEnumNoTag(((Integer) obj).intValue());
-                return;
-            default:
-                return;
-        }
-        codedOutputStream.writeBytesNoTag((ByteString) obj);
-    }
-
-    public FieldSet clone() {
-        FieldSet newFieldSet = newFieldSet();
-        for (int i = 0; i < this.fields.getNumArrayEntries(); i++) {
-            Map.Entry arrayEntryAt = this.fields.getArrayEntryAt(i);
-            ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(arrayEntryAt.getKey());
-            newFieldSet.setField(null, arrayEntryAt.getValue());
-        }
-        for (Map.Entry entry : this.fields.getOverflowEntries()) {
-            ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(entry.getKey());
-            newFieldSet.setField(null, entry.getValue());
-        }
-        newFieldSet.hasLazyField = this.hasLazyField;
-        return newFieldSet;
-    }
-
-    Iterator descendingIterator() {
-        return this.hasLazyField ? new LazyField$LazyIterator(this.fields.descendingEntrySet().iterator()) : this.fields.descendingEntrySet().iterator();
-    }
-
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj instanceof FieldSet) {
-            return this.fields.equals(((FieldSet) obj).fields);
-        }
-        return false;
-    }
-
-    public int getMessageSetSerializedSize() {
-        int i = 0;
-        for (int i2 = 0; i2 < this.fields.getNumArrayEntries(); i2++) {
-            i += getMessageSetSerializedSize(this.fields.getArrayEntryAt(i2));
-        }
-        Iterator it = this.fields.getOverflowEntries().iterator();
-        while (it.hasNext()) {
-            i += getMessageSetSerializedSize((Map.Entry) it.next());
-        }
-        return i;
-    }
-
-    public int getSerializedSize() {
-        int i = 0;
-        for (int i2 = 0; i2 < this.fields.getNumArrayEntries(); i2++) {
-            Map.Entry arrayEntryAt = this.fields.getArrayEntryAt(i2);
-            ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(arrayEntryAt.getKey());
-            i += computeFieldSize(null, arrayEntryAt.getValue());
-        }
-        for (Map.Entry entry : this.fields.getOverflowEntries()) {
-            ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(entry.getKey());
-            i += computeFieldSize(null, entry.getValue());
-        }
-        return i;
-    }
-
-    public int hashCode() {
-        return this.fields.hashCode();
-    }
-
-    boolean isEmpty() {
-        return this.fields.isEmpty();
-    }
-
-    public boolean isInitialized() {
-        for (int i = 0; i < this.fields.getNumArrayEntries(); i++) {
-            if (!isInitialized(this.fields.getArrayEntryAt(i))) {
-                return false;
+                return CodedOutputStream.computeTagSize(number) + i + CodedOutputStream.computeRawVarint32Size(i);
             }
-        }
-        Iterator it = this.fields.getOverflowEntries().iterator();
-        while (it.hasNext()) {
-            if (!isInitialized((Map.Entry) it.next())) {
-                return false;
+            Iterator it2 = ((List) obj).iterator();
+            while (it2.hasNext()) {
+                i += computeElementSize(liteType, number, it2.next());
             }
+            return i;
         }
-        return true;
-    }
-
-    public Iterator iterator() {
-        return this.hasLazyField ? new LazyField$LazyIterator(this.fields.entrySet().iterator()) : this.fields.entrySet().iterator();
-    }
-
-    public void makeImmutable() {
-        if (this.isImmutable) {
-            return;
-        }
-        this.fields.makeImmutable();
-        this.isImmutable = true;
-    }
-
-    public void mergeFrom(FieldSet fieldSet) {
-        for (int i = 0; i < fieldSet.fields.getNumArrayEntries(); i++) {
-            mergeFromField(fieldSet.fields.getArrayEntryAt(i));
-        }
-        Iterator it = fieldSet.fields.getOverflowEntries().iterator();
-        while (it.hasNext()) {
-            mergeFromField((Map.Entry) it.next());
-        }
-    }
-
-    public void setField(FieldDescriptorLite fieldDescriptorLite, Object obj) {
-        if (!fieldDescriptorLite.isRepeated()) {
-            verifyType(fieldDescriptorLite.getLiteType(), obj);
-        } else {
-            if (!(obj instanceof List)) {
-                throw new IllegalArgumentException("Wrong object type used with protocol message reflection.");
-            }
-            ArrayList arrayList = new ArrayList();
-            arrayList.addAll((List) obj);
-            Iterator it = arrayList.iterator();
-            while (it.hasNext()) {
-                verifyType(fieldDescriptorLite.getLiteType(), it.next());
-            }
-            obj = arrayList;
-        }
-        this.fields.put((Comparable) fieldDescriptorLite, obj);
+        return computeElementSize(liteType, number, obj);
     }
 }

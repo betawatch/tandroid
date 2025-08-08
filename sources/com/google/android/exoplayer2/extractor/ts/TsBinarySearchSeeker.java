@@ -9,6 +9,9 @@ import org.telegram.messenger.NotificationCenter;
 
 /* loaded from: classes.dex */
 final class TsBinarySearchSeeker extends BinarySearchSeeker {
+    public TsBinarySearchSeeker(TimestampAdjuster timestampAdjuster, long j, long j2, int i, int i2) {
+        super(new BinarySearchSeeker.DefaultSeekTimestampConverter(), new TsPcrSeeker(i, timestampAdjuster, i2), j, 0L, j + 1, 0L, j2, 188L, 940);
+    }
 
     private static final class TsPcrSeeker implements BinarySearchSeeker.TimestampSeeker {
         private final ParsableByteArray packetBuffer = new ParsableByteArray();
@@ -20,6 +23,15 @@ final class TsBinarySearchSeeker extends BinarySearchSeeker {
             this.pcrPid = i;
             this.pcrTimestampAdjuster = timestampAdjuster;
             this.timestampSearchBytes = i2;
+        }
+
+        @Override // com.google.android.exoplayer2.extractor.BinarySearchSeeker.TimestampSeeker
+        public BinarySearchSeeker.TimestampSearchResult searchForTimestamp(ExtractorInput extractorInput, long j) {
+            long position = extractorInput.getPosition();
+            int min = (int) Math.min(this.timestampSearchBytes, extractorInput.getLength() - position);
+            this.packetBuffer.reset(min);
+            extractorInput.peekFully(this.packetBuffer.getData(), 0, min);
+            return searchForPcrValueInBuffer(this.packetBuffer, j, position);
         }
 
         private BinarySearchSeeker.TimestampSearchResult searchForPcrValueInBuffer(ParsableByteArray parsableByteArray, long j, long j2) {
@@ -34,7 +46,10 @@ final class TsBinarySearchSeeker extends BinarySearchSeeker {
                 if (readPcrFromPacket != -9223372036854775807L) {
                     long adjustTsTimestamp = this.pcrTimestampAdjuster.adjustTsTimestamp(readPcrFromPacket);
                     if (adjustTsTimestamp > j) {
-                        return j5 == -9223372036854775807L ? BinarySearchSeeker.TimestampSearchResult.overestimatedResult(adjustTsTimestamp, j2) : BinarySearchSeeker.TimestampSearchResult.targetFoundResult(j2 + j4);
+                        if (j5 == -9223372036854775807L) {
+                            return BinarySearchSeeker.TimestampSearchResult.overestimatedResult(adjustTsTimestamp, j2);
+                        }
+                        return BinarySearchSeeker.TimestampSearchResult.targetFoundResult(j2 + j4);
                     }
                     if (100000 + adjustTsTimestamp > j) {
                         return BinarySearchSeeker.TimestampSearchResult.targetFoundResult(j2 + findSyncBytePosition);
@@ -45,25 +60,15 @@ final class TsBinarySearchSeeker extends BinarySearchSeeker {
                 parsableByteArray.setPosition(findSyncBytePosition2);
                 j3 = findSyncBytePosition2;
             }
-            return j5 != -9223372036854775807L ? BinarySearchSeeker.TimestampSearchResult.underestimatedResult(j5, j2 + j3) : BinarySearchSeeker.TimestampSearchResult.NO_TIMESTAMP_IN_RANGE_RESULT;
+            if (j5 != -9223372036854775807L) {
+                return BinarySearchSeeker.TimestampSearchResult.underestimatedResult(j5, j2 + j3);
+            }
+            return BinarySearchSeeker.TimestampSearchResult.NO_TIMESTAMP_IN_RANGE_RESULT;
         }
 
         @Override // com.google.android.exoplayer2.extractor.BinarySearchSeeker.TimestampSeeker
         public void onSeekFinished() {
             this.packetBuffer.reset(Util.EMPTY_BYTE_ARRAY);
         }
-
-        @Override // com.google.android.exoplayer2.extractor.BinarySearchSeeker.TimestampSeeker
-        public BinarySearchSeeker.TimestampSearchResult searchForTimestamp(ExtractorInput extractorInput, long j) {
-            long position = extractorInput.getPosition();
-            int min = (int) Math.min(this.timestampSearchBytes, extractorInput.getLength() - position);
-            this.packetBuffer.reset(min);
-            extractorInput.peekFully(this.packetBuffer.getData(), 0, min);
-            return searchForPcrValueInBuffer(this.packetBuffer, j, position);
-        }
-    }
-
-    public TsBinarySearchSeeker(TimestampAdjuster timestampAdjuster, long j, long j2, int i, int i2) {
-        super(new BinarySearchSeeker.DefaultSeekTimestampConverter(), new TsPcrSeeker(i, timestampAdjuster, i2), j, 0L, j + 1, 0L, j2, 188L, 940);
     }
 }

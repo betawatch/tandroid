@@ -42,78 +42,6 @@ public final class ResourceManagerInternal {
     private static final PorterDuff.Mode DEFAULT_MODE = PorterDuff.Mode.SRC_IN;
     private static final ColorFilterLruCache COLOR_FILTER_CACHE = new ColorFilterLruCache(6);
 
-    static class AsldcInflateDelegate implements InflateDelegate {
-        AsldcInflateDelegate() {
-        }
-
-        @Override // androidx.appcompat.widget.ResourceManagerInternal.InflateDelegate
-        public Drawable createFromXmlInner(Context context, XmlPullParser xmlPullParser, AttributeSet attributeSet, Resources.Theme theme) {
-            try {
-                return AnimatedStateListDrawableCompat.createFromXmlInner(context, context.getResources(), xmlPullParser, attributeSet, theme);
-            } catch (Exception e) {
-                Log.e("AsldcInflateDelegate", "Exception while inflating <animated-selector>", e);
-                return null;
-            }
-        }
-    }
-
-    private static class AvdcInflateDelegate implements InflateDelegate {
-        AvdcInflateDelegate() {
-        }
-
-        @Override // androidx.appcompat.widget.ResourceManagerInternal.InflateDelegate
-        public Drawable createFromXmlInner(Context context, XmlPullParser xmlPullParser, AttributeSet attributeSet, Resources.Theme theme) {
-            try {
-                return AnimatedVectorDrawableCompat.createFromXmlInner(context, context.getResources(), xmlPullParser, attributeSet, theme);
-            } catch (Exception e) {
-                Log.e("AvdcInflateDelegate", "Exception while inflating <animated-vector>", e);
-                return null;
-            }
-        }
-    }
-
-    private static class ColorFilterLruCache extends LruCache {
-        public ColorFilterLruCache(int i) {
-            super(i);
-        }
-
-        private static int generateCacheKey(int i, PorterDuff.Mode mode) {
-            return ((i + 31) * 31) + mode.hashCode();
-        }
-
-        PorterDuffColorFilter get(int i, PorterDuff.Mode mode) {
-            return (PorterDuffColorFilter) get(Integer.valueOf(generateCacheKey(i, mode)));
-        }
-
-        PorterDuffColorFilter put(int i, PorterDuff.Mode mode, PorterDuffColorFilter porterDuffColorFilter) {
-            return (PorterDuffColorFilter) put(Integer.valueOf(generateCacheKey(i, mode)), porterDuffColorFilter);
-        }
-    }
-
-    static class DrawableDelegate implements InflateDelegate {
-        DrawableDelegate() {
-        }
-
-        @Override // androidx.appcompat.widget.ResourceManagerInternal.InflateDelegate
-        public Drawable createFromXmlInner(Context context, XmlPullParser xmlPullParser, AttributeSet attributeSet, Resources.Theme theme) {
-            String classAttribute = attributeSet.getClassAttribute();
-            if (classAttribute != null) {
-                try {
-                    Drawable drawable = (Drawable) DrawableDelegate.class.getClassLoader().loadClass(classAttribute).asSubclass(Drawable.class).getDeclaredConstructor(null).newInstance(null);
-                    if (Build.VERSION.SDK_INT >= 21) {
-                        Compatibility$Api21Impl.inflate(drawable, context.getResources(), xmlPullParser, attributeSet, theme);
-                    } else {
-                        drawable.inflate(context.getResources(), xmlPullParser, attributeSet);
-                    }
-                    return drawable;
-                } catch (Exception e) {
-                    Log.e("DrawableDelegate", "Exception while inflating <drawable>", e);
-                }
-            }
-            return null;
-        }
-    }
-
     private interface InflateDelegate {
         Drawable createFromXmlInner(Context context, XmlPullParser xmlPullParser, AttributeSet attributeSet, Resources.Theme theme);
     }
@@ -130,68 +58,61 @@ public final class ResourceManagerInternal {
         boolean tintDrawableUsingColorFilter(Context context, int i, Drawable drawable);
     }
 
-    private static class VdcInflateDelegate implements InflateDelegate {
-        VdcInflateDelegate() {
-        }
-
-        @Override // androidx.appcompat.widget.ResourceManagerInternal.InflateDelegate
-        public Drawable createFromXmlInner(Context context, XmlPullParser xmlPullParser, AttributeSet attributeSet, Resources.Theme theme) {
+    public static synchronized ResourceManagerInternal get() {
+        ResourceManagerInternal resourceManagerInternal;
+        synchronized (ResourceManagerInternal.class) {
             try {
-                return VectorDrawableCompat.createFromXmlInner(context.getResources(), xmlPullParser, attributeSet, theme);
-            } catch (Exception e) {
-                Log.e("VdcInflateDelegate", "Exception while inflating <vector>", e);
-                return null;
+                if (INSTANCE == null) {
+                    ResourceManagerInternal resourceManagerInternal2 = new ResourceManagerInternal();
+                    INSTANCE = resourceManagerInternal2;
+                    installDefaultInflateDelegates(resourceManagerInternal2);
+                }
+                resourceManagerInternal = INSTANCE;
+            } catch (Throwable th) {
+                throw th;
             }
         }
+        return resourceManagerInternal;
     }
 
-    private void addDelegate(String str, InflateDelegate inflateDelegate) {
-        if (this.mDelegates == null) {
-            this.mDelegates = new SimpleArrayMap();
+    private static void installDefaultInflateDelegates(ResourceManagerInternal resourceManagerInternal) {
+        if (Build.VERSION.SDK_INT < 24) {
+            resourceManagerInternal.addDelegate("vector", new VdcInflateDelegate());
+            resourceManagerInternal.addDelegate("animated-vector", new AvdcInflateDelegate());
+            resourceManagerInternal.addDelegate("animated-selector", new AsldcInflateDelegate());
+            resourceManagerInternal.addDelegate("drawable", new DrawableDelegate());
         }
-        this.mDelegates.put(str, inflateDelegate);
     }
 
-    private synchronized boolean addDrawableToCache(Context context, long j, Drawable drawable) {
+    public synchronized void setHooks(ResourceManagerHooks resourceManagerHooks) {
+        this.mHooks = resourceManagerHooks;
+    }
+
+    public synchronized Drawable getDrawable(Context context, int i) {
+        return getDrawable(context, i, false);
+    }
+
+    synchronized Drawable getDrawable(Context context, int i, boolean z) {
+        Drawable loadDrawableFromDelegates;
         try {
-            Drawable.ConstantState constantState = drawable.getConstantState();
-            if (constantState == null) {
-                return false;
+            checkVectorDrawableSetup(context);
+            loadDrawableFromDelegates = loadDrawableFromDelegates(context, i);
+            if (loadDrawableFromDelegates == null) {
+                loadDrawableFromDelegates = createDrawableIfNeeded(context, i);
             }
-            LongSparseArray longSparseArray = (LongSparseArray) this.mDrawableCaches.get(context);
-            if (longSparseArray == null) {
-                longSparseArray = new LongSparseArray();
-                this.mDrawableCaches.put(context, longSparseArray);
+            if (loadDrawableFromDelegates == null) {
+                loadDrawableFromDelegates = ContextCompat.getDrawable(context, i);
             }
-            longSparseArray.put(j, new WeakReference(constantState));
-            return true;
+            if (loadDrawableFromDelegates != null) {
+                loadDrawableFromDelegates = tintDrawable(context, i, z, loadDrawableFromDelegates);
+            }
+            if (loadDrawableFromDelegates != null) {
+                DrawableUtils.fixDrawable(loadDrawableFromDelegates);
+            }
         } catch (Throwable th) {
             throw th;
         }
-    }
-
-    private void addTintListToCache(Context context, int i, ColorStateList colorStateList) {
-        if (this.mTintLists == null) {
-            this.mTintLists = new WeakHashMap();
-        }
-        SparseArrayCompat sparseArrayCompat = (SparseArrayCompat) this.mTintLists.get(context);
-        if (sparseArrayCompat == null) {
-            sparseArrayCompat = new SparseArrayCompat();
-            this.mTintLists.put(context, sparseArrayCompat);
-        }
-        sparseArrayCompat.append(i, colorStateList);
-    }
-
-    private void checkVectorDrawableSetup(Context context) {
-        if (this.mHasCheckedVectorDrawableSetup) {
-            return;
-        }
-        this.mHasCheckedVectorDrawableSetup = true;
-        Drawable drawable = getDrawable(context, R$drawable.abc_vector_test);
-        if (drawable == null || !isVectorDrawable(drawable)) {
-            this.mHasCheckedVectorDrawableSetup = false;
-            throw new IllegalStateException("This app has been built with an incorrect configuration. Please configure your build for VectorDrawableCompat.");
-        }
+        return loadDrawableFromDelegates;
     }
 
     private static long createCacheKey(TypedValue typedValue) {
@@ -218,79 +139,26 @@ public final class ResourceManagerInternal {
         return createDrawableFor;
     }
 
-    private static PorterDuffColorFilter createTintFilter(ColorStateList colorStateList, PorterDuff.Mode mode, int[] iArr) {
-        if (colorStateList == null || mode == null) {
+    private Drawable tintDrawable(Context context, int i, boolean z, Drawable drawable) {
+        ColorStateList tintList = getTintList(context, i);
+        if (tintList != null) {
+            if (DrawableUtils.canSafelyMutateDrawable(drawable)) {
+                drawable = drawable.mutate();
+            }
+            Drawable wrap = DrawableCompat.wrap(drawable);
+            DrawableCompat.setTintList(wrap, tintList);
+            PorterDuff.Mode tintMode = getTintMode(i);
+            if (tintMode == null) {
+                return wrap;
+            }
+            DrawableCompat.setTintMode(wrap, tintMode);
+            return wrap;
+        }
+        ResourceManagerHooks resourceManagerHooks = this.mHooks;
+        if ((resourceManagerHooks == null || !resourceManagerHooks.tintDrawable(context, i, drawable)) && !tintDrawableUsingColorFilter(context, i, drawable) && z) {
             return null;
         }
-        return getPorterDuffColorFilter(colorStateList.getColorForState(iArr, 0), mode);
-    }
-
-    public static synchronized ResourceManagerInternal get() {
-        ResourceManagerInternal resourceManagerInternal;
-        synchronized (ResourceManagerInternal.class) {
-            try {
-                if (INSTANCE == null) {
-                    ResourceManagerInternal resourceManagerInternal2 = new ResourceManagerInternal();
-                    INSTANCE = resourceManagerInternal2;
-                    installDefaultInflateDelegates(resourceManagerInternal2);
-                }
-                resourceManagerInternal = INSTANCE;
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-        return resourceManagerInternal;
-    }
-
-    private synchronized Drawable getCachedDrawable(Context context, long j) {
-        LongSparseArray longSparseArray = (LongSparseArray) this.mDrawableCaches.get(context);
-        if (longSparseArray == null) {
-            return null;
-        }
-        WeakReference weakReference = (WeakReference) longSparseArray.get(j);
-        if (weakReference != null) {
-            Drawable.ConstantState constantState = (Drawable.ConstantState) weakReference.get();
-            if (constantState != null) {
-                return constantState.newDrawable(context.getResources());
-            }
-            longSparseArray.remove(j);
-        }
-        return null;
-    }
-
-    public static synchronized PorterDuffColorFilter getPorterDuffColorFilter(int i, PorterDuff.Mode mode) {
-        PorterDuffColorFilter porterDuffColorFilter;
-        synchronized (ResourceManagerInternal.class) {
-            ColorFilterLruCache colorFilterLruCache = COLOR_FILTER_CACHE;
-            porterDuffColorFilter = colorFilterLruCache.get(i, mode);
-            if (porterDuffColorFilter == null) {
-                porterDuffColorFilter = new PorterDuffColorFilter(i, mode);
-                colorFilterLruCache.put(i, mode, porterDuffColorFilter);
-            }
-        }
-        return porterDuffColorFilter;
-    }
-
-    private ColorStateList getTintListFromCache(Context context, int i) {
-        SparseArrayCompat sparseArrayCompat;
-        WeakHashMap weakHashMap = this.mTintLists;
-        if (weakHashMap == null || (sparseArrayCompat = (SparseArrayCompat) weakHashMap.get(context)) == null) {
-            return null;
-        }
-        return (ColorStateList) sparseArrayCompat.get(i);
-    }
-
-    private static void installDefaultInflateDelegates(ResourceManagerInternal resourceManagerInternal) {
-        if (Build.VERSION.SDK_INT < 24) {
-            resourceManagerInternal.addDelegate("vector", new VdcInflateDelegate());
-            resourceManagerInternal.addDelegate("animated-vector", new AvdcInflateDelegate());
-            resourceManagerInternal.addDelegate("animated-selector", new AsldcInflateDelegate());
-            resourceManagerInternal.addDelegate("drawable", new DrawableDelegate());
-        }
-    }
-
-    private static boolean isVectorDrawable(Drawable drawable) {
-        return (drawable instanceof VectorDrawableCompat) || "android.graphics.drawable.VectorDrawable".equals(drawable.getClass().getName());
+        return drawable;
     }
 
     private Drawable loadDrawableFromDelegates(Context context, int i) {
@@ -353,26 +221,125 @@ public final class ResourceManagerInternal {
         return cachedDrawable;
     }
 
-    private Drawable tintDrawable(Context context, int i, boolean z, Drawable drawable) {
-        ColorStateList tintList = getTintList(context, i);
-        if (tintList == null) {
-            ResourceManagerHooks resourceManagerHooks = this.mHooks;
-            if ((resourceManagerHooks == null || !resourceManagerHooks.tintDrawable(context, i, drawable)) && !tintDrawableUsingColorFilter(context, i, drawable) && z) {
+    private synchronized Drawable getCachedDrawable(Context context, long j) {
+        LongSparseArray longSparseArray = (LongSparseArray) this.mDrawableCaches.get(context);
+        if (longSparseArray == null) {
+            return null;
+        }
+        WeakReference weakReference = (WeakReference) longSparseArray.get(j);
+        if (weakReference != null) {
+            Drawable.ConstantState constantState = (Drawable.ConstantState) weakReference.get();
+            if (constantState != null) {
+                return constantState.newDrawable(context.getResources());
+            }
+            longSparseArray.remove(j);
+        }
+        return null;
+    }
+
+    private synchronized boolean addDrawableToCache(Context context, long j, Drawable drawable) {
+        try {
+            Drawable.ConstantState constantState = drawable.getConstantState();
+            if (constantState == null) {
+                return false;
+            }
+            LongSparseArray longSparseArray = (LongSparseArray) this.mDrawableCaches.get(context);
+            if (longSparseArray == null) {
+                longSparseArray = new LongSparseArray();
+                this.mDrawableCaches.put(context, longSparseArray);
+            }
+            longSparseArray.put(j, new WeakReference(constantState));
+            return true;
+        } catch (Throwable th) {
+            throw th;
+        }
+    }
+
+    synchronized Drawable onDrawableLoadedFromResources(Context context, VectorEnabledTintResources vectorEnabledTintResources, int i) {
+        try {
+            Drawable loadDrawableFromDelegates = loadDrawableFromDelegates(context, i);
+            if (loadDrawableFromDelegates == null) {
+                loadDrawableFromDelegates = vectorEnabledTintResources.getDrawableCanonical(i);
+            }
+            if (loadDrawableFromDelegates == null) {
                 return null;
             }
-            return drawable;
+            return tintDrawable(context, i, false, loadDrawableFromDelegates);
+        } catch (Throwable th) {
+            throw th;
         }
-        if (DrawableUtils.canSafelyMutateDrawable(drawable)) {
-            drawable = drawable.mutate();
+    }
+
+    boolean tintDrawableUsingColorFilter(Context context, int i, Drawable drawable) {
+        ResourceManagerHooks resourceManagerHooks = this.mHooks;
+        return resourceManagerHooks != null && resourceManagerHooks.tintDrawableUsingColorFilter(context, i, drawable);
+    }
+
+    private void addDelegate(String str, InflateDelegate inflateDelegate) {
+        if (this.mDelegates == null) {
+            this.mDelegates = new SimpleArrayMap();
         }
-        Drawable wrap = DrawableCompat.wrap(drawable);
-        DrawableCompat.setTintList(wrap, tintList);
-        PorterDuff.Mode tintMode = getTintMode(i);
-        if (tintMode == null) {
-            return wrap;
+        this.mDelegates.put(str, inflateDelegate);
+    }
+
+    PorterDuff.Mode getTintMode(int i) {
+        ResourceManagerHooks resourceManagerHooks = this.mHooks;
+        if (resourceManagerHooks == null) {
+            return null;
         }
-        DrawableCompat.setTintMode(wrap, tintMode);
-        return wrap;
+        return resourceManagerHooks.getTintModeForDrawableRes(i);
+    }
+
+    synchronized ColorStateList getTintList(Context context, int i) {
+        ColorStateList tintListFromCache;
+        tintListFromCache = getTintListFromCache(context, i);
+        if (tintListFromCache == null) {
+            ResourceManagerHooks resourceManagerHooks = this.mHooks;
+            tintListFromCache = resourceManagerHooks == null ? null : resourceManagerHooks.getTintListForDrawableRes(context, i);
+            if (tintListFromCache != null) {
+                addTintListToCache(context, i, tintListFromCache);
+            }
+        }
+        return tintListFromCache;
+    }
+
+    private ColorStateList getTintListFromCache(Context context, int i) {
+        SparseArrayCompat sparseArrayCompat;
+        WeakHashMap weakHashMap = this.mTintLists;
+        if (weakHashMap == null || (sparseArrayCompat = (SparseArrayCompat) weakHashMap.get(context)) == null) {
+            return null;
+        }
+        return (ColorStateList) sparseArrayCompat.get(i);
+    }
+
+    private void addTintListToCache(Context context, int i, ColorStateList colorStateList) {
+        if (this.mTintLists == null) {
+            this.mTintLists = new WeakHashMap();
+        }
+        SparseArrayCompat sparseArrayCompat = (SparseArrayCompat) this.mTintLists.get(context);
+        if (sparseArrayCompat == null) {
+            sparseArrayCompat = new SparseArrayCompat();
+            this.mTintLists.put(context, sparseArrayCompat);
+        }
+        sparseArrayCompat.append(i, colorStateList);
+    }
+
+    private static class ColorFilterLruCache extends LruCache {
+        public ColorFilterLruCache(int i) {
+            super(i);
+        }
+
+        PorterDuffColorFilter get(int i, PorterDuff.Mode mode) {
+            return (PorterDuffColorFilter) get(Integer.valueOf(generateCacheKey(i, mode)));
+        }
+
+        PorterDuffColorFilter put(int i, PorterDuff.Mode mode, PorterDuffColorFilter porterDuffColorFilter) {
+            return (PorterDuffColorFilter) put(Integer.valueOf(generateCacheKey(i, mode)), porterDuffColorFilter);
+        }
+
+        private static int generateCacheKey(int i, PorterDuff.Mode mode) {
+            return ((i + 31) * 31) + mode.hashCode();
+        }
     }
 
     static void tintDrawable(Drawable drawable, TintInfo tintInfo, int[] iArr) {
@@ -396,75 +363,104 @@ public final class ResourceManagerInternal {
         }
     }
 
-    public synchronized Drawable getDrawable(Context context, int i) {
-        return getDrawable(context, i, false);
-    }
-
-    synchronized Drawable getDrawable(Context context, int i, boolean z) {
-        Drawable loadDrawableFromDelegates;
-        try {
-            checkVectorDrawableSetup(context);
-            loadDrawableFromDelegates = loadDrawableFromDelegates(context, i);
-            if (loadDrawableFromDelegates == null) {
-                loadDrawableFromDelegates = createDrawableIfNeeded(context, i);
-            }
-            if (loadDrawableFromDelegates == null) {
-                loadDrawableFromDelegates = ContextCompat.getDrawable(context, i);
-            }
-            if (loadDrawableFromDelegates != null) {
-                loadDrawableFromDelegates = tintDrawable(context, i, z, loadDrawableFromDelegates);
-            }
-            if (loadDrawableFromDelegates != null) {
-                DrawableUtils.fixDrawable(loadDrawableFromDelegates);
-            }
-        } catch (Throwable th) {
-            throw th;
-        }
-        return loadDrawableFromDelegates;
-    }
-
-    synchronized ColorStateList getTintList(Context context, int i) {
-        ColorStateList tintListFromCache;
-        tintListFromCache = getTintListFromCache(context, i);
-        if (tintListFromCache == null) {
-            ResourceManagerHooks resourceManagerHooks = this.mHooks;
-            tintListFromCache = resourceManagerHooks == null ? null : resourceManagerHooks.getTintListForDrawableRes(context, i);
-            if (tintListFromCache != null) {
-                addTintListToCache(context, i, tintListFromCache);
-            }
-        }
-        return tintListFromCache;
-    }
-
-    PorterDuff.Mode getTintMode(int i) {
-        ResourceManagerHooks resourceManagerHooks = this.mHooks;
-        if (resourceManagerHooks == null) {
+    private static PorterDuffColorFilter createTintFilter(ColorStateList colorStateList, PorterDuff.Mode mode, int[] iArr) {
+        if (colorStateList == null || mode == null) {
             return null;
         }
-        return resourceManagerHooks.getTintModeForDrawableRes(i);
+        return getPorterDuffColorFilter(colorStateList.getColorForState(iArr, 0), mode);
     }
 
-    synchronized Drawable onDrawableLoadedFromResources(Context context, VectorEnabledTintResources vectorEnabledTintResources, int i) {
-        try {
-            Drawable loadDrawableFromDelegates = loadDrawableFromDelegates(context, i);
-            if (loadDrawableFromDelegates == null) {
-                loadDrawableFromDelegates = vectorEnabledTintResources.getDrawableCanonical(i);
+    public static synchronized PorterDuffColorFilter getPorterDuffColorFilter(int i, PorterDuff.Mode mode) {
+        PorterDuffColorFilter porterDuffColorFilter;
+        synchronized (ResourceManagerInternal.class) {
+            ColorFilterLruCache colorFilterLruCache = COLOR_FILTER_CACHE;
+            porterDuffColorFilter = colorFilterLruCache.get(i, mode);
+            if (porterDuffColorFilter == null) {
+                porterDuffColorFilter = new PorterDuffColorFilter(i, mode);
+                colorFilterLruCache.put(i, mode, porterDuffColorFilter);
             }
-            if (loadDrawableFromDelegates == null) {
-                return null;
-            }
-            return tintDrawable(context, i, false, loadDrawableFromDelegates);
-        } catch (Throwable th) {
-            throw th;
+        }
+        return porterDuffColorFilter;
+    }
+
+    private void checkVectorDrawableSetup(Context context) {
+        if (this.mHasCheckedVectorDrawableSetup) {
+            return;
+        }
+        this.mHasCheckedVectorDrawableSetup = true;
+        Drawable drawable = getDrawable(context, R$drawable.abc_vector_test);
+        if (drawable == null || !isVectorDrawable(drawable)) {
+            this.mHasCheckedVectorDrawableSetup = false;
+            throw new IllegalStateException("This app has been built with an incorrect configuration. Please configure your build for VectorDrawableCompat.");
         }
     }
 
-    public synchronized void setHooks(ResourceManagerHooks resourceManagerHooks) {
-        this.mHooks = resourceManagerHooks;
+    private static boolean isVectorDrawable(Drawable drawable) {
+        return (drawable instanceof VectorDrawableCompat) || "android.graphics.drawable.VectorDrawable".equals(drawable.getClass().getName());
     }
 
-    boolean tintDrawableUsingColorFilter(Context context, int i, Drawable drawable) {
-        ResourceManagerHooks resourceManagerHooks = this.mHooks;
-        return resourceManagerHooks != null && resourceManagerHooks.tintDrawableUsingColorFilter(context, i, drawable);
+    private static class VdcInflateDelegate implements InflateDelegate {
+        VdcInflateDelegate() {
+        }
+
+        @Override // androidx.appcompat.widget.ResourceManagerInternal.InflateDelegate
+        public Drawable createFromXmlInner(Context context, XmlPullParser xmlPullParser, AttributeSet attributeSet, Resources.Theme theme) {
+            try {
+                return VectorDrawableCompat.createFromXmlInner(context.getResources(), xmlPullParser, attributeSet, theme);
+            } catch (Exception e) {
+                Log.e("VdcInflateDelegate", "Exception while inflating <vector>", e);
+                return null;
+            }
+        }
+    }
+
+    private static class AvdcInflateDelegate implements InflateDelegate {
+        AvdcInflateDelegate() {
+        }
+
+        @Override // androidx.appcompat.widget.ResourceManagerInternal.InflateDelegate
+        public Drawable createFromXmlInner(Context context, XmlPullParser xmlPullParser, AttributeSet attributeSet, Resources.Theme theme) {
+            try {
+                return AnimatedVectorDrawableCompat.createFromXmlInner(context, context.getResources(), xmlPullParser, attributeSet, theme);
+            } catch (Exception e) {
+                Log.e("AvdcInflateDelegate", "Exception while inflating <animated-vector>", e);
+                return null;
+            }
+        }
+    }
+
+    static class AsldcInflateDelegate implements InflateDelegate {
+        AsldcInflateDelegate() {
+        }
+
+        @Override // androidx.appcompat.widget.ResourceManagerInternal.InflateDelegate
+        public Drawable createFromXmlInner(Context context, XmlPullParser xmlPullParser, AttributeSet attributeSet, Resources.Theme theme) {
+            try {
+                return AnimatedStateListDrawableCompat.createFromXmlInner(context, context.getResources(), xmlPullParser, attributeSet, theme);
+            } catch (Exception e) {
+                Log.e("AsldcInflateDelegate", "Exception while inflating <animated-selector>", e);
+                return null;
+            }
+        }
+    }
+
+    static class DrawableDelegate implements InflateDelegate {
+        DrawableDelegate() {
+        }
+
+        @Override // androidx.appcompat.widget.ResourceManagerInternal.InflateDelegate
+        public Drawable createFromXmlInner(Context context, XmlPullParser xmlPullParser, AttributeSet attributeSet, Resources.Theme theme) {
+            String classAttribute = attributeSet.getClassAttribute();
+            if (classAttribute != null) {
+                try {
+                    Drawable drawable = (Drawable) DrawableDelegate.class.getClassLoader().loadClass(classAttribute).asSubclass(Drawable.class).getDeclaredConstructor(null).newInstance(null);
+                    Compatibility$Api21Impl.inflate(drawable, context.getResources(), xmlPullParser, attributeSet, theme);
+                    return drawable;
+                } catch (Exception e) {
+                    Log.e("DrawableDelegate", "Exception while inflating <drawable>", e);
+                }
+            }
+            return null;
+        }
     }
 }

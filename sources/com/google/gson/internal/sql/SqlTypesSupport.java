@@ -5,7 +5,7 @@ import com.google.gson.internal.bind.DefaultDateTypeAdapter;
 import java.sql.Date;
 import java.sql.Timestamp;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class SqlTypesSupport {
     public static final DefaultDateTypeAdapter.DateType DATE_DATE_TYPE;
     public static final TypeAdapterFactory DATE_FACTORY;
@@ -16,7 +16,6 @@ public abstract class SqlTypesSupport {
 
     static {
         boolean z;
-        TypeAdapterFactory typeAdapterFactory;
         try {
             Class.forName("java.sql.Date");
             z = true;
@@ -41,14 +40,13 @@ public abstract class SqlTypesSupport {
             };
             DATE_FACTORY = SqlDateTypeAdapter.FACTORY;
             TIME_FACTORY = SqlTimeTypeAdapter.FACTORY;
-            typeAdapterFactory = SqlTimestampTypeAdapter.FACTORY;
-        } else {
-            typeAdapterFactory = null;
-            DATE_DATE_TYPE = null;
-            TIMESTAMP_DATE_TYPE = null;
-            DATE_FACTORY = null;
-            TIME_FACTORY = null;
+            TIMESTAMP_FACTORY = SqlTimestampTypeAdapter.FACTORY;
+            return;
         }
-        TIMESTAMP_FACTORY = typeAdapterFactory;
+        DATE_DATE_TYPE = null;
+        TIMESTAMP_DATE_TYPE = null;
+        DATE_FACTORY = null;
+        TIME_FACTORY = null;
+        TIMESTAMP_FACTORY = null;
     }
 }

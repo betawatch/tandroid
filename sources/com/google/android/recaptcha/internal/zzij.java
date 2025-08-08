@@ -13,111 +13,102 @@ final class zzij {
     private zzij() {
     }
 
-    private zzij(boolean z) {
-        zzg();
-        zzg();
-    }
-
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     public static int zza(zzii zziiVar, Object obj) {
-        long longValue;
-        int zza;
-        int intValue;
-        int intValue2;
-        zzmb zzd = zziiVar.zzd();
-        int zza2 = zziiVar.zza();
+        int zzd;
+        int zzy;
+        zzmb zzd2 = zziiVar.zzd();
+        int zza = zziiVar.zza();
         zziiVar.zzg();
-        int zzy = zzhh.zzy(zza2 << 3);
-        if (zzd == zzmb.zzj) {
+        int zzy2 = zzhh.zzy(zza << 3);
+        if (zzd2 == zzmb.zzj) {
             byte[] bArr = zzjc.zzd;
             if (((zzke) obj) instanceof zzgg) {
                 throw null;
             }
-            zzy += zzy;
+            zzy2 += zzy2;
         }
         zzmc zzmcVar = zzmc.zza;
         int i = 4;
-        switch (zzd.ordinal()) {
+        switch (zzd2.ordinal()) {
             case 0:
                 ((Double) obj).doubleValue();
                 i = 8;
-                return zzy + i;
+                return zzy2 + i;
             case 1:
                 ((Float) obj).floatValue();
-                return zzy + i;
+                return zzy2 + i;
             case 2:
+                i = zzhh.zzz(((Long) obj).longValue());
+                return zzy2 + i;
             case 3:
-                longValue = ((Long) obj).longValue();
-                i = zzhh.zzz(longValue);
-                return zzy + i;
+                i = zzhh.zzz(((Long) obj).longValue());
+                return zzy2 + i;
             case 4:
-                intValue2 = ((Integer) obj).intValue();
-                i = zzhh.zzu(intValue2);
-                return zzy + i;
+                i = zzhh.zzu(((Integer) obj).intValue());
+                return zzy2 + i;
             case 5:
-            case 15:
                 ((Long) obj).longValue();
                 i = 8;
-                return zzy + i;
+                return zzy2 + i;
             case 6:
-            case 14:
                 ((Integer) obj).intValue();
-                return zzy + i;
+                return zzy2 + i;
             case 7:
                 ((Boolean) obj).booleanValue();
                 i = 1;
-                return zzy + i;
+                return zzy2 + i;
             case 8:
                 if (!(obj instanceof zzgw)) {
                     i = zzhh.zzx((String) obj);
-                    return zzy + i;
+                    return zzy2 + i;
                 }
-                zza = ((zzgw) obj).zzd();
-                i = zzhh.zzy(zza) + zza;
-                return zzy + i;
+                zzd = ((zzgw) obj).zzd();
+                zzy = zzhh.zzy(zzd);
+                i = zzy + zzd;
+                return zzy2 + i;
             case 9:
                 i = ((zzke) obj).zzn();
-                return zzy + i;
+                return zzy2 + i;
             case 10:
                 if (!(obj instanceof zzjj)) {
                     i = zzhh.zzv((zzke) obj);
-                    return zzy + i;
+                    return zzy2 + i;
                 }
-                zza = ((zzjj) obj).zza();
-                i = zzhh.zzy(zza) + zza;
-                return zzy + i;
+                zzd = ((zzjj) obj).zza();
+                zzy = zzhh.zzy(zzd);
+                i = zzy + zzd;
+                return zzy2 + i;
             case 11:
-                if (!(obj instanceof zzgw)) {
-                    zza = ((byte[]) obj).length;
-                    i = zzhh.zzy(zza) + zza;
-                    return zzy + i;
+                if (obj instanceof zzgw) {
+                    zzd = ((zzgw) obj).zzd();
+                    zzy = zzhh.zzy(zzd);
+                } else {
+                    zzd = ((byte[]) obj).length;
+                    zzy = zzhh.zzy(zzd);
                 }
-                zza = ((zzgw) obj).zzd();
-                i = zzhh.zzy(zza) + zza;
-                return zzy + i;
+                i = zzy + zzd;
+                return zzy2 + i;
             case 12:
-                intValue = ((Integer) obj).intValue();
-                i = zzhh.zzy(intValue);
-                return zzy + i;
+                i = zzhh.zzy(((Integer) obj).intValue());
+                return zzy2 + i;
             case 13:
-                if (obj instanceof zziv) {
-                    intValue2 = ((zziv) obj).zza();
-                    i = zzhh.zzu(intValue2);
-                    return zzy + i;
-                }
-                intValue2 = ((Integer) obj).intValue();
-                i = zzhh.zzu(intValue2);
-                return zzy + i;
+                i = obj instanceof zziv ? zzhh.zzu(((zziv) obj).zza()) : zzhh.zzu(((Integer) obj).intValue());
+                return zzy2 + i;
+            case 14:
+                ((Integer) obj).intValue();
+                return zzy2 + i;
+            case 15:
+                ((Long) obj).longValue();
+                i = 8;
+                return zzy2 + i;
             case 16:
-                int intValue3 = ((Integer) obj).intValue();
-                intValue = (intValue3 >> 31) ^ (intValue3 + intValue3);
-                i = zzhh.zzy(intValue);
-                return zzy + i;
+                int intValue = ((Integer) obj).intValue();
+                i = zzhh.zzy((intValue >> 31) ^ (intValue + intValue));
+                return zzy2 + i;
             case 17:
-                long longValue2 = ((Long) obj).longValue();
-                longValue = (longValue2 >> 63) ^ (longValue2 + longValue2);
-                i = zzhh.zzz(longValue);
-                return zzy + i;
+                long longValue = ((Long) obj).longValue();
+                i = zzhh.zzz((longValue >> 63) ^ (longValue + longValue));
+                return zzy2 + i;
             default:
                 throw new RuntimeException("There is no way to get here, but the compiler thinks otherwise.");
         }
@@ -200,18 +191,16 @@ final class zzij {
         }
         zziiVar.zzg();
         zziiVar.zzf();
-        boolean z = value instanceof zzjj;
-        int zza = ((zzii) entry.getKey()).zza();
-        if (!z) {
-            int zzy = zzhh.zzy(zza);
+        if (!(value instanceof zzjj)) {
+            int zzy = zzhh.zzy(((zzii) entry.getKey()).zza());
             int zzy2 = zzhh.zzy(24) + zzhh.zzv((zzke) value);
             int zzy3 = zzhh.zzy(16);
             int zzy4 = zzhh.zzy(8);
             return zzy4 + zzy4 + zzy3 + zzy + zzy2;
         }
-        int zzy5 = zzhh.zzy(zza);
-        int zza2 = ((zzjj) value).zza();
-        int zzy6 = zzhh.zzy(zza2) + zza2;
+        int zzy5 = zzhh.zzy(((zzii) entry.getKey()).zza());
+        int zza = ((zzjj) value).zza();
+        int zzy6 = zzhh.zzy(zza) + zza;
         int zzy7 = zzhh.zzy(24);
         int zzy8 = zzhh.zzy(16);
         int zzy9 = zzhh.zzy(8);
@@ -389,5 +378,10 @@ final class zzij {
             }
         }
         return true;
+    }
+
+    private zzij(boolean z) {
+        zzg();
+        zzg();
     }
 }

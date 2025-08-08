@@ -37,26 +37,6 @@ public class MediaQueueContainerMetadata extends AbstractSafeParcelable {
         }
     }
 
-    MediaQueueContainerMetadata(int i, String str, List list, List list2, double d) {
-        this.zza = i;
-        this.zzb = str;
-        this.zzc = list;
-        this.zzd = list2;
-        this.zze = d;
-    }
-
-    /* synthetic */ MediaQueueContainerMetadata(MediaQueueContainerMetadata mediaQueueContainerMetadata, zzcf zzcfVar) {
-        this.zza = mediaQueueContainerMetadata.zza;
-        this.zzb = mediaQueueContainerMetadata.zzb;
-        this.zzc = mediaQueueContainerMetadata.zzc;
-        this.zzd = mediaQueueContainerMetadata.zzd;
-        this.zze = mediaQueueContainerMetadata.zze;
-    }
-
-    /* synthetic */ MediaQueueContainerMetadata(zzcf zzcfVar) {
-        zzh();
-    }
-
     static /* bridge */ /* synthetic */ void zzb(MediaQueueContainerMetadata mediaQueueContainerMetadata, JSONObject jSONObject) {
         char c;
         mediaQueueContainerMetadata.zzh();
@@ -164,59 +144,54 @@ public class MediaQueueContainerMetadata extends AbstractSafeParcelable {
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x0020 A[Catch: JSONException -> 0x0071, TryCatch #0 {JSONException -> 0x0071, blocks: (B:3:0x0005, B:9:0x0011, B:10:0x0018, B:12:0x0020, B:13:0x0027, B:15:0x002b, B:17:0x0031, B:18:0x003c, B:20:0x0042, B:22:0x0050, B:23:0x0055, B:25:0x0059, B:27:0x005f, B:28:0x006a), top: B:2:0x0005 }] */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0042 A[Catch: JSONException -> 0x0071, LOOP:0: B:18:0x003c->B:20:0x0042, LOOP_END, TryCatch #0 {JSONException -> 0x0071, blocks: (B:3:0x0005, B:9:0x0011, B:10:0x0018, B:12:0x0020, B:13:0x0027, B:15:0x002b, B:17:0x0031, B:18:0x003c, B:20:0x0042, B:22:0x0050, B:23:0x0055, B:25:0x0059, B:27:0x005f, B:28:0x006a), top: B:2:0x0005 }] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final JSONObject zza() {
-        int i;
-        List list;
-        List list2;
-        Iterator it;
-        String str;
         JSONObject jSONObject = new JSONObject();
         try {
-            i = this.zza;
-        } catch (JSONException unused) {
-        }
-        if (i != 0) {
-            str = i == 1 ? "AUDIOBOOK_CONTAINER" : "GENERIC_CONTAINER";
+            int i = this.zza;
+            if (i == 0) {
+                jSONObject.put("containerType", "GENERIC_CONTAINER");
+            } else if (i == 1) {
+                jSONObject.put("containerType", "AUDIOBOOK_CONTAINER");
+            }
             if (!TextUtils.isEmpty(this.zzb)) {
                 jSONObject.put("title", this.zzb);
             }
-            list = this.zzc;
+            List list = this.zzc;
             if (list != null && !list.isEmpty()) {
                 JSONArray jSONArray = new JSONArray();
-                it = this.zzc.iterator();
+                Iterator it = this.zzc.iterator();
                 while (it.hasNext()) {
                     jSONArray.put(((MediaMetadata) it.next()).zza());
                 }
                 jSONObject.put("sections", jSONArray);
             }
-            list2 = this.zzd;
+            List list2 = this.zzd;
             if (list2 != null && !list2.isEmpty()) {
                 jSONObject.put("containerImages", com.google.android.gms.cast.internal.media.zza.zzc(this.zzd));
             }
             jSONObject.put("containerDuration", this.zze);
-            return jSONObject;
+        } catch (JSONException unused) {
         }
-        jSONObject.put("containerType", str);
-        if (!TextUtils.isEmpty(this.zzb)) {
-        }
-        list = this.zzc;
-        if (list != null) {
-            JSONArray jSONArray2 = new JSONArray();
-            it = this.zzc.iterator();
-            while (it.hasNext()) {
-            }
-            jSONObject.put("sections", jSONArray2);
-        }
-        list2 = this.zzd;
-        if (list2 != null) {
-            jSONObject.put("containerImages", com.google.android.gms.cast.internal.media.zza.zzc(this.zzd));
-        }
-        jSONObject.put("containerDuration", this.zze);
         return jSONObject;
+    }
+
+    MediaQueueContainerMetadata(int i, String str, List list, List list2, double d) {
+        this.zza = i;
+        this.zzb = str;
+        this.zzc = list;
+        this.zzd = list2;
+        this.zze = d;
+    }
+
+    /* synthetic */ MediaQueueContainerMetadata(zzcf zzcfVar) {
+        zzh();
+    }
+
+    /* synthetic */ MediaQueueContainerMetadata(MediaQueueContainerMetadata mediaQueueContainerMetadata, zzcf zzcfVar) {
+        this.zza = mediaQueueContainerMetadata.zza;
+        this.zzb = mediaQueueContainerMetadata.zzb;
+        this.zzc = mediaQueueContainerMetadata.zzc;
+        this.zzd = mediaQueueContainerMetadata.zzd;
+        this.zze = mediaQueueContainerMetadata.zze;
     }
 }

@@ -11,14 +11,14 @@ public final class ShippingAddressRequirements extends AbstractSafeParcelable {
     public static final Parcelable.Creator<ShippingAddressRequirements> CREATOR = new zzam();
     ArrayList zza;
 
-    ShippingAddressRequirements(ArrayList arrayList) {
-        this.zza = arrayList;
-    }
-
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
         SafeParcelWriter.writeStringList(parcel, 1, this.zza, false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    ShippingAddressRequirements(ArrayList arrayList) {
+        this.zza = arrayList;
     }
 }

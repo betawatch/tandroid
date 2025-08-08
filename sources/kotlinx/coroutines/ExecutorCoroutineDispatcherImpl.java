@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 import kotlin.coroutines.CoroutineContext;
 import kotlinx.coroutines.internal.ConcurrentKt;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class ExecutorCoroutineDispatcherImpl extends ExecutorCoroutineDispatcher implements Delay {
     private final Executor executor;
 
@@ -18,26 +18,8 @@ public final class ExecutorCoroutineDispatcherImpl extends ExecutorCoroutineDisp
         ConcurrentKt.removeFutureOnCancel(getExecutor());
     }
 
-    private final void cancelJobOnRejection(CoroutineContext coroutineContext, RejectedExecutionException rejectedExecutionException) {
-        JobKt.cancel(coroutineContext, ExceptionsKt.CancellationException("The task was rejected", rejectedExecutionException));
-    }
-
-    private final ScheduledFuture scheduleBlock(ScheduledExecutorService scheduledExecutorService, Runnable runnable, CoroutineContext coroutineContext, long j) {
-        try {
-            return scheduledExecutorService.schedule(runnable, j, TimeUnit.MILLISECONDS);
-        } catch (RejectedExecutionException e) {
-            cancelJobOnRejection(coroutineContext, e);
-            return null;
-        }
-    }
-
-    @Override // java.io.Closeable, java.lang.AutoCloseable
-    public void close() {
-        Executor executor = getExecutor();
-        ExecutorService executorService = executor instanceof ExecutorService ? (ExecutorService) executor : null;
-        if (executorService != null) {
-            executorService.shutdown();
-        }
+    public Executor getExecutor() {
+        return this.executor;
     }
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
@@ -53,28 +35,49 @@ public final class ExecutorCoroutineDispatcherImpl extends ExecutorCoroutineDisp
         }
     }
 
-    public boolean equals(Object obj) {
-        return (obj instanceof ExecutorCoroutineDispatcherImpl) && ((ExecutorCoroutineDispatcherImpl) obj).getExecutor() == getExecutor();
-    }
-
-    public Executor getExecutor() {
-        return this.executor;
-    }
-
-    public int hashCode() {
-        return System.identityHashCode(getExecutor());
-    }
-
     @Override // kotlinx.coroutines.Delay
     public DisposableHandle invokeOnTimeout(long j, Runnable runnable, CoroutineContext coroutineContext) {
         Executor executor = getExecutor();
         ScheduledExecutorService scheduledExecutorService = executor instanceof ScheduledExecutorService ? (ScheduledExecutorService) executor : null;
         ScheduledFuture scheduleBlock = scheduledExecutorService != null ? scheduleBlock(scheduledExecutorService, runnable, coroutineContext, j) : null;
-        return scheduleBlock != null ? new DisposableFutureHandle(scheduleBlock) : DefaultExecutor.INSTANCE.invokeOnTimeout(j, runnable, coroutineContext);
+        if (scheduleBlock != null) {
+            return new DisposableFutureHandle(scheduleBlock);
+        }
+        return DefaultExecutor.INSTANCE.invokeOnTimeout(j, runnable, coroutineContext);
+    }
+
+    private final ScheduledFuture scheduleBlock(ScheduledExecutorService scheduledExecutorService, Runnable runnable, CoroutineContext coroutineContext, long j) {
+        try {
+            return scheduledExecutorService.schedule(runnable, j, TimeUnit.MILLISECONDS);
+        } catch (RejectedExecutionException e) {
+            cancelJobOnRejection(coroutineContext, e);
+            return null;
+        }
+    }
+
+    private final void cancelJobOnRejection(CoroutineContext coroutineContext, RejectedExecutionException rejectedExecutionException) {
+        JobKt.cancel(coroutineContext, ExceptionsKt.CancellationException("The task was rejected", rejectedExecutionException));
+    }
+
+    @Override // java.io.Closeable, java.lang.AutoCloseable
+    public void close() {
+        Executor executor = getExecutor();
+        ExecutorService executorService = executor instanceof ExecutorService ? (ExecutorService) executor : null;
+        if (executorService != null) {
+            executorService.shutdown();
+        }
     }
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     public String toString() {
         return getExecutor().toString();
+    }
+
+    public boolean equals(Object obj) {
+        return (obj instanceof ExecutorCoroutineDispatcherImpl) && ((ExecutorCoroutineDispatcherImpl) obj).getExecutor() == getExecutor();
+    }
+
+    public int hashCode() {
+        return System.identityHashCode(getExecutor());
     }
 }

@@ -36,28 +36,6 @@ class Aes128DataSource implements DataSource {
     }
 
     @Override // com.google.android.exoplayer2.upstream.DataSource
-    public void close() {
-        if (this.cipherInputStream != null) {
-            this.cipherInputStream = null;
-            this.upstream.close();
-        }
-    }
-
-    protected Cipher getCipherInstance() {
-        return Cipher.getInstance("AES/CBC/PKCS7Padding");
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.DataSource
-    public final Map getResponseHeaders() {
-        return this.upstream.getResponseHeaders();
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.DataSource
-    public final Uri getUri() {
-        return this.upstream.getUri();
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.DataSource
     public final long open(DataSpec dataSpec) {
         try {
             Cipher cipherInstance = getCipherInstance();
@@ -83,5 +61,27 @@ class Aes128DataSource implements DataSource {
             return -1;
         }
         return read;
+    }
+
+    @Override // com.google.android.exoplayer2.upstream.DataSource
+    public final Uri getUri() {
+        return this.upstream.getUri();
+    }
+
+    @Override // com.google.android.exoplayer2.upstream.DataSource
+    public final Map getResponseHeaders() {
+        return this.upstream.getResponseHeaders();
+    }
+
+    @Override // com.google.android.exoplayer2.upstream.DataSource
+    public void close() {
+        if (this.cipherInputStream != null) {
+            this.cipherInputStream = null;
+            this.upstream.close();
+        }
+    }
+
+    protected Cipher getCipherInstance() {
+        return Cipher.getInstance("AES/CBC/PKCS7Padding");
     }
 }

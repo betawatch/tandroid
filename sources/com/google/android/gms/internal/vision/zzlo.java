@@ -12,23 +12,14 @@ class zzlo extends AbstractSet {
         this.zza = zzlhVar;
     }
 
-    /* synthetic */ zzlo(zzlh zzlhVar, zzlg zzlgVar) {
-        this(zzlhVar);
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public Iterator iterator() {
+        return new zzlp(this.zza, null);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public /* synthetic */ boolean add(Object obj) {
-        Map.Entry entry = (Map.Entry) obj;
-        if (contains(entry)) {
-            return false;
-        }
-        this.zza.put((Comparable) entry.getKey(), entry.getValue());
-        return true;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public void clear() {
-        this.zza.clear();
+    public int size() {
+        return this.zza.size();
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
@@ -42,11 +33,6 @@ class zzlo extends AbstractSet {
         return true;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public Iterator iterator() {
-        return new zzlp(this.zza, null);
-    }
-
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public boolean remove(Object obj) {
         Map.Entry entry = (Map.Entry) obj;
@@ -58,7 +44,21 @@ class zzlo extends AbstractSet {
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public int size() {
-        return this.zza.size();
+    public void clear() {
+        this.zza.clear();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public /* synthetic */ boolean add(Object obj) {
+        Map.Entry entry = (Map.Entry) obj;
+        if (contains(entry)) {
+            return false;
+        }
+        this.zza.put((Comparable) entry.getKey(), entry.getValue());
+        return true;
+    }
+
+    /* synthetic */ zzlo(zzlh zzlhVar, zzlg zzlgVar) {
+        this(zzlhVar);
     }
 }

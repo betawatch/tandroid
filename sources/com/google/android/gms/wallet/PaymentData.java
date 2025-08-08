@@ -21,17 +21,6 @@ public final class PaymentData extends AbstractSafeParcelable implements AutoRes
     String zzg;
     Bundle zzh;
 
-    PaymentData(String str, CardInfo cardInfo, UserAddress userAddress, PaymentMethodToken paymentMethodToken, String str2, Bundle bundle, String str3, Bundle bundle2) {
-        this.zza = str;
-        this.zzb = cardInfo;
-        this.zzc = userAddress;
-        this.zzd = paymentMethodToken;
-        this.zze = str2;
-        this.zzf = bundle;
-        this.zzg = str3;
-        this.zzh = bundle2;
-    }
-
     public static PaymentData getFromIntent(Intent intent) {
         return (PaymentData) SafeParcelableSerializer.deserializeFromIntentExtra(intent, "com.google.android.gms.wallet.PaymentData", CREATOR);
     }
@@ -57,5 +46,16 @@ public final class PaymentData extends AbstractSafeParcelable implements AutoRes
         SafeParcelWriter.writeString(parcel, 7, this.zzg, false);
         SafeParcelWriter.writeBundle(parcel, 8, this.zzh, false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    PaymentData(String str, CardInfo cardInfo, UserAddress userAddress, PaymentMethodToken paymentMethodToken, String str2, Bundle bundle, String str3, Bundle bundle2) {
+        this.zza = str;
+        this.zzb = cardInfo;
+        this.zzc = userAddress;
+        this.zzd = paymentMethodToken;
+        this.zze = str2;
+        this.zzf = bundle;
+        this.zzg = str3;
+        this.zzh = bundle2;
     }
 }

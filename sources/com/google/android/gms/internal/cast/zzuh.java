@@ -36,63 +36,42 @@ final class zzuh extends zzul {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:12:0x009c  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0094 A[ADDED_TO_REGION] */
     @Override // com.google.android.gms.internal.cast.zzul
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     final void zzb(Object obj, Object obj2, long j) {
         zzue zzueVar;
-        int size;
         List list = (List) zzwj.zzf(obj2, j);
-        int size2 = list.size();
+        int size = list.size();
         List list2 = (List) zzwj.zzf(obj, j);
-        if (!list2.isEmpty()) {
+        if (list2.isEmpty()) {
+            list2 = list2 instanceof zzuf ? new zzue(size) : ((list2 instanceof zzve) && (list2 instanceof zztx)) ? ((zztx) list2).zzg(size) : new ArrayList(size);
+            zzwj.zzs(obj, j, list2);
+        } else {
             if (zza.isAssignableFrom(list2.getClass())) {
-                ArrayList arrayList = new ArrayList(list2.size() + size2);
+                ArrayList arrayList = new ArrayList(list2.size() + size);
                 arrayList.addAll(list2);
+                zzwj.zzs(obj, j, arrayList);
                 zzueVar = arrayList;
-            } else {
-                if (!(list2 instanceof zzwe)) {
-                    if ((list2 instanceof zzve) && (list2 instanceof zztx)) {
-                        zztx zztxVar = (zztx) list2;
-                        if (!zztxVar.zzc()) {
-                            list2 = zztxVar.zzg(list2.size() + size2);
-                        }
-                    }
-                    size = list2.size();
-                    int size3 = list.size();
-                    if (size > 0 && size3 > 0) {
-                        list2.addAll(list);
-                    }
-                    if (size > 0) {
-                        list = list2;
-                    }
-                    zzwj.zzs(obj, j, list);
-                }
-                zzue zzueVar2 = new zzue(list2.size() + size2);
+            } else if (list2 instanceof zzwe) {
+                zzue zzueVar2 = new zzue(list2.size() + size);
                 zzueVar2.addAll(zzueVar2.size(), (zzwe) list2);
+                zzwj.zzs(obj, j, zzueVar2);
                 zzueVar = zzueVar2;
+            } else if ((list2 instanceof zzve) && (list2 instanceof zztx)) {
+                zztx zztxVar = (zztx) list2;
+                if (!zztxVar.zzc()) {
+                    list2 = zztxVar.zzg(list2.size() + size);
+                    zzwj.zzs(obj, j, list2);
+                }
             }
-            zzwj.zzs(obj, j, zzueVar);
             list2 = zzueVar;
-            size = list2.size();
-            int size32 = list.size();
-            if (size > 0) {
-                list2.addAll(list);
-            }
-            if (size > 0) {
-            }
-            zzwj.zzs(obj, j, list);
         }
-        list2 = list2 instanceof zzuf ? new zzue(size2) : ((list2 instanceof zzve) && (list2 instanceof zztx)) ? ((zztx) list2).zzg(size2) : new ArrayList(size2);
-        zzwj.zzs(obj, j, list2);
-        size = list2.size();
-        int size322 = list.size();
-        if (size > 0) {
+        int size2 = list2.size();
+        int size3 = list.size();
+        if (size2 > 0 && size3 > 0) {
+            list2.addAll(list);
         }
-        if (size > 0) {
+        if (size2 > 0) {
+            list = list2;
         }
         zzwj.zzs(obj, j, list);
     }

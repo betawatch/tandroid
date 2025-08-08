@@ -4,7 +4,7 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import org.telegram.tgnet.TLObject;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class SessionFirelogPublisherImpl$getFirebaseInstallationId$1 extends ContinuationImpl {
     int label;
     /* synthetic */ Object result;

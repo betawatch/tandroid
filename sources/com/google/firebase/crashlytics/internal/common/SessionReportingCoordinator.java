@@ -28,7 +28,7 @@ import java.util.Map;
 import java.util.SortedSet;
 import java.util.concurrent.Executor;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class SessionReportingCoordinator {
     private final CrashlyticsReportDataCapture dataCapture;
     private final IdManager idManager;
@@ -37,6 +37,10 @@ public class SessionReportingCoordinator {
     private final CrashlyticsReportPersistence reportPersistence;
     private final DataTransportCrashlyticsReportSender reportsSender;
 
+    public static SessionReportingCoordinator create(Context context, IdManager idManager, FileStore fileStore, AppData appData, LogFileManager logFileManager, UserMetadata userMetadata, StackTraceTrimmingStrategy stackTraceTrimmingStrategy, SettingsProvider settingsProvider, OnDemandCounter onDemandCounter, CrashlyticsAppQualitySessionsSubscriber crashlyticsAppQualitySessionsSubscriber) {
+        return new SessionReportingCoordinator(new CrashlyticsReportDataCapture(context, idManager, appData, stackTraceTrimmingStrategy, settingsProvider), new CrashlyticsReportPersistence(fileStore, settingsProvider, crashlyticsAppQualitySessionsSubscriber), DataTransportCrashlyticsReportSender.create(context, settingsProvider, onDemandCounter), logFileManager, userMetadata, idManager);
+    }
+
     SessionReportingCoordinator(CrashlyticsReportDataCapture crashlyticsReportDataCapture, CrashlyticsReportPersistence crashlyticsReportPersistence, DataTransportCrashlyticsReportSender dataTransportCrashlyticsReportSender, LogFileManager logFileManager, UserMetadata userMetadata, IdManager idManager) {
         this.dataCapture = crashlyticsReportDataCapture;
         this.reportPersistence = crashlyticsReportPersistence;
@@ -44,6 +48,93 @@ public class SessionReportingCoordinator {
         this.logFileManager = logFileManager;
         this.reportMetadata = userMetadata;
         this.idManager = idManager;
+    }
+
+    public void onBeginSession(String str, long j) {
+        this.reportPersistence.persistReport(this.dataCapture.captureReportData(str, j));
+    }
+
+    public void persistFatalEvent(Throwable th, Thread thread, String str, long j) {
+        Logger.getLogger().v("Persisting fatal event for session " + str);
+        persistEvent(th, thread, str, "crash", j, true);
+    }
+
+    public void persistNonFatalEvent(Throwable th, Thread thread, String str, long j) {
+        Logger.getLogger().v("Persisting non-fatal event for session " + str);
+        persistEvent(th, thread, str, "error", j, false);
+    }
+
+    public void persistRelevantAppExitInfoEvent(String str, List list, LogFileManager logFileManager, UserMetadata userMetadata) {
+        ApplicationExitInfo findRelevantApplicationExitInfo = findRelevantApplicationExitInfo(str, list);
+        if (findRelevantApplicationExitInfo == null) {
+            Logger.getLogger().v("No relevant ApplicationExitInfo occurred during session: " + str);
+            return;
+        }
+        CrashlyticsReport.Session.Event captureAnrEventData = this.dataCapture.captureAnrEventData(convertApplicationExitInfo(findRelevantApplicationExitInfo));
+        Logger.getLogger().d("Persisting anr for session " + str);
+        this.reportPersistence.persistEvent(addRolloutsStateToEvent(addLogsAndCustomKeysToEvent(captureAnrEventData, logFileManager, userMetadata), userMetadata), str, true);
+    }
+
+    public void finalizeSessionWithNativeEvent(String str, List list, CrashlyticsReport.ApplicationExitInfo applicationExitInfo) {
+        Logger.getLogger().d("SessionReportingCoordinator#finalizeSessionWithNativeEvent");
+        ArrayList arrayList = new ArrayList();
+        Iterator it = list.iterator();
+        while (it.hasNext()) {
+            CrashlyticsReport.FilesPayload.File asFilePayload = ((NativeSessionFile) it.next()).asFilePayload();
+            if (asFilePayload != null) {
+                arrayList.add(asFilePayload);
+            }
+        }
+        this.reportPersistence.finalizeSessionWithNativeEvent(str, CrashlyticsReport.FilesPayload.builder().setFiles(Collections.unmodifiableList(arrayList)).build(), applicationExitInfo);
+    }
+
+    public void finalizeSessions(long j, String str) {
+        this.reportPersistence.finalizeReports(str, j);
+    }
+
+    public SortedSet listSortedOpenSessionIds() {
+        return this.reportPersistence.getOpenSessionIds();
+    }
+
+    public boolean hasReportsToSend() {
+        return this.reportPersistence.hasFinalizedReports();
+    }
+
+    public void removeAllReports() {
+        this.reportPersistence.deleteAllReports();
+    }
+
+    public Task sendReports(Executor executor) {
+        return sendReports(executor, null);
+    }
+
+    public Task sendReports(Executor executor, String str) {
+        List<CrashlyticsReportWithSessionId> loadFinalizedReports = this.reportPersistence.loadFinalizedReports();
+        ArrayList arrayList = new ArrayList();
+        for (CrashlyticsReportWithSessionId crashlyticsReportWithSessionId : loadFinalizedReports) {
+            if (str == null || str.equals(crashlyticsReportWithSessionId.getSessionId())) {
+                arrayList.add(this.reportsSender.enqueueReport(ensureHasFid(crashlyticsReportWithSessionId), str != null).continueWith(executor, new Continuation() { // from class: com.google.firebase.crashlytics.internal.common.SessionReportingCoordinator$$ExternalSyntheticLambda11
+                    @Override // com.google.android.gms.tasks.Continuation
+                    public final Object then(Task task) {
+                        boolean onReportSendComplete;
+                        onReportSendComplete = SessionReportingCoordinator.this.onReportSendComplete(task);
+                        return Boolean.valueOf(onReportSendComplete);
+                    }
+                }));
+            }
+        }
+        return Tasks.whenAll(arrayList);
+    }
+
+    private CrashlyticsReportWithSessionId ensureHasFid(CrashlyticsReportWithSessionId crashlyticsReportWithSessionId) {
+        if (crashlyticsReportWithSessionId.getReport().getFirebaseInstallationId() != null) {
+            return crashlyticsReportWithSessionId;
+        }
+        return CrashlyticsReportWithSessionId.create(crashlyticsReportWithSessionId.getReport().withFirebaseInstallationId(this.idManager.fetchTrueFid()), crashlyticsReportWithSessionId.getSessionId(), crashlyticsReportWithSessionId.getReportFile());
+    }
+
+    private CrashlyticsReport.Session.Event addMetaDataToEvent(CrashlyticsReport.Session.Event event) {
+        return addRolloutsStateToEvent(addLogsAndCustomKeysToEvent(event, this.logFileManager, this.reportMetadata), this.reportMetadata);
     }
 
     private CrashlyticsReport.Session.Event addLogsAndCustomKeysToEvent(CrashlyticsReport.Session.Event event, LogFileManager logFileManager, UserMetadata userMetadata) {
@@ -62,10 +153,6 @@ public class SessionReportingCoordinator {
         return builder.build();
     }
 
-    private CrashlyticsReport.Session.Event addMetaDataToEvent(CrashlyticsReport.Session.Event event) {
-        return addRolloutsStateToEvent(addLogsAndCustomKeysToEvent(event, this.logFileManager, this.reportMetadata), this.reportMetadata);
-    }
-
     private CrashlyticsReport.Session.Event addRolloutsStateToEvent(CrashlyticsReport.Session.Event event, UserMetadata userMetadata) {
         List rolloutsState = userMetadata.getRolloutsState();
         if (rolloutsState.isEmpty()) {
@@ -74,6 +161,49 @@ public class SessionReportingCoordinator {
         CrashlyticsReport.Session.Event.Builder builder = event.toBuilder();
         builder.setRollouts(CrashlyticsReport.Session.Event.RolloutsState.builder().setRolloutAssignments(rolloutsState).build());
         return builder.build();
+    }
+
+    private void persistEvent(Throwable th, Thread thread, String str, String str2, long j, boolean z) {
+        this.reportPersistence.persistEvent(addMetaDataToEvent(this.dataCapture.captureEventData(th, thread, str2, j, 4, 8, z)), str, str2.equals("crash"));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public boolean onReportSendComplete(Task task) {
+        if (task.isSuccessful()) {
+            CrashlyticsReportWithSessionId crashlyticsReportWithSessionId = (CrashlyticsReportWithSessionId) task.getResult();
+            Logger.getLogger().d("Crashlytics report successfully enqueued to DataTransport: " + crashlyticsReportWithSessionId.getSessionId());
+            File reportFile = crashlyticsReportWithSessionId.getReportFile();
+            if (reportFile.delete()) {
+                Logger.getLogger().d("Deleted report file: " + reportFile.getPath());
+                return true;
+            }
+            Logger.getLogger().w("Crashlytics could not delete report file: " + reportFile.getPath());
+            return true;
+        }
+        Logger.getLogger().w("Crashlytics report could not be enqueued to DataTransport", task.getException());
+        return false;
+    }
+
+    private static List getSortedCustomAttributes(Map map) {
+        ArrayList arrayList = new ArrayList();
+        arrayList.ensureCapacity(map.size());
+        for (Map.Entry entry : map.entrySet()) {
+            arrayList.add(CrashlyticsReport.CustomAttribute.builder().setKey((String) entry.getKey()).setValue((String) entry.getValue()).build());
+        }
+        Collections.sort(arrayList, new Comparator() { // from class: com.google.firebase.crashlytics.internal.common.SessionReportingCoordinator$$ExternalSyntheticLambda10
+            @Override // java.util.Comparator
+            public final int compare(Object obj, Object obj2) {
+                int lambda$getSortedCustomAttributes$0;
+                lambda$getSortedCustomAttributes$0 = SessionReportingCoordinator.lambda$getSortedCustomAttributes$0((CrashlyticsReport.CustomAttribute) obj, (CrashlyticsReport.CustomAttribute) obj2);
+                return lambda$getSortedCustomAttributes$0;
+            }
+        });
+        return Collections.unmodifiableList(arrayList);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ int lambda$getSortedCustomAttributes$0(CrashlyticsReport.CustomAttribute customAttribute, CrashlyticsReport.CustomAttribute customAttribute2) {
+        return customAttribute.getKey().compareTo(customAttribute2.getKey());
     }
 
     private static CrashlyticsReport.ApplicationExitInfo convertApplicationExitInfo(ApplicationExitInfo applicationExitInfo) {
@@ -124,22 +254,12 @@ public class SessionReportingCoordinator {
         byte[] bArr = new byte[8192];
         while (true) {
             int read = inputStream.read(bArr);
-            if (read == -1) {
+            if (read != -1) {
+                byteArrayOutputStream.write(bArr, 0, read);
+            } else {
                 return byteArrayOutputStream.toString(StandardCharsets.UTF_8.name());
             }
-            byteArrayOutputStream.write(bArr, 0, read);
         }
-    }
-
-    public static SessionReportingCoordinator create(Context context, IdManager idManager, FileStore fileStore, AppData appData, LogFileManager logFileManager, UserMetadata userMetadata, StackTraceTrimmingStrategy stackTraceTrimmingStrategy, SettingsProvider settingsProvider, OnDemandCounter onDemandCounter, CrashlyticsAppQualitySessionsSubscriber crashlyticsAppQualitySessionsSubscriber) {
-        return new SessionReportingCoordinator(new CrashlyticsReportDataCapture(context, idManager, appData, stackTraceTrimmingStrategy, settingsProvider), new CrashlyticsReportPersistence(fileStore, settingsProvider, crashlyticsAppQualitySessionsSubscriber), DataTransportCrashlyticsReportSender.create(context, settingsProvider, onDemandCounter), logFileManager, userMetadata, idManager);
-    }
-
-    private CrashlyticsReportWithSessionId ensureHasFid(CrashlyticsReportWithSessionId crashlyticsReportWithSessionId) {
-        if (crashlyticsReportWithSessionId.getReport().getFirebaseInstallationId() != null) {
-            return crashlyticsReportWithSessionId;
-        }
-        return CrashlyticsReportWithSessionId.create(crashlyticsReportWithSessionId.getReport().withFirebaseInstallationId(this.idManager.fetchTrueFid()), crashlyticsReportWithSessionId.getSessionId(), crashlyticsReportWithSessionId.getReportFile());
     }
 
     private ApplicationExitInfo findRelevantApplicationExitInfo(String str, List list) {
@@ -159,124 +279,5 @@ public class SessionReportingCoordinator {
             }
         }
         return null;
-    }
-
-    private static List getSortedCustomAttributes(Map map) {
-        ArrayList arrayList = new ArrayList();
-        arrayList.ensureCapacity(map.size());
-        for (Map.Entry entry : map.entrySet()) {
-            arrayList.add(CrashlyticsReport.CustomAttribute.builder().setKey((String) entry.getKey()).setValue((String) entry.getValue()).build());
-        }
-        Collections.sort(arrayList, new Comparator() { // from class: com.google.firebase.crashlytics.internal.common.SessionReportingCoordinator$$ExternalSyntheticLambda10
-            @Override // java.util.Comparator
-            public final int compare(Object obj, Object obj2) {
-                int lambda$getSortedCustomAttributes$0;
-                lambda$getSortedCustomAttributes$0 = SessionReportingCoordinator.lambda$getSortedCustomAttributes$0((CrashlyticsReport.CustomAttribute) obj, (CrashlyticsReport.CustomAttribute) obj2);
-                return lambda$getSortedCustomAttributes$0;
-            }
-        });
-        return Collections.unmodifiableList(arrayList);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$getSortedCustomAttributes$0(CrashlyticsReport.CustomAttribute customAttribute, CrashlyticsReport.CustomAttribute customAttribute2) {
-        return customAttribute.getKey().compareTo(customAttribute2.getKey());
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public boolean onReportSendComplete(Task task) {
-        if (!task.isSuccessful()) {
-            Logger.getLogger().w("Crashlytics report could not be enqueued to DataTransport", task.getException());
-            return false;
-        }
-        CrashlyticsReportWithSessionId crashlyticsReportWithSessionId = (CrashlyticsReportWithSessionId) task.getResult();
-        Logger.getLogger().d("Crashlytics report successfully enqueued to DataTransport: " + crashlyticsReportWithSessionId.getSessionId());
-        File reportFile = crashlyticsReportWithSessionId.getReportFile();
-        if (reportFile.delete()) {
-            Logger.getLogger().d("Deleted report file: " + reportFile.getPath());
-            return true;
-        }
-        Logger.getLogger().w("Crashlytics could not delete report file: " + reportFile.getPath());
-        return true;
-    }
-
-    private void persistEvent(Throwable th, Thread thread, String str, String str2, long j, boolean z) {
-        this.reportPersistence.persistEvent(addMetaDataToEvent(this.dataCapture.captureEventData(th, thread, str2, j, 4, 8, z)), str, str2.equals("crash"));
-    }
-
-    public void finalizeSessionWithNativeEvent(String str, List list, CrashlyticsReport.ApplicationExitInfo applicationExitInfo) {
-        Logger.getLogger().d("SessionReportingCoordinator#finalizeSessionWithNativeEvent");
-        ArrayList arrayList = new ArrayList();
-        Iterator it = list.iterator();
-        while (it.hasNext()) {
-            CrashlyticsReport.FilesPayload.File asFilePayload = ((NativeSessionFile) it.next()).asFilePayload();
-            if (asFilePayload != null) {
-                arrayList.add(asFilePayload);
-            }
-        }
-        this.reportPersistence.finalizeSessionWithNativeEvent(str, CrashlyticsReport.FilesPayload.builder().setFiles(Collections.unmodifiableList(arrayList)).build(), applicationExitInfo);
-    }
-
-    public void finalizeSessions(long j, String str) {
-        this.reportPersistence.finalizeReports(str, j);
-    }
-
-    public boolean hasReportsToSend() {
-        return this.reportPersistence.hasFinalizedReports();
-    }
-
-    public SortedSet listSortedOpenSessionIds() {
-        return this.reportPersistence.getOpenSessionIds();
-    }
-
-    public void onBeginSession(String str, long j) {
-        this.reportPersistence.persistReport(this.dataCapture.captureReportData(str, j));
-    }
-
-    public void persistFatalEvent(Throwable th, Thread thread, String str, long j) {
-        Logger.getLogger().v("Persisting fatal event for session " + str);
-        persistEvent(th, thread, str, "crash", j, true);
-    }
-
-    public void persistNonFatalEvent(Throwable th, Thread thread, String str, long j) {
-        Logger.getLogger().v("Persisting non-fatal event for session " + str);
-        persistEvent(th, thread, str, "error", j, false);
-    }
-
-    public void persistRelevantAppExitInfoEvent(String str, List list, LogFileManager logFileManager, UserMetadata userMetadata) {
-        ApplicationExitInfo findRelevantApplicationExitInfo = findRelevantApplicationExitInfo(str, list);
-        if (findRelevantApplicationExitInfo == null) {
-            Logger.getLogger().v("No relevant ApplicationExitInfo occurred during session: " + str);
-            return;
-        }
-        CrashlyticsReport.Session.Event captureAnrEventData = this.dataCapture.captureAnrEventData(convertApplicationExitInfo(findRelevantApplicationExitInfo));
-        Logger.getLogger().d("Persisting anr for session " + str);
-        this.reportPersistence.persistEvent(addRolloutsStateToEvent(addLogsAndCustomKeysToEvent(captureAnrEventData, logFileManager, userMetadata), userMetadata), str, true);
-    }
-
-    public void removeAllReports() {
-        this.reportPersistence.deleteAllReports();
-    }
-
-    public Task sendReports(Executor executor) {
-        return sendReports(executor, null);
-    }
-
-    public Task sendReports(Executor executor, String str) {
-        List<CrashlyticsReportWithSessionId> loadFinalizedReports = this.reportPersistence.loadFinalizedReports();
-        ArrayList arrayList = new ArrayList();
-        for (CrashlyticsReportWithSessionId crashlyticsReportWithSessionId : loadFinalizedReports) {
-            if (str == null || str.equals(crashlyticsReportWithSessionId.getSessionId())) {
-                arrayList.add(this.reportsSender.enqueueReport(ensureHasFid(crashlyticsReportWithSessionId), str != null).continueWith(executor, new Continuation() { // from class: com.google.firebase.crashlytics.internal.common.SessionReportingCoordinator$$ExternalSyntheticLambda11
-                    @Override // com.google.android.gms.tasks.Continuation
-                    public final Object then(Task task) {
-                        boolean onReportSendComplete;
-                        onReportSendComplete = SessionReportingCoordinator.this.onReportSendComplete(task);
-                        return Boolean.valueOf(onReportSendComplete);
-                    }
-                }));
-            }
-        }
-        return Tasks.whenAll(arrayList);
     }
 }

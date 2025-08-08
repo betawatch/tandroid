@@ -7,11 +7,12 @@ import org.telegram.messenger.NotificationCenter;
 public final class v {
     public static final v a = new v();
 
-    static {
-        new ConcurrentHashMap(16, 0.75f, 2);
+    public final int hashCode() {
+        return NotificationCenter.giftsToUserSent;
     }
 
-    private v() {
+    static {
+        new ConcurrentHashMap(16, 0.75f, 2);
     }
 
     public final boolean equals(Object obj) {
@@ -23,10 +24,6 @@ public final class v {
         }
         ((v) obj).getClass();
         return true;
-    }
-
-    public final int hashCode() {
-        return NotificationCenter.giftsToUserSent;
     }
 
     public final String toString() {

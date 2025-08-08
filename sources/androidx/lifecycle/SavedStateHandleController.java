@@ -14,6 +14,10 @@ final class SavedStateHandleController implements LifecycleEventObserver {
         this.mHandle = savedStateHandle;
     }
 
+    boolean isAttached() {
+        return this.mIsAttached;
+    }
+
     void attachToLifecycle(SavedStateRegistry savedStateRegistry, Lifecycle lifecycle) {
         if (this.mIsAttached) {
             throw new IllegalStateException("Already attached to lifecycleOwner");
@@ -23,19 +27,15 @@ final class SavedStateHandleController implements LifecycleEventObserver {
         savedStateRegistry.registerSavedStateProvider(this.mKey, this.mHandle.savedStateProvider());
     }
 
-    SavedStateHandle getHandle() {
-        return this.mHandle;
-    }
-
-    boolean isAttached() {
-        return this.mIsAttached;
-    }
-
     @Override // androidx.lifecycle.LifecycleEventObserver
     public void onStateChanged(LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
         if (event == Lifecycle.Event.ON_DESTROY) {
             this.mIsAttached = false;
             lifecycleOwner.getLifecycle().removeObserver(this);
         }
+    }
+
+    SavedStateHandle getHandle() {
+        return this.mHandle;
     }
 }

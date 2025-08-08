@@ -74,53 +74,12 @@ public final class FieldType {
     private final JavaType javaType;
     private final boolean primitiveScalar;
 
-    static /* synthetic */ class 1 {
-        static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$FieldType$Collection;
-        static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$JavaType;
-
-        static {
-            int[] iArr = new int[JavaType.values().length];
-            $SwitchMap$com$google$protobuf$JavaType = iArr;
-            try {
-                iArr[JavaType.BYTE_STRING.ordinal()] = 1;
-            } catch (NoSuchFieldError unused) {
-            }
-            try {
-                $SwitchMap$com$google$protobuf$JavaType[JavaType.MESSAGE.ordinal()] = 2;
-            } catch (NoSuchFieldError unused2) {
-            }
-            try {
-                $SwitchMap$com$google$protobuf$JavaType[JavaType.STRING.ordinal()] = 3;
-            } catch (NoSuchFieldError unused3) {
-            }
-            int[] iArr2 = new int[Collection.values().length];
-            $SwitchMap$com$google$protobuf$FieldType$Collection = iArr2;
-            try {
-                iArr2[Collection.MAP.ordinal()] = 1;
-            } catch (NoSuchFieldError unused4) {
-            }
-            try {
-                $SwitchMap$com$google$protobuf$FieldType$Collection[Collection.VECTOR.ordinal()] = 2;
-            } catch (NoSuchFieldError unused5) {
-            }
-            try {
-                $SwitchMap$com$google$protobuf$FieldType$Collection[Collection.SCALAR.ordinal()] = 3;
-            } catch (NoSuchFieldError unused6) {
-            }
-        }
+    public static FieldType valueOf(String str) {
+        return (FieldType) Enum.valueOf(FieldType.class, str);
     }
 
-    enum Collection {
-        SCALAR(false),
-        VECTOR(true),
-        PACKED_VECTOR(true),
-        MAP(false);
-
-        private final boolean isList;
-
-        Collection(boolean z) {
-            this.isList = z;
-        }
+    public static FieldType[] values() {
+        return (FieldType[]) $VALUES.clone();
     }
 
     static {
@@ -253,19 +212,66 @@ public final class FieldType {
         this.collection = collection;
         this.javaType = javaType;
         int i4 = 1.$SwitchMap$com$google$protobuf$FieldType$Collection[collection.ordinal()];
-        this.elementType = (i4 == 1 || i4 == 2) ? javaType.getBoxedType() : null;
+        if (i4 == 1) {
+            this.elementType = javaType.getBoxedType();
+        } else if (i4 == 2) {
+            this.elementType = javaType.getBoxedType();
+        } else {
+            this.elementType = null;
+        }
         this.primitiveScalar = (collection != Collection.SCALAR || (i3 = 1.$SwitchMap$com$google$protobuf$JavaType[javaType.ordinal()]) == 1 || i3 == 2 || i3 == 3) ? false : true;
     }
 
-    public static FieldType valueOf(String str) {
-        return (FieldType) Enum.valueOf(FieldType.class, str);
-    }
+    static /* synthetic */ class 1 {
+        static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$FieldType$Collection;
+        static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$JavaType;
 
-    public static FieldType[] values() {
-        return (FieldType[]) $VALUES.clone();
+        static {
+            int[] iArr = new int[JavaType.values().length];
+            $SwitchMap$com$google$protobuf$JavaType = iArr;
+            try {
+                iArr[JavaType.BYTE_STRING.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                $SwitchMap$com$google$protobuf$JavaType[JavaType.MESSAGE.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                $SwitchMap$com$google$protobuf$JavaType[JavaType.STRING.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            int[] iArr2 = new int[Collection.values().length];
+            $SwitchMap$com$google$protobuf$FieldType$Collection = iArr2;
+            try {
+                iArr2[Collection.MAP.ordinal()] = 1;
+            } catch (NoSuchFieldError unused4) {
+            }
+            try {
+                $SwitchMap$com$google$protobuf$FieldType$Collection[Collection.VECTOR.ordinal()] = 2;
+            } catch (NoSuchFieldError unused5) {
+            }
+            try {
+                $SwitchMap$com$google$protobuf$FieldType$Collection[Collection.SCALAR.ordinal()] = 3;
+            } catch (NoSuchFieldError unused6) {
+            }
+        }
     }
 
     public int id() {
         return this.id;
+    }
+
+    enum Collection {
+        SCALAR(false),
+        VECTOR(true),
+        PACKED_VECTOR(true),
+        MAP(false);
+
+        private final boolean isList;
+
+        Collection(boolean z) {
+            this.isList = z;
+        }
     }
 }

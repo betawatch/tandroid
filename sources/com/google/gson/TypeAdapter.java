@@ -11,8 +11,36 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import java.io.Writer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class TypeAdapter {
+    public abstract Object read(JsonReader jsonReader);
+
+    public abstract void write(JsonWriter jsonWriter, Object obj);
+
+    public final void toJson(Writer writer, Object obj) {
+        write(new JsonWriter(writer), obj);
+    }
+
+    public final String toJson(Object obj) {
+        StringWriter stringWriter = new StringWriter();
+        try {
+            toJson(stringWriter, obj);
+            return stringWriter.toString();
+        } catch (IOException e) {
+            throw new JsonIOException(e);
+        }
+    }
+
+    public final JsonElement toJsonTree(Object obj) {
+        try {
+            JsonTreeWriter jsonTreeWriter = new JsonTreeWriter();
+            write(jsonTreeWriter, obj);
+            return jsonTreeWriter.get();
+        } catch (IOException e) {
+            throw new JsonIOException(e);
+        }
+    }
+
     public final Object fromJson(Reader reader) {
         return read(new JsonReader(reader));
     }
@@ -32,15 +60,6 @@ public abstract class TypeAdapter {
     public final TypeAdapter nullSafe() {
         return new TypeAdapter() { // from class: com.google.gson.TypeAdapter.1
             @Override // com.google.gson.TypeAdapter
-            public Object read(JsonReader jsonReader) {
-                if (jsonReader.peek() != JsonToken.NULL) {
-                    return TypeAdapter.this.read(jsonReader);
-                }
-                jsonReader.nextNull();
-                return null;
-            }
-
-            @Override // com.google.gson.TypeAdapter
             public void write(JsonWriter jsonWriter, Object obj) {
                 if (obj == null) {
                     jsonWriter.nullValue();
@@ -48,34 +67,15 @@ public abstract class TypeAdapter {
                     TypeAdapter.this.write(jsonWriter, obj);
                 }
             }
+
+            @Override // com.google.gson.TypeAdapter
+            public Object read(JsonReader jsonReader) {
+                if (jsonReader.peek() == JsonToken.NULL) {
+                    jsonReader.nextNull();
+                    return null;
+                }
+                return TypeAdapter.this.read(jsonReader);
+            }
         };
     }
-
-    public abstract Object read(JsonReader jsonReader);
-
-    public final String toJson(Object obj) {
-        StringWriter stringWriter = new StringWriter();
-        try {
-            toJson(stringWriter, obj);
-            return stringWriter.toString();
-        } catch (IOException e) {
-            throw new JsonIOException(e);
-        }
-    }
-
-    public final void toJson(Writer writer, Object obj) {
-        write(new JsonWriter(writer), obj);
-    }
-
-    public final JsonElement toJsonTree(Object obj) {
-        try {
-            JsonTreeWriter jsonTreeWriter = new JsonTreeWriter();
-            write(jsonTreeWriter, obj);
-            return jsonTreeWriter.get();
-        } catch (IOException e) {
-            throw new JsonIOException(e);
-        }
-    }
-
-    public abstract void write(JsonWriter jsonWriter, Object obj);
 }

@@ -1,76 +1,42 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import j$.util.function.IntFunction;
-
 /* loaded from: classes2.dex */
-final class i2 extends a0 {
-    final /* synthetic */ long m;
-    final /* synthetic */ long n;
+final class i2 extends Y1 {
+    long b;
+    long c;
+    final /* synthetic */ j2 d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    i2(b bVar, int i, long j, long j2) {
-        super(bVar, i, 0);
-        this.m = j;
-        this.n = j2;
+    i2(j2 j2Var, d2 d2Var) {
+        super(d2Var);
+        this.d = j2Var;
+        this.b = j2Var.m;
+        long j = j2Var.n;
+        this.c = j < 0 ? Long.MAX_VALUE : j;
     }
 
-    @Override // j$.util.stream.b
-    final G0 t0(Spliterator spliterator, IntFunction intFunction, b bVar) {
-        long j;
-        long j2;
-        long l0 = bVar.l0(spliterator);
-        if (l0 > 0 && spliterator.hasCharacteristics(16384)) {
-            return u0.G(bVar, u0.y(bVar.o0(), spliterator, this.m, this.n), true);
-        }
-        if (R2.ORDERED.j(bVar.p0())) {
-            return (G0) new o2(this, bVar, spliterator, intFunction, this.m, this.n).invoke();
-        }
-        j$.util.G g = (j$.util.G) bVar.C0(spliterator);
-        long j3 = this.m;
-        long j4 = this.n;
-        if (j3 <= l0) {
-            j = j4 >= 0 ? Math.min(j4, l0 - j3) : l0 - j3;
-            j2 = 0;
-        } else {
-            j = j4;
-            j2 = j3;
-        }
-        return u0.G(this, new o3(g, j2, j), true);
+    @Override // j$.util.stream.Y1, j$.util.stream.d2
+    public final void n(long j) {
+        this.a.n(t0.z(j, this.d.m, this.c));
     }
 
-    @Override // j$.util.stream.b
-    final Spliterator u0(b bVar, Spliterator spliterator) {
-        long j;
-        long j2;
-        long l0 = bVar.l0(spliterator);
-        long j3 = this.n;
-        if (l0 > 0 && spliterator.hasCharacteristics(16384)) {
-            j$.util.G g = (j$.util.G) bVar.C0(spliterator);
-            long j4 = this.m;
-            return new i3(g, j4, u0.x(j4, j3));
-        }
-        if (R2.ORDERED.j(bVar.p0())) {
-            return ((G0) new o2(this, bVar, spliterator, new d0(7), this.m, this.n).invoke()).spliterator();
-        }
-        j$.util.G g2 = (j$.util.G) bVar.C0(spliterator);
-        long j5 = this.m;
-        if (j5 <= l0) {
-            long j6 = l0 - j5;
-            if (j3 >= 0) {
-                j6 = Math.min(j3, j6);
+    @Override // j$.util.stream.d2
+    public final void accept(long j) {
+        long j2 = this.b;
+        if (j2 == 0) {
+            long j3 = this.c;
+            if (j3 > 0) {
+                this.c = j3 - 1;
+                this.a.accept(j);
+                return;
             }
-            j = j6;
-            j2 = 0;
-        } else {
-            j = j3;
-            j2 = j5;
+            return;
         }
-        return new o3(g2, j2, j);
+        this.b = j2 - 1;
     }
 
-    @Override // j$.util.stream.b
-    final e2 w0(int i, e2 e2Var) {
-        return new h2(this, e2Var);
+    @Override // j$.util.stream.Y1, j$.util.stream.d2
+    public final boolean q() {
+        return this.c == 0 || this.a.q();
     }
 }

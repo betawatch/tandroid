@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class Cleaner {
     private final ReferenceQueue zza = new ReferenceQueue();
     private final Set zzb = Collections.synchronizedSet(new HashSet());

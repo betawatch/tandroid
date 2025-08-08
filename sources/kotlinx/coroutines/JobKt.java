@@ -3,7 +3,7 @@ package kotlinx.coroutines;
 import java.util.concurrent.CancellationException;
 import kotlin.coroutines.CoroutineContext;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class JobKt {
     public static final CompletableJob Job(Job job) {
         return JobKt__JobKt.Job(job);

@@ -275,8 +275,9 @@ public abstract class SafeParcelReader {
     public static int validateObjectHeader(Parcel parcel) {
         int readHeader = readHeader(parcel);
         int readSize = readSize(parcel, readHeader);
+        int fieldId = getFieldId(readHeader);
         int dataPosition = parcel.dataPosition();
-        if (getFieldId(readHeader) != 20293) {
+        if (fieldId != 20293) {
             throw new ParseException("Expected object header. Got 0x".concat(String.valueOf(Integer.toHexString(readHeader))), parcel);
         }
         int i = readSize + dataPosition;

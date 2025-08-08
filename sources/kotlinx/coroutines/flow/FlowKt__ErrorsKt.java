@@ -1,18 +1,18 @@
 package kotlinx.coroutines.flow;
 
 import java.util.concurrent.CancellationException;
-import kotlin.ExceptionsKt__ExceptionsKt;
+import kotlin.ExceptionsKt;
 import kotlin.ResultKt;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.CoroutineContext;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref$ObjectRef;
 import kotlinx.coroutines.Job;
 import org.telegram.tgnet.TLObject;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 abstract /* synthetic */ class FlowKt__ErrorsKt {
     public static final Flow catch(Flow flow, Function3 function3) {
         return new FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1(flow, function3);
@@ -25,7 +25,6 @@ abstract /* synthetic */ class FlowKt__ErrorsKt {
     */
     public static final Object catchImpl(Flow flow, FlowCollector flowCollector, Continuation continuation) {
         FlowKt__ErrorsKt$catchImpl$1 flowKt__ErrorsKt$catchImpl$1;
-        Object coroutine_suspended;
         int i;
         Ref$ObjectRef ref$ObjectRef;
         Throwable th;
@@ -35,7 +34,7 @@ abstract /* synthetic */ class FlowKt__ErrorsKt {
             if ((i2 & TLObject.FLAG_31) != 0) {
                 flowKt__ErrorsKt$catchImpl$1.label = i2 - TLObject.FLAG_31;
                 Object obj = flowKt__ErrorsKt$catchImpl$1.result;
-                coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = flowKt__ErrorsKt$catchImpl$1.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
@@ -72,16 +71,16 @@ abstract /* synthetic */ class FlowKt__ErrorsKt {
                     return th;
                 }
                 if (th instanceof CancellationException) {
-                    ExceptionsKt__ExceptionsKt.addSuppressed(th, th);
+                    ExceptionsKt.addSuppressed(th, th);
                     throw th;
                 }
-                ExceptionsKt__ExceptionsKt.addSuppressed(th, th);
+                ExceptionsKt.addSuppressed(th, th);
                 throw th;
             }
         }
         flowKt__ErrorsKt$catchImpl$1 = new FlowKt__ErrorsKt$catchImpl$1(continuation);
         Object obj2 = flowKt__ErrorsKt$catchImpl$1.result;
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = flowKt__ErrorsKt$catchImpl$1.label;
         if (i != 0) {
         }
@@ -91,15 +90,15 @@ abstract /* synthetic */ class FlowKt__ErrorsKt {
         throw th;
     }
 
+    private static final boolean isSameExceptionAs$FlowKt__ErrorsKt(Throwable th, Throwable th2) {
+        return th2 != null && Intrinsics.areEqual(th2, th);
+    }
+
     private static final boolean isCancellationCause$FlowKt__ErrorsKt(Throwable th, CoroutineContext coroutineContext) {
         Job job = (Job) coroutineContext.get(Job.Key);
         if (job == null || !job.isCancelled()) {
             return false;
         }
         return isSameExceptionAs$FlowKt__ErrorsKt(th, job.getCancellationException());
-    }
-
-    private static final boolean isSameExceptionAs$FlowKt__ErrorsKt(Throwable th, Throwable th2) {
-        return th2 != null && Intrinsics.areEqual(th2, th);
     }
 }

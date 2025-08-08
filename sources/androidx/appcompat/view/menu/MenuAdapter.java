@@ -16,6 +16,11 @@ public class MenuAdapter extends BaseAdapter {
     private final int mItemLayoutRes;
     private final boolean mOverflowOnly;
 
+    @Override // android.widget.Adapter
+    public long getItemId(int i) {
+        return i;
+    }
+
     public MenuAdapter(MenuBuilder menuBuilder, LayoutInflater layoutInflater, boolean z, int i) {
         this.mOverflowOnly = z;
         this.mInflater = layoutInflater;
@@ -24,31 +29,21 @@ public class MenuAdapter extends BaseAdapter {
         findExpandedIndex();
     }
 
-    void findExpandedIndex() {
-        MenuItemImpl expandedItem = this.mAdapterMenu.getExpandedItem();
-        if (expandedItem != null) {
-            ArrayList nonActionItems = this.mAdapterMenu.getNonActionItems();
-            int size = nonActionItems.size();
-            for (int i = 0; i < size; i++) {
-                if (((MenuItemImpl) nonActionItems.get(i)) == expandedItem) {
-                    this.mExpandedIndex = i;
-                    return;
-                }
-            }
-        }
-        this.mExpandedIndex = -1;
-    }
-
-    public MenuBuilder getAdapterMenu() {
-        return this.mAdapterMenu;
+    public void setForceShowIcon(boolean z) {
+        this.mForceShowIcon = z;
     }
 
     @Override // android.widget.Adapter
     public int getCount() {
         ArrayList nonActionItems = this.mOverflowOnly ? this.mAdapterMenu.getNonActionItems() : this.mAdapterMenu.getVisibleItems();
-        int i = this.mExpandedIndex;
-        int size = nonActionItems.size();
-        return i < 0 ? size : size - 1;
+        if (this.mExpandedIndex < 0) {
+            return nonActionItems.size();
+        }
+        return nonActionItems.size() - 1;
+    }
+
+    public MenuBuilder getAdapterMenu() {
+        return this.mAdapterMenu;
     }
 
     @Override // android.widget.Adapter
@@ -59,11 +54,6 @@ public class MenuAdapter extends BaseAdapter {
             i++;
         }
         return (MenuItemImpl) nonActionItems.get(i);
-    }
-
-    @Override // android.widget.Adapter
-    public long getItemId(int i) {
-        return i;
     }
 
     @Override // android.widget.Adapter
@@ -83,13 +73,24 @@ public class MenuAdapter extends BaseAdapter {
         return view;
     }
 
+    void findExpandedIndex() {
+        MenuItemImpl expandedItem = this.mAdapterMenu.getExpandedItem();
+        if (expandedItem != null) {
+            ArrayList nonActionItems = this.mAdapterMenu.getNonActionItems();
+            int size = nonActionItems.size();
+            for (int i = 0; i < size; i++) {
+                if (((MenuItemImpl) nonActionItems.get(i)) == expandedItem) {
+                    this.mExpandedIndex = i;
+                    return;
+                }
+            }
+        }
+        this.mExpandedIndex = -1;
+    }
+
     @Override // android.widget.BaseAdapter
     public void notifyDataSetChanged() {
         findExpandedIndex();
         super.notifyDataSetChanged();
-    }
-
-    public void setForceShowIcon(boolean z) {
-        this.mForceShowIcon = z;
     }
 }

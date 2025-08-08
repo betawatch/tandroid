@@ -13,13 +13,13 @@ public final class j {
         this.b = Double.NaN;
     }
 
+    public static j a() {
+        return c;
+    }
+
     private j(double d) {
         this.a = true;
         this.b = d;
-    }
-
-    public static j a() {
-        return c;
     }
 
     public static j d(double d) {
@@ -27,10 +27,10 @@ public final class j {
     }
 
     public final double b() {
-        if (this.a) {
-            return this.b;
+        if (!this.a) {
+            throw new NoSuchElementException("No value present");
         }
-        throw new NoSuchElementException("No value present");
+        return this.b;
     }
 
     public final boolean c() {
@@ -65,9 +65,9 @@ public final class j {
     }
 
     public final String toString() {
-        if (!this.a) {
-            return "OptionalDouble.empty";
+        if (this.a) {
+            return "OptionalDouble[" + this.b + "]";
         }
-        return "OptionalDouble[" + this.b + "]";
+        return "OptionalDouble.empty";
     }
 }

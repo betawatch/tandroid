@@ -75,12 +75,6 @@ class zzv extends zzt implements List {
     }
 
     @Override // java.util.List
-    public final ListIterator listIterator(int i) {
-        zzb();
-        return new zzu(this, i);
-    }
-
-    @Override // java.util.List
     public final Object remove(int i) {
         int i2;
         zzb();
@@ -107,5 +101,11 @@ class zzv extends zzt implements List {
             zztVar = this;
         }
         return this.zzf.zzf(this.zza, subList, zztVar);
+    }
+
+    @Override // java.util.List
+    public final ListIterator listIterator(int i) {
+        zzb();
+        return new zzu(this, i);
     }
 }

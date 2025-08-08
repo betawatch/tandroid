@@ -11,13 +11,13 @@ public class LoggingConnectionCallbacks implements GoogleApiClient.ConnectionCal
         throw new NoSuchMethodError();
     }
 
-    @Override // com.google.android.gms.common.api.internal.OnConnectionFailedListener
-    public void onConnectionFailed(ConnectionResult connectionResult) {
+    @Override // com.google.android.gms.common.api.internal.ConnectionCallbacks
+    public void onConnectionSuspended(int i) {
         throw new NoSuchMethodError();
     }
 
-    @Override // com.google.android.gms.common.api.internal.ConnectionCallbacks
-    public void onConnectionSuspended(int i) {
+    @Override // com.google.android.gms.common.api.internal.OnConnectionFailedListener
+    public void onConnectionFailed(ConnectionResult connectionResult) {
         throw new NoSuchMethodError();
     }
 }

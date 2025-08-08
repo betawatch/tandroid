@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.clearcut;
 
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import org.telegram.messenger.NotificationCenter;
 
 /* loaded from: classes.dex */
@@ -42,7 +42,7 @@ abstract class zzax {
     }
 
     static int zza(int i, byte[] bArr, int i2, int i3, zzcn zzcnVar, zzay zzayVar) {
-        ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(zzcnVar);
+        WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(zzcnVar);
         zza(bArr, i2, zzayVar);
         int i4 = zzayVar.zzfd;
         throw null;
@@ -154,7 +154,7 @@ abstract class zzax {
     }
 
     static int zza(byte[] bArr, int i, zzcn zzcnVar, zzay zzayVar) {
-        ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(zzcnVar);
+        WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(zzcnVar);
         int zza = zza(bArr, i, zzayVar);
         int i2 = zzayVar.zzfd + zza;
         if (zza < i2) {

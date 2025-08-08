@@ -19,23 +19,23 @@ public class MediaBrowserCompat$MediaItem implements Parcelable {
     private final MediaDescriptionCompat mDescription;
     private final int mFlags;
 
+    @Override // android.os.Parcelable
+    public int describeContents() {
+        return 0;
+    }
+
     MediaBrowserCompat$MediaItem(Parcel parcel) {
         this.mFlags = parcel.readInt();
         this.mDescription = MediaDescriptionCompat.CREATOR.createFromParcel(parcel);
     }
 
     @Override // android.os.Parcelable
-    public int describeContents() {
-        return 0;
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(this.mFlags);
+        this.mDescription.writeToParcel(parcel, i);
     }
 
     public String toString() {
         return "MediaItem{mFlags=" + this.mFlags + ", mDescription=" + this.mDescription + '}';
-    }
-
-    @Override // android.os.Parcelable
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(this.mFlags);
-        this.mDescription.writeToParcel(parcel, i);
     }
 }

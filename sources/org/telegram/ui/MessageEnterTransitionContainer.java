@@ -17,6 +17,11 @@ public class MessageEnterTransitionContainer extends View {
         void onDraw(Canvas canvas);
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$0() {
+        setVisibility(8);
+    }
+
     public MessageEnterTransitionContainer(ViewGroup viewGroup, int i) {
         super(viewGroup.getContext());
         this.transitions = new ArrayList();
@@ -28,6 +33,28 @@ public class MessageEnterTransitionContainer extends View {
         };
         this.parent = viewGroup;
         this.currentAccount = i;
+    }
+
+    void addTransition(Transition transition) {
+        this.transitions.add(transition);
+        checkVisibility();
+        this.parent.invalidate();
+    }
+
+    void removeTransition(Transition transition) {
+        this.transitions.remove(transition);
+        checkVisibility();
+        this.parent.invalidate();
+    }
+
+    @Override // android.view.View
+    protected void onDraw(Canvas canvas) {
+        if (this.transitions.isEmpty()) {
+            return;
+        }
+        for (int i = 0; i < this.transitions.size(); i++) {
+            ((Transition) this.transitions.get(i)).onDraw(canvas);
+        }
     }
 
     private void checkVisibility() {
@@ -43,34 +70,7 @@ public class MessageEnterTransitionContainer extends View {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        setVisibility(8);
-    }
-
-    void addTransition(Transition transition) {
-        this.transitions.add(transition);
-        checkVisibility();
-        this.parent.invalidate();
-    }
-
     public boolean isRunning() {
         return this.transitions.size() > 0;
-    }
-
-    @Override // android.view.View
-    protected void onDraw(Canvas canvas) {
-        if (this.transitions.isEmpty()) {
-            return;
-        }
-        for (int i = 0; i < this.transitions.size(); i++) {
-            ((Transition) this.transitions.get(i)).onDraw(canvas);
-        }
-    }
-
-    void removeTransition(Transition transition) {
-        this.transitions.remove(transition);
-        checkVisibility();
-        this.parent.invalidate();
     }
 }

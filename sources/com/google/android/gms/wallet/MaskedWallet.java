@@ -22,20 +22,6 @@ public final class MaskedWallet extends AbstractSafeParcelable implements Reflec
     UserAddress zzj;
     InstrumentInfo[] zzk;
 
-    MaskedWallet(String str, String str2, String[] strArr, String str3, zza zzaVar, zza zzaVar2, LoyaltyWalletObject[] loyaltyWalletObjectArr, OfferWalletObject[] offerWalletObjectArr, UserAddress userAddress, UserAddress userAddress2, InstrumentInfo[] instrumentInfoArr) {
-        this.zza = str;
-        this.zzb = str2;
-        this.zzc = strArr;
-        this.zzd = str3;
-        this.zze = zzaVar;
-        this.zzf = zzaVar2;
-        this.zzg = loyaltyWalletObjectArr;
-        this.zzh = offerWalletObjectArr;
-        this.zzi = userAddress;
-        this.zzj = userAddress2;
-        this.zzk = instrumentInfoArr;
-    }
-
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
@@ -51,5 +37,19 @@ public final class MaskedWallet extends AbstractSafeParcelable implements Reflec
         SafeParcelWriter.writeParcelable(parcel, 11, this.zzj, i, false);
         SafeParcelWriter.writeTypedArray(parcel, 12, this.zzk, i, false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    MaskedWallet(String str, String str2, String[] strArr, String str3, zza zzaVar, zza zzaVar2, LoyaltyWalletObject[] loyaltyWalletObjectArr, OfferWalletObject[] offerWalletObjectArr, UserAddress userAddress, UserAddress userAddress2, InstrumentInfo[] instrumentInfoArr) {
+        this.zza = str;
+        this.zzb = str2;
+        this.zzc = strArr;
+        this.zzd = str3;
+        this.zze = zzaVar;
+        this.zzf = zzaVar2;
+        this.zzg = loyaltyWalletObjectArr;
+        this.zzh = offerWalletObjectArr;
+        this.zzi = userAddress;
+        this.zzj = userAddress2;
+        this.zzk = instrumentInfoArr;
     }
 }

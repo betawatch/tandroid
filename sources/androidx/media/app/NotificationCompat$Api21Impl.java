@@ -6,6 +6,10 @@ import android.support.v4.media.session.MediaSessionCompat;
 
 /* loaded from: classes.dex */
 abstract class NotificationCompat$Api21Impl {
+    static void setMediaStyle(Notification.Builder builder, Notification.MediaStyle mediaStyle) {
+        builder.setStyle(mediaStyle);
+    }
+
     static Notification.MediaStyle createMediaStyle() {
         return new Notification.MediaStyle();
     }
@@ -20,15 +24,11 @@ abstract class NotificationCompat$Api21Impl {
         return mediaStyle;
     }
 
-    static void setMediaSession(Notification.MediaStyle mediaStyle, MediaSession.Token token) {
-        mediaStyle.setMediaSession(token);
-    }
-
-    static void setMediaStyle(Notification.Builder builder, Notification.MediaStyle mediaStyle) {
-        builder.setStyle(mediaStyle);
-    }
-
     static void setShowActionsInCompactView(Notification.MediaStyle mediaStyle, int... iArr) {
         mediaStyle.setShowActionsInCompactView(iArr);
+    }
+
+    static void setMediaSession(Notification.MediaStyle mediaStyle, MediaSession.Token token) {
+        mediaStyle.setMediaSession(token);
     }
 }

@@ -24,26 +24,6 @@ final class DefaultOggSeeker implements OggSeeker {
     private long targetGranule;
     private long totalGranules;
 
-    private final class OggSeekMap implements SeekMap {
-        private OggSeekMap() {
-        }
-
-        @Override // com.google.android.exoplayer2.extractor.SeekMap
-        public long getDurationUs() {
-            return DefaultOggSeeker.this.streamReader.convertGranuleToTime(DefaultOggSeeker.this.totalGranules);
-        }
-
-        @Override // com.google.android.exoplayer2.extractor.SeekMap
-        public SeekMap.SeekPoints getSeekPoints(long j) {
-            return new SeekMap.SeekPoints(new SeekPoint(j, Util.constrainValue((DefaultOggSeeker.this.payloadStartPosition + ((DefaultOggSeeker.this.streamReader.convertTimeToGranule(j) * (DefaultOggSeeker.this.payloadEndPosition - DefaultOggSeeker.this.payloadStartPosition)) / DefaultOggSeeker.this.totalGranules)) - 30000, DefaultOggSeeker.this.payloadStartPosition, DefaultOggSeeker.this.payloadEndPosition - 1)));
-        }
-
-        @Override // com.google.android.exoplayer2.extractor.SeekMap
-        public boolean isSeekable() {
-            return true;
-        }
-    }
-
     public DefaultOggSeeker(StreamReader streamReader, long j, long j2, long j3, long j4, boolean z) {
         Assertions.checkArgument(j >= 0 && j2 > j);
         this.streamReader = streamReader;
@@ -56,6 +36,57 @@ final class DefaultOggSeeker implements OggSeeker {
             this.state = 0;
         }
         this.pageHeader = new OggPageHeader();
+    }
+
+    @Override // com.google.android.exoplayer2.extractor.ogg.OggSeeker
+    public long read(ExtractorInput extractorInput) {
+        int i = this.state;
+        if (i == 0) {
+            long position = extractorInput.getPosition();
+            this.positionBeforeSeekToEnd = position;
+            this.state = 1;
+            long j = this.payloadEndPosition - 65307;
+            if (j > position) {
+                return j;
+            }
+        } else if (i != 1) {
+            if (i == 2) {
+                long nextSeekPosition = getNextSeekPosition(extractorInput);
+                if (nextSeekPosition != -1) {
+                    return nextSeekPosition;
+                }
+                this.state = 3;
+            } else if (i != 3) {
+                if (i == 4) {
+                    return -1L;
+                }
+                throw new IllegalStateException();
+            }
+            skipToPageOfTargetGranule(extractorInput);
+            this.state = 4;
+            return -(this.startGranule + 2);
+        }
+        this.totalGranules = readGranuleOfLastPage(extractorInput);
+        this.state = 4;
+        return this.positionBeforeSeekToEnd;
+    }
+
+    @Override // com.google.android.exoplayer2.extractor.ogg.OggSeeker
+    public OggSeekMap createSeekMap() {
+        if (this.totalGranules != 0) {
+            return new OggSeekMap();
+        }
+        return null;
+    }
+
+    @Override // com.google.android.exoplayer2.extractor.ogg.OggSeeker
+    public void startSeek(long j) {
+        this.targetGranule = Util.constrainValue(j, 0L, this.totalGranules - 1);
+        this.state = 2;
+        this.start = this.payloadStartPosition;
+        this.end = this.payloadEndPosition;
+        this.startGranule = 0L;
+        this.endGranule = this.totalGranules;
     }
 
     private long getNextSeekPosition(ExtractorInput extractorInput) {
@@ -104,86 +135,57 @@ final class DefaultOggSeeker implements OggSeeker {
             this.pageHeader.skipToNextPage(extractorInput);
             this.pageHeader.populate(extractorInput, false);
             OggPageHeader oggPageHeader = this.pageHeader;
-            if (oggPageHeader.granulePosition > this.targetGranule) {
-                extractorInput.resetPeekPosition();
-                return;
-            } else {
+            if (oggPageHeader.granulePosition <= this.targetGranule) {
                 extractorInput.skipFully(oggPageHeader.headerSize + oggPageHeader.bodySize);
                 this.start = extractorInput.getPosition();
                 this.startGranule = this.pageHeader.granulePosition;
+            } else {
+                extractorInput.resetPeekPosition();
+                return;
             }
         }
-    }
-
-    @Override // com.google.android.exoplayer2.extractor.ogg.OggSeeker
-    public OggSeekMap createSeekMap() {
-        if (this.totalGranules != 0) {
-            return new OggSeekMap();
-        }
-        return null;
-    }
-
-    @Override // com.google.android.exoplayer2.extractor.ogg.OggSeeker
-    public long read(ExtractorInput extractorInput) {
-        int i = this.state;
-        if (i == 0) {
-            long position = extractorInput.getPosition();
-            this.positionBeforeSeekToEnd = position;
-            this.state = 1;
-            long j = this.payloadEndPosition - 65307;
-            if (j > position) {
-                return j;
-            }
-        } else if (i != 1) {
-            if (i == 2) {
-                long nextSeekPosition = getNextSeekPosition(extractorInput);
-                if (nextSeekPosition != -1) {
-                    return nextSeekPosition;
-                }
-                this.state = 3;
-            } else if (i != 3) {
-                if (i == 4) {
-                    return -1L;
-                }
-                throw new IllegalStateException();
-            }
-            skipToPageOfTargetGranule(extractorInput);
-            this.state = 4;
-            return -(this.startGranule + 2);
-        }
-        this.totalGranules = readGranuleOfLastPage(extractorInput);
-        this.state = 4;
-        return this.positionBeforeSeekToEnd;
     }
 
     long readGranuleOfLastPage(ExtractorInput extractorInput) {
-        long j;
-        OggPageHeader oggPageHeader;
         this.pageHeader.reset();
         if (!this.pageHeader.skipToNextPage(extractorInput)) {
             throw new EOFException();
         }
         this.pageHeader.populate(extractorInput, false);
-        OggPageHeader oggPageHeader2 = this.pageHeader;
-        extractorInput.skipFully(oggPageHeader2.headerSize + oggPageHeader2.bodySize);
-        do {
-            j = this.pageHeader.granulePosition;
-            OggPageHeader oggPageHeader3 = this.pageHeader;
-            if ((oggPageHeader3.type & 4) == 4 || !oggPageHeader3.skipToNextPage(extractorInput) || extractorInput.getPosition() >= this.payloadEndPosition || !this.pageHeader.populate(extractorInput, true)) {
+        OggPageHeader oggPageHeader = this.pageHeader;
+        extractorInput.skipFully(oggPageHeader.headerSize + oggPageHeader.bodySize);
+        long j = this.pageHeader.granulePosition;
+        while (true) {
+            OggPageHeader oggPageHeader2 = this.pageHeader;
+            if ((oggPageHeader2.type & 4) == 4 || !oggPageHeader2.skipToNextPage(extractorInput) || extractorInput.getPosition() >= this.payloadEndPosition || !this.pageHeader.populate(extractorInput, true)) {
                 break;
             }
-            oggPageHeader = this.pageHeader;
-        } while (ExtractorUtil.skipFullyQuietly(extractorInput, oggPageHeader.headerSize + oggPageHeader.bodySize));
+            OggPageHeader oggPageHeader3 = this.pageHeader;
+            if (!ExtractorUtil.skipFullyQuietly(extractorInput, oggPageHeader3.headerSize + oggPageHeader3.bodySize)) {
+                break;
+            }
+            j = this.pageHeader.granulePosition;
+        }
         return j;
     }
 
-    @Override // com.google.android.exoplayer2.extractor.ogg.OggSeeker
-    public void startSeek(long j) {
-        this.targetGranule = Util.constrainValue(j, 0L, this.totalGranules - 1);
-        this.state = 2;
-        this.start = this.payloadStartPosition;
-        this.end = this.payloadEndPosition;
-        this.startGranule = 0L;
-        this.endGranule = this.totalGranules;
+    private final class OggSeekMap implements SeekMap {
+        @Override // com.google.android.exoplayer2.extractor.SeekMap
+        public boolean isSeekable() {
+            return true;
+        }
+
+        private OggSeekMap() {
+        }
+
+        @Override // com.google.android.exoplayer2.extractor.SeekMap
+        public SeekMap.SeekPoints getSeekPoints(long j) {
+            return new SeekMap.SeekPoints(new SeekPoint(j, Util.constrainValue((DefaultOggSeeker.this.payloadStartPosition + ((DefaultOggSeeker.this.streamReader.convertTimeToGranule(j) * (DefaultOggSeeker.this.payloadEndPosition - DefaultOggSeeker.this.payloadStartPosition)) / DefaultOggSeeker.this.totalGranules)) - 30000, DefaultOggSeeker.this.payloadStartPosition, DefaultOggSeeker.this.payloadEndPosition - 1)));
+        }
+
+        @Override // com.google.android.exoplayer2.extractor.SeekMap
+        public long getDurationUs() {
+            return DefaultOggSeeker.this.streamReader.convertGranuleToTime(DefaultOggSeeker.this.totalGranules);
+        }
     }
 }

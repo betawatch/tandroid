@@ -4,7 +4,7 @@ import java.util.Iterator;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class TransformingSequence implements Sequence {
     private final Sequence sequence;
     private final Function1 transformer;
@@ -21,15 +21,15 @@ public final class TransformingSequence implements Sequence {
         return new Iterator() { // from class: kotlin.sequences.TransformingSequence$iterator$1
             private final Iterator iterator;
 
+            @Override // java.util.Iterator
+            public void remove() {
+                throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+            }
+
             {
                 Sequence sequence;
                 sequence = TransformingSequence.this.sequence;
                 this.iterator = sequence.iterator();
-            }
-
-            @Override // java.util.Iterator
-            public boolean hasNext() {
-                return this.iterator.hasNext();
             }
 
             @Override // java.util.Iterator
@@ -40,8 +40,8 @@ public final class TransformingSequence implements Sequence {
             }
 
             @Override // java.util.Iterator
-            public void remove() {
-                throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+            public boolean hasNext() {
+                return this.iterator.hasNext();
             }
         };
     }

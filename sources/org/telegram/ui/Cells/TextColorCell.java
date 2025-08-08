@@ -46,6 +46,32 @@ public class TextColorCell extends FrameLayout {
         addView(this.textView, LayoutHelper.createFrame(-1, -1.0f, (LocaleController.isRTL ? 5 : 3) | 48, 21.0f, 0.0f, 21.0f, 0.0f));
     }
 
+    @Override // android.widget.FrameLayout, android.view.View
+    protected void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f) + (this.needDivider ? 1 : 0), TLObject.FLAG_30));
+    }
+
+    public void setTextAndColor(String str, int i, boolean z) {
+        this.textView.setText(str);
+        this.needDivider = z;
+        this.currentColor = i;
+        setWillNotDraw(!z && i == 0);
+        invalidate();
+    }
+
+    public void setEnabled(boolean z, ArrayList arrayList) {
+        super.setEnabled(z);
+        if (arrayList != null) {
+            TextView textView = this.textView;
+            Property property = View.ALPHA;
+            arrayList.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, z ? 1.0f : 0.5f));
+            arrayList.add(ObjectAnimator.ofFloat(this, (Property<TextColorCell, Float>) property, z ? 1.0f : 0.5f));
+            return;
+        }
+        this.textView.setAlpha(z ? 1.0f : 0.5f);
+        setAlpha(z ? 1.0f : 0.5f);
+    }
+
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
         if (this.needDivider) {
@@ -56,31 +82,5 @@ public class TextColorCell extends FrameLayout {
             colorPaint.setColor(i);
             canvas.drawCircle(LocaleController.isRTL ? AndroidUtilities.dp(33.0f) : getMeasuredWidth() - AndroidUtilities.dp(33.0f), getMeasuredHeight() / 2, AndroidUtilities.dp(10.0f), colorPaint);
         }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f) + (this.needDivider ? 1 : 0), TLObject.FLAG_30));
-    }
-
-    public void setEnabled(boolean z, ArrayList arrayList) {
-        super.setEnabled(z);
-        if (arrayList == null) {
-            this.textView.setAlpha(z ? 1.0f : 0.5f);
-            setAlpha(z ? 1.0f : 0.5f);
-        } else {
-            TextView textView = this.textView;
-            Property property = View.ALPHA;
-            arrayList.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, z ? 1.0f : 0.5f));
-            arrayList.add(ObjectAnimator.ofFloat(this, (Property<TextColorCell, Float>) property, z ? 1.0f : 0.5f));
-        }
-    }
-
-    public void setTextAndColor(String str, int i, boolean z) {
-        this.textView.setText(str);
-        this.needDivider = z;
-        this.currentColor = i;
-        setWillNotDraw(!z && i == 0);
-        invalidate();
     }
 }

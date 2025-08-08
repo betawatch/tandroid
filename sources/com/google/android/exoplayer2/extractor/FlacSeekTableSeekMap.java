@@ -10,13 +10,14 @@ public final class FlacSeekTableSeekMap implements SeekMap {
     private final long firstFrameOffset;
     private final FlacStreamMetadata flacStreamMetadata;
 
+    @Override // com.google.android.exoplayer2.extractor.SeekMap
+    public boolean isSeekable() {
+        return true;
+    }
+
     public FlacSeekTableSeekMap(FlacStreamMetadata flacStreamMetadata, long j) {
         this.flacStreamMetadata = flacStreamMetadata;
         this.firstFrameOffset = j;
-    }
-
-    private SeekPoint getSeekPoint(long j, long j2) {
-        return new SeekPoint((j * 1000000) / this.flacStreamMetadata.sampleRate, this.firstFrameOffset + j2);
     }
 
     @Override // com.google.android.exoplayer2.extractor.SeekMap
@@ -40,8 +41,7 @@ public final class FlacSeekTableSeekMap implements SeekMap {
         return new SeekMap.SeekPoints(seekPoint, getSeekPoint(jArr[i], jArr2[i]));
     }
 
-    @Override // com.google.android.exoplayer2.extractor.SeekMap
-    public boolean isSeekable() {
-        return true;
+    private SeekPoint getSeekPoint(long j, long j2) {
+        return new SeekPoint((j * 1000000) / this.flacStreamMetadata.sampleRate, this.firstFrameOffset + j2);
     }
 }

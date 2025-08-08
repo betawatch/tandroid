@@ -20,287 +20,9 @@ import org.telegram.ui.ActionBar.Theme;
 /* loaded from: classes4.dex */
 public interface INavigationLayout {
 
-    public abstract /* synthetic */ class -CC {
-        public static void $default$dismissDialogs(INavigationLayout iNavigationLayout) {
-            List fragmentStack = iNavigationLayout.getFragmentStack();
-            if (fragmentStack.isEmpty()) {
-                return;
-            }
-            ((BaseFragment) fragmentStack.get(fragmentStack.size() - 1)).dismissCurrentDialog();
-        }
-
-        public static BaseFragment $default$findFragment(INavigationLayout iNavigationLayout, Class cls) {
-            if (iNavigationLayout.getFragmentStack().isEmpty()) {
-                return null;
-            }
-            for (int size = iNavigationLayout.getFragmentStack().size() - 1; size >= 0; size--) {
-                BaseFragment baseFragment = (BaseFragment) iNavigationLayout.getFragmentStack().get(size);
-                if (baseFragment != null && !baseFragment.isFinishing() && !baseFragment.isRemovingFromStack() && cls.isInstance(baseFragment)) {
-                    return baseFragment;
-                }
-            }
-            return null;
-        }
-
-        public static BaseFragment $default$getBackgroundFragment(INavigationLayout iNavigationLayout) {
-            if (iNavigationLayout.getFragmentStack().size() <= 1) {
-                return null;
-            }
-            return (BaseFragment) iNavigationLayout.getFragmentStack().get(iNavigationLayout.getFragmentStack().size() - 2);
-        }
-
-        public static BottomSheet $default$getBottomSheet(INavigationLayout iNavigationLayout) {
-            return null;
-        }
-
-        public static Activity $default$getParentActivity(INavigationLayout iNavigationLayout) {
-            Context context = iNavigationLayout.getView().getContext();
-            if (context instanceof Activity) {
-                return (Activity) context;
-            }
-            throw new IllegalArgumentException("NavigationLayout added in non-activity context!");
-        }
-
-        public static BaseFragment $default$getSafeLastFragment(INavigationLayout iNavigationLayout) {
-            if (iNavigationLayout.getFragmentStack().isEmpty()) {
-                return null;
-            }
-            for (int size = iNavigationLayout.getFragmentStack().size() - 1; size >= 0; size--) {
-                BaseFragment baseFragment = (BaseFragment) iNavigationLayout.getFragmentStack().get(size);
-                if (baseFragment != null && !baseFragment.isFinishing() && !baseFragment.isRemovingFromStack()) {
-                    return baseFragment;
-                }
-            }
-            return null;
-        }
-
-        /* JADX WARN: Multi-variable type inference failed */
-        public static ViewGroup $default$getView(INavigationLayout iNavigationLayout) {
-            if (iNavigationLayout instanceof ViewGroup) {
-                return (ViewGroup) iNavigationLayout;
-            }
-            throw new IllegalArgumentException("You should override getView() if you're not inheriting from it.");
-        }
-
-        public static boolean $default$hasIntegratedBlurInPreview(INavigationLayout iNavigationLayout) {
-            return false;
-        }
-
-        public static boolean $default$isActionBarInCrossfade(INavigationLayout iNavigationLayout) {
-            return false;
-        }
-
-        public static void $default$rebuildFragments(INavigationLayout iNavigationLayout, int i) {
-            if ((i & 2) != 0) {
-                iNavigationLayout.showLastFragment();
-            } else {
-                boolean z = (i & 1) != 0;
-                iNavigationLayout.rebuildAllFragmentViews(z, z);
-            }
-        }
-
-        public static void $default$removeFragmentFromStack(INavigationLayout iNavigationLayout, int i) {
-            if (i < 0 || i >= iNavigationLayout.getFragmentStack().size()) {
-                return;
-            }
-            iNavigationLayout.removeFragmentFromStack((BaseFragment) iNavigationLayout.getFragmentStack().get(i));
-        }
-
-        public static INavigationLayout newLayout(Context context, boolean z) {
-            return new ActionBarLayout(context, z);
-        }
-
-        public static INavigationLayout newLayout(Context context, boolean z, final Supplier supplier) {
-            return new ActionBarLayout(context, z) { // from class: org.telegram.ui.ActionBar.INavigationLayout.1
-                @Override // org.telegram.ui.ActionBar.ActionBarLayout, org.telegram.ui.ActionBar.INavigationLayout
-                public BottomSheet getBottomSheet() {
-                    return (BottomSheet) supplier.get();
-                }
-            };
-        }
-    }
-
     public enum BackButtonState {
         BACK,
         MENU
-    }
-
-    public interface INavigationLayoutDelegate {
-
-        public abstract /* synthetic */ class -CC {
-            public static boolean $default$needAddFragmentToStack(INavigationLayoutDelegate iNavigationLayoutDelegate, BaseFragment baseFragment, INavigationLayout iNavigationLayout) {
-                return true;
-            }
-
-            public static boolean $default$needPresentFragment(INavigationLayoutDelegate iNavigationLayoutDelegate, BaseFragment baseFragment, boolean z, boolean z2, INavigationLayout iNavigationLayout) {
-                return true;
-            }
-
-            public static void $default$onMeasureOverride(INavigationLayoutDelegate iNavigationLayoutDelegate, int[] iArr) {
-            }
-
-            public static boolean $default$onPreIme(INavigationLayoutDelegate iNavigationLayoutDelegate) {
-                return false;
-            }
-
-            public static void $default$onRebuildAllFragments(INavigationLayoutDelegate iNavigationLayoutDelegate, INavigationLayout iNavigationLayout, boolean z) {
-            }
-
-            public static void $default$onThemeProgress(INavigationLayoutDelegate iNavigationLayoutDelegate, float f) {
-            }
-        }
-
-        boolean needAddFragmentToStack(BaseFragment baseFragment, INavigationLayout iNavigationLayout);
-
-        boolean needCloseLastFragment(INavigationLayout iNavigationLayout);
-
-        boolean needPresentFragment(BaseFragment baseFragment, boolean z, boolean z2, INavigationLayout iNavigationLayout);
-
-        boolean needPresentFragment(INavigationLayout iNavigationLayout, NavigationParams navigationParams);
-
-        void onMeasureOverride(int[] iArr);
-
-        boolean onPreIme();
-
-        void onRebuildAllFragments(INavigationLayout iNavigationLayout, boolean z);
-
-        void onThemeProgress(float f);
-    }
-
-    public static class NavigationParams {
-        public boolean checkPresentFromDelegate = true;
-        public BaseFragment fragment;
-        public ActionBarPopupWindow.ActionBarPopupWindowLayout menuView;
-        public boolean noAnimation;
-        public boolean preview;
-        public boolean removeLast;
-
-        public NavigationParams(BaseFragment baseFragment) {
-            this.fragment = baseFragment;
-        }
-
-        public NavigationParams setCheckPresentFromDelegate(boolean z) {
-            this.checkPresentFromDelegate = z;
-            return this;
-        }
-
-        public NavigationParams setMenuView(ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout) {
-            this.menuView = actionBarPopupWindowLayout;
-            return this;
-        }
-
-        public NavigationParams setNoAnimation(boolean z) {
-            this.noAnimation = z;
-            return this;
-        }
-
-        public NavigationParams setPreview(boolean z) {
-            this.preview = z;
-            return this;
-        }
-
-        public NavigationParams setRemoveLast(boolean z) {
-            this.removeLast = z;
-            return this;
-        }
-    }
-
-    public static class StartColorsProvider implements Theme.ResourcesProvider {
-        SparseIntArray colors = new SparseIntArray();
-        int[] keysToSave = {Theme.key_chat_outBubble, Theme.key_chat_outBubbleGradient1, Theme.key_chat_outBubbleGradient2, Theme.key_chat_outBubbleGradient3, Theme.key_chat_outBubbleGradientAnimated, Theme.key_chat_outBubbleShadow};
-
-        @Override // org.telegram.ui.ActionBar.Theme.ResourcesProvider
-        public /* synthetic */ void applyServiceShaderMatrix(int i, int i2, float f, float f2) {
-            Theme.applyServiceShaderMatrix(i, i2, f, f2);
-        }
-
-        @Override // org.telegram.ui.ActionBar.Theme.ResourcesProvider
-        public /* synthetic */ ColorFilter getAnimatedEmojiColorFilter() {
-            ColorFilter colorFilter;
-            colorFilter = Theme.chat_animatedEmojiTextColorFilter;
-            return colorFilter;
-        }
-
-        @Override // org.telegram.ui.ActionBar.Theme.ResourcesProvider
-        public int getColor(int i) {
-            int indexOfKey = this.colors.indexOfKey(i);
-            return indexOfKey >= 0 ? this.colors.valueAt(indexOfKey) : Theme.getColor(i);
-        }
-
-        @Override // org.telegram.ui.ActionBar.Theme.ResourcesProvider
-        public /* synthetic */ int getColorOrDefault(int i) {
-            int color;
-            color = getColor(i);
-            return color;
-        }
-
-        @Override // org.telegram.ui.ActionBar.Theme.ResourcesProvider
-        public int getCurrentColor(int i) {
-            return this.colors.get(i);
-        }
-
-        @Override // org.telegram.ui.ActionBar.Theme.ResourcesProvider
-        public /* synthetic */ Drawable getDrawable(String str) {
-            return Theme.ResourcesProvider.-CC.$default$getDrawable(this, str);
-        }
-
-        @Override // org.telegram.ui.ActionBar.Theme.ResourcesProvider
-        public /* synthetic */ Paint getPaint(String str) {
-            Paint themePaint;
-            themePaint = Theme.getThemePaint(str);
-            return themePaint;
-        }
-
-        @Override // org.telegram.ui.ActionBar.Theme.ResourcesProvider
-        public /* synthetic */ boolean hasGradientService() {
-            return Theme.ResourcesProvider.-CC.$default$hasGradientService(this);
-        }
-
-        @Override // org.telegram.ui.ActionBar.Theme.ResourcesProvider
-        public /* synthetic */ boolean isDark() {
-            boolean isCurrentThemeDark;
-            isCurrentThemeDark = Theme.isCurrentThemeDark();
-            return isCurrentThemeDark;
-        }
-
-        public void saveColors(Theme.ResourcesProvider resourcesProvider) {
-            this.colors.clear();
-            for (int i : this.keysToSave) {
-                this.colors.put(i, resourcesProvider.getCurrentColor(i));
-            }
-        }
-
-        @Override // org.telegram.ui.ActionBar.Theme.ResourcesProvider
-        public /* synthetic */ void setAnimatedColor(int i, int i2) {
-            Theme.ResourcesProvider.-CC.$default$setAnimatedColor(this, i, i2);
-        }
-    }
-
-    public static class ThemeAnimationSettings {
-        public final int accentId;
-        public Runnable afterAnimationRunnable;
-        public Runnable afterStartDescriptionsAddedRunnable;
-        public onAnimationProgress animationProgress;
-        public Runnable beforeAnimationRunnable;
-        public final boolean instant;
-        public final boolean nightTheme;
-        public boolean onlyTopFragment;
-        public Theme.ResourcesProvider resourcesProvider;
-        public final Theme.ThemeInfo theme;
-        public boolean applyTheme = true;
-        public boolean applyTrulyTheme = true;
-        public long duration = 200;
-
-        public interface onAnimationProgress {
-            void setProgress(float f);
-        }
-
-        public ThemeAnimationSettings(Theme.ThemeInfo themeInfo, int i, boolean z, boolean z2) {
-            this.theme = themeInfo;
-            this.accentId = i;
-            this.nightTheme = z;
-            this.instant = z2;
-        }
     }
 
     boolean addFragmentToStack(BaseFragment baseFragment);
@@ -452,4 +174,284 @@ public interface INavigationLayout {
     void showLastFragment();
 
     void startActivityForResult(Intent intent, int i);
+
+    public abstract /* synthetic */ class -CC {
+        public static BottomSheet $default$getBottomSheet(INavigationLayout iNavigationLayout) {
+            return null;
+        }
+
+        public static boolean $default$hasIntegratedBlurInPreview(INavigationLayout iNavigationLayout) {
+            return false;
+        }
+
+        public static boolean $default$isActionBarInCrossfade(INavigationLayout iNavigationLayout) {
+            return false;
+        }
+
+        public static INavigationLayout newLayout(Context context, boolean z) {
+            return new ActionBarLayout(context, z);
+        }
+
+        public static INavigationLayout newLayout(Context context, boolean z, final Supplier supplier) {
+            return new ActionBarLayout(context, z) { // from class: org.telegram.ui.ActionBar.INavigationLayout.1
+                @Override // org.telegram.ui.ActionBar.ActionBarLayout, org.telegram.ui.ActionBar.INavigationLayout
+                public BottomSheet getBottomSheet() {
+                    return (BottomSheet) supplier.get();
+                }
+            };
+        }
+
+        public static void $default$rebuildFragments(INavigationLayout iNavigationLayout, int i) {
+            if ((i & 2) != 0) {
+                iNavigationLayout.showLastFragment();
+            } else {
+                boolean z = (i & 1) != 0;
+                iNavigationLayout.rebuildAllFragmentViews(z, z);
+            }
+        }
+
+        public static BaseFragment $default$getBackgroundFragment(INavigationLayout iNavigationLayout) {
+            if (iNavigationLayout.getFragmentStack().size() <= 1) {
+                return null;
+            }
+            return (BaseFragment) iNavigationLayout.getFragmentStack().get(iNavigationLayout.getFragmentStack().size() - 2);
+        }
+
+        public static BaseFragment $default$getSafeLastFragment(INavigationLayout iNavigationLayout) {
+            if (iNavigationLayout.getFragmentStack().isEmpty()) {
+                return null;
+            }
+            for (int size = iNavigationLayout.getFragmentStack().size() - 1; size >= 0; size--) {
+                BaseFragment baseFragment = (BaseFragment) iNavigationLayout.getFragmentStack().get(size);
+                if (baseFragment != null && !baseFragment.isFinishing() && !baseFragment.isRemovingFromStack()) {
+                    return baseFragment;
+                }
+            }
+            return null;
+        }
+
+        public static BaseFragment $default$findFragment(INavigationLayout iNavigationLayout, Class cls) {
+            if (iNavigationLayout.getFragmentStack().isEmpty()) {
+                return null;
+            }
+            for (int size = iNavigationLayout.getFragmentStack().size() - 1; size >= 0; size--) {
+                BaseFragment baseFragment = (BaseFragment) iNavigationLayout.getFragmentStack().get(size);
+                if (baseFragment != null && !baseFragment.isFinishing() && !baseFragment.isRemovingFromStack() && cls.isInstance(baseFragment)) {
+                    return baseFragment;
+                }
+            }
+            return null;
+        }
+
+        public static Activity $default$getParentActivity(INavigationLayout iNavigationLayout) {
+            Context context = iNavigationLayout.getView().getContext();
+            if (context instanceof Activity) {
+                return (Activity) context;
+            }
+            throw new IllegalArgumentException("NavigationLayout added in non-activity context!");
+        }
+
+        /* JADX WARN: Multi-variable type inference failed */
+        public static ViewGroup $default$getView(INavigationLayout iNavigationLayout) {
+            if (iNavigationLayout instanceof ViewGroup) {
+                return (ViewGroup) iNavigationLayout;
+            }
+            throw new IllegalArgumentException("You should override getView() if you're not inheriting from it.");
+        }
+
+        public static void $default$removeFragmentFromStack(INavigationLayout iNavigationLayout, int i) {
+            if (i < 0 || i >= iNavigationLayout.getFragmentStack().size()) {
+                return;
+            }
+            iNavigationLayout.removeFragmentFromStack((BaseFragment) iNavigationLayout.getFragmentStack().get(i));
+        }
+
+        public static void $default$dismissDialogs(INavigationLayout iNavigationLayout) {
+            List fragmentStack = iNavigationLayout.getFragmentStack();
+            if (fragmentStack.isEmpty()) {
+                return;
+            }
+            ((BaseFragment) fragmentStack.get(fragmentStack.size() - 1)).dismissCurrentDialog();
+        }
+    }
+
+    public interface INavigationLayoutDelegate {
+        boolean needAddFragmentToStack(BaseFragment baseFragment, INavigationLayout iNavigationLayout);
+
+        boolean needCloseLastFragment(INavigationLayout iNavigationLayout);
+
+        boolean needPresentFragment(BaseFragment baseFragment, boolean z, boolean z2, INavigationLayout iNavigationLayout);
+
+        boolean needPresentFragment(INavigationLayout iNavigationLayout, NavigationParams navigationParams);
+
+        void onMeasureOverride(int[] iArr);
+
+        boolean onPreIme();
+
+        void onRebuildAllFragments(INavigationLayout iNavigationLayout, boolean z);
+
+        void onThemeProgress(float f);
+
+        public abstract /* synthetic */ class -CC {
+            public static boolean $default$needAddFragmentToStack(INavigationLayoutDelegate iNavigationLayoutDelegate, BaseFragment baseFragment, INavigationLayout iNavigationLayout) {
+                return true;
+            }
+
+            public static boolean $default$needPresentFragment(INavigationLayoutDelegate iNavigationLayoutDelegate, BaseFragment baseFragment, boolean z, boolean z2, INavigationLayout iNavigationLayout) {
+                return true;
+            }
+
+            public static void $default$onMeasureOverride(INavigationLayoutDelegate iNavigationLayoutDelegate, int[] iArr) {
+            }
+
+            public static boolean $default$onPreIme(INavigationLayoutDelegate iNavigationLayoutDelegate) {
+                return false;
+            }
+
+            public static void $default$onRebuildAllFragments(INavigationLayoutDelegate iNavigationLayoutDelegate, INavigationLayout iNavigationLayout, boolean z) {
+            }
+
+            public static void $default$onThemeProgress(INavigationLayoutDelegate iNavigationLayoutDelegate, float f) {
+            }
+        }
+    }
+
+    public static class NavigationParams {
+        public boolean checkPresentFromDelegate = true;
+        public BaseFragment fragment;
+        public ActionBarPopupWindow.ActionBarPopupWindowLayout menuView;
+        public boolean noAnimation;
+        public boolean preview;
+        public boolean removeLast;
+
+        public NavigationParams(BaseFragment baseFragment) {
+            this.fragment = baseFragment;
+        }
+
+        public NavigationParams setRemoveLast(boolean z) {
+            this.removeLast = z;
+            return this;
+        }
+
+        public NavigationParams setNoAnimation(boolean z) {
+            this.noAnimation = z;
+            return this;
+        }
+
+        public NavigationParams setCheckPresentFromDelegate(boolean z) {
+            this.checkPresentFromDelegate = z;
+            return this;
+        }
+
+        public NavigationParams setPreview(boolean z) {
+            this.preview = z;
+            return this;
+        }
+
+        public NavigationParams setMenuView(ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout) {
+            this.menuView = actionBarPopupWindowLayout;
+            return this;
+        }
+    }
+
+    public static class ThemeAnimationSettings {
+        public final int accentId;
+        public Runnable afterAnimationRunnable;
+        public Runnable afterStartDescriptionsAddedRunnable;
+        public onAnimationProgress animationProgress;
+        public Runnable beforeAnimationRunnable;
+        public final boolean instant;
+        public final boolean nightTheme;
+        public boolean onlyTopFragment;
+        public Theme.ResourcesProvider resourcesProvider;
+        public final Theme.ThemeInfo theme;
+        public boolean applyTheme = true;
+        public boolean applyTrulyTheme = true;
+        public long duration = 200;
+
+        public interface onAnimationProgress {
+            void setProgress(float f);
+        }
+
+        public ThemeAnimationSettings(Theme.ThemeInfo themeInfo, int i, boolean z, boolean z2) {
+            this.theme = themeInfo;
+            this.accentId = i;
+            this.nightTheme = z;
+            this.instant = z2;
+        }
+    }
+
+    public static class StartColorsProvider implements Theme.ResourcesProvider {
+        SparseIntArray colors = new SparseIntArray();
+        int[] keysToSave = {Theme.key_chat_outBubble, Theme.key_chat_outBubbleGradient1, Theme.key_chat_outBubbleGradient2, Theme.key_chat_outBubbleGradient3, Theme.key_chat_outBubbleGradientAnimated, Theme.key_chat_outBubbleShadow};
+
+        @Override // org.telegram.ui.ActionBar.Theme.ResourcesProvider
+        public /* synthetic */ void applyServiceShaderMatrix(int i, int i2, float f, float f2) {
+            Theme.applyServiceShaderMatrix(i, i2, f, f2);
+        }
+
+        @Override // org.telegram.ui.ActionBar.Theme.ResourcesProvider
+        public /* synthetic */ ColorFilter getAnimatedEmojiColorFilter() {
+            ColorFilter colorFilter;
+            colorFilter = Theme.chat_animatedEmojiTextColorFilter;
+            return colorFilter;
+        }
+
+        @Override // org.telegram.ui.ActionBar.Theme.ResourcesProvider
+        public /* synthetic */ int getColorOrDefault(int i) {
+            int color;
+            color = getColor(i);
+            return color;
+        }
+
+        @Override // org.telegram.ui.ActionBar.Theme.ResourcesProvider
+        public /* synthetic */ Drawable getDrawable(String str) {
+            return Theme.ResourcesProvider.-CC.$default$getDrawable(this, str);
+        }
+
+        @Override // org.telegram.ui.ActionBar.Theme.ResourcesProvider
+        public /* synthetic */ Paint getPaint(String str) {
+            Paint themePaint;
+            themePaint = Theme.getThemePaint(str);
+            return themePaint;
+        }
+
+        @Override // org.telegram.ui.ActionBar.Theme.ResourcesProvider
+        public /* synthetic */ boolean hasGradientService() {
+            return Theme.ResourcesProvider.-CC.$default$hasGradientService(this);
+        }
+
+        @Override // org.telegram.ui.ActionBar.Theme.ResourcesProvider
+        public /* synthetic */ boolean isDark() {
+            boolean isCurrentThemeDark;
+            isCurrentThemeDark = Theme.isCurrentThemeDark();
+            return isCurrentThemeDark;
+        }
+
+        @Override // org.telegram.ui.ActionBar.Theme.ResourcesProvider
+        public /* synthetic */ void setAnimatedColor(int i, int i2) {
+            Theme.ResourcesProvider.-CC.$default$setAnimatedColor(this, i, i2);
+        }
+
+        @Override // org.telegram.ui.ActionBar.Theme.ResourcesProvider
+        public int getColor(int i) {
+            int indexOfKey = this.colors.indexOfKey(i);
+            if (indexOfKey >= 0) {
+                return this.colors.valueAt(indexOfKey);
+            }
+            return Theme.getColor(i);
+        }
+
+        @Override // org.telegram.ui.ActionBar.Theme.ResourcesProvider
+        public int getCurrentColor(int i) {
+            return this.colors.get(i);
+        }
+
+        public void saveColors(Theme.ResourcesProvider resourcesProvider) {
+            this.colors.clear();
+            for (int i : this.keysToSave) {
+                this.colors.put(i, resourcesProvider.getCurrentColor(i));
+            }
+        }
+    }
 }

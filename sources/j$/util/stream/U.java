@@ -1,31 +1,24 @@
 package j$.util.stream;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class U implements j$.util.function.E {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ e2 b;
+final class U extends X1 {
+    public final /* synthetic */ int b;
 
-    public /* synthetic */ U(int i, e2 e2Var) {
-        this.a = i;
-        this.b = e2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ U(int i, d2 d2Var) {
+        super(d2Var);
+        this.b = i;
     }
 
-    @Override // j$.util.function.E
+    @Override // j$.util.stream.d2
     public final void accept(int i) {
-        switch (this.a) {
+        switch (this.b) {
             case 0:
-                this.b.accept(i);
+                this.a.accept(i);
                 break;
             default:
-                ((W) this.b).a.accept(i);
+                this.a.accept(i);
                 break;
         }
-    }
-
-    @Override // j$.util.function.E
-    public final /* synthetic */ j$.util.function.E l(j$.util.function.E e) {
-        switch (this.a) {
-        }
-        return j$.com.android.tools.r8.a.c(this, e);
     }
 }

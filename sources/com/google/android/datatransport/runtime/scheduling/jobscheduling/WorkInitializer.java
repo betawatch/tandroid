@@ -20,13 +20,13 @@ public class WorkInitializer {
         this.guard = synchronizationGuard;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Object lambda$ensureContextsScheduled$0() {
-        Iterator it = this.store.loadActiveContexts().iterator();
-        while (it.hasNext()) {
-            this.scheduler.schedule((TransportContext) it.next(), 1);
-        }
-        return null;
+    public void ensureContextsScheduled() {
+        this.executor.execute(new Runnable() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.WorkInitializer$$ExternalSyntheticLambda0
+            @Override // java.lang.Runnable
+            public final void run() {
+                WorkInitializer.this.lambda$ensureContextsScheduled$1();
+            }
+        });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -41,12 +41,12 @@ public class WorkInitializer {
         });
     }
 
-    public void ensureContextsScheduled() {
-        this.executor.execute(new Runnable() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.WorkInitializer$$ExternalSyntheticLambda0
-            @Override // java.lang.Runnable
-            public final void run() {
-                WorkInitializer.this.lambda$ensureContextsScheduled$1();
-            }
-        });
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ Object lambda$ensureContextsScheduled$0() {
+        Iterator it = this.store.loadActiveContexts().iterator();
+        while (it.hasNext()) {
+            this.scheduler.schedule((TransportContext) it.next(), 1);
+        }
+        return null;
     }
 }

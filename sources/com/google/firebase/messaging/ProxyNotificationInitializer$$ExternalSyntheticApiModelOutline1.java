@@ -1,5 +1,5 @@
 package com.google.firebase.messaging;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract /* synthetic */ class ProxyNotificationInitializer$$ExternalSyntheticApiModelOutline1 {
 }

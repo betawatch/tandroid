@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class PlayPauseDrawable extends Drawable {
     private int alpha = NotificationCenter.goingToPreviewTheme;
     float duration = 300.0f;
@@ -21,6 +21,11 @@ public class PlayPauseDrawable extends Drawable {
     private float progress;
     private final int size;
 
+    @Override // android.graphics.drawable.Drawable
+    public int getOpacity() {
+        return -2;
+    }
+
     public PlayPauseDrawable(int i) {
         this.size = AndroidUtilities.dp(i);
         Paint paint = new Paint(1);
@@ -28,34 +33,23 @@ public class PlayPauseDrawable extends Drawable {
         paint.setColor(-1);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x002e, code lost:
-    
-        if (r0 != null) goto L23;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:30:0x004f, code lost:
-    
-        invalidateSelf();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x004c, code lost:
-    
-        r0.invalidate();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x004a, code lost:
-    
-        if (r0 != null) goto L23;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x005c  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0099  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x00e4  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x00a4  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0060  */
+    public void setColor(int i) {
+        this.paint.setColor(i);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0062  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x009f  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x00ea  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x00aa  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0066  */
     @Override // android.graphics.drawable.Drawable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void draw(Canvas canvas) {
-        View view;
         int i;
+        float f;
+        float interpolation;
         PathAnimator pathAnimator;
         long currentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis();
         long j = currentAnimationTimeMillis - this.lastUpdateTime;
@@ -65,33 +59,42 @@ public class PlayPauseDrawable extends Drawable {
         }
         boolean z = this.pause;
         if (z) {
-            float f = this.progress;
-            if (f < 1.0f) {
-                float f2 = f + (j / this.duration);
-                this.progress = f2;
-                if (f2 >= 1.0f) {
+            float f2 = this.progress;
+            if (f2 < 1.0f) {
+                float f3 = f2 + (j / this.duration);
+                this.progress = f3;
+                if (f3 >= 1.0f) {
                     this.progress = 1.0f;
-                    android.graphics.Rect bounds = getBounds();
-                    i = this.alpha;
-                    if (i != 255) {
-                        canvas.save();
-                    } else {
-                        canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, i, 31);
+                } else {
+                    View view = this.parent;
+                    if (view != null) {
+                        view.invalidate();
                     }
-                    canvas.translate(bounds.centerX() + (AndroidUtilities.dp(1.0f) * (1.0f - this.progress)), bounds.centerY());
-                    float f3 = this.progress * 500.0f;
-                    float interpolation = f3 >= 100.0f ? CubicBezierInterpolator.EASE_BOTH.getInterpolation(f3 / 100.0f) * (-5.0f) : f3 < 484.0f ? (CubicBezierInterpolator.EASE_BOTH.getInterpolation((f3 - 100.0f) / 384.0f) * 95.0f) - 5.0f : 90.0f;
-                    canvas.scale((this.size * 1.45f) / AndroidUtilities.dp(28.0f), (this.size * 1.5f) / AndroidUtilities.dp(28.0f));
-                    canvas.rotate(interpolation);
-                    pathAnimator = Theme.playPauseAnimator;
-                    if (pathAnimator != null) {
-                        pathAnimator.draw(canvas, this.paint, f3);
-                        canvas.scale(1.0f, -1.0f);
-                        Theme.playPauseAnimator.draw(canvas, this.paint, f3);
-                    }
-                    canvas.restore();
+                    invalidateSelf();
                 }
-                view = this.parent;
+                android.graphics.Rect bounds = getBounds();
+                i = this.alpha;
+                if (i != 255) {
+                    canvas.save();
+                } else {
+                    canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, i, 31);
+                }
+                canvas.translate(bounds.centerX() + (AndroidUtilities.dp(1.0f) * (1.0f - this.progress)), bounds.centerY());
+                f = this.progress * 500.0f;
+                if (f >= 100.0f) {
+                    interpolation = CubicBezierInterpolator.EASE_BOTH.getInterpolation(f / 100.0f) * (-5.0f);
+                } else {
+                    interpolation = f < 484.0f ? (CubicBezierInterpolator.EASE_BOTH.getInterpolation((f - 100.0f) / 384.0f) * 95.0f) - 5.0f : 90.0f;
+                }
+                canvas.scale((this.size * 1.45f) / AndroidUtilities.dp(28.0f), (this.size * 1.5f) / AndroidUtilities.dp(28.0f));
+                canvas.rotate(interpolation);
+                pathAnimator = Theme.playPauseAnimator;
+                if (pathAnimator != null) {
+                    pathAnimator.draw(canvas, this.paint, f);
+                    canvas.scale(1.0f, -1.0f);
+                    Theme.playPauseAnimator.draw(canvas, this.paint, f);
+                }
+                canvas.restore();
             }
         }
         if (!z) {
@@ -102,7 +105,11 @@ public class PlayPauseDrawable extends Drawable {
                 if (f5 <= 0.0f) {
                     this.progress = 0.0f;
                 } else {
-                    view = this.parent;
+                    View view2 = this.parent;
+                    if (view2 != null) {
+                        view2.invalidate();
+                    }
+                    invalidateSelf();
                 }
             }
         }
@@ -111,8 +118,8 @@ public class PlayPauseDrawable extends Drawable {
         if (i != 255) {
         }
         canvas.translate(bounds2.centerX() + (AndroidUtilities.dp(1.0f) * (1.0f - this.progress)), bounds2.centerY());
-        float f32 = this.progress * 500.0f;
-        if (f32 >= 100.0f) {
+        f = this.progress * 500.0f;
+        if (f >= 100.0f) {
         }
         canvas.scale((this.size * 1.45f) / AndroidUtilities.dp(28.0f), (this.size * 1.5f) / AndroidUtilities.dp(28.0f));
         canvas.rotate(interpolation);
@@ -120,43 +127,6 @@ public class PlayPauseDrawable extends Drawable {
         if (pathAnimator != null) {
         }
         canvas.restore();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int getIntrinsicHeight() {
-        return this.size;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int getIntrinsicWidth() {
-        return this.size;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setAlpha(int i) {
-        this.alpha = i;
-    }
-
-    public void setColor(int i) {
-        this.paint.setColor(i);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setColorFilter(ColorFilter colorFilter) {
-        this.paint.setColorFilter(colorFilter);
-    }
-
-    public void setDuration(int i) {
-        this.duration = i;
-    }
-
-    public void setParent(View view) {
-        this.parent = view;
     }
 
     public void setPause(boolean z) {
@@ -172,5 +142,33 @@ public class PlayPauseDrawable extends Drawable {
             this.lastUpdateTime = AnimationUtils.currentAnimationTimeMillis();
             invalidateSelf();
         }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setAlpha(int i) {
+        this.alpha = i;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setColorFilter(ColorFilter colorFilter) {
+        this.paint.setColorFilter(colorFilter);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int getIntrinsicWidth() {
+        return this.size;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int getIntrinsicHeight() {
+        return this.size;
+    }
+
+    public void setParent(View view) {
+        this.parent = view;
+    }
+
+    public void setDuration(int i) {
+        this.duration = i;
     }
 }

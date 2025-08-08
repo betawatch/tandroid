@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class ProxyDrawable extends Drawable {
     private boolean connected;
     private float connectedAnimationProgress;
@@ -24,6 +24,15 @@ public class ProxyDrawable extends Drawable {
     private int radOffset = 0;
     private int colorKey = -1;
 
+    @Override // android.graphics.drawable.Drawable
+    public int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setAlpha(int i) {
+    }
+
     public ProxyDrawable(Context context) {
         this.emptyDrawable = context.getResources().getDrawable(R.drawable.msg2_proxy_off).mutate();
         this.fullDrawable = context.getResources().getDrawable(R.drawable.msg2_proxy_on).mutate();
@@ -33,9 +42,14 @@ public class ProxyDrawable extends Drawable {
         this.lastUpdateTime = SystemClock.elapsedRealtime();
     }
 
-    private void setBounds(Drawable drawable) {
-        android.graphics.Rect bounds = getBounds();
-        drawable.setBounds(bounds.centerX() - (drawable.getIntrinsicWidth() / 2), bounds.centerY() - (drawable.getIntrinsicHeight() / 2), bounds.centerX() + (drawable.getIntrinsicWidth() / 2), bounds.centerY() + (drawable.getIntrinsicHeight() / 2));
+    public void setConnected(boolean z, boolean z2, boolean z3) {
+        this.isEnabled = z;
+        this.connected = z2;
+        this.lastUpdateTime = SystemClock.elapsedRealtime();
+        if (!z3) {
+            this.connectedAnimationProgress = this.connected ? 1.0f : 0.0f;
+        }
+        invalidateSelf();
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -79,6 +93,7 @@ public class ProxyDrawable extends Drawable {
                     this.connectedAnimationProgress = 1.0f;
                 }
                 invalidateSelf();
+                return;
             }
         }
         if (z) {
@@ -95,23 +110,9 @@ public class ProxyDrawable extends Drawable {
         }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public int getIntrinsicHeight() {
-        return AndroidUtilities.dp(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int getIntrinsicWidth() {
-        return AndroidUtilities.dp(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setAlpha(int i) {
+    private void setBounds(Drawable drawable) {
+        android.graphics.Rect bounds = getBounds();
+        drawable.setBounds(bounds.centerX() - (drawable.getIntrinsicWidth() / 2), bounds.centerY() - (drawable.getIntrinsicHeight() / 2), bounds.centerX() + (drawable.getIntrinsicWidth() / 2), bounds.centerY() + (drawable.getIntrinsicHeight() / 2));
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -124,13 +125,13 @@ public class ProxyDrawable extends Drawable {
         this.colorKey = i;
     }
 
-    public void setConnected(boolean z, boolean z2, boolean z3) {
-        this.isEnabled = z;
-        this.connected = z2;
-        this.lastUpdateTime = SystemClock.elapsedRealtime();
-        if (!z3) {
-            this.connectedAnimationProgress = this.connected ? 1.0f : 0.0f;
-        }
-        invalidateSelf();
+    @Override // android.graphics.drawable.Drawable
+    public int getIntrinsicWidth() {
+        return AndroidUtilities.dp(24.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int getIntrinsicHeight() {
+        return AndroidUtilities.dp(24.0f);
     }
 }

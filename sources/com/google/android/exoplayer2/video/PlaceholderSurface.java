@@ -21,6 +21,56 @@ public final class PlaceholderSurface extends Surface {
     private final PlaceholderSurfaceThread thread;
     private boolean threadReleased;
 
+    public static synchronized boolean isSecureSupported(Context context) {
+        boolean z;
+        synchronized (PlaceholderSurface.class) {
+            try {
+                if (!secureModeInitialized) {
+                    secureMode = getSecureMode(context);
+                    secureModeInitialized = true;
+                }
+                z = secureMode != 0;
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+        return z;
+    }
+
+    public static PlaceholderSurface newInstanceV17(Context context, boolean z, EGLContext eGLContext) {
+        Assertions.checkState(!z || isSecureSupported(context));
+        return new PlaceholderSurfaceThread().init(z ? secureMode : 0, eGLContext);
+    }
+
+    private PlaceholderSurface(PlaceholderSurfaceThread placeholderSurfaceThread, SurfaceTexture surfaceTexture, boolean z, EGLContext eGLContext) {
+        super(surfaceTexture);
+        this.thread = placeholderSurfaceThread;
+        this.secure = z;
+        this.parentContext = eGLContext;
+    }
+
+    @Override // android.view.Surface
+    public void release() {
+        super.release();
+        synchronized (this.thread) {
+            try {
+                if (!this.threadReleased) {
+                    this.thread.release();
+                    this.threadReleased = true;
+                }
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+    }
+
+    private static int getSecureMode(Context context) {
+        if (GlUtil.isProtectedContentExtensionSupported(context)) {
+            return GlUtil.isSurfacelessContextExtensionSupported() ? 1 : 2;
+        }
+        return 0;
+    }
+
     private static class PlaceholderSurfaceThread extends HandlerThread implements Handler.Callback {
         private EGLSurfaceTexture eglSurfaceTexture;
         private Handler handler;
@@ -32,15 +82,39 @@ public final class PlaceholderSurface extends Surface {
             super("ExoPlayer:PlaceholderSurface");
         }
 
-        private void initInternal(int i, EGLContext eGLContext) {
-            Assertions.checkNotNull(this.eglSurfaceTexture);
-            this.eglSurfaceTexture.init(i, eGLContext);
-            this.surface = new PlaceholderSurface(this, this.eglSurfaceTexture.getSurfaceTexture(), i != 0, eGLContext);
+        public PlaceholderSurface init(int i, EGLContext eGLContext) {
+            boolean z;
+            start();
+            this.handler = new Handler(getLooper(), this);
+            this.eglSurfaceTexture = new EGLSurfaceTexture(this.handler);
+            synchronized (this) {
+                z = false;
+                this.handler.obtainMessage(1, i, 0, eGLContext).sendToTarget();
+                while (this.surface == null && this.initException == null && this.initError == null) {
+                    try {
+                        wait();
+                    } catch (InterruptedException unused) {
+                        z = true;
+                    }
+                }
+            }
+            if (z) {
+                Thread.currentThread().interrupt();
+            }
+            RuntimeException runtimeException = this.initException;
+            if (runtimeException != null) {
+                throw runtimeException;
+            }
+            Error error = this.initError;
+            if (error != null) {
+                throw error;
+            }
+            return (PlaceholderSurface) Assertions.checkNotNull(this.surface);
         }
 
-        private void releaseInternal() {
-            Assertions.checkNotNull(this.eglSurfaceTexture);
-            this.eglSurfaceTexture.release();
+        public void release() {
+            Assertions.checkNotNull(this.handler);
+            this.handler.sendEmptyMessage(2);
         }
 
         @Override // android.os.Handler.Callback
@@ -100,89 +174,15 @@ public final class PlaceholderSurface extends Surface {
             }
         }
 
-        public PlaceholderSurface init(int i, EGLContext eGLContext) {
-            boolean z;
-            start();
-            this.handler = new Handler(getLooper(), this);
-            this.eglSurfaceTexture = new EGLSurfaceTexture(this.handler);
-            synchronized (this) {
-                z = false;
-                this.handler.obtainMessage(1, i, 0, eGLContext).sendToTarget();
-                while (this.surface == null && this.initException == null && this.initError == null) {
-                    try {
-                        wait();
-                    } catch (InterruptedException unused) {
-                        z = true;
-                    }
-                }
-            }
-            if (z) {
-                Thread.currentThread().interrupt();
-            }
-            RuntimeException runtimeException = this.initException;
-            if (runtimeException != null) {
-                throw runtimeException;
-            }
-            Error error = this.initError;
-            if (error == null) {
-                return (PlaceholderSurface) Assertions.checkNotNull(this.surface);
-            }
-            throw error;
+        private void initInternal(int i, EGLContext eGLContext) {
+            Assertions.checkNotNull(this.eglSurfaceTexture);
+            this.eglSurfaceTexture.init(i, eGLContext);
+            this.surface = new PlaceholderSurface(this, this.eglSurfaceTexture.getSurfaceTexture(), i != 0, eGLContext);
         }
 
-        public void release() {
-            Assertions.checkNotNull(this.handler);
-            this.handler.sendEmptyMessage(2);
-        }
-    }
-
-    private PlaceholderSurface(PlaceholderSurfaceThread placeholderSurfaceThread, SurfaceTexture surfaceTexture, boolean z, EGLContext eGLContext) {
-        super(surfaceTexture);
-        this.thread = placeholderSurfaceThread;
-        this.secure = z;
-        this.parentContext = eGLContext;
-    }
-
-    private static int getSecureMode(Context context) {
-        if (GlUtil.isProtectedContentExtensionSupported(context)) {
-            return GlUtil.isSurfacelessContextExtensionSupported() ? 1 : 2;
-        }
-        return 0;
-    }
-
-    public static synchronized boolean isSecureSupported(Context context) {
-        boolean z;
-        synchronized (PlaceholderSurface.class) {
-            try {
-                if (!secureModeInitialized) {
-                    secureMode = getSecureMode(context);
-                    secureModeInitialized = true;
-                }
-                z = secureMode != 0;
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-        return z;
-    }
-
-    public static PlaceholderSurface newInstanceV17(Context context, boolean z, EGLContext eGLContext) {
-        Assertions.checkState(!z || isSecureSupported(context));
-        return new PlaceholderSurfaceThread().init(z ? secureMode : 0, eGLContext);
-    }
-
-    @Override // android.view.Surface
-    public void release() {
-        super.release();
-        synchronized (this.thread) {
-            try {
-                if (!this.threadReleased) {
-                    this.thread.release();
-                    this.threadReleased = true;
-                }
-            } catch (Throwable th) {
-                throw th;
-            }
+        private void releaseInternal() {
+            Assertions.checkNotNull(this.eglSurfaceTexture);
+            this.eglSurfaceTexture.release();
         }
     }
 }

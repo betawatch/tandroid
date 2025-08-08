@@ -10,7 +10,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class StarRatingView extends View {
     private final Colors colors;
     private Delegate delegate;
@@ -19,56 +19,6 @@ public class StarRatingView extends View {
     private final AnimatedFloat isVisibleAnimator;
     private boolean isVisibleExternal;
     private boolean isVisibleInternal;
-
-    private static class Colors {
-        public int backgroundColor;
-        public int backgroundTextColor;
-        public int fillingColor;
-        public int fillingTextColor;
-        private float parentExpanded;
-        public MessagesController.PeerColor peerColor;
-
-        private Colors() {
-            this.backgroundColor = -16777216;
-            this.fillingColor = -1;
-            this.backgroundTextColor = -1;
-            this.fillingTextColor = -16777216;
-        }
-
-        public void reset() {
-            int i = Theme.key_actionBarDefault;
-            int tabsViewBackgroundColor = StarRatingView.getTabsViewBackgroundColor(null, Theme.getColor(i), Theme.getColor(i), this.parentExpanded);
-            this.fillingTextColor = tabsViewBackgroundColor;
-            this.backgroundColor = tabsViewBackgroundColor;
-            int color = Theme.getColor(Theme.key_actionBarDefaultTitle);
-            this.fillingColor = color;
-            this.backgroundTextColor = color;
-            this.fillingTextColor |= -16777216;
-        }
-
-        public void setParentExpanded(float f) {
-            this.parentExpanded = f;
-            update(this.peerColor);
-        }
-
-        public void update(MessagesController.PeerColor peerColor) {
-            this.peerColor = peerColor;
-            if (peerColor == null) {
-                reset();
-                return;
-            }
-            int bgColor1 = peerColor.getBgColor1(Theme.isCurrentThemeDark());
-            int bgColor2 = peerColor.getBgColor2(Theme.isCurrentThemeDark());
-            int i = AndroidUtilities.computePerceivedBrightness(this.backgroundColor) > 0.721f ? -16777216 : -1;
-            int tabsViewBackgroundColor = StarRatingView.getTabsViewBackgroundColor(null, bgColor2, bgColor1, this.parentExpanded);
-            this.fillingTextColor = tabsViewBackgroundColor;
-            this.backgroundColor = tabsViewBackgroundColor;
-            int blendARGB = ColorUtils.blendARGB(i, Theme.getColor(Theme.key_actionBarDefaultTitle), this.parentExpanded);
-            this.fillingColor = blendARGB;
-            this.backgroundTextColor = blendARGB;
-            this.fillingTextColor |= -16777216;
-        }
-    }
 
     public interface Delegate {
         void onUpdateState(float f);
@@ -92,6 +42,30 @@ public class StarRatingView extends View {
         checkVisibility();
     }
 
+    @Override // android.view.View
+    protected boolean verifyDrawable(Drawable drawable) {
+        return super.verifyDrawable(drawable) || drawable == this.drawable;
+    }
+
+    public void setDelegate(Delegate delegate) {
+        this.delegate = delegate;
+    }
+
+    public void set(TL_stars.Tl_starsRating tl_starsRating) {
+        this.isVisibleInternal = tl_starsRating != null;
+        checkVisibility();
+        if (tl_starsRating == null) {
+            return;
+        }
+        this.drawable.setBadgeLevel(tl_starsRating.level, true);
+        invalidate();
+    }
+
+    public void setVisibility(boolean z) {
+        this.isVisibleExternal = z;
+        checkVisibility();
+    }
+
     private void checkVisibility() {
         boolean z = this.isVisibleExternal && this.isVisibleInternal;
         this.isVisible = z;
@@ -99,45 +73,6 @@ public class StarRatingView extends View {
         setEnabled(this.isVisible);
         setClickable(this.isVisible);
         invalidate();
-    }
-
-    public static int getTabsViewBackgroundColor(Theme.ResourcesProvider resourcesProvider, int i, int i2, float f) {
-        return ColorUtils.blendARGB(-1342177280, AndroidUtilities.computePerceivedBrightness(ColorUtils.blendARGB(i, i2, 0.75f)) > 0.721f ? Theme.getColor(Theme.key_windowBackgroundWhiteBlueIcon, resourcesProvider) : Theme.adaptHSV(ColorUtils.blendARGB(i, i2, 0.75f), 0.08f, -0.08f), 1.0f - f);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onUpdateVisibilityFactor$0() {
-        Delegate delegate = this.delegate;
-        if (delegate != null) {
-            delegate.onUpdateState(getVisibilityFactor());
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public void onUpdateVisibilityFactor() {
-        invalidate();
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.StarRatingView$$ExternalSyntheticLambda1
-            @Override // java.lang.Runnable
-            public final void run() {
-                StarRatingView.this.lambda$onUpdateVisibilityFactor$0();
-            }
-        });
-    }
-
-    public float getVisibilityFactor() {
-        return this.isVisibleAnimator.get();
-    }
-
-    @Override // android.view.View
-    protected void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.drawable.debugUpdateStart();
-    }
-
-    @Override // android.view.View
-    protected void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.drawable.debugUpdateStop();
     }
 
     @Override // android.view.View
@@ -156,28 +91,39 @@ public class StarRatingView extends View {
         canvas.restore();
     }
 
-    public void set(TL_stars.Tl_starsRating tl_starsRating) {
-        this.isVisibleInternal = tl_starsRating != null;
-        checkVisibility();
-        if (tl_starsRating == null) {
-            return;
+    @Override // android.view.View
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.drawable.debugUpdateStart();
+    }
+
+    @Override // android.view.View
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.drawable.debugUpdateStop();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void onUpdateVisibilityFactor() {
+        invalidate();
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.StarRatingView$$ExternalSyntheticLambda1
+            @Override // java.lang.Runnable
+            public final void run() {
+                StarRatingView.this.lambda$onUpdateVisibilityFactor$0();
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$onUpdateVisibilityFactor$0() {
+        Delegate delegate = this.delegate;
+        if (delegate != null) {
+            delegate.onUpdateState(getVisibilityFactor());
         }
-        this.drawable.setBadgeLevel(tl_starsRating.level, true);
-        invalidate();
     }
 
-    public void setDelegate(Delegate delegate) {
-        this.delegate = delegate;
-    }
-
-    public void setParentExpanded(float f) {
-        this.colors.setParentExpanded(f);
-        invalidate();
-    }
-
-    public void setVisibility(boolean z) {
-        this.isVisibleExternal = z;
-        checkVisibility();
+    public float getVisibilityFactor() {
+        return this.isVisibleAnimator.get();
     }
 
     public void updateColors(MessagesController.PeerColor peerColor) {
@@ -185,8 +131,68 @@ public class StarRatingView extends View {
         invalidate();
     }
 
-    @Override // android.view.View
-    protected boolean verifyDrawable(Drawable drawable) {
-        return super.verifyDrawable(drawable) || drawable == this.drawable;
+    public void setParentExpanded(float f) {
+        this.colors.setParentExpanded(f);
+        invalidate();
+    }
+
+    private static class Colors {
+        public int backgroundColor;
+        public int backgroundTextColor;
+        public int fillingColor;
+        public int fillingTextColor;
+        private float parentExpanded;
+        public MessagesController.PeerColor peerColor;
+
+        private Colors() {
+            this.backgroundColor = -16777216;
+            this.fillingColor = -1;
+            this.backgroundTextColor = -1;
+            this.fillingTextColor = -16777216;
+        }
+
+        public void update(MessagesController.PeerColor peerColor) {
+            this.peerColor = peerColor;
+            if (peerColor == null) {
+                reset();
+                return;
+            }
+            int bgColor1 = peerColor.getBgColor1(Theme.isCurrentThemeDark());
+            int bgColor2 = peerColor.getBgColor2(Theme.isCurrentThemeDark());
+            int i = AndroidUtilities.computePerceivedBrightness(this.backgroundColor) > 0.721f ? -16777216 : -1;
+            int tabsViewBackgroundColor = StarRatingView.getTabsViewBackgroundColor(null, bgColor2, bgColor1, this.parentExpanded);
+            this.fillingTextColor = tabsViewBackgroundColor;
+            this.backgroundColor = tabsViewBackgroundColor;
+            int blendARGB = ColorUtils.blendARGB(i, Theme.getColor(Theme.key_actionBarDefaultTitle), this.parentExpanded);
+            this.fillingColor = blendARGB;
+            this.backgroundTextColor = blendARGB;
+            this.fillingTextColor |= -16777216;
+        }
+
+        public void reset() {
+            int i = Theme.key_actionBarDefault;
+            int tabsViewBackgroundColor = StarRatingView.getTabsViewBackgroundColor(null, Theme.getColor(i), Theme.getColor(i), this.parentExpanded);
+            this.fillingTextColor = tabsViewBackgroundColor;
+            this.backgroundColor = tabsViewBackgroundColor;
+            int color = Theme.getColor(Theme.key_actionBarDefaultTitle);
+            this.fillingColor = color;
+            this.backgroundTextColor = color;
+            this.fillingTextColor |= -16777216;
+        }
+
+        public void setParentExpanded(float f) {
+            this.parentExpanded = f;
+            update(this.peerColor);
+        }
+    }
+
+    public static int getTabsViewBackgroundColor(Theme.ResourcesProvider resourcesProvider, int i, int i2, float f) {
+        int adaptHSV;
+        if (AndroidUtilities.computePerceivedBrightness(ColorUtils.blendARGB(i, i2, 0.75f)) > 0.721f) {
+            adaptHSV = Theme.getColor(Theme.key_windowBackgroundWhiteBlueIcon, resourcesProvider);
+        } else {
+            adaptHSV = Theme.adaptHSV(ColorUtils.blendARGB(i, i2, 0.75f), 0.08f, -0.08f);
+        }
+        return ColorUtils.blendARGB(-1342177280, adaptHSV, 1.0f - f);
     }
 }

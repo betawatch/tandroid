@@ -30,6 +30,26 @@ public final class CueGroup implements Bundleable {
         this.presentationTimeUs = j;
     }
 
+    @Override // com.google.android.exoplayer2.Bundleable
+    public Bundle toBundle() {
+        Bundle bundle = new Bundle();
+        bundle.putParcelableArrayList(FIELD_CUES, BundleableUtil.toBundleArrayList(filterOutBitmapCues(this.cues)));
+        bundle.putLong(FIELD_PRESENTATION_TIME_US, this.presentationTimeUs);
+        return bundle;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final CueGroup fromBundle(Bundle bundle) {
+        ImmutableList fromBundleList;
+        ArrayList parcelableArrayList = bundle.getParcelableArrayList(FIELD_CUES);
+        if (parcelableArrayList == null) {
+            fromBundleList = ImmutableList.of();
+        } else {
+            fromBundleList = BundleableUtil.fromBundleList(Cue.CREATOR, parcelableArrayList);
+        }
+        return new CueGroup(fromBundleList, bundle.getLong(FIELD_PRESENTATION_TIME_US));
+    }
+
     private static ImmutableList filterOutBitmapCues(List list) {
         ImmutableList.Builder builder = ImmutableList.builder();
         for (int i = 0; i < list.size(); i++) {
@@ -38,19 +58,5 @@ public final class CueGroup implements Bundleable {
             }
         }
         return builder.build();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final CueGroup fromBundle(Bundle bundle) {
-        ArrayList parcelableArrayList = bundle.getParcelableArrayList(FIELD_CUES);
-        return new CueGroup(parcelableArrayList == null ? ImmutableList.of() : BundleableUtil.fromBundleList(Cue.CREATOR, parcelableArrayList), bundle.getLong(FIELD_PRESENTATION_TIME_US));
-    }
-
-    @Override // com.google.android.exoplayer2.Bundleable
-    public Bundle toBundle() {
-        Bundle bundle = new Bundle();
-        bundle.putParcelableArrayList(FIELD_CUES, BundleableUtil.toBundleArrayList(filterOutBitmapCues(this.cues)));
-        bundle.putLong(FIELD_PRESENTATION_TIME_US, this.presentationTimeUs);
-        return bundle;
     }
 }

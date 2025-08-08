@@ -62,6 +62,11 @@ public class TrashView extends View {
     }
 
     @Override // android.view.View
+    protected boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.textDrawable || super.verifyDrawable(drawable);
+    }
+
+    @Override // android.view.View
     protected void dispatchDraw(Canvas canvas) {
         float dp = AndroidUtilities.dp(30.0f);
         float width = getWidth() / 2.0f;
@@ -76,6 +81,11 @@ public class TrashView extends View {
         this.textDrawable.draw(canvas);
     }
 
+    @Override // android.view.View
+    protected void onMeasure(int i, int i2) {
+        setMeasuredDimension(i, AndroidUtilities.dp(120.0f));
+    }
+
     public void onDragInfo(boolean z, boolean z2) {
         this.bounce.setPressed(z);
         this.textDrawable.setText(LocaleController.getString((z || z2) ? R.string.TrashHintRelease : R.string.TrashHintDrag));
@@ -86,20 +96,11 @@ public class TrashView extends View {
                 this.drawable.setCurrentFrame(0, false);
             }
             this.drawable.setCustomEndFrame(33);
+            this.drawable.start();
         } else {
             this.drawable.setCustomEndFrame(z2 ? 66 : 0);
+            this.drawable.start();
         }
-        this.drawable.start();
         invalidate();
-    }
-
-    @Override // android.view.View
-    protected void onMeasure(int i, int i2) {
-        setMeasuredDimension(i, AndroidUtilities.dp(120.0f));
-    }
-
-    @Override // android.view.View
-    protected boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.textDrawable || super.verifyDrawable(drawable);
     }
 }

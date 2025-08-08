@@ -29,39 +29,6 @@ public abstract class MediaCodecUtil {
     private static final HashMap decoderInfosCache = new HashMap();
     private static int maxH264DecodableFrameSize = -1;
 
-    private static final class CodecKey {
-        public final String mimeType;
-        public final boolean secure;
-        public final boolean tunneling;
-
-        public CodecKey(String str, boolean z, boolean z2) {
-            this.mimeType = str;
-            this.secure = z;
-            this.tunneling = z2;
-        }
-
-        public boolean equals(Object obj) {
-            if (this == obj) {
-                return true;
-            }
-            if (obj == null || obj.getClass() != CodecKey.class) {
-                return false;
-            }
-            CodecKey codecKey = (CodecKey) obj;
-            return TextUtils.equals(this.mimeType, codecKey.mimeType) && this.secure == codecKey.secure && this.tunneling == codecKey.tunneling;
-        }
-
-        public int hashCode() {
-            return ((((this.mimeType.hashCode() + 31) * 31) + (this.secure ? 1231 : 1237)) * 31) + (this.tunneling ? 1231 : 1237);
-        }
-    }
-
-    public static class DecoderQueryException extends Exception {
-        private DecoderQueryException(Throwable th) {
-            super("Failed to query underlying media codecs", th);
-        }
-    }
-
     private interface MediaCodecListCompat {
         int getCodecCount();
 
@@ -74,119 +41,9 @@ public abstract class MediaCodecUtil {
         boolean secureDecodersExplicit();
     }
 
-    private static final class MediaCodecListCompatV16 implements MediaCodecListCompat {
-        private MediaCodecListCompatV16() {
-        }
-
-        @Override // com.google.android.exoplayer2.mediacodec.MediaCodecUtil.MediaCodecListCompat
-        public int getCodecCount() {
-            return MediaCodecList.getCodecCount();
-        }
-
-        @Override // com.google.android.exoplayer2.mediacodec.MediaCodecUtil.MediaCodecListCompat
-        public android.media.MediaCodecInfo getCodecInfoAt(int i) {
-            return MediaCodecList.getCodecInfoAt(i);
-        }
-
-        @Override // com.google.android.exoplayer2.mediacodec.MediaCodecUtil.MediaCodecListCompat
-        public boolean isFeatureRequired(String str, String str2, MediaCodecInfo.CodecCapabilities codecCapabilities) {
-            return false;
-        }
-
-        @Override // com.google.android.exoplayer2.mediacodec.MediaCodecUtil.MediaCodecListCompat
-        public boolean isFeatureSupported(String str, String str2, MediaCodecInfo.CodecCapabilities codecCapabilities) {
-            return "secure-playback".equals(str) && MediaController.VIDEO_MIME_TYPE.equals(str2);
-        }
-
-        @Override // com.google.android.exoplayer2.mediacodec.MediaCodecUtil.MediaCodecListCompat
-        public boolean secureDecodersExplicit() {
-            return false;
-        }
-    }
-
-    private static final class MediaCodecListCompatV21 implements MediaCodecListCompat {
-        private final int codecKind;
-        private android.media.MediaCodecInfo[] mediaCodecInfos;
-
-        public MediaCodecListCompatV21(boolean z, boolean z2) {
-            this.codecKind = (z || z2) ? 1 : 0;
-        }
-
-        private void ensureMediaCodecInfosInitialized() {
-            android.media.MediaCodecInfo[] codecInfos;
-            if (this.mediaCodecInfos == null) {
-                codecInfos = new MediaCodecList(this.codecKind).getCodecInfos();
-                this.mediaCodecInfos = codecInfos;
-            }
-        }
-
-        @Override // com.google.android.exoplayer2.mediacodec.MediaCodecUtil.MediaCodecListCompat
-        public int getCodecCount() {
-            ensureMediaCodecInfosInitialized();
-            return this.mediaCodecInfos.length;
-        }
-
-        @Override // com.google.android.exoplayer2.mediacodec.MediaCodecUtil.MediaCodecListCompat
-        public android.media.MediaCodecInfo getCodecInfoAt(int i) {
-            ensureMediaCodecInfosInitialized();
-            return this.mediaCodecInfos[i];
-        }
-
-        @Override // com.google.android.exoplayer2.mediacodec.MediaCodecUtil.MediaCodecListCompat
-        public boolean isFeatureRequired(String str, String str2, MediaCodecInfo.CodecCapabilities codecCapabilities) {
-            boolean isFeatureRequired;
-            isFeatureRequired = codecCapabilities.isFeatureRequired(str);
-            return isFeatureRequired;
-        }
-
-        @Override // com.google.android.exoplayer2.mediacodec.MediaCodecUtil.MediaCodecListCompat
-        public boolean isFeatureSupported(String str, String str2, MediaCodecInfo.CodecCapabilities codecCapabilities) {
-            return codecCapabilities.isFeatureSupported(str);
-        }
-
-        @Override // com.google.android.exoplayer2.mediacodec.MediaCodecUtil.MediaCodecListCompat
-        public boolean secureDecodersExplicit() {
-            return true;
-        }
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
     interface ScoreProvider {
         int getScore(Object obj);
-    }
-
-    private static void applyWorkarounds(String str, List list) {
-        if ("audio/raw".equals(str)) {
-            if (Util.SDK_INT < 26 && Util.DEVICE.equals("R9") && list.size() == 1 && ((MediaCodecInfo) list.get(0)).name.equals("OMX.MTK.AUDIO.DECODER.RAW")) {
-                list.add(MediaCodecInfo.newInstance("OMX.google.raw.decoder", "audio/raw", "audio/raw", null, false, true, false, false, false));
-            }
-            sortByScore(list, new ScoreProvider() { // from class: com.google.android.exoplayer2.mediacodec.MediaCodecUtil$$ExternalSyntheticLambda4
-                @Override // com.google.android.exoplayer2.mediacodec.MediaCodecUtil.ScoreProvider
-                public final int getScore(Object obj) {
-                    int lambda$applyWorkarounds$1;
-                    lambda$applyWorkarounds$1 = MediaCodecUtil.lambda$applyWorkarounds$1((MediaCodecInfo) obj);
-                    return lambda$applyWorkarounds$1;
-                }
-            });
-        }
-        int i = Util.SDK_INT;
-        if (i < 21 && list.size() > 1) {
-            String str2 = ((MediaCodecInfo) list.get(0)).name;
-            if ("OMX.SEC.mp3.dec".equals(str2) || "OMX.SEC.MP3.Decoder".equals(str2) || "OMX.brcm.audio.mp3.decoder".equals(str2)) {
-                sortByScore(list, new ScoreProvider() { // from class: com.google.android.exoplayer2.mediacodec.MediaCodecUtil$$ExternalSyntheticLambda5
-                    @Override // com.google.android.exoplayer2.mediacodec.MediaCodecUtil.ScoreProvider
-                    public final int getScore(Object obj) {
-                        int lambda$applyWorkarounds$2;
-                        lambda$applyWorkarounds$2 = MediaCodecUtil.lambda$applyWorkarounds$2((MediaCodecInfo) obj);
-                        return lambda$applyWorkarounds$2;
-                    }
-                });
-            }
-        }
-        if (i >= 32 || list.size() <= 1 || !"OMX.qti.audio.decoder.flac".equals(((MediaCodecInfo) list.get(0)).name)) {
-            return;
-        }
-        list.add((MediaCodecInfo) list.remove(0));
     }
 
     private static int av1LevelNumberToConst(int i) {
@@ -354,248 +211,186 @@ public abstract class MediaCodecUtil {
         return 32;
     }
 
-    private static Integer dolbyVisionStringToLevel(String str) {
-        int i;
-        if (str == null) {
-            return null;
-        }
-        switch (str) {
-            case "01":
-                return 1;
-            case "02":
-                return 2;
-            case "03":
-                return 4;
-            case "04":
-                return 8;
-            case "05":
-                i = 16;
-                break;
-            case "06":
-                i = 32;
-                break;
-            case "07":
-                i = 64;
-                break;
-            case "08":
-                i = 128;
-                break;
-            case "09":
-                i = 256;
-                break;
-            case "10":
-                i = 512;
-                break;
-            case "11":
-                i = 1024;
-                break;
-            case "12":
-                i = 2048;
-                break;
-            case "13":
-                i = 4096;
-                break;
-            default:
-                return null;
-        }
-        return Integer.valueOf(i);
-    }
-
-    private static Integer dolbyVisionStringToProfile(String str) {
-        int i;
-        if (str == null) {
-            return null;
-        }
-        switch (str) {
-            case "00":
-                return 1;
-            case "01":
-                return 2;
-            case "02":
-                return 4;
-            case "03":
-                return 8;
-            case "04":
-                i = 16;
-                break;
-            case "05":
-                i = 32;
-                break;
-            case "06":
-                i = 64;
-                break;
-            case "07":
-                i = 128;
-                break;
-            case "08":
-                i = 256;
-                break;
-            case "09":
-                i = 512;
-                break;
-            default:
-                return null;
-        }
-        return Integer.valueOf(i);
-    }
-
-    private static Pair getAacCodecProfileAndLevel(String str, String[] strArr) {
-        int mp4aAudioObjectTypeToProfile;
-        if (strArr.length != 3) {
-            Log.w("MediaCodecUtil", "Ignoring malformed MP4A codec string: " + str);
-            return null;
-        }
-        try {
-            if (MediaController.AUDIO_MIME_TYPE.equals(MimeTypes.getMimeTypeFromMp4ObjectType(Integer.parseInt(strArr[1], 16))) && (mp4aAudioObjectTypeToProfile = mp4aAudioObjectTypeToProfile(Integer.parseInt(strArr[2]))) != -1) {
-                return new Pair(Integer.valueOf(mp4aAudioObjectTypeToProfile), 0);
-            }
-        } catch (NumberFormatException unused) {
-            Log.w("MediaCodecUtil", "Ignoring malformed MP4A codec string: " + str);
-        }
-        return null;
-    }
-
-    public static String getAlternativeCodecMimeType(Format format) {
-        Pair codecProfileAndLevel;
-        if ("audio/eac3-joc".equals(format.sampleMimeType)) {
-            return "audio/eac3";
-        }
-        if (!"video/dolby-vision".equals(format.sampleMimeType) || (codecProfileAndLevel = getCodecProfileAndLevel(format)) == null) {
-            return null;
-        }
-        int intValue = ((Integer) codecProfileAndLevel.first).intValue();
-        if (intValue == 16 || intValue == 256) {
-            return "video/hevc";
-        }
-        if (intValue == 512) {
-            return MediaController.VIDEO_MIME_TYPE;
-        }
-        return null;
-    }
-
-    private static Pair getAv1ProfileAndLevel(String str, String[] strArr, ColorInfo colorInfo) {
-        StringBuilder sb;
-        int parseInt;
-        int parseInt2;
-        int parseInt3;
-        StringBuilder sb2;
-        int i;
-        String sb3;
-        if (strArr.length >= 4) {
-            try {
-                parseInt = Integer.parseInt(strArr[1]);
-                parseInt2 = Integer.parseInt(strArr[2].substring(0, 2));
-                parseInt3 = Integer.parseInt(strArr[3]);
-            } catch (NumberFormatException unused) {
-                sb = new StringBuilder();
-            }
-            if (parseInt != 0) {
-                sb2 = new StringBuilder();
-                sb2.append("Unknown AV1 profile: ");
-                sb2.append(parseInt);
-            } else {
-                if (parseInt3 != 8 && parseInt3 != 10) {
-                    sb = new StringBuilder();
-                    sb.append("Unknown AV1 bit depth: ");
-                    sb.append(parseInt3);
-                    sb3 = sb.toString();
-                    Log.w("MediaCodecUtil", sb3);
-                    return null;
-                }
-                int i2 = parseInt3 != 8 ? (colorInfo == null || !(colorInfo.hdrStaticInfo != null || (i = colorInfo.colorTransfer) == 7 || i == 6)) ? 2 : 4096 : 1;
-                int av1LevelNumberToConst = av1LevelNumberToConst(parseInt2);
-                if (av1LevelNumberToConst != -1) {
-                    return new Pair(Integer.valueOf(i2), Integer.valueOf(av1LevelNumberToConst));
-                }
-                sb2 = new StringBuilder();
-                sb2.append("Unknown AV1 level: ");
-                sb2.append(parseInt2);
-            }
-            sb3 = sb2.toString();
-            Log.w("MediaCodecUtil", sb3);
-            return null;
-        }
-        sb = new StringBuilder();
-        sb.append("Ignoring malformed AV1 codec string: ");
-        sb.append(str);
-        sb3 = sb.toString();
-        Log.w("MediaCodecUtil", sb3);
-        return null;
-    }
-
-    private static Pair getAvcProfileAndLevel(String str, String[] strArr) {
-        StringBuilder sb;
-        int parseInt;
-        int i;
-        int avcProfileNumberToConst;
-        String str2;
-        if (strArr.length >= 2) {
-            try {
-                if (strArr[1].length() == 6) {
-                    i = Integer.parseInt(strArr[1].substring(0, 2), 16);
-                    parseInt = Integer.parseInt(strArr[1].substring(4), 16);
-                } else {
-                    if (strArr.length < 3) {
-                        Log.w("MediaCodecUtil", "Ignoring malformed AVC codec string: " + str);
-                        return null;
+    private static int mp4aAudioObjectTypeToProfile(int i) {
+        int i2 = 17;
+        if (i != 17) {
+            i2 = 20;
+            if (i != 20) {
+                i2 = 23;
+                if (i != 23) {
+                    i2 = 29;
+                    if (i != 29) {
+                        i2 = 39;
+                        if (i != 39) {
+                            i2 = 42;
+                            if (i != 42) {
+                                switch (i) {
+                                    case 1:
+                                        return 1;
+                                    case 2:
+                                        return 2;
+                                    case 3:
+                                        return 3;
+                                    case 4:
+                                        return 4;
+                                    case 5:
+                                        return 5;
+                                    case 6:
+                                        return 6;
+                                    default:
+                                        return -1;
+                                }
+                            }
+                        }
                     }
-                    int parseInt2 = Integer.parseInt(strArr[1]);
-                    parseInt = Integer.parseInt(strArr[2]);
-                    i = parseInt2;
                 }
-                avcProfileNumberToConst = avcProfileNumberToConst(i);
-            } catch (NumberFormatException unused) {
-                sb = new StringBuilder();
             }
-            if (avcProfileNumberToConst == -1) {
-                str2 = "Unknown AVC profile: " + i;
-                Log.w("MediaCodecUtil", str2);
-                return null;
-            }
-            int avcLevelNumberToConst = avcLevelNumberToConst(parseInt);
-            if (avcLevelNumberToConst != -1) {
-                return new Pair(Integer.valueOf(avcProfileNumberToConst), Integer.valueOf(avcLevelNumberToConst));
-            }
-            sb = new StringBuilder();
-            sb.append("Unknown AVC level: ");
-            sb.append(parseInt);
-            str2 = sb.toString();
-            Log.w("MediaCodecUtil", str2);
-            return null;
         }
-        sb = new StringBuilder();
-        sb.append("Ignoring malformed AVC codec string: ");
-        sb.append(str);
-        str2 = sb.toString();
-        Log.w("MediaCodecUtil", str2);
-        return null;
+        return i2;
     }
 
-    private static String getCodecMimeType(android.media.MediaCodecInfo mediaCodecInfo, String str, String str2) {
-        for (String str3 : mediaCodecInfo.getSupportedTypes()) {
-            if (str3.equalsIgnoreCase(str2)) {
-                return str3;
-            }
+    private static int vp9LevelNumberToConst(int i) {
+        if (i == 10) {
+            return 1;
         }
-        if (str2.equals("video/dolby-vision")) {
-            if ("OMX.MS.HEVCDV.Decoder".equals(str)) {
-                return "video/hevcdv";
-            }
-            if ("OMX.RTK.video.decoder".equals(str) || "OMX.realtek.video.decoder.tunneled".equals(str)) {
-                return "video/dv_hevc";
-            }
+        if (i == 11) {
+            return 2;
+        }
+        if (i == 20) {
+            return 4;
+        }
+        if (i == 21) {
+            return 8;
+        }
+        if (i == 30) {
+            return 16;
+        }
+        if (i == 31) {
+            return 32;
+        }
+        if (i == 40) {
+            return 64;
+        }
+        if (i == 41) {
+            return 128;
+        }
+        if (i == 50) {
+            return 256;
+        }
+        if (i == 51) {
+            return 512;
+        }
+        switch (i) {
+            case 60:
+                return 2048;
+            case 61:
+                return 4096;
+            case 62:
+                return 8192;
+            default:
+                return -1;
+        }
+    }
+
+    private static int vp9ProfileNumberToConst(int i) {
+        if (i == 0) {
+            return 1;
+        }
+        if (i == 1) {
+            return 2;
+        }
+        if (i != 2) {
+            return i != 3 ? -1 : 8;
+        }
+        return 4;
+    }
+
+    public static class DecoderQueryException extends Exception {
+        private DecoderQueryException(Throwable th) {
+            super("Failed to query underlying media codecs", th);
+        }
+    }
+
+    public static MediaCodecInfo getDecryptOnlyDecoderInfo() {
+        return getDecoderInfo("audio/raw", false, false);
+    }
+
+    public static MediaCodecInfo getDecoderInfo(String str, boolean z, boolean z2) {
+        List decoderInfos = getDecoderInfos(str, z, z2);
+        if (decoderInfos.isEmpty()) {
             return null;
         }
-        if (str2.equals("audio/alac") && "OMX.lge.alac.decoder".equals(str)) {
-            return "audio/x-lg-alac";
+        return (MediaCodecInfo) decoderInfos.get(0);
+    }
+
+    public static synchronized List getDecoderInfos(String str, boolean z, boolean z2) {
+        MediaCodecListCompat mediaCodecListCompatV16;
+        synchronized (MediaCodecUtil.class) {
+            try {
+                CodecKey codecKey = new CodecKey(str, z, z2);
+                HashMap hashMap = decoderInfosCache;
+                List list = (List) hashMap.get(codecKey);
+                if (list != null) {
+                    return list;
+                }
+                int i = Util.SDK_INT;
+                if (i >= 21) {
+                    mediaCodecListCompatV16 = new MediaCodecListCompatV21(z, z2);
+                } else {
+                    mediaCodecListCompatV16 = new MediaCodecListCompatV16();
+                }
+                ArrayList decoderInfosInternal = getDecoderInfosInternal(codecKey, mediaCodecListCompatV16);
+                if (z && decoderInfosInternal.isEmpty() && 21 <= i && i <= 23) {
+                    decoderInfosInternal = getDecoderInfosInternal(codecKey, new MediaCodecListCompatV16());
+                    if (!decoderInfosInternal.isEmpty()) {
+                        Log.w("MediaCodecUtil", "MediaCodecList API didn't list secure decoder for: " + str + ". Assuming: " + ((MediaCodecInfo) decoderInfosInternal.get(0)).name);
+                    }
+                }
+                applyWorkarounds(str, decoderInfosInternal);
+                ImmutableList copyOf = ImmutableList.copyOf((Collection) decoderInfosInternal);
+                hashMap.put(codecKey, copyOf);
+                return copyOf;
+            } catch (Throwable th) {
+                throw th;
+            }
         }
-        if (str2.equals("audio/flac") && "OMX.lge.flac.decoder".equals(str)) {
-            return "audio/x-lg-flac";
+    }
+
+    public static List getDecoderInfosSortedByFormatSupport(List list, final Format format) {
+        ArrayList arrayList = new ArrayList(list);
+        sortByScore(arrayList, new ScoreProvider() { // from class: com.google.android.exoplayer2.mediacodec.MediaCodecUtil$$ExternalSyntheticLambda6
+            @Override // com.google.android.exoplayer2.mediacodec.MediaCodecUtil.ScoreProvider
+            public final int getScore(Object obj) {
+                int lambda$getDecoderInfosSortedByFormatSupport$0;
+                lambda$getDecoderInfosSortedByFormatSupport$0 = MediaCodecUtil.lambda$getDecoderInfosSortedByFormatSupport$0(Format.this, (MediaCodecInfo) obj);
+                return lambda$getDecoderInfosSortedByFormatSupport$0;
+            }
+        });
+        return arrayList;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ int lambda$getDecoderInfosSortedByFormatSupport$0(Format format, MediaCodecInfo mediaCodecInfo) {
+        return mediaCodecInfo.isFormatFunctionallySupported(format) ? 1 : 0;
+    }
+
+    public static int maxH264DecodableFrameSize() {
+        if (maxH264DecodableFrameSize == -1) {
+            int i = 0;
+            MediaCodecInfo decoderInfo = getDecoderInfo(MediaController.VIDEO_MIME_TYPE, false, false);
+            if (decoderInfo != null) {
+                MediaCodecInfo.CodecProfileLevel[] profileLevels = decoderInfo.getProfileLevels();
+                int length = profileLevels.length;
+                int i2 = 0;
+                while (i < length) {
+                    i2 = Math.max(avcLevelToMaxFrameSize(profileLevels[i].level), i2);
+                    i++;
+                }
+                i = Math.max(i2, Util.SDK_INT >= 21 ? 345600 : 172800);
+            }
+            maxH264DecodableFrameSize = i;
         }
-        if (str2.equals("audio/ac3") && "OMX.lge.ac3.decoder".equals(str)) {
-            return "audio/lg-ac3";
-        }
-        return null;
+        return maxH264DecodableFrameSize;
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -607,6 +402,7 @@ public abstract class MediaCodecUtil {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static Pair getCodecProfileAndLevel(Format format) {
+        char c = 0;
         String str = format.codecs;
         if (str == null) {
             return null;
@@ -615,7 +411,6 @@ public abstract class MediaCodecUtil {
         if ("video/dolby-vision".equals(format.sampleMimeType)) {
             return getDolbyVisionProfileAndLevel(format.codecs, split);
         }
-        char c = 0;
         String str2 = split[0];
         str2.hashCode();
         switch (str2.hashCode()) {
@@ -685,39 +480,22 @@ public abstract class MediaCodecUtil {
         }
     }
 
-    public static MediaCodecInfo getDecoderInfo(String str, boolean z, boolean z2) {
-        List decoderInfos = getDecoderInfos(str, z, z2);
-        if (decoderInfos.isEmpty()) {
+    public static String getAlternativeCodecMimeType(Format format) {
+        Pair codecProfileAndLevel;
+        if ("audio/eac3-joc".equals(format.sampleMimeType)) {
+            return "audio/eac3";
+        }
+        if (!"video/dolby-vision".equals(format.sampleMimeType) || (codecProfileAndLevel = getCodecProfileAndLevel(format)) == null) {
             return null;
         }
-        return (MediaCodecInfo) decoderInfos.get(0);
-    }
-
-    public static synchronized List getDecoderInfos(String str, boolean z, boolean z2) {
-        synchronized (MediaCodecUtil.class) {
-            try {
-                CodecKey codecKey = new CodecKey(str, z, z2);
-                HashMap hashMap = decoderInfosCache;
-                List list = (List) hashMap.get(codecKey);
-                if (list != null) {
-                    return list;
-                }
-                int i = Util.SDK_INT;
-                ArrayList decoderInfosInternal = getDecoderInfosInternal(codecKey, i >= 21 ? new MediaCodecListCompatV21(z, z2) : new MediaCodecListCompatV16());
-                if (z && decoderInfosInternal.isEmpty() && 21 <= i && i <= 23) {
-                    decoderInfosInternal = getDecoderInfosInternal(codecKey, new MediaCodecListCompatV16());
-                    if (!decoderInfosInternal.isEmpty()) {
-                        Log.w("MediaCodecUtil", "MediaCodecList API didn't list secure decoder for: " + str + ". Assuming: " + ((MediaCodecInfo) decoderInfosInternal.get(0)).name);
-                    }
-                }
-                applyWorkarounds(str, decoderInfosInternal);
-                ImmutableList copyOf = ImmutableList.copyOf((Collection) decoderInfosInternal);
-                hashMap.put(codecKey, copyOf);
-                return copyOf;
-            } catch (Throwable th) {
-                throw th;
-            }
+        int intValue = ((Integer) codecProfileAndLevel.first).intValue();
+        if (intValue == 16 || intValue == 256) {
+            return "video/hevc";
         }
+        if (intValue == 512) {
+            return MediaController.VIDEO_MIME_TYPE;
+        }
+        return null;
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(7:28|(4:(2:72|73)|53|(9:56|57|58|59|60|61|62|64|65)|9)|32|33|34|36|9) */
@@ -790,15 +568,16 @@ public abstract class MediaCodecUtil {
                                             z = secureDecodersExplicit;
                                             i2 = codecCount;
                                             str2 = str3;
-                                            if (Util.SDK_INT > 23 || arrayList.isEmpty()) {
+                                            if (Util.SDK_INT <= 23 && !arrayList.isEmpty()) {
+                                                Log.e("MediaCodecUtil", "Skipping codec " + str2 + " (failed to query capabilities)");
+                                                i3 = i + 1;
+                                                codecKey2 = codecKey;
+                                                codecCount = i2;
+                                                secureDecodersExplicit = z;
+                                            } else {
                                                 Log.e("MediaCodecUtil", "Failed to query codec " + str2 + " (" + str + ")");
                                                 throw e;
                                             }
-                                            Log.e("MediaCodecUtil", "Skipping codec " + str2 + " (failed to query capabilities)");
-                                            i3 = i + 1;
-                                            codecKey2 = codecKey;
-                                            codecCount = i2;
-                                            secureDecodersExplicit = z;
                                         }
                                     }
                                     str = codecMimeType;
@@ -820,7 +599,7 @@ public abstract class MediaCodecUtil {
                                             return arrayList;
                                         } catch (Exception e4) {
                                             e = e4;
-                                            if (Util.SDK_INT > 23) {
+                                            if (Util.SDK_INT <= 23) {
                                             }
                                             Log.e("MediaCodecUtil", "Failed to query codec " + str2 + " (" + str + ")");
                                             throw e;
@@ -859,235 +638,31 @@ public abstract class MediaCodecUtil {
         }
     }
 
-    public static List getDecoderInfosSortedByFormatSupport(List list, final Format format) {
-        ArrayList arrayList = new ArrayList(list);
-        sortByScore(arrayList, new ScoreProvider() { // from class: com.google.android.exoplayer2.mediacodec.MediaCodecUtil$$ExternalSyntheticLambda6
-            @Override // com.google.android.exoplayer2.mediacodec.MediaCodecUtil.ScoreProvider
-            public final int getScore(Object obj) {
-                int lambda$getDecoderInfosSortedByFormatSupport$0;
-                lambda$getDecoderInfosSortedByFormatSupport$0 = MediaCodecUtil.lambda$getDecoderInfosSortedByFormatSupport$0(Format.this, (MediaCodecInfo) obj);
-                return lambda$getDecoderInfosSortedByFormatSupport$0;
+    private static String getCodecMimeType(android.media.MediaCodecInfo mediaCodecInfo, String str, String str2) {
+        for (String str3 : mediaCodecInfo.getSupportedTypes()) {
+            if (str3.equalsIgnoreCase(str2)) {
+                return str3;
             }
-        });
-        return arrayList;
-    }
-
-    public static MediaCodecInfo getDecryptOnlyDecoderInfo() {
-        return getDecoderInfo("audio/raw", false, false);
-    }
-
-    private static Pair getDolbyVisionProfileAndLevel(String str, String[] strArr) {
-        StringBuilder sb;
-        String str2;
-        if (strArr.length < 3) {
-            sb = new StringBuilder();
-        } else {
-            Matcher matcher = PROFILE_PATTERN.matcher(strArr[1]);
-            if (matcher.matches()) {
-                str = matcher.group(1);
-                Integer dolbyVisionStringToProfile = dolbyVisionStringToProfile(str);
-                if (dolbyVisionStringToProfile == null) {
-                    sb = new StringBuilder();
-                    str2 = "Unknown Dolby Vision profile string: ";
-                } else {
-                    str = strArr[2];
-                    Integer dolbyVisionStringToLevel = dolbyVisionStringToLevel(str);
-                    if (dolbyVisionStringToLevel != null) {
-                        return new Pair(dolbyVisionStringToProfile, dolbyVisionStringToLevel);
-                    }
-                    sb = new StringBuilder();
-                    str2 = "Unknown Dolby Vision level string: ";
-                }
-                sb.append(str2);
-                sb.append(str);
-                Log.w("MediaCodecUtil", sb.toString());
-                return null;
-            }
-            sb = new StringBuilder();
         }
-        sb.append("Ignoring malformed Dolby Vision codec string: ");
-        sb.append(str);
-        Log.w("MediaCodecUtil", sb.toString());
-        return null;
-    }
-
-    private static Pair getHevcProfileAndLevel(String str, String[] strArr) {
-        StringBuilder sb;
-        String str2;
-        if (strArr.length < 4) {
-            sb = new StringBuilder();
-        } else {
-            int i = 1;
-            Matcher matcher = PROFILE_PATTERN.matcher(strArr[1]);
-            if (matcher.matches()) {
-                str = matcher.group(1);
-                if (!"1".equals(str)) {
-                    if (!"2".equals(str)) {
-                        sb = new StringBuilder();
-                        str2 = "Unknown HEVC profile string: ";
-                        sb.append(str2);
-                        sb.append(str);
-                        Log.w("MediaCodecUtil", sb.toString());
-                        return null;
-                    }
-                    i = 2;
-                }
-                str = strArr[3];
-                Integer hevcCodecStringToProfileLevel = hevcCodecStringToProfileLevel(str);
-                if (hevcCodecStringToProfileLevel != null) {
-                    return new Pair(Integer.valueOf(i), hevcCodecStringToProfileLevel);
-                }
-                sb = new StringBuilder();
-                str2 = "Unknown HEVC level string: ";
-                sb.append(str2);
-                sb.append(str);
-                Log.w("MediaCodecUtil", sb.toString());
-                return null;
+        if (str2.equals("video/dolby-vision")) {
+            if ("OMX.MS.HEVCDV.Decoder".equals(str)) {
+                return "video/hevcdv";
             }
-            sb = new StringBuilder();
-        }
-        sb.append("Ignoring malformed HEVC codec string: ");
-        sb.append(str);
-        Log.w("MediaCodecUtil", sb.toString());
-        return null;
-    }
-
-    private static Pair getVp9ProfileAndLevel(String str, String[] strArr) {
-        StringBuilder sb;
-        int parseInt;
-        int parseInt2;
-        int vp9ProfileNumberToConst;
-        String str2;
-        if (strArr.length >= 3) {
-            try {
-                parseInt = Integer.parseInt(strArr[1]);
-                parseInt2 = Integer.parseInt(strArr[2]);
-                vp9ProfileNumberToConst = vp9ProfileNumberToConst(parseInt);
-            } catch (NumberFormatException unused) {
-                sb = new StringBuilder();
+            if ("OMX.RTK.video.decoder".equals(str) || "OMX.realtek.video.decoder.tunneled".equals(str)) {
+                return "video/dv_hevc";
             }
-            if (vp9ProfileNumberToConst == -1) {
-                str2 = "Unknown VP9 profile: " + parseInt;
-                Log.w("MediaCodecUtil", str2);
-                return null;
-            }
-            int vp9LevelNumberToConst = vp9LevelNumberToConst(parseInt2);
-            if (vp9LevelNumberToConst != -1) {
-                return new Pair(Integer.valueOf(vp9ProfileNumberToConst), Integer.valueOf(vp9LevelNumberToConst));
-            }
-            sb = new StringBuilder();
-            sb.append("Unknown VP9 level: ");
-            sb.append(parseInt2);
-            str2 = sb.toString();
-            Log.w("MediaCodecUtil", str2);
             return null;
         }
-        sb = new StringBuilder();
-        sb.append("Ignoring malformed VP9 codec string: ");
-        sb.append(str);
-        str2 = sb.toString();
-        Log.w("MediaCodecUtil", str2);
+        if (str2.equals("audio/alac") && "OMX.lge.alac.decoder".equals(str)) {
+            return "audio/x-lg-alac";
+        }
+        if (str2.equals("audio/flac") && "OMX.lge.flac.decoder".equals(str)) {
+            return "audio/x-lg-flac";
+        }
+        if (str2.equals("audio/ac3") && "OMX.lge.ac3.decoder".equals(str)) {
+            return "audio/lg-ac3";
+        }
         return null;
-    }
-
-    private static Integer hevcCodecStringToProfileLevel(String str) {
-        int i;
-        if (str == null) {
-            return null;
-        }
-        i = 16;
-        switch (str) {
-            case "H30":
-                i = 2;
-                break;
-            case "H60":
-                i = 8;
-                break;
-            case "H63":
-                i = 32;
-                break;
-            case "H90":
-                i = 128;
-                break;
-            case "H93":
-                i = 512;
-                break;
-            case "L30":
-                i = 1;
-                break;
-            case "L60":
-                i = 4;
-                break;
-            case "L63":
-                break;
-            case "L90":
-                i = 64;
-                break;
-            case "L93":
-                i = 256;
-                break;
-            case "H120":
-                i = 2048;
-                break;
-            case "H123":
-                i = 8192;
-                break;
-            case "H150":
-                i = 32768;
-                break;
-            case "H153":
-                i = TLObject.FLAG_17;
-                break;
-            case "H156":
-                i = TLObject.FLAG_19;
-                break;
-            case "H180":
-                i = TLObject.FLAG_21;
-                break;
-            case "H183":
-                i = TLObject.FLAG_23;
-                break;
-            case "H186":
-                i = 33554432;
-                break;
-            case "L120":
-                i = 1024;
-                break;
-            case "L123":
-                i = 4096;
-                break;
-            case "L150":
-                i = 16384;
-                break;
-            case "L153":
-                i = 65536;
-                break;
-            case "L156":
-                i = TLObject.FLAG_18;
-                break;
-            case "L180":
-                i = 1048576;
-                break;
-            case "L183":
-                i = TLObject.FLAG_22;
-                break;
-            case "L186":
-                i = 16777216;
-                break;
-            default:
-                return null;
-        }
-        return Integer.valueOf(i);
-    }
-
-    private static boolean isAlias(android.media.MediaCodecInfo mediaCodecInfo) {
-        return Util.SDK_INT >= 29 && isAliasV29(mediaCodecInfo);
-    }
-
-    private static boolean isAliasV29(android.media.MediaCodecInfo mediaCodecInfo) {
-        boolean isAlias;
-        isAlias = mediaCodecInfo.isAlias();
-        return isAlias;
     }
 
     private static boolean isCodecUsableDecoder(android.media.MediaCodecInfo mediaCodecInfo, String str, boolean z, String str2) {
@@ -1134,8 +709,69 @@ public abstract class MediaCodecUtil {
         return (i <= 23 && "audio/eac3-joc".equals(str2) && "OMX.MTK.AUDIO.DECODER.DSPAC3".equals(str)) ? false : true;
     }
 
+    private static void applyWorkarounds(String str, List list) {
+        if ("audio/raw".equals(str)) {
+            if (Util.SDK_INT < 26 && Util.DEVICE.equals("R9") && list.size() == 1 && ((MediaCodecInfo) list.get(0)).name.equals("OMX.MTK.AUDIO.DECODER.RAW")) {
+                list.add(MediaCodecInfo.newInstance("OMX.google.raw.decoder", "audio/raw", "audio/raw", null, false, true, false, false, false));
+            }
+            sortByScore(list, new ScoreProvider() { // from class: com.google.android.exoplayer2.mediacodec.MediaCodecUtil$$ExternalSyntheticLambda4
+                @Override // com.google.android.exoplayer2.mediacodec.MediaCodecUtil.ScoreProvider
+                public final int getScore(Object obj) {
+                    int lambda$applyWorkarounds$1;
+                    lambda$applyWorkarounds$1 = MediaCodecUtil.lambda$applyWorkarounds$1((MediaCodecInfo) obj);
+                    return lambda$applyWorkarounds$1;
+                }
+            });
+        }
+        int i = Util.SDK_INT;
+        if (i < 21 && list.size() > 1) {
+            String str2 = ((MediaCodecInfo) list.get(0)).name;
+            if ("OMX.SEC.mp3.dec".equals(str2) || "OMX.SEC.MP3.Decoder".equals(str2) || "OMX.brcm.audio.mp3.decoder".equals(str2)) {
+                sortByScore(list, new ScoreProvider() { // from class: com.google.android.exoplayer2.mediacodec.MediaCodecUtil$$ExternalSyntheticLambda5
+                    @Override // com.google.android.exoplayer2.mediacodec.MediaCodecUtil.ScoreProvider
+                    public final int getScore(Object obj) {
+                        int lambda$applyWorkarounds$2;
+                        lambda$applyWorkarounds$2 = MediaCodecUtil.lambda$applyWorkarounds$2((MediaCodecInfo) obj);
+                        return lambda$applyWorkarounds$2;
+                    }
+                });
+            }
+        }
+        if (i >= 32 || list.size() <= 1 || !"OMX.qti.audio.decoder.flac".equals(((MediaCodecInfo) list.get(0)).name)) {
+            return;
+        }
+        list.add((MediaCodecInfo) list.remove(0));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ int lambda$applyWorkarounds$1(MediaCodecInfo mediaCodecInfo) {
+        String str = mediaCodecInfo.name;
+        if (str.startsWith("OMX.google") || str.startsWith("c2.android")) {
+            return 1;
+        }
+        return (Util.SDK_INT >= 26 || !str.equals("OMX.MTK.AUDIO.DECODER.RAW")) ? 0 : -1;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ int lambda$applyWorkarounds$2(MediaCodecInfo mediaCodecInfo) {
+        return mediaCodecInfo.name.startsWith("OMX.google") ? 1 : 0;
+    }
+
+    private static boolean isAlias(android.media.MediaCodecInfo mediaCodecInfo) {
+        return Util.SDK_INT >= 29 && isAliasV29(mediaCodecInfo);
+    }
+
+    private static boolean isAliasV29(android.media.MediaCodecInfo mediaCodecInfo) {
+        boolean isAlias;
+        isAlias = mediaCodecInfo.isAlias();
+        return isAlias;
+    }
+
     public static boolean isHardwareAccelerated(android.media.MediaCodecInfo mediaCodecInfo, String str) {
-        return Util.SDK_INT >= 29 ? isHardwareAcceleratedV29(mediaCodecInfo) : !isSoftwareOnly(mediaCodecInfo, str);
+        if (Util.SDK_INT >= 29) {
+            return isHardwareAcceleratedV29(mediaCodecInfo);
+        }
+        return !isSoftwareOnly(mediaCodecInfo, str);
     }
 
     private static boolean isHardwareAcceleratedV29(android.media.MediaCodecInfo mediaCodecInfo) {
@@ -1184,85 +820,173 @@ public abstract class MediaCodecUtil {
         return isVendor;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$applyWorkarounds$1(MediaCodecInfo mediaCodecInfo) {
-        String str = mediaCodecInfo.name;
-        if (str.startsWith("OMX.google") || str.startsWith("c2.android")) {
-            return 1;
+    private static Pair getDolbyVisionProfileAndLevel(String str, String[] strArr) {
+        if (strArr.length < 3) {
+            Log.w("MediaCodecUtil", "Ignoring malformed Dolby Vision codec string: " + str);
+            return null;
         }
-        return (Util.SDK_INT >= 26 || !str.equals("OMX.MTK.AUDIO.DECODER.RAW")) ? 0 : -1;
+        Matcher matcher = PROFILE_PATTERN.matcher(strArr[1]);
+        if (!matcher.matches()) {
+            Log.w("MediaCodecUtil", "Ignoring malformed Dolby Vision codec string: " + str);
+            return null;
+        }
+        String group = matcher.group(1);
+        Integer dolbyVisionStringToProfile = dolbyVisionStringToProfile(group);
+        if (dolbyVisionStringToProfile == null) {
+            Log.w("MediaCodecUtil", "Unknown Dolby Vision profile string: " + group);
+            return null;
+        }
+        String str2 = strArr[2];
+        Integer dolbyVisionStringToLevel = dolbyVisionStringToLevel(str2);
+        if (dolbyVisionStringToLevel == null) {
+            Log.w("MediaCodecUtil", "Unknown Dolby Vision level string: " + str2);
+            return null;
+        }
+        return new Pair(dolbyVisionStringToProfile, dolbyVisionStringToLevel);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$applyWorkarounds$2(MediaCodecInfo mediaCodecInfo) {
-        return mediaCodecInfo.name.startsWith("OMX.google") ? 1 : 0;
+    private static Pair getHevcProfileAndLevel(String str, String[] strArr) {
+        if (strArr.length < 4) {
+            Log.w("MediaCodecUtil", "Ignoring malformed HEVC codec string: " + str);
+            return null;
+        }
+        int i = 1;
+        Matcher matcher = PROFILE_PATTERN.matcher(strArr[1]);
+        if (!matcher.matches()) {
+            Log.w("MediaCodecUtil", "Ignoring malformed HEVC codec string: " + str);
+            return null;
+        }
+        String group = matcher.group(1);
+        if (!"1".equals(group)) {
+            if (!"2".equals(group)) {
+                Log.w("MediaCodecUtil", "Unknown HEVC profile string: " + group);
+                return null;
+            }
+            i = 2;
+        }
+        String str2 = strArr[3];
+        Integer hevcCodecStringToProfileLevel = hevcCodecStringToProfileLevel(str2);
+        if (hevcCodecStringToProfileLevel == null) {
+            Log.w("MediaCodecUtil", "Unknown HEVC level string: " + str2);
+            return null;
+        }
+        return new Pair(Integer.valueOf(i), hevcCodecStringToProfileLevel);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$getDecoderInfosSortedByFormatSupport$0(Format format, MediaCodecInfo mediaCodecInfo) {
-        return mediaCodecInfo.isFormatFunctionallySupported(format) ? 1 : 0;
+    private static Pair getAvcProfileAndLevel(String str, String[] strArr) {
+        int parseInt;
+        int i;
+        if (strArr.length < 2) {
+            Log.w("MediaCodecUtil", "Ignoring malformed AVC codec string: " + str);
+            return null;
+        }
+        try {
+            if (strArr[1].length() == 6) {
+                i = Integer.parseInt(strArr[1].substring(0, 2), 16);
+                parseInt = Integer.parseInt(strArr[1].substring(4), 16);
+            } else if (strArr.length >= 3) {
+                int parseInt2 = Integer.parseInt(strArr[1]);
+                parseInt = Integer.parseInt(strArr[2]);
+                i = parseInt2;
+            } else {
+                Log.w("MediaCodecUtil", "Ignoring malformed AVC codec string: " + str);
+                return null;
+            }
+            int avcProfileNumberToConst = avcProfileNumberToConst(i);
+            if (avcProfileNumberToConst == -1) {
+                Log.w("MediaCodecUtil", "Unknown AVC profile: " + i);
+                return null;
+            }
+            int avcLevelNumberToConst = avcLevelNumberToConst(parseInt);
+            if (avcLevelNumberToConst == -1) {
+                Log.w("MediaCodecUtil", "Unknown AVC level: " + parseInt);
+                return null;
+            }
+            return new Pair(Integer.valueOf(avcProfileNumberToConst), Integer.valueOf(avcLevelNumberToConst));
+        } catch (NumberFormatException unused) {
+            Log.w("MediaCodecUtil", "Ignoring malformed AVC codec string: " + str);
+            return null;
+        }
+    }
+
+    private static Pair getVp9ProfileAndLevel(String str, String[] strArr) {
+        if (strArr.length < 3) {
+            Log.w("MediaCodecUtil", "Ignoring malformed VP9 codec string: " + str);
+            return null;
+        }
+        try {
+            int parseInt = Integer.parseInt(strArr[1]);
+            int parseInt2 = Integer.parseInt(strArr[2]);
+            int vp9ProfileNumberToConst = vp9ProfileNumberToConst(parseInt);
+            if (vp9ProfileNumberToConst == -1) {
+                Log.w("MediaCodecUtil", "Unknown VP9 profile: " + parseInt);
+                return null;
+            }
+            int vp9LevelNumberToConst = vp9LevelNumberToConst(parseInt2);
+            if (vp9LevelNumberToConst == -1) {
+                Log.w("MediaCodecUtil", "Unknown VP9 level: " + parseInt2);
+                return null;
+            }
+            return new Pair(Integer.valueOf(vp9ProfileNumberToConst), Integer.valueOf(vp9LevelNumberToConst));
+        } catch (NumberFormatException unused) {
+            Log.w("MediaCodecUtil", "Ignoring malformed VP9 codec string: " + str);
+            return null;
+        }
+    }
+
+    private static Pair getAv1ProfileAndLevel(String str, String[] strArr, ColorInfo colorInfo) {
+        int i;
+        if (strArr.length < 4) {
+            Log.w("MediaCodecUtil", "Ignoring malformed AV1 codec string: " + str);
+            return null;
+        }
+        int i2 = 1;
+        try {
+            int parseInt = Integer.parseInt(strArr[1]);
+            int parseInt2 = Integer.parseInt(strArr[2].substring(0, 2));
+            int parseInt3 = Integer.parseInt(strArr[3]);
+            if (parseInt != 0) {
+                Log.w("MediaCodecUtil", "Unknown AV1 profile: " + parseInt);
+                return null;
+            }
+            if (parseInt3 != 8 && parseInt3 != 10) {
+                Log.w("MediaCodecUtil", "Unknown AV1 bit depth: " + parseInt3);
+                return null;
+            }
+            if (parseInt3 != 8) {
+                i2 = (colorInfo == null || !(colorInfo.hdrStaticInfo != null || (i = colorInfo.colorTransfer) == 7 || i == 6)) ? 2 : 4096;
+            }
+            int av1LevelNumberToConst = av1LevelNumberToConst(parseInt2);
+            if (av1LevelNumberToConst == -1) {
+                Log.w("MediaCodecUtil", "Unknown AV1 level: " + parseInt2);
+                return null;
+            }
+            return new Pair(Integer.valueOf(i2), Integer.valueOf(av1LevelNumberToConst));
+        } catch (NumberFormatException unused) {
+            Log.w("MediaCodecUtil", "Ignoring malformed AV1 codec string: " + str);
+            return null;
+        }
+    }
+
+    private static Pair getAacCodecProfileAndLevel(String str, String[] strArr) {
+        int mp4aAudioObjectTypeToProfile;
+        if (strArr.length != 3) {
+            Log.w("MediaCodecUtil", "Ignoring malformed MP4A codec string: " + str);
+            return null;
+        }
+        try {
+            if (MediaController.AUDIO_MIME_TYPE.equals(MimeTypes.getMimeTypeFromMp4ObjectType(Integer.parseInt(strArr[1], 16))) && (mp4aAudioObjectTypeToProfile = mp4aAudioObjectTypeToProfile(Integer.parseInt(strArr[2]))) != -1) {
+                return new Pair(Integer.valueOf(mp4aAudioObjectTypeToProfile), 0);
+            }
+        } catch (NumberFormatException unused) {
+            Log.w("MediaCodecUtil", "Ignoring malformed MP4A codec string: " + str);
+        }
+        return null;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ int lambda$sortByScore$3(ScoreProvider scoreProvider, Object obj, Object obj2) {
         return scoreProvider.getScore(obj2) - scoreProvider.getScore(obj);
-    }
-
-    public static int maxH264DecodableFrameSize() {
-        if (maxH264DecodableFrameSize == -1) {
-            int i = 0;
-            MediaCodecInfo decoderInfo = getDecoderInfo(MediaController.VIDEO_MIME_TYPE, false, false);
-            if (decoderInfo != null) {
-                MediaCodecInfo.CodecProfileLevel[] profileLevels = decoderInfo.getProfileLevels();
-                int length = profileLevels.length;
-                int i2 = 0;
-                while (i < length) {
-                    i2 = Math.max(avcLevelToMaxFrameSize(profileLevels[i].level), i2);
-                    i++;
-                }
-                i = Math.max(i2, Util.SDK_INT >= 21 ? 345600 : 172800);
-            }
-            maxH264DecodableFrameSize = i;
-        }
-        return maxH264DecodableFrameSize;
-    }
-
-    private static int mp4aAudioObjectTypeToProfile(int i) {
-        int i2 = 17;
-        if (i != 17) {
-            i2 = 20;
-            if (i != 20) {
-                i2 = 23;
-                if (i != 23) {
-                    i2 = 29;
-                    if (i != 29) {
-                        i2 = 39;
-                        if (i != 39) {
-                            i2 = 42;
-                            if (i != 42) {
-                                switch (i) {
-                                    case 1:
-                                        return 1;
-                                    case 2:
-                                        return 2;
-                                    case 3:
-                                        return 3;
-                                    case 4:
-                                        return 4;
-                                    case 5:
-                                        return 5;
-                                    case 6:
-                                        return 6;
-                                    default:
-                                        return -1;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        return i2;
     }
 
     private static void sortByScore(List list, final ScoreProvider scoreProvider) {
@@ -1276,59 +1000,129 @@ public abstract class MediaCodecUtil {
         });
     }
 
-    private static int vp9LevelNumberToConst(int i) {
-        if (i == 10) {
-            return 1;
+    private static final class MediaCodecListCompatV21 implements MediaCodecListCompat {
+        private final int codecKind;
+        private android.media.MediaCodecInfo[] mediaCodecInfos;
+
+        @Override // com.google.android.exoplayer2.mediacodec.MediaCodecUtil.MediaCodecListCompat
+        public boolean secureDecodersExplicit() {
+            return true;
         }
-        if (i == 11) {
-            return 2;
+
+        public MediaCodecListCompatV21(boolean z, boolean z2) {
+            this.codecKind = (z || z2) ? 1 : 0;
         }
-        if (i == 20) {
-            return 4;
+
+        @Override // com.google.android.exoplayer2.mediacodec.MediaCodecUtil.MediaCodecListCompat
+        public int getCodecCount() {
+            ensureMediaCodecInfosInitialized();
+            return this.mediaCodecInfos.length;
         }
-        if (i == 21) {
-            return 8;
+
+        @Override // com.google.android.exoplayer2.mediacodec.MediaCodecUtil.MediaCodecListCompat
+        public android.media.MediaCodecInfo getCodecInfoAt(int i) {
+            ensureMediaCodecInfosInitialized();
+            return this.mediaCodecInfos[i];
         }
-        if (i == 30) {
-            return 16;
+
+        @Override // com.google.android.exoplayer2.mediacodec.MediaCodecUtil.MediaCodecListCompat
+        public boolean isFeatureSupported(String str, String str2, MediaCodecInfo.CodecCapabilities codecCapabilities) {
+            return codecCapabilities.isFeatureSupported(str);
         }
-        if (i == 31) {
-            return 32;
+
+        @Override // com.google.android.exoplayer2.mediacodec.MediaCodecUtil.MediaCodecListCompat
+        public boolean isFeatureRequired(String str, String str2, MediaCodecInfo.CodecCapabilities codecCapabilities) {
+            return codecCapabilities.isFeatureRequired(str);
         }
-        if (i == 40) {
-            return 64;
-        }
-        if (i == 41) {
-            return 128;
-        }
-        if (i == 50) {
-            return 256;
-        }
-        if (i == 51) {
-            return 512;
-        }
-        switch (i) {
-            case 60:
-                return 2048;
-            case 61:
-                return 4096;
-            case 62:
-                return 8192;
-            default:
-                return -1;
+
+        private void ensureMediaCodecInfosInitialized() {
+            if (this.mediaCodecInfos == null) {
+                this.mediaCodecInfos = new MediaCodecList(this.codecKind).getCodecInfos();
+            }
         }
     }
 
-    private static int vp9ProfileNumberToConst(int i) {
-        if (i == 0) {
-            return 1;
+    private static final class MediaCodecListCompatV16 implements MediaCodecListCompat {
+        @Override // com.google.android.exoplayer2.mediacodec.MediaCodecUtil.MediaCodecListCompat
+        public boolean isFeatureRequired(String str, String str2, MediaCodecInfo.CodecCapabilities codecCapabilities) {
+            return false;
         }
-        if (i == 1) {
-            return 2;
+
+        @Override // com.google.android.exoplayer2.mediacodec.MediaCodecUtil.MediaCodecListCompat
+        public boolean secureDecodersExplicit() {
+            return false;
         }
-        if (i != 2) {
-            return i != 3 ? -1 : 8;
+
+        private MediaCodecListCompatV16() {
         }
-        return 4;
+
+        @Override // com.google.android.exoplayer2.mediacodec.MediaCodecUtil.MediaCodecListCompat
+        public int getCodecCount() {
+            return MediaCodecList.getCodecCount();
+        }
+
+        @Override // com.google.android.exoplayer2.mediacodec.MediaCodecUtil.MediaCodecListCompat
+        public android.media.MediaCodecInfo getCodecInfoAt(int i) {
+            return MediaCodecList.getCodecInfoAt(i);
+        }
+
+        @Override // com.google.android.exoplayer2.mediacodec.MediaCodecUtil.MediaCodecListCompat
+        public boolean isFeatureSupported(String str, String str2, MediaCodecInfo.CodecCapabilities codecCapabilities) {
+            return "secure-playback".equals(str) && MediaController.VIDEO_MIME_TYPE.equals(str2);
+        }
+    }
+
+    private static final class CodecKey {
+        public final String mimeType;
+        public final boolean secure;
+        public final boolean tunneling;
+
+        public CodecKey(String str, boolean z, boolean z2) {
+            this.mimeType = str;
+            this.secure = z;
+            this.tunneling = z2;
+        }
+
+        public int hashCode() {
+            return ((((this.mimeType.hashCode() + 31) * 31) + (this.secure ? 1231 : 1237)) * 31) + (this.tunneling ? 1231 : 1237);
+        }
+
+        public boolean equals(Object obj) {
+            if (this == obj) {
+                return true;
+            }
+            if (obj == null || obj.getClass() != CodecKey.class) {
+                return false;
+            }
+            CodecKey codecKey = (CodecKey) obj;
+            return TextUtils.equals(this.mimeType, codecKey.mimeType) && this.secure == codecKey.secure && this.tunneling == codecKey.tunneling;
+        }
+    }
+
+    private static Integer hevcCodecStringToProfileLevel(String str) {
+        if (str == null) {
+            return null;
+        }
+        switch (str) {
+        }
+        return null;
+    }
+
+    private static Integer dolbyVisionStringToProfile(String str) {
+        if (str == null) {
+            return null;
+        }
+        switch (str) {
+        }
+        return null;
+    }
+
+    private static Integer dolbyVisionStringToLevel(String str) {
+        if (str == null) {
+            return null;
+        }
+        switch (str) {
+        }
+        return null;
     }
 }

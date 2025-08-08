@@ -22,20 +22,6 @@ public final class FullWallet extends AbstractSafeParcelable implements Reflecte
     InstrumentInfo[] zzj;
     PaymentMethodToken zzk;
 
-    FullWallet(String str, String str2, zzaj zzajVar, String str3, zza zzaVar, zza zzaVar2, String[] strArr, UserAddress userAddress, UserAddress userAddress2, InstrumentInfo[] instrumentInfoArr, PaymentMethodToken paymentMethodToken) {
-        this.zza = str;
-        this.zzb = str2;
-        this.zzc = zzajVar;
-        this.zzd = str3;
-        this.zze = zzaVar;
-        this.zzf = zzaVar2;
-        this.zzg = strArr;
-        this.zzh = userAddress;
-        this.zzi = userAddress2;
-        this.zzj = instrumentInfoArr;
-        this.zzk = paymentMethodToken;
-    }
-
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
@@ -51,5 +37,19 @@ public final class FullWallet extends AbstractSafeParcelable implements Reflecte
         SafeParcelWriter.writeTypedArray(parcel, 11, this.zzj, i, false);
         SafeParcelWriter.writeParcelable(parcel, 12, this.zzk, i, false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    FullWallet(String str, String str2, zzaj zzajVar, String str3, zza zzaVar, zza zzaVar2, String[] strArr, UserAddress userAddress, UserAddress userAddress2, InstrumentInfo[] instrumentInfoArr, PaymentMethodToken paymentMethodToken) {
+        this.zza = str;
+        this.zzb = str2;
+        this.zzc = zzajVar;
+        this.zzd = str3;
+        this.zze = zzaVar;
+        this.zzf = zzaVar2;
+        this.zzg = strArr;
+        this.zzh = userAddress;
+        this.zzi = userAddress2;
+        this.zzj = instrumentInfoArr;
+        this.zzk = paymentMethodToken;
     }
 }

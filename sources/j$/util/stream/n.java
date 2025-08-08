@@ -1,45 +1,114 @@
 package j$.util.stream;
 
+import j$.util.function.Consumer;
+import j$.util.function.Predicate;
+import j$.util.function.ToDoubleFunction;
+import j$.util.function.ToIntFunction;
+import j$.util.function.ToLongFunction;
+import java.util.HashSet;
+
 /* loaded from: classes2.dex */
-final class n extends a2 {
-    boolean b;
+final class n extends Z1 {
+    public final /* synthetic */ int b;
     Object c;
 
-    n(e2 e2Var) {
-        super(e2Var);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ n(b bVar, d2 d2Var, int i) {
+        super(d2Var);
+        this.b = i;
+        this.c = bVar;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ n(d2 d2Var) {
+        super(d2Var);
+        this.b = 0;
+    }
+
+    @Override // j$.util.stream.Z1, j$.util.stream.d2
+    public void m() {
+        switch (this.b) {
+            case 0:
+                this.c = null;
+                this.a.m();
+                break;
+            default:
+                super.m();
+                break;
+        }
+    }
+
+    @Override // j$.util.stream.Z1, j$.util.stream.d2
+    public void n(long j) {
+        switch (this.b) {
+            case 0:
+                this.c = new HashSet();
+                this.a.n(-1L);
+                break;
+            case 2:
+                this.a.n(-1L);
+                break;
+            case 7:
+                this.a.n(-1L);
+                break;
+            default:
+                super.n(j);
+                break;
+        }
     }
 
     @Override // j$.util.function.Consumer
     /* renamed from: accept */
     public final void r(Object obj) {
-        e2 e2Var = this.a;
-        if (obj != null) {
-            Object obj2 = this.c;
-            if (obj2 != null && obj.equals(obj2)) {
+        switch (this.b) {
+            case 0:
+                if (((HashSet) this.c).contains(obj)) {
+                    return;
+                }
+                ((HashSet) this.c).add(obj);
+                this.a.r((d2) obj);
                 return;
-            }
-        } else {
-            if (this.b) {
+            case 1:
+                ((Consumer) ((u) this.c).n).r(obj);
+                this.a.r((d2) obj);
                 return;
-            }
-            this.b = true;
-            obj = null;
+            case 2:
+                if (((Predicate) ((u) this.c).n).test(obj)) {
+                    this.a.r((d2) obj);
+                    return;
+                }
+                return;
+            case 3:
+                this.a.r((d2) ((S1) this.c).n.apply(obj));
+                return;
+            case 4:
+                this.a.accept(((ToIntFunction) ((v) this.c).n).applyAsInt(obj));
+                return;
+            case 5:
+                this.a.accept(((ToLongFunction) ((w) this.c).n).applyAsLong(obj));
+                return;
+            case 6:
+                this.a.accept(((ToDoubleFunction) ((t) this.c).n).applyAsDouble(obj));
+                return;
+            default:
+                Stream stream = (Stream) ((S1) this.c).n.apply(obj);
+                if (stream != null) {
+                    try {
+                        ((Stream) stream.sequential()).forEach(this.a);
+                    } catch (Throwable th) {
+                        try {
+                            stream.close();
+                        } catch (Throwable th2) {
+                            th.addSuppressed(th2);
+                        }
+                        throw th;
+                    }
+                }
+                if (stream != null) {
+                    stream.close();
+                    return;
+                }
+                return;
         }
-        this.c = obj;
-        e2Var.r((e2) obj);
-    }
-
-    @Override // j$.util.stream.a2, j$.util.stream.e2
-    public final void m() {
-        this.b = false;
-        this.c = null;
-        this.a.m();
-    }
-
-    @Override // j$.util.stream.a2, j$.util.stream.e2
-    public final void n(long j) {
-        this.b = false;
-        this.c = null;
-        this.a.n(-1L);
     }
 }

@@ -7,15 +7,6 @@ import java.util.List;
 final class DvbSubtitle implements Subtitle {
     private final List cues;
 
-    public DvbSubtitle(List list) {
-        this.cues = list;
-    }
-
-    @Override // com.google.android.exoplayer2.text.Subtitle
-    public List getCues(long j) {
-        return this.cues;
-    }
-
     @Override // com.google.android.exoplayer2.text.Subtitle
     public long getEventTime(int i) {
         return 0L;
@@ -29,5 +20,14 @@ final class DvbSubtitle implements Subtitle {
     @Override // com.google.android.exoplayer2.text.Subtitle
     public int getNextEventTimeIndex(long j) {
         return -1;
+    }
+
+    public DvbSubtitle(List list) {
+        this.cues = list;
+    }
+
+    @Override // com.google.android.exoplayer2.text.Subtitle
+    public List getCues(long j) {
+        return this.cues;
     }
 }

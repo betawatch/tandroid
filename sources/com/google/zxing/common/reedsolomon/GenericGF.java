@@ -2,7 +2,7 @@ package com.google.zxing.common.reedsolomon;
 
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class GenericGF {
     public static final GenericGF AZTEC_DATA_6;
     public static final GenericGF AZTEC_DATA_8;
@@ -19,6 +19,10 @@ public final class GenericGF {
     private final GenericGFPoly zero;
     public static final GenericGF AZTEC_DATA_12 = new GenericGF(4201, 4096, 1);
     public static final GenericGF AZTEC_DATA_10 = new GenericGF(1033, 1024, 1);
+
+    static int addOrSubtract(int i, int i2) {
+        return i ^ i2;
+    }
 
     static {
         GenericGF genericGF = new GenericGF(67, 64, 1);
@@ -52,8 +56,12 @@ public final class GenericGF {
         this.one = new GenericGFPoly(this, new int[]{1});
     }
 
-    static int addOrSubtract(int i, int i2) {
-        return i ^ i2;
+    GenericGFPoly getZero() {
+        return this.zero;
+    }
+
+    GenericGFPoly getOne() {
+        return this.one;
     }
 
     GenericGFPoly buildMonomial(int i, int i2) {
@@ -72,34 +80,18 @@ public final class GenericGF {
         return this.expTable[i];
     }
 
-    public int getGeneratorBase() {
-        return this.generatorBase;
-    }
-
-    GenericGFPoly getOne() {
-        return this.one;
-    }
-
-    public int getSize() {
-        return this.size;
-    }
-
-    GenericGFPoly getZero() {
-        return this.zero;
+    int log(int i) {
+        if (i == 0) {
+            throw new IllegalArgumentException();
+        }
+        return this.logTable[i];
     }
 
     int inverse(int i) {
-        if (i != 0) {
-            return this.expTable[(this.size - this.logTable[i]) - 1];
+        if (i == 0) {
+            throw new ArithmeticException();
         }
-        throw new ArithmeticException();
-    }
-
-    int log(int i) {
-        if (i != 0) {
-            return this.logTable[i];
-        }
-        throw new IllegalArgumentException();
+        return this.expTable[(this.size - this.logTable[i]) - 1];
     }
 
     int multiply(int i, int i2) {
@@ -109,6 +101,14 @@ public final class GenericGF {
         int[] iArr = this.expTable;
         int[] iArr2 = this.logTable;
         return iArr[(iArr2[i] + iArr2[i2]) % (this.size - 1)];
+    }
+
+    public int getSize() {
+        return this.size;
+    }
+
+    public int getGeneratorBase() {
+        return this.generatorBase;
     }
 
     public String toString() {

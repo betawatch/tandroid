@@ -36,106 +36,6 @@ public abstract class ProfileStoriesCollectionTabs extends FrameLayout implement
     private float visibilityFactor;
     private boolean visibilityValue;
 
-    private class Adapter extends ViewPagerFixed.Adapter {
-        private boolean canCreateNewAlbum;
-
-        private Adapter() {
-        }
-
-        @Override // org.telegram.ui.Components.ViewPagerFixed.Adapter
-        public void applyReorder(ArrayList arrayList) {
-            ArrayList arrayList2 = new ArrayList();
-            Iterator it = arrayList.iterator();
-            while (it.hasNext()) {
-                Integer num = (Integer) it.next();
-                int intValue = num.intValue();
-                if (intValue != -1 && intValue != -2 && intValue != 0) {
-                    arrayList2.add(num);
-                }
-            }
-            int itemId = getItemId(ProfileStoriesCollectionTabs.this.tabsView.getCurrentPosition());
-            ProfileStoriesCollectionTabs.this.collections.reorderStep(arrayList2);
-            Log.i("WTF_DEBUG", "" + ProfileStoriesCollectionTabs.this.tabsView.getCurrentPosition() + " " + itemId);
-            if (itemId >= 0) {
-                int itemPosition = getItemPosition(itemId);
-                ProfileStoriesCollectionTabs.this.tabsView.selectTab(itemPosition, itemPosition, 0.0f);
-            }
-            AndroidUtilities.cancelRunOnUIThread(ProfileStoriesCollectionTabs.this.sendCollectionsOrder);
-            AndroidUtilities.runOnUIThread(ProfileStoriesCollectionTabs.this.sendCollectionsOrder, 1000L);
-        }
-
-        @Override // org.telegram.ui.Components.ViewPagerFixed.Adapter
-        public void bindView(View view, int i, int i2) {
-        }
-
-        @Override // org.telegram.ui.Components.ViewPagerFixed.Adapter
-        public boolean canReorder(int i) {
-            if (i == 0) {
-                return false;
-            }
-            return (this.canCreateNewAlbum && i == getItemCount() - 1) ? false : true;
-        }
-
-        @Override // org.telegram.ui.Components.ViewPagerFixed.Adapter
-        public View createView(int i) {
-            if (i == -1) {
-                return null;
-            }
-            return new View(ProfileStoriesCollectionTabs.this.getContext());
-        }
-
-        @Override // org.telegram.ui.Components.ViewPagerFixed.Adapter
-        public int getItemCount() {
-            return ProfileStoriesCollectionTabs.this.collections.collections.size() + 1 + (this.canCreateNewAlbum ? 1 : 0);
-        }
-
-        @Override // org.telegram.ui.Components.ViewPagerFixed.Adapter
-        public int getItemId(int i) {
-            if (i == 0) {
-                return 0;
-            }
-            if (this.canCreateNewAlbum && i == getItemCount() - 1) {
-                return -1;
-            }
-            return ((StoriesController.StoryAlbum) ProfileStoriesCollectionTabs.this.collections.collections.get(i - 1)).album_id;
-        }
-
-        public int getItemPosition(int i) {
-            if (i == 0) {
-                return 0;
-            }
-            int indexOf = ProfileStoriesCollectionTabs.this.collections.indexOf(i);
-            if (indexOf == -1) {
-                return -1;
-            }
-            return indexOf + 1;
-        }
-
-        @Override // org.telegram.ui.Components.ViewPagerFixed.Adapter
-        public CharSequence getItemTitle(int i) {
-            if (i == 0) {
-                return LocaleController.getString(R.string.StoriesAlbumNameAllStories);
-            }
-            if (!this.canCreateNewAlbum || i != getItemCount() - 1) {
-                return ((StoriesController.StoryAlbum) ProfileStoriesCollectionTabs.this.collections.collections.get(i - 1)).title;
-            }
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("+ ");
-            spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.StoriesAlbumAddAlbum));
-            ColoredImageSpan coloredImageSpan = new ColoredImageSpan(R.drawable.poll_add_plus);
-            coloredImageSpan.spaceScaleX = 0.8f;
-            spannableStringBuilder.setSpan(coloredImageSpan, 0, 1, 33);
-            return spannableStringBuilder;
-        }
-
-        @Override // org.telegram.ui.Components.ViewPagerFixed.Adapter
-        public int getItemViewType(int i) {
-            if (this.canCreateNewAlbum && i == getItemCount() - 1) {
-                return -1;
-            }
-            return i;
-        }
-    }
-
     public interface Delegate {
         void onTabAlbumAnimationUpdate(float f);
 
@@ -147,6 +47,8 @@ public abstract class ProfileStoriesCollectionTabs extends FrameLayout implement
 
         void onTabAlbumSelected(int i, boolean z);
     }
+
+    protected abstract void updatedReordering(boolean z);
 
     public ProfileStoriesCollectionTabs(Context context, final StoriesController.StoriesCollections storiesCollections, final Delegate delegate) {
         super(context);
@@ -169,19 +71,19 @@ public abstract class ProfileStoriesCollectionTabs extends FrameLayout implement
             }
 
             @Override // org.telegram.ui.Components.ViewPagerFixed
-            protected void onTabPageSelected(int i, boolean z) {
-                Delegate delegate2 = delegate;
-                if (delegate2 != null) {
-                    delegate2.onTabAlbumSelected(ProfileStoriesCollectionTabs.this.getAlbumIdByPosition(i), z);
-                }
-            }
-
-            @Override // org.telegram.ui.Components.ViewPagerFixed
             protected void onTabScrollEnd(int i) {
                 super.onTabScrollEnd(i);
                 Delegate delegate2 = delegate;
                 if (delegate2 != null) {
                     delegate2.onTabAlbumScrollEnd(ProfileStoriesCollectionTabs.this.getAlbumIdByPosition(i));
+                }
+            }
+
+            @Override // org.telegram.ui.Components.ViewPagerFixed
+            protected void onTabPageSelected(int i, boolean z) {
+                Delegate delegate2 = delegate;
+                if (delegate2 != null) {
+                    delegate2.onTabAlbumSelected(ProfileStoriesCollectionTabs.this.getAlbumIdByPosition(i), z);
                 }
             }
         };
@@ -216,22 +118,17 @@ public abstract class ProfileStoriesCollectionTabs extends FrameLayout implement
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public int getAlbumIdByPosition(int i) {
-        return this.tabsView.getPageIdByPosition(i);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ Boolean lambda$new$0(Delegate delegate, Integer num, Integer num2) {
         if (this.reorderingCollections) {
             return Boolean.TRUE;
         }
-        if (num.intValue() != -1) {
-            return Boolean.FALSE;
+        if (num.intValue() == -1) {
+            if (delegate != null) {
+                delegate.onTabAlbumCreateCollection();
+            }
+            return Boolean.TRUE;
         }
-        if (delegate != null) {
-            delegate.onTabAlbumCreateCollection();
-        }
-        return Boolean.TRUE;
+        return Boolean.FALSE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -245,45 +142,42 @@ public abstract class ProfileStoriesCollectionTabs extends FrameLayout implement
         return Boolean.TRUE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$setReorderingAlbums$4(BaseFragment baseFragment) {
-        ((ProfileActivity) baseFragment).scrollToSharedMedia(true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setVisibility$5(ValueAnimator valueAnimator) {
-        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.visibilityFactor = floatValue;
-        onVisibilityChange(floatValue);
-    }
-
-    private void setVisibility(boolean z, boolean z2, boolean z3) {
-        if (this.visibilityValue != z || z3) {
-            this.visibilityValue = z;
-            setEnabled(z);
-            ValueAnimator valueAnimator = this.visibilityAnimator;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-                this.visibilityAnimator = null;
-            }
-            if (!z2) {
-                float f = z ? 1.0f : 0.0f;
-                this.visibilityFactor = f;
-                onVisibilityChange(f);
-            } else {
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(this.visibilityFactor, z ? 1.0f : 0.0f);
-                this.visibilityAnimator = ofFloat;
-                ofFloat.setDuration(480L);
-                this.visibilityAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
-                this.visibilityAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ProfileStoriesCollectionTabs$$ExternalSyntheticLambda6
-                    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                    public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                        ProfileStoriesCollectionTabs.this.lambda$setVisibility$5(valueAnimator2);
-                    }
-                });
-                this.visibilityAnimator.start();
-            }
+    public void setInitialTabId(final int i) {
+        if (this.adapter.getItemPosition(i) != -1) {
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ProfileStoriesCollectionTabs$$ExternalSyntheticLambda3
+                @Override // java.lang.Runnable
+                public final void run() {
+                    ProfileStoriesCollectionTabs.this.lambda$setInitialTabId$2(i);
+                }
+            }, 500L);
+        } else {
+            this.initialAlbumId = i;
         }
+    }
+
+    public int getCurrentAlbumId() {
+        return this.adapter.getItemId(this.tabsView.getCurrentPosition());
+    }
+
+    public int getNextAlbumId(boolean z) {
+        return this.tabsView.getNextPageId(z);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public int getAlbumIdByPosition(int i) {
+        return this.tabsView.getPageIdByPosition(i);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        NotificationCenter.getInstance(this.collections.currentAccount).addObserver(this, NotificationCenter.storyAlbumsCollectionsUpdate);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        NotificationCenter.getInstance(this.collections.currentAccount).addObserver(this, NotificationCenter.storyAlbumsCollectionsUpdate);
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
@@ -316,60 +210,8 @@ public abstract class ProfileStoriesCollectionTabs extends FrameLayout implement
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        return this.visibilityValue && super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // android.view.View
-    public void draw(Canvas canvas) {
-        if (this.visibilityFactor == 0.0f) {
-            return;
-        }
-        canvas.save();
-        canvas.clipRect(0.0f, 0.0f, getMeasuredWidth(), getVisualHeight());
-        super.draw(canvas);
-        canvas.restore();
-    }
-
-    public int getCurrentAlbumId() {
-        return this.adapter.getItemId(this.tabsView.getCurrentPosition());
-    }
-
-    public int getNextAlbumId(boolean z) {
-        return this.tabsView.getNextPageId(z);
-    }
-
-    public float getVisibilityFactor() {
-        return this.visibilityFactor;
-    }
-
-    public float getVisualHeight() {
-        return getMeasuredHeight() * this.visibilityFactor;
-    }
-
-    public boolean isReordering() {
-        return this.reorderingCollections;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    protected void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        NotificationCenter.getInstance(this.collections.currentAccount).addObserver(this, NotificationCenter.storyAlbumsCollectionsUpdate);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    protected void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        NotificationCenter.getInstance(this.collections.currentAccount).addObserver(this, NotificationCenter.storyAlbumsCollectionsUpdate);
-    }
-
-    protected void onVisibilityChange(float f) {
-        invalidate();
-    }
-
-    public void resetReordering() {
-        setReorderingAlbums(false);
+    public void selectTabWithId(int i, float f) {
+        this.tabsView.selectTabWithId(i, f);
     }
 
     /* renamed from: scrollToAlbumId, reason: merged with bridge method [inline-methods] and merged with bridge method [inline-methods] */
@@ -377,21 +219,12 @@ public abstract class ProfileStoriesCollectionTabs extends FrameLayout implement
         this.tabsView.scrollToTab(i, this.adapter.getItemPosition(i));
     }
 
-    public void selectTabWithId(int i, float f) {
-        this.tabsView.selectTabWithId(i, f);
+    public boolean isReordering() {
+        return this.reorderingCollections;
     }
 
-    public void setInitialTabId(final int i) {
-        if (this.adapter.getItemPosition(i) != -1) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ProfileStoriesCollectionTabs$$ExternalSyntheticLambda3
-                @Override // java.lang.Runnable
-                public final void run() {
-                    ProfileStoriesCollectionTabs.this.lambda$setInitialTabId$2(i);
-                }
-            }, 500L);
-        } else {
-            this.initialAlbumId = i;
-        }
+    public void resetReordering() {
+        setReorderingAlbums(false);
     }
 
     public void setReorderingAlbums(boolean z) {
@@ -424,5 +257,172 @@ public abstract class ProfileStoriesCollectionTabs extends FrameLayout implement
         this.tabsView.selectTab(itemPosition, itemPosition, 0.0f);
     }
 
-    protected abstract void updatedReordering(boolean z);
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$setReorderingAlbums$4(BaseFragment baseFragment) {
+        ((ProfileActivity) baseFragment).scrollToSharedMedia(true);
+    }
+
+    private void setVisibility(boolean z, boolean z2, boolean z3) {
+        if (this.visibilityValue != z || z3) {
+            this.visibilityValue = z;
+            setEnabled(z);
+            ValueAnimator valueAnimator = this.visibilityAnimator;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+                this.visibilityAnimator = null;
+            }
+            if (!z2) {
+                float f = z ? 1.0f : 0.0f;
+                this.visibilityFactor = f;
+                onVisibilityChange(f);
+            } else {
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(this.visibilityFactor, z ? 1.0f : 0.0f);
+                this.visibilityAnimator = ofFloat;
+                ofFloat.setDuration(480L);
+                this.visibilityAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
+                this.visibilityAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ProfileStoriesCollectionTabs$$ExternalSyntheticLambda6
+                    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                    public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
+                        ProfileStoriesCollectionTabs.this.lambda$setVisibility$5(valueAnimator2);
+                    }
+                });
+                this.visibilityAnimator.start();
+            }
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setVisibility$5(ValueAnimator valueAnimator) {
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        this.visibilityFactor = floatValue;
+        onVisibilityChange(floatValue);
+    }
+
+    protected void onVisibilityChange(float f) {
+        invalidate();
+    }
+
+    public float getVisibilityFactor() {
+        return this.visibilityFactor;
+    }
+
+    public float getVisualHeight() {
+        return getMeasuredHeight() * this.visibilityFactor;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        return this.visibilityValue && super.dispatchTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.View
+    public void draw(Canvas canvas) {
+        if (this.visibilityFactor == 0.0f) {
+            return;
+        }
+        canvas.save();
+        canvas.clipRect(0.0f, 0.0f, getMeasuredWidth(), getVisualHeight());
+        super.draw(canvas);
+        canvas.restore();
+    }
+
+    private class Adapter extends ViewPagerFixed.Adapter {
+        private boolean canCreateNewAlbum;
+
+        @Override // org.telegram.ui.Components.ViewPagerFixed.Adapter
+        public void bindView(View view, int i, int i2) {
+        }
+
+        private Adapter() {
+        }
+
+        @Override // org.telegram.ui.Components.ViewPagerFixed.Adapter
+        public int getItemCount() {
+            return ProfileStoriesCollectionTabs.this.collections.collections.size() + 1 + (this.canCreateNewAlbum ? 1 : 0);
+        }
+
+        @Override // org.telegram.ui.Components.ViewPagerFixed.Adapter
+        public View createView(int i) {
+            if (i == -1) {
+                return null;
+            }
+            return new View(ProfileStoriesCollectionTabs.this.getContext());
+        }
+
+        @Override // org.telegram.ui.Components.ViewPagerFixed.Adapter
+        public boolean canReorder(int i) {
+            if (i == 0) {
+                return false;
+            }
+            return (this.canCreateNewAlbum && i == getItemCount() - 1) ? false : true;
+        }
+
+        @Override // org.telegram.ui.Components.ViewPagerFixed.Adapter
+        public void applyReorder(ArrayList arrayList) {
+            ArrayList arrayList2 = new ArrayList();
+            Iterator it = arrayList.iterator();
+            while (it.hasNext()) {
+                Integer num = (Integer) it.next();
+                int intValue = num.intValue();
+                if (intValue != -1 && intValue != -2 && intValue != 0) {
+                    arrayList2.add(num);
+                }
+            }
+            int itemId = getItemId(ProfileStoriesCollectionTabs.this.tabsView.getCurrentPosition());
+            ProfileStoriesCollectionTabs.this.collections.reorderStep(arrayList2);
+            Log.i("WTF_DEBUG", "" + ProfileStoriesCollectionTabs.this.tabsView.getCurrentPosition() + " " + itemId);
+            if (itemId >= 0) {
+                int itemPosition = getItemPosition(itemId);
+                ProfileStoriesCollectionTabs.this.tabsView.selectTab(itemPosition, itemPosition, 0.0f);
+            }
+            AndroidUtilities.cancelRunOnUIThread(ProfileStoriesCollectionTabs.this.sendCollectionsOrder);
+            AndroidUtilities.runOnUIThread(ProfileStoriesCollectionTabs.this.sendCollectionsOrder, 1000L);
+        }
+
+        public int getItemPosition(int i) {
+            if (i == 0) {
+                return 0;
+            }
+            int indexOf = ProfileStoriesCollectionTabs.this.collections.indexOf(i);
+            if (indexOf == -1) {
+                return -1;
+            }
+            return indexOf + 1;
+        }
+
+        @Override // org.telegram.ui.Components.ViewPagerFixed.Adapter
+        public int getItemId(int i) {
+            if (i == 0) {
+                return 0;
+            }
+            if (this.canCreateNewAlbum && i == getItemCount() - 1) {
+                return -1;
+            }
+            return ((StoriesController.StoryAlbum) ProfileStoriesCollectionTabs.this.collections.collections.get(i - 1)).album_id;
+        }
+
+        @Override // org.telegram.ui.Components.ViewPagerFixed.Adapter
+        public int getItemViewType(int i) {
+            if (this.canCreateNewAlbum && i == getItemCount() - 1) {
+                return -1;
+            }
+            return i;
+        }
+
+        @Override // org.telegram.ui.Components.ViewPagerFixed.Adapter
+        public CharSequence getItemTitle(int i) {
+            if (i == 0) {
+                return LocaleController.getString(R.string.StoriesAlbumNameAllStories);
+            }
+            if (this.canCreateNewAlbum && i == getItemCount() - 1) {
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("+ ");
+                spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.StoriesAlbumAddAlbum));
+                ColoredImageSpan coloredImageSpan = new ColoredImageSpan(R.drawable.poll_add_plus);
+                coloredImageSpan.spaceScaleX = 0.8f;
+                spannableStringBuilder.setSpan(coloredImageSpan, 0, 1, 33);
+                return spannableStringBuilder;
+            }
+            return ((StoriesController.StoryAlbum) ProfileStoriesCollectionTabs.this.collections.collections.get(i - 1)).title;
+        }
+    }
 }

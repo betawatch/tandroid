@@ -227,125 +227,8 @@ public class SelectorBottomSheet extends BottomSheetWithRecyclerListView {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void clearSearchAfterSelectChannel() {
-        if (isSearching()) {
-            this.query = null;
-            this.searchField.setText("");
-            AndroidUtilities.cancelRunOnUIThread(this.remoteSearchRunnable);
-            this.peers.clear();
-            this.peers.addAll(BoostRepository.getMyChannels(this.currentChat.id));
-            updateList(false, false);
-            updateList(true, true);
-        }
-    }
-
-    private void drawFilledStatusBar(Canvas canvas, int i) {
-        this.backgroundPaint.setColor(Theme.getColor(Theme.key_dialogBackground, this.resourcesProvider));
-        int max = Math.max(0, i);
-        int lerp = AndroidUtilities.lerp(max, 0, this.statusBarT.set(max < AndroidUtilities.statusBarHeight));
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(this.backgroundPaddingLeft, lerp, this.containerView.getWidth() - this.backgroundPaddingLeft, this.containerView.getHeight() + AndroidUtilities.dp(14.0f));
-        float dp = AndroidUtilities.dp(14.0f) * (1.0f - this.statusBarT.get());
-        canvas.drawRoundRect(rectF, dp, dp, this.backgroundPaint);
-    }
-
-    private boolean isSearching() {
-        return !TextUtils.isEmpty(this.query);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$hasChanges$10() {
-        save(true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$hasChanges$11() {
-        this.selectedIds.clear();
-        this.openedIds.clear();
-        lambda$new$0();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadData$6(List list) {
-        if (isSearching()) {
-            this.peers.clear();
-            this.peers.addAll(list);
-            updateList(true, true);
-            scrollToTop(true);
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadData$7(boolean z, List list) {
-        if (z) {
-            this.users.addAll(list);
-        }
-        if (this.type == 1) {
-            this.peers.clear();
-            this.peers.addAll(list);
-            updateList(true, true);
-            scrollToTop(true);
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadData$8(String str, List list) {
-        this.countriesList.addAll(list);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadData$9(boolean z, Pair pair) {
-        if (z) {
-            this.countriesMap.putAll((Map) pair.first);
-            this.countriesLetters.addAll((Collection) pair.second);
-            Map.-EL.forEach(this.countriesMap, new BiConsumer() { // from class: org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet$$ExternalSyntheticLambda16
-                @Override // j$.util.function.BiConsumer
-                public final void accept(Object obj, Object obj2) {
-                    SelectorBottomSheet.this.lambda$loadData$8((String) obj, (List) obj2);
-                }
-
-                @Override // j$.util.function.BiConsumer
-                public /* synthetic */ BiConsumer andThen(BiConsumer biConsumer) {
-                    return BiConsumer.-CC.$default$andThen(this, biConsumer);
-                }
-            });
-        }
-        if (this.type == 3) {
-            updateList(true, true);
-            scrollToTop(true);
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$0(View view) {
         save(false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1() {
-        updateList(true, false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2() {
-        updateList(true, false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(long j) {
-        this.selectedIds.remove(Long.valueOf(j));
-        this.searchField.updateSpans(true, this.selectedIds, new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet$$ExternalSyntheticLambda15
-            @Override // java.lang.Runnable
-            public final void run() {
-                SelectorBottomSheet.this.lambda$new$2();
-            }
-        }, null);
-        updateList(true, false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$4() {
-        updateList(true, false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -415,100 +298,55 @@ public class SelectorBottomSheet extends BottomSheetWithRecyclerListView {
                     SelectorBottomSheet.this.lambda$new$4();
                 }
             }, this.countriesList);
-            if (!isSearching()) {
-                updateList(true, false);
+            if (isSearching()) {
+                this.query = null;
+                this.searchField.setText("");
+                updateList(false, false);
+                updateList(true, true);
                 return;
             }
+            updateList(true, false);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$1() {
+        updateList(true, false);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$3(long j) {
+        this.selectedIds.remove(Long.valueOf(j));
+        this.searchField.updateSpans(true, this.selectedIds, new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet$$ExternalSyntheticLambda15
+            @Override // java.lang.Runnable
+            public final void run() {
+                SelectorBottomSheet.this.lambda$new$2();
+            }
+        }, null);
+        updateList(true, false);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$2() {
+        updateList(true, false);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$4() {
+        updateList(true, false);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void clearSearchAfterSelectChannel() {
+        if (isSearching()) {
             this.query = null;
             this.searchField.setText("");
+            AndroidUtilities.cancelRunOnUIThread(this.remoteSearchRunnable);
+            this.peers.clear();
+            this.peers.addAll(BoostRepository.getMyChannels(this.currentChat.id));
             updateList(false, false);
             updateList(true, true);
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$prepare$12() {
-        updateList(true, false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateSectionCell$13(View view) {
-        this.selectedIds.clear();
-        this.searchField.spansContainer.removeAllSpans(true);
-        updateList(true, false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public void loadData(int i, final boolean z, String str) {
-        if (i == 1) {
-            BoostRepository.loadChatParticipants(this.currentChat.id, 0, str, 0, 50, new Utilities.Callback() { // from class: org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet$$ExternalSyntheticLambda9
-                @Override // org.telegram.messenger.Utilities.Callback
-                public final void run(Object obj) {
-                    SelectorBottomSheet.this.lambda$loadData$7(z, (List) obj);
-                }
-            });
-        } else if (i == 2) {
-            BoostRepository.searchChats(this.currentChat.id, 0, str, 50, new Utilities.Callback() { // from class: org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet$$ExternalSyntheticLambda8
-                @Override // org.telegram.messenger.Utilities.Callback
-                public final void run(Object obj) {
-                    SelectorBottomSheet.this.lambda$loadData$6((List) obj);
-                }
-            });
-        } else {
-            if (i != 3) {
-                return;
-            }
-            BoostRepository.loadCountries(new Utilities.Callback() { // from class: org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet$$ExternalSyntheticLambda7
-                @Override // org.telegram.messenger.Utilities.Callback
-                public final void run(Object obj) {
-                    SelectorBottomSheet.this.lambda$loadData$9(z, (Pair) obj);
-                }
-            });
-        }
-    }
-
-    private boolean matchLocal(TLObject tLObject, String str) {
-        if (TextUtils.isEmpty(str)) {
-            return true;
-        }
-        if (!(tLObject instanceof TLRPC.TL_help_country)) {
-            return false;
-        }
-        TLRPC.TL_help_country tL_help_country = (TLRPC.TL_help_country) tLObject;
-        String lowerCase = AndroidUtilities.translitSafe(tL_help_country.default_name).toLowerCase();
-        if (!lowerCase.startsWith(str)) {
-            if (!lowerCase.contains(" " + str)) {
-                String lowerCase2 = AndroidUtilities.translitSafe(tL_help_country.iso2).toLowerCase();
-                if (!lowerCase2.startsWith(str)) {
-                    if (!lowerCase2.contains(" " + str)) {
-                        return false;
-                    }
-                }
-            }
-        }
-        return true;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public void onSearch(String str) {
-        this.query = str;
-        int i = this.type;
-        if (i != 1) {
-            if (i != 2) {
-                if (i != 3) {
-                    return;
-                }
-            } else if (!isSearching()) {
-                AndroidUtilities.cancelRunOnUIThread(this.remoteSearchRunnable);
-                this.peers.clear();
-                this.peers.addAll(BoostRepository.getMyChannels(this.currentChat.id));
-            }
-            updateItems(false, true);
-            scrollToTop(true);
-            return;
-        }
-        AndroidUtilities.cancelRunOnUIThread(this.remoteSearchRunnable);
-        AndroidUtilities.runOnUIThread(this.remoteSearchRunnable, 350L);
     }
 
     private void save(boolean z) {
@@ -564,147 +402,95 @@ public class SelectorBottomSheet extends BottomSheetWithRecyclerListView {
         }
     }
 
-    private void showMaximumUsersToast() {
-        int i = this.type;
-        String formatPluralString = i != 1 ? i != 2 ? i != 3 ? "" : LocaleController.formatPluralString("BoostingSelectUpToWarningCountriesPlural", (int) BoostRepository.giveawayCountriesMax(), new Object[0]) : LocaleController.formatPluralString("BoostingSelectUpToWarningChannelsGroupsPlural", (int) BoostRepository.giveawayAddPeersMax(), new Object[0]) : LocaleController.getString(R.string.BoostingSelectUpToWarningUsers);
-        SelectedObjectsListener selectedObjectsListener = this.selectedObjectsListener;
-        if (selectedObjectsListener != null) {
-            selectedObjectsListener.onShowToast(formatPluralString);
+    public void scrollToTop(boolean z) {
+        if (z) {
+            LinearSmoothScrollerCustom linearSmoothScrollerCustom = new LinearSmoothScrollerCustom(getContext(), 2, 0.6f);
+            linearSmoothScrollerCustom.setTargetPosition(1);
+            linearSmoothScrollerCustom.setOffset(AndroidUtilities.dp(38.0f));
+            this.recyclerListView.getLayoutManager().startSmoothScroll(linearSmoothScrollerCustom);
+            return;
+        }
+        this.recyclerListView.scrollToPosition(0);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$loadData$6(List list) {
+        if (isSearching()) {
+            this.peers.clear();
+            this.peers.addAll(list);
+            updateList(true, true);
+            scrollToTop(true);
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0038  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    private void updateActionButton(boolean z) {
-        int i;
-        String string;
-        this.actionButton.setShowZero(false);
-        int i2 = this.type;
-        if (i2 == 1) {
-            i = R.string.BoostingSaveRecipients;
-        } else {
-            if (i2 != 2 && i2 != 3) {
-                string = "";
-                this.actionButton.setText(string, z);
-                this.actionButton.setCount(this.selectedIds.size(), z);
-                this.actionButton.setEnabled(this.selectedIds.size() > 0);
-            }
-            i = R.string.Save;
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$loadData$7(boolean z, List list) {
+        if (z) {
+            this.users.addAll(list);
         }
-        string = LocaleController.getString(i);
-        this.actionButton.setText(string, z);
-        this.actionButton.setCount(this.selectedIds.size(), z);
-        this.actionButton.setEnabled(this.selectedIds.size() > 0);
-    }
-
-    private void updateCheckboxes(boolean z) {
-        for (int i = 0; i < this.recyclerListView.getChildCount(); i++) {
-            View childAt = this.recyclerListView.getChildAt(i);
-            if (childAt instanceof SelectorUserCell) {
-                int childAdapterPosition = this.recyclerListView.getChildAdapterPosition(childAt) - 1;
-                if (childAdapterPosition >= 0 && childAdapterPosition < this.items.size()) {
-                    SelectorAdapter.Item item = (SelectorAdapter.Item) this.items.get(childAdapterPosition);
-                    SelectorUserCell selectorUserCell = (SelectorUserCell) childAt;
-                    selectorUserCell.setChecked(item.checked, z);
-                    TLRPC.Chat chat = item.chat;
-                    float f = 1.0f;
-                    if (chat != null && this.selectorAdapter.getParticipantsCount(chat) > 200) {
-                        f = 0.3f;
-                    }
-                    selectorUserCell.setCheckboxAlpha(f, z);
-                }
-            }
-            if (childAt instanceof SelectorCountryCell) {
-                ((SelectorCountryCell) childAt).setChecked(this.selectedIds.contains(Long.valueOf(r1.getCountry().default_name.hashCode())), true);
-            }
+        if (this.type == 1) {
+            this.peers.clear();
+            this.peers.addAll(list);
+            updateList(true, true);
+            scrollToTop(true);
         }
     }
 
-    private void updateList(boolean z, boolean z2) {
-        updateItems(z, z2);
-        updateCheckboxes(z);
-        updateActionButton(z);
-    }
-
-    private void updateSection() {
-        String formatPluralStringComma;
-        int i = this.type;
+    /* JADX INFO: Access modifiers changed from: private */
+    public void loadData(int i, final boolean z, String str) {
         if (i == 1) {
-            formatPluralStringComma = LocaleController.formatPluralStringComma(ChatObject.isChannelAndNotMegaGroup(this.currentChat) ? "Subscribers" : "Members", Math.max(0, this.selectorAdapter.getParticipantsCount(this.currentChat) - 1));
-        } else {
-            if (i != 2) {
-                if (i != 3) {
-                    formatPluralStringComma = "";
-                } else {
-                    formatPluralStringComma = LocaleController.formatPluralString("BoostingSelectUpToCountriesPlural", (int) BoostRepository.giveawayCountriesMax(), new Object[0]);
-                    this.sectionCell.setLayerHeight(1);
-                }
-                this.sectionCell.setText(formatPluralStringComma);
-            }
-            formatPluralStringComma = LocaleController.formatPluralString("BoostingSelectUpToGroupChannelPlural", (int) BoostRepository.giveawayAddPeersMax(), new Object[0]);
-        }
-        this.sectionCell.setLayerHeight(32);
-        this.sectionCell.setText(formatPluralStringComma);
-    }
-
-    private void updateSectionCell(boolean z) {
-        if (this.selectedIds.size() > 0 && this.type != 3) {
-            this.sectionCell.setRightText(LocaleController.getString(R.string.UsersDeselectAll), true, new View.OnClickListener() { // from class: org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet$$ExternalSyntheticLambda2
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    SelectorBottomSheet.this.lambda$updateSectionCell$13(view);
+            BoostRepository.loadChatParticipants(this.currentChat.id, 0, str, 0, 50, new Utilities.Callback() { // from class: org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet$$ExternalSyntheticLambda9
+                @Override // org.telegram.messenger.Utilities.Callback
+                public final void run(Object obj) {
+                    SelectorBottomSheet.this.lambda$loadData$7(z, (List) obj);
                 }
             });
-        } else if (z) {
-            this.sectionCell.setRightText(null);
+        } else if (i == 2) {
+            BoostRepository.searchChats(this.currentChat.id, 0, str, 50, new Utilities.Callback() { // from class: org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet$$ExternalSyntheticLambda8
+                @Override // org.telegram.messenger.Utilities.Callback
+                public final void run(Object obj) {
+                    SelectorBottomSheet.this.lambda$loadData$6((List) obj);
+                }
+            });
         } else {
-            this.sectionCell.setRightText((CharSequence) null, (View.OnClickListener) null);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
-    protected RecyclerListView.SelectionAdapter createAdapter(RecyclerListView recyclerListView) {
-        SelectorAdapter selectorAdapter = new SelectorAdapter(getContext(), true, this.resourcesProvider);
-        this.selectorAdapter = selectorAdapter;
-        return selectorAdapter;
-    }
-
-    @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
-    /* renamed from: dismiss */
-    public void lambda$new$0() {
-        Runnable runnable = this.onCloseClick;
-        if (runnable != null) {
-            runnable.run();
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.BottomSheet
-    public void dismissInternal() {
-        super.dismissInternal();
-        AndroidUtilities.cancelRunOnUIThread(this.remoteSearchRunnable);
-    }
-
-    @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
-    protected CharSequence getTitle() {
-        int i;
-        int i2 = this.type;
-        if (i2 == 1) {
-            i = R.string.GiftPremium;
-        } else if (i2 == 2) {
-            i = R.string.BoostingAddChannelOrGroup;
-        } else {
-            if (i2 != 3) {
-                return "";
+            if (i != 3) {
+                return;
             }
-            i = R.string.BoostingSelectCountry;
+            BoostRepository.loadCountries(new Utilities.Callback() { // from class: org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet$$ExternalSyntheticLambda7
+                @Override // org.telegram.messenger.Utilities.Callback
+                public final void run(Object obj) {
+                    SelectorBottomSheet.this.lambda$loadData$9(z, (Pair) obj);
+                }
+            });
         }
-        return LocaleController.getString(i);
     }
 
-    public int getTop() {
-        return Math.max(0, this.top - (this.statusBarT.get() == 1.0f ? AndroidUtilities.statusBarHeight : 0));
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$loadData$9(boolean z, Pair pair) {
+        if (z) {
+            this.countriesMap.putAll((Map) pair.first);
+            this.countriesLetters.addAll((Collection) pair.second);
+            Map.-EL.forEach(this.countriesMap, new BiConsumer() { // from class: org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet$$ExternalSyntheticLambda16
+                @Override // j$.util.function.BiConsumer
+                public final void accept(Object obj, Object obj2) {
+                    SelectorBottomSheet.this.lambda$loadData$8((String) obj, (List) obj2);
+                }
+
+                @Override // j$.util.function.BiConsumer
+                public /* synthetic */ BiConsumer andThen(BiConsumer biConsumer) {
+                    return BiConsumer.-CC.$default$andThen(this, biConsumer);
+                }
+            });
+        }
+        if (this.type == 3) {
+            updateList(true, true);
+            scrollToTop(true);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$loadData$8(String str, List list) {
+        this.countriesList.addAll(list);
     }
 
     public boolean hasChanges() {
@@ -725,79 +511,77 @@ public class SelectorBottomSheet extends BottomSheetWithRecyclerListView {
         return true;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$hasChanges$10() {
+        save(true);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$hasChanges$11() {
+        this.selectedIds.clear();
+        this.openedIds.clear();
+        lambda$new$0();
+    }
+
+    @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
+    /* renamed from: dismiss */
+    public void lambda$new$0() {
+        Runnable runnable = this.onCloseClick;
+        if (runnable != null) {
+            runnable.run();
+        }
+    }
+
     @Override // org.telegram.ui.ActionBar.BottomSheet
-    public void onConfigurationChanged(Configuration configuration) {
-        super.onConfigurationChanged(configuration);
-        updateItems(false, true);
+    public void dismissInternal() {
+        super.dismissInternal();
+        AndroidUtilities.cancelRunOnUIThread(this.remoteSearchRunnable);
     }
 
-    @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
-    protected void onPreDraw(Canvas canvas, int i, float f) {
-        this.top = i;
-        this.headerView.setTranslationY(Math.max(i, AndroidUtilities.statusBarHeight + (((this.headerView.getMeasuredHeight() - AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(40.0f)) / 2.0f)));
-        this.searchField.setTranslationY(this.headerView.getTranslationY() + this.headerView.getMeasuredHeight());
-        this.recyclerListView.setTranslationY((this.headerView.getMeasuredHeight() + this.searchField.getMeasuredHeight()) - AndroidUtilities.dp(16.0f));
-        drawFilledStatusBar(canvas, i);
+    public void setSelectedObjectsListener(SelectedObjectsListener selectedObjectsListener) {
+        this.selectedObjectsListener = selectedObjectsListener;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0035  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
+    public int getTop() {
+        return Math.max(0, this.top - (this.statusBarT.get() == 1.0f ? AndroidUtilities.statusBarHeight : 0));
+    }
+
+    public void setOnCloseClick(Runnable runnable) {
+        this.onCloseClick = runnable;
+    }
+
     public void prepare(List list, int i) {
-        ArrayList arrayList;
-        ArrayList arrayList2;
         this.type = i;
         this.query = null;
         this.openedIds.clear();
         this.selectedIds.clear();
         this.peers.clear();
         this.allSelectedObjects.clear();
-        if (i != 1) {
-            if (i == 2) {
-                arrayList = this.peers;
-                arrayList2 = BoostRepository.getMyChannels(this.currentChat.id);
-            }
-            if (list != null) {
-                Iterator it = list.iterator();
-                while (it.hasNext()) {
-                    TLObject tLObject = (TLObject) it.next();
-                    long j = tLObject instanceof TLRPC.TL_inputPeerChat ? -((TLRPC.TL_inputPeerChat) tLObject).chat_id : 0L;
-                    if (tLObject instanceof TLRPC.TL_inputPeerChannel) {
-                        j = -((TLRPC.TL_inputPeerChannel) tLObject).channel_id;
-                    }
-                    if (tLObject instanceof TLRPC.Chat) {
-                        j = -((TLRPC.Chat) tLObject).id;
-                    }
-                    if (tLObject instanceof TLRPC.User) {
-                        j = ((TLRPC.User) tLObject).id;
-                    }
-                    if (tLObject instanceof TLRPC.TL_help_country) {
-                        j = ((TLRPC.TL_help_country) tLObject).default_name.hashCode();
-                    }
-                    this.selectedIds.add(Long.valueOf(j));
-                    this.allSelectedObjects.put(Long.valueOf(j), tLObject);
-                }
-            }
-            this.openedIds.addAll(this.selectedIds);
-            this.searchField.setText("");
-            this.searchField.spansContainer.removeAllSpans(false);
-            this.searchField.updateSpans(false, this.selectedIds, new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet$$ExternalSyntheticLambda14
-                @Override // java.lang.Runnable
-                public final void run() {
-                    SelectorBottomSheet.this.lambda$prepare$12();
-                }
-            }, this.countriesList);
-            updateSection();
-            updateList(false, true);
-            this.headerView.setText(getTitle());
-            updateActionButton(false);
-            scrollToTop(false);
+        if (i == 1) {
+            this.peers.addAll(this.users);
+        } else if (i == 2) {
+            this.peers.addAll(BoostRepository.getMyChannels(this.currentChat.id));
         }
-        arrayList = this.peers;
-        arrayList2 = this.users;
-        arrayList.addAll(arrayList2);
         if (list != null) {
+            Iterator it = list.iterator();
+            while (it.hasNext()) {
+                TLObject tLObject = (TLObject) it.next();
+                long j = tLObject instanceof TLRPC.TL_inputPeerChat ? -((TLRPC.TL_inputPeerChat) tLObject).chat_id : 0L;
+                if (tLObject instanceof TLRPC.TL_inputPeerChannel) {
+                    j = -((TLRPC.TL_inputPeerChannel) tLObject).channel_id;
+                }
+                if (tLObject instanceof TLRPC.Chat) {
+                    j = -((TLRPC.Chat) tLObject).id;
+                }
+                if (tLObject instanceof TLRPC.User) {
+                    j = ((TLRPC.User) tLObject).id;
+                }
+                if (tLObject instanceof TLRPC.TL_help_country) {
+                    j = ((TLRPC.TL_help_country) tLObject).default_name.hashCode();
+                }
+                this.selectedIds.add(Long.valueOf(j));
+                this.allSelectedObjects.put(Long.valueOf(j), tLObject);
+            }
         }
         this.openedIds.addAll(this.selectedIds);
         this.searchField.setText("");
@@ -815,23 +599,162 @@ public class SelectorBottomSheet extends BottomSheetWithRecyclerListView {
         scrollToTop(false);
     }
 
-    public void scrollToTop(boolean z) {
-        if (!z) {
-            this.recyclerListView.scrollToPosition(0);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$prepare$12() {
+        updateList(true, false);
+    }
+
+    private void updateSection() {
+        String formatPluralStringComma;
+        int i = this.type;
+        if (i == 1) {
+            formatPluralStringComma = LocaleController.formatPluralStringComma(ChatObject.isChannelAndNotMegaGroup(this.currentChat) ? "Subscribers" : "Members", Math.max(0, this.selectorAdapter.getParticipantsCount(this.currentChat) - 1));
+            this.sectionCell.setLayerHeight(32);
+        } else if (i == 2) {
+            formatPluralStringComma = LocaleController.formatPluralString("BoostingSelectUpToGroupChannelPlural", (int) BoostRepository.giveawayAddPeersMax(), new Object[0]);
+            this.sectionCell.setLayerHeight(32);
+        } else if (i == 3) {
+            formatPluralStringComma = LocaleController.formatPluralString("BoostingSelectUpToCountriesPlural", (int) BoostRepository.giveawayCountriesMax(), new Object[0]);
+            this.sectionCell.setLayerHeight(1);
+        } else {
+            formatPluralStringComma = "";
+        }
+        this.sectionCell.setText(formatPluralStringComma);
+    }
+
+    private void showMaximumUsersToast() {
+        String string;
+        int i = this.type;
+        if (i == 1) {
+            string = LocaleController.getString(R.string.BoostingSelectUpToWarningUsers);
+        } else if (i == 2) {
+            string = LocaleController.formatPluralString("BoostingSelectUpToWarningChannelsGroupsPlural", (int) BoostRepository.giveawayAddPeersMax(), new Object[0]);
+        } else {
+            string = i != 3 ? "" : LocaleController.formatPluralString("BoostingSelectUpToWarningCountriesPlural", (int) BoostRepository.giveawayCountriesMax(), new Object[0]);
+        }
+        SelectedObjectsListener selectedObjectsListener = this.selectedObjectsListener;
+        if (selectedObjectsListener != null) {
+            selectedObjectsListener.onShowToast(string);
+        }
+    }
+
+    private void updateList(boolean z, boolean z2) {
+        updateItems(z, z2);
+        updateCheckboxes(z);
+        updateActionButton(z);
+    }
+
+    private void updateCheckboxes(boolean z) {
+        for (int i = 0; i < this.recyclerListView.getChildCount(); i++) {
+            View childAt = this.recyclerListView.getChildAt(i);
+            if (childAt instanceof SelectorUserCell) {
+                int childAdapterPosition = this.recyclerListView.getChildAdapterPosition(childAt) - 1;
+                if (childAdapterPosition >= 0 && childAdapterPosition < this.items.size()) {
+                    SelectorAdapter.Item item = (SelectorAdapter.Item) this.items.get(childAdapterPosition);
+                    SelectorUserCell selectorUserCell = (SelectorUserCell) childAt;
+                    selectorUserCell.setChecked(item.checked, z);
+                    TLRPC.Chat chat = item.chat;
+                    if (chat != null) {
+                        selectorUserCell.setCheckboxAlpha(this.selectorAdapter.getParticipantsCount(chat) > 200 ? 0.3f : 1.0f, z);
+                    } else {
+                        selectorUserCell.setCheckboxAlpha(1.0f, z);
+                    }
+                }
+            }
+            if (childAt instanceof SelectorCountryCell) {
+                ((SelectorCountryCell) childAt).setChecked(this.selectedIds.contains(Long.valueOf(r1.getCountry().default_name.hashCode())), true);
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
+    protected void onPreDraw(Canvas canvas, int i, float f) {
+        this.top = i;
+        this.headerView.setTranslationY(Math.max(i, AndroidUtilities.statusBarHeight + (((this.headerView.getMeasuredHeight() - AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(40.0f)) / 2.0f)));
+        this.searchField.setTranslationY(this.headerView.getTranslationY() + this.headerView.getMeasuredHeight());
+        this.recyclerListView.setTranslationY((this.headerView.getMeasuredHeight() + this.searchField.getMeasuredHeight()) - AndroidUtilities.dp(16.0f));
+        drawFilledStatusBar(canvas, i);
+    }
+
+    private void drawFilledStatusBar(Canvas canvas, int i) {
+        this.backgroundPaint.setColor(Theme.getColor(Theme.key_dialogBackground, this.resourcesProvider));
+        int max = Math.max(0, i);
+        int lerp = AndroidUtilities.lerp(max, 0, this.statusBarT.set(max < AndroidUtilities.statusBarHeight));
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(this.backgroundPaddingLeft, lerp, this.containerView.getWidth() - this.backgroundPaddingLeft, this.containerView.getHeight() + AndroidUtilities.dp(14.0f));
+        float dp = AndroidUtilities.dp(14.0f) * (1.0f - this.statusBarT.get());
+        canvas.drawRoundRect(rectF, dp, dp, this.backgroundPaint);
+    }
+
+    private void updateActionButton(boolean z) {
+        String string;
+        this.actionButton.setShowZero(false);
+        int i = this.type;
+        if (i == 1) {
+            string = LocaleController.getString(R.string.BoostingSaveRecipients);
+        } else if (i == 2 || i == 3) {
+            string = LocaleController.getString(R.string.Save);
+        } else {
+            string = "";
+        }
+        this.actionButton.setText(string, z);
+        this.actionButton.setCount(this.selectedIds.size(), z);
+        this.actionButton.setEnabled(this.selectedIds.size() > 0);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void onSearch(String str) {
+        this.query = str;
+        int i = this.type;
+        if (i == 1) {
+            AndroidUtilities.cancelRunOnUIThread(this.remoteSearchRunnable);
+            AndroidUtilities.runOnUIThread(this.remoteSearchRunnable, 350L);
             return;
         }
-        LinearSmoothScrollerCustom linearSmoothScrollerCustom = new LinearSmoothScrollerCustom(getContext(), 2, 0.6f);
-        linearSmoothScrollerCustom.setTargetPosition(1);
-        linearSmoothScrollerCustom.setOffset(AndroidUtilities.dp(38.0f));
-        this.recyclerListView.getLayoutManager().startSmoothScroll(linearSmoothScrollerCustom);
+        if (i != 2) {
+            if (i != 3) {
+                return;
+            }
+            updateItems(false, true);
+            scrollToTop(true);
+            return;
+        }
+        if (!isSearching()) {
+            AndroidUtilities.cancelRunOnUIThread(this.remoteSearchRunnable);
+            this.peers.clear();
+            this.peers.addAll(BoostRepository.getMyChannels(this.currentChat.id));
+            updateItems(false, true);
+            scrollToTop(true);
+            return;
+        }
+        AndroidUtilities.cancelRunOnUIThread(this.remoteSearchRunnable);
+        AndroidUtilities.runOnUIThread(this.remoteSearchRunnable, 350L);
     }
 
-    public void setOnCloseClick(Runnable runnable) {
-        this.onCloseClick = runnable;
+    private void updateSectionCell(boolean z) {
+        if (this.selectedIds.size() > 0 && this.type != 3) {
+            this.sectionCell.setRightText(LocaleController.getString(R.string.UsersDeselectAll), true, new View.OnClickListener() { // from class: org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet$$ExternalSyntheticLambda2
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    SelectorBottomSheet.this.lambda$updateSectionCell$13(view);
+                }
+            });
+        } else if (z) {
+            this.sectionCell.setRightText(null);
+        } else {
+            this.sectionCell.setRightText((CharSequence) null, (View.OnClickListener) null);
+        }
     }
 
-    public void setSelectedObjectsListener(SelectedObjectsListener selectedObjectsListener) {
-        this.selectedObjectsListener = selectedObjectsListener;
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$updateSectionCell$13(View view) {
+        this.selectedIds.clear();
+        this.searchField.spansContainer.removeAllSpans(true);
+        updateList(true, false);
+    }
+
+    private boolean isSearching() {
+        return !TextUtils.isEmpty(this.query);
     }
 
     public void updateItems(boolean z, boolean z2) {
@@ -883,5 +806,55 @@ public class SelectorBottomSheet extends BottomSheetWithRecyclerListView {
         } else {
             selectorAdapter.notifyDataSetChanged();
         }
+    }
+
+    private boolean matchLocal(TLObject tLObject, String str) {
+        if (TextUtils.isEmpty(str)) {
+            return true;
+        }
+        if (!(tLObject instanceof TLRPC.TL_help_country)) {
+            return false;
+        }
+        TLRPC.TL_help_country tL_help_country = (TLRPC.TL_help_country) tLObject;
+        String lowerCase = AndroidUtilities.translitSafe(tL_help_country.default_name).toLowerCase();
+        if (!lowerCase.startsWith(str)) {
+            if (!lowerCase.contains(" " + str)) {
+                String lowerCase2 = AndroidUtilities.translitSafe(tL_help_country.iso2).toLowerCase();
+                if (!lowerCase2.startsWith(str)) {
+                    if (!lowerCase2.contains(" " + str)) {
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.BottomSheet
+    public void onConfigurationChanged(Configuration configuration) {
+        super.onConfigurationChanged(configuration);
+        updateItems(false, true);
+    }
+
+    @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
+    protected CharSequence getTitle() {
+        int i = this.type;
+        if (i == 1) {
+            return LocaleController.getString(R.string.GiftPremium);
+        }
+        if (i == 2) {
+            return LocaleController.getString(R.string.BoostingAddChannelOrGroup);
+        }
+        if (i == 3) {
+            return LocaleController.getString(R.string.BoostingSelectCountry);
+        }
+        return "";
+    }
+
+    @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
+    protected RecyclerListView.SelectionAdapter createAdapter(RecyclerListView recyclerListView) {
+        SelectorAdapter selectorAdapter = new SelectorAdapter(getContext(), true, this.resourcesProvider);
+        this.selectorAdapter = selectorAdapter;
+        return selectorAdapter;
     }
 }

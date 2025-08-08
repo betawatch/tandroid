@@ -4,7 +4,6 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
@@ -69,7 +68,7 @@ import org.telegram.ui.Components.SizeNotifierFrameLayout;
 import org.telegram.ui.Components.SuggestEmojiView;
 import org.telegram.ui.Stories.recorder.KeyboardNotifier;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout implements SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate, NotificationCenter.NotificationCenterDelegate {
     private int addAnswerRow;
     private boolean allowAdding;
@@ -135,190 +134,30 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
     private boolean waitingForKeyboardOpen;
     public boolean wasEmojiSearchOpened;
 
-    class 9 implements EmojiView.EmojiViewDelegate {
-        9() {
-        }
+    public interface PollCreateActivityDelegate {
+        void sendPoll(TLRPC.MessageMedia messageMedia, HashMap hashMap, boolean z, int i, long j);
+    }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onClearEmojiRecent$0(AlertDialog alertDialog, int i) {
-            ChatAttachAlertPollLayout.this.emojiView.clearRecentEmoji();
-        }
+    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
+    public boolean hasDoneItem() {
+        return true;
+    }
 
-        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
-        public /* synthetic */ boolean canSchedule() {
-            return EmojiView.EmojiViewDelegate.-CC.$default$canSchedule(this);
-        }
+    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
+    public int needsActionBar() {
+        return 1;
+    }
 
-        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
-        public /* synthetic */ long getDialogId() {
-            return EmojiView.EmojiViewDelegate.-CC.$default$getDialogId(this);
-        }
+    static /* synthetic */ int access$2208(ChatAttachAlertPollLayout chatAttachAlertPollLayout) {
+        int i = chatAttachAlertPollLayout.answersCount;
+        chatAttachAlertPollLayout.answersCount = i + 1;
+        return i;
+    }
 
-        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
-        public /* synthetic */ float getProgressToSearchOpened() {
-            return EmojiView.EmojiViewDelegate.-CC.$default$getProgressToSearchOpened(this);
-        }
-
-        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
-        public /* synthetic */ int getThreadId() {
-            return EmojiView.EmojiViewDelegate.-CC.$default$getThreadId(this);
-        }
-
-        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
-        public /* synthetic */ void invalidateEnterView() {
-            EmojiView.EmojiViewDelegate.-CC.$default$invalidateEnterView(this);
-        }
-
-        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
-        public /* synthetic */ boolean isExpanded() {
-            return EmojiView.EmojiViewDelegate.-CC.$default$isExpanded(this);
-        }
-
-        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
-        public /* synthetic */ boolean isInScheduleMode() {
-            return EmojiView.EmojiViewDelegate.-CC.$default$isInScheduleMode(this);
-        }
-
-        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
-        public boolean isSearchOpened() {
-            return ChatAttachAlertPollLayout.this.isEmojiSearchOpened;
-        }
-
-        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
-        public /* synthetic */ boolean isUserSelf() {
-            return EmojiView.EmojiViewDelegate.-CC.$default$isUserSelf(this);
-        }
-
-        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
-        public /* synthetic */ void onAnimatedEmojiUnlockClick() {
-            EmojiView.EmojiViewDelegate.-CC.$default$onAnimatedEmojiUnlockClick(this);
-        }
-
-        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
-        public boolean onBackspace() {
-            EditTextBoldCursor editField;
-            if (ChatAttachAlertPollLayout.this.currentCell == null || (editField = ChatAttachAlertPollLayout.this.currentCell.getEditField()) == null) {
-                return false;
-            }
-            editField.dispatchKeyEvent(new KeyEvent(0, 67));
-            return true;
-        }
-
-        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
-        public void onClearEmojiRecent() {
-            AlertDialog.Builder builder = new AlertDialog.Builder(ChatAttachAlertPollLayout.this.getContext(), ChatAttachAlertPollLayout.this.resourcesProvider);
-            builder.setTitle(LocaleController.getString(R.string.ClearRecentEmojiTitle));
-            builder.setMessage(LocaleController.getString(R.string.ClearRecentEmojiText));
-            builder.setPositiveButton(LocaleController.getString(R.string.ClearButton), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout$9$$ExternalSyntheticLambda0
-                @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
-                public final void onClick(AlertDialog alertDialog, int i) {
-                    ChatAttachAlertPollLayout.9.this.lambda$onClearEmojiRecent$0(alertDialog, i);
-                }
-            });
-            builder.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
-            builder.show();
-        }
-
-        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
-        public void onCustomEmojiSelected(long j, TLRPC.Document document, String str, boolean z) {
-            EditTextBoldCursor editField;
-            if (ChatAttachAlertPollLayout.this.currentCell == null || (editField = ChatAttachAlertPollLayout.this.currentCell.getEditField()) == null) {
-                return;
-            }
-            int selectionEnd = editField.getSelectionEnd();
-            if (selectionEnd < 0) {
-                selectionEnd = 0;
-            }
-            try {
-                SpannableString spannableString = new SpannableString(str);
-                AnimatedEmojiSpan animatedEmojiSpan = document != null ? new AnimatedEmojiSpan(document, editField.getPaint().getFontMetricsInt()) : new AnimatedEmojiSpan(j, editField.getPaint().getFontMetricsInt());
-                animatedEmojiSpan.cacheType = 3;
-                spannableString.setSpan(animatedEmojiSpan, 0, spannableString.length(), 33);
-                editField.setText(editField.getText().insert(selectionEnd, spannableString));
-                int length = selectionEnd + spannableString.length();
-                editField.setSelection(length, length);
-            } catch (Exception e) {
-                FileLog.e(e);
-            }
-        }
-
-        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
-        public void onEmojiSelected(String str) {
-            EditTextBoldCursor editField;
-            if (ChatAttachAlertPollLayout.this.currentCell == null || (editField = ChatAttachAlertPollLayout.this.currentCell.getEditField()) == null) {
-                return;
-            }
-            int selectionEnd = editField.getSelectionEnd();
-            if (selectionEnd < 0) {
-                selectionEnd = 0;
-            }
-            try {
-                CharSequence replaceEmoji = Emoji.replaceEmoji(str, editField.getPaint().getFontMetricsInt(), false);
-                editField.setText(editField.getText().insert(selectionEnd, replaceEmoji));
-                int length = selectionEnd + replaceEmoji.length();
-                editField.setSelection(length, length);
-            } catch (Exception e) {
-                FileLog.e(e);
-            }
-        }
-
-        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
-        public /* synthetic */ void onEmojiSettingsClick(ArrayList arrayList) {
-            EmojiView.EmojiViewDelegate.-CC.$default$onEmojiSettingsClick(this, arrayList);
-        }
-
-        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
-        /* renamed from: onGifSelected */
-        public /* synthetic */ void lambda$onGifSelected$1(View view, Object obj, String str, Object obj2, boolean z, int i) {
-            EmojiView.EmojiViewDelegate.-CC.$default$onGifSelected(this, view, obj, str, obj2, z, i);
-        }
-
-        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
-        public void onSearchOpenClose(int i) {
-            ChatAttachAlertPollLayout chatAttachAlertPollLayout = ChatAttachAlertPollLayout.this;
-            chatAttachAlertPollLayout.isEmojiSearchOpened = i != 0;
-            chatAttachAlertPollLayout.parentAlert.sizeNotifierFrameLayout.requestLayout();
-        }
-
-        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
-        public /* synthetic */ void onShowStickerSet(TLRPC.StickerSet stickerSet, TLRPC.InputStickerSet inputStickerSet, boolean z) {
-            EmojiView.EmojiViewDelegate.-CC.$default$onShowStickerSet(this, stickerSet, inputStickerSet, z);
-        }
-
-        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
-        public /* synthetic */ void onStickerSelected(View view, TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z, int i) {
-            EmojiView.EmojiViewDelegate.-CC.$default$onStickerSelected(this, view, document, str, obj, sendAnimationData, z, i);
-        }
-
-        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
-        public /* synthetic */ void onStickerSetAdd(TLRPC.StickerSetCovered stickerSetCovered) {
-            EmojiView.EmojiViewDelegate.-CC.$default$onStickerSetAdd(this, stickerSetCovered);
-        }
-
-        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
-        public /* synthetic */ void onStickerSetRemove(TLRPC.StickerSetCovered stickerSetCovered) {
-            EmojiView.EmojiViewDelegate.-CC.$default$onStickerSetRemove(this, stickerSetCovered);
-        }
-
-        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
-        public /* synthetic */ void onStickersGroupClick(long j) {
-            EmojiView.EmojiViewDelegate.-CC.$default$onStickersGroupClick(this, j);
-        }
-
-        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
-        public /* synthetic */ void onStickersSettingsClick() {
-            EmojiView.EmojiViewDelegate.-CC.$default$onStickersSettingsClick(this);
-        }
-
-        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
-        public /* synthetic */ void onTabOpened(int i) {
-            EmojiView.EmojiViewDelegate.-CC.$default$onTabOpened(this, i);
-        }
-
-        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
-        public /* synthetic */ void showTrendingStickersAlert(TrendingStickersLayout trendingStickersLayout) {
-            EmojiView.EmojiViewDelegate.-CC.$default$showTrendingStickersAlert(this, trendingStickersLayout);
-        }
+    static /* synthetic */ int access$2210(ChatAttachAlertPollLayout chatAttachAlertPollLayout) {
+        int i = chatAttachAlertPollLayout.answersCount;
+        chatAttachAlertPollLayout.answersCount = i - 1;
+        return i;
     }
 
     private static class EmptyView extends View {
@@ -327,733 +166,25 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    class ListAdapter extends RecyclerListView.SelectionAdapter {
-        private Context mContext;
-
-        public ListAdapter(Context context) {
-            this.mContext = context;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        /* JADX WARN: Code restructure failed: missing block: B:27:0x00fd, code lost:
-        
-            if (r1.isEmojiSearchOpened != false) goto L20;
-         */
-        /* JADX WARN: Removed duplicated region for block: B:19:0x0115  */
-        /*
-            Code decompiled incorrectly, please refer to instructions dump.
-        */
-        public /* synthetic */ void lambda$onCreateViewHolder$0(View view) {
-            int adapterPosition;
-            ChatAttachAlertPollLayout chatAttachAlertPollLayout;
-            if (view.getTag() != null) {
-                return;
-            }
-            view.setTag(1);
-            PollEditTextCell pollEditTextCell = (PollEditTextCell) view.getParent();
-            RecyclerView.ViewHolder findContainingViewHolder = ChatAttachAlertPollLayout.this.listView.findContainingViewHolder(pollEditTextCell);
-            if (findContainingViewHolder == null || (adapterPosition = findContainingViewHolder.getAdapterPosition()) == -1) {
-                return;
-            }
-            ChatAttachAlertPollLayout.this.listView.setItemAnimator(ChatAttachAlertPollLayout.this.itemAnimator);
-            int i = adapterPosition - ChatAttachAlertPollLayout.this.answerStartRow;
-            ChatAttachAlertPollLayout.this.listAdapter.notifyItemRemoved(adapterPosition);
-            int i2 = i + 1;
-            System.arraycopy(ChatAttachAlertPollLayout.this.answers, i2, ChatAttachAlertPollLayout.this.answers, i, (ChatAttachAlertPollLayout.this.answers.length - 1) - i);
-            System.arraycopy(ChatAttachAlertPollLayout.this.answersChecks, i2, ChatAttachAlertPollLayout.this.answersChecks, i, (ChatAttachAlertPollLayout.this.answersChecks.length - 1) - i);
-            ChatAttachAlertPollLayout.this.answers[ChatAttachAlertPollLayout.this.answers.length - 1] = null;
-            ChatAttachAlertPollLayout.this.answersChecks[ChatAttachAlertPollLayout.this.answersChecks.length - 1] = false;
-            ChatAttachAlertPollLayout.access$2210(ChatAttachAlertPollLayout.this);
-            if (ChatAttachAlertPollLayout.this.answersCount == ChatAttachAlertPollLayout.this.answers.length - 1) {
-                ChatAttachAlertPollLayout.this.listAdapter.notifyItemInserted((ChatAttachAlertPollLayout.this.answerStartRow + ChatAttachAlertPollLayout.this.answers.length) - 1);
-            }
-            RecyclerView.ViewHolder findViewHolderForAdapterPosition = ChatAttachAlertPollLayout.this.listView.findViewHolderForAdapterPosition(adapterPosition - 1);
-            EditTextBoldCursor textView = pollEditTextCell.getTextView();
-            if (findViewHolderForAdapterPosition != null) {
-                View view2 = findViewHolderForAdapterPosition.itemView;
-                if (view2 instanceof PollEditTextCell) {
-                    ((PollEditTextCell) view2).getTextView().requestFocus();
-                    textView.clearFocus();
-                    ChatAttachAlertPollLayout.this.checkDoneButton();
-                    ChatAttachAlertPollLayout.this.updateRows();
-                    if (ChatAttachAlertPollLayout.this.suggestEmojiPanel != null) {
-                        ChatAttachAlertPollLayout.this.suggestEmojiPanel.forceClose();
-                        ChatAttachAlertPollLayout.this.suggestEmojiPanel.setDelegate(null);
-                    }
-                    ChatAttachAlertPollLayout.this.listAdapter.notifyItemChanged(ChatAttachAlertPollLayout.this.answerSectionRow);
-                    ChatAttachAlertPollLayout.this.listAdapter.notifyItemChanged(ChatAttachAlertPollLayout.this.emptyRow);
-                }
-            }
-            if (textView.isFocused()) {
-                AndroidUtilities.hideKeyboard(textView);
-                chatAttachAlertPollLayout = ChatAttachAlertPollLayout.this;
-            } else {
-                chatAttachAlertPollLayout = ChatAttachAlertPollLayout.this;
-            }
-            chatAttachAlertPollLayout.hideEmojiPopup(true);
-            textView.clearFocus();
-            ChatAttachAlertPollLayout.this.checkDoneButton();
-            ChatAttachAlertPollLayout.this.updateRows();
-            if (ChatAttachAlertPollLayout.this.suggestEmojiPanel != null) {
-            }
-            ChatAttachAlertPollLayout.this.listAdapter.notifyItemChanged(ChatAttachAlertPollLayout.this.answerSectionRow);
-            ChatAttachAlertPollLayout.this.listAdapter.notifyItemChanged(ChatAttachAlertPollLayout.this.emptyRow);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ boolean lambda$onCreateViewHolder$1(PollEditTextCell pollEditTextCell, TextView textView, int i, KeyEvent keyEvent) {
-            int adapterPosition;
-            if (i != 5) {
-                return false;
-            }
-            RecyclerView.ViewHolder findContainingViewHolder = ChatAttachAlertPollLayout.this.listView.findContainingViewHolder(pollEditTextCell);
-            if (findContainingViewHolder != null && (adapterPosition = findContainingViewHolder.getAdapterPosition()) != -1) {
-                int i2 = adapterPosition - ChatAttachAlertPollLayout.this.answerStartRow;
-                if (i2 == ChatAttachAlertPollLayout.this.answersCount - 1 && ChatAttachAlertPollLayout.this.answersCount < ChatAttachAlertPollLayout.this.maxAnswersCount) {
-                    ChatAttachAlertPollLayout.this.addNewField();
-                } else if (i2 == ChatAttachAlertPollLayout.this.answersCount - 1) {
-                    AndroidUtilities.hideKeyboard(pollEditTextCell.getTextView());
-                } else {
-                    RecyclerView.ViewHolder findViewHolderForAdapterPosition = ChatAttachAlertPollLayout.this.listView.findViewHolderForAdapterPosition(adapterPosition + 1);
-                    if (findViewHolderForAdapterPosition != null) {
-                        View view = findViewHolderForAdapterPosition.itemView;
-                        if (view instanceof PollEditTextCell) {
-                            ((PollEditTextCell) view).getTextView().requestFocus();
-                        }
-                    }
-                }
-            }
-            return true;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ boolean lambda$onCreateViewHolder$2(PollEditTextCell pollEditTextCell, View view, int i, KeyEvent keyEvent) {
-            EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) view;
-            if (i != 67 || keyEvent.getAction() != 0 || editTextBoldCursor.length() != 0) {
-                return false;
-            }
-            pollEditTextCell.callOnDelete();
-            return true;
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public int getItemCount() {
-            return ChatAttachAlertPollLayout.this.rowCount;
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public int getItemViewType(int i) {
-            if (i == ChatAttachAlertPollLayout.this.questionHeaderRow || i == ChatAttachAlertPollLayout.this.answerHeaderRow || i == ChatAttachAlertPollLayout.this.settingsHeaderRow) {
-                return 0;
-            }
-            if (i == ChatAttachAlertPollLayout.this.questionSectionRow) {
-                return 1;
-            }
-            if (i == ChatAttachAlertPollLayout.this.answerSectionRow || i == ChatAttachAlertPollLayout.this.settingsSectionRow || i == ChatAttachAlertPollLayout.this.solutionInfoRow) {
-                return 2;
-            }
-            if (i == ChatAttachAlertPollLayout.this.addAnswerRow) {
-                return 3;
-            }
-            if (i == ChatAttachAlertPollLayout.this.questionRow) {
-                return 4;
-            }
-            if (i == ChatAttachAlertPollLayout.this.solutionRow) {
-                return 7;
-            }
-            if (i == ChatAttachAlertPollLayout.this.anonymousRow || i == ChatAttachAlertPollLayout.this.multipleRow || i == ChatAttachAlertPollLayout.this.quizRow || i == ChatAttachAlertPollLayout.this.allowAddingRow || i == ChatAttachAlertPollLayout.this.allowMarkingRow) {
-                return 6;
-            }
-            if (i == ChatAttachAlertPollLayout.this.emptyRow) {
-                return 8;
-            }
-            return i == ChatAttachAlertPollLayout.this.paddingRow ? 9 : 5;
-        }
-
-        @Override // org.telegram.ui.Components.RecyclerListView.SelectionAdapter
-        public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
-            int adapterPosition = viewHolder.getAdapterPosition();
-            return adapterPosition == ChatAttachAlertPollLayout.this.addAnswerRow || adapterPosition == ChatAttachAlertPollLayout.this.anonymousRow || adapterPosition == ChatAttachAlertPollLayout.this.multipleRow || (ChatAttachAlertPollLayout.this.quizOnly == 0 && adapterPosition == ChatAttachAlertPollLayout.this.quizRow);
-        }
-
-        /* JADX WARN: Code restructure failed: missing block: B:46:0x013f, code lost:
-        
-            if (r8.this$0.allowMarkingRow != (-1)) goto L58;
-         */
-        /* JADX WARN: Code restructure failed: missing block: B:57:0x017f, code lost:
-        
-            if (r8.this$0.quizRow == (-1)) goto L46;
-         */
-        /* JADX WARN: Code restructure failed: missing block: B:61:0x019c, code lost:
-        
-            if (r8.this$0.quizRow != (-1)) goto L58;
-         */
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        /*
-            Code decompiled incorrectly, please refer to instructions dump.
-        */
-        public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
-            int i2;
-            String string;
-            boolean z;
-            String formatPluralStringComma;
-            int i3;
-            int itemViewType = viewHolder.getItemViewType();
-            if (itemViewType == 0) {
-                HeaderCell headerCell = (HeaderCell) viewHolder.itemView;
-                if (i == ChatAttachAlertPollLayout.this.questionHeaderRow) {
-                    headerCell.getTextView().setGravity(19);
-                    i2 = ChatAttachAlertPollLayout.this.todo ? R.string.TodoTitle : R.string.PollQuestion;
-                } else {
-                    headerCell.getTextView().setGravity((LocaleController.isRTL ? 5 : 3) | 16);
-                    if (i == ChatAttachAlertPollLayout.this.answerHeaderRow) {
-                        i2 = ChatAttachAlertPollLayout.this.quizOnly == 1 ? R.string.QuizAnswers : ChatAttachAlertPollLayout.this.todo ? R.string.TodoItemsTitle : R.string.AnswerOptions;
-                    } else if (i != ChatAttachAlertPollLayout.this.settingsHeaderRow) {
-                        return;
-                    } else {
-                        i2 = R.string.Settings;
-                    }
-                }
-                headerCell.setText(LocaleController.getString(i2));
-                return;
-            }
-            if (itemViewType == 6) {
-                TextCheckCell textCheckCell = (TextCheckCell) viewHolder.itemView;
-                if (i == ChatAttachAlertPollLayout.this.allowAddingRow) {
-                    string = LocaleController.getString(R.string.TodoAllowAddingTasks);
-                    z = ChatAttachAlertPollLayout.this.allowAdding;
-                } else {
-                    if (i == ChatAttachAlertPollLayout.this.allowMarkingRow) {
-                        string = LocaleController.getString(R.string.TodoAllowMarkingDone);
-                        z = ChatAttachAlertPollLayout.this.allowMarking;
-                    } else if (i == ChatAttachAlertPollLayout.this.anonymousRow) {
-                        string = LocaleController.getString(R.string.PollAnonymous);
-                        z = ChatAttachAlertPollLayout.this.anonymousPoll;
-                        if (ChatAttachAlertPollLayout.this.multipleRow == -1) {
-                        }
-                        r0 = true;
-                    } else if (i == ChatAttachAlertPollLayout.this.multipleRow) {
-                        string = LocaleController.getString(R.string.PollMultiple);
-                        z = ChatAttachAlertPollLayout.this.multipleChoise;
-                    } else if (i == ChatAttachAlertPollLayout.this.quizRow) {
-                        textCheckCell.setTextAndCheck(LocaleController.getString(R.string.PollQuiz), ChatAttachAlertPollLayout.this.quizPoll, false);
-                        textCheckCell.setEnabled(ChatAttachAlertPollLayout.this.quizOnly == 0, null);
-                    }
-                    textCheckCell.setTextAndCheck(string, z, r0);
-                    textCheckCell.setEnabled(true, null);
-                }
-            } else if (itemViewType != 9) {
-                if (itemViewType != 2) {
-                    if (itemViewType != 3) {
-                        return;
-                    }
-                    TextCell textCell = (TextCell) viewHolder.itemView;
-                    textCell.setColors(-1, Theme.key_windowBackgroundWhiteBlueText4);
-                    Drawable drawable = this.mContext.getResources().getDrawable(R.drawable.poll_add_circle);
-                    Drawable drawable2 = this.mContext.getResources().getDrawable(R.drawable.poll_add_plus);
-                    int themedColor = ChatAttachAlertPollLayout.this.getThemedColor(Theme.key_switchTrackChecked);
-                    PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-                    drawable.setColorFilter(new PorterDuffColorFilter(themedColor, mode));
-                    drawable2.setColorFilter(new PorterDuffColorFilter(ChatAttachAlertPollLayout.this.getThemedColor(Theme.key_checkboxCheck), mode));
-                    textCell.setTextAndIcon((CharSequence) LocaleController.getString(ChatAttachAlertPollLayout.this.todo ? R.string.TodoNewTask : R.string.AddAnOption), (Drawable) new CombinedDrawable(drawable, drawable2), false);
-                    return;
-                }
-                TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) viewHolder.itemView;
-                CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(ChatAttachAlertPollLayout.this.getThemedColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(this.mContext, R.drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
-                combinedDrawable.setFullsize(true);
-                textInfoPrivacyCell.setBackgroundDrawable(combinedDrawable);
-                if (i == ChatAttachAlertPollLayout.this.solutionInfoRow) {
-                    i3 = R.string.AddAnExplanationInfo;
-                } else if (i == ChatAttachAlertPollLayout.this.settingsSectionRow) {
-                    if (ChatAttachAlertPollLayout.this.quizOnly != 0) {
-                        textInfoPrivacyCell.setText(null);
-                        return;
-                    }
-                    i3 = R.string.QuizInfo;
-                } else {
-                    if (ChatAttachAlertPollLayout.this.maxAnswersCount - ChatAttachAlertPollLayout.this.answersCount > 0) {
-                        formatPluralStringComma = ChatAttachAlertPollLayout.this.todo ? LocaleController.formatPluralStringComma("TodoNewTaskInfo", ChatAttachAlertPollLayout.this.maxAnswersCount - ChatAttachAlertPollLayout.this.answersCount) : LocaleController.formatString(R.string.AddAnOptionInfo, LocaleController.formatPluralString("Option", ChatAttachAlertPollLayout.this.maxAnswersCount - ChatAttachAlertPollLayout.this.answersCount, new Object[0]));
-                        textInfoPrivacyCell.setText(formatPluralStringComma);
-                        return;
-                    }
-                    i3 = ChatAttachAlertPollLayout.this.todo ? R.string.TodoAddTaskInfoMax : R.string.AddAnOptionInfoMax;
-                }
-                formatPluralStringComma = LocaleController.getString(i3);
-                textInfoPrivacyCell.setText(formatPluralStringComma);
-                return;
-            }
-            viewHolder.itemView.requestLayout();
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-            TextWatcher textWatcher;
-            PollEditTextCell pollEditTextCell;
-            View view;
-            switch (i) {
-                case 0:
-                    view = new HeaderCell(this.mContext, Theme.key_windowBackgroundWhiteBlueHeader, 21, 15, false, ChatAttachAlertPollLayout.this.resourcesProvider);
-                    break;
-                case 1:
-                    View shadowSectionCell = new ShadowSectionCell(this.mContext, ChatAttachAlertPollLayout.this.resourcesProvider);
-                    CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(ChatAttachAlertPollLayout.this.getThemedColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(this.mContext, R.drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
-                    combinedDrawable.setFullsize(true);
-                    shadowSectionCell.setBackgroundDrawable(combinedDrawable);
-                    view = shadowSectionCell;
-                    break;
-                case 2:
-                    view = new TextInfoPrivacyCell(this.mContext, ChatAttachAlertPollLayout.this.resourcesProvider);
-                    break;
-                case 3:
-                    view = new TextCell(this.mContext, ChatAttachAlertPollLayout.this.resourcesProvider);
-                    break;
-                case 4:
-                    Context context = this.mContext;
-                    boolean z = ChatAttachAlertPollLayout.this.isPremium;
-                    Theme.ResourcesProvider resourcesProvider = ChatAttachAlertPollLayout.this.resourcesProvider;
-                    final PollEditTextCell pollEditTextCell2 = new PollEditTextCell(context, false, z ? 1 : 0, null, resourcesProvider) { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout.ListAdapter.1
-                        @Override // org.telegram.ui.Cells.PollEditTextCell
-                        protected void onEditTextFocusChanged(boolean z2) {
-                            ChatAttachAlertPollLayout.this.onCellFocusChanges(this, z2);
-                        }
-
-                        /* JADX INFO: Access modifiers changed from: protected */
-                        @Override // org.telegram.ui.Cells.PollEditTextCell
-                        /* renamed from: onEmojiButtonClicked */
-                        public void lambda$new$1(PollEditTextCell pollEditTextCell3) {
-                            ChatAttachAlertPollLayout.this.onEmojiClicked(pollEditTextCell3);
-                        }
-
-                        @Override // org.telegram.ui.Cells.PollEditTextCell
-                        protected void onFieldTouchUp(EditTextBoldCursor editTextBoldCursor) {
-                            ChatAttachAlertPollLayout.this.parentAlert.makeFocusable(editTextBoldCursor, true);
-                        }
-
-                        @Override // org.telegram.ui.Cells.PollEditTextCell
-                        public boolean onPastedMultipleLines(ArrayList arrayList) {
-                            if (arrayList.isEmpty()) {
-                                return false;
-                            }
-                            this.textView.getText().replace(this.textView.getSelectionStart(), this.textView.getSelectionEnd(), (CharSequence) arrayList.remove(0));
-                            int i2 = 0;
-                            while (!arrayList.isEmpty() && i2 < ChatAttachAlertPollLayout.this.maxAnswersCount) {
-                                for (int length = ChatAttachAlertPollLayout.this.answers.length - 1; length > i2; length--) {
-                                    ChatAttachAlertPollLayout.this.answers[length] = ChatAttachAlertPollLayout.this.answers[length - 1];
-                                }
-                                ChatAttachAlertPollLayout.this.answers[i2] = (CharSequence) arrayList.remove(0);
-                                ChatAttachAlertPollLayout.access$2208(ChatAttachAlertPollLayout.this);
-                                i2++;
-                            }
-                            ChatAttachAlertPollLayout.this.updateRows();
-                            ChatAttachAlertPollLayout chatAttachAlertPollLayout = ChatAttachAlertPollLayout.this;
-                            chatAttachAlertPollLayout.requestFieldFocusAtPosition = (chatAttachAlertPollLayout.answerStartRow + i2) - 1;
-                            ChatAttachAlertPollLayout.this.listView.setItemAnimator(ChatAttachAlertPollLayout.this.itemAnimator);
-                            ChatAttachAlertPollLayout.this.listAdapter.notifyDataSetChanged();
-                            return true;
-                        }
-                    };
-                    pollEditTextCell2.createErrorTextView();
-                    textWatcher = new TextWatcher() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout.ListAdapter.2
-                        @Override // android.text.TextWatcher
-                        public void afterTextChanged(Editable editable) {
-                            if (pollEditTextCell2.getTag() != null) {
-                                return;
-                            }
-                            RecyclerView.ViewHolder findViewHolderForAdapterPosition = ChatAttachAlertPollLayout.this.listView.findViewHolderForAdapterPosition(ChatAttachAlertPollLayout.this.questionRow);
-                            if (findViewHolderForAdapterPosition != null && ChatAttachAlertPollLayout.this.suggestEmojiPanel != null) {
-                                for (ImageSpan imageSpan : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
-                                    editable.removeSpan(imageSpan);
-                                }
-                                Emoji.replaceEmoji(editable, pollEditTextCell2.getEditField().getPaint().getFontMetricsInt(), false);
-                                ChatAttachAlertPollLayout.this.suggestEmojiPanel.setDirection(1);
-                                ChatAttachAlertPollLayout.this.suggestEmojiPanel.setDelegate(pollEditTextCell2);
-                                ChatAttachAlertPollLayout.this.suggestEmojiPanel.setTranslationY(findViewHolderForAdapterPosition.itemView.getY());
-                                ChatAttachAlertPollLayout.this.suggestEmojiPanel.fireUpdate();
-                            }
-                            ChatAttachAlertPollLayout.this.questionString = editable;
-                            if (findViewHolderForAdapterPosition != null) {
-                                ChatAttachAlertPollLayout chatAttachAlertPollLayout = ChatAttachAlertPollLayout.this;
-                                chatAttachAlertPollLayout.setTextLeft(findViewHolderForAdapterPosition.itemView, chatAttachAlertPollLayout.questionRow);
-                            }
-                            ChatAttachAlertPollLayout.this.checkDoneButton();
-                        }
-
-                        @Override // android.text.TextWatcher
-                        public void beforeTextChanged(CharSequence charSequence, int i2, int i3, int i4) {
-                        }
-
-                        @Override // android.text.TextWatcher
-                        public void onTextChanged(CharSequence charSequence, int i2, int i3, int i4) {
-                        }
-                    };
-                    pollEditTextCell = pollEditTextCell2;
-                    pollEditTextCell.addTextWatcher(textWatcher);
-                    view = pollEditTextCell;
-                    break;
-                case 5:
-                default:
-                    Context context2 = this.mContext;
-                    boolean z2 = ChatAttachAlertPollLayout.this.isPremium;
-                    final PollEditTextCell pollEditTextCell3 = new PollEditTextCell(context2, false, z2 ? 1 : 0, new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout$ListAdapter$$ExternalSyntheticLambda0
-                        @Override // android.view.View.OnClickListener
-                        public final void onClick(View view2) {
-                            ChatAttachAlertPollLayout.ListAdapter.this.lambda$onCreateViewHolder$0(view2);
-                        }
-                    }, ChatAttachAlertPollLayout.this.resourcesProvider) { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout.ListAdapter.6
-                        @Override // org.telegram.ui.Cells.PollEditTextCell
-                        protected boolean drawDivider() {
-                            RecyclerView.ViewHolder findContainingViewHolder = ChatAttachAlertPollLayout.this.listView.findContainingViewHolder(this);
-                            if (findContainingViewHolder != null) {
-                                int adapterPosition = findContainingViewHolder.getAdapterPosition();
-                                if (ChatAttachAlertPollLayout.this.answersCount == ChatAttachAlertPollLayout.this.maxAnswersCount && adapterPosition == (ChatAttachAlertPollLayout.this.answerStartRow + ChatAttachAlertPollLayout.this.answersCount) - 1) {
-                                    return false;
-                                }
-                            }
-                            return true;
-                        }
-
-                        @Override // org.telegram.ui.Cells.PollEditTextCell
-                        protected boolean isChecked(PollEditTextCell pollEditTextCell4) {
-                            int adapterPosition;
-                            RecyclerView.ViewHolder findContainingViewHolder = ChatAttachAlertPollLayout.this.listView.findContainingViewHolder(pollEditTextCell4);
-                            if (findContainingViewHolder == null || (adapterPosition = findContainingViewHolder.getAdapterPosition()) == -1) {
-                                return false;
-                            }
-                            return ChatAttachAlertPollLayout.this.answersChecks[adapterPosition - ChatAttachAlertPollLayout.this.answerStartRow];
-                        }
-
-                        @Override // org.telegram.ui.Cells.PollEditTextCell
-                        protected void onActionModeStart(EditTextBoldCursor editTextBoldCursor, ActionMode actionMode) {
-                            if (editTextBoldCursor.isFocused() && editTextBoldCursor.hasSelection()) {
-                                Menu menu = actionMode.getMenu();
-                                if (menu.findItem(android.R.id.copy) == null) {
-                                    return;
-                                }
-                                ChatActivity.fillActionModeMenu(menu, ((ChatActivity) ChatAttachAlertPollLayout.this.parentAlert.baseFragment).getCurrentEncryptedChat(), true);
-                            }
-                        }
-
-                        @Override // org.telegram.ui.Cells.PollEditTextCell
-                        protected void onCheckBoxClick(PollEditTextCell pollEditTextCell4, boolean z3) {
-                            int adapterPosition;
-                            if (z3 && ChatAttachAlertPollLayout.this.quizPoll) {
-                                Arrays.fill(ChatAttachAlertPollLayout.this.answersChecks, false);
-                                ChatAttachAlertPollLayout.this.listView.getChildCount();
-                                for (int i2 = ChatAttachAlertPollLayout.this.answerStartRow; i2 < ChatAttachAlertPollLayout.this.answerStartRow + ChatAttachAlertPollLayout.this.answersCount; i2++) {
-                                    RecyclerView.ViewHolder findViewHolderForAdapterPosition = ChatAttachAlertPollLayout.this.listView.findViewHolderForAdapterPosition(i2);
-                                    if (findViewHolderForAdapterPosition != null) {
-                                        View view2 = findViewHolderForAdapterPosition.itemView;
-                                        if (view2 instanceof PollEditTextCell) {
-                                            ((PollEditTextCell) view2).setChecked(false, true);
-                                        }
-                                    }
-                                }
-                            }
-                            super.onCheckBoxClick(pollEditTextCell4, z3);
-                            RecyclerView.ViewHolder findContainingViewHolder = ChatAttachAlertPollLayout.this.listView.findContainingViewHolder(pollEditTextCell4);
-                            if (findContainingViewHolder != null && (adapterPosition = findContainingViewHolder.getAdapterPosition()) != -1) {
-                                ChatAttachAlertPollLayout.this.answersChecks[adapterPosition - ChatAttachAlertPollLayout.this.answerStartRow] = z3;
-                            }
-                            ChatAttachAlertPollLayout.this.checkDoneButton();
-                        }
-
-                        @Override // org.telegram.ui.Cells.PollEditTextCell
-                        protected void onEditTextFocusChanged(boolean z3) {
-                            ChatAttachAlertPollLayout.this.onCellFocusChanges(this, z3);
-                        }
-
-                        /* JADX INFO: Access modifiers changed from: protected */
-                        @Override // org.telegram.ui.Cells.PollEditTextCell
-                        /* renamed from: onEmojiButtonClicked */
-                        public void lambda$new$1(PollEditTextCell pollEditTextCell4) {
-                            ChatAttachAlertPollLayout.this.onEmojiClicked(pollEditTextCell4);
-                        }
-
-                        @Override // org.telegram.ui.Cells.PollEditTextCell
-                        protected void onFieldTouchUp(EditTextBoldCursor editTextBoldCursor) {
-                            ChatAttachAlertPollLayout.this.parentAlert.makeFocusable(editTextBoldCursor, true);
-                        }
-
-                        @Override // org.telegram.ui.Cells.PollEditTextCell
-                        public boolean onPastedMultipleLines(ArrayList arrayList) {
-                            int childAdapterPosition;
-                            if (arrayList.isEmpty() || (childAdapterPosition = ChatAttachAlertPollLayout.this.listView.getChildAdapterPosition(this) - ChatAttachAlertPollLayout.this.answerStartRow) < 0) {
-                                return false;
-                            }
-                            this.textView.getText().replace(this.textView.getSelectionStart(), this.textView.getSelectionEnd(), (CharSequence) arrayList.remove(0));
-                            int i2 = childAdapterPosition + 1;
-                            while (!arrayList.isEmpty() && i2 < ChatAttachAlertPollLayout.this.maxAnswersCount) {
-                                for (int length = ChatAttachAlertPollLayout.this.answers.length - 1; length > i2; length--) {
-                                    ChatAttachAlertPollLayout.this.answers[length] = ChatAttachAlertPollLayout.this.answers[length - 1];
-                                }
-                                ChatAttachAlertPollLayout.this.answers[i2] = (CharSequence) arrayList.remove(0);
-                                ChatAttachAlertPollLayout.access$2208(ChatAttachAlertPollLayout.this);
-                                i2++;
-                            }
-                            ChatAttachAlertPollLayout.this.updateRows();
-                            ChatAttachAlertPollLayout chatAttachAlertPollLayout = ChatAttachAlertPollLayout.this;
-                            chatAttachAlertPollLayout.requestFieldFocusAtPosition = (chatAttachAlertPollLayout.answerStartRow + i2) - 1;
-                            ChatAttachAlertPollLayout.this.listView.setItemAnimator(ChatAttachAlertPollLayout.this.itemAnimator);
-                            ChatAttachAlertPollLayout.this.listAdapter.notifyDataSetChanged();
-                            return true;
-                        }
-
-                        @Override // org.telegram.ui.Cells.PollEditTextCell
-                        protected boolean shouldShowCheckBox() {
-                            return ChatAttachAlertPollLayout.this.quizPoll;
-                        }
-                    };
-                    pollEditTextCell3.addTextWatcher(new TextWatcher() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout.ListAdapter.7
-                        @Override // android.text.TextWatcher
-                        public void afterTextChanged(Editable editable) {
-                            int adapterPosition;
-                            int adapterPosition2;
-                            RecyclerView.ViewHolder findContainingViewHolder = ChatAttachAlertPollLayout.this.listView.findContainingViewHolder(pollEditTextCell3);
-                            if (findContainingViewHolder == null || (adapterPosition2 = (adapterPosition = findContainingViewHolder.getAdapterPosition()) - ChatAttachAlertPollLayout.this.answerStartRow) < 0 || adapterPosition2 >= ChatAttachAlertPollLayout.this.answers.length) {
-                                return;
-                            }
-                            if (ChatAttachAlertPollLayout.this.suggestEmojiPanel != null) {
-                                for (ImageSpan imageSpan : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
-                                    editable.removeSpan(imageSpan);
-                                }
-                                Emoji.replaceEmoji(editable, pollEditTextCell3.getEditField().getPaint().getFontMetricsInt(), false);
-                                float y = (findContainingViewHolder.itemView.getY() - AndroidUtilities.dp(166.0f)) + findContainingViewHolder.itemView.getMeasuredHeight();
-                                if (y > 0.0f) {
-                                    ChatAttachAlertPollLayout.this.suggestEmojiPanel.setDirection(0);
-                                    ChatAttachAlertPollLayout.this.suggestEmojiPanel.setTranslationY(y);
-                                } else {
-                                    ChatAttachAlertPollLayout.this.suggestEmojiPanel.setDirection(1);
-                                    ChatAttachAlertPollLayout.this.suggestEmojiPanel.setTranslationY(findContainingViewHolder.itemView.getY());
-                                }
-                                ChatAttachAlertPollLayout.this.suggestEmojiPanel.setDelegate(pollEditTextCell3);
-                                ChatAttachAlertPollLayout.this.suggestEmojiPanel.fireUpdate();
-                            }
-                            ChatAttachAlertPollLayout.this.answers[adapterPosition2] = editable;
-                            ChatAttachAlertPollLayout.this.setTextLeft(pollEditTextCell3, adapterPosition);
-                            ChatAttachAlertPollLayout.this.checkDoneButton();
-                        }
-
-                        @Override // android.text.TextWatcher
-                        public void beforeTextChanged(CharSequence charSequence, int i2, int i3, int i4) {
-                        }
-
-                        @Override // android.text.TextWatcher
-                        public void onTextChanged(CharSequence charSequence, int i2, int i3, int i4) {
-                        }
-                    });
-                    pollEditTextCell3.setShowNextButton(true);
-                    EditTextBoldCursor textView = pollEditTextCell3.getTextView();
-                    textView.setImeOptions(textView.getImeOptions() | 5);
-                    textView.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout$ListAdapter$$ExternalSyntheticLambda1
-                        @Override // android.widget.TextView.OnEditorActionListener
-                        public final boolean onEditorAction(TextView textView2, int i2, KeyEvent keyEvent) {
-                            boolean lambda$onCreateViewHolder$1;
-                            lambda$onCreateViewHolder$1 = ChatAttachAlertPollLayout.ListAdapter.this.lambda$onCreateViewHolder$1(pollEditTextCell3, textView2, i2, keyEvent);
-                            return lambda$onCreateViewHolder$1;
-                        }
-                    });
-                    textView.setOnKeyListener(new View.OnKeyListener() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout$ListAdapter$$ExternalSyntheticLambda2
-                        @Override // android.view.View.OnKeyListener
-                        public final boolean onKey(View view2, int i2, KeyEvent keyEvent) {
-                            boolean lambda$onCreateViewHolder$2;
-                            lambda$onCreateViewHolder$2 = ChatAttachAlertPollLayout.ListAdapter.lambda$onCreateViewHolder$2(PollEditTextCell.this, view2, i2, keyEvent);
-                            return lambda$onCreateViewHolder$2;
-                        }
-                    });
-                    view = pollEditTextCell3;
-                    break;
-                case 6:
-                    view = new TextCheckCell(this.mContext, ChatAttachAlertPollLayout.this.resourcesProvider);
-                    break;
-                case 7:
-                    final PollEditTextCell pollEditTextCell4 = new PollEditTextCell(this.mContext, false, ChatAttachAlertPollLayout.this.isPremium ? 1 : 0, null) { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout.ListAdapter.3
-                        @Override // org.telegram.ui.Cells.PollEditTextCell
-                        protected void onActionModeStart(EditTextBoldCursor editTextBoldCursor, ActionMode actionMode) {
-                            if (editTextBoldCursor.isFocused() && editTextBoldCursor.hasSelection()) {
-                                Menu menu = actionMode.getMenu();
-                                if (menu.findItem(android.R.id.copy) == null) {
-                                    return;
-                                }
-                                ChatActivity.fillActionModeMenu(menu, ((ChatActivity) ChatAttachAlertPollLayout.this.parentAlert.baseFragment).getCurrentEncryptedChat(), true);
-                            }
-                        }
-
-                        @Override // org.telegram.ui.Cells.PollEditTextCell
-                        protected void onEditTextFocusChanged(boolean z3) {
-                            ChatAttachAlertPollLayout.this.onCellFocusChanges(this, z3);
-                        }
-
-                        /* JADX INFO: Access modifiers changed from: protected */
-                        @Override // org.telegram.ui.Cells.PollEditTextCell
-                        /* renamed from: onEmojiButtonClicked */
-                        public void lambda$new$1(PollEditTextCell pollEditTextCell5) {
-                            ChatAttachAlertPollLayout.this.onEmojiClicked(pollEditTextCell5);
-                        }
-
-                        @Override // org.telegram.ui.Cells.PollEditTextCell
-                        protected void onFieldTouchUp(EditTextBoldCursor editTextBoldCursor) {
-                            ChatAttachAlertPollLayout.this.parentAlert.makeFocusable(editTextBoldCursor, true);
-                        }
-                    };
-                    pollEditTextCell4.createErrorTextView();
-                    textWatcher = new TextWatcher() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout.ListAdapter.4
-                        @Override // android.text.TextWatcher
-                        public void afterTextChanged(Editable editable) {
-                            if (pollEditTextCell4.getTag() != null) {
-                                return;
-                            }
-                            RecyclerView.ViewHolder findViewHolderForAdapterPosition = ChatAttachAlertPollLayout.this.listView.findViewHolderForAdapterPosition(ChatAttachAlertPollLayout.this.questionRow);
-                            if (findViewHolderForAdapterPosition != null && ChatAttachAlertPollLayout.this.suggestEmojiPanel != null) {
-                                for (ImageSpan imageSpan : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
-                                    editable.removeSpan(imageSpan);
-                                }
-                                Emoji.replaceEmoji(editable, pollEditTextCell4.getEditField().getPaint().getFontMetricsInt(), false);
-                                ChatAttachAlertPollLayout.this.suggestEmojiPanel.setDirection(1);
-                                ChatAttachAlertPollLayout.this.suggestEmojiPanel.setDelegate(pollEditTextCell4);
-                                ChatAttachAlertPollLayout.this.suggestEmojiPanel.setTranslationY(findViewHolderForAdapterPosition.itemView.getY());
-                                ChatAttachAlertPollLayout.this.suggestEmojiPanel.fireUpdate();
-                            }
-                            ChatAttachAlertPollLayout.this.solutionString = editable;
-                            if (findViewHolderForAdapterPosition != null) {
-                                ChatAttachAlertPollLayout chatAttachAlertPollLayout = ChatAttachAlertPollLayout.this;
-                                chatAttachAlertPollLayout.setTextLeft(findViewHolderForAdapterPosition.itemView, chatAttachAlertPollLayout.solutionRow);
-                            }
-                            ChatAttachAlertPollLayout.this.checkDoneButton();
-                        }
-
-                        @Override // android.text.TextWatcher
-                        public void beforeTextChanged(CharSequence charSequence, int i2, int i3, int i4) {
-                        }
-
-                        @Override // android.text.TextWatcher
-                        public void onTextChanged(CharSequence charSequence, int i2, int i3, int i4) {
-                        }
-                    };
-                    pollEditTextCell = pollEditTextCell4;
-                    pollEditTextCell.addTextWatcher(textWatcher);
-                    view = pollEditTextCell;
-                    break;
-                case 8:
-                    View emptyView = new EmptyView(this.mContext);
-                    emptyView.setBackgroundColor(ChatAttachAlertPollLayout.this.getThemedColor(Theme.key_windowBackgroundGray));
-                    view = emptyView;
-                    break;
-                case 9:
-                    view = new View(this.mContext) { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout.ListAdapter.5
-                        @Override // android.view.View
-                        protected void onMeasure(int i2, int i3) {
-                            setMeasuredDimension(View.MeasureSpec.getSize(i2), ChatAttachAlertPollLayout.this.topPadding);
-                        }
-                    };
-                    break;
-            }
-            view.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
-            return new RecyclerListView.Holder(view);
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public void onViewAttachedToWindow(RecyclerView.ViewHolder viewHolder) {
-            PollEditTextCell pollEditTextCell;
-            String str;
-            int i;
-            int itemViewType = viewHolder.getItemViewType();
-            if (itemViewType == 4) {
-                pollEditTextCell = (PollEditTextCell) viewHolder.itemView;
-                pollEditTextCell.setTag(1);
-                str = ChatAttachAlertPollLayout.this.questionString != null ? ChatAttachAlertPollLayout.this.questionString : "";
-                i = ChatAttachAlertPollLayout.this.todo ? R.string.TodoTitlePlaceholder : R.string.QuestionHint;
-            } else {
-                if (itemViewType == 5) {
-                    int adapterPosition = viewHolder.getAdapterPosition();
-                    PollEditTextCell pollEditTextCell2 = (PollEditTextCell) viewHolder.itemView;
-                    pollEditTextCell2.setTag(1);
-                    pollEditTextCell2.setTextAndHint(ChatAttachAlertPollLayout.this.answers[adapterPosition - ChatAttachAlertPollLayout.this.answerStartRow], LocaleController.getString(ChatAttachAlertPollLayout.this.todo ? R.string.TodoTaskPlaceholder : R.string.OptionHint), true);
-                    pollEditTextCell2.setTag(null);
-                    if (ChatAttachAlertPollLayout.this.requestFieldFocusAtPosition == adapterPosition) {
-                        EditTextBoldCursor textView = pollEditTextCell2.getTextView();
-                        textView.requestFocus();
-                        AndroidUtilities.showKeyboard(textView);
-                        ChatAttachAlertPollLayout.this.requestFieldFocusAtPosition = -1;
-                    }
-                    ChatAttachAlertPollLayout.this.setTextLeft(viewHolder.itemView, adapterPosition);
-                    return;
-                }
-                if (itemViewType != 7) {
-                    return;
-                }
-                pollEditTextCell = (PollEditTextCell) viewHolder.itemView;
-                pollEditTextCell.setTag(1);
-                str = ChatAttachAlertPollLayout.this.solutionString != null ? ChatAttachAlertPollLayout.this.solutionString : "";
-                i = R.string.AddAnExplanation;
-            }
-            pollEditTextCell.setTextAndHint(str, LocaleController.getString(i), false);
-            pollEditTextCell.setTag(null);
-            ChatAttachAlertPollLayout.this.setTextLeft(viewHolder.itemView, viewHolder.getAdapterPosition());
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public void onViewDetachedFromWindow(RecyclerView.ViewHolder viewHolder) {
-            if (viewHolder.getItemViewType() == 4 || viewHolder.getItemViewType() == 5) {
-                EditTextBoldCursor textView = ((PollEditTextCell) viewHolder.itemView).getTextView();
-                if (textView.isFocused()) {
-                    if (ChatAttachAlertPollLayout.this.isPremium) {
-                        if (ChatAttachAlertPollLayout.this.suggestEmojiPanel != null) {
-                            ChatAttachAlertPollLayout.this.suggestEmojiPanel.forceClose();
-                        }
-                        ChatAttachAlertPollLayout.this.hideEmojiPopup(true);
-                    }
-                    ChatAttachAlertPollLayout.this.currentCell = null;
-                    textView.clearFocus();
-                    AndroidUtilities.hideKeyboard(textView);
-                }
-            }
-        }
-
-        public void swapElements(int i, int i2) {
-            int i3 = i - ChatAttachAlertPollLayout.this.answerStartRow;
-            int i4 = i2 - ChatAttachAlertPollLayout.this.answerStartRow;
-            if (i3 < 0 || i4 < 0 || i3 >= ChatAttachAlertPollLayout.this.answersCount || i4 >= ChatAttachAlertPollLayout.this.answersCount) {
-                return;
-            }
-            CharSequence charSequence = ChatAttachAlertPollLayout.this.answers[i3];
-            ChatAttachAlertPollLayout.this.answers[i3] = ChatAttachAlertPollLayout.this.answers[i4];
-            ChatAttachAlertPollLayout.this.answers[i4] = charSequence;
-            boolean z = ChatAttachAlertPollLayout.this.answersChecks[i3];
-            ChatAttachAlertPollLayout.this.answersChecks[i3] = ChatAttachAlertPollLayout.this.answersChecks[i4];
-            ChatAttachAlertPollLayout.this.answersChecks[i4] = z;
-            notifyItemMoved(i, i2);
-        }
-    }
-
-    public interface PollCreateActivityDelegate {
-        void sendPoll(TLRPC.MessageMedia messageMedia, HashMap hashMap, boolean z, int i, long j);
-    }
-
     public class TouchHelperCallback extends ItemTouchHelper.Callback {
-        public TouchHelperCallback() {
-        }
-
-        @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
-        public void clearView(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
-            super.clearView(recyclerView, viewHolder);
-            viewHolder.itemView.setPressed(false);
-            viewHolder.itemView.setBackground(null);
-        }
-
-        @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
-        public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
-            return viewHolder.getItemViewType() != 5 ? ItemTouchHelper.Callback.makeMovementFlags(0, 0) : ItemTouchHelper.Callback.makeMovementFlags(3, 0);
-        }
-
         @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
         public boolean isLongPressDragEnabled() {
             return true;
         }
 
         @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
-        public void onChildDraw(Canvas canvas, RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, float f, float f2, int i, boolean z) {
-            super.onChildDraw(canvas, recyclerView, viewHolder, f, f2, i, z);
+        public void onSwiped(RecyclerView.ViewHolder viewHolder, int i) {
+        }
+
+        public TouchHelperCallback() {
+        }
+
+        @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
+        public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
+            if (viewHolder.getItemViewType() != 5) {
+                return ItemTouchHelper.Callback.makeMovementFlags(0, 0);
+            }
+            return ItemTouchHelper.Callback.makeMovementFlags(3, 0);
         }
 
         @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
@@ -1063,6 +194,11 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
             }
             ChatAttachAlertPollLayout.this.listAdapter.swapElements(viewHolder.getAdapterPosition(), viewHolder2.getAdapterPosition());
             return true;
+        }
+
+        @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
+        public void onChildDraw(Canvas canvas, RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, float f, float f2, int i, boolean z) {
+            super.onChildDraw(canvas, recyclerView, viewHolder, f, f2, i, z);
         }
 
         @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
@@ -1077,7 +213,10 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
         }
 
         @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
-        public void onSwiped(RecyclerView.ViewHolder viewHolder, int i) {
+        public void clearView(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
+            super.clearView(recyclerView, viewHolder);
+            viewHolder.itemView.setPressed(false);
+            viewHolder.itemView.setBackground(null);
         }
     }
 
@@ -1148,19 +287,6 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
         this.listView.setVerticalScrollBarEnabled(false);
         RecyclerListView recyclerListView2 = this.listView;
         FillLastLinearLayoutManager fillLastLinearLayoutManager = new FillLastLinearLayoutManager(context, 1, false, AndroidUtilities.dp(53.0f), this.listView) { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout.4
-            @Override // androidx.recyclerview.widget.RecyclerView.LayoutManager
-            protected int[] getChildRectangleOnScreenScrollAmount(View view, android.graphics.Rect rect) {
-                int height = getHeight() - getPaddingBottom();
-                int top = (view.getTop() + rect.top) - view.getScrollY();
-                int height2 = rect.height() + top;
-                int min = Math.min(0, top);
-                int max = Math.max(0, height2 - height);
-                if (min == 0) {
-                    min = Math.min(top, max);
-                }
-                return new int[]{0, min};
-            }
-
             @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
             public void smoothScrollToPosition(RecyclerView recyclerView, RecyclerView.State state, int i) {
                 LinearSmoothScroller linearSmoothScroller = new LinearSmoothScroller(recyclerView.getContext()) { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout.4.1
@@ -1176,6 +302,19 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
                 };
                 linearSmoothScroller.setTargetPosition(i);
                 startSmoothScroll(linearSmoothScroller);
+            }
+
+            @Override // androidx.recyclerview.widget.RecyclerView.LayoutManager
+            protected int[] getChildRectangleOnScreenScrollAmount(View view, android.graphics.Rect rect) {
+                int height = getHeight() - getPaddingBottom();
+                int top = (view.getTop() + rect.top) - view.getScrollY();
+                int height2 = rect.height() + top;
+                int min = Math.min(0, top);
+                int max = Math.max(0, height2 - height);
+                if (min == 0) {
+                    min = Math.min(top, max);
+                }
+                return new int[]{0, min};
             }
         };
         this.layoutManager = fillLastLinearLayoutManager;
@@ -1193,6 +332,37 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
         });
         this.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout.5
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
+            public void onScrolled(RecyclerView recyclerView, int i, int i2) {
+                ChatAttachAlertPollLayout chatAttachAlertPollLayout = ChatAttachAlertPollLayout.this;
+                chatAttachAlertPollLayout.parentAlert.updateLayout(chatAttachAlertPollLayout, true, i2);
+                if (ChatAttachAlertPollLayout.this.suggestEmojiPanel != null && ChatAttachAlertPollLayout.this.suggestEmojiPanel.isShown()) {
+                    SuggestEmojiView.AnchorViewDelegate delegate = ChatAttachAlertPollLayout.this.suggestEmojiPanel.getDelegate();
+                    if (delegate instanceof PollEditTextCell) {
+                        RecyclerView.ViewHolder findContainingViewHolder = ChatAttachAlertPollLayout.this.listView.findContainingViewHolder((PollEditTextCell) delegate);
+                        if (findContainingViewHolder == null) {
+                            ChatAttachAlertPollLayout.this.suggestEmojiPanel.forceClose();
+                        } else {
+                            int adapterPosition = findContainingViewHolder.getAdapterPosition();
+                            if (ChatAttachAlertPollLayout.this.suggestEmojiPanel.getDirection() == 0) {
+                                ChatAttachAlertPollLayout.this.suggestEmojiPanel.setTranslationY((findContainingViewHolder.itemView.getY() - AndroidUtilities.dp(166.0f)) + findContainingViewHolder.itemView.getMeasuredHeight());
+                            } else {
+                                ChatAttachAlertPollLayout.this.suggestEmojiPanel.setTranslationY(findContainingViewHolder.itemView.getY());
+                            }
+                            if (adapterPosition < ChatAttachAlertPollLayout.this.layoutManager.findFirstVisibleItemPosition() || adapterPosition > ChatAttachAlertPollLayout.this.layoutManager.findLastVisibleItemPosition()) {
+                                ChatAttachAlertPollLayout.this.suggestEmojiPanel.forceClose();
+                            }
+                        }
+                    } else {
+                        ChatAttachAlertPollLayout.this.suggestEmojiPanel.forceClose();
+                    }
+                }
+                if (i2 == 0 || ChatAttachAlertPollLayout.this.hintView == null) {
+                    return;
+                }
+                ChatAttachAlertPollLayout.this.hintView.hide();
+            }
+
+            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrollStateChanged(RecyclerView recyclerView, int i) {
                 RecyclerListView.Holder holder;
                 if (i == 0) {
@@ -1203,40 +373,6 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
                     }
                     ChatAttachAlertPollLayout.this.listView.smoothScrollBy(0, holder.itemView.getTop() - AndroidUtilities.dp(53.0f));
                 }
-            }
-
-            /* JADX WARN: Code restructure failed: missing block: B:15:0x008d, code lost:
-            
-                if (r5 <= r3.this$0.layoutManager.findLastVisibleItemPosition()) goto L19;
-             */
-            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-            /*
-                Code decompiled incorrectly, please refer to instructions dump.
-            */
-            public void onScrolled(RecyclerView recyclerView, int i, int i2) {
-                ChatAttachAlertPollLayout chatAttachAlertPollLayout = ChatAttachAlertPollLayout.this;
-                chatAttachAlertPollLayout.parentAlert.updateLayout(chatAttachAlertPollLayout, true, i2);
-                if (ChatAttachAlertPollLayout.this.suggestEmojiPanel != null && ChatAttachAlertPollLayout.this.suggestEmojiPanel.isShown()) {
-                    SuggestEmojiView.AnchorViewDelegate delegate = ChatAttachAlertPollLayout.this.suggestEmojiPanel.getDelegate();
-                    if (delegate instanceof PollEditTextCell) {
-                        RecyclerView.ViewHolder findContainingViewHolder = ChatAttachAlertPollLayout.this.listView.findContainingViewHolder((PollEditTextCell) delegate);
-                        if (findContainingViewHolder != null) {
-                            int adapterPosition = findContainingViewHolder.getAdapterPosition();
-                            if (ChatAttachAlertPollLayout.this.suggestEmojiPanel.getDirection() == 0) {
-                                ChatAttachAlertPollLayout.this.suggestEmojiPanel.setTranslationY((findContainingViewHolder.itemView.getY() - AndroidUtilities.dp(166.0f)) + findContainingViewHolder.itemView.getMeasuredHeight());
-                            } else {
-                                ChatAttachAlertPollLayout.this.suggestEmojiPanel.setTranslationY(findContainingViewHolder.itemView.getY());
-                            }
-                            if (adapterPosition >= ChatAttachAlertPollLayout.this.layoutManager.findFirstVisibleItemPosition()) {
-                            }
-                        }
-                    }
-                    ChatAttachAlertPollLayout.this.suggestEmojiPanel.forceClose();
-                }
-                if (i2 == 0 || ChatAttachAlertPollLayout.this.hintView == null) {
-                    return;
-                }
-                ChatAttachAlertPollLayout.this.hintView.hide();
             }
         });
         HintView hintView = new HintView(context, 4);
@@ -1263,76 +399,490 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
         checkDoneButton();
     }
 
-    static /* synthetic */ int access$2208(ChatAttachAlertPollLayout chatAttachAlertPollLayout) {
-        int i = chatAttachAlertPollLayout.answersCount;
-        chatAttachAlertPollLayout.answersCount = i + 1;
-        return i;
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$0(View view, int i) {
+        boolean z;
+        if (i == this.addAnswerRow) {
+            addNewField();
+            return;
+        }
+        if (view instanceof TextCheckCell) {
+            TextCheckCell textCheckCell = (TextCheckCell) view;
+            boolean z2 = this.quizPoll;
+            SuggestEmojiView suggestEmojiView = this.suggestEmojiPanel;
+            if (suggestEmojiView != null) {
+                suggestEmojiView.forceClose();
+            }
+            if (i == this.anonymousRow) {
+                z = !this.anonymousPoll;
+                this.anonymousPoll = z;
+            } else {
+                int i2 = this.allowAddingRow;
+                if (i == i2) {
+                    z = !this.allowAdding;
+                    this.allowAdding = z;
+                } else if (i == this.allowMarkingRow) {
+                    boolean z3 = !this.allowMarking;
+                    this.allowMarking = z3;
+                    updateRows();
+                    int i3 = this.allowAddingRow;
+                    if (i3 >= 0 && i2 < 0) {
+                        this.listView.setItemAnimator(this.itemAnimator);
+                        this.listAdapter.notifyItemInserted(this.allowAddingRow);
+                    } else if (i2 >= 0 && i3 < 0) {
+                        this.listView.setItemAnimator(this.itemAnimator);
+                        this.listAdapter.notifyItemRemoved(i2);
+                    }
+                    z = z3;
+                } else if (i == this.multipleRow) {
+                    boolean z4 = this.multipleChoise;
+                    boolean z5 = !z4;
+                    this.multipleChoise = z5;
+                    if (!z4 && this.quizPoll) {
+                        int i4 = this.solutionRow;
+                        this.quizPoll = false;
+                        updateRows();
+                        this.listView.setItemAnimator(this.itemAnimator);
+                        RecyclerView.ViewHolder findViewHolderForAdapterPosition = this.listView.findViewHolderForAdapterPosition(this.quizRow);
+                        if (findViewHolderForAdapterPosition != null) {
+                            ((TextCheckCell) findViewHolderForAdapterPosition.itemView).setChecked(false);
+                        } else {
+                            this.listAdapter.notifyItemChanged(this.quizRow);
+                        }
+                        this.listAdapter.notifyItemRangeRemoved(i4, 2);
+                        this.listAdapter.notifyItemChanged(this.emptyRow);
+                    }
+                    z = z5;
+                } else {
+                    if (this.quizOnly != 0) {
+                        return;
+                    }
+                    this.listView.setItemAnimator(this.itemAnimator);
+                    z = !this.quizPoll;
+                    this.quizPoll = z;
+                    int i5 = this.solutionRow;
+                    updateRows();
+                    if (this.quizPoll) {
+                        this.listAdapter.notifyItemRangeInserted(this.solutionRow, 2);
+                    } else {
+                        this.listAdapter.notifyItemRangeRemoved(i5, 2);
+                    }
+                    this.listAdapter.notifyItemChanged(this.emptyRow);
+                    if (this.quizPoll && this.multipleChoise) {
+                        this.multipleChoise = false;
+                        RecyclerView.ViewHolder findViewHolderForAdapterPosition2 = this.listView.findViewHolderForAdapterPosition(this.multipleRow);
+                        if (findViewHolderForAdapterPosition2 != null) {
+                            ((TextCheckCell) findViewHolderForAdapterPosition2.itemView).setChecked(false);
+                        } else {
+                            this.listAdapter.notifyItemChanged(this.multipleRow);
+                        }
+                    }
+                    if (this.quizPoll) {
+                        int i6 = 0;
+                        boolean z6 = false;
+                        while (true) {
+                            boolean[] zArr = this.answersChecks;
+                            if (i6 >= zArr.length) {
+                                break;
+                            }
+                            if (z6) {
+                                zArr[i6] = false;
+                            } else if (zArr[i6]) {
+                                z6 = true;
+                            }
+                            i6++;
+                        }
+                    }
+                }
+            }
+            if (this.hintShowed && !this.quizPoll) {
+                this.hintView.hide();
+            }
+            this.listView.getChildCount();
+            for (int i7 = this.answerStartRow; i7 < this.answerStartRow + this.answersCount; i7++) {
+                RecyclerView.ViewHolder findViewHolderForAdapterPosition3 = this.listView.findViewHolderForAdapterPosition(i7);
+                if (findViewHolderForAdapterPosition3 != null) {
+                    View view2 = findViewHolderForAdapterPosition3.itemView;
+                    if (view2 instanceof PollEditTextCell) {
+                        PollEditTextCell pollEditTextCell = (PollEditTextCell) view2;
+                        pollEditTextCell.setShowCheckBox(this.quizPoll, true);
+                        pollEditTextCell.setChecked(this.answersChecks[i7 - this.answerStartRow], z2);
+                        if (pollEditTextCell.getTop() > AndroidUtilities.dp(40.0f) && i == this.quizRow && !this.hintShowed) {
+                            this.hintView.showForView(pollEditTextCell.getCheckBox(), true);
+                            this.hintShowed = true;
+                        }
+                    }
+                }
+            }
+            textCheckCell.setChecked(z);
+            checkDoneButton();
+        }
     }
 
-    static /* synthetic */ int access$2210(ChatAttachAlertPollLayout chatAttachAlertPollLayout) {
-        int i = chatAttachAlertPollLayout.answersCount;
-        chatAttachAlertPollLayout.answersCount = i - 1;
-        return i;
+    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
+    public void onPause() {
+        super.onPause();
+        ListAdapter listAdapter = this.listAdapter;
+        if (listAdapter != null) {
+            listAdapter.notifyDataSetChanged();
+        }
+        if (this.isPremium) {
+            hideEmojiPopup(false);
+            SuggestEmojiView suggestEmojiView = this.suggestEmojiPanel;
+            if (suggestEmojiView != null) {
+                suggestEmojiView.forceClose();
+            }
+            PollEditTextCell pollEditTextCell = this.currentCell;
+            if (pollEditTextCell != null) {
+                pollEditTextCell.setEmojiButtonVisibility(false);
+                this.currentCell.getTextView().clearFocus();
+                AndroidUtilities.hideKeyboard(this.currentCell.getEditField());
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
+    public void onHideShowProgress(float f) {
+        this.parentAlert.updateDoneItemEnabled();
+    }
+
+    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
+    public void onMenuItemClick(int i) {
+        if (i != 40) {
+            return;
+        }
+        if (this.todo) {
+            CharSequence[] charSequenceArr = {getFixedString(this.questionString)};
+            ArrayList<TLRPC.MessageEntity> entities = MediaDataController.getInstance(this.parentAlert.currentAccount).getEntities(charSequenceArr, true);
+            CharSequence charSequence = charSequenceArr[0];
+            if (entities != null) {
+                int size = entities.size();
+                for (int i2 = 0; i2 < size; i2++) {
+                    TLRPC.MessageEntity messageEntity = entities.get(i2);
+                    if (messageEntity.offset + messageEntity.length > charSequence.length()) {
+                        messageEntity.length = charSequence.length() - messageEntity.offset;
+                    }
+                }
+            }
+            final TLRPC.TL_messageMediaToDo tL_messageMediaToDo = new TLRPC.TL_messageMediaToDo();
+            TLRPC.TodoList todoList = new TLRPC.TodoList();
+            tL_messageMediaToDo.todo = todoList;
+            boolean z = this.allowMarking;
+            todoList.others_can_append = z && this.allowAdding;
+            todoList.others_can_complete = z;
+            todoList.title = new TLRPC.TL_textWithEntities();
+            tL_messageMediaToDo.todo.title.text = charSequence.toString();
+            tL_messageMediaToDo.todo.title.entities = entities;
+            int i3 = 0;
+            while (true) {
+                CharSequence[] charSequenceArr2 = this.answers;
+                if (i3 < charSequenceArr2.length) {
+                    if (!TextUtils.isEmpty(getFixedString(charSequenceArr2[i3]))) {
+                        CharSequence[] charSequenceArr3 = {getFixedString(this.answers[i3])};
+                        ArrayList<TLRPC.MessageEntity> entities2 = MediaDataController.getInstance(this.parentAlert.currentAccount).getEntities(charSequenceArr3, true);
+                        CharSequence charSequence2 = charSequenceArr3[0];
+                        if (entities2 != null) {
+                            int size2 = entities2.size();
+                            for (int i4 = 0; i4 < size2; i4++) {
+                                TLRPC.MessageEntity messageEntity2 = entities2.get(i4);
+                                if (messageEntity2.offset + messageEntity2.length > charSequence2.length()) {
+                                    messageEntity2.length = charSequence2.length() - messageEntity2.offset;
+                                }
+                            }
+                        }
+                        TLRPC.TodoItem todoItem = new TLRPC.TodoItem();
+                        TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
+                        todoItem.title = tL_textWithEntities;
+                        tL_textWithEntities.text = charSequence2.toString();
+                        todoItem.title.entities = entities2;
+                        todoItem.id = tL_messageMediaToDo.todo.list.size() + 1;
+                        tL_messageMediaToDo.todo.list.add(todoItem);
+                    }
+                    i3++;
+                } else {
+                    ChatAttachAlert chatAttachAlert = this.parentAlert;
+                    final ChatActivity chatActivity = (ChatActivity) chatAttachAlert.baseFragment;
+                    AlertsCreator.ensurePaidMessageConfirmation(chatAttachAlert.currentAccount, chatAttachAlert.getDialogId(), this.parentAlert.getAdditionalMessagesCount() + 1, new Utilities.Callback() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout$$ExternalSyntheticLambda5
+                        @Override // org.telegram.messenger.Utilities.Callback
+                        public final void run(Object obj) {
+                            ChatAttachAlertPollLayout.this.lambda$onMenuItemClick$2(chatActivity, tL_messageMediaToDo, (Long) obj);
+                        }
+                    });
+                    return;
+                }
+            }
+        } else {
+            if (this.quizPoll && !this.doneItemEnabled) {
+                int i5 = 0;
+                for (int i6 = 0; i6 < this.answersChecks.length; i6++) {
+                    if (!TextUtils.isEmpty(getFixedString(this.answers[i6])) && this.answersChecks[i6]) {
+                        i5++;
+                    }
+                }
+                if (i5 <= 0) {
+                    showQuizHint();
+                    return;
+                }
+                return;
+            }
+            CharSequence[] charSequenceArr4 = {getFixedString(this.questionString)};
+            ArrayList<TLRPC.MessageEntity> entities3 = MediaDataController.getInstance(this.parentAlert.currentAccount).getEntities(charSequenceArr4, true);
+            CharSequence charSequence3 = charSequenceArr4[0];
+            if (entities3 != null) {
+                int size3 = entities3.size();
+                for (int i7 = 0; i7 < size3; i7++) {
+                    TLRPC.MessageEntity messageEntity3 = entities3.get(i7);
+                    if (messageEntity3.offset + messageEntity3.length > charSequence3.length()) {
+                        messageEntity3.length = charSequence3.length() - messageEntity3.offset;
+                    }
+                }
+            }
+            final TLRPC.TL_messageMediaPoll tL_messageMediaPoll = new TLRPC.TL_messageMediaPoll();
+            TLRPC.TL_poll tL_poll = new TLRPC.TL_poll();
+            tL_messageMediaPoll.poll = tL_poll;
+            tL_poll.multiple_choice = this.multipleChoise;
+            tL_poll.quiz = this.quizPoll;
+            tL_poll.public_voters = !this.anonymousPoll;
+            tL_poll.question = new TLRPC.TL_textWithEntities();
+            tL_messageMediaPoll.poll.question.text = charSequence3.toString();
+            tL_messageMediaPoll.poll.question.entities = entities3;
+            SerializedData serializedData = new SerializedData(this.maxAnswersCount);
+            int i8 = 0;
+            while (true) {
+                CharSequence[] charSequenceArr5 = this.answers;
+                if (i8 >= charSequenceArr5.length) {
+                    break;
+                }
+                if (!TextUtils.isEmpty(getFixedString(charSequenceArr5[i8]))) {
+                    CharSequence[] charSequenceArr6 = {getFixedString(this.answers[i8])};
+                    ArrayList<TLRPC.MessageEntity> entities4 = MediaDataController.getInstance(this.parentAlert.currentAccount).getEntities(charSequenceArr6, true);
+                    CharSequence charSequence4 = charSequenceArr6[0];
+                    if (entities4 != null) {
+                        int size4 = entities4.size();
+                        for (int i9 = 0; i9 < size4; i9++) {
+                            TLRPC.MessageEntity messageEntity4 = entities4.get(i9);
+                            if (messageEntity4.offset + messageEntity4.length > charSequence4.length()) {
+                                messageEntity4.length = charSequence4.length() - messageEntity4.offset;
+                            }
+                        }
+                    }
+                    TLRPC.TL_pollAnswer tL_pollAnswer = new TLRPC.TL_pollAnswer();
+                    TLRPC.TL_textWithEntities tL_textWithEntities2 = new TLRPC.TL_textWithEntities();
+                    tL_pollAnswer.text = tL_textWithEntities2;
+                    tL_textWithEntities2.text = charSequence4.toString();
+                    tL_pollAnswer.text.entities = entities4;
+                    tL_pollAnswer.option = new byte[]{(byte) (tL_messageMediaPoll.poll.answers.size() + 48)};
+                    tL_messageMediaPoll.poll.answers.add(tL_pollAnswer);
+                    if ((this.multipleChoise || this.quizPoll) && this.answersChecks[i8]) {
+                        serializedData.writeByte(tL_pollAnswer.option[0]);
+                    }
+                }
+                i8++;
+            }
+            final HashMap hashMap = new HashMap();
+            hashMap.put("answers", Utilities.bytesToHex(serializedData.toByteArray()));
+            tL_messageMediaPoll.results = new TLRPC.TL_pollResults();
+            CharSequence fixedString = getFixedString(this.solutionString);
+            if (fixedString != null) {
+                tL_messageMediaPoll.results.solution = fixedString.toString();
+                ArrayList<TLRPC.MessageEntity> entities5 = MediaDataController.getInstance(this.parentAlert.currentAccount).getEntities(new CharSequence[]{fixedString}, true);
+                if (entities5 != null && !entities5.isEmpty()) {
+                    tL_messageMediaPoll.results.solution_entities = entities5;
+                }
+                if (!TextUtils.isEmpty(tL_messageMediaPoll.results.solution)) {
+                    tL_messageMediaPoll.results.flags |= 16;
+                }
+            }
+            ChatAttachAlert chatAttachAlert2 = this.parentAlert;
+            final ChatActivity chatActivity2 = (ChatActivity) chatAttachAlert2.baseFragment;
+            AlertsCreator.ensurePaidMessageConfirmation(chatAttachAlert2.currentAccount, chatAttachAlert2.getDialogId(), this.parentAlert.getAdditionalMessagesCount() + 1, new Utilities.Callback() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout$$ExternalSyntheticLambda6
+                @Override // org.telegram.messenger.Utilities.Callback
+                public final void run(Object obj) {
+                    ChatAttachAlertPollLayout.this.lambda$onMenuItemClick$4(chatActivity2, tL_messageMediaPoll, hashMap, (Long) obj);
+                }
+            });
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void addNewField() {
-        resetSuggestEmojiPanel();
-        this.listView.setItemAnimator(this.itemAnimator);
-        boolean[] zArr = this.answersChecks;
-        int i = this.answersCount;
-        zArr[i] = false;
-        int i2 = i + 1;
-        this.answersCount = i2;
-        if (i2 == this.answers.length) {
-            this.listAdapter.notifyItemRemoved(this.addAnswerRow);
-        }
-        this.listAdapter.notifyItemInserted(this.addAnswerRow);
-        updateRows();
-        this.requestFieldFocusAtPosition = (this.answerStartRow + this.answersCount) - 1;
-        this.listAdapter.notifyItemChanged(this.answerSectionRow);
-        this.listAdapter.notifyItemChanged(this.emptyRow);
-    }
-
-    private void animateEmojiViewTranslationY(final float f, final float f2) {
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout$$ExternalSyntheticLambda1
-            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-            public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                ChatAttachAlertPollLayout.this.lambda$animateEmojiViewTranslationY$8(f, f2, valueAnimator);
-            }
-        });
-        ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout.10
-            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-            public void onAnimationEnd(Animator animator) {
-                ChatAttachAlertPollLayout.this.emojiView.setTranslationY(f2);
-            }
-        });
-        ofFloat.setDuration(250L);
-        ofFloat.setInterpolator(AdjustPanLayoutHelper.keyboardInterpolator);
-        ofFloat.start();
-    }
-
-    private boolean checkDiscard() {
-        boolean isEmpty = TextUtils.isEmpty(getFixedString(this.questionString));
-        if (isEmpty) {
-            for (int i = 0; i < this.answersCount && (isEmpty = TextUtils.isEmpty(getFixedString(this.answers[i]))); i++) {
-            }
-        }
-        if (!isEmpty) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this.parentAlert.baseFragment.getParentActivity());
-            builder.setTitle(LocaleController.getString(this.todo ? R.string.CancelTodoAlertTitle : R.string.CancelPollAlertTitle));
-            builder.setMessage(LocaleController.getString(this.todo ? R.string.CancelTodoAlertText : R.string.CancelPollAlertText));
-            builder.setPositiveButton(LocaleController.getString(R.string.PassportDiscard), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout$$ExternalSyntheticLambda0
-                @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
-                public final void onClick(AlertDialog alertDialog, int i2) {
-                    ChatAttachAlertPollLayout.this.lambda$checkDiscard$5(alertDialog, i2);
+    public /* synthetic */ void lambda$onMenuItemClick$2(ChatActivity chatActivity, final TLRPC.TL_messageMediaToDo tL_messageMediaToDo, final Long l) {
+        if (chatActivity.isInScheduleMode()) {
+            AlertsCreator.createScheduleDatePickerDialog(chatActivity.getParentActivity(), chatActivity.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout$$ExternalSyntheticLambda8
+                @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
+                public final void didSelectDate(boolean z, int i) {
+                    ChatAttachAlertPollLayout.this.lambda$onMenuItemClick$1(tL_messageMediaToDo, l, z, i);
                 }
             });
-            builder.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
-            builder.show();
+        } else {
+            this.delegate.sendPoll(tL_messageMediaToDo, null, true, 0, l.longValue());
+            this.parentAlert.dismiss(true);
         }
-        return isEmpty;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$onMenuItemClick$1(TLRPC.TL_messageMediaToDo tL_messageMediaToDo, Long l, boolean z, int i) {
+        this.delegate.sendPoll(tL_messageMediaToDo, null, z, i, l.longValue());
+        this.parentAlert.dismiss(true);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$onMenuItemClick$4(ChatActivity chatActivity, final TLRPC.TL_messageMediaPoll tL_messageMediaPoll, final HashMap hashMap, final Long l) {
+        if (chatActivity.isInScheduleMode()) {
+            AlertsCreator.createScheduleDatePickerDialog(chatActivity.getParentActivity(), chatActivity.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout$$ExternalSyntheticLambda7
+                @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
+                public final void didSelectDate(boolean z, int i) {
+                    ChatAttachAlertPollLayout.this.lambda$onMenuItemClick$3(tL_messageMediaPoll, hashMap, l, z, i);
+                }
+            });
+        } else {
+            this.delegate.sendPoll(tL_messageMediaPoll, hashMap, true, 0, l.longValue());
+            this.parentAlert.dismiss(true);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$onMenuItemClick$3(TLRPC.TL_messageMediaPoll tL_messageMediaPoll, HashMap hashMap, Long l, boolean z, int i) {
+        this.delegate.sendPoll(tL_messageMediaPoll, hashMap, z, i, l.longValue());
+        this.parentAlert.dismiss(true);
+    }
+
+    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
+    public int getCurrentItemTop() {
+        View childAt;
+        if (this.listView.getChildCount() <= 1 || (childAt = this.listView.getChildAt(1)) == null) {
+            return ConnectionsManager.DEFAULT_DATACENTER_ID;
+        }
+        RecyclerListView.Holder holder = (RecyclerListView.Holder) this.listView.findContainingViewHolder(childAt);
+        int y = ((int) childAt.getY()) - AndroidUtilities.dp(8.0f);
+        int i = (y <= 0 || holder == null || holder.getAdapterPosition() != 1) ? 0 : y;
+        if (y < 0 || holder == null || holder.getAdapterPosition() != 1) {
+            y = i;
+        }
+        return y + AndroidUtilities.dp(25.0f);
+    }
+
+    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
+    public int getFirstOffset() {
+        return getListTopPadding() + AndroidUtilities.dp(17.0f);
+    }
+
+    @Override // android.view.View
+    public void setTranslationY(float f) {
+        super.setTranslationY(f);
+        this.parentAlert.getSheetContainer().invalidate();
+    }
+
+    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
+    public int getListTopPadding() {
+        return this.topPadding;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:16:0x003f  */
+    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void onPreMeasure(int i, int i2) {
+        int dp;
+        int i3;
+        if (this.parentAlert.sizeNotifierFrameLayout.measureKeyboardHeight() > AndroidUtilities.dp(20.0f) || this.emojiViewVisible || this.isAnimatePopupClosing || this.isEmojiSearchOpened) {
+            dp = AndroidUtilities.dp(52.0f);
+            this.parentAlert.setAllowNestedScroll(false);
+        } else {
+            if (!AndroidUtilities.isTablet()) {
+                android.graphics.Point point = AndroidUtilities.displaySize;
+                if (point.x > point.y) {
+                    i3 = (int) (i2 / 3.5f);
+                    dp = i3 - AndroidUtilities.dp(13.0f);
+                    if (dp < 0) {
+                        dp = 0;
+                    }
+                    this.parentAlert.setAllowNestedScroll(this.allowNesterScroll);
+                }
+            }
+            i3 = (i2 / 5) * 2;
+            dp = i3 - AndroidUtilities.dp(13.0f);
+            if (dp < 0) {
+            }
+            this.parentAlert.setAllowNestedScroll(this.allowNesterScroll);
+        }
+        this.ignoreLayout = true;
+        if (this.topPadding != dp) {
+            this.topPadding = dp;
+            this.listView.setItemAnimator(null);
+            this.listAdapter.notifyItemChanged(this.paddingRow);
+        }
+        this.ignoreLayout = false;
+    }
+
+    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
+    public int getButtonsHideOffset() {
+        return AndroidUtilities.dp(70.0f);
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public void requestLayout() {
+        if (this.ignoreLayout) {
+            return;
+        }
+        super.requestLayout();
+    }
+
+    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
+    public void scrollToTop() {
+        this.listView.smoothScrollToPosition(1);
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public void didReceivedNotification(int i, int i2, Object... objArr) {
+        if (i == NotificationCenter.emojiLoaded) {
+            EmojiView emojiView = this.emojiView;
+            if (emojiView != null) {
+                emojiView.invalidateViews();
+            }
+            PollEditTextCell pollEditTextCell = this.currentCell;
+            if (pollEditTextCell != null) {
+                int currentTextColor = pollEditTextCell.getEditField().getCurrentTextColor();
+                this.currentCell.getEditField().setTextColor(-1);
+                this.currentCell.getEditField().setTextColor(currentTextColor);
+            }
+        }
+    }
+
+    public static CharSequence getFixedString(CharSequence charSequence) {
+        if (TextUtils.isEmpty(charSequence)) {
+            return charSequence;
+        }
+        CharSequence trimmedString = AndroidUtilities.getTrimmedString(charSequence);
+        while (TextUtils.indexOf(trimmedString, "\n\n\n") >= 0) {
+            trimmedString = TextUtils.replace(trimmedString, new String[]{"\n\n\n"}, new CharSequence[]{"\n\n"});
+        }
+        while (TextUtils.indexOf(trimmedString, "\n\n\n") == 0) {
+            trimmedString = TextUtils.replace(trimmedString, new String[]{"\n\n\n"}, new CharSequence[]{"\n\n"});
+        }
+        return trimmedString;
+    }
+
+    private void showQuizHint() {
+        for (int i = this.answerStartRow; i < this.answerStartRow + this.answersCount; i++) {
+            RecyclerView.ViewHolder findViewHolderForAdapterPosition = this.listView.findViewHolderForAdapterPosition(i);
+            if (findViewHolderForAdapterPosition != null) {
+                View view = findViewHolderForAdapterPosition.itemView;
+                if (view instanceof PollEditTextCell) {
+                    PollEditTextCell pollEditTextCell = (PollEditTextCell) view;
+                    if (pollEditTextCell.getTop() > AndroidUtilities.dp(40.0f)) {
+                        SuggestEmojiView suggestEmojiView = this.suggestEmojiPanel;
+                        if (suggestEmojiView != null) {
+                            suggestEmojiView.forceClose();
+                        }
+                        this.hintView.showForView(pollEditTextCell.getCheckBox(), true);
+                        return;
+                    }
+                } else {
+                    continue;
+                }
+            }
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1372,493 +922,19 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
         if (i4 < (this.todo ? 1 : 2) || (this.quizPoll && i < 1)) {
             z = false;
         }
-        if (TextUtils.isEmpty(this.solutionString) && TextUtils.isEmpty(this.questionString) && !z2) {
-            this.allowNesterScroll = true;
-        } else {
+        if (!TextUtils.isEmpty(this.solutionString) || !TextUtils.isEmpty(this.questionString) || z2) {
             this.allowNesterScroll = false;
+        } else {
+            this.allowNesterScroll = true;
         }
         this.parentAlert.setAllowNestedScroll(this.allowNesterScroll);
         this.doneItemEnabled = (this.quizPoll && i == 0) || z;
         this.parentAlert.updateDoneItemEnabled();
     }
 
-    private void collapseSearchEmojiView() {
-        if (this.isEmojiSearchOpened) {
-            this.emojiView.closeSearch(false);
-            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.emojiView.getLayoutParams();
-            layoutParams.height -= AndroidUtilities.dp(120.0f);
-            this.emojiView.setLayoutParams(layoutParams);
-            this.emojiPadding = layoutParams.height;
-            this.wasEmojiSearchOpened = this.isEmojiSearchOpened;
-            this.isEmojiSearchOpened = false;
-            animateEmojiViewTranslationY(-AndroidUtilities.dp(120.0f), 0.0f);
-        }
-    }
-
-    private void createEmojiView() {
-        EmojiView emojiView = this.emojiView;
-        if (emojiView != null && emojiView.currentAccount != UserConfig.selectedAccount) {
-            this.parentAlert.sizeNotifierFrameLayout.removeView(emojiView);
-            this.emojiView = null;
-        }
-        if (this.emojiView != null) {
-            return;
-        }
-        EmojiView emojiView2 = new EmojiView(null, true, false, false, getContext(), true, null, null, true, this.resourcesProvider, false);
-        this.emojiView = emojiView2;
-        emojiView2.emojiCacheType = 3;
-        emojiView2.fixBottomTabContainerTranslation = false;
-        emojiView2.allowEmojisForNonPremium(false);
-        this.emojiView.setVisibility(8);
-        if (AndroidUtilities.isTablet()) {
-            this.emojiView.setForseMultiwindowLayout(true);
-        }
-        this.emojiView.setDelegate(new 9());
-        this.parentAlert.sizeNotifierFrameLayout.addView(this.emojiView);
-    }
-
-    private int getAnswersMaxCount() {
-        return this.todo ? getMessagesController().todoItemsMax : getMessagesController().pollAnswersMax;
-    }
-
-    public static CharSequence getFixedString(CharSequence charSequence) {
-        if (TextUtils.isEmpty(charSequence)) {
-            return charSequence;
-        }
-        CharSequence trimmedString = AndroidUtilities.getTrimmedString(charSequence);
-        while (TextUtils.indexOf(trimmedString, "\n\n\n") >= 0) {
-            trimmedString = TextUtils.replace(trimmedString, new String[]{"\n\n\n"}, new CharSequence[]{"\n\n"});
-        }
-        while (TextUtils.indexOf(trimmedString, "\n\n\n") == 0) {
-            trimmedString = TextUtils.replace(trimmedString, new String[]{"\n\n\n"}, new CharSequence[]{"\n\n"});
-        }
-        return trimmedString;
-    }
-
-    private MessagesController getMessagesController() {
-        ChatAttachAlert chatAttachAlert = this.parentAlert;
-        return MessagesController.getInstance(chatAttachAlert != null ? chatAttachAlert.currentAccount : UserConfig.selectedAccount);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public void hideEmojiPopup(boolean z) {
-        if (this.isPremium) {
-            if (this.emojiViewVisible) {
-                this.emojiView.scrollEmojiToTop();
-                this.emojiView.closeSearch(false);
-                if (z) {
-                    this.emojiView.hideSearchKeyboard();
-                }
-                this.isEmojiSearchOpened = false;
-                showEmojiPopup(0);
-            }
-            if (z) {
-                EmojiView emojiView = this.emojiView;
-                if (emojiView == null || emojiView.getVisibility() != 0) {
-                    hideEmojiView();
-                    return;
-                }
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, this.emojiView.getMeasuredHeight());
-                ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout$$ExternalSyntheticLambda3
-                    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                        ChatAttachAlertPollLayout.this.lambda$hideEmojiPopup$7(valueAnimator);
-                    }
-                });
-                this.isAnimatePopupClosing = true;
-                ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout.8
-                    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-                    public void onAnimationEnd(Animator animator) {
-                        ChatAttachAlertPollLayout.this.isAnimatePopupClosing = false;
-                        ChatAttachAlertPollLayout.this.emojiView.setTranslationY(0.0f);
-                        ChatAttachAlertPollLayout.this.hideEmojiView();
-                    }
-                });
-                ofFloat.setDuration(250L);
-                ofFloat.setInterpolator(AdjustPanLayoutHelper.keyboardInterpolator);
-                ofFloat.start();
-            }
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateEmojiViewTranslationY$8(float f, float f2, ValueAnimator valueAnimator) {
-        this.emojiView.setTranslationY(AndroidUtilities.lerp(f, f2, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkDiscard$5(AlertDialog alertDialog, int i) {
-        this.parentAlert.lambda$new$0();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$hideEmojiPopup$7(ValueAnimator valueAnimator) {
-        this.emojiView.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view, int i) {
-        boolean z;
-        if (i == this.addAnswerRow) {
-            addNewField();
-            return;
-        }
-        if (view instanceof TextCheckCell) {
-            TextCheckCell textCheckCell = (TextCheckCell) view;
-            boolean z2 = this.quizPoll;
-            SuggestEmojiView suggestEmojiView = this.suggestEmojiPanel;
-            if (suggestEmojiView != null) {
-                suggestEmojiView.forceClose();
-            }
-            if (i == this.anonymousRow) {
-                z = !this.anonymousPoll;
-                this.anonymousPoll = z;
-            } else {
-                int i2 = this.allowAddingRow;
-                if (i == i2) {
-                    z = !this.allowAdding;
-                    this.allowAdding = z;
-                } else if (i == this.allowMarkingRow) {
-                    boolean z3 = !this.allowMarking;
-                    this.allowMarking = z3;
-                    updateRows();
-                    int i3 = this.allowAddingRow;
-                    if (i3 >= 0 && i2 < 0) {
-                        this.listView.setItemAnimator(this.itemAnimator);
-                        this.listAdapter.notifyItemInserted(this.allowAddingRow);
-                    } else if (i2 >= 0 && i3 < 0) {
-                        this.listView.setItemAnimator(this.itemAnimator);
-                        this.listAdapter.notifyItemRemoved(i2);
-                    }
-                    z = z3;
-                } else if (i == this.multipleRow) {
-                    z = !this.multipleChoise;
-                    this.multipleChoise = z;
-                    if (z && this.quizPoll) {
-                        int i4 = this.solutionRow;
-                        this.quizPoll = false;
-                        updateRows();
-                        this.listView.setItemAnimator(this.itemAnimator);
-                        RecyclerView.ViewHolder findViewHolderForAdapterPosition = this.listView.findViewHolderForAdapterPosition(this.quizRow);
-                        if (findViewHolderForAdapterPosition != null) {
-                            ((TextCheckCell) findViewHolderForAdapterPosition.itemView).setChecked(false);
-                        } else {
-                            this.listAdapter.notifyItemChanged(this.quizRow);
-                        }
-                        this.listAdapter.notifyItemRangeRemoved(i4, 2);
-                        this.listAdapter.notifyItemChanged(this.emptyRow);
-                    }
-                } else {
-                    if (this.quizOnly != 0) {
-                        return;
-                    }
-                    this.listView.setItemAnimator(this.itemAnimator);
-                    z = !this.quizPoll;
-                    this.quizPoll = z;
-                    int i5 = this.solutionRow;
-                    updateRows();
-                    if (this.quizPoll) {
-                        this.listAdapter.notifyItemRangeInserted(this.solutionRow, 2);
-                    } else {
-                        this.listAdapter.notifyItemRangeRemoved(i5, 2);
-                    }
-                    this.listAdapter.notifyItemChanged(this.emptyRow);
-                    if (this.quizPoll && this.multipleChoise) {
-                        this.multipleChoise = false;
-                        RecyclerView.ViewHolder findViewHolderForAdapterPosition2 = this.listView.findViewHolderForAdapterPosition(this.multipleRow);
-                        if (findViewHolderForAdapterPosition2 != null) {
-                            ((TextCheckCell) findViewHolderForAdapterPosition2.itemView).setChecked(false);
-                        } else {
-                            this.listAdapter.notifyItemChanged(this.multipleRow);
-                        }
-                    }
-                    if (this.quizPoll) {
-                        int i6 = 0;
-                        boolean z4 = false;
-                        while (true) {
-                            boolean[] zArr = this.answersChecks;
-                            if (i6 >= zArr.length) {
-                                break;
-                            }
-                            if (z4) {
-                                zArr[i6] = false;
-                            } else if (zArr[i6]) {
-                                z4 = true;
-                            }
-                            i6++;
-                        }
-                    }
-                }
-            }
-            if (this.hintShowed && !this.quizPoll) {
-                this.hintView.hide();
-            }
-            this.listView.getChildCount();
-            for (int i7 = this.answerStartRow; i7 < this.answerStartRow + this.answersCount; i7++) {
-                RecyclerView.ViewHolder findViewHolderForAdapterPosition3 = this.listView.findViewHolderForAdapterPosition(i7);
-                if (findViewHolderForAdapterPosition3 != null) {
-                    View view2 = findViewHolderForAdapterPosition3.itemView;
-                    if (view2 instanceof PollEditTextCell) {
-                        PollEditTextCell pollEditTextCell = (PollEditTextCell) view2;
-                        pollEditTextCell.setShowCheckBox(this.quizPoll, true);
-                        pollEditTextCell.setChecked(this.answersChecks[i7 - this.answerStartRow], z2);
-                        if (pollEditTextCell.getTop() > AndroidUtilities.dp(40.0f) && i == this.quizRow && !this.hintShowed) {
-                            this.hintView.showForView(pollEditTextCell.getCheckBox(), true);
-                            this.hintShowed = true;
-                        }
-                    }
-                }
-            }
-            textCheckCell.setChecked(z);
-            checkDoneButton();
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onMenuItemClick$1(TLRPC.TL_messageMediaToDo tL_messageMediaToDo, Long l, boolean z, int i) {
-        this.delegate.sendPoll(tL_messageMediaToDo, null, z, i, l.longValue());
-        this.parentAlert.dismiss(true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onMenuItemClick$2(ChatActivity chatActivity, final TLRPC.TL_messageMediaToDo tL_messageMediaToDo, final Long l) {
-        if (chatActivity.isInScheduleMode()) {
-            AlertsCreator.createScheduleDatePickerDialog(chatActivity.getParentActivity(), chatActivity.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout$$ExternalSyntheticLambda8
-                @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
-                public final void didSelectDate(boolean z, int i) {
-                    ChatAttachAlertPollLayout.this.lambda$onMenuItemClick$1(tL_messageMediaToDo, l, z, i);
-                }
-            });
-        } else {
-            this.delegate.sendPoll(tL_messageMediaToDo, null, true, 0, l.longValue());
-            this.parentAlert.dismiss(true);
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onMenuItemClick$3(TLRPC.TL_messageMediaPoll tL_messageMediaPoll, HashMap hashMap, Long l, boolean z, int i) {
-        this.delegate.sendPoll(tL_messageMediaPoll, hashMap, z, i, l.longValue());
-        this.parentAlert.dismiss(true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onMenuItemClick$4(ChatActivity chatActivity, final TLRPC.TL_messageMediaPoll tL_messageMediaPoll, final HashMap hashMap, final Long l) {
-        if (chatActivity.isInScheduleMode()) {
-            AlertsCreator.createScheduleDatePickerDialog(chatActivity.getParentActivity(), chatActivity.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout$$ExternalSyntheticLambda7
-                @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
-                public final void didSelectDate(boolean z, int i) {
-                    ChatAttachAlertPollLayout.this.lambda$onMenuItemClick$3(tL_messageMediaPoll, hashMap, l, z, i);
-                }
-            });
-        } else {
-            this.delegate.sendPoll(tL_messageMediaPoll, hashMap, true, 0, l.longValue());
-            this.parentAlert.dismiss(true);
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showEmojiPopup$6(ValueAnimator valueAnimator) {
-        this.emojiView.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public void onCellFocusChanges(PollEditTextCell pollEditTextCell, boolean z) {
-        if (this.isPremium && z) {
-            if (this.currentCell == pollEditTextCell && this.emojiViewVisible && this.isEmojiSearchOpened) {
-                collapseSearchEmojiView();
-                this.emojiViewVisible = false;
-            }
-            PollEditTextCell pollEditTextCell2 = this.currentCell;
-            this.currentCell = pollEditTextCell;
-            pollEditTextCell.setEmojiButtonVisibility(true);
-            ChatActivityEnterViewAnimatedIconView emojiButton = pollEditTextCell.getEmojiButton();
-            ChatActivityEnterViewAnimatedIconView.State state = ChatActivityEnterViewAnimatedIconView.State.SMILE;
-            emojiButton.setState(state, false);
-            updateSuggestEmojiPanelDelegate(this.listView.findContainingViewHolder(pollEditTextCell));
-            if (pollEditTextCell2 == null || pollEditTextCell2 == pollEditTextCell) {
-                return;
-            }
-            if (this.emojiViewVisible) {
-                collapseSearchEmojiView();
-                hideEmojiPopup(false);
-                openKeyboardInternal();
-            }
-            pollEditTextCell2.setEmojiButtonVisibility(false);
-            pollEditTextCell2.getEmojiButton().setState(state, false);
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public void onEmojiClicked(PollEditTextCell pollEditTextCell) {
-        this.currentCell = pollEditTextCell;
-        if (!this.emojiViewVisible) {
-            showEmojiPopup(1);
-        } else {
-            collapseSearchEmojiView();
-            openKeyboardInternal();
-        }
-    }
-
-    private void openKeyboardInternal() {
-        if (this.currentCell != null) {
-            this.keyboardNotifier.awaitKeyboard();
-            EditTextBoldCursor editField = this.currentCell.getEditField();
-            editField.requestFocus();
-            AndroidUtilities.showKeyboard(editField);
-        }
-        showEmojiPopup(AndroidUtilities.usingHardwareInput ? 0 : 2);
-        if (AndroidUtilities.usingHardwareInput || this.keyboardVisible || AndroidUtilities.isInMultiwindow || AndroidUtilities.isTablet()) {
-            return;
-        }
-        this.waitingForKeyboardOpen = true;
-        AndroidUtilities.cancelRunOnUIThread(this.openKeyboardRunnable);
-        AndroidUtilities.runOnUIThread(this.openKeyboardRunnable, 100L);
-    }
-
-    private void resetSuggestEmojiPanel() {
-        SuggestEmojiView suggestEmojiView = this.suggestEmojiPanel;
-        if (suggestEmojiView != null) {
-            suggestEmojiView.setDelegate(null);
-            this.suggestEmojiPanel.forceClose();
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public void setTextLeft(View view, int i) {
-        int length;
-        int i2;
-        if (view instanceof PollEditTextCell) {
-            PollEditTextCell pollEditTextCell = (PollEditTextCell) view;
-            if (i == this.questionRow) {
-                i2 = this.todo ? getMessagesController().todoTitleLengthMax : NotificationCenter.goingToPreviewTheme;
-                CharSequence charSequence = this.questionString;
-                length = i2 - (charSequence != null ? charSequence.length() : 0);
-            } else if (i == this.solutionRow) {
-                CharSequence charSequence2 = this.solutionString;
-                length = 200 - (charSequence2 != null ? charSequence2.length() : 0);
-                i2 = NotificationCenter.savedMessagesForwarded;
-            } else {
-                int i3 = this.answerStartRow;
-                if (i < i3 || i >= this.answersCount + i3) {
-                    return;
-                }
-                int i4 = i - i3;
-                int i5 = this.todo ? getMessagesController().todoItemLengthMax : 100;
-                CharSequence charSequence3 = this.answers[i4];
-                int i6 = i5;
-                length = i5 - (charSequence3 != null ? charSequence3.length() : 0);
-                i2 = i6;
-            }
-            float f = i2;
-            if (length > f - (0.7f * f)) {
-                pollEditTextCell.setText2("");
-                return;
-            }
-            pollEditTextCell.setText2(String.format("%d", Integer.valueOf(length)));
-            SimpleTextView textView2 = pollEditTextCell.getTextView2();
-            int i7 = length < 0 ? Theme.key_text_RedRegular : Theme.key_windowBackgroundWhiteGrayText3;
-            textView2.setTextColor(getThemedColor(i7));
-            textView2.setTag(Integer.valueOf(i7));
-        }
-    }
-
-    private void showEmojiPopup(int i) {
-        ChatActivityEnterViewAnimatedIconView emojiButton;
-        PollEditTextCell pollEditTextCell;
-        if (this.isPremium) {
-            if (i != 1) {
-                PollEditTextCell pollEditTextCell2 = this.currentCell;
-                emojiButton = pollEditTextCell2 != null ? pollEditTextCell2.getEmojiButton() : null;
-                if (emojiButton != null) {
-                    emojiButton.setState(ChatActivityEnterViewAnimatedIconView.State.SMILE, true);
-                }
-                EmojiView emojiView = this.emojiView;
-                if (emojiView != null) {
-                    this.emojiViewWasVisible = this.emojiViewVisible;
-                    this.emojiViewVisible = false;
-                    this.isEmojiSearchOpened = false;
-                    if (AndroidUtilities.usingHardwareInput || AndroidUtilities.isInMultiwindow) {
-                        emojiView.setVisibility(8);
-                    }
-                }
-                if (i == 0) {
-                    this.emojiPadding = 0;
-                }
-                this.keyboardNotifier.fire();
-                this.parentAlert.sizeNotifierFrameLayout.requestLayout();
-                return;
-            }
-            EmojiView emojiView2 = this.emojiView;
-            boolean z = emojiView2 != null && emojiView2.getVisibility() == 0;
-            createEmojiView();
-            this.emojiView.setVisibility(0);
-            this.emojiViewWasVisible = this.emojiViewVisible;
-            this.emojiViewVisible = true;
-            EmojiView emojiView3 = this.emojiView;
-            if (this.keyboardHeight <= 0) {
-                this.keyboardHeight = AndroidUtilities.isTablet() ? AndroidUtilities.dp(150.0f) : MessagesController.getGlobalEmojiSettings().getInt("kbd_height", AndroidUtilities.dp(200.0f));
-            }
-            if (this.keyboardHeightLand <= 0) {
-                this.keyboardHeightLand = AndroidUtilities.isTablet() ? AndroidUtilities.dp(150.0f) : MessagesController.getGlobalEmojiSettings().getInt("kbd_height_land3", AndroidUtilities.dp(200.0f));
-            }
-            android.graphics.Point point = AndroidUtilities.displaySize;
-            int i2 = point.x > point.y ? this.keyboardHeightLand : this.keyboardHeight;
-            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) emojiView3.getLayoutParams();
-            layoutParams.height = i2;
-            emojiView3.setLayoutParams(layoutParams);
-            if (!AndroidUtilities.isInMultiwindow && !AndroidUtilities.isTablet() && (pollEditTextCell = this.currentCell) != null) {
-                AndroidUtilities.hideKeyboard(pollEditTextCell.getEditField());
-            }
-            this.emojiPadding = i2;
-            this.keyboardNotifier.fire();
-            this.parentAlert.sizeNotifierFrameLayout.requestLayout();
-            PollEditTextCell pollEditTextCell3 = this.currentCell;
-            emojiButton = pollEditTextCell3 != null ? pollEditTextCell3.getEmojiButton() : null;
-            if (emojiButton != null) {
-                emojiButton.setState(ChatActivityEnterViewAnimatedIconView.State.KEYBOARD, true);
-            }
-            if (z || this.keyboardVisible) {
-                return;
-            }
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.emojiPadding, 0.0f);
-            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout$$ExternalSyntheticLambda4
-                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    ChatAttachAlertPollLayout.this.lambda$showEmojiPopup$6(valueAnimator);
-                }
-            });
-            ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout.7
-                @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-                public void onAnimationEnd(Animator animator) {
-                    ChatAttachAlertPollLayout.this.emojiView.setTranslationY(0.0f);
-                }
-            });
-            ofFloat.setDuration(250L);
-            ofFloat.setInterpolator(AdjustPanLayoutHelper.keyboardInterpolator);
-            ofFloat.start();
-        }
-    }
-
-    private void showQuizHint() {
-        for (int i = this.answerStartRow; i < this.answerStartRow + this.answersCount; i++) {
-            RecyclerView.ViewHolder findViewHolderForAdapterPosition = this.listView.findViewHolderForAdapterPosition(i);
-            if (findViewHolderForAdapterPosition != null) {
-                View view = findViewHolderForAdapterPosition.itemView;
-                if (view instanceof PollEditTextCell) {
-                    PollEditTextCell pollEditTextCell = (PollEditTextCell) view;
-                    if (pollEditTextCell.getTop() > AndroidUtilities.dp(40.0f)) {
-                        SuggestEmojiView suggestEmojiView = this.suggestEmojiPanel;
-                        if (suggestEmojiView != null) {
-                            suggestEmojiView.forceClose();
-                        }
-                        this.hintView.showForView(pollEditTextCell.getCheckBox(), true);
-                        return;
-                    }
-                } else {
-                    continue;
-                }
-            }
-        }
+    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
+    public boolean isDoneItemEnabled() {
+        return this.doneItemEnabled;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1935,6 +1011,150 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
         this.emptyRow = i12;
     }
 
+    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
+    public void onShow(ChatAttachAlert.AttachAlertLayout attachAlertLayout) {
+        try {
+            this.parentAlert.actionBar.getTitleTextView().setBuildFullLayout(true);
+        } catch (Exception unused) {
+        }
+        if (this.todo) {
+            this.parentAlert.actionBar.setTitle(LocaleController.getString(R.string.TodoTitle));
+        } else if (this.quizOnly == 1) {
+            this.parentAlert.actionBar.setTitle(LocaleController.getString(R.string.NewQuiz));
+        } else {
+            this.parentAlert.actionBar.setTitle(LocaleController.getString(R.string.NewPoll));
+        }
+        this.parentAlert.updateDoneItemEnabled();
+        this.layoutManager.scrollToPositionWithOffset(0, 0);
+    }
+
+    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
+    public void onDestroy() {
+        super.onDestroy();
+        this.destroyed = true;
+        if (this.isPremium) {
+            NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.emojiLoaded);
+            EmojiView emojiView = this.emojiView;
+            if (emojiView != null) {
+                this.parentAlert.sizeNotifierFrameLayout.removeView(emojiView);
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
+    public void onHidden() {
+        this.parentAlert.updateDoneItemEnabled();
+    }
+
+    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
+    public boolean onBackPressed() {
+        if (this.emojiViewVisible) {
+            hideEmojiPopup(true);
+            return true;
+        }
+        if (checkDiscard()) {
+            return super.onBackPressed();
+        }
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
+    public boolean onDismissWithTouchOutside() {
+        if (checkDiscard()) {
+            return super.onDismissWithTouchOutside();
+        }
+        return false;
+    }
+
+    private boolean checkDiscard() {
+        boolean isEmpty = TextUtils.isEmpty(getFixedString(this.questionString));
+        if (isEmpty) {
+            for (int i = 0; i < this.answersCount && (isEmpty = TextUtils.isEmpty(getFixedString(this.answers[i]))); i++) {
+            }
+        }
+        if (!isEmpty) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this.parentAlert.baseFragment.getParentActivity());
+            builder.setTitle(LocaleController.getString(this.todo ? R.string.CancelTodoAlertTitle : R.string.CancelPollAlertTitle));
+            builder.setMessage(LocaleController.getString(this.todo ? R.string.CancelTodoAlertText : R.string.CancelPollAlertText));
+            builder.setPositiveButton(LocaleController.getString(R.string.PassportDiscard), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout$$ExternalSyntheticLambda0
+                @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
+                public final void onClick(AlertDialog alertDialog, int i2) {
+                    ChatAttachAlertPollLayout.this.lambda$checkDiscard$5(alertDialog, i2);
+                }
+            });
+            builder.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
+            builder.show();
+        }
+        return isEmpty;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$checkDiscard$5(AlertDialog alertDialog, int i) {
+        this.parentAlert.lambda$new$0();
+    }
+
+    public void setDelegate(PollCreateActivityDelegate pollCreateActivityDelegate) {
+        this.delegate = pollCreateActivityDelegate;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void setTextLeft(View view, int i) {
+        int length;
+        int i2;
+        if (view instanceof PollEditTextCell) {
+            PollEditTextCell pollEditTextCell = (PollEditTextCell) view;
+            if (i == this.questionRow) {
+                i2 = this.todo ? getMessagesController().todoTitleLengthMax : NotificationCenter.goingToPreviewTheme;
+                CharSequence charSequence = this.questionString;
+                length = i2 - (charSequence != null ? charSequence.length() : 0);
+            } else if (i == this.solutionRow) {
+                CharSequence charSequence2 = this.solutionString;
+                length = 200 - (charSequence2 != null ? charSequence2.length() : 0);
+                i2 = NotificationCenter.savedMessagesForwarded;
+            } else {
+                int i3 = this.answerStartRow;
+                if (i < i3 || i >= this.answersCount + i3) {
+                    return;
+                }
+                int i4 = i - i3;
+                int i5 = this.todo ? getMessagesController().todoItemLengthMax : 100;
+                CharSequence charSequence3 = this.answers[i4];
+                int i6 = i5;
+                length = i5 - (charSequence3 != null ? charSequence3.length() : 0);
+                i2 = i6;
+            }
+            float f = i2;
+            if (length <= f - (0.7f * f)) {
+                pollEditTextCell.setText2(String.format("%d", Integer.valueOf(length)));
+                SimpleTextView textView2 = pollEditTextCell.getTextView2();
+                int i7 = length < 0 ? Theme.key_text_RedRegular : Theme.key_windowBackgroundWhiteGrayText3;
+                textView2.setTextColor(getThemedColor(i7));
+                textView2.setTag(Integer.valueOf(i7));
+                return;
+            }
+            pollEditTextCell.setText2("");
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void addNewField() {
+        resetSuggestEmojiPanel();
+        this.listView.setItemAnimator(this.itemAnimator);
+        boolean[] zArr = this.answersChecks;
+        int i = this.answersCount;
+        zArr[i] = false;
+        int i2 = i + 1;
+        this.answersCount = i2;
+        if (i2 == this.answers.length) {
+            this.listAdapter.notifyItemRemoved(this.addAnswerRow);
+        }
+        this.listAdapter.notifyItemInserted(this.addAnswerRow);
+        updateRows();
+        this.requestFieldFocusAtPosition = (this.answerStartRow + this.answersCount) - 1;
+        this.listAdapter.notifyItemChanged(this.answerSectionRow);
+        this.listAdapter.notifyItemChanged(this.emptyRow);
+    }
+
     private void updateSuggestEmojiPanelDelegate(RecyclerView.ViewHolder viewHolder) {
         SuggestEmojiView suggestEmojiView = this.suggestEmojiPanel;
         if (suggestEmojiView != null) {
@@ -1951,54 +1171,1222 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
         }
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i == NotificationCenter.emojiLoaded) {
-            EmojiView emojiView = this.emojiView;
-            if (emojiView != null) {
-                emojiView.invalidateViews();
+    private void resetSuggestEmojiPanel() {
+        SuggestEmojiView suggestEmojiView = this.suggestEmojiPanel;
+        if (suggestEmojiView != null) {
+            suggestEmojiView.setDelegate(null);
+            this.suggestEmojiPanel.forceClose();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate
+    public void onSizeChanged(int i, boolean z) {
+        boolean z2;
+        if (this.isPremium) {
+            if (i > AndroidUtilities.dp(50.0f) && this.keyboardVisible && !AndroidUtilities.isInMultiwindow && !AndroidUtilities.isTablet()) {
+                if (z) {
+                    this.keyboardHeightLand = i;
+                    MessagesController.getGlobalEmojiSettings().edit().putInt("kbd_height_land3", this.keyboardHeightLand).commit();
+                } else {
+                    this.keyboardHeight = i;
+                    MessagesController.getGlobalEmojiSettings().edit().putInt("kbd_height", this.keyboardHeight).commit();
+                }
             }
+            if (this.emojiViewVisible) {
+                int i2 = z ? this.keyboardHeightLand : this.keyboardHeight;
+                if (this.isEmojiSearchOpened) {
+                    i2 += AndroidUtilities.dp(120.0f);
+                }
+                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.emojiView.getLayoutParams();
+                int i3 = layoutParams.width;
+                int i4 = AndroidUtilities.displaySize.x;
+                if (i3 != i4 || layoutParams.height != i2 || this.wasEmojiSearchOpened != this.isEmojiSearchOpened) {
+                    layoutParams.width = i4;
+                    layoutParams.height = i2;
+                    this.emojiView.setLayoutParams(layoutParams);
+                    this.emojiPadding = layoutParams.height;
+                    this.keyboardNotifier.fire();
+                    this.parentAlert.sizeNotifierFrameLayout.requestLayout();
+                    boolean z3 = this.wasEmojiSearchOpened;
+                    if (z3 != this.isEmojiSearchOpened) {
+                        animateEmojiViewTranslationY(z3 ? -AndroidUtilities.dp(120.0f) : AndroidUtilities.dp(120.0f), 0.0f);
+                    }
+                    this.wasEmojiSearchOpened = this.isEmojiSearchOpened;
+                }
+            }
+            if (this.lastSizeChangeValue1 == i && this.lastSizeChangeValue2 == z) {
+                return;
+            }
+            this.lastSizeChangeValue1 = i;
+            this.lastSizeChangeValue2 = z;
+            boolean z4 = this.keyboardVisible;
             PollEditTextCell pollEditTextCell = this.currentCell;
             if (pollEditTextCell != null) {
-                int currentTextColor = pollEditTextCell.getEditField().getCurrentTextColor();
-                this.currentCell.getEditField().setTextColor(-1);
-                this.currentCell.getEditField().setTextColor(currentTextColor);
+                this.keyboardVisible = pollEditTextCell.getEditField().isFocused() && this.keyboardNotifier.keyboardVisible() && i > 0;
+            } else {
+                this.keyboardVisible = false;
+            }
+            if (this.keyboardVisible && this.emojiViewVisible) {
+                showEmojiPopup(0);
+            }
+            if (this.emojiPadding != 0 && !(z2 = this.keyboardVisible) && z2 != z4 && !this.emojiViewVisible) {
+                this.emojiPadding = 0;
+                this.keyboardNotifier.fire();
+                this.parentAlert.sizeNotifierFrameLayout.requestLayout();
+            }
+            if (this.keyboardVisible && this.waitingForKeyboardOpen) {
+                this.waitingForKeyboardOpen = false;
+                AndroidUtilities.cancelRunOnUIThread(this.openKeyboardRunnable);
             }
         }
     }
 
-    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public int getButtonsHideOffset() {
-        return AndroidUtilities.dp(70.0f);
+    public boolean isWaitingForKeyboardOpen() {
+        return this.waitingForKeyboardOpen;
     }
 
-    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public int getCurrentItemTop() {
-        View childAt;
-        if (this.listView.getChildCount() <= 1 || (childAt = this.listView.getChildAt(1)) == null) {
-            return ConnectionsManager.DEFAULT_DATACENTER_ID;
+    /* JADX INFO: Access modifiers changed from: private */
+    public void onEmojiClicked(PollEditTextCell pollEditTextCell) {
+        this.currentCell = pollEditTextCell;
+        if (this.emojiViewVisible) {
+            collapseSearchEmojiView();
+            openKeyboardInternal();
+        } else {
+            showEmojiPopup(1);
         }
-        RecyclerListView.Holder holder = (RecyclerListView.Holder) this.listView.findContainingViewHolder(childAt);
-        int y = ((int) childAt.getY()) - AndroidUtilities.dp(8.0f);
-        int i = (y <= 0 || holder == null || holder.getAdapterPosition() != 1) ? 0 : y;
-        if (y < 0 || holder == null || holder.getAdapterPosition() != 1) {
-            y = i;
+    }
+
+    private void collapseSearchEmojiView() {
+        if (this.isEmojiSearchOpened) {
+            this.emojiView.closeSearch(false);
+            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.emojiView.getLayoutParams();
+            layoutParams.height -= AndroidUtilities.dp(120.0f);
+            this.emojiView.setLayoutParams(layoutParams);
+            this.emojiPadding = layoutParams.height;
+            this.wasEmojiSearchOpened = this.isEmojiSearchOpened;
+            this.isEmojiSearchOpened = false;
+            animateEmojiViewTranslationY(-AndroidUtilities.dp(120.0f), 0.0f);
         }
-        return y + AndroidUtilities.dp(25.0f);
+    }
+
+    private void openKeyboardInternal() {
+        if (this.currentCell != null) {
+            this.keyboardNotifier.awaitKeyboard();
+            EditTextBoldCursor editField = this.currentCell.getEditField();
+            editField.requestFocus();
+            AndroidUtilities.showKeyboard(editField);
+        }
+        showEmojiPopup(AndroidUtilities.usingHardwareInput ? 0 : 2);
+        if (AndroidUtilities.usingHardwareInput || this.keyboardVisible || AndroidUtilities.isInMultiwindow || AndroidUtilities.isTablet()) {
+            return;
+        }
+        this.waitingForKeyboardOpen = true;
+        AndroidUtilities.cancelRunOnUIThread(this.openKeyboardRunnable);
+        AndroidUtilities.runOnUIThread(this.openKeyboardRunnable, 100L);
+    }
+
+    private void showEmojiPopup(int i) {
+        ChatActivityEnterViewAnimatedIconView emojiButton;
+        PollEditTextCell pollEditTextCell;
+        if (this.isPremium) {
+            if (i == 1) {
+                EmojiView emojiView = this.emojiView;
+                boolean z = emojiView != null && emojiView.getVisibility() == 0;
+                createEmojiView();
+                this.emojiView.setVisibility(0);
+                this.emojiViewWasVisible = this.emojiViewVisible;
+                this.emojiViewVisible = true;
+                EmojiView emojiView2 = this.emojiView;
+                if (this.keyboardHeight <= 0) {
+                    if (AndroidUtilities.isTablet()) {
+                        this.keyboardHeight = AndroidUtilities.dp(150.0f);
+                    } else {
+                        this.keyboardHeight = MessagesController.getGlobalEmojiSettings().getInt("kbd_height", AndroidUtilities.dp(200.0f));
+                    }
+                }
+                if (this.keyboardHeightLand <= 0) {
+                    if (AndroidUtilities.isTablet()) {
+                        this.keyboardHeightLand = AndroidUtilities.dp(150.0f);
+                    } else {
+                        this.keyboardHeightLand = MessagesController.getGlobalEmojiSettings().getInt("kbd_height_land3", AndroidUtilities.dp(200.0f));
+                    }
+                }
+                android.graphics.Point point = AndroidUtilities.displaySize;
+                int i2 = point.x > point.y ? this.keyboardHeightLand : this.keyboardHeight;
+                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) emojiView2.getLayoutParams();
+                layoutParams.height = i2;
+                emojiView2.setLayoutParams(layoutParams);
+                if (!AndroidUtilities.isInMultiwindow && !AndroidUtilities.isTablet() && (pollEditTextCell = this.currentCell) != null) {
+                    AndroidUtilities.hideKeyboard(pollEditTextCell.getEditField());
+                }
+                this.emojiPadding = i2;
+                this.keyboardNotifier.fire();
+                this.parentAlert.sizeNotifierFrameLayout.requestLayout();
+                PollEditTextCell pollEditTextCell2 = this.currentCell;
+                emojiButton = pollEditTextCell2 != null ? pollEditTextCell2.getEmojiButton() : null;
+                if (emojiButton != null) {
+                    emojiButton.setState(ChatActivityEnterViewAnimatedIconView.State.KEYBOARD, true);
+                }
+                if (z || this.keyboardVisible) {
+                    return;
+                }
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(this.emojiPadding, 0.0f);
+                ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout$$ExternalSyntheticLambda4
+                    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                        ChatAttachAlertPollLayout.this.lambda$showEmojiPopup$6(valueAnimator);
+                    }
+                });
+                ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout.7
+                    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+                    public void onAnimationEnd(Animator animator) {
+                        ChatAttachAlertPollLayout.this.emojiView.setTranslationY(0.0f);
+                    }
+                });
+                ofFloat.setDuration(250L);
+                ofFloat.setInterpolator(AdjustPanLayoutHelper.keyboardInterpolator);
+                ofFloat.start();
+                return;
+            }
+            PollEditTextCell pollEditTextCell3 = this.currentCell;
+            emojiButton = pollEditTextCell3 != null ? pollEditTextCell3.getEmojiButton() : null;
+            if (emojiButton != null) {
+                emojiButton.setState(ChatActivityEnterViewAnimatedIconView.State.SMILE, true);
+            }
+            EmojiView emojiView3 = this.emojiView;
+            if (emojiView3 != null) {
+                this.emojiViewWasVisible = this.emojiViewVisible;
+                this.emojiViewVisible = false;
+                this.isEmojiSearchOpened = false;
+                if (AndroidUtilities.usingHardwareInput || AndroidUtilities.isInMultiwindow) {
+                    emojiView3.setVisibility(8);
+                }
+            }
+            if (i == 0) {
+                this.emojiPadding = 0;
+            }
+            this.keyboardNotifier.fire();
+            this.parentAlert.sizeNotifierFrameLayout.requestLayout();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$showEmojiPopup$6(ValueAnimator valueAnimator) {
+        this.emojiView.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void onCellFocusChanges(PollEditTextCell pollEditTextCell, boolean z) {
+        if (this.isPremium && z) {
+            if (this.currentCell == pollEditTextCell && this.emojiViewVisible && this.isEmojiSearchOpened) {
+                collapseSearchEmojiView();
+                this.emojiViewVisible = false;
+            }
+            PollEditTextCell pollEditTextCell2 = this.currentCell;
+            this.currentCell = pollEditTextCell;
+            pollEditTextCell.setEmojiButtonVisibility(true);
+            ChatActivityEnterViewAnimatedIconView emojiButton = pollEditTextCell.getEmojiButton();
+            ChatActivityEnterViewAnimatedIconView.State state = ChatActivityEnterViewAnimatedIconView.State.SMILE;
+            emojiButton.setState(state, false);
+            updateSuggestEmojiPanelDelegate(this.listView.findContainingViewHolder(pollEditTextCell));
+            if (pollEditTextCell2 == null || pollEditTextCell2 == pollEditTextCell) {
+                return;
+            }
+            if (this.emojiViewVisible) {
+                collapseSearchEmojiView();
+                hideEmojiPopup(false);
+                openKeyboardInternal();
+            }
+            pollEditTextCell2.setEmojiButtonVisibility(false);
+            pollEditTextCell2.getEmojiButton().setState(state, false);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void hideEmojiPopup(boolean z) {
+        if (this.isPremium) {
+            if (this.emojiViewVisible) {
+                this.emojiView.scrollEmojiToTop();
+                this.emojiView.closeSearch(false);
+                if (z) {
+                    this.emojiView.hideSearchKeyboard();
+                }
+                this.isEmojiSearchOpened = false;
+                showEmojiPopup(0);
+            }
+            if (z) {
+                EmojiView emojiView = this.emojiView;
+                if (emojiView != null && emojiView.getVisibility() == 0) {
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, this.emojiView.getMeasuredHeight());
+                    ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout$$ExternalSyntheticLambda3
+                        @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                        public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                            ChatAttachAlertPollLayout.this.lambda$hideEmojiPopup$7(valueAnimator);
+                        }
+                    });
+                    this.isAnimatePopupClosing = true;
+                    ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout.8
+                        @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+                        public void onAnimationEnd(Animator animator) {
+                            ChatAttachAlertPollLayout.this.isAnimatePopupClosing = false;
+                            ChatAttachAlertPollLayout.this.emojiView.setTranslationY(0.0f);
+                            ChatAttachAlertPollLayout.this.hideEmojiView();
+                        }
+                    });
+                    ofFloat.setDuration(250L);
+                    ofFloat.setInterpolator(AdjustPanLayoutHelper.keyboardInterpolator);
+                    ofFloat.start();
+                    return;
+                }
+                hideEmojiView();
+            }
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$hideEmojiPopup$7(ValueAnimator valueAnimator) {
+        this.emojiView.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
+    }
+
+    public void hideEmojiView() {
+        EmojiView emojiView;
+        ChatActivityEnterViewAnimatedIconView emojiButton;
+        if (!this.emojiViewVisible && (emojiView = this.emojiView) != null && emojiView.getVisibility() != 8) {
+            PollEditTextCell pollEditTextCell = this.currentCell;
+            if (pollEditTextCell != null && (emojiButton = pollEditTextCell.getEmojiButton()) != null) {
+                emojiButton.setState(ChatActivityEnterViewAnimatedIconView.State.SMILE, false);
+            }
+            this.emojiView.setVisibility(8);
+        }
+        int i = this.emojiPadding;
+        this.emojiPadding = 0;
+        if (i != 0) {
+            this.keyboardNotifier.fire();
+        }
+    }
+
+    public boolean isAnimatePopupClosing() {
+        return this.isAnimatePopupClosing;
+    }
+
+    public boolean isPopupShowing() {
+        return this.emojiViewVisible;
+    }
+
+    public boolean isPopupVisible() {
+        EmojiView emojiView = this.emojiView;
+        return emojiView != null && emojiView.getVisibility() == 0;
     }
 
     public int getEmojiPadding() {
         return this.emojiPadding;
     }
 
-    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public int getFirstOffset() {
-        return getListTopPadding() + AndroidUtilities.dp(17.0f);
+    private void createEmojiView() {
+        EmojiView emojiView = this.emojiView;
+        if (emojiView != null && emojiView.currentAccount != UserConfig.selectedAccount) {
+            this.parentAlert.sizeNotifierFrameLayout.removeView(emojiView);
+            this.emojiView = null;
+        }
+        if (this.emojiView != null) {
+            return;
+        }
+        EmojiView emojiView2 = new EmojiView(null, true, false, false, getContext(), true, null, null, true, this.resourcesProvider, false);
+        this.emojiView = emojiView2;
+        emojiView2.emojiCacheType = 3;
+        emojiView2.fixBottomTabContainerTranslation = false;
+        emojiView2.allowEmojisForNonPremium(false);
+        this.emojiView.setVisibility(8);
+        if (AndroidUtilities.isTablet()) {
+            this.emojiView.setForseMultiwindowLayout(true);
+        }
+        this.emojiView.setDelegate(new 9());
+        this.parentAlert.sizeNotifierFrameLayout.addView(this.emojiView);
     }
 
-    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public int getListTopPadding() {
-        return this.topPadding;
+    class 9 implements EmojiView.EmojiViewDelegate {
+        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
+        public /* synthetic */ boolean canSchedule() {
+            return EmojiView.EmojiViewDelegate.-CC.$default$canSchedule(this);
+        }
+
+        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
+        public /* synthetic */ long getDialogId() {
+            return EmojiView.EmojiViewDelegate.-CC.$default$getDialogId(this);
+        }
+
+        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
+        public /* synthetic */ float getProgressToSearchOpened() {
+            return EmojiView.EmojiViewDelegate.-CC.$default$getProgressToSearchOpened(this);
+        }
+
+        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
+        public /* synthetic */ int getThreadId() {
+            return EmojiView.EmojiViewDelegate.-CC.$default$getThreadId(this);
+        }
+
+        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
+        public /* synthetic */ void invalidateEnterView() {
+            EmojiView.EmojiViewDelegate.-CC.$default$invalidateEnterView(this);
+        }
+
+        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
+        public /* synthetic */ boolean isExpanded() {
+            return EmojiView.EmojiViewDelegate.-CC.$default$isExpanded(this);
+        }
+
+        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
+        public /* synthetic */ boolean isInScheduleMode() {
+            return EmojiView.EmojiViewDelegate.-CC.$default$isInScheduleMode(this);
+        }
+
+        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
+        public /* synthetic */ boolean isUserSelf() {
+            return EmojiView.EmojiViewDelegate.-CC.$default$isUserSelf(this);
+        }
+
+        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
+        public /* synthetic */ void onAnimatedEmojiUnlockClick() {
+            EmojiView.EmojiViewDelegate.-CC.$default$onAnimatedEmojiUnlockClick(this);
+        }
+
+        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
+        public /* synthetic */ void onEmojiSettingsClick(ArrayList arrayList) {
+            EmojiView.EmojiViewDelegate.-CC.$default$onEmojiSettingsClick(this, arrayList);
+        }
+
+        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
+        /* renamed from: onGifSelected */
+        public /* synthetic */ void lambda$onGifSelected$1(View view, Object obj, String str, Object obj2, boolean z, int i) {
+            EmojiView.EmojiViewDelegate.-CC.$default$onGifSelected(this, view, obj, str, obj2, z, i);
+        }
+
+        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
+        public /* synthetic */ void onShowStickerSet(TLRPC.StickerSet stickerSet, TLRPC.InputStickerSet inputStickerSet, boolean z) {
+            EmojiView.EmojiViewDelegate.-CC.$default$onShowStickerSet(this, stickerSet, inputStickerSet, z);
+        }
+
+        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
+        public /* synthetic */ void onStickerSelected(View view, TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z, int i) {
+            EmojiView.EmojiViewDelegate.-CC.$default$onStickerSelected(this, view, document, str, obj, sendAnimationData, z, i);
+        }
+
+        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
+        public /* synthetic */ void onStickerSetAdd(TLRPC.StickerSetCovered stickerSetCovered) {
+            EmojiView.EmojiViewDelegate.-CC.$default$onStickerSetAdd(this, stickerSetCovered);
+        }
+
+        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
+        public /* synthetic */ void onStickerSetRemove(TLRPC.StickerSetCovered stickerSetCovered) {
+            EmojiView.EmojiViewDelegate.-CC.$default$onStickerSetRemove(this, stickerSetCovered);
+        }
+
+        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
+        public /* synthetic */ void onStickersGroupClick(long j) {
+            EmojiView.EmojiViewDelegate.-CC.$default$onStickersGroupClick(this, j);
+        }
+
+        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
+        public /* synthetic */ void onStickersSettingsClick() {
+            EmojiView.EmojiViewDelegate.-CC.$default$onStickersSettingsClick(this);
+        }
+
+        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
+        public /* synthetic */ void onTabOpened(int i) {
+            EmojiView.EmojiViewDelegate.-CC.$default$onTabOpened(this, i);
+        }
+
+        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
+        public /* synthetic */ void showTrendingStickersAlert(TrendingStickersLayout trendingStickersLayout) {
+            EmojiView.EmojiViewDelegate.-CC.$default$showTrendingStickersAlert(this, trendingStickersLayout);
+        }
+
+        9() {
+        }
+
+        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
+        public boolean onBackspace() {
+            EditTextBoldCursor editField;
+            if (ChatAttachAlertPollLayout.this.currentCell == null || (editField = ChatAttachAlertPollLayout.this.currentCell.getEditField()) == null) {
+                return false;
+            }
+            editField.dispatchKeyEvent(new KeyEvent(0, 67));
+            return true;
+        }
+
+        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
+        public void onEmojiSelected(String str) {
+            EditTextBoldCursor editField;
+            if (ChatAttachAlertPollLayout.this.currentCell == null || (editField = ChatAttachAlertPollLayout.this.currentCell.getEditField()) == null) {
+                return;
+            }
+            int selectionEnd = editField.getSelectionEnd();
+            if (selectionEnd < 0) {
+                selectionEnd = 0;
+            }
+            try {
+                CharSequence replaceEmoji = Emoji.replaceEmoji(str, editField.getPaint().getFontMetricsInt(), false);
+                editField.setText(editField.getText().insert(selectionEnd, replaceEmoji));
+                int length = selectionEnd + replaceEmoji.length();
+                editField.setSelection(length, length);
+            } catch (Exception e) {
+                FileLog.e(e);
+            }
+        }
+
+        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
+        public void onCustomEmojiSelected(long j, TLRPC.Document document, String str, boolean z) {
+            EditTextBoldCursor editField;
+            AnimatedEmojiSpan animatedEmojiSpan;
+            if (ChatAttachAlertPollLayout.this.currentCell == null || (editField = ChatAttachAlertPollLayout.this.currentCell.getEditField()) == null) {
+                return;
+            }
+            int selectionEnd = editField.getSelectionEnd();
+            if (selectionEnd < 0) {
+                selectionEnd = 0;
+            }
+            try {
+                SpannableString spannableString = new SpannableString(str);
+                if (document != null) {
+                    animatedEmojiSpan = new AnimatedEmojiSpan(document, editField.getPaint().getFontMetricsInt());
+                } else {
+                    animatedEmojiSpan = new AnimatedEmojiSpan(j, editField.getPaint().getFontMetricsInt());
+                }
+                animatedEmojiSpan.cacheType = 3;
+                spannableString.setSpan(animatedEmojiSpan, 0, spannableString.length(), 33);
+                editField.setText(editField.getText().insert(selectionEnd, spannableString));
+                int length = selectionEnd + spannableString.length();
+                editField.setSelection(length, length);
+            } catch (Exception e) {
+                FileLog.e(e);
+            }
+        }
+
+        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
+        public void onClearEmojiRecent() {
+            AlertDialog.Builder builder = new AlertDialog.Builder(ChatAttachAlertPollLayout.this.getContext(), ChatAttachAlertPollLayout.this.resourcesProvider);
+            builder.setTitle(LocaleController.getString(R.string.ClearRecentEmojiTitle));
+            builder.setMessage(LocaleController.getString(R.string.ClearRecentEmojiText));
+            builder.setPositiveButton(LocaleController.getString(R.string.ClearButton), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout$9$$ExternalSyntheticLambda0
+                @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
+                public final void onClick(AlertDialog alertDialog, int i) {
+                    ChatAttachAlertPollLayout.9.this.lambda$onClearEmojiRecent$0(alertDialog, i);
+                }
+            });
+            builder.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
+            builder.show();
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$onClearEmojiRecent$0(AlertDialog alertDialog, int i) {
+            ChatAttachAlertPollLayout.this.emojiView.clearRecentEmoji();
+        }
+
+        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
+        public void onSearchOpenClose(int i) {
+            ChatAttachAlertPollLayout chatAttachAlertPollLayout = ChatAttachAlertPollLayout.this;
+            chatAttachAlertPollLayout.isEmojiSearchOpened = i != 0;
+            chatAttachAlertPollLayout.parentAlert.sizeNotifierFrameLayout.requestLayout();
+        }
+
+        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
+        public boolean isSearchOpened() {
+            return ChatAttachAlertPollLayout.this.isEmojiSearchOpened;
+        }
+    }
+
+    private void animateEmojiViewTranslationY(final float f, final float f2) {
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout$$ExternalSyntheticLambda1
+            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+            public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                ChatAttachAlertPollLayout.this.lambda$animateEmojiViewTranslationY$8(f, f2, valueAnimator);
+            }
+        });
+        ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout.10
+            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+            public void onAnimationEnd(Animator animator) {
+                ChatAttachAlertPollLayout.this.emojiView.setTranslationY(f2);
+            }
+        });
+        ofFloat.setDuration(250L);
+        ofFloat.setInterpolator(AdjustPanLayoutHelper.keyboardInterpolator);
+        ofFloat.start();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$animateEmojiViewTranslationY$8(float f, float f2, ValueAnimator valueAnimator) {
+        this.emojiView.setTranslationY(AndroidUtilities.lerp(f, f2, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    class ListAdapter extends RecyclerListView.SelectionAdapter {
+        private Context mContext;
+
+        public ListAdapter(Context context) {
+            this.mContext = context;
+        }
+
+        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+        public int getItemCount() {
+            return ChatAttachAlertPollLayout.this.rowCount;
+        }
+
+        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+        public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
+            int itemViewType = viewHolder.getItemViewType();
+            if (itemViewType == 0) {
+                HeaderCell headerCell = (HeaderCell) viewHolder.itemView;
+                if (i == ChatAttachAlertPollLayout.this.questionHeaderRow) {
+                    headerCell.getTextView().setGravity(19);
+                    headerCell.setText(LocaleController.getString(ChatAttachAlertPollLayout.this.todo ? R.string.TodoTitle : R.string.PollQuestion));
+                    return;
+                }
+                headerCell.getTextView().setGravity((LocaleController.isRTL ? 5 : 3) | 16);
+                if (i == ChatAttachAlertPollLayout.this.answerHeaderRow) {
+                    if (ChatAttachAlertPollLayout.this.quizOnly == 1) {
+                        headerCell.setText(LocaleController.getString(R.string.QuizAnswers));
+                        return;
+                    } else {
+                        headerCell.setText(LocaleController.getString(ChatAttachAlertPollLayout.this.todo ? R.string.TodoItemsTitle : R.string.AnswerOptions));
+                        return;
+                    }
+                }
+                if (i == ChatAttachAlertPollLayout.this.settingsHeaderRow) {
+                    headerCell.setText(LocaleController.getString(R.string.Settings));
+                    return;
+                }
+                return;
+            }
+            if (itemViewType == 6) {
+                TextCheckCell textCheckCell = (TextCheckCell) viewHolder.itemView;
+                if (i == ChatAttachAlertPollLayout.this.allowAddingRow) {
+                    textCheckCell.setTextAndCheck(LocaleController.getString(R.string.TodoAllowAddingTasks), ChatAttachAlertPollLayout.this.allowAdding, ChatAttachAlertPollLayout.this.allowMarkingRow != -1);
+                    textCheckCell.setEnabled(true, null);
+                } else if (i == ChatAttachAlertPollLayout.this.allowMarkingRow) {
+                    textCheckCell.setTextAndCheck(LocaleController.getString(R.string.TodoAllowMarkingDone), ChatAttachAlertPollLayout.this.allowMarking, false);
+                    textCheckCell.setEnabled(true, null);
+                } else if (i == ChatAttachAlertPollLayout.this.anonymousRow) {
+                    textCheckCell.setTextAndCheck(LocaleController.getString(R.string.PollAnonymous), ChatAttachAlertPollLayout.this.anonymousPoll, (ChatAttachAlertPollLayout.this.multipleRow == -1 && ChatAttachAlertPollLayout.this.quizRow == -1) ? false : true);
+                    textCheckCell.setEnabled(true, null);
+                } else if (i == ChatAttachAlertPollLayout.this.multipleRow) {
+                    textCheckCell.setTextAndCheck(LocaleController.getString(R.string.PollMultiple), ChatAttachAlertPollLayout.this.multipleChoise, ChatAttachAlertPollLayout.this.quizRow != -1);
+                    textCheckCell.setEnabled(true, null);
+                } else if (i == ChatAttachAlertPollLayout.this.quizRow) {
+                    textCheckCell.setTextAndCheck(LocaleController.getString(R.string.PollQuiz), ChatAttachAlertPollLayout.this.quizPoll, false);
+                    textCheckCell.setEnabled(ChatAttachAlertPollLayout.this.quizOnly == 0, null);
+                }
+            } else if (itemViewType != 9) {
+                if (itemViewType != 2) {
+                    if (itemViewType != 3) {
+                        return;
+                    }
+                    TextCell textCell = (TextCell) viewHolder.itemView;
+                    textCell.setColors(-1, Theme.key_windowBackgroundWhiteBlueText4);
+                    Drawable drawable = this.mContext.getResources().getDrawable(R.drawable.poll_add_circle);
+                    Drawable drawable2 = this.mContext.getResources().getDrawable(R.drawable.poll_add_plus);
+                    int themedColor = ChatAttachAlertPollLayout.this.getThemedColor(Theme.key_switchTrackChecked);
+                    PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
+                    drawable.setColorFilter(new PorterDuffColorFilter(themedColor, mode));
+                    drawable2.setColorFilter(new PorterDuffColorFilter(ChatAttachAlertPollLayout.this.getThemedColor(Theme.key_checkboxCheck), mode));
+                    textCell.setTextAndIcon((CharSequence) LocaleController.getString(ChatAttachAlertPollLayout.this.todo ? R.string.TodoNewTask : R.string.AddAnOption), (Drawable) new CombinedDrawable(drawable, drawable2), false);
+                    return;
+                }
+                TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) viewHolder.itemView;
+                CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(ChatAttachAlertPollLayout.this.getThemedColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(this.mContext, R.drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
+                combinedDrawable.setFullsize(true);
+                textInfoPrivacyCell.setBackgroundDrawable(combinedDrawable);
+                if (i != ChatAttachAlertPollLayout.this.solutionInfoRow) {
+                    if (i == ChatAttachAlertPollLayout.this.settingsSectionRow) {
+                        if (ChatAttachAlertPollLayout.this.quizOnly != 0) {
+                            textInfoPrivacyCell.setText(null);
+                            return;
+                        } else {
+                            textInfoPrivacyCell.setText(LocaleController.getString(R.string.QuizInfo));
+                            return;
+                        }
+                    }
+                    if (ChatAttachAlertPollLayout.this.maxAnswersCount - ChatAttachAlertPollLayout.this.answersCount <= 0) {
+                        textInfoPrivacyCell.setText(LocaleController.getString(ChatAttachAlertPollLayout.this.todo ? R.string.TodoAddTaskInfoMax : R.string.AddAnOptionInfoMax));
+                        return;
+                    } else if (ChatAttachAlertPollLayout.this.todo) {
+                        textInfoPrivacyCell.setText(LocaleController.formatPluralStringComma("TodoNewTaskInfo", ChatAttachAlertPollLayout.this.maxAnswersCount - ChatAttachAlertPollLayout.this.answersCount));
+                        return;
+                    } else {
+                        textInfoPrivacyCell.setText(LocaleController.formatString(R.string.AddAnOptionInfo, LocaleController.formatPluralString("Option", ChatAttachAlertPollLayout.this.maxAnswersCount - ChatAttachAlertPollLayout.this.answersCount, new Object[0])));
+                        return;
+                    }
+                }
+                textInfoPrivacyCell.setText(LocaleController.getString(R.string.AddAnExplanationInfo));
+                return;
+            }
+            viewHolder.itemView.requestLayout();
+        }
+
+        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+        public void onViewAttachedToWindow(RecyclerView.ViewHolder viewHolder) {
+            int itemViewType = viewHolder.getItemViewType();
+            if (itemViewType == 4) {
+                PollEditTextCell pollEditTextCell = (PollEditTextCell) viewHolder.itemView;
+                pollEditTextCell.setTag(1);
+                pollEditTextCell.setTextAndHint(ChatAttachAlertPollLayout.this.questionString != null ? ChatAttachAlertPollLayout.this.questionString : "", LocaleController.getString(ChatAttachAlertPollLayout.this.todo ? R.string.TodoTitlePlaceholder : R.string.QuestionHint), false);
+                pollEditTextCell.setTag(null);
+                ChatAttachAlertPollLayout.this.setTextLeft(viewHolder.itemView, viewHolder.getAdapterPosition());
+                return;
+            }
+            if (itemViewType != 5) {
+                if (itemViewType == 7) {
+                    PollEditTextCell pollEditTextCell2 = (PollEditTextCell) viewHolder.itemView;
+                    pollEditTextCell2.setTag(1);
+                    pollEditTextCell2.setTextAndHint(ChatAttachAlertPollLayout.this.solutionString != null ? ChatAttachAlertPollLayout.this.solutionString : "", LocaleController.getString(R.string.AddAnExplanation), false);
+                    pollEditTextCell2.setTag(null);
+                    ChatAttachAlertPollLayout.this.setTextLeft(viewHolder.itemView, viewHolder.getAdapterPosition());
+                    return;
+                }
+                return;
+            }
+            int adapterPosition = viewHolder.getAdapterPosition();
+            PollEditTextCell pollEditTextCell3 = (PollEditTextCell) viewHolder.itemView;
+            pollEditTextCell3.setTag(1);
+            pollEditTextCell3.setTextAndHint(ChatAttachAlertPollLayout.this.answers[adapterPosition - ChatAttachAlertPollLayout.this.answerStartRow], LocaleController.getString(ChatAttachAlertPollLayout.this.todo ? R.string.TodoTaskPlaceholder : R.string.OptionHint), true);
+            pollEditTextCell3.setTag(null);
+            if (ChatAttachAlertPollLayout.this.requestFieldFocusAtPosition == adapterPosition) {
+                EditTextBoldCursor textView = pollEditTextCell3.getTextView();
+                textView.requestFocus();
+                AndroidUtilities.showKeyboard(textView);
+                ChatAttachAlertPollLayout.this.requestFieldFocusAtPosition = -1;
+            }
+            ChatAttachAlertPollLayout.this.setTextLeft(viewHolder.itemView, adapterPosition);
+        }
+
+        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+        public void onViewDetachedFromWindow(RecyclerView.ViewHolder viewHolder) {
+            if (viewHolder.getItemViewType() == 4 || viewHolder.getItemViewType() == 5) {
+                EditTextBoldCursor textView = ((PollEditTextCell) viewHolder.itemView).getTextView();
+                if (textView.isFocused()) {
+                    if (ChatAttachAlertPollLayout.this.isPremium) {
+                        if (ChatAttachAlertPollLayout.this.suggestEmojiPanel != null) {
+                            ChatAttachAlertPollLayout.this.suggestEmojiPanel.forceClose();
+                        }
+                        ChatAttachAlertPollLayout.this.hideEmojiPopup(true);
+                    }
+                    ChatAttachAlertPollLayout.this.currentCell = null;
+                    textView.clearFocus();
+                    AndroidUtilities.hideKeyboard(textView);
+                }
+            }
+        }
+
+        @Override // org.telegram.ui.Components.RecyclerListView.SelectionAdapter
+        public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
+            int adapterPosition = viewHolder.getAdapterPosition();
+            return adapterPosition == ChatAttachAlertPollLayout.this.addAnswerRow || adapterPosition == ChatAttachAlertPollLayout.this.anonymousRow || adapterPosition == ChatAttachAlertPollLayout.this.multipleRow || (ChatAttachAlertPollLayout.this.quizOnly == 0 && adapterPosition == ChatAttachAlertPollLayout.this.quizRow);
+        }
+
+        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+        public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+            View view;
+            switch (i) {
+                case 0:
+                    view = new HeaderCell(this.mContext, Theme.key_windowBackgroundWhiteBlueHeader, 21, 15, false, ChatAttachAlertPollLayout.this.resourcesProvider);
+                    break;
+                case 1:
+                    View shadowSectionCell = new ShadowSectionCell(this.mContext, ChatAttachAlertPollLayout.this.resourcesProvider);
+                    CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(ChatAttachAlertPollLayout.this.getThemedColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(this.mContext, R.drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
+                    combinedDrawable.setFullsize(true);
+                    shadowSectionCell.setBackgroundDrawable(combinedDrawable);
+                    view = shadowSectionCell;
+                    break;
+                case 2:
+                    view = new TextInfoPrivacyCell(this.mContext, ChatAttachAlertPollLayout.this.resourcesProvider);
+                    break;
+                case 3:
+                    view = new TextCell(this.mContext, ChatAttachAlertPollLayout.this.resourcesProvider);
+                    break;
+                case 4:
+                    Context context = this.mContext;
+                    boolean z = ChatAttachAlertPollLayout.this.isPremium;
+                    Theme.ResourcesProvider resourcesProvider = ChatAttachAlertPollLayout.this.resourcesProvider;
+                    final PollEditTextCell pollEditTextCell = new PollEditTextCell(context, false, z ? 1 : 0, null, resourcesProvider) { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout.ListAdapter.1
+                        @Override // org.telegram.ui.Cells.PollEditTextCell
+                        protected void onFieldTouchUp(EditTextBoldCursor editTextBoldCursor) {
+                            ChatAttachAlertPollLayout.this.parentAlert.makeFocusable(editTextBoldCursor, true);
+                        }
+
+                        @Override // org.telegram.ui.Cells.PollEditTextCell
+                        protected void onEditTextFocusChanged(boolean z2) {
+                            ChatAttachAlertPollLayout.this.onCellFocusChanges(this, z2);
+                        }
+
+                        /* JADX INFO: Access modifiers changed from: protected */
+                        @Override // org.telegram.ui.Cells.PollEditTextCell
+                        /* renamed from: onEmojiButtonClicked */
+                        public void lambda$new$1(PollEditTextCell pollEditTextCell2) {
+                            ChatAttachAlertPollLayout.this.onEmojiClicked(pollEditTextCell2);
+                        }
+
+                        @Override // org.telegram.ui.Cells.PollEditTextCell
+                        public boolean onPastedMultipleLines(ArrayList arrayList) {
+                            if (arrayList.isEmpty()) {
+                                return false;
+                            }
+                            this.textView.getText().replace(this.textView.getSelectionStart(), this.textView.getSelectionEnd(), (CharSequence) arrayList.remove(0));
+                            int i2 = 0;
+                            while (!arrayList.isEmpty() && i2 < ChatAttachAlertPollLayout.this.maxAnswersCount) {
+                                for (int length = ChatAttachAlertPollLayout.this.answers.length - 1; length > i2; length--) {
+                                    ChatAttachAlertPollLayout.this.answers[length] = ChatAttachAlertPollLayout.this.answers[length - 1];
+                                }
+                                ChatAttachAlertPollLayout.this.answers[i2] = (CharSequence) arrayList.remove(0);
+                                ChatAttachAlertPollLayout.access$2208(ChatAttachAlertPollLayout.this);
+                                i2++;
+                            }
+                            ChatAttachAlertPollLayout.this.updateRows();
+                            ChatAttachAlertPollLayout chatAttachAlertPollLayout = ChatAttachAlertPollLayout.this;
+                            chatAttachAlertPollLayout.requestFieldFocusAtPosition = (chatAttachAlertPollLayout.answerStartRow + i2) - 1;
+                            ChatAttachAlertPollLayout.this.listView.setItemAnimator(ChatAttachAlertPollLayout.this.itemAnimator);
+                            ChatAttachAlertPollLayout.this.listAdapter.notifyDataSetChanged();
+                            return true;
+                        }
+                    };
+                    pollEditTextCell.createErrorTextView();
+                    pollEditTextCell.addTextWatcher(new TextWatcher() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout.ListAdapter.2
+                        @Override // android.text.TextWatcher
+                        public void beforeTextChanged(CharSequence charSequence, int i2, int i3, int i4) {
+                        }
+
+                        @Override // android.text.TextWatcher
+                        public void onTextChanged(CharSequence charSequence, int i2, int i3, int i4) {
+                        }
+
+                        @Override // android.text.TextWatcher
+                        public void afterTextChanged(Editable editable) {
+                            if (pollEditTextCell.getTag() != null) {
+                                return;
+                            }
+                            RecyclerView.ViewHolder findViewHolderForAdapterPosition = ChatAttachAlertPollLayout.this.listView.findViewHolderForAdapterPosition(ChatAttachAlertPollLayout.this.questionRow);
+                            if (findViewHolderForAdapterPosition != null && ChatAttachAlertPollLayout.this.suggestEmojiPanel != null) {
+                                for (ImageSpan imageSpan : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
+                                    editable.removeSpan(imageSpan);
+                                }
+                                Emoji.replaceEmoji(editable, pollEditTextCell.getEditField().getPaint().getFontMetricsInt(), false);
+                                ChatAttachAlertPollLayout.this.suggestEmojiPanel.setDirection(1);
+                                ChatAttachAlertPollLayout.this.suggestEmojiPanel.setDelegate(pollEditTextCell);
+                                ChatAttachAlertPollLayout.this.suggestEmojiPanel.setTranslationY(findViewHolderForAdapterPosition.itemView.getY());
+                                ChatAttachAlertPollLayout.this.suggestEmojiPanel.fireUpdate();
+                            }
+                            ChatAttachAlertPollLayout.this.questionString = editable;
+                            if (findViewHolderForAdapterPosition != null) {
+                                ChatAttachAlertPollLayout chatAttachAlertPollLayout = ChatAttachAlertPollLayout.this;
+                                chatAttachAlertPollLayout.setTextLeft(findViewHolderForAdapterPosition.itemView, chatAttachAlertPollLayout.questionRow);
+                            }
+                            ChatAttachAlertPollLayout.this.checkDoneButton();
+                        }
+                    });
+                    view = pollEditTextCell;
+                    break;
+                case 5:
+                default:
+                    Context context2 = this.mContext;
+                    boolean z2 = ChatAttachAlertPollLayout.this.isPremium;
+                    final PollEditTextCell pollEditTextCell2 = new PollEditTextCell(context2, false, z2 ? 1 : 0, new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout$ListAdapter$$ExternalSyntheticLambda0
+                        @Override // android.view.View.OnClickListener
+                        public final void onClick(View view2) {
+                            ChatAttachAlertPollLayout.ListAdapter.this.lambda$onCreateViewHolder$0(view2);
+                        }
+                    }, ChatAttachAlertPollLayout.this.resourcesProvider) { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout.ListAdapter.6
+                        @Override // org.telegram.ui.Cells.PollEditTextCell
+                        protected void onActionModeStart(EditTextBoldCursor editTextBoldCursor, ActionMode actionMode) {
+                            if (editTextBoldCursor.isFocused() && editTextBoldCursor.hasSelection()) {
+                                Menu menu = actionMode.getMenu();
+                                if (menu.findItem(android.R.id.copy) == null) {
+                                    return;
+                                }
+                                ChatActivity.fillActionModeMenu(menu, ((ChatActivity) ChatAttachAlertPollLayout.this.parentAlert.baseFragment).getCurrentEncryptedChat(), true);
+                            }
+                        }
+
+                        @Override // org.telegram.ui.Cells.PollEditTextCell
+                        protected boolean drawDivider() {
+                            RecyclerView.ViewHolder findContainingViewHolder = ChatAttachAlertPollLayout.this.listView.findContainingViewHolder(this);
+                            if (findContainingViewHolder != null) {
+                                int adapterPosition = findContainingViewHolder.getAdapterPosition();
+                                if (ChatAttachAlertPollLayout.this.answersCount == ChatAttachAlertPollLayout.this.maxAnswersCount && adapterPosition == (ChatAttachAlertPollLayout.this.answerStartRow + ChatAttachAlertPollLayout.this.answersCount) - 1) {
+                                    return false;
+                                }
+                            }
+                            return true;
+                        }
+
+                        @Override // org.telegram.ui.Cells.PollEditTextCell
+                        protected boolean shouldShowCheckBox() {
+                            return ChatAttachAlertPollLayout.this.quizPoll;
+                        }
+
+                        @Override // org.telegram.ui.Cells.PollEditTextCell
+                        protected void onFieldTouchUp(EditTextBoldCursor editTextBoldCursor) {
+                            ChatAttachAlertPollLayout.this.parentAlert.makeFocusable(editTextBoldCursor, true);
+                        }
+
+                        @Override // org.telegram.ui.Cells.PollEditTextCell
+                        protected void onEditTextFocusChanged(boolean z3) {
+                            ChatAttachAlertPollLayout.this.onCellFocusChanges(this, z3);
+                        }
+
+                        @Override // org.telegram.ui.Cells.PollEditTextCell
+                        protected void onCheckBoxClick(PollEditTextCell pollEditTextCell3, boolean z3) {
+                            int adapterPosition;
+                            if (z3 && ChatAttachAlertPollLayout.this.quizPoll) {
+                                Arrays.fill(ChatAttachAlertPollLayout.this.answersChecks, false);
+                                ChatAttachAlertPollLayout.this.listView.getChildCount();
+                                for (int i2 = ChatAttachAlertPollLayout.this.answerStartRow; i2 < ChatAttachAlertPollLayout.this.answerStartRow + ChatAttachAlertPollLayout.this.answersCount; i2++) {
+                                    RecyclerView.ViewHolder findViewHolderForAdapterPosition = ChatAttachAlertPollLayout.this.listView.findViewHolderForAdapterPosition(i2);
+                                    if (findViewHolderForAdapterPosition != null) {
+                                        View view2 = findViewHolderForAdapterPosition.itemView;
+                                        if (view2 instanceof PollEditTextCell) {
+                                            ((PollEditTextCell) view2).setChecked(false, true);
+                                        }
+                                    }
+                                }
+                            }
+                            super.onCheckBoxClick(pollEditTextCell3, z3);
+                            RecyclerView.ViewHolder findContainingViewHolder = ChatAttachAlertPollLayout.this.listView.findContainingViewHolder(pollEditTextCell3);
+                            if (findContainingViewHolder != null && (adapterPosition = findContainingViewHolder.getAdapterPosition()) != -1) {
+                                ChatAttachAlertPollLayout.this.answersChecks[adapterPosition - ChatAttachAlertPollLayout.this.answerStartRow] = z3;
+                            }
+                            ChatAttachAlertPollLayout.this.checkDoneButton();
+                        }
+
+                        @Override // org.telegram.ui.Cells.PollEditTextCell
+                        protected boolean isChecked(PollEditTextCell pollEditTextCell3) {
+                            int adapterPosition;
+                            RecyclerView.ViewHolder findContainingViewHolder = ChatAttachAlertPollLayout.this.listView.findContainingViewHolder(pollEditTextCell3);
+                            if (findContainingViewHolder == null || (adapterPosition = findContainingViewHolder.getAdapterPosition()) == -1) {
+                                return false;
+                            }
+                            return ChatAttachAlertPollLayout.this.answersChecks[adapterPosition - ChatAttachAlertPollLayout.this.answerStartRow];
+                        }
+
+                        /* JADX INFO: Access modifiers changed from: protected */
+                        @Override // org.telegram.ui.Cells.PollEditTextCell
+                        /* renamed from: onEmojiButtonClicked */
+                        public void lambda$new$1(PollEditTextCell pollEditTextCell3) {
+                            ChatAttachAlertPollLayout.this.onEmojiClicked(pollEditTextCell3);
+                        }
+
+                        @Override // org.telegram.ui.Cells.PollEditTextCell
+                        public boolean onPastedMultipleLines(ArrayList arrayList) {
+                            int childAdapterPosition;
+                            if (arrayList.isEmpty() || (childAdapterPosition = ChatAttachAlertPollLayout.this.listView.getChildAdapterPosition(this) - ChatAttachAlertPollLayout.this.answerStartRow) < 0) {
+                                return false;
+                            }
+                            this.textView.getText().replace(this.textView.getSelectionStart(), this.textView.getSelectionEnd(), (CharSequence) arrayList.remove(0));
+                            int i2 = childAdapterPosition + 1;
+                            while (!arrayList.isEmpty() && i2 < ChatAttachAlertPollLayout.this.maxAnswersCount) {
+                                for (int length = ChatAttachAlertPollLayout.this.answers.length - 1; length > i2; length--) {
+                                    ChatAttachAlertPollLayout.this.answers[length] = ChatAttachAlertPollLayout.this.answers[length - 1];
+                                }
+                                ChatAttachAlertPollLayout.this.answers[i2] = (CharSequence) arrayList.remove(0);
+                                ChatAttachAlertPollLayout.access$2208(ChatAttachAlertPollLayout.this);
+                                i2++;
+                            }
+                            ChatAttachAlertPollLayout.this.updateRows();
+                            ChatAttachAlertPollLayout chatAttachAlertPollLayout = ChatAttachAlertPollLayout.this;
+                            chatAttachAlertPollLayout.requestFieldFocusAtPosition = (chatAttachAlertPollLayout.answerStartRow + i2) - 1;
+                            ChatAttachAlertPollLayout.this.listView.setItemAnimator(ChatAttachAlertPollLayout.this.itemAnimator);
+                            ChatAttachAlertPollLayout.this.listAdapter.notifyDataSetChanged();
+                            return true;
+                        }
+                    };
+                    pollEditTextCell2.addTextWatcher(new TextWatcher() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout.ListAdapter.7
+                        @Override // android.text.TextWatcher
+                        public void beforeTextChanged(CharSequence charSequence, int i2, int i3, int i4) {
+                        }
+
+                        @Override // android.text.TextWatcher
+                        public void onTextChanged(CharSequence charSequence, int i2, int i3, int i4) {
+                        }
+
+                        @Override // android.text.TextWatcher
+                        public void afterTextChanged(Editable editable) {
+                            int adapterPosition;
+                            int adapterPosition2;
+                            RecyclerView.ViewHolder findContainingViewHolder = ChatAttachAlertPollLayout.this.listView.findContainingViewHolder(pollEditTextCell2);
+                            if (findContainingViewHolder == null || (adapterPosition2 = (adapterPosition = findContainingViewHolder.getAdapterPosition()) - ChatAttachAlertPollLayout.this.answerStartRow) < 0 || adapterPosition2 >= ChatAttachAlertPollLayout.this.answers.length) {
+                                return;
+                            }
+                            if (ChatAttachAlertPollLayout.this.suggestEmojiPanel != null) {
+                                for (ImageSpan imageSpan : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
+                                    editable.removeSpan(imageSpan);
+                                }
+                                Emoji.replaceEmoji(editable, pollEditTextCell2.getEditField().getPaint().getFontMetricsInt(), false);
+                                float y = (findContainingViewHolder.itemView.getY() - AndroidUtilities.dp(166.0f)) + findContainingViewHolder.itemView.getMeasuredHeight();
+                                if (y > 0.0f) {
+                                    ChatAttachAlertPollLayout.this.suggestEmojiPanel.setDirection(0);
+                                    ChatAttachAlertPollLayout.this.suggestEmojiPanel.setTranslationY(y);
+                                } else {
+                                    ChatAttachAlertPollLayout.this.suggestEmojiPanel.setDirection(1);
+                                    ChatAttachAlertPollLayout.this.suggestEmojiPanel.setTranslationY(findContainingViewHolder.itemView.getY());
+                                }
+                                ChatAttachAlertPollLayout.this.suggestEmojiPanel.setDelegate(pollEditTextCell2);
+                                ChatAttachAlertPollLayout.this.suggestEmojiPanel.fireUpdate();
+                            }
+                            ChatAttachAlertPollLayout.this.answers[adapterPosition2] = editable;
+                            ChatAttachAlertPollLayout.this.setTextLeft(pollEditTextCell2, adapterPosition);
+                            ChatAttachAlertPollLayout.this.checkDoneButton();
+                        }
+                    });
+                    pollEditTextCell2.setShowNextButton(true);
+                    EditTextBoldCursor textView = pollEditTextCell2.getTextView();
+                    textView.setImeOptions(textView.getImeOptions() | 5);
+                    textView.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout$ListAdapter$$ExternalSyntheticLambda1
+                        @Override // android.widget.TextView.OnEditorActionListener
+                        public final boolean onEditorAction(TextView textView2, int i2, KeyEvent keyEvent) {
+                            boolean lambda$onCreateViewHolder$1;
+                            lambda$onCreateViewHolder$1 = ChatAttachAlertPollLayout.ListAdapter.this.lambda$onCreateViewHolder$1(pollEditTextCell2, textView2, i2, keyEvent);
+                            return lambda$onCreateViewHolder$1;
+                        }
+                    });
+                    textView.setOnKeyListener(new View.OnKeyListener() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout$ListAdapter$$ExternalSyntheticLambda2
+                        @Override // android.view.View.OnKeyListener
+                        public final boolean onKey(View view2, int i2, KeyEvent keyEvent) {
+                            boolean lambda$onCreateViewHolder$2;
+                            lambda$onCreateViewHolder$2 = ChatAttachAlertPollLayout.ListAdapter.lambda$onCreateViewHolder$2(PollEditTextCell.this, view2, i2, keyEvent);
+                            return lambda$onCreateViewHolder$2;
+                        }
+                    });
+                    view = pollEditTextCell2;
+                    break;
+                case 6:
+                    view = new TextCheckCell(this.mContext, ChatAttachAlertPollLayout.this.resourcesProvider);
+                    break;
+                case 7:
+                    final PollEditTextCell pollEditTextCell3 = new PollEditTextCell(this.mContext, false, ChatAttachAlertPollLayout.this.isPremium ? 1 : 0, null) { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout.ListAdapter.3
+                        @Override // org.telegram.ui.Cells.PollEditTextCell
+                        protected void onFieldTouchUp(EditTextBoldCursor editTextBoldCursor) {
+                            ChatAttachAlertPollLayout.this.parentAlert.makeFocusable(editTextBoldCursor, true);
+                        }
+
+                        @Override // org.telegram.ui.Cells.PollEditTextCell
+                        protected void onEditTextFocusChanged(boolean z3) {
+                            ChatAttachAlertPollLayout.this.onCellFocusChanges(this, z3);
+                        }
+
+                        @Override // org.telegram.ui.Cells.PollEditTextCell
+                        protected void onActionModeStart(EditTextBoldCursor editTextBoldCursor, ActionMode actionMode) {
+                            if (editTextBoldCursor.isFocused() && editTextBoldCursor.hasSelection()) {
+                                Menu menu = actionMode.getMenu();
+                                if (menu.findItem(android.R.id.copy) == null) {
+                                    return;
+                                }
+                                ChatActivity.fillActionModeMenu(menu, ((ChatActivity) ChatAttachAlertPollLayout.this.parentAlert.baseFragment).getCurrentEncryptedChat(), true);
+                            }
+                        }
+
+                        /* JADX INFO: Access modifiers changed from: protected */
+                        @Override // org.telegram.ui.Cells.PollEditTextCell
+                        /* renamed from: onEmojiButtonClicked */
+                        public void lambda$new$1(PollEditTextCell pollEditTextCell4) {
+                            ChatAttachAlertPollLayout.this.onEmojiClicked(pollEditTextCell4);
+                        }
+                    };
+                    pollEditTextCell3.createErrorTextView();
+                    pollEditTextCell3.addTextWatcher(new TextWatcher() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout.ListAdapter.4
+                        @Override // android.text.TextWatcher
+                        public void beforeTextChanged(CharSequence charSequence, int i2, int i3, int i4) {
+                        }
+
+                        @Override // android.text.TextWatcher
+                        public void onTextChanged(CharSequence charSequence, int i2, int i3, int i4) {
+                        }
+
+                        @Override // android.text.TextWatcher
+                        public void afterTextChanged(Editable editable) {
+                            if (pollEditTextCell3.getTag() != null) {
+                                return;
+                            }
+                            RecyclerView.ViewHolder findViewHolderForAdapterPosition = ChatAttachAlertPollLayout.this.listView.findViewHolderForAdapterPosition(ChatAttachAlertPollLayout.this.questionRow);
+                            if (findViewHolderForAdapterPosition != null && ChatAttachAlertPollLayout.this.suggestEmojiPanel != null) {
+                                for (ImageSpan imageSpan : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
+                                    editable.removeSpan(imageSpan);
+                                }
+                                Emoji.replaceEmoji(editable, pollEditTextCell3.getEditField().getPaint().getFontMetricsInt(), false);
+                                ChatAttachAlertPollLayout.this.suggestEmojiPanel.setDirection(1);
+                                ChatAttachAlertPollLayout.this.suggestEmojiPanel.setDelegate(pollEditTextCell3);
+                                ChatAttachAlertPollLayout.this.suggestEmojiPanel.setTranslationY(findViewHolderForAdapterPosition.itemView.getY());
+                                ChatAttachAlertPollLayout.this.suggestEmojiPanel.fireUpdate();
+                            }
+                            ChatAttachAlertPollLayout.this.solutionString = editable;
+                            if (findViewHolderForAdapterPosition != null) {
+                                ChatAttachAlertPollLayout chatAttachAlertPollLayout = ChatAttachAlertPollLayout.this;
+                                chatAttachAlertPollLayout.setTextLeft(findViewHolderForAdapterPosition.itemView, chatAttachAlertPollLayout.solutionRow);
+                            }
+                            ChatAttachAlertPollLayout.this.checkDoneButton();
+                        }
+                    });
+                    view = pollEditTextCell3;
+                    break;
+                case 8:
+                    View emptyView = new EmptyView(this.mContext);
+                    emptyView.setBackgroundColor(ChatAttachAlertPollLayout.this.getThemedColor(Theme.key_windowBackgroundGray));
+                    view = emptyView;
+                    break;
+                case 9:
+                    view = new View(this.mContext) { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout.ListAdapter.5
+                        @Override // android.view.View
+                        protected void onMeasure(int i2, int i3) {
+                            setMeasuredDimension(View.MeasureSpec.getSize(i2), ChatAttachAlertPollLayout.this.topPadding);
+                        }
+                    };
+                    break;
+            }
+            view.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
+            return new RecyclerListView.Holder(view);
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX WARN: Removed duplicated region for block: B:19:0x0117  */
+        /*
+            Code decompiled incorrectly, please refer to instructions dump.
+        */
+        public /* synthetic */ void lambda$onCreateViewHolder$0(View view) {
+            int adapterPosition;
+            if (view.getTag() != null) {
+                return;
+            }
+            view.setTag(1);
+            PollEditTextCell pollEditTextCell = (PollEditTextCell) view.getParent();
+            RecyclerView.ViewHolder findContainingViewHolder = ChatAttachAlertPollLayout.this.listView.findContainingViewHolder(pollEditTextCell);
+            if (findContainingViewHolder == null || (adapterPosition = findContainingViewHolder.getAdapterPosition()) == -1) {
+                return;
+            }
+            ChatAttachAlertPollLayout.this.listView.setItemAnimator(ChatAttachAlertPollLayout.this.itemAnimator);
+            int i = adapterPosition - ChatAttachAlertPollLayout.this.answerStartRow;
+            ChatAttachAlertPollLayout.this.listAdapter.notifyItemRemoved(adapterPosition);
+            int i2 = i + 1;
+            System.arraycopy(ChatAttachAlertPollLayout.this.answers, i2, ChatAttachAlertPollLayout.this.answers, i, (ChatAttachAlertPollLayout.this.answers.length - 1) - i);
+            System.arraycopy(ChatAttachAlertPollLayout.this.answersChecks, i2, ChatAttachAlertPollLayout.this.answersChecks, i, (ChatAttachAlertPollLayout.this.answersChecks.length - 1) - i);
+            ChatAttachAlertPollLayout.this.answers[ChatAttachAlertPollLayout.this.answers.length - 1] = null;
+            ChatAttachAlertPollLayout.this.answersChecks[ChatAttachAlertPollLayout.this.answersChecks.length - 1] = false;
+            ChatAttachAlertPollLayout.access$2210(ChatAttachAlertPollLayout.this);
+            if (ChatAttachAlertPollLayout.this.answersCount == ChatAttachAlertPollLayout.this.answers.length - 1) {
+                ChatAttachAlertPollLayout.this.listAdapter.notifyItemInserted((ChatAttachAlertPollLayout.this.answerStartRow + ChatAttachAlertPollLayout.this.answers.length) - 1);
+            }
+            RecyclerView.ViewHolder findViewHolderForAdapterPosition = ChatAttachAlertPollLayout.this.listView.findViewHolderForAdapterPosition(adapterPosition - 1);
+            EditTextBoldCursor textView = pollEditTextCell.getTextView();
+            if (findViewHolderForAdapterPosition != null) {
+                View view2 = findViewHolderForAdapterPosition.itemView;
+                if (view2 instanceof PollEditTextCell) {
+                    ((PollEditTextCell) view2).getTextView().requestFocus();
+                    textView.clearFocus();
+                    ChatAttachAlertPollLayout.this.checkDoneButton();
+                    ChatAttachAlertPollLayout.this.updateRows();
+                    if (ChatAttachAlertPollLayout.this.suggestEmojiPanel != null) {
+                        ChatAttachAlertPollLayout.this.suggestEmojiPanel.forceClose();
+                        ChatAttachAlertPollLayout.this.suggestEmojiPanel.setDelegate(null);
+                    }
+                    ChatAttachAlertPollLayout.this.listAdapter.notifyItemChanged(ChatAttachAlertPollLayout.this.answerSectionRow);
+                    ChatAttachAlertPollLayout.this.listAdapter.notifyItemChanged(ChatAttachAlertPollLayout.this.emptyRow);
+                }
+            }
+            if (textView.isFocused()) {
+                AndroidUtilities.hideKeyboard(textView);
+                ChatAttachAlertPollLayout.this.hideEmojiPopup(true);
+            } else {
+                ChatAttachAlertPollLayout chatAttachAlertPollLayout = ChatAttachAlertPollLayout.this;
+                if (chatAttachAlertPollLayout.isEmojiSearchOpened) {
+                    chatAttachAlertPollLayout.hideEmojiPopup(true);
+                }
+            }
+            textView.clearFocus();
+            ChatAttachAlertPollLayout.this.checkDoneButton();
+            ChatAttachAlertPollLayout.this.updateRows();
+            if (ChatAttachAlertPollLayout.this.suggestEmojiPanel != null) {
+            }
+            ChatAttachAlertPollLayout.this.listAdapter.notifyItemChanged(ChatAttachAlertPollLayout.this.answerSectionRow);
+            ChatAttachAlertPollLayout.this.listAdapter.notifyItemChanged(ChatAttachAlertPollLayout.this.emptyRow);
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ boolean lambda$onCreateViewHolder$1(PollEditTextCell pollEditTextCell, TextView textView, int i, KeyEvent keyEvent) {
+            int adapterPosition;
+            if (i != 5) {
+                return false;
+            }
+            RecyclerView.ViewHolder findContainingViewHolder = ChatAttachAlertPollLayout.this.listView.findContainingViewHolder(pollEditTextCell);
+            if (findContainingViewHolder != null && (adapterPosition = findContainingViewHolder.getAdapterPosition()) != -1) {
+                int i2 = adapterPosition - ChatAttachAlertPollLayout.this.answerStartRow;
+                if (i2 != ChatAttachAlertPollLayout.this.answersCount - 1 || ChatAttachAlertPollLayout.this.answersCount >= ChatAttachAlertPollLayout.this.maxAnswersCount) {
+                    if (i2 != ChatAttachAlertPollLayout.this.answersCount - 1) {
+                        RecyclerView.ViewHolder findViewHolderForAdapterPosition = ChatAttachAlertPollLayout.this.listView.findViewHolderForAdapterPosition(adapterPosition + 1);
+                        if (findViewHolderForAdapterPosition != null) {
+                            View view = findViewHolderForAdapterPosition.itemView;
+                            if (view instanceof PollEditTextCell) {
+                                ((PollEditTextCell) view).getTextView().requestFocus();
+                            }
+                        }
+                    } else {
+                        AndroidUtilities.hideKeyboard(pollEditTextCell.getTextView());
+                    }
+                } else {
+                    ChatAttachAlertPollLayout.this.addNewField();
+                }
+            }
+            return true;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static /* synthetic */ boolean lambda$onCreateViewHolder$2(PollEditTextCell pollEditTextCell, View view, int i, KeyEvent keyEvent) {
+            EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) view;
+            if (i != 67 || keyEvent.getAction() != 0 || editTextBoldCursor.length() != 0) {
+                return false;
+            }
+            pollEditTextCell.callOnDelete();
+            return true;
+        }
+
+        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+        public int getItemViewType(int i) {
+            if (i == ChatAttachAlertPollLayout.this.questionHeaderRow || i == ChatAttachAlertPollLayout.this.answerHeaderRow || i == ChatAttachAlertPollLayout.this.settingsHeaderRow) {
+                return 0;
+            }
+            if (i == ChatAttachAlertPollLayout.this.questionSectionRow) {
+                return 1;
+            }
+            if (i == ChatAttachAlertPollLayout.this.answerSectionRow || i == ChatAttachAlertPollLayout.this.settingsSectionRow || i == ChatAttachAlertPollLayout.this.solutionInfoRow) {
+                return 2;
+            }
+            if (i == ChatAttachAlertPollLayout.this.addAnswerRow) {
+                return 3;
+            }
+            if (i == ChatAttachAlertPollLayout.this.questionRow) {
+                return 4;
+            }
+            if (i == ChatAttachAlertPollLayout.this.solutionRow) {
+                return 7;
+            }
+            if (i == ChatAttachAlertPollLayout.this.anonymousRow || i == ChatAttachAlertPollLayout.this.multipleRow || i == ChatAttachAlertPollLayout.this.quizRow || i == ChatAttachAlertPollLayout.this.allowAddingRow || i == ChatAttachAlertPollLayout.this.allowMarkingRow) {
+                return 6;
+            }
+            if (i == ChatAttachAlertPollLayout.this.emptyRow) {
+                return 8;
+            }
+            return i == ChatAttachAlertPollLayout.this.paddingRow ? 9 : 5;
+        }
+
+        public void swapElements(int i, int i2) {
+            int i3 = i - ChatAttachAlertPollLayout.this.answerStartRow;
+            int i4 = i2 - ChatAttachAlertPollLayout.this.answerStartRow;
+            if (i3 < 0 || i4 < 0 || i3 >= ChatAttachAlertPollLayout.this.answersCount || i4 >= ChatAttachAlertPollLayout.this.answersCount) {
+                return;
+            }
+            CharSequence charSequence = ChatAttachAlertPollLayout.this.answers[i3];
+            ChatAttachAlertPollLayout.this.answers[i3] = ChatAttachAlertPollLayout.this.answers[i4];
+            ChatAttachAlertPollLayout.this.answers[i4] = charSequence;
+            boolean z = ChatAttachAlertPollLayout.this.answersChecks[i3];
+            ChatAttachAlertPollLayout.this.answersChecks[i3] = ChatAttachAlertPollLayout.this.answersChecks[i4];
+            ChatAttachAlertPollLayout.this.answersChecks[i4] = z;
+            notifyItemMoved(i, i2);
+        }
     }
 
     @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
@@ -2041,428 +2429,21 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
         return arrayList;
     }
 
-    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public boolean hasDoneItem() {
-        return true;
-    }
-
-    public void hideEmojiView() {
-        EmojiView emojiView;
-        ChatActivityEnterViewAnimatedIconView emojiButton;
-        if (!this.emojiViewVisible && (emojiView = this.emojiView) != null && emojiView.getVisibility() != 8) {
-            PollEditTextCell pollEditTextCell = this.currentCell;
-            if (pollEditTextCell != null && (emojiButton = pollEditTextCell.getEmojiButton()) != null) {
-                emojiButton.setState(ChatActivityEnterViewAnimatedIconView.State.SMILE, false);
-            }
-            this.emojiView.setVisibility(8);
-        }
-        int i = this.emojiPadding;
-        this.emojiPadding = 0;
-        if (i != 0) {
-            this.keyboardNotifier.fire();
-        }
-    }
-
-    public boolean isAnimatePopupClosing() {
-        return this.isAnimatePopupClosing;
-    }
-
-    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public boolean isDoneItemEnabled() {
-        return this.doneItemEnabled;
-    }
-
-    public boolean isPopupShowing() {
-        return this.emojiViewVisible;
-    }
-
-    public boolean isPopupVisible() {
-        EmojiView emojiView = this.emojiView;
-        return emojiView != null && emojiView.getVisibility() == 0;
-    }
-
-    public boolean isWaitingForKeyboardOpen() {
-        return this.waitingForKeyboardOpen;
-    }
-
-    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public int needsActionBar() {
-        return 1;
-    }
-
-    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public boolean onBackPressed() {
-        if (this.emojiViewVisible) {
-            hideEmojiPopup(true);
-            return true;
-        }
-        if (checkDiscard()) {
-            return super.onBackPressed();
-        }
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public void onDestroy() {
-        super.onDestroy();
-        this.destroyed = true;
-        if (this.isPremium) {
-            NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.emojiLoaded);
-            EmojiView emojiView = this.emojiView;
-            if (emojiView != null) {
-                this.parentAlert.sizeNotifierFrameLayout.removeView(emojiView);
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public boolean onDismissWithTouchOutside() {
-        if (checkDiscard()) {
-            return super.onDismissWithTouchOutside();
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public void onHidden() {
-        this.parentAlert.updateDoneItemEnabled();
-    }
-
-    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public void onHideShowProgress(float f) {
-        this.parentAlert.updateDoneItemEnabled();
-    }
-
-    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public void onMenuItemClick(int i) {
-        if (i != 40) {
-            return;
-        }
-        if (!this.todo) {
-            if (this.quizPoll && !this.doneItemEnabled) {
-                int i2 = 0;
-                for (int i3 = 0; i3 < this.answersChecks.length; i3++) {
-                    if (!TextUtils.isEmpty(getFixedString(this.answers[i3])) && this.answersChecks[i3]) {
-                        i2++;
-                    }
-                }
-                if (i2 <= 0) {
-                    showQuizHint();
-                    return;
-                }
-                return;
-            }
-            CharSequence[] charSequenceArr = {getFixedString(this.questionString)};
-            ArrayList<TLRPC.MessageEntity> entities = MediaDataController.getInstance(this.parentAlert.currentAccount).getEntities(charSequenceArr, true);
-            CharSequence charSequence = charSequenceArr[0];
-            if (entities != null) {
-                int size = entities.size();
-                for (int i4 = 0; i4 < size; i4++) {
-                    TLRPC.MessageEntity messageEntity = entities.get(i4);
-                    if (messageEntity.offset + messageEntity.length > charSequence.length()) {
-                        messageEntity.length = charSequence.length() - messageEntity.offset;
-                    }
-                }
-            }
-            final TLRPC.TL_messageMediaPoll tL_messageMediaPoll = new TLRPC.TL_messageMediaPoll();
-            TLRPC.TL_poll tL_poll = new TLRPC.TL_poll();
-            tL_messageMediaPoll.poll = tL_poll;
-            tL_poll.multiple_choice = this.multipleChoise;
-            tL_poll.quiz = this.quizPoll;
-            tL_poll.public_voters = !this.anonymousPoll;
-            tL_poll.question = new TLRPC.TL_textWithEntities();
-            tL_messageMediaPoll.poll.question.text = charSequence.toString();
-            tL_messageMediaPoll.poll.question.entities = entities;
-            SerializedData serializedData = new SerializedData(this.maxAnswersCount);
-            int i5 = 0;
-            while (true) {
-                CharSequence[] charSequenceArr2 = this.answers;
-                if (i5 >= charSequenceArr2.length) {
-                    break;
-                }
-                if (!TextUtils.isEmpty(getFixedString(charSequenceArr2[i5]))) {
-                    CharSequence[] charSequenceArr3 = {getFixedString(this.answers[i5])};
-                    ArrayList<TLRPC.MessageEntity> entities2 = MediaDataController.getInstance(this.parentAlert.currentAccount).getEntities(charSequenceArr3, true);
-                    CharSequence charSequence2 = charSequenceArr3[0];
-                    if (entities2 != null) {
-                        int size2 = entities2.size();
-                        for (int i6 = 0; i6 < size2; i6++) {
-                            TLRPC.MessageEntity messageEntity2 = entities2.get(i6);
-                            if (messageEntity2.offset + messageEntity2.length > charSequence2.length()) {
-                                messageEntity2.length = charSequence2.length() - messageEntity2.offset;
-                            }
-                        }
-                    }
-                    TLRPC.TL_pollAnswer tL_pollAnswer = new TLRPC.TL_pollAnswer();
-                    TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
-                    tL_pollAnswer.text = tL_textWithEntities;
-                    tL_textWithEntities.text = charSequence2.toString();
-                    tL_pollAnswer.text.entities = entities2;
-                    tL_pollAnswer.option = new byte[]{(byte) (tL_messageMediaPoll.poll.answers.size() + 48)};
-                    tL_messageMediaPoll.poll.answers.add(tL_pollAnswer);
-                    if ((this.multipleChoise || this.quizPoll) && this.answersChecks[i5]) {
-                        serializedData.writeByte(tL_pollAnswer.option[0]);
-                    }
-                }
-                i5++;
-            }
-            final HashMap hashMap = new HashMap();
-            hashMap.put("answers", Utilities.bytesToHex(serializedData.toByteArray()));
-            tL_messageMediaPoll.results = new TLRPC.TL_pollResults();
-            CharSequence fixedString = getFixedString(this.solutionString);
-            if (fixedString != null) {
-                tL_messageMediaPoll.results.solution = fixedString.toString();
-                ArrayList<TLRPC.MessageEntity> entities3 = MediaDataController.getInstance(this.parentAlert.currentAccount).getEntities(new CharSequence[]{fixedString}, true);
-                if (entities3 != null && !entities3.isEmpty()) {
-                    tL_messageMediaPoll.results.solution_entities = entities3;
-                }
-                if (!TextUtils.isEmpty(tL_messageMediaPoll.results.solution)) {
-                    tL_messageMediaPoll.results.flags |= 16;
-                }
-            }
-            ChatAttachAlert chatAttachAlert = this.parentAlert;
-            final ChatActivity chatActivity = (ChatActivity) chatAttachAlert.baseFragment;
-            AlertsCreator.ensurePaidMessageConfirmation(chatAttachAlert.currentAccount, chatAttachAlert.getDialogId(), this.parentAlert.getAdditionalMessagesCount() + 1, new Utilities.Callback() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout$$ExternalSyntheticLambda6
-                @Override // org.telegram.messenger.Utilities.Callback
-                public final void run(Object obj) {
-                    ChatAttachAlertPollLayout.this.lambda$onMenuItemClick$4(chatActivity, tL_messageMediaPoll, hashMap, (Long) obj);
-                }
-            });
-            return;
-        }
-        CharSequence[] charSequenceArr4 = {getFixedString(this.questionString)};
-        ArrayList<TLRPC.MessageEntity> entities4 = MediaDataController.getInstance(this.parentAlert.currentAccount).getEntities(charSequenceArr4, true);
-        CharSequence charSequence3 = charSequenceArr4[0];
-        if (entities4 != null) {
-            int size3 = entities4.size();
-            for (int i7 = 0; i7 < size3; i7++) {
-                TLRPC.MessageEntity messageEntity3 = entities4.get(i7);
-                if (messageEntity3.offset + messageEntity3.length > charSequence3.length()) {
-                    messageEntity3.length = charSequence3.length() - messageEntity3.offset;
-                }
-            }
-        }
-        final TLRPC.TL_messageMediaToDo tL_messageMediaToDo = new TLRPC.TL_messageMediaToDo();
-        TLRPC.TodoList todoList = new TLRPC.TodoList();
-        tL_messageMediaToDo.todo = todoList;
-        boolean z = this.allowMarking;
-        todoList.others_can_append = z && this.allowAdding;
-        todoList.others_can_complete = z;
-        todoList.title = new TLRPC.TL_textWithEntities();
-        tL_messageMediaToDo.todo.title.text = charSequence3.toString();
-        tL_messageMediaToDo.todo.title.entities = entities4;
-        int i8 = 0;
-        while (true) {
-            CharSequence[] charSequenceArr5 = this.answers;
-            if (i8 >= charSequenceArr5.length) {
-                ChatAttachAlert chatAttachAlert2 = this.parentAlert;
-                final ChatActivity chatActivity2 = (ChatActivity) chatAttachAlert2.baseFragment;
-                AlertsCreator.ensurePaidMessageConfirmation(chatAttachAlert2.currentAccount, chatAttachAlert2.getDialogId(), this.parentAlert.getAdditionalMessagesCount() + 1, new Utilities.Callback() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout$$ExternalSyntheticLambda5
-                    @Override // org.telegram.messenger.Utilities.Callback
-                    public final void run(Object obj) {
-                        ChatAttachAlertPollLayout.this.lambda$onMenuItemClick$2(chatActivity2, tL_messageMediaToDo, (Long) obj);
-                    }
-                });
-                return;
-            }
-            if (!TextUtils.isEmpty(getFixedString(charSequenceArr5[i8]))) {
-                CharSequence[] charSequenceArr6 = {getFixedString(this.answers[i8])};
-                ArrayList<TLRPC.MessageEntity> entities5 = MediaDataController.getInstance(this.parentAlert.currentAccount).getEntities(charSequenceArr6, true);
-                CharSequence charSequence4 = charSequenceArr6[0];
-                if (entities5 != null) {
-                    int size4 = entities5.size();
-                    for (int i9 = 0; i9 < size4; i9++) {
-                        TLRPC.MessageEntity messageEntity4 = entities5.get(i9);
-                        if (messageEntity4.offset + messageEntity4.length > charSequence4.length()) {
-                            messageEntity4.length = charSequence4.length() - messageEntity4.offset;
-                        }
-                    }
-                }
-                TLRPC.TodoItem todoItem = new TLRPC.TodoItem();
-                TLRPC.TL_textWithEntities tL_textWithEntities2 = new TLRPC.TL_textWithEntities();
-                todoItem.title = tL_textWithEntities2;
-                tL_textWithEntities2.text = charSequence4.toString();
-                todoItem.title.entities = entities5;
-                todoItem.id = tL_messageMediaToDo.todo.list.size() + 1;
-                tL_messageMediaToDo.todo.list.add(todoItem);
-            }
-            i8++;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public void onPause() {
-        super.onPause();
-        ListAdapter listAdapter = this.listAdapter;
-        if (listAdapter != null) {
-            listAdapter.notifyDataSetChanged();
-        }
-        if (this.isPremium) {
-            hideEmojiPopup(false);
-            SuggestEmojiView suggestEmojiView = this.suggestEmojiPanel;
-            if (suggestEmojiView != null) {
-                suggestEmojiView.forceClose();
-            }
-            PollEditTextCell pollEditTextCell = this.currentCell;
-            if (pollEditTextCell != null) {
-                pollEditTextCell.setEmojiButtonVisibility(false);
-                this.currentCell.getTextView().clearFocus();
-                AndroidUtilities.hideKeyboard(this.currentCell.getEditField());
-            }
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:16:0x003f  */
-    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void onPreMeasure(int i, int i2) {
-        int dp;
-        int i3;
-        if (this.parentAlert.sizeNotifierFrameLayout.measureKeyboardHeight() > AndroidUtilities.dp(20.0f) || this.emojiViewVisible || this.isAnimatePopupClosing || this.isEmojiSearchOpened) {
-            dp = AndroidUtilities.dp(52.0f);
-            this.parentAlert.setAllowNestedScroll(false);
-        } else {
-            if (!AndroidUtilities.isTablet()) {
-                android.graphics.Point point = AndroidUtilities.displaySize;
-                if (point.x > point.y) {
-                    i3 = (int) (i2 / 3.5f);
-                    dp = i3 - AndroidUtilities.dp(13.0f);
-                    if (dp < 0) {
-                        dp = 0;
-                    }
-                    this.parentAlert.setAllowNestedScroll(this.allowNesterScroll);
-                }
-            }
-            i3 = (i2 / 5) * 2;
-            dp = i3 - AndroidUtilities.dp(13.0f);
-            if (dp < 0) {
-            }
-            this.parentAlert.setAllowNestedScroll(this.allowNesterScroll);
-        }
-        this.ignoreLayout = true;
-        if (this.topPadding != dp) {
-            this.topPadding = dp;
-            this.listView.setItemAnimator(null);
-            this.listAdapter.notifyItemChanged(this.paddingRow);
-        }
-        this.ignoreLayout = false;
-    }
-
-    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public void onShow(ChatAttachAlert.AttachAlertLayout attachAlertLayout) {
-        ActionBar actionBar;
-        int i;
-        try {
-            this.parentAlert.actionBar.getTitleTextView().setBuildFullLayout(true);
-        } catch (Exception unused) {
-        }
+    private int getAnswersMaxCount() {
         if (this.todo) {
-            actionBar = this.parentAlert.actionBar;
-            i = R.string.TodoTitle;
-        } else if (this.quizOnly == 1) {
-            actionBar = this.parentAlert.actionBar;
-            i = R.string.NewQuiz;
+            return getMessagesController().todoItemsMax;
+        }
+        return getMessagesController().pollAnswersMax;
+    }
+
+    private MessagesController getMessagesController() {
+        int i;
+        ChatAttachAlert chatAttachAlert = this.parentAlert;
+        if (chatAttachAlert != null) {
+            i = chatAttachAlert.currentAccount;
         } else {
-            actionBar = this.parentAlert.actionBar;
-            i = R.string.NewPoll;
+            i = UserConfig.selectedAccount;
         }
-        actionBar.setTitle(LocaleController.getString(i));
-        this.parentAlert.updateDoneItemEnabled();
-        this.layoutManager.scrollToPositionWithOffset(0, 0);
-    }
-
-    @Override // org.telegram.ui.Components.SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate
-    public void onSizeChanged(int i, boolean z) {
-        boolean z2;
-        SharedPreferences.Editor edit;
-        int i2;
-        String str;
-        if (this.isPremium) {
-            if (i > AndroidUtilities.dp(50.0f) && this.keyboardVisible && !AndroidUtilities.isInMultiwindow && !AndroidUtilities.isTablet()) {
-                if (z) {
-                    this.keyboardHeightLand = i;
-                    edit = MessagesController.getGlobalEmojiSettings().edit();
-                    i2 = this.keyboardHeightLand;
-                    str = "kbd_height_land3";
-                } else {
-                    this.keyboardHeight = i;
-                    edit = MessagesController.getGlobalEmojiSettings().edit();
-                    i2 = this.keyboardHeight;
-                    str = "kbd_height";
-                }
-                edit.putInt(str, i2).commit();
-            }
-            if (this.emojiViewVisible) {
-                int i3 = z ? this.keyboardHeightLand : this.keyboardHeight;
-                if (this.isEmojiSearchOpened) {
-                    i3 += AndroidUtilities.dp(120.0f);
-                }
-                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.emojiView.getLayoutParams();
-                int i4 = layoutParams.width;
-                int i5 = AndroidUtilities.displaySize.x;
-                if (i4 != i5 || layoutParams.height != i3 || this.wasEmojiSearchOpened != this.isEmojiSearchOpened) {
-                    layoutParams.width = i5;
-                    layoutParams.height = i3;
-                    this.emojiView.setLayoutParams(layoutParams);
-                    this.emojiPadding = layoutParams.height;
-                    this.keyboardNotifier.fire();
-                    this.parentAlert.sizeNotifierFrameLayout.requestLayout();
-                    boolean z3 = this.wasEmojiSearchOpened;
-                    if (z3 != this.isEmojiSearchOpened) {
-                        animateEmojiViewTranslationY(z3 ? -AndroidUtilities.dp(120.0f) : AndroidUtilities.dp(120.0f), 0.0f);
-                    }
-                    this.wasEmojiSearchOpened = this.isEmojiSearchOpened;
-                }
-            }
-            if (this.lastSizeChangeValue1 == i && this.lastSizeChangeValue2 == z) {
-                return;
-            }
-            this.lastSizeChangeValue1 = i;
-            this.lastSizeChangeValue2 = z;
-            boolean z4 = this.keyboardVisible;
-            PollEditTextCell pollEditTextCell = this.currentCell;
-            if (pollEditTextCell != null) {
-                this.keyboardVisible = pollEditTextCell.getEditField().isFocused() && this.keyboardNotifier.keyboardVisible() && i > 0;
-            } else {
-                this.keyboardVisible = false;
-            }
-            if (this.keyboardVisible && this.emojiViewVisible) {
-                showEmojiPopup(0);
-            }
-            if (this.emojiPadding != 0 && !(z2 = this.keyboardVisible) && z2 != z4 && !this.emojiViewVisible) {
-                this.emojiPadding = 0;
-                this.keyboardNotifier.fire();
-                this.parentAlert.sizeNotifierFrameLayout.requestLayout();
-            }
-            if (this.keyboardVisible && this.waitingForKeyboardOpen) {
-                this.waitingForKeyboardOpen = false;
-                AndroidUtilities.cancelRunOnUIThread(this.openKeyboardRunnable);
-            }
-        }
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public void requestLayout() {
-        if (this.ignoreLayout) {
-            return;
-        }
-        super.requestLayout();
-    }
-
-    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public void scrollToTop() {
-        this.listView.smoothScrollToPosition(1);
-    }
-
-    public void setDelegate(PollCreateActivityDelegate pollCreateActivityDelegate) {
-        this.delegate = pollCreateActivityDelegate;
-    }
-
-    @Override // android.view.View
-    public void setTranslationY(float f) {
-        super.setTranslationY(f);
-        this.parentAlert.getSheetContainer().invalidate();
+        return MessagesController.getInstance(i);
     }
 }

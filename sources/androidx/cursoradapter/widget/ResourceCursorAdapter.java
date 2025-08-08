@@ -20,12 +20,12 @@ public abstract class ResourceCursorAdapter extends CursorAdapter {
     }
 
     @Override // androidx.cursoradapter.widget.CursorAdapter
-    public View newDropDownView(Context context, Cursor cursor, ViewGroup viewGroup) {
-        return this.mInflater.inflate(this.mDropDownLayout, viewGroup, false);
+    public View newView(Context context, Cursor cursor, ViewGroup viewGroup) {
+        return this.mInflater.inflate(this.mLayout, viewGroup, false);
     }
 
     @Override // androidx.cursoradapter.widget.CursorAdapter
-    public View newView(Context context, Cursor cursor, ViewGroup viewGroup) {
-        return this.mInflater.inflate(this.mLayout, viewGroup, false);
+    public View newDropDownView(Context context, Cursor cursor, ViewGroup viewGroup) {
+        return this.mInflater.inflate(this.mDropDownLayout, viewGroup, false);
     }
 }

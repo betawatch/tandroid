@@ -2,6 +2,26 @@ package com.google.android.gms.cast.internal.media;
 
 /* loaded from: classes.dex */
 public abstract class MediaCommon {
+    public static String zza(Integer num) {
+        if (num == null) {
+            return null;
+        }
+        int intValue = num.intValue();
+        if (intValue == 0) {
+            return "REPEAT_OFF";
+        }
+        if (intValue == 1) {
+            return "REPEAT_ALL";
+        }
+        if (intValue == 2) {
+            return "REPEAT_SINGLE";
+        }
+        if (intValue != 3) {
+            return null;
+        }
+        return "REPEAT_ALL_AND_SHUFFLE";
+    }
+
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     public static Integer mediaRepeatModeFromString(String str) {
         char c;
@@ -51,25 +71,5 @@ public abstract class MediaCommon {
             return c != 3 ? null : 3;
         }
         return 2;
-    }
-
-    public static String zza(Integer num) {
-        if (num == null) {
-            return null;
-        }
-        int intValue = num.intValue();
-        if (intValue == 0) {
-            return "REPEAT_OFF";
-        }
-        if (intValue == 1) {
-            return "REPEAT_ALL";
-        }
-        if (intValue == 2) {
-            return "REPEAT_SINGLE";
-        }
-        if (intValue != 3) {
-            return null;
-        }
-        return "REPEAT_ALL_AND_SHUFFLE";
     }
 }

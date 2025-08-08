@@ -9,7 +9,7 @@ import android.os.Bundle;
 import androidx.core.content.ContextCompat;
 import com.google.firebase.events.Publisher;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class DataCollectionConfigStorage {
     private boolean dataCollectionDefaultEnabled;
     private final Context deviceProtectedContext;
@@ -28,8 +28,8 @@ public class DataCollectionConfigStorage {
         return Build.VERSION.SDK_INT < 24 ? context : ContextCompat.createDeviceProtectedStorageContext(context);
     }
 
-    private boolean readAutoDataCollectionEnabled() {
-        return this.sharedPreferences.contains("firebase_data_collection_default_enabled") ? this.sharedPreferences.getBoolean("firebase_data_collection_default_enabled", true) : readManifestDataCollectionEnabled();
+    public synchronized boolean isEnabled() {
+        return this.dataCollectionDefaultEnabled;
     }
 
     private boolean readManifestDataCollectionEnabled() {
@@ -46,7 +46,10 @@ public class DataCollectionConfigStorage {
         }
     }
 
-    public synchronized boolean isEnabled() {
-        return this.dataCollectionDefaultEnabled;
+    private boolean readAutoDataCollectionEnabled() {
+        if (this.sharedPreferences.contains("firebase_data_collection_default_enabled")) {
+            return this.sharedPreferences.getBoolean("firebase_data_collection_default_enabled", true);
+        }
+        return readManifestDataCollectionEnabled();
     }
 }

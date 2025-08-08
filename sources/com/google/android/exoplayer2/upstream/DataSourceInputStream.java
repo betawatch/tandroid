@@ -17,23 +17,6 @@ public final class DataSourceInputStream extends InputStream {
         this.dataSpec = dataSpec;
     }
 
-    private void checkOpened() {
-        if (this.opened) {
-            return;
-        }
-        this.dataSource.open(this.dataSpec);
-        this.opened = true;
-    }
-
-    @Override // java.io.InputStream, java.io.Closeable, java.lang.AutoCloseable
-    public void close() {
-        if (this.closed) {
-            return;
-        }
-        this.dataSource.close();
-        this.closed = true;
-    }
-
     public void open() {
         checkOpened();
     }
@@ -61,5 +44,22 @@ public final class DataSourceInputStream extends InputStream {
         }
         this.totalBytesRead += read;
         return read;
+    }
+
+    @Override // java.io.InputStream, java.io.Closeable, java.lang.AutoCloseable
+    public void close() {
+        if (this.closed) {
+            return;
+        }
+        this.dataSource.close();
+        this.closed = true;
+    }
+
+    private void checkOpened() {
+        if (this.opened) {
+            return;
+        }
+        this.dataSource.open(this.dataSpec);
+        this.opened = true;
     }
 }

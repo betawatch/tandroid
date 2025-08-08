@@ -3,10 +3,15 @@ package kotlin.jvm.internal;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class ArrayIterator implements Iterator {
     private final Object[] array;
     private int index;
+
+    @Override // java.util.Iterator
+    public void remove() {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    }
 
     public ArrayIterator(Object[] array) {
         Intrinsics.checkNotNullParameter(array, "array");
@@ -29,10 +34,5 @@ final class ArrayIterator implements Iterator {
             this.index--;
             throw new NoSuchElementException(e.getMessage());
         }
-    }
-
-    @Override // java.util.Iterator
-    public void remove() {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 }

@@ -12,12 +12,6 @@ final class zzum extends zzsi implements RandomAccess, zztw, zzve {
     private long[] zzb;
     private int zzc;
 
-    private zzum(long[] jArr, int i, boolean z) {
-        super(z);
-        this.zzb = jArr;
-        this.zzc = i;
-    }
-
     public static zzum zze() {
         return zza;
     }
@@ -53,24 +47,6 @@ final class zzum extends zzsi implements RandomAccess, zztw, zzve {
         this.zzb[i] = longValue;
         this.zzc++;
         ((AbstractList) this).modCount++;
-    }
-
-    @Override // com.google.android.gms.internal.cast.zzsi, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final /* bridge */ /* synthetic */ boolean add(Object obj) {
-        long longValue = ((Long) obj).longValue();
-        zza();
-        int i = this.zzc;
-        long[] jArr = this.zzb;
-        if (i == jArr.length) {
-            long[] jArr2 = new long[((i * 3) / 2) + 1];
-            System.arraycopy(jArr, 0, jArr2, 0, i);
-            this.zzb = jArr2;
-        }
-        long[] jArr3 = this.zzb;
-        int i2 = this.zzc;
-        this.zzc = i2 + 1;
-        jArr3[i2] = longValue;
-        return true;
     }
 
     @Override // com.google.android.gms.internal.cast.zzsi, java.util.AbstractCollection, java.util.Collection, java.util.List
@@ -212,5 +188,29 @@ final class zzum extends zzsi implements RandomAccess, zztw, zzve {
             return new zzum(Arrays.copyOf(this.zzb, i), this.zzc, true);
         }
         throw new IllegalArgumentException();
+    }
+
+    private zzum(long[] jArr, int i, boolean z) {
+        super(z);
+        this.zzb = jArr;
+        this.zzc = i;
+    }
+
+    @Override // com.google.android.gms.internal.cast.zzsi, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final /* bridge */ /* synthetic */ boolean add(Object obj) {
+        long longValue = ((Long) obj).longValue();
+        zza();
+        int i = this.zzc;
+        long[] jArr = this.zzb;
+        if (i == jArr.length) {
+            long[] jArr2 = new long[((i * 3) / 2) + 1];
+            System.arraycopy(jArr, 0, jArr2, 0, i);
+            this.zzb = jArr2;
+        }
+        long[] jArr3 = this.zzb;
+        int i2 = this.zzc;
+        this.zzc = i2 + 1;
+        jArr3[i2] = longValue;
+        return true;
     }
 }

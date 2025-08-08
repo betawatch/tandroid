@@ -6,6 +6,23 @@ public final class TimeWindow {
     private final long end_ms_;
     private final long start_ms_;
 
+    TimeWindow(long j, long j2) {
+        this.start_ms_ = j;
+        this.end_ms_ = j2;
+    }
+
+    public static Builder newBuilder() {
+        return new Builder();
+    }
+
+    public long getStartMs() {
+        return this.start_ms_;
+    }
+
+    public long getEndMs() {
+        return this.end_ms_;
+    }
+
     public static final class Builder {
         private long start_ms_ = 0;
         private long end_ms_ = 0;
@@ -17,31 +34,14 @@ public final class TimeWindow {
             return new TimeWindow(this.start_ms_, this.end_ms_);
         }
 
-        public Builder setEndMs(long j) {
-            this.end_ms_ = j;
-            return this;
-        }
-
         public Builder setStartMs(long j) {
             this.start_ms_ = j;
             return this;
         }
-    }
 
-    TimeWindow(long j, long j2) {
-        this.start_ms_ = j;
-        this.end_ms_ = j2;
-    }
-
-    public static Builder newBuilder() {
-        return new Builder();
-    }
-
-    public long getEndMs() {
-        return this.end_ms_;
-    }
-
-    public long getStartMs() {
-        return this.start_ms_;
+        public Builder setEndMs(long j) {
+            this.end_ms_ = j;
+            return this;
+        }
     }
 }

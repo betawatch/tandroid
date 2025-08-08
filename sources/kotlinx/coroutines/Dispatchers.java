@@ -4,7 +4,7 @@ import kotlinx.coroutines.internal.MainDispatcherLoader;
 import kotlinx.coroutines.scheduling.DefaultIoScheduler;
 import kotlinx.coroutines.scheduling.DefaultScheduler;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class Dispatchers {
     public static final Dispatchers INSTANCE = new Dispatchers();
     private static final CoroutineDispatcher Default = DefaultScheduler.INSTANCE;
@@ -18,11 +18,11 @@ public final class Dispatchers {
         return Default;
     }
 
-    public static final CoroutineDispatcher getIO() {
-        return IO;
-    }
-
     public static final MainCoroutineDispatcher getMain() {
         return MainDispatcherLoader.dispatcher;
+    }
+
+    public static final CoroutineDispatcher getIO() {
+        return IO;
     }
 }

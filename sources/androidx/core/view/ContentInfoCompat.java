@@ -12,33 +12,6 @@ import java.util.Objects;
 public final class ContentInfoCompat {
     private final Compat mCompat;
 
-    public static final class Builder {
-        private final BuilderCompat mBuilderCompat;
-
-        public Builder(ClipData clipData, int i) {
-            this.mBuilderCompat = Build.VERSION.SDK_INT >= 31 ? new BuilderCompat31Impl(clipData, i) : new BuilderCompatImpl(clipData, i);
-        }
-
-        public ContentInfoCompat build() {
-            return this.mBuilderCompat.build();
-        }
-
-        public Builder setExtras(Bundle bundle) {
-            this.mBuilderCompat.setExtras(bundle);
-            return this;
-        }
-
-        public Builder setFlags(int i) {
-            this.mBuilderCompat.setFlags(i);
-            return this;
-        }
-
-        public Builder setLinkUri(Uri uri) {
-            this.mBuilderCompat.setLinkUri(uri);
-            return this;
-        }
-    }
-
     private interface BuilderCompat {
         ContentInfoCompat build();
 
@@ -47,69 +20,6 @@ public final class ContentInfoCompat {
         void setFlags(int i);
 
         void setLinkUri(Uri uri);
-    }
-
-    private static final class BuilderCompat31Impl implements BuilderCompat {
-        private final ContentInfo.Builder mPlatformBuilder;
-
-        BuilderCompat31Impl(ClipData clipData, int i) {
-            this.mPlatformBuilder = new ContentInfo.Builder(clipData, i);
-        }
-
-        @Override // androidx.core.view.ContentInfoCompat.BuilderCompat
-        public ContentInfoCompat build() {
-            ContentInfo build;
-            build = this.mPlatformBuilder.build();
-            return new ContentInfoCompat(new Compat31Impl(build));
-        }
-
-        @Override // androidx.core.view.ContentInfoCompat.BuilderCompat
-        public void setExtras(Bundle bundle) {
-            this.mPlatformBuilder.setExtras(bundle);
-        }
-
-        @Override // androidx.core.view.ContentInfoCompat.BuilderCompat
-        public void setFlags(int i) {
-            this.mPlatformBuilder.setFlags(i);
-        }
-
-        @Override // androidx.core.view.ContentInfoCompat.BuilderCompat
-        public void setLinkUri(Uri uri) {
-            this.mPlatformBuilder.setLinkUri(uri);
-        }
-    }
-
-    private static final class BuilderCompatImpl implements BuilderCompat {
-        ClipData mClip;
-        Bundle mExtras;
-        int mFlags;
-        Uri mLinkUri;
-        int mSource;
-
-        BuilderCompatImpl(ClipData clipData, int i) {
-            this.mClip = clipData;
-            this.mSource = i;
-        }
-
-        @Override // androidx.core.view.ContentInfoCompat.BuilderCompat
-        public ContentInfoCompat build() {
-            return new ContentInfoCompat(new CompatImpl(this));
-        }
-
-        @Override // androidx.core.view.ContentInfoCompat.BuilderCompat
-        public void setExtras(Bundle bundle) {
-            this.mExtras = bundle;
-        }
-
-        @Override // androidx.core.view.ContentInfoCompat.BuilderCompat
-        public void setFlags(int i) {
-            this.mFlags = i;
-        }
-
-        @Override // androidx.core.view.ContentInfoCompat.BuilderCompat
-        public void setLinkUri(Uri uri) {
-            this.mLinkUri = uri;
-        }
     }
 
     private interface Compat {
@@ -122,42 +32,63 @@ public final class ContentInfoCompat {
         ContentInfo getWrapped();
     }
 
-    private static final class Compat31Impl implements Compat {
-        private final ContentInfo mWrapped;
-
-        Compat31Impl(ContentInfo contentInfo) {
-            this.mWrapped = ContentInfoCompat$$ExternalSyntheticApiModelOutline0.m(Preconditions.checkNotNull(contentInfo));
+    static String sourceToString(int i) {
+        if (i == 0) {
+            return "SOURCE_APP";
         }
-
-        @Override // androidx.core.view.ContentInfoCompat.Compat
-        public ClipData getClip() {
-            ClipData clip;
-            clip = this.mWrapped.getClip();
-            return clip;
+        if (i == 1) {
+            return "SOURCE_CLIPBOARD";
         }
-
-        @Override // androidx.core.view.ContentInfoCompat.Compat
-        public int getFlags() {
-            int flags;
-            flags = this.mWrapped.getFlags();
-            return flags;
+        if (i == 2) {
+            return "SOURCE_INPUT_METHOD";
         }
-
-        @Override // androidx.core.view.ContentInfoCompat.Compat
-        public int getSource() {
-            int source;
-            source = this.mWrapped.getSource();
-            return source;
+        if (i == 3) {
+            return "SOURCE_DRAG_AND_DROP";
         }
-
-        @Override // androidx.core.view.ContentInfoCompat.Compat
-        public ContentInfo getWrapped() {
-            return this.mWrapped;
+        if (i == 4) {
+            return "SOURCE_AUTOFILL";
         }
-
-        public String toString() {
-            return "ContentInfoCompat{" + this.mWrapped + "}";
+        if (i == 5) {
+            return "SOURCE_PROCESS_TEXT";
         }
+        return String.valueOf(i);
+    }
+
+    static String flagsToString(int i) {
+        if ((i & 1) != 0) {
+            return "FLAG_CONVERT_TO_PLAIN_TEXT";
+        }
+        return String.valueOf(i);
+    }
+
+    ContentInfoCompat(Compat compat) {
+        this.mCompat = compat;
+    }
+
+    public static ContentInfoCompat toContentInfoCompat(ContentInfo contentInfo) {
+        return new ContentInfoCompat(new Compat31Impl(contentInfo));
+    }
+
+    public ContentInfo toContentInfo() {
+        ContentInfo wrapped = this.mCompat.getWrapped();
+        Objects.requireNonNull(wrapped);
+        return ContentInfoCompat$$ExternalSyntheticApiModelOutline0.m(wrapped);
+    }
+
+    public String toString() {
+        return this.mCompat.toString();
+    }
+
+    public ClipData getClip() {
+        return this.mCompat.getClip();
+    }
+
+    public int getSource() {
+        return this.mCompat.getSource();
+    }
+
+    public int getFlags() {
+        return this.mCompat.getFlags();
     }
 
     private static final class CompatImpl implements Compat {
@@ -166,6 +97,11 @@ public final class ContentInfoCompat {
         private final int mFlags;
         private final Uri mLinkUri;
         private final int mSource;
+
+        @Override // androidx.core.view.ContentInfoCompat.Compat
+        public ContentInfo getWrapped() {
+            return null;
+        }
 
         CompatImpl(BuilderCompatImpl builderCompatImpl) {
             this.mClip = (ClipData) Preconditions.checkNotNull(builderCompatImpl.mClip);
@@ -181,18 +117,13 @@ public final class ContentInfoCompat {
         }
 
         @Override // androidx.core.view.ContentInfoCompat.Compat
-        public int getFlags() {
-            return this.mFlags;
-        }
-
-        @Override // androidx.core.view.ContentInfoCompat.Compat
         public int getSource() {
             return this.mSource;
         }
 
         @Override // androidx.core.view.ContentInfoCompat.Compat
-        public ContentInfo getWrapped() {
-            return null;
+        public int getFlags() {
+            return this.mFlags;
         }
 
         public String toString() {
@@ -216,41 +147,135 @@ public final class ContentInfoCompat {
         }
     }
 
-    ContentInfoCompat(Compat compat) {
-        this.mCompat = compat;
+    private static final class Compat31Impl implements Compat {
+        private final ContentInfo mWrapped;
+
+        Compat31Impl(ContentInfo contentInfo) {
+            this.mWrapped = ContentInfoCompat$$ExternalSyntheticApiModelOutline0.m(Preconditions.checkNotNull(contentInfo));
+        }
+
+        @Override // androidx.core.view.ContentInfoCompat.Compat
+        public ContentInfo getWrapped() {
+            return this.mWrapped;
+        }
+
+        @Override // androidx.core.view.ContentInfoCompat.Compat
+        public ClipData getClip() {
+            ClipData clip;
+            clip = this.mWrapped.getClip();
+            return clip;
+        }
+
+        @Override // androidx.core.view.ContentInfoCompat.Compat
+        public int getSource() {
+            int source;
+            source = this.mWrapped.getSource();
+            return source;
+        }
+
+        @Override // androidx.core.view.ContentInfoCompat.Compat
+        public int getFlags() {
+            int flags;
+            flags = this.mWrapped.getFlags();
+            return flags;
+        }
+
+        public String toString() {
+            return "ContentInfoCompat{" + this.mWrapped + "}";
+        }
     }
 
-    static String flagsToString(int i) {
-        return (i & 1) != 0 ? "FLAG_CONVERT_TO_PLAIN_TEXT" : String.valueOf(i);
+    public static final class Builder {
+        private final BuilderCompat mBuilderCompat;
+
+        public Builder(ClipData clipData, int i) {
+            if (Build.VERSION.SDK_INT >= 31) {
+                this.mBuilderCompat = new BuilderCompat31Impl(clipData, i);
+            } else {
+                this.mBuilderCompat = new BuilderCompatImpl(clipData, i);
+            }
+        }
+
+        public Builder setFlags(int i) {
+            this.mBuilderCompat.setFlags(i);
+            return this;
+        }
+
+        public Builder setLinkUri(Uri uri) {
+            this.mBuilderCompat.setLinkUri(uri);
+            return this;
+        }
+
+        public Builder setExtras(Bundle bundle) {
+            this.mBuilderCompat.setExtras(bundle);
+            return this;
+        }
+
+        public ContentInfoCompat build() {
+            return this.mBuilderCompat.build();
+        }
     }
 
-    static String sourceToString(int i) {
-        return i != 0 ? i != 1 ? i != 2 ? i != 3 ? i != 4 ? i != 5 ? String.valueOf(i) : "SOURCE_PROCESS_TEXT" : "SOURCE_AUTOFILL" : "SOURCE_DRAG_AND_DROP" : "SOURCE_INPUT_METHOD" : "SOURCE_CLIPBOARD" : "SOURCE_APP";
+    private static final class BuilderCompatImpl implements BuilderCompat {
+        ClipData mClip;
+        Bundle mExtras;
+        int mFlags;
+        Uri mLinkUri;
+        int mSource;
+
+        BuilderCompatImpl(ClipData clipData, int i) {
+            this.mClip = clipData;
+            this.mSource = i;
+        }
+
+        @Override // androidx.core.view.ContentInfoCompat.BuilderCompat
+        public void setFlags(int i) {
+            this.mFlags = i;
+        }
+
+        @Override // androidx.core.view.ContentInfoCompat.BuilderCompat
+        public void setLinkUri(Uri uri) {
+            this.mLinkUri = uri;
+        }
+
+        @Override // androidx.core.view.ContentInfoCompat.BuilderCompat
+        public void setExtras(Bundle bundle) {
+            this.mExtras = bundle;
+        }
+
+        @Override // androidx.core.view.ContentInfoCompat.BuilderCompat
+        public ContentInfoCompat build() {
+            return new ContentInfoCompat(new CompatImpl(this));
+        }
     }
 
-    public static ContentInfoCompat toContentInfoCompat(ContentInfo contentInfo) {
-        return new ContentInfoCompat(new Compat31Impl(contentInfo));
-    }
+    private static final class BuilderCompat31Impl implements BuilderCompat {
+        private final ContentInfo.Builder mPlatformBuilder;
 
-    public ClipData getClip() {
-        return this.mCompat.getClip();
-    }
+        BuilderCompat31Impl(ClipData clipData, int i) {
+            this.mPlatformBuilder = ContentInfoCompat$BuilderCompat31Impl$$ExternalSyntheticApiModelOutline2.m(clipData, i);
+        }
 
-    public int getFlags() {
-        return this.mCompat.getFlags();
-    }
+        @Override // androidx.core.view.ContentInfoCompat.BuilderCompat
+        public void setFlags(int i) {
+            this.mPlatformBuilder.setFlags(i);
+        }
 
-    public int getSource() {
-        return this.mCompat.getSource();
-    }
+        @Override // androidx.core.view.ContentInfoCompat.BuilderCompat
+        public void setLinkUri(Uri uri) {
+            this.mPlatformBuilder.setLinkUri(uri);
+        }
 
-    public ContentInfo toContentInfo() {
-        ContentInfo wrapped = this.mCompat.getWrapped();
-        Objects.requireNonNull(wrapped);
-        return ContentInfoCompat$$ExternalSyntheticApiModelOutline0.m(wrapped);
-    }
+        @Override // androidx.core.view.ContentInfoCompat.BuilderCompat
+        public void setExtras(Bundle bundle) {
+            this.mPlatformBuilder.setExtras(bundle);
+        }
 
-    public String toString() {
-        return this.mCompat.toString();
+        @Override // androidx.core.view.ContentInfoCompat.BuilderCompat
+        public ContentInfoCompat build() {
+            ContentInfo build;
+            build = this.mPlatformBuilder.build();
+            return new ContentInfoCompat(new Compat31Impl(build));
+        }
     }
 }

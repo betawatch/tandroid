@@ -17,6 +17,38 @@ import androidx.core.view.ViewCompat;
 
 /* loaded from: classes.dex */
 abstract class AppCompatReceiveContentHelper {
+    static boolean maybeHandleMenuActionViaPerformReceiveContent(TextView textView, int i) {
+        if (Build.VERSION.SDK_INT >= 31 || ViewCompat.getOnReceiveContentMimeTypes(textView) == null || !(i == 16908322 || i == 16908337)) {
+            return false;
+        }
+        ClipboardManager clipboardManager = (ClipboardManager) textView.getContext().getSystemService("clipboard");
+        ClipData primaryClip = clipboardManager == null ? null : clipboardManager.getPrimaryClip();
+        if (primaryClip != null && primaryClip.getItemCount() > 0) {
+            ViewCompat.performReceiveContent(textView, new ContentInfoCompat.Builder(primaryClip, 1).setFlags(i != 16908322 ? 1 : 0).build());
+        }
+        return true;
+    }
+
+    static boolean maybeHandleDragEventViaPerformReceiveContent(View view, DragEvent dragEvent) {
+        int i = Build.VERSION.SDK_INT;
+        if (i < 31 && i >= 24 && dragEvent.getLocalState() == null && ViewCompat.getOnReceiveContentMimeTypes(view) != null) {
+            Activity tryGetActivity = tryGetActivity(view);
+            if (tryGetActivity == null) {
+                Log.i("ReceiveContent", "Can't handle drop: no activity: view=" + view);
+                return false;
+            }
+            if (dragEvent.getAction() == 1) {
+                return !(view instanceof TextView);
+            }
+            if (dragEvent.getAction() == 3) {
+                if (view instanceof TextView) {
+                    return OnDropApi24Impl.onDropForTextView(dragEvent, (TextView) view, tryGetActivity);
+                }
+                return OnDropApi24Impl.onDropForView(dragEvent, view, tryGetActivity);
+            }
+        }
+        return false;
+    }
 
     private static final class OnDropApi24Impl {
         static boolean onDropForTextView(DragEvent dragEvent, TextView textView, Activity activity) {
@@ -39,36 +71,6 @@ abstract class AppCompatReceiveContentHelper {
             ViewCompat.performReceiveContent(view, new ContentInfoCompat.Builder(dragEvent.getClipData(), 3).build());
             return true;
         }
-    }
-
-    static boolean maybeHandleDragEventViaPerformReceiveContent(View view, DragEvent dragEvent) {
-        int i = Build.VERSION.SDK_INT;
-        if (i < 31 && i >= 24 && dragEvent.getLocalState() == null && ViewCompat.getOnReceiveContentMimeTypes(view) != null) {
-            Activity tryGetActivity = tryGetActivity(view);
-            if (tryGetActivity == null) {
-                Log.i("ReceiveContent", "Can't handle drop: no activity: view=" + view);
-                return false;
-            }
-            if (dragEvent.getAction() == 1) {
-                return !(view instanceof TextView);
-            }
-            if (dragEvent.getAction() == 3) {
-                return view instanceof TextView ? OnDropApi24Impl.onDropForTextView(dragEvent, (TextView) view, tryGetActivity) : OnDropApi24Impl.onDropForView(dragEvent, view, tryGetActivity);
-            }
-        }
-        return false;
-    }
-
-    static boolean maybeHandleMenuActionViaPerformReceiveContent(TextView textView, int i) {
-        if (Build.VERSION.SDK_INT >= 31 || ViewCompat.getOnReceiveContentMimeTypes(textView) == null || !(i == 16908322 || i == 16908337)) {
-            return false;
-        }
-        ClipboardManager clipboardManager = (ClipboardManager) textView.getContext().getSystemService("clipboard");
-        ClipData primaryClip = clipboardManager == null ? null : clipboardManager.getPrimaryClip();
-        if (primaryClip != null && primaryClip.getItemCount() > 0) {
-            ViewCompat.performReceiveContent(textView, new ContentInfoCompat.Builder(primaryClip, 1).setFlags(i != 16908322 ? 1 : 0).build());
-        }
-        return true;
     }
 
     static Activity tryGetActivity(View view) {

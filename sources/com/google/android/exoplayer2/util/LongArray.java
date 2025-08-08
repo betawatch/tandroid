@@ -28,10 +28,10 @@ public final class LongArray {
     }
 
     public long get(int i) {
-        if (i >= 0 && i < this.size) {
-            return this.values[i];
+        if (i < 0 || i >= this.size) {
+            throw new IndexOutOfBoundsException("Invalid index " + i + ", size is " + this.size);
         }
-        throw new IndexOutOfBoundsException("Invalid index " + i + ", size is " + this.size);
+        return this.values[i];
     }
 
     public int size() {

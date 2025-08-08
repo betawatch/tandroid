@@ -6,9 +6,8 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.List;
 import javax.net.ssl.HttpsURLConnection;
-import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 
 /* loaded from: classes.dex */
@@ -20,21 +19,20 @@ public final class zzbo implements zzbn {
     }
 
     private static final void zzb(byte[] bArr) {
-        List listOf;
         for (zznf zznfVar : zzni.zzk(bArr).zzH()) {
-            listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new String[]{"INIT_TOTAL", "EXECUTE_TOTAL"});
-            if (listOf.contains(zznfVar.zzj().name()) && zznfVar.zzT()) {
+            if (CollectionsKt.listOf((Object[]) new String[]{"INIT_TOTAL", "EXECUTE_TOTAL"}).contains(zznfVar.zzj().name()) && zznfVar.zzT()) {
                 zznfVar.zzJ();
                 zznfVar.zzK();
                 zznfVar.zzj().name();
                 zznfVar.zzg().zzk();
                 zznfVar.zzg().zzf();
+                zznfVar.zzU();
             } else {
                 zznfVar.zzJ();
                 zznfVar.zzK();
                 zznfVar.zzj().name();
+                zznfVar.zzU();
             }
-            zznfVar.zzU();
         }
     }
 

@@ -8,6 +8,23 @@ import java.util.UUID;
 
 /* loaded from: classes.dex */
 public interface DrmSession {
+    void acquire(DrmSessionEventListener.EventDispatcher eventDispatcher);
+
+    CryptoConfig getCryptoConfig();
+
+    DrmSessionException getError();
+
+    UUID getSchemeUuid();
+
+    int getState();
+
+    boolean playClearSamplesWithoutKeys();
+
+    Map queryKeyStatus();
+
+    void release(DrmSessionEventListener.EventDispatcher eventDispatcher);
+
+    boolean requiresSecureDecoder(String str);
 
     public abstract /* synthetic */ class -CC {
         public static void replaceSession(DrmSession drmSession, DrmSession drmSession2) {
@@ -31,22 +48,4 @@ public interface DrmSession {
             this.errorCode = i;
         }
     }
-
-    void acquire(DrmSessionEventListener.EventDispatcher eventDispatcher);
-
-    CryptoConfig getCryptoConfig();
-
-    DrmSessionException getError();
-
-    UUID getSchemeUuid();
-
-    int getState();
-
-    boolean playClearSamplesWithoutKeys();
-
-    Map queryKeyStatus();
-
-    void release(DrmSessionEventListener.EventDispatcher eventDispatcher);
-
-    boolean requiresSecureDecoder(String str);
 }

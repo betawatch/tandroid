@@ -5,11 +5,11 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.Arrays;
 import kotlin.Unit;
-import kotlin.collections.ArraysKt___ArraysJvmKt;
+import kotlin.collections.ArraysKt;
 import kotlin.jvm.internal.Intrinsics;
 
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class FilesKt__FileReadWriteKt extends FilesKt__FilePathComponentsKt {
     public static byte[] readBytes(File file) {
         Intrinsics.checkNotNullParameter(file, "<this>");
@@ -47,7 +47,7 @@ public abstract class FilesKt__FileReadWriteKt extends FilesKt__FilePathComponen
                     byte[] buffer = exposingBufferByteArrayOutputStream.getBuffer();
                     byte[] copyOf = Arrays.copyOf(bArr, size);
                     Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(this, newSize)");
-                    bArr = ArraysKt___ArraysJvmKt.copyInto(buffer, copyOf, i, 0, exposingBufferByteArrayOutputStream.size());
+                    bArr = ArraysKt.copyInto(buffer, copyOf, i, 0, exposingBufferByteArrayOutputStream.size());
                 }
             }
             CloseableKt.closeFinally(fileInputStream, null);

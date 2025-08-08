@@ -14,19 +14,14 @@ public final class zzlz extends AbstractList implements zzjv, RandomAccess {
         this.zza = zzjvVar;
     }
 
-    @Override // java.util.AbstractList, java.util.List
-    public final /* synthetic */ Object get(int i) {
-        return (String) this.zza.get(i);
+    @Override // com.google.android.gms.internal.vision.zzjv
+    public final zzjv zze() {
+        return this;
     }
 
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
-    public final Iterator iterator() {
-        return new zzmb(this);
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final ListIterator listIterator(int i) {
-        return new zzly(this, i);
+    @Override // com.google.android.gms.internal.vision.zzjv
+    public final Object zzb(int i) {
+        return this.zza.zzb(i);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
@@ -39,9 +34,14 @@ public final class zzlz extends AbstractList implements zzjv, RandomAccess {
         throw new UnsupportedOperationException();
     }
 
-    @Override // com.google.android.gms.internal.vision.zzjv
-    public final Object zzb(int i) {
-        return this.zza.zzb(i);
+    @Override // java.util.AbstractList, java.util.List
+    public final ListIterator listIterator(int i) {
+        return new zzly(this, i);
+    }
+
+    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
+    public final Iterator iterator() {
+        return new zzmb(this);
     }
 
     @Override // com.google.android.gms.internal.vision.zzjv
@@ -49,8 +49,8 @@ public final class zzlz extends AbstractList implements zzjv, RandomAccess {
         return this.zza.zzd();
     }
 
-    @Override // com.google.android.gms.internal.vision.zzjv
-    public final zzjv zze() {
-        return this;
+    @Override // java.util.AbstractList, java.util.List
+    public final /* synthetic */ Object get(int i) {
+        return (String) this.zza.get(i);
     }
 }

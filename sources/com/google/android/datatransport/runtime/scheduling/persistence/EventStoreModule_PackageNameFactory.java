@@ -13,16 +13,16 @@ public final class EventStoreModule_PackageNameFactory implements Factory {
         this.contextProvider = provider;
     }
 
+    @Override // javax.inject.Provider
+    public String get() {
+        return packageName((Context) this.contextProvider.get());
+    }
+
     public static EventStoreModule_PackageNameFactory create(Provider provider) {
         return new EventStoreModule_PackageNameFactory(provider);
     }
 
     public static String packageName(Context context) {
         return (String) Preconditions.checkNotNull(EventStoreModule.packageName(context), "Cannot return null from a non-@Nullable @Provides method");
-    }
-
-    @Override // javax.inject.Provider
-    public String get() {
-        return packageName((Context) this.contextProvider.get());
     }
 }

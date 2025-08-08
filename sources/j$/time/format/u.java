@@ -13,22 +13,19 @@ class u {
     private static final Comparator b = new s();
     public static final /* synthetic */ int c = 0;
 
-    u() {
-    }
-
     private static String b(String str) {
         return str.substring(0, Character.charCount(str.codePointAt(0)));
     }
 
-    public String c(j$.time.temporal.l lVar, long j, TextStyle textStyle, Locale locale) {
+    public String c(j$.time.temporal.a aVar, long j, TextStyle textStyle, Locale locale) {
         Object obj;
-        AbstractMap.SimpleImmutableEntry simpleImmutableEntry = new AbstractMap.SimpleImmutableEntry(lVar, locale);
+        AbstractMap.SimpleImmutableEntry simpleImmutableEntry = new AbstractMap.SimpleImmutableEntry(aVar, locale);
         ConcurrentHashMap concurrentHashMap = a;
         Object obj2 = concurrentHashMap.get(simpleImmutableEntry);
         if (obj2 == null) {
             HashMap hashMap = new HashMap();
             int i = 0;
-            if (lVar == j$.time.temporal.a.ERA) {
+            if (aVar == j$.time.temporal.a.ERA) {
                 DateFormatSymbols dateFormatSymbols = DateFormatSymbols.getInstance(locale);
                 HashMap hashMap2 = new HashMap();
                 HashMap hashMap3 = new HashMap();
@@ -47,7 +44,7 @@ class u {
                     hashMap.put(TextStyle.NARROW, hashMap3);
                 }
                 obj = new t(hashMap);
-            } else if (lVar == j$.time.temporal.a.MONTH_OF_YEAR) {
+            } else if (aVar == j$.time.temporal.a.MONTH_OF_YEAR) {
                 DateFormatSymbols dateFormatSymbols2 = DateFormatSymbols.getInstance(locale);
                 HashMap hashMap4 = new HashMap();
                 HashMap hashMap5 = new HashMap();
@@ -75,7 +72,7 @@ class u {
                     hashMap.put(TextStyle.SHORT, hashMap6);
                 }
                 obj = new t(hashMap);
-            } else if (lVar == j$.time.temporal.a.DAY_OF_WEEK) {
+            } else if (aVar == j$.time.temporal.a.DAY_OF_WEEK) {
                 DateFormatSymbols dateFormatSymbols3 = DateFormatSymbols.getInstance(locale);
                 HashMap hashMap7 = new HashMap();
                 String[] weekdays = dateFormatSymbols3.getWeekdays();
@@ -107,7 +104,7 @@ class u {
                 hashMap9.put(7L, shortWeekdays[1]);
                 hashMap.put(TextStyle.SHORT, hashMap9);
                 obj = new t(hashMap);
-            } else if (lVar == j$.time.temporal.a.AMPM_OF_DAY) {
+            } else if (aVar == j$.time.temporal.a.AMPM_OF_DAY) {
                 DateFormatSymbols dateFormatSymbols4 = DateFormatSymbols.getInstance(locale);
                 HashMap hashMap10 = new HashMap();
                 HashMap hashMap11 = new HashMap();

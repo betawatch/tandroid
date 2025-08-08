@@ -1,9 +1,10 @@
 package androidx.core.os;
 
-import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.Parcelable;
+import android.util.Size;
+import android.util.SizeF;
 import java.io.Serializable;
 import kotlin.Pair;
 import kotlin.jvm.internal.Intrinsics;
@@ -68,27 +69,21 @@ public abstract class BundleKt {
                 } else if (CharSequence.class.isAssignableFrom(componentType)) {
                     Intrinsics.checkNotNull(component2, "null cannot be cast to non-null type kotlin.Array<kotlin.CharSequence>");
                     bundle.putCharSequenceArray(str, (CharSequence[]) component2);
-                } else {
-                    if (!Serializable.class.isAssignableFrom(componentType)) {
-                        throw new IllegalArgumentException("Illegal value array type " + componentType.getCanonicalName() + " for key \"" + str + '\"');
-                    }
+                } else if (Serializable.class.isAssignableFrom(componentType)) {
                     bundle.putSerializable(str, (Serializable) component2);
+                } else {
+                    throw new IllegalArgumentException("Illegal value array type " + componentType.getCanonicalName() + " for key \"" + str + '\"');
                 }
-            } else {
-                if (!(component2 instanceof Serializable)) {
-                    int i = Build.VERSION.SDK_INT;
-                    if (component2 instanceof IBinder) {
-                        BundleApi18ImplKt.putBinder(bundle, str, (IBinder) component2);
-                    } else if (i >= 21 && BundleKt$$ExternalSyntheticApiModelOutline0.m(component2)) {
-                        BundleApi21ImplKt.putSize(bundle, str, BundleKt$$ExternalSyntheticApiModelOutline1.m(component2));
-                    } else {
-                        if (i < 21 || !BundleKt$$ExternalSyntheticApiModelOutline2.m(component2)) {
-                            throw new IllegalArgumentException("Illegal value type " + component2.getClass().getCanonicalName() + " for key \"" + str + '\"');
-                        }
-                        BundleApi21ImplKt.putSizeF(bundle, str, BundleKt$$ExternalSyntheticApiModelOutline3.m(component2));
-                    }
-                }
+            } else if (component2 instanceof Serializable) {
                 bundle.putSerializable(str, (Serializable) component2);
+            } else if (component2 instanceof IBinder) {
+                BundleApi18ImplKt.putBinder(bundle, str, (IBinder) component2);
+            } else if (component2 instanceof Size) {
+                BundleApi21ImplKt.putSize(bundle, str, (Size) component2);
+            } else if (component2 instanceof SizeF) {
+                BundleApi21ImplKt.putSizeF(bundle, str, (SizeF) component2);
+            } else {
+                throw new IllegalArgumentException("Illegal value type " + component2.getClass().getCanonicalName() + " for key \"" + str + '\"');
             }
         }
         return bundle;

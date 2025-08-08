@@ -24,26 +24,23 @@ final class ao extends IntegrityTokenRequest {
 
     public final boolean equals(Object obj) {
         boolean z;
+        Long l;
         if (obj == this) {
             return true;
         }
         if (obj instanceof IntegrityTokenRequest) {
             IntegrityTokenRequest integrityTokenRequest = (IntegrityTokenRequest) obj;
-            if (this.a.equals(integrityTokenRequest.nonce())) {
-                Long l = this.b;
-                Long cloudProjectNumber = integrityTokenRequest.cloudProjectNumber();
-                if (l != null ? l.equals(cloudProjectNumber) : cloudProjectNumber == null) {
-                    z = true;
-                    if ((obj instanceof ao) || !a()) {
-                        return z;
-                    }
-                    ao aoVar = (ao) obj;
-                    if (!z) {
-                        return false;
-                    }
-                    Object obj2 = aoVar.c;
-                    return true;
+            if (this.a.equals(integrityTokenRequest.nonce()) && ((l = this.b) != null ? l.equals(integrityTokenRequest.cloudProjectNumber()) : integrityTokenRequest.cloudProjectNumber() == null)) {
+                z = true;
+                if ((obj instanceof ao) || !a()) {
+                    return z;
                 }
+                ao aoVar = (ao) obj;
+                if (!z) {
+                    return false;
+                }
+                Object obj2 = aoVar.c;
+                return true;
             }
         }
         z = false;

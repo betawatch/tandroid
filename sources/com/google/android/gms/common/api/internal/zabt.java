@@ -24,7 +24,7 @@ final class zabt implements Runnable {
         Api.Client client3;
         Api.Client client4;
         zabu zabuVar = this.zab;
-        map = zabuVar.zaa.zap;
+        map = zabuVar.zaa.zan;
         apiKey = zabuVar.zac;
         zabq zabqVar = (zabq) map.get(apiKey);
         if (zabqVar == null) {
@@ -37,7 +37,7 @@ final class zabt implements Runnable {
         this.zab.zaf = true;
         client = this.zab.zab;
         if (client.requiresSignIn()) {
-            this.zab.zag();
+            this.zab.zah();
             return;
         }
         try {

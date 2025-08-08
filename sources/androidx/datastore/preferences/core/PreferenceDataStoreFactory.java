@@ -5,7 +5,7 @@ import androidx.datastore.core.DataStoreFactory;
 import androidx.datastore.core.handlers.ReplaceFileCorruptionHandler;
 import java.io.File;
 import java.util.List;
-import kotlin.io.FilesKt__UtilsKt;
+import kotlin.io.FilesKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CoroutineScope;
@@ -28,9 +28,8 @@ public final class PreferenceDataStoreFactory {
 
             @Override // kotlin.jvm.functions.Function0
             public final File invoke() {
-                String extension;
                 File file = (File) Function0.this.invoke();
-                extension = FilesKt__UtilsKt.getExtension(file);
+                String extension = FilesKt.getExtension(file);
                 PreferencesSerializer preferencesSerializer = PreferencesSerializer.INSTANCE;
                 if (Intrinsics.areEqual(extension, preferencesSerializer.getFileExtension())) {
                     return file;

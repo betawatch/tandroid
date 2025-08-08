@@ -3,19 +3,16 @@ package com.google.android.recaptcha.internal;
 import android.content.Context;
 import java.util.Map;
 import kotlin.TuplesKt;
-import kotlin.collections.MapsKt__MapsKt;
+import kotlin.collections.MapsKt;
 import org.webrtc.MediaStreamTrack;
 
 /* loaded from: classes.dex */
 public final class zzeo implements zzen {
     private final Context zzb;
-    private final Map zzc;
+    private final Map zzc = MapsKt.mapOf(TuplesKt.to(2, "activity"), TuplesKt.to(3, "phone"), TuplesKt.to(4, "input_method"), TuplesKt.to(5, MediaStreamTrack.AUDIO_TRACK_KIND));
 
     public zzeo(Context context) {
-        Map mapOf;
         this.zzb = context;
-        mapOf = MapsKt__MapsKt.mapOf(TuplesKt.to(2, "activity"), TuplesKt.to(3, "phone"), TuplesKt.to(4, "input_method"), TuplesKt.to(5, MediaStreamTrack.AUDIO_TRACK_KIND));
-        this.zzc = mapOf;
     }
 
     @Override // com.google.android.recaptcha.internal.zzen

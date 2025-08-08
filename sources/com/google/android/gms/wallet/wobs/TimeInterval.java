@@ -11,16 +11,16 @@ public final class TimeInterval extends AbstractSafeParcelable {
     long zza;
     long zzb;
 
-    public TimeInterval(long j, long j2) {
-        this.zza = j;
-        this.zzb = j2;
-    }
-
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
         SafeParcelWriter.writeLong(parcel, 2, this.zza);
         SafeParcelWriter.writeLong(parcel, 3, this.zzb);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    public TimeInterval(long j, long j2) {
+        this.zza = j;
+        this.zzb = j2;
     }
 }

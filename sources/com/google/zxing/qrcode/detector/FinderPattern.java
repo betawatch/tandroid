@@ -2,7 +2,7 @@ package com.google.zxing.qrcode.detector;
 
 import com.google.zxing.ResultPoint;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class FinderPattern extends ResultPoint {
     private final int count;
     private final float estimatedModuleSize;
@@ -15,6 +15,14 @@ public final class FinderPattern extends ResultPoint {
         super(f, f2);
         this.estimatedModuleSize = f3;
         this.count = i;
+    }
+
+    public float getEstimatedModuleSize() {
+        return this.estimatedModuleSize;
+    }
+
+    int getCount() {
+        return this.count;
     }
 
     boolean aboutEquals(float f, float f2, float f3) {
@@ -31,13 +39,5 @@ public final class FinderPattern extends ResultPoint {
         float x = (i * getX()) + f2;
         float f4 = i2;
         return new FinderPattern(x / f4, ((this.count * getY()) + f) / f4, ((this.count * this.estimatedModuleSize) + f3) / f4, i2);
-    }
-
-    int getCount() {
-        return this.count;
-    }
-
-    public float getEstimatedModuleSize() {
-        return this.estimatedModuleSize;
     }
 }

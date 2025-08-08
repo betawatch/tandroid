@@ -25,6 +25,20 @@ abstract class MediaRouterUtils {
         void onRouteVolumeChanged(MediaRouter.RouteInfo routeInfo);
     }
 
+    public interface VolumeCallback {
+        void onVolumeSetRequest(MediaRouter.RouteInfo routeInfo, int i);
+
+        void onVolumeUpdateRequest(MediaRouter.RouteInfo routeInfo, int i);
+    }
+
+    public static MediaRouter.Callback createCallback(Callback callback) {
+        return new CallbackProxy(callback);
+    }
+
+    public static MediaRouter.VolumeCallback createVolumeCallback(VolumeCallback volumeCallback) {
+        return new VolumeCallbackProxy(volumeCallback);
+    }
+
     static class CallbackProxy extends MediaRouter.Callback {
         protected final Callback mCallback;
 
@@ -33,8 +47,23 @@ abstract class MediaRouterUtils {
         }
 
         @Override // android.media.MediaRouter.Callback
+        public void onRouteSelected(android.media.MediaRouter mediaRouter, int i, MediaRouter.RouteInfo routeInfo) {
+            this.mCallback.onRouteSelected(i, routeInfo);
+        }
+
+        @Override // android.media.MediaRouter.Callback
+        public void onRouteUnselected(android.media.MediaRouter mediaRouter, int i, MediaRouter.RouteInfo routeInfo) {
+            this.mCallback.onRouteUnselected(i, routeInfo);
+        }
+
+        @Override // android.media.MediaRouter.Callback
         public void onRouteAdded(android.media.MediaRouter mediaRouter, MediaRouter.RouteInfo routeInfo) {
             this.mCallback.onRouteAdded(routeInfo);
+        }
+
+        @Override // android.media.MediaRouter.Callback
+        public void onRouteRemoved(android.media.MediaRouter mediaRouter, MediaRouter.RouteInfo routeInfo) {
+            this.mCallback.onRouteRemoved(routeInfo);
         }
 
         @Override // android.media.MediaRouter.Callback
@@ -48,40 +77,19 @@ abstract class MediaRouterUtils {
         }
 
         @Override // android.media.MediaRouter.Callback
-        public void onRoutePresentationDisplayChanged(android.media.MediaRouter mediaRouter, MediaRouter.RouteInfo routeInfo) {
-            this.mCallback.onRoutePresentationDisplayChanged(routeInfo);
-        }
-
-        @Override // android.media.MediaRouter.Callback
-        public void onRouteRemoved(android.media.MediaRouter mediaRouter, MediaRouter.RouteInfo routeInfo) {
-            this.mCallback.onRouteRemoved(routeInfo);
-        }
-
-        @Override // android.media.MediaRouter.Callback
-        public void onRouteSelected(android.media.MediaRouter mediaRouter, int i, MediaRouter.RouteInfo routeInfo) {
-            this.mCallback.onRouteSelected(i, routeInfo);
-        }
-
-        @Override // android.media.MediaRouter.Callback
         public void onRouteUngrouped(android.media.MediaRouter mediaRouter, MediaRouter.RouteInfo routeInfo, MediaRouter.RouteGroup routeGroup) {
             this.mCallback.onRouteUngrouped(routeInfo, routeGroup);
-        }
-
-        @Override // android.media.MediaRouter.Callback
-        public void onRouteUnselected(android.media.MediaRouter mediaRouter, int i, MediaRouter.RouteInfo routeInfo) {
-            this.mCallback.onRouteUnselected(i, routeInfo);
         }
 
         @Override // android.media.MediaRouter.Callback
         public void onRouteVolumeChanged(android.media.MediaRouter mediaRouter, MediaRouter.RouteInfo routeInfo) {
             this.mCallback.onRouteVolumeChanged(routeInfo);
         }
-    }
 
-    public interface VolumeCallback {
-        void onVolumeSetRequest(MediaRouter.RouteInfo routeInfo, int i);
-
-        void onVolumeUpdateRequest(MediaRouter.RouteInfo routeInfo, int i);
+        @Override // android.media.MediaRouter.Callback
+        public void onRoutePresentationDisplayChanged(android.media.MediaRouter mediaRouter, MediaRouter.RouteInfo routeInfo) {
+            this.mCallback.onRoutePresentationDisplayChanged(routeInfo);
+        }
     }
 
     static class VolumeCallbackProxy extends MediaRouter.VolumeCallback {
@@ -100,13 +108,5 @@ abstract class MediaRouterUtils {
         public void onVolumeUpdateRequest(MediaRouter.RouteInfo routeInfo, int i) {
             this.mCallback.onVolumeUpdateRequest(routeInfo, i);
         }
-    }
-
-    public static MediaRouter.Callback createCallback(Callback callback) {
-        return new CallbackProxy(callback);
-    }
-
-    public static MediaRouter.VolumeCallback createVolumeCallback(VolumeCallback volumeCallback) {
-        return new VolumeCallbackProxy(volumeCallback);
     }
 }

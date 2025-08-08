@@ -6,7 +6,7 @@ import kotlinx.coroutines.CancellableContinuation;
 import kotlinx.coroutines.internal.Symbol;
 import kotlinx.coroutines.internal.SystemPropsKt__SystemProps_commonKt;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class BufferedChannelKt {
     public static final Symbol BUFFERED;
     private static final Symbol CHANNEL_CLOSED;
@@ -27,6 +27,36 @@ public abstract class BufferedChannelKt {
     public static final int SEGMENT_SIZE;
     private static final Symbol SUSPEND;
     private static final Symbol SUSPEND_NO_WAITER;
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final long constructEBCompletedAndPauseFlag(long j, boolean z) {
+        return (z ? 4611686018427387904L : 0L) + j;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final long constructSendersAndCloseStatus(long j, int i) {
+        return (i << 60) + j;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final long initialBufferEnd(int i) {
+        if (i == 0) {
+            return 0L;
+        }
+        if (i != Integer.MAX_VALUE) {
+            return i;
+        }
+        return Long.MAX_VALUE;
+    }
+
+    public static final KFunction createSegmentFunction() {
+        return BufferedChannelKt$createSegmentFunction$1.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final ChannelSegment createSegment(long j, ChannelSegment channelSegment) {
+        return new ChannelSegment(j, channelSegment, channelSegment.getChannel(), 0);
+    }
 
     static {
         int systemProp$default;
@@ -53,38 +83,11 @@ public abstract class BufferedChannelKt {
         NO_CLOSE_CAUSE = new Symbol("NO_CLOSE_CAUSE");
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final long constructEBCompletedAndPauseFlag(long j, boolean z) {
-        return (z ? 4611686018427387904L : 0L) + j;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final long constructSendersAndCloseStatus(long j, int i) {
-        return (i << 60) + j;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final ChannelSegment createSegment(long j, ChannelSegment channelSegment) {
-        return new ChannelSegment(j, channelSegment, channelSegment.getChannel(), 0);
-    }
-
-    public static final KFunction createSegmentFunction() {
-        return BufferedChannelKt$createSegmentFunction$1.INSTANCE;
-    }
-
-    public static final Symbol getCHANNEL_CLOSED() {
-        return CHANNEL_CLOSED;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final long initialBufferEnd(int i) {
-        if (i == 0) {
-            return 0L;
+    static /* synthetic */ boolean tryResume0$default(CancellableContinuation cancellableContinuation, Object obj, Function1 function1, int i, Object obj2) {
+        if ((i & 2) != 0) {
+            function1 = null;
         }
-        if (i != Integer.MAX_VALUE) {
-            return i;
-        }
-        return Long.MAX_VALUE;
+        return tryResume0(cancellableContinuation, obj, function1);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -97,10 +100,7 @@ public abstract class BufferedChannelKt {
         return true;
     }
 
-    static /* synthetic */ boolean tryResume0$default(CancellableContinuation cancellableContinuation, Object obj, Function1 function1, int i, Object obj2) {
-        if ((i & 2) != 0) {
-            function1 = null;
-        }
-        return tryResume0(cancellableContinuation, obj, function1);
+    public static final Symbol getCHANNEL_CLOSED() {
+        return CHANNEL_CLOSED;
     }
 }

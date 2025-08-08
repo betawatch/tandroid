@@ -22,7 +22,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import org.json.JSONException;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class ConfigAutoFetch {
     private final ConfigCacheClient activatedCache;
     private final ConfigFetchHandler configFetchHandler;
@@ -41,16 +41,10 @@ public class ConfigAutoFetch {
         this.scheduledExecutorService = scheduledExecutorService;
     }
 
-    private void autoFetch(final int i, final long j) {
-        if (i == 0) {
-            propagateErrors(new FirebaseRemoteConfigServerException("Unable to fetch the latest version of the template.", FirebaseRemoteConfigException.Code.CONFIG_UPDATE_NOT_FETCHED));
-        } else {
-            this.scheduledExecutorService.schedule(new Runnable() { // from class: com.google.firebase.remoteconfig.internal.ConfigAutoFetch.1
-                @Override // java.lang.Runnable
-                public void run() {
-                    ConfigAutoFetch.this.fetchLatestConfig(i, j);
-                }
-            }, this.random.nextInt(4), TimeUnit.SECONDS);
+    private synchronized void propagateErrors(FirebaseRemoteConfigException firebaseRemoteConfigException) {
+        Iterator it = this.eventListeners.iterator();
+        while (it.hasNext()) {
+            ((ConfigUpdateListener) it.next()).onError(firebaseRemoteConfigException);
         }
     }
 
@@ -61,11 +55,35 @@ public class ConfigAutoFetch {
         }
     }
 
-    private static Boolean fetchResponseIsUpToDate(ConfigFetchHandler.FetchResponse fetchResponse, long j) {
-        if (fetchResponse.getFetchedConfigs() != null) {
-            return Boolean.valueOf(fetchResponse.getFetchedConfigs().getTemplateVersionNumber() >= j);
+    private synchronized boolean isEventListenersEmpty() {
+        return this.eventListeners.isEmpty();
+    }
+
+    private String parseAndValidateConfigUpdateMessage(String str) {
+        int indexOf = str.indexOf(123);
+        int lastIndexOf = str.lastIndexOf(125);
+        if (indexOf < 0 || lastIndexOf < 0 || indexOf >= lastIndexOf) {
+            return "";
         }
-        return Boolean.valueOf(fetchResponse.getStatus() == 1);
+        return str.substring(indexOf, lastIndexOf + 1);
+    }
+
+    public void listenForNotifications() {
+        HttpURLConnection httpURLConnection = this.httpURLConnection;
+        if (httpURLConnection == null) {
+            return;
+        }
+        try {
+            try {
+                InputStream inputStream = httpURLConnection.getInputStream();
+                handleNotifications(inputStream);
+                inputStream.close();
+            } catch (IOException e) {
+                Log.d("FirebaseRemoteConfig", "Stream was cancelled due to an exception. Retrying the connection...", e);
+            }
+        } finally {
+            this.httpURLConnection.disconnect();
+        }
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:11:0x003b, code lost:
@@ -135,8 +153,34 @@ public class ConfigAutoFetch {
         inputStream.close();
     }
 
-    private synchronized boolean isEventListenersEmpty() {
-        return this.eventListeners.isEmpty();
+    private void autoFetch(final int i, final long j) {
+        if (i == 0) {
+            propagateErrors(new FirebaseRemoteConfigServerException("Unable to fetch the latest version of the template.", FirebaseRemoteConfigException.Code.CONFIG_UPDATE_NOT_FETCHED));
+        } else {
+            this.scheduledExecutorService.schedule(new Runnable() { // from class: com.google.firebase.remoteconfig.internal.ConfigAutoFetch.1
+                @Override // java.lang.Runnable
+                public void run() {
+                    ConfigAutoFetch.this.fetchLatestConfig(i, j);
+                }
+            }, this.random.nextInt(4), TimeUnit.SECONDS);
+        }
+    }
+
+    public synchronized Task fetchLatestConfig(int i, final long j) {
+        final int i2;
+        final Task fetchNowWithTypeAndAttemptNumber;
+        final Task task;
+        i2 = i - 1;
+        fetchNowWithTypeAndAttemptNumber = this.configFetchHandler.fetchNowWithTypeAndAttemptNumber(ConfigFetchHandler.FetchType.REALTIME, 3 - i2);
+        task = this.activatedCache.get();
+        return Tasks.whenAllComplete((Task<?>[]) new Task[]{fetchNowWithTypeAndAttemptNumber, task}).continueWithTask(this.scheduledExecutorService, new Continuation() { // from class: com.google.firebase.remoteconfig.internal.ConfigAutoFetch$$ExternalSyntheticLambda0
+            @Override // com.google.android.gms.tasks.Continuation
+            public final Object then(Task task2) {
+                Task lambda$fetchLatestConfig$0;
+                lambda$fetchLatestConfig$0 = ConfigAutoFetch.this.lambda$fetchLatestConfig$0(fetchNowWithTypeAndAttemptNumber, task, j, i2, task2);
+                return lambda$fetchLatestConfig$0;
+            }
+        });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -170,51 +214,10 @@ public class ConfigAutoFetch {
         return Tasks.forResult(null);
     }
 
-    private String parseAndValidateConfigUpdateMessage(String str) {
-        int indexOf = str.indexOf(123);
-        int lastIndexOf = str.lastIndexOf(125);
-        return (indexOf < 0 || lastIndexOf < 0 || indexOf >= lastIndexOf) ? "" : str.substring(indexOf, lastIndexOf + 1);
-    }
-
-    private synchronized void propagateErrors(FirebaseRemoteConfigException firebaseRemoteConfigException) {
-        Iterator it = this.eventListeners.iterator();
-        while (it.hasNext()) {
-            ((ConfigUpdateListener) it.next()).onError(firebaseRemoteConfigException);
+    private static Boolean fetchResponseIsUpToDate(ConfigFetchHandler.FetchResponse fetchResponse, long j) {
+        if (fetchResponse.getFetchedConfigs() != null) {
+            return Boolean.valueOf(fetchResponse.getFetchedConfigs().getTemplateVersionNumber() >= j);
         }
-    }
-
-    public synchronized Task fetchLatestConfig(int i, final long j) {
-        final int i2;
-        final Task fetchNowWithTypeAndAttemptNumber;
-        final Task task;
-        i2 = i - 1;
-        fetchNowWithTypeAndAttemptNumber = this.configFetchHandler.fetchNowWithTypeAndAttemptNumber(ConfigFetchHandler.FetchType.REALTIME, 3 - i2);
-        task = this.activatedCache.get();
-        return Tasks.whenAllComplete((Task<?>[]) new Task[]{fetchNowWithTypeAndAttemptNumber, task}).continueWithTask(this.scheduledExecutorService, new Continuation() { // from class: com.google.firebase.remoteconfig.internal.ConfigAutoFetch$$ExternalSyntheticLambda0
-            @Override // com.google.android.gms.tasks.Continuation
-            public final Object then(Task task2) {
-                Task lambda$fetchLatestConfig$0;
-                lambda$fetchLatestConfig$0 = ConfigAutoFetch.this.lambda$fetchLatestConfig$0(fetchNowWithTypeAndAttemptNumber, task, j, i2, task2);
-                return lambda$fetchLatestConfig$0;
-            }
-        });
-    }
-
-    public void listenForNotifications() {
-        HttpURLConnection httpURLConnection = this.httpURLConnection;
-        if (httpURLConnection == null) {
-            return;
-        }
-        try {
-            try {
-                InputStream inputStream = httpURLConnection.getInputStream();
-                handleNotifications(inputStream);
-                inputStream.close();
-            } catch (IOException e) {
-                Log.d("FirebaseRemoteConfig", "Stream was cancelled due to an exception. Retrying the connection...", e);
-            }
-        } finally {
-            this.httpURLConnection.disconnect();
-        }
+        return Boolean.valueOf(fetchResponse.getStatus() == 1);
     }
 }

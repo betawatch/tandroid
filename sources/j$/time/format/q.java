@@ -5,10 +5,15 @@ import j$.time.ZoneId;
 
 /* loaded from: classes2.dex */
 final class q implements j$.time.temporal.k {
-    final /* synthetic */ j$.time.chrono.b a;
+    final /* synthetic */ LocalDate a;
     final /* synthetic */ j$.time.temporal.k b;
     final /* synthetic */ j$.time.chrono.e c;
     final /* synthetic */ ZoneId d;
+
+    @Override // j$.time.temporal.k
+    public final /* synthetic */ int h(j$.time.temporal.a aVar) {
+        return j$.time.temporal.j.a(this, aVar);
+    }
 
     q(LocalDate localDate, j$.time.temporal.k kVar, j$.time.chrono.e eVar, ZoneId zoneId) {
         this.a = localDate;
@@ -18,30 +23,43 @@ final class q implements j$.time.temporal.k {
     }
 
     @Override // j$.time.temporal.k
-    public final j$.time.temporal.q f(j$.time.temporal.l lVar) {
-        j$.time.chrono.b bVar = this.a;
-        return (bVar == null || !lVar.k()) ? this.b.f(lVar) : ((LocalDate) bVar).f(lVar);
+    public final boolean j(j$.time.temporal.l lVar) {
+        LocalDate localDate = this.a;
+        if (localDate != null && lVar.h()) {
+            return localDate.j(lVar);
+        }
+        return this.b.j(lVar);
     }
 
     @Override // j$.time.temporal.k
-    public final long h(j$.time.temporal.l lVar) {
-        j$.time.chrono.b bVar = this.a;
-        return (bVar == null || !lVar.k()) ? this.b.h(lVar) : ((LocalDate) bVar).h(lVar);
+    public final j$.time.temporal.q i(j$.time.temporal.a aVar) {
+        LocalDate localDate = this.a;
+        if (localDate != null && aVar.h()) {
+            return localDate.i(aVar);
+        }
+        return this.b.i(aVar);
     }
 
     @Override // j$.time.temporal.k
-    public final Object i(j$.time.temporal.n nVar) {
-        return nVar == j$.time.temporal.j.d() ? this.c : nVar == j$.time.temporal.j.j() ? this.d : nVar == j$.time.temporal.j.h() ? this.b.i(nVar) : nVar.a(this);
+    public final long f(j$.time.temporal.l lVar) {
+        LocalDate localDate = this.a;
+        if (localDate != null && lVar.h()) {
+            return localDate.f(lVar);
+        }
+        return this.b.f(lVar);
     }
 
     @Override // j$.time.temporal.k
-    public final /* synthetic */ int j(j$.time.temporal.a aVar) {
-        return j$.time.temporal.j.a(this, aVar);
-    }
-
-    @Override // j$.time.temporal.k
-    public final boolean k(j$.time.temporal.l lVar) {
-        j$.time.chrono.b bVar = this.a;
-        return (bVar == null || !lVar.k()) ? this.b.k(lVar) : ((LocalDate) bVar).k(lVar);
+    public final Object g(j$.time.temporal.n nVar) {
+        if (nVar == j$.time.temporal.j.d()) {
+            return this.c;
+        }
+        if (nVar == j$.time.temporal.j.j()) {
+            return this.d;
+        }
+        if (nVar == j$.time.temporal.j.h()) {
+            return this.b.g(nVar);
+        }
+        return nVar.a(this);
     }
 }

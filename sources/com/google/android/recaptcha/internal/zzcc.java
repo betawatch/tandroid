@@ -4,9 +4,9 @@ import android.webkit.WebView;
 import java.util.ArrayList;
 import kotlin.ResultKt;
 import kotlin.Unit;
-import kotlin.collections.CollectionsKt___CollectionsKt;
+import kotlin.collections.CollectionsKt;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
@@ -38,8 +38,7 @@ final class zzcc extends SuspendLambda implements Function2 {
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         WebView webView;
-        String joinToString$default;
-        IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        IntrinsicsKt.getCOROUTINE_SUSPENDED();
         ResultKt.throwOnFailure(obj);
         String[] strArr = this.zza;
         ArrayList arrayList = new ArrayList(strArr.length);
@@ -49,8 +48,7 @@ final class zzcc extends SuspendLambda implements Function2 {
         zzcd zzcdVar = this.zzb;
         String str2 = this.zzc;
         webView = zzcdVar.zza;
-        joinToString$default = CollectionsKt___CollectionsKt.joinToString$default(arrayList, ",", null, null, 0, null, null, 62, null);
-        webView.evaluateJavascript(str2 + "(" + joinToString$default + ")", null);
+        webView.evaluateJavascript(str2 + "(" + CollectionsKt.joinToString$default(arrayList, ",", null, null, 0, null, null, 62, null) + ")", null);
         return Unit.INSTANCE;
     }
 }

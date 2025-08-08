@@ -13,13 +13,13 @@ public final class k {
         this.b = 0;
     }
 
+    public static k a() {
+        return c;
+    }
+
     private k(int i) {
         this.a = true;
         this.b = i;
-    }
-
-    public static k a() {
-        return c;
     }
 
     public static k d(int i) {
@@ -27,10 +27,10 @@ public final class k {
     }
 
     public final int b() {
-        if (this.a) {
-            return this.b;
+        if (!this.a) {
+            throw new NoSuchElementException("No value present");
         }
-        throw new NoSuchElementException("No value present");
+        return this.b;
     }
 
     public final boolean c() {
@@ -64,9 +64,9 @@ public final class k {
     }
 
     public final String toString() {
-        if (!this.a) {
-            return "OptionalInt.empty";
+        if (this.a) {
+            return "OptionalInt[" + this.b + "]";
         }
-        return "OptionalInt[" + this.b + "]";
+        return "OptionalInt.empty";
     }
 }

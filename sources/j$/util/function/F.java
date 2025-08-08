@@ -1,33 +1,38 @@
 package j$.util.function;
 
-import j$.util.function.IntFunction;
+import java.util.function.IntConsumer;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class F implements java.util.function.IntFunction {
-    public final /* synthetic */ IntFunction a;
+public final /* synthetic */ class F implements IntConsumer {
+    public final /* synthetic */ G a;
 
-    private /* synthetic */ F(IntFunction intFunction) {
-        this.a = intFunction;
+    private /* synthetic */ F(G g) {
+        this.a = g;
     }
 
-    public static /* synthetic */ java.util.function.IntFunction a(IntFunction intFunction) {
-        if (intFunction == null) {
+    public static /* synthetic */ IntConsumer a(G g) {
+        if (g == null) {
             return null;
         }
-        return intFunction instanceof IntFunction.VivifiedWrapper ? ((IntFunction.VivifiedWrapper) intFunction).a : new F(intFunction);
+        return g instanceof E ? ((E) g).a : new F(g);
     }
 
-    @Override // java.util.function.IntFunction
-    public final /* synthetic */ Object apply(int i) {
-        return this.a.apply(i);
+    @Override // java.util.function.IntConsumer
+    public final /* synthetic */ void accept(int i) {
+        this.a.accept(i);
+    }
+
+    @Override // java.util.function.IntConsumer
+    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
+        return a(this.a.l(E.a(intConsumer)));
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        IntFunction intFunction = this.a;
+        G g = this.a;
         if (obj instanceof F) {
             obj = ((F) obj).a;
         }
-        return intFunction.equals(obj);
+        return g.equals(obj);
     }
 
     public final /* synthetic */ int hashCode() {

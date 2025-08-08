@@ -8,6 +8,23 @@ public final class LogEventDropped {
     private final long events_dropped_count_;
     private final Reason reason_;
 
+    LogEventDropped(long j, Reason reason) {
+        this.events_dropped_count_ = j;
+        this.reason_ = reason;
+    }
+
+    public static Builder newBuilder() {
+        return new Builder();
+    }
+
+    public long getEventsDroppedCount() {
+        return this.events_dropped_count_;
+    }
+
+    public Reason getReason() {
+        return this.reason_;
+    }
+
     public static final class Builder {
         private long events_dropped_count_ = 0;
         private Reason reason_ = Reason.REASON_UNKNOWN;
@@ -49,22 +66,5 @@ public final class LogEventDropped {
         public int getNumber() {
             return this.number_;
         }
-    }
-
-    LogEventDropped(long j, Reason reason) {
-        this.events_dropped_count_ = j;
-        this.reason_ = reason;
-    }
-
-    public static Builder newBuilder() {
-        return new Builder();
-    }
-
-    public long getEventsDroppedCount() {
-        return this.events_dropped_count_;
-    }
-
-    public Reason getReason() {
-        return this.reason_;
     }
 }

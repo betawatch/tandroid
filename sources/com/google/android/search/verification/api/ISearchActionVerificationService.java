@@ -11,20 +11,25 @@ import com.google.android.aidl.Codecs;
 
 /* loaded from: classes.dex */
 public interface ISearchActionVerificationService extends IInterface {
+    int getVersion();
+
+    boolean isSearchAction(Intent intent, Bundle bundle);
 
     public static abstract class Stub extends BaseStub implements ISearchActionVerificationService {
+        public static ISearchActionVerificationService asInterface(IBinder iBinder) {
+            if (iBinder == null) {
+                return null;
+            }
+            IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.search.verification.api.ISearchActionVerificationService");
+            if (queryLocalInterface instanceof ISearchActionVerificationService) {
+                return (ISearchActionVerificationService) queryLocalInterface;
+            }
+            return new Proxy(iBinder);
+        }
 
         public static class Proxy extends BaseProxy implements ISearchActionVerificationService {
             Proxy(IBinder iBinder) {
                 super(iBinder, "com.google.android.search.verification.api.ISearchActionVerificationService");
-            }
-
-            @Override // com.google.android.search.verification.api.ISearchActionVerificationService
-            public int getVersion() {
-                Parcel transactAndReadException = transactAndReadException(2, obtainAndWriteInterfaceToken());
-                int readInt = transactAndReadException.readInt();
-                transactAndReadException.recycle();
-                return readInt;
             }
 
             @Override // com.google.android.search.verification.api.ISearchActionVerificationService
@@ -37,18 +42,14 @@ public interface ISearchActionVerificationService extends IInterface {
                 transactAndReadException.recycle();
                 return createBoolean;
             }
-        }
 
-        public static ISearchActionVerificationService asInterface(IBinder iBinder) {
-            if (iBinder == null) {
-                return null;
+            @Override // com.google.android.search.verification.api.ISearchActionVerificationService
+            public int getVersion() {
+                Parcel transactAndReadException = transactAndReadException(2, obtainAndWriteInterfaceToken());
+                int readInt = transactAndReadException.readInt();
+                transactAndReadException.recycle();
+                return readInt;
             }
-            IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.search.verification.api.ISearchActionVerificationService");
-            return queryLocalInterface instanceof ISearchActionVerificationService ? (ISearchActionVerificationService) queryLocalInterface : new Proxy(iBinder);
         }
     }
-
-    int getVersion();
-
-    boolean isSearchAction(Intent intent, Bundle bundle);
 }

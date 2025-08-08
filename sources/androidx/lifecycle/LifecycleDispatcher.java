@@ -10,15 +10,14 @@ import java.util.concurrent.atomic.AtomicBoolean;
 abstract class LifecycleDispatcher {
     private static AtomicBoolean sInitialized = new AtomicBoolean(false);
 
+    static void init(Context context) {
+        if (sInitialized.getAndSet(true)) {
+            return;
+        }
+        ((Application) context.getApplicationContext()).registerActivityLifecycleCallbacks(new DispatcherActivityCallback());
+    }
+
     static class DispatcherActivityCallback extends EmptyActivityLifecycleCallbacks {
-        DispatcherActivityCallback() {
-        }
-
-        @Override // androidx.lifecycle.EmptyActivityLifecycleCallbacks, android.app.Application.ActivityLifecycleCallbacks
-        public void onActivityCreated(Activity activity, Bundle bundle) {
-            ReportFragment.injectIfNeededIn(activity);
-        }
-
         @Override // androidx.lifecycle.EmptyActivityLifecycleCallbacks, android.app.Application.ActivityLifecycleCallbacks
         public void onActivitySaveInstanceState(Activity activity, Bundle bundle) {
         }
@@ -26,12 +25,13 @@ abstract class LifecycleDispatcher {
         @Override // androidx.lifecycle.EmptyActivityLifecycleCallbacks, android.app.Application.ActivityLifecycleCallbacks
         public void onActivityStopped(Activity activity) {
         }
-    }
 
-    static void init(Context context) {
-        if (sInitialized.getAndSet(true)) {
-            return;
+        DispatcherActivityCallback() {
         }
-        ((Application) context.getApplicationContext()).registerActivityLifecycleCallbacks(new DispatcherActivityCallback());
+
+        @Override // androidx.lifecycle.EmptyActivityLifecycleCallbacks, android.app.Application.ActivityLifecycleCallbacks
+        public void onActivityCreated(Activity activity, Bundle bundle) {
+            ReportFragment.injectIfNeededIn(activity);
+        }
     }
 }

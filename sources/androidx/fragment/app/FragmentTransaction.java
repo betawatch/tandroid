@@ -27,6 +27,12 @@ public abstract class FragmentTransaction {
     boolean mAllowAddToBackStack = true;
     boolean mReorderingAllowed = false;
 
+    public abstract int commit();
+
+    public abstract int commitAllowingStateLoss();
+
+    public abstract void commitNowAllowingStateLoss();
+
     static final class Op {
         int mCmd;
         Lifecycle.State mCurrentMaxState;
@@ -54,21 +60,6 @@ public abstract class FragmentTransaction {
         this.mClassLoader = classLoader;
     }
 
-    public FragmentTransaction add(int i, Fragment fragment, String str) {
-        doAddOp(i, fragment, str, 1);
-        return this;
-    }
-
-    FragmentTransaction add(ViewGroup viewGroup, Fragment fragment, String str) {
-        fragment.mContainer = viewGroup;
-        return add(viewGroup.getId(), fragment, str);
-    }
-
-    public FragmentTransaction add(Fragment fragment, String str) {
-        doAddOp(0, fragment, str, 1);
-        return this;
-    }
-
     void addOp(Op op) {
         this.mOps.add(op);
         op.mEnterAnim = this.mEnterAnim;
@@ -77,18 +68,19 @@ public abstract class FragmentTransaction {
         op.mPopExitAnim = this.mPopExitAnim;
     }
 
-    public abstract int commit();
-
-    public abstract int commitAllowingStateLoss();
-
-    public abstract void commitNowAllowingStateLoss();
-
-    public FragmentTransaction disallowAddToBackStack() {
-        if (this.mAddToBackStack) {
-            throw new IllegalStateException("This transaction is already being added to the back stack");
-        }
-        this.mAllowAddToBackStack = false;
+    public FragmentTransaction add(Fragment fragment, String str) {
+        doAddOp(0, fragment, str, 1);
         return this;
+    }
+
+    public FragmentTransaction add(int i, Fragment fragment, String str) {
+        doAddOp(i, fragment, str, 1);
+        return this;
+    }
+
+    FragmentTransaction add(ViewGroup viewGroup, Fragment fragment, String str) {
+        fragment.mContainer = viewGroup;
+        return add(viewGroup.getId(), fragment, str);
     }
 
     void doAddOp(int i, Fragment fragment, String str, int i2) {
@@ -120,6 +112,14 @@ public abstract class FragmentTransaction {
 
     public FragmentTransaction remove(Fragment fragment) {
         addOp(new Op(3, fragment));
+        return this;
+    }
+
+    public FragmentTransaction disallowAddToBackStack() {
+        if (this.mAddToBackStack) {
+            throw new IllegalStateException("This transaction is already being added to the back stack");
+        }
+        this.mAllowAddToBackStack = false;
         return this;
     }
 

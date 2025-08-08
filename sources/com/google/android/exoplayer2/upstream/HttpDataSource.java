@@ -12,20 +12,30 @@ import java.util.Map;
 /* loaded from: classes.dex */
 public interface HttpDataSource extends DataSource {
 
+    public static final class RequestProperties {
+        private final Map requestProperties = new HashMap();
+        private Map requestPropertiesSnapshot;
+
+        public synchronized Map getSnapshot() {
+            try {
+                if (this.requestPropertiesSnapshot == null) {
+                    this.requestPropertiesSnapshot = Collections.unmodifiableMap(new HashMap(this.requestProperties));
+                }
+            } catch (Throwable th) {
+                throw th;
+            }
+            return this.requestPropertiesSnapshot;
+        }
+    }
+
     public static abstract class BaseFactory implements DataSource.Factory {
         private final RequestProperties defaultRequestProperties = new RequestProperties();
+
+        protected abstract HttpDataSource createDataSourceInternal(RequestProperties requestProperties);
 
         @Override // com.google.android.exoplayer2.upstream.DataSource.Factory
         public final HttpDataSource createDataSource() {
             return createDataSourceInternal(this.defaultRequestProperties);
-        }
-
-        protected abstract HttpDataSource createDataSourceInternal(RequestProperties requestProperties);
-    }
-
-    public static final class CleartextNotPermittedException extends HttpDataSourceException {
-        public CleartextNotPermittedException(IOException iOException, DataSpec dataSpec) {
-            super("Cleartext HTTP traffic not permitted. See https://exoplayer.dev/issues/cleartext-not-permitted", iOException, dataSpec, 2007, 1);
         }
     }
 
@@ -33,14 +43,31 @@ public interface HttpDataSource extends DataSource {
         public final DataSpec dataSpec;
         public final int type;
 
-        public HttpDataSourceException(DataSpec dataSpec, int i, int i2) {
-            super(assignErrorCode(i, i2));
-            this.dataSpec = dataSpec;
-            this.type = i2;
+        private static int assignErrorCode(int i, int i2) {
+            if (i == 2000 && i2 == 1) {
+                return 2001;
+            }
+            return i;
         }
 
-        public HttpDataSourceException(IOException iOException, DataSpec dataSpec, int i, int i2) {
-            super(iOException, assignErrorCode(i, i2));
+        public static HttpDataSourceException createForIOException(IOException iOException, DataSpec dataSpec, int i) {
+            int i2;
+            String message = iOException.getMessage();
+            if (iOException instanceof SocketTimeoutException) {
+                i2 = 2002;
+            } else if (iOException instanceof InterruptedIOException) {
+                i2 = 1004;
+            } else {
+                i2 = (message == null || !Ascii.toLowerCase(message).matches("cleartext.*not permitted.*")) ? 2001 : 2007;
+            }
+            if (i2 == 2007) {
+                return new CleartextNotPermittedException(iOException, dataSpec);
+            }
+            return new HttpDataSourceException(iOException, dataSpec, i2, i);
+        }
+
+        public HttpDataSourceException(DataSpec dataSpec, int i, int i2) {
+            super(assignErrorCode(i, i2));
             this.dataSpec = dataSpec;
             this.type = i2;
         }
@@ -51,23 +78,22 @@ public interface HttpDataSource extends DataSource {
             this.type = i2;
         }
 
+        public HttpDataSourceException(IOException iOException, DataSpec dataSpec, int i, int i2) {
+            super(iOException, assignErrorCode(i, i2));
+            this.dataSpec = dataSpec;
+            this.type = i2;
+        }
+
         public HttpDataSourceException(String str, IOException iOException, DataSpec dataSpec, int i, int i2) {
             super(str, iOException, assignErrorCode(i, i2));
             this.dataSpec = dataSpec;
             this.type = i2;
         }
+    }
 
-        private static int assignErrorCode(int i, int i2) {
-            if (i == 2000 && i2 == 1) {
-                return 2001;
-            }
-            return i;
-        }
-
-        public static HttpDataSourceException createForIOException(IOException iOException, DataSpec dataSpec, int i) {
-            String message = iOException.getMessage();
-            int i2 = iOException instanceof SocketTimeoutException ? 2002 : iOException instanceof InterruptedIOException ? 1004 : (message == null || !Ascii.toLowerCase(message).matches("cleartext.*not permitted.*")) ? 2001 : 2007;
-            return i2 == 2007 ? new CleartextNotPermittedException(iOException, dataSpec) : new HttpDataSourceException(iOException, dataSpec, i2, i);
+    public static final class CleartextNotPermittedException extends HttpDataSourceException {
+        public CleartextNotPermittedException(IOException iOException, DataSpec dataSpec) {
+            super("Cleartext HTTP traffic not permitted. See https://exoplayer.dev/issues/cleartext-not-permitted", iOException, dataSpec, 2007, 1);
         }
     }
 
@@ -92,22 +118,6 @@ public interface HttpDataSource extends DataSource {
             this.responseMessage = str;
             this.headerFields = map;
             this.responseBody = bArr;
-        }
-    }
-
-    public static final class RequestProperties {
-        private final Map requestProperties = new HashMap();
-        private Map requestPropertiesSnapshot;
-
-        public synchronized Map getSnapshot() {
-            try {
-                if (this.requestPropertiesSnapshot == null) {
-                    this.requestPropertiesSnapshot = Collections.unmodifiableMap(new HashMap(this.requestProperties));
-                }
-            } catch (Throwable th) {
-                throw th;
-            }
-            return this.requestPropertiesSnapshot;
         }
     }
 }

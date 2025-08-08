@@ -14,7 +14,7 @@ import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.CoroutineContext;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference2Impl;
@@ -26,33 +26,22 @@ import kotlin.time.DurationKt;
 import kotlin.time.DurationUnit;
 import org.telegram.tgnet.TLObject;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class SessionsSettings {
     public static final Companion Companion = new Companion(null);
     private static final ReadOnlyProperty dataStore$delegate = PreferenceDataStoreDelegateKt.preferencesDataStore$default(SessionDataStoreConfigs.INSTANCE.getSETTINGS_CONFIG_NAME(), null, null, null, 14, null);
     private final SettingsProvider localOverrideSettings;
     private final SettingsProvider remoteSettings;
 
-    public static final class Companion {
-        static final /* synthetic */ KProperty[] $$delegatedProperties = {Reflection.property2(new PropertyReference2Impl(Companion.class, "dataStore", "getDataStore(Landroid/content/Context;)Landroidx/datastore/core/DataStore;", 0))};
+    private final boolean isValidSamplingRate(double d) {
+        return 0.0d <= d && d <= 1.0d;
+    }
 
-        private Companion() {
-        }
-
-        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
-            this();
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public final DataStore getDataStore(Context context) {
-            return (DataStore) SessionsSettings.dataStore$delegate.getValue(context, $$delegatedProperties[0]);
-        }
-
-        public final SessionsSettings getInstance() {
-            Object obj = FirebaseKt.getApp(Firebase.INSTANCE).get(SessionsSettings.class);
-            Intrinsics.checkNotNullExpressionValue(obj, "Firebase.app[SessionsSettings::class.java]");
-            return (SessionsSettings) obj;
-        }
+    public SessionsSettings(SettingsProvider localOverrideSettings, SettingsProvider remoteSettings) {
+        Intrinsics.checkNotNullParameter(localOverrideSettings, "localOverrideSettings");
+        Intrinsics.checkNotNullParameter(remoteSettings, "remoteSettings");
+        this.localOverrideSettings = localOverrideSettings;
+        this.remoteSettings = remoteSettings;
     }
 
     private SessionsSettings(Context context, CoroutineContext coroutineContext, CoroutineContext coroutineContext2, FirebaseInstallationsApi firebaseInstallationsApi, ApplicationInfo applicationInfo) {
@@ -73,19 +62,16 @@ public final class SessionsSettings {
         Intrinsics.checkNotNullExpressionValue(applicationContext, "firebaseApp.applicationContext");
     }
 
-    public SessionsSettings(SettingsProvider localOverrideSettings, SettingsProvider remoteSettings) {
-        Intrinsics.checkNotNullParameter(localOverrideSettings, "localOverrideSettings");
-        Intrinsics.checkNotNullParameter(remoteSettings, "remoteSettings");
-        this.localOverrideSettings = localOverrideSettings;
-        this.remoteSettings = remoteSettings;
-    }
-
-    private final boolean isValidSamplingRate(double d) {
-        return 0.0d <= d && d <= 1.0d;
-    }
-
-    private final boolean isValidSessionRestartTimeout-LRDsOJo(long j) {
-        return Duration.isPositive-impl(j) && Duration.isFinite-impl(j);
+    public final boolean getSessionsEnabled() {
+        Boolean sessionEnabled = this.localOverrideSettings.getSessionEnabled();
+        if (sessionEnabled != null) {
+            return sessionEnabled.booleanValue();
+        }
+        Boolean sessionEnabled2 = this.remoteSettings.getSessionEnabled();
+        if (sessionEnabled2 != null) {
+            return sessionEnabled2.booleanValue();
+        }
+        return true;
     }
 
     public final double getSamplingRate() {
@@ -126,16 +112,8 @@ public final class SessionsSettings {
         return DurationKt.toDuration(30, DurationUnit.MINUTES);
     }
 
-    public final boolean getSessionsEnabled() {
-        Boolean sessionEnabled = this.localOverrideSettings.getSessionEnabled();
-        if (sessionEnabled != null) {
-            return sessionEnabled.booleanValue();
-        }
-        Boolean sessionEnabled2 = this.remoteSettings.getSessionEnabled();
-        if (sessionEnabled2 != null) {
-            return sessionEnabled2.booleanValue();
-        }
-        return true;
+    private final boolean isValidSessionRestartTimeout-LRDsOJo(long j) {
+        return Duration.isPositive-impl(j) && Duration.isFinite-impl(j);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:19:0x005a A[RETURN] */
@@ -156,7 +134,7 @@ public final class SessionsSettings {
             if ((i2 & TLObject.FLAG_31) != 0) {
                 sessionsSettings$updateSettings$1.label = i2 - TLObject.FLAG_31;
                 Object obj = sessionsSettings$updateSettings$1.result;
-                coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = sessionsSettings$updateSettings$1.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
@@ -169,11 +147,11 @@ public final class SessionsSettings {
                     sessionsSettings = this;
                 } else {
                     if (i != 1) {
-                        if (i != 2) {
-                            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                        if (i == 2) {
+                            ResultKt.throwOnFailure(obj);
+                            return Unit.INSTANCE;
                         }
-                        ResultKt.throwOnFailure(obj);
-                        return Unit.INSTANCE;
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
                     sessionsSettings = (SessionsSettings) sessionsSettings$updateSettings$1.L$0;
                     ResultKt.throwOnFailure(obj);
@@ -189,7 +167,7 @@ public final class SessionsSettings {
         }
         sessionsSettings$updateSettings$1 = new SessionsSettings$updateSettings$1(this, continuation);
         Object obj2 = sessionsSettings$updateSettings$1.result;
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = sessionsSettings$updateSettings$1.label;
         if (i != 0) {
         }
@@ -199,5 +177,27 @@ public final class SessionsSettings {
         if (settingsProvider.updateSettings(sessionsSettings$updateSettings$1) == coroutine_suspended) {
         }
         return Unit.INSTANCE;
+    }
+
+    public static final class Companion {
+        static final /* synthetic */ KProperty[] $$delegatedProperties = {Reflection.property2(new PropertyReference2Impl(Companion.class, "dataStore", "getDataStore(Landroid/content/Context;)Landroidx/datastore/core/DataStore;", 0))};
+
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        private Companion() {
+        }
+
+        public final SessionsSettings getInstance() {
+            Object obj = FirebaseKt.getApp(Firebase.INSTANCE).get(SessionsSettings.class);
+            Intrinsics.checkNotNullExpressionValue(obj, "Firebase.app[SessionsSettings::class.java]");
+            return (SessionsSettings) obj;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public final DataStore getDataStore(Context context) {
+            return (DataStore) SessionsSettings.dataStore$delegate.getValue(context, $$delegatedProperties[0]);
+        }
     }
 }

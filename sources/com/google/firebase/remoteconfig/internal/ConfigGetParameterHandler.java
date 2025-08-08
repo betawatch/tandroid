@@ -9,7 +9,7 @@ import java.util.concurrent.Executor;
 import java.util.regex.Pattern;
 import org.json.JSONException;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class ConfigGetParameterHandler {
     private final ConfigCacheClient activatedConfigsCache;
     private final ConfigCacheClient defaultConfigsCache;
@@ -23,6 +23,26 @@ public class ConfigGetParameterHandler {
         this.executor = executor;
         this.activatedConfigsCache = configCacheClient;
         this.defaultConfigsCache = configCacheClient2;
+    }
+
+    public String getString(String str) {
+        String stringFromCache = getStringFromCache(this.activatedConfigsCache, str);
+        if (stringFromCache != null) {
+            callListeners(str, getConfigsFromCache(this.activatedConfigsCache));
+            return stringFromCache;
+        }
+        String stringFromCache2 = getStringFromCache(this.defaultConfigsCache, str);
+        if (stringFromCache2 != null) {
+            return stringFromCache2;
+        }
+        logParameterValueDoesNotExist(str, "String");
+        return "";
+    }
+
+    public void addListener(BiConsumer biConsumer) {
+        synchronized (this.listeners) {
+            this.listeners.add(biConsumer);
+        }
     }
 
     private void callListeners(final String str, final ConfigContainer configContainer) {
@@ -45,10 +65,6 @@ public class ConfigGetParameterHandler {
         }
     }
 
-    private static ConfigContainer getConfigsFromCache(ConfigCacheClient configCacheClient) {
-        return configCacheClient.getBlocking();
-    }
-
     private static String getStringFromCache(ConfigCacheClient configCacheClient, String str) {
         ConfigContainer configsFromCache = getConfigsFromCache(configCacheClient);
         if (configsFromCache == null) {
@@ -61,27 +77,11 @@ public class ConfigGetParameterHandler {
         }
     }
 
+    private static ConfigContainer getConfigsFromCache(ConfigCacheClient configCacheClient) {
+        return configCacheClient.getBlocking();
+    }
+
     private static void logParameterValueDoesNotExist(String str, String str2) {
         Log.w("FirebaseRemoteConfig", String.format("No value of type '%s' exists for parameter key '%s'.", str2, str));
-    }
-
-    public void addListener(BiConsumer biConsumer) {
-        synchronized (this.listeners) {
-            this.listeners.add(biConsumer);
-        }
-    }
-
-    public String getString(String str) {
-        String stringFromCache = getStringFromCache(this.activatedConfigsCache, str);
-        if (stringFromCache != null) {
-            callListeners(str, getConfigsFromCache(this.activatedConfigsCache));
-            return stringFromCache;
-        }
-        String stringFromCache2 = getStringFromCache(this.defaultConfigsCache, str);
-        if (stringFromCache2 != null) {
-            return stringFromCache2;
-        }
-        logParameterValueDoesNotExist(str, "String");
-        return "";
     }
 }

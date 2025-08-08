@@ -4,7 +4,7 @@ import android.content.Context;
 
 /* loaded from: classes.dex */
 public class Wrappers {
-    private static Wrappers zza = new Wrappers();
+    private static final Wrappers zza = new Wrappers();
     private PackageManagerWrapper zzb = null;
 
     public static PackageManagerWrapper packageManager(Context context) {

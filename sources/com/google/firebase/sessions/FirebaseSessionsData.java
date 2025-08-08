@@ -2,23 +2,15 @@ package com.google.firebase.sessions;
 
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class FirebaseSessionsData {
     private final String sessionId;
-
-    public FirebaseSessionsData(String str) {
-        this.sessionId = str;
-    }
 
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
         return (obj instanceof FirebaseSessionsData) && Intrinsics.areEqual(this.sessionId, ((FirebaseSessionsData) obj).sessionId);
-    }
-
-    public final String getSessionId() {
-        return this.sessionId;
     }
 
     public int hashCode() {
@@ -31,5 +23,13 @@ public final class FirebaseSessionsData {
 
     public String toString() {
         return "FirebaseSessionsData(sessionId=" + this.sessionId + ')';
+    }
+
+    public FirebaseSessionsData(String str) {
+        this.sessionId = str;
+    }
+
+    public final String getSessionId() {
+        return this.sessionId;
     }
 }

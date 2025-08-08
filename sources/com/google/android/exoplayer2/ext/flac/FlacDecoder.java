@@ -36,6 +36,11 @@ public final class FlacDecoder extends SimpleDecoder {
         }
     }
 
+    @Override // com.google.android.exoplayer2.decoder.Decoder
+    public String getName() {
+        return "libflac";
+    }
+
     @Override // com.google.android.exoplayer2.decoder.SimpleDecoder
     protected DecoderInputBuffer createInputBuffer() {
         return new DecoderInputBuffer(1);
@@ -75,18 +80,13 @@ public final class FlacDecoder extends SimpleDecoder {
         }
     }
 
-    @Override // com.google.android.exoplayer2.decoder.Decoder
-    public String getName() {
-        return "libflac";
-    }
-
-    public FlacStreamMetadata getStreamMetadata() {
-        return this.streamMetadata;
-    }
-
     @Override // com.google.android.exoplayer2.decoder.SimpleDecoder, com.google.android.exoplayer2.decoder.Decoder
     public void release() {
         super.release();
         this.decoderJni.release();
+    }
+
+    public FlacStreamMetadata getStreamMetadata() {
+        return this.streamMetadata;
     }
 }

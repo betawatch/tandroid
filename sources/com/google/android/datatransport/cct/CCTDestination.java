@@ -37,6 +37,41 @@ public final class CCTDestination implements EncodedDestination {
         this.apiKey = str2;
     }
 
+    @Override // com.google.android.datatransport.runtime.Destination
+    public String getName() {
+        return "cct";
+    }
+
+    @Override // com.google.android.datatransport.runtime.Destination
+    public byte[] getExtras() {
+        return asByteArray();
+    }
+
+    @Override // com.google.android.datatransport.runtime.EncodedDestination
+    public Set getSupportedEncodings() {
+        return SUPPORTED_ENCODINGS;
+    }
+
+    public String getAPIKey() {
+        return this.apiKey;
+    }
+
+    public String getEndPoint() {
+        return this.endPoint;
+    }
+
+    public byte[] asByteArray() {
+        String str = this.apiKey;
+        if (str == null && this.endPoint == null) {
+            return null;
+        }
+        String str2 = this.endPoint;
+        if (str == null) {
+            str = "";
+        }
+        return String.format("%s%s%s%s", "1$", str2, "\\", str).getBytes(Charset.forName("UTF-8"));
+    }
+
     public static CCTDestination fromByteArray(byte[] bArr) {
         String str = new String(bArr, Charset.forName("UTF-8"));
         if (!str.startsWith("1$")) {
@@ -55,40 +90,5 @@ public final class CCTDestination implements EncodedDestination {
             str3 = null;
         }
         return new CCTDestination(str2, str3);
-    }
-
-    public byte[] asByteArray() {
-        String str = this.apiKey;
-        if (str == null && this.endPoint == null) {
-            return null;
-        }
-        String str2 = this.endPoint;
-        if (str == null) {
-            str = "";
-        }
-        return String.format("%s%s%s%s", "1$", str2, "\\", str).getBytes(Charset.forName("UTF-8"));
-    }
-
-    public String getAPIKey() {
-        return this.apiKey;
-    }
-
-    public String getEndPoint() {
-        return this.endPoint;
-    }
-
-    @Override // com.google.android.datatransport.runtime.Destination
-    public byte[] getExtras() {
-        return asByteArray();
-    }
-
-    @Override // com.google.android.datatransport.runtime.Destination
-    public String getName() {
-        return "cct";
-    }
-
-    @Override // com.google.android.datatransport.runtime.EncodedDestination
-    public Set getSupportedEncodings() {
-        return SUPPORTED_ENCODINGS;
     }
 }

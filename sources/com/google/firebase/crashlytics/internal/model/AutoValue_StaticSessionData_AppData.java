@@ -3,7 +3,7 @@ package com.google.firebase.crashlytics.internal.model;
 import com.google.firebase.crashlytics.internal.DevelopmentPlatformProvider;
 import com.google.firebase.crashlytics.internal.model.StaticSessionData;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class AutoValue_StaticSessionData_AppData extends StaticSessionData.AppData {
     private final String appIdentifier;
     private final int deliveryMechanism;
@@ -42,6 +42,21 @@ final class AutoValue_StaticSessionData_AppData extends StaticSessionData.AppDat
     }
 
     @Override // com.google.firebase.crashlytics.internal.model.StaticSessionData.AppData
+    public String versionCode() {
+        return this.versionCode;
+    }
+
+    @Override // com.google.firebase.crashlytics.internal.model.StaticSessionData.AppData
+    public String versionName() {
+        return this.versionName;
+    }
+
+    @Override // com.google.firebase.crashlytics.internal.model.StaticSessionData.AppData
+    public String installUuid() {
+        return this.installUuid;
+    }
+
+    @Override // com.google.firebase.crashlytics.internal.model.StaticSessionData.AppData
     public int deliveryMechanism() {
         return this.deliveryMechanism;
     }
@@ -49,6 +64,10 @@ final class AutoValue_StaticSessionData_AppData extends StaticSessionData.AppDat
     @Override // com.google.firebase.crashlytics.internal.model.StaticSessionData.AppData
     public DevelopmentPlatformProvider developmentPlatformProvider() {
         return this.developmentPlatformProvider;
+    }
+
+    public String toString() {
+        return "AppData{appIdentifier=" + this.appIdentifier + ", versionCode=" + this.versionCode + ", versionName=" + this.versionName + ", installUuid=" + this.installUuid + ", deliveryMechanism=" + this.deliveryMechanism + ", developmentPlatformProvider=" + this.developmentPlatformProvider + "}";
     }
 
     public boolean equals(Object obj) {
@@ -64,24 +83,5 @@ final class AutoValue_StaticSessionData_AppData extends StaticSessionData.AppDat
 
     public int hashCode() {
         return ((((((((((this.appIdentifier.hashCode() ^ 1000003) * 1000003) ^ this.versionCode.hashCode()) * 1000003) ^ this.versionName.hashCode()) * 1000003) ^ this.installUuid.hashCode()) * 1000003) ^ this.deliveryMechanism) * 1000003) ^ this.developmentPlatformProvider.hashCode();
-    }
-
-    @Override // com.google.firebase.crashlytics.internal.model.StaticSessionData.AppData
-    public String installUuid() {
-        return this.installUuid;
-    }
-
-    public String toString() {
-        return "AppData{appIdentifier=" + this.appIdentifier + ", versionCode=" + this.versionCode + ", versionName=" + this.versionName + ", installUuid=" + this.installUuid + ", deliveryMechanism=" + this.deliveryMechanism + ", developmentPlatformProvider=" + this.developmentPlatformProvider + "}";
-    }
-
-    @Override // com.google.firebase.crashlytics.internal.model.StaticSessionData.AppData
-    public String versionCode() {
-        return this.versionCode;
-    }
-
-    @Override // com.google.firebase.crashlytics.internal.model.StaticSessionData.AppData
-    public String versionName() {
-        return this.versionName;
     }
 }

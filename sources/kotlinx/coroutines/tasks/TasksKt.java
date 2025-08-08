@@ -8,52 +8,48 @@ import kotlin.Result;
 import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugProbesKt;
 import kotlin.jvm.functions.Function1;
 import kotlinx.coroutines.CancellableContinuation;
 import kotlinx.coroutines.CancellableContinuationImpl;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class TasksKt {
     public static final Object await(Task task, Continuation continuation) {
         return awaitImpl(task, null, continuation);
     }
 
     private static final Object awaitImpl(Task task, final CancellationTokenSource cancellationTokenSource, Continuation continuation) {
-        Continuation intercepted;
-        Object coroutine_suspended;
         if (task.isComplete()) {
             Exception exception = task.getException();
-            if (exception != null) {
-                throw exception;
-            }
-            if (!task.isCanceled()) {
+            if (exception == null) {
+                if (task.isCanceled()) {
+                    throw new CancellationException("Task " + task + " was cancelled normally.");
+                }
                 return task.getResult();
             }
-            throw new CancellationException("Task " + task + " was cancelled normally.");
+            throw exception;
         }
-        intercepted = IntrinsicsKt__IntrinsicsJvmKt.intercepted(continuation);
-        final CancellableContinuationImpl cancellableContinuationImpl = new CancellableContinuationImpl(intercepted, 1);
+        final CancellableContinuationImpl cancellableContinuationImpl = new CancellableContinuationImpl(IntrinsicsKt.intercepted(continuation), 1);
         cancellableContinuationImpl.initCancellability();
         task.addOnCompleteListener(DirectExecutor.INSTANCE, new OnCompleteListener() { // from class: kotlinx.coroutines.tasks.TasksKt$awaitImpl$2$1
             @Override // com.google.android.gms.tasks.OnCompleteListener
             public final void onComplete(Task task2) {
                 Exception exception2 = task2.getException();
-                if (exception2 != null) {
-                    CancellableContinuation cancellableContinuation = CancellableContinuation.this;
-                    Result.Companion companion = Result.Companion;
-                    cancellableContinuation.resumeWith(Result.constructor-impl(ResultKt.createFailure(exception2)));
-                } else {
+                if (exception2 == null) {
                     if (task2.isCanceled()) {
                         CancellableContinuation.DefaultImpls.cancel$default(CancellableContinuation.this, null, 1, null);
                         return;
                     }
-                    CancellableContinuation cancellableContinuation2 = CancellableContinuation.this;
-                    Result.Companion companion2 = Result.Companion;
-                    cancellableContinuation2.resumeWith(Result.constructor-impl(task2.getResult()));
+                    CancellableContinuation cancellableContinuation = CancellableContinuation.this;
+                    Result.Companion companion = Result.Companion;
+                    cancellableContinuation.resumeWith(Result.constructor-impl(task2.getResult()));
+                    return;
                 }
+                CancellableContinuation cancellableContinuation2 = CancellableContinuation.this;
+                Result.Companion companion2 = Result.Companion;
+                cancellableContinuation2.resumeWith(Result.constructor-impl(ResultKt.createFailure(exception2)));
             }
         });
         if (cancellationTokenSource != null) {
@@ -74,8 +70,7 @@ public abstract class TasksKt {
             });
         }
         Object result = cancellableContinuationImpl.getResult();
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        if (result == coroutine_suspended) {
+        if (result == IntrinsicsKt.getCOROUTINE_SUSPENDED()) {
             DebugProbesKt.probeCoroutineSuspended(continuation);
         }
         return result;

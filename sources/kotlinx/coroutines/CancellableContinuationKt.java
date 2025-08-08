@@ -3,12 +3,8 @@ package kotlinx.coroutines;
 import kotlin.coroutines.Continuation;
 import kotlinx.coroutines.internal.DispatchedContinuation;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class CancellableContinuationKt {
-    public static final void disposeOnCancellation(CancellableContinuation cancellableContinuation, DisposableHandle disposableHandle) {
-        cancellableContinuation.invokeOnCancellation(new DisposeOnCancel(disposableHandle));
-    }
-
     public static final CancellableContinuationImpl getOrCreateCancellableContinuation(Continuation continuation) {
         if (!(continuation instanceof DispatchedContinuation)) {
             return new CancellableContinuationImpl(continuation, 1);
@@ -23,5 +19,9 @@ public abstract class CancellableContinuationKt {
             }
         }
         return new CancellableContinuationImpl(continuation, 2);
+    }
+
+    public static final void disposeOnCancellation(CancellableContinuation cancellableContinuation, DisposableHandle disposableHandle) {
+        cancellableContinuation.invokeOnCancellation(new DisposeOnCancel(disposableHandle));
     }
 }

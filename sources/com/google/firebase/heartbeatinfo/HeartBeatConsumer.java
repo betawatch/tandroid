@@ -1,5 +1,5 @@
 package com.google.firebase.heartbeatinfo;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public interface HeartBeatConsumer {
 }

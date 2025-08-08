@@ -6,13 +6,12 @@ import android.graphics.LinearGradient;
 import android.graphics.Matrix;
 import android.graphics.Shader;
 import android.os.SystemClock;
-import android.text.TextPaint;
 import android.view.View;
 import android.widget.TextView;
 import androidx.core.math.MathUtils;
 import org.telegram.messenger.AndroidUtilities;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class MarqueeTextView extends TextView {
     private LinearGradient gradient;
     private final Matrix gradientMatrix;
@@ -36,49 +35,38 @@ public class MarqueeTextView extends TextView {
         };
     }
 
+    @Override // android.widget.TextView
+    public void setTextColor(int i) {
+        super.setTextColor(i);
+        invalidateGradient();
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    protected void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(0, 0), i2);
+        this.originalWidth = View.MeasureSpec.getSize(i);
+        this.needMarquee = getMeasuredWidth() > this.originalWidth - this.rightPadding;
+        invalidateGradient();
+    }
+
+    @Override // android.widget.TextView
+    public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+        super.setText(charSequence, bufferType);
+        stopMarqueeInternal();
+    }
+
     private void invalidateGradient() {
-        TextPaint paint;
-        LinearGradient linearGradient;
         float min = Math.min(AndroidUtilities.dp(10.0f) / this.originalWidth, 0.49f);
         int currentTextColor = getCurrentTextColor();
         int i = 1048575 & currentTextColor;
         this.gradient = new LinearGradient(0.0f, 0.0f, this.originalWidth, 0.0f, new int[]{i, currentTextColor, currentTextColor, i}, new float[]{0.0f, min, 1.0f - min, 1.0f}, Shader.TileMode.CLAMP);
         if (this.needMarquee) {
-            paint = getPaint();
-            linearGradient = this.gradient;
+            getPaint().setShader(this.gradient);
         } else {
-            paint = getPaint();
-            linearGradient = null;
+            getPaint().setShader(null);
         }
-        paint.setShader(linearGradient);
         this.gradient.setLocalMatrix(this.gradientMatrix);
         invalidate();
-    }
-
-    private void pendingMarqueeInternal() {
-        if (this.marqueeIsPending) {
-            return;
-        }
-        this.marqueeIsPending = true;
-        AndroidUtilities.runOnUIThread(this.startMarquee, 1500L);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public void startMarqueeInternal() {
-        if (this.needMarquee) {
-            this.marqueeIsStarted = true;
-            this.marqueeIsPending = false;
-            this.scrollX = 0.0f;
-            this.lastFrameTime = SystemClock.uptimeMillis();
-            invalidate();
-        }
-    }
-
-    private void stopMarqueeInternal() {
-        AndroidUtilities.cancelRunOnUIThread(this.startMarquee);
-        this.marqueeIsPending = false;
-        this.marqueeIsStarted = false;
-        this.scrollX = 0.0f;
     }
 
     public boolean isNeedMarquee() {
@@ -137,40 +125,41 @@ public class MarqueeTextView extends TextView {
         pendingMarqueeInternal();
     }
 
-    @Override // android.widget.TextView, android.view.View
-    protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(0, 0), i2);
-        this.originalWidth = View.MeasureSpec.getSize(i);
-        this.needMarquee = getMeasuredWidth() > this.originalWidth - this.rightPadding;
-        invalidateGradient();
+    private void pendingMarqueeInternal() {
+        if (this.marqueeIsPending) {
+            return;
+        }
+        this.marqueeIsPending = true;
+        AndroidUtilities.runOnUIThread(this.startMarquee, 1500L);
+    }
+
+    private void stopMarqueeInternal() {
+        AndroidUtilities.cancelRunOnUIThread(this.startMarquee);
+        this.marqueeIsPending = false;
+        this.marqueeIsStarted = false;
+        this.scrollX = 0.0f;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void startMarqueeInternal() {
+        if (this.needMarquee) {
+            this.marqueeIsStarted = true;
+            this.marqueeIsPending = false;
+            this.scrollX = 0.0f;
+            this.lastFrameTime = SystemClock.uptimeMillis();
+            invalidate();
+        }
     }
 
     public void setCustomPaddingRight(int i) {
-        TextPaint paint;
-        LinearGradient linearGradient;
         this.rightPadding = i;
         boolean z = getMeasuredWidth() > this.originalWidth - this.rightPadding;
         this.needMarquee = z;
         if (z) {
-            paint = getPaint();
-            linearGradient = this.gradient;
+            getPaint().setShader(this.gradient);
         } else {
-            paint = getPaint();
-            linearGradient = null;
+            getPaint().setShader(null);
         }
-        paint.setShader(linearGradient);
         invalidate();
-    }
-
-    @Override // android.widget.TextView
-    public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
-        super.setText(charSequence, bufferType);
-        stopMarqueeInternal();
-    }
-
-    @Override // android.widget.TextView
-    public void setTextColor(int i) {
-        super.setTextColor(i);
-        invalidateGradient();
     }
 }

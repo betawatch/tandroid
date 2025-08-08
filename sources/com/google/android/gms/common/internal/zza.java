@@ -20,19 +20,17 @@ abstract class zza extends zzc {
 
     @Override // com.google.android.gms.common.internal.zzc
     protected final /* bridge */ /* synthetic */ void zza(Object obj) {
-        ConnectionResult connectionResult;
         if (this.zza != 0) {
             this.zzc.zzp(1, null);
             Bundle bundle = this.zzb;
-            connectionResult = new ConnectionResult(this.zza, bundle != null ? (PendingIntent) bundle.getParcelable("pendingIntent") : null);
+            zzb(new ConnectionResult(this.zza, bundle != null ? (PendingIntent) bundle.getParcelable("pendingIntent") : null));
         } else {
             if (zzd()) {
                 return;
             }
             this.zzc.zzp(1, null);
-            connectionResult = new ConnectionResult(8, null);
+            zzb(new ConnectionResult(8, null));
         }
-        zzb(connectionResult);
     }
 
     protected abstract void zzb(ConnectionResult connectionResult);

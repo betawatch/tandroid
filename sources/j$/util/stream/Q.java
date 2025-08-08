@@ -1,72 +1,97 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
-import j$.util.function.Consumer;
+import j$.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CountedCompleter;
 
 /* loaded from: classes2.dex */
-abstract class Q implements w3, x3 {
-    private final boolean a;
+final class Q extends CountedCompleter {
+    private final b a;
+    private Spliterator b;
+    private final long c;
+    private final ConcurrentHashMap d;
+    private final P e;
+    private final Q f;
+    private F0 g;
 
-    protected Q(boolean z) {
-        this.a = z;
+    protected Q(b bVar, Spliterator spliterator, P p) {
+        super(null);
+        this.a = bVar;
+        this.b = spliterator;
+        this.c = e.f(spliterator.estimateSize());
+        this.d = new ConcurrentHashMap(Math.max(16, e.g << 1));
+        this.e = p;
+        this.f = null;
     }
 
-    @Override // j$.util.stream.w3
-    public final Object a(b bVar, Spliterator spliterator) {
-        bVar.getClass();
-        bVar.f0(spliterator, bVar.B0(this));
-        return null;
+    Q(Q q, Spliterator spliterator, Q q2) {
+        super(q);
+        this.a = q.a;
+        this.b = spliterator;
+        this.c = q.c;
+        this.d = q.d;
+        this.e = q.e;
+        this.f = q2;
     }
 
-    public /* synthetic */ void accept(double d) {
-        u0.b();
-        throw null;
-    }
-
-    public /* synthetic */ void accept(int i) {
-        u0.k();
-        throw null;
-    }
-
-    public /* synthetic */ void accept(long j) {
-        u0.l();
-        throw null;
-    }
-
-    @Override // j$.util.function.Consumer
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer.-CC.$default$andThen(this, consumer);
-    }
-
-    @Override // j$.util.stream.w3
-    public final Object c(b bVar, Spliterator spliterator) {
-        (this.a ? new S(bVar, spliterator, this) : new T(bVar, spliterator, bVar.B0(this))).invoke();
-        return null;
-    }
-
-    @Override // j$.util.stream.w3
-    public final int d() {
-        if (this.a) {
-            return 0;
+    @Override // java.util.concurrent.CountedCompleter
+    public final void compute() {
+        Spliterator trySplit;
+        Spliterator spliterator = this.b;
+        long j = this.c;
+        boolean z = false;
+        Q q = this;
+        while (spliterator.estimateSize() > j && (trySplit = spliterator.trySplit()) != null) {
+            Q q2 = new Q(q, trySplit, q.f);
+            Q q3 = new Q(q, spliterator, q2);
+            q.addToPendingCount(1);
+            q3.addToPendingCount(1);
+            q.d.put(q2, q3);
+            if (q.f != null) {
+                q2.addToPendingCount(1);
+                if (q.d.replace(q.f, q, q2)) {
+                    q.addToPendingCount(-1);
+                } else {
+                    q2.addToPendingCount(-1);
+                }
+            }
+            if (z) {
+                spliterator = trySplit;
+                q = q2;
+                q2 = q3;
+            } else {
+                q = q3;
+            }
+            z = !z;
+            q2.fork();
         }
-        return R2.r;
+        if (q.getPendingCount() > 0) {
+            q qVar = new q(8);
+            b bVar = q.a;
+            x0 s0 = bVar.s0(bVar.l0(spliterator), qVar);
+            q.a.A0(spliterator, s0);
+            q.g = s0.b();
+            q.b = null;
+        }
+        q.tryComplete();
     }
 
-    @Override // j$.util.function.Supplier
-    public final /* bridge */ /* synthetic */ Object get() {
-        return null;
-    }
-
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ void m() {
-    }
-
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ void n(long j) {
-    }
-
-    @Override // j$.util.stream.e2
-    public final /* synthetic */ boolean q() {
-        return false;
+    @Override // java.util.concurrent.CountedCompleter
+    public final void onCompletion(CountedCompleter countedCompleter) {
+        F0 f0 = this.g;
+        if (f0 != null) {
+            f0.forEach(this.e);
+            this.g = null;
+        } else {
+            Spliterator spliterator = this.b;
+            if (spliterator != null) {
+                this.a.A0(spliterator, this.e);
+                this.b = null;
+            }
+        }
+        Q q = (Q) this.d.remove(this);
+        if (q != null) {
+            q.tryComplete();
+        }
     }
 }

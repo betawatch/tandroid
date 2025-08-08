@@ -3,7 +3,7 @@ package kotlin.text;
 import java.nio.charset.Charset;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class Charsets {
     public static final Charsets INSTANCE = new Charsets();
     public static final Charset ISO_8859_1;
@@ -12,6 +12,9 @@ public final class Charsets {
     public static final Charset UTF_16BE;
     public static final Charset UTF_16LE;
     public static final Charset UTF_8;
+
+    private Charsets() {
+    }
 
     static {
         Charset forName = Charset.forName("UTF-8");
@@ -32,8 +35,5 @@ public final class Charsets {
         Charset forName6 = Charset.forName("ISO-8859-1");
         Intrinsics.checkNotNullExpressionValue(forName6, "forName(\"ISO-8859-1\")");
         ISO_8859_1 = forName6;
-    }
-
-    private Charsets() {
     }
 }

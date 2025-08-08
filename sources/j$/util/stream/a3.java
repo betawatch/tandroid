@@ -1,95 +1,118 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import j$.util.concurrent.ConcurrentHashMap;
 import j$.util.function.Consumer;
-import java.util.Comparator;
 
 /* loaded from: classes2.dex */
-final class a3 implements Spliterator, Consumer {
-    private static final Object d = new Object();
-    private final Spliterator a;
-    private final ConcurrentHashMap b;
-    private Object c;
+public final /* synthetic */ class a3 implements a2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ j$.util.function.l b;
 
-    a3(Spliterator spliterator) {
-        this(spliterator, new ConcurrentHashMap());
+    public /* synthetic */ a3(j$.util.function.l lVar, int i) {
+        this.a = i;
+        this.b = lVar;
     }
 
-    private a3(Spliterator spliterator, ConcurrentHashMap concurrentHashMap) {
-        this.a = spliterator;
-        this.b = concurrentHashMap;
+    private final /* synthetic */ void a(long j) {
     }
 
-    @Override // j$.util.Spliterator
-    public final void a(Consumer consumer) {
-        this.a.a(new l0(4, this, consumer));
+    private final /* synthetic */ void c(long j) {
+    }
+
+    private final /* synthetic */ void d() {
+    }
+
+    private final /* synthetic */ void e() {
+    }
+
+    @Override // j$.util.stream.d2, j$.util.function.l
+    public final void accept(double d) {
+        switch (this.a) {
+            case 0:
+                ((G2) this.b).accept(d);
+                break;
+            default:
+                this.b.accept(d);
+                break;
+        }
+    }
+
+    @Override // j$.util.stream.d2
+    public final /* synthetic */ void accept(int i) {
+        switch (this.a) {
+            case 0:
+                t0.k();
+                throw null;
+            default:
+                t0.k();
+                throw null;
+        }
+    }
+
+    @Override // j$.util.stream.d2
+    public final /* synthetic */ void accept(long j) {
+        switch (this.a) {
+            case 0:
+                t0.l();
+                throw null;
+            default:
+                t0.l();
+                throw null;
+        }
     }
 
     @Override // j$.util.function.Consumer
     /* renamed from: accept */
-    public final void r(Object obj) {
-        this.c = obj;
+    public final /* bridge */ /* synthetic */ void r(Object obj) {
+        switch (this.a) {
+            case 0:
+                r((Double) obj);
+                break;
+            default:
+                r((Double) obj);
+                break;
+        }
     }
 
     @Override // j$.util.function.Consumer
     public final /* synthetic */ Consumer andThen(Consumer consumer) {
+        switch (this.a) {
+        }
         return Consumer.-CC.$default$andThen(this, consumer);
     }
 
-    @Override // j$.util.Spliterator
-    public final int characteristics() {
-        return (this.a.characteristics() & (-16469)) | 1;
-    }
-
-    @Override // j$.util.Spliterator
-    public final long estimateSize() {
-        return this.a.estimateSize();
-    }
-
-    final void f(Consumer consumer, Object obj) {
-        if (this.b.putIfAbsent(obj != null ? obj : d, Boolean.TRUE) == null) {
-            consumer.r(obj);
+    @Override // j$.util.function.l
+    public final /* synthetic */ j$.util.function.l k(j$.util.function.l lVar) {
+        switch (this.a) {
         }
+        return j$.com.android.tools.r8.a.a(this, lVar);
     }
 
-    @Override // j$.util.Spliterator
-    public final Comparator getComparator() {
-        return this.a.getComparator();
+    @Override // j$.util.stream.d2
+    public final /* synthetic */ void m() {
+        int i = this.a;
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.util.A.j(this);
+    @Override // j$.util.stream.d2
+    public final /* synthetic */ void n(long j) {
+        int i = this.a;
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return j$.util.A.k(this, i);
-    }
-
-    @Override // j$.util.Spliterator
-    public final boolean s(Consumer consumer) {
-        while (this.a.s(this)) {
-            Object obj = this.c;
-            if (obj == null) {
-                obj = d;
-            }
-            if (this.b.putIfAbsent(obj, Boolean.TRUE) == null) {
-                consumer.r(this.c);
-                this.c = null;
-                return true;
-            }
+    @Override // j$.util.stream.d2
+    public final /* synthetic */ boolean q() {
+        switch (this.a) {
         }
         return false;
     }
 
-    @Override // j$.util.Spliterator
-    public final Spliterator trySplit() {
-        Spliterator trySplit = this.a.trySplit();
-        if (trySplit != null) {
-            return new a3(trySplit, this.b);
+    @Override // j$.util.stream.a2
+    public final /* synthetic */ void r(Double d) {
+        switch (this.a) {
+            case 0:
+                t0.e(this, d);
+                break;
+            default:
+                t0.e(this, d);
+                break;
         }
-        return null;
     }
 }

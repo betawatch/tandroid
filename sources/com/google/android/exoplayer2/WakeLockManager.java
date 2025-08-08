@@ -15,18 +15,6 @@ final class WakeLockManager {
         this.powerManager = (PowerManager) context.getApplicationContext().getSystemService("power");
     }
 
-    private void updateWakeLock() {
-        PowerManager.WakeLock wakeLock = this.wakeLock;
-        if (wakeLock == null) {
-            return;
-        }
-        if (this.enabled && this.stayAwake) {
-            wakeLock.acquire();
-        } else {
-            wakeLock.release();
-        }
-    }
-
     public void setEnabled(boolean z) {
         if (z && this.wakeLock == null) {
             PowerManager powerManager = this.powerManager;
@@ -46,5 +34,17 @@ final class WakeLockManager {
     public void setStayAwake(boolean z) {
         this.stayAwake = z;
         updateWakeLock();
+    }
+
+    private void updateWakeLock() {
+        PowerManager.WakeLock wakeLock = this.wakeLock;
+        if (wakeLock == null) {
+            return;
+        }
+        if (this.enabled && this.stayAwake) {
+            wakeLock.acquire();
+        } else {
+            wakeLock.release();
+        }
     }
 }

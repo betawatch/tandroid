@@ -32,18 +32,6 @@ public final class CircleOptions extends AbstractSafeParcelable {
         this.zzi = null;
     }
 
-    CircleOptions(LatLng latLng, double d, float f, int i, int i2, float f2, boolean z, boolean z2, List list) {
-        this.zza = latLng;
-        this.zzb = d;
-        this.zzc = f;
-        this.zzd = i;
-        this.zze = i2;
-        this.zzf = f2;
-        this.zzg = z;
-        this.zzh = z2;
-        this.zzi = list;
-    }
-
     public CircleOptions center(LatLng latLng) {
         Preconditions.checkNotNull(latLng, "center must not be null.");
         this.zza = latLng;
@@ -124,5 +112,17 @@ public final class CircleOptions extends AbstractSafeParcelable {
         SafeParcelWriter.writeBoolean(parcel, 9, isClickable());
         SafeParcelWriter.writeTypedList(parcel, 10, getStrokePattern(), false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    CircleOptions(LatLng latLng, double d, float f, int i, int i2, float f2, boolean z, boolean z2, List list) {
+        this.zza = latLng;
+        this.zzb = d;
+        this.zzc = f;
+        this.zzd = i;
+        this.zze = i2;
+        this.zzf = f2;
+        this.zzg = z;
+        this.zzh = z2;
+        this.zzi = list;
     }
 }

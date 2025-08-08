@@ -8,6 +8,20 @@ import android.text.TextUtils;
 public final class MediaSessionManager$RemoteUserInfo {
     MediaSessionManager$RemoteUserInfoImpl mImpl;
 
+    public MediaSessionManager$RemoteUserInfo(String str, int i, int i2) {
+        if (str == null) {
+            throw new NullPointerException("package shouldn't be null");
+        }
+        if (TextUtils.isEmpty(str)) {
+            throw new IllegalArgumentException("packageName should be nonempty");
+        }
+        if (Build.VERSION.SDK_INT >= 28) {
+            this.mImpl = new MediaSessionManagerImplApi28$RemoteUserInfoImplApi28(str, i, i2);
+        } else {
+            this.mImpl = new MediaSessionManagerImplBase$RemoteUserInfoImplBase(str, i, i2);
+        }
+    }
+
     public MediaSessionManager$RemoteUserInfo(MediaSessionManager.RemoteUserInfo remoteUserInfo) {
         String packageName = MediaSessionManagerImplApi28$RemoteUserInfoImplApi28.getPackageName(remoteUserInfo);
         if (packageName == null) {
@@ -17,16 +31,6 @@ public final class MediaSessionManager$RemoteUserInfo {
             throw new IllegalArgumentException("packageName should be nonempty");
         }
         this.mImpl = new MediaSessionManagerImplApi28$RemoteUserInfoImplApi28(remoteUserInfo);
-    }
-
-    public MediaSessionManager$RemoteUserInfo(String str, int i, int i2) {
-        if (str == null) {
-            throw new NullPointerException("package shouldn't be null");
-        }
-        if (TextUtils.isEmpty(str)) {
-            throw new IllegalArgumentException("packageName should be nonempty");
-        }
-        this.mImpl = Build.VERSION.SDK_INT >= 28 ? new MediaSessionManagerImplApi28$RemoteUserInfoImplApi28(str, i, i2) : new MediaSessionManagerImplBase$RemoteUserInfoImplBase(str, i, i2);
     }
 
     public boolean equals(Object obj) {

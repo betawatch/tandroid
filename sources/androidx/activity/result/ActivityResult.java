@@ -20,6 +20,11 @@ public final class ActivityResult implements Parcelable {
     private final Intent mData;
     private final int mResultCode;
 
+    @Override // android.os.Parcelable
+    public int describeContents() {
+        return 0;
+    }
+
     public ActivityResult(int i, Intent intent) {
         this.mResultCode = i;
         this.mData = intent;
@@ -30,25 +35,26 @@ public final class ActivityResult implements Parcelable {
         this.mData = parcel.readInt() == 0 ? null : (Intent) Intent.CREATOR.createFromParcel(parcel);
     }
 
-    public static String resultCodeToString(int i) {
-        return i != -1 ? i != 0 ? String.valueOf(i) : "RESULT_CANCELED" : "RESULT_OK";
-    }
-
-    @Override // android.os.Parcelable
-    public int describeContents() {
-        return 0;
+    public int getResultCode() {
+        return this.mResultCode;
     }
 
     public Intent getData() {
         return this.mData;
     }
 
-    public int getResultCode() {
-        return this.mResultCode;
-    }
-
     public String toString() {
         return "ActivityResult{resultCode=" + resultCodeToString(this.mResultCode) + ", data=" + this.mData + '}';
+    }
+
+    public static String resultCodeToString(int i) {
+        if (i == -1) {
+            return "RESULT_OK";
+        }
+        if (i == 0) {
+            return "RESULT_CANCELED";
+        }
+        return String.valueOf(i);
     }
 
     @Override // android.os.Parcelable

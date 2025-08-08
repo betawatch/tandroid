@@ -18,7 +18,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 class DisplayNotification {
     private final Context context;
     private final ExecutorService networkIoExecutor;
@@ -50,11 +50,18 @@ class DisplayNotification {
         return false;
     }
 
-    private void showNotification(CommonNotificationBuilder.DisplayNotificationInfo displayNotificationInfo) {
-        if (Log.isLoggable("FirebaseMessaging", 3)) {
-            Log.d("FirebaseMessaging", "Showing notification");
+    boolean handleNotification() {
+        if (this.params.getBoolean("gcm.n.noui")) {
+            return true;
         }
-        ((NotificationManager) this.context.getSystemService("notification")).notify(displayNotificationInfo.tag, displayNotificationInfo.id, displayNotificationInfo.notificationBuilder.build());
+        if (isAppForeground()) {
+            return false;
+        }
+        ImageDownload startImageDownloadInBackground = startImageDownloadInBackground();
+        CommonNotificationBuilder.DisplayNotificationInfo createNotificationInfo = CommonNotificationBuilder.createNotificationInfo(this.context, this.params);
+        waitForAndApplyImageDownload(createNotificationInfo.notificationBuilder, startImageDownloadInBackground);
+        showNotification(createNotificationInfo);
+        return true;
     }
 
     private ImageDownload startImageDownloadInBackground() {
@@ -85,17 +92,10 @@ class DisplayNotification {
         }
     }
 
-    boolean handleNotification() {
-        if (this.params.getBoolean("gcm.n.noui")) {
-            return true;
+    private void showNotification(CommonNotificationBuilder.DisplayNotificationInfo displayNotificationInfo) {
+        if (Log.isLoggable("FirebaseMessaging", 3)) {
+            Log.d("FirebaseMessaging", "Showing notification");
         }
-        if (isAppForeground()) {
-            return false;
-        }
-        ImageDownload startImageDownloadInBackground = startImageDownloadInBackground();
-        CommonNotificationBuilder.DisplayNotificationInfo createNotificationInfo = CommonNotificationBuilder.createNotificationInfo(this.context, this.params);
-        waitForAndApplyImageDownload(createNotificationInfo.notificationBuilder, startImageDownloadInBackground);
-        showNotification(createNotificationInfo);
-        return true;
+        ((NotificationManager) this.context.getSystemService("notification")).notify(displayNotificationInfo.tag, displayNotificationInfo.id, displayNotificationInfo.notificationBuilder.build());
     }
 }

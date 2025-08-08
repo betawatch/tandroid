@@ -73,6 +73,24 @@ public final class Mp3Extractor implements Extractor {
     private final MpegAudioUtil.Header synchronizedHeader;
     private int synchronizedHeaderData;
 
+    private static boolean headersMatch(int i, long j) {
+        return ((long) (i & (-128000))) == (j & (-128000));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ boolean lambda$static$1(int i, int i2, int i3, int i4, int i5) {
+        return (i2 == 67 && i3 == 79 && i4 == 77 && (i5 == 77 || i == 2)) || (i2 == 77 && i3 == 76 && i4 == 76 && (i5 == 84 || i == 2));
+    }
+
+    @Override // com.google.android.exoplayer2.extractor.Extractor
+    public void release() {
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ Extractor[] lambda$static$0() {
+        return new Extractor[]{new Mp3Extractor()};
+    }
+
     public Mp3Extractor() {
         this(0);
     }
@@ -94,166 +112,51 @@ public final class Mp3Extractor implements Extractor {
         this.currentTrackOutput = dummyTrackOutput;
     }
 
-    private void assertInitialized() {
-        Assertions.checkStateNotNull(this.realTrackOutput);
-        Util.castNonNull(this.extractorOutput);
+    @Override // com.google.android.exoplayer2.extractor.Extractor
+    public boolean sniff(ExtractorInput extractorInput) {
+        return synchronize(extractorInput, true);
     }
 
-    private Seeker computeSeeker(ExtractorInput extractorInput) {
-        long id3TlenUs;
-        long j;
-        Seeker maybeReadSeekFrame = maybeReadSeekFrame(extractorInput);
-        MlltSeeker maybeHandleSeekMetadata = maybeHandleSeekMetadata(this.metadata, extractorInput.getPosition());
-        if (this.disableSeeking) {
-            return new Seeker.UnseekableSeeker();
-        }
-        if ((this.flags & 4) != 0) {
-            if (maybeHandleSeekMetadata != null) {
-                id3TlenUs = maybeHandleSeekMetadata.getDurationUs();
-                j = maybeHandleSeekMetadata.getDataEndPosition();
-            } else if (maybeReadSeekFrame != null) {
-                id3TlenUs = maybeReadSeekFrame.getDurationUs();
-                j = maybeReadSeekFrame.getDataEndPosition();
-            } else {
-                id3TlenUs = getId3TlenUs(this.metadata);
-                j = -1;
-            }
-            maybeReadSeekFrame = new IndexSeeker(id3TlenUs, extractorInput.getPosition(), j);
-        } else if (maybeHandleSeekMetadata != null) {
-            maybeReadSeekFrame = maybeHandleSeekMetadata;
-        } else if (maybeReadSeekFrame == null) {
-            maybeReadSeekFrame = null;
-        }
-        if (maybeReadSeekFrame == null || !(maybeReadSeekFrame.isSeekable() || (this.flags & 1) == 0)) {
-            return getConstantBitrateSeeker(extractorInput, (this.flags & 2) != 0);
-        }
-        return maybeReadSeekFrame;
+    @Override // com.google.android.exoplayer2.extractor.Extractor
+    public void init(ExtractorOutput extractorOutput) {
+        this.extractorOutput = extractorOutput;
+        TrackOutput track = extractorOutput.track(0, 1);
+        this.realTrackOutput = track;
+        this.currentTrackOutput = track;
+        this.extractorOutput.endTracks();
     }
 
-    private long computeTimeUs(long j) {
-        return this.basisTimeUs + ((j * 1000000) / this.synchronizedHeader.sampleRate);
-    }
-
-    private Seeker getConstantBitrateSeeker(ExtractorInput extractorInput, boolean z) {
-        extractorInput.peekFully(this.scratch.getData(), 0, 4);
-        this.scratch.setPosition(0);
-        this.synchronizedHeader.setForHeaderData(this.scratch.readInt());
-        return new ConstantBitrateSeeker(extractorInput.getLength(), extractorInput.getPosition(), this.synchronizedHeader, z);
-    }
-
-    private static long getId3TlenUs(Metadata metadata) {
-        if (metadata == null) {
-            return -9223372036854775807L;
-        }
-        int length = metadata.length();
-        for (int i = 0; i < length; i++) {
-            Metadata.Entry entry = metadata.get(i);
-            if (entry instanceof TextInformationFrame) {
-                TextInformationFrame textInformationFrame = (TextInformationFrame) entry;
-                if (textInformationFrame.id.equals("TLEN")) {
-                    return Util.msToUs(Long.parseLong((String) textInformationFrame.values.get(0)));
-                }
-            }
-        }
-        return -9223372036854775807L;
-    }
-
-    private static int getSeekFrameHeader(ParsableByteArray parsableByteArray, int i) {
-        if (parsableByteArray.limit() >= i + 4) {
-            parsableByteArray.setPosition(i);
-            int readInt = parsableByteArray.readInt();
-            if (readInt == 1483304551 || readInt == 1231971951) {
-                return readInt;
-            }
-        }
-        if (parsableByteArray.limit() < 40) {
-            return 0;
-        }
-        parsableByteArray.setPosition(36);
-        return parsableByteArray.readInt() == 1447187017 ? 1447187017 : 0;
-    }
-
-    private static boolean headersMatch(int i, long j) {
-        return ((long) (i & (-128000))) == (j & (-128000));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Extractor[] lambda$static$0() {
-        return new Extractor[]{new Mp3Extractor()};
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$static$1(int i, int i2, int i3, int i4, int i5) {
-        return (i2 == 67 && i3 == 79 && i4 == 77 && (i5 == 77 || i == 2)) || (i2 == 77 && i3 == 76 && i4 == 76 && (i5 == 84 || i == 2));
-    }
-
-    private static MlltSeeker maybeHandleSeekMetadata(Metadata metadata, long j) {
-        if (metadata == null) {
-            return null;
-        }
-        int length = metadata.length();
-        for (int i = 0; i < length; i++) {
-            Metadata.Entry entry = metadata.get(i);
-            if (entry instanceof MlltFrame) {
-                return MlltSeeker.create(j, (MlltFrame) entry, getId3TlenUs(metadata));
-            }
-        }
-        return null;
-    }
-
-    private Seeker maybeReadSeekFrame(ExtractorInput extractorInput) {
-        int i;
-        ParsableByteArray parsableByteArray = new ParsableByteArray(this.synchronizedHeader.frameSize);
-        extractorInput.peekFully(parsableByteArray.getData(), 0, this.synchronizedHeader.frameSize);
-        MpegAudioUtil.Header header = this.synchronizedHeader;
-        int i2 = header.version & 1;
-        int i3 = header.channels;
-        if (i2 != 0) {
-            if (i3 != 1) {
-                i = 36;
-            }
-            i = 21;
-        } else {
-            if (i3 == 1) {
-                i = 13;
-            }
-            i = 21;
-        }
-        int seekFrameHeader = getSeekFrameHeader(parsableByteArray, i);
-        if (seekFrameHeader != 1483304551 && seekFrameHeader != 1231971951) {
-            if (seekFrameHeader != 1447187017) {
-                extractorInput.resetPeekPosition();
-                return null;
-            }
-            VbriSeeker create = VbriSeeker.create(extractorInput.getLength(), extractorInput.getPosition(), this.synchronizedHeader, parsableByteArray);
-            extractorInput.skipFully(this.synchronizedHeader.frameSize);
-            return create;
-        }
-        XingSeeker create2 = XingSeeker.create(extractorInput.getLength(), extractorInput.getPosition(), this.synchronizedHeader, parsableByteArray);
-        if (create2 != null && !this.gaplessInfoHolder.hasGaplessInfo()) {
-            extractorInput.resetPeekPosition();
-            extractorInput.advancePeekPosition(i + NotificationCenter.filePreparingStarted);
-            extractorInput.peekFully(this.scratch.getData(), 0, 3);
-            this.scratch.setPosition(0);
-            this.gaplessInfoHolder.setFromXingHeaderValue(this.scratch.readUnsignedInt24());
-        }
-        extractorInput.skipFully(this.synchronizedHeader.frameSize);
-        return (create2 == null || create2.isSeekable() || seekFrameHeader != 1231971951) ? create2 : getConstantBitrateSeeker(extractorInput, false);
-    }
-
-    private boolean peekEndOfStreamOrHeader(ExtractorInput extractorInput) {
+    @Override // com.google.android.exoplayer2.extractor.Extractor
+    public void seek(long j, long j2) {
+        this.synchronizedHeaderData = 0;
+        this.basisTimeUs = -9223372036854775807L;
+        this.samplesRead = 0L;
+        this.sampleBytesRemaining = 0;
+        this.seekTimeUs = j2;
         Seeker seeker = this.seeker;
-        if (seeker != null) {
-            long dataEndPosition = seeker.getDataEndPosition();
-            if (dataEndPosition != -1 && extractorInput.getPeekPosition() > dataEndPosition - 4) {
-                return true;
+        if (!(seeker instanceof IndexSeeker) || ((IndexSeeker) seeker).isTimeUsInIndex(j2)) {
+            return;
+        }
+        this.isSeekInProgress = true;
+        this.currentTrackOutput = this.skippingTrackOutput;
+    }
+
+    @Override // com.google.android.exoplayer2.extractor.Extractor
+    public int read(ExtractorInput extractorInput, PositionHolder positionHolder) {
+        assertInitialized();
+        int readInternal = readInternal(extractorInput);
+        if (readInternal == -1 && (this.seeker instanceof IndexSeeker)) {
+            long computeTimeUs = computeTimeUs(this.samplesRead);
+            if (this.seeker.getDurationUs() != computeTimeUs) {
+                ((IndexSeeker) this.seeker).setDurationUs(computeTimeUs);
+                this.extractorOutput.seekMap(this.seeker);
             }
         }
-        try {
-            return !extractorInput.peekFully(this.scratch.getData(), 0, 4, true);
-        } catch (EOFException unused) {
-            return true;
-        }
+        return readInternal;
+    }
+
+    public void disableSeeking() {
+        this.disableSeeking = true;
     }
 
     private int readInternal(ExtractorInput extractorInput) {
@@ -324,6 +227,10 @@ public final class Mp3Extractor implements Extractor {
         this.samplesRead += this.synchronizedHeader.samplesPerFrame;
         this.sampleBytesRemaining = 0;
         return 0;
+    }
+
+    private long computeTimeUs(long j) {
+        return this.basisTimeUs + ((j * 1000000) / this.synchronizedHeader.sampleRate);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:48:0x009a, code lost:
@@ -411,54 +318,145 @@ public final class Mp3Extractor implements Extractor {
         }
     }
 
-    public void disableSeeking() {
-        this.disableSeeking = true;
-    }
-
-    @Override // com.google.android.exoplayer2.extractor.Extractor
-    public void init(ExtractorOutput extractorOutput) {
-        this.extractorOutput = extractorOutput;
-        TrackOutput track = extractorOutput.track(0, 1);
-        this.realTrackOutput = track;
-        this.currentTrackOutput = track;
-        this.extractorOutput.endTracks();
-    }
-
-    @Override // com.google.android.exoplayer2.extractor.Extractor
-    public int read(ExtractorInput extractorInput, PositionHolder positionHolder) {
-        assertInitialized();
-        int readInternal = readInternal(extractorInput);
-        if (readInternal == -1 && (this.seeker instanceof IndexSeeker)) {
-            long computeTimeUs = computeTimeUs(this.samplesRead);
-            if (this.seeker.getDurationUs() != computeTimeUs) {
-                ((IndexSeeker) this.seeker).setDurationUs(computeTimeUs);
-                this.extractorOutput.seekMap(this.seeker);
+    private boolean peekEndOfStreamOrHeader(ExtractorInput extractorInput) {
+        Seeker seeker = this.seeker;
+        if (seeker != null) {
+            long dataEndPosition = seeker.getDataEndPosition();
+            if (dataEndPosition != -1 && extractorInput.getPeekPosition() > dataEndPosition - 4) {
+                return true;
             }
         }
-        return readInternal;
-    }
-
-    @Override // com.google.android.exoplayer2.extractor.Extractor
-    public void release() {
-    }
-
-    @Override // com.google.android.exoplayer2.extractor.Extractor
-    public void seek(long j, long j2) {
-        this.synchronizedHeaderData = 0;
-        this.basisTimeUs = -9223372036854775807L;
-        this.samplesRead = 0L;
-        this.sampleBytesRemaining = 0;
-        this.seekTimeUs = j2;
-        Seeker seeker = this.seeker;
-        if (!(seeker instanceof IndexSeeker) || ((IndexSeeker) seeker).isTimeUsInIndex(j2)) {
-            return;
+        try {
+            return !extractorInput.peekFully(this.scratch.getData(), 0, 4, true);
+        } catch (EOFException unused) {
+            return true;
         }
-        this.isSeekInProgress = true;
-        this.currentTrackOutput = this.skippingTrackOutput;
     }
 
-    @Override // com.google.android.exoplayer2.extractor.Extractor
-    public boolean sniff(ExtractorInput extractorInput) {
-        return synchronize(extractorInput, true);
+    private Seeker computeSeeker(ExtractorInput extractorInput) {
+        long id3TlenUs;
+        long j;
+        Seeker maybeReadSeekFrame = maybeReadSeekFrame(extractorInput);
+        MlltSeeker maybeHandleSeekMetadata = maybeHandleSeekMetadata(this.metadata, extractorInput.getPosition());
+        if (this.disableSeeking) {
+            return new Seeker.UnseekableSeeker();
+        }
+        if ((this.flags & 4) != 0) {
+            if (maybeHandleSeekMetadata != null) {
+                id3TlenUs = maybeHandleSeekMetadata.getDurationUs();
+                j = maybeHandleSeekMetadata.getDataEndPosition();
+            } else if (maybeReadSeekFrame != null) {
+                id3TlenUs = maybeReadSeekFrame.getDurationUs();
+                j = maybeReadSeekFrame.getDataEndPosition();
+            } else {
+                id3TlenUs = getId3TlenUs(this.metadata);
+                j = -1;
+            }
+            maybeReadSeekFrame = new IndexSeeker(id3TlenUs, extractorInput.getPosition(), j);
+        } else if (maybeHandleSeekMetadata != null) {
+            maybeReadSeekFrame = maybeHandleSeekMetadata;
+        } else if (maybeReadSeekFrame == null) {
+            maybeReadSeekFrame = null;
+        }
+        if (maybeReadSeekFrame == null || !(maybeReadSeekFrame.isSeekable() || (this.flags & 1) == 0)) {
+            return getConstantBitrateSeeker(extractorInput, (this.flags & 2) != 0);
+        }
+        return maybeReadSeekFrame;
+    }
+
+    private Seeker maybeReadSeekFrame(ExtractorInput extractorInput) {
+        int i;
+        ParsableByteArray parsableByteArray = new ParsableByteArray(this.synchronizedHeader.frameSize);
+        extractorInput.peekFully(parsableByteArray.getData(), 0, this.synchronizedHeader.frameSize);
+        MpegAudioUtil.Header header = this.synchronizedHeader;
+        if ((header.version & 1) != 0) {
+            if (header.channels != 1) {
+                i = 36;
+            }
+            i = 21;
+        } else {
+            if (header.channels == 1) {
+                i = 13;
+            }
+            i = 21;
+        }
+        int seekFrameHeader = getSeekFrameHeader(parsableByteArray, i);
+        if (seekFrameHeader != 1483304551 && seekFrameHeader != 1231971951) {
+            if (seekFrameHeader == 1447187017) {
+                VbriSeeker create = VbriSeeker.create(extractorInput.getLength(), extractorInput.getPosition(), this.synchronizedHeader, parsableByteArray);
+                extractorInput.skipFully(this.synchronizedHeader.frameSize);
+                return create;
+            }
+            extractorInput.resetPeekPosition();
+            return null;
+        }
+        XingSeeker create2 = XingSeeker.create(extractorInput.getLength(), extractorInput.getPosition(), this.synchronizedHeader, parsableByteArray);
+        if (create2 != null && !this.gaplessInfoHolder.hasGaplessInfo()) {
+            extractorInput.resetPeekPosition();
+            extractorInput.advancePeekPosition(i + NotificationCenter.filePreparingStarted);
+            extractorInput.peekFully(this.scratch.getData(), 0, 3);
+            this.scratch.setPosition(0);
+            this.gaplessInfoHolder.setFromXingHeaderValue(this.scratch.readUnsignedInt24());
+        }
+        extractorInput.skipFully(this.synchronizedHeader.frameSize);
+        return (create2 == null || create2.isSeekable() || seekFrameHeader != 1231971951) ? create2 : getConstantBitrateSeeker(extractorInput, false);
+    }
+
+    private Seeker getConstantBitrateSeeker(ExtractorInput extractorInput, boolean z) {
+        extractorInput.peekFully(this.scratch.getData(), 0, 4);
+        this.scratch.setPosition(0);
+        this.synchronizedHeader.setForHeaderData(this.scratch.readInt());
+        return new ConstantBitrateSeeker(extractorInput.getLength(), extractorInput.getPosition(), this.synchronizedHeader, z);
+    }
+
+    private void assertInitialized() {
+        Assertions.checkStateNotNull(this.realTrackOutput);
+        Util.castNonNull(this.extractorOutput);
+    }
+
+    private static int getSeekFrameHeader(ParsableByteArray parsableByteArray, int i) {
+        if (parsableByteArray.limit() >= i + 4) {
+            parsableByteArray.setPosition(i);
+            int readInt = parsableByteArray.readInt();
+            if (readInt == 1483304551 || readInt == 1231971951) {
+                return readInt;
+            }
+        }
+        if (parsableByteArray.limit() < 40) {
+            return 0;
+        }
+        parsableByteArray.setPosition(36);
+        return parsableByteArray.readInt() == 1447187017 ? 1447187017 : 0;
+    }
+
+    private static MlltSeeker maybeHandleSeekMetadata(Metadata metadata, long j) {
+        if (metadata == null) {
+            return null;
+        }
+        int length = metadata.length();
+        for (int i = 0; i < length; i++) {
+            Metadata.Entry entry = metadata.get(i);
+            if (entry instanceof MlltFrame) {
+                return MlltSeeker.create(j, (MlltFrame) entry, getId3TlenUs(metadata));
+            }
+        }
+        return null;
+    }
+
+    private static long getId3TlenUs(Metadata metadata) {
+        if (metadata == null) {
+            return -9223372036854775807L;
+        }
+        int length = metadata.length();
+        for (int i = 0; i < length; i++) {
+            Metadata.Entry entry = metadata.get(i);
+            if (entry instanceof TextInformationFrame) {
+                TextInformationFrame textInformationFrame = (TextInformationFrame) entry;
+                if (textInformationFrame.id.equals("TLEN")) {
+                    return Util.msToUs(Long.parseLong((String) textInformationFrame.values.get(0)));
+                }
+            }
+        }
+        return -9223372036854775807L;
     }
 }

@@ -1,39 +1,22 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import j$.util.function.Consumer;
-
 /* loaded from: classes2.dex */
-final class U1 extends W1 {
-    U1(Spliterator spliterator, int i, boolean z) {
-        super(spliterator, i, z);
-    }
+abstract class U1 extends V1 {
+    public final /* synthetic */ int l;
 
-    @Override // j$.util.stream.W1, j$.util.stream.Stream
-    public final void e(Consumer consumer) {
-        if (isParallel()) {
-            super.e(consumer);
-        } else {
-            y0().a(consumer);
-        }
-    }
-
-    @Override // j$.util.stream.W1, j$.util.stream.Stream
-    public final void forEach(Consumer consumer) {
-        if (isParallel()) {
-            super.forEach(consumer);
-        } else {
-            y0().a(consumer);
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ U1(b bVar, int i, int i2) {
+        super(bVar, i);
+        this.l = i2;
     }
 
     @Override // j$.util.stream.b
     final boolean v0() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // j$.util.stream.b
-    final e2 w0(int i, e2 e2Var) {
-        throw new UnsupportedOperationException();
+        switch (this.l) {
+            case 0:
+                return true;
+            default:
+                return false;
+        }
     }
 }

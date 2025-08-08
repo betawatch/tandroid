@@ -37,25 +37,9 @@ public abstract class ComponentDialog extends Dialog implements LifecycleOwner, 
         return lifecycleRegistry2;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBackPressedDispatcher$lambda-1(ComponentDialog this$0) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        super.onBackPressed();
-    }
-
     @Override // androidx.lifecycle.LifecycleOwner
     public final Lifecycle getLifecycle() {
         return getLifecycleRegistry();
-    }
-
-    @Override // androidx.activity.OnBackPressedDispatcherOwner
-    public final OnBackPressedDispatcher getOnBackPressedDispatcher() {
-        return this.onBackPressedDispatcher;
-    }
-
-    @Override // android.app.Dialog
-    public void onBackPressed() {
-        this.onBackPressedDispatcher.onBackPressed();
     }
 
     @Override // android.app.Dialog
@@ -81,5 +65,21 @@ public abstract class ComponentDialog extends Dialog implements LifecycleOwner, 
         getLifecycleRegistry().handleLifecycleEvent(Lifecycle.Event.ON_DESTROY);
         this._lifecycleRegistry = null;
         super.onStop();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void onBackPressedDispatcher$lambda-1(ComponentDialog this$0) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        super.onBackPressed();
+    }
+
+    @Override // androidx.activity.OnBackPressedDispatcherOwner
+    public final OnBackPressedDispatcher getOnBackPressedDispatcher() {
+        return this.onBackPressedDispatcher;
+    }
+
+    @Override // android.app.Dialog
+    public void onBackPressed() {
+        this.onBackPressedDispatcher.onBackPressed();
     }
 }

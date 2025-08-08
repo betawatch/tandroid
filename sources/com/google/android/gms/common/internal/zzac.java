@@ -1,42 +1,39 @@
 package com.google.android.gms.common.internal;
 
+import android.os.Bundle;
 import android.os.IBinder;
 import android.os.Parcel;
 
 /* loaded from: classes.dex */
-final class zzac implements IGmsServiceBroker {
-    private final IBinder zza;
-
-    zzac(IBinder iBinder) {
-        this.zza = iBinder;
+public abstract class zzac extends com.google.android.gms.internal.common.zzb implements IGmsCallbacks {
+    public zzac() {
+        super("com.google.android.gms.common.internal.IGmsCallbacks");
     }
 
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        return this.zza;
-    }
-
-    @Override // com.google.android.gms.common.internal.IGmsServiceBroker
-    public final void getService(IGmsCallbacks iGmsCallbacks, GetServiceRequest getServiceRequest) {
-        Parcel obtain = Parcel.obtain();
-        Parcel obtain2 = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("com.google.android.gms.common.internal.IGmsServiceBroker");
-            obtain.writeStrongBinder(iGmsCallbacks != null ? iGmsCallbacks.asBinder() : null);
-            if (getServiceRequest != null) {
-                obtain.writeInt(1);
-                zzm.zza(getServiceRequest, obtain, 0);
-            } else {
-                obtain.writeInt(0);
+    @Override // com.google.android.gms.internal.common.zzb
+    protected final boolean zza(int i, Parcel parcel, Parcel parcel2, int i2) {
+        if (i == 1) {
+            int readInt = parcel.readInt();
+            IBinder readStrongBinder = parcel.readStrongBinder();
+            Bundle bundle = (Bundle) com.google.android.gms.internal.common.zzc.zza(parcel, Bundle.CREATOR);
+            com.google.android.gms.internal.common.zzc.zzb(parcel);
+            onPostInitComplete(readInt, readStrongBinder, bundle);
+        } else if (i == 2) {
+            int readInt2 = parcel.readInt();
+            Bundle bundle2 = (Bundle) com.google.android.gms.internal.common.zzc.zza(parcel, Bundle.CREATOR);
+            com.google.android.gms.internal.common.zzc.zzb(parcel);
+            zzb(readInt2, bundle2);
+        } else {
+            if (i != 3) {
+                return false;
             }
-            this.zza.transact(46, obtain, obtain2, 0);
-            obtain2.readException();
-            obtain2.recycle();
-            obtain.recycle();
-        } catch (Throwable th) {
-            obtain2.recycle();
-            obtain.recycle();
-            throw th;
+            int readInt3 = parcel.readInt();
+            IBinder readStrongBinder2 = parcel.readStrongBinder();
+            zzk zzkVar = (zzk) com.google.android.gms.internal.common.zzc.zza(parcel, zzk.CREATOR);
+            com.google.android.gms.internal.common.zzc.zzb(parcel);
+            zzc(readInt3, readStrongBinder2, zzkVar);
         }
+        parcel2.writeNoException();
+        return true;
     }
 }

@@ -2,7 +2,7 @@ package com.stripe.android.model;
 
 import java.util.Date;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class Token {
     private final Card mCard;
     private final Date mCreated;
@@ -20,15 +20,15 @@ public class Token {
         this.mUsed = bool.booleanValue();
     }
 
-    public Card getCard() {
-        return this.mCard;
-    }
-
     public String getId() {
         return this.mId;
     }
 
     public String getType() {
         return this.mType;
+    }
+
+    public Card getCard() {
+        return this.mCard;
     }
 }

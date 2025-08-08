@@ -13,6 +13,52 @@ public final class MediaRouteProviderDescriptor {
     final List mRoutes;
     final boolean mSupportsDynamicGroupRoute;
 
+    MediaRouteProviderDescriptor(List list, boolean z) {
+        if (list.isEmpty()) {
+            this.mRoutes = Collections.emptyList();
+        } else {
+            this.mRoutes = Collections.unmodifiableList(new ArrayList(list));
+        }
+        this.mSupportsDynamicGroupRoute = z;
+    }
+
+    public List getRoutes() {
+        return this.mRoutes;
+    }
+
+    public boolean isValid() {
+        int size = getRoutes().size();
+        for (int i = 0; i < size; i++) {
+            MediaRouteDescriptor mediaRouteDescriptor = (MediaRouteDescriptor) this.mRoutes.get(i);
+            if (mediaRouteDescriptor == null || !mediaRouteDescriptor.isValid()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean supportsDynamicGroupRoute() {
+        return this.mSupportsDynamicGroupRoute;
+    }
+
+    public String toString() {
+        return "MediaRouteProviderDescriptor{ routes=" + Arrays.toString(getRoutes().toArray()) + ", isValid=" + isValid() + " }";
+    }
+
+    public static MediaRouteProviderDescriptor fromBundle(Bundle bundle) {
+        if (bundle == null) {
+            return null;
+        }
+        ArrayList arrayList = new ArrayList();
+        ArrayList parcelableArrayList = bundle.getParcelableArrayList("routes");
+        if (parcelableArrayList != null) {
+            for (int i = 0; i < parcelableArrayList.size(); i++) {
+                arrayList.add(MediaRouteDescriptor.fromBundle((Bundle) parcelableArrayList.get(i)));
+            }
+        }
+        return new MediaRouteProviderDescriptor(arrayList, bundle.getBoolean("supportsDynamicGroupRoute", false));
+    }
+
     public static final class Builder {
         private final List mRoutes = new ArrayList();
         private boolean mSupportsDynamicGroupRoute = false;
@@ -41,55 +87,13 @@ public final class MediaRouteProviderDescriptor {
             return this;
         }
 
-        public MediaRouteProviderDescriptor build() {
-            return new MediaRouteProviderDescriptor(this.mRoutes, this.mSupportsDynamicGroupRoute);
-        }
-
         public Builder setSupportsDynamicGroupRoute(boolean z) {
             this.mSupportsDynamicGroupRoute = z;
             return this;
         }
-    }
 
-    MediaRouteProviderDescriptor(List list, boolean z) {
-        this.mRoutes = list.isEmpty() ? Collections.emptyList() : Collections.unmodifiableList(new ArrayList(list));
-        this.mSupportsDynamicGroupRoute = z;
-    }
-
-    public static MediaRouteProviderDescriptor fromBundle(Bundle bundle) {
-        if (bundle == null) {
-            return null;
+        public MediaRouteProviderDescriptor build() {
+            return new MediaRouteProviderDescriptor(this.mRoutes, this.mSupportsDynamicGroupRoute);
         }
-        ArrayList arrayList = new ArrayList();
-        ArrayList parcelableArrayList = bundle.getParcelableArrayList("routes");
-        if (parcelableArrayList != null) {
-            for (int i = 0; i < parcelableArrayList.size(); i++) {
-                arrayList.add(MediaRouteDescriptor.fromBundle((Bundle) parcelableArrayList.get(i)));
-            }
-        }
-        return new MediaRouteProviderDescriptor(arrayList, bundle.getBoolean("supportsDynamicGroupRoute", false));
-    }
-
-    public List getRoutes() {
-        return this.mRoutes;
-    }
-
-    public boolean isValid() {
-        int size = getRoutes().size();
-        for (int i = 0; i < size; i++) {
-            MediaRouteDescriptor mediaRouteDescriptor = (MediaRouteDescriptor) this.mRoutes.get(i);
-            if (mediaRouteDescriptor == null || !mediaRouteDescriptor.isValid()) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public boolean supportsDynamicGroupRoute() {
-        return this.mSupportsDynamicGroupRoute;
-    }
-
-    public String toString() {
-        return "MediaRouteProviderDescriptor{ routes=" + Arrays.toString(getRoutes().toArray()) + ", isValid=" + isValid() + " }";
     }
 }

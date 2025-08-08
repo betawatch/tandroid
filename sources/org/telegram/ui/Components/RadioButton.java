@@ -15,7 +15,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class RadioButton extends View {
     private static Paint checkedPaint;
     private static Paint eraser;
@@ -46,11 +46,50 @@ public class RadioButton extends View {
         }
     }
 
-    private void animateToCheckedState(boolean z) {
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z ? 1.0f : 0.0f);
-        this.checkAnimator = ofFloat;
-        ofFloat.setDuration(200L);
-        this.checkAnimator.start();
+    public void setProgress(float f) {
+        if (this.progress == f) {
+            return;
+        }
+        this.progress = f;
+        invalidate();
+    }
+
+    public float getProgress() {
+        return this.progress;
+    }
+
+    public void setSize(int i) {
+        if (this.size == i) {
+            return;
+        }
+        this.size = i;
+    }
+
+    public void setIcon(Drawable drawable) {
+        this.iconColor = 0;
+        this.icon = drawable;
+        invalidate();
+    }
+
+    public int getColor() {
+        return this.color;
+    }
+
+    public void setColor(int i, int i2) {
+        this.color = i;
+        this.checkedColor = i2;
+        invalidate();
+    }
+
+    @Override // android.view.View
+    public void setBackgroundColor(int i) {
+        this.color = i;
+        invalidate();
+    }
+
+    public void setCheckedColor(int i) {
+        this.checkedColor = i;
+        invalidate();
     }
 
     private void cancelCheckAnimator() {
@@ -60,16 +99,11 @@ public class RadioButton extends View {
         }
     }
 
-    public int getColor() {
-        return this.color;
-    }
-
-    public float getProgress() {
-        return this.progress;
-    }
-
-    public boolean isChecked() {
-        return this.isChecked;
+    private void animateToCheckedState(boolean z) {
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z ? 1.0f : 0.0f);
+        this.checkAnimator = ofFloat;
+        ofFloat.setDuration(200L);
+        this.checkAnimator.start();
     }
 
     @Override // android.view.View
@@ -82,6 +116,23 @@ public class RadioButton extends View {
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.attachedToWindow = false;
+    }
+
+    public void setChecked(boolean z, boolean z2) {
+        if (z == this.isChecked) {
+            return;
+        }
+        this.isChecked = z;
+        if (this.attachedToWindow && z2) {
+            animateToCheckedState(z);
+        } else {
+            cancelCheckAnimator();
+            setProgress(z ? 1.0f : 0.0f);
+        }
+    }
+
+    public boolean isChecked() {
+        return this.isChecked;
     }
 
     @Override // android.view.View
@@ -121,56 +172,5 @@ public class RadioButton extends View {
             this.icon.setBounds((int) ((getWidth() / 2.0f) - (this.icon.getIntrinsicWidth() / 2.0f)), (int) ((getHeight() / 2.0f) - (this.icon.getIntrinsicHeight() / 2.0f)), (int) ((getWidth() / 2.0f) + (this.icon.getIntrinsicWidth() / 2.0f)), (int) ((getHeight() / 2.0f) + (this.icon.getIntrinsicHeight() / 2.0f)));
             this.icon.draw(canvas);
         }
-    }
-
-    @Override // android.view.View
-    public void setBackgroundColor(int i) {
-        this.color = i;
-        invalidate();
-    }
-
-    public void setChecked(boolean z, boolean z2) {
-        if (z == this.isChecked) {
-            return;
-        }
-        this.isChecked = z;
-        if (this.attachedToWindow && z2) {
-            animateToCheckedState(z);
-        } else {
-            cancelCheckAnimator();
-            setProgress(z ? 1.0f : 0.0f);
-        }
-    }
-
-    public void setCheckedColor(int i) {
-        this.checkedColor = i;
-        invalidate();
-    }
-
-    public void setColor(int i, int i2) {
-        this.color = i;
-        this.checkedColor = i2;
-        invalidate();
-    }
-
-    public void setIcon(Drawable drawable) {
-        this.iconColor = 0;
-        this.icon = drawable;
-        invalidate();
-    }
-
-    public void setProgress(float f) {
-        if (this.progress == f) {
-            return;
-        }
-        this.progress = f;
-        invalidate();
-    }
-
-    public void setSize(int i) {
-        if (this.size == i) {
-            return;
-        }
-        this.size = i;
     }
 }

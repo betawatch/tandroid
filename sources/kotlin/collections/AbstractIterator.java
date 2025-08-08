@@ -3,7 +3,7 @@ package kotlin.collections;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class AbstractIterator implements Iterator {
     private Object nextValue;
     private State state = State.NotReady;
@@ -25,23 +25,18 @@ public abstract class AbstractIterator implements Iterator {
         }
     }
 
-    private final boolean tryToComputeNext() {
-        this.state = State.Failed;
-        computeNext();
-        return this.state == State.Ready;
-    }
-
     protected abstract void computeNext();
 
-    protected final void done() {
-        this.state = State.Done;
+    @Override // java.util.Iterator
+    public void remove() {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
     @Override // java.util.Iterator
     public boolean hasNext() {
         State state = this.state;
         if (state == State.Failed) {
-            throw new IllegalArgumentException("Failed requirement.".toString());
+            throw new IllegalArgumentException("Failed requirement.");
         }
         int i = WhenMappings.$EnumSwitchMapping$0[state.ordinal()];
         if (i == 1) {
@@ -62,13 +57,18 @@ public abstract class AbstractIterator implements Iterator {
         return this.nextValue;
     }
 
-    @Override // java.util.Iterator
-    public void remove() {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    private final boolean tryToComputeNext() {
+        this.state = State.Failed;
+        computeNext();
+        return this.state == State.Ready;
     }
 
     protected final void setNext(Object obj) {
         this.nextValue = obj;
         this.state = State.Ready;
+    }
+
+    protected final void done() {
+        this.state = State.Done;
     }
 }

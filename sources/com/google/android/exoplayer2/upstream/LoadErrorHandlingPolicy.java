@@ -13,6 +13,28 @@ public interface LoadErrorHandlingPolicy {
         }
     }
 
+    FallbackSelection getFallbackSelectionFor(FallbackOptions fallbackOptions, LoadErrorInfo loadErrorInfo);
+
+    int getMinimumLoadableRetryCount(int i);
+
+    long getRetryDelayMsFor(LoadErrorInfo loadErrorInfo);
+
+    void onLoadTaskConcluded(long j);
+
+    public static final class LoadErrorInfo {
+        public final int errorCount;
+        public final IOException exception;
+        public final LoadEventInfo loadEventInfo;
+        public final MediaLoadData mediaLoadData;
+
+        public LoadErrorInfo(LoadEventInfo loadEventInfo, MediaLoadData mediaLoadData, IOException iOException, int i) {
+            this.loadEventInfo = loadEventInfo;
+            this.mediaLoadData = mediaLoadData;
+            this.exception = iOException;
+            this.errorCount = i;
+        }
+    }
+
     public static final class FallbackOptions {
         public final int numberOfExcludedLocations;
         public final int numberOfExcludedTracks;
@@ -48,26 +70,4 @@ public interface LoadErrorHandlingPolicy {
             this.exclusionDurationMs = j;
         }
     }
-
-    public static final class LoadErrorInfo {
-        public final int errorCount;
-        public final IOException exception;
-        public final LoadEventInfo loadEventInfo;
-        public final MediaLoadData mediaLoadData;
-
-        public LoadErrorInfo(LoadEventInfo loadEventInfo, MediaLoadData mediaLoadData, IOException iOException, int i) {
-            this.loadEventInfo = loadEventInfo;
-            this.mediaLoadData = mediaLoadData;
-            this.exception = iOException;
-            this.errorCount = i;
-        }
-    }
-
-    FallbackSelection getFallbackSelectionFor(FallbackOptions fallbackOptions, LoadErrorInfo loadErrorInfo);
-
-    int getMinimumLoadableRetryCount(int i);
-
-    long getRetryDelayMsFor(LoadErrorInfo loadErrorInfo);
-
-    void onLoadTaskConcluded(long j);
 }

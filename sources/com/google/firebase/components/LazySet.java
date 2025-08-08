@@ -20,36 +20,6 @@ class LazySet implements Provider {
         return new LazySet((Set) collection);
     }
 
-    private synchronized void updateSet() {
-        try {
-            Iterator it = this.providers.iterator();
-            while (it.hasNext()) {
-                this.actualSet.add(((Provider) it.next()).get());
-            }
-            this.providers = null;
-        } catch (Throwable th) {
-            throw th;
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public synchronized void add(Provider provider) {
-        Set set;
-        Object obj;
-        try {
-            if (this.actualSet == null) {
-                set = this.providers;
-                obj = provider;
-            } else {
-                set = this.actualSet;
-                obj = provider.get();
-            }
-            set.add(obj);
-        } catch (Throwable th) {
-            throw th;
-        }
-    }
-
     @Override // com.google.firebase.inject.Provider
     public Set get() {
         if (this.actualSet == null) {
@@ -64,5 +34,30 @@ class LazySet implements Provider {
             }
         }
         return Collections.unmodifiableSet(this.actualSet);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public synchronized void add(Provider provider) {
+        try {
+            if (this.actualSet == null) {
+                this.providers.add(provider);
+            } else {
+                this.actualSet.add(provider.get());
+            }
+        } catch (Throwable th) {
+            throw th;
+        }
+    }
+
+    private synchronized void updateSet() {
+        try {
+            Iterator it = this.providers.iterator();
+            while (it.hasNext()) {
+                this.actualSet.add(((Provider) it.next()).get());
+            }
+            this.providers = null;
+        } catch (Throwable th) {
+            throw th;
+        }
     }
 }

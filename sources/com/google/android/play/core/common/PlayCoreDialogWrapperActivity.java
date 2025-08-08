@@ -21,18 +21,13 @@ public class PlayCoreDialogWrapperActivity extends Activity {
     @Override // android.app.Activity
     protected final void onActivityResult(int i, int i2, Intent intent) {
         ResultReceiver resultReceiver;
-        Bundle bundle;
-        int i3;
         super.onActivityResult(i, i2, intent);
         if (i == 0 && (resultReceiver = this.zza) != null) {
             if (i2 == -1) {
-                bundle = new Bundle();
-                i3 = 1;
+                resultReceiver.send(1, new Bundle());
             } else if (i2 == 0) {
-                bundle = new Bundle();
-                i3 = 2;
+                resultReceiver.send(2, new Bundle());
             }
-            resultReceiver.send(i3, bundle);
         }
         finish();
     }

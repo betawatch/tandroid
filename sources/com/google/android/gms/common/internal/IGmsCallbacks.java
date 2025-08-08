@@ -10,5 +10,5 @@ public interface IGmsCallbacks extends IInterface {
 
     void zzb(int i, Bundle bundle);
 
-    void zzc(int i, IBinder iBinder, zzj zzjVar);
+    void zzc(int i, IBinder iBinder, zzk zzkVar);
 }

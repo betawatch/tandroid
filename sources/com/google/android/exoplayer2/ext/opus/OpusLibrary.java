@@ -7,6 +7,10 @@ import org.telegram.messenger.NativeLoader;
 public final class OpusLibrary {
     private static int cryptoType;
 
+    public static native String opusGetVersion();
+
+    public static native boolean opusIsSecureDecodeSupported();
+
     static {
         ExoPlayerLibraryInfo.registerModule("goog.exo.opus");
         cryptoType = 1;
@@ -15,23 +19,19 @@ public final class OpusLibrary {
     private OpusLibrary() {
     }
 
-    public static String getVersion() {
-        if (isAvailable()) {
-            return opusGetVersion();
-        }
-        return null;
+    public static void setLibraries(int i, String... strArr) {
+        cryptoType = i;
     }
 
     public static boolean isAvailable() {
         return NativeLoader.loaded();
     }
 
-    public static native String opusGetVersion();
-
-    public static native boolean opusIsSecureDecodeSupported();
-
-    public static void setLibraries(int i, String... strArr) {
-        cryptoType = i;
+    public static String getVersion() {
+        if (isAvailable()) {
+            return opusGetVersion();
+        }
+        return null;
     }
 
     public static boolean supportsCryptoType(int i) {

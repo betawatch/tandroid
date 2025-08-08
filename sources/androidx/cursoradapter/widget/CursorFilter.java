@@ -32,11 +32,11 @@ class CursorFilter extends Filter {
         Filter.FilterResults filterResults = new Filter.FilterResults();
         if (runQueryOnBackgroundThread != null) {
             filterResults.count = runQueryOnBackgroundThread.getCount();
+            filterResults.values = runQueryOnBackgroundThread;
         } else {
             filterResults.count = 0;
-            runQueryOnBackgroundThread = null;
+            filterResults.values = null;
         }
-        filterResults.values = runQueryOnBackgroundThread;
         return filterResults;
     }
 

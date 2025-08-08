@@ -2,7 +2,7 @@ package com.stripe.android.net;
 
 import java.util.Map;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class StripeResponse {
     private String mResponseBody;
     private int mResponseCode;
@@ -14,12 +14,12 @@ public class StripeResponse {
         this.mResponseHeaders = map;
     }
 
-    public String getResponseBody() {
-        return this.mResponseBody;
-    }
-
     public int getResponseCode() {
         return this.mResponseCode;
+    }
+
+    public String getResponseBody() {
+        return this.mResponseBody;
     }
 
     public Map getResponseHeaders() {

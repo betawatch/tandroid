@@ -18,16 +18,16 @@ public abstract class BaseMediaChunk extends MediaChunk {
         this.clippedEndTimeUs = j4;
     }
 
+    public void init(BaseMediaChunkOutput baseMediaChunkOutput) {
+        this.output = baseMediaChunkOutput;
+        this.firstSampleIndices = baseMediaChunkOutput.getWriteIndices();
+    }
+
     public final int getFirstSampleIndex(int i) {
         return ((int[]) Assertions.checkStateNotNull(this.firstSampleIndices))[i];
     }
 
     protected final BaseMediaChunkOutput getOutput() {
         return (BaseMediaChunkOutput) Assertions.checkStateNotNull(this.output);
-    }
-
-    public void init(BaseMediaChunkOutput baseMediaChunkOutput) {
-        this.output = baseMediaChunkOutput;
-        this.firstSampleIndices = baseMediaChunkOutput.getWriteIndices();
     }
 }

@@ -24,8 +24,8 @@ public final /* synthetic */ class n implements p, h {
     }
 
     @Override // j$.util.p
-    public final /* synthetic */ void e(j$.util.function.m mVar) {
-        this.a.forEachRemaining(j$.util.function.l.a(mVar));
+    public final /* synthetic */ void e(j$.util.function.l lVar) {
+        this.a.forEachRemaining(j$.util.function.k.a(lVar));
     }
 
     public final /* synthetic */ boolean equals(Object obj) {

@@ -52,42 +52,20 @@ final class RegisteredMediaRouteProviderWatcher {
         this.mPackageManager = context.getPackageManager();
     }
 
-    private int findProvider(String str, String str2) {
-        int size = this.mProviders.size();
-        for (int i = 0; i < size; i++) {
-            if (((RegisteredMediaRouteProvider) this.mProviders.get(i)).hasComponentName(str, str2)) {
-                return i;
-            }
+    public void start() {
+        if (this.mRunning) {
+            return;
         }
-        return -1;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$scanPackages$0(RegisteredMediaRouteProvider registeredMediaRouteProvider, MediaRouteProvider.RouteController routeController) {
-        this.mCallback.releaseProviderController(registeredMediaRouteProvider, routeController);
-    }
-
-    static boolean listContainsServiceInfo(List list, ServiceInfo serviceInfo) {
-        if (serviceInfo != null && list != null && !list.isEmpty()) {
-            Iterator it = list.iterator();
-            while (it.hasNext()) {
-                ServiceInfo serviceInfo2 = (ServiceInfo) it.next();
-                if (serviceInfo.packageName.equals(serviceInfo2.packageName) && serviceInfo.name.equals(serviceInfo2.name)) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    List getMediaRoute2ProviderServices() {
-        Intent intent = new Intent("android.media.MediaRoute2ProviderService");
-        ArrayList arrayList = new ArrayList();
-        Iterator<ResolveInfo> it = this.mPackageManager.queryIntentServices(intent, 0).iterator();
-        while (it.hasNext()) {
-            arrayList.add(it.next().serviceInfo);
-        }
-        return arrayList;
+        this.mRunning = true;
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction("android.intent.action.PACKAGE_ADDED");
+        intentFilter.addAction("android.intent.action.PACKAGE_REMOVED");
+        intentFilter.addAction("android.intent.action.PACKAGE_CHANGED");
+        intentFilter.addAction("android.intent.action.PACKAGE_REPLACED");
+        intentFilter.addAction("android.intent.action.PACKAGE_RESTARTED");
+        intentFilter.addDataScheme("package");
+        this.mContext.registerReceiver(this.mScanPackagesReceiver, intentFilter, null, this.mHandler);
+        this.mHandler.post(this.mScanPackagesRunnable);
     }
 
     public void rescan() {
@@ -141,19 +119,41 @@ final class RegisteredMediaRouteProviderWatcher {
         }
     }
 
-    public void start() {
-        if (this.mRunning) {
-            return;
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$scanPackages$0(RegisteredMediaRouteProvider registeredMediaRouteProvider, MediaRouteProvider.RouteController routeController) {
+        this.mCallback.releaseProviderController(registeredMediaRouteProvider, routeController);
+    }
+
+    static boolean listContainsServiceInfo(List list, ServiceInfo serviceInfo) {
+        if (serviceInfo != null && list != null && !list.isEmpty()) {
+            Iterator it = list.iterator();
+            while (it.hasNext()) {
+                ServiceInfo serviceInfo2 = (ServiceInfo) it.next();
+                if (serviceInfo.packageName.equals(serviceInfo2.packageName) && serviceInfo.name.equals(serviceInfo2.name)) {
+                    return true;
+                }
+            }
         }
-        this.mRunning = true;
-        IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction("android.intent.action.PACKAGE_ADDED");
-        intentFilter.addAction("android.intent.action.PACKAGE_REMOVED");
-        intentFilter.addAction("android.intent.action.PACKAGE_CHANGED");
-        intentFilter.addAction("android.intent.action.PACKAGE_REPLACED");
-        intentFilter.addAction("android.intent.action.PACKAGE_RESTARTED");
-        intentFilter.addDataScheme("package");
-        this.mContext.registerReceiver(this.mScanPackagesReceiver, intentFilter, null, this.mHandler);
-        this.mHandler.post(this.mScanPackagesRunnable);
+        return false;
+    }
+
+    List getMediaRoute2ProviderServices() {
+        Intent intent = new Intent("android.media.MediaRoute2ProviderService");
+        ArrayList arrayList = new ArrayList();
+        Iterator<ResolveInfo> it = this.mPackageManager.queryIntentServices(intent, 0).iterator();
+        while (it.hasNext()) {
+            arrayList.add(it.next().serviceInfo);
+        }
+        return arrayList;
+    }
+
+    private int findProvider(String str, String str2) {
+        int size = this.mProviders.size();
+        for (int i = 0; i < size; i++) {
+            if (((RegisteredMediaRouteProvider) this.mProviders.get(i)).hasComponentName(str, str2)) {
+                return i;
+            }
+        }
+        return -1;
     }
 }

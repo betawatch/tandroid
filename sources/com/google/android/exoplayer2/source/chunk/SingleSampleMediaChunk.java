@@ -16,14 +16,14 @@ public final class SingleSampleMediaChunk extends BaseMediaChunk {
     private final Format sampleFormat;
     private final int trackType;
 
+    @Override // com.google.android.exoplayer2.upstream.Loader.Loadable
+    public void cancelLoad() {
+    }
+
     public SingleSampleMediaChunk(DataSource dataSource, DataSpec dataSpec, Format format, int i, Object obj, long j, long j2, long j3, int i2, Format format2) {
         super(dataSource, dataSpec, format, i, obj, j, j2, -9223372036854775807L, -9223372036854775807L, j3);
         this.trackType = i2;
         this.sampleFormat = format2;
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.Loader.Loadable
-    public void cancelLoad() {
     }
 
     @Override // com.google.android.exoplayer2.source.chunk.MediaChunk

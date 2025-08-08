@@ -17,6 +17,11 @@ public class MediaRouteChooserDialogFragment extends DialogFragment {
         setCancelable(true);
     }
 
+    public MediaRouteSelector getRouteSelector() {
+        ensureRouteSelector();
+        return this.mSelector;
+    }
+
     private void ensureRouteSelector() {
         if (this.mSelector == null) {
             Bundle arguments = getArguments();
@@ -29,45 +34,11 @@ public class MediaRouteChooserDialogFragment extends DialogFragment {
         }
     }
 
-    public MediaRouteSelector getRouteSelector() {
-        ensureRouteSelector();
-        return this.mSelector;
-    }
-
-    @Override // androidx.fragment.app.Fragment, android.content.ComponentCallbacks
-    public void onConfigurationChanged(Configuration configuration) {
-        super.onConfigurationChanged(configuration);
-        Dialog dialog = this.mDialog;
-        if (dialog == null) {
-            return;
+    void setUseDynamicGroup(boolean z) {
+        if (this.mDialog != null) {
+            throw new IllegalStateException("This must be called before creating dialog");
         }
-        if (this.mUseDynamicGroup) {
-            ((MediaRouteDynamicChooserDialog) dialog).updateLayout();
-        } else {
-            ((MediaRouteChooserDialog) dialog).updateLayout();
-        }
-    }
-
-    public MediaRouteChooserDialog onCreateChooserDialog(Context context, Bundle bundle) {
-        return new MediaRouteChooserDialog(context);
-    }
-
-    @Override // androidx.fragment.app.DialogFragment
-    public Dialog onCreateDialog(Bundle bundle) {
-        if (this.mUseDynamicGroup) {
-            MediaRouteDynamicChooserDialog onCreateDynamicChooserDialog = onCreateDynamicChooserDialog(getContext());
-            this.mDialog = onCreateDynamicChooserDialog;
-            onCreateDynamicChooserDialog.setRouteSelector(getRouteSelector());
-        } else {
-            MediaRouteChooserDialog onCreateChooserDialog = onCreateChooserDialog(getContext(), bundle);
-            this.mDialog = onCreateChooserDialog;
-            onCreateChooserDialog.setRouteSelector(getRouteSelector());
-        }
-        return this.mDialog;
-    }
-
-    public MediaRouteDynamicChooserDialog onCreateDynamicChooserDialog(Context context) {
-        return new MediaRouteDynamicChooserDialog(context);
+        this.mUseDynamicGroup = z;
     }
 
     public void setRouteSelector(MediaRouteSelector mediaRouteSelector) {
@@ -95,10 +66,39 @@ public class MediaRouteChooserDialogFragment extends DialogFragment {
         }
     }
 
-    void setUseDynamicGroup(boolean z) {
-        if (this.mDialog != null) {
-            throw new IllegalStateException("This must be called before creating dialog");
+    public MediaRouteDynamicChooserDialog onCreateDynamicChooserDialog(Context context) {
+        return new MediaRouteDynamicChooserDialog(context);
+    }
+
+    public MediaRouteChooserDialog onCreateChooserDialog(Context context, Bundle bundle) {
+        return new MediaRouteChooserDialog(context);
+    }
+
+    @Override // androidx.fragment.app.DialogFragment
+    public Dialog onCreateDialog(Bundle bundle) {
+        if (this.mUseDynamicGroup) {
+            MediaRouteDynamicChooserDialog onCreateDynamicChooserDialog = onCreateDynamicChooserDialog(getContext());
+            this.mDialog = onCreateDynamicChooserDialog;
+            onCreateDynamicChooserDialog.setRouteSelector(getRouteSelector());
+        } else {
+            MediaRouteChooserDialog onCreateChooserDialog = onCreateChooserDialog(getContext(), bundle);
+            this.mDialog = onCreateChooserDialog;
+            onCreateChooserDialog.setRouteSelector(getRouteSelector());
         }
-        this.mUseDynamicGroup = z;
+        return this.mDialog;
+    }
+
+    @Override // androidx.fragment.app.Fragment, android.content.ComponentCallbacks
+    public void onConfigurationChanged(Configuration configuration) {
+        super.onConfigurationChanged(configuration);
+        Dialog dialog = this.mDialog;
+        if (dialog == null) {
+            return;
+        }
+        if (this.mUseDynamicGroup) {
+            ((MediaRouteDynamicChooserDialog) dialog).updateLayout();
+        } else {
+            ((MediaRouteChooserDialog) dialog).updateLayout();
+        }
     }
 }

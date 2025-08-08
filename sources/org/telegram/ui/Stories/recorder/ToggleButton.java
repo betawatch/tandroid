@@ -63,6 +63,17 @@ public class ToggleButton extends View implements FlashViews.Invertable {
         }
     }
 
+    public void setValue(boolean z) {
+        this.value = z ? 1.0f : 0.0f;
+        invalidate();
+    }
+
+    @Override // org.telegram.ui.Stories.recorder.FlashViews.Invertable
+    public void setInvert(float f) {
+        this.drawable.setColorFilter(new PorterDuffColorFilter(ColorUtils.blendARGB(-1, -16777216, f), PorterDuff.Mode.MULTIPLY));
+        this.activePaint.setColor(ColorUtils.blendARGB(-1, -16777216, f));
+    }
+
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
@@ -94,16 +105,5 @@ public class ToggleButton extends View implements FlashViews.Invertable {
             canvas.restore();
             canvas.restore();
         }
-    }
-
-    @Override // org.telegram.ui.Stories.recorder.FlashViews.Invertable
-    public void setInvert(float f) {
-        this.drawable.setColorFilter(new PorterDuffColorFilter(ColorUtils.blendARGB(-1, -16777216, f), PorterDuff.Mode.MULTIPLY));
-        this.activePaint.setColor(ColorUtils.blendARGB(-1, -16777216, f));
-    }
-
-    public void setValue(boolean z) {
-        this.value = z ? 1.0f : 0.0f;
-        invalidate();
     }
 }

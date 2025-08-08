@@ -5,7 +5,7 @@ import com.microsoft.appcenter.ingestion.models.json.ModelFactory;
 import java.util.ArrayList;
 import java.util.List;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class ExceptionFactory implements ModelFactory {
     private static final ExceptionFactory sInstance = new ExceptionFactory();
 

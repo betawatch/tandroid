@@ -9,6 +9,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.google.android.gms.common.GoogleApiAvailability;
+import j$.util.List;
 import java.util.LinkedList;
 
 /* loaded from: classes.dex */
@@ -22,30 +23,30 @@ public abstract class DeferredLifecycleHelper {
         GoogleApiAvailability googleApiAvailability = GoogleApiAvailability.getInstance();
         Context context = frameLayout.getContext();
         int isGooglePlayServicesAvailable = googleApiAvailability.isGooglePlayServicesAvailable(context);
-        String zad = com.google.android.gms.common.internal.zac.zad(context, isGooglePlayServicesAvailable);
         String zac = com.google.android.gms.common.internal.zac.zac(context, isGooglePlayServicesAvailable);
+        String zab = com.google.android.gms.common.internal.zac.zab(context, isGooglePlayServicesAvailable);
         LinearLayout linearLayout = new LinearLayout(frameLayout.getContext());
         linearLayout.setOrientation(1);
         linearLayout.setLayoutParams(new FrameLayout.LayoutParams(-2, -2));
         frameLayout.addView(linearLayout);
         TextView textView = new TextView(frameLayout.getContext());
         textView.setLayoutParams(new FrameLayout.LayoutParams(-2, -2));
-        textView.setText(zad);
+        textView.setText(zac);
         linearLayout.addView(textView);
         Intent errorResolutionIntent = googleApiAvailability.getErrorResolutionIntent(context, isGooglePlayServicesAvailable, null);
         if (errorResolutionIntent != null) {
             Button button = new Button(context);
             button.setId(R.id.button1);
             button.setLayoutParams(new FrameLayout.LayoutParams(-2, -2));
-            button.setText(zac);
+            button.setText(zab);
             linearLayout.addView(button);
             button.setOnClickListener(new zae(context, errorResolutionIntent));
         }
     }
 
     private final void zae(int i) {
-        while (!this.zac.isEmpty() && ((zah) this.zac.getLast()).zaa() >= i) {
-            this.zac.removeLast();
+        while (!this.zac.isEmpty() && ((zah) List.-EL.getLast(this.zac)).zaa() >= i) {
+            List.-EL.removeLast(this.zac);
         }
     }
 

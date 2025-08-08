@@ -6,14 +6,11 @@ import android.os.Bundle;
 import kotlin.Unit;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class SessionsActivityLifecycleCallbacks implements Application.ActivityLifecycleCallbacks {
     public static final SessionsActivityLifecycleCallbacks INSTANCE = new SessionsActivityLifecycleCallbacks();
     private static boolean hasPendingForeground;
     private static SessionLifecycleClient lifecycleClient;
-
-    private SessionsActivityLifecycleCallbacks() {
-    }
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public void onActivityCreated(Activity activity, Bundle bundle) {
@@ -26,12 +23,31 @@ public final class SessionsActivityLifecycleCallbacks implements Application.Act
     }
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
-    public void onActivityPaused(Activity activity) {
+    public void onActivitySaveInstanceState(Activity activity, Bundle outState) {
         Intrinsics.checkNotNullParameter(activity, "activity");
-        SessionLifecycleClient sessionLifecycleClient = lifecycleClient;
-        if (sessionLifecycleClient != null) {
-            sessionLifecycleClient.backgrounded();
+        Intrinsics.checkNotNullParameter(outState, "outState");
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityStarted(Activity activity) {
+        Intrinsics.checkNotNullParameter(activity, "activity");
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityStopped(Activity activity) {
+        Intrinsics.checkNotNullParameter(activity, "activity");
+    }
+
+    private SessionsActivityLifecycleCallbacks() {
+    }
+
+    public final void setLifecycleClient(SessionLifecycleClient sessionLifecycleClient) {
+        lifecycleClient = sessionLifecycleClient;
+        if (sessionLifecycleClient == null || !hasPendingForeground) {
+            return;
         }
+        hasPendingForeground = false;
+        sessionLifecycleClient.foregrounded();
     }
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
@@ -51,27 +67,11 @@ public final class SessionsActivityLifecycleCallbacks implements Application.Act
     }
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
-    public void onActivitySaveInstanceState(Activity activity, Bundle outState) {
+    public void onActivityPaused(Activity activity) {
         Intrinsics.checkNotNullParameter(activity, "activity");
-        Intrinsics.checkNotNullParameter(outState, "outState");
-    }
-
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public void onActivityStarted(Activity activity) {
-        Intrinsics.checkNotNullParameter(activity, "activity");
-    }
-
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public void onActivityStopped(Activity activity) {
-        Intrinsics.checkNotNullParameter(activity, "activity");
-    }
-
-    public final void setLifecycleClient(SessionLifecycleClient sessionLifecycleClient) {
-        lifecycleClient = sessionLifecycleClient;
-        if (sessionLifecycleClient == null || !hasPendingForeground) {
-            return;
+        SessionLifecycleClient sessionLifecycleClient = lifecycleClient;
+        if (sessionLifecycleClient != null) {
+            sessionLifecycleClient.backgrounded();
         }
-        hasPendingForeground = false;
-        sessionLifecycleClient.foregrounded();
     }
 }

@@ -37,8 +37,9 @@ public class ClientIdentity extends AbstractSafeParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
+        int i2 = this.uid;
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeInt(parcel, 1, this.uid);
+        SafeParcelWriter.writeInt(parcel, 1, i2);
         SafeParcelWriter.writeString(parcel, 2, this.packageName, false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
     }

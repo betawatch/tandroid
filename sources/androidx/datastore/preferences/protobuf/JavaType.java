@@ -27,6 +27,14 @@ public final class JavaType {
     private final Object defaultDefault;
     private final Class type;
 
+    public static JavaType valueOf(String str) {
+        return (JavaType) Enum.valueOf(JavaType.class, str);
+    }
+
+    public static JavaType[] values() {
+        return (JavaType[]) $VALUES.clone();
+    }
+
     static {
         JavaType javaType = new JavaType("VOID", 0, Void.class, Void.class, null);
         VOID = javaType;
@@ -56,14 +64,6 @@ public final class JavaType {
         this.type = cls;
         this.boxedType = cls2;
         this.defaultDefault = obj;
-    }
-
-    public static JavaType valueOf(String str) {
-        return (JavaType) Enum.valueOf(JavaType.class, str);
-    }
-
-    public static JavaType[] values() {
-        return (JavaType[]) $VALUES.clone();
     }
 
     public Class getBoxedType() {

@@ -19,23 +19,6 @@ public final class zzue extends zzsi implements RandomAccess, zzuf {
         zza = zzueVar;
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzue(int i) {
-        super(true);
-        ArrayList arrayList = new ArrayList(i);
-        this.zzc = arrayList;
-    }
-
-    private zzue(ArrayList arrayList) {
-        super(true);
-        this.zzc = arrayList;
-    }
-
-    private zzue(boolean z) {
-        super(false);
-        this.zzc = Collections.emptyList();
-    }
-
     private static String zzi(Object obj) {
         return obj instanceof String ? (String) obj : obj instanceof zzsu ? ((zzsu) obj).zzl(zzty.zzb) : zzty.zzd((byte[]) obj);
     }
@@ -56,11 +39,6 @@ public final class zzue extends zzsi implements RandomAccess, zzuf {
         boolean addAll = this.zzc.addAll(i, collection);
         ((AbstractList) this).modCount++;
         return addAll;
-    }
-
-    @Override // com.google.android.gms.internal.cast.zzsi, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean addAll(Collection collection) {
-        return addAll(size(), collection);
     }
 
     @Override // com.google.android.gms.internal.cast.zzsi, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
@@ -135,5 +113,27 @@ public final class zzue extends zzsi implements RandomAccess, zzuf {
     @Override // com.google.android.gms.internal.cast.zzuf
     public final List zzh() {
         return Collections.unmodifiableList(this.zzc);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zzue(int i) {
+        super(true);
+        ArrayList arrayList = new ArrayList(i);
+        this.zzc = arrayList;
+    }
+
+    private zzue(ArrayList arrayList) {
+        super(true);
+        this.zzc = arrayList;
+    }
+
+    private zzue(boolean z) {
+        super(false);
+        this.zzc = Collections.emptyList();
+    }
+
+    @Override // com.google.android.gms.internal.cast.zzsi, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final boolean addAll(Collection collection) {
+        return addAll(size(), collection);
     }
 }

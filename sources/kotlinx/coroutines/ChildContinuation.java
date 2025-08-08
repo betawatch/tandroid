@@ -2,18 +2,18 @@ package kotlinx.coroutines;
 
 import kotlin.Unit;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class ChildContinuation extends JobCancellingNode {
     public final CancellableContinuationImpl child;
-
-    public ChildContinuation(CancellableContinuationImpl cancellableContinuationImpl) {
-        this.child = cancellableContinuationImpl;
-    }
 
     @Override // kotlin.jvm.functions.Function1
     public /* bridge */ /* synthetic */ Object invoke(Object obj) {
         invoke((Throwable) obj);
         return Unit.INSTANCE;
+    }
+
+    public ChildContinuation(CancellableContinuationImpl cancellableContinuationImpl) {
+        this.child = cancellableContinuationImpl;
     }
 
     @Override // kotlinx.coroutines.CompletionHandlerBase

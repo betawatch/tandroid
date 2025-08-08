@@ -10,9 +10,6 @@ final class zzad<T> implements zzae<T> {
     private zzad() {
     }
 
-    /* synthetic */ zzad(zzac zzacVar) {
-    }
-
     @Override // com.google.android.gms.tasks.OnCanceledListener
     public final void onCanceled() {
         this.zza.countDown();
@@ -34,5 +31,8 @@ final class zzad<T> implements zzae<T> {
 
     public final boolean zzb(long j, TimeUnit timeUnit) {
         return this.zza.await(j, timeUnit);
+    }
+
+    /* synthetic */ zzad(zzac zzacVar) {
     }
 }

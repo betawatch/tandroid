@@ -1,68 +1,163 @@
 package com.google.android.gms.internal.play_billing;
 
-/* JADX WARN: Enum visitor error
-jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'zzb' uses external variables
-	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
-	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
-	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
-	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
- */
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+import j$.lang.Iterable$-CC;
+import j$.util.Collection;
+import j$.util.Spliterator;
+import j$.util.Spliterators;
+import j$.util.function.Consumer;
+import j$.util.function.IntFunction;
+import j$.util.function.Predicate;
+import j$.util.stream.Stream;
+import j$.util.stream.t0;
+import java.io.Serializable;
+import java.util.AbstractCollection;
+import java.util.Arrays;
+
 /* loaded from: classes.dex */
-public final class zzcj {
-    public static final zzcj zza;
-    public static final zzcj zzb;
-    public static final zzcj zzc;
-    public static final zzcj zzd;
-    public static final zzcj zze;
-    public static final zzcj zzf;
-    public static final zzcj zzg;
-    public static final zzcj zzh;
-    public static final zzcj zzi;
-    public static final zzcj zzj;
-    private static final /* synthetic */ zzcj[] zzk;
-    private final Class zzl;
-    private final Class zzm;
-    private final Object zzn;
+public abstract class zzcj extends AbstractCollection implements Serializable, Collection {
+    private static final Object[] zzac = new Object[0];
 
-    static {
-        zzcj zzcjVar = new zzcj("VOID", 0, Void.class, Void.class, null);
-        zza = zzcjVar;
-        Class cls = Integer.TYPE;
-        zzcj zzcjVar2 = new zzcj("INT", 1, cls, Integer.class, 0);
-        zzb = zzcjVar2;
-        zzcj zzcjVar3 = new zzcj("LONG", 2, Long.TYPE, Long.class, 0L);
-        zzc = zzcjVar3;
-        zzcj zzcjVar4 = new zzcj("FLOAT", 3, Float.TYPE, Float.class, Float.valueOf(0.0f));
-        zzd = zzcjVar4;
-        zzcj zzcjVar5 = new zzcj("DOUBLE", 4, Double.TYPE, Double.class, Double.valueOf(0.0d));
-        zze = zzcjVar5;
-        zzcj zzcjVar6 = new zzcj("BOOLEAN", 5, Boolean.TYPE, Boolean.class, Boolean.FALSE);
-        zzf = zzcjVar6;
-        zzcj zzcjVar7 = new zzcj("STRING", 6, String.class, String.class, "");
-        zzg = zzcjVar7;
-        zzcj zzcjVar8 = new zzcj("BYTE_STRING", 7, zzba.class, zzba.class, zzba.zzb);
-        zzh = zzcjVar8;
-        zzcj zzcjVar9 = new zzcj("ENUM", 8, cls, Integer.class, null);
-        zzi = zzcjVar9;
-        zzcj zzcjVar10 = new zzcj("MESSAGE", 9, Object.class, Object.class, null);
-        zzj = zzcjVar10;
-        zzk = new zzcj[]{zzcjVar, zzcjVar2, zzcjVar3, zzcjVar4, zzcjVar5, zzcjVar6, zzcjVar7, zzcjVar8, zzcjVar9, zzcjVar10};
+    zzcj() {
     }
 
-    private zzcj(String str, int i, Class cls, Class cls2, Object obj) {
-        this.zzl = cls;
-        this.zzm = cls2;
-        this.zzn = obj;
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean add(Object obj) {
+        throw new UnsupportedOperationException();
     }
 
-    public static zzcj[] values() {
-        return (zzcj[]) zzk.clone();
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean addAll(java.util.Collection collection) {
+        throw new UnsupportedOperationException();
     }
 
-    public final Class zza() {
-        return this.zzm;
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final void clear() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public abstract boolean contains(Object obj);
+
+    @Override // j$.util.Collection, j$.lang.a
+    public /* synthetic */ void forEach(Consumer consumer) {
+        Iterable$-CC.$default$forEach(this, consumer);
+    }
+
+    @Override // java.lang.Iterable
+    public /* synthetic */ void forEach(java.util.function.Consumer consumer) {
+        forEach(Consumer.VivifiedWrapper.convert(consumer));
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public /* synthetic */ Stream parallelStream() {
+        Stream e0;
+        e0 = t0.e0(Collection.-EL.b(this), true);
+        return e0;
+    }
+
+    @Override // java.util.Collection
+    public /* synthetic */ java.util.stream.Stream parallelStream() {
+        return Stream.Wrapper.convert(parallelStream());
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean remove(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean removeAll(java.util.Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // j$.util.Collection
+    public /* synthetic */ boolean removeIf(Predicate predicate) {
+        return Collection.-CC.$default$removeIf(this, predicate);
+    }
+
+    @Override // java.util.Collection
+    public /* synthetic */ boolean removeIf(java.util.function.Predicate predicate) {
+        return removeIf(Predicate.VivifiedWrapper.convert(predicate));
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean retainAll(java.util.Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.Collection, java.lang.Iterable, j$.util.Collection
+    public final Spliterator spliterator() {
+        return Spliterators.spliterator(this, 1296);
+    }
+
+    @Override // java.util.Collection, java.lang.Iterable
+    public /* synthetic */ java.util.Spliterator spliterator() {
+        return Spliterator.Wrapper.convert(spliterator());
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public /* synthetic */ Stream stream() {
+        return Collection.-CC.$default$stream(this);
+    }
+
+    @Override // java.util.Collection
+    public /* synthetic */ java.util.stream.Stream stream() {
+        return Stream.Wrapper.convert(stream());
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final Object[] toArray() {
+        return toArray(zzac);
+    }
+
+    @Override // j$.util.Collection
+    public /* synthetic */ Object[] toArray(IntFunction intFunction) {
+        Object[] array;
+        array = toArray((Object[]) intFunction.apply(0));
+        return array;
+    }
+
+    @Override // java.util.Collection
+    public /* synthetic */ Object[] toArray(java.util.function.IntFunction intFunction) {
+        return toArray(IntFunction.VivifiedWrapper.convert(intFunction));
+    }
+
+    abstract int zza(Object[] objArr, int i);
+
+    int zzb() {
+        throw new UnsupportedOperationException();
+    }
+
+    int zzc() {
+        throw new UnsupportedOperationException();
+    }
+
+    public abstract zzco zzd();
+
+    abstract boolean zzf();
+
+    Object[] zzg() {
+        return null;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final Object[] toArray(Object[] objArr) {
+        objArr.getClass();
+        int size = size();
+        int length = objArr.length;
+        if (length < size) {
+            Object[] zzg = zzg();
+            if (zzg != null) {
+                return Arrays.copyOfRange(zzg, zzc(), zzb(), objArr.getClass());
+            }
+            if (length != 0) {
+                objArr = Arrays.copyOf(objArr, 0);
+            }
+            objArr = Arrays.copyOf(objArr, size);
+        } else if (length > size) {
+            objArr[size] = null;
+        }
+        zza(objArr, 0);
+        return objArr;
     }
 }

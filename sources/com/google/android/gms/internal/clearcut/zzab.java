@@ -6,7 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteException;
 import android.net.Uri;
 import android.util.Log;
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -75,7 +75,7 @@ public final class zzab {
             try {
                 Iterator it = this.zzdk.iterator();
                 if (it.hasNext()) {
-                    ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
+                    WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
                     throw null;
                 }
             } catch (Throwable th) {

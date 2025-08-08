@@ -1,6 +1,5 @@
 package j$.time.format;
 
-import j$.time.ZoneId;
 import j$.util.A;
 import java.io.IOException;
 import java.util.HashMap;
@@ -9,12 +8,11 @@ import java.util.Locale;
 /* loaded from: classes2.dex */
 public final class DateTimeFormatter {
     public static final DateTimeFormatter ISO_LOCAL_DATE;
-    public static final DateTimeFormatter f;
+    public static final DateTimeFormatter e;
     private final e a;
     private final Locale b;
     private final v c;
-    private final j$.time.chrono.e d;
-    private final ZoneId e;
+    private final j$.time.chrono.f d;
 
     static {
         p pVar = new p();
@@ -117,7 +115,7 @@ public final class DateTimeFormatter {
         p pVar13 = new p();
         pVar13.r();
         pVar13.c();
-        f = pVar13.u(wVar, null);
+        e = pVar13.u(wVar, null);
         p pVar14 = new p();
         pVar14.r();
         pVar14.l(aVar, 4);
@@ -180,37 +178,31 @@ public final class DateTimeFormatter {
         this.c = vVar;
         A.z(wVar, "resolverStyle");
         this.d = fVar;
-        this.e = null;
-    }
-
-    public final String a(j$.time.temporal.k kVar) {
-        StringBuilder sb = new StringBuilder(32);
-        A.z(kVar, "temporal");
-        try {
-            this.a.f(new r(kVar, this), sb);
-            return sb.toString();
-        } catch (IOException e) {
-            throw new j$.time.c(e.getMessage(), e);
-        }
-    }
-
-    public final j$.time.chrono.e b() {
-        return this.d;
-    }
-
-    public final v c() {
-        return this.c;
     }
 
     public final Locale d() {
         return this.b;
     }
 
-    public final ZoneId e() {
-        return this.e;
+    public final v c() {
+        return this.c;
     }
 
-    final e f() {
+    public final j$.time.chrono.e b() {
+        return this.d;
+    }
+
+    public final String a(j$.time.temporal.k kVar) {
+        StringBuilder sb = new StringBuilder(32);
+        try {
+            this.a.f(new r(kVar, this), sb);
+            return sb.toString();
+        } catch (IOException e2) {
+            throw new j$.time.c(e2.getMessage(), e2);
+        }
+    }
+
+    final e e() {
         return this.a.a();
     }
 

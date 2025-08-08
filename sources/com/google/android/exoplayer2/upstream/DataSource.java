@@ -6,9 +6,6 @@ import java.util.Map;
 /* loaded from: classes.dex */
 public interface DataSource extends DataReader {
 
-    public abstract /* synthetic */ class -CC {
-    }
-
     public interface Factory {
         DataSource createDataSource();
     }
@@ -22,4 +19,7 @@ public interface DataSource extends DataReader {
     Uri getUri();
 
     long open(DataSpec dataSpec);
+
+    public abstract /* synthetic */ class -CC {
+    }
 }

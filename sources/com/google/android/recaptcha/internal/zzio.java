@@ -9,14 +9,11 @@ public class zzio extends zzin implements zzkf {
     @Override // com.google.android.recaptcha.internal.zzin, com.google.android.recaptcha.internal.zzkd
     /* renamed from: zzd, reason: merged with bridge method [inline-methods] */
     public final zzip zzk() {
-        zzit zzk;
-        if (((zzip) this.zza).zzG()) {
-            ((zzip) this.zza).zzb.zzg();
-            zzk = super.zzk();
-        } else {
-            zzk = this.zza;
+        if (!((zzip) this.zza).zzG()) {
+            return (zzip) this.zza;
         }
-        return (zzip) zzk;
+        ((zzip) this.zza).zzb.zzg();
+        return (zzip) super.zzk();
     }
 
     @Override // com.google.android.recaptcha.internal.zzin

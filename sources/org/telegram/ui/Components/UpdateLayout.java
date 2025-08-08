@@ -10,7 +10,6 @@ import android.graphics.LinearGradient;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Shader;
-import android.os.Build;
 import android.text.TextUtils;
 import android.util.Property;
 import android.view.View;
@@ -27,7 +26,7 @@ import org.telegram.ui.ActionBar.SimpleTextView;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.IUpdateLayout;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class UpdateLayout extends IUpdateLayout {
     private Activity activity;
     private ViewGroup sideMenu;
@@ -45,67 +44,16 @@ public class UpdateLayout extends IUpdateLayout {
         this.sideMenuContainer = viewGroup2;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createUpdateUI$0(int i, View view) {
-        if (this.updateLayoutIcon.getIcon() == 2) {
-            ApplicationLoader.applicationLoaderInstance.downloadUpdate();
-        } else {
-            if (this.updateLayoutIcon.getIcon() != 3) {
-                File downloadedUpdateFile = ApplicationLoader.applicationLoaderInstance.getDownloadedUpdateFile();
-                if (downloadedUpdateFile != null) {
-                    AndroidUtilities.openForView(downloadedUpdateFile, "Telegram.apk", "application/vnd.android.package-archive", this.activity, null, false);
-                    return;
-                }
-                return;
-            }
-            ApplicationLoader.applicationLoaderInstance.cancelDownloadingUpdate();
-        }
-        updateAppUpdateViews(i, true);
-    }
-
-    private void setUpdateText(String str, boolean z) {
-        if (TextUtils.equals(this.updateTextViews[0].getText(), str)) {
+    @Override // org.telegram.ui.IUpdateLayout
+    public void updateFileProgress(Object[] objArr) {
+        SimpleTextView[] simpleTextViewArr;
+        if (this.updateLayout == null || (simpleTextViewArr = this.updateTextViews) == null || simpleTextViewArr[0] == null || !ApplicationLoader.applicationLoaderInstance.isDownloadingUpdate()) {
             return;
         }
-        AnimatorSet animatorSet = this.updateTextAnimator;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-            this.updateTextAnimator = null;
-        }
-        if (!z) {
-            this.updateTextViews[0].setText(str);
-            this.updateTextViews[0].setAlpha(1.0f);
-            this.updateTextViews[0].setVisibility(0);
-            this.updateTextViews[1].setVisibility(8);
-            return;
-        }
-        SimpleTextView[] simpleTextViewArr = this.updateTextViews;
-        simpleTextViewArr[1].setText(simpleTextViewArr[0].getText());
-        this.updateTextViews[0].setText(str);
-        this.updateTextViews[0].setAlpha(0.0f);
-        this.updateTextViews[1].setAlpha(1.0f);
-        this.updateTextViews[0].setVisibility(0);
-        this.updateTextViews[1].setVisibility(0);
-        ArrayList arrayList = new ArrayList();
-        SimpleTextView simpleTextView = this.updateTextViews[1];
-        Property property = View.ALPHA;
-        arrayList.add(ObjectAnimator.ofFloat(simpleTextView, (Property<SimpleTextView, Float>) property, 0.0f));
-        arrayList.add(ObjectAnimator.ofFloat(this.updateTextViews[0], (Property<SimpleTextView, Float>) property, 1.0f));
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        this.updateTextAnimator = animatorSet2;
-        animatorSet2.playTogether(arrayList);
-        this.updateTextAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.UpdateLayout.3
-            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-            public void onAnimationEnd(Animator animator) {
-                if (UpdateLayout.this.updateTextAnimator == animator) {
-                    UpdateLayout.this.updateTextViews[1].setVisibility(8);
-                    UpdateLayout.this.updateTextAnimator = null;
-                }
-            }
-        });
-        this.updateTextAnimator.setDuration(320L);
-        this.updateTextAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
-        this.updateTextAnimator.start();
+        float downloadingUpdateProgress = ApplicationLoader.applicationLoaderInstance.getDownloadingUpdateProgress();
+        this.updateLayoutIcon.setProgress(downloadingUpdateProgress, true);
+        this.updateTextViews[0].setText(LocaleController.formatString(R.string.AppUpdateDownloading, Integer.valueOf((int) (downloadingUpdateProgress * 100.0f))));
+        this.updateLayout.invalidate();
     }
 
     public void createUpdateUI(final int i) {
@@ -145,9 +93,7 @@ public class UpdateLayout extends IUpdateLayout {
         frameLayout.setWillNotDraw(false);
         this.updateLayout.setVisibility(4);
         this.updateLayout.setTranslationY(AndroidUtilities.dp(44.0f));
-        if (Build.VERSION.SDK_INT >= 21) {
-            this.updateLayout.setBackground(Theme.getSelectorDrawable(1090519039, false));
-        }
+        this.updateLayout.setBackground(Theme.getSelectorDrawable(1090519039, false));
         this.sideMenuContainer.addView(this.updateLayout, LayoutHelper.createFrame(-1, 44, 83));
         this.updateLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.UpdateLayout$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
@@ -182,99 +128,128 @@ public class UpdateLayout extends IUpdateLayout {
         this.updateLayout.addView(this.updateSizeTextView, LayoutHelper.createFrame(-2, -2.0f, 21, 0.0f, 0.0f, 17.0f, 0.0f));
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0085  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x00bf A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x00c0  */
-    @Override // org.telegram.ui.IUpdateLayout
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void updateAppUpdateViews(int i, boolean z) {
-        int i2;
-        String formatString;
-        if (this.sideMenuContainer == null) {
-            return;
-        }
-        if (ApplicationLoader.applicationLoaderInstance.getUpdate() == null) {
-            FrameLayout frameLayout = this.updateLayout;
-            if (frameLayout == null || frameLayout.getTag() == null) {
-                return;
-            }
-            this.updateLayout.setTag(null);
-            FrameLayout frameLayout2 = this.updateLayout;
-            if (z) {
-                frameLayout2.animate().translationY(AndroidUtilities.dp(44.0f)).setInterpolator(CubicBezierInterpolator.EASE_OUT).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.UpdateLayout.2
-                    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-                    public void onAnimationEnd(Animator animator) {
-                        if (UpdateLayout.this.updateLayout.getTag() == null) {
-                            UpdateLayout.this.updateLayout.setVisibility(4);
-                        }
-                    }
-                }).setDuration(180L).start();
-            } else {
-                frameLayout2.setTranslationY(AndroidUtilities.dp(44.0f));
-                this.updateLayout.setVisibility(4);
-            }
-            this.sideMenu.setPadding(0, 0, 0, 0);
-            return;
-        }
-        createUpdateUI(i);
-        this.updateSizeTextView.setText("");
-        File downloadedUpdateFile = ApplicationLoader.applicationLoaderInstance.getDownloadedUpdateFile();
-        if (downloadedUpdateFile != null && downloadedUpdateFile.exists()) {
-            this.updateLayoutIcon.setIcon(15, true, z);
-            i2 = R.string.AppUpdateNow;
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$createUpdateUI$0(int i, View view) {
+        if (this.updateLayoutIcon.getIcon() == 2) {
+            ApplicationLoader.applicationLoaderInstance.downloadUpdate();
+            updateAppUpdateViews(i, true);
+        } else if (this.updateLayoutIcon.getIcon() == 3) {
+            ApplicationLoader.applicationLoaderInstance.cancelDownloadingUpdate();
+            updateAppUpdateViews(i, true);
         } else {
-            if (ApplicationLoader.applicationLoaderInstance.isDownloadingUpdate()) {
-                this.updateLayoutIcon.setIcon(3, true, z);
-                this.updateLayoutIcon.setProgress(ApplicationLoader.applicationLoaderInstance.getDownloadingUpdateProgress(), true);
-                formatString = LocaleController.formatString(R.string.AppUpdateDownloading, Integer.valueOf((int) (ApplicationLoader.applicationLoaderInstance.getDownloadingUpdateProgress() * 100.0f)));
-                setUpdateText(formatString, z);
-                if (this.updateSizeTextView.getTag() == null) {
-                    TextView textView = this.updateSizeTextView;
-                    if (z) {
-                        textView.setTag(1);
-                        this.updateSizeTextView.animate().alpha(0.0f).scaleX(0.0f).scaleY(0.0f).setDuration(180L).start();
-                    } else {
-                        textView.setAlpha(0.0f);
-                        this.updateSizeTextView.setScaleX(0.0f);
-                        this.updateSizeTextView.setScaleY(0.0f);
-                    }
-                }
-                if (this.updateLayout.getTag() == null) {
-                    return;
-                }
-                this.updateLayout.setVisibility(0);
-                this.updateLayout.setTag(1);
-                FrameLayout frameLayout3 = this.updateLayout;
-                if (z) {
-                    frameLayout3.animate().translationY(0.0f).setInterpolator(CubicBezierInterpolator.EASE_OUT).setListener(null).setDuration(180L).start();
-                } else {
-                    frameLayout3.setTranslationY(0.0f);
-                }
-                this.sideMenu.setPadding(0, 0, 0, AndroidUtilities.dp(44.0f));
-                return;
+            File downloadedUpdateFile = ApplicationLoader.applicationLoaderInstance.getDownloadedUpdateFile();
+            if (downloadedUpdateFile != null) {
+                AndroidUtilities.openForView(downloadedUpdateFile, "Telegram.apk", "application/vnd.android.package-archive", this.activity, null, false);
             }
-            this.updateLayoutIcon.setIcon(2, true, z);
-            i2 = R.string.AppUpdateBeta;
-        }
-        formatString = LocaleController.getString(i2);
-        setUpdateText(formatString, z);
-        if (this.updateSizeTextView.getTag() == null) {
-        }
-        if (this.updateLayout.getTag() == null) {
         }
     }
 
     @Override // org.telegram.ui.IUpdateLayout
-    public void updateFileProgress(Object[] objArr) {
-        SimpleTextView[] simpleTextViewArr;
-        if (this.updateLayout == null || (simpleTextViewArr = this.updateTextViews) == null || simpleTextViewArr[0] == null || !ApplicationLoader.applicationLoaderInstance.isDownloadingUpdate()) {
+    public void updateAppUpdateViews(int i, boolean z) {
+        if (this.sideMenuContainer == null) {
             return;
         }
-        float downloadingUpdateProgress = ApplicationLoader.applicationLoaderInstance.getDownloadingUpdateProgress();
-        this.updateLayoutIcon.setProgress(downloadingUpdateProgress, true);
-        this.updateTextViews[0].setText(LocaleController.formatString(R.string.AppUpdateDownloading, Integer.valueOf((int) (downloadingUpdateProgress * 100.0f))));
-        this.updateLayout.invalidate();
+        if (ApplicationLoader.applicationLoaderInstance.getUpdate() != null) {
+            createUpdateUI(i);
+            this.updateSizeTextView.setText("");
+            File downloadedUpdateFile = ApplicationLoader.applicationLoaderInstance.getDownloadedUpdateFile();
+            if (downloadedUpdateFile != null && downloadedUpdateFile.exists()) {
+                this.updateLayoutIcon.setIcon(15, true, z);
+                setUpdateText(LocaleController.getString(R.string.AppUpdateNow), z);
+            } else if (ApplicationLoader.applicationLoaderInstance.isDownloadingUpdate()) {
+                this.updateLayoutIcon.setIcon(3, true, z);
+                this.updateLayoutIcon.setProgress(ApplicationLoader.applicationLoaderInstance.getDownloadingUpdateProgress(), true);
+                setUpdateText(LocaleController.formatString(R.string.AppUpdateDownloading, Integer.valueOf((int) (ApplicationLoader.applicationLoaderInstance.getDownloadingUpdateProgress() * 100.0f))), z);
+            } else {
+                this.updateLayoutIcon.setIcon(2, true, z);
+                setUpdateText(LocaleController.getString(R.string.AppUpdateBeta), z);
+            }
+            if (this.updateSizeTextView.getTag() == null) {
+                if (z) {
+                    this.updateSizeTextView.setTag(1);
+                    this.updateSizeTextView.animate().alpha(0.0f).scaleX(0.0f).scaleY(0.0f).setDuration(180L).start();
+                } else {
+                    this.updateSizeTextView.setAlpha(0.0f);
+                    this.updateSizeTextView.setScaleX(0.0f);
+                    this.updateSizeTextView.setScaleY(0.0f);
+                }
+            }
+            if (this.updateLayout.getTag() != null) {
+                return;
+            }
+            this.updateLayout.setVisibility(0);
+            this.updateLayout.setTag(1);
+            if (z) {
+                this.updateLayout.animate().translationY(0.0f).setInterpolator(CubicBezierInterpolator.EASE_OUT).setListener(null).setDuration(180L).start();
+            } else {
+                this.updateLayout.setTranslationY(0.0f);
+            }
+            this.sideMenu.setPadding(0, 0, 0, AndroidUtilities.dp(44.0f));
+            return;
+        }
+        FrameLayout frameLayout = this.updateLayout;
+        if (frameLayout == null || frameLayout.getTag() == null) {
+            return;
+        }
+        this.updateLayout.setTag(null);
+        if (z) {
+            this.updateLayout.animate().translationY(AndroidUtilities.dp(44.0f)).setInterpolator(CubicBezierInterpolator.EASE_OUT).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.UpdateLayout.2
+                @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+                public void onAnimationEnd(Animator animator) {
+                    if (UpdateLayout.this.updateLayout.getTag() == null) {
+                        UpdateLayout.this.updateLayout.setVisibility(4);
+                    }
+                }
+            }).setDuration(180L).start();
+        } else {
+            this.updateLayout.setTranslationY(AndroidUtilities.dp(44.0f));
+            this.updateLayout.setVisibility(4);
+        }
+        this.sideMenu.setPadding(0, 0, 0, 0);
+    }
+
+    private void setUpdateText(String str, boolean z) {
+        if (TextUtils.equals(this.updateTextViews[0].getText(), str)) {
+            return;
+        }
+        AnimatorSet animatorSet = this.updateTextAnimator;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+            this.updateTextAnimator = null;
+        }
+        if (z) {
+            SimpleTextView[] simpleTextViewArr = this.updateTextViews;
+            simpleTextViewArr[1].setText(simpleTextViewArr[0].getText());
+            this.updateTextViews[0].setText(str);
+            this.updateTextViews[0].setAlpha(0.0f);
+            this.updateTextViews[1].setAlpha(1.0f);
+            this.updateTextViews[0].setVisibility(0);
+            this.updateTextViews[1].setVisibility(0);
+            ArrayList arrayList = new ArrayList();
+            SimpleTextView simpleTextView = this.updateTextViews[1];
+            Property property = View.ALPHA;
+            arrayList.add(ObjectAnimator.ofFloat(simpleTextView, (Property<SimpleTextView, Float>) property, 0.0f));
+            arrayList.add(ObjectAnimator.ofFloat(this.updateTextViews[0], (Property<SimpleTextView, Float>) property, 1.0f));
+            AnimatorSet animatorSet2 = new AnimatorSet();
+            this.updateTextAnimator = animatorSet2;
+            animatorSet2.playTogether(arrayList);
+            this.updateTextAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.UpdateLayout.3
+                @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+                public void onAnimationEnd(Animator animator) {
+                    if (UpdateLayout.this.updateTextAnimator == animator) {
+                        UpdateLayout.this.updateTextViews[1].setVisibility(8);
+                        UpdateLayout.this.updateTextAnimator = null;
+                    }
+                }
+            });
+            this.updateTextAnimator.setDuration(320L);
+            this.updateTextAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
+            this.updateTextAnimator.start();
+            return;
+        }
+        this.updateTextViews[0].setText(str);
+        this.updateTextViews[0].setAlpha(1.0f);
+        this.updateTextViews[0].setVisibility(0);
+        this.updateTextViews[1].setVisibility(8);
     }
 }

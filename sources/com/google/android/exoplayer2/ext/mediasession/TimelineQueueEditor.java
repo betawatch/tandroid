@@ -29,19 +29,19 @@ public final class TimelineQueueEditor implements MediaSessionConnector.QueueEdi
         boolean equals(MediaDescriptionCompat mediaDescriptionCompat, MediaDescriptionCompat mediaDescriptionCompat2);
     }
 
-    public static final class MediaIdEqualityChecker implements MediaDescriptionEqualityChecker {
-        @Override // com.google.android.exoplayer2.ext.mediasession.TimelineQueueEditor.MediaDescriptionEqualityChecker
-        public boolean equals(MediaDescriptionCompat mediaDescriptionCompat, MediaDescriptionCompat mediaDescriptionCompat2) {
-            return Util.areEqual(mediaDescriptionCompat.getMediaId(), mediaDescriptionCompat2.getMediaId());
-        }
-    }
-
     public interface QueueDataAdapter {
         void add(int i, MediaDescriptionCompat mediaDescriptionCompat);
 
         void move(int i, int i2);
 
         void remove(int i);
+    }
+
+    public static final class MediaIdEqualityChecker implements MediaDescriptionEqualityChecker {
+        @Override // com.google.android.exoplayer2.ext.mediasession.TimelineQueueEditor.MediaDescriptionEqualityChecker
+        public boolean equals(MediaDescriptionCompat mediaDescriptionCompat, MediaDescriptionCompat mediaDescriptionCompat2) {
+            return Util.areEqual(mediaDescriptionCompat.getMediaId(), mediaDescriptionCompat2.getMediaId());
+        }
     }
 
     public TimelineQueueEditor(MediaControllerCompat mediaControllerCompat, QueueDataAdapter queueDataAdapter, MediaDescriptionConverter mediaDescriptionConverter) {
@@ -69,6 +69,18 @@ public final class TimelineQueueEditor implements MediaSessionConnector.QueueEdi
         }
     }
 
+    @Override // com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector.QueueEditor
+    public void onRemoveQueueItem(Player player, MediaDescriptionCompat mediaDescriptionCompat) {
+        List queue = this.mediaController.getQueue();
+        for (int i = 0; i < queue.size(); i++) {
+            if (this.equalityChecker.equals(((MediaSessionCompat.QueueItem) queue.get(i)).getDescription(), mediaDescriptionCompat)) {
+                this.queueDataAdapter.remove(i);
+                player.removeMediaItem(i);
+                return;
+            }
+        }
+    }
+
     @Override // com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector.CommandReceiver
     public boolean onCommand(Player player, String str, Bundle bundle, ResultReceiver resultReceiver) {
         if (!COMMAND_MOVE_QUEUE_ITEM.equals(str) || bundle == null) {
@@ -82,17 +94,5 @@ public final class TimelineQueueEditor implements MediaSessionConnector.QueueEdi
         this.queueDataAdapter.move(i, i2);
         player.moveMediaItem(i, i2);
         return true;
-    }
-
-    @Override // com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector.QueueEditor
-    public void onRemoveQueueItem(Player player, MediaDescriptionCompat mediaDescriptionCompat) {
-        List queue = this.mediaController.getQueue();
-        for (int i = 0; i < queue.size(); i++) {
-            if (this.equalityChecker.equals(((MediaSessionCompat.QueueItem) queue.get(i)).getDescription(), mediaDescriptionCompat)) {
-                this.queueDataAdapter.remove(i);
-                player.removeMediaItem(i);
-                return;
-            }
-        }
     }
 }

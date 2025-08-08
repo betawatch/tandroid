@@ -8,6 +8,11 @@ import com.google.android.gms.vision.barcode.Barcode;
 /* loaded from: classes.dex */
 public final class zzm implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
+    public final /* synthetic */ Object[] newArray(int i) {
+        return new Barcode.WiFi[i];
+    }
+
+    @Override // android.os.Parcelable.Creator
     public final /* synthetic */ Object createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
         String str = null;
@@ -20,18 +25,13 @@ public final class zzm implements Parcelable.Creator {
                 str = SafeParcelReader.createString(parcel, readHeader);
             } else if (fieldId == 3) {
                 str2 = SafeParcelReader.createString(parcel, readHeader);
-            } else if (fieldId != 4) {
-                SafeParcelReader.skipUnknownField(parcel, readHeader);
-            } else {
+            } else if (fieldId == 4) {
                 i = SafeParcelReader.readInt(parcel, readHeader);
+            } else {
+                SafeParcelReader.skipUnknownField(parcel, readHeader);
             }
         }
         SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
         return new Barcode.WiFi(str, str2, i);
-    }
-
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i) {
-        return new Barcode.WiFi[i];
     }
 }

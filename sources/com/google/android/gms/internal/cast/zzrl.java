@@ -13,14 +13,14 @@ public abstract class zzrl extends AbstractExecutorService implements zzrx {
         return zzse.zzn(runnable, obj);
     }
 
-    @Override // java.util.concurrent.AbstractExecutorService
-    protected final RunnableFuture newTaskFor(Callable callable) {
-        return new zzse(callable);
-    }
-
     @Override // java.util.concurrent.AbstractExecutorService, java.util.concurrent.ExecutorService
     public final /* synthetic */ Future submit(Runnable runnable) {
         return (ListenableFuture) super.submit(runnable);
+    }
+
+    @Override // java.util.concurrent.AbstractExecutorService
+    protected final RunnableFuture newTaskFor(Callable callable) {
+        return new zzse(callable);
     }
 
     @Override // java.util.concurrent.AbstractExecutorService, java.util.concurrent.ExecutorService

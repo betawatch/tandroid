@@ -3,7 +3,7 @@ package kotlinx.coroutines.flow;
 import kotlinx.coroutines.flow.internal.NullSurrogateKt;
 import kotlinx.coroutines.internal.Symbol;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class StateFlowKt {
     private static final Symbol NONE = new Symbol("NONE");
     private static final Symbol PENDING = new Symbol("PENDING");

@@ -357,10 +357,10 @@ public final class zzo {
                 if (j != 0 && zzf - j > 1209600000) {
                     hashSet2.add(str2);
                 } else if (str2.startsWith("feature_usage_timestamp_reported_feature_")) {
-                    zzg = zzg(str2.substring(41));
-                    if (zzg != null) {
-                        this.zzj.add(zzg);
-                        this.zzi.add(zzg);
+                    zzml zzg2 = zzg(str2.substring(41));
+                    if (zzg2 != null) {
+                        this.zzj.add(zzg2);
+                        this.zzi.add(zzg2);
                     }
                 } else if (str2.startsWith("feature_usage_timestamp_detected_feature_") && (zzg = zzg(str2.substring(41))) != null) {
                     this.zzi.add(zzg);

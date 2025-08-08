@@ -2,11 +2,10 @@ package com.google.android.recaptcha.internal;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-import kotlin.collections.CollectionsKt__IterablesKt;
-import kotlin.collections.CollectionsKt___CollectionsKt;
+import kotlin.collections.CollectionsKt;
 import kotlin.collections.IntIterator;
 import kotlin.ranges.IntRange;
-import kotlin.ranges.RangesKt___RangesKt;
+import kotlin.ranges.RangesKt;
 import kotlin.text.Charsets;
 
 /* loaded from: classes.dex */
@@ -39,12 +38,6 @@ public final class zzdz implements zzdd {
     }
 
     public final Object zzb(Object obj, Object obj2) {
-        IntRange until;
-        IntRange until2;
-        IntRange until3;
-        IntRange until4;
-        int[] intArray;
-        byte[] byteArray;
         boolean z = obj instanceof Byte;
         if (z && (obj2 instanceof Byte)) {
             return Byte.valueOf((byte) (((Number) obj).byteValue() ^ ((Number) obj2).byteValue()));
@@ -71,8 +64,7 @@ public final class zzdz implements zzdd {
                     arrayList.add(Byte.valueOf((byte) (bytes[i] ^ ((Number) obj2).byteValue())));
                     i++;
                 }
-                byteArray = CollectionsKt___CollectionsKt.toByteArray(arrayList);
-                return byteArray;
+                return CollectionsKt.toByteArray(arrayList);
             }
             if (obj2 instanceof Integer) {
                 char[] charArray = ((String) obj).toCharArray();
@@ -82,8 +74,7 @@ public final class zzdz implements zzdd {
                     arrayList2.add(Integer.valueOf(charArray[i] ^ ((Number) obj2).intValue()));
                     i++;
                 }
-                intArray = CollectionsKt___CollectionsKt.toIntArray(arrayList2);
-                return intArray;
+                return CollectionsKt.toIntArray(arrayList2);
             }
         }
         if (z && (obj2 instanceof byte[])) {
@@ -159,9 +150,9 @@ public final class zzdz implements zzdd {
             int length3 = bArr3.length;
             byte[] bArr4 = (byte[]) obj2;
             zzdc.zza(this, length3, bArr4.length);
-            until4 = RangesKt___RangesKt.until(0, length3);
-            ArrayList arrayList11 = new ArrayList(CollectionsKt__IterablesKt.collectionSizeOrDefault(until4, 10));
-            Iterator it = until4.iterator();
+            IntRange until = RangesKt.until(0, length3);
+            ArrayList arrayList11 = new ArrayList(CollectionsKt.collectionSizeOrDefault(until, 10));
+            Iterator it = until.iterator();
             while (it.hasNext()) {
                 int nextInt = ((IntIterator) it).nextInt();
                 arrayList11.add(Byte.valueOf((byte) (bArr4[nextInt] ^ bArr3[nextInt])));
@@ -173,9 +164,9 @@ public final class zzdz implements zzdd {
             int length4 = sArr3.length;
             short[] sArr4 = (short[]) obj2;
             zzdc.zza(this, length4, sArr4.length);
-            until3 = RangesKt___RangesKt.until(0, length4);
-            ArrayList arrayList12 = new ArrayList(CollectionsKt__IterablesKt.collectionSizeOrDefault(until3, 10));
-            Iterator it2 = until3.iterator();
+            IntRange until2 = RangesKt.until(0, length4);
+            ArrayList arrayList12 = new ArrayList(CollectionsKt.collectionSizeOrDefault(until2, 10));
+            Iterator it2 = until2.iterator();
             while (it2.hasNext()) {
                 int nextInt2 = ((IntIterator) it2).nextInt();
                 arrayList12.add(Short.valueOf((short) (sArr4[nextInt2] ^ sArr3[nextInt2])));
@@ -187,9 +178,9 @@ public final class zzdz implements zzdd {
             int length5 = iArr3.length;
             int[] iArr4 = (int[]) obj2;
             zzdc.zza(this, length5, iArr4.length);
-            until2 = RangesKt___RangesKt.until(0, length5);
-            ArrayList arrayList13 = new ArrayList(CollectionsKt__IterablesKt.collectionSizeOrDefault(until2, 10));
-            Iterator it3 = until2.iterator();
+            IntRange until3 = RangesKt.until(0, length5);
+            ArrayList arrayList13 = new ArrayList(CollectionsKt.collectionSizeOrDefault(until3, 10));
+            Iterator it3 = until3.iterator();
             while (it3.hasNext()) {
                 int nextInt3 = ((IntIterator) it3).nextInt();
                 arrayList13.add(Integer.valueOf(iArr4[nextInt3] ^ iArr3[nextInt3]));
@@ -203,9 +194,9 @@ public final class zzdz implements zzdd {
         int length6 = jArr3.length;
         long[] jArr4 = (long[]) obj2;
         zzdc.zza(this, length6, jArr4.length);
-        until = RangesKt___RangesKt.until(0, length6);
-        ArrayList arrayList14 = new ArrayList(CollectionsKt__IterablesKt.collectionSizeOrDefault(until, 10));
-        Iterator it4 = until.iterator();
+        IntRange until4 = RangesKt.until(0, length6);
+        ArrayList arrayList14 = new ArrayList(CollectionsKt.collectionSizeOrDefault(until4, 10));
+        Iterator it4 = until4.iterator();
         while (it4.hasNext()) {
             int nextInt4 = ((IntIterator) it4).nextInt();
             arrayList14.add(Long.valueOf(jArr3[nextInt4] ^ jArr4[nextInt4]));

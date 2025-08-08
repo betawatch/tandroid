@@ -8,7 +8,7 @@ import android.content.IntentFilter;
 import android.util.Log;
 import androidx.collection.ArrayMap;
 import androidx.core.os.UserManagerCompat;
-import com.google.android.exoplayer2.mediacodec.AsynchronousMediaCodecBufferEnqueuer$$ExternalSyntheticBackportWithForwarding0;
+import com.google.android.exoplayer2.mediacodec.AsynchronousMediaCodecBufferEnqueuer$$ExternalSyntheticBackportWithForwarding1;
 import com.google.android.gms.common.api.internal.BackgroundDetector;
 import com.google.android.gms.common.internal.Objects;
 import com.google.android.gms.common.internal.Preconditions;
@@ -57,119 +57,34 @@ public class FirebaseApp {
         void onBackgroundStateChanged(boolean z);
     }
 
-    private static class GlobalBackgroundStateListener implements BackgroundDetector.BackgroundStateChangeListener {
-        private static AtomicReference INSTANCE = new AtomicReference();
-
-        private GlobalBackgroundStateListener() {
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static void ensureBackgroundStateListenerRegistered(Context context) {
-            if (PlatformVersion.isAtLeastIceCreamSandwich() && (context.getApplicationContext() instanceof Application)) {
-                Application application = (Application) context.getApplicationContext();
-                if (INSTANCE.get() == null) {
-                    GlobalBackgroundStateListener globalBackgroundStateListener = new GlobalBackgroundStateListener();
-                    if (AsynchronousMediaCodecBufferEnqueuer$$ExternalSyntheticBackportWithForwarding0.m(INSTANCE, null, globalBackgroundStateListener)) {
-                        BackgroundDetector.initialize(application);
-                        BackgroundDetector.getInstance().addListener(globalBackgroundStateListener);
-                    }
-                }
-            }
-        }
-
-        @Override // com.google.android.gms.common.api.internal.BackgroundDetector.BackgroundStateChangeListener
-        public void onBackgroundStateChanged(boolean z) {
-            synchronized (FirebaseApp.LOCK) {
-                try {
-                    Iterator it = new ArrayList(FirebaseApp.INSTANCES.values()).iterator();
-                    while (it.hasNext()) {
-                        FirebaseApp firebaseApp = (FirebaseApp) it.next();
-                        if (firebaseApp.automaticResourceManagementEnabled.get()) {
-                            firebaseApp.notifyBackgroundStateChangeListeners(z);
-                        }
-                    }
-                } catch (Throwable th) {
-                    throw th;
-                }
-            }
-        }
+    public Context getApplicationContext() {
+        checkNotDeleted();
+        return this.applicationContext;
     }
 
-    private static class UserUnlockReceiver extends BroadcastReceiver {
-        private static AtomicReference INSTANCE = new AtomicReference();
-        private final Context applicationContext;
-
-        public UserUnlockReceiver(Context context) {
-            this.applicationContext = context;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static void ensureReceiverRegistered(Context context) {
-            if (INSTANCE.get() == null) {
-                UserUnlockReceiver userUnlockReceiver = new UserUnlockReceiver(context);
-                if (AsynchronousMediaCodecBufferEnqueuer$$ExternalSyntheticBackportWithForwarding0.m(INSTANCE, null, userUnlockReceiver)) {
-                    context.registerReceiver(userUnlockReceiver, new IntentFilter("android.intent.action.USER_UNLOCKED"));
-                }
-            }
-        }
-
-        @Override // android.content.BroadcastReceiver
-        public void onReceive(Context context, Intent intent) {
-            synchronized (FirebaseApp.LOCK) {
-                try {
-                    Iterator it = FirebaseApp.INSTANCES.values().iterator();
-                    while (it.hasNext()) {
-                        ((FirebaseApp) it.next()).initializeAllApis();
-                    }
-                } catch (Throwable th) {
-                    throw th;
-                }
-            }
-            unregister();
-        }
-
-        public void unregister() {
-            this.applicationContext.unregisterReceiver(this);
-        }
+    public String getName() {
+        checkNotDeleted();
+        return this.name;
     }
 
-    protected FirebaseApp(final Context context, String str, FirebaseOptions firebaseOptions) {
-        this.applicationContext = (Context) Preconditions.checkNotNull(context);
-        this.name = Preconditions.checkNotEmpty(str);
-        this.options = (FirebaseOptions) Preconditions.checkNotNull(firebaseOptions);
-        StartupTime startupTime = FirebaseInitProvider.getStartupTime();
-        FirebaseTrace.pushTrace("Firebase");
-        FirebaseTrace.pushTrace("ComponentDiscovery");
-        List discoverLazy = ComponentDiscovery.forContext(context, ComponentDiscoveryService.class).discoverLazy();
-        FirebaseTrace.popTrace();
-        FirebaseTrace.pushTrace("Runtime");
-        ComponentRuntime.Builder processor = ComponentRuntime.builder(UiExecutor.INSTANCE).addLazyComponentRegistrars(discoverLazy).addComponentRegistrar(new FirebaseCommonRegistrar()).addComponentRegistrar(new ExecutorsRegistrar()).addComponent(Component.of(context, Context.class, new Class[0])).addComponent(Component.of(this, FirebaseApp.class, new Class[0])).addComponent(Component.of(firebaseOptions, FirebaseOptions.class, new Class[0])).setProcessor(new ComponentMonitor());
-        if (UserManagerCompat.isUserUnlocked(context) && FirebaseInitProvider.isCurrentlyInitializing()) {
-            processor.addComponent(Component.of(startupTime, StartupTime.class, new Class[0]));
-        }
-        ComponentRuntime build = processor.build();
-        this.componentRuntime = build;
-        FirebaseTrace.popTrace();
-        this.dataCollectionConfigStorage = new Lazy(new Provider() { // from class: com.google.firebase.FirebaseApp$$ExternalSyntheticLambda0
-            @Override // com.google.firebase.inject.Provider
-            public final Object get() {
-                DataCollectionConfigStorage lambda$new$0;
-                lambda$new$0 = FirebaseApp.this.lambda$new$0(context);
-                return lambda$new$0;
-            }
-        });
-        this.defaultHeartBeatController = build.getProvider(DefaultHeartBeatController.class);
-        addBackgroundStateChangeListener(new BackgroundStateChangeListener() { // from class: com.google.firebase.FirebaseApp$$ExternalSyntheticLambda1
-            @Override // com.google.firebase.FirebaseApp.BackgroundStateChangeListener
-            public final void onBackgroundStateChanged(boolean z) {
-                FirebaseApp.this.lambda$new$1(z);
-            }
-        });
-        FirebaseTrace.popTrace();
+    public FirebaseOptions getOptions() {
+        checkNotDeleted();
+        return this.options;
     }
 
-    private void checkNotDeleted() {
-        Preconditions.checkState(!this.deleted.get(), "FirebaseApp was deleted");
+    public boolean equals(Object obj) {
+        if (obj instanceof FirebaseApp) {
+            return this.name.equals(((FirebaseApp) obj).getName());
+        }
+        return false;
+    }
+
+    public int hashCode() {
+        return this.name.hashCode();
+    }
+
+    public String toString() {
+        return Objects.toStringHelper(this).add("name", this.name).add("options", this.options).toString();
     }
 
     public static FirebaseApp getInstance() {
@@ -186,18 +101,6 @@ public class FirebaseApp {
             }
         }
         return firebaseApp;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public void initializeAllApis() {
-        if (!UserManagerCompat.isUserUnlocked(this.applicationContext)) {
-            Log.i("FirebaseApp", "Device in Direct Boot Mode: postponing initialization of Firebase APIs for app " + getName());
-            UserUnlockReceiver.ensureReceiverRegistered(this.applicationContext);
-            return;
-        }
-        Log.i("FirebaseApp", "Device unlocked: initializing all Firebase APIs for app " + getName());
-        this.componentRuntime.initializeEagerComponents(isDefaultApp());
-        ((DefaultHeartBeatController) this.defaultHeartBeatController.get()).registerHeartBeat();
     }
 
     public static FirebaseApp initializeApp(Context context) {
@@ -240,6 +143,51 @@ public class FirebaseApp {
         return firebaseApp;
     }
 
+    public Object get(Class cls) {
+        checkNotDeleted();
+        return this.componentRuntime.get(cls);
+    }
+
+    public boolean isDataCollectionDefaultEnabled() {
+        checkNotDeleted();
+        return ((DataCollectionConfigStorage) this.dataCollectionConfigStorage.get()).isEnabled();
+    }
+
+    protected FirebaseApp(final Context context, String str, FirebaseOptions firebaseOptions) {
+        this.applicationContext = (Context) Preconditions.checkNotNull(context);
+        this.name = Preconditions.checkNotEmpty(str);
+        this.options = (FirebaseOptions) Preconditions.checkNotNull(firebaseOptions);
+        StartupTime startupTime = FirebaseInitProvider.getStartupTime();
+        FirebaseTrace.pushTrace("Firebase");
+        FirebaseTrace.pushTrace("ComponentDiscovery");
+        List discoverLazy = ComponentDiscovery.forContext(context, ComponentDiscoveryService.class).discoverLazy();
+        FirebaseTrace.popTrace();
+        FirebaseTrace.pushTrace("Runtime");
+        ComponentRuntime.Builder processor = ComponentRuntime.builder(UiExecutor.INSTANCE).addLazyComponentRegistrars(discoverLazy).addComponentRegistrar(new FirebaseCommonRegistrar()).addComponentRegistrar(new ExecutorsRegistrar()).addComponent(Component.of(context, Context.class, new Class[0])).addComponent(Component.of(this, FirebaseApp.class, new Class[0])).addComponent(Component.of(firebaseOptions, FirebaseOptions.class, new Class[0])).setProcessor(new ComponentMonitor());
+        if (UserManagerCompat.isUserUnlocked(context) && FirebaseInitProvider.isCurrentlyInitializing()) {
+            processor.addComponent(Component.of(startupTime, StartupTime.class, new Class[0]));
+        }
+        ComponentRuntime build = processor.build();
+        this.componentRuntime = build;
+        FirebaseTrace.popTrace();
+        this.dataCollectionConfigStorage = new Lazy(new Provider() { // from class: com.google.firebase.FirebaseApp$$ExternalSyntheticLambda0
+            @Override // com.google.firebase.inject.Provider
+            public final Object get() {
+                DataCollectionConfigStorage lambda$new$0;
+                lambda$new$0 = FirebaseApp.this.lambda$new$0(context);
+                return lambda$new$0;
+            }
+        });
+        this.defaultHeartBeatController = build.getProvider(DefaultHeartBeatController.class);
+        addBackgroundStateChangeListener(new BackgroundStateChangeListener() { // from class: com.google.firebase.FirebaseApp$$ExternalSyntheticLambda1
+            @Override // com.google.firebase.FirebaseApp.BackgroundStateChangeListener
+            public final void onBackgroundStateChanged(boolean z) {
+                FirebaseApp.this.lambda$new$1(z);
+            }
+        });
+        FirebaseTrace.popTrace();
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ DataCollectionConfigStorage lambda$new$0(Context context) {
         return new DataCollectionConfigStorage(context, getPersistenceKey(), (Publisher) this.componentRuntime.get(Publisher.class));
@@ -253,8 +201,12 @@ public class FirebaseApp {
         ((DefaultHeartBeatController) this.defaultHeartBeatController.get()).registerHeartBeat();
     }
 
-    private static String normalize(String str) {
-        return str.trim();
+    private void checkNotDeleted() {
+        Preconditions.checkState(!this.deleted.get(), "FirebaseApp was deleted");
+    }
+
+    public boolean isDefaultApp() {
+        return "[DEFAULT]".equals(getName());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -274,57 +226,105 @@ public class FirebaseApp {
         this.backgroundStateChangeListeners.add(backgroundStateChangeListener);
     }
 
+    public String getPersistenceKey() {
+        return Base64Utils.encodeUrlSafeNoPadding(getName().getBytes(Charset.defaultCharset())) + "+" + Base64Utils.encodeUrlSafeNoPadding(getOptions().getApplicationId().getBytes(Charset.defaultCharset()));
+    }
+
     public void addLifecycleEventListener(FirebaseAppLifecycleListener firebaseAppLifecycleListener) {
         checkNotDeleted();
         Preconditions.checkNotNull(firebaseAppLifecycleListener);
         this.lifecycleListeners.add(firebaseAppLifecycleListener);
     }
 
-    public boolean equals(Object obj) {
-        if (obj instanceof FirebaseApp) {
-            return this.name.equals(((FirebaseApp) obj).getName());
+    /* JADX INFO: Access modifiers changed from: private */
+    public void initializeAllApis() {
+        if (!UserManagerCompat.isUserUnlocked(this.applicationContext)) {
+            Log.i("FirebaseApp", "Device in Direct Boot Mode: postponing initialization of Firebase APIs for app " + getName());
+            UserUnlockReceiver.ensureReceiverRegistered(this.applicationContext);
+            return;
         }
-        return false;
+        Log.i("FirebaseApp", "Device unlocked: initializing all Firebase APIs for app " + getName());
+        this.componentRuntime.initializeEagerComponents(isDefaultApp());
+        ((DefaultHeartBeatController) this.defaultHeartBeatController.get()).registerHeartBeat();
     }
 
-    public Object get(Class cls) {
-        checkNotDeleted();
-        return this.componentRuntime.get(cls);
+    private static String normalize(String str) {
+        return str.trim();
     }
 
-    public Context getApplicationContext() {
-        checkNotDeleted();
-        return this.applicationContext;
+    private static class UserUnlockReceiver extends BroadcastReceiver {
+        private static AtomicReference INSTANCE = new AtomicReference();
+        private final Context applicationContext;
+
+        public UserUnlockReceiver(Context context) {
+            this.applicationContext = context;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static void ensureReceiverRegistered(Context context) {
+            if (INSTANCE.get() == null) {
+                UserUnlockReceiver userUnlockReceiver = new UserUnlockReceiver(context);
+                if (AsynchronousMediaCodecBufferEnqueuer$$ExternalSyntheticBackportWithForwarding1.m(INSTANCE, null, userUnlockReceiver)) {
+                    context.registerReceiver(userUnlockReceiver, new IntentFilter("android.intent.action.USER_UNLOCKED"));
+                }
+            }
+        }
+
+        @Override // android.content.BroadcastReceiver
+        public void onReceive(Context context, Intent intent) {
+            synchronized (FirebaseApp.LOCK) {
+                try {
+                    Iterator it = FirebaseApp.INSTANCES.values().iterator();
+                    while (it.hasNext()) {
+                        ((FirebaseApp) it.next()).initializeAllApis();
+                    }
+                } catch (Throwable th) {
+                    throw th;
+                }
+            }
+            unregister();
+        }
+
+        public void unregister() {
+            this.applicationContext.unregisterReceiver(this);
+        }
     }
 
-    public String getName() {
-        checkNotDeleted();
-        return this.name;
-    }
+    private static class GlobalBackgroundStateListener implements BackgroundDetector.BackgroundStateChangeListener {
+        private static AtomicReference INSTANCE = new AtomicReference();
 
-    public FirebaseOptions getOptions() {
-        checkNotDeleted();
-        return this.options;
-    }
+        private GlobalBackgroundStateListener() {
+        }
 
-    public String getPersistenceKey() {
-        return Base64Utils.encodeUrlSafeNoPadding(getName().getBytes(Charset.defaultCharset())) + "+" + Base64Utils.encodeUrlSafeNoPadding(getOptions().getApplicationId().getBytes(Charset.defaultCharset()));
-    }
+        /* JADX INFO: Access modifiers changed from: private */
+        public static void ensureBackgroundStateListenerRegistered(Context context) {
+            if (PlatformVersion.isAtLeastIceCreamSandwich() && (context.getApplicationContext() instanceof Application)) {
+                Application application = (Application) context.getApplicationContext();
+                if (INSTANCE.get() == null) {
+                    GlobalBackgroundStateListener globalBackgroundStateListener = new GlobalBackgroundStateListener();
+                    if (AsynchronousMediaCodecBufferEnqueuer$$ExternalSyntheticBackportWithForwarding1.m(INSTANCE, null, globalBackgroundStateListener)) {
+                        BackgroundDetector.initialize(application);
+                        BackgroundDetector.getInstance().addListener(globalBackgroundStateListener);
+                    }
+                }
+            }
+        }
 
-    public int hashCode() {
-        return this.name.hashCode();
-    }
-
-    public boolean isDataCollectionDefaultEnabled() {
-        checkNotDeleted();
-        return ((DataCollectionConfigStorage) this.dataCollectionConfigStorage.get()).isEnabled();
-    }
-
-    public boolean isDefaultApp() {
-        return "[DEFAULT]".equals(getName());
-    }
-
-    public String toString() {
-        return Objects.toStringHelper(this).add("name", this.name).add("options", this.options).toString();
+        @Override // com.google.android.gms.common.api.internal.BackgroundDetector.BackgroundStateChangeListener
+        public void onBackgroundStateChanged(boolean z) {
+            synchronized (FirebaseApp.LOCK) {
+                try {
+                    Iterator it = new ArrayList(FirebaseApp.INSTANCES.values()).iterator();
+                    while (it.hasNext()) {
+                        FirebaseApp firebaseApp = (FirebaseApp) it.next();
+                        if (firebaseApp.automaticResourceManagementEnabled.get()) {
+                            firebaseApp.notifyBackgroundStateChangeListeners(z);
+                        }
+                    }
+                } catch (Throwable th) {
+                    throw th;
+                }
+            }
+        }
     }
 }

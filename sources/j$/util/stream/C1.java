@@ -1,42 +1,31 @@
 package j$.util.stream;
 
-import j$.util.function.BiFunction;
+import j$.util.Optional;
+import j$.util.function.BinaryOperator;
 import j$.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-final class C1 extends P1 implements O1 {
-    final /* synthetic */ Object b;
-    final /* synthetic */ BiFunction c;
-    final /* synthetic */ j$.util.function.f d;
+final class C1 implements N1 {
+    private boolean a;
+    private Object b;
+    final /* synthetic */ BinaryOperator c;
 
-    C1(Object obj, BiFunction biFunction, j$.util.function.f fVar) {
-        this.b = obj;
-        this.c = biFunction;
-        this.d = fVar;
-    }
-
-    @Override // j$.util.stream.e2, j$.util.function.m
+    @Override // j$.util.stream.d2, j$.util.function.l
     public final /* synthetic */ void accept(double d) {
-        u0.b();
+        t0.b();
         throw null;
     }
 
-    @Override // j$.util.stream.e2
+    @Override // j$.util.stream.d2
     public final /* synthetic */ void accept(int i) {
-        u0.k();
+        t0.k();
         throw null;
     }
 
-    @Override // j$.util.stream.e2
+    @Override // j$.util.stream.d2
     public final /* synthetic */ void accept(long j) {
-        u0.l();
+        t0.l();
         throw null;
-    }
-
-    @Override // j$.util.function.Consumer
-    /* renamed from: accept */
-    public final void r(Object obj) {
-        this.a = this.c.apply(this.a, obj);
     }
 
     @Override // j$.util.function.Consumer
@@ -44,22 +33,47 @@ final class C1 extends P1 implements O1 {
         return Consumer.-CC.$default$andThen(this, consumer);
     }
 
-    @Override // j$.util.stream.O1
-    public final void h(O1 o1) {
-        this.a = this.d.apply(this.a, ((C1) o1).a);
-    }
-
-    @Override // j$.util.stream.e2
+    @Override // j$.util.stream.d2
     public final /* synthetic */ void m() {
     }
 
-    @Override // j$.util.stream.e2
-    public final void n(long j) {
-        this.a = this.b;
-    }
-
-    @Override // j$.util.stream.e2
+    @Override // j$.util.stream.d2
     public final /* synthetic */ boolean q() {
         return false;
+    }
+
+    C1(BinaryOperator binaryOperator) {
+        this.c = binaryOperator;
+    }
+
+    @Override // j$.util.stream.N1
+    public final void h(N1 n1) {
+        C1 c1 = (C1) n1;
+        if (c1.a) {
+            return;
+        }
+        r(c1.b);
+    }
+
+    @Override // j$.util.stream.d2
+    public final void n(long j) {
+        this.a = true;
+        this.b = null;
+    }
+
+    @Override // j$.util.function.Consumer
+    /* renamed from: accept */
+    public final void r(Object obj) {
+        if (this.a) {
+            this.a = false;
+            this.b = obj;
+        } else {
+            this.b = this.c.apply(this.b, obj);
+        }
+    }
+
+    @Override // j$.util.function.Supplier
+    public final Object get() {
+        return this.a ? Optional.empty() : Optional.of(this.b);
     }
 }

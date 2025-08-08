@@ -2,9 +2,15 @@ package com.google.zxing.common;
 
 import com.google.zxing.NotFoundException;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class GridSampler {
     private static GridSampler gridSampler = new DefaultGridSampler();
+
+    public abstract BitMatrix sampleGrid(BitMatrix bitMatrix, int i, int i2, PerspectiveTransform perspectiveTransform);
+
+    public static GridSampler getInstance() {
+        return gridSampler;
+    }
 
     /* JADX WARN: Removed duplicated region for block: B:14:0x0035  */
     /* JADX WARN: Removed duplicated region for block: B:18:0x0039  */
@@ -70,10 +76,4 @@ public abstract class GridSampler {
             z2 = true;
         }
     }
-
-    public static GridSampler getInstance() {
-        return gridSampler;
-    }
-
-    public abstract BitMatrix sampleGrid(BitMatrix bitMatrix, int i, int i2, PerspectiveTransform perspectiveTransform);
 }

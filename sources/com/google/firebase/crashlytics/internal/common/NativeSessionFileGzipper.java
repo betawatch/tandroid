@@ -8,37 +8,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.zip.GZIPOutputStream;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 abstract class NativeSessionFileGzipper {
-    private static void gzipInputStream(InputStream inputStream, File file) {
-        if (inputStream == null) {
-            return;
-        }
-        byte[] bArr = new byte[8192];
-        GZIPOutputStream gZIPOutputStream = null;
-        try {
-            GZIPOutputStream gZIPOutputStream2 = new GZIPOutputStream(new FileOutputStream(file));
-            while (true) {
-                try {
-                    int read = inputStream.read(bArr);
-                    if (read <= 0) {
-                        gZIPOutputStream2.finish();
-                        CommonUtils.closeQuietly(gZIPOutputStream2);
-                        return;
-                    }
-                    gZIPOutputStream2.write(bArr, 0, read);
-                } catch (Throwable th) {
-                    th = th;
-                    gZIPOutputStream = gZIPOutputStream2;
-                    CommonUtils.closeQuietly(gZIPOutputStream);
-                    throw th;
-                }
-            }
-        } catch (Throwable th2) {
-            th = th2;
-        }
-    }
-
     static void processNativeSessions(File file, List list) {
         Iterator it = list.iterator();
         while (it.hasNext()) {
@@ -55,6 +26,36 @@ abstract class NativeSessionFileGzipper {
                 throw th;
             }
             CommonUtils.closeQuietly(inputStream);
+        }
+    }
+
+    private static void gzipInputStream(InputStream inputStream, File file) {
+        if (inputStream == null) {
+            return;
+        }
+        byte[] bArr = new byte[8192];
+        GZIPOutputStream gZIPOutputStream = null;
+        try {
+            GZIPOutputStream gZIPOutputStream2 = new GZIPOutputStream(new FileOutputStream(file));
+            while (true) {
+                try {
+                    int read = inputStream.read(bArr);
+                    if (read > 0) {
+                        gZIPOutputStream2.write(bArr, 0, read);
+                    } else {
+                        gZIPOutputStream2.finish();
+                        CommonUtils.closeQuietly(gZIPOutputStream2);
+                        return;
+                    }
+                } catch (Throwable th) {
+                    th = th;
+                    gZIPOutputStream = gZIPOutputStream2;
+                    CommonUtils.closeQuietly(gZIPOutputStream);
+                    throw th;
+                }
+            }
+        } catch (Throwable th2) {
+            th = th2;
         }
     }
 }

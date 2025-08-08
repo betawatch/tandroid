@@ -11,7 +11,7 @@ final class b extends u {
     }
 
     @Override // j$.time.format.u
-    public final String c(j$.time.temporal.l lVar, long j, TextStyle textStyle, Locale locale) {
+    public final String c(j$.time.temporal.a aVar, long j, TextStyle textStyle, Locale locale) {
         return this.d.a(j, textStyle);
     }
 }

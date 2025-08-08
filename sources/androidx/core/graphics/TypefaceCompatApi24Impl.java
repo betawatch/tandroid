@@ -23,6 +23,9 @@ class TypefaceCompatApi24Impl extends TypefaceCompatBaseImpl {
     private static final Class sFontFamily;
     private static final Constructor sFontFamilyCtor;
 
+    TypefaceCompatApi24Impl() {
+    }
+
     static {
         Method method;
         Class<?> cls;
@@ -47,7 +50,20 @@ class TypefaceCompatApi24Impl extends TypefaceCompatBaseImpl {
         sCreateFromFamiliesWithDefault = method;
     }
 
-    TypefaceCompatApi24Impl() {
+    public static boolean isUsable() {
+        Method method = sAddFontWeightStyle;
+        if (method == null) {
+            Log.w("TypefaceCompatApi24Impl", "Unable to collect necessary private methods.Fallback to legacy implementation.");
+        }
+        return method != null;
+    }
+
+    private static Object newFamily() {
+        try {
+            return sFontFamilyCtor.newInstance(null);
+        } catch (IllegalAccessException | InstantiationException | InvocationTargetException unused) {
+            return null;
+        }
     }
 
     private static boolean addFontWeightStyle(Object obj, ByteBuffer byteBuffer, int i, int i2, boolean z) {
@@ -66,37 +82,6 @@ class TypefaceCompatApi24Impl extends TypefaceCompatBaseImpl {
         } catch (IllegalAccessException | InvocationTargetException unused) {
             return null;
         }
-    }
-
-    public static boolean isUsable() {
-        Method method = sAddFontWeightStyle;
-        if (method == null) {
-            Log.w("TypefaceCompatApi24Impl", "Unable to collect necessary private methods.Fallback to legacy implementation.");
-        }
-        return method != null;
-    }
-
-    private static Object newFamily() {
-        try {
-            return sFontFamilyCtor.newInstance(null);
-        } catch (IllegalAccessException | InstantiationException | InvocationTargetException unused) {
-            return null;
-        }
-    }
-
-    @Override // androidx.core.graphics.TypefaceCompatBaseImpl
-    public Typeface createFromFontFamilyFilesResourceEntry(Context context, FontResourcesParserCompat.FontFamilyFilesResourceEntry fontFamilyFilesResourceEntry, Resources resources, int i) {
-        Object newFamily = newFamily();
-        if (newFamily == null) {
-            return null;
-        }
-        for (FontResourcesParserCompat.FontFileResourceEntry fontFileResourceEntry : fontFamilyFilesResourceEntry.getEntries()) {
-            ByteBuffer copyToDirectBuffer = TypefaceCompatUtil.copyToDirectBuffer(context, resources, fontFileResourceEntry.getResourceId());
-            if (copyToDirectBuffer == null || !addFontWeightStyle(newFamily, copyToDirectBuffer, fontFileResourceEntry.getTtcIndex(), fontFileResourceEntry.getWeight(), fontFileResourceEntry.isItalic())) {
-                return null;
-            }
-        }
-        return createFromFamiliesWithDefault(newFamily);
     }
 
     @Override // androidx.core.graphics.TypefaceCompatBaseImpl
@@ -122,5 +107,20 @@ class TypefaceCompatApi24Impl extends TypefaceCompatBaseImpl {
             return null;
         }
         return Typeface.create(createFromFamiliesWithDefault, i);
+    }
+
+    @Override // androidx.core.graphics.TypefaceCompatBaseImpl
+    public Typeface createFromFontFamilyFilesResourceEntry(Context context, FontResourcesParserCompat.FontFamilyFilesResourceEntry fontFamilyFilesResourceEntry, Resources resources, int i) {
+        Object newFamily = newFamily();
+        if (newFamily == null) {
+            return null;
+        }
+        for (FontResourcesParserCompat.FontFileResourceEntry fontFileResourceEntry : fontFamilyFilesResourceEntry.getEntries()) {
+            ByteBuffer copyToDirectBuffer = TypefaceCompatUtil.copyToDirectBuffer(context, resources, fontFileResourceEntry.getResourceId());
+            if (copyToDirectBuffer == null || !addFontWeightStyle(newFamily, copyToDirectBuffer, fontFileResourceEntry.getTtcIndex(), fontFileResourceEntry.getWeight(), fontFileResourceEntry.isItalic())) {
+                return null;
+            }
+        }
+        return createFromFamiliesWithDefault(newFamily);
     }
 }

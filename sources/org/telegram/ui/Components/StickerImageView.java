@@ -10,7 +10,7 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class StickerImageView extends BackupImageView implements NotificationCenter.NotificationCenterDelegate {
     int currentAccount;
     int stickerNum;
@@ -22,13 +22,15 @@ public class StickerImageView extends BackupImageView implements NotificationCen
         this.currentAccount = i;
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i == NotificationCenter.diceStickersDidLoad) {
-            if (this.stickerPackName.equals((String) objArr[0])) {
-                setSticker();
-            }
+    public void setStickerNum(int i) {
+        if (this.stickerNum != i) {
+            this.stickerNum = i;
+            setSticker();
         }
+    }
+
+    public void setStickerPackName(String str) {
+        this.stickerPackName = str;
     }
 
     @Override // org.telegram.ui.Components.BackupImageView, android.view.View
@@ -44,10 +46,19 @@ public class StickerImageView extends BackupImageView implements NotificationCen
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.diceStickersDidLoad);
     }
 
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public void didReceivedNotification(int i, int i2, Object... objArr) {
+        if (i == NotificationCenter.diceStickersDidLoad) {
+            if (this.stickerPackName.equals((String) objArr[0])) {
+                setSticker();
+            }
+        }
+    }
+
     /* JADX WARN: Removed duplicated region for block: B:10:0x0034  */
     /* JADX WARN: Removed duplicated region for block: B:13:0x0042  */
     /* JADX WARN: Removed duplicated region for block: B:15:0x0049  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0056  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0057  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -84,16 +95,5 @@ public class StickerImageView extends BackupImageView implements NotificationCen
         }
         if (document == null) {
         }
-    }
-
-    public void setStickerNum(int i) {
-        if (this.stickerNum != i) {
-            this.stickerNum = i;
-            setSticker();
-        }
-    }
-
-    public void setStickerPackName(String str) {
-        this.stickerPackName = str;
     }
 }

@@ -7,49 +7,6 @@ import java.util.Map;
 
 /* loaded from: classes.dex */
 public abstract class EventInternal {
-
-    public static abstract class Builder {
-        public final Builder addMetadata(String str, int i) {
-            getAutoMetadata().put(str, String.valueOf(i));
-            return this;
-        }
-
-        public final Builder addMetadata(String str, long j) {
-            getAutoMetadata().put(str, String.valueOf(j));
-            return this;
-        }
-
-        public final Builder addMetadata(String str, String str2) {
-            getAutoMetadata().put(str, str2);
-            return this;
-        }
-
-        public abstract EventInternal build();
-
-        protected abstract Map getAutoMetadata();
-
-        protected abstract Builder setAutoMetadata(Map map);
-
-        public abstract Builder setCode(Integer num);
-
-        public abstract Builder setEncodedPayload(EncodedPayload encodedPayload);
-
-        public abstract Builder setEventMillis(long j);
-
-        public abstract Builder setTransportName(String str);
-
-        public abstract Builder setUptimeMillis(long j);
-    }
-
-    public static Builder builder() {
-        return new AutoValue_EventInternal.Builder().setAutoMetadata(new HashMap());
-    }
-
-    public final String get(String str) {
-        String str2 = (String) getAutoMetadata().get(str);
-        return str2 == null ? "" : str2;
-    }
-
     protected abstract Map getAutoMetadata();
 
     public abstract Integer getCode();
@@ -57,6 +14,14 @@ public abstract class EventInternal {
     public abstract EncodedPayload getEncodedPayload();
 
     public abstract long getEventMillis();
+
+    public abstract String getTransportName();
+
+    public abstract long getUptimeMillis();
+
+    public final Map getMetadata() {
+        return Collections.unmodifiableMap(getAutoMetadata());
+    }
 
     public final int getInteger(String str) {
         String str2 = (String) getAutoMetadata().get(str);
@@ -74,15 +39,49 @@ public abstract class EventInternal {
         return Long.valueOf(str2).longValue();
     }
 
-    public final Map getMetadata() {
-        return Collections.unmodifiableMap(getAutoMetadata());
+    public final String get(String str) {
+        String str2 = (String) getAutoMetadata().get(str);
+        return str2 == null ? "" : str2;
     }
-
-    public abstract String getTransportName();
-
-    public abstract long getUptimeMillis();
 
     public Builder toBuilder() {
         return new AutoValue_EventInternal.Builder().setTransportName(getTransportName()).setCode(getCode()).setEncodedPayload(getEncodedPayload()).setEventMillis(getEventMillis()).setUptimeMillis(getUptimeMillis()).setAutoMetadata(new HashMap(getAutoMetadata()));
+    }
+
+    public static Builder builder() {
+        return new AutoValue_EventInternal.Builder().setAutoMetadata(new HashMap());
+    }
+
+    public static abstract class Builder {
+        public abstract EventInternal build();
+
+        protected abstract Map getAutoMetadata();
+
+        protected abstract Builder setAutoMetadata(Map map);
+
+        public abstract Builder setCode(Integer num);
+
+        public abstract Builder setEncodedPayload(EncodedPayload encodedPayload);
+
+        public abstract Builder setEventMillis(long j);
+
+        public abstract Builder setTransportName(String str);
+
+        public abstract Builder setUptimeMillis(long j);
+
+        public final Builder addMetadata(String str, String str2) {
+            getAutoMetadata().put(str, str2);
+            return this;
+        }
+
+        public final Builder addMetadata(String str, long j) {
+            getAutoMetadata().put(str, String.valueOf(j));
+            return this;
+        }
+
+        public final Builder addMetadata(String str, int i) {
+            getAutoMetadata().put(str, String.valueOf(i));
+            return this;
+        }
     }
 }

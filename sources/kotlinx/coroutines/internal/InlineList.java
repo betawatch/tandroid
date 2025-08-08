@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class InlineList {
     public static Object constructor-impl(Object obj) {
         return obj;

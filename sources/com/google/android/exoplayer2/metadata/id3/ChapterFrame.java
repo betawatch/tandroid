@@ -25,18 +25,9 @@ public final class ChapterFrame extends Id3Frame {
     public final int startTimeMs;
     private final Id3Frame[] subFrames;
 
-    ChapterFrame(Parcel parcel) {
-        super("CHAP");
-        this.chapterId = (String) Util.castNonNull(parcel.readString());
-        this.startTimeMs = parcel.readInt();
-        this.endTimeMs = parcel.readInt();
-        this.startOffset = parcel.readLong();
-        this.endOffset = parcel.readLong();
-        int readInt = parcel.readInt();
-        this.subFrames = new Id3Frame[readInt];
-        for (int i = 0; i < readInt; i++) {
-            this.subFrames[i] = (Id3Frame) parcel.readParcelable(Id3Frame.class.getClassLoader());
-        }
+    @Override // com.google.android.exoplayer2.metadata.id3.Id3Frame, android.os.Parcelable
+    public int describeContents() {
+        return 0;
     }
 
     public ChapterFrame(String str, int i, int i2, long j, long j2, Id3Frame[] id3FrameArr) {
@@ -49,9 +40,18 @@ public final class ChapterFrame extends Id3Frame {
         this.subFrames = id3FrameArr;
     }
 
-    @Override // com.google.android.exoplayer2.metadata.id3.Id3Frame, android.os.Parcelable
-    public int describeContents() {
-        return 0;
+    ChapterFrame(Parcel parcel) {
+        super("CHAP");
+        this.chapterId = (String) Util.castNonNull(parcel.readString());
+        this.startTimeMs = parcel.readInt();
+        this.endTimeMs = parcel.readInt();
+        this.startOffset = parcel.readLong();
+        this.endOffset = parcel.readLong();
+        int readInt = parcel.readInt();
+        this.subFrames = new Id3Frame[readInt];
+        for (int i = 0; i < readInt; i++) {
+            this.subFrames[i] = (Id3Frame) parcel.readParcelable(Id3Frame.class.getClassLoader());
+        }
     }
 
     public boolean equals(Object obj) {

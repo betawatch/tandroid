@@ -31,33 +31,6 @@ public interface MediaSource {
         Factory setLoadErrorHandlingPolicy(LoadErrorHandlingPolicy loadErrorHandlingPolicy);
     }
 
-    public static final class MediaPeriodId extends com.google.android.exoplayer2.source.MediaPeriodId {
-        public MediaPeriodId(com.google.android.exoplayer2.source.MediaPeriodId mediaPeriodId) {
-            super(mediaPeriodId);
-        }
-
-        public MediaPeriodId(Object obj) {
-            super(obj);
-        }
-
-        public MediaPeriodId(Object obj, int i, int i2, long j) {
-            super(obj, i, i2, j);
-        }
-
-        public MediaPeriodId(Object obj, long j) {
-            super(obj, j);
-        }
-
-        public MediaPeriodId(Object obj, long j, int i) {
-            super(obj, j, i);
-        }
-
-        @Override // com.google.android.exoplayer2.source.MediaPeriodId
-        public MediaPeriodId copyWithPeriodUid(Object obj) {
-            return new MediaPeriodId(super.copyWithPeriodUid(obj));
-        }
-    }
-
     public interface MediaSourceCaller {
         void onSourceInfoRefreshed(MediaSource mediaSource, Timeline timeline);
     }
@@ -89,4 +62,31 @@ public interface MediaSource {
     void removeDrmEventListener(DrmSessionEventListener drmSessionEventListener);
 
     void removeEventListener(MediaSourceEventListener mediaSourceEventListener);
+
+    public static final class MediaPeriodId extends com.google.android.exoplayer2.source.MediaPeriodId {
+        public MediaPeriodId(Object obj) {
+            super(obj);
+        }
+
+        public MediaPeriodId(Object obj, long j) {
+            super(obj, j);
+        }
+
+        public MediaPeriodId(Object obj, long j, int i) {
+            super(obj, j, i);
+        }
+
+        public MediaPeriodId(Object obj, int i, int i2, long j) {
+            super(obj, i, i2, j);
+        }
+
+        public MediaPeriodId(com.google.android.exoplayer2.source.MediaPeriodId mediaPeriodId) {
+            super(mediaPeriodId);
+        }
+
+        @Override // com.google.android.exoplayer2.source.MediaPeriodId
+        public MediaPeriodId copyWithPeriodUid(Object obj) {
+            return new MediaPeriodId(super.copyWithPeriodUid(obj));
+        }
+    }
 }

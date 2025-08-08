@@ -1,68 +1,31 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import java.util.concurrent.CountedCompleter;
-
 /* loaded from: classes2.dex */
-final class T extends CountedCompleter {
-    private Spliterator a;
-    private final e2 b;
-    private final b c;
-    private long d;
+public final /* synthetic */ class T implements j$.util.function.G {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ d2 b;
 
-    T(T t, Spliterator spliterator) {
-        super(t);
-        this.a = spliterator;
-        this.b = t.b;
-        this.d = t.d;
-        this.c = t.c;
+    public /* synthetic */ T(int i, d2 d2Var) {
+        this.a = i;
+        this.b = d2Var;
     }
 
-    T(b bVar, Spliterator spliterator, e2 e2Var) {
-        super(null);
-        this.b = e2Var;
-        this.c = bVar;
-        this.a = spliterator;
-        this.d = 0L;
+    @Override // j$.util.function.G
+    public final /* synthetic */ j$.util.function.G l(j$.util.function.G g) {
+        switch (this.a) {
+        }
+        return j$.com.android.tools.r8.a.b(this, g);
     }
 
-    @Override // java.util.concurrent.CountedCompleter
-    public final void compute() {
-        Spliterator trySplit;
-        Spliterator spliterator = this.a;
-        long estimateSize = spliterator.estimateSize();
-        long j = this.d;
-        if (j == 0) {
-            j = e.f(estimateSize);
-            this.d = j;
-        }
-        boolean j2 = R2.SHORT_CIRCUIT.j(this.c.p0());
-        e2 e2Var = this.b;
-        boolean z = false;
-        T t = this;
-        while (true) {
-            if (j2 && e2Var.q()) {
+    @Override // j$.util.function.G
+    public final void accept(int i) {
+        switch (this.a) {
+            case 0:
+                this.b.accept(i);
                 break;
-            }
-            if (estimateSize <= j || (trySplit = spliterator.trySplit()) == null) {
+            default:
+                ((V) this.b).a.accept(i);
                 break;
-            }
-            T t2 = new T(t, trySplit);
-            t.addToPendingCount(1);
-            if (z) {
-                spliterator = trySplit;
-            } else {
-                T t3 = t;
-                t = t2;
-                t2 = t3;
-            }
-            z = !z;
-            t.fork();
-            t = t2;
-            estimateSize = spliterator.estimateSize();
         }
-        t.c.f0(spliterator, e2Var);
-        t.a = null;
-        t.propagateCompletion();
     }
 }

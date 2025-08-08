@@ -15,10 +15,6 @@ class zzfx extends zzfy {
         this.zzc = ch;
     }
 
-    zzfx(String str, String str2, Character ch) {
-        this(new zzft(str, str2.toCharArray()), ch);
-    }
-
     public final boolean equals(Object obj) {
         if (obj instanceof zzfx) {
             zzfx zzfxVar = (zzfx) obj;
@@ -42,18 +38,16 @@ class zzfx extends zzfy {
     }
 
     public final String toString() {
-        String str;
         StringBuilder sb = new StringBuilder("BaseEncoding.");
         sb.append(this.zzb);
         if (8 % this.zzb.zzb != 0) {
             if (this.zzc == null) {
-                str = ".omitPadding()";
+                sb.append(".omitPadding()");
             } else {
                 sb.append(".withPadChar('");
                 sb.append(this.zzc);
-                str = "')";
+                sb.append("')");
             }
-            sb.append(str);
         }
         return sb.toString();
     }
@@ -117,22 +111,6 @@ class zzfx extends zzfy {
         return zzftVar.zzc * zzga.zza(i, zzftVar.zzd, RoundingMode.CEILING);
     }
 
-    @Override // com.google.android.recaptcha.internal.zzfy
-    final CharSequence zze(CharSequence charSequence) {
-        charSequence.getClass();
-        if (this.zzc == null) {
-            return charSequence;
-        }
-        int length = charSequence.length();
-        do {
-            length--;
-            if (length < 0) {
-                break;
-            }
-        } while (charSequence.charAt(length) == '=');
-        return charSequence.subSequence(0, length + 1);
-    }
-
     final void zzf(Appendable appendable, byte[] bArr, int i, int i2) {
         zzff.zzd(i, i + i2, bArr.length);
         int i3 = 0;
@@ -156,5 +134,25 @@ class zzfx extends zzfy {
                 i3 += this.zzb.zzb;
             }
         }
+    }
+
+    zzfx(String str, String str2, Character ch) {
+        this(new zzft(str, str2.toCharArray()), ch);
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzfy
+    final CharSequence zze(CharSequence charSequence) {
+        charSequence.getClass();
+        if (this.zzc == null) {
+            return charSequence;
+        }
+        int length = charSequence.length();
+        do {
+            length--;
+            if (length < 0) {
+                break;
+            }
+        } while (charSequence.charAt(length) == '=');
+        return charSequence.subSequence(0, length + 1);
     }
 }

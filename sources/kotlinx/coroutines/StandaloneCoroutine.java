@@ -2,7 +2,7 @@ package kotlinx.coroutines;
 
 import kotlin.coroutines.CoroutineContext;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 class StandaloneCoroutine extends AbstractCoroutine {
     public StandaloneCoroutine(CoroutineContext coroutineContext, boolean z) {
         super(coroutineContext, true, z);

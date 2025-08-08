@@ -3,52 +3,52 @@ package com.google.android.gms.internal.vision;
 /* loaded from: classes.dex */
 abstract class zzlq {
     static String zza(zzht zzhtVar) {
-        String str;
         zzlt zzltVar = new zzlt(zzhtVar);
         StringBuilder sb = new StringBuilder(zzltVar.zza());
         for (int i = 0; i < zzltVar.zza(); i++) {
-            int zza = zzltVar.zza(i);
+            byte zza = zzltVar.zza(i);
             if (zza == 34) {
-                str = "\\\"";
+                sb.append("\\\"");
             } else if (zza == 39) {
-                str = "\\'";
+                sb.append("\\'");
             } else if (zza != 92) {
                 switch (zza) {
                     case 7:
-                        str = "\\a";
+                        sb.append("\\a");
                         break;
                     case 8:
-                        str = "\\b";
+                        sb.append("\\b");
                         break;
                     case 9:
-                        str = "\\t";
+                        sb.append("\\t");
                         break;
                     case 10:
-                        str = "\\n";
+                        sb.append("\\n");
                         break;
                     case 11:
-                        str = "\\v";
+                        sb.append("\\v");
                         break;
                     case 12:
-                        str = "\\f";
+                        sb.append("\\f");
                         break;
                     case 13:
-                        str = "\\r";
+                        sb.append("\\r");
                         break;
                     default:
                         if (zza < 32 || zza > 126) {
                             sb.append('\\');
                             sb.append((char) (((zza >>> 6) & 3) + 48));
                             sb.append((char) (((zza >>> 3) & 7) + 48));
-                            zza = (zza & 7) + 48;
+                            sb.append((char) ((zza & 7) + 48));
+                            break;
+                        } else {
+                            sb.append((char) zza);
+                            break;
                         }
-                        sb.append((char) zza);
-                        continue;
                 }
             } else {
-                str = "\\\\";
+                sb.append("\\\\");
             }
-            sb.append(str);
         }
         return sb.toString();
     }

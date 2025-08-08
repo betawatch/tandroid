@@ -22,12 +22,9 @@ public class ParcelableVolumeInfo implements Parcelable {
     public int maxVolume;
     public int volumeType;
 
-    public ParcelableVolumeInfo(int i, int i2, int i3, int i4, int i5) {
-        this.volumeType = i;
-        this.audioStream = i2;
-        this.controlType = i3;
-        this.maxVolume = i4;
-        this.currentVolume = i5;
+    @Override // android.os.Parcelable
+    public int describeContents() {
+        return 0;
     }
 
     public ParcelableVolumeInfo(Parcel parcel) {
@@ -36,11 +33,6 @@ public class ParcelableVolumeInfo implements Parcelable {
         this.maxVolume = parcel.readInt();
         this.currentVolume = parcel.readInt();
         this.audioStream = parcel.readInt();
-    }
-
-    @Override // android.os.Parcelable
-    public int describeContents() {
-        return 0;
     }
 
     @Override // android.os.Parcelable

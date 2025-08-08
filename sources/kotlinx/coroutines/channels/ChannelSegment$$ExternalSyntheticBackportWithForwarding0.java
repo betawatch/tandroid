@@ -2,7 +2,7 @@ package kotlinx.coroutines.channels;
 
 import java.util.concurrent.atomic.AtomicReferenceArray;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract /* synthetic */ class ChannelSegment$$ExternalSyntheticBackportWithForwarding0 {
     public static /* synthetic */ boolean m(AtomicReferenceArray atomicReferenceArray, int i, Object obj, Object obj2) {
         while (!atomicReferenceArray.compareAndSet(i, obj, obj2)) {

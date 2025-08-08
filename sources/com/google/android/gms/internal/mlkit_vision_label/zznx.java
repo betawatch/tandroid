@@ -50,22 +50,18 @@ public final class zznx implements zzno {
 
     static Event zzb(zznh zznhVar, zznf zznfVar) {
         int zza = zznhVar.zza();
-        int zza2 = zznfVar.zza();
-        byte[] zze = zznfVar.zze(zza, false);
-        return zza2 != 0 ? Event.ofData(zze) : Event.ofTelemetry(zze);
+        return zznfVar.zza() != 0 ? Event.ofData(zznfVar.zze(zza, false)) : Event.ofTelemetry(zznfVar.zze(zza, false));
     }
 
     @Override // com.google.android.gms.internal.mlkit_vision_label.zzno
     public final void zza(zznf zznfVar) {
-        Provider provider;
-        if (this.zzc.zza() == 0) {
-            provider = this.zza;
-            if (provider == null) {
-                return;
-            }
-        } else {
-            provider = this.zzb;
+        if (this.zzc.zza() != 0) {
+            ((Transport) this.zzb.get()).send(zzb(this.zzc, zznfVar));
+            return;
         }
-        ((Transport) provider.get()).send(zzb(this.zzc, zznfVar));
+        Provider provider = this.zza;
+        if (provider != null) {
+            ((Transport) provider.get()).send(zzb(this.zzc, zznfVar));
+        }
     }
 }

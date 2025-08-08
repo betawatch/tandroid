@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import org.telegram.messenger.SharedConfig;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class BlurredLinearLayout extends LinearLayout {
     public int backgroundColor;
     public int backgroundPaddingBottom;
@@ -51,6 +51,15 @@ public class BlurredLinearLayout extends LinearLayout {
         super.dispatchDraw(canvas);
     }
 
+    @Override // android.view.View
+    public void setBackgroundColor(int i) {
+        if (SharedConfig.chatBlurEnabled() && this.sizeNotifierFrameLayout != null) {
+            this.backgroundColor = i;
+        } else {
+            super.setBackgroundColor(i);
+        }
+    }
+
     @Override // android.view.ViewGroup, android.view.View
     protected void onAttachedToWindow() {
         SizeNotifierFrameLayout sizeNotifierFrameLayout;
@@ -67,14 +76,5 @@ public class BlurredLinearLayout extends LinearLayout {
             sizeNotifierFrameLayout.blurBehindViews.remove(this);
         }
         super.onDetachedFromWindow();
-    }
-
-    @Override // android.view.View
-    public void setBackgroundColor(int i) {
-        if (!SharedConfig.chatBlurEnabled() || this.sizeNotifierFrameLayout == null) {
-            super.setBackgroundColor(i);
-        } else {
-            this.backgroundColor = i;
-        }
     }
 }

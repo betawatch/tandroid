@@ -1,6 +1,6 @@
 package javax.inject;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public interface Provider {
     Object get();
 }

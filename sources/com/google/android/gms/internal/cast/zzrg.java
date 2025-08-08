@@ -158,9 +158,6 @@ public abstract class zzrg extends zzsf implements ListenableFuture {
         }
     }
 
-    abstract class zzf implements Runnable {
-    }
-
     final class zzg extends zza {
         /* synthetic */ zzg(zzri zzriVar) {
             super(null);
@@ -436,34 +433,29 @@ public abstract class zzrg extends zzsf implements ListenableFuture {
     }
 
     private final void zzp(StringBuilder sb) {
-        String hexString;
-        String str = "]";
         try {
             Object zzo = zzo(this);
             sb.append("SUCCESS, result=[");
             if (zzo == null) {
-                hexString = "null";
+                sb.append("null");
             } else if (zzo == this) {
-                hexString = "this future";
+                sb.append("this future");
             } else {
                 sb.append(zzo.getClass().getName());
                 sb.append("@");
-                hexString = Integer.toHexString(System.identityHashCode(zzo));
+                sb.append(Integer.toHexString(System.identityHashCode(zzo)));
             }
-            sb.append(hexString);
             sb.append("]");
         } catch (CancellationException unused) {
-            str = "CANCELLED";
-            sb.append(str);
+            sb.append("CANCELLED");
         } catch (RuntimeException e) {
             sb.append("UNKNOWN, cause=[");
             sb.append(e.getClass());
-            str = " thrown from get()]";
-            sb.append(str);
+            sb.append(" thrown from get()]");
         } catch (ExecutionException e2) {
             sb.append("FAILURE, cause=[");
             sb.append(e2.getCause());
-            sb.append(str);
+            sb.append("]");
         }
     }
 
@@ -508,9 +500,6 @@ public abstract class zzrg extends zzsf implements ListenableFuture {
             Runnable runnable = zzdVar.zzb;
             zzd zzdVar3 = zzdVar.next;
             runnable.getClass();
-            if (runnable instanceof zzf) {
-                throw null;
-            }
             Executor executor = zzdVar.zzc;
             executor.getClass();
             zzt(runnable, executor);
@@ -613,7 +602,7 @@ public abstract class zzrg extends zzsf implements ListenableFuture {
             throw new InterruptedException();
         }
         Object obj2 = this.value;
-        if ((obj2 != null) && true) {
+        if (obj2 != null) {
             return zzv(obj2);
         }
         zzk zzkVar = this.waiters;
@@ -630,7 +619,7 @@ public abstract class zzrg extends zzsf implements ListenableFuture {
                             throw new InterruptedException();
                         }
                         obj = this.value;
-                    } while (!((obj != null) & true));
+                    } while (!(obj != null));
                     return zzv(obj);
                 }
                 zzkVar = this.waiters;
@@ -642,101 +631,22 @@ public abstract class zzrg extends zzsf implements ListenableFuture {
     }
 
     @Override // java.util.concurrent.Future
-    public final Object get(long j, TimeUnit timeUnit) {
-        long nanos = timeUnit.toNanos(j);
-        if (Thread.interrupted()) {
-            throw new InterruptedException();
-        }
-        Object obj = this.value;
-        boolean z = true;
-        if ((obj != null) && true) {
-            return zzv(obj);
-        }
-        long nanoTime = nanos > 0 ? System.nanoTime() + nanos : 0L;
-        if (nanos >= 1000) {
-            zzk zzkVar = this.waiters;
-            if (zzkVar != zzk.zza) {
-                zzk zzkVar2 = new zzk();
-                do {
-                    zza zzaVar = zzc;
-                    zzaVar.zzc(zzkVar2, zzkVar);
-                    if (zzaVar.zzg(this, zzkVar, zzkVar2)) {
-                        do {
-                            LockSupport.parkNanos(this, Math.min(nanos, 2147483647999999999L));
-                            if (Thread.interrupted()) {
-                                zzu(zzkVar2);
-                                throw new InterruptedException();
-                            }
-                            Object obj2 = this.value;
-                            if ((obj2 != null) && true) {
-                                return zzv(obj2);
-                            }
-                            nanos = nanoTime - System.nanoTime();
-                        } while (nanos >= 1000);
-                        zzu(zzkVar2);
-                    } else {
-                        zzkVar = this.waiters;
-                    }
-                } while (zzkVar != zzk.zza);
-            }
-            Object obj3 = this.value;
-            obj3.getClass();
-            return zzv(obj3);
-        }
-        while (nanos > 0) {
-            Object obj4 = this.value;
-            if ((obj4 != null) && true) {
-                return zzv(obj4);
-            }
-            if (Thread.interrupted()) {
-                throw new InterruptedException();
-            }
-            nanos = nanoTime - System.nanoTime();
-        }
-        String zzrgVar = toString();
-        String obj5 = timeUnit.toString();
-        Locale locale = Locale.ROOT;
-        String lowerCase = obj5.toLowerCase(locale);
-        String str = "Waited " + j + " " + timeUnit.toString().toLowerCase(locale);
-        if (nanos + 1000 < 0) {
-            String concat = str.concat(" (plus ");
-            long j2 = -nanos;
-            long convert = timeUnit.convert(j2, TimeUnit.NANOSECONDS);
-            long nanos2 = j2 - timeUnit.toNanos(convert);
-            if (convert != 0 && nanos2 <= 1000) {
-                z = false;
-            }
-            if (convert > 0) {
-                String str2 = concat + convert + " " + lowerCase;
-                if (z) {
-                    str2 = str2.concat(",");
-                }
-                concat = str2.concat(" ");
-            }
-            if (z) {
-                concat = concat + nanos2 + " nanoseconds ";
-            }
-            str = concat.concat("delay)");
-        }
-        if (isDone()) {
-            throw new TimeoutException(str.concat(" but future completed as timeout expired"));
-        }
-        throw new TimeoutException(str + " for " + zzrgVar);
-    }
-
-    @Override // java.util.concurrent.Future
     public final boolean isCancelled() {
         return this.value instanceof zzb;
     }
 
     @Override // java.util.concurrent.Future
     public final boolean isDone() {
-        return (this.value != null) & true;
+        return this.value != null;
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getName().startsWith("com.google.common.util.concurrent.") ? getClass().getSimpleName() : getClass().getName());
+        if (getClass().getName().startsWith("com.google.common.util.concurrent.")) {
+            sb.append(getClass().getSimpleName());
+        } else {
+            sb.append(getClass().getName());
+        }
         sb.append('@');
         sb.append(Integer.toHexString(System.identityHashCode(this)));
         sb.append("[status=");
@@ -784,5 +694,91 @@ public abstract class zzrg extends zzsf implements ListenableFuture {
     protected final boolean zzm() {
         Object obj = this.value;
         return (obj instanceof zzb) && ((zzb) obj).zzc;
+    }
+
+    @Override // java.util.concurrent.Future
+    public final Object get(long j, TimeUnit timeUnit) {
+        long nanos = timeUnit.toNanos(j);
+        if (!Thread.interrupted()) {
+            Object obj = this.value;
+            boolean z = true;
+            if (obj != null) {
+                return zzv(obj);
+            }
+            long nanoTime = nanos > 0 ? System.nanoTime() + nanos : 0L;
+            if (nanos >= 1000) {
+                zzk zzkVar = this.waiters;
+                if (zzkVar != zzk.zza) {
+                    zzk zzkVar2 = new zzk();
+                    do {
+                        zza zzaVar = zzc;
+                        zzaVar.zzc(zzkVar2, zzkVar);
+                        if (zzaVar.zzg(this, zzkVar, zzkVar2)) {
+                            do {
+                                LockSupport.parkNanos(this, Math.min(nanos, 2147483647999999999L));
+                                if (Thread.interrupted()) {
+                                    zzu(zzkVar2);
+                                    throw new InterruptedException();
+                                }
+                                Object obj2 = this.value;
+                                if (!(obj2 != null)) {
+                                    nanos = nanoTime - System.nanoTime();
+                                } else {
+                                    return zzv(obj2);
+                                }
+                            } while (nanos >= 1000);
+                            zzu(zzkVar2);
+                        } else {
+                            zzkVar = this.waiters;
+                        }
+                    } while (zzkVar != zzk.zza);
+                }
+                Object obj3 = this.value;
+                obj3.getClass();
+                return zzv(obj3);
+            }
+            while (nanos > 0) {
+                Object obj4 = this.value;
+                if (!(obj4 != null)) {
+                    if (!Thread.interrupted()) {
+                        nanos = nanoTime - System.nanoTime();
+                    } else {
+                        throw new InterruptedException();
+                    }
+                } else {
+                    return zzv(obj4);
+                }
+            }
+            String zzrgVar = toString();
+            String obj5 = timeUnit.toString();
+            Locale locale = Locale.ROOT;
+            String lowerCase = obj5.toLowerCase(locale);
+            String str = "Waited " + j + " " + timeUnit.toString().toLowerCase(locale);
+            if (nanos + 1000 < 0) {
+                String concat = str.concat(" (plus ");
+                long j2 = -nanos;
+                long convert = timeUnit.convert(j2, TimeUnit.NANOSECONDS);
+                long nanos2 = j2 - timeUnit.toNanos(convert);
+                if (convert != 0 && nanos2 <= 1000) {
+                    z = false;
+                }
+                if (convert > 0) {
+                    String str2 = concat + convert + " " + lowerCase;
+                    if (z) {
+                        str2 = str2.concat(",");
+                    }
+                    concat = str2.concat(" ");
+                }
+                if (z) {
+                    concat = concat + nanos2 + " nanoseconds ";
+                }
+                str = concat.concat("delay)");
+            }
+            if (isDone()) {
+                throw new TimeoutException(str.concat(" but future completed as timeout expired"));
+            }
+            throw new TimeoutException(str + " for " + zzrgVar);
+        }
+        throw new InterruptedException();
     }
 }

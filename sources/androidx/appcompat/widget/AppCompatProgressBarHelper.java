@@ -23,47 +23,8 @@ class AppCompatProgressBarHelper {
     private Bitmap mSampleTile;
     private final ProgressBar mView;
 
-    private static class Api23Impl {
-        public static void transferLayerProperties(LayerDrawable layerDrawable, LayerDrawable layerDrawable2, int i) {
-            layerDrawable2.setLayerGravity(i, layerDrawable.getLayerGravity(i));
-            layerDrawable2.setLayerWidth(i, layerDrawable.getLayerWidth(i));
-            layerDrawable2.setLayerHeight(i, layerDrawable.getLayerHeight(i));
-            layerDrawable2.setLayerInsetLeft(i, layerDrawable.getLayerInsetLeft(i));
-            layerDrawable2.setLayerInsetRight(i, layerDrawable.getLayerInsetRight(i));
-            layerDrawable2.setLayerInsetTop(i, layerDrawable.getLayerInsetTop(i));
-            layerDrawable2.setLayerInsetBottom(i, layerDrawable.getLayerInsetBottom(i));
-            layerDrawable2.setLayerInsetStart(i, layerDrawable.getLayerInsetStart(i));
-            layerDrawable2.setLayerInsetEnd(i, layerDrawable.getLayerInsetEnd(i));
-        }
-    }
-
     AppCompatProgressBarHelper(ProgressBar progressBar) {
         this.mView = progressBar;
-    }
-
-    private Shape getDrawableShape() {
-        return new RoundRectShape(new float[]{5.0f, 5.0f, 5.0f, 5.0f, 5.0f, 5.0f, 5.0f, 5.0f}, null, null);
-    }
-
-    private Drawable tileifyIndeterminate(Drawable drawable) {
-        if (!(drawable instanceof AnimationDrawable)) {
-            return drawable;
-        }
-        AnimationDrawable animationDrawable = (AnimationDrawable) drawable;
-        int numberOfFrames = animationDrawable.getNumberOfFrames();
-        AnimationDrawable animationDrawable2 = new AnimationDrawable();
-        animationDrawable2.setOneShot(animationDrawable.isOneShot());
-        for (int i = 0; i < numberOfFrames; i++) {
-            Drawable tileify = tileify(animationDrawable.getFrame(i), true);
-            tileify.setLevel(10000);
-            animationDrawable2.addFrame(tileify, animationDrawable.getDuration(i));
-        }
-        animationDrawable2.setLevel(10000);
-        return animationDrawable2;
-    }
-
-    Bitmap getSampleTile() {
-        return this.mSampleTile;
     }
 
     void loadFromAttributes(AttributeSet attributeSet, int i) {
@@ -118,5 +79,44 @@ class AppCompatProgressBarHelper {
             }
         }
         return drawable;
+    }
+
+    private Drawable tileifyIndeterminate(Drawable drawable) {
+        if (!(drawable instanceof AnimationDrawable)) {
+            return drawable;
+        }
+        AnimationDrawable animationDrawable = (AnimationDrawable) drawable;
+        int numberOfFrames = animationDrawable.getNumberOfFrames();
+        AnimationDrawable animationDrawable2 = new AnimationDrawable();
+        animationDrawable2.setOneShot(animationDrawable.isOneShot());
+        for (int i = 0; i < numberOfFrames; i++) {
+            Drawable tileify = tileify(animationDrawable.getFrame(i), true);
+            tileify.setLevel(10000);
+            animationDrawable2.addFrame(tileify, animationDrawable.getDuration(i));
+        }
+        animationDrawable2.setLevel(10000);
+        return animationDrawable2;
+    }
+
+    private Shape getDrawableShape() {
+        return new RoundRectShape(new float[]{5.0f, 5.0f, 5.0f, 5.0f, 5.0f, 5.0f, 5.0f, 5.0f}, null, null);
+    }
+
+    Bitmap getSampleTile() {
+        return this.mSampleTile;
+    }
+
+    private static class Api23Impl {
+        public static void transferLayerProperties(LayerDrawable layerDrawable, LayerDrawable layerDrawable2, int i) {
+            layerDrawable2.setLayerGravity(i, layerDrawable.getLayerGravity(i));
+            layerDrawable2.setLayerWidth(i, layerDrawable.getLayerWidth(i));
+            layerDrawable2.setLayerHeight(i, layerDrawable.getLayerHeight(i));
+            layerDrawable2.setLayerInsetLeft(i, layerDrawable.getLayerInsetLeft(i));
+            layerDrawable2.setLayerInsetRight(i, layerDrawable.getLayerInsetRight(i));
+            layerDrawable2.setLayerInsetTop(i, layerDrawable.getLayerInsetTop(i));
+            layerDrawable2.setLayerInsetBottom(i, layerDrawable.getLayerInsetBottom(i));
+            layerDrawable2.setLayerInsetStart(i, layerDrawable.getLayerInsetStart(i));
+            layerDrawable2.setLayerInsetEnd(i, layerDrawable.getLayerInsetEnd(i));
+        }
     }
 }

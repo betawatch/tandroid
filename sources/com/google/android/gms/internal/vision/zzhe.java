@@ -8,9 +8,9 @@ public abstract class zzhe implements zzkn {
 
     @Override // com.google.android.gms.internal.vision.zzkn
     public final /* synthetic */ zzkn zza(zzkk zzkkVar) {
-        if (zzr().getClass().isInstance(zzkkVar)) {
-            return zza((zzhf) zzkkVar);
+        if (!zzr().getClass().isInstance(zzkkVar)) {
+            throw new IllegalArgumentException("mergeFrom(MessageLite) can only merge messages of the same type.");
         }
-        throw new IllegalArgumentException("mergeFrom(MessageLite) can only merge messages of the same type.");
+        return zza((zzhf) zzkkVar);
     }
 }

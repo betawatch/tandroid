@@ -4,8 +4,8 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.text.TextUtils;
-import com.google.android.gms.common.internal.zzt;
 import com.google.android.gms.common.util.DeviceProperties;
 import com.google.android.gms.common.wrappers.Wrappers;
 import com.google.android.gms.internal.common.zzd;
@@ -35,15 +35,44 @@ public class GoogleApiAvailabilityLight {
         return getErrorResolutionIntent(null, i, null);
     }
 
+    public PendingIntent getErrorResolutionPendingIntent(Context context, int i, int i2) {
+        return getErrorResolutionPendingIntent(context, i, i2, null);
+    }
+
+    public String getErrorString(int i) {
+        return GooglePlayServicesUtilLight.getErrorString(i);
+    }
+
+    public int isGooglePlayServicesAvailable(Context context) {
+        return isGooglePlayServicesAvailable(context, GOOGLE_PLAY_SERVICES_VERSION_CODE);
+    }
+
+    public boolean isPlayServicesPossiblyUpdating(Context context, int i) {
+        return GooglePlayServicesUtilLight.isPlayServicesPossiblyUpdating(context, i);
+    }
+
+    public boolean isUninstalledAppPossiblyUpdating(Context context, String str) {
+        return GooglePlayServicesUtilLight.zza(context, str);
+    }
+
+    public boolean isUserResolvableError(int i) {
+        return GooglePlayServicesUtilLight.isUserRecoverableError(i);
+    }
+
     public Intent getErrorResolutionIntent(Context context, int i, String str) {
         if (i != 1 && i != 2) {
             if (i != 3) {
                 return null;
             }
-            return zzt.zzc("com.google.android.gms");
+            Uri fromParts = Uri.fromParts("package", "com.google.android.gms", null);
+            Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+            intent.setData(fromParts);
+            return intent;
         }
         if (context != null && DeviceProperties.isWearableWithoutPlayStore(context)) {
-            return zzt.zza();
+            Intent intent2 = new Intent("com.google.android.clockwork.home.UPDATE_ANDROID_WEAR_ACTION");
+            intent2.setPackage("com.google.android.wearable.app");
+            return intent2;
         }
         StringBuilder sb = new StringBuilder();
         sb.append("gcore_");
@@ -63,11 +92,16 @@ public class GoogleApiAvailabilityLight {
             } catch (PackageManager.NameNotFoundException unused) {
             }
         }
-        return zzt.zzb("com.google.android.gms", sb.toString());
-    }
-
-    public PendingIntent getErrorResolutionPendingIntent(Context context, int i, int i2) {
-        return getErrorResolutionPendingIntent(context, i, i2, null);
+        String sb2 = sb.toString();
+        Intent intent3 = new Intent("android.intent.action.VIEW");
+        Uri.Builder appendQueryParameter = Uri.parse("market://details").buildUpon().appendQueryParameter("id", "com.google.android.gms");
+        if (!TextUtils.isEmpty(sb2)) {
+            appendQueryParameter.appendQueryParameter("pcampaignid", sb2);
+        }
+        intent3.setData(appendQueryParameter.build());
+        intent3.setPackage("com.android.vending");
+        intent3.addFlags(TLObject.FLAG_19);
+        return intent3;
     }
 
     public PendingIntent getErrorResolutionPendingIntent(Context context, int i, int i2, String str) {
@@ -78,31 +112,11 @@ public class GoogleApiAvailabilityLight {
         return PendingIntent.getActivity(context, i2, errorResolutionIntent, zzd.zza | TLObject.FLAG_27);
     }
 
-    public String getErrorString(int i) {
-        return GooglePlayServicesUtilLight.getErrorString(i);
-    }
-
-    public int isGooglePlayServicesAvailable(Context context) {
-        return isGooglePlayServicesAvailable(context, GOOGLE_PLAY_SERVICES_VERSION_CODE);
-    }
-
     public int isGooglePlayServicesAvailable(Context context, int i) {
         int isGooglePlayServicesAvailable = GooglePlayServicesUtilLight.isGooglePlayServicesAvailable(context, i);
         if (GooglePlayServicesUtilLight.isPlayServicesPossiblyUpdating(context, isGooglePlayServicesAvailable)) {
             return 18;
         }
         return isGooglePlayServicesAvailable;
-    }
-
-    public boolean isPlayServicesPossiblyUpdating(Context context, int i) {
-        return GooglePlayServicesUtilLight.isPlayServicesPossiblyUpdating(context, i);
-    }
-
-    public boolean isUninstalledAppPossiblyUpdating(Context context, String str) {
-        return GooglePlayServicesUtilLight.zza(context, str);
-    }
-
-    public boolean isUserResolvableError(int i) {
-        return GooglePlayServicesUtilLight.isUserRecoverableError(i);
     }
 }

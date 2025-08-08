@@ -10,30 +10,8 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class JSONUtils {
-    public static List readArray(JSONObject jSONObject, String str, ModelFactory modelFactory) {
-        JSONArray optJSONArray = jSONObject.optJSONArray(str);
-        if (optJSONArray == null) {
-            return null;
-        }
-        List createList = modelFactory.createList(optJSONArray.length());
-        for (int i = 0; i < optJSONArray.length(); i++) {
-            JSONObject jSONObject2 = optJSONArray.getJSONObject(i);
-            Model create = modelFactory.create();
-            create.read(jSONObject2);
-            createList.add(create);
-        }
-        return createList;
-    }
-
-    public static Boolean readBoolean(JSONObject jSONObject, String str) {
-        if (jSONObject.has(str)) {
-            return Boolean.valueOf(jSONObject.getBoolean(str));
-        }
-        return null;
-    }
-
     public static Integer readInteger(JSONObject jSONObject, String str) {
         if (jSONObject.has(str)) {
             return Integer.valueOf(jSONObject.getInt(str));
@@ -44,6 +22,13 @@ public abstract class JSONUtils {
     public static Long readLong(JSONObject jSONObject, String str) {
         if (jSONObject.has(str)) {
             return Long.valueOf(jSONObject.getLong(str));
+        }
+        return null;
+    }
+
+    public static Boolean readBoolean(JSONObject jSONObject, String str) {
+        if (jSONObject.has(str)) {
+            return Boolean.valueOf(jSONObject.getBoolean(str));
         }
         return null;
     }
@@ -60,6 +45,21 @@ public abstract class JSONUtils {
             hashMap.put(next, optJSONObject.getString(next));
         }
         return hashMap;
+    }
+
+    public static List readArray(JSONObject jSONObject, String str, ModelFactory modelFactory) {
+        JSONArray optJSONArray = jSONObject.optJSONArray(str);
+        if (optJSONArray == null) {
+            return null;
+        }
+        List createList = modelFactory.createList(optJSONArray.length());
+        for (int i = 0; i < optJSONArray.length(); i++) {
+            JSONObject jSONObject2 = optJSONArray.getJSONObject(i);
+            Model create = modelFactory.create();
+            create.read(jSONObject2);
+            createList.add(create);
+        }
+        return createList;
     }
 
     public static List readStringArray(JSONObject jSONObject, String str) {
@@ -80,6 +80,16 @@ public abstract class JSONUtils {
         }
     }
 
+    public static void writeMap(JSONStringer jSONStringer, String str, Map map) {
+        if (map != null) {
+            jSONStringer.key(str).object();
+            for (Map.Entry entry : map.entrySet()) {
+                jSONStringer.key((String) entry.getKey()).value(entry.getValue());
+            }
+            jSONStringer.endObject();
+        }
+    }
+
     public static void writeArray(JSONStringer jSONStringer, String str, List list) {
         if (list != null) {
             jSONStringer.key(str).array();
@@ -91,16 +101,6 @@ public abstract class JSONUtils {
                 jSONStringer.endObject();
             }
             jSONStringer.endArray();
-        }
-    }
-
-    public static void writeMap(JSONStringer jSONStringer, String str, Map map) {
-        if (map != null) {
-            jSONStringer.key(str).object();
-            for (Map.Entry entry : map.entrySet()) {
-                jSONStringer.key((String) entry.getKey()).value(entry.getValue());
-            }
-            jSONStringer.endObject();
         }
     }
 

@@ -7,6 +7,11 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
 /* loaded from: classes.dex */
 public final class zzd implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
+    public final /* synthetic */ Object[] newArray(int i) {
+        return new FaceParcel[i];
+    }
+
+    @Override // android.os.Parcelable.Creator
     public final /* synthetic */ Object createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
         LandmarkParcel[] landmarkParcelArr = null;
@@ -79,10 +84,5 @@ public final class zzd implements Parcelable.Creator {
         }
         SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
         return new FaceParcel(i, i2, f, f2, f3, f4, f5, f6, f7, landmarkParcelArr, f8, f9, f10, zzaVarArr, f11);
-    }
-
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i) {
-        return new FaceParcel[i];
     }
 }

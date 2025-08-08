@@ -19,65 +19,6 @@ public abstract class Sets {
     abstract class 1 extends SetView {
     }
 
-    private static class FilteredSet extends Collections2.FilteredCollection implements Set {
-        FilteredSet(Set set, Predicate predicate) {
-            super(set, predicate);
-        }
-
-        @Override // java.util.Collection, java.util.Set
-        public boolean equals(Object obj) {
-            return Sets.equalsImpl(this, obj);
-        }
-
-        @Override // java.util.Collection, java.util.Set
-        public int hashCode() {
-            return Sets.hashCodeImpl(this);
-        }
-    }
-
-    private static class FilteredSortedSet extends FilteredSet implements SortedSet {
-        FilteredSortedSet(SortedSet sortedSet, Predicate predicate) {
-            super(sortedSet, predicate);
-        }
-
-        @Override // java.util.SortedSet
-        public Comparator comparator() {
-            return ((SortedSet) this.unfiltered).comparator();
-        }
-
-        @Override // java.util.SortedSet
-        public Object first() {
-            return Iterators.find(this.unfiltered.iterator(), this.predicate);
-        }
-
-        @Override // java.util.SortedSet
-        public SortedSet headSet(Object obj) {
-            return new FilteredSortedSet(((SortedSet) this.unfiltered).headSet(obj), this.predicate);
-        }
-
-        @Override // java.util.SortedSet
-        public Object last() {
-            SortedSet sortedSet = (SortedSet) this.unfiltered;
-            while (true) {
-                Object last = sortedSet.last();
-                if (this.predicate.apply(last)) {
-                    return last;
-                }
-                sortedSet = sortedSet.headSet(last);
-            }
-        }
-
-        @Override // java.util.SortedSet
-        public SortedSet subSet(Object obj, Object obj2) {
-            return new FilteredSortedSet(((SortedSet) this.unfiltered).subSet(obj, obj2), this.predicate);
-        }
-
-        @Override // java.util.SortedSet
-        public SortedSet tailSet(Object obj) {
-            return new FilteredSortedSet(((SortedSet) this.unfiltered).tailSet(obj), this.predicate);
-        }
-    }
-
     static abstract class ImprovedAbstractSet extends AbstractSet {
         ImprovedAbstractSet() {
         }
@@ -93,12 +34,30 @@ public abstract class Sets {
         }
     }
 
-    public static abstract class SetView extends AbstractSet {
-        private SetView() {
-        }
+    public static HashSet newHashSet() {
+        return new HashSet();
+    }
 
+    public static HashSet newHashSet(Object... objArr) {
+        HashSet newHashSetWithExpectedSize = newHashSetWithExpectedSize(objArr.length);
+        Collections.addAll(newHashSetWithExpectedSize, objArr);
+        return newHashSetWithExpectedSize;
+    }
+
+    public static HashSet newHashSetWithExpectedSize(int i) {
+        return new HashSet(Maps.capacity(i));
+    }
+
+    public static Set newIdentityHashSet() {
+        return Collections.newSetFromMap(Maps.newIdentityHashMap());
+    }
+
+    public static abstract class SetView extends AbstractSet {
         /* synthetic */ SetView(1 r1) {
             this();
+        }
+
+        private SetView() {
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
@@ -107,17 +66,12 @@ public abstract class Sets {
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-        public final boolean addAll(Collection collection) {
-            throw new UnsupportedOperationException();
-        }
-
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-        public final void clear() {
-            throw new UnsupportedOperationException();
-        }
-
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
         public final boolean remove(Object obj) {
+            throw new UnsupportedOperationException();
+        }
+
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        public final boolean addAll(Collection collection) {
             throw new UnsupportedOperationException();
         }
 
@@ -130,55 +84,11 @@ public abstract class Sets {
         public final boolean retainAll(Collection collection) {
             throw new UnsupportedOperationException();
         }
-    }
 
-    static boolean equalsImpl(Set set, Object obj) {
-        if (set == obj) {
-            return true;
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        public final void clear() {
+            throw new UnsupportedOperationException();
         }
-        if (obj instanceof Set) {
-            Set set2 = (Set) obj;
-            try {
-                if (set.size() == set2.size()) {
-                    if (set.containsAll(set2)) {
-                        return true;
-                    }
-                }
-                return false;
-            } catch (ClassCastException | NullPointerException unused) {
-            }
-        }
-        return false;
-    }
-
-    public static Set filter(Set set, Predicate predicate) {
-        if (set instanceof SortedSet) {
-            return filter((SortedSet) set, predicate);
-        }
-        if (!(set instanceof FilteredSet)) {
-            return new FilteredSet((Set) Preconditions.checkNotNull(set), (Predicate) Preconditions.checkNotNull(predicate));
-        }
-        FilteredSet filteredSet = (FilteredSet) set;
-        return new FilteredSet((Set) filteredSet.unfiltered, Predicates.and(filteredSet.predicate, predicate));
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public static SortedSet filter(SortedSet sortedSet, Predicate predicate) {
-        if (!(sortedSet instanceof FilteredSet)) {
-            return new FilteredSortedSet((SortedSet) Preconditions.checkNotNull(sortedSet), (Predicate) Preconditions.checkNotNull(predicate));
-        }
-        FilteredSet filteredSet = (FilteredSet) sortedSet;
-        return new FilteredSortedSet((SortedSet) filteredSet.unfiltered, Predicates.and(filteredSet.predicate, predicate));
-    }
-
-    static int hashCodeImpl(Set set) {
-        Iterator it = set.iterator();
-        int i = 0;
-        while (it.hasNext()) {
-            Object next = it.next();
-            i += next != null ? next.hashCode() : 0;
-        }
-        return i;
     }
 
     public static SetView intersection(final Set set, final Set set2) {
@@ -188,21 +98,6 @@ public abstract class Sets {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(null);
-            }
-
-            @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-            public boolean contains(Object obj) {
-                return set.contains(obj) && set2.contains(obj);
-            }
-
-            @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-            public boolean containsAll(Collection collection) {
-                return set.containsAll(collection) && set2.containsAll(collection);
-            }
-
-            @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-            public boolean isEmpty() {
-                return Collections.disjoint(set2, set);
             }
 
             @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
@@ -238,33 +133,130 @@ public abstract class Sets {
                 }
                 return i;
             }
+
+            @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+            public boolean isEmpty() {
+                return Collections.disjoint(set2, set);
+            }
+
+            @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+            public boolean contains(Object obj) {
+                return set.contains(obj) && set2.contains(obj);
+            }
+
+            @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+            public boolean containsAll(Collection collection) {
+                return set.containsAll(collection) && set2.containsAll(collection);
+            }
         };
     }
 
-    public static HashSet newHashSet() {
-        return new HashSet();
-    }
-
-    public static HashSet newHashSet(Object... objArr) {
-        HashSet newHashSetWithExpectedSize = newHashSetWithExpectedSize(objArr.length);
-        Collections.addAll(newHashSetWithExpectedSize, objArr);
-        return newHashSetWithExpectedSize;
-    }
-
-    public static HashSet newHashSetWithExpectedSize(int i) {
-        return new HashSet(Maps.capacity(i));
-    }
-
-    public static Set newIdentityHashSet() {
-        return Collections.newSetFromMap(Maps.newIdentityHashMap());
-    }
-
-    static boolean removeAllImpl(Set set, Collection collection) {
-        Preconditions.checkNotNull(collection);
-        if (collection instanceof Multiset) {
-            collection = ((Multiset) collection).elementSet();
+    public static Set filter(Set set, Predicate predicate) {
+        if (set instanceof SortedSet) {
+            return filter((SortedSet) set, predicate);
         }
-        return (!(collection instanceof Set) || collection.size() <= set.size()) ? removeAllImpl(set, collection.iterator()) : Iterators.removeAll(set.iterator(), collection);
+        if (set instanceof FilteredSet) {
+            FilteredSet filteredSet = (FilteredSet) set;
+            return new FilteredSet((Set) filteredSet.unfiltered, Predicates.and(filteredSet.predicate, predicate));
+        }
+        return new FilteredSet((Set) Preconditions.checkNotNull(set), (Predicate) Preconditions.checkNotNull(predicate));
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public static SortedSet filter(SortedSet sortedSet, Predicate predicate) {
+        if (sortedSet instanceof FilteredSet) {
+            FilteredSet filteredSet = (FilteredSet) sortedSet;
+            return new FilteredSortedSet((SortedSet) filteredSet.unfiltered, Predicates.and(filteredSet.predicate, predicate));
+        }
+        return new FilteredSortedSet((SortedSet) Preconditions.checkNotNull(sortedSet), (Predicate) Preconditions.checkNotNull(predicate));
+    }
+
+    private static class FilteredSet extends Collections2.FilteredCollection implements Set {
+        FilteredSet(Set set, Predicate predicate) {
+            super(set, predicate);
+        }
+
+        @Override // java.util.Collection, java.util.Set
+        public boolean equals(Object obj) {
+            return Sets.equalsImpl(this, obj);
+        }
+
+        @Override // java.util.Collection, java.util.Set
+        public int hashCode() {
+            return Sets.hashCodeImpl(this);
+        }
+    }
+
+    private static class FilteredSortedSet extends FilteredSet implements SortedSet {
+        FilteredSortedSet(SortedSet sortedSet, Predicate predicate) {
+            super(sortedSet, predicate);
+        }
+
+        @Override // java.util.SortedSet
+        public Comparator comparator() {
+            return ((SortedSet) this.unfiltered).comparator();
+        }
+
+        @Override // java.util.SortedSet
+        public SortedSet subSet(Object obj, Object obj2) {
+            return new FilteredSortedSet(((SortedSet) this.unfiltered).subSet(obj, obj2), this.predicate);
+        }
+
+        @Override // java.util.SortedSet
+        public SortedSet headSet(Object obj) {
+            return new FilteredSortedSet(((SortedSet) this.unfiltered).headSet(obj), this.predicate);
+        }
+
+        @Override // java.util.SortedSet
+        public SortedSet tailSet(Object obj) {
+            return new FilteredSortedSet(((SortedSet) this.unfiltered).tailSet(obj), this.predicate);
+        }
+
+        @Override // java.util.SortedSet
+        public Object first() {
+            return Iterators.find(this.unfiltered.iterator(), this.predicate);
+        }
+
+        @Override // java.util.SortedSet
+        public Object last() {
+            SortedSet sortedSet = (SortedSet) this.unfiltered;
+            while (true) {
+                Object last = sortedSet.last();
+                if (this.predicate.apply(last)) {
+                    return last;
+                }
+                sortedSet = sortedSet.headSet(last);
+            }
+        }
+    }
+
+    static int hashCodeImpl(Set set) {
+        Iterator it = set.iterator();
+        int i = 0;
+        while (it.hasNext()) {
+            Object next = it.next();
+            i = ~(~(i + (next != null ? next.hashCode() : 0)));
+        }
+        return i;
+    }
+
+    static boolean equalsImpl(Set set, Object obj) {
+        if (set == obj) {
+            return true;
+        }
+        if (obj instanceof Set) {
+            Set set2 = (Set) obj;
+            try {
+                if (set.size() == set2.size()) {
+                    if (set.containsAll(set2)) {
+                        return true;
+                    }
+                }
+                return false;
+            } catch (ClassCastException | NullPointerException unused) {
+            }
+        }
+        return false;
     }
 
     static boolean removeAllImpl(Set set, Iterator it) {
@@ -273,5 +265,16 @@ public abstract class Sets {
             z |= set.remove(it.next());
         }
         return z;
+    }
+
+    static boolean removeAllImpl(Set set, Collection collection) {
+        Preconditions.checkNotNull(collection);
+        if (collection instanceof Multiset) {
+            collection = ((Multiset) collection).elementSet();
+        }
+        if ((collection instanceof Set) && collection.size() > set.size()) {
+            return Iterators.removeAll(set.iterator(), collection);
+        }
+        return removeAllImpl(set, collection.iterator());
     }
 }

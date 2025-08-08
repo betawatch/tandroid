@@ -28,25 +28,6 @@ public interface ExoTrackSelection extends TrackSelection {
         }
     }
 
-    public static final class Definition {
-        public final TrackGroup group;
-        public final int[] tracks;
-        public final int type;
-
-        public Definition(TrackGroup trackGroup, int... iArr) {
-            this(trackGroup, iArr, 0);
-        }
-
-        public Definition(TrackGroup trackGroup, int[] iArr, int i) {
-            if (iArr.length == 0) {
-                Log.e("ETSDefinition", "Empty tracks are not allowed", new IllegalArgumentException());
-            }
-            this.group = trackGroup;
-            this.tracks = iArr;
-            this.type = i;
-        }
-    }
-
     public interface Factory {
         ExoTrackSelection[] createTrackSelections(Definition[] definitionArr, BandwidthMeter bandwidthMeter, MediaSource.MediaPeriodId mediaPeriodId, Timeline timeline);
     }
@@ -82,4 +63,23 @@ public interface ExoTrackSelection extends TrackSelection {
     boolean shouldCancelChunkLoad(long j, Chunk chunk, List list);
 
     void updateSelectedTrack(long j, long j2, long j3, List list, MediaChunkIterator[] mediaChunkIteratorArr);
+
+    public static final class Definition {
+        public final TrackGroup group;
+        public final int[] tracks;
+        public final int type;
+
+        public Definition(TrackGroup trackGroup, int... iArr) {
+            this(trackGroup, iArr, 0);
+        }
+
+        public Definition(TrackGroup trackGroup, int[] iArr, int i) {
+            if (iArr.length == 0) {
+                Log.e("ETSDefinition", "Empty tracks are not allowed", new IllegalArgumentException());
+            }
+            this.group = trackGroup;
+            this.tracks = iArr;
+            this.type = i;
+        }
+    }
 }

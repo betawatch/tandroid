@@ -1,16 +1,20 @@
 package j$.util.stream;
 
+import java.util.Comparator;
+
 /* loaded from: classes2.dex */
 abstract class r2 extends Z1 {
-    protected boolean b;
+    protected final Comparator b;
+    protected boolean c;
 
-    r2(e2 e2Var) {
-        super(e2Var);
+    r2(d2 d2Var, Comparator comparator) {
+        super(d2Var);
+        this.b = comparator;
     }
 
-    @Override // j$.util.stream.Z1, j$.util.stream.e2
+    @Override // j$.util.stream.Z1, j$.util.stream.d2
     public final boolean q() {
-        this.b = true;
+        this.c = true;
         return false;
     }
 }

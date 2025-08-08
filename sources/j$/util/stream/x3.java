@@ -1,7 +1,11 @@
 package j$.util.stream;
 
-import j$.util.function.Supplier;
+import java.security.PrivilegedAction;
 
 /* loaded from: classes2.dex */
-interface x3 extends e2, Supplier {
+public final /* synthetic */ class x3 implements PrivilegedAction {
+    @Override // java.security.PrivilegedAction
+    public final Object run() {
+        return Boolean.valueOf(Boolean.getBoolean("org.openjdk.java.util.stream.tripwire"));
+    }
 }

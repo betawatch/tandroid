@@ -3,16 +3,20 @@ package androidx.core.widget;
 import android.content.res.ColorStateList;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.widget.CheckedTextView;
 
 /* loaded from: classes.dex */
 public abstract class CheckedTextViewCompat {
+    public static void setCheckMarkTintList(CheckedTextView checkedTextView, ColorStateList colorStateList) {
+        Api21Impl.setCheckMarkTintList(checkedTextView, colorStateList);
+    }
 
-    private static class Api16Impl {
-        static Drawable getCheckMarkDrawable(CheckedTextView checkedTextView) {
-            return checkedTextView.getCheckMarkDrawable();
-        }
+    public static void setCheckMarkTintMode(CheckedTextView checkedTextView, PorterDuff.Mode mode) {
+        Api21Impl.setCheckMarkTintMode(checkedTextView, mode);
+    }
+
+    public static Drawable getCheckMarkDrawable(CheckedTextView checkedTextView) {
+        return Api16Impl.getCheckMarkDrawable(checkedTextView);
     }
 
     private static class Api21Impl {
@@ -25,25 +29,9 @@ public abstract class CheckedTextViewCompat {
         }
     }
 
-    public static Drawable getCheckMarkDrawable(CheckedTextView checkedTextView) {
-        return Api16Impl.getCheckMarkDrawable(checkedTextView);
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public static void setCheckMarkTintList(CheckedTextView checkedTextView, ColorStateList colorStateList) {
-        if (Build.VERSION.SDK_INT >= 21) {
-            Api21Impl.setCheckMarkTintList(checkedTextView, colorStateList);
-        } else if (checkedTextView instanceof TintableCheckedTextView) {
-            ((TintableCheckedTextView) checkedTextView).setSupportCheckMarkTintList(colorStateList);
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public static void setCheckMarkTintMode(CheckedTextView checkedTextView, PorterDuff.Mode mode) {
-        if (Build.VERSION.SDK_INT >= 21) {
-            Api21Impl.setCheckMarkTintMode(checkedTextView, mode);
-        } else if (checkedTextView instanceof TintableCheckedTextView) {
-            ((TintableCheckedTextView) checkedTextView).setSupportCheckMarkTintMode(mode);
+    private static class Api16Impl {
+        static Drawable getCheckMarkDrawable(CheckedTextView checkedTextView) {
+            return checkedTextView.getCheckMarkDrawable();
         }
     }
 }

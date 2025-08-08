@@ -4,42 +4,22 @@ import androidx.concurrent.futures.AbstractResolvableFuture$SafeAtomicHelper$$Ex
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class ConcurrentLinkedListNode {
     private static final AtomicReferenceFieldUpdater _next$FU = AtomicReferenceFieldUpdater.newUpdater(ConcurrentLinkedListNode.class, Object.class, "_next");
     private static final AtomicReferenceFieldUpdater _prev$FU = AtomicReferenceFieldUpdater.newUpdater(ConcurrentLinkedListNode.class, Object.class, "_prev");
     private volatile Object _next;
     private volatile Object _prev;
 
+    public abstract boolean isRemoved();
+
     public ConcurrentLinkedListNode(ConcurrentLinkedListNode concurrentLinkedListNode) {
         this._prev = concurrentLinkedListNode;
-    }
-
-    private final ConcurrentLinkedListNode getAliveSegmentLeft() {
-        ConcurrentLinkedListNode prev = getPrev();
-        while (prev != null && prev.isRemoved()) {
-            prev = (ConcurrentLinkedListNode) _prev$FU.get(prev);
-        }
-        return prev;
-    }
-
-    private final ConcurrentLinkedListNode getAliveSegmentRight() {
-        ConcurrentLinkedListNode next;
-        ConcurrentLinkedListNode next2 = getNext();
-        Intrinsics.checkNotNull(next2);
-        while (next2.isRemoved() && (next = next2.getNext()) != null) {
-            next2 = next;
-        }
-        return next2;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final Object getNextOrClosed() {
         return _next$FU.get(this);
-    }
-
-    public final void cleanPrev() {
-        _prev$FU.lazySet(this, null);
     }
 
     public final ConcurrentLinkedListNode getNext() {
@@ -50,14 +30,20 @@ public abstract class ConcurrentLinkedListNode {
         return (ConcurrentLinkedListNode) nextOrClosed;
     }
 
+    public final boolean trySetNext(ConcurrentLinkedListNode concurrentLinkedListNode) {
+        return AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_next$FU, this, null, concurrentLinkedListNode);
+    }
+
+    public final boolean isTail() {
+        return getNext() == null;
+    }
+
     public final ConcurrentLinkedListNode getPrev() {
         return (ConcurrentLinkedListNode) _prev$FU.get(this);
     }
 
-    public abstract boolean isRemoved();
-
-    public final boolean isTail() {
-        return getNext() == null;
+    public final void cleanPrev() {
+        _prev$FU.lazySet(this, null);
     }
 
     public final boolean markAsClosed() {
@@ -87,7 +73,21 @@ public abstract class ConcurrentLinkedListNode {
         }
     }
 
-    public final boolean trySetNext(ConcurrentLinkedListNode concurrentLinkedListNode) {
-        return AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_next$FU, this, null, concurrentLinkedListNode);
+    private final ConcurrentLinkedListNode getAliveSegmentLeft() {
+        ConcurrentLinkedListNode prev = getPrev();
+        while (prev != null && prev.isRemoved()) {
+            prev = (ConcurrentLinkedListNode) _prev$FU.get(prev);
+        }
+        return prev;
+    }
+
+    private final ConcurrentLinkedListNode getAliveSegmentRight() {
+        ConcurrentLinkedListNode next;
+        ConcurrentLinkedListNode next2 = getNext();
+        Intrinsics.checkNotNull(next2);
+        while (next2.isRemoved() && (next = next2.getNext()) != null) {
+            next2 = next;
+        }
+        return next2;
     }
 }

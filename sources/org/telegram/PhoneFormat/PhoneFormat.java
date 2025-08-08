@@ -10,7 +10,7 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class PhoneFormat {
     private static volatile PhoneFormat Instance;
     public ByteBuffer buffer;
@@ -22,10 +22,6 @@ public class PhoneFormat {
     public String defaultCallingCode;
     public String defaultCountry;
     private boolean initialzed = false;
-
-    public PhoneFormat() {
-        init(null);
-    }
 
     public static PhoneFormat getInstance() {
         PhoneFormat phoneFormat = Instance;
@@ -54,10 +50,6 @@ public class PhoneFormat {
         return sb.toString();
     }
 
-    public static String stripExceptNumbers(String str) {
-        return stripExceptNumbers(str, false);
-    }
-
     public static String stripExceptNumbers(String str, boolean z) {
         if (str == null) {
             return null;
@@ -70,6 +62,245 @@ public class PhoneFormat {
             }
         }
         return sb.toString();
+    }
+
+    public static String stripExceptNumbers(String str) {
+        return stripExceptNumbers(str, false);
+    }
+
+    public PhoneFormat() {
+        init(null);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x00bc A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:64:? A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x00b2 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Type inference failed for: r1v1 */
+    /* JADX WARN: Type inference failed for: r1v10, types: [java.io.InputStream] */
+    /* JADX WARN: Type inference failed for: r1v11 */
+    /* JADX WARN: Type inference failed for: r1v3 */
+    /* JADX WARN: Type inference failed for: r1v4 */
+    /* JADX WARN: Type inference failed for: r1v6, types: [java.io.InputStream] */
+    /* JADX WARN: Type inference failed for: r1v7, types: [java.io.InputStream] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void init(String str) {
+        ByteArrayOutputStream byteArrayOutputStream;
+        ?? r1;
+        ByteArrayOutputStream byteArrayOutputStream2;
+        ?? r12;
+        ByteArrayOutputStream byteArrayOutputStream3 = null;
+        try {
+            r1 = ApplicationLoader.applicationContext.getAssets().open("PhoneFormats.dat");
+            try {
+                try {
+                    byteArrayOutputStream2 = new ByteArrayOutputStream();
+                } catch (Exception e) {
+                    e = e;
+                }
+            } catch (Throwable th) {
+                th = th;
+                ByteArrayOutputStream byteArrayOutputStream4 = r1;
+                byteArrayOutputStream = byteArrayOutputStream3;
+                byteArrayOutputStream3 = byteArrayOutputStream4;
+                byteArrayOutputStream2 = byteArrayOutputStream;
+                r12 = byteArrayOutputStream3;
+                if (byteArrayOutputStream2 != null) {
+                    try {
+                        byteArrayOutputStream2.close();
+                    } catch (Exception e2) {
+                        FileLog.e(e2);
+                    }
+                }
+                if (r12 != 0) {
+                    try {
+                        r12.close();
+                        throw th;
+                    } catch (Exception e3) {
+                        FileLog.e(e3);
+                        throw th;
+                    }
+                }
+                throw th;
+            }
+        } catch (Exception e4) {
+            e = e4;
+            r1 = 0;
+        } catch (Throwable th2) {
+            th = th2;
+            byteArrayOutputStream = null;
+            byteArrayOutputStream2 = byteArrayOutputStream;
+            r12 = byteArrayOutputStream3;
+            if (byteArrayOutputStream2 != null) {
+            }
+            if (r12 != 0) {
+            }
+        }
+        try {
+            byte[] bArr = new byte[1024];
+            while (true) {
+                int read = r1.read(bArr, 0, 1024);
+                if (read == -1) {
+                    break;
+                } else {
+                    byteArrayOutputStream2.write(bArr, 0, read);
+                }
+            }
+            byte[] byteArray = byteArrayOutputStream2.toByteArray();
+            this.data = byteArray;
+            ByteBuffer wrap = ByteBuffer.wrap(byteArray);
+            this.buffer = wrap;
+            wrap.order(ByteOrder.LITTLE_ENDIAN);
+            try {
+                byteArrayOutputStream2.close();
+            } catch (Exception e5) {
+                FileLog.e(e5);
+            }
+            try {
+                r1.close();
+            } catch (Exception e6) {
+                FileLog.e(e6);
+            }
+            if (str != null && str.length() != 0) {
+                this.defaultCountry = str;
+            } else {
+                this.defaultCountry = Locale.getDefault().getCountry().toLowerCase();
+            }
+            this.callingCodeOffsets = new HashMap(NotificationCenter.goingToPreviewTheme);
+            this.callingCodeCountries = new HashMap(NotificationCenter.goingToPreviewTheme);
+            this.callingCodeData = new HashMap(10);
+            this.countryCallingCode = new HashMap(NotificationCenter.goingToPreviewTheme);
+            parseDataHeader();
+            this.initialzed = true;
+        } catch (Exception e7) {
+            e = e7;
+            byteArrayOutputStream3 = byteArrayOutputStream2;
+            e.printStackTrace();
+            if (byteArrayOutputStream3 != null) {
+                try {
+                    byteArrayOutputStream3.close();
+                } catch (Exception e8) {
+                    FileLog.e(e8);
+                }
+            }
+            if (r1 != 0) {
+                try {
+                    r1.close();
+                } catch (Exception e9) {
+                    FileLog.e(e9);
+                }
+            }
+        } catch (Throwable th3) {
+            th = th3;
+            r12 = r1;
+            if (byteArrayOutputStream2 != null) {
+            }
+            if (r12 != 0) {
+            }
+        }
+    }
+
+    public CallingCodeInfo findCallingCodeInfo(String str) {
+        CallingCodeInfo callingCodeInfo = null;
+        int i = 0;
+        while (i < 3 && i < str.length()) {
+            i++;
+            callingCodeInfo = callingCodeInfo(str.substring(0, i));
+            if (callingCodeInfo != null) {
+                break;
+            }
+        }
+        return callingCodeInfo;
+    }
+
+    public String format(String str) {
+        if (!this.initialzed) {
+            return str;
+        }
+        try {
+            String strip = strip(str);
+            if (strip.startsWith("+")) {
+                String substring = strip.substring(1);
+                CallingCodeInfo findCallingCodeInfo = findCallingCodeInfo(substring);
+                if (findCallingCodeInfo == null) {
+                    return str;
+                }
+                return "+" + findCallingCodeInfo.format(substring);
+            }
+            CallingCodeInfo callingCodeInfo = callingCodeInfo(this.defaultCallingCode);
+            if (callingCodeInfo == null) {
+                return str;
+            }
+            String matchingAccessCode = callingCodeInfo.matchingAccessCode(strip);
+            if (matchingAccessCode != null) {
+                String substring2 = strip.substring(matchingAccessCode.length());
+                CallingCodeInfo findCallingCodeInfo2 = findCallingCodeInfo(substring2);
+                if (findCallingCodeInfo2 != null) {
+                    substring2 = findCallingCodeInfo2.format(substring2);
+                }
+                return substring2.length() == 0 ? matchingAccessCode : String.format("%s %s", matchingAccessCode, substring2);
+            }
+            return callingCodeInfo.format(strip);
+        } catch (Exception e) {
+            FileLog.e(e);
+            return str;
+        }
+    }
+
+    int value32(int i) {
+        if (i + 4 > this.data.length) {
+            return 0;
+        }
+        this.buffer.position(i);
+        return this.buffer.getInt();
+    }
+
+    short value16(int i) {
+        if (i + 2 > this.data.length) {
+            return (short) 0;
+        }
+        this.buffer.position(i);
+        return this.buffer.getShort();
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x000d, code lost:
+    
+        if (r5 != r1) goto L10;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x000f, code lost:
+    
+        return "";
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x0015, code lost:
+    
+        return new java.lang.String(r2, r5, r1);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x000c, code lost:
+    
+        r1 = r1 - r5;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public String valueString(int i) {
+        int i2 = i;
+        while (true) {
+            try {
+                byte[] bArr = this.data;
+                if (i2 >= bArr.length) {
+                    return "";
+                }
+                if (bArr[i2] == 0) {
+                    break;
+                }
+                i2++;
+            } catch (Exception e) {
+                e.printStackTrace();
+                return "";
+            }
+        }
     }
 
     /* JADX WARN: Type inference failed for: r2v10, types: [boolean, int] */
@@ -170,182 +401,6 @@ public class PhoneFormat {
         return callingCodeInfo2;
     }
 
-    public CallingCodeInfo findCallingCodeInfo(String str) {
-        CallingCodeInfo callingCodeInfo = null;
-        int i = 0;
-        while (i < 3 && i < str.length()) {
-            i++;
-            callingCodeInfo = callingCodeInfo(str.substring(0, i));
-            if (callingCodeInfo != null) {
-                break;
-            }
-        }
-        return callingCodeInfo;
-    }
-
-    public String format(String str) {
-        if (!this.initialzed) {
-            return str;
-        }
-        try {
-            String strip = strip(str);
-            if (strip.startsWith("+")) {
-                String substring = strip.substring(1);
-                CallingCodeInfo findCallingCodeInfo = findCallingCodeInfo(substring);
-                if (findCallingCodeInfo == null) {
-                    return str;
-                }
-                return "+" + findCallingCodeInfo.format(substring);
-            }
-            CallingCodeInfo callingCodeInfo = callingCodeInfo(this.defaultCallingCode);
-            if (callingCodeInfo == null) {
-                return str;
-            }
-            String matchingAccessCode = callingCodeInfo.matchingAccessCode(strip);
-            if (matchingAccessCode == null) {
-                return callingCodeInfo.format(strip);
-            }
-            String substring2 = strip.substring(matchingAccessCode.length());
-            CallingCodeInfo findCallingCodeInfo2 = findCallingCodeInfo(substring2);
-            if (findCallingCodeInfo2 != null) {
-                substring2 = findCallingCodeInfo2.format(substring2);
-            }
-            return substring2.length() == 0 ? matchingAccessCode : String.format("%s %s", matchingAccessCode, substring2);
-        } catch (Exception e) {
-            FileLog.e(e);
-            return str;
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x00bb A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:64:? A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x00b1 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Type inference failed for: r1v1 */
-    /* JADX WARN: Type inference failed for: r1v10, types: [java.io.InputStream] */
-    /* JADX WARN: Type inference failed for: r1v11 */
-    /* JADX WARN: Type inference failed for: r1v3 */
-    /* JADX WARN: Type inference failed for: r1v4 */
-    /* JADX WARN: Type inference failed for: r1v6, types: [java.io.InputStream] */
-    /* JADX WARN: Type inference failed for: r1v7, types: [java.io.InputStream] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void init(String str) {
-        ByteArrayOutputStream byteArrayOutputStream;
-        ?? r1;
-        ByteArrayOutputStream byteArrayOutputStream2;
-        ?? r12;
-        ByteArrayOutputStream byteArrayOutputStream3 = null;
-        try {
-            r1 = ApplicationLoader.applicationContext.getAssets().open("PhoneFormats.dat");
-            try {
-                try {
-                    byteArrayOutputStream2 = new ByteArrayOutputStream();
-                } catch (Exception e) {
-                    e = e;
-                }
-            } catch (Throwable th) {
-                th = th;
-                ByteArrayOutputStream byteArrayOutputStream4 = r1;
-                byteArrayOutputStream = byteArrayOutputStream3;
-                byteArrayOutputStream3 = byteArrayOutputStream4;
-                byteArrayOutputStream2 = byteArrayOutputStream;
-                r12 = byteArrayOutputStream3;
-                if (byteArrayOutputStream2 != null) {
-                    try {
-                        byteArrayOutputStream2.close();
-                    } catch (Exception e2) {
-                        FileLog.e(e2);
-                    }
-                }
-                if (r12 == 0) {
-                    throw th;
-                }
-                try {
-                    r12.close();
-                    throw th;
-                } catch (Exception e3) {
-                    FileLog.e(e3);
-                    throw th;
-                }
-            }
-        } catch (Exception e4) {
-            e = e4;
-            r1 = 0;
-        } catch (Throwable th2) {
-            th = th2;
-            byteArrayOutputStream = null;
-            byteArrayOutputStream2 = byteArrayOutputStream;
-            r12 = byteArrayOutputStream3;
-            if (byteArrayOutputStream2 != null) {
-            }
-            if (r12 == 0) {
-            }
-        }
-        try {
-            byte[] bArr = new byte[1024];
-            while (true) {
-                int read = r1.read(bArr, 0, 1024);
-                if (read == -1) {
-                    break;
-                } else {
-                    byteArrayOutputStream2.write(bArr, 0, read);
-                }
-            }
-            byte[] byteArray = byteArrayOutputStream2.toByteArray();
-            this.data = byteArray;
-            ByteBuffer wrap = ByteBuffer.wrap(byteArray);
-            this.buffer = wrap;
-            wrap.order(ByteOrder.LITTLE_ENDIAN);
-            try {
-                byteArrayOutputStream2.close();
-            } catch (Exception e5) {
-                FileLog.e(e5);
-            }
-            try {
-                r1.close();
-            } catch (Exception e6) {
-                FileLog.e(e6);
-            }
-            if (str == null || str.length() == 0) {
-                str = Locale.getDefault().getCountry().toLowerCase();
-            }
-            this.defaultCountry = str;
-            this.callingCodeOffsets = new HashMap(NotificationCenter.goingToPreviewTheme);
-            this.callingCodeCountries = new HashMap(NotificationCenter.goingToPreviewTheme);
-            this.callingCodeData = new HashMap(10);
-            this.countryCallingCode = new HashMap(NotificationCenter.goingToPreviewTheme);
-            parseDataHeader();
-            this.initialzed = true;
-        } catch (Exception e7) {
-            e = e7;
-            byteArrayOutputStream3 = byteArrayOutputStream2;
-            e.printStackTrace();
-            if (byteArrayOutputStream3 != null) {
-                try {
-                    byteArrayOutputStream3.close();
-                } catch (Exception e8) {
-                    FileLog.e(e8);
-                }
-            }
-            if (r1 != 0) {
-                try {
-                    r1.close();
-                } catch (Exception e9) {
-                    FileLog.e(e9);
-                }
-            }
-        } catch (Throwable th3) {
-            th = th3;
-            r12 = r1;
-            if (byteArrayOutputStream2 != null) {
-            }
-            if (r12 == 0) {
-            }
-        }
-    }
-
     public void parseDataHeader() {
         int value32 = value32(0);
         int i = 4;
@@ -370,60 +425,6 @@ public class PhoneFormat {
         String str = this.defaultCallingCode;
         if (str != null) {
             callingCodeInfo(str);
-        }
-    }
-
-    short value16(int i) {
-        if (i + 2 > this.data.length) {
-            return (short) 0;
-        }
-        this.buffer.position(i);
-        return this.buffer.getShort();
-    }
-
-    int value32(int i) {
-        if (i + 4 > this.data.length) {
-            return 0;
-        }
-        this.buffer.position(i);
-        return this.buffer.getInt();
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x000d, code lost:
-    
-        if (r5 != r1) goto L10;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x000f, code lost:
-    
-        return "";
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x0015, code lost:
-    
-        return new java.lang.String(r2, r5, r1);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x000c, code lost:
-    
-        r1 = r1 - r5;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public String valueString(int i) {
-        int i2 = i;
-        while (true) {
-            try {
-                byte[] bArr = this.data;
-                if (i2 >= bArr.length) {
-                    return "";
-                }
-                if (bArr[i2] == 0) {
-                    break;
-                }
-                i2++;
-            } catch (Exception e) {
-                e.printStackTrace();
-                return "";
-            }
         }
     }
 }

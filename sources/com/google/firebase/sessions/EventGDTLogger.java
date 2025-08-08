@@ -10,33 +10,14 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.Charsets;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class EventGDTLogger implements EventGDTLoggerInterface {
     public static final Companion Companion = new Companion(null);
     private final Provider transportFactoryProvider;
 
-    public static final class Companion {
-        private Companion() {
-        }
-
-        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
-            this();
-        }
-    }
-
     public EventGDTLogger(Provider transportFactoryProvider) {
         Intrinsics.checkNotNullParameter(transportFactoryProvider, "transportFactoryProvider");
         this.transportFactoryProvider = transportFactoryProvider;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public final byte[] encode(SessionEvent sessionEvent) {
-        String encode = SessionEvents.INSTANCE.getSESSION_EVENT_ENCODER$com_google_firebase_firebase_sessions().encode(sessionEvent);
-        Intrinsics.checkNotNullExpressionValue(encode, "SessionEvents.SESSION_EVENT_ENCODER.encode(value)");
-        Log.d("EventGDTLogger", "Session Event: " + encode);
-        byte[] bytes = encode.getBytes(Charsets.UTF_8);
-        Intrinsics.checkNotNullExpressionValue(bytes, "this as java.lang.String).getBytes(charset)");
-        return bytes;
     }
 
     @Override // com.google.firebase.sessions.EventGDTLoggerInterface
@@ -50,5 +31,24 @@ public final class EventGDTLogger implements EventGDTLoggerInterface {
                 return encode;
             }
         }).send(Event.ofData(sessionEvent));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final byte[] encode(SessionEvent sessionEvent) {
+        String encode = SessionEvents.INSTANCE.getSESSION_EVENT_ENCODER$com_google_firebase_firebase_sessions().encode(sessionEvent);
+        Intrinsics.checkNotNullExpressionValue(encode, "SessionEvents.SESSION_EVENT_ENCODER.encode(value)");
+        Log.d("EventGDTLogger", "Session Event: " + encode);
+        byte[] bytes = encode.getBytes(Charsets.UTF_8);
+        Intrinsics.checkNotNullExpressionValue(bytes, "this as java.lang.String).getBytes(charset)");
+        return bytes;
+    }
+
+    public static final class Companion {
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        private Companion() {
+        }
     }
 }

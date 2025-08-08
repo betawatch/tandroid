@@ -14,6 +14,19 @@ public class FabBackgroundDrawable extends Drawable {
     private Bitmap shadowBitmap;
     private Paint shadowPaint;
 
+    @Override // android.graphics.drawable.Drawable
+    public int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setAlpha(int i) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setColorFilter(ColorFilter colorFilter) {
+    }
+
     public FabBackgroundDrawable() {
         Paint paint = new Paint();
         this.shadowPaint = paint;
@@ -35,18 +48,6 @@ public class FabBackgroundDrawable extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public boolean getPadding(Rect rect) {
-        int dp = AndroidUtilities.dp(4.0f);
-        rect.set(dp, dp, dp, dp);
-        return true;
-    }
-
-    @Override // android.graphics.drawable.Drawable
     protected void onBoundsChange(Rect rect) {
         int min = Math.min(rect.width(), rect.height());
         if (min <= 0) {
@@ -58,16 +59,15 @@ public class FabBackgroundDrawable extends Drawable {
         new Canvas(this.shadowBitmap).drawCircle(f, f, r5 - AndroidUtilities.dp(4.0f), new Paint(1));
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public void setAlpha(int i) {
-    }
-
     public void setColor(int i) {
         this.bgPaint.setColor(i);
         invalidateSelf();
     }
 
     @Override // android.graphics.drawable.Drawable
-    public void setColorFilter(ColorFilter colorFilter) {
+    public boolean getPadding(Rect rect) {
+        int dp = AndroidUtilities.dp(4.0f);
+        rect.set(dp, dp, dp, dp);
+        return true;
     }
 }

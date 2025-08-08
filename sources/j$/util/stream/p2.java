@@ -4,11 +4,7 @@ package j$.util.stream;
 abstract class p2 extends X1 {
     protected boolean b;
 
-    p2(e2 e2Var) {
-        super(e2Var);
-    }
-
-    @Override // j$.util.stream.X1, j$.util.stream.e2
+    @Override // j$.util.stream.X1, j$.util.stream.d2
     public final boolean q() {
         this.b = true;
         return false;

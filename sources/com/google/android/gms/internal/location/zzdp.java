@@ -48,6 +48,18 @@ public abstract class zzdp extends AbstractCollection implements Serializable {
         return toArray(zza);
     }
 
+    abstract int zza(Object[] objArr, int i);
+
+    abstract int zzb();
+
+    abstract int zzc();
+
+    public abstract zzds zzd();
+
+    abstract boolean zzf();
+
+    abstract Object[] zzg();
+
     @Override // java.util.AbstractCollection, java.util.Collection
     public final Object[] toArray(Object[] objArr) {
         objArr.getClass();
@@ -65,16 +77,4 @@ public abstract class zzdp extends AbstractCollection implements Serializable {
         zza(objArr, 0);
         return objArr;
     }
-
-    abstract int zza(Object[] objArr, int i);
-
-    abstract int zzb();
-
-    abstract int zzc();
-
-    public abstract zzds zzd();
-
-    abstract boolean zzf();
-
-    abstract Object[] zzg();
 }

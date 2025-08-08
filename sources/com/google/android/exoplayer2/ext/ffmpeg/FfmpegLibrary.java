@@ -10,6 +10,15 @@ public final class FfmpegLibrary {
     private static int inputBufferPaddingSize;
     private static String version;
 
+    private static native int ffmpegGetInputBufferPaddingSize();
+
+    private static native String ffmpegGetVersion();
+
+    private static native boolean ffmpegHasDecoder(String str);
+
+    public static void setLibraries(String... strArr) {
+    }
+
     static {
         ExoPlayerLibraryInfo.registerModule("goog.exo.ffmpeg");
         inputBufferPaddingSize = -1;
@@ -18,11 +27,41 @@ public final class FfmpegLibrary {
     private FfmpegLibrary() {
     }
 
-    private static native int ffmpegGetInputBufferPaddingSize();
+    public static boolean isAvailable() {
+        return NativeLoader.loaded();
+    }
 
-    private static native String ffmpegGetVersion();
+    public static String getVersion() {
+        if (!isAvailable()) {
+            return null;
+        }
+        if (version == null) {
+            version = ffmpegGetVersion();
+        }
+        return version;
+    }
 
-    private static native boolean ffmpegHasDecoder(String str);
+    public static int getInputBufferPaddingSize() {
+        if (!isAvailable()) {
+            return -1;
+        }
+        if (inputBufferPaddingSize == -1) {
+            inputBufferPaddingSize = ffmpegGetInputBufferPaddingSize();
+        }
+        return inputBufferPaddingSize;
+    }
+
+    public static boolean supportsFormat(String str) {
+        String codecName;
+        if (!isAvailable() || (codecName = getCodecName(str)) == null) {
+            return false;
+        }
+        if (ffmpegHasDecoder(codecName)) {
+            return true;
+        }
+        Log.w(TAG, "No " + codecName + " decoder available. Check the FFmpeg build configuration.");
+        return false;
+    }
 
     static String getCodecName(String str) {
         str.hashCode();
@@ -62,44 +101,5 @@ public final class FfmpegLibrary {
             default:
                 return null;
         }
-    }
-
-    public static int getInputBufferPaddingSize() {
-        if (!isAvailable()) {
-            return -1;
-        }
-        if (inputBufferPaddingSize == -1) {
-            inputBufferPaddingSize = ffmpegGetInputBufferPaddingSize();
-        }
-        return inputBufferPaddingSize;
-    }
-
-    public static String getVersion() {
-        if (!isAvailable()) {
-            return null;
-        }
-        if (version == null) {
-            version = ffmpegGetVersion();
-        }
-        return version;
-    }
-
-    public static boolean isAvailable() {
-        return NativeLoader.loaded();
-    }
-
-    public static void setLibraries(String... strArr) {
-    }
-
-    public static boolean supportsFormat(String str) {
-        String codecName;
-        if (!isAvailable() || (codecName = getCodecName(str)) == null) {
-            return false;
-        }
-        if (ffmpegHasDecoder(codecName)) {
-            return true;
-        }
-        Log.w(TAG, "No " + codecName + " decoder available. Check the FFmpeg build configuration.");
-        return false;
     }
 }

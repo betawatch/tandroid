@@ -14,16 +14,6 @@ public final class zzfi$zzg extends zzjb implements zzkm {
     private boolean zzh;
     private float zzi;
 
-    public static final class zza extends zzjb.zzb implements zzkm {
-        private zza() {
-            super(zzfi$zzg.zzj);
-        }
-
-        /* synthetic */ zza(zzfk zzfkVar) {
-            this();
-        }
-    }
-
     public enum zzb implements zzje {
         zzc(0),
         zza(1),
@@ -32,8 +22,9 @@ public final class zzfi$zzg extends zzjb implements zzkm {
         private static final zzjh zzd = new zzfq();
         private final int zze;
 
-        zzb(int i) {
-            this.zze = i;
+        @Override // com.google.android.gms.internal.vision.zzje
+        public final int zza() {
+            return this.zze;
         }
 
         public static zzb zza(int i) {
@@ -58,9 +49,8 @@ public final class zzfi$zzg extends zzjb implements zzkm {
             return "<" + zzb.class.getName() + '@' + Integer.toHexString(System.identityHashCode(this)) + " number=" + this.zze + " name=" + name() + '>';
         }
 
-        @Override // com.google.android.gms.internal.vision.zzje
-        public final int zza() {
-            return this.zze;
+        zzb(int i) {
+            this.zze = i;
         }
     }
 
@@ -73,8 +63,9 @@ public final class zzfi$zzg extends zzjb implements zzkm {
         private static final zzjh zze = new zzft();
         private final int zzf;
 
-        zzc(int i) {
-            this.zzf = i;
+        @Override // com.google.android.gms.internal.vision.zzje
+        public final int zza() {
+            return this.zzf;
         }
 
         public static zzc zza(int i) {
@@ -102,9 +93,8 @@ public final class zzfi$zzg extends zzjb implements zzkm {
             return "<" + zzc.class.getName() + '@' + Integer.toHexString(System.identityHashCode(this)) + " number=" + this.zzf + " name=" + name() + '>';
         }
 
-        @Override // com.google.android.gms.internal.vision.zzje
-        public final int zza() {
-            return this.zzf;
+        zzc(int i) {
+            this.zzf = i;
         }
     }
 
@@ -117,8 +107,9 @@ public final class zzfi$zzg extends zzjb implements zzkm {
         private static final zzjh zze = new zzfu();
         private final int zzf;
 
-        zzd(int i) {
-            this.zzf = i;
+        @Override // com.google.android.gms.internal.vision.zzje
+        public final int zza() {
+            return this.zzf;
         }
 
         public static zzd zza(int i) {
@@ -146,16 +137,9 @@ public final class zzfi$zzg extends zzjb implements zzkm {
             return "<" + zzd.class.getName() + '@' + Integer.toHexString(System.identityHashCode(this)) + " number=" + this.zzf + " name=" + name() + '>';
         }
 
-        @Override // com.google.android.gms.internal.vision.zzje
-        public final int zza() {
-            return this.zzf;
+        zzd(int i) {
+            this.zzf = i;
         }
-    }
-
-    static {
-        zzfi$zzg zzfi_zzg = new zzfi$zzg();
-        zzj = zzfi_zzg;
-        zzjb.zza(zzfi$zzg.class, zzfi_zzg);
     }
 
     private zzfi$zzg() {
@@ -199,5 +183,21 @@ public final class zzfi$zzg extends zzjb implements zzkm {
             default:
                 throw new UnsupportedOperationException();
         }
+    }
+
+    public static final class zza extends zzjb.zzb implements zzkm {
+        private zza() {
+            super(zzfi$zzg.zzj);
+        }
+
+        /* synthetic */ zza(zzfk zzfkVar) {
+            this();
+        }
+    }
+
+    static {
+        zzfi$zzg zzfi_zzg = new zzfi$zzg();
+        zzj = zzfi_zzg;
+        zzjb.zza(zzfi$zzg.class, zzfi_zzg);
     }
 }

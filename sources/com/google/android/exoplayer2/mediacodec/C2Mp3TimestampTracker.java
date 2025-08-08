@@ -16,14 +16,6 @@ final class C2Mp3TimestampTracker {
     C2Mp3TimestampTracker() {
     }
 
-    private long getBufferTimestampUs(long j) {
-        return this.anchorTimestampUs + Math.max(0L, ((this.processedFrames - 529) * 1000000) / j);
-    }
-
-    public long getLastOutputBufferPresentationTimeUs(Format format) {
-        return getBufferTimestampUs(format.sampleRate);
-    }
-
     public void reset() {
         this.anchorTimestampUs = 0L;
         this.processedFrames = 0L;
@@ -43,15 +35,23 @@ final class C2Mp3TimestampTracker {
             i = (i << 8) | (byteBuffer.get(i2) & 255);
         }
         int parseMpegAudioFrameSampleCount = MpegAudioUtil.parseMpegAudioFrameSampleCount(i);
-        if (parseMpegAudioFrameSampleCount != -1) {
-            long bufferTimestampUs = getBufferTimestampUs(format.sampleRate);
-            this.processedFrames += parseMpegAudioFrameSampleCount;
-            return bufferTimestampUs;
+        if (parseMpegAudioFrameSampleCount == -1) {
+            this.seenInvalidMpegAudioHeader = true;
+            this.processedFrames = 0L;
+            this.anchorTimestampUs = decoderInputBuffer.timeUs;
+            Log.w("C2Mp3TimestampTracker", "MPEG audio header is invalid.");
+            return decoderInputBuffer.timeUs;
         }
-        this.seenInvalidMpegAudioHeader = true;
-        this.processedFrames = 0L;
-        this.anchorTimestampUs = decoderInputBuffer.timeUs;
-        Log.w("C2Mp3TimestampTracker", "MPEG audio header is invalid.");
-        return decoderInputBuffer.timeUs;
+        long bufferTimestampUs = getBufferTimestampUs(format.sampleRate);
+        this.processedFrames += parseMpegAudioFrameSampleCount;
+        return bufferTimestampUs;
+    }
+
+    public long getLastOutputBufferPresentationTimeUs(Format format) {
+        return getBufferTimestampUs(format.sampleRate);
+    }
+
+    private long getBufferTimestampUs(long j) {
+        return this.anchorTimestampUs + Math.max(0L, ((this.processedFrames - 529) * 1000000) / j);
     }
 }

@@ -9,11 +9,40 @@ import com.microsoft.appcenter.ingestion.models.json.LogSerializer;
 import java.util.HashMap;
 import java.util.UUID;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class AppCenterIngestion implements Ingestion {
     private final HttpClient mHttpClient;
     private final LogSerializer mLogSerializer;
     private String mLogUrl = "https://in.appcenter.ms";
+
+    public AppCenterIngestion(HttpClient httpClient, LogSerializer logSerializer) {
+        this.mLogSerializer = logSerializer;
+        this.mHttpClient = httpClient;
+    }
+
+    @Override // com.microsoft.appcenter.ingestion.Ingestion
+    public void setLogUrl(String str) {
+        this.mLogUrl = str;
+    }
+
+    @Override // com.microsoft.appcenter.ingestion.Ingestion
+    public ServiceCall sendAsync(String str, UUID uuid, LogContainer logContainer, ServiceCallback serviceCallback) {
+        HashMap hashMap = new HashMap();
+        hashMap.put("Install-ID", uuid.toString());
+        hashMap.put("App-Secret", str);
+        IngestionCallTemplate ingestionCallTemplate = new IngestionCallTemplate(this.mLogSerializer, logContainer);
+        return this.mHttpClient.callAsync(this.mLogUrl + "/logs?api-version=1.0.0", "POST", hashMap, ingestionCallTemplate, serviceCallback);
+    }
+
+    @Override // java.io.Closeable, java.lang.AutoCloseable
+    public void close() {
+        this.mHttpClient.close();
+    }
+
+    @Override // com.microsoft.appcenter.ingestion.Ingestion
+    public void reopen() {
+        this.mHttpClient.reopen();
+    }
 
     private static class IngestionCallTemplate extends AbstractAppCallTemplate {
         private final LogContainer mLogContainer;
@@ -28,34 +57,5 @@ public class AppCenterIngestion implements Ingestion {
         public String buildRequestBody() {
             return this.mLogSerializer.serializeContainer(this.mLogContainer);
         }
-    }
-
-    public AppCenterIngestion(HttpClient httpClient, LogSerializer logSerializer) {
-        this.mLogSerializer = logSerializer;
-        this.mHttpClient = httpClient;
-    }
-
-    @Override // java.io.Closeable, java.lang.AutoCloseable
-    public void close() {
-        this.mHttpClient.close();
-    }
-
-    @Override // com.microsoft.appcenter.ingestion.Ingestion
-    public void reopen() {
-        this.mHttpClient.reopen();
-    }
-
-    @Override // com.microsoft.appcenter.ingestion.Ingestion
-    public ServiceCall sendAsync(String str, UUID uuid, LogContainer logContainer, ServiceCallback serviceCallback) {
-        HashMap hashMap = new HashMap();
-        hashMap.put("Install-ID", uuid.toString());
-        hashMap.put("App-Secret", str);
-        IngestionCallTemplate ingestionCallTemplate = new IngestionCallTemplate(this.mLogSerializer, logContainer);
-        return this.mHttpClient.callAsync(this.mLogUrl + "/logs?api-version=1.0.0", "POST", hashMap, ingestionCallTemplate, serviceCallback);
-    }
-
-    @Override // com.microsoft.appcenter.ingestion.Ingestion
-    public void setLogUrl(String str) {
-        this.mLogUrl = str;
     }
 }

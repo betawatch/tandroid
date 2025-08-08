@@ -2,14 +2,8 @@ package com.google.common.collect;
 
 /* loaded from: classes.dex */
 public abstract class ObjectArrays {
-    static Object checkElementNotNull(Object obj, int i) {
-        if (obj != null) {
-            return obj;
-        }
-        StringBuilder sb = new StringBuilder(20);
-        sb.append("at index ");
-        sb.append(i);
-        throw new NullPointerException(sb.toString());
+    public static Object[] newArray(Object[] objArr, int i) {
+        return Platform.newArray(objArr, i);
     }
 
     static Object[] checkElementsNotNull(Object... objArr) {
@@ -24,7 +18,13 @@ public abstract class ObjectArrays {
         return objArr;
     }
 
-    public static Object[] newArray(Object[] objArr, int i) {
-        return Platform.newArray(objArr, i);
+    static Object checkElementNotNull(Object obj, int i) {
+        if (obj != null) {
+            return obj;
+        }
+        StringBuilder sb = new StringBuilder(20);
+        sb.append("at index ");
+        sb.append(i);
+        throw new NullPointerException(sb.toString());
     }
 }

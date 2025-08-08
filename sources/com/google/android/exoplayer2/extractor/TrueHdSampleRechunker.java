@@ -14,16 +14,21 @@ public final class TrueHdSampleRechunker {
     private boolean foundSyncframe;
     private final byte[] syncframePrefix = new byte[10];
 
-    public void outputPendingSampleMetadata(TrackOutput trackOutput, TrackOutput.CryptoData cryptoData) {
-        if (this.chunkSampleCount > 0) {
-            trackOutput.sampleMetadata(this.chunkTimeUs, this.chunkFlags, this.chunkSize, this.chunkOffset, cryptoData);
-            this.chunkSampleCount = 0;
-        }
-    }
-
     public void reset() {
         this.foundSyncframe = false;
         this.chunkSampleCount = 0;
+    }
+
+    public void startSample(ExtractorInput extractorInput) {
+        if (this.foundSyncframe) {
+            return;
+        }
+        extractorInput.peekFully(this.syncframePrefix, 0, 10);
+        extractorInput.resetPeekPosition();
+        if (Ac3Util.parseTrueHdSyncframeAudioSampleCount(this.syncframePrefix) == 0) {
+            return;
+        }
+        this.foundSyncframe = true;
     }
 
     public void sampleMetadata(TrackOutput trackOutput, long j, int i, int i2, int i3, TrackOutput.CryptoData cryptoData) {
@@ -45,15 +50,10 @@ public final class TrueHdSampleRechunker {
         }
     }
 
-    public void startSample(ExtractorInput extractorInput) {
-        if (this.foundSyncframe) {
-            return;
+    public void outputPendingSampleMetadata(TrackOutput trackOutput, TrackOutput.CryptoData cryptoData) {
+        if (this.chunkSampleCount > 0) {
+            trackOutput.sampleMetadata(this.chunkTimeUs, this.chunkFlags, this.chunkSize, this.chunkOffset, cryptoData);
+            this.chunkSampleCount = 0;
         }
-        extractorInput.peekFully(this.syncframePrefix, 0, 10);
-        extractorInput.resetPeekPosition();
-        if (Ac3Util.parseTrueHdSyncframeAudioSampleCount(this.syncframePrefix) == 0) {
-            return;
-        }
-        this.foundSyncframe = true;
     }
 }

@@ -28,11 +28,11 @@ final class VideoTagPayloadReader extends TagPayloadReader {
         int readUnsignedByte = parsableByteArray.readUnsignedByte();
         int i = (readUnsignedByte >> 4) & 15;
         int i2 = readUnsignedByte & 15;
-        if (i2 == 7) {
-            this.frameType = i;
-            return i != 5;
+        if (i2 != 7) {
+            throw new TagPayloadReader.UnsupportedFormatException("Video format not supported: " + i2);
         }
-        throw new TagPayloadReader.UnsupportedFormatException("Video format not supported: " + i2);
+        this.frameType = i;
+        return i != 5;
     }
 
     @Override // com.google.android.exoplayer2.extractor.flv.TagPayloadReader

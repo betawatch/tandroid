@@ -21,18 +21,18 @@ public final class InternalFrame extends Id3Frame {
     public final String domain;
     public final String text;
 
-    InternalFrame(Parcel parcel) {
-        super("----");
-        this.domain = (String) Util.castNonNull(parcel.readString());
-        this.description = (String) Util.castNonNull(parcel.readString());
-        this.text = (String) Util.castNonNull(parcel.readString());
-    }
-
     public InternalFrame(String str, String str2, String str3) {
         super("----");
         this.domain = str;
         this.description = str2;
         this.text = str3;
+    }
+
+    InternalFrame(Parcel parcel) {
+        super("----");
+        this.domain = (String) Util.castNonNull(parcel.readString());
+        this.description = (String) Util.castNonNull(parcel.readString());
+        this.text = (String) Util.castNonNull(parcel.readString());
     }
 
     public boolean equals(Object obj) {

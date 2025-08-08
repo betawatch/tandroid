@@ -154,30 +154,6 @@ final class zzak implements ObjectEncoderContext {
         return this;
     }
 
-    @Override // com.google.firebase.encoders.ObjectEncoderContext
-    public final /* synthetic */ ObjectEncoderContext add(FieldDescriptor fieldDescriptor, int i) {
-        zzd(fieldDescriptor, i, true);
-        return this;
-    }
-
-    @Override // com.google.firebase.encoders.ObjectEncoderContext
-    public final /* synthetic */ ObjectEncoderContext add(FieldDescriptor fieldDescriptor, long j) {
-        zze(fieldDescriptor, j, true);
-        return this;
-    }
-
-    @Override // com.google.firebase.encoders.ObjectEncoderContext
-    public final ObjectEncoderContext add(FieldDescriptor fieldDescriptor, Object obj) {
-        zzc(fieldDescriptor, obj, true);
-        return this;
-    }
-
-    @Override // com.google.firebase.encoders.ObjectEncoderContext
-    public final /* synthetic */ ObjectEncoderContext add(FieldDescriptor fieldDescriptor, boolean z) {
-        zzd(fieldDescriptor, z ? 1 : 0, true);
-        return this;
-    }
-
     final ObjectEncoderContext zza(FieldDescriptor fieldDescriptor, double d, boolean z) {
         if (z && d == 0.0d) {
             return this;
@@ -322,6 +298,30 @@ final class zzak implements ObjectEncoderContext {
             throw new EncodingException("No encoder for ".concat(String.valueOf(obj.getClass())));
         }
         objectEncoder.encode(obj, this);
+        return this;
+    }
+
+    @Override // com.google.firebase.encoders.ObjectEncoderContext
+    public final /* synthetic */ ObjectEncoderContext add(FieldDescriptor fieldDescriptor, int i) {
+        zzd(fieldDescriptor, i, true);
+        return this;
+    }
+
+    @Override // com.google.firebase.encoders.ObjectEncoderContext
+    public final /* synthetic */ ObjectEncoderContext add(FieldDescriptor fieldDescriptor, long j) {
+        zze(fieldDescriptor, j, true);
+        return this;
+    }
+
+    @Override // com.google.firebase.encoders.ObjectEncoderContext
+    public final ObjectEncoderContext add(FieldDescriptor fieldDescriptor, Object obj) {
+        zzc(fieldDescriptor, obj, true);
+        return this;
+    }
+
+    @Override // com.google.firebase.encoders.ObjectEncoderContext
+    public final /* synthetic */ ObjectEncoderContext add(FieldDescriptor fieldDescriptor, boolean z) {
+        zzd(fieldDescriptor, z ? 1 : 0, true);
         return this;
     }
 }

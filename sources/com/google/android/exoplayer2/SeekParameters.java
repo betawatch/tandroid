@@ -29,21 +29,6 @@ public final class SeekParameters {
         this.toleranceAfterUs = j2;
     }
 
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || SeekParameters.class != obj.getClass()) {
-            return false;
-        }
-        SeekParameters seekParameters = (SeekParameters) obj;
-        return this.toleranceBeforeUs == seekParameters.toleranceBeforeUs && this.toleranceAfterUs == seekParameters.toleranceAfterUs;
-    }
-
-    public int hashCode() {
-        return (((int) this.toleranceBeforeUs) * 31) + ((int) this.toleranceAfterUs);
-    }
-
     public long resolveSeekPositionUs(long j, long j2, long j3) {
         long j4 = this.toleranceBeforeUs;
         if (j4 == 0 && this.toleranceAfterUs == 0) {
@@ -57,5 +42,20 @@ public final class SeekParameters {
             z = true;
         }
         return (z2 && z) ? Math.abs(j2 - j) <= Math.abs(j3 - j) ? j2 : j3 : z2 ? j2 : z ? j3 : subtractWithOverflowDefault;
+    }
+
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || SeekParameters.class != obj.getClass()) {
+            return false;
+        }
+        SeekParameters seekParameters = (SeekParameters) obj;
+        return this.toleranceBeforeUs == seekParameters.toleranceBeforeUs && this.toleranceAfterUs == seekParameters.toleranceAfterUs;
+    }
+
+    public int hashCode() {
+        return (((int) this.toleranceBeforeUs) * 31) + ((int) this.toleranceAfterUs);
     }
 }

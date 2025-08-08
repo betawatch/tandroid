@@ -11,11 +11,11 @@ public abstract class PreferencesMapCompat {
     public static final Companion Companion = new Companion(null);
 
     public static final class Companion {
-        private Companion() {
-        }
-
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
+        }
+
+        private Companion() {
         }
 
         public final PreferencesProto$PreferenceMap readFrom(InputStream input) {

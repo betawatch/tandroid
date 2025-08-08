@@ -11,55 +11,9 @@ import java.util.concurrent.TimeUnit;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 class Store {
     final SharedPreferences store;
-
-    static class Token {
-        private static final long REFRESH_PERIOD_MILLIS = TimeUnit.DAYS.toMillis(7);
-        final String appVersion;
-        final long timestamp;
-        final String token;
-
-        private Token(String str, String str2, long j) {
-            this.token = str;
-            this.appVersion = str2;
-            this.timestamp = j;
-        }
-
-        static String encode(String str, String str2, long j) {
-            try {
-                JSONObject jSONObject = new JSONObject();
-                jSONObject.put("token", str);
-                jSONObject.put("appVersion", str2);
-                jSONObject.put("timestamp", j);
-                return jSONObject.toString();
-            } catch (JSONException e) {
-                Log.w("FirebaseMessaging", "Failed to encode token: " + e);
-                return null;
-            }
-        }
-
-        static Token parse(String str) {
-            if (TextUtils.isEmpty(str)) {
-                return null;
-            }
-            if (!str.startsWith("{")) {
-                return new Token(str, null, 0L);
-            }
-            try {
-                JSONObject jSONObject = new JSONObject(str);
-                return new Token(jSONObject.getString("token"), jSONObject.getString("appVersion"), jSONObject.getLong("timestamp"));
-            } catch (JSONException e) {
-                Log.w("FirebaseMessaging", "Failed to parse token: " + e);
-                return null;
-            }
-        }
-
-        boolean needsRefresh(String str) {
-            return System.currentTimeMillis() > this.timestamp + REFRESH_PERIOD_MILLIS || !str.equals(this.appVersion);
-        }
-    }
 
     public Store(Context context) {
         this.store = context.getSharedPreferences("com.google.android.gms.appid", 0);
@@ -84,6 +38,10 @@ class Store {
         }
     }
 
+    public synchronized boolean isEmpty() {
+        return this.store.getAll().isEmpty();
+    }
+
     private String createTokenKey(String str, String str2) {
         return str + "|T|" + str2 + "|*";
     }
@@ -96,10 +54,6 @@ class Store {
         return Token.parse(this.store.getString(createTokenKey(str, str2), null));
     }
 
-    public synchronized boolean isEmpty() {
-        return this.store.getAll().isEmpty();
-    }
-
     public synchronized void saveToken(String str, String str2, String str3, String str4) {
         String encode = Token.encode(str3, str4, System.currentTimeMillis());
         if (encode == null) {
@@ -108,5 +62,51 @@ class Store {
         SharedPreferences.Editor edit = this.store.edit();
         edit.putString(createTokenKey(str, str2), encode);
         edit.commit();
+    }
+
+    static class Token {
+        private static final long REFRESH_PERIOD_MILLIS = TimeUnit.DAYS.toMillis(7);
+        final String appVersion;
+        final long timestamp;
+        final String token;
+
+        private Token(String str, String str2, long j) {
+            this.token = str;
+            this.appVersion = str2;
+            this.timestamp = j;
+        }
+
+        static Token parse(String str) {
+            if (TextUtils.isEmpty(str)) {
+                return null;
+            }
+            if (str.startsWith("{")) {
+                try {
+                    JSONObject jSONObject = new JSONObject(str);
+                    return new Token(jSONObject.getString("token"), jSONObject.getString("appVersion"), jSONObject.getLong("timestamp"));
+                } catch (JSONException e) {
+                    Log.w("FirebaseMessaging", "Failed to parse token: " + e);
+                    return null;
+                }
+            }
+            return new Token(str, null, 0L);
+        }
+
+        static String encode(String str, String str2, long j) {
+            try {
+                JSONObject jSONObject = new JSONObject();
+                jSONObject.put("token", str);
+                jSONObject.put("appVersion", str2);
+                jSONObject.put("timestamp", j);
+                return jSONObject.toString();
+            } catch (JSONException e) {
+                Log.w("FirebaseMessaging", "Failed to encode token: " + e);
+                return null;
+            }
+        }
+
+        boolean needsRefresh(String str) {
+            return System.currentTimeMillis() > this.timestamp + REFRESH_PERIOD_MILLIS || !str.equals(this.appVersion);
+        }
     }
 }

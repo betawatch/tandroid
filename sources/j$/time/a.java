@@ -10,12 +10,7 @@ final class a extends b implements Serializable {
         this.a = zoneId;
     }
 
-    @Override // j$.time.b
-    public final long a() {
-        return System.currentTimeMillis();
-    }
-
-    public final ZoneId c() {
+    public final ZoneId a() {
         return this.a;
     }
 

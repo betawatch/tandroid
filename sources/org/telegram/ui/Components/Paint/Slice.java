@@ -32,6 +32,14 @@ public class Slice {
         storeData(byteBuffer);
     }
 
+    public void cleanResources() {
+        File file = this.file;
+        if (file != null) {
+            file.delete();
+            this.file = null;
+        }
+    }
+
     private void storeData(ByteBuffer byteBuffer) {
         try {
             byte[] array = byteBuffer.array();
@@ -47,14 +55,6 @@ public class Slice {
             fileOutputStream.close();
         } catch (Exception e) {
             FileLog.e(e);
-        }
-    }
-
-    public void cleanResources() {
-        File file = this.file;
-        if (file != null) {
-            file.delete();
-            this.file = null;
         }
     }
 
@@ -77,31 +77,20 @@ public class Slice {
                     }
                     byteArrayOutputStream.write(bArr2, 0, inflate);
                 }
-                if (inflater.finished()) {
+                if (!inflater.finished()) {
+                    inflater.needsInput();
+                } else {
                     inflater.end();
                     ByteBuffer wrap = ByteBuffer.wrap(byteArrayOutputStream.toByteArray(), 0, byteArrayOutputStream.size());
                     byteArrayOutputStream.close();
                     fileInputStream.close();
                     return wrap;
                 }
-                inflater.needsInput();
             }
         } catch (Exception e) {
             FileLog.e(e);
             return null;
         }
-    }
-
-    public int getHeight() {
-        return (int) this.bounds.height();
-    }
-
-    public int getTexture() {
-        return this.texture;
-    }
-
-    public int getWidth() {
-        return (int) this.bounds.width();
     }
 
     public int getX() {
@@ -110,5 +99,17 @@ public class Slice {
 
     public int getY() {
         return (int) this.bounds.top;
+    }
+
+    public int getWidth() {
+        return (int) this.bounds.width();
+    }
+
+    public int getHeight() {
+        return (int) this.bounds.height();
+    }
+
+    public int getTexture() {
+        return this.texture;
     }
 }

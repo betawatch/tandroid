@@ -4,12 +4,12 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.coroutines.EmptyCoroutineContext;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class RestrictedContinuationImpl extends BaseContinuationImpl {
     public RestrictedContinuationImpl(Continuation continuation) {
         super(continuation);
         if (continuation != null && continuation.getContext() != EmptyCoroutineContext.INSTANCE) {
-            throw new IllegalArgumentException("Coroutines with restricted suspension must have EmptyCoroutineContext".toString());
+            throw new IllegalArgumentException("Coroutines with restricted suspension must have EmptyCoroutineContext");
         }
     }
 

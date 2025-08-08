@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 class QueueFileLogStore implements FileLogStore {
     private static final Charset UTF_8 = Charset.forName("UTF-8");
     private QueueFile logFile;
@@ -28,6 +28,27 @@ class QueueFileLogStore implements FileLogStore {
     QueueFileLogStore(File file, int i) {
         this.workingFile = file;
         this.maxLogSize = i;
+    }
+
+    @Override // com.google.firebase.crashlytics.internal.metadata.FileLogStore
+    public byte[] getLogAsBytes() {
+        LogBytes logBytes = getLogBytes();
+        if (logBytes == null) {
+            return null;
+        }
+        int i = logBytes.offset;
+        byte[] bArr = new byte[i];
+        System.arraycopy(logBytes.bytes, 0, bArr, 0, i);
+        return bArr;
+    }
+
+    @Override // com.google.firebase.crashlytics.internal.metadata.FileLogStore
+    public String getLogAsString() {
+        byte[] logAsBytes = getLogAsBytes();
+        if (logAsBytes != null) {
+            return new String(logAsBytes, UTF_8);
+        }
+        return null;
     }
 
     private LogBytes getLogBytes() {
@@ -60,16 +81,6 @@ class QueueFileLogStore implements FileLogStore {
         return new LogBytes(bArr, iArr[0]);
     }
 
-    private void openLogFile() {
-        if (this.logFile == null) {
-            try {
-                this.logFile = new QueueFile(this.workingFile);
-            } catch (IOException e) {
-                Logger.getLogger().e("Could not open log file: " + this.workingFile, e);
-            }
-        }
-    }
-
     @Override // com.google.firebase.crashlytics.internal.metadata.FileLogStore
     public void closeLogFile() {
         CommonUtils.closeOrLog(this.logFile, "There was a problem closing the Crashlytics log file.");
@@ -82,24 +93,13 @@ class QueueFileLogStore implements FileLogStore {
         this.workingFile.delete();
     }
 
-    @Override // com.google.firebase.crashlytics.internal.metadata.FileLogStore
-    public byte[] getLogAsBytes() {
-        LogBytes logBytes = getLogBytes();
-        if (logBytes == null) {
-            return null;
+    private void openLogFile() {
+        if (this.logFile == null) {
+            try {
+                this.logFile = new QueueFile(this.workingFile);
+            } catch (IOException e) {
+                Logger.getLogger().e("Could not open log file: " + this.workingFile, e);
+            }
         }
-        int i = logBytes.offset;
-        byte[] bArr = new byte[i];
-        System.arraycopy(logBytes.bytes, 0, bArr, 0, i);
-        return bArr;
-    }
-
-    @Override // com.google.firebase.crashlytics.internal.metadata.FileLogStore
-    public String getLogAsString() {
-        byte[] logAsBytes = getLogAsBytes();
-        if (logAsBytes != null) {
-            return new String(logAsBytes, UTF_8);
-        }
-        return null;
     }
 }

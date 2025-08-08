@@ -2,249 +2,264 @@ package j$.util.stream;
 
 import j$.util.Spliterator;
 import j$.util.function.BiConsumer;
-import j$.util.function.LongFunction;
-import j$.util.function.Supplier;
 import j$.util.stream.IntStream;
 import j$.util.stream.Stream;
 import java.util.Iterator;
+import java.util.LongSummaryStatistics;
+import java.util.OptionalDouble;
+import java.util.OptionalLong;
+import java.util.Spliterator;
+import java.util.function.BiConsumer;
+import java.util.function.LongBinaryOperator;
+import java.util.function.LongConsumer;
+import java.util.function.LongFunction;
+import java.util.function.LongPredicate;
+import java.util.function.LongToDoubleFunction;
+import java.util.function.LongToIntFunction;
+import java.util.function.LongUnaryOperator;
+import java.util.function.ObjLongConsumer;
+import java.util.function.Supplier;
+import java.util.stream.DoubleStream;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class j0 implements LongStream {
-    public final /* synthetic */ java.util.stream.LongStream a;
+public final /* synthetic */ class j0 implements java.util.stream.LongStream {
+    public final /* synthetic */ LongStream a;
 
-    private /* synthetic */ j0(java.util.stream.LongStream longStream) {
+    private /* synthetic */ j0(LongStream longStream) {
         this.a = longStream;
     }
 
-    public static /* synthetic */ LongStream f0(java.util.stream.LongStream longStream) {
+    public static /* synthetic */ java.util.stream.LongStream f0(LongStream longStream) {
         if (longStream == null) {
             return null;
         }
-        return longStream instanceof k0 ? ((k0) longStream).a : new j0(longStream);
+        return longStream instanceof i0 ? ((i0) longStream).a : new j0(longStream);
     }
 
-    @Override // j$.util.stream.LongStream
-    public final /* synthetic */ boolean C(j$.util.function.W w) {
-        return this.a.anyMatch(w == null ? null : w.a);
+    @Override // java.util.stream.LongStream
+    public final /* synthetic */ boolean allMatch(LongPredicate longPredicate) {
+        return this.a.s(j$.util.function.b0.a(longPredicate));
     }
 
-    @Override // j$.util.stream.LongStream
-    public final /* synthetic */ boolean E(j$.util.function.W w) {
-        return this.a.noneMatch(w == null ? null : w.a);
+    @Override // java.util.stream.LongStream
+    public final /* synthetic */ boolean anyMatch(LongPredicate longPredicate) {
+        return this.a.C(j$.util.function.b0.a(longPredicate));
     }
 
-    @Override // j$.util.stream.LongStream
-    public final /* synthetic */ LongStream K(j$.util.function.W w) {
-        return f0(this.a.filter(w == null ? null : w.a));
-    }
-
-    @Override // j$.util.stream.LongStream
-    public final /* synthetic */ void T(j$.util.function.T t) {
-        this.a.forEachOrdered(j$.util.function.S.a(t));
-    }
-
-    @Override // j$.util.stream.LongStream
-    public final /* synthetic */ Object W(Supplier supplier, j$.util.function.l0 l0Var, BiConsumer biConsumer) {
-        return this.a.collect(j$.util.function.q0.a(supplier), j$.util.function.k0.a(l0Var), j$.util.function.a.a(biConsumer));
-    }
-
-    @Override // j$.util.stream.LongStream
-    public final /* synthetic */ E asDoubleStream() {
+    @Override // java.util.stream.LongStream
+    public final /* synthetic */ DoubleStream asDoubleStream() {
         return C.f0(this.a.asDoubleStream());
     }
 
-    @Override // j$.util.stream.LongStream
-    public final /* synthetic */ j$.util.j average() {
-        return j$.util.A.q(this.a.average());
+    @Override // java.util.stream.LongStream
+    public final /* synthetic */ OptionalDouble average() {
+        return j$.util.A.v(this.a.average());
     }
 
-    @Override // j$.util.stream.LongStream
-    public final /* synthetic */ Stream boxed() {
-        return Stream.VivifiedWrapper.convert(this.a.boxed());
+    @Override // java.util.stream.LongStream
+    public final /* synthetic */ java.util.stream.Stream boxed() {
+        return Stream.Wrapper.convert(this.a.boxed());
     }
 
-    @Override // j$.util.stream.LongStream
-    public final /* synthetic */ void c(j$.util.function.T t) {
-        this.a.forEach(j$.util.function.S.a(t));
-    }
-
-    @Override // j$.util.stream.BaseStream, java.lang.AutoCloseable
+    @Override // java.util.stream.BaseStream, java.lang.AutoCloseable
     public final /* synthetic */ void close() {
         this.a.close();
     }
 
-    @Override // j$.util.stream.LongStream
+    @Override // java.util.stream.LongStream
+    public final /* synthetic */ Object collect(Supplier supplier, ObjLongConsumer objLongConsumer, BiConsumer biConsumer) {
+        return this.a.W(j$.util.function.x0.a(supplier), j$.util.function.r0.a(objLongConsumer), BiConsumer.VivifiedWrapper.convert(biConsumer));
+    }
+
+    @Override // java.util.stream.LongStream
     public final /* synthetic */ long count() {
         return this.a.count();
     }
 
-    @Override // j$.util.stream.LongStream
-    public final /* synthetic */ LongStream distinct() {
+    @Override // java.util.stream.LongStream
+    public final /* synthetic */ java.util.stream.LongStream distinct() {
         return f0(this.a.distinct());
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        java.util.stream.LongStream longStream = this.a;
+        LongStream longStream = this.a;
         if (obj instanceof j0) {
             obj = ((j0) obj).a;
         }
         return longStream.equals(obj);
     }
 
-    @Override // j$.util.stream.LongStream
-    public final /* synthetic */ j$.util.l findAny() {
-        return j$.util.A.t(this.a.findAny());
+    @Override // java.util.stream.LongStream
+    public final /* synthetic */ java.util.stream.LongStream filter(LongPredicate longPredicate) {
+        return f0(this.a.K(j$.util.function.b0.a(longPredicate)));
     }
 
-    @Override // j$.util.stream.LongStream
-    public final /* synthetic */ j$.util.l findFirst() {
-        return j$.util.A.t(this.a.findFirst());
+    @Override // java.util.stream.LongStream
+    public final /* synthetic */ OptionalLong findAny() {
+        return j$.util.A.x(this.a.findAny());
     }
 
-    @Override // j$.util.stream.LongStream
-    public final /* synthetic */ j$.util.l g(j$.util.function.O o) {
-        return j$.util.A.t(this.a.reduce(j$.util.function.N.a(o)));
+    @Override // java.util.stream.LongStream
+    public final /* synthetic */ OptionalLong findFirst() {
+        return j$.util.A.x(this.a.findFirst());
+    }
+
+    @Override // java.util.stream.LongStream
+    public final /* synthetic */ java.util.stream.LongStream flatMap(LongFunction longFunction) {
+        return f0(this.a.n(j$.util.function.Z.a(longFunction)));
+    }
+
+    @Override // java.util.stream.LongStream
+    public final /* synthetic */ void forEach(LongConsumer longConsumer) {
+        this.a.c(j$.util.function.W.a(longConsumer));
+    }
+
+    @Override // java.util.stream.LongStream
+    public final /* synthetic */ void forEachOrdered(LongConsumer longConsumer) {
+        this.a.T(j$.util.function.W.a(longConsumer));
     }
 
     public final /* synthetic */ int hashCode() {
         return this.a.hashCode();
     }
 
-    @Override // j$.util.stream.BaseStream
+    @Override // java.util.stream.BaseStream
     public final /* synthetic */ boolean isParallel() {
         return this.a.isParallel();
     }
 
-    /* JADX WARN: Type inference failed for: r0v1, types: [java.util.PrimitiveIterator$OfLong] */
-    @Override // j$.util.stream.LongStream, j$.util.stream.BaseStream, j$.util.stream.E
-    public final /* synthetic */ j$.util.x iterator() {
-        return j$.util.v.b(this.a.iterator());
-    }
-
-    @Override // j$.util.stream.BaseStream, j$.util.stream.E
-    public final /* synthetic */ Iterator iterator() {
+    @Override // java.util.stream.LongStream, java.util.stream.BaseStream
+    public final /* synthetic */ Iterator<Long> iterator() {
         return this.a.iterator();
     }
 
-    @Override // j$.util.stream.LongStream
-    public final /* synthetic */ LongStream limit(long j) {
+    @Override // java.util.stream.LongStream, java.util.stream.BaseStream
+    public final /* synthetic */ Iterator<Long> iterator() {
+        return j$.util.w.b(this.a.iterator());
+    }
+
+    @Override // java.util.stream.LongStream
+    public final /* synthetic */ java.util.stream.LongStream limit(long j) {
         return f0(this.a.limit(j));
     }
 
-    @Override // j$.util.stream.LongStream
-    public final /* synthetic */ LongStream m(j$.util.function.T t) {
-        return f0(this.a.peek(j$.util.function.S.a(t)));
+    @Override // java.util.stream.LongStream
+    public final /* synthetic */ java.util.stream.LongStream map(LongUnaryOperator longUnaryOperator) {
+        return f0(this.a.t(j$.util.function.i0.c(longUnaryOperator)));
     }
 
-    @Override // j$.util.stream.LongStream
-    public final /* synthetic */ Stream mapToObj(LongFunction longFunction) {
-        return Stream.VivifiedWrapper.convert(this.a.mapToObj(j$.util.function.V.a(longFunction)));
+    @Override // java.util.stream.LongStream
+    public final /* synthetic */ DoubleStream mapToDouble(LongToDoubleFunction longToDoubleFunction) {
+        return C.f0(this.a.p(j$.util.function.d0.a(longToDoubleFunction)));
     }
 
-    @Override // j$.util.stream.LongStream
-    public final /* synthetic */ j$.util.l max() {
-        return j$.util.A.t(this.a.max());
+    @Override // java.util.stream.LongStream
+    public final /* synthetic */ java.util.stream.IntStream mapToInt(LongToIntFunction longToIntFunction) {
+        return IntStream.Wrapper.convert(this.a.y(j$.util.function.f0.a(longToIntFunction)));
     }
 
-    @Override // j$.util.stream.LongStream
-    public final /* synthetic */ j$.util.l min() {
-        return j$.util.A.t(this.a.min());
+    @Override // java.util.stream.LongStream
+    public final /* synthetic */ java.util.stream.Stream mapToObj(LongFunction longFunction) {
+        return Stream.Wrapper.convert(this.a.mapToObj(j$.util.function.Z.a(longFunction)));
     }
 
-    @Override // j$.util.stream.LongStream
-    public final /* synthetic */ LongStream n(LongFunction longFunction) {
-        return f0(this.a.flatMap(j$.util.function.V.a(longFunction)));
+    @Override // java.util.stream.LongStream
+    public final /* synthetic */ OptionalLong max() {
+        return j$.util.A.x(this.a.max());
     }
 
-    @Override // j$.util.stream.BaseStream
-    public final /* synthetic */ BaseStream onClose(Runnable runnable) {
-        return f.f0(this.a.onClose(runnable));
+    @Override // java.util.stream.LongStream
+    public final /* synthetic */ OptionalLong min() {
+        return j$.util.A.x(this.a.min());
     }
 
-    @Override // j$.util.stream.LongStream
-    public final /* synthetic */ E p(j$.util.function.X x) {
-        return C.f0(this.a.mapToDouble(x == null ? null : x.a));
+    @Override // java.util.stream.LongStream
+    public final /* synthetic */ boolean noneMatch(LongPredicate longPredicate) {
+        return this.a.E(j$.util.function.b0.a(longPredicate));
     }
 
-    @Override // j$.util.stream.BaseStream, j$.util.stream.E
-    public final /* synthetic */ BaseStream parallel() {
-        return f.f0(this.a.parallel());
+    /* JADX WARN: Type inference failed for: r2v2, types: [java.util.stream.BaseStream, java.util.stream.LongStream] */
+    @Override // java.util.stream.BaseStream
+    public final /* synthetic */ java.util.stream.LongStream onClose(Runnable runnable) {
+        return g.f0(this.a.onClose(runnable));
     }
 
-    @Override // j$.util.stream.LongStream, j$.util.stream.BaseStream, j$.util.stream.E
-    public final /* synthetic */ LongStream parallel() {
+    /* JADX WARN: Type inference failed for: r0v2, types: [java.util.stream.BaseStream, java.util.stream.LongStream] */
+    @Override // java.util.stream.LongStream, java.util.stream.BaseStream
+    public final /* synthetic */ java.util.stream.LongStream parallel() {
+        return g.f0(this.a.parallel());
+    }
+
+    @Override // java.util.stream.LongStream, java.util.stream.BaseStream
+    public final /* synthetic */ java.util.stream.LongStream parallel() {
         return f0(this.a.parallel());
     }
 
-    @Override // j$.util.stream.LongStream
-    public final /* synthetic */ boolean s(j$.util.function.W w) {
-        return this.a.allMatch(w == null ? null : w.a);
+    @Override // java.util.stream.LongStream
+    public final /* synthetic */ java.util.stream.LongStream peek(LongConsumer longConsumer) {
+        return f0(this.a.m(j$.util.function.W.a(longConsumer)));
     }
 
-    @Override // j$.util.stream.BaseStream, j$.util.stream.E
-    public final /* synthetic */ BaseStream sequential() {
-        return f.f0(this.a.sequential());
+    @Override // java.util.stream.LongStream
+    public final /* synthetic */ long reduce(long j, LongBinaryOperator longBinaryOperator) {
+        return this.a.v(j, j$.util.function.S.a(longBinaryOperator));
     }
 
-    @Override // j$.util.stream.LongStream, j$.util.stream.BaseStream, j$.util.stream.E
-    public final /* synthetic */ LongStream sequential() {
+    @Override // java.util.stream.LongStream
+    public final /* synthetic */ OptionalLong reduce(LongBinaryOperator longBinaryOperator) {
+        return j$.util.A.x(this.a.g(j$.util.function.S.a(longBinaryOperator)));
+    }
+
+    /* JADX WARN: Type inference failed for: r0v2, types: [java.util.stream.BaseStream, java.util.stream.LongStream] */
+    @Override // java.util.stream.LongStream, java.util.stream.BaseStream
+    public final /* synthetic */ java.util.stream.LongStream sequential() {
+        return g.f0(this.a.sequential());
+    }
+
+    @Override // java.util.stream.LongStream, java.util.stream.BaseStream
+    public final /* synthetic */ java.util.stream.LongStream sequential() {
         return f0(this.a.sequential());
     }
 
-    @Override // j$.util.stream.LongStream
-    public final /* synthetic */ LongStream skip(long j) {
+    @Override // java.util.stream.LongStream
+    public final /* synthetic */ java.util.stream.LongStream skip(long j) {
         return f0(this.a.skip(j));
     }
 
-    @Override // j$.util.stream.LongStream
-    public final /* synthetic */ LongStream sorted() {
+    @Override // java.util.stream.LongStream
+    public final /* synthetic */ java.util.stream.LongStream sorted() {
         return f0(this.a.sorted());
     }
 
-    /* JADX WARN: Type inference failed for: r0v1, types: [java.util.Spliterator$OfLong] */
-    @Override // j$.util.stream.LongStream, j$.util.stream.BaseStream, j$.util.stream.E
-    public final /* synthetic */ j$.util.J spliterator() {
-        return j$.util.H.b(this.a.spliterator());
+    @Override // java.util.stream.LongStream, java.util.stream.BaseStream
+    public final /* synthetic */ Spliterator<Long> spliterator() {
+        return j$.util.I.a(this.a.spliterator());
     }
 
-    @Override // j$.util.stream.BaseStream, j$.util.stream.E
-    public final /* synthetic */ Spliterator spliterator() {
-        return j$.util.N.b(this.a.spliterator());
+    @Override // java.util.stream.LongStream, java.util.stream.BaseStream
+    public final /* synthetic */ Spliterator<Long> spliterator() {
+        return Spliterator.Wrapper.convert(this.a.spliterator());
     }
 
-    @Override // j$.util.stream.LongStream
+    @Override // java.util.stream.LongStream
     public final /* synthetic */ long sum() {
         return this.a.sum();
     }
 
-    @Override // j$.util.stream.LongStream
-    public final j$.util.i summaryStatistics() {
-        this.a.summaryStatistics();
-        throw new Error("Java 8+ API desugaring (library desugaring) cannot convert from java.util.LongSummaryStatistics");
-    }
-
-    @Override // j$.util.stream.LongStream
-    public final /* synthetic */ LongStream t(j$.util.function.c0 c0Var) {
-        return f0(this.a.map(j$.util.function.b0.a(c0Var)));
-    }
-
-    @Override // j$.util.stream.LongStream
+    @Override // java.util.stream.LongStream
     public final /* synthetic */ long[] toArray() {
         return this.a.toArray();
     }
 
-    @Override // j$.util.stream.BaseStream
-    public final /* synthetic */ BaseStream unordered() {
-        return f.f0(this.a.unordered());
+    /* JADX WARN: Type inference failed for: r0v2, types: [java.util.stream.BaseStream, java.util.stream.LongStream] */
+    @Override // java.util.stream.BaseStream
+    public final /* synthetic */ java.util.stream.LongStream unordered() {
+        return g.f0(this.a.unordered());
     }
 
-    @Override // j$.util.stream.LongStream
-    public final /* synthetic */ long v(long j, j$.util.function.O o) {
-        return this.a.reduce(j, j$.util.function.N.a(o));
-    }
-
-    @Override // j$.util.stream.LongStream
-    public final /* synthetic */ IntStream y(j$.util.function.Y y) {
-        return IntStream.VivifiedWrapper.convert(this.a.mapToInt(y == null ? null : y.a));
+    @Override // java.util.stream.LongStream
+    public final LongSummaryStatistics summaryStatistics() {
+        this.a.summaryStatistics();
+        throw new Error("Java 8+ API desugaring (library desugaring) cannot convert to java.util.LongSummaryStatistics");
     }
 }

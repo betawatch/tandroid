@@ -252,78 +252,6 @@ public interface AnalyticsListener {
         }
     }
 
-    public static final class EventTime {
-        public final MediaSource.MediaPeriodId currentMediaPeriodId;
-        public final long currentPlaybackPositionMs;
-        public final Timeline currentTimeline;
-        public final int currentWindowIndex;
-        public final long eventPlaybackPositionMs;
-        public final MediaSource.MediaPeriodId mediaPeriodId;
-        public final long realtimeMs;
-        public final Timeline timeline;
-        public final long totalBufferedDurationMs;
-        public final int windowIndex;
-
-        public EventTime(long j, Timeline timeline, int i, MediaSource.MediaPeriodId mediaPeriodId, long j2, Timeline timeline2, int i2, MediaSource.MediaPeriodId mediaPeriodId2, long j3, long j4) {
-            this.realtimeMs = j;
-            this.timeline = timeline;
-            this.windowIndex = i;
-            this.mediaPeriodId = mediaPeriodId;
-            this.eventPlaybackPositionMs = j2;
-            this.currentTimeline = timeline2;
-            this.currentWindowIndex = i2;
-            this.currentMediaPeriodId = mediaPeriodId2;
-            this.currentPlaybackPositionMs = j3;
-            this.totalBufferedDurationMs = j4;
-        }
-
-        public boolean equals(Object obj) {
-            if (this == obj) {
-                return true;
-            }
-            if (obj == null || EventTime.class != obj.getClass()) {
-                return false;
-            }
-            EventTime eventTime = (EventTime) obj;
-            return this.realtimeMs == eventTime.realtimeMs && this.windowIndex == eventTime.windowIndex && this.eventPlaybackPositionMs == eventTime.eventPlaybackPositionMs && this.currentWindowIndex == eventTime.currentWindowIndex && this.currentPlaybackPositionMs == eventTime.currentPlaybackPositionMs && this.totalBufferedDurationMs == eventTime.totalBufferedDurationMs && Objects.equal(this.timeline, eventTime.timeline) && Objects.equal(this.mediaPeriodId, eventTime.mediaPeriodId) && Objects.equal(this.currentTimeline, eventTime.currentTimeline) && Objects.equal(this.currentMediaPeriodId, eventTime.currentMediaPeriodId);
-        }
-
-        public int hashCode() {
-            return Objects.hashCode(Long.valueOf(this.realtimeMs), this.timeline, Integer.valueOf(this.windowIndex), this.mediaPeriodId, Long.valueOf(this.eventPlaybackPositionMs), this.currentTimeline, Integer.valueOf(this.currentWindowIndex), this.currentMediaPeriodId, Long.valueOf(this.currentPlaybackPositionMs), Long.valueOf(this.totalBufferedDurationMs));
-        }
-    }
-
-    public static final class Events {
-        private final SparseArray eventTimes;
-        private final FlagSet flags;
-
-        public Events(FlagSet flagSet, SparseArray sparseArray) {
-            this.flags = flagSet;
-            SparseArray sparseArray2 = new SparseArray(flagSet.size());
-            for (int i = 0; i < flagSet.size(); i++) {
-                int i2 = flagSet.get(i);
-                sparseArray2.append(i2, (EventTime) Assertions.checkNotNull((EventTime) sparseArray.get(i2)));
-            }
-            this.eventTimes = sparseArray2;
-        }
-
-        public boolean contains(int i) {
-            return this.flags.contains(i);
-        }
-
-        public int get(int i) {
-            return this.flags.get(i);
-        }
-
-        public EventTime getEventTime(int i) {
-            return (EventTime) Assertions.checkNotNull((EventTime) this.eventTimes.get(i));
-        }
-
-        public int size() {
-            return this.flags.size();
-        }
-    }
-
     void onAudioAttributesChanged(EventTime eventTime, AudioAttributes audioAttributes);
 
     void onAudioCodecError(EventTime eventTime, Exception exc);
@@ -471,4 +399,76 @@ public interface AnalyticsListener {
     void onVideoSizeChanged(EventTime eventTime, VideoSize videoSize);
 
     void onVolumeChanged(EventTime eventTime, float f);
+
+    public static final class Events {
+        private final SparseArray eventTimes;
+        private final FlagSet flags;
+
+        public Events(FlagSet flagSet, SparseArray sparseArray) {
+            this.flags = flagSet;
+            SparseArray sparseArray2 = new SparseArray(flagSet.size());
+            for (int i = 0; i < flagSet.size(); i++) {
+                int i2 = flagSet.get(i);
+                sparseArray2.append(i2, (EventTime) Assertions.checkNotNull((EventTime) sparseArray.get(i2)));
+            }
+            this.eventTimes = sparseArray2;
+        }
+
+        public EventTime getEventTime(int i) {
+            return (EventTime) Assertions.checkNotNull((EventTime) this.eventTimes.get(i));
+        }
+
+        public boolean contains(int i) {
+            return this.flags.contains(i);
+        }
+
+        public int size() {
+            return this.flags.size();
+        }
+
+        public int get(int i) {
+            return this.flags.get(i);
+        }
+    }
+
+    public static final class EventTime {
+        public final MediaSource.MediaPeriodId currentMediaPeriodId;
+        public final long currentPlaybackPositionMs;
+        public final Timeline currentTimeline;
+        public final int currentWindowIndex;
+        public final long eventPlaybackPositionMs;
+        public final MediaSource.MediaPeriodId mediaPeriodId;
+        public final long realtimeMs;
+        public final Timeline timeline;
+        public final long totalBufferedDurationMs;
+        public final int windowIndex;
+
+        public EventTime(long j, Timeline timeline, int i, MediaSource.MediaPeriodId mediaPeriodId, long j2, Timeline timeline2, int i2, MediaSource.MediaPeriodId mediaPeriodId2, long j3, long j4) {
+            this.realtimeMs = j;
+            this.timeline = timeline;
+            this.windowIndex = i;
+            this.mediaPeriodId = mediaPeriodId;
+            this.eventPlaybackPositionMs = j2;
+            this.currentTimeline = timeline2;
+            this.currentWindowIndex = i2;
+            this.currentMediaPeriodId = mediaPeriodId2;
+            this.currentPlaybackPositionMs = j3;
+            this.totalBufferedDurationMs = j4;
+        }
+
+        public boolean equals(Object obj) {
+            if (this == obj) {
+                return true;
+            }
+            if (obj == null || EventTime.class != obj.getClass()) {
+                return false;
+            }
+            EventTime eventTime = (EventTime) obj;
+            return this.realtimeMs == eventTime.realtimeMs && this.windowIndex == eventTime.windowIndex && this.eventPlaybackPositionMs == eventTime.eventPlaybackPositionMs && this.currentWindowIndex == eventTime.currentWindowIndex && this.currentPlaybackPositionMs == eventTime.currentPlaybackPositionMs && this.totalBufferedDurationMs == eventTime.totalBufferedDurationMs && Objects.equal(this.timeline, eventTime.timeline) && Objects.equal(this.mediaPeriodId, eventTime.mediaPeriodId) && Objects.equal(this.currentTimeline, eventTime.currentTimeline) && Objects.equal(this.currentMediaPeriodId, eventTime.currentMediaPeriodId);
+        }
+
+        public int hashCode() {
+            return Objects.hashCode(Long.valueOf(this.realtimeMs), this.timeline, Integer.valueOf(this.windowIndex), this.mediaPeriodId, Long.valueOf(this.eventPlaybackPositionMs), this.currentTimeline, Integer.valueOf(this.currentWindowIndex), this.currentMediaPeriodId, Long.valueOf(this.currentPlaybackPositionMs), Long.valueOf(this.totalBufferedDurationMs));
+        }
+    }
 }

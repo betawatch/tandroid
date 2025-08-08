@@ -47,6 +47,15 @@ public class ChatLoadingCell extends FrameLayout {
         this.frameLayout.addView(this.progressBar, LayoutHelper.createFrame(32, 32, 17));
     }
 
+    public boolean hasGradientService() {
+        Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
+        return resourcesProvider != null ? resourcesProvider.hasGradientService() : Theme.hasGradientService();
+    }
+
+    public void applyServiceShaderMatrix() {
+        applyServiceShaderMatrix(getMeasuredWidth(), this.backgroundHeight, getX(), this.viewTop);
+    }
+
     private void applyServiceShaderMatrix(int i, int i2, float f, float f2) {
         Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
         if (resourcesProvider != null) {
@@ -56,24 +65,12 @@ public class ChatLoadingCell extends FrameLayout {
         }
     }
 
-    private int getThemedColor(int i) {
-        return Theme.getColor(i, this.resourcesProvider);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public Paint getThemedPaint(String str) {
-        Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
-        Paint paint = resourcesProvider != null ? resourcesProvider.getPaint(str) : null;
-        return paint != null ? paint : Theme.getThemePaint(str);
-    }
-
-    public void applyServiceShaderMatrix() {
-        applyServiceShaderMatrix(getMeasuredWidth(), this.backgroundHeight, getX(), this.viewTop);
-    }
-
-    public boolean hasGradientService() {
-        Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
-        return resourcesProvider != null ? resourcesProvider.hasGradientService() : Theme.hasGradientService();
+    public void setVisiblePart(float f, int i) {
+        if (this.viewTop != f) {
+            invalidate();
+        }
+        this.viewTop = f;
+        this.backgroundHeight = i;
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -85,11 +82,14 @@ public class ChatLoadingCell extends FrameLayout {
         this.frameLayout.setVisibility(z ? 0 : 4);
     }
 
-    public void setVisiblePart(float f, int i) {
-        if (this.viewTop != f) {
-            invalidate();
-        }
-        this.viewTop = f;
-        this.backgroundHeight = i;
+    private int getThemedColor(int i) {
+        return Theme.getColor(i, this.resourcesProvider);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public Paint getThemedPaint(String str) {
+        Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
+        Paint paint = resourcesProvider != null ? resourcesProvider.getPaint(str) : null;
+        return paint != null ? paint : Theme.getThemePaint(str);
     }
 }

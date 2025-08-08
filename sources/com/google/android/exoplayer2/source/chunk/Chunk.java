@@ -33,19 +33,19 @@ public abstract class Chunk implements Loader.Loadable {
         this.endTimeUs = j2;
     }
 
-    public final long bytesLoaded() {
-        return this.dataSource.getBytesRead();
-    }
-
     public final long getDurationUs() {
         return this.endTimeUs - this.startTimeUs;
     }
 
-    public final Map getResponseHeaders() {
-        return this.dataSource.getLastResponseHeaders();
+    public final long bytesLoaded() {
+        return this.dataSource.getBytesRead();
     }
 
     public final Uri getUri() {
         return this.dataSource.getLastOpenedUri();
+    }
+
+    public final Map getResponseHeaders() {
+        return this.dataSource.getLastResponseHeaders();
     }
 }

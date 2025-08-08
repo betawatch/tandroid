@@ -4,6 +4,26 @@ import org.xmlpull.v1.XmlPullParser;
 
 /* loaded from: classes.dex */
 public abstract class XmlPullParserUtil {
+    public static boolean isEndTag(XmlPullParser xmlPullParser, String str) {
+        return isEndTag(xmlPullParser) && xmlPullParser.getName().equals(str);
+    }
+
+    public static boolean isEndTag(XmlPullParser xmlPullParser) {
+        return xmlPullParser.getEventType() == 3;
+    }
+
+    public static boolean isStartTag(XmlPullParser xmlPullParser, String str) {
+        return isStartTag(xmlPullParser) && xmlPullParser.getName().equals(str);
+    }
+
+    public static boolean isStartTag(XmlPullParser xmlPullParser) {
+        return xmlPullParser.getEventType() == 2;
+    }
+
+    public static boolean isStartTagIgnorePrefix(XmlPullParser xmlPullParser, String str) {
+        return isStartTag(xmlPullParser) && stripPrefix(xmlPullParser.getName()).equals(str);
+    }
+
     public static String getAttributeValue(XmlPullParser xmlPullParser, String str) {
         int attributeCount = xmlPullParser.getAttributeCount();
         for (int i = 0; i < attributeCount; i++) {
@@ -22,26 +42,6 @@ public abstract class XmlPullParserUtil {
             }
         }
         return null;
-    }
-
-    public static boolean isEndTag(XmlPullParser xmlPullParser) {
-        return xmlPullParser.getEventType() == 3;
-    }
-
-    public static boolean isEndTag(XmlPullParser xmlPullParser, String str) {
-        return isEndTag(xmlPullParser) && xmlPullParser.getName().equals(str);
-    }
-
-    public static boolean isStartTag(XmlPullParser xmlPullParser) {
-        return xmlPullParser.getEventType() == 2;
-    }
-
-    public static boolean isStartTag(XmlPullParser xmlPullParser, String str) {
-        return isStartTag(xmlPullParser) && xmlPullParser.getName().equals(str);
-    }
-
-    public static boolean isStartTagIgnorePrefix(XmlPullParser xmlPullParser, String str) {
-        return isStartTag(xmlPullParser) && stripPrefix(xmlPullParser.getName()).equals(str);
     }
 
     private static String stripPrefix(String str) {

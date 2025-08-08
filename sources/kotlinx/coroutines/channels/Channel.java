@@ -2,7 +2,7 @@ package kotlinx.coroutines.channels;
 
 import kotlinx.coroutines.internal.SystemPropsKt;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public interface Channel extends SendChannel, ReceiveChannel {
     public static final Factory Factory = Factory.$$INSTANCE;
 

@@ -1,99 +1,21 @@
 package com.google.android.gms.internal.play_billing;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 /* loaded from: classes.dex */
-final class zzcp extends zzct {
-    private static final Class zza = Collections.unmodifiableList(Collections.emptyList()).getClass();
+final class zzcp {
+    private final Object zza;
+    private final Object zzb;
+    private final Object zzc;
 
-    /* synthetic */ zzcp(zzco zzcoVar) {
-        super(null);
+    zzcp(Object obj, Object obj2, Object obj3) {
+        this.zza = obj;
+        this.zzb = obj2;
+        this.zzc = obj3;
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzct
-    final void zza(Object obj, long j) {
-        Object unmodifiableList;
-        List list = (List) zzeq.zzf(obj, j);
-        if (list instanceof zzcn) {
-            unmodifiableList = ((zzcn) list).zze();
-        } else {
-            if (zza.isAssignableFrom(list.getClass())) {
-                return;
-            }
-            if ((list instanceof zzdm) && (list instanceof zzcf)) {
-                zzcf zzcfVar = (zzcf) list;
-                if (zzcfVar.zzc()) {
-                    zzcfVar.zzb();
-                    return;
-                }
-                return;
-            }
-            unmodifiableList = Collections.unmodifiableList(list);
-        }
-        zzeq.zzs(obj, j, unmodifiableList);
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:12:0x009c  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0094 A[ADDED_TO_REGION] */
-    @Override // com.google.android.gms.internal.play_billing.zzct
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    final void zzb(Object obj, Object obj2, long j) {
-        zzcm zzcmVar;
-        int size;
-        List list = (List) zzeq.zzf(obj2, j);
-        int size2 = list.size();
-        List list2 = (List) zzeq.zzf(obj, j);
-        if (!list2.isEmpty()) {
-            if (zza.isAssignableFrom(list2.getClass())) {
-                ArrayList arrayList = new ArrayList(list2.size() + size2);
-                arrayList.addAll(list2);
-                zzcmVar = arrayList;
-            } else {
-                if (!(list2 instanceof zzel)) {
-                    if ((list2 instanceof zzdm) && (list2 instanceof zzcf)) {
-                        zzcf zzcfVar = (zzcf) list2;
-                        if (!zzcfVar.zzc()) {
-                            list2 = zzcfVar.zzd(list2.size() + size2);
-                        }
-                    }
-                    size = list2.size();
-                    int size3 = list.size();
-                    if (size > 0 && size3 > 0) {
-                        list2.addAll(list);
-                    }
-                    if (size > 0) {
-                        list = list2;
-                    }
-                    zzeq.zzs(obj, j, list);
-                }
-                zzcm zzcmVar2 = new zzcm(list2.size() + size2);
-                zzcmVar2.addAll(zzcmVar2.size(), (zzel) list2);
-                zzcmVar = zzcmVar2;
-            }
-            zzeq.zzs(obj, j, zzcmVar);
-            list2 = zzcmVar;
-            size = list2.size();
-            int size32 = list.size();
-            if (size > 0) {
-                list2.addAll(list);
-            }
-            if (size > 0) {
-            }
-            zzeq.zzs(obj, j, list);
-        }
-        list2 = list2 instanceof zzcn ? new zzcm(size2) : ((list2 instanceof zzdm) && (list2 instanceof zzcf)) ? ((zzcf) list2).zzd(size2) : new ArrayList(size2);
-        zzeq.zzs(obj, j, list2);
-        size = list2.size();
-        int size322 = list.size();
-        if (size > 0) {
-        }
-        if (size > 0) {
-        }
-        zzeq.zzs(obj, j, list);
+    final IllegalArgumentException zza() {
+        Object obj = this.zzc;
+        Object obj2 = this.zzb;
+        Object obj3 = this.zza;
+        return new IllegalArgumentException("Multiple entries with same key: " + String.valueOf(obj3) + "=" + String.valueOf(obj2) + " and " + String.valueOf(obj3) + "=" + String.valueOf(obj));
     }
 }

@@ -4,8 +4,15 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class ByteStreamsKt {
+    public static /* synthetic */ long copyTo$default(InputStream inputStream, OutputStream outputStream, int i, int i2, Object obj) {
+        if ((i2 & 2) != 0) {
+            i = 8192;
+        }
+        return copyTo(inputStream, outputStream, i);
+    }
+
     public static final long copyTo(InputStream inputStream, OutputStream out, int i) {
         Intrinsics.checkNotNullParameter(inputStream, "<this>");
         Intrinsics.checkNotNullParameter(out, "out");
@@ -18,12 +25,5 @@ public abstract class ByteStreamsKt {
             read = inputStream.read(bArr);
         }
         return j;
-    }
-
-    public static /* synthetic */ long copyTo$default(InputStream inputStream, OutputStream outputStream, int i, int i2, Object obj) {
-        if ((i2 & 2) != 0) {
-            i = 8192;
-        }
-        return copyTo(inputStream, outputStream, i);
     }
 }

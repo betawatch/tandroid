@@ -3,7 +3,7 @@ package com.googlecode.mp4parser.boxes.mp4.objectdescriptors;
 import java.nio.ByteBuffer;
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class BitReaderBuffer {
     private ByteBuffer buffer;
     int initialPos;
@@ -12,6 +12,10 @@ public class BitReaderBuffer {
     public BitReaderBuffer(ByteBuffer byteBuffer) {
         this.buffer = byteBuffer;
         this.initialPos = byteBuffer.position();
+    }
+
+    public boolean readBool() {
+        return readBits(1) == 1;
     }
 
     public int readBits(int i) {
@@ -29,16 +33,8 @@ public class BitReaderBuffer {
             int i5 = i - i4;
             readBits = (readBits(i4) << i5) + readBits(i5);
         }
-        ByteBuffer byteBuffer = this.buffer;
-        int i6 = this.initialPos;
-        double d = this.position;
-        Double.isNaN(d);
-        byteBuffer.position(i6 + ((int) Math.ceil(d / 8.0d)));
+        this.buffer.position(this.initialPos + ((int) Math.ceil(this.position / 8.0d)));
         return readBits;
-    }
-
-    public boolean readBool() {
-        return readBits(1) == 1;
     }
 
     public int remainingBits() {

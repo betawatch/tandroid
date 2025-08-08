@@ -1,44 +1,14 @@
 package com.google.android.exoplayer2.drm;
 
 import android.media.DeniedByServerException;
+import android.media.MediaDrm;
 import android.media.NotProvisionedException;
-import com.google.android.exoplayer2.analytics.MediaMetricsListener$$ExternalSyntheticApiModelOutline48;
-import com.google.android.exoplayer2.analytics.MediaMetricsListener$$ExternalSyntheticApiModelOutline49;
-import com.google.android.exoplayer2.analytics.MediaMetricsListener$$ExternalSyntheticApiModelOutline51;
+import com.google.android.exoplayer2.analytics.MediaMetricsListener$$ExternalSyntheticApiModelOutline53;
 import com.google.android.exoplayer2.drm.DefaultDrmSessionManager;
 import com.google.android.exoplayer2.util.Util;
 
 /* loaded from: classes.dex */
 public abstract class DrmUtil {
-
-    private static final class Api18 {
-        public static boolean isDeniedByServerException(Throwable th) {
-            return th instanceof DeniedByServerException;
-        }
-
-        public static boolean isNotProvisionedException(Throwable th) {
-            return th instanceof NotProvisionedException;
-        }
-    }
-
-    private static final class Api21 {
-        public static boolean isMediaDrmStateException(Throwable th) {
-            return MediaMetricsListener$$ExternalSyntheticApiModelOutline48.m(th);
-        }
-
-        public static int mediaDrmStateExceptionToErrorCode(Throwable th) {
-            String diagnosticInfo;
-            diagnosticInfo = MediaMetricsListener$$ExternalSyntheticApiModelOutline49.m(th).getDiagnosticInfo();
-            return Util.getErrorCodeForMediaDrmErrorCode(Util.getErrorCodeFromPlatformDiagnosticsInfo(diagnosticInfo));
-        }
-    }
-
-    private static final class Api23 {
-        public static boolean isMediaDrmResetException(Throwable th) {
-            return MediaMetricsListener$$ExternalSyntheticApiModelOutline51.m(th);
-        }
-    }
-
     public static int getErrorCodeForMediaDrmException(Exception exc, int i) {
         int i2 = Util.SDK_INT;
         if (i2 >= 21 && Api21.isMediaDrmStateException(exc)) {
@@ -72,5 +42,31 @@ public abstract class DrmUtil {
             return 6002;
         }
         throw new IllegalArgumentException();
+    }
+
+    private static final class Api18 {
+        public static boolean isNotProvisionedException(Throwable th) {
+            return th instanceof NotProvisionedException;
+        }
+
+        public static boolean isDeniedByServerException(Throwable th) {
+            return th instanceof DeniedByServerException;
+        }
+    }
+
+    private static final class Api21 {
+        public static boolean isMediaDrmStateException(Throwable th) {
+            return th instanceof MediaDrm.MediaDrmStateException;
+        }
+
+        public static int mediaDrmStateExceptionToErrorCode(Throwable th) {
+            return Util.getErrorCodeForMediaDrmErrorCode(Util.getErrorCodeFromPlatformDiagnosticsInfo(((MediaDrm.MediaDrmStateException) th).getDiagnosticInfo()));
+        }
+    }
+
+    private static final class Api23 {
+        public static boolean isMediaDrmResetException(Throwable th) {
+            return MediaMetricsListener$$ExternalSyntheticApiModelOutline53.m(th);
+        }
     }
 }

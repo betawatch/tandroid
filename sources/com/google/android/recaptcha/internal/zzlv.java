@@ -179,8 +179,9 @@ final class zzlv {
     public static void zzD(Object obj, long j, byte b) {
         zzlu zzluVar = zzf;
         long j2 = (-4) & j;
-        int i = ((((int) j) ^ (-1)) & 3) << 3;
-        zzluVar.zza.putInt(obj, j2, ((255 & b) << i) | (zzluVar.zza.getInt(obj, j2) & ((NotificationCenter.goingToPreviewTheme << i) ^ (-1))));
+        int i = zzluVar.zza.getInt(obj, j2);
+        int i2 = ((~((int) j)) & 3) << 3;
+        zzluVar.zza.putInt(obj, j2, ((255 & b) << i2) | (i & (~(NotificationCenter.goingToPreviewTheme << i2))));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -188,7 +189,7 @@ final class zzlv {
         zzlu zzluVar = zzf;
         long j2 = (-4) & j;
         int i = (((int) j) & 3) << 3;
-        zzluVar.zza.putInt(obj, j2, ((255 & b) << i) | (zzluVar.zza.getInt(obj, j2) & ((NotificationCenter.goingToPreviewTheme << i) ^ (-1))));
+        zzluVar.zza.putInt(obj, j2, ((255 & b) << i) | (zzluVar.zza.getInt(obj, j2) & (~(NotificationCenter.goingToPreviewTheme << i))));
     }
 
     static double zza(Object obj, long j) {
@@ -260,7 +261,7 @@ final class zzlv {
     }
 
     static /* bridge */ /* synthetic */ boolean zzt(Object obj, long j) {
-        return ((byte) ((zzf.zza.getInt(obj, (-4) & j) >>> ((int) (((j ^ (-1)) & 3) << 3))) & NotificationCenter.goingToPreviewTheme)) != 0;
+        return ((byte) ((zzf.zza.getInt(obj, (-4) & j) >>> ((int) (((~j) & 3) << 3))) & NotificationCenter.goingToPreviewTheme)) != 0;
     }
 
     static /* bridge */ /* synthetic */ boolean zzu(Object obj, long j) {

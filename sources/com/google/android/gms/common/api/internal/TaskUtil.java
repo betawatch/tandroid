@@ -10,15 +10,15 @@ public abstract class TaskUtil {
         setResultOrApiException(status, null, taskCompletionSource);
     }
 
+    public static boolean trySetResultOrApiException(Status status, Object obj, TaskCompletionSource taskCompletionSource) {
+        return status.isSuccess() ? taskCompletionSource.trySetResult(obj) : taskCompletionSource.trySetException(ApiExceptionUtil.fromStatus(status));
+    }
+
     public static void setResultOrApiException(Status status, Object obj, TaskCompletionSource taskCompletionSource) {
         if (status.isSuccess()) {
             taskCompletionSource.setResult(obj);
         } else {
             taskCompletionSource.setException(ApiExceptionUtil.fromStatus(status));
         }
-    }
-
-    public static boolean trySetResultOrApiException(Status status, Object obj, TaskCompletionSource taskCompletionSource) {
-        return status.isSuccess() ? taskCompletionSource.trySetResult(obj) : taskCompletionSource.trySetException(ApiExceptionUtil.fromStatus(status));
     }
 }

@@ -2,7 +2,7 @@ package com.google.android.gms.internal.cast;
 
 import android.content.Context;
 import android.os.Looper;
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import androidx.mediarouter.media.MediaRouteSelector;
 import androidx.mediarouter.media.MediaRouter;
 import com.google.android.gms.cast.CastMediaControlIntent;
@@ -186,7 +186,7 @@ public final class zzay extends MediaRouter.Callback {
                     zzft.zzc(hashMap.entrySet());
                     Iterator it = this.zzc.iterator();
                     if (it.hasNext()) {
-                        ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
+                        WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
                         throw null;
                     }
                 } catch (Throwable th) {

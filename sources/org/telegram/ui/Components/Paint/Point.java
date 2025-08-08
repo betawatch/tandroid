@@ -22,10 +22,6 @@ public class Point {
         this.edge = z;
     }
 
-    Point add(Point point) {
-        return new Point(this.x + point.x, this.y + point.y, this.z + point.z);
-    }
-
     public boolean equals(Object obj) {
         if (obj == null) {
             return false;
@@ -40,20 +36,24 @@ public class Point {
         return this.x == point.x && this.y == point.y && this.z == point.z;
     }
 
-    float getDistanceTo(Point point) {
-        return (float) Math.sqrt(Math.pow(this.x - point.x, 2.0d) + Math.pow(this.y - point.y, 2.0d) + Math.pow(this.z - point.z, 2.0d));
+    Point multiplySum(Point point, double d) {
+        return new Point((this.x + point.x) * d, (this.y + point.y) * d, (this.z + point.z) * d);
+    }
+
+    Point add(Point point) {
+        return new Point(this.x + point.x, this.y + point.y, this.z + point.z);
+    }
+
+    Point substract(Point point) {
+        return new Point(this.x - point.x, this.y - point.y, this.z - point.z);
     }
 
     Point multiplyByScalar(double d) {
         return new Point(this.x * d, this.y * d, this.z * d);
     }
 
-    Point multiplySum(Point point, double d) {
-        return new Point((this.x + point.x) * d, (this.y + point.y) * d, (this.z + point.z) * d);
-    }
-
-    Point substract(Point point) {
-        return new Point(this.x - point.x, this.y - point.y, this.z - point.z);
+    float getDistanceTo(Point point) {
+        return (float) Math.sqrt(Math.pow(this.x - point.x, 2.0d) + Math.pow(this.y - point.y, 2.0d) + Math.pow(this.z - point.z, 2.0d));
     }
 
     PointF toPointF() {

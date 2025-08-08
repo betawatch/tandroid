@@ -1,24 +1,34 @@
 package com.google.android.gms.internal.play_billing;
 
-import java.util.Comparator;
+import android.os.BadParcelableException;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 /* loaded from: classes.dex */
-final class zzas implements Comparator {
-    zzas() {
+public abstract class zzas {
+    public static final /* synthetic */ int $r8$clinit = 0;
+
+    static {
+        zzas.class.getClassLoader();
     }
 
-    @Override // java.util.Comparator
-    public final /* synthetic */ int compare(Object obj, Object obj2) {
-        zzba zzbaVar = (zzba) obj;
-        zzba zzbaVar2 = (zzba) obj2;
-        zzar zzarVar = new zzar(zzbaVar);
-        zzar zzarVar2 = new zzar(zzbaVar2);
-        while (zzarVar.hasNext() && zzarVar2.hasNext()) {
-            int compareTo = Integer.valueOf(zzarVar.zza() & 255).compareTo(Integer.valueOf(zzarVar2.zza() & 255));
-            if (compareTo != 0) {
-                return compareTo;
-            }
+    public static Parcelable zza(Parcel parcel, Parcelable.Creator creator) {
+        if (parcel.readInt() == 0) {
+            return null;
         }
-        return Integer.valueOf(zzbaVar.zzd()).compareTo(Integer.valueOf(zzbaVar2.zzd()));
+        return (Parcelable) creator.createFromParcel(parcel);
+    }
+
+    public static void zzb(Parcel parcel) {
+        int dataAvail = parcel.dataAvail();
+        if (dataAvail <= 0) {
+            return;
+        }
+        throw new BadParcelableException("Parcel data not fully consumed, unread size: " + dataAvail);
+    }
+
+    public static void zzc(Parcel parcel, Parcelable parcelable) {
+        parcel.writeInt(1);
+        parcelable.writeToParcel(parcel, 0);
     }
 }

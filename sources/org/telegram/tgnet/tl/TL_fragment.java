@@ -9,14 +9,51 @@ public class TL_fragment {
 
     public static class InputCollectible extends TLObject {
         public static InputCollectible TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
-            InputCollectible tL_inputCollectibleUsername = i != -1562241884 ? i != -476815191 ? null : new TL_inputCollectibleUsername() : new TL_inputCollectiblePhone();
-            if (tL_inputCollectibleUsername == null && z) {
+            InputCollectible tL_inputCollectiblePhone;
+            if (i != -1562241884) {
+                tL_inputCollectiblePhone = i != -476815191 ? null : new TL_inputCollectibleUsername();
+            } else {
+                tL_inputCollectiblePhone = new TL_inputCollectiblePhone();
+            }
+            if (tL_inputCollectiblePhone == null && z) {
                 throw new RuntimeException(String.format("can't parse magic %x in InputCollectible", Integer.valueOf(i)));
             }
-            if (tL_inputCollectibleUsername != null) {
-                tL_inputCollectibleUsername.readParams(inputSerializedData, z);
+            if (tL_inputCollectiblePhone != null) {
+                tL_inputCollectiblePhone.readParams(inputSerializedData, z);
             }
-            return tL_inputCollectibleUsername;
+            return tL_inputCollectiblePhone;
+        }
+    }
+
+    public static class TL_inputCollectibleUsername extends InputCollectible {
+        public static final int constructor = -476815191;
+        public String username;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            outputSerializedData.writeString(this.username);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            this.username = inputSerializedData.readString(z);
+        }
+    }
+
+    public static class TL_inputCollectiblePhone extends InputCollectible {
+        public static final int constructor = -1562241884;
+        public String phone;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            outputSerializedData.writeString(this.phone);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            this.phone = inputSerializedData.readString(z);
         }
     }
 
@@ -42,16 +79,6 @@ public class TL_fragment {
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            this.purchase_date = inputSerializedData.readInt32(z);
-            this.currency = inputSerializedData.readString(z);
-            this.amount = inputSerializedData.readInt64(z);
-            this.crypto_currency = inputSerializedData.readString(z);
-            this.crypto_amount = inputSerializedData.readInt64(z);
-            this.url = inputSerializedData.readString(z);
-        }
-
-        @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
             outputSerializedData.writeInt32(this.purchase_date);
@@ -60,6 +87,16 @@ public class TL_fragment {
             outputSerializedData.writeString(this.crypto_currency);
             outputSerializedData.writeInt64(this.crypto_amount);
             outputSerializedData.writeString(this.url);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            this.purchase_date = inputSerializedData.readInt32(z);
+            this.currency = inputSerializedData.readString(z);
+            this.amount = inputSerializedData.readInt64(z);
+            this.crypto_currency = inputSerializedData.readString(z);
+            this.crypto_amount = inputSerializedData.readInt64(z);
+            this.url = inputSerializedData.readString(z);
         }
     }
 
@@ -76,38 +113,6 @@ public class TL_fragment {
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
             this.collectible.serializeToStream(outputSerializedData);
-        }
-    }
-
-    public static class TL_inputCollectiblePhone extends InputCollectible {
-        public static final int constructor = -1562241884;
-        public String phone;
-
-        @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            this.phone = inputSerializedData.readString(z);
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            outputSerializedData.writeString(this.phone);
-        }
-    }
-
-    public static class TL_inputCollectibleUsername extends InputCollectible {
-        public static final int constructor = -476815191;
-        public String username;
-
-        @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            this.username = inputSerializedData.readString(z);
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            outputSerializedData.writeString(this.username);
         }
     }
 }

@@ -25,27 +25,6 @@ final class zzsz extends zztc {
     }
 
     @Override // com.google.android.gms.internal.cast.zztc
-    public final void zzb(byte b) {
-        try {
-            byte[] bArr = this.zzc;
-            int i = this.zze;
-            this.zze = i + 1;
-            bArr[i] = b;
-        } catch (IndexOutOfBoundsException e) {
-            throw new zzta(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.zze), Integer.valueOf(this.zzd), 1), e);
-        }
-    }
-
-    public final void zzc(byte[] bArr, int i, int i2) {
-        try {
-            System.arraycopy(bArr, 0, this.zzc, this.zze, i2);
-            this.zze += i2;
-        } catch (IndexOutOfBoundsException e) {
-            throw new zzta(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.zze), Integer.valueOf(this.zzd), Integer.valueOf(i2)), e);
-        }
-    }
-
-    @Override // com.google.android.gms.internal.cast.zztc
     public final void zzd(int i, boolean z) {
         zzq(i << 3);
         zzb(z ? (byte) 1 : (byte) 0);
@@ -69,11 +48,17 @@ final class zzsz extends zztc {
         try {
             byte[] bArr = this.zzc;
             int i2 = this.zze;
+            int i3 = i2 + 1;
+            this.zze = i3;
             bArr[i2] = (byte) (i & NotificationCenter.goingToPreviewTheme);
-            bArr[i2 + 1] = (byte) ((i >> 8) & NotificationCenter.goingToPreviewTheme);
-            bArr[i2 + 2] = (byte) ((i >> 16) & NotificationCenter.goingToPreviewTheme);
+            int i4 = i2 + 2;
+            this.zze = i4;
+            bArr[i3] = (byte) ((i >> 8) & NotificationCenter.goingToPreviewTheme);
+            int i5 = i2 + 3;
+            this.zze = i5;
+            bArr[i4] = (byte) ((i >> 16) & NotificationCenter.goingToPreviewTheme);
             this.zze = i2 + 4;
-            bArr[i2 + 3] = (byte) ((i >> 24) & NotificationCenter.goingToPreviewTheme);
+            bArr[i5] = (byte) ((i >> 24) & NotificationCenter.goingToPreviewTheme);
         } catch (IndexOutOfBoundsException e) {
             throw new zzta(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.zze), Integer.valueOf(this.zzd), 1), e);
         }
@@ -90,15 +75,29 @@ final class zzsz extends zztc {
         try {
             byte[] bArr = this.zzc;
             int i = this.zze;
+            int i2 = i + 1;
+            this.zze = i2;
             bArr[i] = (byte) (((int) j) & NotificationCenter.goingToPreviewTheme);
-            bArr[i + 1] = (byte) (((int) (j >> 8)) & NotificationCenter.goingToPreviewTheme);
-            bArr[i + 2] = (byte) (((int) (j >> 16)) & NotificationCenter.goingToPreviewTheme);
-            bArr[i + 3] = (byte) (((int) (j >> 24)) & NotificationCenter.goingToPreviewTheme);
-            bArr[i + 4] = (byte) (((int) (j >> 32)) & NotificationCenter.goingToPreviewTheme);
-            bArr[i + 5] = (byte) (((int) (j >> 40)) & NotificationCenter.goingToPreviewTheme);
-            bArr[i + 6] = (byte) (((int) (j >> 48)) & NotificationCenter.goingToPreviewTheme);
+            int i3 = i + 2;
+            this.zze = i3;
+            bArr[i2] = (byte) (((int) (j >> 8)) & NotificationCenter.goingToPreviewTheme);
+            int i4 = i + 3;
+            this.zze = i4;
+            bArr[i3] = (byte) (((int) (j >> 16)) & NotificationCenter.goingToPreviewTheme);
+            int i5 = i + 4;
+            this.zze = i5;
+            bArr[i4] = (byte) (((int) (j >> 24)) & NotificationCenter.goingToPreviewTheme);
+            int i6 = i + 5;
+            this.zze = i6;
+            bArr[i5] = (byte) (((int) (j >> 32)) & NotificationCenter.goingToPreviewTheme);
+            int i7 = i + 6;
+            this.zze = i7;
+            bArr[i6] = (byte) (((int) (j >> 40)) & NotificationCenter.goingToPreviewTheme);
+            int i8 = i + 7;
+            this.zze = i8;
+            bArr[i7] = (byte) (((int) (j >> 48)) & NotificationCenter.goingToPreviewTheme);
             this.zze = i + 8;
-            bArr[i + 7] = (byte) (((int) (j >> 56)) & NotificationCenter.goingToPreviewTheme);
+            bArr[i8] = (byte) (((int) (j >> 56)) & NotificationCenter.goingToPreviewTheme);
         } catch (IndexOutOfBoundsException e) {
             throw new zzta(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.zze), Integer.valueOf(this.zzd), 1), e);
         }
@@ -168,6 +167,33 @@ final class zzsz extends zztc {
     }
 
     @Override // com.google.android.gms.internal.cast.zztc
+    public final void zzr(int i, long j) {
+        zzq(i << 3);
+        zzs(j);
+    }
+
+    @Override // com.google.android.gms.internal.cast.zztc
+    public final void zzb(byte b) {
+        try {
+            byte[] bArr = this.zzc;
+            int i = this.zze;
+            this.zze = i + 1;
+            bArr[i] = b;
+        } catch (IndexOutOfBoundsException e) {
+            throw new zzta(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.zze), Integer.valueOf(this.zzd), 1), e);
+        }
+    }
+
+    public final void zzc(byte[] bArr, int i, int i2) {
+        try {
+            System.arraycopy(bArr, 0, this.zzc, this.zze, i2);
+            this.zze += i2;
+        } catch (IndexOutOfBoundsException e) {
+            throw new zzta(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.zze), Integer.valueOf(this.zzd), Integer.valueOf(i2)), e);
+        }
+    }
+
+    @Override // com.google.android.gms.internal.cast.zztc
     public final void zzq(int i) {
         while ((i & (-128)) != 0) {
             try {
@@ -184,12 +210,6 @@ final class zzsz extends zztc {
         int i3 = this.zze;
         this.zze = i3 + 1;
         bArr2[i3] = (byte) i;
-    }
-
-    @Override // com.google.android.gms.internal.cast.zztc
-    public final void zzr(int i, long j) {
-        zzq(i << 3);
-        zzs(j);
     }
 
     @Override // com.google.android.gms.internal.cast.zztc

@@ -18,7 +18,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedTextView;
 import org.telegram.ui.Components.VideoPlayer;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class RecordedAudioPlayerView extends View {
     public boolean allowDraw;
     private final Paint backgroundPaint;
@@ -95,6 +95,104 @@ public class RecordedAudioPlayerView extends View {
         animatedTextDrawable.setOverrideFullWidth(AndroidUtilities.displaySize.x);
     }
 
+    @Override // android.view.View
+    protected boolean verifyDrawable(Drawable drawable) {
+        return this.text == drawable || this.playPauseDrawable == drawable || super.verifyDrawable(drawable);
+    }
+
+    public void init(String str, double d, byte[] bArr, float f, float f2) {
+        if (this.destroyed) {
+            return;
+        }
+        this.duration = (float) d;
+        this.left = f;
+        this.right = f2;
+        this.wasPlaying = false;
+        this.text.setText(AndroidUtilities.formatDuration((int) Math.round(Math.max(1.0d, d)), false), false);
+        this.playPauseDrawable.setPause(false, false);
+        if (this.player == null) {
+            VideoPlayer videoPlayer = new VideoPlayer();
+            this.player = videoPlayer;
+            videoPlayer.setDelegate(new VideoPlayer.VideoPlayerDelegate() { // from class: org.telegram.ui.Components.RecordedAudioPlayerView.1
+                @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
+                public void onError(VideoPlayer videoPlayer2, Exception exc) {
+                }
+
+                @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
+                public void onRenderedFirstFrame() {
+                }
+
+                @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
+                public /* synthetic */ void onRenderedFirstFrame(AnalyticsListener.EventTime eventTime) {
+                    VideoPlayer.VideoPlayerDelegate.-CC.$default$onRenderedFirstFrame(this, eventTime);
+                }
+
+                @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
+                public /* synthetic */ void onSeekFinished(AnalyticsListener.EventTime eventTime) {
+                    VideoPlayer.VideoPlayerDelegate.-CC.$default$onSeekFinished(this, eventTime);
+                }
+
+                @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
+                public /* synthetic */ void onSeekStarted(AnalyticsListener.EventTime eventTime) {
+                    VideoPlayer.VideoPlayerDelegate.-CC.$default$onSeekStarted(this, eventTime);
+                }
+
+                @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
+                public boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
+                    return false;
+                }
+
+                @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
+                public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+                }
+
+                @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
+                public void onVideoSizeChanged(int i, int i2, int i3, float f3) {
+                }
+
+                @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
+                public void onStateChanged(boolean z, int i) {
+                    if (z && RecordedAudioPlayerView.this.player.getCurrentPosition() >= 0) {
+                        RecordedAudioPlayerView.this.wasPlaying = true;
+                    }
+                    RecordedAudioPlayerView.this.playPauseDrawable.setPause(z);
+                    AndroidUtilities.cancelRunOnUIThread(RecordedAudioPlayerView.this.progressUpdate);
+                    if (z) {
+                        AndroidUtilities.runOnUIThread(RecordedAudioPlayerView.this.progressUpdate, 16L);
+                    }
+                }
+            });
+        }
+        this.player.preparePlayer(Uri.fromFile(new File(str)), "other");
+        this.lastWaveformWidth = 0;
+        this.waveformData = bArr;
+        invalidate();
+    }
+
+    public boolean isPlaying() {
+        VideoPlayer videoPlayer = this.player;
+        return videoPlayer != null && videoPlayer.isPlaying();
+    }
+
+    public void setPlaying(boolean z) {
+        if (this.destroyed) {
+            z = false;
+        }
+        if (this.player != null) {
+            float currentPosition = r0.getCurrentPosition() / this.player.getDuration();
+            float f = this.left;
+            if (currentPosition < f || currentPosition > this.right) {
+                this.player.seekTo((long) (f * r0.getDuration()));
+            }
+            this.player.setPlayWhenReady(z);
+        }
+        this.playPauseDrawable.setPause(z);
+        AndroidUtilities.cancelRunOnUIThread(this.progressUpdate);
+        if (z) {
+            AndroidUtilities.runOnUIThread(this.progressUpdate, 16L);
+        }
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$0() {
         VideoPlayer videoPlayer = this.player;
@@ -143,118 +241,63 @@ public class RecordedAudioPlayerView extends View {
         this.lastWaveformWidth = measuredWidth;
     }
 
-    public void destroy() {
-        this.destroyed = true;
+    public boolean needsCut() {
+        return this.left > 0.0f || this.right < 1.0f;
+    }
+
+    public float getAudioLeft() {
+        return this.left;
+    }
+
+    public float getAudioRight() {
+        return this.right;
+    }
+
+    public long getDuration() {
         VideoPlayer videoPlayer = this.player;
-        if (videoPlayer != null) {
-            videoPlayer.setPlayWhenReady(false);
-            this.player.releasePlayer(true);
-            this.player = null;
+        if (videoPlayer == null) {
+            return 0L;
         }
+        return videoPlayer.getDuration();
+    }
+
+    public long getAudioLeftMs() {
+        return (long) (this.left * getDuration());
+    }
+
+    public long getAudioRightMs() {
+        return (long) (this.right * getDuration());
+    }
+
+    public double getNewDuration() {
+        return ((this.right - this.left) * getDuration()) / 1000.0d;
     }
 
     @Override // android.view.View
-    protected void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        if (this.allowDraw) {
-            drawIn(canvas, this.backgroundRect, 1.0f);
-        }
+    protected void onMeasure(int i, int i2) {
+        super.onMeasure(i, i2);
+        float dp = AndroidUtilities.dp(32.0f);
+        this.backgroundRect.set(0.0f, (getMeasuredHeight() - dp) / 2.0f, getMeasuredWidth(), (getMeasuredHeight() + dp) / 2.0f);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:102:0x0220, code lost:
-    
-        if (isPlaying() == false) goto L89;
-     */
     @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        VideoPlayer videoPlayer;
-        long max;
-        boolean contains = this.badgeClickRect.contains(motionEvent.getX(), motionEvent.getY());
-        boolean z = !contains && this.leftHandleClickRect.contains(motionEvent.getX(), motionEvent.getY());
-        boolean z2 = !contains && this.rightHandleClickRect.contains(motionEvent.getX(), motionEvent.getY());
-        boolean z3 = (contains || z || z2 || motionEvent.getX() <= this.leftHandleClickRect.right || motionEvent.getX() >= this.rightHandleClickRect.left) ? false : true;
-        if (motionEvent.getAction() == 0) {
-            this.playPressed = contains;
-            this.leftPressed = z;
-            this.rightPressed = z2;
-            if (z || z2) {
-                this.progressPressedWasPlaying = isPlaying();
-                setPlaying(false);
-            }
-            this.progressPressed = z3;
-            if (z3) {
-                this.progressPressedWasPlaying = isPlaying();
-                this.holdProgress = this.player != null ? r0.getCurrentPosition() / this.player.getDuration() : 1.0f;
-                setPlaying(false);
-            }
-            if (getParent() != null && (this.playPressed || this.leftPressed || this.rightPressed || this.progressPressed)) {
-                getParent().requestDisallowInterceptTouchEvent(true);
-            }
-        } else if (motionEvent.getAction() == 2) {
-            if (this.leftPressed) {
-                this.left = Utilities.clamp(AndroidUtilities.ilerp(motionEvent.getX(), this.backgroundRect.left + AndroidUtilities.dp(11.33f), this.backgroundRect.right - AndroidUtilities.dp(11.33f)), Utilities.clamp01(this.right - Math.max(1.0f / this.duration, AndroidUtilities.dp(30.0f) / (this.backgroundRect.width() - AndroidUtilities.dp(22.66f)))), 0.0f);
-            } else if (this.rightPressed) {
-                this.right = Utilities.clamp(AndroidUtilities.ilerp(motionEvent.getX(), this.backgroundRect.left + AndroidUtilities.dp(11.33f), this.backgroundRect.right - AndroidUtilities.dp(11.33f)), 1.0f, Utilities.clamp01(this.left + Math.max(1.0f / this.duration, AndroidUtilities.dp(30.0f) / (this.backgroundRect.width() - AndroidUtilities.dp(22.66f)))));
-            } else {
-                if (this.progressPressed) {
-                    VideoPlayer videoPlayer2 = this.player;
-                    if (videoPlayer2 != null) {
-                        float clamp = Utilities.clamp(AndroidUtilities.ilerp(motionEvent.getX(), this.backgroundRect.left + AndroidUtilities.dp(11.33f), this.backgroundRect.right - AndroidUtilities.dp(11.33f)), this.right, this.left);
-                        this.holdProgress = clamp;
-                        videoPlayer2.seekTo((long) (clamp * this.player.getDuration()));
-                    }
-                }
-                this.text.setText(AndroidUtilities.formatDuration(Math.round(Math.max(1.0f, this.duration * (this.right - this.left))), false), true);
-            }
-            invalidate();
-            this.text.setText(AndroidUtilities.formatDuration(Math.round(Math.max(1.0f, this.duration * (this.right - this.left))), false), true);
-        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            if (motionEvent.getAction() == 1 && this.playPressed) {
-                setPlaying(!isPlaying());
-            } else if (this.leftPressed && this.wasPlaying) {
-                videoPlayer = this.player;
-                if (videoPlayer != null) {
-                    max = (long) (this.left * videoPlayer.getDuration());
-                    videoPlayer.seekTo(max);
-                }
-                setPlaying(true);
-            } else {
-                if (this.rightPressed && this.wasPlaying) {
-                    videoPlayer = this.player;
-                    if (videoPlayer != null) {
-                        max = Math.max((long) (this.left * videoPlayer.getDuration()), ((long) (this.right * this.player.getDuration())) - 1500);
-                        videoPlayer.seekTo(max);
-                    }
-                } else if (this.progressPressed) {
-                }
-                setPlaying(true);
-            }
-            this.playPressed = false;
-            this.leftPressed = false;
-            this.rightPressed = false;
-            this.progressPressed = false;
-        }
-        return this.playPressed || this.leftPressed || this.rightPressed || this.progressPressed || super.dispatchTouchEvent(motionEvent);
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        float dp = AndroidUtilities.dp(32.0f);
+        this.backgroundRect.set(0.0f, (getHeight() - dp) / 2.0f, getWidth(), (getHeight() + dp) / 2.0f);
     }
 
     public void drawIn(Canvas canvas, RectF rectF, float f) {
         float clamp;
-        Paint paint;
-        int color;
-        Paint paint2;
-        int color2;
         this.backgroundPaint.setColor(Theme.getColor(Theme.key_chat_recordedVoiceBackground, this.resourcesProvider));
         this.darkerBackgroundPaint.setColor(Theme.getColor(Theme.key_chat_recordedVoiceDarkerBackground, this.resourcesProvider));
         AnimatedTextView.AnimatedTextDrawable animatedTextDrawable = this.text;
         int i = Theme.key_chat_recordedVoiceProgressInner;
         animatedTextDrawable.setTextColor(Theme.getColor(i, this.resourcesProvider));
         this.playPauseDrawable.setColor(Theme.getColor(Theme.key_chat_recordedVoicePlayPause, this.resourcesProvider));
-        Paint paint3 = this.waveformPaint;
+        Paint paint = this.waveformPaint;
         int i2 = Theme.key_chat_recordedVoiceProgress;
-        paint3.setColor(Theme.getColor(i2, this.resourcesProvider));
+        paint.setColor(Theme.getColor(i2, this.resourcesProvider));
         this.handlePaint.setColor(Theme.getColor(i, this.resourcesProvider));
         int lerp = (int) AndroidUtilities.lerp(rectF.left + AndroidUtilities.dp(11.33f), rectF.right - AndroidUtilities.dp(11.33f), Utilities.clamp01(this.left));
         int lerp2 = (int) AndroidUtilities.lerp(rectF.left + AndroidUtilities.dp(11.33f), rectF.right - AndroidUtilities.dp(11.33f), Utilities.clamp01(this.right));
@@ -284,13 +327,10 @@ public class RecordedAudioPlayerView extends View {
             canvas.clipRect(clamp2, rectF.top, f3, rectF.bottom);
             canvas.translate(rectF.left + AndroidUtilities.dp(14.0f), rectF.centerY());
             if (!this.wasPlaying || clamp >= this.left || this.progressPressed) {
-                paint2 = this.waveformPaint;
-                color2 = Theme.getColor(i2, this.resourcesProvider);
+                this.waveformPaint.setColor(Theme.getColor(i2, this.resourcesProvider));
             } else {
-                paint2 = this.waveformPaint;
-                color2 = Theme.getColor(i, this.resourcesProvider);
+                this.waveformPaint.setColor(Theme.getColor(i, this.resourcesProvider));
             }
-            paint2.setColor(color2);
             canvas.drawPath(this.waveformPath, this.waveformPaint);
             canvas.restore();
         }
@@ -299,13 +339,10 @@ public class RecordedAudioPlayerView extends View {
             canvas.clipRect(f2, rectF.top, clamp2, rectF.bottom);
             canvas.translate(rectF.left + AndroidUtilities.dp(14.0f), rectF.centerY());
             if (isPlaying() || this.wasPlaying || this.progressPressed) {
-                paint = this.waveformPaint;
-                color = Theme.getColor(i, this.resourcesProvider);
+                this.waveformPaint.setColor(Theme.getColor(i, this.resourcesProvider));
             } else {
-                paint = this.waveformPaint;
-                color = Theme.getColor(i2, this.resourcesProvider);
+                this.waveformPaint.setColor(Theme.getColor(i2, this.resourcesProvider));
             }
-            paint.setColor(color);
             canvas.drawPath(this.waveformPath, this.waveformPaint);
             canvas.restore();
         }
@@ -351,128 +388,6 @@ public class RecordedAudioPlayerView extends View {
         canvas.restore();
     }
 
-    public float getAudioLeft() {
-        return this.left;
-    }
-
-    public long getAudioLeftMs() {
-        return (long) (this.left * getDuration());
-    }
-
-    public float getAudioRight() {
-        return this.right;
-    }
-
-    public long getAudioRightMs() {
-        return (long) (this.right * getDuration());
-    }
-
-    public long getDuration() {
-        VideoPlayer videoPlayer = this.player;
-        if (videoPlayer == null) {
-            return 0L;
-        }
-        return videoPlayer.getDuration();
-    }
-
-    public double getNewDuration() {
-        double duration = (this.right - this.left) * getDuration();
-        Double.isNaN(duration);
-        return duration / 1000.0d;
-    }
-
-    public void init(String str, double d, byte[] bArr, float f, float f2) {
-        if (this.destroyed) {
-            return;
-        }
-        this.duration = (float) d;
-        this.left = f;
-        this.right = f2;
-        this.wasPlaying = false;
-        this.text.setText(AndroidUtilities.formatDuration((int) Math.round(Math.max(1.0d, d)), false), false);
-        this.playPauseDrawable.setPause(false, false);
-        if (this.player == null) {
-            VideoPlayer videoPlayer = new VideoPlayer();
-            this.player = videoPlayer;
-            videoPlayer.setDelegate(new VideoPlayer.VideoPlayerDelegate() { // from class: org.telegram.ui.Components.RecordedAudioPlayerView.1
-                @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
-                public void onError(VideoPlayer videoPlayer2, Exception exc) {
-                }
-
-                @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
-                public void onRenderedFirstFrame() {
-                }
-
-                @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
-                public /* synthetic */ void onRenderedFirstFrame(AnalyticsListener.EventTime eventTime) {
-                    VideoPlayer.VideoPlayerDelegate.-CC.$default$onRenderedFirstFrame(this, eventTime);
-                }
-
-                @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
-                public /* synthetic */ void onSeekFinished(AnalyticsListener.EventTime eventTime) {
-                    VideoPlayer.VideoPlayerDelegate.-CC.$default$onSeekFinished(this, eventTime);
-                }
-
-                @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
-                public /* synthetic */ void onSeekStarted(AnalyticsListener.EventTime eventTime) {
-                    VideoPlayer.VideoPlayerDelegate.-CC.$default$onSeekStarted(this, eventTime);
-                }
-
-                @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
-                public void onStateChanged(boolean z, int i) {
-                    if (z && RecordedAudioPlayerView.this.player.getCurrentPosition() >= 0) {
-                        RecordedAudioPlayerView.this.wasPlaying = true;
-                    }
-                    RecordedAudioPlayerView.this.playPauseDrawable.setPause(z);
-                    AndroidUtilities.cancelRunOnUIThread(RecordedAudioPlayerView.this.progressUpdate);
-                    if (z) {
-                        AndroidUtilities.runOnUIThread(RecordedAudioPlayerView.this.progressUpdate, 16L);
-                    }
-                }
-
-                @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
-                public boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
-                    return false;
-                }
-
-                @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
-                public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
-                }
-
-                @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
-                public void onVideoSizeChanged(int i, int i2, int i3, float f3) {
-                }
-            });
-        }
-        this.player.preparePlayer(Uri.fromFile(new File(str)), "other");
-        this.lastWaveformWidth = 0;
-        this.waveformData = bArr;
-        invalidate();
-    }
-
-    public boolean isPlaying() {
-        VideoPlayer videoPlayer = this.player;
-        return videoPlayer != null && videoPlayer.isPlaying();
-    }
-
-    public boolean needsCut() {
-        return this.left > 0.0f || this.right < 1.0f;
-    }
-
-    @Override // android.view.View
-    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        float dp = AndroidUtilities.dp(32.0f);
-        this.backgroundRect.set(0.0f, (getHeight() - dp) / 2.0f, getWidth(), (getHeight() + dp) / 2.0f);
-    }
-
-    @Override // android.view.View
-    protected void onMeasure(int i, int i2) {
-        super.onMeasure(i, i2);
-        float dp = AndroidUtilities.dp(32.0f);
-        this.backgroundRect.set(0.0f, (getMeasuredHeight() - dp) / 2.0f, getMeasuredWidth(), (getMeasuredHeight() + dp) / 2.0f);
-    }
-
     public void setAllowDraw(boolean z) {
         if (this.allowDraw != z) {
             this.allowDraw = z;
@@ -480,27 +395,87 @@ public class RecordedAudioPlayerView extends View {
         }
     }
 
-    public void setPlaying(boolean z) {
-        if (this.destroyed) {
-            z = false;
+    @Override // android.view.View
+    protected void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        if (this.allowDraw) {
+            drawIn(canvas, this.backgroundRect, 1.0f);
         }
-        if (this.player != null) {
-            float currentPosition = r0.getCurrentPosition() / this.player.getDuration();
-            float f = this.left;
-            if (currentPosition < f || currentPosition > this.right) {
-                this.player.seekTo((long) (f * r0.getDuration()));
-            }
-            this.player.setPlayWhenReady(z);
-        }
-        this.playPauseDrawable.setPause(z);
-        AndroidUtilities.cancelRunOnUIThread(this.progressUpdate);
-        if (z) {
-            AndroidUtilities.runOnUIThread(this.progressUpdate, 16L);
+    }
+
+    public void destroy() {
+        this.destroyed = true;
+        VideoPlayer videoPlayer = this.player;
+        if (videoPlayer != null) {
+            videoPlayer.setPlayWhenReady(false);
+            this.player.releasePlayer(true);
+            this.player = null;
         }
     }
 
     @Override // android.view.View
-    protected boolean verifyDrawable(Drawable drawable) {
-        return this.text == drawable || this.playPauseDrawable == drawable || super.verifyDrawable(drawable);
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        boolean contains = this.badgeClickRect.contains(motionEvent.getX(), motionEvent.getY());
+        boolean z = !contains && this.leftHandleClickRect.contains(motionEvent.getX(), motionEvent.getY());
+        boolean z2 = !contains && this.rightHandleClickRect.contains(motionEvent.getX(), motionEvent.getY());
+        boolean z3 = (contains || z || z2 || motionEvent.getX() <= this.leftHandleClickRect.right || motionEvent.getX() >= this.rightHandleClickRect.left) ? false : true;
+        if (motionEvent.getAction() == 0) {
+            this.playPressed = contains;
+            this.leftPressed = z;
+            this.rightPressed = z2;
+            if (z || z2) {
+                this.progressPressedWasPlaying = isPlaying();
+                setPlaying(false);
+            }
+            this.progressPressed = z3;
+            if (z3) {
+                this.progressPressedWasPlaying = isPlaying();
+                this.holdProgress = this.player != null ? r0.getCurrentPosition() / this.player.getDuration() : 1.0f;
+                setPlaying(false);
+            }
+            if (getParent() != null && (this.playPressed || this.leftPressed || this.rightPressed || this.progressPressed)) {
+                getParent().requestDisallowInterceptTouchEvent(true);
+            }
+        } else if (motionEvent.getAction() == 2) {
+            if (this.leftPressed) {
+                this.left = Utilities.clamp(AndroidUtilities.ilerp(motionEvent.getX(), this.backgroundRect.left + AndroidUtilities.dp(11.33f), this.backgroundRect.right - AndroidUtilities.dp(11.33f)), Utilities.clamp01(this.right - Math.max(1.0f / this.duration, AndroidUtilities.dp(30.0f) / (this.backgroundRect.width() - AndroidUtilities.dp(22.66f)))), 0.0f);
+                invalidate();
+            } else if (this.rightPressed) {
+                this.right = Utilities.clamp(AndroidUtilities.ilerp(motionEvent.getX(), this.backgroundRect.left + AndroidUtilities.dp(11.33f), this.backgroundRect.right - AndroidUtilities.dp(11.33f)), 1.0f, Utilities.clamp01(this.left + Math.max(1.0f / this.duration, AndroidUtilities.dp(30.0f) / (this.backgroundRect.width() - AndroidUtilities.dp(22.66f)))));
+                invalidate();
+            } else if (this.progressPressed) {
+                VideoPlayer videoPlayer = this.player;
+                if (videoPlayer != null) {
+                    float clamp = Utilities.clamp(AndroidUtilities.ilerp(motionEvent.getX(), this.backgroundRect.left + AndroidUtilities.dp(11.33f), this.backgroundRect.right - AndroidUtilities.dp(11.33f)), this.right, this.left);
+                    this.holdProgress = clamp;
+                    videoPlayer.seekTo((long) (clamp * this.player.getDuration()));
+                }
+                invalidate();
+            }
+            this.text.setText(AndroidUtilities.formatDuration(Math.round(Math.max(1.0f, this.duration * (this.right - this.left))), false), true);
+        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+            if (motionEvent.getAction() == 1 && this.playPressed) {
+                setPlaying(!isPlaying());
+            } else if (this.leftPressed && this.wasPlaying) {
+                VideoPlayer videoPlayer2 = this.player;
+                if (videoPlayer2 != null) {
+                    videoPlayer2.seekTo((long) (this.left * videoPlayer2.getDuration()));
+                }
+                setPlaying(true);
+            } else if (this.rightPressed && this.wasPlaying) {
+                VideoPlayer videoPlayer3 = this.player;
+                if (videoPlayer3 != null) {
+                    videoPlayer3.seekTo(Math.max((long) (this.left * videoPlayer3.getDuration()), ((long) (this.right * this.player.getDuration())) - 1500));
+                }
+                setPlaying(true);
+            } else if (this.progressPressed && !isPlaying()) {
+                setPlaying(true);
+            }
+            this.playPressed = false;
+            this.leftPressed = false;
+            this.rightPressed = false;
+            this.progressPressed = false;
+        }
+        return this.playPressed || this.leftPressed || this.rightPressed || this.progressPressed || super.dispatchTouchEvent(motionEvent);
     }
 }

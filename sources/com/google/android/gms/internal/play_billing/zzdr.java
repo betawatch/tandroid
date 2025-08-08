@@ -1,491 +1,252 @@
 package com.google.android.gms.internal.play_billing;
 
-import java.util.List;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+import java.util.Set;
 
 /* loaded from: classes.dex */
-abstract class zzdr {
-    public static final /* synthetic */ int $r8$clinit = 0;
-    private static final Class zzb;
-    private static final zzeg zzc;
-    private static final zzeg zzd;
+final class zzdr extends zzcw {
+    static final zzdr zzc;
+    final transient zzco zzd;
 
     static {
-        Class<?> cls;
-        Class<?> cls2;
-        zzeg zzegVar = null;
-        try {
-            cls = Class.forName("com.google.protobuf.GeneratedMessage");
-        } catch (Throwable unused) {
-            cls = null;
+        int i = zzco.$r8$clinit;
+        zzc = new zzdr(zzdk.zza, zzdc.zza);
+    }
+
+    zzdr(zzco zzcoVar, Comparator comparator) {
+        super(comparator);
+        this.zzd = zzcoVar;
+    }
+
+    @Override // java.util.NavigableSet
+    public final Object ceiling(Object obj) {
+        zzco zzcoVar = this.zzd;
+        int zzt = zzt(obj, true);
+        if (zzt == zzcoVar.size()) {
+            return null;
         }
-        zzb = cls;
-        try {
-            cls2 = Class.forName("com.google.protobuf.UnknownFieldSetSchema");
-        } catch (Throwable unused2) {
-            cls2 = null;
-        }
-        if (cls2 != null) {
+        return this.zzd.get(zzt);
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.zzcj, java.util.AbstractCollection, java.util.Collection
+    public final boolean contains(Object obj) {
+        if (obj != null) {
             try {
-                zzegVar = (zzeg) cls2.getConstructor(null).newInstance(null);
-            } catch (Throwable unused3) {
-            }
-        }
-        zzc = zzegVar;
-        zzd = new zzei();
-    }
-
-    static Object zzA(Object obj, int i, int i2, Object obj2, zzeg zzegVar) {
-        if (obj2 == null) {
-            obj2 = zzegVar.zzc(obj);
-        }
-        zzegVar.zzf(obj2, i, i2);
-        return obj2;
-    }
-
-    static void zzB(zzeg zzegVar, Object obj, Object obj2) {
-        zzegVar.zzh(obj, zzegVar.zze(zzegVar.zzd(obj), zzegVar.zzd(obj2)));
-    }
-
-    public static void zzC(Class cls) {
-        Class cls2;
-        if (!zzcb.class.isAssignableFrom(cls) && (cls2 = zzb) != null && !cls2.isAssignableFrom(cls)) {
-            throw new IllegalArgumentException("Message classes must extend GeneratedMessage or GeneratedMessageLite");
-        }
-    }
-
-    public static void zzD(int i, List list, zzey zzeyVar, boolean z) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        zzeyVar.zzc(i, list, z);
-    }
-
-    public static void zzE(int i, List list, zzey zzeyVar) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        zzeyVar.zze(i, list);
-    }
-
-    public static void zzF(int i, List list, zzey zzeyVar, boolean z) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        zzeyVar.zzg(i, list, z);
-    }
-
-    public static void zzG(int i, List list, zzey zzeyVar, boolean z) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        zzeyVar.zzj(i, list, z);
-    }
-
-    public static void zzH(int i, List list, zzey zzeyVar, boolean z) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        zzeyVar.zzl(i, list, z);
-    }
-
-    public static void zzI(int i, List list, zzey zzeyVar, boolean z) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        zzeyVar.zzn(i, list, z);
-    }
-
-    public static void zzJ(int i, List list, zzey zzeyVar, boolean z) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        zzeyVar.zzp(i, list, z);
-    }
-
-    public static void zzK(int i, List list, zzey zzeyVar, zzdp zzdpVar) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        for (int i2 = 0; i2 < list.size(); i2++) {
-            ((zzbj) zzeyVar).zzq(i, list.get(i2), zzdpVar);
-        }
-    }
-
-    public static void zzL(int i, List list, zzey zzeyVar, boolean z) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        zzeyVar.zzs(i, list, z);
-    }
-
-    public static void zzM(int i, List list, zzey zzeyVar, boolean z) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        zzeyVar.zzu(i, list, z);
-    }
-
-    public static void zzN(int i, List list, zzey zzeyVar, zzdp zzdpVar) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        for (int i2 = 0; i2 < list.size(); i2++) {
-            ((zzbj) zzeyVar).zzv(i, list.get(i2), zzdpVar);
-        }
-    }
-
-    public static void zzO(int i, List list, zzey zzeyVar, boolean z) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        zzeyVar.zzx(i, list, z);
-    }
-
-    public static void zzP(int i, List list, zzey zzeyVar, boolean z) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        zzeyVar.zzz(i, list, z);
-    }
-
-    public static void zzQ(int i, List list, zzey zzeyVar, boolean z) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        zzeyVar.zzB(i, list, z);
-    }
-
-    public static void zzR(int i, List list, zzey zzeyVar, boolean z) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        zzeyVar.zzD(i, list, z);
-    }
-
-    public static void zzS(int i, List list, zzey zzeyVar) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        zzeyVar.zzG(i, list);
-    }
-
-    public static void zzT(int i, List list, zzey zzeyVar, boolean z) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        zzeyVar.zzI(i, list, z);
-    }
-
-    public static void zzU(int i, List list, zzey zzeyVar, boolean z) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        zzeyVar.zzK(i, list, z);
-    }
-
-    static boolean zzV(Object obj, Object obj2) {
-        if (obj != obj2) {
-            return obj != null && obj.equals(obj2);
-        }
-        return true;
-    }
-
-    static int zza(int i, List list, boolean z) {
-        int size = list.size();
-        if (size == 0) {
-            return 0;
-        }
-        return size * (zzbi.zzx(i << 3) + 1);
-    }
-
-    static int zzb(int i, List list) {
-        int size = list.size();
-        if (size == 0) {
-            return 0;
-        }
-        int zzx = size * zzbi.zzx(i << 3);
-        for (int i2 = 0; i2 < list.size(); i2++) {
-            int zzd2 = ((zzba) list.get(i2)).zzd();
-            zzx += zzbi.zzx(zzd2) + zzd2;
-        }
-        return zzx;
-    }
-
-    static int zzc(int i, List list, boolean z) {
-        int size = list.size();
-        if (size == 0) {
-            return 0;
-        }
-        return zzd(list) + (size * zzbi.zzx(i << 3));
-    }
-
-    static int zzd(List list) {
-        int size = list.size();
-        if (size == 0) {
-            return 0;
-        }
-        if (list instanceof zzcc) {
-            if (size <= 0) {
-                return 0;
-            }
-            throw null;
-        }
-        int i = 0;
-        for (int i2 = 0; i2 < size; i2++) {
-            i += zzbi.zzu(((Integer) list.get(i2)).intValue());
-        }
-        return i;
-    }
-
-    static int zze(int i, List list, boolean z) {
-        int size = list.size();
-        if (size == 0) {
-            return 0;
-        }
-        return size * (zzbi.zzx(i << 3) + 4);
-    }
-
-    static int zzf(List list) {
-        return list.size() * 4;
-    }
-
-    static int zzg(int i, List list, boolean z) {
-        int size = list.size();
-        if (size == 0) {
-            return 0;
-        }
-        return size * (zzbi.zzx(i << 3) + 8);
-    }
-
-    static int zzh(List list) {
-        return list.size() * 8;
-    }
-
-    static int zzi(int i, List list, zzdp zzdpVar) {
-        int size = list.size();
-        if (size == 0) {
-            return 0;
-        }
-        int i2 = 0;
-        for (int i3 = 0; i3 < size; i3++) {
-            i2 += zzbi.zzt(i, (zzdf) list.get(i3), zzdpVar);
-        }
-        return i2;
-    }
-
-    static int zzj(int i, List list, boolean z) {
-        int size = list.size();
-        if (size == 0) {
-            return 0;
-        }
-        return zzk(list) + (size * zzbi.zzx(i << 3));
-    }
-
-    static int zzk(List list) {
-        int size = list.size();
-        if (size == 0) {
-            return 0;
-        }
-        if (list instanceof zzcc) {
-            if (size <= 0) {
-                return 0;
-            }
-            throw null;
-        }
-        int i = 0;
-        for (int i2 = 0; i2 < size; i2++) {
-            i += zzbi.zzu(((Integer) list.get(i2)).intValue());
-        }
-        return i;
-    }
-
-    static int zzl(int i, List list, boolean z) {
-        if (list.size() == 0) {
-            return 0;
-        }
-        return zzm(list) + (list.size() * zzbi.zzx(i << 3));
-    }
-
-    static int zzm(List list) {
-        int size = list.size();
-        if (size == 0) {
-            return 0;
-        }
-        if (list instanceof zzcu) {
-            if (size <= 0) {
-                return 0;
-            }
-            throw null;
-        }
-        int i = 0;
-        for (int i2 = 0; i2 < size; i2++) {
-            i += zzbi.zzy(((Long) list.get(i2)).longValue());
-        }
-        return i;
-    }
-
-    static int zzn(int i, Object obj, zzdp zzdpVar) {
-        return zzbi.zzx(i << 3) + zzbi.zzv((zzdf) obj, zzdpVar);
-    }
-
-    static int zzo(int i, List list, zzdp zzdpVar) {
-        int size = list.size();
-        if (size == 0) {
-            return 0;
-        }
-        int zzx = zzbi.zzx(i << 3) * size;
-        for (int i2 = 0; i2 < size; i2++) {
-            zzx += zzbi.zzv((zzdf) list.get(i2), zzdpVar);
-        }
-        return zzx;
-    }
-
-    static int zzp(int i, List list, boolean z) {
-        int size = list.size();
-        if (size == 0) {
-            return 0;
-        }
-        return zzq(list) + (size * zzbi.zzx(i << 3));
-    }
-
-    static int zzq(List list) {
-        int size = list.size();
-        if (size == 0) {
-            return 0;
-        }
-        if (list instanceof zzcc) {
-            if (size <= 0) {
-                return 0;
-            }
-            throw null;
-        }
-        int i = 0;
-        for (int i2 = 0; i2 < size; i2++) {
-            int intValue = ((Integer) list.get(i2)).intValue();
-            i += zzbi.zzx((intValue >> 31) ^ (intValue + intValue));
-        }
-        return i;
-    }
-
-    static int zzr(int i, List list, boolean z) {
-        int size = list.size();
-        if (size == 0) {
-            return 0;
-        }
-        return zzs(list) + (size * zzbi.zzx(i << 3));
-    }
-
-    static int zzs(List list) {
-        int size = list.size();
-        if (size == 0) {
-            return 0;
-        }
-        if (list instanceof zzcu) {
-            if (size <= 0) {
-                return 0;
-            }
-            throw null;
-        }
-        int i = 0;
-        for (int i2 = 0; i2 < size; i2++) {
-            long longValue = ((Long) list.get(i2)).longValue();
-            i += zzbi.zzy((longValue >> 63) ^ (longValue + longValue));
-        }
-        return i;
-    }
-
-    static int zzt(int i, List list) {
-        int size = list.size();
-        int i2 = 0;
-        if (size == 0) {
-            return 0;
-        }
-        boolean z = list instanceof zzcn;
-        int zzx = zzbi.zzx(i << 3) * size;
-        if (z) {
-            zzcn zzcnVar = (zzcn) list;
-            while (i2 < size) {
-                Object zzf = zzcnVar.zzf(i2);
-                if (zzf instanceof zzba) {
-                    int zzd2 = ((zzba) zzf).zzd();
-                    zzx += zzbi.zzx(zzd2) + zzd2;
-                } else {
-                    zzx += zzbi.zzw((String) zzf);
+                if (Collections.binarySearch(this.zzd, obj, ((zzcw) this).zza) >= 0) {
+                    return true;
                 }
-                i2++;
+            } catch (ClassCastException unused) {
             }
-        } else {
-            while (i2 < size) {
-                Object obj = list.get(i2);
-                if (obj instanceof zzba) {
-                    int zzd3 = ((zzba) obj).zzd();
-                    zzx += zzbi.zzx(zzd3) + zzd3;
+        }
+        return false;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean containsAll(Collection collection) {
+        if (collection instanceof zzdb) {
+            collection = ((zzdb) collection).zza();
+        }
+        if (!zzdv.zza(((zzcw) this).zza, collection) || collection.size() <= 1) {
+            return super.containsAll(collection);
+        }
+        zzdx listIterator = this.zzd.listIterator(0);
+        Iterator it = collection.iterator();
+        if (!listIterator.hasNext()) {
+            return false;
+        }
+        Object next = it.next();
+        E next2 = listIterator.next();
+        while (true) {
+            try {
+                int compare = ((zzcw) this).zza.compare(next2, next);
+                if (compare >= 0) {
+                    if (compare != 0) {
+                        break;
+                    }
+                    if (!it.hasNext()) {
+                        return true;
+                    }
+                    next = it.next();
                 } else {
-                    zzx += zzbi.zzw((String) obj);
+                    if (!listIterator.hasNext()) {
+                        return false;
+                    }
+                    next2 = listIterator.next();
                 }
-                i2++;
+            } catch (ClassCastException | NullPointerException unused) {
             }
         }
-        return zzx;
+        return false;
     }
 
-    static int zzu(int i, List list, boolean z) {
-        int size = list.size();
-        if (size == 0) {
-            return 0;
+    @Override // com.google.android.gms.internal.play_billing.zzcv, java.util.Collection, java.util.Set
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        return zzv(list) + (size * zzbi.zzx(i << 3));
-    }
-
-    static int zzv(List list) {
-        int size = list.size();
-        if (size == 0) {
-            return 0;
+        if (!(obj instanceof Set)) {
+            return false;
         }
-        if (list instanceof zzcc) {
-            if (size <= 0) {
-                return 0;
+        Set set = (Set) obj;
+        if (this.zzd.size() != set.size()) {
+            return false;
+        }
+        if (isEmpty()) {
+            return true;
+        }
+        if (!zzdv.zza(((zzcw) this).zza, set)) {
+            return containsAll(set);
+        }
+        Iterator it = set.iterator();
+        try {
+            zzdx listIterator = this.zzd.listIterator(0);
+            while (listIterator.hasNext()) {
+                E next = listIterator.next();
+                Object next2 = it.next();
+                if (next2 == null || ((zzcw) this).zza.compare(next, next2) != 0) {
+                    return false;
+                }
             }
-            throw null;
+            return true;
+        } catch (ClassCastException | NoSuchElementException unused) {
+            return false;
         }
-        int i = 0;
-        for (int i2 = 0; i2 < size; i2++) {
-            i += zzbi.zzx(((Integer) list.get(i2)).intValue());
-        }
-        return i;
     }
 
-    static int zzw(int i, List list, boolean z) {
-        int size = list.size();
-        if (size == 0) {
-            return 0;
+    @Override // com.google.android.gms.internal.play_billing.zzcw, java.util.SortedSet
+    public final Object first() {
+        if (isEmpty()) {
+            throw new NoSuchElementException();
         }
-        return zzx(list) + (size * zzbi.zzx(i << 3));
+        return this.zzd.get(0);
     }
 
-    static int zzx(List list) {
-        int size = list.size();
-        if (size == 0) {
-            return 0;
+    @Override // java.util.NavigableSet
+    public final Object floor(Object obj) {
+        int zzs = zzs(obj, true) - 1;
+        if (zzs == -1) {
+            return null;
         }
-        if (list instanceof zzcu) {
-            if (size <= 0) {
-                return 0;
+        return this.zzd.get(zzs);
+    }
+
+    @Override // java.util.NavigableSet
+    public final Object higher(Object obj) {
+        zzco zzcoVar = this.zzd;
+        int zzt = zzt(obj, false);
+        if (zzt == zzcoVar.size()) {
+            return null;
+        }
+        return this.zzd.get(zzt);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set, java.util.NavigableSet
+    public final /* synthetic */ Iterator iterator() {
+        return this.zzd.listIterator(0);
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.zzcw, java.util.SortedSet
+    public final Object last() {
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+        return this.zzd.get(r0.size() - 1);
+    }
+
+    @Override // java.util.NavigableSet
+    public final Object lower(Object obj) {
+        int zzs = zzs(obj, false) - 1;
+        if (zzs == -1) {
+            return null;
+        }
+        return this.zzd.get(zzs);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return this.zzd.size();
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.zzcj
+    final int zza(Object[] objArr, int i) {
+        return this.zzd.zza(objArr, 0);
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.zzcj
+    final int zzb() {
+        return this.zzd.zzb();
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.zzcj
+    final int zzc() {
+        return this.zzd.zzc();
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.zzcv, com.google.android.gms.internal.play_billing.zzcj
+    public final zzco zzd() {
+        return this.zzd;
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.zzcj
+    final Object[] zzg() {
+        return this.zzd.zzg();
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.zzcw
+    final zzcw zzl() {
+        Comparator reverseOrder = Collections.reverseOrder(((zzcw) this).zza);
+        return isEmpty() ? zzcw.zzq(reverseOrder) : new zzdr(this.zzd.zzh(), reverseOrder);
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.zzcw
+    final zzcw zzm(Object obj, boolean z) {
+        return zzu(0, zzs(obj, z));
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.zzcw
+    final zzcw zzo(Object obj, boolean z, Object obj2, boolean z2) {
+        return zzp(obj, z).zzm(obj2, z2);
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.zzcw
+    final zzcw zzp(Object obj, boolean z) {
+        return zzu(zzt(obj, z), this.zzd.size());
+    }
+
+    @Override // java.util.NavigableSet
+    /* renamed from: zzr, reason: merged with bridge method [inline-methods] */
+    public final zzdw descendingIterator() {
+        return this.zzd.zzh().listIterator(0);
+    }
+
+    final zzdr zzu(int i, int i2) {
+        if (i == 0) {
+            if (i2 == this.zzd.size()) {
+                return this;
             }
-            throw null;
+            i = 0;
         }
-        int i = 0;
-        for (int i2 = 0; i2 < size; i2++) {
-            i += zzbi.zzy(((Long) list.get(i2)).longValue());
+        if (i >= i2) {
+            return zzcw.zzq(((zzcw) this).zza);
         }
-        return i;
+        zzco zzcoVar = this.zzd;
+        return new zzdr(zzcoVar.subList(i, i2), ((zzcw) this).zza);
     }
 
-    public static zzeg zzy() {
-        return zzc;
+    final int zzs(Object obj, boolean z) {
+        obj.getClass();
+        int binarySearch = Collections.binarySearch(this.zzd, obj, ((zzcw) this).zza);
+        return binarySearch >= 0 ? z ? binarySearch + 1 : binarySearch : ~binarySearch;
     }
 
-    public static zzeg zzz() {
-        return zzd;
+    final int zzt(Object obj, boolean z) {
+        obj.getClass();
+        int binarySearch = Collections.binarySearch(this.zzd, obj, ((zzcw) this).zza);
+        return binarySearch >= 0 ? z ? binarySearch : binarySearch + 1 : ~binarySearch;
     }
 }

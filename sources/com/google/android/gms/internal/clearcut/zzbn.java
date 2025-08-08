@@ -219,15 +219,29 @@ public abstract class zzbn extends zzba {
             try {
                 byte[] bArr = this.buffer;
                 int i = this.position;
+                int i2 = i + 1;
+                this.position = i2;
                 bArr[i] = (byte) j;
-                bArr[i + 1] = (byte) (j >> 8);
-                bArr[i + 2] = (byte) (j >> 16);
-                bArr[i + 3] = (byte) (j >> 24);
-                bArr[i + 4] = (byte) (j >> 32);
-                bArr[i + 5] = (byte) (j >> 40);
-                bArr[i + 6] = (byte) (j >> 48);
+                int i3 = i + 2;
+                this.position = i3;
+                bArr[i2] = (byte) (j >> 8);
+                int i4 = i + 3;
+                this.position = i4;
+                bArr[i3] = (byte) (j >> 16);
+                int i5 = i + 4;
+                this.position = i5;
+                bArr[i4] = (byte) (j >> 24);
+                int i6 = i + 5;
+                this.position = i6;
+                bArr[i5] = (byte) (j >> 32);
+                int i7 = i + 6;
+                this.position = i7;
+                bArr[i6] = (byte) (j >> 40);
+                int i8 = i + 7;
+                this.position = i8;
+                bArr[i7] = (byte) (j >> 48);
                 this.position = i + 8;
-                bArr[i + 7] = (byte) (j >> 56);
+                bArr[i8] = (byte) (j >> 56);
             } catch (IndexOutOfBoundsException e) {
                 throw new zzc(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.position), Integer.valueOf(this.limit), 1), e);
             }
@@ -311,11 +325,17 @@ public abstract class zzbn extends zzba {
             try {
                 byte[] bArr = this.buffer;
                 int i2 = this.position;
+                int i3 = i2 + 1;
+                this.position = i3;
                 bArr[i2] = (byte) i;
-                bArr[i2 + 1] = (byte) (i >> 8);
-                bArr[i2 + 2] = (byte) (i >> 16);
+                int i4 = i2 + 2;
+                this.position = i4;
+                bArr[i3] = (byte) (i >> 8);
+                int i5 = i2 + 3;
+                this.position = i5;
+                bArr[i4] = (byte) (i >> 16);
                 this.position = i2 + 4;
-                bArr[i2 + 3] = i >> 24;
+                bArr[i5] = i >> 24;
             } catch (IndexOutOfBoundsException e) {
                 throw new zzc(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.position), Integer.valueOf(this.limit), 1), e);
             }

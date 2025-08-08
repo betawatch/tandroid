@@ -23,6 +23,26 @@ public abstract class KeyEventDispatcher {
         boolean superDispatchKeyEvent(KeyEvent keyEvent);
     }
 
+    public static boolean dispatchBeforeHierarchy(View view, KeyEvent keyEvent) {
+        return ViewCompat.dispatchUnhandledKeyEventBeforeHierarchy(view, keyEvent);
+    }
+
+    public static boolean dispatchKeyEvent(Component component, View view, Window.Callback callback, KeyEvent keyEvent) {
+        if (component == null) {
+            return false;
+        }
+        if (Build.VERSION.SDK_INT >= 28) {
+            return component.superDispatchKeyEvent(keyEvent);
+        }
+        if (callback instanceof Activity) {
+            return activitySuperDispatchKeyEventPre28((Activity) callback, keyEvent);
+        }
+        if (callback instanceof Dialog) {
+            return dialogSuperDispatchKeyEventPre28((Dialog) callback, keyEvent);
+        }
+        return (view != null && ViewCompat.dispatchUnhandledKeyEventBeforeCallback(view, keyEvent)) || component.superDispatchKeyEvent(keyEvent);
+    }
+
     private static boolean actionBarOnMenuKeyEventPre28(ActionBar actionBar, KeyEvent keyEvent) {
         if (!sActionBarFieldsFetched) {
             try {
@@ -64,33 +84,6 @@ public abstract class KeyEventDispatcher {
         return keyEvent.dispatch(activity, decorView != null ? decorView.getKeyDispatcherState() : null, activity);
     }
 
-    private static boolean dialogSuperDispatchKeyEventPre28(Dialog dialog, KeyEvent keyEvent) {
-        DialogInterface.OnKeyListener dialogKeyListenerPre28 = getDialogKeyListenerPre28(dialog);
-        if (dialogKeyListenerPre28 != null && dialogKeyListenerPre28.onKey(dialog, keyEvent.getKeyCode(), keyEvent)) {
-            return true;
-        }
-        Window window = dialog.getWindow();
-        if (window.superDispatchKeyEvent(keyEvent)) {
-            return true;
-        }
-        View decorView = window.getDecorView();
-        if (ViewCompat.dispatchUnhandledKeyEventBeforeCallback(decorView, keyEvent)) {
-            return true;
-        }
-        return keyEvent.dispatch(dialog, decorView != null ? decorView.getKeyDispatcherState() : null, dialog);
-    }
-
-    public static boolean dispatchBeforeHierarchy(View view, KeyEvent keyEvent) {
-        return ViewCompat.dispatchUnhandledKeyEventBeforeHierarchy(view, keyEvent);
-    }
-
-    public static boolean dispatchKeyEvent(Component component, View view, Window.Callback callback, KeyEvent keyEvent) {
-        if (component == null) {
-            return false;
-        }
-        return Build.VERSION.SDK_INT >= 28 ? component.superDispatchKeyEvent(keyEvent) : callback instanceof Activity ? activitySuperDispatchKeyEventPre28((Activity) callback, keyEvent) : callback instanceof Dialog ? dialogSuperDispatchKeyEventPre28((Dialog) callback, keyEvent) : (view != null && ViewCompat.dispatchUnhandledKeyEventBeforeCallback(view, keyEvent)) || component.superDispatchKeyEvent(keyEvent);
-    }
-
     private static DialogInterface.OnKeyListener getDialogKeyListenerPre28(Dialog dialog) {
         if (!sDialogFieldsFetched) {
             try {
@@ -110,5 +103,21 @@ public abstract class KeyEventDispatcher {
         } catch (IllegalAccessException unused2) {
             return null;
         }
+    }
+
+    private static boolean dialogSuperDispatchKeyEventPre28(Dialog dialog, KeyEvent keyEvent) {
+        DialogInterface.OnKeyListener dialogKeyListenerPre28 = getDialogKeyListenerPre28(dialog);
+        if (dialogKeyListenerPre28 != null && dialogKeyListenerPre28.onKey(dialog, keyEvent.getKeyCode(), keyEvent)) {
+            return true;
+        }
+        Window window = dialog.getWindow();
+        if (window.superDispatchKeyEvent(keyEvent)) {
+            return true;
+        }
+        View decorView = window.getDecorView();
+        if (ViewCompat.dispatchUnhandledKeyEventBeforeCallback(decorView, keyEvent)) {
+            return true;
+        }
+        return keyEvent.dispatch(dialog, decorView != null ? decorView.getKeyDispatcherState() : null, dialog);
     }
 }

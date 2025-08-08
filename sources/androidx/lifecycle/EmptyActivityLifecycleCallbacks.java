@@ -6,9 +6,6 @@ import android.os.Bundle;
 
 /* loaded from: classes.dex */
 abstract class EmptyActivityLifecycleCallbacks implements Application.ActivityLifecycleCallbacks {
-    EmptyActivityLifecycleCallbacks() {
-    }
-
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public void onActivityCreated(Activity activity, Bundle bundle) {
     }
@@ -35,5 +32,8 @@ abstract class EmptyActivityLifecycleCallbacks implements Application.ActivityLi
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public void onActivityStopped(Activity activity) {
+    }
+
+    EmptyActivityLifecycleCallbacks() {
     }
 }

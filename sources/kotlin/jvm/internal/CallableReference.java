@@ -5,7 +5,7 @@ import kotlin.jvm.KotlinReflectionNotSupportedError;
 import kotlin.reflect.KCallable;
 import kotlin.reflect.KDeclarationContainer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class CallableReference implements KCallable, Serializable {
     public static final Object NO_RECEIVER = NoReceiver.INSTANCE;
     private final boolean isTopLevel;
@@ -14,6 +14,8 @@ public abstract class CallableReference implements KCallable, Serializable {
     protected final Object receiver;
     private transient KCallable reflected;
     private final String signature;
+
+    protected abstract KCallable computeReflected();
 
     private static class NoReceiver implements Serializable {
         private static final NoReceiver INSTANCE = new NoReceiver();
@@ -30,6 +32,10 @@ public abstract class CallableReference implements KCallable, Serializable {
         this.isTopLevel = z;
     }
 
+    public Object getBoundReceiver() {
+        return this.receiver;
+    }
+
     public KCallable compute() {
         KCallable kCallable = this.reflected;
         if (kCallable != null) {
@@ -40,14 +46,12 @@ public abstract class CallableReference implements KCallable, Serializable {
         return computeReflected;
     }
 
-    protected abstract KCallable computeReflected();
-
-    public Object getBoundReceiver() {
-        return this.receiver;
-    }
-
-    public String getName() {
-        return this.name;
+    protected KCallable getReflected() {
+        KCallable compute = compute();
+        if (compute != this) {
+            return compute;
+        }
+        throw new KotlinReflectionNotSupportedError();
     }
 
     public KDeclarationContainer getOwner() {
@@ -58,12 +62,8 @@ public abstract class CallableReference implements KCallable, Serializable {
         return this.isTopLevel ? Reflection.getOrCreateKotlinPackage(cls) : Reflection.getOrCreateKotlinClass(cls);
     }
 
-    protected KCallable getReflected() {
-        KCallable compute = compute();
-        if (compute != this) {
-            return compute;
-        }
-        throw new KotlinReflectionNotSupportedError();
+    public String getName() {
+        return this.name;
     }
 
     public String getSignature() {

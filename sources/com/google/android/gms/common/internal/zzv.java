@@ -1,20 +1,26 @@
 package com.google.android.gms.common.internal;
 
-import android.accounts.Account;
-import android.os.IBinder;
-import android.os.Parcel;
-
 /* loaded from: classes.dex */
-public final class zzv extends com.google.android.gms.internal.common.zza implements IAccountAccessor {
-    zzv(IBinder iBinder) {
-        super(iBinder, "com.google.android.gms.common.internal.IAccountAccessor");
+public final class zzv {
+    private final String zza;
+    private final String zzb;
+    private final boolean zzc;
+
+    public zzv(String str, String str2, boolean z, int i, boolean z2) {
+        this.zzb = str;
+        this.zza = str2;
+        this.zzc = z2;
     }
 
-    @Override // com.google.android.gms.common.internal.IAccountAccessor
-    public final Account zzb() {
-        Parcel zzB = zzB(2, zza());
-        Account account = (Account) com.google.android.gms.internal.common.zzc.zza(zzB, Account.CREATOR);
-        zzB.recycle();
-        return account;
+    final String zza() {
+        return this.zzb;
+    }
+
+    final String zzb() {
+        return this.zza;
+    }
+
+    final boolean zzc() {
+        return this.zzc;
     }
 }

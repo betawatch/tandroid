@@ -14,21 +14,23 @@ public final class TeeAudioProcessor extends BaseAudioProcessor {
         void handleBuffer(ByteBuffer byteBuffer);
     }
 
+    @Override // com.google.android.exoplayer2.audio.BaseAudioProcessor
+    public AudioProcessor.AudioFormat onConfigure(AudioProcessor.AudioFormat audioFormat) {
+        return audioFormat;
+    }
+
     public TeeAudioProcessor(AudioBufferSink audioBufferSink) {
         this.audioBufferSink = (AudioBufferSink) Assertions.checkNotNull(audioBufferSink);
     }
 
-    private void flushSinkIfActive() {
-        if (isActive()) {
-            AudioBufferSink audioBufferSink = this.audioBufferSink;
-            AudioProcessor.AudioFormat audioFormat = this.inputAudioFormat;
-            audioBufferSink.flush(audioFormat.sampleRate, audioFormat.channelCount, audioFormat.encoding);
+    @Override // com.google.android.exoplayer2.audio.AudioProcessor
+    public void queueInput(ByteBuffer byteBuffer) {
+        int remaining = byteBuffer.remaining();
+        if (remaining == 0) {
+            return;
         }
-    }
-
-    @Override // com.google.android.exoplayer2.audio.BaseAudioProcessor
-    public AudioProcessor.AudioFormat onConfigure(AudioProcessor.AudioFormat audioFormat) {
-        return audioFormat;
+        this.audioBufferSink.handleBuffer(byteBuffer.asReadOnlyBuffer());
+        replaceOutputBuffer(remaining).put(byteBuffer).flip();
     }
 
     @Override // com.google.android.exoplayer2.audio.BaseAudioProcessor
@@ -46,13 +48,11 @@ public final class TeeAudioProcessor extends BaseAudioProcessor {
         flushSinkIfActive();
     }
 
-    @Override // com.google.android.exoplayer2.audio.AudioProcessor
-    public void queueInput(ByteBuffer byteBuffer) {
-        int remaining = byteBuffer.remaining();
-        if (remaining == 0) {
-            return;
+    private void flushSinkIfActive() {
+        if (isActive()) {
+            AudioBufferSink audioBufferSink = this.audioBufferSink;
+            AudioProcessor.AudioFormat audioFormat = this.inputAudioFormat;
+            audioBufferSink.flush(audioFormat.sampleRate, audioFormat.channelCount, audioFormat.encoding);
         }
-        this.audioBufferSink.handleBuffer(byteBuffer.asReadOnlyBuffer());
-        replaceOutputBuffer(remaining).put(byteBuffer).flip();
     }
 }

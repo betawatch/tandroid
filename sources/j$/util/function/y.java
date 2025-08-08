@@ -1,36 +1,40 @@
 package j$.util.function;
 
-import java.util.function.IntBinaryOperator;
+import j$.util.function.Function;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class y implements A {
-    public final /* synthetic */ IntBinaryOperator a;
+public final /* synthetic */ class y implements Function {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Function b;
+    public final /* synthetic */ Function c;
 
-    private /* synthetic */ y(IntBinaryOperator intBinaryOperator) {
-        this.a = intBinaryOperator;
+    public /* synthetic */ y(Function function, Function function2, int i) {
+        this.a = i;
+        this.b = function;
+        this.c = function2;
     }
 
-    public static /* synthetic */ A a(IntBinaryOperator intBinaryOperator) {
-        if (intBinaryOperator == null) {
-            return null;
+    @Override // j$.util.function.Function
+    public final /* synthetic */ Function andThen(Function function) {
+        switch (this.a) {
         }
-        return intBinaryOperator instanceof z ? ((z) intBinaryOperator).a : new y(intBinaryOperator);
+        return Function.-CC.$default$andThen(this, function);
     }
 
-    @Override // j$.util.function.A
-    public final /* synthetic */ int applyAsInt(int i, int i2) {
-        return this.a.applyAsInt(i, i2);
-    }
-
-    public final /* synthetic */ boolean equals(Object obj) {
-        IntBinaryOperator intBinaryOperator = this.a;
-        if (obj instanceof y) {
-            obj = ((y) obj).a;
+    @Override // j$.util.function.Function
+    public final /* synthetic */ Function compose(Function function) {
+        switch (this.a) {
         }
-        return intBinaryOperator.equals(obj);
+        return Function.-CC.$default$compose(this, function);
     }
 
-    public final /* synthetic */ int hashCode() {
-        return this.a.hashCode();
+    @Override // j$.util.function.Function
+    public final Object apply(Object obj) {
+        switch (this.a) {
+            case 0:
+                return this.c.apply(this.b.apply(obj));
+            default:
+                return this.b.apply(this.c.apply(obj));
+        }
     }
 }

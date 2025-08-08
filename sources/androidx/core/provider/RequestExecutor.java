@@ -15,35 +15,26 @@ import java.util.concurrent.TimeoutException;
 
 /* loaded from: classes.dex */
 abstract class RequestExecutor {
+    static void execute(Executor executor, Callable callable, Consumer consumer) {
+        executor.execute(new ReplyRunnable(CalleeHandler.create(), callable, consumer));
+    }
 
-    private static class DefaultThreadFactory implements ThreadFactory {
-        private int mPriority;
-        private String mThreadName;
-
-        private static class ProcessPriorityThread extends Thread {
-            private final int mPriority;
-
-            ProcessPriorityThread(Runnable runnable, String str, int i) {
-                super(runnable, str);
-                this.mPriority = i;
-            }
-
-            @Override // java.lang.Thread, java.lang.Runnable
-            public void run() {
-                Process.setThreadPriority(this.mPriority);
-                super.run();
-            }
+    static Object submit(ExecutorService executorService, Callable callable, int i) {
+        try {
+            return executorService.submit(callable).get(i, TimeUnit.MILLISECONDS);
+        } catch (InterruptedException e) {
+            throw e;
+        } catch (ExecutionException e2) {
+            throw new RuntimeException(e2);
+        } catch (TimeoutException unused) {
+            throw new InterruptedException("timeout");
         }
+    }
 
-        DefaultThreadFactory(String str, int i) {
-            this.mThreadName = str;
-            this.mPriority = i;
-        }
-
-        @Override // java.util.concurrent.ThreadFactory
-        public Thread newThread(Runnable runnable) {
-            return new ProcessPriorityThread(runnable, this.mThreadName, this.mPriority);
-        }
+    static ThreadPoolExecutor createDefaultExecutor(String str, int i, int i2) {
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(0, 1, i2, TimeUnit.MILLISECONDS, new LinkedBlockingDeque(), new DefaultThreadFactory(str, i));
+        threadPoolExecutor.allowCoreThreadTimeOut(true);
+        return threadPoolExecutor;
     }
 
     private static class ReplyRunnable implements Runnable {
@@ -75,25 +66,33 @@ abstract class RequestExecutor {
         }
     }
 
-    static ThreadPoolExecutor createDefaultExecutor(String str, int i, int i2) {
-        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(0, 1, i2, TimeUnit.MILLISECONDS, new LinkedBlockingDeque(), new DefaultThreadFactory(str, i));
-        threadPoolExecutor.allowCoreThreadTimeOut(true);
-        return threadPoolExecutor;
-    }
+    private static class DefaultThreadFactory implements ThreadFactory {
+        private int mPriority;
+        private String mThreadName;
 
-    static void execute(Executor executor, Callable callable, Consumer consumer) {
-        executor.execute(new ReplyRunnable(CalleeHandler.create(), callable, consumer));
-    }
+        DefaultThreadFactory(String str, int i) {
+            this.mThreadName = str;
+            this.mPriority = i;
+        }
 
-    static Object submit(ExecutorService executorService, Callable callable, int i) {
-        try {
-            return executorService.submit(callable).get(i, TimeUnit.MILLISECONDS);
-        } catch (InterruptedException e) {
-            throw e;
-        } catch (ExecutionException e2) {
-            throw new RuntimeException(e2);
-        } catch (TimeoutException unused) {
-            throw new InterruptedException("timeout");
+        @Override // java.util.concurrent.ThreadFactory
+        public Thread newThread(Runnable runnable) {
+            return new ProcessPriorityThread(runnable, this.mThreadName, this.mPriority);
+        }
+
+        private static class ProcessPriorityThread extends Thread {
+            private final int mPriority;
+
+            ProcessPriorityThread(Runnable runnable, String str, int i) {
+                super(runnable, str);
+                this.mPriority = i;
+            }
+
+            @Override // java.lang.Thread, java.lang.Runnable
+            public void run() {
+                Process.setThreadPriority(this.mPriority);
+                super.run();
+            }
         }
     }
 }

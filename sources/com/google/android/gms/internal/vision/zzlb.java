@@ -10,10 +10,8 @@ final class zzlb extends zzhj implements RandomAccess {
     private Object[] zzb;
     private int zzc;
 
-    static {
-        zzlb zzlbVar = new zzlb(new Object[0], 0);
-        zza = zzlbVar;
-        zzlbVar.zzb();
+    public static zzlb zzd() {
+        return zza;
     }
 
     private zzlb(Object[] objArr, int i) {
@@ -21,24 +19,20 @@ final class zzlb extends zzhj implements RandomAccess {
         this.zzc = i;
     }
 
-    private final void zzb(int i) {
-        if (i < 0 || i >= this.zzc) {
-            throw new IndexOutOfBoundsException(zzc(i));
+    @Override // com.google.android.gms.internal.vision.zzhj, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final boolean add(Object obj) {
+        zzc();
+        int i = this.zzc;
+        Object[] objArr = this.zzb;
+        if (i == objArr.length) {
+            this.zzb = Arrays.copyOf(objArr, ((i * 3) / 2) + 1);
         }
-    }
-
-    private final String zzc(int i) {
+        Object[] objArr2 = this.zzb;
         int i2 = this.zzc;
-        StringBuilder sb = new StringBuilder(35);
-        sb.append("Index:");
-        sb.append(i);
-        sb.append(", Size:");
-        sb.append(i2);
-        return sb.toString();
-    }
-
-    public static zzlb zzd() {
-        return zza;
+        this.zzc = i2 + 1;
+        objArr2[i2] = obj;
+        ((AbstractList) this).modCount++;
+        return true;
     }
 
     @Override // java.util.AbstractList, java.util.List
@@ -60,22 +54,6 @@ final class zzlb extends zzhj implements RandomAccess {
         this.zzb[i] = obj;
         this.zzc++;
         ((AbstractList) this).modCount++;
-    }
-
-    @Override // com.google.android.gms.internal.vision.zzhj, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean add(Object obj) {
-        zzc();
-        int i = this.zzc;
-        Object[] objArr = this.zzb;
-        if (i == objArr.length) {
-            this.zzb = Arrays.copyOf(objArr, ((i * 3) / 2) + 1);
-        }
-        Object[] objArr2 = this.zzb;
-        int i2 = this.zzc;
-        this.zzc = i2 + 1;
-        objArr2[i2] = obj;
-        ((AbstractList) this).modCount++;
-        return true;
     }
 
     @Override // java.util.AbstractList, java.util.List
@@ -114,11 +92,33 @@ final class zzlb extends zzhj implements RandomAccess {
         return this.zzc;
     }
 
+    private final void zzb(int i) {
+        if (i < 0 || i >= this.zzc) {
+            throw new IndexOutOfBoundsException(zzc(i));
+        }
+    }
+
+    private final String zzc(int i) {
+        int i2 = this.zzc;
+        StringBuilder sb = new StringBuilder(35);
+        sb.append("Index:");
+        sb.append(i);
+        sb.append(", Size:");
+        sb.append(i2);
+        return sb.toString();
+    }
+
     @Override // com.google.android.gms.internal.vision.zzjl
     public final /* synthetic */ zzjl zza(int i) {
-        if (i >= this.zzc) {
-            return new zzlb(Arrays.copyOf(this.zzb, i), this.zzc);
+        if (i < this.zzc) {
+            throw new IllegalArgumentException();
         }
-        throw new IllegalArgumentException();
+        return new zzlb(Arrays.copyOf(this.zzb, i), this.zzc);
+    }
+
+    static {
+        zzlb zzlbVar = new zzlb(new Object[0], 0);
+        zza = zzlbVar;
+        zzlbVar.zzb();
     }
 }

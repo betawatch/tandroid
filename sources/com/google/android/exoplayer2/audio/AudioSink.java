@@ -14,49 +14,6 @@ public interface AudioSink {
         }
     }
 
-    public static final class ConfigurationException extends Exception {
-        public final Format format;
-
-        public ConfigurationException(String str, Format format) {
-            super(str);
-            this.format = format;
-        }
-
-        public ConfigurationException(Throwable th, Format format) {
-            super(th);
-            this.format = format;
-        }
-    }
-
-    public static final class InitializationException extends Exception {
-        public final int audioTrackState;
-        public final Format format;
-        public final boolean isRecoverable;
-
-        /* JADX WARN: Illegal instructions before constructor call */
-        /*
-            Code decompiled incorrectly, please refer to instructions dump.
-        */
-        public InitializationException(int i, int i2, int i3, int i4, Format format, boolean z, Exception exc) {
-            super(r0.toString(), exc);
-            StringBuilder sb = new StringBuilder();
-            sb.append("AudioTrack init failed ");
-            sb.append(i);
-            sb.append(" ");
-            sb.append("Config(");
-            sb.append(i2);
-            sb.append(", ");
-            sb.append(i3);
-            sb.append(", ");
-            sb.append(i4);
-            sb.append(")");
-            sb.append(z ? " (recoverable)" : "");
-            this.audioTrackState = i;
-            this.isRecoverable = z;
-            this.format = format;
-        }
-    }
-
     public interface Listener {
 
         public abstract /* synthetic */ class -CC {
@@ -80,30 +37,6 @@ public interface AudioSink {
         void onSkipSilenceEnabledChanged(boolean z);
 
         void onUnderrun(int i, long j, long j2);
-    }
-
-    public static final class UnexpectedDiscontinuityException extends Exception {
-        public final long actualPresentationTimeUs;
-        public final long expectedPresentationTimeUs;
-
-        public UnexpectedDiscontinuityException(long j, long j2) {
-            super("Unexpected audio track timestamp discontinuity: expected " + j2 + ", got " + j);
-            this.actualPresentationTimeUs = j;
-            this.expectedPresentationTimeUs = j2;
-        }
-    }
-
-    public static final class WriteException extends Exception {
-        public final int errorCode;
-        public final Format format;
-        public final boolean isRecoverable;
-
-        public WriteException(int i, Format format, boolean z) {
-            super("AudioTrack write failed: " + i);
-            this.isRecoverable = z;
-            this.errorCode = i;
-            this.format = format;
-        }
     }
 
     void configure(Format format, int i, int[] iArr);
@@ -159,4 +92,71 @@ public interface AudioSink {
     void setVolume(float f);
 
     boolean supportsFormat(Format format);
+
+    public static final class ConfigurationException extends Exception {
+        public final Format format;
+
+        public ConfigurationException(Throwable th, Format format) {
+            super(th);
+            this.format = format;
+        }
+
+        public ConfigurationException(String str, Format format) {
+            super(str);
+            this.format = format;
+        }
+    }
+
+    public static final class InitializationException extends Exception {
+        public final int audioTrackState;
+        public final Format format;
+        public final boolean isRecoverable;
+
+        /* JADX WARN: Illegal instructions before constructor call */
+        /*
+            Code decompiled incorrectly, please refer to instructions dump.
+        */
+        public InitializationException(int i, int i2, int i3, int i4, Format format, boolean z, Exception exc) {
+            super(r0.toString(), exc);
+            StringBuilder sb = new StringBuilder();
+            sb.append("AudioTrack init failed ");
+            sb.append(i);
+            sb.append(" ");
+            sb.append("Config(");
+            sb.append(i2);
+            sb.append(", ");
+            sb.append(i3);
+            sb.append(", ");
+            sb.append(i4);
+            sb.append(")");
+            sb.append(z ? " (recoverable)" : "");
+            this.audioTrackState = i;
+            this.isRecoverable = z;
+            this.format = format;
+        }
+    }
+
+    public static final class WriteException extends Exception {
+        public final int errorCode;
+        public final Format format;
+        public final boolean isRecoverable;
+
+        public WriteException(int i, Format format, boolean z) {
+            super("AudioTrack write failed: " + i);
+            this.isRecoverable = z;
+            this.errorCode = i;
+            this.format = format;
+        }
+    }
+
+    public static final class UnexpectedDiscontinuityException extends Exception {
+        public final long actualPresentationTimeUs;
+        public final long expectedPresentationTimeUs;
+
+        public UnexpectedDiscontinuityException(long j, long j2) {
+            super("Unexpected audio track timestamp discontinuity: expected " + j2 + ", got " + j);
+            this.actualPresentationTimeUs = j;
+            this.expectedPresentationTimeUs = j2;
+        }
+    }
 }

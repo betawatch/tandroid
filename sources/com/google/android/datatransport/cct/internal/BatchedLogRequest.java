@@ -6,6 +6,8 @@ import java.util.List;
 
 /* loaded from: classes.dex */
 public abstract class BatchedLogRequest {
+    public abstract List getLogRequests();
+
     public static BatchedLogRequest create(List list) {
         return new AutoValue_BatchedLogRequest(list);
     }
@@ -13,6 +15,4 @@ public abstract class BatchedLogRequest {
     public static DataEncoder createDataEncoder() {
         return new JsonDataEncoderBuilder().configureWith(AutoBatchedLogRequestEncoder.CONFIG).ignoreNullValues(true).build();
     }
-
-    public abstract List getLogRequests();
 }

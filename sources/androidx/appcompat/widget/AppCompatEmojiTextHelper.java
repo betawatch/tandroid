@@ -17,10 +17,6 @@ class AppCompatEmojiTextHelper {
         this.mEmojiTextViewHelper = new EmojiTextViewHelper(textView, false);
     }
 
-    InputFilter[] getFilters(InputFilter[] inputFilterArr) {
-        return this.mEmojiTextViewHelper.getFilters(inputFilterArr);
-    }
-
     void loadFromAttributes(AttributeSet attributeSet, int i) {
         TypedArray obtainStyledAttributes = this.mView.getContext().obtainStyledAttributes(attributeSet, R$styleable.AppCompatTextView, i, 0);
         try {
@@ -34,11 +30,15 @@ class AppCompatEmojiTextHelper {
         }
     }
 
-    void setAllCaps(boolean z) {
-        this.mEmojiTextViewHelper.setAllCaps(z);
-    }
-
     void setEnabled(boolean z) {
         this.mEmojiTextViewHelper.setEnabled(z);
+    }
+
+    InputFilter[] getFilters(InputFilter[] inputFilterArr) {
+        return this.mEmojiTextViewHelper.getFilters(inputFilterArr);
+    }
+
+    void setAllCaps(boolean z) {
+        this.mEmojiTextViewHelper.setAllCaps(z);
     }
 }

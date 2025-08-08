@@ -35,36 +35,37 @@ public abstract class zzt extends zzb implements zzu {
             case 6:
                 parcel.readInt();
                 zzc.zzd(parcel);
-                break;
+                return true;
             case 7:
-                break;
+                return true;
             case 8:
-            case 11:
-            case 13:
-                break;
+                return true;
             case 9:
                 zzc((Status) zzc.zza(parcel, Status.CREATOR), zzc.zzd(parcel), (Bundle) zzc.zza(parcel, Bundle.CREATOR));
                 return true;
             case 10:
-                break;
+                return true;
+            case 11:
+                return true;
             case 12:
-                break;
+                return true;
+            case 13:
+                return true;
             case 14:
                 zzf((Status) zzc.zza(parcel, Status.CREATOR), (PaymentData) zzc.zza(parcel, PaymentData.CREATOR), (Bundle) zzc.zza(parcel, Bundle.CREATOR));
                 return true;
             case 15:
-                break;
+                return true;
             case 16:
-                break;
+                return true;
             case 17:
-                break;
+                return true;
             case 18:
                 parcel.readInt();
-                break;
+                return true;
             case 19:
                 zze((Status) zzc.zza(parcel, Status.CREATOR), (PaymentCardRecognitionIntentResponse) zzc.zza(parcel, PaymentCardRecognitionIntentResponse.CREATOR), (Bundle) zzc.zza(parcel, Bundle.CREATOR));
                 return true;
         }
-        return true;
     }
 }

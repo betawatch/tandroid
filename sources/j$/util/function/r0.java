@@ -1,31 +1,33 @@
 package j$.util.function;
 
-/* loaded from: classes2.dex */
-public final /* synthetic */ class r0 implements ToDoubleFunction {
-    public final /* synthetic */ java.util.function.ToDoubleFunction a;
+import java.util.function.ObjLongConsumer;
 
-    private /* synthetic */ r0(java.util.function.ToDoubleFunction toDoubleFunction) {
-        this.a = toDoubleFunction;
+/* loaded from: classes2.dex */
+public final /* synthetic */ class r0 implements t0 {
+    public final /* synthetic */ ObjLongConsumer a;
+
+    private /* synthetic */ r0(ObjLongConsumer objLongConsumer) {
+        this.a = objLongConsumer;
     }
 
-    public static /* synthetic */ ToDoubleFunction a(java.util.function.ToDoubleFunction toDoubleFunction) {
-        if (toDoubleFunction == null) {
+    public static /* synthetic */ t0 a(ObjLongConsumer objLongConsumer) {
+        if (objLongConsumer == null) {
             return null;
         }
-        return toDoubleFunction instanceof s0 ? ((s0) toDoubleFunction).a : new r0(toDoubleFunction);
+        return objLongConsumer instanceof s0 ? ((s0) objLongConsumer).a : new r0(objLongConsumer);
     }
 
-    @Override // j$.util.function.ToDoubleFunction
-    public final /* synthetic */ double applyAsDouble(Object obj) {
-        return this.a.applyAsDouble(obj);
+    @Override // j$.util.function.t0
+    public final /* synthetic */ void accept(Object obj, long j) {
+        this.a.accept(obj, j);
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        java.util.function.ToDoubleFunction toDoubleFunction = this.a;
+        ObjLongConsumer objLongConsumer = this.a;
         if (obj instanceof r0) {
             obj = ((r0) obj).a;
         }
-        return toDoubleFunction.equals(obj);
+        return objLongConsumer.equals(obj);
     }
 
     public final /* synthetic */ int hashCode() {

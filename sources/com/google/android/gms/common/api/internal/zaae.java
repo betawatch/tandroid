@@ -26,14 +26,14 @@ public final class zaae extends zap {
         }
         Preconditions.checkNotNull(apiKey, "ApiKey cannot be null");
         zaaeVar.zad.add(apiKey);
-        googleApiManager.zaC(zaaeVar);
+        googleApiManager.zaA(zaaeVar);
     }
 
     private final void zae() {
         if (this.zad.isEmpty()) {
             return;
         }
-        this.zae.zaC(this);
+        this.zae.zaA(this);
     }
 
     @Override // com.google.android.gms.common.api.internal.LifecycleCallback
@@ -51,7 +51,7 @@ public final class zaae extends zap {
     @Override // com.google.android.gms.common.api.internal.zap, com.google.android.gms.common.api.internal.LifecycleCallback
     public final void onStop() {
         super.onStop();
-        this.zae.zaD(this);
+        this.zae.zaB(this);
     }
 
     final ArraySet zaa() {
@@ -60,11 +60,11 @@ public final class zaae extends zap {
 
     @Override // com.google.android.gms.common.api.internal.zap
     protected final void zab(ConnectionResult connectionResult, int i) {
-        this.zae.zaz(connectionResult, i);
+        this.zae.zax(connectionResult, i);
     }
 
     @Override // com.google.android.gms.common.api.internal.zap
     protected final void zac() {
-        this.zae.zaA();
+        this.zae.zay();
     }
 }

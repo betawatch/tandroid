@@ -50,56 +50,12 @@ public final class Target {
         setDefaultWeights();
     }
 
-    private static void setDefaultDarkLightnessValues(Target target) {
-        float[] fArr = target.mLightnessTargets;
-        fArr[1] = 0.26f;
-        fArr[2] = 0.45f;
+    public float getMinimumSaturation() {
+        return this.mSaturationTargets[0];
     }
 
-    private static void setDefaultLightLightnessValues(Target target) {
-        float[] fArr = target.mLightnessTargets;
-        fArr[0] = 0.55f;
-        fArr[1] = 0.74f;
-    }
-
-    private static void setDefaultMutedSaturationValues(Target target) {
-        float[] fArr = target.mSaturationTargets;
-        fArr[1] = 0.3f;
-        fArr[2] = 0.4f;
-    }
-
-    private static void setDefaultNormalLightnessValues(Target target) {
-        float[] fArr = target.mLightnessTargets;
-        fArr[0] = 0.3f;
-        fArr[1] = 0.5f;
-        fArr[2] = 0.7f;
-    }
-
-    private static void setDefaultVibrantSaturationValues(Target target) {
-        float[] fArr = target.mSaturationTargets;
-        fArr[0] = 0.35f;
-        fArr[1] = 1.0f;
-    }
-
-    private void setDefaultWeights() {
-        float[] fArr = this.mWeights;
-        fArr[0] = 0.24f;
-        fArr[1] = 0.52f;
-        fArr[2] = 0.24f;
-    }
-
-    private static void setTargetDefaultValues(float[] fArr) {
-        fArr[0] = 0.0f;
-        fArr[1] = 0.5f;
-        fArr[2] = 1.0f;
-    }
-
-    public float getLightnessWeight() {
-        return this.mWeights[1];
-    }
-
-    public float getMaximumLightness() {
-        return this.mLightnessTargets[2];
+    public float getTargetSaturation() {
+        return this.mSaturationTargets[1];
     }
 
     public float getMaximumSaturation() {
@@ -110,28 +66,41 @@ public final class Target {
         return this.mLightnessTargets[0];
     }
 
-    public float getMinimumSaturation() {
-        return this.mSaturationTargets[0];
+    public float getTargetLightness() {
+        return this.mLightnessTargets[1];
     }
 
-    public float getPopulationWeight() {
-        return this.mWeights[2];
+    public float getMaximumLightness() {
+        return this.mLightnessTargets[2];
     }
 
     public float getSaturationWeight() {
         return this.mWeights[0];
     }
 
-    public float getTargetLightness() {
-        return this.mLightnessTargets[1];
+    public float getLightnessWeight() {
+        return this.mWeights[1];
     }
 
-    public float getTargetSaturation() {
-        return this.mSaturationTargets[1];
+    public float getPopulationWeight() {
+        return this.mWeights[2];
     }
 
     public boolean isExclusive() {
         return this.mIsExclusive;
+    }
+
+    private static void setTargetDefaultValues(float[] fArr) {
+        fArr[0] = 0.0f;
+        fArr[1] = 0.5f;
+        fArr[2] = 1.0f;
+    }
+
+    private void setDefaultWeights() {
+        float[] fArr = this.mWeights;
+        fArr[0] = 0.24f;
+        fArr[1] = 0.52f;
+        fArr[2] = 0.24f;
     }
 
     void normalizeWeights() {
@@ -153,5 +122,36 @@ public final class Target {
                 }
             }
         }
+    }
+
+    private static void setDefaultDarkLightnessValues(Target target) {
+        float[] fArr = target.mLightnessTargets;
+        fArr[1] = 0.26f;
+        fArr[2] = 0.45f;
+    }
+
+    private static void setDefaultNormalLightnessValues(Target target) {
+        float[] fArr = target.mLightnessTargets;
+        fArr[0] = 0.3f;
+        fArr[1] = 0.5f;
+        fArr[2] = 0.7f;
+    }
+
+    private static void setDefaultLightLightnessValues(Target target) {
+        float[] fArr = target.mLightnessTargets;
+        fArr[0] = 0.55f;
+        fArr[1] = 0.74f;
+    }
+
+    private static void setDefaultVibrantSaturationValues(Target target) {
+        float[] fArr = target.mSaturationTargets;
+        fArr[0] = 0.35f;
+        fArr[1] = 1.0f;
+    }
+
+    private static void setDefaultMutedSaturationValues(Target target) {
+        float[] fArr = target.mSaturationTargets;
+        fArr[1] = 0.3f;
+        fArr[2] = 0.4f;
     }
 }

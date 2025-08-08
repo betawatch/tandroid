@@ -18,10 +18,6 @@ class PipActivityContentLayout extends FrameLayout {
         this.activity = activity;
     }
 
-    public boolean isViewInPip() {
-        return this.isViewInPip;
-    }
-
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
         int size = View.MeasureSpec.getSize(i);
@@ -33,5 +29,9 @@ class PipActivityContentLayout extends FrameLayout {
         }
         this.isViewInPip = isInPictureInPictureMode && size < this.originalWidth && size2 < this.originalHeight;
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
+    }
+
+    public boolean isViewInPip() {
+        return this.isViewInPip;
     }
 }

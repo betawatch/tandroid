@@ -10,10 +10,6 @@ public class Pair {
         this.second = obj2;
     }
 
-    public static Pair create(Object obj, Object obj2) {
-        return new Pair(obj, obj2);
-    }
-
     public boolean equals(Object obj) {
         if (!(obj instanceof Pair)) {
             return false;
@@ -31,5 +27,9 @@ public class Pair {
 
     public String toString() {
         return "Pair{" + this.first + " " + this.second + "}";
+    }
+
+    public static Pair create(Object obj, Object obj2) {
+        return new Pair(obj, obj2);
     }
 }

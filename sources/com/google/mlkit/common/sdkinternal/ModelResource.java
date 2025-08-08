@@ -1,7 +1,7 @@
 package com.google.mlkit.common.sdkinternal;
 
 import com.google.android.gms.common.internal.Preconditions;
-import com.google.android.gms.internal.mlkit_common.zzsc;
+import com.google.android.gms.internal.mlkit_common.zzrr;
 import com.google.android.gms.tasks.CancellationToken;
 import com.google.android.gms.tasks.CancellationTokenSource;
 import com.google.android.gms.tasks.Task;
@@ -13,13 +13,13 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class ModelResource {
     private final AtomicInteger zza = new AtomicInteger(0);
     private final AtomicBoolean zzb = new AtomicBoolean(false);
     protected final TaskQueue taskQueue = new TaskQueue();
 
-    public <T> Task<T> callAfterLoad(final Executor executor, final Callable<T> callable, final CancellationToken cancellationToken) {
+    public Task callAfterLoad(final Executor executor, final Callable callable, final CancellationToken cancellationToken) {
         Preconditions.checkState(this.zza.get() > 0);
         if (cancellationToken.isCancellationRequested()) {
             return Tasks.forCanceled();
@@ -65,7 +65,7 @@ public abstract class ModelResource {
         unpinWithTask(executor);
     }
 
-    public Task<Void> unpinWithTask(Executor executor) {
+    public Task unpinWithTask(Executor executor) {
         Preconditions.checkState(this.zza.get() > 0);
         final TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
         this.taskQueue.submit(executor, new Runnable() { // from class: com.google.mlkit.common.sdkinternal.zzl
@@ -117,7 +117,7 @@ public abstract class ModelResource {
             release();
             this.zzb.set(false);
         }
-        zzsc.zza();
+        zzrr.zza();
         taskCompletionSource.setResult(null);
     }
 }

@@ -27,9 +27,17 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Scanner;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class CommonUtils {
     private static final char[] HEX_VALUES = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
+
+    public static SharedPreferences getSharedPrefs(Context context) {
+        return context.getSharedPreferences("com.google.firebase.crashlytics", 0);
+    }
+
+    public static int getCpuArchitectureInt() {
+        return Architecture.getValue().ordinal();
+    }
 
     enum Architecture {
         X86_32,
@@ -69,57 +77,27 @@ public abstract class CommonUtils {
         }
     }
 
-    public static long calculateFreeRamInBytes(Context context) {
-        ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
-        ((ActivityManager) context.getSystemService("activity")).getMemoryInfo(memoryInfo);
-        return memoryInfo.availMem;
+    public static String streamToString(InputStream inputStream) {
+        Scanner useDelimiter = new Scanner(inputStream).useDelimiter("\\A");
+        return useDelimiter.hasNext() ? useDelimiter.next() : "";
     }
 
-    public static synchronized long calculateTotalRamInBytes(Context context) {
-        long j;
-        synchronized (CommonUtils.class) {
-            ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
-            ((ActivityManager) context.getSystemService("activity")).getMemoryInfo(memoryInfo);
-            j = memoryInfo.totalMem;
-        }
-        return j;
+    public static String sha1(String str) {
+        return hash(str, "SHA-1");
     }
 
-    public static long calculateUsedDiskSpaceInBytes(String str) {
-        long blockSize = new StatFs(str).getBlockSize();
-        return (r0.getBlockCount() * blockSize) - (blockSize * r0.getAvailableBlocks());
+    private static String hash(String str, String str2) {
+        return hash(str.getBytes(), str2);
     }
 
-    public static boolean canTryConnection(Context context) {
-        if (!checkPermission(context, "android.permission.ACCESS_NETWORK_STATE")) {
-            return true;
-        }
-        NetworkInfo activeNetworkInfo = ((ConnectivityManager) context.getSystemService("connectivity")).getActiveNetworkInfo();
-        return activeNetworkInfo != null && activeNetworkInfo.isConnectedOrConnecting();
-    }
-
-    public static boolean checkPermission(Context context, String str) {
-        return context.checkCallingOrSelfPermission(str) == 0;
-    }
-
-    public static void closeOrLog(Closeable closeable, String str) {
-        if (closeable != null) {
-            try {
-                closeable.close();
-            } catch (IOException e) {
-                Logger.getLogger().e(str, e);
-            }
-        }
-    }
-
-    public static void closeQuietly(Closeable closeable) {
-        if (closeable != null) {
-            try {
-                closeable.close();
-            } catch (RuntimeException e) {
-                throw e;
-            } catch (Exception unused) {
-            }
+    private static String hash(byte[] bArr, String str) {
+        try {
+            MessageDigest messageDigest = MessageDigest.getInstance(str);
+            messageDigest.update(bArr);
+            return hexify(messageDigest.digest());
+        } catch (NoSuchAlgorithmException e) {
+            Logger.getLogger().e("Could not create hashing algorithm: " + str + ", returning empty string.", e);
+            return "";
         }
     }
 
@@ -146,6 +124,31 @@ public abstract class CommonUtils {
         return null;
     }
 
+    public static synchronized long calculateTotalRamInBytes(Context context) {
+        long j;
+        synchronized (CommonUtils.class) {
+            ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
+            ((ActivityManager) context.getSystemService("activity")).getMemoryInfo(memoryInfo);
+            j = memoryInfo.totalMem;
+        }
+        return j;
+    }
+
+    public static long calculateFreeRamInBytes(Context context) {
+        ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
+        ((ActivityManager) context.getSystemService("activity")).getMemoryInfo(memoryInfo);
+        return memoryInfo.availMem;
+    }
+
+    public static long calculateUsedDiskSpaceInBytes(String str) {
+        long blockSize = new StatFs(str).getBlockSize();
+        return (r0.getBlockCount() * blockSize) - (blockSize * r0.getAvailableBlocks());
+    }
+
+    public static boolean getProximitySensorEnabled(Context context) {
+        return (isEmulator() || ((SensorManager) context.getSystemService("sensor")).getDefaultSensor(8) == null) ? false : true;
+    }
+
     public static boolean getBooleanResourceValue(Context context, String str, boolean z) {
         Resources resources;
         if (context != null && (resources = context.getResources()) != null) {
@@ -159,6 +162,96 @@ public abstract class CommonUtils {
             }
         }
         return z;
+    }
+
+    public static int getResourcesIdentifier(Context context, String str, String str2) {
+        return context.getResources().getIdentifier(str, str2, getResourcePackageName(context));
+    }
+
+    public static boolean isEmulator() {
+        if (!Build.PRODUCT.contains("sdk")) {
+            String str = Build.HARDWARE;
+            if (!str.contains("goldfish") && !str.contains("ranchu")) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static boolean isRooted() {
+        boolean isEmulator = isEmulator();
+        String str = Build.TAGS;
+        if ((isEmulator || str == null || !str.contains("test-keys")) && !new File("/system/app/Superuser.apk").exists()) {
+            return !isEmulator && new File("/system/xbin/su").exists();
+        }
+        return true;
+    }
+
+    public static boolean isDebuggerAttached() {
+        return Debug.isDebuggerConnected() || Debug.waitingForDebugger();
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r0v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r0v5 */
+    /* JADX WARN: Type inference failed for: r0v6 */
+    public static int getDeviceState() {
+        boolean isEmulator = isEmulator();
+        ?? r0 = isEmulator;
+        if (isRooted()) {
+            r0 = (isEmulator ? 1 : 0) | 2;
+        }
+        return isDebuggerAttached() ? r0 | 4 : r0;
+    }
+
+    public static String hexify(byte[] bArr) {
+        char[] cArr = new char[bArr.length * 2];
+        for (int i = 0; i < bArr.length; i++) {
+            byte b = bArr[i];
+            int i2 = i * 2;
+            char[] cArr2 = HEX_VALUES;
+            cArr[i2] = cArr2[(b & 255) >>> 4];
+            cArr[i2 + 1] = cArr2[b & 15];
+        }
+        return new String(cArr);
+    }
+
+    public static boolean isAppDebuggable(Context context) {
+        return (context.getApplicationInfo().flags & 2) != 0;
+    }
+
+    public static void closeOrLog(Closeable closeable, String str) {
+        if (closeable != null) {
+            try {
+                closeable.close();
+            } catch (IOException e) {
+                Logger.getLogger().e(str, e);
+            }
+        }
+    }
+
+    public static String getResourcePackageName(Context context) {
+        int i = context.getApplicationContext().getApplicationInfo().icon;
+        if (i > 0) {
+            try {
+                String resourcePackageName = context.getResources().getResourcePackageName(i);
+                return "android".equals(resourcePackageName) ? context.getPackageName() : resourcePackageName;
+            } catch (Resources.NotFoundException unused) {
+                return context.getPackageName();
+            }
+        }
+        return context.getPackageName();
+    }
+
+    public static String getMappingFileId(Context context) {
+        int resourcesIdentifier = getResourcesIdentifier(context, "com.google.firebase.crashlytics.mapping_file_id", "string");
+        if (resourcesIdentifier == 0) {
+            resourcesIdentifier = getResourcesIdentifier(context, "com.crashlytics.android.build_id", "string");
+        }
+        if (resourcesIdentifier != 0) {
+            return context.getResources().getString(resourcesIdentifier);
+        }
+        return null;
     }
 
     public static List getBuildIdInfo(Context context) {
@@ -183,122 +276,33 @@ public abstract class CommonUtils {
         return arrayList;
     }
 
-    public static int getCpuArchitectureInt() {
-        return Architecture.getValue().ordinal();
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r0v1, types: [int] */
-    /* JADX WARN: Type inference failed for: r0v5 */
-    /* JADX WARN: Type inference failed for: r0v6 */
-    public static int getDeviceState() {
-        boolean isEmulator = isEmulator();
-        ?? r0 = isEmulator;
-        if (isRooted()) {
-            r0 = (isEmulator ? 1 : 0) | 2;
-        }
-        return isDebuggerAttached() ? r0 | 4 : r0;
-    }
-
-    public static String getMappingFileId(Context context) {
-        int resourcesIdentifier = getResourcesIdentifier(context, "com.google.firebase.crashlytics.mapping_file_id", "string");
-        if (resourcesIdentifier == 0) {
-            resourcesIdentifier = getResourcesIdentifier(context, "com.crashlytics.android.build_id", "string");
-        }
-        if (resourcesIdentifier != 0) {
-            return context.getResources().getString(resourcesIdentifier);
-        }
-        return null;
-    }
-
-    public static boolean getProximitySensorEnabled(Context context) {
-        return (isEmulator() || ((SensorManager) context.getSystemService("sensor")).getDefaultSensor(8) == null) ? false : true;
-    }
-
-    public static String getResourcePackageName(Context context) {
-        int i = context.getApplicationContext().getApplicationInfo().icon;
-        if (i > 0) {
+    public static void closeQuietly(Closeable closeable) {
+        if (closeable != null) {
             try {
-                String resourcePackageName = context.getResources().getResourcePackageName(i);
-                return "android".equals(resourcePackageName) ? context.getPackageName() : resourcePackageName;
-            } catch (Resources.NotFoundException unused) {
+                closeable.close();
+            } catch (RuntimeException e) {
+                throw e;
+            } catch (Exception unused) {
             }
         }
-        return context.getPackageName();
     }
 
-    public static int getResourcesIdentifier(Context context, String str, String str2) {
-        return context.getResources().getIdentifier(str, str2, getResourcePackageName(context));
+    public static boolean checkPermission(Context context, String str) {
+        return context.checkCallingOrSelfPermission(str) == 0;
     }
 
-    public static SharedPreferences getSharedPrefs(Context context) {
-        return context.getSharedPreferences("com.google.firebase.crashlytics", 0);
-    }
-
-    private static String hash(String str, String str2) {
-        return hash(str.getBytes(), str2);
-    }
-
-    private static String hash(byte[] bArr, String str) {
-        try {
-            MessageDigest messageDigest = MessageDigest.getInstance(str);
-            messageDigest.update(bArr);
-            return hexify(messageDigest.digest());
-        } catch (NoSuchAlgorithmException e) {
-            Logger.getLogger().e("Could not create hashing algorithm: " + str + ", returning empty string.", e);
-            return "";
+    public static boolean canTryConnection(Context context) {
+        if (!checkPermission(context, "android.permission.ACCESS_NETWORK_STATE")) {
+            return true;
         }
-    }
-
-    public static String hexify(byte[] bArr) {
-        char[] cArr = new char[bArr.length * 2];
-        for (int i = 0; i < bArr.length; i++) {
-            byte b = bArr[i];
-            int i2 = i * 2;
-            char[] cArr2 = HEX_VALUES;
-            cArr[i2] = cArr2[(b & 255) >>> 4];
-            cArr[i2 + 1] = cArr2[b & 15];
-        }
-        return new String(cArr);
-    }
-
-    public static boolean isAppDebuggable(Context context) {
-        return (context.getApplicationInfo().flags & 2) != 0;
-    }
-
-    public static boolean isDebuggerAttached() {
-        return Debug.isDebuggerConnected() || Debug.waitingForDebugger();
-    }
-
-    public static boolean isEmulator() {
-        if (!Build.PRODUCT.contains("sdk")) {
-            String str = Build.HARDWARE;
-            if (!str.contains("goldfish") && !str.contains("ranchu")) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public static boolean isRooted() {
-        boolean isEmulator = isEmulator();
-        String str = Build.TAGS;
-        if ((isEmulator || str == null || !str.contains("test-keys")) && !new File("/system/app/Superuser.apk").exists()) {
-            return !isEmulator && new File("/system/xbin/su").exists();
-        }
-        return true;
+        NetworkInfo activeNetworkInfo = ((ConnectivityManager) context.getSystemService("connectivity")).getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnectedOrConnecting();
     }
 
     public static boolean nullSafeEquals(String str, String str2) {
-        return str == null ? str2 == null : str.equals(str2);
-    }
-
-    public static String sha1(String str) {
-        return hash(str, "SHA-1");
-    }
-
-    public static String streamToString(InputStream inputStream) {
-        Scanner useDelimiter = new Scanner(inputStream).useDelimiter("\\A");
-        return useDelimiter.hasNext() ? useDelimiter.next() : "";
+        if (str == null) {
+            return str2 == null;
+        }
+        return str.equals(str2);
     }
 }

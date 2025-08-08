@@ -7,7 +7,7 @@ import java.lang.Thread;
 import java.util.Iterator;
 import java.util.Objects;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class BuildVars {
     public static String APP_HASH = null;
     public static int APP_ID = 0;
@@ -57,8 +57,22 @@ public class BuildVars {
         }
     }
 
-    public static String getSmsHash() {
-        return ApplicationLoader.isStandaloneBuild() ? "w0lkcmTZkKh" : DEBUG_VERSION ? "O2P2z+/jBpJ" : "oLeq9AcOZkT";
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$static$0(Thread.UncaughtExceptionHandler uncaughtExceptionHandler, Thread thread, Throwable th) {
+        FileLog.fatal(th, false);
+        if (uncaughtExceptionHandler != null) {
+            uncaughtExceptionHandler.uncaughtException(thread, th);
+        }
+    }
+
+    public static boolean useInvoiceBilling() {
+        if (!BillingController.billingClientEmpty && !ApplicationLoader.isStandaloneBuild()) {
+            isBetaApp();
+            if (!isHuaweiStoreApp() && !hasDirectCurrency()) {
+                return false;
+            }
+        }
+        return true;
     }
 
     private static boolean hasDirectCurrency() {
@@ -90,21 +104,7 @@ public class BuildVars {
         return ApplicationLoader.isHuaweiStoreBuild();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$static$0(Thread.UncaughtExceptionHandler uncaughtExceptionHandler, Thread thread, Throwable th) {
-        FileLog.fatal(th, false);
-        if (uncaughtExceptionHandler != null) {
-            uncaughtExceptionHandler.uncaughtException(thread, th);
-        }
-    }
-
-    public static boolean useInvoiceBilling() {
-        if (!BillingController.billingClientEmpty && !ApplicationLoader.isStandaloneBuild()) {
-            isBetaApp();
-            if (!isHuaweiStoreApp() && !hasDirectCurrency()) {
-                return false;
-            }
-        }
-        return true;
+    public static String getSmsHash() {
+        return ApplicationLoader.isStandaloneBuild() ? "w0lkcmTZkKh" : DEBUG_VERSION ? "O2P2z+/jBpJ" : "oLeq9AcOZkT";
     }
 }

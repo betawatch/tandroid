@@ -1,33 +1,142 @@
 package com.google.android.gms.internal.play_billing;
 
+import j$.util.SortedSet;
+import java.util.Comparator;
+import java.util.NavigableSet;
+import java.util.SequencedCollection;
+import java.util.SequencedSet;
+
 /* loaded from: classes.dex */
-final class zzcw implements zzdd {
-    private final zzdd[] zza;
+public abstract class zzcw extends zzcv implements NavigableSet, zzdu, SortedSet {
+    final transient Comparator zza;
+    transient zzcw zzb;
 
-    zzcw(zzdd... zzddVarArr) {
-        this.zza = zzddVarArr;
+    zzcw(Comparator comparator) {
+        this.zza = comparator;
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzdd
-    public final zzdc zzb(Class cls) {
-        zzdd[] zzddVarArr = this.zza;
-        for (int i = 0; i < 2; i++) {
-            zzdd zzddVar = zzddVarArr[i];
-            if (zzddVar.zzc(cls)) {
-                return zzddVar.zzb(cls);
-            }
+    static zzdr zzq(Comparator comparator) {
+        if (zzdc.zza.equals(comparator)) {
+            return zzdr.zzc;
         }
-        throw new UnsupportedOperationException("No factory is available for message type: ".concat(cls.getName()));
+        int i = zzco.$r8$clinit;
+        return new zzdr(zzdk.zza, comparator);
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzdd
-    public final boolean zzc(Class cls) {
-        zzdd[] zzddVarArr = this.zza;
-        for (int i = 0; i < 2; i++) {
-            if (zzddVarArr[i].zzc(cls)) {
-                return true;
-            }
+    public final void addFirst(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    public final void addLast(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.SortedSet, com.google.android.gms.internal.play_billing.zzdu
+    public final Comparator comparator() {
+        return this.zza;
+    }
+
+    @Override // java.util.NavigableSet
+    public final /* bridge */ /* synthetic */ NavigableSet descendingSet() {
+        zzcw zzcwVar = this.zzb;
+        if (zzcwVar != null) {
+            return zzcwVar;
         }
-        return false;
+        zzcw zzl = zzl();
+        this.zzb = zzl;
+        zzl.zzb = this;
+        return zzl;
+    }
+
+    @Override // java.util.SortedSet
+    public abstract Object first();
+
+    public final Object getFirst() {
+        return first();
+    }
+
+    public final Object getLast() {
+        return last();
+    }
+
+    @Override // java.util.SortedSet
+    public abstract Object last();
+
+    @Override // java.util.NavigableSet
+    public final Object pollFirst() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.NavigableSet
+    public final Object pollLast() {
+        throw new UnsupportedOperationException();
+    }
+
+    public final Object removeFirst() {
+        throw new UnsupportedOperationException();
+    }
+
+    public final Object removeLast() {
+        throw new UnsupportedOperationException();
+    }
+
+    public /* bridge */ /* synthetic */ SequencedCollection reversed() {
+        return NavigableSet.-CC.$default$reversed(this);
+    }
+
+    public /* bridge */ /* synthetic */ SequencedSet reversed() {
+        return NavigableSet.-CC.$default$reversed(this);
+    }
+
+    public /* bridge */ /* synthetic */ java.util.SortedSet reversed() {
+        return NavigableSet.-CC.$default$reversed(this);
+    }
+
+    @Override // java.util.NavigableSet, java.util.SortedSet
+    public final /* bridge */ /* synthetic */ java.util.SortedSet subSet(Object obj, Object obj2) {
+        return subSet(obj, true, obj2, false);
+    }
+
+    abstract zzcw zzl();
+
+    abstract zzcw zzm(Object obj, boolean z);
+
+    abstract zzcw zzo(Object obj, boolean z, Object obj2, boolean z2);
+
+    abstract zzcw zzp(Object obj, boolean z);
+
+    @Override // java.util.NavigableSet, java.util.SortedSet
+    public final /* synthetic */ java.util.SortedSet headSet(Object obj) {
+        obj.getClass();
+        return zzm(obj, false);
+    }
+
+    @Override // java.util.NavigableSet, java.util.SortedSet
+    public final /* synthetic */ java.util.SortedSet tailSet(Object obj) {
+        obj.getClass();
+        return zzp(obj, true);
+    }
+
+    @Override // java.util.NavigableSet
+    public final /* synthetic */ NavigableSet headSet(Object obj, boolean z) {
+        obj.getClass();
+        return zzm(obj, z);
+    }
+
+    @Override // java.util.NavigableSet
+    public final /* synthetic */ NavigableSet tailSet(Object obj, boolean z) {
+        obj.getClass();
+        return zzp(obj, z);
+    }
+
+    @Override // java.util.NavigableSet
+    /* renamed from: zzn, reason: merged with bridge method [inline-methods] */
+    public final zzcw subSet(Object obj, boolean z, Object obj2, boolean z2) {
+        obj.getClass();
+        obj2.getClass();
+        if (this.zza.compare(obj, obj2) <= 0) {
+            return zzo(obj, z, obj2, z2);
+        }
+        throw new IllegalArgumentException();
     }
 }

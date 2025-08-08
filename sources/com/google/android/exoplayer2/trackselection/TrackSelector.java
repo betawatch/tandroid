@@ -17,15 +17,26 @@ public abstract class TrackSelector {
         void onTrackSelectionsInvalidated();
     }
 
-    protected final BandwidthMeter getBandwidthMeter() {
-        return (BandwidthMeter) Assertions.checkStateNotNull(this.bandwidthMeter);
-    }
-
     public abstract TrackSelectionParameters getParameters();
+
+    public abstract boolean isSetParametersSupported();
+
+    public abstract void onSelectionActivated(Object obj);
+
+    public abstract TrackSelectorResult selectTracks(RendererCapabilities[] rendererCapabilitiesArr, TrackGroupArray trackGroupArray, MediaSource.MediaPeriodId mediaPeriodId, Timeline timeline);
+
+    public abstract void setAudioAttributes(AudioAttributes audioAttributes);
+
+    public abstract void setParameters(TrackSelectionParameters trackSelectionParameters);
 
     public void init(InvalidationListener invalidationListener, BandwidthMeter bandwidthMeter) {
         this.listener = invalidationListener;
         this.bandwidthMeter = bandwidthMeter;
+    }
+
+    public void release() {
+        this.listener = null;
+        this.bandwidthMeter = null;
     }
 
     protected final void invalidate() {
@@ -35,18 +46,7 @@ public abstract class TrackSelector {
         }
     }
 
-    public abstract boolean isSetParametersSupported();
-
-    public abstract void onSelectionActivated(Object obj);
-
-    public void release() {
-        this.listener = null;
-        this.bandwidthMeter = null;
+    protected final BandwidthMeter getBandwidthMeter() {
+        return (BandwidthMeter) Assertions.checkStateNotNull(this.bandwidthMeter);
     }
-
-    public abstract TrackSelectorResult selectTracks(RendererCapabilities[] rendererCapabilitiesArr, TrackGroupArray trackGroupArray, MediaSource.MediaPeriodId mediaPeriodId, Timeline timeline);
-
-    public abstract void setAudioAttributes(AudioAttributes audioAttributes);
-
-    public abstract void setParameters(TrackSelectionParameters trackSelectionParameters);
 }

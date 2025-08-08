@@ -9,7 +9,7 @@ import java.lang.reflect.TypeVariable;
 import java.lang.reflect.WildcardType;
 import java.util.Objects;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class TypeToken<T> {
     private final int hashCode;
     private final Class rawType;
@@ -30,12 +30,8 @@ public class TypeToken<T> {
         this.hashCode = canonicalize.hashCode();
     }
 
-    public static TypeToken get(Class cls) {
-        return new TypeToken(cls);
-    }
-
-    public static TypeToken get(Type type) {
-        return new TypeToken(type);
+    private static boolean isCapturingTypeVariablesForbidden() {
+        return !Objects.equals(System.getProperty("gson.allowCapturingTypeVariables"), "true");
     }
 
     private Type getTypeTokenTypeArgument() {
@@ -53,10 +49,6 @@ public class TypeToken<T> {
             throw new IllegalStateException("TypeToken must be created with a type argument: new TypeToken<...>() {}; When using code shrinkers (ProGuard, R8, ...) make sure that generic signatures are preserved.\nSee " + TroubleshootingGuide.createUrl("type-token-raw"));
         }
         throw new IllegalStateException("Must only create direct subclasses of TypeToken");
-    }
-
-    private static boolean isCapturingTypeVariablesForbidden() {
-        return !Objects.equals(System.getProperty("gson.allowCapturingTypeVariables"), "true");
     }
 
     private static void verifyNoTypeVariable(Type type) {
@@ -101,10 +93,6 @@ public class TypeToken<T> {
         }
     }
 
-    public final boolean equals(Object obj) {
-        return (obj instanceof TypeToken) && $Gson$Types.equals(this.type, ((TypeToken) obj).type);
-    }
-
     public final Class getRawType() {
         return this.rawType;
     }
@@ -117,7 +105,19 @@ public class TypeToken<T> {
         return this.hashCode;
     }
 
+    public final boolean equals(Object obj) {
+        return (obj instanceof TypeToken) && $Gson$Types.equals(this.type, ((TypeToken) obj).type);
+    }
+
     public final String toString() {
         return $Gson$Types.typeToString(this.type);
+    }
+
+    public static TypeToken get(Type type) {
+        return new TypeToken(type);
+    }
+
+    public static TypeToken get(Class cls) {
+        return new TypeToken(cls);
     }
 }

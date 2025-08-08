@@ -7,11 +7,18 @@ import android.text.TextPaint;
 import android.util.TypedValue;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class HintEditText extends EditTextBoldCursor {
     protected TextPaint hintPaint;
     private String hintText;
     private android.graphics.Rect rect;
+
+    protected void onPreDrawHintCharacter(int i, Canvas canvas, float f, float f2) {
+    }
+
+    protected boolean shouldDrawBehindText(int i) {
+        return false;
+    }
 
     public HintEditText(Context context) {
         super(context);
@@ -20,17 +27,44 @@ public class HintEditText extends EditTextBoldCursor {
         this.hintPaint.setColor(Theme.getColor(Theme.key_windowBackgroundWhiteHintText));
     }
 
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView
+    public void setTextSize(int i, float f) {
+        super.setTextSize(i, f);
+        this.hintPaint.setTextSize(TypedValue.applyDimension(i, f, getResources().getDisplayMetrics()));
+    }
+
     public String getHintText() {
         return this.hintText;
     }
 
+    public void setHintText(String str) {
+        this.hintText = str;
+        onTextChange();
+        setText(getText());
+    }
+
+    @Override // org.telegram.ui.Components.EditTextEffects, android.widget.TextView, android.view.View
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        onTextChange();
+    }
+
+    public void onTextChange() {
+        invalidate();
+    }
+
     @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.EditTextEffects, android.widget.TextView, android.view.View
     protected void onDraw(Canvas canvas) {
+        float measureText;
         if (this.hintText != null && length() < this.hintText.length()) {
             float f = 0.0f;
-            int i = 0;
-            while (i < this.hintText.length()) {
-                float measureText = i < length() ? getPaint().measureText(getText(), i, i + 1) : this.hintPaint.measureText(this.hintText, i, i + 1);
+            for (int i = 0; i < this.hintText.length(); i++) {
+                if (i < length()) {
+                    measureText = getPaint().measureText(getText(), i, i + 1);
+                } else {
+                    measureText = this.hintPaint.measureText(this.hintText, i, i + 1);
+                }
+                float f2 = measureText;
                 if (shouldDrawBehindText(i) || i >= length()) {
                     int color = this.hintPaint.getColor();
                     canvas.save();
@@ -40,44 +74,14 @@ public class HintEditText extends EditTextBoldCursor {
                     float height = (getHeight() + this.rect.height()) / 2.0f;
                     onPreDrawHintCharacter(i, canvas, f, height);
                     canvas.drawText(this.hintText, i, i + 1, f, height, (Paint) this.hintPaint);
-                    f += measureText;
+                    f += f2;
                     canvas.restore();
                     this.hintPaint.setColor(color);
                 } else {
-                    f += measureText;
+                    f += f2;
                 }
-                i++;
             }
         }
         super.onDraw(canvas);
-    }
-
-    @Override // org.telegram.ui.Components.EditTextEffects, android.widget.TextView, android.view.View
-    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        onTextChange();
-    }
-
-    protected void onPreDrawHintCharacter(int i, Canvas canvas, float f, float f2) {
-    }
-
-    public void onTextChange() {
-        invalidate();
-    }
-
-    public void setHintText(String str) {
-        this.hintText = str;
-        onTextChange();
-        setText(getText());
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView
-    public void setTextSize(int i, float f) {
-        super.setTextSize(i, f);
-        this.hintPaint.setTextSize(TypedValue.applyDimension(i, f, getResources().getDisplayMetrics()));
-    }
-
-    protected boolean shouldDrawBehindText(int i) {
-        return false;
     }
 }

@@ -12,29 +12,8 @@ abstract class zzhj extends AbstractList implements zzjl {
     zzhj() {
     }
 
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public boolean add(Object obj) {
-        zzc();
-        return super.add(obj);
-    }
-
     @Override // java.util.AbstractList, java.util.List
-    public boolean addAll(int i, Collection collection) {
-        zzc();
-        return super.addAll(i, collection);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public boolean addAll(Collection collection) {
-        zzc();
-        return super.addAll(collection);
-    }
-
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public void clear() {
-        zzc();
-        super.clear();
-    }
+    public abstract Object remove(int i);
 
     @Override // java.util.AbstractList, java.util.Collection, java.util.List
     public boolean equals(Object obj) {
@@ -70,8 +49,39 @@ abstract class zzhj extends AbstractList implements zzjl {
         return i;
     }
 
+    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public boolean add(Object obj) {
+        zzc();
+        return super.add(obj);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public boolean addAll(Collection collection) {
+        zzc();
+        return super.addAll(collection);
+    }
+
     @Override // java.util.AbstractList, java.util.List
-    public abstract Object remove(int i);
+    public boolean addAll(int i, Collection collection) {
+        zzc();
+        return super.addAll(i, collection);
+    }
+
+    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public void clear() {
+        zzc();
+        super.clear();
+    }
+
+    @Override // com.google.android.gms.internal.vision.zzjl
+    public boolean zza() {
+        return this.zza;
+    }
+
+    @Override // com.google.android.gms.internal.vision.zzjl
+    public final void zzb() {
+        this.zza = false;
+    }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public boolean remove(Object obj) {
@@ -94,16 +104,6 @@ abstract class zzhj extends AbstractList implements zzjl {
     public boolean retainAll(Collection collection) {
         zzc();
         return super.retainAll(collection);
-    }
-
-    @Override // com.google.android.gms.internal.vision.zzjl
-    public boolean zza() {
-        return this.zza;
-    }
-
-    @Override // com.google.android.gms.internal.vision.zzjl
-    public final void zzb() {
-        this.zza = false;
     }
 
     protected final void zzc() {

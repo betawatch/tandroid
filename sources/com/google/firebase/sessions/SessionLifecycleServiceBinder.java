@@ -6,9 +6,11 @@ import com.google.firebase.Firebase;
 import com.google.firebase.FirebaseKt;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public interface SessionLifecycleServiceBinder {
     public static final Companion Companion = Companion.$$INSTANCE;
+
+    void bindToService(Messenger messenger, ServiceConnection serviceConnection);
 
     public static final class Companion {
         static final /* synthetic */ Companion $$INSTANCE = new Companion();
@@ -22,6 +24,4 @@ public interface SessionLifecycleServiceBinder {
             return (SessionLifecycleServiceBinder) obj;
         }
     }
-
-    void bindToService(Messenger messenger, ServiceConnection serviceConnection);
 }

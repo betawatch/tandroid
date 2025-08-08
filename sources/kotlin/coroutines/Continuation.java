@@ -1,6 +1,6 @@
 package kotlin.coroutines;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public interface Continuation {
     CoroutineContext getContext();
 

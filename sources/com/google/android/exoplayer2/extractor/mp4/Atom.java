@@ -10,6 +10,31 @@ import org.telegram.messenger.NotificationCenter;
 abstract class Atom {
     public final int type;
 
+    public static int parseFullAtomFlags(int i) {
+        return i & 16777215;
+    }
+
+    public static int parseFullAtomVersion(int i) {
+        return (i >> 24) & NotificationCenter.goingToPreviewTheme;
+    }
+
+    public Atom(int i) {
+        this.type = i;
+    }
+
+    public String toString() {
+        return getAtomTypeString(this.type);
+    }
+
+    static final class LeafAtom extends Atom {
+        public final ParsableByteArray data;
+
+        public LeafAtom(int i, ParsableByteArray parsableByteArray) {
+            super(i);
+            this.data = parsableByteArray;
+        }
+    }
+
     static final class ContainerAtom extends Atom {
         public final List containerChildren;
         public final long endPosition;
@@ -22,23 +47,12 @@ abstract class Atom {
             this.containerChildren = new ArrayList();
         }
 
-        public void add(ContainerAtom containerAtom) {
-            this.containerChildren.add(containerAtom);
-        }
-
         public void add(LeafAtom leafAtom) {
             this.leafChildren.add(leafAtom);
         }
 
-        public ContainerAtom getContainerAtomOfType(int i) {
-            int size = this.containerChildren.size();
-            for (int i2 = 0; i2 < size; i2++) {
-                ContainerAtom containerAtom = (ContainerAtom) this.containerChildren.get(i2);
-                if (containerAtom.type == i) {
-                    return containerAtom;
-                }
-            }
-            return null;
+        public void add(ContainerAtom containerAtom) {
+            this.containerChildren.add(containerAtom);
         }
 
         public LeafAtom getLeafAtomOfType(int i) {
@@ -52,38 +66,24 @@ abstract class Atom {
             return null;
         }
 
+        public ContainerAtom getContainerAtomOfType(int i) {
+            int size = this.containerChildren.size();
+            for (int i2 = 0; i2 < size; i2++) {
+                ContainerAtom containerAtom = (ContainerAtom) this.containerChildren.get(i2);
+                if (containerAtom.type == i) {
+                    return containerAtom;
+                }
+            }
+            return null;
+        }
+
         @Override // com.google.android.exoplayer2.extractor.mp4.Atom
         public String toString() {
             return Atom.getAtomTypeString(this.type) + " leaves: " + Arrays.toString(this.leafChildren.toArray()) + " containers: " + Arrays.toString(this.containerChildren.toArray());
         }
     }
 
-    static final class LeafAtom extends Atom {
-        public final ParsableByteArray data;
-
-        public LeafAtom(int i, ParsableByteArray parsableByteArray) {
-            super(i);
-            this.data = parsableByteArray;
-        }
-    }
-
-    public Atom(int i) {
-        this.type = i;
-    }
-
     public static String getAtomTypeString(int i) {
         return "" + ((char) ((i >> 24) & NotificationCenter.goingToPreviewTheme)) + ((char) ((i >> 16) & NotificationCenter.goingToPreviewTheme)) + ((char) ((i >> 8) & NotificationCenter.goingToPreviewTheme)) + ((char) (i & NotificationCenter.goingToPreviewTheme));
-    }
-
-    public static int parseFullAtomFlags(int i) {
-        return i & 16777215;
-    }
-
-    public static int parseFullAtomVersion(int i) {
-        return (i >> 24) & NotificationCenter.goingToPreviewTheme;
-    }
-
-    public String toString() {
-        return getAtomTypeString(this.type);
     }
 }

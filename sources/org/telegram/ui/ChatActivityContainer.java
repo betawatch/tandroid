@@ -15,22 +15,31 @@ public abstract class ChatActivityContainer extends FrameLayout {
     private boolean isActive;
     private final INavigationLayout parentLayout;
 
+    protected void onSearchLoadingUpdate(boolean z) {
+    }
+
     public ChatActivityContainer(Context context, INavigationLayout iNavigationLayout, Bundle bundle) {
         super(context);
         this.isActive = true;
         this.parentLayout = iNavigationLayout;
         ChatActivity chatActivity = new ChatActivity(bundle) { // from class: org.telegram.ui.ChatActivityContainer.1
+            @Override // org.telegram.ui.ActionBar.BaseFragment
+            public void setNavigationBarColor(int i) {
+            }
+
             @Override // org.telegram.ui.ChatActivity
             protected void onSearchLoadingUpdate(boolean z) {
                 ChatActivityContainer.this.onSearchLoadingUpdate(z);
             }
-
-            @Override // org.telegram.ui.ActionBar.BaseFragment
-            public void setNavigationBarColor(int i) {
-            }
         };
         this.chatActivity = chatActivity;
         chatActivity.isInsideContainer = true;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        initChatActivity();
     }
 
     protected void initChatActivity() {
@@ -56,17 +65,6 @@ public abstract class ChatActivityContainer extends FrameLayout {
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    protected void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        initChatActivity();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    protected void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-    }
-
     public void onPause() {
         this.isActive = false;
         if (this.fragmentView != null) {
@@ -81,6 +79,8 @@ public abstract class ChatActivityContainer extends FrameLayout {
         }
     }
 
-    protected void onSearchLoadingUpdate(boolean z) {
+    @Override // android.view.ViewGroup, android.view.View
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
     }
 }

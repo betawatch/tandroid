@@ -11,10 +11,9 @@ final class LocaleListPlatformWrapper implements LocaleListInterface {
         this.mLocaleList = LocaleListPlatformWrapper$$ExternalSyntheticApiModelOutline5.m(obj);
     }
 
-    public boolean equals(Object obj) {
-        boolean equals;
-        equals = this.mLocaleList.equals(((LocaleListInterface) obj).getLocaleList());
-        return equals;
+    @Override // androidx.core.os.LocaleListInterface
+    public Object getLocaleList() {
+        return this.mLocaleList;
     }
 
     @Override // androidx.core.os.LocaleListInterface
@@ -22,17 +21,6 @@ final class LocaleListPlatformWrapper implements LocaleListInterface {
         Locale locale;
         locale = this.mLocaleList.get(i);
         return locale;
-    }
-
-    @Override // androidx.core.os.LocaleListInterface
-    public Object getLocaleList() {
-        return this.mLocaleList;
-    }
-
-    public int hashCode() {
-        int hashCode;
-        hashCode = this.mLocaleList.hashCode();
-        return hashCode;
     }
 
     @Override // androidx.core.os.LocaleListInterface
@@ -49,16 +37,28 @@ final class LocaleListPlatformWrapper implements LocaleListInterface {
         return size;
     }
 
-    @Override // androidx.core.os.LocaleListInterface
-    public String toLanguageTags() {
-        String languageTags;
-        languageTags = this.mLocaleList.toLanguageTags();
-        return languageTags;
+    public boolean equals(Object obj) {
+        boolean equals;
+        equals = this.mLocaleList.equals(((LocaleListInterface) obj).getLocaleList());
+        return equals;
+    }
+
+    public int hashCode() {
+        int hashCode;
+        hashCode = this.mLocaleList.hashCode();
+        return hashCode;
     }
 
     public String toString() {
         String localeList;
         localeList = this.mLocaleList.toString();
         return localeList;
+    }
+
+    @Override // androidx.core.os.LocaleListInterface
+    public String toLanguageTags() {
+        String languageTags;
+        languageTags = this.mLocaleList.toLanguageTags();
+        return languageTags;
     }
 }

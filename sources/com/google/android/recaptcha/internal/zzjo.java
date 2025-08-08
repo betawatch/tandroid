@@ -28,6 +28,7 @@ final class zzjo extends zzjs {
         if (zza.isAssignableFrom(list.getClass())) {
             ArrayList arrayList = new ArrayList(list.size() + i);
             arrayList.addAll(list);
+            zzlv.zzs(obj, j, arrayList);
             zzjlVar = arrayList;
         } else {
             if (!(list instanceof zzlq)) {
@@ -44,9 +45,9 @@ final class zzjo extends zzjs {
             }
             zzjl zzjlVar3 = new zzjl(list.size() + i);
             zzjlVar3.addAll(zzjlVar3.size(), (zzlq) list);
+            zzlv.zzs(obj, j, zzjlVar3);
             zzjlVar = zzjlVar3;
         }
-        zzlv.zzs(obj, j, zzjlVar);
         return zzjlVar;
     }
 

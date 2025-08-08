@@ -68,12 +68,6 @@ class zzaf extends zzad implements List {
     }
 
     @Override // java.util.List
-    public final ListIterator listIterator(int i) {
-        zzb();
-        return new zzae(this, i);
-    }
-
-    @Override // java.util.List
     public final Object remove(int i) {
         zzb();
         Object remove = ((List) this.zzb).remove(i);
@@ -99,5 +93,11 @@ class zzaf extends zzad implements List {
             zzadVar = this;
         }
         return zzagVar.zzi(obj, subList, zzadVar);
+    }
+
+    @Override // java.util.List
+    public final ListIterator listIterator(int i) {
+        zzb();
+        return new zzae(this, i);
     }
 }

@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class WrapperSdkExceptionManager {
     static final Map sWrapperExceptionDataContainer = new HashMap();
 
@@ -24,10 +24,6 @@ public abstract class WrapperSdkExceptionManager {
             }
             FileManager.delete(file);
         }
-    }
-
-    private static File getFile(UUID uuid) {
-        return new File(ErrorLogHelper.getErrorStorageDirectory(), uuid.toString() + ".dat");
     }
 
     public static String loadWrapperExceptionData(UUID uuid) {
@@ -46,5 +42,9 @@ public abstract class WrapperSdkExceptionManager {
             map.put(uuid.toString(), str);
         }
         return str;
+    }
+
+    private static File getFile(UUID uuid) {
+        return new File(ErrorLogHelper.getErrorStorageDirectory(), uuid.toString() + ".dat");
     }
 }

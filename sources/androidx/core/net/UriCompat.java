@@ -15,10 +15,11 @@ public abstract class UriCompat {
                 if (schemeSpecificPart != null) {
                     for (int i = 0; i < schemeSpecificPart.length(); i++) {
                         char charAt = schemeSpecificPart.charAt(i);
-                        if (charAt != '-' && charAt != '@' && charAt != '.') {
-                            charAt = 'x';
+                        if (charAt == '-' || charAt == '@' || charAt == '.') {
+                            sb.append(charAt);
+                        } else {
+                            sb.append('x');
                         }
-                        sb.append(charAt);
                     }
                 }
                 return sb.toString();

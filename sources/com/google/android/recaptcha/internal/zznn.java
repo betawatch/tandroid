@@ -12,16 +12,6 @@ public final class zznn extends zzin implements zzkf {
         zznoVar = zzno.zzb;
     }
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    /* synthetic */ zznn(zznm zznmVar) {
-        super(r1);
-        zzno zznoVar;
-        zznoVar = zzno.zzb;
-    }
-
     public final zznn zzd(zzlj zzljVar) {
         zzm();
         zzno.zzj((zzno) this.zza, zzljVar);
@@ -44,5 +34,15 @@ public final class zznn extends zzin implements zzkf {
         zzm();
         zzno.zzi((zzno) this.zza, zzibVar);
         return this;
+    }
+
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    /* synthetic */ zznn(zznm zznmVar) {
+        super(r1);
+        zzno zznoVar;
+        zznoVar = zzno.zzb;
     }
 }

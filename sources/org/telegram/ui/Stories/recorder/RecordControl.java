@@ -162,6 +162,21 @@ public class RecordControl extends View implements FlashViews.Invertable {
         boolean showStoriesDrafts();
     }
 
+    public void startAsVideo(boolean z) {
+        this.overrideStartModeIsVideoT = -1.0f;
+        this.startModeIsVideo = z;
+        invalidate();
+    }
+
+    public void startAsVideoT(float f) {
+        this.overrideStartModeIsVideoT = f;
+        invalidate();
+    }
+
+    public void setDelegate(Delegate delegate) {
+        this.delegate = delegate;
+    }
+
     public RecordControl(Context context) {
         super(context);
         BlendMode blendMode;
@@ -296,107 +311,34 @@ public class RecordControl extends View implements FlashViews.Invertable {
         updateGalleryImage();
     }
 
-    private float dist(Point point, Point point2) {
-        return MathUtils.distance(point.x, point.y, point2.x, point2.y);
-    }
-
-    private void getVector(float f, float f2, double d, float f3, Point point) {
-        double d2 = f;
-        double cos = Math.cos(d);
-        double d3 = f3;
-        Double.isNaN(d3);
-        Double.isNaN(d2);
-        point.x = (float) (d2 + (cos * d3));
-        double d4 = f2;
-        double sin = Math.sin(d);
-        Double.isNaN(d3);
-        Double.isNaN(d4);
-        point.y = (float) (d4 + (sin * d3));
-    }
-
-    private boolean isPressed(float f, float f2, float f3, float f4, float f5, boolean z) {
-        return this.recording ? (!z || f4 - f2 <= ((float) AndroidUtilities.dp(100.0f))) && Math.abs(f3 - f) <= f5 : MathUtils.distance(f, f2, f3, f4) <= f5;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        this.recordingStart = System.currentTimeMillis();
-        this.recording = true;
+    public void updateGalleryImage() {
+        String str;
+        ArrayList<MediaController.PhotoEntry> arrayList;
         Delegate delegate = this.delegate;
-        this.lastDuration = 0L;
-        delegate.onVideoDuration(0L);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1() {
-        if (this.recording || hasCheck()) {
+        if (delegate != null && delegate.showStoriesDrafts()) {
+            ArrayList arrayList2 = MessagesController.getInstance(this.galleryImage.getCurrentAccount()).getStoriesController().getDraftsController().drafts;
+            this.galleryImage.setOrientation(0, 0, true);
+            if (arrayList2 != null && !arrayList2.isEmpty() && ((StoryEntry) arrayList2.get(0)).draftThumbFile != null) {
+                this.galleryImage.setImage(ImageLocation.getForPath(((StoryEntry) arrayList2.get(0)).draftThumbFile.getAbsolutePath()), "80_80", null, null, this.noGalleryDrawable, 0L, null, null, 0);
+                return;
+            }
+        }
+        MediaController.AlbumEntry albumEntry = MediaController.allMediaAlbumEntry;
+        MediaController.PhotoEntry photoEntry = (albumEntry == null || (arrayList = albumEntry.photos) == null || arrayList.isEmpty()) ? null : albumEntry.photos.get(0);
+        if (photoEntry != null && (str = photoEntry.thumbPath) != null) {
+            this.galleryImage.setImage(ImageLocation.getForPath(str), "80_80", null, null, this.noGalleryDrawable, 0L, null, null, 0);
             return;
         }
-        if (this.delegate.canRecordAudio()) {
-            this.longpressRecording = true;
-            this.showLock = true;
-            this.delegate.onVideoRecordStart(true, new Runnable() { // from class: org.telegram.ui.Stories.recorder.RecordControl$$ExternalSyntheticLambda5
-                @Override // java.lang.Runnable
-                public final void run() {
-                    RecordControl.this.lambda$new$0();
-                }
-            });
-        } else {
-            this.touch = false;
-            this.recordButton.setPressed(false);
-            this.flipButton.setPressed(false);
-            this.lockButton.setPressed(false);
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2() {
-        if (this.recording || hasCheck()) {
+        if (photoEntry != null && photoEntry.path != null) {
+            if (photoEntry.isVideo) {
+                this.galleryImage.setImage(ImageLocation.getForPath("vthumb://" + photoEntry.imageId + ":" + photoEntry.path), "80_80", null, null, this.noGalleryDrawable, 0L, null, null, 0);
+                return;
+            }
+            this.galleryImage.setOrientation(photoEntry.orientation, photoEntry.invert, true);
+            this.galleryImage.setImage(ImageLocation.getForPath("thumb://" + photoEntry.imageId + ":" + photoEntry.path), "80_80", null, null, this.noGalleryDrawable, 0L, null, null, 0);
             return;
         }
-        this.delegate.onFlipLongClick();
-        rotateFlip(360.0f);
-        this.touch = false;
-        this.recordButton.setPressed(false);
-        this.flipButton.setPressed(false);
-        this.lockButton.setPressed(false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onDraw$3() {
-        this.recording = false;
-        this.longpressRecording = false;
-        this.recordingLoadingStart = SystemClock.elapsedRealtime();
-        this.recordingLoading = true;
-        this.touch = false;
-        this.recordButton.setPressed(false);
-        this.flipButton.setPressed(false);
-        this.lockButton.setPressed(false);
-        this.delegate.onVideoRecordEnd(true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onTouchEvent$4() {
-        this.recordingStart = System.currentTimeMillis();
-        this.lastDuration = 0L;
-        this.recording = true;
-        this.delegate.onVideoDuration(0L);
-    }
-
-    private static void setDrawableBounds(Drawable drawable, float f, float f2) {
-        setDrawableBounds(drawable, f, f2, Math.max(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight()) / 2.0f);
-    }
-
-    private static void setDrawableBounds(Drawable drawable, float f, float f2, float f3) {
-        drawable.setBounds((int) (f - f3), (int) (f2 - f3), (int) (f + f3), (int) (f2 + f3));
-    }
-
-    public boolean hasCheck() {
-        return this.collageProgress >= 1.0f;
-    }
-
-    public boolean isTouch() {
-        return this.discardParentTouch;
+        this.galleryImage.setImageBitmap(this.noGalleryDrawable);
     }
 
     @Override // android.view.View
@@ -411,399 +353,25 @@ public class RecordControl extends View implements FlashViews.Invertable {
         super.onDetachedFromWindow();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:138:0x086e  */
-    /* JADX WARN: Removed duplicated region for block: B:146:0x08a0  */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    protected void onDraw(Canvas canvas) {
-        float f;
-        float f2;
-        float f3;
-        float f4;
-        float f5;
-        RectF rectF;
-        float f6;
-        float f7;
-        float f8;
-        float f9;
-        float f10;
-        float f11;
-        RectF rectF2;
-        long j;
-        float f12;
-        Paint paint;
-        boolean z;
-        Canvas canvas2;
-        RectF rectF3;
-        float f13;
-        float f14;
-        float f15;
-        float scale;
-        double d;
-        double d2;
-        float f16 = this.recordingT.set(this.recording ? 1.0f : 0.0f);
-        float f17 = this.recordingLongT.set(this.recording ? 1.0f : 0.0f);
-        float f18 = this.overrideStartModeIsVideoT;
-        if (f18 < 0.0f) {
-            f18 = this.startModeIsVideoT.set(this.startModeIsVideo ? 1.0f : 0.0f);
+    @Override // org.telegram.ui.Stories.recorder.FlashViews.Invertable
+    public void setInvert(float f) {
+        this.outlinePaint.setColor(ColorUtils.blendARGB(-1, -16777216, f));
+        this.buttonPaint.setColor(ColorUtils.blendARGB(1677721600, 369098752, f));
+        this.hintLinePaintWhite.setColor(ColorUtils.blendARGB(1493172223, 285212671, f));
+        this.hintLinePaintBlack.setColor(ColorUtils.blendARGB(402653184, 805306368, f));
+        Drawable drawable = this.flipDrawableWhite;
+        int blendARGB = ColorUtils.blendARGB(-1, -16777216, f);
+        PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
+        drawable.setColorFilter(new PorterDuffColorFilter(blendARGB, mode));
+        this.unlockDrawable.setColorFilter(new PorterDuffColorFilter(ColorUtils.blendARGB(-1, -16777216, f), mode));
+    }
+
+    public void setAmplitude(float f, boolean z) {
+        this.amplitude = f;
+        if (z) {
+            return;
         }
-        float max = Math.max(f16, f18);
-        float f19 = this.touchT.set(this.touch ? 1.0f : 0.0f);
-        float f20 = f19 * this.touchIsCenterT.set((Math.abs(this.touchX - this.cx) >= ((float) AndroidUtilities.dp(64.0f)) || !(this.recording || this.recordButton.isPressed())) ? 0.0f : 1.0f);
-        float f21 = f19 * this.touchIsCenter2T.set(Math.abs(this.touchX - this.cx) < ((float) AndroidUtilities.dp(64.0f)) ? 1.0f : 0.0f);
-        float clamp = Utilities.clamp((this.touchX - this.cx) / AndroidUtilities.dp(16.0f), 1.0f, -1.0f);
-        float clamp2 = Utilities.clamp((this.touchX - this.cx) / AndroidUtilities.dp(64.0f), 1.0f, -1.0f);
-        float f22 = f19 * this.touchIsButtonT.set(Math.min(Math.abs(this.touchX - this.rightCx), Math.abs(this.touchX - this.leftCx)) < ((float) AndroidUtilities.dp(16.0f)) ? 1.0f : 0.0f);
-        float f23 = 1.0f - f16;
-        float f24 = this.collage.set(this.collageProgress > 0.0f) * f23;
-        float f25 = this.collageProgressAnimated.set(this.collageProgress);
-        float f26 = this.checkAnimated.set(hasCheck());
-        float f27 = this.longpressRecording ? f16 * max * f19 : 0.0f;
-        if (f27 > 0.0f) {
-            float dp = this.cx - AndroidUtilities.dp(50.0f);
-            float dp2 = AndroidUtilities.dp(50.0f) + this.cx;
-            this.hintLinePaintWhite.setStrokeWidth(AndroidUtilities.dp(2.0f));
-            this.hintLinePaintBlack.setStrokeWidth(AndroidUtilities.dp(2.0f));
-            f4 = f19;
-            float f28 = f27;
-            f = f26;
-            f3 = f17;
-            f5 = f24;
-            f2 = f22;
-            canvas.drawLine(dp2, this.cy, AndroidUtilities.lerp(dp2, this.rightCx - AndroidUtilities.dp(30.0f), f27), this.cy, this.hintLinePaintBlack);
-            canvas.drawLine(dp2, this.cy, AndroidUtilities.lerp(dp2, this.rightCx - AndroidUtilities.dp(30.0f), f28), this.cy, this.hintLinePaintWhite);
-            canvas.drawLine(dp, this.cy, AndroidUtilities.lerp(dp, this.leftCx + AndroidUtilities.dp(30.0f), f28), this.cy, this.hintLinePaintBlack);
-            canvas.drawLine(dp, this.cy, AndroidUtilities.lerp(dp, this.leftCx + AndroidUtilities.dp(30.0f), f28), this.cy, this.hintLinePaintWhite);
-        } else {
-            f = f26;
-            f2 = f22;
-            f3 = f17;
-            f4 = f19;
-            f5 = f24;
-        }
-        float f29 = this.cx;
-        float lerp = AndroidUtilities.lerp(f29, this.recordCx.set((AndroidUtilities.dp(4.0f) * clamp) + f29), f20);
-        float lerp2 = AndroidUtilities.lerp(AndroidUtilities.lerp(AndroidUtilities.dp(29.0f), AndroidUtilities.dp(12.0f), f16), AndroidUtilities.dp(32.0f) - (AndroidUtilities.dp(4.0f) * Math.abs(clamp2)), f20);
-        float lerp3 = AndroidUtilities.lerp(AndroidUtilities.lerp(AndroidUtilities.dp(32.0f), AndroidUtilities.dp(7.0f), f16), AndroidUtilities.dp(32.0f), f20);
-        float lerp4 = AndroidUtilities.lerp(this.recordButton.getScale(this.startModeIsVideo ? 0.0f : 0.2f), (this.animatedAmplitude.set(this.amplitude) * 0.2f) + 1.0f, f16);
-        RectF rectF4 = AndroidUtilities.rectTmp;
-        float f30 = lerp - lerp2;
-        float f31 = this.cy;
-        float f32 = lerp + lerp2;
-        rectF4.set(f30, f31 - lerp2, f32, f31 + lerp2);
-        float f33 = 1.0f - f;
-        this.mainPaint.setColor(ColorUtils.blendARGB(-1, -577231, max * f33));
-        if (f > 0.0f) {
-            canvas.save();
-            canvas.scale(lerp4, lerp4, this.cx, this.cy);
-            this.mainPaint.setAlpha((int) (f33 * 255.0f));
-            canvas.drawRoundRect(rectF4, lerp3, lerp3, this.mainPaint);
-            canvas.restore();
-            f8 = f30;
-            rectF = rectF4;
-            f6 = lerp4;
-            f7 = f32;
-            f9 = lerp3;
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.goingToPreviewTheme, 31);
-        } else {
-            rectF = rectF4;
-            f6 = lerp4;
-            f7 = f32;
-            f8 = f30;
-            f9 = lerp3;
-            canvas.save();
-        }
-        float f34 = f6;
-        canvas.scale(f34, f34, this.cx, this.cy);
-        this.mainPaint.setAlpha(NotificationCenter.goingToPreviewTheme);
-        RectF rectF5 = rectF;
-        canvas.drawRoundRect(rectF5, f9, f9, this.mainPaint);
-        if (f > 0.0f) {
-            this.checkPaint.setStrokeWidth(AndroidUtilities.dp(4.0f));
-            this.checkPath.rewind();
-            Path path = this.checkPath;
-            Point point = this.check1;
-            path.moveTo(point.x, point.y);
-            float f35 = f / 0.3f;
-            f10 = f9;
-            f11 = lerp;
-            this.checkPath.lineTo(AndroidUtilities.lerp(this.check1.x, this.check2.x, Utilities.clamp(f35, 1.0f, 0.0f)), AndroidUtilities.lerp(this.check1.y, this.check2.y, Utilities.clamp(f35, 1.0f, 0.0f)));
-            if (f > 0.3f) {
-                float f36 = (f - 0.3f) / 0.7f;
-                this.checkPath.lineTo(AndroidUtilities.lerp(this.check2.x, this.check3.x, Utilities.clamp(f36, 1.0f, 0.0f)), AndroidUtilities.lerp(this.check2.y, this.check3.y, Utilities.clamp(f36, 1.0f, 0.0f)));
-            }
-            canvas.translate(this.cx, this.cy);
-            canvas.drawPath(this.checkPath, this.checkPaint);
-        } else {
-            f10 = f9;
-            f11 = lerp;
-        }
-        canvas.restore();
-        canvas.save();
-        float max2 = Math.max(f34, 1.0f);
-        canvas.scale(max2, max2, this.cx, this.cy);
-        float max3 = Math.max(AndroidUtilities.dpf2(33.5f), lerp2 + AndroidUtilities.lerp(AndroidUtilities.dpf2(4.5f), AndroidUtilities.dp(9.0f), f20) + (AndroidUtilities.dp(5.0f) * f5 * (1.0f - f20)));
-        float lerp5 = AndroidUtilities.lerp(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(4.0f), f5);
-        float lerp6 = AndroidUtilities.lerp(max3, (lerp2 - lerp5) - AndroidUtilities.dp(4.0f), f);
-        float f37 = this.cx;
-        float f38 = this.cy;
-        rectF5.set(f37 - lerp6, f38 - lerp6, f37 + lerp6, f38 + lerp6);
-        this.outlinePaint.setStrokeWidth(lerp5);
-        this.outlinePaint.setAlpha((int) (AndroidUtilities.lerp(1.0f, 0.3f, f5) * 255.0f * f33));
-        canvas.drawCircle(this.cx, this.cy, lerp6, this.outlinePaint);
-        if ((f25 > 0.0f) && (f5 > 0.0f)) {
-            this.outlinePaint.setAlpha(NotificationCenter.goingToPreviewTheme);
-            rectF2 = rectF5;
-            canvas.drawArc(rectF5, -90.0f, f25 * 360.0f, false, this.outlinePaint);
-        } else {
-            rectF2 = rectF5;
-        }
-        long currentTimeMillis = System.currentTimeMillis() - this.recordingStart;
-        float f39 = this.recording ? 0.0f : 1.0f - f3;
-        Delegate delegate = this.delegate;
-        long maxVideoDuration = delegate != null ? delegate.getMaxVideoDuration() : 60000L;
-        Delegate delegate2 = this.delegate;
-        float min = Math.min((currentTimeMillis / ((delegate2 != null ? delegate2.getMaxVisibleVideoDuration() : 60000L) >= 0 ? r40 : 60000L)) * 360.0f, 360.0f);
-        float f40 = this.recordingLoadingT.set(this.recordingLoading);
-        this.outlineFilledPaint.setStrokeWidth(lerp5);
-        this.outlineFilledPaint.setAlpha((int) (Math.max(f40 * 0.7f, 1.0f - f39) * 255.0f));
-        if (f40 <= 0.0f) {
-            f12 = -90.0f;
-            canvas2 = canvas;
-            rectF3 = rectF2;
-            j = currentTimeMillis;
-            z = false;
-            paint = this.outlineFilledPaint;
-        } else {
-            j = currentTimeMillis;
-            CircularProgressDrawable.getSegments((SystemClock.elapsedRealtime() - this.recordingLoadingStart) % 5400, this.loadingSegments);
-            invalidate();
-            float[] fArr = this.loadingSegments;
-            float f41 = fArr[0];
-            float f42 = fArr[1];
-            float f43 = (f41 + f42) / 2.0f;
-            float abs = Math.abs(f42 - f41) / 2.0f;
-            if (this.recordingLoading) {
-                float f44 = min / 2.0f;
-                f43 = AndroidUtilities.lerp((-90.0f) + f44, f43, f40);
-                abs = AndroidUtilities.lerp(f44, abs, f40);
-            }
-            f12 = f43 - abs;
-            min = abs * 2.0f;
-            paint = this.outlineFilledPaint;
-            z = false;
-            canvas2 = canvas;
-            rectF3 = rectF2;
-        }
-        canvas2.drawArc(rectF3, f12, min, z, paint);
-        if (this.recording) {
-            invalidate();
-            long j2 = j;
-            long j3 = j2 / 1000;
-            if (j3 != this.lastDuration / 1000) {
-                this.delegate.onVideoDuration(j3);
-            }
-            if (maxVideoDuration > 0 && j2 >= maxVideoDuration) {
-                post(new Runnable() { // from class: org.telegram.ui.Stories.recorder.RecordControl$$ExternalSyntheticLambda1
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        RecordControl.this.lambda$onDraw$3();
-                    }
-                });
-            }
-            this.lastDuration = j2;
-        }
-        canvas.restore();
-        if (this.showLock) {
-            f13 = 0.2f;
-            float scale2 = this.lockButton.getScale(0.2f) * f16;
-            if (scale2 > 0.0f) {
-                canvas.save();
-                canvas.scale(scale2, scale2, this.leftCx, this.cy);
-                canvas.drawCircle(this.leftCx, this.cy, AndroidUtilities.dp(22.0f), this.buttonPaint);
-                canvas.rotate(-getRotation(), this.leftCx, this.cy);
-                this.unlockDrawable.draw(canvas);
-                canvas.restore();
-            }
-        } else {
-            f13 = 0.2f;
-        }
-        float scale3 = this.lockButton.getScale(f13) * f23 * f33;
-        if (scale3 > 0.0f) {
-            canvas.save();
-            canvas.scale(scale3, scale3, this.leftCx, this.cy);
-            canvas.rotate(-getRotation(), this.leftCx, this.cy);
-            this.galleryImage.draw(canvas);
-            canvas.restore();
-        }
-        float f45 = this.dualT.set(this.dual ? 1.0f : 0.0f);
-        if (f45 > 0.0f) {
-            canvas.save();
-            float scale4 = this.flipButton.getScale(f13) * f45 * f33;
-            canvas.scale(scale4, scale4, this.rightCx, this.cy);
-            canvas.rotate(this.flipDrawableRotateT.set(this.flipDrawableRotate) - getRotation(), this.rightCx, this.cy);
-            canvas.drawCircle(this.rightCx, this.cy, AndroidUtilities.dp(22.0f), this.buttonPaintWhite);
-            this.flipDrawableBlack.draw(canvas);
-            canvas.restore();
-        }
-        if (f45 < 1.0f) {
-            canvas.save();
-            float scale5 = this.flipButton.getScale(f13) * (1.0f - f45) * f33;
-            canvas.scale(scale5, scale5, this.rightCx, this.cy);
-            canvas.rotate(this.flipDrawableRotateT.set(this.flipDrawableRotate) - getRotation(), this.rightCx, this.cy);
-            canvas.drawCircle(this.rightCx, this.cy, AndroidUtilities.dp(22.0f), this.buttonPaint);
-            this.flipDrawableWhite.draw(canvas);
-            canvas.restore();
-        }
-        if (!this.longpressRecording || hasCheck()) {
-            f14 = 0.0f;
-        } else {
-            float f46 = f2;
-            f14 = AndroidUtilities.lerp(AndroidUtilities.dp(16.0f), AndroidUtilities.lerp(AndroidUtilities.dp(8.0f) + (AndroidUtilities.dp(8.0f) * Math.abs(clamp2)), AndroidUtilities.dp(22.0f), f46), Math.max(f46, f20)) * f4 * max * f16;
-        }
-        float f47 = this.lockedT.set((this.longpressRecording || !this.recording) ? 0.0f : 1.0f);
-        if (f14 > 0.0f) {
-            this.redPaint.setAlpha(NotificationCenter.goingToPreviewTheme);
-            canvas.drawCircle(this.touchX, this.cy, f14, this.redPaint);
-            float f48 = this.touchX;
-            float clamp3 = Utilities.clamp(1.0f - ((Math.abs(clamp2) * f4) / 1.3f), 1.0f, 0.0f);
-            float abs2 = Math.abs(f11 - f48);
-            if (abs2 < lerp2 + (f14 * 2.0f) && clamp3 < 0.6f) {
-                float f49 = lerp2 + f14;
-                if (abs2 < f49) {
-                    float f50 = lerp2 * lerp2;
-                    float f51 = abs2 * abs2;
-                    float f52 = f14 * f14;
-                    d = Math.acos(((f50 + f51) - f52) / ((lerp2 * 2.0f) * abs2));
-                    d2 = Math.acos(((f52 + f51) - f50) / (r0 * abs2));
-                } else {
-                    d = 0.0d;
-                    d2 = 0.0d;
-                }
-                double d3 = f48 > f11 ? 0.0d : 3.141592653589793d;
-                double acos = (float) Math.acos((lerp2 - f14) / abs2);
-                Double.isNaN(acos);
-                f15 = f16;
-                RectF rectF6 = rectF2;
-                double d4 = clamp3;
-                Double.isNaN(d4);
-                double d5 = (acos - d) * d4;
-                double d6 = d3 + d + d5;
-                double d7 = (d3 - d) - d5;
-                Double.isNaN(acos);
-                Double.isNaN(d4);
-                double d8 = ((3.141592653589793d - d2) - acos) * d4;
-                double d9 = ((d3 + 3.141592653589793d) - d2) - d8;
-                double d10 = (d3 - 3.141592653589793d) + d2 + d8;
-                float f53 = f11;
-                getVector(f53, this.cy, d6, lerp2, this.p1);
-                getVector(f53, this.cy, d7, lerp2, this.p2);
-                float f54 = f14;
-                getVector(f48, this.cy, d9, f54, this.p3);
-                getVector(f48, this.cy, d10, f54, this.p4);
-                float min2 = Math.min(clamp3 * 2.4f, dist(this.p1, this.p3) / f49) * Math.min(1.0f, (abs2 * 2.0f) / f49);
-                float f55 = lerp2 * min2;
-                float f56 = f14 * min2;
-                Point point2 = this.p1;
-                getVector(point2.x, point2.y, d6 - 1.5707963705062866d, f55, this.h1);
-                Point point3 = this.p2;
-                getVector(point3.x, point3.y, d7 + 1.5707963705062866d, f55, this.h2);
-                Point point4 = this.p3;
-                getVector(point4.x, point4.y, d9 + 1.5707963705062866d, f56, this.h3);
-                Point point5 = this.p4;
-                getVector(point5.x, point5.y, d10 - 1.5707963705062866d, f56, this.h4);
-                float f57 = f4 * max * f15 * f21;
-                if (f57 > 0.0f) {
-                    this.metaballsPath.rewind();
-                    Path path2 = this.metaballsPath;
-                    Point point6 = this.p1;
-                    path2.moveTo(point6.x, point6.y);
-                    Path path3 = this.metaballsPath;
-                    Point point7 = this.h1;
-                    float f58 = point7.x;
-                    float f59 = point7.y;
-                    Point point8 = this.h3;
-                    float f60 = point8.x;
-                    float f61 = point8.y;
-                    Point point9 = this.p3;
-                    path3.cubicTo(f58, f59, f60, f61, point9.x, point9.y);
-                    Path path4 = this.metaballsPath;
-                    Point point10 = this.p4;
-                    path4.lineTo(point10.x, point10.y);
-                    Path path5 = this.metaballsPath;
-                    Point point11 = this.h4;
-                    float f62 = point11.x;
-                    float f63 = point11.y;
-                    Point point12 = this.h2;
-                    float f64 = point12.x;
-                    float f65 = point12.y;
-                    Point point13 = this.p2;
-                    path5.cubicTo(f62, f63, f64, f65, point13.x, point13.y);
-                    Path path6 = this.metaballsPath;
-                    Point point14 = this.p1;
-                    path6.lineTo(point14.x, point14.y);
-                    this.redPaint.setAlpha((int) (f57 * 255.0f));
-                    canvas.drawPath(this.metaballsPath, this.redPaint);
-                    float f66 = this.cy;
-                    rectF6.set(f8, f66 - lerp2, f7, f66 + lerp2);
-                    float f67 = f10;
-                    canvas.drawRoundRect(rectF6, f67, f67, this.redPaint);
-                }
-                if (f14 <= 0.0f || f47 > 0.0f) {
-                    scale = this.lockButton.getScale(0.2f) * f15 * f33;
-                    canvas.save();
-                    this.circlePath.rewind();
-                    if (f14 > 0.0f) {
-                        this.circlePath.addCircle(this.touchX, this.cy, f14, Path.Direction.CW);
-                    }
-                    if (f47 > 0.0f && this.showLock) {
-                        this.circlePath.addCircle(this.leftCx, this.cy, f47 * AndroidUtilities.dp(22.0f) * scale, Path.Direction.CW);
-                    }
-                    canvas.clipPath(this.circlePath);
-                    if (this.showLock) {
-                        canvas.save();
-                        canvas.scale(scale, scale, this.leftCx, this.cy);
-                        canvas.drawCircle(this.leftCx, this.cy, AndroidUtilities.dp(22.0f), this.buttonPaintWhite);
-                        canvas.rotate(-getRotation(), this.leftCx, this.cy);
-                        this.lockDrawable.draw(canvas);
-                        canvas.restore();
-                    }
-                    float scale6 = this.flipButton.getScale(0.2f) * f33;
-                    canvas.save();
-                    canvas.scale(scale6, scale6, this.rightCx, this.cy);
-                    canvas.rotate(this.flipDrawableRotateT.set(this.flipDrawableRotate) - getRotation(), this.rightCx, this.cy);
-                    canvas.drawCircle(this.rightCx, this.cy, AndroidUtilities.dp(22.0f), this.buttonPaintWhite);
-                    this.flipDrawableBlack.draw(canvas);
-                    canvas.restore();
-                    canvas.restore();
-                }
-                return;
-            }
-        }
-        f15 = f16;
-        if (f14 <= 0.0f) {
-        }
-        scale = this.lockButton.getScale(0.2f) * f15 * f33;
-        canvas.save();
-        this.circlePath.rewind();
-        if (f14 > 0.0f) {
-        }
-        if (f47 > 0.0f) {
-            this.circlePath.addCircle(this.leftCx, this.cy, f47 * AndroidUtilities.dp(22.0f) * scale, Path.Direction.CW);
-        }
-        canvas.clipPath(this.circlePath);
-        if (this.showLock) {
-        }
-        float scale62 = this.flipButton.getScale(0.2f) * f33;
-        canvas.save();
-        canvas.scale(scale62, scale62, this.rightCx, this.cy);
-        canvas.rotate(this.flipDrawableRotateT.set(this.flipDrawableRotate) - getRotation(), this.rightCx, this.cy);
-        canvas.drawCircle(this.rightCx, this.cy, AndroidUtilities.dp(22.0f), this.buttonPaintWhite);
-        this.flipDrawableBlack.draw(canvas);
-        canvas.restore();
-        canvas.restore();
+        this.animatedAmplitude.set(f, true);
     }
 
     @Override // android.view.View
@@ -828,6 +396,494 @@ public class RecordControl extends View implements FlashViews.Invertable {
         this.redMatrix.postTranslate(this.cx, this.cy);
         this.redGradient.setLocalMatrix(this.redMatrix);
         setMeasuredDimension(size, dp);
+    }
+
+    private static void setDrawableBounds(Drawable drawable, float f, float f2) {
+        setDrawableBounds(drawable, f, f2, Math.max(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight()) / 2.0f);
+    }
+
+    private static void setDrawableBounds(Drawable drawable, float f, float f2, float f3) {
+        drawable.setBounds((int) (f - f3), (int) (f2 - f3), (int) (f + f3), (int) (f2 + f3));
+    }
+
+    public void setCollageProgress(float f, boolean z) {
+        if (Math.abs(f - this.collageProgress) < 0.01f) {
+            return;
+        }
+        this.collageProgress = f;
+        if (!z) {
+            this.collage.set(f > 0.0f && !this.recording, true);
+            this.collageProgressAnimated.set(f, true);
+        }
+        invalidate();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$1() {
+        if (this.recording || hasCheck()) {
+            return;
+        }
+        if (!this.delegate.canRecordAudio()) {
+            this.touch = false;
+            this.recordButton.setPressed(false);
+            this.flipButton.setPressed(false);
+            this.lockButton.setPressed(false);
+            return;
+        }
+        this.longpressRecording = true;
+        this.showLock = true;
+        this.delegate.onVideoRecordStart(true, new Runnable() { // from class: org.telegram.ui.Stories.recorder.RecordControl$$ExternalSyntheticLambda5
+            @Override // java.lang.Runnable
+            public final void run() {
+                RecordControl.this.lambda$new$0();
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$0() {
+        this.recordingStart = System.currentTimeMillis();
+        this.recording = true;
+        Delegate delegate = this.delegate;
+        this.lastDuration = 0L;
+        delegate.onVideoDuration(0L);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$2() {
+        if (this.recording || hasCheck()) {
+            return;
+        }
+        this.delegate.onFlipLongClick();
+        rotateFlip(360.0f);
+        this.touch = false;
+        this.recordButton.setPressed(false);
+        this.flipButton.setPressed(false);
+        this.lockButton.setPressed(false);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:135:0x085b  */
+    /* JADX WARN: Removed duplicated region for block: B:143:0x088e  */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    protected void onDraw(Canvas canvas) {
+        float f;
+        float f2;
+        float f3;
+        float f4;
+        float f5;
+        RectF rectF;
+        float f6;
+        float f7;
+        float f8;
+        float f9;
+        float f10;
+        float f11;
+        RectF rectF2;
+        long j;
+        float f12;
+        float f13;
+        float f14;
+        float scale;
+        double d;
+        double d2;
+        float f15 = this.recordingT.set(this.recording ? 1.0f : 0.0f);
+        float f16 = this.recordingLongT.set(this.recording ? 1.0f : 0.0f);
+        float f17 = this.overrideStartModeIsVideoT;
+        if (f17 < 0.0f) {
+            f17 = this.startModeIsVideoT.set(this.startModeIsVideo ? 1.0f : 0.0f);
+        }
+        float max = Math.max(f15, f17);
+        float f18 = this.touchT.set(this.touch ? 1.0f : 0.0f);
+        float f19 = f18 * this.touchIsCenterT.set((Math.abs(this.touchX - this.cx) >= ((float) AndroidUtilities.dp(64.0f)) || !(this.recording || this.recordButton.isPressed())) ? 0.0f : 1.0f);
+        float f20 = f18 * this.touchIsCenter2T.set(Math.abs(this.touchX - this.cx) < ((float) AndroidUtilities.dp(64.0f)) ? 1.0f : 0.0f);
+        float clamp = Utilities.clamp((this.touchX - this.cx) / AndroidUtilities.dp(16.0f), 1.0f, -1.0f);
+        float clamp2 = Utilities.clamp((this.touchX - this.cx) / AndroidUtilities.dp(64.0f), 1.0f, -1.0f);
+        float f21 = f18 * this.touchIsButtonT.set(Math.min(Math.abs(this.touchX - this.rightCx), Math.abs(this.touchX - this.leftCx)) < ((float) AndroidUtilities.dp(16.0f)) ? 1.0f : 0.0f);
+        float f22 = 1.0f - f15;
+        float f23 = this.collage.set(this.collageProgress > 0.0f) * f22;
+        float f24 = this.collageProgressAnimated.set(this.collageProgress);
+        float f25 = this.checkAnimated.set(hasCheck());
+        float f26 = this.longpressRecording ? f15 * max * f18 : 0.0f;
+        if (f26 > 0.0f) {
+            float dp = this.cx - AndroidUtilities.dp(50.0f);
+            float dp2 = AndroidUtilities.dp(50.0f) + this.cx;
+            this.hintLinePaintWhite.setStrokeWidth(AndroidUtilities.dp(2.0f));
+            this.hintLinePaintBlack.setStrokeWidth(AndroidUtilities.dp(2.0f));
+            f4 = f18;
+            float f27 = f26;
+            f = f25;
+            f3 = f16;
+            f5 = f23;
+            f2 = f21;
+            canvas.drawLine(dp2, this.cy, AndroidUtilities.lerp(dp2, this.rightCx - AndroidUtilities.dp(30.0f), f26), this.cy, this.hintLinePaintBlack);
+            canvas.drawLine(dp2, this.cy, AndroidUtilities.lerp(dp2, this.rightCx - AndroidUtilities.dp(30.0f), f27), this.cy, this.hintLinePaintWhite);
+            canvas.drawLine(dp, this.cy, AndroidUtilities.lerp(dp, this.leftCx + AndroidUtilities.dp(30.0f), f27), this.cy, this.hintLinePaintBlack);
+            canvas.drawLine(dp, this.cy, AndroidUtilities.lerp(dp, this.leftCx + AndroidUtilities.dp(30.0f), f27), this.cy, this.hintLinePaintWhite);
+        } else {
+            f = f25;
+            f2 = f21;
+            f3 = f16;
+            f4 = f18;
+            f5 = f23;
+        }
+        float f28 = this.cx;
+        float lerp = AndroidUtilities.lerp(f28, this.recordCx.set((AndroidUtilities.dp(4.0f) * clamp) + f28), f19);
+        float lerp2 = AndroidUtilities.lerp(AndroidUtilities.lerp(AndroidUtilities.dp(29.0f), AndroidUtilities.dp(12.0f), f15), AndroidUtilities.dp(32.0f) - (AndroidUtilities.dp(4.0f) * Math.abs(clamp2)), f19);
+        float lerp3 = AndroidUtilities.lerp(AndroidUtilities.lerp(AndroidUtilities.dp(32.0f), AndroidUtilities.dp(7.0f), f15), AndroidUtilities.dp(32.0f), f19);
+        float lerp4 = AndroidUtilities.lerp(this.recordButton.getScale(this.startModeIsVideo ? 0.0f : 0.2f), (this.animatedAmplitude.set(this.amplitude) * 0.2f) + 1.0f, f15);
+        RectF rectF3 = AndroidUtilities.rectTmp;
+        float f29 = lerp - lerp2;
+        float f30 = this.cy;
+        float f31 = lerp + lerp2;
+        rectF3.set(f29, f30 - lerp2, f31, f30 + lerp2);
+        float f32 = 1.0f - f;
+        this.mainPaint.setColor(ColorUtils.blendARGB(-1, -577231, max * f32));
+        if (f > 0.0f) {
+            canvas.save();
+            canvas.scale(lerp4, lerp4, this.cx, this.cy);
+            this.mainPaint.setAlpha((int) (f32 * 255.0f));
+            canvas.drawRoundRect(rectF3, lerp3, lerp3, this.mainPaint);
+            canvas.restore();
+            f8 = f29;
+            rectF = rectF3;
+            f6 = lerp4;
+            f7 = f31;
+            f9 = lerp3;
+            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.goingToPreviewTheme, 31);
+        } else {
+            rectF = rectF3;
+            f6 = lerp4;
+            f7 = f31;
+            f8 = f29;
+            f9 = lerp3;
+            canvas.save();
+        }
+        float f33 = f6;
+        canvas.scale(f33, f33, this.cx, this.cy);
+        this.mainPaint.setAlpha(NotificationCenter.goingToPreviewTheme);
+        RectF rectF4 = rectF;
+        canvas.drawRoundRect(rectF4, f9, f9, this.mainPaint);
+        if (f > 0.0f) {
+            this.checkPaint.setStrokeWidth(AndroidUtilities.dp(4.0f));
+            this.checkPath.rewind();
+            Path path = this.checkPath;
+            Point point = this.check1;
+            path.moveTo(point.x, point.y);
+            float f34 = f / 0.3f;
+            f10 = f9;
+            f11 = lerp;
+            this.checkPath.lineTo(AndroidUtilities.lerp(this.check1.x, this.check2.x, Utilities.clamp(f34, 1.0f, 0.0f)), AndroidUtilities.lerp(this.check1.y, this.check2.y, Utilities.clamp(f34, 1.0f, 0.0f)));
+            if (f > 0.3f) {
+                float f35 = (f - 0.3f) / 0.7f;
+                this.checkPath.lineTo(AndroidUtilities.lerp(this.check2.x, this.check3.x, Utilities.clamp(f35, 1.0f, 0.0f)), AndroidUtilities.lerp(this.check2.y, this.check3.y, Utilities.clamp(f35, 1.0f, 0.0f)));
+            }
+            canvas.translate(this.cx, this.cy);
+            canvas.drawPath(this.checkPath, this.checkPaint);
+        } else {
+            f10 = f9;
+            f11 = lerp;
+        }
+        canvas.restore();
+        canvas.save();
+        float max2 = Math.max(f33, 1.0f);
+        canvas.scale(max2, max2, this.cx, this.cy);
+        float max3 = Math.max(AndroidUtilities.dpf2(33.5f), lerp2 + AndroidUtilities.lerp(AndroidUtilities.dpf2(4.5f), AndroidUtilities.dp(9.0f), f19) + (AndroidUtilities.dp(5.0f) * f5 * (1.0f - f19)));
+        float lerp5 = AndroidUtilities.lerp(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(4.0f), f5);
+        float lerp6 = AndroidUtilities.lerp(max3, (lerp2 - lerp5) - AndroidUtilities.dp(4.0f), f);
+        float f36 = this.cx;
+        float f37 = this.cy;
+        rectF4.set(f36 - lerp6, f37 - lerp6, f36 + lerp6, f37 + lerp6);
+        this.outlinePaint.setStrokeWidth(lerp5);
+        this.outlinePaint.setAlpha((int) (AndroidUtilities.lerp(1.0f, 0.3f, f5) * 255.0f * f32));
+        canvas.drawCircle(this.cx, this.cy, lerp6, this.outlinePaint);
+        if ((f24 > 0.0f) && (f5 > 0.0f)) {
+            this.outlinePaint.setAlpha(NotificationCenter.goingToPreviewTheme);
+            rectF2 = rectF4;
+            canvas.drawArc(rectF4, -90.0f, f24 * 360.0f, false, this.outlinePaint);
+        } else {
+            rectF2 = rectF4;
+        }
+        long currentTimeMillis = System.currentTimeMillis() - this.recordingStart;
+        float f38 = this.recording ? 0.0f : 1.0f - f3;
+        Delegate delegate = this.delegate;
+        long maxVideoDuration = delegate != null ? delegate.getMaxVideoDuration() : 60000L;
+        Delegate delegate2 = this.delegate;
+        float min = Math.min((currentTimeMillis / ((delegate2 != null ? delegate2.getMaxVisibleVideoDuration() : 60000L) >= 0 ? r41 : 60000L)) * 360.0f, 360.0f);
+        float f39 = this.recordingLoadingT.set(this.recordingLoading);
+        this.outlineFilledPaint.setStrokeWidth(lerp5);
+        this.outlineFilledPaint.setAlpha((int) (Math.max(f39 * 0.7f, 1.0f - f38) * 255.0f));
+        if (f39 <= 0.0f) {
+            j = currentTimeMillis;
+            canvas.drawArc(rectF2, -90.0f, min, false, this.outlineFilledPaint);
+        } else {
+            j = currentTimeMillis;
+            CircularProgressDrawable.getSegments((SystemClock.elapsedRealtime() - this.recordingLoadingStart) % 5400, this.loadingSegments);
+            invalidate();
+            float[] fArr = this.loadingSegments;
+            float f40 = fArr[0];
+            float f41 = fArr[1];
+            float f42 = (f40 + f41) / 2.0f;
+            float abs = Math.abs(f41 - f40) / 2.0f;
+            if (this.recordingLoading) {
+                float f43 = min / 2.0f;
+                f42 = AndroidUtilities.lerp((-90.0f) + f43, f42, f39);
+                abs = AndroidUtilities.lerp(f43, abs, f39);
+            }
+            canvas.drawArc(rectF2, f42 - abs, abs * 2.0f, false, this.outlineFilledPaint);
+        }
+        if (this.recording) {
+            invalidate();
+            long j2 = j;
+            long j3 = j2 / 1000;
+            if (j3 != this.lastDuration / 1000) {
+                this.delegate.onVideoDuration(j3);
+            }
+            if (maxVideoDuration > 0 && j2 >= maxVideoDuration) {
+                post(new Runnable() { // from class: org.telegram.ui.Stories.recorder.RecordControl$$ExternalSyntheticLambda1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        RecordControl.this.lambda$onDraw$3();
+                    }
+                });
+            }
+            this.lastDuration = j2;
+        }
+        canvas.restore();
+        if (this.showLock) {
+            f12 = 0.2f;
+            float scale2 = this.lockButton.getScale(0.2f) * f15;
+            if (scale2 > 0.0f) {
+                canvas.save();
+                canvas.scale(scale2, scale2, this.leftCx, this.cy);
+                canvas.drawCircle(this.leftCx, this.cy, AndroidUtilities.dp(22.0f), this.buttonPaint);
+                canvas.rotate(-getRotation(), this.leftCx, this.cy);
+                this.unlockDrawable.draw(canvas);
+                canvas.restore();
+            }
+        } else {
+            f12 = 0.2f;
+        }
+        float scale3 = this.lockButton.getScale(f12) * f22 * f32;
+        if (scale3 > 0.0f) {
+            canvas.save();
+            canvas.scale(scale3, scale3, this.leftCx, this.cy);
+            canvas.rotate(-getRotation(), this.leftCx, this.cy);
+            this.galleryImage.draw(canvas);
+            canvas.restore();
+        }
+        float f44 = this.dualT.set(this.dual ? 1.0f : 0.0f);
+        if (f44 > 0.0f) {
+            canvas.save();
+            float scale4 = this.flipButton.getScale(f12) * f44 * f32;
+            canvas.scale(scale4, scale4, this.rightCx, this.cy);
+            canvas.rotate(this.flipDrawableRotateT.set(this.flipDrawableRotate) - getRotation(), this.rightCx, this.cy);
+            canvas.drawCircle(this.rightCx, this.cy, AndroidUtilities.dp(22.0f), this.buttonPaintWhite);
+            this.flipDrawableBlack.draw(canvas);
+            canvas.restore();
+        }
+        if (f44 < 1.0f) {
+            canvas.save();
+            float scale5 = this.flipButton.getScale(f12) * (1.0f - f44) * f32;
+            canvas.scale(scale5, scale5, this.rightCx, this.cy);
+            canvas.rotate(this.flipDrawableRotateT.set(this.flipDrawableRotate) - getRotation(), this.rightCx, this.cy);
+            canvas.drawCircle(this.rightCx, this.cy, AndroidUtilities.dp(22.0f), this.buttonPaint);
+            this.flipDrawableWhite.draw(canvas);
+            canvas.restore();
+        }
+        if (!this.longpressRecording || hasCheck()) {
+            f13 = 0.0f;
+        } else {
+            float f45 = f2;
+            f13 = AndroidUtilities.lerp(AndroidUtilities.dp(16.0f), AndroidUtilities.lerp(AndroidUtilities.dp(8.0f) + (AndroidUtilities.dp(8.0f) * Math.abs(clamp2)), AndroidUtilities.dp(22.0f), f45), Math.max(f45, f19)) * f4 * max * f15;
+        }
+        float f46 = this.lockedT.set((this.longpressRecording || !this.recording) ? 0.0f : 1.0f);
+        if (f13 > 0.0f) {
+            this.redPaint.setAlpha(NotificationCenter.goingToPreviewTheme);
+            canvas.drawCircle(this.touchX, this.cy, f13, this.redPaint);
+            float f47 = this.touchX;
+            float clamp3 = Utilities.clamp(1.0f - ((Math.abs(clamp2) * f4) / 1.3f), 1.0f, 0.0f);
+            float abs2 = Math.abs(f11 - f47);
+            if (abs2 < lerp2 + (f13 * 2.0f) && clamp3 < 0.6f) {
+                float f48 = lerp2 + f13;
+                if (abs2 < f48) {
+                    float f49 = lerp2 * lerp2;
+                    float f50 = abs2 * abs2;
+                    float f51 = f13 * f13;
+                    d = Math.acos(((f49 + f50) - f51) / ((lerp2 * 2.0f) * abs2));
+                    d2 = Math.acos(((f51 + f50) - f49) / (r0 * abs2));
+                } else {
+                    d = 0.0d;
+                    d2 = 0.0d;
+                }
+                double d3 = f47 > f11 ? 0.0d : 3.141592653589793d;
+                double acos = (float) Math.acos((lerp2 - f13) / abs2);
+                f14 = f15;
+                RectF rectF5 = rectF2;
+                double d4 = clamp3;
+                double d5 = (acos - d) * d4;
+                double d6 = d3 + d + d5;
+                double d7 = (d3 - d) - d5;
+                double d8 = ((3.141592653589793d - d2) - acos) * d4;
+                double d9 = ((d3 + 3.141592653589793d) - d2) - d8;
+                double d10 = (d3 - 3.141592653589793d) + d2 + d8;
+                float f52 = f11;
+                getVector(f52, this.cy, d6, lerp2, this.p1);
+                getVector(f52, this.cy, d7, lerp2, this.p2);
+                float f53 = f13;
+                getVector(f47, this.cy, d9, f53, this.p3);
+                getVector(f47, this.cy, d10, f53, this.p4);
+                float min2 = Math.min(clamp3 * 2.4f, dist(this.p1, this.p3) / f48) * Math.min(1.0f, (abs2 * 2.0f) / f48);
+                float f54 = lerp2 * min2;
+                float f55 = f13 * min2;
+                Point point2 = this.p1;
+                getVector(point2.x, point2.y, d6 - 1.5707963705062866d, f54, this.h1);
+                Point point3 = this.p2;
+                getVector(point3.x, point3.y, d7 + 1.5707963705062866d, f54, this.h2);
+                Point point4 = this.p3;
+                getVector(point4.x, point4.y, d9 + 1.5707963705062866d, f55, this.h3);
+                Point point5 = this.p4;
+                getVector(point5.x, point5.y, d10 - 1.5707963705062866d, f55, this.h4);
+                float f56 = f4 * max * f14 * f20;
+                if (f56 > 0.0f) {
+                    this.metaballsPath.rewind();
+                    Path path2 = this.metaballsPath;
+                    Point point6 = this.p1;
+                    path2.moveTo(point6.x, point6.y);
+                    Path path3 = this.metaballsPath;
+                    Point point7 = this.h1;
+                    float f57 = point7.x;
+                    float f58 = point7.y;
+                    Point point8 = this.h3;
+                    float f59 = point8.x;
+                    float f60 = point8.y;
+                    Point point9 = this.p3;
+                    path3.cubicTo(f57, f58, f59, f60, point9.x, point9.y);
+                    Path path4 = this.metaballsPath;
+                    Point point10 = this.p4;
+                    path4.lineTo(point10.x, point10.y);
+                    Path path5 = this.metaballsPath;
+                    Point point11 = this.h4;
+                    float f61 = point11.x;
+                    float f62 = point11.y;
+                    Point point12 = this.h2;
+                    float f63 = point12.x;
+                    float f64 = point12.y;
+                    Point point13 = this.p2;
+                    path5.cubicTo(f61, f62, f63, f64, point13.x, point13.y);
+                    Path path6 = this.metaballsPath;
+                    Point point14 = this.p1;
+                    path6.lineTo(point14.x, point14.y);
+                    this.redPaint.setAlpha((int) (f56 * 255.0f));
+                    canvas.drawPath(this.metaballsPath, this.redPaint);
+                    float f65 = this.cy;
+                    rectF5.set(f8, f65 - lerp2, f7, f65 + lerp2);
+                    float f66 = f10;
+                    canvas.drawRoundRect(rectF5, f66, f66, this.redPaint);
+                }
+                if (f13 <= 0.0f || f46 > 0.0f) {
+                    scale = this.lockButton.getScale(0.2f) * f14 * f32;
+                    canvas.save();
+                    this.circlePath.rewind();
+                    if (f13 > 0.0f) {
+                        this.circlePath.addCircle(this.touchX, this.cy, f13, Path.Direction.CW);
+                    }
+                    if (f46 > 0.0f && this.showLock) {
+                        this.circlePath.addCircle(this.leftCx, this.cy, f46 * AndroidUtilities.dp(22.0f) * scale, Path.Direction.CW);
+                    }
+                    canvas.clipPath(this.circlePath);
+                    if (this.showLock) {
+                        canvas.save();
+                        canvas.scale(scale, scale, this.leftCx, this.cy);
+                        canvas.drawCircle(this.leftCx, this.cy, AndroidUtilities.dp(22.0f), this.buttonPaintWhite);
+                        canvas.rotate(-getRotation(), this.leftCx, this.cy);
+                        this.lockDrawable.draw(canvas);
+                        canvas.restore();
+                    }
+                    float scale6 = this.flipButton.getScale(0.2f) * f32;
+                    canvas.save();
+                    canvas.scale(scale6, scale6, this.rightCx, this.cy);
+                    canvas.rotate(this.flipDrawableRotateT.set(this.flipDrawableRotate) - getRotation(), this.rightCx, this.cy);
+                    canvas.drawCircle(this.rightCx, this.cy, AndroidUtilities.dp(22.0f), this.buttonPaintWhite);
+                    this.flipDrawableBlack.draw(canvas);
+                    canvas.restore();
+                    canvas.restore();
+                }
+                return;
+            }
+        }
+        f14 = f15;
+        if (f13 <= 0.0f) {
+        }
+        scale = this.lockButton.getScale(0.2f) * f14 * f32;
+        canvas.save();
+        this.circlePath.rewind();
+        if (f13 > 0.0f) {
+        }
+        if (f46 > 0.0f) {
+            this.circlePath.addCircle(this.leftCx, this.cy, f46 * AndroidUtilities.dp(22.0f) * scale, Path.Direction.CW);
+        }
+        canvas.clipPath(this.circlePath);
+        if (this.showLock) {
+        }
+        float scale62 = this.flipButton.getScale(0.2f) * f32;
+        canvas.save();
+        canvas.scale(scale62, scale62, this.rightCx, this.cy);
+        canvas.rotate(this.flipDrawableRotateT.set(this.flipDrawableRotate) - getRotation(), this.rightCx, this.cy);
+        canvas.drawCircle(this.rightCx, this.cy, AndroidUtilities.dp(22.0f), this.buttonPaintWhite);
+        this.flipDrawableBlack.draw(canvas);
+        canvas.restore();
+        canvas.restore();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$onDraw$3() {
+        this.recording = false;
+        this.longpressRecording = false;
+        this.recordingLoadingStart = SystemClock.elapsedRealtime();
+        this.recordingLoading = true;
+        this.touch = false;
+        this.recordButton.setPressed(false);
+        this.flipButton.setPressed(false);
+        this.lockButton.setPressed(false);
+        this.delegate.onVideoRecordEnd(true);
+    }
+
+    public boolean hasCheck() {
+        return this.collageProgress >= 1.0f;
+    }
+
+    private void getVector(float f, float f2, double d, float f3, Point point) {
+        double d2 = f3;
+        point.x = (float) (f + (Math.cos(d) * d2));
+        point.y = (float) (f2 + (Math.sin(d) * d2));
+    }
+
+    private float dist(Point point, Point point2) {
+        return MathUtils.distance(point.x, point.y, point2.x, point2.y);
+    }
+
+    public void rotateFlip(float f) {
+        this.flipDrawableRotateT.setDuration(f > 180.0f ? 620L : 310L);
+        this.flipDrawableRotate += f;
+        invalidate();
+    }
+
+    private boolean isPressed(float f, float f2, float f3, float f4, float f5, boolean z) {
+        return this.recording ? (!z || f4 - f2 <= ((float) AndroidUtilities.dp(100.0f))) && Math.abs(f3 - f) <= f5 : MathUtils.distance(f, f2, f3, f4) <= f5;
+    }
+
+    public boolean isTouch() {
+        return this.discardParentTouch;
+    }
+
+    public void setDual(boolean z) {
+        if (z != this.dual) {
+            this.dual = z;
+            invalidate();
+        }
     }
 
     @Override // android.view.View
@@ -889,34 +945,34 @@ public class RecordControl extends View implements FlashViews.Invertable {
                     this.longpressRecording = false;
                     this.lockedT.set(1.0f, true);
                     this.delegate.onVideoRecordLocked();
-                }
-                this.recording = false;
-                this.recordingLoadingStart = SystemClock.elapsedRealtime();
-                this.recordingLoading = true;
-                this.delegate.onVideoRecordEnd(false);
-            } else if (this.recordButton.isPressed()) {
-                if (hasCheck()) {
-                    this.delegate.onCheckClick();
-                } else if (this.startModeIsVideo || this.recording || this.longpressRecording) {
-                    if (!this.recording) {
-                        if (this.delegate.canRecordAudio()) {
-                            this.lastDuration = 0L;
-                            this.recordingStart = System.currentTimeMillis();
-                            this.showLock = false;
-                            this.delegate.onVideoRecordStart(false, new Runnable() { // from class: org.telegram.ui.Stories.recorder.RecordControl$$ExternalSyntheticLambda2
-                                @Override // java.lang.Runnable
-                                public final void run() {
-                                    RecordControl.this.lambda$onTouchEvent$4();
-                                }
-                            });
-                        }
-                    }
+                } else {
                     this.recording = false;
                     this.recordingLoadingStart = SystemClock.elapsedRealtime();
                     this.recordingLoading = true;
                     this.delegate.onVideoRecordEnd(false);
-                } else {
+                }
+            } else if (this.recordButton.isPressed()) {
+                if (hasCheck()) {
+                    this.delegate.onCheckClick();
+                } else if (!this.startModeIsVideo && !this.recording && !this.longpressRecording) {
                     this.delegate.onPhotoShoot();
+                } else if (!this.recording) {
+                    if (this.delegate.canRecordAudio()) {
+                        this.lastDuration = 0L;
+                        this.recordingStart = System.currentTimeMillis();
+                        this.showLock = false;
+                        this.delegate.onVideoRecordStart(false, new Runnable() { // from class: org.telegram.ui.Stories.recorder.RecordControl$$ExternalSyntheticLambda2
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                RecordControl.this.lambda$onTouchEvent$4();
+                            }
+                        });
+                    }
+                } else {
+                    this.recording = false;
+                    this.recordingLoadingStart = SystemClock.elapsedRealtime();
+                    this.recordingLoading = true;
+                    this.delegate.onVideoRecordEnd(false);
                 }
             }
             this.longpressRecording = false;
@@ -933,65 +989,12 @@ public class RecordControl extends View implements FlashViews.Invertable {
         return z;
     }
 
-    public void rotateFlip(float f) {
-        this.flipDrawableRotateT.setDuration(f > 180.0f ? 620L : 310L);
-        this.flipDrawableRotate += f;
-        invalidate();
-    }
-
-    public void setAmplitude(float f, boolean z) {
-        this.amplitude = f;
-        if (z) {
-            return;
-        }
-        this.animatedAmplitude.set(f, true);
-    }
-
-    public void setCollageProgress(float f, boolean z) {
-        if (Math.abs(f - this.collageProgress) < 0.01f) {
-            return;
-        }
-        this.collageProgress = f;
-        if (!z) {
-            this.collage.set(f > 0.0f && !this.recording, true);
-            this.collageProgressAnimated.set(f, true);
-        }
-        invalidate();
-    }
-
-    public void setDelegate(Delegate delegate) {
-        this.delegate = delegate;
-    }
-
-    public void setDual(boolean z) {
-        if (z != this.dual) {
-            this.dual = z;
-            invalidate();
-        }
-    }
-
-    @Override // org.telegram.ui.Stories.recorder.FlashViews.Invertable
-    public void setInvert(float f) {
-        this.outlinePaint.setColor(ColorUtils.blendARGB(-1, -16777216, f));
-        this.buttonPaint.setColor(ColorUtils.blendARGB(1677721600, 369098752, f));
-        this.hintLinePaintWhite.setColor(ColorUtils.blendARGB(1493172223, 285212671, f));
-        this.hintLinePaintBlack.setColor(ColorUtils.blendARGB(402653184, 805306368, f));
-        Drawable drawable = this.flipDrawableWhite;
-        int blendARGB = ColorUtils.blendARGB(-1, -16777216, f);
-        PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-        drawable.setColorFilter(new PorterDuffColorFilter(blendARGB, mode));
-        this.unlockDrawable.setColorFilter(new PorterDuffColorFilter(ColorUtils.blendARGB(-1, -16777216, f), mode));
-    }
-
-    public void startAsVideo(boolean z) {
-        this.overrideStartModeIsVideoT = -1.0f;
-        this.startModeIsVideo = z;
-        invalidate();
-    }
-
-    public void startAsVideoT(float f) {
-        this.overrideStartModeIsVideoT = f;
-        invalidate();
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$onTouchEvent$4() {
+        this.recordingStart = System.currentTimeMillis();
+        this.lastDuration = 0L;
+        this.recording = true;
+        this.delegate.onVideoDuration(0L);
     }
 
     public void stopRecording() {
@@ -1013,35 +1016,5 @@ public class RecordControl extends View implements FlashViews.Invertable {
             this.recordingLoadingT.set(false, true);
         }
         invalidate();
-    }
-
-    public void updateGalleryImage() {
-        String str;
-        ArrayList<MediaController.PhotoEntry> arrayList;
-        Delegate delegate = this.delegate;
-        if (delegate != null && delegate.showStoriesDrafts()) {
-            ArrayList arrayList2 = MessagesController.getInstance(this.galleryImage.getCurrentAccount()).getStoriesController().getDraftsController().drafts;
-            this.galleryImage.setOrientation(0, 0, true);
-            if (arrayList2 != null && !arrayList2.isEmpty() && ((StoryEntry) arrayList2.get(0)).draftThumbFile != null) {
-                this.galleryImage.setImage(ImageLocation.getForPath(((StoryEntry) arrayList2.get(0)).draftThumbFile.getAbsolutePath()), "80_80", null, null, this.noGalleryDrawable, 0L, null, null, 0);
-                return;
-            }
-        }
-        MediaController.AlbumEntry albumEntry = MediaController.allMediaAlbumEntry;
-        MediaController.PhotoEntry photoEntry = (albumEntry == null || (arrayList = albumEntry.photos) == null || arrayList.isEmpty()) ? null : albumEntry.photos.get(0);
-        if (photoEntry != null && (str = photoEntry.thumbPath) != null) {
-            this.galleryImage.setImage(ImageLocation.getForPath(str), "80_80", null, null, this.noGalleryDrawable, 0L, null, null, 0);
-            return;
-        }
-        if (photoEntry == null || photoEntry.path == null) {
-            this.galleryImage.setImageBitmap(this.noGalleryDrawable);
-            return;
-        }
-        if (photoEntry.isVideo) {
-            this.galleryImage.setImage(ImageLocation.getForPath("vthumb://" + photoEntry.imageId + ":" + photoEntry.path), "80_80", null, null, this.noGalleryDrawable, 0L, null, null, 0);
-            return;
-        }
-        this.galleryImage.setOrientation(photoEntry.orientation, photoEntry.invert, true);
-        this.galleryImage.setImage(ImageLocation.getForPath("thumb://" + photoEntry.imageId + ":" + photoEntry.path), "80_80", null, null, this.noGalleryDrawable, 0L, null, null, 0);
     }
 }

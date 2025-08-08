@@ -4,7 +4,7 @@ import androidx.datastore.core.SingleProcessDataStore;
 import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 
@@ -34,10 +34,9 @@ final class SingleProcessDataStore$actor$3 extends SuspendLambda implements Func
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object coroutine_suspended;
         Object handleUpdate;
         Object handleRead;
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
@@ -55,11 +54,10 @@ final class SingleProcessDataStore$actor$3 extends SuspendLambda implements Func
                     return coroutine_suspended;
                 }
             }
-        } else {
-            if (i != 1 && i != 2) {
-                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-            }
+        } else if (i == 1 || i == 2) {
             ResultKt.throwOnFailure(obj);
+        } else {
+            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
         return Unit.INSTANCE;
     }

@@ -7,7 +7,7 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.concurrent.ScheduledExecutorService;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class ConfigRealtimeHandler {
     private final ConfigCacheClient activatedCacheClient;
     private final ConfigFetchHandler configFetchHandler;

@@ -7,6 +7,11 @@ class FullLifecycleObserverAdapter implements LifecycleEventObserver {
     private final FullLifecycleObserver mFullLifecycleObserver;
     private final LifecycleEventObserver mLifecycleEventObserver;
 
+    FullLifecycleObserverAdapter(FullLifecycleObserver fullLifecycleObserver, LifecycleEventObserver lifecycleEventObserver) {
+        this.mFullLifecycleObserver = fullLifecycleObserver;
+        this.mLifecycleEventObserver = lifecycleEventObserver;
+    }
+
     static /* synthetic */ class 1 {
         static final /* synthetic */ int[] $SwitchMap$androidx$lifecycle$Lifecycle$Event;
 
@@ -42,11 +47,6 @@ class FullLifecycleObserverAdapter implements LifecycleEventObserver {
             } catch (NoSuchFieldError unused7) {
             }
         }
-    }
-
-    FullLifecycleObserverAdapter(FullLifecycleObserver fullLifecycleObserver, LifecycleEventObserver lifecycleEventObserver) {
-        this.mFullLifecycleObserver = fullLifecycleObserver;
-        this.mLifecycleEventObserver = lifecycleEventObserver;
     }
 
     @Override // androidx.lifecycle.LifecycleEventObserver

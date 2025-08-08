@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
-import android.os.Build;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 
@@ -14,27 +13,6 @@ public class TintContextWrapper extends ContextWrapper {
     private static ArrayList sCache;
     private final Resources mResources;
     private final Resources.Theme mTheme;
-
-    private TintContextWrapper(Context context) {
-        super(context);
-        if (!VectorEnabledTintResources.shouldBeUsed()) {
-            this.mResources = new TintResources(this, context.getResources());
-            this.mTheme = null;
-            return;
-        }
-        VectorEnabledTintResources vectorEnabledTintResources = new VectorEnabledTintResources(this, context.getResources());
-        this.mResources = vectorEnabledTintResources;
-        Resources.Theme newTheme = vectorEnabledTintResources.newTheme();
-        this.mTheme = newTheme;
-        newTheme.setTo(context.getTheme());
-    }
-
-    private static boolean shouldWrap(Context context) {
-        if ((context instanceof TintContextWrapper) || (context.getResources() instanceof TintResources) || (context.getResources() instanceof VectorEnabledTintResources)) {
-            return false;
-        }
-        return Build.VERSION.SDK_INT < 21 || VectorEnabledTintResources.shouldBeUsed();
-    }
 
     public static Context wrap(Context context) {
         if (!shouldWrap(context)) {
@@ -69,14 +47,25 @@ public class TintContextWrapper extends ContextWrapper {
         }
     }
 
-    @Override // android.content.ContextWrapper, android.content.Context
-    public AssetManager getAssets() {
-        return this.mResources.getAssets();
+    private static boolean shouldWrap(Context context) {
+        if ((context instanceof TintContextWrapper) || (context.getResources() instanceof TintResources) || (context.getResources() instanceof VectorEnabledTintResources)) {
+            return false;
+        }
+        return VectorEnabledTintResources.shouldBeUsed();
     }
 
-    @Override // android.content.ContextWrapper, android.content.Context
-    public Resources getResources() {
-        return this.mResources;
+    private TintContextWrapper(Context context) {
+        super(context);
+        if (VectorEnabledTintResources.shouldBeUsed()) {
+            VectorEnabledTintResources vectorEnabledTintResources = new VectorEnabledTintResources(this, context.getResources());
+            this.mResources = vectorEnabledTintResources;
+            Resources.Theme newTheme = vectorEnabledTintResources.newTheme();
+            this.mTheme = newTheme;
+            newTheme.setTo(context.getTheme());
+            return;
+        }
+        this.mResources = new TintResources(this, context.getResources());
+        this.mTheme = null;
     }
 
     @Override // android.content.ContextWrapper, android.content.Context
@@ -93,5 +82,15 @@ public class TintContextWrapper extends ContextWrapper {
         } else {
             theme.applyStyle(i, true);
         }
+    }
+
+    @Override // android.content.ContextWrapper, android.content.Context
+    public Resources getResources() {
+        return this.mResources;
+    }
+
+    @Override // android.content.ContextWrapper, android.content.Context
+    public AssetManager getAssets() {
+        return this.mResources.getAssets();
     }
 }

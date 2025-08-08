@@ -21,9 +21,11 @@ public abstract class zag implements DialogInterface.OnClickListener {
     @Override // android.content.DialogInterface.OnClickListener
     public final void onClick(DialogInterface dialogInterface, int i) {
         try {
-            zaa();
-        } catch (ActivityNotFoundException e) {
-            Log.e("DialogRedirect", true == Build.FINGERPRINT.contains("generic") ? "Failed to start resolution intent. This may occur when resolving Google Play services connection issues on emulators with Google APIs but not Google Play Store." : "Failed to start resolution intent.", e);
+            try {
+                zaa();
+            } catch (ActivityNotFoundException e) {
+                Log.e("DialogRedirect", true == Build.FINGERPRINT.contains("generic") ? "Failed to start resolution intent. This may occur when resolving Google Play services connection issues on emulators with Google APIs but not Google Play Store." : "Failed to start resolution intent.", e);
+            }
         } finally {
             dialogInterface.dismiss();
         }

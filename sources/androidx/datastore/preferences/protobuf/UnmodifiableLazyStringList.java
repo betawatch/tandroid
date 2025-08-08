@@ -10,13 +10,13 @@ import java.util.RandomAccess;
 public class UnmodifiableLazyStringList extends AbstractList implements LazyStringList, RandomAccess {
     private final LazyStringList list;
 
-    public UnmodifiableLazyStringList(LazyStringList lazyStringList) {
-        this.list = lazyStringList;
+    @Override // androidx.datastore.preferences.protobuf.LazyStringList
+    public LazyStringList getUnmodifiableView() {
+        return this;
     }
 
-    @Override // androidx.datastore.preferences.protobuf.LazyStringList
-    public void add(ByteString byteString) {
-        throw new UnsupportedOperationException();
+    public UnmodifiableLazyStringList(LazyStringList lazyStringList) {
+        this.list = lazyStringList;
     }
 
     @Override // java.util.AbstractList, java.util.List
@@ -29,14 +29,72 @@ public class UnmodifiableLazyStringList extends AbstractList implements LazyStri
         return this.list.getRaw(i);
     }
 
-    @Override // androidx.datastore.preferences.protobuf.LazyStringList
-    public List getUnderlyingElements() {
-        return this.list.getUnderlyingElements();
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public int size() {
+        return this.list.size();
     }
 
     @Override // androidx.datastore.preferences.protobuf.LazyStringList
-    public LazyStringList getUnmodifiableView() {
-        return this;
+    public void add(ByteString byteString) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractList, java.util.List
+    public ListIterator listIterator(int i) {
+        return new ListIterator(i) { // from class: androidx.datastore.preferences.protobuf.UnmodifiableLazyStringList.1
+            ListIterator iter;
+            final /* synthetic */ int val$index;
+
+            {
+                this.val$index = i;
+                this.iter = UnmodifiableLazyStringList.this.list.listIterator(i);
+            }
+
+            @Override // java.util.ListIterator, java.util.Iterator
+            public boolean hasNext() {
+                return this.iter.hasNext();
+            }
+
+            @Override // java.util.ListIterator, java.util.Iterator
+            public String next() {
+                return (String) this.iter.next();
+            }
+
+            @Override // java.util.ListIterator
+            public boolean hasPrevious() {
+                return this.iter.hasPrevious();
+            }
+
+            @Override // java.util.ListIterator
+            public String previous() {
+                return (String) this.iter.previous();
+            }
+
+            @Override // java.util.ListIterator
+            public int nextIndex() {
+                return this.iter.nextIndex();
+            }
+
+            @Override // java.util.ListIterator
+            public int previousIndex() {
+                return this.iter.previousIndex();
+            }
+
+            @Override // java.util.ListIterator, java.util.Iterator
+            public void remove() {
+                throw new UnsupportedOperationException();
+            }
+
+            @Override // java.util.ListIterator
+            public void set(String str) {
+                throw new UnsupportedOperationException();
+            }
+
+            @Override // java.util.ListIterator
+            public void add(String str) {
+                throw new UnsupportedOperationException();
+            }
+        };
     }
 
     @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
@@ -65,66 +123,8 @@ public class UnmodifiableLazyStringList extends AbstractList implements LazyStri
         };
     }
 
-    @Override // java.util.AbstractList, java.util.List
-    public ListIterator listIterator(int i) {
-        return new ListIterator(i) { // from class: androidx.datastore.preferences.protobuf.UnmodifiableLazyStringList.1
-            ListIterator iter;
-            final /* synthetic */ int val$index;
-
-            {
-                this.val$index = i;
-                this.iter = UnmodifiableLazyStringList.this.list.listIterator(i);
-            }
-
-            @Override // java.util.ListIterator
-            public void add(String str) {
-                throw new UnsupportedOperationException();
-            }
-
-            @Override // java.util.ListIterator, java.util.Iterator
-            public boolean hasNext() {
-                return this.iter.hasNext();
-            }
-
-            @Override // java.util.ListIterator
-            public boolean hasPrevious() {
-                return this.iter.hasPrevious();
-            }
-
-            @Override // java.util.ListIterator, java.util.Iterator
-            public String next() {
-                return (String) this.iter.next();
-            }
-
-            @Override // java.util.ListIterator
-            public int nextIndex() {
-                return this.iter.nextIndex();
-            }
-
-            @Override // java.util.ListIterator
-            public String previous() {
-                return (String) this.iter.previous();
-            }
-
-            @Override // java.util.ListIterator
-            public int previousIndex() {
-                return this.iter.previousIndex();
-            }
-
-            @Override // java.util.ListIterator, java.util.Iterator
-            public void remove() {
-                throw new UnsupportedOperationException();
-            }
-
-            @Override // java.util.ListIterator
-            public void set(String str) {
-                throw new UnsupportedOperationException();
-            }
-        };
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public int size() {
-        return this.list.size();
+    @Override // androidx.datastore.preferences.protobuf.LazyStringList
+    public List getUnderlyingElements() {
+        return this.list.getUnderlyingElements();
     }
 }

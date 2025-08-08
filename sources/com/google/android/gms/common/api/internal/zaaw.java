@@ -2,9 +2,8 @@ package com.google.android.gms.common.api.internal;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.os.Looper;
 import android.util.Log;
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailabilityLight;
 import com.google.android.gms.common.api.Api;
@@ -62,7 +61,8 @@ public final class zaaw implements zabf {
         this.zaa.zag.zad = Collections.emptySet();
         for (Api.AnyClientKey anyClientKey : this.zaj) {
             if (!this.zaa.zab.containsKey(anyClientKey)) {
-                this.zaa.zab.put(anyClientKey, new ConnectionResult(17, null));
+                zabi zabiVar = this.zaa;
+                zabiVar.zab.put(anyClientKey, new ConnectionResult(17, null));
             }
         }
     }
@@ -110,7 +110,8 @@ public final class zaaw implements zabf {
             this.zae = connectionResult;
             this.zaf = priority;
         }
-        this.zaa.zab.put(api.zab(), connectionResult);
+        zabi zabiVar = this.zaa;
+        zabiVar.zab.put(api.zab(), connectionResult);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -151,7 +152,6 @@ public final class zaaw implements zabf {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final boolean zaH() {
-        ConnectionResult connectionResult;
         int i = this.zah - 1;
         this.zah = i;
         if (i > 0) {
@@ -160,14 +160,14 @@ public final class zaaw implements zabf {
         if (i < 0) {
             Log.w("GACConnecting", this.zaa.zag.zaf());
             Log.wtf("GACConnecting", "GoogleApiClient received too many callbacks for the given step. Clients may be in an unexpected state; GoogleApiClient will now disconnect.", new Exception());
-            connectionResult = new ConnectionResult(8, null);
-        } else {
-            connectionResult = this.zae;
-            if (connectionResult == null) {
-                return true;
-            }
-            this.zaa.zaf = this.zaf;
+            zaD(new ConnectionResult(8, null));
+            return false;
         }
+        ConnectionResult connectionResult = this.zae;
+        if (connectionResult == null) {
+            return true;
+        }
+        this.zaa.zaf = this.zaf;
         zaD(connectionResult);
         return false;
     }
@@ -189,8 +189,9 @@ public final class zaaw implements zabf {
         HashSet hashSet = new HashSet(clientSettings.getRequiredScopes());
         Map zad = zaawVar.zar.zad();
         for (Api api : zad.keySet()) {
-            if (!zaawVar.zaa.zab.containsKey(api.zab())) {
-                ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(zad.get(api));
+            zabi zabiVar = zaawVar.zaa;
+            if (!zabiVar.zab.containsKey(api.zab())) {
+                WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(zad.get(api));
                 throw null;
             }
         }
@@ -283,9 +284,9 @@ public final class zaaw implements zabf {
             zaat zaatVar = new zaat(this, zaasVar);
             Api.AbstractClientBuilder abstractClientBuilder = this.zat;
             Context context = this.zac;
-            Looper looper = this.zaa.zag.getLooper();
+            zabi zabiVar = this.zaa;
             ClientSettings clientSettings = this.zar;
-            this.zak = abstractClientBuilder.buildClient(context, looper, clientSettings, (Object) clientSettings.zaa(), (GoogleApiClient.ConnectionCallbacks) zaatVar, (GoogleApiClient.OnConnectionFailedListener) zaatVar);
+            this.zak = abstractClientBuilder.buildClient(context, zabiVar.zag.getLooper(), clientSettings, (Object) clientSettings.zaa(), (GoogleApiClient.ConnectionCallbacks) zaatVar, (GoogleApiClient.OnConnectionFailedListener) zaatVar);
         }
         this.zah = this.zaa.zaa.size();
         this.zau.add(zabj.zaa().submit(new zaao(this, hashMap)));

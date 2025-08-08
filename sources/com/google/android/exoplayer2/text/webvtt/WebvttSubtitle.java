@@ -32,9 +32,25 @@ final class WebvttSubtitle implements Subtitle {
         Arrays.sort(copyOf);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$getCues$0(WebvttCueInfo webvttCueInfo, WebvttCueInfo webvttCueInfo2) {
-        return Long.compare(webvttCueInfo.startTimeUs, webvttCueInfo2.startTimeUs);
+    @Override // com.google.android.exoplayer2.text.Subtitle
+    public int getNextEventTimeIndex(long j) {
+        int binarySearchCeil = Util.binarySearchCeil(this.sortedCueTimesUs, j, false, false);
+        if (binarySearchCeil < this.sortedCueTimesUs.length) {
+            return binarySearchCeil;
+        }
+        return -1;
+    }
+
+    @Override // com.google.android.exoplayer2.text.Subtitle
+    public int getEventTimeCount() {
+        return this.sortedCueTimesUs.length;
+    }
+
+    @Override // com.google.android.exoplayer2.text.Subtitle
+    public long getEventTime(int i) {
+        Assertions.checkArgument(i >= 0);
+        Assertions.checkArgument(i < this.sortedCueTimesUs.length);
+        return this.sortedCueTimesUs[i];
     }
 
     @Override // com.google.android.exoplayer2.text.Subtitle
@@ -68,24 +84,8 @@ final class WebvttSubtitle implements Subtitle {
         return arrayList;
     }
 
-    @Override // com.google.android.exoplayer2.text.Subtitle
-    public long getEventTime(int i) {
-        Assertions.checkArgument(i >= 0);
-        Assertions.checkArgument(i < this.sortedCueTimesUs.length);
-        return this.sortedCueTimesUs[i];
-    }
-
-    @Override // com.google.android.exoplayer2.text.Subtitle
-    public int getEventTimeCount() {
-        return this.sortedCueTimesUs.length;
-    }
-
-    @Override // com.google.android.exoplayer2.text.Subtitle
-    public int getNextEventTimeIndex(long j) {
-        int binarySearchCeil = Util.binarySearchCeil(this.sortedCueTimesUs, j, false, false);
-        if (binarySearchCeil < this.sortedCueTimesUs.length) {
-            return binarySearchCeil;
-        }
-        return -1;
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ int lambda$getCues$0(WebvttCueInfo webvttCueInfo, WebvttCueInfo webvttCueInfo2) {
+        return Long.compare(webvttCueInfo.startTimeUs, webvttCueInfo2.startTimeUs);
     }
 }

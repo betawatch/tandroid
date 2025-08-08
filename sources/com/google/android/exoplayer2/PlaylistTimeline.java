@@ -46,13 +46,8 @@ final class PlaylistTimeline extends AbstractConcatenatedTimeline {
         this.periodCount = i2;
     }
 
-    @Override // com.google.android.exoplayer2.AbstractConcatenatedTimeline
-    protected int getChildIndexByChildUid(Object obj) {
-        Integer num = (Integer) this.childIndexByUid.get(obj);
-        if (num == null) {
-            return -1;
-        }
-        return num.intValue();
+    List getChildTimelines() {
+        return Arrays.asList(this.timelines);
     }
 
     @Override // com.google.android.exoplayer2.AbstractConcatenatedTimeline
@@ -65,13 +60,18 @@ final class PlaylistTimeline extends AbstractConcatenatedTimeline {
         return Util.binarySearchFloor(this.firstWindowInChildIndices, i + 1, false, false);
     }
 
-    List getChildTimelines() {
-        return Arrays.asList(this.timelines);
+    @Override // com.google.android.exoplayer2.AbstractConcatenatedTimeline
+    protected int getChildIndexByChildUid(Object obj) {
+        Integer num = (Integer) this.childIndexByUid.get(obj);
+        if (num == null) {
+            return -1;
+        }
+        return num.intValue();
     }
 
     @Override // com.google.android.exoplayer2.AbstractConcatenatedTimeline
-    protected Object getChildUidByChildIndex(int i) {
-        return this.uids[i];
+    protected Timeline getTimelineByChildIndex(int i) {
+        return this.timelines[i];
     }
 
     @Override // com.google.android.exoplayer2.AbstractConcatenatedTimeline
@@ -84,18 +84,18 @@ final class PlaylistTimeline extends AbstractConcatenatedTimeline {
         return this.firstWindowInChildIndices[i];
     }
 
-    @Override // com.google.android.exoplayer2.Timeline
-    public int getPeriodCount() {
-        return this.periodCount;
-    }
-
     @Override // com.google.android.exoplayer2.AbstractConcatenatedTimeline
-    protected Timeline getTimelineByChildIndex(int i) {
-        return this.timelines[i];
+    protected Object getChildUidByChildIndex(int i) {
+        return this.uids[i];
     }
 
     @Override // com.google.android.exoplayer2.Timeline
     public int getWindowCount() {
         return this.windowCount;
+    }
+
+    @Override // com.google.android.exoplayer2.Timeline
+    public int getPeriodCount() {
+        return this.periodCount;
     }
 }

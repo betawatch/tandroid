@@ -3,7 +3,7 @@ package com.google.zxing.qrcode.decoder;
 import com.google.zxing.FormatException;
 import com.google.zxing.common.BitMatrix;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class BitMatrixParser {
     private final BitMatrix bitMatrix;
     private boolean mirror;
@@ -16,70 +16,6 @@ final class BitMatrixParser {
             throw FormatException.getFormatInstance();
         }
         this.bitMatrix = bitMatrix;
-    }
-
-    private int copyBit(int i, int i2, int i3) {
-        return this.mirror ? this.bitMatrix.get(i2, i) : this.bitMatrix.get(i, i2) ? (i3 << 1) | 1 : i3 << 1;
-    }
-
-    void mirror() {
-        int i = 0;
-        while (i < this.bitMatrix.getWidth()) {
-            int i2 = i + 1;
-            for (int i3 = i2; i3 < this.bitMatrix.getHeight(); i3++) {
-                if (this.bitMatrix.get(i, i3) != this.bitMatrix.get(i3, i)) {
-                    this.bitMatrix.flip(i3, i);
-                    this.bitMatrix.flip(i, i3);
-                }
-            }
-            i = i2;
-        }
-    }
-
-    byte[] readCodewords() {
-        FormatInformation readFormatInformation = readFormatInformation();
-        Version readVersion = readVersion();
-        DataMask dataMask = DataMask.values()[readFormatInformation.getDataMask()];
-        int height = this.bitMatrix.getHeight();
-        dataMask.unmaskBitMatrix(this.bitMatrix, height);
-        BitMatrix buildFunctionPattern = readVersion.buildFunctionPattern();
-        byte[] bArr = new byte[readVersion.getTotalCodewords()];
-        int i = height - 1;
-        boolean z = true;
-        int i2 = i;
-        int i3 = 0;
-        int i4 = 0;
-        int i5 = 0;
-        while (i2 > 0) {
-            if (i2 == 6) {
-                i2--;
-            }
-            for (int i6 = 0; i6 < height; i6++) {
-                int i7 = z ? i - i6 : i6;
-                for (int i8 = 0; i8 < 2; i8++) {
-                    int i9 = i2 - i8;
-                    if (!buildFunctionPattern.get(i9, i7)) {
-                        i5++;
-                        i4 <<= 1;
-                        if (this.bitMatrix.get(i9, i7)) {
-                            i4 |= 1;
-                        }
-                        if (i5 == 8) {
-                            bArr[i3] = (byte) i4;
-                            i3++;
-                            i4 = 0;
-                            i5 = 0;
-                        }
-                    }
-                }
-            }
-            z = !z;
-            i2 -= 2;
-        }
-        if (i3 == readVersion.getTotalCodewords()) {
-            return bArr;
-        }
-        throw FormatException.getFormatInstance();
     }
 
     FormatInformation readFormatInformation() {
@@ -141,11 +77,61 @@ final class BitMatrixParser {
             }
         }
         Version decodeVersionInformation2 = Version.decodeVersionInformation(i3);
-        if (decodeVersionInformation2 == null || decodeVersionInformation2.getDimensionForVersion() != height) {
-            throw FormatException.getFormatInstance();
+        if (decodeVersionInformation2 != null && decodeVersionInformation2.getDimensionForVersion() == height) {
+            this.parsedVersion = decodeVersionInformation2;
+            return decodeVersionInformation2;
         }
-        this.parsedVersion = decodeVersionInformation2;
-        return decodeVersionInformation2;
+        throw FormatException.getFormatInstance();
+    }
+
+    private int copyBit(int i, int i2, int i3) {
+        return this.mirror ? this.bitMatrix.get(i2, i) : this.bitMatrix.get(i, i2) ? (i3 << 1) | 1 : i3 << 1;
+    }
+
+    byte[] readCodewords() {
+        FormatInformation readFormatInformation = readFormatInformation();
+        Version readVersion = readVersion();
+        DataMask dataMask = DataMask.values()[readFormatInformation.getDataMask()];
+        int height = this.bitMatrix.getHeight();
+        dataMask.unmaskBitMatrix(this.bitMatrix, height);
+        BitMatrix buildFunctionPattern = readVersion.buildFunctionPattern();
+        byte[] bArr = new byte[readVersion.getTotalCodewords()];
+        int i = height - 1;
+        boolean z = true;
+        int i2 = i;
+        int i3 = 0;
+        int i4 = 0;
+        int i5 = 0;
+        while (i2 > 0) {
+            if (i2 == 6) {
+                i2--;
+            }
+            for (int i6 = 0; i6 < height; i6++) {
+                int i7 = z ? i - i6 : i6;
+                for (int i8 = 0; i8 < 2; i8++) {
+                    int i9 = i2 - i8;
+                    if (!buildFunctionPattern.get(i9, i7)) {
+                        i5++;
+                        i4 <<= 1;
+                        if (this.bitMatrix.get(i9, i7)) {
+                            i4 |= 1;
+                        }
+                        if (i5 == 8) {
+                            bArr[i3] = (byte) i4;
+                            i3++;
+                            i4 = 0;
+                            i5 = 0;
+                        }
+                    }
+                }
+            }
+            z = !z;
+            i2 -= 2;
+        }
+        if (i3 == readVersion.getTotalCodewords()) {
+            return bArr;
+        }
+        throw FormatException.getFormatInstance();
     }
 
     void remask() {
@@ -159,5 +145,19 @@ final class BitMatrixParser {
         this.parsedVersion = null;
         this.parsedFormatInfo = null;
         this.mirror = z;
+    }
+
+    void mirror() {
+        int i = 0;
+        while (i < this.bitMatrix.getWidth()) {
+            int i2 = i + 1;
+            for (int i3 = i2; i3 < this.bitMatrix.getHeight(); i3++) {
+                if (this.bitMatrix.get(i, i3) != this.bitMatrix.get(i3, i)) {
+                    this.bitMatrix.flip(i3, i);
+                    this.bitMatrix.flip(i, i3);
+                }
+            }
+            i = i2;
+        }
     }
 }

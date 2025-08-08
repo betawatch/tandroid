@@ -13,7 +13,7 @@ import java.util.List;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class CommonSchemaDataUtils {
     public static void addCommonSchemaData(List list, CommonSchemaLog commonSchemaLog) {
         Iterator it;
@@ -35,11 +35,8 @@ public abstract class CommonSchemaDataUtils {
                     JSONObject properties = data.getProperties();
                     JSONObject metadata = metadataExtension.getMetadata();
                     int i = 0;
-                    while (true) {
-                        it = it2;
-                        if (i >= length) {
-                            break;
-                        }
+                    while (i < length) {
+                        Iterator it3 = it2;
                         String str = split[i];
                         JSONObject optJSONObject = properties.optJSONObject(str);
                         if (optJSONObject == null) {
@@ -54,8 +51,9 @@ public abstract class CommonSchemaDataUtils {
                         }
                         metadata = addIntermediateMetadata(metadata, str);
                         i++;
-                        it2 = it;
+                        it2 = it3;
                     }
+                    it = it2;
                     String str2 = split[length];
                     if (properties.has(str2)) {
                         AppCenterLog.warn("AppCenter", "Property key '" + str2 + "' already has a value, the old value will be overridden.");
@@ -91,62 +89,6 @@ public abstract class CommonSchemaDataUtils {
         }
     }
 
-    private static JSONObject addIntermediateMetadata(JSONObject jSONObject, String str) {
-        JSONObject optJSONObject = jSONObject.optJSONObject("f");
-        if (optJSONObject == null) {
-            optJSONObject = new JSONObject();
-            jSONObject.put("f", optJSONObject);
-        }
-        JSONObject optJSONObject2 = optJSONObject.optJSONObject(str);
-        if (optJSONObject2 != null) {
-            return optJSONObject2;
-        }
-        JSONObject jSONObject2 = new JSONObject();
-        optJSONObject.put(str, jSONObject2);
-        return jSONObject2;
-    }
-
-    private static void addLeafMetadata(Integer num, JSONObject jSONObject, String str) {
-        JSONObject optJSONObject = jSONObject.optJSONObject("f");
-        if (num == null) {
-            if (optJSONObject != null) {
-                optJSONObject.remove(str);
-            }
-        } else {
-            if (optJSONObject == null) {
-                optJSONObject = new JSONObject();
-                jSONObject.put("f", optJSONObject);
-            }
-            optJSONObject.put(str, num);
-        }
-    }
-
-    private static boolean cleanUpEmptyObjectsInMetadata(JSONObject jSONObject) {
-        Iterator<String> keys = jSONObject.keys();
-        while (keys.hasNext()) {
-            JSONObject optJSONObject = jSONObject.optJSONObject(keys.next());
-            if (optJSONObject != null && cleanUpEmptyObjectsInMetadata(optJSONObject)) {
-                keys.remove();
-            }
-        }
-        return jSONObject.length() == 0;
-    }
-
-    private static Integer getMetadataType(TypedProperty typedProperty) {
-        int i;
-        if (typedProperty instanceof LongTypedProperty) {
-            i = 4;
-        } else if (typedProperty instanceof DoubleTypedProperty) {
-            i = 6;
-        } else {
-            if (!(typedProperty instanceof DateTimeTypedProperty)) {
-                return null;
-            }
-            i = 9;
-        }
-        return Integer.valueOf(i);
-    }
-
     private static Object validateProperty(TypedProperty typedProperty) {
         Object valueOf;
         String name = typedProperty.getName();
@@ -170,15 +112,65 @@ public abstract class CommonSchemaDataUtils {
             valueOf = Double.valueOf(((DoubleTypedProperty) typedProperty).getValue());
         } else if (typedProperty instanceof DateTimeTypedProperty) {
             valueOf = JSONDateUtils.toString(((DateTimeTypedProperty) typedProperty).getValue());
-        } else {
-            if (!(typedProperty instanceof BooleanTypedProperty)) {
-                throw new IllegalArgumentException("Unsupported property type: " + typedProperty.getType());
-            }
+        } else if (typedProperty instanceof BooleanTypedProperty) {
             valueOf = Boolean.valueOf(((BooleanTypedProperty) typedProperty).getValue());
+        } else {
+            throw new IllegalArgumentException("Unsupported property type: " + typedProperty.getType());
         }
         if (valueOf != null) {
             return valueOf;
         }
         throw new IllegalArgumentException("Value of property with key '" + name + "' cannot be null.");
+    }
+
+    private static Integer getMetadataType(TypedProperty typedProperty) {
+        if (typedProperty instanceof LongTypedProperty) {
+            return 4;
+        }
+        if (typedProperty instanceof DoubleTypedProperty) {
+            return 6;
+        }
+        return typedProperty instanceof DateTimeTypedProperty ? 9 : null;
+    }
+
+    private static void addLeafMetadata(Integer num, JSONObject jSONObject, String str) {
+        JSONObject optJSONObject = jSONObject.optJSONObject("f");
+        if (num == null) {
+            if (optJSONObject != null) {
+                optJSONObject.remove(str);
+            }
+        } else {
+            if (optJSONObject == null) {
+                optJSONObject = new JSONObject();
+                jSONObject.put("f", optJSONObject);
+            }
+            optJSONObject.put(str, num);
+        }
+    }
+
+    private static JSONObject addIntermediateMetadata(JSONObject jSONObject, String str) {
+        JSONObject optJSONObject = jSONObject.optJSONObject("f");
+        if (optJSONObject == null) {
+            optJSONObject = new JSONObject();
+            jSONObject.put("f", optJSONObject);
+        }
+        JSONObject optJSONObject2 = optJSONObject.optJSONObject(str);
+        if (optJSONObject2 != null) {
+            return optJSONObject2;
+        }
+        JSONObject jSONObject2 = new JSONObject();
+        optJSONObject.put(str, jSONObject2);
+        return jSONObject2;
+    }
+
+    private static boolean cleanUpEmptyObjectsInMetadata(JSONObject jSONObject) {
+        Iterator<String> keys = jSONObject.keys();
+        while (keys.hasNext()) {
+            JSONObject optJSONObject = jSONObject.optJSONObject(keys.next());
+            if (optJSONObject != null && cleanUpEmptyObjectsInMetadata(optJSONObject)) {
+                keys.remove();
+            }
+        }
+        return jSONObject.length() == 0;
     }
 }

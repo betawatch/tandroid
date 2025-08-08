@@ -11,16 +11,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class RolloutsStateFactory {
     ConfigGetParameterHandler getParameterHandler;
 
     RolloutsStateFactory(ConfigGetParameterHandler configGetParameterHandler) {
         this.getParameterHandler = configGetParameterHandler;
-    }
-
-    public static RolloutsStateFactory create(ConfigGetParameterHandler configGetParameterHandler) {
-        return new RolloutsStateFactory(configGetParameterHandler);
     }
 
     RolloutsState getActiveRolloutsState(ConfigContainer configContainer) {
@@ -42,5 +38,9 @@ public class RolloutsStateFactory {
             }
         }
         return RolloutsState.create(hashSet);
+    }
+
+    public static RolloutsStateFactory create(ConfigGetParameterHandler configGetParameterHandler) {
+        return new RolloutsStateFactory(configGetParameterHandler);
     }
 }

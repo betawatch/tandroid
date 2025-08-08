@@ -8,7 +8,7 @@ import android.graphics.Point;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import com.google.android.gms.cast.framework.R$attr;
 import com.google.android.gms.cast.framework.R$dimen;
 import com.google.android.gms.cast.framework.R$style;
@@ -37,46 +37,8 @@ public class CastSeekBar extends View {
     private Point zzr;
     private Runnable zzs;
 
-    public CastSeekBar(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 0);
-    }
-
-    public CastSeekBar(Context context, AttributeSet attributeSet, int i) {
-        super(context, attributeSet, i);
-        this.zzc = new ArrayList();
-        setAccessibilityDelegate(new zzg(this, null));
-        Paint paint = new Paint(1);
-        this.zzl = paint;
-        paint.setStyle(Paint.Style.FILL);
-        this.zzg = context.getResources().getDimension(R$dimen.cast_seek_bar_minimum_width);
-        this.zzh = context.getResources().getDimension(R$dimen.cast_seek_bar_minimum_height);
-        this.zzi = context.getResources().getDimension(R$dimen.cast_seek_bar_progress_height) / 2.0f;
-        this.zzj = context.getResources().getDimension(R$dimen.cast_seek_bar_thumb_size) / 2.0f;
-        this.zzk = context.getResources().getDimension(R$dimen.cast_seek_bar_ad_break_minimum_width);
-        zze zzeVar = new zze();
-        this.zza = zzeVar;
-        zzeVar.zzb = 1;
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(null, R$styleable.CastExpandedController, R$attr.castExpandedControllerStyle, R$style.CastExpandedController);
-        int resourceId = obtainStyledAttributes.getResourceId(R$styleable.CastExpandedController_castSeekBarProgressAndThumbColor, 0);
-        int resourceId2 = obtainStyledAttributes.getResourceId(R$styleable.CastExpandedController_castSeekBarSecondaryProgressColor, 0);
-        int resourceId3 = obtainStyledAttributes.getResourceId(R$styleable.CastExpandedController_castSeekBarUnseekableProgressColor, 0);
-        int resourceId4 = obtainStyledAttributes.getResourceId(R$styleable.CastExpandedController_castAdBreakMarkerColor, 0);
-        this.zzm = context.getResources().getColor(resourceId);
-        this.zzn = context.getResources().getColor(resourceId2);
-        this.zzo = context.getResources().getColor(resourceId3);
-        this.zzp = context.getResources().getColor(resourceId4);
-        obtainStyledAttributes.recycle();
-    }
-
     private final int zzf(int i) {
-        int measuredWidth = (getMeasuredWidth() - getPaddingLeft()) - getPaddingRight();
-        double d = this.zza.zzb;
-        double d2 = i;
-        double d3 = measuredWidth;
-        Double.isNaN(d2);
-        Double.isNaN(d3);
-        Double.isNaN(d);
-        return (int) ((d2 / d3) * d);
+        return (int) ((i / ((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight())) * this.zza.zzb);
     }
 
     private final void zzg(Canvas canvas, int i, int i2, int i3, int i4, int i5) {
@@ -141,11 +103,6 @@ public class CastSeekBar extends View {
 
     @Override // android.view.View
     public void onDraw(Canvas canvas) {
-        int i;
-        int i2;
-        CastSeekBar castSeekBar;
-        Canvas canvas2;
-        int i3;
         int save = canvas.save();
         canvas.translate(getPaddingLeft(), getPaddingTop());
         int measuredWidth = (getMeasuredWidth() - getPaddingLeft()) - getPaddingRight();
@@ -155,28 +112,25 @@ public class CastSeekBar extends View {
         canvas.translate(0.0f, measuredHeight / 2);
         zze zzeVar = this.zza;
         if (zzeVar.zzf) {
-            int i4 = zzeVar.zzd;
-            if (i4 > 0) {
-                zzg(canvas, 0, i4, zzeVar.zzb, measuredWidth, this.zzo);
+            int i = zzeVar.zzd;
+            if (i > 0) {
+                zzg(canvas, 0, i, zzeVar.zzb, measuredWidth, this.zzo);
             }
             zze zzeVar2 = this.zza;
-            int i5 = zzeVar2.zzd;
-            if (progress > i5) {
-                zzg(canvas, i5, progress, zzeVar2.zzb, measuredWidth, this.zzm);
+            int i2 = zzeVar2.zzd;
+            if (progress > i2) {
+                zzg(canvas, i2, progress, zzeVar2.zzb, measuredWidth, this.zzm);
             }
             zze zzeVar3 = this.zza;
-            int i6 = zzeVar3.zze;
-            if (i6 > progress) {
-                zzg(canvas, progress, i6, zzeVar3.zzb, measuredWidth, this.zzn);
+            int i3 = zzeVar3.zze;
+            if (i3 > progress) {
+                zzg(canvas, progress, i3, zzeVar3.zzb, measuredWidth, this.zzn);
             }
             zze zzeVar4 = this.zza;
-            i = zzeVar4.zzb;
-            i3 = zzeVar4.zze;
-            if (i > i3) {
-                i2 = this.zzo;
-                castSeekBar = this;
-                canvas2 = canvas;
-                castSeekBar.zzg(canvas2, i3, i, i, measuredWidth, i2);
+            int i4 = zzeVar4.zzb;
+            int i5 = zzeVar4.zze;
+            if (i4 > i5) {
+                zzg(canvas, i5, i4, i4, measuredWidth, this.zzo);
             }
         } else {
             int max = Math.max(zzeVar.zzc, 0);
@@ -186,13 +140,9 @@ public class CastSeekBar extends View {
             if (progress > max) {
                 zzg(canvas, max, progress, this.zza.zzb, measuredWidth, this.zzm);
             }
-            i = this.zza.zzb;
-            if (i > progress) {
-                i2 = this.zzo;
-                castSeekBar = this;
-                canvas2 = canvas;
-                i3 = progress;
-                castSeekBar.zzg(canvas2, i3, i, i, measuredWidth, i2);
+            int i6 = this.zza.zzb;
+            if (i6 > progress) {
+                zzg(canvas, progress, i6, i6, measuredWidth, this.zzo);
             }
         }
         canvas.restoreToCount(save2);
@@ -207,7 +157,7 @@ public class CastSeekBar extends View {
             canvas.translate(0.0f, measuredHeight2 / 2);
             Iterator it = list.iterator();
             while (it.hasNext()) {
-                ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
+                WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
             }
             canvas.restoreToCount(save3);
         }
@@ -218,13 +168,7 @@ public class CastSeekBar extends View {
             double progress2 = getProgress();
             double d = this.zza.zzb;
             int save4 = canvas.save();
-            float f = this.zzj;
-            Paint paint = this.zzl;
-            Double.isNaN(progress2);
-            Double.isNaN(d);
-            double d2 = progress2 / d;
-            Double.isNaN(measuredWidth2);
-            canvas.drawCircle((int) (d2 * r5), measuredHeight3 / 2.0f, f, paint);
+            canvas.drawCircle((int) ((progress2 / d) * measuredWidth2), measuredHeight3 / 2.0f, this.zzj, this.zzl);
             canvas.restoreToCount(save4);
         }
         canvas.restoreToCount(save);
@@ -270,5 +214,36 @@ public class CastSeekBar extends View {
             }
         }
         return false;
+    }
+
+    public CastSeekBar(Context context, AttributeSet attributeSet) {
+        this(context, attributeSet, 0);
+    }
+
+    public CastSeekBar(Context context, AttributeSet attributeSet, int i) {
+        super(context, attributeSet, i);
+        this.zzc = new ArrayList();
+        setAccessibilityDelegate(new zzg(this, null));
+        Paint paint = new Paint(1);
+        this.zzl = paint;
+        paint.setStyle(Paint.Style.FILL);
+        this.zzg = context.getResources().getDimension(R$dimen.cast_seek_bar_minimum_width);
+        this.zzh = context.getResources().getDimension(R$dimen.cast_seek_bar_minimum_height);
+        this.zzi = context.getResources().getDimension(R$dimen.cast_seek_bar_progress_height) / 2.0f;
+        this.zzj = context.getResources().getDimension(R$dimen.cast_seek_bar_thumb_size) / 2.0f;
+        this.zzk = context.getResources().getDimension(R$dimen.cast_seek_bar_ad_break_minimum_width);
+        zze zzeVar = new zze();
+        this.zza = zzeVar;
+        zzeVar.zzb = 1;
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(null, R$styleable.CastExpandedController, R$attr.castExpandedControllerStyle, R$style.CastExpandedController);
+        int resourceId = obtainStyledAttributes.getResourceId(R$styleable.CastExpandedController_castSeekBarProgressAndThumbColor, 0);
+        int resourceId2 = obtainStyledAttributes.getResourceId(R$styleable.CastExpandedController_castSeekBarSecondaryProgressColor, 0);
+        int resourceId3 = obtainStyledAttributes.getResourceId(R$styleable.CastExpandedController_castSeekBarUnseekableProgressColor, 0);
+        int resourceId4 = obtainStyledAttributes.getResourceId(R$styleable.CastExpandedController_castAdBreakMarkerColor, 0);
+        this.zzm = context.getResources().getColor(resourceId);
+        this.zzn = context.getResources().getColor(resourceId2);
+        this.zzo = context.getResources().getColor(resourceId3);
+        this.zzp = context.getResources().getColor(resourceId4);
+        obtainStyledAttributes.recycle();
     }
 }

@@ -1,5 +1,5 @@
 package kotlinx.coroutines.selects;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public interface SelectInstance {
 }

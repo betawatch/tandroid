@@ -29,47 +29,11 @@ public class MediaRouteControllerDialogFragment extends DialogFragment {
         }
     }
 
-    @Override // androidx.fragment.app.Fragment, android.content.ComponentCallbacks
-    public void onConfigurationChanged(Configuration configuration) {
-        super.onConfigurationChanged(configuration);
-        Dialog dialog = this.mDialog;
-        if (dialog != null) {
-            if (this.mUseDynamicGroup) {
-                ((MediaRouteDynamicControllerDialog) dialog).updateLayout();
-            } else {
-                ((MediaRouteControllerDialog) dialog).updateLayout();
-            }
+    void setUseDynamicGroup(boolean z) {
+        if (this.mDialog != null) {
+            throw new IllegalStateException("This must be called before creating dialog");
         }
-    }
-
-    public MediaRouteControllerDialog onCreateControllerDialog(Context context, Bundle bundle) {
-        return new MediaRouteControllerDialog(context);
-    }
-
-    @Override // androidx.fragment.app.DialogFragment
-    public Dialog onCreateDialog(Bundle bundle) {
-        if (this.mUseDynamicGroup) {
-            MediaRouteDynamicControllerDialog onCreateDynamicControllerDialog = onCreateDynamicControllerDialog(getContext());
-            this.mDialog = onCreateDynamicControllerDialog;
-            onCreateDynamicControllerDialog.setRouteSelector(this.mSelector);
-        } else {
-            this.mDialog = onCreateControllerDialog(getContext(), bundle);
-        }
-        return this.mDialog;
-    }
-
-    public MediaRouteDynamicControllerDialog onCreateDynamicControllerDialog(Context context) {
-        return new MediaRouteDynamicControllerDialog(context);
-    }
-
-    @Override // androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
-    public void onStop() {
-        super.onStop();
-        Dialog dialog = this.mDialog;
-        if (dialog == null || this.mUseDynamicGroup) {
-            return;
-        }
-        ((MediaRouteControllerDialog) dialog).clearGroupListAnimation(false);
+        this.mUseDynamicGroup = z;
     }
 
     public void setRouteSelector(MediaRouteSelector mediaRouteSelector) {
@@ -94,10 +58,46 @@ public class MediaRouteControllerDialogFragment extends DialogFragment {
         ((MediaRouteDynamicControllerDialog) dialog).setRouteSelector(mediaRouteSelector);
     }
 
-    void setUseDynamicGroup(boolean z) {
-        if (this.mDialog != null) {
-            throw new IllegalStateException("This must be called before creating dialog");
+    public MediaRouteDynamicControllerDialog onCreateDynamicControllerDialog(Context context) {
+        return new MediaRouteDynamicControllerDialog(context);
+    }
+
+    public MediaRouteControllerDialog onCreateControllerDialog(Context context, Bundle bundle) {
+        return new MediaRouteControllerDialog(context);
+    }
+
+    @Override // androidx.fragment.app.DialogFragment
+    public Dialog onCreateDialog(Bundle bundle) {
+        if (this.mUseDynamicGroup) {
+            MediaRouteDynamicControllerDialog onCreateDynamicControllerDialog = onCreateDynamicControllerDialog(getContext());
+            this.mDialog = onCreateDynamicControllerDialog;
+            onCreateDynamicControllerDialog.setRouteSelector(this.mSelector);
+        } else {
+            this.mDialog = onCreateControllerDialog(getContext(), bundle);
         }
-        this.mUseDynamicGroup = z;
+        return this.mDialog;
+    }
+
+    @Override // androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    public void onStop() {
+        super.onStop();
+        Dialog dialog = this.mDialog;
+        if (dialog == null || this.mUseDynamicGroup) {
+            return;
+        }
+        ((MediaRouteControllerDialog) dialog).clearGroupListAnimation(false);
+    }
+
+    @Override // androidx.fragment.app.Fragment, android.content.ComponentCallbacks
+    public void onConfigurationChanged(Configuration configuration) {
+        super.onConfigurationChanged(configuration);
+        Dialog dialog = this.mDialog;
+        if (dialog != null) {
+            if (this.mUseDynamicGroup) {
+                ((MediaRouteDynamicControllerDialog) dialog).updateLayout();
+            } else {
+                ((MediaRouteControllerDialog) dialog).updateLayout();
+            }
+        }
     }
 }

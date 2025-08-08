@@ -1,6 +1,6 @@
 package org.telegram.messenger;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class BetaUpdate {
     public final String changelog;
     public final String version;

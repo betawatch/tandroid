@@ -5,6 +5,12 @@ import java.util.Map;
 
 /* loaded from: classes.dex */
 abstract class AbstractMapEntry implements Map.Entry {
+    @Override // java.util.Map.Entry
+    public abstract Object getKey();
+
+    @Override // java.util.Map.Entry
+    public abstract Object getValue();
+
     AbstractMapEntry() {
     }
 
@@ -16,12 +22,6 @@ abstract class AbstractMapEntry implements Map.Entry {
         Map.Entry entry = (Map.Entry) obj;
         return Objects.equal(getKey(), entry.getKey()) && Objects.equal(getValue(), entry.getValue());
     }
-
-    @Override // java.util.Map.Entry
-    public abstract Object getKey();
-
-    @Override // java.util.Map.Entry
-    public abstract Object getValue();
 
     @Override // java.util.Map.Entry
     public int hashCode() {

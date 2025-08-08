@@ -32,23 +32,19 @@ public final class IcyHeaders implements Metadata.Entry {
     public final String name;
     public final String url;
 
-    public IcyHeaders(int i, String str, String str2, String str3, boolean z, int i2) {
-        Assertions.checkArgument(i2 == -1 || i2 > 0);
-        this.bitrate = i;
-        this.genre = str;
-        this.name = str2;
-        this.url = str3;
-        this.isPublic = z;
-        this.metadataInterval = i2;
+    @Override // android.os.Parcelable
+    public int describeContents() {
+        return 0;
     }
 
-    IcyHeaders(Parcel parcel) {
-        this.bitrate = parcel.readInt();
-        this.genre = parcel.readString();
-        this.name = parcel.readString();
-        this.url = parcel.readString();
-        this.isPublic = Util.readBoolean(parcel);
-        this.metadataInterval = parcel.readInt();
+    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
+    public /* synthetic */ byte[] getWrappedMetadataBytes() {
+        return Metadata.Entry.-CC.$default$getWrappedMetadataBytes(this);
+    }
+
+    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
+    public /* synthetic */ Format getWrappedMetadataFormat() {
+        return Metadata.Entry.-CC.$default$getWrappedMetadataFormat(this);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:11:0x005b  */
@@ -90,7 +86,34 @@ public final class IcyHeaders implements Metadata.Entry {
             } catch (NumberFormatException unused) {
                 i3 = -1;
             }
-            if (i3 > 0) {
+            if (i3 <= 0) {
+                try {
+                    Log.w("IcyHeaders", "Invalid bitrate: " + str4);
+                } catch (NumberFormatException unused2) {
+                    Log.w("IcyHeaders", "Invalid bitrate header: " + str4);
+                    i = i3;
+                    z = false;
+                    list = (List) map.get("icy-genre");
+                    if (list != null) {
+                    }
+                    list2 = (List) map.get("icy-name");
+                    if (list2 != null) {
+                    }
+                    list3 = (List) map.get("icy-url");
+                    if (list3 != null) {
+                    }
+                    list4 = (List) map.get("icy-pub");
+                    if (list4 != null) {
+                    }
+                    list5 = (List) map.get("icy-metaint");
+                    if (list5 != null) {
+                    }
+                    z3 = z;
+                    i2 = -1;
+                    if (z3) {
+                    }
+                }
+            } else {
                 i = i3;
                 z = true;
                 list = (List) map.get("icy-genre");
@@ -126,7 +149,7 @@ public final class IcyHeaders implements Metadata.Entry {
                     String str5 = (String) list5.get(0);
                     try {
                         parseInt = Integer.parseInt(str5);
-                    } catch (NumberFormatException unused2) {
+                    } catch (NumberFormatException unused3) {
                     }
                     if (parseInt > 0) {
                         i2 = parseInt;
@@ -137,7 +160,7 @@ public final class IcyHeaders implements Metadata.Entry {
                     }
                     try {
                         Log.w("IcyHeaders", "Invalid metadata interval: " + str5);
-                    } catch (NumberFormatException unused3) {
+                    } catch (NumberFormatException unused4) {
                         i4 = parseInt;
                         Log.w("IcyHeaders", "Invalid metadata interval: " + str5);
                         z3 = z;
@@ -149,33 +172,6 @@ public final class IcyHeaders implements Metadata.Entry {
                 z3 = z;
                 i2 = -1;
                 if (z3) {
-                }
-            } else {
-                try {
-                    Log.w("IcyHeaders", "Invalid bitrate: " + str4);
-                } catch (NumberFormatException unused4) {
-                    Log.w("IcyHeaders", "Invalid bitrate header: " + str4);
-                    i = i3;
-                    z = false;
-                    list = (List) map.get("icy-genre");
-                    if (list != null) {
-                    }
-                    list2 = (List) map.get("icy-name");
-                    if (list2 != null) {
-                    }
-                    list3 = (List) map.get("icy-url");
-                    if (list3 != null) {
-                    }
-                    list4 = (List) map.get("icy-pub");
-                    if (list4 != null) {
-                    }
-                    list5 = (List) map.get("icy-metaint");
-                    if (list5 != null) {
-                    }
-                    z3 = z;
-                    i2 = -1;
-                    if (z3) {
-                    }
                 }
             }
         }
@@ -202,9 +198,35 @@ public final class IcyHeaders implements Metadata.Entry {
         }
     }
 
-    @Override // android.os.Parcelable
-    public int describeContents() {
-        return 0;
+    public IcyHeaders(int i, String str, String str2, String str3, boolean z, int i2) {
+        Assertions.checkArgument(i2 == -1 || i2 > 0);
+        this.bitrate = i;
+        this.genre = str;
+        this.name = str2;
+        this.url = str3;
+        this.isPublic = z;
+        this.metadataInterval = i2;
+    }
+
+    IcyHeaders(Parcel parcel) {
+        this.bitrate = parcel.readInt();
+        this.genre = parcel.readString();
+        this.name = parcel.readString();
+        this.url = parcel.readString();
+        this.isPublic = Util.readBoolean(parcel);
+        this.metadataInterval = parcel.readInt();
+    }
+
+    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
+    public void populateMediaMetadata(MediaMetadata.Builder builder) {
+        String str = this.name;
+        if (str != null) {
+            builder.setStation(str);
+        }
+        String str2 = this.genre;
+        if (str2 != null) {
+            builder.setGenre(str2);
+        }
     }
 
     public boolean equals(Object obj) {
@@ -218,16 +240,6 @@ public final class IcyHeaders implements Metadata.Entry {
         return this.bitrate == icyHeaders.bitrate && Util.areEqual(this.genre, icyHeaders.genre) && Util.areEqual(this.name, icyHeaders.name) && Util.areEqual(this.url, icyHeaders.url) && this.isPublic == icyHeaders.isPublic && this.metadataInterval == icyHeaders.metadataInterval;
     }
 
-    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
-    public /* synthetic */ byte[] getWrappedMetadataBytes() {
-        return Metadata.Entry.-CC.$default$getWrappedMetadataBytes(this);
-    }
-
-    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
-    public /* synthetic */ Format getWrappedMetadataFormat() {
-        return Metadata.Entry.-CC.$default$getWrappedMetadataFormat(this);
-    }
-
     public int hashCode() {
         int i = (this.bitrate + 527) * 31;
         String str = this.genre;
@@ -236,18 +248,6 @@ public final class IcyHeaders implements Metadata.Entry {
         int hashCode2 = (hashCode + (str2 != null ? str2.hashCode() : 0)) * 31;
         String str3 = this.url;
         return ((((hashCode2 + (str3 != null ? str3.hashCode() : 0)) * 31) + (this.isPublic ? 1 : 0)) * 31) + this.metadataInterval;
-    }
-
-    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
-    public void populateMediaMetadata(MediaMetadata.Builder builder) {
-        String str = this.name;
-        if (str != null) {
-            builder.setStation(str);
-        }
-        String str2 = this.genre;
-        if (str2 != null) {
-            builder.setGenre(str2);
-        }
     }
 
     public String toString() {

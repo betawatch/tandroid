@@ -15,6 +15,10 @@ final class zzff extends WeakReference {
         this.zza = System.identityHashCode(th);
     }
 
+    public final int hashCode() {
+        return this.zza;
+    }
+
     public final boolean equals(Object obj) {
         if (obj != null && obj.getClass() == zzff.class) {
             if (this == obj) {
@@ -26,9 +30,5 @@ final class zzff extends WeakReference {
             }
         }
         return false;
-    }
-
-    public final int hashCode() {
-        return this.zza;
     }
 }

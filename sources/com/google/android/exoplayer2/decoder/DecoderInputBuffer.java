@@ -16,6 +16,10 @@ public class DecoderInputBuffer extends Buffer {
     public long timeUs;
     public boolean waitingForKeys;
 
+    static {
+        ExoPlayerLibraryInfo.registerModule("goog.exo.decoder");
+    }
+
     public static final class InsufficientCapacityException extends IllegalStateException {
         public final int currentCapacity;
         public final int requiredCapacity;
@@ -27,8 +31,8 @@ public class DecoderInputBuffer extends Buffer {
         }
     }
 
-    static {
-        ExoPlayerLibraryInfo.registerModule("goog.exo.decoder");
+    public static DecoderInputBuffer newNoDataInstance() {
+        return new DecoderInputBuffer(0);
     }
 
     public DecoderInputBuffer(int i) {
@@ -41,34 +45,13 @@ public class DecoderInputBuffer extends Buffer {
         this.paddingSize = i2;
     }
 
-    private ByteBuffer createReplacementByteBuffer(int i) {
-        int i2 = this.bufferReplacementMode;
-        if (i2 == 1) {
-            return ByteBuffer.allocate(i);
+    public void resetSupplementalData(int i) {
+        ByteBuffer byteBuffer = this.supplementalData;
+        if (byteBuffer == null || byteBuffer.capacity() < i) {
+            this.supplementalData = ByteBuffer.allocate(i);
+        } else {
+            this.supplementalData.clear();
         }
-        if (i2 == 2) {
-            return ByteBuffer.allocateDirect(i);
-        }
-        ByteBuffer byteBuffer = this.data;
-        throw new InsufficientCapacityException(byteBuffer == null ? 0 : byteBuffer.capacity(), i);
-    }
-
-    public static DecoderInputBuffer newNoDataInstance() {
-        return new DecoderInputBuffer(0);
-    }
-
-    @Override // com.google.android.exoplayer2.decoder.Buffer
-    public void clear() {
-        super.clear();
-        ByteBuffer byteBuffer = this.data;
-        if (byteBuffer != null) {
-            byteBuffer.clear();
-        }
-        ByteBuffer byteBuffer2 = this.supplementalData;
-        if (byteBuffer2 != null) {
-            byteBuffer2.clear();
-        }
-        this.waitingForKeys = false;
     }
 
     public void ensureSpaceForWrite(int i) {
@@ -94,6 +77,10 @@ public class DecoderInputBuffer extends Buffer {
         this.data = createReplacementByteBuffer;
     }
 
+    public final boolean isEncrypted() {
+        return getFlag(TLObject.FLAG_30);
+    }
+
     public final void flip() {
         ByteBuffer byteBuffer = this.data;
         if (byteBuffer != null) {
@@ -105,16 +92,29 @@ public class DecoderInputBuffer extends Buffer {
         }
     }
 
-    public final boolean isEncrypted() {
-        return getFlag(TLObject.FLAG_30);
+    @Override // com.google.android.exoplayer2.decoder.Buffer
+    public void clear() {
+        super.clear();
+        ByteBuffer byteBuffer = this.data;
+        if (byteBuffer != null) {
+            byteBuffer.clear();
+        }
+        ByteBuffer byteBuffer2 = this.supplementalData;
+        if (byteBuffer2 != null) {
+            byteBuffer2.clear();
+        }
+        this.waitingForKeys = false;
     }
 
-    public void resetSupplementalData(int i) {
-        ByteBuffer byteBuffer = this.supplementalData;
-        if (byteBuffer == null || byteBuffer.capacity() < i) {
-            this.supplementalData = ByteBuffer.allocate(i);
-        } else {
-            this.supplementalData.clear();
+    private ByteBuffer createReplacementByteBuffer(int i) {
+        int i2 = this.bufferReplacementMode;
+        if (i2 == 1) {
+            return ByteBuffer.allocate(i);
         }
+        if (i2 == 2) {
+            return ByteBuffer.allocateDirect(i);
+        }
+        ByteBuffer byteBuffer = this.data;
+        throw new InsufficientCapacityException(byteBuffer == null ? 0 : byteBuffer.capacity(), i);
     }
 }

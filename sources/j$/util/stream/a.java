@@ -5,10 +5,10 @@ import j$.util.function.Consumer;
 import j$.util.function.IntFunction;
 import j$.util.function.LongFunction;
 import j$.util.function.Supplier;
-import java.util.List;
+import java.util.ArrayList;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class a implements Supplier, LongFunction, Consumer, e2 {
+public final /* synthetic */ class a implements Supplier, LongFunction, Consumer, d2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -29,38 +29,38 @@ public final /* synthetic */ class a implements Supplier, LongFunction, Consumer
     private final /* synthetic */ void e() {
     }
 
-    @Override // j$.util.stream.e2, j$.util.function.m
+    @Override // j$.util.stream.d2, j$.util.function.l
     public /* synthetic */ void accept(double d) {
         switch (this.a) {
             case 6:
-                u0.b();
+                t0.b();
                 throw null;
             default:
-                u0.b();
+                t0.b();
                 throw null;
         }
     }
 
-    @Override // j$.util.stream.e2
+    @Override // j$.util.stream.d2
     public /* synthetic */ void accept(int i) {
         switch (this.a) {
             case 6:
-                u0.k();
+                t0.k();
                 throw null;
             default:
-                u0.k();
+                t0.k();
                 throw null;
         }
     }
 
-    @Override // j$.util.stream.e2
+    @Override // j$.util.stream.d2
     public /* synthetic */ void accept(long j) {
         switch (this.a) {
             case 6:
-                u0.l();
+                t0.l();
                 throw null;
             default:
-                u0.l();
+                t0.l();
                 throw null;
         }
     }
@@ -70,16 +70,16 @@ public final /* synthetic */ class a implements Supplier, LongFunction, Consumer
     public void r(Object obj) {
         switch (this.a) {
             case 2:
-                ((e2) this.b).r((e2) obj);
+                ((d2) this.b).r((d2) obj);
                 break;
             case 6:
-                ((O2) this.b).r(obj);
+                ((N2) this.b).r(obj);
                 break;
             case 8:
                 ((Consumer) this.b).r(obj);
                 break;
             default:
-                ((List) this.b).add(obj);
+                ((ArrayList) this.b).add(obj);
                 break;
         }
     }
@@ -97,28 +97,6 @@ public final /* synthetic */ class a implements Supplier, LongFunction, Consumer
         return Consumer.-CC.$default$andThen(this, consumer);
     }
 
-    @Override // j$.util.function.LongFunction
-    public Object apply(long j) {
-        return u0.D(j, (IntFunction) this.b);
-    }
-
-    public boolean f() {
-        switch (this.a) {
-            case 3:
-                c3 c3Var = (c3) this.b;
-                return c3Var.d.s(c3Var.e);
-            case 4:
-                e3 e3Var = (e3) this.b;
-                return e3Var.d.s(e3Var.e);
-            case 5:
-                g3 g3Var = (g3) this.b;
-                return g3Var.d.s(g3Var.e);
-            default:
-                u3 u3Var = (u3) this.b;
-                return u3Var.d.s(u3Var.e);
-        }
-    }
-
     @Override // j$.util.function.Supplier
     public Object get() {
         switch (this.a) {
@@ -129,20 +107,25 @@ public final /* synthetic */ class a implements Supplier, LongFunction, Consumer
         }
     }
 
-    @Override // j$.util.stream.e2
+    @Override // j$.util.stream.d2
     public /* synthetic */ void m() {
         int i = this.a;
     }
 
-    @Override // j$.util.stream.e2
+    @Override // j$.util.stream.d2
     public /* synthetic */ void n(long j) {
         int i = this.a;
     }
 
-    @Override // j$.util.stream.e2
+    @Override // j$.util.stream.d2
     public /* synthetic */ boolean q() {
         switch (this.a) {
         }
         return false;
+    }
+
+    @Override // j$.util.function.LongFunction
+    public Object apply(long j) {
+        return t0.D(j, (IntFunction) this.b);
     }
 }

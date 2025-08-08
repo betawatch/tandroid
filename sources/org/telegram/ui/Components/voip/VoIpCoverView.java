@@ -55,46 +55,6 @@ public class VoIpCoverView extends View {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onConnected$0(ValueAnimator valueAnimator) {
-        int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-        this.diffX1 = intValue;
-        this.diffX2 = intValue;
-        this.diffX3 = intValue;
-        this.diffX4 = intValue;
-        this.diffX5 = intValue;
-        invalidate();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEmojiExpanded$1(ValueAnimator valueAnimator) {
-        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.diffX1 = AndroidUtilities.lerp(this.connectedDiffX, AndroidUtilities.dp(56.0f), floatValue);
-        this.diffX2 = AndroidUtilities.lerp(this.connectedDiffX, AndroidUtilities.dp(36.0f), floatValue);
-        this.diffX3 = AndroidUtilities.lerp(this.connectedDiffX, AndroidUtilities.dp(60.0f), floatValue);
-        this.diffX4 = AndroidUtilities.lerp(this.connectedDiffX, AndroidUtilities.dp(36.0f), floatValue);
-        this.diffX5 = AndroidUtilities.lerp(this.connectedDiffX, AndroidUtilities.dp(64.0f), floatValue);
-        this.diffY1 = AndroidUtilities.lerp(0, AndroidUtilities.dp(50.0f), floatValue);
-        this.diffY2 = AndroidUtilities.lerp(0, AndroidUtilities.dp(20.0f), floatValue);
-        this.diffY3 = AndroidUtilities.lerp(0, 0, floatValue);
-        this.diffY4 = AndroidUtilities.lerp(0, AndroidUtilities.dp(-20.0f), floatValue);
-        this.diffY5 = AndroidUtilities.lerp(0, AndroidUtilities.dp(-40.0f), floatValue);
-        invalidate();
-    }
-
-    @Override // android.view.View
-    protected void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        if (this.allowAnimations) {
-            for (VoipCoverEmoji voipCoverEmoji : this.voipCoverEmojiLeft) {
-                voipCoverEmoji.onAttachedToWindow();
-            }
-            for (VoipCoverEmoji voipCoverEmoji2 : this.voipCoverEmojiRight) {
-                voipCoverEmoji2.onAttachedToWindow();
-            }
-        }
-    }
-
     public void onConnected() {
         if (this.allowAnimations && !this.isConnected) {
             this.isConnected = true;
@@ -114,19 +74,59 @@ public class VoIpCoverView extends View {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$onConnected$0(ValueAnimator valueAnimator) {
+        int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+        this.diffX1 = intValue;
+        this.diffX2 = intValue;
+        this.diffX3 = intValue;
+        this.diffX4 = intValue;
+        this.diffX5 = intValue;
+        invalidate();
+    }
+
+    public void onEmojiExpanded(boolean z) {
+        if (this.allowAnimations && z != this.isEmojiExpanded) {
+            this.isEmojiExpanded = z;
+            ValueAnimator ofFloat = z ? ValueAnimator.ofFloat(0.0f, 1.0f) : ValueAnimator.ofFloat(1.0f, 0.0f);
+            this.positionAnimator = ofFloat;
+            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIpCoverView$$ExternalSyntheticLambda1
+                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                    VoIpCoverView.this.lambda$onEmojiExpanded$1(valueAnimator);
+                }
+            });
+            this.positionAnimator.setInterpolator(CubicBezierInterpolator.DEFAULT);
+            this.positionAnimator.setDuration(200L);
+            this.positionAnimator.start();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$onEmojiExpanded$1(ValueAnimator valueAnimator) {
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        this.diffX1 = AndroidUtilities.lerp(this.connectedDiffX, AndroidUtilities.dp(56.0f), floatValue);
+        this.diffX2 = AndroidUtilities.lerp(this.connectedDiffX, AndroidUtilities.dp(36.0f), floatValue);
+        this.diffX3 = AndroidUtilities.lerp(this.connectedDiffX, AndroidUtilities.dp(60.0f), floatValue);
+        this.diffX4 = AndroidUtilities.lerp(this.connectedDiffX, AndroidUtilities.dp(36.0f), floatValue);
+        this.diffX5 = AndroidUtilities.lerp(this.connectedDiffX, AndroidUtilities.dp(64.0f), floatValue);
+        this.diffY1 = AndroidUtilities.lerp(0, AndroidUtilities.dp(50.0f), floatValue);
+        this.diffY2 = AndroidUtilities.lerp(0, AndroidUtilities.dp(20.0f), floatValue);
+        this.diffY3 = AndroidUtilities.lerp(0, 0, floatValue);
+        this.diffY4 = AndroidUtilities.lerp(0, AndroidUtilities.dp(-20.0f), floatValue);
+        this.diffY5 = AndroidUtilities.lerp(0, AndroidUtilities.dp(-40.0f), floatValue);
+        invalidate();
+    }
+
     @Override // android.view.View
-    protected void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
         if (this.allowAnimations) {
             for (VoipCoverEmoji voipCoverEmoji : this.voipCoverEmojiLeft) {
-                voipCoverEmoji.onDetachedFromWindow();
+                voipCoverEmoji.onLayout(getMeasuredWidth(), getMeasuredHeight());
             }
             for (VoipCoverEmoji voipCoverEmoji2 : this.voipCoverEmojiRight) {
-                voipCoverEmoji2.onDetachedFromWindow();
-            }
-            ValueAnimator valueAnimator = this.positionAnimator;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
+                voipCoverEmoji2.onLayout(getMeasuredWidth(), getMeasuredHeight());
             }
         }
     }
@@ -169,32 +169,32 @@ public class VoIpCoverView extends View {
         }
     }
 
-    public void onEmojiExpanded(boolean z) {
-        if (this.allowAnimations && z != this.isEmojiExpanded) {
-            this.isEmojiExpanded = z;
-            ValueAnimator ofFloat = z ? ValueAnimator.ofFloat(0.0f, 1.0f) : ValueAnimator.ofFloat(1.0f, 0.0f);
-            this.positionAnimator = ofFloat;
-            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIpCoverView$$ExternalSyntheticLambda1
-                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    VoIpCoverView.this.lambda$onEmojiExpanded$1(valueAnimator);
-                }
-            });
-            this.positionAnimator.setInterpolator(CubicBezierInterpolator.DEFAULT);
-            this.positionAnimator.setDuration(200L);
-            this.positionAnimator.start();
+    @Override // android.view.View
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        if (this.allowAnimations) {
+            for (VoipCoverEmoji voipCoverEmoji : this.voipCoverEmojiLeft) {
+                voipCoverEmoji.onAttachedToWindow();
+            }
+            for (VoipCoverEmoji voipCoverEmoji2 : this.voipCoverEmojiRight) {
+                voipCoverEmoji2.onAttachedToWindow();
+            }
         }
     }
 
     @Override // android.view.View
-    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
         if (this.allowAnimations) {
             for (VoipCoverEmoji voipCoverEmoji : this.voipCoverEmojiLeft) {
-                voipCoverEmoji.onLayout(getMeasuredWidth(), getMeasuredHeight());
+                voipCoverEmoji.onDetachedFromWindow();
             }
             for (VoipCoverEmoji voipCoverEmoji2 : this.voipCoverEmojiRight) {
-                voipCoverEmoji2.onLayout(getMeasuredWidth(), getMeasuredHeight());
+                voipCoverEmoji2.onDetachedFromWindow();
+            }
+            ValueAnimator valueAnimator = this.positionAnimator;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
             }
         }
     }

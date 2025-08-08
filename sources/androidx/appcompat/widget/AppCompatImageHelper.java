@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.RippleDrawable;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.widget.ImageView;
@@ -22,81 +23,6 @@ public class AppCompatImageHelper {
 
     public AppCompatImageHelper(ImageView imageView) {
         this.mView = imageView;
-    }
-
-    private boolean applyFrameworkTintUsingColorFilter(Drawable drawable) {
-        if (this.mTmpInfo == null) {
-            this.mTmpInfo = new TintInfo();
-        }
-        TintInfo tintInfo = this.mTmpInfo;
-        tintInfo.clear();
-        ColorStateList imageTintList = ImageViewCompat.getImageTintList(this.mView);
-        if (imageTintList != null) {
-            tintInfo.mHasTintList = true;
-            tintInfo.mTintList = imageTintList;
-        }
-        PorterDuff.Mode imageTintMode = ImageViewCompat.getImageTintMode(this.mView);
-        if (imageTintMode != null) {
-            tintInfo.mHasTintMode = true;
-            tintInfo.mTintMode = imageTintMode;
-        }
-        if (!tintInfo.mHasTintList && !tintInfo.mHasTintMode) {
-            return false;
-        }
-        AppCompatDrawableManager.tintDrawable(drawable, tintInfo, this.mView.getDrawableState());
-        return true;
-    }
-
-    private boolean shouldApplyFrameworkTintUsingColorFilter() {
-        int i = Build.VERSION.SDK_INT;
-        return i > 21 ? this.mInternalImageTint != null : i == 21;
-    }
-
-    void applyImageLevel() {
-        if (this.mView.getDrawable() != null) {
-            this.mView.getDrawable().setLevel(this.mLevel);
-        }
-    }
-
-    void applySupportImageTint() {
-        Drawable drawable = this.mView.getDrawable();
-        if (drawable != null) {
-            DrawableUtils.fixDrawable(drawable);
-        }
-        if (drawable != null) {
-            if (shouldApplyFrameworkTintUsingColorFilter() && applyFrameworkTintUsingColorFilter(drawable)) {
-                return;
-            }
-            TintInfo tintInfo = this.mImageTint;
-            if (tintInfo != null) {
-                AppCompatDrawableManager.tintDrawable(drawable, tintInfo, this.mView.getDrawableState());
-                return;
-            }
-            TintInfo tintInfo2 = this.mInternalImageTint;
-            if (tintInfo2 != null) {
-                AppCompatDrawableManager.tintDrawable(drawable, tintInfo2, this.mView.getDrawableState());
-            }
-        }
-    }
-
-    ColorStateList getSupportImageTintList() {
-        TintInfo tintInfo = this.mImageTint;
-        if (tintInfo != null) {
-            return tintInfo.mTintList;
-        }
-        return null;
-    }
-
-    PorterDuff.Mode getSupportImageTintMode() {
-        TintInfo tintInfo = this.mImageTint;
-        if (tintInfo != null) {
-            return tintInfo.mTintMode;
-        }
-        return null;
-    }
-
-    boolean hasOverlappingRendering() {
-        return Build.VERSION.SDK_INT < 21 || !AppCompatImageHelper$$ExternalSyntheticApiModelOutline0.m(this.mView.getBackground());
     }
 
     public void loadFromAttributes(AttributeSet attributeSet, int i) {
@@ -129,10 +55,6 @@ public class AppCompatImageHelper {
         }
     }
 
-    void obtainLevelFromDrawable(Drawable drawable) {
-        this.mLevel = drawable.getLevel();
-    }
-
     public void setImageResource(int i) {
         if (i != 0) {
             Drawable drawable = AppCompatResources.getDrawable(this.mView.getContext(), i);
@@ -146,6 +68,10 @@ public class AppCompatImageHelper {
         applySupportImageTint();
     }
 
+    boolean hasOverlappingRendering() {
+        return !(this.mView.getBackground() instanceof RippleDrawable);
+    }
+
     void setSupportImageTintList(ColorStateList colorStateList) {
         if (this.mImageTint == null) {
             this.mImageTint = new TintInfo();
@@ -156,6 +82,14 @@ public class AppCompatImageHelper {
         applySupportImageTint();
     }
 
+    ColorStateList getSupportImageTintList() {
+        TintInfo tintInfo = this.mImageTint;
+        if (tintInfo != null) {
+            return tintInfo.mTintList;
+        }
+        return null;
+    }
+
     void setSupportImageTintMode(PorterDuff.Mode mode) {
         if (this.mImageTint == null) {
             this.mImageTint = new TintInfo();
@@ -164,5 +98,72 @@ public class AppCompatImageHelper {
         tintInfo.mTintMode = mode;
         tintInfo.mHasTintMode = true;
         applySupportImageTint();
+    }
+
+    PorterDuff.Mode getSupportImageTintMode() {
+        TintInfo tintInfo = this.mImageTint;
+        if (tintInfo != null) {
+            return tintInfo.mTintMode;
+        }
+        return null;
+    }
+
+    void applySupportImageTint() {
+        Drawable drawable = this.mView.getDrawable();
+        if (drawable != null) {
+            DrawableUtils.fixDrawable(drawable);
+        }
+        if (drawable != null) {
+            if (shouldApplyFrameworkTintUsingColorFilter() && applyFrameworkTintUsingColorFilter(drawable)) {
+                return;
+            }
+            TintInfo tintInfo = this.mImageTint;
+            if (tintInfo != null) {
+                AppCompatDrawableManager.tintDrawable(drawable, tintInfo, this.mView.getDrawableState());
+                return;
+            }
+            TintInfo tintInfo2 = this.mInternalImageTint;
+            if (tintInfo2 != null) {
+                AppCompatDrawableManager.tintDrawable(drawable, tintInfo2, this.mView.getDrawableState());
+            }
+        }
+    }
+
+    private boolean shouldApplyFrameworkTintUsingColorFilter() {
+        int i = Build.VERSION.SDK_INT;
+        return i > 21 ? this.mInternalImageTint != null : i == 21;
+    }
+
+    private boolean applyFrameworkTintUsingColorFilter(Drawable drawable) {
+        if (this.mTmpInfo == null) {
+            this.mTmpInfo = new TintInfo();
+        }
+        TintInfo tintInfo = this.mTmpInfo;
+        tintInfo.clear();
+        ColorStateList imageTintList = ImageViewCompat.getImageTintList(this.mView);
+        if (imageTintList != null) {
+            tintInfo.mHasTintList = true;
+            tintInfo.mTintList = imageTintList;
+        }
+        PorterDuff.Mode imageTintMode = ImageViewCompat.getImageTintMode(this.mView);
+        if (imageTintMode != null) {
+            tintInfo.mHasTintMode = true;
+            tintInfo.mTintMode = imageTintMode;
+        }
+        if (!tintInfo.mHasTintList && !tintInfo.mHasTintMode) {
+            return false;
+        }
+        AppCompatDrawableManager.tintDrawable(drawable, tintInfo, this.mView.getDrawableState());
+        return true;
+    }
+
+    void obtainLevelFromDrawable(Drawable drawable) {
+        this.mLevel = drawable.getLevel();
+    }
+
+    void applyImageLevel() {
+        if (this.mView.getDrawable() != null) {
+            this.mView.getDrawable().setLevel(this.mLevel);
+        }
     }
 }

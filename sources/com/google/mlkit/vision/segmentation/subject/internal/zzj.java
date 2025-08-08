@@ -49,7 +49,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executor;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class zzj extends MLTask {
     private static final Feature[] zza = {OptionalModuleUtils.FEATURE_SUBJECT_SEGMENTATION};
     private static final ImageUtils zzb = ImageUtils.getInstance();
@@ -144,26 +144,24 @@ public final class zzj extends MLTask {
     @Override // com.google.mlkit.common.sdkinternal.ModelResource
     public final synchronized void release() {
         try {
-            try {
-                zzub zzubVar = this.zzi;
-                if (zzubVar != null) {
-                    zzubVar.zzf();
-                }
-            } catch (RemoteException unused) {
-                Log.e("SubjectSegmenterTask", "Failed to release subject segmenter");
+            zzub zzubVar = this.zzi;
+            if (zzubVar != null) {
+                zzubVar.zzf();
             }
-            this.zzg = true;
-            this.zze.zzf(new zztk() { // from class: com.google.mlkit.vision.segmentation.subject.internal.zzf
-                @Override // com.google.android.gms.internal.mlkit_vision_subject_segmentation.zztk
-                public final zzta zza() {
-                    zzoc zzocVar = new zzoc();
-                    zzocVar.zze(zznz.zzb);
-                    return zzto.zzf(zzocVar);
-                }
-            }, zzob.zzez);
+        } catch (RemoteException unused) {
+            Log.e("SubjectSegmenterTask", "Failed to release subject segmenter");
         } finally {
             this.zzi = null;
         }
+        this.zzg = true;
+        this.zze.zzf(new zztk() { // from class: com.google.mlkit.vision.segmentation.subject.internal.zzf
+            @Override // com.google.android.gms.internal.mlkit_vision_subject_segmentation.zztk
+            public final zzta zza() {
+                zzoc zzocVar = new zzoc();
+                zzocVar.zze(zznz.zzb);
+                return zzto.zzf(zzocVar);
+            }
+        }, zzob.zzez);
     }
 
     final /* synthetic */ zzta zzc(long j, zzoa zzoaVar, boolean z, InputImage inputImage, zzuh zzuhVar) {

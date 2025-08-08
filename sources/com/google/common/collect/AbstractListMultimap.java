@@ -11,14 +11,14 @@ abstract class AbstractListMultimap extends AbstractMapBasedMultimap implements 
         super(map);
     }
 
-    @Override // com.google.common.collect.AbstractMultimap, com.google.common.collect.Multimap
-    public Map asMap() {
-        return super.asMap();
+    @Override // com.google.common.collect.AbstractMapBasedMultimap
+    Collection unmodifiableCollectionSubclass(Collection collection) {
+        return Collections.unmodifiableList((List) collection);
     }
 
-    @Override // com.google.common.collect.AbstractMultimap
-    public boolean equals(Object obj) {
-        return super.equals(obj);
+    @Override // com.google.common.collect.AbstractMapBasedMultimap
+    Collection wrapCollection(Object obj, Collection collection) {
+        return wrapList(obj, (List) collection, null);
     }
 
     @Override // com.google.common.collect.AbstractMapBasedMultimap, com.google.common.collect.Multimap
@@ -31,13 +31,13 @@ abstract class AbstractListMultimap extends AbstractMapBasedMultimap implements 
         return super.put(obj, obj2);
     }
 
-    @Override // com.google.common.collect.AbstractMapBasedMultimap
-    Collection unmodifiableCollectionSubclass(Collection collection) {
-        return Collections.unmodifiableList((List) collection);
+    @Override // com.google.common.collect.AbstractMultimap, com.google.common.collect.Multimap
+    public Map asMap() {
+        return super.asMap();
     }
 
-    @Override // com.google.common.collect.AbstractMapBasedMultimap
-    Collection wrapCollection(Object obj, Collection collection) {
-        return wrapList(obj, (List) collection, null);
+    @Override // com.google.common.collect.AbstractMultimap
+    public boolean equals(Object obj) {
+        return super.equals(obj);
     }
 }

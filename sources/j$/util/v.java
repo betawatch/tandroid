@@ -24,8 +24,8 @@ public final /* synthetic */ class v implements x, h {
     }
 
     @Override // j$.util.x
-    public final /* synthetic */ void d(j$.util.function.T t) {
-        this.a.forEachRemaining(j$.util.function.S.a(t));
+    public final /* synthetic */ void d(j$.util.function.Y y) {
+        this.a.forEachRemaining(j$.util.function.X.a(y));
     }
 
     public final /* synthetic */ boolean equals(Object obj) {

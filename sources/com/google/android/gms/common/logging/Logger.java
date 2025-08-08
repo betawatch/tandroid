@@ -43,10 +43,6 @@ public class Logger {
         }
     }
 
-    public void e(String str, Object... objArr) {
-        Log.e(this.zza, format(str, objArr));
-    }
-
     protected String format(String str, Object... objArr) {
         if (objArr != null && objArr.length > 0) {
             str = String.format(Locale.US, str, objArr);
@@ -56,5 +52,9 @@ public class Logger {
 
     public boolean isLoggable(int i) {
         return this.zzd <= i;
+    }
+
+    public void e(String str, Object... objArr) {
+        Log.e(this.zza, format(str, objArr));
     }
 }

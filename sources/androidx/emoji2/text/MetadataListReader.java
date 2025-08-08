@@ -8,55 +8,6 @@ import java.nio.ByteOrder;
 /* loaded from: classes.dex */
 abstract class MetadataListReader {
 
-    private static class ByteBufferReader implements OpenTypeReader {
-        private final ByteBuffer mByteBuffer;
-
-        ByteBufferReader(ByteBuffer byteBuffer) {
-            this.mByteBuffer = byteBuffer;
-            byteBuffer.order(ByteOrder.BIG_ENDIAN);
-        }
-
-        @Override // androidx.emoji2.text.MetadataListReader.OpenTypeReader
-        public long getPosition() {
-            return this.mByteBuffer.position();
-        }
-
-        @Override // androidx.emoji2.text.MetadataListReader.OpenTypeReader
-        public int readTag() {
-            return this.mByteBuffer.getInt();
-        }
-
-        @Override // androidx.emoji2.text.MetadataListReader.OpenTypeReader
-        public long readUnsignedInt() {
-            return MetadataListReader.toUnsignedInt(this.mByteBuffer.getInt());
-        }
-
-        @Override // androidx.emoji2.text.MetadataListReader.OpenTypeReader
-        public int readUnsignedShort() {
-            return MetadataListReader.toUnsignedShort(this.mByteBuffer.getShort());
-        }
-
-        @Override // androidx.emoji2.text.MetadataListReader.OpenTypeReader
-        public void skip(int i) {
-            ByteBuffer byteBuffer = this.mByteBuffer;
-            byteBuffer.position(byteBuffer.position() + i);
-        }
-    }
-
-    private static class OffsetInfo {
-        private final long mLength;
-        private final long mStartOffset;
-
-        OffsetInfo(long j, long j2) {
-            this.mStartOffset = j;
-            this.mLength = j2;
-        }
-
-        long getStartOffset() {
-            return this.mStartOffset;
-        }
-    }
-
     private interface OpenTypeReader {
         long getPosition();
 
@@ -67,6 +18,20 @@ abstract class MetadataListReader {
         int readUnsignedShort();
 
         void skip(int i);
+    }
+
+    static long toUnsignedInt(int i) {
+        return i & 4294967295L;
+    }
+
+    static int toUnsignedShort(short s) {
+        return s & 65535;
+    }
+
+    static MetadataList read(ByteBuffer byteBuffer) {
+        ByteBuffer duplicate = byteBuffer.duplicate();
+        duplicate.position((int) findOffsetInfo(new ByteBufferReader(duplicate)).getStartOffset());
+        return MetadataList.getRootAsMetadataList(duplicate);
     }
 
     private static OffsetInfo findOffsetInfo(OpenTypeReader openTypeReader) {
@@ -108,17 +73,52 @@ abstract class MetadataListReader {
         throw new IOException("Cannot read metadata.");
     }
 
-    static MetadataList read(ByteBuffer byteBuffer) {
-        ByteBuffer duplicate = byteBuffer.duplicate();
-        duplicate.position((int) findOffsetInfo(new ByteBufferReader(duplicate)).getStartOffset());
-        return MetadataList.getRootAsMetadataList(duplicate);
+    private static class OffsetInfo {
+        private final long mLength;
+        private final long mStartOffset;
+
+        OffsetInfo(long j, long j2) {
+            this.mStartOffset = j;
+            this.mLength = j2;
+        }
+
+        long getStartOffset() {
+            return this.mStartOffset;
+        }
     }
 
-    static long toUnsignedInt(int i) {
-        return i & 4294967295L;
-    }
+    private static class ByteBufferReader implements OpenTypeReader {
+        private final ByteBuffer mByteBuffer;
 
-    static int toUnsignedShort(short s) {
-        return s & 65535;
+        ByteBufferReader(ByteBuffer byteBuffer) {
+            this.mByteBuffer = byteBuffer;
+            byteBuffer.order(ByteOrder.BIG_ENDIAN);
+        }
+
+        @Override // androidx.emoji2.text.MetadataListReader.OpenTypeReader
+        public int readUnsignedShort() {
+            return MetadataListReader.toUnsignedShort(this.mByteBuffer.getShort());
+        }
+
+        @Override // androidx.emoji2.text.MetadataListReader.OpenTypeReader
+        public long readUnsignedInt() {
+            return MetadataListReader.toUnsignedInt(this.mByteBuffer.getInt());
+        }
+
+        @Override // androidx.emoji2.text.MetadataListReader.OpenTypeReader
+        public int readTag() {
+            return this.mByteBuffer.getInt();
+        }
+
+        @Override // androidx.emoji2.text.MetadataListReader.OpenTypeReader
+        public void skip(int i) {
+            ByteBuffer byteBuffer = this.mByteBuffer;
+            byteBuffer.position(byteBuffer.position() + i);
+        }
+
+        @Override // androidx.emoji2.text.MetadataListReader.OpenTypeReader
+        public long getPosition() {
+            return this.mByteBuffer.position();
+        }
     }
 }

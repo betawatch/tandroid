@@ -2,9 +2,6 @@ package androidx.datastore.preferences.protobuf;
 
 /* loaded from: classes.dex */
 abstract class UnknownFieldSchema {
-    UnknownFieldSchema() {
-    }
-
     abstract void addFixed32(Object obj, int i, int i2);
 
     abstract void addFixed64(Object obj, int i, long j);
@@ -27,9 +24,21 @@ abstract class UnknownFieldSchema {
 
     abstract Object merge(Object obj, Object obj2);
 
-    final void mergeFrom(Object obj, Reader reader) {
-        while (reader.getFieldNumber() != Integer.MAX_VALUE && mergeOneFieldFrom(obj, reader)) {
-        }
+    abstract Object newBuilder();
+
+    abstract void setBuilderToMessage(Object obj, Object obj2);
+
+    abstract void setToMessage(Object obj, Object obj2);
+
+    abstract boolean shouldDiscardUnknownFields(Reader reader);
+
+    abstract Object toImmutable(Object obj);
+
+    abstract void writeAsMessageSetTo(Object obj, Writer writer);
+
+    abstract void writeTo(Object obj, Writer writer);
+
+    UnknownFieldSchema() {
     }
 
     final boolean mergeOneFieldFrom(Object obj, Reader reader) {
@@ -52,11 +61,11 @@ abstract class UnknownFieldSchema {
             if (tagWireType == 4) {
                 return false;
             }
-            if (tagWireType != 5) {
-                throw InvalidProtocolBufferException.invalidWireType();
+            if (tagWireType == 5) {
+                addFixed32(obj, tagFieldNumber, reader.readFixed32());
+                return true;
             }
-            addFixed32(obj, tagFieldNumber, reader.readFixed32());
-            return true;
+            throw InvalidProtocolBufferException.invalidWireType();
         }
         Object newBuilder = newBuilder();
         int makeTag = WireFormat.makeTag(tagFieldNumber, 4);
@@ -68,17 +77,8 @@ abstract class UnknownFieldSchema {
         return true;
     }
 
-    abstract Object newBuilder();
-
-    abstract void setBuilderToMessage(Object obj, Object obj2);
-
-    abstract void setToMessage(Object obj, Object obj2);
-
-    abstract boolean shouldDiscardUnknownFields(Reader reader);
-
-    abstract Object toImmutable(Object obj);
-
-    abstract void writeAsMessageSetTo(Object obj, Writer writer);
-
-    abstract void writeTo(Object obj, Writer writer);
+    final void mergeFrom(Object obj, Reader reader) {
+        while (reader.getFieldNumber() != Integer.MAX_VALUE && mergeOneFieldFrom(obj, reader)) {
+        }
+    }
 }

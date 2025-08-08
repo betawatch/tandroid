@@ -5,11 +5,15 @@ import android.os.Looper;
 
 /* loaded from: classes.dex */
 public class zau extends Handler {
+    private final Looper zaa;
+
     public zau(Looper looper) {
         super(looper);
+        this.zaa = Looper.getMainLooper();
     }
 
     public zau(Looper looper, Handler.Callback callback) {
         super(looper, callback);
+        this.zaa = Looper.getMainLooper();
     }
 }

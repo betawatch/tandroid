@@ -49,183 +49,14 @@ public final class DefaultMediaSourceFactory implements MediaSource.Factory {
     private MediaSource.Factory serverSideAdInsertionMediaSourceFactory;
     private boolean useProgressiveMediaSourceForSubtitles;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    static final class DelegateFactoryLoader {
-        private DataSource.Factory dataSourceFactory;
-        private DrmSessionManagerProvider drmSessionManagerProvider;
-        private final ExtractorsFactory extractorsFactory;
-        private LoadErrorHandlingPolicy loadErrorHandlingPolicy;
-        private final Map mediaSourceFactorySuppliers = new HashMap();
-        private final Set supportedTypes = new HashSet();
-        private final Map mediaSourceFactories = new HashMap();
-
-        public DelegateFactoryLoader(ExtractorsFactory extractorsFactory) {
-            this.extractorsFactory = extractorsFactory;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ MediaSource.Factory lambda$maybeLoadSupplier$4(DataSource.Factory factory) {
-            return new ProgressiveMediaSource.Factory(factory, this.extractorsFactory);
-        }
-
-        /* JADX WARN: Removed duplicated region for block: B:20:0x0075  */
-        /*
-            Code decompiled incorrectly, please refer to instructions dump.
-        */
-        private Supplier maybeLoadSupplier(int i) {
-            Supplier supplier;
-            Supplier supplier2;
-            if (this.mediaSourceFactorySuppliers.containsKey(Integer.valueOf(i))) {
-                return (Supplier) this.mediaSourceFactorySuppliers.get(Integer.valueOf(i));
-            }
-            final DataSource.Factory factory = (DataSource.Factory) Assertions.checkNotNull(this.dataSourceFactory);
-            if (i == 0) {
-                final Class asSubclass = DashMediaSource.Factory.class.asSubclass(MediaSource.Factory.class);
-                supplier2 = new Supplier() { // from class: com.google.android.exoplayer2.source.DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda4
-                    @Override // com.google.common.base.Supplier
-                    public final Object get() {
-                        MediaSource.Factory access$100;
-                        access$100 = DefaultMediaSourceFactory.access$100(asSubclass, factory);
-                        return access$100;
-                    }
-                };
-            } else if (i == 1) {
-                final Class asSubclass2 = SsMediaSource.Factory.class.asSubclass(MediaSource.Factory.class);
-                supplier2 = new Supplier() { // from class: com.google.android.exoplayer2.source.DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda3
-                    @Override // com.google.common.base.Supplier
-                    public final Object get() {
-                        MediaSource.Factory access$100;
-                        access$100 = DefaultMediaSourceFactory.access$100(asSubclass2, factory);
-                        return access$100;
-                    }
-                };
-            } else {
-                if (i != 2) {
-                    if (i != 3) {
-                        if (i == 4) {
-                            supplier = new Supplier() { // from class: com.google.android.exoplayer2.source.DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda0
-                                @Override // com.google.common.base.Supplier
-                                public final Object get() {
-                                    MediaSource.Factory lambda$maybeLoadSupplier$4;
-                                    lambda$maybeLoadSupplier$4 = DefaultMediaSourceFactory.DelegateFactoryLoader.this.lambda$maybeLoadSupplier$4(factory);
-                                    return lambda$maybeLoadSupplier$4;
-                                }
-                            };
-                        }
-                        supplier = null;
-                    } else {
-                        final Class asSubclass3 = RtspMediaSource$Factory.class.asSubclass(MediaSource.Factory.class);
-                        supplier = new Supplier() { // from class: com.google.android.exoplayer2.source.DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda1
-                            @Override // com.google.common.base.Supplier
-                            public final Object get() {
-                                MediaSource.Factory access$000;
-                                access$000 = DefaultMediaSourceFactory.access$000(asSubclass3);
-                                return access$000;
-                            }
-                        };
-                    }
-                    this.mediaSourceFactorySuppliers.put(Integer.valueOf(i), supplier);
-                    if (supplier != null) {
-                        this.supportedTypes.add(Integer.valueOf(i));
-                    }
-                    return supplier;
-                }
-                final Class asSubclass4 = HlsMediaSource.Factory.class.asSubclass(MediaSource.Factory.class);
-                supplier2 = new Supplier() { // from class: com.google.android.exoplayer2.source.DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda2
-                    @Override // com.google.common.base.Supplier
-                    public final Object get() {
-                        MediaSource.Factory access$100;
-                        access$100 = DefaultMediaSourceFactory.access$100(asSubclass4, factory);
-                        return access$100;
-                    }
-                };
-            }
-            supplier = supplier2;
-            this.mediaSourceFactorySuppliers.put(Integer.valueOf(i), supplier);
-            if (supplier != null) {
-            }
-            return supplier;
-        }
-
-        public MediaSource.Factory getMediaSourceFactory(int i) {
-            MediaSource.Factory factory = (MediaSource.Factory) this.mediaSourceFactories.get(Integer.valueOf(i));
-            if (factory != null) {
-                return factory;
-            }
-            Supplier maybeLoadSupplier = maybeLoadSupplier(i);
-            if (maybeLoadSupplier == null) {
-                return null;
-            }
-            MediaSource.Factory factory2 = (MediaSource.Factory) maybeLoadSupplier.get();
-            DrmSessionManagerProvider drmSessionManagerProvider = this.drmSessionManagerProvider;
-            if (drmSessionManagerProvider != null) {
-                factory2.setDrmSessionManagerProvider(drmSessionManagerProvider);
-            }
-            LoadErrorHandlingPolicy loadErrorHandlingPolicy = this.loadErrorHandlingPolicy;
-            if (loadErrorHandlingPolicy != null) {
-                factory2.setLoadErrorHandlingPolicy(loadErrorHandlingPolicy);
-            }
-            this.mediaSourceFactories.put(Integer.valueOf(i), factory2);
-            return factory2;
-        }
-
-        public void setDataSourceFactory(DataSource.Factory factory) {
-            if (factory != this.dataSourceFactory) {
-                this.dataSourceFactory = factory;
-                this.mediaSourceFactorySuppliers.clear();
-                this.mediaSourceFactories.clear();
-            }
-        }
-
-        public void setDrmSessionManagerProvider(DrmSessionManagerProvider drmSessionManagerProvider) {
-            this.drmSessionManagerProvider = drmSessionManagerProvider;
-            Iterator it = this.mediaSourceFactories.values().iterator();
-            while (it.hasNext()) {
-                ((MediaSource.Factory) it.next()).setDrmSessionManagerProvider(drmSessionManagerProvider);
-            }
-        }
-
-        public void setLoadErrorHandlingPolicy(LoadErrorHandlingPolicy loadErrorHandlingPolicy) {
-            this.loadErrorHandlingPolicy = loadErrorHandlingPolicy;
-            Iterator it = this.mediaSourceFactories.values().iterator();
-            while (it.hasNext()) {
-                ((MediaSource.Factory) it.next()).setLoadErrorHandlingPolicy(loadErrorHandlingPolicy);
-            }
-        }
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static /* synthetic */ MediaSource.Factory access$000(Class cls) {
+        return newInstance(cls);
     }
 
-    private static final class UnknownSubtitlesExtractor implements Extractor {
-        private final Format format;
-
-        public UnknownSubtitlesExtractor(Format format) {
-            this.format = format;
-        }
-
-        @Override // com.google.android.exoplayer2.extractor.Extractor
-        public void init(ExtractorOutput extractorOutput) {
-            TrackOutput track = extractorOutput.track(0, 3);
-            extractorOutput.seekMap(new SeekMap.Unseekable(-9223372036854775807L));
-            extractorOutput.endTracks();
-            track.format(this.format.buildUpon().setSampleMimeType("text/x-unknown").setCodecs(this.format.sampleMimeType).build());
-        }
-
-        @Override // com.google.android.exoplayer2.extractor.Extractor
-        public int read(ExtractorInput extractorInput, PositionHolder positionHolder) {
-            return extractorInput.skip(ConnectionsManager.DEFAULT_DATACENTER_ID) == -1 ? -1 : 0;
-        }
-
-        @Override // com.google.android.exoplayer2.extractor.Extractor
-        public void release() {
-        }
-
-        @Override // com.google.android.exoplayer2.extractor.Extractor
-        public void seek(long j, long j2) {
-        }
-
-        @Override // com.google.android.exoplayer2.extractor.Extractor
-        public boolean sniff(ExtractorInput extractorInput) {
-            return true;
-        }
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static /* synthetic */ MediaSource.Factory access$100(Class cls, DataSource.Factory factory) {
+        return newInstance(cls, factory);
     }
 
     public DefaultMediaSourceFactory(Context context, ExtractorsFactory extractorsFactory) {
@@ -244,55 +75,17 @@ public final class DefaultMediaSourceFactory implements MediaSource.Factory {
         this.liveMaxSpeed = -3.4028235E38f;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ MediaSource.Factory access$000(Class cls) {
-        return newInstance(cls);
+    @Override // com.google.android.exoplayer2.source.MediaSource.Factory
+    public DefaultMediaSourceFactory setDrmSessionManagerProvider(DrmSessionManagerProvider drmSessionManagerProvider) {
+        this.delegateFactoryLoader.setDrmSessionManagerProvider((DrmSessionManagerProvider) Assertions.checkNotNull(drmSessionManagerProvider, "MediaSource.Factory#setDrmSessionManagerProvider no longer handles null by instantiating a new DefaultDrmSessionManagerProvider. Explicitly construct and pass an instance in order to retain the old behavior."));
+        return this;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ MediaSource.Factory access$100(Class cls, DataSource.Factory factory) {
-        return newInstance(cls, factory);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Extractor[] lambda$createMediaSource$0(Format format) {
-        SubtitleDecoderFactory subtitleDecoderFactory = SubtitleDecoderFactory.DEFAULT;
-        return new Extractor[]{subtitleDecoderFactory.supportsFormat(format) ? new SubtitleExtractor(subtitleDecoderFactory.createDecoder(format), format) : new UnknownSubtitlesExtractor(format)};
-    }
-
-    private static MediaSource maybeClipMediaSource(MediaItem mediaItem, MediaSource mediaSource) {
-        MediaItem.ClippingConfiguration clippingConfiguration = mediaItem.clippingConfiguration;
-        if (clippingConfiguration.startPositionMs == 0 && clippingConfiguration.endPositionMs == Long.MIN_VALUE && !clippingConfiguration.relativeToDefaultPosition) {
-            return mediaSource;
-        }
-        long msToUs = Util.msToUs(mediaItem.clippingConfiguration.startPositionMs);
-        long msToUs2 = Util.msToUs(mediaItem.clippingConfiguration.endPositionMs);
-        MediaItem.ClippingConfiguration clippingConfiguration2 = mediaItem.clippingConfiguration;
-        return new ClippingMediaSource(mediaSource, msToUs, msToUs2, !clippingConfiguration2.startsAtKeyFrame, clippingConfiguration2.relativeToLiveWindow, clippingConfiguration2.relativeToDefaultPosition);
-    }
-
-    private MediaSource maybeWrapWithAdsMediaSource(MediaItem mediaItem, MediaSource mediaSource) {
-        Assertions.checkNotNull(mediaItem.localConfiguration);
-        mediaItem.localConfiguration.getClass();
-        return mediaSource;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static MediaSource.Factory newInstance(Class cls) {
-        try {
-            return (MediaSource.Factory) cls.getConstructor(null).newInstance(null);
-        } catch (Exception e) {
-            throw new IllegalStateException(e);
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static MediaSource.Factory newInstance(Class cls, DataSource.Factory factory) {
-        try {
-            return (MediaSource.Factory) cls.getConstructor(DataSource.Factory.class).newInstance(factory);
-        } catch (Exception e) {
-            throw new IllegalStateException(e);
-        }
+    @Override // com.google.android.exoplayer2.source.MediaSource.Factory
+    public DefaultMediaSourceFactory setLoadErrorHandlingPolicy(LoadErrorHandlingPolicy loadErrorHandlingPolicy) {
+        this.loadErrorHandlingPolicy = (LoadErrorHandlingPolicy) Assertions.checkNotNull(loadErrorHandlingPolicy, "MediaSource.Factory#setLoadErrorHandlingPolicy no longer handles null by instantiating a new DefaultLoadErrorHandlingPolicy. Explicitly construct and pass an instance in order to retain the old behavior.");
+        this.delegateFactoryLoader.setLoadErrorHandlingPolicy(loadErrorHandlingPolicy);
+        return this;
     }
 
     @Override // com.google.android.exoplayer2.source.MediaSource.Factory
@@ -368,16 +161,228 @@ public final class DefaultMediaSourceFactory implements MediaSource.Factory {
         return maybeWrapWithAdsMediaSource(mediaItem, maybeClipMediaSource(mediaItem, createMediaSource));
     }
 
-    @Override // com.google.android.exoplayer2.source.MediaSource.Factory
-    public DefaultMediaSourceFactory setDrmSessionManagerProvider(DrmSessionManagerProvider drmSessionManagerProvider) {
-        this.delegateFactoryLoader.setDrmSessionManagerProvider((DrmSessionManagerProvider) Assertions.checkNotNull(drmSessionManagerProvider, "MediaSource.Factory#setDrmSessionManagerProvider no longer handles null by instantiating a new DefaultDrmSessionManagerProvider. Explicitly construct and pass an instance in order to retain the old behavior."));
-        return this;
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ Extractor[] lambda$createMediaSource$0(Format format) {
+        Extractor unknownSubtitlesExtractor;
+        SubtitleDecoderFactory subtitleDecoderFactory = SubtitleDecoderFactory.DEFAULT;
+        if (subtitleDecoderFactory.supportsFormat(format)) {
+            unknownSubtitlesExtractor = new SubtitleExtractor(subtitleDecoderFactory.createDecoder(format), format);
+        } else {
+            unknownSubtitlesExtractor = new UnknownSubtitlesExtractor(format);
+        }
+        return new Extractor[]{unknownSubtitlesExtractor};
     }
 
-    @Override // com.google.android.exoplayer2.source.MediaSource.Factory
-    public DefaultMediaSourceFactory setLoadErrorHandlingPolicy(LoadErrorHandlingPolicy loadErrorHandlingPolicy) {
-        this.loadErrorHandlingPolicy = (LoadErrorHandlingPolicy) Assertions.checkNotNull(loadErrorHandlingPolicy, "MediaSource.Factory#setLoadErrorHandlingPolicy no longer handles null by instantiating a new DefaultLoadErrorHandlingPolicy. Explicitly construct and pass an instance in order to retain the old behavior.");
-        this.delegateFactoryLoader.setLoadErrorHandlingPolicy(loadErrorHandlingPolicy);
-        return this;
+    private static MediaSource maybeClipMediaSource(MediaItem mediaItem, MediaSource mediaSource) {
+        MediaItem.ClippingConfiguration clippingConfiguration = mediaItem.clippingConfiguration;
+        if (clippingConfiguration.startPositionMs == 0 && clippingConfiguration.endPositionMs == Long.MIN_VALUE && !clippingConfiguration.relativeToDefaultPosition) {
+            return mediaSource;
+        }
+        long msToUs = Util.msToUs(mediaItem.clippingConfiguration.startPositionMs);
+        long msToUs2 = Util.msToUs(mediaItem.clippingConfiguration.endPositionMs);
+        MediaItem.ClippingConfiguration clippingConfiguration2 = mediaItem.clippingConfiguration;
+        return new ClippingMediaSource(mediaSource, msToUs, msToUs2, !clippingConfiguration2.startsAtKeyFrame, clippingConfiguration2.relativeToLiveWindow, clippingConfiguration2.relativeToDefaultPosition);
+    }
+
+    private MediaSource maybeWrapWithAdsMediaSource(MediaItem mediaItem, MediaSource mediaSource) {
+        Assertions.checkNotNull(mediaItem.localConfiguration);
+        mediaItem.localConfiguration.getClass();
+        return mediaSource;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    static final class DelegateFactoryLoader {
+        private DataSource.Factory dataSourceFactory;
+        private DrmSessionManagerProvider drmSessionManagerProvider;
+        private final ExtractorsFactory extractorsFactory;
+        private LoadErrorHandlingPolicy loadErrorHandlingPolicy;
+        private final Map mediaSourceFactorySuppliers = new HashMap();
+        private final Set supportedTypes = new HashSet();
+        private final Map mediaSourceFactories = new HashMap();
+
+        public DelegateFactoryLoader(ExtractorsFactory extractorsFactory) {
+            this.extractorsFactory = extractorsFactory;
+        }
+
+        public MediaSource.Factory getMediaSourceFactory(int i) {
+            MediaSource.Factory factory = (MediaSource.Factory) this.mediaSourceFactories.get(Integer.valueOf(i));
+            if (factory != null) {
+                return factory;
+            }
+            Supplier maybeLoadSupplier = maybeLoadSupplier(i);
+            if (maybeLoadSupplier == null) {
+                return null;
+            }
+            MediaSource.Factory factory2 = (MediaSource.Factory) maybeLoadSupplier.get();
+            DrmSessionManagerProvider drmSessionManagerProvider = this.drmSessionManagerProvider;
+            if (drmSessionManagerProvider != null) {
+                factory2.setDrmSessionManagerProvider(drmSessionManagerProvider);
+            }
+            LoadErrorHandlingPolicy loadErrorHandlingPolicy = this.loadErrorHandlingPolicy;
+            if (loadErrorHandlingPolicy != null) {
+                factory2.setLoadErrorHandlingPolicy(loadErrorHandlingPolicy);
+            }
+            this.mediaSourceFactories.put(Integer.valueOf(i), factory2);
+            return factory2;
+        }
+
+        public void setDataSourceFactory(DataSource.Factory factory) {
+            if (factory != this.dataSourceFactory) {
+                this.dataSourceFactory = factory;
+                this.mediaSourceFactorySuppliers.clear();
+                this.mediaSourceFactories.clear();
+            }
+        }
+
+        public void setDrmSessionManagerProvider(DrmSessionManagerProvider drmSessionManagerProvider) {
+            this.drmSessionManagerProvider = drmSessionManagerProvider;
+            Iterator it = this.mediaSourceFactories.values().iterator();
+            while (it.hasNext()) {
+                ((MediaSource.Factory) it.next()).setDrmSessionManagerProvider(drmSessionManagerProvider);
+            }
+        }
+
+        public void setLoadErrorHandlingPolicy(LoadErrorHandlingPolicy loadErrorHandlingPolicy) {
+            this.loadErrorHandlingPolicy = loadErrorHandlingPolicy;
+            Iterator it = this.mediaSourceFactories.values().iterator();
+            while (it.hasNext()) {
+                ((MediaSource.Factory) it.next()).setLoadErrorHandlingPolicy(loadErrorHandlingPolicy);
+            }
+        }
+
+        /* JADX WARN: Removed duplicated region for block: B:20:0x0075  */
+        /*
+            Code decompiled incorrectly, please refer to instructions dump.
+        */
+        private Supplier maybeLoadSupplier(int i) {
+            Supplier supplier;
+            Supplier supplier2;
+            if (this.mediaSourceFactorySuppliers.containsKey(Integer.valueOf(i))) {
+                return (Supplier) this.mediaSourceFactorySuppliers.get(Integer.valueOf(i));
+            }
+            final DataSource.Factory factory = (DataSource.Factory) Assertions.checkNotNull(this.dataSourceFactory);
+            if (i == 0) {
+                final Class asSubclass = DashMediaSource.Factory.class.asSubclass(MediaSource.Factory.class);
+                supplier2 = new Supplier() { // from class: com.google.android.exoplayer2.source.DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda4
+                    @Override // com.google.common.base.Supplier
+                    public final Object get() {
+                        MediaSource.Factory access$100;
+                        access$100 = DefaultMediaSourceFactory.access$100(asSubclass, factory);
+                        return access$100;
+                    }
+                };
+            } else if (i == 1) {
+                final Class asSubclass2 = SsMediaSource.Factory.class.asSubclass(MediaSource.Factory.class);
+                supplier2 = new Supplier() { // from class: com.google.android.exoplayer2.source.DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda3
+                    @Override // com.google.common.base.Supplier
+                    public final Object get() {
+                        MediaSource.Factory access$100;
+                        access$100 = DefaultMediaSourceFactory.access$100(asSubclass2, factory);
+                        return access$100;
+                    }
+                };
+            } else if (i == 2) {
+                final Class asSubclass3 = HlsMediaSource.Factory.class.asSubclass(MediaSource.Factory.class);
+                supplier2 = new Supplier() { // from class: com.google.android.exoplayer2.source.DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda2
+                    @Override // com.google.common.base.Supplier
+                    public final Object get() {
+                        MediaSource.Factory access$100;
+                        access$100 = DefaultMediaSourceFactory.access$100(asSubclass3, factory);
+                        return access$100;
+                    }
+                };
+            } else {
+                if (i != 3) {
+                    if (i == 4) {
+                        supplier = new Supplier() { // from class: com.google.android.exoplayer2.source.DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda0
+                            @Override // com.google.common.base.Supplier
+                            public final Object get() {
+                                MediaSource.Factory lambda$maybeLoadSupplier$4;
+                                lambda$maybeLoadSupplier$4 = DefaultMediaSourceFactory.DelegateFactoryLoader.this.lambda$maybeLoadSupplier$4(factory);
+                                return lambda$maybeLoadSupplier$4;
+                            }
+                        };
+                    }
+                    supplier = null;
+                } else {
+                    final Class asSubclass4 = RtspMediaSource$Factory.class.asSubclass(MediaSource.Factory.class);
+                    supplier = new Supplier() { // from class: com.google.android.exoplayer2.source.DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda1
+                        @Override // com.google.common.base.Supplier
+                        public final Object get() {
+                            MediaSource.Factory access$000;
+                            access$000 = DefaultMediaSourceFactory.access$000(asSubclass4);
+                            return access$000;
+                        }
+                    };
+                }
+                this.mediaSourceFactorySuppliers.put(Integer.valueOf(i), supplier);
+                if (supplier != null) {
+                    this.supportedTypes.add(Integer.valueOf(i));
+                }
+                return supplier;
+            }
+            supplier = supplier2;
+            this.mediaSourceFactorySuppliers.put(Integer.valueOf(i), supplier);
+            if (supplier != null) {
+            }
+            return supplier;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ MediaSource.Factory lambda$maybeLoadSupplier$4(DataSource.Factory factory) {
+            return new ProgressiveMediaSource.Factory(factory, this.extractorsFactory);
+        }
+    }
+
+    private static final class UnknownSubtitlesExtractor implements Extractor {
+        private final Format format;
+
+        @Override // com.google.android.exoplayer2.extractor.Extractor
+        public void release() {
+        }
+
+        @Override // com.google.android.exoplayer2.extractor.Extractor
+        public void seek(long j, long j2) {
+        }
+
+        @Override // com.google.android.exoplayer2.extractor.Extractor
+        public boolean sniff(ExtractorInput extractorInput) {
+            return true;
+        }
+
+        public UnknownSubtitlesExtractor(Format format) {
+            this.format = format;
+        }
+
+        @Override // com.google.android.exoplayer2.extractor.Extractor
+        public void init(ExtractorOutput extractorOutput) {
+            TrackOutput track = extractorOutput.track(0, 3);
+            extractorOutput.seekMap(new SeekMap.Unseekable(-9223372036854775807L));
+            extractorOutput.endTracks();
+            track.format(this.format.buildUpon().setSampleMimeType("text/x-unknown").setCodecs(this.format.sampleMimeType).build());
+        }
+
+        @Override // com.google.android.exoplayer2.extractor.Extractor
+        public int read(ExtractorInput extractorInput, PositionHolder positionHolder) {
+            return extractorInput.skip(ConnectionsManager.DEFAULT_DATACENTER_ID) == -1 ? -1 : 0;
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static MediaSource.Factory newInstance(Class cls, DataSource.Factory factory) {
+        try {
+            return (MediaSource.Factory) cls.getConstructor(DataSource.Factory.class).newInstance(factory);
+        } catch (Exception e) {
+            throw new IllegalStateException(e);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static MediaSource.Factory newInstance(Class cls) {
+        try {
+            return (MediaSource.Factory) cls.getConstructor(null).newInstance(null);
+        } catch (Exception e) {
+            throw new IllegalStateException(e);
+        }
     }
 }

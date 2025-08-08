@@ -54,15 +54,13 @@ public final class zzmp implements zzmc {
 
     @Override // com.google.android.gms.internal.mlkit_vision_common.zzmc
     public final void zza(zzmb zzmbVar) {
-        Provider provider;
-        if (this.zzc.zza() == 0) {
-            provider = this.zza;
-            if (provider == null) {
-                return;
-            }
-        } else {
-            provider = this.zzb;
+        if (this.zzc.zza() != 0) {
+            ((Transport) this.zzb.get()).send(zzb(this.zzc, zzmbVar));
+            return;
         }
-        ((Transport) provider.get()).send(zzb(this.zzc, zzmbVar));
+        Provider provider = this.zza;
+        if (provider != null) {
+            ((Transport) provider.get()).send(zzb(this.zzc, zzmbVar));
+        }
     }
 }

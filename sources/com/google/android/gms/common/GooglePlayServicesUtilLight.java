@@ -11,13 +11,12 @@ import android.os.Bundle;
 import android.os.UserManager;
 import android.util.Log;
 import com.google.android.gms.common.internal.Preconditions;
-import com.google.android.gms.common.internal.zzag;
+import com.google.android.gms.common.internal.zzah;
 import com.google.android.gms.common.util.DeviceProperties;
 import com.google.android.gms.common.util.PlatformVersion;
 import com.google.android.gms.common.util.zza;
 import com.google.android.gms.common.wrappers.Wrappers;
 import java.util.Iterator;
-import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /* loaded from: classes.dex */
@@ -37,7 +36,8 @@ public abstract class GooglePlayServicesUtilLight {
             if (notificationManager != null) {
                 notificationManager.cancel(10436);
             }
-        } catch (SecurityException unused) {
+        } catch (SecurityException e) {
+            Log.d("GooglePlayServicesUtil", "Suppressing Security Exception %s in cancelAvailabilityErrorNotifications.", e);
         }
     }
 
@@ -71,8 +71,8 @@ public abstract class GooglePlayServicesUtilLight {
     }
 
     public static boolean honorsDebugCertificates(Context context) {
-        if (!zza) {
-            try {
+        try {
+            if (!zza) {
                 try {
                     PackageInfo packageInfo = Wrappers.packageManager(context).getPackageInfo("com.google.android.gms", 64);
                     GoogleSignatureVerifier.getInstance(context);
@@ -81,93 +81,21 @@ public abstract class GooglePlayServicesUtilLight {
                     } else {
                         zzb = true;
                     }
+                    zza = true;
                 } catch (PackageManager.NameNotFoundException e) {
                     Log.w("GooglePlayServicesUtil", "Cannot find Google Play services package name.", e);
+                    zza = true;
                 }
-                zza = true;
-            } catch (Throwable th) {
-                zza = true;
-                throw th;
             }
+            return zzb || !DeviceProperties.isUserBuild();
+        } catch (Throwable th) {
+            zza = true;
+            throw th;
         }
-        return zzb || !DeviceProperties.isUserBuild();
     }
 
     public static int isGooglePlayServicesAvailable(Context context) {
         return isGooglePlayServicesAvailable(context, GOOGLE_PLAY_SERVICES_VERSION_CODE);
-    }
-
-    public static int isGooglePlayServicesAvailable(Context context, int i) {
-        String valueOf;
-        String str;
-        PackageInfo packageInfo;
-        try {
-            context.getResources().getString(R$string.common_google_play_services_unknown_issue);
-        } catch (Throwable unused) {
-            Log.e("GooglePlayServicesUtil", "The Google Play services resources were not found. Check your project configuration to ensure that the resources are included.");
-        }
-        if (!"com.google.android.gms".equals(context.getPackageName()) && !zzc.get()) {
-            int zza2 = zzag.zza(context);
-            if (zza2 == 0) {
-                throw new GooglePlayServicesMissingManifestValueException();
-            }
-            if (zza2 != GOOGLE_PLAY_SERVICES_VERSION_CODE) {
-                throw new GooglePlayServicesIncorrectManifestValueException(zza2);
-            }
-        }
-        boolean z = (DeviceProperties.isWearableWithoutPlayStore(context) || DeviceProperties.zzb(context)) ? false : true;
-        Preconditions.checkArgument(i >= 0);
-        String packageName = context.getPackageName();
-        PackageManager packageManager = context.getPackageManager();
-        if (z) {
-            try {
-                packageInfo = packageManager.getPackageInfo("com.android.vending", 8256);
-            } catch (PackageManager.NameNotFoundException unused2) {
-                valueOf = String.valueOf(packageName);
-                str = " requires the Google Play Store, but it is missing.";
-            }
-        } else {
-            packageInfo = null;
-        }
-        try {
-            PackageInfo packageInfo2 = packageManager.getPackageInfo("com.google.android.gms", 64);
-            GoogleSignatureVerifier.getInstance(context);
-            if (GoogleSignatureVerifier.zzb(packageInfo2, true)) {
-                if (z) {
-                    Preconditions.checkNotNull(packageInfo);
-                    if (!GoogleSignatureVerifier.zzb(packageInfo, true)) {
-                        valueOf = String.valueOf(packageName);
-                        str = " requires Google Play Store, but its signature is invalid.";
-                    }
-                }
-                if (!z || packageInfo == null || packageInfo.signatures[0].equals(packageInfo2.signatures[0])) {
-                    if (zza.zza(packageInfo2.versionCode) >= zza.zza(i)) {
-                        ApplicationInfo applicationInfo = packageInfo2.applicationInfo;
-                        if (applicationInfo == null) {
-                            try {
-                                applicationInfo = packageManager.getApplicationInfo("com.google.android.gms", 0);
-                            } catch (PackageManager.NameNotFoundException e) {
-                                Log.wtf("GooglePlayServicesUtil", String.valueOf(packageName).concat(" requires Google Play services, but they're missing when getting application info."), e);
-                                return 1;
-                            }
-                        }
-                        return !applicationInfo.enabled ? 3 : 0;
-                    }
-                    Log.w("GooglePlayServicesUtil", "Google Play services out of date for " + packageName + ".  Requires " + i + " but found " + packageInfo2.versionCode);
-                    return 2;
-                }
-                valueOf = String.valueOf(packageName);
-                str = " requires Google Play Store, but its signature doesn't match that of Google Play services.";
-            } else {
-                valueOf = String.valueOf(packageName);
-                str = " requires Google Play services, but their signature is invalid.";
-            }
-            Log.w("GooglePlayServicesUtil", valueOf.concat(str));
-            return 9;
-        } catch (PackageManager.NameNotFoundException unused3) {
-            Log.w("GooglePlayServicesUtil", String.valueOf(packageName).concat(" requires Google Play services, but they are missing."));
-            return 1;
-        }
     }
 
     public static boolean isPlayServicesPossiblyUpdating(Context context, int i) {
@@ -195,19 +123,13 @@ public abstract class GooglePlayServicesUtilLight {
     }
 
     static boolean zza(Context context, String str) {
-        PackageInstaller packageInstaller;
-        List allSessions;
-        String appPackageName;
         ApplicationInfo applicationInfo;
         boolean equals = str.equals("com.google.android.gms");
         if (PlatformVersion.isAtLeastLollipop()) {
             try {
-                packageInstaller = context.getPackageManager().getPackageInstaller();
-                allSessions = packageInstaller.getAllSessions();
-                Iterator it = allSessions.iterator();
+                Iterator<PackageInstaller.SessionInfo> it = context.getPackageManager().getPackageInstaller().getAllSessions().iterator();
                 while (it.hasNext()) {
-                    appPackageName = GooglePlayServicesUtilLight$$ExternalSyntheticApiModelOutline2.m(it.next()).getAppPackageName();
-                    if (str.equals(appPackageName)) {
+                    if (str.equals(it.next().getAppPackageName())) {
                         return true;
                     }
                 }
@@ -220,5 +142,71 @@ public abstract class GooglePlayServicesUtilLight {
         } catch (PackageManager.NameNotFoundException unused2) {
         }
         return equals ? applicationInfo.enabled : applicationInfo.enabled && !isRestrictedUserProfile(context);
+    }
+
+    public static int isGooglePlayServicesAvailable(Context context, int i) {
+        PackageInfo packageInfo;
+        try {
+            context.getResources().getString(R$string.common_google_play_services_unknown_issue);
+        } catch (Throwable unused) {
+            Log.e("GooglePlayServicesUtil", "The Google Play services resources were not found. Check your project configuration to ensure that the resources are included.");
+        }
+        if (!"com.google.android.gms".equals(context.getPackageName()) && !zzc.get()) {
+            int zza2 = zzah.zza(context);
+            if (zza2 == 0) {
+                throw new GooglePlayServicesMissingManifestValueException();
+            }
+            if (zza2 != GOOGLE_PLAY_SERVICES_VERSION_CODE) {
+                throw new GooglePlayServicesIncorrectManifestValueException(zza2);
+            }
+        }
+        boolean z = (DeviceProperties.isWearableWithoutPlayStore(context) || DeviceProperties.zzb(context)) ? false : true;
+        Preconditions.checkArgument(i >= 0);
+        String packageName = context.getPackageName();
+        PackageManager packageManager = context.getPackageManager();
+        if (z) {
+            try {
+                packageInfo = packageManager.getPackageInfo("com.android.vending", 8256);
+            } catch (PackageManager.NameNotFoundException unused2) {
+                Log.w("GooglePlayServicesUtil", String.valueOf(packageName).concat(" requires the Google Play Store, but it is missing."));
+            }
+        } else {
+            packageInfo = null;
+        }
+        try {
+            PackageInfo packageInfo2 = packageManager.getPackageInfo("com.google.android.gms", 64);
+            GoogleSignatureVerifier.getInstance(context);
+            if (GoogleSignatureVerifier.zzb(packageInfo2, true)) {
+                if (z) {
+                    Preconditions.checkNotNull(packageInfo);
+                    if (!GoogleSignatureVerifier.zzb(packageInfo, true)) {
+                        Log.w("GooglePlayServicesUtil", String.valueOf(packageName).concat(" requires Google Play Store, but its signature is invalid."));
+                    }
+                }
+                if (!z || packageInfo == null || packageInfo.signatures[0].equals(packageInfo2.signatures[0])) {
+                    if (zza.zza(packageInfo2.versionCode) >= zza.zza(i)) {
+                        ApplicationInfo applicationInfo = packageInfo2.applicationInfo;
+                        if (applicationInfo == null) {
+                            try {
+                                applicationInfo = packageManager.getApplicationInfo("com.google.android.gms", 0);
+                            } catch (PackageManager.NameNotFoundException e) {
+                                Log.wtf("GooglePlayServicesUtil", String.valueOf(packageName).concat(" requires Google Play services, but they're missing when getting application info."), e);
+                                return 1;
+                            }
+                        }
+                        return !applicationInfo.enabled ? 3 : 0;
+                    }
+                    Log.w("GooglePlayServicesUtil", "Google Play services out of date for " + packageName + ".  Requires " + i + " but found " + packageInfo2.versionCode);
+                    return 2;
+                }
+                Log.w("GooglePlayServicesUtil", String.valueOf(packageName).concat(" requires Google Play Store, but its signature doesn't match that of Google Play services."));
+            } else {
+                Log.w("GooglePlayServicesUtil", String.valueOf(packageName).concat(" requires Google Play services, but their signature is invalid."));
+            }
+            return 9;
+        } catch (PackageManager.NameNotFoundException unused3) {
+            Log.w("GooglePlayServicesUtil", String.valueOf(packageName).concat(" requires Google Play services, but they are missing."));
+            return 1;
+        }
     }
 }

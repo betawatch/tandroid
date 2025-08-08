@@ -1,157 +1,167 @@
 package j$.util.stream;
 
-import java.util.Comparator;
+import j$.util.Spliterator;
+import java.util.Arrays;
 
 /* loaded from: classes2.dex */
-abstract class M2 implements j$.util.M {
-    int a;
-    final int b;
-    int c;
-    final int d;
+abstract class M2 extends d implements Iterable, j$.lang.a {
     Object e;
-    final /* synthetic */ N2 f;
+    Object[] f;
 
-    M2(N2 n2, int i, int i2, int i3, int i4) {
-        this.f = n2;
-        this.a = i;
-        this.b = i2;
-        this.c = i3;
-        this.d = i4;
-        Object[] objArr = n2.f;
-        this.e = objArr == null ? n2.e : objArr[i];
+    public abstract Object c(int i);
+
+    public abstract Spliterator spliterator();
+
+    @Override // java.lang.Iterable
+    public final /* synthetic */ java.util.Spliterator spliterator() {
+        return Spliterator.Wrapper.convert(spliterator());
     }
 
-    abstract void b(int i, Object obj, Object obj2);
+    protected abstract void u(Object obj, int i, int i2, Object obj2);
 
-    @Override // j$.util.Spliterator
-    public final int characteristics() {
-        return 16464;
+    protected abstract int v(Object obj);
+
+    protected abstract Object[] y();
+
+    M2(int i) {
+        super(i);
+        this.e = c(1 << this.a);
     }
 
-    @Override // j$.util.Spliterator
-    public final long estimateSize() {
-        int i = this.a;
-        int i2 = this.d;
-        int i3 = this.b;
-        if (i == i3) {
-            return i2 - this.c;
+    M2() {
+        this.e = c(16);
+    }
+
+    protected final void x(long j) {
+        long v;
+        int i = this.c;
+        if (i == 0) {
+            v = v(this.e);
+        } else {
+            v = v(this.f[i]) + this.d[i];
         }
-        long[] jArr = this.f.d;
-        return ((jArr[i3] + i2) - jArr[i]) - this.c;
-    }
-
-    abstract j$.util.M f(Object obj, int i, int i2);
-
-    @Override // j$.util.M
-    /* renamed from: forEachRemaining, reason: merged with bridge method [inline-methods] and merged with bridge method [inline-methods] and merged with bridge method [inline-methods] */
-    public final void e(Object obj) {
-        N2 n2;
-        obj.getClass();
-        int i = this.a;
-        int i2 = this.d;
-        int i3 = this.b;
-        if (i < i3 || (i == i3 && this.c < i2)) {
-            int i4 = this.c;
-            while (true) {
-                n2 = this.f;
-                if (i >= i3) {
-                    break;
+        if (j > v) {
+            if (this.f == null) {
+                Object[] y = y();
+                this.f = y;
+                this.d = new long[8];
+                y[0] = this.e;
+            }
+            int i2 = this.c + 1;
+            while (j > v) {
+                Object[] objArr = this.f;
+                if (i2 >= objArr.length) {
+                    int length = objArr.length * 2;
+                    this.f = Arrays.copyOf(objArr, length);
+                    this.d = Arrays.copyOf(this.d, length);
                 }
-                Object obj2 = n2.f[i];
-                n2.u(obj2, i4, n2.v(obj2), obj);
-                i++;
-                i4 = 0;
-            }
-            n2.u(this.a == i3 ? this.e : n2.f[i3], i4, i2, obj);
-            this.a = i3;
-            this.c = i2;
-        }
-    }
-
-    @Override // j$.util.Spliterator
-    public final Comparator getComparator() {
-        throw new IllegalStateException();
-    }
-
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.util.A.j(this);
-    }
-
-    abstract j$.util.M h(int i, int i2, int i3, int i4);
-
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return j$.util.A.k(this, i);
-    }
-
-    @Override // j$.util.M
-    /* renamed from: tryAdvance, reason: merged with bridge method [inline-methods] and merged with bridge method [inline-methods] and merged with bridge method [inline-methods] */
-    public final boolean p(Object obj) {
-        obj.getClass();
-        int i = this.a;
-        int i2 = this.b;
-        if (i >= i2 && (i != i2 || this.c >= this.d)) {
-            return false;
-        }
-        Object obj2 = this.e;
-        int i3 = this.c;
-        this.c = i3 + 1;
-        b(i3, obj2, obj);
-        int i4 = this.c;
-        Object obj3 = this.e;
-        N2 n2 = this.f;
-        if (i4 == n2.v(obj3)) {
-            this.c = 0;
-            int i5 = this.a + 1;
-            this.a = i5;
-            Object[] objArr = n2.f;
-            if (objArr != null && i5 <= i2) {
-                this.e = objArr[i5];
+                int i3 = this.a;
+                if (i2 != 0 && i2 != 1) {
+                    i3 = Math.min((i3 + i2) - 1, 30);
+                }
+                int i4 = 1 << i3;
+                this.f[i2] = c(i4);
+                long[] jArr = this.d;
+                jArr[i2] = jArr[i2 - 1] + v(this.f[r6]);
+                v += i4;
+                i2++;
             }
         }
-        return true;
     }
 
-    @Override // j$.util.M, j$.util.Spliterator
-    public /* bridge */ /* synthetic */ j$.util.D trySplit() {
-        return (j$.util.D) trySplit();
-    }
-
-    @Override // j$.util.M, j$.util.Spliterator
-    public /* bridge */ /* synthetic */ j$.util.G trySplit() {
-        return (j$.util.G) trySplit();
-    }
-
-    @Override // j$.util.M, j$.util.Spliterator
-    public /* bridge */ /* synthetic */ j$.util.J trySplit() {
-        return (j$.util.J) trySplit();
-    }
-
-    @Override // j$.util.Spliterator
-    public final j$.util.M trySplit() {
-        int i = this.a;
-        int i2 = this.b;
-        if (i < i2) {
-            int i3 = i2 - 1;
-            int i4 = this.c;
-            N2 n2 = this.f;
-            j$.util.M h = h(i, i3, i4, n2.v(n2.f[i3]));
-            this.a = i2;
-            this.c = 0;
-            this.e = n2.f[i2];
-            return h;
+    protected final int w(long j) {
+        if (this.c == 0) {
+            if (j < this.b) {
+                return 0;
+            }
+            throw new IndexOutOfBoundsException(Long.toString(j));
         }
-        if (i != i2) {
-            return null;
+        if (j >= count()) {
+            throw new IndexOutOfBoundsException(Long.toString(j));
         }
-        int i5 = this.c;
-        int i6 = (this.d - i5) / 2;
-        if (i6 == 0) {
-            return null;
+        for (int i = 0; i <= this.c; i++) {
+            if (j < this.d[i] + v(this.f[i])) {
+                return i;
+            }
         }
-        j$.util.M f = f(this.e, i5, i6);
-        this.c += i6;
-        return f;
+        throw new IndexOutOfBoundsException(Long.toString(j));
+    }
+
+    public void d(Object obj, int i) {
+        long j = i;
+        long count = count() + j;
+        if (count > v(obj) || count < j) {
+            throw new IndexOutOfBoundsException("does not fit");
+        }
+        if (this.c == 0) {
+            System.arraycopy(this.e, 0, obj, i, this.b);
+            return;
+        }
+        for (int i2 = 0; i2 < this.c; i2++) {
+            Object obj2 = this.f[i2];
+            System.arraycopy(obj2, 0, obj, i, v(obj2));
+            i += v(this.f[i2]);
+        }
+        int i3 = this.b;
+        if (i3 > 0) {
+            System.arraycopy(this.e, 0, obj, i, i3);
+        }
+    }
+
+    public Object e() {
+        long count = count();
+        if (count >= 2147483639) {
+            throw new IllegalArgumentException("Stream size exceeds max array size");
+        }
+        Object c = c((int) count);
+        d(c, 0);
+        return c;
+    }
+
+    protected final void z() {
+        long v;
+        if (this.b == v(this.e)) {
+            if (this.f == null) {
+                Object[] y = y();
+                this.f = y;
+                this.d = new long[8];
+                y[0] = this.e;
+            }
+            int i = this.c;
+            int i2 = i + 1;
+            Object[] objArr = this.f;
+            if (i2 >= objArr.length || objArr[i2] == null) {
+                if (i == 0) {
+                    v = v(this.e);
+                } else {
+                    v = v(objArr[i]) + this.d[i];
+                }
+                x(v + 1);
+            }
+            this.b = 0;
+            int i3 = this.c + 1;
+            this.c = i3;
+            this.e = this.f[i3];
+        }
+    }
+
+    @Override // j$.util.stream.d
+    public final void clear() {
+        Object[] objArr = this.f;
+        if (objArr != null) {
+            this.e = objArr[0];
+            this.f = null;
+            this.d = null;
+        }
+        this.b = 0;
+        this.c = 0;
+    }
+
+    public void g(Object obj) {
+        for (int i = 0; i < this.c; i++) {
+            Object obj2 = this.f[i];
+            u(obj2, 0, v(obj2), obj);
+        }
+        u(this.e, 0, this.b, obj);
     }
 }

@@ -6,24 +6,18 @@ import android.os.Parcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class RemoteMessageCreator implements Parcelable.Creator {
-    static void writeToParcel(RemoteMessage remoteMessage, Parcel parcel, int i) {
-        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeBundle(parcel, 2, remoteMessage.bundle, false);
-        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
-    }
-
     @Override // android.os.Parcelable.Creator
     public RemoteMessage createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
         Bundle bundle = null;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
-            if (SafeParcelReader.getFieldId(readHeader) != 2) {
-                SafeParcelReader.skipUnknownField(parcel, readHeader);
-            } else {
+            if (SafeParcelReader.getFieldId(readHeader) == 2) {
                 bundle = SafeParcelReader.createBundle(parcel, readHeader);
+            } else {
+                SafeParcelReader.skipUnknownField(parcel, readHeader);
             }
         }
         SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
@@ -33,5 +27,11 @@ public class RemoteMessageCreator implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
     public RemoteMessage[] newArray(int i) {
         return new RemoteMessage[i];
+    }
+
+    static void writeToParcel(RemoteMessage remoteMessage, Parcel parcel, int i) {
+        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
+        SafeParcelWriter.writeBundle(parcel, 2, remoteMessage.bundle, false);
+        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
     }
 }

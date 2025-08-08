@@ -3,7 +3,7 @@ package com.google.mlkit.common.sdkinternal.model;
 import com.google.android.gms.common.internal.GmsLogger;
 import com.google.mlkit.common.sdkinternal.MlKitContext;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class ModelFileHelper {
     private final MlKitContext zze;
     private static final GmsLogger zzd = new GmsLogger("ModelFileHelper", "");

@@ -5,6 +5,7 @@ import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.os.CancellationSignal;
 import android.os.ParcelFileDescriptor;
+import android.system.ErrnoException;
 import android.system.Os;
 import android.system.OsConstants;
 import android.util.Log;
@@ -27,34 +28,6 @@ class TypefaceCompatApi21Impl extends TypefaceCompatBaseImpl {
     private static boolean sHasInitBeenCalled = false;
 
     TypefaceCompatApi21Impl() {
-    }
-
-    private static boolean addFontWeightStyle(Object obj, String str, int i, boolean z) {
-        init();
-        try {
-            return ((Boolean) sAddFontWeightStyle.invoke(obj, str, Integer.valueOf(i), Boolean.valueOf(z))).booleanValue();
-        } catch (IllegalAccessException | InvocationTargetException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    private static Typeface createFromFamiliesWithDefault(Object obj) {
-        init();
-        try {
-            Object newInstance = Array.newInstance((Class<?>) sFontFamily, 1);
-            Array.set(newInstance, 0, obj);
-            return (Typeface) sCreateFromFamiliesWithDefault.invoke(null, newInstance);
-        } catch (IllegalAccessException | InvocationTargetException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    private File getFile(ParcelFileDescriptor parcelFileDescriptor) {
-        String readlink = Os.readlink("/proc/self/fd/" + parcelFileDescriptor.getFd());
-        if (OsConstants.S_ISREG(Os.stat(readlink).st_mode)) {
-            return new File(readlink);
-        }
-        return null;
     }
 
     private static void init() {
@@ -84,6 +57,17 @@ class TypefaceCompatApi21Impl extends TypefaceCompatBaseImpl {
         sCreateFromFamiliesWithDefault = method;
     }
 
+    private File getFile(ParcelFileDescriptor parcelFileDescriptor) {
+        try {
+            String readlink = Os.readlink("/proc/self/fd/" + parcelFileDescriptor.getFd());
+            if (OsConstants.S_ISREG(Os.stat(readlink).st_mode)) {
+                return new File(readlink);
+            }
+        } catch (ErrnoException unused) {
+        }
+        return null;
+    }
+
     private static Object newFamily() {
         init();
         try {
@@ -93,28 +77,24 @@ class TypefaceCompatApi21Impl extends TypefaceCompatBaseImpl {
         }
     }
 
-    @Override // androidx.core.graphics.TypefaceCompatBaseImpl
-    public Typeface createFromFontFamilyFilesResourceEntry(Context context, FontResourcesParserCompat.FontFamilyFilesResourceEntry fontFamilyFilesResourceEntry, Resources resources, int i) {
-        Object newFamily = newFamily();
-        for (FontResourcesParserCompat.FontFileResourceEntry fontFileResourceEntry : fontFamilyFilesResourceEntry.getEntries()) {
-            File tempFile = TypefaceCompatUtil.getTempFile(context);
-            if (tempFile == null) {
-                return null;
-            }
-            try {
-                if (!TypefaceCompatUtil.copyToFile(tempFile, resources, fontFileResourceEntry.getResourceId())) {
-                    return null;
-                }
-                if (!addFontWeightStyle(newFamily, tempFile.getPath(), fontFileResourceEntry.getWeight(), fontFileResourceEntry.isItalic())) {
-                    return null;
-                }
-            } catch (RuntimeException unused) {
-                return null;
-            } finally {
-                tempFile.delete();
-            }
+    private static Typeface createFromFamiliesWithDefault(Object obj) {
+        init();
+        try {
+            Object newInstance = Array.newInstance((Class<?>) sFontFamily, 1);
+            Array.set(newInstance, 0, obj);
+            return (Typeface) sCreateFromFamiliesWithDefault.invoke(null, newInstance);
+        } catch (IllegalAccessException | InvocationTargetException e) {
+            throw new RuntimeException(e);
         }
-        return createFromFamiliesWithDefault(newFamily);
+    }
+
+    private static boolean addFontWeightStyle(Object obj, String str, int i, boolean z) {
+        init();
+        try {
+            return ((Boolean) sAddFontWeightStyle.invoke(obj, str, Integer.valueOf(i), Boolean.valueOf(z))).booleanValue();
+        } catch (IllegalAccessException | InvocationTargetException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override // androidx.core.graphics.TypefaceCompatBaseImpl
@@ -151,5 +131,30 @@ class TypefaceCompatApi21Impl extends TypefaceCompatBaseImpl {
         } catch (IOException unused) {
             return null;
         }
+    }
+
+    @Override // androidx.core.graphics.TypefaceCompatBaseImpl
+    public Typeface createFromFontFamilyFilesResourceEntry(Context context, FontResourcesParserCompat.FontFamilyFilesResourceEntry fontFamilyFilesResourceEntry, Resources resources, int i) {
+        Object newFamily = newFamily();
+        for (FontResourcesParserCompat.FontFileResourceEntry fontFileResourceEntry : fontFamilyFilesResourceEntry.getEntries()) {
+            File tempFile = TypefaceCompatUtil.getTempFile(context);
+            if (tempFile == null) {
+                return null;
+            }
+            try {
+                if (!TypefaceCompatUtil.copyToFile(tempFile, resources, fontFileResourceEntry.getResourceId())) {
+                    return null;
+                }
+                if (!addFontWeightStyle(newFamily, tempFile.getPath(), fontFileResourceEntry.getWeight(), fontFileResourceEntry.isItalic())) {
+                    return null;
+                }
+                tempFile.delete();
+            } catch (RuntimeException unused) {
+                return null;
+            } finally {
+                tempFile.delete();
+            }
+        }
+        return createFromFamiliesWithDefault(newFamily);
     }
 }

@@ -10,15 +10,6 @@ import java.util.concurrent.TimeUnit;
 
 /* loaded from: classes.dex */
 abstract class ConcurrencyHelpers {
-
-    static class Handler28Impl {
-        public static Handler createAsync(Looper looper) {
-            Handler createAsync;
-            createAsync = Handler.createAsync(looper);
-            return createAsync;
-        }
-    }
-
     static ThreadPoolExecutor createBackgroundPriorityExecutor(final String str) {
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(0, 1, 15L, TimeUnit.SECONDS, new LinkedBlockingDeque(), new ThreadFactory() { // from class: androidx.emoji2.text.ConcurrencyHelpers$$ExternalSyntheticLambda0
             @Override // java.util.concurrent.ThreadFactory
@@ -40,6 +31,17 @@ abstract class ConcurrencyHelpers {
     }
 
     static Handler mainHandlerAsync() {
-        return Build.VERSION.SDK_INT >= 28 ? Handler28Impl.createAsync(Looper.getMainLooper()) : new Handler(Looper.getMainLooper());
+        if (Build.VERSION.SDK_INT >= 28) {
+            return Handler28Impl.createAsync(Looper.getMainLooper());
+        }
+        return new Handler(Looper.getMainLooper());
+    }
+
+    static class Handler28Impl {
+        public static Handler createAsync(Looper looper) {
+            Handler createAsync;
+            createAsync = Handler.createAsync(looper);
+            return createAsync;
+        }
     }
 }

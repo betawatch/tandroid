@@ -22,6 +22,12 @@ final class zzcj implements ValueEncoderContext {
         this.zza = true;
     }
 
+    final void zza(FieldDescriptor fieldDescriptor, boolean z) {
+        this.zza = false;
+        this.zzc = fieldDescriptor;
+        this.zzb = z;
+    }
+
     @Override // com.google.firebase.encoders.ValueEncoderContext
     public final ValueEncoderContext add(String str) {
         zzb();
@@ -34,11 +40,5 @@ final class zzcj implements ValueEncoderContext {
         zzb();
         this.zzd.zzd(this.zzc, z ? 1 : 0, this.zzb);
         return this;
-    }
-
-    final void zza(FieldDescriptor fieldDescriptor, boolean z) {
-        this.zza = false;
-        this.zzc = fieldDescriptor;
-        this.zzb = z;
     }
 }

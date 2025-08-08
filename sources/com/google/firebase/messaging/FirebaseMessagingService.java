@@ -11,7 +11,7 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 import java.util.concurrent.ExecutorService;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class FirebaseMessagingService extends EnhancedIntentService {
     public static final String ACTION_DIRECT_BOOT_REMOTE_INTENT = "com.google.firebase.messaging.RECEIVE_DIRECT_BOOT";
     static final String ACTION_NEW_TOKEN = "com.google.firebase.messaging.NEW_TOKEN";
@@ -21,58 +21,38 @@ public class FirebaseMessagingService extends EnhancedIntentService {
     private static final Queue<String> recentlyReceivedMessageIds = new ArrayDeque(10);
     private Rpc rpc;
 
-    private boolean alreadyReceivedMessage(String str) {
-        if (TextUtils.isEmpty(str)) {
-            return false;
-        }
-        Queue<String> queue = recentlyReceivedMessageIds;
-        if (!queue.contains(str)) {
-            if (queue.size() >= 10) {
-                queue.remove();
-            }
-            queue.add(str);
-            return false;
-        }
-        if (!Log.isLoggable("FirebaseMessaging", 3)) {
-            return true;
-        }
-        Log.d("FirebaseMessaging", "Received duplicate message: " + str);
-        return true;
+    public void onDeletedMessages() {
     }
 
-    private void dispatchMessage(Intent intent) {
-        Bundle extras = intent.getExtras();
-        if (extras == null) {
-            extras = new Bundle();
-        }
-        extras.remove("androidx.content.wakelockid");
-        if (NotificationParams.isNotification(extras)) {
-            NotificationParams notificationParams = new NotificationParams(extras);
-            ExecutorService newNetworkIOExecutor = FcmExecutors.newNetworkIOExecutor();
-            try {
-                if (new DisplayNotification(this, notificationParams, newNetworkIOExecutor).handleNotification()) {
-                    return;
-                }
-                if (MessagingAnalytics.shouldUploadScionMetrics(intent)) {
-                    MessagingAnalytics.logNotificationForeground(intent);
-                }
-            } finally {
-                newNetworkIOExecutor.shutdown();
-            }
-        }
-        onMessageReceived(new RemoteMessage(extras));
+    public void onMessageReceived(RemoteMessage remoteMessage) {
     }
 
-    private String getMessageId(Intent intent) {
-        String stringExtra = intent.getStringExtra("google.message_id");
-        return stringExtra == null ? intent.getStringExtra("message_id") : stringExtra;
+    public void onMessageSent(String str) {
     }
 
-    private Rpc getRpc(Context context) {
-        if (this.rpc == null) {
-            this.rpc = new Rpc(context.getApplicationContext());
+    public void onNewToken(String str) {
+    }
+
+    public void onSendError(String str, Exception exc) {
+    }
+
+    @Override // com.google.firebase.messaging.EnhancedIntentService
+    protected Intent getStartCommandIntent(Intent intent) {
+        return ServiceStarter.getInstance().getMessagingEvent();
+    }
+
+    @Override // com.google.firebase.messaging.EnhancedIntentService
+    public void handleIntent(Intent intent) {
+        String action = intent.getAction();
+        if (ACTION_REMOTE_INTENT.equals(action) || ACTION_DIRECT_BOOT_REMOTE_INTENT.equals(action)) {
+            handleMessageIntent(intent);
+            return;
         }
-        return this.rpc;
+        if (ACTION_NEW_TOKEN.equals(action)) {
+            onNewToken(intent.getStringExtra(EXTRA_TOKEN));
+            return;
+        }
+        Log.d("FirebaseMessaging", "Unknown intent action: " + intent.getAction());
     }
 
     private void handleMessageIntent(Intent intent) {
@@ -108,42 +88,63 @@ public class FirebaseMessagingService extends EnhancedIntentService {
         }
     }
 
+    private void dispatchMessage(Intent intent) {
+        Bundle extras = intent.getExtras();
+        if (extras == null) {
+            extras = new Bundle();
+        }
+        extras.remove("androidx.content.wakelockid");
+        if (NotificationParams.isNotification(extras)) {
+            NotificationParams notificationParams = new NotificationParams(extras);
+            ExecutorService newNetworkIOExecutor = FcmExecutors.newNetworkIOExecutor();
+            try {
+                if (new DisplayNotification(this, notificationParams, newNetworkIOExecutor).handleNotification()) {
+                    return;
+                }
+                newNetworkIOExecutor.shutdown();
+                if (MessagingAnalytics.shouldUploadScionMetrics(intent)) {
+                    MessagingAnalytics.logNotificationForeground(intent);
+                }
+            } finally {
+                newNetworkIOExecutor.shutdown();
+            }
+        }
+        onMessageReceived(new RemoteMessage(extras));
+    }
+
+    private boolean alreadyReceivedMessage(String str) {
+        if (TextUtils.isEmpty(str)) {
+            return false;
+        }
+        Queue<String> queue = recentlyReceivedMessageIds;
+        if (queue.contains(str)) {
+            if (!Log.isLoggable("FirebaseMessaging", 3)) {
+                return true;
+            }
+            Log.d("FirebaseMessaging", "Received duplicate message: " + str);
+            return true;
+        }
+        if (queue.size() >= 10) {
+            queue.remove();
+        }
+        queue.add(str);
+        return false;
+    }
+
+    private String getMessageId(Intent intent) {
+        String stringExtra = intent.getStringExtra("google.message_id");
+        return stringExtra == null ? intent.getStringExtra("message_id") : stringExtra;
+    }
+
+    private Rpc getRpc(Context context) {
+        if (this.rpc == null) {
+            this.rpc = new Rpc(context.getApplicationContext());
+        }
+        return this.rpc;
+    }
+
     static void resetForTesting() {
         recentlyReceivedMessageIds.clear();
-    }
-
-    @Override // com.google.firebase.messaging.EnhancedIntentService
-    protected Intent getStartCommandIntent(Intent intent) {
-        return ServiceStarter.getInstance().getMessagingEvent();
-    }
-
-    @Override // com.google.firebase.messaging.EnhancedIntentService
-    public void handleIntent(Intent intent) {
-        String action = intent.getAction();
-        if (ACTION_REMOTE_INTENT.equals(action) || ACTION_DIRECT_BOOT_REMOTE_INTENT.equals(action)) {
-            handleMessageIntent(intent);
-            return;
-        }
-        if (ACTION_NEW_TOKEN.equals(action)) {
-            onNewToken(intent.getStringExtra(EXTRA_TOKEN));
-            return;
-        }
-        Log.d("FirebaseMessaging", "Unknown intent action: " + intent.getAction());
-    }
-
-    public void onDeletedMessages() {
-    }
-
-    public void onMessageReceived(RemoteMessage remoteMessage) {
-    }
-
-    public void onMessageSent(String str) {
-    }
-
-    public void onNewToken(String str) {
-    }
-
-    public void onSendError(String str, Exception exc) {
     }
 
     void setRpcForTesting(Rpc rpc) {

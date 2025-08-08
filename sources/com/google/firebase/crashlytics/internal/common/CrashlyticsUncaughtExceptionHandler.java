@@ -6,7 +6,7 @@ import com.google.firebase.crashlytics.internal.settings.SettingsProvider;
 import java.lang.Thread;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 class CrashlyticsUncaughtExceptionHandler implements Thread.UncaughtExceptionHandler {
     private final CrashListener crashListener;
     private final Thread.UncaughtExceptionHandler defaultHandler;
@@ -23,26 +23,6 @@ class CrashlyticsUncaughtExceptionHandler implements Thread.UncaughtExceptionHan
         this.settingsProvider = settingsProvider;
         this.defaultHandler = uncaughtExceptionHandler;
         this.nativeComponent = crashlyticsNativeComponent;
-    }
-
-    private boolean shouldRecordUncaughtException(Thread thread, Throwable th) {
-        if (thread == null) {
-            Logger.getLogger().e("Crashlytics will not record uncaught exception; null thread");
-            return false;
-        }
-        if (th == null) {
-            Logger.getLogger().e("Crashlytics will not record uncaught exception; null throwable");
-            return false;
-        }
-        if (!this.nativeComponent.hasCrashDataForCurrentSession()) {
-            return true;
-        }
-        Logger.getLogger().d("Crashlytics will not record uncaught exception; native crash exists for session.");
-        return false;
-    }
-
-    boolean isHandlingException() {
-        return this.isHandlingException.get();
     }
 
     @Override // java.lang.Thread.UncaughtExceptionHandler
@@ -67,5 +47,25 @@ class CrashlyticsUncaughtExceptionHandler implements Thread.UncaughtExceptionHan
             this.isHandlingException.set(false);
             throw th2;
         }
+    }
+
+    boolean isHandlingException() {
+        return this.isHandlingException.get();
+    }
+
+    private boolean shouldRecordUncaughtException(Thread thread, Throwable th) {
+        if (thread == null) {
+            Logger.getLogger().e("Crashlytics will not record uncaught exception; null thread");
+            return false;
+        }
+        if (th == null) {
+            Logger.getLogger().e("Crashlytics will not record uncaught exception; null throwable");
+            return false;
+        }
+        if (!this.nativeComponent.hasCrashDataForCurrentSession()) {
+            return true;
+        }
+        Logger.getLogger().d("Crashlytics will not record uncaught exception; native crash exists for session.");
+        return false;
     }
 }

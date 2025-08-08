@@ -44,36 +44,6 @@ public class MediaQueueData extends AbstractSafeParcelable {
         }
     }
 
-    /* synthetic */ MediaQueueData(MediaQueueData mediaQueueData, zzch zzchVar) {
-        this.zza = mediaQueueData.zza;
-        this.zzb = mediaQueueData.zzb;
-        this.zzc = mediaQueueData.zzc;
-        this.zzd = mediaQueueData.zzd;
-        this.zze = mediaQueueData.zze;
-        this.zzf = mediaQueueData.zzf;
-        this.zzg = mediaQueueData.zzg;
-        this.zzh = mediaQueueData.zzh;
-        this.zzi = mediaQueueData.zzi;
-        this.zzj = mediaQueueData.zzj;
-    }
-
-    /* synthetic */ MediaQueueData(zzch zzchVar) {
-        zzl();
-    }
-
-    MediaQueueData(String str, String str2, int i, String str3, MediaQueueContainerMetadata mediaQueueContainerMetadata, int i2, List list, int i3, long j, boolean z) {
-        this.zza = str;
-        this.zzb = str2;
-        this.zzc = i;
-        this.zzd = str3;
-        this.zze = mediaQueueContainerMetadata;
-        this.zzf = i2;
-        this.zzg = list;
-        this.zzh = i3;
-        this.zzi = j;
-        this.zzj = z;
-    }
-
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     static /* bridge */ /* synthetic */ void zzb(MediaQueueData mediaQueueData, JSONObject jSONObject) {
         char c;
@@ -297,9 +267,7 @@ public class MediaQueueData extends AbstractSafeParcelable {
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
     }
 
-    /* JADX WARN: Failed to find 'out' block for switch in B:11:0x0027. Please report as an issue. */
     public final JSONObject zza() {
-        String str;
         JSONObject jSONObject = new JSONObject();
         try {
             if (!TextUtils.isEmpty(this.zza)) {
@@ -310,40 +278,31 @@ public class MediaQueueData extends AbstractSafeParcelable {
             }
             switch (this.zzc) {
                 case 1:
-                    str = "ALBUM";
-                    jSONObject.put("queueType", str);
+                    jSONObject.put("queueType", "ALBUM");
                     break;
                 case 2:
-                    str = "PLAYLIST";
-                    jSONObject.put("queueType", str);
+                    jSONObject.put("queueType", "PLAYLIST");
                     break;
                 case 3:
-                    str = "AUDIOBOOK";
-                    jSONObject.put("queueType", str);
+                    jSONObject.put("queueType", "AUDIOBOOK");
                     break;
                 case 4:
-                    str = "RADIO_STATION";
-                    jSONObject.put("queueType", str);
+                    jSONObject.put("queueType", "RADIO_STATION");
                     break;
                 case 5:
-                    str = "PODCAST_SERIES";
-                    jSONObject.put("queueType", str);
+                    jSONObject.put("queueType", "PODCAST_SERIES");
                     break;
                 case 6:
-                    str = "TV_SERIES";
-                    jSONObject.put("queueType", str);
+                    jSONObject.put("queueType", "TV_SERIES");
                     break;
                 case 7:
-                    str = "VIDEO_PLAYLIST";
-                    jSONObject.put("queueType", str);
+                    jSONObject.put("queueType", "VIDEO_PLAYLIST");
                     break;
                 case 8:
-                    str = "LIVE_TV";
-                    jSONObject.put("queueType", str);
+                    jSONObject.put("queueType", "LIVE_TV");
                     break;
                 case 9:
-                    str = "MOVIE";
-                    jSONObject.put("queueType", str);
+                    jSONObject.put("queueType", "MOVIE");
                     break;
             }
             if (!TextUtils.isEmpty(this.zzd)) {
@@ -379,5 +338,35 @@ public class MediaQueueData extends AbstractSafeParcelable {
 
     public final boolean zzk() {
         return this.zzj;
+    }
+
+    /* synthetic */ MediaQueueData(zzch zzchVar) {
+        zzl();
+    }
+
+    /* synthetic */ MediaQueueData(MediaQueueData mediaQueueData, zzch zzchVar) {
+        this.zza = mediaQueueData.zza;
+        this.zzb = mediaQueueData.zzb;
+        this.zzc = mediaQueueData.zzc;
+        this.zzd = mediaQueueData.zzd;
+        this.zze = mediaQueueData.zze;
+        this.zzf = mediaQueueData.zzf;
+        this.zzg = mediaQueueData.zzg;
+        this.zzh = mediaQueueData.zzh;
+        this.zzi = mediaQueueData.zzi;
+        this.zzj = mediaQueueData.zzj;
+    }
+
+    MediaQueueData(String str, String str2, int i, String str3, MediaQueueContainerMetadata mediaQueueContainerMetadata, int i2, List list, int i3, long j, boolean z) {
+        this.zza = str;
+        this.zzb = str2;
+        this.zzc = i;
+        this.zzd = str3;
+        this.zze = mediaQueueContainerMetadata;
+        this.zzf = i2;
+        this.zzg = list;
+        this.zzh = i3;
+        this.zzi = j;
+        this.zzj = z;
     }
 }

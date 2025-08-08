@@ -12,55 +12,6 @@ class a0 implements Spliterator {
     private long d;
     private int e;
 
-    public a0(java.util.Collection collection, int i) {
-        this.a = collection;
-        this.c = (i & 4096) == 0 ? i | 16448 : i;
-    }
-
-    @Override // j$.util.Spliterator
-    public final void a(Consumer consumer) {
-        consumer.getClass();
-        Iterator it = this.b;
-        if (it == null) {
-            Iterator it2 = this.a.iterator();
-            this.b = it2;
-            this.d = r0.size();
-            it = it2;
-        }
-        if (it instanceof h) {
-            ((h) it).a(consumer);
-        } else {
-            while (it.hasNext()) {
-                consumer.accept(it.next());
-            }
-        }
-    }
-
-    @Override // j$.util.Spliterator
-    public final int characteristics() {
-        return this.c;
-    }
-
-    @Override // j$.util.Spliterator
-    public final long estimateSize() {
-        if (this.b != null) {
-            return this.d;
-        }
-        java.util.Collection collection = this.a;
-        this.b = collection.iterator();
-        long size = collection.size();
-        this.d = size;
-        return size;
-    }
-
-    @Override // j$.util.Spliterator
-    public Comparator getComparator() {
-        if (A.k(this, 4)) {
-            return null;
-        }
-        throw new IllegalStateException();
-    }
-
     @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
         return A.j(this);
@@ -71,18 +22,9 @@ class a0 implements Spliterator {
         return A.k(this, i);
     }
 
-    @Override // j$.util.Spliterator
-    public final boolean s(Consumer consumer) {
-        consumer.getClass();
-        if (this.b == null) {
-            this.b = this.a.iterator();
-            this.d = r0.size();
-        }
-        if (!this.b.hasNext()) {
-            return false;
-        }
-        consumer.accept(this.b.next());
-        return true;
+    public a0(java.util.Collection collection, int i) {
+        this.a = collection;
+        this.c = (i & 4096) == 0 ? i | 16448 : i;
     }
 
     @Override // j$.util.Spliterator
@@ -124,5 +66,63 @@ class a0 implements Spliterator {
             this.d = j2 - i2;
         }
         return new T(objArr, 0, i2, this.c);
+    }
+
+    @Override // j$.util.Spliterator
+    public final void a(Consumer consumer) {
+        consumer.getClass();
+        Iterator it = this.b;
+        if (it == null) {
+            Iterator it2 = this.a.iterator();
+            this.b = it2;
+            this.d = r0.size();
+            it = it2;
+        }
+        if (it instanceof h) {
+            ((h) it).a(consumer);
+        } else {
+            while (it.hasNext()) {
+                consumer.accept(it.next());
+            }
+        }
+    }
+
+    @Override // j$.util.Spliterator
+    public final boolean s(Consumer consumer) {
+        consumer.getClass();
+        if (this.b == null) {
+            this.b = this.a.iterator();
+            this.d = r0.size();
+        }
+        if (!this.b.hasNext()) {
+            return false;
+        }
+        consumer.accept(this.b.next());
+        return true;
+    }
+
+    @Override // j$.util.Spliterator
+    public final long estimateSize() {
+        if (this.b == null) {
+            java.util.Collection collection = this.a;
+            this.b = collection.iterator();
+            long size = collection.size();
+            this.d = size;
+            return size;
+        }
+        return this.d;
+    }
+
+    @Override // j$.util.Spliterator
+    public final int characteristics() {
+        return this.c;
+    }
+
+    @Override // j$.util.Spliterator
+    public Comparator getComparator() {
+        if (A.k(this, 4)) {
+            return null;
+        }
+        throw new IllegalStateException();
     }
 }

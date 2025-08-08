@@ -12,18 +12,6 @@ public interface DrmSessionManager {
     public static final DrmSessionManager DRM_UNSUPPORTED;
     public static final DrmSessionManager DUMMY;
 
-    public abstract /* synthetic */ class -CC {
-        public static DrmSessionReference $default$preacquireSession(DrmSessionManager drmSessionManager, DrmSessionEventListener.EventDispatcher eventDispatcher, Format format) {
-            return DrmSessionReference.EMPTY;
-        }
-
-        public static void $default$prepare(DrmSessionManager drmSessionManager) {
-        }
-
-        public static void $default$release(DrmSessionManager drmSessionManager) {
-        }
-    }
-
     public interface DrmSessionReference {
         public static final DrmSessionReference EMPTY = new DrmSessionReference() { // from class: com.google.android.exoplayer2.drm.DrmSessionManager$DrmSessionReference$$ExternalSyntheticLambda0
             @Override // com.google.android.exoplayer2.drm.DrmSessionManager.DrmSessionReference
@@ -44,21 +32,20 @@ public interface DrmSessionManager {
         void release();
     }
 
+    DrmSession acquireSession(DrmSessionEventListener.EventDispatcher eventDispatcher, Format format);
+
+    int getCryptoType(Format format);
+
+    DrmSessionReference preacquireSession(DrmSessionEventListener.EventDispatcher eventDispatcher, Format format);
+
+    void prepare();
+
+    void release();
+
+    void setPlayer(Looper looper, PlayerId playerId);
+
     static {
         DrmSessionManager drmSessionManager = new DrmSessionManager() { // from class: com.google.android.exoplayer2.drm.DrmSessionManager.1
-            @Override // com.google.android.exoplayer2.drm.DrmSessionManager
-            public DrmSession acquireSession(DrmSessionEventListener.EventDispatcher eventDispatcher, Format format) {
-                if (format.drmInitData == null) {
-                    return null;
-                }
-                return new ErrorStateDrmSession(new DrmSession.DrmSessionException(new UnsupportedDrmException(1), 6001));
-            }
-
-            @Override // com.google.android.exoplayer2.drm.DrmSessionManager
-            public int getCryptoType(Format format) {
-                return format.drmInitData != null ? 1 : 0;
-            }
-
             @Override // com.google.android.exoplayer2.drm.DrmSessionManager
             public /* synthetic */ DrmSessionReference preacquireSession(DrmSessionEventListener.EventDispatcher eventDispatcher, Format format) {
                 return -CC.$default$preacquireSession(this, eventDispatcher, format);
@@ -77,20 +64,33 @@ public interface DrmSessionManager {
             @Override // com.google.android.exoplayer2.drm.DrmSessionManager
             public void setPlayer(Looper looper, PlayerId playerId) {
             }
+
+            @Override // com.google.android.exoplayer2.drm.DrmSessionManager
+            public DrmSession acquireSession(DrmSessionEventListener.EventDispatcher eventDispatcher, Format format) {
+                if (format.drmInitData == null) {
+                    return null;
+                }
+                return new ErrorStateDrmSession(new DrmSession.DrmSessionException(new UnsupportedDrmException(1), 6001));
+            }
+
+            @Override // com.google.android.exoplayer2.drm.DrmSessionManager
+            public int getCryptoType(Format format) {
+                return format.drmInitData != null ? 1 : 0;
+            }
         };
         DRM_UNSUPPORTED = drmSessionManager;
         DUMMY = drmSessionManager;
     }
 
-    DrmSession acquireSession(DrmSessionEventListener.EventDispatcher eventDispatcher, Format format);
+    public abstract /* synthetic */ class -CC {
+        public static void $default$prepare(DrmSessionManager drmSessionManager) {
+        }
 
-    int getCryptoType(Format format);
+        public static void $default$release(DrmSessionManager drmSessionManager) {
+        }
 
-    DrmSessionReference preacquireSession(DrmSessionEventListener.EventDispatcher eventDispatcher, Format format);
-
-    void prepare();
-
-    void release();
-
-    void setPlayer(Looper looper, PlayerId playerId);
+        public static DrmSessionReference $default$preacquireSession(DrmSessionManager drmSessionManager, DrmSessionEventListener.EventDispatcher eventDispatcher, Format format) {
+            return DrmSessionReference.EMPTY;
+        }
+    }
 }

@@ -22,13 +22,6 @@ public final class zzb {
         this(context, new ImageHints(-1, 0, 0));
     }
 
-    public zzb(Context context, ImageHints imageHints) {
-        this.zza = context;
-        this.zzb = imageHints;
-        this.zze = new zzc();
-        zze();
-    }
-
     private final void zze() {
         zzf zzfVar = this.zzd;
         if (zzfVar != null) {
@@ -60,7 +53,6 @@ public final class zzb {
     }
 
     public final boolean zzd(Uri uri) {
-        zzf zzfVar;
         if (uri == null) {
             zze();
             return true;
@@ -71,14 +63,20 @@ public final class zzb {
         zze();
         this.zzc = uri;
         if (this.zzb.getWidthInPixels() == 0 || this.zzb.getHeightInPixels() == 0) {
-            zzfVar = new zzf(this.zza, 0, 0, false, 2097152L, 5, 333, 10000, this);
+            this.zzd = new zzf(this.zza, 0, 0, false, 2097152L, 5, 333, 10000, this);
         } else {
             Context context = this.zza;
             ImageHints imageHints = this.zzb;
-            zzfVar = new zzf(context, imageHints.getWidthInPixels(), imageHints.getHeightInPixels(), false, 2097152L, 5, 333, 10000, this);
+            this.zzd = new zzf(context, imageHints.getWidthInPixels(), imageHints.getHeightInPixels(), false, 2097152L, 5, 333, 10000, this);
         }
-        this.zzd = zzfVar;
         ((zzf) Preconditions.checkNotNull(this.zzd)).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, (Uri) Preconditions.checkNotNull(this.zzc));
         return false;
+    }
+
+    public zzb(Context context, ImageHints imageHints) {
+        this.zza = context;
+        this.zzb = imageHints;
+        this.zze = new zzc();
+        zze();
     }
 }

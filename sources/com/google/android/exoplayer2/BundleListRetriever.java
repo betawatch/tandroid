@@ -24,6 +24,25 @@ public final class BundleListRetriever extends Binder {
         this.list = ImmutableList.copyOf((Collection) list);
     }
 
+    @Override // android.os.Binder
+    protected boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
+        if (i != 1) {
+            return super.onTransact(i, parcel, parcel2, i2);
+        }
+        if (parcel2 == null) {
+            return false;
+        }
+        int size = this.list.size();
+        int readInt = parcel.readInt();
+        while (readInt < size && parcel2.dataSize() < SUGGESTED_MAX_IPC_SIZE) {
+            parcel2.writeInt(1);
+            parcel2.writeBundle((Bundle) this.list.get(readInt));
+            readInt++;
+        }
+        parcel2.writeInt(readInt < size ? 2 : 0);
+        return true;
+    }
+
     public static ImmutableList getList(IBinder iBinder) {
         int readInt;
         ImmutableList.Builder builder = ImmutableList.builder();
@@ -56,24 +75,5 @@ public final class BundleListRetriever extends Binder {
             }
         }
         return builder.build();
-    }
-
-    @Override // android.os.Binder
-    protected boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
-        if (i != 1) {
-            return super.onTransact(i, parcel, parcel2, i2);
-        }
-        if (parcel2 == null) {
-            return false;
-        }
-        int size = this.list.size();
-        int readInt = parcel.readInt();
-        while (readInt < size && parcel2.dataSize() < SUGGESTED_MAX_IPC_SIZE) {
-            parcel2.writeInt(1);
-            parcel2.writeBundle((Bundle) this.list.get(readInt));
-            readInt++;
-        }
-        parcel2.writeInt(readInt < size ? 2 : 0);
-        return true;
     }
 }

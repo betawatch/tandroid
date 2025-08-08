@@ -1,53 +1,31 @@
 package com.google.android.gms.internal.play_billing;
 
 /* loaded from: classes.dex */
-public abstract class zzbx extends zzaj {
-    protected zzcb zza;
-    private final zzcb zzb;
+final class zzbx extends zzca {
+    zzbx() {
+        super(null);
+    }
 
-    protected zzbx(zzcb zzcbVar) {
-        this.zzb = zzcbVar;
-        if (zzcbVar.zzt()) {
-            throw new IllegalArgumentException("Default instance must be immutable.");
+    @Override // com.google.android.gms.internal.play_billing.zzca
+    public final int zza() {
+        return 0;
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.zzca
+    public final zzca zzb(Comparable comparable, Comparable comparable2) {
+        zzca zzcaVar;
+        zzca zzcaVar2;
+        zzca zzcaVar3;
+        int compareTo = comparable.compareTo(comparable2);
+        if (compareTo < 0) {
+            zzcaVar3 = zzca.zzb;
+            return zzcaVar3;
         }
-        this.zza = zzcbVar.zzi();
-    }
-
-    /* renamed from: zzb, reason: merged with bridge method [inline-methods] */
-    public final zzbx clone() {
-        zzbx zzbxVar = (zzbx) this.zzb.zzu(5, null, null);
-        zzbxVar.zza = zze();
-        return zzbxVar;
-    }
-
-    public final zzcb zzc() {
-        zzcb zze = zze();
-        if (zze.zzs()) {
-            return zze;
+        if (compareTo > 0) {
+            zzcaVar2 = zzca.zzc;
+            return zzcaVar2;
         }
-        throw new zzef(zze);
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.zzde
-    /* renamed from: zzd, reason: merged with bridge method [inline-methods] */
-    public zzcb zze() {
-        if (!this.zza.zzt()) {
-            return this.zza;
-        }
-        this.zza.zzn();
-        return this.zza;
-    }
-
-    protected final void zzg() {
-        if (this.zza.zzt()) {
-            return;
-        }
-        zzh();
-    }
-
-    protected void zzh() {
-        zzcb zzi = this.zzb.zzi();
-        zzdn.zza().zzb(zzi.getClass()).zzg(zzi, this.zza);
-        this.zza = zzi;
+        zzcaVar = zzca.zza;
+        return zzcaVar;
     }
 }

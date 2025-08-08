@@ -17,9 +17,17 @@ final class SsaSubtitle implements Subtitle {
     }
 
     @Override // com.google.android.exoplayer2.text.Subtitle
-    public List getCues(long j) {
-        int binarySearchFloor = Util.binarySearchFloor(this.cueTimesUs, (Comparable) Long.valueOf(j), true, false);
-        return binarySearchFloor == -1 ? Collections.emptyList() : (List) this.cues.get(binarySearchFloor);
+    public int getNextEventTimeIndex(long j) {
+        int binarySearchCeil = Util.binarySearchCeil(this.cueTimesUs, (Comparable) Long.valueOf(j), false, false);
+        if (binarySearchCeil < this.cueTimesUs.size()) {
+            return binarySearchCeil;
+        }
+        return -1;
+    }
+
+    @Override // com.google.android.exoplayer2.text.Subtitle
+    public int getEventTimeCount() {
+        return this.cueTimesUs.size();
     }
 
     @Override // com.google.android.exoplayer2.text.Subtitle
@@ -30,16 +38,11 @@ final class SsaSubtitle implements Subtitle {
     }
 
     @Override // com.google.android.exoplayer2.text.Subtitle
-    public int getEventTimeCount() {
-        return this.cueTimesUs.size();
-    }
-
-    @Override // com.google.android.exoplayer2.text.Subtitle
-    public int getNextEventTimeIndex(long j) {
-        int binarySearchCeil = Util.binarySearchCeil(this.cueTimesUs, (Comparable) Long.valueOf(j), false, false);
-        if (binarySearchCeil < this.cueTimesUs.size()) {
-            return binarySearchCeil;
+    public List getCues(long j) {
+        int binarySearchFloor = Util.binarySearchFloor(this.cueTimesUs, (Comparable) Long.valueOf(j), true, false);
+        if (binarySearchFloor == -1) {
+            return Collections.emptyList();
         }
-        return -1;
+        return (List) this.cues.get(binarySearchFloor);
     }
 }

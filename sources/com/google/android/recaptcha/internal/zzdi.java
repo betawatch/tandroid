@@ -1,8 +1,7 @@
 package com.google.android.recaptcha.internal;
 
 import java.util.Arrays;
-import java.util.List;
-import kotlin.collections.ArraysKt___ArraysKt;
+import kotlin.collections.ArraysKt;
 import kotlin.jvm.internal.Intrinsics;
 
 /* loaded from: classes.dex */
@@ -14,7 +13,6 @@ public final class zzdi implements zzdd {
 
     @Override // com.google.android.recaptcha.internal.zzdd
     public final void zza(int i, zzcj zzcjVar, zzpq... zzpqVarArr) {
-        List list;
         int length = zzpqVarArr.length;
         if (length < 2) {
             throw new zzae(4, 3, null);
@@ -39,9 +37,7 @@ public final class zzdi implements zzdd {
         if (Intrinsics.areEqual(zza4, "forName")) {
             throw new zzae(6, 48, null);
         }
-        zzck zzc = zzcjVar.zzc();
-        list = ArraysKt___ArraysKt.toList(zzpqVarArr);
-        Class[] zzg = zzc.zzg(list.subList(2, length));
+        Class[] zzg = zzcjVar.zzc().zzg(ArraysKt.toList(zzpqVarArr).subList(2, length));
         try {
             zzcjVar.zzc().zzf(i, cls.getMethod(zza4, (Class[]) Arrays.copyOf(zzg, zzg.length)));
         } catch (Exception e) {

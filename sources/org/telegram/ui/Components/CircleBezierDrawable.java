@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import java.util.Random;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class CircleBezierDrawable {
     private final float L;
     private final int N;
@@ -25,9 +25,7 @@ public class CircleBezierDrawable {
 
     public CircleBezierDrawable(int i) {
         this.N = i;
-        double d = i * 2;
-        Double.isNaN(d);
-        this.L = (float) (Math.tan(3.141592653589793d / d) * 1.3333333333333333d);
+        this.L = (float) (Math.tan(3.141592653589793d / (i * 2)) * 1.3333333333333333d);
         this.randomAdditionals = new float[i];
         calculateRandomAdditionals();
     }
@@ -35,6 +33,14 @@ public class CircleBezierDrawable {
     public void calculateRandomAdditionals() {
         for (int i = 0; i < this.N; i++) {
             this.randomAdditionals[i] = (this.random.nextInt() % 100) / 100.0f;
+        }
+    }
+
+    public void setAdditionals(int[] iArr) {
+        for (int i = 0; i < this.N; i += 2) {
+            float[] fArr = this.randomAdditionals;
+            fArr[i] = iArr[i / 2];
+            fArr[i + 1] = 0.0f;
         }
     }
 
@@ -93,13 +99,5 @@ public class CircleBezierDrawable {
         canvas.rotate(this.globalRotate, f, f2);
         canvas.drawPath(this.path, paint);
         canvas.restore();
-    }
-
-    public void setAdditionals(int[] iArr) {
-        for (int i = 0; i < this.N; i += 2) {
-            float[] fArr = this.randomAdditionals;
-            fArr[i] = iArr[i / 2];
-            fArr[i + 1] = 0.0f;
-        }
     }
 }

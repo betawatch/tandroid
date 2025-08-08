@@ -4,7 +4,7 @@ import android.util.Log;
 import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.Boxing;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
@@ -13,7 +13,7 @@ import kotlin.jvm.internal.Ref$ObjectRef;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class RemoteSettings$updateSettings$2$1 extends SuspendLambda implements Function2 {
     /* synthetic */ Object L$0;
     Object L$1;
@@ -52,7 +52,6 @@ final class RemoteSettings$updateSettings$2$1 extends SuspendLambda implements F
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        Object coroutine_suspended;
         Ref$ObjectRef ref$ObjectRef;
         Boolean bool;
         Ref$ObjectRef ref$ObjectRef2;
@@ -67,7 +66,7 @@ final class RemoteSettings$updateSettings$2$1 extends SuspendLambda implements F
         SettingsCache settingsCache5;
         SettingsCache settingsCache6;
         Long boxLong;
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         switch (this.label) {
             case 0:
                 ResultKt.throwOnFailure(obj);
@@ -141,9 +140,27 @@ final class RemoteSettings$updateSettings$2$1 extends SuspendLambda implements F
                             return coroutine_suspended;
                         }
                     }
-                    if (((Integer) ref$ObjectRef3.element) == null) {
-                        unit = null;
+                    if (((Integer) ref$ObjectRef3.element) != null) {
+                        settingsCache4 = this.this$0.settingsCache;
+                        Integer num2 = (Integer) ref$ObjectRef3.element;
+                        this.L$0 = null;
+                        this.L$1 = null;
+                        this.L$2 = null;
+                        this.label = 4;
+                        if (settingsCache4.updateSessionCacheDuration(num2, this) == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        unit = Unit.INSTANCE;
                         if (unit == null) {
+                            settingsCache5 = this.this$0.settingsCache;
+                            Integer boxInt = Boxing.boxInt(86400);
+                            this.L$0 = null;
+                            this.L$1 = null;
+                            this.L$2 = null;
+                            this.label = 5;
+                            if (settingsCache5.updateSessionCacheDuration(boxInt, this) == coroutine_suspended) {
+                                return coroutine_suspended;
+                            }
                         }
                         settingsCache6 = this.this$0.settingsCache;
                         boxLong = Boxing.boxLong(System.currentTimeMillis());
@@ -152,29 +169,12 @@ final class RemoteSettings$updateSettings$2$1 extends SuspendLambda implements F
                         this.L$2 = null;
                         this.label = 6;
                         if (settingsCache6.updateSessionCacheUpdatedTime(boxLong, this) == coroutine_suspended) {
+                            return coroutine_suspended;
                         }
                         return Unit.INSTANCE;
                     }
-                    settingsCache4 = this.this$0.settingsCache;
-                    Integer num2 = (Integer) ref$ObjectRef3.element;
-                    this.L$0 = null;
-                    this.L$1 = null;
-                    this.L$2 = null;
-                    this.label = 4;
-                    if (settingsCache4.updateSessionCacheDuration(num2, this) == coroutine_suspended) {
-                        return coroutine_suspended;
-                    }
-                    unit = Unit.INSTANCE;
+                    unit = null;
                     if (unit == null) {
-                        settingsCache5 = this.this$0.settingsCache;
-                        Integer boxInt = Boxing.boxInt(86400);
-                        this.L$0 = null;
-                        this.L$1 = null;
-                        this.L$2 = null;
-                        this.label = 5;
-                        if (settingsCache5.updateSessionCacheDuration(boxInt, this) == coroutine_suspended) {
-                            return coroutine_suspended;
-                        }
                     }
                     settingsCache6 = this.this$0.settingsCache;
                     boxLong = Boxing.boxLong(System.currentTimeMillis());
@@ -183,7 +183,6 @@ final class RemoteSettings$updateSettings$2$1 extends SuspendLambda implements F
                     this.L$2 = null;
                     this.label = 6;
                     if (settingsCache6.updateSessionCacheUpdatedTime(boxLong, this) == coroutine_suspended) {
-                        return coroutine_suspended;
                     }
                     return Unit.INSTANCE;
                 }
@@ -193,7 +192,7 @@ final class RemoteSettings$updateSettings$2$1 extends SuspendLambda implements F
                 }
                 if (((Double) ref$ObjectRef2.element) != null) {
                 }
-                if (((Integer) ref$ObjectRef3.element) == null) {
+                if (((Integer) ref$ObjectRef3.element) != null) {
                 }
             case 1:
                 ref$ObjectRef3 = (Ref$ObjectRef) this.L$2;
@@ -206,7 +205,7 @@ final class RemoteSettings$updateSettings$2$1 extends SuspendLambda implements F
                 }
                 if (((Double) ref$ObjectRef2.element) != null) {
                 }
-                if (((Integer) ref$ObjectRef3.element) == null) {
+                if (((Integer) ref$ObjectRef3.element) != null) {
                 }
                 break;
             case 2:
@@ -215,13 +214,13 @@ final class RemoteSettings$updateSettings$2$1 extends SuspendLambda implements F
                 ResultKt.throwOnFailure(obj);
                 if (((Double) ref$ObjectRef2.element) != null) {
                 }
-                if (((Integer) ref$ObjectRef3.element) == null) {
+                if (((Integer) ref$ObjectRef3.element) != null) {
                 }
                 break;
             case 3:
                 ref$ObjectRef3 = (Ref$ObjectRef) this.L$0;
                 ResultKt.throwOnFailure(obj);
-                if (((Integer) ref$ObjectRef3.element) == null) {
+                if (((Integer) ref$ObjectRef3.element) != null) {
                 }
                 break;
             case 4:

@@ -51,7 +51,7 @@ public class GoogleApiActivity extends Activity implements DialogInterface.OnCan
             this.zaa = 1;
         } catch (ActivityNotFoundException e) {
             if (extras.getBoolean("notify_manager", true)) {
-                GoogleApiManager.zam(this).zaz(new ConnectionResult(22, null), getIntent().getIntExtra("failing_client_id", -1));
+                GoogleApiManager.zak(this).zax(new ConnectionResult(22, null), getIntent().getIntExtra("failing_client_id", -1));
             } else {
                 String str = "Activity not found while launching " + pendingIntent.toString() + ".";
                 if (Build.FINGERPRINT.contains("generic")) {
@@ -75,11 +75,11 @@ public class GoogleApiActivity extends Activity implements DialogInterface.OnCan
             this.zaa = 0;
             setResult(i2, intent);
             if (booleanExtra) {
-                GoogleApiManager zam = GoogleApiManager.zam(this);
+                GoogleApiManager zak = GoogleApiManager.zak(this);
                 if (i2 == -1) {
-                    zam.zaA();
+                    zak.zay();
                 } else if (i2 == 0) {
-                    zam.zaz(new ConnectionResult(13, null), getIntent().getIntExtra("failing_client_id", -1));
+                    zak.zax(new ConnectionResult(13, null), getIntent().getIntExtra("failing_client_id", -1));
                 }
             }
         } else if (i == 2) {

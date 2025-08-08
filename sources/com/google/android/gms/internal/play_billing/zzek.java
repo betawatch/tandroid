@@ -1,31 +1,60 @@
 package com.google.android.gms.internal.play_billing;
 
-import java.util.Iterator;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 /* loaded from: classes.dex */
-final class zzek implements Iterator {
-    final Iterator zza;
-    final /* synthetic */ zzel zzb;
+final class zzek implements Runnable {
+    final Future zza;
+    final zzej zzb;
 
-    zzek(zzel zzelVar) {
-        zzcn zzcnVar;
-        this.zzb = zzelVar;
-        zzcnVar = zzelVar.zza;
-        this.zza = zzcnVar.iterator();
+    zzek(Future future, zzej zzejVar) {
+        this.zza = future;
+        this.zzb = zzejVar;
     }
 
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        return this.zza.hasNext();
+    @Override // java.lang.Runnable
+    public final void run() {
+        Object obj;
+        Throwable zza;
+        boolean z = false;
+        Object obj2 = this.zza;
+        if ((obj2 instanceof zzfi) && (zza = zzfj.zza((zzfi) obj2)) != null) {
+            this.zzb.zza(zza);
+            return;
+        }
+        try {
+            Future future = this.zza;
+            if (!future.isDone()) {
+                throw new IllegalStateException(zzbf.zza("Future was expected to be done: %s", future));
+            }
+            while (true) {
+                try {
+                    obj = future.get();
+                    break;
+                } catch (InterruptedException unused) {
+                    z = true;
+                } catch (Throwable th) {
+                    if (z) {
+                        Thread.currentThread().interrupt();
+                    }
+                    throw th;
+                }
+            }
+            if (z) {
+                Thread.currentThread().interrupt();
+            }
+            this.zzb.zzb(obj);
+        } catch (ExecutionException e) {
+            this.zzb.zza(e.getCause());
+        } catch (Throwable th2) {
+            this.zzb.zza(th2);
+        }
     }
 
-    @Override // java.util.Iterator
-    public final /* bridge */ /* synthetic */ Object next() {
-        return (String) this.zza.next();
-    }
-
-    @Override // java.util.Iterator
-    public final void remove() {
-        throw new UnsupportedOperationException();
+    public final String toString() {
+        zzba zza = zzbc.zza(this);
+        zza.zza(this.zzb);
+        return zza.toString();
     }
 }

@@ -8,8 +8,14 @@ import java.util.Comparator;
 /* loaded from: classes.dex */
 public abstract class ComparisonChain {
     private static final ComparisonChain ACTIVE = new ComparisonChain() { // from class: com.google.common.collect.ComparisonChain.1
-        ComparisonChain classify(int i) {
-            return i < 0 ? ComparisonChain.LESS : i > 0 ? ComparisonChain.GREATER : ComparisonChain.ACTIVE;
+        @Override // com.google.common.collect.ComparisonChain
+        public int result() {
+            return 0;
+        }
+
+        @Override // com.google.common.collect.ComparisonChain
+        public ComparisonChain compare(Object obj, Object obj2, Comparator comparator) {
+            return classify(comparator.compare(obj, obj2));
         }
 
         @Override // com.google.common.collect.ComparisonChain
@@ -23,8 +29,8 @@ public abstract class ComparisonChain {
         }
 
         @Override // com.google.common.collect.ComparisonChain
-        public ComparisonChain compare(Object obj, Object obj2, Comparator comparator) {
-            return classify(comparator.compare(obj, obj2));
+        public ComparisonChain compareTrueFirst(boolean z, boolean z2) {
+            return classify(Booleans.compare(z2, z));
         }
 
         @Override // com.google.common.collect.ComparisonChain
@@ -32,26 +38,37 @@ public abstract class ComparisonChain {
             return classify(Booleans.compare(z, z2));
         }
 
-        @Override // com.google.common.collect.ComparisonChain
-        public ComparisonChain compareTrueFirst(boolean z, boolean z2) {
-            return classify(Booleans.compare(z2, z));
-        }
-
-        @Override // com.google.common.collect.ComparisonChain
-        public int result() {
-            return 0;
+        ComparisonChain classify(int i) {
+            if (i < 0) {
+                return ComparisonChain.LESS;
+            }
+            return i > 0 ? ComparisonChain.GREATER : ComparisonChain.ACTIVE;
         }
     };
     private static final ComparisonChain LESS = new InactiveComparisonChain(-1);
     private static final ComparisonChain GREATER = new InactiveComparisonChain(1);
 
+    public abstract ComparisonChain compare(int i, int i2);
+
+    public abstract ComparisonChain compare(long j, long j2);
+
+    public abstract ComparisonChain compare(Object obj, Object obj2, Comparator comparator);
+
+    public abstract ComparisonChain compareFalseFirst(boolean z, boolean z2);
+
+    public abstract ComparisonChain compareTrueFirst(boolean z, boolean z2);
+
+    public abstract int result();
+
+    private ComparisonChain() {
+    }
+
+    public static ComparisonChain start() {
+        return ACTIVE;
+    }
+
     private static final class InactiveComparisonChain extends ComparisonChain {
         final int result;
-
-        InactiveComparisonChain(int i) {
-            super();
-            this.result = i;
-        }
 
         @Override // com.google.common.collect.ComparisonChain
         public ComparisonChain compare(int i, int i2) {
@@ -78,28 +95,14 @@ public abstract class ComparisonChain {
             return this;
         }
 
+        InactiveComparisonChain(int i) {
+            super();
+            this.result = i;
+        }
+
         @Override // com.google.common.collect.ComparisonChain
         public int result() {
             return this.result;
         }
     }
-
-    private ComparisonChain() {
-    }
-
-    public static ComparisonChain start() {
-        return ACTIVE;
-    }
-
-    public abstract ComparisonChain compare(int i, int i2);
-
-    public abstract ComparisonChain compare(long j, long j2);
-
-    public abstract ComparisonChain compare(Object obj, Object obj2, Comparator comparator);
-
-    public abstract ComparisonChain compareFalseFirst(boolean z, boolean z2);
-
-    public abstract ComparisonChain compareTrueFirst(boolean z, boolean z2);
-
-    public abstract int result();
 }

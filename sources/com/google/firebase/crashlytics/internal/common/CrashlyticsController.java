@@ -40,7 +40,7 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 class CrashlyticsController {
     static final FilenameFilter APP_EXCEPTION_MARKER_FILTER = new FilenameFilter() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsController$$ExternalSyntheticLambda1
         @Override // java.io.FilenameFilter
@@ -70,44 +70,9 @@ class CrashlyticsController {
     final TaskCompletionSource unsentReportsHandled = new TaskCompletionSource();
     final AtomicBoolean checkForUnsentReportsCalled = new AtomicBoolean(false);
 
-    class 4 implements SuccessContinuation {
-        final /* synthetic */ Task val$settingsDataTask;
-
-        4(Task task) {
-            this.val$settingsDataTask = task;
-        }
-
-        @Override // com.google.android.gms.tasks.SuccessContinuation
-        public Task then(final Boolean bool) {
-            return CrashlyticsController.this.backgroundWorker.submitTask(new Callable() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsController.4.1
-                @Override // java.util.concurrent.Callable
-                public Task call() {
-                    if (bool.booleanValue()) {
-                        Logger.getLogger().d("Sending cached crash reports...");
-                        CrashlyticsController.this.dataCollectionArbiter.grantDataCollectionPermission(bool.booleanValue());
-                        final Executor executor = CrashlyticsController.this.backgroundWorker.getExecutor();
-                        return 4.this.val$settingsDataTask.onSuccessTask(executor, new SuccessContinuation() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsController.4.1.1
-                            @Override // com.google.android.gms.tasks.SuccessContinuation
-                            public Task then(Settings settings) {
-                                if (settings == null) {
-                                    Logger.getLogger().w("Received null app settings at app startup. Cannot send cached reports");
-                                } else {
-                                    CrashlyticsController.this.logAnalyticsAppExceptionEvents();
-                                    CrashlyticsController.this.reportingCoordinator.sendReports(executor);
-                                    CrashlyticsController.this.unsentReportsHandled.trySetResult(null);
-                                }
-                                return Tasks.forResult(null);
-                            }
-                        });
-                    }
-                    Logger.getLogger().v("Deleting cached crash reports...");
-                    CrashlyticsController.deleteFiles(CrashlyticsController.this.listAppExceptionMarkerFiles());
-                    CrashlyticsController.this.reportingCoordinator.removeAllReports();
-                    CrashlyticsController.this.unsentReportsHandled.trySetResult(null);
-                    return Tasks.forResult(null);
-                }
-            });
-        }
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ boolean lambda$static$0(File file, String str) {
+        return str.startsWith(".ae");
     }
 
     CrashlyticsController(Context context, CrashlyticsBackgroundWorker crashlyticsBackgroundWorker, IdManager idManager, DataCollectionArbiter dataCollectionArbiter, FileStore fileStore, CrashlyticsFileMarker crashlyticsFileMarker, AppData appData, UserMetadata userMetadata, LogFileManager logFileManager, SessionReportingCoordinator sessionReportingCoordinator, CrashlyticsNativeComponent crashlyticsNativeComponent, AnalyticsEventLogger analyticsEventLogger, CrashlyticsAppQualitySessionsSubscriber crashlyticsAppQualitySessionsSubscriber) {
@@ -126,25 +91,241 @@ class CrashlyticsController {
         this.reportingCoordinator = sessionReportingCoordinator;
     }
 
-    private static StaticSessionData.AppData createAppData(IdManager idManager, AppData appData) {
-        return StaticSessionData.AppData.create(idManager.getAppIdentifier(), appData.versionCode, appData.versionName, idManager.getInstallIds().getCrashlyticsInstallId(), DeliveryMechanism.determineFrom(appData.installerPackageName).getId(), appData.developmentPlatformProvider);
+    void enableExceptionHandling(String str, Thread.UncaughtExceptionHandler uncaughtExceptionHandler, SettingsProvider settingsProvider) {
+        this.settingsProvider = settingsProvider;
+        openSession(str);
+        CrashlyticsUncaughtExceptionHandler crashlyticsUncaughtExceptionHandler = new CrashlyticsUncaughtExceptionHandler(new CrashlyticsUncaughtExceptionHandler.CrashListener() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsController.1
+            @Override // com.google.firebase.crashlytics.internal.common.CrashlyticsUncaughtExceptionHandler.CrashListener
+            public void onUncaughtException(SettingsProvider settingsProvider2, Thread thread, Throwable th) {
+                CrashlyticsController.this.handleUncaughtException(settingsProvider2, thread, th);
+            }
+        }, settingsProvider, uncaughtExceptionHandler, this.nativeComponent);
+        this.crashHandler = crashlyticsUncaughtExceptionHandler;
+        Thread.setDefaultUncaughtExceptionHandler(crashlyticsUncaughtExceptionHandler);
     }
 
-    private static StaticSessionData.DeviceData createDeviceData(Context context) {
-        StatFs statFs = new StatFs(Environment.getDataDirectory().getPath());
-        return StaticSessionData.DeviceData.create(CommonUtils.getCpuArchitectureInt(), Build.MODEL, Runtime.getRuntime().availableProcessors(), CommonUtils.calculateTotalRamInBytes(context), statFs.getBlockCount() * statFs.getBlockSize(), CommonUtils.isEmulator(), CommonUtils.getDeviceState(), Build.MANUFACTURER, Build.PRODUCT);
+    void handleUncaughtException(SettingsProvider settingsProvider, Thread thread, Throwable th) {
+        handleUncaughtException(settingsProvider, thread, th, false);
     }
 
-    private static StaticSessionData.OsData createOsData() {
-        return StaticSessionData.OsData.create(Build.VERSION.RELEASE, Build.VERSION.CODENAME, CommonUtils.isRooted());
+    synchronized void handleUncaughtException(final SettingsProvider settingsProvider, final Thread thread, final Throwable th, final boolean z) {
+        Logger.getLogger().d("Handling uncaught exception \"" + th + "\" from thread " + thread.getName());
+        final long currentTimeMillis = System.currentTimeMillis();
+        try {
+            Utils.awaitEvenIfOnMainThread(this.backgroundWorker.submitTask(new Callable() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsController.2
+                @Override // java.util.concurrent.Callable
+                public Task call() {
+                    long timestampSeconds = CrashlyticsController.getTimestampSeconds(currentTimeMillis);
+                    final String currentSessionId = CrashlyticsController.this.getCurrentSessionId();
+                    if (currentSessionId != null) {
+                        CrashlyticsController.this.crashMarker.create();
+                        CrashlyticsController.this.reportingCoordinator.persistFatalEvent(th, thread, currentSessionId, timestampSeconds);
+                        CrashlyticsController.this.doWriteAppExceptionMarker(currentTimeMillis);
+                        CrashlyticsController.this.doCloseSessions(settingsProvider);
+                        CrashlyticsController.this.doOpenSession(new CLSUUID(CrashlyticsController.this.idManager).toString(), Boolean.valueOf(z));
+                        if (CrashlyticsController.this.dataCollectionArbiter.isAutomaticDataCollectionEnabled()) {
+                            final Executor executor = CrashlyticsController.this.backgroundWorker.getExecutor();
+                            return settingsProvider.getSettingsAsync().onSuccessTask(executor, new SuccessContinuation() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsController.2.1
+                                @Override // com.google.android.gms.tasks.SuccessContinuation
+                                public Task then(Settings settings) {
+                                    if (settings == null) {
+                                        Logger.getLogger().w("Received null app settings, cannot send reports at crash time.");
+                                        return Tasks.forResult(null);
+                                    }
+                                    return Tasks.whenAll((Task<?>[]) new Task[]{CrashlyticsController.this.logAnalyticsAppExceptionEvents(), CrashlyticsController.this.reportingCoordinator.sendReports(executor, z ? currentSessionId : null)});
+                                }
+                            });
+                        }
+                        return Tasks.forResult(null);
+                    }
+                    Logger.getLogger().e("Tried to write a fatal exception while no session was open.");
+                    return Tasks.forResult(null);
+                }
+            }));
+        } catch (TimeoutException unused) {
+            Logger.getLogger().e("Cannot send reports. Timed out while fetching settings.");
+        } catch (Exception e) {
+            Logger.getLogger().e("Error handling uncaught exception", e);
+        }
+    }
+
+    private Task waitForReportAction() {
+        if (this.dataCollectionArbiter.isAutomaticDataCollectionEnabled()) {
+            Logger.getLogger().d("Automatic data collection is enabled. Allowing upload.");
+            this.unsentReportsAvailable.trySetResult(Boolean.FALSE);
+            return Tasks.forResult(Boolean.TRUE);
+        }
+        Logger.getLogger().d("Automatic data collection is disabled.");
+        Logger.getLogger().v("Notifying that unsent reports are available.");
+        this.unsentReportsAvailable.trySetResult(Boolean.TRUE);
+        Task onSuccessTask = this.dataCollectionArbiter.waitForAutomaticDataCollectionEnabled().onSuccessTask(new SuccessContinuation() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsController.3
+            @Override // com.google.android.gms.tasks.SuccessContinuation
+            public Task then(Void r1) {
+                return Tasks.forResult(Boolean.TRUE);
+            }
+        });
+        Logger.getLogger().d("Waiting for send/deleteUnsentReports to be called.");
+        return Utils.race(onSuccessTask, this.reportActionProvided.getTask());
+    }
+
+    boolean didCrashOnPreviousExecution() {
+        if (!this.crashMarker.isPresent()) {
+            String currentSessionId = getCurrentSessionId();
+            return currentSessionId != null && this.nativeComponent.hasCrashDataForSession(currentSessionId);
+        }
+        Logger.getLogger().v("Found previous crash marker.");
+        this.crashMarker.remove();
+        return true;
+    }
+
+    Task submitAllReports(Task task) {
+        if (!this.reportingCoordinator.hasReportsToSend()) {
+            Logger.getLogger().v("No crash reports are available to be sent.");
+            this.unsentReportsAvailable.trySetResult(Boolean.FALSE);
+            return Tasks.forResult(null);
+        }
+        Logger.getLogger().v("Crash reports are available to be sent.");
+        return waitForReportAction().onSuccessTask(new 4(task));
+    }
+
+    class 4 implements SuccessContinuation {
+        final /* synthetic */ Task val$settingsDataTask;
+
+        4(Task task) {
+            this.val$settingsDataTask = task;
+        }
+
+        @Override // com.google.android.gms.tasks.SuccessContinuation
+        public Task then(final Boolean bool) {
+            return CrashlyticsController.this.backgroundWorker.submitTask(new Callable() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsController.4.1
+                @Override // java.util.concurrent.Callable
+                public Task call() {
+                    if (!bool.booleanValue()) {
+                        Logger.getLogger().v("Deleting cached crash reports...");
+                        CrashlyticsController.deleteFiles(CrashlyticsController.this.listAppExceptionMarkerFiles());
+                        CrashlyticsController.this.reportingCoordinator.removeAllReports();
+                        CrashlyticsController.this.unsentReportsHandled.trySetResult(null);
+                        return Tasks.forResult(null);
+                    }
+                    Logger.getLogger().d("Sending cached crash reports...");
+                    CrashlyticsController.this.dataCollectionArbiter.grantDataCollectionPermission(bool.booleanValue());
+                    final Executor executor = CrashlyticsController.this.backgroundWorker.getExecutor();
+                    return 4.this.val$settingsDataTask.onSuccessTask(executor, new SuccessContinuation() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsController.4.1.1
+                        @Override // com.google.android.gms.tasks.SuccessContinuation
+                        public Task then(Settings settings) {
+                            if (settings != null) {
+                                CrashlyticsController.this.logAnalyticsAppExceptionEvents();
+                                CrashlyticsController.this.reportingCoordinator.sendReports(executor);
+                                CrashlyticsController.this.unsentReportsHandled.trySetResult(null);
+                                return Tasks.forResult(null);
+                            }
+                            Logger.getLogger().w("Received null app settings at app startup. Cannot send cached reports");
+                            return Tasks.forResult(null);
+                        }
+                    });
+                }
+            });
+        }
+    }
+
+    void writeNonFatalException(final Thread thread, final Throwable th) {
+        final long currentTimeMillis = System.currentTimeMillis();
+        this.backgroundWorker.submit(new Runnable() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsController.6
+            @Override // java.lang.Runnable
+            public void run() {
+                if (CrashlyticsController.this.isHandlingException()) {
+                    return;
+                }
+                long timestampSeconds = CrashlyticsController.getTimestampSeconds(currentTimeMillis);
+                String currentSessionId = CrashlyticsController.this.getCurrentSessionId();
+                if (currentSessionId != null) {
+                    CrashlyticsController.this.reportingCoordinator.persistNonFatalEvent(th, thread, currentSessionId, timestampSeconds);
+                } else {
+                    Logger.getLogger().w("Tried to write a non-fatal exception while no session was open.");
+                }
+            }
+        });
+    }
+
+    void setUserId(String str) {
+        this.userMetadata.setUserId(str);
+    }
+
+    void setCustomKey(String str, String str2) {
+        try {
+            this.userMetadata.setCustomKey(str, str2);
+        } catch (IllegalArgumentException e) {
+            Context context = this.context;
+            if (context != null && CommonUtils.isAppDebuggable(context)) {
+                throw e;
+            }
+            Logger.getLogger().e("Attempting to set custom attribute with null key, ignoring.");
+        }
+    }
+
+    void setInternalKey(String str, String str2) {
+        try {
+            this.userMetadata.setInternalKey(str, str2);
+        } catch (IllegalArgumentException e) {
+            Context context = this.context;
+            if (context != null && CommonUtils.isAppDebuggable(context)) {
+                throw e;
+            }
+            Logger.getLogger().e("Attempting to set custom attribute with null key, ignoring.");
+        }
+    }
+
+    void openSession(final String str) {
+        this.backgroundWorker.submit(new Callable() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsController.7
+            @Override // java.util.concurrent.Callable
+            public Void call() {
+                CrashlyticsController.this.doOpenSession(str, Boolean.FALSE);
+                return null;
+            }
+        });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static void deleteFiles(List list) {
-        Iterator it = list.iterator();
-        while (it.hasNext()) {
-            ((File) it.next()).delete();
+    public String getCurrentSessionId() {
+        SortedSet listSortedOpenSessionIds = this.reportingCoordinator.listSortedOpenSessionIds();
+        if (listSortedOpenSessionIds.isEmpty()) {
+            return null;
         }
+        return (String) listSortedOpenSessionIds.first();
+    }
+
+    boolean finalizeSessions(SettingsProvider settingsProvider) {
+        this.backgroundWorker.checkRunningOnThread();
+        if (isHandlingException()) {
+            Logger.getLogger().w("Skipping session finalization because a crash has already occurred.");
+            return false;
+        }
+        Logger.getLogger().v("Finalizing previously open sessions.");
+        try {
+            doCloseSessions(true, settingsProvider);
+            Logger.getLogger().v("Closed all previously open sessions.");
+            return true;
+        } catch (Exception e) {
+            Logger.getLogger().e("Unable to finalize previously open sessions.", e);
+            return false;
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void doOpenSession(String str, Boolean bool) {
+        long currentTimestampSeconds = getCurrentTimestampSeconds();
+        Logger.getLogger().d("Opening a new session with ID " + str);
+        this.nativeComponent.prepareNativeSession(str, String.format(Locale.US, "Crashlytics Android SDK/%s", CrashlyticsCore.getVersion()), currentTimestampSeconds, StaticSessionData.create(createAppData(this.idManager, this.appData), createOsData(), createDeviceData(this.context)));
+        if (bool.booleanValue() && str != null) {
+            this.userMetadata.setNewSession(str);
+        }
+        this.logFileManager.setCurrentSession(str);
+        this.sessionsSubscriber.setSessionId(str);
+        this.reportingCoordinator.onBeginSession(str, currentTimestampSeconds);
+    }
+
+    void doCloseSessions(SettingsProvider settingsProvider) {
+        doCloseSessions(false, settingsProvider);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -173,28 +354,55 @@ class CrashlyticsController {
         this.reportingCoordinator.finalizeSessions(getCurrentTimestampSeconds(), str);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public void doOpenSession(String str, Boolean bool) {
-        long currentTimestampSeconds = getCurrentTimestampSeconds();
-        Logger.getLogger().d("Opening a new session with ID " + str);
-        this.nativeComponent.prepareNativeSession(str, String.format(Locale.US, "Crashlytics Android SDK/%s", CrashlyticsCore.getVersion()), currentTimestampSeconds, StaticSessionData.create(createAppData(this.idManager, this.appData), createOsData(), createDeviceData(this.context)));
-        if (bool.booleanValue() && str != null) {
-            this.userMetadata.setNewSession(str);
-        }
-        this.logFileManager.setCurrentSession(str);
-        this.sessionsSubscriber.setSessionId(str);
-        this.reportingCoordinator.onBeginSession(str, currentTimestampSeconds);
+    List listAppExceptionMarkerFiles() {
+        return this.fileStore.getCommonFiles(APP_EXCEPTION_MARKER_FILTER);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public void doWriteAppExceptionMarker(long j) {
+    void saveVersionControlInfo() {
         try {
-            if (this.fileStore.getCommonFile(".ae" + j).createNewFile()) {
-            } else {
-                throw new IOException("Create new file failed.");
+            String versionControlInfo = getVersionControlInfo();
+            if (versionControlInfo != null) {
+                setInternalKey("com.crashlytics.version-control-info", versionControlInfo);
+                Logger.getLogger().i("Saved version control info");
             }
         } catch (IOException e) {
-            Logger.getLogger().w("Could not create app exception marker file.", e);
+            Logger.getLogger().w("Unable to save version control info", e);
+        }
+    }
+
+    String getVersionControlInfo() {
+        InputStream resourceAsStream = getResourceAsStream("META-INF/version-control-info.textproto");
+        if (resourceAsStream == null) {
+            return null;
+        }
+        Logger.getLogger().d("Read version control info");
+        return Base64.encodeToString(readResource(resourceAsStream), 0);
+    }
+
+    private InputStream getResourceAsStream(String str) {
+        ClassLoader classLoader = getClass().getClassLoader();
+        if (classLoader == null) {
+            Logger.getLogger().w("Couldn't get Class Loader");
+            return null;
+        }
+        InputStream resourceAsStream = classLoader.getResourceAsStream(str);
+        if (resourceAsStream != null) {
+            return resourceAsStream;
+        }
+        Logger.getLogger().i("No version control information found");
+        return null;
+    }
+
+    private static byte[] readResource(InputStream inputStream) {
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        byte[] bArr = new byte[1024];
+        while (true) {
+            int read = inputStream.read(bArr);
+            if (read != -1) {
+                byteArrayOutputStream.write(bArr, 0, read);
+            } else {
+                return byteArrayOutputStream.toByteArray();
+            }
         }
     }
 
@@ -222,58 +430,18 @@ class CrashlyticsController {
         logFileManager.clearLog();
     }
 
-    private static boolean firebaseCrashExists() {
-        try {
-            Class.forName("com.google.firebase.crash.FirebaseCrash");
-            return true;
-        } catch (ClassNotFoundException unused) {
-            return false;
+    private static boolean nativeCoreAbsent(String str, File file, CrashlyticsReport.ApplicationExitInfo applicationExitInfo) {
+        if (file == null || !file.exists()) {
+            Logger.getLogger().w("No minidump data found for session " + str);
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public String getCurrentSessionId() {
-        SortedSet listSortedOpenSessionIds = this.reportingCoordinator.listSortedOpenSessionIds();
-        if (listSortedOpenSessionIds.isEmpty()) {
-            return null;
+        if (applicationExitInfo == null) {
+            Logger.getLogger().i("No Tombstones data found for session " + str);
         }
-        return (String) listSortedOpenSessionIds.first();
+        return (file == null || !file.exists()) && applicationExitInfo == null;
     }
 
     private static long getCurrentTimestampSeconds() {
         return getTimestampSeconds(System.currentTimeMillis());
-    }
-
-    static List getNativeSessionFiles(NativeSessionFileProvider nativeSessionFileProvider, String str, FileStore fileStore, byte[] bArr) {
-        File sessionFile = fileStore.getSessionFile(str, "user-data");
-        File sessionFile2 = fileStore.getSessionFile(str, "keys");
-        File sessionFile3 = fileStore.getSessionFile(str, "rollouts-state");
-        ArrayList arrayList = new ArrayList();
-        arrayList.add(new BytesBackedNativeSessionFile("logs_file", "logs", bArr));
-        arrayList.add(new FileBackedNativeSessionFile("crash_meta_file", "metadata", nativeSessionFileProvider.getMetadataFile()));
-        arrayList.add(new FileBackedNativeSessionFile("session_meta_file", "session", nativeSessionFileProvider.getSessionFile()));
-        arrayList.add(new FileBackedNativeSessionFile("app_meta_file", "app", nativeSessionFileProvider.getAppFile()));
-        arrayList.add(new FileBackedNativeSessionFile("device_meta_file", "device", nativeSessionFileProvider.getDeviceFile()));
-        arrayList.add(new FileBackedNativeSessionFile("os_meta_file", "os", nativeSessionFileProvider.getOsFile()));
-        arrayList.add(nativeCoreFile(nativeSessionFileProvider));
-        arrayList.add(new FileBackedNativeSessionFile("user_meta_file", "user", sessionFile));
-        arrayList.add(new FileBackedNativeSessionFile("keys_file", "keys", sessionFile2));
-        arrayList.add(new FileBackedNativeSessionFile("rollouts_file", "rollouts", sessionFile3));
-        return arrayList;
-    }
-
-    private InputStream getResourceAsStream(String str) {
-        ClassLoader classLoader = getClass().getClassLoader();
-        if (classLoader == null) {
-            Logger.getLogger().w("Couldn't get Class Loader");
-            return null;
-        }
-        InputStream resourceAsStream = classLoader.getResourceAsStream(str);
-        if (resourceAsStream != null) {
-            return resourceAsStream;
-        }
-        Logger.getLogger().i("No version control information found");
-        return null;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -282,8 +450,47 @@ class CrashlyticsController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$static$0(File file, String str) {
-        return str.startsWith(".ae");
+    public void doWriteAppExceptionMarker(long j) {
+        try {
+            if (this.fileStore.getCommonFile(".ae" + j).createNewFile()) {
+            } else {
+                throw new IOException("Create new file failed.");
+            }
+        } catch (IOException e) {
+            Logger.getLogger().w("Could not create app exception marker file.", e);
+        }
+    }
+
+    private static StaticSessionData.AppData createAppData(IdManager idManager, AppData appData) {
+        return StaticSessionData.AppData.create(idManager.getAppIdentifier(), appData.versionCode, appData.versionName, idManager.getInstallIds().getCrashlyticsInstallId(), DeliveryMechanism.determineFrom(appData.installerPackageName).getId(), appData.developmentPlatformProvider);
+    }
+
+    private static StaticSessionData.OsData createOsData() {
+        return StaticSessionData.OsData.create(Build.VERSION.RELEASE, Build.VERSION.CODENAME, CommonUtils.isRooted());
+    }
+
+    private static StaticSessionData.DeviceData createDeviceData(Context context) {
+        StatFs statFs = new StatFs(Environment.getDataDirectory().getPath());
+        return StaticSessionData.DeviceData.create(CommonUtils.getCpuArchitectureInt(), Build.MODEL, Runtime.getRuntime().availableProcessors(), CommonUtils.calculateTotalRamInBytes(context), statFs.getBlockCount() * statFs.getBlockSize(), CommonUtils.isEmulator(), CommonUtils.getDeviceState(), Build.MANUFACTURER, Build.PRODUCT);
+    }
+
+    boolean isHandlingException() {
+        CrashlyticsUncaughtExceptionHandler crashlyticsUncaughtExceptionHandler = this.crashHandler;
+        return crashlyticsUncaughtExceptionHandler != null && crashlyticsUncaughtExceptionHandler.isHandlingException();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public Task logAnalyticsAppExceptionEvents() {
+        ArrayList arrayList = new ArrayList();
+        for (File file : listAppExceptionMarkerFiles()) {
+            try {
+                arrayList.add(logAnalyticsAppExceptionEvent(Long.parseLong(file.getName().substring(3))));
+            } catch (NumberFormatException unused) {
+                Logger.getLogger().w("Could not parse app exception timestamp from file " + file.getName());
+            }
+            file.delete();
+        }
+        return Tasks.whenAll(arrayList);
     }
 
     private Task logAnalyticsAppExceptionEvent(final long j) {
@@ -305,263 +512,61 @@ class CrashlyticsController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public Task logAnalyticsAppExceptionEvents() {
-        ArrayList arrayList = new ArrayList();
-        for (File file : listAppExceptionMarkerFiles()) {
-            try {
-                arrayList.add(logAnalyticsAppExceptionEvent(Long.parseLong(file.getName().substring(3))));
-            } catch (NumberFormatException unused) {
-                Logger.getLogger().w("Could not parse app exception timestamp from file " + file.getName());
-            }
-            file.delete();
+    public static void deleteFiles(List list) {
+        Iterator it = list.iterator();
+        while (it.hasNext()) {
+            ((File) it.next()).delete();
         }
-        return Tasks.whenAll(arrayList);
     }
 
-    private static boolean nativeCoreAbsent(String str, File file, CrashlyticsReport.ApplicationExitInfo applicationExitInfo) {
-        if (file == null || !file.exists()) {
-            Logger.getLogger().w("No minidump data found for session " + str);
+    private static boolean firebaseCrashExists() {
+        try {
+            Class.forName("com.google.firebase.crash.FirebaseCrash");
+            return true;
+        } catch (ClassNotFoundException unused) {
+            return false;
         }
-        if (applicationExitInfo == null) {
-            Logger.getLogger().i("No Tombstones data found for session " + str);
-        }
-        return (file == null || !file.exists()) && applicationExitInfo == null;
+    }
+
+    static List getNativeSessionFiles(NativeSessionFileProvider nativeSessionFileProvider, String str, FileStore fileStore, byte[] bArr) {
+        File sessionFile = fileStore.getSessionFile(str, "user-data");
+        File sessionFile2 = fileStore.getSessionFile(str, "keys");
+        File sessionFile3 = fileStore.getSessionFile(str, "rollouts-state");
+        ArrayList arrayList = new ArrayList();
+        arrayList.add(new BytesBackedNativeSessionFile("logs_file", "logs", bArr));
+        arrayList.add(new FileBackedNativeSessionFile("crash_meta_file", "metadata", nativeSessionFileProvider.getMetadataFile()));
+        arrayList.add(new FileBackedNativeSessionFile("session_meta_file", "session", nativeSessionFileProvider.getSessionFile()));
+        arrayList.add(new FileBackedNativeSessionFile("app_meta_file", "app", nativeSessionFileProvider.getAppFile()));
+        arrayList.add(new FileBackedNativeSessionFile("device_meta_file", "device", nativeSessionFileProvider.getDeviceFile()));
+        arrayList.add(new FileBackedNativeSessionFile("os_meta_file", "os", nativeSessionFileProvider.getOsFile()));
+        arrayList.add(nativeCoreFile(nativeSessionFileProvider));
+        arrayList.add(new FileBackedNativeSessionFile("user_meta_file", "user", sessionFile));
+        arrayList.add(new FileBackedNativeSessionFile("keys_file", "keys", sessionFile2));
+        arrayList.add(new FileBackedNativeSessionFile("rollouts_file", "rollouts", sessionFile3));
+        return arrayList;
     }
 
     private static NativeSessionFile nativeCoreFile(NativeSessionFileProvider nativeSessionFileProvider) {
         File minidumpFile = nativeSessionFileProvider.getMinidumpFile();
-        return (minidumpFile == null || !minidumpFile.exists()) ? new BytesBackedNativeSessionFile("minidump_file", "minidump", new byte[]{0}) : new FileBackedNativeSessionFile("minidump_file", "minidump", minidumpFile);
-    }
-
-    private static byte[] readResource(InputStream inputStream) {
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        byte[] bArr = new byte[1024];
-        while (true) {
-            int read = inputStream.read(bArr);
-            if (read == -1) {
-                return byteArrayOutputStream.toByteArray();
-            }
-            byteArrayOutputStream.write(bArr, 0, read);
+        if (minidumpFile == null || !minidumpFile.exists()) {
+            return new BytesBackedNativeSessionFile("minidump_file", "minidump", new byte[]{0});
         }
-    }
-
-    private Task waitForReportAction() {
-        if (this.dataCollectionArbiter.isAutomaticDataCollectionEnabled()) {
-            Logger.getLogger().d("Automatic data collection is enabled. Allowing upload.");
-            this.unsentReportsAvailable.trySetResult(Boolean.FALSE);
-            return Tasks.forResult(Boolean.TRUE);
-        }
-        Logger.getLogger().d("Automatic data collection is disabled.");
-        Logger.getLogger().v("Notifying that unsent reports are available.");
-        this.unsentReportsAvailable.trySetResult(Boolean.TRUE);
-        Task onSuccessTask = this.dataCollectionArbiter.waitForAutomaticDataCollectionEnabled().onSuccessTask(new SuccessContinuation() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsController.3
-            @Override // com.google.android.gms.tasks.SuccessContinuation
-            public Task then(Void r1) {
-                return Tasks.forResult(Boolean.TRUE);
-            }
-        });
-        Logger.getLogger().d("Waiting for send/deleteUnsentReports to be called.");
-        return Utils.race(onSuccessTask, this.reportActionProvided.getTask());
+        return new FileBackedNativeSessionFile("minidump_file", "minidump", minidumpFile);
     }
 
     private void writeApplicationExitInfoEventIfRelevant(String str) {
         List historicalProcessExitReasons;
         int i = Build.VERSION.SDK_INT;
-        if (i < 30) {
-            Logger.getLogger().v("ANR feature enabled, but device is API " + i);
-            return;
-        }
-        historicalProcessExitReasons = ((ActivityManager) this.context.getSystemService("activity")).getHistoricalProcessExitReasons(null, 0, 0);
-        if (historicalProcessExitReasons.size() != 0) {
-            this.reportingCoordinator.persistRelevantAppExitInfoEvent(str, historicalProcessExitReasons, new LogFileManager(this.fileStore, str), UserMetadata.loadFromExistingSession(str, this.fileStore, this.backgroundWorker));
-        } else {
-            Logger.getLogger().v("No ApplicationExitInfo available. Session: " + str);
-        }
-    }
-
-    boolean didCrashOnPreviousExecution() {
-        if (!this.crashMarker.isPresent()) {
-            String currentSessionId = getCurrentSessionId();
-            return currentSessionId != null && this.nativeComponent.hasCrashDataForSession(currentSessionId);
-        }
-        Logger.getLogger().v("Found previous crash marker.");
-        this.crashMarker.remove();
-        return true;
-    }
-
-    void doCloseSessions(SettingsProvider settingsProvider) {
-        doCloseSessions(false, settingsProvider);
-    }
-
-    void enableExceptionHandling(String str, Thread.UncaughtExceptionHandler uncaughtExceptionHandler, SettingsProvider settingsProvider) {
-        this.settingsProvider = settingsProvider;
-        openSession(str);
-        CrashlyticsUncaughtExceptionHandler crashlyticsUncaughtExceptionHandler = new CrashlyticsUncaughtExceptionHandler(new CrashlyticsUncaughtExceptionHandler.CrashListener() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsController.1
-            @Override // com.google.firebase.crashlytics.internal.common.CrashlyticsUncaughtExceptionHandler.CrashListener
-            public void onUncaughtException(SettingsProvider settingsProvider2, Thread thread, Throwable th) {
-                CrashlyticsController.this.handleUncaughtException(settingsProvider2, thread, th);
+        if (i >= 30) {
+            historicalProcessExitReasons = ((ActivityManager) this.context.getSystemService("activity")).getHistoricalProcessExitReasons(null, 0, 0);
+            if (historicalProcessExitReasons.size() != 0) {
+                this.reportingCoordinator.persistRelevantAppExitInfoEvent(str, historicalProcessExitReasons, new LogFileManager(this.fileStore, str), UserMetadata.loadFromExistingSession(str, this.fileStore, this.backgroundWorker));
+                return;
+            } else {
+                Logger.getLogger().v("No ApplicationExitInfo available. Session: " + str);
+                return;
             }
-        }, settingsProvider, uncaughtExceptionHandler, this.nativeComponent);
-        this.crashHandler = crashlyticsUncaughtExceptionHandler;
-        Thread.setDefaultUncaughtExceptionHandler(crashlyticsUncaughtExceptionHandler);
-    }
-
-    boolean finalizeSessions(SettingsProvider settingsProvider) {
-        this.backgroundWorker.checkRunningOnThread();
-        if (isHandlingException()) {
-            Logger.getLogger().w("Skipping session finalization because a crash has already occurred.");
-            return false;
         }
-        Logger.getLogger().v("Finalizing previously open sessions.");
-        try {
-            doCloseSessions(true, settingsProvider);
-            Logger.getLogger().v("Closed all previously open sessions.");
-            return true;
-        } catch (Exception e) {
-            Logger.getLogger().e("Unable to finalize previously open sessions.", e);
-            return false;
-        }
-    }
-
-    String getVersionControlInfo() {
-        InputStream resourceAsStream = getResourceAsStream("META-INF/version-control-info.textproto");
-        if (resourceAsStream == null) {
-            return null;
-        }
-        Logger.getLogger().d("Read version control info");
-        return Base64.encodeToString(readResource(resourceAsStream), 0);
-    }
-
-    void handleUncaughtException(SettingsProvider settingsProvider, Thread thread, Throwable th) {
-        handleUncaughtException(settingsProvider, thread, th, false);
-    }
-
-    synchronized void handleUncaughtException(final SettingsProvider settingsProvider, final Thread thread, final Throwable th, final boolean z) {
-        Logger.getLogger().d("Handling uncaught exception \"" + th + "\" from thread " + thread.getName());
-        final long currentTimeMillis = System.currentTimeMillis();
-        try {
-            Utils.awaitEvenIfOnMainThread(this.backgroundWorker.submitTask(new Callable() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsController.2
-                @Override // java.util.concurrent.Callable
-                public Task call() {
-                    long timestampSeconds = CrashlyticsController.getTimestampSeconds(currentTimeMillis);
-                    final String currentSessionId = CrashlyticsController.this.getCurrentSessionId();
-                    if (currentSessionId == null) {
-                        Logger.getLogger().e("Tried to write a fatal exception while no session was open.");
-                        return Tasks.forResult(null);
-                    }
-                    CrashlyticsController.this.crashMarker.create();
-                    CrashlyticsController.this.reportingCoordinator.persistFatalEvent(th, thread, currentSessionId, timestampSeconds);
-                    CrashlyticsController.this.doWriteAppExceptionMarker(currentTimeMillis);
-                    CrashlyticsController.this.doCloseSessions(settingsProvider);
-                    CrashlyticsController.this.doOpenSession(new CLSUUID(CrashlyticsController.this.idManager).toString(), Boolean.valueOf(z));
-                    if (!CrashlyticsController.this.dataCollectionArbiter.isAutomaticDataCollectionEnabled()) {
-                        return Tasks.forResult(null);
-                    }
-                    final Executor executor = CrashlyticsController.this.backgroundWorker.getExecutor();
-                    return settingsProvider.getSettingsAsync().onSuccessTask(executor, new SuccessContinuation() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsController.2.1
-                        @Override // com.google.android.gms.tasks.SuccessContinuation
-                        public Task then(Settings settings) {
-                            if (settings != null) {
-                                return Tasks.whenAll((Task<?>[]) new Task[]{CrashlyticsController.this.logAnalyticsAppExceptionEvents(), CrashlyticsController.this.reportingCoordinator.sendReports(executor, z ? currentSessionId : null)});
-                            }
-                            Logger.getLogger().w("Received null app settings, cannot send reports at crash time.");
-                            return Tasks.forResult(null);
-                        }
-                    });
-                }
-            }));
-        } catch (TimeoutException unused) {
-            Logger.getLogger().e("Cannot send reports. Timed out while fetching settings.");
-        } catch (Exception e) {
-            Logger.getLogger().e("Error handling uncaught exception", e);
-        }
-    }
-
-    boolean isHandlingException() {
-        CrashlyticsUncaughtExceptionHandler crashlyticsUncaughtExceptionHandler = this.crashHandler;
-        return crashlyticsUncaughtExceptionHandler != null && crashlyticsUncaughtExceptionHandler.isHandlingException();
-    }
-
-    List listAppExceptionMarkerFiles() {
-        return this.fileStore.getCommonFiles(APP_EXCEPTION_MARKER_FILTER);
-    }
-
-    void openSession(final String str) {
-        this.backgroundWorker.submit(new Callable() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsController.7
-            @Override // java.util.concurrent.Callable
-            public Void call() {
-                CrashlyticsController.this.doOpenSession(str, Boolean.FALSE);
-                return null;
-            }
-        });
-    }
-
-    void saveVersionControlInfo() {
-        try {
-            String versionControlInfo = getVersionControlInfo();
-            if (versionControlInfo != null) {
-                setInternalKey("com.crashlytics.version-control-info", versionControlInfo);
-                Logger.getLogger().i("Saved version control info");
-            }
-        } catch (IOException e) {
-            Logger.getLogger().w("Unable to save version control info", e);
-        }
-    }
-
-    void setCustomKey(String str, String str2) {
-        try {
-            this.userMetadata.setCustomKey(str, str2);
-        } catch (IllegalArgumentException e) {
-            Context context = this.context;
-            if (context != null && CommonUtils.isAppDebuggable(context)) {
-                throw e;
-            }
-            Logger.getLogger().e("Attempting to set custom attribute with null key, ignoring.");
-        }
-    }
-
-    void setInternalKey(String str, String str2) {
-        try {
-            this.userMetadata.setInternalKey(str, str2);
-        } catch (IllegalArgumentException e) {
-            Context context = this.context;
-            if (context != null && CommonUtils.isAppDebuggable(context)) {
-                throw e;
-            }
-            Logger.getLogger().e("Attempting to set custom attribute with null key, ignoring.");
-        }
-    }
-
-    void setUserId(String str) {
-        this.userMetadata.setUserId(str);
-    }
-
-    Task submitAllReports(Task task) {
-        if (this.reportingCoordinator.hasReportsToSend()) {
-            Logger.getLogger().v("Crash reports are available to be sent.");
-            return waitForReportAction().onSuccessTask(new 4(task));
-        }
-        Logger.getLogger().v("No crash reports are available to be sent.");
-        this.unsentReportsAvailable.trySetResult(Boolean.FALSE);
-        return Tasks.forResult(null);
-    }
-
-    void writeNonFatalException(final Thread thread, final Throwable th) {
-        final long currentTimeMillis = System.currentTimeMillis();
-        this.backgroundWorker.submit(new Runnable() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsController.6
-            @Override // java.lang.Runnable
-            public void run() {
-                if (CrashlyticsController.this.isHandlingException()) {
-                    return;
-                }
-                long timestampSeconds = CrashlyticsController.getTimestampSeconds(currentTimeMillis);
-                String currentSessionId = CrashlyticsController.this.getCurrentSessionId();
-                if (currentSessionId == null) {
-                    Logger.getLogger().w("Tried to write a non-fatal exception while no session was open.");
-                } else {
-                    CrashlyticsController.this.reportingCoordinator.persistNonFatalEvent(th, thread, currentSessionId, timestampSeconds);
-                }
-            }
-        });
+        Logger.getLogger().v("ANR feature enabled, but device is API " + i);
     }
 }

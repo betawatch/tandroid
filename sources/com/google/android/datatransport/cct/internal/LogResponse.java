@@ -7,6 +7,8 @@ import java.io.Reader;
 
 /* loaded from: classes.dex */
 public abstract class LogResponse {
+    public abstract long getNextRequestWaitMillis();
+
     static LogResponse create(long j) {
         return new AutoValue_LogResponse(j);
     }
@@ -17,7 +19,10 @@ public abstract class LogResponse {
             jsonReader.beginObject();
             while (jsonReader.hasNext()) {
                 if (jsonReader.nextName().equals("nextRequestWaitMillis")) {
-                    return jsonReader.peek() == JsonToken.STRING ? create(Long.parseLong(jsonReader.nextString())) : create(jsonReader.nextLong());
+                    if (jsonReader.peek() == JsonToken.STRING) {
+                        return create(Long.parseLong(jsonReader.nextString()));
+                    }
+                    return create(jsonReader.nextLong());
                 }
                 jsonReader.skipValue();
             }
@@ -26,6 +31,4 @@ public abstract class LogResponse {
             jsonReader.close();
         }
     }
-
-    public abstract long getNextRequestWaitMillis();
 }

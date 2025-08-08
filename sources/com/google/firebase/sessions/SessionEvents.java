@@ -12,22 +12,22 @@ import java.util.List;
 import java.util.Map;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class SessionEvents {
     public static final SessionEvents INSTANCE = new SessionEvents();
     private static final DataEncoder SESSION_EVENT_ENCODER;
+
+    private SessionEvents() {
+    }
+
+    public final DataEncoder getSESSION_EVENT_ENCODER$com_google_firebase_firebase_sessions() {
+        return SESSION_EVENT_ENCODER;
+    }
 
     static {
         DataEncoder build = new JsonDataEncoderBuilder().configureWith(AutoSessionEventEncoder.CONFIG).ignoreNullValues(true).build();
         Intrinsics.checkNotNullExpressionValue(build, "JsonDataEncoderBuilder()…lues(true)\n      .build()");
         SESSION_EVENT_ENCODER = build;
-    }
-
-    private SessionEvents() {
-    }
-
-    private final DataCollectionState toDataCollectionState(SessionSubscriber sessionSubscriber) {
-        return sessionSubscriber == null ? DataCollectionState.COLLECTION_SDK_NOT_INSTALLED : sessionSubscriber.isDataCollectionEnabled() ? DataCollectionState.COLLECTION_ENABLED : DataCollectionState.COLLECTION_DISABLED;
     }
 
     public final SessionEvent buildSession(FirebaseApp firebaseApp, SessionDetails sessionDetails, SessionsSettings sessionsSettings, ProcessDetails currentProcessDetails, List appProcessDetails, Map subscribers, String firebaseInstallationId) {
@@ -77,7 +77,13 @@ public final class SessionEvents {
         return new ApplicationInfo(applicationId, MODEL, "1.2.0", RELEASE, logEnvironment, new AndroidApplicationInfo(packageName, str3, str, MANUFACTURER, currentProcessDetails, processDetailsProvider.getAppProcessDetails(applicationContext3)));
     }
 
-    public final DataEncoder getSESSION_EVENT_ENCODER$com_google_firebase_firebase_sessions() {
-        return SESSION_EVENT_ENCODER;
+    private final DataCollectionState toDataCollectionState(SessionSubscriber sessionSubscriber) {
+        if (sessionSubscriber == null) {
+            return DataCollectionState.COLLECTION_SDK_NOT_INSTALLED;
+        }
+        if (sessionSubscriber.isDataCollectionEnabled()) {
+            return DataCollectionState.COLLECTION_ENABLED;
+        }
+        return DataCollectionState.COLLECTION_DISABLED;
     }
 }

@@ -5,37 +5,9 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.Components.AnimationProperties;
 import org.telegram.ui.LaunchActivity;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class FloatingDebugController {
     private static FloatingDebugView debugView;
-
-    public static class DebugItem {
-        Runnable action;
-        AnimationProperties.FloatProperty floatProperty;
-        float from;
-        final CharSequence title;
-        float to;
-        final DebugItemType type;
-
-        public DebugItem(CharSequence charSequence) {
-            this.type = DebugItemType.HEADER;
-            this.title = charSequence;
-        }
-
-        public DebugItem(CharSequence charSequence, float f, float f2, AnimationProperties.FloatProperty floatProperty) {
-            this.type = DebugItemType.SEEKBAR;
-            this.title = charSequence;
-            this.from = f;
-            this.to = f2;
-            this.floatProperty = floatProperty;
-        }
-
-        public DebugItem(CharSequence charSequence, Runnable runnable) {
-            this.type = DebugItemType.SIMPLE;
-            this.title = charSequence;
-            this.action = runnable;
-        }
-    }
 
     public enum DebugItemType {
         SIMPLE,
@@ -45,12 +17,6 @@ public abstract class FloatingDebugController {
 
     public static boolean isActive() {
         return SharedConfig.isFloatingDebugActive;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$setActive$0(LaunchActivity launchActivity) {
-        launchActivity.getMainContainerFrameLayout().removeView(debugView);
-        debugView = null;
     }
 
     public static boolean onBackPressed() {
@@ -90,6 +56,40 @@ public abstract class FloatingDebugController {
         if (z2) {
             SharedConfig.isFloatingDebugActive = z;
             SharedConfig.saveConfig();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$setActive$0(LaunchActivity launchActivity) {
+        launchActivity.getMainContainerFrameLayout().removeView(debugView);
+        debugView = null;
+    }
+
+    public static class DebugItem {
+        Runnable action;
+        AnimationProperties.FloatProperty floatProperty;
+        float from;
+        final CharSequence title;
+        float to;
+        final DebugItemType type;
+
+        public DebugItem(CharSequence charSequence, Runnable runnable) {
+            this.type = DebugItemType.SIMPLE;
+            this.title = charSequence;
+            this.action = runnable;
+        }
+
+        public DebugItem(CharSequence charSequence) {
+            this.type = DebugItemType.HEADER;
+            this.title = charSequence;
+        }
+
+        public DebugItem(CharSequence charSequence, float f, float f2, AnimationProperties.FloatProperty floatProperty) {
+            this.type = DebugItemType.SEEKBAR;
+            this.title = charSequence;
+            this.from = f;
+            this.to = f2;
+            this.floatProperty = floatProperty;
         }
     }
 }

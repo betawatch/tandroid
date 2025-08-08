@@ -56,106 +56,8 @@ public class MediaRouteButton extends View {
     private static final int[] CHECKED_STATE_SET = {R.attr.state_checked};
     private static final int[] CHECKABLE_STATE_SET = {R.attr.state_checkable};
 
-    private final class MediaRouterCallback extends MediaRouter.Callback {
-        MediaRouterCallback() {
-        }
-
-        @Override // androidx.mediarouter.media.MediaRouter.Callback
-        public void onProviderAdded(MediaRouter mediaRouter, MediaRouter.ProviderInfo providerInfo) {
-            MediaRouteButton.this.refreshRoute();
-        }
-
-        @Override // androidx.mediarouter.media.MediaRouter.Callback
-        public void onProviderChanged(MediaRouter mediaRouter, MediaRouter.ProviderInfo providerInfo) {
-            MediaRouteButton.this.refreshRoute();
-        }
-
-        @Override // androidx.mediarouter.media.MediaRouter.Callback
-        public void onProviderRemoved(MediaRouter mediaRouter, MediaRouter.ProviderInfo providerInfo) {
-            MediaRouteButton.this.refreshRoute();
-        }
-
-        @Override // androidx.mediarouter.media.MediaRouter.Callback
-        public void onRouteAdded(MediaRouter mediaRouter, MediaRouter.RouteInfo routeInfo) {
-            MediaRouteButton.this.refreshRoute();
-        }
-
-        @Override // androidx.mediarouter.media.MediaRouter.Callback
-        public void onRouteChanged(MediaRouter mediaRouter, MediaRouter.RouteInfo routeInfo) {
-            MediaRouteButton.this.refreshRoute();
-        }
-
-        @Override // androidx.mediarouter.media.MediaRouter.Callback
-        public void onRouteRemoved(MediaRouter mediaRouter, MediaRouter.RouteInfo routeInfo) {
-            MediaRouteButton.this.refreshRoute();
-        }
-
-        @Override // androidx.mediarouter.media.MediaRouter.Callback
-        public void onRouteSelected(MediaRouter mediaRouter, MediaRouter.RouteInfo routeInfo) {
-            MediaRouteButton.this.refreshRoute();
-        }
-
-        @Override // androidx.mediarouter.media.MediaRouter.Callback
-        public void onRouteUnselected(MediaRouter mediaRouter, MediaRouter.RouteInfo routeInfo) {
-            MediaRouteButton.this.refreshRoute();
-        }
-
-        @Override // androidx.mediarouter.media.MediaRouter.Callback
-        public void onRouterParamsChanged(MediaRouter mediaRouter, MediaRouterParams mediaRouterParams) {
-            boolean z = mediaRouterParams != null ? mediaRouterParams.getExtras().getBoolean("androidx.mediarouter.media.MediaRouterParams.FIXED_CAST_ICON") : false;
-            MediaRouteButton mediaRouteButton = MediaRouteButton.this;
-            if (mediaRouteButton.mIsFixedIcon != z) {
-                mediaRouteButton.mIsFixedIcon = z;
-                mediaRouteButton.refreshDrawableState();
-            }
-        }
-    }
-
-    private final class RemoteIndicatorLoader extends AsyncTask {
-        private final Context mContext;
-        private final int mResId;
-
-        RemoteIndicatorLoader(int i, Context context) {
-            this.mResId = i;
-            this.mContext = context;
-        }
-
-        private void cacheAndReset(Drawable drawable) {
-            if (drawable != null) {
-                MediaRouteButton.sRemoteIndicatorCache.put(this.mResId, drawable.getConstantState());
-            }
-            MediaRouteButton.this.mRemoteIndicatorLoader = null;
-        }
-
-        /* JADX INFO: Access modifiers changed from: protected */
-        @Override // android.os.AsyncTask
-        public Drawable doInBackground(Void... voidArr) {
-            if (MediaRouteButton.sRemoteIndicatorCache.get(this.mResId) == null) {
-                return AppCompatResources.getDrawable(this.mContext, this.mResId);
-            }
-            return null;
-        }
-
-        /* JADX INFO: Access modifiers changed from: protected */
-        @Override // android.os.AsyncTask
-        public void onCancelled(Drawable drawable) {
-            cacheAndReset(drawable);
-        }
-
-        /* JADX INFO: Access modifiers changed from: protected */
-        @Override // android.os.AsyncTask
-        public void onPostExecute(Drawable drawable) {
-            if (drawable != null) {
-                cacheAndReset(drawable);
-            } else {
-                Drawable.ConstantState constantState = MediaRouteButton.sRemoteIndicatorCache.get(this.mResId);
-                if (constantState != null) {
-                    drawable = constantState.newDrawable();
-                }
-                MediaRouteButton.this.mRemoteIndicatorLoader = null;
-            }
-            MediaRouteButton.this.setRemoteIndicatorDrawableInternal(drawable);
-        }
+    @Deprecated
+    public void setAlwaysVisible(boolean z) {
     }
 
     public MediaRouteButton(Context context) {
@@ -185,7 +87,7 @@ public class MediaRouteButton extends View {
         this.mRouter = mediaRouter;
         this.mCallback = new MediaRouterCallback();
         MediaRouter.RouteInfo selectedRoute = mediaRouter.getSelectedRoute();
-        int connectionState = selectedRoute.isDefaultOrBluetooth() ^ true ? selectedRoute.getConnectionState() : 0;
+        int connectionState = !selectedRoute.isDefaultOrBluetooth() ? selectedRoute.getConnectionState() : 0;
         this.mConnectionState = connectionState;
         this.mLastConnectionState = connectionState;
         this.mButtonTint = obtainStyledAttributes.getColorStateList(R$styleable.MediaRouteButton_mediaRouteButtonTint);
@@ -216,13 +118,95 @@ public class MediaRouteButton extends View {
         setClickable(true);
     }
 
-    private Activity getActivity() {
-        for (Context context = getContext(); context instanceof ContextWrapper; context = ((ContextWrapper) context).getBaseContext()) {
-            if (context instanceof Activity) {
-                return (Activity) context;
+    public MediaRouteSelector getRouteSelector() {
+        return this.mSelector;
+    }
+
+    public void setRouteSelector(MediaRouteSelector mediaRouteSelector) {
+        if (mediaRouteSelector == null) {
+            throw new IllegalArgumentException("selector must not be null");
+        }
+        if (this.mSelector.equals(mediaRouteSelector)) {
+            return;
+        }
+        if (this.mAttachedToWindow) {
+            if (!this.mSelector.isEmpty()) {
+                this.mRouter.removeCallback(this.mCallback);
+            }
+            if (!mediaRouteSelector.isEmpty()) {
+                this.mRouter.addCallback(mediaRouteSelector, this.mCallback);
             }
         }
-        return null;
+        this.mSelector = mediaRouteSelector;
+        refreshRoute();
+    }
+
+    public MediaRouteDialogFactory getDialogFactory() {
+        return this.mDialogFactory;
+    }
+
+    public void setDialogFactory(MediaRouteDialogFactory mediaRouteDialogFactory) {
+        if (mediaRouteDialogFactory == null) {
+            throw new IllegalArgumentException("factory must not be null");
+        }
+        this.mDialogFactory = mediaRouteDialogFactory;
+    }
+
+    @Deprecated
+    public void enableDynamicGroup() {
+        MediaRouterParams routerParams = this.mRouter.getRouterParams();
+        MediaRouterParams.Builder builder = routerParams == null ? new MediaRouterParams.Builder() : new MediaRouterParams.Builder(routerParams);
+        builder.setDialogType(2);
+        this.mRouter.setRouterParams(builder.build());
+    }
+
+    public boolean showDialog() {
+        if (!this.mAttachedToWindow) {
+            return false;
+        }
+        MediaRouterParams routerParams = this.mRouter.getRouterParams();
+        if (routerParams != null) {
+            if (routerParams.isOutputSwitcherEnabled() && MediaRouter.isMediaTransferEnabled() && SystemOutputSwitcherDialogController.showDialog(getContext())) {
+                return true;
+            }
+            return showDialogForType(routerParams.getDialogType());
+        }
+        return showDialogForType(1);
+    }
+
+    private boolean showDialogForType(int i) {
+        FragmentManager fragmentManager = getFragmentManager();
+        if (fragmentManager == null) {
+            throw new IllegalStateException("The activity must be a subclass of FragmentActivity");
+        }
+        if (this.mRouter.getSelectedRoute().isDefaultOrBluetooth()) {
+            if (fragmentManager.findFragmentByTag(CHOOSER_FRAGMENT_TAG) != null) {
+                Log.w(TAG, "showDialog(): Route chooser dialog already showing!");
+                return false;
+            }
+            MediaRouteChooserDialogFragment onCreateChooserDialogFragment = this.mDialogFactory.onCreateChooserDialogFragment();
+            onCreateChooserDialogFragment.setRouteSelector(this.mSelector);
+            if (i == 2) {
+                onCreateChooserDialogFragment.setUseDynamicGroup(true);
+            }
+            FragmentTransaction beginTransaction = fragmentManager.beginTransaction();
+            beginTransaction.add(onCreateChooserDialogFragment, CHOOSER_FRAGMENT_TAG);
+            beginTransaction.commitAllowingStateLoss();
+        } else {
+            if (fragmentManager.findFragmentByTag(CONTROLLER_FRAGMENT_TAG) != null) {
+                Log.w(TAG, "showDialog(): Route controller dialog already showing!");
+                return false;
+            }
+            MediaRouteControllerDialogFragment onCreateControllerDialogFragment = this.mDialogFactory.onCreateControllerDialogFragment();
+            onCreateControllerDialogFragment.setRouteSelector(this.mSelector);
+            if (i == 2) {
+                onCreateControllerDialogFragment.setUseDynamicGroup(true);
+            }
+            FragmentTransaction beginTransaction2 = fragmentManager.beginTransaction();
+            beginTransaction2.add(onCreateControllerDialogFragment, CONTROLLER_FRAGMENT_TAG);
+            beginTransaction2.commitAllowingStateLoss();
+        }
+        return true;
     }
 
     private FragmentManager getFragmentManager() {
@@ -233,74 +217,45 @@ public class MediaRouteButton extends View {
         return null;
     }
 
-    private void loadRemoteIndicatorIfNeeded() {
-        if (this.mRemoteIndicatorResIdToLoad > 0) {
-            RemoteIndicatorLoader remoteIndicatorLoader = this.mRemoteIndicatorLoader;
-            if (remoteIndicatorLoader != null) {
-                remoteIndicatorLoader.cancel(false);
+    private Activity getActivity() {
+        for (Context context = getContext(); context instanceof ContextWrapper; context = ((ContextWrapper) context).getBaseContext()) {
+            if (context instanceof Activity) {
+                return (Activity) context;
             }
-            RemoteIndicatorLoader remoteIndicatorLoader2 = new RemoteIndicatorLoader(this.mRemoteIndicatorResIdToLoad, getContext());
-            this.mRemoteIndicatorLoader = remoteIndicatorLoader2;
-            this.mRemoteIndicatorResIdToLoad = 0;
-            remoteIndicatorLoader2.executeOnExecutor(AsyncTask.SERIAL_EXECUTOR, new Void[0]);
+        }
+        return null;
+    }
+
+    void setCheatSheetEnabled(boolean z) {
+        if (z != this.mCheatSheetEnabled) {
+            this.mCheatSheetEnabled = z;
+            updateContentDescription();
         }
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    private boolean showDialogForType(int i) {
-        String str;
-        String str2;
-        MediaRouteControllerDialogFragment mediaRouteControllerDialogFragment;
-        FragmentManager fragmentManager = getFragmentManager();
-        if (fragmentManager == null) {
-            throw new IllegalStateException("The activity must be a subclass of FragmentActivity");
+    @Override // android.view.View
+    public boolean performClick() {
+        boolean performClick = super.performClick();
+        if (!performClick) {
+            playSoundEffect(0);
         }
-        if (this.mRouter.getSelectedRoute().isDefaultOrBluetooth()) {
-            str = CHOOSER_FRAGMENT_TAG;
-            if (fragmentManager.findFragmentByTag(CHOOSER_FRAGMENT_TAG) != null) {
-                str2 = "showDialog(): Route chooser dialog already showing!";
-                Log.w(TAG, str2);
-                return false;
-            }
-            MediaRouteChooserDialogFragment onCreateChooserDialogFragment = this.mDialogFactory.onCreateChooserDialogFragment();
-            onCreateChooserDialogFragment.setRouteSelector(this.mSelector);
-            mediaRouteControllerDialogFragment = onCreateChooserDialogFragment;
-            if (i == 2) {
-                onCreateChooserDialogFragment.setUseDynamicGroup(true);
-                mediaRouteControllerDialogFragment = onCreateChooserDialogFragment;
-            }
-            FragmentTransaction beginTransaction = fragmentManager.beginTransaction();
-            beginTransaction.add(mediaRouteControllerDialogFragment, str);
-            beginTransaction.commitAllowingStateLoss();
-            return true;
-        }
-        str = CONTROLLER_FRAGMENT_TAG;
-        if (fragmentManager.findFragmentByTag(CONTROLLER_FRAGMENT_TAG) != null) {
-            str2 = "showDialog(): Route controller dialog already showing!";
-            Log.w(TAG, str2);
-            return false;
-        }
-        MediaRouteControllerDialogFragment onCreateControllerDialogFragment = this.mDialogFactory.onCreateControllerDialogFragment();
-        onCreateControllerDialogFragment.setRouteSelector(this.mSelector);
-        mediaRouteControllerDialogFragment = onCreateControllerDialogFragment;
-        if (i == 2) {
-            onCreateControllerDialogFragment.setUseDynamicGroup(true);
-            mediaRouteControllerDialogFragment = onCreateControllerDialogFragment;
-        }
-        FragmentTransaction beginTransaction2 = fragmentManager.beginTransaction();
-        beginTransaction2.add(mediaRouteControllerDialogFragment, str);
-        beginTransaction2.commitAllowingStateLoss();
-        return true;
+        loadRemoteIndicatorIfNeeded();
+        return showDialog() || performClick;
     }
 
-    private void updateContentDescription() {
-        int i = this.mConnectionState;
-        String string = getContext().getString(i != 1 ? i != 2 ? R$string.mr_cast_button_disconnected : R$string.mr_cast_button_connected : R$string.mr_cast_button_connecting);
-        setContentDescription(string);
-        if (!this.mCheatSheetEnabled || TextUtils.isEmpty(string)) {
-            string = null;
+    @Override // android.view.View
+    protected int[] onCreateDrawableState(int i) {
+        int[] onCreateDrawableState = super.onCreateDrawableState(i + 1);
+        if (this.mRouter == null || this.mIsFixedIcon) {
+            return onCreateDrawableState;
         }
-        TooltipCompat.setTooltipText(this, string);
+        int i2 = this.mConnectionState;
+        if (i2 == 1) {
+            View.mergeDrawableStates(onCreateDrawableState, CHECKABLE_STATE_SET);
+        } else if (i2 == 2) {
+            View.mergeDrawableStates(onCreateDrawableState, CHECKED_STATE_SET);
+        }
+        return onCreateDrawableState;
     }
 
     @Override // android.view.View
@@ -324,20 +279,14 @@ public class MediaRouteButton extends View {
         this.mLastConnectionState = this.mConnectionState;
     }
 
-    @Deprecated
-    public void enableDynamicGroup() {
-        MediaRouterParams routerParams = this.mRouter.getRouterParams();
-        MediaRouterParams.Builder builder = routerParams == null ? new MediaRouterParams.Builder() : new MediaRouterParams.Builder(routerParams);
-        builder.setDialogType(2);
-        this.mRouter.setRouterParams(builder.build());
+    public void setRemoteIndicatorDrawable(Drawable drawable) {
+        this.mRemoteIndicatorResIdToLoad = 0;
+        setRemoteIndicatorDrawableInternal(drawable);
     }
 
-    public MediaRouteDialogFactory getDialogFactory() {
-        return this.mDialogFactory;
-    }
-
-    public MediaRouteSelector getRouteSelector() {
-        return this.mSelector;
+    @Override // android.view.View
+    protected boolean verifyDrawable(Drawable drawable) {
+        return super.verifyDrawable(drawable) || drawable == this.mRemoteIndicator;
     }
 
     @Override // android.view.View
@@ -346,6 +295,15 @@ public class MediaRouteButton extends View {
         Drawable drawable = this.mRemoteIndicator;
         if (drawable != null) {
             drawable.jumpToCurrentState();
+        }
+    }
+
+    @Override // android.view.View
+    public void setVisibility(int i) {
+        super.setVisibility(i);
+        Drawable drawable = this.mRemoteIndicator;
+        if (drawable != null) {
+            drawable.setVisible(i == 0, false);
         }
     }
 
@@ -363,21 +321,6 @@ public class MediaRouteButton extends View {
     }
 
     @Override // android.view.View
-    protected int[] onCreateDrawableState(int i) {
-        int[] onCreateDrawableState = super.onCreateDrawableState(i + 1);
-        if (this.mRouter == null || this.mIsFixedIcon) {
-            return onCreateDrawableState;
-        }
-        int i2 = this.mConnectionState;
-        if (i2 == 1) {
-            View.mergeDrawableStates(onCreateDrawableState, CHECKABLE_STATE_SET);
-        } else if (i2 == 2) {
-            View.mergeDrawableStates(onCreateDrawableState, CHECKED_STATE_SET);
-        }
-        return onCreateDrawableState;
-    }
-
-    @Override // android.view.View
     public void onDetachedFromWindow() {
         if (!isInEditMode()) {
             this.mAttachedToWindow = false;
@@ -386,23 +329,6 @@ public class MediaRouteButton extends View {
             }
         }
         super.onDetachedFromWindow();
-    }
-
-    @Override // android.view.View
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (this.mRemoteIndicator != null) {
-            int paddingLeft = getPaddingLeft();
-            int width = getWidth() - getPaddingRight();
-            int paddingTop = getPaddingTop();
-            int height = getHeight() - getPaddingBottom();
-            int intrinsicWidth = this.mRemoteIndicator.getIntrinsicWidth();
-            int intrinsicHeight = this.mRemoteIndicator.getIntrinsicHeight();
-            int i = paddingLeft + (((width - paddingLeft) - intrinsicWidth) / 2);
-            int i2 = paddingTop + (((height - paddingTop) - intrinsicHeight) / 2);
-            this.mRemoteIndicator.setBounds(i, i2, intrinsicWidth + i, intrinsicHeight + i2);
-            this.mRemoteIndicator.draw(canvas);
-        }
     }
 
     @Override // android.view.View
@@ -431,49 +357,33 @@ public class MediaRouteButton extends View {
     }
 
     @Override // android.view.View
-    public boolean performClick() {
-        boolean performClick = super.performClick();
-        if (!performClick) {
-            playSoundEffect(0);
-        }
-        loadRemoteIndicatorIfNeeded();
-        return showDialog() || performClick;
-    }
-
-    void refreshRoute() {
-        MediaRouter.RouteInfo selectedRoute = this.mRouter.getSelectedRoute();
-        int connectionState = selectedRoute.isDefaultOrBluetooth() ^ true ? selectedRoute.getConnectionState() : 0;
-        if (this.mConnectionState != connectionState) {
-            this.mConnectionState = connectionState;
-            updateContentDescription();
-            refreshDrawableState();
-        }
-        if (connectionState == 1) {
-            loadRemoteIndicatorIfNeeded();
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.mRemoteIndicator != null) {
+            int paddingLeft = getPaddingLeft();
+            int width = getWidth() - getPaddingRight();
+            int paddingTop = getPaddingTop();
+            int height = getHeight() - getPaddingBottom();
+            int intrinsicWidth = this.mRemoteIndicator.getIntrinsicWidth();
+            int intrinsicHeight = this.mRemoteIndicator.getIntrinsicHeight();
+            int i = paddingLeft + (((width - paddingLeft) - intrinsicWidth) / 2);
+            int i2 = paddingTop + (((height - paddingTop) - intrinsicHeight) / 2);
+            this.mRemoteIndicator.setBounds(i, i2, intrinsicWidth + i, intrinsicHeight + i2);
+            this.mRemoteIndicator.draw(canvas);
         }
     }
 
-    @Deprecated
-    public void setAlwaysVisible(boolean z) {
-    }
-
-    void setCheatSheetEnabled(boolean z) {
-        if (z != this.mCheatSheetEnabled) {
-            this.mCheatSheetEnabled = z;
-            updateContentDescription();
+    private void loadRemoteIndicatorIfNeeded() {
+        if (this.mRemoteIndicatorResIdToLoad > 0) {
+            RemoteIndicatorLoader remoteIndicatorLoader = this.mRemoteIndicatorLoader;
+            if (remoteIndicatorLoader != null) {
+                remoteIndicatorLoader.cancel(false);
+            }
+            RemoteIndicatorLoader remoteIndicatorLoader2 = new RemoteIndicatorLoader(this.mRemoteIndicatorResIdToLoad, getContext());
+            this.mRemoteIndicatorLoader = remoteIndicatorLoader2;
+            this.mRemoteIndicatorResIdToLoad = 0;
+            remoteIndicatorLoader2.executeOnExecutor(AsyncTask.SERIAL_EXECUTOR, new Void[0]);
         }
-    }
-
-    public void setDialogFactory(MediaRouteDialogFactory mediaRouteDialogFactory) {
-        if (mediaRouteDialogFactory == null) {
-            throw new IllegalArgumentException("factory must not be null");
-        }
-        this.mDialogFactory = mediaRouteDialogFactory;
-    }
-
-    public void setRemoteIndicatorDrawable(Drawable drawable) {
-        this.mRemoteIndicatorResIdToLoad = 0;
-        setRemoteIndicatorDrawableInternal(drawable);
     }
 
     void setRemoteIndicatorDrawableInternal(Drawable drawable) {
@@ -499,50 +409,136 @@ public class MediaRouteButton extends View {
         refreshDrawableState();
     }
 
-    public void setRouteSelector(MediaRouteSelector mediaRouteSelector) {
-        if (mediaRouteSelector == null) {
-            throw new IllegalArgumentException("selector must not be null");
+    void refreshRoute() {
+        MediaRouter.RouteInfo selectedRoute = this.mRouter.getSelectedRoute();
+        int connectionState = !selectedRoute.isDefaultOrBluetooth() ? selectedRoute.getConnectionState() : 0;
+        if (this.mConnectionState != connectionState) {
+            this.mConnectionState = connectionState;
+            updateContentDescription();
+            refreshDrawableState();
         }
-        if (this.mSelector.equals(mediaRouteSelector)) {
-            return;
+        if (connectionState == 1) {
+            loadRemoteIndicatorIfNeeded();
         }
-        if (this.mAttachedToWindow) {
-            if (!this.mSelector.isEmpty()) {
-                this.mRouter.removeCallback(this.mCallback);
+    }
+
+    private void updateContentDescription() {
+        int i;
+        int i2 = this.mConnectionState;
+        if (i2 == 1) {
+            i = R$string.mr_cast_button_connecting;
+        } else if (i2 == 2) {
+            i = R$string.mr_cast_button_connected;
+        } else {
+            i = R$string.mr_cast_button_disconnected;
+        }
+        String string = getContext().getString(i);
+        setContentDescription(string);
+        if (!this.mCheatSheetEnabled || TextUtils.isEmpty(string)) {
+            string = null;
+        }
+        TooltipCompat.setTooltipText(this, string);
+    }
+
+    private final class MediaRouterCallback extends MediaRouter.Callback {
+        MediaRouterCallback() {
+        }
+
+        @Override // androidx.mediarouter.media.MediaRouter.Callback
+        public void onRouteAdded(MediaRouter mediaRouter, MediaRouter.RouteInfo routeInfo) {
+            MediaRouteButton.this.refreshRoute();
+        }
+
+        @Override // androidx.mediarouter.media.MediaRouter.Callback
+        public void onRouteRemoved(MediaRouter mediaRouter, MediaRouter.RouteInfo routeInfo) {
+            MediaRouteButton.this.refreshRoute();
+        }
+
+        @Override // androidx.mediarouter.media.MediaRouter.Callback
+        public void onRouteChanged(MediaRouter mediaRouter, MediaRouter.RouteInfo routeInfo) {
+            MediaRouteButton.this.refreshRoute();
+        }
+
+        @Override // androidx.mediarouter.media.MediaRouter.Callback
+        public void onRouteSelected(MediaRouter mediaRouter, MediaRouter.RouteInfo routeInfo) {
+            MediaRouteButton.this.refreshRoute();
+        }
+
+        @Override // androidx.mediarouter.media.MediaRouter.Callback
+        public void onRouteUnselected(MediaRouter mediaRouter, MediaRouter.RouteInfo routeInfo) {
+            MediaRouteButton.this.refreshRoute();
+        }
+
+        @Override // androidx.mediarouter.media.MediaRouter.Callback
+        public void onProviderAdded(MediaRouter mediaRouter, MediaRouter.ProviderInfo providerInfo) {
+            MediaRouteButton.this.refreshRoute();
+        }
+
+        @Override // androidx.mediarouter.media.MediaRouter.Callback
+        public void onProviderRemoved(MediaRouter mediaRouter, MediaRouter.ProviderInfo providerInfo) {
+            MediaRouteButton.this.refreshRoute();
+        }
+
+        @Override // androidx.mediarouter.media.MediaRouter.Callback
+        public void onProviderChanged(MediaRouter mediaRouter, MediaRouter.ProviderInfo providerInfo) {
+            MediaRouteButton.this.refreshRoute();
+        }
+
+        @Override // androidx.mediarouter.media.MediaRouter.Callback
+        public void onRouterParamsChanged(MediaRouter mediaRouter, MediaRouterParams mediaRouterParams) {
+            boolean z = mediaRouterParams != null ? mediaRouterParams.getExtras().getBoolean("androidx.mediarouter.media.MediaRouterParams.FIXED_CAST_ICON") : false;
+            MediaRouteButton mediaRouteButton = MediaRouteButton.this;
+            if (mediaRouteButton.mIsFixedIcon != z) {
+                mediaRouteButton.mIsFixedIcon = z;
+                mediaRouteButton.refreshDrawableState();
             }
-            if (!mediaRouteSelector.isEmpty()) {
-                this.mRouter.addCallback(mediaRouteSelector, this.mCallback);
+        }
+    }
+
+    private final class RemoteIndicatorLoader extends AsyncTask {
+        private final Context mContext;
+        private final int mResId;
+
+        RemoteIndicatorLoader(int i, Context context) {
+            this.mResId = i;
+            this.mContext = context;
+        }
+
+        /* JADX INFO: Access modifiers changed from: protected */
+        @Override // android.os.AsyncTask
+        public Drawable doInBackground(Void... voidArr) {
+            if (MediaRouteButton.sRemoteIndicatorCache.get(this.mResId) == null) {
+                return AppCompatResources.getDrawable(this.mContext, this.mResId);
             }
+            return null;
         }
-        this.mSelector = mediaRouteSelector;
-        refreshRoute();
-    }
 
-    @Override // android.view.View
-    public void setVisibility(int i) {
-        super.setVisibility(i);
-        Drawable drawable = this.mRemoteIndicator;
-        if (drawable != null) {
-            drawable.setVisible(i == 0, false);
+        /* JADX INFO: Access modifiers changed from: protected */
+        @Override // android.os.AsyncTask
+        public void onPostExecute(Drawable drawable) {
+            if (drawable != null) {
+                cacheAndReset(drawable);
+            } else {
+                Drawable.ConstantState constantState = MediaRouteButton.sRemoteIndicatorCache.get(this.mResId);
+                if (constantState != null) {
+                    drawable = constantState.newDrawable();
+                }
+                MediaRouteButton.this.mRemoteIndicatorLoader = null;
+            }
+            MediaRouteButton.this.setRemoteIndicatorDrawableInternal(drawable);
         }
-    }
 
-    public boolean showDialog() {
-        if (!this.mAttachedToWindow) {
-            return false;
+        /* JADX INFO: Access modifiers changed from: protected */
+        @Override // android.os.AsyncTask
+        public void onCancelled(Drawable drawable) {
+            cacheAndReset(drawable);
         }
-        MediaRouterParams routerParams = this.mRouter.getRouterParams();
-        if (routerParams == null) {
-            return showDialogForType(1);
-        }
-        if (routerParams.isOutputSwitcherEnabled() && MediaRouter.isMediaTransferEnabled() && SystemOutputSwitcherDialogController.showDialog(getContext())) {
-            return true;
-        }
-        return showDialogForType(routerParams.getDialogType());
-    }
 
-    @Override // android.view.View
-    protected boolean verifyDrawable(Drawable drawable) {
-        return super.verifyDrawable(drawable) || drawable == this.mRemoteIndicator;
+        private void cacheAndReset(Drawable drawable) {
+            if (drawable != null) {
+                MediaRouteButton.sRemoteIndicatorCache.put(this.mResId, drawable.getConstantState());
+            }
+            MediaRouteButton.this.mRemoteIndicatorLoader = null;
+        }
     }
 }

@@ -11,36 +11,56 @@ public final class TimestampAdjuster {
         reset(j);
     }
 
-    public static long ptsToUs(long j) {
-        return (j * 1000000) / 90000;
-    }
-
-    public static long usToNonWrappedPts(long j) {
-        return (j * 90000) / 1000000;
-    }
-
-    public static long usToWrappedPts(long j) {
-        return usToNonWrappedPts(j) % 8589934592L;
-    }
-
-    public synchronized long adjustSampleTimestamp(long j) {
-        if (j == -9223372036854775807L) {
-            return -9223372036854775807L;
-        }
+    public synchronized void sharedInitializeOrWait(boolean z, long j) {
         try {
-            if (this.timestampOffsetUs == -9223372036854775807L) {
-                long j2 = this.firstSampleTimestampUs;
-                if (j2 == 9223372036854775806L) {
-                    j2 = ((Long) Assertions.checkNotNull((Long) this.nextSampleTimestampUs.get())).longValue();
-                }
-                this.timestampOffsetUs = j2 - j;
-                notifyAll();
+            Assertions.checkState(this.firstSampleTimestampUs == 9223372036854775806L);
+            if (this.timestampOffsetUs != -9223372036854775807L) {
+                return;
             }
-            this.lastUnadjustedTimestampUs = j;
-            return j + this.timestampOffsetUs;
+            if (z) {
+                this.nextSampleTimestampUs.set(Long.valueOf(j));
+            } else {
+                while (this.timestampOffsetUs == -9223372036854775807L) {
+                    wait();
+                }
+            }
         } catch (Throwable th) {
             throw th;
         }
+    }
+
+    public synchronized long getFirstSampleTimestampUs() {
+        long j;
+        j = this.firstSampleTimestampUs;
+        if (j == Long.MAX_VALUE || j == 9223372036854775806L) {
+            j = -9223372036854775807L;
+        }
+        return j;
+    }
+
+    public synchronized long getLastAdjustedTimestampUs() {
+        long firstSampleTimestampUs;
+        try {
+            long j = this.lastUnadjustedTimestampUs;
+            if (j != -9223372036854775807L) {
+                firstSampleTimestampUs = j + this.timestampOffsetUs;
+            } else {
+                firstSampleTimestampUs = getFirstSampleTimestampUs();
+            }
+        } catch (Throwable th) {
+            throw th;
+        }
+        return firstSampleTimestampUs;
+    }
+
+    public synchronized long getTimestampOffsetUs() {
+        return this.timestampOffsetUs;
+    }
+
+    public synchronized void reset(long j) {
+        this.firstSampleTimestampUs = j;
+        this.timestampOffsetUs = j == Long.MAX_VALUE ? 0L : -9223372036854775807L;
+        this.lastUnadjustedTimestampUs = -9223372036854775807L;
     }
 
     public synchronized long adjustTsTimestamp(long j) {
@@ -64,50 +84,35 @@ public final class TimestampAdjuster {
         }
     }
 
-    public synchronized long getFirstSampleTimestampUs() {
-        long j;
-        j = this.firstSampleTimestampUs;
-        if (j == Long.MAX_VALUE || j == 9223372036854775806L) {
-            j = -9223372036854775807L;
+    public synchronized long adjustSampleTimestamp(long j) {
+        if (j == -9223372036854775807L) {
+            return -9223372036854775807L;
         }
-        return j;
-    }
-
-    public synchronized long getLastAdjustedTimestampUs() {
-        long j;
         try {
-            j = this.lastUnadjustedTimestampUs;
-        } catch (Throwable th) {
-            throw th;
-        }
-        return j != -9223372036854775807L ? j + this.timestampOffsetUs : getFirstSampleTimestampUs();
-    }
-
-    public synchronized long getTimestampOffsetUs() {
-        return this.timestampOffsetUs;
-    }
-
-    public synchronized void reset(long j) {
-        this.firstSampleTimestampUs = j;
-        this.timestampOffsetUs = j == Long.MAX_VALUE ? 0L : -9223372036854775807L;
-        this.lastUnadjustedTimestampUs = -9223372036854775807L;
-    }
-
-    public synchronized void sharedInitializeOrWait(boolean z, long j) {
-        try {
-            Assertions.checkState(this.firstSampleTimestampUs == 9223372036854775806L);
-            if (this.timestampOffsetUs != -9223372036854775807L) {
-                return;
-            }
-            if (z) {
-                this.nextSampleTimestampUs.set(Long.valueOf(j));
-            } else {
-                while (this.timestampOffsetUs == -9223372036854775807L) {
-                    wait();
+            if (this.timestampOffsetUs == -9223372036854775807L) {
+                long j2 = this.firstSampleTimestampUs;
+                if (j2 == 9223372036854775806L) {
+                    j2 = ((Long) Assertions.checkNotNull((Long) this.nextSampleTimestampUs.get())).longValue();
                 }
+                this.timestampOffsetUs = j2 - j;
+                notifyAll();
             }
+            this.lastUnadjustedTimestampUs = j;
+            return j + this.timestampOffsetUs;
         } catch (Throwable th) {
             throw th;
         }
+    }
+
+    public static long ptsToUs(long j) {
+        return (j * 1000000) / 90000;
+    }
+
+    public static long usToWrappedPts(long j) {
+        return usToNonWrappedPts(j) % 8589934592L;
+    }
+
+    public static long usToNonWrappedPts(long j) {
+        return (j * 90000) / 1000000;
     }
 }

@@ -19,10 +19,6 @@ import java.util.Set;
 
 /* loaded from: classes.dex */
 abstract class MediaRouteDialogHelper {
-    public static int getDialogHeight(Context context) {
-        return !context.getResources().getBoolean(R$bool.is_tablet) ? -1 : -2;
-    }
-
     public static int getDialogWidth(Context context) {
         float fraction;
         DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
@@ -49,24 +45,12 @@ abstract class MediaRouteDialogHelper {
         return -1;
     }
 
-    public static HashMap getItemBitmapMap(Context context, ListView listView, ArrayAdapter arrayAdapter) {
-        HashMap hashMap = new HashMap();
-        int firstVisiblePosition = listView.getFirstVisiblePosition();
-        for (int i = 0; i < listView.getChildCount(); i++) {
-            hashMap.put(arrayAdapter.getItem(firstVisiblePosition + i), getViewBitmap(context, listView.getChildAt(i)));
-        }
-        return hashMap;
+    public static int getDialogHeight(Context context) {
+        return !context.getResources().getBoolean(R$bool.is_tablet) ? -1 : -2;
     }
 
-    public static HashMap getItemBoundMap(ListView listView, ArrayAdapter arrayAdapter) {
-        HashMap hashMap = new HashMap();
-        int firstVisiblePosition = listView.getFirstVisiblePosition();
-        for (int i = 0; i < listView.getChildCount(); i++) {
-            Object item = arrayAdapter.getItem(firstVisiblePosition + i);
-            View childAt = listView.getChildAt(i);
-            hashMap.put(item, new Rect(childAt.getLeft(), childAt.getTop(), childAt.getRight(), childAt.getBottom()));
-        }
-        return hashMap;
+    public static boolean listUnorderedEquals(List list, List list2) {
+        return new HashSet(list).equals(new HashSet(list2));
     }
 
     public static Set getItemsAdded(List list, List list2) {
@@ -81,13 +65,29 @@ abstract class MediaRouteDialogHelper {
         return hashSet;
     }
 
+    public static HashMap getItemBoundMap(ListView listView, ArrayAdapter arrayAdapter) {
+        HashMap hashMap = new HashMap();
+        int firstVisiblePosition = listView.getFirstVisiblePosition();
+        for (int i = 0; i < listView.getChildCount(); i++) {
+            Object item = arrayAdapter.getItem(firstVisiblePosition + i);
+            View childAt = listView.getChildAt(i);
+            hashMap.put(item, new Rect(childAt.getLeft(), childAt.getTop(), childAt.getRight(), childAt.getBottom()));
+        }
+        return hashMap;
+    }
+
+    public static HashMap getItemBitmapMap(Context context, ListView listView, ArrayAdapter arrayAdapter) {
+        HashMap hashMap = new HashMap();
+        int firstVisiblePosition = listView.getFirstVisiblePosition();
+        for (int i = 0; i < listView.getChildCount(); i++) {
+            hashMap.put(arrayAdapter.getItem(firstVisiblePosition + i), getViewBitmap(context, listView.getChildAt(i)));
+        }
+        return hashMap;
+    }
+
     private static BitmapDrawable getViewBitmap(Context context, View view) {
         Bitmap createBitmap = Bitmap.createBitmap(view.getWidth(), view.getHeight(), Bitmap.Config.ARGB_8888);
         view.draw(new Canvas(createBitmap));
         return new BitmapDrawable(context.getResources(), createBitmap);
-    }
-
-    public static boolean listUnorderedEquals(List list, List list2) {
-        return new HashSet(list).equals(new HashSet(list2));
     }
 }

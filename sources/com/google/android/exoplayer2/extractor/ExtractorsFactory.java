@@ -20,6 +20,10 @@ public interface ExtractorsFactory {
         }
     };
 
+    Extractor[] createExtractors();
+
+    Extractor[] createExtractors(Uri uri, Map map);
+
     public abstract /* synthetic */ class -CC {
         static {
             ExtractorsFactory extractorsFactory = ExtractorsFactory.EMPTY;
@@ -29,8 +33,4 @@ public interface ExtractorsFactory {
             return new Extractor[0];
         }
     }
-
-    Extractor[] createExtractors();
-
-    Extractor[] createExtractors(Uri uri, Map map);
 }

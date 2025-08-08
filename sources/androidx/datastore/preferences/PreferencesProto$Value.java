@@ -20,56 +20,7 @@ public final class PreferencesProto$Value extends GeneratedMessageLite implement
     private int valueCase_ = 0;
     private Object value_;
 
-    public static final class Builder extends GeneratedMessageLite.Builder implements MessageLiteOrBuilder {
-        private Builder() {
-            super(PreferencesProto$Value.DEFAULT_INSTANCE);
-        }
-
-        /* synthetic */ Builder(PreferencesProto$1 preferencesProto$1) {
-            this();
-        }
-
-        public Builder setBoolean(boolean z) {
-            copyOnWrite();
-            ((PreferencesProto$Value) this.instance).setBoolean(z);
-            return this;
-        }
-
-        public Builder setDouble(double d) {
-            copyOnWrite();
-            ((PreferencesProto$Value) this.instance).setDouble(d);
-            return this;
-        }
-
-        public Builder setFloat(float f) {
-            copyOnWrite();
-            ((PreferencesProto$Value) this.instance).setFloat(f);
-            return this;
-        }
-
-        public Builder setInteger(int i) {
-            copyOnWrite();
-            ((PreferencesProto$Value) this.instance).setInteger(i);
-            return this;
-        }
-
-        public Builder setLong(long j) {
-            copyOnWrite();
-            ((PreferencesProto$Value) this.instance).setLong(j);
-            return this;
-        }
-
-        public Builder setString(String str) {
-            copyOnWrite();
-            ((PreferencesProto$Value) this.instance).setString(str);
-            return this;
-        }
-
-        public Builder setStringSet(PreferencesProto$StringSet.Builder builder) {
-            copyOnWrite();
-            ((PreferencesProto$Value) this.instance).setStringSet(builder);
-            return this;
-        }
+    private PreferencesProto$Value() {
     }
 
     public enum ValueCase {
@@ -112,21 +63,15 @@ public final class PreferencesProto$Value extends GeneratedMessageLite implement
         }
     }
 
-    static {
-        PreferencesProto$Value preferencesProto$Value = new PreferencesProto$Value();
-        DEFAULT_INSTANCE = preferencesProto$Value;
-        GeneratedMessageLite.registerDefaultInstance(PreferencesProto$Value.class, preferencesProto$Value);
+    public ValueCase getValueCase() {
+        return ValueCase.forNumber(this.valueCase_);
     }
 
-    private PreferencesProto$Value() {
-    }
-
-    public static PreferencesProto$Value getDefaultInstance() {
-        return DEFAULT_INSTANCE;
-    }
-
-    public static Builder newBuilder() {
-        return (Builder) DEFAULT_INSTANCE.createBuilder();
+    public boolean getBoolean() {
+        if (this.valueCase_ == 1) {
+            return ((Boolean) this.value_).booleanValue();
+        }
+        return false;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -135,10 +80,11 @@ public final class PreferencesProto$Value extends GeneratedMessageLite implement
         this.value_ = Boolean.valueOf(z);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public void setDouble(double d) {
-        this.valueCase_ = 7;
-        this.value_ = Double.valueOf(d);
+    public float getFloat() {
+        if (this.valueCase_ == 2) {
+            return ((Float) this.value_).floatValue();
+        }
+        return 0.0f;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -147,16 +93,37 @@ public final class PreferencesProto$Value extends GeneratedMessageLite implement
         this.value_ = Float.valueOf(f);
     }
 
+    public int getInteger() {
+        if (this.valueCase_ == 3) {
+            return ((Integer) this.value_).intValue();
+        }
+        return 0;
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     public void setInteger(int i) {
         this.valueCase_ = 3;
         this.value_ = Integer.valueOf(i);
     }
 
+    public long getLong() {
+        if (this.valueCase_ == 4) {
+            return ((Long) this.value_).longValue();
+        }
+        return 0L;
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     public void setLong(long j) {
         this.valueCase_ = 4;
         this.value_ = Long.valueOf(j);
+    }
+
+    public String getString() {
+        if (this.valueCase_ != 5) {
+            return "";
+        }
+        return (String) this.value_;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -166,10 +133,86 @@ public final class PreferencesProto$Value extends GeneratedMessageLite implement
         this.value_ = str;
     }
 
+    public PreferencesProto$StringSet getStringSet() {
+        if (this.valueCase_ == 6) {
+            return (PreferencesProto$StringSet) this.value_;
+        }
+        return PreferencesProto$StringSet.getDefaultInstance();
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     public void setStringSet(PreferencesProto$StringSet.Builder builder) {
         this.value_ = builder.build();
         this.valueCase_ = 6;
+    }
+
+    public double getDouble() {
+        if (this.valueCase_ == 7) {
+            return ((Double) this.value_).doubleValue();
+        }
+        return 0.0d;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void setDouble(double d) {
+        this.valueCase_ = 7;
+        this.value_ = Double.valueOf(d);
+    }
+
+    public static Builder newBuilder() {
+        return (Builder) DEFAULT_INSTANCE.createBuilder();
+    }
+
+    public static final class Builder extends GeneratedMessageLite.Builder implements MessageLiteOrBuilder {
+        /* synthetic */ Builder(PreferencesProto$1 preferencesProto$1) {
+            this();
+        }
+
+        private Builder() {
+            super(PreferencesProto$Value.DEFAULT_INSTANCE);
+        }
+
+        public Builder setBoolean(boolean z) {
+            copyOnWrite();
+            ((PreferencesProto$Value) this.instance).setBoolean(z);
+            return this;
+        }
+
+        public Builder setFloat(float f) {
+            copyOnWrite();
+            ((PreferencesProto$Value) this.instance).setFloat(f);
+            return this;
+        }
+
+        public Builder setInteger(int i) {
+            copyOnWrite();
+            ((PreferencesProto$Value) this.instance).setInteger(i);
+            return this;
+        }
+
+        public Builder setLong(long j) {
+            copyOnWrite();
+            ((PreferencesProto$Value) this.instance).setLong(j);
+            return this;
+        }
+
+        public Builder setString(String str) {
+            copyOnWrite();
+            ((PreferencesProto$Value) this.instance).setString(str);
+            return this;
+        }
+
+        public Builder setStringSet(PreferencesProto$StringSet.Builder builder) {
+            copyOnWrite();
+            ((PreferencesProto$Value) this.instance).setStringSet(builder);
+            return this;
+        }
+
+        public Builder setDouble(double d) {
+            copyOnWrite();
+            ((PreferencesProto$Value) this.instance).setDouble(d);
+            return this;
+        }
     }
 
     @Override // androidx.datastore.preferences.protobuf.GeneratedMessageLite
@@ -208,50 +251,13 @@ public final class PreferencesProto$Value extends GeneratedMessageLite implement
         }
     }
 
-    public boolean getBoolean() {
-        if (this.valueCase_ == 1) {
-            return ((Boolean) this.value_).booleanValue();
-        }
-        return false;
+    static {
+        PreferencesProto$Value preferencesProto$Value = new PreferencesProto$Value();
+        DEFAULT_INSTANCE = preferencesProto$Value;
+        GeneratedMessageLite.registerDefaultInstance(PreferencesProto$Value.class, preferencesProto$Value);
     }
 
-    public double getDouble() {
-        if (this.valueCase_ == 7) {
-            return ((Double) this.value_).doubleValue();
-        }
-        return 0.0d;
-    }
-
-    public float getFloat() {
-        if (this.valueCase_ == 2) {
-            return ((Float) this.value_).floatValue();
-        }
-        return 0.0f;
-    }
-
-    public int getInteger() {
-        if (this.valueCase_ == 3) {
-            return ((Integer) this.value_).intValue();
-        }
-        return 0;
-    }
-
-    public long getLong() {
-        if (this.valueCase_ == 4) {
-            return ((Long) this.value_).longValue();
-        }
-        return 0L;
-    }
-
-    public String getString() {
-        return this.valueCase_ == 5 ? (String) this.value_ : "";
-    }
-
-    public PreferencesProto$StringSet getStringSet() {
-        return this.valueCase_ == 6 ? (PreferencesProto$StringSet) this.value_ : PreferencesProto$StringSet.getDefaultInstance();
-    }
-
-    public ValueCase getValueCase() {
-        return ValueCase.forNumber(this.valueCase_);
+    public static PreferencesProto$Value getDefaultInstance() {
+        return DEFAULT_INSTANCE;
     }
 }

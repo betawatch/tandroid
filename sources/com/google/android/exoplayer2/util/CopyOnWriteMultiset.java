@@ -35,35 +35,6 @@ public final class CopyOnWriteMultiset implements Iterable {
         }
     }
 
-    public int count(Object obj) {
-        int intValue;
-        synchronized (this.lock) {
-            try {
-                intValue = this.elementCounts.containsKey(obj) ? ((Integer) this.elementCounts.get(obj)).intValue() : 0;
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-        return intValue;
-    }
-
-    public Set elementSet() {
-        Set set;
-        synchronized (this.lock) {
-            set = this.elementSet;
-        }
-        return set;
-    }
-
-    @Override // java.lang.Iterable
-    public Iterator iterator() {
-        Iterator it;
-        synchronized (this.lock) {
-            it = this.elements.iterator();
-        }
-        return it;
-    }
-
     public void remove(Object obj) {
         synchronized (this.lock) {
             try {
@@ -86,5 +57,34 @@ public final class CopyOnWriteMultiset implements Iterable {
                 throw th;
             }
         }
+    }
+
+    public Set elementSet() {
+        Set set;
+        synchronized (this.lock) {
+            set = this.elementSet;
+        }
+        return set;
+    }
+
+    @Override // java.lang.Iterable
+    public Iterator iterator() {
+        Iterator it;
+        synchronized (this.lock) {
+            it = this.elements.iterator();
+        }
+        return it;
+    }
+
+    public int count(Object obj) {
+        int intValue;
+        synchronized (this.lock) {
+            try {
+                intValue = this.elementCounts.containsKey(obj) ? ((Integer) this.elementCounts.get(obj)).intValue() : 0;
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+        return intValue;
     }
 }

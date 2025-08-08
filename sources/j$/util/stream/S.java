@@ -1,97 +1,68 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
-import j$.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CountedCompleter;
 
 /* loaded from: classes2.dex */
 final class S extends CountedCompleter {
-    private final b a;
-    private Spliterator b;
-    private final long c;
-    private final ConcurrentHashMap d;
-    private final e2 e;
-    private final S f;
-    private G0 g;
+    private Spliterator a;
+    private final d2 b;
+    private final b c;
+    private long d;
 
-    S(S s, Spliterator spliterator, S s2) {
-        super(s);
-        this.a = s.a;
-        this.b = spliterator;
-        this.c = s.c;
-        this.d = s.d;
-        this.e = s.e;
-        this.f = s2;
+    S(b bVar, Spliterator spliterator, d2 d2Var) {
+        super(null);
+        this.b = d2Var;
+        this.c = bVar;
+        this.a = spliterator;
+        this.d = 0L;
     }
 
-    protected S(b bVar, Spliterator spliterator, e2 e2Var) {
-        super(null);
-        this.a = bVar;
-        this.b = spliterator;
-        this.c = e.f(spliterator.estimateSize());
-        this.d = new ConcurrentHashMap(Math.max(16, e.g << 1));
-        this.e = e2Var;
-        this.f = null;
+    S(S s, Spliterator spliterator) {
+        super(s);
+        this.a = spliterator;
+        this.b = s.b;
+        this.d = s.d;
+        this.c = s.c;
     }
 
     @Override // java.util.concurrent.CountedCompleter
     public final void compute() {
         Spliterator trySplit;
-        Spliterator spliterator = this.b;
-        long j = this.c;
+        Spliterator spliterator = this.a;
+        long estimateSize = spliterator.estimateSize();
+        long j = this.d;
+        if (j == 0) {
+            j = e.f(estimateSize);
+            this.d = j;
+        }
+        boolean i = Q2.SHORT_CIRCUIT.i(this.c.p0());
+        d2 d2Var = this.b;
         boolean z = false;
         S s = this;
-        while (spliterator.estimateSize() > j && (trySplit = spliterator.trySplit()) != null) {
-            S s2 = new S(s, trySplit, s.f);
-            S s3 = new S(s, spliterator, s2);
-            s.addToPendingCount(1);
-            s3.addToPendingCount(1);
-            s.d.put(s2, s3);
-            if (s.f != null) {
-                s2.addToPendingCount(1);
-                if (s.d.replace(s.f, s, s2)) {
-                    s.addToPendingCount(-1);
-                } else {
-                    s2.addToPendingCount(-1);
-                }
+        while (true) {
+            if (i && d2Var.q()) {
+                break;
             }
+            if (estimateSize <= j || (trySplit = spliterator.trySplit()) == null) {
+                break;
+            }
+            S s2 = new S(s, trySplit);
+            s.addToPendingCount(1);
             if (z) {
                 spliterator = trySplit;
+            } else {
+                S s3 = s;
                 s = s2;
                 s2 = s3;
-            } else {
-                s = s3;
             }
             z = !z;
-            s2.fork();
+            s.fork();
+            s = s2;
+            estimateSize = spliterator.estimateSize();
         }
-        if (s.getPendingCount() > 0) {
-            r rVar = new r(8);
-            b bVar = s.a;
-            y0 s0 = bVar.s0(bVar.l0(spliterator), rVar);
-            s.a.A0(spliterator, s0);
-            s.g = s0.b();
-            s.b = null;
-        }
-        s.tryComplete();
-    }
-
-    @Override // java.util.concurrent.CountedCompleter
-    public final void onCompletion(CountedCompleter countedCompleter) {
-        G0 g0 = this.g;
-        if (g0 != null) {
-            g0.forEach(this.e);
-            this.g = null;
-        } else {
-            Spliterator spliterator = this.b;
-            if (spliterator != null) {
-                this.a.A0(spliterator, this.e);
-                this.b = null;
-            }
-        }
-        S s = (S) this.d.remove(this);
-        if (s != null) {
-            s.tryComplete();
-        }
+        s.c.f0(spliterator, d2Var);
+        s.a = null;
+        s.propagateCompletion();
     }
 }

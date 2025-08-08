@@ -4,7 +4,7 @@ import java.util.Timer;
 import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
@@ -33,7 +33,7 @@ final class zzbk extends SuspendLambda implements Function2 {
     public final Object invokeSuspend(Object obj) {
         zzaz zzazVar;
         Timer timer;
-        IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        IntrinsicsKt.getCOROUTINE_SUSPENDED();
         ResultKt.throwOnFailure(obj);
         zzbm zzbmVar = this.zza;
         synchronized (zzbh.class) {

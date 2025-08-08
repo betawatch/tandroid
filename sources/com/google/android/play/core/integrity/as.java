@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.TaskCompletionSource;
@@ -41,18 +40,13 @@ final class as extends com.google.android.play.integrity.internal.q {
         if (pendingIntent == null) {
             this.c.b("onRequestDialog(%s): got null dialog intent", this.d);
             this.a.trySetResult(0);
-        } else {
-            if (Build.VERSION.SDK_INT < 21) {
-                this.c.e("Integrity Dialog requires minimum SDK version: %d", 21);
-                this.a.trySetResult(0);
-                return;
-            }
-            Intent intent = new Intent(this.f, (Class<?>) PlayCoreDialogWrapperActivity.class);
-            intent.putExtra("confirmation_intent", pendingIntent);
-            intent.setFlags(TLObject.FLAG_29);
-            intent.putExtra("result_receiver", new ar(this, this.b.c()));
-            this.c.a("Starting dialog intent...", new Object[0]);
-            this.f.startActivityForResult(intent, 0);
+            return;
         }
+        Intent intent = new Intent(this.f, (Class<?>) PlayCoreDialogWrapperActivity.class);
+        intent.putExtra("confirmation_intent", pendingIntent);
+        intent.setFlags(TLObject.FLAG_29);
+        intent.putExtra("result_receiver", new ar(this, this.b.c()));
+        this.c.a("Starting dialog intent...", new Object[0]);
+        this.f.startActivityForResult(intent, 0);
     }
 }

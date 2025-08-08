@@ -10,7 +10,7 @@ import com.stripe.android.net.StripeApiHandler;
 import com.stripe.android.util.StripeNetworkUtils;
 import java.util.concurrent.Executor;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class Stripe {
     private String defaultPublishableKey;
     TokenCreator tokenCreator = new TokenCreator() { // from class: com.stripe.android.Stripe.1
@@ -41,54 +41,12 @@ public class Stripe {
         }
     };
 
-    private class ResponseWrapper {
-        final Exception error;
-        final Token token;
-
-        private ResponseWrapper(Token token, Exception exc) {
-            this.error = exc;
-            this.token = token;
-        }
-    }
-
     interface TokenCreator {
         void create(Card card, String str, Executor executor, TokenCallback tokenCallback);
     }
 
     public Stripe(String str) {
         setDefaultPublishableKey(str);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public void executeTokenTask(Executor executor, AsyncTask asyncTask) {
-        if (executor != null) {
-            asyncTask.executeOnExecutor(executor, new Void[0]);
-        } else {
-            asyncTask.execute(new Void[0]);
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public void tokenTaskPostExecution(ResponseWrapper responseWrapper, TokenCallback tokenCallback) {
-        Token token = responseWrapper.token;
-        if (token != null) {
-            tokenCallback.onSuccess(token);
-            return;
-        }
-        Exception exc = responseWrapper.error;
-        if (exc == null) {
-            exc = new RuntimeException("Somehow got neither a token response or an error response");
-        }
-        tokenCallback.onError(exc);
-    }
-
-    private void validateKey(String str) {
-        if (str == null || str.length() == 0) {
-            throw new AuthenticationException("Invalid Publishable Key: You must use a valid publishable key to create a token.  For more info, see https://stripe.com/docs/stripe.js.", null, 0);
-        }
-        if (str.startsWith("sk_")) {
-            throw new AuthenticationException("Invalid Publishable Key: You are using a secret key to create a token, instead of the publishable one. For more info, see https://stripe.com/docs/stripe.js", null, 0);
-        }
     }
 
     public void createToken(Card card, TokenCallback tokenCallback) {
@@ -117,5 +75,48 @@ public class Stripe {
     public void setDefaultPublishableKey(String str) {
         validateKey(str);
         this.defaultPublishableKey = str;
+    }
+
+    private void validateKey(String str) {
+        if (str == null || str.length() == 0) {
+            throw new AuthenticationException("Invalid Publishable Key: You must use a valid publishable key to create a token.  For more info, see https://stripe.com/docs/stripe.js.", null, 0);
+        }
+        if (str.startsWith("sk_")) {
+            throw new AuthenticationException("Invalid Publishable Key: You are using a secret key to create a token, instead of the publishable one. For more info, see https://stripe.com/docs/stripe.js", null, 0);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void tokenTaskPostExecution(ResponseWrapper responseWrapper, TokenCallback tokenCallback) {
+        Token token = responseWrapper.token;
+        if (token != null) {
+            tokenCallback.onSuccess(token);
+            return;
+        }
+        Exception exc = responseWrapper.error;
+        if (exc != null) {
+            tokenCallback.onError(exc);
+        } else {
+            tokenCallback.onError(new RuntimeException("Somehow got neither a token response or an error response"));
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void executeTokenTask(Executor executor, AsyncTask asyncTask) {
+        if (executor != null) {
+            asyncTask.executeOnExecutor(executor, new Void[0]);
+        } else {
+            asyncTask.execute(new Void[0]);
+        }
+    }
+
+    private class ResponseWrapper {
+        final Exception error;
+        final Token token;
+
+        private ResponseWrapper(Token token, Exception exc) {
+            this.error = exc;
+            this.token = token;
+        }
     }
 }

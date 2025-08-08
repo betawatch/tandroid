@@ -12,6 +12,10 @@ abstract class BaseMenuWrapper {
     private SimpleArrayMap mMenuItems;
     private SimpleArrayMap mSubMenus;
 
+    final SubMenu getSubMenuWrapper(SubMenu subMenu) {
+        return subMenu;
+    }
+
     BaseMenuWrapper(Context context) {
         this.mContext = context;
     }
@@ -31,10 +35,6 @@ abstract class BaseMenuWrapper {
         MenuItemWrapperICS menuItemWrapperICS = new MenuItemWrapperICS(this.mContext, supportMenuItem);
         this.mMenuItems.put(supportMenuItem, menuItemWrapperICS);
         return menuItemWrapperICS;
-    }
-
-    final SubMenu getSubMenuWrapper(SubMenu subMenu) {
-        return subMenu;
     }
 
     final void internalClear() {

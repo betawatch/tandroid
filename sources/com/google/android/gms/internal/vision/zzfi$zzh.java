@@ -14,22 +14,6 @@ public final class zzfi$zzh extends zzjb implements zzkm {
     private float zzh;
     private float zzi;
 
-    public static final class zza extends zzjb.zzb implements zzkm {
-        private zza() {
-            super(zzfi$zzh.zzj);
-        }
-
-        /* synthetic */ zza(zzfk zzfkVar) {
-            this();
-        }
-    }
-
-    static {
-        zzfi$zzh zzfi_zzh = new zzfi$zzh();
-        zzj = zzfi_zzh;
-        zzjb.zza(zzfi$zzh.class, zzfi_zzh);
-    }
-
     private zzfi$zzh() {
     }
 
@@ -71,5 +55,21 @@ public final class zzfi$zzh extends zzjb implements zzkm {
             default:
                 throw new UnsupportedOperationException();
         }
+    }
+
+    public static final class zza extends zzjb.zzb implements zzkm {
+        private zza() {
+            super(zzfi$zzh.zzj);
+        }
+
+        /* synthetic */ zza(zzfk zzfkVar) {
+            this();
+        }
+    }
+
+    static {
+        zzfi$zzh zzfi_zzh = new zzfi$zzh();
+        zzj = zzfi_zzh;
+        zzjb.zza(zzfi$zzh.class, zzfi_zzh);
     }
 }

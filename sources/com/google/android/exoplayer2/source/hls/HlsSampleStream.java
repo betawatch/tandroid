@@ -16,14 +16,16 @@ final class HlsSampleStream implements SampleStream {
         this.trackGroupIndex = i;
     }
 
-    private boolean hasValidSampleQueueIndex() {
-        int i = this.sampleQueueIndex;
-        return (i == -1 || i == -3 || i == -2) ? false : true;
-    }
-
     public void bindSampleQueue() {
         Assertions.checkArgument(this.sampleQueueIndex == -1);
         this.sampleQueueIndex = this.sampleStreamWrapper.bindSampleQueueToSampleStream(this.trackGroupIndex);
+    }
+
+    public void unbindSampleQueue() {
+        if (this.sampleQueueIndex != -1) {
+            this.sampleStreamWrapper.unbindSampleQueue(this.trackGroupIndex);
+            this.sampleQueueIndex = -1;
+        }
     }
 
     @Override // com.google.android.exoplayer2.source.SampleStream
@@ -64,10 +66,8 @@ final class HlsSampleStream implements SampleStream {
         return 0;
     }
 
-    public void unbindSampleQueue() {
-        if (this.sampleQueueIndex != -1) {
-            this.sampleStreamWrapper.unbindSampleQueue(this.trackGroupIndex);
-            this.sampleQueueIndex = -1;
-        }
+    private boolean hasValidSampleQueueIndex() {
+        int i = this.sampleQueueIndex;
+        return (i == -1 || i == -3 || i == -2) ? false : true;
     }
 }

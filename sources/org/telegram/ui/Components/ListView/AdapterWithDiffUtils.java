@@ -4,46 +4,25 @@ import androidx.recyclerview.widget.DiffUtil;
 import java.util.ArrayList;
 import org.telegram.ui.Components.RecyclerListView;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class AdapterWithDiffUtils extends RecyclerListView.SelectionAdapter {
     DiffUtilsCallback callback = new DiffUtilsCallback();
 
-    private class DiffUtilsCallback extends DiffUtil.Callback {
-        ArrayList newItems;
-        ArrayList oldItems;
-
-        private DiffUtilsCallback() {
+    public void setItems(ArrayList arrayList, ArrayList arrayList2) {
+        if (arrayList2 == null) {
+            arrayList2 = new ArrayList();
         }
-
-        @Override // androidx.recyclerview.widget.DiffUtil.Callback
-        public boolean areContentsTheSame(int i, int i2) {
-            return ((Item) this.oldItems.get(i)).compareContents((Item) this.newItems.get(i2));
-        }
-
-        @Override // androidx.recyclerview.widget.DiffUtil.Callback
-        public boolean areItemsTheSame(int i, int i2) {
-            return ((Item) this.oldItems.get(i)).compare((Item) this.newItems.get(i2));
-        }
-
-        @Override // androidx.recyclerview.widget.DiffUtil.Callback
-        public int getNewListSize() {
-            return this.newItems.size();
-        }
-
-        @Override // androidx.recyclerview.widget.DiffUtil.Callback
-        public int getOldListSize() {
-            return this.oldItems.size();
-        }
-
-        public void setItems(ArrayList arrayList, ArrayList arrayList2) {
-            this.oldItems = arrayList;
-            this.newItems = arrayList2;
-        }
+        this.callback.setItems(arrayList, arrayList2);
+        DiffUtil.calculateDiff(this.callback).dispatchUpdatesTo(this);
     }
 
     public static abstract class Item {
         public boolean selectable;
         public int viewType;
+
+        protected boolean contentsEquals(Item item) {
+            return false;
+        }
 
         public Item(int i, boolean z) {
             this.viewType = i;
@@ -63,17 +42,38 @@ public abstract class AdapterWithDiffUtils extends RecyclerListView.SelectionAda
             }
             return contentsEquals(item);
         }
-
-        protected boolean contentsEquals(Item item) {
-            return false;
-        }
     }
 
-    public void setItems(ArrayList arrayList, ArrayList arrayList2) {
-        if (arrayList2 == null) {
-            arrayList2 = new ArrayList();
+    private class DiffUtilsCallback extends DiffUtil.Callback {
+        ArrayList newItems;
+        ArrayList oldItems;
+
+        private DiffUtilsCallback() {
         }
-        this.callback.setItems(arrayList, arrayList2);
-        DiffUtil.calculateDiff(this.callback).dispatchUpdatesTo(this);
+
+        public void setItems(ArrayList arrayList, ArrayList arrayList2) {
+            this.oldItems = arrayList;
+            this.newItems = arrayList2;
+        }
+
+        @Override // androidx.recyclerview.widget.DiffUtil.Callback
+        public int getOldListSize() {
+            return this.oldItems.size();
+        }
+
+        @Override // androidx.recyclerview.widget.DiffUtil.Callback
+        public int getNewListSize() {
+            return this.newItems.size();
+        }
+
+        @Override // androidx.recyclerview.widget.DiffUtil.Callback
+        public boolean areItemsTheSame(int i, int i2) {
+            return ((Item) this.oldItems.get(i)).compare((Item) this.newItems.get(i2));
+        }
+
+        @Override // androidx.recyclerview.widget.DiffUtil.Callback
+        public boolean areContentsTheSame(int i, int i2) {
+            return ((Item) this.oldItems.get(i)).compareContents((Item) this.newItems.get(i2));
+        }
     }
 }

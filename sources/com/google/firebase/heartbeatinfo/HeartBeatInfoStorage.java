@@ -16,77 +16,12 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 class HeartBeatInfoStorage {
     private final SharedPreferences firebaseSharedPreferences;
 
     public HeartBeatInfoStorage(Context context, String str) {
         this.firebaseSharedPreferences = context.getSharedPreferences("FirebaseHeartBeat" + str, 0);
-    }
-
-    private synchronized void cleanUpStoredHeartBeats() {
-        try {
-            long j = this.firebaseSharedPreferences.getLong("fire-count", 0L);
-            String str = "";
-            String str2 = null;
-            for (Map.Entry<String, ?> entry : this.firebaseSharedPreferences.getAll().entrySet()) {
-                if (entry.getValue() instanceof Set) {
-                    for (String str3 : (Set) entry.getValue()) {
-                        if (str2 != null && str2.compareTo(str3) <= 0) {
-                        }
-                        str = entry.getKey();
-                        str2 = str3;
-                    }
-                }
-            }
-            HashSet hashSet = new HashSet(this.firebaseSharedPreferences.getStringSet(str, new HashSet()));
-            hashSet.remove(str2);
-            this.firebaseSharedPreferences.edit().putStringSet(str, hashSet).putLong("fire-count", j - 1).commit();
-        } catch (Throwable th) {
-            throw th;
-        }
-    }
-
-    private synchronized String getFormattedDate(long j) {
-        if (Build.VERSION.SDK_INT >= 26) {
-            return DateRetargetClass.toInstant(new Date(j)).atOffset(ZoneOffset.UTC).toLocalDateTime().format(DateTimeFormatter.ISO_LOCAL_DATE);
-        }
-        return new SimpleDateFormat("yyyy-MM-dd", Locale.UK).format(new Date(j));
-    }
-
-    private synchronized String getStoredUserAgentString(String str) {
-        for (Map.Entry<String, ?> entry : this.firebaseSharedPreferences.getAll().entrySet()) {
-            if (entry.getValue() instanceof Set) {
-                Iterator it = ((Set) entry.getValue()).iterator();
-                while (it.hasNext()) {
-                    if (str.equals((String) it.next())) {
-                        return entry.getKey();
-                    }
-                }
-            }
-        }
-        return null;
-    }
-
-    private synchronized void removeStoredDate(String str) {
-        try {
-            String storedUserAgentString = getStoredUserAgentString(str);
-            if (storedUserAgentString == null) {
-                return;
-            }
-            HashSet hashSet = new HashSet(this.firebaseSharedPreferences.getStringSet(storedUserAgentString, new HashSet()));
-            hashSet.remove(str);
-            (hashSet.isEmpty() ? this.firebaseSharedPreferences.edit().remove(storedUserAgentString) : this.firebaseSharedPreferences.edit().putStringSet(storedUserAgentString, hashSet)).commit();
-        } catch (Throwable th) {
-            throw th;
-        }
-    }
-
-    private synchronized void updateStoredUserAgent(String str, String str2) {
-        removeStoredDate(str2);
-        HashSet hashSet = new HashSet(this.firebaseSharedPreferences.getStringSet(str, new HashSet()));
-        hashSet.add(str2);
-        this.firebaseSharedPreferences.edit().putStringSet(str, hashSet).commit();
     }
 
     synchronized void deleteAllHeartBeats() {
@@ -139,8 +74,43 @@ class HeartBeatInfoStorage {
         return arrayList;
     }
 
-    synchronized boolean isSameDateUtc(long j, long j2) {
-        return getFormattedDate(j).equals(getFormattedDate(j2));
+    private synchronized String getStoredUserAgentString(String str) {
+        for (Map.Entry<String, ?> entry : this.firebaseSharedPreferences.getAll().entrySet()) {
+            if (entry.getValue() instanceof Set) {
+                Iterator it = ((Set) entry.getValue()).iterator();
+                while (it.hasNext()) {
+                    if (str.equals((String) it.next())) {
+                        return entry.getKey();
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
+    private synchronized void updateStoredUserAgent(String str, String str2) {
+        removeStoredDate(str2);
+        HashSet hashSet = new HashSet(this.firebaseSharedPreferences.getStringSet(str, new HashSet()));
+        hashSet.add(str2);
+        this.firebaseSharedPreferences.edit().putStringSet(str, hashSet).commit();
+    }
+
+    private synchronized void removeStoredDate(String str) {
+        try {
+            String storedUserAgentString = getStoredUserAgentString(str);
+            if (storedUserAgentString == null) {
+                return;
+            }
+            HashSet hashSet = new HashSet(this.firebaseSharedPreferences.getStringSet(storedUserAgentString, new HashSet()));
+            hashSet.remove(str);
+            if (hashSet.isEmpty()) {
+                this.firebaseSharedPreferences.edit().remove(storedUserAgentString).commit();
+            } else {
+                this.firebaseSharedPreferences.edit().putStringSet(storedUserAgentString, hashSet).commit();
+            }
+        } catch (Throwable th) {
+            throw th;
+        }
     }
 
     synchronized void postHeartBeatCleanUp() {
@@ -149,20 +119,11 @@ class HeartBeatInfoStorage {
         removeStoredDate(formattedDate);
     }
 
-    synchronized boolean shouldSendGlobalHeartBeat(long j) {
-        return shouldSendSdkHeartBeat("fire-global", j);
-    }
-
-    synchronized boolean shouldSendSdkHeartBeat(String str, long j) {
-        if (!this.firebaseSharedPreferences.contains(str)) {
-            this.firebaseSharedPreferences.edit().putLong(str, j).commit();
-            return true;
+    private synchronized String getFormattedDate(long j) {
+        if (Build.VERSION.SDK_INT >= 26) {
+            return DateRetargetClass.toInstant(new Date(j)).atOffset(ZoneOffset.UTC).toLocalDateTime().format(DateTimeFormatter.ISO_LOCAL_DATE);
         }
-        if (isSameDateUtc(this.firebaseSharedPreferences.getLong(str, -1L), j)) {
-            return false;
-        }
-        this.firebaseSharedPreferences.edit().putLong(str, j).commit();
-        return true;
+        return new SimpleDateFormat("yyyy-MM-dd", Locale.UK).format(new Date(j));
     }
 
     synchronized void storeHeartBeat(long j, String str) {
@@ -188,7 +149,50 @@ class HeartBeatInfoStorage {
         this.firebaseSharedPreferences.edit().putStringSet(str, hashSet).putLong("fire-count", j2 + 1).putString("last-used-date", formattedDate).commit();
     }
 
+    private synchronized void cleanUpStoredHeartBeats() {
+        try {
+            long j = this.firebaseSharedPreferences.getLong("fire-count", 0L);
+            String str = "";
+            String str2 = null;
+            for (Map.Entry<String, ?> entry : this.firebaseSharedPreferences.getAll().entrySet()) {
+                if (entry.getValue() instanceof Set) {
+                    for (String str3 : (Set) entry.getValue()) {
+                        if (str2 != null && str2.compareTo(str3) <= 0) {
+                        }
+                        str = entry.getKey();
+                        str2 = str3;
+                    }
+                }
+            }
+            HashSet hashSet = new HashSet(this.firebaseSharedPreferences.getStringSet(str, new HashSet()));
+            hashSet.remove(str2);
+            this.firebaseSharedPreferences.edit().putStringSet(str, hashSet).putLong("fire-count", j - 1).commit();
+        } catch (Throwable th) {
+            throw th;
+        }
+    }
+
     synchronized void updateGlobalHeartBeat(long j) {
         this.firebaseSharedPreferences.edit().putLong("fire-global", j).commit();
+    }
+
+    synchronized boolean isSameDateUtc(long j, long j2) {
+        return getFormattedDate(j).equals(getFormattedDate(j2));
+    }
+
+    synchronized boolean shouldSendSdkHeartBeat(String str, long j) {
+        if (this.firebaseSharedPreferences.contains(str)) {
+            if (isSameDateUtc(this.firebaseSharedPreferences.getLong(str, -1L), j)) {
+                return false;
+            }
+            this.firebaseSharedPreferences.edit().putLong(str, j).commit();
+            return true;
+        }
+        this.firebaseSharedPreferences.edit().putLong(str, j).commit();
+        return true;
+    }
+
+    synchronized boolean shouldSendGlobalHeartBeat(long j) {
+        return shouldSendSdkHeartBeat("fire-global", j);
     }
 }

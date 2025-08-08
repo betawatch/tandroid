@@ -7,6 +7,8 @@ import java.util.Iterator;
 abstract class TransformedIterator implements Iterator {
     final Iterator backingIterator;
 
+    abstract Object transform(Object obj);
+
     TransformedIterator(Iterator it) {
         this.backingIterator = (Iterator) Preconditions.checkNotNull(it);
     }
@@ -25,6 +27,4 @@ abstract class TransformedIterator implements Iterator {
     public final void remove() {
         this.backingIterator.remove();
     }
-
-    abstract Object transform(Object obj);
 }

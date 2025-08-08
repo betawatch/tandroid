@@ -1,7 +1,6 @@
 package org.telegram.messenger;
 
 import android.content.SharedPreferences;
-import android.os.Build;
 import androidx.core.math.MathUtils;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -52,11 +51,30 @@ public class LiteMode {
     private static int powerSaverLevel;
     private static int value;
 
-    public static void addOnPowerSaverAppliedListener(Utilities.Callback<Boolean> callback) {
-        if (onPowerSaverAppliedListeners == null) {
-            onPowerSaverAppliedListeners = new HashSet<>();
+    public static int getValue() {
+        return getValue(false);
+    }
+
+    public static int getValue(boolean z) {
+        if (!loaded) {
+            loadPreference();
         }
-        onPowerSaverAppliedListeners.add(callback);
+        if (!z) {
+            int batteryLevel = getBatteryLevel();
+            int i = powerSaverLevel;
+            if (batteryLevel <= i && i > 0) {
+                if (!lastPowerSaverApplied) {
+                    lastPowerSaverApplied = true;
+                    onPowerSaverApplied(true);
+                }
+                return PRESET_POWER_SAVER;
+            }
+            if (lastPowerSaverApplied) {
+                lastPowerSaverApplied = false;
+                onPowerSaverApplied(false);
+            }
+        }
+        return value;
     }
 
     /*  JADX ERROR: JadxRuntimeException in pass: IfRegionVisitor
@@ -97,7 +115,7 @@ public class LiteMode {
             android.os.BatteryManager r2 = (android.os.BatteryManager) r2
             if (r2 == 0) goto L2a
             r3 = 4
-            int r2 = org.telegram.messenger.LiteMode$$ExternalSyntheticApiModelOutline0.m(r2, r3)
+            int r2 = r2.getIntProperty(r3)
             org.telegram.messenger.LiteMode.lastBatteryLevelCached = r2
             org.telegram.messenger.LiteMode.lastBatteryLevelChecked = r0
         L2a:
@@ -107,37 +125,17 @@ public class LiteMode {
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.LiteMode.getBatteryLevel():int");
     }
 
-    public static int getPowerSaverLevel() {
-        if (!loaded) {
-            loadPreference();
+    private static int preprocessFlag(int i) {
+        if ((i & FLAG_ANIMATED_EMOJI_KEYBOARD) > 0) {
+            i = (i & (-16389)) | (UserConfig.hasPremiumOnAccounts() ? 4 : 16384);
         }
-        return powerSaverLevel;
-    }
-
-    public static int getValue() {
-        return getValue(false);
-    }
-
-    public static int getValue(boolean z) {
-        if (!loaded) {
-            loadPreference();
+        if ((i & FLAG_ANIMATED_EMOJI_REACTIONS) > 0) {
+            i = (i & (-8201)) | (UserConfig.hasPremiumOnAccounts() ? 8 : 8192);
         }
-        if (!z && Build.VERSION.SDK_INT >= 21) {
-            int batteryLevel = getBatteryLevel();
-            int i = powerSaverLevel;
-            if (batteryLevel <= i && i > 0) {
-                if (!lastPowerSaverApplied) {
-                    lastPowerSaverApplied = true;
-                    onPowerSaverApplied(true);
-                }
-                return PRESET_POWER_SAVER;
-            }
-            if (lastPowerSaverApplied) {
-                lastPowerSaverApplied = false;
-                onPowerSaverApplied(false);
-            }
+        if ((i & FLAG_ANIMATED_EMOJI_CHAT) > 0) {
+            return (i & (-4113)) | (UserConfig.hasPremiumOnAccounts() ? 16 : 4096);
         }
-        return value;
+        return i;
     }
 
     public static boolean isEnabled(int i) {
@@ -151,20 +149,56 @@ public class LiteMode {
         return (i & getValue(true)) > 0;
     }
 
-    public static boolean isPowerSaverApplied() {
-        getValue(false);
-        return lastPowerSaverApplied;
+    public static void toggleFlag(int i) {
+        toggleFlag(i, !isEnabled(i));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onPowerSaverApplied$0(boolean z) {
-        Iterator<Utilities.Callback<Boolean>> it = onPowerSaverAppliedListeners.iterator();
-        while (it.hasNext()) {
-            Utilities.Callback<Boolean> next = it.next();
-            if (next != null) {
-                next.run(Boolean.valueOf(z));
+    public static void toggleFlag(int i, boolean z) {
+        int value2;
+        if (z) {
+            value2 = i | getValue(true);
+        } else {
+            value2 = (~i) & getValue(true);
+        }
+        setAllFlags(value2);
+    }
+
+    public static void setAllFlags(int i) {
+        value = i;
+        savePreference();
+    }
+
+    public static void updatePresets(TLRPC.TL_jsonObject tL_jsonObject) {
+        for (int i = 0; i < tL_jsonObject.value.size(); i++) {
+            TLRPC.TL_jsonObjectValue tL_jsonObjectValue = tL_jsonObject.value.get(i);
+            if ("settings_mask".equals(tL_jsonObjectValue.key)) {
+                TLRPC.JSONValue jSONValue = tL_jsonObjectValue.value;
+                if (jSONValue instanceof TLRPC.TL_jsonArray) {
+                    ArrayList<TLRPC.JSONValue> arrayList = ((TLRPC.TL_jsonArray) jSONValue).value;
+                    try {
+                        PRESET_LOW = (int) ((TLRPC.TL_jsonNumber) arrayList.get(0)).value;
+                        PRESET_MEDIUM = (int) ((TLRPC.TL_jsonNumber) arrayList.get(1)).value;
+                        PRESET_HIGH = (int) ((TLRPC.TL_jsonNumber) arrayList.get(2)).value;
+                    } catch (Exception e) {
+                        FileLog.e(e);
+                    }
+                }
+            }
+            if ("battery_low".equals(tL_jsonObjectValue.key)) {
+                TLRPC.JSONValue jSONValue2 = tL_jsonObjectValue.value;
+                if (jSONValue2 instanceof TLRPC.TL_jsonArray) {
+                    ArrayList<TLRPC.JSONValue> arrayList2 = ((TLRPC.TL_jsonArray) jSONValue2).value;
+                    try {
+                        BATTERY_LOW = (int) ((TLRPC.TL_jsonNumber) arrayList2.get(0)).value;
+                        BATTERY_MEDIUM = (int) ((TLRPC.TL_jsonNumber) arrayList2.get(1)).value;
+                        BATTERY_HIGH = (int) ((TLRPC.TL_jsonNumber) arrayList2.get(2)).value;
+                    } catch (Exception e2) {
+                        FileLog.e(e2);
+                    }
+                }
             }
         }
+        loadPreference();
     }
 
     public static void loadPreference() {
@@ -189,7 +223,11 @@ public class LiteMode {
                 }
             } else {
                 if (globalMainSettings.contains("light_mode")) {
-                    i = (globalMainSettings.getInt("light_mode", SharedConfig.getDevicePerformanceClass() == 0 ? 1 : 0) & 1) > 0 ? PRESET_LOW : PRESET_HIGH;
+                    if ((globalMainSettings.getInt("light_mode", SharedConfig.getDevicePerformanceClass() == 0 ? 1 : 0) & 1) > 0) {
+                        i = PRESET_LOW;
+                    } else {
+                        i = PRESET_HIGH;
+                    }
                 }
                 if (globalMainSettings.contains("loopStickers")) {
                     i = globalMainSettings.getBoolean("loopStickers", true) ? i | 2 : i & (-3);
@@ -215,8 +253,57 @@ public class LiteMode {
         loaded = true;
     }
 
+    public static void savePreference() {
+        MessagesController.getGlobalMainSettings().edit().putInt("lite_mode3", value).putInt("lite_mode_battery_level", powerSaverLevel).apply();
+    }
+
+    public static int getPowerSaverLevel() {
+        if (!loaded) {
+            loadPreference();
+        }
+        return powerSaverLevel;
+    }
+
+    public static void setPowerSaverLevel(int i) {
+        powerSaverLevel = MathUtils.clamp(i, 0, 100);
+        savePreference();
+        getValue(false);
+    }
+
+    public static boolean isPowerSaverApplied() {
+        getValue(false);
+        return lastPowerSaverApplied;
+    }
+
+    private static void onPowerSaverApplied(final boolean z) {
+        if (z) {
+            onFlagsUpdate(getValue(true), PRESET_POWER_SAVER);
+        } else {
+            onFlagsUpdate(PRESET_POWER_SAVER, getValue(true));
+        }
+        if (onPowerSaverAppliedListeners != null) {
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.LiteMode$$ExternalSyntheticLambda0
+                @Override // java.lang.Runnable
+                public final void run() {
+                    LiteMode.lambda$onPowerSaverApplied$0(z);
+                }
+            });
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$onPowerSaverApplied$0(boolean z) {
+        Iterator<Utilities.Callback<Boolean>> it = onPowerSaverAppliedListeners.iterator();
+        while (it.hasNext()) {
+            Utilities.Callback<Boolean> next = it.next();
+            if (next != null) {
+                next.run(Boolean.valueOf(z));
+            }
+        }
+    }
+
     private static void onFlagsUpdate(int i, int i2) {
-        int i3 = (i ^ (-1)) & i2;
+        int i3 = (~i) & i2;
         if ((i3 & FLAGS_ANIMATED_EMOJI) > 0) {
             AnimatedEmojiDrawable.updateAll();
         }
@@ -229,33 +316,11 @@ public class LiteMode {
         }
     }
 
-    private static void onPowerSaverApplied(final boolean z) {
-        if (z) {
-            onFlagsUpdate(getValue(true), PRESET_POWER_SAVER);
-        } else {
-            onFlagsUpdate(PRESET_POWER_SAVER, getValue(true));
+    public static void addOnPowerSaverAppliedListener(Utilities.Callback<Boolean> callback) {
+        if (onPowerSaverAppliedListeners == null) {
+            onPowerSaverAppliedListeners = new HashSet<>();
         }
-        if (onPowerSaverAppliedListeners != null) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.LiteMode$$ExternalSyntheticLambda1
-                @Override // java.lang.Runnable
-                public final void run() {
-                    LiteMode.lambda$onPowerSaverApplied$0(z);
-                }
-            });
-        }
-    }
-
-    private static int preprocessFlag(int i) {
-        if ((i & FLAG_ANIMATED_EMOJI_KEYBOARD) > 0) {
-            i = (i & (-16389)) | (UserConfig.hasPremiumOnAccounts() ? 4 : 16384);
-        }
-        if ((i & FLAG_ANIMATED_EMOJI_REACTIONS) > 0) {
-            i = (i & (-8201)) | (UserConfig.hasPremiumOnAccounts() ? 8 : 8192);
-        }
-        if ((i & FLAG_ANIMATED_EMOJI_CHAT) > 0) {
-            return (i & (-4113)) | (UserConfig.hasPremiumOnAccounts() ? 16 : 4096);
-        }
-        return i;
+        onPowerSaverAppliedListeners.add(callback);
     }
 
     public static void removeOnPowerSaverAppliedListener(Utilities.Callback<Boolean> callback) {
@@ -263,63 +328,5 @@ public class LiteMode {
         if (hashSet != null) {
             hashSet.remove(callback);
         }
-    }
-
-    public static void savePreference() {
-        MessagesController.getGlobalMainSettings().edit().putInt("lite_mode3", value).putInt("lite_mode_battery_level", powerSaverLevel).apply();
-    }
-
-    public static void setAllFlags(int i) {
-        value = i;
-        savePreference();
-    }
-
-    public static void setPowerSaverLevel(int i) {
-        powerSaverLevel = MathUtils.clamp(i, 0, 100);
-        savePreference();
-        getValue(false);
-    }
-
-    public static void toggleFlag(int i) {
-        toggleFlag(i, !isEnabled(i));
-    }
-
-    public static void toggleFlag(int i, boolean z) {
-        int value2;
-        if (z) {
-            value2 = i | getValue(true);
-        } else {
-            value2 = (i ^ (-1)) & getValue(true);
-        }
-        setAllFlags(value2);
-    }
-
-    public static void updatePresets(TLRPC.TL_jsonObject tL_jsonObject) {
-        for (int i = 0; i < tL_jsonObject.value.size(); i++) {
-            TLRPC.TL_jsonObjectValue tL_jsonObjectValue = tL_jsonObject.value.get(i);
-            if ("settings_mask".equals(tL_jsonObjectValue.key)) {
-                TLRPC.JSONValue jSONValue = tL_jsonObjectValue.value;
-                if (jSONValue instanceof TLRPC.TL_jsonArray) {
-                    ArrayList<TLRPC.JSONValue> arrayList = ((TLRPC.TL_jsonArray) jSONValue).value;
-                    try {
-                        PRESET_LOW = (int) ((TLRPC.TL_jsonNumber) arrayList.get(0)).value;
-                        PRESET_MEDIUM = (int) ((TLRPC.TL_jsonNumber) arrayList.get(1)).value;
-                        PRESET_HIGH = (int) ((TLRPC.TL_jsonNumber) arrayList.get(2)).value;
-                    } catch (Exception e) {
-                        FileLog.e(e);
-                    }
-                }
-            }
-            if ("battery_low".equals(tL_jsonObjectValue.key)) {
-                TLRPC.JSONValue jSONValue2 = tL_jsonObjectValue.value;
-                if (jSONValue2 instanceof TLRPC.TL_jsonArray) {
-                    ArrayList<TLRPC.JSONValue> arrayList2 = ((TLRPC.TL_jsonArray) jSONValue2).value;
-                    BATTERY_LOW = (int) ((TLRPC.TL_jsonNumber) arrayList2.get(0)).value;
-                    BATTERY_MEDIUM = (int) ((TLRPC.TL_jsonNumber) arrayList2.get(1)).value;
-                    BATTERY_HIGH = (int) ((TLRPC.TL_jsonNumber) arrayList2.get(2)).value;
-                }
-            }
-        }
-        loadPreference();
     }
 }

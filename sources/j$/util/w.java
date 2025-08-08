@@ -40,7 +40,7 @@ public final /* synthetic */ class w implements PrimitiveIterator.OfLong {
 
     @Override // java.util.PrimitiveIterator.OfLong
     public final /* synthetic */ void forEachRemaining(LongConsumer longConsumer) {
-        this.a.d(j$.util.function.Q.a(longConsumer));
+        this.a.d(j$.util.function.W.a(longConsumer));
     }
 
     @Override // java.util.Iterator

@@ -4,7 +4,7 @@ import android.content.Context;
 import com.microsoft.appcenter.distribute.ReleaseDetails;
 import com.microsoft.appcenter.distribute.download.ReleaseDownloader;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class AbstractReleaseDownloader implements ReleaseDownloader {
     private boolean mCancelled;
     protected final Context mContext;
@@ -17,9 +17,8 @@ public abstract class AbstractReleaseDownloader implements ReleaseDownloader {
         this.mListener = listener;
     }
 
-    @Override // com.microsoft.appcenter.distribute.download.ReleaseDownloader
-    public void cancel() {
-        this.mCancelled = true;
+    protected boolean isCancelled() {
+        return this.mCancelled;
     }
 
     @Override // com.microsoft.appcenter.distribute.download.ReleaseDownloader
@@ -27,7 +26,8 @@ public abstract class AbstractReleaseDownloader implements ReleaseDownloader {
         return this.mReleaseDetails;
     }
 
-    protected boolean isCancelled() {
-        return this.mCancelled;
+    @Override // com.microsoft.appcenter.distribute.download.ReleaseDownloader
+    public void cancel() {
+        this.mCancelled = true;
     }
 }

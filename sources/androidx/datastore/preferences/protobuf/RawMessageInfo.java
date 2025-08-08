@@ -8,41 +8,42 @@ final class RawMessageInfo implements MessageInfo {
     private final Object[] objects;
 
     RawMessageInfo(MessageLite messageLite, String str, Object[] objArr) {
-        char charAt;
         this.defaultInstance = messageLite;
         this.info = str;
         this.objects = objArr;
-        int charAt2 = str.charAt(0);
-        if (charAt2 >= 55296) {
-            int i = charAt2 & 8191;
-            int i2 = 13;
-            int i3 = 1;
-            while (true) {
-                int i4 = i3 + 1;
-                charAt = str.charAt(i3);
-                if (charAt < 55296) {
-                    break;
-                }
-                i |= (charAt & 8191) << i2;
+        char charAt = str.charAt(0);
+        if (charAt < 55296) {
+            this.flags = charAt;
+            return;
+        }
+        int i = charAt & 8191;
+        int i2 = 13;
+        int i3 = 1;
+        while (true) {
+            int i4 = i3 + 1;
+            char charAt2 = str.charAt(i3);
+            if (charAt2 < 55296) {
+                this.flags = i | (charAt2 << i2);
+                return;
+            } else {
+                i |= (charAt2 & 8191) << i2;
                 i2 += 13;
                 i3 = i4;
             }
-            charAt2 = i | (charAt << i2);
         }
-        this.flags = charAt2;
     }
 
-    @Override // androidx.datastore.preferences.protobuf.MessageInfo
-    public MessageLite getDefaultInstance() {
-        return this.defaultInstance;
+    String getStringInfo() {
+        return this.info;
     }
 
     Object[] getObjects() {
         return this.objects;
     }
 
-    String getStringInfo() {
-        return this.info;
+    @Override // androidx.datastore.preferences.protobuf.MessageInfo
+    public MessageLite getDefaultInstance() {
+        return this.defaultInstance;
     }
 
     @Override // androidx.datastore.preferences.protobuf.MessageInfo

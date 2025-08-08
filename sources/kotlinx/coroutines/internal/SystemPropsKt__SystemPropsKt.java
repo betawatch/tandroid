@@ -1,6 +1,6 @@
 package kotlinx.coroutines.internal;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 abstract /* synthetic */ class SystemPropsKt__SystemPropsKt {
     private static final int AVAILABLE_PROCESSORS = Runtime.getRuntime().availableProcessors();
 

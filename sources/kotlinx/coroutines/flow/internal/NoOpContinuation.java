@@ -4,10 +4,14 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.coroutines.EmptyCoroutineContext;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class NoOpContinuation implements Continuation {
     public static final NoOpContinuation INSTANCE = new NoOpContinuation();
     private static final CoroutineContext context = EmptyCoroutineContext.INSTANCE;
+
+    @Override // kotlin.coroutines.Continuation
+    public void resumeWith(Object obj) {
+    }
 
     private NoOpContinuation() {
     }
@@ -15,9 +19,5 @@ final class NoOpContinuation implements Continuation {
     @Override // kotlin.coroutines.Continuation
     public CoroutineContext getContext() {
         return context;
-    }
-
-    @Override // kotlin.coroutines.Continuation
-    public void resumeWith(Object obj) {
     }
 }

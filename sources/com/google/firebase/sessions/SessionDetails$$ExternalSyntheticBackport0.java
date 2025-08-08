@@ -1,6 +1,6 @@
 package com.google.firebase.sessions;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract /* synthetic */ class SessionDetails$$ExternalSyntheticBackport0 {
     public static /* synthetic */ int m(long j) {
         return (int) (j ^ (j >>> 32));

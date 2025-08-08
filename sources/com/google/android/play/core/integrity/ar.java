@@ -3,7 +3,6 @@ package com.google.android.play.core.integrity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.ResultReceiver;
-import com.google.android.gms.tasks.TaskCompletionSource;
 
 /* loaded from: classes.dex */
 final class ar extends ResultReceiver {
@@ -17,21 +16,15 @@ final class ar extends ResultReceiver {
 
     @Override // android.os.ResultReceiver
     public final void onReceiveResult(int i, Bundle bundle) {
-        TaskCompletionSource taskCompletionSource;
-        int i2;
         if (i == 1) {
-            taskCompletionSource = this.a.a;
-            i2 = 3;
+            this.a.a.trySetResult(3);
         } else if (i == 2) {
-            taskCompletionSource = this.a.a;
-            i2 = 2;
+            this.a.a.trySetResult(2);
         } else {
             if (i != 3) {
                 return;
             }
-            taskCompletionSource = this.a.a;
-            i2 = 1;
+            this.a.a.trySetResult(1);
         }
-        taskCompletionSource.trySetResult(i2);
     }
 }

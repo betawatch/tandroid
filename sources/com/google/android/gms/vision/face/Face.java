@@ -20,6 +20,21 @@ public class Face {
     private float zzl;
     private final float zzm;
 
+    private static float zza(float f) {
+        if (f < 0.0f || f > 1.0f) {
+            return -1.0f;
+        }
+        return f;
+    }
+
+    public List getLandmarks() {
+        return this.zzh;
+    }
+
+    public int getId() {
+        return this.zza;
+    }
+
     public Face(int i, PointF pointF, float f, float f2, float f3, float f4, float f5, Landmark[] landmarkArr, Contour[] contourArr, float f6, float f7, float f8, float f9) {
         this.zza = i;
         this.zzb = pointF;
@@ -34,20 +49,5 @@ public class Face {
         this.zzk = zza(f7);
         this.zzl = zza(f8);
         this.zzm = zza(f9);
-    }
-
-    private static float zza(float f) {
-        if (f < 0.0f || f > 1.0f) {
-            return -1.0f;
-        }
-        return f;
-    }
-
-    public int getId() {
-        return this.zza;
-    }
-
-    public List getLandmarks() {
-        return this.zzh;
     }
 }

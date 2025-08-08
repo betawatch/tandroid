@@ -3,12 +3,12 @@ package kotlinx.coroutines.flow;
 import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Ref$BooleanRef;
 import org.telegram.tgnet.TLObject;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class FlowKt__LimitKt$dropWhile$1$1 implements FlowCollector {
     final /* synthetic */ Ref$BooleanRef $matched;
     final /* synthetic */ Function2 $predicate;
@@ -30,7 +30,6 @@ final class FlowKt__LimitKt$dropWhile$1$1 implements FlowCollector {
     */
     public final Object emit(Object obj, Continuation continuation) {
         FlowKt__LimitKt$dropWhile$1$1$emit$1 flowKt__LimitKt$dropWhile$1$1$emit$1;
-        Object coroutine_suspended;
         int i;
         FlowKt__LimitKt$dropWhile$1$1 flowKt__LimitKt$dropWhile$1$1;
         if (continuation instanceof FlowKt__LimitKt$dropWhile$1$1$emit$1) {
@@ -39,7 +38,7 @@ final class FlowKt__LimitKt$dropWhile$1$1 implements FlowCollector {
             if ((i2 & TLObject.FLAG_31) != 0) {
                 flowKt__LimitKt$dropWhile$1$1$emit$1.label = i2 - TLObject.FLAG_31;
                 Object obj2 = flowKt__LimitKt$dropWhile$1$1$emit$1.result;
-                coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = flowKt__LimitKt$dropWhile$1$1$emit$1.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj2);
@@ -94,7 +93,7 @@ final class FlowKt__LimitKt$dropWhile$1$1 implements FlowCollector {
         }
         flowKt__LimitKt$dropWhile$1$1$emit$1 = new FlowKt__LimitKt$dropWhile$1$1$emit$1(this, continuation);
         Object obj22 = flowKt__LimitKt$dropWhile$1$1$emit$1.result;
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = flowKt__LimitKt$dropWhile$1$1$emit$1.label;
         if (i != 0) {
         }

@@ -2,9 +2,17 @@ package com.microsoft.appcenter.ingestion.models;
 
 import java.util.List;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class LogContainer {
     private List logs;
+
+    public List getLogs() {
+        return this.logs;
+    }
+
+    public void setLogs(List list) {
+        this.logs = list;
+    }
 
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -18,19 +26,11 @@ public class LogContainer {
         return list != null ? list.equals(list2) : list2 == null;
     }
 
-    public List getLogs() {
-        return this.logs;
-    }
-
     public int hashCode() {
         List list = this.logs;
         if (list != null) {
             return list.hashCode();
         }
         return 0;
-    }
-
-    public void setLogs(List list) {
-        this.logs = list;
     }
 }

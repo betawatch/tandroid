@@ -25,6 +25,97 @@ import java.util.Map;
 
 /* loaded from: classes.dex */
 class DefaultSpecialEffectsController extends SpecialEffectsController {
+    DefaultSpecialEffectsController(ViewGroup viewGroup) {
+        super(viewGroup);
+    }
+
+    @Override // androidx.fragment.app.SpecialEffectsController
+    void executeOperations(List list, boolean z) {
+        Iterator it = list.iterator();
+        SpecialEffectsController.Operation operation = null;
+        SpecialEffectsController.Operation operation2 = null;
+        while (it.hasNext()) {
+            SpecialEffectsController.Operation operation3 = (SpecialEffectsController.Operation) it.next();
+            SpecialEffectsController.Operation.State from = SpecialEffectsController.Operation.State.from(operation3.getFragment().mView);
+            int i = 10.$SwitchMap$androidx$fragment$app$SpecialEffectsController$Operation$State[operation3.getFinalState().ordinal()];
+            if (i == 1 || i == 2 || i == 3) {
+                if (from == SpecialEffectsController.Operation.State.VISIBLE && operation == null) {
+                    operation = operation3;
+                }
+            } else if (i == 4 && from != SpecialEffectsController.Operation.State.VISIBLE) {
+                operation2 = operation3;
+            }
+        }
+        ArrayList arrayList = new ArrayList();
+        ArrayList arrayList2 = new ArrayList();
+        final ArrayList arrayList3 = new ArrayList(list);
+        Iterator it2 = list.iterator();
+        while (it2.hasNext()) {
+            final SpecialEffectsController.Operation operation4 = (SpecialEffectsController.Operation) it2.next();
+            CancellationSignal cancellationSignal = new CancellationSignal();
+            operation4.markStartedSpecialEffect(cancellationSignal);
+            arrayList.add(new AnimationInfo(operation4, cancellationSignal, z));
+            CancellationSignal cancellationSignal2 = new CancellationSignal();
+            operation4.markStartedSpecialEffect(cancellationSignal2);
+            boolean z2 = false;
+            if (z) {
+                if (operation4 != operation) {
+                    arrayList2.add(new TransitionInfo(operation4, cancellationSignal2, z, z2));
+                    operation4.addCompletionListener(new Runnable() { // from class: androidx.fragment.app.DefaultSpecialEffectsController.1
+                        @Override // java.lang.Runnable
+                        public void run() {
+                            if (arrayList3.contains(operation4)) {
+                                arrayList3.remove(operation4);
+                                DefaultSpecialEffectsController.this.applyContainerChanges(operation4);
+                            }
+                        }
+                    });
+                }
+                z2 = true;
+                arrayList2.add(new TransitionInfo(operation4, cancellationSignal2, z, z2));
+                operation4.addCompletionListener(new Runnable() { // from class: androidx.fragment.app.DefaultSpecialEffectsController.1
+                    @Override // java.lang.Runnable
+                    public void run() {
+                        if (arrayList3.contains(operation4)) {
+                            arrayList3.remove(operation4);
+                            DefaultSpecialEffectsController.this.applyContainerChanges(operation4);
+                        }
+                    }
+                });
+            } else {
+                if (operation4 != operation2) {
+                    arrayList2.add(new TransitionInfo(operation4, cancellationSignal2, z, z2));
+                    operation4.addCompletionListener(new Runnable() { // from class: androidx.fragment.app.DefaultSpecialEffectsController.1
+                        @Override // java.lang.Runnable
+                        public void run() {
+                            if (arrayList3.contains(operation4)) {
+                                arrayList3.remove(operation4);
+                                DefaultSpecialEffectsController.this.applyContainerChanges(operation4);
+                            }
+                        }
+                    });
+                }
+                z2 = true;
+                arrayList2.add(new TransitionInfo(operation4, cancellationSignal2, z, z2));
+                operation4.addCompletionListener(new Runnable() { // from class: androidx.fragment.app.DefaultSpecialEffectsController.1
+                    @Override // java.lang.Runnable
+                    public void run() {
+                        if (arrayList3.contains(operation4)) {
+                            arrayList3.remove(operation4);
+                            DefaultSpecialEffectsController.this.applyContainerChanges(operation4);
+                        }
+                    }
+                });
+            }
+        }
+        Map startTransitions = startTransitions(arrayList2, arrayList3, z, operation, operation2);
+        startAnimations(arrayList, arrayList3, startTransitions.containsValue(Boolean.TRUE), startTransitions);
+        Iterator it3 = arrayList3.iterator();
+        while (it3.hasNext()) {
+            applyContainerChanges((SpecialEffectsController.Operation) it3.next());
+        }
+        arrayList3.clear();
+    }
 
     static /* synthetic */ class 10 {
         static final /* synthetic */ int[] $SwitchMap$androidx$fragment$app$SpecialEffectsController$Operation$State;
@@ -51,135 +142,7 @@ class DefaultSpecialEffectsController extends SpecialEffectsController {
         }
     }
 
-    private static class AnimationInfo extends SpecialEffectsInfo {
-        private FragmentAnim.AnimationOrAnimator mAnimation;
-        private boolean mIsPop;
-        private boolean mLoadedAnim;
-
-        AnimationInfo(SpecialEffectsController.Operation operation, CancellationSignal cancellationSignal, boolean z) {
-            super(operation, cancellationSignal);
-            this.mLoadedAnim = false;
-            this.mIsPop = z;
-        }
-
-        FragmentAnim.AnimationOrAnimator getAnimation(Context context) {
-            if (this.mLoadedAnim) {
-                return this.mAnimation;
-            }
-            FragmentAnim.AnimationOrAnimator loadAnimation = FragmentAnim.loadAnimation(context, getOperation().getFragment(), getOperation().getFinalState() == SpecialEffectsController.Operation.State.VISIBLE, this.mIsPop);
-            this.mAnimation = loadAnimation;
-            this.mLoadedAnim = true;
-            return loadAnimation;
-        }
-    }
-
-    private static class SpecialEffectsInfo {
-        private final SpecialEffectsController.Operation mOperation;
-        private final CancellationSignal mSignal;
-
-        SpecialEffectsInfo(SpecialEffectsController.Operation operation, CancellationSignal cancellationSignal) {
-            this.mOperation = operation;
-            this.mSignal = cancellationSignal;
-        }
-
-        void completeSpecialEffect() {
-            this.mOperation.completeSpecialEffect(this.mSignal);
-        }
-
-        SpecialEffectsController.Operation getOperation() {
-            return this.mOperation;
-        }
-
-        CancellationSignal getSignal() {
-            return this.mSignal;
-        }
-
-        boolean isVisibilityUnchanged() {
-            SpecialEffectsController.Operation.State state;
-            SpecialEffectsController.Operation.State from = SpecialEffectsController.Operation.State.from(this.mOperation.getFragment().mView);
-            SpecialEffectsController.Operation.State finalState = this.mOperation.getFinalState();
-            return from == finalState || !(from == (state = SpecialEffectsController.Operation.State.VISIBLE) || finalState == state);
-        }
-    }
-
-    private static class TransitionInfo extends SpecialEffectsInfo {
-        private final boolean mOverlapAllowed;
-        private final Object mSharedElementTransition;
-        private final Object mTransition;
-
-        TransitionInfo(SpecialEffectsController.Operation operation, CancellationSignal cancellationSignal, boolean z, boolean z2) {
-            super(operation, cancellationSignal);
-            boolean z3;
-            Object obj;
-            if (operation.getFinalState() == SpecialEffectsController.Operation.State.VISIBLE) {
-                Fragment fragment = operation.getFragment();
-                this.mTransition = z ? fragment.getReenterTransition() : fragment.getEnterTransition();
-                Fragment fragment2 = operation.getFragment();
-                z3 = z ? fragment2.getAllowReturnTransitionOverlap() : fragment2.getAllowEnterTransitionOverlap();
-            } else {
-                Fragment fragment3 = operation.getFragment();
-                this.mTransition = z ? fragment3.getReturnTransition() : fragment3.getExitTransition();
-                z3 = true;
-            }
-            this.mOverlapAllowed = z3;
-            if (z2) {
-                Fragment fragment4 = operation.getFragment();
-                obj = z ? fragment4.getSharedElementReturnTransition() : fragment4.getSharedElementEnterTransition();
-            } else {
-                obj = null;
-            }
-            this.mSharedElementTransition = obj;
-        }
-
-        private FragmentTransitionImpl getHandlingImpl(Object obj) {
-            if (obj == null) {
-                return null;
-            }
-            FragmentTransitionImpl fragmentTransitionImpl = FragmentTransition.PLATFORM_IMPL;
-            if (fragmentTransitionImpl != null && fragmentTransitionImpl.canHandle(obj)) {
-                return fragmentTransitionImpl;
-            }
-            FragmentTransitionImpl fragmentTransitionImpl2 = FragmentTransition.SUPPORT_IMPL;
-            if (fragmentTransitionImpl2 != null && fragmentTransitionImpl2.canHandle(obj)) {
-                return fragmentTransitionImpl2;
-            }
-            throw new IllegalArgumentException("Transition " + obj + " for fragment " + getOperation().getFragment() + " is not a valid framework Transition or AndroidX Transition");
-        }
-
-        FragmentTransitionImpl getHandlingImpl() {
-            FragmentTransitionImpl handlingImpl = getHandlingImpl(this.mTransition);
-            FragmentTransitionImpl handlingImpl2 = getHandlingImpl(this.mSharedElementTransition);
-            if (handlingImpl == null || handlingImpl2 == null || handlingImpl == handlingImpl2) {
-                return handlingImpl != null ? handlingImpl : handlingImpl2;
-            }
-            throw new IllegalArgumentException("Mixing framework transitions and AndroidX transitions is not allowed. Fragment " + getOperation().getFragment() + " returned Transition " + this.mTransition + " which uses a different Transition  type than its shared element transition " + this.mSharedElementTransition);
-        }
-
-        public Object getSharedElementTransition() {
-            return this.mSharedElementTransition;
-        }
-
-        Object getTransition() {
-            return this.mTransition;
-        }
-
-        public boolean hasSharedElementTransition() {
-            return this.mSharedElementTransition != null;
-        }
-
-        boolean isOverlapAllowed() {
-            return this.mOverlapAllowed;
-        }
-    }
-
-    DefaultSpecialEffectsController(ViewGroup viewGroup) {
-        super(viewGroup);
-    }
-
     private void startAnimations(List list, List list2, boolean z, Map map) {
-        StringBuilder sb;
-        String str;
-        FragmentAnim.AnimationOrAnimator animation;
         final ViewGroup container = getContainer();
         Context context = container.getContext();
         ArrayList arrayList = new ArrayList();
@@ -187,46 +150,51 @@ class DefaultSpecialEffectsController extends SpecialEffectsController {
         boolean z2 = false;
         while (it.hasNext()) {
             final AnimationInfo animationInfo = (AnimationInfo) it.next();
-            if (animationInfo.isVisibilityUnchanged() || (animation = animationInfo.getAnimation(context)) == null) {
+            if (animationInfo.isVisibilityUnchanged()) {
                 animationInfo.completeSpecialEffect();
             } else {
-                final Animator animator = animation.animator;
-                if (animator == null) {
-                    arrayList.add(animationInfo);
+                FragmentAnim.AnimationOrAnimator animation = animationInfo.getAnimation(context);
+                if (animation == null) {
+                    animationInfo.completeSpecialEffect();
                 } else {
-                    final SpecialEffectsController.Operation operation = animationInfo.getOperation();
-                    Fragment fragment = operation.getFragment();
-                    if (Boolean.TRUE.equals(map.get(operation))) {
-                        if (FragmentManager.isLoggingEnabled(2)) {
-                            Log.v("FragmentManager", "Ignoring Animator set on " + fragment + " as this Fragment was involved in a Transition.");
-                        }
-                        animationInfo.completeSpecialEffect();
+                    final Animator animator = animation.animator;
+                    if (animator == null) {
+                        arrayList.add(animationInfo);
                     } else {
-                        final boolean z3 = operation.getFinalState() == SpecialEffectsController.Operation.State.GONE;
-                        if (z3) {
-                            list2.remove(operation);
-                        }
-                        final View view = fragment.mView;
-                        container.startViewTransition(view);
-                        animator.addListener(new AnimatorListenerAdapter() { // from class: androidx.fragment.app.DefaultSpecialEffectsController.2
-                            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-                            public void onAnimationEnd(Animator animator2) {
-                                container.endViewTransition(view);
-                                if (z3) {
-                                    operation.getFinalState().applyState(view);
+                        final SpecialEffectsController.Operation operation = animationInfo.getOperation();
+                        Fragment fragment = operation.getFragment();
+                        if (Boolean.TRUE.equals(map.get(operation))) {
+                            if (FragmentManager.isLoggingEnabled(2)) {
+                                Log.v("FragmentManager", "Ignoring Animator set on " + fragment + " as this Fragment was involved in a Transition.");
+                            }
+                            animationInfo.completeSpecialEffect();
+                        } else {
+                            final boolean z3 = operation.getFinalState() == SpecialEffectsController.Operation.State.GONE;
+                            if (z3) {
+                                list2.remove(operation);
+                            }
+                            final View view = fragment.mView;
+                            container.startViewTransition(view);
+                            animator.addListener(new AnimatorListenerAdapter() { // from class: androidx.fragment.app.DefaultSpecialEffectsController.2
+                                @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+                                public void onAnimationEnd(Animator animator2) {
+                                    container.endViewTransition(view);
+                                    if (z3) {
+                                        operation.getFinalState().applyState(view);
+                                    }
+                                    animationInfo.completeSpecialEffect();
                                 }
-                                animationInfo.completeSpecialEffect();
-                            }
-                        });
-                        animator.setTarget(view);
-                        animator.start();
-                        animationInfo.getSignal().setOnCancelListener(new CancellationSignal.OnCancelListener() { // from class: androidx.fragment.app.DefaultSpecialEffectsController.3
-                            @Override // androidx.core.os.CancellationSignal.OnCancelListener
-                            public void onCancel() {
-                                animator.end();
-                            }
-                        });
-                        z2 = true;
+                            });
+                            animator.setTarget(view);
+                            animator.start();
+                            animationInfo.getSignal().setOnCancelListener(new CancellationSignal.OnCancelListener() { // from class: androidx.fragment.app.DefaultSpecialEffectsController.3
+                                @Override // androidx.core.os.CancellationSignal.OnCancelListener
+                                public void onCancel() {
+                                    animator.end();
+                                }
+                            });
+                            z2 = true;
+                        }
                     }
                 }
             }
@@ -238,22 +206,12 @@ class DefaultSpecialEffectsController extends SpecialEffectsController {
             Fragment fragment2 = operation2.getFragment();
             if (z) {
                 if (FragmentManager.isLoggingEnabled(2)) {
-                    sb = new StringBuilder();
-                    sb.append("Ignoring Animation set on ");
-                    sb.append(fragment2);
-                    str = " as Animations cannot run alongside Transitions.";
-                    sb.append(str);
-                    Log.v("FragmentManager", sb.toString());
+                    Log.v("FragmentManager", "Ignoring Animation set on " + fragment2 + " as Animations cannot run alongside Transitions.");
                 }
                 animationInfo2.completeSpecialEffect();
             } else if (z2) {
                 if (FragmentManager.isLoggingEnabled(2)) {
-                    sb = new StringBuilder();
-                    sb.append("Ignoring Animation set on ");
-                    sb.append(fragment2);
-                    str = " as Animations cannot run alongside Animators.";
-                    sb.append(str);
-                    Log.v("FragmentManager", sb.toString());
+                    Log.v("FragmentManager", "Ignoring Animation set on " + fragment2 + " as Animations cannot run alongside Animators.");
                 }
                 animationInfo2.completeSpecialEffect();
             } else {
@@ -267,6 +225,14 @@ class DefaultSpecialEffectsController extends SpecialEffectsController {
                     FragmentAnim.EndViewTransitionAnimation endViewTransitionAnimation = new FragmentAnim.EndViewTransitionAnimation(animation2, container, view2);
                     endViewTransitionAnimation.setAnimationListener(new Animation.AnimationListener() { // from class: androidx.fragment.app.DefaultSpecialEffectsController.4
                         @Override // android.view.animation.Animation.AnimationListener
+                        public void onAnimationRepeat(Animation animation3) {
+                        }
+
+                        @Override // android.view.animation.Animation.AnimationListener
+                        public void onAnimationStart(Animation animation3) {
+                        }
+
+                        @Override // android.view.animation.Animation.AnimationListener
                         public void onAnimationEnd(Animation animation3) {
                             container.post(new Runnable() { // from class: androidx.fragment.app.DefaultSpecialEffectsController.4.1
                                 @Override // java.lang.Runnable
@@ -276,14 +242,6 @@ class DefaultSpecialEffectsController extends SpecialEffectsController {
                                     animationInfo2.completeSpecialEffect();
                                 }
                             });
-                        }
-
-                        @Override // android.view.animation.Animation.AnimationListener
-                        public void onAnimationRepeat(Animation animation3) {
-                        }
-
-                        @Override // android.view.animation.Animation.AnimationListener
-                        public void onAnimationStart(Animation animation3) {
                         }
                     });
                     view2.startAnimation(endViewTransitionAnimation);
@@ -383,13 +341,12 @@ class DefaultSpecialEffectsController extends SpecialEffectsController {
                     sharedElementTargetNames = arrayList7;
                 }
                 ArrayList sharedElementTargetNames2 = operation2.getFragment().getSharedElementTargetNames();
-                Fragment fragment = operation.getFragment();
-                if (z2) {
-                    fragment.getEnterTransitionCallback();
-                    operation2.getFragment().getExitTransitionCallback();
-                } else {
-                    fragment.getExitTransitionCallback();
+                if (!z2) {
+                    operation.getFragment().getExitTransitionCallback();
                     operation2.getFragment().getEnterTransitionCallback();
+                } else {
+                    operation.getFragment().getEnterTransitionCallback();
+                    operation2.getFragment().getExitTransitionCallback();
                 }
                 int i2 = 0;
                 for (int size = sharedElementSourceNames.size(); i2 < size; size = size) {
@@ -589,18 +546,18 @@ class DefaultSpecialEffectsController extends SpecialEffectsController {
                 SpecialEffectsController.Operation operation13 = transitionInfo5.getOperation();
                 boolean z5 = obj3 != null && (operation13 == operation9 || operation13 == operation12);
                 if (transition != null || z5) {
-                    if (ViewCompat.isLaidOut(getContainer())) {
+                    if (!ViewCompat.isLaidOut(getContainer())) {
+                        if (FragmentManager.isLoggingEnabled(2)) {
+                            Log.v("FragmentManager", "SpecialEffectsController: Container " + getContainer() + " has not been laid out. Completing operation " + operation13);
+                        }
+                        transitionInfo5.completeSpecialEffect();
+                    } else {
                         fragmentTransitionImpl3.setListenerForTransitionEnd(transitionInfo5.getOperation().getFragment(), mergeTransitionsInSequence, transitionInfo5.getSignal(), new Runnable() { // from class: androidx.fragment.app.DefaultSpecialEffectsController.9
                             @Override // java.lang.Runnable
                             public void run() {
                                 transitionInfo5.completeSpecialEffect();
                             }
                         });
-                    } else {
-                        if (FragmentManager.isLoggingEnabled(2)) {
-                            Log.v("FragmentManager", "SpecialEffectsController: Container " + getContainer() + " has not been laid out. Completing operation " + operation13);
-                        }
-                        transitionInfo5.completeSpecialEffect();
                     }
                 }
             }
@@ -617,121 +574,38 @@ class DefaultSpecialEffectsController extends SpecialEffectsController {
         return hashMap;
     }
 
-    void applyContainerChanges(SpecialEffectsController.Operation operation) {
-        operation.getFinalState().applyState(operation.getFragment().mView);
+    void retainMatchingViews(ArrayMap arrayMap, Collection collection) {
+        Iterator it = arrayMap.entrySet().iterator();
+        while (it.hasNext()) {
+            if (!collection.contains(ViewCompat.getTransitionName((View) ((Map.Entry) it.next()).getValue()))) {
+                it.remove();
+            }
+        }
     }
 
     void captureTransitioningViews(ArrayList arrayList, View view) {
-        if (!(view instanceof ViewGroup)) {
-            if (arrayList.contains(view)) {
+        if (view instanceof ViewGroup) {
+            ViewGroup viewGroup = (ViewGroup) view;
+            if (ViewGroupCompat.isTransitionGroup(viewGroup)) {
+                if (arrayList.contains(view)) {
+                    return;
+                }
+                arrayList.add(viewGroup);
                 return;
             }
-            arrayList.add(view);
+            int childCount = viewGroup.getChildCount();
+            for (int i = 0; i < childCount; i++) {
+                View childAt = viewGroup.getChildAt(i);
+                if (childAt.getVisibility() == 0) {
+                    captureTransitioningViews(arrayList, childAt);
+                }
+            }
             return;
         }
-        ViewGroup viewGroup = (ViewGroup) view;
-        if (ViewGroupCompat.isTransitionGroup(viewGroup)) {
-            if (arrayList.contains(view)) {
-                return;
-            }
-            arrayList.add(viewGroup);
+        if (arrayList.contains(view)) {
             return;
         }
-        int childCount = viewGroup.getChildCount();
-        for (int i = 0; i < childCount; i++) {
-            View childAt = viewGroup.getChildAt(i);
-            if (childAt.getVisibility() == 0) {
-                captureTransitioningViews(arrayList, childAt);
-            }
-        }
-    }
-
-    @Override // androidx.fragment.app.SpecialEffectsController
-    void executeOperations(List list, boolean z) {
-        Iterator it = list.iterator();
-        SpecialEffectsController.Operation operation = null;
-        SpecialEffectsController.Operation operation2 = null;
-        while (it.hasNext()) {
-            SpecialEffectsController.Operation operation3 = (SpecialEffectsController.Operation) it.next();
-            SpecialEffectsController.Operation.State from = SpecialEffectsController.Operation.State.from(operation3.getFragment().mView);
-            int i = 10.$SwitchMap$androidx$fragment$app$SpecialEffectsController$Operation$State[operation3.getFinalState().ordinal()];
-            if (i == 1 || i == 2 || i == 3) {
-                if (from == SpecialEffectsController.Operation.State.VISIBLE && operation == null) {
-                    operation = operation3;
-                }
-            } else if (i == 4 && from != SpecialEffectsController.Operation.State.VISIBLE) {
-                operation2 = operation3;
-            }
-        }
-        ArrayList arrayList = new ArrayList();
-        ArrayList arrayList2 = new ArrayList();
-        final ArrayList arrayList3 = new ArrayList(list);
-        Iterator it2 = list.iterator();
-        while (it2.hasNext()) {
-            final SpecialEffectsController.Operation operation4 = (SpecialEffectsController.Operation) it2.next();
-            CancellationSignal cancellationSignal = new CancellationSignal();
-            operation4.markStartedSpecialEffect(cancellationSignal);
-            arrayList.add(new AnimationInfo(operation4, cancellationSignal, z));
-            CancellationSignal cancellationSignal2 = new CancellationSignal();
-            operation4.markStartedSpecialEffect(cancellationSignal2);
-            boolean z2 = false;
-            if (z) {
-                if (operation4 != operation) {
-                    arrayList2.add(new TransitionInfo(operation4, cancellationSignal2, z, z2));
-                    operation4.addCompletionListener(new Runnable() { // from class: androidx.fragment.app.DefaultSpecialEffectsController.1
-                        @Override // java.lang.Runnable
-                        public void run() {
-                            if (arrayList3.contains(operation4)) {
-                                arrayList3.remove(operation4);
-                                DefaultSpecialEffectsController.this.applyContainerChanges(operation4);
-                            }
-                        }
-                    });
-                }
-                z2 = true;
-                arrayList2.add(new TransitionInfo(operation4, cancellationSignal2, z, z2));
-                operation4.addCompletionListener(new Runnable() { // from class: androidx.fragment.app.DefaultSpecialEffectsController.1
-                    @Override // java.lang.Runnable
-                    public void run() {
-                        if (arrayList3.contains(operation4)) {
-                            arrayList3.remove(operation4);
-                            DefaultSpecialEffectsController.this.applyContainerChanges(operation4);
-                        }
-                    }
-                });
-            } else {
-                if (operation4 != operation2) {
-                    arrayList2.add(new TransitionInfo(operation4, cancellationSignal2, z, z2));
-                    operation4.addCompletionListener(new Runnable() { // from class: androidx.fragment.app.DefaultSpecialEffectsController.1
-                        @Override // java.lang.Runnable
-                        public void run() {
-                            if (arrayList3.contains(operation4)) {
-                                arrayList3.remove(operation4);
-                                DefaultSpecialEffectsController.this.applyContainerChanges(operation4);
-                            }
-                        }
-                    });
-                }
-                z2 = true;
-                arrayList2.add(new TransitionInfo(operation4, cancellationSignal2, z, z2));
-                operation4.addCompletionListener(new Runnable() { // from class: androidx.fragment.app.DefaultSpecialEffectsController.1
-                    @Override // java.lang.Runnable
-                    public void run() {
-                        if (arrayList3.contains(operation4)) {
-                            arrayList3.remove(operation4);
-                            DefaultSpecialEffectsController.this.applyContainerChanges(operation4);
-                        }
-                    }
-                });
-            }
-        }
-        Map startTransitions = startTransitions(arrayList2, arrayList3, z, operation, operation2);
-        startAnimations(arrayList, arrayList3, startTransitions.containsValue(Boolean.TRUE), startTransitions);
-        Iterator it3 = arrayList3.iterator();
-        while (it3.hasNext()) {
-            applyContainerChanges((SpecialEffectsController.Operation) it3.next());
-        }
-        arrayList3.clear();
+        arrayList.add(view);
     }
 
     void findNamedViews(Map map, View view) {
@@ -751,12 +625,140 @@ class DefaultSpecialEffectsController extends SpecialEffectsController {
         }
     }
 
-    void retainMatchingViews(ArrayMap arrayMap, Collection collection) {
-        Iterator it = arrayMap.entrySet().iterator();
-        while (it.hasNext()) {
-            if (!collection.contains(ViewCompat.getTransitionName((View) ((Map.Entry) it.next()).getValue()))) {
-                it.remove();
+    void applyContainerChanges(SpecialEffectsController.Operation operation) {
+        operation.getFinalState().applyState(operation.getFragment().mView);
+    }
+
+    private static class SpecialEffectsInfo {
+        private final SpecialEffectsController.Operation mOperation;
+        private final CancellationSignal mSignal;
+
+        SpecialEffectsInfo(SpecialEffectsController.Operation operation, CancellationSignal cancellationSignal) {
+            this.mOperation = operation;
+            this.mSignal = cancellationSignal;
+        }
+
+        SpecialEffectsController.Operation getOperation() {
+            return this.mOperation;
+        }
+
+        CancellationSignal getSignal() {
+            return this.mSignal;
+        }
+
+        boolean isVisibilityUnchanged() {
+            SpecialEffectsController.Operation.State state;
+            SpecialEffectsController.Operation.State from = SpecialEffectsController.Operation.State.from(this.mOperation.getFragment().mView);
+            SpecialEffectsController.Operation.State finalState = this.mOperation.getFinalState();
+            return from == finalState || !(from == (state = SpecialEffectsController.Operation.State.VISIBLE) || finalState == state);
+        }
+
+        void completeSpecialEffect() {
+            this.mOperation.completeSpecialEffect(this.mSignal);
+        }
+    }
+
+    private static class AnimationInfo extends SpecialEffectsInfo {
+        private FragmentAnim.AnimationOrAnimator mAnimation;
+        private boolean mIsPop;
+        private boolean mLoadedAnim;
+
+        AnimationInfo(SpecialEffectsController.Operation operation, CancellationSignal cancellationSignal, boolean z) {
+            super(operation, cancellationSignal);
+            this.mLoadedAnim = false;
+            this.mIsPop = z;
+        }
+
+        FragmentAnim.AnimationOrAnimator getAnimation(Context context) {
+            if (this.mLoadedAnim) {
+                return this.mAnimation;
             }
+            FragmentAnim.AnimationOrAnimator loadAnimation = FragmentAnim.loadAnimation(context, getOperation().getFragment(), getOperation().getFinalState() == SpecialEffectsController.Operation.State.VISIBLE, this.mIsPop);
+            this.mAnimation = loadAnimation;
+            this.mLoadedAnim = true;
+            return loadAnimation;
+        }
+    }
+
+    private static class TransitionInfo extends SpecialEffectsInfo {
+        private final boolean mOverlapAllowed;
+        private final Object mSharedElementTransition;
+        private final Object mTransition;
+
+        TransitionInfo(SpecialEffectsController.Operation operation, CancellationSignal cancellationSignal, boolean z, boolean z2) {
+            super(operation, cancellationSignal);
+            Object exitTransition;
+            Object enterTransition;
+            boolean allowEnterTransitionOverlap;
+            if (operation.getFinalState() == SpecialEffectsController.Operation.State.VISIBLE) {
+                if (z) {
+                    enterTransition = operation.getFragment().getReenterTransition();
+                } else {
+                    enterTransition = operation.getFragment().getEnterTransition();
+                }
+                this.mTransition = enterTransition;
+                if (z) {
+                    allowEnterTransitionOverlap = operation.getFragment().getAllowReturnTransitionOverlap();
+                } else {
+                    allowEnterTransitionOverlap = operation.getFragment().getAllowEnterTransitionOverlap();
+                }
+                this.mOverlapAllowed = allowEnterTransitionOverlap;
+            } else {
+                if (z) {
+                    exitTransition = operation.getFragment().getReturnTransition();
+                } else {
+                    exitTransition = operation.getFragment().getExitTransition();
+                }
+                this.mTransition = exitTransition;
+                this.mOverlapAllowed = true;
+            }
+            if (!z2) {
+                this.mSharedElementTransition = null;
+            } else if (z) {
+                this.mSharedElementTransition = operation.getFragment().getSharedElementReturnTransition();
+            } else {
+                this.mSharedElementTransition = operation.getFragment().getSharedElementEnterTransition();
+            }
+        }
+
+        Object getTransition() {
+            return this.mTransition;
+        }
+
+        boolean isOverlapAllowed() {
+            return this.mOverlapAllowed;
+        }
+
+        public boolean hasSharedElementTransition() {
+            return this.mSharedElementTransition != null;
+        }
+
+        public Object getSharedElementTransition() {
+            return this.mSharedElementTransition;
+        }
+
+        FragmentTransitionImpl getHandlingImpl() {
+            FragmentTransitionImpl handlingImpl = getHandlingImpl(this.mTransition);
+            FragmentTransitionImpl handlingImpl2 = getHandlingImpl(this.mSharedElementTransition);
+            if (handlingImpl == null || handlingImpl2 == null || handlingImpl == handlingImpl2) {
+                return handlingImpl != null ? handlingImpl : handlingImpl2;
+            }
+            throw new IllegalArgumentException("Mixing framework transitions and AndroidX transitions is not allowed. Fragment " + getOperation().getFragment() + " returned Transition " + this.mTransition + " which uses a different Transition  type than its shared element transition " + this.mSharedElementTransition);
+        }
+
+        private FragmentTransitionImpl getHandlingImpl(Object obj) {
+            if (obj == null) {
+                return null;
+            }
+            FragmentTransitionImpl fragmentTransitionImpl = FragmentTransition.PLATFORM_IMPL;
+            if (fragmentTransitionImpl != null && fragmentTransitionImpl.canHandle(obj)) {
+                return fragmentTransitionImpl;
+            }
+            FragmentTransitionImpl fragmentTransitionImpl2 = FragmentTransition.SUPPORT_IMPL;
+            if (fragmentTransitionImpl2 != null && fragmentTransitionImpl2.canHandle(obj)) {
+                return fragmentTransitionImpl2;
+            }
+            throw new IllegalArgumentException("Transition " + obj + " for fragment " + getOperation().getFragment() + " is not a valid framework Transition or AndroidX Transition");
         }
     }
 }

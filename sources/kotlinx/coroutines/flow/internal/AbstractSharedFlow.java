@@ -6,11 +6,15 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class AbstractSharedFlow {
     private int nCollectors;
     private int nextIndex;
     private AbstractSharedFlowSlot[] slots;
+
+    protected abstract AbstractSharedFlowSlot createSlot();
+
+    protected abstract AbstractSharedFlowSlot[] createSlotArray(int i);
 
     protected final AbstractSharedFlowSlot allocateSlot() {
         AbstractSharedFlowSlot abstractSharedFlowSlot;
@@ -47,10 +51,6 @@ public abstract class AbstractSharedFlow {
         }
         return abstractSharedFlowSlot;
     }
-
-    protected abstract AbstractSharedFlowSlot createSlot();
-
-    protected abstract AbstractSharedFlowSlot[] createSlotArray(int i);
 
     protected final void freeSlot(AbstractSharedFlowSlot abstractSharedFlowSlot) {
         int i;

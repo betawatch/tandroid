@@ -4,11 +4,15 @@ import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import kotlin.coroutines.CoroutineContext;
 import kotlinx.coroutines.NotCompleted;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class Segment extends ConcurrentLinkedListNode implements NotCompleted {
     private static final AtomicIntegerFieldUpdater cleanedAndPointers$FU = AtomicIntegerFieldUpdater.newUpdater(Segment.class, "cleanedAndPointers");
     private volatile int cleanedAndPointers;
     public final long id;
+
+    public abstract int getNumberOfSlots();
+
+    public abstract void onCancellation(int i, Throwable th, CoroutineContext coroutineContext);
 
     public Segment(long j, Segment segment, int i) {
         super(segment);
@@ -16,18 +20,14 @@ public abstract class Segment extends ConcurrentLinkedListNode implements NotCom
         this.cleanedAndPointers = i << 16;
     }
 
-    public final boolean decPointers$kotlinx_coroutines_core() {
-        return cleanedAndPointers$FU.addAndGet(this, -65536) == getNumberOfSlots() && !isTail();
-    }
-
-    public abstract int getNumberOfSlots();
-
     @Override // kotlinx.coroutines.internal.ConcurrentLinkedListNode
     public boolean isRemoved() {
         return cleanedAndPointers$FU.get(this) == getNumberOfSlots() && !isTail();
     }
 
-    public abstract void onCancellation(int i, Throwable th, CoroutineContext coroutineContext);
+    public final boolean decPointers$kotlinx_coroutines_core() {
+        return cleanedAndPointers$FU.addAndGet(this, -65536) == getNumberOfSlots() && !isTail();
+    }
 
     public final void onSlotCleaned() {
         if (cleanedAndPointers$FU.incrementAndGet(this) == getNumberOfSlots()) {

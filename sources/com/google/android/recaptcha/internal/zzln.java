@@ -37,11 +37,10 @@ final class zzln extends zzll {
         if (zzlm.zzc().equals(obj2)) {
             return obj;
         }
-        zzlm zzlmVar = (zzlm) obj2;
         if (zzlm.zzc().equals(obj)) {
-            return zzlm.zze((zzlm) obj, zzlmVar);
+            return zzlm.zze((zzlm) obj, (zzlm) obj2);
         }
-        ((zzlm) obj).zzd(zzlmVar);
+        ((zzlm) obj).zzd((zzlm) obj2);
         return obj;
     }
 

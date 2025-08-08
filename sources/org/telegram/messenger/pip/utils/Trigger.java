@@ -38,11 +38,6 @@ public class Trigger implements Runnable {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$run$1() {
-        this.action.run(false);
-    }
-
     public static Trigger run(Callback callback, long j) {
         return new Trigger(ApplicationLoader.applicationHandler, callback, j);
     }
@@ -62,5 +57,10 @@ public class Trigger implements Runnable {
                 });
             }
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$run$1() {
+        this.action.run(false);
     }
 }

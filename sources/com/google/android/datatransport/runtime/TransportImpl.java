@@ -14,25 +14,16 @@ final class TransportImpl implements Transport {
     private final TransportContext transportContext;
     private final TransportInternal transportInternal;
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$send$0(Exception exc) {
+    }
+
     TransportImpl(TransportContext transportContext, String str, Encoding encoding, Transformer transformer, TransportInternal transportInternal) {
         this.transportContext = transportContext;
         this.name = str;
         this.payloadEncoding = encoding;
         this.transformer = transformer;
         this.transportInternal = transportInternal;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$send$0(Exception exc) {
-    }
-
-    TransportContext getTransportContext() {
-        return this.transportContext;
-    }
-
-    @Override // com.google.android.datatransport.Transport
-    public void schedule(Event event, TransportScheduleCallback transportScheduleCallback) {
-        this.transportInternal.send(SendRequest.builder().setTransportContext(this.transportContext).setEvent(event).setTransportName(this.name).setTransformer(this.transformer).setEncoding(this.payloadEncoding).build(), transportScheduleCallback);
     }
 
     @Override // com.google.android.datatransport.Transport
@@ -43,5 +34,14 @@ final class TransportImpl implements Transport {
                 TransportImpl.lambda$send$0(exc);
             }
         });
+    }
+
+    @Override // com.google.android.datatransport.Transport
+    public void schedule(Event event, TransportScheduleCallback transportScheduleCallback) {
+        this.transportInternal.send(SendRequest.builder().setTransportContext(this.transportContext).setEvent(event).setTransportName(this.name).setTransformer(this.transformer).setEncoding(this.payloadEncoding).build(), transportScheduleCallback);
+    }
+
+    TransportContext getTransportContext() {
+        return this.transportContext;
     }
 }

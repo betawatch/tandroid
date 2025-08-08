@@ -1,53 +1,24 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
+import j$.util.function.IntFunction;
 import java.util.Arrays;
 
 /* loaded from: classes2.dex */
-final class v2 extends r2 {
-    private L2 c;
-
-    v2(e2 e2Var) {
-        super(e2Var);
+final class v2 extends z {
+    @Override // j$.util.stream.b
+    public final d2 w0(int i, d2 d2Var) {
+        d2Var.getClass();
+        return Q2.SORTED.i(i) ? d2Var : Q2.SIZED.i(i) ? new A2(d2Var) : new s2(d2Var);
     }
 
-    @Override // j$.util.stream.e2
-    public final void accept(long j) {
-        this.c.accept(j);
-    }
-
-    @Override // j$.util.stream.Z1, j$.util.stream.e2
-    public final void m() {
-        long[] jArr = (long[]) this.c.e();
-        Arrays.sort(jArr);
-        long length = jArr.length;
-        e2 e2Var = this.a;
-        e2Var.n(length);
-        int i = 0;
-        if (this.b) {
-            int length2 = jArr.length;
-            while (i < length2) {
-                long j = jArr[i];
-                if (e2Var.q()) {
-                    break;
-                }
-                e2Var.accept(j);
-                i++;
-            }
-        } else {
-            int length3 = jArr.length;
-            while (i < length3) {
-                e2Var.accept(jArr[i]);
-                i++;
-            }
+    @Override // j$.util.stream.b
+    public final F0 t0(b bVar, Spliterator spliterator, IntFunction intFunction) {
+        if (Q2.SORTED.i(bVar.p0())) {
+            return bVar.h0(spliterator, false, intFunction);
         }
-        e2Var.m();
-    }
-
-    @Override // j$.util.stream.Z1, j$.util.stream.e2
-    public final void n(long j) {
-        if (j >= 2147483639) {
-            throw new IllegalArgumentException("Stream size exceeds max array size");
-        }
-        this.c = j > 0 ? new L2((int) j) : new L2();
+        double[] dArr = (double[]) ((z0) bVar.h0(spliterator, true, intFunction)).e();
+        Arrays.sort(dArr);
+        return new R0(dArr);
     }
 }

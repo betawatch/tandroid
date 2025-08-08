@@ -7,19 +7,19 @@ public abstract class ExoPlayerLibraryInfo {
     private static final HashSet registeredModules = new HashSet();
     private static String registeredModulesString = "goog.exo.core";
 
-    public static synchronized void registerModule(String str) {
-        synchronized (ExoPlayerLibraryInfo.class) {
-            if (registeredModules.add(str)) {
-                registeredModulesString += ", " + str;
-            }
-        }
-    }
-
     public static synchronized String registeredModules() {
         String str;
         synchronized (ExoPlayerLibraryInfo.class) {
             str = registeredModulesString;
         }
         return str;
+    }
+
+    public static synchronized void registerModule(String str) {
+        synchronized (ExoPlayerLibraryInfo.class) {
+            if (registeredModules.add(str)) {
+                registeredModulesString += ", " + str;
+            }
+        }
     }
 }

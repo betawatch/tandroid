@@ -18,6 +18,11 @@ public final class MediaRouteDiscoveryRequest {
         bundle.putBoolean("activeScan", z);
     }
 
+    public MediaRouteSelector getSelector() {
+        ensureSelector();
+        return this.mSelector;
+    }
+
     private void ensureSelector() {
         if (this.mSelector == null) {
             MediaRouteSelector fromBundle = MediaRouteSelector.fromBundle(this.mBundle.getBundle("selector"));
@@ -26,27 +31,6 @@ public final class MediaRouteDiscoveryRequest {
                 this.mSelector = MediaRouteSelector.EMPTY;
             }
         }
-    }
-
-    public Bundle asBundle() {
-        return this.mBundle;
-    }
-
-    public boolean equals(Object obj) {
-        if (!(obj instanceof MediaRouteDiscoveryRequest)) {
-            return false;
-        }
-        MediaRouteDiscoveryRequest mediaRouteDiscoveryRequest = (MediaRouteDiscoveryRequest) obj;
-        return getSelector().equals(mediaRouteDiscoveryRequest.getSelector()) && isActiveScan() == mediaRouteDiscoveryRequest.isActiveScan();
-    }
-
-    public MediaRouteSelector getSelector() {
-        ensureSelector();
-        return this.mSelector;
-    }
-
-    public int hashCode() {
-        return getSelector().hashCode() ^ isActiveScan();
     }
 
     public boolean isActiveScan() {
@@ -58,7 +42,23 @@ public final class MediaRouteDiscoveryRequest {
         return this.mSelector.isValid();
     }
 
+    public boolean equals(Object obj) {
+        if (!(obj instanceof MediaRouteDiscoveryRequest)) {
+            return false;
+        }
+        MediaRouteDiscoveryRequest mediaRouteDiscoveryRequest = (MediaRouteDiscoveryRequest) obj;
+        return getSelector().equals(mediaRouteDiscoveryRequest.getSelector()) && isActiveScan() == mediaRouteDiscoveryRequest.isActiveScan();
+    }
+
+    public int hashCode() {
+        return getSelector().hashCode() ^ isActiveScan();
+    }
+
     public String toString() {
         return "DiscoveryRequest{ selector=" + getSelector() + ", activeScan=" + isActiveScan() + ", isValid=" + isValid() + " }";
+    }
+
+    public Bundle asBundle() {
+        return this.mBundle;
     }
 }

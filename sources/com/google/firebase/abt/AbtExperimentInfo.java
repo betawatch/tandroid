@@ -30,23 +30,38 @@ public class AbtExperimentInfo {
         this.timeToLiveInMillis = j2;
     }
 
-    static AbtExperimentInfo fromConditionalUserProperty(AnalyticsConnector.ConditionalUserProperty conditionalUserProperty) {
-        String str = conditionalUserProperty.triggerEventName;
-        if (str == null) {
-            str = "";
-        }
-        return new AbtExperimentInfo(conditionalUserProperty.name, String.valueOf(conditionalUserProperty.value), str, new Date(conditionalUserProperty.creationTimestamp), conditionalUserProperty.triggerTimeout, conditionalUserProperty.timeToLive);
-    }
-
     static AbtExperimentInfo fromMap(Map map) {
+        String str;
         validateExperimentInfoMap(map);
         try {
-            return new AbtExperimentInfo((String) map.get("experimentId"), (String) map.get("variantId"), map.containsKey("triggerEvent") ? (String) map.get("triggerEvent") : "", protoTimestampStringParser.parse((String) map.get("experimentStartTime")), Long.parseLong((String) map.get("triggerTimeoutMillis")), Long.parseLong((String) map.get("timeToLiveMillis")));
+            Date parse = protoTimestampStringParser.parse((String) map.get("experimentStartTime"));
+            long parseLong = Long.parseLong((String) map.get("triggerTimeoutMillis"));
+            long parseLong2 = Long.parseLong((String) map.get("timeToLiveMillis"));
+            String str2 = (String) map.get("experimentId");
+            String str3 = (String) map.get("variantId");
+            if (map.containsKey("triggerEvent")) {
+                str = (String) map.get("triggerEvent");
+            } else {
+                str = "";
+            }
+            return new AbtExperimentInfo(str2, str3, str, parse, parseLong, parseLong2);
         } catch (NumberFormatException e) {
             throw new AbtException("Could not process experiment: one of the durations could not be converted into a long.", e);
         } catch (ParseException e2) {
             throw new AbtException("Could not process experiment: parsing experiment start time failed.", e2);
         }
+    }
+
+    String getExperimentId() {
+        return this.experimentId;
+    }
+
+    String getVariantId() {
+        return this.variantId;
+    }
+
+    long getStartTimeInMillisSinceEpoch() {
+        return this.experimentStartTime.getTime();
     }
 
     private static void validateExperimentInfoMap(Map map) {
@@ -61,18 +76,6 @@ public class AbtExperimentInfo {
         }
     }
 
-    String getExperimentId() {
-        return this.experimentId;
-    }
-
-    long getStartTimeInMillisSinceEpoch() {
-        return this.experimentStartTime.getTime();
-    }
-
-    String getVariantId() {
-        return this.variantId;
-    }
-
     AnalyticsConnector.ConditionalUserProperty toConditionalUserProperty(String str) {
         AnalyticsConnector.ConditionalUserProperty conditionalUserProperty = new AnalyticsConnector.ConditionalUserProperty();
         conditionalUserProperty.origin = str;
@@ -83,5 +86,13 @@ public class AbtExperimentInfo {
         conditionalUserProperty.triggerTimeout = this.triggerTimeoutInMillis;
         conditionalUserProperty.timeToLive = this.timeToLiveInMillis;
         return conditionalUserProperty;
+    }
+
+    static AbtExperimentInfo fromConditionalUserProperty(AnalyticsConnector.ConditionalUserProperty conditionalUserProperty) {
+        String str = conditionalUserProperty.triggerEventName;
+        if (str == null) {
+            str = "";
+        }
+        return new AbtExperimentInfo(conditionalUserProperty.name, String.valueOf(conditionalUserProperty.value), str, new Date(conditionalUserProperty.creationTimestamp), conditionalUserProperty.triggerTimeout, conditionalUserProperty.timeToLive);
     }
 }

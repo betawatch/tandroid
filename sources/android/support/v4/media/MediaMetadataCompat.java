@@ -3,7 +3,6 @@ package android.support.v4.media;
 import android.graphics.Bitmap;
 import android.media.MediaMetadata;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -25,86 +24,9 @@ public final class MediaMetadataCompat implements Parcelable {
     private MediaDescriptionCompat mDescription;
     private MediaMetadata mMetadataFwk;
 
-    public static final class Builder {
-        private final Bundle mBundle;
-
-        public Builder() {
-            this.mBundle = new Bundle();
-        }
-
-        public Builder(MediaMetadataCompat mediaMetadataCompat) {
-            Bundle bundle = new Bundle(mediaMetadataCompat.mBundle);
-            this.mBundle = bundle;
-            MediaSessionCompat.ensureClassLoader(bundle);
-        }
-
-        public Builder(MediaMetadataCompat mediaMetadataCompat, int i) {
-            this(mediaMetadataCompat);
-            for (String str : this.mBundle.keySet()) {
-                Object obj = this.mBundle.get(str);
-                if (obj instanceof Bitmap) {
-                    Bitmap bitmap = (Bitmap) obj;
-                    if (bitmap.getHeight() > i || bitmap.getWidth() > i) {
-                        putBitmap(str, scaleBitmap(bitmap, i));
-                    }
-                }
-            }
-        }
-
-        private Bitmap scaleBitmap(Bitmap bitmap, int i) {
-            float f = i;
-            float min = Math.min(f / bitmap.getWidth(), f / bitmap.getHeight());
-            return Bitmap.createScaledBitmap(bitmap, (int) (bitmap.getWidth() * min), (int) (bitmap.getHeight() * min), true);
-        }
-
-        public MediaMetadataCompat build() {
-            return new MediaMetadataCompat(this.mBundle);
-        }
-
-        public Builder putBitmap(String str, Bitmap bitmap) {
-            ArrayMap arrayMap = MediaMetadataCompat.METADATA_KEYS_TYPE;
-            if (!arrayMap.containsKey(str) || ((Integer) arrayMap.get(str)).intValue() == 2) {
-                this.mBundle.putParcelable(str, bitmap);
-                return this;
-            }
-            throw new IllegalArgumentException("The " + str + " key cannot be used to put a Bitmap");
-        }
-
-        public Builder putLong(String str, long j) {
-            ArrayMap arrayMap = MediaMetadataCompat.METADATA_KEYS_TYPE;
-            if (!arrayMap.containsKey(str) || ((Integer) arrayMap.get(str)).intValue() == 0) {
-                this.mBundle.putLong(str, j);
-                return this;
-            }
-            throw new IllegalArgumentException("The " + str + " key cannot be used to put a long");
-        }
-
-        public Builder putRating(String str, RatingCompat ratingCompat) {
-            ArrayMap arrayMap = MediaMetadataCompat.METADATA_KEYS_TYPE;
-            if (!arrayMap.containsKey(str) || ((Integer) arrayMap.get(str)).intValue() == 3) {
-                this.mBundle.putParcelable(str, (Parcelable) ratingCompat.getRating());
-                return this;
-            }
-            throw new IllegalArgumentException("The " + str + " key cannot be used to put a Rating");
-        }
-
-        public Builder putString(String str, String str2) {
-            ArrayMap arrayMap = MediaMetadataCompat.METADATA_KEYS_TYPE;
-            if (!arrayMap.containsKey(str) || ((Integer) arrayMap.get(str)).intValue() == 1) {
-                this.mBundle.putCharSequence(str, str2);
-                return this;
-            }
-            throw new IllegalArgumentException("The " + str + " key cannot be used to put a String");
-        }
-
-        public Builder putText(String str, CharSequence charSequence) {
-            ArrayMap arrayMap = MediaMetadataCompat.METADATA_KEYS_TYPE;
-            if (!arrayMap.containsKey(str) || ((Integer) arrayMap.get(str)).intValue() == 1) {
-                this.mBundle.putCharSequence(str, charSequence);
-                return this;
-            }
-            throw new IllegalArgumentException("The " + str + " key cannot be used to put a CharSequence");
-        }
+    @Override // android.os.Parcelable
+    public int describeContents() {
+        return 0;
     }
 
     static {
@@ -167,26 +89,24 @@ public final class MediaMetadataCompat implements Parcelable {
         this.mBundle = parcel.readBundle(MediaSessionCompat.class.getClassLoader());
     }
 
-    public static MediaMetadataCompat fromMediaMetadata(Object obj) {
-        if (obj == null || Build.VERSION.SDK_INT < 21) {
-            return null;
-        }
-        Parcel obtain = Parcel.obtain();
-        MediaMetadataCompat$$ExternalSyntheticApiModelOutline0.m(obj).writeToParcel(obtain, 0);
-        obtain.setDataPosition(0);
-        MediaMetadataCompat createFromParcel = CREATOR.createFromParcel(obtain);
-        obtain.recycle();
-        createFromParcel.mMetadataFwk = MediaMetadataCompat$$ExternalSyntheticApiModelOutline0.m(obj);
-        return createFromParcel;
-    }
-
     public boolean containsKey(String str) {
         return this.mBundle.containsKey(str);
     }
 
-    @Override // android.os.Parcelable
-    public int describeContents() {
-        return 0;
+    public CharSequence getText(String str) {
+        return this.mBundle.getCharSequence(str);
+    }
+
+    public String getString(String str) {
+        CharSequence charSequence = this.mBundle.getCharSequence(str);
+        if (charSequence != null) {
+            return charSequence.toString();
+        }
+        return null;
+    }
+
+    public long getLong(String str) {
+        return this.mBundle.getLong(str, 0L);
     }
 
     public Bitmap getBitmap(String str) {
@@ -196,10 +116,6 @@ public final class MediaMetadataCompat implements Parcelable {
             Log.w("MediaMetadata", "Failed to retrieve a key as Bitmap.", e);
             return null;
         }
-    }
-
-    public Bundle getBundle() {
-        return new Bundle(this.mBundle);
     }
 
     public MediaDescriptionCompat getDescription() {
@@ -285,45 +201,108 @@ public final class MediaMetadataCompat implements Parcelable {
         return build;
     }
 
-    public long getLong(String str) {
-        return this.mBundle.getLong(str, 0L);
-    }
-
-    public Object getMediaMetadata() {
-        Parcelable.Creator creator;
-        if (this.mMetadataFwk == null && Build.VERSION.SDK_INT >= 21) {
-            Parcel obtain = Parcel.obtain();
-            writeToParcel(obtain, 0);
-            obtain.setDataPosition(0);
-            creator = MediaMetadata.CREATOR;
-            this.mMetadataFwk = MediaMetadataCompat$$ExternalSyntheticApiModelOutline0.m(creator.createFromParcel(obtain));
-            obtain.recycle();
-        }
-        return this.mMetadataFwk;
-    }
-
-    public String getString(String str) {
-        CharSequence charSequence = this.mBundle.getCharSequence(str);
-        if (charSequence != null) {
-            return charSequence.toString();
-        }
-        return null;
-    }
-
-    public CharSequence getText(String str) {
-        return this.mBundle.getCharSequence(str);
-    }
-
-    public Set keySet() {
-        return this.mBundle.keySet();
+    @Override // android.os.Parcelable
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeBundle(this.mBundle);
     }
 
     public int size() {
         return this.mBundle.size();
     }
 
-    @Override // android.os.Parcelable
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeBundle(this.mBundle);
+    public Set keySet() {
+        return this.mBundle.keySet();
+    }
+
+    public Bundle getBundle() {
+        return new Bundle(this.mBundle);
+    }
+
+    public static MediaMetadataCompat fromMediaMetadata(Object obj) {
+        if (obj == null) {
+            return null;
+        }
+        Parcel obtain = Parcel.obtain();
+        MediaMetadata mediaMetadata = (MediaMetadata) obj;
+        mediaMetadata.writeToParcel(obtain, 0);
+        obtain.setDataPosition(0);
+        MediaMetadataCompat createFromParcel = CREATOR.createFromParcel(obtain);
+        obtain.recycle();
+        createFromParcel.mMetadataFwk = mediaMetadata;
+        return createFromParcel;
+    }
+
+    public Object getMediaMetadata() {
+        if (this.mMetadataFwk == null) {
+            Parcel obtain = Parcel.obtain();
+            writeToParcel(obtain, 0);
+            obtain.setDataPosition(0);
+            this.mMetadataFwk = (MediaMetadata) MediaMetadata.CREATOR.createFromParcel(obtain);
+            obtain.recycle();
+        }
+        return this.mMetadataFwk;
+    }
+
+    public static final class Builder {
+        private final Bundle mBundle;
+
+        public Builder() {
+            this.mBundle = new Bundle();
+        }
+
+        public Builder(MediaMetadataCompat mediaMetadataCompat) {
+            Bundle bundle = new Bundle(mediaMetadataCompat.mBundle);
+            this.mBundle = bundle;
+            MediaSessionCompat.ensureClassLoader(bundle);
+        }
+
+        public Builder putText(String str, CharSequence charSequence) {
+            ArrayMap arrayMap = MediaMetadataCompat.METADATA_KEYS_TYPE;
+            if (arrayMap.containsKey(str) && ((Integer) arrayMap.get(str)).intValue() != 1) {
+                throw new IllegalArgumentException("The " + str + " key cannot be used to put a CharSequence");
+            }
+            this.mBundle.putCharSequence(str, charSequence);
+            return this;
+        }
+
+        public Builder putString(String str, String str2) {
+            ArrayMap arrayMap = MediaMetadataCompat.METADATA_KEYS_TYPE;
+            if (arrayMap.containsKey(str) && ((Integer) arrayMap.get(str)).intValue() != 1) {
+                throw new IllegalArgumentException("The " + str + " key cannot be used to put a String");
+            }
+            this.mBundle.putCharSequence(str, str2);
+            return this;
+        }
+
+        public Builder putLong(String str, long j) {
+            ArrayMap arrayMap = MediaMetadataCompat.METADATA_KEYS_TYPE;
+            if (arrayMap.containsKey(str) && ((Integer) arrayMap.get(str)).intValue() != 0) {
+                throw new IllegalArgumentException("The " + str + " key cannot be used to put a long");
+            }
+            this.mBundle.putLong(str, j);
+            return this;
+        }
+
+        public Builder putRating(String str, RatingCompat ratingCompat) {
+            ArrayMap arrayMap = MediaMetadataCompat.METADATA_KEYS_TYPE;
+            if (arrayMap.containsKey(str) && ((Integer) arrayMap.get(str)).intValue() != 3) {
+                throw new IllegalArgumentException("The " + str + " key cannot be used to put a Rating");
+            }
+            this.mBundle.putParcelable(str, (Parcelable) ratingCompat.getRating());
+            return this;
+        }
+
+        public Builder putBitmap(String str, Bitmap bitmap) {
+            ArrayMap arrayMap = MediaMetadataCompat.METADATA_KEYS_TYPE;
+            if (arrayMap.containsKey(str) && ((Integer) arrayMap.get(str)).intValue() != 2) {
+                throw new IllegalArgumentException("The " + str + " key cannot be used to put a Bitmap");
+            }
+            this.mBundle.putParcelable(str, bitmap);
+            return this;
+        }
+
+        public MediaMetadataCompat build() {
+            return new MediaMetadataCompat(this.mBundle);
+        }
     }
 }

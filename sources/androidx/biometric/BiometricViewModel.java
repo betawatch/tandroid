@@ -38,34 +38,23 @@ public class BiometricViewModel extends ViewModel {
     private boolean mIsFingerprintDialogDismissedInstantly = true;
     private int mFingerprintDialogPreviousState = 0;
 
+    private static class DefaultExecutor implements Executor {
+        private final Handler mHandler = new Handler(Looper.getMainLooper());
+
+        DefaultExecutor() {
+        }
+
+        @Override // java.util.concurrent.Executor
+        public void execute(Runnable runnable) {
+            this.mHandler.post(runnable);
+        }
+    }
+
     private static final class CallbackListener extends AuthenticationCallbackProvider.Listener {
         private final WeakReference mViewModelRef;
 
         CallbackListener(BiometricViewModel biometricViewModel) {
             this.mViewModelRef = new WeakReference(biometricViewModel);
-        }
-
-        @Override // androidx.biometric.AuthenticationCallbackProvider.Listener
-        void onError(int i, CharSequence charSequence) {
-            if (this.mViewModelRef.get() == null || ((BiometricViewModel) this.mViewModelRef.get()).isConfirmingDeviceCredential() || !((BiometricViewModel) this.mViewModelRef.get()).isAwaitingResult()) {
-                return;
-            }
-            ((BiometricViewModel) this.mViewModelRef.get()).setAuthenticationError(new BiometricErrorData(i, charSequence));
-        }
-
-        @Override // androidx.biometric.AuthenticationCallbackProvider.Listener
-        void onFailure() {
-            if (this.mViewModelRef.get() == null || !((BiometricViewModel) this.mViewModelRef.get()).isAwaitingResult()) {
-                return;
-            }
-            ((BiometricViewModel) this.mViewModelRef.get()).setAuthenticationFailurePending(true);
-        }
-
-        @Override // androidx.biometric.AuthenticationCallbackProvider.Listener
-        void onHelp(CharSequence charSequence) {
-            if (this.mViewModelRef.get() != null) {
-                ((BiometricViewModel) this.mViewModelRef.get()).setAuthenticationHelpMessage(charSequence);
-            }
         }
 
         @Override // androidx.biometric.AuthenticationCallbackProvider.Listener
@@ -78,17 +67,28 @@ public class BiometricViewModel extends ViewModel {
             }
             ((BiometricViewModel) this.mViewModelRef.get()).setAuthenticationResult(authenticationResult);
         }
-    }
 
-    private static class DefaultExecutor implements Executor {
-        private final Handler mHandler = new Handler(Looper.getMainLooper());
-
-        DefaultExecutor() {
+        @Override // androidx.biometric.AuthenticationCallbackProvider.Listener
+        void onError(int i, CharSequence charSequence) {
+            if (this.mViewModelRef.get() == null || ((BiometricViewModel) this.mViewModelRef.get()).isConfirmingDeviceCredential() || !((BiometricViewModel) this.mViewModelRef.get()).isAwaitingResult()) {
+                return;
+            }
+            ((BiometricViewModel) this.mViewModelRef.get()).setAuthenticationError(new BiometricErrorData(i, charSequence));
         }
 
-        @Override // java.util.concurrent.Executor
-        public void execute(Runnable runnable) {
-            this.mHandler.post(runnable);
+        @Override // androidx.biometric.AuthenticationCallbackProvider.Listener
+        void onHelp(CharSequence charSequence) {
+            if (this.mViewModelRef.get() != null) {
+                ((BiometricViewModel) this.mViewModelRef.get()).setAuthenticationHelpMessage(charSequence);
+            }
+        }
+
+        @Override // androidx.biometric.AuthenticationCallbackProvider.Listener
+        void onFailure() {
+            if (this.mViewModelRef.get() == null || !((BiometricViewModel) this.mViewModelRef.get()).isAwaitingResult()) {
+                return;
+            }
+            ((BiometricViewModel) this.mViewModelRef.get()).setAuthenticationFailurePending(true);
         }
     }
 
@@ -107,59 +107,13 @@ public class BiometricViewModel extends ViewModel {
         }
     }
 
-    private static void updateValue(MutableLiveData mutableLiveData, Object obj) {
-        if (Thread.currentThread() == Looper.getMainLooper().getThread()) {
-            mutableLiveData.setValue(obj);
-        } else {
-            mutableLiveData.postValue(obj);
-        }
+    Executor getClientExecutor() {
+        Executor executor = this.mClientExecutor;
+        return executor != null ? executor : new DefaultExecutor();
     }
 
-    int getAllowedAuthenticators() {
-        BiometricPrompt.PromptInfo promptInfo = this.mPromptInfo;
-        if (promptInfo != null) {
-            return AuthenticatorUtils.getConsolidatedAuthenticators(promptInfo, this.mCryptoObject);
-        }
-        return 0;
-    }
-
-    AuthenticationCallbackProvider getAuthenticationCallbackProvider() {
-        if (this.mAuthenticationCallbackProvider == null) {
-            this.mAuthenticationCallbackProvider = new AuthenticationCallbackProvider(new CallbackListener(this));
-        }
-        return this.mAuthenticationCallbackProvider;
-    }
-
-    MutableLiveData getAuthenticationError() {
-        if (this.mAuthenticationError == null) {
-            this.mAuthenticationError = new MutableLiveData();
-        }
-        return this.mAuthenticationError;
-    }
-
-    LiveData getAuthenticationHelpMessage() {
-        if (this.mAuthenticationHelpMessage == null) {
-            this.mAuthenticationHelpMessage = new MutableLiveData();
-        }
-        return this.mAuthenticationHelpMessage;
-    }
-
-    LiveData getAuthenticationResult() {
-        if (this.mAuthenticationResult == null) {
-            this.mAuthenticationResult = new MutableLiveData();
-        }
-        return this.mAuthenticationResult;
-    }
-
-    int getCanceledFrom() {
-        return this.mCanceledFrom;
-    }
-
-    CancellationSignalProvider getCancellationSignalProvider() {
-        if (this.mCancellationSignalProvider == null) {
-            this.mCancellationSignalProvider = new CancellationSignalProvider();
-        }
-        return this.mCancellationSignalProvider;
+    void setClientExecutor(Executor executor) {
+        this.mClientExecutor = executor;
     }
 
     BiometricPrompt.AuthenticationCallback getClientCallback() {
@@ -170,13 +124,32 @@ public class BiometricViewModel extends ViewModel {
         return this.mClientCallback;
     }
 
-    Executor getClientExecutor() {
-        Executor executor = this.mClientExecutor;
-        return executor != null ? executor : new DefaultExecutor();
+    void setClientCallback(BiometricPrompt.AuthenticationCallback authenticationCallback) {
+        this.mClientCallback = authenticationCallback;
     }
 
-    BiometricPrompt.CryptoObject getCryptoObject() {
-        return this.mCryptoObject;
+    void resetClientCallback() {
+        this.mClientCallback = null;
+    }
+
+    void setPromptInfo(BiometricPrompt.PromptInfo promptInfo) {
+        this.mPromptInfo = promptInfo;
+    }
+
+    CharSequence getTitle() {
+        BiometricPrompt.PromptInfo promptInfo = this.mPromptInfo;
+        if (promptInfo != null) {
+            return promptInfo.getTitle();
+        }
+        return null;
+    }
+
+    CharSequence getSubtitle() {
+        BiometricPrompt.PromptInfo promptInfo = this.mPromptInfo;
+        if (promptInfo != null) {
+            return promptInfo.getSubtitle();
+        }
+        return null;
     }
 
     CharSequence getDescription() {
@@ -185,36 +158,6 @@ public class BiometricViewModel extends ViewModel {
             return promptInfo.getDescription();
         }
         return null;
-    }
-
-    LiveData getFingerprintDialogHelpMessage() {
-        if (this.mFingerprintDialogHelpMessage == null) {
-            this.mFingerprintDialogHelpMessage = new MutableLiveData();
-        }
-        return this.mFingerprintDialogHelpMessage;
-    }
-
-    int getFingerprintDialogPreviousState() {
-        return this.mFingerprintDialogPreviousState;
-    }
-
-    LiveData getFingerprintDialogState() {
-        if (this.mFingerprintDialogState == null) {
-            this.mFingerprintDialogState = new MutableLiveData();
-        }
-        return this.mFingerprintDialogState;
-    }
-
-    int getInferredAuthenticationResultType() {
-        int allowedAuthenticators = getAllowedAuthenticators();
-        return (!AuthenticatorUtils.isSomeBiometricAllowed(allowedAuthenticators) || AuthenticatorUtils.isDeviceCredentialAllowed(allowedAuthenticators)) ? -1 : 2;
-    }
-
-    DialogInterface.OnClickListener getNegativeButtonListener() {
-        if (this.mNegativeButtonListener == null) {
-            this.mNegativeButtonListener = new NegativeButtonListener(this);
-        }
-        return this.mNegativeButtonListener;
     }
 
     CharSequence getNegativeButtonText() {
@@ -229,95 +172,105 @@ public class BiometricViewModel extends ViewModel {
         return null;
     }
 
-    CharSequence getSubtitle() {
-        BiometricPrompt.PromptInfo promptInfo = this.mPromptInfo;
-        if (promptInfo != null) {
-            return promptInfo.getSubtitle();
-        }
-        return null;
-    }
-
-    CharSequence getTitle() {
-        BiometricPrompt.PromptInfo promptInfo = this.mPromptInfo;
-        if (promptInfo != null) {
-            return promptInfo.getTitle();
-        }
-        return null;
-    }
-
-    LiveData isAuthenticationFailurePending() {
-        if (this.mIsAuthenticationFailurePending == null) {
-            this.mIsAuthenticationFailurePending = new MutableLiveData();
-        }
-        return this.mIsAuthenticationFailurePending;
-    }
-
-    boolean isAwaitingResult() {
-        return this.mIsAwaitingResult;
-    }
-
     boolean isConfirmationRequired() {
         BiometricPrompt.PromptInfo promptInfo = this.mPromptInfo;
         return promptInfo == null || promptInfo.isConfirmationRequired();
     }
 
-    boolean isConfirmingDeviceCredential() {
-        return this.mIsConfirmingDeviceCredential;
-    }
-
-    boolean isDelayingPrompt() {
-        return this.mIsDelayingPrompt;
-    }
-
-    LiveData isFingerprintDialogCancelPending() {
-        if (this.mIsFingerprintDialogCancelPending == null) {
-            this.mIsFingerprintDialogCancelPending = new MutableLiveData();
+    int getAllowedAuthenticators() {
+        BiometricPrompt.PromptInfo promptInfo = this.mPromptInfo;
+        if (promptInfo != null) {
+            return AuthenticatorUtils.getConsolidatedAuthenticators(promptInfo, this.mCryptoObject);
         }
-        return this.mIsFingerprintDialogCancelPending;
+        return 0;
     }
 
-    boolean isFingerprintDialogDismissedInstantly() {
-        return this.mIsFingerprintDialogDismissedInstantly;
+    BiometricPrompt.CryptoObject getCryptoObject() {
+        return this.mCryptoObject;
     }
 
-    boolean isIgnoringCancel() {
-        return this.mIsIgnoringCancel;
+    void setCryptoObject(BiometricPrompt.CryptoObject cryptoObject) {
+        this.mCryptoObject = cryptoObject;
     }
 
-    LiveData isNegativeButtonPressPending() {
-        if (this.mIsNegativeButtonPressPending == null) {
-            this.mIsNegativeButtonPressPending = new MutableLiveData();
+    AuthenticationCallbackProvider getAuthenticationCallbackProvider() {
+        if (this.mAuthenticationCallbackProvider == null) {
+            this.mAuthenticationCallbackProvider = new AuthenticationCallbackProvider(new CallbackListener(this));
         }
-        return this.mIsNegativeButtonPressPending;
+        return this.mAuthenticationCallbackProvider;
+    }
+
+    CancellationSignalProvider getCancellationSignalProvider() {
+        if (this.mCancellationSignalProvider == null) {
+            this.mCancellationSignalProvider = new CancellationSignalProvider();
+        }
+        return this.mCancellationSignalProvider;
+    }
+
+    DialogInterface.OnClickListener getNegativeButtonListener() {
+        if (this.mNegativeButtonListener == null) {
+            this.mNegativeButtonListener = new NegativeButtonListener(this);
+        }
+        return this.mNegativeButtonListener;
+    }
+
+    void setNegativeButtonTextOverride(CharSequence charSequence) {
+        this.mNegativeButtonTextOverride = charSequence;
+    }
+
+    int getCanceledFrom() {
+        return this.mCanceledFrom;
+    }
+
+    void setCanceledFrom(int i) {
+        this.mCanceledFrom = i;
     }
 
     boolean isPromptShowing() {
         return this.mIsPromptShowing;
     }
 
-    void resetClientCallback() {
-        this.mClientCallback = null;
+    void setPromptShowing(boolean z) {
+        this.mIsPromptShowing = z;
     }
 
-    void setAuthenticationError(BiometricErrorData biometricErrorData) {
-        if (this.mAuthenticationError == null) {
-            this.mAuthenticationError = new MutableLiveData();
-        }
-        updateValue(this.mAuthenticationError, biometricErrorData);
+    boolean isAwaitingResult() {
+        return this.mIsAwaitingResult;
     }
 
-    void setAuthenticationFailurePending(boolean z) {
-        if (this.mIsAuthenticationFailurePending == null) {
-            this.mIsAuthenticationFailurePending = new MutableLiveData();
-        }
-        updateValue(this.mIsAuthenticationFailurePending, Boolean.valueOf(z));
+    void setAwaitingResult(boolean z) {
+        this.mIsAwaitingResult = z;
     }
 
-    void setAuthenticationHelpMessage(CharSequence charSequence) {
-        if (this.mAuthenticationHelpMessage == null) {
-            this.mAuthenticationHelpMessage = new MutableLiveData();
+    boolean isConfirmingDeviceCredential() {
+        return this.mIsConfirmingDeviceCredential;
+    }
+
+    void setConfirmingDeviceCredential(boolean z) {
+        this.mIsConfirmingDeviceCredential = z;
+    }
+
+    boolean isDelayingPrompt() {
+        return this.mIsDelayingPrompt;
+    }
+
+    void setDelayingPrompt(boolean z) {
+        this.mIsDelayingPrompt = z;
+    }
+
+    boolean isIgnoringCancel() {
+        return this.mIsIgnoringCancel;
+    }
+
+    void setIgnoringCancel(boolean z) {
+        this.mIsIgnoringCancel = z;
+    }
+
+    LiveData getAuthenticationResult() {
+        if (this.mAuthenticationResult == null) {
+            this.mAuthenticationResult = new MutableLiveData();
         }
-        updateValue(this.mAuthenticationHelpMessage, charSequence);
+        return this.mAuthenticationResult;
     }
 
     void setAuthenticationResult(BiometricPrompt.AuthenticationResult authenticationResult) {
@@ -327,65 +280,53 @@ public class BiometricViewModel extends ViewModel {
         updateValue(this.mAuthenticationResult, authenticationResult);
     }
 
-    void setAwaitingResult(boolean z) {
-        this.mIsAwaitingResult = z;
-    }
-
-    void setCanceledFrom(int i) {
-        this.mCanceledFrom = i;
-    }
-
-    void setClientCallback(BiometricPrompt.AuthenticationCallback authenticationCallback) {
-        this.mClientCallback = authenticationCallback;
-    }
-
-    void setClientExecutor(Executor executor) {
-        this.mClientExecutor = executor;
-    }
-
-    void setConfirmingDeviceCredential(boolean z) {
-        this.mIsConfirmingDeviceCredential = z;
-    }
-
-    void setCryptoObject(BiometricPrompt.CryptoObject cryptoObject) {
-        this.mCryptoObject = cryptoObject;
-    }
-
-    void setDelayingPrompt(boolean z) {
-        this.mIsDelayingPrompt = z;
-    }
-
-    void setFingerprintDialogCancelPending(boolean z) {
-        if (this.mIsFingerprintDialogCancelPending == null) {
-            this.mIsFingerprintDialogCancelPending = new MutableLiveData();
+    MutableLiveData getAuthenticationError() {
+        if (this.mAuthenticationError == null) {
+            this.mAuthenticationError = new MutableLiveData();
         }
-        updateValue(this.mIsFingerprintDialogCancelPending, Boolean.valueOf(z));
+        return this.mAuthenticationError;
     }
 
-    void setFingerprintDialogDismissedInstantly(boolean z) {
-        this.mIsFingerprintDialogDismissedInstantly = z;
-    }
-
-    void setFingerprintDialogHelpMessage(CharSequence charSequence) {
-        if (this.mFingerprintDialogHelpMessage == null) {
-            this.mFingerprintDialogHelpMessage = new MutableLiveData();
+    void setAuthenticationError(BiometricErrorData biometricErrorData) {
+        if (this.mAuthenticationError == null) {
+            this.mAuthenticationError = new MutableLiveData();
         }
-        updateValue(this.mFingerprintDialogHelpMessage, charSequence);
+        updateValue(this.mAuthenticationError, biometricErrorData);
     }
 
-    void setFingerprintDialogPreviousState(int i) {
-        this.mFingerprintDialogPreviousState = i;
-    }
-
-    void setFingerprintDialogState(int i) {
-        if (this.mFingerprintDialogState == null) {
-            this.mFingerprintDialogState = new MutableLiveData();
+    LiveData getAuthenticationHelpMessage() {
+        if (this.mAuthenticationHelpMessage == null) {
+            this.mAuthenticationHelpMessage = new MutableLiveData();
         }
-        updateValue(this.mFingerprintDialogState, Integer.valueOf(i));
+        return this.mAuthenticationHelpMessage;
     }
 
-    void setIgnoringCancel(boolean z) {
-        this.mIsIgnoringCancel = z;
+    void setAuthenticationHelpMessage(CharSequence charSequence) {
+        if (this.mAuthenticationHelpMessage == null) {
+            this.mAuthenticationHelpMessage = new MutableLiveData();
+        }
+        updateValue(this.mAuthenticationHelpMessage, charSequence);
+    }
+
+    LiveData isAuthenticationFailurePending() {
+        if (this.mIsAuthenticationFailurePending == null) {
+            this.mIsAuthenticationFailurePending = new MutableLiveData();
+        }
+        return this.mIsAuthenticationFailurePending;
+    }
+
+    void setAuthenticationFailurePending(boolean z) {
+        if (this.mIsAuthenticationFailurePending == null) {
+            this.mIsAuthenticationFailurePending = new MutableLiveData();
+        }
+        updateValue(this.mIsAuthenticationFailurePending, Boolean.valueOf(z));
+    }
+
+    LiveData isNegativeButtonPressPending() {
+        if (this.mIsNegativeButtonPressPending == null) {
+            this.mIsNegativeButtonPressPending = new MutableLiveData();
+        }
+        return this.mIsNegativeButtonPressPending;
     }
 
     void setNegativeButtonPressPending(boolean z) {
@@ -395,15 +336,74 @@ public class BiometricViewModel extends ViewModel {
         updateValue(this.mIsNegativeButtonPressPending, Boolean.valueOf(z));
     }
 
-    void setNegativeButtonTextOverride(CharSequence charSequence) {
-        this.mNegativeButtonTextOverride = charSequence;
+    boolean isFingerprintDialogDismissedInstantly() {
+        return this.mIsFingerprintDialogDismissedInstantly;
     }
 
-    void setPromptInfo(BiometricPrompt.PromptInfo promptInfo) {
-        this.mPromptInfo = promptInfo;
+    void setFingerprintDialogDismissedInstantly(boolean z) {
+        this.mIsFingerprintDialogDismissedInstantly = z;
     }
 
-    void setPromptShowing(boolean z) {
-        this.mIsPromptShowing = z;
+    LiveData isFingerprintDialogCancelPending() {
+        if (this.mIsFingerprintDialogCancelPending == null) {
+            this.mIsFingerprintDialogCancelPending = new MutableLiveData();
+        }
+        return this.mIsFingerprintDialogCancelPending;
+    }
+
+    void setFingerprintDialogCancelPending(boolean z) {
+        if (this.mIsFingerprintDialogCancelPending == null) {
+            this.mIsFingerprintDialogCancelPending = new MutableLiveData();
+        }
+        updateValue(this.mIsFingerprintDialogCancelPending, Boolean.valueOf(z));
+    }
+
+    int getFingerprintDialogPreviousState() {
+        return this.mFingerprintDialogPreviousState;
+    }
+
+    void setFingerprintDialogPreviousState(int i) {
+        this.mFingerprintDialogPreviousState = i;
+    }
+
+    LiveData getFingerprintDialogState() {
+        if (this.mFingerprintDialogState == null) {
+            this.mFingerprintDialogState = new MutableLiveData();
+        }
+        return this.mFingerprintDialogState;
+    }
+
+    void setFingerprintDialogState(int i) {
+        if (this.mFingerprintDialogState == null) {
+            this.mFingerprintDialogState = new MutableLiveData();
+        }
+        updateValue(this.mFingerprintDialogState, Integer.valueOf(i));
+    }
+
+    LiveData getFingerprintDialogHelpMessage() {
+        if (this.mFingerprintDialogHelpMessage == null) {
+            this.mFingerprintDialogHelpMessage = new MutableLiveData();
+        }
+        return this.mFingerprintDialogHelpMessage;
+    }
+
+    void setFingerprintDialogHelpMessage(CharSequence charSequence) {
+        if (this.mFingerprintDialogHelpMessage == null) {
+            this.mFingerprintDialogHelpMessage = new MutableLiveData();
+        }
+        updateValue(this.mFingerprintDialogHelpMessage, charSequence);
+    }
+
+    int getInferredAuthenticationResultType() {
+        int allowedAuthenticators = getAllowedAuthenticators();
+        return (!AuthenticatorUtils.isSomeBiometricAllowed(allowedAuthenticators) || AuthenticatorUtils.isDeviceCredentialAllowed(allowedAuthenticators)) ? -1 : 2;
+    }
+
+    private static void updateValue(MutableLiveData mutableLiveData, Object obj) {
+        if (Thread.currentThread() == Looper.getMainLooper().getThread()) {
+            mutableLiveData.setValue(obj);
+        } else {
+            mutableLiveData.postValue(obj);
+        }
     }
 }

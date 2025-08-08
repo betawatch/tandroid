@@ -17,10 +17,6 @@ public abstract class EmojiSpan extends ReplacementSpan {
         this.mMetadata = emojiMetadata;
     }
 
-    public final EmojiMetadata getMetadata() {
-        return this.mMetadata;
-    }
-
     @Override // android.text.style.ReplacementSpan
     public int getSize(Paint paint, CharSequence charSequence, int i, int i2, Paint.FontMetricsInt fontMetricsInt) {
         paint.getFontMetricsInt(this.mTmpFontMetrics);
@@ -37,6 +33,10 @@ public abstract class EmojiSpan extends ReplacementSpan {
             fontMetricsInt.bottom = fontMetricsInt3.bottom;
         }
         return width;
+    }
+
+    public final EmojiMetadata getMetadata() {
+        return this.mMetadata;
     }
 
     final int getWidth() {

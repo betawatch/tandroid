@@ -5,7 +5,7 @@ import android.os.PowerManager;
 import android.os.WorkSource;
 import android.text.TextUtils;
 import android.util.Log;
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.util.Clock;
 import com.google.android.gms.common.util.DefaultClock;
@@ -134,17 +134,10 @@ public class WakeLock {
         if (arrayList.size() <= 0) {
             return;
         }
-        ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(arrayList.get(0));
+        WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(arrayList.get(0));
         throw null;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:38:0x0087, code lost:
-    
-        if (r5.zza != null) goto L30;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     private final void zzd(int i) {
         synchronized (this.zzf) {
             try {
@@ -175,23 +168,30 @@ public class WakeLock {
                         try {
                             try {
                                 this.zzg.release();
+                                if (this.zza != null) {
+                                    this.zza = null;
+                                }
                             } catch (RuntimeException e) {
                                 if (!e.getClass().equals(RuntimeException.class)) {
                                     throw e;
                                 }
                                 Log.e("WakeLock", String.valueOf(this.zzp).concat(" failed to release!"), e);
+                                if (this.zza != null) {
+                                    this.zza = null;
+                                }
                             }
-                        } finally {
+                        } catch (Throwable th) {
                             if (this.zza != null) {
                                 this.zza = null;
                             }
+                            throw th;
                         }
                     } else {
                         Log.e("WakeLock", String.valueOf(this.zzp).concat(" should be held!"));
                     }
                 }
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }

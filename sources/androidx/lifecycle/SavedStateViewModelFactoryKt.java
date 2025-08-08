@@ -5,42 +5,14 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.List;
-import kotlin.collections.ArraysKt___ArraysKt;
-import kotlin.collections.CollectionsKt__CollectionsJVMKt;
-import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.collections.ArraysKt;
+import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 
 /* loaded from: classes.dex */
 public abstract class SavedStateViewModelFactoryKt {
-    private static final List ANDROID_VIEWMODEL_SIGNATURE;
-    private static final List VIEWMODEL_SIGNATURE;
-
-    static {
-        List listOf;
-        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new Class[]{Application.class, SavedStateHandle.class});
-        ANDROID_VIEWMODEL_SIGNATURE = listOf;
-        VIEWMODEL_SIGNATURE = CollectionsKt__CollectionsJVMKt.listOf(SavedStateHandle.class);
-    }
-
-    public static final Constructor findMatchingConstructor(Class modelClass, List signature) {
-        List list;
-        Intrinsics.checkNotNullParameter(modelClass, "modelClass");
-        Intrinsics.checkNotNullParameter(signature, "signature");
-        Constructor<?>[] constructors = modelClass.getConstructors();
-        Intrinsics.checkNotNullExpressionValue(constructors, "modelClass.constructors");
-        for (Constructor<?> constructor : constructors) {
-            Class<?>[] parameterTypes = constructor.getParameterTypes();
-            Intrinsics.checkNotNullExpressionValue(parameterTypes, "constructor.parameterTypes");
-            list = ArraysKt___ArraysKt.toList(parameterTypes);
-            if (Intrinsics.areEqual(signature, list)) {
-                return constructor;
-            }
-            if (signature.size() == list.size() && list.containsAll(signature)) {
-                throw new UnsupportedOperationException("Class " + modelClass.getSimpleName() + " must have parameters in the proper order: " + signature);
-            }
-        }
-        return null;
-    }
+    private static final List ANDROID_VIEWMODEL_SIGNATURE = CollectionsKt.listOf((Object[]) new Class[]{Application.class, SavedStateHandle.class});
+    private static final List VIEWMODEL_SIGNATURE = CollectionsKt.listOf(SavedStateHandle.class);
 
     public static final ViewModel newInstance(Class modelClass, Constructor constructor, Object... params) {
         Intrinsics.checkNotNullParameter(modelClass, "modelClass");
@@ -55,5 +27,24 @@ public abstract class SavedStateViewModelFactoryKt {
         } catch (InvocationTargetException e3) {
             throw new RuntimeException("An exception happened in constructor of " + modelClass, e3.getCause());
         }
+    }
+
+    public static final Constructor findMatchingConstructor(Class modelClass, List signature) {
+        Intrinsics.checkNotNullParameter(modelClass, "modelClass");
+        Intrinsics.checkNotNullParameter(signature, "signature");
+        Constructor<?>[] constructors = modelClass.getConstructors();
+        Intrinsics.checkNotNullExpressionValue(constructors, "modelClass.constructors");
+        for (Constructor<?> constructor : constructors) {
+            Class<?>[] parameterTypes = constructor.getParameterTypes();
+            Intrinsics.checkNotNullExpressionValue(parameterTypes, "constructor.parameterTypes");
+            List list = ArraysKt.toList(parameterTypes);
+            if (Intrinsics.areEqual(signature, list)) {
+                return constructor;
+            }
+            if (signature.size() == list.size() && list.containsAll(signature)) {
+                throw new UnsupportedOperationException("Class " + modelClass.getSimpleName() + " must have parameters in the proper order: " + signature);
+            }
+        }
+        return null;
     }
 }

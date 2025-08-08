@@ -1,12 +1,12 @@
 package androidx.datastore.core;
 
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import java.util.Iterator;
 import java.util.List;
 import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 
@@ -43,7 +43,7 @@ final class DataMigrationInitializer$Companion$runMigrations$2 extends SuspendLa
     public final Object invokeSuspend(Object obj) {
         List list;
         Iterator it;
-        IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
@@ -53,7 +53,7 @@ final class DataMigrationInitializer$Companion$runMigrations$2 extends SuspendLa
             it = list2.iterator();
         } else if (i == 1) {
             Object obj2 = this.L$3;
-            ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(this.L$2);
+            WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(this.L$2);
             Iterator it2 = (Iterator) this.L$1;
             List list3 = (List) this.L$0;
             ResultKt.throwOnFailure(obj);
@@ -80,7 +80,7 @@ final class DataMigrationInitializer$Companion$runMigrations$2 extends SuspendLa
         if (!it.hasNext()) {
             return obj;
         }
-        ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
+        WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
         this.L$0 = list;
         this.L$1 = it;
         this.L$2 = null;

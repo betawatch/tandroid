@@ -21,7 +21,10 @@ public final class h implements j$.time.temporal.k, Comparable, Serializable {
         int i = 0;
         while (true) {
             h[] hVarArr = h;
-            if (i >= hVarArr.length) {
+            if (i < hVarArr.length) {
+                hVarArr[i] = new h(i, 0, 0, 0);
+                i++;
+            } else {
                 h hVar = hVarArr[0];
                 g = hVar;
                 h hVar2 = hVarArr[12];
@@ -29,9 +32,26 @@ public final class h implements j$.time.temporal.k, Comparable, Serializable {
                 f = new h(23, 59, 59, 999999999);
                 return;
             }
-            hVarArr[i] = new h(i, 0, 0, 0);
-            i++;
         }
+    }
+
+    public static h p() {
+        j$.time.temporal.a.HOUR_OF_DAY.j(0);
+        return h[0];
+    }
+
+    public static h q(long j) {
+        j$.time.temporal.a.NANO_OF_DAY.j(j);
+        int i = (int) (j / 3600000000000L);
+        long j2 = j - (i * 3600000000000L);
+        int i2 = (int) (j2 / 60000000000L);
+        long j3 = j2 - (i2 * 60000000000L);
+        int i3 = (int) (j3 / 1000000000);
+        int i4 = (int) (j3 - (i3 * 1000000000));
+        if ((i2 | i3 | i4) == 0) {
+            return h[i];
+        }
+        return new h(i, i2, i3, i4);
     }
 
     private h(int i, int i2, int i3, int i4) {
@@ -41,7 +61,42 @@ public final class h implements j$.time.temporal.k, Comparable, Serializable {
         this.d = i4;
     }
 
-    private int n(j$.time.temporal.l lVar) {
+    @Override // j$.time.temporal.k
+    public final boolean j(j$.time.temporal.l lVar) {
+        if (lVar instanceof j$.time.temporal.a) {
+            return ((j$.time.temporal.a) lVar).l();
+        }
+        return lVar != null && lVar.g(this);
+    }
+
+    @Override // j$.time.temporal.k
+    public final q i(j$.time.temporal.a aVar) {
+        return j$.time.temporal.j.c(this, aVar);
+    }
+
+    @Override // j$.time.temporal.k
+    public final int h(j$.time.temporal.a aVar) {
+        if (aVar instanceof j$.time.temporal.a) {
+            return m(aVar);
+        }
+        return j$.time.temporal.j.a(this, aVar);
+    }
+
+    @Override // j$.time.temporal.k
+    public final long f(j$.time.temporal.l lVar) {
+        if (lVar instanceof j$.time.temporal.a) {
+            if (lVar == j$.time.temporal.a.NANO_OF_DAY) {
+                return r();
+            }
+            if (lVar == j$.time.temporal.a.MICRO_OF_DAY) {
+                return r() / 1000;
+            }
+            return m(lVar);
+        }
+        return lVar.f(this);
+    }
+
+    private int m(j$.time.temporal.l lVar) {
         int i = g.a[((j$.time.temporal.a) lVar).ordinal()];
         byte b = this.b;
         int i2 = this.d;
@@ -58,11 +113,11 @@ public final class h implements j$.time.temporal.k, Comparable, Serializable {
             case 5:
                 return i2 / MediaController.VIDEO_BITRATE_480;
             case 6:
-                return (int) (s() / 1000000);
+                return (int) (r() / 1000000);
             case 7:
                 return this.c;
             case 8:
-                return t();
+                return s();
             case 9:
                 return b;
             case 10:
@@ -89,50 +144,16 @@ public final class h implements j$.time.temporal.k, Comparable, Serializable {
         }
     }
 
-    public static h q() {
-        j$.time.temporal.a.HOUR_OF_DAY.n(0);
-        return h[0];
+    public final int o() {
+        return this.c;
     }
 
-    public static h r(long j) {
-        j$.time.temporal.a.NANO_OF_DAY.n(j);
-        int i = (int) (j / 3600000000000L);
-        long j2 = j - (i * 3600000000000L);
-        int i2 = (int) (j2 / 60000000000L);
-        long j3 = j2 - (i2 * 60000000000L);
-        int i3 = (int) (j3 / 1000000000);
-        int i4 = (int) (j3 - (i3 * 1000000000));
-        return ((i2 | i3) | i4) == 0 ? h[i] : new h(i, i2, i3, i4);
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof h)) {
-            return false;
-        }
-        h hVar = (h) obj;
-        return this.a == hVar.a && this.b == hVar.b && this.c == hVar.c && this.d == hVar.d;
+    public final int n() {
+        return this.d;
     }
 
     @Override // j$.time.temporal.k
-    public final q f(j$.time.temporal.l lVar) {
-        return j$.time.temporal.j.c(this, lVar);
-    }
-
-    @Override // j$.time.temporal.k
-    public final long h(j$.time.temporal.l lVar) {
-        return lVar instanceof j$.time.temporal.a ? lVar == j$.time.temporal.a.NANO_OF_DAY ? s() : lVar == j$.time.temporal.a.MICRO_OF_DAY ? s() / 1000 : n(lVar) : lVar.h(this);
-    }
-
-    public final int hashCode() {
-        long s = s();
-        return (int) (s ^ (s >>> 32));
-    }
-
-    @Override // j$.time.temporal.k
-    public final Object i(j$.time.temporal.n nVar) {
+    public final Object g(j$.time.temporal.n nVar) {
         if (nVar == j$.time.temporal.j.d() || nVar == j$.time.temporal.j.j() || nVar == j$.time.temporal.j.i() || nVar == j$.time.temporal.j.g()) {
             return null;
         }
@@ -142,21 +163,22 @@ public final class h implements j$.time.temporal.k, Comparable, Serializable {
         if (nVar == j$.time.temporal.j.e()) {
             return null;
         }
-        return nVar == j$.time.temporal.j.h() ? j$.time.temporal.b.NANOS : nVar.a(this);
+        if (nVar == j$.time.temporal.j.h()) {
+            return j$.time.temporal.b.NANOS;
+        }
+        return nVar.a(this);
     }
 
-    @Override // j$.time.temporal.k
-    public final int j(j$.time.temporal.a aVar) {
-        return aVar instanceof j$.time.temporal.a ? n(aVar) : j$.time.temporal.j.a(this, aVar);
+    public final int s() {
+        return (this.b * 60) + (this.a * 3600) + this.c;
     }
 
-    @Override // j$.time.temporal.k
-    public final boolean k(j$.time.temporal.l lVar) {
-        return lVar instanceof j$.time.temporal.a ? ((j$.time.temporal.a) lVar).o() : lVar != null && lVar.i(this);
+    public final long r() {
+        return (this.c * 1000000000) + (this.b * 60000000000L) + (this.a * 3600000000000L) + this.d;
     }
 
     @Override // java.lang.Comparable
-    /* renamed from: m, reason: merged with bridge method [inline-methods] */
+    /* renamed from: l, reason: merged with bridge method [inline-methods] */
     public final int compareTo(h hVar) {
         int compare = Integer.compare(this.a, hVar.a);
         if (compare != 0) {
@@ -170,24 +192,23 @@ public final class h implements j$.time.temporal.k, Comparable, Serializable {
         return compare3 == 0 ? Integer.compare(this.d, hVar.d) : compare3;
     }
 
-    public final int o() {
-        return this.d;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof h)) {
+            return false;
+        }
+        h hVar = (h) obj;
+        return this.a == hVar.a && this.b == hVar.b && this.c == hVar.c && this.d == hVar.d;
     }
 
-    public final int p() {
-        return this.c;
-    }
-
-    public final long s() {
-        return (this.c * 1000000000) + (this.b * 60000000000L) + (this.a * 3600000000000L) + this.d;
-    }
-
-    public final int t() {
-        return (this.b * 60) + (this.a * 3600) + this.c;
+    public final int hashCode() {
+        long r = r();
+        return (int) (r ^ (r >>> 32));
     }
 
     public final String toString() {
-        int i;
         StringBuilder sb = new StringBuilder(18);
         byte b = this.a;
         sb.append(b < 10 ? "0" : "");
@@ -196,24 +217,19 @@ public final class h implements j$.time.temporal.k, Comparable, Serializable {
         sb.append(b2 < 10 ? ":0" : ":");
         sb.append((int) b2);
         byte b3 = this.c;
-        int i2 = this.d;
-        if (b3 > 0 || i2 > 0) {
+        int i = this.d;
+        if (b3 > 0 || i > 0) {
             sb.append(b3 < 10 ? ":0" : ":");
             sb.append((int) b3);
-            if (i2 > 0) {
+            if (i > 0) {
                 sb.append('.');
-                int i3 = MediaController.VIDEO_BITRATE_480;
-                if (i2 % MediaController.VIDEO_BITRATE_480 == 0) {
-                    i = (i2 / MediaController.VIDEO_BITRATE_480) + MediaDataController.MAX_STYLE_RUNS_COUNT;
+                if (i % MediaController.VIDEO_BITRATE_480 == 0) {
+                    sb.append(Integer.toString((i / MediaController.VIDEO_BITRATE_480) + MediaDataController.MAX_STYLE_RUNS_COUNT).substring(1));
+                } else if (i % MediaDataController.MAX_STYLE_RUNS_COUNT == 0) {
+                    sb.append(Integer.toString((i / MediaDataController.MAX_STYLE_RUNS_COUNT) + MediaController.VIDEO_BITRATE_480).substring(1));
                 } else {
-                    if (i2 % MediaDataController.MAX_STYLE_RUNS_COUNT == 0) {
-                        i2 /= MediaDataController.MAX_STYLE_RUNS_COUNT;
-                    } else {
-                        i3 = 1000000000;
-                    }
-                    i = i2 + i3;
+                    sb.append(Integer.toString(i + 1000000000).substring(1));
                 }
-                sb.append(Integer.toString(i).substring(1));
             }
         }
         return sb.toString();

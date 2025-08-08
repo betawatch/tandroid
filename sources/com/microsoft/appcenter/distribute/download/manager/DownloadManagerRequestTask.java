@@ -6,16 +6,12 @@ import android.os.AsyncTask;
 import com.microsoft.appcenter.distribute.ReleaseDetails;
 import com.microsoft.appcenter.utils.AppCenterLog;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 class DownloadManagerRequestTask extends AsyncTask {
     private final DownloadManagerReleaseDownloader mDownloader;
 
     DownloadManagerRequestTask(DownloadManagerReleaseDownloader downloadManagerReleaseDownloader) {
         this.mDownloader = downloadManagerReleaseDownloader;
-    }
-
-    DownloadManager.Request createRequest(Uri uri) {
-        return new DownloadManager.Request(uri);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -37,5 +33,9 @@ class DownloadManagerRequestTask extends AsyncTask {
         }
         this.mDownloader.onDownloadStarted(enqueue, currentTimeMillis);
         return null;
+    }
+
+    DownloadManager.Request createRequest(Uri uri) {
+        return new DownloadManager.Request(uri);
     }
 }

@@ -8,7 +8,7 @@ import com.microsoft.appcenter.ingestion.models.one.CommonSchemaLog;
 import com.microsoft.appcenter.ingestion.models.one.DeviceExtension;
 import com.microsoft.appcenter.ingestion.models.one.UserExtension;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class PropertyConfigurator extends AbstractChannelListener {
     private String mAppLocale;
     private String mAppName;
@@ -20,33 +20,6 @@ public class PropertyConfigurator extends AbstractChannelListener {
 
     PropertyConfigurator(AnalyticsTransmissionTarget analyticsTransmissionTarget) {
         this.mTransmissionTarget = analyticsTransmissionTarget;
-    }
-
-    private String getAppLocale() {
-        return this.mAppLocale;
-    }
-
-    private String getAppName() {
-        return this.mAppName;
-    }
-
-    private String getAppVersion() {
-        return this.mAppVersion;
-    }
-
-    private String getUserId() {
-        return this.mUserId;
-    }
-
-    private boolean shouldOverridePartAProperties(Log log) {
-        if (log instanceof CommonSchemaLog) {
-            Object tag = log.getTag();
-            AnalyticsTransmissionTarget analyticsTransmissionTarget = this.mTransmissionTarget;
-            if (tag == analyticsTransmissionTarget && analyticsTransmissionTarget.isEnabled()) {
-                return true;
-            }
-        }
-        return false;
     }
 
     @Override // com.microsoft.appcenter.channel.AbstractChannelListener, com.microsoft.appcenter.channel.Channel.Listener
@@ -128,5 +101,32 @@ public class PropertyConfigurator extends AbstractChannelListener {
                 device.setLocalId("a:" + Settings.Secure.getString(this.mTransmissionTarget.mContext.getContentResolver(), "android_id"));
             }
         }
+    }
+
+    private boolean shouldOverridePartAProperties(Log log) {
+        if (log instanceof CommonSchemaLog) {
+            Object tag = log.getTag();
+            AnalyticsTransmissionTarget analyticsTransmissionTarget = this.mTransmissionTarget;
+            if (tag == analyticsTransmissionTarget && analyticsTransmissionTarget.isEnabled()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private String getAppName() {
+        return this.mAppName;
+    }
+
+    private String getAppVersion() {
+        return this.mAppVersion;
+    }
+
+    private String getAppLocale() {
+        return this.mAppLocale;
+    }
+
+    private String getUserId() {
+        return this.mUserId;
     }
 }

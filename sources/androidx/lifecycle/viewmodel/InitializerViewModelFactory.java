@@ -8,14 +8,14 @@ import kotlin.jvm.internal.Intrinsics;
 public final class InitializerViewModelFactory implements ViewModelProvider.Factory {
     private final ViewModelInitializer[] initializers;
 
-    public InitializerViewModelFactory(ViewModelInitializer... initializers) {
-        Intrinsics.checkNotNullParameter(initializers, "initializers");
-        this.initializers = initializers;
-    }
-
     @Override // androidx.lifecycle.ViewModelProvider.Factory
     public /* synthetic */ ViewModel create(Class cls) {
         return ViewModelProvider.Factory.-CC.$default$create(this, cls);
+    }
+
+    public InitializerViewModelFactory(ViewModelInitializer... initializers) {
+        Intrinsics.checkNotNullParameter(initializers, "initializers");
+        this.initializers = initializers;
     }
 
     @Override // androidx.lifecycle.ViewModelProvider.Factory

@@ -1,6 +1,6 @@
 package com.google.zxing.common;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class PerspectiveTransform {
     private final float a11;
     private final float a12;
@@ -28,8 +28,25 @@ public final class PerspectiveTransform {
         return squareToQuadrilateral(f9, f10, f11, f12, f13, f14, f15, f16).times(quadrilateralToSquare(f, f2, f3, f4, f5, f6, f7, f8));
     }
 
-    public static PerspectiveTransform quadrilateralToSquare(float f, float f2, float f3, float f4, float f5, float f6, float f7, float f8) {
-        return squareToQuadrilateral(f, f2, f3, f4, f5, f6, f7, f8).buildAdjoint();
+    public void transformPoints(float[] fArr) {
+        float f = this.a11;
+        float f2 = this.a12;
+        float f3 = this.a13;
+        float f4 = this.a21;
+        float f5 = this.a22;
+        float f6 = this.a23;
+        float f7 = this.a31;
+        float f8 = this.a32;
+        float f9 = this.a33;
+        int length = fArr.length - 1;
+        for (int i = 0; i < length; i += 2) {
+            float f10 = fArr[i];
+            int i2 = i + 1;
+            float f11 = fArr[i2];
+            float f12 = (f3 * f10) + (f6 * f11) + f9;
+            fArr[i] = (((f * f10) + (f4 * f11)) + f7) / f12;
+            fArr[i2] = (((f10 * f2) + (f11 * f5)) + f8) / f12;
+        }
     }
 
     public static PerspectiveTransform squareToQuadrilateral(float f, float f2, float f3, float f4, float f5, float f6, float f7, float f8) {
@@ -46,6 +63,10 @@ public final class PerspectiveTransform {
         float f16 = ((f14 * f9) - (f12 * f10)) / f15;
         float f17 = ((f11 * f10) - (f9 * f13)) / f15;
         return new PerspectiveTransform((f16 * f3) + (f3 - f), (f17 * f7) + (f7 - f), f, (f4 - f2) + (f16 * f4), (f8 - f2) + (f17 * f8), f2, f16, f17, 1.0f);
+    }
+
+    public static PerspectiveTransform quadrilateralToSquare(float f, float f2, float f3, float f4, float f5, float f6, float f7, float f8) {
+        return squareToQuadrilateral(f, f2, f3, f4, f5, f6, f7, f8).buildAdjoint();
     }
 
     PerspectiveTransform buildAdjoint() {
@@ -92,26 +113,5 @@ public final class PerspectiveTransform {
         float f24 = (f2 * f22) + (f4 * f23);
         float f25 = this.a33;
         return new PerspectiveTransform(f7, f11, f15, f19, f20, f21, (f6 * f25) + f24, (f8 * f22) + (f9 * f23) + (f10 * f25), (f22 * f12) + (f23 * f13) + (f25 * f14));
-    }
-
-    public void transformPoints(float[] fArr) {
-        float f = this.a11;
-        float f2 = this.a12;
-        float f3 = this.a13;
-        float f4 = this.a21;
-        float f5 = this.a22;
-        float f6 = this.a23;
-        float f7 = this.a31;
-        float f8 = this.a32;
-        float f9 = this.a33;
-        int length = fArr.length - 1;
-        for (int i = 0; i < length; i += 2) {
-            float f10 = fArr[i];
-            int i2 = i + 1;
-            float f11 = fArr[i2];
-            float f12 = (f3 * f10) + (f6 * f11) + f9;
-            fArr[i] = (((f * f10) + (f4 * f11)) + f7) / f12;
-            fArr[i2] = (((f10 * f2) + (f11 * f5)) + f8) / f12;
-        }
     }
 }

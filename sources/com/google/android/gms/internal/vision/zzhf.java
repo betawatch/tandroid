@@ -9,6 +9,29 @@ import java.util.List;
 public abstract class zzhf implements zzkk {
     protected int zza = 0;
 
+    abstract void zzb(int i);
+
+    abstract int zzi();
+
+    public final byte[] zzh() {
+        try {
+            byte[] bArr = new byte[zzm()];
+            zzii zza = zzii.zza(bArr);
+            zza(zza);
+            zza.zzb();
+            return bArr;
+        } catch (IOException e) {
+            String name = getClass().getName();
+            StringBuilder sb = new StringBuilder(name.length() + 62 + "byte array".length());
+            sb.append("Serializing ");
+            sb.append(name);
+            sb.append(" to a ");
+            sb.append("byte array");
+            sb.append(" threw an IOException (should never happen).");
+            throw new RuntimeException(sb.toString(), e);
+        }
+    }
+
     protected static void zza(Iterable iterable, List list) {
         zzjf.zza(iterable);
         if (iterable instanceof zzjv) {
@@ -60,27 +83,4 @@ public abstract class zzhf implements zzkk {
             list.add(obj2);
         }
     }
-
-    abstract void zzb(int i);
-
-    public final byte[] zzh() {
-        try {
-            byte[] bArr = new byte[zzm()];
-            zzii zza = zzii.zza(bArr);
-            zza(zza);
-            zza.zzb();
-            return bArr;
-        } catch (IOException e) {
-            String name = getClass().getName();
-            StringBuilder sb = new StringBuilder(name.length() + 62 + "byte array".length());
-            sb.append("Serializing ");
-            sb.append(name);
-            sb.append(" to a ");
-            sb.append("byte array");
-            sb.append(" threw an IOException (should never happen).");
-            throw new RuntimeException(sb.toString(), e);
-        }
-    }
-
-    abstract int zzi();
 }

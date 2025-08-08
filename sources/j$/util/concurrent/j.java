@@ -15,16 +15,6 @@ final class j implements Map.Entry {
     }
 
     @Override // java.util.Map.Entry
-    public final boolean equals(Object obj) {
-        Map.Entry entry;
-        Object key;
-        Object value;
-        Object obj2;
-        Object obj3;
-        return (obj instanceof Map.Entry) && (key = (entry = (Map.Entry) obj).getKey()) != null && (value = entry.getValue()) != null && (key == (obj2 = this.a) || key.equals(obj2)) && (value == (obj3 = this.b) || value.equals(obj3));
-    }
-
-    @Override // java.util.Map.Entry
     public final Object getKey() {
         return this.a;
     }
@@ -39,6 +29,20 @@ final class j implements Map.Entry {
         return this.a.hashCode() ^ this.b.hashCode();
     }
 
+    public final String toString() {
+        return this.a + "=" + this.b;
+    }
+
+    @Override // java.util.Map.Entry
+    public final boolean equals(Object obj) {
+        Map.Entry entry;
+        Object key;
+        Object value;
+        Object obj2;
+        Object obj3;
+        return (obj instanceof Map.Entry) && (key = (entry = (Map.Entry) obj).getKey()) != null && (value = entry.getValue()) != null && (key == (obj2 = this.a) || key.equals(obj2)) && (value == (obj3 = this.b) || value.equals(obj3));
+    }
+
     @Override // java.util.Map.Entry
     public final Object setValue(Object obj) {
         obj.getClass();
@@ -46,9 +50,5 @@ final class j implements Map.Entry {
         this.b = obj;
         this.c.put(this.a, obj);
         return obj2;
-    }
-
-    public final String toString() {
-        return this.a + "=" + this.b;
     }
 }

@@ -1,53 +1,56 @@
 package com.google.android.gms.internal.play_billing;
 
-import sun.misc.Unsafe;
+import java.util.concurrent.Executor;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
 
 /* loaded from: classes.dex */
-final class zzeo extends zzep {
-    zzeo(Unsafe unsafe) {
-        super(unsafe);
+final class zzeo implements zzeu {
+    private static final zzet zza = new zzet(zzeo.class);
+    private final Object zzb;
+
+    zzeo(Object obj) {
+        this.zzb = obj;
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzep
-    public final double zza(Object obj, long j) {
-        return Double.longBitsToDouble(this.zza.getLong(obj, j));
+    @Override // java.util.concurrent.Future
+    public final boolean cancel(boolean z) {
+        return false;
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzep
-    public final float zzb(Object obj, long j) {
-        return Float.intBitsToFloat(this.zza.getInt(obj, j));
+    @Override // java.util.concurrent.Future
+    public final Object get() {
+        return this.zzb;
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzep
-    public final void zzc(Object obj, long j, boolean z) {
-        if (zzeq.zzb) {
-            zzeq.zzD(obj, j, r3 ? (byte) 1 : (byte) 0);
-        } else {
-            zzeq.zzE(obj, j, r3 ? (byte) 1 : (byte) 0);
+    @Override // java.util.concurrent.Future
+    public final Object get(long j, TimeUnit timeUnit) {
+        timeUnit.getClass();
+        return this.zzb;
+    }
+
+    @Override // java.util.concurrent.Future
+    public final boolean isCancelled() {
+        return false;
+    }
+
+    @Override // java.util.concurrent.Future
+    public final boolean isDone() {
+        return true;
+    }
+
+    public final String toString() {
+        Object obj = this.zzb;
+        return super.toString() + "[status=SUCCESS, result=[" + obj.toString() + "]]";
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.zzeu
+    public final void zzb(Runnable runnable, Executor executor) {
+        zzbe.zzc(executor, "Executor was null.");
+        try {
+            executor.execute(runnable);
+        } catch (Exception e) {
+            zza.zza().logp(Level.SEVERE, "com.google.common.util.concurrent.ImmediateFuture", "addListener", "RuntimeException while executing runnable " + runnable.toString() + " with executor " + String.valueOf(executor), (Throwable) e);
         }
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.zzep
-    public final void zzd(Object obj, long j, byte b) {
-        if (zzeq.zzb) {
-            zzeq.zzD(obj, j, b);
-        } else {
-            zzeq.zzE(obj, j, b);
-        }
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.zzep
-    public final void zze(Object obj, long j, double d) {
-        this.zza.putLong(obj, j, Double.doubleToLongBits(d));
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.zzep
-    public final void zzf(Object obj, long j, float f) {
-        this.zza.putInt(obj, j, Float.floatToIntBits(f));
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.zzep
-    public final boolean zzg(Object obj, long j) {
-        return zzeq.zzb ? zzeq.zzt(obj, j) : zzeq.zzu(obj, j);
     }
 }

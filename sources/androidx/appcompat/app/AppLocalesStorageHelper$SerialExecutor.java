@@ -15,15 +15,6 @@ class AppLocalesStorageHelper$SerialExecutor implements Executor {
         this.mExecutor = executor;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$execute$0(Runnable runnable) {
-        try {
-            runnable.run();
-        } finally {
-            scheduleNext();
-        }
-    }
-
     @Override // java.util.concurrent.Executor
     public void execute(final Runnable runnable) {
         synchronized (this.mLock) {
@@ -40,6 +31,15 @@ class AppLocalesStorageHelper$SerialExecutor implements Executor {
             } catch (Throwable th) {
                 throw th;
             }
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$execute$0(Runnable runnable) {
+        try {
+            runnable.run();
+        } finally {
+            scheduleNext();
         }
     }
 

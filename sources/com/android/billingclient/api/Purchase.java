@@ -45,8 +45,9 @@ public class Purchase {
     }
 
     public AccountIdentifiers getAccountIdentifiers() {
-        String optString = this.zzc.optString("obfuscatedAccountId");
-        String optString2 = this.zzc.optString("obfuscatedProfileId");
+        JSONObject jSONObject = this.zzc;
+        String optString = jSONObject.optString("obfuscatedAccountId");
+        String optString2 = jSONObject.optString("obfuscatedProfileId");
         if (optString == null && optString2 == null) {
             return null;
         }

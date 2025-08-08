@@ -24,11 +24,7 @@ public abstract class zac {
         throw new BadParcelableException("Parcel data not fully consumed, unread size: " + dataAvail);
     }
 
-    public static void zac(Parcel parcel, boolean z) {
-        parcel.writeInt(z ? 1 : 0);
-    }
-
-    public static void zad(Parcel parcel, Parcelable parcelable) {
+    public static void zac(Parcel parcel, Parcelable parcelable) {
         if (parcelable == null) {
             parcel.writeInt(0);
         } else {
@@ -37,7 +33,11 @@ public abstract class zac {
         }
     }
 
-    public static void zae(Parcel parcel, IInterface iInterface) {
-        parcel.writeStrongBinder(iInterface == null ? null : iInterface.asBinder());
+    public static void zad(Parcel parcel, IInterface iInterface) {
+        if (iInterface == null) {
+            parcel.writeStrongBinder(null);
+        } else {
+            parcel.writeStrongBinder(iInterface.asBinder());
+        }
     }
 }

@@ -16,6 +16,15 @@ final class ReverseOrdering extends Ordering implements Serializable {
         return this.forwardOrder.compare(obj2, obj);
     }
 
+    @Override // com.google.common.collect.Ordering
+    public Ordering reverse() {
+        return this.forwardOrder;
+    }
+
+    public int hashCode() {
+        return -this.forwardOrder.hashCode();
+    }
+
     @Override // java.util.Comparator
     public boolean equals(Object obj) {
         if (obj == this) {
@@ -25,15 +34,6 @@ final class ReverseOrdering extends Ordering implements Serializable {
             return this.forwardOrder.equals(((ReverseOrdering) obj).forwardOrder);
         }
         return false;
-    }
-
-    public int hashCode() {
-        return -this.forwardOrder.hashCode();
-    }
-
-    @Override // com.google.common.collect.Ordering
-    public Ordering reverse() {
-        return this.forwardOrder;
     }
 
     public String toString() {

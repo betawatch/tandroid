@@ -30,19 +30,21 @@ public final class LatLngBounds extends AbstractSafeParcelable implements Reflec
             this.zza = Math.min(this.zza, latLng.latitude);
             this.zzb = Math.max(this.zzb, latLng.latitude);
             double d = latLng.longitude;
-            if (!Double.isNaN(this.zzc)) {
+            if (Double.isNaN(this.zzc)) {
+                this.zzc = d;
+                this.zzd = d;
+            } else {
                 double d2 = this.zzc;
                 double d3 = this.zzd;
                 if (d2 > d3 ? !(d2 <= d || d <= d3) : !(d2 <= d && d <= d3)) {
                     Parcelable.Creator<LatLngBounds> creator = LatLngBounds.CREATOR;
                     if (((d2 - d) + 360.0d) % 360.0d < ((d - d3) + 360.0d) % 360.0d) {
                         this.zzc = d;
+                    } else {
+                        this.zzd = d;
                     }
                 }
-                return this;
             }
-            this.zzc = d;
-            this.zzd = d;
             return this;
         }
     }

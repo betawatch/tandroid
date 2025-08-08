@@ -23,18 +23,6 @@ public abstract class LogEvent {
         public abstract Builder setTimezoneOffsetSeconds(long j);
     }
 
-    private static Builder builder() {
-        return new AutoValue_LogEvent.Builder();
-    }
-
-    public static Builder jsonBuilder(String str) {
-        return builder().setSourceExtensionJsonProto3(str);
-    }
-
-    public static Builder protoBuilder(byte[] bArr) {
-        return builder().setSourceExtension(bArr);
-    }
-
     public abstract Integer getEventCode();
 
     public abstract long getEventTimeMs();
@@ -48,4 +36,16 @@ public abstract class LogEvent {
     public abstract String getSourceExtensionJsonProto3();
 
     public abstract long getTimezoneOffsetSeconds();
+
+    public static Builder protoBuilder(byte[] bArr) {
+        return builder().setSourceExtension(bArr);
+    }
+
+    public static Builder jsonBuilder(String str) {
+        return builder().setSourceExtensionJsonProto3(str);
+    }
+
+    private static Builder builder() {
+        return new AutoValue_LogEvent.Builder();
+    }
 }

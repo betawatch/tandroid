@@ -20,13 +20,13 @@ public final class InitializationChunk extends Chunk {
         this.chunkExtractor = chunkExtractor;
     }
 
+    public void init(ChunkExtractor.TrackOutputProvider trackOutputProvider) {
+        this.trackOutputProvider = trackOutputProvider;
+    }
+
     @Override // com.google.android.exoplayer2.upstream.Loader.Loadable
     public void cancelLoad() {
         this.loadCanceled = true;
-    }
-
-    public void init(ChunkExtractor.TrackOutputProvider trackOutputProvider) {
-        this.trackOutputProvider = trackOutputProvider;
     }
 
     @Override // com.google.android.exoplayer2.upstream.Loader.Loadable

@@ -13,7 +13,7 @@ import java.lang.reflect.GenericArrayType;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class ArrayTypeAdapter extends TypeAdapter {
     public static final TypeAdapterFactory FACTORY = new TypeAdapterFactory() { // from class: com.google.gson.internal.bind.ArrayTypeAdapter.1
         @Override // com.google.gson.TypeAdapterFactory
@@ -47,14 +47,14 @@ public final class ArrayTypeAdapter extends TypeAdapter {
         }
         jsonReader.endArray();
         int size = arrayList.size();
-        if (!this.componentType.isPrimitive()) {
-            return arrayList.toArray((Object[]) Array.newInstance((Class<?>) this.componentType, size));
+        if (this.componentType.isPrimitive()) {
+            Object newInstance = Array.newInstance((Class<?>) this.componentType, size);
+            for (int i = 0; i < size; i++) {
+                Array.set(newInstance, i, arrayList.get(i));
+            }
+            return newInstance;
         }
-        Object newInstance = Array.newInstance((Class<?>) this.componentType, size);
-        for (int i = 0; i < size; i++) {
-            Array.set(newInstance, i, arrayList.get(i));
-        }
-        return newInstance;
+        return arrayList.toArray((Object[]) Array.newInstance((Class<?>) this.componentType, size));
     }
 
     @Override // com.google.gson.TypeAdapter

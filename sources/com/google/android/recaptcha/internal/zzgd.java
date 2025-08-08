@@ -25,14 +25,14 @@ public final class zzgd {
         zzb = Collections.unmodifiableMap(linkedHashMap2);
     }
 
+    private static void zzb(Map map, Map map2, Class cls, Class cls2) {
+        map.put(cls, cls2);
+        map2.put(cls2, cls);
+    }
+
     public static Class zza(Class cls) {
         cls.getClass();
         Class cls2 = (Class) zza.get(cls);
         return cls2 == null ? cls : cls2;
-    }
-
-    private static void zzb(Map map, Map map2, Class cls, Class cls2) {
-        map.put(cls, cls2);
-        map2.put(cls2, cls);
     }
 }

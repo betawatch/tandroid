@@ -69,6 +69,27 @@ public class ThemePreviewMessagesCell extends LinearLayout {
     private Drawable shadowDrawable;
     private final int type;
 
+    @Override // android.view.ViewGroup, android.view.View
+    protected void dispatchSetPressed(boolean z) {
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$0() {
+        this.progress = -1;
+        int i = 0;
+        while (true) {
+            ChatMessageCell[] chatMessageCellArr = this.cells;
+            if (i >= chatMessageCellArr.length) {
+                return;
+            }
+            ChatMessageCell chatMessageCell = chatMessageCellArr[i];
+            if (chatMessageCell != null) {
+                chatMessageCell.invalidate();
+            }
+            i++;
+        }
+    }
+
     public ThemePreviewMessagesCell(Context context, INavigationLayout iNavigationLayout, int i) {
         this(context, iNavigationLayout, i, 0L);
     }
@@ -77,8 +98,8 @@ public class ThemePreviewMessagesCell extends LinearLayout {
         this(context, iNavigationLayout, i, j, null);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:35:0x03fc  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x045f A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0407  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x046e A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -208,7 +229,11 @@ public class ThemePreviewMessagesCell extends LinearLayout {
             messageObject = messageObject4;
         } else {
             TLRPC.TL_message tL_message3 = new TLRPC.TL_message();
-            tL_message3.message = LocaleController.getString(i == 0 ? R.string.FontSizePreviewReply : R.string.NewThemePreviewReply);
+            if (i == 0) {
+                tL_message3.message = LocaleController.getString(R.string.FontSizePreviewReply);
+            } else {
+                tL_message3.message = LocaleController.getString(R.string.NewThemePreviewReply);
+            }
             int indexOf = tL_message3.message.indexOf("👋");
             if (indexOf >= 0) {
                 TLRPC.TL_messageEntityCustomEmoji tL_messageEntityCustomEmoji = new TLRPC.TL_messageEntityCustomEmoji();
@@ -276,7 +301,11 @@ public class ThemePreviewMessagesCell extends LinearLayout {
             messageObject6.overrideLinkEmoji = 0L;
             messageObject6.eventId = 1L;
             TLRPC.TL_message tL_message5 = new TLRPC.TL_message();
-            tL_message5.message = LocaleController.getString(i == 0 ? R.string.FontSizePreviewLine1 : R.string.NewThemePreviewLine1);
+            if (i == 0) {
+                tL_message5.message = LocaleController.getString(R.string.FontSizePreviewLine1);
+            } else {
+                tL_message5.message = LocaleController.getString(R.string.NewThemePreviewLine1);
+            }
             tL_message5.date = i4;
             tL_message5.dialog_id = 1L;
             tL_message5.flags = NotificationCenter.newLocationAvailable;
@@ -321,15 +350,31 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                     final /* synthetic */ int val$type;
 
                     class 1 extends GestureDetector.SimpleOnGestureListener {
+                        1() {
+                        }
+
+                        @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
+                        public boolean onDoubleTap(MotionEvent motionEvent) {
+                            1 r0 = 1.this;
+                            if (r0.val$type != 2 || MediaDataController.getInstance(r0.currentAccount).getDoubleTapReaction() == null) {
+                                return false;
+                            }
+                            boolean selectReaction = getMessageObject().selectReaction(ReactionsLayoutInBubble.VisibleReaction.fromEmojicon(MediaDataController.getInstance(1.this.currentAccount).getDoubleTapReaction()), false, false);
+                            1 r4 = 1.this;
+                            r4.setMessageObject(r4.getMessageObject(), null, false, false, false);
+                            requestLayout();
+                            ReactionsEffectOverlay.removeCurrent(false);
+                            if (selectReaction) {
+                                ThemePreviewMessagesCell themePreviewMessagesCell = ThemePreviewMessagesCell.this;
+                                ReactionsEffectOverlay.show(themePreviewMessagesCell.fragment, null, themePreviewMessagesCell.cells[1], null, motionEvent.getX(), motionEvent.getY(), ReactionsLayoutInBubble.VisibleReaction.fromEmojicon(MediaDataController.getInstance(1.this.currentAccount).getDoubleTapReaction()), 1.this.currentAccount, 0);
+                                ReactionsEffectOverlay.startAnimation();
+                            }
+                            getViewTreeObserver().addOnPreDrawListener(new 1());
+                            return true;
+                        }
 
                         class 1 implements ViewTreeObserver.OnPreDrawListener {
                             1() {
-                            }
-
-                            /* JADX INFO: Access modifiers changed from: private */
-                            public /* synthetic */ void lambda$onPreDraw$0(ValueAnimator valueAnimator) {
-                                getTransitionParams().animateChangeProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                                invalidate();
                             }
 
                             @Override // android.view.ViewTreeObserver.OnPreDrawListener
@@ -358,29 +403,12 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                                 ofFloat.start();
                                 return false;
                             }
-                        }
 
-                        1() {
-                        }
-
-                        @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
-                        public boolean onDoubleTap(MotionEvent motionEvent) {
-                            1 r0 = 1.this;
-                            if (r0.val$type != 2 || MediaDataController.getInstance(r0.currentAccount).getDoubleTapReaction() == null) {
-                                return false;
+                            /* JADX INFO: Access modifiers changed from: private */
+                            public /* synthetic */ void lambda$onPreDraw$0(ValueAnimator valueAnimator) {
+                                getTransitionParams().animateChangeProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                                invalidate();
                             }
-                            boolean selectReaction = getMessageObject().selectReaction(ReactionsLayoutInBubble.VisibleReaction.fromEmojicon(MediaDataController.getInstance(1.this.currentAccount).getDoubleTapReaction()), false, false);
-                            1 r4 = 1.this;
-                            r4.setMessageObject(r4.getMessageObject(), null, false, false, false);
-                            requestLayout();
-                            ReactionsEffectOverlay.removeCurrent(false);
-                            if (selectReaction) {
-                                ThemePreviewMessagesCell themePreviewMessagesCell = ThemePreviewMessagesCell.this;
-                                ReactionsEffectOverlay.show(themePreviewMessagesCell.fragment, null, themePreviewMessagesCell.cells[1], null, motionEvent.getX(), motionEvent.getY(), ReactionsLayoutInBubble.VisibleReaction.fromEmojicon(MediaDataController.getInstance(1.this.currentAccount).getDoubleTapReaction()), 1.this.currentAccount, 0);
-                                ReactionsEffectOverlay.startAnimation();
-                            }
-                            getViewTreeObserver().addOnPreDrawListener(new 1());
-                            return true;
                         }
                     }
 
@@ -393,34 +421,43 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                         this.color2 = new AnimatedColor(this, 0L, 180L, cubicBezierInterpolator);
                     }
 
+                    @Override // org.telegram.ui.Cells.ChatMessageCell, android.view.View
+                    public boolean onTouchEvent(MotionEvent motionEvent) {
+                        if (ThemePreviewMessagesCell.this.allowLoadingOnTouch()) {
+                            return super.onTouchEvent(motionEvent);
+                        }
+                        this.gestureDetector.onTouchEvent(motionEvent);
+                        return true;
+                    }
+
                     @Override // android.view.ViewGroup, android.view.View
                     protected void dispatchDraw(Canvas canvas) {
                         int themedColor;
-                        int i5;
-                        if (getMessageObject() == null || getMessageObject().overrideLinkColor < 0) {
-                            this.color1.set(this.avatarDrawable.getColor());
-                            this.color2.set(this.avatarDrawable.getColor2());
-                        } else {
-                            int i6 = getMessageObject().overrideLinkColor;
-                            if (i6 >= 14) {
+                        int themedColor2;
+                        if (getMessageObject() != null && getMessageObject().overrideLinkColor >= 0) {
+                            int i5 = getMessageObject().overrideLinkColor;
+                            if (i5 >= 14) {
                                 MessagesController messagesController = MessagesController.getInstance(UserConfig.selectedAccount);
                                 MessagesController.PeerColors peerColors = messagesController != null ? messagesController.peerColors : null;
-                                MessagesController.PeerColor color = peerColors != null ? peerColors.getColor(i6) : null;
+                                MessagesController.PeerColor color = peerColors != null ? peerColors.getColor(i5) : null;
                                 if (color != null) {
                                     int color1 = color.getColor1();
                                     themedColor = getThemedColor(Theme.keys_avatar_background[AvatarDrawable.getPeerColorIndex(color1)]);
-                                    i5 = Theme.keys_avatar_background2[AvatarDrawable.getPeerColorIndex(color1)];
+                                    themedColor2 = getThemedColor(Theme.keys_avatar_background2[AvatarDrawable.getPeerColorIndex(color1)]);
                                 } else {
-                                    long j3 = i6;
+                                    long j3 = i5;
                                     themedColor = getThemedColor(Theme.keys_avatar_background[AvatarDrawable.getColorIndex(j3)]);
-                                    i5 = Theme.keys_avatar_background2[AvatarDrawable.getColorIndex(j3)];
+                                    themedColor2 = getThemedColor(Theme.keys_avatar_background2[AvatarDrawable.getColorIndex(j3)]);
                                 }
                             } else {
-                                long j4 = i6;
+                                long j4 = i5;
                                 themedColor = getThemedColor(Theme.keys_avatar_background[AvatarDrawable.getColorIndex(j4)]);
-                                i5 = Theme.keys_avatar_background2[AvatarDrawable.getColorIndex(j4)];
+                                themedColor2 = getThemedColor(Theme.keys_avatar_background2[AvatarDrawable.getColorIndex(j4)]);
                             }
-                            this.avatarDrawable.setColor(this.color1.set(themedColor), this.color2.set(getThemedColor(i5)));
+                            this.avatarDrawable.setColor(this.color1.set(themedColor), this.color2.set(themedColor2));
+                        } else {
+                            this.color1.set(this.avatarDrawable.getColor());
+                            this.color2.set(this.avatarDrawable.getColor2());
                         }
                         if (getAvatarImage() != null && getAvatarImage().getImageHeight() != 0.0f) {
                             getAvatarImage().setImageCoords(getAvatarImage().getImageX(), (getMeasuredHeight() - getAvatarImage().getImageHeight()) - AndroidUtilities.dp(4.0f), getAvatarImage().getImageWidth(), getAvatarImage().getImageHeight());
@@ -431,25 +468,11 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                         }
                         super.dispatchDraw(canvas);
                     }
-
-                    @Override // org.telegram.ui.Cells.ChatMessageCell, android.view.View
-                    public boolean onTouchEvent(MotionEvent motionEvent) {
-                        if (ThemePreviewMessagesCell.this.allowLoadingOnTouch()) {
-                            return super.onTouchEvent(motionEvent);
-                        }
-                        this.gestureDetector.onTouchEvent(motionEvent);
-                        return true;
-                    }
                 };
                 this.cells[i2].setDelegate(new ChatMessageCell.ChatMessageCellDelegate() { // from class: org.telegram.ui.Cells.ThemePreviewMessagesCell.2
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                     public /* synthetic */ boolean canDrawOutboundsContent() {
                         return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$canDrawOutboundsContent(this);
-                    }
-
-                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                    public boolean canPerformActions() {
-                        return ThemePreviewMessagesCell.this.allowLoadingOnTouch();
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -590,16 +613,6 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                    public void didPressInstantButton(ChatMessageCell chatMessageCell, int i5) {
-                        if (ThemePreviewMessagesCell.this.allowLoadingOnTouch()) {
-                            ThemePreviewMessagesCell.this.progress = 2;
-                            chatMessageCell.invalidate();
-                            AndroidUtilities.cancelRunOnUIThread(ThemePreviewMessagesCell.this.cancelProgress);
-                            AndroidUtilities.runOnUIThread(ThemePreviewMessagesCell.this.cancelProgress, 5000L);
-                        }
-                    }
-
-                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                     public /* synthetic */ void didPressMoreChannelRecommendations(ChatMessageCell chatMessageCell) {
                         ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressMoreChannelRecommendations(this, chatMessageCell);
                     }
@@ -612,16 +625,6 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                     public /* synthetic */ void didPressReaction(ChatMessageCell chatMessageCell, TLRPC.ReactionCount reactionCount, boolean z2, float f, float f2) {
                         ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressReaction(this, chatMessageCell, reactionCount, z2, f, f2);
-                    }
-
-                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                    public void didPressReplyMessage(ChatMessageCell chatMessageCell, int i5, float f, float f2, boolean z2) {
-                        if (ThemePreviewMessagesCell.this.allowLoadingOnTouch()) {
-                            ThemePreviewMessagesCell.this.progress = 0;
-                            chatMessageCell.invalidate();
-                            AndroidUtilities.cancelRunOnUIThread(ThemePreviewMessagesCell.this.cancelProgress);
-                            AndroidUtilities.runOnUIThread(ThemePreviewMessagesCell.this.cancelProgress, 5000L);
-                        }
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -760,11 +763,6 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                    public boolean isProgressLoading(ChatMessageCell chatMessageCell, int i5) {
-                        return i5 == ThemePreviewMessagesCell.this.progress;
-                    }
-
-                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                     public /* synthetic */ boolean isReplyOrSelf() {
                         return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$isReplyOrSelf(this);
                     }
@@ -772,15 +770,6 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                     public /* synthetic */ boolean keyboardIsOpened() {
                         return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$keyboardIsOpened(this);
-                    }
-
-                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                    public void needOpenWebView(MessageObject messageObject8, String str, String str2, String str3, String str4, int i5, int i6) {
-                        if (ThemePreviewMessagesCell.this.allowLoadingOnTouch()) {
-                            ThemePreviewMessagesCell.this.progress = 2;
-                            AndroidUtilities.cancelRunOnUIThread(ThemePreviewMessagesCell.this.cancelProgress);
-                            AndroidUtilities.runOnUIThread(ThemePreviewMessagesCell.this.cancelProgress, 5000L);
-                        }
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -827,6 +816,45 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                     public /* synthetic */ void videoTimerReached() {
                         ChatMessageCell.ChatMessageCellDelegate.-CC.$default$videoTimerReached(this);
                     }
+
+                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                    public boolean canPerformActions() {
+                        return ThemePreviewMessagesCell.this.allowLoadingOnTouch();
+                    }
+
+                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                    public void didPressReplyMessage(ChatMessageCell chatMessageCell, int i5, float f, float f2, boolean z2) {
+                        if (ThemePreviewMessagesCell.this.allowLoadingOnTouch()) {
+                            ThemePreviewMessagesCell.this.progress = 0;
+                            chatMessageCell.invalidate();
+                            AndroidUtilities.cancelRunOnUIThread(ThemePreviewMessagesCell.this.cancelProgress);
+                            AndroidUtilities.runOnUIThread(ThemePreviewMessagesCell.this.cancelProgress, 5000L);
+                        }
+                    }
+
+                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                    public void needOpenWebView(MessageObject messageObject8, String str, String str2, String str3, String str4, int i5, int i6) {
+                        if (ThemePreviewMessagesCell.this.allowLoadingOnTouch()) {
+                            ThemePreviewMessagesCell.this.progress = 2;
+                            AndroidUtilities.cancelRunOnUIThread(ThemePreviewMessagesCell.this.cancelProgress);
+                            AndroidUtilities.runOnUIThread(ThemePreviewMessagesCell.this.cancelProgress, 5000L);
+                        }
+                    }
+
+                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                    public void didPressInstantButton(ChatMessageCell chatMessageCell, int i5) {
+                        if (ThemePreviewMessagesCell.this.allowLoadingOnTouch()) {
+                            ThemePreviewMessagesCell.this.progress = 2;
+                            chatMessageCell.invalidate();
+                            AndroidUtilities.cancelRunOnUIThread(ThemePreviewMessagesCell.this.cancelProgress);
+                            AndroidUtilities.runOnUIThread(ThemePreviewMessagesCell.this.cancelProgress, 5000L);
+                        }
+                    }
+
+                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                    public boolean isProgressLoading(ChatMessageCell chatMessageCell, int i5) {
+                        return i5 == ThemePreviewMessagesCell.this.progress;
+                    }
                 });
                 ChatMessageCell chatMessageCell = this.cells[i2];
                 chatMessageCell.isChat = i == 2 || i == 4;
@@ -848,41 +876,6 @@ public class ThemePreviewMessagesCell extends LinearLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public boolean allowLoadingOnTouch() {
-        int i = this.type;
-        return i == 3 || i == 0;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        this.progress = -1;
-        int i = 0;
-        while (true) {
-            ChatMessageCell[] chatMessageCellArr = this.cells;
-            if (i >= chatMessageCellArr.length) {
-                return;
-            }
-            ChatMessageCell chatMessageCell = chatMessageCellArr[i];
-            if (chatMessageCell != null) {
-                chatMessageCell.invalidate();
-            }
-            i++;
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    protected void dispatchSetPressed(boolean z) {
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (this.type == 2 || allowLoadingOnTouch()) {
-            return super.dispatchTouchEvent(motionEvent);
-        }
-        return false;
-    }
-
     public ChatMessageCell[] getCells() {
         return this.cells;
     }
@@ -901,6 +894,17 @@ public class ThemePreviewMessagesCell extends LinearLayout {
         }
     }
 
+    public void setOverrideBackground(Drawable drawable) {
+        this.overrideDrawable = drawable;
+        if (drawable != null) {
+            drawable.setCallback(this);
+        }
+        if ((this.overrideDrawable instanceof ChatBackgroundDrawable) && isAttachedToWindow()) {
+            ((ChatBackgroundDrawable) this.overrideDrawable).onAttachedToWindow(this);
+        }
+        invalidate();
+    }
+
     @Override // android.view.ViewGroup, android.view.View
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
@@ -910,23 +914,9 @@ public class ThemePreviewMessagesCell extends LinearLayout {
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    protected void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        BackgroundGradientDrawable.Disposable disposable = this.backgroundGradientDisposable;
-        if (disposable != null) {
-            disposable.dispose();
-            this.backgroundGradientDisposable = null;
-        }
-        BackgroundGradientDrawable.Disposable disposable2 = this.oldBackgroundGradientDisposable;
-        if (disposable2 != null) {
-            disposable2.dispose();
-            this.oldBackgroundGradientDisposable = null;
-        }
-        Drawable drawable = this.overrideDrawable;
-        if (drawable instanceof ChatBackgroundDrawable) {
-            ((ChatBackgroundDrawable) drawable).onDetachedFromWindow(this);
-        }
+    @Override // android.view.View
+    protected boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.overrideDrawable || drawable == this.oldBackgroundDrawable || super.verifyDrawable(drawable);
     }
 
     @Override // android.widget.LinearLayout, android.view.View
@@ -1008,10 +998,43 @@ public class ThemePreviewMessagesCell extends LinearLayout {
         this.shadowDrawable.draw(canvas);
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public boolean allowLoadingOnTouch() {
+        int i = this.type;
+        return i == 3 || i == 0;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        BackgroundGradientDrawable.Disposable disposable = this.backgroundGradientDisposable;
+        if (disposable != null) {
+            disposable.dispose();
+            this.backgroundGradientDisposable = null;
+        }
+        BackgroundGradientDrawable.Disposable disposable2 = this.oldBackgroundGradientDisposable;
+        if (disposable2 != null) {
+            disposable2.dispose();
+            this.oldBackgroundGradientDisposable = null;
+        }
+        Drawable drawable = this.overrideDrawable;
+        if (drawable instanceof ChatBackgroundDrawable) {
+            ((ChatBackgroundDrawable) drawable).onDetachedFromWindow(this);
+        }
+    }
+
     @Override // android.view.ViewGroup
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         if (this.type == 2 || allowLoadingOnTouch()) {
             return super.onInterceptTouchEvent(motionEvent);
+        }
+        return false;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (this.type == 2 || allowLoadingOnTouch()) {
+            return super.dispatchTouchEvent(motionEvent);
         }
         return false;
     }
@@ -1022,21 +1045,5 @@ public class ThemePreviewMessagesCell extends LinearLayout {
             return super.onTouchEvent(motionEvent);
         }
         return false;
-    }
-
-    public void setOverrideBackground(Drawable drawable) {
-        this.overrideDrawable = drawable;
-        if (drawable != null) {
-            drawable.setCallback(this);
-        }
-        if ((this.overrideDrawable instanceof ChatBackgroundDrawable) && isAttachedToWindow()) {
-            ((ChatBackgroundDrawable) this.overrideDrawable).onAttachedToWindow(this);
-        }
-        invalidate();
-    }
-
-    @Override // android.view.View
-    protected boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.overrideDrawable || drawable == this.oldBackgroundDrawable || super.verifyDrawable(drawable);
     }
 }

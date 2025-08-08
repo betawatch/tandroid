@@ -151,7 +151,11 @@ public class Rpc {
         }
         Intent intent = new Intent();
         intent.setPackage("com.google.android.gms");
-        intent.setAction(this.zzg.zzb() == 2 ? "com.google.iid.TOKEN_REQUEST" : "com.google.android.c2dm.intent.REGISTER");
+        if (this.zzg.zzb() == 2) {
+            intent.setAction("com.google.iid.TOKEN_REQUEST");
+        } else {
+            intent.setAction("com.google.android.c2dm.intent.REGISTER");
+        }
         intent.putExtras(bundle);
         zzg(this.zzf, intent);
         intent.putExtra("kid", "|ID|" + zzf + "|");

@@ -2,16 +2,6 @@ package com.google.android.gms.internal.cast;
 
 /* loaded from: classes.dex */
 public final class zzmx extends zztm implements zzuy {
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    /* synthetic */ zzmx(zzms zzmsVar) {
-        super(r1);
-        zzmy zzmyVar;
-        zzmyVar = zzmy.zzd;
-    }
-
     public final zzmx zza(Iterable iterable) {
         zzu();
         zzmy.zze((zzmy) this.zza, iterable);
@@ -22,5 +12,15 @@ public final class zzmx extends zztm implements zzuy {
         zzu();
         zzmy.zzd((zzmy) this.zza, zzneVar);
         return this;
+    }
+
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    /* synthetic */ zzmx(zzms zzmsVar) {
+        super(r1);
+        zzmy zzmyVar;
+        zzmyVar = zzmy.zzd;
     }
 }

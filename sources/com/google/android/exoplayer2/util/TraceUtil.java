@@ -10,14 +10,14 @@ public abstract class TraceUtil {
         }
     }
 
-    private static void beginSectionV18(String str) {
-        Trace.beginSection(str);
-    }
-
     public static void endSection() {
         if (Util.SDK_INT >= 18) {
             endSectionV18();
         }
+    }
+
+    private static void beginSectionV18(String str) {
+        Trace.beginSection(str);
     }
 
     private static void endSectionV18() {

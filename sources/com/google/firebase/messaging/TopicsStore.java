@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import java.lang.ref.WeakReference;
 import java.util.concurrent.Executor;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class TopicsStore {
     private static WeakReference topicsStoreWeakReference;
     private final SharedPreferences sharedPreferences;
@@ -15,6 +15,10 @@ final class TopicsStore {
     private TopicsStore(SharedPreferences sharedPreferences, Executor executor) {
         this.syncExecutor = executor;
         this.sharedPreferences = sharedPreferences;
+    }
+
+    private synchronized void initStore() {
+        this.topicOperationsQueue = SharedPreferencesQueue.createInstance(this.sharedPreferences, "topic_operation_queue", ",", this.syncExecutor);
     }
 
     public static synchronized TopicsStore getInstance(Context context, Executor executor) {
@@ -33,10 +37,6 @@ final class TopicsStore {
             }
         }
         return topicsStore;
-    }
-
-    private synchronized void initStore() {
-        this.topicOperationsQueue = SharedPreferencesQueue.createInstance(this.sharedPreferences, "topic_operation_queue", ",", this.syncExecutor);
     }
 
     synchronized TopicOperation getNextTopicOperation() {

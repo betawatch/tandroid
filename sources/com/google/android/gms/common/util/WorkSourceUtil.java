@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.os.Process;
 import android.os.WorkSource;
 import android.util.Log;
+import androidx.core.content.ContextCompat;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.wrappers.Wrappers;
 import java.lang.reflect.Method;
@@ -21,27 +22,28 @@ public abstract class WorkSourceUtil {
     private static final Method zzg;
     private static final Method zzh;
     private static final Method zzi;
+    private static Boolean zzj;
 
-    /* JADX WARN: Can't wrap try/catch for region: R(25:0|1|(2:2|3)|4|(21:49|50|7|8|9|10|11|12|13|(12:41|42|16|(9:36|37|19|(6:31|32|22|(2:27|28)|24|25)|21|22|(0)|24|25)|18|19|(0)|21|22|(0)|24|25)|15|16|(0)|18|19|(0)|21|22|(0)|24|25)|6|7|8|9|10|11|12|13|(0)|15|16|(0)|18|19|(0)|21|22|(0)|24|25) */
-    /* JADX WARN: Code restructure failed: missing block: B:46:0x004c, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(26:0|1|(2:2|3)|4|(22:54|55|7|8|9|10|11|12|13|(13:46|47|16|(10:41|42|19|(7:36|37|22|(6:28|29|30|31|25|26)|24|25|26)|21|22|(0)|24|25|26)|18|19|(0)|21|22|(0)|24|25|26)|15|16|(0)|18|19|(0)|21|22|(0)|24|25|26)|6|7|8|9|10|11|12|13|(0)|15|16|(0)|18|19|(0)|21|22|(0)|24|25|26) */
+    /* JADX WARN: Code restructure failed: missing block: B:51:0x004c, code lost:
     
         r3 = null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:48:0x003c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x003c, code lost:
     
         r3 = null;
      */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x00a9 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x0085 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x006f A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0056 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x00a9 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x0085 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x006f A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x0056 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     static {
         Method method;
         Method method2;
         Method method3;
         Method method4;
         Method method5;
-        Method method6 = null;
+        Method method6;
         try {
             method = WorkSource.class.getMethod("add", Integer.TYPE);
         } catch (Exception unused) {
@@ -81,17 +83,26 @@ public abstract class WorkSourceUtil {
                         if (PlatformVersion.isAtLeastP()) {
                             try {
                                 method6 = WorkSource.class.getMethod("isEmpty", null);
-                                method6.setAccessible(true);
-                            } catch (Exception unused4) {
+                                try {
+                                    method6.setAccessible(true);
+                                } catch (Exception unused4) {
+                                }
+                            } catch (Exception unused5) {
                             }
+                            zzi = method6;
+                            zzj = null;
                         }
+                        method6 = null;
                         zzi = method6;
+                        zzj = null;
                     }
                     method5 = null;
                     zzh = method5;
                     if (PlatformVersion.isAtLeastP()) {
                     }
+                    method6 = null;
                     zzi = method6;
+                    zzj = null;
                 }
                 method4 = null;
                 zzg = method4;
@@ -101,7 +112,9 @@ public abstract class WorkSourceUtil {
                 zzh = method5;
                 if (PlatformVersion.isAtLeastP()) {
                 }
+                method6 = null;
                 zzi = method6;
+                zzj = null;
             }
             method3 = null;
             zzf = method3;
@@ -115,7 +128,9 @@ public abstract class WorkSourceUtil {
             zzh = method5;
             if (PlatformVersion.isAtLeastP()) {
             }
+            method6 = null;
             zzi = method6;
+            zzj = null;
         }
         method2 = null;
         zzc = method2;
@@ -137,7 +152,9 @@ public abstract class WorkSourceUtil {
         zzh = method5;
         if (PlatformVersion.isAtLeastP()) {
         }
+        method6 = null;
         zzi = method6;
+        zzj = null;
     }
 
     public static void add(WorkSource workSource, int i, String str) {
@@ -165,29 +182,37 @@ public abstract class WorkSourceUtil {
     }
 
     public static WorkSource fromPackage(Context context, String str) {
-        String str2;
-        ApplicationInfo applicationInfo;
-        if (context == null || context.getPackageManager() == null || str == null) {
-            return null;
+        if (context != null && context.getPackageManager() != null && str != null) {
+            try {
+                ApplicationInfo applicationInfo = Wrappers.packageManager(context).getApplicationInfo(str, 0);
+                if (applicationInfo == null) {
+                    Log.e("WorkSourceUtil", "Could not get applicationInfo from package: ".concat(str));
+                    return null;
+                }
+                int i = applicationInfo.uid;
+                WorkSource workSource = new WorkSource();
+                add(workSource, i, str);
+                return workSource;
+            } catch (PackageManager.NameNotFoundException unused) {
+                Log.e("WorkSourceUtil", "Could not find package: ".concat(str));
+            }
         }
-        try {
-            applicationInfo = Wrappers.packageManager(context).getApplicationInfo(str, 0);
-        } catch (PackageManager.NameNotFoundException unused) {
-            str2 = "Could not find package: ";
-        }
-        if (applicationInfo == null) {
-            str2 = "Could not get applicationInfo from package: ";
-            Log.e("WorkSourceUtil", str2.concat(str));
-            return null;
-        }
-        int i = applicationInfo.uid;
-        WorkSource workSource = new WorkSource();
-        add(workSource, i, str);
-        return workSource;
+        return null;
     }
 
-    public static boolean hasWorkSourcePermission(Context context) {
-        return (context == null || context.getPackageManager() == null || Wrappers.packageManager(context).checkPermission("android.permission.UPDATE_DEVICE_STATS", context.getPackageName()) != 0) ? false : true;
+    public static synchronized boolean hasWorkSourcePermission(Context context) {
+        synchronized (WorkSourceUtil.class) {
+            Boolean bool = zzj;
+            if (bool != null) {
+                return bool.booleanValue();
+            }
+            if (context == null) {
+                return false;
+            }
+            boolean z = ContextCompat.checkSelfPermission(context, "android.permission.UPDATE_DEVICE_STATS") == 0;
+            zzj = Boolean.valueOf(z);
+            return z;
+        }
     }
 
     public static boolean isEmpty(WorkSource workSource) {

@@ -17,44 +17,11 @@ public final class CryptoInfo {
     public int numSubSamples;
     private final PatternHolderV24 patternHolder;
 
-    private static final class PatternHolderV24 {
-        private final MediaCodec.CryptoInfo frameworkCryptoInfo;
-        private final MediaCodec.CryptoInfo.Pattern pattern;
-
-        private PatternHolderV24(MediaCodec.CryptoInfo cryptoInfo) {
-            this.frameworkCryptoInfo = cryptoInfo;
-            this.pattern = new MediaCodec.CryptoInfo.Pattern(0, 0);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public void set(int i, int i2) {
-            this.pattern.set(i, i2);
-            this.frameworkCryptoInfo.setPattern(this.pattern);
-        }
-    }
-
     /* JADX WARN: Multi-variable type inference failed */
     public CryptoInfo() {
         MediaCodec.CryptoInfo cryptoInfo = new MediaCodec.CryptoInfo();
         this.frameworkCryptoInfo = cryptoInfo;
         this.patternHolder = Util.SDK_INT >= 24 ? new PatternHolderV24(cryptoInfo) : null;
-    }
-
-    public MediaCodec.CryptoInfo getFrameworkCryptoInfo() {
-        return this.frameworkCryptoInfo;
-    }
-
-    public void increaseClearDataFirstSubSampleBy(int i) {
-        if (i == 0) {
-            return;
-        }
-        if (this.numBytesOfClearData == null) {
-            int[] iArr = new int[1];
-            this.numBytesOfClearData = iArr;
-            this.frameworkCryptoInfo.numBytesOfClearData = iArr;
-        }
-        int[] iArr2 = this.numBytesOfClearData;
-        iArr2[0] = iArr2[0] + i;
     }
 
     public void set(int i, int[] iArr, int[] iArr2, byte[] bArr, byte[] bArr2, int i2, int i3, int i4) {
@@ -75,6 +42,39 @@ public final class CryptoInfo {
         cryptoInfo.mode = i2;
         if (Util.SDK_INT >= 24) {
             ((PatternHolderV24) Assertions.checkNotNull(this.patternHolder)).set(i3, i4);
+        }
+    }
+
+    public MediaCodec.CryptoInfo getFrameworkCryptoInfo() {
+        return this.frameworkCryptoInfo;
+    }
+
+    public void increaseClearDataFirstSubSampleBy(int i) {
+        if (i == 0) {
+            return;
+        }
+        if (this.numBytesOfClearData == null) {
+            int[] iArr = new int[1];
+            this.numBytesOfClearData = iArr;
+            this.frameworkCryptoInfo.numBytesOfClearData = iArr;
+        }
+        int[] iArr2 = this.numBytesOfClearData;
+        iArr2[0] = iArr2[0] + i;
+    }
+
+    private static final class PatternHolderV24 {
+        private final MediaCodec.CryptoInfo frameworkCryptoInfo;
+        private final MediaCodec.CryptoInfo.Pattern pattern;
+
+        private PatternHolderV24(MediaCodec.CryptoInfo cryptoInfo) {
+            this.frameworkCryptoInfo = cryptoInfo;
+            this.pattern = CryptoInfo$PatternHolderV24$$ExternalSyntheticApiModelOutline0.m(0, 0);
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public void set(int i, int i2) {
+            this.pattern.set(i, i2);
+            this.frameworkCryptoInfo.setPattern(this.pattern);
         }
     }
 }

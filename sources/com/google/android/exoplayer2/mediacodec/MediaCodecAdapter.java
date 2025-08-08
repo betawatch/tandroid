@@ -13,32 +13,6 @@ import java.nio.ByteBuffer;
 /* loaded from: classes.dex */
 public interface MediaCodecAdapter {
 
-    public static final class Configuration {
-        public final MediaCodecInfo codecInfo;
-        public final MediaCrypto crypto;
-        public final int flags;
-        public final Format format;
-        public final MediaFormat mediaFormat;
-        public final Surface surface;
-
-        private Configuration(MediaCodecInfo mediaCodecInfo, MediaFormat mediaFormat, Format format, Surface surface, MediaCrypto mediaCrypto, int i) {
-            this.codecInfo = mediaCodecInfo;
-            this.mediaFormat = mediaFormat;
-            this.format = format;
-            this.surface = surface;
-            this.crypto = mediaCrypto;
-            this.flags = i;
-        }
-
-        public static Configuration createForAudioDecoding(MediaCodecInfo mediaCodecInfo, MediaFormat mediaFormat, Format format, MediaCrypto mediaCrypto) {
-            return new Configuration(mediaCodecInfo, mediaFormat, format, null, mediaCrypto, 0);
-        }
-
-        public static Configuration createForVideoDecoding(MediaCodecInfo mediaCodecInfo, MediaFormat mediaFormat, Format format, Surface surface, MediaCrypto mediaCrypto) {
-            return new Configuration(mediaCodecInfo, mediaFormat, format, surface, mediaCrypto, 0);
-        }
-    }
-
     public interface Factory {
         MediaCodecAdapter createAdapter(Configuration configuration);
     }
@@ -78,4 +52,30 @@ public interface MediaCodecAdapter {
     void setParameters(Bundle bundle);
 
     void setVideoScalingMode(int i);
+
+    public static final class Configuration {
+        public final MediaCodecInfo codecInfo;
+        public final MediaCrypto crypto;
+        public final int flags;
+        public final Format format;
+        public final MediaFormat mediaFormat;
+        public final Surface surface;
+
+        public static Configuration createForAudioDecoding(MediaCodecInfo mediaCodecInfo, MediaFormat mediaFormat, Format format, MediaCrypto mediaCrypto) {
+            return new Configuration(mediaCodecInfo, mediaFormat, format, null, mediaCrypto, 0);
+        }
+
+        public static Configuration createForVideoDecoding(MediaCodecInfo mediaCodecInfo, MediaFormat mediaFormat, Format format, Surface surface, MediaCrypto mediaCrypto) {
+            return new Configuration(mediaCodecInfo, mediaFormat, format, surface, mediaCrypto, 0);
+        }
+
+        private Configuration(MediaCodecInfo mediaCodecInfo, MediaFormat mediaFormat, Format format, Surface surface, MediaCrypto mediaCrypto, int i) {
+            this.codecInfo = mediaCodecInfo;
+            this.mediaFormat = mediaFormat;
+            this.format = format;
+            this.surface = surface;
+            this.crypto = mediaCrypto;
+            this.flags = i;
+        }
+    }
 }

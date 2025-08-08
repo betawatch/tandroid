@@ -2,7 +2,7 @@ package com.google.firebase.crashlytics.internal.model;
 
 import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class AutoValue_CrashlyticsReport_Session_Event extends CrashlyticsReport.Session.Event {
     private final CrashlyticsReport.Session.Event.Application app;
     private final CrashlyticsReport.Session.Event.Device device;
@@ -10,6 +10,85 @@ final class AutoValue_CrashlyticsReport_Session_Event extends CrashlyticsReport.
     private final CrashlyticsReport.Session.Event.RolloutsState rollouts;
     private final long timestamp;
     private final String type;
+
+    private AutoValue_CrashlyticsReport_Session_Event(long j, String str, CrashlyticsReport.Session.Event.Application application, CrashlyticsReport.Session.Event.Device device, CrashlyticsReport.Session.Event.Log log, CrashlyticsReport.Session.Event.RolloutsState rolloutsState) {
+        this.timestamp = j;
+        this.type = str;
+        this.app = application;
+        this.device = device;
+        this.log = log;
+        this.rollouts = rolloutsState;
+    }
+
+    @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event
+    public long getTimestamp() {
+        return this.timestamp;
+    }
+
+    @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event
+    public String getType() {
+        return this.type;
+    }
+
+    @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event
+    public CrashlyticsReport.Session.Event.Application getApp() {
+        return this.app;
+    }
+
+    @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event
+    public CrashlyticsReport.Session.Event.Device getDevice() {
+        return this.device;
+    }
+
+    @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event
+    public CrashlyticsReport.Session.Event.Log getLog() {
+        return this.log;
+    }
+
+    @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event
+    public CrashlyticsReport.Session.Event.RolloutsState getRollouts() {
+        return this.rollouts;
+    }
+
+    public String toString() {
+        return "Event{timestamp=" + this.timestamp + ", type=" + this.type + ", app=" + this.app + ", device=" + this.device + ", log=" + this.log + ", rollouts=" + this.rollouts + "}";
+    }
+
+    public boolean equals(Object obj) {
+        CrashlyticsReport.Session.Event.Log log;
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof CrashlyticsReport.Session.Event)) {
+            return false;
+        }
+        CrashlyticsReport.Session.Event event = (CrashlyticsReport.Session.Event) obj;
+        if (this.timestamp == event.getTimestamp() && this.type.equals(event.getType()) && this.app.equals(event.getApp()) && this.device.equals(event.getDevice()) && ((log = this.log) != null ? log.equals(event.getLog()) : event.getLog() == null)) {
+            CrashlyticsReport.Session.Event.RolloutsState rolloutsState = this.rollouts;
+            if (rolloutsState == null) {
+                if (event.getRollouts() == null) {
+                    return true;
+                }
+            } else if (rolloutsState.equals(event.getRollouts())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public int hashCode() {
+        long j = this.timestamp;
+        int hashCode = (((((((((int) (j ^ (j >>> 32))) ^ 1000003) * 1000003) ^ this.type.hashCode()) * 1000003) ^ this.app.hashCode()) * 1000003) ^ this.device.hashCode()) * 1000003;
+        CrashlyticsReport.Session.Event.Log log = this.log;
+        int hashCode2 = (hashCode ^ (log == null ? 0 : log.hashCode())) * 1000003;
+        CrashlyticsReport.Session.Event.RolloutsState rolloutsState = this.rollouts;
+        return hashCode2 ^ (rolloutsState != null ? rolloutsState.hashCode() : 0);
+    }
+
+    @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event
+    public CrashlyticsReport.Session.Event.Builder toBuilder() {
+        return new Builder(this);
+    }
 
     static final class Builder extends CrashlyticsReport.Session.Event.Builder {
         private CrashlyticsReport.Session.Event.Application app;
@@ -32,24 +111,18 @@ final class AutoValue_CrashlyticsReport_Session_Event extends CrashlyticsReport.
         }
 
         @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event.Builder
-        public CrashlyticsReport.Session.Event build() {
-            String str = "";
-            if (this.timestamp == null) {
-                str = " timestamp";
+        public CrashlyticsReport.Session.Event.Builder setTimestamp(long j) {
+            this.timestamp = Long.valueOf(j);
+            return this;
+        }
+
+        @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event.Builder
+        public CrashlyticsReport.Session.Event.Builder setType(String str) {
+            if (str == null) {
+                throw new NullPointerException("Null type");
             }
-            if (this.type == null) {
-                str = str + " type";
-            }
-            if (this.app == null) {
-                str = str + " app";
-            }
-            if (this.device == null) {
-                str = str + " device";
-            }
-            if (str.isEmpty()) {
-                return new AutoValue_CrashlyticsReport_Session_Event(this.timestamp.longValue(), this.type, this.app, this.device, this.log, this.rollouts);
-            }
-            throw new IllegalStateException("Missing required properties:" + str);
+            this.type = str;
+            return this;
         }
 
         @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event.Builder
@@ -83,98 +156,24 @@ final class AutoValue_CrashlyticsReport_Session_Event extends CrashlyticsReport.
         }
 
         @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event.Builder
-        public CrashlyticsReport.Session.Event.Builder setTimestamp(long j) {
-            this.timestamp = Long.valueOf(j);
-            return this;
-        }
-
-        @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event.Builder
-        public CrashlyticsReport.Session.Event.Builder setType(String str) {
-            if (str == null) {
-                throw new NullPointerException("Null type");
+        public CrashlyticsReport.Session.Event build() {
+            String str = "";
+            if (this.timestamp == null) {
+                str = " timestamp";
             }
-            this.type = str;
-            return this;
-        }
-    }
-
-    private AutoValue_CrashlyticsReport_Session_Event(long j, String str, CrashlyticsReport.Session.Event.Application application, CrashlyticsReport.Session.Event.Device device, CrashlyticsReport.Session.Event.Log log, CrashlyticsReport.Session.Event.RolloutsState rolloutsState) {
-        this.timestamp = j;
-        this.type = str;
-        this.app = application;
-        this.device = device;
-        this.log = log;
-        this.rollouts = rolloutsState;
-    }
-
-    public boolean equals(Object obj) {
-        CrashlyticsReport.Session.Event.Log log;
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof CrashlyticsReport.Session.Event)) {
-            return false;
-        }
-        CrashlyticsReport.Session.Event event = (CrashlyticsReport.Session.Event) obj;
-        if (this.timestamp == event.getTimestamp() && this.type.equals(event.getType()) && this.app.equals(event.getApp()) && this.device.equals(event.getDevice()) && ((log = this.log) != null ? log.equals(event.getLog()) : event.getLog() == null)) {
-            CrashlyticsReport.Session.Event.RolloutsState rolloutsState = this.rollouts;
-            CrashlyticsReport.Session.Event.RolloutsState rollouts = event.getRollouts();
-            if (rolloutsState == null) {
-                if (rollouts == null) {
-                    return true;
-                }
-            } else if (rolloutsState.equals(rollouts)) {
-                return true;
+            if (this.type == null) {
+                str = str + " type";
             }
+            if (this.app == null) {
+                str = str + " app";
+            }
+            if (this.device == null) {
+                str = str + " device";
+            }
+            if (!str.isEmpty()) {
+                throw new IllegalStateException("Missing required properties:" + str);
+            }
+            return new AutoValue_CrashlyticsReport_Session_Event(this.timestamp.longValue(), this.type, this.app, this.device, this.log, this.rollouts);
         }
-        return false;
-    }
-
-    @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event
-    public CrashlyticsReport.Session.Event.Application getApp() {
-        return this.app;
-    }
-
-    @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event
-    public CrashlyticsReport.Session.Event.Device getDevice() {
-        return this.device;
-    }
-
-    @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event
-    public CrashlyticsReport.Session.Event.Log getLog() {
-        return this.log;
-    }
-
-    @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event
-    public CrashlyticsReport.Session.Event.RolloutsState getRollouts() {
-        return this.rollouts;
-    }
-
-    @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event
-    public long getTimestamp() {
-        return this.timestamp;
-    }
-
-    @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event
-    public String getType() {
-        return this.type;
-    }
-
-    public int hashCode() {
-        long j = this.timestamp;
-        int hashCode = (((((((((int) (j ^ (j >>> 32))) ^ 1000003) * 1000003) ^ this.type.hashCode()) * 1000003) ^ this.app.hashCode()) * 1000003) ^ this.device.hashCode()) * 1000003;
-        CrashlyticsReport.Session.Event.Log log = this.log;
-        int hashCode2 = (hashCode ^ (log == null ? 0 : log.hashCode())) * 1000003;
-        CrashlyticsReport.Session.Event.RolloutsState rolloutsState = this.rollouts;
-        return hashCode2 ^ (rolloutsState != null ? rolloutsState.hashCode() : 0);
-    }
-
-    @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Event
-    public CrashlyticsReport.Session.Event.Builder toBuilder() {
-        return new Builder(this);
-    }
-
-    public String toString() {
-        return "Event{timestamp=" + this.timestamp + ", type=" + this.type + ", app=" + this.app + ", device=" + this.device + ", log=" + this.log + ", rollouts=" + this.rollouts + "}";
     }
 }

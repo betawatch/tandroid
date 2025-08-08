@@ -20,16 +20,16 @@ public final class UrlLinkFrame extends Id3Frame {
     public final String description;
     public final String url;
 
-    UrlLinkFrame(Parcel parcel) {
-        super((String) Util.castNonNull(parcel.readString()));
-        this.description = parcel.readString();
-        this.url = (String) Util.castNonNull(parcel.readString());
-    }
-
     public UrlLinkFrame(String str, String str2, String str3) {
         super(str);
         this.description = str2;
         this.url = str3;
+    }
+
+    UrlLinkFrame(Parcel parcel) {
+        super((String) Util.castNonNull(parcel.readString()));
+        this.description = parcel.readString();
+        this.url = (String) Util.castNonNull(parcel.readString());
     }
 
     public boolean equals(Object obj) {

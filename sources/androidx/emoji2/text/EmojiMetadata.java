@@ -17,6 +17,14 @@ public class EmojiMetadata {
         this.mIndex = i;
     }
 
+    public void draw(Canvas canvas, float f, float f2, Paint paint) {
+        Typeface typeface = this.mMetadataRepo.getTypeface();
+        Typeface typeface2 = paint.getTypeface();
+        paint.setTypeface(typeface);
+        canvas.drawText(this.mMetadataRepo.getEmojiCharArray(), this.mIndex * 2, 2, f, f2, paint);
+        paint.setTypeface(typeface2);
+    }
+
     private MetadataItem getMetadataItem() {
         ThreadLocal threadLocal = sMetadataItem;
         MetadataItem metadataItem = (MetadataItem) threadLocal.get();
@@ -28,12 +36,32 @@ public class EmojiMetadata {
         return metadataItem;
     }
 
-    public void draw(Canvas canvas, float f, float f2, Paint paint) {
-        Typeface typeface = this.mMetadataRepo.getTypeface();
-        Typeface typeface2 = paint.getTypeface();
-        paint.setTypeface(typeface);
-        canvas.drawText(this.mMetadataRepo.getEmojiCharArray(), this.mIndex * 2, 2, f, f2, paint);
-        paint.setTypeface(typeface2);
+    public int getId() {
+        return getMetadataItem().id();
+    }
+
+    public short getWidth() {
+        return getMetadataItem().width();
+    }
+
+    public short getHeight() {
+        return getMetadataItem().height();
+    }
+
+    public short getSdkAdded() {
+        return getMetadataItem().sdkAdded();
+    }
+
+    public int getHasGlyph() {
+        return this.mHasGlyph;
+    }
+
+    public void setHasGlyph(boolean z) {
+        this.mHasGlyph = z ? 2 : 1;
+    }
+
+    public boolean isDefaultEmoji() {
+        return getMetadataItem().emojiStyle();
     }
 
     public int getCodepointAt(int i) {
@@ -42,34 +70,6 @@ public class EmojiMetadata {
 
     public int getCodepointsLength() {
         return getMetadataItem().codepointsLength();
-    }
-
-    public int getHasGlyph() {
-        return this.mHasGlyph;
-    }
-
-    public short getHeight() {
-        return getMetadataItem().height();
-    }
-
-    public int getId() {
-        return getMetadataItem().id();
-    }
-
-    public short getSdkAdded() {
-        return getMetadataItem().sdkAdded();
-    }
-
-    public short getWidth() {
-        return getMetadataItem().width();
-    }
-
-    public boolean isDefaultEmoji() {
-        return getMetadataItem().emojiStyle();
-    }
-
-    public void setHasGlyph(boolean z) {
-        this.mHasGlyph = z ? 2 : 1;
     }
 
     public String toString() {

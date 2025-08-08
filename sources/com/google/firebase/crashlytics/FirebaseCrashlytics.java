@@ -32,18 +32,6 @@ import java.util.concurrent.ExecutorService;
 public class FirebaseCrashlytics {
     final CrashlyticsCore core;
 
-    private FirebaseCrashlytics(CrashlyticsCore crashlyticsCore) {
-        this.core = crashlyticsCore;
-    }
-
-    public static FirebaseCrashlytics getInstance() {
-        FirebaseCrashlytics firebaseCrashlytics = (FirebaseCrashlytics) FirebaseApp.getInstance().get(FirebaseCrashlytics.class);
-        if (firebaseCrashlytics != null) {
-            return firebaseCrashlytics;
-        }
-        throw new NullPointerException("FirebaseCrashlytics component is not present.");
-    }
-
     static FirebaseCrashlytics init(FirebaseApp firebaseApp, FirebaseInstallationsApi firebaseInstallationsApi, Deferred deferred, Deferred deferred2, Deferred deferred3) {
         Context applicationContext = firebaseApp.getApplicationContext();
         String packageName = applicationContext.getPackageName();
@@ -97,6 +85,18 @@ public class FirebaseCrashlytics {
         }
     }
 
+    private FirebaseCrashlytics(CrashlyticsCore crashlyticsCore) {
+        this.core = crashlyticsCore;
+    }
+
+    public static FirebaseCrashlytics getInstance() {
+        FirebaseCrashlytics firebaseCrashlytics = (FirebaseCrashlytics) FirebaseApp.getInstance().get(FirebaseCrashlytics.class);
+        if (firebaseCrashlytics != null) {
+            return firebaseCrashlytics;
+        }
+        throw new NullPointerException("FirebaseCrashlytics component is not present.");
+    }
+
     public void recordException(Throwable th) {
         if (th == null) {
             Logger.getLogger().w("A null value was passed to recordException. Ignoring.");
@@ -105,15 +105,15 @@ public class FirebaseCrashlytics {
         }
     }
 
-    public void setCrashlyticsCollectionEnabled(boolean z) {
-        this.core.setCrashlyticsCollectionEnabled(Boolean.valueOf(z));
+    public void setUserId(String str) {
+        this.core.setUserId(str);
     }
 
     public void setCustomKey(String str, String str2) {
         this.core.setCustomKey(str, str2);
     }
 
-    public void setUserId(String str) {
-        this.core.setUserId(str);
+    public void setCrashlyticsCollectionEnabled(boolean z) {
+        this.core.setCrashlyticsCollectionEnabled(Boolean.valueOf(z));
     }
 }

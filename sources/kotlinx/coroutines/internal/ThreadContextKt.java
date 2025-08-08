@@ -5,7 +5,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.ThreadContextElement;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class ThreadContextKt {
     public static final Symbol NO_THREAD_ELEMENTS = new Symbol("NO_THREAD_ELEMENTS");
     private static final Function2 countAll = new Function2() { // from class: kotlinx.coroutines.internal.ThreadContextKt$countAll$1
@@ -42,19 +42,6 @@ public abstract class ThreadContextKt {
         }
     };
 
-    public static final void restoreThreadContext(CoroutineContext coroutineContext, Object obj) {
-        if (obj == NO_THREAD_ELEMENTS) {
-            return;
-        }
-        if (obj instanceof ThreadState) {
-            ((ThreadState) obj).restore(coroutineContext);
-            return;
-        }
-        Object fold = coroutineContext.fold(null, findOne);
-        Intrinsics.checkNotNull(fold, "null cannot be cast to non-null type kotlinx.coroutines.ThreadContextElement<kotlin.Any?>");
-        ((ThreadContextElement) fold).restoreThreadContext(coroutineContext, obj);
-    }
-
     public static final Object threadContextElements(CoroutineContext coroutineContext) {
         Object fold = coroutineContext.fold(0, countAll);
         Intrinsics.checkNotNull(fold);
@@ -73,5 +60,18 @@ public abstract class ThreadContextKt {
         }
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlinx.coroutines.ThreadContextElement<kotlin.Any?>");
         return ((ThreadContextElement) obj).updateThreadContext(coroutineContext);
+    }
+
+    public static final void restoreThreadContext(CoroutineContext coroutineContext, Object obj) {
+        if (obj == NO_THREAD_ELEMENTS) {
+            return;
+        }
+        if (obj instanceof ThreadState) {
+            ((ThreadState) obj).restore(coroutineContext);
+            return;
+        }
+        Object fold = coroutineContext.fold(null, findOne);
+        Intrinsics.checkNotNull(fold, "null cannot be cast to non-null type kotlinx.coroutines.ThreadContextElement<kotlin.Any?>");
+        ((ThreadContextElement) fold).restoreThreadContext(coroutineContext, obj);
     }
 }

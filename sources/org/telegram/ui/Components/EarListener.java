@@ -16,7 +16,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.PhotoViewer;
 import org.webrtc.MediaStreamTrack;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class EarListener implements SensorEventListener {
     private Sensor accelerometerSensor;
     private boolean accelerometerVertical;
@@ -46,6 +46,10 @@ public class EarListener implements SensorEventListener {
     private float[] gravityFast = new float[3];
     private float[] linearAcceleration = new float[3];
 
+    @Override // android.hardware.SensorEventListener
+    public void onAccuracyChanged(Sensor sensor, int i) {
+    }
+
     public EarListener(Context context) {
         this.context = context;
         SensorManager sensorManager = (SensorManager) ApplicationLoader.applicationContext.getSystemService("sensor");
@@ -66,14 +70,6 @@ public class EarListener implements SensorEventListener {
         this.powerManager = powerManager;
         this.proximityWakeLock = powerManager.newWakeLock(32, "telegram:proximity_lock2");
         this.audioManager = (AudioManager) ApplicationLoader.applicationContext.getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
-    }
-
-    private boolean disableWakeLockWhenNotUsed() {
-        return !Build.MANUFACTURER.equalsIgnoreCase("samsung");
-    }
-
-    private boolean isNearToSensor(float f) {
-        return f < 5.0f && f != this.proximitySensor.getMaximumRange();
     }
 
     public void attach() {
@@ -99,11 +95,6 @@ public class EarListener implements SensorEventListener {
         this.attached = true;
     }
 
-    public void attachPlayer(VideoPlayer videoPlayer) {
-        this.currentPlayer = videoPlayer;
-        updateRaised();
-    }
-
     public void detach() {
         if (this.attached) {
             Sensor sensor = this.gravitySensor;
@@ -127,45 +118,21 @@ public class EarListener implements SensorEventListener {
         }
     }
 
-    protected boolean forbidRaiseToListen() {
-        AudioDeviceInfo[] devices;
-        int type;
-        boolean isSink;
-        try {
-            if (Build.VERSION.SDK_INT < 23) {
-                return this.audioManager.isWiredHeadsetOn() || this.audioManager.isBluetoothA2dpOn() || this.audioManager.isBluetoothScoOn();
-            }
-            devices = this.audioManager.getDevices(2);
-            for (AudioDeviceInfo audioDeviceInfo : devices) {
-                type = audioDeviceInfo.getType();
-                if (type == 8 || type == 7 || type == 26 || type == 27 || type == 4 || type == 3) {
-                    isSink = audioDeviceInfo.isSink();
-                    if (isSink) {
-                        return true;
-                    }
-                }
-            }
-            return false;
-        } catch (Exception e) {
-            FileLog.e(e);
-            return false;
+    public void attachPlayer(VideoPlayer videoPlayer) {
+        this.currentPlayer = videoPlayer;
+        updateRaised();
+    }
+
+    protected void updateRaised() {
+        VideoPlayer videoPlayer = this.currentPlayer;
+        if (videoPlayer == null) {
+            return;
         }
+        videoPlayer.setStreamType(this.raised ? 0 : 3);
     }
 
     @Override // android.hardware.SensorEventListener
-    public void onAccuracyChanged(Sensor sensor, int i) {
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:138:0x01f9, code lost:
-    
-        if (r1 == 6) goto L80;
-     */
-    @Override // android.hardware.SensorEventListener
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public void onSensorChanged(SensorEvent sensorEvent) {
-        double d;
         boolean z;
         int i;
         if (this.attached && VoIPService.getSharedInstance() == null) {
@@ -185,36 +152,16 @@ public class EarListener implements SensorEventListener {
             } else {
                 Sensor sensor = sensorEvent.sensor;
                 if (sensor == this.accelerometerSensor) {
-                    long j = this.lastTimestamp;
-                    if (j == 0) {
-                        d = 0.9800000190734863d;
-                    } else {
-                        double d2 = sensorEvent.timestamp - j;
-                        Double.isNaN(d2);
-                        d = 1.0d / ((d2 / 1.0E9d) + 1.0d);
-                    }
+                    double d = this.lastTimestamp == 0 ? 0.9800000190734863d : 1.0d / (((sensorEvent.timestamp - r2) / 1.0E9d) + 1.0d);
                     this.lastTimestamp = sensorEvent.timestamp;
                     float[] fArr = this.gravity;
-                    double d3 = fArr[0];
-                    Double.isNaN(d3);
-                    double d4 = 1.0d - d;
+                    double d2 = 1.0d - d;
                     float[] fArr2 = sensorEvent.values;
-                    double d5 = fArr2[0];
-                    Double.isNaN(d5);
-                    float f3 = (float) ((d3 * d) + (d5 * d4));
+                    float f3 = (float) ((fArr[0] * d) + (fArr2[0] * d2));
                     fArr[0] = f3;
-                    double d6 = fArr[1];
-                    Double.isNaN(d6);
-                    double d7 = fArr2[1];
-                    Double.isNaN(d7);
-                    float f4 = (float) ((d6 * d) + (d7 * d4));
+                    float f4 = (float) ((fArr[1] * d) + (fArr2[1] * d2));
                     fArr[1] = f4;
-                    double d8 = fArr[2];
-                    Double.isNaN(d8);
-                    double d9 = d * d8;
-                    double d10 = fArr2[2];
-                    Double.isNaN(d10);
-                    float f5 = (float) (d9 + (d4 * d10));
+                    float f5 = (float) ((d * fArr[2]) + (d2 * fArr2[2]));
                     fArr[2] = f5;
                     float[] fArr3 = this.gravityFast;
                     fArr3[0] = (f3 * 0.8f) + (fArr2[0] * 0.19999999f);
@@ -292,6 +239,9 @@ public class EarListener implements SensorEventListener {
                             this.raisedToTopSign = i;
                             int i7 = i6 + 1;
                             this.raisedToTop = i7;
+                            if (i7 == 6) {
+                                this.countLess = 0;
+                            }
                         }
                     } else {
                         if (!z) {
@@ -357,11 +307,36 @@ public class EarListener implements SensorEventListener {
         }
     }
 
-    protected void updateRaised() {
-        VideoPlayer videoPlayer = this.currentPlayer;
-        if (videoPlayer == null) {
-            return;
+    private boolean isNearToSensor(float f) {
+        return f < 5.0f && f != this.proximitySensor.getMaximumRange();
+    }
+
+    private boolean disableWakeLockWhenNotUsed() {
+        return !Build.MANUFACTURER.equalsIgnoreCase("samsung");
+    }
+
+    protected boolean forbidRaiseToListen() {
+        AudioDeviceInfo[] devices;
+        int type;
+        boolean isSink;
+        try {
+            if (Build.VERSION.SDK_INT < 23) {
+                return this.audioManager.isWiredHeadsetOn() || this.audioManager.isBluetoothA2dpOn() || this.audioManager.isBluetoothScoOn();
+            }
+            devices = this.audioManager.getDevices(2);
+            for (AudioDeviceInfo audioDeviceInfo : devices) {
+                type = audioDeviceInfo.getType();
+                if (type == 8 || type == 7 || type == 26 || type == 27 || type == 4 || type == 3) {
+                    isSink = audioDeviceInfo.isSink();
+                    if (isSink) {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        } catch (Exception e) {
+            FileLog.e(e);
+            return false;
         }
-        videoPlayer.setStreamType(this.raised ? 0 : 3);
     }
 }

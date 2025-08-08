@@ -9,9 +9,6 @@ final class zzky {
     private final ConcurrentMap zzc = new ConcurrentHashMap();
     private final zzlf zzb = new zzkb();
 
-    private zzky() {
-    }
-
     public static zzky zza() {
         return zza;
     }
@@ -31,5 +28,8 @@ final class zzky {
 
     public final zzlc zza(Object obj) {
         return zza((Class) obj.getClass());
+    }
+
+    private zzky() {
     }
 }

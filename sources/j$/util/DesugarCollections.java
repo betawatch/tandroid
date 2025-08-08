@@ -67,25 +67,6 @@ public class DesugarCollections {
         }
     }
 
-    public static void c(Iterable iterable, Consumer consumer) {
-        Field field = c;
-        if (field == null) {
-            try {
-                Collection.-EL.a((java.util.Collection) d.get(iterable), consumer);
-            } catch (IllegalAccessException e2) {
-                throw new Error("Runtime illegal access in synchronized collection forEach fall-back.", e2);
-            }
-        } else {
-            try {
-                synchronized (field.get(iterable)) {
-                    Collection.-EL.a((java.util.Collection) d.get(iterable), consumer);
-                }
-            } catch (IllegalAccessException e3) {
-                throw new Error("Runtime illegal access in synchronized collection forEach.", e3);
-            }
-        }
-    }
-
     static boolean d(java.util.Collection collection, Predicate predicate) {
         boolean removeIf;
         Field field = c;
@@ -103,6 +84,25 @@ public class DesugarCollections {
             return removeIf;
         } catch (IllegalAccessException e3) {
             throw new Error("Runtime illegal access in synchronized collection removeIf.", e3);
+        }
+    }
+
+    public static void c(Iterable iterable, Consumer consumer) {
+        Field field = c;
+        if (field == null) {
+            try {
+                Collection.-EL.a((java.util.Collection) d.get(iterable), consumer);
+            } catch (IllegalAccessException e2) {
+                throw new Error("Runtime illegal access in synchronized collection forEach fall-back.", e2);
+            }
+        } else {
+            try {
+                synchronized (field.get(iterable)) {
+                    Collection.-EL.a((java.util.Collection) d.get(iterable), consumer);
+                }
+            } catch (IllegalAccessException e3) {
+                throw new Error("Runtime illegal access in synchronized collection forEach.", e3);
+            }
         }
     }
 

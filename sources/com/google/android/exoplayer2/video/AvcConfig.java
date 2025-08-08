@@ -16,22 +16,6 @@ public final class AvcConfig {
     public final float pixelWidthHeightRatio;
     public final int width;
 
-    private AvcConfig(List list, int i, int i2, int i3, float f, String str) {
-        this.initializationData = list;
-        this.nalUnitLengthFieldLength = i;
-        this.width = i2;
-        this.height = i3;
-        this.pixelWidthHeightRatio = f;
-        this.codecs = str;
-    }
-
-    private static byte[] buildNalUnitForChild(ParsableByteArray parsableByteArray) {
-        int readUnsignedShort = parsableByteArray.readUnsignedShort();
-        int position = parsableByteArray.getPosition();
-        parsableByteArray.skipBytes(readUnsignedShort);
-        return CodecSpecificDataUtil.buildNalUnit(parsableByteArray.getData(), position, readUnsignedShort);
-    }
-
     public static AvcConfig parse(ParsableByteArray parsableByteArray) {
         String str;
         int i;
@@ -71,5 +55,21 @@ public final class AvcConfig {
         } catch (ArrayIndexOutOfBoundsException e) {
             throw ParserException.createForMalformedContainer("Error parsing AVC config", e);
         }
+    }
+
+    private AvcConfig(List list, int i, int i2, int i3, float f, String str) {
+        this.initializationData = list;
+        this.nalUnitLengthFieldLength = i;
+        this.width = i2;
+        this.height = i3;
+        this.pixelWidthHeightRatio = f;
+        this.codecs = str;
+    }
+
+    private static byte[] buildNalUnitForChild(ParsableByteArray parsableByteArray) {
+        int readUnsignedShort = parsableByteArray.readUnsignedShort();
+        int position = parsableByteArray.getPosition();
+        parsableByteArray.skipBytes(readUnsignedShort);
+        return CodecSpecificDataUtil.buildNalUnit(parsableByteArray.getData(), position, readUnsignedShort);
     }
 }

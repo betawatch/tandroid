@@ -3,12 +3,6 @@ package org.webrtc;
 /* loaded from: classes5.dex */
 public interface VideoEncoderFactory {
 
-    public abstract /* synthetic */ class -CC {
-        public static VideoEncoderSelector $default$getEncoderSelector(VideoEncoderFactory videoEncoderFactory) {
-            return null;
-        }
-    }
-
     public interface VideoEncoderSelector {
 
         public abstract /* synthetic */ class -CC {
@@ -33,4 +27,10 @@ public interface VideoEncoderFactory {
     VideoCodecInfo[] getImplementations();
 
     VideoCodecInfo[] getSupportedCodecs();
+
+    public abstract /* synthetic */ class -CC {
+        public static VideoEncoderSelector $default$getEncoderSelector(VideoEncoderFactory videoEncoderFactory) {
+            return null;
+        }
+    }
 }

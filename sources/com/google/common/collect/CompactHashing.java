@@ -5,18 +5,8 @@ import java.util.Arrays;
 
 /* loaded from: classes.dex */
 abstract class CompactHashing {
-    static Object createTable(int i) {
-        if (i >= 2 && i <= 1073741824 && Integer.highestOneBit(i) == i) {
-            return i <= 256 ? new byte[i] : i <= 65536 ? new short[i] : new int[i];
-        }
-        StringBuilder sb = new StringBuilder(52);
-        sb.append("must be power of 2 between 2^1 and 2^30: ");
-        sb.append(i);
-        throw new IllegalArgumentException(sb.toString());
-    }
-
     static int getHashPrefix(int i, int i2) {
-        return i & (i2 ^ (-1));
+        return i & (~i2);
     }
 
     static int getNext(int i, int i2) {
@@ -24,11 +14,61 @@ abstract class CompactHashing {
     }
 
     static int maskCombine(int i, int i2, int i3) {
-        return (i & (i3 ^ (-1))) | (i2 & i3);
+        return (i & (~i3)) | (i2 & i3);
     }
 
     static int newCapacity(int i) {
         return (i < 32 ? 4 : 2) * (i + 1);
+    }
+
+    static int tableSize(int i) {
+        return Math.max(4, Hashing.closedTableSize(i + 1, 1.0d));
+    }
+
+    static Object createTable(int i) {
+        if (i < 2 || i > 1073741824 || Integer.highestOneBit(i) != i) {
+            StringBuilder sb = new StringBuilder(52);
+            sb.append("must be power of 2 between 2^1 and 2^30: ");
+            sb.append(i);
+            throw new IllegalArgumentException(sb.toString());
+        }
+        if (i <= 256) {
+            return new byte[i];
+        }
+        if (i <= 65536) {
+            return new short[i];
+        }
+        return new int[i];
+    }
+
+    static void tableClear(Object obj) {
+        if (obj instanceof byte[]) {
+            Arrays.fill((byte[]) obj, (byte) 0);
+        } else if (obj instanceof short[]) {
+            Arrays.fill((short[]) obj, (short) 0);
+        } else {
+            Arrays.fill((int[]) obj, 0);
+        }
+    }
+
+    static int tableGet(Object obj, int i) {
+        if (obj instanceof byte[]) {
+            return ((byte[]) obj)[i] & 255;
+        }
+        if (obj instanceof short[]) {
+            return ((short[]) obj)[i] & 65535;
+        }
+        return ((int[]) obj)[i];
+    }
+
+    static void tableSet(Object obj, int i, int i2) {
+        if (obj instanceof byte[]) {
+            ((byte[]) obj)[i] = (byte) i2;
+        } else if (obj instanceof short[]) {
+            ((short[]) obj)[i] = (short) i2;
+        } else {
+            ((int[]) obj)[i] = i2;
+        }
     }
 
     static int remove(Object obj, Object obj2, int i, Object obj3, int[] iArr, Object[] objArr, Object[] objArr2) {
@@ -61,33 +101,5 @@ abstract class CompactHashing {
             iArr[i5] = maskCombine(iArr[i5], next2, i);
         }
         return i2;
-    }
-
-    static void tableClear(Object obj) {
-        if (obj instanceof byte[]) {
-            Arrays.fill((byte[]) obj, (byte) 0);
-        } else if (obj instanceof short[]) {
-            Arrays.fill((short[]) obj, (short) 0);
-        } else {
-            Arrays.fill((int[]) obj, 0);
-        }
-    }
-
-    static int tableGet(Object obj, int i) {
-        return obj instanceof byte[] ? ((byte[]) obj)[i] & 255 : obj instanceof short[] ? ((short[]) obj)[i] & 65535 : ((int[]) obj)[i];
-    }
-
-    static void tableSet(Object obj, int i, int i2) {
-        if (obj instanceof byte[]) {
-            ((byte[]) obj)[i] = (byte) i2;
-        } else if (obj instanceof short[]) {
-            ((short[]) obj)[i] = (short) i2;
-        } else {
-            ((int[]) obj)[i] = i2;
-        }
-    }
-
-    static int tableSize(int i) {
-        return Math.max(4, Hashing.closedTableSize(i + 1, 1.0d));
     }
 }

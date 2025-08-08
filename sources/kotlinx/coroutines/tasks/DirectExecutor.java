@@ -2,7 +2,7 @@ package kotlinx.coroutines.tasks;
 
 import java.util.concurrent.Executor;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class DirectExecutor implements Executor {
     public static final DirectExecutor INSTANCE = new DirectExecutor();
 

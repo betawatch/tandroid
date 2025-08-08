@@ -1,7 +1,7 @@
 package com.google.android.recaptcha.internal;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import kotlin.text.StringsKt__StringsJVMKt;
+import kotlin.text.StringsKt;
 
 /* loaded from: classes.dex */
 public final class zzax {
@@ -13,8 +13,6 @@ public final class zzax {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final int zzb(String str) {
-        String replace$default;
-        replace$default = StringsKt__StringsJVMKt.replace$default("18.4.0", ".", "", false, 4, null);
-        return Integer.parseInt(replace$default);
+        return Integer.parseInt(StringsKt.replace$default("18.4.0", ".", "", false, 4, null));
     }
 }

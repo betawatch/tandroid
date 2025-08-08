@@ -23,8 +23,9 @@ final class zzo implements Runnable {
                 this.zzb.onFailure(new NullPointerException("Continuation returned null"));
                 return;
             }
+            zzp zzpVar = this.zzb;
             Executor executor = TaskExecutors.zza;
-            then.addOnSuccessListener(executor, this.zzb);
+            then.addOnSuccessListener(executor, zzpVar);
             then.addOnFailureListener(executor, this.zzb);
             then.addOnCanceledListener(executor, this.zzb);
         } catch (RuntimeExecutionException e) {

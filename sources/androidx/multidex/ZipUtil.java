@@ -16,25 +16,13 @@ abstract class ZipUtil {
         }
     }
 
-    static long computeCrcOfCentralDir(RandomAccessFile randomAccessFile, CentralDirectory centralDirectory) {
-        CRC32 crc32 = new CRC32();
-        long j = centralDirectory.size;
-        randomAccessFile.seek(centralDirectory.offset);
-        int min = (int) Math.min(16384L, j);
-        byte[] bArr = new byte[16384];
-        while (true) {
-            int read = randomAccessFile.read(bArr, 0, min);
-            if (read == -1) {
-                break;
-            }
-            crc32.update(bArr, 0, read);
-            j -= read;
-            if (j == 0) {
-                break;
-            }
-            min = (int) Math.min(16384L, j);
+    static long getZipCrc(File file) {
+        RandomAccessFile randomAccessFile = new RandomAccessFile(file, "r");
+        try {
+            return computeCrcOfCentralDir(randomAccessFile, findCentralDirectory(randomAccessFile));
+        } finally {
+            randomAccessFile.close();
         }
-        return crc32.getValue();
     }
 
     static CentralDirectory findCentralDirectory(RandomAccessFile randomAccessFile) {
@@ -63,12 +51,20 @@ abstract class ZipUtil {
         throw new ZipException("End Of Central Directory signature not found");
     }
 
-    static long getZipCrc(File file) {
-        RandomAccessFile randomAccessFile = new RandomAccessFile(file, "r");
-        try {
-            return computeCrcOfCentralDir(randomAccessFile, findCentralDirectory(randomAccessFile));
-        } finally {
-            randomAccessFile.close();
+    static long computeCrcOfCentralDir(RandomAccessFile randomAccessFile, CentralDirectory centralDirectory) {
+        CRC32 crc32 = new CRC32();
+        long j = centralDirectory.size;
+        randomAccessFile.seek(centralDirectory.offset);
+        byte[] bArr = new byte[16384];
+        int read = randomAccessFile.read(bArr, 0, (int) Math.min(16384L, j));
+        while (read != -1) {
+            crc32.update(bArr, 0, read);
+            j -= read;
+            if (j == 0) {
+                break;
+            }
+            read = randomAccessFile.read(bArr, 0, (int) Math.min(16384L, j));
         }
+        return crc32.getValue();
     }
 }

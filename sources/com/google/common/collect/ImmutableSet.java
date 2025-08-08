@@ -12,24 +12,35 @@ import org.telegram.tgnet.TLObject;
 public abstract class ImmutableSet extends ImmutableCollection implements Set {
     private transient ImmutableList asList;
 
-    ImmutableSet() {
+    private static boolean shouldTrim(int i, int i2) {
+        return i < (i2 >> 1) + (i2 >> 2);
     }
 
-    static int chooseTableSize(int i) {
-        int max = Math.max(i, 2);
-        if (max >= 751619276) {
-            Preconditions.checkArgument(max < 1073741824, "collection too large");
-            return TLObject.FLAG_30;
-        }
-        int highestOneBit = Integer.highestOneBit(max - 1) << 1;
-        while (true) {
-            double d = highestOneBit;
-            Double.isNaN(d);
-            if (d * 0.7d >= max) {
-                return highestOneBit;
-            }
-            highestOneBit <<= 1;
-        }
+    boolean isHashCodeFast() {
+        return false;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public abstract UnmodifiableIterator iterator();
+
+    public static ImmutableSet of() {
+        return RegularImmutableSet.EMPTY;
+    }
+
+    public static ImmutableSet of(Object obj) {
+        return new SingletonImmutableSet(obj);
+    }
+
+    public static ImmutableSet of(Object obj, Object obj2) {
+        return construct(2, obj, obj2);
+    }
+
+    public static ImmutableSet of(Object obj, Object obj2, Object obj3) {
+        return construct(3, obj, obj2, obj3);
+    }
+
+    public static ImmutableSet of(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        return construct(5, obj, obj2, obj3, obj4, obj5);
     }
 
     private static ImmutableSet construct(int i, Object... objArr) {
@@ -81,6 +92,19 @@ public abstract class ImmutableSet extends ImmutableCollection implements Set {
         return new RegularImmutableSet(objArr, i3, objArr2, i2, i4);
     }
 
+    static int chooseTableSize(int i) {
+        int max = Math.max(i, 2);
+        if (max < 751619276) {
+            int highestOneBit = Integer.highestOneBit(max - 1) << 1;
+            while (highestOneBit * 0.7d < max) {
+                highestOneBit <<= 1;
+            }
+            return highestOneBit;
+        }
+        Preconditions.checkArgument(max < 1073741824, "collection too large");
+        return TLObject.FLAG_30;
+    }
+
     public static ImmutableSet copyOf(Collection collection) {
         if ((collection instanceof ImmutableSet) && !(collection instanceof SortedSet)) {
             ImmutableSet immutableSet = (ImmutableSet) collection;
@@ -94,46 +118,16 @@ public abstract class ImmutableSet extends ImmutableCollection implements Set {
 
     public static ImmutableSet copyOf(Object[] objArr) {
         int length = objArr.length;
-        return length != 0 ? length != 1 ? construct(objArr.length, (Object[]) objArr.clone()) : of(objArr[0]) : of();
-    }
-
-    public static ImmutableSet of() {
-        return RegularImmutableSet.EMPTY;
-    }
-
-    public static ImmutableSet of(Object obj) {
-        return new SingletonImmutableSet(obj);
-    }
-
-    public static ImmutableSet of(Object obj, Object obj2) {
-        return construct(2, obj, obj2);
-    }
-
-    public static ImmutableSet of(Object obj, Object obj2, Object obj3) {
-        return construct(3, obj, obj2, obj3);
-    }
-
-    public static ImmutableSet of(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        return construct(5, obj, obj2, obj3, obj4, obj5);
-    }
-
-    private static boolean shouldTrim(int i, int i2) {
-        return i < (i2 >> 1) + (i2 >> 2);
-    }
-
-    @Override // com.google.common.collect.ImmutableCollection
-    public ImmutableList asList() {
-        ImmutableList immutableList = this.asList;
-        if (immutableList != null) {
-            return immutableList;
+        if (length == 0) {
+            return of();
         }
-        ImmutableList createAsList = createAsList();
-        this.asList = createAsList;
-        return createAsList;
+        if (length == 1) {
+            return of(objArr[0]);
+        }
+        return construct(objArr.length, (Object[]) objArr.clone());
     }
 
-    ImmutableList createAsList() {
-        return ImmutableList.asImmutableList(toArray());
+    ImmutableSet() {
     }
 
     @Override // java.util.Collection, java.util.Set
@@ -152,10 +146,18 @@ public abstract class ImmutableSet extends ImmutableCollection implements Set {
         return Sets.hashCodeImpl(this);
     }
 
-    boolean isHashCodeFast() {
-        return false;
+    @Override // com.google.common.collect.ImmutableCollection
+    public ImmutableList asList() {
+        ImmutableList immutableList = this.asList;
+        if (immutableList != null) {
+            return immutableList;
+        }
+        ImmutableList createAsList = createAsList();
+        this.asList = createAsList;
+        return createAsList;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public abstract UnmodifiableIterator iterator();
+    ImmutableList createAsList() {
+        return ImmutableList.asImmutableList(toArray());
+    }
 }

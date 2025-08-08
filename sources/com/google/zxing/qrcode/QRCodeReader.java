@@ -16,10 +16,45 @@ import com.google.zxing.qrcode.detector.Detector;
 import java.util.List;
 import java.util.Map;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class QRCodeReader {
     private static final ResultPoint[] NO_POINTS = new ResultPoint[0];
     private final Decoder decoder = new Decoder();
+
+    public Result decode(BinaryBitmap binaryBitmap) {
+        return decode(binaryBitmap, null);
+    }
+
+    public final Result decode(BinaryBitmap binaryBitmap, Map map) {
+        ResultPoint[] points;
+        DecoderResult decoderResult;
+        if (map != null && map.containsKey(DecodeHintType.PURE_BARCODE)) {
+            decoderResult = this.decoder.decode(extractPureBits(binaryBitmap.getBlackMatrix()), map);
+            points = NO_POINTS;
+        } else {
+            DetectorResult detect = new Detector(binaryBitmap.getBlackMatrix()).detect(map);
+            DecoderResult decode = this.decoder.decode(detect.getBits(), map);
+            points = detect.getPoints();
+            decoderResult = decode;
+        }
+        if (decoderResult.getOther() instanceof QRCodeDecoderMetaData) {
+            ((QRCodeDecoderMetaData) decoderResult.getOther()).applyMirroredCorrection(points);
+        }
+        Result result = new Result(decoderResult.getText(), decoderResult.getRawBytes(), points, BarcodeFormat.QR_CODE);
+        List byteSegments = decoderResult.getByteSegments();
+        if (byteSegments != null) {
+            result.putMetadata(ResultMetadataType.BYTE_SEGMENTS, byteSegments);
+        }
+        String eCLevel = decoderResult.getECLevel();
+        if (eCLevel != null) {
+            result.putMetadata(ResultMetadataType.ERROR_CORRECTION_LEVEL, eCLevel);
+        }
+        if (decoderResult.hasStructuredAppend()) {
+            result.putMetadata(ResultMetadataType.STRUCTURED_APPEND_SEQUENCE, Integer.valueOf(decoderResult.getStructuredAppendSequenceNumber()));
+            result.putMetadata(ResultMetadataType.STRUCTURED_APPEND_PARITY, Integer.valueOf(decoderResult.getStructuredAppendParity()));
+        }
+        return result;
+    }
 
     private static BitMatrix extractPureBits(BitMatrix bitMatrix) {
         int[] topLeftOnBit = bitMatrix.getTopLeftOnBit();
@@ -98,40 +133,5 @@ public class QRCodeReader {
             throw NotFoundException.getNotFoundInstance();
         }
         return (i - iArr[0]) / 7.0f;
-    }
-
-    public Result decode(BinaryBitmap binaryBitmap) {
-        return decode(binaryBitmap, null);
-    }
-
-    public final Result decode(BinaryBitmap binaryBitmap, Map map) {
-        ResultPoint[] points;
-        DecoderResult decoderResult;
-        if (map == null || !map.containsKey(DecodeHintType.PURE_BARCODE)) {
-            DetectorResult detect = new Detector(binaryBitmap.getBlackMatrix()).detect(map);
-            DecoderResult decode = this.decoder.decode(detect.getBits(), map);
-            points = detect.getPoints();
-            decoderResult = decode;
-        } else {
-            decoderResult = this.decoder.decode(extractPureBits(binaryBitmap.getBlackMatrix()), map);
-            points = NO_POINTS;
-        }
-        if (decoderResult.getOther() instanceof QRCodeDecoderMetaData) {
-            ((QRCodeDecoderMetaData) decoderResult.getOther()).applyMirroredCorrection(points);
-        }
-        Result result = new Result(decoderResult.getText(), decoderResult.getRawBytes(), points, BarcodeFormat.QR_CODE);
-        List byteSegments = decoderResult.getByteSegments();
-        if (byteSegments != null) {
-            result.putMetadata(ResultMetadataType.BYTE_SEGMENTS, byteSegments);
-        }
-        String eCLevel = decoderResult.getECLevel();
-        if (eCLevel != null) {
-            result.putMetadata(ResultMetadataType.ERROR_CORRECTION_LEVEL, eCLevel);
-        }
-        if (decoderResult.hasStructuredAppend()) {
-            result.putMetadata(ResultMetadataType.STRUCTURED_APPEND_SEQUENCE, Integer.valueOf(decoderResult.getStructuredAppendSequenceNumber()));
-            result.putMetadata(ResultMetadataType.STRUCTURED_APPEND_PARITY, Integer.valueOf(decoderResult.getStructuredAppendParity()));
-        }
-        return result;
     }
 }

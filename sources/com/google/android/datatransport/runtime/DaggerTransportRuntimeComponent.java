@@ -40,25 +40,6 @@ final class DaggerTransportRuntimeComponent extends TransportRuntimeComponent {
     private Provider workInitializerProvider;
     private Provider workSchedulerProvider;
 
-    private static final class Builder implements TransportRuntimeComponent.Builder {
-        private Context setApplicationContext;
-
-        private Builder() {
-        }
-
-        @Override // com.google.android.datatransport.runtime.TransportRuntimeComponent.Builder
-        public TransportRuntimeComponent build() {
-            Preconditions.checkBuilderRequirement(this.setApplicationContext, Context.class);
-            return new DaggerTransportRuntimeComponent(this.setApplicationContext);
-        }
-
-        @Override // com.google.android.datatransport.runtime.TransportRuntimeComponent.Builder
-        public Builder setApplicationContext(Context context) {
-            this.setApplicationContext = (Context) Preconditions.checkNotNull(context);
-            return this;
-        }
-    }
-
     private DaggerTransportRuntimeComponent(Context context) {
         initialize(context);
     }
@@ -96,12 +77,31 @@ final class DaggerTransportRuntimeComponent extends TransportRuntimeComponent {
     }
 
     @Override // com.google.android.datatransport.runtime.TransportRuntimeComponent
+    TransportRuntime getTransportRuntime() {
+        return (TransportRuntime) this.transportRuntimeProvider.get();
+    }
+
+    @Override // com.google.android.datatransport.runtime.TransportRuntimeComponent
     EventStore getEventStore() {
         return (EventStore) this.sQLiteEventStoreProvider.get();
     }
 
-    @Override // com.google.android.datatransport.runtime.TransportRuntimeComponent
-    TransportRuntime getTransportRuntime() {
-        return (TransportRuntime) this.transportRuntimeProvider.get();
+    private static final class Builder implements TransportRuntimeComponent.Builder {
+        private Context setApplicationContext;
+
+        private Builder() {
+        }
+
+        @Override // com.google.android.datatransport.runtime.TransportRuntimeComponent.Builder
+        public Builder setApplicationContext(Context context) {
+            this.setApplicationContext = (Context) Preconditions.checkNotNull(context);
+            return this;
+        }
+
+        @Override // com.google.android.datatransport.runtime.TransportRuntimeComponent.Builder
+        public TransportRuntimeComponent build() {
+            Preconditions.checkBuilderRequirement(this.setApplicationContext, Context.class);
+            return new DaggerTransportRuntimeComponent(this.setApplicationContext);
+        }
     }
 }

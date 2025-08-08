@@ -23,7 +23,7 @@ public enum b implements o {
 
     static {
         j$.time.d dVar = j$.time.d.c;
-        j$.time.d.i();
+        j$.time.d.h();
     }
 
     b(String str) {

@@ -5,9 +5,34 @@ import java.util.List;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class StartServiceLog extends AbstractLog {
     private List services;
+
+    @Override // com.microsoft.appcenter.ingestion.models.Log
+    public String getType() {
+        return "startService";
+    }
+
+    public List getServices() {
+        return this.services;
+    }
+
+    public void setServices(List list) {
+        this.services = list;
+    }
+
+    @Override // com.microsoft.appcenter.ingestion.models.AbstractLog, com.microsoft.appcenter.ingestion.models.Model
+    public void read(JSONObject jSONObject) {
+        super.read(jSONObject);
+        setServices(JSONUtils.readStringArray(jSONObject, "services"));
+    }
+
+    @Override // com.microsoft.appcenter.ingestion.models.AbstractLog, com.microsoft.appcenter.ingestion.models.Model
+    public void write(JSONStringer jSONStringer) {
+        super.write(jSONStringer);
+        JSONUtils.writeStringArray(jSONStringer, "services", getServices());
+    }
 
     @Override // com.microsoft.appcenter.ingestion.models.AbstractLog
     public boolean equals(Object obj) {
@@ -22,35 +47,10 @@ public class StartServiceLog extends AbstractLog {
         return list != null ? list.equals(list2) : list2 == null;
     }
 
-    public List getServices() {
-        return this.services;
-    }
-
-    @Override // com.microsoft.appcenter.ingestion.models.Log
-    public String getType() {
-        return "startService";
-    }
-
     @Override // com.microsoft.appcenter.ingestion.models.AbstractLog
     public int hashCode() {
         int hashCode = super.hashCode() * 31;
         List list = this.services;
         return hashCode + (list != null ? list.hashCode() : 0);
-    }
-
-    @Override // com.microsoft.appcenter.ingestion.models.AbstractLog, com.microsoft.appcenter.ingestion.models.Model
-    public void read(JSONObject jSONObject) {
-        super.read(jSONObject);
-        setServices(JSONUtils.readStringArray(jSONObject, "services"));
-    }
-
-    public void setServices(List list) {
-        this.services = list;
-    }
-
-    @Override // com.microsoft.appcenter.ingestion.models.AbstractLog, com.microsoft.appcenter.ingestion.models.Model
-    public void write(JSONStringer jSONStringer) {
-        super.write(jSONStringer);
-        JSONUtils.writeStringArray(jSONStringer, "services", getServices());
     }
 }

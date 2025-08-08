@@ -1,37 +1,11 @@
 package kotlinx.coroutines.internal;
 
-import kotlin.text.StringsKt__StringNumberConversionsKt;
+import kotlin.text.StringsKt;
 import org.telegram.tgnet.ConnectionsManager;
 
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract /* synthetic */ class SystemPropsKt__SystemProps_commonKt {
-    public static final int systemProp(String str, int i, int i2, int i3) {
-        return (int) SystemPropsKt.systemProp(str, i, i2, i3);
-    }
-
-    public static final long systemProp(String str, long j, long j2, long j3) {
-        Long longOrNull;
-        String systemProp = SystemPropsKt.systemProp(str);
-        if (systemProp == null) {
-            return j;
-        }
-        longOrNull = StringsKt__StringNumberConversionsKt.toLongOrNull(systemProp);
-        if (longOrNull == null) {
-            throw new IllegalStateException(("System property '" + str + "' has unrecognized value '" + systemProp + '\'').toString());
-        }
-        long longValue = longOrNull.longValue();
-        if (j2 <= longValue && longValue <= j3) {
-            return longValue;
-        }
-        throw new IllegalStateException(("System property '" + str + "' should be in range " + j2 + ".." + j3 + ", but is '" + longValue + '\'').toString());
-    }
-
-    public static final String systemProp(String str, String str2) {
-        String systemProp = SystemPropsKt.systemProp(str);
-        return systemProp == null ? str2 : systemProp;
-    }
-
     public static final boolean systemProp(String str, boolean z) {
         String systemProp = SystemPropsKt.systemProp(str);
         return systemProp != null ? Boolean.parseBoolean(systemProp) : z;
@@ -47,6 +21,10 @@ public abstract /* synthetic */ class SystemPropsKt__SystemProps_commonKt {
         return SystemPropsKt.systemProp(str, i, i2, i3);
     }
 
+    public static final int systemProp(String str, int i, int i2, int i3) {
+        return (int) SystemPropsKt.systemProp(str, i, i2, i3);
+    }
+
     public static /* synthetic */ long systemProp$default(String str, long j, long j2, long j3, int i, Object obj) {
         if ((i & 4) != 0) {
             j2 = 1;
@@ -56,5 +34,26 @@ public abstract /* synthetic */ class SystemPropsKt__SystemProps_commonKt {
             j3 = Long.MAX_VALUE;
         }
         return SystemPropsKt.systemProp(str, j, j4, j3);
+    }
+
+    public static final long systemProp(String str, long j, long j2, long j3) {
+        String systemProp = SystemPropsKt.systemProp(str);
+        if (systemProp == null) {
+            return j;
+        }
+        Long longOrNull = StringsKt.toLongOrNull(systemProp);
+        if (longOrNull == null) {
+            throw new IllegalStateException(("System property '" + str + "' has unrecognized value '" + systemProp + '\'').toString());
+        }
+        long longValue = longOrNull.longValue();
+        if (j2 <= longValue && longValue <= j3) {
+            return longValue;
+        }
+        throw new IllegalStateException(("System property '" + str + "' should be in range " + j2 + ".." + j3 + ", but is '" + longValue + '\'').toString());
+    }
+
+    public static final String systemProp(String str, String str2) {
+        String systemProp = SystemPropsKt.systemProp(str);
+        return systemProp == null ? str2 : systemProp;
     }
 }

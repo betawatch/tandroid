@@ -19,16 +19,6 @@ class CancellationSignalProvider {
         }
     };
 
-    private static class Api16Impl {
-        static void cancel(CancellationSignal cancellationSignal) {
-            cancellationSignal.cancel();
-        }
-
-        static CancellationSignal create() {
-            return new CancellationSignal();
-        }
-    }
-
     interface Injector {
         CancellationSignal getBiometricCancellationSignal();
 
@@ -36,6 +26,20 @@ class CancellationSignalProvider {
     }
 
     CancellationSignalProvider() {
+    }
+
+    CancellationSignal getBiometricCancellationSignal() {
+        if (this.mBiometricCancellationSignal == null) {
+            this.mBiometricCancellationSignal = this.mInjector.getBiometricCancellationSignal();
+        }
+        return this.mBiometricCancellationSignal;
+    }
+
+    androidx.core.os.CancellationSignal getFingerprintCancellationSignal() {
+        if (this.mFingerprintCancellationSignal == null) {
+            this.mFingerprintCancellationSignal = this.mInjector.getFingerprintCancellationSignal();
+        }
+        return this.mFingerprintCancellationSignal;
     }
 
     void cancel() {
@@ -59,17 +63,13 @@ class CancellationSignalProvider {
         }
     }
 
-    CancellationSignal getBiometricCancellationSignal() {
-        if (this.mBiometricCancellationSignal == null) {
-            this.mBiometricCancellationSignal = this.mInjector.getBiometricCancellationSignal();
+    private static class Api16Impl {
+        static CancellationSignal create() {
+            return new CancellationSignal();
         }
-        return this.mBiometricCancellationSignal;
-    }
 
-    androidx.core.os.CancellationSignal getFingerprintCancellationSignal() {
-        if (this.mFingerprintCancellationSignal == null) {
-            this.mFingerprintCancellationSignal = this.mInjector.getFingerprintCancellationSignal();
+        static void cancel(CancellationSignal cancellationSignal) {
+            cancellationSignal.cancel();
         }
-        return this.mFingerprintCancellationSignal;
     }
 }

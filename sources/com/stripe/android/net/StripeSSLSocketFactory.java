@@ -10,7 +10,7 @@ import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class StripeSSLSocketFactory extends SSLSocketFactory {
     private final boolean tlsv11Supported;
     private final boolean tlsv12Supported;
@@ -36,20 +36,19 @@ public class StripeSSLSocketFactory extends SSLSocketFactory {
         this.tlsv12Supported = z2;
     }
 
-    private Socket fixupSocket(Socket socket) {
-        if (!(socket instanceof SSLSocket)) {
-            return socket;
-        }
-        SSLSocket sSLSocket = (SSLSocket) socket;
-        HashSet hashSet = new HashSet(Arrays.asList(sSLSocket.getEnabledProtocols()));
-        if (this.tlsv11Supported) {
-            hashSet.add("TLSv1.1");
-        }
-        if (this.tlsv12Supported) {
-            hashSet.add("TLSv1.2");
-        }
-        sSLSocket.setEnabledProtocols((String[]) hashSet.toArray(new String[0]));
-        return sSLSocket;
+    @Override // javax.net.ssl.SSLSocketFactory
+    public String[] getDefaultCipherSuites() {
+        return this.under.getDefaultCipherSuites();
+    }
+
+    @Override // javax.net.ssl.SSLSocketFactory
+    public String[] getSupportedCipherSuites() {
+        return this.under.getSupportedCipherSuites();
+    }
+
+    @Override // javax.net.ssl.SSLSocketFactory
+    public Socket createSocket(Socket socket, String str, int i, boolean z) {
+        return fixupSocket(this.under.createSocket(socket, str, i, z));
     }
 
     @Override // javax.net.SocketFactory
@@ -72,18 +71,19 @@ public class StripeSSLSocketFactory extends SSLSocketFactory {
         return fixupSocket(this.under.createSocket(inetAddress, i, inetAddress2, i2));
     }
 
-    @Override // javax.net.ssl.SSLSocketFactory
-    public Socket createSocket(Socket socket, String str, int i, boolean z) {
-        return fixupSocket(this.under.createSocket(socket, str, i, z));
-    }
-
-    @Override // javax.net.ssl.SSLSocketFactory
-    public String[] getDefaultCipherSuites() {
-        return this.under.getDefaultCipherSuites();
-    }
-
-    @Override // javax.net.ssl.SSLSocketFactory
-    public String[] getSupportedCipherSuites() {
-        return this.under.getSupportedCipherSuites();
+    private Socket fixupSocket(Socket socket) {
+        if (!(socket instanceof SSLSocket)) {
+            return socket;
+        }
+        SSLSocket sSLSocket = (SSLSocket) socket;
+        HashSet hashSet = new HashSet(Arrays.asList(sSLSocket.getEnabledProtocols()));
+        if (this.tlsv11Supported) {
+            hashSet.add("TLSv1.1");
+        }
+        if (this.tlsv12Supported) {
+            hashSet.add("TLSv1.2");
+        }
+        sSLSocket.setEnabledProtocols((String[]) hashSet.toArray(new String[0]));
+        return sSLSocket;
     }
 }

@@ -15,12 +15,6 @@ public final class TaskStackBuilder implements Iterable {
     private final ArrayList mIntents = new ArrayList();
     private final Context mSourceContext;
 
-    static class Api16Impl {
-        static PendingIntent getActivities(Context context, int i, Intent[] intentArr, int i2, Bundle bundle) {
-            return PendingIntent.getActivities(context, i, intentArr, i2, bundle);
-        }
-    }
-
     private TaskStackBuilder(Context context) {
         this.mSourceContext = context;
     }
@@ -49,20 +43,21 @@ public final class TaskStackBuilder implements Iterable {
     public TaskStackBuilder addParentStack(ComponentName componentName) {
         int size = this.mIntents.size();
         try {
-            Context context = this.mSourceContext;
-            while (true) {
-                Intent parentActivityIntent = NavUtils.getParentActivityIntent(context, componentName);
-                if (parentActivityIntent == null) {
-                    return this;
-                }
+            Intent parentActivityIntent = NavUtils.getParentActivityIntent(this.mSourceContext, componentName);
+            while (parentActivityIntent != null) {
                 this.mIntents.add(size, parentActivityIntent);
-                context = this.mSourceContext;
-                componentName = parentActivityIntent.getComponent();
+                parentActivityIntent = NavUtils.getParentActivityIntent(this.mSourceContext, parentActivityIntent.getComponent());
             }
+            return this;
         } catch (PackageManager.NameNotFoundException e) {
             Log.e("TaskStackBuilder", "Bad ComponentName while traversing activity parent metadata");
             throw new IllegalArgumentException(e);
         }
+    }
+
+    @Override // java.lang.Iterable
+    public Iterator iterator() {
+        return this.mIntents.iterator();
     }
 
     public PendingIntent getPendingIntent(int i, int i2) {
@@ -78,8 +73,9 @@ public final class TaskStackBuilder implements Iterable {
         return Api16Impl.getActivities(this.mSourceContext, i, intentArr, i2, bundle);
     }
 
-    @Override // java.lang.Iterable
-    public Iterator iterator() {
-        return this.mIntents.iterator();
+    static class Api16Impl {
+        static PendingIntent getActivities(Context context, int i, Intent[] intentArr, int i2, Bundle bundle) {
+            return PendingIntent.getActivities(context, i, intentArr, i2, bundle);
+        }
     }
 }

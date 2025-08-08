@@ -3,13 +3,13 @@ package kotlinx.coroutines.flow;
 import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.InlineMarker;
 import org.telegram.tgnet.TLObject;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1 implements Flow {
     final /* synthetic */ Function3 $action$inlined;
     final /* synthetic */ Flow $this_catch$inlined;
@@ -32,11 +32,6 @@ public final class FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1 implements Flow 
         }
     }
 
-    public FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1(Flow flow, Function3 function3) {
-        this.$this_catch$inlined = flow;
-        this.$action$inlined = function3;
-    }
-
     /* JADX WARN: Removed duplicated region for block: B:19:0x0057  */
     /* JADX WARN: Removed duplicated region for block: B:22:0x0040  */
     /* JADX WARN: Removed duplicated region for block: B:8:0x0024  */
@@ -46,7 +41,6 @@ public final class FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1 implements Flow 
     */
     public Object collect(FlowCollector flowCollector, Continuation continuation) {
         1 r0;
-        Object coroutine_suspended;
         int i;
         FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1 flowKt__ErrorsKt$catch$$inlined$unsafeFlow$1;
         Throwable th;
@@ -56,7 +50,7 @@ public final class FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1 implements Flow 
             if ((i2 & TLObject.FLAG_31) != 0) {
                 r0.label = i2 - TLObject.FLAG_31;
                 Object obj = r0.result;
-                coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = r0.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
@@ -99,7 +93,7 @@ public final class FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1 implements Flow 
         }
         r0 = new 1(continuation);
         Object obj2 = r0.result;
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = r0.label;
         if (i != 0) {
         }
@@ -107,5 +101,10 @@ public final class FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1 implements Flow 
         if (th != null) {
         }
         return Unit.INSTANCE;
+    }
+
+    public FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1(Flow flow, Function3 function3) {
+        this.$this_catch$inlined = flow;
+        this.$action$inlined = function3;
     }
 }

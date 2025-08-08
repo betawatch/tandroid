@@ -23,11 +23,6 @@ public final class AppInfoTable implements Metadata.Entry {
     public final int controlCode;
     public final String url;
 
-    public AppInfoTable(int i, String str) {
-        this.controlCode = i;
-        this.url = str;
-    }
-
     @Override // android.os.Parcelable
     public int describeContents() {
         return 0;
@@ -46,6 +41,11 @@ public final class AppInfoTable implements Metadata.Entry {
     @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
     public /* synthetic */ void populateMediaMetadata(MediaMetadata.Builder builder) {
         Metadata.Entry.-CC.$default$populateMediaMetadata(this, builder);
+    }
+
+    public AppInfoTable(int i, String str) {
+        this.controlCode = i;
+        this.url = str;
     }
 
     public String toString() {

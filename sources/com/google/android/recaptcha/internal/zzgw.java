@@ -22,20 +22,6 @@ public abstract class zzgw implements Iterable, Serializable {
     zzgw() {
     }
 
-    static int zzk(int i, int i2, int i3) {
-        int i4 = i2 - i;
-        if ((i | i2 | i4 | (i3 - i2)) >= 0) {
-            return i4;
-        }
-        if (i < 0) {
-            throw new IndexOutOfBoundsException("Beginning index: " + i + " < 0");
-        }
-        if (i2 < i) {
-            throw new IndexOutOfBoundsException("Beginning index larger than ending index: " + i + ", " + i2);
-        }
-        throw new IndexOutOfBoundsException("End index: " + i2 + " >= " + i3);
-    }
-
     public static zzgw zzm(byte[] bArr, int i, int i2) {
         zzk(i, i + i2, bArr.length);
         byte[] bArr2 = new byte[i2];
@@ -101,5 +87,19 @@ public abstract class zzgw implements Iterable, Serializable {
         byte[] bArr = new byte[zzd2];
         zze(bArr, 0, 0, zzd2);
         return bArr;
+    }
+
+    static int zzk(int i, int i2, int i3) {
+        int i4 = i2 - i;
+        if ((i | i2 | i4 | (i3 - i2)) >= 0) {
+            return i4;
+        }
+        if (i < 0) {
+            throw new IndexOutOfBoundsException("Beginning index: " + i + " < 0");
+        }
+        if (i2 < i) {
+            throw new IndexOutOfBoundsException("Beginning index larger than ending index: " + i + ", " + i2);
+        }
+        throw new IndexOutOfBoundsException("End index: " + i2 + " >= " + i3);
     }
 }

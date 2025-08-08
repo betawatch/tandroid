@@ -35,6 +35,15 @@ public class TextRightIconCell extends FrameLayout {
         setBackground(Theme.AdaptiveRipple.filledRectByKey(Theme.key_dialogBackground));
     }
 
+    public void setTextAndIcon(CharSequence charSequence, int i) {
+        this.textView.setText(charSequence);
+        this.ivIcon.setImageResource(i);
+    }
+
+    public void setDivider(boolean z) {
+        this.needDivider = z;
+    }
+
     @Override // android.view.ViewGroup, android.view.View
     protected void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
@@ -46,14 +55,5 @@ public class TextRightIconCell extends FrameLayout {
             }
             canvas.drawLine(AndroidUtilities.dp(22.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, paint);
         }
-    }
-
-    public void setDivider(boolean z) {
-        this.needDivider = z;
-    }
-
-    public void setTextAndIcon(CharSequence charSequence, int i) {
-        this.textView.setText(charSequence);
-        this.ivIcon.setImageResource(i);
     }
 }

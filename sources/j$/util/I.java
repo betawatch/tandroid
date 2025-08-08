@@ -52,7 +52,7 @@ public final /* synthetic */ class I implements Spliterator.OfLong {
 
     @Override // java.util.Spliterator.OfLong
     public final /* synthetic */ void forEachRemaining(LongConsumer longConsumer) {
-        this.a.forEachRemaining(j$.util.function.Q.a(longConsumer));
+        this.a.forEachRemaining(j$.util.function.W.a(longConsumer));
     }
 
     @Override // java.util.Spliterator
@@ -86,7 +86,7 @@ public final /* synthetic */ class I implements Spliterator.OfLong {
 
     @Override // java.util.Spliterator.OfLong
     public final /* synthetic */ boolean tryAdvance(LongConsumer longConsumer) {
-        return this.a.tryAdvance(j$.util.function.Q.a(longConsumer));
+        return this.a.tryAdvance(j$.util.function.W.a(longConsumer));
     }
 
     @Override // java.util.Spliterator.OfLong, java.util.Spliterator.OfPrimitive, java.util.Spliterator

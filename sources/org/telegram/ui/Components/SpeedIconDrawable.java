@@ -9,11 +9,20 @@ import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.AnimatedTextView;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class SpeedIconDrawable extends Drawable {
     private final Drawable.Callback callback;
     private final Paint outlinePaint;
     private final AnimatedTextView.AnimatedTextDrawable textDrawable;
+
+    @Override // android.graphics.drawable.Drawable
+    public int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setColorFilter(ColorFilter colorFilter) {
+    }
 
     public SpeedIconDrawable(boolean z) {
         Drawable.Callback callback = new Drawable.Callback() { // from class: org.telegram.ui.Components.SpeedIconDrawable.1
@@ -42,13 +51,13 @@ public class SpeedIconDrawable extends Drawable {
         animatedTextDrawable.setTextSize(AndroidUtilities.dp(10.0f));
         animatedTextDrawable.getPaint().setStyle(Paint.Style.FILL_AND_STROKE);
         animatedTextDrawable.getPaint().setStrokeWidth(AndroidUtilities.dpf2(0.6f));
-        if (!z) {
-            this.outlinePaint = null;
+        if (z) {
+            Paint paint = new Paint(1);
+            this.outlinePaint = paint;
+            paint.setStyle(Paint.Style.STROKE);
             return;
         }
-        Paint paint = new Paint(1);
-        this.outlinePaint = paint;
-        paint.setStyle(Paint.Style.STROKE);
+        this.outlinePaint = null;
     }
 
     public static String formatNumber(float f) {
@@ -59,6 +68,16 @@ public class SpeedIconDrawable extends Drawable {
             return "" + j;
         }
         return "" + round;
+    }
+
+    public void setValue(float f, boolean z) {
+        String str = formatNumber(f) + "X";
+        if (z && TextUtils.equals(this.textDrawable.getText(), str)) {
+            return;
+        }
+        this.textDrawable.cancelAnimation();
+        this.textDrawable.setText(str, z);
+        invalidateSelf();
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -76,18 +95,13 @@ public class SpeedIconDrawable extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public int getIntrinsicHeight() {
-        return AndroidUtilities.dp(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
     public int getIntrinsicWidth() {
         return AndroidUtilities.dp(24.0f);
     }
 
     @Override // android.graphics.drawable.Drawable
-    public int getOpacity() {
-        return -2;
+    public int getIntrinsicHeight() {
+        return AndroidUtilities.dp(24.0f);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -105,19 +119,5 @@ public class SpeedIconDrawable extends Drawable {
         if (paint != null) {
             paint.setColor(i);
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setColorFilter(ColorFilter colorFilter) {
-    }
-
-    public void setValue(float f, boolean z) {
-        String str = formatNumber(f) + "X";
-        if (z && TextUtils.equals(this.textDrawable.getText(), str)) {
-            return;
-        }
-        this.textDrawable.cancelAnimation();
-        this.textDrawable.setText(str, z);
-        invalidateSelf();
     }
 }

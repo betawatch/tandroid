@@ -5,9 +5,9 @@ import com.google.android.datatransport.runtime.dagger.internal.Preconditions;
 
 /* loaded from: classes.dex */
 public final class EventStoreModule_StoreConfigFactory implements Factory {
-
-    private static final class InstanceHolder {
-        private static final EventStoreModule_StoreConfigFactory INSTANCE = new EventStoreModule_StoreConfigFactory();
+    @Override // javax.inject.Provider
+    public EventStoreConfig get() {
+        return storeConfig();
     }
 
     public static EventStoreModule_StoreConfigFactory create() {
@@ -18,8 +18,7 @@ public final class EventStoreModule_StoreConfigFactory implements Factory {
         return (EventStoreConfig) Preconditions.checkNotNull(EventStoreModule.storeConfig(), "Cannot return null from a non-@Nullable @Provides method");
     }
 
-    @Override // javax.inject.Provider
-    public EventStoreConfig get() {
-        return storeConfig();
+    private static final class InstanceHolder {
+        private static final EventStoreModule_StoreConfigFactory INSTANCE = new EventStoreModule_StoreConfigFactory();
     }
 }

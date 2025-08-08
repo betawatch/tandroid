@@ -7,11 +7,11 @@ import kotlin.jvm.internal.Intrinsics;
 public abstract class ViewModelProviderGetKt {
     public static final CreationExtras defaultCreationExtras(ViewModelStoreOwner owner) {
         Intrinsics.checkNotNullParameter(owner, "owner");
-        if (!(owner instanceof HasDefaultViewModelProviderFactory)) {
-            return CreationExtras.Empty.INSTANCE;
+        if (owner instanceof HasDefaultViewModelProviderFactory) {
+            CreationExtras defaultViewModelCreationExtras = ((HasDefaultViewModelProviderFactory) owner).getDefaultViewModelCreationExtras();
+            Intrinsics.checkNotNullExpressionValue(defaultViewModelCreationExtras, "{\n        owner.defaultV…ModelCreationExtras\n    }");
+            return defaultViewModelCreationExtras;
         }
-        CreationExtras defaultViewModelCreationExtras = ((HasDefaultViewModelProviderFactory) owner).getDefaultViewModelCreationExtras();
-        Intrinsics.checkNotNullExpressionValue(defaultViewModelCreationExtras, "{\n        owner.defaultV…ModelCreationExtras\n    }");
-        return defaultViewModelCreationExtras;
+        return CreationExtras.Empty.INSTANCE;
     }
 }

@@ -35,8 +35,10 @@ public final class zzcq implements zzdd {
                 zzf2.zzd(((Boolean) zza2).booleanValue());
             } else if (zza2 instanceof Character) {
                 zzf2.zzp(zza2.toString());
+            } else if (zza2 instanceof String) {
+                zzf2.zzv((String) zza2);
             } else {
-                zzf2.zzv(zza2 instanceof String ? (String) zza2 : zza2.toString());
+                zzf2.zzv(zza2.toString());
             }
             zzf.zze((zzpk) zzf2.zzj());
         }

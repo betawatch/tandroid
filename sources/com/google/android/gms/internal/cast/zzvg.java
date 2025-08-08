@@ -10,12 +10,6 @@ final class zzvg extends zzsi implements RandomAccess {
     private Object[] zzb;
     private int zzc;
 
-    private zzvg(Object[] objArr, int i, boolean z) {
-        super(z);
-        this.zzb = objArr;
-        this.zzc = i;
-    }
-
     public static zzvg zzd() {
         return zza;
     }
@@ -50,22 +44,6 @@ final class zzvg extends zzsi implements RandomAccess {
         this.zzb[i] = obj;
         this.zzc++;
         ((AbstractList) this).modCount++;
-    }
-
-    @Override // com.google.android.gms.internal.cast.zzsi, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean add(Object obj) {
-        zza();
-        int i = this.zzc;
-        Object[] objArr = this.zzb;
-        if (i == objArr.length) {
-            this.zzb = Arrays.copyOf(objArr, ((i * 3) / 2) + 1);
-        }
-        Object[] objArr2 = this.zzb;
-        int i2 = this.zzc;
-        this.zzc = i2 + 1;
-        objArr2[i2] = obj;
-        ((AbstractList) this).modCount++;
-        return true;
     }
 
     @Override // java.util.AbstractList, java.util.List
@@ -110,5 +88,27 @@ final class zzvg extends zzsi implements RandomAccess {
             return new zzvg(Arrays.copyOf(this.zzb, i), this.zzc, true);
         }
         throw new IllegalArgumentException();
+    }
+
+    private zzvg(Object[] objArr, int i, boolean z) {
+        super(z);
+        this.zzb = objArr;
+        this.zzc = i;
+    }
+
+    @Override // com.google.android.gms.internal.cast.zzsi, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final boolean add(Object obj) {
+        zza();
+        int i = this.zzc;
+        Object[] objArr = this.zzb;
+        if (i == objArr.length) {
+            this.zzb = Arrays.copyOf(objArr, ((i * 3) / 2) + 1);
+        }
+        Object[] objArr2 = this.zzb;
+        int i2 = this.zzc;
+        this.zzc = i2 + 1;
+        objArr2[i2] = obj;
+        ((AbstractList) this).modCount++;
+        return true;
     }
 }

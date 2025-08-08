@@ -12,6 +12,14 @@ public final class TypefaceEmojiSpan extends EmojiSpan {
         super(emojiMetadata);
     }
 
+    @Override // android.text.style.ReplacementSpan
+    public void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
+        if (EmojiCompat.get().isEmojiSpanIndicatorEnabled()) {
+            canvas.drawRect(f, i3, f + getWidth(), i5, getDebugPaint());
+        }
+        getMetadata().draw(canvas, f, i4, paint);
+    }
+
     private static Paint getDebugPaint() {
         if (sDebugPaint == null) {
             TextPaint textPaint = new TextPaint();
@@ -20,13 +28,5 @@ public final class TypefaceEmojiSpan extends EmojiSpan {
             sDebugPaint.setStyle(Paint.Style.FILL);
         }
         return sDebugPaint;
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
-        if (EmojiCompat.get().isEmojiSpanIndicatorEnabled()) {
-            canvas.drawRect(f, i3, f + getWidth(), i5, getDebugPaint());
-        }
-        getMetadata().draw(canvas, f, i4, paint);
     }
 }

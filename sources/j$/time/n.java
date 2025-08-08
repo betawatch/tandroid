@@ -8,24 +8,24 @@ final class n extends ZoneId {
     private final String b;
     private final transient ZoneRules c;
 
+    static n n(String str) {
+        A.z(str, "zoneId");
+        int length = str.length();
+        if (length >= 2) {
+            for (int i = 0; i < length; i++) {
+                char charAt = str.charAt(i);
+                if ((charAt < 'a' || charAt > 'z') && ((charAt < 'A' || charAt > 'Z') && ((charAt != '/' || i == 0) && ((charAt < '0' || charAt > '9' || i == 0) && ((charAt != '~' || i == 0) && ((charAt != '.' || i == 0) && ((charAt != '_' || i == 0) && ((charAt != '+' || i == 0) && (charAt != '-' || i == 0))))))))) {
+                    throw new c("Invalid ID for region-based ZoneId, invalid format: ".concat(str));
+                }
+            }
+            return new n(str, j$.time.zone.e.a(str, true));
+        }
+        throw new c("Invalid ID for region-based ZoneId, invalid format: ".concat(str));
+    }
+
     n(String str, ZoneRules zoneRules) {
         this.b = str;
         this.c = zoneRules;
-    }
-
-    static n o(String str) {
-        A.z(str, "zoneId");
-        int length = str.length();
-        if (length < 2) {
-            throw new c("Invalid ID for region-based ZoneId, invalid format: ".concat(str));
-        }
-        for (int i = 0; i < length; i++) {
-            char charAt = str.charAt(i);
-            if ((charAt < 'a' || charAt > 'z') && ((charAt < 'A' || charAt > 'Z') && ((charAt != '/' || i == 0) && ((charAt < '0' || charAt > '9' || i == 0) && ((charAt != '~' || i == 0) && ((charAt != '.' || i == 0) && ((charAt != '_' || i == 0) && ((charAt != '+' || i == 0) && (charAt != '-' || i == 0))))))))) {
-                throw new c("Invalid ID for region-based ZoneId, invalid format: ".concat(str));
-            }
-        }
-        return new n(str, j$.time.zone.f.a(str, true));
     }
 
     @Override // j$.time.ZoneId
@@ -36,6 +36,6 @@ final class n extends ZoneId {
     @Override // j$.time.ZoneId
     public final ZoneRules getRules() {
         ZoneRules zoneRules = this.c;
-        return zoneRules != null ? zoneRules : j$.time.zone.f.a(this.b, false);
+        return zoneRules != null ? zoneRules : j$.time.zone.e.a(this.b, false);
     }
 }

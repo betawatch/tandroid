@@ -16,10 +16,49 @@ public abstract class GridLayoutManagerFixed extends GridLayoutManager {
     private ArrayList additionalViews;
     private boolean canScrollVertically;
 
+    protected abstract boolean hasSiblingChild(int i);
+
+    public abstract boolean shouldLayoutChildFromOpositeSide(View view);
+
     public GridLayoutManagerFixed(Context context, int i, int i2, boolean z) {
         super(context, i, i2, z);
         this.additionalViews = new ArrayList(4);
         this.canScrollVertically = true;
+    }
+
+    public void setCanScrollVertically(boolean z) {
+        this.canScrollVertically = z;
+    }
+
+    @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
+    public boolean canScrollVertically() {
+        return this.canScrollVertically;
+    }
+
+    @Override // androidx.recyclerview.widget.LinearLayoutManager
+    protected void recycleViewsFromStart(RecyclerView.Recycler recycler, int i, int i2) {
+        if (i < 0) {
+            return;
+        }
+        int childCount = getChildCount();
+        if (!this.mShouldReverseLayout) {
+            for (int i3 = 0; i3 < childCount; i3++) {
+                View childAt = getChildAt(i3);
+                if (childAt.getBottom() + ((ViewGroup.MarginLayoutParams) ((RecyclerView.LayoutParams) childAt.getLayoutParams())).bottomMargin > i || childAt.getTop() + childAt.getHeight() > i) {
+                    recycleChildren(recycler, 0, i3);
+                    return;
+                }
+            }
+            return;
+        }
+        int i4 = childCount - 1;
+        for (int i5 = i4; i5 >= 0; i5--) {
+            View childAt2 = getChildAt(i5);
+            if (childAt2.getBottom() + ((ViewGroup.MarginLayoutParams) ((RecyclerView.LayoutParams) childAt2.getLayoutParams())).bottomMargin > i || childAt2.getTop() + childAt2.getHeight() > i) {
+                recycleChildren(recycler, i4, i5);
+                return;
+            }
+        }
     }
 
     @Override // androidx.recyclerview.widget.GridLayoutManager
@@ -34,24 +73,25 @@ public abstract class GridLayoutManagerFixed extends GridLayoutManager {
         return iArr;
     }
 
-    @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
-    public boolean canScrollVertically() {
-        return this.canScrollVertically;
+    @Override // androidx.recyclerview.widget.GridLayoutManager
+    protected void measureChild(View view, int i, boolean z) {
+        GridLayoutManager.LayoutParams layoutParams = (GridLayoutManager.LayoutParams) view.getLayoutParams();
+        Rect rect = layoutParams.mDecorInsets;
+        int i2 = rect.top + rect.bottom + ((ViewGroup.MarginLayoutParams) layoutParams).topMargin + ((ViewGroup.MarginLayoutParams) layoutParams).bottomMargin;
+        measureChildWithDecorationsAndMargin(view, RecyclerView.LayoutManager.getChildMeasureSpec(this.mCachedBorders[layoutParams.mSpanSize], i, rect.left + rect.right + ((ViewGroup.MarginLayoutParams) layoutParams).leftMargin + ((ViewGroup.MarginLayoutParams) layoutParams).rightMargin, ((ViewGroup.MarginLayoutParams) layoutParams).width, false), RecyclerView.LayoutManager.getChildMeasureSpec(this.mOrientationHelper.getTotalSpace(), getHeightMode(), i2, ((ViewGroup.MarginLayoutParams) layoutParams).height, true), z);
     }
 
-    protected abstract boolean hasSiblingChild(int i);
-
-    /* JADX WARN: Code restructure failed: missing block: B:146:0x00d8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:145:0x00d9, code lost:
     
         r28.mFinished = r13;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:147:0x00da, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:146:0x00db, code lost:
     
         return;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:93:0x018a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:92:0x018b, code lost:
     
-        if (r27.mLayoutDirection != (-1)) goto L85;
+        if (r27.mLayoutDirection != (-1)) goto L84;
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r12v0 */
@@ -83,7 +123,11 @@ public abstract class GridLayoutManagerFixed extends GridLayoutManager {
         int i8 = layoutState.mCurrentPosition;
         int i9 = -1;
         if (this.mShouldReverseLayout && layoutState.mLayoutDirection != -1 && hasSiblingChild(i8) && findViewByPosition(layoutState.mCurrentPosition + 1) == null) {
-            layoutState.mCurrentPosition = hasSiblingChild(layoutState.mCurrentPosition + 1) ? layoutState.mCurrentPosition + 3 : layoutState.mCurrentPosition + 2;
+            if (hasSiblingChild(layoutState.mCurrentPosition + 1)) {
+                layoutState.mCurrentPosition += 3;
+            } else {
+                layoutState.mCurrentPosition += 2;
+            }
             int i10 = layoutState.mCurrentPosition;
             for (int i11 = i10; i11 > i8; i11--) {
                 View next2 = layoutState.next(recycler2);
@@ -111,12 +155,12 @@ public abstract class GridLayoutManagerFixed extends GridLayoutManager {
                 if (i12 < 0) {
                     break;
                 }
-                if (this.additionalViews.isEmpty()) {
-                    next = layoutState.next(recycler2);
-                } else {
+                if (!this.additionalViews.isEmpty()) {
                     next = (View) this.additionalViews.get(r12);
                     this.additionalViews.remove((int) r12);
                     layoutState.mCurrentPosition -= r13;
+                } else {
+                    next = layoutState.next(recycler2);
                 }
                 if (next == null) {
                     break;
@@ -250,44 +294,4 @@ public abstract class GridLayoutManagerFixed extends GridLayoutManager {
             i9 = -1;
         }
     }
-
-    @Override // androidx.recyclerview.widget.GridLayoutManager
-    protected void measureChild(View view, int i, boolean z) {
-        GridLayoutManager.LayoutParams layoutParams = (GridLayoutManager.LayoutParams) view.getLayoutParams();
-        Rect rect = layoutParams.mDecorInsets;
-        int i2 = rect.top + rect.bottom + ((ViewGroup.MarginLayoutParams) layoutParams).topMargin + ((ViewGroup.MarginLayoutParams) layoutParams).bottomMargin;
-        measureChildWithDecorationsAndMargin(view, RecyclerView.LayoutManager.getChildMeasureSpec(this.mCachedBorders[layoutParams.mSpanSize], i, rect.left + rect.right + ((ViewGroup.MarginLayoutParams) layoutParams).leftMargin + ((ViewGroup.MarginLayoutParams) layoutParams).rightMargin, ((ViewGroup.MarginLayoutParams) layoutParams).width, false), RecyclerView.LayoutManager.getChildMeasureSpec(this.mOrientationHelper.getTotalSpace(), getHeightMode(), i2, ((ViewGroup.MarginLayoutParams) layoutParams).height, true), z);
-    }
-
-    @Override // androidx.recyclerview.widget.LinearLayoutManager
-    protected void recycleViewsFromStart(RecyclerView.Recycler recycler, int i, int i2) {
-        if (i < 0) {
-            return;
-        }
-        int childCount = getChildCount();
-        if (!this.mShouldReverseLayout) {
-            for (int i3 = 0; i3 < childCount; i3++) {
-                View childAt = getChildAt(i3);
-                if (childAt.getBottom() + ((ViewGroup.MarginLayoutParams) ((RecyclerView.LayoutParams) childAt.getLayoutParams())).bottomMargin > i || childAt.getTop() + childAt.getHeight() > i) {
-                    recycleChildren(recycler, 0, i3);
-                    return;
-                }
-            }
-            return;
-        }
-        int i4 = childCount - 1;
-        for (int i5 = i4; i5 >= 0; i5--) {
-            View childAt2 = getChildAt(i5);
-            if (childAt2.getBottom() + ((ViewGroup.MarginLayoutParams) ((RecyclerView.LayoutParams) childAt2.getLayoutParams())).bottomMargin > i || childAt2.getTop() + childAt2.getHeight() > i) {
-                recycleChildren(recycler, i4, i5);
-                return;
-            }
-        }
-    }
-
-    public void setCanScrollVertically(boolean z) {
-        this.canScrollVertically = z;
-    }
-
-    public abstract boolean shouldLayoutChildFromOpositeSide(View view);
 }

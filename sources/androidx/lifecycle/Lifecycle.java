@@ -6,6 +6,67 @@ import java.util.concurrent.atomic.AtomicReference;
 public abstract class Lifecycle {
     AtomicReference mInternalScopeRef = new AtomicReference();
 
+    public abstract void addObserver(LifecycleObserver lifecycleObserver);
+
+    public abstract State getCurrentState();
+
+    public abstract void removeObserver(LifecycleObserver lifecycleObserver);
+
+    public enum Event {
+        ON_CREATE,
+        ON_START,
+        ON_RESUME,
+        ON_PAUSE,
+        ON_STOP,
+        ON_DESTROY,
+        ON_ANY;
+
+        public static Event downFrom(State state) {
+            int i = 1.$SwitchMap$androidx$lifecycle$Lifecycle$State[state.ordinal()];
+            if (i == 1) {
+                return ON_DESTROY;
+            }
+            if (i == 2) {
+                return ON_STOP;
+            }
+            if (i != 3) {
+                return null;
+            }
+            return ON_PAUSE;
+        }
+
+        public static Event upFrom(State state) {
+            int i = 1.$SwitchMap$androidx$lifecycle$Lifecycle$State[state.ordinal()];
+            if (i == 1) {
+                return ON_START;
+            }
+            if (i == 2) {
+                return ON_RESUME;
+            }
+            if (i != 5) {
+                return null;
+            }
+            return ON_CREATE;
+        }
+
+        public State getTargetState() {
+            switch (1.$SwitchMap$androidx$lifecycle$Lifecycle$Event[ordinal()]) {
+                case 1:
+                case 2:
+                    return State.CREATED;
+                case 3:
+                case 4:
+                    return State.STARTED;
+                case 5:
+                    return State.RESUMED;
+                case 6:
+                    return State.DESTROYED;
+                default:
+                    throw new IllegalArgumentException(this + " has no target state");
+            }
+        }
+    }
+
     static /* synthetic */ class 1 {
         static final /* synthetic */ int[] $SwitchMap$androidx$lifecycle$Lifecycle$Event;
         static final /* synthetic */ int[] $SwitchMap$androidx$lifecycle$Lifecycle$State;
@@ -66,61 +127,6 @@ public abstract class Lifecycle {
         }
     }
 
-    public enum Event {
-        ON_CREATE,
-        ON_START,
-        ON_RESUME,
-        ON_PAUSE,
-        ON_STOP,
-        ON_DESTROY,
-        ON_ANY;
-
-        public static Event downFrom(State state) {
-            int i = 1.$SwitchMap$androidx$lifecycle$Lifecycle$State[state.ordinal()];
-            if (i == 1) {
-                return ON_DESTROY;
-            }
-            if (i == 2) {
-                return ON_STOP;
-            }
-            if (i != 3) {
-                return null;
-            }
-            return ON_PAUSE;
-        }
-
-        public static Event upFrom(State state) {
-            int i = 1.$SwitchMap$androidx$lifecycle$Lifecycle$State[state.ordinal()];
-            if (i == 1) {
-                return ON_START;
-            }
-            if (i == 2) {
-                return ON_RESUME;
-            }
-            if (i != 5) {
-                return null;
-            }
-            return ON_CREATE;
-        }
-
-        public State getTargetState() {
-            switch (1.$SwitchMap$androidx$lifecycle$Lifecycle$Event[ordinal()]) {
-                case 1:
-                case 2:
-                    return State.CREATED;
-                case 3:
-                case 4:
-                    return State.STARTED;
-                case 5:
-                    return State.RESUMED;
-                case 6:
-                    return State.DESTROYED;
-                default:
-                    throw new IllegalArgumentException(this + " has no target state");
-            }
-        }
-    }
-
     public enum State {
         DESTROYED,
         INITIALIZED,
@@ -132,10 +138,4 @@ public abstract class Lifecycle {
             return compareTo(state) >= 0;
         }
     }
-
-    public abstract void addObserver(LifecycleObserver lifecycleObserver);
-
-    public abstract State getCurrentState();
-
-    public abstract void removeObserver(LifecycleObserver lifecycleObserver);
 }

@@ -9,6 +9,9 @@ import java.util.Set;
 
 /* loaded from: classes.dex */
 public abstract class Multimaps {
+    public static ListMultimap newListMultimap(Map map, Supplier supplier) {
+        return new CustomListMultimap(map, supplier);
+    }
 
     private static class CustomListMultimap extends AbstractListMultimap {
         transient Supplier factory;
@@ -16,6 +19,11 @@ public abstract class Multimaps {
         CustomListMultimap(Map map, Supplier supplier) {
             super(map);
             this.factory = (Supplier) Preconditions.checkNotNull(supplier);
+        }
+
+        @Override // com.google.common.collect.AbstractMultimap
+        Set createKeySet() {
+            return createMaybeNavigableKeySet();
         }
 
         @Override // com.google.common.collect.AbstractMultimap
@@ -28,20 +36,17 @@ public abstract class Multimaps {
         public List createCollection() {
             return (List) this.factory.get();
         }
-
-        @Override // com.google.common.collect.AbstractMultimap
-        Set createKeySet() {
-            return createMaybeNavigableKeySet();
-        }
     }
 
     static abstract class Entries extends AbstractCollection {
+        abstract Multimap multimap();
+
         Entries() {
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection
-        public void clear() {
-            multimap().clear();
+        public int size() {
+            return multimap().size();
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection
@@ -53,8 +58,6 @@ public abstract class Multimaps {
             return multimap().containsEntry(entry.getKey(), entry.getValue());
         }
 
-        abstract Multimap multimap();
-
         @Override // java.util.AbstractCollection, java.util.Collection
         public boolean remove(Object obj) {
             if (!(obj instanceof Map.Entry)) {
@@ -65,8 +68,8 @@ public abstract class Multimaps {
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection
-        public int size() {
-            return multimap().size();
+        public void clear() {
+            multimap().clear();
         }
     }
 
@@ -78,9 +81,5 @@ public abstract class Multimaps {
             return multimap.asMap().equals(((Multimap) obj).asMap());
         }
         return false;
-    }
-
-    public static ListMultimap newListMultimap(Map map, Supplier supplier) {
-        return new CustomListMultimap(map, supplier);
     }
 }

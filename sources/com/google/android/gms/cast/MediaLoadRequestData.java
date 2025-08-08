@@ -102,21 +102,6 @@ public class MediaLoadRequestData extends AbstractSafeParcelable {
         this(mediaInfo, mediaQueueData, bool, j, d, jArr, CastUtils.jsonStringToJsonObject(str), str2, str3, str4, str5, j2);
     }
 
-    private MediaLoadRequestData(MediaInfo mediaInfo, MediaQueueData mediaQueueData, Boolean bool, long j, double d, long[] jArr, JSONObject jSONObject, String str, String str2, String str3, String str4, long j2) {
-        this.zzc = mediaInfo;
-        this.zzd = mediaQueueData;
-        this.zze = bool;
-        this.zzf = j;
-        this.zzg = d;
-        this.zzh = jArr;
-        this.zzi = jSONObject;
-        this.zzj = str;
-        this.zzk = str2;
-        this.zzl = str3;
-        this.zzm = str4;
-        this.zzn = j2;
-    }
-
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -229,5 +214,20 @@ public class MediaLoadRequestData extends AbstractSafeParcelable {
         SafeParcelWriter.writeString(parcel, 12, this.zzm, false);
         SafeParcelWriter.writeLong(parcel, 13, getRequestId());
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    private MediaLoadRequestData(MediaInfo mediaInfo, MediaQueueData mediaQueueData, Boolean bool, long j, double d, long[] jArr, JSONObject jSONObject, String str, String str2, String str3, String str4, long j2) {
+        this.zzc = mediaInfo;
+        this.zzd = mediaQueueData;
+        this.zze = bool;
+        this.zzf = j;
+        this.zzg = d;
+        this.zzh = jArr;
+        this.zzi = jSONObject;
+        this.zzj = str;
+        this.zzk = str2;
+        this.zzl = str3;
+        this.zzm = str4;
+        this.zzn = j2;
     }
 }

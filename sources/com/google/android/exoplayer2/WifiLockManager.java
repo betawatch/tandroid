@@ -15,18 +15,6 @@ final class WifiLockManager {
         this.wifiManager = (WifiManager) context.getApplicationContext().getSystemService("wifi");
     }
 
-    private void updateWifiLock() {
-        WifiManager.WifiLock wifiLock = this.wifiLock;
-        if (wifiLock == null) {
-            return;
-        }
-        if (this.enabled && this.stayAwake) {
-            wifiLock.acquire();
-        } else {
-            wifiLock.release();
-        }
-    }
-
     public void setEnabled(boolean z) {
         if (z && this.wifiLock == null) {
             WifiManager wifiManager = this.wifiManager;
@@ -46,5 +34,17 @@ final class WifiLockManager {
     public void setStayAwake(boolean z) {
         this.stayAwake = z;
         updateWifiLock();
+    }
+
+    private void updateWifiLock() {
+        WifiManager.WifiLock wifiLock = this.wifiLock;
+        if (wifiLock == null) {
+            return;
+        }
+        if (this.enabled && this.stayAwake) {
+            wifiLock.acquire();
+        } else {
+            wifiLock.release();
+        }
     }
 }

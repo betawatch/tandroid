@@ -1,6 +1,6 @@
 package kotlin.coroutines.jvm.internal;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public interface CoroutineStackFrame {
     CoroutineStackFrame getCallerFrame();
 }

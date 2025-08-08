@@ -15,7 +15,7 @@ import java.util.Map;
 import java.util.Set;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.Unit;
-import kotlin.collections.CollectionsKt___CollectionsKt;
+import kotlin.collections.CollectionsKt;
 import kotlin.coroutines.Continuation;
 import kotlin.jvm.internal.Intrinsics;
 
@@ -44,92 +44,13 @@ public final class PreferencesSerializer implements Serializer {
     private PreferencesSerializer() {
     }
 
-    private final void addProtoEntryToPreferences(String str, PreferencesProto$Value preferencesProto$Value, MutablePreferences mutablePreferences) {
-        Preferences.Key booleanKey;
-        Object valueOf;
-        PreferencesProto$Value.ValueCase valueCase = preferencesProto$Value.getValueCase();
-        switch (valueCase == null ? -1 : WhenMappings.$EnumSwitchMapping$0[valueCase.ordinal()]) {
-            case -1:
-                throw new CorruptionException("Value case is null.", null, 2, null);
-            case 0:
-            default:
-                throw new NoWhenBranchMatchedException();
-            case 1:
-                booleanKey = PreferencesKeys.booleanKey(str);
-                valueOf = Boolean.valueOf(preferencesProto$Value.getBoolean());
-                break;
-            case 2:
-                booleanKey = PreferencesKeys.floatKey(str);
-                valueOf = Float.valueOf(preferencesProto$Value.getFloat());
-                break;
-            case 3:
-                booleanKey = PreferencesKeys.doubleKey(str);
-                valueOf = Double.valueOf(preferencesProto$Value.getDouble());
-                break;
-            case 4:
-                booleanKey = PreferencesKeys.intKey(str);
-                valueOf = Integer.valueOf(preferencesProto$Value.getInteger());
-                break;
-            case 5:
-                booleanKey = PreferencesKeys.longKey(str);
-                valueOf = Long.valueOf(preferencesProto$Value.getLong());
-                break;
-            case 6:
-                booleanKey = PreferencesKeys.stringKey(str);
-                valueOf = preferencesProto$Value.getString();
-                Intrinsics.checkNotNullExpressionValue(valueOf, "value.string");
-                break;
-            case 7:
-                booleanKey = PreferencesKeys.stringSetKey(str);
-                List stringsList = preferencesProto$Value.getStringSet().getStringsList();
-                Intrinsics.checkNotNullExpressionValue(stringsList, "value.stringSet.stringsList");
-                valueOf = CollectionsKt___CollectionsKt.toSet(stringsList);
-                break;
-            case 8:
-                throw new CorruptionException("Value not set.", null, 2, null);
-        }
-        mutablePreferences.set(booleanKey, valueOf);
-    }
-
-    private final PreferencesProto$Value getValueProto(Object obj) {
-        GeneratedMessageLite build;
-        String str;
-        if (obj instanceof Boolean) {
-            build = PreferencesProto$Value.newBuilder().setBoolean(((Boolean) obj).booleanValue()).build();
-            str = "newBuilder().setBoolean(value).build()";
-        } else if (obj instanceof Float) {
-            build = PreferencesProto$Value.newBuilder().setFloat(((Number) obj).floatValue()).build();
-            str = "newBuilder().setFloat(value).build()";
-        } else if (obj instanceof Double) {
-            build = PreferencesProto$Value.newBuilder().setDouble(((Number) obj).doubleValue()).build();
-            str = "newBuilder().setDouble(value).build()";
-        } else if (obj instanceof Integer) {
-            build = PreferencesProto$Value.newBuilder().setInteger(((Number) obj).intValue()).build();
-            str = "newBuilder().setInteger(value).build()";
-        } else if (obj instanceof Long) {
-            build = PreferencesProto$Value.newBuilder().setLong(((Number) obj).longValue()).build();
-            str = "newBuilder().setLong(value).build()";
-        } else if (obj instanceof String) {
-            build = PreferencesProto$Value.newBuilder().setString((String) obj).build();
-            str = "newBuilder().setString(value).build()";
-        } else {
-            if (!(obj instanceof Set)) {
-                throw new IllegalStateException(Intrinsics.stringPlus("PreferencesSerializer does not support type: ", obj.getClass().getName()));
-            }
-            build = PreferencesProto$Value.newBuilder().setStringSet(PreferencesProto$StringSet.newBuilder().addAllStrings((Set) obj)).build();
-            str = "newBuilder().setStringSet(\n                    StringSet.newBuilder().addAllStrings(value as Set<String>)\n                ).build()";
-        }
-        Intrinsics.checkNotNullExpressionValue(build, str);
-        return (PreferencesProto$Value) build;
+    public final String getFileExtension() {
+        return fileExtension;
     }
 
     @Override // androidx.datastore.core.Serializer
     public Preferences getDefaultValue() {
         return PreferencesFactory.createEmpty();
-    }
-
-    public final String getFileExtension() {
-        return fileExtension;
     }
 
     @Override // androidx.datastore.core.Serializer
@@ -158,5 +79,84 @@ public final class PreferencesSerializer implements Serializer {
         }
         ((PreferencesProto$PreferenceMap) newBuilder.build()).writeTo(outputStream);
         return Unit.INSTANCE;
+    }
+
+    private final PreferencesProto$Value getValueProto(Object obj) {
+        if (obj instanceof Boolean) {
+            GeneratedMessageLite build = PreferencesProto$Value.newBuilder().setBoolean(((Boolean) obj).booleanValue()).build();
+            Intrinsics.checkNotNullExpressionValue(build, "newBuilder().setBoolean(value).build()");
+            return (PreferencesProto$Value) build;
+        }
+        if (obj instanceof Float) {
+            GeneratedMessageLite build2 = PreferencesProto$Value.newBuilder().setFloat(((Number) obj).floatValue()).build();
+            Intrinsics.checkNotNullExpressionValue(build2, "newBuilder().setFloat(value).build()");
+            return (PreferencesProto$Value) build2;
+        }
+        if (obj instanceof Double) {
+            GeneratedMessageLite build3 = PreferencesProto$Value.newBuilder().setDouble(((Number) obj).doubleValue()).build();
+            Intrinsics.checkNotNullExpressionValue(build3, "newBuilder().setDouble(value).build()");
+            return (PreferencesProto$Value) build3;
+        }
+        if (obj instanceof Integer) {
+            GeneratedMessageLite build4 = PreferencesProto$Value.newBuilder().setInteger(((Number) obj).intValue()).build();
+            Intrinsics.checkNotNullExpressionValue(build4, "newBuilder().setInteger(value).build()");
+            return (PreferencesProto$Value) build4;
+        }
+        if (obj instanceof Long) {
+            GeneratedMessageLite build5 = PreferencesProto$Value.newBuilder().setLong(((Number) obj).longValue()).build();
+            Intrinsics.checkNotNullExpressionValue(build5, "newBuilder().setLong(value).build()");
+            return (PreferencesProto$Value) build5;
+        }
+        if (obj instanceof String) {
+            GeneratedMessageLite build6 = PreferencesProto$Value.newBuilder().setString((String) obj).build();
+            Intrinsics.checkNotNullExpressionValue(build6, "newBuilder().setString(value).build()");
+            return (PreferencesProto$Value) build6;
+        }
+        if (obj instanceof Set) {
+            GeneratedMessageLite build7 = PreferencesProto$Value.newBuilder().setStringSet(PreferencesProto$StringSet.newBuilder().addAllStrings((Set) obj)).build();
+            Intrinsics.checkNotNullExpressionValue(build7, "newBuilder().setStringSet(\n                    StringSet.newBuilder().addAllStrings(value as Set<String>)\n                ).build()");
+            return (PreferencesProto$Value) build7;
+        }
+        throw new IllegalStateException(Intrinsics.stringPlus("PreferencesSerializer does not support type: ", obj.getClass().getName()));
+    }
+
+    private final void addProtoEntryToPreferences(String str, PreferencesProto$Value preferencesProto$Value, MutablePreferences mutablePreferences) {
+        PreferencesProto$Value.ValueCase valueCase = preferencesProto$Value.getValueCase();
+        switch (valueCase == null ? -1 : WhenMappings.$EnumSwitchMapping$0[valueCase.ordinal()]) {
+            case -1:
+                throw new CorruptionException("Value case is null.", null, 2, null);
+            case 0:
+            default:
+                throw new NoWhenBranchMatchedException();
+            case 1:
+                mutablePreferences.set(PreferencesKeys.booleanKey(str), Boolean.valueOf(preferencesProto$Value.getBoolean()));
+                return;
+            case 2:
+                mutablePreferences.set(PreferencesKeys.floatKey(str), Float.valueOf(preferencesProto$Value.getFloat()));
+                return;
+            case 3:
+                mutablePreferences.set(PreferencesKeys.doubleKey(str), Double.valueOf(preferencesProto$Value.getDouble()));
+                return;
+            case 4:
+                mutablePreferences.set(PreferencesKeys.intKey(str), Integer.valueOf(preferencesProto$Value.getInteger()));
+                return;
+            case 5:
+                mutablePreferences.set(PreferencesKeys.longKey(str), Long.valueOf(preferencesProto$Value.getLong()));
+                return;
+            case 6:
+                Preferences.Key stringKey = PreferencesKeys.stringKey(str);
+                String string = preferencesProto$Value.getString();
+                Intrinsics.checkNotNullExpressionValue(string, "value.string");
+                mutablePreferences.set(stringKey, string);
+                return;
+            case 7:
+                Preferences.Key stringSetKey = PreferencesKeys.stringSetKey(str);
+                List stringsList = preferencesProto$Value.getStringSet().getStringsList();
+                Intrinsics.checkNotNullExpressionValue(stringsList, "value.stringSet.stringsList");
+                mutablePreferences.set(stringSetKey, CollectionsKt.toSet(stringsList));
+                return;
+            case 8:
+                throw new CorruptionException("Value not set.", null, 2, null);
+        }
     }
 }

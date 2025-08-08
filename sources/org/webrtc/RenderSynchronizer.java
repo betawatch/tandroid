@@ -30,10 +30,6 @@ public final class RenderSynchronizer {
         void onRenderWindowOpen();
     }
 
-    public RenderSynchronizer() {
-        this(DEFAULT_TARGET_FPS);
-    }
-
     public RenderSynchronizer(float f) {
         this.lock = new Object();
         this.listeners = new CopyOnWriteArrayList();
@@ -49,23 +45,42 @@ public final class RenderSynchronizer {
         Logging.d(TAG, "Created");
     }
 
-    private void closeRenderWindow() {
-        this.renderWindowOpen = false;
-        traceRenderWindowChange();
-        Iterator<Listener> it = this.listeners.iterator();
-        while (it.hasNext()) {
-            it.next().onRenderWindowClose();
-        }
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$0() {
         this.choreographer = Choreographer.getInstance();
     }
 
+    public RenderSynchronizer() {
+        this(DEFAULT_TARGET_FPS);
+    }
+
+    public void registerListener(Listener listener) {
+        this.listeners.add(listener);
+        synchronized (this.lock) {
+            try {
+                if (!this.isListening) {
+                    Logging.d(TAG, "First listener, subscribing to frame callbacks");
+                    this.isListening = true;
+                    this.mainThreadHandler.post(new Runnable() { // from class: org.webrtc.RenderSynchronizer$$ExternalSyntheticLambda1
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            RenderSynchronizer.this.lambda$registerListener$1();
+                        }
+                    });
+                }
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$registerListener$1() {
         this.choreographer.postFrameCallback(new RenderSynchronizer$$ExternalSyntheticLambda2(this));
+    }
+
+    public void removeListener(Listener listener) {
+        this.listeners.remove(listener);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -93,6 +108,12 @@ public final class RenderSynchronizer {
         }
     }
 
+    private void traceRenderWindowChange() {
+        if (Build.VERSION.SDK_INT >= 29) {
+            Trace.setCounter("RenderWindow", this.renderWindowOpen ? 1L : 0L);
+        }
+    }
+
     private void openRenderWindow() {
         this.renderWindowOpen = true;
         traceRenderWindowChange();
@@ -102,33 +123,12 @@ public final class RenderSynchronizer {
         }
     }
 
-    private void traceRenderWindowChange() {
-        if (Build.VERSION.SDK_INT >= 29) {
-            Trace.setCounter("RenderWindow", this.renderWindowOpen ? 1L : 0L);
+    private void closeRenderWindow() {
+        this.renderWindowOpen = false;
+        traceRenderWindowChange();
+        Iterator<Listener> it = this.listeners.iterator();
+        while (it.hasNext()) {
+            it.next().onRenderWindowClose();
         }
-    }
-
-    public void registerListener(Listener listener) {
-        this.listeners.add(listener);
-        synchronized (this.lock) {
-            try {
-                if (!this.isListening) {
-                    Logging.d(TAG, "First listener, subscribing to frame callbacks");
-                    this.isListening = true;
-                    this.mainThreadHandler.post(new Runnable() { // from class: org.webrtc.RenderSynchronizer$$ExternalSyntheticLambda1
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            RenderSynchronizer.this.lambda$registerListener$1();
-                        }
-                    });
-                }
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-    }
-
-    public void removeListener(Listener listener) {
-        this.listeners.remove(listener);
     }
 }

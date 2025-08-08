@@ -94,6 +94,57 @@ public final class MediaTrack extends AbstractSafeParcelable implements Reflecte
         return Objects.hashCode(Long.valueOf(this.zzb), Integer.valueOf(this.zzc), this.zzd, this.zze, this.zzf, this.zzg, Integer.valueOf(this.zzh), this.zzi, String.valueOf(this.zzj));
     }
 
+    public final JSONObject zza() {
+        JSONObject jSONObject = new JSONObject();
+        try {
+            jSONObject.put("trackId", this.zzb);
+            int i = this.zzc;
+            if (i == 1) {
+                jSONObject.put("type", "TEXT");
+            } else if (i == 2) {
+                jSONObject.put("type", "AUDIO");
+            } else if (i == 3) {
+                jSONObject.put("type", "VIDEO");
+            }
+            String str = this.zzd;
+            if (str != null) {
+                jSONObject.put("trackContentId", str);
+            }
+            String str2 = this.zze;
+            if (str2 != null) {
+                jSONObject.put("trackContentType", str2);
+            }
+            String str3 = this.zzf;
+            if (str3 != null) {
+                jSONObject.put("name", str3);
+            }
+            if (!TextUtils.isEmpty(this.zzg)) {
+                jSONObject.put("language", this.zzg);
+            }
+            int i2 = this.zzh;
+            if (i2 == 1) {
+                jSONObject.put("subtype", "SUBTITLES");
+            } else if (i2 == 2) {
+                jSONObject.put("subtype", "CAPTIONS");
+            } else if (i2 == 3) {
+                jSONObject.put("subtype", "DESCRIPTIONS");
+            } else if (i2 == 4) {
+                jSONObject.put("subtype", "CHAPTERS");
+            } else if (i2 == 5) {
+                jSONObject.put("subtype", "METADATA");
+            }
+            if (this.zzi != null) {
+                jSONObject.put("roles", new JSONArray((Collection) this.zzi));
+            }
+            JSONObject jSONObject2 = this.zzj;
+            if (jSONObject2 != null) {
+                jSONObject.put("customData", jSONObject2);
+            }
+        } catch (JSONException unused) {
+        }
+        return jSONObject;
+    }
+
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         JSONObject jSONObject = this.zzj;
@@ -109,110 +160,5 @@ public final class MediaTrack extends AbstractSafeParcelable implements Reflecte
         SafeParcelWriter.writeStringList(parcel, 9, getRoles(), false);
         SafeParcelWriter.writeString(parcel, 10, this.zza, false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:12:0x002a A[Catch: JSONException -> 0x008c, TryCatch #0 {JSONException -> 0x008c, blocks: (B:3:0x0005, B:9:0x001c, B:10:0x0026, B:12:0x002a, B:13:0x002f, B:15:0x0033, B:16:0x0038, B:18:0x003c, B:19:0x0041, B:21:0x0049, B:22:0x0050, B:32:0x0063, B:33:0x0073, B:35:0x0077, B:36:0x0083, B:38:0x0087), top: B:2:0x0005 }] */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0033 A[Catch: JSONException -> 0x008c, TryCatch #0 {JSONException -> 0x008c, blocks: (B:3:0x0005, B:9:0x001c, B:10:0x0026, B:12:0x002a, B:13:0x002f, B:15:0x0033, B:16:0x0038, B:18:0x003c, B:19:0x0041, B:21:0x0049, B:22:0x0050, B:32:0x0063, B:33:0x0073, B:35:0x0077, B:36:0x0083, B:38:0x0087), top: B:2:0x0005 }] */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x003c A[Catch: JSONException -> 0x008c, TryCatch #0 {JSONException -> 0x008c, blocks: (B:3:0x0005, B:9:0x001c, B:10:0x0026, B:12:0x002a, B:13:0x002f, B:15:0x0033, B:16:0x0038, B:18:0x003c, B:19:0x0041, B:21:0x0049, B:22:0x0050, B:32:0x0063, B:33:0x0073, B:35:0x0077, B:36:0x0083, B:38:0x0087), top: B:2:0x0005 }] */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0049 A[Catch: JSONException -> 0x008c, TryCatch #0 {JSONException -> 0x008c, blocks: (B:3:0x0005, B:9:0x001c, B:10:0x0026, B:12:0x002a, B:13:0x002f, B:15:0x0033, B:16:0x0038, B:18:0x003c, B:19:0x0041, B:21:0x0049, B:22:0x0050, B:32:0x0063, B:33:0x0073, B:35:0x0077, B:36:0x0083, B:38:0x0087), top: B:2:0x0005 }] */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0056  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0077 A[Catch: JSONException -> 0x008c, TryCatch #0 {JSONException -> 0x008c, blocks: (B:3:0x0005, B:9:0x001c, B:10:0x0026, B:12:0x002a, B:13:0x002f, B:15:0x0033, B:16:0x0038, B:18:0x003c, B:19:0x0041, B:21:0x0049, B:22:0x0050, B:32:0x0063, B:33:0x0073, B:35:0x0077, B:36:0x0083, B:38:0x0087), top: B:2:0x0005 }] */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0087 A[Catch: JSONException -> 0x008c, TRY_LEAVE, TryCatch #0 {JSONException -> 0x008c, blocks: (B:3:0x0005, B:9:0x001c, B:10:0x0026, B:12:0x002a, B:13:0x002f, B:15:0x0033, B:16:0x0038, B:18:0x003c, B:19:0x0041, B:21:0x0049, B:22:0x0050, B:32:0x0063, B:33:0x0073, B:35:0x0077, B:36:0x0083, B:38:0x0087), top: B:2:0x0005 }] */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x0070  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final JSONObject zza() {
-        int i;
-        String str;
-        String str2;
-        String str3;
-        String str4;
-        int i2;
-        String str5;
-        JSONObject jSONObject;
-        JSONObject jSONObject2 = new JSONObject();
-        try {
-            jSONObject2.put("trackId", this.zzb);
-            i = this.zzc;
-        } catch (JSONException unused) {
-        }
-        if (i == 1) {
-            str = "TEXT";
-        } else {
-            if (i != 2) {
-                if (i == 3) {
-                    str = "VIDEO";
-                }
-                str2 = this.zzd;
-                if (str2 != null) {
-                    jSONObject2.put("trackContentId", str2);
-                }
-                str3 = this.zze;
-                if (str3 != null) {
-                    jSONObject2.put("trackContentType", str3);
-                }
-                str4 = this.zzf;
-                if (str4 != null) {
-                    jSONObject2.put("name", str4);
-                }
-                if (!TextUtils.isEmpty(this.zzg)) {
-                    jSONObject2.put("language", this.zzg);
-                }
-                i2 = this.zzh;
-                if (i2 != 1) {
-                    str5 = "SUBTITLES";
-                } else if (i2 == 2) {
-                    str5 = "CAPTIONS";
-                } else if (i2 == 3) {
-                    str5 = "DESCRIPTIONS";
-                } else {
-                    if (i2 != 4) {
-                        if (i2 == 5) {
-                            str5 = "METADATA";
-                        }
-                        if (this.zzi != null) {
-                            jSONObject2.put("roles", new JSONArray((Collection) this.zzi));
-                        }
-                        jSONObject = this.zzj;
-                        if (jSONObject != null) {
-                            jSONObject2.put("customData", jSONObject);
-                        }
-                        return jSONObject2;
-                    }
-                    str5 = "CHAPTERS";
-                }
-                jSONObject2.put("subtype", str5);
-                if (this.zzi != null) {
-                }
-                jSONObject = this.zzj;
-                if (jSONObject != null) {
-                }
-                return jSONObject2;
-            }
-            str = "AUDIO";
-        }
-        jSONObject2.put("type", str);
-        str2 = this.zzd;
-        if (str2 != null) {
-        }
-        str3 = this.zze;
-        if (str3 != null) {
-        }
-        str4 = this.zzf;
-        if (str4 != null) {
-        }
-        if (!TextUtils.isEmpty(this.zzg)) {
-        }
-        i2 = this.zzh;
-        if (i2 != 1) {
-        }
-        jSONObject2.put("subtype", str5);
-        if (this.zzi != null) {
-        }
-        jSONObject = this.zzj;
-        if (jSONObject != null) {
-        }
-        return jSONObject2;
     }
 }

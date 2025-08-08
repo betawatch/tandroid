@@ -3,13 +3,6 @@ package j$.util.function;
 /* loaded from: classes2.dex */
 public interface BiConsumer<T, U> {
 
-    public final /* synthetic */ class -CC {
-        public static BiConsumer $default$andThen(BiConsumer biConsumer, BiConsumer biConsumer2) {
-            biConsumer2.getClass();
-            return new j$.util.concurrent.s(1, biConsumer, biConsumer2);
-        }
-    }
-
     public final /* synthetic */ class VivifiedWrapper implements BiConsumer {
         public final /* synthetic */ java.util.function.BiConsumer a;
 
@@ -50,4 +43,11 @@ public interface BiConsumer<T, U> {
     void accept(T t, U u);
 
     BiConsumer<T, U> andThen(BiConsumer<? super T, ? super U> biConsumer);
+
+    public final /* synthetic */ class -CC {
+        public static BiConsumer $default$andThen(BiConsumer biConsumer, BiConsumer biConsumer2) {
+            biConsumer2.getClass();
+            return new j$.util.concurrent.s(1, biConsumer, biConsumer2);
+        }
+    }
 }

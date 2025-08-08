@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class zzc implements zzb {
     private final Context zza;
     private final com.google.android.gms.internal.mlkit_vision_label.zzj zzb;

@@ -31,9 +31,7 @@ public abstract class CastUtils {
     }
 
     public static double millisecToSec(long j) {
-        double d = j;
-        Double.isNaN(d);
-        return d / 1000.0d;
+        return j / 1000.0d;
     }
 
     public static String optStringOrNull(JSONObject jSONObject, String str) {

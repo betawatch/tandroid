@@ -19,6 +19,11 @@ public final class SynchronousMediaCodecAdapter implements MediaCodecAdapter {
     private ByteBuffer[] inputByteBuffers;
     private ByteBuffer[] outputByteBuffers;
 
+    @Override // com.google.android.exoplayer2.mediacodec.MediaCodecAdapter
+    public boolean needsReconfiguration() {
+        return false;
+    }
+
     public static class Factory implements MediaCodecAdapter.Factory {
         /* JADX WARN: Multi-variable type inference failed */
         /* JADX WARN: Type inference failed for: r0v0, types: [com.google.android.exoplayer2.mediacodec.SynchronousMediaCodecAdapter$1] */
@@ -72,11 +77,6 @@ public final class SynchronousMediaCodecAdapter implements MediaCodecAdapter {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setOnFrameRenderedListener$0(MediaCodecAdapter.OnFrameRenderedListener onFrameRenderedListener, MediaCodec mediaCodec, long j, long j2) {
-        onFrameRenderedListener.onFrameRendered(this, j, j2);
-    }
-
     @Override // com.google.android.exoplayer2.mediacodec.MediaCodecAdapter
     public int dequeueInputBufferIndex() {
         return this.codec.dequeueInputBuffer(0L);
@@ -95,38 +95,24 @@ public final class SynchronousMediaCodecAdapter implements MediaCodecAdapter {
     }
 
     @Override // com.google.android.exoplayer2.mediacodec.MediaCodecAdapter
-    public void flush() {
-        this.codec.flush();
-    }
-
-    @Override // com.google.android.exoplayer2.mediacodec.MediaCodecAdapter
-    public ByteBuffer getInputBuffer(int i) {
-        ByteBuffer inputBuffer;
-        if (Util.SDK_INT < 21) {
-            return ((ByteBuffer[]) Util.castNonNull(this.inputByteBuffers))[i];
-        }
-        inputBuffer = this.codec.getInputBuffer(i);
-        return inputBuffer;
-    }
-
-    @Override // com.google.android.exoplayer2.mediacodec.MediaCodecAdapter
-    public ByteBuffer getOutputBuffer(int i) {
-        ByteBuffer outputBuffer;
-        if (Util.SDK_INT < 21) {
-            return ((ByteBuffer[]) Util.castNonNull(this.outputByteBuffers))[i];
-        }
-        outputBuffer = this.codec.getOutputBuffer(i);
-        return outputBuffer;
-    }
-
-    @Override // com.google.android.exoplayer2.mediacodec.MediaCodecAdapter
     public MediaFormat getOutputFormat() {
         return this.codec.getOutputFormat();
     }
 
     @Override // com.google.android.exoplayer2.mediacodec.MediaCodecAdapter
-    public boolean needsReconfiguration() {
-        return false;
+    public ByteBuffer getInputBuffer(int i) {
+        if (Util.SDK_INT >= 21) {
+            return this.codec.getInputBuffer(i);
+        }
+        return ((ByteBuffer[]) Util.castNonNull(this.inputByteBuffers))[i];
+    }
+
+    @Override // com.google.android.exoplayer2.mediacodec.MediaCodecAdapter
+    public ByteBuffer getOutputBuffer(int i) {
+        if (Util.SDK_INT >= 21) {
+            return this.codec.getOutputBuffer(i);
+        }
+        return ((ByteBuffer[]) Util.castNonNull(this.outputByteBuffers))[i];
     }
 
     @Override // com.google.android.exoplayer2.mediacodec.MediaCodecAdapter
@@ -140,10 +126,8 @@ public final class SynchronousMediaCodecAdapter implements MediaCodecAdapter {
     }
 
     @Override // com.google.android.exoplayer2.mediacodec.MediaCodecAdapter
-    public void release() {
-        this.inputByteBuffers = null;
-        this.outputByteBuffers = null;
-        this.codec.release();
+    public void releaseOutputBuffer(int i, boolean z) {
+        this.codec.releaseOutputBuffer(i, z);
     }
 
     @Override // com.google.android.exoplayer2.mediacodec.MediaCodecAdapter
@@ -152,8 +136,15 @@ public final class SynchronousMediaCodecAdapter implements MediaCodecAdapter {
     }
 
     @Override // com.google.android.exoplayer2.mediacodec.MediaCodecAdapter
-    public void releaseOutputBuffer(int i, boolean z) {
-        this.codec.releaseOutputBuffer(i, z);
+    public void flush() {
+        this.codec.flush();
+    }
+
+    @Override // com.google.android.exoplayer2.mediacodec.MediaCodecAdapter
+    public void release() {
+        this.inputByteBuffers = null;
+        this.outputByteBuffers = null;
+        this.codec.release();
     }
 
     @Override // com.google.android.exoplayer2.mediacodec.MediaCodecAdapter
@@ -164,6 +155,11 @@ public final class SynchronousMediaCodecAdapter implements MediaCodecAdapter {
                 SynchronousMediaCodecAdapter.this.lambda$setOnFrameRenderedListener$0(onFrameRenderedListener, mediaCodec, j, j2);
             }
         }, handler);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setOnFrameRenderedListener$0(MediaCodecAdapter.OnFrameRenderedListener onFrameRenderedListener, MediaCodec mediaCodec, long j, long j2) {
+        onFrameRenderedListener.onFrameRendered(this, j, j2);
     }
 
     @Override // com.google.android.exoplayer2.mediacodec.MediaCodecAdapter

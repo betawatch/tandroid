@@ -28,6 +28,10 @@ public class SelectorLetterCell extends FrameLayout {
         addView(textView, LayoutHelper.createFrame(-1, -1.0f, (LocaleController.isRTL ? 5 : 3) | 48, 16.0f, 0.0f, 16.0f, 0.0f));
     }
 
+    public void setLetter(CharSequence charSequence) {
+        this.textView.setText(charSequence);
+    }
+
     private int getThemedColor(int i) {
         return Theme.getColor(i, this.resourcesProvider);
     }
@@ -35,10 +39,6 @@ public class SelectorLetterCell extends FrameLayout {
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
-    }
-
-    public void setLetter(CharSequence charSequence) {
-        this.textView.setText(charSequence);
     }
 
     public void setTextColor(int i) {

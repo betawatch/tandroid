@@ -7,7 +7,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 
 /* loaded from: classes.dex */
 public class RootTelemetryConfiguration extends AbstractSafeParcelable {
-    public static final Parcelable.Creator<RootTelemetryConfiguration> CREATOR = new zzai();
+    public static final Parcelable.Creator<RootTelemetryConfiguration> CREATOR = new zzaj();
     private final int zza;
     private final boolean zzb;
     private final boolean zzc;

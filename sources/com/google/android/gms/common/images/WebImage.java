@@ -25,35 +25,6 @@ public final class WebImage extends AbstractSafeParcelable {
         this.zad = i3;
     }
 
-    public WebImage(Uri uri) {
-        this(uri, 0, 0);
-    }
-
-    public WebImage(Uri uri, int i, int i2) {
-        this(1, uri, i, i2);
-        if (uri == null) {
-            throw new IllegalArgumentException("url cannot be null");
-        }
-        if (i < 0 || i2 < 0) {
-            throw new IllegalArgumentException("width and height must not be negative");
-        }
-    }
-
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public WebImage(JSONObject jSONObject) {
-        this(r0, jSONObject.optInt("width", 0), jSONObject.optInt("height", 0));
-        Uri uri = Uri.EMPTY;
-        if (jSONObject.has("url")) {
-            try {
-                uri = Uri.parse(jSONObject.getString("url"));
-            } catch (JSONException unused) {
-            }
-        }
-    }
-
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -100,11 +71,41 @@ public final class WebImage extends AbstractSafeParcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
+        int i2 = this.zaa;
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeInt(parcel, 1, this.zaa);
+        SafeParcelWriter.writeInt(parcel, 1, i2);
         SafeParcelWriter.writeParcelable(parcel, 2, getUrl(), i, false);
         SafeParcelWriter.writeInt(parcel, 3, getWidth());
         SafeParcelWriter.writeInt(parcel, 4, getHeight());
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    public WebImage(Uri uri) {
+        this(uri, 0, 0);
+    }
+
+    public WebImage(Uri uri, int i, int i2) {
+        this(1, uri, i, i2);
+        if (uri == null) {
+            throw new IllegalArgumentException("url cannot be null");
+        }
+        if (i < 0 || i2 < 0) {
+            throw new IllegalArgumentException("width and height must not be negative");
+        }
+    }
+
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public WebImage(JSONObject jSONObject) {
+        this(r0, jSONObject.optInt("width", 0), jSONObject.optInt("height", 0));
+        Uri uri = Uri.EMPTY;
+        if (jSONObject.has("url")) {
+            try {
+                uri = Uri.parse(jSONObject.getString("url"));
+            } catch (JSONException unused) {
+            }
+        }
     }
 }

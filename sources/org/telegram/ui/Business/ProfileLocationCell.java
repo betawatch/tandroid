@@ -60,6 +60,25 @@ public class ProfileLocationCell extends LinearLayout {
         setWillNotDraw(false);
     }
 
+    @Override // android.view.View
+    protected boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.thumbDrawable || super.verifyDrawable(drawable);
+    }
+
+    public void set(TLRPC.TL_businessLocation tL_businessLocation, boolean z) {
+        if (tL_businessLocation != null) {
+            this.textView1.setText(tL_businessLocation.address);
+            if (tL_businessLocation.geo_point != null) {
+                this.imageReceiver.setImage(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(tL_businessLocation.geo_point, AndroidUtilities.dp(44.0f), AndroidUtilities.dp(44.0f), 15, Math.min(2, (int) Math.ceil(AndroidUtilities.density)))), "44_44", this.thumbDrawable, 0L, (String) null, (Object) null, 0);
+            } else {
+                this.imageReceiver.setImageBitmap((Drawable) null);
+            }
+        }
+        this.needDivider = z;
+        setPadding(0, 0, 0, z ? 1 : 0);
+        invalidate();
+    }
+
     @Override // android.widget.LinearLayout, android.view.View
     protected void onDraw(Canvas canvas) {
         this.imageReceiver.setImageCoords(LocaleController.isRTL ? AndroidUtilities.dp(16.0f) : getWidth() - AndroidUtilities.dp(60.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(44.0f), AndroidUtilities.dp(44.0f));
@@ -77,24 +96,5 @@ public class ProfileLocationCell extends LinearLayout {
     @Override // android.widget.LinearLayout, android.view.View
     protected void onMeasure(int i, int i2) {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
-    }
-
-    public void set(TLRPC.TL_businessLocation tL_businessLocation, boolean z) {
-        if (tL_businessLocation != null) {
-            this.textView1.setText(tL_businessLocation.address);
-            if (tL_businessLocation.geo_point != null) {
-                this.imageReceiver.setImage(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(tL_businessLocation.geo_point, AndroidUtilities.dp(44.0f), AndroidUtilities.dp(44.0f), 15, Math.min(2, (int) Math.ceil(AndroidUtilities.density)))), "44_44", this.thumbDrawable, 0L, (String) null, (Object) null, 0);
-            } else {
-                this.imageReceiver.setImageBitmap((Drawable) null);
-            }
-        }
-        this.needDivider = z;
-        setPadding(0, 0, 0, z ? 1 : 0);
-        invalidate();
-    }
-
-    @Override // android.view.View
-    protected boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.thumbDrawable || super.verifyDrawable(drawable);
     }
 }

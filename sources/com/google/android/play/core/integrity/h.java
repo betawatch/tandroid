@@ -22,9 +22,9 @@ final class h extends StandardIntegrityManager.StandardIntegrityTokenRequest {
         if (!(obj instanceof StandardIntegrityManager.StandardIntegrityTokenRequest)) {
             return false;
         }
+        StandardIntegrityManager.StandardIntegrityTokenRequest standardIntegrityTokenRequest = (StandardIntegrityManager.StandardIntegrityTokenRequest) obj;
         String str = this.a;
-        String a = ((StandardIntegrityManager.StandardIntegrityTokenRequest) obj).a();
-        return str == null ? a == null : str.equals(a);
+        return str == null ? standardIntegrityTokenRequest.a() == null : str.equals(standardIntegrityTokenRequest.a());
     }
 
     public final int hashCode() {

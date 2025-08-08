@@ -3,17 +3,12 @@ package com.microsoft.appcenter.crashes;
 import com.microsoft.appcenter.utils.ShutdownHelper;
 import java.lang.Thread;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 class UncaughtExceptionHandler implements Thread.UncaughtExceptionHandler {
     private Thread.UncaughtExceptionHandler mDefaultUncaughtExceptionHandler;
     private boolean mIgnoreDefaultExceptionHandler = false;
 
     UncaughtExceptionHandler() {
-    }
-
-    void register() {
-        this.mDefaultUncaughtExceptionHandler = !this.mIgnoreDefaultExceptionHandler ? Thread.getDefaultUncaughtExceptionHandler() : null;
-        Thread.setDefaultUncaughtExceptionHandler(this);
     }
 
     @Override // java.lang.Thread.UncaughtExceptionHandler
@@ -25,6 +20,15 @@ class UncaughtExceptionHandler implements Thread.UncaughtExceptionHandler {
         } else {
             ShutdownHelper.shutdown(10);
         }
+    }
+
+    void register() {
+        if (!this.mIgnoreDefaultExceptionHandler) {
+            this.mDefaultUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
+        } else {
+            this.mDefaultUncaughtExceptionHandler = null;
+        }
+        Thread.setDefaultUncaughtExceptionHandler(this);
     }
 
     void unregister() {

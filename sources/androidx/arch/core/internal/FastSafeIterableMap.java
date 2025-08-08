@@ -8,17 +8,6 @@ import java.util.Map;
 public class FastSafeIterableMap extends SafeIterableMap {
     private HashMap mHashMap = new HashMap();
 
-    public Map.Entry ceil(Object obj) {
-        if (contains(obj)) {
-            return ((SafeIterableMap.Entry) this.mHashMap.get(obj)).mPrevious;
-        }
-        return null;
-    }
-
-    public boolean contains(Object obj) {
-        return this.mHashMap.containsKey(obj);
-    }
-
     @Override // androidx.arch.core.internal.SafeIterableMap
     protected SafeIterableMap.Entry get(Object obj) {
         return (SafeIterableMap.Entry) this.mHashMap.get(obj);
@@ -39,5 +28,16 @@ public class FastSafeIterableMap extends SafeIterableMap {
         Object remove = super.remove(obj);
         this.mHashMap.remove(obj);
         return remove;
+    }
+
+    public boolean contains(Object obj) {
+        return this.mHashMap.containsKey(obj);
+    }
+
+    public Map.Entry ceil(Object obj) {
+        if (contains(obj)) {
+            return ((SafeIterableMap.Entry) this.mHashMap.get(obj)).mPrevious;
+        }
+        return null;
     }
 }

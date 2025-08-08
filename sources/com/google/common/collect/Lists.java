@@ -12,8 +12,21 @@ import java.util.RandomAccess;
 
 /* loaded from: classes.dex */
 public abstract class Lists {
-    static List cast(Iterable iterable) {
-        return (List) iterable;
+    public static ArrayList newArrayList() {
+        return new ArrayList();
+    }
+
+    public static ArrayList newArrayList(Object... objArr) {
+        Preconditions.checkNotNull(objArr);
+        ArrayList arrayList = new ArrayList(computeArrayListCapacity(objArr.length));
+        Collections.addAll(arrayList, objArr);
+        return arrayList;
+    }
+
+    public static ArrayList newArrayList(Iterator it) {
+        ArrayList newArrayList = newArrayList();
+        Iterators.addAll(newArrayList, it);
+        return newArrayList;
     }
 
     static int computeArrayListCapacity(int i) {
@@ -108,20 +121,7 @@ public abstract class Lists {
         return -1;
     }
 
-    public static ArrayList newArrayList() {
-        return new ArrayList();
-    }
-
-    public static ArrayList newArrayList(Iterator it) {
-        ArrayList newArrayList = newArrayList();
-        Iterators.addAll(newArrayList, it);
-        return newArrayList;
-    }
-
-    public static ArrayList newArrayList(Object... objArr) {
-        Preconditions.checkNotNull(objArr);
-        ArrayList arrayList = new ArrayList(computeArrayListCapacity(objArr.length));
-        Collections.addAll(arrayList, objArr);
-        return arrayList;
+    static List cast(Iterable iterable) {
+        return (List) iterable;
     }
 }

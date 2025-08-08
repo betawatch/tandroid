@@ -17,16 +17,16 @@ public final class CreationContextFactory_Factory implements Factory {
         this.monotonicClockProvider = provider3;
     }
 
+    @Override // javax.inject.Provider
+    public CreationContextFactory get() {
+        return newInstance((Context) this.applicationContextProvider.get(), (Clock) this.wallClockProvider.get(), (Clock) this.monotonicClockProvider.get());
+    }
+
     public static CreationContextFactory_Factory create(Provider provider, Provider provider2, Provider provider3) {
         return new CreationContextFactory_Factory(provider, provider2, provider3);
     }
 
     public static CreationContextFactory newInstance(Context context, Clock clock, Clock clock2) {
         return new CreationContextFactory(context, clock, clock2);
-    }
-
-    @Override // javax.inject.Provider
-    public CreationContextFactory get() {
-        return newInstance((Context) this.applicationContextProvider.get(), (Clock) this.wallClockProvider.get(), (Clock) this.monotonicClockProvider.get());
     }
 }

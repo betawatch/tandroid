@@ -24,15 +24,6 @@ public final class zzb extends AbstractSafeParcelable {
         this.zzf = z2;
     }
 
-    public zzb(boolean z, String str, String str2, byte[] bArr, boolean z2) {
-        this.zza = 0;
-        this.zzb = z;
-        this.zzc = null;
-        this.zzd = null;
-        this.zze = null;
-        this.zzf = false;
-    }
-
     public final String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("MetadataImpl { { eventStatus: '");
@@ -79,5 +70,14 @@ public final class zzb extends AbstractSafeParcelable {
 
     public final void zza(int i) {
         this.zza = i;
+    }
+
+    public zzb(boolean z, String str, String str2, byte[] bArr, boolean z2) {
+        this.zza = 0;
+        this.zzb = z;
+        this.zzc = null;
+        this.zzd = null;
+        this.zze = null;
+        this.zzf = false;
     }
 }

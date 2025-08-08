@@ -20,6 +20,10 @@ public final class TrackSelectorResult {
         this.length = rendererConfigurationArr.length;
     }
 
+    public boolean isRendererEnabled(int i) {
+        return this.rendererConfigurations[i] != null;
+    }
+
     public boolean isEquivalent(TrackSelectorResult trackSelectorResult) {
         if (trackSelectorResult == null || trackSelectorResult.selections.length != this.selections.length) {
             return false;
@@ -34,9 +38,5 @@ public final class TrackSelectorResult {
 
     public boolean isEquivalent(TrackSelectorResult trackSelectorResult, int i) {
         return trackSelectorResult != null && Util.areEqual(this.rendererConfigurations[i], trackSelectorResult.rendererConfigurations[i]) && Util.areEqual(this.selections[i], trackSelectorResult.selections[i]);
-    }
-
-    public boolean isRendererEnabled(int i) {
-        return this.rendererConfigurations[i] != null;
     }
 }

@@ -4,6 +4,9 @@ import org.webrtc.VideoDecoder;
 
 /* loaded from: classes5.dex */
 class VideoDecoderWrapper {
+    /* JADX INFO: Access modifiers changed from: private */
+    public static native void nativeOnDecodedFrame(long j, VideoFrame videoFrame, Integer num, Integer num2);
+
     VideoDecoderWrapper() {
     }
 
@@ -15,7 +18,4 @@ class VideoDecoderWrapper {
             }
         };
     }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static native void nativeOnDecodedFrame(long j, VideoFrame videoFrame, Integer num, Integer num2);
 }

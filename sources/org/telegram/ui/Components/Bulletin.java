@@ -77,7 +77,7 @@ import org.telegram.ui.Components.quickforward.BlurVisibilityDrawable;
 import org.telegram.ui.DialogsActivity;
 import org.telegram.ui.LaunchActivity;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class Bulletin {
     private static final HashMap delegates = new HashMap();
     private static final HashMap fragmentDelegates = new HashMap();
@@ -106,29 +106,315 @@ public class Bulletin {
     private boolean skipShowAnimation;
     public int tag;
 
+    public interface Delegate {
+
+        public abstract /* synthetic */ class -CC {
+            public static boolean $default$allowLayoutChanges(Delegate delegate) {
+                return true;
+            }
+
+            public static boolean $default$bottomOffsetAnimated(Delegate delegate) {
+                return true;
+            }
+
+            public static boolean $default$clipWithGradient(Delegate delegate, int i) {
+                return false;
+            }
+
+            public static int $default$getBottomOffset(Delegate delegate, int i) {
+                return 0;
+            }
+
+            public static int $default$getTopOffset(Delegate delegate, int i) {
+                return 0;
+            }
+
+            public static void $default$onBottomOffsetChange(Delegate delegate, float f) {
+            }
+
+            public static void $default$onHide(Delegate delegate, Bulletin bulletin) {
+            }
+
+            public static void $default$onShow(Delegate delegate, Bulletin bulletin) {
+            }
+        }
+
+        boolean allowLayoutChanges();
+
+        boolean bottomOffsetAnimated();
+
+        boolean clipWithGradient(int i);
+
+        int getBottomOffset(int i);
+
+        int getTopOffset(int i);
+
+        void onBottomOffsetChange(float f);
+
+        void onHide(Bulletin bulletin);
+
+        void onShow(Bulletin bulletin);
+    }
+
+    public interface LoadingLayout {
+        void onTextLoaded(CharSequence charSequence);
+    }
+
+    public static Bulletin make(FrameLayout frameLayout, Layout layout, int i) {
+        if (frameLayout == null) {
+            return new EmptyBulletin();
+        }
+        return new Bulletin(null, frameLayout, layout, i);
+    }
+
+    public Bulletin setOnClickListener(View.OnClickListener onClickListener) {
+        Layout layout = this.layout;
+        if (layout != null) {
+            layout.setOnClickListener(onClickListener);
+        }
+        return this;
+    }
+
+    public static Bulletin make(BaseFragment baseFragment, Layout layout, int i) {
+        if (baseFragment == null) {
+            return new EmptyBulletin();
+        }
+        if (!(baseFragment instanceof ChatActivity)) {
+            if (baseFragment instanceof DialogsActivity) {
+                layout.setWideScreenParams(-1, 0);
+            }
+        } else {
+            layout.setWideScreenParams(-2, 1);
+        }
+        return new Bulletin(baseFragment, baseFragment.getLayoutContainer(), layout, i);
+    }
+
+    public static Bulletin find(FrameLayout frameLayout) {
+        int childCount = frameLayout.getChildCount();
+        for (int i = 0; i < childCount; i++) {
+            View childAt = frameLayout.getChildAt(i);
+            if (childAt instanceof Layout) {
+                return ((Layout) childAt).bulletin;
+            }
+        }
+        return null;
+    }
+
+    public Bulletin setImageScale(float f) {
+        Layout layout = this.layout;
+        if (layout instanceof TwoLineLottieLayout) {
+            RLottieImageView rLottieImageView = ((TwoLineLottieLayout) layout).imageView;
+            rLottieImageView.setScaleX(f);
+            rLottieImageView.setScaleY(f);
+        }
+        return this;
+    }
+
+    public static void hide(FrameLayout frameLayout) {
+        hide(frameLayout, true);
+    }
+
+    public static void hide(FrameLayout frameLayout, boolean z) {
+        Bulletin find = find(frameLayout);
+        if (find != null) {
+            find.hide(z && isTransitionsEnabled(), 0L);
+        }
+    }
+
+    private Bulletin() {
+        this.hideRunnable = new Runnable() { // from class: org.telegram.ui.Components.Bulletin$$ExternalSyntheticLambda0
+            @Override // java.lang.Runnable
+            public final void run() {
+                Bulletin.this.hide();
+            }
+        };
+        this.loaded = true;
+        this.hideAfterBottomSheet = true;
+        this.setCanHideOnShow = true;
+        this.layout = null;
+        this.parentLayout = null;
+        this.containerFragment = null;
+        this.containerLayout = null;
+    }
+
+    private Bulletin(BaseFragment baseFragment, final FrameLayout frameLayout, Layout layout, int i) {
+        this.hideRunnable = new Runnable() { // from class: org.telegram.ui.Components.Bulletin$$ExternalSyntheticLambda0
+            @Override // java.lang.Runnable
+            public final void run() {
+                Bulletin.this.hide();
+            }
+        };
+        this.loaded = true;
+        this.hideAfterBottomSheet = true;
+        this.setCanHideOnShow = true;
+        this.layout = layout;
+        this.loaded = true ^ (layout instanceof LoadingLayout);
+        this.parentLayout = new ParentLayout(layout) { // from class: org.telegram.ui.Components.Bulletin.1
+            @Override // org.telegram.ui.Components.Bulletin.ParentLayout
+            protected void onPressedStateChanged(boolean z) {
+                Bulletin.this.setCanHide(!z);
+                if (frameLayout.getParent() != null) {
+                    frameLayout.getParent().requestDisallowInterceptTouchEvent(z);
+                }
+            }
+
+            @Override // org.telegram.ui.Components.Bulletin.ParentLayout
+            protected void onHide() {
+                Bulletin.this.hide();
+            }
+        };
+        this.containerFragment = baseFragment;
+        this.containerLayout = frameLayout;
+        this.duration = i;
+    }
+
+    public static Bulletin getVisibleBulletin() {
+        return visibleBulletin;
+    }
+
+    public static void hideVisible() {
+        Bulletin bulletin = visibleBulletin;
+        if (bulletin != null) {
+            bulletin.hide();
+        }
+    }
+
+    public static void hideVisible(ViewGroup viewGroup) {
+        Bulletin bulletin = visibleBulletin;
+        if (bulletin == null || bulletin.containerLayout != viewGroup) {
+            return;
+        }
+        bulletin.hide();
+    }
+
+    public Bulletin setDuration(int i) {
+        this.duration = i;
+        return this;
+    }
+
+    public Bulletin hideAfterBottomSheet(boolean z) {
+        this.hideAfterBottomSheet = z;
+        return this;
+    }
+
+    public Bulletin allowBlur() {
+        this.allowBlurAnimation = true;
+        return this;
+    }
+
+    public Bulletin setTag(int i) {
+        this.tag = i;
+        return this;
+    }
+
+    public Bulletin show() {
+        return show(false);
+    }
+
+    public Bulletin skipShowAnimation() {
+        this.skipShowAnimation = true;
+        return this;
+    }
+
+    public Bulletin ignoreDetach() {
+        this.ignoreDetach = true;
+        return this;
+    }
+
+    public Bulletin show(final boolean z) {
+        if (!this.showing && this.containerLayout != null) {
+            this.showing = true;
+            this.layout.setTop(z);
+            CharSequence accessibilityText = this.layout.getAccessibilityText();
+            if (accessibilityText != null) {
+                AndroidUtilities.makeAccessibilityAnnouncement(accessibilityText);
+            }
+            if (this.layout.getParent() != this.parentLayout) {
+                throw new IllegalStateException("Layout has incorrect parent");
+            }
+            Bulletin bulletin = visibleBulletin;
+            if (bulletin != null) {
+                bulletin.hide();
+            }
+            visibleBulletin = this;
+            this.layout.onAttach(this);
+            FrameLayout frameLayout = this.containerLayout;
+            View.OnLayoutChangeListener onLayoutChangeListener = new View.OnLayoutChangeListener() { // from class: org.telegram.ui.Components.Bulletin$$ExternalSyntheticLambda1
+                @Override // android.view.View.OnLayoutChangeListener
+                public final void onLayoutChange(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
+                    Bulletin.this.lambda$show$2(z, view, i, i2, i3, i4, i5, i6, i7, i8);
+                }
+            };
+            this.containerLayoutListener = onLayoutChangeListener;
+            frameLayout.addOnLayoutChangeListener(onLayoutChangeListener);
+            this.layout.addOnLayoutChangeListener(new 2(z));
+            if (!this.ignoreDetach) {
+                this.layout.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() { // from class: org.telegram.ui.Components.Bulletin.3
+                    @Override // android.view.View.OnAttachStateChangeListener
+                    public void onViewAttachedToWindow(View view) {
+                    }
+
+                    @Override // android.view.View.OnAttachStateChangeListener
+                    public void onViewDetachedFromWindow(View view) {
+                        Bulletin.this.layout.removeOnAttachStateChangeListener(this);
+                        Bulletin.this.hide(false, 0L);
+                    }
+                });
+            }
+            this.containerLayout.addView(this.parentLayout);
+        }
+        return this;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$show$2(boolean z, View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
+        Delegate delegate = this.currentDelegate;
+        if ((delegate == null || delegate.allowLayoutChanges()) && !z) {
+            Delegate delegate2 = this.currentDelegate;
+            int bottomOffset = delegate2 != null ? delegate2.getBottomOffset(this.tag) : 0;
+            if (this.lastBottomOffset != bottomOffset) {
+                SpringAnimation springAnimation = this.bottomOffsetSpring;
+                if (springAnimation == null || !springAnimation.isRunning()) {
+                    SpringAnimation spring = new SpringAnimation(new FloatValueHolder(this.lastBottomOffset)).setSpring(new SpringForce().setFinalPosition(bottomOffset).setStiffness(900.0f).setDampingRatio(1.0f));
+                    this.bottomOffsetSpring = spring;
+                    spring.addUpdateListener(new DynamicAnimation.OnAnimationUpdateListener() { // from class: org.telegram.ui.Components.Bulletin$$ExternalSyntheticLambda6
+                        @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationUpdateListener
+                        public final void onAnimationUpdate(DynamicAnimation dynamicAnimation, float f, float f2) {
+                            Bulletin.this.lambda$show$0(dynamicAnimation, f, f2);
+                        }
+                    });
+                    this.bottomOffsetSpring.addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: org.telegram.ui.Components.Bulletin$$ExternalSyntheticLambda7
+                        @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationEndListener
+                        public final void onAnimationEnd(DynamicAnimation dynamicAnimation, boolean z2, float f, float f2) {
+                            Bulletin.this.lambda$show$1(dynamicAnimation, z2, f, f2);
+                        }
+                    });
+                } else {
+                    this.bottomOffsetSpring.getSpring().setFinalPosition(bottomOffset);
+                }
+                this.bottomOffsetSpring.start();
+            }
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$show$0(DynamicAnimation dynamicAnimation, float f, float f2) {
+        this.lastBottomOffset = (int) f;
+        updatePosition();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$show$1(DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
+        if (this.bottomOffsetSpring == dynamicAnimation) {
+            this.bottomOffsetSpring = null;
+        }
+    }
+
     class 2 implements View.OnLayoutChangeListener {
         final /* synthetic */ boolean val$top;
 
         2(boolean z) {
             this.val$top = z;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onLayoutChange$0() {
-            Bulletin.this.layout.transitionRunningEnter = false;
-            Bulletin.this.layout.onEnterTransitionEnd();
-            Bulletin bulletin = Bulletin.this;
-            if (bulletin.setCanHideOnShow) {
-                bulletin.setCanHide(true);
-            }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onLayoutChange$1(boolean z, Float f) {
-            if (Bulletin.this.currentDelegate == null || z) {
-                return;
-            }
-            Bulletin.this.currentDelegate.onBottomOffsetChange(Bulletin.this.layout.getHeight() - f.floatValue());
         }
 
         @Override // android.view.View.OnLayoutChangeListener
@@ -188,1308 +474,199 @@ public class Bulletin {
                 }, Bulletin.this.currentBottomOffset);
             }
         }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$onLayoutChange$0() {
+            Bulletin.this.layout.transitionRunningEnter = false;
+            Bulletin.this.layout.onEnterTransitionEnd();
+            Bulletin bulletin = Bulletin.this;
+            if (bulletin.setCanHideOnShow) {
+                bulletin.setCanHide(true);
+            }
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$onLayoutChange$1(boolean z, Float f) {
+            if (Bulletin.this.currentDelegate == null || z) {
+                return;
+            }
+            Bulletin.this.currentDelegate.onBottomOffsetChange(Bulletin.this.layout.getHeight() - f.floatValue());
+        }
     }
 
-    public static class BulletinWindow extends Dialog {
-        private final BulletinWindowLayout container;
-        private WindowManager.LayoutParams params;
-
-        public class BulletinWindowLayout extends FrameLayout {
-            public BulletinWindowLayout(Context context) {
-                super(context);
+    public void setCanHide(boolean z) {
+        Layout layout;
+        boolean z2 = z && this.loaded;
+        if (this.canHide == z2 || (layout = this.layout) == null) {
+            return;
+        }
+        this.canHide = z2;
+        if (z2) {
+            int i = this.duration;
+            if (i >= 0) {
+                layout.postDelayed(this.hideRunnable, i);
+                return;
             }
+            return;
+        }
+        layout.removeCallbacks(this.hideRunnable);
+    }
 
-            @Override // android.view.ViewGroup
-            public void addView(View view) {
-                super.addView(view);
-                BulletinWindow.this.show();
+    public Bulletin setOnHideListener(Runnable runnable) {
+        this.onHideListener = runnable;
+        return this;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void ensureLayoutTransitionCreated() {
+        Layout layout = this.layout;
+        if (layout == null || this.layoutTransition != null) {
+            return;
+        }
+        this.layoutTransition = layout.createTransition();
+    }
+
+    public void hide() {
+        hide(isTransitionsEnabled(), 0L);
+    }
+
+    public void hide(long j) {
+        hide(isTransitionsEnabled(), j);
+    }
+
+    public void hide(boolean z, long j) {
+        Layout layout = this.layout;
+        if (layout != null && this.showing) {
+            this.showing = false;
+            if (visibleBulletin == this) {
+                visibleBulletin = null;
             }
-
-            public WindowManager.LayoutParams getLayout() {
-                return BulletinWindow.this.params;
-            }
-
-            @Override // android.view.ViewGroup, android.view.ViewManager
-            public void removeView(View view) {
-                super.removeView(view);
-                try {
-                    BulletinWindow.this.dismiss();
-                } catch (Exception unused) {
-                }
-                Bulletin.removeDelegate(BulletinWindow.this.container);
-            }
-
-            public void setTouchable(boolean z) {
-                WindowManager.LayoutParams layoutParams;
-                int i;
-                if (BulletinWindow.this.params == null) {
-                    return;
-                }
+            int i = this.currentBottomOffset;
+            this.currentBottomOffset = 0;
+            if (ViewCompat.isLaidOut(layout) || this.ignoreDetach) {
+                this.layout.removeCallbacks(this.hideRunnable);
                 if (z) {
-                    layoutParams = BulletinWindow.this.params;
-                    i = layoutParams.flags & (-17);
-                } else {
-                    layoutParams = BulletinWindow.this.params;
-                    i = layoutParams.flags | 16;
-                }
-                layoutParams.flags = i;
-                BulletinWindow.this.getWindow().setAttributes(BulletinWindow.this.params);
-            }
-
-            public void updateLayout() {
-                BulletinWindow.this.getWindow().setAttributes(BulletinWindow.this.params);
-            }
-        }
-
-        private BulletinWindow(Context context, final Delegate delegate) {
-            super(context);
-            BulletinWindowLayout bulletinWindowLayout = new BulletinWindowLayout(context);
-            this.container = bulletinWindowLayout;
-            setContentView(bulletinWindowLayout, new ViewGroup.LayoutParams(-1, -1));
-            int i = Build.VERSION.SDK_INT;
-            boolean z = true;
-            if (i >= 21) {
-                bulletinWindowLayout.setFitsSystemWindows(true);
-                bulletinWindowLayout.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() { // from class: org.telegram.ui.Components.Bulletin$BulletinWindow$$ExternalSyntheticLambda0
-                    @Override // android.view.View.OnApplyWindowInsetsListener
-                    public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-                        WindowInsets lambda$new$0;
-                        lambda$new$0 = Bulletin.BulletinWindow.this.lambda$new$0(view, windowInsets);
-                        return lambda$new$0;
-                    }
-                });
-                bulletinWindowLayout.setSystemUiVisibility(i >= 30 ? 1792 : 1280);
-            }
-            Bulletin.addDelegate(bulletinWindowLayout, new Delegate() { // from class: org.telegram.ui.Components.Bulletin.BulletinWindow.1
-                @Override // org.telegram.ui.Components.Bulletin.Delegate
-                public /* synthetic */ boolean allowLayoutChanges() {
-                    return Delegate.-CC.$default$allowLayoutChanges(this);
-                }
-
-                @Override // org.telegram.ui.Components.Bulletin.Delegate
-                public /* synthetic */ boolean bottomOffsetAnimated() {
-                    return Delegate.-CC.$default$bottomOffsetAnimated(this);
-                }
-
-                @Override // org.telegram.ui.Components.Bulletin.Delegate
-                public boolean clipWithGradient(int i2) {
-                    Delegate delegate2 = delegate;
-                    return delegate2 != null && delegate2.clipWithGradient(i2);
-                }
-
-                @Override // org.telegram.ui.Components.Bulletin.Delegate
-                public int getBottomOffset(int i2) {
-                    Delegate delegate2 = delegate;
-                    if (delegate2 == null) {
-                        return 0;
-                    }
-                    return delegate2.getBottomOffset(i2);
-                }
-
-                @Override // org.telegram.ui.Components.Bulletin.Delegate
-                public int getTopOffset(int i2) {
-                    Delegate delegate2 = delegate;
-                    return delegate2 == null ? AndroidUtilities.statusBarHeight : delegate2.getTopOffset(i2);
-                }
-
-                @Override // org.telegram.ui.Components.Bulletin.Delegate
-                public /* synthetic */ void onBottomOffsetChange(float f) {
-                    Delegate.-CC.$default$onBottomOffsetChange(this, f);
-                }
-
-                @Override // org.telegram.ui.Components.Bulletin.Delegate
-                public /* synthetic */ void onHide(Bulletin bulletin) {
-                    Delegate.-CC.$default$onHide(this, bulletin);
-                }
-
-                @Override // org.telegram.ui.Components.Bulletin.Delegate
-                public /* synthetic */ void onShow(Bulletin bulletin) {
-                    Delegate.-CC.$default$onShow(this, bulletin);
-                }
-            });
-            try {
-                Window window = getWindow();
-                window.setWindowAnimations(R.style.DialogNoAnimation);
-                window.setBackgroundDrawable(null);
-                WindowManager.LayoutParams attributes = window.getAttributes();
-                this.params = attributes;
-                attributes.width = -1;
-                attributes.height = -1;
-                attributes.gravity = 51;
-                attributes.dimAmount = 0.0f;
-                int i2 = attributes.flags & (-3);
-                attributes.flags = 201326616 | i2;
-                if (i >= 21) {
-                    attributes.flags = i2 | (-1946091240);
-                }
-                attributes.flags &= -1025;
-                if (i >= 28) {
-                    attributes.layoutInDisplayCutoutMode = 1;
-                }
-                window.setAttributes(attributes);
-                if (AndroidUtilities.computePerceivedBrightness(Theme.getColor(Theme.key_windowBackgroundGray)) <= 0.721f) {
-                    z = false;
-                }
-                AndroidUtilities.setLightNavigationBar(window, z);
-            } catch (Exception unused) {
-            }
-        }
-
-        private void applyInsets(WindowInsets windowInsets) {
-            int systemWindowInsetLeft;
-            int systemWindowInsetTop;
-            int systemWindowInsetRight;
-            int systemWindowInsetBottom;
-            BulletinWindowLayout bulletinWindowLayout = this.container;
-            if (bulletinWindowLayout != null) {
-                systemWindowInsetLeft = windowInsets.getSystemWindowInsetLeft();
-                systemWindowInsetTop = windowInsets.getSystemWindowInsetTop();
-                systemWindowInsetRight = windowInsets.getSystemWindowInsetRight();
-                systemWindowInsetBottom = windowInsets.getSystemWindowInsetBottom();
-                bulletinWindowLayout.setPadding(systemWindowInsetLeft, systemWindowInsetTop, systemWindowInsetRight, systemWindowInsetBottom);
-            }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ WindowInsets lambda$new$0(View view, WindowInsets windowInsets) {
-            WindowInsets consumeSystemWindowInsets;
-            WindowInsets windowInsets2;
-            applyInsets(windowInsets);
-            view.requestLayout();
-            if (Build.VERSION.SDK_INT >= 30) {
-                windowInsets2 = WindowInsets.CONSUMED;
-                return windowInsets2;
-            }
-            consumeSystemWindowInsets = windowInsets.consumeSystemWindowInsets();
-            return consumeSystemWindowInsets;
-        }
-
-        public static BulletinWindowLayout make(Context context) {
-            return new BulletinWindow(context, null).container;
-        }
-
-        public static BulletinWindowLayout make(Context context, Delegate delegate) {
-            return new BulletinWindow(context, delegate).container;
-        }
-
-        @Override // android.app.Dialog
-        public void show() {
-            if (AndroidUtilities.isSafeToShow(getContext())) {
-                super.show();
-            }
-        }
-    }
-
-    public static abstract class Button extends FrameLayout implements Layout.Callback {
-        public Button(Context context) {
-            super(context);
-        }
-
-        @Override // org.telegram.ui.Components.Bulletin.Layout.Callback
-        public void onEnterTransitionEnd(Layout layout) {
-        }
-
-        @Override // org.telegram.ui.Components.Bulletin.Layout.Callback
-        public void onEnterTransitionStart(Layout layout) {
-        }
-
-        @Override // org.telegram.ui.Components.Bulletin.Layout.Callback
-        public void onExitTransitionEnd(Layout layout) {
-        }
-
-        @Override // org.telegram.ui.Components.Bulletin.Layout.Callback
-        public void onExitTransitionStart(Layout layout) {
-        }
-
-        @Override // org.telegram.ui.Components.Bulletin.Layout.Callback
-        public void onHide(Layout layout) {
-        }
-
-        @Override // org.telegram.ui.Components.Bulletin.Layout.Callback
-        public void onShow(Layout layout) {
-        }
-    }
-
-    public static class ButtonLayout extends Layout {
-        private Button button;
-        private int childrenMeasuredWidth;
-        Theme.ResourcesProvider resourcesProvider;
-        public TimerView timerView;
-        private boolean wrapWidth;
-
-        public ButtonLayout(Context context, Theme.ResourcesProvider resourcesProvider) {
-            super(context, resourcesProvider);
-            this.resourcesProvider = resourcesProvider;
-        }
-
-        public Button getButton() {
-            return this.button;
-        }
-
-        @Override // android.view.ViewGroup
-        protected void measureChildWithMargins(View view, int i, int i2, int i3, int i4) {
-            Button button = this.button;
-            if (button != null && view != button) {
-                i2 += button.getMeasuredWidth() - AndroidUtilities.dp(12.0f);
-            }
-            super.measureChildWithMargins(view, i, i2, i3, i4);
-            if (view != this.button) {
-                ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-                this.childrenMeasuredWidth = Math.max(this.childrenMeasuredWidth, marginLayoutParams.leftMargin + marginLayoutParams.rightMargin + view.getMeasuredWidth());
-            }
-        }
-
-        @Override // android.widget.FrameLayout, android.view.View
-        protected void onMeasure(int i, int i2) {
-            this.childrenMeasuredWidth = 0;
-            if (this.wrapWidth) {
-                i = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_31);
-            }
-            super.onMeasure(i, i2);
-            if (this.button == null || View.MeasureSpec.getMode(i) != Integer.MIN_VALUE) {
-                return;
-            }
-            setMeasuredDimension(this.childrenMeasuredWidth + this.button.getMeasuredWidth(), getMeasuredHeight());
-        }
-
-        public void setButton(Button button) {
-            Button button2 = this.button;
-            if (button2 != null) {
-                removeCallback(button2);
-                removeView(this.button);
-            }
-            this.button = button;
-            if (button != null) {
-                addCallback(button);
-                addView(button, 0, LayoutHelper.createFrameRelatively(-2.0f, -2.0f, 8388629));
-            }
-        }
-
-        public void setTimer() {
-            TimerView timerView = new TimerView(getContext(), this.resourcesProvider);
-            this.timerView = timerView;
-            timerView.timeLeft = 5000L;
-            addView(timerView, LayoutHelper.createFrameRelatively(20.0f, 20.0f, 8388627, 21.0f, 0.0f, 21.0f, 0.0f));
-        }
-
-        public void setWrapWidth() {
-            this.wrapWidth = true;
-        }
-    }
-
-    public interface Delegate {
-
-        public abstract /* synthetic */ class -CC {
-            public static boolean $default$allowLayoutChanges(Delegate delegate) {
-                return true;
-            }
-
-            public static boolean $default$bottomOffsetAnimated(Delegate delegate) {
-                return true;
-            }
-
-            public static boolean $default$clipWithGradient(Delegate delegate, int i) {
-                return false;
-            }
-
-            public static int $default$getBottomOffset(Delegate delegate, int i) {
-                return 0;
-            }
-
-            public static int $default$getTopOffset(Delegate delegate, int i) {
-                return 0;
-            }
-
-            public static void $default$onBottomOffsetChange(Delegate delegate, float f) {
-            }
-
-            public static void $default$onHide(Delegate delegate, Bulletin bulletin) {
-            }
-
-            public static void $default$onShow(Delegate delegate, Bulletin bulletin) {
-            }
-        }
-
-        boolean allowLayoutChanges();
-
-        boolean bottomOffsetAnimated();
-
-        boolean clipWithGradient(int i);
-
-        int getBottomOffset(int i);
-
-        int getTopOffset(int i);
-
-        void onBottomOffsetChange(float f);
-
-        void onHide(Bulletin bulletin);
-
-        void onShow(Bulletin bulletin);
-    }
-
-    public static class EmptyBulletin extends Bulletin {
-        public EmptyBulletin() {
-            super();
-        }
-
-        @Override // org.telegram.ui.Components.Bulletin
-        public Bulletin show() {
-            return this;
-        }
-    }
-
-    public static abstract class Layout extends FrameLayout {
-        public static final FloatPropertyCompat IN_OUT_OFFSET_Y;
-        public static final Property<Layout, Float> IN_OUT_OFFSET_Y2;
-        Drawable background;
-        private BlurVisibilityDrawable blurVisibilityDrawable;
-        protected Bulletin bulletin;
-        private final List<Callback> callbacks;
-        private LinearGradient clipGradient;
-        private Matrix clipMatrix;
-        private Paint clipPaint;
-        Delegate delegate;
-        public float inOutOffset;
-        public View.OnClickListener onClickListener;
-        private final Theme.ResourcesProvider resourcesProvider;
-        public boolean top;
-        public boolean transitionRunningEnter;
-        public boolean transitionRunningExit;
-        private int wideScreenGravity;
-        private int wideScreenWidth;
-
-        public interface Callback {
-
-            public abstract /* synthetic */ class -CC {
-                public static void $default$onAttach(Callback callback, Layout layout, Bulletin bulletin) {
-                }
-
-                public static void $default$onDetach(Callback callback, Layout layout) {
-                }
-
-                public static void $default$onEnterTransitionEnd(Callback callback, Layout layout) {
-                }
-
-                public static void $default$onEnterTransitionStart(Callback callback, Layout layout) {
-                }
-
-                public static void $default$onExitTransitionEnd(Callback callback, Layout layout) {
-                }
-
-                public static void $default$onExitTransitionStart(Callback callback, Layout layout) {
-                }
-            }
-
-            void onAttach(Layout layout, Bulletin bulletin);
-
-            void onDetach(Layout layout);
-
-            void onEnterTransitionEnd(Layout layout);
-
-            void onEnterTransitionStart(Layout layout);
-
-            void onExitTransitionEnd(Layout layout);
-
-            void onExitTransitionStart(Layout layout);
-
-            void onHide(Layout layout);
-
-            void onShow(Layout layout);
-        }
-
-        public static class DefaultTransition implements Transition {
-            long duration = 255;
-
-            /* JADX INFO: Access modifiers changed from: private */
-            public static /* synthetic */ void lambda$animateEnter$0(Consumer consumer, Layout layout, ValueAnimator valueAnimator) {
-                consumer.accept(Float.valueOf(layout.getTranslationY()));
-            }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            public static /* synthetic */ void lambda$animateExit$1(Consumer consumer, Layout layout, ValueAnimator valueAnimator) {
-                consumer.accept(Float.valueOf(layout.getTranslationY()));
-            }
-
-            @Override // org.telegram.ui.Components.Bulletin.Layout.Transition
-            public void animateEnter(final Layout layout, final Runnable runnable, final Runnable runnable2, final Consumer consumer, int i) {
-                layout.setInOutOffset(layout.getMeasuredHeight());
-                if (consumer != null) {
-                    consumer.accept(Float.valueOf(layout.getTranslationY()));
-                }
-                ObjectAnimator ofFloat = ObjectAnimator.ofFloat(layout, Layout.IN_OUT_OFFSET_Y2, 0.0f);
-                ofFloat.setDuration(this.duration);
-                ofFloat.setInterpolator(Easings.easeOutQuad);
-                if (runnable != null || runnable2 != null) {
-                    ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.Bulletin.Layout.DefaultTransition.1
-                        @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-                        public void onAnimationEnd(Animator animator) {
-                            Runnable runnable3 = runnable2;
-                            if (runnable3 != null) {
-                                runnable3.run();
-                            }
-                        }
-
-                        @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-                        public void onAnimationStart(Animator animator) {
-                            Runnable runnable3 = runnable;
-                            if (runnable3 != null) {
-                                runnable3.run();
-                            }
-                        }
-                    });
-                }
-                if (consumer != null) {
-                    ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Bulletin$Layout$DefaultTransition$$ExternalSyntheticLambda1
-                        @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                        public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                            Bulletin.Layout.DefaultTransition.lambda$animateEnter$0(Consumer.this, layout, valueAnimator);
-                        }
-                    });
-                }
-                ofFloat.start();
-            }
-
-            @Override // org.telegram.ui.Components.Bulletin.Layout.Transition
-            public void animateExit(final Layout layout, final Runnable runnable, final Runnable runnable2, final Consumer consumer, int i) {
-                ObjectAnimator ofFloat = ObjectAnimator.ofFloat(layout, Layout.IN_OUT_OFFSET_Y2, layout.getHeight());
-                ofFloat.setDuration(175L);
-                ofFloat.setInterpolator(Easings.easeInQuad);
-                if (runnable != null || runnable2 != null) {
-                    ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.Bulletin.Layout.DefaultTransition.2
-                        @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-                        public void onAnimationEnd(Animator animator) {
-                            Runnable runnable3 = runnable2;
-                            if (runnable3 != null) {
-                                runnable3.run();
-                            }
-                        }
-
-                        @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-                        public void onAnimationStart(Animator animator) {
-                            Runnable runnable3 = runnable;
-                            if (runnable3 != null) {
-                                runnable3.run();
-                            }
-                        }
-                    });
-                }
-                if (consumer != null) {
-                    ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Bulletin$Layout$DefaultTransition$$ExternalSyntheticLambda0
-                        @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                        public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                            Bulletin.Layout.DefaultTransition.lambda$animateExit$1(Consumer.this, layout, valueAnimator);
-                        }
-                    });
-                }
-                ofFloat.start();
-            }
-        }
-
-        public static class SpringTransition implements Transition {
-            /* JADX INFO: Access modifiers changed from: private */
-            public static /* synthetic */ void lambda$animateEnter$0(Layout layout, Runnable runnable, DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
-                layout.setInOutOffset(0.0f);
-                if (z) {
-                    return;
-                }
-                runnable.run();
-            }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            public static /* synthetic */ void lambda$animateEnter$1(Consumer consumer, Layout layout, DynamicAnimation dynamicAnimation, float f, float f2) {
-                consumer.accept(Float.valueOf(layout.getTranslationY()));
-            }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            public static /* synthetic */ void lambda$animateExit$2(Runnable runnable, DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
-                if (z) {
-                    return;
-                }
-                runnable.run();
-            }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            public static /* synthetic */ void lambda$animateExit$3(Consumer consumer, Layout layout, DynamicAnimation dynamicAnimation, float f, float f2) {
-                consumer.accept(Float.valueOf(layout.getTranslationY()));
-            }
-
-            @Override // org.telegram.ui.Components.Bulletin.Layout.Transition
-            public void animateEnter(final Layout layout, Runnable runnable, final Runnable runnable2, final Consumer consumer, int i) {
-                layout.setInOutOffset(layout.getMeasuredHeight());
-                if (consumer != null) {
-                    consumer.accept(Float.valueOf(layout.getTranslationY()));
-                }
-                SpringAnimation springAnimation = new SpringAnimation(layout, Layout.IN_OUT_OFFSET_Y, 0.0f);
-                springAnimation.getSpring().setDampingRatio(0.8f);
-                springAnimation.getSpring().setStiffness(400.0f);
-                if (runnable2 != null) {
-                    springAnimation.addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: org.telegram.ui.Components.Bulletin$Layout$SpringTransition$$ExternalSyntheticLambda2
-                        @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationEndListener
-                        public final void onAnimationEnd(DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
-                            Bulletin.Layout.SpringTransition.lambda$animateEnter$0(Bulletin.Layout.this, runnable2, dynamicAnimation, z, f, f2);
-                        }
-                    });
-                }
-                if (consumer != null) {
-                    springAnimation.addUpdateListener(new DynamicAnimation.OnAnimationUpdateListener() { // from class: org.telegram.ui.Components.Bulletin$Layout$SpringTransition$$ExternalSyntheticLambda3
-                        @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationUpdateListener
-                        public final void onAnimationUpdate(DynamicAnimation dynamicAnimation, float f, float f2) {
-                            Bulletin.Layout.SpringTransition.lambda$animateEnter$1(Consumer.this, layout, dynamicAnimation, f, f2);
-                        }
-                    });
-                }
-                springAnimation.start();
-                if (runnable != null) {
-                    runnable.run();
-                }
-            }
-
-            @Override // org.telegram.ui.Components.Bulletin.Layout.Transition
-            public void animateExit(final Layout layout, Runnable runnable, final Runnable runnable2, final Consumer consumer, int i) {
-                SpringAnimation springAnimation = new SpringAnimation(layout, Layout.IN_OUT_OFFSET_Y, layout.getHeight());
-                springAnimation.getSpring().setDampingRatio(0.8f);
-                springAnimation.getSpring().setStiffness(400.0f);
-                if (runnable2 != null) {
-                    springAnimation.addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: org.telegram.ui.Components.Bulletin$Layout$SpringTransition$$ExternalSyntheticLambda0
-                        @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationEndListener
-                        public final void onAnimationEnd(DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
-                            Bulletin.Layout.SpringTransition.lambda$animateExit$2(runnable2, dynamicAnimation, z, f, f2);
-                        }
-                    });
-                }
-                if (consumer != null) {
-                    springAnimation.addUpdateListener(new DynamicAnimation.OnAnimationUpdateListener() { // from class: org.telegram.ui.Components.Bulletin$Layout$SpringTransition$$ExternalSyntheticLambda1
-                        @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationUpdateListener
-                        public final void onAnimationUpdate(DynamicAnimation dynamicAnimation, float f, float f2) {
-                            Bulletin.Layout.SpringTransition.lambda$animateExit$3(Consumer.this, layout, dynamicAnimation, f, f2);
-                        }
-                    });
-                }
-                springAnimation.start();
-                if (runnable != null) {
-                    runnable.run();
-                }
-            }
-        }
-
-        public interface Transition {
-            void animateEnter(Layout layout, Runnable runnable, Runnable runnable2, Consumer consumer, int i);
-
-            void animateExit(Layout layout, Runnable runnable, Runnable runnable2, Consumer consumer, int i);
-        }
-
-        static {
-            String str = "offsetY";
-            IN_OUT_OFFSET_Y = new FloatPropertyCompat(str) { // from class: org.telegram.ui.Components.Bulletin.Layout.1
-                @Override // androidx.dynamicanimation.animation.FloatPropertyCompat
-                public float getValue(Layout layout) {
-                    return layout.inOutOffset;
-                }
-
-                @Override // androidx.dynamicanimation.animation.FloatPropertyCompat
-                public void setValue(Layout layout, float f) {
-                    layout.setInOutOffset(f);
-                }
-            };
-            IN_OUT_OFFSET_Y2 = new AnimationProperties.FloatProperty(str) { // from class: org.telegram.ui.Components.Bulletin.Layout.2
-                @Override // android.util.Property
-                public Float get(Layout layout) {
-                    return Float.valueOf(layout.inOutOffset);
-                }
-
-                @Override // org.telegram.ui.Components.AnimationProperties.FloatProperty
-                public void setValue(Layout layout, float f) {
-                    layout.setInOutOffset(f);
-                }
-            };
-        }
-
-        public Layout(Context context, Theme.ResourcesProvider resourcesProvider) {
-            super(context);
-            this.callbacks = new ArrayList();
-            this.wideScreenWidth = -2;
-            this.wideScreenGravity = 1;
-            this.resourcesProvider = resourcesProvider;
-            setMinimumHeight(AndroidUtilities.dp(48.0f));
-            setBackground(getThemedColor(Theme.key_undo_background));
-            updateSize();
-            setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-            setWillNotDraw(false);
-            ScaleStateListAnimator.apply(this, 0.02f, 1.5f);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public boolean isNeedSwipeAlphaAnimation(boolean z) {
-            if (!isWideScreen() || this.wideScreenWidth == -1) {
-                return false;
-            }
-            int i = this.wideScreenGravity;
-            if (i == 1) {
-                return true;
-            }
-            return z ? i == 5 : i != 5;
-        }
-
-        private boolean isWideScreen() {
-            if (!AndroidUtilities.isTablet()) {
-                android.graphics.Point point = AndroidUtilities.displaySize;
-                if (point.x < point.y) {
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public void setInOutOffset(float f) {
-            this.inOutOffset = f;
-            updatePosition();
-            Bulletin bulletin = this.bulletin;
-            if (bulletin == null || !bulletin.allowBlurAnimation) {
-                return;
-            }
-            invalidate();
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public void setWideScreenParams(int i, int i2) {
-            boolean z;
-            boolean z2 = true;
-            if (this.wideScreenWidth != i) {
-                this.wideScreenWidth = i;
-                z = true;
-            } else {
-                z = false;
-            }
-            if (this.wideScreenGravity != i2) {
-                this.wideScreenGravity = i2;
-            } else {
-                z2 = z;
-            }
-            if (isWideScreen() && z2) {
-                updateSize();
-            }
-        }
-
-        private void updateSize() {
-            boolean isWideScreen = isWideScreen();
-            int i = isWideScreen ? this.wideScreenWidth : -1;
-            if (isWideScreen) {
-                r2 = (this.top ? 48 : 80) | this.wideScreenGravity;
-            } else if (this.top) {
-                r2 = 48;
-            }
-            setLayoutParams(LayoutHelper.createFrame(i, -2, r2));
-        }
-
-        public void addCallback(Callback callback) {
-            this.callbacks.add(callback);
-        }
-
-        public Transition createTransition() {
-            return new SpringTransition();
-        }
-
-        @Override // android.view.ViewGroup, android.view.View
-        protected void dispatchDraw(Canvas canvas) {
-            Bulletin bulletin = this.bulletin;
-            if (bulletin == null || !bulletin.allowBlurAnimation) {
-                dispatchDrawImpl(canvas, false, NotificationCenter.goingToPreviewTheme);
-                return;
-            }
-            if (this.blurVisibilityDrawable == null) {
-                this.blurVisibilityDrawable = new BlurVisibilityDrawable(new BlurVisibilityDrawable.DrawRunnable() { // from class: org.telegram.ui.Components.Bulletin$Layout$$ExternalSyntheticLambda0
-                    @Override // org.telegram.ui.Components.quickforward.BlurVisibilityDrawable.DrawRunnable
-                    public final void draw(Canvas canvas2, int i) {
-                        Bulletin.Layout.this.dispatchDrawImplBlur(canvas2, i);
-                    }
-                });
-            }
-            if (!this.blurVisibilityDrawable.hasBitmap()) {
-                this.blurVisibilityDrawable.render(getMeasuredWidth(), getMeasuredHeight(), AndroidUtilities.dp(10.0f), 6.0f);
-            }
-            this.blurVisibilityDrawable.setAlpha(MathUtils.clamp((int) ((1.0f - (this.inOutOffset / getMeasuredHeight())) * 255.0f), 0, NotificationCenter.goingToPreviewTheme));
-            this.blurVisibilityDrawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
-            this.blurVisibilityDrawable.draw(canvas);
-        }
-
-        protected void dispatchDrawImpl(Canvas canvas, boolean z, int i) {
-            Delegate delegate;
-            float dp;
-            float width;
-            Paint paint;
-            float f;
-            Canvas canvas2;
-            float f2;
-            if (this.bulletin == null || i == 0) {
-                return;
-            }
-            this.background.setBounds(getPaddingLeft(), getPaddingTop(), getMeasuredWidth() - getPaddingRight(), getMeasuredBackgroundHeight() - getPaddingBottom());
-            if (!isTransitionRunning() || (delegate = this.delegate) == null) {
-                this.background.draw(canvas);
-                super.dispatchDraw(canvas);
-                return;
-            }
-            float topOffset = delegate.getTopOffset(this.bulletin.tag) - getY();
-            float measuredHeight = (((View) getParent()).getMeasuredHeight() - getBottomOffset()) - getY();
-            boolean z2 = !z && this.delegate.clipWithGradient(this.bulletin.tag);
-            canvas.save();
-            if (!z) {
-                canvas.clipRect(0.0f, topOffset, getMeasuredWidth(), measuredHeight);
-            }
-            boolean z3 = z2 || i != 255;
-            if (z3) {
-                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), i, 31);
-            }
-            this.background.draw(canvas);
-            super.dispatchDraw(canvas);
-            if (z2) {
-                if (this.clipPaint == null) {
-                    Paint paint2 = new Paint(1);
-                    this.clipPaint = paint2;
-                    paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-                    this.clipGradient = new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(8.0f), this.top ? new int[]{-16777216, 0} : new int[]{0, -16777216}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-                    Matrix matrix = new Matrix();
-                    this.clipMatrix = matrix;
-                    this.clipGradient.setLocalMatrix(matrix);
-                    this.clipPaint.setShader(this.clipGradient);
-                }
-                canvas.save();
-                this.clipMatrix.reset();
-                this.clipMatrix.postTranslate(0.0f, this.top ? topOffset : measuredHeight - AndroidUtilities.dp(8.0f));
-                this.clipGradient.setLocalMatrix(this.clipMatrix);
-                if (this.top) {
-                    width = getWidth();
-                    f2 = topOffset + AndroidUtilities.dp(8.0f);
-                    paint = this.clipPaint;
-                    f = 0.0f;
-                    canvas2 = canvas;
-                    dp = topOffset;
-                } else {
-                    dp = measuredHeight - AndroidUtilities.dp(8.0f);
-                    width = getWidth();
-                    paint = this.clipPaint;
-                    f = 0.0f;
-                    canvas2 = canvas;
-                    f2 = measuredHeight;
-                }
-                canvas2.drawRect(f, dp, width, f2, paint);
-                canvas.restore();
-            }
-            if (z3) {
-                canvas.restore();
-            }
-            canvas.restore();
-            invalidate();
-        }
-
-        protected void dispatchDrawImplBlur(Canvas canvas, int i) {
-            dispatchDrawImpl(canvas, true, i);
-        }
-
-        protected CharSequence getAccessibilityText() {
-            return null;
-        }
-
-        public float getBottomOffset() {
-            int bottomOffset;
-            Delegate delegate;
-            if (this.bulletin == null || !(((delegate = this.delegate) == null || delegate.bottomOffsetAnimated()) && this.bulletin.bottomOffsetSpring != null && this.bulletin.bottomOffsetSpring.isRunning())) {
-                Delegate delegate2 = this.delegate;
-                if (delegate2 == null) {
-                    return 0.0f;
-                }
-                Bulletin bulletin = this.bulletin;
-                bottomOffset = delegate2.getBottomOffset(bulletin != null ? bulletin.tag : 0);
-            } else {
-                bottomOffset = this.bulletin.lastBottomOffset;
-            }
-            return bottomOffset;
-        }
-
-        public Bulletin getBulletin() {
-            return this.bulletin;
-        }
-
-        protected int getMeasuredBackgroundHeight() {
-            return getMeasuredHeight();
-        }
-
-        protected int getThemedColor(int i) {
-            return Theme.getColor(i, this.resourcesProvider);
-        }
-
-        public float getTopOffset() {
-            if (this.delegate == null) {
-                return 0.0f;
-            }
-            return r0.getTopOffset(this.bulletin != null ? r1.tag : 0);
-        }
-
-        public boolean isAttachedToBulletin() {
-            return this.bulletin != null;
-        }
-
-        public boolean isTransitionRunning() {
-            return this.transitionRunningEnter || this.transitionRunningExit;
-        }
-
-        protected void onAttach(Bulletin bulletin) {
-            this.bulletin = bulletin;
-            int size = this.callbacks.size();
-            for (int i = 0; i < size; i++) {
-                this.callbacks.get(i).onAttach(this, bulletin);
-            }
-        }
-
-        @Override // android.view.View
-        protected void onConfigurationChanged(Configuration configuration) {
-            super.onConfigurationChanged(configuration);
-            updateSize();
-        }
-
-        protected void onDetach() {
-            this.bulletin = null;
-            int size = this.callbacks.size();
-            for (int i = 0; i < size; i++) {
-                this.callbacks.get(i).onDetach(this);
-            }
-            BlurVisibilityDrawable blurVisibilityDrawable = this.blurVisibilityDrawable;
-            if (blurVisibilityDrawable != null) {
-                blurVisibilityDrawable.recycle();
-            }
-        }
-
-        protected void onEnterTransitionEnd() {
-            int size = this.callbacks.size();
-            for (int i = 0; i < size; i++) {
-                this.callbacks.get(i).onEnterTransitionEnd(this);
-            }
-        }
-
-        protected void onEnterTransitionStart() {
-            int size = this.callbacks.size();
-            for (int i = 0; i < size; i++) {
-                this.callbacks.get(i).onEnterTransitionStart(this);
-            }
-        }
-
-        protected void onExitTransitionEnd() {
-            int size = this.callbacks.size();
-            for (int i = 0; i < size; i++) {
-                this.callbacks.get(i).onExitTransitionEnd(this);
-            }
-        }
-
-        protected void onExitTransitionStart() {
-            int size = this.callbacks.size();
-            for (int i = 0; i < size; i++) {
-                this.callbacks.get(i).onExitTransitionStart(this);
-            }
-        }
-
-        protected void onHide() {
-            int size = this.callbacks.size();
-            for (int i = 0; i < size; i++) {
-                this.callbacks.get(i).onHide(this);
-            }
-        }
-
-        protected void onShow() {
-            int size = this.callbacks.size();
-            for (int i = 0; i < size; i++) {
-                this.callbacks.get(i).onShow(this);
-            }
-        }
-
-        public void removeCallback(Callback callback) {
-            this.callbacks.remove(callback);
-        }
-
-        protected void setBackground(int i) {
-            setBackground(i, 10);
-        }
-
-        public void setBackground(int i, int i2) {
-            this.background = Theme.createRoundRectDrawable(AndroidUtilities.dp(i2), i);
-        }
-
-        @Override // android.view.View
-        public void setOnClickListener(View.OnClickListener onClickListener) {
-            this.onClickListener = onClickListener;
-        }
-
-        public void setTop(boolean z) {
-            if (this.top != z) {
-                this.top = z;
-                updateSize();
-            }
-        }
-
-        public void updatePosition() {
-            float f = 0.0f;
-            if (this.delegate != null) {
-                if (this.top) {
-                    f = 0.0f - r0.getTopOffset(this.bulletin != null ? r2.tag : 0);
-                } else {
-                    f = 0.0f + getBottomOffset();
-                }
-            }
-            setTranslationY((-f) + (this.inOutOffset * (this.top ? -1 : 1)));
-        }
-
-        @Override // android.view.View
-        protected boolean verifyDrawable(Drawable drawable) {
-            return this.background == drawable || super.verifyDrawable(drawable);
-        }
-    }
-
-    public interface LoadingLayout {
-        void onTextLoaded(CharSequence charSequence);
-    }
-
-    public static class LoadingLottieLayout extends LottieLayout implements LoadingLayout {
-        public LinkSpanDrawable.LinksTextView textLoadingView;
-
-        public LoadingLottieLayout(Context context, Theme.ResourcesProvider resourcesProvider) {
-            super(context, resourcesProvider);
-            LinkSpanDrawable.LinksTextView linksTextView = new LinkSpanDrawable.LinksTextView(context);
-            this.textLoadingView = linksTextView;
-            linksTextView.setDisablePaddingsOffset(true);
-            this.textLoadingView.setSingleLine();
-            this.textLoadingView.setTypeface(Typeface.SANS_SERIF);
-            this.textLoadingView.setTextSize(1, 15.0f);
-            this.textLoadingView.setEllipsize(TextUtils.TruncateAt.END);
-            this.textLoadingView.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
-            this.textView.setVisibility(8);
-            addView(this.textLoadingView, LayoutHelper.createFrameRelatively(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 8.0f, 0.0f));
-            setTextColor(getThemedColor(Theme.key_undo_infoColor));
-        }
-
-        @Override // org.telegram.ui.Components.Bulletin.LoadingLayout
-        public void onTextLoaded(CharSequence charSequence) {
-            this.textView.setText(charSequence);
-            AndroidUtilities.updateViewShow(this.textLoadingView, false, false, true);
-            AndroidUtilities.updateViewShow(this.textView, true, false, true);
-        }
-
-        @Override // org.telegram.ui.Components.Bulletin.LottieLayout
-        public void setTextColor(int i) {
-            super.setTextColor(i);
-            LinkSpanDrawable.LinksTextView linksTextView = this.textLoadingView;
-            if (linksTextView != null) {
-                linksTextView.setTextColor(i);
-            }
-        }
-    }
-
-    public static class LottieLayout extends ButtonLayout {
-        public RLottieImageView imageView;
-        private int textColor;
-        public TextView textView;
-
-        public LottieLayout(Context context, Theme.ResourcesProvider resourcesProvider) {
-            super(context, resourcesProvider);
-            RLottieImageView rLottieImageView = new RLottieImageView(context);
-            this.imageView = rLottieImageView;
-            rLottieImageView.setScaleType(ImageView.ScaleType.CENTER);
-            addView(this.imageView, LayoutHelper.createFrameRelatively(56.0f, 48.0f, 8388627));
-            LinkSpanDrawable.LinksTextView linksTextView = new LinkSpanDrawable.LinksTextView(context) { // from class: org.telegram.ui.Components.Bulletin.LottieLayout.1
-                {
-                    setDisablePaddingsOffset(true);
-                }
-
-                @Override // org.telegram.ui.Components.LinkSpanDrawable.LinksTextView, android.widget.TextView
-                public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
-                    super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
-                }
-            };
-            this.textView = linksTextView;
-            NotificationCenter.listenEmojiLoading(linksTextView);
-            this.textView.setSingleLine();
-            this.textView.setTypeface(Typeface.SANS_SERIF);
-            this.textView.setTextSize(1, 15.0f);
-            this.textView.setEllipsize(TextUtils.TruncateAt.END);
-            this.textView.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
-            addView(this.textView, LayoutHelper.createFrameRelatively(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
-            this.textView.setLinkTextColor(getThemedColor(Theme.key_undo_cancelColor));
-            setTextColor(getThemedColor(Theme.key_undo_infoColor));
-            setBackground(getThemedColor(Theme.key_undo_background));
-        }
-
-        public LottieLayout(Context context, Theme.ResourcesProvider resourcesProvider, int i, int i2) {
-            this(context, resourcesProvider);
-            setBackground(i);
-            setTextColor(i2);
-        }
-
-        @Override // org.telegram.ui.Components.Bulletin.Layout
-        public CharSequence getAccessibilityText() {
-            return this.textView.getText();
-        }
-
-        @Override // org.telegram.ui.Components.Bulletin.Layout
-        protected void onShow() {
-            super.onShow();
-            this.imageView.playAnimation();
-        }
-
-        public void setAnimation(int i, int i2, int i3, String... strArr) {
-            this.imageView.setAnimation(i, i2, i3);
-            for (String str : strArr) {
-                this.imageView.setLayerColor(str + ".**", this.textColor);
-            }
-        }
-
-        public void setAnimation(int i, String... strArr) {
-            setAnimation(i, 32, 32, strArr);
-        }
-
-        public void setAnimation(TLRPC.Document document, int i, int i2, String... strArr) {
-            this.imageView.setAutoRepeat(true);
-            this.imageView.setAnimation(document, i, i2);
-            for (String str : strArr) {
-                this.imageView.setLayerColor(str + ".**", this.textColor);
-            }
-        }
-
-        public void setIconPaddingBottom(int i) {
-            this.imageView.setLayoutParams(LayoutHelper.createFrameRelatively(56.0f, 48 - i, 8388627, 0.0f, 0.0f, 0.0f, i));
-        }
-
-        public void setTextColor(int i) {
-            this.textColor = i;
-            this.textView.setTextColor(i);
-        }
-    }
-
-    public static class LottieLayoutWithReactions extends LottieLayout implements NotificationCenter.NotificationCenterDelegate {
-        private Bulletin bulletin;
-        private final BaseFragment fragment;
-        private final int messagesCount;
-        private SparseLongArray newMessagesByIds;
-        private ReactionsContainerLayout reactionsContainerLayout;
-
-        class 1 extends ReactionsContainerLayout {
-            1(int i, BaseFragment baseFragment, Context context, int i2, Theme.ResourcesProvider resourcesProvider) {
-                super(i, baseFragment, context, i2, resourcesProvider);
-            }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$onShownCustomEmojiReactionDialog$0(View view) {
-                LottieLayoutWithReactions.this.hideReactionsDialog();
-                Bulletin.hideVisible();
-            }
-
-            @Override // org.telegram.ui.Components.ReactionsContainerLayout, android.view.ViewGroup, android.view.View
-            public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-                boolean z;
-                Bulletin bulletin;
-                if (motionEvent.getAction() != 0) {
-                    z = true;
-                    if (motionEvent.getAction() == 1 && LottieLayoutWithReactions.this.bulletin != null) {
-                        bulletin = LottieLayoutWithReactions.this.bulletin;
-                        bulletin.setCanHide(z);
-                    }
-                } else if (LottieLayoutWithReactions.this.bulletin != null) {
-                    bulletin = LottieLayoutWithReactions.this.bulletin;
-                    z = false;
-                    bulletin.setCanHide(z);
-                }
-                return super.dispatchTouchEvent(motionEvent);
-            }
-
-            @Override // org.telegram.ui.Components.ReactionsContainerLayout
-            protected void onShownCustomEmojiReactionDialog() {
-                Bulletin visibleBulletin = Bulletin.getVisibleBulletin();
-                if (visibleBulletin != null) {
-                    visibleBulletin.setCanHide(false);
-                }
-                LottieLayoutWithReactions.this.reactionsContainerLayout.getReactionsWindow().windowView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Bulletin$LottieLayoutWithReactions$1$$ExternalSyntheticLambda0
-                    @Override // android.view.View.OnClickListener
-                    public final void onClick(View view) {
-                        Bulletin.LottieLayoutWithReactions.1.this.lambda$onShownCustomEmojiReactionDialog$0(view);
-                    }
-                });
-            }
-        }
-
-        class 2 implements ReactionsContainerLayout.ReactionsContainerDelegate {
-            2() {
-            }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            public static /* synthetic */ void lambda$showTaggedReactionToast$0(int i, int i2, BaseFragment baseFragment) {
-                Bundle bundle = new Bundle();
-                bundle.putLong("user_id", UserConfig.getInstance(i).getClientUserId());
-                bundle.putInt("message_id", i2);
-                baseFragment.presentFragment(new ChatActivity(bundle));
-            }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$showTaggedReactionToast$1(ReactionsLayoutInBubble.VisibleReaction visibleReaction, boolean z, final int i, final int i2) {
-                TLRPC.Document findDocument;
-                final BaseFragment lastFragment = LaunchActivity.getLastFragment();
-                long j = visibleReaction.documentId;
-                if (j == 0) {
-                    TLRPC.TL_availableReaction tL_availableReaction = MediaDataController.getInstance(UserConfig.selectedAccount).getReactionsMap().get(visibleReaction.emojicon);
-                    if (tL_availableReaction == null) {
-                        return;
+                    Layout layout2 = this.layout;
+                    layout2.transitionRunningExit = true;
+                    layout2.delegate = this.currentDelegate;
+                    layout2.invalidate();
+                    if (j >= 0) {
+                        Layout.DefaultTransition defaultTransition = new Layout.DefaultTransition();
+                        defaultTransition.duration = j;
+                        this.layoutTransition = defaultTransition;
                     } else {
-                        findDocument = tL_availableReaction.activate_animation;
+                        ensureLayoutTransitionCreated();
                     }
-                } else {
-                    findDocument = AnimatedEmojiDrawable.findDocument(UserConfig.selectedAccount, j);
-                }
-                if (findDocument == null || lastFragment == null) {
+                    Layout.Transition transition = this.layoutTransition;
+                    final Layout layout3 = this.layout;
+                    Objects.requireNonNull(layout3);
+                    transition.animateExit(layout3, new Runnable() { // from class: org.telegram.ui.Components.Bulletin$$ExternalSyntheticLambda2
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            Bulletin.Layout.this.onExitTransitionStart();
+                        }
+                    }, new Runnable() { // from class: org.telegram.ui.Components.Bulletin$$ExternalSyntheticLambda3
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            Bulletin.this.lambda$hide$3();
+                        }
+                    }, new Consumer() { // from class: org.telegram.ui.Components.Bulletin$$ExternalSyntheticLambda4
+                        @Override // androidx.core.util.Consumer
+                        public final void accept(Object obj) {
+                            Bulletin.this.lambda$hide$4((Float) obj);
+                        }
+                    }, i);
                     return;
                 }
-                BulletinFactory.of(lastFragment).createMessagesTaggedBulletin(LottieLayoutWithReactions.this.messagesCount, findDocument, z ? new Runnable() { // from class: org.telegram.ui.Components.Bulletin$LottieLayoutWithReactions$2$$ExternalSyntheticLambda1
+            }
+            Delegate delegate = this.currentDelegate;
+            if (delegate != null && !this.layout.top) {
+                delegate.onBottomOffsetChange(0.0f);
+                this.currentDelegate.onHide(this);
+            }
+            this.layout.onExitTransitionStart();
+            this.layout.onExitTransitionEnd();
+            this.layout.onHide();
+            if (this.containerLayout != null) {
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Bulletin$$ExternalSyntheticLambda5
                     @Override // java.lang.Runnable
                     public final void run() {
-                        Bulletin.LottieLayoutWithReactions.2.lambda$showTaggedReactionToast$0(i, i2, lastFragment);
+                        Bulletin.this.lambda$hide$5();
                     }
-                } : null).show(true);
+                });
             }
-
-            private void showTaggedReactionToast(final ReactionsLayoutInBubble.VisibleReaction visibleReaction, final int i, final int i2, final boolean z) {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Bulletin$LottieLayoutWithReactions$2$$ExternalSyntheticLambda0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        Bulletin.LottieLayoutWithReactions.2.this.lambda$showTaggedReactionToast$1(visibleReaction, z, i, i2);
-                    }
-                }, 300L);
+            this.layout.onDetach();
+            Runnable runnable = this.onHideListener;
+            if (runnable != null) {
+                runnable.run();
             }
-
-            @Override // org.telegram.ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
-            public /* synthetic */ boolean drawBackground() {
-                return ReactionsContainerLayout.ReactionsContainerDelegate.-CC.$default$drawBackground(this);
-            }
-
-            @Override // org.telegram.ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
-            public /* synthetic */ void drawRoundRect(Canvas canvas, RectF rectF, float f, float f2, float f3, int i, boolean z) {
-                ReactionsContainerLayout.ReactionsContainerDelegate.-CC.$default$drawRoundRect(this, canvas, rectF, f, f2, f3, i, z);
-            }
-
-            @Override // org.telegram.ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
-            public /* synthetic */ boolean needEnterText() {
-                return ReactionsContainerLayout.ReactionsContainerDelegate.-CC.$default$needEnterText(this);
-            }
-
-            @Override // org.telegram.ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
-            public /* synthetic */ void onEmojiWindowDismissed() {
-                ReactionsContainerLayout.ReactionsContainerDelegate.-CC.$default$onEmojiWindowDismissed(this);
-            }
-
-            @Override // org.telegram.ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
-            public void onReactionClicked(View view, ReactionsLayoutInBubble.VisibleReaction visibleReaction, boolean z, boolean z2) {
-                if (LottieLayoutWithReactions.this.newMessagesByIds == null) {
-                    return;
-                }
-                boolean z3 = (LottieLayoutWithReactions.this.fragment instanceof ChatActivity) && ((ChatActivity) LottieLayoutWithReactions.this.fragment).getDialogId() == UserConfig.getInstance(LottieLayoutWithReactions.this.fragment.getCurrentAccount()).getClientUserId();
-                int i = 0;
-                for (int i2 = 0; i2 < LottieLayoutWithReactions.this.newMessagesByIds.size(); i2++) {
-                    int keyAt = LottieLayoutWithReactions.this.newMessagesByIds.keyAt(i2);
-                    TLRPC.Message message = new TLRPC.Message();
-                    message.dialog_id = LottieLayoutWithReactions.this.fragment.getUserConfig().getClientUserId();
-                    message.id = keyAt;
-                    MessageObject messageObject = new MessageObject(LottieLayoutWithReactions.this.fragment.getCurrentAccount(), message, false, false);
-                    ArrayList<ReactionsLayoutInBubble.VisibleReaction> arrayList = new ArrayList<>();
-                    arrayList.add(visibleReaction);
-                    LottieLayoutWithReactions.this.fragment.getSendMessagesHelper().sendReaction(messageObject, arrayList, visibleReaction, false, false, LottieLayoutWithReactions.this.fragment, null);
-                    i = message.id;
-                }
-                LottieLayoutWithReactions.this.hideReactionsDialog();
-                Bulletin.hideVisible();
-                showTaggedReactionToast(visibleReaction, LottieLayoutWithReactions.this.fragment.getCurrentAccount(), i, !z3);
-            }
-        }
-
-        public LottieLayoutWithReactions(BaseFragment baseFragment, int i) {
-            super(baseFragment.getContext(), baseFragment.getResourceProvider());
-            this.fragment = baseFragment;
-            this.messagesCount = i;
-            init();
-        }
-
-        @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-        public void didReceivedNotification(int i, int i2, Object... objArr) {
-            if (i == NotificationCenter.savedMessagesForwarded) {
-                this.newMessagesByIds = (SparseLongArray) objArr[0];
-            }
-        }
-
-        @Override // org.telegram.ui.Components.Bulletin.Layout
-        protected int getMeasuredBackgroundHeight() {
-            return this.textView.getMeasuredHeight() + AndroidUtilities.dp(30.0f);
-        }
-
-        public void hideReactionsDialog() {
-            if (this.reactionsContainerLayout.getReactionsWindow() != null) {
-                this.reactionsContainerLayout.dismissWindow();
-                if (this.reactionsContainerLayout.getReactionsWindow().containerView != null) {
-                    this.reactionsContainerLayout.getReactionsWindow().containerView.animate().alpha(0.0f).setDuration(180L).start();
-                }
-            }
-        }
-
-        public void init() {
-            this.textView.setLayoutParams(LayoutHelper.createFrameRelatively(-2.0f, -2.0f, 8388659, 56.0f, 6.0f, 8.0f, 0.0f));
-            this.imageView.setLayoutParams(LayoutHelper.createFrameRelatively(56.0f, 48.0f, 8388659));
-            1 r0 = new 1(3, this.fragment, getContext(), this.fragment.getCurrentAccount(), this.fragment.getResourceProvider());
-            this.reactionsContainerLayout = r0;
-            r0.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(0.0f));
-            this.reactionsContainerLayout.setDelegate(new 2());
-            this.reactionsContainerLayout.setTop(true);
-            this.reactionsContainerLayout.setClipChildren(false);
-            this.reactionsContainerLayout.setClipToPadding(false);
-            this.reactionsContainerLayout.setVisibility(0);
-            this.reactionsContainerLayout.setBubbleOffset(-AndroidUtilities.dp(80.0f));
-            this.reactionsContainerLayout.setHint(LocaleController.getString(R.string.SavedTagReactionsHint));
-            addView(this.reactionsContainerLayout, LayoutHelper.createFrame(-2, 92.5f, 1, 0.0f, 36.0f, 0.0f, 0.0f));
-            this.reactionsContainerLayout.setMessage(null, null, true);
-        }
-
-        @Override // android.view.ViewGroup, android.view.View
-        protected void onAttachedToWindow() {
-            super.onAttachedToWindow();
-            NotificationCenter.getInstance(UserConfig.selectedAccount).addObserver(this, NotificationCenter.savedMessagesForwarded);
-        }
-
-        @Override // android.view.ViewGroup, android.view.View
-        protected void onDetachedFromWindow() {
-            super.onDetachedFromWindow();
-            NotificationCenter.getInstance(UserConfig.selectedAccount).removeObserver(this, NotificationCenter.savedMessagesForwarded);
-        }
-
-        public void setBulletin(Bulletin bulletin) {
-            this.bulletin = bulletin;
         }
     }
 
-    public static class MultiLineLayout extends ButtonLayout {
-        public final BackupImageView imageView;
-        public final TextView textView;
-
-        public MultiLineLayout(Context context, Theme.ResourcesProvider resourcesProvider) {
-            super(context, resourcesProvider);
-            BackupImageView backupImageView = new BackupImageView(getContext());
-            this.imageView = backupImageView;
-            TextView textView = new TextView(getContext());
-            this.textView = textView;
-            addView(backupImageView, LayoutHelper.createFrameRelatively(30.0f, 30.0f, 8388627, 12.0f, 8.0f, 12.0f, 8.0f));
-            textView.setGravity(8388611);
-            textView.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
-            textView.setTextColor(getThemedColor(Theme.key_undo_infoColor));
-            textView.setTextSize(1, 15.0f);
-            textView.setTypeface(Typeface.SANS_SERIF);
-            addView(textView, LayoutHelper.createFrameRelatively(-1.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$hide$3() {
+        Delegate delegate = this.currentDelegate;
+        if (delegate != null && !this.layout.top) {
+            delegate.onBottomOffsetChange(0.0f);
+            this.currentDelegate.onHide(this);
         }
-
-        @Override // org.telegram.ui.Components.Bulletin.Layout
-        public CharSequence getAccessibilityText() {
-            return this.textView.getText();
+        Layout layout = this.layout;
+        layout.transitionRunningExit = false;
+        layout.onExitTransitionEnd();
+        this.layout.onHide();
+        this.containerLayout.removeView(this.parentLayout);
+        this.containerLayout.removeOnLayoutChangeListener(this.containerLayoutListener);
+        this.layout.onDetach();
+        Runnable runnable = this.onHideListener;
+        if (runnable != null) {
+            runnable.run();
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$hide$4(Float f) {
+        Delegate delegate = this.currentDelegate;
+        if (delegate != null) {
+            if (this.layout.top) {
+                return;
+            }
+            delegate.onBottomOffsetChange(r1.getHeight() - f.floatValue());
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$hide$5() {
+        this.containerLayout.removeView(this.parentLayout);
+        this.containerLayout.removeOnLayoutChangeListener(this.containerLayoutListener);
+    }
+
+    public boolean isShowing() {
+        return this.showing;
+    }
+
+    public Layout getLayout() {
+        return this.layout;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static boolean isTransitionsEnabled() {
+        return MessagesController.getGlobalMainSettings().getBoolean("view_animations", true);
+    }
+
+    public void updatePosition() {
+        Layout layout = this.layout;
+        if (layout != null) {
+            layout.updatePosition();
+        }
+    }
+
+    public static void updateCurrentPosition() {
+        Layout layout;
+        Bulletin bulletin = visibleBulletin;
+        if (bulletin == null || (layout = bulletin.layout) == null) {
+            return;
+        }
+        layout.updatePosition();
     }
 
     public static abstract class ParentLayout extends FrameLayout {
@@ -1507,35 +684,43 @@ public class Bulletin {
         private float ty;
         private boolean wasCanHide;
 
+        protected abstract void onHide();
+
+        protected abstract void onPressedStateChanged(boolean z);
+
+        static /* synthetic */ float access$1616(ParentLayout parentLayout, float f) {
+            float f2 = parentLayout.tx + f;
+            parentLayout.tx = f2;
+            return f2;
+        }
+
+        static /* synthetic */ float access$1716(ParentLayout parentLayout, float f) {
+            float f2 = parentLayout.ty + f;
+            parentLayout.ty = f2;
+            return f2;
+        }
+
+        static /* synthetic */ float access$2024(ParentLayout parentLayout, float f) {
+            float f2 = parentLayout.translationX - f;
+            parentLayout.translationX = f2;
+            return f2;
+        }
+
+        public ParentLayout(Layout layout) {
+            super(layout.getContext());
+            this.rect = new android.graphics.Rect();
+            this.layout = layout;
+            GestureDetector gestureDetector = new GestureDetector(layout.getContext(), new 1(layout));
+            this.gestureDetector = gestureDetector;
+            gestureDetector.setIsLongpressEnabled(false);
+            addView(layout);
+        }
+
         class 1 extends GestureDetector.SimpleOnGestureListener {
             final /* synthetic */ Layout val$layout;
 
             1(Layout layout) {
                 this.val$layout = layout;
-            }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$onFling$0(DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
-                ParentLayout.this.onHide();
-            }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            public static /* synthetic */ void lambda$onFling$1(Layout layout, DynamicAnimation dynamicAnimation, float f, float f2) {
-                if (Math.abs(f) > layout.getWidth()) {
-                    dynamicAnimation.cancel();
-                }
-            }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$onFling$2(DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
-                ParentLayout.this.onHide();
-            }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            public static /* synthetic */ void lambda$onFling$3(DynamicAnimation dynamicAnimation, float f, float f2) {
-                if (f <= 0.0f) {
-                    dynamicAnimation.cancel();
-                }
             }
 
             @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
@@ -1545,6 +730,23 @@ public class Bulletin {
                 }
                 ParentLayout.this.needLeftAlphaAnimation = this.val$layout.isNeedSwipeAlphaAnimation(true);
                 ParentLayout.this.needRightAlphaAnimation = this.val$layout.isNeedSwipeAlphaAnimation(false);
+                return true;
+            }
+
+            @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+            public boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f, float f2) {
+                ParentLayout.access$1616(ParentLayout.this, f);
+                ParentLayout.access$1716(ParentLayout.this, f2);
+                if (Utilities.dist(0.0f, 0.0f, ParentLayout.this.tx, ParentLayout.this.ty) > AndroidUtilities.touchSlop) {
+                    ParentLayout.this.scrolling = true;
+                }
+                if (!ParentLayout.this.wasCanHide) {
+                    return false;
+                }
+                this.val$layout.setTranslationX(ParentLayout.access$2024(ParentLayout.this, f));
+                if (ParentLayout.this.translationX == 0.0f || ((ParentLayout.this.translationX < 0.0f && ParentLayout.this.needLeftAlphaAnimation) || (ParentLayout.this.translationX > 0.0f && ParentLayout.this.needRightAlphaAnimation))) {
+                    this.val$layout.setAlpha(1.0f - (Math.abs(ParentLayout.this.translationX) / this.val$layout.getWidth()));
+                }
                 return true;
             }
 
@@ -1600,67 +802,30 @@ public class Bulletin {
                 return true;
             }
 
-            @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-            public boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f, float f2) {
-                ParentLayout.access$1616(ParentLayout.this, f);
-                ParentLayout.access$1716(ParentLayout.this, f2);
-                if (Utilities.dist(0.0f, 0.0f, ParentLayout.this.tx, ParentLayout.this.ty) > AndroidUtilities.touchSlop) {
-                    ParentLayout.this.scrolling = true;
+            /* JADX INFO: Access modifiers changed from: private */
+            public /* synthetic */ void lambda$onFling$0(DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
+                ParentLayout.this.onHide();
+            }
+
+            /* JADX INFO: Access modifiers changed from: private */
+            public static /* synthetic */ void lambda$onFling$1(Layout layout, DynamicAnimation dynamicAnimation, float f, float f2) {
+                if (Math.abs(f) > layout.getWidth()) {
+                    dynamicAnimation.cancel();
                 }
-                if (!ParentLayout.this.wasCanHide) {
-                    return false;
+            }
+
+            /* JADX INFO: Access modifiers changed from: private */
+            public /* synthetic */ void lambda$onFling$2(DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
+                ParentLayout.this.onHide();
+            }
+
+            /* JADX INFO: Access modifiers changed from: private */
+            public static /* synthetic */ void lambda$onFling$3(DynamicAnimation dynamicAnimation, float f, float f2) {
+                if (f <= 0.0f) {
+                    dynamicAnimation.cancel();
                 }
-                this.val$layout.setTranslationX(ParentLayout.access$2024(ParentLayout.this, f));
-                if (ParentLayout.this.translationX == 0.0f || ((ParentLayout.this.translationX < 0.0f && ParentLayout.this.needLeftAlphaAnimation) || (ParentLayout.this.translationX > 0.0f && ParentLayout.this.needRightAlphaAnimation))) {
-                    this.val$layout.setAlpha(1.0f - (Math.abs(ParentLayout.this.translationX) / this.val$layout.getWidth()));
-                }
-                return true;
             }
         }
-
-        public ParentLayout(Layout layout) {
-            super(layout.getContext());
-            this.rect = new android.graphics.Rect();
-            this.layout = layout;
-            GestureDetector gestureDetector = new GestureDetector(layout.getContext(), new 1(layout));
-            this.gestureDetector = gestureDetector;
-            gestureDetector.setIsLongpressEnabled(false);
-            addView(layout);
-        }
-
-        static /* synthetic */ float access$1616(ParentLayout parentLayout, float f) {
-            float f2 = parentLayout.tx + f;
-            parentLayout.tx = f2;
-            return f2;
-        }
-
-        static /* synthetic */ float access$1716(ParentLayout parentLayout, float f) {
-            float f2 = parentLayout.ty + f;
-            parentLayout.ty = f2;
-            return f2;
-        }
-
-        static /* synthetic */ float access$2024(ParentLayout parentLayout, float f) {
-            float f2 = parentLayout.translationX - f;
-            parentLayout.translationX = f2;
-            return f2;
-        }
-
-        private boolean inLayoutHitRect(float f, float f2) {
-            this.layout.getHitRect(this.rect);
-            return this.rect.contains((int) f, (int) f2);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onTouchEvent$0(float f) {
-            if (this.layout.getTranslationX() == f) {
-                onHide();
-            }
-        }
-
-        protected abstract void onHide();
-
-        protected abstract void onPressedStateChanged(boolean z);
 
         /* JADX WARN: Removed duplicated region for block: B:42:0x0110  */
         @Override // android.view.View
@@ -1725,94 +890,702 @@ public class Bulletin {
             }
             return true;
         }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$onTouchEvent$0(float f) {
+            if (this.layout.getTranslationX() == f) {
+                onHide();
+            }
+        }
+
+        private boolean inLayoutHitRect(float f, float f2) {
+            this.layout.getHitRect(this.rect);
+            return this.rect.contains((int) f, (int) f2);
+        }
     }
 
-    public static class ProgressLayout extends ButtonLayout {
-        public BackupImageView imageView;
-        private boolean inprogress;
-        public float progress;
-        public FrameLayout progressView;
-        public AnimatedTextView textView;
+    public static void addDelegate(BaseFragment baseFragment, Delegate delegate) {
+        fragmentDelegates.put(baseFragment, delegate);
+    }
 
-        public ProgressLayout(Context context, Theme.ResourcesProvider resourcesProvider) {
-            super(context, resourcesProvider);
-            FrameLayout frameLayout = new FrameLayout(context) { // from class: org.telegram.ui.Components.Bulletin.ProgressLayout.1
-                private final AnimatedFloat animatedDone;
-                private final AnimatedFloat animatedProgress;
-                private final RectF rect;
-                private final long start;
-                private final Paint strokePaint;
+    public static void addDelegate(FrameLayout frameLayout, Delegate delegate) {
+        delegates.put(frameLayout, delegate);
+    }
 
-                {
-                    CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
-                    this.animatedProgress = new AnimatedFloat(this, 320L, cubicBezierInterpolator);
-                    this.animatedDone = new AnimatedFloat(this, 320L, cubicBezierInterpolator);
-                    Paint paint = new Paint(1);
-                    this.strokePaint = paint;
-                    paint.setStyle(Paint.Style.STROKE);
-                    paint.setColor(268435455);
-                    paint.setStrokeWidth(AndroidUtilities.dp(1.66f));
-                    paint.setStrokeCap(Paint.Cap.ROUND);
-                    paint.setStrokeJoin(Paint.Join.ROUND);
-                    this.rect = new RectF();
-                    this.start = System.currentTimeMillis();
+    /* JADX INFO: Access modifiers changed from: private */
+    public static Delegate findDelegate(BaseFragment baseFragment, FrameLayout frameLayout) {
+        Delegate delegate = (Delegate) fragmentDelegates.get(baseFragment);
+        if (delegate != null) {
+            return delegate;
+        }
+        Delegate delegate2 = (Delegate) delegates.get(frameLayout);
+        if (delegate2 != null) {
+            return delegate2;
+        }
+        return null;
+    }
+
+    public static void removeDelegate(BaseFragment baseFragment) {
+        fragmentDelegates.remove(baseFragment);
+    }
+
+    public static void removeDelegate(FrameLayout frameLayout) {
+        delegates.remove(frameLayout);
+    }
+
+    public static abstract class Layout extends FrameLayout {
+        public static final FloatPropertyCompat IN_OUT_OFFSET_Y;
+        public static final Property<Layout, Float> IN_OUT_OFFSET_Y2;
+        Drawable background;
+        private BlurVisibilityDrawable blurVisibilityDrawable;
+        protected Bulletin bulletin;
+        private final List<Callback> callbacks;
+        private LinearGradient clipGradient;
+        private Matrix clipMatrix;
+        private Paint clipPaint;
+        Delegate delegate;
+        public float inOutOffset;
+        public View.OnClickListener onClickListener;
+        private final Theme.ResourcesProvider resourcesProvider;
+        public boolean top;
+        public boolean transitionRunningEnter;
+        public boolean transitionRunningExit;
+        private int wideScreenGravity;
+        private int wideScreenWidth;
+
+        public interface Callback {
+
+            public abstract /* synthetic */ class -CC {
+                public static void $default$onAttach(Callback callback, Layout layout, Bulletin bulletin) {
                 }
 
-                @Override // android.view.View
-                protected void onDraw(Canvas canvas) {
-                    float f = this.animatedProgress.set(ProgressLayout.this.progress);
-                    float f2 = this.animatedDone.set(ProgressLayout.this.progress >= 1.0f);
-                    float width = getWidth() / 2.0f;
-                    float height = getHeight() / 2.0f;
-                    this.rect.set(width - AndroidUtilities.dpf2(13.0f), height - AndroidUtilities.dpf2(13.0f), width + AndroidUtilities.dpf2(13.0f), height + AndroidUtilities.dpf2(13.0f));
-                    float currentTimeMillis = ((System.currentTimeMillis() - this.start) * 0.45f) % 5400.0f;
-                    float max = Math.max(0.0f, ((1520.0f * currentTimeMillis) / 5400.0f) - 20.0f);
-                    for (int i = 0; i < 4; i++) {
-                        FastOutSlowInInterpolator fastOutSlowInInterpolator = CircularProgressDrawable.interpolator;
-                        fastOutSlowInInterpolator.getInterpolation((currentTimeMillis - (i * 1350)) / 667.0f);
-                        max += fastOutSlowInInterpolator.getInterpolation((currentTimeMillis - (r7 + 667)) / 667.0f) * 250.0f;
-                    }
-                    this.strokePaint.setColor(Theme.multAlpha(-1, (1.0f - f2) * 1.0f));
-                    canvas.drawArc(this.rect, (-90.0f) - max, Math.max(0.02f, f) * (-360.0f), false, this.strokePaint);
-                    if (f < 1.0f && f2 < 1.0f) {
-                        invalidate();
-                    }
-                    super.onDraw(canvas);
+                public static void $default$onDetach(Callback callback, Layout layout) {
+                }
+
+                public static void $default$onEnterTransitionEnd(Callback callback, Layout layout) {
+                }
+
+                public static void $default$onEnterTransitionStart(Callback callback, Layout layout) {
+                }
+
+                public static void $default$onExitTransitionEnd(Callback callback, Layout layout) {
+                }
+
+                public static void $default$onExitTransitionStart(Callback callback, Layout layout) {
+                }
+            }
+
+            void onAttach(Layout layout, Bulletin bulletin);
+
+            void onDetach(Layout layout);
+
+            void onEnterTransitionEnd(Layout layout);
+
+            void onEnterTransitionStart(Layout layout);
+
+            void onExitTransitionEnd(Layout layout);
+
+            void onExitTransitionStart(Layout layout);
+
+            void onHide(Layout layout);
+
+            void onShow(Layout layout);
+        }
+
+        public interface Transition {
+            void animateEnter(Layout layout, Runnable runnable, Runnable runnable2, Consumer consumer, int i);
+
+            void animateExit(Layout layout, Runnable runnable, Runnable runnable2, Consumer consumer, int i);
+        }
+
+        protected CharSequence getAccessibilityText() {
+            return null;
+        }
+
+        public boolean isTransitionRunning() {
+            return this.transitionRunningEnter || this.transitionRunningExit;
+        }
+
+        @Override // android.view.View
+        public void setOnClickListener(View.OnClickListener onClickListener) {
+            this.onClickListener = onClickListener;
+        }
+
+        public Layout(Context context, Theme.ResourcesProvider resourcesProvider) {
+            super(context);
+            this.callbacks = new ArrayList();
+            this.wideScreenWidth = -2;
+            this.wideScreenGravity = 1;
+            this.resourcesProvider = resourcesProvider;
+            setMinimumHeight(AndroidUtilities.dp(48.0f));
+            setBackground(getThemedColor(Theme.key_undo_background));
+            updateSize();
+            setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
+            setWillNotDraw(false);
+            ScaleStateListAnimator.apply(this, 0.02f, 1.5f);
+        }
+
+        @Override // android.view.View
+        protected boolean verifyDrawable(Drawable drawable) {
+            return this.background == drawable || super.verifyDrawable(drawable);
+        }
+
+        protected void setBackground(int i) {
+            setBackground(i, 10);
+        }
+
+        public void setBackground(int i, int i2) {
+            this.background = Theme.createRoundRectDrawable(AndroidUtilities.dp(i2), i);
+        }
+
+        static {
+            String str = "offsetY";
+            IN_OUT_OFFSET_Y = new FloatPropertyCompat(str) { // from class: org.telegram.ui.Components.Bulletin.Layout.1
+                @Override // androidx.dynamicanimation.animation.FloatPropertyCompat
+                public float getValue(Layout layout) {
+                    return layout.inOutOffset;
+                }
+
+                @Override // androidx.dynamicanimation.animation.FloatPropertyCompat
+                public void setValue(Layout layout, float f) {
+                    layout.setInOutOffset(f);
                 }
             };
-            this.progressView = frameLayout;
-            frameLayout.setWillNotDraw(false);
-            addView(this.progressView, LayoutHelper.createFrameRelatively(32.0f, 32.0f, 8388627, 12.0f, 8.0f, 12.0f, 8.0f));
-            BackupImageView backupImageView = new BackupImageView(context);
-            this.imageView = backupImageView;
-            backupImageView.setRoundRadius(AndroidUtilities.dp(14.0f));
-            this.progressView.addView(this.imageView, LayoutHelper.createFrame(28, 28, 17));
-            AnimatedTextView animatedTextView = new AnimatedTextView(context);
-            this.textView = animatedTextView;
-            animatedTextView.setTypeface(Typeface.SANS_SERIF);
-            this.textView.setTextSize(AndroidUtilities.dp(15.0f));
-            this.textView.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
-            addView(this.textView, LayoutHelper.createFrameRelatively(-2.0f, 18.0f, 8388627, 56.0f, 0.0f, 8.0f, 0.0f));
-            setTextColor(getThemedColor(Theme.key_undo_infoColor));
-            setBackground(getThemedColor(Theme.key_undo_background));
+            IN_OUT_OFFSET_Y2 = new AnimationProperties.FloatProperty(str) { // from class: org.telegram.ui.Components.Bulletin.Layout.2
+                @Override // android.util.Property
+                public Float get(Layout layout) {
+                    return Float.valueOf(layout.inOutOffset);
+                }
+
+                @Override // org.telegram.ui.Components.AnimationProperties.FloatProperty
+                public void setValue(Layout layout, float f) {
+                    layout.setInOutOffset(f);
+                }
+            };
         }
 
-        @Override // org.telegram.ui.Components.Bulletin.Layout
-        public CharSequence getAccessibilityText() {
-            return this.textView.getText();
+        @Override // android.view.View
+        protected void onConfigurationChanged(Configuration configuration) {
+            super.onConfigurationChanged(configuration);
+            updateSize();
         }
 
-        public void setProgress(float f) {
-            if (this.inprogress != (f < 1.0f)) {
-                this.inprogress = f < 1.0f;
-                this.imageView.animate().scaleX(this.inprogress ? 0.78f : 1.0f).scaleY(this.inprogress ? 0.78f : 1.0f).setDuration(320L).setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT).start();
+        public void setTop(boolean z) {
+            if (this.top != z) {
+                this.top = z;
+                updateSize();
             }
-            this.progress = f;
-            this.progressView.invalidate();
         }
 
-        public void setTextColor(int i) {
-            this.textView.setTextColor(i);
+        private void updateSize() {
+            boolean isWideScreen = isWideScreen();
+            int i = isWideScreen ? this.wideScreenWidth : -1;
+            if (isWideScreen) {
+                r2 = (this.top ? 48 : 80) | this.wideScreenGravity;
+            } else if (this.top) {
+                r2 = 48;
+            }
+            setLayoutParams(LayoutHelper.createFrame(i, -2, r2));
+        }
+
+        private boolean isWideScreen() {
+            if (!AndroidUtilities.isTablet()) {
+                android.graphics.Point point = AndroidUtilities.displaySize;
+                if (point.x < point.y) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public void setWideScreenParams(int i, int i2) {
+            boolean z;
+            boolean z2 = true;
+            if (this.wideScreenWidth != i) {
+                this.wideScreenWidth = i;
+                z = true;
+            } else {
+                z = false;
+            }
+            if (this.wideScreenGravity != i2) {
+                this.wideScreenGravity = i2;
+            } else {
+                z2 = z;
+            }
+            if (isWideScreen() && z2) {
+                updateSize();
+            }
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public boolean isNeedSwipeAlphaAnimation(boolean z) {
+            if (!isWideScreen() || this.wideScreenWidth == -1) {
+                return false;
+            }
+            int i = this.wideScreenGravity;
+            if (i == 1) {
+                return true;
+            }
+            return z ? i == 5 : i != 5;
+        }
+
+        public Bulletin getBulletin() {
+            return this.bulletin;
+        }
+
+        public boolean isAttachedToBulletin() {
+            return this.bulletin != null;
+        }
+
+        protected void onAttach(Bulletin bulletin) {
+            this.bulletin = bulletin;
+            int size = this.callbacks.size();
+            for (int i = 0; i < size; i++) {
+                this.callbacks.get(i).onAttach(this, bulletin);
+            }
+        }
+
+        protected void onDetach() {
+            this.bulletin = null;
+            int size = this.callbacks.size();
+            for (int i = 0; i < size; i++) {
+                this.callbacks.get(i).onDetach(this);
+            }
+            BlurVisibilityDrawable blurVisibilityDrawable = this.blurVisibilityDrawable;
+            if (blurVisibilityDrawable != null) {
+                blurVisibilityDrawable.recycle();
+            }
+        }
+
+        protected void onShow() {
+            int size = this.callbacks.size();
+            for (int i = 0; i < size; i++) {
+                this.callbacks.get(i).onShow(this);
+            }
+        }
+
+        protected void onHide() {
+            int size = this.callbacks.size();
+            for (int i = 0; i < size; i++) {
+                this.callbacks.get(i).onHide(this);
+            }
+        }
+
+        protected void onEnterTransitionStart() {
+            int size = this.callbacks.size();
+            for (int i = 0; i < size; i++) {
+                this.callbacks.get(i).onEnterTransitionStart(this);
+            }
+        }
+
+        protected void onEnterTransitionEnd() {
+            int size = this.callbacks.size();
+            for (int i = 0; i < size; i++) {
+                this.callbacks.get(i).onEnterTransitionEnd(this);
+            }
+        }
+
+        protected void onExitTransitionStart() {
+            int size = this.callbacks.size();
+            for (int i = 0; i < size; i++) {
+                this.callbacks.get(i).onExitTransitionStart(this);
+            }
+        }
+
+        protected void onExitTransitionEnd() {
+            int size = this.callbacks.size();
+            for (int i = 0; i < size; i++) {
+                this.callbacks.get(i).onExitTransitionEnd(this);
+            }
+        }
+
+        public void addCallback(Callback callback) {
+            this.callbacks.add(callback);
+        }
+
+        public void removeCallback(Callback callback) {
+            this.callbacks.remove(callback);
+        }
+
+        public void updatePosition() {
+            float f = 0.0f;
+            if (this.delegate != null) {
+                if (this.top) {
+                    f = 0.0f - r0.getTopOffset(this.bulletin != null ? r2.tag : 0);
+                } else {
+                    f = 0.0f + getBottomOffset();
+                }
+            }
+            setTranslationY((-f) + (this.inOutOffset * (this.top ? -1 : 1)));
+        }
+
+        public float getTopOffset() {
+            if (this.delegate == null) {
+                return 0.0f;
+            }
+            return r0.getTopOffset(this.bulletin != null ? r1.tag : 0);
+        }
+
+        public float getBottomOffset() {
+            int bottomOffset;
+            Delegate delegate;
+            if (this.bulletin != null && (((delegate = this.delegate) == null || delegate.bottomOffsetAnimated()) && this.bulletin.bottomOffsetSpring != null && this.bulletin.bottomOffsetSpring.isRunning())) {
+                bottomOffset = this.bulletin.lastBottomOffset;
+            } else {
+                Delegate delegate2 = this.delegate;
+                if (delegate2 == null) {
+                    return 0.0f;
+                }
+                Bulletin bulletin = this.bulletin;
+                bottomOffset = delegate2.getBottomOffset(bulletin != null ? bulletin.tag : 0);
+            }
+            return bottomOffset;
+        }
+
+        public Transition createTransition() {
+            return new SpringTransition();
+        }
+
+        public static class DefaultTransition implements Transition {
+            long duration = 255;
+
+            @Override // org.telegram.ui.Components.Bulletin.Layout.Transition
+            public void animateEnter(final Layout layout, final Runnable runnable, final Runnable runnable2, final Consumer consumer, int i) {
+                layout.setInOutOffset(layout.getMeasuredHeight());
+                if (consumer != null) {
+                    consumer.accept(Float.valueOf(layout.getTranslationY()));
+                }
+                ObjectAnimator ofFloat = ObjectAnimator.ofFloat(layout, Layout.IN_OUT_OFFSET_Y2, 0.0f);
+                ofFloat.setDuration(this.duration);
+                ofFloat.setInterpolator(Easings.easeOutQuad);
+                if (runnable != null || runnable2 != null) {
+                    ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.Bulletin.Layout.DefaultTransition.1
+                        @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+                        public void onAnimationStart(Animator animator) {
+                            Runnable runnable3 = runnable;
+                            if (runnable3 != null) {
+                                runnable3.run();
+                            }
+                        }
+
+                        @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+                        public void onAnimationEnd(Animator animator) {
+                            Runnable runnable3 = runnable2;
+                            if (runnable3 != null) {
+                                runnable3.run();
+                            }
+                        }
+                    });
+                }
+                if (consumer != null) {
+                    ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Bulletin$Layout$DefaultTransition$$ExternalSyntheticLambda1
+                        @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                        public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                            Bulletin.Layout.DefaultTransition.lambda$animateEnter$0(Consumer.this, layout, valueAnimator);
+                        }
+                    });
+                }
+                ofFloat.start();
+            }
+
+            /* JADX INFO: Access modifiers changed from: private */
+            public static /* synthetic */ void lambda$animateEnter$0(Consumer consumer, Layout layout, ValueAnimator valueAnimator) {
+                consumer.accept(Float.valueOf(layout.getTranslationY()));
+            }
+
+            @Override // org.telegram.ui.Components.Bulletin.Layout.Transition
+            public void animateExit(final Layout layout, final Runnable runnable, final Runnable runnable2, final Consumer consumer, int i) {
+                ObjectAnimator ofFloat = ObjectAnimator.ofFloat(layout, Layout.IN_OUT_OFFSET_Y2, layout.getHeight());
+                ofFloat.setDuration(175L);
+                ofFloat.setInterpolator(Easings.easeInQuad);
+                if (runnable != null || runnable2 != null) {
+                    ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.Bulletin.Layout.DefaultTransition.2
+                        @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+                        public void onAnimationStart(Animator animator) {
+                            Runnable runnable3 = runnable;
+                            if (runnable3 != null) {
+                                runnable3.run();
+                            }
+                        }
+
+                        @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+                        public void onAnimationEnd(Animator animator) {
+                            Runnable runnable3 = runnable2;
+                            if (runnable3 != null) {
+                                runnable3.run();
+                            }
+                        }
+                    });
+                }
+                if (consumer != null) {
+                    ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Bulletin$Layout$DefaultTransition$$ExternalSyntheticLambda0
+                        @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                        public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                            Bulletin.Layout.DefaultTransition.lambda$animateExit$1(Consumer.this, layout, valueAnimator);
+                        }
+                    });
+                }
+                ofFloat.start();
+            }
+
+            /* JADX INFO: Access modifiers changed from: private */
+            public static /* synthetic */ void lambda$animateExit$1(Consumer consumer, Layout layout, ValueAnimator valueAnimator) {
+                consumer.accept(Float.valueOf(layout.getTranslationY()));
+            }
+        }
+
+        public static class SpringTransition implements Transition {
+            @Override // org.telegram.ui.Components.Bulletin.Layout.Transition
+            public void animateEnter(final Layout layout, Runnable runnable, final Runnable runnable2, final Consumer consumer, int i) {
+                layout.setInOutOffset(layout.getMeasuredHeight());
+                if (consumer != null) {
+                    consumer.accept(Float.valueOf(layout.getTranslationY()));
+                }
+                SpringAnimation springAnimation = new SpringAnimation(layout, Layout.IN_OUT_OFFSET_Y, 0.0f);
+                springAnimation.getSpring().setDampingRatio(0.8f);
+                springAnimation.getSpring().setStiffness(400.0f);
+                if (runnable2 != null) {
+                    springAnimation.addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: org.telegram.ui.Components.Bulletin$Layout$SpringTransition$$ExternalSyntheticLambda2
+                        @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationEndListener
+                        public final void onAnimationEnd(DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
+                            Bulletin.Layout.SpringTransition.lambda$animateEnter$0(Bulletin.Layout.this, runnable2, dynamicAnimation, z, f, f2);
+                        }
+                    });
+                }
+                if (consumer != null) {
+                    springAnimation.addUpdateListener(new DynamicAnimation.OnAnimationUpdateListener() { // from class: org.telegram.ui.Components.Bulletin$Layout$SpringTransition$$ExternalSyntheticLambda3
+                        @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationUpdateListener
+                        public final void onAnimationUpdate(DynamicAnimation dynamicAnimation, float f, float f2) {
+                            Bulletin.Layout.SpringTransition.lambda$animateEnter$1(Consumer.this, layout, dynamicAnimation, f, f2);
+                        }
+                    });
+                }
+                springAnimation.start();
+                if (runnable != null) {
+                    runnable.run();
+                }
+            }
+
+            /* JADX INFO: Access modifiers changed from: private */
+            public static /* synthetic */ void lambda$animateEnter$0(Layout layout, Runnable runnable, DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
+                layout.setInOutOffset(0.0f);
+                if (z) {
+                    return;
+                }
+                runnable.run();
+            }
+
+            /* JADX INFO: Access modifiers changed from: private */
+            public static /* synthetic */ void lambda$animateEnter$1(Consumer consumer, Layout layout, DynamicAnimation dynamicAnimation, float f, float f2) {
+                consumer.accept(Float.valueOf(layout.getTranslationY()));
+            }
+
+            @Override // org.telegram.ui.Components.Bulletin.Layout.Transition
+            public void animateExit(final Layout layout, Runnable runnable, final Runnable runnable2, final Consumer consumer, int i) {
+                SpringAnimation springAnimation = new SpringAnimation(layout, Layout.IN_OUT_OFFSET_Y, layout.getHeight());
+                springAnimation.getSpring().setDampingRatio(0.8f);
+                springAnimation.getSpring().setStiffness(400.0f);
+                if (runnable2 != null) {
+                    springAnimation.addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: org.telegram.ui.Components.Bulletin$Layout$SpringTransition$$ExternalSyntheticLambda0
+                        @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationEndListener
+                        public final void onAnimationEnd(DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
+                            Bulletin.Layout.SpringTransition.lambda$animateExit$2(runnable2, dynamicAnimation, z, f, f2);
+                        }
+                    });
+                }
+                if (consumer != null) {
+                    springAnimation.addUpdateListener(new DynamicAnimation.OnAnimationUpdateListener() { // from class: org.telegram.ui.Components.Bulletin$Layout$SpringTransition$$ExternalSyntheticLambda1
+                        @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationUpdateListener
+                        public final void onAnimationUpdate(DynamicAnimation dynamicAnimation, float f, float f2) {
+                            Bulletin.Layout.SpringTransition.lambda$animateExit$3(Consumer.this, layout, dynamicAnimation, f, f2);
+                        }
+                    });
+                }
+                springAnimation.start();
+                if (runnable != null) {
+                    runnable.run();
+                }
+            }
+
+            /* JADX INFO: Access modifiers changed from: private */
+            public static /* synthetic */ void lambda$animateExit$2(Runnable runnable, DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
+                if (z) {
+                    return;
+                }
+                runnable.run();
+            }
+
+            /* JADX INFO: Access modifiers changed from: private */
+            public static /* synthetic */ void lambda$animateExit$3(Consumer consumer, Layout layout, DynamicAnimation dynamicAnimation, float f, float f2) {
+                consumer.accept(Float.valueOf(layout.getTranslationY()));
+            }
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public void setInOutOffset(float f) {
+            this.inOutOffset = f;
+            updatePosition();
+            Bulletin bulletin = this.bulletin;
+            if (bulletin == null || !bulletin.allowBlurAnimation) {
+                return;
+            }
+            invalidate();
+        }
+
+        protected int getMeasuredBackgroundHeight() {
+            return getMeasuredHeight();
+        }
+
+        @Override // android.view.ViewGroup, android.view.View
+        protected void dispatchDraw(Canvas canvas) {
+            Bulletin bulletin = this.bulletin;
+            if (bulletin != null && bulletin.allowBlurAnimation) {
+                if (this.blurVisibilityDrawable == null) {
+                    this.blurVisibilityDrawable = new BlurVisibilityDrawable(new BlurVisibilityDrawable.DrawRunnable() { // from class: org.telegram.ui.Components.Bulletin$Layout$$ExternalSyntheticLambda0
+                        @Override // org.telegram.ui.Components.quickforward.BlurVisibilityDrawable.DrawRunnable
+                        public final void draw(Canvas canvas2, int i) {
+                            Bulletin.Layout.this.dispatchDrawImplBlur(canvas2, i);
+                        }
+                    });
+                }
+                if (!this.blurVisibilityDrawable.hasBitmap()) {
+                    this.blurVisibilityDrawable.render(getMeasuredWidth(), getMeasuredHeight(), AndroidUtilities.dp(10.0f), 6.0f);
+                }
+                this.blurVisibilityDrawable.setAlpha(MathUtils.clamp((int) ((1.0f - (this.inOutOffset / getMeasuredHeight())) * 255.0f), 0, NotificationCenter.goingToPreviewTheme));
+                this.blurVisibilityDrawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+                this.blurVisibilityDrawable.draw(canvas);
+                return;
+            }
+            dispatchDrawImpl(canvas, false, NotificationCenter.goingToPreviewTheme);
+        }
+
+        protected void dispatchDrawImplBlur(Canvas canvas, int i) {
+            dispatchDrawImpl(canvas, true, i);
+        }
+
+        protected void dispatchDrawImpl(Canvas canvas, boolean z, int i) {
+            Delegate delegate;
+            if (this.bulletin == null || i == 0) {
+                return;
+            }
+            this.background.setBounds(getPaddingLeft(), getPaddingTop(), getMeasuredWidth() - getPaddingRight(), getMeasuredBackgroundHeight() - getPaddingBottom());
+            if (isTransitionRunning() && (delegate = this.delegate) != null) {
+                float topOffset = delegate.getTopOffset(this.bulletin.tag) - getY();
+                float measuredHeight = (((View) getParent()).getMeasuredHeight() - getBottomOffset()) - getY();
+                boolean z2 = !z && this.delegate.clipWithGradient(this.bulletin.tag);
+                canvas.save();
+                if (!z) {
+                    canvas.clipRect(0.0f, topOffset, getMeasuredWidth(), measuredHeight);
+                }
+                boolean z3 = z2 || i != 255;
+                if (z3) {
+                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), i, 31);
+                }
+                this.background.draw(canvas);
+                super.dispatchDraw(canvas);
+                if (z2) {
+                    if (this.clipPaint == null) {
+                        Paint paint = new Paint(1);
+                        this.clipPaint = paint;
+                        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+                        this.clipGradient = new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(8.0f), this.top ? new int[]{-16777216, 0} : new int[]{0, -16777216}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+                        Matrix matrix = new Matrix();
+                        this.clipMatrix = matrix;
+                        this.clipGradient.setLocalMatrix(matrix);
+                        this.clipPaint.setShader(this.clipGradient);
+                    }
+                    canvas.save();
+                    this.clipMatrix.reset();
+                    this.clipMatrix.postTranslate(0.0f, this.top ? topOffset : measuredHeight - AndroidUtilities.dp(8.0f));
+                    this.clipGradient.setLocalMatrix(this.clipMatrix);
+                    if (this.top) {
+                        canvas.drawRect(0.0f, topOffset, getWidth(), topOffset + AndroidUtilities.dp(8.0f), this.clipPaint);
+                    } else {
+                        canvas.drawRect(0.0f, measuredHeight - AndroidUtilities.dp(8.0f), getWidth(), measuredHeight, this.clipPaint);
+                    }
+                    canvas.restore();
+                }
+                if (z3) {
+                    canvas.restore();
+                }
+                canvas.restore();
+                invalidate();
+                return;
+            }
+            this.background.draw(canvas);
+            super.dispatchDraw(canvas);
+        }
+
+        protected int getThemedColor(int i) {
+            return Theme.getColor(i, this.resourcesProvider);
+        }
+    }
+
+    public static class ButtonLayout extends Layout {
+        private Button button;
+        private int childrenMeasuredWidth;
+        Theme.ResourcesProvider resourcesProvider;
+        public TimerView timerView;
+        private boolean wrapWidth;
+
+        public ButtonLayout(Context context, Theme.ResourcesProvider resourcesProvider) {
+            super(context, resourcesProvider);
+            this.resourcesProvider = resourcesProvider;
+        }
+
+        public void setWrapWidth() {
+            this.wrapWidth = true;
+        }
+
+        @Override // android.widget.FrameLayout, android.view.View
+        protected void onMeasure(int i, int i2) {
+            this.childrenMeasuredWidth = 0;
+            if (this.wrapWidth) {
+                i = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_31);
+            }
+            super.onMeasure(i, i2);
+            if (this.button == null || View.MeasureSpec.getMode(i) != Integer.MIN_VALUE) {
+                return;
+            }
+            setMeasuredDimension(this.childrenMeasuredWidth + this.button.getMeasuredWidth(), getMeasuredHeight());
+        }
+
+        @Override // android.view.ViewGroup
+        protected void measureChildWithMargins(View view, int i, int i2, int i3, int i4) {
+            Button button = this.button;
+            if (button != null && view != button) {
+                i2 += button.getMeasuredWidth() - AndroidUtilities.dp(12.0f);
+            }
+            super.measureChildWithMargins(view, i, i2, i3, i4);
+            if (view != this.button) {
+                ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+                this.childrenMeasuredWidth = Math.max(this.childrenMeasuredWidth, marginLayoutParams.leftMargin + marginLayoutParams.rightMargin + view.getMeasuredWidth());
+            }
+        }
+
+        public Button getButton() {
+            return this.button;
+        }
+
+        public void setButton(Button button) {
+            Button button2 = this.button;
+            if (button2 != null) {
+                removeCallback(button2);
+                removeView(this.button);
+            }
+            this.button = button;
+            if (button != null) {
+                addCallback(button);
+                addView(button, 0, LayoutHelper.createFrameRelatively(-2.0f, -2.0f, 8388629));
+            }
+        }
+
+        public void setTimer() {
+            TimerView timerView = new TimerView(getContext(), this.resourcesProvider);
+            this.timerView = timerView;
+            timerView.timeLeft = 5000L;
+            addView(timerView, LayoutHelper.createFrameRelatively(20.0f, 20.0f, 8388627, 21.0f, 0.0f, 21.0f, 0.0f));
         }
     }
 
@@ -1843,164 +1616,28 @@ public class Bulletin {
         }
     }
 
-    public static class TimerView extends View {
-        private long lastUpdateTime;
-        private int prevSeconds;
-        private final Paint progressPaint;
-        RectF rect;
-        private TextPaint textPaint;
-        private int textWidth;
-        int textWidthOut;
-        StaticLayout timeLayout;
-        StaticLayout timeLayoutOut;
-        public long timeLeft;
-        private String timeLeftString;
-        float timeReplaceProgress;
+    public static class MultiLineLayout extends ButtonLayout {
+        public final BackupImageView imageView;
+        public final TextView textView;
 
-        public TimerView(Context context, Theme.ResourcesProvider resourcesProvider) {
-            super(context);
-            this.timeReplaceProgress = 1.0f;
-            this.rect = new RectF();
-            TextPaint textPaint = new TextPaint(1);
-            this.textPaint = textPaint;
-            textPaint.setTextSize(AndroidUtilities.dp(12.0f));
-            this.textPaint.setTypeface(AndroidUtilities.getTypeface("fonts/num.otf"));
-            Paint paint = new Paint(1);
-            this.progressPaint = paint;
-            paint.setStyle(Paint.Style.STROKE);
-            paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
-            paint.setStrokeCap(Paint.Cap.ROUND);
-            setColor(Theme.getColor(Theme.key_undo_infoColor, resourcesProvider));
-        }
-
-        @Override // android.view.View
-        protected void onDraw(Canvas canvas) {
-            super.onDraw(canvas);
-            int ceil = this.timeLeft > 0 ? (int) Math.ceil(r0 / 1000.0f) : 0;
-            this.rect.set(AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), getMeasuredWidth() - AndroidUtilities.dp(1.0f), getMeasuredHeight() - AndroidUtilities.dp(1.0f));
-            if (this.prevSeconds != ceil) {
-                this.prevSeconds = ceil;
-                this.timeLeftString = String.valueOf(Math.max(0, ceil));
-                StaticLayout staticLayout = this.timeLayout;
-                if (staticLayout != null) {
-                    this.timeLayoutOut = staticLayout;
-                    this.timeReplaceProgress = 0.0f;
-                    this.textWidthOut = this.textWidth;
-                }
-                this.textWidth = (int) Math.ceil(this.textPaint.measureText(r0));
-                this.timeLayout = new StaticLayout(this.timeLeftString, this.textPaint, ConnectionsManager.DEFAULT_DATACENTER_ID, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-            }
-            float f = this.timeReplaceProgress;
-            if (f < 1.0f) {
-                float f2 = f + 0.10666667f;
-                this.timeReplaceProgress = f2;
-                if (f2 > 1.0f) {
-                    this.timeReplaceProgress = 1.0f;
-                } else {
-                    invalidate();
-                }
-            }
-            int alpha = this.textPaint.getAlpha();
-            if (this.timeLayoutOut != null) {
-                float f3 = this.timeReplaceProgress;
-                if (f3 < 1.0f) {
-                    this.textPaint.setAlpha((int) (alpha * (1.0f - f3)));
-                    canvas.save();
-                    canvas.translate(this.rect.centerX() - (this.textWidthOut / 2.0f), ((this.rect.centerY() - (this.timeLayoutOut.getHeight() / 2.0f)) + (AndroidUtilities.dp(10.0f) * this.timeReplaceProgress)) - AndroidUtilities.dp(0.5f));
-                    this.timeLayoutOut.draw(canvas);
-                    this.textPaint.setAlpha(alpha);
-                    canvas.restore();
-                }
-            }
-            if (this.timeLayout != null) {
-                float f4 = this.timeReplaceProgress;
-                if (f4 != 1.0f) {
-                    this.textPaint.setAlpha((int) (alpha * f4));
-                }
-                canvas.save();
-                canvas.translate(this.rect.centerX() - (this.textWidth / 2.0f), ((this.rect.centerY() - (this.timeLayout.getHeight() / 2.0f)) - (AndroidUtilities.dp(10.0f) * (1.0f - this.timeReplaceProgress))) - AndroidUtilities.dp(0.5f));
-                this.timeLayout.draw(canvas);
-                if (this.timeReplaceProgress != 1.0f) {
-                    this.textPaint.setAlpha(alpha);
-                }
-                canvas.restore();
-            }
-            canvas.drawArc(this.rect, -90.0f, (Math.max(0L, this.timeLeft) / 5000.0f) * (-360.0f), false, this.progressPaint);
-            long j = this.lastUpdateTime;
-            long currentTimeMillis = System.currentTimeMillis();
-            if (j != 0) {
-                this.timeLeft -= currentTimeMillis - this.lastUpdateTime;
-            }
-            this.lastUpdateTime = currentTimeMillis;
-            invalidate();
-        }
-
-        public void setColor(int i) {
-            this.textPaint.setColor(i);
-            this.progressPaint.setColor(i);
-        }
-    }
-
-    public static class TwoLineAnimatedLottieLayout extends ButtonLayout {
-        public final RLottieImageView imageView;
-        private final LinearLayout linearLayout;
-        public final AnimatedTextView subtitleTextView;
-        private final int textColor;
-        public final AnimatedTextView titleTextView;
-
-        public TwoLineAnimatedLottieLayout(Context context, Theme.ResourcesProvider resourcesProvider) {
+        public MultiLineLayout(Context context, Theme.ResourcesProvider resourcesProvider) {
             super(context, resourcesProvider);
-            int i = Theme.key_undo_infoColor;
-            this.textColor = getThemedColor(i);
-            setBackground(getThemedColor(Theme.key_undo_background));
-            RLottieImageView rLottieImageView = new RLottieImageView(context);
-            this.imageView = rLottieImageView;
-            rLottieImageView.setScaleType(ImageView.ScaleType.CENTER);
-            addView(rLottieImageView, LayoutHelper.createFrameRelatively(56.0f, 48.0f, 8388627));
-            int themedColor = getThemedColor(i);
-            getThemedColor(Theme.key_undo_cancelColor);
-            LinearLayout linearLayout = new LinearLayout(context);
-            this.linearLayout = linearLayout;
-            linearLayout.setOrientation(1);
-            addView(linearLayout, LayoutHelper.createFrameRelatively(-1.0f, -2.0f, 8388627, 52.0f, 8.0f, 8.0f, 8.0f));
-            AnimatedTextView animatedTextView = new AnimatedTextView(context, true, true, true);
-            this.titleTextView = animatedTextView;
-            animatedTextView.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-            animatedTextView.setTextColor(themedColor);
-            animatedTextView.setTextSize(AndroidUtilities.dp(14.0f));
-            animatedTextView.setTypeface(AndroidUtilities.bold());
-            animatedTextView.setEllipsizeByGradient(true);
-            linearLayout.addView(animatedTextView, LayoutHelper.createLinear(-1, 20));
-            AnimatedTextView animatedTextView2 = new AnimatedTextView(context, true, true, true);
-            this.subtitleTextView = animatedTextView2;
-            animatedTextView2.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-            animatedTextView2.setTextColor(themedColor);
-            animatedTextView2.setTypeface(Typeface.SANS_SERIF);
-            animatedTextView2.setTextSize(AndroidUtilities.dp(13.0f));
-            animatedTextView2.setEllipsizeByGradient(true);
-            linearLayout.addView(animatedTextView2, LayoutHelper.createLinear(-1, 18));
+            BackupImageView backupImageView = new BackupImageView(getContext());
+            this.imageView = backupImageView;
+            TextView textView = new TextView(getContext());
+            this.textView = textView;
+            addView(backupImageView, LayoutHelper.createFrameRelatively(30.0f, 30.0f, 8388627, 12.0f, 8.0f, 12.0f, 8.0f));
+            textView.setGravity(8388611);
+            textView.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
+            textView.setTextColor(getThemedColor(Theme.key_undo_infoColor));
+            textView.setTextSize(1, 15.0f);
+            textView.setTypeface(Typeface.SANS_SERIF);
+            addView(textView, LayoutHelper.createFrameRelatively(-1.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
         }
 
         @Override // org.telegram.ui.Components.Bulletin.Layout
         public CharSequence getAccessibilityText() {
-            return ((Object) this.titleTextView.getText()) + ".\n" + ((Object) this.subtitleTextView.getText());
-        }
-
-        @Override // org.telegram.ui.Components.Bulletin.Layout
-        protected void onShow() {
-            super.onShow();
-            this.imageView.playAnimation();
-        }
-
-        public void setAnimation(int i, int i2, int i3, String... strArr) {
-            this.imageView.setAnimation(i, i2, i3);
-            for (String str : strArr) {
-                this.imageView.setLayerColor(str + ".**", this.textColor);
-            }
-        }
-
-        public void setAnimation(int i, String... strArr) {
-            setAnimation(i, 32, 32, strArr);
+            return this.textView.getText();
         }
     }
 
@@ -2085,19 +1722,13 @@ public class Bulletin {
         }
 
         @Override // org.telegram.ui.Components.Bulletin.Layout
-        public CharSequence getAccessibilityText() {
-            return ((Object) this.titleTextView.getText()) + ".\n" + ((Object) this.subtitleTextView.getText());
-        }
-
-        public void hideImage() {
-            this.imageView.setVisibility(8);
-            ((ViewGroup.MarginLayoutParams) this.linearLayout.getLayoutParams()).setMarginStart(AndroidUtilities.dp(10.0f));
-        }
-
-        @Override // org.telegram.ui.Components.Bulletin.Layout
         protected void onShow() {
             super.onShow();
             this.imageView.playAnimation();
+        }
+
+        public void setAnimation(int i, String... strArr) {
+            setAnimation(i, 32, 32, strArr);
         }
 
         public void setAnimation(int i, int i2, int i3, String... strArr) {
@@ -2107,8 +1738,435 @@ public class Bulletin {
             }
         }
 
+        public void setAnimation(TLRPC.Document document, int i, int i2, String... strArr) {
+            this.imageView.setAutoRepeat(true);
+            this.imageView.setAnimation(document, i, i2);
+            for (String str : strArr) {
+                this.imageView.setLayerColor(str + ".**", this.textColor);
+            }
+        }
+
+        @Override // org.telegram.ui.Components.Bulletin.Layout
+        public CharSequence getAccessibilityText() {
+            return ((Object) this.titleTextView.getText()) + ".\n" + ((Object) this.subtitleTextView.getText());
+        }
+
+        public void hideImage() {
+            this.imageView.setVisibility(8);
+            ((ViewGroup.MarginLayoutParams) this.linearLayout.getLayoutParams()).setMarginStart(AndroidUtilities.dp(10.0f));
+        }
+    }
+
+    public static class TwoLineAnimatedLottieLayout extends ButtonLayout {
+        public final RLottieImageView imageView;
+        private final LinearLayout linearLayout;
+        public final AnimatedTextView subtitleTextView;
+        private final int textColor;
+        public final AnimatedTextView titleTextView;
+
+        public TwoLineAnimatedLottieLayout(Context context, Theme.ResourcesProvider resourcesProvider) {
+            super(context, resourcesProvider);
+            int i = Theme.key_undo_infoColor;
+            this.textColor = getThemedColor(i);
+            setBackground(getThemedColor(Theme.key_undo_background));
+            RLottieImageView rLottieImageView = new RLottieImageView(context);
+            this.imageView = rLottieImageView;
+            rLottieImageView.setScaleType(ImageView.ScaleType.CENTER);
+            addView(rLottieImageView, LayoutHelper.createFrameRelatively(56.0f, 48.0f, 8388627));
+            int themedColor = getThemedColor(i);
+            getThemedColor(Theme.key_undo_cancelColor);
+            LinearLayout linearLayout = new LinearLayout(context);
+            this.linearLayout = linearLayout;
+            linearLayout.setOrientation(1);
+            addView(linearLayout, LayoutHelper.createFrameRelatively(-1.0f, -2.0f, 8388627, 52.0f, 8.0f, 8.0f, 8.0f));
+            AnimatedTextView animatedTextView = new AnimatedTextView(context, true, true, true);
+            this.titleTextView = animatedTextView;
+            animatedTextView.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+            animatedTextView.setTextColor(themedColor);
+            animatedTextView.setTextSize(AndroidUtilities.dp(14.0f));
+            animatedTextView.setTypeface(AndroidUtilities.bold());
+            animatedTextView.setEllipsizeByGradient(true);
+            linearLayout.addView(animatedTextView, LayoutHelper.createLinear(-1, 20));
+            AnimatedTextView animatedTextView2 = new AnimatedTextView(context, true, true, true);
+            this.subtitleTextView = animatedTextView2;
+            animatedTextView2.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+            animatedTextView2.setTextColor(themedColor);
+            animatedTextView2.setTypeface(Typeface.SANS_SERIF);
+            animatedTextView2.setTextSize(AndroidUtilities.dp(13.0f));
+            animatedTextView2.setEllipsizeByGradient(true);
+            linearLayout.addView(animatedTextView2, LayoutHelper.createLinear(-1, 18));
+        }
+
+        @Override // org.telegram.ui.Components.Bulletin.Layout
+        protected void onShow() {
+            super.onShow();
+            this.imageView.playAnimation();
+        }
+
         public void setAnimation(int i, String... strArr) {
             setAnimation(i, 32, 32, strArr);
+        }
+
+        public void setAnimation(int i, int i2, int i3, String... strArr) {
+            this.imageView.setAnimation(i, i2, i3);
+            for (String str : strArr) {
+                this.imageView.setLayerColor(str + ".**", this.textColor);
+            }
+        }
+
+        @Override // org.telegram.ui.Components.Bulletin.Layout
+        public CharSequence getAccessibilityText() {
+            return ((Object) this.titleTextView.getText()) + ".\n" + ((Object) this.subtitleTextView.getText());
+        }
+    }
+
+    public static class LottieLayoutWithReactions extends LottieLayout implements NotificationCenter.NotificationCenterDelegate {
+        private Bulletin bulletin;
+        private final BaseFragment fragment;
+        private final int messagesCount;
+        private SparseLongArray newMessagesByIds;
+        private ReactionsContainerLayout reactionsContainerLayout;
+
+        public LottieLayoutWithReactions(BaseFragment baseFragment, int i) {
+            super(baseFragment.getContext(), baseFragment.getResourceProvider());
+            this.fragment = baseFragment;
+            this.messagesCount = i;
+            init();
+        }
+
+        public void setBulletin(Bulletin bulletin) {
+            this.bulletin = bulletin;
+        }
+
+        public void init() {
+            this.textView.setLayoutParams(LayoutHelper.createFrameRelatively(-2.0f, -2.0f, 8388659, 56.0f, 6.0f, 8.0f, 0.0f));
+            this.imageView.setLayoutParams(LayoutHelper.createFrameRelatively(56.0f, 48.0f, 8388659));
+            1 r0 = new 1(3, this.fragment, getContext(), this.fragment.getCurrentAccount(), this.fragment.getResourceProvider());
+            this.reactionsContainerLayout = r0;
+            r0.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(0.0f));
+            this.reactionsContainerLayout.setDelegate(new 2());
+            this.reactionsContainerLayout.setTop(true);
+            this.reactionsContainerLayout.setClipChildren(false);
+            this.reactionsContainerLayout.setClipToPadding(false);
+            this.reactionsContainerLayout.setVisibility(0);
+            this.reactionsContainerLayout.setBubbleOffset(-AndroidUtilities.dp(80.0f));
+            this.reactionsContainerLayout.setHint(LocaleController.getString(R.string.SavedTagReactionsHint));
+            addView(this.reactionsContainerLayout, LayoutHelper.createFrame(-2, 92.5f, 1, 0.0f, 36.0f, 0.0f, 0.0f));
+            this.reactionsContainerLayout.setMessage(null, null, true);
+        }
+
+        class 1 extends ReactionsContainerLayout {
+            1(int i, BaseFragment baseFragment, Context context, int i2, Theme.ResourcesProvider resourcesProvider) {
+                super(i, baseFragment, context, i2, resourcesProvider);
+            }
+
+            @Override // org.telegram.ui.Components.ReactionsContainerLayout
+            protected void onShownCustomEmojiReactionDialog() {
+                Bulletin visibleBulletin = Bulletin.getVisibleBulletin();
+                if (visibleBulletin != null) {
+                    visibleBulletin.setCanHide(false);
+                }
+                LottieLayoutWithReactions.this.reactionsContainerLayout.getReactionsWindow().windowView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Bulletin$LottieLayoutWithReactions$1$$ExternalSyntheticLambda0
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        Bulletin.LottieLayoutWithReactions.1.this.lambda$onShownCustomEmojiReactionDialog$0(view);
+                    }
+                });
+            }
+
+            /* JADX INFO: Access modifiers changed from: private */
+            public /* synthetic */ void lambda$onShownCustomEmojiReactionDialog$0(View view) {
+                LottieLayoutWithReactions.this.hideReactionsDialog();
+                Bulletin.hideVisible();
+            }
+
+            @Override // org.telegram.ui.Components.ReactionsContainerLayout, android.view.ViewGroup, android.view.View
+            public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+                if (motionEvent.getAction() == 0) {
+                    if (LottieLayoutWithReactions.this.bulletin != null) {
+                        LottieLayoutWithReactions.this.bulletin.setCanHide(false);
+                    }
+                } else if (motionEvent.getAction() == 1 && LottieLayoutWithReactions.this.bulletin != null) {
+                    LottieLayoutWithReactions.this.bulletin.setCanHide(true);
+                }
+                return super.dispatchTouchEvent(motionEvent);
+            }
+        }
+
+        class 2 implements ReactionsContainerLayout.ReactionsContainerDelegate {
+            @Override // org.telegram.ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
+            public /* synthetic */ boolean drawBackground() {
+                return ReactionsContainerLayout.ReactionsContainerDelegate.-CC.$default$drawBackground(this);
+            }
+
+            @Override // org.telegram.ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
+            public /* synthetic */ void drawRoundRect(Canvas canvas, RectF rectF, float f, float f2, float f3, int i, boolean z) {
+                ReactionsContainerLayout.ReactionsContainerDelegate.-CC.$default$drawRoundRect(this, canvas, rectF, f, f2, f3, i, z);
+            }
+
+            @Override // org.telegram.ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
+            public /* synthetic */ boolean needEnterText() {
+                return ReactionsContainerLayout.ReactionsContainerDelegate.-CC.$default$needEnterText(this);
+            }
+
+            @Override // org.telegram.ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
+            public /* synthetic */ void onEmojiWindowDismissed() {
+                ReactionsContainerLayout.ReactionsContainerDelegate.-CC.$default$onEmojiWindowDismissed(this);
+            }
+
+            2() {
+            }
+
+            @Override // org.telegram.ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
+            public void onReactionClicked(View view, ReactionsLayoutInBubble.VisibleReaction visibleReaction, boolean z, boolean z2) {
+                if (LottieLayoutWithReactions.this.newMessagesByIds == null) {
+                    return;
+                }
+                boolean z3 = (LottieLayoutWithReactions.this.fragment instanceof ChatActivity) && ((ChatActivity) LottieLayoutWithReactions.this.fragment).getDialogId() == UserConfig.getInstance(LottieLayoutWithReactions.this.fragment.getCurrentAccount()).getClientUserId();
+                int i = 0;
+                for (int i2 = 0; i2 < LottieLayoutWithReactions.this.newMessagesByIds.size(); i2++) {
+                    int keyAt = LottieLayoutWithReactions.this.newMessagesByIds.keyAt(i2);
+                    TLRPC.Message message = new TLRPC.Message();
+                    message.dialog_id = LottieLayoutWithReactions.this.fragment.getUserConfig().getClientUserId();
+                    message.id = keyAt;
+                    MessageObject messageObject = new MessageObject(LottieLayoutWithReactions.this.fragment.getCurrentAccount(), message, false, false);
+                    ArrayList<ReactionsLayoutInBubble.VisibleReaction> arrayList = new ArrayList<>();
+                    arrayList.add(visibleReaction);
+                    LottieLayoutWithReactions.this.fragment.getSendMessagesHelper().sendReaction(messageObject, arrayList, visibleReaction, false, false, LottieLayoutWithReactions.this.fragment, null);
+                    i = message.id;
+                }
+                LottieLayoutWithReactions.this.hideReactionsDialog();
+                Bulletin.hideVisible();
+                showTaggedReactionToast(visibleReaction, LottieLayoutWithReactions.this.fragment.getCurrentAccount(), i, !z3);
+            }
+
+            private void showTaggedReactionToast(final ReactionsLayoutInBubble.VisibleReaction visibleReaction, final int i, final int i2, final boolean z) {
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Bulletin$LottieLayoutWithReactions$2$$ExternalSyntheticLambda0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        Bulletin.LottieLayoutWithReactions.2.this.lambda$showTaggedReactionToast$1(visibleReaction, z, i, i2);
+                    }
+                }, 300L);
+            }
+
+            /* JADX INFO: Access modifiers changed from: private */
+            public /* synthetic */ void lambda$showTaggedReactionToast$1(ReactionsLayoutInBubble.VisibleReaction visibleReaction, boolean z, final int i, final int i2) {
+                TLRPC.Document findDocument;
+                final BaseFragment lastFragment = LaunchActivity.getLastFragment();
+                long j = visibleReaction.documentId;
+                if (j == 0) {
+                    TLRPC.TL_availableReaction tL_availableReaction = MediaDataController.getInstance(UserConfig.selectedAccount).getReactionsMap().get(visibleReaction.emojicon);
+                    if (tL_availableReaction == null) {
+                        return;
+                    } else {
+                        findDocument = tL_availableReaction.activate_animation;
+                    }
+                } else {
+                    findDocument = AnimatedEmojiDrawable.findDocument(UserConfig.selectedAccount, j);
+                }
+                if (findDocument == null || lastFragment == null) {
+                    return;
+                }
+                BulletinFactory.of(lastFragment).createMessagesTaggedBulletin(LottieLayoutWithReactions.this.messagesCount, findDocument, z ? new Runnable() { // from class: org.telegram.ui.Components.Bulletin$LottieLayoutWithReactions$2$$ExternalSyntheticLambda1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        Bulletin.LottieLayoutWithReactions.2.lambda$showTaggedReactionToast$0(i, i2, lastFragment);
+                    }
+                } : null).show(true);
+            }
+
+            /* JADX INFO: Access modifiers changed from: private */
+            public static /* synthetic */ void lambda$showTaggedReactionToast$0(int i, int i2, BaseFragment baseFragment) {
+                Bundle bundle = new Bundle();
+                bundle.putLong("user_id", UserConfig.getInstance(i).getClientUserId());
+                bundle.putInt("message_id", i2);
+                baseFragment.presentFragment(new ChatActivity(bundle));
+            }
+        }
+
+        @Override // android.view.ViewGroup, android.view.View
+        protected void onAttachedToWindow() {
+            super.onAttachedToWindow();
+            NotificationCenter.getInstance(UserConfig.selectedAccount).addObserver(this, NotificationCenter.savedMessagesForwarded);
+        }
+
+        @Override // android.view.ViewGroup, android.view.View
+        protected void onDetachedFromWindow() {
+            super.onDetachedFromWindow();
+            NotificationCenter.getInstance(UserConfig.selectedAccount).removeObserver(this, NotificationCenter.savedMessagesForwarded);
+        }
+
+        public void hideReactionsDialog() {
+            if (this.reactionsContainerLayout.getReactionsWindow() != null) {
+                this.reactionsContainerLayout.dismissWindow();
+                if (this.reactionsContainerLayout.getReactionsWindow().containerView != null) {
+                    this.reactionsContainerLayout.getReactionsWindow().containerView.animate().alpha(0.0f).setDuration(180L).start();
+                }
+            }
+        }
+
+        @Override // org.telegram.ui.Components.Bulletin.Layout
+        protected int getMeasuredBackgroundHeight() {
+            return this.textView.getMeasuredHeight() + AndroidUtilities.dp(30.0f);
+        }
+
+        @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+        public void didReceivedNotification(int i, int i2, Object... objArr) {
+            if (i == NotificationCenter.savedMessagesForwarded) {
+                this.newMessagesByIds = (SparseLongArray) objArr[0];
+            }
+        }
+    }
+
+    public static class ProgressLayout extends ButtonLayout {
+        public BackupImageView imageView;
+        private boolean inprogress;
+        public float progress;
+        public FrameLayout progressView;
+        public AnimatedTextView textView;
+
+        public ProgressLayout(Context context, Theme.ResourcesProvider resourcesProvider) {
+            super(context, resourcesProvider);
+            FrameLayout frameLayout = new FrameLayout(context) { // from class: org.telegram.ui.Components.Bulletin.ProgressLayout.1
+                private final AnimatedFloat animatedDone;
+                private final AnimatedFloat animatedProgress;
+                private final RectF rect;
+                private final long start;
+                private final Paint strokePaint;
+
+                {
+                    CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
+                    this.animatedProgress = new AnimatedFloat(this, 320L, cubicBezierInterpolator);
+                    this.animatedDone = new AnimatedFloat(this, 320L, cubicBezierInterpolator);
+                    Paint paint = new Paint(1);
+                    this.strokePaint = paint;
+                    paint.setStyle(Paint.Style.STROKE);
+                    paint.setColor(268435455);
+                    paint.setStrokeWidth(AndroidUtilities.dp(1.66f));
+                    paint.setStrokeCap(Paint.Cap.ROUND);
+                    paint.setStrokeJoin(Paint.Join.ROUND);
+                    this.rect = new RectF();
+                    this.start = System.currentTimeMillis();
+                }
+
+                @Override // android.view.View
+                protected void onDraw(Canvas canvas) {
+                    float f = this.animatedProgress.set(ProgressLayout.this.progress);
+                    float f2 = this.animatedDone.set(ProgressLayout.this.progress >= 1.0f);
+                    float width = getWidth() / 2.0f;
+                    float height = getHeight() / 2.0f;
+                    this.rect.set(width - AndroidUtilities.dpf2(13.0f), height - AndroidUtilities.dpf2(13.0f), width + AndroidUtilities.dpf2(13.0f), height + AndroidUtilities.dpf2(13.0f));
+                    float currentTimeMillis = ((System.currentTimeMillis() - this.start) * 0.45f) % 5400.0f;
+                    float max = Math.max(0.0f, ((1520.0f * currentTimeMillis) / 5400.0f) - 20.0f);
+                    for (int i = 0; i < 4; i++) {
+                        FastOutSlowInInterpolator fastOutSlowInInterpolator = CircularProgressDrawable.interpolator;
+                        fastOutSlowInInterpolator.getInterpolation((currentTimeMillis - (i * 1350)) / 667.0f);
+                        max += fastOutSlowInInterpolator.getInterpolation((currentTimeMillis - (r7 + 667)) / 667.0f) * 250.0f;
+                    }
+                    this.strokePaint.setColor(Theme.multAlpha(-1, (1.0f - f2) * 1.0f));
+                    canvas.drawArc(this.rect, (-90.0f) - max, Math.max(0.02f, f) * (-360.0f), false, this.strokePaint);
+                    if (f < 1.0f && f2 < 1.0f) {
+                        invalidate();
+                    }
+                    super.onDraw(canvas);
+                }
+            };
+            this.progressView = frameLayout;
+            frameLayout.setWillNotDraw(false);
+            addView(this.progressView, LayoutHelper.createFrameRelatively(32.0f, 32.0f, 8388627, 12.0f, 8.0f, 12.0f, 8.0f));
+            BackupImageView backupImageView = new BackupImageView(context);
+            this.imageView = backupImageView;
+            backupImageView.setRoundRadius(AndroidUtilities.dp(14.0f));
+            this.progressView.addView(this.imageView, LayoutHelper.createFrame(28, 28, 17));
+            AnimatedTextView animatedTextView = new AnimatedTextView(context);
+            this.textView = animatedTextView;
+            animatedTextView.setTypeface(Typeface.SANS_SERIF);
+            this.textView.setTextSize(AndroidUtilities.dp(15.0f));
+            this.textView.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
+            addView(this.textView, LayoutHelper.createFrameRelatively(-2.0f, 18.0f, 8388627, 56.0f, 0.0f, 8.0f, 0.0f));
+            setTextColor(getThemedColor(Theme.key_undo_infoColor));
+            setBackground(getThemedColor(Theme.key_undo_background));
+        }
+
+        public void setTextColor(int i) {
+            this.textView.setTextColor(i);
+        }
+
+        @Override // org.telegram.ui.Components.Bulletin.Layout
+        public CharSequence getAccessibilityText() {
+            return this.textView.getText();
+        }
+
+        public void setProgress(float f) {
+            if (this.inprogress != (f < 1.0f)) {
+                this.inprogress = f < 1.0f;
+                this.imageView.animate().scaleX(this.inprogress ? 0.78f : 1.0f).scaleY(this.inprogress ? 0.78f : 1.0f).setDuration(320L).setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT).start();
+            }
+            this.progress = f;
+            this.progressView.invalidate();
+        }
+    }
+
+    public static class LottieLayout extends ButtonLayout {
+        public RLottieImageView imageView;
+        private int textColor;
+        public TextView textView;
+
+        public LottieLayout(Context context, Theme.ResourcesProvider resourcesProvider) {
+            super(context, resourcesProvider);
+            RLottieImageView rLottieImageView = new RLottieImageView(context);
+            this.imageView = rLottieImageView;
+            rLottieImageView.setScaleType(ImageView.ScaleType.CENTER);
+            addView(this.imageView, LayoutHelper.createFrameRelatively(56.0f, 48.0f, 8388627));
+            LinkSpanDrawable.LinksTextView linksTextView = new LinkSpanDrawable.LinksTextView(context) { // from class: org.telegram.ui.Components.Bulletin.LottieLayout.1
+                {
+                    setDisablePaddingsOffset(true);
+                }
+
+                @Override // org.telegram.ui.Components.LinkSpanDrawable.LinksTextView, android.widget.TextView
+                public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+                    super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
+                }
+            };
+            this.textView = linksTextView;
+            NotificationCenter.listenEmojiLoading(linksTextView);
+            this.textView.setSingleLine();
+            this.textView.setTypeface(Typeface.SANS_SERIF);
+            this.textView.setTextSize(1, 15.0f);
+            this.textView.setEllipsize(TextUtils.TruncateAt.END);
+            this.textView.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
+            addView(this.textView, LayoutHelper.createFrameRelatively(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
+            this.textView.setLinkTextColor(getThemedColor(Theme.key_undo_cancelColor));
+            setTextColor(getThemedColor(Theme.key_undo_infoColor));
+            setBackground(getThemedColor(Theme.key_undo_background));
+        }
+
+        public LottieLayout(Context context, Theme.ResourcesProvider resourcesProvider, int i, int i2) {
+            this(context, resourcesProvider);
+            setBackground(i);
+            setTextColor(i2);
+        }
+
+        public void setTextColor(int i) {
+            this.textColor = i;
+            this.textView.setTextColor(i);
+        }
+
+        @Override // org.telegram.ui.Components.Bulletin.Layout
+        protected void onShow() {
+            super.onShow();
+            this.imageView.playAnimation();
+        }
+
+        public void setAnimation(int i, String... strArr) {
+            setAnimation(i, 32, 32, strArr);
+        }
+
+        public void setAnimation(int i, int i2, int i3, String... strArr) {
+            this.imageView.setAnimation(i, i2, i3);
+            for (String str : strArr) {
+                this.imageView.setLayerColor(str + ".**", this.textColor);
+            }
         }
 
         public void setAnimation(TLRPC.Document document, int i, int i2, String... strArr) {
@@ -2117,6 +2175,165 @@ public class Bulletin {
             for (String str : strArr) {
                 this.imageView.setLayerColor(str + ".**", this.textColor);
             }
+        }
+
+        public void setIconPaddingBottom(int i) {
+            this.imageView.setLayoutParams(LayoutHelper.createFrameRelatively(56.0f, 48 - i, 8388627, 0.0f, 0.0f, 0.0f, i));
+        }
+
+        @Override // org.telegram.ui.Components.Bulletin.Layout
+        public CharSequence getAccessibilityText() {
+            return this.textView.getText();
+        }
+    }
+
+    public static class LoadingLottieLayout extends LottieLayout implements LoadingLayout {
+        public LinkSpanDrawable.LinksTextView textLoadingView;
+
+        public LoadingLottieLayout(Context context, Theme.ResourcesProvider resourcesProvider) {
+            super(context, resourcesProvider);
+            LinkSpanDrawable.LinksTextView linksTextView = new LinkSpanDrawable.LinksTextView(context);
+            this.textLoadingView = linksTextView;
+            linksTextView.setDisablePaddingsOffset(true);
+            this.textLoadingView.setSingleLine();
+            this.textLoadingView.setTypeface(Typeface.SANS_SERIF);
+            this.textLoadingView.setTextSize(1, 15.0f);
+            this.textLoadingView.setEllipsize(TextUtils.TruncateAt.END);
+            this.textLoadingView.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
+            this.textView.setVisibility(8);
+            addView(this.textLoadingView, LayoutHelper.createFrameRelatively(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 8.0f, 0.0f));
+            setTextColor(getThemedColor(Theme.key_undo_infoColor));
+        }
+
+        @Override // org.telegram.ui.Components.Bulletin.LottieLayout
+        public void setTextColor(int i) {
+            super.setTextColor(i);
+            LinkSpanDrawable.LinksTextView linksTextView = this.textLoadingView;
+            if (linksTextView != null) {
+                linksTextView.setTextColor(i);
+            }
+        }
+
+        @Override // org.telegram.ui.Components.Bulletin.LoadingLayout
+        public void onTextLoaded(CharSequence charSequence) {
+            this.textView.setText(charSequence);
+            AndroidUtilities.updateViewShow(this.textLoadingView, false, false, true);
+            AndroidUtilities.updateViewShow(this.textView, true, false, true);
+        }
+    }
+
+    public static class UsersLayout extends ButtonLayout {
+        public AvatarsImageView avatarsImageView;
+        LinearLayout linearLayout;
+        public TextView subtitleView;
+        public TextView textView;
+
+        public UsersLayout(Context context, boolean z, Theme.ResourcesProvider resourcesProvider) {
+            super(context, resourcesProvider);
+            AvatarsImageView avatarsImageView = new AvatarsImageView(context, false);
+            this.avatarsImageView = avatarsImageView;
+            avatarsImageView.setStyle(11);
+            this.avatarsImageView.setAvatarsTextSize(AndroidUtilities.dp(18.0f));
+            addView(this.avatarsImageView, LayoutHelper.createFrameRelatively(56.0f, 48.0f, 8388627, 12.0f, 0.0f, 0.0f, 0.0f));
+            if (!z) {
+                LinkSpanDrawable.LinksTextView linksTextView = new LinkSpanDrawable.LinksTextView(context) { // from class: org.telegram.ui.Components.Bulletin.UsersLayout.1
+                    @Override // org.telegram.ui.Components.LinkSpanDrawable.LinksTextView, android.widget.TextView
+                    public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+                        super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
+                    }
+                };
+                this.textView = linksTextView;
+                NotificationCenter.listenEmojiLoading(linksTextView);
+                this.textView.setTypeface(Typeface.SANS_SERIF);
+                this.textView.setTextSize(1, 15.0f);
+                this.textView.setEllipsize(TextUtils.TruncateAt.END);
+                this.textView.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
+                this.textView.setGravity(LocaleController.isRTL ? 5 : 3);
+                addView(this.textView, LayoutHelper.createFrameRelatively(-2.0f, -2.0f, 8388627, 70.0f, 0.0f, 12.0f, 0.0f));
+            } else {
+                LinearLayout linearLayout = new LinearLayout(getContext());
+                this.linearLayout = linearLayout;
+                linearLayout.setOrientation(1);
+                addView(this.linearLayout, LayoutHelper.createFrameRelatively(-1.0f, -2.0f, 8388627, 76.0f, 6.0f, 12.0f, 6.0f));
+                LinkSpanDrawable.LinksTextView linksTextView2 = new LinkSpanDrawable.LinksTextView(context) { // from class: org.telegram.ui.Components.Bulletin.UsersLayout.2
+                    @Override // org.telegram.ui.Components.LinkSpanDrawable.LinksTextView, android.widget.TextView
+                    public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+                        super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
+                    }
+                };
+                this.textView = linksTextView2;
+                NotificationCenter.listenEmojiLoading(linksTextView2);
+                TextView textView = this.textView;
+                Typeface typeface = Typeface.SANS_SERIF;
+                textView.setTypeface(typeface);
+                this.textView.setTextSize(1, 14.0f);
+                this.textView.setTypeface(AndroidUtilities.bold());
+                TextView textView2 = this.textView;
+                TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+                textView2.setEllipsize(truncateAt);
+                this.textView.setMaxLines(1);
+                this.linearLayout.addView(this.textView);
+                LinkSpanDrawable.LinksTextView linksTextView3 = new LinkSpanDrawable.LinksTextView(context);
+                this.subtitleView = linksTextView3;
+                linksTextView3.setTypeface(typeface);
+                this.subtitleView.setTextSize(1, 12.0f);
+                this.subtitleView.setEllipsize(truncateAt);
+                this.subtitleView.setSingleLine(false);
+                this.subtitleView.setMaxLines(3);
+                this.subtitleView.setLinkTextColor(getThemedColor(Theme.key_undo_cancelColor));
+                this.linearLayout.addView(this.subtitleView, LayoutHelper.createLinear(-2, -2, 0, 0, 0, 0, 0));
+            }
+            this.textView.setLinkTextColor(getThemedColor(Theme.key_undo_cancelColor));
+            setTextColor(getThemedColor(Theme.key_undo_infoColor));
+            setBackground(getThemedColor(Theme.key_undo_background));
+        }
+
+        public void setTextColor(int i) {
+            this.textView.setTextColor(i);
+            TextView textView = this.subtitleView;
+            if (textView != null) {
+                textView.setTextColor(i);
+            }
+        }
+
+        @Override // org.telegram.ui.Components.Bulletin.Layout
+        protected void onShow() {
+            super.onShow();
+        }
+
+        @Override // org.telegram.ui.Components.Bulletin.Layout
+        public CharSequence getAccessibilityText() {
+            return this.textView.getText();
+        }
+    }
+
+    public static abstract class Button extends FrameLayout implements Layout.Callback {
+        @Override // org.telegram.ui.Components.Bulletin.Layout.Callback
+        public void onEnterTransitionEnd(Layout layout) {
+        }
+
+        @Override // org.telegram.ui.Components.Bulletin.Layout.Callback
+        public void onEnterTransitionStart(Layout layout) {
+        }
+
+        @Override // org.telegram.ui.Components.Bulletin.Layout.Callback
+        public void onExitTransitionEnd(Layout layout) {
+        }
+
+        @Override // org.telegram.ui.Components.Bulletin.Layout.Callback
+        public void onExitTransitionStart(Layout layout) {
+        }
+
+        @Override // org.telegram.ui.Components.Bulletin.Layout.Callback
+        public void onHide(Layout layout) {
+        }
+
+        @Override // org.telegram.ui.Components.Bulletin.Layout.Callback
+        public void onShow(Layout layout) {
+        }
+
+        public Button(Context context) {
+            super(context);
         }
     }
 
@@ -2175,9 +2392,26 @@ public class Bulletin {
             undo();
         }
 
-        protected int getThemedColor(int i) {
-            Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
-            return resourcesProvider != null ? resourcesProvider.getColor(i) : Theme.getColor(i);
+        public UndoButton setText(CharSequence charSequence) {
+            TextView textView = this.undoTextView;
+            if (textView != null) {
+                textView.setText(charSequence);
+            }
+            return this;
+        }
+
+        public void undo() {
+            if (this.bulletin != null) {
+                this.isUndone = true;
+                Runnable runnable = this.undoAction;
+                if (runnable != null) {
+                    runnable.run();
+                }
+                Bulletin bulletin = this.bulletin;
+                if (bulletin != null) {
+                    bulletin.hide();
+                }
+            }
         }
 
         @Override // org.telegram.ui.Components.Bulletin.Layout.Callback
@@ -2195,466 +2429,23 @@ public class Bulletin {
             runnable.run();
         }
 
-        public UndoButton setDelayedAction(Runnable runnable) {
-            this.delayedAction = runnable;
-            return this;
-        }
-
-        public UndoButton setText(CharSequence charSequence) {
-            TextView textView = this.undoTextView;
-            if (textView != null) {
-                textView.setText(charSequence);
-            }
-            return this;
-        }
-
         public UndoButton setUndoAction(Runnable runnable) {
             this.undoAction = runnable;
             return this;
         }
 
-        public void undo() {
-            if (this.bulletin != null) {
-                this.isUndone = true;
-                Runnable runnable = this.undoAction;
-                if (runnable != null) {
-                    runnable.run();
-                }
-                Bulletin bulletin = this.bulletin;
-                if (bulletin != null) {
-                    bulletin.hide();
-                }
+        public UndoButton setDelayedAction(Runnable runnable) {
+            this.delayedAction = runnable;
+            return this;
+        }
+
+        protected int getThemedColor(int i) {
+            Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
+            if (resourcesProvider != null) {
+                return resourcesProvider.getColor(i);
             }
+            return Theme.getColor(i);
         }
-    }
-
-    public static class UsersLayout extends ButtonLayout {
-        public AvatarsImageView avatarsImageView;
-        LinearLayout linearLayout;
-        public TextView subtitleView;
-        public TextView textView;
-
-        public UsersLayout(Context context, boolean z, Theme.ResourcesProvider resourcesProvider) {
-            super(context, resourcesProvider);
-            AvatarsImageView avatarsImageView = new AvatarsImageView(context, false);
-            this.avatarsImageView = avatarsImageView;
-            avatarsImageView.setStyle(11);
-            this.avatarsImageView.setAvatarsTextSize(AndroidUtilities.dp(18.0f));
-            addView(this.avatarsImageView, LayoutHelper.createFrameRelatively(56.0f, 48.0f, 8388627, 12.0f, 0.0f, 0.0f, 0.0f));
-            if (z) {
-                LinearLayout linearLayout = new LinearLayout(getContext());
-                this.linearLayout = linearLayout;
-                linearLayout.setOrientation(1);
-                addView(this.linearLayout, LayoutHelper.createFrameRelatively(-1.0f, -2.0f, 8388627, 76.0f, 6.0f, 12.0f, 6.0f));
-                LinkSpanDrawable.LinksTextView linksTextView = new LinkSpanDrawable.LinksTextView(context) { // from class: org.telegram.ui.Components.Bulletin.UsersLayout.2
-                    @Override // org.telegram.ui.Components.LinkSpanDrawable.LinksTextView, android.widget.TextView
-                    public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
-                        super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
-                    }
-                };
-                this.textView = linksTextView;
-                NotificationCenter.listenEmojiLoading(linksTextView);
-                TextView textView = this.textView;
-                Typeface typeface = Typeface.SANS_SERIF;
-                textView.setTypeface(typeface);
-                this.textView.setTextSize(1, 14.0f);
-                this.textView.setTypeface(AndroidUtilities.bold());
-                TextView textView2 = this.textView;
-                TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-                textView2.setEllipsize(truncateAt);
-                this.textView.setMaxLines(1);
-                this.linearLayout.addView(this.textView);
-                LinkSpanDrawable.LinksTextView linksTextView2 = new LinkSpanDrawable.LinksTextView(context);
-                this.subtitleView = linksTextView2;
-                linksTextView2.setTypeface(typeface);
-                this.subtitleView.setTextSize(1, 12.0f);
-                this.subtitleView.setEllipsize(truncateAt);
-                this.subtitleView.setSingleLine(false);
-                this.subtitleView.setMaxLines(3);
-                this.subtitleView.setLinkTextColor(getThemedColor(Theme.key_undo_cancelColor));
-                this.linearLayout.addView(this.subtitleView, LayoutHelper.createLinear(-2, -2, 0, 0, 0, 0, 0));
-            } else {
-                LinkSpanDrawable.LinksTextView linksTextView3 = new LinkSpanDrawable.LinksTextView(context) { // from class: org.telegram.ui.Components.Bulletin.UsersLayout.1
-                    @Override // org.telegram.ui.Components.LinkSpanDrawable.LinksTextView, android.widget.TextView
-                    public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
-                        super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
-                    }
-                };
-                this.textView = linksTextView3;
-                NotificationCenter.listenEmojiLoading(linksTextView3);
-                this.textView.setTypeface(Typeface.SANS_SERIF);
-                this.textView.setTextSize(1, 15.0f);
-                this.textView.setEllipsize(TextUtils.TruncateAt.END);
-                this.textView.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
-                this.textView.setGravity(LocaleController.isRTL ? 5 : 3);
-                addView(this.textView, LayoutHelper.createFrameRelatively(-2.0f, -2.0f, 8388627, 70.0f, 0.0f, 12.0f, 0.0f));
-            }
-            this.textView.setLinkTextColor(getThemedColor(Theme.key_undo_cancelColor));
-            setTextColor(getThemedColor(Theme.key_undo_infoColor));
-            setBackground(getThemedColor(Theme.key_undo_background));
-        }
-
-        @Override // org.telegram.ui.Components.Bulletin.Layout
-        public CharSequence getAccessibilityText() {
-            return this.textView.getText();
-        }
-
-        @Override // org.telegram.ui.Components.Bulletin.Layout
-        protected void onShow() {
-            super.onShow();
-        }
-
-        public void setTextColor(int i) {
-            this.textView.setTextColor(i);
-            TextView textView = this.subtitleView;
-            if (textView != null) {
-                textView.setTextColor(i);
-            }
-        }
-    }
-
-    private Bulletin() {
-        this.hideRunnable = new Runnable() { // from class: org.telegram.ui.Components.Bulletin$$ExternalSyntheticLambda0
-            @Override // java.lang.Runnable
-            public final void run() {
-                Bulletin.this.hide();
-            }
-        };
-        this.loaded = true;
-        this.hideAfterBottomSheet = true;
-        this.setCanHideOnShow = true;
-        this.layout = null;
-        this.parentLayout = null;
-        this.containerFragment = null;
-        this.containerLayout = null;
-    }
-
-    private Bulletin(BaseFragment baseFragment, final FrameLayout frameLayout, Layout layout, int i) {
-        this.hideRunnable = new Runnable() { // from class: org.telegram.ui.Components.Bulletin$$ExternalSyntheticLambda0
-            @Override // java.lang.Runnable
-            public final void run() {
-                Bulletin.this.hide();
-            }
-        };
-        this.loaded = true;
-        this.hideAfterBottomSheet = true;
-        this.setCanHideOnShow = true;
-        this.layout = layout;
-        this.loaded = true ^ (layout instanceof LoadingLayout);
-        this.parentLayout = new ParentLayout(layout) { // from class: org.telegram.ui.Components.Bulletin.1
-            @Override // org.telegram.ui.Components.Bulletin.ParentLayout
-            protected void onHide() {
-                Bulletin.this.hide();
-            }
-
-            @Override // org.telegram.ui.Components.Bulletin.ParentLayout
-            protected void onPressedStateChanged(boolean z) {
-                Bulletin.this.setCanHide(!z);
-                if (frameLayout.getParent() != null) {
-                    frameLayout.getParent().requestDisallowInterceptTouchEvent(z);
-                }
-            }
-        };
-        this.containerFragment = baseFragment;
-        this.containerLayout = frameLayout;
-        this.duration = i;
-    }
-
-    public static void addDelegate(FrameLayout frameLayout, Delegate delegate) {
-        delegates.put(frameLayout, delegate);
-    }
-
-    public static void addDelegate(BaseFragment baseFragment, Delegate delegate) {
-        fragmentDelegates.put(baseFragment, delegate);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public void ensureLayoutTransitionCreated() {
-        Layout layout = this.layout;
-        if (layout == null || this.layoutTransition != null) {
-            return;
-        }
-        this.layoutTransition = layout.createTransition();
-    }
-
-    public static Bulletin find(FrameLayout frameLayout) {
-        int childCount = frameLayout.getChildCount();
-        for (int i = 0; i < childCount; i++) {
-            View childAt = frameLayout.getChildAt(i);
-            if (childAt instanceof Layout) {
-                return ((Layout) childAt).bulletin;
-            }
-        }
-        return null;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static Delegate findDelegate(BaseFragment baseFragment, FrameLayout frameLayout) {
-        Delegate delegate = (Delegate) fragmentDelegates.get(baseFragment);
-        if (delegate != null) {
-            return delegate;
-        }
-        Delegate delegate2 = (Delegate) delegates.get(frameLayout);
-        if (delegate2 != null) {
-            return delegate2;
-        }
-        return null;
-    }
-
-    public static Bulletin getVisibleBulletin() {
-        return visibleBulletin;
-    }
-
-    public static void hide(FrameLayout frameLayout) {
-        hide(frameLayout, true);
-    }
-
-    public static void hide(FrameLayout frameLayout, boolean z) {
-        Bulletin find = find(frameLayout);
-        if (find != null) {
-            find.hide(z && isTransitionsEnabled(), 0L);
-        }
-    }
-
-    public static void hideVisible() {
-        Bulletin bulletin = visibleBulletin;
-        if (bulletin != null) {
-            bulletin.hide();
-        }
-    }
-
-    public static void hideVisible(ViewGroup viewGroup) {
-        Bulletin bulletin = visibleBulletin;
-        if (bulletin == null || bulletin.containerLayout != viewGroup) {
-            return;
-        }
-        bulletin.hide();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static boolean isTransitionsEnabled() {
-        return MessagesController.getGlobalMainSettings().getBoolean("view_animations", true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$hide$3() {
-        Delegate delegate = this.currentDelegate;
-        if (delegate != null && !this.layout.top) {
-            delegate.onBottomOffsetChange(0.0f);
-            this.currentDelegate.onHide(this);
-        }
-        Layout layout = this.layout;
-        layout.transitionRunningExit = false;
-        layout.onExitTransitionEnd();
-        this.layout.onHide();
-        this.containerLayout.removeView(this.parentLayout);
-        this.containerLayout.removeOnLayoutChangeListener(this.containerLayoutListener);
-        this.layout.onDetach();
-        Runnable runnable = this.onHideListener;
-        if (runnable != null) {
-            runnable.run();
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$hide$4(Float f) {
-        Delegate delegate = this.currentDelegate;
-        if (delegate != null) {
-            if (this.layout.top) {
-                return;
-            }
-            delegate.onBottomOffsetChange(r1.getHeight() - f.floatValue());
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$hide$5() {
-        this.containerLayout.removeView(this.parentLayout);
-        this.containerLayout.removeOnLayoutChangeListener(this.containerLayoutListener);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$show$0(DynamicAnimation dynamicAnimation, float f, float f2) {
-        this.lastBottomOffset = (int) f;
-        updatePosition();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$show$1(DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
-        if (this.bottomOffsetSpring == dynamicAnimation) {
-            this.bottomOffsetSpring = null;
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$show$2(boolean z, View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
-        Delegate delegate = this.currentDelegate;
-        if ((delegate == null || delegate.allowLayoutChanges()) && !z) {
-            Delegate delegate2 = this.currentDelegate;
-            int bottomOffset = delegate2 != null ? delegate2.getBottomOffset(this.tag) : 0;
-            if (this.lastBottomOffset != bottomOffset) {
-                SpringAnimation springAnimation = this.bottomOffsetSpring;
-                if (springAnimation == null || !springAnimation.isRunning()) {
-                    SpringAnimation spring = new SpringAnimation(new FloatValueHolder(this.lastBottomOffset)).setSpring(new SpringForce().setFinalPosition(bottomOffset).setStiffness(900.0f).setDampingRatio(1.0f));
-                    this.bottomOffsetSpring = spring;
-                    spring.addUpdateListener(new DynamicAnimation.OnAnimationUpdateListener() { // from class: org.telegram.ui.Components.Bulletin$$ExternalSyntheticLambda6
-                        @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationUpdateListener
-                        public final void onAnimationUpdate(DynamicAnimation dynamicAnimation, float f, float f2) {
-                            Bulletin.this.lambda$show$0(dynamicAnimation, f, f2);
-                        }
-                    });
-                    this.bottomOffsetSpring.addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: org.telegram.ui.Components.Bulletin$$ExternalSyntheticLambda7
-                        @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationEndListener
-                        public final void onAnimationEnd(DynamicAnimation dynamicAnimation, boolean z2, float f, float f2) {
-                            Bulletin.this.lambda$show$1(dynamicAnimation, z2, f, f2);
-                        }
-                    });
-                } else {
-                    this.bottomOffsetSpring.getSpring().setFinalPosition(bottomOffset);
-                }
-                this.bottomOffsetSpring.start();
-            }
-        }
-    }
-
-    public static Bulletin make(FrameLayout frameLayout, Layout layout, int i) {
-        return frameLayout == null ? new EmptyBulletin() : new Bulletin(null, frameLayout, layout, i);
-    }
-
-    public static Bulletin make(BaseFragment baseFragment, Layout layout, int i) {
-        int i2;
-        int i3;
-        if (baseFragment == null) {
-            return new EmptyBulletin();
-        }
-        if (!(baseFragment instanceof ChatActivity)) {
-            if (baseFragment instanceof DialogsActivity) {
-                i2 = -1;
-                i3 = 0;
-            }
-            return new Bulletin(baseFragment, baseFragment.getLayoutContainer(), layout, i);
-        }
-        i2 = -2;
-        i3 = 1;
-        layout.setWideScreenParams(i2, i3);
-        return new Bulletin(baseFragment, baseFragment.getLayoutContainer(), layout, i);
-    }
-
-    public static void removeDelegate(FrameLayout frameLayout) {
-        delegates.remove(frameLayout);
-    }
-
-    public static void removeDelegate(BaseFragment baseFragment) {
-        fragmentDelegates.remove(baseFragment);
-    }
-
-    public static void updateCurrentPosition() {
-        Layout layout;
-        Bulletin bulletin = visibleBulletin;
-        if (bulletin == null || (layout = bulletin.layout) == null) {
-            return;
-        }
-        layout.updatePosition();
-    }
-
-    public Bulletin allowBlur() {
-        this.allowBlurAnimation = true;
-        return this;
-    }
-
-    public Layout getLayout() {
-        return this.layout;
-    }
-
-    public void hide() {
-        hide(isTransitionsEnabled(), 0L);
-    }
-
-    public void hide(long j) {
-        hide(isTransitionsEnabled(), j);
-    }
-
-    public void hide(boolean z, long j) {
-        Layout layout = this.layout;
-        if (layout != null && this.showing) {
-            this.showing = false;
-            if (visibleBulletin == this) {
-                visibleBulletin = null;
-            }
-            int i = this.currentBottomOffset;
-            this.currentBottomOffset = 0;
-            if (ViewCompat.isLaidOut(layout) || this.ignoreDetach) {
-                this.layout.removeCallbacks(this.hideRunnable);
-                if (z) {
-                    Layout layout2 = this.layout;
-                    layout2.transitionRunningExit = true;
-                    layout2.delegate = this.currentDelegate;
-                    layout2.invalidate();
-                    if (j >= 0) {
-                        Layout.DefaultTransition defaultTransition = new Layout.DefaultTransition();
-                        defaultTransition.duration = j;
-                        this.layoutTransition = defaultTransition;
-                    } else {
-                        ensureLayoutTransitionCreated();
-                    }
-                    Layout.Transition transition = this.layoutTransition;
-                    final Layout layout3 = this.layout;
-                    Objects.requireNonNull(layout3);
-                    transition.animateExit(layout3, new Runnable() { // from class: org.telegram.ui.Components.Bulletin$$ExternalSyntheticLambda2
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            Bulletin.Layout.this.onExitTransitionStart();
-                        }
-                    }, new Runnable() { // from class: org.telegram.ui.Components.Bulletin$$ExternalSyntheticLambda3
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            Bulletin.this.lambda$hide$3();
-                        }
-                    }, new Consumer() { // from class: org.telegram.ui.Components.Bulletin$$ExternalSyntheticLambda4
-                        @Override // androidx.core.util.Consumer
-                        public final void accept(Object obj) {
-                            Bulletin.this.lambda$hide$4((Float) obj);
-                        }
-                    }, i);
-                    return;
-                }
-            }
-            Delegate delegate = this.currentDelegate;
-            if (delegate != null && !this.layout.top) {
-                delegate.onBottomOffsetChange(0.0f);
-                this.currentDelegate.onHide(this);
-            }
-            this.layout.onExitTransitionStart();
-            this.layout.onExitTransitionEnd();
-            this.layout.onHide();
-            if (this.containerLayout != null) {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Bulletin$$ExternalSyntheticLambda5
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        Bulletin.this.lambda$hide$5();
-                    }
-                });
-            }
-            this.layout.onDetach();
-            Runnable runnable = this.onHideListener;
-            if (runnable != null) {
-                runnable.run();
-            }
-        }
-    }
-
-    public Bulletin hideAfterBottomSheet(boolean z) {
-        this.hideAfterBottomSheet = z;
-        return this;
-    }
-
-    public Bulletin ignoreDetach() {
-        this.ignoreDetach = true;
-        return this;
-    }
-
-    public boolean isShowing() {
-        return this.showing;
     }
 
     public void onLoaded(CharSequence charSequence) {
@@ -2666,114 +2457,285 @@ public class Bulletin {
         setCanHide(true);
     }
 
-    public void setCanHide(boolean z) {
-        Layout layout;
-        boolean z2 = z && this.loaded;
-        if (this.canHide == z2 || (layout = this.layout) == null) {
-            return;
+    public static class EmptyBulletin extends Bulletin {
+        @Override // org.telegram.ui.Components.Bulletin
+        public Bulletin show() {
+            return this;
         }
-        this.canHide = z2;
-        if (!z2) {
-            layout.removeCallbacks(this.hideRunnable);
-            return;
-        }
-        int i = this.duration;
-        if (i >= 0) {
-            layout.postDelayed(this.hideRunnable, i);
+
+        public EmptyBulletin() {
+            super();
         }
     }
 
-    public Bulletin setDuration(int i) {
-        this.duration = i;
-        return this;
-    }
+    public static class TimerView extends View {
+        private long lastUpdateTime;
+        private int prevSeconds;
+        private final Paint progressPaint;
+        RectF rect;
+        private TextPaint textPaint;
+        private int textWidth;
+        int textWidthOut;
+        StaticLayout timeLayout;
+        StaticLayout timeLayoutOut;
+        public long timeLeft;
+        private String timeLeftString;
+        float timeReplaceProgress;
 
-    public Bulletin setImageScale(float f) {
-        Layout layout = this.layout;
-        if (layout instanceof TwoLineLottieLayout) {
-            RLottieImageView rLottieImageView = ((TwoLineLottieLayout) layout).imageView;
-            rLottieImageView.setScaleX(f);
-            rLottieImageView.setScaleY(f);
+        public TimerView(Context context, Theme.ResourcesProvider resourcesProvider) {
+            super(context);
+            this.timeReplaceProgress = 1.0f;
+            this.rect = new RectF();
+            TextPaint textPaint = new TextPaint(1);
+            this.textPaint = textPaint;
+            textPaint.setTextSize(AndroidUtilities.dp(12.0f));
+            this.textPaint.setTypeface(AndroidUtilities.getTypeface("fonts/num.otf"));
+            Paint paint = new Paint(1);
+            this.progressPaint = paint;
+            paint.setStyle(Paint.Style.STROKE);
+            paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
+            paint.setStrokeCap(Paint.Cap.ROUND);
+            setColor(Theme.getColor(Theme.key_undo_infoColor, resourcesProvider));
         }
-        return this;
-    }
 
-    public Bulletin setOnClickListener(View.OnClickListener onClickListener) {
-        Layout layout = this.layout;
-        if (layout != null) {
-            layout.setOnClickListener(onClickListener);
+        public void setColor(int i) {
+            this.textPaint.setColor(i);
+            this.progressPaint.setColor(i);
         }
-        return this;
-    }
 
-    public Bulletin setOnHideListener(Runnable runnable) {
-        this.onHideListener = runnable;
-        return this;
-    }
-
-    public Bulletin setTag(int i) {
-        this.tag = i;
-        return this;
-    }
-
-    public Bulletin show() {
-        return show(false);
-    }
-
-    public Bulletin show(final boolean z) {
-        if (!this.showing && this.containerLayout != null) {
-            this.showing = true;
-            this.layout.setTop(z);
-            CharSequence accessibilityText = this.layout.getAccessibilityText();
-            if (accessibilityText != null) {
-                AndroidUtilities.makeAccessibilityAnnouncement(accessibilityText);
-            }
-            if (this.layout.getParent() != this.parentLayout) {
-                throw new IllegalStateException("Layout has incorrect parent");
-            }
-            Bulletin bulletin = visibleBulletin;
-            if (bulletin != null) {
-                bulletin.hide();
-            }
-            visibleBulletin = this;
-            this.layout.onAttach(this);
-            FrameLayout frameLayout = this.containerLayout;
-            View.OnLayoutChangeListener onLayoutChangeListener = new View.OnLayoutChangeListener() { // from class: org.telegram.ui.Components.Bulletin$$ExternalSyntheticLambda1
-                @Override // android.view.View.OnLayoutChangeListener
-                public final void onLayoutChange(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
-                    Bulletin.this.lambda$show$2(z, view, i, i2, i3, i4, i5, i6, i7, i8);
+        @Override // android.view.View
+        protected void onDraw(Canvas canvas) {
+            super.onDraw(canvas);
+            int ceil = this.timeLeft > 0 ? (int) Math.ceil(r0 / 1000.0f) : 0;
+            this.rect.set(AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), getMeasuredWidth() - AndroidUtilities.dp(1.0f), getMeasuredHeight() - AndroidUtilities.dp(1.0f));
+            if (this.prevSeconds != ceil) {
+                this.prevSeconds = ceil;
+                this.timeLeftString = String.valueOf(Math.max(0, ceil));
+                StaticLayout staticLayout = this.timeLayout;
+                if (staticLayout != null) {
+                    this.timeLayoutOut = staticLayout;
+                    this.timeReplaceProgress = 0.0f;
+                    this.textWidthOut = this.textWidth;
                 }
-            };
-            this.containerLayoutListener = onLayoutChangeListener;
-            frameLayout.addOnLayoutChangeListener(onLayoutChangeListener);
-            this.layout.addOnLayoutChangeListener(new 2(z));
-            if (!this.ignoreDetach) {
-                this.layout.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() { // from class: org.telegram.ui.Components.Bulletin.3
-                    @Override // android.view.View.OnAttachStateChangeListener
-                    public void onViewAttachedToWindow(View view) {
-                    }
-
-                    @Override // android.view.View.OnAttachStateChangeListener
-                    public void onViewDetachedFromWindow(View view) {
-                        Bulletin.this.layout.removeOnAttachStateChangeListener(this);
-                        Bulletin.this.hide(false, 0L);
-                    }
-                });
+                this.textWidth = (int) Math.ceil(this.textPaint.measureText(r0));
+                this.timeLayout = new StaticLayout(this.timeLeftString, this.textPaint, ConnectionsManager.DEFAULT_DATACENTER_ID, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
             }
-            this.containerLayout.addView(this.parentLayout);
+            float f = this.timeReplaceProgress;
+            if (f < 1.0f) {
+                float f2 = f + 0.10666667f;
+                this.timeReplaceProgress = f2;
+                if (f2 > 1.0f) {
+                    this.timeReplaceProgress = 1.0f;
+                } else {
+                    invalidate();
+                }
+            }
+            int alpha = this.textPaint.getAlpha();
+            if (this.timeLayoutOut != null) {
+                float f3 = this.timeReplaceProgress;
+                if (f3 < 1.0f) {
+                    this.textPaint.setAlpha((int) (alpha * (1.0f - f3)));
+                    canvas.save();
+                    canvas.translate(this.rect.centerX() - (this.textWidthOut / 2.0f), ((this.rect.centerY() - (this.timeLayoutOut.getHeight() / 2.0f)) + (AndroidUtilities.dp(10.0f) * this.timeReplaceProgress)) - AndroidUtilities.dp(0.5f));
+                    this.timeLayoutOut.draw(canvas);
+                    this.textPaint.setAlpha(alpha);
+                    canvas.restore();
+                }
+            }
+            if (this.timeLayout != null) {
+                float f4 = this.timeReplaceProgress;
+                if (f4 != 1.0f) {
+                    this.textPaint.setAlpha((int) (alpha * f4));
+                }
+                canvas.save();
+                canvas.translate(this.rect.centerX() - (this.textWidth / 2.0f), ((this.rect.centerY() - (this.timeLayout.getHeight() / 2.0f)) - (AndroidUtilities.dp(10.0f) * (1.0f - this.timeReplaceProgress))) - AndroidUtilities.dp(0.5f));
+                this.timeLayout.draw(canvas);
+                if (this.timeReplaceProgress != 1.0f) {
+                    this.textPaint.setAlpha(alpha);
+                }
+                canvas.restore();
+            }
+            canvas.drawArc(this.rect, -90.0f, (Math.max(0L, this.timeLeft) / 5000.0f) * (-360.0f), false, this.progressPaint);
+            if (this.lastUpdateTime != 0) {
+                long currentTimeMillis = System.currentTimeMillis();
+                this.timeLeft -= currentTimeMillis - this.lastUpdateTime;
+                this.lastUpdateTime = currentTimeMillis;
+            } else {
+                this.lastUpdateTime = System.currentTimeMillis();
+            }
+            invalidate();
         }
-        return this;
     }
 
-    public Bulletin skipShowAnimation() {
-        this.skipShowAnimation = true;
-        return this;
-    }
+    public static class BulletinWindow extends Dialog {
+        private final BulletinWindowLayout container;
+        private WindowManager.LayoutParams params;
 
-    public void updatePosition() {
-        Layout layout = this.layout;
-        if (layout != null) {
-            layout.updatePosition();
+        public static BulletinWindowLayout make(Context context, Delegate delegate) {
+            return new BulletinWindow(context, delegate).container;
+        }
+
+        public static BulletinWindowLayout make(Context context) {
+            return new BulletinWindow(context, null).container;
+        }
+
+        private BulletinWindow(Context context, final Delegate delegate) {
+            super(context);
+            BulletinWindowLayout bulletinWindowLayout = new BulletinWindowLayout(context);
+            this.container = bulletinWindowLayout;
+            setContentView(bulletinWindowLayout, new ViewGroup.LayoutParams(-1, -1));
+            int i = Build.VERSION.SDK_INT;
+            boolean z = true;
+            bulletinWindowLayout.setFitsSystemWindows(true);
+            bulletinWindowLayout.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() { // from class: org.telegram.ui.Components.Bulletin$BulletinWindow$$ExternalSyntheticLambda0
+                @Override // android.view.View.OnApplyWindowInsetsListener
+                public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
+                    WindowInsets lambda$new$0;
+                    lambda$new$0 = Bulletin.BulletinWindow.this.lambda$new$0(view, windowInsets);
+                    return lambda$new$0;
+                }
+            });
+            if (i >= 30) {
+                bulletinWindowLayout.setSystemUiVisibility(1792);
+            } else {
+                bulletinWindowLayout.setSystemUiVisibility(1280);
+            }
+            Bulletin.addDelegate(bulletinWindowLayout, new Delegate() { // from class: org.telegram.ui.Components.Bulletin.BulletinWindow.1
+                @Override // org.telegram.ui.Components.Bulletin.Delegate
+                public /* synthetic */ boolean allowLayoutChanges() {
+                    return Delegate.-CC.$default$allowLayoutChanges(this);
+                }
+
+                @Override // org.telegram.ui.Components.Bulletin.Delegate
+                public /* synthetic */ boolean bottomOffsetAnimated() {
+                    return Delegate.-CC.$default$bottomOffsetAnimated(this);
+                }
+
+                @Override // org.telegram.ui.Components.Bulletin.Delegate
+                public /* synthetic */ void onBottomOffsetChange(float f) {
+                    Delegate.-CC.$default$onBottomOffsetChange(this, f);
+                }
+
+                @Override // org.telegram.ui.Components.Bulletin.Delegate
+                public /* synthetic */ void onHide(Bulletin bulletin) {
+                    Delegate.-CC.$default$onHide(this, bulletin);
+                }
+
+                @Override // org.telegram.ui.Components.Bulletin.Delegate
+                public /* synthetic */ void onShow(Bulletin bulletin) {
+                    Delegate.-CC.$default$onShow(this, bulletin);
+                }
+
+                @Override // org.telegram.ui.Components.Bulletin.Delegate
+                public int getBottomOffset(int i2) {
+                    Delegate delegate2 = delegate;
+                    if (delegate2 == null) {
+                        return 0;
+                    }
+                    return delegate2.getBottomOffset(i2);
+                }
+
+                @Override // org.telegram.ui.Components.Bulletin.Delegate
+                public int getTopOffset(int i2) {
+                    Delegate delegate2 = delegate;
+                    return delegate2 == null ? AndroidUtilities.statusBarHeight : delegate2.getTopOffset(i2);
+                }
+
+                @Override // org.telegram.ui.Components.Bulletin.Delegate
+                public boolean clipWithGradient(int i2) {
+                    Delegate delegate2 = delegate;
+                    return delegate2 != null && delegate2.clipWithGradient(i2);
+                }
+            });
+            try {
+                Window window = getWindow();
+                window.setWindowAnimations(R.style.DialogNoAnimation);
+                window.setBackgroundDrawable(null);
+                WindowManager.LayoutParams attributes = window.getAttributes();
+                this.params = attributes;
+                attributes.width = -1;
+                attributes.height = -1;
+                attributes.gravity = 51;
+                attributes.dimAmount = 0.0f;
+                attributes.flags = ((attributes.flags & (-3)) | (-1946091240)) & (-1025);
+                if (i >= 28) {
+                    attributes.layoutInDisplayCutoutMode = 1;
+                }
+                window.setAttributes(attributes);
+                if (AndroidUtilities.computePerceivedBrightness(Theme.getColor(Theme.key_windowBackgroundGray)) <= 0.721f) {
+                    z = false;
+                }
+                AndroidUtilities.setLightNavigationBar(window, z);
+            } catch (Exception unused) {
+            }
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ WindowInsets lambda$new$0(View view, WindowInsets windowInsets) {
+            WindowInsets windowInsets2;
+            applyInsets(windowInsets);
+            view.requestLayout();
+            if (Build.VERSION.SDK_INT >= 30) {
+                windowInsets2 = WindowInsets.CONSUMED;
+                return windowInsets2;
+            }
+            return windowInsets.consumeSystemWindowInsets();
+        }
+
+        @Override // android.app.Dialog
+        public void show() {
+            if (AndroidUtilities.isSafeToShow(getContext())) {
+                super.show();
+            }
+        }
+
+        private void applyInsets(WindowInsets windowInsets) {
+            BulletinWindowLayout bulletinWindowLayout = this.container;
+            if (bulletinWindowLayout != null) {
+                bulletinWindowLayout.setPadding(windowInsets.getSystemWindowInsetLeft(), windowInsets.getSystemWindowInsetTop(), windowInsets.getSystemWindowInsetRight(), windowInsets.getSystemWindowInsetBottom());
+            }
+        }
+
+        public class BulletinWindowLayout extends FrameLayout {
+            public BulletinWindowLayout(Context context) {
+                super(context);
+            }
+
+            @Override // android.view.ViewGroup
+            public void addView(View view) {
+                super.addView(view);
+                BulletinWindow.this.show();
+            }
+
+            @Override // android.view.ViewGroup, android.view.ViewManager
+            public void removeView(View view) {
+                super.removeView(view);
+                try {
+                    BulletinWindow.this.dismiss();
+                } catch (Exception unused) {
+                }
+                Bulletin.removeDelegate(BulletinWindow.this.container);
+            }
+
+            public void setTouchable(boolean z) {
+                if (BulletinWindow.this.params == null) {
+                    return;
+                }
+                if (!z) {
+                    BulletinWindow.this.params.flags |= 16;
+                } else {
+                    BulletinWindow.this.params.flags &= -17;
+                }
+                BulletinWindow.this.getWindow().setAttributes(BulletinWindow.this.params);
+            }
+
+            public WindowManager.LayoutParams getLayout() {
+                return BulletinWindow.this.params;
+            }
+
+            public void updateLayout() {
+                BulletinWindow.this.getWindow().setAttributes(BulletinWindow.this.params);
+            }
         }
     }
 }

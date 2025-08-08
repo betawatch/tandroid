@@ -16,6 +16,14 @@ public final class RangedUri {
         this.length = j2;
     }
 
+    public Uri resolveUri(String str) {
+        return UriUtil.resolveToUri(str, this.referenceUri);
+    }
+
+    public String resolveUriString(String str) {
+        return UriUtil.resolve(str, this.referenceUri);
+    }
+
     public RangedUri attemptMerge(RangedUri rangedUri, String str) {
         String resolveUriString = resolveUriString(str);
         if (rangedUri != null && resolveUriString.equals(rangedUri.resolveUriString(str))) {
@@ -24,18 +32,25 @@ public final class RangedUri {
                 long j2 = this.start;
                 if (j2 + j == rangedUri.start) {
                     long j3 = rangedUri.length;
-                    return new RangedUri(resolveUriString, j2, j3 != -1 ? j + j3 : -1L);
+                    return new RangedUri(resolveUriString, j2, j3 == -1 ? -1L : j + j3);
                 }
             }
             long j4 = rangedUri.length;
             if (j4 != -1) {
                 long j5 = rangedUri.start;
                 if (j5 + j4 == this.start) {
-                    return new RangedUri(resolveUriString, j5, j != -1 ? j4 + j : -1L);
+                    return new RangedUri(resolveUriString, j5, j == -1 ? -1L : j4 + j);
                 }
             }
         }
         return null;
+    }
+
+    public int hashCode() {
+        if (this.hashCode == 0) {
+            this.hashCode = ((((((int) this.start) + 527) * 31) + ((int) this.length)) * 31) + this.referenceUri.hashCode();
+        }
+        return this.hashCode;
     }
 
     public boolean equals(Object obj) {
@@ -47,21 +62,6 @@ public final class RangedUri {
         }
         RangedUri rangedUri = (RangedUri) obj;
         return this.start == rangedUri.start && this.length == rangedUri.length && this.referenceUri.equals(rangedUri.referenceUri);
-    }
-
-    public int hashCode() {
-        if (this.hashCode == 0) {
-            this.hashCode = ((((((int) this.start) + 527) * 31) + ((int) this.length)) * 31) + this.referenceUri.hashCode();
-        }
-        return this.hashCode;
-    }
-
-    public Uri resolveUri(String str) {
-        return UriUtil.resolveToUri(str, this.referenceUri);
-    }
-
-    public String resolveUriString(String str) {
-        return UriUtil.resolve(str, this.referenceUri);
     }
 
     public String toString() {

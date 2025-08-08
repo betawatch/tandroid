@@ -2,7 +2,7 @@ package com.google.firebase.remoteconfig.interop.rollouts;
 
 import java.util.Set;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class AutoValue_RolloutsState extends RolloutsState {
     private final Set rolloutAssignments;
 
@@ -11,6 +11,15 @@ final class AutoValue_RolloutsState extends RolloutsState {
             throw new NullPointerException("Null rolloutAssignments");
         }
         this.rolloutAssignments = set;
+    }
+
+    @Override // com.google.firebase.remoteconfig.interop.rollouts.RolloutsState
+    public Set getRolloutAssignments() {
+        return this.rolloutAssignments;
+    }
+
+    public String toString() {
+        return "RolloutsState{rolloutAssignments=" + this.rolloutAssignments + "}";
     }
 
     public boolean equals(Object obj) {
@@ -23,16 +32,7 @@ final class AutoValue_RolloutsState extends RolloutsState {
         return false;
     }
 
-    @Override // com.google.firebase.remoteconfig.interop.rollouts.RolloutsState
-    public Set getRolloutAssignments() {
-        return this.rolloutAssignments;
-    }
-
     public int hashCode() {
         return this.rolloutAssignments.hashCode() ^ 1000003;
-    }
-
-    public String toString() {
-        return "RolloutsState{rolloutAssignments=" + this.rolloutAssignments + "}";
     }
 }

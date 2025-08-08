@@ -1,24 +1,13 @@
 package j$.util.stream;
 
+import j$.util.Optional;
+
 /* loaded from: classes2.dex */
-final class I extends K implements d2 {
-    I() {
-    }
-
-    @Override // j$.util.stream.K, j$.util.stream.e2
-    public final void accept(long j) {
-        r(Long.valueOf(j));
-    }
-
-    @Override // j$.util.function.T
-    public final /* synthetic */ j$.util.function.T f(j$.util.function.T t) {
-        return j$.com.android.tools.r8.a.d(this, t);
-    }
-
+final class I extends J {
     @Override // j$.util.function.Supplier
     public final Object get() {
         if (this.a) {
-            return j$.util.l.d(((Long) this.b).longValue());
+            return Optional.of(this.b);
         }
         return null;
     }

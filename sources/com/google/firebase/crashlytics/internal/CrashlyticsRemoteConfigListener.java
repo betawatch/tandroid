@@ -6,10 +6,10 @@ import com.google.firebase.remoteconfig.interop.rollouts.RolloutsState;
 import com.google.firebase.remoteconfig.interop.rollouts.RolloutsStateSubscriber;
 import java.util.ArrayList;
 import java.util.Set;
-import kotlin.collections.CollectionsKt__IterablesKt;
+import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class CrashlyticsRemoteConfigListener implements RolloutsStateSubscriber {
     private final UserMetadata userMetadata;
 
@@ -24,7 +24,7 @@ public final class CrashlyticsRemoteConfigListener implements RolloutsStateSubsc
         UserMetadata userMetadata = this.userMetadata;
         Set<RolloutAssignment> rolloutAssignments = rolloutsState.getRolloutAssignments();
         Intrinsics.checkNotNullExpressionValue(rolloutAssignments, "rolloutsState.rolloutAssignments");
-        ArrayList arrayList = new ArrayList(CollectionsKt__IterablesKt.collectionSizeOrDefault(rolloutAssignments, 10));
+        ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(rolloutAssignments, 10));
         for (RolloutAssignment rolloutAssignment : rolloutAssignments) {
             arrayList.add(com.google.firebase.crashlytics.internal.metadata.RolloutAssignment.create(rolloutAssignment.getRolloutId(), rolloutAssignment.getParameterKey(), rolloutAssignment.getParameterValue(), rolloutAssignment.getVariantId(), rolloutAssignment.getTemplateVersion()));
         }

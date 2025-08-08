@@ -12,11 +12,6 @@ public class zzje extends IOException {
         this.zza = null;
     }
 
-    public zzje(String str) {
-        super(str);
-        this.zza = null;
-    }
-
     static zzjd zza() {
         return new zzjd("Protocol message tag had invalid wire type.");
     }
@@ -64,5 +59,10 @@ public class zzje extends IOException {
 
     final boolean zzl() {
         return this.zzb;
+    }
+
+    public zzje(String str) {
+        super(str);
+        this.zza = null;
     }
 }

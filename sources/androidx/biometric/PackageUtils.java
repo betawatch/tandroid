@@ -6,14 +6,13 @@ import android.os.Build;
 
 /* loaded from: classes.dex */
 abstract class PackageUtils {
+    static boolean hasSystemFeatureFingerprint(Context context) {
+        return Build.VERSION.SDK_INT >= 23 && context != null && context.getPackageManager() != null && Api23Impl.hasSystemFeatureFingerprint(context.getPackageManager());
+    }
 
     private static class Api23Impl {
         static boolean hasSystemFeatureFingerprint(PackageManager packageManager) {
             return packageManager.hasSystemFeature("android.hardware.fingerprint");
         }
-    }
-
-    static boolean hasSystemFeatureFingerprint(Context context) {
-        return Build.VERSION.SDK_INT >= 23 && context != null && context.getPackageManager() != null && Api23Impl.hasSystemFeatureFingerprint(context.getPackageManager());
     }
 }

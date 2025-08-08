@@ -12,6 +12,11 @@ final class WavSeekMap implements SeekMap {
     private final int framesPerBlock;
     private final WavFormat wavFormat;
 
+    @Override // com.google.android.exoplayer2.extractor.SeekMap
+    public boolean isSeekable() {
+        return true;
+    }
+
     public WavSeekMap(WavFormat wavFormat, int i, long j, long j2) {
         this.wavFormat = wavFormat;
         this.framesPerBlock = i;
@@ -19,10 +24,6 @@ final class WavSeekMap implements SeekMap {
         long j3 = (j2 - j) / wavFormat.blockSize;
         this.blockCount = j3;
         this.durationUs = blockIndexToTimeUs(j3);
-    }
-
-    private long blockIndexToTimeUs(long j) {
-        return Util.scaleLargeTimestamp(j * this.framesPerBlock, 1000000L, this.wavFormat.frameRateHz);
     }
 
     @Override // com.google.android.exoplayer2.extractor.SeekMap
@@ -43,8 +44,7 @@ final class WavSeekMap implements SeekMap {
         return new SeekMap.SeekPoints(seekPoint, new SeekPoint(blockIndexToTimeUs(j3), this.firstBlockPosition + (this.wavFormat.blockSize * j3)));
     }
 
-    @Override // com.google.android.exoplayer2.extractor.SeekMap
-    public boolean isSeekable() {
-        return true;
+    private long blockIndexToTimeUs(long j) {
+        return Util.scaleLargeTimestamp(j * this.framesPerBlock, 1000000L, this.wavFormat.frameRateHz);
     }
 }

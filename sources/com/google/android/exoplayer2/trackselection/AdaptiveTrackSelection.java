@@ -41,29 +41,9 @@ public class AdaptiveTrackSelection extends BaseTrackSelection {
     private int reason;
     private int selectedIndex;
 
-    public static final class AdaptationCheckpoint {
-        public final long allocatedBandwidth;
-        public final long totalBandwidth;
-
-        public AdaptationCheckpoint(long j, long j2) {
-            this.totalBandwidth = j;
-            this.allocatedBandwidth = j2;
-        }
-
-        public boolean equals(Object obj) {
-            if (this == obj) {
-                return true;
-            }
-            if (!(obj instanceof AdaptationCheckpoint)) {
-                return false;
-            }
-            AdaptationCheckpoint adaptationCheckpoint = (AdaptationCheckpoint) obj;
-            return this.totalBandwidth == adaptationCheckpoint.totalBandwidth && this.allocatedBandwidth == adaptationCheckpoint.allocatedBandwidth;
-        }
-
-        public int hashCode() {
-            return (((int) this.totalBandwidth) * 31) + ((int) this.allocatedBandwidth);
-        }
+    @Override // com.google.android.exoplayer2.trackselection.ExoTrackSelection
+    public Object getSelectionData() {
+        return null;
     }
 
     public static class Factory implements ExoTrackSelection.Factory {
@@ -95,12 +75,9 @@ public class AdaptiveTrackSelection extends BaseTrackSelection {
             this.clock = clock;
         }
 
-        protected AdaptiveTrackSelection createAdaptiveTrackSelection(TrackGroup trackGroup, int[] iArr, int i, BandwidthMeter bandwidthMeter, ImmutableList immutableList) {
-            return new AdaptiveTrackSelection(trackGroup, iArr, i, bandwidthMeter, this.minDurationForQualityIncreaseMs, this.maxDurationForQualityDecreaseMs, this.minDurationToRetainAfterDiscardMs, this.maxWidthToDiscard, this.maxHeightToDiscard, this.bandwidthFraction, this.bufferedFractionToLiveEdgeForQualityIncrease, immutableList, this.clock);
-        }
-
         @Override // com.google.android.exoplayer2.trackselection.ExoTrackSelection.Factory
         public final ExoTrackSelection[] createTrackSelections(ExoTrackSelection.Definition[] definitionArr, BandwidthMeter bandwidthMeter, MediaSource.MediaPeriodId mediaPeriodId, Timeline timeline) {
+            ExoTrackSelection createAdaptiveTrackSelection;
             ImmutableList adaptationCheckpoints = AdaptiveTrackSelection.getAdaptationCheckpoints(definitionArr);
             ExoTrackSelection[] exoTrackSelectionArr = new ExoTrackSelection[definitionArr.length];
             for (int i = 0; i < definitionArr.length; i++) {
@@ -108,11 +85,20 @@ public class AdaptiveTrackSelection extends BaseTrackSelection {
                 if (definition != null) {
                     int[] iArr = definition.tracks;
                     if (iArr.length != 0) {
-                        exoTrackSelectionArr[i] = iArr.length == 1 ? new FixedTrackSelection(definition.group, iArr[0], definition.type) : createAdaptiveTrackSelection(definition.group, iArr, definition.type, bandwidthMeter, (ImmutableList) adaptationCheckpoints.get(i));
+                        if (iArr.length == 1) {
+                            createAdaptiveTrackSelection = new FixedTrackSelection(definition.group, iArr[0], definition.type);
+                        } else {
+                            createAdaptiveTrackSelection = createAdaptiveTrackSelection(definition.group, iArr, definition.type, bandwidthMeter, (ImmutableList) adaptationCheckpoints.get(i));
+                        }
+                        exoTrackSelectionArr[i] = createAdaptiveTrackSelection;
                     }
                 }
             }
             return exoTrackSelectionArr;
+        }
+
+        protected AdaptiveTrackSelection createAdaptiveTrackSelection(TrackGroup trackGroup, int[] iArr, int i, BandwidthMeter bandwidthMeter, ImmutableList immutableList) {
+            return new AdaptiveTrackSelection(trackGroup, iArr, i, bandwidthMeter, this.minDurationForQualityIncreaseMs, this.maxDurationForQualityDecreaseMs, this.minDurationToRetainAfterDiscardMs, this.maxWidthToDiscard, this.maxHeightToDiscard, this.bandwidthFraction, this.bufferedFractionToLiveEdgeForQualityIncrease, immutableList, this.clock);
         }
     }
 
@@ -143,21 +129,115 @@ public class AdaptiveTrackSelection extends BaseTrackSelection {
         this.lastBufferEvaluationMs = -9223372036854775807L;
     }
 
-    private static void addCheckpoint(List list, long[] jArr) {
-        long j = 0;
-        for (long j2 : jArr) {
-            j += j2;
+    @Override // com.google.android.exoplayer2.trackselection.BaseTrackSelection, com.google.android.exoplayer2.trackselection.ExoTrackSelection
+    public void enable() {
+        this.lastBufferEvaluationMs = -9223372036854775807L;
+        this.lastBufferEvaluationMediaChunk = null;
+    }
+
+    @Override // com.google.android.exoplayer2.trackselection.BaseTrackSelection, com.google.android.exoplayer2.trackselection.ExoTrackSelection
+    public void disable() {
+        this.lastBufferEvaluationMediaChunk = null;
+    }
+
+    @Override // com.google.android.exoplayer2.trackselection.BaseTrackSelection, com.google.android.exoplayer2.trackselection.ExoTrackSelection
+    public void onPlaybackSpeed(float f) {
+        this.playbackSpeed = f;
+    }
+
+    @Override // com.google.android.exoplayer2.trackselection.ExoTrackSelection
+    public void updateSelectedTrack(long j, long j2, long j3, List list, MediaChunkIterator[] mediaChunkIteratorArr) {
+        int i;
+        int i2;
+        long elapsedRealtime = this.clock.elapsedRealtime();
+        long nextChunkDurationUs = getNextChunkDurationUs(mediaChunkIteratorArr, list);
+        int i3 = this.reason;
+        if (i3 == 0) {
+            this.reason = 1;
+            this.selectedIndex = determineIdealSelectedIndex(0, elapsedRealtime, nextChunkDurationUs);
+            return;
         }
-        for (int i = 0; i < list.size(); i++) {
-            ImmutableList.Builder builder = (ImmutableList.Builder) list.get(i);
-            if (builder != null) {
-                builder.add((Object) new AdaptationCheckpoint(j, jArr[i]));
+        int i4 = this.selectedIndex;
+        int indexOf = list.isEmpty() ? -1 : indexOf(((MediaChunk) Iterables.getLast(list)).trackFormat);
+        if (indexOf != -1) {
+            i = ((MediaChunk) Iterables.getLast(list)).trackSelectionReason;
+            i2 = indexOf;
+        } else {
+            i = i3;
+            i2 = i4;
+        }
+        int determineIdealSelectedIndex = determineIdealSelectedIndex(1, elapsedRealtime, nextChunkDurationUs);
+        if (!isBlacklisted(i2, elapsedRealtime)) {
+            Format format = getFormat(i2);
+            Format format2 = getFormat(determineIdealSelectedIndex);
+            long minDurationForQualityIncreaseUs = minDurationForQualityIncreaseUs(j3, nextChunkDurationUs);
+            int i5 = format2.bitrate;
+            int i6 = format.bitrate;
+            if ((i5 > i6 && j2 < minDurationForQualityIncreaseUs) || (i5 < i6 && j2 >= this.maxDurationForQualityDecreaseUs)) {
+                determineIdealSelectedIndex = i2;
             }
         }
+        if (determineIdealSelectedIndex != i2) {
+            i = 3;
+        }
+        this.reason = i;
+        this.selectedIndex = determineIdealSelectedIndex;
+    }
+
+    @Override // com.google.android.exoplayer2.trackselection.ExoTrackSelection
+    public int getSelectedIndex() {
+        return this.selectedIndex;
+    }
+
+    @Override // com.google.android.exoplayer2.trackselection.ExoTrackSelection
+    public int getSelectionReason() {
+        return this.reason;
+    }
+
+    @Override // com.google.android.exoplayer2.trackselection.BaseTrackSelection, com.google.android.exoplayer2.trackselection.ExoTrackSelection
+    public int evaluateQueueSize(long j, List list) {
+        int i;
+        int i2;
+        long elapsedRealtime = this.clock.elapsedRealtime();
+        if (!shouldEvaluateQueueSize(elapsedRealtime, list)) {
+            return list.size();
+        }
+        this.lastBufferEvaluationMs = elapsedRealtime;
+        this.lastBufferEvaluationMediaChunk = list.isEmpty() ? null : (MediaChunk) Iterables.getLast(list);
+        if (list.isEmpty()) {
+            return 0;
+        }
+        int size = list.size();
+        long playoutDurationForMediaDuration = Util.getPlayoutDurationForMediaDuration(((MediaChunk) list.get(size - 1)).startTimeUs - j, this.playbackSpeed);
+        long minDurationToRetainAfterDiscardUs = getMinDurationToRetainAfterDiscardUs();
+        if (playoutDurationForMediaDuration < minDurationToRetainAfterDiscardUs) {
+            return size;
+        }
+        Format format = getFormat(determineIdealSelectedIndex(-1, elapsedRealtime, getLastChunkDurationUs(list)));
+        for (int i3 = 0; i3 < size; i3++) {
+            MediaChunk mediaChunk = (MediaChunk) list.get(i3);
+            Format format2 = mediaChunk.trackFormat;
+            if (Util.getPlayoutDurationForMediaDuration(mediaChunk.startTimeUs - j, this.playbackSpeed) >= minDurationToRetainAfterDiscardUs && format2.bitrate < format.bitrate && (i = format2.height) != -1 && i <= this.maxHeightToDiscard && (i2 = format2.width) != -1 && i2 <= this.maxWidthToDiscard && i < format.height) {
+                return i3;
+            }
+        }
+        return size;
+    }
+
+    protected boolean canSelectFormat(Format format, int i, long j) {
+        return format.cached || ((long) i) <= j;
+    }
+
+    protected boolean shouldEvaluateQueueSize(long j, List list) {
+        long j2 = this.lastBufferEvaluationMs;
+        return j2 == -9223372036854775807L || j - j2 >= 1000 || !(list.isEmpty() || ((MediaChunk) Iterables.getLast(list)).equals(this.lastBufferEvaluationMediaChunk));
+    }
+
+    protected long getMinDurationToRetainAfterDiscardUs() {
+        return this.minDurationToRetainAfterDiscardUs;
     }
 
     private int determineIdealSelectedIndex(int i, long j, long j2) {
-        StringBuilder sb;
         long allocatedBandwidth = getAllocatedBandwidth(j2);
         FileLog.d("debug_loading_player: determineIdealSelectedIndex: type=" + i + " effectiveBitrate=" + allocatedBandwidth);
         HashMap hashMap = new HashMap();
@@ -167,18 +247,19 @@ public class AdaptiveTrackSelection extends BaseTrackSelection {
             if (j == Long.MIN_VALUE || !isBlacklisted(i3, j)) {
                 Format format = getFormat(i3);
                 int max = Math.max(format.width, format.height);
-                if (hashMap.containsKey(Integer.valueOf(max))) {
+                if (!hashMap.containsKey(Integer.valueOf(max))) {
+                    hashMap.put(Integer.valueOf(max), Integer.valueOf(i3));
+                    arrayList.add(Integer.valueOf(i3));
+                } else {
                     Integer num = (Integer) hashMap.get(Integer.valueOf(max));
                     Format format2 = getFormat(num.intValue());
                     boolean z = format2.cached;
                     if ((!z || format.cached) && ((!z && format.cached) || format.bitrate < format2.bitrate)) {
                         hashMap.put(Integer.valueOf(max), Integer.valueOf(i3));
                         arrayList.remove(num);
+                        arrayList.add(Integer.valueOf(i3));
                     }
-                } else {
-                    hashMap.put(Integer.valueOf(max), Integer.valueOf(i3));
                 }
-                arrayList.add(Integer.valueOf(i3));
             }
         }
         if (i == 0) {
@@ -192,40 +273,96 @@ public class AdaptiveTrackSelection extends BaseTrackSelection {
             }
         }
         Iterator it2 = arrayList.iterator();
-        while (true) {
-            if (!it2.hasNext()) {
-                sb = new StringBuilder();
-                sb.append("debug_loading_player: determineIdealSelectedIndex: selected format#");
-                sb.append(i2);
-                sb.append(" (lowest, nothing is fit)");
-                break;
-            }
+        while (it2.hasNext()) {
             i2 = ((Integer) it2.next()).intValue();
             Format format3 = getFormat(i2);
             FileLog.d("debug_loading_player: determineIdealSelectedIndex: format#" + i2 + " bitrate=" + format3.bitrate + " " + format3.width + "x" + format3.height + " codecs=" + format3.codecs + " (cached=" + format3.cached + ")");
             if (canSelectFormat(format3, format3.bitrate, allocatedBandwidth)) {
-                sb = new StringBuilder();
-                sb.append("debug_loading_player: determineIdealSelectedIndex: selected format#");
-                sb.append(i2);
-                break;
+                FileLog.d("debug_loading_player: determineIdealSelectedIndex: selected format#" + i2);
+                return i2;
             }
         }
-        FileLog.d(sb.toString());
+        FileLog.d("debug_loading_player: determineIdealSelectedIndex: selected format#" + i2 + " (lowest, nothing is fit)");
         return i2;
+    }
+
+    private long minDurationForQualityIncreaseUs(long j, long j2) {
+        if (j == -9223372036854775807L) {
+            return this.minDurationForQualityIncreaseUs;
+        }
+        if (j2 != -9223372036854775807L) {
+            j -= j2;
+        }
+        return Math.min((long) (j * this.bufferedFractionToLiveEdgeForQualityIncrease), this.minDurationForQualityIncreaseUs);
+    }
+
+    private long getNextChunkDurationUs(MediaChunkIterator[] mediaChunkIteratorArr, List list) {
+        int i = this.selectedIndex;
+        if (i < mediaChunkIteratorArr.length && mediaChunkIteratorArr[i].next()) {
+            MediaChunkIterator mediaChunkIterator = mediaChunkIteratorArr[this.selectedIndex];
+            return mediaChunkIterator.getChunkEndTimeUs() - mediaChunkIterator.getChunkStartTimeUs();
+        }
+        for (MediaChunkIterator mediaChunkIterator2 : mediaChunkIteratorArr) {
+            if (mediaChunkIterator2.next()) {
+                return mediaChunkIterator2.getChunkEndTimeUs() - mediaChunkIterator2.getChunkStartTimeUs();
+            }
+        }
+        return getLastChunkDurationUs(list);
+    }
+
+    private long getLastChunkDurationUs(List list) {
+        if (list.isEmpty()) {
+            return -9223372036854775807L;
+        }
+        MediaChunk mediaChunk = (MediaChunk) Iterables.getLast(list);
+        long j = mediaChunk.startTimeUs;
+        if (j == -9223372036854775807L) {
+            return -9223372036854775807L;
+        }
+        long j2 = mediaChunk.endTimeUs;
+        if (j2 != -9223372036854775807L) {
+            return j2 - j;
+        }
+        return -9223372036854775807L;
+    }
+
+    private long getAllocatedBandwidth(long j) {
+        long totalAllocatableBandwidth = getTotalAllocatableBandwidth(j);
+        if (this.adaptationCheckpoints.isEmpty()) {
+            return totalAllocatableBandwidth;
+        }
+        int i = 1;
+        while (i < this.adaptationCheckpoints.size() - 1 && ((AdaptationCheckpoint) this.adaptationCheckpoints.get(i)).totalBandwidth < totalAllocatableBandwidth) {
+            i++;
+        }
+        AdaptationCheckpoint adaptationCheckpoint = (AdaptationCheckpoint) this.adaptationCheckpoints.get(i - 1);
+        AdaptationCheckpoint adaptationCheckpoint2 = (AdaptationCheckpoint) this.adaptationCheckpoints.get(i);
+        long j2 = adaptationCheckpoint.totalBandwidth;
+        float f = (totalAllocatableBandwidth - j2) / (adaptationCheckpoint2.totalBandwidth - j2);
+        return adaptationCheckpoint.allocatedBandwidth + ((long) (f * (adaptationCheckpoint2.allocatedBandwidth - r2)));
+    }
+
+    private long getTotalAllocatableBandwidth(long j) {
+        long bitrateEstimate = (long) (this.bandwidthMeter.getBitrateEstimate() * this.bandwidthFraction);
+        long timeToFirstByteEstimateUs = this.bandwidthMeter.getTimeToFirstByteEstimateUs();
+        if (timeToFirstByteEstimateUs == -9223372036854775807L || j == -9223372036854775807L) {
+            return (long) (bitrateEstimate / this.playbackSpeed);
+        }
+        float f = j;
+        return (long) ((bitrateEstimate * Math.max((f / this.playbackSpeed) - timeToFirstByteEstimateUs, 0.0f)) / f);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static ImmutableList getAdaptationCheckpoints(ExoTrackSelection.Definition[] definitionArr) {
-        ImmutableList.Builder builder;
         ArrayList arrayList = new ArrayList();
         for (ExoTrackSelection.Definition definition : definitionArr) {
-            if (definition == null || definition.tracks.length <= 1) {
-                builder = null;
-            } else {
-                builder = ImmutableList.builder();
+            if (definition != null && definition.tracks.length > 1) {
+                ImmutableList.Builder builder = ImmutableList.builder();
                 builder.add((Object) new AdaptationCheckpoint(0L, 0L));
+                arrayList.add(builder);
+            } else {
+                arrayList.add(null);
             }
-            arrayList.add(builder);
         }
         long[][] sortedTrackBitrates = getSortedTrackBitrates(definitionArr);
         int[] iArr = new int[sortedTrackBitrates.length];
@@ -255,52 +392,6 @@ public class AdaptiveTrackSelection extends BaseTrackSelection {
             builder2.add((Object) (builder3 == null ? ImmutableList.of() : builder3.build()));
         }
         return builder2.build();
-    }
-
-    private long getAllocatedBandwidth(long j) {
-        long totalAllocatableBandwidth = getTotalAllocatableBandwidth(j);
-        if (this.adaptationCheckpoints.isEmpty()) {
-            return totalAllocatableBandwidth;
-        }
-        int i = 1;
-        while (i < this.adaptationCheckpoints.size() - 1 && ((AdaptationCheckpoint) this.adaptationCheckpoints.get(i)).totalBandwidth < totalAllocatableBandwidth) {
-            i++;
-        }
-        AdaptationCheckpoint adaptationCheckpoint = (AdaptationCheckpoint) this.adaptationCheckpoints.get(i - 1);
-        AdaptationCheckpoint adaptationCheckpoint2 = (AdaptationCheckpoint) this.adaptationCheckpoints.get(i);
-        long j2 = adaptationCheckpoint.totalBandwidth;
-        float f = (totalAllocatableBandwidth - j2) / (adaptationCheckpoint2.totalBandwidth - j2);
-        return adaptationCheckpoint.allocatedBandwidth + ((long) (f * (adaptationCheckpoint2.allocatedBandwidth - r2)));
-    }
-
-    private long getLastChunkDurationUs(List list) {
-        if (list.isEmpty()) {
-            return -9223372036854775807L;
-        }
-        MediaChunk mediaChunk = (MediaChunk) Iterables.getLast(list);
-        long j = mediaChunk.startTimeUs;
-        if (j == -9223372036854775807L) {
-            return -9223372036854775807L;
-        }
-        long j2 = mediaChunk.endTimeUs;
-        if (j2 != -9223372036854775807L) {
-            return j2 - j;
-        }
-        return -9223372036854775807L;
-    }
-
-    private long getNextChunkDurationUs(MediaChunkIterator[] mediaChunkIteratorArr, List list) {
-        int i = this.selectedIndex;
-        if (i < mediaChunkIteratorArr.length && mediaChunkIteratorArr[i].next()) {
-            MediaChunkIterator mediaChunkIterator = mediaChunkIteratorArr[this.selectedIndex];
-            return mediaChunkIterator.getChunkEndTimeUs() - mediaChunkIterator.getChunkStartTimeUs();
-        }
-        for (MediaChunkIterator mediaChunkIterator2 : mediaChunkIteratorArr) {
-            if (mediaChunkIterator2.next()) {
-                return mediaChunkIterator2.getChunkEndTimeUs() - mediaChunkIterator2.getChunkStartTimeUs();
-            }
-        }
-        return getLastChunkDurationUs(list);
     }
 
     private static long[][] getSortedTrackBitrates(ExoTrackSelection.Definition[] definitionArr) {
@@ -365,137 +456,41 @@ public class AdaptiveTrackSelection extends BaseTrackSelection {
         return ImmutableList.copyOf(build.values());
     }
 
-    private long getTotalAllocatableBandwidth(long j) {
-        long bitrateEstimate = (long) (this.bandwidthMeter.getBitrateEstimate() * this.bandwidthFraction);
-        long timeToFirstByteEstimateUs = this.bandwidthMeter.getTimeToFirstByteEstimateUs();
-        if (timeToFirstByteEstimateUs == -9223372036854775807L || j == -9223372036854775807L) {
-            return (long) (bitrateEstimate / this.playbackSpeed);
+    private static void addCheckpoint(List list, long[] jArr) {
+        long j = 0;
+        for (long j2 : jArr) {
+            j += j2;
         }
-        float f = j;
-        return (long) ((bitrateEstimate * Math.max((f / this.playbackSpeed) - timeToFirstByteEstimateUs, 0.0f)) / f);
-    }
-
-    private long minDurationForQualityIncreaseUs(long j, long j2) {
-        if (j == -9223372036854775807L) {
-            return this.minDurationForQualityIncreaseUs;
-        }
-        if (j2 != -9223372036854775807L) {
-            j -= j2;
-        }
-        return Math.min((long) (j * this.bufferedFractionToLiveEdgeForQualityIncrease), this.minDurationForQualityIncreaseUs);
-    }
-
-    protected boolean canSelectFormat(Format format, int i, long j) {
-        return format.cached || ((long) i) <= j;
-    }
-
-    @Override // com.google.android.exoplayer2.trackselection.BaseTrackSelection, com.google.android.exoplayer2.trackselection.ExoTrackSelection
-    public void disable() {
-        this.lastBufferEvaluationMediaChunk = null;
-    }
-
-    @Override // com.google.android.exoplayer2.trackselection.BaseTrackSelection, com.google.android.exoplayer2.trackselection.ExoTrackSelection
-    public void enable() {
-        this.lastBufferEvaluationMs = -9223372036854775807L;
-        this.lastBufferEvaluationMediaChunk = null;
-    }
-
-    @Override // com.google.android.exoplayer2.trackselection.BaseTrackSelection, com.google.android.exoplayer2.trackselection.ExoTrackSelection
-    public int evaluateQueueSize(long j, List list) {
-        int i;
-        int i2;
-        long elapsedRealtime = this.clock.elapsedRealtime();
-        if (!shouldEvaluateQueueSize(elapsedRealtime, list)) {
-            return list.size();
-        }
-        this.lastBufferEvaluationMs = elapsedRealtime;
-        this.lastBufferEvaluationMediaChunk = list.isEmpty() ? null : (MediaChunk) Iterables.getLast(list);
-        if (list.isEmpty()) {
-            return 0;
-        }
-        int size = list.size();
-        long playoutDurationForMediaDuration = Util.getPlayoutDurationForMediaDuration(((MediaChunk) list.get(size - 1)).startTimeUs - j, this.playbackSpeed);
-        long minDurationToRetainAfterDiscardUs = getMinDurationToRetainAfterDiscardUs();
-        if (playoutDurationForMediaDuration < minDurationToRetainAfterDiscardUs) {
-            return size;
-        }
-        Format format = getFormat(determineIdealSelectedIndex(-1, elapsedRealtime, getLastChunkDurationUs(list)));
-        for (int i3 = 0; i3 < size; i3++) {
-            MediaChunk mediaChunk = (MediaChunk) list.get(i3);
-            Format format2 = mediaChunk.trackFormat;
-            if (Util.getPlayoutDurationForMediaDuration(mediaChunk.startTimeUs - j, this.playbackSpeed) >= minDurationToRetainAfterDiscardUs && format2.bitrate < format.bitrate && (i = format2.height) != -1 && i <= this.maxHeightToDiscard && (i2 = format2.width) != -1 && i2 <= this.maxWidthToDiscard && i < format.height) {
-                return i3;
+        for (int i = 0; i < list.size(); i++) {
+            ImmutableList.Builder builder = (ImmutableList.Builder) list.get(i);
+            if (builder != null) {
+                builder.add((Object) new AdaptationCheckpoint(j, jArr[i]));
             }
         }
-        return size;
     }
 
-    protected long getMinDurationToRetainAfterDiscardUs() {
-        return this.minDurationToRetainAfterDiscardUs;
-    }
+    public static final class AdaptationCheckpoint {
+        public final long allocatedBandwidth;
+        public final long totalBandwidth;
 
-    @Override // com.google.android.exoplayer2.trackselection.ExoTrackSelection
-    public int getSelectedIndex() {
-        return this.selectedIndex;
-    }
-
-    @Override // com.google.android.exoplayer2.trackselection.ExoTrackSelection
-    public Object getSelectionData() {
-        return null;
-    }
-
-    @Override // com.google.android.exoplayer2.trackselection.ExoTrackSelection
-    public int getSelectionReason() {
-        return this.reason;
-    }
-
-    @Override // com.google.android.exoplayer2.trackselection.BaseTrackSelection, com.google.android.exoplayer2.trackselection.ExoTrackSelection
-    public void onPlaybackSpeed(float f) {
-        this.playbackSpeed = f;
-    }
-
-    protected boolean shouldEvaluateQueueSize(long j, List list) {
-        long j2 = this.lastBufferEvaluationMs;
-        return j2 == -9223372036854775807L || j - j2 >= 1000 || !(list.isEmpty() || ((MediaChunk) Iterables.getLast(list)).equals(this.lastBufferEvaluationMediaChunk));
-    }
-
-    @Override // com.google.android.exoplayer2.trackselection.ExoTrackSelection
-    public void updateSelectedTrack(long j, long j2, long j3, List list, MediaChunkIterator[] mediaChunkIteratorArr) {
-        int i;
-        int i2;
-        int determineIdealSelectedIndex;
-        long elapsedRealtime = this.clock.elapsedRealtime();
-        long nextChunkDurationUs = getNextChunkDurationUs(mediaChunkIteratorArr, list);
-        int i3 = this.reason;
-        if (i3 == 0) {
-            this.reason = 1;
-            determineIdealSelectedIndex = determineIdealSelectedIndex(0, elapsedRealtime, nextChunkDurationUs);
-        } else {
-            int i4 = this.selectedIndex;
-            int indexOf = list.isEmpty() ? -1 : indexOf(((MediaChunk) Iterables.getLast(list)).trackFormat);
-            if (indexOf != -1) {
-                i = ((MediaChunk) Iterables.getLast(list)).trackSelectionReason;
-                i2 = indexOf;
-            } else {
-                i = i3;
-                i2 = i4;
-            }
-            determineIdealSelectedIndex = determineIdealSelectedIndex(1, elapsedRealtime, nextChunkDurationUs);
-            if (!isBlacklisted(i2, elapsedRealtime)) {
-                Format format = getFormat(i2);
-                Format format2 = getFormat(determineIdealSelectedIndex);
-                long minDurationForQualityIncreaseUs = minDurationForQualityIncreaseUs(j3, nextChunkDurationUs);
-                int i5 = format2.bitrate;
-                int i6 = format.bitrate;
-                if ((i5 > i6 && j2 < minDurationForQualityIncreaseUs) || (i5 < i6 && j2 >= this.maxDurationForQualityDecreaseUs)) {
-                    determineIdealSelectedIndex = i2;
-                }
-            }
-            if (determineIdealSelectedIndex != i2) {
-                i = 3;
-            }
-            this.reason = i;
+        public AdaptationCheckpoint(long j, long j2) {
+            this.totalBandwidth = j;
+            this.allocatedBandwidth = j2;
         }
-        this.selectedIndex = determineIdealSelectedIndex;
+
+        public boolean equals(Object obj) {
+            if (this == obj) {
+                return true;
+            }
+            if (!(obj instanceof AdaptationCheckpoint)) {
+                return false;
+            }
+            AdaptationCheckpoint adaptationCheckpoint = (AdaptationCheckpoint) obj;
+            return this.totalBandwidth == adaptationCheckpoint.totalBandwidth && this.allocatedBandwidth == adaptationCheckpoint.allocatedBandwidth;
+        }
+
+        public int hashCode() {
+            return (((int) this.totalBandwidth) * 31) + ((int) this.allocatedBandwidth);
+        }
     }
 }

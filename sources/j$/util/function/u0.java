@@ -1,34 +1,47 @@
 package j$.util.function;
 
+import j$.util.function.Predicate;
+
 /* loaded from: classes2.dex */
-public final /* synthetic */ class u0 implements java.util.function.ToIntFunction {
-    public final /* synthetic */ ToIntFunction a;
+public final /* synthetic */ class u0 implements Predicate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Predicate b;
+    public final /* synthetic */ Predicate c;
 
-    private /* synthetic */ u0(ToIntFunction toIntFunction) {
-        this.a = toIntFunction;
+    public /* synthetic */ u0(Predicate predicate, Predicate predicate2, int i) {
+        this.a = i;
+        this.b = predicate;
+        this.c = predicate2;
     }
 
-    public static /* synthetic */ java.util.function.ToIntFunction a(ToIntFunction toIntFunction) {
-        if (toIntFunction == null) {
-            return null;
+    @Override // j$.util.function.Predicate
+    public final /* synthetic */ Predicate and(Predicate predicate) {
+        switch (this.a) {
         }
-        return toIntFunction instanceof t0 ? ((t0) toIntFunction).a : new u0(toIntFunction);
+        return Predicate.-CC.$default$and(this, predicate);
     }
 
-    @Override // java.util.function.ToIntFunction
-    public final /* synthetic */ int applyAsInt(Object obj) {
-        return this.a.applyAsInt(obj);
-    }
-
-    public final /* synthetic */ boolean equals(Object obj) {
-        ToIntFunction toIntFunction = this.a;
-        if (obj instanceof u0) {
-            obj = ((u0) obj).a;
+    @Override // j$.util.function.Predicate
+    public final /* synthetic */ Predicate negate() {
+        switch (this.a) {
         }
-        return toIntFunction.equals(obj);
+        return Predicate.-CC.$default$negate(this);
     }
 
-    public final /* synthetic */ int hashCode() {
-        return this.a.hashCode();
+    @Override // j$.util.function.Predicate
+    public final /* synthetic */ Predicate or(Predicate predicate) {
+        switch (this.a) {
+        }
+        return Predicate.-CC.$default$or(this, predicate);
+    }
+
+    @Override // j$.util.function.Predicate
+    public final boolean test(Object obj) {
+        switch (this.a) {
+            case 0:
+                return this.b.test(obj) && this.c.test(obj);
+            default:
+                return this.b.test(obj) || this.c.test(obj);
+        }
     }
 }

@@ -14,6 +14,10 @@ abstract class e extends CountedCompleter {
     protected e e;
     private Object f;
 
+    protected abstract Object a();
+
+    protected abstract e d(Spliterator spliterator);
+
     protected e(b bVar, Spliterator spliterator) {
         super(null);
         this.a = bVar;
@@ -36,10 +40,24 @@ abstract class e extends CountedCompleter {
         return 1L;
     }
 
-    protected abstract Object a();
+    @Override // java.util.concurrent.CountedCompleter, java.util.concurrent.ForkJoinTask
+    public Object getRawResult() {
+        return this.f;
+    }
+
+    @Override // java.util.concurrent.CountedCompleter, java.util.concurrent.ForkJoinTask
+    protected final void setRawResult(Object obj) {
+        if (obj != null) {
+            throw new IllegalStateException();
+        }
+    }
 
     protected Object b() {
         return this.f;
+    }
+
+    protected void e(Object obj) {
+        this.f = obj;
     }
 
     protected final boolean c() {
@@ -79,28 +97,10 @@ abstract class e extends CountedCompleter {
         eVar.tryComplete();
     }
 
-    protected abstract e d(Spliterator spliterator);
-
-    protected void e(Object obj) {
-        this.f = obj;
-    }
-
-    @Override // java.util.concurrent.CountedCompleter, java.util.concurrent.ForkJoinTask
-    public Object getRawResult() {
-        return this.f;
-    }
-
     @Override // java.util.concurrent.CountedCompleter
     public void onCompletion(CountedCompleter countedCompleter) {
         this.b = null;
         this.e = null;
         this.d = null;
-    }
-
-    @Override // java.util.concurrent.CountedCompleter, java.util.concurrent.ForkJoinTask
-    protected final void setRawResult(Object obj) {
-        if (obj != null) {
-            throw new IllegalStateException();
-        }
     }
 }

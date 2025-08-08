@@ -5,7 +5,7 @@ import java.util.Random;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.random.AbstractPlatformRandom;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class PlatformThreadLocalRandom extends AbstractPlatformRandom {
     @Override // kotlin.random.AbstractPlatformRandom
     public Random getImpl() {

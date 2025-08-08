@@ -12,12 +12,12 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 
 /* loaded from: classes.dex */
 public class GetServiceRequest extends AbstractSafeParcelable {
-    public static final Parcelable.Creator<GetServiceRequest> CREATOR = new zzm();
+    public static final Parcelable.Creator<GetServiceRequest> CREATOR = new zzn();
     static final Scope[] zza = new Scope[0];
     static final Feature[] zzb = new Feature[0];
     final int zzc;
     final int zzd;
-    int zze;
+    final int zze;
     String zzf;
     IBinder zzg;
     Scope[] zzh;
@@ -25,10 +25,10 @@ public class GetServiceRequest extends AbstractSafeParcelable {
     Account zzj;
     Feature[] zzk;
     Feature[] zzl;
-    boolean zzm;
-    int zzn;
+    final boolean zzm;
+    final int zzn;
     boolean zzo;
-    private String zzp;
+    private final String zzp;
 
     GetServiceRequest(int i, int i2, int i3, String str, IBinder iBinder, Scope[] scopeArr, Bundle bundle, Account account, Feature[] featureArr, Feature[] featureArr2, boolean z, int i4, boolean z2, String str2) {
         scopeArr = scopeArr == null ? zza : scopeArr;
@@ -61,7 +61,7 @@ public class GetServiceRequest extends AbstractSafeParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        zzm.zza(this, parcel, i);
+        zzn.zza(this, parcel, i);
     }
 
     public final String zza() {

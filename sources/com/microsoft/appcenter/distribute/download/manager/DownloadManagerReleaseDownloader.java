@@ -14,7 +14,7 @@ import com.microsoft.appcenter.utils.AsyncTaskUtils;
 import com.microsoft.appcenter.utils.HandlerUtils;
 import com.microsoft.appcenter.utils.storage.SharedPreferencesManager;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class DownloadManagerReleaseDownloader extends AbstractReleaseDownloader {
     private long mDownloadId;
     private DownloadManagerRequestTask mRequestTask;
@@ -25,24 +25,19 @@ public class DownloadManagerReleaseDownloader extends AbstractReleaseDownloader 
         this.mDownloadId = -1L;
     }
 
-    private static Uri getFileUriOnOldDevices(Cursor cursor) {
-        return Uri.parse("file://" + cursor.getString(cursor.getColumnIndexOrThrow("local_filename")));
+    DownloadManager getDownloadManager() {
+        return (DownloadManager) this.mContext.getSystemService("download");
     }
 
-    private void remove(long j) {
-        AppCenterLog.debug("AppCenterDistribute", "Removing download and notification id=" + j);
-        AsyncTaskUtils.execute("AppCenterDistribute", new DownloadManagerRemoveTask(this.mContext, j), new Void[0]);
-    }
-
-    private synchronized void request() {
-        if (isCancelled()) {
-            return;
+    synchronized long getDownloadId() {
+        try {
+            if (this.mDownloadId == -1) {
+                this.mDownloadId = SharedPreferencesManager.getLong("Distribute.download_id", -1L);
+            }
+        } catch (Throwable th) {
+            throw th;
         }
-        if (this.mRequestTask != null) {
-            AppCenterLog.debug("AppCenterDistribute", "Downloading is already in progress.");
-        } else {
-            this.mRequestTask = (DownloadManagerRequestTask) AsyncTaskUtils.execute("AppCenterDistribute", new DownloadManagerRequestTask(this), new Void[0]);
-        }
+        return this.mDownloadId;
     }
 
     private synchronized void setDownloadId(long j) {
@@ -58,12 +53,14 @@ public class DownloadManagerReleaseDownloader extends AbstractReleaseDownloader 
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public synchronized void update() {
-        if (isCancelled()) {
-            return;
-        }
-        this.mUpdateTask = (DownloadManagerUpdateTask) AsyncTaskUtils.execute("AppCenterDistribute", new DownloadManagerUpdateTask(this), new Void[0]);
+    @Override // com.microsoft.appcenter.distribute.download.ReleaseDownloader
+    public synchronized boolean isDownloading() {
+        return this.mDownloadId != -1;
+    }
+
+    @Override // com.microsoft.appcenter.distribute.download.ReleaseDownloader
+    public synchronized void resume() {
+        update();
     }
 
     @Override // com.microsoft.appcenter.distribute.download.AbstractReleaseDownloader, com.microsoft.appcenter.distribute.download.ReleaseDownloader
@@ -93,45 +90,43 @@ public class DownloadManagerReleaseDownloader extends AbstractReleaseDownloader 
         }
     }
 
-    synchronized long getDownloadId() {
-        try {
-            if (this.mDownloadId == -1) {
-                this.mDownloadId = SharedPreferencesManager.getLong("Distribute.download_id", -1L);
-            }
-        } catch (Throwable th) {
-            throw th;
-        }
-        return this.mDownloadId;
-    }
-
-    DownloadManager getDownloadManager() {
-        return (DownloadManager) this.mContext.getSystemService("download");
-    }
-
-    @Override // com.microsoft.appcenter.distribute.download.ReleaseDownloader
-    public synchronized boolean isDownloading() {
-        return this.mDownloadId != -1;
-    }
-
-    synchronized void onDownloadComplete(Cursor cursor) {
-        try {
-            if (isCancelled()) {
-                return;
-            }
-            AppCenterLog.debug("AppCenterDistribute", "Download was successful for id=" + this.mDownloadId);
-            if (!(!this.mListener.onComplete(Uri.parse(cursor.getString(cursor.getColumnIndexOrThrow("local_uri")))) ? Build.VERSION.SDK_INT < 24 ? this.mListener.onComplete(getFileUriOnOldDevices(cursor)) : false : true)) {
-                this.mListener.onError("Installer not found");
-            }
-        } finally {
-        }
-    }
-
-    synchronized void onDownloadError(RuntimeException runtimeException) {
+    private synchronized void request() {
         if (isCancelled()) {
             return;
         }
-        AppCenterLog.error("AppCenterDistribute", "Failed to download update id=" + this.mDownloadId, runtimeException);
-        this.mListener.onError(runtimeException.getMessage());
+        if (this.mRequestTask != null) {
+            AppCenterLog.debug("AppCenterDistribute", "Downloading is already in progress.");
+        } else {
+            this.mRequestTask = (DownloadManagerRequestTask) AsyncTaskUtils.execute("AppCenterDistribute", new DownloadManagerRequestTask(this), new Void[0]);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public synchronized void update() {
+        if (isCancelled()) {
+            return;
+        }
+        this.mUpdateTask = (DownloadManagerUpdateTask) AsyncTaskUtils.execute("AppCenterDistribute", new DownloadManagerUpdateTask(this), new Void[0]);
+    }
+
+    private void remove(long j) {
+        AppCenterLog.debug("AppCenterDistribute", "Removing download and notification id=" + j);
+        AsyncTaskUtils.execute("AppCenterDistribute", new DownloadManagerRemoveTask(this.mContext, j), new Void[0]);
+    }
+
+    synchronized void onStart() {
+        request();
+    }
+
+    synchronized void onDownloadStarted(long j, long j2) {
+        if (isCancelled()) {
+            return;
+        }
+        setDownloadId(j);
+        this.mListener.onStart(j2);
+        if (this.mReleaseDetails.isMandatoryUpdate()) {
+            update();
+        }
     }
 
     synchronized void onDownloadProgress(Cursor cursor) {
@@ -149,23 +144,34 @@ public class DownloadManagerReleaseDownloader extends AbstractReleaseDownloader 
         }
     }
 
-    synchronized void onDownloadStarted(long j, long j2) {
+    synchronized void onDownloadComplete(Cursor cursor) {
+        boolean z;
+        try {
+            if (isCancelled()) {
+                return;
+            }
+            AppCenterLog.debug("AppCenterDistribute", "Download was successful for id=" + this.mDownloadId);
+            if (this.mListener.onComplete(Uri.parse(cursor.getString(cursor.getColumnIndexOrThrow("local_uri"))))) {
+                z = true;
+            } else {
+                z = Build.VERSION.SDK_INT < 24 ? this.mListener.onComplete(getFileUriOnOldDevices(cursor)) : false;
+            }
+            if (!z) {
+                this.mListener.onError("Installer not found");
+            }
+        } finally {
+        }
+    }
+
+    synchronized void onDownloadError(RuntimeException runtimeException) {
         if (isCancelled()) {
             return;
         }
-        setDownloadId(j);
-        this.mListener.onStart(j2);
-        if (this.mReleaseDetails.isMandatoryUpdate()) {
-            update();
-        }
+        AppCenterLog.error("AppCenterDistribute", "Failed to download update id=" + this.mDownloadId, runtimeException);
+        this.mListener.onError(runtimeException.getMessage());
     }
 
-    synchronized void onStart() {
-        request();
-    }
-
-    @Override // com.microsoft.appcenter.distribute.download.ReleaseDownloader
-    public synchronized void resume() {
-        update();
+    private static Uri getFileUriOnOldDevices(Cursor cursor) {
+        return Uri.parse("file://" + cursor.getString(cursor.getColumnIndexOrThrow("local_filename")));
     }
 }

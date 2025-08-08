@@ -10,6 +10,9 @@ public final class zzfi$zzl extends zzjb implements zzkm {
     private long zzd;
     private long zze;
 
+    private zzfi$zzl() {
+    }
+
     public static final class zza extends zzjb.zzb implements zzkm {
         private zza() {
             super(zzfi$zzl.zzf);
@@ -18,15 +21,6 @@ public final class zzfi$zzl extends zzjb implements zzkm {
         /* synthetic */ zza(zzfk zzfkVar) {
             this();
         }
-    }
-
-    static {
-        zzfi$zzl zzfi_zzl = new zzfi$zzl();
-        zzf = zzfi_zzl;
-        zzjb.zza(zzfi$zzl.class, zzfi_zzl);
-    }
-
-    private zzfi$zzl() {
     }
 
     /* JADX WARN: Type inference failed for: r2v14, types: [com.google.android.gms.internal.vision.zzjb$zza, com.google.android.gms.internal.vision.zzkx] */
@@ -67,5 +61,11 @@ public final class zzfi$zzl extends zzjb implements zzkm {
             default:
                 throw new UnsupportedOperationException();
         }
+    }
+
+    static {
+        zzfi$zzl zzfi_zzl = new zzfi$zzl();
+        zzf = zzfi_zzl;
+        zzjb.zza(zzfi$zzl.class, zzfi_zzl);
     }
 }

@@ -31,19 +31,19 @@ abstract class HwFrameLayout extends FrameLayout {
         hwViews.clear();
     }
 
-    public void checkHwAcceleration(float f) {
-        if (f > 0.6f && hwEnabled && this.isFastDevice) {
-            disableHwAcceleration(false);
-        }
+    public void enableHwAcceleration() {
+        hwEnabled = true;
+        setLayerType(2, null);
     }
 
     public void disableHwAcceleration() {
         disableHwAcceleration(true);
     }
 
-    public void enableHwAcceleration() {
-        hwEnabled = true;
-        setLayerType(2, null);
+    public void checkHwAcceleration(float f) {
+        if (f > 0.6f && hwEnabled && this.isFastDevice) {
+            disableHwAcceleration(false);
+        }
     }
 
     @Override // android.view.View

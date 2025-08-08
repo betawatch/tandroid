@@ -14,15 +14,15 @@ public abstract class zzb implements IInterface {
         this.zzb = str;
     }
 
+    @Override // android.os.IInterface
+    public IBinder asBinder() {
+        return this.zza;
+    }
+
     protected final Parcel a_() {
         Parcel obtain = Parcel.obtain();
         obtain.writeInterfaceToken(this.zzb);
         return obtain;
-    }
-
-    @Override // android.os.IInterface
-    public IBinder asBinder() {
-        return this.zza;
     }
 
     protected final Parcel zza(int i, Parcel parcel) {

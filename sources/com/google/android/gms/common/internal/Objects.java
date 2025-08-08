@@ -13,16 +13,15 @@ public abstract class Objects {
         private final List zza;
         private final Object zzb;
 
-        /* synthetic */ ToStringHelper(Object obj, zzah zzahVar) {
+        /* synthetic */ ToStringHelper(Object obj, zzai zzaiVar) {
             Preconditions.checkNotNull(obj);
             this.zzb = obj;
             this.zza = new ArrayList();
         }
 
         public ToStringHelper add(String str, Object obj) {
-            List list = this.zza;
             Preconditions.checkNotNull(str);
-            list.add(str + "=" + String.valueOf(obj));
+            this.zza.add(str + "=" + String.valueOf(obj));
             return this;
         }
 

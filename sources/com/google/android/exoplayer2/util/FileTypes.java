@@ -6,6 +6,11 @@ import java.util.Map;
 
 /* loaded from: classes.dex */
 public abstract class FileTypes {
+    public static int inferFileTypeFromResponseHeaders(Map map) {
+        List list = (List) map.get("Content-Type");
+        return inferFileTypeFromMimeType((list == null || list.isEmpty()) ? null : (String) list.get(0));
+    }
+
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     public static int inferFileTypeFromMimeType(String str) {
         char c;
@@ -204,11 +209,6 @@ public abstract class FileTypes {
         switch (c) {
         }
         return -1;
-    }
-
-    public static int inferFileTypeFromResponseHeaders(Map map) {
-        List list = (List) map.get("Content-Type");
-        return inferFileTypeFromMimeType((list == null || list.isEmpty()) ? null : (String) list.get(0));
     }
 
     public static int inferFileTypeFromUri(Uri uri) {

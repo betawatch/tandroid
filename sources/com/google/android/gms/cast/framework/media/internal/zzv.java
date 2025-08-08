@@ -99,7 +99,6 @@ public final class zzv {
     private final long zzm(String str, int i, Bundle bundle) {
         char c;
         long j;
-        String str2;
         int hashCode = str.hashCode();
         if (hashCode == -945151566) {
             if (str.equals(MediaIntentReceiver.ACTION_SKIP_NEXT)) {
@@ -134,18 +133,17 @@ public final class zzv {
             if (remoteMediaClient != null && remoteMediaClient.zzu()) {
                 return 16L;
             }
-            str2 = "android.media.playback.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_PREVIOUS";
-        } else {
-            if (c != 2) {
-                return 0L;
-            }
-            RemoteMediaClient remoteMediaClient2 = this.zzp;
-            if (remoteMediaClient2 != null && remoteMediaClient2.zzt()) {
-                return 32L;
-            }
-            str2 = "android.media.playback.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_NEXT";
+            bundle.putBoolean("android.media.playback.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_PREVIOUS", true);
+            return 0L;
         }
-        bundle.putBoolean(str2, true);
+        if (c != 2) {
+            return 0L;
+        }
+        RemoteMediaClient remoteMediaClient2 = this.zzp;
+        if (remoteMediaClient2 != null && remoteMediaClient2.zzt()) {
+            return 32L;
+        }
+        bundle.putBoolean("android.media.playback.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_NEXT", true);
         return 0L;
     }
 
@@ -159,12 +157,6 @@ public final class zzv {
             return null;
         }
         return webImage.getUrl();
-    }
-
-    private final MediaMetadataCompat.Builder zzo() {
-        MediaSessionCompat mediaSessionCompat = this.zzr;
-        MediaMetadataCompat metadata = mediaSessionCompat == null ? null : mediaSessionCompat.getController().getMetadata();
-        return metadata == null ? new MediaMetadataCompat.Builder() : new MediaMetadataCompat.Builder(metadata);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -287,6 +279,7 @@ public final class zzv {
     }
 
     private final void zzu(int i, MediaInfo mediaInfo) {
+        PlaybackStateCompat build;
         MediaSessionCompat mediaSessionCompat;
         MediaMetadata metadata;
         PendingIntent activity;
@@ -297,9 +290,13 @@ public final class zzv {
         Bundle bundle = new Bundle();
         PlaybackStateCompat.Builder builder = new PlaybackStateCompat.Builder();
         RemoteMediaClient remoteMediaClient = this.zzp;
-        if (remoteMediaClient != null && this.zzl != null) {
+        if (remoteMediaClient == null || this.zzl == null) {
+            build = builder.build();
+        } else {
             builder.setState(i, (remoteMediaClient.zza() == 0 || remoteMediaClient.isLiveStream()) ? 0L : remoteMediaClient.getApproximateStreamPosition(), 1.0f);
-            if (i != 0) {
+            if (i == 0) {
+                build = builder.build();
+            } else {
                 NotificationOptions notificationOptions = this.zzg;
                 com.google.android.gms.cast.framework.media.zzg zzm = notificationOptions != null ? notificationOptions.zzm() : null;
                 RemoteMediaClient remoteMediaClient2 = this.zzp;
@@ -328,10 +325,10 @@ public final class zzv {
                         }
                     }
                 }
-                builder = builder.setActions(j);
+                build = builder.setActions(j).build();
             }
         }
-        mediaSessionCompat2.setPlaybackState(builder.build());
+        mediaSessionCompat2.setPlaybackState(build);
         NotificationOptions notificationOptions3 = this.zzg;
         if (notificationOptions3 != null && notificationOptions3.zzp()) {
             bundle.putBoolean("android.media.playback.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_PREVIOUS", true);
@@ -391,41 +388,6 @@ public final class zzv {
 
     private static final boolean zzv(String str) {
         return TextUtils.equals(str, MediaIntentReceiver.ACTION_TOGGLE_PLAYBACK) || TextUtils.equals(str, MediaIntentReceiver.ACTION_SKIP_PREV) || TextUtils.equals(str, MediaIntentReceiver.ACTION_SKIP_NEXT);
-    }
-
-    public final void zzh(RemoteMediaClient remoteMediaClient, CastDevice castDevice) {
-        AudioManager audioManager;
-        CastOptions castOptions = this.zzd;
-        CastMediaOptions castMediaOptions = castOptions == null ? null : castOptions.getCastMediaOptions();
-        if (this.zzt || this.zzd == null || castMediaOptions == null || this.zzg == null || remoteMediaClient == null || castDevice == null || this.zzi == null) {
-            zzb.d("skip attaching media session", new Object[0]);
-            return;
-        }
-        this.zzp = remoteMediaClient;
-        remoteMediaClient.registerCallback(this.zzo);
-        this.zzq = castDevice;
-        if (!PlatformVersion.isAtLeastLollipop() && (audioManager = (AudioManager) this.zzc.getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND)) != null) {
-            audioManager.requestAudioFocus(null, 3, 3);
-        }
-        Intent intent = new Intent("android.intent.action.MEDIA_BUTTON");
-        intent.setComponent(this.zzi);
-        PendingIntent broadcast = PendingIntent.getBroadcast(this.zzc, 0, intent, zzdy.zza);
-        if (castMediaOptions.getMediaSessionEnabled()) {
-            MediaSessionCompat mediaSessionCompat = new MediaSessionCompat(this.zzc, "CastMediaSession", this.zzi, broadcast);
-            this.zzr = mediaSessionCompat;
-            zzu(0, null);
-            CastDevice castDevice2 = this.zzq;
-            if (castDevice2 != null && !TextUtils.isEmpty(castDevice2.getFriendlyName())) {
-                mediaSessionCompat.setMetadata(new MediaMetadataCompat.Builder().putString("android.media.metadata.ALBUM_ARTIST", this.zzc.getResources().getString(R$string.cast_casting_to_device, this.zzq.getFriendlyName())).build());
-            }
-            zzs zzsVar = new zzs(this);
-            this.zzs = zzsVar;
-            mediaSessionCompat.setCallback(zzsVar);
-            mediaSessionCompat.setActive(true);
-            this.zze.zzr(mediaSessionCompat);
-        }
-        this.zzt = true;
-        zzl(false);
     }
 
     public final void zzi(int i) {
@@ -506,5 +468,46 @@ public final class zzv {
             }
             zzr(true);
         }
+    }
+
+    private final MediaMetadataCompat.Builder zzo() {
+        MediaSessionCompat mediaSessionCompat = this.zzr;
+        MediaMetadataCompat metadata = mediaSessionCompat == null ? null : mediaSessionCompat.getController().getMetadata();
+        return metadata == null ? new MediaMetadataCompat.Builder() : new MediaMetadataCompat.Builder(metadata);
+    }
+
+    public final void zzh(RemoteMediaClient remoteMediaClient, CastDevice castDevice) {
+        AudioManager audioManager;
+        CastOptions castOptions = this.zzd;
+        CastMediaOptions castMediaOptions = castOptions == null ? null : castOptions.getCastMediaOptions();
+        if (this.zzt || this.zzd == null || castMediaOptions == null || this.zzg == null || remoteMediaClient == null || castDevice == null || this.zzi == null) {
+            zzb.d("skip attaching media session", new Object[0]);
+            return;
+        }
+        this.zzp = remoteMediaClient;
+        remoteMediaClient.registerCallback(this.zzo);
+        this.zzq = castDevice;
+        if (!PlatformVersion.isAtLeastLollipop() && (audioManager = (AudioManager) this.zzc.getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND)) != null) {
+            audioManager.requestAudioFocus(null, 3, 3);
+        }
+        Intent intent = new Intent("android.intent.action.MEDIA_BUTTON");
+        intent.setComponent(this.zzi);
+        PendingIntent broadcast = PendingIntent.getBroadcast(this.zzc, 0, intent, zzdy.zza);
+        if (castMediaOptions.getMediaSessionEnabled()) {
+            MediaSessionCompat mediaSessionCompat = new MediaSessionCompat(this.zzc, "CastMediaSession", this.zzi, broadcast);
+            this.zzr = mediaSessionCompat;
+            zzu(0, null);
+            CastDevice castDevice2 = this.zzq;
+            if (castDevice2 != null && !TextUtils.isEmpty(castDevice2.getFriendlyName())) {
+                mediaSessionCompat.setMetadata(new MediaMetadataCompat.Builder().putString("android.media.metadata.ALBUM_ARTIST", this.zzc.getResources().getString(R$string.cast_casting_to_device, this.zzq.getFriendlyName())).build());
+            }
+            zzs zzsVar = new zzs(this);
+            this.zzs = zzsVar;
+            mediaSessionCompat.setCallback(zzsVar);
+            mediaSessionCompat.setActive(true);
+            this.zze.zzr(mediaSessionCompat);
+        }
+        this.zzt = true;
+        zzl(false);
     }
 }

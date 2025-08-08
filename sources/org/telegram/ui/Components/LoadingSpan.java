@@ -7,7 +7,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class LoadingSpan extends ReplacementSpan {
     private LoadingDrawable drawable;
     private Paint paint;
@@ -34,18 +34,17 @@ public class LoadingSpan extends ReplacementSpan {
         loadingDrawable.setRadiiDp(4.0f);
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
-        int i6 = (int) f;
-        this.drawable.setBounds(i6, (int) (i3 + ((((i5 - AndroidUtilities.dp(2.0f)) - i3) / 2.0f) * (1.0f - this.scaleY)) + this.yOffset), this.size + i6, (int) (((i5 - AndroidUtilities.dp(2.0f)) - ((((i5 - AndroidUtilities.dp(2.0f)) - i3) / 2.0f) * (1.0f - this.scaleY))) + this.yOffset));
-        if (paint != null) {
-            this.drawable.setAlpha(paint.getAlpha());
-        }
-        this.drawable.draw(canvas);
-        View view = this.view;
-        if (view != null) {
-            view.invalidate();
-        }
+    public void setColors(int i, int i2) {
+        this.drawable.color1 = Integer.valueOf(i);
+        this.drawable.color2 = Integer.valueOf(i2);
+    }
+
+    public void setScaleY(float f) {
+        this.scaleY = f;
+    }
+
+    public void setView(View view) {
+        this.view = view;
     }
 
     @Override // android.text.style.ReplacementSpan
@@ -66,16 +65,17 @@ public class LoadingSpan extends ReplacementSpan {
         return this.size;
     }
 
-    public void setColors(int i, int i2) {
-        this.drawable.color1 = Integer.valueOf(i);
-        this.drawable.color2 = Integer.valueOf(i2);
-    }
-
-    public void setScaleY(float f) {
-        this.scaleY = f;
-    }
-
-    public void setView(View view) {
-        this.view = view;
+    @Override // android.text.style.ReplacementSpan
+    public void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
+        int i6 = (int) f;
+        this.drawable.setBounds(i6, (int) (i3 + ((((i5 - AndroidUtilities.dp(2.0f)) - i3) / 2.0f) * (1.0f - this.scaleY)) + this.yOffset), this.size + i6, (int) (((i5 - AndroidUtilities.dp(2.0f)) - ((((i5 - AndroidUtilities.dp(2.0f)) - i3) / 2.0f) * (1.0f - this.scaleY))) + this.yOffset));
+        if (paint != null) {
+            this.drawable.setAlpha(paint.getAlpha());
+        }
+        this.drawable.draw(canvas);
+        View view = this.view;
+        if (view != null) {
+            view.invalidate();
+        }
     }
 }

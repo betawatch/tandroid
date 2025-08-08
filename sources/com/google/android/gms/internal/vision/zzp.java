@@ -23,7 +23,11 @@ public final class zzp extends zzb implements zzn {
             zzoVar = null;
         } else {
             IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.vision.barcode.internal.client.INativeBarcodeDetector");
-            zzoVar = queryLocalInterface instanceof zzl ? (zzl) queryLocalInterface : new zzo(readStrongBinder);
+            if (queryLocalInterface instanceof zzl) {
+                zzoVar = (zzl) queryLocalInterface;
+            } else {
+                zzoVar = new zzo(readStrongBinder);
+            }
         }
         zza.recycle();
         return zzoVar;

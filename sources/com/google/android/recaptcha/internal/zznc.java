@@ -12,16 +12,6 @@ public final class zznc extends zzin implements zzkf {
         zznfVar = zznf.zzb;
     }
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    /* synthetic */ zznc(zznb zznbVar) {
-        super(r1);
-        zznf zznfVar;
-        zznfVar = zznf.zzb;
-    }
-
     public final zznc zzd(String str) {
         zzm();
         zznf.zzR((zznf) this.zza, str);
@@ -76,5 +66,15 @@ public final class zznc extends zzin implements zzkf {
         zzm();
         ((zznf) this.zza).zzn = i - 2;
         return this;
+    }
+
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    /* synthetic */ zznc(zznb zznbVar) {
+        super(r1);
+        zznf zznfVar;
+        zznfVar = zznf.zzb;
     }
 }

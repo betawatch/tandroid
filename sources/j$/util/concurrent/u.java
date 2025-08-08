@@ -18,14 +18,6 @@ abstract class u {
         }
     }
 
-    public static final int a(Unsafe unsafe, Object obj, long j) {
-        int intVolatile;
-        do {
-            intVolatile = unsafe.getIntVolatile(obj, j);
-        } while (!unsafe.compareAndSwapInt(obj, j, intVolatile, intVolatile - 4));
-        return intVolatile;
-    }
-
     private static Field b() {
         try {
             return Unsafe.class.getDeclaredField("theUnsafe");
@@ -41,5 +33,13 @@ abstract class u {
 
     public static Unsafe c() {
         return a;
+    }
+
+    public static final int a(Unsafe unsafe, Object obj, long j) {
+        int intVolatile;
+        do {
+            intVolatile = unsafe.getIntVolatile(obj, j);
+        } while (!unsafe.compareAndSwapInt(obj, j, intVolatile, intVolatile - 4));
+        return intVolatile;
     }
 }

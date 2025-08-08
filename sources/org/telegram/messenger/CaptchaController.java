@@ -29,6 +29,10 @@ public class CaptchaController {
             this.key_id = str2;
         }
 
+        public int hashCode() {
+            return Objects.hash(Integer.valueOf(this.currentAccount), this.action, this.key_id);
+        }
+
         public void done(String str) {
             CaptchaController.currentRequests.remove(Integer.valueOf(hashCode()));
             int[] iArr = new int[this.requestTokens.size()];
@@ -41,28 +45,51 @@ public class CaptchaController {
             ConnectionsManager.getInstance(this.currentAccount);
             ConnectionsManager.native_receivedCaptchaResult(this.currentAccount, iArr, str);
         }
+    }
 
-        public int hashCode() {
-            return Objects.hash(Integer.valueOf(this.currentAccount), this.action, this.key_id);
+    public static void request(int i, int i2, final String str, final String str2) {
+        if (currentRequests == null) {
+            currentRequests = new HashMap<>();
+        }
+        Request request = currentRequests.get(Integer.valueOf(Objects.hash(Integer.valueOf(i), str, str2)));
+        if (request != null) {
+            request.requestTokens.add(Integer.valueOf(i2));
+            return;
+        }
+        final Request request2 = new Request(i, str, str2);
+        request2.requestTokens.add(Integer.valueOf(i2));
+        Activity activity = AndroidUtilities.getActivity();
+        if (activity == null) {
+            FileLog.e("CaptchaController: no activity found");
+            request2.done("RECAPTCHA_FAILED_NO_ACTIVITY");
+        } else {
+            Recaptcha.getTasksClient(activity.getApplication(), str2).addOnSuccessListener(new OnSuccessListener() { // from class: org.telegram.messenger.CaptchaController$$ExternalSyntheticLambda0
+                @Override // com.google.android.gms.tasks.OnSuccessListener
+                public final void onSuccess(Object obj) {
+                    CaptchaController.lambda$request$2(str, str2, request2, (RecaptchaTasksClient) obj);
+                }
+            }).addOnFailureListener(new OnFailureListener() { // from class: org.telegram.messenger.CaptchaController$$ExternalSyntheticLambda1
+                @Override // com.google.android.gms.tasks.OnFailureListener
+                public final void onFailure(Exception exc) {
+                    CaptchaController.lambda$request$3(CaptchaController.Request.this, exc);
+                }
+            });
         }
     }
 
-    private static String formatException(Exception exc) {
-        return exc == null ? "NULL" : exc.getMessage() == null ? "MSG_NULL" : exc.getMessage().replaceAll(" ", "_").toUpperCase();
-    }
-
-    private static RecaptchaAction getAction(String str) {
-        str.hashCode();
-        switch (str) {
-            case "SIGNUP":
-            case "signup":
-                return RecaptchaAction.SIGNUP;
-            case "LOGIN":
-            case "login":
-                return RecaptchaAction.LOGIN;
-            default:
-                return RecaptchaAction.custom(str);
-        }
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$request$2(final String str, final String str2, final Request request, RecaptchaTasksClient recaptchaTasksClient) {
+        recaptchaTasksClient.executeTask(getAction(str)).addOnSuccessListener(new OnSuccessListener() { // from class: org.telegram.messenger.CaptchaController$$ExternalSyntheticLambda2
+            @Override // com.google.android.gms.tasks.OnSuccessListener
+            public final void onSuccess(Object obj) {
+                CaptchaController.lambda$request$0(str, str2, request, (String) obj);
+            }
+        }).addOnFailureListener(new OnFailureListener() { // from class: org.telegram.messenger.CaptchaController$$ExternalSyntheticLambda3
+            @Override // com.google.android.gms.tasks.OnFailureListener
+            public final void onFailure(Exception exc) {
+                CaptchaController.lambda$request$1(CaptchaController.Request.this, exc);
+            }
+        });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -82,53 +109,29 @@ public class CaptchaController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$request$2(final String str, final String str2, final Request request, RecaptchaTasksClient recaptchaTasksClient) {
-        recaptchaTasksClient.executeTask(getAction(str)).addOnSuccessListener(new OnSuccessListener() { // from class: org.telegram.messenger.CaptchaController$$ExternalSyntheticLambda2
-            @Override // com.google.android.gms.tasks.OnSuccessListener
-            public final void onSuccess(Object obj) {
-                CaptchaController.lambda$request$0(str, str2, request, (String) obj);
-            }
-        }).addOnFailureListener(new OnFailureListener() { // from class: org.telegram.messenger.CaptchaController$$ExternalSyntheticLambda3
-            @Override // com.google.android.gms.tasks.OnFailureListener
-            public final void onFailure(Exception exc) {
-                CaptchaController.lambda$request$1(CaptchaController.Request.this, exc);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$request$3(Request request, Exception exc) {
         FileLog.e("CaptchaController: getTasksClient failure", exc);
         request.done("RECAPTCHA_FAILED_GETCLIENT_EXCEPTION_" + formatException(exc));
     }
 
-    public static void request(int i, int i2, final String str, final String str2) {
-        if (currentRequests == null) {
-            currentRequests = new HashMap<>();
+    private static RecaptchaAction getAction(String str) {
+        str.hashCode();
+        switch (str) {
+            case "SIGNUP":
+            case "signup":
+                return RecaptchaAction.SIGNUP;
+            case "LOGIN":
+            case "login":
+                return RecaptchaAction.LOGIN;
+            default:
+                return RecaptchaAction.custom(str);
         }
-        Request request = currentRequests.get(Integer.valueOf(Objects.hash(Integer.valueOf(i), str, str2)));
-        if (request != null) {
-            request.requestTokens.add(Integer.valueOf(i2));
-            return;
+    }
+
+    private static String formatException(Exception exc) {
+        if (exc == null) {
+            return "NULL";
         }
-        final Request request2 = new Request(i, str, str2);
-        request2.requestTokens.add(Integer.valueOf(i2));
-        Activity activity = AndroidUtilities.getActivity();
-        if (activity != null) {
-            Recaptcha.getTasksClient(activity.getApplication(), str2).addOnSuccessListener(new OnSuccessListener() { // from class: org.telegram.messenger.CaptchaController$$ExternalSyntheticLambda0
-                @Override // com.google.android.gms.tasks.OnSuccessListener
-                public final void onSuccess(Object obj) {
-                    CaptchaController.lambda$request$2(str, str2, request2, (RecaptchaTasksClient) obj);
-                }
-            }).addOnFailureListener(new OnFailureListener() { // from class: org.telegram.messenger.CaptchaController$$ExternalSyntheticLambda1
-                @Override // com.google.android.gms.tasks.OnFailureListener
-                public final void onFailure(Exception exc) {
-                    CaptchaController.lambda$request$3(CaptchaController.Request.this, exc);
-                }
-            });
-        } else {
-            FileLog.e("CaptchaController: no activity found");
-            request2.done("RECAPTCHA_FAILED_NO_ACTIVITY");
-        }
+        return exc.getMessage() == null ? "MSG_NULL" : exc.getMessage().replaceAll(" ", "_").toUpperCase();
     }
 }

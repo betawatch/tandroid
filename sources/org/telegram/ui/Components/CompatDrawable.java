@@ -5,9 +5,20 @@ import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class CompatDrawable extends Drawable {
     public final Paint paint = new Paint(1);
+
+    @Override // android.graphics.drawable.Drawable
+    public int getOpacity() {
+        return -2;
+    }
+
+    public void onAttachedToWindow() {
+    }
+
+    public void onDetachedToWindow() {
+    }
 
     public CompatDrawable(View view) {
         if (view != null) {
@@ -31,17 +42,6 @@ public abstract class CompatDrawable extends Drawable {
                 });
             }
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int getOpacity() {
-        return -2;
-    }
-
-    public void onAttachedToWindow() {
-    }
-
-    public void onDetachedToWindow() {
     }
 
     @Override // android.graphics.drawable.Drawable

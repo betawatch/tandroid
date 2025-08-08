@@ -13,6 +13,37 @@ public final class ClientMetrics {
     private final List log_source_metrics_;
     private final TimeWindow window_;
 
+    ClientMetrics(TimeWindow timeWindow, List list, GlobalMetrics globalMetrics, String str) {
+        this.window_ = timeWindow;
+        this.log_source_metrics_ = list;
+        this.global_metrics_ = globalMetrics;
+        this.app_namespace_ = str;
+    }
+
+    public byte[] toByteArray() {
+        return ProtoEncoderDoNotUse.encode(this);
+    }
+
+    public static Builder newBuilder() {
+        return new Builder();
+    }
+
+    public TimeWindow getWindowInternal() {
+        return this.window_;
+    }
+
+    public List getLogSourceMetricsList() {
+        return this.log_source_metrics_;
+    }
+
+    public GlobalMetrics getGlobalMetricsInternal() {
+        return this.global_metrics_;
+    }
+
+    public String getAppNamespace() {
+        return this.app_namespace_;
+    }
+
     public static final class Builder {
         private TimeWindow window_ = null;
         private List log_source_metrics_ = new ArrayList();
@@ -22,17 +53,17 @@ public final class ClientMetrics {
         Builder() {
         }
 
-        public Builder addLogSourceMetrics(LogSourceMetrics logSourceMetrics) {
-            this.log_source_metrics_.add(logSourceMetrics);
-            return this;
-        }
-
         public ClientMetrics build() {
             return new ClientMetrics(this.window_, Collections.unmodifiableList(this.log_source_metrics_), this.global_metrics_, this.app_namespace_);
         }
 
-        public Builder setAppNamespace(String str) {
-            this.app_namespace_ = str;
+        public Builder setWindow(TimeWindow timeWindow) {
+            this.window_ = timeWindow;
+            return this;
+        }
+
+        public Builder addLogSourceMetrics(LogSourceMetrics logSourceMetrics) {
+            this.log_source_metrics_.add(logSourceMetrics);
             return this;
         }
 
@@ -41,40 +72,9 @@ public final class ClientMetrics {
             return this;
         }
 
-        public Builder setWindow(TimeWindow timeWindow) {
-            this.window_ = timeWindow;
+        public Builder setAppNamespace(String str) {
+            this.app_namespace_ = str;
             return this;
         }
-    }
-
-    ClientMetrics(TimeWindow timeWindow, List list, GlobalMetrics globalMetrics, String str) {
-        this.window_ = timeWindow;
-        this.log_source_metrics_ = list;
-        this.global_metrics_ = globalMetrics;
-        this.app_namespace_ = str;
-    }
-
-    public static Builder newBuilder() {
-        return new Builder();
-    }
-
-    public String getAppNamespace() {
-        return this.app_namespace_;
-    }
-
-    public GlobalMetrics getGlobalMetricsInternal() {
-        return this.global_metrics_;
-    }
-
-    public List getLogSourceMetricsList() {
-        return this.log_source_metrics_;
-    }
-
-    public TimeWindow getWindowInternal() {
-        return this.window_;
-    }
-
-    public byte[] toByteArray() {
-        return ProtoEncoderDoNotUse.encode(this);
     }
 }

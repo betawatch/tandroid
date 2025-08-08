@@ -2,7 +2,7 @@ package com.microsoft.appcenter.http;
 
 import java.util.Map;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class HttpResponse {
     private final Map headers;
     private final String payload;
@@ -14,6 +14,18 @@ public class HttpResponse {
         this.headers = map;
     }
 
+    public int getStatusCode() {
+        return this.statusCode;
+    }
+
+    public String getPayload() {
+        return this.payload;
+    }
+
+    public Map getHeaders() {
+        return this.headers;
+    }
+
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -23,18 +35,6 @@ public class HttpResponse {
         }
         HttpResponse httpResponse = (HttpResponse) obj;
         return this.statusCode == httpResponse.statusCode && this.payload.equals(httpResponse.payload) && this.headers.equals(httpResponse.headers);
-    }
-
-    public Map getHeaders() {
-        return this.headers;
-    }
-
-    public String getPayload() {
-        return this.payload;
-    }
-
-    public int getStatusCode() {
-        return this.statusCode;
     }
 
     public int hashCode() {

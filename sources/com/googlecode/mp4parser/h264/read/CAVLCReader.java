@@ -3,10 +3,16 @@ package com.googlecode.mp4parser.h264.read;
 import com.googlecode.mp4parser.h264.Debug;
 import java.io.InputStream;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class CAVLCReader extends BitstreamReader {
     public CAVLCReader(InputStream inputStream) {
         super(inputStream);
+    }
+
+    public long readNBit(int i, String str) {
+        long readNBit = readNBit(i);
+        trace(str, String.valueOf(readNBit));
+        return readNBit;
     }
 
     private int readUE() {
@@ -18,6 +24,22 @@ public class CAVLCReader extends BitstreamReader {
             return 0;
         }
         return (int) (((1 << i) - 1) + readNBit(i));
+    }
+
+    public int readUE(String str) {
+        int readUE = readUE();
+        trace(str, String.valueOf(readUE));
+        return readUE;
+    }
+
+    public boolean readBool(String str) {
+        boolean z = read1Bit() != 0;
+        trace(str, z ? "1" : "0");
+        return z;
+    }
+
+    public int readU(int i, String str) {
+        return (int) readNBit(i, str);
     }
 
     private void trace(String str, String str2) {
@@ -37,27 +59,5 @@ public class CAVLCReader extends BitstreamReader {
         sb.append(" (" + str2 + ")");
         this.debugBits.clear();
         Debug.println(sb.toString());
-    }
-
-    public boolean readBool(String str) {
-        boolean z = read1Bit() != 0;
-        trace(str, z ? "1" : "0");
-        return z;
-    }
-
-    public long readNBit(int i, String str) {
-        long readNBit = readNBit(i);
-        trace(str, String.valueOf(readNBit));
-        return readNBit;
-    }
-
-    public int readU(int i, String str) {
-        return (int) readNBit(i, str);
-    }
-
-    public int readUE(String str) {
-        int readUE = readUE();
-        trace(str, String.valueOf(readUE));
-        return readUE;
     }
 }

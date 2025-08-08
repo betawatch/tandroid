@@ -13,17 +13,20 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
 import java.util.concurrent.Executor;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 abstract class ProxyNotificationInitializer {
-    private static boolean allowedToUse(Context context) {
-        return Binder.getCallingUid() == context.getApplicationInfo().uid;
-    }
-
-    static void initialize(Context context) {
-        if (ProxyNotificationPreferences.isProxyNotificationInitialized(context)) {
-            return;
+    static Task setEnableProxyNotification(Executor executor, final Context context, final boolean z) {
+        if (!PlatformVersion.isAtLeastQ()) {
+            return Tasks.forResult(null);
         }
-        setEnableProxyNotification(new EnhancedIntentService$$ExternalSyntheticLambda0(), context, shouldEnableProxyNotification(context));
+        final TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
+        executor.execute(new Runnable() { // from class: com.google.firebase.messaging.ProxyNotificationInitializer$$ExternalSyntheticLambda2
+            @Override // java.lang.Runnable
+            public final void run() {
+                ProxyNotificationInitializer.lambda$setEnableProxyNotification$0(context, z, taskCompletionSource);
+            }
+        });
+        return taskCompletionSource.getTask();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -51,20 +54,6 @@ abstract class ProxyNotificationInitializer {
         }
     }
 
-    static Task setEnableProxyNotification(Executor executor, final Context context, final boolean z) {
-        if (!PlatformVersion.isAtLeastQ()) {
-            return Tasks.forResult(null);
-        }
-        final TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        executor.execute(new Runnable() { // from class: com.google.firebase.messaging.ProxyNotificationInitializer$$ExternalSyntheticLambda2
-            @Override // java.lang.Runnable
-            public final void run() {
-                ProxyNotificationInitializer.lambda$setEnableProxyNotification$0(context, z, taskCompletionSource);
-            }
-        });
-        return taskCompletionSource.getTask();
-    }
-
     private static boolean shouldEnableProxyNotification(Context context) {
         ApplicationInfo applicationInfo;
         Bundle bundle;
@@ -78,5 +67,16 @@ abstract class ProxyNotificationInitializer {
         } catch (PackageManager.NameNotFoundException unused) {
             return true;
         }
+    }
+
+    static void initialize(Context context) {
+        if (ProxyNotificationPreferences.isProxyNotificationInitialized(context)) {
+            return;
+        }
+        setEnableProxyNotification(new EnhancedIntentService$$ExternalSyntheticLambda0(), context, shouldEnableProxyNotification(context));
+    }
+
+    private static boolean allowedToUse(Context context) {
+        return Binder.getCallingUid() == context.getApplicationInfo().uid;
     }
 }

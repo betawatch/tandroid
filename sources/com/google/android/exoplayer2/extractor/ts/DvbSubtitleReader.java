@@ -22,15 +22,46 @@ public final class DvbSubtitleReader implements ElementaryStreamReader {
         this.outputs = new TrackOutput[list.size()];
     }
 
-    private boolean checkNextByte(ParsableByteArray parsableByteArray, int i) {
-        if (parsableByteArray.bytesLeft() == 0) {
-            return false;
+    @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
+    public void seek() {
+        this.writingSample = false;
+        this.sampleTimeUs = -9223372036854775807L;
+    }
+
+    @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
+    public void createTracks(ExtractorOutput extractorOutput, TsPayloadReader.TrackIdGenerator trackIdGenerator) {
+        for (int i = 0; i < this.outputs.length; i++) {
+            TsPayloadReader.DvbSubtitleInfo dvbSubtitleInfo = (TsPayloadReader.DvbSubtitleInfo) this.subtitleInfos.get(i);
+            trackIdGenerator.generateNewId();
+            TrackOutput track = extractorOutput.track(trackIdGenerator.getTrackId(), 3);
+            track.format(new Format.Builder().setId(trackIdGenerator.getFormatId()).setSampleMimeType("application/dvbsubs").setInitializationData(Collections.singletonList(dvbSubtitleInfo.initializationData)).setLanguage(dvbSubtitleInfo.language).build());
+            this.outputs[i] = track;
         }
-        if (parsableByteArray.readUnsignedByte() != i) {
+    }
+
+    @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
+    public void packetStarted(long j, int i) {
+        if ((i & 4) == 0) {
+            return;
+        }
+        this.writingSample = true;
+        if (j != -9223372036854775807L) {
+            this.sampleTimeUs = j;
+        }
+        this.sampleBytesWritten = 0;
+        this.bytesToCheck = 2;
+    }
+
+    @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
+    public void packetFinished() {
+        if (this.writingSample) {
+            if (this.sampleTimeUs != -9223372036854775807L) {
+                for (TrackOutput trackOutput : this.outputs) {
+                    trackOutput.sampleMetadata(this.sampleTimeUs, 1, this.sampleBytesWritten, 0, null);
+                }
+            }
             this.writingSample = false;
         }
-        this.bytesToCheck--;
-        return this.writingSample;
     }
 
     @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
@@ -50,45 +81,14 @@ public final class DvbSubtitleReader implements ElementaryStreamReader {
         }
     }
 
-    @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
-    public void createTracks(ExtractorOutput extractorOutput, TsPayloadReader.TrackIdGenerator trackIdGenerator) {
-        for (int i = 0; i < this.outputs.length; i++) {
-            TsPayloadReader.DvbSubtitleInfo dvbSubtitleInfo = (TsPayloadReader.DvbSubtitleInfo) this.subtitleInfos.get(i);
-            trackIdGenerator.generateNewId();
-            TrackOutput track = extractorOutput.track(trackIdGenerator.getTrackId(), 3);
-            track.format(new Format.Builder().setId(trackIdGenerator.getFormatId()).setSampleMimeType("application/dvbsubs").setInitializationData(Collections.singletonList(dvbSubtitleInfo.initializationData)).setLanguage(dvbSubtitleInfo.language).build());
-            this.outputs[i] = track;
+    private boolean checkNextByte(ParsableByteArray parsableByteArray, int i) {
+        if (parsableByteArray.bytesLeft() == 0) {
+            return false;
         }
-    }
-
-    @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
-    public void packetFinished() {
-        if (this.writingSample) {
-            if (this.sampleTimeUs != -9223372036854775807L) {
-                for (TrackOutput trackOutput : this.outputs) {
-                    trackOutput.sampleMetadata(this.sampleTimeUs, 1, this.sampleBytesWritten, 0, null);
-                }
-            }
+        if (parsableByteArray.readUnsignedByte() != i) {
             this.writingSample = false;
         }
-    }
-
-    @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
-    public void packetStarted(long j, int i) {
-        if ((i & 4) == 0) {
-            return;
-        }
-        this.writingSample = true;
-        if (j != -9223372036854775807L) {
-            this.sampleTimeUs = j;
-        }
-        this.sampleBytesWritten = 0;
-        this.bytesToCheck = 2;
-    }
-
-    @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
-    public void seek() {
-        this.writingSample = false;
-        this.sampleTimeUs = -9223372036854775807L;
+        this.bytesToCheck--;
+        return this.writingSample;
     }
 }

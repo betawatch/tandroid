@@ -27,6 +27,14 @@ public final class SingleSampleMediaSource extends BaseMediaSource {
     private TransferListener transferListener;
     private final boolean treatLoadErrorsAsEndOfStream;
 
+    @Override // com.google.android.exoplayer2.source.MediaSource
+    public void maybeThrowSourceInfoRefreshError() {
+    }
+
+    @Override // com.google.android.exoplayer2.source.BaseMediaSource
+    protected void releaseSourceInternal() {
+    }
+
     public static final class Factory {
         private final DataSource.Factory dataSourceFactory;
         private Object tag;
@@ -38,16 +46,16 @@ public final class SingleSampleMediaSource extends BaseMediaSource {
             this.dataSourceFactory = (DataSource.Factory) Assertions.checkNotNull(factory);
         }
 
-        public SingleSampleMediaSource createMediaSource(MediaItem.SubtitleConfiguration subtitleConfiguration, long j) {
-            return new SingleSampleMediaSource(this.trackId, subtitleConfiguration, this.dataSourceFactory, j, this.loadErrorHandlingPolicy, this.treatLoadErrorsAsEndOfStream, this.tag);
-        }
-
         public Factory setLoadErrorHandlingPolicy(LoadErrorHandlingPolicy loadErrorHandlingPolicy) {
             if (loadErrorHandlingPolicy == null) {
                 loadErrorHandlingPolicy = new DefaultLoadErrorHandlingPolicy();
             }
             this.loadErrorHandlingPolicy = loadErrorHandlingPolicy;
             return this;
+        }
+
+        public SingleSampleMediaSource createMediaSource(MediaItem.SubtitleConfiguration subtitleConfiguration, long j) {
+            return new SingleSampleMediaSource(this.trackId, subtitleConfiguration, this.dataSourceFactory, j, this.loadErrorHandlingPolicy, this.treatLoadErrorsAsEndOfStream, this.tag);
         }
     }
 
@@ -66,17 +74,8 @@ public final class SingleSampleMediaSource extends BaseMediaSource {
     }
 
     @Override // com.google.android.exoplayer2.source.MediaSource
-    public MediaPeriod createPeriod(MediaSource.MediaPeriodId mediaPeriodId, Allocator allocator, long j) {
-        return new SingleSampleMediaPeriod(this.dataSpec, this.dataSourceFactory, this.transferListener, this.format, this.durationUs, this.loadErrorHandlingPolicy, createEventDispatcher(mediaPeriodId), this.treatLoadErrorsAsEndOfStream);
-    }
-
-    @Override // com.google.android.exoplayer2.source.MediaSource
     public MediaItem getMediaItem() {
         return this.mediaItem;
-    }
-
-    @Override // com.google.android.exoplayer2.source.MediaSource
-    public void maybeThrowSourceInfoRefreshError() {
     }
 
     @Override // com.google.android.exoplayer2.source.BaseMediaSource
@@ -86,11 +85,12 @@ public final class SingleSampleMediaSource extends BaseMediaSource {
     }
 
     @Override // com.google.android.exoplayer2.source.MediaSource
-    public void releasePeriod(MediaPeriod mediaPeriod) {
-        ((SingleSampleMediaPeriod) mediaPeriod).release();
+    public MediaPeriod createPeriod(MediaSource.MediaPeriodId mediaPeriodId, Allocator allocator, long j) {
+        return new SingleSampleMediaPeriod(this.dataSpec, this.dataSourceFactory, this.transferListener, this.format, this.durationUs, this.loadErrorHandlingPolicy, createEventDispatcher(mediaPeriodId), this.treatLoadErrorsAsEndOfStream);
     }
 
-    @Override // com.google.android.exoplayer2.source.BaseMediaSource
-    protected void releaseSourceInternal() {
+    @Override // com.google.android.exoplayer2.source.MediaSource
+    public void releasePeriod(MediaPeriod mediaPeriod) {
+        ((SingleSampleMediaPeriod) mediaPeriod).release();
     }
 }

@@ -19,10 +19,6 @@ public final class Scope extends AbstractSafeParcelable implements ReflectedParc
         this.zzb = str;
     }
 
-    public Scope(String str) {
-        this(1, str);
-    }
-
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -47,9 +43,14 @@ public final class Scope extends AbstractSafeParcelable implements ReflectedParc
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
+        int i2 = this.zza;
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeInt(parcel, 1, this.zza);
+        SafeParcelWriter.writeInt(parcel, 1, i2);
         SafeParcelWriter.writeString(parcel, 2, getScopeUri(), false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    public Scope(String str) {
+        this(1, str);
     }
 }

@@ -2,15 +2,15 @@ package com.google.zxing;
 
 import com.google.zxing.common.BitMatrix;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class Binarizer {
     private final LuminanceSource source;
+
+    public abstract BitMatrix getBlackMatrix();
 
     protected Binarizer(LuminanceSource luminanceSource) {
         this.source = luminanceSource;
     }
-
-    public abstract BitMatrix getBlackMatrix();
 
     public final LuminanceSource getLuminanceSource() {
         return this.source;

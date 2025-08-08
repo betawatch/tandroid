@@ -9,4 +9,6 @@ public interface zacs {
     void zae(ConnectionResult connectionResult);
 
     void zaf(IAccountAccessor iAccountAccessor, Set set);
+
+    void zag(int i);
 }

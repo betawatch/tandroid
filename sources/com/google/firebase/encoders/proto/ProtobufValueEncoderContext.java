@@ -4,7 +4,7 @@ import com.google.firebase.encoders.EncodingException;
 import com.google.firebase.encoders.FieldDescriptor;
 import com.google.firebase.encoders.ValueEncoderContext;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 class ProtobufValueEncoderContext implements ValueEncoderContext {
     private FieldDescriptor field;
     private final ProtobufDataEncoderContext objEncoderCtx;
@@ -13,6 +13,12 @@ class ProtobufValueEncoderContext implements ValueEncoderContext {
 
     ProtobufValueEncoderContext(ProtobufDataEncoderContext protobufDataEncoderContext) {
         this.objEncoderCtx = protobufDataEncoderContext;
+    }
+
+    void resetContext(FieldDescriptor fieldDescriptor, boolean z) {
+        this.encoded = false;
+        this.field = fieldDescriptor;
+        this.skipDefault = z;
     }
 
     private void checkNotUsed() {
@@ -34,11 +40,5 @@ class ProtobufValueEncoderContext implements ValueEncoderContext {
         checkNotUsed();
         this.objEncoderCtx.add(this.field, z, this.skipDefault);
         return this;
-    }
-
-    void resetContext(FieldDescriptor fieldDescriptor, boolean z) {
-        this.encoded = false;
-        this.field = fieldDescriptor;
-        this.skipDefault = z;
     }
 }

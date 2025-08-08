@@ -1,6 +1,6 @@
 package kotlin;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class KotlinVersionCurrentValue {
     public static final KotlinVersionCurrentValue INSTANCE = new KotlinVersionCurrentValue();
 

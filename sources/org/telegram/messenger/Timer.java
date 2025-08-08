@@ -9,15 +9,73 @@ public class Timer {
     public ArrayList<Task> tasks = new ArrayList<>();
     final long startTime = System.currentTimeMillis();
 
-    public class Log extends Task {
-        public Log(String str) {
-            super(str);
+    public static Timer create(String str) {
+        if (BuildVars.LOGS_ENABLED) {
+            return new Timer(str);
         }
+        return null;
+    }
 
-        @Override // org.telegram.messenger.Timer.Task
-        public String toString() {
-            return this.task;
+    public static Task start(Timer timer, String str) {
+        if (timer != null) {
+            return timer.start(str);
         }
+        return null;
+    }
+
+    public static void log(Timer timer, String str) {
+        if (timer != null) {
+            timer.log(str);
+        }
+    }
+
+    public static void finish(Timer timer) {
+        if (timer != null) {
+            timer.finish();
+        }
+    }
+
+    public static void done(Task task) {
+        if (task != null) {
+            task.done();
+        }
+    }
+
+    public Timer(String str) {
+        this.name = str;
+    }
+
+    private Task start(String str) {
+        Task task = new Task(str);
+        this.tasks.add(task);
+        return task;
+    }
+
+    private void log(String str) {
+        this.tasks.add(new Log(str));
+    }
+
+    private void finish() {
+        long currentTimeMillis = System.currentTimeMillis() - this.startTime;
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.name);
+        sb.append(" total=");
+        sb.append(currentTimeMillis);
+        sb.append("ms\n");
+        for (int i = 0; i < this.tasks.size(); i++) {
+            if (this.tasks.get(i) != null) {
+                sb.append("#");
+                sb.append(i);
+                int i2 = this.tasks.get(i).pad;
+                for (int i3 = 0; i3 < i2; i3++) {
+                    sb.append(" ");
+                }
+                sb.append(" ");
+                sb.append(this.tasks.get(i));
+                sb.append("\n");
+            }
+        }
+        FileLog.d(sb.toString());
     }
 
     public class Task {
@@ -57,77 +115,14 @@ public class Timer {
         }
     }
 
-    public Timer(String str) {
-        this.name = str;
-    }
-
-    public static Timer create(String str) {
-        if (BuildVars.LOGS_ENABLED) {
-            return new Timer(str);
+    public class Log extends Task {
+        public Log(String str) {
+            super(str);
         }
-        return null;
-    }
 
-    public static void done(Task task) {
-        if (task != null) {
-            task.done();
+        @Override // org.telegram.messenger.Timer.Task
+        public String toString() {
+            return this.task;
         }
-    }
-
-    private void finish() {
-        long currentTimeMillis = System.currentTimeMillis() - this.startTime;
-        StringBuilder sb = new StringBuilder();
-        sb.append(this.name);
-        sb.append(" total=");
-        sb.append(currentTimeMillis);
-        sb.append("ms\n");
-        for (int i = 0; i < this.tasks.size(); i++) {
-            if (this.tasks.get(i) != null) {
-                sb.append("#");
-                sb.append(i);
-                int i2 = this.tasks.get(i).pad;
-                int i3 = 0;
-                while (true) {
-                    sb.append(" ");
-                    if (i3 >= i2) {
-                        break;
-                    } else {
-                        i3++;
-                    }
-                }
-                sb.append(this.tasks.get(i));
-                sb.append("\n");
-            }
-        }
-        FileLog.d(sb.toString());
-    }
-
-    public static void finish(Timer timer) {
-        if (timer != null) {
-            timer.finish();
-        }
-    }
-
-    private void log(String str) {
-        this.tasks.add(new Log(str));
-    }
-
-    public static void log(Timer timer, String str) {
-        if (timer != null) {
-            timer.log(str);
-        }
-    }
-
-    private Task start(String str) {
-        Task task = new Task(str);
-        this.tasks.add(task);
-        return task;
-    }
-
-    public static Task start(Timer timer, String str) {
-        if (timer != null) {
-            return timer.start(str);
-        }
-        return null;
     }
 }

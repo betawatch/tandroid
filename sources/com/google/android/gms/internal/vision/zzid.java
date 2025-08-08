@@ -11,6 +11,50 @@ class zzid extends zzia {
         this.zzb = bArr;
     }
 
+    protected int zze() {
+        return 0;
+    }
+
+    @Override // com.google.android.gms.internal.vision.zzht
+    public byte zza(int i) {
+        return this.zzb[i];
+    }
+
+    @Override // com.google.android.gms.internal.vision.zzht
+    byte zzb(int i) {
+        return this.zzb[i];
+    }
+
+    @Override // com.google.android.gms.internal.vision.zzht
+    public int zza() {
+        return this.zzb.length;
+    }
+
+    @Override // com.google.android.gms.internal.vision.zzht
+    public final zzht zza(int i, int i2) {
+        int zzb = zzht.zzb(0, i2, zza());
+        if (zzb == 0) {
+            return zzht.zza;
+        }
+        return new zzhw(this.zzb, zze(), zzb);
+    }
+
+    @Override // com.google.android.gms.internal.vision.zzht
+    final void zza(zzhq zzhqVar) {
+        zzhqVar.zza(this.zzb, zze(), zza());
+    }
+
+    @Override // com.google.android.gms.internal.vision.zzht
+    protected final String zza(Charset charset) {
+        return new String(this.zzb, zze(), zza(), charset);
+    }
+
+    @Override // com.google.android.gms.internal.vision.zzht
+    public final boolean zzc() {
+        int zze = zze();
+        return zzmd.zza(this.zzb, zze, zza() + zze);
+    }
+
     @Override // com.google.android.gms.internal.vision.zzht
     public final boolean equals(Object obj) {
         if (obj == this) {
@@ -22,47 +66,16 @@ class zzid extends zzia {
         if (zza() == 0) {
             return true;
         }
-        if (!(obj instanceof zzid)) {
-            return obj.equals(this);
+        if (obj instanceof zzid) {
+            zzid zzidVar = (zzid) obj;
+            int zzd = zzd();
+            int zzd2 = zzidVar.zzd();
+            if (zzd == 0 || zzd2 == 0 || zzd == zzd2) {
+                return zza(zzidVar, 0, zza());
+            }
+            return false;
         }
-        zzid zzidVar = (zzid) obj;
-        int zzd = zzd();
-        int zzd2 = zzidVar.zzd();
-        if (zzd == 0 || zzd2 == 0 || zzd == zzd2) {
-            return zza(zzidVar, 0, zza());
-        }
-        return false;
-    }
-
-    @Override // com.google.android.gms.internal.vision.zzht
-    public byte zza(int i) {
-        return this.zzb[i];
-    }
-
-    @Override // com.google.android.gms.internal.vision.zzht
-    public int zza() {
-        return this.zzb.length;
-    }
-
-    @Override // com.google.android.gms.internal.vision.zzht
-    protected final int zza(int i, int i2, int i3) {
-        return zzjf.zza(i, this.zzb, zze(), i3);
-    }
-
-    @Override // com.google.android.gms.internal.vision.zzht
-    public final zzht zza(int i, int i2) {
-        int zzb = zzht.zzb(0, i2, zza());
-        return zzb == 0 ? zzht.zza : new zzhw(this.zzb, zze(), zzb);
-    }
-
-    @Override // com.google.android.gms.internal.vision.zzht
-    protected final String zza(Charset charset) {
-        return new String(this.zzb, zze(), zza(), charset);
-    }
-
-    @Override // com.google.android.gms.internal.vision.zzht
-    final void zza(zzhq zzhqVar) {
-        zzhqVar.zza(this.zzb, zze(), zza());
+        return obj.equals(this);
     }
 
     @Override // com.google.android.gms.internal.vision.zzia
@@ -84,37 +97,27 @@ class zzid extends zzia {
             sb2.append(zza2);
             throw new IllegalArgumentException(sb2.toString());
         }
-        if (!(zzhtVar instanceof zzid)) {
-            return zzhtVar.zza(0, i2).equals(zza(0, i2));
-        }
-        zzid zzidVar = (zzid) zzhtVar;
-        byte[] bArr = this.zzb;
-        byte[] bArr2 = zzidVar.zzb;
-        int zze = zze() + i2;
-        int zze2 = zze();
-        int zze3 = zzidVar.zze();
-        while (zze2 < zze) {
-            if (bArr[zze2] != bArr2[zze3]) {
-                return false;
+        if (zzhtVar instanceof zzid) {
+            zzid zzidVar = (zzid) zzhtVar;
+            byte[] bArr = this.zzb;
+            byte[] bArr2 = zzidVar.zzb;
+            int zze = zze() + i2;
+            int zze2 = zze();
+            int zze3 = zzidVar.zze();
+            while (zze2 < zze) {
+                if (bArr[zze2] != bArr2[zze3]) {
+                    return false;
+                }
+                zze2++;
+                zze3++;
             }
-            zze2++;
-            zze3++;
+            return true;
         }
-        return true;
+        return zzhtVar.zza(0, i2).equals(zza(0, i2));
     }
 
     @Override // com.google.android.gms.internal.vision.zzht
-    byte zzb(int i) {
-        return this.zzb[i];
-    }
-
-    @Override // com.google.android.gms.internal.vision.zzht
-    public final boolean zzc() {
-        int zze = zze();
-        return zzmd.zza(this.zzb, zze, zza() + zze);
-    }
-
-    protected int zze() {
-        return 0;
+    protected final int zza(int i, int i2, int i3) {
+        return zzjf.zza(i, this.zzb, zze(), i3);
     }
 }

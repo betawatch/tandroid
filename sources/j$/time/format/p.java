@@ -1,7 +1,5 @@
 package j$.time.format;
 
-import j$.time.ZoneId;
-import j$.time.ZoneOffset;
 import j$.util.A;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -11,23 +9,13 @@ import java.util.Locale;
 
 /* loaded from: classes2.dex */
 public final class p {
-    private static final a f = new j$.time.temporal.n() { // from class: j$.time.format.a
-        @Override // j$.time.temporal.n
-        public final Object a(j$.time.temporal.k kVar) {
-            ZoneId zoneId = (ZoneId) kVar.i(j$.time.temporal.j.j());
-            if (zoneId == null || (zoneId instanceof ZoneOffset)) {
-                return null;
-            }
-            return zoneId;
-        }
-    };
+    private static final a f = new a();
     private p a;
     private final p b;
     private final ArrayList c;
     private final boolean d;
     private int e;
 
-    /* JADX WARN: Type inference failed for: r0v0, types: [j$.time.format.a] */
     static {
         HashMap hashMap = new HashMap();
         hashMap.put('G', j$.time.temporal.a.ERA);
@@ -76,101 +64,24 @@ public final class p {
         this.d = true;
     }
 
-    private int d(f fVar) {
-        A.z(fVar, "pp");
-        p pVar = this.a;
-        pVar.getClass();
-        pVar.c.add(fVar);
-        this.a.e = -1;
-        return r2.c.size() - 1;
+    public final void s() {
+        d(k.SENSITIVE);
     }
 
-    private void k(i iVar) {
-        i b;
-        x xVar;
-        p pVar = this.a;
-        int i = pVar.e;
-        if (i < 0) {
-            pVar.e = d(iVar);
-            return;
-        }
-        i iVar2 = (i) pVar.c.get(i);
-        int i2 = iVar.b;
-        int i3 = iVar.c;
-        if (i2 == i3) {
-            xVar = iVar.d;
-            if (xVar == x.NOT_NEGATIVE) {
-                b = iVar2.c(i3);
-                d(iVar.b());
-                this.a.e = i;
-                this.a.c.set(i, b);
-            }
-        }
-        b = iVar2.b();
-        this.a.e = d(iVar);
-        this.a.c.set(i, b);
+    public final void r() {
+        d(k.INSENSITIVE);
     }
 
-    private DateTimeFormatter w(Locale locale, w wVar, j$.time.chrono.f fVar) {
-        A.z(locale, "locale");
-        while (this.a.b != null) {
-            p();
-        }
-        e eVar = new e(this.c, false);
-        v vVar = v.a;
-        return new DateTimeFormatter(eVar, locale, wVar, fVar);
-    }
-
-    public final void a(DateTimeFormatter dateTimeFormatter) {
-        d(dateTimeFormatter.f());
-    }
-
-    public final void b(j$.time.temporal.a aVar) {
-        d(new g(aVar));
-    }
-
-    public final void c() {
-        d(new h());
-    }
-
-    public final void e(char c) {
-        d(new d(c));
-    }
-
-    public final void f(String str) {
-        if (str.length() > 0) {
-            d(str.length() == 1 ? new d(str.charAt(0)) : new l(str));
-        }
-    }
-
-    public final void g(String str, String str2) {
-        d(new j(str, str2));
-    }
-
-    public final void h() {
-        d(j.d);
-    }
-
-    public final void i(j$.time.temporal.a aVar, TextStyle textStyle) {
-        A.z(aVar, "field");
-        A.z(textStyle, "textStyle");
-        d(new m(aVar, textStyle, new u()));
-    }
-
-    public final void j(j$.time.temporal.a aVar, HashMap hashMap) {
-        A.z(aVar, "field");
-        LinkedHashMap linkedHashMap = new LinkedHashMap(hashMap);
-        TextStyle textStyle = TextStyle.FULL;
-        d(new m(aVar, textStyle, new b(new t(Collections.singletonMap(textStyle, linkedHashMap)))));
+    public final void t() {
+        d(k.LENIENT);
     }
 
     public final void l(j$.time.temporal.l lVar, int i) {
         A.z(lVar, "field");
-        if (i >= 1 && i <= 19) {
-            k(new i(lVar, i, i, x.NOT_NEGATIVE));
-        } else {
+        if (i < 1 || i > 19) {
             throw new IllegalArgumentException("The width must be from 1 to 19 inclusive but was " + i);
         }
+        k(new i(lVar, i, i, x.NOT_NEGATIVE));
     }
 
     public final void m(j$.time.temporal.l lVar, int i, int i2, x xVar) {
@@ -186,11 +97,66 @@ public final class p {
         if (i2 < 1 || i2 > 19) {
             throw new IllegalArgumentException("The maximum width must be from 1 to 19 inclusive but was " + i2);
         }
-        if (i2 >= i) {
-            k(new i(lVar, i, i2, xVar));
+        if (i2 < i) {
+            throw new IllegalArgumentException("The maximum width must exceed or equal the minimum width but " + i2 + " < " + i);
+        }
+        k(new i(lVar, i, i2, xVar));
+    }
+
+    private void k(i iVar) {
+        i b;
+        x xVar;
+        p pVar = this.a;
+        int i = pVar.e;
+        if (i >= 0) {
+            i iVar2 = (i) pVar.c.get(i);
+            int i2 = iVar.b;
+            int i3 = iVar.c;
+            if (i2 == i3) {
+                xVar = iVar.d;
+                if (xVar == x.NOT_NEGATIVE) {
+                    b = iVar2.c(i3);
+                    d(iVar.b());
+                    this.a.e = i;
+                    this.a.c.set(i, b);
+                    return;
+                }
+            }
+            b = iVar2.b();
+            this.a.e = d(iVar);
+            this.a.c.set(i, b);
             return;
         }
-        throw new IllegalArgumentException("The maximum width must exceed or equal the minimum width but " + i2 + " < " + i);
+        pVar.e = d(iVar);
+    }
+
+    public final void b(j$.time.temporal.a aVar) {
+        d(new g(aVar));
+    }
+
+    public final void i(j$.time.temporal.a aVar, TextStyle textStyle) {
+        A.z(aVar, "field");
+        A.z(textStyle, "textStyle");
+        d(new m(aVar, textStyle, new u()));
+    }
+
+    public final void j(j$.time.temporal.a aVar, HashMap hashMap) {
+        A.z(aVar, "field");
+        LinkedHashMap linkedHashMap = new LinkedHashMap(hashMap);
+        TextStyle textStyle = TextStyle.FULL;
+        d(new m(aVar, textStyle, new b(new t(Collections.singletonMap(textStyle, linkedHashMap)))));
+    }
+
+    public final void c() {
+        d(new h());
+    }
+
+    public final void h() {
+        d(j.d);
+    }
+
+    public final void g(String str, String str2) {
+        d(new j(str, str2));
     }
 
     public final void n() {
@@ -201,19 +167,22 @@ public final class p {
         d(new o(textStyle));
     }
 
-    public final void p() {
-        p pVar = this.a;
-        if (pVar.b == null) {
-            throw new IllegalStateException("Cannot call optionalEnd() as there was no previous call to optionalStart()");
+    public final void e(char c) {
+        d(new d(c));
+    }
+
+    public final void f(String str) {
+        if (str.length() > 0) {
+            if (str.length() == 1) {
+                d(new d(str.charAt(0)));
+            } else {
+                d(new l(str));
+            }
         }
-        if (pVar.c.size() <= 0) {
-            this.a = this.a.b;
-            return;
-        }
-        p pVar2 = this.a;
-        e eVar = new e(pVar2.c, pVar2.d);
-        this.a = this.a.b;
-        d(eVar);
+    }
+
+    public final void a(DateTimeFormatter dateTimeFormatter) {
+        d(dateTimeFormatter.e());
     }
 
     public final void q() {
@@ -222,23 +191,45 @@ public final class p {
         this.a = new p(pVar);
     }
 
-    public final void r() {
-        d(k.INSENSITIVE);
+    public final void p() {
+        p pVar = this.a;
+        if (pVar.b == null) {
+            throw new IllegalStateException("Cannot call optionalEnd() as there was no previous call to optionalStart()");
+        }
+        if (pVar.c.size() > 0) {
+            p pVar2 = this.a;
+            e eVar = new e(pVar2.c, pVar2.d);
+            this.a = this.a.b;
+            d(eVar);
+            return;
+        }
+        this.a = this.a.b;
     }
 
-    public final void s() {
-        d(k.SENSITIVE);
+    private int d(f fVar) {
+        A.z(fVar, "pp");
+        p pVar = this.a;
+        pVar.getClass();
+        pVar.c.add(fVar);
+        this.a.e = -1;
+        return r2.c.size() - 1;
     }
 
-    public final void t() {
-        d(k.LENIENT);
+    public final DateTimeFormatter v(Locale locale) {
+        return w(locale, w.SMART, null);
     }
 
     final DateTimeFormatter u(w wVar, j$.time.chrono.f fVar) {
         return w(Locale.getDefault(), wVar, fVar);
     }
 
-    public final DateTimeFormatter v(Locale locale) {
-        return w(locale, w.SMART, null);
+    private DateTimeFormatter w(Locale locale, w wVar, j$.time.chrono.f fVar) {
+        A.z(locale, "locale");
+        while (this.a.b != null) {
+            p();
+        }
+        e eVar = new e(this.c, false);
+        v vVar = v.a;
+        return new DateTimeFormatter(eVar, locale, wVar, fVar);
     }
 }

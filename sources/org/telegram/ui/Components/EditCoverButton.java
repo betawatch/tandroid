@@ -20,7 +20,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class EditCoverButton extends View {
     private final Drawable arrowDrawable;
     private final PhotoViewerBlurDrawable blur;
@@ -39,13 +39,53 @@ public class EditCoverButton extends View {
         imageReceiver.setRoundRadius(AndroidUtilities.dp(22.66f));
         this.text = new Text(charSequence, 14.0f, AndroidUtilities.bold());
         this.blur = new PhotoViewerBlurDrawable(photoViewer, photoViewer.blurManager, this).setApplyBounds(false);
-        if (!z) {
-            this.arrowDrawable = null;
+        if (z) {
+            Drawable mutate = context.getResources().getDrawable(R.drawable.arrow_newchat).mutate();
+            this.arrowDrawable = mutate;
+            mutate.setColorFilter(new PorterDuffColorFilter(-1711276033, PorterDuff.Mode.SRC_IN));
             return;
         }
-        Drawable mutate = context.getResources().getDrawable(R.drawable.arrow_newchat).mutate();
-        this.arrowDrawable = mutate;
-        mutate.setColorFilter(new PorterDuffColorFilter(-1711276033, PorterDuff.Mode.SRC_IN));
+        this.arrowDrawable = null;
+    }
+
+    @Override // android.view.View
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.imageReceiver.onAttachedToWindow();
+    }
+
+    @Override // android.view.View
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.imageReceiver.onDetachedFromWindow();
+    }
+
+    /* renamed from: setImage, reason: merged with bridge method [inline-methods] */
+    public void lambda$setImage$0(Bitmap bitmap) {
+        this.imageReceiver.setImageBitmap(bitmap);
+        invalidate();
+    }
+
+    public void setImage(TLRPC.Photo photo, Object obj) {
+        if (photo == null) {
+            lambda$setImage$0((Bitmap) null);
+            return;
+        }
+        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.dp(48.0f), false, null, true);
+        this.imageReceiver.setImage(ImageLocation.getForPhoto(closestPhotoSizeWithSize, photo), "24_24", ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.dp(24.0f), false, closestPhotoSizeWithSize, false), photo), "24_24", 0L, null, obj, 0);
+    }
+
+    public void setImage(final String str) {
+        if (str == null) {
+            lambda$setImage$0((Bitmap) null);
+        } else {
+            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.EditCoverButton$$ExternalSyntheticLambda0
+                @Override // java.lang.Runnable
+                public final void run() {
+                    EditCoverButton.this.lambda$setImage$1(str);
+                }
+            });
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -63,18 +103,6 @@ public class EditCoverButton extends View {
                 EditCoverButton.this.lambda$setImage$0(decodeFile);
             }
         });
-    }
-
-    @Override // android.view.View
-    protected void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.imageReceiver.onAttachedToWindow();
-    }
-
-    @Override // android.view.View
-    protected void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.imageReceiver.onDetachedFromWindow();
     }
 
     @Override // android.view.View
@@ -103,6 +131,11 @@ public class EditCoverButton extends View {
     }
 
     @Override // android.view.View
+    public void setOnClickListener(View.OnClickListener onClickListener) {
+        this.listener = onClickListener;
+    }
+
+    @Override // android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
         boolean contains = this.blur.getBounds().contains((int) motionEvent.getX(), (int) motionEvent.getY());
         if (motionEvent.getAction() == 0) {
@@ -125,38 +158,5 @@ public class EditCoverButton extends View {
             return true;
         }
         return this.bounce.isPressed();
-    }
-
-    /* renamed from: setImage, reason: merged with bridge method [inline-methods] */
-    public void lambda$setImage$0(Bitmap bitmap) {
-        this.imageReceiver.setImageBitmap(bitmap);
-        invalidate();
-    }
-
-    public void setImage(final String str) {
-        if (str == null) {
-            lambda$setImage$0((Bitmap) null);
-        } else {
-            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.EditCoverButton$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    EditCoverButton.this.lambda$setImage$1(str);
-                }
-            });
-        }
-    }
-
-    public void setImage(TLRPC.Photo photo, Object obj) {
-        if (photo == null) {
-            lambda$setImage$0((Bitmap) null);
-            return;
-        }
-        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.dp(48.0f), false, null, true);
-        this.imageReceiver.setImage(ImageLocation.getForPhoto(closestPhotoSizeWithSize, photo), "24_24", ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.dp(24.0f), false, closestPhotoSizeWithSize, false), photo), "24_24", 0L, null, obj, 0);
-    }
-
-    @Override // android.view.View
-    public void setOnClickListener(View.OnClickListener onClickListener) {
-        this.listener = onClickListener;
     }
 }

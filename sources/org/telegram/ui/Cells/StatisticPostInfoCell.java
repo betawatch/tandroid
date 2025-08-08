@@ -61,19 +61,19 @@ public abstract class StatisticPostInfoCell extends FrameLayout {
         BackupImageView backupImageView = new BackupImageView(context) { // from class: org.telegram.ui.Cells.StatisticPostInfoCell.1
             @Override // org.telegram.ui.Components.BackupImageView, android.view.View
             protected void onDraw(Canvas canvas) {
-                if (StatisticPostInfoCell.this.postInfo == null || !StatisticPostInfoCell.this.postInfo.isStory()) {
-                    super.onDraw(canvas);
+                if (StatisticPostInfoCell.this.postInfo != null && StatisticPostInfoCell.this.postInfo.isStory()) {
+                    float dp = AndroidUtilities.dp(1.0f);
+                    StatisticPostInfoCell.this.storyAvatarParams.originalAvatarRect.set(dp, dp, getMeasuredWidth() - r0, getMeasuredHeight() - r0);
+                    StatisticPostInfoCell.this.storyAvatarParams.drawSegments = false;
+                    StatisticPostInfoCell.this.storyAvatarParams.animate = false;
+                    StatisticPostInfoCell.this.storyAvatarParams.drawInside = true;
+                    StatisticPostInfoCell.this.storyAvatarParams.isArchive = false;
+                    StatisticPostInfoCell.this.storyAvatarParams.forceState = 1;
+                    StatisticPostInfoCell.this.storyAvatarParams.resourcesProvider = resourcesProvider;
+                    StoriesUtilities.drawAvatarWithStory(0L, canvas, this.imageReceiver, StatisticPostInfoCell.this.storyAvatarParams);
                     return;
                 }
-                float dp = AndroidUtilities.dp(1.0f);
-                StatisticPostInfoCell.this.storyAvatarParams.originalAvatarRect.set(dp, dp, getMeasuredWidth() - r0, getMeasuredHeight() - r0);
-                StatisticPostInfoCell.this.storyAvatarParams.drawSegments = false;
-                StatisticPostInfoCell.this.storyAvatarParams.animate = false;
-                StatisticPostInfoCell.this.storyAvatarParams.drawInside = true;
-                StatisticPostInfoCell.this.storyAvatarParams.isArchive = false;
-                StatisticPostInfoCell.this.storyAvatarParams.forceState = 1;
-                StatisticPostInfoCell.this.storyAvatarParams.resourcesProvider = resourcesProvider;
-                StoriesUtilities.drawAvatarWithStory(0L, canvas, this.imageReceiver, StatisticPostInfoCell.this.storyAvatarParams);
+                super.onDraw(canvas);
             }
         };
         this.imageView = backupImageView;
@@ -101,12 +101,12 @@ public abstract class StatisticPostInfoCell extends FrameLayout {
         this.views = textView;
         textView.setTextSize(1, 14.0f);
         textView.setTextColor(-16777216);
-        if (LocaleController.isRTL) {
-            linearLayout2.addView(textView, LayoutHelper.createLinear(-2, -2, 80));
-            linearLayout2.addView(simpleTextView, LayoutHelper.createLinear(0, -2, 1.0f, 0, 16, 0, 0, 0));
-        } else {
+        if (!LocaleController.isRTL) {
             linearLayout2.addView(simpleTextView, LayoutHelper.createLinear(0, -2, 1.0f, 0, 0, 0, 16, 0));
             linearLayout2.addView(textView, LayoutHelper.createLinear(-2, -2, 80));
+        } else {
+            linearLayout2.addView(textView, LayoutHelper.createLinear(-2, -2, 80));
+            linearLayout2.addView(simpleTextView, LayoutHelper.createLinear(0, -2, 1.0f, 0, 16, 0, 0, 0));
         }
         linearLayout.addView(linearLayout2, LayoutHelper.createFrame(-1, -2.0f, 8388659, 0.0f, 7.0f, 0.0f, 0.0f));
         TextView textView2 = new TextView(context);
@@ -127,14 +127,14 @@ public abstract class StatisticPostInfoCell extends FrameLayout {
         textView4.setGravity(16);
         LinearLayout linearLayout3 = new LinearLayout(context);
         linearLayout3.setOrientation(0);
-        if (LocaleController.isRTL) {
-            linearLayout3.addView(textView3, LayoutHelper.createLinear(-2, -2, 16, 0, 0, 10, 0));
-            linearLayout3.addView(textView4, LayoutHelper.createLinear(-2, -2, 16));
-            linearLayout3.addView(textView2, LayoutHelper.createLinear(0, -2, 1.0f, 0, 8, 0, 0, 0));
-        } else {
+        if (!LocaleController.isRTL) {
             linearLayout3.addView(textView2, LayoutHelper.createLinear(0, -2, 1.0f, 0, 0, 0, 8, 0));
             linearLayout3.addView(textView4, LayoutHelper.createLinear(-2, -2, 16));
             linearLayout3.addView(textView3, LayoutHelper.createLinear(-2, -2, 16, 10, 0, 0, 0));
+        } else {
+            linearLayout3.addView(textView3, LayoutHelper.createLinear(-2, -2, 16, 0, 0, 10, 0));
+            linearLayout3.addView(textView4, LayoutHelper.createLinear(-2, -2, 16));
+            linearLayout3.addView(textView2, LayoutHelper.createLinear(0, -2, 1.0f, 0, 8, 0, 0, 0));
         }
         linearLayout.addView(linearLayout3, LayoutHelper.createFrame(-1, -2.0f, 8388659, 0.0f, 3.0f, 0.0f, 9.0f));
         boolean z2 = LocaleController.isRTL;
@@ -161,6 +161,77 @@ public abstract class StatisticPostInfoCell extends FrameLayout {
         setWillNotDraw(false);
     }
 
+    public BackupImageView getImageView() {
+        return this.imageView;
+    }
+
+    public StoriesUtilities.AvatarStoryParams getStoryAvatarParams() {
+        return this.storyAvatarParams;
+    }
+
+    public StatisticActivity.RecentPostInfo getPostInfo() {
+        return this.postInfo;
+    }
+
+    public void setImageViewAction(View.OnClickListener onClickListener) {
+        this.imageView.setOnClickListener(onClickListener);
+    }
+
+    public void setData(StatisticActivity.RecentPostInfo recentPostInfo, boolean z) {
+        CharSequence charSequence;
+        this.postInfo = recentPostInfo;
+        this.needDivider = !z;
+        MessageObject messageObject = recentPostInfo.message;
+        ArrayList<TLRPC.PhotoSize> arrayList = messageObject.photoThumbs;
+        if (arrayList != null) {
+            this.imageView.setImage(ImageLocation.getForObject(FileLoader.getClosestPhotoSizeWithSize(arrayList, AndroidUtilities.getPhotoSize()), messageObject.photoThumbsObject), "50_50", ImageLocation.getForObject(FileLoader.getClosestPhotoSizeWithSize(messageObject.photoThumbs, 50), messageObject.photoThumbsObject), "b1", 0, messageObject);
+            this.imageView.setRoundRadius(AndroidUtilities.dp(9.0f));
+            this.imageView.setScaleX(0.96f);
+            this.imageView.setScaleY(0.96f);
+        } else if (this.chat.chat_photo.sizes.size() > 0) {
+            this.imageView.setImage(ImageLocation.getForPhoto(this.chat.chat_photo.sizes.get(0), this.chat.chat_photo), "50_50", (String) null, (Drawable) null, this.chat);
+            this.imageView.setRoundRadius(AndroidUtilities.dp(46.0f) >> 1);
+            this.imageView.setScaleX(0.96f);
+            this.imageView.setScaleY(0.96f);
+        } else {
+            TLRPC.Chat chat = MessagesController.getInstance(UserConfig.selectedAccount).getChat(Long.valueOf(this.chat.id));
+            this.avatarDrawable.setInfo(chat);
+            this.imageView.setForUserOrChat(chat, this.avatarDrawable);
+            this.imageView.setRoundRadius(AndroidUtilities.dp(46.0f) >> 1);
+            this.imageView.setScaleX(1.0f);
+            this.imageView.setScaleY(1.0f);
+        }
+        if (messageObject.isStory()) {
+            this.imageView.setScaleX(1.0f);
+            this.imageView.setScaleY(1.0f);
+            this.imageView.setRoundRadius(AndroidUtilities.dp(46.0f) >> 1);
+        }
+        if (messageObject.isMusic()) {
+            charSequence = String.format("%s, %s", messageObject.getMusicTitle().trim(), messageObject.getMusicAuthor().trim());
+        } else if (messageObject.isStory()) {
+            charSequence = LocaleController.getString(R.string.Story);
+        } else {
+            CharSequence charSequence2 = messageObject.caption;
+            charSequence = charSequence2 != null ? charSequence2 : messageObject.messageText;
+        }
+        if (charSequence == null) {
+            charSequence = "";
+        }
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence);
+        for (URLSpan uRLSpan : (URLSpan[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), URLSpan.class)) {
+            spannableStringBuilder.removeSpan(uRLSpan);
+        }
+        this.message.setText(AndroidUtilities.trim(AndroidUtilities.replaceNewLines(spannableStringBuilder), null));
+        this.views.setText(String.format(LocaleController.getPluralString("Views", recentPostInfo.getViews()), AndroidUtilities.formatWholeNumber(recentPostInfo.getViews(), 0)));
+        Date date = new Date(recentPostInfo.getDate() * 1000);
+        this.date.setText(LocaleController.formatString(R.string.formatDateAtTime, LocaleController.getInstance().getFormatterYear().format(date), LocaleController.getInstance().getFormatterDay().format(date)));
+        this.shares.setText(AndroidUtilities.formatWholeNumber(recentPostInfo.getForwards(), 0));
+        this.likes.setText(AndroidUtilities.formatWholeNumber(recentPostInfo.getReactions(), 0));
+        this.shares.setVisibility(recentPostInfo.getForwards() != 0 ? 0 : 8);
+        this.likes.setVisibility(recentPostInfo.getReactions() == 0 ? 8 : 0);
+        invalidate();
+    }
+
     @Override // android.view.ViewGroup, android.view.View
     protected void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
@@ -174,24 +245,6 @@ public abstract class StatisticPostInfoCell extends FrameLayout {
         }
     }
 
-    public BackupImageView getImageView() {
-        return this.imageView;
-    }
-
-    public StatisticActivity.RecentPostInfo getPostInfo() {
-        return this.postInfo;
-    }
-
-    public StoriesUtilities.AvatarStoryParams getStoryAvatarParams() {
-        return this.storyAvatarParams;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    protected void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.storyAvatarParams.onDetachFromWindow();
-    }
-
     public void setData(StatisticActivity.MemberData memberData) {
         this.avatarDrawable.setInfo(memberData.user);
         this.imageView.setForUserOrChat(memberData.user, this.avatarDrawable);
@@ -203,95 +256,9 @@ public abstract class StatisticPostInfoCell extends FrameLayout {
         this.likes.setVisibility(8);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x00e3  */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0119  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x012e A[LOOP:0: B:15:0x012c->B:16:0x012e, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x01bc  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x01cc  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x01be  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0100  */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x00c9  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void setData(StatisticActivity.RecentPostInfo recentPostInfo, boolean z) {
-        BackupImageView backupImageView;
-        int dp;
-        CharSequence charSequence;
-        this.postInfo = recentPostInfo;
-        this.needDivider = !z;
-        MessageObject messageObject = recentPostInfo.message;
-        ArrayList<TLRPC.PhotoSize> arrayList = messageObject.photoThumbs;
-        if (arrayList != null) {
-            this.imageView.setImage(ImageLocation.getForObject(FileLoader.getClosestPhotoSizeWithSize(arrayList, AndroidUtilities.getPhotoSize()), messageObject.photoThumbsObject), "50_50", ImageLocation.getForObject(FileLoader.getClosestPhotoSizeWithSize(messageObject.photoThumbs, 50), messageObject.photoThumbsObject), "b1", 0, messageObject);
-            backupImageView = this.imageView;
-            dp = AndroidUtilities.dp(9.0f);
-        } else {
-            if (this.chat.chat_photo.sizes.size() <= 0) {
-                TLRPC.Chat chat = MessagesController.getInstance(UserConfig.selectedAccount).getChat(Long.valueOf(this.chat.id));
-                this.avatarDrawable.setInfo(chat);
-                this.imageView.setForUserOrChat(chat, this.avatarDrawable);
-                this.imageView.setRoundRadius(AndroidUtilities.dp(46.0f) >> 1);
-                this.imageView.setScaleX(1.0f);
-                this.imageView.setScaleY(1.0f);
-                if (messageObject.isStory()) {
-                    this.imageView.setScaleX(1.0f);
-                    this.imageView.setScaleY(1.0f);
-                    this.imageView.setRoundRadius(AndroidUtilities.dp(46.0f) >> 1);
-                }
-                if (!messageObject.isMusic()) {
-                    charSequence = String.format("%s, %s", messageObject.getMusicTitle().trim(), messageObject.getMusicAuthor().trim());
-                } else if (messageObject.isStory()) {
-                    charSequence = LocaleController.getString(R.string.Story);
-                } else {
-                    CharSequence charSequence2 = messageObject.caption;
-                    charSequence = charSequence2 != null ? charSequence2 : messageObject.messageText;
-                }
-                if (charSequence == null) {
-                    charSequence = "";
-                }
-                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence);
-                for (URLSpan uRLSpan : (URLSpan[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), URLSpan.class)) {
-                    spannableStringBuilder.removeSpan(uRLSpan);
-                }
-                this.message.setText(AndroidUtilities.trim(AndroidUtilities.replaceNewLines(spannableStringBuilder), null));
-                this.views.setText(String.format(LocaleController.getPluralString("Views", recentPostInfo.getViews()), AndroidUtilities.formatWholeNumber(recentPostInfo.getViews(), 0)));
-                Date date = new Date(recentPostInfo.getDate() * 1000);
-                this.date.setText(LocaleController.formatString(R.string.formatDateAtTime, LocaleController.getInstance().getFormatterYear().format(date), LocaleController.getInstance().getFormatterDay().format(date)));
-                this.shares.setText(AndroidUtilities.formatWholeNumber(recentPostInfo.getForwards(), 0));
-                this.likes.setText(AndroidUtilities.formatWholeNumber(recentPostInfo.getReactions(), 0));
-                this.shares.setVisibility(recentPostInfo.getForwards() == 0 ? 0 : 8);
-                this.likes.setVisibility(recentPostInfo.getReactions() == 0 ? 8 : 0);
-                invalidate();
-            }
-            this.imageView.setImage(ImageLocation.getForPhoto(this.chat.chat_photo.sizes.get(0), this.chat.chat_photo), "50_50", (String) null, (Drawable) null, this.chat);
-            backupImageView = this.imageView;
-            dp = AndroidUtilities.dp(46.0f) >> 1;
-        }
-        backupImageView.setRoundRadius(dp);
-        this.imageView.setScaleX(0.96f);
-        this.imageView.setScaleY(0.96f);
-        if (messageObject.isStory()) {
-        }
-        if (!messageObject.isMusic()) {
-        }
-        if (charSequence == null) {
-        }
-        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(charSequence);
-        while (r7 < r6) {
-        }
-        this.message.setText(AndroidUtilities.trim(AndroidUtilities.replaceNewLines(spannableStringBuilder2), null));
-        this.views.setText(String.format(LocaleController.getPluralString("Views", recentPostInfo.getViews()), AndroidUtilities.formatWholeNumber(recentPostInfo.getViews(), 0)));
-        Date date2 = new Date(recentPostInfo.getDate() * 1000);
-        this.date.setText(LocaleController.formatString(R.string.formatDateAtTime, LocaleController.getInstance().getFormatterYear().format(date2), LocaleController.getInstance().getFormatterDay().format(date2)));
-        this.shares.setText(AndroidUtilities.formatWholeNumber(recentPostInfo.getForwards(), 0));
-        this.likes.setText(AndroidUtilities.formatWholeNumber(recentPostInfo.getReactions(), 0));
-        this.shares.setVisibility(recentPostInfo.getForwards() == 0 ? 0 : 8);
-        this.likes.setVisibility(recentPostInfo.getReactions() == 0 ? 8 : 0);
-        invalidate();
-    }
-
-    public void setImageViewAction(View.OnClickListener onClickListener) {
-        this.imageView.setOnClickListener(onClickListener);
+    @Override // android.view.ViewGroup, android.view.View
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.storyAvatarParams.onDetachFromWindow();
     }
 }

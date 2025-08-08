@@ -4,6 +4,14 @@ package androidx.datastore.preferences.protobuf;
 abstract class ExtensionRegistryFactory {
     static final Class EXTENSION_REGISTRY_CLASS = reflectExtensionRegistry();
 
+    static Class reflectExtensionRegistry() {
+        try {
+            return Class.forName("androidx.datastore.preferences.protobuf.ExtensionRegistry");
+        } catch (ClassNotFoundException unused) {
+            return null;
+        }
+    }
+
     public static ExtensionRegistryLite createEmpty() {
         if (EXTENSION_REGISTRY_CLASS != null) {
             try {
@@ -16,13 +24,5 @@ abstract class ExtensionRegistryFactory {
 
     private static final ExtensionRegistryLite invokeSubclassFactory(String str) {
         return (ExtensionRegistryLite) EXTENSION_REGISTRY_CLASS.getDeclaredMethod(str, null).invoke(null, null);
-    }
-
-    static Class reflectExtensionRegistry() {
-        try {
-            return Class.forName("androidx.datastore.preferences.protobuf.ExtensionRegistry");
-        } catch (ClassNotFoundException unused) {
-            return null;
-        }
     }
 }

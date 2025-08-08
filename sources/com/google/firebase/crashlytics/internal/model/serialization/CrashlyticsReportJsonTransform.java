@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class CrashlyticsReportJsonTransform {
     private static final DataEncoder CRASHLYTICS_REPORT_JSON_ENCODER = new JsonDataEncoderBuilder().configureWith(AutoCrashlyticsReportEncoder.CONFIG).ignoreNullValues(true).build();
 
@@ -21,34 +21,169 @@ public class CrashlyticsReportJsonTransform {
         Object parse(JsonReader jsonReader);
     }
 
-    private static CrashlyticsReport.Session.Application parseApp(JsonReader jsonReader) {
-        CrashlyticsReport.Session.Application.Builder builder = CrashlyticsReport.Session.Application.builder();
+    public String reportToJson(CrashlyticsReport crashlyticsReport) {
+        return CRASHLYTICS_REPORT_JSON_ENCODER.encode(crashlyticsReport);
+    }
+
+    public String eventToJson(CrashlyticsReport.Session.Event event) {
+        return CRASHLYTICS_REPORT_JSON_ENCODER.encode(event);
+    }
+
+    public CrashlyticsReport reportFromJson(String str) {
+        try {
+            JsonReader jsonReader = new JsonReader(new StringReader(str));
+            try {
+                CrashlyticsReport parseReport = parseReport(jsonReader);
+                jsonReader.close();
+                return parseReport;
+            } finally {
+            }
+        } catch (IllegalStateException e) {
+            throw new IOException(e);
+        }
+    }
+
+    public CrashlyticsReport.Session.Event eventFromJson(String str) {
+        try {
+            JsonReader jsonReader = new JsonReader(new StringReader(str));
+            try {
+                CrashlyticsReport.Session.Event parseEvent = parseEvent(jsonReader);
+                jsonReader.close();
+                return parseEvent;
+            } finally {
+            }
+        } catch (IllegalStateException e) {
+            throw new IOException(e);
+        }
+    }
+
+    private static CrashlyticsReport parseReport(JsonReader jsonReader) {
+        CrashlyticsReport.Builder builder = CrashlyticsReport.builder();
         jsonReader.beginObject();
         while (jsonReader.hasNext()) {
             String nextName = jsonReader.nextName();
             nextName.hashCode();
             switch (nextName) {
-                case "identifier":
-                    builder.setIdentifier(jsonReader.nextString());
+                case "ndkPayload":
+                    builder.setNdkPayload(parseNdkPayload(jsonReader));
                     break;
-                case "developmentPlatform":
-                    builder.setDevelopmentPlatform(jsonReader.nextString());
+                case "sdkVersion":
+                    builder.setSdkVersion(jsonReader.nextString());
                     break;
-                case "developmentPlatformVersion":
-                    builder.setDevelopmentPlatformVersion(jsonReader.nextString());
+                case "appQualitySessionId":
+                    builder.setAppQualitySessionId(jsonReader.nextString());
                     break;
-                case "version":
-                    builder.setVersion(jsonReader.nextString());
+                case "appExitInfo":
+                    builder.setAppExitInfo(parseAppExitInfo(jsonReader));
+                    break;
+                case "buildVersion":
+                    builder.setBuildVersion(jsonReader.nextString());
+                    break;
+                case "gmpAppId":
+                    builder.setGmpAppId(jsonReader.nextString());
                     break;
                 case "installationUuid":
                     builder.setInstallationUuid(jsonReader.nextString());
                     break;
+                case "firebaseInstallationId":
+                    builder.setFirebaseInstallationId(jsonReader.nextString());
+                    break;
+                case "platform":
+                    builder.setPlatform(jsonReader.nextInt());
+                    break;
                 case "displayVersion":
                     builder.setDisplayVersion(jsonReader.nextString());
+                    break;
+                case "session":
+                    builder.setSession(parseSession(jsonReader));
                     break;
                 default:
                     jsonReader.skipValue();
                     break;
+            }
+        }
+        jsonReader.endObject();
+        return builder.build();
+    }
+
+    private static CrashlyticsReport.Session parseSession(JsonReader jsonReader) {
+        CrashlyticsReport.Session.Builder builder = CrashlyticsReport.Session.builder();
+        jsonReader.beginObject();
+        while (jsonReader.hasNext()) {
+            String nextName = jsonReader.nextName();
+            nextName.hashCode();
+            switch (nextName) {
+                case "startedAt":
+                    builder.setStartedAt(jsonReader.nextLong());
+                    break;
+                case "appQualitySessionId":
+                    builder.setAppQualitySessionId(jsonReader.nextString());
+                    break;
+                case "identifier":
+                    builder.setIdentifierFromUtf8Bytes(Base64.decode(jsonReader.nextString(), 2));
+                    break;
+                case "endedAt":
+                    builder.setEndedAt(Long.valueOf(jsonReader.nextLong()));
+                    break;
+                case "device":
+                    builder.setDevice(parseDevice(jsonReader));
+                    break;
+                case "events":
+                    builder.setEvents(parseArray(jsonReader, new ObjectParser() { // from class: com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsReportJsonTransform$$ExternalSyntheticLambda3
+                        @Override // com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsReportJsonTransform.ObjectParser
+                        public final Object parse(JsonReader jsonReader2) {
+                            CrashlyticsReport.Session.Event parseEvent;
+                            parseEvent = CrashlyticsReportJsonTransform.parseEvent(jsonReader2);
+                            return parseEvent;
+                        }
+                    }));
+                    break;
+                case "os":
+                    builder.setOs(parseOs(jsonReader));
+                    break;
+                case "app":
+                    builder.setApp(parseApp(jsonReader));
+                    break;
+                case "user":
+                    builder.setUser(parseUser(jsonReader));
+                    break;
+                case "generator":
+                    builder.setGenerator(jsonReader.nextString());
+                    break;
+                case "crashed":
+                    builder.setCrashed(jsonReader.nextBoolean());
+                    break;
+                case "generatorType":
+                    builder.setGeneratorType(jsonReader.nextInt());
+                    break;
+                default:
+                    jsonReader.skipValue();
+                    break;
+            }
+        }
+        jsonReader.endObject();
+        return builder.build();
+    }
+
+    private static CrashlyticsReport.FilesPayload parseNdkPayload(JsonReader jsonReader) {
+        CrashlyticsReport.FilesPayload.Builder builder = CrashlyticsReport.FilesPayload.builder();
+        jsonReader.beginObject();
+        while (jsonReader.hasNext()) {
+            String nextName = jsonReader.nextName();
+            nextName.hashCode();
+            if (nextName.equals("files")) {
+                builder.setFiles(parseArray(jsonReader, new ObjectParser() { // from class: com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsReportJsonTransform$$ExternalSyntheticLambda4
+                    @Override // com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsReportJsonTransform.ObjectParser
+                    public final Object parse(JsonReader jsonReader2) {
+                        CrashlyticsReport.FilesPayload.File parseFile;
+                        parseFile = CrashlyticsReportJsonTransform.parseFile(jsonReader2);
+                        return parseFile;
+                    }
+                }));
+            } else if (nextName.equals("orgId")) {
+                builder.setOrgId(jsonReader.nextString());
+            } else {
+                jsonReader.skipValue();
             }
         }
         jsonReader.endObject();
@@ -105,32 +240,63 @@ public class CrashlyticsReportJsonTransform {
         return builder.build();
     }
 
-    private static List parseArray(JsonReader jsonReader, ObjectParser objectParser) {
-        ArrayList arrayList = new ArrayList();
-        jsonReader.beginArray();
+    /* JADX INFO: Access modifiers changed from: private */
+    public static CrashlyticsReport.FilesPayload.File parseFile(JsonReader jsonReader) {
+        CrashlyticsReport.FilesPayload.File.Builder builder = CrashlyticsReport.FilesPayload.File.builder();
+        jsonReader.beginObject();
         while (jsonReader.hasNext()) {
-            arrayList.add(objectParser.parse(jsonReader));
+            String nextName = jsonReader.nextName();
+            nextName.hashCode();
+            if (nextName.equals("filename")) {
+                builder.setFilename(jsonReader.nextString());
+            } else if (nextName.equals("contents")) {
+                builder.setContents(Base64.decode(jsonReader.nextString(), 2));
+            } else {
+                jsonReader.skipValue();
+            }
         }
-        jsonReader.endArray();
-        return Collections.unmodifiableList(arrayList);
+        jsonReader.endObject();
+        return builder.build();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static CrashlyticsReport.ApplicationExitInfo.BuildIdMappingForArch parseBuildIdMappingForArch(JsonReader jsonReader) {
-        CrashlyticsReport.ApplicationExitInfo.BuildIdMappingForArch.Builder builder = CrashlyticsReport.ApplicationExitInfo.BuildIdMappingForArch.builder();
+    private static CrashlyticsReport.Session.User parseUser(JsonReader jsonReader) {
+        CrashlyticsReport.Session.User.Builder builder = CrashlyticsReport.Session.User.builder();
+        jsonReader.beginObject();
+        while (jsonReader.hasNext()) {
+            if (jsonReader.nextName().equals("identifier")) {
+                builder.setIdentifier(jsonReader.nextString());
+            } else {
+                jsonReader.skipValue();
+            }
+        }
+        jsonReader.endObject();
+        return builder.build();
+    }
+
+    private static CrashlyticsReport.Session.Application parseApp(JsonReader jsonReader) {
+        CrashlyticsReport.Session.Application.Builder builder = CrashlyticsReport.Session.Application.builder();
         jsonReader.beginObject();
         while (jsonReader.hasNext()) {
             String nextName = jsonReader.nextName();
             nextName.hashCode();
             switch (nextName) {
-                case "libraryName":
-                    builder.setLibraryName(jsonReader.nextString());
+                case "identifier":
+                    builder.setIdentifier(jsonReader.nextString());
                     break;
-                case "arch":
-                    builder.setArch(jsonReader.nextString());
+                case "developmentPlatform":
+                    builder.setDevelopmentPlatform(jsonReader.nextString());
                     break;
-                case "buildId":
-                    builder.setBuildId(jsonReader.nextString());
+                case "developmentPlatformVersion":
+                    builder.setDevelopmentPlatformVersion(jsonReader.nextString());
+                    break;
+                case "version":
+                    builder.setVersion(jsonReader.nextString());
+                    break;
+                case "installationUuid":
+                    builder.setInstallationUuid(jsonReader.nextString());
+                    break;
+                case "displayVersion":
+                    builder.setDisplayVersion(jsonReader.nextString());
                     break;
                 default:
                     jsonReader.skipValue();
@@ -141,19 +307,28 @@ public class CrashlyticsReportJsonTransform {
         return builder.build();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static CrashlyticsReport.CustomAttribute parseCustomAttribute(JsonReader jsonReader) {
-        CrashlyticsReport.CustomAttribute.Builder builder = CrashlyticsReport.CustomAttribute.builder();
+    private static CrashlyticsReport.Session.OperatingSystem parseOs(JsonReader jsonReader) {
+        CrashlyticsReport.Session.OperatingSystem.Builder builder = CrashlyticsReport.Session.OperatingSystem.builder();
         jsonReader.beginObject();
         while (jsonReader.hasNext()) {
             String nextName = jsonReader.nextName();
             nextName.hashCode();
-            if (nextName.equals("key")) {
-                builder.setKey(jsonReader.nextString());
-            } else if (nextName.equals("value")) {
-                builder.setValue(jsonReader.nextString());
-            } else {
-                jsonReader.skipValue();
+            switch (nextName) {
+                case "buildVersion":
+                    builder.setBuildVersion(jsonReader.nextString());
+                    break;
+                case "jailbroken":
+                    builder.setJailbroken(jsonReader.nextBoolean());
+                    break;
+                case "version":
+                    builder.setVersion(jsonReader.nextString());
+                    break;
+                case "platform":
+                    builder.setPlatform(jsonReader.nextInt());
+                    break;
+                default:
+                    jsonReader.skipValue();
+                    break;
             }
         }
         jsonReader.endObject();
@@ -297,58 +472,24 @@ public class CrashlyticsReportJsonTransform {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static CrashlyticsReport.Session.Event.Application.Execution.BinaryImage parseEventBinaryImage(JsonReader jsonReader) {
-        CrashlyticsReport.Session.Event.Application.Execution.BinaryImage.Builder builder = CrashlyticsReport.Session.Event.Application.Execution.BinaryImage.builder();
+    public static CrashlyticsReport.Session.Event.Application.ProcessDetails parseProcessDetails(JsonReader jsonReader) {
+        CrashlyticsReport.Session.Event.Application.ProcessDetails.Builder builder = CrashlyticsReport.Session.Event.Application.ProcessDetails.builder();
         jsonReader.beginObject();
         while (jsonReader.hasNext()) {
             String nextName = jsonReader.nextName();
             nextName.hashCode();
             switch (nextName) {
-                case "name":
-                    builder.setName(jsonReader.nextString());
+                case "pid":
+                    builder.setPid(jsonReader.nextInt());
                     break;
-                case "size":
-                    builder.setSize(jsonReader.nextLong());
+                case "processName":
+                    builder.setProcessName(jsonReader.nextString());
                     break;
-                case "uuid":
-                    builder.setUuidFromUtf8Bytes(Base64.decode(jsonReader.nextString(), 2));
+                case "defaultProcess":
+                    builder.setDefaultProcess(jsonReader.nextBoolean());
                     break;
-                case "baseAddress":
-                    builder.setBaseAddress(jsonReader.nextLong());
-                    break;
-                default:
-                    jsonReader.skipValue();
-                    break;
-            }
-        }
-        jsonReader.endObject();
-        return builder.build();
-    }
-
-    private static CrashlyticsReport.Session.Event.Device parseEventDevice(JsonReader jsonReader) {
-        CrashlyticsReport.Session.Event.Device.Builder builder = CrashlyticsReport.Session.Event.Device.builder();
-        jsonReader.beginObject();
-        while (jsonReader.hasNext()) {
-            String nextName = jsonReader.nextName();
-            nextName.hashCode();
-            switch (nextName) {
-                case "batteryLevel":
-                    builder.setBatteryLevel(Double.valueOf(jsonReader.nextDouble()));
-                    break;
-                case "batteryVelocity":
-                    builder.setBatteryVelocity(jsonReader.nextInt());
-                    break;
-                case "orientation":
-                    builder.setOrientation(jsonReader.nextInt());
-                    break;
-                case "diskUsed":
-                    builder.setDiskUsed(jsonReader.nextLong());
-                    break;
-                case "ramUsed":
-                    builder.setRamUsed(jsonReader.nextLong());
-                    break;
-                case "proximityOn":
-                    builder.setProximityOn(jsonReader.nextBoolean());
+                case "importance":
+                    builder.setImportance(jsonReader.nextInt());
                     break;
                 default:
                     jsonReader.skipValue();
@@ -435,104 +576,6 @@ public class CrashlyticsReportJsonTransform {
         return builder.build();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static CrashlyticsReport.Session.Event.Application.Execution.Thread.Frame parseEventFrame(JsonReader jsonReader) {
-        CrashlyticsReport.Session.Event.Application.Execution.Thread.Frame.Builder builder = CrashlyticsReport.Session.Event.Application.Execution.Thread.Frame.builder();
-        jsonReader.beginObject();
-        while (jsonReader.hasNext()) {
-            String nextName = jsonReader.nextName();
-            nextName.hashCode();
-            switch (nextName) {
-                case "offset":
-                    builder.setOffset(jsonReader.nextLong());
-                    break;
-                case "symbol":
-                    builder.setSymbol(jsonReader.nextString());
-                    break;
-                case "pc":
-                    builder.setPc(jsonReader.nextLong());
-                    break;
-                case "file":
-                    builder.setFile(jsonReader.nextString());
-                    break;
-                case "importance":
-                    builder.setImportance(jsonReader.nextInt());
-                    break;
-                default:
-                    jsonReader.skipValue();
-                    break;
-            }
-        }
-        jsonReader.endObject();
-        return builder.build();
-    }
-
-    private static CrashlyticsReport.Session.Event.Log parseEventLog(JsonReader jsonReader) {
-        CrashlyticsReport.Session.Event.Log.Builder builder = CrashlyticsReport.Session.Event.Log.builder();
-        jsonReader.beginObject();
-        while (jsonReader.hasNext()) {
-            if (jsonReader.nextName().equals("content")) {
-                builder.setContent(jsonReader.nextString());
-            } else {
-                jsonReader.skipValue();
-            }
-        }
-        jsonReader.endObject();
-        return builder.build();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static CrashlyticsReport.Session.Event.RolloutAssignment parseEventRolloutsAssignment(JsonReader jsonReader) {
-        CrashlyticsReport.Session.Event.RolloutAssignment.Builder builder = CrashlyticsReport.Session.Event.RolloutAssignment.builder();
-        jsonReader.beginObject();
-        while (jsonReader.hasNext()) {
-            String nextName = jsonReader.nextName();
-            nextName.hashCode();
-            switch (nextName) {
-                case "parameterKey":
-                    builder.setParameterKey(jsonReader.nextString());
-                    break;
-                case "templateVersion":
-                    builder.setTemplateVersion(jsonReader.nextLong());
-                    break;
-                case "rolloutVariant":
-                    builder.setRolloutVariant(parseRolloutAssignmentRolloutVariant(jsonReader));
-                    break;
-                case "parameterValue":
-                    builder.setParameterValue(jsonReader.nextString());
-                    break;
-                default:
-                    jsonReader.skipValue();
-                    break;
-            }
-        }
-        jsonReader.endObject();
-        return builder.build();
-    }
-
-    private static CrashlyticsReport.Session.Event.RolloutsState parseEventRolloutsState(JsonReader jsonReader) {
-        CrashlyticsReport.Session.Event.RolloutsState.Builder builder = CrashlyticsReport.Session.Event.RolloutsState.builder();
-        jsonReader.beginObject();
-        while (jsonReader.hasNext()) {
-            String nextName = jsonReader.nextName();
-            nextName.hashCode();
-            if (nextName.equals("assignments")) {
-                builder.setRolloutAssignments(parseArray(jsonReader, new ObjectParser() { // from class: com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsReportJsonTransform$$ExternalSyntheticLambda5
-                    @Override // com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsReportJsonTransform.ObjectParser
-                    public final Object parse(JsonReader jsonReader2) {
-                        CrashlyticsReport.Session.Event.RolloutAssignment parseEventRolloutsAssignment;
-                        parseEventRolloutsAssignment = CrashlyticsReportJsonTransform.parseEventRolloutsAssignment(jsonReader2);
-                        return parseEventRolloutsAssignment;
-                    }
-                }));
-            } else {
-                jsonReader.skipValue();
-            }
-        }
-        jsonReader.endObject();
-        return builder.build();
-    }
-
     private static CrashlyticsReport.Session.Event.Application.Execution.Signal parseEventSignal(JsonReader jsonReader) {
         CrashlyticsReport.Session.Event.Application.Execution.Signal.Builder builder = CrashlyticsReport.Session.Event.Application.Execution.Signal.builder();
         jsonReader.beginObject();
@@ -548,6 +591,35 @@ public class CrashlyticsReportJsonTransform {
                     break;
                 case "name":
                     builder.setName(jsonReader.nextString());
+                    break;
+                default:
+                    jsonReader.skipValue();
+                    break;
+            }
+        }
+        jsonReader.endObject();
+        return builder.build();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static CrashlyticsReport.Session.Event.Application.Execution.BinaryImage parseEventBinaryImage(JsonReader jsonReader) {
+        CrashlyticsReport.Session.Event.Application.Execution.BinaryImage.Builder builder = CrashlyticsReport.Session.Event.Application.Execution.BinaryImage.builder();
+        jsonReader.beginObject();
+        while (jsonReader.hasNext()) {
+            String nextName = jsonReader.nextName();
+            nextName.hashCode();
+            switch (nextName) {
+                case "name":
+                    builder.setName(jsonReader.nextString());
+                    break;
+                case "size":
+                    builder.setSize(jsonReader.nextLong());
+                    break;
+                case "uuid":
+                    builder.setUuidFromUtf8Bytes(Base64.decode(jsonReader.nextString(), 2));
+                    break;
+                case "baseAddress":
+                    builder.setBaseAddress(jsonReader.nextLong());
                     break;
                 default:
                     jsonReader.skipValue();
@@ -585,93 +657,24 @@ public class CrashlyticsReportJsonTransform {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static CrashlyticsReport.FilesPayload.File parseFile(JsonReader jsonReader) {
-        CrashlyticsReport.FilesPayload.File.Builder builder = CrashlyticsReport.FilesPayload.File.builder();
-        jsonReader.beginObject();
-        while (jsonReader.hasNext()) {
-            String nextName = jsonReader.nextName();
-            nextName.hashCode();
-            if (nextName.equals("filename")) {
-                builder.setFilename(jsonReader.nextString());
-            } else if (nextName.equals("contents")) {
-                builder.setContents(Base64.decode(jsonReader.nextString(), 2));
-            } else {
-                jsonReader.skipValue();
-            }
-        }
-        jsonReader.endObject();
-        return builder.build();
-    }
-
-    private static CrashlyticsReport.FilesPayload parseNdkPayload(JsonReader jsonReader) {
-        CrashlyticsReport.FilesPayload.Builder builder = CrashlyticsReport.FilesPayload.builder();
-        jsonReader.beginObject();
-        while (jsonReader.hasNext()) {
-            String nextName = jsonReader.nextName();
-            nextName.hashCode();
-            if (nextName.equals("files")) {
-                builder.setFiles(parseArray(jsonReader, new ObjectParser() { // from class: com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsReportJsonTransform$$ExternalSyntheticLambda4
-                    @Override // com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsReportJsonTransform.ObjectParser
-                    public final Object parse(JsonReader jsonReader2) {
-                        CrashlyticsReport.FilesPayload.File parseFile;
-                        parseFile = CrashlyticsReportJsonTransform.parseFile(jsonReader2);
-                        return parseFile;
-                    }
-                }));
-            } else if (nextName.equals("orgId")) {
-                builder.setOrgId(jsonReader.nextString());
-            } else {
-                jsonReader.skipValue();
-            }
-        }
-        jsonReader.endObject();
-        return builder.build();
-    }
-
-    private static CrashlyticsReport.Session.OperatingSystem parseOs(JsonReader jsonReader) {
-        CrashlyticsReport.Session.OperatingSystem.Builder builder = CrashlyticsReport.Session.OperatingSystem.builder();
+    public static CrashlyticsReport.Session.Event.Application.Execution.Thread.Frame parseEventFrame(JsonReader jsonReader) {
+        CrashlyticsReport.Session.Event.Application.Execution.Thread.Frame.Builder builder = CrashlyticsReport.Session.Event.Application.Execution.Thread.Frame.builder();
         jsonReader.beginObject();
         while (jsonReader.hasNext()) {
             String nextName = jsonReader.nextName();
             nextName.hashCode();
             switch (nextName) {
-                case "buildVersion":
-                    builder.setBuildVersion(jsonReader.nextString());
+                case "offset":
+                    builder.setOffset(jsonReader.nextLong());
                     break;
-                case "jailbroken":
-                    builder.setJailbroken(jsonReader.nextBoolean());
+                case "symbol":
+                    builder.setSymbol(jsonReader.nextString());
                     break;
-                case "version":
-                    builder.setVersion(jsonReader.nextString());
+                case "pc":
+                    builder.setPc(jsonReader.nextLong());
                     break;
-                case "platform":
-                    builder.setPlatform(jsonReader.nextInt());
-                    break;
-                default:
-                    jsonReader.skipValue();
-                    break;
-            }
-        }
-        jsonReader.endObject();
-        return builder.build();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static CrashlyticsReport.Session.Event.Application.ProcessDetails parseProcessDetails(JsonReader jsonReader) {
-        CrashlyticsReport.Session.Event.Application.ProcessDetails.Builder builder = CrashlyticsReport.Session.Event.Application.ProcessDetails.builder();
-        jsonReader.beginObject();
-        while (jsonReader.hasNext()) {
-            String nextName = jsonReader.nextName();
-            nextName.hashCode();
-            switch (nextName) {
-                case "pid":
-                    builder.setPid(jsonReader.nextInt());
-                    break;
-                case "processName":
-                    builder.setProcessName(jsonReader.nextString());
-                    break;
-                case "defaultProcess":
-                    builder.setDefaultProcess(jsonReader.nextBoolean());
+                case "file":
+                    builder.setFile(jsonReader.nextString());
                     break;
                 case "importance":
                     builder.setImportance(jsonReader.nextInt());
@@ -685,45 +688,96 @@ public class CrashlyticsReportJsonTransform {
         return builder.build();
     }
 
-    private static CrashlyticsReport parseReport(JsonReader jsonReader) {
-        CrashlyticsReport.Builder builder = CrashlyticsReport.builder();
+    private static CrashlyticsReport.Session.Event.Device parseEventDevice(JsonReader jsonReader) {
+        CrashlyticsReport.Session.Event.Device.Builder builder = CrashlyticsReport.Session.Event.Device.builder();
         jsonReader.beginObject();
         while (jsonReader.hasNext()) {
             String nextName = jsonReader.nextName();
             nextName.hashCode();
             switch (nextName) {
-                case "ndkPayload":
-                    builder.setNdkPayload(parseNdkPayload(jsonReader));
+                case "batteryLevel":
+                    builder.setBatteryLevel(Double.valueOf(jsonReader.nextDouble()));
                     break;
-                case "sdkVersion":
-                    builder.setSdkVersion(jsonReader.nextString());
+                case "batteryVelocity":
+                    builder.setBatteryVelocity(jsonReader.nextInt());
                     break;
-                case "appQualitySessionId":
-                    builder.setAppQualitySessionId(jsonReader.nextString());
+                case "orientation":
+                    builder.setOrientation(jsonReader.nextInt());
                     break;
-                case "appExitInfo":
-                    builder.setAppExitInfo(parseAppExitInfo(jsonReader));
+                case "diskUsed":
+                    builder.setDiskUsed(jsonReader.nextLong());
                     break;
-                case "buildVersion":
-                    builder.setBuildVersion(jsonReader.nextString());
+                case "ramUsed":
+                    builder.setRamUsed(jsonReader.nextLong());
                     break;
-                case "gmpAppId":
-                    builder.setGmpAppId(jsonReader.nextString());
+                case "proximityOn":
+                    builder.setProximityOn(jsonReader.nextBoolean());
                     break;
-                case "installationUuid":
-                    builder.setInstallationUuid(jsonReader.nextString());
+                default:
+                    jsonReader.skipValue();
                     break;
-                case "firebaseInstallationId":
-                    builder.setFirebaseInstallationId(jsonReader.nextString());
+            }
+        }
+        jsonReader.endObject();
+        return builder.build();
+    }
+
+    private static CrashlyticsReport.Session.Event.Log parseEventLog(JsonReader jsonReader) {
+        CrashlyticsReport.Session.Event.Log.Builder builder = CrashlyticsReport.Session.Event.Log.builder();
+        jsonReader.beginObject();
+        while (jsonReader.hasNext()) {
+            if (jsonReader.nextName().equals("content")) {
+                builder.setContent(jsonReader.nextString());
+            } else {
+                jsonReader.skipValue();
+            }
+        }
+        jsonReader.endObject();
+        return builder.build();
+    }
+
+    private static CrashlyticsReport.Session.Event.RolloutsState parseEventRolloutsState(JsonReader jsonReader) {
+        CrashlyticsReport.Session.Event.RolloutsState.Builder builder = CrashlyticsReport.Session.Event.RolloutsState.builder();
+        jsonReader.beginObject();
+        while (jsonReader.hasNext()) {
+            String nextName = jsonReader.nextName();
+            nextName.hashCode();
+            if (nextName.equals("assignments")) {
+                builder.setRolloutAssignments(parseArray(jsonReader, new ObjectParser() { // from class: com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsReportJsonTransform$$ExternalSyntheticLambda5
+                    @Override // com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsReportJsonTransform.ObjectParser
+                    public final Object parse(JsonReader jsonReader2) {
+                        CrashlyticsReport.Session.Event.RolloutAssignment parseEventRolloutsAssignment;
+                        parseEventRolloutsAssignment = CrashlyticsReportJsonTransform.parseEventRolloutsAssignment(jsonReader2);
+                        return parseEventRolloutsAssignment;
+                    }
+                }));
+            } else {
+                jsonReader.skipValue();
+            }
+        }
+        jsonReader.endObject();
+        return builder.build();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static CrashlyticsReport.Session.Event.RolloutAssignment parseEventRolloutsAssignment(JsonReader jsonReader) {
+        CrashlyticsReport.Session.Event.RolloutAssignment.Builder builder = CrashlyticsReport.Session.Event.RolloutAssignment.builder();
+        jsonReader.beginObject();
+        while (jsonReader.hasNext()) {
+            String nextName = jsonReader.nextName();
+            nextName.hashCode();
+            switch (nextName) {
+                case "parameterKey":
+                    builder.setParameterKey(jsonReader.nextString());
                     break;
-                case "platform":
-                    builder.setPlatform(jsonReader.nextInt());
+                case "templateVersion":
+                    builder.setTemplateVersion(jsonReader.nextLong());
                     break;
-                case "displayVersion":
-                    builder.setDisplayVersion(jsonReader.nextString());
+                case "rolloutVariant":
+                    builder.setRolloutVariant(parseRolloutAssignmentRolloutVariant(jsonReader));
                     break;
-                case "session":
-                    builder.setSession(parseSession(jsonReader));
+                case "parameterValue":
+                    builder.setParameterValue(jsonReader.nextString());
                     break;
                 default:
                     jsonReader.skipValue();
@@ -752,55 +806,41 @@ public class CrashlyticsReportJsonTransform {
         return builder.build();
     }
 
-    private static CrashlyticsReport.Session parseSession(JsonReader jsonReader) {
-        CrashlyticsReport.Session.Builder builder = CrashlyticsReport.Session.builder();
+    /* JADX INFO: Access modifiers changed from: private */
+    public static CrashlyticsReport.CustomAttribute parseCustomAttribute(JsonReader jsonReader) {
+        CrashlyticsReport.CustomAttribute.Builder builder = CrashlyticsReport.CustomAttribute.builder();
+        jsonReader.beginObject();
+        while (jsonReader.hasNext()) {
+            String nextName = jsonReader.nextName();
+            nextName.hashCode();
+            if (nextName.equals("key")) {
+                builder.setKey(jsonReader.nextString());
+            } else if (nextName.equals("value")) {
+                builder.setValue(jsonReader.nextString());
+            } else {
+                jsonReader.skipValue();
+            }
+        }
+        jsonReader.endObject();
+        return builder.build();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static CrashlyticsReport.ApplicationExitInfo.BuildIdMappingForArch parseBuildIdMappingForArch(JsonReader jsonReader) {
+        CrashlyticsReport.ApplicationExitInfo.BuildIdMappingForArch.Builder builder = CrashlyticsReport.ApplicationExitInfo.BuildIdMappingForArch.builder();
         jsonReader.beginObject();
         while (jsonReader.hasNext()) {
             String nextName = jsonReader.nextName();
             nextName.hashCode();
             switch (nextName) {
-                case "startedAt":
-                    builder.setStartedAt(jsonReader.nextLong());
+                case "libraryName":
+                    builder.setLibraryName(jsonReader.nextString());
                     break;
-                case "appQualitySessionId":
-                    builder.setAppQualitySessionId(jsonReader.nextString());
+                case "arch":
+                    builder.setArch(jsonReader.nextString());
                     break;
-                case "identifier":
-                    builder.setIdentifierFromUtf8Bytes(Base64.decode(jsonReader.nextString(), 2));
-                    break;
-                case "endedAt":
-                    builder.setEndedAt(Long.valueOf(jsonReader.nextLong()));
-                    break;
-                case "device":
-                    builder.setDevice(parseDevice(jsonReader));
-                    break;
-                case "events":
-                    builder.setEvents(parseArray(jsonReader, new ObjectParser() { // from class: com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsReportJsonTransform$$ExternalSyntheticLambda3
-                        @Override // com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsReportJsonTransform.ObjectParser
-                        public final Object parse(JsonReader jsonReader2) {
-                            CrashlyticsReport.Session.Event parseEvent;
-                            parseEvent = CrashlyticsReportJsonTransform.parseEvent(jsonReader2);
-                            return parseEvent;
-                        }
-                    }));
-                    break;
-                case "os":
-                    builder.setOs(parseOs(jsonReader));
-                    break;
-                case "app":
-                    builder.setApp(parseApp(jsonReader));
-                    break;
-                case "user":
-                    builder.setUser(parseUser(jsonReader));
-                    break;
-                case "generator":
-                    builder.setGenerator(jsonReader.nextString());
-                    break;
-                case "crashed":
-                    builder.setCrashed(jsonReader.nextBoolean());
-                    break;
-                case "generatorType":
-                    builder.setGeneratorType(jsonReader.nextInt());
+                case "buildId":
+                    builder.setBuildId(jsonReader.nextString());
                     break;
                 default:
                     jsonReader.skipValue();
@@ -811,53 +851,13 @@ public class CrashlyticsReportJsonTransform {
         return builder.build();
     }
 
-    private static CrashlyticsReport.Session.User parseUser(JsonReader jsonReader) {
-        CrashlyticsReport.Session.User.Builder builder = CrashlyticsReport.Session.User.builder();
-        jsonReader.beginObject();
+    private static List parseArray(JsonReader jsonReader, ObjectParser objectParser) {
+        ArrayList arrayList = new ArrayList();
+        jsonReader.beginArray();
         while (jsonReader.hasNext()) {
-            if (jsonReader.nextName().equals("identifier")) {
-                builder.setIdentifier(jsonReader.nextString());
-            } else {
-                jsonReader.skipValue();
-            }
+            arrayList.add(objectParser.parse(jsonReader));
         }
-        jsonReader.endObject();
-        return builder.build();
-    }
-
-    public CrashlyticsReport.Session.Event eventFromJson(String str) {
-        try {
-            JsonReader jsonReader = new JsonReader(new StringReader(str));
-            try {
-                CrashlyticsReport.Session.Event parseEvent = parseEvent(jsonReader);
-                jsonReader.close();
-                return parseEvent;
-            } finally {
-            }
-        } catch (IllegalStateException e) {
-            throw new IOException(e);
-        }
-    }
-
-    public String eventToJson(CrashlyticsReport.Session.Event event) {
-        return CRASHLYTICS_REPORT_JSON_ENCODER.encode(event);
-    }
-
-    public CrashlyticsReport reportFromJson(String str) {
-        try {
-            JsonReader jsonReader = new JsonReader(new StringReader(str));
-            try {
-                CrashlyticsReport parseReport = parseReport(jsonReader);
-                jsonReader.close();
-                return parseReport;
-            } finally {
-            }
-        } catch (IllegalStateException e) {
-            throw new IOException(e);
-        }
-    }
-
-    public String reportToJson(CrashlyticsReport crashlyticsReport) {
-        return CRASHLYTICS_REPORT_JSON_ENCODER.encode(crashlyticsReport);
+        jsonReader.endArray();
+        return Collections.unmodifiableList(arrayList);
     }
 }

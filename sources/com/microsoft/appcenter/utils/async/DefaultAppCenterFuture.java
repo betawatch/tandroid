@@ -7,30 +7,11 @@ import java.util.LinkedList;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class DefaultAppCenterFuture implements AppCenterFuture {
     private Collection mConsumers;
     private final CountDownLatch mLatch = new CountDownLatch(1);
     private Object mResult;
-
-    public synchronized void complete(final Object obj) {
-        if (!isDone()) {
-            this.mResult = obj;
-            this.mLatch.countDown();
-            if (this.mConsumers != null) {
-                HandlerUtils.runOnUiThread(new Runnable() { // from class: com.microsoft.appcenter.utils.async.DefaultAppCenterFuture.2
-                    @Override // java.lang.Runnable
-                    public void run() {
-                        Iterator it = DefaultAppCenterFuture.this.mConsumers.iterator();
-                        while (it.hasNext()) {
-                            ((AppCenterConsumer) it.next()).accept(obj);
-                        }
-                        DefaultAppCenterFuture.this.mConsumers = null;
-                    }
-                });
-            }
-        }
-    }
 
     @Override // com.microsoft.appcenter.utils.async.AppCenterFuture
     public Object get() {
@@ -70,6 +51,25 @@ public class DefaultAppCenterFuture implements AppCenterFuture {
             }
         } catch (Throwable th) {
             throw th;
+        }
+    }
+
+    public synchronized void complete(final Object obj) {
+        if (!isDone()) {
+            this.mResult = obj;
+            this.mLatch.countDown();
+            if (this.mConsumers != null) {
+                HandlerUtils.runOnUiThread(new Runnable() { // from class: com.microsoft.appcenter.utils.async.DefaultAppCenterFuture.2
+                    @Override // java.lang.Runnable
+                    public void run() {
+                        Iterator it = DefaultAppCenterFuture.this.mConsumers.iterator();
+                        while (it.hasNext()) {
+                            ((AppCenterConsumer) it.next()).accept(obj);
+                        }
+                        DefaultAppCenterFuture.this.mConsumers = null;
+                    }
+                });
+            }
         }
     }
 }

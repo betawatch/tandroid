@@ -38,8 +38,125 @@ public class EndCloseLayout extends FrameLayout {
     private boolean isClosedState;
     private final TransitionSet transitionSet;
 
+    public EndCloseLayout(Context context) {
+        super(context);
+        this.isClosedState = false;
+        setWillNotDraw(false);
+        EndCloseView endCloseView = new EndCloseView(context);
+        this.endCloseView = endCloseView;
+        addView(endCloseView, LayoutHelper.createFrame(52, 52, 5));
+        TransitionSet transitionSet = new TransitionSet();
+        this.transitionSet = transitionSet;
+        transitionSet.setOrdering(0);
+        transitionSet.addTransition(new 1());
+        transitionSet.setDuration(500L);
+        transitionSet.setInterpolator((TimeInterpolator) CubicBezierInterpolator.DEFAULT);
+    }
+
     class 1 extends ChangeBounds {
         1() {
+        }
+
+        @Override // android.transition.ChangeBounds, android.transition.Transition
+        public void captureStartValues(TransitionValues transitionValues) {
+            super.captureStartValues(transitionValues);
+            View view = transitionValues.view;
+            if (view instanceof EndCloseView) {
+                EndCloseView endCloseView = (EndCloseView) view;
+                int i = endCloseView.backColor;
+                int i2 = endCloseView.round;
+                int i3 = endCloseView.callDeclineAlpha;
+                int i4 = endCloseView.closeTextAlpha;
+                transitionValues.values.put("back_color_end_close", Integer.valueOf(i));
+                transitionValues.values.put("round_end_close", Integer.valueOf(i2));
+                transitionValues.values.put("decline_call_alpha_end_close", Integer.valueOf(i3));
+                transitionValues.values.put("close_text_alpha_end_close", Integer.valueOf(i4));
+            }
+        }
+
+        @Override // android.transition.ChangeBounds, android.transition.Transition
+        public void captureEndValues(TransitionValues transitionValues) {
+            super.captureEndValues(transitionValues);
+            View view = transitionValues.view;
+            if (view instanceof EndCloseView) {
+                EndCloseView endCloseView = (EndCloseView) view;
+                int i = endCloseView.backColor;
+                int i2 = endCloseView.round;
+                int i3 = endCloseView.callDeclineAlpha;
+                int i4 = endCloseView.closeTextAlpha;
+                transitionValues.values.put("back_color_end_close", Integer.valueOf(i));
+                transitionValues.values.put("round_end_close", Integer.valueOf(i2));
+                transitionValues.values.put("decline_call_alpha_end_close", Integer.valueOf(i3));
+                transitionValues.values.put("close_text_alpha_end_close", Integer.valueOf(i4));
+            }
+        }
+
+        @Override // android.transition.ChangeBounds, android.transition.Transition
+        public Animator createAnimator(ViewGroup viewGroup, final TransitionValues transitionValues, TransitionValues transitionValues2) {
+            if (transitionValues != null && transitionValues2 != null && (transitionValues.view instanceof EndCloseView)) {
+                AnimatorSet animatorSet = new AnimatorSet();
+                Animator createAnimator = super.createAnimator(viewGroup, transitionValues, transitionValues2);
+                if (createAnimator != null) {
+                    animatorSet.playTogether(createAnimator);
+                }
+                Integer num = (Integer) transitionValues.values.get("back_color_end_close");
+                Integer num2 = (Integer) transitionValues2.values.get("back_color_end_close");
+                Integer num3 = (Integer) transitionValues.values.get("round_end_close");
+                Integer num4 = (Integer) transitionValues2.values.get("round_end_close");
+                Integer num5 = (Integer) transitionValues.values.get("decline_call_alpha_end_close");
+                Integer num6 = (Integer) transitionValues2.values.get("decline_call_alpha_end_close");
+                Integer num7 = (Integer) transitionValues.values.get("close_text_alpha_end_close");
+                Integer num8 = (Integer) transitionValues2.values.get("close_text_alpha_end_close");
+                ValueAnimator valueAnimator = new ValueAnimator();
+                valueAnimator.setIntValues(num.intValue(), num2.intValue());
+                valueAnimator.setEvaluator(new ArgbEvaluator());
+                valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.EndCloseLayout$1$$ExternalSyntheticLambda0
+                    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                    public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
+                        EndCloseLayout.1.lambda$createAnimator$0(transitionValues, valueAnimator2);
+                    }
+                });
+                animatorSet.playTogether(valueAnimator);
+                ValueAnimator ofInt = ValueAnimator.ofInt(num3.intValue(), num4.intValue());
+                ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.EndCloseLayout$1$$ExternalSyntheticLambda1
+                    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                    public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
+                        EndCloseLayout.1.lambda$createAnimator$1(transitionValues, valueAnimator2);
+                    }
+                });
+                animatorSet.playTogether(ofInt);
+                ValueAnimator ofInt2 = ValueAnimator.ofInt(num5.intValue(), num6.intValue(), num6.intValue(), num6.intValue(), num6.intValue(), num6.intValue(), num6.intValue());
+                ofInt2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.EndCloseLayout$1$$ExternalSyntheticLambda2
+                    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                    public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
+                        EndCloseLayout.1.lambda$createAnimator$2(transitionValues, valueAnimator2);
+                    }
+                });
+                animatorSet.playTogether(ofInt2);
+                ValueAnimator ofInt3 = ValueAnimator.ofInt(num7.intValue(), num7.intValue(), (int) (num8.intValue() * 0.25f), (int) (num8.intValue() * 0.5f), (int) (num8.intValue() * 0.75f), num8.intValue());
+                ofInt3.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.EndCloseLayout$1$$ExternalSyntheticLambda3
+                    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                    public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
+                        EndCloseLayout.1.lambda$createAnimator$3(transitionValues, valueAnimator2);
+                    }
+                });
+                animatorSet.playTogether(ofInt3);
+                animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.voip.EndCloseLayout.1.1
+                    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+                    public void onAnimationStart(Animator animator) {
+                        super.onAnimationStart(animator);
+                        transitionValues.view.setEnabled(false);
+                    }
+
+                    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+                    public void onAnimationEnd(Animator animator) {
+                        super.onAnimationEnd(animator);
+                        transitionValues.view.setEnabled(true);
+                    }
+                });
+                return animatorSet;
+            }
+            return super.createAnimator(viewGroup, transitionValues, transitionValues2);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -61,108 +178,39 @@ public class EndCloseLayout extends FrameLayout {
         public static /* synthetic */ void lambda$createAnimator$3(TransitionValues transitionValues, ValueAnimator valueAnimator) {
             ((EndCloseView) transitionValues.view).closeTextAlpha = ((Integer) valueAnimator.getAnimatedValue()).intValue();
         }
+    }
 
-        @Override // android.transition.ChangeBounds, android.transition.Transition
-        public void captureEndValues(TransitionValues transitionValues) {
-            super.captureEndValues(transitionValues);
-            View view = transitionValues.view;
-            if (view instanceof EndCloseView) {
-                EndCloseView endCloseView = (EndCloseView) view;
-                int i = endCloseView.backColor;
-                int i2 = endCloseView.round;
-                int i3 = endCloseView.callDeclineAlpha;
-                int i4 = endCloseView.closeTextAlpha;
-                transitionValues.values.put("back_color_end_close", Integer.valueOf(i));
-                transitionValues.values.put("round_end_close", Integer.valueOf(i2));
-                transitionValues.values.put("decline_call_alpha_end_close", Integer.valueOf(i3));
-                transitionValues.values.put("close_text_alpha_end_close", Integer.valueOf(i4));
-            }
+    public EndCloseView getEndCloseView() {
+        return this.endCloseView;
+    }
+
+    public void switchToClose(final View.OnClickListener onClickListener, boolean z) {
+        if (this.isClosedState) {
+            return;
         }
-
-        @Override // android.transition.ChangeBounds, android.transition.Transition
-        public void captureStartValues(TransitionValues transitionValues) {
-            super.captureStartValues(transitionValues);
-            View view = transitionValues.view;
-            if (view instanceof EndCloseView) {
-                EndCloseView endCloseView = (EndCloseView) view;
-                int i = endCloseView.backColor;
-                int i2 = endCloseView.round;
-                int i3 = endCloseView.callDeclineAlpha;
-                int i4 = endCloseView.closeTextAlpha;
-                transitionValues.values.put("back_color_end_close", Integer.valueOf(i));
-                transitionValues.values.put("round_end_close", Integer.valueOf(i2));
-                transitionValues.values.put("decline_call_alpha_end_close", Integer.valueOf(i3));
-                transitionValues.values.put("close_text_alpha_end_close", Integer.valueOf(i4));
-            }
+        this.isClosedState = true;
+        if (z) {
+            TransitionManager.beginDelayedTransition(this, this.transitionSet);
         }
-
-        @Override // android.transition.ChangeBounds, android.transition.Transition
-        public Animator createAnimator(ViewGroup viewGroup, final TransitionValues transitionValues, TransitionValues transitionValues2) {
-            if (transitionValues == null || transitionValues2 == null || !(transitionValues.view instanceof EndCloseView)) {
-                return super.createAnimator(viewGroup, transitionValues, transitionValues2);
+        EndCloseView endCloseView = this.endCloseView;
+        endCloseView.closeTextAlpha = NotificationCenter.goingToPreviewTheme;
+        endCloseView.backColor = -1;
+        endCloseView.callDeclineAlpha = 0;
+        endCloseView.round = AndroidUtilities.dp(8.0f);
+        ViewGroup.LayoutParams layoutParams = this.endCloseView.getLayoutParams();
+        layoutParams.width = -1;
+        this.endCloseView.setLayoutParams(layoutParams);
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.voip.EndCloseLayout$$ExternalSyntheticLambda0
+            @Override // java.lang.Runnable
+            public final void run() {
+                EndCloseLayout.this.lambda$switchToClose$0(onClickListener);
             }
-            AnimatorSet animatorSet = new AnimatorSet();
-            Animator createAnimator = super.createAnimator(viewGroup, transitionValues, transitionValues2);
-            if (createAnimator != null) {
-                animatorSet.playTogether(createAnimator);
-            }
-            Integer num = (Integer) transitionValues.values.get("back_color_end_close");
-            Integer num2 = (Integer) transitionValues2.values.get("back_color_end_close");
-            Integer num3 = (Integer) transitionValues.values.get("round_end_close");
-            Integer num4 = (Integer) transitionValues2.values.get("round_end_close");
-            Integer num5 = (Integer) transitionValues.values.get("decline_call_alpha_end_close");
-            Integer num6 = (Integer) transitionValues2.values.get("decline_call_alpha_end_close");
-            Integer num7 = (Integer) transitionValues.values.get("close_text_alpha_end_close");
-            Integer num8 = (Integer) transitionValues2.values.get("close_text_alpha_end_close");
-            ValueAnimator valueAnimator = new ValueAnimator();
-            valueAnimator.setIntValues(num.intValue(), num2.intValue());
-            valueAnimator.setEvaluator(new ArgbEvaluator());
-            valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.EndCloseLayout$1$$ExternalSyntheticLambda0
-                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    EndCloseLayout.1.lambda$createAnimator$0(transitionValues, valueAnimator2);
-                }
-            });
-            animatorSet.playTogether(valueAnimator);
-            ValueAnimator ofInt = ValueAnimator.ofInt(num3.intValue(), num4.intValue());
-            ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.EndCloseLayout$1$$ExternalSyntheticLambda1
-                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    EndCloseLayout.1.lambda$createAnimator$1(transitionValues, valueAnimator2);
-                }
-            });
-            animatorSet.playTogether(ofInt);
-            ValueAnimator ofInt2 = ValueAnimator.ofInt(num5.intValue(), num6.intValue(), num6.intValue(), num6.intValue(), num6.intValue(), num6.intValue(), num6.intValue());
-            ofInt2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.EndCloseLayout$1$$ExternalSyntheticLambda2
-                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    EndCloseLayout.1.lambda$createAnimator$2(transitionValues, valueAnimator2);
-                }
-            });
-            animatorSet.playTogether(ofInt2);
-            ValueAnimator ofInt3 = ValueAnimator.ofInt(num7.intValue(), num7.intValue(), (int) (num8.intValue() * 0.25f), (int) (num8.intValue() * 0.5f), (int) (num8.intValue() * 0.75f), num8.intValue());
-            ofInt3.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.EndCloseLayout$1$$ExternalSyntheticLambda3
-                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    EndCloseLayout.1.lambda$createAnimator$3(transitionValues, valueAnimator2);
-                }
-            });
-            animatorSet.playTogether(ofInt3);
-            animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.voip.EndCloseLayout.1.1
-                @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-                public void onAnimationEnd(Animator animator) {
-                    super.onAnimationEnd(animator);
-                    transitionValues.view.setEnabled(true);
-                }
+        }, 500L);
+    }
 
-                @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-                public void onAnimationStart(Animator animator) {
-                    super.onAnimationStart(animator);
-                    transitionValues.view.setEnabled(false);
-                }
-            });
-            return animatorSet;
-        }
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$switchToClose$0(View.OnClickListener onClickListener) {
+        this.endCloseView.setOnClickListener(onClickListener);
     }
 
     static class EndCloseView extends View {
@@ -209,14 +257,6 @@ public class EndCloseLayout extends FrameLayout {
         }
 
         @Override // android.view.View
-        public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-            if (isEnabled()) {
-                return super.dispatchTouchEvent(motionEvent);
-            }
-            return false;
-        }
-
-        @Override // android.view.View
         protected void drawableStateChanged() {
             super.drawableStateChanged();
             Drawable drawable = this.rippleDrawable;
@@ -226,12 +266,25 @@ public class EndCloseLayout extends FrameLayout {
         }
 
         @Override // android.view.View
+        public boolean verifyDrawable(Drawable drawable) {
+            return this.rippleDrawable == drawable || super.verifyDrawable(drawable);
+        }
+
+        @Override // android.view.View
         public void jumpDrawablesToCurrentState() {
             super.jumpDrawablesToCurrentState();
             Drawable drawable = this.rippleDrawable;
             if (drawable != null) {
                 drawable.jumpToCurrentState();
             }
+        }
+
+        @Override // android.view.View
+        public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+            if (isEnabled()) {
+                return super.dispatchTouchEvent(motionEvent);
+            }
+            return false;
         }
 
         @Override // android.view.View
@@ -258,58 +311,5 @@ public class EndCloseLayout extends FrameLayout {
             this.rippleDrawable.setBounds(0, 0, getWidth(), getHeight());
             this.rippleDrawable.draw(canvas);
         }
-
-        @Override // android.view.View
-        public boolean verifyDrawable(Drawable drawable) {
-            return this.rippleDrawable == drawable || super.verifyDrawable(drawable);
-        }
-    }
-
-    public EndCloseLayout(Context context) {
-        super(context);
-        this.isClosedState = false;
-        setWillNotDraw(false);
-        EndCloseView endCloseView = new EndCloseView(context);
-        this.endCloseView = endCloseView;
-        addView(endCloseView, LayoutHelper.createFrame(52, 52, 5));
-        TransitionSet transitionSet = new TransitionSet();
-        this.transitionSet = transitionSet;
-        transitionSet.setOrdering(0);
-        transitionSet.addTransition(new 1());
-        transitionSet.setDuration(500L);
-        transitionSet.setInterpolator((TimeInterpolator) CubicBezierInterpolator.DEFAULT);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$switchToClose$0(View.OnClickListener onClickListener) {
-        this.endCloseView.setOnClickListener(onClickListener);
-    }
-
-    public EndCloseView getEndCloseView() {
-        return this.endCloseView;
-    }
-
-    public void switchToClose(final View.OnClickListener onClickListener, boolean z) {
-        if (this.isClosedState) {
-            return;
-        }
-        this.isClosedState = true;
-        if (z) {
-            TransitionManager.beginDelayedTransition(this, this.transitionSet);
-        }
-        EndCloseView endCloseView = this.endCloseView;
-        endCloseView.closeTextAlpha = NotificationCenter.goingToPreviewTheme;
-        endCloseView.backColor = -1;
-        endCloseView.callDeclineAlpha = 0;
-        endCloseView.round = AndroidUtilities.dp(8.0f);
-        ViewGroup.LayoutParams layoutParams = this.endCloseView.getLayoutParams();
-        layoutParams.width = -1;
-        this.endCloseView.setLayoutParams(layoutParams);
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.voip.EndCloseLayout$$ExternalSyntheticLambda0
-            @Override // java.lang.Runnable
-            public final void run() {
-                EndCloseLayout.this.lambda$switchToClose$0(onClickListener);
-            }
-        }, 500L);
     }
 }

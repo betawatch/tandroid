@@ -20,6 +20,13 @@ public abstract class TimelineQueueNavigator implements MediaSessionConnector.Qu
     private final MediaSessionCompat mediaSession;
     private final Timeline.Window window;
 
+    public abstract MediaDescriptionCompat getMediaDescription(Player player, int i);
+
+    @Override // com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector.CommandReceiver
+    public boolean onCommand(Player player, String str, Bundle bundle, ResultReceiver resultReceiver) {
+        return false;
+    }
+
     public TimelineQueueNavigator(MediaSessionCompat mediaSessionCompat) {
         this(mediaSessionCompat, 10);
     }
@@ -31,41 +38,6 @@ public abstract class TimelineQueueNavigator implements MediaSessionConnector.Qu
         this.activeQueueItemId = -1L;
         this.window = new Timeline.Window();
     }
-
-    private void publishFloatingQueueWindow(Player player) {
-        Timeline currentTimeline = player.getCurrentTimeline();
-        if (currentTimeline.isEmpty()) {
-            this.mediaSession.setQueue(Collections.emptyList());
-            this.activeQueueItemId = -1L;
-            return;
-        }
-        ArrayDeque arrayDeque = new ArrayDeque();
-        int min = Math.min(this.maxQueueSize, currentTimeline.getWindowCount());
-        int currentMediaItemIndex = player.getCurrentMediaItemIndex();
-        long j = currentMediaItemIndex;
-        arrayDeque.add(new MediaSessionCompat.QueueItem(getMediaDescription(player, currentMediaItemIndex), j));
-        boolean shuffleModeEnabled = player.getShuffleModeEnabled();
-        int i = currentMediaItemIndex;
-        while (true) {
-            if ((currentMediaItemIndex != -1 || i != -1) && arrayDeque.size() < min) {
-                if (i != -1 && (i = currentTimeline.getNextWindowIndex(i, 0, shuffleModeEnabled)) != -1) {
-                    arrayDeque.add(new MediaSessionCompat.QueueItem(getMediaDescription(player, i), i));
-                }
-                if (currentMediaItemIndex != -1 && arrayDeque.size() < min && (currentMediaItemIndex = currentTimeline.getPreviousWindowIndex(currentMediaItemIndex, 0, shuffleModeEnabled)) != -1) {
-                    arrayDeque.addFirst(new MediaSessionCompat.QueueItem(getMediaDescription(player, currentMediaItemIndex), currentMediaItemIndex));
-                }
-            }
-        }
-        this.mediaSession.setQueue(new ArrayList(arrayDeque));
-        this.activeQueueItemId = j;
-    }
-
-    @Override // com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector.QueueNavigator
-    public final long getActiveQueueItemId(Player player) {
-        return this.activeQueueItemId;
-    }
-
-    public abstract MediaDescriptionCompat getMediaDescription(Player player, int i);
 
     @Override // com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector.QueueNavigator
     public long getSupportedQueueNavigatorActions(Player player) {
@@ -95,9 +67,9 @@ public abstract class TimelineQueueNavigator implements MediaSessionConnector.Qu
         return z ? j | 32 : j;
     }
 
-    @Override // com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector.CommandReceiver
-    public boolean onCommand(Player player, String str, Bundle bundle, ResultReceiver resultReceiver) {
-        return false;
+    @Override // com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector.QueueNavigator
+    public final void onTimelineChanged(Player player) {
+        publishFloatingQueueWindow(player);
     }
 
     @Override // com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector.QueueNavigator
@@ -113,8 +85,8 @@ public abstract class TimelineQueueNavigator implements MediaSessionConnector.Qu
     }
 
     @Override // com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector.QueueNavigator
-    public void onSkipToNext(Player player) {
-        player.seekToNext();
+    public final long getActiveQueueItemId(Player player) {
+        return this.activeQueueItemId;
     }
 
     @Override // com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector.QueueNavigator
@@ -133,7 +105,35 @@ public abstract class TimelineQueueNavigator implements MediaSessionConnector.Qu
     }
 
     @Override // com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector.QueueNavigator
-    public final void onTimelineChanged(Player player) {
-        publishFloatingQueueWindow(player);
+    public void onSkipToNext(Player player) {
+        player.seekToNext();
+    }
+
+    private void publishFloatingQueueWindow(Player player) {
+        Timeline currentTimeline = player.getCurrentTimeline();
+        if (currentTimeline.isEmpty()) {
+            this.mediaSession.setQueue(Collections.emptyList());
+            this.activeQueueItemId = -1L;
+            return;
+        }
+        ArrayDeque arrayDeque = new ArrayDeque();
+        int min = Math.min(this.maxQueueSize, currentTimeline.getWindowCount());
+        int currentMediaItemIndex = player.getCurrentMediaItemIndex();
+        long j = currentMediaItemIndex;
+        arrayDeque.add(new MediaSessionCompat.QueueItem(getMediaDescription(player, currentMediaItemIndex), j));
+        boolean shuffleModeEnabled = player.getShuffleModeEnabled();
+        int i = currentMediaItemIndex;
+        while (true) {
+            if ((currentMediaItemIndex != -1 || i != -1) && arrayDeque.size() < min) {
+                if (i != -1 && (i = currentTimeline.getNextWindowIndex(i, 0, shuffleModeEnabled)) != -1) {
+                    arrayDeque.add(new MediaSessionCompat.QueueItem(getMediaDescription(player, i), i));
+                }
+                if (currentMediaItemIndex != -1 && arrayDeque.size() < min && (currentMediaItemIndex = currentTimeline.getPreviousWindowIndex(currentMediaItemIndex, 0, shuffleModeEnabled)) != -1) {
+                    arrayDeque.addFirst(new MediaSessionCompat.QueueItem(getMediaDescription(player, currentMediaItemIndex), currentMediaItemIndex));
+                }
+            }
+        }
+        this.mediaSession.setQueue(new ArrayList(arrayDeque));
+        this.activeQueueItemId = j;
     }
 }

@@ -6,31 +6,18 @@ import android.graphics.drawable.Drawable;
 import androidx.mediarouter.app.MediaRouteButton;
 import java.lang.reflect.Field;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class CastMediaRouteButton extends MediaRouteButton {
     private boolean lastConnected;
 
+    @Override // android.view.View
+    public void setBackground(Drawable drawable) {
+    }
+
+    public abstract void stateUpdated(boolean z);
+
     public CastMediaRouteButton(Context context) {
         super(context);
-    }
-
-    private void checkConnected() {
-        boolean isConnected = isConnected();
-        if (this.lastConnected != isConnected) {
-            this.lastConnected = isConnected;
-            stateUpdated(isConnected);
-        }
-    }
-
-    @Override // android.view.View
-    protected void dispatchDraw(Canvas canvas) {
-        checkConnected();
-    }
-
-    @Override // android.view.View
-    public void invalidate() {
-        super.invalidate();
-        checkConnected();
     }
 
     public boolean isConnected() {
@@ -43,9 +30,8 @@ public abstract class CastMediaRouteButton extends MediaRouteButton {
         }
     }
 
-    @Override // androidx.mediarouter.app.MediaRouteButton, android.view.View
-    public void onAttachedToWindow() {
-        super.onAttachedToWindow();
+    @Override // android.view.View
+    protected void dispatchDraw(Canvas canvas) {
         checkConnected();
     }
 
@@ -55,8 +41,22 @@ public abstract class CastMediaRouteButton extends MediaRouteButton {
     }
 
     @Override // android.view.View
-    public void setBackground(Drawable drawable) {
+    public void invalidate() {
+        super.invalidate();
+        checkConnected();
     }
 
-    public abstract void stateUpdated(boolean z);
+    @Override // androidx.mediarouter.app.MediaRouteButton, android.view.View
+    public void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        checkConnected();
+    }
+
+    private void checkConnected() {
+        boolean isConnected = isConnected();
+        if (this.lastConnected != isConnected) {
+            this.lastConnected = isConnected;
+            stateUpdated(isConnected);
+        }
+    }
 }

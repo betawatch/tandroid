@@ -13,36 +13,6 @@ abstract class AbstractProtobufList extends AbstractList implements Internal.Pro
     AbstractProtobufList() {
     }
 
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public boolean add(Object obj) {
-        ensureIsMutable();
-        return super.add(obj);
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public boolean addAll(int i, Collection collection) {
-        ensureIsMutable();
-        return super.addAll(i, collection);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public boolean addAll(Collection collection) {
-        ensureIsMutable();
-        return super.addAll(collection);
-    }
-
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public void clear() {
-        ensureIsMutable();
-        super.clear();
-    }
-
-    protected void ensureIsMutable() {
-        if (!this.isMutable) {
-            throw new UnsupportedOperationException();
-        }
-    }
-
     @Override // java.util.AbstractList, java.util.Collection, java.util.List
     public boolean equals(Object obj) {
         if (obj == this) {
@@ -77,6 +47,30 @@ abstract class AbstractProtobufList extends AbstractList implements Internal.Pro
         return i;
     }
 
+    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public boolean add(Object obj) {
+        ensureIsMutable();
+        return super.add(obj);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public boolean addAll(Collection collection) {
+        ensureIsMutable();
+        return super.addAll(collection);
+    }
+
+    @Override // java.util.AbstractList, java.util.List
+    public boolean addAll(int i, Collection collection) {
+        ensureIsMutable();
+        return super.addAll(i, collection);
+    }
+
+    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public void clear() {
+        ensureIsMutable();
+        super.clear();
+    }
+
     @Override // androidx.datastore.preferences.protobuf.Internal.ProtobufList
     public boolean isModifiable() {
         return this.isMutable;
@@ -103,5 +97,11 @@ abstract class AbstractProtobufList extends AbstractList implements Internal.Pro
     public boolean retainAll(Collection collection) {
         ensureIsMutable();
         return super.retainAll(collection);
+    }
+
+    protected void ensureIsMutable() {
+        if (!this.isMutable) {
+            throw new UnsupportedOperationException();
+        }
     }
 }

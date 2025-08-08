@@ -6,7 +6,7 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class AbstractAppCallTemplate implements HttpClient.CallTemplate {
     @Override // com.microsoft.appcenter.http.HttpClient.CallTemplate
     public void onBeforeCalling(URL url, Map map) {

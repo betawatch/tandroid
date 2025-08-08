@@ -5,9 +5,11 @@ import java.io.ObjectStreamClass;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class UnsafeAllocator {
     public static final UnsafeAllocator INSTANCE = create();
+
+    public abstract Object newInstance(Class cls);
 
     /* JADX INFO: Access modifiers changed from: private */
     public static void assertInstantiable(Class cls) {
@@ -68,6 +70,4 @@ public abstract class UnsafeAllocator {
             };
         }
     }
-
-    public abstract Object newInstance(Class cls);
 }

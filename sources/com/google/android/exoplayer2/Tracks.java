@@ -62,10 +62,20 @@ public final class Tracks implements Bundleable {
             this.trackSelected = (boolean[]) zArr.clone();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ Group lambda$static$0(Bundle bundle) {
-            TrackGroup trackGroup = (TrackGroup) TrackGroup.CREATOR.fromBundle((Bundle) Assertions.checkNotNull(bundle.getBundle(FIELD_TRACK_GROUP)));
-            return new Group(trackGroup, bundle.getBoolean(FIELD_ADAPTIVE_SUPPORTED, false), (int[]) MoreObjects.firstNonNull(bundle.getIntArray(FIELD_TRACK_SUPPORT), new int[trackGroup.length]), (boolean[]) MoreObjects.firstNonNull(bundle.getBooleanArray(FIELD_TRACK_SELECTED), new boolean[trackGroup.length]));
+        public Format getTrackFormat(int i) {
+            return this.mediaTrackGroup.getFormat(i);
+        }
+
+        public boolean isSelected() {
+            return Booleans.contains(this.trackSelected, true);
+        }
+
+        public boolean isTrackSelected(int i) {
+            return this.trackSelected[i];
+        }
+
+        public int getType() {
+            return this.mediaTrackGroup.type;
         }
 
         public boolean equals(Object obj) {
@@ -79,24 +89,8 @@ public final class Tracks implements Bundleable {
             return this.adaptiveSupported == group.adaptiveSupported && this.mediaTrackGroup.equals(group.mediaTrackGroup) && Arrays.equals(this.trackSupport, group.trackSupport) && Arrays.equals(this.trackSelected, group.trackSelected);
         }
 
-        public Format getTrackFormat(int i) {
-            return this.mediaTrackGroup.getFormat(i);
-        }
-
-        public int getType() {
-            return this.mediaTrackGroup.type;
-        }
-
         public int hashCode() {
             return (((((this.mediaTrackGroup.hashCode() * 31) + (this.adaptiveSupported ? 1 : 0)) * 31) + Arrays.hashCode(this.trackSupport)) * 31) + Arrays.hashCode(this.trackSelected);
-        }
-
-        public boolean isSelected() {
-            return Booleans.contains(this.trackSelected, true);
-        }
-
-        public boolean isTrackSelected(int i) {
-            return this.trackSelected[i];
         }
 
         @Override // com.google.android.exoplayer2.Bundleable
@@ -108,34 +102,20 @@ public final class Tracks implements Bundleable {
             bundle.putBoolean(FIELD_ADAPTIVE_SUPPORTED, this.adaptiveSupported);
             return bundle;
         }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static /* synthetic */ Group lambda$static$0(Bundle bundle) {
+            TrackGroup trackGroup = (TrackGroup) TrackGroup.CREATOR.fromBundle((Bundle) Assertions.checkNotNull(bundle.getBundle(FIELD_TRACK_GROUP)));
+            return new Group(trackGroup, bundle.getBoolean(FIELD_ADAPTIVE_SUPPORTED, false), (int[]) MoreObjects.firstNonNull(bundle.getIntArray(FIELD_TRACK_SUPPORT), new int[trackGroup.length]), (boolean[]) MoreObjects.firstNonNull(bundle.getBooleanArray(FIELD_TRACK_SELECTED), new boolean[trackGroup.length]));
+        }
     }
 
     public Tracks(List list) {
         this.groups = ImmutableList.copyOf((Collection) list);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Tracks lambda$static$0(Bundle bundle) {
-        ArrayList parcelableArrayList = bundle.getParcelableArrayList(FIELD_TRACK_GROUPS);
-        return new Tracks(parcelableArrayList == null ? ImmutableList.of() : BundleableUtil.fromBundleList(Group.CREATOR, parcelableArrayList));
-    }
-
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || Tracks.class != obj.getClass()) {
-            return false;
-        }
-        return this.groups.equals(((Tracks) obj).groups);
-    }
-
     public ImmutableList getGroups() {
         return this.groups;
-    }
-
-    public int hashCode() {
-        return this.groups.hashCode();
     }
 
     public boolean isTypeSelected(int i) {
@@ -148,10 +128,36 @@ public final class Tracks implements Bundleable {
         return false;
     }
 
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || Tracks.class != obj.getClass()) {
+            return false;
+        }
+        return this.groups.equals(((Tracks) obj).groups);
+    }
+
+    public int hashCode() {
+        return this.groups.hashCode();
+    }
+
     @Override // com.google.android.exoplayer2.Bundleable
     public Bundle toBundle() {
         Bundle bundle = new Bundle();
         bundle.putParcelableArrayList(FIELD_TRACK_GROUPS, BundleableUtil.toBundleArrayList(this.groups));
         return bundle;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ Tracks lambda$static$0(Bundle bundle) {
+        ImmutableList fromBundleList;
+        ArrayList parcelableArrayList = bundle.getParcelableArrayList(FIELD_TRACK_GROUPS);
+        if (parcelableArrayList == null) {
+            fromBundleList = ImmutableList.of();
+        } else {
+            fromBundleList = BundleableUtil.fromBundleList(Group.CREATOR, parcelableArrayList);
+        }
+        return new Tracks(fromBundleList);
     }
 }

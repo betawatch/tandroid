@@ -5,7 +5,7 @@ import kotlin.NoWhenBranchMatchedException;
 import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.Boxing;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
@@ -21,46 +21,6 @@ final class SingleProcessDataStore$data$1 extends SuspendLambda implements Funct
     private /* synthetic */ Object L$0;
     int label;
     final /* synthetic */ SingleProcessDataStore this$0;
-
-    static final class 1 extends SuspendLambda implements Function2 {
-        final /* synthetic */ State $currentDownStreamFlowState;
-        /* synthetic */ Object L$0;
-        int label;
-
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        1(State state, Continuation continuation) {
-            super(2, continuation);
-            this.$currentDownStreamFlowState = state;
-        }
-
-        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-        public final Continuation create(Object obj, Continuation continuation) {
-            1 r0 = new 1(this.$currentDownStreamFlowState, continuation);
-            r0.L$0 = obj;
-            return r0;
-        }
-
-        @Override // kotlin.jvm.functions.Function2
-        public final Object invoke(State state, Continuation continuation) {
-            return ((1) create(state, continuation)).invokeSuspend(Unit.INSTANCE);
-        }
-
-        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-        public final Object invokeSuspend(Object obj) {
-            IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
-            if (this.label != 0) {
-                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-            }
-            ResultKt.throwOnFailure(obj);
-            State state = (State) this.L$0;
-            State state2 = this.$currentDownStreamFlowState;
-            boolean z = false;
-            if (!(state2 instanceof Data) && !(state2 instanceof Final) && state == state2) {
-                z = true;
-            }
-            return Boxing.boxBoolean(z);
-        }
-    }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     SingleProcessDataStore$data$1(SingleProcessDataStore singleProcessDataStore, Continuation continuation) {
@@ -82,11 +42,10 @@ final class SingleProcessDataStore$data$1 extends SuspendLambda implements Funct
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object coroutine_suspended;
         MutableStateFlow mutableStateFlow;
         MutableStateFlow mutableStateFlow2;
         SimpleActor simpleActor;
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
@@ -132,7 +91,6 @@ final class SingleProcessDataStore$data$1 extends SuspendLambda implements Funct
                     */
                     public Object emit(Object obj, Continuation continuation) {
                         1 r0;
-                        Object coroutine_suspended;
                         int i;
                         if (continuation instanceof 1) {
                             r0 = (1) continuation;
@@ -140,7 +98,7 @@ final class SingleProcessDataStore$data$1 extends SuspendLambda implements Funct
                             if ((i2 & TLObject.FLAG_31) != 0) {
                                 r0.label = i2 - TLObject.FLAG_31;
                                 Object obj2 = r0.result;
-                                coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                                 i = r0.label;
                                 if (i != 0) {
                                     ResultKt.throwOnFailure(obj2);
@@ -154,7 +112,7 @@ final class SingleProcessDataStore$data$1 extends SuspendLambda implements Funct
                                     }
                                     if (!(state instanceof Data)) {
                                         if (state instanceof UnInitialized) {
-                                            throw new IllegalStateException("This is a bug in DataStore. Please file a bug at: https://issuetracker.google.com/issues/new?component=907884&template=1466542".toString());
+                                            throw new IllegalStateException("This is a bug in DataStore. Please file a bug at: https://issuetracker.google.com/issues/new?component=907884&template=1466542");
                                         }
                                         throw new NoWhenBranchMatchedException();
                                     }
@@ -174,7 +132,7 @@ final class SingleProcessDataStore$data$1 extends SuspendLambda implements Funct
                         }
                         r0 = new 1(continuation);
                         Object obj22 = r0.result;
-                        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                         i = r0.label;
                         if (i != 0) {
                         }
@@ -184,10 +142,8 @@ final class SingleProcessDataStore$data$1 extends SuspendLambda implements Funct
 
                 @Override // kotlinx.coroutines.flow.Flow
                 public Object collect(FlowCollector flowCollector2, Continuation continuation) {
-                    Object coroutine_suspended2;
                     Object collect = Flow.this.collect(new 2(flowCollector2), continuation);
-                    coroutine_suspended2 = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                    return collect == coroutine_suspended2 ? collect : Unit.INSTANCE;
+                    return collect == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? collect : Unit.INSTANCE;
                 }
             };
             this.label = 1;
@@ -201,5 +157,45 @@ final class SingleProcessDataStore$data$1 extends SuspendLambda implements Funct
             ResultKt.throwOnFailure(obj);
         }
         return Unit.INSTANCE;
+    }
+
+    static final class 1 extends SuspendLambda implements Function2 {
+        final /* synthetic */ State $currentDownStreamFlowState;
+        /* synthetic */ Object L$0;
+        int label;
+
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        1(State state, Continuation continuation) {
+            super(2, continuation);
+            this.$currentDownStreamFlowState = state;
+        }
+
+        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+        public final Continuation create(Object obj, Continuation continuation) {
+            1 r0 = new 1(this.$currentDownStreamFlowState, continuation);
+            r0.L$0 = obj;
+            return r0;
+        }
+
+        @Override // kotlin.jvm.functions.Function2
+        public final Object invoke(State state, Continuation continuation) {
+            return ((1) create(state, continuation)).invokeSuspend(Unit.INSTANCE);
+        }
+
+        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+        public final Object invokeSuspend(Object obj) {
+            IntrinsicsKt.getCOROUTINE_SUSPENDED();
+            if (this.label == 0) {
+                ResultKt.throwOnFailure(obj);
+                State state = (State) this.L$0;
+                State state2 = this.$currentDownStreamFlowState;
+                boolean z = false;
+                if (!(state2 instanceof Data) && !(state2 instanceof Final) && state == state2) {
+                    z = true;
+                }
+                return Boxing.boxBoolean(z);
+            }
+            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+        }
     }
 }

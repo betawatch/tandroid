@@ -6,15 +6,6 @@ import java.util.Map;
 
 /* loaded from: classes3.dex */
 public class GcmPushListenerService extends FirebaseMessagingService {
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onNewToken$0(String str) {
-        if (BuildVars.LOGS_ENABLED) {
-            FileLog.d("Refreshed FCM token: " + str);
-        }
-        ApplicationLoader.postInitApplication();
-        PushListenerController.sendRegistrationToServer(2, str);
-    }
-
     @Override // com.google.firebase.messaging.FirebaseMessagingService
     public void onMessageReceived(RemoteMessage remoteMessage) {
         String from = remoteMessage.getFrom();
@@ -34,5 +25,14 @@ public class GcmPushListenerService extends FirebaseMessagingService {
                 GcmPushListenerService.lambda$onNewToken$0(str);
             }
         });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$onNewToken$0(String str) {
+        if (BuildVars.LOGS_ENABLED) {
+            FileLog.d("Refreshed FCM token: " + str);
+        }
+        ApplicationLoader.postInitApplication();
+        PushListenerController.sendRegistrationToServer(2, str);
     }
 }

@@ -73,7 +73,7 @@ public final class SimpleActor {
             throw new ClosedSendChannelException("Channel was closed normally");
         }
         if (!ChannelResult.isSuccess-impl(obj2)) {
-            throw new IllegalStateException("Check failed.".toString());
+            throw new IllegalStateException("Check failed.");
         }
         if (this.remainingMessages.getAndIncrement() == 0) {
             BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new SimpleActor$offer$2(this, null), 3, null);

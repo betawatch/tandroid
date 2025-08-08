@@ -6,7 +6,7 @@ import kotlin.coroutines.CoroutineContext;
 import kotlin.sequences.Sequence;
 
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract /* synthetic */ class JobKt__JobKt {
     public static final CompletableJob Job(Job job) {
         return new JobImpl(job);
@@ -19,11 +19,35 @@ public abstract /* synthetic */ class JobKt__JobKt {
         return JobKt.Job(job);
     }
 
+    public static final DisposableHandle disposeOnCompletion(Job job, DisposableHandle disposableHandle) {
+        return job.invokeOnCompletion(new DisposeOnCompletion(disposableHandle));
+    }
+
     public static final void cancel(CoroutineContext coroutineContext, CancellationException cancellationException) {
         Job job = (Job) coroutineContext.get(Job.Key);
         if (job != null) {
             job.cancel(cancellationException);
         }
+    }
+
+    public static final void ensureActive(Job job) {
+        if (!job.isActive()) {
+            throw job.getCancellationException();
+        }
+    }
+
+    public static final void ensureActive(CoroutineContext coroutineContext) {
+        Job job = (Job) coroutineContext.get(Job.Key);
+        if (job != null) {
+            JobKt.ensureActive(job);
+        }
+    }
+
+    public static /* synthetic */ void cancelChildren$default(CoroutineContext coroutineContext, CancellationException cancellationException, int i, Object obj) {
+        if ((i & 1) != 0) {
+            cancellationException = null;
+        }
+        JobKt.cancelChildren(coroutineContext, cancellationException);
     }
 
     public static final void cancelChildren(CoroutineContext coroutineContext, CancellationException cancellationException) {
@@ -35,30 +59,6 @@ public abstract /* synthetic */ class JobKt__JobKt {
         Iterator it = children.iterator();
         while (it.hasNext()) {
             ((Job) it.next()).cancel(cancellationException);
-        }
-    }
-
-    public static /* synthetic */ void cancelChildren$default(CoroutineContext coroutineContext, CancellationException cancellationException, int i, Object obj) {
-        if ((i & 1) != 0) {
-            cancellationException = null;
-        }
-        JobKt.cancelChildren(coroutineContext, cancellationException);
-    }
-
-    public static final DisposableHandle disposeOnCompletion(Job job, DisposableHandle disposableHandle) {
-        return job.invokeOnCompletion(new DisposeOnCompletion(disposableHandle));
-    }
-
-    public static final void ensureActive(CoroutineContext coroutineContext) {
-        Job job = (Job) coroutineContext.get(Job.Key);
-        if (job != null) {
-            JobKt.ensureActive(job);
-        }
-    }
-
-    public static final void ensureActive(Job job) {
-        if (!job.isActive()) {
-            throw job.getCancellationException();
         }
     }
 

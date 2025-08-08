@@ -5,19 +5,19 @@ import kotlin.coroutines.CoroutineContext;
 import kotlinx.coroutines.internal.Segment;
 import kotlinx.coroutines.internal.Symbol;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class SemaphoreSegment extends Segment {
     private final AtomicReferenceArray acquirers;
+
+    public final AtomicReferenceArray getAcquirers() {
+        return this.acquirers;
+    }
 
     public SemaphoreSegment(long j, SemaphoreSegment semaphoreSegment, int i) {
         super(j, semaphoreSegment, i);
         int i2;
         i2 = SemaphoreKt.SEGMENT_SIZE;
         this.acquirers = new AtomicReferenceArray(i2);
-    }
-
-    public final AtomicReferenceArray getAcquirers() {
-        return this.acquirers;
     }
 
     @Override // kotlinx.coroutines.internal.Segment

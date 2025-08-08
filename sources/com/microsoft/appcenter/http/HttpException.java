@@ -3,7 +3,7 @@ package com.microsoft.appcenter.http;
 import android.text.TextUtils;
 import java.io.IOException;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class HttpException extends IOException {
     private final HttpResponse mHttpResponse;
 
@@ -19,6 +19,10 @@ public class HttpException extends IOException {
         return i + " - " + str;
     }
 
+    public HttpResponse getHttpResponse() {
+        return this.mHttpResponse;
+    }
+
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -27,10 +31,6 @@ public class HttpException extends IOException {
             return false;
         }
         return this.mHttpResponse.equals(((HttpException) obj).mHttpResponse);
-    }
-
-    public HttpResponse getHttpResponse() {
-        return this.mHttpResponse;
     }
 
     public int hashCode() {

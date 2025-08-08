@@ -9,7 +9,7 @@ import com.google.gson.stream.JsonWriter;
 import java.lang.reflect.Type;
 import java.lang.reflect.TypeVariable;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class TypeAdapterRuntimeTypeWrapper extends TypeAdapter {
     private final Gson context;
     private final TypeAdapter delegate;
@@ -19,18 +19,6 @@ final class TypeAdapterRuntimeTypeWrapper extends TypeAdapter {
         this.context = gson;
         this.delegate = typeAdapter;
         this.type = type;
-    }
-
-    private static Type getRuntimeTypeIfMoreSpecific(Type type, Object obj) {
-        return obj != null ? ((type instanceof Class) || (type instanceof TypeVariable)) ? obj.getClass() : type : type;
-    }
-
-    private static boolean isReflective(TypeAdapter typeAdapter) {
-        TypeAdapter serializationDelegate;
-        while ((typeAdapter instanceof SerializationDelegatingTypeAdapter) && (serializationDelegate = ((SerializationDelegatingTypeAdapter) typeAdapter).getSerializationDelegate()) != typeAdapter) {
-            typeAdapter = serializationDelegate;
-        }
-        return typeAdapter instanceof ReflectiveTypeAdapterFactory.Adapter;
     }
 
     @Override // com.google.gson.TypeAdapter
@@ -49,5 +37,17 @@ final class TypeAdapterRuntimeTypeWrapper extends TypeAdapter {
             }
         }
         typeAdapter.write(jsonWriter, obj);
+    }
+
+    private static boolean isReflective(TypeAdapter typeAdapter) {
+        TypeAdapter serializationDelegate;
+        while ((typeAdapter instanceof SerializationDelegatingTypeAdapter) && (serializationDelegate = ((SerializationDelegatingTypeAdapter) typeAdapter).getSerializationDelegate()) != typeAdapter) {
+            typeAdapter = serializationDelegate;
+        }
+        return typeAdapter instanceof ReflectiveTypeAdapterFactory.Adapter;
+    }
+
+    private static Type getRuntimeTypeIfMoreSpecific(Type type, Object obj) {
+        return obj != null ? ((type instanceof Class) || (type instanceof TypeVariable)) ? obj.getClass() : type : type;
     }
 }

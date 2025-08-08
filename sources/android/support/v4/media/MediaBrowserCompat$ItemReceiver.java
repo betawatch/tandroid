@@ -15,14 +15,14 @@ class MediaBrowserCompat$ItemReceiver extends ResultReceiver {
         if (i != 0) {
             throw null;
         }
-        if (bundle == null) {
-            throw null;
-        }
-        if (!bundle.containsKey("media_item")) {
-            throw null;
-        }
-        Parcelable parcelable = bundle.getParcelable("media_item");
-        if (parcelable != null && !(parcelable instanceof MediaBrowserCompat$MediaItem)) {
+        if (bundle != null) {
+            if (!bundle.containsKey("media_item")) {
+                throw null;
+            }
+            Parcelable parcelable = bundle.getParcelable("media_item");
+            if (parcelable == null || (parcelable instanceof MediaBrowserCompat$MediaItem)) {
+                throw null;
+            }
             throw null;
         }
         throw null;

@@ -32,6 +32,21 @@ public final class PictureFrame implements Metadata.Entry {
     public final int pictureType;
     public final int width;
 
+    @Override // android.os.Parcelable
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
+    public /* bridge */ /* synthetic */ byte[] getWrappedMetadataBytes() {
+        return Metadata.Entry.-CC.$default$getWrappedMetadataBytes(this);
+    }
+
+    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
+    public /* bridge */ /* synthetic */ Format getWrappedMetadataFormat() {
+        return Metadata.Entry.-CC.$default$getWrappedMetadataFormat(this);
+    }
+
     public PictureFrame(int i, String str, String str2, int i2, int i3, int i4, int i5, byte[] bArr) {
         this.pictureType = i;
         this.mimeType = str;
@@ -54,23 +69,13 @@ public final class PictureFrame implements Metadata.Entry {
         this.pictureData = (byte[]) Util.castNonNull(parcel.createByteArray());
     }
 
-    public static PictureFrame fromPictureBlock(ParsableByteArray parsableByteArray) {
-        int readInt = parsableByteArray.readInt();
-        String readString = parsableByteArray.readString(parsableByteArray.readInt(), Charsets.US_ASCII);
-        String readString2 = parsableByteArray.readString(parsableByteArray.readInt());
-        int readInt2 = parsableByteArray.readInt();
-        int readInt3 = parsableByteArray.readInt();
-        int readInt4 = parsableByteArray.readInt();
-        int readInt5 = parsableByteArray.readInt();
-        int readInt6 = parsableByteArray.readInt();
-        byte[] bArr = new byte[readInt6];
-        parsableByteArray.readBytes(bArr, 0, readInt6);
-        return new PictureFrame(readInt, readString, readString2, readInt2, readInt3, readInt4, readInt5, bArr);
+    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
+    public void populateMediaMetadata(MediaMetadata.Builder builder) {
+        builder.maybeSetArtworkData(this.pictureData, this.pictureType);
     }
 
-    @Override // android.os.Parcelable
-    public int describeContents() {
-        return 0;
+    public String toString() {
+        return "Picture: mimeType=" + this.mimeType + ", description=" + this.description;
     }
 
     public boolean equals(Object obj) {
@@ -84,27 +89,8 @@ public final class PictureFrame implements Metadata.Entry {
         return this.pictureType == pictureFrame.pictureType && this.mimeType.equals(pictureFrame.mimeType) && this.description.equals(pictureFrame.description) && this.width == pictureFrame.width && this.height == pictureFrame.height && this.depth == pictureFrame.depth && this.colors == pictureFrame.colors && Arrays.equals(this.pictureData, pictureFrame.pictureData);
     }
 
-    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
-    public /* bridge */ /* synthetic */ byte[] getWrappedMetadataBytes() {
-        return Metadata.Entry.-CC.$default$getWrappedMetadataBytes(this);
-    }
-
-    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
-    public /* bridge */ /* synthetic */ Format getWrappedMetadataFormat() {
-        return Metadata.Entry.-CC.$default$getWrappedMetadataFormat(this);
-    }
-
     public int hashCode() {
         return ((((((((((((((this.pictureType + 527) * 31) + this.mimeType.hashCode()) * 31) + this.description.hashCode()) * 31) + this.width) * 31) + this.height) * 31) + this.depth) * 31) + this.colors) * 31) + Arrays.hashCode(this.pictureData);
-    }
-
-    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
-    public void populateMediaMetadata(MediaMetadata.Builder builder) {
-        builder.maybeSetArtworkData(this.pictureData, this.pictureType);
-    }
-
-    public String toString() {
-        return "Picture: mimeType=" + this.mimeType + ", description=" + this.description;
     }
 
     @Override // android.os.Parcelable
@@ -117,5 +103,19 @@ public final class PictureFrame implements Metadata.Entry {
         parcel.writeInt(this.depth);
         parcel.writeInt(this.colors);
         parcel.writeByteArray(this.pictureData);
+    }
+
+    public static PictureFrame fromPictureBlock(ParsableByteArray parsableByteArray) {
+        int readInt = parsableByteArray.readInt();
+        String readString = parsableByteArray.readString(parsableByteArray.readInt(), Charsets.US_ASCII);
+        String readString2 = parsableByteArray.readString(parsableByteArray.readInt());
+        int readInt2 = parsableByteArray.readInt();
+        int readInt3 = parsableByteArray.readInt();
+        int readInt4 = parsableByteArray.readInt();
+        int readInt5 = parsableByteArray.readInt();
+        int readInt6 = parsableByteArray.readInt();
+        byte[] bArr = new byte[readInt6];
+        parsableByteArray.readBytes(bArr, 0, readInt6);
+        return new PictureFrame(readInt, readString, readString2, readInt2, readInt3, readInt4, readInt5, bArr);
     }
 }

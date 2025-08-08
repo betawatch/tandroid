@@ -16,10 +16,6 @@ class RtlSpacingHelper {
     RtlSpacingHelper() {
     }
 
-    public int getEnd() {
-        return this.mIsRtl ? this.mLeft : this.mRight;
-    }
-
     public int getLeft() {
         return this.mLeft;
     }
@@ -32,56 +28,8 @@ class RtlSpacingHelper {
         return this.mIsRtl ? this.mRight : this.mLeft;
     }
 
-    public void setAbsolute(int i, int i2) {
-        this.mIsRelative = false;
-        if (i != Integer.MIN_VALUE) {
-            this.mExplicitLeft = i;
-            this.mLeft = i;
-        }
-        if (i2 != Integer.MIN_VALUE) {
-            this.mExplicitRight = i2;
-            this.mRight = i2;
-        }
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x001a, code lost:
-    
-        if (r2 != Integer.MIN_VALUE) goto L15;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x002a, code lost:
-    
-        if (r2 != Integer.MIN_VALUE) goto L15;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void setDirection(boolean z) {
-        int i;
-        if (z == this.mIsRtl) {
-            return;
-        }
-        this.mIsRtl = z;
-        if (this.mIsRelative) {
-            if (z) {
-                int i2 = this.mEnd;
-                if (i2 == Integer.MIN_VALUE) {
-                    i2 = this.mExplicitLeft;
-                }
-                this.mLeft = i2;
-                i = this.mStart;
-            } else {
-                int i3 = this.mStart;
-                if (i3 == Integer.MIN_VALUE) {
-                    i3 = this.mExplicitLeft;
-                }
-                this.mLeft = i3;
-                i = this.mEnd;
-            }
-            this.mRight = i;
-        }
-        this.mLeft = this.mExplicitLeft;
-        i = this.mExplicitRight;
-        this.mRight = i;
+    public int getEnd() {
+        return this.mIsRtl ? this.mLeft : this.mRight;
     }
 
     public void setRelative(int i, int i2) {
@@ -104,5 +52,52 @@ class RtlSpacingHelper {
         if (i2 != Integer.MIN_VALUE) {
             this.mRight = i2;
         }
+    }
+
+    public void setAbsolute(int i, int i2) {
+        this.mIsRelative = false;
+        if (i != Integer.MIN_VALUE) {
+            this.mExplicitLeft = i;
+            this.mLeft = i;
+        }
+        if (i2 != Integer.MIN_VALUE) {
+            this.mExplicitRight = i2;
+            this.mRight = i2;
+        }
+    }
+
+    public void setDirection(boolean z) {
+        if (z == this.mIsRtl) {
+            return;
+        }
+        this.mIsRtl = z;
+        if (!this.mIsRelative) {
+            this.mLeft = this.mExplicitLeft;
+            this.mRight = this.mExplicitRight;
+            return;
+        }
+        if (z) {
+            int i = this.mEnd;
+            if (i == Integer.MIN_VALUE) {
+                i = this.mExplicitLeft;
+            }
+            this.mLeft = i;
+            int i2 = this.mStart;
+            if (i2 == Integer.MIN_VALUE) {
+                i2 = this.mExplicitRight;
+            }
+            this.mRight = i2;
+            return;
+        }
+        int i3 = this.mStart;
+        if (i3 == Integer.MIN_VALUE) {
+            i3 = this.mExplicitLeft;
+        }
+        this.mLeft = i3;
+        int i4 = this.mEnd;
+        if (i4 == Integer.MIN_VALUE) {
+            i4 = this.mExplicitRight;
+        }
+        this.mRight = i4;
     }
 }

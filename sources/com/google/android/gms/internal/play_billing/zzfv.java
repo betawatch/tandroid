@@ -1,31 +1,28 @@
 package com.google.android.gms.internal.play_billing;
 
-/* loaded from: classes.dex */
-final class zzfv implements zzce {
-    static final zzce zza = new zzfv();
+import java.io.IOException;
+import java.util.List;
 
-    private zzfv() {
+/* loaded from: classes.dex */
+public abstract class zzfv implements zzim {
+    protected int zza = 0;
+
+    protected static void zzg(Iterable iterable, List list) {
+        zzfu.zzc(iterable, list);
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzce
-    public final boolean zza(int i) {
-        switch (i) {
-            case 0:
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-            case 5:
-            case 6:
-            case 7:
-            case 8:
-            case 9:
-            case 10:
-            case 11:
-            case 12:
-                return true;
-            default:
-                return false;
+    abstract int zze(zzix zzixVar);
+
+    public final byte[] zzh() {
+        try {
+            int zzk = zzk();
+            byte[] bArr = new byte[zzk];
+            zzgo zzgoVar = new zzgo(bArr, 0, zzk);
+            zzJ(zzgoVar);
+            zzgoVar.zzB();
+            return bArr;
+        } catch (IOException e) {
+            throw new RuntimeException("Serializing " + getClass().getName() + " to a byte array threw an IOException (should never happen).", e);
         }
     }
 }

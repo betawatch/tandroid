@@ -13,15 +13,9 @@ import com.google.firebase.platforminfo.LibraryVersionComponent;
 import java.util.Arrays;
 import java.util.List;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class TransportRegistrar implements ComponentRegistrar {
     private static final String LIBRARY_NAME = "fire-transport";
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ TransportFactory lambda$getComponents$0(ComponentContainer componentContainer) {
-        TransportRuntime.initialize((Context) componentContainer.get(Context.class));
-        return TransportRuntime.getInstance().newFactory(CCTDestination.LEGACY_INSTANCE);
-    }
 
     @Override // com.google.firebase.components.ComponentRegistrar
     public List<Component> getComponents() {
@@ -33,5 +27,11 @@ public class TransportRegistrar implements ComponentRegistrar {
                 return lambda$getComponents$0;
             }
         }).build(), LibraryVersionComponent.create(LIBRARY_NAME, "18.1.8"));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ TransportFactory lambda$getComponents$0(ComponentContainer componentContainer) {
+        TransportRuntime.initialize((Context) componentContainer.get(Context.class));
+        return TransportRuntime.getInstance().newFactory(CCTDestination.LEGACY_INSTANCE);
     }
 }

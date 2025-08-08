@@ -50,12 +50,7 @@ public final class zzfh {
                 }
             }
         }
-        double d = zzg;
-        double convert = timeUnit2.convert(1L, timeUnit);
-        Locale locale = Locale.ROOT;
-        Double.isNaN(d);
-        Double.isNaN(convert);
-        String format = String.format(locale, "%.4g", Double.valueOf(d / convert));
+        String format = String.format(Locale.ROOT, "%.4g", Double.valueOf(zzg / timeUnit2.convert(1L, timeUnit)));
         switch (zzfg.zza[timeUnit.ordinal()]) {
             case 1:
                 str = "ns";

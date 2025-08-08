@@ -14,7 +14,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.LinkSpanDrawable;
 import org.telegram.ui.Components.spoilers.SpoilersTextView;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class EffectsTextView extends SpoilersTextView {
     private boolean disablePaddingsOffset;
     private boolean disablePaddingsOffsetX;
@@ -37,15 +37,32 @@ public class EffectsTextView extends SpoilersTextView {
         this.resourcesProvider = resourcesProvider;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onTouchEvent$0(LinkSpanDrawable linkSpanDrawable, ClickableSpan clickableSpan) {
-        LinkSpanDrawable.LinksTextView.OnLinkPress onLinkPress = this.onLongPressListener;
-        if (onLinkPress == null || this.pressedLink != linkSpanDrawable) {
-            return;
-        }
-        onLinkPress.run(clickableSpan);
-        this.pressedLink = null;
-        this.links.clear();
+    @Override // org.telegram.ui.Components.spoilers.SpoilersTextView, android.widget.TextView
+    public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+        super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
+    }
+
+    @Override // org.telegram.ui.Components.spoilers.SpoilersTextView
+    public void setDisablePaddingsOffset(boolean z) {
+        this.disablePaddingsOffset = z;
+    }
+
+    @Override // org.telegram.ui.Components.spoilers.SpoilersTextView
+    public void setDisablePaddingsOffsetX(boolean z) {
+        this.disablePaddingsOffsetX = z;
+    }
+
+    @Override // org.telegram.ui.Components.spoilers.SpoilersTextView
+    public void setDisablePaddingsOffsetY(boolean z) {
+        this.disablePaddingsOffsetY = z;
+    }
+
+    public void setOnLinkPressListener(LinkSpanDrawable.LinksTextView.OnLinkPress onLinkPress) {
+        this.onPressListener = onLinkPress;
+    }
+
+    public void setOnLinkLongPressListener(LinkSpanDrawable.LinksTextView.OnLinkPress onLinkPress) {
+        this.onLongPressListener = onLinkPress;
     }
 
     @Override // org.telegram.ui.Components.spoilers.SpoilersTextView
@@ -67,21 +84,6 @@ public class EffectsTextView extends SpoilersTextView {
             }
         }
         return null;
-    }
-
-    @Override // org.telegram.ui.Components.spoilers.SpoilersTextView, android.widget.TextView, android.view.View
-    protected void onDraw(Canvas canvas) {
-        if (!this.isCustomLinkCollector) {
-            canvas.save();
-            if (!this.disablePaddingsOffset) {
-                canvas.translate(this.disablePaddingsOffsetX ? 0.0f : getPaddingLeft(), this.disablePaddingsOffsetY ? 0.0f : getPaddingTop());
-            }
-            if (this.links.draw(canvas)) {
-                invalidate();
-            }
-            canvas.restore();
-        }
-        super.onDraw(canvas);
     }
 
     @Override // android.widget.TextView, android.view.View
@@ -130,31 +132,29 @@ public class EffectsTextView extends SpoilersTextView {
         return this.pressedLink != null || super.onTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.spoilers.SpoilersTextView
-    public void setDisablePaddingsOffset(boolean z) {
-        this.disablePaddingsOffset = z;
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$onTouchEvent$0(LinkSpanDrawable linkSpanDrawable, ClickableSpan clickableSpan) {
+        LinkSpanDrawable.LinksTextView.OnLinkPress onLinkPress = this.onLongPressListener;
+        if (onLinkPress == null || this.pressedLink != linkSpanDrawable) {
+            return;
+        }
+        onLinkPress.run(clickableSpan);
+        this.pressedLink = null;
+        this.links.clear();
     }
 
-    @Override // org.telegram.ui.Components.spoilers.SpoilersTextView
-    public void setDisablePaddingsOffsetX(boolean z) {
-        this.disablePaddingsOffsetX = z;
-    }
-
-    @Override // org.telegram.ui.Components.spoilers.SpoilersTextView
-    public void setDisablePaddingsOffsetY(boolean z) {
-        this.disablePaddingsOffsetY = z;
-    }
-
-    public void setOnLinkLongPressListener(LinkSpanDrawable.LinksTextView.OnLinkPress onLinkPress) {
-        this.onLongPressListener = onLinkPress;
-    }
-
-    public void setOnLinkPressListener(LinkSpanDrawable.LinksTextView.OnLinkPress onLinkPress) {
-        this.onPressListener = onLinkPress;
-    }
-
-    @Override // org.telegram.ui.Components.spoilers.SpoilersTextView, android.widget.TextView
-    public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
-        super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
+    @Override // org.telegram.ui.Components.spoilers.SpoilersTextView, android.widget.TextView, android.view.View
+    protected void onDraw(Canvas canvas) {
+        if (!this.isCustomLinkCollector) {
+            canvas.save();
+            if (!this.disablePaddingsOffset) {
+                canvas.translate(this.disablePaddingsOffsetX ? 0.0f : getPaddingLeft(), this.disablePaddingsOffsetY ? 0.0f : getPaddingTop());
+            }
+            if (this.links.draw(canvas)) {
+                invalidate();
+            }
+            canvas.restore();
+        }
+        super.onDraw(canvas);
     }
 }

@@ -46,8 +46,8 @@ abstract class zzrw extends AtomicReference implements Runnable {
         Thread currentThread = Thread.currentThread();
         Object obj = null;
         if (compareAndSet(null, currentThread)) {
-            boolean z = !zzf();
-            if (z) {
+            boolean zzf = zzf();
+            if (!zzf) {
                 try {
                     obj = zza();
                 } catch (Throwable th) {
@@ -72,9 +72,10 @@ abstract class zzrw extends AtomicReference implements Runnable {
             if (!compareAndSet(currentThread, zza)) {
                 zzg(currentThread);
             }
-            if (z) {
-                zzd(obj);
+            if (zzf) {
+                return;
             }
+            zzd(obj);
         }
     }
 

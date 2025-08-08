@@ -2,7 +2,7 @@ package com.google.zxing.common;
 
 import java.util.Arrays;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class BitArray implements Cloneable {
     private int[] bits;
     private int size;
@@ -17,6 +17,14 @@ public final class BitArray implements Cloneable {
         this.size = i;
     }
 
+    public int getSize() {
+        return this.size;
+    }
+
+    public int getSizeInBytes() {
+        return (this.size + 7) / 8;
+    }
+
     private void ensureCapacity(int i) {
         if (i > this.bits.length * 32) {
             int[] makeArray = makeArray(i);
@@ -26,8 +34,8 @@ public final class BitArray implements Cloneable {
         }
     }
 
-    private static int[] makeArray(int i) {
-        return new int[(i + 31) / 32];
+    public boolean get(int i) {
+        return ((1 << (i & 31)) & this.bits[i / 32]) != 0;
     }
 
     public void appendBit(boolean z) {
@@ -39,14 +47,6 @@ public final class BitArray implements Cloneable {
             iArr[i2] = (1 << (i & 31)) | iArr[i2];
         }
         this.size++;
-    }
-
-    public void appendBitArray(BitArray bitArray) {
-        int i = bitArray.size;
-        ensureCapacity(this.size + i);
-        for (int i2 = 0; i2 < i; i2++) {
-            appendBit(bitArray.get(i2));
-        }
     }
 
     public void appendBits(int i, int i2) {
@@ -64,57 +64,12 @@ public final class BitArray implements Cloneable {
         }
     }
 
-    public BitArray clone() {
-        return new BitArray((int[]) this.bits.clone(), this.size);
-    }
-
-    public boolean equals(Object obj) {
-        if (!(obj instanceof BitArray)) {
-            return false;
+    public void appendBitArray(BitArray bitArray) {
+        int i = bitArray.size;
+        ensureCapacity(this.size + i);
+        for (int i2 = 0; i2 < i; i2++) {
+            appendBit(bitArray.get(i2));
         }
-        BitArray bitArray = (BitArray) obj;
-        return this.size == bitArray.size && Arrays.equals(this.bits, bitArray.bits);
-    }
-
-    public boolean get(int i) {
-        return ((1 << (i & 31)) & this.bits[i / 32]) != 0;
-    }
-
-    public int getSize() {
-        return this.size;
-    }
-
-    public int getSizeInBytes() {
-        return (this.size + 7) / 8;
-    }
-
-    public int hashCode() {
-        return (this.size * 31) + Arrays.hashCode(this.bits);
-    }
-
-    public void toBytes(int i, byte[] bArr, int i2, int i3) {
-        for (int i4 = 0; i4 < i3; i4++) {
-            int i5 = 0;
-            for (int i6 = 0; i6 < 8; i6++) {
-                if (get(i)) {
-                    i5 |= 1 << (7 - i6);
-                }
-                i++;
-            }
-            bArr[i2 + i4] = (byte) i5;
-        }
-    }
-
-    public String toString() {
-        int i = this.size;
-        StringBuilder sb = new StringBuilder(i + (i / 8) + 1);
-        for (int i2 = 0; i2 < this.size; i2++) {
-            if ((i2 & 7) == 0) {
-                sb.append(' ');
-            }
-            sb.append(get(i2) ? 'X' : '.');
-        }
-        return sb.toString();
     }
 
     public void xor(BitArray bitArray) {
@@ -130,5 +85,50 @@ public final class BitArray implements Cloneable {
             iArr[i] = iArr[i] ^ bitArray.bits[i];
             i++;
         }
+    }
+
+    public void toBytes(int i, byte[] bArr, int i2, int i3) {
+        for (int i4 = 0; i4 < i3; i4++) {
+            int i5 = 0;
+            for (int i6 = 0; i6 < 8; i6++) {
+                if (get(i)) {
+                    i5 |= 1 << (7 - i6);
+                }
+                i++;
+            }
+            bArr[i2 + i4] = (byte) i5;
+        }
+    }
+
+    private static int[] makeArray(int i) {
+        return new int[(i + 31) / 32];
+    }
+
+    public boolean equals(Object obj) {
+        if (!(obj instanceof BitArray)) {
+            return false;
+        }
+        BitArray bitArray = (BitArray) obj;
+        return this.size == bitArray.size && Arrays.equals(this.bits, bitArray.bits);
+    }
+
+    public int hashCode() {
+        return (this.size * 31) + Arrays.hashCode(this.bits);
+    }
+
+    public String toString() {
+        int i = this.size;
+        StringBuilder sb = new StringBuilder(i + (i / 8) + 1);
+        for (int i2 = 0; i2 < this.size; i2++) {
+            if ((i2 & 7) == 0) {
+                sb.append(' ');
+            }
+            sb.append(get(i2) ? 'X' : '.');
+        }
+        return sb.toString();
+    }
+
+    public BitArray clone() {
+        return new BitArray((int[]) this.bits.clone(), this.size);
     }
 }

@@ -10,7 +10,7 @@ import com.google.mlkit.common.MlKitException;
 import com.google.mlkit.vision.common.InputImage;
 import java.nio.ByteBuffer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class ImageUtils {
     private static final GmsLogger zza = new GmsLogger("MLKitImageUtils", "");
     private static final ImageUtils zzb = new ImageUtils();
@@ -23,21 +23,19 @@ public class ImageUtils {
     }
 
     public IObjectWrapper getImageDataWrapper(InputImage inputImage) {
-        Object obj;
         int format = inputImage.getFormat();
-        if (format != -1) {
-            if (format != 17) {
-                if (format == 35) {
-                    obj = inputImage.getMediaImage();
-                } else if (format != 842094169) {
-                    throw new MlKitException("Unsupported image format: " + inputImage.getFormat(), 3);
-                }
-            }
-            obj = (ByteBuffer) Preconditions.checkNotNull(inputImage.getByteBuffer());
-        } else {
-            obj = (Bitmap) Preconditions.checkNotNull(inputImage.getBitmapInternal());
+        if (format == -1) {
+            return ObjectWrapper.wrap((Bitmap) Preconditions.checkNotNull(inputImage.getBitmapInternal()));
         }
-        return ObjectWrapper.wrap(obj);
+        if (format != 17) {
+            if (format == 35) {
+                return ObjectWrapper.wrap(inputImage.getMediaImage());
+            }
+            if (format != 842094169) {
+                throw new MlKitException("Unsupported image format: " + inputImage.getFormat(), 3);
+            }
+        }
+        return ObjectWrapper.wrap((ByteBuffer) Preconditions.checkNotNull(inputImage.getByteBuffer()));
     }
 
     public int getMobileVisionImageFormat(InputImage inputImage) {

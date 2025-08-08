@@ -17,15 +17,15 @@ public final class ContextAwareHelper {
         this.mListeners.add(onContextAvailableListener);
     }
 
-    public void clearAvailableContext() {
-        this.mContext = null;
-    }
-
     public void dispatchOnContextAvailable(Context context) {
         this.mContext = context;
         Iterator it = this.mListeners.iterator();
         while (it.hasNext()) {
             ((OnContextAvailableListener) it.next()).onContextAvailable(context);
         }
+    }
+
+    public void clearAvailableContext() {
+        this.mContext = null;
     }
 }

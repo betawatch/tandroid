@@ -7,10 +7,10 @@ import com.google.android.datatransport.runtime.logging.Logging;
 /* loaded from: classes.dex */
 public abstract class ForcedSender {
     public static void sendBlocking(Transport transport, Priority priority) {
-        if (!(transport instanceof TransportImpl)) {
-            Logging.w("ForcedSender", "Expected instance of `TransportImpl`, got `%s`.", transport);
-        } else {
+        if (transport instanceof TransportImpl) {
             TransportRuntime.getInstance().getUploader().logAndUpdateState(((TransportImpl) transport).getTransportContext().withPriority(priority), 1);
+        } else {
+            Logging.w("ForcedSender", "Expected instance of `TransportImpl`, got `%s`.", transport);
         }
     }
 }

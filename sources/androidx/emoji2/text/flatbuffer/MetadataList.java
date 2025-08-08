@@ -14,13 +14,21 @@ public final class MetadataList extends Table {
         return metadataList.__assign(byteBuffer.getInt(byteBuffer.position()) + byteBuffer.position(), byteBuffer);
     }
 
+    public void __init(int i, ByteBuffer byteBuffer) {
+        __reset(i, byteBuffer);
+    }
+
     public MetadataList __assign(int i, ByteBuffer byteBuffer) {
         __init(i, byteBuffer);
         return this;
     }
 
-    public void __init(int i, ByteBuffer byteBuffer) {
-        __reset(i, byteBuffer);
+    public int version() {
+        int __offset = __offset(4);
+        if (__offset != 0) {
+            return this.bb.getInt(__offset + this.bb_pos);
+        }
+        return 0;
     }
 
     public MetadataItem list(MetadataItem metadataItem, int i) {
@@ -35,14 +43,6 @@ public final class MetadataList extends Table {
         int __offset = __offset(6);
         if (__offset != 0) {
             return __vector_len(__offset);
-        }
-        return 0;
-    }
-
-    public int version() {
-        int __offset = __offset(4);
-        if (__offset != 0) {
-            return this.bb.getInt(__offset + this.bb_pos);
         }
         return 0;
     }

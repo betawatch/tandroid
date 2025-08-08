@@ -35,6 +35,15 @@ public final class OneShotPreDrawListener implements ViewTreeObserver.OnPreDrawL
         return true;
     }
 
+    public void removeListener() {
+        if (this.mViewTreeObserver.isAlive()) {
+            this.mViewTreeObserver.removeOnPreDrawListener(this);
+        } else {
+            this.mView.getViewTreeObserver().removeOnPreDrawListener(this);
+        }
+        this.mView.removeOnAttachStateChangeListener(this);
+    }
+
     @Override // android.view.View.OnAttachStateChangeListener
     public void onViewAttachedToWindow(View view) {
         this.mViewTreeObserver = view.getViewTreeObserver();
@@ -43,10 +52,5 @@ public final class OneShotPreDrawListener implements ViewTreeObserver.OnPreDrawL
     @Override // android.view.View.OnAttachStateChangeListener
     public void onViewDetachedFromWindow(View view) {
         removeListener();
-    }
-
-    public void removeListener() {
-        (this.mViewTreeObserver.isAlive() ? this.mViewTreeObserver : this.mView.getViewTreeObserver()).removeOnPreDrawListener(this);
-        this.mView.removeOnAttachStateChangeListener(this);
     }
 }

@@ -5,12 +5,11 @@ import android.os.Looper;
 
 /* loaded from: classes.dex */
 public class SystemClock implements Clock {
-    protected SystemClock() {
+    @Override // com.google.android.exoplayer2.util.Clock
+    public void onThreadBlocked() {
     }
 
-    @Override // com.google.android.exoplayer2.util.Clock
-    public HandlerWrapper createHandler(Looper looper, Handler.Callback callback) {
-        return new SystemHandlerWrapper(new Handler(looper, callback));
+    protected SystemClock() {
     }
 
     @Override // com.google.android.exoplayer2.util.Clock
@@ -19,11 +18,12 @@ public class SystemClock implements Clock {
     }
 
     @Override // com.google.android.exoplayer2.util.Clock
-    public void onThreadBlocked() {
+    public long uptimeMillis() {
+        return android.os.SystemClock.uptimeMillis();
     }
 
     @Override // com.google.android.exoplayer2.util.Clock
-    public long uptimeMillis() {
-        return android.os.SystemClock.uptimeMillis();
+    public HandlerWrapper createHandler(Looper looper, Handler.Callback callback) {
+        return new SystemHandlerWrapper(new Handler(looper, callback));
     }
 }

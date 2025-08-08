@@ -9,25 +9,6 @@ public abstract class Trace {
     private static Method sIsTagEnabledMethod;
     private static long sTraceTagApp;
 
-    public static void beginSection(String str) {
-        TraceApi18Impl.beginSection(str);
-    }
-
-    public static void endSection() {
-        TraceApi18Impl.endSection();
-    }
-
-    private static void handleException(String str, Exception exc) {
-        if (exc instanceof InvocationTargetException) {
-            Throwable cause = exc.getCause();
-            if (!(cause instanceof RuntimeException)) {
-                throw new RuntimeException(cause);
-            }
-            throw ((RuntimeException) cause);
-        }
-        Log.v("Trace", "Unable to call " + str + " via reflection", exc);
-    }
-
     public static boolean isEnabled() {
         boolean isEnabled;
         try {
@@ -38,6 +19,14 @@ public abstract class Trace {
         } catch (NoClassDefFoundError | NoSuchMethodError unused) {
         }
         return isEnabledFallback();
+    }
+
+    public static void beginSection(String str) {
+        TraceApi18Impl.beginSection(str);
+    }
+
+    public static void endSection() {
+        TraceApi18Impl.endSection();
     }
 
     private static boolean isEnabledFallback() {
@@ -51,5 +40,16 @@ public abstract class Trace {
             handleException("isTagEnabled", e);
             return false;
         }
+    }
+
+    private static void handleException(String str, Exception exc) {
+        if (exc instanceof InvocationTargetException) {
+            Throwable cause = exc.getCause();
+            if (cause instanceof RuntimeException) {
+                throw ((RuntimeException) cause);
+            }
+            throw new RuntimeException(cause);
+        }
+        Log.v("Trace", "Unable to call " + str + " via reflection", exc);
     }
 }

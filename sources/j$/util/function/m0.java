@@ -1,47 +1,36 @@
 package j$.util.function;
 
-import j$.util.function.Predicate;
+import java.util.function.ObjDoubleConsumer;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class m0 implements Predicate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Predicate b;
-    public final /* synthetic */ Predicate c;
+public final /* synthetic */ class m0 implements ObjDoubleConsumer {
+    public final /* synthetic */ n0 a;
 
-    public /* synthetic */ m0(Predicate predicate, Predicate predicate2, int i) {
-        this.a = i;
-        this.b = predicate;
-        this.c = predicate2;
+    private /* synthetic */ m0(n0 n0Var) {
+        this.a = n0Var;
     }
 
-    @Override // j$.util.function.Predicate
-    public final /* synthetic */ Predicate and(Predicate predicate) {
-        switch (this.a) {
+    public static /* synthetic */ ObjDoubleConsumer a(n0 n0Var) {
+        if (n0Var == null) {
+            return null;
         }
-        return Predicate.-CC.$default$and(this, predicate);
+        return n0Var instanceof l0 ? ((l0) n0Var).a : new m0(n0Var);
     }
 
-    @Override // j$.util.function.Predicate
-    public final /* synthetic */ Predicate negate() {
-        switch (this.a) {
-        }
-        return Predicate.-CC.$default$negate(this);
+    @Override // java.util.function.ObjDoubleConsumer
+    public final /* synthetic */ void accept(Object obj, double d) {
+        this.a.accept(obj, d);
     }
 
-    @Override // j$.util.function.Predicate
-    public final /* synthetic */ Predicate or(Predicate predicate) {
-        switch (this.a) {
+    public final /* synthetic */ boolean equals(Object obj) {
+        n0 n0Var = this.a;
+        if (obj instanceof m0) {
+            obj = ((m0) obj).a;
         }
-        return Predicate.-CC.$default$or(this, predicate);
+        return n0Var.equals(obj);
     }
 
-    @Override // j$.util.function.Predicate
-    public final boolean test(Object obj) {
-        switch (this.a) {
-            case 0:
-                return this.b.test(obj) && this.c.test(obj);
-            default:
-                return this.b.test(obj) || this.c.test(obj);
-        }
+    public final /* synthetic */ int hashCode() {
+        return this.a.hashCode();
     }
 }

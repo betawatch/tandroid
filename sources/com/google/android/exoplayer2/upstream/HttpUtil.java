@@ -25,6 +25,17 @@ public abstract class HttpUtil {
         return sb.toString();
     }
 
+    public static long getDocumentSize(String str) {
+        if (TextUtils.isEmpty(str)) {
+            return -1L;
+        }
+        Matcher matcher = CONTENT_RANGE_WITH_SIZE.matcher(str);
+        if (matcher.matches()) {
+            return Long.parseLong((String) Assertions.checkNotNull(matcher.group(1)));
+        }
+        return -1L;
+    }
+
     /* JADX WARN: Removed duplicated region for block: B:24:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:6:0x002e  */
     /*
@@ -63,16 +74,5 @@ public abstract class HttpUtil {
         parseLong = -1;
         if (!TextUtils.isEmpty(str2)) {
         }
-    }
-
-    public static long getDocumentSize(String str) {
-        if (TextUtils.isEmpty(str)) {
-            return -1L;
-        }
-        Matcher matcher = CONTENT_RANGE_WITH_SIZE.matcher(str);
-        if (matcher.matches()) {
-            return Long.parseLong((String) Assertions.checkNotNull(matcher.group(1)));
-        }
-        return -1L;
     }
 }

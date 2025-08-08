@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collection;
-import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 
@@ -33,7 +33,7 @@ public final class zzcf extends zzce {
                 emptyList.add((zzpk) zzf2.zzj());
             }
         } else {
-            emptyList = CollectionsKt__CollectionsKt.emptyList();
+            emptyList = CollectionsKt.emptyList();
         }
         zzf.zzd(emptyList);
         zzpl zzplVar = (zzpl) zzf.zzj();

@@ -6,12 +6,12 @@ abstract class zzhu implements zzhy {
     }
 
     @Override // java.util.Iterator
-    public /* synthetic */ Object next() {
-        return Byte.valueOf(zza());
+    public final void remove() {
+        throw new UnsupportedOperationException();
     }
 
     @Override // java.util.Iterator
-    public final void remove() {
-        throw new UnsupportedOperationException();
+    public /* synthetic */ Object next() {
+        return Byte.valueOf(zza());
     }
 }

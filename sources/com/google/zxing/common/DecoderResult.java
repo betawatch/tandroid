@@ -2,7 +2,7 @@ package com.google.zxing.common;
 
 import java.util.List;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class DecoderResult {
     private final List byteSegments;
     private final String ecLevel;
@@ -23,6 +23,14 @@ public final class DecoderResult {
         this.structuredAppendSequenceNumber = i;
     }
 
+    public byte[] getRawBytes() {
+        return this.rawBytes;
+    }
+
+    public String getText() {
+        return this.text;
+    }
+
     public List getByteSegments() {
         return this.byteSegments;
     }
@@ -35,8 +43,12 @@ public final class DecoderResult {
         return this.other;
     }
 
-    public byte[] getRawBytes() {
-        return this.rawBytes;
+    public void setOther(Object obj) {
+        this.other = obj;
+    }
+
+    public boolean hasStructuredAppend() {
+        return this.structuredAppendParity >= 0 && this.structuredAppendSequenceNumber >= 0;
     }
 
     public int getStructuredAppendParity() {
@@ -45,17 +57,5 @@ public final class DecoderResult {
 
     public int getStructuredAppendSequenceNumber() {
         return this.structuredAppendSequenceNumber;
-    }
-
-    public String getText() {
-        return this.text;
-    }
-
-    public boolean hasStructuredAppend() {
-        return this.structuredAppendParity >= 0 && this.structuredAppendSequenceNumber >= 0;
-    }
-
-    public void setOther(Object obj) {
-        this.other = obj;
     }
 }

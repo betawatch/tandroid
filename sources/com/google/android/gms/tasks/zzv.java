@@ -19,9 +19,19 @@ final class zzv extends LifecycleCallback {
     }
 
     public static zzv zza(Activity activity) {
+        zzv zzvVar;
         LifecycleFragment fragment = LifecycleCallback.getFragment(activity);
-        zzv zzvVar = (zzv) fragment.getCallbackOrNull("TaskOnStopCallback", zzv.class);
-        return zzvVar == null ? new zzv(fragment) : zzvVar;
+        synchronized (fragment) {
+            try {
+                zzvVar = (zzv) fragment.getCallbackOrNull("TaskOnStopCallback", zzv.class);
+                if (zzvVar == null) {
+                    zzvVar = new zzv(fragment);
+                }
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+        return zzvVar;
     }
 
     @Override // com.google.android.gms.common.api.internal.LifecycleCallback

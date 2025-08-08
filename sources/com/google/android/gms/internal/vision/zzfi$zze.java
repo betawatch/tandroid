@@ -16,16 +16,6 @@ public final class zzfi$zze extends zzjb implements zzkm {
     private String zzd = "";
     private String zzj = "";
 
-    public static final class zza extends zzjb.zzb implements zzkm {
-        private zza() {
-            super(zzfi$zze.zzl);
-        }
-
-        /* synthetic */ zza(zzfk zzfkVar) {
-            this();
-        }
-    }
-
     public enum zzb implements zzje {
         zza(0),
         zzb(1),
@@ -35,8 +25,9 @@ public final class zzfi$zze extends zzjb implements zzkm {
         private static final zzjh zze = new zzfm();
         private final int zzf;
 
-        zzb(int i) {
-            this.zzf = i;
+        @Override // com.google.android.gms.internal.vision.zzje
+        public final int zza() {
+            return this.zzf;
         }
 
         public static zzb zza(int i) {
@@ -64,19 +55,22 @@ public final class zzfi$zze extends zzjb implements zzkm {
             return "<" + zzb.class.getName() + '@' + Integer.toHexString(System.identityHashCode(this)) + " number=" + this.zzf + " name=" + name() + '>';
         }
 
-        @Override // com.google.android.gms.internal.vision.zzje
-        public final int zza() {
-            return this.zzf;
+        zzb(int i) {
+            this.zzf = i;
         }
     }
 
-    static {
-        zzfi$zze zzfi_zze = new zzfi$zze();
-        zzl = zzfi_zze;
-        zzjb.zza(zzfi$zze.class, zzfi_zze);
+    private zzfi$zze() {
     }
 
-    private zzfi$zze() {
+    public static final class zza extends zzjb.zzb implements zzkm {
+        private zza() {
+            super(zzfi$zze.zzl);
+        }
+
+        /* synthetic */ zza(zzfk zzfkVar) {
+            this();
+        }
     }
 
     /* JADX WARN: Type inference failed for: r3v19, types: [com.google.android.gms.internal.vision.zzjb$zza, com.google.android.gms.internal.vision.zzkx] */
@@ -117,5 +111,11 @@ public final class zzfi$zze extends zzjb implements zzkm {
             default:
                 throw new UnsupportedOperationException();
         }
+    }
+
+    static {
+        zzfi$zze zzfi_zze = new zzfi$zze();
+        zzl = zzfi_zze;
+        zzjb.zza(zzfi$zze.class, zzfi_zze);
     }
 }

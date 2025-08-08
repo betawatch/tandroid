@@ -23,25 +23,6 @@ public abstract class Assertions {
         return i;
     }
 
-    public static String checkNotEmpty(String str) {
-        if (TextUtils.isEmpty(str)) {
-            throw new IllegalArgumentException();
-        }
-        return str;
-    }
-
-    public static Object checkNotNull(Object obj) {
-        obj.getClass();
-        return obj;
-    }
-
-    public static Object checkNotNull(Object obj, Object obj2) {
-        if (obj != null) {
-            return obj;
-        }
-        throw new NullPointerException(String.valueOf(obj2));
-    }
-
     public static void checkState(boolean z) {
         if (!z) {
             throw new IllegalStateException();
@@ -66,5 +47,24 @@ public abstract class Assertions {
             return obj;
         }
         throw new IllegalStateException(String.valueOf(obj2));
+    }
+
+    public static Object checkNotNull(Object obj) {
+        obj.getClass();
+        return obj;
+    }
+
+    public static Object checkNotNull(Object obj, Object obj2) {
+        if (obj != null) {
+            return obj;
+        }
+        throw new NullPointerException(String.valueOf(obj2));
+    }
+
+    public static String checkNotEmpty(String str) {
+        if (TextUtils.isEmpty(str)) {
+            throw new IllegalArgumentException();
+        }
+        return str;
     }
 }

@@ -45,35 +45,6 @@ public final class UdpDataSource extends BaseDataSource {
     }
 
     @Override // com.google.android.exoplayer2.upstream.DataSource
-    public void close() {
-        this.uri = null;
-        MulticastSocket multicastSocket = this.multicastSocket;
-        if (multicastSocket != null) {
-            try {
-                multicastSocket.leaveGroup((InetAddress) Assertions.checkNotNull(this.address));
-            } catch (IOException unused) {
-            }
-            this.multicastSocket = null;
-        }
-        DatagramSocket datagramSocket = this.socket;
-        if (datagramSocket != null) {
-            datagramSocket.close();
-            this.socket = null;
-        }
-        this.address = null;
-        this.packetRemaining = 0;
-        if (this.opened) {
-            this.opened = false;
-            transferEnded();
-        }
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.DataSource
-    public Uri getUri() {
-        return this.uri;
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.DataSource
     public long open(DataSpec dataSpec) {
         Uri uri = dataSpec.uri;
         this.uri = uri;
@@ -125,5 +96,34 @@ public final class UdpDataSource extends BaseDataSource {
         System.arraycopy(this.packetBuffer, length2 - i3, bArr, i, min);
         this.packetRemaining -= min;
         return min;
+    }
+
+    @Override // com.google.android.exoplayer2.upstream.DataSource
+    public Uri getUri() {
+        return this.uri;
+    }
+
+    @Override // com.google.android.exoplayer2.upstream.DataSource
+    public void close() {
+        this.uri = null;
+        MulticastSocket multicastSocket = this.multicastSocket;
+        if (multicastSocket != null) {
+            try {
+                multicastSocket.leaveGroup((InetAddress) Assertions.checkNotNull(this.address));
+            } catch (IOException unused) {
+            }
+            this.multicastSocket = null;
+        }
+        DatagramSocket datagramSocket = this.socket;
+        if (datagramSocket != null) {
+            datagramSocket.close();
+            this.socket = null;
+        }
+        this.address = null;
+        this.packetRemaining = 0;
+        if (this.opened) {
+            this.opened = false;
+            transferEnded();
+        }
     }
 }

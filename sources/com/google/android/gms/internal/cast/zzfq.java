@@ -9,6 +9,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
+import java.util.SequencedCollection;
 
 /* loaded from: classes.dex */
 public abstract class zzfq extends zzfm implements List, RandomAccess, j$.util.List {
@@ -38,6 +39,14 @@ public abstract class zzfq extends zzfm implements List, RandomAccess, j$.util.L
         throw new UnsupportedOperationException();
     }
 
+    public /* synthetic */ void addFirst(Object obj) {
+        List.-CC.$default$addFirst(this, obj);
+    }
+
+    public /* synthetic */ void addLast(Object obj) {
+        List.-CC.$default$addLast(this, obj);
+    }
+
     @Override // com.google.android.gms.internal.cast.zzfm, java.util.AbstractCollection, java.util.Collection
     public final boolean contains(Object obj) {
         return indexOf(obj) >= 0;
@@ -48,8 +57,8 @@ public abstract class zzfq extends zzfm implements List, RandomAccess, j$.util.L
         if (obj == this) {
             return true;
         }
-        if (obj instanceof List) {
-            List list = (List) obj;
+        if (obj instanceof java.util.List) {
+            java.util.List list = (java.util.List) obj;
             int size = size();
             if (size == list.size()) {
                 if (list instanceof RandomAccess) {
@@ -73,6 +82,14 @@ public abstract class zzfq extends zzfm implements List, RandomAccess, j$.util.L
             }
         }
         return false;
+    }
+
+    public /* synthetic */ Object getFirst() {
+        return List.-CC.$default$getFirst(this);
+    }
+
+    public /* synthetic */ Object getLast() {
+        return List.-CC.$default$getLast(this);
     }
 
     @Override // java.util.Collection, java.util.List
@@ -127,6 +144,14 @@ public abstract class zzfq extends zzfm implements List, RandomAccess, j$.util.L
         throw new UnsupportedOperationException();
     }
 
+    public /* synthetic */ Object removeFirst() {
+        return List.-CC.$default$removeFirst(this);
+    }
+
+    public /* synthetic */ Object removeLast() {
+        return List.-CC.$default$removeLast(this);
+    }
+
     @Override // j$.util.List
     public /* synthetic */ void replaceAll(UnaryOperator unaryOperator) {
         List.-CC.$default$replaceAll(this, unaryOperator);
@@ -135,6 +160,14 @@ public abstract class zzfq extends zzfm implements List, RandomAccess, j$.util.L
     @Override // java.util.List
     public /* synthetic */ void replaceAll(java.util.function.UnaryOperator unaryOperator) {
         replaceAll(UnaryOperator.VivifiedWrapper.convert(unaryOperator));
+    }
+
+    public /* synthetic */ java.util.List reversed() {
+        return List.-CC.$default$reversed(this);
+    }
+
+    public /* bridge */ /* synthetic */ SequencedCollection reversed() {
+        return List.-CC.$default$reversed(this);
     }
 
     @Override // java.util.List

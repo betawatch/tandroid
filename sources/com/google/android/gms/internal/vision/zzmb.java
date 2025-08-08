@@ -20,12 +20,12 @@ final class zzmb implements Iterator {
     }
 
     @Override // java.util.Iterator
-    public final /* synthetic */ Object next() {
-        return (String) this.zza.next();
+    public final void remove() {
+        throw new UnsupportedOperationException();
     }
 
     @Override // java.util.Iterator
-    public final void remove() {
-        throw new UnsupportedOperationException();
+    public final /* synthetic */ Object next() {
+        return (String) this.zza.next();
     }
 }

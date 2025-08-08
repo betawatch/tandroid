@@ -21,6 +21,17 @@ public final class ViewStubCompat extends View {
     public interface OnInflateListener {
     }
 
+    @Override // android.view.View
+    protected void dispatchDraw(Canvas canvas) {
+    }
+
+    @Override // android.view.View
+    public void draw(Canvas canvas) {
+    }
+
+    public void setOnInflateListener(OnInflateListener onInflateListener) {
+    }
+
     public ViewStubCompat(Context context, AttributeSet attributeSet) {
         this(context, attributeSet, 0);
     }
@@ -37,54 +48,28 @@ public final class ViewStubCompat extends View {
         setWillNotDraw(true);
     }
 
-    @Override // android.view.View
-    protected void dispatchDraw(Canvas canvas) {
-    }
-
-    @Override // android.view.View
-    public void draw(Canvas canvas) {
-    }
-
     public int getInflatedId() {
         return this.mInflatedId;
     }
 
-    public LayoutInflater getLayoutInflater() {
-        return this.mInflater;
+    public void setInflatedId(int i) {
+        this.mInflatedId = i;
     }
 
     public int getLayoutResource() {
         return this.mLayoutResource;
     }
 
-    public View inflate() {
-        ViewParent parent = getParent();
-        if (!(parent instanceof ViewGroup)) {
-            throw new IllegalStateException("ViewStub must have a non-null ViewGroup viewParent");
-        }
-        if (this.mLayoutResource == 0) {
-            throw new IllegalArgumentException("ViewStub must have a valid layoutResource");
-        }
-        ViewGroup viewGroup = (ViewGroup) parent;
-        LayoutInflater layoutInflater = this.mInflater;
-        if (layoutInflater == null) {
-            layoutInflater = LayoutInflater.from(getContext());
-        }
-        View inflate = layoutInflater.inflate(this.mLayoutResource, viewGroup, false);
-        int i = this.mInflatedId;
-        if (i != -1) {
-            inflate.setId(i);
-        }
-        int indexOfChild = viewGroup.indexOfChild(this);
-        viewGroup.removeViewInLayout(this);
-        ViewGroup.LayoutParams layoutParams = getLayoutParams();
-        if (layoutParams != null) {
-            viewGroup.addView(inflate, indexOfChild, layoutParams);
-        } else {
-            viewGroup.addView(inflate, indexOfChild);
-        }
-        this.mInflatedViewRef = new WeakReference(inflate);
-        return inflate;
+    public void setLayoutResource(int i) {
+        this.mLayoutResource = i;
+    }
+
+    public void setLayoutInflater(LayoutInflater layoutInflater) {
+        this.mInflater = layoutInflater;
+    }
+
+    public LayoutInflater getLayoutInflater() {
+        return this.mInflater;
     }
 
     @Override // android.view.View
@@ -92,35 +77,50 @@ public final class ViewStubCompat extends View {
         setMeasuredDimension(0, 0);
     }
 
-    public void setInflatedId(int i) {
-        this.mInflatedId = i;
-    }
-
-    public void setLayoutInflater(LayoutInflater layoutInflater) {
-        this.mInflater = layoutInflater;
-    }
-
-    public void setLayoutResource(int i) {
-        this.mLayoutResource = i;
-    }
-
-    public void setOnInflateListener(OnInflateListener onInflateListener) {
-    }
-
     @Override // android.view.View
     public void setVisibility(int i) {
         WeakReference weakReference = this.mInflatedViewRef;
         if (weakReference != null) {
             View view = (View) weakReference.get();
-            if (view == null) {
-                throw new IllegalStateException("setVisibility called on un-referenced view");
+            if (view != null) {
+                view.setVisibility(i);
+                return;
             }
-            view.setVisibility(i);
-            return;
+            throw new IllegalStateException("setVisibility called on un-referenced view");
         }
         super.setVisibility(i);
         if (i == 0 || i == 4) {
             inflate();
         }
+    }
+
+    public View inflate() {
+        ViewParent parent = getParent();
+        if (parent instanceof ViewGroup) {
+            if (this.mLayoutResource != 0) {
+                ViewGroup viewGroup = (ViewGroup) parent;
+                LayoutInflater layoutInflater = this.mInflater;
+                if (layoutInflater == null) {
+                    layoutInflater = LayoutInflater.from(getContext());
+                }
+                View inflate = layoutInflater.inflate(this.mLayoutResource, viewGroup, false);
+                int i = this.mInflatedId;
+                if (i != -1) {
+                    inflate.setId(i);
+                }
+                int indexOfChild = viewGroup.indexOfChild(this);
+                viewGroup.removeViewInLayout(this);
+                ViewGroup.LayoutParams layoutParams = getLayoutParams();
+                if (layoutParams != null) {
+                    viewGroup.addView(inflate, indexOfChild, layoutParams);
+                } else {
+                    viewGroup.addView(inflate, indexOfChild);
+                }
+                this.mInflatedViewRef = new WeakReference(inflate);
+                return inflate;
+            }
+            throw new IllegalArgumentException("ViewStub must have a valid layoutResource");
+        }
+        throw new IllegalStateException("ViewStub must have a non-null ViewGroup viewParent");
     }
 }

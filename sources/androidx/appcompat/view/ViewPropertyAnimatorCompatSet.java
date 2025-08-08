@@ -18,19 +18,6 @@ public class ViewPropertyAnimatorCompatSet {
         private boolean mProxyStarted = false;
         private int mProxyEndCount = 0;
 
-        @Override // androidx.core.view.ViewPropertyAnimatorListener
-        public void onAnimationEnd(View view) {
-            int i = this.mProxyEndCount + 1;
-            this.mProxyEndCount = i;
-            if (i == ViewPropertyAnimatorCompatSet.this.mAnimators.size()) {
-                ViewPropertyAnimatorListener viewPropertyAnimatorListener = ViewPropertyAnimatorCompatSet.this.mListener;
-                if (viewPropertyAnimatorListener != null) {
-                    viewPropertyAnimatorListener.onAnimationEnd(null);
-                }
-                onEnd();
-            }
-        }
-
         @Override // androidx.core.view.ViewPropertyAnimatorListenerAdapter, androidx.core.view.ViewPropertyAnimatorListener
         public void onAnimationStart(View view) {
             if (this.mProxyStarted) {
@@ -48,22 +35,21 @@ public class ViewPropertyAnimatorCompatSet {
             this.mProxyStarted = false;
             ViewPropertyAnimatorCompatSet.this.onAnimationsEnded();
         }
+
+        @Override // androidx.core.view.ViewPropertyAnimatorListener
+        public void onAnimationEnd(View view) {
+            int i = this.mProxyEndCount + 1;
+            this.mProxyEndCount = i;
+            if (i == ViewPropertyAnimatorCompatSet.this.mAnimators.size()) {
+                ViewPropertyAnimatorListener viewPropertyAnimatorListener = ViewPropertyAnimatorCompatSet.this.mListener;
+                if (viewPropertyAnimatorListener != null) {
+                    viewPropertyAnimatorListener.onAnimationEnd(null);
+                }
+                onEnd();
+            }
+        }
     };
     final ArrayList mAnimators = new ArrayList();
-
-    public void cancel() {
-        if (this.mIsStarted) {
-            Iterator it = this.mAnimators.iterator();
-            while (it.hasNext()) {
-                ((ViewPropertyAnimatorCompat) it.next()).cancel();
-            }
-            this.mIsStarted = false;
-        }
-    }
-
-    void onAnimationsEnded() {
-        this.mIsStarted = false;
-    }
 
     public ViewPropertyAnimatorCompatSet play(ViewPropertyAnimatorCompat viewPropertyAnimatorCompat) {
         if (!this.mIsStarted) {
@@ -76,27 +62,6 @@ public class ViewPropertyAnimatorCompatSet {
         this.mAnimators.add(viewPropertyAnimatorCompat);
         viewPropertyAnimatorCompat2.setStartDelay(viewPropertyAnimatorCompat.getDuration());
         this.mAnimators.add(viewPropertyAnimatorCompat2);
-        return this;
-    }
-
-    public ViewPropertyAnimatorCompatSet setDuration(long j) {
-        if (!this.mIsStarted) {
-            this.mDuration = j;
-        }
-        return this;
-    }
-
-    public ViewPropertyAnimatorCompatSet setInterpolator(Interpolator interpolator) {
-        if (!this.mIsStarted) {
-            this.mInterpolator = interpolator;
-        }
-        return this;
-    }
-
-    public ViewPropertyAnimatorCompatSet setListener(ViewPropertyAnimatorListener viewPropertyAnimatorListener) {
-        if (!this.mIsStarted) {
-            this.mListener = viewPropertyAnimatorListener;
-        }
         return this;
     }
 
@@ -121,5 +86,40 @@ public class ViewPropertyAnimatorCompatSet {
             viewPropertyAnimatorCompat.start();
         }
         this.mIsStarted = true;
+    }
+
+    void onAnimationsEnded() {
+        this.mIsStarted = false;
+    }
+
+    public void cancel() {
+        if (this.mIsStarted) {
+            Iterator it = this.mAnimators.iterator();
+            while (it.hasNext()) {
+                ((ViewPropertyAnimatorCompat) it.next()).cancel();
+            }
+            this.mIsStarted = false;
+        }
+    }
+
+    public ViewPropertyAnimatorCompatSet setDuration(long j) {
+        if (!this.mIsStarted) {
+            this.mDuration = j;
+        }
+        return this;
+    }
+
+    public ViewPropertyAnimatorCompatSet setInterpolator(Interpolator interpolator) {
+        if (!this.mIsStarted) {
+            this.mInterpolator = interpolator;
+        }
+        return this;
+    }
+
+    public ViewPropertyAnimatorCompatSet setListener(ViewPropertyAnimatorListener viewPropertyAnimatorListener) {
+        if (!this.mIsStarted) {
+            this.mListener = viewPropertyAnimatorListener;
+        }
+        return this;
     }
 }

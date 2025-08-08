@@ -1,26 +1,42 @@
 package com.google.android.gms.internal.play_billing;
 
+import java.util.concurrent.Callable;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
+
 /* loaded from: classes.dex */
-public final class zzfa extends zzbx implements zzdg {
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    /* synthetic */ zzfa(zzez zzezVar) {
-        super(r1);
-        zzfb zzfbVar;
-        zzfbVar = zzfb.zzb;
+final class zzfa extends zzex implements zzew {
+    final ScheduledExecutorService zza;
+
+    zzfa(ScheduledExecutorService scheduledExecutorService) {
+        super(scheduledExecutorService);
+        scheduledExecutorService.getClass();
+        this.zza = scheduledExecutorService;
     }
 
-    public final zzfa zzi(zzfh zzfhVar) {
-        zzg();
-        zzfb.zzy((zzfb) this.zza, (zzfj) zzfhVar.zzc());
-        return this;
+    @Override // java.util.concurrent.ScheduledExecutorService
+    public final /* bridge */ /* synthetic */ ScheduledFuture schedule(Runnable runnable, long j, TimeUnit timeUnit) {
+        ScheduledExecutorService scheduledExecutorService = this.zza;
+        zzfh zzr = zzfh.zzr(runnable, null);
+        return new zzey(zzr, scheduledExecutorService.schedule(zzr, j, timeUnit));
     }
 
-    public final zzfa zzk(int i) {
-        zzg();
-        zzfb.zzA((zzfb) this.zza, i);
-        return this;
+    @Override // java.util.concurrent.ScheduledExecutorService
+    public final /* bridge */ /* synthetic */ ScheduledFuture scheduleAtFixedRate(Runnable runnable, long j, long j2, TimeUnit timeUnit) {
+        zzez zzezVar = new zzez(runnable);
+        return new zzey(zzezVar, this.zza.scheduleAtFixedRate(zzezVar, j, j2, timeUnit));
+    }
+
+    @Override // java.util.concurrent.ScheduledExecutorService
+    public final /* bridge */ /* synthetic */ ScheduledFuture scheduleWithFixedDelay(Runnable runnable, long j, long j2, TimeUnit timeUnit) {
+        zzez zzezVar = new zzez(runnable);
+        return new zzey(zzezVar, this.zza.scheduleWithFixedDelay(zzezVar, j, j2, timeUnit));
+    }
+
+    @Override // java.util.concurrent.ScheduledExecutorService
+    public final /* bridge */ /* synthetic */ ScheduledFuture schedule(Callable callable, long j, TimeUnit timeUnit) {
+        zzfh zzfhVar = new zzfh(callable);
+        return new zzey(zzfhVar, this.zza.schedule(zzfhVar, j, timeUnit));
     }
 }

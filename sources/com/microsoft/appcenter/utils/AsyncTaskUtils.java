@@ -3,7 +3,7 @@ package com.microsoft.appcenter.utils;
 import android.os.AsyncTask;
 import java.util.concurrent.RejectedExecutionException;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class AsyncTaskUtils {
     public static AsyncTask execute(String str, AsyncTask asyncTask, Object... objArr) {
         try {

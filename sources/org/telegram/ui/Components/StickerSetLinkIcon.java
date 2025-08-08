@@ -12,7 +12,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class StickerSetLinkIcon extends Drawable {
     private final int N;
     private final int count;
@@ -21,6 +21,15 @@ public class StickerSetLinkIcon extends Drawable {
     public int alpha = NotificationCenter.goingToPreviewTheme;
     private final RectF rect = new RectF();
     private boolean hit = false;
+
+    @Override // android.graphics.drawable.Drawable
+    public int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setColorFilter(ColorFilter colorFilter) {
+    }
 
     public StickerSetLinkIcon(int i, boolean z, ArrayList arrayList, boolean z2) {
         this.out = z;
@@ -38,6 +47,27 @@ public class StickerSetLinkIcon extends Drawable {
         }
     }
 
+    public boolean equals(ArrayList arrayList) {
+        if (arrayList == null) {
+            return this.drawables.length == 0;
+        }
+        if (this.drawables.length != arrayList.size()) {
+            return false;
+        }
+        int i = 0;
+        while (true) {
+            AnimatedEmojiDrawable[] animatedEmojiDrawableArr = this.drawables;
+            if (i >= animatedEmojiDrawableArr.length) {
+                return true;
+            }
+            TLRPC.Document document = animatedEmojiDrawableArr[i].getDocument();
+            if ((document == null ? 0L : document.id) != ((TLRPC.Document) arrayList.get(i)).id) {
+                return false;
+            }
+            i++;
+        }
+    }
+
     public void attach(View view) {
         for (int i = 0; i < this.count; i++) {
             this.drawables[i].addView(view);
@@ -48,10 +78,6 @@ public class StickerSetLinkIcon extends Drawable {
         for (int i = 0; i < this.count; i++) {
             this.drawables[i].removeView(view);
         }
-    }
-
-    public boolean die() {
-        return this.hit;
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -89,25 +115,9 @@ public class StickerSetLinkIcon extends Drawable {
         canvas.restore();
     }
 
-    public boolean equals(ArrayList arrayList) {
-        if (arrayList == null) {
-            return this.drawables.length == 0;
-        }
-        if (this.drawables.length != arrayList.size()) {
-            return false;
-        }
-        int i = 0;
-        while (true) {
-            AnimatedEmojiDrawable[] animatedEmojiDrawableArr = this.drawables;
-            if (i >= animatedEmojiDrawableArr.length) {
-                return true;
-            }
-            TLRPC.Document document = animatedEmojiDrawableArr[i].getDocument();
-            if ((document == null ? 0L : document.id) != ((TLRPC.Document) arrayList.get(i)).id) {
-                return false;
-            }
-            i++;
-        }
+    @Override // android.graphics.drawable.Drawable
+    public void setAlpha(int i) {
+        this.alpha = i;
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -120,25 +130,15 @@ public class StickerSetLinkIcon extends Drawable {
         return AndroidUtilities.dp(48.0f);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public int getOpacity() {
-        return -2;
+    public void readyToDie() {
+        this.hit = true;
     }
 
     public void keepAlive() {
         this.hit = false;
     }
 
-    public void readyToDie() {
-        this.hit = true;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setAlpha(int i) {
-        this.alpha = i;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setColorFilter(ColorFilter colorFilter) {
+    public boolean die() {
+        return this.hit;
     }
 }

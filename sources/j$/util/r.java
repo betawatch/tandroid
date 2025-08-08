@@ -24,8 +24,8 @@ public final /* synthetic */ class r implements t, h {
     }
 
     @Override // j$.util.t
-    public final /* synthetic */ void c(j$.util.function.E e) {
-        this.a.forEachRemaining(j$.util.function.D.a(e));
+    public final /* synthetic */ void c(j$.util.function.G g) {
+        this.a.forEachRemaining(j$.util.function.F.a(g));
     }
 
     public final /* synthetic */ boolean equals(Object obj) {

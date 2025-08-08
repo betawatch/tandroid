@@ -7,19 +7,6 @@ import java.util.UUID;
 
 /* loaded from: classes.dex */
 public abstract class PsshAtomUtil {
-
-    private static class PsshAtom {
-        private final byte[] schemeData;
-        private final UUID uuid;
-        private final int version;
-
-        public PsshAtom(UUID uuid, int i, byte[] bArr) {
-            this.uuid = uuid;
-            this.version = i;
-            this.schemeData = bArr;
-        }
-    }
-
     public static byte[] buildPsshAtom(UUID uuid, byte[] bArr) {
         return buildPsshAtom(uuid, null, bArr);
     }
@@ -53,6 +40,34 @@ public abstract class PsshAtomUtil {
         return parsePsshAtom(bArr) != null;
     }
 
+    public static UUID parseUuid(byte[] bArr) {
+        PsshAtom parsePsshAtom = parsePsshAtom(bArr);
+        if (parsePsshAtom == null) {
+            return null;
+        }
+        return parsePsshAtom.uuid;
+    }
+
+    public static int parseVersion(byte[] bArr) {
+        PsshAtom parsePsshAtom = parsePsshAtom(bArr);
+        if (parsePsshAtom == null) {
+            return -1;
+        }
+        return parsePsshAtom.version;
+    }
+
+    public static byte[] parseSchemeSpecificData(byte[] bArr, UUID uuid) {
+        PsshAtom parsePsshAtom = parsePsshAtom(bArr);
+        if (parsePsshAtom == null) {
+            return null;
+        }
+        if (!uuid.equals(parsePsshAtom.uuid)) {
+            Log.w("PsshAtomUtil", "UUID mismatch. Expected: " + uuid + ", got: " + parsePsshAtom.uuid + ".");
+            return null;
+        }
+        return parsePsshAtom.schemeData;
+    }
+
     private static PsshAtom parsePsshAtom(byte[] bArr) {
         ParsableByteArray parsableByteArray = new ParsableByteArray(bArr);
         if (parsableByteArray.limit() < 32) {
@@ -80,31 +95,15 @@ public abstract class PsshAtomUtil {
         return new PsshAtom(uuid, parseFullAtomVersion, bArr2);
     }
 
-    public static byte[] parseSchemeSpecificData(byte[] bArr, UUID uuid) {
-        PsshAtom parsePsshAtom = parsePsshAtom(bArr);
-        if (parsePsshAtom == null) {
-            return null;
-        }
-        if (uuid.equals(parsePsshAtom.uuid)) {
-            return parsePsshAtom.schemeData;
-        }
-        Log.w("PsshAtomUtil", "UUID mismatch. Expected: " + uuid + ", got: " + parsePsshAtom.uuid + ".");
-        return null;
-    }
+    private static class PsshAtom {
+        private final byte[] schemeData;
+        private final UUID uuid;
+        private final int version;
 
-    public static UUID parseUuid(byte[] bArr) {
-        PsshAtom parsePsshAtom = parsePsshAtom(bArr);
-        if (parsePsshAtom == null) {
-            return null;
+        public PsshAtom(UUID uuid, int i, byte[] bArr) {
+            this.uuid = uuid;
+            this.version = i;
+            this.schemeData = bArr;
         }
-        return parsePsshAtom.uuid;
-    }
-
-    public static int parseVersion(byte[] bArr) {
-        PsshAtom parsePsshAtom = parsePsshAtom(bArr);
-        if (parsePsshAtom == null) {
-            return -1;
-        }
-        return parsePsshAtom.version;
     }
 }

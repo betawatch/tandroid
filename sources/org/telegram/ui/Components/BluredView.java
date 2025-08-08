@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.view.View;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class BluredView extends View {
     public final BlurBehindDrawable drawable;
 
@@ -15,10 +15,6 @@ public abstract class BluredView extends View {
         this.drawable = blurBehindDrawable;
         blurBehindDrawable.setAnimateAlpha(false);
         blurBehindDrawable.show(true);
-    }
-
-    public boolean fullyDrawing() {
-        return this.drawable.isFullyDrawing() && getVisibility() == 0;
     }
 
     @Override // android.view.View
@@ -34,5 +30,9 @@ public abstract class BluredView extends View {
 
     public void update() {
         this.drawable.invalidate();
+    }
+
+    public boolean fullyDrawing() {
+        return this.drawable.isFullyDrawing() && getVisibility() == 0;
     }
 }

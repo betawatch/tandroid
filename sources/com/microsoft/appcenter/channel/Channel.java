@@ -3,7 +3,7 @@ package com.microsoft.appcenter.channel;
 import com.microsoft.appcenter.ingestion.Ingestion;
 import com.microsoft.appcenter.ingestion.models.Log;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public interface Channel {
 
     public interface GroupListener {

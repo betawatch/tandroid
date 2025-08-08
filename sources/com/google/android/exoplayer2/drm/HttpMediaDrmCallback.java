@@ -33,6 +33,48 @@ public final class HttpMediaDrmCallback implements MediaDrmCallback {
         this.keyRequestProperties = new HashMap();
     }
 
+    public void setKeyRequestProperty(String str, String str2) {
+        Assertions.checkNotNull(str);
+        Assertions.checkNotNull(str2);
+        synchronized (this.keyRequestProperties) {
+            this.keyRequestProperties.put(str, str2);
+        }
+    }
+
+    @Override // com.google.android.exoplayer2.drm.MediaDrmCallback
+    public byte[] executeProvisionRequest(UUID uuid, ExoMediaDrm.ProvisionRequest provisionRequest) {
+        return executePost(this.dataSourceFactory, provisionRequest.getDefaultUrl() + "&signedRequest=" + Util.fromUtf8Bytes(provisionRequest.getData()), null, Collections.emptyMap());
+    }
+
+    @Override // com.google.android.exoplayer2.drm.MediaDrmCallback
+    public byte[] executeKeyRequest(UUID uuid, ExoMediaDrm.KeyRequest keyRequest) {
+        String str;
+        String licenseServerUrl = keyRequest.getLicenseServerUrl();
+        if (this.forceDefaultLicenseUrl || TextUtils.isEmpty(licenseServerUrl)) {
+            licenseServerUrl = this.defaultLicenseUrl;
+        }
+        if (TextUtils.isEmpty(licenseServerUrl)) {
+            DataSpec.Builder builder = new DataSpec.Builder();
+            Uri uri = Uri.EMPTY;
+            throw new MediaDrmCallbackException(builder.setUri(uri).build(), uri, ImmutableMap.of(), 0L, new IllegalStateException("No license URL"));
+        }
+        HashMap hashMap = new HashMap();
+        UUID uuid2 = C.PLAYREADY_UUID;
+        if (uuid2.equals(uuid)) {
+            str = "text/xml";
+        } else {
+            str = C.CLEARKEY_UUID.equals(uuid) ? "application/json" : "application/octet-stream";
+        }
+        hashMap.put("Content-Type", str);
+        if (uuid2.equals(uuid)) {
+            hashMap.put("SOAPAction", "http://schemas.microsoft.com/DRM/2007/03/protocols/AcquireLicense");
+        }
+        synchronized (this.keyRequestProperties) {
+            hashMap.putAll(this.keyRequestProperties);
+        }
+        return executePost(this.dataSourceFactory, licenseServerUrl, keyRequest.getData(), hashMap);
+    }
+
     private static byte[] executePost(DataSource.Factory factory, String str, byte[] bArr, Map map) {
         StatsDataSource statsDataSource = new StatsDataSource(factory.createDataSource());
         DataSpec build = new DataSpec.Builder().setUri(str).setHttpRequestHeaders(map).setHttpMethod(2).setHttpBody(bArr).setFlags(1).build();
@@ -69,41 +111,5 @@ public final class HttpMediaDrmCallback implements MediaDrmCallback {
             return null;
         }
         return (String) list.get(0);
-    }
-
-    @Override // com.google.android.exoplayer2.drm.MediaDrmCallback
-    public byte[] executeKeyRequest(UUID uuid, ExoMediaDrm.KeyRequest keyRequest) {
-        String licenseServerUrl = keyRequest.getLicenseServerUrl();
-        if (this.forceDefaultLicenseUrl || TextUtils.isEmpty(licenseServerUrl)) {
-            licenseServerUrl = this.defaultLicenseUrl;
-        }
-        if (TextUtils.isEmpty(licenseServerUrl)) {
-            DataSpec.Builder builder = new DataSpec.Builder();
-            Uri uri = Uri.EMPTY;
-            throw new MediaDrmCallbackException(builder.setUri(uri).build(), uri, ImmutableMap.of(), 0L, new IllegalStateException("No license URL"));
-        }
-        HashMap hashMap = new HashMap();
-        UUID uuid2 = C.PLAYREADY_UUID;
-        hashMap.put("Content-Type", uuid2.equals(uuid) ? "text/xml" : C.CLEARKEY_UUID.equals(uuid) ? "application/json" : "application/octet-stream");
-        if (uuid2.equals(uuid)) {
-            hashMap.put("SOAPAction", "http://schemas.microsoft.com/DRM/2007/03/protocols/AcquireLicense");
-        }
-        synchronized (this.keyRequestProperties) {
-            hashMap.putAll(this.keyRequestProperties);
-        }
-        return executePost(this.dataSourceFactory, licenseServerUrl, keyRequest.getData(), hashMap);
-    }
-
-    @Override // com.google.android.exoplayer2.drm.MediaDrmCallback
-    public byte[] executeProvisionRequest(UUID uuid, ExoMediaDrm.ProvisionRequest provisionRequest) {
-        return executePost(this.dataSourceFactory, provisionRequest.getDefaultUrl() + "&signedRequest=" + Util.fromUtf8Bytes(provisionRequest.getData()), null, Collections.emptyMap());
-    }
-
-    public void setKeyRequestProperty(String str, String str2) {
-        Assertions.checkNotNull(str);
-        Assertions.checkNotNull(str2);
-        synchronized (this.keyRequestProperties) {
-            this.keyRequestProperties.put(str, str2);
-        }
     }
 }

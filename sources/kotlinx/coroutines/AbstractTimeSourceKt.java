@@ -1,6 +1,6 @@
 package kotlinx.coroutines;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class AbstractTimeSourceKt {
     public static final AbstractTimeSource getTimeSource() {
         return null;

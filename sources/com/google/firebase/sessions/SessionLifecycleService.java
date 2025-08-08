@@ -19,21 +19,12 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.time.Duration;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class SessionLifecycleService extends Service {
     public static final Companion Companion = new Companion(null);
     private final HandlerThread handlerThread = new HandlerThread("FirebaseSessions_HandlerThread");
     private MessageHandler messageHandler;
     private Messenger messenger;
-
-    public static final class Companion {
-        private Companion() {
-        }
-
-        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
-            this();
-        }
-    }
 
     public static final class MessageHandler extends Handler {
         private final ArrayList boundClients;
@@ -45,87 +36,6 @@ public final class SessionLifecycleService extends Service {
             super(looper);
             Intrinsics.checkNotNullParameter(looper, "looper");
             this.boundClients = new ArrayList();
-        }
-
-        private final void broadcastSession() {
-            StringBuilder sb = new StringBuilder();
-            sb.append("Broadcasting new session: ");
-            SessionGenerator.Companion companion = SessionGenerator.Companion;
-            sb.append(companion.getInstance().getCurrentSession());
-            Log.d("SessionLifecycleService", sb.toString());
-            SessionFirelogPublisher.Companion.getInstance().logSession(companion.getInstance().getCurrentSession());
-            for (Messenger it : new ArrayList(this.boundClients)) {
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                maybeSendSessionToClient(it);
-            }
-        }
-
-        private final void handleBackgrounding(Message message) {
-            Log.d("SessionLifecycleService", "Activity backgrounding at " + message.getWhen());
-            this.lastMsgTimeMs = message.getWhen();
-        }
-
-        private final void handleClientBound(Message message) {
-            this.boundClients.add(message.replyTo);
-            Messenger messenger = message.replyTo;
-            Intrinsics.checkNotNullExpressionValue(messenger, "msg.replyTo");
-            maybeSendSessionToClient(messenger);
-            Log.d("SessionLifecycleService", "Client " + message.replyTo + " bound at " + message.getWhen() + ". Clients: " + this.boundClients.size());
-        }
-
-        private final void handleForegrounding(Message message) {
-            Log.d("SessionLifecycleService", "Activity foregrounding at " + message.getWhen() + '.');
-            if (this.hasForegrounded) {
-                if (isSessionRestart(message.getWhen())) {
-                    Log.d("SessionLifecycleService", "Session too long in background. Creating new session.");
-                }
-                this.lastMsgTimeMs = message.getWhen();
-            }
-            Log.d("SessionLifecycleService", "Cold start detected.");
-            this.hasForegrounded = true;
-            newSession();
-            this.lastMsgTimeMs = message.getWhen();
-        }
-
-        private final boolean isSessionRestart(long j) {
-            return j - this.lastMsgTimeMs > Duration.getInWholeMilliseconds-impl(SessionsSettings.Companion.getInstance().getSessionRestartTimeout-UwyO8pc());
-        }
-
-        private final void maybeSendSessionToClient(Messenger messenger) {
-            String currentSessionId;
-            if (this.hasForegrounded) {
-                currentSessionId = SessionGenerator.Companion.getInstance().getCurrentSession().getSessionId();
-            } else {
-                currentSessionId = SessionDatastore.Companion.getInstance().getCurrentSessionId();
-                Log.d("SessionLifecycleService", "App has not yet foregrounded. Using previously stored session: " + currentSessionId);
-                if (currentSessionId == null) {
-                    return;
-                }
-            }
-            sendSessionToClient(messenger, currentSessionId);
-        }
-
-        private final void newSession() {
-            SessionGenerator.Companion companion = SessionGenerator.Companion;
-            companion.getInstance().generateNewSession();
-            Log.d("SessionLifecycleService", "Generated new session " + companion.getInstance().getCurrentSession().getSessionId());
-            broadcastSession();
-            SessionDatastore.Companion.getInstance().updateSessionId(companion.getInstance().getCurrentSession().getSessionId());
-        }
-
-        private final void sendSessionToClient(Messenger messenger, String str) {
-            try {
-                Bundle bundle = new Bundle();
-                bundle.putString("SessionUpdateExtra", str);
-                Message obtain = Message.obtain(null, 3, 0, 0);
-                obtain.setData(bundle);
-                messenger.send(obtain);
-            } catch (DeadObjectException unused) {
-                Log.d("SessionLifecycleService", "Removing dead client from list: " + messenger);
-                this.boundClients.remove(messenger);
-            } catch (Exception e) {
-                Log.w("SessionLifecycleService", "Unable to push new session to " + messenger + '.', e);
-            }
         }
 
         @Override // android.os.Handler
@@ -151,10 +61,94 @@ public final class SessionLifecycleService extends Service {
             Log.w("SessionLifecycleService", "Received unexpected event from the SessionLifecycleClient: " + msg);
             super.handleMessage(msg);
         }
+
+        private final void handleForegrounding(Message message) {
+            Log.d("SessionLifecycleService", "Activity foregrounding at " + message.getWhen() + '.');
+            if (!this.hasForegrounded) {
+                Log.d("SessionLifecycleService", "Cold start detected.");
+                this.hasForegrounded = true;
+                newSession();
+            } else if (isSessionRestart(message.getWhen())) {
+                Log.d("SessionLifecycleService", "Session too long in background. Creating new session.");
+                newSession();
+            }
+            this.lastMsgTimeMs = message.getWhen();
+        }
+
+        private final void handleBackgrounding(Message message) {
+            Log.d("SessionLifecycleService", "Activity backgrounding at " + message.getWhen());
+            this.lastMsgTimeMs = message.getWhen();
+        }
+
+        private final void handleClientBound(Message message) {
+            this.boundClients.add(message.replyTo);
+            Messenger messenger = message.replyTo;
+            Intrinsics.checkNotNullExpressionValue(messenger, "msg.replyTo");
+            maybeSendSessionToClient(messenger);
+            Log.d("SessionLifecycleService", "Client " + message.replyTo + " bound at " + message.getWhen() + ". Clients: " + this.boundClients.size());
+        }
+
+        private final void newSession() {
+            SessionGenerator.Companion companion = SessionGenerator.Companion;
+            companion.getInstance().generateNewSession();
+            Log.d("SessionLifecycleService", "Generated new session " + companion.getInstance().getCurrentSession().getSessionId());
+            broadcastSession();
+            SessionDatastore.Companion.getInstance().updateSessionId(companion.getInstance().getCurrentSession().getSessionId());
+        }
+
+        private final void broadcastSession() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("Broadcasting new session: ");
+            SessionGenerator.Companion companion = SessionGenerator.Companion;
+            sb.append(companion.getInstance().getCurrentSession());
+            Log.d("SessionLifecycleService", sb.toString());
+            SessionFirelogPublisher.Companion.getInstance().logSession(companion.getInstance().getCurrentSession());
+            for (Messenger it : new ArrayList(this.boundClients)) {
+                Intrinsics.checkNotNullExpressionValue(it, "it");
+                maybeSendSessionToClient(it);
+            }
+        }
+
+        private final void maybeSendSessionToClient(Messenger messenger) {
+            if (this.hasForegrounded) {
+                sendSessionToClient(messenger, SessionGenerator.Companion.getInstance().getCurrentSession().getSessionId());
+                return;
+            }
+            String currentSessionId = SessionDatastore.Companion.getInstance().getCurrentSessionId();
+            Log.d("SessionLifecycleService", "App has not yet foregrounded. Using previously stored session: " + currentSessionId);
+            if (currentSessionId != null) {
+                sendSessionToClient(messenger, currentSessionId);
+            }
+        }
+
+        private final void sendSessionToClient(Messenger messenger, String str) {
+            try {
+                Bundle bundle = new Bundle();
+                bundle.putString("SessionUpdateExtra", str);
+                Message obtain = Message.obtain(null, 3, 0, 0);
+                obtain.setData(bundle);
+                messenger.send(obtain);
+            } catch (DeadObjectException unused) {
+                Log.d("SessionLifecycleService", "Removing dead client from list: " + messenger);
+                this.boundClients.remove(messenger);
+            } catch (Exception e) {
+                Log.w("SessionLifecycleService", "Unable to push new session to " + messenger + '.', e);
+            }
+        }
+
+        private final boolean isSessionRestart(long j) {
+            return j - this.lastMsgTimeMs > Duration.getInWholeMilliseconds-impl(SessionsSettings.Companion.getInstance().getSessionRestartTimeout-UwyO8pc());
+        }
     }
 
-    private final Messenger getClientCallback(Intent intent) {
-        return (Messenger) (Build.VERSION.SDK_INT >= 33 ? intent.getParcelableExtra("ClientCallbackMessenger", Messenger.class) : intent.getParcelableExtra("ClientCallbackMessenger"));
+    @Override // android.app.Service
+    public void onCreate() {
+        super.onCreate();
+        this.handlerThread.start();
+        Looper looper = this.handlerThread.getLooper();
+        Intrinsics.checkNotNullExpressionValue(looper, "handlerThread.looper");
+        this.messageHandler = new MessageHandler(looper);
+        this.messenger = new Messenger(this.messageHandler);
     }
 
     @Override // android.app.Service
@@ -181,18 +175,26 @@ public final class SessionLifecycleService extends Service {
     }
 
     @Override // android.app.Service
-    public void onCreate() {
-        super.onCreate();
-        this.handlerThread.start();
-        Looper looper = this.handlerThread.getLooper();
-        Intrinsics.checkNotNullExpressionValue(looper, "handlerThread.looper");
-        this.messageHandler = new MessageHandler(looper);
-        this.messenger = new Messenger(this.messageHandler);
-    }
-
-    @Override // android.app.Service
     public void onDestroy() {
         super.onDestroy();
         this.handlerThread.quit();
+    }
+
+    private final Messenger getClientCallback(Intent intent) {
+        Object parcelableExtra;
+        if (Build.VERSION.SDK_INT >= 33) {
+            parcelableExtra = intent.getParcelableExtra("ClientCallbackMessenger", Messenger.class);
+            return (Messenger) parcelableExtra;
+        }
+        return (Messenger) intent.getParcelableExtra("ClientCallbackMessenger");
+    }
+
+    public static final class Companion {
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        private Companion() {
+        }
     }
 }

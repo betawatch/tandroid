@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.text.TextPaint;
 import android.text.style.MetricAffectingSpan;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class TextPaintUrlSpan extends MetricAffectingSpan {
     private String currentUrl;
     private TextPaint textPaint;
@@ -13,16 +13,16 @@ public class TextPaintUrlSpan extends MetricAffectingSpan {
         this.currentUrl = str;
     }
 
-    public TextPaint getTextPaint() {
-        return this.textPaint;
-    }
-
     public String getUrl() {
         return this.currentUrl;
     }
 
-    @Override // android.text.style.CharacterStyle
-    public void updateDrawState(TextPaint textPaint) {
+    public TextPaint getTextPaint() {
+        return this.textPaint;
+    }
+
+    @Override // android.text.style.MetricAffectingSpan
+    public void updateMeasureState(TextPaint textPaint) {
         TextPaint textPaint2 = this.textPaint;
         if (textPaint2 != null) {
             textPaint.setColor(textPaint2.getColor());
@@ -35,8 +35,8 @@ public class TextPaintUrlSpan extends MetricAffectingSpan {
         }
     }
 
-    @Override // android.text.style.MetricAffectingSpan
-    public void updateMeasureState(TextPaint textPaint) {
+    @Override // android.text.style.CharacterStyle
+    public void updateDrawState(TextPaint textPaint) {
         TextPaint textPaint2 = this.textPaint;
         if (textPaint2 != null) {
             textPaint.setColor(textPaint2.getColor());

@@ -2,7 +2,7 @@ package com.google.firebase.installations.remote;
 
 import com.google.firebase.installations.remote.AutoValue_InstallationResponse;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class InstallationResponse {
 
     public static abstract class Builder {
@@ -24,10 +24,6 @@ public abstract class InstallationResponse {
         BAD_CONFIG
     }
 
-    public static Builder builder() {
-        return new AutoValue_InstallationResponse.Builder();
-    }
-
     public abstract TokenResult getAuthToken();
 
     public abstract String getFid();
@@ -37,4 +33,8 @@ public abstract class InstallationResponse {
     public abstract ResponseCode getResponseCode();
 
     public abstract String getUri();
+
+    public static Builder builder() {
+        return new AutoValue_InstallationResponse.Builder();
+    }
 }

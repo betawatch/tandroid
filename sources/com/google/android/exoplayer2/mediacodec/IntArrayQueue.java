@@ -10,6 +10,39 @@ final class IntArrayQueue {
     private int[] data = new int[16];
     private int wrapAroundMask = 15;
 
+    public void add(int i) {
+        if (this.size == this.data.length) {
+            doubleArraySize();
+        }
+        int i2 = (this.tailIndex + 1) & this.wrapAroundMask;
+        this.tailIndex = i2;
+        this.data[i2] = i;
+        this.size++;
+    }
+
+    public int remove() {
+        int i = this.size;
+        if (i == 0) {
+            throw new NoSuchElementException();
+        }
+        int[] iArr = this.data;
+        int i2 = this.headIndex;
+        int i3 = iArr[i2];
+        this.headIndex = (i2 + 1) & this.wrapAroundMask;
+        this.size = i - 1;
+        return i3;
+    }
+
+    public boolean isEmpty() {
+        return this.size == 0;
+    }
+
+    public void clear() {
+        this.headIndex = 0;
+        this.tailIndex = -1;
+        this.size = 0;
+    }
+
     private void doubleArraySize() {
         int[] iArr = this.data;
         int length = iArr.length << 1;
@@ -26,38 +59,5 @@ final class IntArrayQueue {
         this.tailIndex = this.size - 1;
         this.data = iArr2;
         this.wrapAroundMask = length - 1;
-    }
-
-    public void add(int i) {
-        if (this.size == this.data.length) {
-            doubleArraySize();
-        }
-        int i2 = (this.tailIndex + 1) & this.wrapAroundMask;
-        this.tailIndex = i2;
-        this.data[i2] = i;
-        this.size++;
-    }
-
-    public void clear() {
-        this.headIndex = 0;
-        this.tailIndex = -1;
-        this.size = 0;
-    }
-
-    public boolean isEmpty() {
-        return this.size == 0;
-    }
-
-    public int remove() {
-        int i = this.size;
-        if (i == 0) {
-            throw new NoSuchElementException();
-        }
-        int[] iArr = this.data;
-        int i2 = this.headIndex;
-        int i3 = iArr[i2];
-        this.headIndex = (i2 + 1) & this.wrapAroundMask;
-        this.size = i - 1;
-        return i3;
     }
 }

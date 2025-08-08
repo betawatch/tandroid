@@ -4,7 +4,7 @@ import android.os.Bundle;
 import androidx.collection.ArrayMap;
 import java.util.concurrent.TimeUnit;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class Constants {
     public static final long WAKE_LOCK_ACQUIRE_TIMEOUT_MILLIS = TimeUnit.MINUTES.toMillis(3);
 

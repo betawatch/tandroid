@@ -9,7 +9,7 @@ import com.google.mlkit.common.MlKitException;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class MLTaskExecutor {
     private static final Object zza = new Object();
     private static MLTaskExecutor zzb;

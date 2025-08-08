@@ -7,22 +7,24 @@ abstract class d {
     protected int c;
     protected long[] d;
 
+    public abstract void clear();
+
     protected d() {
         this.a = 4;
     }
 
     protected d(int i) {
-        if (i >= 0) {
-            this.a = Math.max(4, 32 - Integer.numberOfLeadingZeros(i - 1));
-        } else {
+        if (i < 0) {
             throw new IllegalArgumentException("Illegal Capacity: " + i);
         }
+        this.a = Math.max(4, 32 - Integer.numberOfLeadingZeros(i - 1));
     }
-
-    public abstract void clear();
 
     public final long count() {
         int i = this.c;
-        return i == 0 ? this.b : this.d[i] + this.b;
+        if (i == 0) {
+            return this.b;
+        }
+        return this.d[i] + this.b;
     }
 }

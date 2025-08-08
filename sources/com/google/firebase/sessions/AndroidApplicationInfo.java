@@ -3,7 +3,7 @@ package com.google.firebase.sessions;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class AndroidApplicationInfo {
     private final String appBuildVersion;
     private final List appProcessDetails;
@@ -11,6 +11,25 @@ public final class AndroidApplicationInfo {
     private final String deviceManufacturer;
     private final String packageName;
     private final String versionName;
+
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof AndroidApplicationInfo)) {
+            return false;
+        }
+        AndroidApplicationInfo androidApplicationInfo = (AndroidApplicationInfo) obj;
+        return Intrinsics.areEqual(this.packageName, androidApplicationInfo.packageName) && Intrinsics.areEqual(this.versionName, androidApplicationInfo.versionName) && Intrinsics.areEqual(this.appBuildVersion, androidApplicationInfo.appBuildVersion) && Intrinsics.areEqual(this.deviceManufacturer, androidApplicationInfo.deviceManufacturer) && Intrinsics.areEqual(this.currentProcessDetails, androidApplicationInfo.currentProcessDetails) && Intrinsics.areEqual(this.appProcessDetails, androidApplicationInfo.appProcessDetails);
+    }
+
+    public int hashCode() {
+        return (((((((((this.packageName.hashCode() * 31) + this.versionName.hashCode()) * 31) + this.appBuildVersion.hashCode()) * 31) + this.deviceManufacturer.hashCode()) * 31) + this.currentProcessDetails.hashCode()) * 31) + this.appProcessDetails.hashCode();
+    }
+
+    public String toString() {
+        return "AndroidApplicationInfo(packageName=" + this.packageName + ", versionName=" + this.versionName + ", appBuildVersion=" + this.appBuildVersion + ", deviceManufacturer=" + this.deviceManufacturer + ", currentProcessDetails=" + this.currentProcessDetails + ", appProcessDetails=" + this.appProcessDetails + ')';
+    }
 
     public AndroidApplicationInfo(String packageName, String versionName, String appBuildVersion, String deviceManufacturer, ProcessDetails currentProcessDetails, List appProcessDetails) {
         Intrinsics.checkNotNullParameter(packageName, "packageName");
@@ -27,33 +46,6 @@ public final class AndroidApplicationInfo {
         this.appProcessDetails = appProcessDetails;
     }
 
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof AndroidApplicationInfo)) {
-            return false;
-        }
-        AndroidApplicationInfo androidApplicationInfo = (AndroidApplicationInfo) obj;
-        return Intrinsics.areEqual(this.packageName, androidApplicationInfo.packageName) && Intrinsics.areEqual(this.versionName, androidApplicationInfo.versionName) && Intrinsics.areEqual(this.appBuildVersion, androidApplicationInfo.appBuildVersion) && Intrinsics.areEqual(this.deviceManufacturer, androidApplicationInfo.deviceManufacturer) && Intrinsics.areEqual(this.currentProcessDetails, androidApplicationInfo.currentProcessDetails) && Intrinsics.areEqual(this.appProcessDetails, androidApplicationInfo.appProcessDetails);
-    }
-
-    public final String getAppBuildVersion() {
-        return this.appBuildVersion;
-    }
-
-    public final List getAppProcessDetails() {
-        return this.appProcessDetails;
-    }
-
-    public final ProcessDetails getCurrentProcessDetails() {
-        return this.currentProcessDetails;
-    }
-
-    public final String getDeviceManufacturer() {
-        return this.deviceManufacturer;
-    }
-
     public final String getPackageName() {
         return this.packageName;
     }
@@ -62,11 +54,19 @@ public final class AndroidApplicationInfo {
         return this.versionName;
     }
 
-    public int hashCode() {
-        return (((((((((this.packageName.hashCode() * 31) + this.versionName.hashCode()) * 31) + this.appBuildVersion.hashCode()) * 31) + this.deviceManufacturer.hashCode()) * 31) + this.currentProcessDetails.hashCode()) * 31) + this.appProcessDetails.hashCode();
+    public final String getAppBuildVersion() {
+        return this.appBuildVersion;
     }
 
-    public String toString() {
-        return "AndroidApplicationInfo(packageName=" + this.packageName + ", versionName=" + this.versionName + ", appBuildVersion=" + this.appBuildVersion + ", deviceManufacturer=" + this.deviceManufacturer + ", currentProcessDetails=" + this.currentProcessDetails + ", appProcessDetails=" + this.appProcessDetails + ')';
+    public final String getDeviceManufacturer() {
+        return this.deviceManufacturer;
+    }
+
+    public final ProcessDetails getCurrentProcessDetails() {
+        return this.currentProcessDetails;
+    }
+
+    public final List getAppProcessDetails() {
+        return this.appProcessDetails;
     }
 }

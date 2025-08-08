@@ -20,81 +20,10 @@ public abstract class LiveData {
     private SafeIterableMap mObservers = new SafeIterableMap();
     int mActiveCount = 0;
 
-    private class AlwaysActiveObserver extends ObserverWrapper {
-        AlwaysActiveObserver(Observer observer) {
-            super(observer);
-        }
-
-        @Override // androidx.lifecycle.LiveData.ObserverWrapper
-        boolean shouldBeActive() {
-            return true;
-        }
+    protected void onActive() {
     }
 
-    class LifecycleBoundObserver extends ObserverWrapper implements LifecycleEventObserver {
-        final LifecycleOwner mOwner;
-
-        LifecycleBoundObserver(LifecycleOwner lifecycleOwner, Observer observer) {
-            super(observer);
-            this.mOwner = lifecycleOwner;
-        }
-
-        void detachObserver() {
-            this.mOwner.getLifecycle().removeObserver(this);
-        }
-
-        boolean isAttachedTo(LifecycleOwner lifecycleOwner) {
-            return this.mOwner == lifecycleOwner;
-        }
-
-        @Override // androidx.lifecycle.LifecycleEventObserver
-        public void onStateChanged(LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
-            Lifecycle.State currentState = this.mOwner.getLifecycle().getCurrentState();
-            if (currentState == Lifecycle.State.DESTROYED) {
-                LiveData.this.removeObserver(this.mObserver);
-                return;
-            }
-            Lifecycle.State state = null;
-            while (state != currentState) {
-                activeStateChanged(shouldBeActive());
-                state = currentState;
-                currentState = this.mOwner.getLifecycle().getCurrentState();
-            }
-        }
-
-        boolean shouldBeActive() {
-            return this.mOwner.getLifecycle().getCurrentState().isAtLeast(Lifecycle.State.STARTED);
-        }
-    }
-
-    private abstract class ObserverWrapper {
-        boolean mActive;
-        int mLastVersion = -1;
-        final Observer mObserver;
-
-        ObserverWrapper(Observer observer) {
-            this.mObserver = observer;
-        }
-
-        void activeStateChanged(boolean z) {
-            if (z == this.mActive) {
-                return;
-            }
-            this.mActive = z;
-            LiveData.this.changeActiveCounter(z ? 1 : -1);
-            if (this.mActive) {
-                LiveData.this.dispatchingValue(this);
-            }
-        }
-
-        void detachObserver() {
-        }
-
-        boolean isAttachedTo(LifecycleOwner lifecycleOwner) {
-            return false;
-        }
-
-        abstract boolean shouldBeActive();
+    protected void onInactive() {
     }
 
     public LiveData() {
@@ -115,13 +44,6 @@ public abstract class LiveData {
         this.mVersion = -1;
     }
 
-    static void assertMainThread(String str) {
-        if (ArchTaskExecutor.getInstance().isMainThread()) {
-            return;
-        }
-        throw new IllegalStateException("Cannot invoke " + str + " on a background thread");
-    }
-
     private void considerNotify(ObserverWrapper observerWrapper) {
         if (observerWrapper.mActive) {
             if (!observerWrapper.shouldBeActive()) {
@@ -135,35 +57,6 @@ public abstract class LiveData {
             }
             observerWrapper.mLastVersion = i2;
             observerWrapper.mObserver.onChanged(this.mData);
-        }
-    }
-
-    void changeActiveCounter(int i) {
-        int i2 = this.mActiveCount;
-        this.mActiveCount = i + i2;
-        if (this.mChangingActiveState) {
-            return;
-        }
-        this.mChangingActiveState = true;
-        while (true) {
-            try {
-                int i3 = this.mActiveCount;
-                if (i2 == i3) {
-                    this.mChangingActiveState = false;
-                    return;
-                }
-                boolean z = i2 == 0 && i3 > 0;
-                boolean z2 = i2 > 0 && i3 == 0;
-                if (z) {
-                    onActive();
-                } else if (z2) {
-                    onInactive();
-                }
-                i2 = i3;
-            } catch (Throwable th) {
-                this.mChangingActiveState = false;
-                throw th;
-            }
         }
     }
 
@@ -189,18 +82,6 @@ public abstract class LiveData {
             }
         } while (this.mDispatchInvalidated);
         this.mDispatchingValue = false;
-    }
-
-    public Object getValue() {
-        Object obj = this.mData;
-        if (obj != NOT_SET) {
-            return obj;
-        }
-        return null;
-    }
-
-    public boolean hasActiveObservers() {
-        return this.mActiveCount > 0;
     }
 
     public void observe(LifecycleOwner lifecycleOwner, Observer observer) {
@@ -232,10 +113,14 @@ public abstract class LiveData {
         alwaysActiveObserver.activeStateChanged(true);
     }
 
-    protected void onActive() {
-    }
-
-    protected void onInactive() {
+    public void removeObserver(Observer observer) {
+        assertMainThread("removeObserver");
+        ObserverWrapper observerWrapper = (ObserverWrapper) this.mObservers.remove(observer);
+        if (observerWrapper == null) {
+            return;
+        }
+        observerWrapper.detachObserver();
+        observerWrapper.activeStateChanged(false);
     }
 
     protected void postValue(Object obj) {
@@ -249,20 +134,135 @@ public abstract class LiveData {
         }
     }
 
-    public void removeObserver(Observer observer) {
-        assertMainThread("removeObserver");
-        ObserverWrapper observerWrapper = (ObserverWrapper) this.mObservers.remove(observer);
-        if (observerWrapper == null) {
-            return;
-        }
-        observerWrapper.detachObserver();
-        observerWrapper.activeStateChanged(false);
-    }
-
     protected void setValue(Object obj) {
         assertMainThread("setValue");
         this.mVersion++;
         this.mData = obj;
         dispatchingValue(null);
+    }
+
+    public Object getValue() {
+        Object obj = this.mData;
+        if (obj != NOT_SET) {
+            return obj;
+        }
+        return null;
+    }
+
+    public boolean hasActiveObservers() {
+        return this.mActiveCount > 0;
+    }
+
+    void changeActiveCounter(int i) {
+        int i2 = this.mActiveCount;
+        this.mActiveCount = i + i2;
+        if (this.mChangingActiveState) {
+            return;
+        }
+        this.mChangingActiveState = true;
+        while (true) {
+            try {
+                int i3 = this.mActiveCount;
+                if (i2 == i3) {
+                    this.mChangingActiveState = false;
+                    return;
+                }
+                boolean z = i2 == 0 && i3 > 0;
+                boolean z2 = i2 > 0 && i3 == 0;
+                if (z) {
+                    onActive();
+                } else if (z2) {
+                    onInactive();
+                }
+                i2 = i3;
+            } catch (Throwable th) {
+                this.mChangingActiveState = false;
+                throw th;
+            }
+        }
+    }
+
+    class LifecycleBoundObserver extends ObserverWrapper implements LifecycleEventObserver {
+        final LifecycleOwner mOwner;
+
+        LifecycleBoundObserver(LifecycleOwner lifecycleOwner, Observer observer) {
+            super(observer);
+            this.mOwner = lifecycleOwner;
+        }
+
+        boolean shouldBeActive() {
+            return this.mOwner.getLifecycle().getCurrentState().isAtLeast(Lifecycle.State.STARTED);
+        }
+
+        @Override // androidx.lifecycle.LifecycleEventObserver
+        public void onStateChanged(LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
+            Lifecycle.State currentState = this.mOwner.getLifecycle().getCurrentState();
+            if (currentState == Lifecycle.State.DESTROYED) {
+                LiveData.this.removeObserver(this.mObserver);
+                return;
+            }
+            Lifecycle.State state = null;
+            while (state != currentState) {
+                activeStateChanged(shouldBeActive());
+                state = currentState;
+                currentState = this.mOwner.getLifecycle().getCurrentState();
+            }
+        }
+
+        boolean isAttachedTo(LifecycleOwner lifecycleOwner) {
+            return this.mOwner == lifecycleOwner;
+        }
+
+        void detachObserver() {
+            this.mOwner.getLifecycle().removeObserver(this);
+        }
+    }
+
+    private abstract class ObserverWrapper {
+        boolean mActive;
+        int mLastVersion = -1;
+        final Observer mObserver;
+
+        void detachObserver() {
+        }
+
+        boolean isAttachedTo(LifecycleOwner lifecycleOwner) {
+            return false;
+        }
+
+        abstract boolean shouldBeActive();
+
+        ObserverWrapper(Observer observer) {
+            this.mObserver = observer;
+        }
+
+        void activeStateChanged(boolean z) {
+            if (z == this.mActive) {
+                return;
+            }
+            this.mActive = z;
+            LiveData.this.changeActiveCounter(z ? 1 : -1);
+            if (this.mActive) {
+                LiveData.this.dispatchingValue(this);
+            }
+        }
+    }
+
+    private class AlwaysActiveObserver extends ObserverWrapper {
+        @Override // androidx.lifecycle.LiveData.ObserverWrapper
+        boolean shouldBeActive() {
+            return true;
+        }
+
+        AlwaysActiveObserver(Observer observer) {
+            super(observer);
+        }
+    }
+
+    static void assertMainThread(String str) {
+        if (ArchTaskExecutor.getInstance().isMainThread()) {
+            return;
+        }
+        throw new IllegalStateException("Cannot invoke " + str + " on a background thread");
     }
 }

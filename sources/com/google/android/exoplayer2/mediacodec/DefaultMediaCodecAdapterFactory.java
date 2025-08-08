@@ -16,11 +16,11 @@ public final class DefaultMediaCodecAdapterFactory implements MediaCodecAdapter.
     public MediaCodecAdapter createAdapter(MediaCodecAdapter.Configuration configuration) {
         int i;
         int i2 = Util.SDK_INT;
-        if (i2 < 23 || ((i = this.asynchronousMode) != 1 && (i != 0 || i2 < 31))) {
-            return new SynchronousMediaCodecAdapter.Factory().createAdapter(configuration);
+        if (i2 >= 23 && ((i = this.asynchronousMode) == 1 || (i == 0 && i2 >= 31))) {
+            int trackType = MimeTypes.getTrackType(configuration.format.sampleMimeType);
+            Log.i("DMCodecAdapterFactory", "Creating an asynchronous MediaCodec adapter for track type " + Util.getTrackTypeString(trackType));
+            return new AsynchronousMediaCodecAdapter.Factory(trackType, this.enableSynchronizeCodecInteractionsWithQueueing).createAdapter(configuration);
         }
-        int trackType = MimeTypes.getTrackType(configuration.format.sampleMimeType);
-        Log.i("DMCodecAdapterFactory", "Creating an asynchronous MediaCodec adapter for track type " + Util.getTrackTypeString(trackType));
-        return new AsynchronousMediaCodecAdapter.Factory(trackType, this.enableSynchronizeCodecInteractionsWithQueueing).createAdapter(configuration);
+        return new SynchronousMediaCodecAdapter.Factory().createAdapter(configuration);
     }
 }

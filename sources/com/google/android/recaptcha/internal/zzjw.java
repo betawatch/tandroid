@@ -24,40 +24,8 @@ final class zzjw implements zzks {
 
     @Override // com.google.android.recaptcha.internal.zzks
     public final zzkr zza(Class cls) {
-        zzkk zza2;
-        zzjs zzd;
-        zzll zzm;
-        zzif zza3;
-        zzjz zza4;
-        zzll zzm2;
-        zzif zza5;
         zzkt.zzs(cls);
         zzkb zzb = this.zzb.zzb(cls);
-        if (zzb.zzb()) {
-            if (zzit.class.isAssignableFrom(cls)) {
-                zzm2 = zzkt.zzn();
-                zza5 = zzih.zzb();
-            } else {
-                zzm2 = zzkt.zzm();
-                zza5 = zzih.zza();
-            }
-            return zzki.zzc(zzm2, zza5, zzb.zza());
-        }
-        if (zzit.class.isAssignableFrom(cls)) {
-            boolean zzb2 = zzb(zzb);
-            zza2 = zzkl.zzb();
-            zzd = zzjs.zze();
-            zzm = zzkt.zzn();
-            zza3 = zzb2 ? zzih.zzb() : null;
-            zza4 = zzka.zzb();
-        } else {
-            boolean zzb3 = zzb(zzb);
-            zza2 = zzkl.zza();
-            zzd = zzjs.zzd();
-            zzm = zzkt.zzm();
-            zza3 = zzb3 ? zzih.zza() : null;
-            zza4 = zzka.zza();
-        }
-        return zzkh.zzm(cls, zzb, zza2, zzd, zzm, zza3, zza4);
+        return zzb.zzb() ? zzit.class.isAssignableFrom(cls) ? zzki.zzc(zzkt.zzn(), zzih.zzb(), zzb.zza()) : zzki.zzc(zzkt.zzm(), zzih.zza(), zzb.zza()) : zzit.class.isAssignableFrom(cls) ? zzb(zzb) ? zzkh.zzm(cls, zzb, zzkl.zzb(), zzjs.zze(), zzkt.zzn(), zzih.zzb(), zzka.zzb()) : zzkh.zzm(cls, zzb, zzkl.zzb(), zzjs.zze(), zzkt.zzn(), null, zzka.zzb()) : zzb(zzb) ? zzkh.zzm(cls, zzb, zzkl.zza(), zzjs.zzd(), zzkt.zzm(), zzih.zza(), zzka.zza()) : zzkh.zzm(cls, zzb, zzkl.zza(), zzjs.zzd(), zzkt.zzm(), null, zzka.zza());
     }
 }

@@ -13,10 +13,10 @@ public final class zzr extends com.google.android.gms.internal.common.zza implem
 
     public final IObjectWrapper zze(IObjectWrapper iObjectWrapper, String str, int i, IObjectWrapper iObjectWrapper2) {
         Parcel zza = zza();
-        com.google.android.gms.internal.common.zzc.zzf(zza, iObjectWrapper);
+        com.google.android.gms.internal.common.zzc.zze(zza, iObjectWrapper);
         zza.writeString(str);
         zza.writeInt(i);
-        com.google.android.gms.internal.common.zzc.zzf(zza, iObjectWrapper2);
+        com.google.android.gms.internal.common.zzc.zze(zza, iObjectWrapper2);
         Parcel zzB = zzB(2, zza);
         IObjectWrapper asInterface = IObjectWrapper.Stub.asInterface(zzB.readStrongBinder());
         zzB.recycle();
@@ -25,10 +25,10 @@ public final class zzr extends com.google.android.gms.internal.common.zza implem
 
     public final IObjectWrapper zzf(IObjectWrapper iObjectWrapper, String str, int i, IObjectWrapper iObjectWrapper2) {
         Parcel zza = zza();
-        com.google.android.gms.internal.common.zzc.zzf(zza, iObjectWrapper);
+        com.google.android.gms.internal.common.zzc.zze(zza, iObjectWrapper);
         zza.writeString(str);
         zza.writeInt(i);
-        com.google.android.gms.internal.common.zzc.zzf(zza, iObjectWrapper2);
+        com.google.android.gms.internal.common.zzc.zze(zza, iObjectWrapper2);
         Parcel zzB = zzB(3, zza);
         IObjectWrapper asInterface = IObjectWrapper.Stub.asInterface(zzB.readStrongBinder());
         zzB.recycle();

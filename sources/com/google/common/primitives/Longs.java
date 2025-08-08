@@ -1,6 +1,6 @@
 package com.google.common.primitives;
 
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import com.google.common.base.Preconditions;
 import java.io.Serializable;
 import java.util.AbstractList;
@@ -38,7 +38,7 @@ public abstract class Longs {
 
     public static long[] toArray(Collection collection) {
         if (collection instanceof LongArrayAsList) {
-            ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(collection);
+            WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(collection);
             throw null;
         }
         Object[] array = collection.toArray();

@@ -11,16 +11,15 @@ import java.util.List;
 import java.util.Map;
 import kotlin.ResultKt;
 import kotlin.Unit;
-import kotlin.collections.CollectionsKt__CollectionsKt;
-import kotlin.collections.CollectionsKt___CollectionsKt;
-import kotlin.comparisons.ComparisonsKt__ComparisonsKt;
+import kotlin.collections.CollectionsKt;
+import kotlin.comparisons.ComparisonsKt;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class SessionLifecycleClient$sendLifecycleEvents$1 extends SuspendLambda implements Function2 {
     final /* synthetic */ List $messages;
     int label;
@@ -45,14 +44,9 @@ final class SessionLifecycleClient$sendLifecycleEvents$1 extends SuspendLambda i
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object coroutine_suspended;
         Message latestByCode;
         Message latestByCode2;
-        List mutableListOf;
-        List filterNotNull;
-        List sortedWith;
-        String str;
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
@@ -70,7 +64,7 @@ final class SessionLifecycleClient$sendLifecycleEvents$1 extends SuspendLambda i
         }
         Map map = (Map) obj;
         if (map.isEmpty()) {
-            str = "Sessions SDK did not have any dependent SDKs register as dependencies. Events will not be sent.";
+            Log.d("SessionLifecycleClient", "Sessions SDK did not have any dependent SDKs register as dependencies. Events will not be sent.");
         } else {
             Collection values = map.values();
             if (!(values instanceof Collection) || !values.isEmpty()) {
@@ -79,14 +73,10 @@ final class SessionLifecycleClient$sendLifecycleEvents$1 extends SuspendLambda i
                     if (((SessionSubscriber) it.next()).isDataCollectionEnabled()) {
                         latestByCode = this.this$0.getLatestByCode(this.$messages, 2);
                         latestByCode2 = this.this$0.getLatestByCode(this.$messages, 1);
-                        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(latestByCode, latestByCode2);
-                        filterNotNull = CollectionsKt___CollectionsKt.filterNotNull(mutableListOf);
-                        sortedWith = CollectionsKt___CollectionsKt.sortedWith(filterNotNull, new Comparator() { // from class: com.google.firebase.sessions.SessionLifecycleClient$sendLifecycleEvents$1$invokeSuspend$$inlined$sortedBy$1
+                        List sortedWith = CollectionsKt.sortedWith(CollectionsKt.filterNotNull(CollectionsKt.mutableListOf(latestByCode, latestByCode2)), new Comparator() { // from class: com.google.firebase.sessions.SessionLifecycleClient$sendLifecycleEvents$1$invokeSuspend$$inlined$sortedBy$1
                             @Override // java.util.Comparator
                             public final int compare(Object obj2, Object obj3) {
-                                int compareValues;
-                                compareValues = ComparisonsKt__ComparisonsKt.compareValues(Long.valueOf(((Message) obj2).getWhen()), Long.valueOf(((Message) obj3).getWhen()));
-                                return compareValues;
+                                return ComparisonsKt.compareValues(Long.valueOf(((Message) obj2).getWhen()), Long.valueOf(((Message) obj3).getWhen()));
                             }
                         });
                         SessionLifecycleClient sessionLifecycleClient = this.this$0;
@@ -94,13 +84,11 @@ final class SessionLifecycleClient$sendLifecycleEvents$1 extends SuspendLambda i
                         while (it2.hasNext()) {
                             sessionLifecycleClient.sendMessageToServer((Message) it2.next());
                         }
-                        return Unit.INSTANCE;
                     }
                 }
             }
-            str = "Data Collection is disabled for all subscribers. Skipping this Event";
+            Log.d("SessionLifecycleClient", "Data Collection is disabled for all subscribers. Skipping this Event");
         }
-        Log.d("SessionLifecycleClient", str);
         return Unit.INSTANCE;
     }
 }

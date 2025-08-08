@@ -27,67 +27,21 @@ abstract class AbsActionBarView extends ViewGroup {
     protected final VisibilityAnimListener mVisAnimListener;
     protected ViewPropertyAnimatorCompat mVisibilityAnim;
 
-    protected class VisibilityAnimListener implements ViewPropertyAnimatorListener {
-        private boolean mCanceled = false;
-        int mFinalVisibility;
-
-        protected VisibilityAnimListener() {
-        }
-
-        @Override // androidx.core.view.ViewPropertyAnimatorListener
-        public void onAnimationCancel(View view) {
-            this.mCanceled = true;
-        }
-
-        @Override // androidx.core.view.ViewPropertyAnimatorListener
-        public void onAnimationEnd(View view) {
-            if (this.mCanceled) {
-                return;
-            }
-            AbsActionBarView absActionBarView = AbsActionBarView.this;
-            absActionBarView.mVisibilityAnim = null;
-            AbsActionBarView.super.setVisibility(this.mFinalVisibility);
-        }
-
-        @Override // androidx.core.view.ViewPropertyAnimatorListener
-        public void onAnimationStart(View view) {
-            AbsActionBarView.super.setVisibility(0);
-            this.mCanceled = false;
-        }
-
-        public VisibilityAnimListener withFinalVisibility(ViewPropertyAnimatorCompat viewPropertyAnimatorCompat, int i) {
-            AbsActionBarView.this.mVisibilityAnim = viewPropertyAnimatorCompat;
-            this.mFinalVisibility = i;
-            return this;
-        }
+    protected static int next(int i, int i2, boolean z) {
+        return z ? i - i2 : i + i2;
     }
+
+    public abstract void setContentHeight(int i);
 
     AbsActionBarView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.mVisAnimListener = new VisibilityAnimListener();
         TypedValue typedValue = new TypedValue();
-        if (!context.getTheme().resolveAttribute(R$attr.actionBarPopupTheme, typedValue, true) || typedValue.resourceId == 0) {
-            this.mPopupContext = context;
-        } else {
+        if (context.getTheme().resolveAttribute(R$attr.actionBarPopupTheme, typedValue, true) && typedValue.resourceId != 0) {
             this.mPopupContext = new ContextThemeWrapper(context, typedValue.resourceId);
+        } else {
+            this.mPopupContext = context;
         }
-    }
-
-    protected static int next(int i, int i2, boolean z) {
-        return z ? i - i2 : i + i2;
-    }
-
-    public int getAnimatedVisibility() {
-        return this.mVisibilityAnim != null ? this.mVisAnimListener.mFinalVisibility : getVisibility();
-    }
-
-    public int getContentHeight() {
-        return this.mContentHeight;
-    }
-
-    protected int measureChildView(View view, int i, int i2, int i3) {
-        view.measure(View.MeasureSpec.makeMeasureSpec(i, TLObject.FLAG_31), i2);
-        return Math.max(0, (i - view.getMeasuredWidth()) - i3);
     }
 
     @Override // android.view.View
@@ -100,24 +54,6 @@ abstract class AbsActionBarView extends ViewGroup {
         if (actionMenuPresenter != null) {
             actionMenuPresenter.onConfigurationChanged(configuration);
         }
-    }
-
-    @Override // android.view.View
-    public boolean onHoverEvent(MotionEvent motionEvent) {
-        int actionMasked = motionEvent.getActionMasked();
-        if (actionMasked == 9) {
-            this.mEatingHover = false;
-        }
-        if (!this.mEatingHover) {
-            boolean onHoverEvent = super.onHoverEvent(motionEvent);
-            if (actionMasked == 9 && !onHoverEvent) {
-                this.mEatingHover = true;
-            }
-        }
-        if (actionMasked == 10 || actionMasked == 3) {
-            this.mEatingHover = false;
-        }
-        return true;
     }
 
     @Override // android.view.View
@@ -138,19 +74,54 @@ abstract class AbsActionBarView extends ViewGroup {
         return true;
     }
 
-    protected int positionChild(View view, int i, int i2, int i3, boolean z) {
-        int measuredWidth = view.getMeasuredWidth();
-        int measuredHeight = view.getMeasuredHeight();
-        int i4 = i2 + ((i3 - measuredHeight) / 2);
-        if (z) {
-            view.layout(i - measuredWidth, i4, i, measuredHeight + i4);
-        } else {
-            view.layout(i, i4, i + measuredWidth, measuredHeight + i4);
+    @Override // android.view.View
+    public boolean onHoverEvent(MotionEvent motionEvent) {
+        int actionMasked = motionEvent.getActionMasked();
+        if (actionMasked == 9) {
+            this.mEatingHover = false;
         }
-        return z ? -measuredWidth : measuredWidth;
+        if (!this.mEatingHover) {
+            boolean onHoverEvent = super.onHoverEvent(motionEvent);
+            if (actionMasked == 9 && !onHoverEvent) {
+                this.mEatingHover = true;
+            }
+        }
+        if (actionMasked == 10 || actionMasked == 3) {
+            this.mEatingHover = false;
+        }
+        return true;
     }
 
-    public abstract void setContentHeight(int i);
+    public int getContentHeight() {
+        return this.mContentHeight;
+    }
+
+    public int getAnimatedVisibility() {
+        if (this.mVisibilityAnim != null) {
+            return this.mVisAnimListener.mFinalVisibility;
+        }
+        return getVisibility();
+    }
+
+    public ViewPropertyAnimatorCompat setupAnimatorToVisibility(int i, long j) {
+        ViewPropertyAnimatorCompat viewPropertyAnimatorCompat = this.mVisibilityAnim;
+        if (viewPropertyAnimatorCompat != null) {
+            viewPropertyAnimatorCompat.cancel();
+        }
+        if (i == 0) {
+            if (getVisibility() != 0) {
+                setAlpha(0.0f);
+            }
+            ViewPropertyAnimatorCompat alpha = ViewCompat.animate(this).alpha(1.0f);
+            alpha.setDuration(j);
+            alpha.setListener(this.mVisAnimListener.withFinalVisibility(alpha, i));
+            return alpha;
+        }
+        ViewPropertyAnimatorCompat alpha2 = ViewCompat.animate(this).alpha(0.0f);
+        alpha2.setDuration(j);
+        alpha2.setListener(this.mVisAnimListener.withFinalVisibility(alpha2, i));
+        return alpha2;
+    }
 
     @Override // android.view.View
     public void setVisibility(int i) {
@@ -163,22 +134,55 @@ abstract class AbsActionBarView extends ViewGroup {
         }
     }
 
-    public ViewPropertyAnimatorCompat setupAnimatorToVisibility(int i, long j) {
-        ViewPropertyAnimatorCompat alpha;
-        ViewPropertyAnimatorCompat viewPropertyAnimatorCompat = this.mVisibilityAnim;
-        if (viewPropertyAnimatorCompat != null) {
-            viewPropertyAnimatorCompat.cancel();
-        }
-        if (i == 0) {
-            if (getVisibility() != 0) {
-                setAlpha(0.0f);
-            }
-            alpha = ViewCompat.animate(this).alpha(1.0f);
+    protected int measureChildView(View view, int i, int i2, int i3) {
+        view.measure(View.MeasureSpec.makeMeasureSpec(i, TLObject.FLAG_31), i2);
+        return Math.max(0, (i - view.getMeasuredWidth()) - i3);
+    }
+
+    protected int positionChild(View view, int i, int i2, int i3, boolean z) {
+        int measuredWidth = view.getMeasuredWidth();
+        int measuredHeight = view.getMeasuredHeight();
+        int i4 = i2 + ((i3 - measuredHeight) / 2);
+        if (z) {
+            view.layout(i - measuredWidth, i4, i, measuredHeight + i4);
         } else {
-            alpha = ViewCompat.animate(this).alpha(0.0f);
+            view.layout(i, i4, i + measuredWidth, measuredHeight + i4);
         }
-        alpha.setDuration(j);
-        alpha.setListener(this.mVisAnimListener.withFinalVisibility(alpha, i));
-        return alpha;
+        return z ? -measuredWidth : measuredWidth;
+    }
+
+    protected class VisibilityAnimListener implements ViewPropertyAnimatorListener {
+        private boolean mCanceled = false;
+        int mFinalVisibility;
+
+        protected VisibilityAnimListener() {
+        }
+
+        public VisibilityAnimListener withFinalVisibility(ViewPropertyAnimatorCompat viewPropertyAnimatorCompat, int i) {
+            AbsActionBarView.this.mVisibilityAnim = viewPropertyAnimatorCompat;
+            this.mFinalVisibility = i;
+            return this;
+        }
+
+        @Override // androidx.core.view.ViewPropertyAnimatorListener
+        public void onAnimationStart(View view) {
+            AbsActionBarView.super.setVisibility(0);
+            this.mCanceled = false;
+        }
+
+        @Override // androidx.core.view.ViewPropertyAnimatorListener
+        public void onAnimationEnd(View view) {
+            if (this.mCanceled) {
+                return;
+            }
+            AbsActionBarView absActionBarView = AbsActionBarView.this;
+            absActionBarView.mVisibilityAnim = null;
+            AbsActionBarView.super.setVisibility(this.mFinalVisibility);
+        }
+
+        @Override // androidx.core.view.ViewPropertyAnimatorListener
+        public void onAnimationCancel(View view) {
+            this.mCanceled = true;
+        }
     }
 }

@@ -4,7 +4,7 @@ import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.ThreadContextElement;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class ThreadState {
     public final CoroutineContext context;
     private final ThreadContextElement[] elements;

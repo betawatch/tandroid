@@ -14,35 +14,11 @@ public final class PreferencesProto$StringSet extends GeneratedMessageLite imple
     public static final int STRINGS_FIELD_NUMBER = 1;
     private Internal.ProtobufList strings_ = GeneratedMessageLite.emptyProtobufList();
 
-    public static final class Builder extends GeneratedMessageLite.Builder implements MessageLiteOrBuilder {
-        private Builder() {
-            super(PreferencesProto$StringSet.DEFAULT_INSTANCE);
-        }
-
-        /* synthetic */ Builder(PreferencesProto$1 preferencesProto$1) {
-            this();
-        }
-
-        public Builder addAllStrings(Iterable iterable) {
-            copyOnWrite();
-            ((PreferencesProto$StringSet) this.instance).addAllStrings(iterable);
-            return this;
-        }
-    }
-
-    static {
-        PreferencesProto$StringSet preferencesProto$StringSet = new PreferencesProto$StringSet();
-        DEFAULT_INSTANCE = preferencesProto$StringSet;
-        GeneratedMessageLite.registerDefaultInstance(PreferencesProto$StringSet.class, preferencesProto$StringSet);
-    }
-
     private PreferencesProto$StringSet() {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public void addAllStrings(Iterable iterable) {
-        ensureStringsIsMutable();
-        AbstractMessageLite.addAll(iterable, this.strings_);
+    public List getStringsList() {
+        return this.strings_;
     }
 
     private void ensureStringsIsMutable() {
@@ -52,12 +28,30 @@ public final class PreferencesProto$StringSet extends GeneratedMessageLite imple
         this.strings_ = GeneratedMessageLite.mutableCopy(this.strings_);
     }
 
-    public static PreferencesProto$StringSet getDefaultInstance() {
-        return DEFAULT_INSTANCE;
+    /* JADX INFO: Access modifiers changed from: private */
+    public void addAllStrings(Iterable iterable) {
+        ensureStringsIsMutable();
+        AbstractMessageLite.addAll(iterable, this.strings_);
     }
 
     public static Builder newBuilder() {
         return (Builder) DEFAULT_INSTANCE.createBuilder();
+    }
+
+    public static final class Builder extends GeneratedMessageLite.Builder implements MessageLiteOrBuilder {
+        /* synthetic */ Builder(PreferencesProto$1 preferencesProto$1) {
+            this();
+        }
+
+        private Builder() {
+            super(PreferencesProto$StringSet.DEFAULT_INSTANCE);
+        }
+
+        public Builder addAllStrings(Iterable iterable) {
+            copyOnWrite();
+            ((PreferencesProto$StringSet) this.instance).addAllStrings(iterable);
+            return this;
+        }
     }
 
     @Override // androidx.datastore.preferences.protobuf.GeneratedMessageLite
@@ -96,7 +90,13 @@ public final class PreferencesProto$StringSet extends GeneratedMessageLite imple
         }
     }
 
-    public List getStringsList() {
-        return this.strings_;
+    static {
+        PreferencesProto$StringSet preferencesProto$StringSet = new PreferencesProto$StringSet();
+        DEFAULT_INSTANCE = preferencesProto$StringSet;
+        GeneratedMessageLite.registerDefaultInstance(PreferencesProto$StringSet.class, preferencesProto$StringSet);
+    }
+
+    public static PreferencesProto$StringSet getDefaultInstance() {
+        return DEFAULT_INSTANCE;
     }
 }

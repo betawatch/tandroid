@@ -19,9 +19,9 @@ public abstract class SmsRetrieverClient extends GoogleApi {
         zzc = new Api("SmsRetriever.API", zzaVar, clientKey);
     }
 
+    public abstract Task startSmsRetriever();
+
     public SmsRetrieverClient(Context context) {
         super(context, zzc, Api.ApiOptions.NO_OPTIONS, GoogleApi.Settings.DEFAULT_SETTINGS);
     }
-
-    public abstract Task startSmsRetriever();
 }

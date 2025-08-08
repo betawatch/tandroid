@@ -20,16 +20,16 @@ public final class SQLiteEventStore_Factory implements Factory {
         this.packageNameProvider = provider5;
     }
 
+    @Override // javax.inject.Provider
+    public SQLiteEventStore get() {
+        return newInstance((Clock) this.wallClockProvider.get(), (Clock) this.clockProvider.get(), this.configProvider.get(), this.schemaManagerProvider.get(), this.packageNameProvider);
+    }
+
     public static SQLiteEventStore_Factory create(Provider provider, Provider provider2, Provider provider3, Provider provider4, Provider provider5) {
         return new SQLiteEventStore_Factory(provider, provider2, provider3, provider4, provider5);
     }
 
     public static SQLiteEventStore newInstance(Clock clock, Clock clock2, Object obj, Object obj2, Provider provider) {
         return new SQLiteEventStore(clock, clock2, (EventStoreConfig) obj, (SchemaManager) obj2, provider);
-    }
-
-    @Override // javax.inject.Provider
-    public SQLiteEventStore get() {
-        return newInstance((Clock) this.wallClockProvider.get(), (Clock) this.clockProvider.get(), this.configProvider.get(), this.schemaManagerProvider.get(), this.packageNameProvider);
     }
 }

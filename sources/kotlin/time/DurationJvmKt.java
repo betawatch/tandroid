@@ -1,9 +1,13 @@
 package kotlin.time;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class DurationJvmKt {
     private static final boolean durationAssertionsEnabled = false;
     private static final ThreadLocal[] precisionFormats;
+
+    public static final boolean getDurationAssertionsEnabled() {
+        return durationAssertionsEnabled;
+    }
 
     static {
         ThreadLocal[] threadLocalArr = new ThreadLocal[4];
@@ -11,9 +15,5 @@ public abstract class DurationJvmKt {
             threadLocalArr[i] = new ThreadLocal();
         }
         precisionFormats = threadLocalArr;
-    }
-
-    public static final boolean getDurationAssertionsEnabled() {
-        return durationAssertionsEnabled;
     }
 }

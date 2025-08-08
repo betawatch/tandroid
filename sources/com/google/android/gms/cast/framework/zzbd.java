@@ -25,17 +25,20 @@ public abstract class zzbd extends zzb implements zzbe {
                 Bundle bundle = (Bundle) zzc.zza(parcel, Bundle.CREATOR);
                 zzc.zzb(parcel);
                 zzh(bundle);
-                break;
+                parcel2.writeNoException();
+                return true;
             case 3:
                 Bundle bundle2 = (Bundle) zzc.zza(parcel, Bundle.CREATOR);
                 zzc.zzb(parcel);
                 zzg(bundle2);
-                break;
+                parcel2.writeNoException();
+                return true;
             case 4:
                 boolean zzf = zzc.zzf(parcel);
                 zzc.zzb(parcel);
                 zzd(zzf);
-                break;
+                parcel2.writeNoException();
+                return true;
             case 5:
                 long zzb = zzb();
                 parcel2.writeNoException();
@@ -49,21 +52,22 @@ public abstract class zzbd extends zzb implements zzbe {
                 Bundle bundle3 = (Bundle) zzc.zza(parcel, Bundle.CREATOR);
                 zzc.zzb(parcel);
                 zzf(bundle3);
-                break;
+                parcel2.writeNoException();
+                return true;
             case 8:
                 Bundle bundle4 = (Bundle) zzc.zza(parcel, Bundle.CREATOR);
                 zzc.zzb(parcel);
                 zze(bundle4);
-                break;
+                parcel2.writeNoException();
+                return true;
             case 9:
                 Bundle bundle5 = (Bundle) zzc.zza(parcel, Bundle.CREATOR);
                 zzc.zzb(parcel);
                 zzi(bundle5);
-                break;
+                parcel2.writeNoException();
+                return true;
             default:
                 return false;
         }
-        parcel2.writeNoException();
-        return true;
     }
 }

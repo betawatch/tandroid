@@ -7,12 +7,17 @@ import kotlinx.coroutines.Job;
 import kotlinx.coroutines.internal.ScopeCoroutine;
 import org.telegram.tgnet.TLObject;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class SafeCollector_commonKt {
     public static final void checkContext(final SafeCollector safeCollector, CoroutineContext coroutineContext) {
         if (((Number) coroutineContext.fold(0, new Function2() { // from class: kotlinx.coroutines.flow.internal.SafeCollector_commonKt$checkContext$result$1
             {
                 super(2);
+            }
+
+            @Override // kotlin.jvm.functions.Function2
+            public /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
+                return invoke(((Number) obj).intValue(), (CoroutineContext.Element) obj2);
             }
 
             public final Integer invoke(int i, CoroutineContext.Element element) {
@@ -24,18 +29,13 @@ public abstract class SafeCollector_commonKt {
                 Job job = (Job) element2;
                 Intrinsics.checkNotNull(element, "null cannot be cast to non-null type kotlinx.coroutines.Job");
                 Job transitiveCoroutineParent = SafeCollector_commonKt.transitiveCoroutineParent((Job) element, job);
-                if (transitiveCoroutineParent == job) {
-                    if (job != null) {
-                        i++;
-                    }
-                    return Integer.valueOf(i);
+                if (transitiveCoroutineParent != job) {
+                    throw new IllegalStateException(("Flow invariant is violated:\n\t\tEmission from another coroutine is detected.\n\t\tChild of " + transitiveCoroutineParent + ", expected child of " + job + ".\n\t\tFlowCollector is not thread-safe and concurrent emissions are prohibited.\n\t\tTo mitigate this restriction please use 'channelFlow' builder instead of 'flow'").toString());
                 }
-                throw new IllegalStateException(("Flow invariant is violated:\n\t\tEmission from another coroutine is detected.\n\t\tChild of " + transitiveCoroutineParent + ", expected child of " + job + ".\n\t\tFlowCollector is not thread-safe and concurrent emissions are prohibited.\n\t\tTo mitigate this restriction please use 'channelFlow' builder instead of 'flow'").toString());
-            }
-
-            @Override // kotlin.jvm.functions.Function2
-            public /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-                return invoke(((Number) obj).intValue(), (CoroutineContext.Element) obj2);
+                if (job != null) {
+                    i++;
+                }
+                return Integer.valueOf(i);
             }
         })).intValue() == safeCollector.collectContextSize) {
             return;

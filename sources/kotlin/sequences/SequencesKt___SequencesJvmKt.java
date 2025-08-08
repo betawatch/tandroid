@@ -1,5 +1,5 @@
 package kotlin.sequences;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 abstract class SequencesKt___SequencesJvmKt extends SequencesKt__SequencesKt {
 }

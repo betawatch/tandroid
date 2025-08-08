@@ -46,16 +46,14 @@ final class zzgk {
 
     static int zze(zzkr zzkrVar, int i, byte[] bArr, int i2, int i3, zzjb zzjbVar, zzgj zzgjVar) {
         int zzd = zzd(zzkrVar, bArr, i2, i3, zzgjVar);
-        while (true) {
-            zzjbVar.add(zzgjVar.zzc);
-            if (zzd >= i3) {
-                break;
-            }
+        zzjbVar.add(zzgjVar.zzc);
+        while (zzd < i3) {
             int zzi = zzi(bArr, zzd, zzgjVar);
             if (i != zzgjVar.zza) {
                 break;
             }
             zzd = zzd(zzkrVar, bArr, zzi, i3, zzgjVar);
+            zzjbVar.add(zzgjVar.zzc);
         }
         return zzd;
     }
@@ -111,7 +109,11 @@ final class zzgk {
             if (i5 > bArr.length - zzi) {
                 throw zzje.zzj();
             }
-            zzlmVar.zzj(i, i5 == 0 ? zzgw.zzb : zzgw.zzm(bArr, zzi, i5));
+            if (i5 == 0) {
+                zzlmVar.zzj(i, zzgw.zzb);
+            } else {
+                zzlmVar.zzj(i, zzgw.zzm(bArr, zzi, i5));
+            }
             return zzi + i5;
         }
         if (i4 != 3) {
@@ -157,61 +159,56 @@ final class zzgk {
     }
 
     static int zzj(int i, byte[] bArr, int i2, zzgj zzgjVar) {
-        int i3;
         byte b = bArr[i2];
-        int i4 = i2 + 1;
-        int i5 = i & NotificationCenter.dialogIsTranslatable;
+        int i3 = i2 + 1;
+        int i4 = i & NotificationCenter.dialogIsTranslatable;
         if (b >= 0) {
-            i3 = b << 7;
-        } else {
-            int i6 = i5 | ((b & Byte.MAX_VALUE) << 7);
-            int i7 = i2 + 2;
-            byte b2 = bArr[i4];
-            if (b2 >= 0) {
-                zzgjVar.zza = i6 | (b2 << 14);
-                return i7;
-            }
-            i5 = i6 | ((b2 & Byte.MAX_VALUE) << 14);
-            i4 = i2 + 3;
-            byte b3 = bArr[i7];
-            if (b3 >= 0) {
-                i3 = b3 << 21;
-            } else {
-                int i8 = i5 | ((b3 & Byte.MAX_VALUE) << 21);
-                int i9 = i2 + 4;
-                byte b4 = bArr[i4];
-                if (b4 >= 0) {
-                    zzgjVar.zza = i8 | (b4 << 28);
-                    return i9;
-                }
-                int i10 = i8 | ((b4 & Byte.MAX_VALUE) << 28);
-                while (true) {
-                    int i11 = i9 + 1;
-                    if (bArr[i9] >= 0) {
-                        zzgjVar.zza = i10;
-                        return i11;
-                    }
-                    i9 = i11;
-                }
-            }
+            zzgjVar.zza = i4 | (b << 7);
+            return i3;
         }
-        zzgjVar.zza = i5 | i3;
-        return i4;
+        int i5 = i4 | ((b & Byte.MAX_VALUE) << 7);
+        int i6 = i2 + 2;
+        byte b2 = bArr[i3];
+        if (b2 >= 0) {
+            zzgjVar.zza = i5 | (b2 << 14);
+            return i6;
+        }
+        int i7 = i5 | ((b2 & Byte.MAX_VALUE) << 14);
+        int i8 = i2 + 3;
+        byte b3 = bArr[i6];
+        if (b3 >= 0) {
+            zzgjVar.zza = i7 | (b3 << 21);
+            return i8;
+        }
+        int i9 = i7 | ((b3 & Byte.MAX_VALUE) << 21);
+        int i10 = i2 + 4;
+        byte b4 = bArr[i8];
+        if (b4 >= 0) {
+            zzgjVar.zza = i9 | (b4 << 28);
+            return i10;
+        }
+        int i11 = i9 | ((b4 & Byte.MAX_VALUE) << 28);
+        while (true) {
+            int i12 = i10 + 1;
+            if (bArr[i10] >= 0) {
+                zzgjVar.zza = i11;
+                return i12;
+            }
+            i10 = i12;
+        }
     }
 
     static int zzk(int i, byte[] bArr, int i2, int i3, zzjb zzjbVar, zzgj zzgjVar) {
         zziu zziuVar = (zziu) zzjbVar;
         int zzi = zzi(bArr, i2, zzgjVar);
-        while (true) {
-            zziuVar.zzg(zzgjVar.zza);
-            if (zzi >= i3) {
-                break;
-            }
+        zziuVar.zzg(zzgjVar.zza);
+        while (zzi < i3) {
             int zzi2 = zzi(bArr, zzi, zzgjVar);
             if (i != zzgjVar.zza) {
                 break;
             }
             zzi = zzi(bArr, zzi2, zzgjVar);
+            zziuVar.zzg(zzgjVar.zza);
         }
         return zzi;
     }
@@ -261,6 +258,10 @@ final class zzgk {
         return i6;
     }
 
+    static long zzp(byte[] bArr, int i) {
+        return (bArr[i] & 255) | ((bArr[i + 1] & 255) << 8) | ((bArr[i + 2] & 255) << 16) | ((bArr[i + 3] & 255) << 24) | ((bArr[i + 4] & 255) << 32) | ((bArr[i + 5] & 255) << 40) | ((bArr[i + 6] & 255) << 48) | ((bArr[i + 7] & 255) << 56);
+    }
+
     static int zzo(int i, byte[] bArr, int i2, int i3, zzgj zzgjVar) {
         if ((i >>> 3) == 0) {
             throw zzje.zzc();
@@ -295,9 +296,5 @@ final class zzgk {
             throw zzje.zzg();
         }
         return i2;
-    }
-
-    static long zzp(byte[] bArr, int i) {
-        return (bArr[i] & 255) | ((bArr[i + 1] & 255) << 8) | ((bArr[i + 2] & 255) << 16) | ((bArr[i + 3] & 255) << 24) | ((bArr[i + 4] & 255) << 32) | ((bArr[i + 5] & 255) << 40) | ((bArr[i + 6] & 255) << 48) | ((bArr[i + 7] & 255) << 56);
     }
 }

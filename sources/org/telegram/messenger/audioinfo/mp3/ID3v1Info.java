@@ -6,6 +6,23 @@ import org.telegram.messenger.audioinfo.AudioInfo;
 
 /* loaded from: classes3.dex */
 public class ID3v1Info extends AudioInfo {
+    public static boolean isID3v1StartPosition(InputStream inputStream) {
+        boolean z;
+        inputStream.mark(3);
+        try {
+            if (inputStream.read() == 84 && inputStream.read() == 65) {
+                if (inputStream.read() == 71) {
+                    z = true;
+                    return z;
+                }
+            }
+            z = false;
+            return z;
+        } finally {
+            inputStream.reset();
+        }
+    }
+
     public ID3v1Info(InputStream inputStream) {
         byte b;
         if (isID3v1StartPosition(inputStream)) {
@@ -33,33 +50,6 @@ public class ID3v1Info extends AudioInfo {
         }
     }
 
-    public static boolean isID3v1StartPosition(InputStream inputStream) {
-        boolean z;
-        inputStream.mark(3);
-        try {
-            if (inputStream.read() == 84 && inputStream.read() == 65) {
-                if (inputStream.read() == 71) {
-                    z = true;
-                    return z;
-                }
-            }
-            z = false;
-            return z;
-        } finally {
-            inputStream.reset();
-        }
-    }
-
-    String extractString(byte[] bArr, int i, int i2) {
-        try {
-            String str = new String(bArr, i, i2, "ISO-8859-1");
-            int indexOf = str.indexOf(0);
-            return indexOf < 0 ? str : str.substring(0, indexOf);
-        } catch (Exception unused) {
-            return "";
-        }
-    }
-
     byte[] readBytes(InputStream inputStream, int i) {
         byte[] bArr = new byte[i];
         int i2 = 0;
@@ -71,5 +61,15 @@ public class ID3v1Info extends AudioInfo {
             i2 += read;
         }
         return bArr;
+    }
+
+    String extractString(byte[] bArr, int i, int i2) {
+        try {
+            String str = new String(bArr, i, i2, "ISO-8859-1");
+            int indexOf = str.indexOf(0);
+            return indexOf < 0 ? str : str.substring(0, indexOf);
+        } catch (Exception unused) {
+            return "";
+        }
     }
 }

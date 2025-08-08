@@ -3,7 +3,7 @@ package com.microsoft.appcenter.distribute.channel;
 import com.microsoft.appcenter.channel.AbstractChannelListener;
 import com.microsoft.appcenter.ingestion.models.Log;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class DistributeInfoTracker extends AbstractChannelListener {
     private String mDistributionGroupId;
 
@@ -20,11 +20,11 @@ public class DistributeInfoTracker extends AbstractChannelListener {
         log.setDistributionGroupId(str2);
     }
 
-    public synchronized void removeDistributionGroupId() {
-        this.mDistributionGroupId = null;
-    }
-
     public synchronized void updateDistributionGroupId(String str) {
         this.mDistributionGroupId = str;
+    }
+
+    public synchronized void removeDistributionGroupId() {
+        this.mDistributionGroupId = null;
     }
 }

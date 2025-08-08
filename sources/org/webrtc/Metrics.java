@@ -8,6 +8,13 @@ public class Metrics {
     private static final String TAG = "Metrics";
     public final Map<String, HistogramInfo> map = new HashMap();
 
+    private static native void nativeEnable();
+
+    private static native Metrics nativeGetAndReset();
+
+    Metrics() {
+    }
+
     public static class HistogramInfo {
         public final int bucketCount;
         public final int max;
@@ -25,9 +32,6 @@ public class Metrics {
         }
     }
 
-    Metrics() {
-    }
-
     private void add(String str, HistogramInfo histogramInfo) {
         this.map.put(str, histogramInfo);
     }
@@ -39,8 +43,4 @@ public class Metrics {
     public static Metrics getAndReset() {
         return nativeGetAndReset();
     }
-
-    private static native void nativeEnable();
-
-    private static native Metrics nativeGetAndReset();
 }

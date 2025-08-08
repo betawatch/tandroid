@@ -27,7 +27,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class FirebaseRemoteConfig {
     public static final byte[] DEFAULT_VALUE_FOR_BYTE_ARRAY = new byte[0];
     private final ConfigCacheClient activatedConfigsCache;
@@ -43,6 +43,14 @@ public class FirebaseRemoteConfig {
     private final ConfigMetadataClient frcMetadata;
     private final ConfigGetParameterHandler getHandler;
     private final RolloutsStateSubscriptionsHandler rolloutsStateSubscriptionsHandler;
+
+    public static FirebaseRemoteConfig getInstance() {
+        return getInstance(FirebaseApp.getInstance());
+    }
+
+    public static FirebaseRemoteConfig getInstance(FirebaseApp firebaseApp) {
+        return ((RemoteConfigComponent) firebaseApp.get(RemoteConfigComponent.class)).getDefault();
+    }
 
     FirebaseRemoteConfig(Context context, FirebaseApp firebaseApp, FirebaseInstallationsApi firebaseInstallationsApi, FirebaseABTesting firebaseABTesting, Executor executor, ConfigCacheClient configCacheClient, ConfigCacheClient configCacheClient2, ConfigCacheClient configCacheClient3, ConfigFetchHandler configFetchHandler, ConfigGetParameterHandler configGetParameterHandler, ConfigMetadataClient configMetadataClient, ConfigRealtimeHandler configRealtimeHandler, RolloutsStateSubscriptionsHandler rolloutsStateSubscriptionsHandler) {
         this.context = context;
@@ -60,16 +68,17 @@ public class FirebaseRemoteConfig {
         this.rolloutsStateSubscriptionsHandler = rolloutsStateSubscriptionsHandler;
     }
 
-    public static FirebaseRemoteConfig getInstance() {
-        return getInstance(FirebaseApp.getInstance());
-    }
-
-    public static FirebaseRemoteConfig getInstance(FirebaseApp firebaseApp) {
-        return ((RemoteConfigComponent) firebaseApp.get(RemoteConfigComponent.class)).getDefault();
-    }
-
-    private static boolean isFetchedFresh(ConfigContainer configContainer, ConfigContainer configContainer2) {
-        return configContainer2 == null || !configContainer.getFetchTime().equals(configContainer2.getFetchTime());
+    public Task activate() {
+        final Task task = this.fetchedConfigsCache.get();
+        final Task task2 = this.activatedConfigsCache.get();
+        return Tasks.whenAllComplete((Task<?>[]) new Task[]{task, task2}).continueWithTask(this.executor, new Continuation() { // from class: com.google.firebase.remoteconfig.FirebaseRemoteConfig$$ExternalSyntheticLambda0
+            @Override // com.google.android.gms.tasks.Continuation
+            public final Object then(Task task3) {
+                Task lambda$activate$2;
+                lambda$activate$2 = FirebaseRemoteConfig.this.lambda$activate$2(task, task2, task3);
+                return lambda$activate$2;
+            }
+        });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -78,19 +87,47 @@ public class FirebaseRemoteConfig {
             return Tasks.forResult(Boolean.FALSE);
         }
         ConfigContainer configContainer = (ConfigContainer) task.getResult();
-        return (!task2.isSuccessful() || isFetchedFresh(configContainer, (ConfigContainer) task2.getResult())) ? this.activatedConfigsCache.put(configContainer).continueWith(this.executor, new Continuation() { // from class: com.google.firebase.remoteconfig.FirebaseRemoteConfig$$ExternalSyntheticLambda2
+        if (task2.isSuccessful() && !isFetchedFresh(configContainer, (ConfigContainer) task2.getResult())) {
+            return Tasks.forResult(Boolean.FALSE);
+        }
+        return this.activatedConfigsCache.put(configContainer).continueWith(this.executor, new Continuation() { // from class: com.google.firebase.remoteconfig.FirebaseRemoteConfig$$ExternalSyntheticLambda2
             @Override // com.google.android.gms.tasks.Continuation
             public final Object then(Task task4) {
                 boolean processActivatePutTask;
                 processActivatePutTask = FirebaseRemoteConfig.this.processActivatePutTask(task4);
                 return Boolean.valueOf(processActivatePutTask);
             }
-        }) : Tasks.forResult(Boolean.FALSE);
+        });
+    }
+
+    public Task fetch(long j) {
+        return this.fetchHandler.fetch(j).onSuccessTask(FirebaseExecutors.directExecutor(), new SuccessContinuation() { // from class: com.google.firebase.remoteconfig.FirebaseRemoteConfig$$ExternalSyntheticLambda1
+            @Override // com.google.android.gms.tasks.SuccessContinuation
+            public final Task then(Object obj) {
+                Task lambda$fetch$4;
+                lambda$fetch$4 = FirebaseRemoteConfig.lambda$fetch$4((ConfigFetchHandler.FetchResponse) obj);
+                return lambda$fetch$4;
+            }
+        });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ Task lambda$fetch$4(ConfigFetchHandler.FetchResponse fetchResponse) {
         return Tasks.forResult(null);
+    }
+
+    public String getString(String str) {
+        return this.getHandler.getString(str);
+    }
+
+    public FirebaseRemoteConfigInfo getInfo() {
+        return this.frcMetadata.getInfo();
+    }
+
+    void startLoadingConfigsFromDisk() {
+        this.activatedConfigsCache.get();
+        this.defaultConfigsCache.get();
+        this.fetchedConfigsCache.get();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -100,13 +137,30 @@ public class FirebaseRemoteConfig {
         }
         this.fetchedConfigsCache.clear();
         ConfigContainer configContainer = (ConfigContainer) task.getResult();
-        if (configContainer == null) {
-            Log.e("FirebaseRemoteConfig", "Activated configs written to disk are null.");
+        if (configContainer != null) {
+            updateAbtWithActivatedExperiments(configContainer.getAbtExperiments());
+            this.rolloutsStateSubscriptionsHandler.publishActiveRolloutsState(configContainer);
             return true;
         }
-        updateAbtWithActivatedExperiments(configContainer.getAbtExperiments());
-        this.rolloutsStateSubscriptionsHandler.publishActiveRolloutsState(configContainer);
+        Log.e("FirebaseRemoteConfig", "Activated configs written to disk are null.");
         return true;
+    }
+
+    void updateAbtWithActivatedExperiments(JSONArray jSONArray) {
+        if (this.firebaseAbt == null) {
+            return;
+        }
+        try {
+            this.firebaseAbt.replaceAllExperiments(toExperimentInfoMaps(jSONArray));
+        } catch (AbtException e) {
+            Log.w("FirebaseRemoteConfig", "Could not update ABT experiments.", e);
+        } catch (JSONException e2) {
+            Log.e("FirebaseRemoteConfig", "Could not parse ABT experiments from the JSON response.", e2);
+        }
+    }
+
+    void setConfigUpdateBackgroundState(boolean z) {
+        this.configRealtimeHandler.setBackgroundState(z);
     }
 
     static List toExperimentInfoMaps(JSONArray jSONArray) {
@@ -124,62 +178,11 @@ public class FirebaseRemoteConfig {
         return arrayList;
     }
 
-    public Task activate() {
-        final Task task = this.fetchedConfigsCache.get();
-        final Task task2 = this.activatedConfigsCache.get();
-        return Tasks.whenAllComplete((Task<?>[]) new Task[]{task, task2}).continueWithTask(this.executor, new Continuation() { // from class: com.google.firebase.remoteconfig.FirebaseRemoteConfig$$ExternalSyntheticLambda0
-            @Override // com.google.android.gms.tasks.Continuation
-            public final Object then(Task task3) {
-                Task lambda$activate$2;
-                lambda$activate$2 = FirebaseRemoteConfig.this.lambda$activate$2(task, task2, task3);
-                return lambda$activate$2;
-            }
-        });
-    }
-
-    public Task fetch(long j) {
-        return this.fetchHandler.fetch(j).onSuccessTask(FirebaseExecutors.directExecutor(), new SuccessContinuation() { // from class: com.google.firebase.remoteconfig.FirebaseRemoteConfig$$ExternalSyntheticLambda1
-            @Override // com.google.android.gms.tasks.SuccessContinuation
-            public final Task then(Object obj) {
-                Task lambda$fetch$4;
-                lambda$fetch$4 = FirebaseRemoteConfig.lambda$fetch$4((ConfigFetchHandler.FetchResponse) obj);
-                return lambda$fetch$4;
-            }
-        });
-    }
-
-    public FirebaseRemoteConfigInfo getInfo() {
-        return this.frcMetadata.getInfo();
-    }
-
     RolloutsStateSubscriptionsHandler getRolloutsStateSubscriptionsHandler() {
         return this.rolloutsStateSubscriptionsHandler;
     }
 
-    public String getString(String str) {
-        return this.getHandler.getString(str);
-    }
-
-    void setConfigUpdateBackgroundState(boolean z) {
-        this.configRealtimeHandler.setBackgroundState(z);
-    }
-
-    void startLoadingConfigsFromDisk() {
-        this.activatedConfigsCache.get();
-        this.defaultConfigsCache.get();
-        this.fetchedConfigsCache.get();
-    }
-
-    void updateAbtWithActivatedExperiments(JSONArray jSONArray) {
-        if (this.firebaseAbt == null) {
-            return;
-        }
-        try {
-            this.firebaseAbt.replaceAllExperiments(toExperimentInfoMaps(jSONArray));
-        } catch (AbtException e) {
-            Log.w("FirebaseRemoteConfig", "Could not update ABT experiments.", e);
-        } catch (JSONException e2) {
-            Log.e("FirebaseRemoteConfig", "Could not parse ABT experiments from the JSON response.", e2);
-        }
+    private static boolean isFetchedFresh(ConfigContainer configContainer, ConfigContainer configContainer2) {
+        return configContainer2 == null || !configContainer.getFetchTime().equals(configContainer2.getFetchTime());
     }
 }

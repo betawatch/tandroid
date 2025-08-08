@@ -13,6 +13,36 @@ public class LazyStringArrayList extends AbstractProtobufList implements LazyStr
     private static final LazyStringArrayList EMPTY_LIST;
     private final List list;
 
+    @Override // androidx.datastore.preferences.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.Collection, java.util.List
+    public /* bridge */ /* synthetic */ boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.Collection, java.util.List
+    public /* bridge */ /* synthetic */ int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.AbstractProtobufList, androidx.datastore.preferences.protobuf.Internal.ProtobufList
+    public /* bridge */ /* synthetic */ boolean isModifiable() {
+        return super.isModifiable();
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.AbstractProtobufList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public /* bridge */ /* synthetic */ boolean remove(Object obj) {
+        return super.remove(obj);
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.AbstractProtobufList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public /* bridge */ /* synthetic */ boolean removeAll(Collection collection) {
+        return super.removeAll(collection);
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.AbstractProtobufList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public /* bridge */ /* synthetic */ boolean retainAll(Collection collection) {
+        return super.retainAll(collection);
+    }
+
     static {
         LazyStringArrayList lazyStringArrayList = new LazyStringArrayList();
         EMPTY_LIST = lazyStringArrayList;
@@ -32,50 +62,14 @@ public class LazyStringArrayList extends AbstractProtobufList implements LazyStr
         this.list = arrayList;
     }
 
-    private static String asString(Object obj) {
-        return obj instanceof String ? (String) obj : obj instanceof ByteString ? ((ByteString) obj).toStringUtf8() : Internal.toStringUtf8((byte[]) obj);
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public void add(int i, String str) {
-        ensureIsMutable();
-        this.list.add(i, str);
-        ((AbstractList) this).modCount++;
-    }
-
-    @Override // androidx.datastore.preferences.protobuf.LazyStringList
-    public void add(ByteString byteString) {
-        ensureIsMutable();
-        this.list.add(byteString);
-        ((AbstractList) this).modCount++;
-    }
-
-    @Override // androidx.datastore.preferences.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.List
-    public boolean addAll(int i, Collection collection) {
-        ensureIsMutable();
-        if (collection instanceof LazyStringList) {
-            collection = ((LazyStringList) collection).getUnderlyingElements();
+    @Override // androidx.datastore.preferences.protobuf.Internal.ProtobufList
+    public LazyStringArrayList mutableCopyWithCapacity(int i) {
+        if (i < size()) {
+            throw new IllegalArgumentException();
         }
-        boolean addAll = this.list.addAll(i, collection);
-        ((AbstractList) this).modCount++;
-        return addAll;
-    }
-
-    @Override // androidx.datastore.preferences.protobuf.AbstractProtobufList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public boolean addAll(Collection collection) {
-        return addAll(size(), collection);
-    }
-
-    @Override // androidx.datastore.preferences.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public void clear() {
-        ensureIsMutable();
-        this.list.clear();
-        ((AbstractList) this).modCount++;
-    }
-
-    @Override // androidx.datastore.preferences.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.Collection, java.util.List
-    public /* bridge */ /* synthetic */ boolean equals(Object obj) {
-        return super.equals(obj);
+        ArrayList arrayList = new ArrayList(i);
+        arrayList.addAll(this.list);
+        return new LazyStringArrayList(arrayList);
     }
 
     @Override // java.util.AbstractList, java.util.List
@@ -100,39 +94,38 @@ public class LazyStringArrayList extends AbstractProtobufList implements LazyStr
         return stringUtf82;
     }
 
-    @Override // androidx.datastore.preferences.protobuf.LazyStringList
-    public Object getRaw(int i) {
-        return this.list.get(i);
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public int size() {
+        return this.list.size();
     }
 
-    @Override // androidx.datastore.preferences.protobuf.LazyStringList
-    public List getUnderlyingElements() {
-        return Collections.unmodifiableList(this.list);
+    @Override // java.util.AbstractList, java.util.List
+    public String set(int i, String str) {
+        ensureIsMutable();
+        return asString(this.list.set(i, str));
     }
 
-    @Override // androidx.datastore.preferences.protobuf.LazyStringList
-    public LazyStringList getUnmodifiableView() {
-        return isModifiable() ? new UnmodifiableLazyStringList(this) : this;
+    @Override // java.util.AbstractList, java.util.List
+    public void add(int i, String str) {
+        ensureIsMutable();
+        this.list.add(i, str);
+        ((AbstractList) this).modCount++;
     }
 
-    @Override // androidx.datastore.preferences.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.Collection, java.util.List
-    public /* bridge */ /* synthetic */ int hashCode() {
-        return super.hashCode();
+    @Override // androidx.datastore.preferences.protobuf.AbstractProtobufList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public boolean addAll(Collection collection) {
+        return addAll(size(), collection);
     }
 
-    @Override // androidx.datastore.preferences.protobuf.AbstractProtobufList, androidx.datastore.preferences.protobuf.Internal.ProtobufList
-    public /* bridge */ /* synthetic */ boolean isModifiable() {
-        return super.isModifiable();
-    }
-
-    @Override // androidx.datastore.preferences.protobuf.Internal.ProtobufList
-    public LazyStringArrayList mutableCopyWithCapacity(int i) {
-        if (i < size()) {
-            throw new IllegalArgumentException();
+    @Override // androidx.datastore.preferences.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.List
+    public boolean addAll(int i, Collection collection) {
+        ensureIsMutable();
+        if (collection instanceof LazyStringList) {
+            collection = ((LazyStringList) collection).getUnderlyingElements();
         }
-        ArrayList arrayList = new ArrayList(i);
-        arrayList.addAll(this.list);
-        return new LazyStringArrayList(arrayList);
+        boolean addAll = this.list.addAll(i, collection);
+        ((AbstractList) this).modCount++;
+        return addAll;
     }
 
     @Override // java.util.AbstractList, java.util.List
@@ -143,29 +136,42 @@ public class LazyStringArrayList extends AbstractProtobufList implements LazyStr
         return asString(remove);
     }
 
-    @Override // androidx.datastore.preferences.protobuf.AbstractProtobufList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public /* bridge */ /* synthetic */ boolean remove(Object obj) {
-        return super.remove(obj);
-    }
-
-    @Override // androidx.datastore.preferences.protobuf.AbstractProtobufList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public /* bridge */ /* synthetic */ boolean removeAll(Collection collection) {
-        return super.removeAll(collection);
-    }
-
-    @Override // androidx.datastore.preferences.protobuf.AbstractProtobufList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public /* bridge */ /* synthetic */ boolean retainAll(Collection collection) {
-        return super.retainAll(collection);
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public String set(int i, String str) {
+    @Override // androidx.datastore.preferences.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public void clear() {
         ensureIsMutable();
-        return asString(this.list.set(i, str));
+        this.list.clear();
+        ((AbstractList) this).modCount++;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public int size() {
-        return this.list.size();
+    @Override // androidx.datastore.preferences.protobuf.LazyStringList
+    public void add(ByteString byteString) {
+        ensureIsMutable();
+        this.list.add(byteString);
+        ((AbstractList) this).modCount++;
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.LazyStringList
+    public Object getRaw(int i) {
+        return this.list.get(i);
+    }
+
+    private static String asString(Object obj) {
+        if (obj instanceof String) {
+            return (String) obj;
+        }
+        if (obj instanceof ByteString) {
+            return ((ByteString) obj).toStringUtf8();
+        }
+        return Internal.toStringUtf8((byte[]) obj);
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.LazyStringList
+    public List getUnderlyingElements() {
+        return Collections.unmodifiableList(this.list);
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.LazyStringList
+    public LazyStringList getUnmodifiableView() {
+        return isModifiable() ? new UnmodifiableLazyStringList(this) : this;
     }
 }

@@ -30,6 +30,47 @@ final class IcyDataSource implements DataSource {
         this.bytesUntilMetadata = i;
     }
 
+    @Override // com.google.android.exoplayer2.upstream.DataSource
+    public void addTransferListener(TransferListener transferListener) {
+        Assertions.checkNotNull(transferListener);
+        this.upstream.addTransferListener(transferListener);
+    }
+
+    @Override // com.google.android.exoplayer2.upstream.DataSource
+    public long open(DataSpec dataSpec) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // com.google.android.exoplayer2.upstream.DataReader
+    public int read(byte[] bArr, int i, int i2) {
+        if (this.bytesUntilMetadata == 0) {
+            if (!readMetadata()) {
+                return -1;
+            }
+            this.bytesUntilMetadata = this.metadataIntervalBytes;
+        }
+        int read = this.upstream.read(bArr, i, Math.min(this.bytesUntilMetadata, i2));
+        if (read != -1) {
+            this.bytesUntilMetadata -= read;
+        }
+        return read;
+    }
+
+    @Override // com.google.android.exoplayer2.upstream.DataSource
+    public Uri getUri() {
+        return this.upstream.getUri();
+    }
+
+    @Override // com.google.android.exoplayer2.upstream.DataSource
+    public Map getResponseHeaders() {
+        return this.upstream.getResponseHeaders();
+    }
+
+    @Override // com.google.android.exoplayer2.upstream.DataSource
+    public void close() {
+        throw new UnsupportedOperationException();
+    }
+
     private boolean readMetadata() {
         if (this.upstream.read(this.metadataLengthByteHolder, 0, 1) == -1) {
             return false;
@@ -56,46 +97,5 @@ final class IcyDataSource implements DataSource {
             this.listener.onIcyMetadata(new ParsableByteArray(bArr, i));
         }
         return true;
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.DataSource
-    public void addTransferListener(TransferListener transferListener) {
-        Assertions.checkNotNull(transferListener);
-        this.upstream.addTransferListener(transferListener);
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.DataSource
-    public void close() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.DataSource
-    public Map getResponseHeaders() {
-        return this.upstream.getResponseHeaders();
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.DataSource
-    public Uri getUri() {
-        return this.upstream.getUri();
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.DataSource
-    public long open(DataSpec dataSpec) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.DataReader
-    public int read(byte[] bArr, int i, int i2) {
-        if (this.bytesUntilMetadata == 0) {
-            if (!readMetadata()) {
-                return -1;
-            }
-            this.bytesUntilMetadata = this.metadataIntervalBytes;
-        }
-        int read = this.upstream.read(bArr, i, Math.min(this.bytesUntilMetadata, i2));
-        if (read != -1) {
-            this.bytesUntilMetadata -= read;
-        }
-        return read;
     }
 }

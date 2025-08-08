@@ -7,7 +7,6 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Outline;
 import android.net.Uri;
-import android.os.Build;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewOutlineProvider;
@@ -30,7 +29,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.BottomSheet;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class QRCodeBottomSheet extends BottomSheet {
     private TextView button2TextView;
     private final TextView buttonTextView;
@@ -55,15 +54,13 @@ public class QRCodeBottomSheet extends BottomSheet {
             }
         };
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-        if (Build.VERSION.SDK_INT >= 21) {
-            imageView.setOutlineProvider(new ViewOutlineProvider() { // from class: org.telegram.ui.Components.QRCodeBottomSheet.2
-                @Override // android.view.ViewOutlineProvider
-                public void getOutline(View view, Outline outline) {
-                    outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), AndroidUtilities.dp(12.0f));
-                }
-            });
-            imageView.setClipToOutline(true);
-        }
+        imageView.setOutlineProvider(new ViewOutlineProvider() { // from class: org.telegram.ui.Components.QRCodeBottomSheet.2
+            @Override // android.view.ViewOutlineProvider
+            public void getOutline(View view, Outline outline) {
+                outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), AndroidUtilities.dp(12.0f));
+            }
+        });
+        imageView.setClipToOutline(true);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         linearLayout.setPadding(0, AndroidUtilities.dp(16.0f), 0, 0);
@@ -107,7 +104,7 @@ public class QRCodeBottomSheet extends BottomSheet {
         textView2.setTextSize(1, 14.0f);
         textView2.setTypeface(AndroidUtilities.bold());
         textView2.setText(LocaleController.getString(R.string.ShareQrCode));
-        textView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.QRCodeBottomSheet$$ExternalSyntheticLambda1
+        textView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.QRCodeBottomSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 QRCodeBottomSheet.this.lambda$new$0(context, view);
@@ -121,7 +118,7 @@ public class QRCodeBottomSheet extends BottomSheet {
             this.button2TextView.setGravity(17);
             this.button2TextView.setTextSize(1, 14.0f);
             this.button2TextView.setText(LocaleController.getString(R.string.ShareLink));
-            this.button2TextView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.QRCodeBottomSheet$$ExternalSyntheticLambda2
+            this.button2TextView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.QRCodeBottomSheet$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     QRCodeBottomSheet.lambda$new$1(str2, context, view);

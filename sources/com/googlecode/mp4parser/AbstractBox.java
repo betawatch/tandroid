@@ -9,11 +9,10 @@ import com.googlecode.mp4parser.util.CastUtils;
 import com.googlecode.mp4parser.util.Logger;
 import com.googlecode.mp4parser.util.Path;
 import java.io.IOException;
-import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class AbstractBox implements Box {
     static final /* synthetic */ boolean $assertionsDisabled = false;
     private static Logger LOG = Logger.getLogger(AbstractBox.class);
@@ -29,36 +28,11 @@ public abstract class AbstractBox implements Box {
     boolean isRead = true;
     boolean isParsed = true;
 
-    protected AbstractBox(String str) {
-        this.type = str;
-    }
+    protected abstract void _parseDetails(ByteBuffer byteBuffer);
 
-    private void getHeader(ByteBuffer byteBuffer) {
-        if (isSmallBox()) {
-            IsoTypeWriter.writeUInt32(byteBuffer, getSize());
-            byteBuffer.put(IsoFile.fourCCtoBytes(getType()));
-        } else {
-            IsoTypeWriter.writeUInt32(byteBuffer, 1L);
-            byteBuffer.put(IsoFile.fourCCtoBytes(getType()));
-            IsoTypeWriter.writeUInt64(byteBuffer, getSize());
-        }
-        if ("uuid".equals(getType())) {
-            byteBuffer.put(getUserType());
-        }
-    }
+    protected abstract void getContent(ByteBuffer byteBuffer);
 
-    private boolean isSmallBox() {
-        int i = "uuid".equals(getType()) ? 24 : 8;
-        if (!this.isRead) {
-            return this.memMapSize + ((long) i) < 4294967296L;
-        }
-        if (!this.isParsed) {
-            return ((long) (this.content.limit() + i)) < 4294967296L;
-        }
-        long contentSize = getContentSize();
-        ByteBuffer byteBuffer = this.deadBytes;
-        return (contentSize + ((long) (byteBuffer != null ? byteBuffer.limit() : 0))) + ((long) i) < 4294967296L;
-    }
+    protected abstract long getContentSize();
 
     private synchronized void readContent() {
         try {
@@ -75,80 +49,12 @@ public abstract class AbstractBox implements Box {
         }
     }
 
-    protected abstract void _parseDetails(ByteBuffer byteBuffer);
-
-    @Override // com.coremedia.iso.boxes.Box
-    public void getBox(WritableByteChannel writableByteChannel) {
-        Buffer position;
-        if (!this.isRead) {
-            ByteBuffer allocate = ByteBuffer.allocate((isSmallBox() ? 8 : 16) + ("uuid".equals(getType()) ? 16 : 0));
-            getHeader(allocate);
-            writableByteChannel.write((ByteBuffer) allocate.rewind());
-            throw null;
-        }
-        if (this.isParsed) {
-            ByteBuffer allocate2 = ByteBuffer.allocate(CastUtils.l2i(getSize()));
-            getHeader(allocate2);
-            getContent(allocate2);
-            ByteBuffer byteBuffer = this.deadBytes;
-            if (byteBuffer != null) {
-                byteBuffer.rewind();
-                while (this.deadBytes.remaining() > 0) {
-                    allocate2.put(this.deadBytes);
-                }
-            }
-            position = allocate2.rewind();
-        } else {
-            ByteBuffer allocate3 = ByteBuffer.allocate((isSmallBox() ? 8 : 16) + ("uuid".equals(getType()) ? 16 : 0));
-            getHeader(allocate3);
-            writableByteChannel.write((ByteBuffer) allocate3.rewind());
-            position = this.content.position(0);
-        }
-        writableByteChannel.write((ByteBuffer) position);
-    }
-
-    protected abstract void getContent(ByteBuffer byteBuffer);
-
-    protected abstract long getContentSize();
-
     public long getOffset() {
         return this.offset;
     }
 
-    @Override // com.coremedia.iso.boxes.Box
-    public Container getParent() {
-        return this.parent;
-    }
-
-    public String getPath() {
-        return Path.createPath(this);
-    }
-
-    @Override // com.coremedia.iso.boxes.Box
-    public long getSize() {
-        long j;
-        if (!this.isRead) {
-            j = this.memMapSize;
-        } else if (this.isParsed) {
-            j = getContentSize();
-        } else {
-            ByteBuffer byteBuffer = this.content;
-            j = byteBuffer != null ? byteBuffer.limit() : 0;
-        }
-        return j + (j >= 4294967288L ? 8 : 0) + 8 + ("uuid".equals(getType()) ? 16 : 0) + (this.deadBytes != null ? r0.limit() : 0);
-    }
-
-    @Override // com.coremedia.iso.boxes.Box
-    public String getType() {
-        return this.type;
-    }
-
-    public byte[] getUserType() {
-        return this.userType;
-    }
-
-    public boolean isParsed() {
-        return this.isParsed;
+    protected AbstractBox(String str) {
+        this.type = str;
     }
 
     public void parse(DataSource dataSource, ByteBuffer byteBuffer, long j, BoxParser boxParser) {
@@ -159,6 +65,35 @@ public abstract class AbstractBox implements Box {
         dataSource.position(dataSource.position() + j);
         this.isRead = false;
         this.isParsed = false;
+    }
+
+    @Override // com.coremedia.iso.boxes.Box
+    public void getBox(WritableByteChannel writableByteChannel) {
+        if (this.isRead) {
+            if (this.isParsed) {
+                ByteBuffer allocate = ByteBuffer.allocate(CastUtils.l2i(getSize()));
+                getHeader(allocate);
+                getContent(allocate);
+                ByteBuffer byteBuffer = this.deadBytes;
+                if (byteBuffer != null) {
+                    byteBuffer.rewind();
+                    while (this.deadBytes.remaining() > 0) {
+                        allocate.put(this.deadBytes);
+                    }
+                }
+                writableByteChannel.write((ByteBuffer) allocate.rewind());
+                return;
+            }
+            ByteBuffer allocate2 = ByteBuffer.allocate((isSmallBox() ? 8 : 16) + ("uuid".equals(getType()) ? 16 : 0));
+            getHeader(allocate2);
+            writableByteChannel.write((ByteBuffer) allocate2.rewind());
+            writableByteChannel.write((ByteBuffer) this.content.position(0));
+            return;
+        }
+        ByteBuffer allocate3 = ByteBuffer.allocate((isSmallBox() ? 8 : 16) + ("uuid".equals(getType()) ? 16 : 0));
+        getHeader(allocate3);
+        writableByteChannel.write((ByteBuffer) allocate3.rewind());
+        throw null;
     }
 
     public final synchronized void parseDetails() {
@@ -185,7 +120,70 @@ public abstract class AbstractBox implements Box {
     }
 
     @Override // com.coremedia.iso.boxes.Box
+    public long getSize() {
+        long j;
+        if (!this.isRead) {
+            j = this.memMapSize;
+        } else if (this.isParsed) {
+            j = getContentSize();
+        } else {
+            ByteBuffer byteBuffer = this.content;
+            j = byteBuffer != null ? byteBuffer.limit() : 0;
+        }
+        return j + (j >= 4294967288L ? 8 : 0) + 8 + ("uuid".equals(getType()) ? 16 : 0) + (this.deadBytes != null ? r0.limit() : 0);
+    }
+
+    @Override // com.coremedia.iso.boxes.Box
+    public String getType() {
+        return this.type;
+    }
+
+    public byte[] getUserType() {
+        return this.userType;
+    }
+
+    @Override // com.coremedia.iso.boxes.Box
+    public Container getParent() {
+        return this.parent;
+    }
+
+    @Override // com.coremedia.iso.boxes.Box
     public void setParent(Container container) {
         this.parent = container;
+    }
+
+    public boolean isParsed() {
+        return this.isParsed;
+    }
+
+    private boolean isSmallBox() {
+        int i = "uuid".equals(getType()) ? 24 : 8;
+        if (!this.isRead) {
+            return this.memMapSize + ((long) i) < 4294967296L;
+        }
+        if (!this.isParsed) {
+            return ((long) (this.content.limit() + i)) < 4294967296L;
+        }
+        long contentSize = getContentSize();
+        ByteBuffer byteBuffer = this.deadBytes;
+        return (contentSize + ((long) (byteBuffer != null ? byteBuffer.limit() : 0))) + ((long) i) < 4294967296L;
+    }
+
+    private void getHeader(ByteBuffer byteBuffer) {
+        if (isSmallBox()) {
+            IsoTypeWriter.writeUInt32(byteBuffer, getSize());
+            byteBuffer.put(IsoFile.fourCCtoBytes(getType()));
+        } else {
+            IsoTypeWriter.writeUInt32(byteBuffer, 1L);
+            byteBuffer.put(IsoFile.fourCCtoBytes(getType()));
+            IsoTypeWriter.writeUInt64(byteBuffer, getSize());
+        }
+        if ("uuid".equals(getType())) {
+            byteBuffer.put(getUserType());
+        }
+    }
+
+    public String getPath() {
+        return Path.createPath(this);
     }
 }

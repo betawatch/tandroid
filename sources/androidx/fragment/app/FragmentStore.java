@@ -20,6 +20,55 @@ class FragmentStore {
     FragmentStore() {
     }
 
+    void setNonConfig(FragmentManagerViewModel fragmentManagerViewModel) {
+        this.mNonConfig = fragmentManagerViewModel;
+    }
+
+    FragmentManagerViewModel getNonConfig() {
+        return this.mNonConfig;
+    }
+
+    void resetActiveFragments() {
+        this.mActive.clear();
+    }
+
+    void restoreAddedFragments(List list) {
+        this.mAdded.clear();
+        if (list != null) {
+            Iterator it = list.iterator();
+            while (it.hasNext()) {
+                String str = (String) it.next();
+                Fragment findActiveFragment = findActiveFragment(str);
+                if (findActiveFragment == null) {
+                    throw new IllegalStateException("No instantiated fragment for (" + str + ")");
+                }
+                if (FragmentManager.isLoggingEnabled(2)) {
+                    Log.v("FragmentManager", "restoreSaveState: added (" + str + "): " + findActiveFragment);
+                }
+                addFragment(findActiveFragment);
+            }
+        }
+    }
+
+    void makeActive(FragmentStateManager fragmentStateManager) {
+        Fragment fragment = fragmentStateManager.getFragment();
+        if (containsActiveFragment(fragment.mWho)) {
+            return;
+        }
+        this.mActive.put(fragment.mWho, fragmentStateManager);
+        if (fragment.mRetainInstanceChangedWhileDetached) {
+            if (fragment.mRetainInstance) {
+                this.mNonConfig.addRetainedFragment(fragment);
+            } else {
+                this.mNonConfig.removeRetainedFragment(fragment);
+            }
+            fragment.mRetainInstanceChangedWhileDetached = false;
+        }
+        if (FragmentManager.isLoggingEnabled(2)) {
+            Log.v("FragmentManager", "Added fragment to active set " + fragment);
+        }
+    }
+
     void addFragment(Fragment fragment) {
         if (this.mAdded.contains(fragment)) {
             throw new IllegalStateException("Fragment already added: " + fragment);
@@ -30,14 +79,6 @@ class FragmentStore {
         fragment.mAdded = true;
     }
 
-    void burpActive() {
-        this.mActive.values().removeAll(Collections.singleton(null));
-    }
-
-    boolean containsActiveFragment(String str) {
-        return this.mActive.get(str) != null;
-    }
-
     void dispatchStateChange(int i) {
         for (FragmentStateManager fragmentStateManager : this.mActive.values()) {
             if (fragmentStateManager != null) {
@@ -46,43 +87,114 @@ class FragmentStore {
         }
     }
 
-    void dump(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
-        String str2 = str + "    ";
-        if (!this.mActive.isEmpty()) {
-            printWriter.print(str);
-            printWriter.println("Active Fragments:");
-            for (FragmentStateManager fragmentStateManager : this.mActive.values()) {
-                printWriter.print(str);
-                if (fragmentStateManager != null) {
-                    Fragment fragment = fragmentStateManager.getFragment();
-                    printWriter.println(fragment);
-                    fragment.dump(str2, fileDescriptor, printWriter, strArr);
-                } else {
-                    printWriter.println("null");
-                }
+    void moveToExpectedState() {
+        Iterator it = this.mAdded.iterator();
+        while (it.hasNext()) {
+            FragmentStateManager fragmentStateManager = (FragmentStateManager) this.mActive.get(((Fragment) it.next()).mWho);
+            if (fragmentStateManager != null) {
+                fragmentStateManager.moveToExpectedState();
             }
         }
-        int size = this.mAdded.size();
-        if (size > 0) {
-            printWriter.print(str);
-            printWriter.println("Added Fragments:");
-            for (int i = 0; i < size; i++) {
-                Fragment fragment2 = (Fragment) this.mAdded.get(i);
-                printWriter.print(str);
-                printWriter.print("  #");
-                printWriter.print(i);
-                printWriter.print(": ");
-                printWriter.println(fragment2.toString());
+        for (FragmentStateManager fragmentStateManager2 : this.mActive.values()) {
+            if (fragmentStateManager2 != null) {
+                fragmentStateManager2.moveToExpectedState();
+                Fragment fragment = fragmentStateManager2.getFragment();
+                if (fragment.mRemoving && !fragment.isInBackStack()) {
+                    makeInactive(fragmentStateManager2);
+                }
             }
         }
     }
 
-    Fragment findActiveFragment(String str) {
-        FragmentStateManager fragmentStateManager = (FragmentStateManager) this.mActive.get(str);
-        if (fragmentStateManager != null) {
-            return fragmentStateManager.getFragment();
+    void removeFragment(Fragment fragment) {
+        synchronized (this.mAdded) {
+            this.mAdded.remove(fragment);
         }
-        return null;
+        fragment.mAdded = false;
+    }
+
+    void makeInactive(FragmentStateManager fragmentStateManager) {
+        Fragment fragment = fragmentStateManager.getFragment();
+        if (fragment.mRetainInstance) {
+            this.mNonConfig.removeRetainedFragment(fragment);
+        }
+        if (((FragmentStateManager) this.mActive.put(fragment.mWho, null)) != null && FragmentManager.isLoggingEnabled(2)) {
+            Log.v("FragmentManager", "Removed fragment from active set " + fragment);
+        }
+    }
+
+    void burpActive() {
+        this.mActive.values().removeAll(Collections.singleton(null));
+    }
+
+    ArrayList saveActiveFragments() {
+        ArrayList arrayList = new ArrayList(this.mActive.size());
+        for (FragmentStateManager fragmentStateManager : this.mActive.values()) {
+            if (fragmentStateManager != null) {
+                Fragment fragment = fragmentStateManager.getFragment();
+                FragmentState saveState = fragmentStateManager.saveState();
+                arrayList.add(saveState);
+                if (FragmentManager.isLoggingEnabled(2)) {
+                    Log.v("FragmentManager", "Saved state of " + fragment + ": " + saveState.mSavedFragmentState);
+                }
+            }
+        }
+        return arrayList;
+    }
+
+    ArrayList saveAddedFragments() {
+        synchronized (this.mAdded) {
+            try {
+                if (this.mAdded.isEmpty()) {
+                    return null;
+                }
+                ArrayList arrayList = new ArrayList(this.mAdded.size());
+                Iterator it = this.mAdded.iterator();
+                while (it.hasNext()) {
+                    Fragment fragment = (Fragment) it.next();
+                    arrayList.add(fragment.mWho);
+                    if (FragmentManager.isLoggingEnabled(2)) {
+                        Log.v("FragmentManager", "saveAllState: adding fragment (" + fragment.mWho + "): " + fragment);
+                    }
+                }
+                return arrayList;
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+    }
+
+    List getActiveFragmentStateManagers() {
+        ArrayList arrayList = new ArrayList();
+        for (FragmentStateManager fragmentStateManager : this.mActive.values()) {
+            if (fragmentStateManager != null) {
+                arrayList.add(fragmentStateManager);
+            }
+        }
+        return arrayList;
+    }
+
+    List getFragments() {
+        ArrayList arrayList;
+        if (this.mAdded.isEmpty()) {
+            return Collections.emptyList();
+        }
+        synchronized (this.mAdded) {
+            arrayList = new ArrayList(this.mAdded);
+        }
+        return arrayList;
+    }
+
+    List getActiveFragments() {
+        ArrayList arrayList = new ArrayList();
+        for (FragmentStateManager fragmentStateManager : this.mActive.values()) {
+            if (fragmentStateManager != null) {
+                arrayList.add(fragmentStateManager.getFragment());
+            } else {
+                arrayList.add(null);
+            }
+        }
+        return arrayList;
     }
 
     Fragment findFragmentById(int i) {
@@ -126,12 +238,28 @@ class FragmentStore {
         return null;
     }
 
+    boolean containsActiveFragment(String str) {
+        return this.mActive.get(str) != null;
+    }
+
+    FragmentStateManager getFragmentStateManager(String str) {
+        return (FragmentStateManager) this.mActive.get(str);
+    }
+
     Fragment findFragmentByWho(String str) {
         Fragment findFragmentByWho;
         for (FragmentStateManager fragmentStateManager : this.mActive.values()) {
             if (fragmentStateManager != null && (findFragmentByWho = fragmentStateManager.getFragment().findFragmentByWho(str)) != null) {
                 return findFragmentByWho;
             }
+        }
+        return null;
+    }
+
+    Fragment findActiveFragment(String str) {
+        FragmentStateManager fragmentStateManager = (FragmentStateManager) this.mActive.get(str);
+        if (fragmentStateManager != null) {
+            return fragmentStateManager.getFragment();
         }
         return null;
     }
@@ -162,158 +290,34 @@ class FragmentStore {
         }
     }
 
-    List getActiveFragmentStateManagers() {
-        ArrayList arrayList = new ArrayList();
-        for (FragmentStateManager fragmentStateManager : this.mActive.values()) {
-            if (fragmentStateManager != null) {
-                arrayList.add(fragmentStateManager);
-            }
-        }
-        return arrayList;
-    }
-
-    List getActiveFragments() {
-        ArrayList arrayList = new ArrayList();
-        for (FragmentStateManager fragmentStateManager : this.mActive.values()) {
-            arrayList.add(fragmentStateManager != null ? fragmentStateManager.getFragment() : null);
-        }
-        return arrayList;
-    }
-
-    FragmentStateManager getFragmentStateManager(String str) {
-        return (FragmentStateManager) this.mActive.get(str);
-    }
-
-    List getFragments() {
-        ArrayList arrayList;
-        if (this.mAdded.isEmpty()) {
-            return Collections.emptyList();
-        }
-        synchronized (this.mAdded) {
-            arrayList = new ArrayList(this.mAdded);
-        }
-        return arrayList;
-    }
-
-    FragmentManagerViewModel getNonConfig() {
-        return this.mNonConfig;
-    }
-
-    void makeActive(FragmentStateManager fragmentStateManager) {
-        Fragment fragment = fragmentStateManager.getFragment();
-        if (containsActiveFragment(fragment.mWho)) {
-            return;
-        }
-        this.mActive.put(fragment.mWho, fragmentStateManager);
-        if (fragment.mRetainInstanceChangedWhileDetached) {
-            if (fragment.mRetainInstance) {
-                this.mNonConfig.addRetainedFragment(fragment);
-            } else {
-                this.mNonConfig.removeRetainedFragment(fragment);
-            }
-            fragment.mRetainInstanceChangedWhileDetached = false;
-        }
-        if (FragmentManager.isLoggingEnabled(2)) {
-            Log.v("FragmentManager", "Added fragment to active set " + fragment);
-        }
-    }
-
-    void makeInactive(FragmentStateManager fragmentStateManager) {
-        Fragment fragment = fragmentStateManager.getFragment();
-        if (fragment.mRetainInstance) {
-            this.mNonConfig.removeRetainedFragment(fragment);
-        }
-        if (((FragmentStateManager) this.mActive.put(fragment.mWho, null)) != null && FragmentManager.isLoggingEnabled(2)) {
-            Log.v("FragmentManager", "Removed fragment from active set " + fragment);
-        }
-    }
-
-    void moveToExpectedState() {
-        Iterator it = this.mAdded.iterator();
-        while (it.hasNext()) {
-            FragmentStateManager fragmentStateManager = (FragmentStateManager) this.mActive.get(((Fragment) it.next()).mWho);
-            if (fragmentStateManager != null) {
-                fragmentStateManager.moveToExpectedState();
-            }
-        }
-        for (FragmentStateManager fragmentStateManager2 : this.mActive.values()) {
-            if (fragmentStateManager2 != null) {
-                fragmentStateManager2.moveToExpectedState();
-                Fragment fragment = fragmentStateManager2.getFragment();
-                if (fragment.mRemoving && !fragment.isInBackStack()) {
-                    makeInactive(fragmentStateManager2);
+    void dump(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
+        String str2 = str + "    ";
+        if (!this.mActive.isEmpty()) {
+            printWriter.print(str);
+            printWriter.println("Active Fragments:");
+            for (FragmentStateManager fragmentStateManager : this.mActive.values()) {
+                printWriter.print(str);
+                if (fragmentStateManager != null) {
+                    Fragment fragment = fragmentStateManager.getFragment();
+                    printWriter.println(fragment);
+                    fragment.dump(str2, fileDescriptor, printWriter, strArr);
+                } else {
+                    printWriter.println("null");
                 }
             }
         }
-    }
-
-    void removeFragment(Fragment fragment) {
-        synchronized (this.mAdded) {
-            this.mAdded.remove(fragment);
-        }
-        fragment.mAdded = false;
-    }
-
-    void resetActiveFragments() {
-        this.mActive.clear();
-    }
-
-    void restoreAddedFragments(List list) {
-        this.mAdded.clear();
-        if (list != null) {
-            Iterator it = list.iterator();
-            while (it.hasNext()) {
-                String str = (String) it.next();
-                Fragment findActiveFragment = findActiveFragment(str);
-                if (findActiveFragment == null) {
-                    throw new IllegalStateException("No instantiated fragment for (" + str + ")");
-                }
-                if (FragmentManager.isLoggingEnabled(2)) {
-                    Log.v("FragmentManager", "restoreSaveState: added (" + str + "): " + findActiveFragment);
-                }
-                addFragment(findActiveFragment);
+        int size = this.mAdded.size();
+        if (size > 0) {
+            printWriter.print(str);
+            printWriter.println("Added Fragments:");
+            for (int i = 0; i < size; i++) {
+                Fragment fragment2 = (Fragment) this.mAdded.get(i);
+                printWriter.print(str);
+                printWriter.print("  #");
+                printWriter.print(i);
+                printWriter.print(": ");
+                printWriter.println(fragment2.toString());
             }
         }
-    }
-
-    ArrayList saveActiveFragments() {
-        ArrayList arrayList = new ArrayList(this.mActive.size());
-        for (FragmentStateManager fragmentStateManager : this.mActive.values()) {
-            if (fragmentStateManager != null) {
-                Fragment fragment = fragmentStateManager.getFragment();
-                FragmentState saveState = fragmentStateManager.saveState();
-                arrayList.add(saveState);
-                if (FragmentManager.isLoggingEnabled(2)) {
-                    Log.v("FragmentManager", "Saved state of " + fragment + ": " + saveState.mSavedFragmentState);
-                }
-            }
-        }
-        return arrayList;
-    }
-
-    ArrayList saveAddedFragments() {
-        synchronized (this.mAdded) {
-            try {
-                if (this.mAdded.isEmpty()) {
-                    return null;
-                }
-                ArrayList arrayList = new ArrayList(this.mAdded.size());
-                Iterator it = this.mAdded.iterator();
-                while (it.hasNext()) {
-                    Fragment fragment = (Fragment) it.next();
-                    arrayList.add(fragment.mWho);
-                    if (FragmentManager.isLoggingEnabled(2)) {
-                        Log.v("FragmentManager", "saveAllState: adding fragment (" + fragment.mWho + "): " + fragment);
-                    }
-                }
-                return arrayList;
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-    }
-
-    void setNonConfig(FragmentManagerViewModel fragmentManagerViewModel) {
-        this.mNonConfig = fragmentManagerViewModel;
     }
 }

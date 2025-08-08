@@ -31,7 +31,7 @@ final class zacd implements OnCompleteListener {
 
     static zacd zaa(GoogleApiManager googleApiManager, int i, ApiKey apiKey) {
         boolean z;
-        if (!googleApiManager.zaF()) {
+        if (!googleApiManager.zaD()) {
             return null;
         }
         RootTelemetryConfiguration config = RootTelemetryConfigManager.getInstance().getConfig();
@@ -42,18 +42,18 @@ final class zacd implements OnCompleteListener {
                 return null;
             }
             z = config.getMethodTimingTelemetryEnabled();
-            zabq zak = googleApiManager.zak(apiKey);
-            if (zak != null) {
-                if (!(zak.zaf() instanceof BaseGmsClient)) {
+            zabq zai = googleApiManager.zai(apiKey);
+            if (zai != null) {
+                if (!(zai.zaf() instanceof BaseGmsClient)) {
                     return null;
                 }
-                BaseGmsClient baseGmsClient = (BaseGmsClient) zak.zaf();
+                BaseGmsClient baseGmsClient = (BaseGmsClient) zai.zaf();
                 if (baseGmsClient.hasConnectionInfo() && !baseGmsClient.isConnecting()) {
-                    ConnectionTelemetryConfiguration zab = zab(zak, baseGmsClient, i);
+                    ConnectionTelemetryConfiguration zab = zab(zai, baseGmsClient, i);
                     if (zab == null) {
                         return null;
                     }
-                    zak.zaq();
+                    zai.zaq();
                     z = zab.getMethodTimingTelemetryEnabled();
                 }
             }
@@ -73,7 +73,7 @@ final class zacd implements OnCompleteListener {
 
     @Override // com.google.android.gms.tasks.OnCompleteListener
     public final void onComplete(Task task) {
-        zabq zak;
+        zabq zai;
         int i;
         int i2;
         int i3;
@@ -82,10 +82,10 @@ final class zacd implements OnCompleteListener {
         long j;
         long j2;
         int i5;
-        if (this.zaa.zaF()) {
+        if (this.zaa.zaD()) {
             RootTelemetryConfiguration config = RootTelemetryConfigManager.getInstance().getConfig();
-            if ((config == null || config.getMethodInvocationTelemetryEnabled()) && (zak = this.zaa.zak(this.zac)) != null && (zak.zaf() instanceof BaseGmsClient)) {
-                BaseGmsClient baseGmsClient = (BaseGmsClient) zak.zaf();
+            if ((config == null || config.getMethodInvocationTelemetryEnabled()) && (zai = this.zaa.zai(this.zac)) != null && (zai.zaf() instanceof BaseGmsClient)) {
+                BaseGmsClient baseGmsClient = (BaseGmsClient) zai.zaf();
                 boolean z = this.zad > 0;
                 int gCoreServiceId = baseGmsClient.getGCoreServiceId();
                 if (config != null) {
@@ -94,7 +94,7 @@ final class zacd implements OnCompleteListener {
                     int maxMethodInvocationsInBatch = config.getMaxMethodInvocationsInBatch();
                     i = config.getVersion();
                     if (baseGmsClient.hasConnectionInfo() && !baseGmsClient.isConnecting()) {
-                        ConnectionTelemetryConfiguration zab = zab(zak, baseGmsClient, this.zab);
+                        ConnectionTelemetryConfiguration zab = zab(zai, baseGmsClient, this.zab);
                         if (zab == null) {
                             return;
                         }
@@ -122,8 +122,12 @@ final class zacd implements OnCompleteListener {
                             Status status = ((ApiException) exception).getStatus();
                             int statusCode = status.getStatusCode();
                             ConnectionResult connectionResult = status.getConnectionResult();
-                            errorCode = connectionResult == null ? -1 : connectionResult.getErrorCode();
-                            i4 = statusCode;
+                            if (connectionResult == null) {
+                                i4 = statusCode;
+                            } else {
+                                errorCode = connectionResult.getErrorCode();
+                                i4 = statusCode;
+                            }
                         } else {
                             i4 = 101;
                         }
@@ -132,15 +136,17 @@ final class zacd implements OnCompleteListener {
                 }
                 if (z) {
                     long j3 = this.zad;
-                    j2 = System.currentTimeMillis();
+                    long j4 = this.zae;
+                    long currentTimeMillis = System.currentTimeMillis();
+                    i5 = (int) (SystemClock.elapsedRealtime() - j4);
                     j = j3;
-                    i5 = (int) (SystemClock.elapsedRealtime() - this.zae);
+                    j2 = currentTimeMillis;
                 } else {
                     j = 0;
                     j2 = 0;
                     i5 = -1;
                 }
-                googleApiManager.zay(new MethodInvocation(this.zab, i4, errorCode, j, j2, null, null, gCoreServiceId, i5), i, i2, i3);
+                googleApiManager.zaw(new MethodInvocation(this.zab, i4, errorCode, j, j2, null, null, gCoreServiceId, i5), i, i2, i3);
             }
         }
     }

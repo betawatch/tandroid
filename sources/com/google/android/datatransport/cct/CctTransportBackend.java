@@ -62,36 +62,12 @@ final class CctTransportBackend implements TransportBackend {
     private final Clock uptimeClock;
     private final Clock wallTimeClock;
 
-    static final class HttpRequest {
-        final String apiKey;
-        final BatchedLogRequest requestBody;
-        final URL url;
-
-        HttpRequest(URL url, BatchedLogRequest batchedLogRequest, String str) {
-            this.url = url;
-            this.requestBody = batchedLogRequest;
-            this.apiKey = str;
+    private static URL parseUrlOrThrow(String str) {
+        try {
+            return new URL(str);
+        } catch (MalformedURLException e) {
+            throw new IllegalArgumentException("Invalid url: " + str, e);
         }
-
-        HttpRequest withUrl(URL url) {
-            return new HttpRequest(url, this.requestBody, this.apiKey);
-        }
-    }
-
-    static final class HttpResponse {
-        final int code;
-        final long nextRequestMillis;
-        final URL redirectUrl;
-
-        HttpResponse(int i, URL url, long j) {
-            this.code = i;
-            this.redirectUrl = url;
-            this.nextRequestMillis = j;
-        }
-    }
-
-    CctTransportBackend(Context context, Clock clock, Clock clock2) {
-        this(context, clock, clock2, 130000);
     }
 
     CctTransportBackend(Context context, Clock clock, Clock clock2, int i) {
@@ -102,6 +78,95 @@ final class CctTransportBackend implements TransportBackend {
         this.uptimeClock = clock2;
         this.wallTimeClock = clock;
         this.readTimeout = i;
+    }
+
+    CctTransportBackend(Context context, Clock clock, Clock clock2) {
+        this(context, clock, clock2, 130000);
+    }
+
+    private static TelephonyManager getTelephonyManager(Context context) {
+        return (TelephonyManager) context.getSystemService("phone");
+    }
+
+    private static int getPackageVersionCode(Context context) {
+        try {
+            return context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode;
+        } catch (PackageManager.NameNotFoundException e) {
+            Logging.e("CctTransportBackend", "Unable to find version code for package", e);
+            return -1;
+        }
+    }
+
+    @Override // com.google.android.datatransport.runtime.backends.TransportBackend
+    public EventInternal decorate(EventInternal eventInternal) {
+        NetworkInfo activeNetworkInfo = this.connectivityManager.getActiveNetworkInfo();
+        return eventInternal.toBuilder().addMetadata("sdk-version", Build.VERSION.SDK_INT).addMetadata("model", Build.MODEL).addMetadata("hardware", Build.HARDWARE).addMetadata("device", Build.DEVICE).addMetadata("product", Build.PRODUCT).addMetadata("os-uild", Build.ID).addMetadata("manufacturer", Build.MANUFACTURER).addMetadata("fingerprint", Build.FINGERPRINT).addMetadata("tz-offset", getTzOffset()).addMetadata("net-type", getNetTypeValue(activeNetworkInfo)).addMetadata("mobile-subtype", getNetSubtypeValue(activeNetworkInfo)).addMetadata("country", Locale.getDefault().getCountry()).addMetadata("locale", Locale.getDefault().getLanguage()).addMetadata("mcc_mnc", getTelephonyManager(this.applicationContext).getSimOperator()).addMetadata("application_build", Integer.toString(getPackageVersionCode(this.applicationContext))).build();
+    }
+
+    private static int getNetTypeValue(NetworkInfo networkInfo) {
+        if (networkInfo == null) {
+            return NetworkConnectionInfo.NetworkType.NONE.getValue();
+        }
+        return networkInfo.getType();
+    }
+
+    private static int getNetSubtypeValue(NetworkInfo networkInfo) {
+        if (networkInfo == null) {
+            return NetworkConnectionInfo.MobileSubtype.UNKNOWN_MOBILE_SUBTYPE.getValue();
+        }
+        int subtype = networkInfo.getSubtype();
+        if (subtype == -1) {
+            return NetworkConnectionInfo.MobileSubtype.COMBINED.getValue();
+        }
+        if (NetworkConnectionInfo.MobileSubtype.forNumber(subtype) != null) {
+            return subtype;
+        }
+        return 0;
+    }
+
+    private BatchedLogRequest getRequestBody(BackendRequest backendRequest) {
+        LogEvent.Builder protoBuilder;
+        HashMap hashMap = new HashMap();
+        for (EventInternal eventInternal : backendRequest.getEvents()) {
+            String transportName = eventInternal.getTransportName();
+            if (!hashMap.containsKey(transportName)) {
+                ArrayList arrayList = new ArrayList();
+                arrayList.add(eventInternal);
+                hashMap.put(transportName, arrayList);
+            } else {
+                ((List) hashMap.get(transportName)).add(eventInternal);
+            }
+        }
+        ArrayList arrayList2 = new ArrayList();
+        for (Map.Entry entry : hashMap.entrySet()) {
+            EventInternal eventInternal2 = (EventInternal) ((List) entry.getValue()).get(0);
+            LogRequest.Builder clientInfo = LogRequest.builder().setQosTier(QosTier.DEFAULT).setRequestTimeMs(this.wallTimeClock.getTime()).setRequestUptimeMs(this.uptimeClock.getTime()).setClientInfo(ClientInfo.builder().setClientType(ClientInfo.ClientType.ANDROID_FIREBASE).setAndroidClientInfo(AndroidClientInfo.builder().setSdkVersion(Integer.valueOf(eventInternal2.getInteger("sdk-version"))).setModel(eventInternal2.get("model")).setHardware(eventInternal2.get("hardware")).setDevice(eventInternal2.get("device")).setProduct(eventInternal2.get("product")).setOsBuild(eventInternal2.get("os-uild")).setManufacturer(eventInternal2.get("manufacturer")).setFingerprint(eventInternal2.get("fingerprint")).setCountry(eventInternal2.get("country")).setLocale(eventInternal2.get("locale")).setMccMnc(eventInternal2.get("mcc_mnc")).setApplicationBuild(eventInternal2.get("application_build")).build()).build());
+            try {
+                clientInfo.setSource(Integer.parseInt((String) entry.getKey()));
+            } catch (NumberFormatException unused) {
+                clientInfo.setSource((String) entry.getKey());
+            }
+            ArrayList arrayList3 = new ArrayList();
+            for (EventInternal eventInternal3 : (List) entry.getValue()) {
+                EncodedPayload encodedPayload = eventInternal3.getEncodedPayload();
+                Encoding encoding = encodedPayload.getEncoding();
+                if (encoding.equals(Encoding.of("proto"))) {
+                    protoBuilder = LogEvent.protoBuilder(encodedPayload.getBytes());
+                } else if (encoding.equals(Encoding.of("json"))) {
+                    protoBuilder = LogEvent.jsonBuilder(new String(encodedPayload.getBytes(), Charset.forName("UTF-8")));
+                } else {
+                    Logging.w("CctTransportBackend", "Received event of unsupported encoding %s. Skipping...", encoding);
+                }
+                protoBuilder.setEventTimeMs(eventInternal3.getEventMillis()).setEventUptimeMs(eventInternal3.getUptimeMillis()).setTimezoneOffsetSeconds(eventInternal3.getLong("tz-offset")).setNetworkConnectionInfo(NetworkConnectionInfo.builder().setNetworkType(NetworkConnectionInfo.NetworkType.forNumber(eventInternal3.getInteger("net-type"))).setMobileSubtype(NetworkConnectionInfo.MobileSubtype.forNumber(eventInternal3.getInteger("mobile-subtype"))).build());
+                if (eventInternal3.getCode() != null) {
+                    protoBuilder.setEventCode(eventInternal3.getCode());
+                }
+                arrayList3.add(protoBuilder.build());
+            }
+            clientInfo.setLogEvents(arrayList3);
+            arrayList2.add(clientInfo.build());
+        }
+        return BatchedLogRequest.create(arrayList2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -196,116 +261,8 @@ final class CctTransportBackend implements TransportBackend {
         }
     }
 
-    private static int getNetSubtypeValue(NetworkInfo networkInfo) {
-        NetworkConnectionInfo.MobileSubtype mobileSubtype;
-        if (networkInfo == null) {
-            mobileSubtype = NetworkConnectionInfo.MobileSubtype.UNKNOWN_MOBILE_SUBTYPE;
-        } else {
-            int subtype = networkInfo.getSubtype();
-            if (subtype != -1) {
-                if (NetworkConnectionInfo.MobileSubtype.forNumber(subtype) != null) {
-                    return subtype;
-                }
-                return 0;
-            }
-            mobileSubtype = NetworkConnectionInfo.MobileSubtype.COMBINED;
-        }
-        return mobileSubtype.getValue();
-    }
-
-    private static int getNetTypeValue(NetworkInfo networkInfo) {
-        return networkInfo == null ? NetworkConnectionInfo.NetworkType.NONE.getValue() : networkInfo.getType();
-    }
-
-    private static int getPackageVersionCode(Context context) {
-        try {
-            return context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode;
-        } catch (PackageManager.NameNotFoundException e) {
-            Logging.e("CctTransportBackend", "Unable to find version code for package", e);
-            return -1;
-        }
-    }
-
-    private BatchedLogRequest getRequestBody(BackendRequest backendRequest) {
-        LogEvent.Builder protoBuilder;
-        HashMap hashMap = new HashMap();
-        for (EventInternal eventInternal : backendRequest.getEvents()) {
-            String transportName = eventInternal.getTransportName();
-            if (hashMap.containsKey(transportName)) {
-                ((List) hashMap.get(transportName)).add(eventInternal);
-            } else {
-                ArrayList arrayList = new ArrayList();
-                arrayList.add(eventInternal);
-                hashMap.put(transportName, arrayList);
-            }
-        }
-        ArrayList arrayList2 = new ArrayList();
-        for (Map.Entry entry : hashMap.entrySet()) {
-            EventInternal eventInternal2 = (EventInternal) ((List) entry.getValue()).get(0);
-            LogRequest.Builder clientInfo = LogRequest.builder().setQosTier(QosTier.DEFAULT).setRequestTimeMs(this.wallTimeClock.getTime()).setRequestUptimeMs(this.uptimeClock.getTime()).setClientInfo(ClientInfo.builder().setClientType(ClientInfo.ClientType.ANDROID_FIREBASE).setAndroidClientInfo(AndroidClientInfo.builder().setSdkVersion(Integer.valueOf(eventInternal2.getInteger("sdk-version"))).setModel(eventInternal2.get("model")).setHardware(eventInternal2.get("hardware")).setDevice(eventInternal2.get("device")).setProduct(eventInternal2.get("product")).setOsBuild(eventInternal2.get("os-uild")).setManufacturer(eventInternal2.get("manufacturer")).setFingerprint(eventInternal2.get("fingerprint")).setCountry(eventInternal2.get("country")).setLocale(eventInternal2.get("locale")).setMccMnc(eventInternal2.get("mcc_mnc")).setApplicationBuild(eventInternal2.get("application_build")).build()).build());
-            try {
-                clientInfo.setSource(Integer.parseInt((String) entry.getKey()));
-            } catch (NumberFormatException unused) {
-                clientInfo.setSource((String) entry.getKey());
-            }
-            ArrayList arrayList3 = new ArrayList();
-            for (EventInternal eventInternal3 : (List) entry.getValue()) {
-                EncodedPayload encodedPayload = eventInternal3.getEncodedPayload();
-                Encoding encoding = encodedPayload.getEncoding();
-                if (encoding.equals(Encoding.of("proto"))) {
-                    protoBuilder = LogEvent.protoBuilder(encodedPayload.getBytes());
-                } else if (encoding.equals(Encoding.of("json"))) {
-                    protoBuilder = LogEvent.jsonBuilder(new String(encodedPayload.getBytes(), Charset.forName("UTF-8")));
-                } else {
-                    Logging.w("CctTransportBackend", "Received event of unsupported encoding %s. Skipping...", encoding);
-                }
-                protoBuilder.setEventTimeMs(eventInternal3.getEventMillis()).setEventUptimeMs(eventInternal3.getUptimeMillis()).setTimezoneOffsetSeconds(eventInternal3.getLong("tz-offset")).setNetworkConnectionInfo(NetworkConnectionInfo.builder().setNetworkType(NetworkConnectionInfo.NetworkType.forNumber(eventInternal3.getInteger("net-type"))).setMobileSubtype(NetworkConnectionInfo.MobileSubtype.forNumber(eventInternal3.getInteger("mobile-subtype"))).build());
-                if (eventInternal3.getCode() != null) {
-                    protoBuilder.setEventCode(eventInternal3.getCode());
-                }
-                arrayList3.add(protoBuilder.build());
-            }
-            clientInfo.setLogEvents(arrayList3);
-            arrayList2.add(clientInfo.build());
-        }
-        return BatchedLogRequest.create(arrayList2);
-    }
-
-    private static TelephonyManager getTelephonyManager(Context context) {
-        return (TelephonyManager) context.getSystemService("phone");
-    }
-
-    static long getTzOffset() {
-        Calendar.getInstance();
-        return TimeZone.getDefault().getOffset(Calendar.getInstance().getTimeInMillis()) / MediaDataController.MAX_STYLE_RUNS_COUNT;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ HttpRequest lambda$send$0(HttpRequest httpRequest, HttpResponse httpResponse) {
-        URL url = httpResponse.redirectUrl;
-        if (url == null) {
-            return null;
-        }
-        Logging.d("CctTransportBackend", "Following redirect to: %s", url);
-        return httpRequest.withUrl(httpResponse.redirectUrl);
-    }
-
     private static InputStream maybeUnGzip(InputStream inputStream, String str) {
         return "gzip".equals(str) ? new GZIPInputStream(inputStream) : inputStream;
-    }
-
-    private static URL parseUrlOrThrow(String str) {
-        try {
-            return new URL(str);
-        } catch (MalformedURLException e) {
-            throw new IllegalArgumentException("Invalid url: " + str, e);
-        }
-    }
-
-    @Override // com.google.android.datatransport.runtime.backends.TransportBackend
-    public EventInternal decorate(EventInternal eventInternal) {
-        NetworkInfo activeNetworkInfo = this.connectivityManager.getActiveNetworkInfo();
-        return eventInternal.toBuilder().addMetadata("sdk-version", Build.VERSION.SDK_INT).addMetadata("model", Build.MODEL).addMetadata("hardware", Build.HARDWARE).addMetadata("device", Build.DEVICE).addMetadata("product", Build.PRODUCT).addMetadata("os-uild", Build.ID).addMetadata("manufacturer", Build.MANUFACTURER).addMetadata("fingerprint", Build.FINGERPRINT).addMetadata("tz-offset", getTzOffset()).addMetadata("net-type", getNetTypeValue(activeNetworkInfo)).addMetadata("mobile-subtype", getNetSubtypeValue(activeNetworkInfo)).addMetadata("country", Locale.getDefault().getCountry()).addMetadata("locale", Locale.getDefault().getLanguage()).addMetadata("mcc_mnc", getTelephonyManager(this.applicationContext).getSimOperator()).addMetadata("application_build", Integer.toString(getPackageVersionCode(this.applicationContext))).build();
     }
 
     @Override // com.google.android.datatransport.runtime.backends.TransportBackend
@@ -344,12 +301,58 @@ final class CctTransportBackend implements TransportBackend {
                 return BackendResponse.ok(httpResponse.nextRequestMillis);
             }
             if (i < 500 && i != 404) {
-                return i == 400 ? BackendResponse.invalidPayload() : BackendResponse.fatalError();
+                if (i == 400) {
+                    return BackendResponse.invalidPayload();
+                }
+                return BackendResponse.fatalError();
             }
             return BackendResponse.transientError();
         } catch (IOException e) {
             Logging.e("CctTransportBackend", "Could not make request to the backend", e);
             return BackendResponse.transientError();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ HttpRequest lambda$send$0(HttpRequest httpRequest, HttpResponse httpResponse) {
+        URL url = httpResponse.redirectUrl;
+        if (url == null) {
+            return null;
+        }
+        Logging.d("CctTransportBackend", "Following redirect to: %s", url);
+        return httpRequest.withUrl(httpResponse.redirectUrl);
+    }
+
+    static long getTzOffset() {
+        Calendar.getInstance();
+        return TimeZone.getDefault().getOffset(Calendar.getInstance().getTimeInMillis()) / MediaDataController.MAX_STYLE_RUNS_COUNT;
+    }
+
+    static final class HttpResponse {
+        final int code;
+        final long nextRequestMillis;
+        final URL redirectUrl;
+
+        HttpResponse(int i, URL url, long j) {
+            this.code = i;
+            this.redirectUrl = url;
+            this.nextRequestMillis = j;
+        }
+    }
+
+    static final class HttpRequest {
+        final String apiKey;
+        final BatchedLogRequest requestBody;
+        final URL url;
+
+        HttpRequest(URL url, BatchedLogRequest batchedLogRequest, String str) {
+            this.url = url;
+            this.requestBody = batchedLogRequest;
+            this.apiKey = str;
+        }
+
+        HttpRequest withUrl(URL url) {
+            return new HttpRequest(url, this.requestBody, this.apiKey);
         }
     }
 }

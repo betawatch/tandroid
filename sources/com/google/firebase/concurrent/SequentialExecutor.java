@@ -16,10 +16,111 @@ final class SequentialExecutor implements Executor {
     private long workerRunCount = 0;
     private final QueueWorker worker = new QueueWorker();
 
+    enum WorkerRunningState {
+        IDLE,
+        QUEUING,
+        QUEUED,
+        RUNNING
+    }
+
+    static /* synthetic */ long access$308(SequentialExecutor sequentialExecutor) {
+        long j = sequentialExecutor.workerRunCount;
+        sequentialExecutor.workerRunCount = 1 + j;
+        return j;
+    }
+
+    SequentialExecutor(Executor executor) {
+        this.executor = (Executor) Preconditions.checkNotNull(executor);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0066 A[ADDED_TO_REGION] */
+    @Override // java.util.concurrent.Executor
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void execute(final Runnable runnable) {
+        WorkerRunningState workerRunningState;
+        boolean z;
+        Preconditions.checkNotNull(runnable);
+        synchronized (this.queue) {
+            WorkerRunningState workerRunningState2 = this.workerRunningState;
+            if (workerRunningState2 != WorkerRunningState.RUNNING && workerRunningState2 != (workerRunningState = WorkerRunningState.QUEUED)) {
+                long j = this.workerRunCount;
+                Runnable runnable2 = new Runnable() { // from class: com.google.firebase.concurrent.SequentialExecutor.1
+                    @Override // java.lang.Runnable
+                    public void run() {
+                        runnable.run();
+                    }
+
+                    public String toString() {
+                        return runnable.toString();
+                    }
+                };
+                this.queue.add(runnable2);
+                WorkerRunningState workerRunningState3 = WorkerRunningState.QUEUING;
+                this.workerRunningState = workerRunningState3;
+                try {
+                    this.executor.execute(this.worker);
+                    if (this.workerRunningState != workerRunningState3) {
+                        return;
+                    }
+                    synchronized (this.queue) {
+                        try {
+                            if (this.workerRunCount == j && this.workerRunningState == workerRunningState3) {
+                                this.workerRunningState = workerRunningState;
+                            }
+                        } finally {
+                        }
+                    }
+                    return;
+                } catch (Error | RuntimeException e) {
+                    synchronized (this.queue) {
+                        try {
+                            WorkerRunningState workerRunningState4 = this.workerRunningState;
+                            if (workerRunningState4 != WorkerRunningState.IDLE) {
+                                if (workerRunningState4 == WorkerRunningState.QUEUING) {
+                                }
+                                z = false;
+                                if ((e instanceof RejectedExecutionException) || z) {
+                                    throw e;
+                                }
+                            }
+                            if (this.queue.removeLastOccurrence(runnable2)) {
+                                z = true;
+                                if (e instanceof RejectedExecutionException) {
+                                }
+                                throw e;
+                            }
+                            z = false;
+                            if (e instanceof RejectedExecutionException) {
+                            }
+                            throw e;
+                        } finally {
+                        }
+                    }
+                    return;
+                }
+            }
+            this.queue.add(runnable);
+        }
+    }
+
     private final class QueueWorker implements Runnable {
         Runnable task;
 
         private QueueWorker() {
+        }
+
+        @Override // java.lang.Runnable
+        public void run() {
+            try {
+                workOnQueue();
+            } catch (Error e) {
+                synchronized (SequentialExecutor.this.queue) {
+                    SequentialExecutor.this.workerRunningState = WorkerRunningState.IDLE;
+                    throw e;
+                }
+            }
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:10:0x0054, code lost:
@@ -96,113 +197,12 @@ final class SequentialExecutor implements Executor {
             }
         }
 
-        @Override // java.lang.Runnable
-        public void run() {
-            try {
-                workOnQueue();
-            } catch (Error e) {
-                synchronized (SequentialExecutor.this.queue) {
-                    SequentialExecutor.this.workerRunningState = WorkerRunningState.IDLE;
-                    throw e;
-                }
-            }
-        }
-
         public String toString() {
             Runnable runnable = this.task;
             if (runnable != null) {
                 return "SequentialExecutorWorker{running=" + runnable + "}";
             }
             return "SequentialExecutorWorker{state=" + SequentialExecutor.this.workerRunningState + "}";
-        }
-    }
-
-    enum WorkerRunningState {
-        IDLE,
-        QUEUING,
-        QUEUED,
-        RUNNING
-    }
-
-    SequentialExecutor(Executor executor) {
-        this.executor = (Executor) Preconditions.checkNotNull(executor);
-    }
-
-    static /* synthetic */ long access$308(SequentialExecutor sequentialExecutor) {
-        long j = sequentialExecutor.workerRunCount;
-        sequentialExecutor.workerRunCount = 1 + j;
-        return j;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:45:0x0066 A[ADDED_TO_REGION] */
-    @Override // java.util.concurrent.Executor
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void execute(final Runnable runnable) {
-        WorkerRunningState workerRunningState;
-        boolean z;
-        Preconditions.checkNotNull(runnable);
-        synchronized (this.queue) {
-            WorkerRunningState workerRunningState2 = this.workerRunningState;
-            if (workerRunningState2 != WorkerRunningState.RUNNING && workerRunningState2 != (workerRunningState = WorkerRunningState.QUEUED)) {
-                long j = this.workerRunCount;
-                Runnable runnable2 = new Runnable() { // from class: com.google.firebase.concurrent.SequentialExecutor.1
-                    @Override // java.lang.Runnable
-                    public void run() {
-                        runnable.run();
-                    }
-
-                    public String toString() {
-                        return runnable.toString();
-                    }
-                };
-                this.queue.add(runnable2);
-                WorkerRunningState workerRunningState3 = WorkerRunningState.QUEUING;
-                this.workerRunningState = workerRunningState3;
-                try {
-                    this.executor.execute(this.worker);
-                    if (this.workerRunningState != workerRunningState3) {
-                        return;
-                    }
-                    synchronized (this.queue) {
-                        try {
-                            if (this.workerRunCount == j && this.workerRunningState == workerRunningState3) {
-                                this.workerRunningState = workerRunningState;
-                            }
-                        } finally {
-                        }
-                    }
-                    return;
-                } catch (Error | RuntimeException e) {
-                    synchronized (this.queue) {
-                        try {
-                            WorkerRunningState workerRunningState4 = this.workerRunningState;
-                            if (workerRunningState4 != WorkerRunningState.IDLE) {
-                                if (workerRunningState4 == WorkerRunningState.QUEUING) {
-                                }
-                                z = false;
-                                if ((e instanceof RejectedExecutionException) || z) {
-                                    throw e;
-                                }
-                            }
-                            if (this.queue.removeLastOccurrence(runnable2)) {
-                                z = true;
-                                if (e instanceof RejectedExecutionException) {
-                                }
-                                throw e;
-                            }
-                            z = false;
-                            if (e instanceof RejectedExecutionException) {
-                            }
-                            throw e;
-                        } finally {
-                        }
-                    }
-                    return;
-                }
-            }
-            this.queue.add(runnable);
         }
     }
 

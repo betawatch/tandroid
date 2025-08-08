@@ -37,15 +37,13 @@ public final class zzd extends Fragment {
 
     @Override // android.app.Fragment
     public final void onCreate(Bundle bundle) {
-        zzc zzcVar;
         super.onCreate(bundle);
         this.zzb = getArguments().getInt("requestCode");
         if (AutoResolveHelper.zza != getArguments().getLong("initializationElapsedRealtime")) {
-            zzcVar = null;
+            this.zzc = null;
         } else {
-            zzcVar = (zzc) zzc.zzb.get(getArguments().getInt("resolveCallId"));
+            this.zzc = (zzc) zzc.zzb.get(getArguments().getInt("resolveCallId"));
         }
-        this.zzc = zzcVar;
         boolean z = false;
         if (bundle != null && bundle.getBoolean("delivered")) {
             z = true;

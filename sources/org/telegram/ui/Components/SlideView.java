@@ -4,16 +4,8 @@ import android.content.Context;
 import android.os.Bundle;
 import android.widget.LinearLayout;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class SlideView extends LinearLayout {
-    public SlideView(Context context) {
-        super(context);
-    }
-
-    public String getHeaderName() {
-        return "";
-    }
-
     public boolean hasCustomKeyboard() {
         return false;
     }
@@ -54,5 +46,13 @@ public abstract class SlideView extends LinearLayout {
     }
 
     public void updateColors() {
+    }
+
+    public SlideView(Context context) {
+        super(context);
+    }
+
+    public String getHeaderName() {
+        return "";
     }
 }

@@ -25,8 +25,9 @@ public final class zzfi$zzf extends zzjb implements zzkm {
         private static final zzjh zze = new zzfp();
         private final int zzf;
 
-        zza(int i) {
-            this.zzf = i;
+        @Override // com.google.android.gms.internal.vision.zzje
+        public final int zza() {
+            return this.zzf;
         }
 
         public static zza zza(int i) {
@@ -54,10 +55,12 @@ public final class zzfi$zzf extends zzjb implements zzkm {
             return "<" + zza.class.getName() + '@' + Integer.toHexString(System.identityHashCode(this)) + " number=" + this.zzf + " name=" + name() + '>';
         }
 
-        @Override // com.google.android.gms.internal.vision.zzje
-        public final int zza() {
-            return this.zzf;
+        zza(int i) {
+            this.zzf = i;
         }
+    }
+
+    private zzfi$zzf() {
     }
 
     public static final class zzb extends zzjb.zzb implements zzkm {
@@ -65,8 +68,13 @@ public final class zzfi$zzf extends zzjb implements zzkm {
             super(zzfi$zzf.zzl);
         }
 
-        /* synthetic */ zzb(zzfk zzfkVar) {
-            this();
+        public final zzb zza(String str) {
+            if (this.zzb) {
+                zzb();
+                this.zzb = false;
+            }
+            ((zzfi$zzf) this.zza).zza(str);
+            return this;
         }
 
         public final zzb zza(long j) {
@@ -75,6 +83,15 @@ public final class zzfi$zzf extends zzjb implements zzkm {
                 this.zzb = false;
             }
             ((zzfi$zzf) this.zza).zza(j);
+            return this;
+        }
+
+        public final zzb zzb(long j) {
+            if (this.zzb) {
+                zzb();
+                this.zzb = false;
+            }
+            ((zzfi$zzf) this.zza).zzb(j);
             return this;
         }
 
@@ -87,42 +104,28 @@ public final class zzfi$zzf extends zzjb implements zzkm {
             return this;
         }
 
-        public final zzb zza(String str) {
-            if (this.zzb) {
-                zzb();
-                this.zzb = false;
-            }
-            ((zzfi$zzf) this.zza).zza(str);
-            return this;
-        }
-
-        public final zzb zzb(long j) {
-            if (this.zzb) {
-                zzb();
-                this.zzb = false;
-            }
-            ((zzfi$zzf) this.zza).zzb(j);
-            return this;
+        /* synthetic */ zzb(zzfk zzfkVar) {
+            this();
         }
     }
 
-    static {
-        zzfi$zzf zzfi_zzf = new zzfi$zzf();
-        zzl = zzfi_zzf;
-        zzjb.zza(zzfi$zzf.class, zzfi_zzf);
-    }
-
-    private zzfi$zzf() {
-    }
-
-    public static zzb zza() {
-        return (zzb) zzl.zzj();
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void zza(String str) {
+        str.getClass();
+        this.zzc |= 1;
+        this.zzd = str;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void zza(long j) {
         this.zzc |= 16;
         this.zzi = j;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void zzb(long j) {
+        this.zzc |= 32;
+        this.zzj = j;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -134,17 +137,8 @@ public final class zzfi$zzf extends zzjb implements zzkm {
         zzhf.zza(iterable, this.zzk);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public final void zza(String str) {
-        str.getClass();
-        this.zzc |= 1;
-        this.zzd = str;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public final void zzb(long j) {
-        this.zzc |= 32;
-        this.zzj = j;
+    public static zzb zza() {
+        return (zzb) zzl.zzj();
     }
 
     /* JADX WARN: Type inference failed for: r3v19, types: [com.google.android.gms.internal.vision.zzjb$zza, com.google.android.gms.internal.vision.zzkx] */
@@ -185,5 +179,11 @@ public final class zzfi$zzf extends zzjb implements zzkm {
             default:
                 throw new UnsupportedOperationException();
         }
+    }
+
+    static {
+        zzfi$zzf zzfi_zzf = new zzfi$zzf();
+        zzl = zzfi_zzf;
+        zzjb.zza(zzfi$zzf.class, zzfi_zzf);
     }
 }

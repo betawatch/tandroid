@@ -18,10 +18,6 @@ public abstract class ActionProvider {
         void onActionProviderVisibilityChanged(boolean z);
     }
 
-    public ActionProvider(Context context) {
-        this.mContext = context;
-    }
-
     public abstract boolean hasSubMenu();
 
     public abstract boolean isVisible();
@@ -34,14 +30,18 @@ public abstract class ActionProvider {
 
     public abstract boolean overridesItemVisibility();
 
-    public void reset() {
-        this.mVisibilityListener = null;
-        this.mSubUiVisibilityListener = null;
+    public abstract void setVisibilityListener(VisibilityListener visibilityListener);
+
+    public ActionProvider(Context context) {
+        this.mContext = context;
     }
 
     public void setSubUiVisibilityListener(SubUiVisibilityListener subUiVisibilityListener) {
         this.mSubUiVisibilityListener = subUiVisibilityListener;
     }
 
-    public abstract void setVisibilityListener(VisibilityListener visibilityListener);
+    public void reset() {
+        this.mVisibilityListener = null;
+        this.mSubUiVisibilityListener = null;
+    }
 }

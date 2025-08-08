@@ -1,33 +1,33 @@
 package j$.util.function;
 
-import java.util.function.LongBinaryOperator;
+import java.util.function.IntToLongFunction;
 
 /* loaded from: classes2.dex */
 public final /* synthetic */ class M implements O {
-    public final /* synthetic */ LongBinaryOperator a;
+    public final /* synthetic */ IntToLongFunction a;
 
-    private /* synthetic */ M(LongBinaryOperator longBinaryOperator) {
-        this.a = longBinaryOperator;
+    private /* synthetic */ M(IntToLongFunction intToLongFunction) {
+        this.a = intToLongFunction;
     }
 
-    public static /* synthetic */ O a(LongBinaryOperator longBinaryOperator) {
-        if (longBinaryOperator == null) {
+    public static /* synthetic */ O a(IntToLongFunction intToLongFunction) {
+        if (intToLongFunction == null) {
             return null;
         }
-        return longBinaryOperator instanceof N ? ((N) longBinaryOperator).a : new M(longBinaryOperator);
+        return intToLongFunction instanceof N ? ((N) intToLongFunction).a : new M(intToLongFunction);
     }
 
     @Override // j$.util.function.O
-    public final /* synthetic */ long applyAsLong(long j, long j2) {
-        return this.a.applyAsLong(j, j2);
+    public final /* synthetic */ long applyAsLong(int i) {
+        return this.a.applyAsLong(i);
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        LongBinaryOperator longBinaryOperator = this.a;
+        IntToLongFunction intToLongFunction = this.a;
         if (obj instanceof M) {
             obj = ((M) obj).a;
         }
-        return longBinaryOperator.equals(obj);
+        return intToLongFunction.equals(obj);
     }
 
     public final /* synthetic */ int hashCode() {

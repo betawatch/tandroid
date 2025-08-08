@@ -3,7 +3,7 @@ package kotlin.jvm.internal;
 import kotlin.reflect.KCallable;
 import kotlin.reflect.KFunction;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class FunctionReference extends CallableReference implements FunctionBase, KFunction {
     private final int arity;
     private final int flags;
@@ -12,6 +12,11 @@ public abstract class FunctionReference extends CallableReference implements Fun
         super(obj, cls, str, str2, (i2 & 1) == 1);
         this.arity = i;
         this.flags = i2 >> 1;
+    }
+
+    @Override // kotlin.jvm.internal.FunctionBase
+    public int getArity() {
+        return this.arity;
     }
 
     @Override // kotlin.jvm.internal.CallableReference
@@ -31,11 +36,6 @@ public abstract class FunctionReference extends CallableReference implements Fun
             return obj.equals(compute());
         }
         return false;
-    }
-
-    @Override // kotlin.jvm.internal.FunctionBase
-    public int getArity() {
-        return this.arity;
     }
 
     public int hashCode() {

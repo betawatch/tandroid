@@ -9,7 +9,7 @@ import android.util.Log;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class ServiceStarter {
     private static ServiceStarter instance;
     private String firebaseMessagingServiceClassName = null;
@@ -17,7 +17,36 @@ public class ServiceStarter {
     private Boolean hasAccessNetworkStatePermission = null;
     private final Queue messagingEvents = new ArrayDeque();
 
+    static synchronized ServiceStarter getInstance() {
+        ServiceStarter serviceStarter;
+        synchronized (ServiceStarter.class) {
+            try {
+                if (instance == null) {
+                    instance = new ServiceStarter();
+                }
+                serviceStarter = instance;
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+        return serviceStarter;
+    }
+
     private ServiceStarter() {
+    }
+
+    Intent getMessagingEvent() {
+        return (Intent) this.messagingEvents.poll();
+    }
+
+    public int startMessagingService(Context context, Intent intent) {
+        if (Log.isLoggable("FirebaseMessaging", 3)) {
+            Log.d("FirebaseMessaging", "Starting service");
+        }
+        this.messagingEvents.offer(intent);
+        Intent intent2 = new Intent("com.google.firebase.MESSAGING_EVENT");
+        intent2.setPackage(context.getPackageName());
+        return doStartService(context, intent2);
     }
 
     private int doStartService(Context context, Intent intent) {
@@ -50,39 +79,22 @@ public class ServiceStarter {
         }
     }
 
-    static synchronized ServiceStarter getInstance() {
-        ServiceStarter serviceStarter;
-        synchronized (ServiceStarter.class) {
-            try {
-                if (instance == null) {
-                    instance = new ServiceStarter();
-                }
-                serviceStarter = instance;
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-        return serviceStarter;
-    }
-
     private synchronized String resolveServiceClassName(Context context, Intent intent) {
         ServiceInfo serviceInfo;
         String str;
-        String str2;
         try {
-            String str3 = this.firebaseMessagingServiceClassName;
-            if (str3 != null) {
-                return str3;
+            String str2 = this.firebaseMessagingServiceClassName;
+            if (str2 != null) {
+                return str2;
             }
             ResolveInfo resolveService = context.getPackageManager().resolveService(intent, 0);
             if (resolveService != null && (serviceInfo = resolveService.serviceInfo) != null) {
                 if (context.getPackageName().equals(serviceInfo.packageName) && (str = serviceInfo.name) != null) {
                     if (str.startsWith(".")) {
-                        str2 = context.getPackageName() + serviceInfo.name;
+                        this.firebaseMessagingServiceClassName = context.getPackageName() + serviceInfo.name;
                     } else {
-                        str2 = serviceInfo.name;
+                        this.firebaseMessagingServiceClassName = serviceInfo.name;
                     }
-                    this.firebaseMessagingServiceClassName = str2;
                     return this.firebaseMessagingServiceClassName;
                 }
                 Log.e("FirebaseMessaging", "Error resolving target intent service, skipping classname enforcement. Resolved service was: " + serviceInfo.packageName + "/" + serviceInfo.name);
@@ -95,20 +107,6 @@ public class ServiceStarter {
         }
     }
 
-    Intent getMessagingEvent() {
-        return (Intent) this.messagingEvents.poll();
-    }
-
-    boolean hasAccessNetworkStatePermission(Context context) {
-        if (this.hasAccessNetworkStatePermission == null) {
-            this.hasAccessNetworkStatePermission = Boolean.valueOf(context.checkCallingOrSelfPermission("android.permission.ACCESS_NETWORK_STATE") == 0);
-        }
-        if (!this.hasWakeLockPermission.booleanValue() && Log.isLoggable("FirebaseMessaging", 3)) {
-            Log.d("FirebaseMessaging", "Missing Permission: android.permission.ACCESS_NETWORK_STATE this should normally be included by the manifest merger, but may needed to be manually added to your manifest");
-        }
-        return this.hasAccessNetworkStatePermission.booleanValue();
-    }
-
     boolean hasWakeLockPermission(Context context) {
         if (this.hasWakeLockPermission == null) {
             this.hasWakeLockPermission = Boolean.valueOf(context.checkCallingOrSelfPermission("android.permission.WAKE_LOCK") == 0);
@@ -119,13 +117,13 @@ public class ServiceStarter {
         return this.hasWakeLockPermission.booleanValue();
     }
 
-    public int startMessagingService(Context context, Intent intent) {
-        if (Log.isLoggable("FirebaseMessaging", 3)) {
-            Log.d("FirebaseMessaging", "Starting service");
+    boolean hasAccessNetworkStatePermission(Context context) {
+        if (this.hasAccessNetworkStatePermission == null) {
+            this.hasAccessNetworkStatePermission = Boolean.valueOf(context.checkCallingOrSelfPermission("android.permission.ACCESS_NETWORK_STATE") == 0);
         }
-        this.messagingEvents.offer(intent);
-        Intent intent2 = new Intent("com.google.firebase.MESSAGING_EVENT");
-        intent2.setPackage(context.getPackageName());
-        return doStartService(context, intent2);
+        if (!this.hasWakeLockPermission.booleanValue() && Log.isLoggable("FirebaseMessaging", 3)) {
+            Log.d("FirebaseMessaging", "Missing Permission: android.permission.ACCESS_NETWORK_STATE this should normally be included by the manifest merger, but may needed to be manually added to your manifest");
+        }
+        return this.hasAccessNetworkStatePermission.booleanValue();
     }
 }

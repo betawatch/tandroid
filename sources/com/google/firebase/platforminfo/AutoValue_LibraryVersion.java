@@ -1,6 +1,6 @@
 package com.google.firebase.platforminfo;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class AutoValue_LibraryVersion extends LibraryVersion {
     private final String libraryName;
     private final String version;
@@ -16,6 +16,20 @@ final class AutoValue_LibraryVersion extends LibraryVersion {
         this.version = str2;
     }
 
+    @Override // com.google.firebase.platforminfo.LibraryVersion
+    public String getLibraryName() {
+        return this.libraryName;
+    }
+
+    @Override // com.google.firebase.platforminfo.LibraryVersion
+    public String getVersion() {
+        return this.version;
+    }
+
+    public String toString() {
+        return "LibraryVersion{libraryName=" + this.libraryName + ", version=" + this.version + "}";
+    }
+
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -27,21 +41,7 @@ final class AutoValue_LibraryVersion extends LibraryVersion {
         return this.libraryName.equals(libraryVersion.getLibraryName()) && this.version.equals(libraryVersion.getVersion());
     }
 
-    @Override // com.google.firebase.platforminfo.LibraryVersion
-    public String getLibraryName() {
-        return this.libraryName;
-    }
-
-    @Override // com.google.firebase.platforminfo.LibraryVersion
-    public String getVersion() {
-        return this.version;
-    }
-
     public int hashCode() {
         return ((this.libraryName.hashCode() ^ 1000003) * 1000003) ^ this.version.hashCode();
-    }
-
-    public String toString() {
-        return "LibraryVersion{libraryName=" + this.libraryName + ", version=" + this.version + "}";
     }
 }

@@ -12,8 +12,14 @@ public final class zzj extends com.google.android.gms.internal.vision.zzb implem
     }
 
     @Override // com.google.android.gms.vision.face.internal.client.zzh
-    public final void zza() {
-        zzb(3, a_());
+    public final FaceParcel[] zza(IObjectWrapper iObjectWrapper, zzs zzsVar) {
+        Parcel a_ = a_();
+        com.google.android.gms.internal.vision.zzd.zza(a_, iObjectWrapper);
+        com.google.android.gms.internal.vision.zzd.zza(a_, zzsVar);
+        Parcel zza = zza(1, a_);
+        FaceParcel[] faceParcelArr = (FaceParcel[]) zza.createTypedArray(FaceParcel.CREATOR);
+        zza.recycle();
+        return faceParcelArr;
     }
 
     @Override // com.google.android.gms.vision.face.internal.client.zzh
@@ -36,13 +42,7 @@ public final class zzj extends com.google.android.gms.internal.vision.zzb implem
     }
 
     @Override // com.google.android.gms.vision.face.internal.client.zzh
-    public final FaceParcel[] zza(IObjectWrapper iObjectWrapper, zzs zzsVar) {
-        Parcel a_ = a_();
-        com.google.android.gms.internal.vision.zzd.zza(a_, iObjectWrapper);
-        com.google.android.gms.internal.vision.zzd.zza(a_, zzsVar);
-        Parcel zza = zza(1, a_);
-        FaceParcel[] faceParcelArr = (FaceParcel[]) zza.createTypedArray(FaceParcel.CREATOR);
-        zza.recycle();
-        return faceParcelArr;
+    public final void zza() {
+        zzb(3, a_());
     }
 }

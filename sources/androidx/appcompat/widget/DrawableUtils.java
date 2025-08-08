@@ -19,10 +19,14 @@ public abstract class DrawableUtils {
     static void fixDrawable(Drawable drawable) {
         String name = drawable.getClass().getName();
         int i = Build.VERSION.SDK_INT;
-        if (!(i == 21 && "android.graphics.drawable.VectorDrawable".equals(name)) && (i < 29 || i >= 31 || !"android.graphics.drawable.ColorStateListDrawable".equals(name))) {
-            return;
+        if (i == 21 && "android.graphics.drawable.VectorDrawable".equals(name)) {
+            forceDrawableStateChange(drawable);
+        } else {
+            if (i < 29 || i >= 31 || !"android.graphics.drawable.ColorStateListDrawable".equals(name)) {
+                return;
+            }
+            forceDrawableStateChange(drawable);
         }
-        forceDrawableStateChange(drawable);
     }
 
     private static void forceDrawableStateChange(Drawable drawable) {

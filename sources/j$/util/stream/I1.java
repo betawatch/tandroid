@@ -3,30 +3,20 @@ package j$.util.stream;
 import j$.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-final class I1 implements O1, c2 {
-    private int a;
-    final /* synthetic */ int b;
-    final /* synthetic */ j$.util.function.A c;
+final class I1 implements N1, b2 {
+    private boolean a;
+    private int b;
+    final /* synthetic */ j$.util.function.C c;
 
-    I1(int i, j$.util.function.A a) {
-        this.b = i;
-        this.c = a;
-    }
-
-    @Override // j$.util.stream.e2, j$.util.function.m
+    @Override // j$.util.stream.d2, j$.util.function.l
     public final /* synthetic */ void accept(double d) {
-        u0.b();
+        t0.b();
         throw null;
     }
 
-    @Override // j$.util.stream.e2
-    public final void accept(int i) {
-        this.a = this.c.applyAsInt(this.a, i);
-    }
-
-    @Override // j$.util.stream.e2
+    @Override // j$.util.stream.d2
     public final /* synthetic */ void accept(long j) {
-        u0.l();
+        t0.l();
         throw null;
     }
 
@@ -41,37 +31,56 @@ final class I1 implements O1, c2 {
         return Consumer.-CC.$default$andThen(this, consumer);
     }
 
-    @Override // j$.util.function.Supplier
-    public final Object get() {
-        return Integer.valueOf(this.a);
+    @Override // j$.util.function.G
+    public final /* synthetic */ j$.util.function.G l(j$.util.function.G g) {
+        return j$.com.android.tools.r8.a.b(this, g);
     }
 
-    @Override // j$.util.stream.O1
-    public final void h(O1 o1) {
-        accept(((I1) o1).a);
-    }
-
-    @Override // j$.util.function.E
-    public final /* synthetic */ j$.util.function.E l(j$.util.function.E e) {
-        return j$.com.android.tools.r8.a.c(this, e);
-    }
-
-    @Override // j$.util.stream.e2
+    @Override // j$.util.stream.d2
     public final /* synthetic */ void m() {
     }
 
-    @Override // j$.util.stream.e2
-    public final void n(long j) {
-        this.a = this.b;
-    }
-
-    @Override // j$.util.stream.c2
+    @Override // j$.util.stream.b2
     public final /* synthetic */ void o(Integer num) {
-        u0.g(this, num);
+        t0.g(this, num);
     }
 
-    @Override // j$.util.stream.e2
+    @Override // j$.util.stream.d2
     public final /* synthetic */ boolean q() {
         return false;
+    }
+
+    I1(j$.util.function.C c) {
+        this.c = c;
+    }
+
+    @Override // j$.util.stream.N1
+    public final void h(N1 n1) {
+        I1 i1 = (I1) n1;
+        if (i1.a) {
+            return;
+        }
+        accept(i1.b);
+    }
+
+    @Override // j$.util.stream.d2
+    public final void n(long j) {
+        this.a = true;
+        this.b = 0;
+    }
+
+    @Override // j$.util.stream.d2
+    public final void accept(int i) {
+        if (this.a) {
+            this.a = false;
+            this.b = i;
+        } else {
+            this.b = this.c.applyAsInt(this.b, i);
+        }
+    }
+
+    @Override // j$.util.function.Supplier
+    public final Object get() {
+        return this.a ? j$.util.k.a() : j$.util.k.d(this.b);
     }
 }

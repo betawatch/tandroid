@@ -13,6 +13,6 @@ final class zabl implements BackgroundDetector.BackgroundStateChangeListener {
     @Override // com.google.android.gms.common.api.internal.BackgroundDetector.BackgroundStateChangeListener
     public final void onBackgroundStateChanged(boolean z) {
         GoogleApiManager googleApiManager = this.zaa;
-        googleApiManager.zat.sendMessage(googleApiManager.zat.obtainMessage(1, Boolean.valueOf(z)));
+        googleApiManager.zar.sendMessage(googleApiManager.zar.obtainMessage(1, Boolean.valueOf(z)));
     }
 }

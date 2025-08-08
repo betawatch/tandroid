@@ -22,11 +22,42 @@ import java.util.Map;
 
 /* loaded from: classes.dex */
 abstract class TtmlRenderUtil {
+    public static TtmlStyle resolveStyle(TtmlStyle ttmlStyle, String[] strArr, Map map) {
+        int i = 0;
+        if (ttmlStyle == null) {
+            if (strArr == null) {
+                return null;
+            }
+            if (strArr.length == 1) {
+                return (TtmlStyle) map.get(strArr[0]);
+            }
+            if (strArr.length > 1) {
+                TtmlStyle ttmlStyle2 = new TtmlStyle();
+                int length = strArr.length;
+                while (i < length) {
+                    ttmlStyle2.chain((TtmlStyle) map.get(strArr[i]));
+                    i++;
+                }
+                return ttmlStyle2;
+            }
+        } else {
+            if (strArr != null && strArr.length == 1) {
+                return ttmlStyle.chain((TtmlStyle) map.get(strArr[0]));
+            }
+            if (strArr != null && strArr.length > 1) {
+                int length2 = strArr.length;
+                while (i < length2) {
+                    ttmlStyle.chain((TtmlStyle) map.get(strArr[i]));
+                    i++;
+                }
+            }
+        }
+        return ttmlStyle;
+    }
+
     public static void applyStylesToSpan(Spannable spannable, int i, int i2, TtmlStyle ttmlStyle, TtmlNode ttmlNode, Map map, int i3) {
         TtmlNode findRubyTextNode;
-        Object rubySpan;
         TtmlStyle resolveStyle;
-        Object absoluteSizeSpan;
         int i4;
         if (ttmlStyle.getStyle() != -1) {
             spannable.setSpan(new StyleSpan(ttmlStyle.getStyle()), i, i2, 33);
@@ -65,63 +96,35 @@ abstract class TtmlRenderUtil {
         if (rubyType == 2) {
             TtmlNode findRubyContainerNode = findRubyContainerNode(ttmlNode, map);
             if (findRubyContainerNode != null && (findRubyTextNode = findRubyTextNode(findRubyContainerNode, map)) != null) {
-                if (findRubyTextNode.getChildCount() != 1 || findRubyTextNode.getChild(0).text == null) {
-                    Log.i("TtmlRenderUtil", "Skipping rubyText node without exactly one text child.");
-                } else {
+                if (findRubyTextNode.getChildCount() == 1 && findRubyTextNode.getChild(0).text != null) {
                     String str = (String) Util.castNonNull(findRubyTextNode.getChild(0).text);
                     TtmlStyle resolveStyle2 = resolveStyle(findRubyTextNode.style, findRubyTextNode.getStyleIds(), map);
                     int rubyPosition = resolveStyle2 != null ? resolveStyle2.getRubyPosition() : -1;
                     if (rubyPosition == -1 && (resolveStyle = resolveStyle(findRubyContainerNode.style, findRubyContainerNode.getStyleIds(), map)) != null) {
                         rubyPosition = resolveStyle.getRubyPosition();
                     }
-                    rubySpan = new RubySpan(str, rubyPosition);
-                    spannable.setSpan(rubySpan, i, i2, 33);
+                    spannable.setSpan(new RubySpan(str, rubyPosition), i, i2, 33);
+                } else {
+                    Log.i("TtmlRenderUtil", "Skipping rubyText node without exactly one text child.");
                 }
             }
         } else if (rubyType == 3 || rubyType == 4) {
-            rubySpan = new DeleteTextSpan();
-            spannable.setSpan(rubySpan, i, i2, 33);
+            spannable.setSpan(new DeleteTextSpan(), i, i2, 33);
         }
         if (ttmlStyle.getTextCombine()) {
             SpanUtil.addOrReplaceSpan(spannable, new HorizontalTextInVerticalContextSpan(), i, i2, 33);
         }
         int fontSizeUnit = ttmlStyle.getFontSizeUnit();
         if (fontSizeUnit == 1) {
-            absoluteSizeSpan = new AbsoluteSizeSpan((int) ttmlStyle.getFontSize(), true);
+            SpanUtil.addOrReplaceSpan(spannable, new AbsoluteSizeSpan((int) ttmlStyle.getFontSize(), true), i, i2, 33);
         } else if (fontSizeUnit == 2) {
-            absoluteSizeSpan = new RelativeSizeSpan(ttmlStyle.getFontSize());
-        } else if (fontSizeUnit != 3) {
-            return;
+            SpanUtil.addOrReplaceSpan(spannable, new RelativeSizeSpan(ttmlStyle.getFontSize()), i, i2, 33);
         } else {
-            absoluteSizeSpan = new RelativeSizeSpan(ttmlStyle.getFontSize() / 100.0f);
-        }
-        SpanUtil.addOrReplaceSpan(spannable, absoluteSizeSpan, i, i2, 33);
-    }
-
-    static String applyTextElementSpacePolicy(String str) {
-        return str.replaceAll("\r\n", "\n").replaceAll(" *\n *", "\n").replaceAll("\n", " ").replaceAll("[ \t\\x0B\f\r]+", " ");
-    }
-
-    static void endParagraph(SpannableStringBuilder spannableStringBuilder) {
-        int length = spannableStringBuilder.length() - 1;
-        while (length >= 0 && spannableStringBuilder.charAt(length) == ' ') {
-            length--;
-        }
-        if (length < 0 || spannableStringBuilder.charAt(length) == '\n') {
-            return;
-        }
-        spannableStringBuilder.append('\n');
-    }
-
-    private static TtmlNode findRubyContainerNode(TtmlNode ttmlNode, Map map) {
-        while (ttmlNode != null) {
-            TtmlStyle resolveStyle = resolveStyle(ttmlNode.style, ttmlNode.getStyleIds(), map);
-            if (resolveStyle != null && resolveStyle.getRubyType() == 1) {
-                return ttmlNode;
+            if (fontSizeUnit != 3) {
+                return;
             }
-            ttmlNode = ttmlNode.parent;
+            SpanUtil.addOrReplaceSpan(spannable, new RelativeSizeSpan(ttmlStyle.getFontSize() / 100.0f), i, i2, 33);
         }
-        return null;
     }
 
     private static TtmlNode findRubyTextNode(TtmlNode ttmlNode, Map map) {
@@ -140,36 +143,29 @@ abstract class TtmlRenderUtil {
         return null;
     }
 
-    public static TtmlStyle resolveStyle(TtmlStyle ttmlStyle, String[] strArr, Map map) {
-        int i = 0;
-        if (ttmlStyle == null) {
-            if (strArr == null) {
-                return null;
+    private static TtmlNode findRubyContainerNode(TtmlNode ttmlNode, Map map) {
+        while (ttmlNode != null) {
+            TtmlStyle resolveStyle = resolveStyle(ttmlNode.style, ttmlNode.getStyleIds(), map);
+            if (resolveStyle != null && resolveStyle.getRubyType() == 1) {
+                return ttmlNode;
             }
-            if (strArr.length == 1) {
-                return (TtmlStyle) map.get(strArr[0]);
-            }
-            if (strArr.length > 1) {
-                TtmlStyle ttmlStyle2 = new TtmlStyle();
-                int length = strArr.length;
-                while (i < length) {
-                    ttmlStyle2.chain((TtmlStyle) map.get(strArr[i]));
-                    i++;
-                }
-                return ttmlStyle2;
-            }
-        } else {
-            if (strArr != null && strArr.length == 1) {
-                return ttmlStyle.chain((TtmlStyle) map.get(strArr[0]));
-            }
-            if (strArr != null && strArr.length > 1) {
-                int length2 = strArr.length;
-                while (i < length2) {
-                    ttmlStyle.chain((TtmlStyle) map.get(strArr[i]));
-                    i++;
-                }
-            }
+            ttmlNode = ttmlNode.parent;
         }
-        return ttmlStyle;
+        return null;
+    }
+
+    static void endParagraph(SpannableStringBuilder spannableStringBuilder) {
+        int length = spannableStringBuilder.length() - 1;
+        while (length >= 0 && spannableStringBuilder.charAt(length) == ' ') {
+            length--;
+        }
+        if (length < 0 || spannableStringBuilder.charAt(length) == '\n') {
+            return;
+        }
+        spannableStringBuilder.append('\n');
+    }
+
+    static String applyTextElementSpacePolicy(String str) {
+        return str.replaceAll("\r\n", "\n").replaceAll(" *\n *", "\n").replaceAll("\n", " ").replaceAll("[ \t\\x0B\f\r]+", " ");
     }
 }

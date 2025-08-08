@@ -15,50 +15,12 @@ public interface ExoMediaDrm {
         }
     }
 
-    public static final class KeyRequest {
-        private final byte[] data;
-        private final String licenseServerUrl;
-        private final int requestType;
-
-        public KeyRequest(byte[] bArr, String str, int i) {
-            this.data = bArr;
-            this.licenseServerUrl = str;
-            this.requestType = i;
-        }
-
-        public byte[] getData() {
-            return this.data;
-        }
-
-        public String getLicenseServerUrl() {
-            return this.licenseServerUrl;
-        }
-    }
-
     public interface OnEventListener {
         void onEvent(ExoMediaDrm exoMediaDrm, byte[] bArr, int i, int i2, byte[] bArr2);
     }
 
     public interface Provider {
         ExoMediaDrm acquireExoMediaDrm(UUID uuid);
-    }
-
-    public static final class ProvisionRequest {
-        private final byte[] data;
-        private final String defaultUrl;
-
-        public ProvisionRequest(byte[] bArr, String str) {
-            this.data = bArr;
-            this.defaultUrl = str;
-        }
-
-        public byte[] getData() {
-            return this.data;
-        }
-
-        public String getDefaultUrl() {
-            return this.defaultUrl;
-        }
     }
 
     void closeSession(byte[] bArr);
@@ -88,4 +50,42 @@ public interface ExoMediaDrm {
     void setOnEventListener(OnEventListener onEventListener);
 
     void setPlayerIdForSession(byte[] bArr, PlayerId playerId);
+
+    public static final class KeyRequest {
+        private final byte[] data;
+        private final String licenseServerUrl;
+        private final int requestType;
+
+        public KeyRequest(byte[] bArr, String str, int i) {
+            this.data = bArr;
+            this.licenseServerUrl = str;
+            this.requestType = i;
+        }
+
+        public byte[] getData() {
+            return this.data;
+        }
+
+        public String getLicenseServerUrl() {
+            return this.licenseServerUrl;
+        }
+    }
+
+    public static final class ProvisionRequest {
+        private final byte[] data;
+        private final String defaultUrl;
+
+        public ProvisionRequest(byte[] bArr, String str) {
+            this.data = bArr;
+            this.defaultUrl = str;
+        }
+
+        public byte[] getData() {
+            return this.data;
+        }
+
+        public String getDefaultUrl() {
+            return this.defaultUrl;
+        }
+    }
 }

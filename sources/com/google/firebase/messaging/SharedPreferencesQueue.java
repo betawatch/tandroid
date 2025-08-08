@@ -7,7 +7,7 @@ import java.util.ArrayDeque;
 import java.util.Iterator;
 import java.util.concurrent.Executor;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class SharedPreferencesQueue {
     private final String itemSeparator;
     private final String queueName;
@@ -21,13 +21,6 @@ final class SharedPreferencesQueue {
         this.queueName = str;
         this.itemSeparator = str2;
         this.syncExecutor = executor;
-    }
-
-    private boolean checkAndSyncState(boolean z) {
-        if (z && !this.bulkOperation) {
-            syncStateAsync();
-        }
-        return z;
     }
 
     static SharedPreferencesQueue createInstance(SharedPreferences sharedPreferences, String str, String str2, Executor executor) {
@@ -57,11 +50,11 @@ final class SharedPreferencesQueue {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public void syncState() {
-        synchronized (this.internalQueue) {
-            this.sharedPreferences.edit().putString(this.queueName, serialize()).commit();
+    private boolean checkAndSyncState(boolean z) {
+        if (z && !this.bulkOperation) {
+            syncStateAsync();
         }
+        return z;
     }
 
     private void syncStateAsync() {
@@ -73,20 +66,11 @@ final class SharedPreferencesQueue {
         });
     }
 
-    public String peek() {
-        String str;
+    /* JADX INFO: Access modifiers changed from: private */
+    public void syncState() {
         synchronized (this.internalQueue) {
-            str = (String) this.internalQueue.peek();
+            this.sharedPreferences.edit().putString(this.queueName, serialize()).commit();
         }
-        return str;
-    }
-
-    public boolean remove(Object obj) {
-        boolean checkAndSyncState;
-        synchronized (this.internalQueue) {
-            checkAndSyncState = checkAndSyncState(this.internalQueue.remove(obj));
-        }
-        return checkAndSyncState;
     }
 
     public String serialize() {
@@ -97,5 +81,21 @@ final class SharedPreferencesQueue {
             sb.append(this.itemSeparator);
         }
         return sb.toString();
+    }
+
+    public boolean remove(Object obj) {
+        boolean checkAndSyncState;
+        synchronized (this.internalQueue) {
+            checkAndSyncState = checkAndSyncState(this.internalQueue.remove(obj));
+        }
+        return checkAndSyncState;
+    }
+
+    public String peek() {
+        String str;
+        synchronized (this.internalQueue) {
+            str = (String) this.internalQueue.peek();
+        }
+        return str;
     }
 }

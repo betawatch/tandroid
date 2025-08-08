@@ -2,7 +2,7 @@ package com.google.firebase.heartbeatinfo;
 
 import java.util.List;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class AutoValue_HeartBeatResult extends HeartBeatResult {
     private final List usedDates;
     private final String userAgent;
@@ -18,6 +18,20 @@ final class AutoValue_HeartBeatResult extends HeartBeatResult {
         this.usedDates = list;
     }
 
+    @Override // com.google.firebase.heartbeatinfo.HeartBeatResult
+    public String getUserAgent() {
+        return this.userAgent;
+    }
+
+    @Override // com.google.firebase.heartbeatinfo.HeartBeatResult
+    public List getUsedDates() {
+        return this.usedDates;
+    }
+
+    public String toString() {
+        return "HeartBeatResult{userAgent=" + this.userAgent + ", usedDates=" + this.usedDates + "}";
+    }
+
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -29,21 +43,7 @@ final class AutoValue_HeartBeatResult extends HeartBeatResult {
         return this.userAgent.equals(heartBeatResult.getUserAgent()) && this.usedDates.equals(heartBeatResult.getUsedDates());
     }
 
-    @Override // com.google.firebase.heartbeatinfo.HeartBeatResult
-    public List getUsedDates() {
-        return this.usedDates;
-    }
-
-    @Override // com.google.firebase.heartbeatinfo.HeartBeatResult
-    public String getUserAgent() {
-        return this.userAgent;
-    }
-
     public int hashCode() {
         return ((this.userAgent.hashCode() ^ 1000003) * 1000003) ^ this.usedDates.hashCode();
-    }
-
-    public String toString() {
-        return "HeartBeatResult{userAgent=" + this.userAgent + ", usedDates=" + this.usedDates + "}";
     }
 }

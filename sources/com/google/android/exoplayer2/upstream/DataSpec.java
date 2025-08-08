@@ -21,6 +21,10 @@ public final class DataSpec {
     public Uri uri;
     public final long uriPositionOffset;
 
+    static {
+        ExoPlayerLibraryInfo.registerModule("goog.exo.datasource");
+    }
+
     public static final class Builder {
         private Object customData;
         private int flags;
@@ -52,43 +56,8 @@ public final class DataSpec {
             this.customData = dataSpec.customData;
         }
 
-        public DataSpec build() {
-            Assertions.checkStateNotNull(this.uri, "The uri must be set.");
-            return new DataSpec(this.uri, this.uriPositionOffset, this.httpMethod, this.httpBody, this.httpRequestHeaders, this.position, this.length, this.key, this.flags, this.customData);
-        }
-
-        public Builder setFlags(int i) {
-            this.flags = i;
-            return this;
-        }
-
-        public Builder setHttpBody(byte[] bArr) {
-            this.httpBody = bArr;
-            return this;
-        }
-
-        public Builder setHttpMethod(int i) {
-            this.httpMethod = i;
-            return this;
-        }
-
-        public Builder setHttpRequestHeaders(Map map) {
-            this.httpRequestHeaders = map;
-            return this;
-        }
-
-        public Builder setKey(String str) {
-            this.key = str;
-            return this;
-        }
-
-        public Builder setLength(long j) {
-            this.length = j;
-            return this;
-        }
-
-        public Builder setPosition(long j) {
-            this.position = j;
+        public Builder setUri(String str) {
+            this.uri = Uri.parse(str);
             return this;
         }
 
@@ -97,18 +66,66 @@ public final class DataSpec {
             return this;
         }
 
-        public Builder setUri(String str) {
-            this.uri = Uri.parse(str);
+        public Builder setHttpMethod(int i) {
+            this.httpMethod = i;
             return this;
+        }
+
+        public Builder setHttpBody(byte[] bArr) {
+            this.httpBody = bArr;
+            return this;
+        }
+
+        public Builder setHttpRequestHeaders(Map map) {
+            this.httpRequestHeaders = map;
+            return this;
+        }
+
+        public Builder setPosition(long j) {
+            this.position = j;
+            return this;
+        }
+
+        public Builder setLength(long j) {
+            this.length = j;
+            return this;
+        }
+
+        public Builder setKey(String str) {
+            this.key = str;
+            return this;
+        }
+
+        public Builder setFlags(int i) {
+            this.flags = i;
+            return this;
+        }
+
+        public DataSpec build() {
+            Assertions.checkStateNotNull(this.uri, "The uri must be set.");
+            return new DataSpec(this.uri, this.uriPositionOffset, this.httpMethod, this.httpBody, this.httpRequestHeaders, this.position, this.length, this.key, this.flags, this.customData);
         }
     }
 
-    static {
-        ExoPlayerLibraryInfo.registerModule("goog.exo.datasource");
+    public static String getStringForHttpMethod(int i) {
+        if (i == 1) {
+            return "GET";
+        }
+        if (i == 2) {
+            return "POST";
+        }
+        if (i == 3) {
+            return "HEAD";
+        }
+        throw new IllegalStateException();
     }
 
     public DataSpec(Uri uri) {
         this(uri, 0L, -1L);
+    }
+
+    public DataSpec(Uri uri, long j, long j2) {
+        this(uri, 0L, 1, null, Collections.emptyMap(), j, j2, null, 0, null);
     }
 
     private DataSpec(Uri uri, long j, int i, byte[] bArr, Map map, long j2, long j3, String str, int i2, Object obj) {
@@ -130,33 +147,16 @@ public final class DataSpec {
         this.customData = obj;
     }
 
-    public DataSpec(Uri uri, long j, long j2) {
-        this(uri, 0L, 1, null, Collections.emptyMap(), j, j2, null, 0, null);
-    }
-
-    public static String getStringForHttpMethod(int i) {
-        if (i == 1) {
-            return "GET";
-        }
-        if (i == 2) {
-            return "POST";
-        }
-        if (i == 3) {
-            return "HEAD";
-        }
-        throw new IllegalStateException();
-    }
-
-    public Builder buildUpon() {
-        return new Builder();
+    public boolean isFlagSet(int i) {
+        return (this.flags & i) == i;
     }
 
     public final String getHttpMethodString() {
         return getStringForHttpMethod(this.httpMethod);
     }
 
-    public boolean isFlagSet(int i) {
-        return (this.flags & i) == i;
+    public Builder buildUpon() {
+        return new Builder();
     }
 
     public DataSpec subrange(long j) {

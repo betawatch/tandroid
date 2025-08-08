@@ -57,13 +57,26 @@ public class MediaCodecPlayer {
         createDecoderByType.start();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x0039, code lost:
-    
-        r0 = r11.codec.getInputBuffer(r5);
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
+    public int getWidth() {
+        return this.w;
+    }
+
+    public int getOrientedWidth() {
+        return (this.o / 90) % 2 == 1 ? this.h : this.w;
+    }
+
+    public int getHeight() {
+        return this.h;
+    }
+
+    public int getOrientedHeight() {
+        return (this.o / 90) % 2 == 1 ? this.w : this.h;
+    }
+
+    public int getOrientation() {
+        return this.o;
+    }
+
     public boolean ensure(long j) {
         ByteBuffer inputBuffer;
         if (this.done) {
@@ -80,15 +93,16 @@ public class MediaCodecPlayer {
         }
         while (true) {
             int dequeueInputBuffer = this.codec.dequeueInputBuffer(10000L);
-            if (dequeueInputBuffer >= 0 && inputBuffer != null) {
+            if (dequeueInputBuffer >= 0 && (inputBuffer = this.codec.getInputBuffer(dequeueInputBuffer)) != null) {
                 int readSampleData = this.extractor.readSampleData(inputBuffer, 0);
-                if (readSampleData <= 0) {
+                if (readSampleData > 0) {
+                    this.codec.queueInputBuffer(dequeueInputBuffer, 0, readSampleData, this.extractor.getSampleTime(), this.extractor.getSampleFlags());
+                    this.extractor.advance();
+                } else {
                     this.codec.queueInputBuffer(dequeueInputBuffer, 0, 0, 0L, 4);
                     release();
                     return false;
                 }
-                this.codec.queueInputBuffer(dequeueInputBuffer, 0, readSampleData, this.extractor.getSampleTime(), this.extractor.getSampleFlags());
-                this.extractor.advance();
             }
             MediaCodec.BufferInfo bufferInfo = new MediaCodec.BufferInfo();
             int dequeueOutputBuffer = this.codec.dequeueOutputBuffer(bufferInfo, 10000L);
@@ -102,26 +116,6 @@ public class MediaCodecPlayer {
                 this.codec.releaseOutputBuffer(dequeueOutputBuffer, false);
             }
         }
-    }
-
-    public int getHeight() {
-        return this.h;
-    }
-
-    public int getOrientation() {
-        return this.o;
-    }
-
-    public int getOrientedHeight() {
-        return (this.o / 90) % 2 == 1 ? this.w : this.h;
-    }
-
-    public int getOrientedWidth() {
-        return (this.o / 90) % 2 == 1 ? this.h : this.w;
-    }
-
-    public int getWidth() {
-        return this.w;
     }
 
     public void release() {

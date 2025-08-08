@@ -20,7 +20,11 @@ public final class zzv {
         if (zzzVar.zzc() == 2 && zzvVar.zzd != null) {
             zzvVar.zzh();
         }
-        zzvVar.zzd = zzzVar.zzc() == 2 ? zzx.zza(zzvVar.zza, zzvVar.zzc) : zzvVar.zzg();
+        if (zzzVar.zzc() == 2) {
+            zzvVar.zzd = zzx.zza(zzvVar.zza, zzvVar.zzc);
+        } else {
+            zzvVar.zzd = zzvVar.zzg();
+        }
         ((zzx) Preconditions.checkNotNull(zzvVar.zzd)).zzc(zzzVar);
     }
 

@@ -2,9 +2,7 @@ package androidx.core.content.res;
 
 import android.content.res.Resources;
 import android.content.res.TypedArray;
-import android.os.Build;
 import android.util.Base64;
-import android.util.TypedValue;
 import android.util.Xml;
 import androidx.core.R$styleable;
 import androidx.core.provider.FontRequest;
@@ -17,24 +15,36 @@ import org.xmlpull.v1.XmlPullParserException;
 /* loaded from: classes.dex */
 public abstract class FontResourcesParserCompat {
 
-    static class Api21Impl {
-        static int getType(TypedArray typedArray, int i) {
-            return typedArray.getType(i);
-        }
-    }
-
     public interface FamilyResourceEntry {
     }
 
-    public static final class FontFamilyFilesResourceEntry implements FamilyResourceEntry {
-        private final FontFileResourceEntry[] mEntries;
+    public static final class ProviderResourceEntry implements FamilyResourceEntry {
+        private final FontRequest mRequest;
+        private final int mStrategy;
+        private final String mSystemFontFamilyName;
+        private final int mTimeoutMs;
 
-        public FontFamilyFilesResourceEntry(FontFileResourceEntry[] fontFileResourceEntryArr) {
-            this.mEntries = fontFileResourceEntryArr;
+        public ProviderResourceEntry(FontRequest fontRequest, int i, int i2, String str) {
+            this.mRequest = fontRequest;
+            this.mStrategy = i;
+            this.mTimeoutMs = i2;
+            this.mSystemFontFamilyName = str;
         }
 
-        public FontFileResourceEntry[] getEntries() {
-            return this.mEntries;
+        public FontRequest getRequest() {
+            return this.mRequest;
+        }
+
+        public int getFetchStrategy() {
+            return this.mStrategy;
+        }
+
+        public int getTimeout() {
+            return this.mTimeoutMs;
+        }
+
+        public String getSystemFontFamilyName() {
+            return this.mSystemFontFamilyName;
         }
     }
 
@@ -59,18 +69,6 @@ public abstract class FontResourcesParserCompat {
             return this.mFileName;
         }
 
-        public int getResourceId() {
-            return this.mResourceId;
-        }
-
-        public int getTtcIndex() {
-            return this.mTtcIndex;
-        }
-
-        public String getVariationSettings() {
-            return this.mVariationSettings;
-        }
-
         public int getWeight() {
             return this.mWeight;
         }
@@ -78,45 +76,30 @@ public abstract class FontResourcesParserCompat {
         public boolean isItalic() {
             return this.mItalic;
         }
-    }
 
-    public static final class ProviderResourceEntry implements FamilyResourceEntry {
-        private final FontRequest mRequest;
-        private final int mStrategy;
-        private final String mSystemFontFamilyName;
-        private final int mTimeoutMs;
-
-        public ProviderResourceEntry(FontRequest fontRequest, int i, int i2, String str) {
-            this.mRequest = fontRequest;
-            this.mStrategy = i;
-            this.mTimeoutMs = i2;
-            this.mSystemFontFamilyName = str;
+        public String getVariationSettings() {
+            return this.mVariationSettings;
         }
 
-        public int getFetchStrategy() {
-            return this.mStrategy;
+        public int getTtcIndex() {
+            return this.mTtcIndex;
         }
 
-        public FontRequest getRequest() {
-            return this.mRequest;
-        }
-
-        public String getSystemFontFamilyName() {
-            return this.mSystemFontFamilyName;
-        }
-
-        public int getTimeout() {
-            return this.mTimeoutMs;
+        public int getResourceId() {
+            return this.mResourceId;
         }
     }
 
-    private static int getType(TypedArray typedArray, int i) {
-        if (Build.VERSION.SDK_INT >= 21) {
-            return Api21Impl.getType(typedArray, i);
+    public static final class FontFamilyFilesResourceEntry implements FamilyResourceEntry {
+        private final FontFileResourceEntry[] mEntries;
+
+        public FontFamilyFilesResourceEntry(FontFileResourceEntry[] fontFileResourceEntryArr) {
+            this.mEntries = fontFileResourceEntryArr;
         }
-        TypedValue typedValue = new TypedValue();
-        typedArray.getValue(i, typedValue);
-        return typedValue.type;
+
+        public FontFileResourceEntry[] getEntries() {
+            return this.mEntries;
+        }
     }
 
     public static FamilyResourceEntry parse(XmlPullParser xmlPullParser, Resources resources) {
@@ -127,36 +110,10 @@ public abstract class FontResourcesParserCompat {
                 break;
             }
         } while (next != 1);
-        if (next == 2) {
-            return readFamilies(xmlPullParser, resources);
+        if (next != 2) {
+            throw new XmlPullParserException("No start tag found");
         }
-        throw new XmlPullParserException("No start tag found");
-    }
-
-    public static List readCerts(Resources resources, int i) {
-        if (i == 0) {
-            return Collections.emptyList();
-        }
-        TypedArray obtainTypedArray = resources.obtainTypedArray(i);
-        try {
-            if (obtainTypedArray.length() == 0) {
-                return Collections.emptyList();
-            }
-            ArrayList arrayList = new ArrayList();
-            if (getType(obtainTypedArray, 0) == 1) {
-                for (int i2 = 0; i2 < obtainTypedArray.length(); i2++) {
-                    int resourceId = obtainTypedArray.getResourceId(i2, 0);
-                    if (resourceId != 0) {
-                        arrayList.add(toByteArrayList(resources.getStringArray(resourceId)));
-                    }
-                }
-            } else {
-                arrayList.add(toByteArrayList(resources.getStringArray(i)));
-            }
-            return arrayList;
-        } finally {
-            obtainTypedArray.recycle();
-        }
+        return readFamilies(xmlPullParser, resources);
     }
 
     private static FamilyResourceEntry readFamilies(XmlPullParser xmlPullParser, Resources resources) {
@@ -198,6 +155,44 @@ public abstract class FontResourcesParserCompat {
             return null;
         }
         return new FontFamilyFilesResourceEntry((FontFileResourceEntry[]) arrayList.toArray(new FontFileResourceEntry[0]));
+    }
+
+    private static int getType(TypedArray typedArray, int i) {
+        return Api21Impl.getType(typedArray, i);
+    }
+
+    public static List readCerts(Resources resources, int i) {
+        if (i == 0) {
+            return Collections.emptyList();
+        }
+        TypedArray obtainTypedArray = resources.obtainTypedArray(i);
+        try {
+            if (obtainTypedArray.length() == 0) {
+                return Collections.emptyList();
+            }
+            ArrayList arrayList = new ArrayList();
+            if (getType(obtainTypedArray, 0) == 1) {
+                for (int i2 = 0; i2 < obtainTypedArray.length(); i2++) {
+                    int resourceId = obtainTypedArray.getResourceId(i2, 0);
+                    if (resourceId != 0) {
+                        arrayList.add(toByteArrayList(resources.getStringArray(resourceId)));
+                    }
+                }
+            } else {
+                arrayList.add(toByteArrayList(resources.getStringArray(i)));
+            }
+            return arrayList;
+        } finally {
+            obtainTypedArray.recycle();
+        }
+    }
+
+    private static List toByteArrayList(String[] strArr) {
+        ArrayList arrayList = new ArrayList();
+        for (String str : strArr) {
+            arrayList.add(Base64.decode(str, 0));
+        }
+        return arrayList;
     }
 
     private static FontFileResourceEntry readFont(XmlPullParser xmlPullParser, Resources resources) {
@@ -247,11 +242,9 @@ public abstract class FontResourcesParserCompat {
         }
     }
 
-    private static List toByteArrayList(String[] strArr) {
-        ArrayList arrayList = new ArrayList();
-        for (String str : strArr) {
-            arrayList.add(Base64.decode(str, 0));
+    static class Api21Impl {
+        static int getType(TypedArray typedArray, int i) {
+            return typedArray.getType(i);
         }
-        return arrayList;
     }
 }

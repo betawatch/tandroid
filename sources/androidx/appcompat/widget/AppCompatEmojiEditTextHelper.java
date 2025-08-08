@@ -20,14 +20,6 @@ class AppCompatEmojiEditTextHelper {
         this.mEmojiEditTextHelper = new EmojiEditTextHelper(editText, false);
     }
 
-    KeyListener getKeyListener(KeyListener keyListener) {
-        return isEmojiCapableKeyListener(keyListener) ? this.mEmojiEditTextHelper.getKeyListener(keyListener) : keyListener;
-    }
-
-    boolean isEmojiCapableKeyListener(KeyListener keyListener) {
-        return !(keyListener instanceof NumberKeyListener);
-    }
-
     void loadFromAttributes(AttributeSet attributeSet, int i) {
         TypedArray obtainStyledAttributes = this.mView.getContext().obtainStyledAttributes(attributeSet, R$styleable.AppCompatTextView, i, 0);
         try {
@@ -41,11 +33,19 @@ class AppCompatEmojiEditTextHelper {
         }
     }
 
-    InputConnection onCreateInputConnection(InputConnection inputConnection, EditorInfo editorInfo) {
-        return this.mEmojiEditTextHelper.onCreateInputConnection(inputConnection, editorInfo);
+    boolean isEmojiCapableKeyListener(KeyListener keyListener) {
+        return !(keyListener instanceof NumberKeyListener);
     }
 
     void setEnabled(boolean z) {
         this.mEmojiEditTextHelper.setEnabled(z);
+    }
+
+    KeyListener getKeyListener(KeyListener keyListener) {
+        return isEmojiCapableKeyListener(keyListener) ? this.mEmojiEditTextHelper.getKeyListener(keyListener) : keyListener;
+    }
+
+    InputConnection onCreateInputConnection(InputConnection inputConnection, EditorInfo editorInfo) {
+        return this.mEmojiEditTextHelper.onCreateInputConnection(inputConnection, editorInfo);
     }
 }

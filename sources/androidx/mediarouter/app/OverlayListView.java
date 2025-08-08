@@ -15,6 +15,48 @@ import java.util.List;
 final class OverlayListView extends ListView {
     private final List mOverlayObjects;
 
+    public OverlayListView(Context context, AttributeSet attributeSet) {
+        super(context, attributeSet);
+        this.mOverlayObjects = new ArrayList();
+    }
+
+    public void addOverlayObject(OverlayObject overlayObject) {
+        this.mOverlayObjects.add(overlayObject);
+    }
+
+    public void startAnimationAll() {
+        for (OverlayObject overlayObject : this.mOverlayObjects) {
+            if (!overlayObject.isAnimationStarted()) {
+                overlayObject.startAnimation(getDrawingTime());
+            }
+        }
+    }
+
+    public void stopAnimationAll() {
+        Iterator it = this.mOverlayObjects.iterator();
+        while (it.hasNext()) {
+            ((OverlayObject) it.next()).stopAnimation();
+        }
+    }
+
+    @Override // android.view.View
+    public void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.mOverlayObjects.size() > 0) {
+            Iterator it = this.mOverlayObjects.iterator();
+            while (it.hasNext()) {
+                OverlayObject overlayObject = (OverlayObject) it.next();
+                BitmapDrawable bitmapDrawable = overlayObject.getBitmapDrawable();
+                if (bitmapDrawable != null) {
+                    bitmapDrawable.draw(canvas);
+                }
+                if (!overlayObject.update(getDrawingTime())) {
+                    it.remove();
+                }
+            }
+        }
+    }
+
     public static class OverlayObject {
         private BitmapDrawable mBitmap;
         private Rect mCurrentBounds;
@@ -59,8 +101,8 @@ final class OverlayListView extends ListView {
             return this;
         }
 
-        public OverlayObject setAnimationEndListener(OnAnimationEndListener onAnimationEndListener) {
-            this.mListener = onAnimationEndListener;
+        public OverlayObject setTranslateYAnimation(int i) {
+            this.mDeltaY = i;
             return this;
         }
 
@@ -74,8 +116,8 @@ final class OverlayListView extends ListView {
             return this;
         }
 
-        public OverlayObject setTranslateYAnimation(int i) {
-            this.mDeltaY = i;
+        public OverlayObject setAnimationEndListener(OnAnimationEndListener onAnimationEndListener) {
+            this.mListener = onAnimationEndListener;
             return this;
         }
 
@@ -121,48 +163,6 @@ final class OverlayListView extends ListView {
                 }
             }
             return !this.mIsAnimationEnded;
-        }
-    }
-
-    public OverlayListView(Context context, AttributeSet attributeSet) {
-        super(context, attributeSet);
-        this.mOverlayObjects = new ArrayList();
-    }
-
-    public void addOverlayObject(OverlayObject overlayObject) {
-        this.mOverlayObjects.add(overlayObject);
-    }
-
-    @Override // android.view.View
-    public void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (this.mOverlayObjects.size() > 0) {
-            Iterator it = this.mOverlayObjects.iterator();
-            while (it.hasNext()) {
-                OverlayObject overlayObject = (OverlayObject) it.next();
-                BitmapDrawable bitmapDrawable = overlayObject.getBitmapDrawable();
-                if (bitmapDrawable != null) {
-                    bitmapDrawable.draw(canvas);
-                }
-                if (!overlayObject.update(getDrawingTime())) {
-                    it.remove();
-                }
-            }
-        }
-    }
-
-    public void startAnimationAll() {
-        for (OverlayObject overlayObject : this.mOverlayObjects) {
-            if (!overlayObject.isAnimationStarted()) {
-                overlayObject.startAnimation(getDrawingTime());
-            }
-        }
-    }
-
-    public void stopAnimationAll() {
-        Iterator it = this.mOverlayObjects.iterator();
-        while (it.hasNext()) {
-            ((OverlayObject) it.next()).stopAnimation();
         }
     }
 }

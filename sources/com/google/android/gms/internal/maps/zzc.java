@@ -38,7 +38,11 @@ public abstract class zzc {
     }
 
     public static void zzg(Parcel parcel, IInterface iInterface) {
-        parcel.writeStrongBinder(iInterface == null ? null : iInterface.asBinder());
+        if (iInterface == null) {
+            parcel.writeStrongBinder(null);
+        } else {
+            parcel.writeStrongBinder(iInterface.asBinder());
+        }
     }
 
     public static boolean zzh(Parcel parcel) {

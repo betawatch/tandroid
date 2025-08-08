@@ -21,18 +21,18 @@ public final class CommentFrame extends Id3Frame {
     public final String language;
     public final String text;
 
-    CommentFrame(Parcel parcel) {
-        super("COMM");
-        this.language = (String) Util.castNonNull(parcel.readString());
-        this.description = (String) Util.castNonNull(parcel.readString());
-        this.text = (String) Util.castNonNull(parcel.readString());
-    }
-
     public CommentFrame(String str, String str2, String str3) {
         super("COMM");
         this.language = str;
         this.description = str2;
         this.text = str3;
+    }
+
+    CommentFrame(Parcel parcel) {
+        super("COMM");
+        this.language = (String) Util.castNonNull(parcel.readString());
+        this.description = (String) Util.castNonNull(parcel.readString());
+        this.text = (String) Util.castNonNull(parcel.readString());
     }
 
     public boolean equals(Object obj) {

@@ -1,22 +1,34 @@
 package com.google.android.gms.internal.play_billing;
 
+import java.io.Serializable;
+import java.util.Set;
+
 /* loaded from: classes.dex */
-abstract class zzct {
-    private static final zzct zza = new zzcp(null);
-    private static final zzct zzb = new zzcr(0 == true ? 1 : 0);
+public final class zzct extends zzbi implements Serializable {
+    private static final zzct zza;
+    private static final zzct zzb;
+    private final transient zzco zzc;
 
-    /* synthetic */ zzct(zzcs zzcsVar) {
+    static {
+        int i = zzco.$r8$clinit;
+        zza = new zzct(zzdk.zza);
+        zzb = new zzct(zzco.zzm(zzdh.zza()));
     }
 
-    static zzct zzc() {
-        return zza;
+    zzct(zzco zzcoVar) {
+        this.zzc = zzcoVar;
     }
 
-    static zzct zzd() {
+    static zzct zza() {
         return zzb;
     }
 
-    abstract void zza(Object obj, long j);
+    public static zzct zzb() {
+        return zza;
+    }
 
-    abstract void zzb(Object obj, Object obj2, long j);
+    @Override // com.google.android.gms.internal.play_billing.zzdj
+    public final /* bridge */ /* synthetic */ Set zzc() {
+        return this.zzc.isEmpty() ? zzdq.zza : new zzdr(this.zzc, zzdg.zza);
+    }
 }

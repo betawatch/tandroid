@@ -6,7 +6,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.MalformedJsonException;
 import java.math.BigDecimal;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public enum ToNumberPolicy implements ToNumberStrategy {
     DOUBLE { // from class: com.google.gson.ToNumberPolicy.1
         @Override // com.google.gson.ToNumberStrategy
@@ -21,6 +21,19 @@ public enum ToNumberPolicy implements ToNumberStrategy {
         }
     },
     LONG_OR_DOUBLE { // from class: com.google.gson.ToNumberPolicy.3
+        @Override // com.google.gson.ToNumberStrategy
+        public Number readNumber(JsonReader jsonReader) {
+            String nextString = jsonReader.nextString();
+            if (nextString.indexOf(46) >= 0) {
+                return parseAsDouble(nextString, jsonReader);
+            }
+            try {
+                return Long.valueOf(Long.parseLong(nextString));
+            } catch (NumberFormatException unused) {
+                return parseAsDouble(nextString, jsonReader);
+            }
+        }
+
         private Number parseAsDouble(String str, JsonReader jsonReader) {
             try {
                 Double valueOf = Double.valueOf(str);
@@ -35,19 +48,6 @@ public enum ToNumberPolicy implements ToNumberStrategy {
                 return valueOf;
             } catch (NumberFormatException e) {
                 throw new JsonParseException("Cannot parse " + str + "; at path " + jsonReader.getPreviousPath(), e);
-            }
-        }
-
-        @Override // com.google.gson.ToNumberStrategy
-        public Number readNumber(JsonReader jsonReader) {
-            String nextString = jsonReader.nextString();
-            if (nextString.indexOf(46) >= 0) {
-                return parseAsDouble(nextString, jsonReader);
-            }
-            try {
-                return Long.valueOf(Long.parseLong(nextString));
-            } catch (NumberFormatException unused) {
-                return parseAsDouble(nextString, jsonReader);
             }
         }
     },

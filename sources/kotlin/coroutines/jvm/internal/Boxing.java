@@ -1,6 +1,6 @@
 package kotlin.coroutines.jvm.internal;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class Boxing {
     public static final Boolean boxBoolean(boolean z) {
         return Boolean.valueOf(z);

@@ -36,7 +36,11 @@ public class SignInHubActivity extends FragmentActivity {
 
     private final void zbe(String str) {
         Intent intent = new Intent(str);
-        intent.setPackage(str.equals("com.google.android.gms.auth.GOOGLE_SIGN_IN") ? "com.google.android.gms" : getPackageName());
+        if (str.equals("com.google.android.gms.auth.GOOGLE_SIGN_IN")) {
+            intent.setPackage("com.google.android.gms");
+        } else {
+            intent.setPackage(getPackageName());
+        }
         intent.putExtra("config", this.zbc);
         try {
             startActivityForResult(intent, 40962);

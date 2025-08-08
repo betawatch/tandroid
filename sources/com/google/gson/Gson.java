@@ -38,7 +38,7 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicLongArray;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class Gson {
     static final Strictness DEFAULT_STRICTNESS = null;
     final List builderFactories;
@@ -71,43 +71,6 @@ public final class Gson {
     static final ToNumberStrategy DEFAULT_NUMBER_TO_NUMBER_STRATEGY = ToNumberPolicy.LAZILY_PARSED_NUMBER;
     private final ThreadLocal threadLocalAdapterResults = new ThreadLocal();
     private final ConcurrentMap typeTokenCache = new ConcurrentHashMap();
-
-    static class FutureTypeAdapter extends SerializationDelegatingTypeAdapter {
-        private TypeAdapter delegate = null;
-
-        FutureTypeAdapter() {
-        }
-
-        private TypeAdapter delegate() {
-            TypeAdapter typeAdapter = this.delegate;
-            if (typeAdapter != null) {
-                return typeAdapter;
-            }
-            throw new IllegalStateException("Adapter for type with cyclic dependency has been used before dependency has been resolved");
-        }
-
-        @Override // com.google.gson.internal.bind.SerializationDelegatingTypeAdapter
-        public TypeAdapter getSerializationDelegate() {
-            return delegate();
-        }
-
-        @Override // com.google.gson.TypeAdapter
-        public Object read(JsonReader jsonReader) {
-            return delegate().read(jsonReader);
-        }
-
-        public void setDelegate(TypeAdapter typeAdapter) {
-            if (this.delegate != null) {
-                throw new AssertionError("Delegate is already set");
-            }
-            this.delegate = typeAdapter;
-        }
-
-        @Override // com.google.gson.TypeAdapter
-        public void write(JsonWriter jsonWriter, Object obj) {
-            delegate().write(jsonWriter, obj);
-        }
-    }
 
     Gson(Excluder excluder, FieldNamingStrategy fieldNamingStrategy, Map map, boolean z, boolean z2, boolean z3, boolean z4, FormattingStyle formattingStyle, Strictness strictness, boolean z5, boolean z6, LongSerializationPolicy longSerializationPolicy, String str, int i, int i2, List list, List list2, List list3, ToNumberStrategy toNumberStrategy, ToNumberStrategy toNumberStrategy2, List list4) {
         this.excluder = excluder;
@@ -184,65 +147,18 @@ public final class Gson {
         this.factories = Collections.unmodifiableList(arrayList);
     }
 
-    private static TypeAdapter atomicLongAdapter(final TypeAdapter typeAdapter) {
-        return new TypeAdapter() { // from class: com.google.gson.Gson.4
-            @Override // com.google.gson.TypeAdapter
-            public AtomicLong read(JsonReader jsonReader) {
-                return new AtomicLong(((Number) TypeAdapter.this.read(jsonReader)).longValue());
-            }
-
-            @Override // com.google.gson.TypeAdapter
-            public void write(JsonWriter jsonWriter, AtomicLong atomicLong) {
-                TypeAdapter.this.write(jsonWriter, Long.valueOf(atomicLong.get()));
-            }
-        }.nullSafe();
-    }
-
-    private static TypeAdapter atomicLongArrayAdapter(final TypeAdapter typeAdapter) {
-        return new TypeAdapter() { // from class: com.google.gson.Gson.5
-            @Override // com.google.gson.TypeAdapter
-            public AtomicLongArray read(JsonReader jsonReader) {
-                ArrayList arrayList = new ArrayList();
-                jsonReader.beginArray();
-                while (jsonReader.hasNext()) {
-                    arrayList.add(Long.valueOf(((Number) TypeAdapter.this.read(jsonReader)).longValue()));
-                }
-                jsonReader.endArray();
-                int size = arrayList.size();
-                AtomicLongArray atomicLongArray = new AtomicLongArray(size);
-                for (int i = 0; i < size; i++) {
-                    atomicLongArray.set(i, ((Long) arrayList.get(i)).longValue());
-                }
-                return atomicLongArray;
-            }
-
-            @Override // com.google.gson.TypeAdapter
-            public void write(JsonWriter jsonWriter, AtomicLongArray atomicLongArray) {
-                jsonWriter.beginArray();
-                int length = atomicLongArray.length();
-                for (int i = 0; i < length; i++) {
-                    TypeAdapter.this.write(jsonWriter, Long.valueOf(atomicLongArray.get(i)));
-                }
-                jsonWriter.endArray();
-            }
-        }.nullSafe();
-    }
-
-    static void checkValidFloatingPoint(double d) {
-        if (Double.isNaN(d) || Double.isInfinite(d)) {
-            throw new IllegalArgumentException(d + " is not a valid double value as per JSON specification. To override this behavior, use GsonBuilder.serializeSpecialFloatingPointValues() method.");
-        }
-    }
-
     private TypeAdapter doubleAdapter(boolean z) {
-        return z ? TypeAdapters.DOUBLE : new TypeAdapter() { // from class: com.google.gson.Gson.1
+        if (z) {
+            return TypeAdapters.DOUBLE;
+        }
+        return new TypeAdapter() { // from class: com.google.gson.Gson.1
             @Override // com.google.gson.TypeAdapter
             public Double read(JsonReader jsonReader) {
-                if (jsonReader.peek() != JsonToken.NULL) {
-                    return Double.valueOf(jsonReader.nextDouble());
+                if (jsonReader.peek() == JsonToken.NULL) {
+                    jsonReader.nextNull();
+                    return null;
                 }
-                jsonReader.nextNull();
-                return null;
+                return Double.valueOf(jsonReader.nextDouble());
             }
 
             @Override // com.google.gson.TypeAdapter
@@ -259,14 +175,17 @@ public final class Gson {
     }
 
     private TypeAdapter floatAdapter(boolean z) {
-        return z ? TypeAdapters.FLOAT : new TypeAdapter() { // from class: com.google.gson.Gson.2
+        if (z) {
+            return TypeAdapters.FLOAT;
+        }
+        return new TypeAdapter() { // from class: com.google.gson.Gson.2
             @Override // com.google.gson.TypeAdapter
             public Float read(JsonReader jsonReader) {
-                if (jsonReader.peek() != JsonToken.NULL) {
-                    return Float.valueOf((float) jsonReader.nextDouble());
+                if (jsonReader.peek() == JsonToken.NULL) {
+                    jsonReader.nextNull();
+                    return null;
                 }
-                jsonReader.nextNull();
-                return null;
+                return Float.valueOf((float) jsonReader.nextDouble());
             }
 
             @Override // com.google.gson.TypeAdapter
@@ -285,15 +204,24 @@ public final class Gson {
         };
     }
 
+    static void checkValidFloatingPoint(double d) {
+        if (Double.isNaN(d) || Double.isInfinite(d)) {
+            throw new IllegalArgumentException(d + " is not a valid double value as per JSON specification. To override this behavior, use GsonBuilder.serializeSpecialFloatingPointValues() method.");
+        }
+    }
+
     private static TypeAdapter longAdapter(LongSerializationPolicy longSerializationPolicy) {
-        return longSerializationPolicy == LongSerializationPolicy.DEFAULT ? TypeAdapters.LONG : new TypeAdapter() { // from class: com.google.gson.Gson.3
+        if (longSerializationPolicy == LongSerializationPolicy.DEFAULT) {
+            return TypeAdapters.LONG;
+        }
+        return new TypeAdapter() { // from class: com.google.gson.Gson.3
             @Override // com.google.gson.TypeAdapter
             public Number read(JsonReader jsonReader) {
-                if (jsonReader.peek() != JsonToken.NULL) {
-                    return Long.valueOf(jsonReader.nextLong());
+                if (jsonReader.peek() == JsonToken.NULL) {
+                    jsonReader.nextNull();
+                    return null;
                 }
-                jsonReader.nextNull();
-                return null;
+                return Long.valueOf(jsonReader.nextLong());
             }
 
             @Override // com.google.gson.TypeAdapter
@@ -305,6 +233,50 @@ public final class Gson {
                 }
             }
         };
+    }
+
+    private static TypeAdapter atomicLongAdapter(final TypeAdapter typeAdapter) {
+        return new TypeAdapter() { // from class: com.google.gson.Gson.4
+            @Override // com.google.gson.TypeAdapter
+            public void write(JsonWriter jsonWriter, AtomicLong atomicLong) {
+                TypeAdapter.this.write(jsonWriter, Long.valueOf(atomicLong.get()));
+            }
+
+            @Override // com.google.gson.TypeAdapter
+            public AtomicLong read(JsonReader jsonReader) {
+                return new AtomicLong(((Number) TypeAdapter.this.read(jsonReader)).longValue());
+            }
+        }.nullSafe();
+    }
+
+    private static TypeAdapter atomicLongArrayAdapter(final TypeAdapter typeAdapter) {
+        return new TypeAdapter() { // from class: com.google.gson.Gson.5
+            @Override // com.google.gson.TypeAdapter
+            public void write(JsonWriter jsonWriter, AtomicLongArray atomicLongArray) {
+                jsonWriter.beginArray();
+                int length = atomicLongArray.length();
+                for (int i = 0; i < length; i++) {
+                    TypeAdapter.this.write(jsonWriter, Long.valueOf(atomicLongArray.get(i)));
+                }
+                jsonWriter.endArray();
+            }
+
+            @Override // com.google.gson.TypeAdapter
+            public AtomicLongArray read(JsonReader jsonReader) {
+                ArrayList arrayList = new ArrayList();
+                jsonReader.beginArray();
+                while (jsonReader.hasNext()) {
+                    arrayList.add(Long.valueOf(((Number) TypeAdapter.this.read(jsonReader)).longValue()));
+                }
+                jsonReader.endArray();
+                int size = arrayList.size();
+                AtomicLongArray atomicLongArray = new AtomicLongArray(size);
+                for (int i = 0; i < size; i++) {
+                    atomicLongArray.set(i, ((Long) arrayList.get(i)).longValue());
+                }
+                return atomicLongArray;
+            }
+        }.nullSafe();
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:15:0x0051, code lost:
@@ -383,10 +355,115 @@ public final class Gson {
                 z = true;
             }
         }
-        if (!z) {
-            return getAdapter(typeToken);
+        if (z) {
+            throw new IllegalArgumentException("GSON cannot serialize or deserialize " + typeToken);
         }
-        throw new IllegalArgumentException("GSON cannot serialize or deserialize " + typeToken);
+        return getAdapter(typeToken);
+    }
+
+    public JsonElement toJsonTree(Object obj) {
+        if (obj == null) {
+            return JsonNull.INSTANCE;
+        }
+        return toJsonTree(obj, obj.getClass());
+    }
+
+    public JsonElement toJsonTree(Object obj, Type type) {
+        JsonTreeWriter jsonTreeWriter = new JsonTreeWriter();
+        toJson(obj, type, jsonTreeWriter);
+        return jsonTreeWriter.get();
+    }
+
+    public String toJson(Object obj) {
+        if (obj == null) {
+            return toJson((JsonElement) JsonNull.INSTANCE);
+        }
+        return toJson(obj, obj.getClass());
+    }
+
+    public String toJson(Object obj, Type type) {
+        StringWriter stringWriter = new StringWriter();
+        toJson(obj, type, stringWriter);
+        return stringWriter.toString();
+    }
+
+    public void toJson(Object obj, Type type, Appendable appendable) {
+        try {
+            toJson(obj, type, newJsonWriter(Streams.writerForAppendable(appendable)));
+        } catch (IOException e) {
+            throw new JsonIOException(e);
+        }
+    }
+
+    public void toJson(Object obj, Type type, JsonWriter jsonWriter) {
+        TypeAdapter adapter = getAdapter(TypeToken.get(type));
+        Strictness strictness = jsonWriter.getStrictness();
+        Strictness strictness2 = this.strictness;
+        if (strictness2 != null) {
+            jsonWriter.setStrictness(strictness2);
+        } else if (jsonWriter.getStrictness() == Strictness.LEGACY_STRICT) {
+            jsonWriter.setStrictness(Strictness.LENIENT);
+        }
+        boolean isHtmlSafe = jsonWriter.isHtmlSafe();
+        boolean serializeNulls = jsonWriter.getSerializeNulls();
+        jsonWriter.setHtmlSafe(this.htmlSafe);
+        jsonWriter.setSerializeNulls(this.serializeNulls);
+        try {
+            try {
+                try {
+                    adapter.write(jsonWriter, obj);
+                } catch (AssertionError e) {
+                    throw new AssertionError("AssertionError (GSON 2.11.0): " + e.getMessage(), e);
+                }
+            } catch (IOException e2) {
+                throw new JsonIOException(e2);
+            }
+        } finally {
+            jsonWriter.setStrictness(strictness);
+            jsonWriter.setHtmlSafe(isHtmlSafe);
+            jsonWriter.setSerializeNulls(serializeNulls);
+        }
+    }
+
+    public String toJson(JsonElement jsonElement) {
+        StringWriter stringWriter = new StringWriter();
+        toJson(jsonElement, stringWriter);
+        return stringWriter.toString();
+    }
+
+    public void toJson(JsonElement jsonElement, Appendable appendable) {
+        try {
+            toJson(jsonElement, newJsonWriter(Streams.writerForAppendable(appendable)));
+        } catch (IOException e) {
+            throw new JsonIOException(e);
+        }
+    }
+
+    public void toJson(JsonElement jsonElement, JsonWriter jsonWriter) {
+        Strictness strictness = jsonWriter.getStrictness();
+        boolean isHtmlSafe = jsonWriter.isHtmlSafe();
+        boolean serializeNulls = jsonWriter.getSerializeNulls();
+        jsonWriter.setHtmlSafe(this.htmlSafe);
+        jsonWriter.setSerializeNulls(this.serializeNulls);
+        Strictness strictness2 = this.strictness;
+        if (strictness2 != null) {
+            jsonWriter.setStrictness(strictness2);
+        } else if (jsonWriter.getStrictness() == Strictness.LEGACY_STRICT) {
+            jsonWriter.setStrictness(Strictness.LENIENT);
+        }
+        try {
+            try {
+                Streams.write(jsonElement, jsonWriter);
+            } catch (IOException e) {
+                throw new JsonIOException(e);
+            } catch (AssertionError e2) {
+                throw new AssertionError("AssertionError (GSON 2.11.0): " + e2.getMessage(), e2);
+            }
+        } finally {
+            jsonWriter.setStrictness(strictness);
+            jsonWriter.setHtmlSafe(isHtmlSafe);
+            jsonWriter.setSerializeNulls(serializeNulls);
+        }
     }
 
     public JsonWriter newJsonWriter(Writer writer) {
@@ -405,115 +482,41 @@ public final class Gson {
         return jsonWriter;
     }
 
-    public String toJson(JsonElement jsonElement) {
-        StringWriter stringWriter = new StringWriter();
-        toJson(jsonElement, stringWriter);
-        return stringWriter.toString();
-    }
+    static class FutureTypeAdapter extends SerializationDelegatingTypeAdapter {
+        private TypeAdapter delegate = null;
 
-    public String toJson(Object obj) {
-        return obj == null ? toJson((JsonElement) JsonNull.INSTANCE) : toJson(obj, obj.getClass());
-    }
+        FutureTypeAdapter() {
+        }
 
-    public String toJson(Object obj, Type type) {
-        StringWriter stringWriter = new StringWriter();
-        toJson(obj, type, stringWriter);
-        return stringWriter.toString();
-    }
-
-    public void toJson(JsonElement jsonElement, JsonWriter jsonWriter) {
-        Strictness strictness = jsonWriter.getStrictness();
-        boolean isHtmlSafe = jsonWriter.isHtmlSafe();
-        boolean serializeNulls = jsonWriter.getSerializeNulls();
-        jsonWriter.setHtmlSafe(this.htmlSafe);
-        jsonWriter.setSerializeNulls(this.serializeNulls);
-        Strictness strictness2 = this.strictness;
-        try {
-            try {
-                if (strictness2 == null) {
-                    if (jsonWriter.getStrictness() == Strictness.LEGACY_STRICT) {
-                        strictness2 = Strictness.LENIENT;
-                    }
-                    Streams.write(jsonElement, jsonWriter);
-                    return;
-                }
-                Streams.write(jsonElement, jsonWriter);
-                return;
-            } catch (IOException e) {
-                throw new JsonIOException(e);
-            } catch (AssertionError e2) {
-                throw new AssertionError("AssertionError (GSON 2.11.0): " + e2.getMessage(), e2);
+        public void setDelegate(TypeAdapter typeAdapter) {
+            if (this.delegate != null) {
+                throw new AssertionError("Delegate is already set");
             }
-        } finally {
-            jsonWriter.setStrictness(strictness);
-            jsonWriter.setHtmlSafe(isHtmlSafe);
-            jsonWriter.setSerializeNulls(serializeNulls);
+            this.delegate = typeAdapter;
         }
-        jsonWriter.setStrictness(strictness2);
-    }
 
-    public void toJson(JsonElement jsonElement, Appendable appendable) {
-        try {
-            toJson(jsonElement, newJsonWriter(Streams.writerForAppendable(appendable)));
-        } catch (IOException e) {
-            throw new JsonIOException(e);
-        }
-    }
-
-    public void toJson(Object obj, Type type, JsonWriter jsonWriter) {
-        boolean isHtmlSafe;
-        boolean serializeNulls;
-        TypeAdapter adapter = getAdapter(TypeToken.get(type));
-        Strictness strictness = jsonWriter.getStrictness();
-        Strictness strictness2 = this.strictness;
-        try {
-            try {
-                if (strictness2 == null) {
-                    if (jsonWriter.getStrictness() == Strictness.LEGACY_STRICT) {
-                        strictness2 = Strictness.LENIENT;
-                    }
-                    isHtmlSafe = jsonWriter.isHtmlSafe();
-                    serializeNulls = jsonWriter.getSerializeNulls();
-                    jsonWriter.setHtmlSafe(this.htmlSafe);
-                    jsonWriter.setSerializeNulls(this.serializeNulls);
-                    adapter.write(jsonWriter, obj);
-                    return;
-                }
-                adapter.write(jsonWriter, obj);
-                return;
-            } catch (IOException e) {
-                throw new JsonIOException(e);
-            } catch (AssertionError e2) {
-                throw new AssertionError("AssertionError (GSON 2.11.0): " + e2.getMessage(), e2);
+        private TypeAdapter delegate() {
+            TypeAdapter typeAdapter = this.delegate;
+            if (typeAdapter != null) {
+                return typeAdapter;
             }
-        } finally {
-            jsonWriter.setStrictness(strictness);
-            jsonWriter.setHtmlSafe(isHtmlSafe);
-            jsonWriter.setSerializeNulls(serializeNulls);
+            throw new IllegalStateException("Adapter for type with cyclic dependency has been used before dependency has been resolved");
         }
-        jsonWriter.setStrictness(strictness2);
-        isHtmlSafe = jsonWriter.isHtmlSafe();
-        serializeNulls = jsonWriter.getSerializeNulls();
-        jsonWriter.setHtmlSafe(this.htmlSafe);
-        jsonWriter.setSerializeNulls(this.serializeNulls);
-    }
 
-    public void toJson(Object obj, Type type, Appendable appendable) {
-        try {
-            toJson(obj, type, newJsonWriter(Streams.writerForAppendable(appendable)));
-        } catch (IOException e) {
-            throw new JsonIOException(e);
+        @Override // com.google.gson.internal.bind.SerializationDelegatingTypeAdapter
+        public TypeAdapter getSerializationDelegate() {
+            return delegate();
         }
-    }
 
-    public JsonElement toJsonTree(Object obj) {
-        return obj == null ? JsonNull.INSTANCE : toJsonTree(obj, obj.getClass());
-    }
+        @Override // com.google.gson.TypeAdapter
+        public Object read(JsonReader jsonReader) {
+            return delegate().read(jsonReader);
+        }
 
-    public JsonElement toJsonTree(Object obj, Type type) {
-        JsonTreeWriter jsonTreeWriter = new JsonTreeWriter();
-        toJson(obj, type, jsonTreeWriter);
-        return jsonTreeWriter.get();
+        @Override // com.google.gson.TypeAdapter
+        public void write(JsonWriter jsonWriter, Object obj) {
+            delegate().write(jsonWriter, obj);
+        }
     }
 
     public String toString() {

@@ -17,16 +17,72 @@ public abstract class LinearSmoothScrollerEnd extends RecyclerView.SmoothScrolle
     protected int mInterimTargetDx = 0;
     protected int mInterimTargetDy = 0;
 
-    public LinearSmoothScrollerEnd(Context context) {
-        this.MILLISECONDS_PER_PX = 25.0f / context.getResources().getDisplayMetrics().densityDpi;
-    }
-
     private int clampApplyScroll(int i, int i2) {
         int i3 = i - i2;
         if (i * i3 <= 0) {
             return 0;
         }
         return i3;
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView.SmoothScroller
+    protected void onStart() {
+    }
+
+    public LinearSmoothScrollerEnd(Context context) {
+        this.MILLISECONDS_PER_PX = 25.0f / context.getResources().getDisplayMetrics().densityDpi;
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView.SmoothScroller
+    protected void onTargetFound(View view, RecyclerView.State state, RecyclerView.SmoothScroller.Action action) {
+        int calculateDxToMakeVisible = calculateDxToMakeVisible(view);
+        int calculateTimeForDeceleration = calculateTimeForDeceleration(calculateDxToMakeVisible);
+        if (calculateTimeForDeceleration > 0) {
+            action.update(-calculateDxToMakeVisible, 0, Math.max(400, calculateTimeForDeceleration), this.mDecelerateInterpolator);
+        }
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView.SmoothScroller
+    protected void onSeekTargetStep(int i, int i2, RecyclerView.State state, RecyclerView.SmoothScroller.Action action) {
+        if (getChildCount() == 0) {
+            stop();
+            return;
+        }
+        this.mInterimTargetDx = clampApplyScroll(this.mInterimTargetDx, i);
+        int clampApplyScroll = clampApplyScroll(this.mInterimTargetDy, i2);
+        this.mInterimTargetDy = clampApplyScroll;
+        if (this.mInterimTargetDx == 0 && clampApplyScroll == 0) {
+            updateActionForInterimTarget(action);
+        }
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView.SmoothScroller
+    protected void onStop() {
+        this.mInterimTargetDy = 0;
+        this.mInterimTargetDx = 0;
+        this.mTargetVector = null;
+    }
+
+    protected int calculateTimeForDeceleration(int i) {
+        return (int) Math.ceil(calculateTimeForScrolling(i) / 0.3356d);
+    }
+
+    protected int calculateTimeForScrolling(int i) {
+        return (int) Math.ceil(Math.abs(i) * this.MILLISECONDS_PER_PX);
+    }
+
+    protected void updateActionForInterimTarget(RecyclerView.SmoothScroller.Action action) {
+        PointF computeScrollVectorForPosition = computeScrollVectorForPosition(getTargetPosition());
+        if (computeScrollVectorForPosition == null || (computeScrollVectorForPosition.x == 0.0f && computeScrollVectorForPosition.y == 0.0f)) {
+            action.jumpTo(getTargetPosition());
+            stop();
+            return;
+        }
+        normalize(computeScrollVectorForPosition);
+        this.mTargetVector = computeScrollVectorForPosition;
+        this.mInterimTargetDx = (int) (computeScrollVectorForPosition.x * 10000.0f);
+        this.mInterimTargetDy = (int) (computeScrollVectorForPosition.y * 10000.0f);
+        action.update((int) (this.mInterimTargetDx * 1.2f), (int) (this.mInterimTargetDy * 1.2f), (int) (calculateTimeForScrolling(10000) * 1.2f), this.mLinearInterpolator);
     }
 
     public int calculateDxToMakeVisible(View view) {
@@ -55,16 +111,6 @@ public abstract class LinearSmoothScrollerEnd extends RecyclerView.SmoothScrolle
         return 0;
     }
 
-    protected int calculateTimeForDeceleration(int i) {
-        double calculateTimeForScrolling = calculateTimeForScrolling(i);
-        Double.isNaN(calculateTimeForScrolling);
-        return (int) Math.ceil(calculateTimeForScrolling / 0.3356d);
-    }
-
-    protected int calculateTimeForScrolling(int i) {
-        return (int) Math.ceil(Math.abs(i) * this.MILLISECONDS_PER_PX);
-    }
-
     @Override // androidx.recyclerview.widget.RecyclerView.SmoothScroller
     public PointF computeScrollVectorForPosition(int i) {
         Object layoutManager = getLayoutManager();
@@ -72,53 +118,5 @@ public abstract class LinearSmoothScrollerEnd extends RecyclerView.SmoothScrolle
             return ((RecyclerView.SmoothScroller.ScrollVectorProvider) layoutManager).computeScrollVectorForPosition(i);
         }
         return null;
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView.SmoothScroller
-    protected void onSeekTargetStep(int i, int i2, RecyclerView.State state, RecyclerView.SmoothScroller.Action action) {
-        if (getChildCount() == 0) {
-            stop();
-            return;
-        }
-        this.mInterimTargetDx = clampApplyScroll(this.mInterimTargetDx, i);
-        int clampApplyScroll = clampApplyScroll(this.mInterimTargetDy, i2);
-        this.mInterimTargetDy = clampApplyScroll;
-        if (this.mInterimTargetDx == 0 && clampApplyScroll == 0) {
-            updateActionForInterimTarget(action);
-        }
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView.SmoothScroller
-    protected void onStart() {
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView.SmoothScroller
-    protected void onStop() {
-        this.mInterimTargetDy = 0;
-        this.mInterimTargetDx = 0;
-        this.mTargetVector = null;
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView.SmoothScroller
-    protected void onTargetFound(View view, RecyclerView.State state, RecyclerView.SmoothScroller.Action action) {
-        int calculateDxToMakeVisible = calculateDxToMakeVisible(view);
-        int calculateTimeForDeceleration = calculateTimeForDeceleration(calculateDxToMakeVisible);
-        if (calculateTimeForDeceleration > 0) {
-            action.update(-calculateDxToMakeVisible, 0, Math.max(400, calculateTimeForDeceleration), this.mDecelerateInterpolator);
-        }
-    }
-
-    protected void updateActionForInterimTarget(RecyclerView.SmoothScroller.Action action) {
-        PointF computeScrollVectorForPosition = computeScrollVectorForPosition(getTargetPosition());
-        if (computeScrollVectorForPosition == null || (computeScrollVectorForPosition.x == 0.0f && computeScrollVectorForPosition.y == 0.0f)) {
-            action.jumpTo(getTargetPosition());
-            stop();
-            return;
-        }
-        normalize(computeScrollVectorForPosition);
-        this.mTargetVector = computeScrollVectorForPosition;
-        this.mInterimTargetDx = (int) (computeScrollVectorForPosition.x * 10000.0f);
-        this.mInterimTargetDy = (int) (computeScrollVectorForPosition.y * 10000.0f);
-        action.update((int) (this.mInterimTargetDx * 1.2f), (int) (this.mInterimTargetDy * 1.2f), (int) (calculateTimeForScrolling(10000) * 1.2f), this.mLinearInterpolator);
     }
 }

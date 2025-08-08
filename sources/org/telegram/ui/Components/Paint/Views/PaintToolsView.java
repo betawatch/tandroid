@@ -45,8 +45,6 @@ public class PaintToolsView extends LinearLayout {
 
     public PaintToolsView(Context context, boolean z) {
         super(context);
-        RLottieImageView rLottieImageView;
-        View.OnClickListener onClickListener;
         this.buttons = new RLottieImageView[Brush.BRUSHES_LIST.size() + 2];
         this.selectorPaint = new Paint(1);
         this.selectedIndex = 1;
@@ -63,46 +61,75 @@ public class PaintToolsView extends LinearLayout {
         while (i < Brush.BRUSHES_LIST.size() + 2) {
             this.buttons[i2] = createView(i == 0, i == Brush.BRUSHES_LIST.size() + 1);
             if (i == 0) {
-                rLottieImageView = this.buttons[i2];
-                onClickListener = new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.PaintToolsView$$ExternalSyntheticLambda1
+                this.buttons[i2].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.PaintToolsView$$ExternalSyntheticLambda1
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         PaintToolsView.this.lambda$new$0(view);
                     }
-                };
-            } else {
-                if (i > 0 && i <= Brush.BRUSHES_LIST.size()) {
-                    final Brush brush = (Brush) Brush.BRUSHES_LIST.get(i - 1);
-                    if (z || !(brush instanceof Brush.Blurer)) {
-                        this.buttons[i2].setAnimation(brush.getIconRes(), 28, 28);
-                        this.buttons[i2].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.PaintToolsView$$ExternalSyntheticLambda2
-                            @Override // android.view.View.OnClickListener
-                            public final void onClick(View view) {
-                                PaintToolsView.this.lambda$new$1(i2, brush, view);
-                            }
-                        });
-                    } else {
-                        i++;
-                    }
-                } else if (i == Brush.BRUSHES_LIST.size() + 1) {
-                    this.buttons[i2].setImageResource(R.drawable.msg_add);
-                    rLottieImageView = this.buttons[i2];
-                    onClickListener = new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.PaintToolsView$$ExternalSyntheticLambda3
+                });
+            } else if (i > 0 && i <= Brush.BRUSHES_LIST.size()) {
+                final Brush brush = (Brush) Brush.BRUSHES_LIST.get(i - 1);
+                if (z || !(brush instanceof Brush.Blurer)) {
+                    this.buttons[i2].setAnimation(brush.getIconRes(), 28, 28);
+                    this.buttons[i2].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.PaintToolsView$$ExternalSyntheticLambda2
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
-                            PaintToolsView.this.lambda$new$2(view);
+                            PaintToolsView.this.lambda$new$1(i2, brush, view);
                         }
-                    };
+                    });
+                } else {
+                    i++;
                 }
-                addView(this.buttons[i2]);
-                i2++;
-                i++;
+            } else if (i == Brush.BRUSHES_LIST.size() + 1) {
+                this.buttons[i2].setImageResource(R.drawable.msg_add);
+                this.buttons[i2].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.PaintToolsView$$ExternalSyntheticLambda3
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        PaintToolsView.this.lambda$new$2(view);
+                    }
+                });
             }
-            rLottieImageView.setOnClickListener(onClickListener);
             addView(this.buttons[i2]);
             i2++;
             i++;
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$0(View view) {
+        this.delegate.onColorPickerSelected();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$1(int i, Brush brush, View view) {
+        animateNextIndex(i);
+        this.delegate.onGetPalette().setCurrentBrush(i - 1);
+        this.delegate.onBrushSelected(brush);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$2(View view) {
+        this.delegate.onAddButtonPressed(view);
+    }
+
+    public void setSelectedIndex(int i) {
+        this.selectedIndex = i;
+        if (this.isShapeSelected) {
+            this.isShapeSelected = false;
+            AndroidUtilities.updateImageViewImageAnimated(this.buttons[this.brushesCount + 1], R.drawable.msg_add);
+        }
+        invalidate();
+    }
+
+    public void select(int i) {
+        animateNextIndex(i);
+        this.delegate.onGetPalette().setCurrentBrush(i - 1);
+    }
+
+    public void animatePlusToIcon(int i) {
+        animateNextIndex(this.brushesCount + 1);
+        AndroidUtilities.updateImageViewImageAnimated(this.buttons[this.brushesCount + 1], i);
+        this.isShapeSelected = true;
     }
 
     private void animateNextIndex(int i) {
@@ -159,48 +186,10 @@ public class PaintToolsView extends LinearLayout {
         }
     }
 
-    private RLottieImageView createView(boolean z, boolean z2) {
-        RLottieImageView rLottieImageView = new RLottieImageView(getContext());
-        rLottieImageView.setPadding(AndroidUtilities.dp(z ? 0.0f : 8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(z2 ? 0.0f : 8.0f), AndroidUtilities.dp(8.0f));
-        rLottieImageView.setLayoutParams(LayoutHelper.createLinear(0, 40, 1.0f));
-        rLottieImageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        return rLottieImageView;
-    }
-
-    private float getOffsetForIndex(int i) {
-        if (i == this.brushesCount + 1) {
-            return AndroidUtilities.dp(4.0f);
-        }
-        return 0.0f;
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$animateNextIndex$3(ValueAnimator valueAnimator) {
         this.nextSelectedIndexProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         invalidate();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        this.delegate.onColorPickerSelected();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(int i, Brush brush, View view) {
-        animateNextIndex(i);
-        this.delegate.onGetPalette().setCurrentBrush(i - 1);
-        this.delegate.onBrushSelected(brush);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(View view) {
-        this.delegate.onAddButtonPressed(view);
-    }
-
-    public void animatePlusToIcon(int i) {
-        animateNextIndex(this.brushesCount + 1);
-        AndroidUtilities.updateImageViewImageAnimated(this.buttons[this.brushesCount + 1], i);
-        this.isShapeSelected = true;
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -257,21 +246,22 @@ public class PaintToolsView extends LinearLayout {
         canvas.drawCircle(AndroidUtilities.lerp(x, x2 + (i2 != -1 ? getOffsetForIndex(i2) : 0.0f), f), rLottieImageView.getY() + (rLottieImageView.getHeight() / 2.0f), min, this.selectorPaint);
     }
 
-    public void select(int i) {
-        animateNextIndex(i);
-        this.delegate.onGetPalette().setCurrentBrush(i - 1);
+    private float getOffsetForIndex(int i) {
+        if (i == this.brushesCount + 1) {
+            return AndroidUtilities.dp(4.0f);
+        }
+        return 0.0f;
     }
 
     public void setDelegate(Delegate delegate) {
         this.delegate = delegate;
     }
 
-    public void setSelectedIndex(int i) {
-        this.selectedIndex = i;
-        if (this.isShapeSelected) {
-            this.isShapeSelected = false;
-            AndroidUtilities.updateImageViewImageAnimated(this.buttons[this.brushesCount + 1], R.drawable.msg_add);
-        }
-        invalidate();
+    private RLottieImageView createView(boolean z, boolean z2) {
+        RLottieImageView rLottieImageView = new RLottieImageView(getContext());
+        rLottieImageView.setPadding(AndroidUtilities.dp(z ? 0.0f : 8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(z2 ? 0.0f : 8.0f), AndroidUtilities.dp(8.0f));
+        rLottieImageView.setLayoutParams(LayoutHelper.createLinear(0, 40, 1.0f));
+        rLottieImageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        return rLottieImageView;
     }
 }

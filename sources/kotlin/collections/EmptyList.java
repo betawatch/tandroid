@@ -9,12 +9,9 @@ import java.util.RandomAccess;
 import kotlin.jvm.internal.CollectionToArray;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class EmptyList implements List, Serializable, RandomAccess {
     public static final EmptyList INSTANCE = new EmptyList();
-
-    private EmptyList() {
-    }
 
     @Override // java.util.List
     public /* bridge */ /* synthetic */ void add(int i, Object obj) {
@@ -41,33 +38,9 @@ public final class EmptyList implements List, Serializable, RandomAccess {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
-    @Override // java.util.List, java.util.Collection
-    public final /* bridge */ boolean contains(Object obj) {
-        if (obj instanceof Void) {
-            return contains((Void) obj);
-        }
-        return false;
-    }
-
     public boolean contains(Void element) {
         Intrinsics.checkNotNullParameter(element, "element");
         return false;
-    }
-
-    @Override // java.util.List, java.util.Collection
-    public boolean containsAll(Collection elements) {
-        Intrinsics.checkNotNullParameter(elements, "elements");
-        return elements.isEmpty();
-    }
-
-    @Override // java.util.List, java.util.Collection
-    public boolean equals(Object obj) {
-        return (obj instanceof List) && ((List) obj).isEmpty();
-    }
-
-    @Override // java.util.List
-    public Void get(int i) {
-        throw new IndexOutOfBoundsException("Empty list doesn't contain element at index " + i + '.');
     }
 
     public int getSize() {
@@ -77,14 +50,6 @@ public final class EmptyList implements List, Serializable, RandomAccess {
     @Override // java.util.List, java.util.Collection
     public int hashCode() {
         return 1;
-    }
-
-    @Override // java.util.List
-    public final /* bridge */ int indexOf(Object obj) {
-        if (obj instanceof Void) {
-            return indexOf((Void) obj);
-        }
-        return -1;
     }
 
     public int indexOf(Void element) {
@@ -97,35 +62,9 @@ public final class EmptyList implements List, Serializable, RandomAccess {
         return true;
     }
 
-    @Override // java.util.List, java.util.Collection, java.lang.Iterable
-    public Iterator iterator() {
-        return EmptyIterator.INSTANCE;
-    }
-
-    @Override // java.util.List
-    public final /* bridge */ int lastIndexOf(Object obj) {
-        if (obj instanceof Void) {
-            return lastIndexOf((Void) obj);
-        }
-        return -1;
-    }
-
     public int lastIndexOf(Void element) {
         Intrinsics.checkNotNullParameter(element, "element");
         return -1;
-    }
-
-    @Override // java.util.List
-    public ListIterator listIterator() {
-        return EmptyIterator.INSTANCE;
-    }
-
-    @Override // java.util.List
-    public ListIterator listIterator(int i) {
-        if (i == 0) {
-            return EmptyIterator.INSTANCE;
-        }
-        throw new IndexOutOfBoundsException("Index: " + i);
     }
 
     @Override // java.util.List
@@ -154,19 +93,6 @@ public final class EmptyList implements List, Serializable, RandomAccess {
     }
 
     @Override // java.util.List, java.util.Collection
-    public final /* bridge */ int size() {
-        return getSize();
-    }
-
-    @Override // java.util.List
-    public List subList(int i, int i2) {
-        if (i == 0 && i2 == 0) {
-            return this;
-        }
-        throw new IndexOutOfBoundsException("fromIndex: " + i + ", toIndex: " + i2);
-    }
-
-    @Override // java.util.List, java.util.Collection
     public Object[] toArray() {
         return CollectionToArray.toArray(this);
     }
@@ -177,7 +103,81 @@ public final class EmptyList implements List, Serializable, RandomAccess {
         return CollectionToArray.toArray(this, array);
     }
 
+    private EmptyList() {
+    }
+
+    @Override // java.util.List, java.util.Collection
+    public final /* bridge */ boolean contains(Object obj) {
+        if (obj instanceof Void) {
+            return contains((Void) obj);
+        }
+        return false;
+    }
+
+    @Override // java.util.List
+    public final /* bridge */ int indexOf(Object obj) {
+        if (obj instanceof Void) {
+            return indexOf((Void) obj);
+        }
+        return -1;
+    }
+
+    @Override // java.util.List
+    public final /* bridge */ int lastIndexOf(Object obj) {
+        if (obj instanceof Void) {
+            return lastIndexOf((Void) obj);
+        }
+        return -1;
+    }
+
+    @Override // java.util.List, java.util.Collection
+    public final /* bridge */ int size() {
+        return getSize();
+    }
+
+    @Override // java.util.List, java.util.Collection
+    public boolean equals(Object obj) {
+        return (obj instanceof List) && ((List) obj).isEmpty();
+    }
+
     public String toString() {
         return "[]";
+    }
+
+    @Override // java.util.List, java.util.Collection
+    public boolean containsAll(Collection elements) {
+        Intrinsics.checkNotNullParameter(elements, "elements");
+        return elements.isEmpty();
+    }
+
+    @Override // java.util.List
+    public Void get(int i) {
+        throw new IndexOutOfBoundsException("Empty list doesn't contain element at index " + i + '.');
+    }
+
+    @Override // java.util.List, java.util.Collection, java.lang.Iterable
+    public Iterator iterator() {
+        return EmptyIterator.INSTANCE;
+    }
+
+    @Override // java.util.List
+    public ListIterator listIterator() {
+        return EmptyIterator.INSTANCE;
+    }
+
+    @Override // java.util.List
+    public ListIterator listIterator(int i) {
+        if (i != 0) {
+            throw new IndexOutOfBoundsException("Index: " + i);
+        }
+        return EmptyIterator.INSTANCE;
+    }
+
+    @Override // java.util.List
+    public List subList(int i, int i2) {
+        if (i == 0 && i2 == 0) {
+            return this;
+        }
+        throw new IndexOutOfBoundsException("fromIndex: " + i + ", toIndex: " + i2);
     }
 }

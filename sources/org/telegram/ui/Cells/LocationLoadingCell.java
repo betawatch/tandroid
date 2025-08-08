@@ -43,10 +43,6 @@ public class LocationLoadingCell extends FrameLayout {
         addView(this.textView, LayoutHelper.createFrame(-2, -2.0f, 17, 0.0f, 34.0f, 0.0f, 0.0f));
     }
 
-    private int getThemedColor(int i) {
-        return Theme.getColor(i, this.resourcesProvider);
-    }
-
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (AndroidUtilities.dp(56.0f) * 2.5f), TLObject.FLAG_30));
@@ -56,5 +52,9 @@ public class LocationLoadingCell extends FrameLayout {
         this.progressBar.setVisibility(z ? 0 : 4);
         this.textView.setVisibility(z ? 4 : 0);
         this.imageView.setVisibility(z ? 4 : 0);
+    }
+
+    private int getThemedColor(int i) {
+        return Theme.getColor(i, this.resourcesProvider);
     }
 }

@@ -1,17 +1,34 @@
 package com.google.gson.internal;
 
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import com.google.gson.ReflectionAccessFilter$FilterResult;
 import java.lang.reflect.AccessibleObject;
 import java.lang.reflect.Method;
 import java.util.Iterator;
 import java.util.List;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class ReflectionAccessFilterHelper {
+    public static ReflectionAccessFilter$FilterResult getFilterResult(List list, Class cls) {
+        Iterator it = list.iterator();
+        if (it.hasNext()) {
+            WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
+            throw null;
+        }
+        return ReflectionAccessFilter$FilterResult.ALLOW;
+    }
+
+    public static boolean canAccess(AccessibleObject accessibleObject, Object obj) {
+        return AccessChecker.INSTANCE.canAccess(accessibleObject, obj);
+    }
 
     private static abstract class AccessChecker {
         public static final AccessChecker INSTANCE;
+
+        public abstract boolean canAccess(AccessibleObject accessibleObject, Object obj);
+
+        private AccessChecker() {
+        }
 
         /* JADX WARN: Removed duplicated region for block: B:5:0x001f  */
         static {
@@ -51,23 +68,5 @@ public abstract class ReflectionAccessFilterHelper {
             }
             INSTANCE = accessChecker;
         }
-
-        private AccessChecker() {
-        }
-
-        public abstract boolean canAccess(AccessibleObject accessibleObject, Object obj);
-    }
-
-    public static boolean canAccess(AccessibleObject accessibleObject, Object obj) {
-        return AccessChecker.INSTANCE.canAccess(accessibleObject, obj);
-    }
-
-    public static ReflectionAccessFilter$FilterResult getFilterResult(List list, Class cls) {
-        Iterator it = list.iterator();
-        if (!it.hasNext()) {
-            return ReflectionAccessFilter$FilterResult.ALLOW;
-        }
-        ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
-        throw null;
     }
 }

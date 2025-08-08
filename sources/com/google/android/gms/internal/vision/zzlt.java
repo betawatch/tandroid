@@ -9,12 +9,12 @@ final class zzlt implements zzls {
     }
 
     @Override // com.google.android.gms.internal.vision.zzls
-    public final byte zza(int i) {
-        return this.zza.zza(i);
+    public final int zza() {
+        return this.zza.zza();
     }
 
     @Override // com.google.android.gms.internal.vision.zzls
-    public final int zza() {
-        return this.zza.zza();
+    public final byte zza(int i) {
+        return this.zza.zza(i);
     }
 }

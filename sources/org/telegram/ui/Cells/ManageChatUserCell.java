@@ -57,6 +57,11 @@ public class ManageChatUserCell extends FrameLayout {
         boolean onOptionsButtonCheck(ManageChatUserCell manageChatUserCell, boolean z);
     }
 
+    @Override // android.view.View
+    public boolean hasOverlappingRendering() {
+        return false;
+    }
+
     public ManageChatUserCell(Context context, int i, int i2, boolean z) {
         this(context, i, i2, z, null);
     }
@@ -74,19 +79,19 @@ public class ManageChatUserCell extends FrameLayout {
         BackupImageView backupImageView = new BackupImageView(context) { // from class: org.telegram.ui.Cells.ManageChatUserCell.1
             @Override // org.telegram.ui.Components.BackupImageView, android.view.View
             protected void onDraw(Canvas canvas) {
-                if (ManageChatUserCell.this.storyItem == null) {
-                    super.onDraw(canvas);
+                if (ManageChatUserCell.this.storyItem != null) {
+                    float dp = AndroidUtilities.dp(1.0f);
+                    ManageChatUserCell.this.storyAvatarParams.originalAvatarRect.set(dp, dp, getMeasuredWidth() - r0, getMeasuredHeight() - r0);
+                    ManageChatUserCell.this.storyAvatarParams.drawSegments = false;
+                    ManageChatUserCell.this.storyAvatarParams.animate = false;
+                    ManageChatUserCell.this.storyAvatarParams.drawInside = true;
+                    ManageChatUserCell.this.storyAvatarParams.isArchive = false;
+                    ManageChatUserCell.this.storyAvatarParams.resourcesProvider = resourcesProvider;
+                    ManageChatUserCell.this.storyAvatarParams.storyItem = ManageChatUserCell.this.storyItem;
+                    StoriesUtilities.drawAvatarWithStory(ManageChatUserCell.this.storyItem.dialogId, canvas, this.imageReceiver, ManageChatUserCell.this.storyAvatarParams);
                     return;
                 }
-                float dp = AndroidUtilities.dp(1.0f);
-                ManageChatUserCell.this.storyAvatarParams.originalAvatarRect.set(dp, dp, getMeasuredWidth() - r0, getMeasuredHeight() - r0);
-                ManageChatUserCell.this.storyAvatarParams.drawSegments = false;
-                ManageChatUserCell.this.storyAvatarParams.animate = false;
-                ManageChatUserCell.this.storyAvatarParams.drawInside = true;
-                ManageChatUserCell.this.storyAvatarParams.isArchive = false;
-                ManageChatUserCell.this.storyAvatarParams.resourcesProvider = resourcesProvider;
-                ManageChatUserCell.this.storyAvatarParams.storyItem = ManageChatUserCell.this.storyItem;
-                StoriesUtilities.drawAvatarWithStory(ManageChatUserCell.this.storyItem.dialogId, canvas, this.imageReceiver, ManageChatUserCell.this.storyAvatarParams);
+                super.onDraw(canvas);
             }
         };
         this.avatarImageView = backupImageView;
@@ -132,61 +137,21 @@ public class ManageChatUserCell extends FrameLayout {
         this.delegate.onOptionsButtonCheck(this, true);
     }
 
-    public BackupImageView getAvatarImageView() {
-        return this.avatarImageView;
-    }
-
-    public Object getCurrentObject() {
-        return this.currentObject;
-    }
-
-    public StoriesUtilities.AvatarStoryParams getStoryAvatarParams() {
-        return this.storyAvatarParams;
+    public void setStoryItem(TL_stories.StoryItem storyItem, View.OnClickListener onClickListener) {
+        this.storyItem = storyItem;
+        this.avatarImageView.setOnClickListener(onClickListener);
     }
 
     public TL_stories.StoryItem getStoryItem() {
         return this.storyItem;
     }
 
-    public long getUserId() {
-        Object obj = this.currentObject;
-        if (obj instanceof TLRPC.User) {
-            return ((TLRPC.User) obj).id;
-        }
-        return 0L;
+    public BackupImageView getAvatarImageView() {
+        return this.avatarImageView;
     }
 
-    @Override // android.view.View
-    public boolean hasOverlappingRendering() {
-        return false;
-    }
-
-    @Override // android.view.View
-    protected void onDraw(Canvas canvas) {
-        if (this.needDivider) {
-            int i = this.dividerColor;
-            if (i >= 0) {
-                Theme.dividerExtraPaint.setColor(Theme.getColor(i, this.resourcesProvider));
-            }
-            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(68.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(68.0f) : 0), getMeasuredHeight() - 1, this.dividerColor >= 0 ? Theme.dividerExtraPaint : Theme.dividerPaint);
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f) + (this.needDivider ? 1 : 0), TLObject.FLAG_30));
-    }
-
-    public void recycle() {
-        this.avatarImageView.getImageReceiver().cancelLoadImage();
-    }
-
-    public void setCustomImageVisible(boolean z) {
-        ImageView imageView = this.customImageView;
-        if (imageView == null) {
-            return;
-        }
-        imageView.setVisibility(z ? 0 : 8);
+    public StoriesUtilities.AvatarStoryParams getStoryAvatarParams() {
+        return this.storyAvatarParams;
     }
 
     public void setCustomRightImage(int i) {
@@ -198,9 +163,15 @@ public class ManageChatUserCell extends FrameLayout {
         addView(this.customImageView, LayoutHelper.createFrame(52, 64, (LocaleController.isRTL ? 3 : 5) | 48));
     }
 
+    public void setCustomImageVisible(boolean z) {
+        ImageView imageView = this.customImageView;
+        if (imageView == null) {
+            return;
+        }
+        imageView.setVisibility(z ? 0 : 8);
+    }
+
     public void setData(Object obj, CharSequence charSequence, CharSequence charSequence2, boolean z) {
-        SimpleTextView simpleTextView;
-        int i;
         float f;
         float f2;
         if (obj == null) {
@@ -215,58 +186,62 @@ public class ManageChatUserCell extends FrameLayout {
         this.currentStatus = charSequence2;
         this.currentName = charSequence;
         this.currentObject = obj;
-        int i2 = 28;
-        if (this.optionsButton == null) {
+        if (this.optionsButton != null) {
+            boolean onOptionsButtonCheck = this.delegate.onOptionsButtonCheck(this, false);
+            this.optionsButton.setVisibility(onOptionsButtonCheck ? 0 : 4);
+            SimpleTextView simpleTextView = this.nameTextView;
+            boolean z2 = LocaleController.isRTL;
+            simpleTextView.setLayoutParams(LayoutHelper.createFrame(-1, 20.0f, (z2 ? 5 : 3) | 48, z2 ? onOptionsButtonCheck ? 46 : 28 : this.namePadding + 68, (charSequence2 == null || charSequence2.length() > 0) ? 11.5f : 20.5f, LocaleController.isRTL ? this.namePadding + 68 : onOptionsButtonCheck ? 46 : 28, 0.0f));
+            SimpleTextView simpleTextView2 = this.statusTextView;
+            boolean z3 = LocaleController.isRTL;
+            int i = (z3 ? 5 : 3) | 48;
+            float f3 = z3 ? onOptionsButtonCheck ? 46 : 28 : this.namePadding + 68;
+            if (z3) {
+                f2 = this.namePadding + 68;
+            } else {
+                f2 = onOptionsButtonCheck ? 46 : 28;
+            }
+            simpleTextView2.setLayoutParams(LayoutHelper.createFrame(-1, 20.0f, i, f3, 34.5f, f2, 0.0f));
+        } else {
             ImageView imageView = this.customImageView;
             if (imageView != null) {
-                boolean z2 = imageView.getVisibility() == 0;
-                SimpleTextView simpleTextView2 = this.nameTextView;
-                boolean z3 = LocaleController.isRTL;
-                simpleTextView2.setLayoutParams(LayoutHelper.createFrame(-1, 20.0f, (z3 ? 5 : 3) | 48, z3 ? z2 ? 54 : 28 : this.namePadding + 68, (charSequence2 == null || charSequence2.length() > 0) ? 11.5f : 20.5f, LocaleController.isRTL ? this.namePadding + 68 : z2 ? 54 : 28, 0.0f));
-                simpleTextView = this.statusTextView;
-                boolean z4 = LocaleController.isRTL;
-                i = (z4 ? 5 : 3) | 48;
-                f = z4 ? z2 ? 54 : 28 : this.namePadding + 68;
-                if (!z4) {
-                    if (z2) {
-                        i2 = 54;
-                    }
-                    f2 = i2;
+                boolean z4 = imageView.getVisibility() == 0;
+                SimpleTextView simpleTextView3 = this.nameTextView;
+                boolean z5 = LocaleController.isRTL;
+                simpleTextView3.setLayoutParams(LayoutHelper.createFrame(-1, 20.0f, (z5 ? 5 : 3) | 48, z5 ? z4 ? 54 : 28 : this.namePadding + 68, (charSequence2 == null || charSequence2.length() > 0) ? 11.5f : 20.5f, LocaleController.isRTL ? this.namePadding + 68 : z4 ? 54 : 28, 0.0f));
+                SimpleTextView simpleTextView4 = this.statusTextView;
+                boolean z6 = LocaleController.isRTL;
+                int i2 = (z6 ? 5 : 3) | 48;
+                float f4 = z6 ? z4 ? 54 : 28 : this.namePadding + 68;
+                if (z6) {
+                    f = this.namePadding + 68;
+                } else {
+                    f = z4 ? 54 : 28;
                 }
-                f2 = this.namePadding + 68;
+                simpleTextView4.setLayoutParams(LayoutHelper.createFrame(-1, 20.0f, i2, f4, 34.5f, f, 0.0f));
             }
-            this.needDivider = z;
-            setWillNotDraw(!z);
-            update(0);
         }
-        boolean onOptionsButtonCheck = this.delegate.onOptionsButtonCheck(this, false);
-        this.optionsButton.setVisibility(onOptionsButtonCheck ? 0 : 4);
-        SimpleTextView simpleTextView3 = this.nameTextView;
-        boolean z5 = LocaleController.isRTL;
-        simpleTextView3.setLayoutParams(LayoutHelper.createFrame(-1, 20.0f, (z5 ? 5 : 3) | 48, z5 ? onOptionsButtonCheck ? 46 : 28 : this.namePadding + 68, (charSequence2 == null || charSequence2.length() > 0) ? 11.5f : 20.5f, LocaleController.isRTL ? this.namePadding + 68 : onOptionsButtonCheck ? 46 : 28, 0.0f));
-        simpleTextView = this.statusTextView;
-        boolean z6 = LocaleController.isRTL;
-        i = (z6 ? 5 : 3) | 48;
-        f = z6 ? onOptionsButtonCheck ? 46 : 28 : this.namePadding + 68;
-        if (!z6) {
-            if (onOptionsButtonCheck) {
-                i2 = 46;
-            }
-            f2 = i2;
-        }
-        f2 = this.namePadding + 68;
-        simpleTextView.setLayoutParams(LayoutHelper.createFrame(-1, 20.0f, i, f, 34.5f, f2, 0.0f));
         this.needDivider = z;
         setWillNotDraw(!z);
         update(0);
     }
 
-    public void setDelegate(ManageChatUserCellDelegate manageChatUserCellDelegate) {
-        this.delegate = manageChatUserCellDelegate;
+    @Override // android.widget.FrameLayout, android.view.View
+    protected void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f) + (this.needDivider ? 1 : 0), TLObject.FLAG_30));
     }
 
-    public void setDividerColor(int i) {
-        this.dividerColor = i;
+    public long getUserId() {
+        Object obj = this.currentObject;
+        if (obj instanceof TLRPC.User) {
+            return ((TLRPC.User) obj).id;
+        }
+        return 0L;
+    }
+
+    public void setStatusColors(int i, int i2) {
+        this.statusColor = i;
+        this.statusOnlineColor = i2;
     }
 
     public void setIsAdmin(boolean z) {
@@ -277,17 +252,11 @@ public class ManageChatUserCell extends FrameLayout {
         this.nameTextView.setTextColor(i);
     }
 
-    public void setStatusColors(int i, int i2) {
-        this.statusColor = i;
-        this.statusOnlineColor = i2;
+    public void setDividerColor(int i) {
+        this.dividerColor = i;
     }
 
-    public void setStoryItem(TL_stories.StoryItem storyItem, View.OnClickListener onClickListener) {
-        this.storyItem = storyItem;
-        this.avatarImageView.setOnClickListener(onClickListener);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:105:0x016d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:103:0x0197, code lost:
     
         if (r12.equals(r6) == false) goto L118;
      */
@@ -295,23 +264,15 @@ public class ManageChatUserCell extends FrameLayout {
     
         if (r12.equals(r11.lastName) == false) goto L48;
      */
-    /* JADX WARN: Multi-variable type inference failed */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void update(int i) {
-        TLRPC.FileLocation fileLocation;
         String str;
-        SimpleTextView simpleTextView;
-        int i2;
-        CharSequence formatPluralString;
-        TLRPC.FileLocation fileLocation2;
-        TLRPC.Chat chat;
-        TLRPC.Chat chat2;
-        TLRPC.Chat chat3;
+        TLRPC.FileLocation fileLocation;
         String str2;
         TLRPC.UserStatus userStatus;
-        TLRPC.FileLocation fileLocation3;
+        TLRPC.FileLocation fileLocation2;
         Object obj = this.currentObject;
         if (obj == null) {
             return;
@@ -320,9 +281,9 @@ public class ManageChatUserCell extends FrameLayout {
         if (obj instanceof TLRPC.User) {
             TLRPC.User user = (TLRPC.User) obj;
             TLRPC.UserProfilePhoto userProfilePhoto = user.photo;
-            fileLocation = userProfilePhoto != null ? userProfilePhoto.photo_small : null;
+            TLRPC.FileLocation fileLocation3 = userProfilePhoto != null ? userProfilePhoto.photo_small : null;
             if (i != 0) {
-                boolean z2 = (MessagesController.UPDATE_MASK_AVATAR & i) != 0 && (((fileLocation3 = this.lastAvatar) != null && fileLocation == null) || ((fileLocation3 == null && fileLocation != null) || !(fileLocation3 == null || (fileLocation3.volume_id == fileLocation.volume_id && fileLocation3.local_id == fileLocation.local_id))));
+                boolean z2 = (MessagesController.UPDATE_MASK_AVATAR & i) != 0 && (((fileLocation2 = this.lastAvatar) != null && fileLocation3 == null) || ((fileLocation2 == null && fileLocation3 != null) || !(fileLocation2 == null || (fileLocation2.volume_id == fileLocation3.volume_id && fileLocation2.local_id == fileLocation3.local_id))));
                 if (!z2 && (MessagesController.UPDATE_MASK_STATUS & i) != 0) {
                     TLRPC.UserStatus userStatus2 = user.status;
                     if ((userStatus2 != null ? userStatus2.expires : 0) != this.lastStatus) {
@@ -357,61 +318,40 @@ public class ManageChatUserCell extends FrameLayout {
                     str2 = UserObject.getUserName(user);
                 }
                 this.lastName = str2;
-                SimpleTextView simpleTextView2 = this.nameTextView;
-                simpleTextView2.setText(Emoji.replaceEmoji(str2, simpleTextView2.getPaint().getFontMetricsInt(), false));
+                SimpleTextView simpleTextView = this.nameTextView;
+                simpleTextView.setText(Emoji.replaceEmoji(str2, simpleTextView.getPaint().getFontMetricsInt(), false));
             }
-            chat = user;
-            if (this.currentStatus == null) {
-                if (user.bot) {
-                    this.statusTextView.setTextColor(this.statusColor);
-                    if (user.bot_chat_history || this.isAdmin) {
-                        simpleTextView = this.statusTextView;
-                        i2 = R.string.BotStatusRead;
-                        chat3 = user;
-                    } else {
-                        simpleTextView = this.statusTextView;
-                        i2 = R.string.BotStatusCantRead;
-                        chat3 = user;
-                    }
-                } else if (user.id == UserConfig.getInstance(this.currentAccount).getClientUserId() || (((userStatus = user.status) != null && userStatus.expires > ConnectionsManager.getInstance(this.currentAccount).getCurrentTime()) || MessagesController.getInstance(this.currentAccount).onlinePrivacy.containsKey(Long.valueOf(user.id)))) {
-                    this.statusTextView.setTextColor(this.statusOnlineColor);
-                    simpleTextView = this.statusTextView;
-                    i2 = R.string.Online;
-                    chat3 = user;
+            if (this.currentStatus != null) {
+                this.statusTextView.setTextColor(this.statusColor);
+                this.statusTextView.setText(this.currentStatus);
+            } else if (user.bot) {
+                this.statusTextView.setTextColor(this.statusColor);
+                if (user.bot_chat_history || this.isAdmin) {
+                    this.statusTextView.setText(LocaleController.getString(R.string.BotStatusRead));
                 } else {
-                    this.statusTextView.setTextColor(this.statusColor);
-                    simpleTextView = this.statusTextView;
-                    formatPluralString = LocaleController.formatUserStatus(this.currentAccount, user);
-                    chat2 = user;
+                    this.statusTextView.setText(LocaleController.getString(R.string.BotStatusCantRead));
                 }
-                formatPluralString = LocaleController.getString(i2);
-                chat2 = chat3;
+            } else if (user.id == UserConfig.getInstance(this.currentAccount).getClientUserId() || (((userStatus = user.status) != null && userStatus.expires > ConnectionsManager.getInstance(this.currentAccount).getCurrentTime()) || MessagesController.getInstance(this.currentAccount).onlinePrivacy.containsKey(Long.valueOf(user.id)))) {
+                this.statusTextView.setTextColor(this.statusOnlineColor);
+                this.statusTextView.setText(LocaleController.getString(R.string.Online));
+            } else {
+                this.statusTextView.setTextColor(this.statusColor);
+                this.statusTextView.setText(LocaleController.formatUserStatus(this.currentAccount, user));
             }
-            this.statusTextView.setTextColor(this.statusColor);
-            simpleTextView = this.statusTextView;
-            formatPluralString = this.currentStatus;
-            chat2 = chat;
-        } else {
-            if (!(obj instanceof TLRPC.Chat)) {
-                if (obj instanceof Integer) {
-                    this.nameTextView.setText(this.currentName);
-                    this.statusTextView.setTextColor(this.statusColor);
-                    this.statusTextView.setText(this.currentStatus);
-                    this.avatarDrawable.setAvatarType(3);
-                    this.avatarImageView.setImage(null, "50_50", this.avatarDrawable);
-                    return;
-                }
-                return;
-            }
-            TLRPC.Chat chat4 = (TLRPC.Chat) obj;
-            TLRPC.ChatPhoto chatPhoto = chat4.photo;
-            fileLocation = chatPhoto != null ? chatPhoto.photo_small : null;
+            this.lastAvatar = fileLocation3;
+            this.avatarImageView.setForUserOrChat(user, this.avatarDrawable);
+            return;
+        }
+        if (obj instanceof TLRPC.Chat) {
+            TLRPC.Chat chat = (TLRPC.Chat) obj;
+            TLRPC.ChatPhoto chatPhoto = chat.photo;
+            TLRPC.FileLocation fileLocation4 = chatPhoto != null ? chatPhoto.photo_small : null;
             if (i != 0) {
-                boolean z3 = (MessagesController.UPDATE_MASK_AVATAR & i) != 0 && (((fileLocation2 = this.lastAvatar) != null && fileLocation == null) || ((fileLocation2 == null && fileLocation != null) || !(fileLocation2 == null || (fileLocation2.volume_id == fileLocation.volume_id && fileLocation2.local_id == fileLocation.local_id))));
+                boolean z3 = (MessagesController.UPDATE_MASK_AVATAR & i) != 0 && (((fileLocation = this.lastAvatar) != null && fileLocation4 == null) || ((fileLocation == null && fileLocation4 != null) || !(fileLocation == null || (fileLocation.volume_id == fileLocation4.volume_id && fileLocation.local_id == fileLocation4.local_id))));
                 if (z3 || this.currentName != null || (r6 = this.lastName) == null || (i & MessagesController.UPDATE_MASK_NAME) == 0) {
                     str = null;
                 } else {
-                    str = chat4.title;
+                    str = chat.title;
                 }
                 z = z3;
                 if (!z) {
@@ -420,54 +360,70 @@ public class ManageChatUserCell extends FrameLayout {
             } else {
                 str = null;
             }
-            this.avatarDrawable.setInfo(this.currentAccount, chat4);
+            this.avatarDrawable.setInfo(this.currentAccount, chat);
             CharSequence charSequence2 = this.currentName;
             if (charSequence2 != null) {
                 this.lastName = null;
                 this.nameTextView.setText(charSequence2);
             } else {
                 if (str == null) {
-                    str = chat4.title;
+                    str = chat.title;
                 }
                 this.lastName = str;
                 this.nameTextView.setText(str);
             }
-            chat = chat4;
-            if (this.currentStatus == null) {
+            if (this.currentStatus != null) {
                 this.statusTextView.setTextColor(this.statusColor);
-                if (chat4.participants_count == 0) {
-                    if (chat4.has_geo) {
-                        simpleTextView = this.statusTextView;
-                        i2 = R.string.MegaLocation;
-                        chat3 = chat4;
-                    } else if (ChatObject.isPublic(chat4)) {
-                        simpleTextView = this.statusTextView;
-                        i2 = R.string.MegaPublic;
-                        chat3 = chat4;
+                this.statusTextView.setText(this.currentStatus);
+            } else {
+                this.statusTextView.setTextColor(this.statusColor);
+                if (chat.participants_count != 0) {
+                    if (ChatObject.isChannel(chat) && !chat.megagroup) {
+                        this.statusTextView.setText(LocaleController.formatPluralString("Subscribers", chat.participants_count, new Object[0]));
                     } else {
-                        simpleTextView = this.statusTextView;
-                        i2 = R.string.MegaPrivate;
-                        chat3 = chat4;
+                        this.statusTextView.setText(LocaleController.formatPluralString("Members", chat.participants_count, new Object[0]));
                     }
-                    formatPluralString = LocaleController.getString(i2);
-                    chat2 = chat3;
-                } else if (!ChatObject.isChannel(chat4) || chat4.megagroup) {
-                    simpleTextView = this.statusTextView;
-                    formatPluralString = LocaleController.formatPluralString("Members", chat4.participants_count, new Object[0]);
-                    chat2 = chat4;
+                } else if (chat.has_geo) {
+                    this.statusTextView.setText(LocaleController.getString(R.string.MegaLocation));
+                } else if (!ChatObject.isPublic(chat)) {
+                    this.statusTextView.setText(LocaleController.getString(R.string.MegaPrivate));
                 } else {
-                    simpleTextView = this.statusTextView;
-                    formatPluralString = LocaleController.formatPluralString("Subscribers", chat4.participants_count, new Object[0]);
-                    chat2 = chat4;
+                    this.statusTextView.setText(LocaleController.getString(R.string.MegaPublic));
                 }
             }
-            this.statusTextView.setTextColor(this.statusColor);
-            simpleTextView = this.statusTextView;
-            formatPluralString = this.currentStatus;
-            chat2 = chat;
+            this.lastAvatar = fileLocation4;
+            this.avatarImageView.setForUserOrChat(chat, this.avatarDrawable);
+            return;
         }
-        simpleTextView.setText(formatPluralString);
-        this.lastAvatar = fileLocation;
-        this.avatarImageView.setForUserOrChat(chat2, this.avatarDrawable);
+        if (obj instanceof Integer) {
+            this.nameTextView.setText(this.currentName);
+            this.statusTextView.setTextColor(this.statusColor);
+            this.statusTextView.setText(this.currentStatus);
+            this.avatarDrawable.setAvatarType(3);
+            this.avatarImageView.setImage(null, "50_50", this.avatarDrawable);
+        }
+    }
+
+    public void recycle() {
+        this.avatarImageView.getImageReceiver().cancelLoadImage();
+    }
+
+    public void setDelegate(ManageChatUserCellDelegate manageChatUserCellDelegate) {
+        this.delegate = manageChatUserCellDelegate;
+    }
+
+    public Object getCurrentObject() {
+        return this.currentObject;
+    }
+
+    @Override // android.view.View
+    protected void onDraw(Canvas canvas) {
+        if (this.needDivider) {
+            int i = this.dividerColor;
+            if (i >= 0) {
+                Theme.dividerExtraPaint.setColor(Theme.getColor(i, this.resourcesProvider));
+            }
+            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(68.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(68.0f) : 0), getMeasuredHeight() - 1, this.dividerColor >= 0 ? Theme.dividerExtraPaint : Theme.dividerPaint);
+        }
     }
 }

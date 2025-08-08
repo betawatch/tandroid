@@ -16,14 +16,65 @@ import java.net.URLConnection;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class ImageDownload implements Closeable {
     private volatile Future future;
     private Task task;
     private final URL url;
 
+    public static ImageDownload create(String str) {
+        if (TextUtils.isEmpty(str)) {
+            return null;
+        }
+        try {
+            return new ImageDownload(new URL(str));
+        } catch (MalformedURLException unused) {
+            Log.w("FirebaseMessaging", "Not downloading image, bad URL: " + str);
+            return null;
+        }
+    }
+
     private ImageDownload(URL url) {
         this.url = url;
+    }
+
+    public void start(ExecutorService executorService) {
+        final TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
+        this.future = executorService.submit(new Runnable() { // from class: com.google.firebase.messaging.ImageDownload$$ExternalSyntheticLambda0
+            @Override // java.lang.Runnable
+            public final void run() {
+                ImageDownload.this.lambda$start$0(taskCompletionSource);
+            }
+        });
+        this.task = taskCompletionSource.getTask();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$start$0(TaskCompletionSource taskCompletionSource) {
+        try {
+            taskCompletionSource.setResult(blockingDownload());
+        } catch (Exception e) {
+            taskCompletionSource.setException(e);
+        }
+    }
+
+    public Task getTask() {
+        return (Task) Preconditions.checkNotNull(this.task);
+    }
+
+    public Bitmap blockingDownload() {
+        if (Log.isLoggable("FirebaseMessaging", 4)) {
+            Log.i("FirebaseMessaging", "Starting download of: " + this.url);
+        }
+        byte[] blockingDownloadBytes = blockingDownloadBytes();
+        Bitmap decodeByteArray = BitmapFactory.decodeByteArray(blockingDownloadBytes, 0, blockingDownloadBytes.length);
+        if (decodeByteArray == null) {
+            throw new IOException("Failed to decode image: " + this.url);
+        }
+        if (Log.isLoggable("FirebaseMessaging", 3)) {
+            Log.d("FirebaseMessaging", "Successfully downloaded image: " + this.url);
+        }
+        return decodeByteArray;
     }
 
     private byte[] blockingDownloadBytes() {
@@ -56,59 +107,8 @@ public class ImageDownload implements Closeable {
         }
     }
 
-    public static ImageDownload create(String str) {
-        if (TextUtils.isEmpty(str)) {
-            return null;
-        }
-        try {
-            return new ImageDownload(new URL(str));
-        } catch (MalformedURLException unused) {
-            Log.w("FirebaseMessaging", "Not downloading image, bad URL: " + str);
-            return null;
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$start$0(TaskCompletionSource taskCompletionSource) {
-        try {
-            taskCompletionSource.setResult(blockingDownload());
-        } catch (Exception e) {
-            taskCompletionSource.setException(e);
-        }
-    }
-
-    public Bitmap blockingDownload() {
-        if (Log.isLoggable("FirebaseMessaging", 4)) {
-            Log.i("FirebaseMessaging", "Starting download of: " + this.url);
-        }
-        byte[] blockingDownloadBytes = blockingDownloadBytes();
-        Bitmap decodeByteArray = BitmapFactory.decodeByteArray(blockingDownloadBytes, 0, blockingDownloadBytes.length);
-        if (decodeByteArray == null) {
-            throw new IOException("Failed to decode image: " + this.url);
-        }
-        if (Log.isLoggable("FirebaseMessaging", 3)) {
-            Log.d("FirebaseMessaging", "Successfully downloaded image: " + this.url);
-        }
-        return decodeByteArray;
-    }
-
     @Override // java.io.Closeable, java.lang.AutoCloseable
     public void close() {
         this.future.cancel(true);
-    }
-
-    public Task getTask() {
-        return (Task) Preconditions.checkNotNull(this.task);
-    }
-
-    public void start(ExecutorService executorService) {
-        final TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        this.future = executorService.submit(new Runnable() { // from class: com.google.firebase.messaging.ImageDownload$$ExternalSyntheticLambda0
-            @Override // java.lang.Runnable
-            public final void run() {
-                ImageDownload.this.lambda$start$0(taskCompletionSource);
-            }
-        });
-        this.task = taskCompletionSource.getTask();
     }
 }

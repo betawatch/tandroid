@@ -1,6 +1,6 @@
 package com.android.billingclient.api;
 
-import com.google.android.gms.internal.play_billing.zzb;
+import com.google.android.gms.internal.play_billing.zze;
 
 /* loaded from: classes.dex */
 public final class BillingResult {
@@ -11,7 +11,7 @@ public final class BillingResult {
         private int zza;
         private String zzb = "";
 
-        /* synthetic */ Builder(zzas zzasVar) {
+        /* synthetic */ Builder(zzci zzciVar) {
         }
 
         public BillingResult build() {
@@ -45,6 +45,6 @@ public final class BillingResult {
     }
 
     public String toString() {
-        return "Response Code: " + zzb.zzg(this.zza) + ", Debug Message: " + this.zzb;
+        return "Response Code: " + zze.zzi(this.zza) + ", Debug Message: " + this.zzb;
     }
 }

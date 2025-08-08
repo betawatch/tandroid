@@ -8,14 +8,13 @@ import java.nio.FloatBuffer;
 
 /* loaded from: classes5.dex */
 public class GlUtil {
+    private GlUtil() {
+    }
 
     public static class GlOutOfMemoryException extends GLException {
         public GlOutOfMemoryException(int i, String str) {
             super(i, str);
         }
-    }
-
-    private GlUtil() {
     }
 
     public static void checkNoGLES2Error(String str) {

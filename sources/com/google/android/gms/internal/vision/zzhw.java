@@ -33,13 +33,13 @@ final class zzhw extends zzid {
     }
 
     @Override // com.google.android.gms.internal.vision.zzid, com.google.android.gms.internal.vision.zzht
-    public final int zza() {
-        return this.zzd;
+    final byte zzb(int i) {
+        return this.zzb[this.zzc + i];
     }
 
     @Override // com.google.android.gms.internal.vision.zzid, com.google.android.gms.internal.vision.zzht
-    final byte zzb(int i) {
-        return this.zzb[this.zzc + i];
+    public final int zza() {
+        return this.zzd;
     }
 
     @Override // com.google.android.gms.internal.vision.zzid

@@ -13,7 +13,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class ColoredImageSpan extends ReplacementSpan {
     private float alpha;
     private Runnable checkColorDelegate;
@@ -41,12 +41,12 @@ public class ColoredImageSpan extends ReplacementSpan {
         this(i, 0);
     }
 
-    public ColoredImageSpan(int i, int i2) {
-        this(ContextCompat.getDrawable(ApplicationLoader.applicationContext, i).mutate(), i2);
-    }
-
     public ColoredImageSpan(Drawable drawable) {
         this(drawable, 0);
+    }
+
+    public ColoredImageSpan(int i, int i2) {
+        this(ContextCompat.getDrawable(ApplicationLoader.applicationContext, i).mutate(), i2);
     }
 
     public ColoredImageSpan(Drawable drawable, int i) {
@@ -65,10 +65,75 @@ public class ColoredImageSpan extends ReplacementSpan {
         this.verticalAlignment = i;
     }
 
+    public void setRelativeSize(Paint.FontMetricsInt fontMetricsInt) {
+        this.isRelativeSize = true;
+        this.fontMetrics = fontMetricsInt;
+        if (fontMetricsInt != null) {
+            setSize(Math.abs(fontMetricsInt.descent) + Math.abs(this.fontMetrics.ascent));
+            if (this.size == 0) {
+                setSize(AndroidUtilities.dp(20.0f));
+            }
+        }
+    }
+
+    public void setSize(int i) {
+        this.size = i;
+        this.drawable.setBounds(0, 0, i, i);
+    }
+
+    public void setTranslateX(float f) {
+        this.translateX = f;
+    }
+
+    public void setTranslateY(float f) {
+        this.translateY = f;
+    }
+
+    public void translate(float f, float f2) {
+        this.translateX = f;
+        this.translateY = f2;
+    }
+
+    public void rotate(float f) {
+        this.rotate = f;
+    }
+
+    public void setWidth(int i) {
+        this.sizeWidth = i;
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public int getSize(Paint paint, CharSequence charSequence, int i, int i2, Paint.FontMetricsInt fontMetricsInt) {
+        float abs;
+        int i3;
+        if (this.isRelativeSize && this.fontMetrics != null) {
+            if (fontMetricsInt == null) {
+                fontMetricsInt = new Paint.FontMetricsInt();
+            }
+            Paint.FontMetricsInt fontMetricsInt2 = this.fontMetrics;
+            fontMetricsInt.ascent = fontMetricsInt2.ascent;
+            fontMetricsInt.descent = fontMetricsInt2.descent;
+            fontMetricsInt.top = fontMetricsInt2.top;
+            fontMetricsInt.bottom = fontMetricsInt2.bottom;
+            abs = Math.abs(this.scaleX) * Math.abs(this.spaceScaleX);
+            i3 = this.size;
+        } else if (this.sizeWidth != 0) {
+            abs = Math.abs(this.scaleX);
+            i3 = this.sizeWidth;
+        } else {
+            abs = Math.abs(this.scaleX) * Math.abs(this.spaceScaleX);
+            i3 = this.size;
+            if (i3 == 0) {
+                i3 = this.drawable.getIntrinsicWidth();
+            }
+        }
+        return (int) (abs * i3);
+    }
+
     /* JADX WARN: Removed duplicated region for block: B:10:0x005f  */
     /* JADX WARN: Removed duplicated region for block: B:23:0x009d  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0057  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0037  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0057  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x0037  */
     /* JADX WARN: Removed duplicated region for block: B:7:0x0050  */
     @Override // android.text.style.ReplacementSpan
     /*
@@ -77,8 +142,6 @@ public class ColoredImageSpan extends ReplacementSpan {
     public void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
         boolean z;
         int i6;
-        float alpha;
-        float f2;
         Runnable runnable = this.checkColorDelegate;
         if (runnable != null) {
             runnable.run();
@@ -115,23 +178,19 @@ public class ColoredImageSpan extends ReplacementSpan {
                         }
                         canvas.translate(f + this.translateX, i8 + this.translateY);
                         if (this.drawable != null) {
-                            float f3 = this.scaleX;
-                            if (f3 != 1.0f || this.scaleY != 1.0f) {
-                                canvas.scale(f3, this.scaleY, 0.0f, r5.getBounds().centerY());
+                            float f2 = this.scaleX;
+                            if (f2 != 1.0f || this.scaleY != 1.0f) {
+                                canvas.scale(f2, this.scaleY, 0.0f, r5.getBounds().centerY());
                             }
-                            float f4 = this.rotate;
-                            if (f4 != 1.0f) {
-                                canvas.rotate(f4, this.drawable.getBounds().centerX(), this.drawable.getBounds().centerY());
+                            float f3 = this.rotate;
+                            if (f3 != 1.0f) {
+                                canvas.rotate(f3, this.drawable.getBounds().centerX(), this.drawable.getBounds().centerY());
                             }
-                            Drawable drawable3 = this.drawable;
                             if (z) {
-                                alpha = this.alpha * 255.0f;
-                                f2 = paint.getAlpha() / Color.alpha(this.drawableColor);
+                                this.drawable.setAlpha((int) (this.alpha * 255.0f * (paint.getAlpha() / Color.alpha(this.drawableColor))));
                             } else {
-                                alpha = paint.getAlpha();
-                                f2 = this.alpha;
+                                this.drawable.setAlpha((int) (paint.getAlpha() * this.alpha));
                             }
-                            drawable3.setAlpha((int) (alpha * f2));
                             this.drawable.draw(canvas);
                         }
                         canvas.restore();
@@ -143,8 +202,8 @@ public class ColoredImageSpan extends ReplacementSpan {
             if (this.drawableColor != i7) {
             }
             canvas.save();
-            Drawable drawable4 = this.drawable;
-            int i82 = i5 - (drawable4 != null ? drawable4.getBounds().bottom : i5);
+            Drawable drawable3 = this.drawable;
+            int i82 = i5 - (drawable3 != null ? drawable3.getBounds().bottom : i5);
             i6 = this.verticalAlignment;
             if (i6 != 1) {
             }
@@ -155,8 +214,8 @@ public class ColoredImageSpan extends ReplacementSpan {
         }
         z = false;
         canvas.save();
-        Drawable drawable42 = this.drawable;
-        int i822 = i5 - (drawable42 != null ? drawable42.getBounds().bottom : i5);
+        Drawable drawable32 = this.drawable;
+        int i822 = i5 - (drawable32 != null ? drawable32.getBounds().bottom : i5);
         i6 = this.verticalAlignment;
         if (i6 != 1) {
         }
@@ -166,60 +225,13 @@ public class ColoredImageSpan extends ReplacementSpan {
         canvas.restore();
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public int getSize(Paint paint, CharSequence charSequence, int i, int i2, Paint.FontMetricsInt fontMetricsInt) {
-        float abs;
-        int i3;
-        if (this.isRelativeSize && this.fontMetrics != null) {
-            if (fontMetricsInt == null) {
-                fontMetricsInt = new Paint.FontMetricsInt();
-            }
-            Paint.FontMetricsInt fontMetricsInt2 = this.fontMetrics;
-            fontMetricsInt.ascent = fontMetricsInt2.ascent;
-            fontMetricsInt.descent = fontMetricsInt2.descent;
-            fontMetricsInt.top = fontMetricsInt2.top;
-            fontMetricsInt.bottom = fontMetricsInt2.bottom;
-            abs = Math.abs(this.scaleX) * Math.abs(this.spaceScaleX);
-            i3 = this.size;
-        } else if (this.sizeWidth != 0) {
-            abs = Math.abs(this.scaleX);
-            i3 = this.sizeWidth;
-        } else {
-            abs = Math.abs(this.scaleX) * Math.abs(this.spaceScaleX);
-            i3 = this.size;
-            if (i3 == 0) {
-                i3 = this.drawable.getIntrinsicWidth();
-            }
-        }
-        return (int) (abs * i3);
-    }
-
-    public void rotate(float f) {
-        this.rotate = f;
-    }
-
-    public void setAlpha(float f) {
-        this.alpha = f;
-    }
-
     public void setColorKey(int i) {
         this.colorKey = i;
         this.usePaintColor = i < 0;
     }
 
-    public void setOverrideColor(int i) {
-        this.overrideColor = i;
-    }
-
-    public void setRelativeSize(Paint.FontMetricsInt fontMetricsInt) {
-        this.isRelativeSize = true;
-        this.fontMetrics = fontMetricsInt;
-        if (fontMetricsInt != null) {
-            setSize(Math.abs(fontMetricsInt.descent) + Math.abs(this.fontMetrics.ascent));
-            if (this.size == 0) {
-                setSize(AndroidUtilities.dp(20.0f));
-            }
-        }
+    public void setTopOffset(int i) {
+        this.topOffset = i;
     }
 
     public void setScale(float f) {
@@ -231,29 +243,11 @@ public class ColoredImageSpan extends ReplacementSpan {
         this.scaleY = f2;
     }
 
-    public void setSize(int i) {
-        this.size = i;
-        this.drawable.setBounds(0, 0, i, i);
+    public void setOverrideColor(int i) {
+        this.overrideColor = i;
     }
 
-    public void setTopOffset(int i) {
-        this.topOffset = i;
-    }
-
-    public void setTranslateX(float f) {
-        this.translateX = f;
-    }
-
-    public void setTranslateY(float f) {
-        this.translateY = f;
-    }
-
-    public void setWidth(int i) {
-        this.sizeWidth = i;
-    }
-
-    public void translate(float f, float f2) {
-        this.translateX = f;
-        this.translateY = f2;
+    public void setAlpha(float f) {
+        this.alpha = f;
     }
 }

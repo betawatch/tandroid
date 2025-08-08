@@ -19,18 +19,43 @@ abstract class DeviceUtils {
     private static Boolean sIsWearable;
 
     static String getDialogChooserWifiWarningDescription(Context context) {
-        return context.getString((isPhone(context) || isFoldable(context)) ? R$string.mr_chooser_wifi_warning_description_phone : (isTablet(context) || isSevenInchTablet(context)) ? R$string.mr_chooser_wifi_warning_description_tablet : isTv(context) ? R$string.mr_chooser_wifi_warning_description_tv : isWearable(context) ? R$string.mr_chooser_wifi_warning_description_watch : isAuto(context) ? R$string.mr_chooser_wifi_warning_description_car : R$string.mr_chooser_wifi_warning_description_unknown);
-    }
-
-    private static boolean isAuto(Context context) {
-        return isAuto(context.getPackageManager());
-    }
-
-    private static boolean isAuto(PackageManager packageManager) {
-        if (sIsAuto == null) {
-            sIsAuto = Boolean.valueOf(Build.VERSION.SDK_INT >= 26 && packageManager.hasSystemFeature("android.hardware.type.automotive"));
+        if (isPhone(context) || isFoldable(context)) {
+            return context.getString(R$string.mr_chooser_wifi_warning_description_phone);
         }
-        return sIsAuto.booleanValue();
+        if (isTablet(context) || isSevenInchTablet(context)) {
+            return context.getString(R$string.mr_chooser_wifi_warning_description_tablet);
+        }
+        if (isTv(context)) {
+            return context.getString(R$string.mr_chooser_wifi_warning_description_tv);
+        }
+        if (isWearable(context)) {
+            return context.getString(R$string.mr_chooser_wifi_warning_description_watch);
+        }
+        if (isAuto(context)) {
+            return context.getString(R$string.mr_chooser_wifi_warning_description_car);
+        }
+        return context.getString(R$string.mr_chooser_wifi_warning_description_unknown);
+    }
+
+    private static boolean isPhone(Context context) {
+        if (sIsPhone == null) {
+            sIsPhone = Boolean.valueOf((isTablet(context) || isWearable(context) || isAuto(context) || isTv(context)) ? false : true);
+        }
+        return sIsPhone.booleanValue();
+    }
+
+    private static boolean isTablet(Context context) {
+        return isTablet(context.getResources());
+    }
+
+    private static boolean isTablet(Resources resources) {
+        if (resources == null) {
+            return false;
+        }
+        if (sIsTablet == null) {
+            sIsTablet = Boolean.valueOf((resources.getConfiguration().screenLayout & 15) > 3 || isSevenInchTablet(resources));
+        }
+        return sIsTablet.booleanValue();
     }
 
     private static boolean isFoldable(Context context) {
@@ -39,13 +64,6 @@ abstract class DeviceUtils {
             sIsFoldable = Boolean.valueOf((Build.VERSION.SDK_INT < 30 || sensorManager == null || sensorManager.getDefaultSensor(36) == null) ? false : true);
         }
         return sIsFoldable.booleanValue();
-    }
-
-    private static boolean isPhone(Context context) {
-        if (sIsPhone == null) {
-            sIsPhone = Boolean.valueOf((isTablet(context) || isWearable(context) || isAuto(context) || isTv(context)) ? false : true);
-        }
-        return sIsPhone.booleanValue();
     }
 
     private static boolean isSevenInchTablet(Context context) {
@@ -67,18 +85,26 @@ abstract class DeviceUtils {
         return sIsSevenInchTablet.booleanValue();
     }
 
-    private static boolean isTablet(Context context) {
-        return isTablet(context.getResources());
+    private static boolean isWearable(Context context) {
+        return isWearable(context.getPackageManager());
     }
 
-    private static boolean isTablet(Resources resources) {
-        if (resources == null) {
-            return false;
+    private static boolean isWearable(PackageManager packageManager) {
+        if (sIsWearable == null) {
+            sIsWearable = Boolean.valueOf(packageManager.hasSystemFeature("android.hardware.type.watch"));
         }
-        if (sIsTablet == null) {
-            sIsTablet = Boolean.valueOf((resources.getConfiguration().screenLayout & 15) > 3 || isSevenInchTablet(resources));
+        return sIsWearable.booleanValue();
+    }
+
+    private static boolean isAuto(Context context) {
+        return isAuto(context.getPackageManager());
+    }
+
+    private static boolean isAuto(PackageManager packageManager) {
+        if (sIsAuto == null) {
+            sIsAuto = Boolean.valueOf(Build.VERSION.SDK_INT >= 26 && packageManager.hasSystemFeature("android.hardware.type.automotive"));
         }
-        return sIsTablet.booleanValue();
+        return sIsAuto.booleanValue();
     }
 
     private static boolean isTv(Context context) {
@@ -90,16 +116,5 @@ abstract class DeviceUtils {
             sIsTv = Boolean.valueOf(packageManager.hasSystemFeature("com.google.android.tv") || packageManager.hasSystemFeature("android.hardware.type.television") || packageManager.hasSystemFeature("android.software.leanback"));
         }
         return sIsTv.booleanValue();
-    }
-
-    private static boolean isWearable(Context context) {
-        return isWearable(context.getPackageManager());
-    }
-
-    private static boolean isWearable(PackageManager packageManager) {
-        if (sIsWearable == null) {
-            sIsWearable = Boolean.valueOf(Build.VERSION.SDK_INT >= 20 && packageManager.hasSystemFeature("android.hardware.type.watch"));
-        }
-        return sIsWearable.booleanValue();
     }
 }

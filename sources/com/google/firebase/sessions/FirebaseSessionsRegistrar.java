@@ -16,13 +16,13 @@ import com.google.firebase.installations.FirebaseInstallationsApi;
 import com.google.firebase.platforminfo.LibraryVersionComponent;
 import com.google.firebase.sessions.settings.SessionsSettings;
 import java.util.List;
-import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.collections.CollectionsKt;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CoroutineDispatcher;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class FirebaseSessionsRegistrar implements ComponentRegistrar {
 
     @Deprecated
@@ -53,13 +53,61 @@ public final class FirebaseSessionsRegistrar implements ComponentRegistrar {
     @Deprecated
     private static final Qualified sessionsSettings = Qualified.unqualified(SessionsSettings.class);
 
-    private static final class Companion {
-        private Companion() {
-        }
-
-        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
-            this();
-        }
+    @Override // com.google.firebase.components.ComponentRegistrar
+    public List<Component> getComponents() {
+        Component.Builder name = Component.builder(FirebaseSessions.class).name(LIBRARY_NAME);
+        Qualified qualified = firebaseApp;
+        Component.Builder add = name.add(Dependency.required(qualified));
+        Qualified qualified2 = sessionsSettings;
+        Component.Builder add2 = add.add(Dependency.required(qualified2));
+        Qualified qualified3 = backgroundDispatcher;
+        Component build = add2.add(Dependency.required(qualified3)).factory(new ComponentFactory() { // from class: com.google.firebase.sessions.FirebaseSessionsRegistrar$$ExternalSyntheticLambda0
+            @Override // com.google.firebase.components.ComponentFactory
+            public final Object create(ComponentContainer componentContainer) {
+                FirebaseSessions firebaseSessions;
+                firebaseSessions = FirebaseSessionsRegistrar.getComponents$lambda-0(componentContainer);
+                return firebaseSessions;
+            }
+        }).eagerInDefaultApp().build();
+        Component build2 = Component.builder(SessionGenerator.class).name("session-generator").factory(new ComponentFactory() { // from class: com.google.firebase.sessions.FirebaseSessionsRegistrar$$ExternalSyntheticLambda1
+            @Override // com.google.firebase.components.ComponentFactory
+            public final Object create(ComponentContainer componentContainer) {
+                SessionGenerator sessionGenerator2;
+                sessionGenerator2 = FirebaseSessionsRegistrar.getComponents$lambda-1(componentContainer);
+                return sessionGenerator2;
+            }
+        }).build();
+        Component.Builder add3 = Component.builder(SessionFirelogPublisher.class).name("session-publisher").add(Dependency.required(qualified));
+        Qualified qualified4 = firebaseInstallationsApi;
+        return CollectionsKt.listOf((Object[]) new Component[]{build, build2, add3.add(Dependency.required(qualified4)).add(Dependency.required(qualified2)).add(Dependency.requiredProvider(transportFactory)).add(Dependency.required(qualified3)).factory(new ComponentFactory() { // from class: com.google.firebase.sessions.FirebaseSessionsRegistrar$$ExternalSyntheticLambda2
+            @Override // com.google.firebase.components.ComponentFactory
+            public final Object create(ComponentContainer componentContainer) {
+                SessionFirelogPublisher sessionFirelogPublisher2;
+                sessionFirelogPublisher2 = FirebaseSessionsRegistrar.getComponents$lambda-2(componentContainer);
+                return sessionFirelogPublisher2;
+            }
+        }).build(), Component.builder(SessionsSettings.class).name("sessions-settings").add(Dependency.required(qualified)).add(Dependency.required(blockingDispatcher)).add(Dependency.required(qualified3)).add(Dependency.required(qualified4)).factory(new ComponentFactory() { // from class: com.google.firebase.sessions.FirebaseSessionsRegistrar$$ExternalSyntheticLambda3
+            @Override // com.google.firebase.components.ComponentFactory
+            public final Object create(ComponentContainer componentContainer) {
+                SessionsSettings sessionsSettings2;
+                sessionsSettings2 = FirebaseSessionsRegistrar.getComponents$lambda-3(componentContainer);
+                return sessionsSettings2;
+            }
+        }).build(), Component.builder(SessionDatastore.class).name("sessions-datastore").add(Dependency.required(qualified)).add(Dependency.required(qualified3)).factory(new ComponentFactory() { // from class: com.google.firebase.sessions.FirebaseSessionsRegistrar$$ExternalSyntheticLambda4
+            @Override // com.google.firebase.components.ComponentFactory
+            public final Object create(ComponentContainer componentContainer) {
+                SessionDatastore sessionDatastore;
+                sessionDatastore = FirebaseSessionsRegistrar.getComponents$lambda-4(componentContainer);
+                return sessionDatastore;
+            }
+        }).build(), Component.builder(SessionLifecycleServiceBinder.class).name("sessions-service-binder").add(Dependency.required(qualified)).factory(new ComponentFactory() { // from class: com.google.firebase.sessions.FirebaseSessionsRegistrar$$ExternalSyntheticLambda5
+            @Override // com.google.firebase.components.ComponentFactory
+            public final Object create(ComponentContainer componentContainer) {
+                SessionLifecycleServiceBinder sessionLifecycleServiceBinder;
+                sessionLifecycleServiceBinder = FirebaseSessionsRegistrar.getComponents$lambda-5(componentContainer);
+                return sessionLifecycleServiceBinder;
+            }
+        }).build(), LibraryVersionComponent.create(LIBRARY_NAME, "1.2.0")});
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -126,62 +174,12 @@ public final class FirebaseSessionsRegistrar implements ComponentRegistrar {
         return new SessionLifecycleServiceBinderImpl((FirebaseApp) obj);
     }
 
-    @Override // com.google.firebase.components.ComponentRegistrar
-    public List<Component> getComponents() {
-        List<Component> listOf;
-        Component.Builder name = Component.builder(FirebaseSessions.class).name(LIBRARY_NAME);
-        Qualified qualified = firebaseApp;
-        Component.Builder add = name.add(Dependency.required(qualified));
-        Qualified qualified2 = sessionsSettings;
-        Component.Builder add2 = add.add(Dependency.required(qualified2));
-        Qualified qualified3 = backgroundDispatcher;
-        Component build = add2.add(Dependency.required(qualified3)).factory(new ComponentFactory() { // from class: com.google.firebase.sessions.FirebaseSessionsRegistrar$$ExternalSyntheticLambda0
-            @Override // com.google.firebase.components.ComponentFactory
-            public final Object create(ComponentContainer componentContainer) {
-                FirebaseSessions firebaseSessions;
-                firebaseSessions = FirebaseSessionsRegistrar.getComponents$lambda-0(componentContainer);
-                return firebaseSessions;
-            }
-        }).eagerInDefaultApp().build();
-        Component build2 = Component.builder(SessionGenerator.class).name("session-generator").factory(new ComponentFactory() { // from class: com.google.firebase.sessions.FirebaseSessionsRegistrar$$ExternalSyntheticLambda1
-            @Override // com.google.firebase.components.ComponentFactory
-            public final Object create(ComponentContainer componentContainer) {
-                SessionGenerator sessionGenerator2;
-                sessionGenerator2 = FirebaseSessionsRegistrar.getComponents$lambda-1(componentContainer);
-                return sessionGenerator2;
-            }
-        }).build();
-        Component.Builder add3 = Component.builder(SessionFirelogPublisher.class).name("session-publisher").add(Dependency.required(qualified));
-        Qualified qualified4 = firebaseInstallationsApi;
-        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new Component[]{build, build2, add3.add(Dependency.required(qualified4)).add(Dependency.required(qualified2)).add(Dependency.requiredProvider(transportFactory)).add(Dependency.required(qualified3)).factory(new ComponentFactory() { // from class: com.google.firebase.sessions.FirebaseSessionsRegistrar$$ExternalSyntheticLambda2
-            @Override // com.google.firebase.components.ComponentFactory
-            public final Object create(ComponentContainer componentContainer) {
-                SessionFirelogPublisher sessionFirelogPublisher2;
-                sessionFirelogPublisher2 = FirebaseSessionsRegistrar.getComponents$lambda-2(componentContainer);
-                return sessionFirelogPublisher2;
-            }
-        }).build(), Component.builder(SessionsSettings.class).name("sessions-settings").add(Dependency.required(qualified)).add(Dependency.required(blockingDispatcher)).add(Dependency.required(qualified3)).add(Dependency.required(qualified4)).factory(new ComponentFactory() { // from class: com.google.firebase.sessions.FirebaseSessionsRegistrar$$ExternalSyntheticLambda3
-            @Override // com.google.firebase.components.ComponentFactory
-            public final Object create(ComponentContainer componentContainer) {
-                SessionsSettings sessionsSettings2;
-                sessionsSettings2 = FirebaseSessionsRegistrar.getComponents$lambda-3(componentContainer);
-                return sessionsSettings2;
-            }
-        }).build(), Component.builder(SessionDatastore.class).name("sessions-datastore").add(Dependency.required(qualified)).add(Dependency.required(qualified3)).factory(new ComponentFactory() { // from class: com.google.firebase.sessions.FirebaseSessionsRegistrar$$ExternalSyntheticLambda4
-            @Override // com.google.firebase.components.ComponentFactory
-            public final Object create(ComponentContainer componentContainer) {
-                SessionDatastore sessionDatastore;
-                sessionDatastore = FirebaseSessionsRegistrar.getComponents$lambda-4(componentContainer);
-                return sessionDatastore;
-            }
-        }).build(), Component.builder(SessionLifecycleServiceBinder.class).name("sessions-service-binder").add(Dependency.required(qualified)).factory(new ComponentFactory() { // from class: com.google.firebase.sessions.FirebaseSessionsRegistrar$$ExternalSyntheticLambda5
-            @Override // com.google.firebase.components.ComponentFactory
-            public final Object create(ComponentContainer componentContainer) {
-                SessionLifecycleServiceBinder sessionLifecycleServiceBinder;
-                sessionLifecycleServiceBinder = FirebaseSessionsRegistrar.getComponents$lambda-5(componentContainer);
-                return sessionLifecycleServiceBinder;
-            }
-        }).build(), LibraryVersionComponent.create(LIBRARY_NAME, "1.2.0")});
-        return listOf;
+    private static final class Companion {
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        private Companion() {
+        }
     }
 }

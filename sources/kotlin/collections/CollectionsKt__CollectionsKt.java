@@ -6,7 +6,7 @@ import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class CollectionsKt__CollectionsKt extends CollectionsKt__CollectionsJVMKt {
     public static final Collection asCollection(Object[] objArr) {
         Intrinsics.checkNotNullParameter(objArr, "<this>");
@@ -17,19 +17,9 @@ public abstract class CollectionsKt__CollectionsKt extends CollectionsKt__Collec
         return EmptyList.INSTANCE;
     }
 
-    public static int getLastIndex(List list) {
-        Intrinsics.checkNotNullParameter(list, "<this>");
-        return list.size() - 1;
-    }
-
     public static List listOf(Object... elements) {
-        List asList;
         Intrinsics.checkNotNullParameter(elements, "elements");
-        if (elements.length <= 0) {
-            return emptyList();
-        }
-        asList = ArraysKt___ArraysJvmKt.asList(elements);
-        return asList;
+        return elements.length > 0 ? ArraysKt.asList(elements) : CollectionsKt.emptyList();
     }
 
     public static List mutableListOf(Object... elements) {
@@ -37,10 +27,18 @@ public abstract class CollectionsKt__CollectionsKt extends CollectionsKt__Collec
         return elements.length == 0 ? new ArrayList() : new ArrayList(new ArrayAsCollection(elements, true));
     }
 
+    public static int getLastIndex(List list) {
+        Intrinsics.checkNotNullParameter(list, "<this>");
+        return list.size() - 1;
+    }
+
     public static List optimizeReadOnlyList(List list) {
         Intrinsics.checkNotNullParameter(list, "<this>");
         int size = list.size();
-        return size != 0 ? size != 1 ? list : CollectionsKt__CollectionsJVMKt.listOf(list.get(0)) : emptyList();
+        if (size != 0) {
+            return size != 1 ? list : CollectionsKt.listOf(list.get(0));
+        }
+        return CollectionsKt.emptyList();
     }
 
     public static void throwIndexOverflow() {

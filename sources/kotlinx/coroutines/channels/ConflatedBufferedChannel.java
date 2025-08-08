@@ -7,7 +7,7 @@ import kotlinx.coroutines.Waiter;
 import kotlinx.coroutines.internal.OnUndeliveredElementKt;
 import kotlinx.coroutines.internal.UndeliveredElementException;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class ConflatedBufferedChannel extends BufferedChannel {
     private final int capacity;
     private final BufferOverflow onBufferOverflow;
@@ -25,6 +25,20 @@ public class ConflatedBufferedChannel extends BufferedChannel {
         throw new IllegalArgumentException(("Buffered channel capacity must be at least 1, but " + i + " was specified").toString());
     }
 
+    @Override // kotlinx.coroutines.channels.BufferedChannel
+    protected boolean isConflatedDropOldest() {
+        return this.onBufferOverflow == BufferOverflow.DROP_OLDEST;
+    }
+
+    @Override // kotlinx.coroutines.channels.BufferedChannel, kotlinx.coroutines.channels.SendChannel
+    public Object trySend-JP2dKIU(Object obj) {
+        return trySendImpl-Mj0NB7M(obj, false);
+    }
+
+    private final Object trySendImpl-Mj0NB7M(Object obj, boolean z) {
+        return this.onBufferOverflow == BufferOverflow.DROP_LATEST ? trySendDropLatest-Mj0NB7M(obj, z) : trySendDropOldest-JP2dKIU(obj);
+    }
+
     private final Object trySendDropLatest-Mj0NB7M(Object obj, boolean z) {
         Function1 function1;
         UndeliveredElementException callUndeliveredElementCatchingException$default;
@@ -32,10 +46,10 @@ public class ConflatedBufferedChannel extends BufferedChannel {
         if (ChannelResult.isSuccess-impl(obj2) || ChannelResult.isClosed-impl(obj2)) {
             return obj2;
         }
-        if (!z || (function1 = this.onUndeliveredElement) == null || (callUndeliveredElementCatchingException$default = OnUndeliveredElementKt.callUndeliveredElementCatchingException$default(function1, obj, null, 2, null)) == null) {
-            return ChannelResult.Companion.success-JP2dKIU(Unit.INSTANCE);
+        if (z && (function1 = this.onUndeliveredElement) != null && (callUndeliveredElementCatchingException$default = OnUndeliveredElementKt.callUndeliveredElementCatchingException$default(function1, obj, null, 2, null)) != null) {
+            throw callUndeliveredElementCatchingException$default;
         }
-        throw callUndeliveredElementCatchingException$default;
+        return ChannelResult.Companion.success-JP2dKIU(Unit.INSTANCE);
     }
 
     private final Object trySendDropOldest-JP2dKIU(Object obj) {
@@ -80,7 +94,7 @@ public class ConflatedBufferedChannel extends BufferedChannel {
                 return ChannelResult.Companion.success-JP2dKIU(Unit.INSTANCE);
             }
             if (updateCellSend == 3) {
-                throw new IllegalStateException("unexpected".toString());
+                throw new IllegalStateException("unexpected");
             }
             if (updateCellSend == 4) {
                 if (j < getReceiversCounter$kotlinx_coroutines_core()) {
@@ -93,19 +107,5 @@ public class ConflatedBufferedChannel extends BufferedChannel {
             }
             channelSegment2 = channelSegment;
         }
-    }
-
-    private final Object trySendImpl-Mj0NB7M(Object obj, boolean z) {
-        return this.onBufferOverflow == BufferOverflow.DROP_LATEST ? trySendDropLatest-Mj0NB7M(obj, z) : trySendDropOldest-JP2dKIU(obj);
-    }
-
-    @Override // kotlinx.coroutines.channels.BufferedChannel
-    protected boolean isConflatedDropOldest() {
-        return this.onBufferOverflow == BufferOverflow.DROP_OLDEST;
-    }
-
-    @Override // kotlinx.coroutines.channels.BufferedChannel, kotlinx.coroutines.channels.SendChannel
-    public Object trySend-JP2dKIU(Object obj) {
-        return trySendImpl-Mj0NB7M(obj, false);
     }
 }

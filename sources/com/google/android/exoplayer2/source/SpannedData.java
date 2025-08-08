@@ -14,6 +14,23 @@ final class SpannedData {
         this.removeCallback = consumer;
     }
 
+    public Object get(int i) {
+        if (this.memoizedReadIndex == -1) {
+            this.memoizedReadIndex = 0;
+        }
+        while (true) {
+            int i2 = this.memoizedReadIndex;
+            if (i2 <= 0 || i >= this.spans.keyAt(i2)) {
+                break;
+            }
+            this.memoizedReadIndex--;
+        }
+        while (this.memoizedReadIndex < this.spans.size() - 1 && i >= this.spans.keyAt(this.memoizedReadIndex + 1)) {
+            this.memoizedReadIndex++;
+        }
+        return this.spans.valueAt(this.memoizedReadIndex);
+    }
+
     public void appendSpan(int i, Object obj) {
         if (this.memoizedReadIndex == -1) {
             Assertions.checkState(this.spans.size() == 0);
@@ -32,20 +49,8 @@ final class SpannedData {
         this.spans.append(i, obj);
     }
 
-    public void clear() {
-        for (int i = 0; i < this.spans.size(); i++) {
-            this.removeCallback.accept(this.spans.valueAt(i));
-        }
-        this.memoizedReadIndex = -1;
-        this.spans.clear();
-    }
-
-    public void discardFrom(int i) {
-        for (int size = this.spans.size() - 1; size >= 0 && i < this.spans.keyAt(size); size--) {
-            this.removeCallback.accept(this.spans.valueAt(size));
-            this.spans.removeAt(size);
-        }
-        this.memoizedReadIndex = this.spans.size() > 0 ? Math.min(this.memoizedReadIndex, this.spans.size() - 1) : -1;
+    public Object getEndValue() {
+        return this.spans.valueAt(r0.size() - 1);
     }
 
     public void discardTo(int i) {
@@ -65,25 +70,20 @@ final class SpannedData {
         }
     }
 
-    public Object get(int i) {
-        if (this.memoizedReadIndex == -1) {
-            this.memoizedReadIndex = 0;
+    public void discardFrom(int i) {
+        for (int size = this.spans.size() - 1; size >= 0 && i < this.spans.keyAt(size); size--) {
+            this.removeCallback.accept(this.spans.valueAt(size));
+            this.spans.removeAt(size);
         }
-        while (true) {
-            int i2 = this.memoizedReadIndex;
-            if (i2 <= 0 || i >= this.spans.keyAt(i2)) {
-                break;
-            }
-            this.memoizedReadIndex--;
-        }
-        while (this.memoizedReadIndex < this.spans.size() - 1 && i >= this.spans.keyAt(this.memoizedReadIndex + 1)) {
-            this.memoizedReadIndex++;
-        }
-        return this.spans.valueAt(this.memoizedReadIndex);
+        this.memoizedReadIndex = this.spans.size() > 0 ? Math.min(this.memoizedReadIndex, this.spans.size() - 1) : -1;
     }
 
-    public Object getEndValue() {
-        return this.spans.valueAt(r0.size() - 1);
+    public void clear() {
+        for (int i = 0; i < this.spans.size(); i++) {
+            this.removeCallback.accept(this.spans.valueAt(i));
+        }
+        this.memoizedReadIndex = -1;
+        this.spans.clear();
     }
 
     public boolean isEmpty() {

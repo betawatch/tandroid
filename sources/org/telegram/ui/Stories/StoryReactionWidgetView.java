@@ -59,6 +59,43 @@ public class StoryReactionWidgetView extends StoryMediaAreasView.AreaView {
         }
     }
 
+    @Override // android.view.View
+    protected void onMeasure(int i, int i2) {
+        super.onMeasure(i, i2);
+        this.animatedTextDrawable.setTextSize(Math.min(AndroidUtilities.dp(18.0f), getMeasuredHeight() * 0.156f));
+    }
+
+    public void setViews(TL_stories.StoryViews storyViews, boolean z) {
+        if (storyViews != null) {
+            for (int i = 0; i < storyViews.reactions.size(); i++) {
+                if (ReactionsUtils.compare(storyViews.reactions.get(i).reaction, this.visibleReaction)) {
+                    boolean z2 = z && this.hasCounter;
+                    this.hasCounter = storyViews.reactions.get(i).count > 0;
+                    this.animatedTextDrawable.setText(AndroidUtilities.formatWholeNumber(storyViews.reactions.get(i).count, 0), z2);
+                    if (z) {
+                        return;
+                    }
+                    this.progressToCount.set(this.hasCounter ? 1.0f : 0.0f, true);
+                    return;
+                }
+            }
+        }
+        this.hasCounter = false;
+        invalidate();
+        if (z) {
+            return;
+        }
+        this.progressToCount.set(this.hasCounter ? 1.0f : 0.0f, true);
+    }
+
+    @Override // android.view.View
+    public void setScaleX(float f) {
+        if (getScaleX() != f) {
+            this.storyReactionWidgetBackground.updateShadowLayer(f);
+            super.setScaleX(f);
+        }
+    }
+
     @Override // org.telegram.ui.Stories.StoryMediaAreasView.AreaView
     public void customDraw(Canvas canvas) {
         this.storyReactionWidgetBackground.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
@@ -85,10 +122,6 @@ public class StoryReactionWidgetView extends StoryMediaAreasView.AreaView {
         canvas.restore();
     }
 
-    public AnimatedEmojiDrawable getAnimatedEmojiDrawable() {
-        return this.holder.animatedEmojiDrawable;
-    }
-
     @Override // android.view.View
     public void invalidate() {
         super.invalidate();
@@ -111,44 +144,11 @@ public class StoryReactionWidgetView extends StoryMediaAreasView.AreaView {
         this.preloadSmallReaction.onDetachedFromWindow();
     }
 
-    @Override // android.view.View
-    protected void onMeasure(int i, int i2) {
-        super.onMeasure(i, i2);
-        this.animatedTextDrawable.setTextSize(Math.min(AndroidUtilities.dp(18.0f), getMeasuredHeight() * 0.156f));
-    }
-
     public void playAnimation() {
         this.holder.play();
     }
 
-    @Override // android.view.View
-    public void setScaleX(float f) {
-        if (getScaleX() != f) {
-            this.storyReactionWidgetBackground.updateShadowLayer(f);
-            super.setScaleX(f);
-        }
-    }
-
-    public void setViews(TL_stories.StoryViews storyViews, boolean z) {
-        if (storyViews != null) {
-            for (int i = 0; i < storyViews.reactions.size(); i++) {
-                if (ReactionsUtils.compare(storyViews.reactions.get(i).reaction, this.visibleReaction)) {
-                    boolean z2 = z && this.hasCounter;
-                    this.hasCounter = storyViews.reactions.get(i).count > 0;
-                    this.animatedTextDrawable.setText(AndroidUtilities.formatWholeNumber(storyViews.reactions.get(i).count, 0), z2);
-                    if (z) {
-                        return;
-                    }
-                    this.progressToCount.set(this.hasCounter ? 1.0f : 0.0f, true);
-                    return;
-                }
-            }
-        }
-        this.hasCounter = false;
-        invalidate();
-        if (z) {
-            return;
-        }
-        this.progressToCount.set(this.hasCounter ? 1.0f : 0.0f, true);
+    public AnimatedEmojiDrawable getAnimatedEmojiDrawable() {
+        return this.holder.animatedEmojiDrawable;
     }
 }

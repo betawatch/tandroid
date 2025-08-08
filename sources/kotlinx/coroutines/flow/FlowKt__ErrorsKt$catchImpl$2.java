@@ -3,11 +3,11 @@ package kotlinx.coroutines.flow;
 import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.jvm.internal.Ref$ObjectRef;
 import org.telegram.tgnet.TLObject;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class FlowKt__ErrorsKt$catchImpl$2 implements FlowCollector {
     final /* synthetic */ FlowCollector $collector;
     final /* synthetic */ Ref$ObjectRef $fromDownstream;
@@ -25,7 +25,6 @@ final class FlowKt__ErrorsKt$catchImpl$2 implements FlowCollector {
     */
     public final Object emit(Object obj, Continuation continuation) {
         FlowKt__ErrorsKt$catchImpl$2$emit$1 flowKt__ErrorsKt$catchImpl$2$emit$1;
-        Object coroutine_suspended;
         int i;
         FlowKt__ErrorsKt$catchImpl$2 flowKt__ErrorsKt$catchImpl$2;
         if (continuation instanceof FlowKt__ErrorsKt$catchImpl$2$emit$1) {
@@ -34,7 +33,7 @@ final class FlowKt__ErrorsKt$catchImpl$2 implements FlowCollector {
             if ((i2 & TLObject.FLAG_31) != 0) {
                 flowKt__ErrorsKt$catchImpl$2$emit$1.label = i2 - TLObject.FLAG_31;
                 Object obj2 = flowKt__ErrorsKt$catchImpl$2$emit$1.result;
-                coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = flowKt__ErrorsKt$catchImpl$2$emit$1.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj2);
@@ -69,7 +68,7 @@ final class FlowKt__ErrorsKt$catchImpl$2 implements FlowCollector {
         }
         flowKt__ErrorsKt$catchImpl$2$emit$1 = new FlowKt__ErrorsKt$catchImpl$2$emit$1(this, continuation);
         Object obj22 = flowKt__ErrorsKt$catchImpl$2$emit$1.result;
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = flowKt__ErrorsKt$catchImpl$2$emit$1.label;
         if (i != 0) {
         }

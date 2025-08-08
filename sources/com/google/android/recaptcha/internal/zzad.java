@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import android.content.Context;
 import java.io.File;
 import java.io.IOException;
-import kotlin.io.FilesKt__FileReadWriteKt;
+import kotlin.io.FilesKt;
 
 /* loaded from: classes.dex */
 public final class zzad {
@@ -14,15 +14,13 @@ public final class zzad {
     }
 
     public static final byte[] zza(File file) {
-        byte[] readBytes;
-        readBytes = FilesKt__FileReadWriteKt.readBytes(file);
-        return readBytes;
+        return FilesKt.readBytes(file);
     }
 
     public static final void zzb(File file, byte[] bArr) {
         if (file.exists() && !file.delete()) {
             throw new IOException("Unable to delete existing encrypted file");
         }
-        FilesKt__FileReadWriteKt.writeBytes(file, bArr);
+        FilesKt.writeBytes(file, bArr);
     }
 }

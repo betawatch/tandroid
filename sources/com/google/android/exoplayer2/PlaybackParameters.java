@@ -34,9 +34,12 @@ public final class PlaybackParameters implements Bundleable {
         this.scaledUsPerMs = Math.round(f * 1000.0f);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ PlaybackParameters lambda$static$0(Bundle bundle) {
-        return new PlaybackParameters(bundle.getFloat(FIELD_SPEED, 1.0f), bundle.getFloat(FIELD_PITCH, 1.0f));
+    public long getMediaTimeUsForPlayoutTimeMs(long j) {
+        return j * this.scaledUsPerMs;
+    }
+
+    public PlaybackParameters withSpeed(float f) {
+        return new PlaybackParameters(f, this.pitch);
     }
 
     public boolean equals(Object obj) {
@@ -50,12 +53,12 @@ public final class PlaybackParameters implements Bundleable {
         return this.speed == playbackParameters.speed && this.pitch == playbackParameters.pitch;
     }
 
-    public long getMediaTimeUsForPlayoutTimeMs(long j) {
-        return j * this.scaledUsPerMs;
-    }
-
     public int hashCode() {
         return ((Float.floatToRawIntBits(this.speed) + 527) * 31) + Float.floatToRawIntBits(this.pitch);
+    }
+
+    public String toString() {
+        return Util.formatInvariant("PlaybackParameters(speed=%.2f, pitch=%.2f)", Float.valueOf(this.speed), Float.valueOf(this.pitch));
     }
 
     @Override // com.google.android.exoplayer2.Bundleable
@@ -66,11 +69,8 @@ public final class PlaybackParameters implements Bundleable {
         return bundle;
     }
 
-    public String toString() {
-        return Util.formatInvariant("PlaybackParameters(speed=%.2f, pitch=%.2f)", Float.valueOf(this.speed), Float.valueOf(this.pitch));
-    }
-
-    public PlaybackParameters withSpeed(float f) {
-        return new PlaybackParameters(f, this.pitch);
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ PlaybackParameters lambda$static$0(Bundle bundle) {
+        return new PlaybackParameters(bundle.getFloat(FIELD_SPEED, 1.0f), bundle.getFloat(FIELD_PITCH, 1.0f));
     }
 }

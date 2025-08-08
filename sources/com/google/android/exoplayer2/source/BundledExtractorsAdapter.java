@@ -24,23 +24,6 @@ public final class BundledExtractorsAdapter implements ProgressiveMediaExtractor
         this.extractorsFactory = extractorsFactory;
     }
 
-    @Override // com.google.android.exoplayer2.source.ProgressiveMediaExtractor
-    public void disableSeekingOnMp3Streams() {
-        Extractor extractor = this.extractor;
-        if (extractor instanceof Mp3Extractor) {
-            ((Mp3Extractor) extractor).disableSeeking();
-        }
-    }
-
-    @Override // com.google.android.exoplayer2.source.ProgressiveMediaExtractor
-    public long getCurrentInputPosition() {
-        ExtractorInput extractorInput = this.extractorInput;
-        if (extractorInput != null) {
-            return extractorInput.getPosition();
-        }
-        return -1L;
-    }
-
     /* JADX WARN: Code restructure failed: missing block: B:27:0x0043, code lost:
     
         if (r6.getPosition() != r11) goto L23;
@@ -105,11 +88,6 @@ public final class BundledExtractorsAdapter implements ProgressiveMediaExtractor
     }
 
     @Override // com.google.android.exoplayer2.source.ProgressiveMediaExtractor
-    public int read(PositionHolder positionHolder) {
-        return ((Extractor) Assertions.checkNotNull(this.extractor)).read((ExtractorInput) Assertions.checkNotNull(this.extractorInput), positionHolder);
-    }
-
-    @Override // com.google.android.exoplayer2.source.ProgressiveMediaExtractor
     public void release() {
         Extractor extractor = this.extractor;
         if (extractor != null) {
@@ -120,7 +98,29 @@ public final class BundledExtractorsAdapter implements ProgressiveMediaExtractor
     }
 
     @Override // com.google.android.exoplayer2.source.ProgressiveMediaExtractor
+    public void disableSeekingOnMp3Streams() {
+        Extractor extractor = this.extractor;
+        if (extractor instanceof Mp3Extractor) {
+            ((Mp3Extractor) extractor).disableSeeking();
+        }
+    }
+
+    @Override // com.google.android.exoplayer2.source.ProgressiveMediaExtractor
+    public long getCurrentInputPosition() {
+        ExtractorInput extractorInput = this.extractorInput;
+        if (extractorInput != null) {
+            return extractorInput.getPosition();
+        }
+        return -1L;
+    }
+
+    @Override // com.google.android.exoplayer2.source.ProgressiveMediaExtractor
     public void seek(long j, long j2) {
         ((Extractor) Assertions.checkNotNull(this.extractor)).seek(j, j2);
+    }
+
+    @Override // com.google.android.exoplayer2.source.ProgressiveMediaExtractor
+    public int read(PositionHolder positionHolder) {
+        return ((Extractor) Assertions.checkNotNull(this.extractor)).read((ExtractorInput) Assertions.checkNotNull(this.extractorInput), positionHolder);
     }
 }

@@ -21,6 +21,19 @@ public class CounterDrawable extends Drawable {
     private final TextPaint textPaint;
     private float textWith;
 
+    @Override // android.graphics.drawable.Drawable
+    public int getOpacity() {
+        return -1;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setAlpha(int i) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setColorFilter(ColorFilter colorFilter) {
+    }
+
     public CounterDrawable(Context context) {
         TextPaint textPaint = new TextPaint(1);
         this.textPaint = textPaint;
@@ -32,6 +45,12 @@ public class CounterDrawable extends Drawable {
         textPaint.setTextSize(AndroidUtilities.dp(12.0f));
         textPaint2.setColor(-6915073);
         this.icon = ContextCompat.getDrawable(context, R.drawable.mini_boost_badge);
+    }
+
+    public void setText(String str) {
+        this.text = str;
+        this.textWith = this.textPaint.measureText(str);
+        invalidateSelf();
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -48,31 +67,12 @@ public class CounterDrawable extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public int getIntrinsicHeight() {
-        return AndroidUtilities.dp(18.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
     public int getIntrinsicWidth() {
         return (int) (AndroidUtilities.dp(23.0f) + this.textWith);
     }
 
     @Override // android.graphics.drawable.Drawable
-    public int getOpacity() {
-        return -1;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setAlpha(int i) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setColorFilter(ColorFilter colorFilter) {
-    }
-
-    public void setText(String str) {
-        this.text = str;
-        this.textWith = this.textPaint.measureText(str);
-        invalidateSelf();
+    public int getIntrinsicHeight() {
+        return AndroidUtilities.dp(18.0f);
     }
 }

@@ -33,6 +33,11 @@ public abstract class GroupCallInvitedCell extends FrameLayout {
     private boolean needDivider;
     private SimpleTextView statusTextView;
 
+    @Override // android.view.View
+    public boolean hasOverlappingRendering() {
+        return false;
+    }
+
     public GroupCallInvitedCell(Context context) {
         super(context);
         this.grayIconColor = Theme.key_voipgroup_mutedIcon;
@@ -76,34 +81,8 @@ public abstract class GroupCallInvitedCell extends FrameLayout {
         setFocusable(true);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    protected void dispatchDraw(Canvas canvas) {
-        if (this.needDivider) {
-            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(68.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(68.0f) : 0), getMeasuredHeight() - 1, this.dividerPaint);
-        }
-        super.dispatchDraw(canvas);
-    }
-
     public CharSequence getName() {
         return this.nameTextView.getText();
-    }
-
-    public TLRPC.User getUser() {
-        return this.currentUser;
-    }
-
-    public boolean hasAvatarSet() {
-        return this.avatarImageView.getImageReceiver().hasNotThumb();
-    }
-
-    @Override // android.view.View
-    public boolean hasOverlappingRendering() {
-        return false;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(58.0f), TLObject.FLAG_30));
     }
 
     public void setData(int i, Long l, boolean z, boolean z2, boolean z3) {
@@ -139,5 +118,26 @@ public abstract class GroupCallInvitedCell extends FrameLayout {
         this.muteButton.setColorFilter(new PorterDuffColorFilter(i2, PorterDuff.Mode.MULTIPLY));
         this.statusTextView.setTextColor(i2);
         Theme.setSelectorDrawableColor(this.muteButton.getDrawable(), i2 & 620756991, true);
+    }
+
+    public TLRPC.User getUser() {
+        return this.currentUser;
+    }
+
+    public boolean hasAvatarSet() {
+        return this.avatarImageView.getImageReceiver().hasNotThumb();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    protected void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(58.0f), TLObject.FLAG_30));
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    protected void dispatchDraw(Canvas canvas) {
+        if (this.needDivider) {
+            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(68.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(68.0f) : 0), getMeasuredHeight() - 1, this.dividerPaint);
+        }
+        super.dispatchDraw(canvas);
     }
 }

@@ -18,10 +18,10 @@ public class DynamiteClearcutLogger {
     }
 
     public final void zza(int i, zzfi$zzo zzfi_zzo) {
-        if (i != 3 || this.zzb.zza()) {
-            zza.execute(new zza(this, i, zzfi_zzo));
-        } else {
+        if (i == 3 && !this.zzb.zza()) {
             L.v("Skipping image analysis log due to rate limiting", new Object[0]);
+        } else {
+            zza.execute(new zza(this, i, zzfi_zzo));
         }
     }
 }

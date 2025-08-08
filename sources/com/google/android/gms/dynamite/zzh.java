@@ -13,11 +13,7 @@ final class zzh implements DynamiteModule.VersionPolicy {
         DynamiteModule.VersionPolicy.SelectionResult selectionResult = new DynamiteModule.VersionPolicy.SelectionResult();
         int zzb = iVersions.zzb(context, str, false);
         selectionResult.remoteVersion = zzb;
-        if (zzb == 0) {
-            selectionResult.selection = 0;
-        } else {
-            selectionResult.selection = 1;
-        }
+        selectionResult.selection = zzb != 0 ? 1 : 0;
         return selectionResult;
     }
 }

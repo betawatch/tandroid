@@ -21,6 +21,11 @@ public final class StreamKey implements Comparable, Parcelable {
     public final int streamIndex;
     public final int trackIndex;
 
+    @Override // android.os.Parcelable
+    public int describeContents() {
+        return 0;
+    }
+
     public StreamKey(int i, int i2, int i3) {
         this.periodIndex = i;
         this.groupIndex = i2;
@@ -36,19 +41,8 @@ public final class StreamKey implements Comparable, Parcelable {
         this.trackIndex = readInt;
     }
 
-    @Override // java.lang.Comparable
-    public int compareTo(StreamKey streamKey) {
-        int i = this.periodIndex - streamKey.periodIndex;
-        if (i != 0) {
-            return i;
-        }
-        int i2 = this.groupIndex - streamKey.groupIndex;
-        return i2 == 0 ? this.streamIndex - streamKey.streamIndex : i2;
-    }
-
-    @Override // android.os.Parcelable
-    public int describeContents() {
-        return 0;
+    public String toString() {
+        return this.periodIndex + "." + this.groupIndex + "." + this.streamIndex;
     }
 
     public boolean equals(Object obj) {
@@ -66,8 +60,14 @@ public final class StreamKey implements Comparable, Parcelable {
         return (((this.periodIndex * 31) + this.groupIndex) * 31) + this.streamIndex;
     }
 
-    public String toString() {
-        return this.periodIndex + "." + this.groupIndex + "." + this.streamIndex;
+    @Override // java.lang.Comparable
+    public int compareTo(StreamKey streamKey) {
+        int i = this.periodIndex - streamKey.periodIndex;
+        if (i != 0) {
+            return i;
+        }
+        int i2 = this.groupIndex - streamKey.groupIndex;
+        return i2 == 0 ? this.streamIndex - streamKey.streamIndex : i2;
     }
 
     @Override // android.os.Parcelable

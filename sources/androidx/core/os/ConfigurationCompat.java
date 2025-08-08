@@ -6,14 +6,13 @@ import android.os.LocaleList;
 
 /* loaded from: classes.dex */
 public abstract class ConfigurationCompat {
+    public static LocaleListCompat getLocales(Configuration configuration) {
+        return Build.VERSION.SDK_INT >= 24 ? LocaleListCompat.wrap(Api24Impl.getLocales(configuration)) : LocaleListCompat.create(configuration.locale);
+    }
 
     static class Api24Impl {
         static LocaleList getLocales(Configuration configuration) {
             return configuration.getLocales();
         }
-    }
-
-    public static LocaleListCompat getLocales(Configuration configuration) {
-        return Build.VERSION.SDK_INT >= 24 ? LocaleListCompat.wrap(Api24Impl.getLocales(configuration)) : LocaleListCompat.create(configuration.locale);
     }
 }

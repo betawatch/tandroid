@@ -1,5 +1,5 @@
 package org.telegram.ui.Components;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract /* synthetic */ class ScrimOptions$$ExternalSyntheticApiModelOutline0 {
 }

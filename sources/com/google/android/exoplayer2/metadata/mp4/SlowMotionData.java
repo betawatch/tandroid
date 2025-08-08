@@ -31,6 +31,26 @@ public final class SlowMotionData implements Metadata.Entry {
     };
     public final List segments;
 
+    @Override // android.os.Parcelable
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
+    public /* synthetic */ byte[] getWrappedMetadataBytes() {
+        return Metadata.Entry.-CC.$default$getWrappedMetadataBytes(this);
+    }
+
+    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
+    public /* synthetic */ Format getWrappedMetadataFormat() {
+        return Metadata.Entry.-CC.$default$getWrappedMetadataFormat(this);
+    }
+
+    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
+    public /* synthetic */ void populateMediaMetadata(MediaMetadata.Builder builder) {
+        Metadata.Entry.-CC.$default$populateMediaMetadata(this, builder);
+    }
+
     public static final class Segment implements Parcelable {
         public static final Comparator BY_START_THEN_END_THEN_DIVISOR = new Comparator() { // from class: com.google.android.exoplayer2.metadata.mp4.SlowMotionData$Segment$$ExternalSyntheticLambda0
             @Override // java.util.Comparator
@@ -55,11 +75,9 @@ public final class SlowMotionData implements Metadata.Entry {
         public final int speedDivisor;
         public final long startTimeMs;
 
-        public Segment(long j, long j2, int i) {
-            Assertions.checkArgument(j < j2);
-            this.startTimeMs = j;
-            this.endTimeMs = j2;
-            this.speedDivisor = i;
+        @Override // android.os.Parcelable
+        public int describeContents() {
+            return 0;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -67,9 +85,15 @@ public final class SlowMotionData implements Metadata.Entry {
             return ComparisonChain.start().compare(segment.startTimeMs, segment2.startTimeMs).compare(segment.endTimeMs, segment2.endTimeMs).compare(segment.speedDivisor, segment2.speedDivisor).result();
         }
 
-        @Override // android.os.Parcelable
-        public int describeContents() {
-            return 0;
+        public Segment(long j, long j2, int i) {
+            Assertions.checkArgument(j < j2);
+            this.startTimeMs = j;
+            this.endTimeMs = j2;
+            this.speedDivisor = i;
+        }
+
+        public String toString() {
+            return Util.formatInvariant("Segment: startTimeMs=%d, endTimeMs=%d, speedDivisor=%d", Long.valueOf(this.startTimeMs), Long.valueOf(this.endTimeMs), Integer.valueOf(this.speedDivisor));
         }
 
         public boolean equals(Object obj) {
@@ -87,10 +111,6 @@ public final class SlowMotionData implements Metadata.Entry {
             return Objects.hashCode(Long.valueOf(this.startTimeMs), Long.valueOf(this.endTimeMs), Integer.valueOf(this.speedDivisor));
         }
 
-        public String toString() {
-            return Util.formatInvariant("Segment: startTimeMs=%d, endTimeMs=%d, speedDivisor=%d", Long.valueOf(this.startTimeMs), Long.valueOf(this.endTimeMs), Integer.valueOf(this.speedDivisor));
-        }
-
         @Override // android.os.Parcelable
         public void writeToParcel(Parcel parcel, int i) {
             parcel.writeLong(this.startTimeMs);
@@ -102,6 +122,29 @@ public final class SlowMotionData implements Metadata.Entry {
     public SlowMotionData(List list) {
         this.segments = list;
         Assertions.checkArgument(!doSegmentsOverlap(list));
+    }
+
+    public String toString() {
+        return "SlowMotion: segments=" + this.segments;
+    }
+
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || SlowMotionData.class != obj.getClass()) {
+            return false;
+        }
+        return this.segments.equals(((SlowMotionData) obj).segments);
+    }
+
+    public int hashCode() {
+        return this.segments.hashCode();
+    }
+
+    @Override // android.os.Parcelable
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeList(this.segments);
     }
 
     private static boolean doSegmentsOverlap(List list) {
@@ -116,48 +159,5 @@ public final class SlowMotionData implements Metadata.Entry {
             j = ((Segment) list.get(i)).endTimeMs;
         }
         return false;
-    }
-
-    @Override // android.os.Parcelable
-    public int describeContents() {
-        return 0;
-    }
-
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || SlowMotionData.class != obj.getClass()) {
-            return false;
-        }
-        return this.segments.equals(((SlowMotionData) obj).segments);
-    }
-
-    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
-    public /* synthetic */ byte[] getWrappedMetadataBytes() {
-        return Metadata.Entry.-CC.$default$getWrappedMetadataBytes(this);
-    }
-
-    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
-    public /* synthetic */ Format getWrappedMetadataFormat() {
-        return Metadata.Entry.-CC.$default$getWrappedMetadataFormat(this);
-    }
-
-    public int hashCode() {
-        return this.segments.hashCode();
-    }
-
-    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
-    public /* synthetic */ void populateMediaMetadata(MediaMetadata.Builder builder) {
-        Metadata.Entry.-CC.$default$populateMediaMetadata(this, builder);
-    }
-
-    public String toString() {
-        return "SlowMotion: segments=" + this.segments;
-    }
-
-    @Override // android.os.Parcelable
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeList(this.segments);
     }
 }

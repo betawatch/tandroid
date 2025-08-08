@@ -9,6 +9,8 @@ abstract class c extends e {
     protected final AtomicReference h;
     protected volatile boolean i;
 
+    protected abstract Object i();
+
     protected c(b bVar, Spliterator spliterator) {
         super(bVar, spliterator);
         this.h = new AtomicReference(null);
@@ -17,15 +19,6 @@ abstract class c extends e {
     protected c(c cVar, Spliterator spliterator) {
         super(cVar, spliterator);
         this.h = cVar.h;
-    }
-
-    @Override // j$.util.stream.e
-    public final Object b() {
-        if (!c()) {
-            return super.b();
-        }
-        Object obj = this.h.get();
-        return obj == null ? i() : obj;
     }
 
     @Override // j$.util.stream.e, java.util.concurrent.CountedCompleter
@@ -98,13 +91,22 @@ abstract class c extends e {
         }
     }
 
-    protected void g() {
-        this.i = true;
-    }
-
     @Override // j$.util.stream.e, java.util.concurrent.CountedCompleter, java.util.concurrent.ForkJoinTask
     public final Object getRawResult() {
         return b();
+    }
+
+    @Override // j$.util.stream.e
+    public final Object b() {
+        if (c()) {
+            Object obj = this.h.get();
+            return obj == null ? i() : obj;
+        }
+        return super.b();
+    }
+
+    protected void g() {
+        this.i = true;
     }
 
     protected final void h() {
@@ -119,6 +121,4 @@ abstract class c extends e {
             cVar = cVar2;
         }
     }
-
-    protected abstract Object i();
 }

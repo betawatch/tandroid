@@ -7,7 +7,7 @@ import com.google.android.recaptcha.internal.zzaw;
 import kotlin.Result;
 import kotlin.ResultKt;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
@@ -39,7 +39,6 @@ public final class Recaptcha {
     */
     public final Object getClient-BWLJW6A(Application application, String str, long j, Continuation continuation) {
         Recaptcha$getClient$1 recaptcha$getClient$1;
-        Object coroutine_suspended;
         int i;
         try {
             if (continuation instanceof Recaptcha$getClient$1) {
@@ -49,7 +48,7 @@ public final class Recaptcha {
                     recaptcha$getClient$1.zzc = i2 - TLObject.FLAG_31;
                     Recaptcha$getClient$1 recaptcha$getClient$12 = recaptcha$getClient$1;
                     Object obj = recaptcha$getClient$12.zza;
-                    coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                    Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                     i = recaptcha$getClient$12.zzc;
                     if (i != 0) {
                         ResultKt.throwOnFailure(obj);
@@ -79,7 +78,7 @@ public final class Recaptcha {
         recaptcha$getClient$1 = new Recaptcha$getClient$1(this, continuation);
         Recaptcha$getClient$1 recaptcha$getClient$122 = recaptcha$getClient$1;
         Object obj2 = recaptcha$getClient$122.zza;
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = recaptcha$getClient$122.zzc;
     }
 }

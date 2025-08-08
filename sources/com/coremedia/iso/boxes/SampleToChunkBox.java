@@ -20,60 +20,8 @@ public class SampleToChunkBox extends AbstractFullBox {
     private static final /* synthetic */ JoinPoint.StaticPart ajc$tjp_3 = null;
     List entries;
 
-    public static class Entry {
-        long firstChunk;
-        long sampleDescriptionIndex;
-        long samplesPerChunk;
-
-        public Entry(long j, long j2, long j3) {
-            this.firstChunk = j;
-            this.samplesPerChunk = j2;
-            this.sampleDescriptionIndex = j3;
-        }
-
-        public boolean equals(Object obj) {
-            if (this == obj) {
-                return true;
-            }
-            if (obj == null || getClass() != obj.getClass()) {
-                return false;
-            }
-            Entry entry = (Entry) obj;
-            return this.firstChunk == entry.firstChunk && this.sampleDescriptionIndex == entry.sampleDescriptionIndex && this.samplesPerChunk == entry.samplesPerChunk;
-        }
-
-        public long getFirstChunk() {
-            return this.firstChunk;
-        }
-
-        public long getSampleDescriptionIndex() {
-            return this.sampleDescriptionIndex;
-        }
-
-        public long getSamplesPerChunk() {
-            return this.samplesPerChunk;
-        }
-
-        public int hashCode() {
-            long j = this.firstChunk;
-            long j2 = this.samplesPerChunk;
-            int i = ((((int) (j ^ (j >>> 32))) * 31) + ((int) (j2 ^ (j2 >>> 32)))) * 31;
-            long j3 = this.sampleDescriptionIndex;
-            return i + ((int) (j3 ^ (j3 >>> 32)));
-        }
-
-        public String toString() {
-            return "Entry{firstChunk=" + this.firstChunk + ", samplesPerChunk=" + this.samplesPerChunk + ", sampleDescriptionIndex=" + this.sampleDescriptionIndex + '}';
-        }
-    }
-
     static {
         ajc$preClinit();
-    }
-
-    public SampleToChunkBox() {
-        super("stsc");
-        this.entries = Collections.emptyList();
     }
 
     private static /* synthetic */ void ajc$preClinit() {
@@ -82,6 +30,26 @@ public class SampleToChunkBox extends AbstractFullBox {
         ajc$tjp_1 = factory.makeSJP("method-execution", factory.makeMethodSig("1", "setEntries", "com.coremedia.iso.boxes.SampleToChunkBox", "java.util.List", "entries", "", "void"), 51);
         ajc$tjp_2 = factory.makeSJP("method-execution", factory.makeMethodSig("1", "toString", "com.coremedia.iso.boxes.SampleToChunkBox", "", "", "", "java.lang.String"), 84);
         ajc$tjp_3 = factory.makeSJP("method-execution", factory.makeMethodSig("1", "blowup", "com.coremedia.iso.boxes.SampleToChunkBox", "int", "chunkCount", "", "[J"), 95);
+    }
+
+    public SampleToChunkBox() {
+        super("stsc");
+        this.entries = Collections.emptyList();
+    }
+
+    public List getEntries() {
+        RequiresParseDetailAspect.aspectOf().before(Factory.makeJP(ajc$tjp_0, this, this));
+        return this.entries;
+    }
+
+    public void setEntries(List list) {
+        RequiresParseDetailAspect.aspectOf().before(Factory.makeJP(ajc$tjp_1, this, this, list));
+        this.entries = list;
+    }
+
+    @Override // com.googlecode.mp4parser.AbstractBox
+    protected long getContentSize() {
+        return (this.entries.size() * 12) + 8;
     }
 
     @Override // com.googlecode.mp4parser.AbstractBox
@@ -105,23 +73,55 @@ public class SampleToChunkBox extends AbstractFullBox {
         }
     }
 
-    @Override // com.googlecode.mp4parser.AbstractBox
-    protected long getContentSize() {
-        return (this.entries.size() * 12) + 8;
-    }
-
-    public List getEntries() {
-        RequiresParseDetailAspect.aspectOf().before(Factory.makeJP(ajc$tjp_0, this, this));
-        return this.entries;
-    }
-
-    public void setEntries(List list) {
-        RequiresParseDetailAspect.aspectOf().before(Factory.makeJP(ajc$tjp_1, this, this, list));
-        this.entries = list;
-    }
-
     public String toString() {
         RequiresParseDetailAspect.aspectOf().before(Factory.makeJP(ajc$tjp_2, this, this));
         return "SampleToChunkBox[entryCount=" + this.entries.size() + "]";
+    }
+
+    public static class Entry {
+        long firstChunk;
+        long sampleDescriptionIndex;
+        long samplesPerChunk;
+
+        public Entry(long j, long j2, long j3) {
+            this.firstChunk = j;
+            this.samplesPerChunk = j2;
+            this.sampleDescriptionIndex = j3;
+        }
+
+        public long getFirstChunk() {
+            return this.firstChunk;
+        }
+
+        public long getSamplesPerChunk() {
+            return this.samplesPerChunk;
+        }
+
+        public long getSampleDescriptionIndex() {
+            return this.sampleDescriptionIndex;
+        }
+
+        public String toString() {
+            return "Entry{firstChunk=" + this.firstChunk + ", samplesPerChunk=" + this.samplesPerChunk + ", sampleDescriptionIndex=" + this.sampleDescriptionIndex + '}';
+        }
+
+        public boolean equals(Object obj) {
+            if (this == obj) {
+                return true;
+            }
+            if (obj == null || getClass() != obj.getClass()) {
+                return false;
+            }
+            Entry entry = (Entry) obj;
+            return this.firstChunk == entry.firstChunk && this.sampleDescriptionIndex == entry.sampleDescriptionIndex && this.samplesPerChunk == entry.samplesPerChunk;
+        }
+
+        public int hashCode() {
+            long j = this.firstChunk;
+            long j2 = this.samplesPerChunk;
+            int i = ((((int) (j ^ (j >>> 32))) * 31) + ((int) (j2 ^ (j2 >>> 32)))) * 31;
+            long j3 = this.sampleDescriptionIndex;
+            return i + ((int) (j3 ^ (j3 >>> 32)));
+        }
     }
 }

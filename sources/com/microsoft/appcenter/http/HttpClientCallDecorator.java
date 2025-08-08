@@ -3,7 +3,7 @@ package com.microsoft.appcenter.http;
 import com.microsoft.appcenter.http.HttpClient;
 import java.util.Map;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 abstract class HttpClientCallDecorator implements Runnable, ServiceCall, ServiceCallback {
     private final HttpClient.CallTemplate mCallTemplate;
     private final HttpClient mDecoratedApi;
@@ -27,9 +27,9 @@ abstract class HttpClientCallDecorator implements Runnable, ServiceCall, Service
         this.mServiceCall.cancel();
     }
 
-    @Override // com.microsoft.appcenter.http.ServiceCallback
-    public void onCallFailed(Exception exc) {
-        this.mServiceCallback.onCallFailed(exc);
+    @Override // java.lang.Runnable
+    public synchronized void run() {
+        this.mServiceCall = this.mDecoratedApi.callAsync(this.mUrl, this.mMethod, this.mHeaders, this.mCallTemplate, this);
     }
 
     @Override // com.microsoft.appcenter.http.ServiceCallback
@@ -37,8 +37,8 @@ abstract class HttpClientCallDecorator implements Runnable, ServiceCall, Service
         this.mServiceCallback.onCallSucceeded(httpResponse);
     }
 
-    @Override // java.lang.Runnable
-    public synchronized void run() {
-        this.mServiceCall = this.mDecoratedApi.callAsync(this.mUrl, this.mMethod, this.mHeaders, this.mCallTemplate, this);
+    @Override // com.microsoft.appcenter.http.ServiceCallback
+    public void onCallFailed(Exception exc) {
+        this.mServiceCallback.onCallFailed(exc);
     }
 }

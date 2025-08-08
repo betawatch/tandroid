@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.clearcut;
 
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import java.util.Map;
 
 /* loaded from: classes.dex */
@@ -10,26 +10,26 @@ final class zzbv extends zzbu {
 
     @Override // com.google.android.gms.internal.clearcut.zzbu
     final int zza(Map.Entry entry) {
-        ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(entry.getKey());
+        WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(entry.getKey());
         throw null;
     }
 
     @Override // com.google.android.gms.internal.clearcut.zzbu
     final zzby zza(Object obj) {
-        ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(obj);
+        WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(obj);
         throw null;
     }
 
     @Override // com.google.android.gms.internal.clearcut.zzbu
     final void zza(zzfr zzfrVar, Map.Entry entry) {
-        ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(entry.getKey());
+        WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(entry.getKey());
         int[] iArr = zzbw.zzgq;
         throw null;
     }
 
     @Override // com.google.android.gms.internal.clearcut.zzbu
     final void zza(Object obj, zzby zzbyVar) {
-        ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(obj);
+        WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(obj);
         throw null;
     }
 

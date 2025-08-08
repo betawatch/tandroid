@@ -8,10 +8,6 @@ class JniHelper {
     JniHelper() {
     }
 
-    static Object getKey(Map.Entry entry) {
-        return entry.getKey();
-    }
-
     static byte[] getStringBytes(String str) {
         try {
             return str.getBytes("ISO-8859-1");
@@ -22,6 +18,10 @@ class JniHelper {
 
     static Object getStringClass() {
         return String.class;
+    }
+
+    static Object getKey(Map.Entry entry) {
+        return entry.getKey();
     }
 
     static Object getValue(Map.Entry entry) {

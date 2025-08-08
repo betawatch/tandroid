@@ -22,24 +22,24 @@ abstract class SendRequest {
         public abstract Builder setTransportName(String str);
     }
 
-    SendRequest() {
-    }
-
-    public static Builder builder() {
-        return new AutoValue_SendRequest.Builder();
-    }
-
     public abstract Encoding getEncoding();
 
     abstract Event getEvent();
-
-    public byte[] getPayload() {
-        return (byte[]) getTransformer().apply(getEvent().getPayload());
-    }
 
     abstract Transformer getTransformer();
 
     public abstract TransportContext getTransportContext();
 
     public abstract String getTransportName();
+
+    SendRequest() {
+    }
+
+    public byte[] getPayload() {
+        return (byte[]) getTransformer().apply(getEvent().getPayload());
+    }
+
+    public static Builder builder() {
+        return new AutoValue_SendRequest.Builder();
+    }
 }

@@ -9,33 +9,9 @@ final class VarintReader {
     private final byte[] scratch = new byte[8];
     private int state;
 
-    public static long assembleVarint(byte[] bArr, int i, boolean z) {
-        long j = bArr[0] & 255;
-        if (z) {
-            j &= VARINT_LENGTH_MASKS[i - 1] ^ (-1);
-        }
-        for (int i2 = 1; i2 < i; i2++) {
-            j = (j << 8) | (bArr[i2] & 255);
-        }
-        return j;
-    }
-
-    public static int parseUnsignedVarintLength(int i) {
-        long j;
-        int i2 = 0;
-        do {
-            long[] jArr = VARINT_LENGTH_MASKS;
-            if (i2 >= jArr.length) {
-                return -1;
-            }
-            j = jArr[i2] & i;
-            i2++;
-        } while (j == 0);
-        return i2;
-    }
-
-    public int getLastLength() {
-        return this.length;
+    public void reset() {
+        this.state = 0;
+        this.length = 0;
     }
 
     public long readUnsignedVarint(ExtractorInput extractorInput, boolean z, boolean z2, int i) {
@@ -62,8 +38,32 @@ final class VarintReader {
         return assembleVarint(this.scratch, this.length, z2);
     }
 
-    public void reset() {
-        this.state = 0;
-        this.length = 0;
+    public int getLastLength() {
+        return this.length;
+    }
+
+    public static int parseUnsignedVarintLength(int i) {
+        long j;
+        int i2 = 0;
+        do {
+            long[] jArr = VARINT_LENGTH_MASKS;
+            if (i2 >= jArr.length) {
+                return -1;
+            }
+            j = jArr[i2] & i;
+            i2++;
+        } while (j == 0);
+        return i2;
+    }
+
+    public static long assembleVarint(byte[] bArr, int i, boolean z) {
+        long j = bArr[0] & 255;
+        if (z) {
+            j &= ~VARINT_LENGTH_MASKS[i - 1];
+        }
+        for (int i2 = 1; i2 < i; i2++) {
+            j = (j << 8) | (bArr[i2] & 255);
+        }
+        return j;
     }
 }

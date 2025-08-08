@@ -5,6 +5,14 @@ abstract class zzir {
     private static final zziq zza = new zzip();
     private static final zziq zzb = zzc();
 
+    private static zziq zzc() {
+        try {
+            return (zziq) Class.forName("com.google.protobuf.ExtensionSchemaFull").getDeclaredConstructor(null).newInstance(null);
+        } catch (Exception unused) {
+            return null;
+        }
+    }
+
     static zziq zza() {
         return zza;
     }
@@ -15,13 +23,5 @@ abstract class zzir {
             return zziqVar;
         }
         throw new IllegalStateException("Protobuf runtime is not correctly loaded.");
-    }
-
-    private static zziq zzc() {
-        try {
-            return (zziq) Class.forName("com.google.protobuf.ExtensionSchemaFull").getDeclaredConstructor(null).newInstance(null);
-        } catch (Exception unused) {
-            return null;
-        }
     }
 }

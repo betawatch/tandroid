@@ -7,13 +7,13 @@ import java.util.Locale;
 public abstract class TextUtilsCompat {
     private static final Locale ROOT = new Locale("", "");
 
+    public static int getLayoutDirectionFromLocale(Locale locale) {
+        return Api17Impl.getLayoutDirectionFromLocale(locale);
+    }
+
     static class Api17Impl {
         static int getLayoutDirectionFromLocale(Locale locale) {
             return TextUtils.getLayoutDirectionFromLocale(locale);
         }
-    }
-
-    public static int getLayoutDirectionFromLocale(Locale locale) {
-        return Api17Impl.getLayoutDirectionFromLocale(locale);
     }
 }

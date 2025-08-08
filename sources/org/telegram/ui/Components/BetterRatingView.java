@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class BetterRatingView extends View {
     private Bitmap filledStar;
     private Bitmap hollowStar;
@@ -33,8 +33,9 @@ public class BetterRatingView extends View {
         this.hollowStar = BitmapFactory.decodeResource(getResources(), R.drawable.ic_rating_star).extractAlpha();
     }
 
-    public int getRating() {
-        return this.selectedRating;
+    @Override // android.view.View
+    protected void onMeasure(int i, int i2) {
+        setMeasuredDimension((this.numStars * AndroidUtilities.dp(32.0f)) + ((this.numStars - 1) * AndroidUtilities.dp(16.0f)), AndroidUtilities.dp(32.0f));
     }
 
     @Override // android.view.View
@@ -45,11 +46,6 @@ public class BetterRatingView extends View {
             canvas.drawBitmap(i < this.selectedRating ? this.filledStar : this.hollowStar, AndroidUtilities.dp(48.0f) * i, 0.0f, this.paint);
             i++;
         }
-    }
-
-    @Override // android.view.View
-    protected void onMeasure(int i, int i2) {
-        setMeasuredDimension((this.numStars * AndroidUtilities.dp(32.0f)) + ((this.numStars - 1) * AndroidUtilities.dp(16.0f)), AndroidUtilities.dp(32.0f));
     }
 
     @Override // android.view.View
@@ -69,6 +65,10 @@ public class BetterRatingView extends View {
             dp += AndroidUtilities.dp(48.0f);
         }
         return true;
+    }
+
+    public int getRating() {
+        return this.selectedRating;
     }
 
     public void setOnRatingChangeListener(OnRatingChangeListener onRatingChangeListener) {

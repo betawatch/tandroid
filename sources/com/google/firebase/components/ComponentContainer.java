@@ -6,21 +6,6 @@ import java.util.Set;
 
 /* loaded from: classes.dex */
 public interface ComponentContainer {
-
-    public abstract /* synthetic */ class -CC {
-        public static Object $default$get(ComponentContainer componentContainer, Qualified qualified) {
-            Provider provider = componentContainer.getProvider(qualified);
-            if (provider == null) {
-                return null;
-            }
-            return provider.get();
-        }
-
-        public static Set $default$setOf(ComponentContainer componentContainer, Qualified qualified) {
-            return (Set) componentContainer.setOfProvider(qualified).get();
-        }
-    }
-
     Object get(Qualified qualified);
 
     Object get(Class cls);
@@ -38,4 +23,18 @@ public interface ComponentContainer {
     Set setOf(Class cls);
 
     Provider setOfProvider(Qualified qualified);
+
+    public abstract /* synthetic */ class -CC {
+        public static Object $default$get(ComponentContainer componentContainer, Qualified qualified) {
+            Provider provider = componentContainer.getProvider(qualified);
+            if (provider == null) {
+                return null;
+            }
+            return provider.get();
+        }
+
+        public static Set $default$setOf(ComponentContainer componentContainer, Qualified qualified) {
+            return (Set) componentContainer.setOfProvider(qualified).get();
+        }
+    }
 }

@@ -2,7 +2,6 @@ package org.telegram.ui.Components;
 
 import android.app.Activity;
 import android.content.Context;
-import android.os.Build;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -20,8 +19,15 @@ import org.telegram.ui.ActionBar.BottomSheet;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.CacheControlActivity;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class DownloadsInfoBottomSheet extends BottomSheet {
+    public static void show(Activity activity, BaseFragment baseFragment) {
+        if (baseFragment == null || activity == null) {
+            return;
+        }
+        new DownloadsInfoBottomSheet(activity, baseFragment, false).show();
+    }
+
     public DownloadsInfoBottomSheet(Context context, final BaseFragment baseFragment, boolean z) {
         super(context, z);
         setApplyBottomPadding(false);
@@ -85,9 +91,7 @@ public class DownloadsInfoBottomSheet extends BottomSheet {
         textView4.setText(LocaleController.getString(R.string.ClearDownloadsList));
         textView4.setTextColor(Theme.getColor(i3));
         textView4.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.dp(8.0f), 0, ColorUtils.setAlphaComponent(Theme.getColor(i3), 120)));
-        if (Build.VERSION.SDK_INT >= 21) {
-            textView4.setLetterSpacing(0.025f);
-        }
+        textView4.setLetterSpacing(0.025f);
         linearLayout.addView(textView4, LayoutHelper.createFrame(-1, 48.0f, 0, 14.0f, 0.0f, 14.0f, 6.0f));
         NestedScrollView nestedScrollView = new NestedScrollView(context);
         nestedScrollView.addView(frameLayout);
@@ -108,25 +112,18 @@ public class DownloadsInfoBottomSheet extends BottomSheet {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$0(View view) {
-        lambda$new$0();
+        dismiss();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$1(BaseFragment baseFragment, View view) {
-        lambda$new$0();
+        dismiss();
         baseFragment.presentFragment(new CacheControlActivity());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$2(View view) {
-        lambda$new$0();
+        dismiss();
         DownloadController.getInstance(this.currentAccount).clearRecentDownloadedFiles();
-    }
-
-    public static void show(Activity activity, BaseFragment baseFragment) {
-        if (baseFragment == null || activity == null) {
-            return;
-        }
-        new DownloadsInfoBottomSheet(activity, baseFragment, false).show();
     }
 }

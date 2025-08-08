@@ -5,9 +5,9 @@ import com.google.android.datatransport.runtime.dagger.internal.Preconditions;
 
 /* loaded from: classes.dex */
 public final class TimeModule_UptimeClockFactory implements Factory {
-
-    private static final class InstanceHolder {
-        private static final TimeModule_UptimeClockFactory INSTANCE = new TimeModule_UptimeClockFactory();
+    @Override // javax.inject.Provider
+    public Clock get() {
+        return uptimeClock();
     }
 
     public static TimeModule_UptimeClockFactory create() {
@@ -18,8 +18,7 @@ public final class TimeModule_UptimeClockFactory implements Factory {
         return (Clock) Preconditions.checkNotNull(TimeModule.uptimeClock(), "Cannot return null from a non-@Nullable @Provides method");
     }
 
-    @Override // javax.inject.Provider
-    public Clock get() {
-        return uptimeClock();
+    private static final class InstanceHolder {
+        private static final TimeModule_UptimeClockFactory INSTANCE = new TimeModule_UptimeClockFactory();
     }
 }

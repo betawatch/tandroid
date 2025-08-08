@@ -9,21 +9,8 @@ public final class Spliterators {
     private static final J c = new X();
     private static final D d = new V();
 
-    private static void a(int i, int i2, int i3) {
-        if (i2 <= i3) {
-            if (i2 < 0) {
-                throw new ArrayIndexOutOfBoundsException(i2);
-            }
-            if (i3 > i) {
-                throw new ArrayIndexOutOfBoundsException(i3);
-            }
-            return;
-        }
-        throw new ArrayIndexOutOfBoundsException("origin(" + i2 + ") > fence(" + i3 + ")");
-    }
-
-    public static D b() {
-        return d;
+    public static Spliterator e() {
+        return a;
     }
 
     public static G c() {
@@ -34,8 +21,8 @@ public final class Spliterators {
         return c;
     }
 
-    public static Spliterator e() {
-        return a;
+    public static D b() {
+        return d;
     }
 
     public static p f(D d2) {
@@ -80,6 +67,19 @@ public final class Spliterators {
         objArr.getClass();
         a(objArr.length, i, i2);
         return new T(objArr, i, i2, 1040);
+    }
+
+    private static void a(int i, int i2, int i3) {
+        if (i2 <= i3) {
+            if (i2 < 0) {
+                throw new ArrayIndexOutOfBoundsException(i2);
+            }
+            if (i3 > i) {
+                throw new ArrayIndexOutOfBoundsException(i3);
+            }
+            return;
+        }
+        throw new ArrayIndexOutOfBoundsException("origin(" + i2 + ") > fence(" + i3 + ")");
     }
 
     public static <T> Spliterator<T> spliterator(java.util.Collection<? extends T> collection, int i) {

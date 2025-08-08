@@ -13,7 +13,6 @@ public abstract class zzfu extends zzfm implements Set, j$.util.Set {
     }
 
     static int zzh(int i) {
-        double d;
         int max = Math.max(i, 2);
         if (max >= 751619276) {
             if (max < 1073741824) {
@@ -24,9 +23,7 @@ public abstract class zzfu extends zzfm implements Set, j$.util.Set {
         int highestOneBit = Integer.highestOneBit(max - 1);
         do {
             highestOneBit += highestOneBit;
-            d = highestOneBit;
-            Double.isNaN(d);
-        } while (d * 0.7d < max);
+        } while (highestOneBit * 0.7d < max);
         return highestOneBit;
     }
 
@@ -37,56 +34,6 @@ public abstract class zzfu extends zzfm implements Set, j$.util.Set {
 
     public static zzfu zzk() {
         return zzgd.zza;
-    }
-
-    private static zzfu zzm(int i, Object... objArr) {
-        if (i == 0) {
-            return zzgd.zza;
-        }
-        if (i == 1) {
-            Object obj = objArr[0];
-            obj.getClass();
-            return new zzgf(obj);
-        }
-        int zzh = zzh(i);
-        Object[] objArr2 = new Object[zzh];
-        int i2 = zzh - 1;
-        int i3 = 0;
-        int i4 = 0;
-        for (int i5 = 0; i5 < i; i5++) {
-            Object obj2 = objArr[i5];
-            zzfw.zza(obj2, i5);
-            int hashCode = obj2.hashCode();
-            int zza = zzfj.zza(hashCode);
-            while (true) {
-                int i6 = zza & i2;
-                Object obj3 = objArr2[i6];
-                if (obj3 == null) {
-                    objArr[i4] = obj2;
-                    objArr2[i6] = obj2;
-                    i3 += hashCode;
-                    i4++;
-                    break;
-                }
-                if (!obj3.equals(obj2)) {
-                    zza++;
-                }
-            }
-        }
-        Arrays.fill(objArr, i4, i, (Object) null);
-        if (i4 == 1) {
-            Object obj4 = objArr[0];
-            obj4.getClass();
-            return new zzgf(obj4);
-        }
-        if (zzh(i4) < zzh / 2) {
-            return zzm(i4, objArr);
-        }
-        int length = objArr.length;
-        if (i4 < (length >> 1) + (length >> 2)) {
-            objArr = Arrays.copyOf(objArr, i4);
-        }
-        return new zzgd(objArr, i3, objArr2, i2, i4);
     }
 
     @Override // java.util.Collection, java.util.Set
@@ -138,5 +85,55 @@ public abstract class zzfu extends zzfm implements Set, j$.util.Set {
 
     boolean zzl() {
         return false;
+    }
+
+    private static zzfu zzm(int i, Object... objArr) {
+        if (i == 0) {
+            return zzgd.zza;
+        }
+        if (i == 1) {
+            Object obj = objArr[0];
+            obj.getClass();
+            return new zzgf(obj);
+        }
+        int zzh = zzh(i);
+        Object[] objArr2 = new Object[zzh];
+        int i2 = zzh - 1;
+        int i3 = 0;
+        int i4 = 0;
+        for (int i5 = 0; i5 < i; i5++) {
+            Object obj2 = objArr[i5];
+            zzfw.zza(obj2, i5);
+            int hashCode = obj2.hashCode();
+            int zza = zzfj.zza(hashCode);
+            while (true) {
+                int i6 = zza & i2;
+                Object obj3 = objArr2[i6];
+                if (obj3 == null) {
+                    objArr[i4] = obj2;
+                    objArr2[i6] = obj2;
+                    i3 += hashCode;
+                    i4++;
+                    break;
+                }
+                if (!obj3.equals(obj2)) {
+                    zza++;
+                }
+            }
+        }
+        Arrays.fill(objArr, i4, i, (Object) null);
+        if (i4 == 1) {
+            Object obj4 = objArr[0];
+            obj4.getClass();
+            return new zzgf(obj4);
+        }
+        if (zzh(i4) < zzh / 2) {
+            return zzm(i4, objArr);
+        }
+        int length = objArr.length;
+        if (i4 < (length >> 1) + (length >> 2)) {
+            objArr = Arrays.copyOf(objArr, i4);
+        }
+        return new zzgd(objArr, i3, objArr2, i2, i4);
     }
 }

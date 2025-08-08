@@ -18,7 +18,23 @@ public abstract class zzfe {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x0062  */
+    public static void zza(Throwable th) {
+        zza.zza(th);
+    }
+
+    private static Integer zza() {
+        try {
+            return (Integer) Class.forName("android.os.Build$VERSION").getField("SDK_INT").get(null);
+        } catch (Exception e) {
+            PrintStream printStream = System.err;
+            printStream.println("Failed to retrieve value from android.os.Build$VERSION.SDK_INT due to the following exception.");
+            e.printStackTrace(printStream);
+            return null;
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:10:0x005f  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0061  */
     static {
         Integer num;
         zzfd zzaVar;
@@ -42,31 +58,20 @@ public abstract class zzfe {
                 th.printStackTrace(printStream);
                 zzaVar = new zza();
                 zza = zzaVar;
-                zzb = num != null ? num.intValue() : 1;
+                zzb = num == null ? 1 : num.intValue();
             }
             if (num.intValue() >= 19) {
                 zzaVar = new zzfj();
                 zza = zzaVar;
-                zzb = num != null ? num.intValue() : 1;
+                zzb = num == null ? 1 : num.intValue();
             }
         }
-        zzaVar = Boolean.getBoolean("com.google.devtools.build.android.desugar.runtime.twr_disable_mimic") ^ true ? new zzfh() : new zza();
-        zza = zzaVar;
-        zzb = num != null ? num.intValue() : 1;
-    }
-
-    private static Integer zza() {
-        try {
-            return (Integer) Class.forName("android.os.Build$VERSION").getField("SDK_INT").get(null);
-        } catch (Exception e) {
-            PrintStream printStream = System.err;
-            printStream.println("Failed to retrieve value from android.os.Build$VERSION.SDK_INT due to the following exception.");
-            e.printStackTrace(printStream);
-            return null;
+        if (!Boolean.getBoolean("com.google.devtools.build.android.desugar.runtime.twr_disable_mimic")) {
+            zzaVar = new zzfh();
+        } else {
+            zzaVar = new zza();
         }
-    }
-
-    public static void zza(Throwable th) {
-        zza.zza(th);
+        zza = zzaVar;
+        zzb = num == null ? 1 : num.intValue();
     }
 }

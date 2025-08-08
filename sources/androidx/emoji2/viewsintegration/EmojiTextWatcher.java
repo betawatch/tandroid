@@ -19,52 +19,17 @@ final class EmojiTextWatcher implements TextWatcher {
     private int mEmojiReplaceStrategy = 0;
     private boolean mEnabled = true;
 
-    private static class InitCallbackImpl extends EmojiCompat.InitCallback {
-        private final Reference mViewRef;
-
-        InitCallbackImpl(EditText editText) {
-            this.mViewRef = new WeakReference(editText);
-        }
-
-        @Override // androidx.emoji2.text.EmojiCompat.InitCallback
-        public void onInitialized() {
-            super.onInitialized();
-            EmojiTextWatcher.processTextOnEnablingEvent((EditText) this.mViewRef.get(), 1);
-        }
-    }
-
-    EmojiTextWatcher(EditText editText, boolean z) {
-        this.mEditText = editText;
-        this.mExpectInitializedEmojiCompat = z;
-    }
-
-    private EmojiCompat.InitCallback getInitCallback() {
-        if (this.mInitCallback == null) {
-            this.mInitCallback = new InitCallbackImpl(this.mEditText);
-        }
-        return this.mInitCallback;
-    }
-
-    static void processTextOnEnablingEvent(EditText editText, int i) {
-        if (i == 1 && editText != null && editText.isAttachedToWindow()) {
-            Editable editableText = editText.getEditableText();
-            int selectionStart = Selection.getSelectionStart(editableText);
-            int selectionEnd = Selection.getSelectionEnd(editableText);
-            EmojiCompat.get().process(editableText);
-            EmojiInputFilter.updateSelection(editableText, selectionStart, selectionEnd);
-        }
-    }
-
-    private boolean shouldSkipForDisabledOrNotConfigured() {
-        return (this.mEnabled && (this.mExpectInitializedEmojiCompat || EmojiCompat.isConfigured())) ? false : true;
-    }
-
     @Override // android.text.TextWatcher
     public void afterTextChanged(Editable editable) {
     }
 
     @Override // android.text.TextWatcher
     public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+    }
+
+    EmojiTextWatcher(EditText editText, boolean z) {
+        this.mEditText = editText;
+        this.mExpectInitializedEmojiCompat = z;
     }
 
     @Override // android.text.TextWatcher
@@ -84,6 +49,17 @@ final class EmojiTextWatcher implements TextWatcher {
         EmojiCompat.get().registerInitCallback(getInitCallback());
     }
 
+    private boolean shouldSkipForDisabledOrNotConfigured() {
+        return (this.mEnabled && (this.mExpectInitializedEmojiCompat || EmojiCompat.isConfigured())) ? false : true;
+    }
+
+    private EmojiCompat.InitCallback getInitCallback() {
+        if (this.mInitCallback == null) {
+            this.mInitCallback = new InitCallbackImpl(this.mEditText);
+        }
+        return this.mInitCallback;
+    }
+
     public void setEnabled(boolean z) {
         if (this.mEnabled != z) {
             if (this.mInitCallback != null) {
@@ -93,6 +69,30 @@ final class EmojiTextWatcher implements TextWatcher {
             if (z) {
                 processTextOnEnablingEvent(this.mEditText, EmojiCompat.get().getLoadState());
             }
+        }
+    }
+
+    private static class InitCallbackImpl extends EmojiCompat.InitCallback {
+        private final Reference mViewRef;
+
+        InitCallbackImpl(EditText editText) {
+            this.mViewRef = new WeakReference(editText);
+        }
+
+        @Override // androidx.emoji2.text.EmojiCompat.InitCallback
+        public void onInitialized() {
+            super.onInitialized();
+            EmojiTextWatcher.processTextOnEnablingEvent((EditText) this.mViewRef.get(), 1);
+        }
+    }
+
+    static void processTextOnEnablingEvent(EditText editText, int i) {
+        if (i == 1 && editText != null && editText.isAttachedToWindow()) {
+            Editable editableText = editText.getEditableText();
+            int selectionStart = Selection.getSelectionStart(editableText);
+            int selectionEnd = Selection.getSelectionEnd(editableText);
+            EmojiCompat.get().process(editableText);
+            EmojiInputFilter.updateSelection(editableText, selectionStart, selectionEnd);
         }
     }
 }

@@ -17,11 +17,11 @@ public final class VorbisComment extends com.google.android.exoplayer2.metadata.
         }
     };
 
-    VorbisComment(Parcel parcel) {
-        super(parcel);
-    }
-
     public VorbisComment(String str, String str2) {
         super(str, str2);
+    }
+
+    VorbisComment(Parcel parcel) {
+        super(parcel);
     }
 }

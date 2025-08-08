@@ -4,19 +4,16 @@ import com.coremedia.iso.IsoTypeReader;
 import com.coremedia.iso.IsoTypeWriter;
 import java.nio.ByteBuffer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class SLConfigDescriptor extends BaseDescriptor {
     int predefined;
 
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        return obj != null && getClass() == obj.getClass() && this.predefined == ((SLConfigDescriptor) obj).predefined;
+    public int serializedSize() {
+        return 3;
     }
 
-    public int hashCode() {
-        return this.predefined;
+    public void setPredefined(int i) {
+        this.predefined = i;
     }
 
     @Override // com.googlecode.mp4parser.boxes.mp4.objectdescriptors.BaseDescriptor
@@ -32,15 +29,18 @@ public class SLConfigDescriptor extends BaseDescriptor {
         return allocate;
     }
 
-    public int serializedSize() {
-        return 3;
-    }
-
-    public void setPredefined(int i) {
-        this.predefined = i;
-    }
-
     public String toString() {
         return "SLConfigDescriptor{predefined=" + this.predefined + '}';
+    }
+
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        return obj != null && getClass() == obj.getClass() && this.predefined == ((SLConfigDescriptor) obj).predefined;
+    }
+
+    public int hashCode() {
+        return this.predefined;
     }
 }

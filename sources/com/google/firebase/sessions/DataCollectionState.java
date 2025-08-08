@@ -2,7 +2,7 @@ package com.google.firebase.sessions;
 
 import com.google.firebase.encoders.json.NumberedEnum;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public enum DataCollectionState implements NumberedEnum {
     COLLECTION_UNKNOWN(0),
     COLLECTION_SDK_NOT_INSTALLED(1),

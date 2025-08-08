@@ -13,11 +13,11 @@ public abstract class BackendRequest {
         public abstract Builder setExtras(byte[] bArr);
     }
 
-    public static Builder builder() {
-        return new AutoValue_BackendRequest.Builder();
-    }
-
     public abstract Iterable getEvents();
 
     public abstract byte[] getExtras();
+
+    public static Builder builder() {
+        return new AutoValue_BackendRequest.Builder();
+    }
 }

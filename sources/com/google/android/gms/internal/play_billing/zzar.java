@@ -1,30 +1,30 @@
 package com.google.android.gms.internal.play_billing;
 
-import java.util.NoSuchElementException;
+import android.os.Binder;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
 
 /* loaded from: classes.dex */
-final class zzar extends zzat {
-    final /* synthetic */ zzba zza;
-    private int zzb = 0;
-    private final int zzc;
-
-    zzar(zzba zzbaVar) {
-        this.zza = zzbaVar;
-        this.zzc = zzbaVar.zzd();
+public abstract class zzar extends Binder implements IInterface {
+    protected zzar(String str) {
+        attachInterface(this, str);
     }
 
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        return this.zzb < this.zzc;
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
+        return this;
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzav
-    public final byte zza() {
-        int i = this.zzb;
-        if (i >= this.zzc) {
-            throw new NoSuchElementException();
+    @Override // android.os.Binder
+    public final boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
+        if (i <= 16777215) {
+            parcel.enforceInterface(getInterfaceDescriptor());
+        } else if (super.onTransact(i, parcel, parcel2, i2)) {
+            return true;
         }
-        this.zzb = i + 1;
-        return this.zza.zzb(i);
+        return zzb(i, parcel, parcel2, i2);
     }
+
+    protected abstract boolean zzb(int i, Parcel parcel, Parcel parcel2, int i2);
 }

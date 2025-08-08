@@ -12,11 +12,6 @@ public final class zzo extends zzb implements zzl {
     }
 
     @Override // com.google.android.gms.internal.vision.zzl
-    public final void zza() {
-        zzb(3, a_());
-    }
-
-    @Override // com.google.android.gms.internal.vision.zzl
     public final Barcode[] zza(IObjectWrapper iObjectWrapper, zzs zzsVar) {
         Parcel a_ = a_();
         zzd.zza(a_, iObjectWrapper);
@@ -36,5 +31,10 @@ public final class zzo extends zzb implements zzl {
         Barcode[] barcodeArr = (Barcode[]) zza.createTypedArray(Barcode.CREATOR);
         zza.recycle();
         return barcodeArr;
+    }
+
+    @Override // com.google.android.gms.internal.vision.zzl
+    public final void zza() {
+        zzb(3, a_());
     }
 }

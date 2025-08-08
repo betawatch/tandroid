@@ -6,7 +6,7 @@ import android.os.Bundle;
 import com.microsoft.appcenter.utils.AppCenterLog;
 import org.telegram.tgnet.TLObject;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class DeepLinkActivity extends Activity {
     @Override // android.app.Activity
     public void onCreate(Bundle bundle) {
@@ -47,10 +47,12 @@ public class DeepLinkActivity extends Activity {
         finish();
         if ((getIntent().getFlags() & TLObject.FLAG_28) != 268435456) {
             AppCenterLog.debug("AppCenterDistribute", "Using restart work around to correctly resume app.");
-            launchIntentForPackage = intent.cloneFilter().addFlags(TLObject.FLAG_28);
-        } else if (!isTaskRoot() || (launchIntentForPackage = getPackageManager().getLaunchIntentForPackage(getPackageName())) == null) {
-            return;
+            startActivity(intent.cloneFilter().addFlags(TLObject.FLAG_28));
+        } else {
+            if (!isTaskRoot() || (launchIntentForPackage = getPackageManager().getLaunchIntentForPackage(getPackageName())) == null) {
+                return;
+            }
+            startActivity(launchIntentForPackage);
         }
-        startActivity(launchIntentForPackage);
     }
 }

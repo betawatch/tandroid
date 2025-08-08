@@ -10,11 +10,32 @@ final class T implements Spliterator {
     private final int c;
     private final int d;
 
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ long getExactSizeIfKnown() {
+        return A.j(this);
+    }
+
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean hasCharacteristics(int i) {
+        return A.k(this, i);
+    }
+
     public T(Object[] objArr, int i, int i2, int i3) {
         this.a = objArr;
         this.b = i;
         this.c = i2;
         this.d = i3 | 16448;
+    }
+
+    @Override // j$.util.Spliterator
+    public final Spliterator trySplit() {
+        int i = this.b;
+        int i2 = (this.c + i) >>> 1;
+        if (i >= i2) {
+            return null;
+        }
+        this.b = i2;
+        return new T(this.a, i, i2, this.d);
     }
 
     @Override // j$.util.Spliterator
@@ -37,34 +58,6 @@ final class T implements Spliterator {
     }
 
     @Override // j$.util.Spliterator
-    public final int characteristics() {
-        return this.d;
-    }
-
-    @Override // j$.util.Spliterator
-    public final long estimateSize() {
-        return this.c - this.b;
-    }
-
-    @Override // j$.util.Spliterator
-    public final Comparator getComparator() {
-        if (A.k(this, 4)) {
-            return null;
-        }
-        throw new IllegalStateException();
-    }
-
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ long getExactSizeIfKnown() {
-        return A.j(this);
-    }
-
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return A.k(this, i);
-    }
-
-    @Override // j$.util.Spliterator
     public final boolean s(Consumer consumer) {
         consumer.getClass();
         int i = this.b;
@@ -77,13 +70,20 @@ final class T implements Spliterator {
     }
 
     @Override // j$.util.Spliterator
-    public final Spliterator trySplit() {
-        int i = this.b;
-        int i2 = (this.c + i) >>> 1;
-        if (i >= i2) {
+    public final long estimateSize() {
+        return this.c - this.b;
+    }
+
+    @Override // j$.util.Spliterator
+    public final int characteristics() {
+        return this.d;
+    }
+
+    @Override // j$.util.Spliterator
+    public final Comparator getComparator() {
+        if (A.k(this, 4)) {
             return null;
         }
-        this.b = i2;
-        return new T(this.a, i, i2, this.d);
+        throw new IllegalStateException();
     }
 }

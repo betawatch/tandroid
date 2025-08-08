@@ -5,11 +5,15 @@ import kotlin.Result;
 import kotlin.ResultKt;
 import kotlin.coroutines.jvm.internal.BaseContinuationImpl;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class StackTraceRecoveryKt {
     private static final StackTraceElement ARTIFICIAL_FRAME = new ArtificialStackFrames().coroutineBoundary();
     private static final String baseContinuationImplClassName;
     private static final String stackTraceRecoveryClassName;
+
+    public static final Throwable recoverStackTrace(Throwable th) {
+        return th;
+    }
 
     static {
         Object obj;
@@ -35,9 +39,5 @@ public abstract class StackTraceRecoveryKt {
             obj2 = "kotlinx.coroutines.internal.StackTraceRecoveryKt";
         }
         stackTraceRecoveryClassName = (String) obj2;
-    }
-
-    public static final Throwable recoverStackTrace(Throwable th) {
-        return th;
     }
 }

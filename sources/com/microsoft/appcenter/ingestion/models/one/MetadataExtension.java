@@ -5,26 +5,12 @@ import java.util.Iterator;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class MetadataExtension implements Model {
     private JSONObject mMetadata = new JSONObject();
 
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
-        }
-        return this.mMetadata.toString().equals(((MetadataExtension) obj).mMetadata.toString());
-    }
-
     public JSONObject getMetadata() {
         return this.mMetadata;
-    }
-
-    public int hashCode() {
-        return this.mMetadata.toString().hashCode();
     }
 
     @Override // com.microsoft.appcenter.ingestion.models.Model
@@ -39,5 +25,19 @@ public class MetadataExtension implements Model {
             String next = keys.next();
             jSONStringer.key(next).value(this.mMetadata.get(next));
         }
+    }
+
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        return this.mMetadata.toString().equals(((MetadataExtension) obj).mMetadata.toString());
+    }
+
+    public int hashCode() {
+        return this.mMetadata.toString().hashCode();
     }
 }

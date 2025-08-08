@@ -2,7 +2,7 @@ package org.aspectj.runtime.reflect;
 
 import org.aspectj.lang.Signature;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 abstract class CodeSignatureImpl extends MemberSignatureImpl implements Signature {
     Class[] exceptionTypes;
     String[] parameterNames;
@@ -15,17 +15,17 @@ abstract class CodeSignatureImpl extends MemberSignatureImpl implements Signatur
         this.exceptionTypes = clsArr2;
     }
 
-    public Class[] getExceptionTypes() {
-        if (this.exceptionTypes == null) {
-            this.exceptionTypes = extractTypes(5);
-        }
-        return this.exceptionTypes;
-    }
-
     public Class[] getParameterTypes() {
         if (this.parameterTypes == null) {
             this.parameterTypes = extractTypes(3);
         }
         return this.parameterTypes;
+    }
+
+    public Class[] getExceptionTypes() {
+        if (this.exceptionTypes == null) {
+            this.exceptionTypes = extractTypes(5);
+        }
+        return this.exceptionTypes;
     }
 }

@@ -1,6 +1,6 @@
 package com.google.firebase.crashlytics.internal.metadata;
 
-import com.google.android.exoplayer2.mediacodec.AsynchronousMediaCodecBufferEnqueuer$$ExternalSyntheticBackportWithForwarding0;
+import com.google.android.exoplayer2.mediacodec.AsynchronousMediaCodecBufferEnqueuer$$ExternalSyntheticBackportWithForwarding1;
 import com.google.firebase.crashlytics.internal.common.CommonUtils;
 import com.google.firebase.crashlytics.internal.common.CrashlyticsBackgroundWorker;
 import com.google.firebase.crashlytics.internal.metadata.UserMetadata;
@@ -11,7 +11,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class UserMetadata {
     private final CrashlyticsBackgroundWorker backgroundWorker;
     private final MetaDataStore metaDataStore;
@@ -21,95 +21,8 @@ public class UserMetadata {
     private final RolloutAssignmentList rolloutsState = new RolloutAssignmentList(128);
     private final AtomicMarkableReference userId = new AtomicMarkableReference(null, false);
 
-    /* JADX INFO: Access modifiers changed from: private */
-    class SerializeableKeysMap {
-        private final boolean isInternal;
-        final AtomicMarkableReference map;
-        private final AtomicReference queuedSerializer = new AtomicReference(null);
-
-        public SerializeableKeysMap(boolean z) {
-            this.isInternal = z;
-            this.map = new AtomicMarkableReference(new KeysMap(64, z ? 8192 : 1024), false);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ Void lambda$scheduleSerializationTaskIfNeeded$0() {
-            this.queuedSerializer.set(null);
-            serializeIfMarked();
-            return null;
-        }
-
-        private void scheduleSerializationTaskIfNeeded() {
-            Callable callable = new Callable() { // from class: com.google.firebase.crashlytics.internal.metadata.UserMetadata$SerializeableKeysMap$$ExternalSyntheticLambda0
-                @Override // java.util.concurrent.Callable
-                public final Object call() {
-                    Void lambda$scheduleSerializationTaskIfNeeded$0;
-                    lambda$scheduleSerializationTaskIfNeeded$0 = UserMetadata.SerializeableKeysMap.this.lambda$scheduleSerializationTaskIfNeeded$0();
-                    return lambda$scheduleSerializationTaskIfNeeded$0;
-                }
-            };
-            if (AsynchronousMediaCodecBufferEnqueuer$$ExternalSyntheticBackportWithForwarding0.m(this.queuedSerializer, null, callable)) {
-                UserMetadata.this.backgroundWorker.submit(callable);
-            }
-        }
-
-        private void serializeIfMarked() {
-            Map map;
-            synchronized (this) {
-                try {
-                    if (this.map.isMarked()) {
-                        map = ((KeysMap) this.map.getReference()).getKeys();
-                        AtomicMarkableReference atomicMarkableReference = this.map;
-                        atomicMarkableReference.set((KeysMap) atomicMarkableReference.getReference(), false);
-                    } else {
-                        map = null;
-                    }
-                } catch (Throwable th) {
-                    throw th;
-                }
-            }
-            if (map != null) {
-                UserMetadata.this.metaDataStore.writeKeyData(UserMetadata.this.sessionIdentifier, map, this.isInternal);
-            }
-        }
-
-        public Map getKeys() {
-            return ((KeysMap) this.map.getReference()).getKeys();
-        }
-
-        public boolean setKey(String str, String str2) {
-            synchronized (this) {
-                try {
-                    if (!((KeysMap) this.map.getReference()).setKey(str, str2)) {
-                        return false;
-                    }
-                    AtomicMarkableReference atomicMarkableReference = this.map;
-                    atomicMarkableReference.set((KeysMap) atomicMarkableReference.getReference(), true);
-                    scheduleSerializationTaskIfNeeded();
-                    return true;
-                } catch (Throwable th) {
-                    throw th;
-                }
-            }
-        }
-    }
-
-    public UserMetadata(String str, FileStore fileStore, CrashlyticsBackgroundWorker crashlyticsBackgroundWorker) {
-        this.sessionIdentifier = str;
-        this.metaDataStore = new MetaDataStore(fileStore);
-        this.backgroundWorker = crashlyticsBackgroundWorker;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Object lambda$setUserId$0() {
-        serializeUserDataIfNeeded();
-        return null;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Object lambda$updateRolloutsState$1(List list) {
-        this.metaDataStore.writeRolloutState(this.sessionIdentifier, list);
-        return null;
+    public static String readUserId(String str, FileStore fileStore) {
+        return new MetaDataStore(fileStore).readUserId(str);
     }
 
     public static UserMetadata loadFromExistingSession(String str, FileStore fileStore, CrashlyticsBackgroundWorker crashlyticsBackgroundWorker) {
@@ -122,54 +35,10 @@ public class UserMetadata {
         return userMetadata;
     }
 
-    public static String readUserId(String str, FileStore fileStore) {
-        return new MetaDataStore(fileStore).readUserId(str);
-    }
-
-    private void serializeUserDataIfNeeded() {
-        boolean z;
-        String str;
-        synchronized (this.userId) {
-            try {
-                z = false;
-                if (this.userId.isMarked()) {
-                    str = getUserId();
-                    this.userId.set(str, false);
-                    z = true;
-                } else {
-                    str = null;
-                }
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-        if (z) {
-            this.metaDataStore.writeUserData(this.sessionIdentifier, str);
-        }
-    }
-
-    public Map getCustomKeys() {
-        return this.customKeys.getKeys();
-    }
-
-    public Map getInternalKeys() {
-        return this.internalKeys.getKeys();
-    }
-
-    public List getRolloutsState() {
-        return this.rolloutsState.getReportRolloutsState();
-    }
-
-    public String getUserId() {
-        return (String) this.userId.getReference();
-    }
-
-    public boolean setCustomKey(String str, String str2) {
-        return this.customKeys.setKey(str, str2);
-    }
-
-    public boolean setInternalKey(String str, String str2) {
-        return this.internalKeys.setKey(str, str2);
+    public UserMetadata(String str, FileStore fileStore, CrashlyticsBackgroundWorker crashlyticsBackgroundWorker) {
+        this.sessionIdentifier = str;
+        this.metaDataStore = new MetaDataStore(fileStore);
+        this.backgroundWorker = crashlyticsBackgroundWorker;
     }
 
     public void setNewSession(String str) {
@@ -191,6 +60,10 @@ public class UserMetadata {
                 throw th;
             }
         }
+    }
+
+    public String getUserId() {
+        return (String) this.userId.getReference();
     }
 
     public void setUserId(String str) {
@@ -215,6 +88,32 @@ public class UserMetadata {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ Object lambda$setUserId$0() {
+        serializeUserDataIfNeeded();
+        return null;
+    }
+
+    public Map getCustomKeys() {
+        return this.customKeys.getKeys();
+    }
+
+    public boolean setCustomKey(String str, String str2) {
+        return this.customKeys.setKey(str, str2);
+    }
+
+    public Map getInternalKeys() {
+        return this.internalKeys.getKeys();
+    }
+
+    public boolean setInternalKey(String str, String str2) {
+        return this.internalKeys.setKey(str, str2);
+    }
+
+    public List getRolloutsState() {
+        return this.rolloutsState.getReportRolloutsState();
+    }
+
     public boolean updateRolloutsState(List list) {
         synchronized (this.rolloutsState) {
             try {
@@ -233,6 +132,107 @@ public class UserMetadata {
                 return true;
             } catch (Throwable th) {
                 throw th;
+            }
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ Object lambda$updateRolloutsState$1(List list) {
+        this.metaDataStore.writeRolloutState(this.sessionIdentifier, list);
+        return null;
+    }
+
+    private void serializeUserDataIfNeeded() {
+        boolean z;
+        String str;
+        synchronized (this.userId) {
+            try {
+                z = false;
+                if (this.userId.isMarked()) {
+                    str = getUserId();
+                    this.userId.set(str, false);
+                    z = true;
+                } else {
+                    str = null;
+                }
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+        if (z) {
+            this.metaDataStore.writeUserData(this.sessionIdentifier, str);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    class SerializeableKeysMap {
+        private final boolean isInternal;
+        final AtomicMarkableReference map;
+        private final AtomicReference queuedSerializer = new AtomicReference(null);
+
+        public SerializeableKeysMap(boolean z) {
+            this.isInternal = z;
+            this.map = new AtomicMarkableReference(new KeysMap(64, z ? 8192 : 1024), false);
+        }
+
+        public Map getKeys() {
+            return ((KeysMap) this.map.getReference()).getKeys();
+        }
+
+        public boolean setKey(String str, String str2) {
+            synchronized (this) {
+                try {
+                    if (!((KeysMap) this.map.getReference()).setKey(str, str2)) {
+                        return false;
+                    }
+                    AtomicMarkableReference atomicMarkableReference = this.map;
+                    atomicMarkableReference.set((KeysMap) atomicMarkableReference.getReference(), true);
+                    scheduleSerializationTaskIfNeeded();
+                    return true;
+                } catch (Throwable th) {
+                    throw th;
+                }
+            }
+        }
+
+        private void scheduleSerializationTaskIfNeeded() {
+            Callable callable = new Callable() { // from class: com.google.firebase.crashlytics.internal.metadata.UserMetadata$SerializeableKeysMap$$ExternalSyntheticLambda0
+                @Override // java.util.concurrent.Callable
+                public final Object call() {
+                    Void lambda$scheduleSerializationTaskIfNeeded$0;
+                    lambda$scheduleSerializationTaskIfNeeded$0 = UserMetadata.SerializeableKeysMap.this.lambda$scheduleSerializationTaskIfNeeded$0();
+                    return lambda$scheduleSerializationTaskIfNeeded$0;
+                }
+            };
+            if (AsynchronousMediaCodecBufferEnqueuer$$ExternalSyntheticBackportWithForwarding1.m(this.queuedSerializer, null, callable)) {
+                UserMetadata.this.backgroundWorker.submit(callable);
+            }
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ Void lambda$scheduleSerializationTaskIfNeeded$0() {
+            this.queuedSerializer.set(null);
+            serializeIfMarked();
+            return null;
+        }
+
+        private void serializeIfMarked() {
+            Map map;
+            synchronized (this) {
+                try {
+                    if (this.map.isMarked()) {
+                        map = ((KeysMap) this.map.getReference()).getKeys();
+                        AtomicMarkableReference atomicMarkableReference = this.map;
+                        atomicMarkableReference.set((KeysMap) atomicMarkableReference.getReference(), false);
+                    } else {
+                        map = null;
+                    }
+                } catch (Throwable th) {
+                    throw th;
+                }
+            }
+            if (map != null) {
+                UserMetadata.this.metaDataStore.writeKeyData(UserMetadata.this.sessionIdentifier, map, this.isInternal);
             }
         }
     }

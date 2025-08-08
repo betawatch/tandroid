@@ -13,7 +13,11 @@ public final class LatLng extends AbstractSafeParcelable implements ReflectedPar
     public final double longitude;
 
     public LatLng(double d, double d2) {
-        this.longitude = (d2 < -180.0d || d2 >= 180.0d) ? ((((d2 - 180.0d) % 360.0d) + 360.0d) % 360.0d) - 180.0d : d2;
+        if (d2 < -180.0d || d2 >= 180.0d) {
+            this.longitude = ((((d2 - 180.0d) % 360.0d) + 360.0d) % 360.0d) - 180.0d;
+        } else {
+            this.longitude = d2;
+        }
         this.latitude = Math.max(-90.0d, Math.min(90.0d, d));
     }
 

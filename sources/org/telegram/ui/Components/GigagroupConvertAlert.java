@@ -19,8 +19,11 @@ import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.BottomSheet;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class GigagroupConvertAlert extends BottomSheet {
+    protected abstract void onCancel();
+
+    protected abstract void onCovert();
 
     public static class BottomSheetCell extends FrameLayout {
         private View background;
@@ -55,14 +58,8 @@ public abstract class GigagroupConvertAlert extends BottomSheet {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:19:0x010a  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0123  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public GigagroupConvertAlert(final Context context, final BaseFragment baseFragment) {
         super(context, true);
-        int i;
         setApplyBottomPadding(false);
         setApplyTopPadding(false);
         LinearLayout linearLayout = new LinearLayout(context);
@@ -82,9 +79,37 @@ public abstract class GigagroupConvertAlert extends BottomSheet {
         LinearLayout linearLayout2 = new LinearLayout(context);
         linearLayout2.setOrientation(1);
         linearLayout.addView(linearLayout2, LayoutHelper.createLinear(-2, -2, 1, 0, 12, 0, 0));
-        int i2 = 0;
+        int i = 0;
         while (true) {
-            if (i2 >= 3) {
+            if (i < 3) {
+                LinearLayout linearLayout3 = new LinearLayout(context);
+                linearLayout3.setOrientation(0);
+                linearLayout2.addView(linearLayout3, LayoutHelper.createLinear(-2, -2, LocaleController.isRTL ? 5 : 3, 0, 8, 0, 0));
+                ImageView imageView = new ImageView(context);
+                int i2 = Theme.key_dialogTextGray3;
+                imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i2), PorterDuff.Mode.MULTIPLY));
+                imageView.setImageResource(R.drawable.list_circle);
+                TextView textView2 = new TextView(context);
+                textView2.setTextSize(1, 15.0f);
+                textView2.setTextColor(Theme.getColor(i2));
+                textView2.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
+                textView2.setMaxWidth(AndroidUtilities.dp(260.0f));
+                if (i == 0) {
+                    textView2.setText(LocaleController.getString(R.string.GigagroupConvertInfo1));
+                } else if (i == 1) {
+                    textView2.setText(LocaleController.getString(R.string.GigagroupConvertInfo2));
+                } else if (i == 2) {
+                    textView2.setText(LocaleController.getString(R.string.GigagroupConvertInfo3));
+                }
+                if (LocaleController.isRTL) {
+                    linearLayout3.addView(textView2, LayoutHelper.createLinear(-2, -2));
+                    linearLayout3.addView(imageView, LayoutHelper.createLinear(-2, -2, 8.0f, 7.0f, 0.0f, 0.0f));
+                } else {
+                    linearLayout3.addView(imageView, LayoutHelper.createLinear(-2, -2, 0.0f, 8.0f, 8.0f, 0.0f));
+                    linearLayout3.addView(textView2, LayoutHelper.createLinear(-2, -2));
+                }
+                i++;
+            } else {
                 BottomSheetCell bottomSheetCell = new BottomSheetCell(context);
                 bottomSheetCell.setBackground(null);
                 bottomSheetCell.setText(LocaleController.getString(R.string.GigagroupConvertProcessButton));
@@ -95,13 +120,13 @@ public abstract class GigagroupConvertAlert extends BottomSheet {
                     }
                 });
                 linearLayout.addView(bottomSheetCell, LayoutHelper.createLinear(-1, 50, 51, 0, 29, 0, 0));
-                TextView textView2 = new TextView(context);
-                textView2.setTextSize(1, 14.0f);
-                textView2.setTextColor(Theme.getColor(Theme.key_dialogTextBlue2));
-                textView2.setText(LocaleController.getString(R.string.GigagroupConvertCancelButton));
-                textView2.setGravity(17);
-                linearLayout.addView(textView2, LayoutHelper.createLinear(-2, 48, 49, 17, 0, 17, 16));
-                textView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.GigagroupConvertAlert$$ExternalSyntheticLambda1
+                TextView textView3 = new TextView(context);
+                textView3.setTextSize(1, 14.0f);
+                textView3.setTextColor(Theme.getColor(Theme.key_dialogTextBlue2));
+                textView3.setText(LocaleController.getString(R.string.GigagroupConvertCancelButton));
+                textView3.setGravity(17);
+                linearLayout.addView(textView3, LayoutHelper.createLinear(-2, 48, 49, 17, 0, 17, 16));
+                textView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.GigagroupConvertAlert$$ExternalSyntheticLambda1
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         GigagroupConvertAlert.this.lambda$new$2(view);
@@ -109,45 +134,7 @@ public abstract class GigagroupConvertAlert extends BottomSheet {
                 });
                 return;
             }
-            LinearLayout linearLayout3 = new LinearLayout(context);
-            linearLayout3.setOrientation(0);
-            linearLayout2.addView(linearLayout3, LayoutHelper.createLinear(-2, -2, LocaleController.isRTL ? 5 : 3, 0, 8, 0, 0));
-            ImageView imageView = new ImageView(context);
-            int i3 = Theme.key_dialogTextGray3;
-            imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i3), PorterDuff.Mode.MULTIPLY));
-            imageView.setImageResource(R.drawable.list_circle);
-            TextView textView3 = new TextView(context);
-            textView3.setTextSize(1, 15.0f);
-            textView3.setTextColor(Theme.getColor(i3));
-            textView3.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
-            textView3.setMaxWidth(AndroidUtilities.dp(260.0f));
-            if (i2 == 0) {
-                i = R.string.GigagroupConvertInfo1;
-            } else if (i2 != 1) {
-                if (i2 == 2) {
-                    i = R.string.GigagroupConvertInfo3;
-                }
-                if (LocaleController.isRTL) {
-                    linearLayout3.addView(imageView, LayoutHelper.createLinear(-2, -2, 0.0f, 8.0f, 8.0f, 0.0f));
-                    linearLayout3.addView(textView3, LayoutHelper.createLinear(-2, -2));
-                } else {
-                    linearLayout3.addView(textView3, LayoutHelper.createLinear(-2, -2));
-                    linearLayout3.addView(imageView, LayoutHelper.createLinear(-2, -2, 8.0f, 7.0f, 0.0f, 0.0f));
-                }
-                i2++;
-            } else {
-                i = R.string.GigagroupConvertInfo2;
-            }
-            textView3.setText(LocaleController.getString(i));
-            if (LocaleController.isRTL) {
-            }
-            i2++;
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(AlertDialog alertDialog, int i) {
-        onCovert();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -167,12 +154,13 @@ public abstract class GigagroupConvertAlert extends BottomSheet {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$0(AlertDialog alertDialog, int i) {
+        onCovert();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$2(View view) {
         onCancel();
         dismiss();
     }
-
-    protected abstract void onCancel();
-
-    protected abstract void onCovert();
 }

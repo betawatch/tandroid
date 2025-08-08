@@ -21,7 +21,7 @@ import org.telegram.ui.Components.Premium.boosts.cells.selector.SelectorBtnCell;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class AdminLogFilterAlert2 extends BottomSheetWithRecyclerListView {
     private final ButtonWithCounterView actionButton;
     private UniversalAdapter adapter;
@@ -137,51 +137,6 @@ public class AdminLogFilterAlert2 extends BottomSheetWithRecyclerListView {
         recyclerListView.setPadding(i2, 0, i2, AndroidUtilities.dp(68.0f));
     }
 
-    private View.OnClickListener getGroupClick(final int i) {
-        return new View.OnClickListener() { // from class: org.telegram.ui.Components.AdminLogFilterAlert2$$ExternalSyntheticLambda3
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                AdminLogFilterAlert2.this.lambda$getGroupClick$2(i, view);
-            }
-        };
-    }
-
-    private String getGroupCount(int i) {
-        StringBuilder sb;
-        if (i != 0) {
-            if (i != 1) {
-                sb = new StringBuilder();
-                TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter = this.currentFilter;
-                sb.append((tL_channelAdminLogEventsFilter.delete ? 1 : 0) + (tL_channelAdminLogEventsFilter.edit ? 1 : 0) + (tL_channelAdminLogEventsFilter.pinned ? 1 : 0));
-            } else {
-                sb = new StringBuilder();
-                TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter2 = this.currentFilter;
-                sb.append(((tL_channelAdminLogEventsFilter2.info || tL_channelAdminLogEventsFilter2.settings) ? 1 : 0) + (tL_channelAdminLogEventsFilter2.invites ? 1 : 0) + (tL_channelAdminLogEventsFilter2.group_call ? 1 : 0));
-            }
-            sb.append("/3");
-        } else {
-            sb = new StringBuilder();
-            TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter3 = this.currentFilter;
-            sb.append(((tL_channelAdminLogEventsFilter3.promote || tL_channelAdminLogEventsFilter3.demote) ? 1 : 0) + ((this.isMegagroup && (tL_channelAdminLogEventsFilter3.kick || tL_channelAdminLogEventsFilter3.ban || tL_channelAdminLogEventsFilter3.unkick || tL_channelAdminLogEventsFilter3.unban)) ? 1 : 0) + ((tL_channelAdminLogEventsFilter3.invite || tL_channelAdminLogEventsFilter3.join) ? 1 : 0) + (tL_channelAdminLogEventsFilter3.leave ? 1 : 0));
-            sb.append("/");
-            sb.append(this.isMegagroup ? 4 : 3);
-        }
-        return sb.toString();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$getGroupClick$2(int i, View view) {
-        if (i == 0) {
-            this.sectionMembersExpanded = !this.sectionMembersExpanded;
-        } else if (i == 1) {
-            this.sectionSettingsExpanded = !this.sectionSettingsExpanded;
-        } else if (i == 2) {
-            this.sectionMessagesExpanded = !this.sectionMessagesExpanded;
-        }
-        this.adapter.update(true);
-        applyScrolledPosition();
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$0(View view, int i, float f, float f2) {
         onClick(this.adapter.getItem(i - 1), view, f);
@@ -201,9 +156,9 @@ public class AdminLogFilterAlert2 extends BottomSheetWithRecyclerListView {
         lambda$new$0();
     }
 
-    @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView, org.telegram.ui.ActionBar.BottomSheet
-    protected boolean canDismissWithSwipe() {
-        return !this.recyclerListView.canScrollVertically(-1);
+    @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
+    protected CharSequence getTitle() {
+        return LocaleController.getString(R.string.EventLog);
     }
 
     @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
@@ -216,6 +171,51 @@ public class AdminLogFilterAlert2 extends BottomSheetWithRecyclerListView {
         }, this.resourcesProvider);
         this.adapter = universalAdapter;
         return universalAdapter;
+    }
+
+    private String getGroupCount(int i) {
+        if (i == 0) {
+            StringBuilder sb = new StringBuilder();
+            TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter = this.currentFilter;
+            sb.append(((tL_channelAdminLogEventsFilter.promote || tL_channelAdminLogEventsFilter.demote) ? 1 : 0) + ((this.isMegagroup && (tL_channelAdminLogEventsFilter.kick || tL_channelAdminLogEventsFilter.ban || tL_channelAdminLogEventsFilter.unkick || tL_channelAdminLogEventsFilter.unban)) ? 1 : 0) + ((tL_channelAdminLogEventsFilter.invite || tL_channelAdminLogEventsFilter.join) ? 1 : 0) + (tL_channelAdminLogEventsFilter.leave ? 1 : 0));
+            sb.append("/");
+            sb.append(this.isMegagroup ? 4 : 3);
+            return sb.toString();
+        }
+        if (i == 1) {
+            StringBuilder sb2 = new StringBuilder();
+            TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter2 = this.currentFilter;
+            sb2.append(((tL_channelAdminLogEventsFilter2.info || tL_channelAdminLogEventsFilter2.settings) ? 1 : 0) + (tL_channelAdminLogEventsFilter2.invites ? 1 : 0) + (tL_channelAdminLogEventsFilter2.group_call ? 1 : 0));
+            sb2.append("/3");
+            return sb2.toString();
+        }
+        StringBuilder sb3 = new StringBuilder();
+        TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter3 = this.currentFilter;
+        sb3.append((tL_channelAdminLogEventsFilter3.delete ? 1 : 0) + (tL_channelAdminLogEventsFilter3.edit ? 1 : 0) + (tL_channelAdminLogEventsFilter3.pinned ? 1 : 0));
+        sb3.append("/3");
+        return sb3.toString();
+    }
+
+    private View.OnClickListener getGroupClick(final int i) {
+        return new View.OnClickListener() { // from class: org.telegram.ui.Components.AdminLogFilterAlert2$$ExternalSyntheticLambda3
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                AdminLogFilterAlert2.this.lambda$getGroupClick$2(i, view);
+            }
+        };
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$getGroupClick$2(int i, View view) {
+        if (i == 0) {
+            this.sectionMembersExpanded = !this.sectionMembersExpanded;
+        } else if (i == 1) {
+            this.sectionSettingsExpanded = !this.sectionSettingsExpanded;
+        } else if (i == 2) {
+            this.sectionMessagesExpanded = !this.sectionMessagesExpanded;
+        }
+        this.adapter.update(true);
+        applyScrolledPosition();
     }
 
     public void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter) {
@@ -275,44 +275,30 @@ public class AdminLogFilterAlert2 extends BottomSheetWithRecyclerListView {
         }
     }
 
-    @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
-    protected CharSequence getTitle() {
-        return LocaleController.getString(R.string.EventLog);
-    }
-
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     /* JADX WARN: Code restructure failed: missing block: B:31:0x002f, code lost:
     
         r9 = true;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:69:0x0126, code lost:
-    
-        if (r6.isMegagroup != false) goto L56;
      */
     /* JADX WARN: Removed duplicated region for block: B:34:0x0037  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x0046  */
     /* JADX WARN: Removed duplicated region for block: B:49:0x008a  */
     /* JADX WARN: Removed duplicated region for block: B:50:0x0094  */
     /* JADX WARN: Removed duplicated region for block: B:51:0x009e  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x00a8  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x00bc  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x00c6  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x00cf  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x00da  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x00ed  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x00f6  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x0101  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x010c  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x0128  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x00a8  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x00bf  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x00c9  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x00d3  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x00df  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x00f6  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x00ff  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x010a  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x0119  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x0124  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void onClick(UItem uItem, View view, float f) {
         boolean z;
-        TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter;
-        boolean isChecked;
-        TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter2;
-        boolean isChecked2;
         ArrayList arrayList;
         if (uItem == null) {
             return;
@@ -328,60 +314,69 @@ public class AdminLogFilterAlert2 extends BottomSheetWithRecyclerListView {
                 }
                 switch (uItem.id) {
                     case 2:
-                        if (!z) {
-                            TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter3 = this.currentFilter;
-                            boolean isChecked3 = checkBoxCell.isChecked();
-                            tL_channelAdminLogEventsFilter3.leave = isChecked3;
-                            tL_channelAdminLogEventsFilter3.join = isChecked3;
-                            tL_channelAdminLogEventsFilter3.invite = isChecked3;
-                            tL_channelAdminLogEventsFilter3.demote = isChecked3;
-                            tL_channelAdminLogEventsFilter3.promote = isChecked3;
-                            break;
-                        } else {
+                        if (z) {
                             this.sectionMembersExpanded = !this.sectionMembersExpanded;
                             break;
+                        } else {
+                            TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter = this.currentFilter;
+                            boolean isChecked = checkBoxCell.isChecked();
+                            tL_channelAdminLogEventsFilter.leave = isChecked;
+                            tL_channelAdminLogEventsFilter.join = isChecked;
+                            tL_channelAdminLogEventsFilter.invite = isChecked;
+                            tL_channelAdminLogEventsFilter.demote = isChecked;
+                            tL_channelAdminLogEventsFilter.promote = isChecked;
+                            if (this.isMegagroup) {
+                                TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter2 = this.currentFilter;
+                                boolean isChecked2 = checkBoxCell.isChecked();
+                                tL_channelAdminLogEventsFilter2.unban = isChecked2;
+                                tL_channelAdminLogEventsFilter2.unkick = isChecked2;
+                                tL_channelAdminLogEventsFilter2.ban = isChecked2;
+                                tL_channelAdminLogEventsFilter2.kick = isChecked2;
+                                break;
+                            }
                         }
+                        break;
                     case 3:
-                        TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter4 = this.currentFilter;
-                        boolean isChecked4 = checkBoxCell.isChecked();
-                        tL_channelAdminLogEventsFilter4.demote = isChecked4;
-                        tL_channelAdminLogEventsFilter4.promote = isChecked4;
+                        TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter3 = this.currentFilter;
+                        boolean isChecked3 = checkBoxCell.isChecked();
+                        tL_channelAdminLogEventsFilter3.demote = isChecked3;
+                        tL_channelAdminLogEventsFilter3.promote = isChecked3;
                         break;
                     case 4:
-                        TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter5 = this.currentFilter;
-                        boolean isChecked5 = checkBoxCell.isChecked();
-                        tL_channelAdminLogEventsFilter5.unban = isChecked5;
-                        tL_channelAdminLogEventsFilter5.unkick = isChecked5;
-                        tL_channelAdminLogEventsFilter5.ban = isChecked5;
-                        tL_channelAdminLogEventsFilter5.kick = isChecked5;
+                        TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter4 = this.currentFilter;
+                        boolean isChecked4 = checkBoxCell.isChecked();
+                        tL_channelAdminLogEventsFilter4.unban = isChecked4;
+                        tL_channelAdminLogEventsFilter4.unkick = isChecked4;
+                        tL_channelAdminLogEventsFilter4.ban = isChecked4;
+                        tL_channelAdminLogEventsFilter4.kick = isChecked4;
                         break;
                     case 5:
-                        TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter6 = this.currentFilter;
-                        boolean isChecked6 = checkBoxCell.isChecked();
-                        tL_channelAdminLogEventsFilter6.join = isChecked6;
-                        tL_channelAdminLogEventsFilter6.invite = isChecked6;
+                        TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter5 = this.currentFilter;
+                        boolean isChecked5 = checkBoxCell.isChecked();
+                        tL_channelAdminLogEventsFilter5.join = isChecked5;
+                        tL_channelAdminLogEventsFilter5.invite = isChecked5;
                         break;
                     case 6:
                         this.currentFilter.leave = checkBoxCell.isChecked();
                         break;
                     case 7:
-                        if (!z) {
-                            tL_channelAdminLogEventsFilter = this.currentFilter;
-                            isChecked = checkBoxCell.isChecked();
-                            tL_channelAdminLogEventsFilter.group_call = isChecked;
-                            tL_channelAdminLogEventsFilter.invites = isChecked;
-                            tL_channelAdminLogEventsFilter.settings = isChecked;
-                            tL_channelAdminLogEventsFilter.info = isChecked;
+                        if (z) {
+                            this.sectionSettingsExpanded = !this.sectionSettingsExpanded;
                             break;
                         } else {
-                            this.sectionSettingsExpanded = !this.sectionSettingsExpanded;
+                            TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter6 = this.currentFilter;
+                            boolean isChecked6 = checkBoxCell.isChecked();
+                            tL_channelAdminLogEventsFilter6.group_call = isChecked6;
+                            tL_channelAdminLogEventsFilter6.invites = isChecked6;
+                            tL_channelAdminLogEventsFilter6.settings = isChecked6;
+                            tL_channelAdminLogEventsFilter6.info = isChecked6;
                             break;
                         }
                     case 8:
-                        tL_channelAdminLogEventsFilter = this.currentFilter;
-                        isChecked = checkBoxCell.isChecked();
-                        tL_channelAdminLogEventsFilter.settings = isChecked;
-                        tL_channelAdminLogEventsFilter.info = isChecked;
+                        TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter7 = this.currentFilter;
+                        boolean isChecked7 = checkBoxCell.isChecked();
+                        tL_channelAdminLogEventsFilter7.settings = isChecked7;
+                        tL_channelAdminLogEventsFilter7.info = isChecked7;
                         break;
                     case 9:
                         this.currentFilter.invites = checkBoxCell.isChecked();
@@ -390,21 +385,19 @@ public class AdminLogFilterAlert2 extends BottomSheetWithRecyclerListView {
                         this.currentFilter.group_call = checkBoxCell.isChecked();
                         break;
                     case 11:
-                        if (!z) {
-                            tL_channelAdminLogEventsFilter2 = this.currentFilter;
-                            isChecked2 = checkBoxCell.isChecked();
-                            tL_channelAdminLogEventsFilter2.pinned = isChecked2;
-                            tL_channelAdminLogEventsFilter2.edit = isChecked2;
-                            tL_channelAdminLogEventsFilter2.delete = isChecked2;
+                        if (z) {
+                            this.sectionMessagesExpanded = !this.sectionMessagesExpanded;
                             break;
                         } else {
-                            this.sectionMessagesExpanded = !this.sectionMessagesExpanded;
+                            TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter8 = this.currentFilter;
+                            boolean isChecked8 = checkBoxCell.isChecked();
+                            tL_channelAdminLogEventsFilter8.pinned = isChecked8;
+                            tL_channelAdminLogEventsFilter8.edit = isChecked8;
+                            tL_channelAdminLogEventsFilter8.delete = isChecked8;
                             break;
                         }
                     case 12:
-                        tL_channelAdminLogEventsFilter2 = this.currentFilter;
-                        isChecked2 = checkBoxCell.isChecked();
-                        tL_channelAdminLogEventsFilter2.delete = isChecked2;
+                        this.currentFilter.delete = checkBoxCell.isChecked();
                         break;
                     case 13:
                         this.currentFilter.edit = checkBoxCell.isChecked();
@@ -460,16 +453,6 @@ public class AdminLogFilterAlert2 extends BottomSheetWithRecyclerListView {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.BottomSheet
-    protected void onSmoothContainerViewLayout(float f) {
-        super.onSmoothContainerViewLayout(f);
-        this.buttonContainer.setTranslationY(-f);
-    }
-
-    public void setAdminLogFilterAlertDelegate(AdminLogFilterAlertDelegate adminLogFilterAlertDelegate) {
-        this.delegate = adminLogFilterAlertDelegate;
-    }
-
     public void setCurrentAdmins(ArrayList arrayList) {
         this.currentAdmins = arrayList;
         if (arrayList != null && this.selectedAdmins == null) {
@@ -484,5 +467,20 @@ public class AdminLogFilterAlert2 extends BottomSheetWithRecyclerListView {
         if (universalAdapter != null) {
             universalAdapter.update(true);
         }
+    }
+
+    public void setAdminLogFilterAlertDelegate(AdminLogFilterAlertDelegate adminLogFilterAlertDelegate) {
+        this.delegate = adminLogFilterAlertDelegate;
+    }
+
+    @Override // org.telegram.ui.ActionBar.BottomSheet
+    protected void onSmoothContainerViewLayout(float f) {
+        super.onSmoothContainerViewLayout(f);
+        this.buttonContainer.setTranslationY(-f);
+    }
+
+    @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView, org.telegram.ui.ActionBar.BottomSheet
+    protected boolean canDismissWithSwipe() {
+        return !this.recyclerListView.canScrollVertically(-1);
     }
 }

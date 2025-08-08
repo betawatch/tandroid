@@ -19,7 +19,7 @@ import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class Excluder implements TypeAdapterFactory, Cloneable {
     public static final Excluder DEFAULT = new Excluder();
     private boolean requireExpose;
@@ -29,28 +29,6 @@ public final class Excluder implements TypeAdapterFactory, Cloneable {
     private List serializationStrategies = Collections.emptyList();
     private List deserializationStrategies = Collections.emptyList();
 
-    private static boolean isInnerClass(Class cls) {
-        return cls.isMemberClass() && !ReflectionHelper.isStatic(cls);
-    }
-
-    private boolean isValidSince(Since since) {
-        if (since != null) {
-            return this.version >= since.value();
-        }
-        return true;
-    }
-
-    private boolean isValidUntil(Until until) {
-        if (until != null) {
-            return this.version < until.value();
-        }
-        return true;
-    }
-
-    private boolean isValidVersion(Since since, Until until) {
-        return isValidSince(since) && isValidUntil(until);
-    }
-
     /* JADX INFO: Access modifiers changed from: protected */
     public Excluder clone() {
         try {
@@ -58,6 +36,21 @@ public final class Excluder implements TypeAdapterFactory, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new AssertionError(e);
         }
+    }
+
+    public Excluder withExclusionStrategy(ExclusionStrategy exclusionStrategy, boolean z, boolean z2) {
+        Excluder clone = clone();
+        if (z) {
+            ArrayList arrayList = new ArrayList(this.serializationStrategies);
+            clone.serializationStrategies = arrayList;
+            arrayList.add(exclusionStrategy);
+        }
+        if (z2) {
+            ArrayList arrayList2 = new ArrayList(this.deserializationStrategies);
+            clone.deserializationStrategies = arrayList2;
+            arrayList2.add(exclusionStrategy);
+        }
+        return clone;
     }
 
     @Override // com.google.gson.TypeAdapterFactory
@@ -69,23 +62,13 @@ public final class Excluder implements TypeAdapterFactory, Cloneable {
             return new TypeAdapter() { // from class: com.google.gson.internal.Excluder.1
                 private volatile TypeAdapter delegate;
 
-                private TypeAdapter delegate() {
-                    TypeAdapter typeAdapter = this.delegate;
-                    if (typeAdapter != null) {
-                        return typeAdapter;
-                    }
-                    TypeAdapter delegateAdapter = gson.getDelegateAdapter(Excluder.this, typeToken);
-                    this.delegate = delegateAdapter;
-                    return delegateAdapter;
-                }
-
                 @Override // com.google.gson.TypeAdapter
                 public Object read(JsonReader jsonReader) {
-                    if (!excludeClass2) {
-                        return delegate().read(jsonReader);
+                    if (excludeClass2) {
+                        jsonReader.skipValue();
+                        return null;
                     }
-                    jsonReader.skipValue();
-                    return null;
+                    return delegate().read(jsonReader);
                 }
 
                 @Override // com.google.gson.TypeAdapter
@@ -96,28 +79,19 @@ public final class Excluder implements TypeAdapterFactory, Cloneable {
                         delegate().write(jsonWriter, obj);
                     }
                 }
+
+                private TypeAdapter delegate() {
+                    TypeAdapter typeAdapter = this.delegate;
+                    if (typeAdapter != null) {
+                        return typeAdapter;
+                    }
+                    TypeAdapter delegateAdapter = gson.getDelegateAdapter(Excluder.this, typeToken);
+                    this.delegate = delegateAdapter;
+                    return delegateAdapter;
+                }
             };
         }
         return null;
-    }
-
-    public boolean excludeClass(Class cls, boolean z) {
-        if (this.version != -1.0d && !isValidVersion((Since) cls.getAnnotation(Since.class), (Until) cls.getAnnotation(Until.class))) {
-            return true;
-        }
-        if (!this.serializeInnerClasses && isInnerClass(cls)) {
-            return true;
-        }
-        if (!z && !Enum.class.isAssignableFrom(cls) && ReflectionHelper.isAnonymousOrNonStaticLocal(cls)) {
-            return true;
-        }
-        Iterator it = (z ? this.serializationStrategies : this.deserializationStrategies).iterator();
-        while (it.hasNext()) {
-            if (((ExclusionStrategy) it.next()).shouldSkipClass(cls)) {
-                return true;
-            }
-        }
-        return false;
     }
 
     public boolean excludeField(Field field, boolean z) {
@@ -145,18 +119,44 @@ public final class Excluder implements TypeAdapterFactory, Cloneable {
         return false;
     }
 
-    public Excluder withExclusionStrategy(ExclusionStrategy exclusionStrategy, boolean z, boolean z2) {
-        Excluder clone = clone();
-        if (z) {
-            ArrayList arrayList = new ArrayList(this.serializationStrategies);
-            clone.serializationStrategies = arrayList;
-            arrayList.add(exclusionStrategy);
+    public boolean excludeClass(Class cls, boolean z) {
+        if (this.version != -1.0d && !isValidVersion((Since) cls.getAnnotation(Since.class), (Until) cls.getAnnotation(Until.class))) {
+            return true;
         }
-        if (z2) {
-            ArrayList arrayList2 = new ArrayList(this.deserializationStrategies);
-            clone.deserializationStrategies = arrayList2;
-            arrayList2.add(exclusionStrategy);
+        if (!this.serializeInnerClasses && isInnerClass(cls)) {
+            return true;
         }
-        return clone;
+        if (!z && !Enum.class.isAssignableFrom(cls) && ReflectionHelper.isAnonymousOrNonStaticLocal(cls)) {
+            return true;
+        }
+        Iterator it = (z ? this.serializationStrategies : this.deserializationStrategies).iterator();
+        while (it.hasNext()) {
+            if (((ExclusionStrategy) it.next()).shouldSkipClass(cls)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static boolean isInnerClass(Class cls) {
+        return cls.isMemberClass() && !ReflectionHelper.isStatic(cls);
+    }
+
+    private boolean isValidVersion(Since since, Until until) {
+        return isValidSince(since) && isValidUntil(until);
+    }
+
+    private boolean isValidSince(Since since) {
+        if (since != null) {
+            return this.version >= since.value();
+        }
+        return true;
+    }
+
+    private boolean isValidUntil(Until until) {
+        if (until != null) {
+            return this.version < until.value();
+        }
+        return true;
     }
 }

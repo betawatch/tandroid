@@ -20,13 +20,6 @@ public class LaunchOptions extends AbstractSafeParcelable {
         this(false, CastUtils.zzb(Locale.getDefault()), false, null);
     }
 
-    LaunchOptions(boolean z, String str, boolean z2, CredentialsData credentialsData) {
-        this.zza = z;
-        this.zzb = str;
-        this.zzc = z2;
-        this.zzd = credentialsData;
-    }
-
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -70,5 +63,12 @@ public class LaunchOptions extends AbstractSafeParcelable {
         SafeParcelWriter.writeBoolean(parcel, 4, getAndroidReceiverCompatible());
         SafeParcelWriter.writeParcelable(parcel, 5, getCredentialsData(), i, false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    LaunchOptions(boolean z, String str, boolean z2, CredentialsData credentialsData) {
+        this.zza = z;
+        this.zzb = str;
+        this.zzc = z2;
+        this.zzd = credentialsData;
     }
 }

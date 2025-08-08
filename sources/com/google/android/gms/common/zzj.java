@@ -3,7 +3,7 @@ package com.google.android.gms.common;
 import android.os.RemoteException;
 import android.util.Log;
 import com.google.android.gms.common.internal.Preconditions;
-import com.google.android.gms.common.internal.zzy;
+import com.google.android.gms.common.internal.zzaa;
 import com.google.android.gms.common.internal.zzz;
 import com.google.android.gms.dynamic.IObjectWrapper;
 import com.google.android.gms.dynamic.ObjectWrapper;
@@ -11,7 +11,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 
 /* loaded from: classes.dex */
-abstract class zzj extends zzy {
+abstract class zzj extends zzz {
     private final int zza;
 
     protected zzj(byte[] bArr) {
@@ -29,10 +29,10 @@ abstract class zzj extends zzy {
 
     public final boolean equals(Object obj) {
         IObjectWrapper zzd;
-        if (obj != null && (obj instanceof zzz)) {
+        if (obj != null && (obj instanceof zzaa)) {
             try {
-                zzz zzzVar = (zzz) obj;
-                if (zzzVar.zzc() == this.zza && (zzd = zzzVar.zzd()) != null) {
+                zzaa zzaaVar = (zzaa) obj;
+                if (zzaaVar.zzc() == this.zza && (zzd = zzaaVar.zzd()) != null) {
                     return Arrays.equals(zzf(), (byte[]) ObjectWrapper.unwrap(zzd));
                 }
                 return false;
@@ -47,12 +47,12 @@ abstract class zzj extends zzy {
         return this.zza;
     }
 
-    @Override // com.google.android.gms.common.internal.zzz
+    @Override // com.google.android.gms.common.internal.zzaa
     public final int zzc() {
         return this.zza;
     }
 
-    @Override // com.google.android.gms.common.internal.zzz
+    @Override // com.google.android.gms.common.internal.zzaa
     public final IObjectWrapper zzd() {
         return ObjectWrapper.wrap(zzf());
     }

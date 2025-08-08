@@ -3,31 +3,31 @@ package j$.util.function;
 import java.util.function.DoubleToLongFunction;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class t implements DoubleToLongFunction {
-    public final /* synthetic */ u a;
+public final /* synthetic */ class t implements v {
+    public final /* synthetic */ DoubleToLongFunction a;
 
-    private /* synthetic */ t(u uVar) {
-        this.a = uVar;
+    private /* synthetic */ t(DoubleToLongFunction doubleToLongFunction) {
+        this.a = doubleToLongFunction;
     }
 
-    public static /* synthetic */ DoubleToLongFunction a(u uVar) {
-        if (uVar == null) {
+    public static /* synthetic */ v a(DoubleToLongFunction doubleToLongFunction) {
+        if (doubleToLongFunction == null) {
             return null;
         }
-        return uVar instanceof s ? ((s) uVar).a : new t(uVar);
+        return doubleToLongFunction instanceof u ? ((u) doubleToLongFunction).a : new t(doubleToLongFunction);
     }
 
-    @Override // java.util.function.DoubleToLongFunction
+    @Override // j$.util.function.v
     public final /* synthetic */ long applyAsLong(double d) {
         return this.a.applyAsLong(d);
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        u uVar = this.a;
+        DoubleToLongFunction doubleToLongFunction = this.a;
         if (obj instanceof t) {
             obj = ((t) obj).a;
         }
-        return uVar.equals(obj);
+        return doubleToLongFunction.equals(obj);
     }
 
     public final /* synthetic */ int hashCode() {

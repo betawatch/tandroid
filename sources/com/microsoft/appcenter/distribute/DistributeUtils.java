@@ -14,12 +14,8 @@ import java.util.UUID;
 import org.json.JSONException;
 import org.telegram.tgnet.TLObject;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 abstract class DistributeUtils {
-    static String computeReleaseHash(PackageInfo packageInfo) {
-        return HashUtils.sha256(packageInfo.packageName + ":" + packageInfo.versionName + ":" + DeviceInfoHelper.getVersionCode(packageInfo));
-    }
-
     static int getNotificationId() {
         return Distribute.class.getName().hashCode();
     }
@@ -28,18 +24,19 @@ abstract class DistributeUtils {
         return SharedPreferencesManager.getInt("Distribute.download_state", 0);
     }
 
-    static ReleaseDetails loadCachedReleaseDetails() {
-        String string = SharedPreferencesManager.getString("Distribute.release_details");
-        if (string == null) {
-            return null;
-        }
-        try {
-            return ReleaseDetails.parse(string);
-        } catch (JSONException e) {
-            AppCenterLog.error("AppCenterDistribute", "Invalid release details in cache.", e);
-            SharedPreferencesManager.remove("Distribute.release_details");
-            return null;
-        }
+    static String computeReleaseHash(PackageInfo packageInfo) {
+        return HashUtils.sha256(packageInfo.packageName + ":" + packageInfo.versionName + ":" + DeviceInfoHelper.getVersionCode(packageInfo));
+    }
+
+    static void updateSetupUsingTesterApp(Activity activity, PackageInfo packageInfo) {
+        String computeReleaseHash = computeReleaseHash(packageInfo);
+        String uuid = UUID.randomUUID().toString();
+        String str = (((("ms-actesterapp://update-setup?release_hash=" + computeReleaseHash) + "&redirect_id=" + activity.getPackageName()) + "&redirect_scheme=appcenter") + "&request_id=" + uuid) + "&platform=Android";
+        AppCenterLog.debug("AppCenterDistribute", "No token, need to open tester app to url=" + str);
+        SharedPreferencesManager.putString("Distribute.request_id", uuid);
+        Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str));
+        intent.addFlags(TLObject.FLAG_28);
+        activity.startActivity(intent);
     }
 
     static void updateSetupUsingBrowser(Activity activity, String str, String str2, PackageInfo packageInfo) {
@@ -56,14 +53,17 @@ abstract class DistributeUtils {
         BrowserUtils.openBrowser(str3, activity);
     }
 
-    static void updateSetupUsingTesterApp(Activity activity, PackageInfo packageInfo) {
-        String computeReleaseHash = computeReleaseHash(packageInfo);
-        String uuid = UUID.randomUUID().toString();
-        String str = (((("ms-actesterapp://update-setup?release_hash=" + computeReleaseHash) + "&redirect_id=" + activity.getPackageName()) + "&redirect_scheme=appcenter") + "&request_id=" + uuid) + "&platform=Android";
-        AppCenterLog.debug("AppCenterDistribute", "No token, need to open tester app to url=" + str);
-        SharedPreferencesManager.putString("Distribute.request_id", uuid);
-        Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str));
-        intent.addFlags(TLObject.FLAG_28);
-        activity.startActivity(intent);
+    static ReleaseDetails loadCachedReleaseDetails() {
+        String string = SharedPreferencesManager.getString("Distribute.release_details");
+        if (string == null) {
+            return null;
+        }
+        try {
+            return ReleaseDetails.parse(string);
+        } catch (JSONException e) {
+            AppCenterLog.error("AppCenterDistribute", "Invalid release details in cache.", e);
+            SharedPreferencesManager.remove("Distribute.release_details");
+            return null;
+        }
     }
 }

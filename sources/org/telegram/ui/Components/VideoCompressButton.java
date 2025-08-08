@@ -14,7 +14,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.AnimatedTextView;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class VideoCompressButton extends View {
     private final Paint clearPaint;
     private boolean disabled;
@@ -62,6 +62,46 @@ public class VideoCompressButton extends View {
         paint3.setXfermode(new PorterDuffXfermode(mode));
     }
 
+    public void setState(boolean z, boolean z2, int i) {
+        this.disabled = !z || z2;
+        if (z2) {
+            this.textDrawable.setText("GIF");
+            this.sizeTextDrawable.setText("", true);
+        } else {
+            this.textDrawable.setText(i >= 720 ? "HD" : "SD");
+            int length = this.sizes.length - 1;
+            while (true) {
+                if (length < 0) {
+                    length = -1;
+                    break;
+                } else if (i >= this.sizes[length]) {
+                    break;
+                } else {
+                    length--;
+                }
+            }
+            if (length < 0) {
+                this.sizeTextDrawable.setText("", true);
+            } else if (length == 6) {
+                AnimatedTextView.AnimatedTextDrawable animatedTextDrawable = this.sizeTextDrawable;
+                animatedTextDrawable.setText("2K", TextUtils.isEmpty(animatedTextDrawable.getText()));
+            } else if (length == 7) {
+                AnimatedTextView.AnimatedTextDrawable animatedTextDrawable2 = this.sizeTextDrawable;
+                animatedTextDrawable2.setText("4K", TextUtils.isEmpty(animatedTextDrawable2.getText()));
+            } else {
+                this.sizeTextDrawable.setText("" + this.sizes[length], TextUtils.isEmpty(this.sizeTextDrawable.getText()));
+            }
+        }
+        setClickable(!this.disabled);
+        invalidate();
+    }
+
+    public void setPhotoState(boolean z) {
+        this.disabled = false;
+        this.textDrawable.setText(z ? "HD" : "SD");
+        this.sizeTextDrawable.setText("", false);
+    }
+
     @Override // android.view.View
     protected void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
@@ -95,57 +135,6 @@ public class VideoCompressButton extends View {
         canvas.restore();
         canvas.restore();
         canvas.restore();
-    }
-
-    public void setPhotoState(boolean z) {
-        this.disabled = false;
-        this.textDrawable.setText(z ? "HD" : "SD");
-        this.sizeTextDrawable.setText("", false);
-    }
-
-    public void setState(boolean z, boolean z2, int i) {
-        AnimatedTextView.AnimatedTextDrawable animatedTextDrawable;
-        boolean isEmpty;
-        String str;
-        this.disabled = !z || z2;
-        if (z2) {
-            this.textDrawable.setText("GIF");
-        } else {
-            this.textDrawable.setText(i >= 720 ? "HD" : "SD");
-            int length = this.sizes.length - 1;
-            while (true) {
-                if (length < 0) {
-                    length = -1;
-                    break;
-                } else if (i >= this.sizes[length]) {
-                    break;
-                } else {
-                    length--;
-                }
-            }
-            if (length >= 0) {
-                if (length == 6) {
-                    animatedTextDrawable = this.sizeTextDrawable;
-                    isEmpty = TextUtils.isEmpty(animatedTextDrawable.getText());
-                    str = "2K";
-                } else {
-                    if (length != 7) {
-                        this.sizeTextDrawable.setText("" + this.sizes[length], TextUtils.isEmpty(this.sizeTextDrawable.getText()));
-                        setClickable(!this.disabled);
-                        invalidate();
-                    }
-                    animatedTextDrawable = this.sizeTextDrawable;
-                    isEmpty = TextUtils.isEmpty(animatedTextDrawable.getText());
-                    str = "4K";
-                }
-                animatedTextDrawable.setText(str, isEmpty);
-                setClickable(!this.disabled);
-                invalidate();
-            }
-        }
-        this.sizeTextDrawable.setText("", true);
-        setClickable(!this.disabled);
-        invalidate();
     }
 
     @Override // android.view.View

@@ -1,6 +1,6 @@
 package androidx.datastore.preferences.protobuf;
 
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -18,8 +18,57 @@ final class MessageSetSchema implements Schema {
         this.defaultInstance = messageLite;
     }
 
-    private int getUnknownFieldsSerializedSize(UnknownFieldSchema unknownFieldSchema, Object obj) {
-        return unknownFieldSchema.getSerializedSizeAsMessageSet(unknownFieldSchema.getFromMessage(obj));
+    static MessageSetSchema newSchema(UnknownFieldSchema unknownFieldSchema, ExtensionSchema extensionSchema, MessageLite messageLite) {
+        return new MessageSetSchema(unknownFieldSchema, extensionSchema, messageLite);
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.Schema
+    public Object newInstance() {
+        return this.defaultInstance.newBuilderForType().buildPartial();
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.Schema
+    public boolean equals(Object obj, Object obj2) {
+        if (!this.unknownFieldSchema.getFromMessage(obj).equals(this.unknownFieldSchema.getFromMessage(obj2))) {
+            return false;
+        }
+        if (this.hasExtensions) {
+            return this.extensionSchema.getExtensions(obj).equals(this.extensionSchema.getExtensions(obj2));
+        }
+        return true;
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.Schema
+    public int hashCode(Object obj) {
+        int hashCode = this.unknownFieldSchema.getFromMessage(obj).hashCode();
+        return this.hasExtensions ? (hashCode * 53) + this.extensionSchema.getExtensions(obj).hashCode() : hashCode;
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.Schema
+    public void mergeFrom(Object obj, Object obj2) {
+        SchemaUtil.mergeUnknownFields(this.unknownFieldSchema, obj, obj2);
+        if (this.hasExtensions) {
+            SchemaUtil.mergeExtensions(this.extensionSchema, obj, obj2);
+        }
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.Schema
+    public void writeTo(Object obj, Writer writer) {
+        Iterator it = this.extensionSchema.getExtensions(obj).iterator();
+        if (it.hasNext()) {
+            WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(((Map.Entry) it.next()).getKey());
+            throw null;
+        }
+        writeUnknownFieldsHelper(this.unknownFieldSchema, obj, writer);
+    }
+
+    private void writeUnknownFieldsHelper(UnknownFieldSchema unknownFieldSchema, Object obj, Writer writer) {
+        unknownFieldSchema.writeAsMessageSetTo(unknownFieldSchema.getFromMessage(obj), writer);
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.Schema
+    public void mergeFrom(Object obj, Reader reader, ExtensionRegistryLite extensionRegistryLite) {
+        mergeFromHelper(this.unknownFieldSchema, this.extensionSchema, obj, reader, extensionRegistryLite);
     }
 
     private void mergeFromHelper(UnknownFieldSchema unknownFieldSchema, ExtensionSchema extensionSchema, Object obj, Reader reader, ExtensionRegistryLite extensionRegistryLite) {
@@ -36,22 +85,24 @@ final class MessageSetSchema implements Schema {
         } while (parseMessageSetItemOrUnknownField(reader, extensionRegistryLite, extensionSchema, mutableExtensions, unknownFieldSchema, builderFromMessage));
     }
 
-    static MessageSetSchema newSchema(UnknownFieldSchema unknownFieldSchema, ExtensionSchema extensionSchema, MessageLite messageLite) {
-        return new MessageSetSchema(unknownFieldSchema, extensionSchema, messageLite);
+    @Override // androidx.datastore.preferences.protobuf.Schema
+    public void makeImmutable(Object obj) {
+        this.unknownFieldSchema.makeImmutable(obj);
+        this.extensionSchema.makeImmutable(obj);
     }
 
     private boolean parseMessageSetItemOrUnknownField(Reader reader, ExtensionRegistryLite extensionRegistryLite, ExtensionSchema extensionSchema, FieldSet fieldSet, UnknownFieldSchema unknownFieldSchema, Object obj) {
         int tag = reader.getTag();
         if (tag != WireFormat.MESSAGE_SET_ITEM_TAG) {
-            if (WireFormat.getTagWireType(tag) != 2) {
-                return reader.skipField();
-            }
-            Object findExtensionByNumber = extensionSchema.findExtensionByNumber(extensionRegistryLite, this.defaultInstance, WireFormat.getTagFieldNumber(tag));
-            if (findExtensionByNumber == null) {
+            if (WireFormat.getTagWireType(tag) == 2) {
+                Object findExtensionByNumber = extensionSchema.findExtensionByNumber(extensionRegistryLite, this.defaultInstance, WireFormat.getTagFieldNumber(tag));
+                if (findExtensionByNumber != null) {
+                    extensionSchema.parseLengthPrefixedMessageSetItem(reader, findExtensionByNumber, extensionRegistryLite, fieldSet);
+                    return true;
+                }
                 return unknownFieldSchema.mergeOneFieldFrom(obj, reader);
             }
-            extensionSchema.parseLengthPrefixedMessageSetItem(reader, findExtensionByNumber, extensionRegistryLite, fieldSet);
-            return true;
+            return reader.skipField();
         }
         Object obj2 = null;
         ByteString byteString = null;
@@ -84,19 +135,9 @@ final class MessageSetSchema implements Schema {
         return true;
     }
 
-    private void writeUnknownFieldsHelper(UnknownFieldSchema unknownFieldSchema, Object obj, Writer writer) {
-        unknownFieldSchema.writeAsMessageSetTo(unknownFieldSchema.getFromMessage(obj), writer);
-    }
-
     @Override // androidx.datastore.preferences.protobuf.Schema
-    public boolean equals(Object obj, Object obj2) {
-        if (!this.unknownFieldSchema.getFromMessage(obj).equals(this.unknownFieldSchema.getFromMessage(obj2))) {
-            return false;
-        }
-        if (this.hasExtensions) {
-            return this.extensionSchema.getExtensions(obj).equals(this.extensionSchema.getExtensions(obj2));
-        }
-        return true;
+    public final boolean isInitialized(Object obj) {
+        return this.extensionSchema.getExtensions(obj).isInitialized();
     }
 
     @Override // androidx.datastore.preferences.protobuf.Schema
@@ -105,48 +146,7 @@ final class MessageSetSchema implements Schema {
         return this.hasExtensions ? unknownFieldsSerializedSize + this.extensionSchema.getExtensions(obj).getMessageSetSerializedSize() : unknownFieldsSerializedSize;
     }
 
-    @Override // androidx.datastore.preferences.protobuf.Schema
-    public int hashCode(Object obj) {
-        int hashCode = this.unknownFieldSchema.getFromMessage(obj).hashCode();
-        return this.hasExtensions ? (hashCode * 53) + this.extensionSchema.getExtensions(obj).hashCode() : hashCode;
-    }
-
-    @Override // androidx.datastore.preferences.protobuf.Schema
-    public final boolean isInitialized(Object obj) {
-        return this.extensionSchema.getExtensions(obj).isInitialized();
-    }
-
-    @Override // androidx.datastore.preferences.protobuf.Schema
-    public void makeImmutable(Object obj) {
-        this.unknownFieldSchema.makeImmutable(obj);
-        this.extensionSchema.makeImmutable(obj);
-    }
-
-    @Override // androidx.datastore.preferences.protobuf.Schema
-    public void mergeFrom(Object obj, Reader reader, ExtensionRegistryLite extensionRegistryLite) {
-        mergeFromHelper(this.unknownFieldSchema, this.extensionSchema, obj, reader, extensionRegistryLite);
-    }
-
-    @Override // androidx.datastore.preferences.protobuf.Schema
-    public void mergeFrom(Object obj, Object obj2) {
-        SchemaUtil.mergeUnknownFields(this.unknownFieldSchema, obj, obj2);
-        if (this.hasExtensions) {
-            SchemaUtil.mergeExtensions(this.extensionSchema, obj, obj2);
-        }
-    }
-
-    @Override // androidx.datastore.preferences.protobuf.Schema
-    public Object newInstance() {
-        return this.defaultInstance.newBuilderForType().buildPartial();
-    }
-
-    @Override // androidx.datastore.preferences.protobuf.Schema
-    public void writeTo(Object obj, Writer writer) {
-        Iterator it = this.extensionSchema.getExtensions(obj).iterator();
-        if (it.hasNext()) {
-            ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(((Map.Entry) it.next()).getKey());
-            throw null;
-        }
-        writeUnknownFieldsHelper(this.unknownFieldSchema, obj, writer);
+    private int getUnknownFieldsSerializedSize(UnknownFieldSchema unknownFieldSchema, Object obj) {
+        return unknownFieldSchema.getSerializedSizeAsMessageSet(unknownFieldSchema.getFromMessage(obj));
     }
 }

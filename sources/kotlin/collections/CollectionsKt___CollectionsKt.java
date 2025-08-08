@@ -12,38 +12,22 @@ import java.util.Set;
 import kotlin.TuplesKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.ranges.RangesKt___RangesKt;
-import kotlin.text.StringsKt__AppendableKt;
+import kotlin.ranges.RangesKt;
+import kotlin.text.StringsKt;
 
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJvmKt {
-    public static List filterNotNull(Iterable iterable) {
-        Intrinsics.checkNotNullParameter(iterable, "<this>");
-        return (List) filterNotNullTo(iterable, new ArrayList());
-    }
-
-    public static final Collection filterNotNullTo(Iterable iterable, Collection destination) {
-        Intrinsics.checkNotNullParameter(iterable, "<this>");
-        Intrinsics.checkNotNullParameter(destination, "destination");
-        for (Object obj : iterable) {
-            if (obj != null) {
-                destination.add(obj);
-            }
-        }
-        return destination;
-    }
-
     public static final Object first(Iterable iterable) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");
         if (iterable instanceof List) {
             return first((List) iterable);
         }
         Iterator it = iterable.iterator();
-        if (it.hasNext()) {
-            return it.next();
+        if (!it.hasNext()) {
+            throw new NoSuchElementException("Collection is empty.");
         }
-        throw new NoSuchElementException("Collection is empty.");
+        return it.next();
     }
 
     public static final Object first(List list) {
@@ -52,91 +36,6 @@ public abstract class CollectionsKt___CollectionsKt extends CollectionsKt___Coll
             throw new NoSuchElementException("List is empty.");
         }
         return list.get(0);
-    }
-
-    public static final Appendable joinTo(Iterable iterable, Appendable buffer, CharSequence separator, CharSequence prefix, CharSequence postfix, int i, CharSequence truncated, Function1 function1) {
-        Intrinsics.checkNotNullParameter(iterable, "<this>");
-        Intrinsics.checkNotNullParameter(buffer, "buffer");
-        Intrinsics.checkNotNullParameter(separator, "separator");
-        Intrinsics.checkNotNullParameter(prefix, "prefix");
-        Intrinsics.checkNotNullParameter(postfix, "postfix");
-        Intrinsics.checkNotNullParameter(truncated, "truncated");
-        buffer.append(prefix);
-        int i2 = 0;
-        for (Object obj : iterable) {
-            i2++;
-            if (i2 > 1) {
-                buffer.append(separator);
-            }
-            if (i >= 0 && i2 > i) {
-                break;
-            }
-            StringsKt__AppendableKt.appendElement(buffer, obj, function1);
-        }
-        if (i >= 0 && i2 > i) {
-            buffer.append(truncated);
-        }
-        buffer.append(postfix);
-        return buffer;
-    }
-
-    public static final String joinToString(Iterable iterable, CharSequence separator, CharSequence prefix, CharSequence postfix, int i, CharSequence truncated, Function1 function1) {
-        Intrinsics.checkNotNullParameter(iterable, "<this>");
-        Intrinsics.checkNotNullParameter(separator, "separator");
-        Intrinsics.checkNotNullParameter(prefix, "prefix");
-        Intrinsics.checkNotNullParameter(postfix, "postfix");
-        Intrinsics.checkNotNullParameter(truncated, "truncated");
-        String sb = ((StringBuilder) joinTo(iterable, new StringBuilder(), separator, prefix, postfix, i, truncated, function1)).toString();
-        Intrinsics.checkNotNullExpressionValue(sb, "joinTo(StringBuilder(), …ed, transform).toString()");
-        return sb;
-    }
-
-    public static /* synthetic */ String joinToString$default(Iterable iterable, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, int i, CharSequence charSequence4, Function1 function1, int i2, Object obj) {
-        if ((i2 & 1) != 0) {
-            charSequence = ", ";
-        }
-        CharSequence charSequence5 = (i2 & 2) != 0 ? "" : charSequence2;
-        CharSequence charSequence6 = (i2 & 4) == 0 ? charSequence3 : "";
-        int i3 = (i2 & 8) != 0 ? -1 : i;
-        if ((i2 & 16) != 0) {
-            charSequence4 = "...";
-        }
-        CharSequence charSequence7 = charSequence4;
-        if ((i2 & 32) != 0) {
-            function1 = null;
-        }
-        return joinToString(iterable, charSequence, charSequence5, charSequence6, i3, charSequence7, function1);
-    }
-
-    public static Comparable minOrNull(Iterable iterable) {
-        Intrinsics.checkNotNullParameter(iterable, "<this>");
-        Iterator it = iterable.iterator();
-        if (!it.hasNext()) {
-            return null;
-        }
-        Comparable comparable = (Comparable) it.next();
-        while (it.hasNext()) {
-            Comparable comparable2 = (Comparable) it.next();
-            if (comparable.compareTo(comparable2) > 0) {
-                comparable = comparable2;
-            }
-        }
-        return comparable;
-    }
-
-    public static List plus(Collection collection, Iterable elements) {
-        Intrinsics.checkNotNullParameter(collection, "<this>");
-        Intrinsics.checkNotNullParameter(elements, "elements");
-        if (!(elements instanceof Collection)) {
-            ArrayList arrayList = new ArrayList(collection);
-            CollectionsKt__MutableCollectionsKt.addAll(arrayList, elements);
-            return arrayList;
-        }
-        Collection collection2 = (Collection) elements;
-        ArrayList arrayList2 = new ArrayList(collection.size() + collection2.size());
-        arrayList2.addAll(collection);
-        arrayList2.addAll(collection2);
-        return arrayList2;
     }
 
     public static Object single(Iterable iterable) {
@@ -167,23 +66,20 @@ public abstract class CollectionsKt___CollectionsKt extends CollectionsKt___Coll
         throw new IllegalArgumentException("List has more than one element.");
     }
 
-    public static List sortedWith(Iterable iterable, Comparator comparator) {
-        List asList;
+    public static List filterNotNull(Iterable iterable) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");
-        Intrinsics.checkNotNullParameter(comparator, "comparator");
-        if (!(iterable instanceof Collection)) {
-            List mutableList = toMutableList(iterable);
-            CollectionsKt__MutableCollectionsJVMKt.sortWith(mutableList, comparator);
-            return mutableList;
+        return (List) filterNotNullTo(iterable, new ArrayList());
+    }
+
+    public static final Collection filterNotNullTo(Iterable iterable, Collection destination) {
+        Intrinsics.checkNotNullParameter(iterable, "<this>");
+        Intrinsics.checkNotNullParameter(destination, "destination");
+        for (Object obj : iterable) {
+            if (obj != null) {
+                destination.add(obj);
+            }
         }
-        Collection collection = (Collection) iterable;
-        if (collection.size() <= 1) {
-            return toList(iterable);
-        }
-        Object[] array = collection.toArray(new Object[0]);
-        ArraysKt___ArraysJvmKt.sortWith(array, comparator);
-        asList = ArraysKt___ArraysJvmKt.asList(array);
-        return asList;
+        return destination;
     }
 
     public static List take(Iterable iterable, int i) {
@@ -192,14 +88,14 @@ public abstract class CollectionsKt___CollectionsKt extends CollectionsKt___Coll
             throw new IllegalArgumentException(("Requested element count " + i + " is less than zero.").toString());
         }
         if (i == 0) {
-            return CollectionsKt__CollectionsKt.emptyList();
+            return CollectionsKt.emptyList();
         }
         if (iterable instanceof Collection) {
             if (i >= ((Collection) iterable).size()) {
-                return toList(iterable);
+                return CollectionsKt.toList(iterable);
             }
             if (i == 1) {
-                return CollectionsKt__CollectionsJVMKt.listOf(first(iterable));
+                return CollectionsKt.listOf(first(iterable));
             }
         }
         ArrayList arrayList = new ArrayList(i);
@@ -212,7 +108,24 @@ public abstract class CollectionsKt___CollectionsKt extends CollectionsKt___Coll
                 break;
             }
         }
-        return CollectionsKt__CollectionsKt.optimizeReadOnlyList(arrayList);
+        return CollectionsKt.optimizeReadOnlyList(arrayList);
+    }
+
+    public static List sortedWith(Iterable iterable, Comparator comparator) {
+        Intrinsics.checkNotNullParameter(iterable, "<this>");
+        Intrinsics.checkNotNullParameter(comparator, "comparator");
+        if (iterable instanceof Collection) {
+            Collection collection = (Collection) iterable;
+            if (collection.size() <= 1) {
+                return CollectionsKt.toList(iterable);
+            }
+            Object[] array = collection.toArray(new Object[0]);
+            ArraysKt___ArraysJvmKt.sortWith(array, comparator);
+            return ArraysKt.asList(array);
+        }
+        List mutableList = toMutableList(iterable);
+        CollectionsKt__MutableCollectionsJVMKt.sortWith(mutableList, comparator);
+        return mutableList;
     }
 
     public static byte[] toByteArray(Collection collection) {
@@ -227,16 +140,6 @@ public abstract class CollectionsKt___CollectionsKt extends CollectionsKt___Coll
         return bArr;
     }
 
-    public static final Collection toCollection(Iterable iterable, Collection destination) {
-        Intrinsics.checkNotNullParameter(iterable, "<this>");
-        Intrinsics.checkNotNullParameter(destination, "destination");
-        Iterator it = iterable.iterator();
-        while (it.hasNext()) {
-            destination.add(it.next());
-        }
-        return destination;
-    }
-
     public static int[] toIntArray(Collection collection) {
         Intrinsics.checkNotNullParameter(collection, "<this>");
         int[] iArr = new int[collection.size()];
@@ -247,22 +150,6 @@ public abstract class CollectionsKt___CollectionsKt extends CollectionsKt___Coll
             i++;
         }
         return iArr;
-    }
-
-    public static List toList(Iterable iterable) {
-        Intrinsics.checkNotNullParameter(iterable, "<this>");
-        if (!(iterable instanceof Collection)) {
-            return CollectionsKt__CollectionsKt.optimizeReadOnlyList(toMutableList(iterable));
-        }
-        Collection collection = (Collection) iterable;
-        int size = collection.size();
-        if (size == 0) {
-            return CollectionsKt__CollectionsKt.emptyList();
-        }
-        if (size != 1) {
-            return toMutableList(collection);
-        }
-        return CollectionsKt__CollectionsJVMKt.listOf(iterable instanceof List ? ((List) iterable).get(0) : iterable.iterator().next());
     }
 
     public static long[] toLongArray(Collection collection) {
@@ -277,9 +164,38 @@ public abstract class CollectionsKt___CollectionsKt extends CollectionsKt___Coll
         return jArr;
     }
 
+    public static final Collection toCollection(Iterable iterable, Collection destination) {
+        Intrinsics.checkNotNullParameter(iterable, "<this>");
+        Intrinsics.checkNotNullParameter(destination, "destination");
+        Iterator it = iterable.iterator();
+        while (it.hasNext()) {
+            destination.add(it.next());
+        }
+        return destination;
+    }
+
+    public static List toList(Iterable iterable) {
+        Intrinsics.checkNotNullParameter(iterable, "<this>");
+        if (iterable instanceof Collection) {
+            Collection collection = (Collection) iterable;
+            int size = collection.size();
+            if (size == 0) {
+                return CollectionsKt.emptyList();
+            }
+            if (size != 1) {
+                return toMutableList(collection);
+            }
+            return CollectionsKt.listOf(iterable instanceof List ? ((List) iterable).get(0) : iterable.iterator().next());
+        }
+        return CollectionsKt.optimizeReadOnlyList(toMutableList(iterable));
+    }
+
     public static final List toMutableList(Iterable iterable) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");
-        return iterable instanceof Collection ? toMutableList((Collection) iterable) : (List) toCollection(iterable, new ArrayList());
+        if (iterable instanceof Collection) {
+            return toMutableList((Collection) iterable);
+        }
+        return (List) toCollection(iterable, new ArrayList());
     }
 
     public static final List toMutableList(Collection collection) {
@@ -288,52 +204,80 @@ public abstract class CollectionsKt___CollectionsKt extends CollectionsKt___Coll
     }
 
     public static Set toSet(Iterable iterable) {
-        int mapCapacity;
         Intrinsics.checkNotNullParameter(iterable, "<this>");
-        if (!(iterable instanceof Collection)) {
-            return SetsKt__SetsKt.optimizeReadOnlySet((Set) toCollection(iterable, new LinkedHashSet()));
-        }
-        Collection collection = (Collection) iterable;
-        int size = collection.size();
-        if (size == 0) {
-            return SetsKt__SetsKt.emptySet();
-        }
-        if (size == 1) {
+        if (iterable instanceof Collection) {
+            Collection collection = (Collection) iterable;
+            int size = collection.size();
+            if (size == 0) {
+                return SetsKt__SetsKt.emptySet();
+            }
+            if (size != 1) {
+                return (Set) toCollection(iterable, new LinkedHashSet(MapsKt.mapCapacity(collection.size())));
+            }
             return SetsKt__SetsJVMKt.setOf(iterable instanceof List ? ((List) iterable).get(0) : iterable.iterator().next());
         }
-        mapCapacity = MapsKt__MapsJVMKt.mapCapacity(collection.size());
-        return (Set) toCollection(iterable, new LinkedHashSet(mapCapacity));
+        return SetsKt__SetsKt.optimizeReadOnlySet((Set) toCollection(iterable, new LinkedHashSet()));
+    }
+
+    public static Comparable minOrNull(Iterable iterable) {
+        Intrinsics.checkNotNullParameter(iterable, "<this>");
+        Iterator it = iterable.iterator();
+        if (!it.hasNext()) {
+            return null;
+        }
+        Comparable comparable = (Comparable) it.next();
+        while (it.hasNext()) {
+            Comparable comparable2 = (Comparable) it.next();
+            if (comparable.compareTo(comparable2) > 0) {
+                comparable = comparable2;
+            }
+        }
+        return comparable;
+    }
+
+    public static List plus(Collection collection, Iterable elements) {
+        Intrinsics.checkNotNullParameter(collection, "<this>");
+        Intrinsics.checkNotNullParameter(elements, "elements");
+        if (elements instanceof Collection) {
+            Collection collection2 = (Collection) elements;
+            ArrayList arrayList = new ArrayList(collection.size() + collection2.size());
+            arrayList.addAll(collection);
+            arrayList.addAll(collection2);
+            return arrayList;
+        }
+        ArrayList arrayList2 = new ArrayList(collection);
+        CollectionsKt.addAll(arrayList2, elements);
+        return arrayList2;
     }
 
     public static List windowed(Iterable iterable, int i, int i2, boolean z) {
-        int coerceAtMost;
         Intrinsics.checkNotNullParameter(iterable, "<this>");
         SlidingWindowKt.checkWindowSizeStep(i, i2);
-        if (!(iterable instanceof RandomAccess) || !(iterable instanceof List)) {
-            ArrayList arrayList = new ArrayList();
-            Iterator windowedIterator = SlidingWindowKt.windowedIterator(iterable.iterator(), i, i2, z, false);
-            while (windowedIterator.hasNext()) {
-                arrayList.add((List) windowedIterator.next());
+        if ((iterable instanceof RandomAccess) && (iterable instanceof List)) {
+            List list = (List) iterable;
+            int size = list.size();
+            ArrayList arrayList = new ArrayList((size / i2) + (size % i2 == 0 ? 0 : 1));
+            int i3 = 0;
+            while (i3 >= 0 && i3 < size) {
+                int coerceAtMost = RangesKt.coerceAtMost(i, size - i3);
+                if (coerceAtMost < i && !z) {
+                    break;
+                }
+                ArrayList arrayList2 = new ArrayList(coerceAtMost);
+                for (int i4 = 0; i4 < coerceAtMost; i4++) {
+                    arrayList2.add(list.get(i4 + i3));
+                }
+                arrayList.add(arrayList2);
+                i3 += i2;
             }
             return arrayList;
         }
-        List list = (List) iterable;
-        int size = list.size();
-        ArrayList arrayList2 = new ArrayList((size / i2) + (size % i2 == 0 ? 0 : 1));
-        int i3 = 0;
-        while (i3 >= 0 && i3 < size) {
-            coerceAtMost = RangesKt___RangesKt.coerceAtMost(i, size - i3);
-            if (coerceAtMost < i && !z) {
-                break;
-            }
-            ArrayList arrayList3 = new ArrayList(coerceAtMost);
-            for (int i4 = 0; i4 < coerceAtMost; i4++) {
-                arrayList3.add(list.get(i4 + i3));
-            }
-            arrayList2.add(arrayList3);
-            i3 += i2;
+        ArrayList arrayList3 = new ArrayList();
+        Iterator windowedIterator = SlidingWindowKt.windowedIterator(iterable.iterator(), i, i2, z, false);
+        while (windowedIterator.hasNext()) {
+            arrayList3.add((List) windowedIterator.next());
         }
-        return arrayList2;
+        return arrayList3;
     }
 
     public static List zip(Iterable iterable, Iterable other) {
@@ -341,10 +285,64 @@ public abstract class CollectionsKt___CollectionsKt extends CollectionsKt___Coll
         Intrinsics.checkNotNullParameter(other, "other");
         Iterator it = iterable.iterator();
         Iterator it2 = other.iterator();
-        ArrayList arrayList = new ArrayList(Math.min(CollectionsKt__IterablesKt.collectionSizeOrDefault(iterable, 10), CollectionsKt__IterablesKt.collectionSizeOrDefault(other, 10)));
+        ArrayList arrayList = new ArrayList(Math.min(CollectionsKt.collectionSizeOrDefault(iterable, 10), CollectionsKt.collectionSizeOrDefault(other, 10)));
         while (it.hasNext() && it2.hasNext()) {
             arrayList.add(TuplesKt.to(it.next(), it2.next()));
         }
         return arrayList;
+    }
+
+    public static final Appendable joinTo(Iterable iterable, Appendable buffer, CharSequence separator, CharSequence prefix, CharSequence postfix, int i, CharSequence truncated, Function1 function1) {
+        Intrinsics.checkNotNullParameter(iterable, "<this>");
+        Intrinsics.checkNotNullParameter(buffer, "buffer");
+        Intrinsics.checkNotNullParameter(separator, "separator");
+        Intrinsics.checkNotNullParameter(prefix, "prefix");
+        Intrinsics.checkNotNullParameter(postfix, "postfix");
+        Intrinsics.checkNotNullParameter(truncated, "truncated");
+        buffer.append(prefix);
+        int i2 = 0;
+        for (Object obj : iterable) {
+            i2++;
+            if (i2 > 1) {
+                buffer.append(separator);
+            }
+            if (i >= 0 && i2 > i) {
+                break;
+            }
+            StringsKt.appendElement(buffer, obj, function1);
+        }
+        if (i >= 0 && i2 > i) {
+            buffer.append(truncated);
+        }
+        buffer.append(postfix);
+        return buffer;
+    }
+
+    public static /* synthetic */ String joinToString$default(Iterable iterable, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, int i, CharSequence charSequence4, Function1 function1, int i2, Object obj) {
+        if ((i2 & 1) != 0) {
+            charSequence = ", ";
+        }
+        CharSequence charSequence5 = (i2 & 2) != 0 ? "" : charSequence2;
+        CharSequence charSequence6 = (i2 & 4) == 0 ? charSequence3 : "";
+        int i3 = (i2 & 8) != 0 ? -1 : i;
+        if ((i2 & 16) != 0) {
+            charSequence4 = "...";
+        }
+        CharSequence charSequence7 = charSequence4;
+        if ((i2 & 32) != 0) {
+            function1 = null;
+        }
+        return joinToString(iterable, charSequence, charSequence5, charSequence6, i3, charSequence7, function1);
+    }
+
+    public static final String joinToString(Iterable iterable, CharSequence separator, CharSequence prefix, CharSequence postfix, int i, CharSequence truncated, Function1 function1) {
+        Intrinsics.checkNotNullParameter(iterable, "<this>");
+        Intrinsics.checkNotNullParameter(separator, "separator");
+        Intrinsics.checkNotNullParameter(prefix, "prefix");
+        Intrinsics.checkNotNullParameter(postfix, "postfix");
+        Intrinsics.checkNotNullParameter(truncated, "truncated");
+        String sb = ((StringBuilder) joinTo(iterable, new StringBuilder(), separator, prefix, postfix, i, truncated, function1)).toString();
+        Intrinsics.checkNotNullExpressionValue(sb, "joinTo(StringBuilder(), …ed, transform).toString()");
+        return sb;
     }
 }

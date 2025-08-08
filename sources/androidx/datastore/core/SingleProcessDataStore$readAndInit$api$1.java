@@ -2,7 +2,7 @@ package androidx.datastore.core;
 
 import kotlin.ResultKt;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref$BooleanRef;
@@ -36,7 +36,6 @@ public final class SingleProcessDataStore$readAndInit$api$1 implements Initializ
     */
     public Object updateData(Function2 function2, Continuation continuation) {
         SingleProcessDataStore$readAndInit$api$1$updateData$1 singleProcessDataStore$readAndInit$api$1$updateData$1;
-        Object coroutine_suspended;
         int i;
         Mutex mutex;
         SingleProcessDataStore singleProcessDataStore;
@@ -54,7 +53,7 @@ public final class SingleProcessDataStore$readAndInit$api$1 implements Initializ
                 if ((i2 & TLObject.FLAG_31) != 0) {
                     singleProcessDataStore$readAndInit$api$1$updateData$1.label = i2 - TLObject.FLAG_31;
                     Object obj2 = singleProcessDataStore$readAndInit$api$1$updateData$1.result;
-                    coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                    Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                     i = singleProcessDataStore$readAndInit$api$1$updateData$1.label;
                     if (i != 0) {
                         ResultKt.throwOnFailure(obj2);
@@ -100,24 +99,24 @@ public final class SingleProcessDataStore$readAndInit$api$1 implements Initializ
                             mutex3 = (Mutex) singleProcessDataStore$readAndInit$api$1$updateData$1.L$0;
                             try {
                                 ResultKt.throwOnFailure(obj2);
-                                if (!Intrinsics.areEqual(obj2, ref$ObjectRef.element)) {
+                                if (Intrinsics.areEqual(obj2, ref$ObjectRef.element)) {
+                                    singleProcessDataStore$readAndInit$api$1$updateData$1.L$0 = mutex3;
+                                    singleProcessDataStore$readAndInit$api$1$updateData$1.L$1 = ref$ObjectRef;
+                                    singleProcessDataStore$readAndInit$api$1$updateData$1.L$2 = obj2;
+                                    singleProcessDataStore$readAndInit$api$1$updateData$1.label = 3;
+                                    if (singleProcessDataStore2.writeData$datastore_core(obj2, singleProcessDataStore$readAndInit$api$1$updateData$1) == coroutine_suspended) {
+                                        return coroutine_suspended;
+                                    }
+                                    obj = obj2;
+                                    ref$ObjectRef2 = ref$ObjectRef;
                                     mutex2 = mutex3;
+                                    ref$ObjectRef2.element = obj;
+                                    ref$ObjectRef = ref$ObjectRef2;
                                     Object obj32 = ref$ObjectRef.element;
                                     mutex2.unlock(null);
                                     return obj32;
                                 }
-                                singleProcessDataStore$readAndInit$api$1$updateData$1.L$0 = mutex3;
-                                singleProcessDataStore$readAndInit$api$1$updateData$1.L$1 = ref$ObjectRef;
-                                singleProcessDataStore$readAndInit$api$1$updateData$1.L$2 = obj2;
-                                singleProcessDataStore$readAndInit$api$1$updateData$1.label = 3;
-                                if (singleProcessDataStore2.writeData$datastore_core(obj2, singleProcessDataStore$readAndInit$api$1$updateData$1) == coroutine_suspended) {
-                                    return coroutine_suspended;
-                                }
-                                obj = obj2;
-                                ref$ObjectRef2 = ref$ObjectRef;
                                 mutex2 = mutex3;
-                                ref$ObjectRef2.element = obj;
-                                ref$ObjectRef = ref$ObjectRef2;
                                 Object obj322 = ref$ObjectRef.element;
                                 mutex2.unlock(null);
                                 return obj322;
@@ -155,7 +154,7 @@ public final class SingleProcessDataStore$readAndInit$api$1 implements Initializ
                     mutex3 = mutex;
                     obj2 = invoke;
                     singleProcessDataStore2 = singleProcessDataStore;
-                    if (!Intrinsics.areEqual(obj2, ref$ObjectRef.element)) {
+                    if (Intrinsics.areEqual(obj2, ref$ObjectRef.element)) {
                     }
                 }
             }
@@ -169,7 +168,7 @@ public final class SingleProcessDataStore$readAndInit$api$1 implements Initializ
         }
         singleProcessDataStore$readAndInit$api$1$updateData$1 = new SingleProcessDataStore$readAndInit$api$1$updateData$1(this, continuation);
         Object obj22 = singleProcessDataStore$readAndInit$api$1$updateData$1.result;
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = singleProcessDataStore$readAndInit$api$1$updateData$1.label;
         if (i != 0) {
         }

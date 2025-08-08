@@ -38,9 +38,8 @@ public final class TrackSelectionOverride implements Bundleable {
         this.trackIndices = ImmutableList.copyOf((Collection) list);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ TrackSelectionOverride lambda$static$0(Bundle bundle) {
-        return new TrackSelectionOverride((TrackGroup) TrackGroup.CREATOR.fromBundle((Bundle) Assertions.checkNotNull(bundle.getBundle(FIELD_TRACK_GROUP))), Ints.asList((int[]) Assertions.checkNotNull(bundle.getIntArray(FIELD_TRACKS))));
+    public int getType() {
+        return this.mediaTrackGroup.type;
     }
 
     public boolean equals(Object obj) {
@@ -54,10 +53,6 @@ public final class TrackSelectionOverride implements Bundleable {
         return this.mediaTrackGroup.equals(trackSelectionOverride.mediaTrackGroup) && this.trackIndices.equals(trackSelectionOverride.trackIndices);
     }
 
-    public int getType() {
-        return this.mediaTrackGroup.type;
-    }
-
     public int hashCode() {
         return this.mediaTrackGroup.hashCode() + (this.trackIndices.hashCode() * 31);
     }
@@ -68,5 +63,10 @@ public final class TrackSelectionOverride implements Bundleable {
         bundle.putBundle(FIELD_TRACK_GROUP, this.mediaTrackGroup.toBundle());
         bundle.putIntArray(FIELD_TRACKS, Ints.toArray(this.trackIndices));
         return bundle;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ TrackSelectionOverride lambda$static$0(Bundle bundle) {
+        return new TrackSelectionOverride((TrackGroup) TrackGroup.CREATOR.fromBundle((Bundle) Assertions.checkNotNull(bundle.getBundle(FIELD_TRACK_GROUP))), Ints.asList((int[]) Assertions.checkNotNull(bundle.getIntArray(FIELD_TRACKS))));
     }
 }

@@ -4,22 +4,24 @@ import com.coremedia.iso.IsoTypeReader;
 import java.nio.ByteBuffer;
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class BaseDescriptor {
     int sizeBytes;
     int sizeOfInstance;
     int tag;
 
+    public abstract void parseDetail(ByteBuffer byteBuffer);
+
     public int getSize() {
         return this.sizeOfInstance + 1 + this.sizeBytes;
     }
 
-    public int getSizeBytes() {
-        return this.sizeBytes;
-    }
-
     public int getSizeOfInstance() {
         return this.sizeOfInstance;
+    }
+
+    public int getSizeBytes() {
+        return this.sizeBytes;
     }
 
     public final void parse(int i, ByteBuffer byteBuffer) {
@@ -38,6 +40,4 @@ public abstract class BaseDescriptor {
         parseDetail(slice);
         byteBuffer.position(byteBuffer.position() + this.sizeOfInstance);
     }
-
-    public abstract void parseDetail(ByteBuffer byteBuffer);
 }

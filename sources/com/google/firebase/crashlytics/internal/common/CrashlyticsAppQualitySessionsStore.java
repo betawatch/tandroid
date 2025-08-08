@@ -10,7 +10,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 class CrashlyticsAppQualitySessionsStore {
     private static final FilenameFilter AQS_SESSION_ID_FILE_FILTER = new FilenameFilter() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsAppQualitySessionsStore$$ExternalSyntheticLambda0
         @Override // java.io.FilenameFilter
@@ -32,10 +32,6 @@ class CrashlyticsAppQualitySessionsStore {
     private String sessionId = null;
     private String appQualitySessionId = null;
 
-    CrashlyticsAppQualitySessionsStore(FileStore fileStore) {
-        this.fileStore = fileStore;
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ boolean lambda$static$0(File file, String str) {
         return str.startsWith("aqs.");
@@ -46,24 +42,8 @@ class CrashlyticsAppQualitySessionsStore {
         return Long.compare(file2.lastModified(), file.lastModified());
     }
 
-    private static void persist(FileStore fileStore, String str, String str2) {
-        if (str == null || str2 == null) {
-            return;
-        }
-        try {
-            fileStore.getSessionFile(str, "aqs." + str2).createNewFile();
-        } catch (IOException e) {
-            Logger.getLogger().w("Failed to persist App Quality Sessions session id.", e);
-        }
-    }
-
-    static String readAqsSessionIdFile(FileStore fileStore, String str) {
-        List sessionFiles = fileStore.getSessionFiles(str, AQS_SESSION_ID_FILE_FILTER);
-        if (!sessionFiles.isEmpty()) {
-            return ((File) Collections.min(sessionFiles, FILE_RECENCY_COMPARATOR)).getName().substring(4);
-        }
-        Logger.getLogger().w("Unable to read App Quality Sessions session id.");
-        return null;
+    CrashlyticsAppQualitySessionsStore(FileStore fileStore) {
+        this.fileStore = fileStore;
     }
 
     public synchronized String getAppQualitySessionId(String str) {
@@ -85,5 +65,25 @@ class CrashlyticsAppQualitySessionsStore {
             persist(this.fileStore, str, this.appQualitySessionId);
             this.sessionId = str;
         }
+    }
+
+    private static void persist(FileStore fileStore, String str, String str2) {
+        if (str == null || str2 == null) {
+            return;
+        }
+        try {
+            fileStore.getSessionFile(str, "aqs." + str2).createNewFile();
+        } catch (IOException e) {
+            Logger.getLogger().w("Failed to persist App Quality Sessions session id.", e);
+        }
+    }
+
+    static String readAqsSessionIdFile(FileStore fileStore, String str) {
+        List sessionFiles = fileStore.getSessionFiles(str, AQS_SESSION_ID_FILE_FILTER);
+        if (sessionFiles.isEmpty()) {
+            Logger.getLogger().w("Unable to read App Quality Sessions session id.");
+            return null;
+        }
+        return ((File) Collections.min(sessionFiles, FILE_RECENCY_COMPARATOR)).getName().substring(4);
     }
 }

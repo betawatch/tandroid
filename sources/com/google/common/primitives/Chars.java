@@ -4,6 +4,10 @@ import com.google.common.base.Preconditions;
 
 /* loaded from: classes.dex */
 public abstract class Chars {
+    public static char fromBytes(byte b, byte b2) {
+        return (char) ((b << 8) | (b2 & 255));
+    }
+
     public static char checkedCast(long j) {
         char c = (char) j;
         Preconditions.checkArgument(((long) c) == j, "Out of range: %s", j);
@@ -17,9 +21,5 @@ public abstract class Chars {
             }
         }
         return false;
-    }
-
-    public static char fromBytes(byte b, byte b2) {
-        return (char) ((b << 8) | (b2 & 255));
     }
 }

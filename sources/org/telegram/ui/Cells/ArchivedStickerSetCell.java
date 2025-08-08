@@ -6,7 +6,7 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
-import android.os.Build;
+import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.util.Property;
 import android.view.View;
@@ -76,11 +76,9 @@ public class ArchivedStickerSetCell extends FrameLayout implements Checkable {
             progressButton2.setBackground(Theme.getRoundRectSelectorDrawable(Theme.getColor(i)));
             progressButton2.setTypeface(AndroidUtilities.bold());
             ViewHelper.setPadding(progressButton2, 8.0f, 0.0f, 8.0f, 0.0f);
-            if (Build.VERSION.SDK_INT >= 21) {
-                progressButton2.setOutlineProvider(null);
-            }
+            progressButton2.setOutlineProvider(null);
             addView(progressButton2, LayoutHelper.createFrameRelatively(-2.0f, 28.0f, 8388661, 0.0f, 18.0f, 14.0f, 0.0f));
-            View.OnClickListener onClickListener = new View.OnClickListener() { // from class: org.telegram.ui.Cells.ArchivedStickerSetCell$$ExternalSyntheticLambda1
+            View.OnClickListener onClickListener = new View.OnClickListener() { // from class: org.telegram.ui.Cells.ArchivedStickerSetCell$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     ArchivedStickerSetCell.this.lambda$new$0(view);
@@ -124,60 +122,9 @@ public class ArchivedStickerSetCell extends FrameLayout implements Checkable {
         toggle();
     }
 
-    private void syncButtons(boolean z) {
-        if (this.checkable) {
-            AnimatorSet animatorSet = this.animatorSet;
-            if (animatorSet != null) {
-                animatorSet.cancel();
-            }
-            boolean z2 = this.checked;
-            float f = z2 ? 1.0f : 0.0f;
-            float f2 = z2 ? 0.0f : 1.0f;
-            if (!z) {
-                this.deleteButton.setVisibility(z2 ? 0 : 4);
-                this.deleteButton.setAlpha(f);
-                this.deleteButton.setScaleX(f);
-                this.deleteButton.setScaleY(f);
-                this.addButton.setVisibility(this.checked ? 4 : 0);
-                this.addButton.setAlpha(f2);
-                this.addButton.setScaleX(f2);
-                this.addButton.setScaleY(f2);
-                return;
-            }
-            this.currentButton = z2 ? this.deleteButton : this.addButton;
-            this.addButton.setVisibility(0);
-            this.deleteButton.setVisibility(0);
-            AnimatorSet animatorSet2 = new AnimatorSet();
-            this.animatorSet = animatorSet2;
-            animatorSet2.setDuration(250L);
-            AnimatorSet animatorSet3 = this.animatorSet;
-            Button button = this.deleteButton;
-            Property property = View.ALPHA;
-            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(button, (Property<Button, Float>) property, f);
-            Button button2 = this.deleteButton;
-            Property property2 = View.SCALE_X;
-            ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(button2, (Property<Button, Float>) property2, f);
-            Button button3 = this.deleteButton;
-            Property property3 = View.SCALE_Y;
-            animatorSet3.playTogether(ofFloat, ofFloat2, ObjectAnimator.ofFloat(button3, (Property<Button, Float>) property3, f), ObjectAnimator.ofFloat(this.addButton, (Property<ProgressButton, Float>) property, f2), ObjectAnimator.ofFloat(this.addButton, (Property<ProgressButton, Float>) property2, f2), ObjectAnimator.ofFloat(this.addButton, (Property<ProgressButton, Float>) property3, f2));
-            this.animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Cells.ArchivedStickerSetCell.1
-                @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-                public void onAnimationEnd(Animator animator) {
-                    (ArchivedStickerSetCell.this.currentButton == ArchivedStickerSetCell.this.addButton ? ArchivedStickerSetCell.this.deleteButton : ArchivedStickerSetCell.this.addButton).setVisibility(4);
-                }
-            });
-            this.animatorSet.setInterpolator(new OvershootInterpolator(1.02f));
-            this.animatorSet.start();
-        }
-    }
-
-    public TLRPC.StickerSetCovered getStickersSet() {
-        return this.stickersSet;
-    }
-
-    @Override // android.widget.Checkable
-    public boolean isChecked() {
-        return this.checked;
+    @Override // android.widget.FrameLayout, android.view.View
+    protected void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f) + (this.needDivider ? 1 : 0), TLObject.FLAG_30));
     }
 
     @Override // android.view.ViewGroup
@@ -195,9 +142,146 @@ public class ArchivedStickerSetCell extends FrameLayout implements Checkable {
         }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f) + (this.needDivider ? 1 : 0), TLObject.FLAG_30));
+    public void setDrawProgress(boolean z, boolean z2) {
+        ProgressButton progressButton = this.addButton;
+        if (progressButton != null) {
+            progressButton.setDrawProgress(z, z2);
+        }
+    }
+
+    public void setStickersSet(TLRPC.StickerSetCovered stickerSetCovered, boolean z) {
+        ImageLocation forSticker;
+        this.needDivider = z;
+        this.stickersSet = stickerSetCovered;
+        setWillNotDraw(!z);
+        this.textView.setText(this.stickersSet.set.title);
+        TLRPC.StickerSet stickerSet = stickerSetCovered.set;
+        if (stickerSet.emojis) {
+            this.valueTextView.setText(LocaleController.formatPluralString("EmojiCount", stickerSet.count, new Object[0]));
+        } else {
+            this.valueTextView.setText(LocaleController.formatPluralString("Stickers", stickerSet.count, new Object[0]));
+        }
+        TLRPC.Document document = null;
+        if (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) {
+            ArrayList<TLRPC.Document> arrayList = ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents;
+            if (arrayList == null) {
+                return;
+            }
+            long j = stickerSetCovered.set.thumb_document_id;
+            int i = 0;
+            while (true) {
+                if (i < arrayList.size()) {
+                    TLRPC.Document document2 = arrayList.get(i);
+                    if (document2 != null && document2.id == j) {
+                        document = document2;
+                        break;
+                    }
+                    i++;
+                } else {
+                    break;
+                }
+            }
+            if (document == null && !arrayList.isEmpty()) {
+                document = arrayList.get(0);
+            }
+        } else {
+            TLRPC.Document document3 = stickerSetCovered.cover;
+            if (document3 != null) {
+                document = document3;
+            } else if (!stickerSetCovered.covers.isEmpty()) {
+                document = stickerSetCovered.covers.get(0);
+            }
+        }
+        if (document != null) {
+            TLObject closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(stickerSetCovered.set.thumbs, 90);
+            if (closestPhotoSizeWithSize == null) {
+                closestPhotoSizeWithSize = document;
+            }
+            SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(stickerSetCovered.set.thumbs, Theme.key_windowBackgroundGray, 1.0f);
+            boolean z2 = closestPhotoSizeWithSize instanceof TLRPC.Document;
+            if (z2) {
+                forSticker = ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90), document);
+            } else {
+                forSticker = ImageLocation.getForSticker((TLRPC.PhotoSize) closestPhotoSizeWithSize, document, stickerSetCovered.set.thumb_version);
+            }
+            ImageLocation imageLocation = forSticker;
+            if (z2 && (MessageObject.isAnimatedStickerDocument(document, true) || MessageObject.isVideoSticker(document))) {
+                if (svgThumb != null) {
+                    this.imageView.setImage(ImageLocation.getForDocument(document), "50_50", svgThumb, 0, stickerSetCovered);
+                    return;
+                } else {
+                    this.imageView.setImage(ImageLocation.getForDocument(document), "50_50", imageLocation, (String) null, 0, stickerSetCovered);
+                    return;
+                }
+            }
+            if (imageLocation != null && imageLocation.imageType == 1) {
+                this.imageView.setImage(imageLocation, "50_50", "tgs", svgThumb, stickerSetCovered);
+                return;
+            } else {
+                this.imageView.setImage(imageLocation, "50_50", "webp", svgThumb, stickerSetCovered);
+                return;
+            }
+        }
+        this.imageView.setImage((ImageLocation) null, (String) null, "webp", (Drawable) null, stickerSetCovered);
+    }
+
+    public TLRPC.StickerSetCovered getStickersSet() {
+        return this.stickersSet;
+    }
+
+    private void syncButtons(boolean z) {
+        if (this.checkable) {
+            AnimatorSet animatorSet = this.animatorSet;
+            if (animatorSet != null) {
+                animatorSet.cancel();
+            }
+            boolean z2 = this.checked;
+            float f = z2 ? 1.0f : 0.0f;
+            float f2 = z2 ? 0.0f : 1.0f;
+            if (z) {
+                this.currentButton = z2 ? this.deleteButton : this.addButton;
+                this.addButton.setVisibility(0);
+                this.deleteButton.setVisibility(0);
+                AnimatorSet animatorSet2 = new AnimatorSet();
+                this.animatorSet = animatorSet2;
+                animatorSet2.setDuration(250L);
+                AnimatorSet animatorSet3 = this.animatorSet;
+                Button button = this.deleteButton;
+                Property property = View.ALPHA;
+                ObjectAnimator ofFloat = ObjectAnimator.ofFloat(button, (Property<Button, Float>) property, f);
+                Button button2 = this.deleteButton;
+                Property property2 = View.SCALE_X;
+                ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(button2, (Property<Button, Float>) property2, f);
+                Button button3 = this.deleteButton;
+                Property property3 = View.SCALE_Y;
+                animatorSet3.playTogether(ofFloat, ofFloat2, ObjectAnimator.ofFloat(button3, (Property<Button, Float>) property3, f), ObjectAnimator.ofFloat(this.addButton, (Property<ProgressButton, Float>) property, f2), ObjectAnimator.ofFloat(this.addButton, (Property<ProgressButton, Float>) property2, f2), ObjectAnimator.ofFloat(this.addButton, (Property<ProgressButton, Float>) property3, f2));
+                this.animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Cells.ArchivedStickerSetCell.1
+                    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+                    public void onAnimationEnd(Animator animator) {
+                        if (ArchivedStickerSetCell.this.currentButton == ArchivedStickerSetCell.this.addButton) {
+                            ArchivedStickerSetCell.this.deleteButton.setVisibility(4);
+                        } else {
+                            ArchivedStickerSetCell.this.addButton.setVisibility(4);
+                        }
+                    }
+                });
+                this.animatorSet.setInterpolator(new OvershootInterpolator(1.02f));
+                this.animatorSet.start();
+                return;
+            }
+            this.deleteButton.setVisibility(z2 ? 0 : 4);
+            this.deleteButton.setAlpha(f);
+            this.deleteButton.setScaleX(f);
+            this.deleteButton.setScaleY(f);
+            this.addButton.setVisibility(this.checked ? 4 : 0);
+            this.addButton.setAlpha(f2);
+            this.addButton.setScaleX(f2);
+            this.addButton.setScaleY(f2);
+        }
+    }
+
+    public void setOnCheckedChangeListener(OnCheckedChangeListener onCheckedChangeListener) {
+        this.onCheckedChangeListener = onCheckedChangeListener;
     }
 
     @Override // android.widget.Checkable
@@ -222,120 +306,9 @@ public class ArchivedStickerSetCell extends FrameLayout implements Checkable {
         onCheckedChangeListener.onCheckedChanged(this, z);
     }
 
-    public void setDrawProgress(boolean z, boolean z2) {
-        ProgressButton progressButton = this.addButton;
-        if (progressButton != null) {
-            progressButton.setDrawProgress(z, z2);
-        }
-    }
-
-    public void setOnCheckedChangeListener(OnCheckedChangeListener onCheckedChangeListener) {
-        this.onCheckedChangeListener = onCheckedChangeListener;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x006a, code lost:
-    
-        if (r0.isEmpty() == false) goto L24;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0087  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x00fe  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void setStickersSet(TLRPC.StickerSetCovered stickerSetCovered, boolean z) {
-        TextView textView;
-        String formatPluralString;
-        ArrayList<TLRPC.Document> arrayList;
-        BackupImageView backupImageView;
-        String str;
-        SvgHelper.SvgDrawable svgDrawable;
-        ImageLocation imageLocation;
-        String str2;
-        String str3;
-        this.needDivider = z;
-        this.stickersSet = stickerSetCovered;
-        setWillNotDraw(!z);
-        this.textView.setText(this.stickersSet.set.title);
-        TLRPC.StickerSet stickerSet = stickerSetCovered.set;
-        if (stickerSet.emojis) {
-            textView = this.valueTextView;
-            formatPluralString = LocaleController.formatPluralString("EmojiCount", stickerSet.count, new Object[0]);
-        } else {
-            textView = this.valueTextView;
-            formatPluralString = LocaleController.formatPluralString("Stickers", stickerSet.count, new Object[0]);
-        }
-        textView.setText(formatPluralString);
-        TLRPC.Document document = null;
-        if (!(stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered)) {
-            TLRPC.Document document2 = stickerSetCovered.cover;
-            if (document2 != null) {
-                document = document2;
-            } else if (!stickerSetCovered.covers.isEmpty()) {
-                arrayList = stickerSetCovered.covers;
-                document = arrayList.get(0);
-            }
-            if (document == null) {
-            }
-            backupImageView.setImage(imageLocation, str2, str, svgDrawable, stickerSetCovered);
-        }
-        arrayList = ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents;
-        if (arrayList == null) {
-            return;
-        }
-        long j = stickerSetCovered.set.thumb_document_id;
-        int i = 0;
-        while (true) {
-            if (i < arrayList.size()) {
-                TLRPC.Document document3 = arrayList.get(i);
-                if (document3 != null && document3.id == j) {
-                    document = document3;
-                    break;
-                }
-                i++;
-            } else {
-                break;
-            }
-        }
-        if (document == null) {
-        }
-        if (document == null) {
-            TLObject closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(stickerSetCovered.set.thumbs, 90);
-            if (closestPhotoSizeWithSize == null) {
-                closestPhotoSizeWithSize = document;
-            }
-            svgDrawable = DocumentObject.getSvgThumb(stickerSetCovered.set.thumbs, Theme.key_windowBackgroundGray, 1.0f);
-            boolean z2 = closestPhotoSizeWithSize instanceof TLRPC.Document;
-            ImageLocation forDocument = z2 ? ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90), document) : ImageLocation.getForSticker((TLRPC.PhotoSize) closestPhotoSizeWithSize, document, stickerSetCovered.set.thumb_version);
-            if (z2 && (MessageObject.isAnimatedStickerDocument(document, true) || MessageObject.isVideoSticker(document))) {
-                BackupImageView backupImageView2 = this.imageView;
-                ImageLocation forDocument2 = ImageLocation.getForDocument(document);
-                if (svgDrawable != null) {
-                    backupImageView2.setImage(forDocument2, "50_50", svgDrawable, 0, stickerSetCovered);
-                    return;
-                } else {
-                    backupImageView2.setImage(forDocument2, "50_50", forDocument, (String) null, 0, stickerSetCovered);
-                    return;
-                }
-            }
-            if (forDocument == null || forDocument.imageType != 1) {
-                backupImageView = this.imageView;
-                str2 = "50_50";
-                str3 = "webp";
-            } else {
-                backupImageView = this.imageView;
-                str2 = "50_50";
-                str3 = "tgs";
-            }
-            imageLocation = forDocument;
-            str = str3;
-        } else {
-            backupImageView = this.imageView;
-            str = "webp";
-            svgDrawable = null;
-            imageLocation = null;
-            str2 = null;
-        }
-        backupImageView.setImage(imageLocation, str2, str, svgDrawable, stickerSetCovered);
+    @Override // android.widget.Checkable
+    public boolean isChecked() {
+        return this.checked;
     }
 
     @Override // android.widget.Checkable

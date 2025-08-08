@@ -20,94 +20,20 @@ import com.google.android.gms.tasks.Task;
 import org.telegram.messenger.ILocationServiceProvider;
 import org.telegram.messenger.PushListenerController;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class GoogleLocationProvider implements ILocationServiceProvider {
     private FusedLocationProviderClient locationProviderClient;
     private SettingsClient settingsClient;
 
-    /* loaded from: classes3.dex */
-    public static final class GoogleApiClientImpl implements ILocationServiceProvider.IMapApiClient {
-        private GoogleApiClient apiClient;
-
-        private GoogleApiClientImpl(GoogleApiClient googleApiClient) {
-            this.apiClient = googleApiClient;
-        }
-
-        @Override // org.telegram.messenger.ILocationServiceProvider.IMapApiClient
-        public void connect() {
-            this.apiClient.connect();
-        }
-
-        @Override // org.telegram.messenger.ILocationServiceProvider.IMapApiClient
-        public void disconnect() {
-            this.apiClient.disconnect();
-        }
-    }
-
-    /* loaded from: classes3.dex */
-    public static final class GoogleLocationRequest implements ILocationServiceProvider.ILocationRequest {
-        private LocationRequest request;
-
-        private GoogleLocationRequest(LocationRequest locationRequest) {
-            this.request = locationRequest;
-        }
-
-        @Override // org.telegram.messenger.ILocationServiceProvider.ILocationRequest
-        public void setFastestInterval(long j) {
-            this.request.setFastestInterval(j);
-        }
-
-        @Override // org.telegram.messenger.ILocationServiceProvider.ILocationRequest
-        public void setInterval(long j) {
-            this.request.setInterval(j);
-        }
-
-        @Override // org.telegram.messenger.ILocationServiceProvider.ILocationRequest
-        public void setPriority(int i) {
-            this.request.setPriority(i != 1 ? i != 2 ? i != 3 ? 100 : 105 : 104 : 102);
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$checkLocationSettings$1(Consumer consumer, Task task) {
-        int i;
-        try {
-            task.getResult(ApiException.class);
-            consumer.accept(0);
-        } catch (ApiException e) {
-            int statusCode = e.getStatusCode();
-            if (statusCode == 6) {
-                i = 1;
-            } else if (statusCode != 8502) {
-                return;
-            } else {
-                i = 2;
-            }
-            consumer.accept(Integer.valueOf(i));
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$getLastLocation$0(Consumer consumer, Task task) {
-        if (task.getException() != null) {
-            return;
-        }
-        consumer.accept((Location) task.getResult());
+    @Override // org.telegram.messenger.ILocationServiceProvider
+    public void init(Context context) {
+        this.locationProviderClient = LocationServices.getFusedLocationProviderClient(context);
+        this.settingsClient = LocationServices.getSettingsClient(context);
     }
 
     @Override // org.telegram.messenger.ILocationServiceProvider
-    public void checkLocationSettings(ILocationServiceProvider.ILocationRequest iLocationRequest, final Consumer consumer) {
-        this.settingsClient.checkLocationSettings(new LocationSettingsRequest.Builder().addLocationRequest(((GoogleLocationRequest) iLocationRequest).request).build()).addOnCompleteListener(new OnCompleteListener() { // from class: org.telegram.messenger.GoogleLocationProvider$$ExternalSyntheticLambda2
-            @Override // com.google.android.gms.tasks.OnCompleteListener
-            public final void onComplete(Task task) {
-                GoogleLocationProvider.lambda$checkLocationSettings$1(Consumer.this, task);
-            }
-        });
-    }
-
-    @Override // org.telegram.messenger.ILocationServiceProvider
-    public boolean checkServices() {
-        return PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+    public ILocationServiceProvider.ILocationRequest onCreateLocationRequest() {
+        return new GoogleLocationRequest(LocationRequest.create());
     }
 
     @Override // org.telegram.messenger.ILocationServiceProvider
@@ -120,15 +46,60 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
         });
     }
 
-    @Override // org.telegram.messenger.ILocationServiceProvider
-    public void init(Context context) {
-        this.locationProviderClient = LocationServices.getFusedLocationProviderClient(context);
-        this.settingsClient = LocationServices.getSettingsClient(context);
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$getLastLocation$0(Consumer consumer, Task task) {
+        if (task.getException() != null) {
+            return;
+        }
+        consumer.accept((Location) task.getResult());
     }
 
     @Override // org.telegram.messenger.ILocationServiceProvider
-    public ILocationServiceProvider.ILocationRequest onCreateLocationRequest() {
-        return new GoogleLocationRequest(LocationRequest.create());
+    public void requestLocationUpdates(ILocationServiceProvider.ILocationRequest iLocationRequest, final ILocationServiceProvider.ILocationListener iLocationListener) {
+        this.locationProviderClient.requestLocationUpdates(((GoogleLocationRequest) iLocationRequest).request, new LocationCallback() { // from class: org.telegram.messenger.GoogleLocationProvider.1
+            @Override // com.google.android.gms.location.LocationCallback
+            public void onLocationResult(LocationResult locationResult) {
+                iLocationListener.onLocationChanged(locationResult.getLastLocation());
+            }
+        }, Looper.getMainLooper());
+    }
+
+    @Override // org.telegram.messenger.ILocationServiceProvider
+    public void removeLocationUpdates(final ILocationServiceProvider.ILocationListener iLocationListener) {
+        this.locationProviderClient.removeLocationUpdates(new LocationCallback() { // from class: org.telegram.messenger.GoogleLocationProvider.2
+            @Override // com.google.android.gms.location.LocationCallback
+            public void onLocationResult(LocationResult locationResult) {
+                iLocationListener.onLocationChanged(locationResult.getLastLocation());
+            }
+        });
+    }
+
+    @Override // org.telegram.messenger.ILocationServiceProvider
+    public void checkLocationSettings(ILocationServiceProvider.ILocationRequest iLocationRequest, final Consumer consumer) {
+        this.settingsClient.checkLocationSettings(new LocationSettingsRequest.Builder().addLocationRequest(((GoogleLocationRequest) iLocationRequest).request).build()).addOnCompleteListener(new OnCompleteListener() { // from class: org.telegram.messenger.GoogleLocationProvider$$ExternalSyntheticLambda2
+            @Override // com.google.android.gms.tasks.OnCompleteListener
+            public final void onComplete(Task task) {
+                GoogleLocationProvider.lambda$checkLocationSettings$1(Consumer.this, task);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$checkLocationSettings$1(Consumer consumer, Task task) {
+        try {
+            task.getResult(ApiException.class);
+            consumer.accept(0);
+        } catch (ApiException e) {
+            int statusCode = e.getStatusCode();
+            if (statusCode == 6) {
+                consumer.accept(1);
+            } else {
+                if (statusCode != 8502) {
+                    return;
+                }
+                consumer.accept(2);
+            }
+        }
     }
 
     @Override // org.telegram.messenger.ILocationServiceProvider
@@ -152,22 +123,48 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
     }
 
     @Override // org.telegram.messenger.ILocationServiceProvider
-    public void removeLocationUpdates(final ILocationServiceProvider.ILocationListener iLocationListener) {
-        this.locationProviderClient.removeLocationUpdates(new LocationCallback() { // from class: org.telegram.messenger.GoogleLocationProvider.2
-            @Override // com.google.android.gms.location.LocationCallback
-            public void onLocationResult(LocationResult locationResult) {
-                iLocationListener.onLocationChanged(locationResult.getLastLocation());
-            }
-        });
+    public boolean checkServices() {
+        return PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
     }
 
-    @Override // org.telegram.messenger.ILocationServiceProvider
-    public void requestLocationUpdates(ILocationServiceProvider.ILocationRequest iLocationRequest, final ILocationServiceProvider.ILocationListener iLocationListener) {
-        this.locationProviderClient.requestLocationUpdates(((GoogleLocationRequest) iLocationRequest).request, new LocationCallback() { // from class: org.telegram.messenger.GoogleLocationProvider.1
-            @Override // com.google.android.gms.location.LocationCallback
-            public void onLocationResult(LocationResult locationResult) {
-                iLocationListener.onLocationChanged(locationResult.getLastLocation());
-            }
-        }, Looper.getMainLooper());
+    public static final class GoogleLocationRequest implements ILocationServiceProvider.ILocationRequest {
+        private LocationRequest request;
+
+        private GoogleLocationRequest(LocationRequest locationRequest) {
+            this.request = locationRequest;
+        }
+
+        @Override // org.telegram.messenger.ILocationServiceProvider.ILocationRequest
+        public void setPriority(int i) {
+            this.request.setPriority(i != 1 ? i != 2 ? i != 3 ? 100 : 105 : 104 : 102);
+        }
+
+        @Override // org.telegram.messenger.ILocationServiceProvider.ILocationRequest
+        public void setInterval(long j) {
+            this.request.setInterval(j);
+        }
+
+        @Override // org.telegram.messenger.ILocationServiceProvider.ILocationRequest
+        public void setFastestInterval(long j) {
+            this.request.setFastestInterval(j);
+        }
+    }
+
+    public static final class GoogleApiClientImpl implements ILocationServiceProvider.IMapApiClient {
+        private GoogleApiClient apiClient;
+
+        private GoogleApiClientImpl(GoogleApiClient googleApiClient) {
+            this.apiClient = googleApiClient;
+        }
+
+        @Override // org.telegram.messenger.ILocationServiceProvider.IMapApiClient
+        public void connect() {
+            this.apiClient.connect();
+        }
+
+        @Override // org.telegram.messenger.ILocationServiceProvider.IMapApiClient
+        public void disconnect() {
+            this.apiClient.disconnect();
+        }
     }
 }

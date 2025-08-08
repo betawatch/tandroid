@@ -29,14 +29,6 @@ public class FileTypeBox extends AbstractBox {
         ajc$preClinit();
     }
 
-    public FileTypeBox(String str, long j, List list) {
-        super("ftyp");
-        Collections.emptyList();
-        this.majorBrand = str;
-        this.minorVersion = j;
-        this.compatibleBrands = list;
-    }
-
     private static /* synthetic */ void ajc$preClinit() {
         Factory factory = new Factory("FileTypeBox.java", FileTypeBox.class);
         ajc$tjp_0 = factory.makeSJP("method-execution", factory.makeMethodSig("1", "getMajorBrand", "com.coremedia.iso.boxes.FileTypeBox", "", "", "", "java.lang.String"), 85);
@@ -45,6 +37,19 @@ public class FileTypeBox extends AbstractBox {
         ajc$tjp_3 = factory.makeSJP("method-execution", factory.makeMethodSig("1", "getMinorVersion", "com.coremedia.iso.boxes.FileTypeBox", "", "", "", "long"), 113);
         ajc$tjp_4 = factory.makeSJP("method-execution", factory.makeMethodSig("1", "getCompatibleBrands", "com.coremedia.iso.boxes.FileTypeBox", "", "", "", "java.util.List"), 122);
         ajc$tjp_5 = factory.makeSJP("method-execution", factory.makeMethodSig("1", "setCompatibleBrands", "com.coremedia.iso.boxes.FileTypeBox", "java.util.List", "compatibleBrands", "", "void"), 126);
+    }
+
+    public FileTypeBox(String str, long j, List list) {
+        super("ftyp");
+        Collections.emptyList();
+        this.majorBrand = str;
+        this.minorVersion = j;
+        this.compatibleBrands = list;
+    }
+
+    @Override // com.googlecode.mp4parser.AbstractBox
+    protected long getContentSize() {
+        return (this.compatibleBrands.size() * 4) + 8;
     }
 
     @Override // com.googlecode.mp4parser.AbstractBox
@@ -66,11 +71,6 @@ public class FileTypeBox extends AbstractBox {
         while (it.hasNext()) {
             byteBuffer.put(IsoFile.fourCCtoBytes((String) it.next()));
         }
-    }
-
-    @Override // com.googlecode.mp4parser.AbstractBox
-    protected long getContentSize() {
-        return (this.compatibleBrands.size() * 4) + 8;
     }
 
     public String getMajorBrand() {

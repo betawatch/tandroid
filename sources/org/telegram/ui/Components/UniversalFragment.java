@@ -12,19 +12,19 @@ import org.telegram.ui.ActionBar.BackDrawable;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class UniversalFragment extends BaseFragment {
     public UniversalRecyclerView listView;
     private int savedScrollOffset;
     private int savedScrollPosition = -1;
 
-    public void applyScrolledPosition() {
-        int i = this.savedScrollPosition;
-        if (i >= 0) {
-            UniversalRecyclerView universalRecyclerView = this.listView;
-            universalRecyclerView.layoutManager.scrollToPositionWithOffset(i, this.savedScrollOffset - universalRecyclerView.getPaddingTop());
-        }
-    }
+    protected abstract void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter);
+
+    protected abstract CharSequence getTitle();
+
+    protected abstract void onClick(UItem uItem, View view, int i, float f, float f2);
+
+    protected abstract boolean onLongClick(UItem uItem, View view, int i, float f, float f2);
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public View createView(Context context) {
@@ -62,15 +62,15 @@ public abstract class UniversalFragment extends BaseFragment {
                 return Boolean.valueOf(UniversalFragment.this.onLongClick((UItem) obj, (View) obj2, ((Integer) obj3).intValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue()));
             }
         }) { // from class: org.telegram.ui.Components.UniversalFragment.3
+            @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.View
+            protected void onMeasure(int i, int i2) {
+                super.onMeasure(i, i2);
+            }
+
             @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
             protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
                 super.onLayout(z, i, i2, i3, i4);
                 UniversalFragment.this.savedScrollPosition = -1;
-            }
-
-            @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.View
-            protected void onMeasure(int i, int i2) {
-                super.onMeasure(i, i2);
             }
         };
         this.listView = universalRecyclerView;
@@ -78,14 +78,6 @@ public abstract class UniversalFragment extends BaseFragment {
         this.fragmentView = sizeNotifierFrameLayout;
         return sizeNotifierFrameLayout;
     }
-
-    protected abstract void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter);
-
-    protected abstract CharSequence getTitle();
-
-    protected abstract void onClick(UItem uItem, View view, int i, float f, float f2);
-
-    protected abstract boolean onLongClick(UItem uItem, View view, int i, float f, float f2);
 
     public void saveScrollPosition() {
         UniversalRecyclerView universalRecyclerView = this.listView;
@@ -113,6 +105,14 @@ public abstract class UniversalFragment extends BaseFragment {
                 this.savedScrollOffset = AndroidUtilities.dp(88.0f);
             }
             this.listView.layoutManager.scrollToPositionWithOffset(i2, view.getTop() - this.listView.getPaddingTop());
+        }
+    }
+
+    public void applyScrolledPosition() {
+        int i = this.savedScrollPosition;
+        if (i >= 0) {
+            UniversalRecyclerView universalRecyclerView = this.listView;
+            universalRecyclerView.layoutManager.scrollToPositionWithOffset(i, this.savedScrollOffset - universalRecyclerView.getPaddingTop());
         }
     }
 }

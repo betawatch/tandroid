@@ -5,6 +5,23 @@ import java.util.List;
 
 /* loaded from: classes.dex */
 public abstract class LogRequest {
+    public abstract ClientInfo getClientInfo();
+
+    public abstract List getLogEvents();
+
+    public abstract Integer getLogSource();
+
+    public abstract String getLogSourceName();
+
+    public abstract QosTier getQosTier();
+
+    public abstract long getRequestTimeMs();
+
+    public abstract long getRequestUptimeMs();
+
+    public static Builder builder() {
+        return new AutoValue_LogRequest.Builder();
+    }
 
     public static abstract class Builder {
         public abstract LogRequest build();
@@ -31,22 +48,4 @@ public abstract class LogRequest {
             return setLogSourceName(str);
         }
     }
-
-    public static Builder builder() {
-        return new AutoValue_LogRequest.Builder();
-    }
-
-    public abstract ClientInfo getClientInfo();
-
-    public abstract List getLogEvents();
-
-    public abstract Integer getLogSource();
-
-    public abstract String getLogSourceName();
-
-    public abstract QosTier getQosTier();
-
-    public abstract long getRequestTimeMs();
-
-    public abstract long getRequestUptimeMs();
 }

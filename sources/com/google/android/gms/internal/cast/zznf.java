@@ -2,16 +2,6 @@ package com.google.android.gms.internal.cast;
 
 /* loaded from: classes.dex */
 public final class zznf extends zztm implements zzuy {
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    /* synthetic */ zznf(zzms zzmsVar) {
-        super(r1);
-        zzng zzngVar;
-        zzngVar = zzng.zzb;
-    }
-
     public final zznf zza(zzok zzokVar) {
         zzu();
         zzng.zzf((zzng) this.zza, zzokVar);
@@ -70,5 +60,15 @@ public final class zznf extends zztm implements zzuy {
         zzu();
         zzng.zzm((zzng) this.zza, i);
         return this;
+    }
+
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    /* synthetic */ zznf(zzms zzmsVar) {
+        super(r1);
+        zzng zzngVar;
+        zzngVar = zzng.zzb;
     }
 }

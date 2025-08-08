@@ -12,12 +12,6 @@ final class zztq extends zzsi implements RandomAccess, zztu, zzve {
     private int[] zzb;
     private int zzc;
 
-    private zztq(int[] iArr, int i, boolean z) {
-        super(z);
-        this.zzb = iArr;
-        this.zzc = i;
-    }
-
     public static zztq zze() {
         return zza;
     }
@@ -53,12 +47,6 @@ final class zztq extends zzsi implements RandomAccess, zztu, zzve {
         this.zzb[i] = intValue;
         this.zzc++;
         ((AbstractList) this).modCount++;
-    }
-
-    @Override // com.google.android.gms.internal.cast.zzsi, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final /* bridge */ /* synthetic */ boolean add(Object obj) {
-        zzh(((Integer) obj).intValue());
-        return true;
     }
 
     @Override // com.google.android.gms.internal.cast.zzsi, java.util.AbstractCollection, java.util.Collection, java.util.List
@@ -215,5 +203,17 @@ final class zztq extends zzsi implements RandomAccess, zztu, zzve {
         int i3 = this.zzc;
         this.zzc = i3 + 1;
         iArr3[i3] = i;
+    }
+
+    private zztq(int[] iArr, int i, boolean z) {
+        super(z);
+        this.zzb = iArr;
+        this.zzc = i;
+    }
+
+    @Override // com.google.android.gms.internal.cast.zzsi, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final /* bridge */ /* synthetic */ boolean add(Object obj) {
+        zzh(((Integer) obj).intValue());
+        return true;
     }
 }

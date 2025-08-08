@@ -45,20 +45,6 @@ public final class PaymentDataRequest extends AbstractSafeParcelable {
         this.zzi = true;
     }
 
-    PaymentDataRequest(boolean z, boolean z2, CardRequirements cardRequirements, boolean z3, ShippingAddressRequirements shippingAddressRequirements, ArrayList arrayList, PaymentMethodTokenizationParameters paymentMethodTokenizationParameters, TransactionInfo transactionInfo, boolean z4, String str, Bundle bundle) {
-        this.zza = z;
-        this.zzb = z2;
-        this.zzc = cardRequirements;
-        this.zzd = z3;
-        this.zze = shippingAddressRequirements;
-        this.zzf = arrayList;
-        this.zzg = paymentMethodTokenizationParameters;
-        this.zzh = transactionInfo;
-        this.zzi = z4;
-        this.zzj = str;
-        this.zzk = bundle;
-    }
-
     public static PaymentDataRequest fromJson(String str) {
         Builder newBuilder = newBuilder();
         PaymentDataRequest.this.zzj = (String) Preconditions.checkNotNull(str, "paymentDataRequestJson cannot be null!");
@@ -84,5 +70,19 @@ public final class PaymentDataRequest extends AbstractSafeParcelable {
         SafeParcelWriter.writeString(parcel, 10, this.zzj, false);
         SafeParcelWriter.writeBundle(parcel, 11, this.zzk, false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    PaymentDataRequest(boolean z, boolean z2, CardRequirements cardRequirements, boolean z3, ShippingAddressRequirements shippingAddressRequirements, ArrayList arrayList, PaymentMethodTokenizationParameters paymentMethodTokenizationParameters, TransactionInfo transactionInfo, boolean z4, String str, Bundle bundle) {
+        this.zza = z;
+        this.zzb = z2;
+        this.zzc = cardRequirements;
+        this.zzd = z3;
+        this.zze = shippingAddressRequirements;
+        this.zzf = arrayList;
+        this.zzg = paymentMethodTokenizationParameters;
+        this.zzh = transactionInfo;
+        this.zzi = z4;
+        this.zzj = str;
+        this.zzk = bundle;
     }
 }

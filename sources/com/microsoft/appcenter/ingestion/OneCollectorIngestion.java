@@ -21,63 +21,15 @@ import java.util.UUID;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class OneCollectorIngestion implements Ingestion {
     private final HttpClient mHttpClient;
     private final LogSerializer mLogSerializer;
     private String mLogUrl = "https://mobile.events.data.microsoft.com/OneCollector/1.0";
 
-    private static class IngestionCallTemplate implements HttpClient.CallTemplate {
-        private final LogContainer mLogContainer;
-        private final LogSerializer mLogSerializer;
-
-        IngestionCallTemplate(LogSerializer logSerializer, LogContainer logContainer) {
-            this.mLogSerializer = logSerializer;
-            this.mLogContainer = logContainer;
-        }
-
-        @Override // com.microsoft.appcenter.http.HttpClient.CallTemplate
-        public String buildRequestBody() {
-            StringBuilder sb = new StringBuilder();
-            Iterator it = this.mLogContainer.getLogs().iterator();
-            while (it.hasNext()) {
-                sb.append(this.mLogSerializer.serializeLog((Log) it.next()));
-                sb.append('\n');
-            }
-            return sb.toString();
-        }
-
-        @Override // com.microsoft.appcenter.http.HttpClient.CallTemplate
-        public void onBeforeCalling(URL url, Map map) {
-            if (AppCenterLog.getLogLevel() <= 2) {
-                AppCenterLog.verbose("AppCenter", "Calling " + url + "...");
-                HashMap hashMap = new HashMap(map);
-                String str = (String) hashMap.get("apikey");
-                if (str != null) {
-                    hashMap.put("apikey", HttpUtils.hideApiKeys(str));
-                }
-                String str2 = (String) hashMap.get("Tickets");
-                if (str2 != null) {
-                    hashMap.put("Tickets", HttpUtils.hideTickets(str2));
-                }
-                AppCenterLog.verbose("AppCenter", "Headers: " + hashMap);
-            }
-        }
-    }
-
     public OneCollectorIngestion(HttpClient httpClient, LogSerializer logSerializer) {
         this.mLogSerializer = logSerializer;
         this.mHttpClient = httpClient;
-    }
-
-    @Override // java.io.Closeable, java.lang.AutoCloseable
-    public void close() {
-        this.mHttpClient.close();
-    }
-
-    @Override // com.microsoft.appcenter.ingestion.Ingestion
-    public void reopen() {
-        this.mHttpClient.reopen();
     }
 
     @Override // com.microsoft.appcenter.ingestion.Ingestion
@@ -130,5 +82,53 @@ public class OneCollectorIngestion implements Ingestion {
     @Override // com.microsoft.appcenter.ingestion.Ingestion
     public void setLogUrl(String str) {
         this.mLogUrl = str;
+    }
+
+    @Override // com.microsoft.appcenter.ingestion.Ingestion
+    public void reopen() {
+        this.mHttpClient.reopen();
+    }
+
+    @Override // java.io.Closeable, java.lang.AutoCloseable
+    public void close() {
+        this.mHttpClient.close();
+    }
+
+    private static class IngestionCallTemplate implements HttpClient.CallTemplate {
+        private final LogContainer mLogContainer;
+        private final LogSerializer mLogSerializer;
+
+        IngestionCallTemplate(LogSerializer logSerializer, LogContainer logContainer) {
+            this.mLogSerializer = logSerializer;
+            this.mLogContainer = logContainer;
+        }
+
+        @Override // com.microsoft.appcenter.http.HttpClient.CallTemplate
+        public String buildRequestBody() {
+            StringBuilder sb = new StringBuilder();
+            Iterator it = this.mLogContainer.getLogs().iterator();
+            while (it.hasNext()) {
+                sb.append(this.mLogSerializer.serializeLog((Log) it.next()));
+                sb.append('\n');
+            }
+            return sb.toString();
+        }
+
+        @Override // com.microsoft.appcenter.http.HttpClient.CallTemplate
+        public void onBeforeCalling(URL url, Map map) {
+            if (AppCenterLog.getLogLevel() <= 2) {
+                AppCenterLog.verbose("AppCenter", "Calling " + url + "...");
+                HashMap hashMap = new HashMap(map);
+                String str = (String) hashMap.get("apikey");
+                if (str != null) {
+                    hashMap.put("apikey", HttpUtils.hideApiKeys(str));
+                }
+                String str2 = (String) hashMap.get("Tickets");
+                if (str2 != null) {
+                    hashMap.put("Tickets", HttpUtils.hideTickets(str2));
+                }
+                AppCenterLog.verbose("AppCenter", "Headers: " + hashMap);
+            }
+        }
     }
 }

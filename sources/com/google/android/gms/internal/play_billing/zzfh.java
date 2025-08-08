@@ -1,32 +1,45 @@
 package com.google.android.gms.internal.play_billing;
 
+import java.util.concurrent.Callable;
+import java.util.concurrent.Executors;
+import java.util.concurrent.RunnableFuture;
+
 /* loaded from: classes.dex */
-public final class zzfh extends zzbx implements zzdg {
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    /* synthetic */ zzfh(zzfg zzfgVar) {
-        super(r1);
-        zzfj zzfjVar;
-        zzfjVar = zzfj.zzb;
+final class zzfh extends zzee implements RunnableFuture {
+    private volatile zzes zzc;
+
+    zzfh(Callable callable) {
+        this.zzc = new zzfg(this, callable);
     }
 
-    public final zzfh zzi(String str) {
-        zzg();
-        zzfj.zzy((zzfj) this.zza, str);
-        return this;
+    static zzfh zzr(Runnable runnable, Object obj) {
+        return new zzfh(Executors.callable(runnable, obj));
     }
 
-    public final zzfh zzj(int i) {
-        zzg();
-        zzfj.zzx((zzfj) this.zza, i);
-        return this;
+    @Override // java.util.concurrent.RunnableFuture, java.lang.Runnable
+    public final void run() {
+        zzes zzesVar = this.zzc;
+        if (zzesVar != null) {
+            zzesVar.run();
+        }
+        this.zzc = null;
     }
 
-    public final zzfh zzk(int i) {
-        zzg();
-        zzfj.zzz((zzfj) this.zza, i);
-        return this;
+    @Override // com.google.android.gms.internal.play_billing.zzdy
+    protected final String zzg() {
+        zzes zzesVar = this.zzc;
+        if (zzesVar == null) {
+            return super.zzg();
+        }
+        return "task=[" + zzesVar.toString() + "]";
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.zzdy
+    protected final void zzm() {
+        zzes zzesVar;
+        if (zzq() && (zzesVar = this.zzc) != null) {
+            zzesVar.zze();
+        }
+        this.zzc = null;
     }
 }

@@ -1,12 +1,13 @@
 package androidx.media;
 
+import android.media.AudioAttributes;
 import androidx.versionedparcelable.VersionedParcel;
 
 /* loaded from: classes.dex */
 public class AudioAttributesImplApi26Parcelizer {
     public static AudioAttributesImplApi26 read(VersionedParcel versionedParcel) {
         AudioAttributesImplApi26 audioAttributesImplApi26 = new AudioAttributesImplApi26();
-        audioAttributesImplApi26.mAudioAttributes = AudioAttributesCompat$$ExternalSyntheticApiModelOutline0.m(versionedParcel.readParcelable(audioAttributesImplApi26.mAudioAttributes, 1));
+        audioAttributesImplApi26.mAudioAttributes = (AudioAttributes) versionedParcel.readParcelable(audioAttributesImplApi26.mAudioAttributes, 1);
         audioAttributesImplApi26.mLegacyStreamType = versionedParcel.readInt(audioAttributesImplApi26.mLegacyStreamType, 2);
         return audioAttributesImplApi26;
     }

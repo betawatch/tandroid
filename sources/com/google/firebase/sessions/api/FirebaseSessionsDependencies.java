@@ -7,80 +7,37 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import kotlin.ResultKt;
-import kotlin.collections.MapsKt__MapsJVMKt;
+import kotlin.collections.MapsKt;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.sync.Mutex;
 import kotlinx.coroutines.sync.MutexKt;
 import org.telegram.tgnet.TLObject;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class FirebaseSessionsDependencies {
     public static final FirebaseSessionsDependencies INSTANCE = new FirebaseSessionsDependencies();
     private static final Map dependencies = DesugarCollections.synchronizedMap(new LinkedHashMap());
 
-    private static final class Dependency {
-        private final Mutex mutex;
-        private SessionSubscriber subscriber;
-
-        public Dependency(Mutex mutex, SessionSubscriber sessionSubscriber) {
-            Intrinsics.checkNotNullParameter(mutex, "mutex");
-            this.mutex = mutex;
-            this.subscriber = sessionSubscriber;
-        }
-
-        public /* synthetic */ Dependency(Mutex mutex, SessionSubscriber sessionSubscriber, int i, DefaultConstructorMarker defaultConstructorMarker) {
-            this(mutex, (i & 2) != 0 ? null : sessionSubscriber);
-        }
-
-        public boolean equals(Object obj) {
-            if (this == obj) {
-                return true;
-            }
-            if (!(obj instanceof Dependency)) {
-                return false;
-            }
-            Dependency dependency = (Dependency) obj;
-            return Intrinsics.areEqual(this.mutex, dependency.mutex) && Intrinsics.areEqual(this.subscriber, dependency.subscriber);
-        }
-
-        public final Mutex getMutex() {
-            return this.mutex;
-        }
-
-        public final SessionSubscriber getSubscriber() {
-            return this.subscriber;
-        }
-
-        public int hashCode() {
-            int hashCode = this.mutex.hashCode() * 31;
-            SessionSubscriber sessionSubscriber = this.subscriber;
-            return hashCode + (sessionSubscriber == null ? 0 : sessionSubscriber.hashCode());
-        }
-
-        public final void setSubscriber(SessionSubscriber sessionSubscriber) {
-            this.subscriber = sessionSubscriber;
-        }
-
-        public String toString() {
-            return "Dependency(mutex=" + this.mutex + ", subscriber=" + this.subscriber + ')';
-        }
-    }
-
     private FirebaseSessionsDependencies() {
     }
 
-    private final Dependency getDependency(SessionSubscriber.Name name) {
-        Map dependencies2 = dependencies;
-        Intrinsics.checkNotNullExpressionValue(dependencies2, "dependencies");
-        Object obj = dependencies2.get(name);
-        if (obj != null) {
-            Intrinsics.checkNotNullExpressionValue(obj, "dependencies.getOrElse(s…load time.\"\n      )\n    }");
-            return (Dependency) obj;
+    /* JADX WARN: Multi-variable type inference failed */
+    public final void addDependency(SessionSubscriber.Name subscriberName) {
+        Intrinsics.checkNotNullParameter(subscriberName, "subscriberName");
+        if (subscriberName == SessionSubscriber.Name.PERFORMANCE) {
+            throw new IllegalArgumentException("Incompatible versions of Firebase Perf and Firebase Sessions.\nA safe combination would be:\n  firebase-sessions:1.1.0\n  firebase-crashlytics:18.5.0\n  firebase-perf:20.5.0\nFor more information contact Firebase Support.");
         }
-        throw new IllegalStateException("Cannot get dependency " + name + ". Dependencies should be added at class load time.");
+        Map dependencies2 = dependencies;
+        if (dependencies2.containsKey(subscriberName)) {
+            Log.d("SessionsDependencies", "Dependency " + subscriberName + " already added.");
+            return;
+        }
+        Intrinsics.checkNotNullExpressionValue(dependencies2, "dependencies");
+        dependencies2.put(subscriberName, new Dependency(MutexKt.Mutex(true), null, 2, 0 == true ? 1 : 0));
+        Log.d("SessionsDependencies", "Dependency to " + subscriberName + " added.");
     }
 
     public static final void register(SessionSubscriber subscriber) {
@@ -96,32 +53,6 @@ public final class FirebaseSessionsDependencies {
         Mutex.DefaultImpls.unlock$default(dependency.getMutex(), null, 1, null);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public final void addDependency(SessionSubscriber.Name subscriberName) {
-        StringBuilder sb;
-        String str;
-        Intrinsics.checkNotNullParameter(subscriberName, "subscriberName");
-        if (subscriberName == SessionSubscriber.Name.PERFORMANCE) {
-            throw new IllegalArgumentException("Incompatible versions of Firebase Perf and Firebase Sessions.\nA safe combination would be:\n  firebase-sessions:1.1.0\n  firebase-crashlytics:18.5.0\n  firebase-perf:20.5.0\nFor more information contact Firebase Support.");
-        }
-        Map dependencies2 = dependencies;
-        if (dependencies2.containsKey(subscriberName)) {
-            sb = new StringBuilder();
-            sb.append("Dependency ");
-            sb.append(subscriberName);
-            str = " already added.";
-        } else {
-            Intrinsics.checkNotNullExpressionValue(dependencies2, "dependencies");
-            dependencies2.put(subscriberName, new Dependency(MutexKt.Mutex(true), null, 2, 0 == true ? 1 : 0));
-            sb = new StringBuilder();
-            sb.append("Dependency to ");
-            sb.append(subscriberName);
-            str = " added.";
-        }
-        sb.append(str);
-        Log.d("SessionsDependencies", sb.toString());
-    }
-
     /* JADX WARN: Removed duplicated region for block: B:15:0x006f  */
     /* JADX WARN: Removed duplicated region for block: B:20:0x00b3 A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:27:0x0048  */
@@ -132,9 +63,7 @@ public final class FirebaseSessionsDependencies {
     */
     public final Object getRegisteredSubscribers$com_google_firebase_firebase_sessions(Continuation continuation) {
         FirebaseSessionsDependencies$getRegisteredSubscribers$1 firebaseSessionsDependencies$getRegisteredSubscribers$1;
-        Object coroutine_suspended;
         int i;
-        int mapCapacity;
         Iterator it;
         Map map;
         if (continuation instanceof FirebaseSessionsDependencies$getRegisteredSubscribers$1) {
@@ -143,14 +72,13 @@ public final class FirebaseSessionsDependencies {
             if ((i2 & TLObject.FLAG_31) != 0) {
                 firebaseSessionsDependencies$getRegisteredSubscribers$1.label = i2 - TLObject.FLAG_31;
                 Object obj = firebaseSessionsDependencies$getRegisteredSubscribers$1.result;
-                coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = firebaseSessionsDependencies$getRegisteredSubscribers$1.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     Map dependencies2 = dependencies;
                     Intrinsics.checkNotNullExpressionValue(dependencies2, "dependencies");
-                    mapCapacity = MapsKt__MapsJVMKt.mapCapacity(dependencies2.size());
-                    LinkedHashMap linkedHashMap = new LinkedHashMap(mapCapacity);
+                    LinkedHashMap linkedHashMap = new LinkedHashMap(MapsKt.mapCapacity(dependencies2.size()));
                     it = dependencies2.entrySet().iterator();
                     map = linkedHashMap;
                     if (it.hasNext()) {
@@ -204,7 +132,7 @@ public final class FirebaseSessionsDependencies {
         }
         firebaseSessionsDependencies$getRegisteredSubscribers$1 = new FirebaseSessionsDependencies$getRegisteredSubscribers$1(this, continuation);
         Object obj2 = firebaseSessionsDependencies$getRegisteredSubscribers$1.result;
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = firebaseSessionsDependencies$getRegisteredSubscribers$1.label;
         if (i != 0) {
         }
@@ -217,5 +145,64 @@ public final class FirebaseSessionsDependencies {
             return subscriber;
         }
         throw new IllegalStateException("Subscriber " + subscriberName + " has not been registered.");
+    }
+
+    private final Dependency getDependency(SessionSubscriber.Name name) {
+        Map dependencies2 = dependencies;
+        Intrinsics.checkNotNullExpressionValue(dependencies2, "dependencies");
+        Object obj = dependencies2.get(name);
+        if (obj != null) {
+            Intrinsics.checkNotNullExpressionValue(obj, "dependencies.getOrElse(s…load time.\"\n      )\n    }");
+            return (Dependency) obj;
+        }
+        throw new IllegalStateException("Cannot get dependency " + name + ". Dependencies should be added at class load time.");
+    }
+
+    private static final class Dependency {
+        private final Mutex mutex;
+        private SessionSubscriber subscriber;
+
+        public boolean equals(Object obj) {
+            if (this == obj) {
+                return true;
+            }
+            if (!(obj instanceof Dependency)) {
+                return false;
+            }
+            Dependency dependency = (Dependency) obj;
+            return Intrinsics.areEqual(this.mutex, dependency.mutex) && Intrinsics.areEqual(this.subscriber, dependency.subscriber);
+        }
+
+        public int hashCode() {
+            int hashCode = this.mutex.hashCode() * 31;
+            SessionSubscriber sessionSubscriber = this.subscriber;
+            return hashCode + (sessionSubscriber == null ? 0 : sessionSubscriber.hashCode());
+        }
+
+        public String toString() {
+            return "Dependency(mutex=" + this.mutex + ", subscriber=" + this.subscriber + ')';
+        }
+
+        public Dependency(Mutex mutex, SessionSubscriber sessionSubscriber) {
+            Intrinsics.checkNotNullParameter(mutex, "mutex");
+            this.mutex = mutex;
+            this.subscriber = sessionSubscriber;
+        }
+
+        public /* synthetic */ Dependency(Mutex mutex, SessionSubscriber sessionSubscriber, int i, DefaultConstructorMarker defaultConstructorMarker) {
+            this(mutex, (i & 2) != 0 ? null : sessionSubscriber);
+        }
+
+        public final Mutex getMutex() {
+            return this.mutex;
+        }
+
+        public final SessionSubscriber getSubscriber() {
+            return this.subscriber;
+        }
+
+        public final void setSubscriber(SessionSubscriber sessionSubscriber) {
+            this.subscriber = sessionSubscriber;
+        }
     }
 }

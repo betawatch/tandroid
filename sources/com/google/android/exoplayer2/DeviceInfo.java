@@ -28,11 +28,6 @@ public final class DeviceInfo implements Bundleable {
         this.maxVolume = i3;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ DeviceInfo lambda$static$0(Bundle bundle) {
-        return new DeviceInfo(bundle.getInt(FIELD_PLAYBACK_TYPE, 0), bundle.getInt(FIELD_MIN_VOLUME, 0), bundle.getInt(FIELD_MAX_VOLUME, 0));
-    }
-
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -55,5 +50,10 @@ public final class DeviceInfo implements Bundleable {
         bundle.putInt(FIELD_MIN_VOLUME, this.minVolume);
         bundle.putInt(FIELD_MAX_VOLUME, this.maxVolume);
         return bundle;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ DeviceInfo lambda$static$0(Bundle bundle) {
+        return new DeviceInfo(bundle.getInt(FIELD_PLAYBACK_TYPE, 0), bundle.getInt(FIELD_MIN_VOLUME, 0), bundle.getInt(FIELD_MAX_VOLUME, 0));
     }
 }

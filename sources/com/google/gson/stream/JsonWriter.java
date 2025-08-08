@@ -14,7 +14,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.regex.Pattern;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class JsonWriter implements Closeable, Flushable {
     private static final String[] HTML_SAFE_REPLACEMENT_CHARS;
     private String deferredName;
@@ -61,42 +61,73 @@ public class JsonWriter implements Closeable, Flushable {
         setFormattingStyle(FormattingStyle.COMPACT);
     }
 
-    private void beforeName() {
-        int peek = peek();
-        if (peek == 5) {
-            this.out.write(this.formattedComma);
-        } else if (peek != 3) {
-            throw new IllegalStateException("Nesting problem.");
+    public final void setFormattingStyle(FormattingStyle formattingStyle) {
+        Objects.requireNonNull(formattingStyle);
+        this.formattingStyle = formattingStyle;
+        this.formattedComma = ",";
+        if (formattingStyle.usesSpaceAfterSeparators()) {
+            this.formattedColon = ": ";
+            if (this.formattingStyle.getNewline().isEmpty()) {
+                this.formattedComma = ", ";
+            }
+        } else {
+            this.formattedColon = ":";
         }
-        newline();
-        replaceTop(4);
+        this.usesEmptyNewlineAndIndent = this.formattingStyle.getNewline().isEmpty() && this.formattingStyle.getIndent().isEmpty();
     }
 
-    private void beforeValue() {
-        int peek = peek();
-        if (peek == 1) {
-            replaceTop(2);
-        } else {
-            if (peek != 2) {
-                if (peek == 4) {
-                    this.out.append((CharSequence) this.formattedColon);
-                    replaceTop(5);
-                    return;
-                }
-                if (peek != 6) {
-                    if (peek != 7) {
-                        throw new IllegalStateException("Nesting problem.");
-                    }
-                    if (this.strictness != Strictness.LENIENT) {
-                        throw new IllegalStateException("JSON must have only one top-level value.");
-                    }
-                }
-                replaceTop(7);
-                return;
-            }
-            this.out.append((CharSequence) this.formattedComma);
-        }
-        newline();
+    public boolean isLenient() {
+        return this.strictness == Strictness.LENIENT;
+    }
+
+    public final void setStrictness(Strictness strictness) {
+        Objects.requireNonNull(strictness);
+        this.strictness = strictness;
+    }
+
+    public final Strictness getStrictness() {
+        return this.strictness;
+    }
+
+    public final void setHtmlSafe(boolean z) {
+        this.htmlSafe = z;
+    }
+
+    public final boolean isHtmlSafe() {
+        return this.htmlSafe;
+    }
+
+    public final void setSerializeNulls(boolean z) {
+        this.serializeNulls = z;
+    }
+
+    public final boolean getSerializeNulls() {
+        return this.serializeNulls;
+    }
+
+    public JsonWriter beginArray() {
+        writeDeferredName();
+        return openScope(1, '[');
+    }
+
+    public JsonWriter endArray() {
+        return closeScope(1, 2, ']');
+    }
+
+    public JsonWriter beginObject() {
+        writeDeferredName();
+        return openScope(3, '{');
+    }
+
+    public JsonWriter endObject() {
+        return closeScope(3, 5, '}');
+    }
+
+    private JsonWriter openScope(int i, char c) {
+        beforeValue();
+        push(i);
+        this.out.write(c);
+        return this;
     }
 
     private JsonWriter closeScope(int i, int i2, char c) {
@@ -115,36 +146,6 @@ public class JsonWriter implements Closeable, Flushable {
         return this;
     }
 
-    private static boolean isTrustedNumberType(Class cls) {
-        return cls == Integer.class || cls == Long.class || cls == Double.class || cls == Float.class || cls == Byte.class || cls == Short.class || cls == BigDecimal.class || cls == BigInteger.class || cls == AtomicInteger.class || cls == AtomicLong.class;
-    }
-
-    private void newline() {
-        if (this.usesEmptyNewlineAndIndent) {
-            return;
-        }
-        this.out.write(this.formattingStyle.getNewline());
-        int i = this.stackSize;
-        for (int i2 = 1; i2 < i; i2++) {
-            this.out.write(this.formattingStyle.getIndent());
-        }
-    }
-
-    private JsonWriter openScope(int i, char c) {
-        beforeValue();
-        push(i);
-        this.out.write(c);
-        return this;
-    }
-
-    private int peek() {
-        int i = this.stackSize;
-        if (i != 0) {
-            return this.stack[i - 1];
-        }
-        throw new IllegalStateException("JsonWriter is closed.");
-    }
-
     private void push(int i) {
         int i2 = this.stackSize;
         int[] iArr = this.stack;
@@ -157,8 +158,137 @@ public class JsonWriter implements Closeable, Flushable {
         iArr2[i3] = i;
     }
 
+    private int peek() {
+        int i = this.stackSize;
+        if (i == 0) {
+            throw new IllegalStateException("JsonWriter is closed.");
+        }
+        return this.stack[i - 1];
+    }
+
     private void replaceTop(int i) {
         this.stack[this.stackSize - 1] = i;
+    }
+
+    public JsonWriter name(String str) {
+        Objects.requireNonNull(str, "name == null");
+        if (this.deferredName != null) {
+            throw new IllegalStateException("Already wrote a name, expecting a value.");
+        }
+        int peek = peek();
+        if (peek != 3 && peek != 5) {
+            throw new IllegalStateException("Please begin an object before writing a name.");
+        }
+        this.deferredName = str;
+        return this;
+    }
+
+    private void writeDeferredName() {
+        if (this.deferredName != null) {
+            beforeName();
+            string(this.deferredName);
+            this.deferredName = null;
+        }
+    }
+
+    public JsonWriter value(String str) {
+        if (str == null) {
+            return nullValue();
+        }
+        writeDeferredName();
+        beforeValue();
+        string(str);
+        return this;
+    }
+
+    public JsonWriter value(boolean z) {
+        writeDeferredName();
+        beforeValue();
+        this.out.write(z ? "true" : "false");
+        return this;
+    }
+
+    public JsonWriter value(Boolean bool) {
+        if (bool == null) {
+            return nullValue();
+        }
+        writeDeferredName();
+        beforeValue();
+        this.out.write(bool.booleanValue() ? "true" : "false");
+        return this;
+    }
+
+    public JsonWriter value(double d) {
+        writeDeferredName();
+        if (this.strictness != Strictness.LENIENT && (Double.isNaN(d) || Double.isInfinite(d))) {
+            throw new IllegalArgumentException("Numeric values must be finite, but was " + d);
+        }
+        beforeValue();
+        this.out.append((CharSequence) Double.toString(d));
+        return this;
+    }
+
+    public JsonWriter value(long j) {
+        writeDeferredName();
+        beforeValue();
+        this.out.write(Long.toString(j));
+        return this;
+    }
+
+    public JsonWriter value(Number number) {
+        if (number == null) {
+            return nullValue();
+        }
+        writeDeferredName();
+        String obj = number.toString();
+        if (obj.equals("-Infinity") || obj.equals("Infinity") || obj.equals("NaN")) {
+            if (this.strictness != Strictness.LENIENT) {
+                throw new IllegalArgumentException("Numeric values must be finite, but was " + obj);
+            }
+        } else {
+            Class<?> cls = number.getClass();
+            if (!isTrustedNumberType(cls) && !VALID_JSON_NUMBER_PATTERN.matcher(obj).matches()) {
+                throw new IllegalArgumentException("String created by " + cls + " is not a valid JSON number: " + obj);
+            }
+        }
+        beforeValue();
+        this.out.append((CharSequence) obj);
+        return this;
+    }
+
+    public JsonWriter nullValue() {
+        if (this.deferredName != null) {
+            if (this.serializeNulls) {
+                writeDeferredName();
+            } else {
+                this.deferredName = null;
+                return this;
+            }
+        }
+        beforeValue();
+        this.out.write("null");
+        return this;
+    }
+
+    public void flush() {
+        if (this.stackSize == 0) {
+            throw new IllegalStateException("JsonWriter is closed.");
+        }
+        this.out.flush();
+    }
+
+    @Override // java.io.Closeable, java.lang.AutoCloseable
+    public void close() {
+        this.out.close();
+        int i = this.stackSize;
+        if (i > 1 || (i == 1 && this.stack[i - 1] != 7)) {
+            throw new IOException("Incomplete document");
+        }
+        this.stackSize = 0;
+    }
+
+    private static boolean isTrustedNumberType(Class cls) {
+        return cls == Integer.class || cls == Long.class || cls == Double.class || cls == Float.class || cls == Byte.class || cls == Short.class || cls == BigDecimal.class || cls == BigInteger.class || cls == AtomicInteger.class || cls == AtomicLong.class;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:11:0x0034  */
@@ -200,179 +330,54 @@ public class JsonWriter implements Closeable, Flushable {
         this.out.write(34);
     }
 
-    private void writeDeferredName() {
-        if (this.deferredName != null) {
-            beforeName();
-            string(this.deferredName);
-            this.deferredName = null;
+    private void newline() {
+        if (this.usesEmptyNewlineAndIndent) {
+            return;
         }
-    }
-
-    public JsonWriter beginArray() {
-        writeDeferredName();
-        return openScope(1, '[');
-    }
-
-    public JsonWriter beginObject() {
-        writeDeferredName();
-        return openScope(3, '{');
-    }
-
-    @Override // java.io.Closeable, java.lang.AutoCloseable
-    public void close() {
-        this.out.close();
+        this.out.write(this.formattingStyle.getNewline());
         int i = this.stackSize;
-        if (i > 1 || (i == 1 && this.stack[i - 1] != 7)) {
-            throw new IOException("Incomplete document");
+        for (int i2 = 1; i2 < i; i2++) {
+            this.out.write(this.formattingStyle.getIndent());
         }
-        this.stackSize = 0;
     }
 
-    public JsonWriter endArray() {
-        return closeScope(1, 2, ']');
-    }
-
-    public JsonWriter endObject() {
-        return closeScope(3, 5, '}');
-    }
-
-    public void flush() {
-        if (this.stackSize == 0) {
-            throw new IllegalStateException("JsonWriter is closed.");
-        }
-        this.out.flush();
-    }
-
-    public final boolean getSerializeNulls() {
-        return this.serializeNulls;
-    }
-
-    public final Strictness getStrictness() {
-        return this.strictness;
-    }
-
-    public final boolean isHtmlSafe() {
-        return this.htmlSafe;
-    }
-
-    public boolean isLenient() {
-        return this.strictness == Strictness.LENIENT;
-    }
-
-    public JsonWriter name(String str) {
-        Objects.requireNonNull(str, "name == null");
-        if (this.deferredName != null) {
-            throw new IllegalStateException("Already wrote a name, expecting a value.");
-        }
+    private void beforeName() {
         int peek = peek();
-        if (peek != 3 && peek != 5) {
-            throw new IllegalStateException("Please begin an object before writing a name.");
+        if (peek == 5) {
+            this.out.write(this.formattedComma);
+        } else if (peek != 3) {
+            throw new IllegalStateException("Nesting problem.");
         }
-        this.deferredName = str;
-        return this;
+        newline();
+        replaceTop(4);
     }
 
-    public JsonWriter nullValue() {
-        if (this.deferredName != null) {
-            if (!this.serializeNulls) {
-                this.deferredName = null;
-                return this;
-            }
-            writeDeferredName();
+    private void beforeValue() {
+        int peek = peek();
+        if (peek == 1) {
+            replaceTop(2);
+            newline();
+            return;
         }
-        beforeValue();
-        this.out.write("null");
-        return this;
-    }
-
-    public final void setFormattingStyle(FormattingStyle formattingStyle) {
-        Objects.requireNonNull(formattingStyle);
-        this.formattingStyle = formattingStyle;
-        this.formattedComma = ",";
-        if (formattingStyle.usesSpaceAfterSeparators()) {
-            this.formattedColon = ": ";
-            if (this.formattingStyle.getNewline().isEmpty()) {
-                this.formattedComma = ", ";
-            }
+        if (peek == 2) {
+            this.out.append((CharSequence) this.formattedComma);
+            newline();
         } else {
-            this.formattedColon = ":";
-        }
-        this.usesEmptyNewlineAndIndent = this.formattingStyle.getNewline().isEmpty() && this.formattingStyle.getIndent().isEmpty();
-    }
-
-    public final void setHtmlSafe(boolean z) {
-        this.htmlSafe = z;
-    }
-
-    public final void setSerializeNulls(boolean z) {
-        this.serializeNulls = z;
-    }
-
-    public final void setStrictness(Strictness strictness) {
-        Objects.requireNonNull(strictness);
-        this.strictness = strictness;
-    }
-
-    public JsonWriter value(double d) {
-        writeDeferredName();
-        if (this.strictness == Strictness.LENIENT || !(Double.isNaN(d) || Double.isInfinite(d))) {
-            beforeValue();
-            this.out.append((CharSequence) Double.toString(d));
-            return this;
-        }
-        throw new IllegalArgumentException("Numeric values must be finite, but was " + d);
-    }
-
-    public JsonWriter value(long j) {
-        writeDeferredName();
-        beforeValue();
-        this.out.write(Long.toString(j));
-        return this;
-    }
-
-    public JsonWriter value(Boolean bool) {
-        if (bool == null) {
-            return nullValue();
-        }
-        writeDeferredName();
-        beforeValue();
-        this.out.write(bool.booleanValue() ? "true" : "false");
-        return this;
-    }
-
-    public JsonWriter value(Number number) {
-        if (number == null) {
-            return nullValue();
-        }
-        writeDeferredName();
-        String obj = number.toString();
-        if (!obj.equals("-Infinity") && !obj.equals("Infinity") && !obj.equals("NaN")) {
-            Class<?> cls = number.getClass();
-            if (!isTrustedNumberType(cls) && !VALID_JSON_NUMBER_PATTERN.matcher(obj).matches()) {
-                throw new IllegalArgumentException("String created by " + cls + " is not a valid JSON number: " + obj);
+            if (peek != 4) {
+                if (peek != 6) {
+                    if (peek == 7) {
+                        if (this.strictness != Strictness.LENIENT) {
+                            throw new IllegalStateException("JSON must have only one top-level value.");
+                        }
+                    } else {
+                        throw new IllegalStateException("Nesting problem.");
+                    }
+                }
+                replaceTop(7);
+                return;
             }
-        } else if (this.strictness != Strictness.LENIENT) {
-            throw new IllegalArgumentException("Numeric values must be finite, but was " + obj);
+            this.out.append((CharSequence) this.formattedColon);
+            replaceTop(5);
         }
-        beforeValue();
-        this.out.append((CharSequence) obj);
-        return this;
-    }
-
-    public JsonWriter value(String str) {
-        if (str == null) {
-            return nullValue();
-        }
-        writeDeferredName();
-        beforeValue();
-        string(str);
-        return this;
-    }
-
-    public JsonWriter value(boolean z) {
-        writeDeferredName();
-        beforeValue();
-        this.out.write(z ? "true" : "false");
-        return this;
     }
 }

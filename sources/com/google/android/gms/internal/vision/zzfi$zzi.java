@@ -11,13 +11,12 @@ public final class zzfi$zzi extends zzjb implements zzkm {
     private zzfi$zzl zze;
     private zzjl zzf = zzjb.zzo();
 
+    private zzfi$zzi() {
+    }
+
     public static final class zza extends zzjb.zzb implements zzkm {
         private zza() {
             super(zzfi$zzi.zzg);
-        }
-
-        /* synthetic */ zza(zzfk zzfkVar) {
-            this();
         }
 
         public final zza zza(zzfi$zzj zzfi_zzj) {
@@ -37,19 +36,10 @@ public final class zzfi$zzi extends zzjb implements zzkm {
             ((zzfi$zzi) this.zza).zza(iterable);
             return this;
         }
-    }
 
-    static {
-        zzfi$zzi zzfi_zzi = new zzfi$zzi();
-        zzg = zzfi_zzi;
-        zzjb.zza(zzfi$zzi.class, zzfi_zzi);
-    }
-
-    private zzfi$zzi() {
-    }
-
-    public static zza zza() {
-        return (zza) zzg.zzj();
+        /* synthetic */ zza(zzfk zzfkVar) {
+            this();
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -59,18 +49,22 @@ public final class zzfi$zzi extends zzjb implements zzkm {
         this.zzc |= 1;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public final void zza(Iterable iterable) {
-        zzc();
-        zzhf.zza(iterable, this.zzf);
-    }
-
     private final void zzc() {
         zzjl zzjlVar = this.zzf;
         if (zzjlVar.zza()) {
             return;
         }
         this.zzf = zzjb.zza(zzjlVar);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void zza(Iterable iterable) {
+        zzc();
+        zzhf.zza(iterable, this.zzf);
+    }
+
+    public static zza zza() {
+        return (zza) zzg.zzj();
     }
 
     /* JADX WARN: Type inference failed for: r2v14, types: [com.google.android.gms.internal.vision.zzjb$zza, com.google.android.gms.internal.vision.zzkx] */
@@ -111,5 +105,11 @@ public final class zzfi$zzi extends zzjb implements zzkm {
             default:
                 throw new UnsupportedOperationException();
         }
+    }
+
+    static {
+        zzfi$zzi zzfi_zzi = new zzfi$zzi();
+        zzg = zzfi_zzi;
+        zzjb.zza(zzfi$zzi.class, zzfi_zzi);
     }
 }

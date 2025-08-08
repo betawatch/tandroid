@@ -14,13 +14,6 @@ public final class zzq extends AbstractSafeParcelable {
     RemoteViews zzc;
     byte[] zzd;
 
-    public zzq(String[] strArr, int[] iArr, RemoteViews remoteViews, byte[] bArr) {
-        this.zza = strArr;
-        this.zzb = iArr;
-        this.zzc = remoteViews;
-        this.zzd = bArr;
-    }
-
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
@@ -29,5 +22,12 @@ public final class zzq extends AbstractSafeParcelable {
         SafeParcelWriter.writeParcelable(parcel, 3, this.zzc, i, false);
         SafeParcelWriter.writeByteArray(parcel, 4, this.zzd, false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    public zzq(String[] strArr, int[] iArr, RemoteViews remoteViews, byte[] bArr) {
+        this.zza = strArr;
+        this.zzb = iArr;
+        this.zzc = remoteViews;
+        this.zzd = bArr;
     }
 }

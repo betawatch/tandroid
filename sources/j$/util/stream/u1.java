@@ -1,77 +1,37 @@
 package j$.util.stream;
 
-import java.util.concurrent.CountedCompleter;
+import j$.util.function.BiConsumer;
+import j$.util.function.BiFunction;
+import j$.util.function.BinaryOperator;
+import j$.util.function.Supplier;
 
 /* loaded from: classes2.dex */
-class u1 extends CountedCompleter {
-    protected final G0 a;
-    protected final int b;
-    public final /* synthetic */ int c;
-    private final Object d;
+final class u1 extends t0 {
+    public final /* synthetic */ int h;
+    final /* synthetic */ Object i;
+    final /* synthetic */ Object j;
+    final /* synthetic */ Object k;
 
-    public u1(G0 g0, Object obj, int i) {
-        this.c = i;
-        this.a = g0;
-        this.b = 0;
-        this.d = obj;
+    public /* synthetic */ u1(R2 r2, Object obj, Object obj2, Object obj3, int i) {
+        this.h = i;
+        this.j = obj;
+        this.k = obj2;
+        this.i = obj3;
     }
 
-    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public u1(u1 u1Var, F0 f0, int i) {
-        this(u1Var, f0, i, (byte) 0);
-        this.c = 0;
-        this.d = u1Var.d;
-    }
-
-    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public u1(u1 u1Var, G0 g0, int i) {
-        this(u1Var, g0, i, (byte) 0);
-        this.c = 1;
-        this.d = (Object[]) u1Var.d;
-    }
-
-    u1(u1 u1Var, G0 g0, int i, byte b) {
-        super(u1Var);
-        this.a = g0;
-        this.b = i;
-    }
-
-    final void a() {
-        switch (this.c) {
+    @Override // j$.util.stream.t0
+    public final N1 d0() {
+        switch (this.h) {
             case 0:
-                ((F0) this.a).d(this.d, this.b);
-                break;
+                return new v1((Supplier) this.i, (j$.util.function.t0) this.k, (r) this.j);
+            case 1:
+                return new A1((Supplier) this.i, (j$.util.function.n0) this.k, (r) this.j);
+            case 2:
+                return new B1(this.i, (BiFunction) this.k, (BinaryOperator) this.j);
+            case 3:
+                return new F1((Supplier) this.i, (BiConsumer) this.k, (BiConsumer) this.j);
             default:
-                this.a.i((Object[]) this.d, this.b);
-                break;
+                return new J1((Supplier) this.i, (j$.util.function.q0) this.k, (r) this.j);
         }
-    }
-
-    final u1 b(int i, int i2) {
-        switch (this.c) {
-            case 0:
-                return new u1(this, ((F0) this.a).a(i), i2);
-            default:
-                return new u1(this, this.a.a(i), i2);
-        }
-    }
-
-    @Override // java.util.concurrent.CountedCompleter
-    public final void compute() {
-        u1 u1Var = this;
-        while (u1Var.a.p() != 0) {
-            u1Var.setPendingCount(u1Var.a.p() - 1);
-            int i = 0;
-            int i2 = 0;
-            while (i < u1Var.a.p() - 1) {
-                u1 b = u1Var.b(i, u1Var.b + i2);
-                i2 = (int) (i2 + b.a.count());
-                b.fork();
-                i++;
-            }
-            u1Var = u1Var.b(i, u1Var.b + i2);
-        }
-        u1Var.a();
-        u1Var.propagateCompletion();
     }
 }

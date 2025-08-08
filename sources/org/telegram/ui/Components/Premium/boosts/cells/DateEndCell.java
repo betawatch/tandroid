@@ -42,6 +42,12 @@ public class DateEndCell extends FrameLayout {
         setBackgroundColor(Theme.getColor(Theme.key_dialogBackground, resourcesProvider));
     }
 
+    public void setDate(long j) {
+        this.selectedTime = j;
+        Date date = new Date(j);
+        this.timeTextView.setText(LocaleController.formatString("formatDateAtTime", R.string.formatDateAtTime, LocaleController.getInstance().getFormatterDayMonth().format(date), LocaleController.getInstance().getFormatterDay().format(date)));
+    }
+
     public long getSelectedTime() {
         return this.selectedTime;
     }
@@ -49,11 +55,5 @@ public class DateEndCell extends FrameLayout {
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
-    }
-
-    public void setDate(long j) {
-        this.selectedTime = j;
-        Date date = new Date(j);
-        this.timeTextView.setText(LocaleController.formatString("formatDateAtTime", R.string.formatDateAtTime, LocaleController.getInstance().getFormatterDayMonth().format(date), LocaleController.getInstance().getFormatterDay().format(date)));
     }
 }

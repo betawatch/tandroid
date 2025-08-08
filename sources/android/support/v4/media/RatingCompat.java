@@ -22,55 +22,111 @@ public final class RatingCompat implements Parcelable {
     private final int mRatingStyle;
     private final float mRatingValue;
 
-    private static class Api19Impl {
-        static float getPercentRating(Rating rating) {
-            return rating.getPercentRating();
-        }
-
-        static int getRatingStyle(Rating rating) {
-            return rating.getRatingStyle();
-        }
-
-        static float getStarRating(Rating rating) {
-            return rating.getStarRating();
-        }
-
-        static boolean hasHeart(Rating rating) {
-            return rating.hasHeart();
-        }
-
-        static boolean isRated(Rating rating) {
-            return rating.isRated();
-        }
-
-        static boolean isThumbUp(Rating rating) {
-            return rating.isThumbUp();
-        }
-
-        static Rating newHeartRating(boolean z) {
-            return Rating.newHeartRating(z);
-        }
-
-        static Rating newPercentageRating(float f) {
-            return Rating.newPercentageRating(f);
-        }
-
-        static Rating newStarRating(int i, float f) {
-            return Rating.newStarRating(i, f);
-        }
-
-        static Rating newThumbRating(boolean z) {
-            return Rating.newThumbRating(z);
-        }
-
-        static Rating newUnratedRating(int i) {
-            return Rating.newUnratedRating(i);
-        }
-    }
-
     RatingCompat(int i, float f) {
         this.mRatingStyle = i;
         this.mRatingValue = f;
+    }
+
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Rating:style=");
+        sb.append(this.mRatingStyle);
+        sb.append(" rating=");
+        float f = this.mRatingValue;
+        sb.append(f < 0.0f ? "unrated" : String.valueOf(f));
+        return sb.toString();
+    }
+
+    @Override // android.os.Parcelable
+    public int describeContents() {
+        return this.mRatingStyle;
+    }
+
+    @Override // android.os.Parcelable
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(this.mRatingStyle);
+        parcel.writeFloat(this.mRatingValue);
+    }
+
+    public static RatingCompat newUnratedRating(int i) {
+        switch (i) {
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+                return new RatingCompat(i, -1.0f);
+            default:
+                return null;
+        }
+    }
+
+    public static RatingCompat newHeartRating(boolean z) {
+        return new RatingCompat(1, z ? 1.0f : 0.0f);
+    }
+
+    public static RatingCompat newThumbRating(boolean z) {
+        return new RatingCompat(2, z ? 1.0f : 0.0f);
+    }
+
+    public static RatingCompat newStarRating(int i, float f) {
+        float f2;
+        if (i == 3) {
+            f2 = 3.0f;
+        } else if (i == 4) {
+            f2 = 4.0f;
+        } else {
+            if (i != 5) {
+                Log.e("Rating", "Invalid rating style (" + i + ") for a star rating");
+                return null;
+            }
+            f2 = 5.0f;
+        }
+        if (f < 0.0f || f > f2) {
+            Log.e("Rating", "Trying to set out of range star-based rating");
+            return null;
+        }
+        return new RatingCompat(i, f);
+    }
+
+    public static RatingCompat newPercentageRating(float f) {
+        if (f < 0.0f || f > 100.0f) {
+            Log.e("Rating", "Invalid percentage-based rating value");
+            return null;
+        }
+        return new RatingCompat(6, f);
+    }
+
+    public boolean isRated() {
+        return this.mRatingValue >= 0.0f;
+    }
+
+    public int getRatingStyle() {
+        return this.mRatingStyle;
+    }
+
+    public boolean hasHeart() {
+        return this.mRatingStyle == 1 && this.mRatingValue == 1.0f;
+    }
+
+    public boolean isThumbUp() {
+        return this.mRatingStyle == 2 && this.mRatingValue == 1.0f;
+    }
+
+    public float getStarRating() {
+        int i = this.mRatingStyle;
+        if ((i == 3 || i == 4 || i == 5) && isRated()) {
+            return this.mRatingValue;
+        }
+        return -1.0f;
+    }
+
+    public float getPercentRating() {
+        if (this.mRatingStyle == 6 && isRated()) {
+            return this.mRatingValue;
+        }
+        return -1.0f;
     }
 
     public static RatingCompat fromRating(Object obj) {
@@ -105,139 +161,78 @@ public final class RatingCompat implements Parcelable {
         return ratingCompat;
     }
 
-    public static RatingCompat newHeartRating(boolean z) {
-        return new RatingCompat(1, z ? 1.0f : 0.0f);
-    }
-
-    public static RatingCompat newPercentageRating(float f) {
-        if (f >= 0.0f && f <= 100.0f) {
-            return new RatingCompat(6, f);
-        }
-        Log.e("Rating", "Invalid percentage-based rating value");
-        return null;
-    }
-
-    public static RatingCompat newStarRating(int i, float f) {
-        float f2;
-        String str;
-        if (i == 3) {
-            f2 = 3.0f;
-        } else if (i == 4) {
-            f2 = 4.0f;
-        } else {
-            if (i != 5) {
-                str = "Invalid rating style (" + i + ") for a star rating";
-                Log.e("Rating", str);
-                return null;
-            }
-            f2 = 5.0f;
-        }
-        if (f >= 0.0f && f <= f2) {
-            return new RatingCompat(i, f);
-        }
-        str = "Trying to set out of range star-based rating";
-        Log.e("Rating", str);
-        return null;
-    }
-
-    public static RatingCompat newThumbRating(boolean z) {
-        return new RatingCompat(2, z ? 1.0f : 0.0f);
-    }
-
-    public static RatingCompat newUnratedRating(int i) {
-        switch (i) {
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-            case 5:
-            case 6:
-                return new RatingCompat(i, -1.0f);
-            default:
-                return null;
-        }
-    }
-
-    @Override // android.os.Parcelable
-    public int describeContents() {
-        return this.mRatingStyle;
-    }
-
-    public float getPercentRating() {
-        if (this.mRatingStyle == 6 && isRated()) {
-            return this.mRatingValue;
-        }
-        return -1.0f;
-    }
-
     public Object getRating() {
-        Rating newUnratedRating;
         if (this.mRatingObj == null) {
             if (isRated()) {
                 int i = this.mRatingStyle;
                 switch (i) {
                     case 1:
-                        newUnratedRating = Api19Impl.newHeartRating(hasHeart());
+                        this.mRatingObj = Api19Impl.newHeartRating(hasHeart());
                         break;
                     case 2:
-                        newUnratedRating = Api19Impl.newThumbRating(isThumbUp());
+                        this.mRatingObj = Api19Impl.newThumbRating(isThumbUp());
                         break;
                     case 3:
                     case 4:
                     case 5:
-                        newUnratedRating = Api19Impl.newStarRating(i, getStarRating());
+                        this.mRatingObj = Api19Impl.newStarRating(i, getStarRating());
                         break;
                     case 6:
-                        newUnratedRating = Api19Impl.newPercentageRating(getPercentRating());
+                        this.mRatingObj = Api19Impl.newPercentageRating(getPercentRating());
                         break;
                     default:
                         return null;
                 }
             } else {
-                newUnratedRating = Api19Impl.newUnratedRating(this.mRatingStyle);
+                this.mRatingObj = Api19Impl.newUnratedRating(this.mRatingStyle);
             }
-            this.mRatingObj = newUnratedRating;
         }
         return this.mRatingObj;
     }
 
-    public int getRatingStyle() {
-        return this.mRatingStyle;
-    }
-
-    public float getStarRating() {
-        int i = this.mRatingStyle;
-        if ((i == 3 || i == 4 || i == 5) && isRated()) {
-            return this.mRatingValue;
+    private static class Api19Impl {
+        static int getRatingStyle(Rating rating) {
+            return rating.getRatingStyle();
         }
-        return -1.0f;
-    }
 
-    public boolean hasHeart() {
-        return this.mRatingStyle == 1 && this.mRatingValue == 1.0f;
-    }
+        static boolean isRated(Rating rating) {
+            return rating.isRated();
+        }
 
-    public boolean isRated() {
-        return this.mRatingValue >= 0.0f;
-    }
+        static boolean hasHeart(Rating rating) {
+            return rating.hasHeart();
+        }
 
-    public boolean isThumbUp() {
-        return this.mRatingStyle == 2 && this.mRatingValue == 1.0f;
-    }
+        static boolean isThumbUp(Rating rating) {
+            return rating.isThumbUp();
+        }
 
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Rating:style=");
-        sb.append(this.mRatingStyle);
-        sb.append(" rating=");
-        float f = this.mRatingValue;
-        sb.append(f < 0.0f ? "unrated" : String.valueOf(f));
-        return sb.toString();
-    }
+        static float getStarRating(Rating rating) {
+            return rating.getStarRating();
+        }
 
-    @Override // android.os.Parcelable
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(this.mRatingStyle);
-        parcel.writeFloat(this.mRatingValue);
+        static float getPercentRating(Rating rating) {
+            return rating.getPercentRating();
+        }
+
+        static Rating newHeartRating(boolean z) {
+            return Rating.newHeartRating(z);
+        }
+
+        static Rating newThumbRating(boolean z) {
+            return Rating.newThumbRating(z);
+        }
+
+        static Rating newStarRating(int i, float f) {
+            return Rating.newStarRating(i, f);
+        }
+
+        static Rating newPercentageRating(float f) {
+            return Rating.newPercentageRating(f);
+        }
+
+        static Rating newUnratedRating(int i) {
+            return Rating.newUnratedRating(i);
+        }
     }
 }

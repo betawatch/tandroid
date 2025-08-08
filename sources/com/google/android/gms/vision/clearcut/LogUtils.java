@@ -17,15 +17,6 @@ import java.util.List;
 
 /* loaded from: classes.dex */
 public class LogUtils {
-    public static zzfi$zza zza(Context context) {
-        zzfi$zza.zza zza = zzfi$zza.zza().zza(context.getPackageName());
-        String zzb = zzb(context);
-        if (zzb != null) {
-            zza.zzb(zzb);
-        }
-        return (zzfi$zza) ((zzjb) zza.zzf());
-    }
-
     public static zzfi$zzo zza(long j, int i, String str, String str2, List<zzfi$zzn> list, zzs zzsVar) {
         zzfi$zzi.zza zza = zzfi$zzi.zza();
         zzfi$zzf.zzb zzb = zzfi$zzf.zza().zza(str2).zza(j).zzb(i);
@@ -33,6 +24,15 @@ public class LogUtils {
         ArrayList arrayList = new ArrayList();
         arrayList.add((zzfi$zzf) ((zzjb) zzb.zzf()));
         return (zzfi$zzo) ((zzjb) zzfi$zzo.zza().zza((zzfi$zzi) ((zzjb) zza.zza(arrayList).zza((zzfi$zzj) ((zzjb) zzfi$zzj.zza().zzb(zzsVar.zzb).zza(zzsVar.zza).zzc(zzsVar.zzc).zzd(zzsVar.zzd).zzf())).zzf())).zzf());
+    }
+
+    public static zzfi$zza zza(Context context) {
+        zzfi$zza.zza zza = zzfi$zza.zza().zza(context.getPackageName());
+        String zzb = zzb(context);
+        if (zzb != null) {
+            zza.zzb(zzb);
+        }
+        return (zzfi$zza) ((zzjb) zza.zzf());
     }
 
     private static String zzb(Context context) {

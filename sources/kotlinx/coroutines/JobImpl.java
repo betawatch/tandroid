@@ -1,13 +1,23 @@
 package kotlinx.coroutines;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class JobImpl extends JobSupport implements CompletableJob {
     private final boolean handlesException;
+
+    @Override // kotlinx.coroutines.JobSupport
+    public boolean getOnCancelComplete$kotlinx_coroutines_core() {
+        return true;
+    }
 
     public JobImpl(Job job) {
         super(true);
         initParentJob(job);
         this.handlesException = handlesException();
+    }
+
+    @Override // kotlinx.coroutines.JobSupport
+    public boolean getHandlesException$kotlinx_coroutines_core() {
+        return this.handlesException;
     }
 
     private final boolean handlesException() {
@@ -24,15 +34,5 @@ public class JobImpl extends JobSupport implements CompletableJob {
             return true;
         }
         return false;
-    }
-
-    @Override // kotlinx.coroutines.JobSupport
-    public boolean getHandlesException$kotlinx_coroutines_core() {
-        return this.handlesException;
-    }
-
-    @Override // kotlinx.coroutines.JobSupport
-    public boolean getOnCancelComplete$kotlinx_coroutines_core() {
-        return true;
     }
 }

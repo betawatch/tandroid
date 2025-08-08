@@ -2,7 +2,7 @@ package com.microsoft.appcenter.utils;
 
 import android.os.Bundle;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class InstrumentationRegistryHelper {
     private static final String[] LOCATIONS = {"androidx.test.platform.app.InstrumentationRegistry", "androidx.test.InstrumentationRegistry", "androidx.test.InstrumentationRegistry"};
 

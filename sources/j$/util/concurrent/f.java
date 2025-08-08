@@ -21,13 +21,14 @@ final class f extends k {
                 if (i2 == i && ((obj2 = l.b) == obj || (obj2 != null && obj.equals(obj2)))) {
                     return l;
                 }
-                if (i2 >= 0) {
-                    l = l.d;
-                } else {
-                    if (!(l instanceof f)) {
+                if (i2 < 0) {
+                    if (l instanceof f) {
+                        kVarArr = ((f) l).e;
+                    } else {
                         return l.a(obj, i);
                     }
-                    kVarArr = ((f) l).e;
+                } else {
+                    l = l.d;
                 }
             } while (l != null);
         }

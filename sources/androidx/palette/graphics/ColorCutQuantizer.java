@@ -29,6 +29,91 @@ final class ColorCutQuantizer {
     private final float[] mTempHsl = new float[3];
     final TimingLogger mTimingLogger = null;
 
+    private static int modifyWordWidth(int i, int i2, int i3) {
+        return (i3 > i2 ? i << (i3 - i2) : i >> (i2 - i3)) & ((1 << i3) - 1);
+    }
+
+    static int quantizedBlue(int i) {
+        return i & 31;
+    }
+
+    static int quantizedGreen(int i) {
+        return (i >> 5) & 31;
+    }
+
+    static int quantizedRed(int i) {
+        return (i >> 10) & 31;
+    }
+
+    ColorCutQuantizer(int[] iArr, int i, Palette.Filter[] filterArr) {
+        this.mFilters = filterArr;
+        int[] iArr2 = new int[32768];
+        this.mHistogram = iArr2;
+        for (int i2 = 0; i2 < iArr.length; i2++) {
+            int quantizeFromRgb888 = quantizeFromRgb888(iArr[i2]);
+            iArr[i2] = quantizeFromRgb888;
+            iArr2[quantizeFromRgb888] = iArr2[quantizeFromRgb888] + 1;
+        }
+        int i3 = 0;
+        for (int i4 = 0; i4 < 32768; i4++) {
+            if (iArr2[i4] > 0 && shouldIgnoreColor(i4)) {
+                iArr2[i4] = 0;
+            }
+            if (iArr2[i4] > 0) {
+                i3++;
+            }
+        }
+        int[] iArr3 = new int[i3];
+        this.mColors = iArr3;
+        int i5 = 0;
+        for (int i6 = 0; i6 < 32768; i6++) {
+            if (iArr2[i6] > 0) {
+                iArr3[i5] = i6;
+                i5++;
+            }
+        }
+        if (i3 <= i) {
+            this.mQuantizedColors = new ArrayList();
+            for (int i7 = 0; i7 < i3; i7++) {
+                int i8 = iArr3[i7];
+                this.mQuantizedColors.add(new Palette.Swatch(approximateToRgb888(i8), iArr2[i8]));
+            }
+            return;
+        }
+        this.mQuantizedColors = quantizePixels(i);
+    }
+
+    List getQuantizedColors() {
+        return this.mQuantizedColors;
+    }
+
+    private List quantizePixels(int i) {
+        PriorityQueue priorityQueue = new PriorityQueue(i, VBOX_COMPARATOR_VOLUME);
+        priorityQueue.offer(new Vbox(0, this.mColors.length - 1));
+        splitBoxes(priorityQueue, i);
+        return generateAverageColors(priorityQueue);
+    }
+
+    private void splitBoxes(PriorityQueue priorityQueue, int i) {
+        Vbox vbox;
+        while (priorityQueue.size() < i && (vbox = (Vbox) priorityQueue.poll()) != null && vbox.canSplit()) {
+            priorityQueue.offer(vbox.splitBox());
+            priorityQueue.offer(vbox);
+        }
+    }
+
+    private List generateAverageColors(Collection collection) {
+        ArrayList arrayList = new ArrayList(collection.size());
+        Iterator it = collection.iterator();
+        while (it.hasNext()) {
+            Palette.Swatch averageColor = ((Vbox) it.next()).getAverageColor();
+            if (!shouldIgnoreColor(averageColor)) {
+                arrayList.add(averageColor);
+            }
+        }
+        return arrayList;
+    }
+
     private class Vbox {
         private int mLowerIndex;
         private int mMaxBlue;
@@ -46,32 +131,16 @@ final class ColorCutQuantizer {
             fitBox();
         }
 
+        final int getVolume() {
+            return ((this.mMaxRed - this.mMinRed) + 1) * ((this.mMaxGreen - this.mMinGreen) + 1) * ((this.mMaxBlue - this.mMinBlue) + 1);
+        }
+
         final boolean canSplit() {
             return getColorCount() > 1;
         }
 
-        final int findSplitPoint() {
-            int longestColorDimension = getLongestColorDimension();
-            ColorCutQuantizer colorCutQuantizer = ColorCutQuantizer.this;
-            int[] iArr = colorCutQuantizer.mColors;
-            int[] iArr2 = colorCutQuantizer.mHistogram;
-            ColorCutQuantizer.modifySignificantOctet(iArr, longestColorDimension, this.mLowerIndex, this.mUpperIndex);
-            Arrays.sort(iArr, this.mLowerIndex, this.mUpperIndex + 1);
-            ColorCutQuantizer.modifySignificantOctet(iArr, longestColorDimension, this.mLowerIndex, this.mUpperIndex);
-            int i = this.mPopulation / 2;
-            int i2 = this.mLowerIndex;
-            int i3 = 0;
-            while (true) {
-                int i4 = this.mUpperIndex;
-                if (i2 > i4) {
-                    return this.mLowerIndex;
-                }
-                i3 += iArr2[iArr[i2]];
-                if (i3 >= i) {
-                    return Math.min(i4 - 1, i2);
-                }
-                i2++;
-            }
+        final int getColorCount() {
+            return (this.mUpperIndex + 1) - this.mLowerIndex;
         }
 
         final void fitBox() {
@@ -119,6 +188,52 @@ final class ColorCutQuantizer {
             this.mPopulation = i7;
         }
 
+        final Vbox splitBox() {
+            if (!canSplit()) {
+                throw new IllegalStateException("Can not split a box with only 1 color");
+            }
+            int findSplitPoint = findSplitPoint();
+            Vbox vbox = ColorCutQuantizer.this.new Vbox(findSplitPoint + 1, this.mUpperIndex);
+            this.mUpperIndex = findSplitPoint;
+            fitBox();
+            return vbox;
+        }
+
+        final int getLongestColorDimension() {
+            int i = this.mMaxRed - this.mMinRed;
+            int i2 = this.mMaxGreen - this.mMinGreen;
+            int i3 = this.mMaxBlue - this.mMinBlue;
+            if (i < i2 || i < i3) {
+                return (i2 < i || i2 < i3) ? -1 : -2;
+            }
+            return -3;
+        }
+
+        final int findSplitPoint() {
+            int longestColorDimension = getLongestColorDimension();
+            ColorCutQuantizer colorCutQuantizer = ColorCutQuantizer.this;
+            int[] iArr = colorCutQuantizer.mColors;
+            int[] iArr2 = colorCutQuantizer.mHistogram;
+            ColorCutQuantizer.modifySignificantOctet(iArr, longestColorDimension, this.mLowerIndex, this.mUpperIndex);
+            Arrays.sort(iArr, this.mLowerIndex, this.mUpperIndex + 1);
+            ColorCutQuantizer.modifySignificantOctet(iArr, longestColorDimension, this.mLowerIndex, this.mUpperIndex);
+            int i = this.mPopulation / 2;
+            int i2 = this.mLowerIndex;
+            int i3 = 0;
+            while (true) {
+                int i4 = this.mUpperIndex;
+                if (i2 <= i4) {
+                    i3 += iArr2[iArr[i2]];
+                    if (i3 >= i) {
+                        return Math.min(i4 - 1, i2);
+                    }
+                    i2++;
+                } else {
+                    return this.mLowerIndex;
+                }
+            }
+        }
+
         final Palette.Swatch getAverageColor() {
             ColorCutQuantizer colorCutQuantizer = ColorCutQuantizer.this;
             int[] iArr = colorCutQuantizer.mColors;
@@ -138,93 +253,6 @@ final class ColorCutQuantizer {
             float f = i2;
             return new Palette.Swatch(ColorCutQuantizer.approximateToRgb888(Math.round(i / f), Math.round(i3 / f), Math.round(i4 / f)), i2);
         }
-
-        final int getColorCount() {
-            return (this.mUpperIndex + 1) - this.mLowerIndex;
-        }
-
-        final int getLongestColorDimension() {
-            int i = this.mMaxRed - this.mMinRed;
-            int i2 = this.mMaxGreen - this.mMinGreen;
-            int i3 = this.mMaxBlue - this.mMinBlue;
-            if (i < i2 || i < i3) {
-                return (i2 < i || i2 < i3) ? -1 : -2;
-            }
-            return -3;
-        }
-
-        final int getVolume() {
-            return ((this.mMaxRed - this.mMinRed) + 1) * ((this.mMaxGreen - this.mMinGreen) + 1) * ((this.mMaxBlue - this.mMinBlue) + 1);
-        }
-
-        final Vbox splitBox() {
-            if (!canSplit()) {
-                throw new IllegalStateException("Can not split a box with only 1 color");
-            }
-            int findSplitPoint = findSplitPoint();
-            Vbox vbox = ColorCutQuantizer.this.new Vbox(findSplitPoint + 1, this.mUpperIndex);
-            this.mUpperIndex = findSplitPoint;
-            fitBox();
-            return vbox;
-        }
-    }
-
-    ColorCutQuantizer(int[] iArr, int i, Palette.Filter[] filterArr) {
-        this.mFilters = filterArr;
-        int[] iArr2 = new int[32768];
-        this.mHistogram = iArr2;
-        for (int i2 = 0; i2 < iArr.length; i2++) {
-            int quantizeFromRgb888 = quantizeFromRgb888(iArr[i2]);
-            iArr[i2] = quantizeFromRgb888;
-            iArr2[quantizeFromRgb888] = iArr2[quantizeFromRgb888] + 1;
-        }
-        int i3 = 0;
-        for (int i4 = 0; i4 < 32768; i4++) {
-            if (iArr2[i4] > 0 && shouldIgnoreColor(i4)) {
-                iArr2[i4] = 0;
-            }
-            if (iArr2[i4] > 0) {
-                i3++;
-            }
-        }
-        int[] iArr3 = new int[i3];
-        this.mColors = iArr3;
-        int i5 = 0;
-        for (int i6 = 0; i6 < 32768; i6++) {
-            if (iArr2[i6] > 0) {
-                iArr3[i5] = i6;
-                i5++;
-            }
-        }
-        if (i3 > i) {
-            this.mQuantizedColors = quantizePixels(i);
-            return;
-        }
-        this.mQuantizedColors = new ArrayList();
-        for (int i7 = 0; i7 < i3; i7++) {
-            int i8 = iArr3[i7];
-            this.mQuantizedColors.add(new Palette.Swatch(approximateToRgb888(i8), iArr2[i8]));
-        }
-    }
-
-    private static int approximateToRgb888(int i) {
-        return approximateToRgb888(quantizedRed(i), quantizedGreen(i), quantizedBlue(i));
-    }
-
-    static int approximateToRgb888(int i, int i2, int i3) {
-        return Color.rgb(modifyWordWidth(i, 5, 8), modifyWordWidth(i2, 5, 8), modifyWordWidth(i3, 5, 8));
-    }
-
-    private List generateAverageColors(Collection collection) {
-        ArrayList arrayList = new ArrayList(collection.size());
-        Iterator it = collection.iterator();
-        while (it.hasNext()) {
-            Palette.Swatch averageColor = ((Vbox) it.next()).getAverageColor();
-            if (!shouldIgnoreColor(averageColor)) {
-                arrayList.add(averageColor);
-            }
-        }
-        return arrayList;
     }
 
     static void modifySignificantOctet(int[] iArr, int i, int i2, int i3) {
@@ -246,37 +274,14 @@ final class ColorCutQuantizer {
         }
     }
 
-    private static int modifyWordWidth(int i, int i2, int i3) {
-        return (i3 > i2 ? i << (i3 - i2) : i >> (i2 - i3)) & ((1 << i3) - 1);
-    }
-
-    private static int quantizeFromRgb888(int i) {
-        return modifyWordWidth(Color.blue(i), 8, 5) | (modifyWordWidth(Color.red(i), 8, 5) << 10) | (modifyWordWidth(Color.green(i), 8, 5) << 5);
-    }
-
-    private List quantizePixels(int i) {
-        PriorityQueue priorityQueue = new PriorityQueue(i, VBOX_COMPARATOR_VOLUME);
-        priorityQueue.offer(new Vbox(0, this.mColors.length - 1));
-        splitBoxes(priorityQueue, i);
-        return generateAverageColors(priorityQueue);
-    }
-
-    static int quantizedBlue(int i) {
-        return i & 31;
-    }
-
-    static int quantizedGreen(int i) {
-        return (i >> 5) & 31;
-    }
-
-    static int quantizedRed(int i) {
-        return (i >> 10) & 31;
-    }
-
     private boolean shouldIgnoreColor(int i) {
         int approximateToRgb888 = approximateToRgb888(i);
         ColorUtils.colorToHSL(approximateToRgb888, this.mTempHsl);
         return shouldIgnoreColor(approximateToRgb888, this.mTempHsl);
+    }
+
+    private boolean shouldIgnoreColor(Palette.Swatch swatch) {
+        return shouldIgnoreColor(swatch.getRgb(), swatch.getHsl());
     }
 
     private boolean shouldIgnoreColor(int i, float[] fArr) {
@@ -292,19 +297,15 @@ final class ColorCutQuantizer {
         return false;
     }
 
-    private boolean shouldIgnoreColor(Palette.Swatch swatch) {
-        return shouldIgnoreColor(swatch.getRgb(), swatch.getHsl());
+    private static int quantizeFromRgb888(int i) {
+        return modifyWordWidth(Color.blue(i), 8, 5) | (modifyWordWidth(Color.red(i), 8, 5) << 10) | (modifyWordWidth(Color.green(i), 8, 5) << 5);
     }
 
-    private void splitBoxes(PriorityQueue priorityQueue, int i) {
-        Vbox vbox;
-        while (priorityQueue.size() < i && (vbox = (Vbox) priorityQueue.poll()) != null && vbox.canSplit()) {
-            priorityQueue.offer(vbox.splitBox());
-            priorityQueue.offer(vbox);
-        }
+    static int approximateToRgb888(int i, int i2, int i3) {
+        return Color.rgb(modifyWordWidth(i, 5, 8), modifyWordWidth(i2, 5, 8), modifyWordWidth(i3, 5, 8));
     }
 
-    List getQuantizedColors() {
-        return this.mQuantizedColors;
+    private static int approximateToRgb888(int i) {
+        return approximateToRgb888(quantizedRed(i), quantizedGreen(i), quantizedBlue(i));
     }
 }

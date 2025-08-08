@@ -21,11 +21,11 @@ public abstract class PlatformVersion {
     }
 
     public static boolean isAtLeastKitKatWatch() {
-        return Build.VERSION.SDK_INT >= 20;
+        return true;
     }
 
     public static boolean isAtLeastLollipop() {
-        return Build.VERSION.SDK_INT >= 21;
+        return true;
     }
 
     public static boolean isAtLeastN() {

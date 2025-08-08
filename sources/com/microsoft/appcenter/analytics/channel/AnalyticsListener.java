@@ -1,5 +1,5 @@
 package com.microsoft.appcenter.analytics.channel;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public interface AnalyticsListener {
 }

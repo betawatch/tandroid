@@ -2,7 +2,7 @@ package com.google.firebase.crashlytics.internal.model;
 
 import com.google.firebase.crashlytics.internal.model.StaticSessionData;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class AutoValue_StaticSessionData extends StaticSessionData {
     private final StaticSessionData.AppData appData;
     private final StaticSessionData.DeviceData deviceData;
@@ -29,8 +29,17 @@ final class AutoValue_StaticSessionData extends StaticSessionData {
     }
 
     @Override // com.google.firebase.crashlytics.internal.model.StaticSessionData
+    public StaticSessionData.OsData osData() {
+        return this.osData;
+    }
+
+    @Override // com.google.firebase.crashlytics.internal.model.StaticSessionData
     public StaticSessionData.DeviceData deviceData() {
         return this.deviceData;
+    }
+
+    public String toString() {
+        return "StaticSessionData{appData=" + this.appData + ", osData=" + this.osData + ", deviceData=" + this.deviceData + "}";
     }
 
     public boolean equals(Object obj) {
@@ -46,14 +55,5 @@ final class AutoValue_StaticSessionData extends StaticSessionData {
 
     public int hashCode() {
         return ((((this.appData.hashCode() ^ 1000003) * 1000003) ^ this.osData.hashCode()) * 1000003) ^ this.deviceData.hashCode();
-    }
-
-    @Override // com.google.firebase.crashlytics.internal.model.StaticSessionData
-    public StaticSessionData.OsData osData() {
-        return this.osData;
-    }
-
-    public String toString() {
-        return "StaticSessionData{appData=" + this.appData + ", osData=" + this.osData + ", deviceData=" + this.deviceData + "}";
     }
 }

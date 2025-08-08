@@ -7,13 +7,7 @@ import androidx.fragment.app.Fragment;
 public abstract class FragmentFactory {
     private static final SimpleArrayMap sClassCacheMap = new SimpleArrayMap();
 
-    static boolean isFragmentClass(ClassLoader classLoader, String str) {
-        try {
-            return Fragment.class.isAssignableFrom(loadClass(classLoader, str));
-        } catch (ClassNotFoundException unused) {
-            return false;
-        }
-    }
+    public abstract Fragment instantiate(ClassLoader classLoader, String str);
 
     private static Class loadClass(ClassLoader classLoader, String str) {
         SimpleArrayMap simpleArrayMap = sClassCacheMap;
@@ -31,6 +25,14 @@ public abstract class FragmentFactory {
         return cls2;
     }
 
+    static boolean isFragmentClass(ClassLoader classLoader, String str) {
+        try {
+            return Fragment.class.isAssignableFrom(loadClass(classLoader, str));
+        } catch (ClassNotFoundException unused) {
+            return false;
+        }
+    }
+
     public static Class loadFragmentClass(ClassLoader classLoader, String str) {
         try {
             return loadClass(classLoader, str);
@@ -40,6 +42,4 @@ public abstract class FragmentFactory {
             throw new Fragment.InstantiationException("Unable to instantiate fragment " + str + ": make sure class name exists", e2);
         }
     }
-
-    public abstract Fragment instantiate(ClassLoader classLoader, String str);
 }

@@ -7,6 +7,9 @@ import java.util.concurrent.RejectedExecutionException;
 
 /* loaded from: classes.dex */
 public abstract class ExecutorCompat {
+    public static Executor create(Handler handler) {
+        return new HandlerExecutor(handler);
+    }
 
     private static class HandlerExecutor implements Executor {
         private final Handler mHandler;
@@ -22,9 +25,5 @@ public abstract class ExecutorCompat {
             }
             throw new RejectedExecutionException(this.mHandler + " is shutting down");
         }
-    }
-
-    public static Executor create(Handler handler) {
-        return new HandlerExecutor(handler);
     }
 }

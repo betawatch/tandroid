@@ -13,12 +13,6 @@ public final class LabelValueRow extends AbstractSafeParcelable {
     String zzb;
     ArrayList zzc;
 
-    LabelValueRow(String str, String str2, ArrayList arrayList) {
-        this.zza = str;
-        this.zzb = str2;
-        this.zzc = arrayList;
-    }
-
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
@@ -26,5 +20,11 @@ public final class LabelValueRow extends AbstractSafeParcelable {
         SafeParcelWriter.writeString(parcel, 3, this.zzb, false);
         SafeParcelWriter.writeTypedList(parcel, 4, this.zzc, false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    LabelValueRow(String str, String str2, ArrayList arrayList) {
+        this.zza = str;
+        this.zzb = str2;
+        this.zzc = arrayList;
     }
 }

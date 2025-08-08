@@ -8,12 +8,6 @@ public abstract class zzif {
     private int zzd;
     private boolean zze;
 
-    private zzif() {
-        this.zzb = 100;
-        this.zzd = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        this.zze = false;
-    }
-
     public static long zza(long j) {
         return (-(j & 1)) ^ (j >>> 1);
     }
@@ -35,4 +29,10 @@ public abstract class zzif {
     public abstract int zzc(int i);
 
     public abstract int zzu();
+
+    private zzif() {
+        this.zzb = 100;
+        this.zzd = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        this.zze = false;
+    }
 }

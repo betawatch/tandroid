@@ -9,6 +9,9 @@ public final class zzfi$zzb extends zzjb implements zzkm {
     private static volatile zzkx zzf;
     private zzjj zzc = zzjb.zzn();
 
+    private zzfi$zzb() {
+    }
+
     public static final class zza extends zzjb.zzb implements zzkm {
         private zza() {
             super(zzfi$zzb.zze);
@@ -17,16 +20,6 @@ public final class zzfi$zzb extends zzjb implements zzkm {
         /* synthetic */ zza(zzfk zzfkVar) {
             this();
         }
-    }
-
-    /* JADX WARN: Type inference failed for: r0v0, types: [com.google.android.gms.internal.vision.zzfl, com.google.android.gms.internal.vision.zzji] */
-    static {
-        zzfi$zzb zzfi_zzb = new zzfi$zzb();
-        zze = zzfi_zzb;
-        zzjb.zza(zzfi$zzb.class, zzfi_zzb);
-    }
-
-    private zzfi$zzb() {
     }
 
     /* JADX WARN: Type inference failed for: r3v14, types: [com.google.android.gms.internal.vision.zzjb$zza, com.google.android.gms.internal.vision.zzkx] */
@@ -67,5 +60,12 @@ public final class zzfi$zzb extends zzjb implements zzkm {
             default:
                 throw new UnsupportedOperationException();
         }
+    }
+
+    /* JADX WARN: Type inference failed for: r0v0, types: [com.google.android.gms.internal.vision.zzfl, com.google.android.gms.internal.vision.zzji] */
+    static {
+        zzfi$zzb zzfi_zzb = new zzfi$zzb();
+        zze = zzfi_zzb;
+        zzjb.zza(zzfi$zzb.class, zzfi_zzb);
     }
 }

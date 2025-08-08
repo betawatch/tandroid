@@ -2,7 +2,7 @@ package com.google.firebase.crashlytics.internal.model;
 
 import com.google.firebase.crashlytics.internal.model.StaticSessionData;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class AutoValue_StaticSessionData_DeviceData extends StaticSessionData.DeviceData {
     private final int arch;
     private final int availableProcessors;
@@ -41,13 +41,47 @@ final class AutoValue_StaticSessionData_DeviceData extends StaticSessionData.Dev
     }
 
     @Override // com.google.firebase.crashlytics.internal.model.StaticSessionData.DeviceData
+    public String model() {
+        return this.model;
+    }
+
+    @Override // com.google.firebase.crashlytics.internal.model.StaticSessionData.DeviceData
     public int availableProcessors() {
         return this.availableProcessors;
     }
 
     @Override // com.google.firebase.crashlytics.internal.model.StaticSessionData.DeviceData
+    public long totalRam() {
+        return this.totalRam;
+    }
+
+    @Override // com.google.firebase.crashlytics.internal.model.StaticSessionData.DeviceData
     public long diskSpace() {
         return this.diskSpace;
+    }
+
+    @Override // com.google.firebase.crashlytics.internal.model.StaticSessionData.DeviceData
+    public boolean isEmulator() {
+        return this.isEmulator;
+    }
+
+    @Override // com.google.firebase.crashlytics.internal.model.StaticSessionData.DeviceData
+    public int state() {
+        return this.state;
+    }
+
+    @Override // com.google.firebase.crashlytics.internal.model.StaticSessionData.DeviceData
+    public String manufacturer() {
+        return this.manufacturer;
+    }
+
+    @Override // com.google.firebase.crashlytics.internal.model.StaticSessionData.DeviceData
+    public String modelClass() {
+        return this.modelClass;
+    }
+
+    public String toString() {
+        return "DeviceData{arch=" + this.arch + ", model=" + this.model + ", availableProcessors=" + this.availableProcessors + ", totalRam=" + this.totalRam + ", diskSpace=" + this.diskSpace + ", isEmulator=" + this.isEmulator + ", state=" + this.state + ", manufacturer=" + this.manufacturer + ", modelClass=" + this.modelClass + "}";
     }
 
     public boolean equals(Object obj) {
@@ -67,39 +101,5 @@ final class AutoValue_StaticSessionData_DeviceData extends StaticSessionData.Dev
         int i = (hashCode ^ ((int) (j ^ (j >>> 32)))) * 1000003;
         long j2 = this.diskSpace;
         return ((((((((i ^ ((int) (j2 ^ (j2 >>> 32)))) * 1000003) ^ (this.isEmulator ? 1231 : 1237)) * 1000003) ^ this.state) * 1000003) ^ this.manufacturer.hashCode()) * 1000003) ^ this.modelClass.hashCode();
-    }
-
-    @Override // com.google.firebase.crashlytics.internal.model.StaticSessionData.DeviceData
-    public boolean isEmulator() {
-        return this.isEmulator;
-    }
-
-    @Override // com.google.firebase.crashlytics.internal.model.StaticSessionData.DeviceData
-    public String manufacturer() {
-        return this.manufacturer;
-    }
-
-    @Override // com.google.firebase.crashlytics.internal.model.StaticSessionData.DeviceData
-    public String model() {
-        return this.model;
-    }
-
-    @Override // com.google.firebase.crashlytics.internal.model.StaticSessionData.DeviceData
-    public String modelClass() {
-        return this.modelClass;
-    }
-
-    @Override // com.google.firebase.crashlytics.internal.model.StaticSessionData.DeviceData
-    public int state() {
-        return this.state;
-    }
-
-    public String toString() {
-        return "DeviceData{arch=" + this.arch + ", model=" + this.model + ", availableProcessors=" + this.availableProcessors + ", totalRam=" + this.totalRam + ", diskSpace=" + this.diskSpace + ", isEmulator=" + this.isEmulator + ", state=" + this.state + ", manufacturer=" + this.manufacturer + ", modelClass=" + this.modelClass + "}";
-    }
-
-    @Override // com.google.firebase.crashlytics.internal.model.StaticSessionData.DeviceData
-    public long totalRam() {
-        return this.totalRam;
     }
 }

@@ -19,10 +19,6 @@ public final class SeiReader {
         this.outputs = new TrackOutput[list.size()];
     }
 
-    public void consume(long j, ParsableByteArray parsableByteArray) {
-        CeaUtil.consume(j, parsableByteArray, this.outputs);
-    }
-
     public void createTracks(ExtractorOutput extractorOutput, TsPayloadReader.TrackIdGenerator trackIdGenerator) {
         for (int i = 0; i < this.outputs.length; i++) {
             trackIdGenerator.generateNewId();
@@ -37,5 +33,9 @@ public final class SeiReader {
             track.format(new Format.Builder().setId(str2).setSampleMimeType(str).setSelectionFlags(format.selectionFlags).setLanguage(format.language).setAccessibilityChannel(format.accessibilityChannel).setInitializationData(format.initializationData).build());
             this.outputs[i] = track;
         }
+    }
+
+    public void consume(long j, ParsableByteArray parsableByteArray) {
+        CeaUtil.consume(j, parsableByteArray, this.outputs);
     }
 }

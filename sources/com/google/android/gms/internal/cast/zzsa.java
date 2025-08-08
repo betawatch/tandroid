@@ -11,6 +11,11 @@ final class zzsa extends zzrg.zzi implements Runnable {
         this.zzb = runnable;
     }
 
+    @Override // com.google.android.gms.internal.cast.zzrg
+    protected final String zze() {
+        return "task=[" + this.zzb.toString() + "]";
+    }
+
     @Override // java.lang.Runnable
     public final void run() {
         try {
@@ -19,10 +24,5 @@ final class zzsa extends zzrg.zzi implements Runnable {
             zzl(e);
             throw e;
         }
-    }
-
-    @Override // com.google.android.gms.internal.cast.zzrg
-    protected final String zze() {
-        return "task=[" + this.zzb.toString() + "]";
     }
 }

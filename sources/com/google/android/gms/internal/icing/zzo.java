@@ -15,12 +15,6 @@ public final class zzo extends AbstractSafeParcelable implements Result {
     public List zzb;
     public String[] zzc;
 
-    zzo(Status status, List list, String[] strArr) {
-        this.zza = status;
-        this.zzb = list;
-        this.zzc = strArr;
-    }
-
     @Override // com.google.android.gms.common.api.Result
     public final Status getStatus() {
         return this.zza;
@@ -33,5 +27,11 @@ public final class zzo extends AbstractSafeParcelable implements Result {
         SafeParcelWriter.writeTypedList(parcel, 2, this.zzb, false);
         SafeParcelWriter.writeStringArray(parcel, 3, this.zzc, false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    zzo(Status status, List list, String[] strArr) {
+        this.zza = status;
+        this.zzb = list;
+        this.zzc = strArr;
     }
 }

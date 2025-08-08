@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import kotlin.UInt;
-import kotlin.collections.CollectionsKt___CollectionsKt;
+import kotlin.collections.CollectionsKt;
 
 /* loaded from: classes.dex */
 public final class zzeg implements zzee {
@@ -16,15 +16,12 @@ public final class zzeg implements zzee {
     }
 
     private final zzpf zzb(String str, List list) {
-        long[] longArray;
         zzea zzeaVar;
         if (str.length() == 0) {
             throw new zzae(3, 17, null);
         }
         try {
-            zzef zzefVar = this.zza;
-            longArray = CollectionsKt___CollectionsKt.toLongArray(list);
-            long zza = zzefVar.zza(longArray);
+            long zza = this.zza.zza(CollectionsKt.toLongArray(list));
             zzeaVar = zzec.zzb;
             zzec zzecVar = new zzec(zza, 255L, zzeaVar);
             StringBuilder sb = new StringBuilder(str.length());

@@ -11,10 +11,14 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.RejectedExecutionException;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class DefaultHttpClient implements HttpClient, DefaultHttpClientCallTask.Tracker {
     private final boolean mCompressionEnabled;
     private final Set mTasks = new HashSet();
+
+    @Override // com.microsoft.appcenter.http.HttpClient
+    public void reopen() {
+    }
 
     public DefaultHttpClient(boolean z) {
         this.mCompressionEnabled = z;
@@ -41,6 +45,16 @@ public class DefaultHttpClient implements HttpClient, DefaultHttpClientCallTask.
         };
     }
 
+    @Override // com.microsoft.appcenter.http.DefaultHttpClientCallTask.Tracker
+    public synchronized void onStart(DefaultHttpClientCallTask defaultHttpClientCallTask) {
+        this.mTasks.add(defaultHttpClientCallTask);
+    }
+
+    @Override // com.microsoft.appcenter.http.DefaultHttpClientCallTask.Tracker
+    public synchronized void onFinish(DefaultHttpClientCallTask defaultHttpClientCallTask) {
+        this.mTasks.remove(defaultHttpClientCallTask);
+    }
+
     @Override // java.io.Closeable, java.lang.AutoCloseable
     public synchronized void close() {
         try {
@@ -55,19 +69,5 @@ public class DefaultHttpClient implements HttpClient, DefaultHttpClientCallTask.
         } catch (Throwable th) {
             throw th;
         }
-    }
-
-    @Override // com.microsoft.appcenter.http.DefaultHttpClientCallTask.Tracker
-    public synchronized void onFinish(DefaultHttpClientCallTask defaultHttpClientCallTask) {
-        this.mTasks.remove(defaultHttpClientCallTask);
-    }
-
-    @Override // com.microsoft.appcenter.http.DefaultHttpClientCallTask.Tracker
-    public synchronized void onStart(DefaultHttpClientCallTask defaultHttpClientCallTask) {
-        this.mTasks.add(defaultHttpClientCallTask);
-    }
-
-    @Override // com.microsoft.appcenter.http.HttpClient
-    public void reopen() {
     }
 }

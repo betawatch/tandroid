@@ -1,12 +1,20 @@
 package com.googlecode.mp4parser.h264;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class CharCache {
     private char[] cache;
     private int pos;
 
     public CharCache(int i) {
         this.cache = new char[i];
+    }
+
+    public String toString() {
+        return new String(this.cache, 0, this.pos);
+    }
+
+    public void clear() {
+        this.pos = 0;
     }
 
     public void append(char c) {
@@ -18,15 +26,7 @@ public class CharCache {
         }
     }
 
-    public void clear() {
-        this.pos = 0;
-    }
-
     public int length() {
         return this.pos;
-    }
-
-    public String toString() {
-        return new String(this.cache, 0, this.pos);
     }
 }

@@ -1,35 +1,80 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import j$.util.function.Consumer;
+import java.util.Comparator;
 
 /* loaded from: classes2.dex */
-final class j3 extends k3 implements j$.util.J {
-    j3(j$.util.J j, long j2, long j3) {
-        super(j, j2, j3);
-    }
+abstract class j3 extends l3 implements j$.util.M {
+    protected abstract Object f();
 
-    j3(j$.util.J j, long j2, long j3, long j4, long j5) {
-        super(j, j2, j3, j4, j5);
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ long getExactSizeIfKnown() {
+        return j$.util.A.j(this);
     }
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ void a(Consumer consumer) {
-        j$.util.A.h(this, consumer);
+    public final /* synthetic */ boolean hasCharacteristics(int i) {
+        return j$.util.A.k(this, i);
     }
 
-    @Override // j$.util.stream.m3
-    protected final Spliterator b(Spliterator spliterator, long j, long j2, long j3, long j4) {
-        return new j3((j$.util.J) spliterator, j, j2, j3, j4);
+    @Override // j$.util.M
+    /* renamed from: forEachRemaining, reason: merged with bridge method [inline-methods] and merged with bridge method [inline-methods] and merged with bridge method [inline-methods] */
+    public final void e(Object obj) {
+        obj.getClass();
+        long j = this.e;
+        long j2 = this.a;
+        if (j2 >= j) {
+            return;
+        }
+        long j3 = this.d;
+        if (j3 >= j) {
+            return;
+        }
+        if (j3 >= j2 && ((j$.util.M) this.c).estimateSize() + j3 <= this.b) {
+            ((j$.util.M) this.c).e(obj);
+            this.d = this.e;
+            return;
+        }
+        while (j2 > this.d) {
+            ((j$.util.M) this.c).p(f());
+            this.d++;
+        }
+        while (this.d < this.e) {
+            ((j$.util.M) this.c).p(obj);
+            this.d++;
+        }
     }
 
-    @Override // j$.util.stream.k3
-    protected final Object f() {
-        return new D0(1);
+    @Override // j$.util.M
+    /* renamed from: tryAdvance, reason: merged with bridge method [inline-methods] and merged with bridge method [inline-methods] and merged with bridge method [inline-methods] */
+    public final boolean p(Object obj) {
+        long j;
+        obj.getClass();
+        long j2 = this.e;
+        long j3 = this.a;
+        if (j3 >= j2) {
+            return false;
+        }
+        while (true) {
+            j = this.d;
+            if (j3 <= j) {
+                break;
+            }
+            ((j$.util.M) this.c).p(f());
+            this.d++;
+        }
+        if (j >= this.e) {
+            return false;
+        }
+        this.d = j + 1;
+        return ((j$.util.M) this.c).p(obj);
     }
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean s(Consumer consumer) {
-        return j$.util.A.n(this, consumer);
+    public final Comparator getComparator() {
+        throw new IllegalStateException();
+    }
+
+    j3(j$.util.M m, long j, long j2) {
+        super(m, j, j2, 0L, Math.min(m.estimateSize(), j2));
     }
 }

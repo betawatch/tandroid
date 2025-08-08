@@ -15,11 +15,35 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class ObjectTypeAdapter extends TypeAdapter {
     private static final TypeAdapterFactory DOUBLE_FACTORY = newFactory(ToNumberPolicy.DOUBLE);
     private final Gson gson;
     private final ToNumberStrategy toNumberStrategy;
+
+    private ObjectTypeAdapter(Gson gson, ToNumberStrategy toNumberStrategy) {
+        this.gson = gson;
+        this.toNumberStrategy = toNumberStrategy;
+    }
+
+    private static TypeAdapterFactory newFactory(final ToNumberStrategy toNumberStrategy) {
+        return new TypeAdapterFactory() { // from class: com.google.gson.internal.bind.ObjectTypeAdapter.1
+            @Override // com.google.gson.TypeAdapterFactory
+            public TypeAdapter create(Gson gson, TypeToken typeToken) {
+                if (typeToken.getRawType() == Object.class) {
+                    return new ObjectTypeAdapter(gson, ToNumberStrategy.this);
+                }
+                return null;
+            }
+        };
+    }
+
+    public static TypeAdapterFactory getFactory(ToNumberStrategy toNumberStrategy) {
+        if (toNumberStrategy == ToNumberPolicy.DOUBLE) {
+            return DOUBLE_FACTORY;
+        }
+        return newFactory(toNumberStrategy);
+    }
 
     static /* synthetic */ class 2 {
         static final /* synthetic */ int[] $SwitchMap$com$google$gson$stream$JsonToken;
@@ -54,25 +78,17 @@ public final class ObjectTypeAdapter extends TypeAdapter {
         }
     }
 
-    private ObjectTypeAdapter(Gson gson, ToNumberStrategy toNumberStrategy) {
-        this.gson = gson;
-        this.toNumberStrategy = toNumberStrategy;
-    }
-
-    public static TypeAdapterFactory getFactory(ToNumberStrategy toNumberStrategy) {
-        return toNumberStrategy == ToNumberPolicy.DOUBLE ? DOUBLE_FACTORY : newFactory(toNumberStrategy);
-    }
-
-    private static TypeAdapterFactory newFactory(final ToNumberStrategy toNumberStrategy) {
-        return new TypeAdapterFactory() { // from class: com.google.gson.internal.bind.ObjectTypeAdapter.1
-            @Override // com.google.gson.TypeAdapterFactory
-            public TypeAdapter create(Gson gson, TypeToken typeToken) {
-                if (typeToken.getRawType() == Object.class) {
-                    return new ObjectTypeAdapter(gson, ToNumberStrategy.this);
-                }
-                return null;
-            }
-        };
+    private Object tryBeginNesting(JsonReader jsonReader, JsonToken jsonToken) {
+        int i = 2.$SwitchMap$com$google$gson$stream$JsonToken[jsonToken.ordinal()];
+        if (i == 1) {
+            jsonReader.beginArray();
+            return new ArrayList();
+        }
+        if (i != 2) {
+            return null;
+        }
+        jsonReader.beginObject();
+        return new LinkedTreeMap();
     }
 
     private Object readTerminal(JsonReader jsonReader, JsonToken jsonToken) {
@@ -91,19 +107,6 @@ public final class ObjectTypeAdapter extends TypeAdapter {
             return null;
         }
         throw new IllegalStateException("Unexpected token: " + jsonToken);
-    }
-
-    private Object tryBeginNesting(JsonReader jsonReader, JsonToken jsonToken) {
-        int i = 2.$SwitchMap$com$google$gson$stream$JsonToken[jsonToken.ordinal()];
-        if (i == 1) {
-            jsonReader.beginArray();
-            return new ArrayList();
-        }
-        if (i != 2) {
-            return null;
-        }
-        jsonReader.beginObject();
-        return new LinkedTreeMap();
     }
 
     @Override // com.google.gson.TypeAdapter
@@ -153,11 +156,11 @@ public final class ObjectTypeAdapter extends TypeAdapter {
             return;
         }
         TypeAdapter adapter = this.gson.getAdapter(obj.getClass());
-        if (!(adapter instanceof ObjectTypeAdapter)) {
-            adapter.write(jsonWriter, obj);
-        } else {
+        if (adapter instanceof ObjectTypeAdapter) {
             jsonWriter.beginObject();
             jsonWriter.endObject();
+        } else {
+            adapter.write(jsonWriter, obj);
         }
     }
 }

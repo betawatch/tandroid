@@ -7,7 +7,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import kotlin.collections.CollectionsKt__IterablesKt;
+import kotlin.collections.CollectionsKt;
 import org.telegram.messenger.NotificationCenter;
 
 /* loaded from: classes.dex */
@@ -24,7 +24,7 @@ public final class zzck {
     }
 
     private final List zzi(List list) {
-        ArrayList arrayList = new ArrayList(CollectionsKt__IterablesKt.collectionSizeOrDefault(list, 10));
+        ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
         Iterator it = list.iterator();
         while (it.hasNext()) {
             arrayList.add(zza((zzpq) it.next()));
@@ -104,7 +104,7 @@ public final class zzck {
 
     public final Class[] zzg(List list) {
         List zzi = zzi(list);
-        ArrayList arrayList = new ArrayList(CollectionsKt__IterablesKt.collectionSizeOrDefault(zzi, 10));
+        ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(zzi, 10));
         Iterator it = zzi.iterator();
         while (it.hasNext()) {
             arrayList.add(zzci.zza(it.next()));

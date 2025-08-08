@@ -13,6 +13,22 @@ public class ConditionVariable {
         this.clock = clock;
     }
 
+    public synchronized boolean open() {
+        if (this.isOpen) {
+            return false;
+        }
+        this.isOpen = true;
+        notifyAll();
+        return true;
+    }
+
+    public synchronized boolean close() {
+        boolean z;
+        z = this.isOpen;
+        this.isOpen = false;
+        return z;
+    }
+
     public synchronized void block() {
         while (!this.isOpen) {
             wait();
@@ -33,23 +49,7 @@ public class ConditionVariable {
         }
     }
 
-    public synchronized boolean close() {
-        boolean z;
-        z = this.isOpen;
-        this.isOpen = false;
-        return z;
-    }
-
     public synchronized boolean isOpen() {
         return this.isOpen;
-    }
-
-    public synchronized boolean open() {
-        if (this.isOpen) {
-            return false;
-        }
-        this.isOpen = true;
-        notifyAll();
-        return true;
     }
 }

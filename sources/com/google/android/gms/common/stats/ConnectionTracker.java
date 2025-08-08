@@ -7,7 +7,7 @@ import android.content.ServiceConnection;
 import android.content.pm.PackageManager;
 import android.util.Log;
 import com.google.android.gms.common.internal.Preconditions;
-import com.google.android.gms.common.internal.zzs;
+import com.google.android.gms.common.internal.zzt;
 import com.google.android.gms.common.util.PlatformVersion;
 import com.google.android.gms.common.wrappers.Wrappers;
 import j$.util.concurrent.ConcurrentHashMap;
@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLObject;
 public class ConnectionTracker {
     private static final Object zzb = new Object();
     private static volatile ConnectionTracker zzc;
-    public ConcurrentHashMap zza = new ConcurrentHashMap();
+    public final ConcurrentHashMap zza = new ConcurrentHashMap();
 
     private ConnectionTracker() {
     }
@@ -79,16 +79,7 @@ public class ConnectionTracker {
     }
 
     private static boolean zzd(ServiceConnection serviceConnection) {
-        return !(serviceConnection instanceof zzs);
-    }
-
-    private static final boolean zze(Context context, Intent intent, ServiceConnection serviceConnection, int i, Executor executor) {
-        boolean bindService;
-        if (!PlatformVersion.isAtLeastQ() || executor == null) {
-            return context.bindService(intent, serviceConnection, i);
-        }
-        bindService = context.bindService(intent, i, executor, serviceConnection);
-        return bindService;
+        return !(serviceConnection instanceof zzt);
     }
 
     public boolean bindService(Context context, Intent intent, ServiceConnection serviceConnection, int i) {
@@ -108,6 +99,18 @@ public class ConnectionTracker {
     }
 
     public final boolean zza(Context context, String str, Intent intent, ServiceConnection serviceConnection, int i, Executor executor) {
-        return zzc(context, str, intent, serviceConnection, i, true, executor);
+        return zzc(context, str, intent, serviceConnection, 4225, true, executor);
+    }
+
+    private static final boolean zze(Context context, Intent intent, ServiceConnection serviceConnection, int i, Executor executor) {
+        boolean bindService;
+        if (executor == null) {
+            executor = null;
+        }
+        if (!PlatformVersion.isAtLeastQ() || executor == null) {
+            return context.bindService(intent, serviceConnection, i);
+        }
+        bindService = context.bindService(intent, i, executor, serviceConnection);
+        return bindService;
     }
 }

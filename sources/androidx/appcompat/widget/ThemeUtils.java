@@ -25,12 +25,23 @@ public abstract class ThemeUtils {
     static final int[] EMPTY_STATE_SET = new int[0];
     private static final int[] TEMP_ARRAY = new int[1];
 
-    public static void checkAppCompatTheme(View view, Context context) {
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(R$styleable.AppCompatTheme);
+    public static int getThemeAttrColor(Context context, int i) {
+        int[] iArr = TEMP_ARRAY;
+        iArr[0] = i;
+        TintTypedArray obtainStyledAttributes = TintTypedArray.obtainStyledAttributes(context, (AttributeSet) null, iArr);
         try {
-            if (!obtainStyledAttributes.hasValue(R$styleable.AppCompatTheme_windowActionBar)) {
-                Log.e("ThemeUtils", "View " + view.getClass() + " is an AppCompat widget that can only be used with a Theme.AppCompat theme (or descendant).");
-            }
+            return obtainStyledAttributes.getColor(0, 0);
+        } finally {
+            obtainStyledAttributes.recycle();
+        }
+    }
+
+    public static ColorStateList getThemeAttrColorStateList(Context context, int i) {
+        int[] iArr = TEMP_ARRAY;
+        iArr[0] = i;
+        TintTypedArray obtainStyledAttributes = TintTypedArray.obtainStyledAttributes(context, (AttributeSet) null, iArr);
+        try {
+            return obtainStyledAttributes.getColorStateList(0);
         } finally {
             obtainStyledAttributes.recycle();
         }
@@ -46,32 +57,6 @@ public abstract class ThemeUtils {
         return getThemeAttrColor(context, i, typedValue.getFloat());
     }
 
-    public static int getThemeAttrColor(Context context, int i) {
-        int[] iArr = TEMP_ARRAY;
-        iArr[0] = i;
-        TintTypedArray obtainStyledAttributes = TintTypedArray.obtainStyledAttributes(context, (AttributeSet) null, iArr);
-        try {
-            return obtainStyledAttributes.getColor(0, 0);
-        } finally {
-            obtainStyledAttributes.recycle();
-        }
-    }
-
-    static int getThemeAttrColor(Context context, int i, float f) {
-        return ColorUtils.setAlphaComponent(getThemeAttrColor(context, i), Math.round(Color.alpha(r0) * f));
-    }
-
-    public static ColorStateList getThemeAttrColorStateList(Context context, int i) {
-        int[] iArr = TEMP_ARRAY;
-        iArr[0] = i;
-        TintTypedArray obtainStyledAttributes = TintTypedArray.obtainStyledAttributes(context, (AttributeSet) null, iArr);
-        try {
-            return obtainStyledAttributes.getColorStateList(0);
-        } finally {
-            obtainStyledAttributes.recycle();
-        }
-    }
-
     private static TypedValue getTypedValue() {
         ThreadLocal threadLocal = TL_TYPED_VALUE;
         TypedValue typedValue = (TypedValue) threadLocal.get();
@@ -81,5 +66,20 @@ public abstract class ThemeUtils {
         TypedValue typedValue2 = new TypedValue();
         threadLocal.set(typedValue2);
         return typedValue2;
+    }
+
+    static int getThemeAttrColor(Context context, int i, float f) {
+        return ColorUtils.setAlphaComponent(getThemeAttrColor(context, i), Math.round(Color.alpha(r0) * f));
+    }
+
+    public static void checkAppCompatTheme(View view, Context context) {
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(R$styleable.AppCompatTheme);
+        try {
+            if (!obtainStyledAttributes.hasValue(R$styleable.AppCompatTheme_windowActionBar)) {
+                Log.e("ThemeUtils", "View " + view.getClass() + " is an AppCompat widget that can only be used with a Theme.AppCompat theme (or descendant).");
+            }
+        } finally {
+            obtainStyledAttributes.recycle();
+        }
     }
 }

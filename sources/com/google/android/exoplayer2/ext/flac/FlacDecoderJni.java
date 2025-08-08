@@ -18,26 +18,6 @@ final class FlacDecoderJni {
     private final long nativeDecoderContext;
     private byte[] tempBuffer;
 
-    public static final class FlacFrameDecodeException extends Exception {
-        public final int errorCode;
-
-        public FlacFrameDecodeException(String str, int i) {
-            super(str);
-            this.errorCode = i;
-        }
-    }
-
-    public FlacDecoderJni() {
-        if (!FlacLibrary.isAvailable()) {
-            throw new FlacDecoderException("Failed to load decoder native libraries.");
-        }
-        long flacInit = flacInit();
-        this.nativeDecoderContext = flacInit;
-        if (flacInit == 0) {
-            throw new FlacDecoderException("Failed to initialize decoder");
-        }
-    }
-
     private native FlacStreamMetadata flacDecodeMetadata(long j);
 
     private native int flacDecodeToArray(long j, byte[] bArr);
@@ -66,90 +46,38 @@ final class FlacDecoderJni {
 
     private native void flacReset(long j, long j2);
 
-    private int readFromExtractorInput(ExtractorInput extractorInput, byte[] bArr, int i, int i2) {
-        int read = extractorInput.read(bArr, i, i2);
-        if (read != -1) {
-            return read;
+    public static final class FlacFrameDecodeException extends Exception {
+        public final int errorCode;
+
+        public FlacFrameDecodeException(String str, int i) {
+            super(str);
+            this.errorCode = i;
         }
-        this.endOfExtractorInput = true;
-        return 0;
     }
 
-    public void clearData() {
-        this.byteBufferData = null;
+    public FlacDecoderJni() {
+        if (!FlacLibrary.isAvailable()) {
+            throw new FlacDecoderException("Failed to load decoder native libraries.");
+        }
+        long flacInit = flacInit();
+        this.nativeDecoderContext = flacInit;
+        if (flacInit == 0) {
+            throw new FlacDecoderException("Failed to initialize decoder");
+        }
+    }
+
+    public void setData(ByteBuffer byteBuffer) {
+        this.byteBufferData = byteBuffer;
         this.extractorInput = null;
     }
 
-    public void decodeSample(ByteBuffer byteBuffer) {
-        byteBuffer.clear();
-        int flacDecodeToBuffer = byteBuffer.isDirect() ? flacDecodeToBuffer(this.nativeDecoderContext, byteBuffer) : flacDecodeToArray(this.nativeDecoderContext, byteBuffer.array());
-        if (flacDecodeToBuffer < 0) {
-            if (!isDecoderAtEndOfInput()) {
-                throw new FlacFrameDecodeException("Cannot decode FLAC frame", flacDecodeToBuffer);
-            }
-            flacDecodeToBuffer = 0;
+    public void setData(ExtractorInput extractorInput) {
+        this.byteBufferData = null;
+        this.extractorInput = extractorInput;
+        this.endOfExtractorInput = false;
+        if (this.tempBuffer == null) {
+            this.tempBuffer = new byte[8192];
         }
-        byteBuffer.limit(flacDecodeToBuffer);
-    }
-
-    public void decodeSampleWithBacktrackPosition(ByteBuffer byteBuffer, long j) {
-        try {
-            decodeSample(byteBuffer);
-        } catch (IOException e) {
-            if (j >= 0) {
-                reset(j);
-                ExtractorInput extractorInput = this.extractorInput;
-                if (extractorInput != null) {
-                    extractorInput.setRetryPosition(j, e);
-                }
-            }
-            throw e;
-        }
-    }
-
-    public FlacStreamMetadata decodeStreamMetadata() {
-        FlacStreamMetadata flacDecodeMetadata = flacDecodeMetadata(this.nativeDecoderContext);
-        if (flacDecodeMetadata != null) {
-            return flacDecodeMetadata;
-        }
-        throw ParserException.createForMalformedContainer("Failed to decode stream metadata", null);
-    }
-
-    public void flush() {
-        flacFlush(this.nativeDecoderContext);
-    }
-
-    public long getDecodePosition() {
-        return flacGetDecodePosition(this.nativeDecoderContext);
-    }
-
-    public long getLastFrameFirstSampleIndex() {
-        return flacGetLastFrameFirstSampleIndex(this.nativeDecoderContext);
-    }
-
-    public long getLastFrameTimestamp() {
-        return flacGetLastFrameTimestamp(this.nativeDecoderContext);
-    }
-
-    public long getNextFrameFirstSampleIndex() {
-        return flacGetNextFrameFirstSampleIndex(this.nativeDecoderContext);
-    }
-
-    public SeekMap.SeekPoints getSeekPoints(long j) {
-        long[] jArr = new long[4];
-        if (!flacGetSeekPoints(this.nativeDecoderContext, j, jArr)) {
-            return null;
-        }
-        SeekPoint seekPoint = new SeekPoint(jArr[0], jArr[1]);
-        return new SeekMap.SeekPoints(seekPoint, jArr[2] == jArr[0] ? seekPoint : new SeekPoint(jArr[2], jArr[3]));
-    }
-
-    public String getStateString() {
-        return flacGetStateString(this.nativeDecoderContext);
-    }
-
-    public boolean isDecoderAtEndOfInput() {
-        return flacIsDecoderAtEndOfStream(this.nativeDecoderContext);
     }
 
     public boolean isEndOfData() {
@@ -161,6 +89,11 @@ final class FlacDecoderJni {
             return this.endOfExtractorInput;
         }
         return true;
+    }
+
+    public void clearData() {
+        this.byteBufferData = null;
+        this.extractorInput = null;
     }
 
     public int read(ByteBuffer byteBuffer) {
@@ -190,25 +123,98 @@ final class FlacDecoderJni {
         return i;
     }
 
-    public void release() {
-        flacRelease(this.nativeDecoderContext);
+    public FlacStreamMetadata decodeStreamMetadata() {
+        FlacStreamMetadata flacDecodeMetadata = flacDecodeMetadata(this.nativeDecoderContext);
+        if (flacDecodeMetadata != null) {
+            return flacDecodeMetadata;
+        }
+        throw ParserException.createForMalformedContainer("Failed to decode stream metadata", null);
+    }
+
+    public void decodeSampleWithBacktrackPosition(ByteBuffer byteBuffer, long j) {
+        try {
+            decodeSample(byteBuffer);
+        } catch (IOException e) {
+            if (j >= 0) {
+                reset(j);
+                ExtractorInput extractorInput = this.extractorInput;
+                if (extractorInput != null) {
+                    extractorInput.setRetryPosition(j, e);
+                }
+            }
+            throw e;
+        }
+    }
+
+    public void decodeSample(ByteBuffer byteBuffer) {
+        int flacDecodeToArray;
+        byteBuffer.clear();
+        if (byteBuffer.isDirect()) {
+            flacDecodeToArray = flacDecodeToBuffer(this.nativeDecoderContext, byteBuffer);
+        } else {
+            flacDecodeToArray = flacDecodeToArray(this.nativeDecoderContext, byteBuffer.array());
+        }
+        if (flacDecodeToArray < 0) {
+            if (!isDecoderAtEndOfInput()) {
+                throw new FlacFrameDecodeException("Cannot decode FLAC frame", flacDecodeToArray);
+            }
+            byteBuffer.limit(0);
+            return;
+        }
+        byteBuffer.limit(flacDecodeToArray);
+    }
+
+    public long getDecodePosition() {
+        return flacGetDecodePosition(this.nativeDecoderContext);
+    }
+
+    public long getLastFrameTimestamp() {
+        return flacGetLastFrameTimestamp(this.nativeDecoderContext);
+    }
+
+    public long getLastFrameFirstSampleIndex() {
+        return flacGetLastFrameFirstSampleIndex(this.nativeDecoderContext);
+    }
+
+    public long getNextFrameFirstSampleIndex() {
+        return flacGetNextFrameFirstSampleIndex(this.nativeDecoderContext);
+    }
+
+    public SeekMap.SeekPoints getSeekPoints(long j) {
+        long[] jArr = new long[4];
+        if (!flacGetSeekPoints(this.nativeDecoderContext, j, jArr)) {
+            return null;
+        }
+        SeekPoint seekPoint = new SeekPoint(jArr[0], jArr[1]);
+        return new SeekMap.SeekPoints(seekPoint, jArr[2] == jArr[0] ? seekPoint : new SeekPoint(jArr[2], jArr[3]));
+    }
+
+    public String getStateString() {
+        return flacGetStateString(this.nativeDecoderContext);
+    }
+
+    public boolean isDecoderAtEndOfInput() {
+        return flacIsDecoderAtEndOfStream(this.nativeDecoderContext);
+    }
+
+    public void flush() {
+        flacFlush(this.nativeDecoderContext);
     }
 
     public void reset(long j) {
         flacReset(this.nativeDecoderContext, j);
     }
 
-    public void setData(ExtractorInput extractorInput) {
-        this.byteBufferData = null;
-        this.extractorInput = extractorInput;
-        this.endOfExtractorInput = false;
-        if (this.tempBuffer == null) {
-            this.tempBuffer = new byte[8192];
-        }
+    public void release() {
+        flacRelease(this.nativeDecoderContext);
     }
 
-    public void setData(ByteBuffer byteBuffer) {
-        this.byteBufferData = byteBuffer;
-        this.extractorInput = null;
+    private int readFromExtractorInput(ExtractorInput extractorInput, byte[] bArr, int i, int i2) {
+        int read = extractorInput.read(bArr, i, i2);
+        if (read != -1) {
+            return read;
+        }
+        this.endOfExtractorInput = true;
+        return 0;
     }
 }

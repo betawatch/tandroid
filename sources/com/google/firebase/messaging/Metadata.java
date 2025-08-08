@@ -10,7 +10,7 @@ import com.google.android.gms.common.util.PlatformVersion;
 import com.google.firebase.FirebaseApp;
 import java.util.List;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 class Metadata {
     private String appVersionCode;
     private String appVersionName;
@@ -22,75 +22,8 @@ class Metadata {
         this.context = context;
     }
 
-    static String getDefaultSenderId(FirebaseApp firebaseApp) {
-        String gcmSenderId = firebaseApp.getOptions().getGcmSenderId();
-        if (gcmSenderId != null) {
-            return gcmSenderId;
-        }
-        String applicationId = firebaseApp.getOptions().getApplicationId();
-        if (!applicationId.startsWith("1:")) {
-            return applicationId;
-        }
-        String[] split = applicationId.split(":");
-        if (split.length < 2) {
-            return null;
-        }
-        String str = split[1];
-        if (str.isEmpty()) {
-            return null;
-        }
-        return str;
-    }
-
-    private PackageInfo getPackageInfo(String str) {
-        try {
-            return this.context.getPackageManager().getPackageInfo(str, 0);
-        } catch (PackageManager.NameNotFoundException e) {
-            Log.w("FirebaseMessaging", "Failed to find package " + e);
-            return null;
-        }
-    }
-
-    private synchronized void populateAppVersionInfo() {
-        PackageInfo packageInfo = getPackageInfo(this.context.getPackageName());
-        if (packageInfo != null) {
-            this.appVersionCode = Integer.toString(packageInfo.versionCode);
-            this.appVersionName = packageInfo.versionName;
-        }
-    }
-
-    synchronized String getAppVersionCode() {
-        try {
-            if (this.appVersionCode == null) {
-                populateAppVersionInfo();
-            }
-        } catch (Throwable th) {
-            throw th;
-        }
-        return this.appVersionCode;
-    }
-
-    synchronized String getAppVersionName() {
-        try {
-            if (this.appVersionName == null) {
-                populateAppVersionInfo();
-            }
-        } catch (Throwable th) {
-            throw th;
-        }
-        return this.appVersionName;
-    }
-
-    synchronized int getGmsVersionCode() {
-        PackageInfo packageInfo;
-        try {
-            if (this.gmsVersionCode == 0 && (packageInfo = getPackageInfo("com.google.android.gms")) != null) {
-                this.gmsVersionCode = packageInfo.versionCode;
-            }
-        } catch (Throwable th) {
-            throw th;
-        }
-        return this.gmsVersionCode;
+    boolean isGmscorePresent() {
+        return getIidImplementation() != 0;
     }
 
     synchronized int getIidImplementation() {
@@ -128,7 +61,74 @@ class Metadata {
         return this.iidImplementation;
     }
 
-    boolean isGmscorePresent() {
-        return getIidImplementation() != 0;
+    static String getDefaultSenderId(FirebaseApp firebaseApp) {
+        String gcmSenderId = firebaseApp.getOptions().getGcmSenderId();
+        if (gcmSenderId != null) {
+            return gcmSenderId;
+        }
+        String applicationId = firebaseApp.getOptions().getApplicationId();
+        if (!applicationId.startsWith("1:")) {
+            return applicationId;
+        }
+        String[] split = applicationId.split(":");
+        if (split.length < 2) {
+            return null;
+        }
+        String str = split[1];
+        if (str.isEmpty()) {
+            return null;
+        }
+        return str;
+    }
+
+    synchronized String getAppVersionCode() {
+        try {
+            if (this.appVersionCode == null) {
+                populateAppVersionInfo();
+            }
+        } catch (Throwable th) {
+            throw th;
+        }
+        return this.appVersionCode;
+    }
+
+    synchronized String getAppVersionName() {
+        try {
+            if (this.appVersionName == null) {
+                populateAppVersionInfo();
+            }
+        } catch (Throwable th) {
+            throw th;
+        }
+        return this.appVersionName;
+    }
+
+    synchronized int getGmsVersionCode() {
+        PackageInfo packageInfo;
+        try {
+            if (this.gmsVersionCode == 0 && (packageInfo = getPackageInfo("com.google.android.gms")) != null) {
+                this.gmsVersionCode = packageInfo.versionCode;
+            }
+        } catch (Throwable th) {
+            throw th;
+        }
+        return this.gmsVersionCode;
+    }
+
+    private synchronized void populateAppVersionInfo() {
+        PackageInfo packageInfo = getPackageInfo(this.context.getPackageName());
+        if (packageInfo != null) {
+            this.appVersionCode = Integer.toString(packageInfo.versionCode);
+            this.appVersionName = packageInfo.versionName;
+        }
+    }
+
+    private PackageInfo getPackageInfo(String str) {
+        try {
+            return this.context.getPackageManager().getPackageInfo(str, 0);
+        } catch (PackageManager.NameNotFoundException e) {
+            Log.w("FirebaseMessaging", "Failed to find package " + e);
+            return null;
+        }
     }
 }

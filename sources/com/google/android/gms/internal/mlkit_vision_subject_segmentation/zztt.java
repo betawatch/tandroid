@@ -50,22 +50,18 @@ public final class zztt implements zztb {
 
     static Event zzb(zztd zztdVar, zzta zztaVar) {
         int zza = zztdVar.zza();
-        int zza2 = zztaVar.zza();
-        byte[] zze = zztaVar.zze(zza, false);
-        return zza2 != 0 ? Event.ofData(zze) : Event.ofTelemetry(zze);
+        return zztaVar.zza() != 0 ? Event.ofData(zztaVar.zze(zza, false)) : Event.ofTelemetry(zztaVar.zze(zza, false));
     }
 
     @Override // com.google.android.gms.internal.mlkit_vision_subject_segmentation.zztb
     public final void zza(zzta zztaVar) {
-        Provider provider;
-        if (this.zzc.zza() == 0) {
-            provider = this.zza;
-            if (provider == null) {
-                return;
-            }
-        } else {
-            provider = this.zzb;
+        if (this.zzc.zza() != 0) {
+            ((Transport) this.zzb.get()).send(zzb(this.zzc, zztaVar));
+            return;
         }
-        ((Transport) provider.get()).send(zzb(this.zzc, zztaVar));
+        Provider provider = this.zza;
+        if (provider != null) {
+            ((Transport) provider.get()).send(zzb(this.zzc, zztaVar));
+        }
     }
 }

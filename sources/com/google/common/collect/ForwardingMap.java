@@ -6,7 +6,23 @@ import java.util.Set;
 
 /* loaded from: classes.dex */
 public abstract class ForwardingMap extends ForwardingObject implements Map {
+    @Override // com.google.common.collect.ForwardingObject
+    protected abstract Map delegate();
+
     protected ForwardingMap() {
+    }
+
+    public int size() {
+        return delegate().size();
+    }
+
+    public boolean isEmpty() {
+        return delegate().isEmpty();
+    }
+
+    @Override // java.util.Map
+    public Object remove(Object obj) {
+        return delegate().remove(obj);
     }
 
     @Override // java.util.Map
@@ -18,23 +34,8 @@ public abstract class ForwardingMap extends ForwardingObject implements Map {
         return delegate().containsKey(obj);
     }
 
-    @Override // com.google.common.collect.ForwardingObject
-    protected abstract Map delegate();
-
-    public Set entrySet() {
-        return delegate().entrySet();
-    }
-
     public Object get(Object obj) {
         return delegate().get(obj);
-    }
-
-    public boolean isEmpty() {
-        return delegate().isEmpty();
-    }
-
-    public Set keySet() {
-        return delegate().keySet();
     }
 
     @Override // java.util.Map
@@ -47,13 +48,17 @@ public abstract class ForwardingMap extends ForwardingObject implements Map {
         delegate().putAll(map);
     }
 
-    @Override // java.util.Map
-    public Object remove(Object obj) {
-        return delegate().remove(obj);
+    public Set keySet() {
+        return delegate().keySet();
     }
 
-    public int size() {
-        return delegate().size();
+    @Override // java.util.Map
+    public Collection values() {
+        return delegate().values();
+    }
+
+    public Set entrySet() {
+        return delegate().entrySet();
     }
 
     protected boolean standardContainsValue(Object obj) {
@@ -66,10 +71,5 @@ public abstract class ForwardingMap extends ForwardingObject implements Map {
 
     protected int standardHashCode() {
         return Sets.hashCodeImpl(entrySet());
-    }
-
-    @Override // java.util.Map
-    public Collection values() {
-        return delegate().values();
     }
 }

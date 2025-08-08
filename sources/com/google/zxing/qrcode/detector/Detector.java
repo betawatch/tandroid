@@ -12,7 +12,7 @@ import com.google.zxing.common.detector.MathUtils;
 import com.google.zxing.qrcode.decoder.Version;
 import java.util.Map;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class Detector {
     private final BitMatrix image;
 
@@ -20,17 +20,48 @@ public class Detector {
         this.image = bitMatrix;
     }
 
-    private float calculateModuleSizeOneWay(ResultPoint resultPoint, ResultPoint resultPoint2) {
-        float sizeOfBlackWhiteBlackRunBothWays = sizeOfBlackWhiteBlackRunBothWays((int) resultPoint.getX(), (int) resultPoint.getY(), (int) resultPoint2.getX(), (int) resultPoint2.getY());
-        float sizeOfBlackWhiteBlackRunBothWays2 = sizeOfBlackWhiteBlackRunBothWays((int) resultPoint2.getX(), (int) resultPoint2.getY(), (int) resultPoint.getX(), (int) resultPoint.getY());
-        return Float.isNaN(sizeOfBlackWhiteBlackRunBothWays) ? sizeOfBlackWhiteBlackRunBothWays2 / 7.0f : Float.isNaN(sizeOfBlackWhiteBlackRunBothWays2) ? sizeOfBlackWhiteBlackRunBothWays / 7.0f : (sizeOfBlackWhiteBlackRunBothWays + sizeOfBlackWhiteBlackRunBothWays2) / 14.0f;
+    public final DetectorResult detect(Map map) {
+        if (map != null) {
+            ExoPlayerImpl$$ExternalSyntheticThrowCCEIfNotNull0.m(map.get(DecodeHintType.NEED_RESULT_POINT_CALLBACK));
+        }
+        return processFinderPatternInfo(new FinderPatternFinder(this.image, null).find(map));
     }
 
-    private static int computeDimension(ResultPoint resultPoint, ResultPoint resultPoint2, ResultPoint resultPoint3, float f) {
-        int round = (MathUtils.round(ResultPoint.distance(resultPoint, resultPoint2) / f) + MathUtils.round(ResultPoint.distance(resultPoint, resultPoint3) / f)) / 2;
-        int i = round + 7;
-        int i2 = i & 3;
-        return i2 != 0 ? i2 != 2 ? i2 != 3 ? i : round + 9 : round + 6 : round + 8;
+    protected final DetectorResult processFinderPatternInfo(FinderPatternInfo finderPatternInfo) {
+        AlignmentPattern alignmentPattern;
+        ResultPoint[] resultPointArr;
+        FinderPattern topLeft = finderPatternInfo.getTopLeft();
+        FinderPattern topRight = finderPatternInfo.getTopRight();
+        FinderPattern bottomLeft = finderPatternInfo.getBottomLeft();
+        float calculateModuleSize = calculateModuleSize(topLeft, topRight, bottomLeft);
+        if (calculateModuleSize < 1.0f) {
+            throw NotFoundException.getNotFoundInstance();
+        }
+        int computeDimension = computeDimension(topLeft, topRight, bottomLeft, calculateModuleSize);
+        Version provisionalVersionForDimension = Version.getProvisionalVersionForDimension(computeDimension);
+        int dimensionForVersion = provisionalVersionForDimension.getDimensionForVersion() - 7;
+        if (provisionalVersionForDimension.getAlignmentPatternCenters().length > 0) {
+            float x = (topRight.getX() - topLeft.getX()) + bottomLeft.getX();
+            float y = (topRight.getY() - topLeft.getY()) + bottomLeft.getY();
+            float f = 1.0f - (3.0f / dimensionForVersion);
+            int x2 = (int) (topLeft.getX() + ((x - topLeft.getX()) * f));
+            int y2 = (int) (topLeft.getY() + (f * (y - topLeft.getY())));
+            for (int i = 4; i <= 16; i <<= 1) {
+                try {
+                    alignmentPattern = findAlignmentInRegion(calculateModuleSize, x2, y2, i);
+                    break;
+                } catch (NotFoundException unused) {
+                }
+            }
+        }
+        alignmentPattern = null;
+        BitMatrix sampleGrid = sampleGrid(this.image, createTransform(topLeft, topRight, bottomLeft, alignmentPattern, computeDimension), computeDimension);
+        if (alignmentPattern == null) {
+            resultPointArr = new ResultPoint[]{bottomLeft, topLeft, topRight};
+        } else {
+            resultPointArr = new ResultPoint[]{bottomLeft, topLeft, topRight, alignmentPattern};
+        }
+        return new DetectorResult(sampleGrid, resultPointArr);
     }
 
     private static PerspectiveTransform createTransform(ResultPoint resultPoint, ResultPoint resultPoint2, ResultPoint resultPoint3, ResultPoint resultPoint4, int i) {
@@ -52,6 +83,52 @@ public class Detector {
 
     private static BitMatrix sampleGrid(BitMatrix bitMatrix, PerspectiveTransform perspectiveTransform, int i) {
         return GridSampler.getInstance().sampleGrid(bitMatrix, i, i, perspectiveTransform);
+    }
+
+    private static int computeDimension(ResultPoint resultPoint, ResultPoint resultPoint2, ResultPoint resultPoint3, float f) {
+        int round = (MathUtils.round(ResultPoint.distance(resultPoint, resultPoint2) / f) + MathUtils.round(ResultPoint.distance(resultPoint, resultPoint3) / f)) / 2;
+        int i = round + 7;
+        int i2 = i & 3;
+        return i2 != 0 ? i2 != 2 ? i2 != 3 ? i : round + 9 : round + 6 : round + 8;
+    }
+
+    protected final float calculateModuleSize(ResultPoint resultPoint, ResultPoint resultPoint2, ResultPoint resultPoint3) {
+        return (calculateModuleSizeOneWay(resultPoint, resultPoint2) + calculateModuleSizeOneWay(resultPoint, resultPoint3)) / 2.0f;
+    }
+
+    private float calculateModuleSizeOneWay(ResultPoint resultPoint, ResultPoint resultPoint2) {
+        float sizeOfBlackWhiteBlackRunBothWays = sizeOfBlackWhiteBlackRunBothWays((int) resultPoint.getX(), (int) resultPoint.getY(), (int) resultPoint2.getX(), (int) resultPoint2.getY());
+        float sizeOfBlackWhiteBlackRunBothWays2 = sizeOfBlackWhiteBlackRunBothWays((int) resultPoint2.getX(), (int) resultPoint2.getY(), (int) resultPoint.getX(), (int) resultPoint.getY());
+        return Float.isNaN(sizeOfBlackWhiteBlackRunBothWays) ? sizeOfBlackWhiteBlackRunBothWays2 / 7.0f : Float.isNaN(sizeOfBlackWhiteBlackRunBothWays2) ? sizeOfBlackWhiteBlackRunBothWays / 7.0f : (sizeOfBlackWhiteBlackRunBothWays + sizeOfBlackWhiteBlackRunBothWays2) / 14.0f;
+    }
+
+    private float sizeOfBlackWhiteBlackRunBothWays(int i, int i2, int i3, int i4) {
+        float f;
+        float f2;
+        float sizeOfBlackWhiteBlackRun = sizeOfBlackWhiteBlackRun(i, i2, i3, i4);
+        int i5 = i - (i3 - i);
+        int i6 = 0;
+        if (i5 < 0) {
+            f = i / (i - i5);
+            i5 = 0;
+        } else if (i5 >= this.image.getWidth()) {
+            f = ((this.image.getWidth() - 1) - i) / (i5 - i);
+            i5 = this.image.getWidth() - 1;
+        } else {
+            f = 1.0f;
+        }
+        float f3 = i2;
+        int i7 = (int) (f3 - ((i4 - i2) * f));
+        if (i7 < 0) {
+            f2 = f3 / (i2 - i7);
+        } else if (i7 >= this.image.getHeight()) {
+            f2 = ((this.image.getHeight() - 1) - i2) / (i7 - i2);
+            i6 = this.image.getHeight() - 1;
+        } else {
+            i6 = i7;
+            f2 = 1.0f;
+        }
+        return (sizeOfBlackWhiteBlackRun + sizeOfBlackWhiteBlackRun(i, i2, (int) (i + ((i5 - i) * f2)), i6)) - 1.0f;
     }
 
     private float sizeOfBlackWhiteBlackRun(int i, int i2, int i3, int i4) {
@@ -128,46 +205,6 @@ public class Detector {
         return Float.NaN;
     }
 
-    private float sizeOfBlackWhiteBlackRunBothWays(int i, int i2, int i3, int i4) {
-        float f;
-        float f2;
-        float sizeOfBlackWhiteBlackRun = sizeOfBlackWhiteBlackRun(i, i2, i3, i4);
-        int i5 = i - (i3 - i);
-        int i6 = 0;
-        if (i5 < 0) {
-            f = i / (i - i5);
-            i5 = 0;
-        } else if (i5 >= this.image.getWidth()) {
-            f = ((this.image.getWidth() - 1) - i) / (i5 - i);
-            i5 = this.image.getWidth() - 1;
-        } else {
-            f = 1.0f;
-        }
-        float f3 = i2;
-        int i7 = (int) (f3 - ((i4 - i2) * f));
-        if (i7 < 0) {
-            f2 = f3 / (i2 - i7);
-        } else if (i7 >= this.image.getHeight()) {
-            f2 = ((this.image.getHeight() - 1) - i2) / (i7 - i2);
-            i6 = this.image.getHeight() - 1;
-        } else {
-            i6 = i7;
-            f2 = 1.0f;
-        }
-        return (sizeOfBlackWhiteBlackRun + sizeOfBlackWhiteBlackRun(i, i2, (int) (i + ((i5 - i) * f2)), i6)) - 1.0f;
-    }
-
-    protected final float calculateModuleSize(ResultPoint resultPoint, ResultPoint resultPoint2, ResultPoint resultPoint3) {
-        return (calculateModuleSizeOneWay(resultPoint, resultPoint2) + calculateModuleSizeOneWay(resultPoint, resultPoint3)) / 2.0f;
-    }
-
-    public final DetectorResult detect(Map map) {
-        if (map != null) {
-            ExoPlayerImpl$$ExternalSyntheticThrowCCEIfNotNull0.m(map.get(DecodeHintType.NEED_RESULT_POINT_CALLBACK));
-        }
-        return processFinderPatternInfo(new FinderPatternFinder(this.image, null).find(map));
-    }
-
     protected final AlignmentPattern findAlignmentInRegion(float f, int i, int i2, float f2) {
         int i3 = (int) (f2 * f);
         int max = Math.max(0, i - i3);
@@ -178,39 +215,9 @@ public class Detector {
         }
         int max2 = Math.max(0, i2 - i3);
         int min2 = Math.min(this.image.getHeight() - 1, i2 + i3) - max2;
-        if (min2 >= f3) {
-            return new AlignmentPatternFinder(this.image, max, max2, min, min2, f, null).find();
-        }
-        throw NotFoundException.getNotFoundInstance();
-    }
-
-    protected final DetectorResult processFinderPatternInfo(FinderPatternInfo finderPatternInfo) {
-        AlignmentPattern alignmentPattern;
-        FinderPattern topLeft = finderPatternInfo.getTopLeft();
-        FinderPattern topRight = finderPatternInfo.getTopRight();
-        FinderPattern bottomLeft = finderPatternInfo.getBottomLeft();
-        float calculateModuleSize = calculateModuleSize(topLeft, topRight, bottomLeft);
-        if (calculateModuleSize < 1.0f) {
+        if (min2 < f3) {
             throw NotFoundException.getNotFoundInstance();
         }
-        int computeDimension = computeDimension(topLeft, topRight, bottomLeft, calculateModuleSize);
-        Version provisionalVersionForDimension = Version.getProvisionalVersionForDimension(computeDimension);
-        int dimensionForVersion = provisionalVersionForDimension.getDimensionForVersion() - 7;
-        if (provisionalVersionForDimension.getAlignmentPatternCenters().length > 0) {
-            float x = (topRight.getX() - topLeft.getX()) + bottomLeft.getX();
-            float y = (topRight.getY() - topLeft.getY()) + bottomLeft.getY();
-            float f = 1.0f - (3.0f / dimensionForVersion);
-            int x2 = (int) (topLeft.getX() + ((x - topLeft.getX()) * f));
-            int y2 = (int) (topLeft.getY() + (f * (y - topLeft.getY())));
-            for (int i = 4; i <= 16; i <<= 1) {
-                try {
-                    alignmentPattern = findAlignmentInRegion(calculateModuleSize, x2, y2, i);
-                    break;
-                } catch (NotFoundException unused) {
-                }
-            }
-        }
-        alignmentPattern = null;
-        return new DetectorResult(sampleGrid(this.image, createTransform(topLeft, topRight, bottomLeft, alignmentPattern, computeDimension), computeDimension), alignmentPattern == null ? new ResultPoint[]{bottomLeft, topLeft, topRight} : new ResultPoint[]{bottomLeft, topLeft, topRight, alignmentPattern});
+        return new AlignmentPatternFinder(this.image, max, max2, min, min2, f, null).find();
     }
 }

@@ -75,33 +75,6 @@ public class GoogleMap {
         }
     }
 
-    public final void animateCamera(CameraUpdate cameraUpdate) {
-        try {
-            Preconditions.checkNotNull(cameraUpdate, "CameraUpdate must not be null.");
-            this.zza.animateCamera(cameraUpdate.zza());
-        } catch (RemoteException e) {
-            throw new RuntimeRemoteException(e);
-        }
-    }
-
-    public final void animateCamera(CameraUpdate cameraUpdate, int i, CancelableCallback cancelableCallback) {
-        try {
-            Preconditions.checkNotNull(cameraUpdate, "CameraUpdate must not be null.");
-            this.zza.animateCameraWithDurationAndCallback(cameraUpdate.zza(), i, cancelableCallback == null ? null : new zzaa(cancelableCallback));
-        } catch (RemoteException e) {
-            throw new RuntimeRemoteException(e);
-        }
-    }
-
-    public final void animateCamera(CameraUpdate cameraUpdate, CancelableCallback cancelableCallback) {
-        try {
-            Preconditions.checkNotNull(cameraUpdate, "CameraUpdate must not be null.");
-            this.zza.animateCameraWithCallback(cameraUpdate.zza(), cancelableCallback == null ? null : new zzaa(cancelableCallback));
-        } catch (RemoteException e) {
-            throw new RuntimeRemoteException(e);
-        }
-    }
-
     public final CameraPosition getCameraPosition() {
         try {
             return this.zza.getCameraPosition();
@@ -145,34 +118,9 @@ public class GoogleMap {
         }
     }
 
-    public final void moveCamera(CameraUpdate cameraUpdate) {
-        try {
-            Preconditions.checkNotNull(cameraUpdate, "CameraUpdate must not be null.");
-            this.zza.moveCamera(cameraUpdate.zza());
-        } catch (RemoteException e) {
-            throw new RuntimeRemoteException(e);
-        }
-    }
-
     public boolean setMapStyle(MapStyleOptions mapStyleOptions) {
         try {
             return this.zza.setMapStyle(mapStyleOptions);
-        } catch (RemoteException e) {
-            throw new RuntimeRemoteException(e);
-        }
-    }
-
-    public final void setMapType(int i) {
-        try {
-            this.zza.setMapType(i);
-        } catch (RemoteException e) {
-            throw new RuntimeRemoteException(e);
-        }
-    }
-
-    public final void setMyLocationEnabled(boolean z) {
-        try {
-            this.zza.setMyLocationEnabled(z);
         } catch (RemoteException e) {
             throw new RuntimeRemoteException(e);
         }
@@ -250,9 +198,61 @@ public class GoogleMap {
         }
     }
 
+    public final void setMapType(int i) {
+        try {
+            this.zza.setMapType(i);
+        } catch (RemoteException e) {
+            throw new RuntimeRemoteException(e);
+        }
+    }
+
+    public final void setMyLocationEnabled(boolean z) {
+        try {
+            this.zza.setMyLocationEnabled(z);
+        } catch (RemoteException e) {
+            throw new RuntimeRemoteException(e);
+        }
+    }
+
     public final void setPadding(int i, int i2, int i3, int i4) {
         try {
             this.zza.setPadding(i, i2, i3, i4);
+        } catch (RemoteException e) {
+            throw new RuntimeRemoteException(e);
+        }
+    }
+
+    public final void animateCamera(CameraUpdate cameraUpdate) {
+        try {
+            Preconditions.checkNotNull(cameraUpdate, "CameraUpdate must not be null.");
+            this.zza.animateCamera(cameraUpdate.zza());
+        } catch (RemoteException e) {
+            throw new RuntimeRemoteException(e);
+        }
+    }
+
+    public final void moveCamera(CameraUpdate cameraUpdate) {
+        try {
+            Preconditions.checkNotNull(cameraUpdate, "CameraUpdate must not be null.");
+            this.zza.moveCamera(cameraUpdate.zza());
+        } catch (RemoteException e) {
+            throw new RuntimeRemoteException(e);
+        }
+    }
+
+    public final void animateCamera(CameraUpdate cameraUpdate, int i, CancelableCallback cancelableCallback) {
+        try {
+            Preconditions.checkNotNull(cameraUpdate, "CameraUpdate must not be null.");
+            this.zza.animateCameraWithDurationAndCallback(cameraUpdate.zza(), i, cancelableCallback == null ? null : new zzaa(cancelableCallback));
+        } catch (RemoteException e) {
+            throw new RuntimeRemoteException(e);
+        }
+    }
+
+    public final void animateCamera(CameraUpdate cameraUpdate, CancelableCallback cancelableCallback) {
+        try {
+            Preconditions.checkNotNull(cameraUpdate, "CameraUpdate must not be null.");
+            this.zza.animateCameraWithCallback(cameraUpdate.zza(), cancelableCallback == null ? null : new zzaa(cancelableCallback));
         } catch (RemoteException e) {
             throw new RuntimeRemoteException(e);
         }

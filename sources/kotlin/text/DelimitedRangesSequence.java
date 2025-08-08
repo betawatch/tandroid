@@ -6,10 +6,10 @@ import kotlin.Pair;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.IntRange;
-import kotlin.ranges.RangesKt___RangesKt;
+import kotlin.ranges.RangesKt;
 import kotlin.sequences.Sequence;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class DelimitedRangesSequence implements Sequence {
     private final Function2 getNextMatch;
     private final CharSequence input;
@@ -34,13 +34,17 @@ final class DelimitedRangesSequence implements Sequence {
             private int nextSearchIndex;
             private int nextState = -1;
 
+            @Override // java.util.Iterator
+            public void remove() {
+                throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+            }
+
             {
                 int i;
                 CharSequence charSequence;
-                int coerceIn;
                 i = DelimitedRangesSequence.this.startIndex;
                 charSequence = DelimitedRangesSequence.this.input;
-                coerceIn = RangesKt___RangesKt.coerceIn(i, 0, charSequence.length());
+                int coerceIn = RangesKt.coerceIn(i, 0, charSequence.length());
                 this.currentStartIndex = coerceIn;
                 this.nextSearchIndex = coerceIn;
             }
@@ -57,61 +61,47 @@ final class DelimitedRangesSequence implements Sequence {
                 CharSequence charSequence;
                 Function2 function2;
                 CharSequence charSequence2;
-                IntRange until;
-                IntRange intRange;
                 CharSequence charSequence3;
                 CharSequence charSequence4;
                 int i2;
-                if (this.nextSearchIndex < 0) {
-                    this.nextState = 0;
-                    this.nextItem = null;
+                if (this.nextSearchIndex >= 0) {
+                    i = DelimitedRangesSequence.this.limit;
+                    if (i > 0) {
+                        int i3 = this.counter + 1;
+                        this.counter = i3;
+                        i2 = DelimitedRangesSequence.this.limit;
+                    }
+                    int i4 = this.nextSearchIndex;
+                    charSequence = DelimitedRangesSequence.this.input;
+                    if (i4 <= charSequence.length()) {
+                        function2 = DelimitedRangesSequence.this.getNextMatch;
+                        charSequence2 = DelimitedRangesSequence.this.input;
+                        Pair pair = (Pair) function2.invoke(charSequence2, Integer.valueOf(this.nextSearchIndex));
+                        if (pair == null) {
+                            int i5 = this.currentStartIndex;
+                            charSequence3 = DelimitedRangesSequence.this.input;
+                            this.nextItem = new IntRange(i5, StringsKt__StringsKt.getLastIndex(charSequence3));
+                            this.nextSearchIndex = -1;
+                        } else {
+                            int intValue = ((Number) pair.component1()).intValue();
+                            int intValue2 = ((Number) pair.component2()).intValue();
+                            this.nextItem = RangesKt.until(this.currentStartIndex, intValue);
+                            int i6 = intValue + intValue2;
+                            this.currentStartIndex = i6;
+                            this.nextSearchIndex = i6 + (intValue2 == 0 ? 1 : 0);
+                        }
+                        this.nextState = 1;
+                        return;
+                    }
+                    int i7 = this.currentStartIndex;
+                    charSequence4 = DelimitedRangesSequence.this.input;
+                    this.nextItem = new IntRange(i7, StringsKt__StringsKt.getLastIndex(charSequence4));
+                    this.nextSearchIndex = -1;
+                    this.nextState = 1;
                     return;
                 }
-                i = DelimitedRangesSequence.this.limit;
-                int i3 = -1;
-                if (i > 0) {
-                    int i4 = this.counter + 1;
-                    this.counter = i4;
-                    i2 = DelimitedRangesSequence.this.limit;
-                }
-                int i5 = this.nextSearchIndex;
-                charSequence = DelimitedRangesSequence.this.input;
-                if (i5 <= charSequence.length()) {
-                    function2 = DelimitedRangesSequence.this.getNextMatch;
-                    charSequence2 = DelimitedRangesSequence.this.input;
-                    Pair pair = (Pair) function2.invoke(charSequence2, Integer.valueOf(this.nextSearchIndex));
-                    if (pair == null) {
-                        int i6 = this.currentStartIndex;
-                        charSequence3 = DelimitedRangesSequence.this.input;
-                        intRange = new IntRange(i6, StringsKt__StringsKt.getLastIndex(charSequence3));
-                        this.nextItem = intRange;
-                        this.nextSearchIndex = i3;
-                        this.nextState = 1;
-                    }
-                    int intValue = ((Number) pair.component1()).intValue();
-                    int intValue2 = ((Number) pair.component2()).intValue();
-                    until = RangesKt___RangesKt.until(this.currentStartIndex, intValue);
-                    this.nextItem = until;
-                    int i7 = intValue + intValue2;
-                    this.currentStartIndex = i7;
-                    i3 = i7 + (intValue2 == 0 ? 1 : 0);
-                    this.nextSearchIndex = i3;
-                    this.nextState = 1;
-                }
-                int i8 = this.currentStartIndex;
-                charSequence4 = DelimitedRangesSequence.this.input;
-                intRange = new IntRange(i8, StringsKt__StringsKt.getLastIndex(charSequence4));
-                this.nextItem = intRange;
-                this.nextSearchIndex = i3;
-                this.nextState = 1;
-            }
-
-            @Override // java.util.Iterator
-            public boolean hasNext() {
-                if (this.nextState == -1) {
-                    calcNext();
-                }
-                return this.nextState == 1;
+                this.nextState = 0;
+                this.nextItem = null;
             }
 
             @Override // java.util.Iterator
@@ -130,8 +120,11 @@ final class DelimitedRangesSequence implements Sequence {
             }
 
             @Override // java.util.Iterator
-            public void remove() {
-                throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+            public boolean hasNext() {
+                if (this.nextState == -1) {
+                    calcNext();
+                }
+                return this.nextState == 1;
             }
         };
     }

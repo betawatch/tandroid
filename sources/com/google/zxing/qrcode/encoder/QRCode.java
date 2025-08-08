@@ -5,7 +5,7 @@ import com.google.zxing.qrcode.decoder.Mode;
 import com.google.zxing.qrcode.decoder.Version;
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class QRCode {
     private ErrorCorrectionLevel ecLevel;
     private int maskPattern = -1;
@@ -19,26 +19,6 @@ public final class QRCode {
 
     public ByteMatrix getMatrix() {
         return this.matrix;
-    }
-
-    public void setECLevel(ErrorCorrectionLevel errorCorrectionLevel) {
-        this.ecLevel = errorCorrectionLevel;
-    }
-
-    public void setMaskPattern(int i) {
-        this.maskPattern = i;
-    }
-
-    public void setMatrix(ByteMatrix byteMatrix) {
-        this.matrix = byteMatrix;
-    }
-
-    public void setMode(Mode mode) {
-        this.mode = mode;
-    }
-
-    public void setVersion(Version version) {
-        this.version = version;
     }
 
     public String toString() {
@@ -60,5 +40,25 @@ public final class QRCode {
         }
         sb.append(">>\n");
         return sb.toString();
+    }
+
+    public void setMode(Mode mode) {
+        this.mode = mode;
+    }
+
+    public void setECLevel(ErrorCorrectionLevel errorCorrectionLevel) {
+        this.ecLevel = errorCorrectionLevel;
+    }
+
+    public void setVersion(Version version) {
+        this.version = version;
+    }
+
+    public void setMaskPattern(int i) {
+        this.maskPattern = i;
+    }
+
+    public void setMatrix(ByteMatrix byteMatrix) {
+        this.matrix = byteMatrix;
     }
 }

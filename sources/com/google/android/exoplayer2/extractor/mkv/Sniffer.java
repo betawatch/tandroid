@@ -8,30 +8,7 @@ final class Sniffer {
     private int peekLength;
     private final ParsableByteArray scratch = new ParsableByteArray(8);
 
-    private long readUint(ExtractorInput extractorInput) {
-        int i = 0;
-        extractorInput.peekFully(this.scratch.getData(), 0, 1);
-        int i2 = this.scratch.getData()[0] & 255;
-        if (i2 == 0) {
-            return Long.MIN_VALUE;
-        }
-        int i3 = 128;
-        int i4 = 0;
-        while ((i2 & i3) == 0) {
-            i3 >>= 1;
-            i4++;
-        }
-        int i5 = i2 & (i3 ^ (-1));
-        extractorInput.peekFully(this.scratch.getData(), 1, i4);
-        while (i < i4) {
-            i++;
-            i5 = (this.scratch.getData()[i] & 255) + (i5 << 8);
-        }
-        this.peekLength += i4 + 1;
-        return i5;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:40:0x00a2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x0098, code lost:
     
         return false;
      */
@@ -84,5 +61,28 @@ final class Sniffer {
                 this.peekLength += i3;
             }
         }
+    }
+
+    private long readUint(ExtractorInput extractorInput) {
+        int i = 0;
+        extractorInput.peekFully(this.scratch.getData(), 0, 1);
+        int i2 = this.scratch.getData()[0] & 255;
+        if (i2 == 0) {
+            return Long.MIN_VALUE;
+        }
+        int i3 = 128;
+        int i4 = 0;
+        while ((i2 & i3) == 0) {
+            i3 >>= 1;
+            i4++;
+        }
+        int i5 = i2 & (~i3);
+        extractorInput.peekFully(this.scratch.getData(), 1, i4);
+        while (i < i4) {
+            i++;
+            i5 = (this.scratch.getData()[i] & 255) + (i5 << 8);
+        }
+        this.peekLength += i4 + 1;
+        return i5;
     }
 }

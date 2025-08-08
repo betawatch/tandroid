@@ -38,12 +38,8 @@ public final class StarRating extends Rating {
         this.starRating = f;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static StarRating fromBundle(Bundle bundle) {
-        Assertions.checkArgument(bundle.getInt(Rating.FIELD_RATING_TYPE, -1) == 2);
-        int i = bundle.getInt(FIELD_MAX_STARS, 5);
-        float f = bundle.getFloat(FIELD_STAR_RATING, -1.0f);
-        return f == -1.0f ? new StarRating(i) : new StarRating(i, f);
+    public int hashCode() {
+        return Objects.hashCode(Integer.valueOf(this.maxStars), Float.valueOf(this.starRating));
     }
 
     public boolean equals(Object obj) {
@@ -54,10 +50,6 @@ public final class StarRating extends Rating {
         return this.maxStars == starRating.maxStars && this.starRating == starRating.starRating;
     }
 
-    public int hashCode() {
-        return Objects.hashCode(Integer.valueOf(this.maxStars), Float.valueOf(this.starRating));
-    }
-
     @Override // com.google.android.exoplayer2.Bundleable
     public Bundle toBundle() {
         Bundle bundle = new Bundle();
@@ -65,5 +57,16 @@ public final class StarRating extends Rating {
         bundle.putInt(FIELD_MAX_STARS, this.maxStars);
         bundle.putFloat(FIELD_STAR_RATING, this.starRating);
         return bundle;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static StarRating fromBundle(Bundle bundle) {
+        Assertions.checkArgument(bundle.getInt(Rating.FIELD_RATING_TYPE, -1) == 2);
+        int i = bundle.getInt(FIELD_MAX_STARS, 5);
+        float f = bundle.getFloat(FIELD_STAR_RATING, -1.0f);
+        if (f == -1.0f) {
+            return new StarRating(i);
+        }
+        return new StarRating(i, f);
     }
 }

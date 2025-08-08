@@ -30,7 +30,6 @@ public class AdBreakClipInfo extends AbstractSafeParcelable {
     private JSONObject zzm;
 
     AdBreakClipInfo(String str, String str2, long j, String str3, String str4, String str5, String str6, String str7, String str8, long j2, String str9, VastAdsRequest vastAdsRequest) {
-        JSONObject jSONObject;
         this.zza = str;
         this.zzb = str2;
         this.zzc = j;
@@ -44,18 +43,16 @@ public class AdBreakClipInfo extends AbstractSafeParcelable {
         this.zzk = str9;
         this.zzl = vastAdsRequest;
         if (TextUtils.isEmpty(str6)) {
-            jSONObject = new JSONObject();
-        } else {
-            try {
-                this.zzm = new JSONObject(this.zzg);
-                return;
-            } catch (JSONException e) {
-                Log.w("AdBreakClipInfo", String.format(Locale.ROOT, "Error creating AdBreakClipInfo: %s", e.getMessage()));
-                this.zzg = null;
-                jSONObject = new JSONObject();
-            }
+            this.zzm = new JSONObject();
+            return;
         }
-        this.zzm = jSONObject;
+        try {
+            this.zzm = new JSONObject(this.zzg);
+        } catch (JSONException e) {
+            Log.w("AdBreakClipInfo", String.format(Locale.ROOT, "Error creating AdBreakClipInfo: %s", e.getMessage()));
+            this.zzg = null;
+            this.zzm = new JSONObject();
+        }
     }
 
     public boolean equals(Object obj) {

@@ -26,6 +26,26 @@ public final class MotionPhotoMetadata implements Metadata.Entry {
     public final long videoSize;
     public final long videoStartPosition;
 
+    @Override // android.os.Parcelable
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
+    public /* synthetic */ byte[] getWrappedMetadataBytes() {
+        return Metadata.Entry.-CC.$default$getWrappedMetadataBytes(this);
+    }
+
+    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
+    public /* synthetic */ Format getWrappedMetadataFormat() {
+        return Metadata.Entry.-CC.$default$getWrappedMetadataFormat(this);
+    }
+
+    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
+    public /* synthetic */ void populateMediaMetadata(MediaMetadata.Builder builder) {
+        Metadata.Entry.-CC.$default$populateMediaMetadata(this, builder);
+    }
+
     public MotionPhotoMetadata(long j, long j2, long j3, long j4, long j5) {
         this.photoStartPosition = j;
         this.photoSize = j2;
@@ -42,11 +62,6 @@ public final class MotionPhotoMetadata implements Metadata.Entry {
         this.videoSize = parcel.readLong();
     }
 
-    @Override // android.os.Parcelable
-    public int describeContents() {
-        return 0;
-    }
-
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -58,23 +73,8 @@ public final class MotionPhotoMetadata implements Metadata.Entry {
         return this.photoStartPosition == motionPhotoMetadata.photoStartPosition && this.photoSize == motionPhotoMetadata.photoSize && this.photoPresentationTimestampUs == motionPhotoMetadata.photoPresentationTimestampUs && this.videoStartPosition == motionPhotoMetadata.videoStartPosition && this.videoSize == motionPhotoMetadata.videoSize;
     }
 
-    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
-    public /* synthetic */ byte[] getWrappedMetadataBytes() {
-        return Metadata.Entry.-CC.$default$getWrappedMetadataBytes(this);
-    }
-
-    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
-    public /* synthetic */ Format getWrappedMetadataFormat() {
-        return Metadata.Entry.-CC.$default$getWrappedMetadataFormat(this);
-    }
-
     public int hashCode() {
         return ((((((((Longs.hashCode(this.photoStartPosition) + 527) * 31) + Longs.hashCode(this.photoSize)) * 31) + Longs.hashCode(this.photoPresentationTimestampUs)) * 31) + Longs.hashCode(this.videoStartPosition)) * 31) + Longs.hashCode(this.videoSize);
-    }
-
-    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
-    public /* synthetic */ void populateMediaMetadata(MediaMetadata.Builder builder) {
-        Metadata.Entry.-CC.$default$populateMediaMetadata(this, builder);
     }
 
     public String toString() {

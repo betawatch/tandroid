@@ -4,9 +4,6 @@ import java.util.Map;
 
 /* loaded from: classes.dex */
 abstract class ExtensionSchema {
-    ExtensionSchema() {
-    }
-
     abstract int extensionNumber(Map.Entry entry);
 
     abstract Object findExtensionByNumber(ExtensionRegistryLite extensionRegistryLite, MessageLite messageLite, int i);
@@ -26,4 +23,7 @@ abstract class ExtensionSchema {
     abstract void parseMessageSetItem(ByteString byteString, Object obj, ExtensionRegistryLite extensionRegistryLite, FieldSet fieldSet);
 
     abstract void serializeExtension(Writer writer, Map.Entry entry);
+
+    ExtensionSchema() {
+    }
 }

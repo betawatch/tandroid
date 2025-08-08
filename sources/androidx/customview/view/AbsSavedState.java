@@ -9,17 +9,17 @@ public abstract class AbsSavedState implements Parcelable {
     public static final AbsSavedState EMPTY_STATE = new AbsSavedState() { // from class: androidx.customview.view.AbsSavedState.1
     };
     public static final Parcelable.Creator<AbsSavedState> CREATOR = new Parcelable.ClassLoaderCreator() { // from class: androidx.customview.view.AbsSavedState.2
+        @Override // android.os.Parcelable.ClassLoaderCreator
+        public AbsSavedState createFromParcel(Parcel parcel, ClassLoader classLoader) {
+            if (parcel.readParcelable(classLoader) != null) {
+                throw new IllegalStateException("superState must be null");
+            }
+            return AbsSavedState.EMPTY_STATE;
+        }
+
         @Override // android.os.Parcelable.Creator
         public AbsSavedState createFromParcel(Parcel parcel) {
             return createFromParcel(parcel, (ClassLoader) null);
-        }
-
-        @Override // android.os.Parcelable.ClassLoaderCreator
-        public AbsSavedState createFromParcel(Parcel parcel, ClassLoader classLoader) {
-            if (parcel.readParcelable(classLoader) == null) {
-                return AbsSavedState.EMPTY_STATE;
-            }
-            throw new IllegalStateException("superState must be null");
         }
 
         @Override // android.os.Parcelable.Creator
@@ -28,13 +28,13 @@ public abstract class AbsSavedState implements Parcelable {
         }
     };
 
-    private AbsSavedState() {
-        this.mSuperState = null;
+    @Override // android.os.Parcelable
+    public int describeContents() {
+        return 0;
     }
 
-    protected AbsSavedState(Parcel parcel, ClassLoader classLoader) {
-        Parcelable readParcelable = parcel.readParcelable(classLoader);
-        this.mSuperState = readParcelable == null ? EMPTY_STATE : readParcelable;
+    private AbsSavedState() {
+        this.mSuperState = null;
     }
 
     protected AbsSavedState(Parcelable parcelable) {
@@ -44,9 +44,9 @@ public abstract class AbsSavedState implements Parcelable {
         this.mSuperState = parcelable == EMPTY_STATE ? null : parcelable;
     }
 
-    @Override // android.os.Parcelable
-    public int describeContents() {
-        return 0;
+    protected AbsSavedState(Parcel parcel, ClassLoader classLoader) {
+        Parcelable readParcelable = parcel.readParcelable(classLoader);
+        this.mSuperState = readParcelable == null ? EMPTY_STATE : readParcelable;
     }
 
     public final Parcelable getSuperState() {

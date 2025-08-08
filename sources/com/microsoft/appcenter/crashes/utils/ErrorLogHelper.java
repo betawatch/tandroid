@@ -31,15 +31,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class ErrorLogHelper {
     private static File sErrorLogDirectory;
     private static File sNewMinidumpDirectory;
     private static File sPendingMinidumpDirectory;
-
-    public static void cleanPendingMinidumps() {
-        FileManager.cleanDirectory(getPendingMinidumpDirectory());
-    }
 
     public static ManagedErrorLog createErrorLog(Context context, Thread thread, Exception exception, Map map, long j, boolean z) {
         List<ActivityManager.RunningAppProcessInfo> runningAppProcesses;
@@ -83,23 +79,7 @@ public abstract class ErrorLogHelper {
     }
 
     private static String getArchitecture() {
-        String[] strArr;
-        if (Build.VERSION.SDK_INT < 21) {
-            return Build.CPU_ABI;
-        }
-        strArr = Build.SUPPORTED_ABIS;
-        return strArr[0];
-    }
-
-    public static ErrorReport getErrorReportFromErrorLog(ManagedErrorLog managedErrorLog, String str) {
-        ErrorReport errorReport = new ErrorReport();
-        errorReport.setId(managedErrorLog.getId().toString());
-        errorReport.setThreadName(managedErrorLog.getErrorThreadName());
-        errorReport.setStackTrace(str);
-        errorReport.setAppStartTime(managedErrorLog.getAppLaunchTimestamp());
-        errorReport.setAppErrorTime(managedErrorLog.getTimestamp());
-        errorReport.setDevice(managedErrorLog.getDevice());
-        return errorReport;
+        return Build.SUPPORTED_ABIS[0];
     }
 
     public static synchronized File getErrorStorageDirectory() {
@@ -119,6 +99,137 @@ public abstract class ErrorLogHelper {
         return file;
     }
 
+    public static synchronized File getNewMinidumpDirectory() {
+        File file;
+        synchronized (ErrorLogHelper.class) {
+            file = new File(new File(getErrorStorageDirectory().getAbsolutePath(), "minidump"), "new");
+        }
+        return file;
+    }
+
+    public static synchronized File getNewMinidumpSubfolder() {
+        File file;
+        synchronized (ErrorLogHelper.class) {
+            try {
+                if (sNewMinidumpDirectory == null) {
+                    File file2 = new File(getNewMinidumpDirectory(), UUID.randomUUID().toString());
+                    sNewMinidumpDirectory = file2;
+                    FileManager.mkdir(file2.getPath());
+                }
+                file = sNewMinidumpDirectory;
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+        return file;
+    }
+
+    public static synchronized File getNewMinidumpSubfolderWithContextData(Context context) {
+        File newMinidumpSubfolder;
+        synchronized (ErrorLogHelper.class) {
+            newMinidumpSubfolder = getNewMinidumpSubfolder();
+            File file = new File(newMinidumpSubfolder, "deviceInfo");
+            try {
+                Device deviceInfo = DeviceInfoHelper.getDeviceInfo(context);
+                deviceInfo.setWrapperSdkName("appcenter.ndk");
+                JSONStringer jSONStringer = new JSONStringer();
+                jSONStringer.object();
+                deviceInfo.write(jSONStringer);
+                jSONStringer.endObject();
+                FileManager.write(file, jSONStringer.toString());
+            } catch (DeviceInfoHelper.DeviceInfoException | IOException | JSONException e) {
+                AppCenterLog.error("AppCenterCrashes", "Failed to store device info in a minidump folder.", e);
+                file.delete();
+            }
+        }
+        return newMinidumpSubfolder;
+    }
+
+    public static synchronized File getPendingMinidumpDirectory() {
+        File file;
+        synchronized (ErrorLogHelper.class) {
+            try {
+                if (sPendingMinidumpDirectory == null) {
+                    File file2 = new File(new File(getErrorStorageDirectory().getAbsolutePath(), "minidump"), "pending");
+                    sPendingMinidumpDirectory = file2;
+                    FileManager.mkdir(file2.getPath());
+                }
+                file = sPendingMinidumpDirectory;
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+        return file;
+    }
+
+    public static File[] getStoredErrorLogFiles() {
+        File[] listFiles = getErrorStorageDirectory().listFiles(new FilenameFilter() { // from class: com.microsoft.appcenter.crashes.utils.ErrorLogHelper.1
+            @Override // java.io.FilenameFilter
+            public boolean accept(File file, String str) {
+                return str.endsWith(".json");
+            }
+        });
+        return listFiles != null ? listFiles : new File[0];
+    }
+
+    public static File[] getNewMinidumpFiles() {
+        File[] listFiles = getNewMinidumpDirectory().listFiles();
+        return listFiles != null ? listFiles : new File[0];
+    }
+
+    public static Device getStoredDeviceInfo(File file) {
+        File[] listFiles = file.listFiles(new FilenameFilter() { // from class: com.microsoft.appcenter.crashes.utils.ErrorLogHelper.2
+            @Override // java.io.FilenameFilter
+            public boolean accept(File file2, String str) {
+                return str.equals("deviceInfo");
+            }
+        });
+        if (listFiles == null || listFiles.length == 0) {
+            AppCenterLog.warn("AppCenterCrashes", "No stored deviceinfo file found in a minidump folder.");
+            return null;
+        }
+        String read = FileManager.read(listFiles[0]);
+        if (read == null) {
+            AppCenterLog.error("AppCenterCrashes", "Failed to read stored device info.");
+            return null;
+        }
+        return parseDevice(read);
+    }
+
+    static Device parseDevice(String str) {
+        try {
+            Device device = new Device();
+            device.read(new JSONObject(str));
+            return device;
+        } catch (JSONException e) {
+            AppCenterLog.error("AppCenterCrashes", "Failed to deserialize device info.", e);
+            return null;
+        }
+    }
+
+    public static void removeStaleMinidumpSubfolders() {
+        File[] listFiles = getNewMinidumpDirectory().listFiles(new FilenameFilter() { // from class: com.microsoft.appcenter.crashes.utils.ErrorLogHelper.3
+            @Override // java.io.FilenameFilter
+            public boolean accept(File file, String str) {
+                if (ErrorLogHelper.sNewMinidumpDirectory != null) {
+                    return !str.equals(ErrorLogHelper.sNewMinidumpDirectory.getName());
+                }
+                return true;
+            }
+        });
+        if (listFiles == null || listFiles.length == 0) {
+            AppCenterLog.debug("AppCenterCrashes", "No previous minidump sub-folders.");
+            return;
+        }
+        for (File file : listFiles) {
+            FileManager.deleteDirectory(file);
+        }
+    }
+
+    public static void removeMinidumpFolder() {
+        FileManager.deleteDirectory(new File(getErrorStorageDirectory().getAbsolutePath(), "minidump"));
+    }
+
     public static File getLastErrorLogFile() {
         return FileManager.lastModifiedFile(getErrorStorageDirectory(), new FilenameFilter() { // from class: com.microsoft.appcenter.crashes.utils.ErrorLogHelper.4
             @Override // java.io.FilenameFilter
@@ -126,6 +237,54 @@ public abstract class ErrorLogHelper {
                 return str.endsWith(".json");
             }
         });
+    }
+
+    public static File getStoredThrowableFile(UUID uuid) {
+        return getStoredFile(uuid, ".throwable");
+    }
+
+    public static void removeStoredThrowableFile(UUID uuid) {
+        File storedThrowableFile = getStoredThrowableFile(uuid);
+        if (storedThrowableFile != null) {
+            AppCenterLog.info("AppCenterCrashes", "Deleting throwable file " + storedThrowableFile.getName());
+            FileManager.delete(storedThrowableFile);
+        }
+    }
+
+    static File getStoredErrorLogFile(UUID uuid) {
+        return getStoredFile(uuid, ".json");
+    }
+
+    public static void removeStoredErrorLogFile(UUID uuid) {
+        File storedErrorLogFile = getStoredErrorLogFile(uuid);
+        if (storedErrorLogFile != null) {
+            AppCenterLog.info("AppCenterCrashes", "Deleting error log file " + storedErrorLogFile.getName());
+            FileManager.delete(storedErrorLogFile);
+        }
+    }
+
+    public static ErrorReport getErrorReportFromErrorLog(ManagedErrorLog managedErrorLog, String str) {
+        ErrorReport errorReport = new ErrorReport();
+        errorReport.setId(managedErrorLog.getId().toString());
+        errorReport.setThreadName(managedErrorLog.getErrorThreadName());
+        errorReport.setStackTrace(str);
+        errorReport.setAppStartTime(managedErrorLog.getAppLaunchTimestamp());
+        errorReport.setAppErrorTime(managedErrorLog.getTimestamp());
+        errorReport.setDevice(managedErrorLog.getDevice());
+        return errorReport;
+    }
+
+    private static File getStoredFile(final UUID uuid, final String str) {
+        File[] listFiles = getErrorStorageDirectory().listFiles(new FilenameFilter() { // from class: com.microsoft.appcenter.crashes.utils.ErrorLogHelper.5
+            @Override // java.io.FilenameFilter
+            public boolean accept(File file, String str2) {
+                return str2.startsWith(uuid.toString()) && str2.endsWith(str);
+            }
+        });
+        if (listFiles == null || listFiles.length <= 0) {
+            return null;
+        }
+        return listFiles[0];
     }
 
     public static Exception getModelExceptionFromThrowable(Throwable th) {
@@ -185,133 +344,44 @@ public abstract class ErrorLogHelper {
         return stackFrame;
     }
 
-    public static synchronized File getNewMinidumpDirectory() {
-        File file;
-        synchronized (ErrorLogHelper.class) {
-            file = new File(new File(getErrorStorageDirectory().getAbsolutePath(), "minidump"), "new");
+    public static Map validateProperties(Map map, String str) {
+        if (map == null) {
+            return null;
         }
-        return file;
-    }
-
-    public static File[] getNewMinidumpFiles() {
-        File[] listFiles = getNewMinidumpDirectory().listFiles();
-        return listFiles != null ? listFiles : new File[0];
-    }
-
-    public static synchronized File getNewMinidumpSubfolder() {
-        File file;
-        synchronized (ErrorLogHelper.class) {
-            try {
-                if (sNewMinidumpDirectory == null) {
-                    File file2 = new File(getNewMinidumpDirectory(), UUID.randomUUID().toString());
-                    sNewMinidumpDirectory = file2;
-                    FileManager.mkdir(file2.getPath());
+        HashMap hashMap = new HashMap();
+        Iterator it = map.entrySet().iterator();
+        while (true) {
+            if (!it.hasNext()) {
+                break;
+            }
+            Map.Entry entry = (Map.Entry) it.next();
+            String str2 = (String) entry.getKey();
+            String str3 = (String) entry.getValue();
+            if (hashMap.size() >= 20) {
+                AppCenterLog.warn("AppCenterCrashes", String.format("%s : properties cannot contain more than %s items. Skipping other properties.", str, 20));
+                break;
+            }
+            if (str2 == null || str2.isEmpty()) {
+                AppCenterLog.warn("AppCenterCrashes", String.format("%s : a property key cannot be null or empty. Property will be skipped.", str));
+            } else if (str3 == null) {
+                AppCenterLog.warn("AppCenterCrashes", String.format("%s : property '%s' : property value cannot be null. Property '%s' will be skipped.", str, str2, str2));
+            } else {
+                if (str2.length() > 125) {
+                    AppCenterLog.warn("AppCenterCrashes", String.format("%s : property '%s' : property key length cannot be longer than %s characters. Property key will be truncated.", str, str2, 125));
+                    str2 = str2.substring(0, 125);
                 }
-                file = sNewMinidumpDirectory;
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-        return file;
-    }
-
-    public static synchronized File getNewMinidumpSubfolderWithContextData(Context context) {
-        File newMinidumpSubfolder;
-        synchronized (ErrorLogHelper.class) {
-            newMinidumpSubfolder = getNewMinidumpSubfolder();
-            File file = new File(newMinidumpSubfolder, "deviceInfo");
-            try {
-                Device deviceInfo = DeviceInfoHelper.getDeviceInfo(context);
-                deviceInfo.setWrapperSdkName("appcenter.ndk");
-                JSONStringer jSONStringer = new JSONStringer();
-                jSONStringer.object();
-                deviceInfo.write(jSONStringer);
-                jSONStringer.endObject();
-                FileManager.write(file, jSONStringer.toString());
-            } catch (DeviceInfoHelper.DeviceInfoException | IOException | JSONException e) {
-                AppCenterLog.error("AppCenterCrashes", "Failed to store device info in a minidump folder.", e);
-                file.delete();
-            }
-        }
-        return newMinidumpSubfolder;
-    }
-
-    public static synchronized File getPendingMinidumpDirectory() {
-        File file;
-        synchronized (ErrorLogHelper.class) {
-            try {
-                if (sPendingMinidumpDirectory == null) {
-                    File file2 = new File(new File(getErrorStorageDirectory().getAbsolutePath(), "minidump"), "pending");
-                    sPendingMinidumpDirectory = file2;
-                    FileManager.mkdir(file2.getPath());
+                if (str3.length() > 125) {
+                    AppCenterLog.warn("AppCenterCrashes", String.format("%s : property '%s' : property value cannot be longer than %s characters. Property value will be truncated.", str, str2, 125));
+                    str3 = str3.substring(0, 125);
                 }
-                file = sPendingMinidumpDirectory;
-            } catch (Throwable th) {
-                throw th;
+                hashMap.put(str2, str3);
             }
         }
-        return file;
+        return hashMap;
     }
 
-    public static Device getStoredDeviceInfo(File file) {
-        File[] listFiles = file.listFiles(new FilenameFilter() { // from class: com.microsoft.appcenter.crashes.utils.ErrorLogHelper.2
-            @Override // java.io.FilenameFilter
-            public boolean accept(File file2, String str) {
-                return str.equals("deviceInfo");
-            }
-        });
-        if (listFiles == null || listFiles.length == 0) {
-            AppCenterLog.warn("AppCenterCrashes", "No stored deviceinfo file found in a minidump folder.");
-            return null;
-        }
-        String read = FileManager.read(listFiles[0]);
-        if (read != null) {
-            return parseDevice(read);
-        }
-        AppCenterLog.error("AppCenterCrashes", "Failed to read stored device info.");
-        return null;
-    }
-
-    static File getStoredErrorLogFile(UUID uuid) {
-        return getStoredFile(uuid, ".json");
-    }
-
-    public static File[] getStoredErrorLogFiles() {
-        File[] listFiles = getErrorStorageDirectory().listFiles(new FilenameFilter() { // from class: com.microsoft.appcenter.crashes.utils.ErrorLogHelper.1
-            @Override // java.io.FilenameFilter
-            public boolean accept(File file, String str) {
-                return str.endsWith(".json");
-            }
-        });
-        return listFiles != null ? listFiles : new File[0];
-    }
-
-    private static File getStoredFile(final UUID uuid, final String str) {
-        File[] listFiles = getErrorStorageDirectory().listFiles(new FilenameFilter() { // from class: com.microsoft.appcenter.crashes.utils.ErrorLogHelper.5
-            @Override // java.io.FilenameFilter
-            public boolean accept(File file, String str2) {
-                return str2.startsWith(uuid.toString()) && str2.endsWith(str);
-            }
-        });
-        if (listFiles == null || listFiles.length <= 0) {
-            return null;
-        }
-        return listFiles[0];
-    }
-
-    public static File getStoredThrowableFile(UUID uuid) {
-        return getStoredFile(uuid, ".throwable");
-    }
-
-    static Device parseDevice(String str) {
-        try {
-            Device device = new Device();
-            device.read(new JSONObject(str));
-            return device;
-        } catch (JSONException e) {
-            AppCenterLog.error("AppCenterCrashes", "Failed to deserialize device info.", e);
-            return null;
-        }
+    public static void cleanPendingMinidumps() {
+        FileManager.cleanDirectory(getPendingMinidumpDirectory());
     }
 
     /* JADX WARN: Removed duplicated region for block: B:5:0x001a  */
@@ -332,82 +402,5 @@ public abstract class ErrorLogHelper {
         fromString = null;
         if (fromString != null) {
         }
-    }
-
-    public static void removeMinidumpFolder() {
-        FileManager.deleteDirectory(new File(getErrorStorageDirectory().getAbsolutePath(), "minidump"));
-    }
-
-    public static void removeStaleMinidumpSubfolders() {
-        File[] listFiles = getNewMinidumpDirectory().listFiles(new FilenameFilter() { // from class: com.microsoft.appcenter.crashes.utils.ErrorLogHelper.3
-            @Override // java.io.FilenameFilter
-            public boolean accept(File file, String str) {
-                if (ErrorLogHelper.sNewMinidumpDirectory != null) {
-                    return !str.equals(ErrorLogHelper.sNewMinidumpDirectory.getName());
-                }
-                return true;
-            }
-        });
-        if (listFiles == null || listFiles.length == 0) {
-            AppCenterLog.debug("AppCenterCrashes", "No previous minidump sub-folders.");
-            return;
-        }
-        for (File file : listFiles) {
-            FileManager.deleteDirectory(file);
-        }
-    }
-
-    public static void removeStoredErrorLogFile(UUID uuid) {
-        File storedErrorLogFile = getStoredErrorLogFile(uuid);
-        if (storedErrorLogFile != null) {
-            AppCenterLog.info("AppCenterCrashes", "Deleting error log file " + storedErrorLogFile.getName());
-            FileManager.delete(storedErrorLogFile);
-        }
-    }
-
-    public static void removeStoredThrowableFile(UUID uuid) {
-        File storedThrowableFile = getStoredThrowableFile(uuid);
-        if (storedThrowableFile != null) {
-            AppCenterLog.info("AppCenterCrashes", "Deleting throwable file " + storedThrowableFile.getName());
-            FileManager.delete(storedThrowableFile);
-        }
-    }
-
-    public static Map validateProperties(Map map, String str) {
-        String format;
-        if (map == null) {
-            return null;
-        }
-        HashMap hashMap = new HashMap();
-        Iterator it = map.entrySet().iterator();
-        while (true) {
-            if (!it.hasNext()) {
-                break;
-            }
-            Map.Entry entry = (Map.Entry) it.next();
-            String str2 = (String) entry.getKey();
-            String str3 = (String) entry.getValue();
-            if (hashMap.size() >= 20) {
-                AppCenterLog.warn("AppCenterCrashes", String.format("%s : properties cannot contain more than %s items. Skipping other properties.", str, 20));
-                break;
-            }
-            if (str2 == null || str2.isEmpty()) {
-                format = String.format("%s : a property key cannot be null or empty. Property will be skipped.", str);
-            } else if (str3 == null) {
-                format = String.format("%s : property '%s' : property value cannot be null. Property '%s' will be skipped.", str, str2, str2);
-            } else {
-                if (str2.length() > 125) {
-                    AppCenterLog.warn("AppCenterCrashes", String.format("%s : property '%s' : property key length cannot be longer than %s characters. Property key will be truncated.", str, str2, 125));
-                    str2 = str2.substring(0, 125);
-                }
-                if (str3.length() > 125) {
-                    AppCenterLog.warn("AppCenterCrashes", String.format("%s : property '%s' : property value cannot be longer than %s characters. Property value will be truncated.", str, str2, 125));
-                    str3 = str3.substring(0, 125);
-                }
-                hashMap.put(str2, str3);
-            }
-            AppCenterLog.warn("AppCenterCrashes", format);
-        }
-        return hashMap;
     }
 }

@@ -1,6 +1,6 @@
 package org.telegram.ui.bots;
 
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
@@ -24,17 +24,27 @@ public abstract class BotWebViewAttachedSheet implements NotificationCenter.Noti
         @Override // org.telegram.ui.Components.SimpleFloatPropertyCompat.Getter
         public final float get(Object obj) {
             float lambda$static$1;
-            ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(obj);
+            WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(obj);
             lambda$static$1 = BotWebViewAttachedSheet.lambda$static$1(null);
             return lambda$static$1;
         }
     }, new SimpleFloatPropertyCompat.Setter() { // from class: org.telegram.ui.bots.BotWebViewAttachedSheet$$ExternalSyntheticLambda1
         @Override // org.telegram.ui.Components.SimpleFloatPropertyCompat.Setter
         public final void set(Object obj, float f) {
-            ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(obj);
+            WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(obj);
             BotWebViewAttachedSheet.lambda$static$2(null, f);
         }
     }).setMultiplier(100.0f);
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ float lambda$static$1(BotWebViewAttachedSheet botWebViewAttachedSheet) {
+        throw null;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$static$2(BotWebViewAttachedSheet botWebViewAttachedSheet, float f) {
+        throw null;
+    }
 
     public static boolean hasPrivacyCommand(TLRPC.UserFull userFull) {
         TL_bots.BotInfo botInfo;
@@ -51,21 +61,6 @@ public abstract class BotWebViewAttachedSheet implements NotificationCenter.Noti
             }
         }
         return false;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openPrivacy$37(int i, long j) {
-        SendMessagesHelper.getInstance(i).sendMessage(SendMessagesHelper.SendMessageParams.of("/privacy", j, null, null, null, false, null, null, null, true, 0, null, false));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ float lambda$static$1(BotWebViewAttachedSheet botWebViewAttachedSheet) {
-        throw null;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$static$2(BotWebViewAttachedSheet botWebViewAttachedSheet, float f) {
-        throw null;
     }
 
     public static boolean openPrivacy(final int i, final long j) {
@@ -96,5 +91,10 @@ public abstract class BotWebViewAttachedSheet implements NotificationCenter.Noti
             }
         }, 150L);
         return true;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$openPrivacy$37(int i, long j) {
+        SendMessagesHelper.getInstance(i).sendMessage(SendMessagesHelper.SendMessageParams.of("/privacy", j, null, null, null, false, null, null, null, true, 0, null, false));
     }
 }

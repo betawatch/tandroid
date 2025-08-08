@@ -20,7 +20,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedEmojiSpan;
 import org.telegram.ui.Components.AttachableDrawable;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class VectorAvatarThumbDrawable extends Drawable implements AnimatedEmojiSpan.InvalidateHolder, AttachableDrawable, NotificationCenter.NotificationCenterDelegate {
     AnimatedEmojiDrawable animatedEmojiDrawable;
     final int currentAccount;
@@ -34,6 +34,20 @@ public class VectorAvatarThumbDrawable extends Drawable implements AnimatedEmoji
     TLRPC.TL_videoSizeStickerMarkup sizeStickerMarkup;
     ImageReceiver stickerPreloadImageReceiver;
     private final int type;
+
+    @Override // android.graphics.drawable.Drawable
+    public int getOpacity() {
+        return 0;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setColorFilter(ColorFilter colorFilter) {
+    }
+
+    @Override // org.telegram.ui.Components.AttachableDrawable
+    public /* synthetic */ void setParent(View view) {
+        AttachableDrawable.-CC.$default$setParent(this, view);
+    }
 
     public VectorAvatarThumbDrawable(TLRPC.VideoSize videoSize, boolean z, int i) {
         GradientTools gradientTools = new GradientTools();
@@ -67,7 +81,7 @@ public class VectorAvatarThumbDrawable extends Drawable implements AnimatedEmoji
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0074  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0075  */
     /* JADX WARN: Removed duplicated region for block: B:21:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -85,19 +99,18 @@ public class VectorAvatarThumbDrawable extends Drawable implements AnimatedEmoji
                     TLRPC.Document document2 = stickerSet.documents.get(i);
                     if (this.isPremium && this.type == 1) {
                         str3 = "50_50";
+                    } else if (this.type == 2) {
+                        str3 = "100_100";
                     } else {
-                        if (this.type != 2) {
-                            document = null;
-                            str = null;
-                            str2 = "50_50_firstframe";
-                            this.imageReceiver.setImage(ImageLocation.getForDocument(document2), str2, ImageLocation.getForDocument(document), str, null, null, DocumentObject.getSvgThumb(document2, Theme.key_windowBackgroundWhiteGrayIcon, 0.2f), 0L, "tgs", document2, 0);
-                            if (this.type != 3) {
-                                this.stickerPreloadImageReceiver.setImage(ImageLocation.getForDocument(document2), "100_100", null, null, null, 0L, "tgs", document2, 0);
-                                return;
-                            }
+                        document = null;
+                        str = null;
+                        str2 = "50_50_firstframe";
+                        this.imageReceiver.setImage(ImageLocation.getForDocument(document2), str2, ImageLocation.getForDocument(document), str, null, null, DocumentObject.getSvgThumb(document2, Theme.key_windowBackgroundWhiteGrayIcon, 0.2f), 0L, "tgs", document2, 0);
+                        if (this.type != 3) {
+                            this.stickerPreloadImageReceiver.setImage(ImageLocation.getForDocument(document2), "100_100", null, null, null, 0L, "tgs", document2, 0);
                             return;
                         }
-                        str3 = "100_100";
+                        return;
                     }
                     str2 = str3;
                     str = "50_50_firstframe";
@@ -108,14 +121,6 @@ public class VectorAvatarThumbDrawable extends Drawable implements AnimatedEmoji
                 }
             }
         }
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i != NotificationCenter.groupStickersDidLoad || this.imageSeted) {
-            return;
-        }
-        setImage();
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -151,40 +156,12 @@ public class VectorAvatarThumbDrawable extends Drawable implements AnimatedEmoji
         }
     }
 
-    public boolean equals(Object obj) {
-        TLRPC.TL_videoSizeStickerMarkup tL_videoSizeStickerMarkup;
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && getClass() == obj.getClass()) {
-            VectorAvatarThumbDrawable vectorAvatarThumbDrawable = (VectorAvatarThumbDrawable) obj;
-            if (this.type == vectorAvatarThumbDrawable.type) {
-                GradientTools gradientTools = this.gradientTools;
-                int i = gradientTools.color1;
-                GradientTools gradientTools2 = vectorAvatarThumbDrawable.gradientTools;
-                if (i == gradientTools2.color1 && gradientTools.color2 == gradientTools2.color2 && gradientTools.color3 == gradientTools2.color3 && gradientTools.color4 == gradientTools2.color4) {
-                    AnimatedEmojiDrawable animatedEmojiDrawable = this.animatedEmojiDrawable;
-                    if (animatedEmojiDrawable != null && vectorAvatarThumbDrawable.animatedEmojiDrawable != null) {
-                        return animatedEmojiDrawable.getDocumentId() == vectorAvatarThumbDrawable.animatedEmojiDrawable.getDocumentId();
-                    }
-                    TLRPC.TL_videoSizeStickerMarkup tL_videoSizeStickerMarkup2 = this.sizeStickerMarkup;
-                    return tL_videoSizeStickerMarkup2 != null && (tL_videoSizeStickerMarkup = vectorAvatarThumbDrawable.sizeStickerMarkup) != null && tL_videoSizeStickerMarkup2.stickerset.id == tL_videoSizeStickerMarkup.stickerset.id && tL_videoSizeStickerMarkup2.sticker_id == tL_videoSizeStickerMarkup.sticker_id;
-                }
-            }
-        }
-        return false;
-    }
-
     @Override // android.graphics.drawable.Drawable
-    public int getOpacity() {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Components.AnimatedEmojiSpan.InvalidateHolder
-    public void invalidate() {
-        Iterator it = this.parents.iterator();
-        while (it.hasNext()) {
-            ((ImageReceiver) it.next()).invalidate();
+    public void setAlpha(int i) {
+        this.gradientTools.paint.setAlpha(i);
+        AnimatedEmojiDrawable animatedEmojiDrawable = this.animatedEmojiDrawable;
+        if (animatedEmojiDrawable != null) {
+            animatedEmojiDrawable.setAlpha(i);
         }
     }
 
@@ -236,22 +213,44 @@ public class VectorAvatarThumbDrawable extends Drawable implements AnimatedEmoji
         }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public void setAlpha(int i) {
-        this.gradientTools.paint.setAlpha(i);
-        AnimatedEmojiDrawable animatedEmojiDrawable = this.animatedEmojiDrawable;
-        if (animatedEmojiDrawable != null) {
-            animatedEmojiDrawable.setAlpha(i);
+    @Override // org.telegram.ui.Components.AnimatedEmojiSpan.InvalidateHolder
+    public void invalidate() {
+        Iterator it = this.parents.iterator();
+        while (it.hasNext()) {
+            ((ImageReceiver) it.next()).invalidate();
         }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public void setColorFilter(ColorFilter colorFilter) {
+    public boolean equals(Object obj) {
+        TLRPC.TL_videoSizeStickerMarkup tL_videoSizeStickerMarkup;
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && getClass() == obj.getClass()) {
+            VectorAvatarThumbDrawable vectorAvatarThumbDrawable = (VectorAvatarThumbDrawable) obj;
+            if (this.type == vectorAvatarThumbDrawable.type) {
+                GradientTools gradientTools = this.gradientTools;
+                int i = gradientTools.color1;
+                GradientTools gradientTools2 = vectorAvatarThumbDrawable.gradientTools;
+                if (i == gradientTools2.color1 && gradientTools.color2 == gradientTools2.color2 && gradientTools.color3 == gradientTools2.color3 && gradientTools.color4 == gradientTools2.color4) {
+                    AnimatedEmojiDrawable animatedEmojiDrawable = this.animatedEmojiDrawable;
+                    if (animatedEmojiDrawable != null && vectorAvatarThumbDrawable.animatedEmojiDrawable != null) {
+                        return animatedEmojiDrawable.getDocumentId() == vectorAvatarThumbDrawable.animatedEmojiDrawable.getDocumentId();
+                    }
+                    TLRPC.TL_videoSizeStickerMarkup tL_videoSizeStickerMarkup2 = this.sizeStickerMarkup;
+                    return tL_videoSizeStickerMarkup2 != null && (tL_videoSizeStickerMarkup = vectorAvatarThumbDrawable.sizeStickerMarkup) != null && tL_videoSizeStickerMarkup2.stickerset.id == tL_videoSizeStickerMarkup.stickerset.id && tL_videoSizeStickerMarkup2.sticker_id == tL_videoSizeStickerMarkup.sticker_id;
+                }
+            }
+        }
+        return false;
     }
 
-    @Override // org.telegram.ui.Components.AttachableDrawable
-    public /* synthetic */ void setParent(View view) {
-        AttachableDrawable.-CC.$default$setParent(this, view);
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public void didReceivedNotification(int i, int i2, Object... objArr) {
+        if (i != NotificationCenter.groupStickersDidLoad || this.imageSeted) {
+            return;
+        }
+        setImage();
     }
 
     public void setParent(ImageReceiver imageReceiver) {

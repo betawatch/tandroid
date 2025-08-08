@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.vision;
 
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import com.google.android.gms.internal.vision.zzjb;
 import java.util.Collections;
 import java.util.Map;
@@ -11,31 +11,6 @@ public class zzio {
     private static volatile zzio zzd;
     private static final zzio zze = new zzio(true);
     private final Map zzf = Collections.emptyMap();
-
-    private static final class zza {
-        private final Object zza;
-        private final int zzb;
-
-        zza(Object obj, int i) {
-            this.zza = obj;
-            this.zzb = i;
-        }
-
-        public final boolean equals(Object obj) {
-            if (!(obj instanceof zza)) {
-                return false;
-            }
-            zza zzaVar = (zza) obj;
-            return this.zza == zzaVar.zza && this.zzb == zzaVar.zzb;
-        }
-
-        public final int hashCode() {
-            return (System.identityHashCode(this.zza) * 65535) + this.zzb;
-        }
-    }
-
-    private zzio(boolean z) {
-    }
 
     public static zzio zzb() {
         zzio zzioVar = zzc;
@@ -52,6 +27,28 @@ public class zzio {
             }
         }
         return zzioVar;
+    }
+
+    private static final class zza {
+        private final Object zza;
+        private final int zzb;
+
+        zza(Object obj, int i) {
+            this.zza = obj;
+            this.zzb = i;
+        }
+
+        public final int hashCode() {
+            return (System.identityHashCode(this.zza) * 65535) + this.zzb;
+        }
+
+        public final boolean equals(Object obj) {
+            if (!(obj instanceof zza)) {
+                return false;
+            }
+            zza zzaVar = (zza) obj;
+            return this.zza == zzaVar.zza && this.zzb == zzaVar.zzb;
+        }
     }
 
     public static zzio zzc() {
@@ -75,7 +72,10 @@ public class zzio {
     }
 
     public final zzjb.zze zza(zzkk zzkkVar, int i) {
-        ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(this.zzf.get(new zza(zzkkVar, i)));
+        WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(this.zzf.get(new zza(zzkkVar, i)));
         return null;
+    }
+
+    private zzio(boolean z) {
     }
 }

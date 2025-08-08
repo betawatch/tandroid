@@ -18,19 +18,7 @@ abstract class zzkp {
         return sb.toString();
     }
 
-    private static final String zza(String str) {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < str.length(); i++) {
-            char charAt = str.charAt(i);
-            if (Character.isUpperCase(charAt)) {
-                sb.append("_");
-            }
-            sb.append(Character.toLowerCase(charAt));
-        }
-        return sb.toString();
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:103:0x0219, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:103:0x021a, code lost:
     
         if (((java.lang.Double) r6).doubleValue() == 0.0d) goto L84;
      */
@@ -42,11 +30,11 @@ abstract class zzkp {
     
         r4 = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:95:0x01f6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:95:0x01f7, code lost:
     
         if (((java.lang.Integer) r6).intValue() == 0) goto L84;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:99:0x0207, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:99:0x0208, code lost:
     
         if (((java.lang.Float) r6).floatValue() == 0.0f) goto L84;
      */
@@ -54,7 +42,6 @@ abstract class zzkp {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private static void zza(zzkk zzkkVar, StringBuilder sb, int i) {
-        Object obj;
         boolean equals;
         HashMap hashMap = new HashMap();
         HashMap hashMap2 = new HashMap();
@@ -108,13 +95,12 @@ abstract class zzkp {
                                 if (!(zza instanceof Float)) {
                                     if (!(zza instanceof Double)) {
                                         if (zza instanceof String) {
-                                            obj = "";
+                                            equals = zza.equals("");
                                         } else if (zza instanceof zzht) {
-                                            obj = zzht.zza;
+                                            equals = zza.equals(zzht.zza);
                                         } else {
                                             equals = !(zza instanceof zzkk) ? false : false;
                                         }
-                                        equals = zza.equals(obj);
                                     }
                                 }
                             }
@@ -181,21 +167,33 @@ abstract class zzkp {
             sb.append("}");
             return;
         }
-        if (!(obj instanceof Map.Entry)) {
-            sb.append(": ");
-            sb.append(obj.toString());
+        if (obj instanceof Map.Entry) {
+            sb.append(" {");
+            Map.Entry entry = (Map.Entry) obj;
+            int i4 = i + 2;
+            zza(sb, i4, "key", entry.getKey());
+            zza(sb, i4, "value", entry.getValue());
+            sb.append("\n");
+            while (i2 < i) {
+                sb.append(' ');
+                i2++;
+            }
+            sb.append("}");
             return;
         }
-        sb.append(" {");
-        Map.Entry entry = (Map.Entry) obj;
-        int i4 = i + 2;
-        zza(sb, i4, "key", entry.getKey());
-        zza(sb, i4, "value", entry.getValue());
-        sb.append("\n");
-        while (i2 < i) {
-            sb.append(' ');
-            i2++;
+        sb.append(": ");
+        sb.append(obj.toString());
+    }
+
+    private static final String zza(String str) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < str.length(); i++) {
+            char charAt = str.charAt(i);
+            if (Character.isUpperCase(charAt)) {
+                sb.append("_");
+            }
+            sb.append(Character.toLowerCase(charAt));
         }
-        sb.append("}");
+        return sb.toString();
     }
 }

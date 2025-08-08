@@ -10,7 +10,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class CustomPropertiesLog extends AbstractLog {
     private Map properties;
 
@@ -49,41 +49,69 @@ public class CustomPropertiesLog extends AbstractLog {
     }
 
     private static void writeProperties(JSONStringer jSONStringer, Map map) {
-        if (map == null) {
-            throw new JSONException("Properties cannot be null");
+        if (map != null) {
+            jSONStringer.key("properties").array();
+            for (Map.Entry entry : map.entrySet()) {
+                jSONStringer.object();
+                JSONUtils.write(jSONStringer, "name", entry.getKey());
+                writePropertyValue(jSONStringer, entry.getValue());
+                jSONStringer.endObject();
+            }
+            jSONStringer.endArray();
+            return;
         }
-        jSONStringer.key("properties").array();
-        for (Map.Entry entry : map.entrySet()) {
-            jSONStringer.object();
-            JSONUtils.write(jSONStringer, "name", entry.getKey());
-            writePropertyValue(jSONStringer, entry.getValue());
-            jSONStringer.endObject();
-        }
-        jSONStringer.endArray();
+        throw new JSONException("Properties cannot be null");
     }
 
     private static void writePropertyValue(JSONStringer jSONStringer, Object obj) {
-        String str;
         if (obj == null) {
             JSONUtils.write(jSONStringer, "type", "clear");
             return;
         }
         if (obj instanceof Boolean) {
-            str = "boolean";
-        } else if (obj instanceof Number) {
-            str = "number";
+            JSONUtils.write(jSONStringer, "type", "boolean");
+            JSONUtils.write(jSONStringer, "value", obj);
+            return;
+        }
+        if (obj instanceof Number) {
+            JSONUtils.write(jSONStringer, "type", "number");
+            JSONUtils.write(jSONStringer, "value", obj);
         } else if (obj instanceof Date) {
             JSONUtils.write(jSONStringer, "type", "dateTime");
-            obj = JSONDateUtils.toString((Date) obj);
-            JSONUtils.write(jSONStringer, "value", obj);
+            JSONUtils.write(jSONStringer, "value", JSONDateUtils.toString((Date) obj));
         } else {
-            if (!(obj instanceof String)) {
-                throw new JSONException("Invalid value type");
+            if (obj instanceof String) {
+                JSONUtils.write(jSONStringer, "type", "string");
+                JSONUtils.write(jSONStringer, "value", obj);
+                return;
             }
-            str = "string";
+            throw new JSONException("Invalid value type");
         }
-        JSONUtils.write(jSONStringer, "type", str);
-        JSONUtils.write(jSONStringer, "value", obj);
+    }
+
+    @Override // com.microsoft.appcenter.ingestion.models.Log
+    public String getType() {
+        return "customProperties";
+    }
+
+    public Map getProperties() {
+        return this.properties;
+    }
+
+    public void setProperties(Map map) {
+        this.properties = map;
+    }
+
+    @Override // com.microsoft.appcenter.ingestion.models.AbstractLog, com.microsoft.appcenter.ingestion.models.Model
+    public void read(JSONObject jSONObject) {
+        super.read(jSONObject);
+        setProperties(readProperties(jSONObject));
+    }
+
+    @Override // com.microsoft.appcenter.ingestion.models.AbstractLog, com.microsoft.appcenter.ingestion.models.Model
+    public void write(JSONStringer jSONStringer) {
+        super.write(jSONStringer);
+        writeProperties(jSONStringer, getProperties());
     }
 
     @Override // com.microsoft.appcenter.ingestion.models.AbstractLog
@@ -99,35 +127,10 @@ public class CustomPropertiesLog extends AbstractLog {
         return map != null ? map.equals(map2) : map2 == null;
     }
 
-    public Map getProperties() {
-        return this.properties;
-    }
-
-    @Override // com.microsoft.appcenter.ingestion.models.Log
-    public String getType() {
-        return "customProperties";
-    }
-
     @Override // com.microsoft.appcenter.ingestion.models.AbstractLog
     public int hashCode() {
         int hashCode = super.hashCode() * 31;
         Map map = this.properties;
         return hashCode + (map != null ? map.hashCode() : 0);
-    }
-
-    @Override // com.microsoft.appcenter.ingestion.models.AbstractLog, com.microsoft.appcenter.ingestion.models.Model
-    public void read(JSONObject jSONObject) {
-        super.read(jSONObject);
-        setProperties(readProperties(jSONObject));
-    }
-
-    public void setProperties(Map map) {
-        this.properties = map;
-    }
-
-    @Override // com.microsoft.appcenter.ingestion.models.AbstractLog, com.microsoft.appcenter.ingestion.models.Model
-    public void write(JSONStringer jSONStringer) {
-        super.write(jSONStringer);
-        writeProperties(jSONStringer, getProperties());
     }
 }

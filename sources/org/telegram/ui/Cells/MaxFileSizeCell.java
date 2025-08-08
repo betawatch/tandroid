@@ -26,6 +26,8 @@ public abstract class MaxFileSizeCell extends FrameLayout {
     private TextView sizeTextView;
     private TextView textView;
 
+    protected abstract void didChangedSizeValue(int i);
+
     public MaxFileSizeCell(Context context) {
         super(context);
         setWillNotDraw(false);
@@ -63,11 +65,6 @@ public abstract class MaxFileSizeCell extends FrameLayout {
         seekBarView.setReportChanges(true);
         this.seekBarView.setDelegate(new SeekBarView.SeekBarViewDelegate() { // from class: org.telegram.ui.Cells.MaxFileSizeCell.2
             @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
-            public CharSequence getContentDescription() {
-                return ((Object) MaxFileSizeCell.this.textView.getText()) + " " + ((Object) MaxFileSizeCell.this.sizeTextView.getText());
-            }
-
-            @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
             public /* synthetic */ int getStepsCount() {
                 return SeekBarView.SeekBarViewDelegate.-CC.$default$getStepsCount(this);
             }
@@ -75,6 +72,10 @@ public abstract class MaxFileSizeCell extends FrameLayout {
             @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
             public /* synthetic */ boolean needVisuallyDivideSteps() {
                 return SeekBarView.SeekBarViewDelegate.-CC.$default$needVisuallyDivideSteps(this);
+            }
+
+            @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
+            public void onSeekBarPressed(boolean z) {
             }
 
             @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
@@ -115,7 +116,8 @@ public abstract class MaxFileSizeCell extends FrameLayout {
             }
 
             @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
-            public void onSeekBarPressed(boolean z) {
+            public CharSequence getContentDescription() {
+                return ((Object) MaxFileSizeCell.this.textView.getText()) + " " + ((Object) MaxFileSizeCell.this.sizeTextView.getText());
             }
         });
         this.seekBarView.setImportantForAccessibility(2);
@@ -124,31 +126,12 @@ public abstract class MaxFileSizeCell extends FrameLayout {
         setAccessibilityDelegate(this.seekBarView.getSeekBarAccessibilityDelegate());
     }
 
-    protected abstract void didChangedSizeValue(int i);
-
-    @Override // android.view.ViewGroup, android.view.View
-    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (isEnabled()) {
-            return super.dispatchTouchEvent(motionEvent);
-        }
-        return true;
+    public void setText(String str) {
+        this.textView.setText(str);
     }
 
     public long getSize() {
         return this.currentSize;
-    }
-
-    @Override // android.view.View
-    protected void onDraw(Canvas canvas) {
-        canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
-    }
-
-    @Override // android.view.ViewGroup
-    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (isEnabled()) {
-            return super.onInterceptTouchEvent(motionEvent);
-        }
-        return true;
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -161,25 +144,28 @@ public abstract class MaxFileSizeCell extends FrameLayout {
         this.seekBarView.measure(View.MeasureSpec.makeMeasureSpec(getMeasuredWidth() - AndroidUtilities.dp(20.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30));
     }
 
+    @Override // android.view.ViewGroup
+    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (isEnabled()) {
+            return super.onInterceptTouchEvent(motionEvent);
+        }
+        return true;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (isEnabled()) {
+            return super.dispatchTouchEvent(motionEvent);
+        }
+        return true;
+    }
+
     @Override // android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
         if (isEnabled()) {
             return super.onTouchEvent(motionEvent);
         }
         return true;
-    }
-
-    public void setEnabled(boolean z, ArrayList arrayList) {
-        super.setEnabled(z);
-        if (arrayList != null) {
-            arrayList.add(ObjectAnimator.ofFloat(this.textView, "alpha", z ? 1.0f : 0.5f));
-            arrayList.add(ObjectAnimator.ofFloat(this.seekBarView, "alpha", z ? 1.0f : 0.5f));
-            arrayList.add(ObjectAnimator.ofFloat(this.sizeTextView, "alpha", z ? 1.0f : 0.5f));
-        } else {
-            this.textView.setAlpha(z ? 1.0f : 0.5f);
-            this.seekBarView.setAlpha(z ? 1.0f : 0.5f);
-            this.sizeTextView.setAlpha(z ? 1.0f : 0.5f);
-        }
     }
 
     public void setSize(long j) {
@@ -210,7 +196,21 @@ public abstract class MaxFileSizeCell extends FrameLayout {
         this.seekBarView.setProgress(Math.min(1.0f, f2));
     }
 
-    public void setText(String str) {
-        this.textView.setText(str);
+    public void setEnabled(boolean z, ArrayList arrayList) {
+        super.setEnabled(z);
+        if (arrayList != null) {
+            arrayList.add(ObjectAnimator.ofFloat(this.textView, "alpha", z ? 1.0f : 0.5f));
+            arrayList.add(ObjectAnimator.ofFloat(this.seekBarView, "alpha", z ? 1.0f : 0.5f));
+            arrayList.add(ObjectAnimator.ofFloat(this.sizeTextView, "alpha", z ? 1.0f : 0.5f));
+        } else {
+            this.textView.setAlpha(z ? 1.0f : 0.5f);
+            this.seekBarView.setAlpha(z ? 1.0f : 0.5f);
+            this.sizeTextView.setAlpha(z ? 1.0f : 0.5f);
+        }
+    }
+
+    @Override // android.view.View
+    protected void onDraw(Canvas canvas) {
+        canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
     }
 }

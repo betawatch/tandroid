@@ -40,7 +40,7 @@ public final /* synthetic */ class o implements PrimitiveIterator.OfDouble {
 
     @Override // java.util.PrimitiveIterator.OfDouble
     public final /* synthetic */ void forEachRemaining(DoubleConsumer doubleConsumer) {
-        this.a.e(j$.util.function.k.a(doubleConsumer));
+        this.a.e(j$.util.function.j.a(doubleConsumer));
     }
 
     @Override // java.util.Iterator

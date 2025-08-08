@@ -5,8 +5,12 @@ abstract class zzhi {
     private static final Class zza = zza("libcore.io.Memory");
     private static final boolean zzb;
 
-    static {
-        zzb = zza("org.robolectric.Robolectric") != null;
+    static boolean zza() {
+        return (zza == null || zzb) ? false : true;
+    }
+
+    static Class zzb() {
+        return zza;
     }
 
     private static Class zza(String str) {
@@ -17,11 +21,7 @@ abstract class zzhi {
         }
     }
 
-    static boolean zza() {
-        return (zza == null || zzb) ? false : true;
-    }
-
-    static Class zzb() {
-        return zza;
+    static {
+        zzb = zza("org.robolectric.Robolectric") != null;
     }
 }

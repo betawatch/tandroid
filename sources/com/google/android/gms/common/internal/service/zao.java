@@ -39,9 +39,8 @@ public final class zao extends GoogleApi implements TelemetryLoggingClient {
         builder.run(new RemoteCall() { // from class: com.google.android.gms.common.internal.service.zam
             @Override // com.google.android.gms.common.api.internal.RemoteCall
             public final void accept(Object obj, Object obj2) {
-                TelemetryData telemetryData2 = TelemetryData.this;
                 int i = zao.$r8$clinit;
-                ((zai) ((zap) obj).getService()).zae(telemetryData2);
+                ((zai) ((zap) obj).getService()).zae(TelemetryData.this);
                 ((TaskCompletionSource) obj2).setResult(null);
             }
         });

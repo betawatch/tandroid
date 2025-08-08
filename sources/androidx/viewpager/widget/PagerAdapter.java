@@ -16,10 +16,6 @@ public abstract class PagerAdapter {
     public void finishUpdate(View view) {
     }
 
-    public void finishUpdate(ViewGroup viewGroup) {
-        finishUpdate((View) viewGroup);
-    }
-
     public abstract int getCount();
 
     public int getItemPosition(Object obj) {
@@ -37,6 +33,31 @@ public abstract class PagerAdapter {
     public abstract Object instantiateItem(ViewGroup viewGroup, int i);
 
     public abstract boolean isViewFromObject(View view, Object obj);
+
+    public void restoreState(Parcelable parcelable, ClassLoader classLoader) {
+    }
+
+    public Parcelable saveState() {
+        return null;
+    }
+
+    public void setPrimaryItem(View view, int i, Object obj) {
+    }
+
+    public void startUpdate(View view) {
+    }
+
+    public void startUpdate(ViewGroup viewGroup) {
+        startUpdate((View) viewGroup);
+    }
+
+    public void setPrimaryItem(ViewGroup viewGroup, int i, Object obj) {
+        setPrimaryItem((View) viewGroup, i, obj);
+    }
+
+    public void finishUpdate(ViewGroup viewGroup) {
+        finishUpdate((View) viewGroup);
+    }
 
     public void notifyDataSetChanged() {
         synchronized (this) {
@@ -56,30 +77,9 @@ public abstract class PagerAdapter {
         this.mObservable.registerObserver(dataSetObserver);
     }
 
-    public void restoreState(Parcelable parcelable, ClassLoader classLoader) {
-    }
-
-    public Parcelable saveState() {
-        return null;
-    }
-
-    public void setPrimaryItem(View view, int i, Object obj) {
-    }
-
-    public void setPrimaryItem(ViewGroup viewGroup, int i, Object obj) {
-        setPrimaryItem((View) viewGroup, i, obj);
-    }
-
     void setViewPagerObserver(DataSetObserver dataSetObserver) {
         synchronized (this) {
             this.mViewPagerObserver = dataSetObserver;
         }
-    }
-
-    public void startUpdate(View view) {
-    }
-
-    public void startUpdate(ViewGroup viewGroup) {
-        startUpdate((View) viewGroup);
     }
 }

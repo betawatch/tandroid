@@ -17,6 +17,18 @@ public abstract class FragmentHostCallback extends FragmentContainer {
     private final Handler mHandler;
     private final int mWindowAnimations;
 
+    public abstract Object onGetHost();
+
+    public abstract LayoutInflater onGetLayoutInflater();
+
+    public abstract boolean onShouldSaveFragmentState(Fragment fragment);
+
+    public abstract void onSupportInvalidateOptionsMenu();
+
+    FragmentHostCallback(FragmentActivity fragmentActivity) {
+        this(fragmentActivity, fragmentActivity, new Handler(), 0);
+    }
+
     FragmentHostCallback(Activity activity, Context context, Handler handler, int i) {
         this.mFragmentManager = new FragmentManagerImpl();
         this.mActivity = activity;
@@ -25,8 +37,11 @@ public abstract class FragmentHostCallback extends FragmentContainer {
         this.mWindowAnimations = i;
     }
 
-    FragmentHostCallback(FragmentActivity fragmentActivity) {
-        this(fragmentActivity, fragmentActivity, new Handler(), 0);
+    public void onStartActivityFromFragment(Fragment fragment, Intent intent, int i, Bundle bundle) {
+        if (i != -1) {
+            throw new IllegalStateException("Starting activity with a requestCode requires a FragmentActivity host");
+        }
+        ContextCompat.startActivity(this.mContext, intent, bundle);
     }
 
     Activity getActivity() {
@@ -40,19 +55,4 @@ public abstract class FragmentHostCallback extends FragmentContainer {
     Handler getHandler() {
         return this.mHandler;
     }
-
-    public abstract Object onGetHost();
-
-    public abstract LayoutInflater onGetLayoutInflater();
-
-    public abstract boolean onShouldSaveFragmentState(Fragment fragment);
-
-    public void onStartActivityFromFragment(Fragment fragment, Intent intent, int i, Bundle bundle) {
-        if (i != -1) {
-            throw new IllegalStateException("Starting activity with a requestCode requires a FragmentActivity host");
-        }
-        ContextCompat.startActivity(this.mContext, intent, bundle);
-    }
-
-    public abstract void onSupportInvalidateOptionsMenu();
 }

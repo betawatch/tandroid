@@ -52,7 +52,7 @@ public final /* synthetic */ class F implements Spliterator.OfInt {
 
     @Override // java.util.Spliterator.OfInt
     public final /* synthetic */ void forEachRemaining(IntConsumer intConsumer) {
-        this.a.forEachRemaining(j$.util.function.C.a(intConsumer));
+        this.a.forEachRemaining(j$.util.function.E.a(intConsumer));
     }
 
     @Override // java.util.Spliterator
@@ -86,7 +86,7 @@ public final /* synthetic */ class F implements Spliterator.OfInt {
 
     @Override // java.util.Spliterator.OfInt
     public final /* synthetic */ boolean tryAdvance(IntConsumer intConsumer) {
-        return this.a.tryAdvance(j$.util.function.C.a(intConsumer));
+        return this.a.tryAdvance(j$.util.function.E.a(intConsumer));
     }
 
     @Override // java.util.Spliterator.OfInt, java.util.Spliterator.OfPrimitive, java.util.Spliterator

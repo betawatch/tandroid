@@ -4,13 +4,12 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
-import android.os.Build;
 import android.widget.Button;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class ProgressButton extends Button {
     private int angle;
     private boolean drawProgress;
@@ -24,9 +23,7 @@ public class ProgressButton extends Button {
         setAllCaps(false);
         setTextSize(1, 14.0f);
         setTypeface(AndroidUtilities.bold());
-        if (Build.VERSION.SDK_INT >= 21) {
-            setOutlineProvider(null);
-        }
+        setOutlineProvider(null);
         ViewHelper.setPadding(this, 8.0f, 0.0f, 8.0f, 0.0f);
         int dp = AndroidUtilities.dp(60.0f);
         setMinWidth(dp);
@@ -39,25 +36,9 @@ public class ProgressButton extends Button {
         paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x0095, code lost:
-    
-        if (r10 > 1.0f) goto L14;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x0097, code lost:
-    
-        r9.progressAlpha = r1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x00a7, code lost:
-    
-        if (r10 < 0.0f) goto L14;
-     */
     @Override // android.widget.TextView, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        float f = 0.0f;
         if (this.drawProgress || this.progressAlpha != 0.0f) {
             this.progressRect.set(getMeasuredWidth() - AndroidUtilities.dp(11.0f), AndroidUtilities.dp(3.0f), r0 + AndroidUtilities.dp(8.0f), AndroidUtilities.dp(11.0f));
             this.progressPaint.setAlpha(Math.min(NotificationCenter.goingToPreviewTheme, (int) (this.progressAlpha * 255.0f)));
@@ -68,17 +49,22 @@ public class ProgressButton extends Button {
                 int i = (int) (this.angle + ((360 * j) / 2000.0f));
                 this.angle = i - ((i / 360) * 360);
                 if (this.drawProgress) {
-                    float f2 = this.progressAlpha;
-                    f = 1.0f;
-                    if (f2 < 1.0f) {
-                        float f3 = f2 + (j / 200.0f);
-                        this.progressAlpha = f3;
+                    float f = this.progressAlpha;
+                    if (f < 1.0f) {
+                        float f2 = f + (j / 200.0f);
+                        this.progressAlpha = f2;
+                        if (f2 > 1.0f) {
+                            this.progressAlpha = 1.0f;
+                        }
                     }
                 } else {
-                    float f4 = this.progressAlpha;
-                    if (f4 > 0.0f) {
-                        float f5 = f4 - (j / 200.0f);
-                        this.progressAlpha = f5;
+                    float f3 = this.progressAlpha;
+                    if (f3 > 0.0f) {
+                        float f4 = f3 - (j / 200.0f);
+                        this.progressAlpha = f4;
+                        if (f4 < 0.0f) {
+                            this.progressAlpha = 0.0f;
+                        }
                     }
                 }
             }
@@ -95,6 +81,10 @@ public class ProgressButton extends Button {
         setBackground(Theme.AdaptiveRipple.filledRect(i, f));
     }
 
+    public void setProgressColor(int i) {
+        this.progressPaint.setColor(i);
+    }
+
     public void setDrawProgress(boolean z, boolean z2) {
         if (this.drawProgress != z) {
             this.drawProgress = z;
@@ -104,9 +94,5 @@ public class ProgressButton extends Button {
             this.lastUpdateTime = System.currentTimeMillis();
             invalidate();
         }
-    }
-
-    public void setProgressColor(int i) {
-        this.progressPaint.setColor(i);
     }
 }

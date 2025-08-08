@@ -14,64 +14,19 @@ abstract class AbstractMultimap implements Multimap {
     private transient Set keySet;
     private transient Collection values;
 
-    class Entries extends Multimaps.Entries {
-        Entries() {
-        }
+    abstract Map createAsMap();
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
-        public Iterator iterator() {
-            return AbstractMultimap.this.entryIterator();
-        }
+    abstract Collection createEntries();
 
-        @Override // com.google.common.collect.Multimaps.Entries
-        Multimap multimap() {
-            return AbstractMultimap.this;
-        }
-    }
+    abstract Set createKeySet();
 
-    class Values extends AbstractCollection {
-        Values() {
-        }
+    abstract Collection createValues();
 
-        @Override // java.util.AbstractCollection, java.util.Collection
-        public void clear() {
-            AbstractMultimap.this.clear();
-        }
+    abstract Iterator entryIterator();
 
-        @Override // java.util.AbstractCollection, java.util.Collection
-        public boolean contains(Object obj) {
-            return AbstractMultimap.this.containsValue(obj);
-        }
-
-        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
-        public Iterator iterator() {
-            return AbstractMultimap.this.valueIterator();
-        }
-
-        @Override // java.util.AbstractCollection, java.util.Collection
-        public int size() {
-            return AbstractMultimap.this.size();
-        }
-    }
+    abstract Iterator valueIterator();
 
     AbstractMultimap() {
-    }
-
-    @Override // com.google.common.collect.Multimap
-    public Map asMap() {
-        Map map = this.asMap;
-        if (map != null) {
-            return map;
-        }
-        Map createAsMap = createAsMap();
-        this.asMap = createAsMap;
-        return createAsMap;
-    }
-
-    @Override // com.google.common.collect.Multimap
-    public boolean containsEntry(Object obj, Object obj2) {
-        Collection collection = (Collection) asMap().get(obj);
-        return collection != null && collection.contains(obj2);
     }
 
     public boolean containsValue(Object obj) {
@@ -84,13 +39,17 @@ abstract class AbstractMultimap implements Multimap {
         return false;
     }
 
-    abstract Map createAsMap();
+    @Override // com.google.common.collect.Multimap
+    public boolean containsEntry(Object obj, Object obj2) {
+        Collection collection = (Collection) asMap().get(obj);
+        return collection != null && collection.contains(obj2);
+    }
 
-    abstract Collection createEntries();
-
-    abstract Set createKeySet();
-
-    abstract Collection createValues();
+    @Override // com.google.common.collect.Multimap
+    public boolean remove(Object obj, Object obj2) {
+        Collection collection = (Collection) asMap().get(obj);
+        return collection != null && collection.remove(obj2);
+    }
 
     @Override // com.google.common.collect.Multimap
     public Collection entries() {
@@ -103,14 +62,19 @@ abstract class AbstractMultimap implements Multimap {
         return createEntries;
     }
 
-    abstract Iterator entryIterator();
+    class Entries extends Multimaps.Entries {
+        Entries() {
+        }
 
-    public boolean equals(Object obj) {
-        return Multimaps.equalsImpl(this, obj);
-    }
+        @Override // com.google.common.collect.Multimaps.Entries
+        Multimap multimap() {
+            return AbstractMultimap.this;
+        }
 
-    public int hashCode() {
-        return asMap().hashCode();
+        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        public Iterator iterator() {
+            return AbstractMultimap.this.entryIterator();
+        }
     }
 
     public Set keySet() {
@@ -124,18 +88,6 @@ abstract class AbstractMultimap implements Multimap {
     }
 
     @Override // com.google.common.collect.Multimap
-    public boolean remove(Object obj, Object obj2) {
-        Collection collection = (Collection) asMap().get(obj);
-        return collection != null && collection.remove(obj2);
-    }
-
-    public String toString() {
-        return asMap().toString();
-    }
-
-    abstract Iterator valueIterator();
-
-    @Override // com.google.common.collect.Multimap
     public Collection values() {
         Collection collection = this.values;
         if (collection != null) {
@@ -144,5 +96,53 @@ abstract class AbstractMultimap implements Multimap {
         Collection createValues = createValues();
         this.values = createValues;
         return createValues;
+    }
+
+    class Values extends AbstractCollection {
+        Values() {
+        }
+
+        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        public Iterator iterator() {
+            return AbstractMultimap.this.valueIterator();
+        }
+
+        @Override // java.util.AbstractCollection, java.util.Collection
+        public int size() {
+            return AbstractMultimap.this.size();
+        }
+
+        @Override // java.util.AbstractCollection, java.util.Collection
+        public boolean contains(Object obj) {
+            return AbstractMultimap.this.containsValue(obj);
+        }
+
+        @Override // java.util.AbstractCollection, java.util.Collection
+        public void clear() {
+            AbstractMultimap.this.clear();
+        }
+    }
+
+    @Override // com.google.common.collect.Multimap
+    public Map asMap() {
+        Map map = this.asMap;
+        if (map != null) {
+            return map;
+        }
+        Map createAsMap = createAsMap();
+        this.asMap = createAsMap;
+        return createAsMap;
+    }
+
+    public boolean equals(Object obj) {
+        return Multimaps.equalsImpl(this, obj);
+    }
+
+    public int hashCode() {
+        return asMap().hashCode();
+    }
+
+    public String toString() {
+        return asMap().toString();
     }
 }

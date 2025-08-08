@@ -8,16 +8,18 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.GroupCreateSectionCell;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class GroupCreateDividerItemDecoration extends RecyclerView.ItemDecoration {
     private boolean searching;
     private boolean single;
     private int skipRows;
 
-    @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
-    public void getItemOffsets(android.graphics.Rect rect, View view, RecyclerView recyclerView, RecyclerView.State state) {
-        super.getItemOffsets(rect, view, recyclerView, state);
-        rect.top = 1;
+    public void setSearching(boolean z) {
+        this.searching = z;
+    }
+
+    public void setSingle(boolean z) {
+        this.single = z;
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
@@ -36,11 +38,9 @@ public class GroupCreateDividerItemDecoration extends RecyclerView.ItemDecoratio
         }
     }
 
-    public void setSearching(boolean z) {
-        this.searching = z;
-    }
-
-    public void setSingle(boolean z) {
-        this.single = z;
+    @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
+    public void getItemOffsets(android.graphics.Rect rect, View view, RecyclerView recyclerView, RecyclerView.State state) {
+        super.getItemOffsets(rect, view, recyclerView, state);
+        rect.top = 1;
     }
 }

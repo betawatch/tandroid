@@ -4,19 +4,29 @@ import j$.util.function.Consumer;
 import java.util.NoSuchElementException;
 
 /* loaded from: classes2.dex */
-final class P implements t, j$.util.function.E, h {
+final class P implements t, j$.util.function.G, h {
     boolean a = false;
     int b;
     final /* synthetic */ G c;
 
-    P(G g) {
-        this.c = g;
+    @Override // j$.util.function.G
+    public final /* synthetic */ j$.util.function.G l(j$.util.function.G g) {
+        return j$.com.android.tools.r8.a.b(this, g);
+    }
+
+    @Override // java.util.Iterator
+    public final Integer next() {
+        if (d0.a) {
+            d0.a(P.class, "{0} calling PrimitiveIterator.OfInt.nextInt()");
+            throw null;
+        }
+        return Integer.valueOf(nextInt());
     }
 
     @Override // j$.util.t, j$.util.h
     public final void a(Consumer consumer) {
-        if (consumer instanceof j$.util.function.E) {
-            forEachRemaining((j$.util.function.E) consumer);
+        if (consumer instanceof j$.util.function.G) {
+            forEachRemaining((j$.util.function.G) consumer);
             return;
         }
         consumer.getClass();
@@ -27,19 +37,23 @@ final class P implements t, j$.util.function.E, h {
         forEachRemaining(new q(consumer));
     }
 
-    @Override // j$.util.function.E
+    @Override // j$.util.y
+    /* renamed from: c, reason: merged with bridge method [inline-methods] */
+    public final void forEachRemaining(j$.util.function.G g) {
+        g.getClass();
+        while (hasNext()) {
+            g.accept(nextInt());
+        }
+    }
+
+    P(G g) {
+        this.c = g;
+    }
+
+    @Override // j$.util.function.G
     public final void accept(int i) {
         this.a = true;
         this.b = i;
-    }
-
-    @Override // j$.util.y
-    /* renamed from: c, reason: merged with bridge method [inline-methods] */
-    public final void forEachRemaining(j$.util.function.E e) {
-        e.getClass();
-        while (hasNext()) {
-            e.accept(nextInt());
-        }
     }
 
     @Override // java.util.Iterator
@@ -48,20 +62,6 @@ final class P implements t, j$.util.function.E, h {
             this.c.tryAdvance(this);
         }
         return this.a;
-    }
-
-    @Override // j$.util.function.E
-    public final /* synthetic */ j$.util.function.E l(j$.util.function.E e) {
-        return j$.com.android.tools.r8.a.c(this, e);
-    }
-
-    @Override // java.util.Iterator
-    public final Integer next() {
-        if (!d0.a) {
-            return Integer.valueOf(nextInt());
-        }
-        d0.a(P.class, "{0} calling PrimitiveIterator.OfInt.nextInt()");
-        throw null;
     }
 
     @Override // j$.util.t

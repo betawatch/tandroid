@@ -15,7 +15,7 @@ public final class zai extends zaa implements IInterface {
 
     public final void zae(TelemetryData telemetryData) {
         Parcel zaa = zaa();
-        zac.zad(zaa, telemetryData);
+        zac.zac(zaa, telemetryData);
         zad(1, zaa);
     }
 }

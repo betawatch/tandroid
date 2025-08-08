@@ -20,14 +20,14 @@ public final class BinaryFrame extends Id3Frame {
     };
     public final byte[] data;
 
-    BinaryFrame(Parcel parcel) {
-        super((String) Util.castNonNull(parcel.readString()));
-        this.data = (byte[]) Util.castNonNull(parcel.createByteArray());
-    }
-
     public BinaryFrame(String str, byte[] bArr) {
         super(str);
         this.data = bArr;
+    }
+
+    BinaryFrame(Parcel parcel) {
+        super((String) Util.castNonNull(parcel.readString()));
+        this.data = (byte[]) Util.castNonNull(parcel.createByteArray());
     }
 
     public boolean equals(Object obj) {

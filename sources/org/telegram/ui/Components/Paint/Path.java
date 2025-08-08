@@ -23,18 +23,6 @@ public class Path {
         vector.addAll(Arrays.asList(pointArr));
     }
 
-    public float getBaseWeight() {
-        return this.baseWeight;
-    }
-
-    public Brush getBrush() {
-        return this.brush;
-    }
-
-    public int getColor() {
-        return this.color;
-    }
-
     public int getLength() {
         Vector vector = this.points;
         if (vector == null) {
@@ -47,6 +35,18 @@ public class Path {
         Point[] pointArr = new Point[this.points.size()];
         this.points.toArray(pointArr);
         return pointArr;
+    }
+
+    public int getColor() {
+        return this.color;
+    }
+
+    public float getBaseWeight() {
+        return this.baseWeight;
+    }
+
+    public Brush getBrush() {
+        return this.brush;
     }
 
     public void setup(int i, float f, Brush brush) {

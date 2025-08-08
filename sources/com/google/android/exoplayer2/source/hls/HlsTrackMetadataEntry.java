@@ -27,6 +27,26 @@ public final class HlsTrackMetadataEntry implements Metadata.Entry {
     public final String name;
     public final List variantInfos;
 
+    @Override // android.os.Parcelable
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
+    public /* synthetic */ byte[] getWrappedMetadataBytes() {
+        return Metadata.Entry.-CC.$default$getWrappedMetadataBytes(this);
+    }
+
+    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
+    public /* synthetic */ Format getWrappedMetadataFormat() {
+        return Metadata.Entry.-CC.$default$getWrappedMetadataFormat(this);
+    }
+
+    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
+    public /* synthetic */ void populateMediaMetadata(MediaMetadata.Builder builder) {
+        Metadata.Entry.-CC.$default$populateMediaMetadata(this, builder);
+    }
+
     public static final class VariantInfo implements Parcelable {
         public static final Parcelable.Creator<VariantInfo> CREATOR = new Parcelable.Creator() { // from class: com.google.android.exoplayer2.source.hls.HlsTrackMetadataEntry.VariantInfo.1
             @Override // android.os.Parcelable.Creator
@@ -46,6 +66,11 @@ public final class HlsTrackMetadataEntry implements Metadata.Entry {
         public final String subtitleGroupId;
         public final String videoGroupId;
 
+        @Override // android.os.Parcelable
+        public int describeContents() {
+            return 0;
+        }
+
         public VariantInfo(int i, int i2, String str, String str2, String str3, String str4) {
             this.averageBitrate = i;
             this.peakBitrate = i2;
@@ -62,11 +87,6 @@ public final class HlsTrackMetadataEntry implements Metadata.Entry {
             this.audioGroupId = parcel.readString();
             this.subtitleGroupId = parcel.readString();
             this.captionGroupId = parcel.readString();
-        }
-
-        @Override // android.os.Parcelable
-        public int describeContents() {
-            return 0;
         }
 
         public boolean equals(Object obj) {
@@ -103,6 +123,12 @@ public final class HlsTrackMetadataEntry implements Metadata.Entry {
         }
     }
 
+    public HlsTrackMetadataEntry(String str, String str2, List list) {
+        this.groupId = str;
+        this.name = str2;
+        this.variantInfos = Collections.unmodifiableList(new ArrayList(list));
+    }
+
     HlsTrackMetadataEntry(Parcel parcel) {
         this.groupId = parcel.readString();
         this.name = parcel.readString();
@@ -112,50 +138,6 @@ public final class HlsTrackMetadataEntry implements Metadata.Entry {
             arrayList.add((VariantInfo) parcel.readParcelable(VariantInfo.class.getClassLoader()));
         }
         this.variantInfos = Collections.unmodifiableList(arrayList);
-    }
-
-    public HlsTrackMetadataEntry(String str, String str2, List list) {
-        this.groupId = str;
-        this.name = str2;
-        this.variantInfos = Collections.unmodifiableList(new ArrayList(list));
-    }
-
-    @Override // android.os.Parcelable
-    public int describeContents() {
-        return 0;
-    }
-
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || HlsTrackMetadataEntry.class != obj.getClass()) {
-            return false;
-        }
-        HlsTrackMetadataEntry hlsTrackMetadataEntry = (HlsTrackMetadataEntry) obj;
-        return TextUtils.equals(this.groupId, hlsTrackMetadataEntry.groupId) && TextUtils.equals(this.name, hlsTrackMetadataEntry.name) && this.variantInfos.equals(hlsTrackMetadataEntry.variantInfos);
-    }
-
-    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
-    public /* synthetic */ byte[] getWrappedMetadataBytes() {
-        return Metadata.Entry.-CC.$default$getWrappedMetadataBytes(this);
-    }
-
-    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
-    public /* synthetic */ Format getWrappedMetadataFormat() {
-        return Metadata.Entry.-CC.$default$getWrappedMetadataFormat(this);
-    }
-
-    public int hashCode() {
-        String str = this.groupId;
-        int hashCode = (str != null ? str.hashCode() : 0) * 31;
-        String str2 = this.name;
-        return ((hashCode + (str2 != null ? str2.hashCode() : 0)) * 31) + this.variantInfos.hashCode();
-    }
-
-    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
-    public /* synthetic */ void populateMediaMetadata(MediaMetadata.Builder builder) {
-        Metadata.Entry.-CC.$default$populateMediaMetadata(this, builder);
     }
 
     public String toString() {
@@ -169,6 +151,24 @@ public final class HlsTrackMetadataEntry implements Metadata.Entry {
         }
         sb.append(str);
         return sb.toString();
+    }
+
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || HlsTrackMetadataEntry.class != obj.getClass()) {
+            return false;
+        }
+        HlsTrackMetadataEntry hlsTrackMetadataEntry = (HlsTrackMetadataEntry) obj;
+        return TextUtils.equals(this.groupId, hlsTrackMetadataEntry.groupId) && TextUtils.equals(this.name, hlsTrackMetadataEntry.name) && this.variantInfos.equals(hlsTrackMetadataEntry.variantInfos);
+    }
+
+    public int hashCode() {
+        String str = this.groupId;
+        int hashCode = (str != null ? str.hashCode() : 0) * 31;
+        String str2 = this.name;
+        return ((hashCode + (str2 != null ? str2.hashCode() : 0)) * 31) + this.variantInfos.hashCode();
     }
 
     @Override // android.os.Parcelable

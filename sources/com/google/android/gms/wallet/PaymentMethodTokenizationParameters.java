@@ -12,17 +12,17 @@ public final class PaymentMethodTokenizationParameters extends AbstractSafeParce
     int zza;
     Bundle zzb;
 
-    PaymentMethodTokenizationParameters(int i, Bundle bundle) {
-        new Bundle();
-        this.zza = i;
-        this.zzb = bundle;
-    }
-
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
         SafeParcelWriter.writeInt(parcel, 2, this.zza);
         SafeParcelWriter.writeBundle(parcel, 3, this.zzb, false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    PaymentMethodTokenizationParameters(int i, Bundle bundle) {
+        new Bundle();
+        this.zza = i;
+        this.zzb = bundle;
     }
 }

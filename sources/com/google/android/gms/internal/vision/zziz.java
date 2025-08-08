@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.vision;
 
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -30,7 +30,7 @@ abstract class zziz {
             try {
                 try {
                     try {
-                        ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(Class.forName(str, true, classLoader).getConstructor(null).newInstance(null));
+                        WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(Class.forName(str, true, classLoader).getConstructor(null).newInstance(null));
                         throw null;
                     } catch (InstantiationException e) {
                         throw new IllegalStateException(e);
@@ -48,7 +48,7 @@ abstract class zziz {
             ArrayList arrayList = new ArrayList();
             while (it.hasNext()) {
                 try {
-                    ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
+                    WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
                     throw null;
                 } catch (ServiceConfigurationError e5) {
                     Logger logger = zza;

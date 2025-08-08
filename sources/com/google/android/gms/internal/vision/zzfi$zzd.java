@@ -8,22 +8,6 @@ public final class zzfi$zzd extends zzjb implements zzkm {
     private static volatile zzkx zze;
     private zzjl zzc = zzjb.zzo();
 
-    public static final class zza extends zzjb.zzb implements zzkm {
-        private zza() {
-            super(zzfi$zzd.zzd);
-        }
-
-        /* synthetic */ zza(zzfk zzfkVar) {
-            this();
-        }
-    }
-
-    static {
-        zzfi$zzd zzfi_zzd = new zzfi$zzd();
-        zzd = zzfi_zzd;
-        zzjb.zza(zzfi$zzd.class, zzfi_zzd);
-    }
-
     private zzfi$zzd() {
     }
 
@@ -65,5 +49,21 @@ public final class zzfi$zzd extends zzjb implements zzkm {
             default:
                 throw new UnsupportedOperationException();
         }
+    }
+
+    public static final class zza extends zzjb.zzb implements zzkm {
+        private zza() {
+            super(zzfi$zzd.zzd);
+        }
+
+        /* synthetic */ zza(zzfk zzfkVar) {
+            this();
+        }
+    }
+
+    static {
+        zzfi$zzd zzfi_zzd = new zzfi$zzd();
+        zzd = zzfi_zzd;
+        zzjb.zza(zzfi$zzd.class, zzfi_zzd);
     }
 }

@@ -16,12 +16,12 @@ public interface UnaryOperator<T> extends Function<T, T> {
             if (unaryOperator == null) {
                 return null;
             }
-            return unaryOperator instanceof x0 ? ((x0) unaryOperator).a : new VivifiedWrapper(unaryOperator);
+            return unaryOperator instanceof F0 ? ((F0) unaryOperator).a : new VivifiedWrapper(unaryOperator);
         }
 
         @Override // j$.util.function.Function
         public final /* synthetic */ Function andThen(Function function) {
-            return Function.VivifiedWrapper.convert(this.a.andThen(x.a(function)));
+            return Function.VivifiedWrapper.convert(this.a.andThen(z.a(function)));
         }
 
         @Override // j$.util.function.Function
@@ -31,7 +31,7 @@ public interface UnaryOperator<T> extends Function<T, T> {
 
         @Override // j$.util.function.Function
         public final /* synthetic */ Function compose(Function function) {
-            return Function.VivifiedWrapper.convert(this.a.compose(x.a(function)));
+            return Function.VivifiedWrapper.convert(this.a.compose(z.a(function)));
         }
 
         public final /* synthetic */ boolean equals(Object obj) {

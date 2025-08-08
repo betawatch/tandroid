@@ -119,9 +119,7 @@ public final class zzaq extends zzd {
         if (elapsedRealtime == 0) {
             return j;
         }
-        double d2 = elapsedRealtime;
-        Double.isNaN(d2);
-        long j3 = j + ((long) (d2 * d));
+        long j3 = j + ((long) (elapsedRealtime * d));
         if (j2 > 0 && j3 > j2) {
             return j2;
         }
@@ -200,52 +198,6 @@ public final class zzaq extends zzd {
         return iArr;
     }
 
-    public final long zzA(zzas zzasVar, int i, long j, MediaQueueItem[] mediaQueueItemArr, int i2, Boolean bool, Integer num, JSONObject jSONObject) {
-        if (j != -1 && j < 0) {
-            throw new IllegalArgumentException("playPosition cannot be negative: " + j);
-        }
-        JSONObject jSONObject2 = new JSONObject();
-        long zzd = zzd();
-        try {
-            jSONObject2.put("requestId", zzd);
-            jSONObject2.put("type", "QUEUE_UPDATE");
-            jSONObject2.put("mediaSessionId", zzn());
-            if (i != 0) {
-                jSONObject2.put("currentItemId", i);
-            }
-            if (i2 != 0) {
-                jSONObject2.put("jump", i2);
-            }
-            if (mediaQueueItemArr != null && mediaQueueItemArr.length > 0) {
-                JSONArray jSONArray = new JSONArray();
-                for (int i3 = 0; i3 < mediaQueueItemArr.length; i3++) {
-                    jSONArray.put(i3, mediaQueueItemArr[i3].toJson());
-                }
-                jSONObject2.put("items", jSONArray);
-            }
-            if (bool != null) {
-                jSONObject2.put("shuffle", bool);
-            }
-            String zza = MediaCommon.zza(num);
-            if (zza != null) {
-                jSONObject2.put("repeatMode", zza);
-            }
-            if (j != -1) {
-                jSONObject2.put("currentTime", CastUtils.millisecToSec(j));
-            }
-            if (jSONObject != null) {
-                jSONObject2.put("customData", jSONObject);
-            }
-            if (zzZ()) {
-                jSONObject2.put("sequenceNumber", this.zzz);
-            }
-        } catch (JSONException unused) {
-        }
-        zzg(jSONObject2.toString(), zzd, null);
-        this.zzn.zzb(zzd, new zzam(this, zzasVar));
-        return zzd;
-    }
-
     public final long zzB(zzas zzasVar) {
         JSONObject jSONObject = new JSONObject();
         long zzd = zzd();
@@ -263,12 +215,7 @@ public final class zzaq extends zzd {
         return zzd;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x0056 A[Catch: JSONException -> 0x005f, TRY_LEAVE, TryCatch #0 {JSONException -> 0x005f, blocks: (B:5:0x0019, B:9:0x0042, B:10:0x0050, B:12:0x0056, B:17:0x0046), top: B:4:0x0019 }] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final long zzC(zzas zzasVar, MediaSeekOptions mediaSeekOptions) {
-        String str;
         JSONObject jSONObject = new JSONObject();
         long zzd = zzd();
         long position = mediaSeekOptions.isSeekToInfinite() ? 4294967296000L : mediaSeekOptions.getPosition();
@@ -277,20 +224,15 @@ public final class zzaq extends zzd {
             jSONObject.put("type", "SEEK");
             jSONObject.put("mediaSessionId", zzn());
             jSONObject.put("currentTime", CastUtils.millisecToSec(position));
-        } catch (JSONException unused) {
-        }
-        if (mediaSeekOptions.getResumeState() != 1) {
-            str = mediaSeekOptions.getResumeState() == 2 ? "PLAYBACK_PAUSE" : "PLAYBACK_START";
+            if (mediaSeekOptions.getResumeState() == 1) {
+                jSONObject.put("resumeState", "PLAYBACK_START");
+            } else if (mediaSeekOptions.getResumeState() == 2) {
+                jSONObject.put("resumeState", "PLAYBACK_PAUSE");
+            }
             if (mediaSeekOptions.getCustomData() != null) {
                 jSONObject.put("customData", mediaSeekOptions.getCustomData());
             }
-            zzg(jSONObject.toString(), zzd, null);
-            this.zzx = Long.valueOf(position);
-            this.zzg.zzb(zzd, new zzal(this, zzasVar));
-            return zzd;
-        }
-        jSONObject.put("resumeState", str);
-        if (mediaSeekOptions.getCustomData() != null) {
+        } catch (JSONException unused) {
         }
         zzg(jSONObject.toString(), zzd, null);
         this.zzx = Long.valueOf(position);
@@ -864,6 +806,52 @@ public final class zzaq extends zzd {
         }
         zzg(jSONObject.toString(), zzd, null);
         this.zzr.zzb(zzd, zzasVar);
+        return zzd;
+    }
+
+    public final long zzA(zzas zzasVar, int i, long j, MediaQueueItem[] mediaQueueItemArr, int i2, Boolean bool, Integer num, JSONObject jSONObject) {
+        if (j != -1 && j < 0) {
+            throw new IllegalArgumentException("playPosition cannot be negative: " + j);
+        }
+        JSONObject jSONObject2 = new JSONObject();
+        long zzd = zzd();
+        try {
+            jSONObject2.put("requestId", zzd);
+            jSONObject2.put("type", "QUEUE_UPDATE");
+            jSONObject2.put("mediaSessionId", zzn());
+            if (i != 0) {
+                jSONObject2.put("currentItemId", i);
+            }
+            if (i2 != 0) {
+                jSONObject2.put("jump", i2);
+            }
+            if (mediaQueueItemArr != null && mediaQueueItemArr.length > 0) {
+                JSONArray jSONArray = new JSONArray();
+                for (int i3 = 0; i3 < mediaQueueItemArr.length; i3++) {
+                    jSONArray.put(i3, mediaQueueItemArr[i3].toJson());
+                }
+                jSONObject2.put("items", jSONArray);
+            }
+            if (bool != null) {
+                jSONObject2.put("shuffle", bool);
+            }
+            String zza = MediaCommon.zza(num);
+            if (zza != null) {
+                jSONObject2.put("repeatMode", zza);
+            }
+            if (j != -1) {
+                jSONObject2.put("currentTime", CastUtils.millisecToSec(j));
+            }
+            if (jSONObject != null) {
+                jSONObject2.put("customData", jSONObject);
+            }
+            if (zzZ()) {
+                jSONObject2.put("sequenceNumber", this.zzz);
+            }
+        } catch (JSONException unused) {
+        }
+        zzg(jSONObject2.toString(), zzd, null);
+        this.zzn.zzb(zzd, new zzam(this, zzasVar));
         return zzd;
     }
 }

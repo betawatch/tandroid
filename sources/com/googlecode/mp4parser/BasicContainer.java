@@ -11,7 +11,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class BasicContainer implements Container, Iterator, Closeable {
     private static final Box EOF = new AbstractBox("eof ") { // from class: com.googlecode.mp4parser.BasicContainer.1
         @Override // com.googlecode.mp4parser.AbstractBox
@@ -34,19 +34,6 @@ public abstract class BasicContainer implements Container, Iterator, Closeable {
     long endPosition = 0;
     private List boxes = new ArrayList();
 
-    public void addBox(Box box) {
-        if (box != null) {
-            this.boxes = new ArrayList(getBoxes());
-            box.setParent(this);
-            this.boxes.add(box);
-        }
-    }
-
-    @Override // java.io.Closeable, java.lang.AutoCloseable
-    public void close() {
-        throw null;
-    }
-
     @Override // com.coremedia.iso.boxes.Container
     public List getBoxes() {
         return this.boxes;
@@ -58,6 +45,19 @@ public abstract class BasicContainer implements Container, Iterator, Closeable {
             j += ((Box) this.boxes.get(i)).getSize();
         }
         return j;
+    }
+
+    public void addBox(Box box) {
+        if (box != null) {
+            this.boxes = new ArrayList(getBoxes());
+            box.setParent(this);
+            this.boxes.add(box);
+        }
+    }
+
+    @Override // java.util.Iterator
+    public void remove() {
+        throw new UnsupportedOperationException();
     }
 
     @Override // java.util.Iterator
@@ -81,17 +81,12 @@ public abstract class BasicContainer implements Container, Iterator, Closeable {
     @Override // java.util.Iterator
     public Box next() {
         Box box = this.lookahead;
-        if (box == null || box == EOF) {
-            this.lookahead = EOF;
-            throw new NoSuchElementException();
+        if (box != null && box != EOF) {
+            this.lookahead = null;
+            return box;
         }
-        this.lookahead = null;
-        return box;
-    }
-
-    @Override // java.util.Iterator
-    public void remove() {
-        throw new UnsupportedOperationException();
+        this.lookahead = EOF;
+        throw new NoSuchElementException();
     }
 
     public String toString() {
@@ -113,5 +108,10 @@ public abstract class BasicContainer implements Container, Iterator, Closeable {
         while (it.hasNext()) {
             ((Box) it.next()).getBox(writableByteChannel);
         }
+    }
+
+    @Override // java.io.Closeable, java.lang.AutoCloseable
+    public void close() {
+        throw null;
     }
 }

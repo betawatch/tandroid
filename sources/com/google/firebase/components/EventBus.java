@@ -1,6 +1,6 @@
 package com.google.firebase.components;
 
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import com.google.firebase.events.Event;
 import com.google.firebase.events.EventHandler;
 import com.google.firebase.events.Publisher;
@@ -22,38 +22,6 @@ class EventBus implements Subscriber, Publisher {
 
     EventBus(Executor executor) {
         this.defaultExecutor = executor;
-    }
-
-    private synchronized Set getHandlers(Event event) {
-        throw null;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$publish$0(Map.Entry entry, Event event) {
-        ((EventHandler) entry.getKey()).handle(event);
-    }
-
-    void enablePublishingAndFlushPending() {
-        Queue queue;
-        synchronized (this) {
-            try {
-                queue = this.pendingEvents;
-                if (queue != null) {
-                    this.pendingEvents = null;
-                } else {
-                    queue = null;
-                }
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-        if (queue != null) {
-            Iterator it = queue.iterator();
-            while (it.hasNext()) {
-                ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
-                publish(null);
-            }
-        }
     }
 
     public void publish(final Event event) {
@@ -81,9 +49,13 @@ class EventBus implements Subscriber, Publisher {
         }
     }
 
-    @Override // com.google.firebase.events.Subscriber
-    public void subscribe(Class cls, EventHandler eventHandler) {
-        subscribe(cls, this.defaultExecutor, eventHandler);
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$publish$0(Map.Entry entry, Event event) {
+        ((EventHandler) entry.getKey()).handle(event);
+    }
+
+    private synchronized Set getHandlers(Event event) {
+        throw null;
     }
 
     public synchronized void subscribe(Class cls, Executor executor, EventHandler eventHandler) {
@@ -97,6 +69,34 @@ class EventBus implements Subscriber, Publisher {
             ((ConcurrentHashMap) this.handlerMap.get(cls)).put(eventHandler, executor);
         } catch (Throwable th) {
             throw th;
+        }
+    }
+
+    @Override // com.google.firebase.events.Subscriber
+    public void subscribe(Class cls, EventHandler eventHandler) {
+        subscribe(cls, this.defaultExecutor, eventHandler);
+    }
+
+    void enablePublishingAndFlushPending() {
+        Queue queue;
+        synchronized (this) {
+            try {
+                queue = this.pendingEvents;
+                if (queue != null) {
+                    this.pendingEvents = null;
+                } else {
+                    queue = null;
+                }
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+        if (queue != null) {
+            Iterator it = queue.iterator();
+            while (it.hasNext()) {
+                WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
+                publish(null);
+            }
         }
     }
 }

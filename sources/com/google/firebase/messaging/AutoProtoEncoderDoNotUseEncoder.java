@@ -1,6 +1,6 @@
 package com.google.firebase.messaging;
 
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import com.google.firebase.encoders.FieldDescriptor;
 import com.google.firebase.encoders.ObjectEncoder;
 import com.google.firebase.encoders.ObjectEncoderContext;
@@ -10,9 +10,50 @@ import com.google.firebase.encoders.proto.AtProtobuf;
 import com.google.firebase.messaging.reporting.MessagingClientEvent;
 import com.google.firebase.messaging.reporting.MessagingClientEventExtension;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class AutoProtoEncoderDoNotUseEncoder implements Configurator {
     public static final Configurator CONFIG = new AutoProtoEncoderDoNotUseEncoder();
+
+    private AutoProtoEncoderDoNotUseEncoder() {
+    }
+
+    @Override // com.google.firebase.encoders.config.Configurator
+    public void configure(EncoderConfig encoderConfig) {
+        encoderConfig.registerEncoder(ProtoEncoderDoNotUse.class, ProtoEncoderDoNotUseEncoder.INSTANCE);
+        encoderConfig.registerEncoder(MessagingClientEventExtension.class, MessagingClientEventExtensionEncoder.INSTANCE);
+        encoderConfig.registerEncoder(MessagingClientEvent.class, MessagingClientEventEncoder.INSTANCE);
+    }
+
+    private static final class ProtoEncoderDoNotUseEncoder implements ObjectEncoder {
+        static final ProtoEncoderDoNotUseEncoder INSTANCE = new ProtoEncoderDoNotUseEncoder();
+        private static final FieldDescriptor MESSAGINGCLIENTEVENTEXTENSION_DESCRIPTOR = FieldDescriptor.of("messagingClientEventExtension");
+
+        private ProtoEncoderDoNotUseEncoder() {
+        }
+
+        @Override // com.google.firebase.encoders.ObjectEncoder
+        public /* bridge */ /* synthetic */ void encode(Object obj, Object obj2) {
+            WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(obj);
+            encode((ProtoEncoderDoNotUse) null, (ObjectEncoderContext) obj2);
+        }
+
+        public void encode(ProtoEncoderDoNotUse protoEncoderDoNotUse, ObjectEncoderContext objectEncoderContext) {
+            throw null;
+        }
+    }
+
+    private static final class MessagingClientEventExtensionEncoder implements ObjectEncoder {
+        static final MessagingClientEventExtensionEncoder INSTANCE = new MessagingClientEventExtensionEncoder();
+        private static final FieldDescriptor MESSAGINGCLIENTEVENT_DESCRIPTOR = FieldDescriptor.builder("messagingClientEvent").withProperty(AtProtobuf.builder().tag(1).build()).build();
+
+        private MessagingClientEventExtensionEncoder() {
+        }
+
+        @Override // com.google.firebase.encoders.ObjectEncoder
+        public void encode(MessagingClientEventExtension messagingClientEventExtension, ObjectEncoderContext objectEncoderContext) {
+            objectEncoderContext.add(MESSAGINGCLIENTEVENT_DESCRIPTOR, messagingClientEventExtension.getMessagingClientEventInternal());
+        }
+    }
 
     private static final class MessagingClientEventEncoder implements ObjectEncoder {
         static final MessagingClientEventEncoder INSTANCE = new MessagingClientEventEncoder();
@@ -53,46 +94,5 @@ public final class AutoProtoEncoderDoNotUseEncoder implements Configurator {
             objectEncoderContext.add(CAMPAIGNID_DESCRIPTOR, messagingClientEvent.getCampaignId());
             objectEncoderContext.add(COMPOSERLABEL_DESCRIPTOR, messagingClientEvent.getComposerLabel());
         }
-    }
-
-    private static final class MessagingClientEventExtensionEncoder implements ObjectEncoder {
-        static final MessagingClientEventExtensionEncoder INSTANCE = new MessagingClientEventExtensionEncoder();
-        private static final FieldDescriptor MESSAGINGCLIENTEVENT_DESCRIPTOR = FieldDescriptor.builder("messagingClientEvent").withProperty(AtProtobuf.builder().tag(1).build()).build();
-
-        private MessagingClientEventExtensionEncoder() {
-        }
-
-        @Override // com.google.firebase.encoders.ObjectEncoder
-        public void encode(MessagingClientEventExtension messagingClientEventExtension, ObjectEncoderContext objectEncoderContext) {
-            objectEncoderContext.add(MESSAGINGCLIENTEVENT_DESCRIPTOR, messagingClientEventExtension.getMessagingClientEventInternal());
-        }
-    }
-
-    private static final class ProtoEncoderDoNotUseEncoder implements ObjectEncoder {
-        static final ProtoEncoderDoNotUseEncoder INSTANCE = new ProtoEncoderDoNotUseEncoder();
-        private static final FieldDescriptor MESSAGINGCLIENTEVENTEXTENSION_DESCRIPTOR = FieldDescriptor.of("messagingClientEventExtension");
-
-        private ProtoEncoderDoNotUseEncoder() {
-        }
-
-        public void encode(ProtoEncoderDoNotUse protoEncoderDoNotUse, ObjectEncoderContext objectEncoderContext) {
-            throw null;
-        }
-
-        @Override // com.google.firebase.encoders.ObjectEncoder
-        public /* bridge */ /* synthetic */ void encode(Object obj, Object obj2) {
-            ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(obj);
-            encode((ProtoEncoderDoNotUse) null, (ObjectEncoderContext) obj2);
-        }
-    }
-
-    private AutoProtoEncoderDoNotUseEncoder() {
-    }
-
-    @Override // com.google.firebase.encoders.config.Configurator
-    public void configure(EncoderConfig encoderConfig) {
-        encoderConfig.registerEncoder(ProtoEncoderDoNotUse.class, ProtoEncoderDoNotUseEncoder.INSTANCE);
-        encoderConfig.registerEncoder(MessagingClientEventExtension.class, MessagingClientEventExtensionEncoder.INSTANCE);
-        encoderConfig.registerEncoder(MessagingClientEvent.class, MessagingClientEventEncoder.INSTANCE);
     }
 }

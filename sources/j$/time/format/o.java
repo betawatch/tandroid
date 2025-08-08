@@ -27,6 +27,7 @@ final class o extends n {
     /* JADX WARN: Multi-variable type inference failed */
     @Override // j$.time.format.n, j$.time.format.f
     public final boolean f(r rVar, StringBuilder sb) {
+        char c;
         String[] strArr;
         ZoneId zoneId = (ZoneId) rVar.f(j$.time.temporal.j.j());
         if (zoneId == null) {
@@ -35,7 +36,11 @@ final class o extends n {
         String id = zoneId.getId();
         if (!(zoneId instanceof ZoneOffset)) {
             j$.time.temporal.k d2 = rVar.d();
-            char c = d2.k(j$.time.temporal.a.INSTANT_SECONDS) ? zoneId.getRules().g(Instant.o(d2)) ? (char) 1 : (char) 0 : (char) 2;
+            if (d2.j(j$.time.temporal.a.INSTANT_SECONDS)) {
+                c = zoneId.getRules().g(Instant.n(d2)) ? (char) 1 : (char) 0;
+            } else {
+                c = 2;
+            }
             Locale c2 = rVar.c();
             TextStyle textStyle = TextStyle.NARROW;
             String str = null;
@@ -54,8 +59,13 @@ final class o extends n {
                     concurrentHashMap.put(id, new SoftReference(map));
                     strArr = strArr2;
                 }
-                int f = textStyle2.f();
-                str = c != 0 ? c != 1 ? strArr[f + 5] : strArr[f + 3] : strArr[f + 1];
+                if (c == 0) {
+                    str = strArr[textStyle2.f() + 1];
+                } else if (c == 1) {
+                    str = strArr[textStyle2.f() + 3];
+                } else {
+                    str = strArr[textStyle2.f() + 5];
+                }
             }
             if (str != null) {
                 id = str;

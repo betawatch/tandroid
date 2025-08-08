@@ -6,13 +6,13 @@ import com.google.mlkit.common.sdkinternal.SharedPrefManager;
 
 /* loaded from: classes.dex */
 final class zznz extends LazyInstanceMap {
-    /* synthetic */ zznz(zzny zznyVar) {
-    }
-
     @Override // com.google.mlkit.common.sdkinternal.LazyInstanceMap
     protected final /* bridge */ /* synthetic */ Object create(Object obj) {
         zznh zznhVar = (zznh) obj;
         MlKitContext mlKitContext = MlKitContext.getInstance();
         return new zznp(mlKitContext.getApplicationContext(), (SharedPrefManager) mlKitContext.get(SharedPrefManager.class), new zzni(MlKitContext.getInstance().getApplicationContext(), zznhVar), zznhVar.zzb());
+    }
+
+    /* synthetic */ zznz(zzny zznyVar) {
     }
 }

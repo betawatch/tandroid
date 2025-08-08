@@ -10,6 +10,9 @@ public abstract class zzl extends com.google.android.gms.internal.vision.zza imp
             return null;
         }
         IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.vision.face.internal.client.INativeFaceDetectorCreator");
-        return queryLocalInterface instanceof zzi ? (zzi) queryLocalInterface : new zzk(iBinder);
+        if (queryLocalInterface instanceof zzi) {
+            return (zzi) queryLocalInterface;
+        }
+        return new zzk(iBinder);
     }
 }

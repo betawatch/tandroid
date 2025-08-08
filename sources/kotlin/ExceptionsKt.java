@@ -1,5 +1,5 @@
 package kotlin;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class ExceptionsKt extends ExceptionsKt__ExceptionsKt {
 }

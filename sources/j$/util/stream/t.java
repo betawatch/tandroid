@@ -1,76 +1,43 @@
 package j$.util.stream;
 
 /* loaded from: classes2.dex */
-final class t extends X1 {
-    public final /* synthetic */ int b;
-    final /* synthetic */ b c;
+final class t extends z {
+    public final /* synthetic */ int m;
+    final /* synthetic */ Object n;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ t(b bVar, e2 e2Var, int i) {
-        super(e2Var);
-        this.b = i;
-        this.c = bVar;
+    public /* synthetic */ t(b bVar, int i, Object obj, int i2) {
+        super(bVar, i, 1);
+        this.m = i2;
+        this.n = obj;
     }
 
-    @Override // j$.util.stream.e2, j$.util.function.m
-    public final void accept(double d) {
-        switch (this.b) {
+    @Override // j$.util.stream.b
+    final d2 w0(int i, d2 d2Var) {
+        switch (this.m) {
             case 0:
-                this.a.accept(((j$.util.function.v) ((u) this.c).n).a.applyAsDouble(d));
-                return;
+                return new s(this, d2Var, 0);
             case 1:
-                this.a.r((e2) ((j$.util.function.p) ((v) this.c).n).apply(d));
-                return;
+                return new s(this, d2Var, 4);
             case 2:
-                this.a.accept(((j$.util.function.r) ((w) this.c).n).a.applyAsInt(d));
-                return;
+                return new s(this, d2Var, 5);
             case 3:
-                this.a.accept(((j$.util.function.u) ((x) this.c).n).applyAsLong(d));
-                return;
+                return new s(this, d2Var, 6);
             case 4:
-                E e = (E) ((j$.util.function.p) ((u) this.c).n).apply(d);
-                if (e != null) {
-                    try {
-                        e.sequential().i(new q(1, this));
-                    } catch (Throwable th) {
-                        try {
-                            e.close();
-                        } catch (Throwable th2) {
-                            th.addSuppressed(th2);
-                        }
-                        throw th;
-                    }
-                }
-                if (e != null) {
-                    e.close();
-                    return;
-                }
-                return;
+                return new V(this, d2Var, 4);
             case 5:
-                if (((j$.util.function.q) ((u) this.c).n).a.test(d)) {
-                    this.a.accept(d);
-                    return;
-                }
-                return;
+                return new e0(this, d2Var, 3);
+            case 6:
+                return new n(this, d2Var, 6);
             default:
-                ((j$.util.function.m) ((u) this.c).n).accept(d);
-                this.a.accept(d);
-                return;
+                return new Q1(this, d2Var);
         }
     }
 
-    @Override // j$.util.stream.X1, j$.util.stream.e2
-    public void n(long j) {
-        switch (this.b) {
-            case 4:
-                this.a.n(-1L);
-                break;
-            case 5:
-                this.a.n(-1L);
-                break;
-            default:
-                super.n(j);
-                break;
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t(A a, j$.util.function.l lVar) {
+        super(a, 0, 1);
+        this.m = 3;
+        this.n = lVar;
     }
 }

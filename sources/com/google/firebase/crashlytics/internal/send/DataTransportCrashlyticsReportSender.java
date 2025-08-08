@@ -14,7 +14,7 @@ import com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsR
 import com.google.firebase.crashlytics.internal.settings.SettingsProvider;
 import java.nio.charset.Charset;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class DataTransportCrashlyticsReportSender {
     private final ReportQueue reportQueue;
     private final Transformer transportTransform;
@@ -30,9 +30,9 @@ public class DataTransportCrashlyticsReportSender {
         }
     };
 
-    DataTransportCrashlyticsReportSender(ReportQueue reportQueue, Transformer transformer) {
-        this.reportQueue = reportQueue;
-        this.transportTransform = transformer;
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ byte[] lambda$static$0(CrashlyticsReport crashlyticsReport) {
+        return TRANSFORM.reportToJson(crashlyticsReport).getBytes(Charset.forName("UTF-8"));
     }
 
     public static DataTransportCrashlyticsReportSender create(Context context, SettingsProvider settingsProvider, OnDemandCounter onDemandCounter) {
@@ -43,9 +43,13 @@ public class DataTransportCrashlyticsReportSender {
         return new DataTransportCrashlyticsReportSender(new ReportQueue(newFactory.getTransport("FIREBASE_CRASHLYTICS_REPORT", CrashlyticsReport.class, of, transformer), settingsProvider.getSettingsSync(), onDemandCounter), transformer);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ byte[] lambda$static$0(CrashlyticsReport crashlyticsReport) {
-        return TRANSFORM.reportToJson(crashlyticsReport).getBytes(Charset.forName("UTF-8"));
+    DataTransportCrashlyticsReportSender(ReportQueue reportQueue, Transformer transformer) {
+        this.reportQueue = reportQueue;
+        this.transportTransform = transformer;
+    }
+
+    public Task enqueueReport(CrashlyticsReportWithSessionId crashlyticsReportWithSessionId, boolean z) {
+        return this.reportQueue.enqueueReport(crashlyticsReportWithSessionId, z).getTask();
     }
 
     private static String mergeStrings(String str, String str2) {
@@ -61,9 +65,5 @@ public class DataTransportCrashlyticsReportSender {
             }
         }
         return sb.toString();
-    }
-
-    public Task enqueueReport(CrashlyticsReportWithSessionId crashlyticsReportWithSessionId, boolean z) {
-        return this.reportQueue.enqueueReport(crashlyticsReportWithSessionId, z).getTask();
     }
 }

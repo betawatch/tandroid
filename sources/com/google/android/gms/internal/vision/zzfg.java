@@ -15,12 +15,10 @@ final class zzfg {
     }
 
     public final List zza(Throwable th, boolean z) {
-        while (true) {
-            Reference poll = this.zzb.poll();
-            if (poll == null) {
-                break;
-            }
+        Reference poll = this.zzb.poll();
+        while (poll != null) {
             this.zza.remove(poll);
+            poll = this.zzb.poll();
         }
         List list = (List) this.zza.get(new zzff(th, null));
         if (!z || list != null) {

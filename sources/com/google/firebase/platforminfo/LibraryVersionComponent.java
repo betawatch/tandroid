@@ -6,7 +6,7 @@ import com.google.firebase.components.ComponentContainer;
 import com.google.firebase.components.ComponentFactory;
 import com.google.firebase.components.Dependency;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class LibraryVersionComponent {
 
     public interface VersionExtractor {

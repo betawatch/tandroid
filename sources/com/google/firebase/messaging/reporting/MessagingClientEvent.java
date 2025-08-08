@@ -2,7 +2,7 @@ package com.google.firebase.messaging.reporting;
 
 import com.google.firebase.encoders.proto.ProtoEnum;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class MessagingClientEvent {
     private static final MessagingClientEvent DEFAULT_INSTANCE = new Builder().build();
     private final String analytics_label_;
@@ -20,6 +20,88 @@ public final class MessagingClientEvent {
     private final SDKPlatform sdk_platform_;
     private final String topic_;
     private final int ttl_;
+
+    MessagingClientEvent(long j, String str, String str2, MessageType messageType, SDKPlatform sDKPlatform, String str3, String str4, int i, int i2, String str5, long j2, Event event, String str6, long j3, String str7) {
+        this.project_number_ = j;
+        this.message_id_ = str;
+        this.instance_id_ = str2;
+        this.message_type_ = messageType;
+        this.sdk_platform_ = sDKPlatform;
+        this.package_name_ = str3;
+        this.collapse_key_ = str4;
+        this.priority_ = i;
+        this.ttl_ = i2;
+        this.topic_ = str5;
+        this.bulk_id_ = j2;
+        this.event_ = event;
+        this.analytics_label_ = str6;
+        this.campaign_id_ = j3;
+        this.composer_label_ = str7;
+    }
+
+    public static Builder newBuilder() {
+        return new Builder();
+    }
+
+    public long getProjectNumber() {
+        return this.project_number_;
+    }
+
+    public String getMessageId() {
+        return this.message_id_;
+    }
+
+    public String getInstanceId() {
+        return this.instance_id_;
+    }
+
+    public MessageType getMessageType() {
+        return this.message_type_;
+    }
+
+    public SDKPlatform getSdkPlatform() {
+        return this.sdk_platform_;
+    }
+
+    public String getPackageName() {
+        return this.package_name_;
+    }
+
+    public String getCollapseKey() {
+        return this.collapse_key_;
+    }
+
+    public int getPriority() {
+        return this.priority_;
+    }
+
+    public int getTtl() {
+        return this.ttl_;
+    }
+
+    public String getTopic() {
+        return this.topic_;
+    }
+
+    public long getBulkId() {
+        return this.bulk_id_;
+    }
+
+    public Event getEvent() {
+        return this.event_;
+    }
+
+    public String getAnalyticsLabel() {
+        return this.analytics_label_;
+    }
+
+    public long getCampaignId() {
+        return this.campaign_id_;
+    }
+
+    public String getComposerLabel() {
+        return this.composer_label_;
+    }
 
     public static final class Builder {
         private long project_number_ = 0;
@@ -45,28 +127,8 @@ public final class MessagingClientEvent {
             return new MessagingClientEvent(this.project_number_, this.message_id_, this.instance_id_, this.message_type_, this.sdk_platform_, this.package_name_, this.collapse_key_, this.priority_, this.ttl_, this.topic_, this.bulk_id_, this.event_, this.analytics_label_, this.campaign_id_, this.composer_label_);
         }
 
-        public Builder setAnalyticsLabel(String str) {
-            this.analytics_label_ = str;
-            return this;
-        }
-
-        public Builder setCollapseKey(String str) {
-            this.collapse_key_ = str;
-            return this;
-        }
-
-        public Builder setComposerLabel(String str) {
-            this.composer_label_ = str;
-            return this;
-        }
-
-        public Builder setEvent(Event event) {
-            this.event_ = event;
-            return this;
-        }
-
-        public Builder setInstanceId(String str) {
-            this.instance_id_ = str;
+        public Builder setProjectNumber(long j) {
+            this.project_number_ = j;
             return this;
         }
 
@@ -75,18 +137,13 @@ public final class MessagingClientEvent {
             return this;
         }
 
+        public Builder setInstanceId(String str) {
+            this.instance_id_ = str;
+            return this;
+        }
+
         public Builder setMessageType(MessageType messageType) {
             this.message_type_ = messageType;
-            return this;
-        }
-
-        public Builder setPackageName(String str) {
-            this.package_name_ = str;
-            return this;
-        }
-
-        public Builder setProjectNumber(long j) {
-            this.project_number_ = j;
             return this;
         }
 
@@ -95,8 +152,13 @@ public final class MessagingClientEvent {
             return this;
         }
 
-        public Builder setTopic(String str) {
-            this.topic_ = str;
+        public Builder setPackageName(String str) {
+            this.package_name_ = str;
+            return this;
+        }
+
+        public Builder setCollapseKey(String str) {
+            this.collapse_key_ = str;
             return this;
         }
 
@@ -104,22 +166,25 @@ public final class MessagingClientEvent {
             this.ttl_ = i;
             return this;
         }
-    }
 
-    public enum Event implements ProtoEnum {
-        UNKNOWN_EVENT(0),
-        MESSAGE_DELIVERED(1),
-        MESSAGE_OPEN(2);
-
-        private final int number_;
-
-        Event(int i) {
-            this.number_ = i;
+        public Builder setTopic(String str) {
+            this.topic_ = str;
+            return this;
         }
 
-        @Override // com.google.firebase.encoders.proto.ProtoEnum
-        public int getNumber() {
-            return this.number_;
+        public Builder setEvent(Event event) {
+            this.event_ = event;
+            return this;
+        }
+
+        public Builder setAnalyticsLabel(String str) {
+            this.analytics_label_ = str;
+            return this;
+        }
+
+        public Builder setComposerLabel(String str) {
+            this.composer_label_ = str;
+            return this;
         }
     }
 
@@ -159,85 +224,20 @@ public final class MessagingClientEvent {
         }
     }
 
-    MessagingClientEvent(long j, String str, String str2, MessageType messageType, SDKPlatform sDKPlatform, String str3, String str4, int i, int i2, String str5, long j2, Event event, String str6, long j3, String str7) {
-        this.project_number_ = j;
-        this.message_id_ = str;
-        this.instance_id_ = str2;
-        this.message_type_ = messageType;
-        this.sdk_platform_ = sDKPlatform;
-        this.package_name_ = str3;
-        this.collapse_key_ = str4;
-        this.priority_ = i;
-        this.ttl_ = i2;
-        this.topic_ = str5;
-        this.bulk_id_ = j2;
-        this.event_ = event;
-        this.analytics_label_ = str6;
-        this.campaign_id_ = j3;
-        this.composer_label_ = str7;
-    }
+    public enum Event implements ProtoEnum {
+        UNKNOWN_EVENT(0),
+        MESSAGE_DELIVERED(1),
+        MESSAGE_OPEN(2);
 
-    public static Builder newBuilder() {
-        return new Builder();
-    }
+        private final int number_;
 
-    public String getAnalyticsLabel() {
-        return this.analytics_label_;
-    }
+        Event(int i) {
+            this.number_ = i;
+        }
 
-    public long getBulkId() {
-        return this.bulk_id_;
-    }
-
-    public long getCampaignId() {
-        return this.campaign_id_;
-    }
-
-    public String getCollapseKey() {
-        return this.collapse_key_;
-    }
-
-    public String getComposerLabel() {
-        return this.composer_label_;
-    }
-
-    public Event getEvent() {
-        return this.event_;
-    }
-
-    public String getInstanceId() {
-        return this.instance_id_;
-    }
-
-    public String getMessageId() {
-        return this.message_id_;
-    }
-
-    public MessageType getMessageType() {
-        return this.message_type_;
-    }
-
-    public String getPackageName() {
-        return this.package_name_;
-    }
-
-    public int getPriority() {
-        return this.priority_;
-    }
-
-    public long getProjectNumber() {
-        return this.project_number_;
-    }
-
-    public SDKPlatform getSdkPlatform() {
-        return this.sdk_platform_;
-    }
-
-    public String getTopic() {
-        return this.topic_;
-    }
-
-    public int getTtl() {
-        return this.ttl_;
+        @Override // com.google.firebase.encoders.proto.ProtoEnum
+        public int getNumber() {
+            return this.number_;
+        }
     }
 }

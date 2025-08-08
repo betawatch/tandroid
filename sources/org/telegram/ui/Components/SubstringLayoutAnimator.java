@@ -11,7 +11,7 @@ import android.text.TextPaint;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class SubstringLayoutAnimator {
     private StaticLayout animateInLayout;
     private StaticLayout animateOutLayout;
@@ -26,20 +26,6 @@ public class SubstringLayoutAnimator {
 
     public SubstringLayoutAnimator(View view) {
         this.parentView = view;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$create$0(ValueAnimator valueAnimator) {
-        this.hintProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.parentView.invalidate();
-    }
-
-    public void cancel() {
-        ValueAnimator valueAnimator = this.valueAnimator;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        this.animateTextChange = false;
     }
 
     public void create(StaticLayout staticLayout, CharSequence charSequence, CharSequence charSequence2, TextPaint textPaint) {
@@ -113,6 +99,12 @@ public class SubstringLayoutAnimator {
         this.valueAnimator.start();
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$create$0(ValueAnimator valueAnimator) {
+        this.hintProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        this.parentView.invalidate();
+    }
+
     public void draw(Canvas canvas, TextPaint textPaint) {
         if (this.animateTextChange) {
             float f = this.xOffset * (this.animateTextChangeOut ? this.hintProgress : 1.0f - this.hintProgress);
@@ -150,5 +142,13 @@ public class SubstringLayoutAnimator {
                 textPaint.setAlpha(alpha);
             }
         }
+    }
+
+    public void cancel() {
+        ValueAnimator valueAnimator = this.valueAnimator;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        this.animateTextChange = false;
     }
 }

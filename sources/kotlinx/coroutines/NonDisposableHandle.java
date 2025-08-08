@@ -1,11 +1,8 @@
 package kotlinx.coroutines;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class NonDisposableHandle implements DisposableHandle, ChildHandle {
     public static final NonDisposableHandle INSTANCE = new NonDisposableHandle();
-
-    private NonDisposableHandle() {
-    }
 
     @Override // kotlinx.coroutines.ChildHandle
     public boolean childCancelled(Throwable th) {
@@ -19,6 +16,9 @@ public final class NonDisposableHandle implements DisposableHandle, ChildHandle 
     @Override // kotlinx.coroutines.ChildHandle
     public Job getParent() {
         return null;
+    }
+
+    private NonDisposableHandle() {
     }
 
     public String toString() {

@@ -25,6 +25,14 @@ public abstract class Internal {
         ProtobufList mutableCopyWithCapacity(int i);
     }
 
+    public static int hashBoolean(boolean z) {
+        return z ? 1231 : 1237;
+    }
+
+    public static int hashLong(long j) {
+        return (int) (j ^ (j >>> 32));
+    }
+
     static {
         byte[] bArr = new byte[0];
         EMPTY_BYTE_ARRAY = bArr;
@@ -44,8 +52,12 @@ public abstract class Internal {
         throw new NullPointerException(str);
     }
 
-    public static int hashBoolean(boolean z) {
-        return z ? 1231 : 1237;
+    public static boolean isValidUtf8(byte[] bArr) {
+        return Utf8.isValidUtf8(bArr);
+    }
+
+    public static String toStringUtf8(byte[] bArr) {
+        return new String(bArr, UTF_8);
     }
 
     public static int hashCode(byte[] bArr) {
@@ -60,18 +72,6 @@ public abstract class Internal {
         return partialHash;
     }
 
-    public static int hashLong(long j) {
-        return (int) (j ^ (j >>> 32));
-    }
-
-    public static boolean isValidUtf8(byte[] bArr) {
-        return Utf8.isValidUtf8(bArr);
-    }
-
-    static Object mergeMessage(Object obj, Object obj2) {
-        return ((MessageLite) obj).toBuilder().mergeFrom((MessageLite) obj2).buildPartial();
-    }
-
     static int partialHash(int i, byte[] bArr, int i2, int i3) {
         for (int i4 = i2; i4 < i2 + i3; i4++) {
             i = (i * 31) + bArr[i4];
@@ -79,7 +79,7 @@ public abstract class Internal {
         return i;
     }
 
-    public static String toStringUtf8(byte[] bArr) {
-        return new String(bArr, UTF_8);
+    static Object mergeMessage(Object obj, Object obj2) {
+        return ((MessageLite) obj).toBuilder().mergeFrom((MessageLite) obj2).buildPartial();
     }
 }

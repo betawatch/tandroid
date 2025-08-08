@@ -11,11 +11,21 @@ public abstract class BundleUtil {
     private static Method putIBinderMethod;
 
     public static IBinder getBinder(Bundle bundle, String str) {
-        return Util.SDK_INT >= 18 ? bundle.getBinder(str) : getBinderByReflection(bundle, str);
+        if (Util.SDK_INT >= 18) {
+            return bundle.getBinder(str);
+        }
+        return getBinderByReflection(bundle, str);
+    }
+
+    public static void putBinder(Bundle bundle, String str, IBinder iBinder) {
+        if (Util.SDK_INT >= 18) {
+            bundle.putBinder(str, iBinder);
+        } else {
+            putBinderByReflection(bundle, str, iBinder);
+        }
     }
 
     private static IBinder getBinderByReflection(Bundle bundle, String str) {
-        String str2;
         Method method = getIBinderMethod;
         if (method == null) {
             try {
@@ -24,27 +34,15 @@ public abstract class BundleUtil {
                 method2.setAccessible(true);
                 method = getIBinderMethod;
             } catch (NoSuchMethodException e) {
-                e = e;
-                str2 = "Failed to retrieve getIBinder method";
-                Log.i("BundleUtil", str2, e);
+                Log.i("BundleUtil", "Failed to retrieve getIBinder method", e);
                 return null;
             }
         }
         try {
             return (IBinder) method.invoke(bundle, str);
         } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e2) {
-            e = e2;
-            str2 = "Failed to invoke getIBinder via reflection";
-            Log.i("BundleUtil", str2, e);
+            Log.i("BundleUtil", "Failed to invoke getIBinder via reflection", e2);
             return null;
-        }
-    }
-
-    public static void putBinder(Bundle bundle, String str, IBinder iBinder) {
-        if (Util.SDK_INT >= 18) {
-            bundle.putBinder(str, iBinder);
-        } else {
-            putBinderByReflection(bundle, str, iBinder);
         }
     }
 

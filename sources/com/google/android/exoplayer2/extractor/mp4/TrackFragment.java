@@ -24,26 +24,13 @@ final class TrackFragment {
     public boolean[] sampleHasSubsampleEncryptionTable = new boolean[0];
     public final ParsableByteArray sampleEncryptionData = new ParsableByteArray();
 
-    public void fillEncryptionData(ExtractorInput extractorInput) {
-        extractorInput.readFully(this.sampleEncryptionData.getData(), 0, this.sampleEncryptionData.limit());
-        this.sampleEncryptionData.setPosition(0);
+    public void reset() {
+        this.trunCount = 0;
+        this.nextFragmentDecodeTime = 0L;
+        this.nextFragmentDecodeTimeIncludesMoov = false;
+        this.definesEncryptionData = false;
         this.sampleEncryptionDataNeedsFill = false;
-    }
-
-    public void fillEncryptionData(ParsableByteArray parsableByteArray) {
-        parsableByteArray.readBytes(this.sampleEncryptionData.getData(), 0, this.sampleEncryptionData.limit());
-        this.sampleEncryptionData.setPosition(0);
-        this.sampleEncryptionDataNeedsFill = false;
-    }
-
-    public long getSamplePresentationTimeUs(int i) {
-        return this.samplePresentationTimesUs[i];
-    }
-
-    public void initEncryptionData(int i) {
-        this.sampleEncryptionData.reset(i);
-        this.definesEncryptionData = true;
-        this.sampleEncryptionDataNeedsFill = true;
+        this.trackEncryptionBox = null;
     }
 
     public void initTables(int i, int i2) {
@@ -62,13 +49,26 @@ final class TrackFragment {
         }
     }
 
-    public void reset() {
-        this.trunCount = 0;
-        this.nextFragmentDecodeTime = 0L;
-        this.nextFragmentDecodeTimeIncludesMoov = false;
-        this.definesEncryptionData = false;
+    public void initEncryptionData(int i) {
+        this.sampleEncryptionData.reset(i);
+        this.definesEncryptionData = true;
+        this.sampleEncryptionDataNeedsFill = true;
+    }
+
+    public void fillEncryptionData(ExtractorInput extractorInput) {
+        extractorInput.readFully(this.sampleEncryptionData.getData(), 0, this.sampleEncryptionData.limit());
+        this.sampleEncryptionData.setPosition(0);
         this.sampleEncryptionDataNeedsFill = false;
-        this.trackEncryptionBox = null;
+    }
+
+    public void fillEncryptionData(ParsableByteArray parsableByteArray) {
+        parsableByteArray.readBytes(this.sampleEncryptionData.getData(), 0, this.sampleEncryptionData.limit());
+        this.sampleEncryptionData.setPosition(0);
+        this.sampleEncryptionDataNeedsFill = false;
+    }
+
+    public long getSamplePresentationTimeUs(int i) {
+        return this.samplePresentationTimesUs[i];
     }
 
     public boolean sampleHasSubsampleEncryptionTable(int i) {

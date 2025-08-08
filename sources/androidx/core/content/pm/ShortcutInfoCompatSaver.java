@@ -25,11 +25,11 @@ public abstract class ShortcutInfoCompatSaver {
 
     public abstract Object addShortcuts(List list);
 
-    public List getShortcuts() {
-        return new ArrayList();
-    }
-
     public abstract Object removeAllShortcuts();
 
     public abstract Object removeShortcuts(List list);
+
+    public List getShortcuts() {
+        return new ArrayList();
+    }
 }

@@ -13,26 +13,6 @@ import java.lang.reflect.Method;
 public abstract class ViewConfigurationCompat {
     private static Method sGetScaledScrollFactorMethod;
 
-    static class Api26Impl {
-        static float getScaledHorizontalScrollFactor(ViewConfiguration viewConfiguration) {
-            return viewConfiguration.getScaledHorizontalScrollFactor();
-        }
-
-        static float getScaledVerticalScrollFactor(ViewConfiguration viewConfiguration) {
-            return viewConfiguration.getScaledVerticalScrollFactor();
-        }
-    }
-
-    static class Api28Impl {
-        static int getScaledHoverSlop(ViewConfiguration viewConfiguration) {
-            return viewConfiguration.getScaledHoverSlop();
-        }
-
-        static boolean shouldShowMenuShortcutsWhenKeyboardPresent(ViewConfiguration viewConfiguration) {
-            return viewConfiguration.shouldShowMenuShortcutsWhenKeyboardPresent();
-        }
-    }
-
     static {
         if (Build.VERSION.SDK_INT == 25) {
             try {
@@ -41,6 +21,20 @@ public abstract class ViewConfigurationCompat {
                 Log.i("ViewConfigCompat", "Could not find method getScaledScrollFactor() on ViewConfiguration");
             }
         }
+    }
+
+    public static float getScaledHorizontalScrollFactor(ViewConfiguration viewConfiguration, Context context) {
+        if (Build.VERSION.SDK_INT >= 26) {
+            return Api26Impl.getScaledHorizontalScrollFactor(viewConfiguration);
+        }
+        return getLegacyScrollFactor(viewConfiguration, context);
+    }
+
+    public static float getScaledVerticalScrollFactor(ViewConfiguration viewConfiguration, Context context) {
+        if (Build.VERSION.SDK_INT >= 26) {
+            return Api26Impl.getScaledVerticalScrollFactor(viewConfiguration);
+        }
+        return getLegacyScrollFactor(viewConfiguration, context);
     }
 
     private static float getLegacyScrollFactor(ViewConfiguration viewConfiguration, Context context) {
@@ -59,16 +53,11 @@ public abstract class ViewConfigurationCompat {
         return 0.0f;
     }
 
-    public static float getScaledHorizontalScrollFactor(ViewConfiguration viewConfiguration, Context context) {
-        return Build.VERSION.SDK_INT >= 26 ? Api26Impl.getScaledHorizontalScrollFactor(viewConfiguration) : getLegacyScrollFactor(viewConfiguration, context);
-    }
-
     public static int getScaledHoverSlop(ViewConfiguration viewConfiguration) {
-        return Build.VERSION.SDK_INT >= 28 ? Api28Impl.getScaledHoverSlop(viewConfiguration) : viewConfiguration.getScaledTouchSlop() / 2;
-    }
-
-    public static float getScaledVerticalScrollFactor(ViewConfiguration viewConfiguration, Context context) {
-        return Build.VERSION.SDK_INT >= 26 ? Api26Impl.getScaledVerticalScrollFactor(viewConfiguration) : getLegacyScrollFactor(viewConfiguration, context);
+        if (Build.VERSION.SDK_INT >= 28) {
+            return Api28Impl.getScaledHoverSlop(viewConfiguration);
+        }
+        return viewConfiguration.getScaledTouchSlop() / 2;
     }
 
     public static boolean shouldShowMenuShortcutsWhenKeyboardPresent(ViewConfiguration viewConfiguration, Context context) {
@@ -78,5 +67,25 @@ public abstract class ViewConfigurationCompat {
         Resources resources = context.getResources();
         int identifier = resources.getIdentifier("config_showMenuShortcutsWhenKeyboardPresent", "bool", "android");
         return identifier != 0 && resources.getBoolean(identifier);
+    }
+
+    static class Api26Impl {
+        static float getScaledHorizontalScrollFactor(ViewConfiguration viewConfiguration) {
+            return viewConfiguration.getScaledHorizontalScrollFactor();
+        }
+
+        static float getScaledVerticalScrollFactor(ViewConfiguration viewConfiguration) {
+            return viewConfiguration.getScaledVerticalScrollFactor();
+        }
+    }
+
+    static class Api28Impl {
+        static int getScaledHoverSlop(ViewConfiguration viewConfiguration) {
+            return viewConfiguration.getScaledHoverSlop();
+        }
+
+        static boolean shouldShowMenuShortcutsWhenKeyboardPresent(ViewConfiguration viewConfiguration) {
+            return viewConfiguration.shouldShowMenuShortcutsWhenKeyboardPresent();
+        }
     }
 }

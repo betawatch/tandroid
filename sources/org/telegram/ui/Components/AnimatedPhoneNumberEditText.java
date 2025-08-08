@@ -18,7 +18,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class AnimatedPhoneNumberEditText extends HintEditText {
     private ObjectAnimator animator;
     private Runnable hintAnimationCallback;
@@ -33,28 +33,6 @@ public abstract class AnimatedPhoneNumberEditText extends HintEditText {
     private String wasHint;
     private Boolean wasHintVisible;
 
-    private final class HintFadeProperty extends FloatPropertyCompat {
-        public HintFadeProperty() {
-            super("hint_fade");
-        }
-
-        @Override // androidx.dynamicanimation.animation.FloatPropertyCompat
-        public float getValue(Integer num) {
-            if (num.intValue() < AnimatedPhoneNumberEditText.this.hintAnimationValues.size()) {
-                return ((Float) AnimatedPhoneNumberEditText.this.hintAnimationValues.get(num.intValue())).floatValue() * 100.0f;
-            }
-            return 0.0f;
-        }
-
-        @Override // androidx.dynamicanimation.animation.FloatPropertyCompat
-        public void setValue(Integer num, float f) {
-            if (num.intValue() < AnimatedPhoneNumberEditText.this.hintAnimationValues.size()) {
-                AnimatedPhoneNumberEditText.this.hintAnimationValues.set(num.intValue(), Float.valueOf(f / 100.0f));
-                AnimatedPhoneNumberEditText.this.invalidate();
-            }
-        }
-    }
-
     public AnimatedPhoneNumberEditText(Context context) {
         super(context);
         this.letters = new ArrayList();
@@ -64,6 +42,42 @@ public abstract class AnimatedPhoneNumberEditText extends HintEditText {
         this.hintFadeProperty = new HintFadeProperty();
         this.hintAnimationValues = new ArrayList();
         this.hintAnimations = new ArrayList();
+    }
+
+    @Override // org.telegram.ui.Components.HintEditText
+    public void setHintText(final String str) {
+        boolean isEmpty;
+        boolean isEmpty2 = TextUtils.isEmpty(str);
+        final boolean z = !isEmpty2;
+        Boolean bool = this.wasHintVisible;
+        if (bool == null || bool.booleanValue() != z) {
+            this.hintAnimationValues.clear();
+            Iterator it = this.hintAnimations.iterator();
+            while (it.hasNext()) {
+                ((SpringAnimation) it.next()).cancel();
+            }
+            this.hintAnimations.clear();
+            this.wasHintVisible = Boolean.valueOf(z);
+            isEmpty = TextUtils.isEmpty(getText());
+        } else {
+            isEmpty = false;
+        }
+        String str2 = !isEmpty2 ? str : this.wasHint;
+        if (str2 == null) {
+            str2 = "";
+        }
+        this.wasHint = str;
+        if (!isEmpty2 || !isEmpty) {
+            super.setHintText(str);
+        }
+        if (isEmpty) {
+            runHintAnimation(str2.length(), z, new Runnable() { // from class: org.telegram.ui.Components.AnimatedPhoneNumberEditText$$ExternalSyntheticLambda0
+                @Override // java.lang.Runnable
+                public final void run() {
+                    AnimatedPhoneNumberEditText.this.lambda$setHintText$0(z, str);
+                }
+            });
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -77,6 +91,11 @@ public abstract class AnimatedPhoneNumberEditText extends HintEditText {
             return;
         }
         super.setHintText(str);
+    }
+
+    @Override // org.telegram.ui.Components.HintEditText
+    public String getHintText() {
+        return this.wasHint;
     }
 
     private void runHintAnimation(int i, boolean z, Runnable runnable) {
@@ -106,25 +125,16 @@ public abstract class AnimatedPhoneNumberEditText extends HintEditText {
         postDelayed(runnable, (i * 5) + 150);
     }
 
-    @Override // org.telegram.ui.Components.HintEditText
-    public String getHintText() {
-        return this.wasHint;
+    @Override // org.telegram.ui.Components.HintEditText, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView
+    public void setTextSize(int i, float f) {
+        super.setTextSize(i, f);
+        this.textPaint.setTextSize(TypedValue.applyDimension(i, f, getResources().getDisplayMetrics()));
     }
 
-    public float getProgress() {
-        return this.progress;
-    }
-
-    @Override // org.telegram.ui.Components.HintEditText, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.EditTextEffects, android.widget.TextView, android.view.View
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-    }
-
-    @Override // org.telegram.ui.Components.HintEditText
-    protected void onPreDrawHintCharacter(int i, Canvas canvas, float f, float f2) {
-        if (i < this.hintAnimationValues.size()) {
-            this.hintPaint.setAlpha((int) (((Float) this.hintAnimationValues.get(i)).floatValue() * 255.0f));
-        }
+    @Override // org.telegram.ui.Components.EditTextEffects, android.widget.TextView
+    public void setTextColor(int i) {
+        super.setTextColor(i);
+        this.textPaint.setColor(i);
     }
 
     @Override // org.telegram.ui.Components.EditTextEffects, android.widget.TextView
@@ -132,39 +142,9 @@ public abstract class AnimatedPhoneNumberEditText extends HintEditText {
         super.onTextChanged(charSequence, i, i2, i3);
     }
 
-    @Override // org.telegram.ui.Components.HintEditText
-    public void setHintText(final String str) {
-        boolean isEmpty;
-        final boolean z = !TextUtils.isEmpty(str);
-        Boolean bool = this.wasHintVisible;
-        if (bool == null || bool.booleanValue() != z) {
-            this.hintAnimationValues.clear();
-            Iterator it = this.hintAnimations.iterator();
-            while (it.hasNext()) {
-                ((SpringAnimation) it.next()).cancel();
-            }
-            this.hintAnimations.clear();
-            this.wasHintVisible = Boolean.valueOf(z);
-            isEmpty = TextUtils.isEmpty(getText());
-        } else {
-            isEmpty = false;
-        }
-        String str2 = z ? str : this.wasHint;
-        if (str2 == null) {
-            str2 = "";
-        }
-        this.wasHint = str;
-        if (z || !isEmpty) {
-            super.setHintText(str);
-        }
-        if (isEmpty) {
-            runHintAnimation(str2.length(), z, new Runnable() { // from class: org.telegram.ui.Components.AnimatedPhoneNumberEditText$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    AnimatedPhoneNumberEditText.this.lambda$setHintText$0(z, str);
-                }
-            });
-        }
+    @Override // org.telegram.ui.Components.HintEditText, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.EditTextEffects, android.widget.TextView, android.view.View
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
     }
 
     public void setNewText(String str) {
@@ -186,14 +166,14 @@ public abstract class AnimatedPhoneNumberEditText extends HintEditText {
             int i2 = i + 1;
             String substring = str.substring(i, i2);
             String substring2 = (this.oldLetters.isEmpty() || i >= this.oldText.length()) ? null : this.oldText.substring(i, i2);
-            if (z || substring2 == null || !substring2.equals(substring)) {
+            if (!z && substring2 != null && substring2.equals(substring)) {
+                this.letters.add((StaticLayout) this.oldLetters.get(i));
+                this.oldLetters.set(i, null);
+            } else {
                 if (z && substring2 == null) {
                     this.oldLetters.add(new StaticLayout("", this.textPaint, 0, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false));
                 }
                 this.letters.add(new StaticLayout(substring, this.textPaint, (int) Math.ceil(r9.measureText(substring)), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false));
-            } else {
-                this.letters.add((StaticLayout) this.oldLetters.get(i));
-                this.oldLetters.set(i, null);
             }
             i = i2;
         }
@@ -214,6 +194,13 @@ public abstract class AnimatedPhoneNumberEditText extends HintEditText {
         invalidate();
     }
 
+    @Override // org.telegram.ui.Components.HintEditText
+    protected void onPreDrawHintCharacter(int i, Canvas canvas, float f, float f2) {
+        if (i < this.hintAnimationValues.size()) {
+            this.hintPaint.setAlpha((int) (((Float) this.hintAnimationValues.get(i)).floatValue() * 255.0f));
+        }
+    }
+
     public void setProgress(float f) {
         if (this.progress == f) {
             return;
@@ -222,15 +209,29 @@ public abstract class AnimatedPhoneNumberEditText extends HintEditText {
         invalidate();
     }
 
-    @Override // org.telegram.ui.Components.EditTextEffects, android.widget.TextView
-    public void setTextColor(int i) {
-        super.setTextColor(i);
-        this.textPaint.setColor(i);
+    public float getProgress() {
+        return this.progress;
     }
 
-    @Override // org.telegram.ui.Components.HintEditText, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView
-    public void setTextSize(int i, float f) {
-        super.setTextSize(i, f);
-        this.textPaint.setTextSize(TypedValue.applyDimension(i, f, getResources().getDisplayMetrics()));
+    private final class HintFadeProperty extends FloatPropertyCompat {
+        public HintFadeProperty() {
+            super("hint_fade");
+        }
+
+        @Override // androidx.dynamicanimation.animation.FloatPropertyCompat
+        public float getValue(Integer num) {
+            if (num.intValue() < AnimatedPhoneNumberEditText.this.hintAnimationValues.size()) {
+                return ((Float) AnimatedPhoneNumberEditText.this.hintAnimationValues.get(num.intValue())).floatValue() * 100.0f;
+            }
+            return 0.0f;
+        }
+
+        @Override // androidx.dynamicanimation.animation.FloatPropertyCompat
+        public void setValue(Integer num, float f) {
+            if (num.intValue() < AnimatedPhoneNumberEditText.this.hintAnimationValues.size()) {
+                AnimatedPhoneNumberEditText.this.hintAnimationValues.set(num.intValue(), Float.valueOf(f / 100.0f));
+                AnimatedPhoneNumberEditText.this.invalidate();
+            }
+        }
     }
 }

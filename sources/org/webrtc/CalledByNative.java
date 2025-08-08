@@ -7,7 +7,7 @@ import java.lang.annotation.Target;
 
 @Target({ElementType.CONSTRUCTOR, ElementType.METHOD})
 @Retention(RetentionPolicy.CLASS)
-/* loaded from: classes.dex */
+/* loaded from: classes5.dex */
 public @interface CalledByNative {
     String value() default "";
 }

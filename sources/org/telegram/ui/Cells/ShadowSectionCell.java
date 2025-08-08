@@ -21,8 +21,21 @@ public class ShadowSectionCell extends View {
         this(context, 12, (Theme.ResourcesProvider) null);
     }
 
+    public ShadowSectionCell(Context context, Theme.ResourcesProvider resourcesProvider) {
+        this(context, 12, resourcesProvider);
+    }
+
     public ShadowSectionCell(Context context, int i) {
         this(context, i, (Theme.ResourcesProvider) null);
+    }
+
+    public ShadowSectionCell(Context context, int i, Theme.ResourcesProvider resourcesProvider) {
+        super(context);
+        this.top = true;
+        this.bottom = true;
+        this.resourcesProvider = resourcesProvider;
+        this.size = i;
+        updateBackground();
     }
 
     public ShadowSectionCell(Context context, int i, int i2) {
@@ -39,29 +52,25 @@ public class ShadowSectionCell extends View {
         updateBackground();
     }
 
-    public ShadowSectionCell(Context context, int i, Theme.ResourcesProvider resourcesProvider) {
-        super(context);
-        this.top = true;
-        this.bottom = true;
-        this.resourcesProvider = resourcesProvider;
-        this.size = i;
+    public void setTopBottom(boolean z, boolean z2) {
+        if (this.top == z && this.bottom == z2) {
+            return;
+        }
+        this.top = z;
+        this.bottom = z2;
         updateBackground();
-    }
-
-    public ShadowSectionCell(Context context, Theme.ResourcesProvider resourcesProvider) {
-        this(context, 12, resourcesProvider);
-    }
-
-    private int getBackgroundResId() {
-        boolean z = this.top;
-        return (z && this.bottom) ? R.drawable.greydivider : z ? R.drawable.greydivider_bottom : this.bottom ? R.drawable.greydivider_top : R.drawable.transparent;
     }
 
     private void updateBackground() {
         int i = this.backgroundColor;
         if (i == 0) {
-            setBackground((this.top || this.bottom) ? Theme.getThemedDrawable(getContext(), getBackgroundResId(), Theme.getColor(Theme.key_windowBackgroundGrayShadow, this.resourcesProvider)) : null);
-            return;
+            if (!this.top && !this.bottom) {
+                setBackground(null);
+                return;
+            } else {
+                setBackground(Theme.getThemedDrawable(getContext(), getBackgroundResId(), Theme.getColor(Theme.key_windowBackgroundGrayShadow, this.resourcesProvider)));
+                return;
+            }
         }
         if (!this.top && !this.bottom) {
             setBackgroundColor(i);
@@ -72,17 +81,22 @@ public class ShadowSectionCell extends View {
         setBackground(combinedDrawable);
     }
 
+    private int getBackgroundResId() {
+        boolean z = this.top;
+        if (z && this.bottom) {
+            return R.drawable.greydivider;
+        }
+        if (z) {
+            return R.drawable.greydivider_bottom;
+        }
+        if (this.bottom) {
+            return R.drawable.greydivider_top;
+        }
+        return R.drawable.transparent;
+    }
+
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.size), TLObject.FLAG_30));
-    }
-
-    public void setTopBottom(boolean z, boolean z2) {
-        if (this.top == z && this.bottom == z2) {
-            return;
-        }
-        this.top = z;
-        this.bottom = z2;
-        updateBackground();
     }
 }

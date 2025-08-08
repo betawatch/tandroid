@@ -15,6 +15,13 @@ class AnimationHandler {
     long mCurrentFrameTime = 0;
     private boolean mListDirty = false;
 
+    interface AnimationFrameCallback {
+        boolean doAnimationFrame(long j);
+    }
+
+    AnimationHandler() {
+    }
+
     class AnimationCallbackDispatcher {
         AnimationCallbackDispatcher() {
         }
@@ -29,18 +36,74 @@ class AnimationHandler {
         }
     }
 
-    interface AnimationFrameCallback {
-        boolean doAnimationFrame(long j);
+    public static AnimationHandler getInstance() {
+        ThreadLocal threadLocal = sAnimatorHandler;
+        if (threadLocal.get() == null) {
+            threadLocal.set(new AnimationHandler());
+        }
+        return (AnimationHandler) threadLocal.get();
     }
 
-    static abstract class AnimationFrameCallbackProvider {
-        final AnimationCallbackDispatcher mDispatcher;
-
-        AnimationFrameCallbackProvider(AnimationCallbackDispatcher animationCallbackDispatcher) {
-            this.mDispatcher = animationCallbackDispatcher;
+    AnimationFrameCallbackProvider getProvider() {
+        if (this.mProvider == null) {
+            this.mProvider = new FrameCallbackProvider16(this.mCallbackDispatcher);
         }
+        return this.mProvider;
+    }
 
-        abstract void postFrameCallback();
+    public void addAnimationFrameCallback(AnimationFrameCallback animationFrameCallback, long j) {
+        if (this.mAnimationCallbacks.size() == 0) {
+            getProvider().postFrameCallback();
+        }
+        if (!this.mAnimationCallbacks.contains(animationFrameCallback)) {
+            this.mAnimationCallbacks.add(animationFrameCallback);
+        }
+        if (j > 0) {
+            this.mDelayedCallbackStartTime.put(animationFrameCallback, Long.valueOf(SystemClock.uptimeMillis() + j));
+        }
+    }
+
+    public void removeCallback(AnimationFrameCallback animationFrameCallback) {
+        this.mDelayedCallbackStartTime.remove(animationFrameCallback);
+        int indexOf = this.mAnimationCallbacks.indexOf(animationFrameCallback);
+        if (indexOf >= 0) {
+            this.mAnimationCallbacks.set(indexOf, null);
+            this.mListDirty = true;
+        }
+    }
+
+    void doAnimationFrame(long j) {
+        long uptimeMillis = SystemClock.uptimeMillis();
+        for (int i = 0; i < this.mAnimationCallbacks.size(); i++) {
+            AnimationFrameCallback animationFrameCallback = (AnimationFrameCallback) this.mAnimationCallbacks.get(i);
+            if (animationFrameCallback != null && isCallbackDue(animationFrameCallback, uptimeMillis)) {
+                animationFrameCallback.doAnimationFrame(j);
+            }
+        }
+        cleanUpList();
+    }
+
+    private boolean isCallbackDue(AnimationFrameCallback animationFrameCallback, long j) {
+        Long l = (Long) this.mDelayedCallbackStartTime.get(animationFrameCallback);
+        if (l == null) {
+            return true;
+        }
+        if (l.longValue() >= j) {
+            return false;
+        }
+        this.mDelayedCallbackStartTime.remove(animationFrameCallback);
+        return true;
+    }
+
+    private void cleanUpList() {
+        if (this.mListDirty) {
+            for (int size = this.mAnimationCallbacks.size() - 1; size >= 0; size--) {
+                if (this.mAnimationCallbacks.get(size) == null) {
+                    this.mAnimationCallbacks.remove(size);
+                }
+            }
+            this.mListDirty = false;
+        }
     }
 
     private static class FrameCallbackProvider16 extends AnimationFrameCallbackProvider {
@@ -64,76 +127,13 @@ class AnimationHandler {
         }
     }
 
-    AnimationHandler() {
-    }
+    static abstract class AnimationFrameCallbackProvider {
+        final AnimationCallbackDispatcher mDispatcher;
 
-    private void cleanUpList() {
-        if (this.mListDirty) {
-            for (int size = this.mAnimationCallbacks.size() - 1; size >= 0; size--) {
-                if (this.mAnimationCallbacks.get(size) == null) {
-                    this.mAnimationCallbacks.remove(size);
-                }
-            }
-            this.mListDirty = false;
-        }
-    }
+        abstract void postFrameCallback();
 
-    public static AnimationHandler getInstance() {
-        ThreadLocal threadLocal = sAnimatorHandler;
-        if (threadLocal.get() == null) {
-            threadLocal.set(new AnimationHandler());
-        }
-        return (AnimationHandler) threadLocal.get();
-    }
-
-    private boolean isCallbackDue(AnimationFrameCallback animationFrameCallback, long j) {
-        Long l = (Long) this.mDelayedCallbackStartTime.get(animationFrameCallback);
-        if (l == null) {
-            return true;
-        }
-        if (l.longValue() >= j) {
-            return false;
-        }
-        this.mDelayedCallbackStartTime.remove(animationFrameCallback);
-        return true;
-    }
-
-    public void addAnimationFrameCallback(AnimationFrameCallback animationFrameCallback, long j) {
-        if (this.mAnimationCallbacks.size() == 0) {
-            getProvider().postFrameCallback();
-        }
-        if (!this.mAnimationCallbacks.contains(animationFrameCallback)) {
-            this.mAnimationCallbacks.add(animationFrameCallback);
-        }
-        if (j > 0) {
-            this.mDelayedCallbackStartTime.put(animationFrameCallback, Long.valueOf(SystemClock.uptimeMillis() + j));
-        }
-    }
-
-    void doAnimationFrame(long j) {
-        long uptimeMillis = SystemClock.uptimeMillis();
-        for (int i = 0; i < this.mAnimationCallbacks.size(); i++) {
-            AnimationFrameCallback animationFrameCallback = (AnimationFrameCallback) this.mAnimationCallbacks.get(i);
-            if (animationFrameCallback != null && isCallbackDue(animationFrameCallback, uptimeMillis)) {
-                animationFrameCallback.doAnimationFrame(j);
-            }
-        }
-        cleanUpList();
-    }
-
-    AnimationFrameCallbackProvider getProvider() {
-        if (this.mProvider == null) {
-            this.mProvider = new FrameCallbackProvider16(this.mCallbackDispatcher);
-        }
-        return this.mProvider;
-    }
-
-    public void removeCallback(AnimationFrameCallback animationFrameCallback) {
-        this.mDelayedCallbackStartTime.remove(animationFrameCallback);
-        int indexOf = this.mAnimationCallbacks.indexOf(animationFrameCallback);
-        if (indexOf >= 0) {
-            this.mAnimationCallbacks.set(indexOf, null);
-            this.mListDirty = true;
+        AnimationFrameCallbackProvider(AnimationCallbackDispatcher animationCallbackDispatcher) {
+            this.mDispatcher = animationCallbackDispatcher;
         }
     }
 }

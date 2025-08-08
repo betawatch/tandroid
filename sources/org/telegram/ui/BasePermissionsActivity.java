@@ -20,31 +20,7 @@ import org.telegram.ui.ActionBar.Theme;
 public abstract class BasePermissionsActivity extends FragmentActivity {
     protected int currentAccount = -1;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createPermissionErrorAlert$0(AlertDialog alertDialog, int i) {
-        try {
-            Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-            intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
-            startActivity(intent);
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-    }
-
-    private void showPermissionErrorAlert(int i, String str) {
-        createPermissionErrorAlert(i, str).show();
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:55:0x009f, code lost:
-    
-        if (r2 == false) goto L82;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     protected boolean checkPermissionsResult(int i, String[] strArr, int[] iArr) {
-        int i2;
-        int i3;
         if (iArr == null) {
             iArr = new int[0];
         }
@@ -59,57 +35,51 @@ public abstract class BasePermissionsActivity extends FragmentActivity {
                     groupCallActivity.enableCamera();
                 }
             } else {
-                i2 = R.raw.permission_request_camera;
-                i3 = R.string.VoipNeedCameraPermission;
-                showPermissionErrorAlert(i2, LocaleController.getString(i3));
+                showPermissionErrorAlert(R.raw.permission_request_camera, LocaleController.getString(R.string.VoipNeedCameraPermission));
             }
         } else if (i == 4 || i == 151) {
-            if (z) {
-                ImageLoader.getInstance().checkMediaPaths();
+            if (!z) {
+                showPermissionErrorAlert(R.raw.permission_request_folder, i == 151 ? LocaleController.getString(R.string.PermissionNoStorageAvatar) : LocaleController.getString(R.string.PermissionStorageWithHint));
             } else {
-                showPermissionErrorAlert(R.raw.permission_request_folder, LocaleController.getString(i == 151 ? R.string.PermissionNoStorageAvatar : R.string.PermissionStorageWithHint));
+                ImageLoader.getInstance().checkMediaPaths();
             }
-        } else if (i != 5) {
-            if (i == 3 || i == 150) {
-                int min = Math.min(strArr.length, iArr.length);
-                boolean z2 = true;
-                boolean z3 = true;
-                for (int i4 = 0; i4 < min; i4++) {
-                    if ("android.permission.RECORD_AUDIO".equals(strArr[i4])) {
-                        z2 = iArr[i4] == 0;
-                    } else if ("android.permission.CAMERA".equals(strArr[i4])) {
-                        z3 = iArr[i4] == 0;
-                    }
-                }
-                if (i == 150 && !(z2 && z3)) {
-                    i2 = R.raw.permission_request_camera;
-                    i3 = R.string.PermissionNoCameraMicVideo;
-                } else if (!z2) {
-                    i2 = R.raw.permission_request_microphone;
-                    i3 = R.string.PermissionNoAudioWithHint;
-                } else if (z3) {
-                    if (SharedConfig.inappCamera) {
-                        CameraController.getInstance().initCamera(null);
-                    }
-                    return false;
-                }
-                showPermissionErrorAlert(i2, LocaleController.getString(i3));
-            } else if (i != 18 && i != 19 && i != 20 && i != 22) {
-                if (i == 2) {
-                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(z ? NotificationCenter.locationPermissionGranted : NotificationCenter.locationPermissionDenied, new Object[0]);
-                } else if (i == 211) {
-                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(z ? NotificationCenter.locationPermissionGranted : NotificationCenter.locationPermissionDenied, 1);
-                }
-            }
-            i2 = R.raw.permission_request_camera;
-            i3 = R.string.PermissionNoCameraWithHint;
-            showPermissionErrorAlert(i2, LocaleController.getString(i3));
-        } else {
+        } else if (i == 5) {
             if (!z) {
                 showPermissionErrorAlert(R.raw.permission_request_contacts, LocaleController.getString(R.string.PermissionNoContactsSharing));
                 return false;
             }
             ContactsController.getInstance(this.currentAccount).forceImportContacts();
+        } else if (i == 3 || i == 150) {
+            int min = Math.min(strArr.length, iArr.length);
+            boolean z2 = true;
+            boolean z3 = true;
+            for (int i2 = 0; i2 < min; i2++) {
+                if ("android.permission.RECORD_AUDIO".equals(strArr[i2])) {
+                    z2 = iArr[i2] == 0;
+                } else if ("android.permission.CAMERA".equals(strArr[i2])) {
+                    z3 = iArr[i2] == 0;
+                }
+            }
+            if (i == 150 && !(z2 && z3)) {
+                showPermissionErrorAlert(R.raw.permission_request_camera, LocaleController.getString(R.string.PermissionNoCameraMicVideo));
+            } else if (!z2) {
+                showPermissionErrorAlert(R.raw.permission_request_microphone, LocaleController.getString(R.string.PermissionNoAudioWithHint));
+            } else if (!z3) {
+                showPermissionErrorAlert(R.raw.permission_request_camera, LocaleController.getString(R.string.PermissionNoCameraWithHint));
+            } else {
+                if (SharedConfig.inappCamera) {
+                    CameraController.getInstance().initCamera(null);
+                }
+                return false;
+            }
+        } else if (i == 18 || i == 19 || i == 20 || i == 22) {
+            if (!z) {
+                showPermissionErrorAlert(R.raw.permission_request_camera, LocaleController.getString(R.string.PermissionNoCameraWithHint));
+            }
+        } else if (i == 2) {
+            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(z ? NotificationCenter.locationPermissionGranted : NotificationCenter.locationPermissionDenied, new Object[0]);
+        } else if (i == 211) {
+            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(z ? NotificationCenter.locationPermissionGranted : NotificationCenter.locationPermissionDenied, 1);
         }
         return true;
     }
@@ -121,5 +91,20 @@ public abstract class BasePermissionsActivity extends FragmentActivity {
                 BasePermissionsActivity.this.lambda$createPermissionErrorAlert$0(alertDialog, i2);
             }
         }).setNegativeButton(LocaleController.getString(R.string.ContactsPermissionAlertNotNow), null).create();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$createPermissionErrorAlert$0(AlertDialog alertDialog, int i) {
+        try {
+            Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+            intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
+            startActivity(intent);
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+    }
+
+    private void showPermissionErrorAlert(int i, String str) {
+        createPermissionErrorAlert(i, str).show();
     }
 }

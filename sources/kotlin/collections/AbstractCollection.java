@@ -6,11 +6,8 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.CollectionToArray;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class AbstractCollection implements Collection {
-    protected AbstractCollection() {
-    }
-
     @Override // java.util.Collection
     public boolean add(Object obj) {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
@@ -26,18 +23,29 @@ public abstract class AbstractCollection implements Collection {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
+    public abstract int getSize();
+
     @Override // java.util.Collection
-    public boolean contains(Object obj) {
-        if (isEmpty()) {
-            return false;
-        }
-        Iterator<E> it = iterator();
-        while (it.hasNext()) {
-            if (Intrinsics.areEqual(it.next(), obj)) {
-                return true;
-            }
-        }
-        return false;
+    public boolean remove(Object obj) {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    }
+
+    @Override // java.util.Collection
+    public boolean removeAll(Collection collection) {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    }
+
+    @Override // java.util.Collection
+    public boolean retainAll(Collection collection) {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    }
+
+    protected AbstractCollection() {
+    }
+
+    @Override // java.util.Collection
+    public final /* bridge */ int size() {
+        return getSize();
     }
 
     @Override // java.util.Collection
@@ -56,31 +64,22 @@ public abstract class AbstractCollection implements Collection {
         return true;
     }
 
-    public abstract int getSize();
-
     @Override // java.util.Collection
     public boolean isEmpty() {
         return size() == 0;
     }
 
-    @Override // java.util.Collection
-    public boolean remove(Object obj) {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-    }
+    public String toString() {
+        return CollectionsKt.joinToString$default(this, ", ", "[", "]", 0, null, new Function1() { // from class: kotlin.collections.AbstractCollection$toString$1
+            {
+                super(1);
+            }
 
-    @Override // java.util.Collection
-    public boolean removeAll(Collection collection) {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-    }
-
-    @Override // java.util.Collection
-    public boolean retainAll(Collection collection) {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-    }
-
-    @Override // java.util.Collection
-    public final /* bridge */ int size() {
-        return getSize();
+            @Override // kotlin.jvm.functions.Function1
+            public final CharSequence invoke(Object obj) {
+                return obj == AbstractCollection.this ? "(this Collection)" : String.valueOf(obj);
+            }
+        }, 24, null);
     }
 
     @Override // java.util.Collection
@@ -94,18 +93,17 @@ public abstract class AbstractCollection implements Collection {
         return CollectionToArray.toArray(this, array);
     }
 
-    public String toString() {
-        String joinToString$default;
-        joinToString$default = CollectionsKt___CollectionsKt.joinToString$default(this, ", ", "[", "]", 0, null, new Function1() { // from class: kotlin.collections.AbstractCollection$toString$1
-            {
-                super(1);
+    @Override // java.util.Collection
+    public boolean contains(Object obj) {
+        if (isEmpty()) {
+            return false;
+        }
+        Iterator<E> it = iterator();
+        while (it.hasNext()) {
+            if (Intrinsics.areEqual(it.next(), obj)) {
+                return true;
             }
-
-            @Override // kotlin.jvm.functions.Function1
-            public final CharSequence invoke(Object obj) {
-                return obj == AbstractCollection.this ? "(this Collection)" : String.valueOf(obj);
-            }
-        }, 24, null);
-        return joinToString$default;
+        }
+        return false;
     }
 }

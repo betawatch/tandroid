@@ -1,32 +1,32 @@
 package j$.util.stream;
 
 /* loaded from: classes2.dex */
-final class M extends Q implements b2 {
-    final j$.util.function.m b;
-
-    M(j$.util.function.m mVar, boolean z) {
-        super(z);
-        this.b = mVar;
-    }
-
-    @Override // j$.util.stream.Q, j$.util.stream.e2, j$.util.function.m
-    public final void accept(double d) {
-        this.b.accept(d);
-    }
+final class M extends P implements b2 {
+    final j$.util.function.G b;
 
     @Override // j$.util.function.Consumer
     /* renamed from: accept */
     public final /* bridge */ /* synthetic */ void r(Object obj) {
-        r((Double) obj);
+        o((Integer) obj);
     }
 
-    @Override // j$.util.function.m
-    public final /* synthetic */ j$.util.function.m k(j$.util.function.m mVar) {
-        return j$.com.android.tools.r8.a.b(this, mVar);
+    @Override // j$.util.function.G
+    public final /* synthetic */ j$.util.function.G l(j$.util.function.G g) {
+        return j$.com.android.tools.r8.a.b(this, g);
     }
 
     @Override // j$.util.stream.b2
-    public final /* synthetic */ void r(Double d) {
-        u0.e(this, d);
+    public final /* synthetic */ void o(Integer num) {
+        t0.g(this, num);
+    }
+
+    M(j$.util.function.G g, boolean z) {
+        super(z);
+        this.b = g;
+    }
+
+    @Override // j$.util.stream.P, j$.util.stream.d2
+    public final void accept(int i) {
+        this.b.accept(i);
     }
 }

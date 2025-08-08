@@ -44,204 +44,26 @@ public class AutoDeleteMessagesActivity extends BaseFragment implements Notifica
     ArrayList arrayList = new ArrayList();
     public int startFromTtl = 0;
 
-    class 2 implements Runnable {
-        2() {
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$run$0(ArrayList arrayList) {
-            BulletinFactory of;
-            int i;
-            CharSequence formatString;
-            if (arrayList.isEmpty()) {
-                return;
-            }
-            for (int i2 = 0; i2 < arrayList.size(); i2++) {
-                AutoDeleteMessagesActivity.this.getMessagesController().setDialogHistoryTTL(((Long) arrayList.get(i2)).longValue(), AutoDeleteMessagesActivity.this.getSelectedTime() * 60);
-            }
-            if (AutoDeleteMessagesActivity.this.getSelectedTime() > 0) {
-                of = BulletinFactory.of(AutoDeleteMessagesActivity.this);
-                i = R.raw.fire_on;
-                formatString = AndroidUtilities.replaceTags(LocaleController.formatString("AutodeleteTimerEnabledForChats", R.string.AutodeleteTimerEnabledForChats, LocaleController.formatTTLString(AutoDeleteMessagesActivity.this.getSelectedTime() * 60), LocaleController.formatPluralString("Chats", arrayList.size(), Integer.valueOf(arrayList.size()))));
-            } else {
-                of = BulletinFactory.of(AutoDeleteMessagesActivity.this);
-                i = R.raw.fire_off;
-                formatString = LocaleController.formatString("AutodeleteTimerDisabledForChats", R.string.AutodeleteTimerDisabledForChats, LocaleController.formatPluralString("Chats", arrayList.size(), Integer.valueOf(arrayList.size())));
-            }
-            of.createSimpleBulletin(i, formatString).show();
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$run$1(final ArrayList arrayList, int i) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.AutoDeleteMessagesActivity$2$$ExternalSyntheticLambda1
-                @Override // java.lang.Runnable
-                public final void run() {
-                    AutoDeleteMessagesActivity.2.this.lambda$run$0(arrayList);
-                }
-            }, 100L);
-        }
-
-        @Override // java.lang.Runnable
-        public void run() {
-            UsersSelectActivity usersSelectActivity = new UsersSelectActivity(1);
-            usersSelectActivity.setTtlPeriod(AutoDeleteMessagesActivity.this.getSelectedTime());
-            usersSelectActivity.setDelegate(new UsersSelectActivity.FilterUsersActivityDelegate() { // from class: org.telegram.ui.AutoDeleteMessagesActivity$2$$ExternalSyntheticLambda0
-                @Override // org.telegram.ui.UsersSelectActivity.FilterUsersActivityDelegate
-                public final void didSelectChats(ArrayList arrayList, int i) {
-                    AutoDeleteMessagesActivity.2.this.lambda$run$1(arrayList, i);
-                }
-            });
-            AutoDeleteMessagesActivity.this.presentFragment(usersSelectActivity);
-        }
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public void didReceivedNotification(int i, int i2, Object... objArr) {
     }
 
-    class 3 implements AlertsCreator.ScheduleDatePickerDelegate {
-        3() {
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean onFragmentCreate() {
+        int globalTTl = getUserConfig().getGlobalTTl();
+        this.startFromTtl = globalTTl;
+        if (globalTTl < 0) {
+            this.startFromTtl = 0;
         }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$didSelectDate$0(int i) {
-            AutoDeleteMessagesActivity.this.selectDate(i, true);
-        }
-
-        @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
-        public void didSelectDate(boolean z, final int i) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.AutoDeleteMessagesActivity$3$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    AutoDeleteMessagesActivity.3.this.lambda$didSelectDate$0(i);
-                }
-            }, 50L);
-        }
+        getUserConfig().loadGlobalTTl();
+        getNotificationCenter().addObserver(this, NotificationCenter.didUpdateGlobalAutoDeleteTimer);
+        return super.onFragmentCreate();
     }
 
-    private class RadioCellInternal extends RadioCell {
-        boolean custom;
-        int time;
-
-        public RadioCellInternal(Context context) {
-            super(context);
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public int getSelectedTime() {
-        for (int i = 0; i < this.arrayList.size(); i++) {
-            if (((RadioCellInternal) this.arrayList.get(i)).isChecked()) {
-                return ((RadioCellInternal) this.arrayList.get(i)).time;
-            }
-        }
-        return this.startFromTtl;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateItems$1(View view, AlertDialog alertDialog, int i) {
-        alertDialog.dismiss();
-        selectRadioButton(view, true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateItems$2(final View view) {
-        if (view == this.customTimeButton) {
-            AlertsCreator.createAutoDeleteDatePickerDialog(getContext(), 1, null, new 3());
-            return;
-        }
-        int i = ((RadioCellInternal) view).time;
-        if (getSelectedTime() != 0 || i <= 0) {
-            selectRadioButton(view, true);
-            return;
-        }
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setTitle(LocaleController.getString(R.string.MessageLifetime));
-        builder.setMessage(LocaleController.formatString("AutoDeleteConfirmMessage", R.string.AutoDeleteConfirmMessage, LocaleController.formatTTLString(i * 60)));
-        builder.setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.AutoDeleteMessagesActivity$$ExternalSyntheticLambda1
-            @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
-            public final void onClick(AlertDialog alertDialog, int i2) {
-                alertDialog.dismiss();
-            }
-        });
-        builder.setPositiveButton(LocaleController.getString(R.string.Enable), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.AutoDeleteMessagesActivity$$ExternalSyntheticLambda2
-            @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
-            public final void onClick(AlertDialog alertDialog, int i2) {
-                AutoDeleteMessagesActivity.this.lambda$updateItems$1(view, alertDialog, i2);
-            }
-        });
-        builder.show();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public void selectDate(int i, boolean z) {
-        TransitionSet transitionSet = new TransitionSet();
-        ChangeBounds changeBounds = new ChangeBounds();
-        changeBounds.setDuration(150L);
-        Fade fade = new Fade(1);
-        fade.setDuration(150L);
-        transitionSet.addTransition(new Fade(2).setDuration(150L)).addTransition(changeBounds).addTransition(fade);
-        transitionSet.setOrdering(0);
-        transitionSet.setInterpolator((TimeInterpolator) CubicBezierInterpolator.DEFAULT);
-        TransitionManager.beginDelayedTransition(this.checkBoxContainer, transitionSet);
-        for (int i2 = 0; i2 < this.arrayList.size(); i2++) {
-            if (((RadioCellInternal) this.arrayList.get(i2)).time == i) {
-                selectRadioButton((View) this.arrayList.get(i2), z);
-                return;
-            }
-        }
-        int i3 = 0;
-        while (i3 < this.arrayList.size()) {
-            if (((RadioCellInternal) this.arrayList.get(i3)).custom) {
-                this.checkBoxContainer.removeView((View) this.arrayList.get(i3));
-                this.arrayList.remove(i3);
-                i3--;
-            }
-            i3++;
-        }
-        int size = this.arrayList.size();
-        int i4 = 0;
-        while (true) {
-            if (i4 >= this.arrayList.size()) {
-                break;
-            }
-            if (i < ((RadioCellInternal) this.arrayList.get(i4)).time) {
-                size = i4 + 1;
-                break;
-            }
-            i4++;
-        }
-        RadioCellInternal radioCellInternal = new RadioCellInternal(getContext());
-        radioCellInternal.custom = true;
-        radioCellInternal.time = i;
-        radioCellInternal.setText(LocaleController.formatString("AutoDeleteAfterShort", R.string.AutoDeleteAfterShort, LocaleController.formatTTLString(i * 60)), false, true);
-        this.arrayList.add(size, radioCellInternal);
-        this.checkBoxContainer.addView(radioCellInternal, size);
-        updateItems();
-        selectRadioButton(radioCellInternal, z);
-    }
-
-    private void selectRadioButton(View view, boolean z) {
-        int i;
-        for (int i2 = 0; i2 < this.arrayList.size(); i2++) {
-            if (this.arrayList.get(i2) == view) {
-                ((RadioCellInternal) this.arrayList.get(i2)).setChecked(true, this.fragmentBeginToShow);
-            } else {
-                ((RadioCellInternal) this.arrayList.get(i2)).setChecked(false, this.fragmentBeginToShow);
-            }
-        }
-        if (!z || (i = ((RadioCellInternal) view).time) <= 0) {
-            return;
-        }
-        BulletinFactory.of(this).createSimpleBulletin(R.raw.fire_on, AndroidUtilities.replaceTags(LocaleController.formatString("AutoDeleteGlobalTimerEnabled", R.string.AutoDeleteGlobalTimerEnabled, LocaleController.formatTTLString(i * 60)))).show();
-    }
-
-    private void updateItems() {
-        for (int i = 0; i < this.arrayList.size(); i++) {
-            ((RadioCellInternal) this.arrayList.get(i)).setBackground(Theme.createSelectorWithBackgroundDrawable(Theme.getColor(Theme.key_windowBackgroundWhite), Theme.getColor(Theme.key_listSelector)));
-            ((RadioCellInternal) this.arrayList.get(i)).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.AutoDeleteMessagesActivity$$ExternalSyntheticLambda0
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    AutoDeleteMessagesActivity.this.lambda$updateItems$2(view);
-                }
-            });
-        }
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public void onFragmentDestroy() {
+        super.onFragmentDestroy();
+        getNotificationCenter().removeObserver(this, NotificationCenter.didUpdateGlobalAutoDeleteTimer);
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -320,26 +142,196 @@ public class AutoDeleteMessagesActivity extends BaseFragment implements Notifica
         return this.fragmentView;
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public void didReceivedNotification(int i, int i2, Object... objArr) {
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public boolean onFragmentCreate() {
-        int globalTTl = getUserConfig().getGlobalTTl();
-        this.startFromTtl = globalTTl;
-        if (globalTTl < 0) {
-            this.startFromTtl = 0;
+    class 2 implements Runnable {
+        2() {
         }
-        getUserConfig().loadGlobalTTl();
-        getNotificationCenter().addObserver(this, NotificationCenter.didUpdateGlobalAutoDeleteTimer);
-        return super.onFragmentCreate();
+
+        @Override // java.lang.Runnable
+        public void run() {
+            UsersSelectActivity usersSelectActivity = new UsersSelectActivity(1);
+            usersSelectActivity.setTtlPeriod(AutoDeleteMessagesActivity.this.getSelectedTime());
+            usersSelectActivity.setDelegate(new UsersSelectActivity.FilterUsersActivityDelegate() { // from class: org.telegram.ui.AutoDeleteMessagesActivity$2$$ExternalSyntheticLambda0
+                @Override // org.telegram.ui.UsersSelectActivity.FilterUsersActivityDelegate
+                public final void didSelectChats(ArrayList arrayList, int i) {
+                    AutoDeleteMessagesActivity.2.this.lambda$run$1(arrayList, i);
+                }
+            });
+            AutoDeleteMessagesActivity.this.presentFragment(usersSelectActivity);
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$run$1(final ArrayList arrayList, int i) {
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.AutoDeleteMessagesActivity$2$$ExternalSyntheticLambda1
+                @Override // java.lang.Runnable
+                public final void run() {
+                    AutoDeleteMessagesActivity.2.this.lambda$run$0(arrayList);
+                }
+            }, 100L);
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$run$0(ArrayList arrayList) {
+            if (arrayList.isEmpty()) {
+                return;
+            }
+            for (int i = 0; i < arrayList.size(); i++) {
+                AutoDeleteMessagesActivity.this.getMessagesController().setDialogHistoryTTL(((Long) arrayList.get(i)).longValue(), AutoDeleteMessagesActivity.this.getSelectedTime() * 60);
+            }
+            if (AutoDeleteMessagesActivity.this.getSelectedTime() > 0) {
+                BulletinFactory.of(AutoDeleteMessagesActivity.this).createSimpleBulletin(R.raw.fire_on, AndroidUtilities.replaceTags(LocaleController.formatString("AutodeleteTimerEnabledForChats", R.string.AutodeleteTimerEnabledForChats, LocaleController.formatTTLString(AutoDeleteMessagesActivity.this.getSelectedTime() * 60), LocaleController.formatPluralString("Chats", arrayList.size(), Integer.valueOf(arrayList.size()))))).show();
+            } else {
+                BulletinFactory.of(AutoDeleteMessagesActivity.this).createSimpleBulletin(R.raw.fire_off, LocaleController.formatString("AutodeleteTimerDisabledForChats", R.string.AutodeleteTimerDisabledForChats, LocaleController.formatPluralString("Chats", arrayList.size(), Integer.valueOf(arrayList.size())))).show();
+            }
+        }
     }
 
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public void onFragmentDestroy() {
-        super.onFragmentDestroy();
-        getNotificationCenter().removeObserver(this, NotificationCenter.didUpdateGlobalAutoDeleteTimer);
+    private void updateItems() {
+        for (int i = 0; i < this.arrayList.size(); i++) {
+            ((RadioCellInternal) this.arrayList.get(i)).setBackground(Theme.createSelectorWithBackgroundDrawable(Theme.getColor(Theme.key_windowBackgroundWhite), Theme.getColor(Theme.key_listSelector)));
+            ((RadioCellInternal) this.arrayList.get(i)).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.AutoDeleteMessagesActivity$$ExternalSyntheticLambda0
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    AutoDeleteMessagesActivity.this.lambda$updateItems$2(view);
+                }
+            });
+        }
+    }
+
+    class 3 implements AlertsCreator.ScheduleDatePickerDelegate {
+        3() {
+        }
+
+        @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
+        public void didSelectDate(boolean z, final int i) {
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.AutoDeleteMessagesActivity$3$$ExternalSyntheticLambda0
+                @Override // java.lang.Runnable
+                public final void run() {
+                    AutoDeleteMessagesActivity.3.this.lambda$didSelectDate$0(i);
+                }
+            }, 50L);
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$didSelectDate$0(int i) {
+            AutoDeleteMessagesActivity.this.selectDate(i, true);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$updateItems$2(final View view) {
+        if (view == this.customTimeButton) {
+            AlertsCreator.createAutoDeleteDatePickerDialog(getContext(), 1, null, new 3());
+            return;
+        }
+        int i = ((RadioCellInternal) view).time;
+        if (getSelectedTime() == 0 && i > 0) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+            builder.setTitle(LocaleController.getString(R.string.MessageLifetime));
+            builder.setMessage(LocaleController.formatString("AutoDeleteConfirmMessage", R.string.AutoDeleteConfirmMessage, LocaleController.formatTTLString(i * 60)));
+            builder.setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.AutoDeleteMessagesActivity$$ExternalSyntheticLambda1
+                @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
+                public final void onClick(AlertDialog alertDialog, int i2) {
+                    alertDialog.dismiss();
+                }
+            });
+            builder.setPositiveButton(LocaleController.getString(R.string.Enable), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.AutoDeleteMessagesActivity$$ExternalSyntheticLambda2
+                @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
+                public final void onClick(AlertDialog alertDialog, int i2) {
+                    AutoDeleteMessagesActivity.this.lambda$updateItems$1(view, alertDialog, i2);
+                }
+            });
+            builder.show();
+            return;
+        }
+        selectRadioButton(view, true);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$updateItems$1(View view, AlertDialog alertDialog, int i) {
+        alertDialog.dismiss();
+        selectRadioButton(view, true);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public int getSelectedTime() {
+        for (int i = 0; i < this.arrayList.size(); i++) {
+            if (((RadioCellInternal) this.arrayList.get(i)).isChecked()) {
+                return ((RadioCellInternal) this.arrayList.get(i)).time;
+            }
+        }
+        return this.startFromTtl;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void selectDate(int i, boolean z) {
+        TransitionSet transitionSet = new TransitionSet();
+        ChangeBounds changeBounds = new ChangeBounds();
+        changeBounds.setDuration(150L);
+        Fade fade = new Fade(1);
+        fade.setDuration(150L);
+        transitionSet.addTransition(new Fade(2).setDuration(150L)).addTransition(changeBounds).addTransition(fade);
+        transitionSet.setOrdering(0);
+        transitionSet.setInterpolator((TimeInterpolator) CubicBezierInterpolator.DEFAULT);
+        TransitionManager.beginDelayedTransition(this.checkBoxContainer, transitionSet);
+        for (int i2 = 0; i2 < this.arrayList.size(); i2++) {
+            if (((RadioCellInternal) this.arrayList.get(i2)).time == i) {
+                selectRadioButton((View) this.arrayList.get(i2), z);
+                return;
+            }
+        }
+        int i3 = 0;
+        while (i3 < this.arrayList.size()) {
+            if (((RadioCellInternal) this.arrayList.get(i3)).custom) {
+                this.checkBoxContainer.removeView((View) this.arrayList.get(i3));
+                this.arrayList.remove(i3);
+                i3--;
+            }
+            i3++;
+        }
+        int size = this.arrayList.size();
+        int i4 = 0;
+        while (true) {
+            if (i4 >= this.arrayList.size()) {
+                break;
+            }
+            if (i < ((RadioCellInternal) this.arrayList.get(i4)).time) {
+                size = i4 + 1;
+                break;
+            }
+            i4++;
+        }
+        RadioCellInternal radioCellInternal = new RadioCellInternal(getContext());
+        radioCellInternal.custom = true;
+        radioCellInternal.time = i;
+        radioCellInternal.setText(LocaleController.formatString("AutoDeleteAfterShort", R.string.AutoDeleteAfterShort, LocaleController.formatTTLString(i * 60)), false, true);
+        this.arrayList.add(size, radioCellInternal);
+        this.checkBoxContainer.addView(radioCellInternal, size);
+        updateItems();
+        selectRadioButton(radioCellInternal, z);
+    }
+
+    private void selectRadioButton(View view, boolean z) {
+        int i;
+        for (int i2 = 0; i2 < this.arrayList.size(); i2++) {
+            if (this.arrayList.get(i2) == view) {
+                ((RadioCellInternal) this.arrayList.get(i2)).setChecked(true, this.fragmentBeginToShow);
+            } else {
+                ((RadioCellInternal) this.arrayList.get(i2)).setChecked(false, this.fragmentBeginToShow);
+            }
+        }
+        if (!z || (i = ((RadioCellInternal) view).time) <= 0) {
+            return;
+        }
+        BulletinFactory.of(this).createSimpleBulletin(R.raw.fire_on, AndroidUtilities.replaceTags(LocaleController.formatString("AutoDeleteGlobalTimerEnabled", R.string.AutoDeleteGlobalTimerEnabled, LocaleController.formatTTLString(i * 60)))).show();
+    }
+
+    private class RadioCellInternal extends RadioCell {
+        boolean custom;
+        int time;
+
+        public RadioCellInternal(Context context) {
+            super(context);
+        }
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment

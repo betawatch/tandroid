@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.zip.GZIPOutputStream;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 class BytesBackedNativeSessionFile implements NativeSessionFile {
     private final byte[] bytes;
     private final String dataTransportFilename;
@@ -17,6 +17,33 @@ class BytesBackedNativeSessionFile implements NativeSessionFile {
         this.dataTransportFilename = str;
         this.reportsEndpointFilename = str2;
         this.bytes = bArr;
+    }
+
+    @Override // com.google.firebase.crashlytics.internal.common.NativeSessionFile
+    public String getReportsEndpointFilename() {
+        return this.reportsEndpointFilename;
+    }
+
+    @Override // com.google.firebase.crashlytics.internal.common.NativeSessionFile
+    public InputStream getStream() {
+        if (isEmpty()) {
+            return null;
+        }
+        return new ByteArrayInputStream(this.bytes);
+    }
+
+    @Override // com.google.firebase.crashlytics.internal.common.NativeSessionFile
+    public CrashlyticsReport.FilesPayload.File asFilePayload() {
+        byte[] asGzippedBytes = asGzippedBytes();
+        if (asGzippedBytes == null) {
+            return null;
+        }
+        return CrashlyticsReport.FilesPayload.File.builder().setContents(asGzippedBytes).setFilename(this.dataTransportFilename).build();
+    }
+
+    private boolean isEmpty() {
+        byte[] bArr = this.bytes;
+        return bArr == null || bArr.length == 0;
     }
 
     private byte[] asGzippedBytes() {
@@ -41,32 +68,5 @@ class BytesBackedNativeSessionFile implements NativeSessionFile {
         } catch (IOException unused) {
             return null;
         }
-    }
-
-    private boolean isEmpty() {
-        byte[] bArr = this.bytes;
-        return bArr == null || bArr.length == 0;
-    }
-
-    @Override // com.google.firebase.crashlytics.internal.common.NativeSessionFile
-    public CrashlyticsReport.FilesPayload.File asFilePayload() {
-        byte[] asGzippedBytes = asGzippedBytes();
-        if (asGzippedBytes == null) {
-            return null;
-        }
-        return CrashlyticsReport.FilesPayload.File.builder().setContents(asGzippedBytes).setFilename(this.dataTransportFilename).build();
-    }
-
-    @Override // com.google.firebase.crashlytics.internal.common.NativeSessionFile
-    public String getReportsEndpointFilename() {
-        return this.reportsEndpointFilename;
-    }
-
-    @Override // com.google.firebase.crashlytics.internal.common.NativeSessionFile
-    public InputStream getStream() {
-        if (isEmpty()) {
-            return null;
-        }
-        return new ByteArrayInputStream(this.bytes);
     }
 }

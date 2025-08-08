@@ -2,9 +2,9 @@ package android.support.v4.media.session;
 
 import android.app.PendingIntent;
 import android.content.Context;
-import android.media.AudioAttributes;
 import android.media.MediaMetadata;
 import android.media.session.MediaController;
+import android.media.session.MediaSession;
 import android.media.session.PlaybackState;
 import android.os.Build;
 import android.os.Bundle;
@@ -34,10 +34,165 @@ public final class MediaControllerCompat {
     private final ConcurrentHashMap mRegisteredCallbacks = new ConcurrentHashMap();
     private final MediaSessionCompat.Token mToken;
 
+    interface MediaControllerImpl {
+        MediaMetadataCompat getMetadata();
+
+        PlaybackStateCompat getPlaybackState();
+
+        List getQueue();
+
+        PendingIntent getSessionActivity();
+
+        TransportControls getTransportControls();
+
+        void registerCallback(Callback callback, Handler handler);
+
+        void unregisterCallback(Callback callback);
+    }
+
+    public MediaControllerCompat(Context context, MediaSessionCompat mediaSessionCompat) {
+        if (mediaSessionCompat == null) {
+            throw new IllegalArgumentException("session must not be null");
+        }
+        MediaSessionCompat.Token sessionToken = mediaSessionCompat.getSessionToken();
+        this.mToken = sessionToken;
+        if (Build.VERSION.SDK_INT >= 29) {
+            this.mImpl = new MediaControllerImplApi29(context, sessionToken);
+        } else {
+            this.mImpl = new MediaControllerImplApi21(context, sessionToken);
+        }
+    }
+
+    public MediaControllerCompat(Context context, MediaSessionCompat.Token token) {
+        if (token == null) {
+            throw new IllegalArgumentException("sessionToken must not be null");
+        }
+        this.mToken = token;
+        this.mImpl = new MediaControllerImplApi21(context, token);
+    }
+
+    public TransportControls getTransportControls() {
+        return this.mImpl.getTransportControls();
+    }
+
+    public PlaybackStateCompat getPlaybackState() {
+        return this.mImpl.getPlaybackState();
+    }
+
+    public MediaMetadataCompat getMetadata() {
+        return this.mImpl.getMetadata();
+    }
+
+    public List getQueue() {
+        return this.mImpl.getQueue();
+    }
+
+    public PendingIntent getSessionActivity() {
+        return this.mImpl.getSessionActivity();
+    }
+
+    public void registerCallback(Callback callback) {
+        registerCallback(callback, null);
+    }
+
+    public void registerCallback(Callback callback, Handler handler) {
+        if (callback == null) {
+            throw new IllegalArgumentException("callback must not be null");
+        }
+        if (this.mRegisteredCallbacks.putIfAbsent(callback, Boolean.TRUE) != null) {
+            Log.w("MediaControllerCompat", "the callback has already been registered");
+            return;
+        }
+        if (handler == null) {
+            handler = new Handler();
+        }
+        callback.setHandler(handler);
+        this.mImpl.registerCallback(callback, handler);
+    }
+
+    public void unregisterCallback(Callback callback) {
+        if (callback == null) {
+            throw new IllegalArgumentException("callback must not be null");
+        }
+        if (this.mRegisteredCallbacks.remove(callback) == null) {
+            Log.w("MediaControllerCompat", "the callback has never been registered");
+            return;
+        }
+        try {
+            this.mImpl.unregisterCallback(callback);
+        } finally {
+            callback.setHandler(null);
+        }
+    }
+
     public static abstract class Callback implements IBinder.DeathRecipient {
-        final MediaController.Callback mCallbackFwk;
+        final MediaController.Callback mCallbackFwk = new MediaControllerCallbackApi21(this);
         MessageHandler mHandler;
         IMediaControllerCallback mIControllerCallback;
+
+        public void onAudioInfoChanged(PlaybackInfo playbackInfo) {
+        }
+
+        public void onCaptioningEnabledChanged(boolean z) {
+        }
+
+        public void onExtrasChanged(Bundle bundle) {
+        }
+
+        public abstract void onMetadataChanged(MediaMetadataCompat mediaMetadataCompat);
+
+        public void onPlaybackStateChanged(PlaybackStateCompat playbackStateCompat) {
+        }
+
+        public void onQueueChanged(List list) {
+        }
+
+        public void onQueueTitleChanged(CharSequence charSequence) {
+        }
+
+        public void onRepeatModeChanged(int i) {
+        }
+
+        public abstract void onSessionDestroyed();
+
+        public void onSessionEvent(String str, Bundle bundle) {
+        }
+
+        public void onSessionReady() {
+        }
+
+        public void onShuffleModeChanged(int i) {
+        }
+
+        @Override // android.os.IBinder.DeathRecipient
+        public void binderDied() {
+            postToHandler(8, null, null);
+        }
+
+        void setHandler(Handler handler) {
+            if (handler == null) {
+                MessageHandler messageHandler = this.mHandler;
+                if (messageHandler != null) {
+                    messageHandler.mRegistered = false;
+                    messageHandler.removeCallbacksAndMessages(null);
+                    this.mHandler = null;
+                    return;
+                }
+                return;
+            }
+            MessageHandler messageHandler2 = new MessageHandler(handler.getLooper());
+            this.mHandler = messageHandler2;
+            messageHandler2.mRegistered = true;
+        }
+
+        void postToHandler(int i, Object obj, Bundle bundle) {
+            MessageHandler messageHandler = this.mHandler;
+            if (messageHandler != null) {
+                Message obtainMessage = messageHandler.obtainMessage(i, obj);
+                obtainMessage.setData(bundle);
+                obtainMessage.sendToTarget();
+            }
+        }
 
         private static class MediaControllerCallbackApi21 extends MediaController.Callback {
             private final WeakReference mCallback;
@@ -47,38 +202,21 @@ public final class MediaControllerCompat {
             }
 
             @Override // android.media.session.MediaController.Callback
-            public void onAudioInfoChanged(MediaController.PlaybackInfo playbackInfo) {
-                int playbackType;
-                AudioAttributes audioAttributes;
-                int volumeControl;
-                int maxVolume;
-                int currentVolume;
+            public void onSessionDestroyed() {
                 Callback callback = (Callback) this.mCallback.get();
                 if (callback != null) {
-                    playbackType = playbackInfo.getPlaybackType();
-                    audioAttributes = playbackInfo.getAudioAttributes();
-                    AudioAttributesCompat wrap = AudioAttributesCompat.wrap(audioAttributes);
-                    volumeControl = playbackInfo.getVolumeControl();
-                    maxVolume = playbackInfo.getMaxVolume();
-                    currentVolume = playbackInfo.getCurrentVolume();
-                    callback.onAudioInfoChanged(new PlaybackInfo(playbackType, wrap, volumeControl, maxVolume, currentVolume));
+                    callback.onSessionDestroyed();
                 }
             }
 
             @Override // android.media.session.MediaController.Callback
-            public void onExtrasChanged(Bundle bundle) {
+            public void onSessionEvent(String str, Bundle bundle) {
                 MediaSessionCompat.ensureClassLoader(bundle);
                 Callback callback = (Callback) this.mCallback.get();
                 if (callback != null) {
-                    callback.onExtrasChanged(bundle);
-                }
-            }
-
-            @Override // android.media.session.MediaController.Callback
-            public void onMetadataChanged(MediaMetadata mediaMetadata) {
-                Callback callback = (Callback) this.mCallback.get();
-                if (callback != null) {
-                    callback.onMetadataChanged(MediaMetadataCompat.fromMediaMetadata(mediaMetadata));
+                    if (callback.mIControllerCallback == null || Build.VERSION.SDK_INT >= 23) {
+                        callback.onSessionEvent(str, bundle);
+                    }
                 }
             }
 
@@ -89,6 +227,14 @@ public final class MediaControllerCompat {
                     return;
                 }
                 callback.onPlaybackStateChanged(PlaybackStateCompat.fromPlaybackState(playbackState));
+            }
+
+            @Override // android.media.session.MediaController.Callback
+            public void onMetadataChanged(MediaMetadata mediaMetadata) {
+                Callback callback = (Callback) this.mCallback.get();
+                if (callback != null) {
+                    callback.onMetadataChanged(MediaMetadataCompat.fromMediaMetadata(mediaMetadata));
+                }
             }
 
             @Override // android.media.session.MediaController.Callback
@@ -108,21 +254,79 @@ public final class MediaControllerCompat {
             }
 
             @Override // android.media.session.MediaController.Callback
-            public void onSessionDestroyed() {
+            public void onExtrasChanged(Bundle bundle) {
+                MediaSessionCompat.ensureClassLoader(bundle);
                 Callback callback = (Callback) this.mCallback.get();
                 if (callback != null) {
-                    callback.onSessionDestroyed();
+                    callback.onExtrasChanged(bundle);
                 }
             }
 
             @Override // android.media.session.MediaController.Callback
-            public void onSessionEvent(String str, Bundle bundle) {
-                MediaSessionCompat.ensureClassLoader(bundle);
+            public void onAudioInfoChanged(MediaController.PlaybackInfo playbackInfo) {
                 Callback callback = (Callback) this.mCallback.get();
                 if (callback != null) {
-                    if (callback.mIControllerCallback == null || Build.VERSION.SDK_INT >= 23) {
-                        callback.onSessionEvent(str, bundle);
-                    }
+                    callback.onAudioInfoChanged(new PlaybackInfo(playbackInfo.getPlaybackType(), AudioAttributesCompat.wrap(playbackInfo.getAudioAttributes()), playbackInfo.getVolumeControl(), playbackInfo.getMaxVolume(), playbackInfo.getCurrentVolume()));
+                }
+            }
+        }
+
+        private static class StubCompat extends IMediaControllerCallback.Stub {
+            private final WeakReference mCallback;
+
+            @Override // android.support.v4.media.session.IMediaControllerCallback
+            public void onShuffleModeChangedRemoved(boolean z) {
+            }
+
+            StubCompat(Callback callback) {
+                this.mCallback = new WeakReference(callback);
+            }
+
+            @Override // android.support.v4.media.session.IMediaControllerCallback
+            public void onEvent(String str, Bundle bundle) {
+                Callback callback = (Callback) this.mCallback.get();
+                if (callback != null) {
+                    callback.postToHandler(1, str, bundle);
+                }
+            }
+
+            @Override // android.support.v4.media.session.IMediaControllerCallback
+            public void onPlaybackStateChanged(PlaybackStateCompat playbackStateCompat) {
+                Callback callback = (Callback) this.mCallback.get();
+                if (callback != null) {
+                    callback.postToHandler(2, playbackStateCompat, null);
+                }
+            }
+
+            @Override // android.support.v4.media.session.IMediaControllerCallback
+            public void onCaptioningEnabledChanged(boolean z) {
+                Callback callback = (Callback) this.mCallback.get();
+                if (callback != null) {
+                    callback.postToHandler(11, Boolean.valueOf(z), null);
+                }
+            }
+
+            @Override // android.support.v4.media.session.IMediaControllerCallback
+            public void onRepeatModeChanged(int i) {
+                Callback callback = (Callback) this.mCallback.get();
+                if (callback != null) {
+                    callback.postToHandler(9, Integer.valueOf(i), null);
+                }
+            }
+
+            @Override // android.support.v4.media.session.IMediaControllerCallback
+            public void onShuffleModeChanged(int i) {
+                Callback callback = (Callback) this.mCallback.get();
+                if (callback != null) {
+                    callback.postToHandler(12, Integer.valueOf(i), null);
+                }
+            }
+
+            @Override // android.support.v4.media.session.IMediaControllerCallback
+            public void onSessionReady() {
+                Callback callback = (Callback) this.mCallback.get();
+                if (callback != null) {
+                    callback.postToHandler(13, null, null);
                 }
             }
         }
@@ -183,202 +387,33 @@ public final class MediaControllerCompat {
                 }
             }
         }
+    }
 
-        private static class StubCompat extends IMediaControllerCallback.Stub {
-            private final WeakReference mCallback;
+    public static abstract class TransportControls {
+        public abstract void pause();
 
-            StubCompat(Callback callback) {
-                this.mCallback = new WeakReference(callback);
-            }
+        public abstract void play();
 
-            @Override // android.support.v4.media.session.IMediaControllerCallback
-            public void onCaptioningEnabledChanged(boolean z) {
-                Callback callback = (Callback) this.mCallback.get();
-                if (callback != null) {
-                    callback.postToHandler(11, Boolean.valueOf(z), null);
-                }
-            }
+        public abstract void stop();
 
-            @Override // android.support.v4.media.session.IMediaControllerCallback
-            public void onEvent(String str, Bundle bundle) {
-                Callback callback = (Callback) this.mCallback.get();
-                if (callback != null) {
-                    callback.postToHandler(1, str, bundle);
-                }
-            }
-
-            @Override // android.support.v4.media.session.IMediaControllerCallback
-            public void onExtrasChanged(Bundle bundle) {
-                Callback callback = (Callback) this.mCallback.get();
-                if (callback != null) {
-                    callback.postToHandler(7, bundle, null);
-                }
-            }
-
-            @Override // android.support.v4.media.session.IMediaControllerCallback
-            public void onMetadataChanged(MediaMetadataCompat mediaMetadataCompat) {
-                Callback callback = (Callback) this.mCallback.get();
-                if (callback != null) {
-                    callback.postToHandler(3, mediaMetadataCompat, null);
-                }
-            }
-
-            @Override // android.support.v4.media.session.IMediaControllerCallback
-            public void onPlaybackStateChanged(PlaybackStateCompat playbackStateCompat) {
-                Callback callback = (Callback) this.mCallback.get();
-                if (callback != null) {
-                    callback.postToHandler(2, playbackStateCompat, null);
-                }
-            }
-
-            @Override // android.support.v4.media.session.IMediaControllerCallback
-            public void onQueueChanged(List list) {
-                Callback callback = (Callback) this.mCallback.get();
-                if (callback != null) {
-                    callback.postToHandler(5, list, null);
-                }
-            }
-
-            @Override // android.support.v4.media.session.IMediaControllerCallback
-            public void onQueueTitleChanged(CharSequence charSequence) {
-                Callback callback = (Callback) this.mCallback.get();
-                if (callback != null) {
-                    callback.postToHandler(6, charSequence, null);
-                }
-            }
-
-            @Override // android.support.v4.media.session.IMediaControllerCallback
-            public void onRepeatModeChanged(int i) {
-                Callback callback = (Callback) this.mCallback.get();
-                if (callback != null) {
-                    callback.postToHandler(9, Integer.valueOf(i), null);
-                }
-            }
-
-            @Override // android.support.v4.media.session.IMediaControllerCallback
-            public void onSessionDestroyed() {
-                Callback callback = (Callback) this.mCallback.get();
-                if (callback != null) {
-                    callback.postToHandler(8, null, null);
-                }
-            }
-
-            @Override // android.support.v4.media.session.IMediaControllerCallback
-            public void onSessionReady() {
-                Callback callback = (Callback) this.mCallback.get();
-                if (callback != null) {
-                    callback.postToHandler(13, null, null);
-                }
-            }
-
-            @Override // android.support.v4.media.session.IMediaControllerCallback
-            public void onShuffleModeChanged(int i) {
-                Callback callback = (Callback) this.mCallback.get();
-                if (callback != null) {
-                    callback.postToHandler(12, Integer.valueOf(i), null);
-                }
-            }
-
-            @Override // android.support.v4.media.session.IMediaControllerCallback
-            public void onShuffleModeChangedRemoved(boolean z) {
-            }
-
-            @Override // android.support.v4.media.session.IMediaControllerCallback
-            public void onVolumeInfoChanged(ParcelableVolumeInfo parcelableVolumeInfo) {
-                Callback callback = (Callback) this.mCallback.get();
-                if (callback != null) {
-                    callback.postToHandler(4, parcelableVolumeInfo != null ? new PlaybackInfo(parcelableVolumeInfo.volumeType, parcelableVolumeInfo.audioStream, parcelableVolumeInfo.controlType, parcelableVolumeInfo.maxVolume, parcelableVolumeInfo.currentVolume) : null, null);
-                }
-            }
-        }
-
-        public Callback() {
-            if (Build.VERSION.SDK_INT >= 21) {
-                this.mCallbackFwk = new MediaControllerCallbackApi21(this);
-            } else {
-                this.mCallbackFwk = null;
-                this.mIControllerCallback = new StubCompat(this);
-            }
-        }
-
-        @Override // android.os.IBinder.DeathRecipient
-        public void binderDied() {
-            postToHandler(8, null, null);
-        }
-
-        public void onAudioInfoChanged(PlaybackInfo playbackInfo) {
-        }
-
-        public void onCaptioningEnabledChanged(boolean z) {
-        }
-
-        public void onExtrasChanged(Bundle bundle) {
-        }
-
-        public abstract void onMetadataChanged(MediaMetadataCompat mediaMetadataCompat);
-
-        public void onPlaybackStateChanged(PlaybackStateCompat playbackStateCompat) {
-        }
-
-        public void onQueueChanged(List list) {
-        }
-
-        public void onQueueTitleChanged(CharSequence charSequence) {
-        }
-
-        public void onRepeatModeChanged(int i) {
-        }
-
-        public abstract void onSessionDestroyed();
-
-        public void onSessionEvent(String str, Bundle bundle) {
-        }
-
-        public void onSessionReady() {
-        }
-
-        public void onShuffleModeChanged(int i) {
-        }
-
-        void postToHandler(int i, Object obj, Bundle bundle) {
-            MessageHandler messageHandler = this.mHandler;
-            if (messageHandler != null) {
-                Message obtainMessage = messageHandler.obtainMessage(i, obj);
-                obtainMessage.setData(bundle);
-                obtainMessage.sendToTarget();
-            }
-        }
-
-        void setHandler(Handler handler) {
-            if (handler != null) {
-                MessageHandler messageHandler = new MessageHandler(handler.getLooper());
-                this.mHandler = messageHandler;
-                messageHandler.mRegistered = true;
-            } else {
-                MessageHandler messageHandler2 = this.mHandler;
-                if (messageHandler2 != null) {
-                    messageHandler2.mRegistered = false;
-                    messageHandler2.removeCallbacksAndMessages(null);
-                    this.mHandler = null;
-                }
-            }
+        TransportControls() {
         }
     }
 
-    interface MediaControllerImpl {
-        MediaMetadataCompat getMetadata();
+    public static final class PlaybackInfo {
+        private final AudioAttributesCompat mAudioAttrsCompat;
+        private final int mCurrentVolume;
+        private final int mMaxVolume;
+        private final int mPlaybackType;
+        private final int mVolumeControl;
 
-        PlaybackStateCompat getPlaybackState();
-
-        List getQueue();
-
-        PendingIntent getSessionActivity();
-
-        TransportControls getTransportControls();
-
-        void registerCallback(Callback callback, Handler handler);
-
-        void unregisterCallback(Callback callback);
+        PlaybackInfo(int i, AudioAttributesCompat audioAttributesCompat, int i2, int i3, int i4) {
+            this.mPlaybackType = i;
+            this.mAudioAttrsCompat = audioAttributesCompat;
+            this.mVolumeControl = i2;
+            this.mMaxVolume = i3;
+            this.mCurrentVolume = i4;
+        }
     }
 
     static class MediaControllerImplApi21 implements MediaControllerImpl {
@@ -387,6 +422,136 @@ public final class MediaControllerCompat {
         final Object mLock = new Object();
         private final List mPendingCallbacks = new ArrayList();
         private HashMap mCallbackMap = new HashMap();
+
+        MediaControllerImplApi21(Context context, MediaSessionCompat.Token token) {
+            this.mSessionToken = token;
+            this.mControllerFwk = new MediaController(context, (MediaSession.Token) token.getToken());
+            if (token.getExtraBinder() == null) {
+                requestExtraBinder();
+            }
+        }
+
+        @Override // android.support.v4.media.session.MediaControllerCompat.MediaControllerImpl
+        public final void registerCallback(Callback callback, Handler handler) {
+            this.mControllerFwk.registerCallback(callback.mCallbackFwk, handler);
+            synchronized (this.mLock) {
+                if (this.mSessionToken.getExtraBinder() != null) {
+                    ExtraCallback extraCallback = new ExtraCallback(callback);
+                    this.mCallbackMap.put(callback, extraCallback);
+                    callback.mIControllerCallback = extraCallback;
+                    try {
+                        this.mSessionToken.getExtraBinder().registerCallbackListener(extraCallback);
+                        callback.postToHandler(13, null, null);
+                    } catch (RemoteException e) {
+                        Log.e("MediaControllerCompat", "Dead object in registerCallback.", e);
+                    }
+                } else {
+                    callback.mIControllerCallback = null;
+                    this.mPendingCallbacks.add(callback);
+                }
+            }
+        }
+
+        @Override // android.support.v4.media.session.MediaControllerCompat.MediaControllerImpl
+        public final void unregisterCallback(Callback callback) {
+            this.mControllerFwk.unregisterCallback(callback.mCallbackFwk);
+            synchronized (this.mLock) {
+                if (this.mSessionToken.getExtraBinder() != null) {
+                    try {
+                        ExtraCallback extraCallback = (ExtraCallback) this.mCallbackMap.remove(callback);
+                        if (extraCallback != null) {
+                            callback.mIControllerCallback = null;
+                            this.mSessionToken.getExtraBinder().unregisterCallbackListener(extraCallback);
+                        }
+                    } catch (RemoteException e) {
+                        Log.e("MediaControllerCompat", "Dead object in unregisterCallback.", e);
+                    }
+                } else {
+                    this.mPendingCallbacks.remove(callback);
+                }
+            }
+        }
+
+        @Override // android.support.v4.media.session.MediaControllerCompat.MediaControllerImpl
+        public TransportControls getTransportControls() {
+            MediaController.TransportControls transportControls = this.mControllerFwk.getTransportControls();
+            int i = Build.VERSION.SDK_INT;
+            if (i >= 29) {
+                return new TransportControlsApi29(transportControls);
+            }
+            if (i >= 24) {
+                return new TransportControlsApi24(transportControls);
+            }
+            if (i >= 23) {
+                return new TransportControlsApi23(transportControls);
+            }
+            return new TransportControlsApi21(transportControls);
+        }
+
+        @Override // android.support.v4.media.session.MediaControllerCompat.MediaControllerImpl
+        public PlaybackStateCompat getPlaybackState() {
+            if (this.mSessionToken.getExtraBinder() != null) {
+                try {
+                    return this.mSessionToken.getExtraBinder().getPlaybackState();
+                } catch (RemoteException e) {
+                    Log.e("MediaControllerCompat", "Dead object in getPlaybackState.", e);
+                }
+            }
+            PlaybackState playbackState = this.mControllerFwk.getPlaybackState();
+            if (playbackState != null) {
+                return PlaybackStateCompat.fromPlaybackState(playbackState);
+            }
+            return null;
+        }
+
+        @Override // android.support.v4.media.session.MediaControllerCompat.MediaControllerImpl
+        public MediaMetadataCompat getMetadata() {
+            MediaMetadata metadata = this.mControllerFwk.getMetadata();
+            if (metadata != null) {
+                return MediaMetadataCompat.fromMediaMetadata(metadata);
+            }
+            return null;
+        }
+
+        @Override // android.support.v4.media.session.MediaControllerCompat.MediaControllerImpl
+        public List getQueue() {
+            List<MediaSession.QueueItem> queue = this.mControllerFwk.getQueue();
+            if (queue != null) {
+                return MediaSessionCompat.QueueItem.fromQueueItemList(queue);
+            }
+            return null;
+        }
+
+        @Override // android.support.v4.media.session.MediaControllerCompat.MediaControllerImpl
+        public PendingIntent getSessionActivity() {
+            return this.mControllerFwk.getSessionActivity();
+        }
+
+        public void sendCommand(String str, Bundle bundle, ResultReceiver resultReceiver) {
+            this.mControllerFwk.sendCommand(str, bundle, resultReceiver);
+        }
+
+        private void requestExtraBinder() {
+            sendCommand("android.support.v4.media.session.command.GET_EXTRA_BINDER", null, new ExtraBinderRequestResultReceiver(this));
+        }
+
+        void processPendingCallbacksLocked() {
+            if (this.mSessionToken.getExtraBinder() == null) {
+                return;
+            }
+            for (Callback callback : this.mPendingCallbacks) {
+                ExtraCallback extraCallback = new ExtraCallback(callback);
+                this.mCallbackMap.put(callback, extraCallback);
+                callback.mIControllerCallback = extraCallback;
+                try {
+                    this.mSessionToken.getExtraBinder().registerCallbackListener(extraCallback);
+                    callback.postToHandler(13, null, null);
+                } catch (RemoteException e) {
+                    Log.e("MediaControllerCompat", "Dead object in registerCallback.", e);
+                }
+            }
+            this.mPendingCallbacks.clear();
+        }
 
         private static class ExtraBinderRequestResultReceiver extends ResultReceiver {
             private WeakReference mMediaControllerImpl;
@@ -415,161 +580,34 @@ public final class MediaControllerCompat {
                 super(callback);
             }
 
-            @Override // android.support.v4.media.session.MediaControllerCompat.Callback.StubCompat, android.support.v4.media.session.IMediaControllerCallback
-            public void onExtrasChanged(Bundle bundle) {
-                throw new AssertionError();
-            }
-
-            @Override // android.support.v4.media.session.MediaControllerCompat.Callback.StubCompat, android.support.v4.media.session.IMediaControllerCallback
-            public void onMetadataChanged(MediaMetadataCompat mediaMetadataCompat) {
-                throw new AssertionError();
-            }
-
-            @Override // android.support.v4.media.session.MediaControllerCompat.Callback.StubCompat, android.support.v4.media.session.IMediaControllerCallback
-            public void onQueueChanged(List list) {
-                throw new AssertionError();
-            }
-
-            @Override // android.support.v4.media.session.MediaControllerCompat.Callback.StubCompat, android.support.v4.media.session.IMediaControllerCallback
-            public void onQueueTitleChanged(CharSequence charSequence) {
-                throw new AssertionError();
-            }
-
-            @Override // android.support.v4.media.session.MediaControllerCompat.Callback.StubCompat, android.support.v4.media.session.IMediaControllerCallback
+            @Override // android.support.v4.media.session.IMediaControllerCallback
             public void onSessionDestroyed() {
                 throw new AssertionError();
             }
 
-            @Override // android.support.v4.media.session.MediaControllerCompat.Callback.StubCompat, android.support.v4.media.session.IMediaControllerCallback
-            public void onVolumeInfoChanged(ParcelableVolumeInfo parcelableVolumeInfo) {
+            @Override // android.support.v4.media.session.IMediaControllerCallback
+            public void onMetadataChanged(MediaMetadataCompat mediaMetadataCompat) {
                 throw new AssertionError();
             }
-        }
 
-        MediaControllerImplApi21(Context context, MediaSessionCompat.Token token) {
-            this.mSessionToken = token;
-            this.mControllerFwk = new MediaController(context, MediaControllerCompat$MediaControllerImplApi21$$ExternalSyntheticApiModelOutline6.m(token.getToken()));
-            if (token.getExtraBinder() == null) {
-                requestExtraBinder();
+            @Override // android.support.v4.media.session.IMediaControllerCallback
+            public void onQueueChanged(List list) {
+                throw new AssertionError();
             }
-        }
 
-        private void requestExtraBinder() {
-            sendCommand("android.support.v4.media.session.command.GET_EXTRA_BINDER", null, new ExtraBinderRequestResultReceiver(this));
-        }
-
-        @Override // android.support.v4.media.session.MediaControllerCompat.MediaControllerImpl
-        public MediaMetadataCompat getMetadata() {
-            MediaMetadata metadata;
-            metadata = this.mControllerFwk.getMetadata();
-            if (metadata != null) {
-                return MediaMetadataCompat.fromMediaMetadata(metadata);
+            @Override // android.support.v4.media.session.IMediaControllerCallback
+            public void onQueueTitleChanged(CharSequence charSequence) {
+                throw new AssertionError();
             }
-            return null;
-        }
 
-        @Override // android.support.v4.media.session.MediaControllerCompat.MediaControllerImpl
-        public PlaybackStateCompat getPlaybackState() {
-            PlaybackState playbackState;
-            if (this.mSessionToken.getExtraBinder() != null) {
-                try {
-                    return this.mSessionToken.getExtraBinder().getPlaybackState();
-                } catch (RemoteException e) {
-                    Log.e("MediaControllerCompat", "Dead object in getPlaybackState.", e);
-                }
+            @Override // android.support.v4.media.session.IMediaControllerCallback
+            public void onExtrasChanged(Bundle bundle) {
+                throw new AssertionError();
             }
-            playbackState = this.mControllerFwk.getPlaybackState();
-            if (playbackState != null) {
-                return PlaybackStateCompat.fromPlaybackState(playbackState);
-            }
-            return null;
-        }
 
-        @Override // android.support.v4.media.session.MediaControllerCompat.MediaControllerImpl
-        public List getQueue() {
-            List queue;
-            queue = this.mControllerFwk.getQueue();
-            if (queue != null) {
-                return MediaSessionCompat.QueueItem.fromQueueItemList(queue);
-            }
-            return null;
-        }
-
-        @Override // android.support.v4.media.session.MediaControllerCompat.MediaControllerImpl
-        public PendingIntent getSessionActivity() {
-            PendingIntent sessionActivity;
-            sessionActivity = this.mControllerFwk.getSessionActivity();
-            return sessionActivity;
-        }
-
-        @Override // android.support.v4.media.session.MediaControllerCompat.MediaControllerImpl
-        public TransportControls getTransportControls() {
-            MediaController.TransportControls transportControls;
-            transportControls = this.mControllerFwk.getTransportControls();
-            int i = Build.VERSION.SDK_INT;
-            return i >= 29 ? new TransportControlsApi29(transportControls) : i >= 24 ? new TransportControlsApi24(transportControls) : i >= 23 ? new TransportControlsApi23(transportControls) : new TransportControlsApi21(transportControls);
-        }
-
-        void processPendingCallbacksLocked() {
-            if (this.mSessionToken.getExtraBinder() == null) {
-                return;
-            }
-            for (Callback callback : this.mPendingCallbacks) {
-                ExtraCallback extraCallback = new ExtraCallback(callback);
-                this.mCallbackMap.put(callback, extraCallback);
-                callback.mIControllerCallback = extraCallback;
-                try {
-                    this.mSessionToken.getExtraBinder().registerCallbackListener(extraCallback);
-                    callback.postToHandler(13, null, null);
-                } catch (RemoteException e) {
-                    Log.e("MediaControllerCompat", "Dead object in registerCallback.", e);
-                }
-            }
-            this.mPendingCallbacks.clear();
-        }
-
-        @Override // android.support.v4.media.session.MediaControllerCompat.MediaControllerImpl
-        public final void registerCallback(Callback callback, Handler handler) {
-            this.mControllerFwk.registerCallback(callback.mCallbackFwk, handler);
-            synchronized (this.mLock) {
-                if (this.mSessionToken.getExtraBinder() != null) {
-                    ExtraCallback extraCallback = new ExtraCallback(callback);
-                    this.mCallbackMap.put(callback, extraCallback);
-                    callback.mIControllerCallback = extraCallback;
-                    try {
-                        this.mSessionToken.getExtraBinder().registerCallbackListener(extraCallback);
-                        callback.postToHandler(13, null, null);
-                    } catch (RemoteException e) {
-                        Log.e("MediaControllerCompat", "Dead object in registerCallback.", e);
-                    }
-                } else {
-                    callback.mIControllerCallback = null;
-                    this.mPendingCallbacks.add(callback);
-                }
-            }
-        }
-
-        public void sendCommand(String str, Bundle bundle, ResultReceiver resultReceiver) {
-            this.mControllerFwk.sendCommand(str, bundle, resultReceiver);
-        }
-
-        @Override // android.support.v4.media.session.MediaControllerCompat.MediaControllerImpl
-        public final void unregisterCallback(Callback callback) {
-            this.mControllerFwk.unregisterCallback(callback.mCallbackFwk);
-            synchronized (this.mLock) {
-                if (this.mSessionToken.getExtraBinder() != null) {
-                    try {
-                        ExtraCallback extraCallback = (ExtraCallback) this.mCallbackMap.remove(callback);
-                        if (extraCallback != null) {
-                            callback.mIControllerCallback = null;
-                            this.mSessionToken.getExtraBinder().unregisterCallbackListener(extraCallback);
-                        }
-                    } catch (RemoteException e) {
-                        Log.e("MediaControllerCompat", "Dead object in unregisterCallback.", e);
-                    }
-                } else {
-                    this.mPendingCallbacks.remove(callback);
-                }
+            @Override // android.support.v4.media.session.IMediaControllerCallback
+            public void onVolumeInfoChanged(ParcelableVolumeInfo parcelableVolumeInfo) {
+                throw new AssertionError();
             }
         }
     }
@@ -580,122 +618,6 @@ public final class MediaControllerCompat {
         }
     }
 
-    static class MediaControllerImplBase implements MediaControllerImpl {
-        private IMediaSession mBinder;
-        private TransportControls mTransportControls;
-
-        MediaControllerImplBase(MediaSessionCompat.Token token) {
-            this.mBinder = IMediaSession.Stub.asInterface((IBinder) token.getToken());
-        }
-
-        @Override // android.support.v4.media.session.MediaControllerCompat.MediaControllerImpl
-        public MediaMetadataCompat getMetadata() {
-            try {
-                return this.mBinder.getMetadata();
-            } catch (RemoteException e) {
-                Log.e("MediaControllerCompat", "Dead object in getMetadata.", e);
-                return null;
-            }
-        }
-
-        @Override // android.support.v4.media.session.MediaControllerCompat.MediaControllerImpl
-        public PlaybackStateCompat getPlaybackState() {
-            try {
-                return this.mBinder.getPlaybackState();
-            } catch (RemoteException e) {
-                Log.e("MediaControllerCompat", "Dead object in getPlaybackState.", e);
-                return null;
-            }
-        }
-
-        @Override // android.support.v4.media.session.MediaControllerCompat.MediaControllerImpl
-        public List getQueue() {
-            try {
-                return this.mBinder.getQueue();
-            } catch (RemoteException e) {
-                Log.e("MediaControllerCompat", "Dead object in getQueue.", e);
-                return null;
-            }
-        }
-
-        @Override // android.support.v4.media.session.MediaControllerCompat.MediaControllerImpl
-        public PendingIntent getSessionActivity() {
-            try {
-                return this.mBinder.getLaunchPendingIntent();
-            } catch (RemoteException e) {
-                Log.e("MediaControllerCompat", "Dead object in getSessionActivity.", e);
-                return null;
-            }
-        }
-
-        @Override // android.support.v4.media.session.MediaControllerCompat.MediaControllerImpl
-        public TransportControls getTransportControls() {
-            if (this.mTransportControls == null) {
-                this.mTransportControls = new TransportControlsBase(this.mBinder);
-            }
-            return this.mTransportControls;
-        }
-
-        @Override // android.support.v4.media.session.MediaControllerCompat.MediaControllerImpl
-        public void registerCallback(Callback callback, Handler handler) {
-            if (callback == null) {
-                throw new IllegalArgumentException("callback may not be null.");
-            }
-            try {
-                this.mBinder.asBinder().linkToDeath(callback, 0);
-                this.mBinder.registerCallbackListener(callback.mIControllerCallback);
-                callback.postToHandler(13, null, null);
-            } catch (RemoteException e) {
-                Log.e("MediaControllerCompat", "Dead object in registerCallback.", e);
-                callback.postToHandler(8, null, null);
-            }
-        }
-
-        @Override // android.support.v4.media.session.MediaControllerCompat.MediaControllerImpl
-        public void unregisterCallback(Callback callback) {
-            if (callback == null) {
-                throw new IllegalArgumentException("callback may not be null.");
-            }
-            try {
-                this.mBinder.unregisterCallbackListener(callback.mIControllerCallback);
-                this.mBinder.asBinder().unlinkToDeath(callback, 0);
-            } catch (RemoteException e) {
-                Log.e("MediaControllerCompat", "Dead object in unregisterCallback.", e);
-            }
-        }
-    }
-
-    public static final class PlaybackInfo {
-        private final AudioAttributesCompat mAudioAttrsCompat;
-        private final int mCurrentVolume;
-        private final int mMaxVolume;
-        private final int mPlaybackType;
-        private final int mVolumeControl;
-
-        PlaybackInfo(int i, int i2, int i3, int i4, int i5) {
-            this(i, new AudioAttributesCompat.Builder().setLegacyStreamType(i2).build(), i3, i4, i5);
-        }
-
-        PlaybackInfo(int i, AudioAttributesCompat audioAttributesCompat, int i2, int i3, int i4) {
-            this.mPlaybackType = i;
-            this.mAudioAttrsCompat = audioAttributesCompat;
-            this.mVolumeControl = i2;
-            this.mMaxVolume = i3;
-            this.mCurrentVolume = i4;
-        }
-    }
-
-    public static abstract class TransportControls {
-        TransportControls() {
-        }
-
-        public abstract void pause();
-
-        public abstract void play();
-
-        public abstract void stop();
-    }
-
     static class TransportControlsApi21 extends TransportControls {
         protected final MediaController.TransportControls mControlsFwk;
 
@@ -704,13 +626,13 @@ public final class MediaControllerCompat {
         }
 
         @Override // android.support.v4.media.session.MediaControllerCompat.TransportControls
-        public void pause() {
-            this.mControlsFwk.pause();
+        public void play() {
+            this.mControlsFwk.play();
         }
 
         @Override // android.support.v4.media.session.MediaControllerCompat.TransportControls
-        public void play() {
-            this.mControlsFwk.play();
+        public void pause() {
+            this.mControlsFwk.pause();
         }
 
         @Override // android.support.v4.media.session.MediaControllerCompat.TransportControls
@@ -734,127 +656,6 @@ public final class MediaControllerCompat {
     static class TransportControlsApi29 extends TransportControlsApi24 {
         TransportControlsApi29(MediaController.TransportControls transportControls) {
             super(transportControls);
-        }
-    }
-
-    static class TransportControlsBase extends TransportControls {
-        private IMediaSession mBinder;
-
-        public TransportControlsBase(IMediaSession iMediaSession) {
-            this.mBinder = iMediaSession;
-        }
-
-        @Override // android.support.v4.media.session.MediaControllerCompat.TransportControls
-        public void pause() {
-            try {
-                this.mBinder.pause();
-            } catch (RemoteException e) {
-                Log.e("MediaControllerCompat", "Dead object in pause.", e);
-            }
-        }
-
-        @Override // android.support.v4.media.session.MediaControllerCompat.TransportControls
-        public void play() {
-            try {
-                this.mBinder.play();
-            } catch (RemoteException e) {
-                Log.e("MediaControllerCompat", "Dead object in play.", e);
-            }
-        }
-
-        @Override // android.support.v4.media.session.MediaControllerCompat.TransportControls
-        public void stop() {
-            try {
-                this.mBinder.stop();
-            } catch (RemoteException e) {
-                Log.e("MediaControllerCompat", "Dead object in stop.", e);
-            }
-        }
-    }
-
-    public MediaControllerCompat(Context context, MediaSessionCompat.Token token) {
-        if (token == null) {
-            throw new IllegalArgumentException("sessionToken must not be null");
-        }
-        this.mToken = token;
-        if (Build.VERSION.SDK_INT >= 21) {
-            this.mImpl = new MediaControllerImplApi21(context, token);
-        } else {
-            this.mImpl = new MediaControllerImplBase(token);
-        }
-    }
-
-    public MediaControllerCompat(Context context, MediaSessionCompat mediaSessionCompat) {
-        MediaControllerImpl mediaControllerImplApi21;
-        if (mediaSessionCompat == null) {
-            throw new IllegalArgumentException("session must not be null");
-        }
-        MediaSessionCompat.Token sessionToken = mediaSessionCompat.getSessionToken();
-        this.mToken = sessionToken;
-        int i = Build.VERSION.SDK_INT;
-        if (i >= 29) {
-            mediaControllerImplApi21 = new MediaControllerImplApi29(context, sessionToken);
-        } else {
-            if (i < 21) {
-                this.mImpl = new MediaControllerImplBase(sessionToken);
-                return;
-            }
-            mediaControllerImplApi21 = new MediaControllerImplApi21(context, sessionToken);
-        }
-        this.mImpl = mediaControllerImplApi21;
-    }
-
-    public MediaMetadataCompat getMetadata() {
-        return this.mImpl.getMetadata();
-    }
-
-    public PlaybackStateCompat getPlaybackState() {
-        return this.mImpl.getPlaybackState();
-    }
-
-    public List getQueue() {
-        return this.mImpl.getQueue();
-    }
-
-    public PendingIntent getSessionActivity() {
-        return this.mImpl.getSessionActivity();
-    }
-
-    public TransportControls getTransportControls() {
-        return this.mImpl.getTransportControls();
-    }
-
-    public void registerCallback(Callback callback) {
-        registerCallback(callback, null);
-    }
-
-    public void registerCallback(Callback callback, Handler handler) {
-        if (callback == null) {
-            throw new IllegalArgumentException("callback must not be null");
-        }
-        if (this.mRegisteredCallbacks.putIfAbsent(callback, Boolean.TRUE) != null) {
-            Log.w("MediaControllerCompat", "the callback has already been registered");
-            return;
-        }
-        if (handler == null) {
-            handler = new Handler();
-        }
-        callback.setHandler(handler);
-        this.mImpl.registerCallback(callback, handler);
-    }
-
-    public void unregisterCallback(Callback callback) {
-        if (callback == null) {
-            throw new IllegalArgumentException("callback must not be null");
-        }
-        if (this.mRegisteredCallbacks.remove(callback) == null) {
-            Log.w("MediaControllerCompat", "the callback has never been registered");
-            return;
-        }
-        try {
-            this.mImpl.unregisterCallback(callback);
-        } finally {
-            callback.setHandler(null);
         }
     }
 }

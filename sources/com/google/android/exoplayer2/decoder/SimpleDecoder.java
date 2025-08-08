@@ -20,6 +20,14 @@ public abstract class SimpleDecoder implements Decoder {
     private boolean released;
     private int skippedOutputBufferCount;
 
+    protected abstract DecoderInputBuffer createInputBuffer();
+
+    protected abstract DecoderOutputBuffer createOutputBuffer();
+
+    protected abstract DecoderException createUnexpectedDecodeException(Throwable th);
+
+    protected abstract DecoderException decode(DecoderInputBuffer decoderInputBuffer, DecoderOutputBuffer decoderOutputBuffer, boolean z);
+
     protected SimpleDecoder(DecoderInputBuffer[] decoderInputBufferArr, DecoderOutputBuffer[] decoderOutputBufferArr) {
         this.availableInputBuffers = decoderInputBufferArr;
         this.availableInputBufferCount = decoderInputBufferArr.length;
@@ -41,8 +49,123 @@ public abstract class SimpleDecoder implements Decoder {
         thread.start();
     }
 
-    private boolean canDecodeBuffer() {
-        return !this.queuedInputBuffers.isEmpty() && this.availableOutputBufferCount > 0;
+    protected final void setInitialInputBufferSize(int i) {
+        Assertions.checkState(this.availableInputBufferCount == this.availableInputBuffers.length);
+        for (DecoderInputBuffer decoderInputBuffer : this.availableInputBuffers) {
+            decoderInputBuffer.ensureSpaceForWrite(i);
+        }
+    }
+
+    @Override // com.google.android.exoplayer2.decoder.Decoder
+    public final DecoderInputBuffer dequeueInputBuffer() {
+        DecoderInputBuffer decoderInputBuffer;
+        synchronized (this.lock) {
+            maybeThrowException();
+            Assertions.checkState(this.dequeuedInputBuffer == null);
+            int i = this.availableInputBufferCount;
+            if (i == 0) {
+                decoderInputBuffer = null;
+            } else {
+                DecoderInputBuffer[] decoderInputBufferArr = this.availableInputBuffers;
+                int i2 = i - 1;
+                this.availableInputBufferCount = i2;
+                decoderInputBuffer = decoderInputBufferArr[i2];
+            }
+            this.dequeuedInputBuffer = decoderInputBuffer;
+        }
+        return decoderInputBuffer;
+    }
+
+    @Override // com.google.android.exoplayer2.decoder.Decoder
+    public final void queueInputBuffer(DecoderInputBuffer decoderInputBuffer) {
+        synchronized (this.lock) {
+            maybeThrowException();
+            Assertions.checkArgument(decoderInputBuffer == this.dequeuedInputBuffer);
+            this.queuedInputBuffers.addLast(decoderInputBuffer);
+            maybeNotifyDecodeLoop();
+            this.dequeuedInputBuffer = null;
+        }
+    }
+
+    @Override // com.google.android.exoplayer2.decoder.Decoder
+    public final DecoderOutputBuffer dequeueOutputBuffer() {
+        synchronized (this.lock) {
+            try {
+                maybeThrowException();
+                if (this.queuedOutputBuffers.isEmpty()) {
+                    return null;
+                }
+                return this.queuedOutputBuffers.removeFirst();
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+    }
+
+    protected void releaseOutputBuffer(DecoderOutputBuffer decoderOutputBuffer) {
+        synchronized (this.lock) {
+            releaseOutputBufferInternal(decoderOutputBuffer);
+            maybeNotifyDecodeLoop();
+        }
+    }
+
+    @Override // com.google.android.exoplayer2.decoder.Decoder
+    public final void flush() {
+        synchronized (this.lock) {
+            try {
+                this.flushed = true;
+                this.skippedOutputBufferCount = 0;
+                DecoderInputBuffer decoderInputBuffer = this.dequeuedInputBuffer;
+                if (decoderInputBuffer != null) {
+                    releaseInputBufferInternal(decoderInputBuffer);
+                    this.dequeuedInputBuffer = null;
+                }
+                while (!this.queuedInputBuffers.isEmpty()) {
+                    releaseInputBufferInternal(this.queuedInputBuffers.removeFirst());
+                }
+                while (!this.queuedOutputBuffers.isEmpty()) {
+                    this.queuedOutputBuffers.removeFirst().release();
+                }
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+    }
+
+    @Override // com.google.android.exoplayer2.decoder.Decoder
+    public void release() {
+        synchronized (this.lock) {
+            this.released = true;
+            this.lock.notify();
+        }
+        try {
+            this.decodeThread.join();
+        } catch (InterruptedException unused) {
+            Thread.currentThread().interrupt();
+        }
+    }
+
+    private void maybeThrowException() {
+        DecoderException decoderException = this.exception;
+        if (decoderException != null) {
+            throw decoderException;
+        }
+    }
+
+    private void maybeNotifyDecodeLoop() {
+        if (canDecodeBuffer()) {
+            this.lock.notify();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void run() {
+        do {
+            try {
+            } catch (InterruptedException e) {
+                throw new IllegalStateException(e);
+            }
+        } while (decode());
     }
 
     private boolean decode() {
@@ -75,8 +198,10 @@ public abstract class SimpleDecoder implements Decoder {
                 }
                 try {
                     createUnexpectedDecodeException = decode(removeFirst, decoderOutputBuffer, z);
-                } catch (OutOfMemoryError | RuntimeException e) {
+                } catch (OutOfMemoryError e) {
                     createUnexpectedDecodeException = createUnexpectedDecodeException(e);
+                } catch (RuntimeException e2) {
+                    createUnexpectedDecodeException = createUnexpectedDecodeException(e2);
                 }
                 if (createUnexpectedDecodeException != null) {
                     synchronized (this.lock) {
@@ -87,17 +212,16 @@ public abstract class SimpleDecoder implements Decoder {
             }
             synchronized (this.lock) {
                 try {
-                    if (!this.flushed) {
-                        if (decoderOutputBuffer.isDecodeOnly()) {
-                            this.skippedOutputBufferCount++;
-                        } else {
-                            decoderOutputBuffer.skippedOutputBufferCount = this.skippedOutputBufferCount;
-                            this.skippedOutputBufferCount = 0;
-                            this.queuedOutputBuffers.addLast(decoderOutputBuffer);
-                            releaseInputBufferInternal(removeFirst);
-                        }
+                    if (this.flushed) {
+                        decoderOutputBuffer.release();
+                    } else if (decoderOutputBuffer.isDecodeOnly()) {
+                        this.skippedOutputBufferCount++;
+                        decoderOutputBuffer.release();
+                    } else {
+                        decoderOutputBuffer.skippedOutputBufferCount = this.skippedOutputBufferCount;
+                        this.skippedOutputBufferCount = 0;
+                        this.queuedOutputBuffers.addLast(decoderOutputBuffer);
                     }
-                    decoderOutputBuffer.release();
                     releaseInputBufferInternal(removeFirst);
                 } finally {
                 }
@@ -106,17 +230,8 @@ public abstract class SimpleDecoder implements Decoder {
         }
     }
 
-    private void maybeNotifyDecodeLoop() {
-        if (canDecodeBuffer()) {
-            this.lock.notify();
-        }
-    }
-
-    private void maybeThrowException() {
-        DecoderException decoderException = this.exception;
-        if (decoderException != null) {
-            throw decoderException;
-        }
+    private boolean canDecodeBuffer() {
+        return !this.queuedInputBuffers.isEmpty() && this.availableOutputBufferCount > 0;
     }
 
     private void releaseInputBufferInternal(DecoderInputBuffer decoderInputBuffer) {
@@ -133,119 +248,5 @@ public abstract class SimpleDecoder implements Decoder {
         int i = this.availableOutputBufferCount;
         this.availableOutputBufferCount = i + 1;
         decoderOutputBufferArr[i] = decoderOutputBuffer;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public void run() {
-        do {
-            try {
-            } catch (InterruptedException e) {
-                throw new IllegalStateException(e);
-            }
-        } while (decode());
-    }
-
-    protected abstract DecoderInputBuffer createInputBuffer();
-
-    protected abstract DecoderOutputBuffer createOutputBuffer();
-
-    protected abstract DecoderException createUnexpectedDecodeException(Throwable th);
-
-    protected abstract DecoderException decode(DecoderInputBuffer decoderInputBuffer, DecoderOutputBuffer decoderOutputBuffer, boolean z);
-
-    @Override // com.google.android.exoplayer2.decoder.Decoder
-    public final DecoderInputBuffer dequeueInputBuffer() {
-        DecoderInputBuffer decoderInputBuffer;
-        synchronized (this.lock) {
-            maybeThrowException();
-            Assertions.checkState(this.dequeuedInputBuffer == null);
-            int i = this.availableInputBufferCount;
-            if (i == 0) {
-                decoderInputBuffer = null;
-            } else {
-                DecoderInputBuffer[] decoderInputBufferArr = this.availableInputBuffers;
-                int i2 = i - 1;
-                this.availableInputBufferCount = i2;
-                decoderInputBuffer = decoderInputBufferArr[i2];
-            }
-            this.dequeuedInputBuffer = decoderInputBuffer;
-        }
-        return decoderInputBuffer;
-    }
-
-    @Override // com.google.android.exoplayer2.decoder.Decoder
-    public final DecoderOutputBuffer dequeueOutputBuffer() {
-        synchronized (this.lock) {
-            try {
-                maybeThrowException();
-                if (this.queuedOutputBuffers.isEmpty()) {
-                    return null;
-                }
-                return this.queuedOutputBuffers.removeFirst();
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-    }
-
-    @Override // com.google.android.exoplayer2.decoder.Decoder
-    public final void flush() {
-        synchronized (this.lock) {
-            try {
-                this.flushed = true;
-                this.skippedOutputBufferCount = 0;
-                DecoderInputBuffer decoderInputBuffer = this.dequeuedInputBuffer;
-                if (decoderInputBuffer != null) {
-                    releaseInputBufferInternal(decoderInputBuffer);
-                    this.dequeuedInputBuffer = null;
-                }
-                while (!this.queuedInputBuffers.isEmpty()) {
-                    releaseInputBufferInternal(this.queuedInputBuffers.removeFirst());
-                }
-                while (!this.queuedOutputBuffers.isEmpty()) {
-                    this.queuedOutputBuffers.removeFirst().release();
-                }
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-    }
-
-    @Override // com.google.android.exoplayer2.decoder.Decoder
-    public final void queueInputBuffer(DecoderInputBuffer decoderInputBuffer) {
-        synchronized (this.lock) {
-            maybeThrowException();
-            Assertions.checkArgument(decoderInputBuffer == this.dequeuedInputBuffer);
-            this.queuedInputBuffers.addLast(decoderInputBuffer);
-            maybeNotifyDecodeLoop();
-            this.dequeuedInputBuffer = null;
-        }
-    }
-
-    @Override // com.google.android.exoplayer2.decoder.Decoder
-    public void release() {
-        synchronized (this.lock) {
-            this.released = true;
-            this.lock.notify();
-        }
-        try {
-            this.decodeThread.join();
-        } catch (InterruptedException unused) {
-            Thread.currentThread().interrupt();
-        }
-    }
-
-    protected void releaseOutputBuffer(DecoderOutputBuffer decoderOutputBuffer) {
-        synchronized (this.lock) {
-            releaseOutputBufferInternal(decoderOutputBuffer);
-            maybeNotifyDecodeLoop();
-        }
-    }
-
-    protected final void setInitialInputBufferSize(int i) {
-        Assertions.checkState(this.availableInputBufferCount == this.availableInputBuffers.length);
-        for (DecoderInputBuffer decoderInputBuffer : this.availableInputBuffers) {
-            decoderInputBuffer.ensureSpaceForWrite(i);
-        }
     }
 }

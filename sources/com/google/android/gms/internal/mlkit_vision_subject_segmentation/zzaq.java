@@ -50,6 +50,20 @@ public abstract class zzaq extends AbstractCollection implements Serializable {
         return toArray(zza);
     }
 
+    abstract int zza(Object[] objArr, int i);
+
+    int zzb() {
+        throw new UnsupportedOperationException();
+    }
+
+    int zzc() {
+        throw new UnsupportedOperationException();
+    }
+
+    Object[] zze() {
+        return null;
+    }
+
     @Override // java.util.AbstractCollection, java.util.Collection
     public final Object[] toArray(Object[] objArr) {
         objArr.getClass();
@@ -69,19 +83,5 @@ public abstract class zzaq extends AbstractCollection implements Serializable {
         }
         zza(objArr, 0);
         return objArr;
-    }
-
-    abstract int zza(Object[] objArr, int i);
-
-    int zzb() {
-        throw new UnsupportedOperationException();
-    }
-
-    int zzc() {
-        throw new UnsupportedOperationException();
-    }
-
-    Object[] zze() {
-        return null;
     }
 }

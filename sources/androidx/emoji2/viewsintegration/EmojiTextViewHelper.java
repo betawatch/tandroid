@@ -12,109 +12,35 @@ import androidx.emoji2.text.EmojiCompat;
 public final class EmojiTextViewHelper {
     private final HelperInternal mHelper;
 
-    static class HelperInternal {
-        HelperInternal() {
+    public EmojiTextViewHelper(TextView textView, boolean z) {
+        Preconditions.checkNotNull(textView, "textView cannot be null");
+        if (!z) {
+            this.mHelper = new SkippingHelper19(textView);
+        } else {
+            this.mHelper = new HelperInternal19(textView);
         }
+    }
 
+    public InputFilter[] getFilters(InputFilter[] inputFilterArr) {
+        return this.mHelper.getFilters(inputFilterArr);
+    }
+
+    public void setEnabled(boolean z) {
+        this.mHelper.setEnabled(z);
+    }
+
+    public void setAllCaps(boolean z) {
+        this.mHelper.setAllCaps(z);
+    }
+
+    static class HelperInternal {
         abstract InputFilter[] getFilters(InputFilter[] inputFilterArr);
 
         abstract void setAllCaps(boolean z);
 
         abstract void setEnabled(boolean z);
-    }
 
-    private static class HelperInternal19 extends HelperInternal {
-        private final EmojiInputFilter mEmojiInputFilter;
-        private boolean mEnabled = true;
-        private final TextView mTextView;
-
-        HelperInternal19(TextView textView) {
-            this.mTextView = textView;
-            this.mEmojiInputFilter = new EmojiInputFilter(textView);
-        }
-
-        private InputFilter[] addEmojiInputFilterIfMissing(InputFilter[] inputFilterArr) {
-            int length = inputFilterArr.length;
-            for (InputFilter inputFilter : inputFilterArr) {
-                if (inputFilter == this.mEmojiInputFilter) {
-                    return inputFilterArr;
-                }
-            }
-            InputFilter[] inputFilterArr2 = new InputFilter[inputFilterArr.length + 1];
-            System.arraycopy(inputFilterArr, 0, inputFilterArr2, 0, length);
-            inputFilterArr2[length] = this.mEmojiInputFilter;
-            return inputFilterArr2;
-        }
-
-        private SparseArray getEmojiInputFilterPositionArray(InputFilter[] inputFilterArr) {
-            SparseArray sparseArray = new SparseArray(1);
-            for (int i = 0; i < inputFilterArr.length; i++) {
-                InputFilter inputFilter = inputFilterArr[i];
-                if (inputFilter instanceof EmojiInputFilter) {
-                    sparseArray.put(i, inputFilter);
-                }
-            }
-            return sparseArray;
-        }
-
-        private InputFilter[] removeEmojiInputFilterIfPresent(InputFilter[] inputFilterArr) {
-            SparseArray emojiInputFilterPositionArray = getEmojiInputFilterPositionArray(inputFilterArr);
-            if (emojiInputFilterPositionArray.size() == 0) {
-                return inputFilterArr;
-            }
-            int length = inputFilterArr.length;
-            InputFilter[] inputFilterArr2 = new InputFilter[inputFilterArr.length - emojiInputFilterPositionArray.size()];
-            int i = 0;
-            for (int i2 = 0; i2 < length; i2++) {
-                if (emojiInputFilterPositionArray.indexOfKey(i2) < 0) {
-                    inputFilterArr2[i] = inputFilterArr[i2];
-                    i++;
-                }
-            }
-            return inputFilterArr2;
-        }
-
-        private TransformationMethod unwrapForDisabled(TransformationMethod transformationMethod) {
-            return transformationMethod instanceof EmojiTransformationMethod ? ((EmojiTransformationMethod) transformationMethod).getOriginalTransformationMethod() : transformationMethod;
-        }
-
-        private void updateFilters() {
-            this.mTextView.setFilters(getFilters(this.mTextView.getFilters()));
-        }
-
-        private TransformationMethod wrapForEnabled(TransformationMethod transformationMethod) {
-            return ((transformationMethod instanceof EmojiTransformationMethod) || (transformationMethod instanceof PasswordTransformationMethod)) ? transformationMethod : new EmojiTransformationMethod(transformationMethod);
-        }
-
-        @Override // androidx.emoji2.viewsintegration.EmojiTextViewHelper.HelperInternal
-        InputFilter[] getFilters(InputFilter[] inputFilterArr) {
-            return !this.mEnabled ? removeEmojiInputFilterIfPresent(inputFilterArr) : addEmojiInputFilterIfMissing(inputFilterArr);
-        }
-
-        @Override // androidx.emoji2.viewsintegration.EmojiTextViewHelper.HelperInternal
-        void setAllCaps(boolean z) {
-            if (z) {
-                updateTransformationMethod();
-            }
-        }
-
-        @Override // androidx.emoji2.viewsintegration.EmojiTextViewHelper.HelperInternal
-        void setEnabled(boolean z) {
-            this.mEnabled = z;
-            updateTransformationMethod();
-            updateFilters();
-        }
-
-        void setEnabledUnsafe(boolean z) {
-            this.mEnabled = z;
-        }
-
-        void updateTransformationMethod() {
-            this.mTextView.setTransformationMethod(wrapTransformationMethod(this.mTextView.getTransformationMethod()));
-        }
-
-        TransformationMethod wrapTransformationMethod(TransformationMethod transformationMethod) {
-            return this.mEnabled ? wrapForEnabled(transformationMethod) : unwrapForDisabled(transformationMethod);
+        HelperInternal() {
         }
     }
 
@@ -152,20 +78,104 @@ public final class EmojiTextViewHelper {
         }
     }
 
-    public EmojiTextViewHelper(TextView textView, boolean z) {
-        Preconditions.checkNotNull(textView, "textView cannot be null");
-        this.mHelper = !z ? new SkippingHelper19(textView) : new HelperInternal19(textView);
-    }
+    private static class HelperInternal19 extends HelperInternal {
+        private final EmojiInputFilter mEmojiInputFilter;
+        private boolean mEnabled = true;
+        private final TextView mTextView;
 
-    public InputFilter[] getFilters(InputFilter[] inputFilterArr) {
-        return this.mHelper.getFilters(inputFilterArr);
-    }
+        HelperInternal19(TextView textView) {
+            this.mTextView = textView;
+            this.mEmojiInputFilter = new EmojiInputFilter(textView);
+        }
 
-    public void setAllCaps(boolean z) {
-        this.mHelper.setAllCaps(z);
-    }
+        void updateTransformationMethod() {
+            this.mTextView.setTransformationMethod(wrapTransformationMethod(this.mTextView.getTransformationMethod()));
+        }
 
-    public void setEnabled(boolean z) {
-        this.mHelper.setEnabled(z);
+        private void updateFilters() {
+            this.mTextView.setFilters(getFilters(this.mTextView.getFilters()));
+        }
+
+        @Override // androidx.emoji2.viewsintegration.EmojiTextViewHelper.HelperInternal
+        InputFilter[] getFilters(InputFilter[] inputFilterArr) {
+            if (!this.mEnabled) {
+                return removeEmojiInputFilterIfPresent(inputFilterArr);
+            }
+            return addEmojiInputFilterIfMissing(inputFilterArr);
+        }
+
+        private InputFilter[] addEmojiInputFilterIfMissing(InputFilter[] inputFilterArr) {
+            int length = inputFilterArr.length;
+            for (InputFilter inputFilter : inputFilterArr) {
+                if (inputFilter == this.mEmojiInputFilter) {
+                    return inputFilterArr;
+                }
+            }
+            InputFilter[] inputFilterArr2 = new InputFilter[inputFilterArr.length + 1];
+            System.arraycopy(inputFilterArr, 0, inputFilterArr2, 0, length);
+            inputFilterArr2[length] = this.mEmojiInputFilter;
+            return inputFilterArr2;
+        }
+
+        private InputFilter[] removeEmojiInputFilterIfPresent(InputFilter[] inputFilterArr) {
+            SparseArray emojiInputFilterPositionArray = getEmojiInputFilterPositionArray(inputFilterArr);
+            if (emojiInputFilterPositionArray.size() == 0) {
+                return inputFilterArr;
+            }
+            int length = inputFilterArr.length;
+            InputFilter[] inputFilterArr2 = new InputFilter[inputFilterArr.length - emojiInputFilterPositionArray.size()];
+            int i = 0;
+            for (int i2 = 0; i2 < length; i2++) {
+                if (emojiInputFilterPositionArray.indexOfKey(i2) < 0) {
+                    inputFilterArr2[i] = inputFilterArr[i2];
+                    i++;
+                }
+            }
+            return inputFilterArr2;
+        }
+
+        private SparseArray getEmojiInputFilterPositionArray(InputFilter[] inputFilterArr) {
+            SparseArray sparseArray = new SparseArray(1);
+            for (int i = 0; i < inputFilterArr.length; i++) {
+                InputFilter inputFilter = inputFilterArr[i];
+                if (inputFilter instanceof EmojiInputFilter) {
+                    sparseArray.put(i, inputFilter);
+                }
+            }
+            return sparseArray;
+        }
+
+        TransformationMethod wrapTransformationMethod(TransformationMethod transformationMethod) {
+            if (this.mEnabled) {
+                return wrapForEnabled(transformationMethod);
+            }
+            return unwrapForDisabled(transformationMethod);
+        }
+
+        private TransformationMethod unwrapForDisabled(TransformationMethod transformationMethod) {
+            return transformationMethod instanceof EmojiTransformationMethod ? ((EmojiTransformationMethod) transformationMethod).getOriginalTransformationMethod() : transformationMethod;
+        }
+
+        private TransformationMethod wrapForEnabled(TransformationMethod transformationMethod) {
+            return ((transformationMethod instanceof EmojiTransformationMethod) || (transformationMethod instanceof PasswordTransformationMethod)) ? transformationMethod : new EmojiTransformationMethod(transformationMethod);
+        }
+
+        @Override // androidx.emoji2.viewsintegration.EmojiTextViewHelper.HelperInternal
+        void setAllCaps(boolean z) {
+            if (z) {
+                updateTransformationMethod();
+            }
+        }
+
+        @Override // androidx.emoji2.viewsintegration.EmojiTextViewHelper.HelperInternal
+        void setEnabled(boolean z) {
+            this.mEnabled = z;
+            updateTransformationMethod();
+            updateFilters();
+        }
+
+        void setEnabledUnsafe(boolean z) {
+            this.mEnabled = z;
+        }
     }
 }

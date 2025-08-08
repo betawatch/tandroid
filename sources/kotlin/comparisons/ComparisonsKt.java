@@ -1,5 +1,5 @@
 package kotlin.comparisons;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class ComparisonsKt extends ComparisonsKt___ComparisonsKt {
 }

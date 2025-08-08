@@ -28,50 +28,6 @@ public abstract class AppCompatDelegate {
     private static final Object sActivityDelegatesLock = new Object();
     private static final Object sAppLocalesStorageSyncLock = new Object();
 
-    AppCompatDelegate() {
-    }
-
-    static void addActiveDelegate(AppCompatDelegate appCompatDelegate) {
-        synchronized (sActivityDelegatesLock) {
-            removeDelegateFromActives(appCompatDelegate);
-            sActivityDelegates.add(new WeakReference(appCompatDelegate));
-        }
-    }
-
-    public static AppCompatDelegate create(Dialog dialog, AppCompatCallback appCompatCallback) {
-        return new AppCompatDelegateImpl(dialog, appCompatCallback);
-    }
-
-    public static int getDefaultNightMode() {
-        return sDefaultNightMode;
-    }
-
-    static LocaleListCompat getRequestedAppLocales() {
-        return sRequestedAppLocales;
-    }
-
-    static void removeActivityDelegate(AppCompatDelegate appCompatDelegate) {
-        synchronized (sActivityDelegatesLock) {
-            removeDelegateFromActives(appCompatDelegate);
-        }
-    }
-
-    private static void removeDelegateFromActives(AppCompatDelegate appCompatDelegate) {
-        synchronized (sActivityDelegatesLock) {
-            try {
-                Iterator it = sActivityDelegates.iterator();
-                while (it.hasNext()) {
-                    AppCompatDelegate appCompatDelegate2 = (AppCompatDelegate) ((WeakReference) it.next()).get();
-                    if (appCompatDelegate2 == appCompatDelegate || appCompatDelegate2 == null) {
-                        it.remove();
-                    }
-                }
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-    }
-
     public abstract void addContentView(View view, ViewGroup.LayoutParams layoutParams);
 
     public abstract View findViewById(int i);
@@ -100,4 +56,48 @@ public abstract class AppCompatDelegate {
     public abstract void setTheme(int i);
 
     public abstract void setTitle(CharSequence charSequence);
+
+    public static AppCompatDelegate create(Dialog dialog, AppCompatCallback appCompatCallback) {
+        return new AppCompatDelegateImpl(dialog, appCompatCallback);
+    }
+
+    AppCompatDelegate() {
+    }
+
+    public static int getDefaultNightMode() {
+        return sDefaultNightMode;
+    }
+
+    static LocaleListCompat getRequestedAppLocales() {
+        return sRequestedAppLocales;
+    }
+
+    static void addActiveDelegate(AppCompatDelegate appCompatDelegate) {
+        synchronized (sActivityDelegatesLock) {
+            removeDelegateFromActives(appCompatDelegate);
+            sActivityDelegates.add(new WeakReference(appCompatDelegate));
+        }
+    }
+
+    static void removeActivityDelegate(AppCompatDelegate appCompatDelegate) {
+        synchronized (sActivityDelegatesLock) {
+            removeDelegateFromActives(appCompatDelegate);
+        }
+    }
+
+    private static void removeDelegateFromActives(AppCompatDelegate appCompatDelegate) {
+        synchronized (sActivityDelegatesLock) {
+            try {
+                Iterator it = sActivityDelegates.iterator();
+                while (it.hasNext()) {
+                    AppCompatDelegate appCompatDelegate2 = (AppCompatDelegate) ((WeakReference) it.next()).get();
+                    if (appCompatDelegate2 == appCompatDelegate || appCompatDelegate2 == null) {
+                        it.remove();
+                    }
+                }
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+    }
 }

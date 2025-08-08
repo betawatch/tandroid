@@ -2,4 +2,6 @@ package com.google.android.exoplayer2;
 
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class AudioFocusManager$$ExternalSyntheticApiModelOutline2 {
+    public static /* synthetic */ void m() {
+    }
 }

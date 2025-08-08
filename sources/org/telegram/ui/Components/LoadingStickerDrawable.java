@@ -17,7 +17,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class LoadingStickerDrawable extends Drawable {
     private Bitmap bitmap;
     int currentColor0;
@@ -30,40 +30,6 @@ public class LoadingStickerDrawable extends Drawable {
     private Paint placeholderPaint = new Paint(2);
     private Matrix placeholderMatrix = new Matrix();
 
-    public LoadingStickerDrawable(View view, String str, int i, int i2) {
-        this.bitmap = SvgHelper.getBitmapByPathOnly(str, 512, 512, i, i2);
-        this.parentView = view;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void draw(Canvas canvas) {
-        if (this.bitmap == null) {
-            return;
-        }
-        setColors(Theme.key_dialogBackground, Theme.key_dialogBackgroundGray);
-        android.graphics.Rect bounds = getBounds();
-        canvas.drawRect(bounds.left, bounds.top, bounds.right, bounds.bottom, this.placeholderPaint);
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        long abs = Math.abs(this.lastUpdateTime - elapsedRealtime);
-        if (abs > 17) {
-            abs = 16;
-        }
-        this.lastUpdateTime = elapsedRealtime;
-        float f = this.totalTranslation + ((abs * this.gradientWidth) / 1800.0f);
-        while (true) {
-            this.totalTranslation = f;
-            float f2 = this.totalTranslation;
-            float f3 = this.gradientWidth * 2.0f;
-            if (f2 < f3) {
-                this.placeholderMatrix.setTranslate(f2, 0.0f);
-                this.placeholderGradient.setLocalMatrix(this.placeholderMatrix);
-                this.parentView.invalidate();
-                return;
-            }
-            f = f2 - f3;
-        }
-    }
-
     @Override // android.graphics.drawable.Drawable
     public int getOpacity() {
         return -2;
@@ -75,6 +41,11 @@ public class LoadingStickerDrawable extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public void setColorFilter(ColorFilter colorFilter) {
+    }
+
+    public LoadingStickerDrawable(View view, String str, int i, int i2) {
+        this.bitmap = SvgHelper.getBitmapByPathOnly(str, 512, 512, i, i2);
+        this.parentView = view;
     }
 
     public void setColors(int i, int i2) {
@@ -95,5 +66,34 @@ public class LoadingStickerDrawable extends Drawable {
         Bitmap bitmap = this.bitmap;
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
         this.placeholderPaint.setShader(new ComposeShader(this.placeholderGradient, new BitmapShader(bitmap, tileMode, tileMode), PorterDuff.Mode.MULTIPLY));
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void draw(Canvas canvas) {
+        if (this.bitmap == null) {
+            return;
+        }
+        setColors(Theme.key_dialogBackground, Theme.key_dialogBackgroundGray);
+        android.graphics.Rect bounds = getBounds();
+        canvas.drawRect(bounds.left, bounds.top, bounds.right, bounds.bottom, this.placeholderPaint);
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long abs = Math.abs(this.lastUpdateTime - elapsedRealtime);
+        if (abs > 17) {
+            abs = 16;
+        }
+        this.lastUpdateTime = elapsedRealtime;
+        this.totalTranslation += (abs * this.gradientWidth) / 1800.0f;
+        while (true) {
+            float f = this.totalTranslation;
+            float f2 = this.gradientWidth * 2.0f;
+            if (f >= f2) {
+                this.totalTranslation = f - f2;
+            } else {
+                this.placeholderMatrix.setTranslate(f, 0.0f);
+                this.placeholderGradient.setLocalMatrix(this.placeholderMatrix);
+                this.parentView.invalidate();
+                return;
+            }
+        }
     }
 }

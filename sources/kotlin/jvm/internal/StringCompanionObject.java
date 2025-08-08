@@ -1,6 +1,6 @@
 package kotlin.jvm.internal;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class StringCompanionObject {
     public static final StringCompanionObject INSTANCE = new StringCompanionObject();
 

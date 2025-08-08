@@ -1,26 +1,34 @@
 package j$.util.stream;
 
-import j$.util.function.Function;
+import j$.util.function.Consumer;
 
 /* loaded from: classes2.dex */
 final class T1 extends V1 {
-    public final /* synthetic */ int m;
-    final /* synthetic */ Function n;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ T1(b bVar, int i, Function function, int i2) {
-        super(bVar, i, 1);
-        this.m = i2;
-        this.n = function;
+    @Override // j$.util.stream.b
+    final boolean v0() {
+        throw new UnsupportedOperationException();
     }
 
     @Override // j$.util.stream.b
-    final e2 w0(int i, e2 e2Var) {
-        switch (this.m) {
-            case 0:
-                return new o(this, e2Var, 3);
-            default:
-                return new o(this, e2Var, 7);
+    final d2 w0(int i, d2 d2Var) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // j$.util.stream.V1, j$.util.stream.Stream
+    public final void forEach(Consumer consumer) {
+        if (!isParallel()) {
+            y0().a(consumer);
+        } else {
+            super.forEach(consumer);
+        }
+    }
+
+    @Override // j$.util.stream.V1, j$.util.stream.Stream
+    public final void e(Consumer consumer) {
+        if (!isParallel()) {
+            y0().a(consumer);
+        } else {
+            super.e(consumer);
         }
     }
 }

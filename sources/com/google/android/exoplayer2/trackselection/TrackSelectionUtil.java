@@ -12,6 +12,18 @@ import java.util.List;
 
 /* loaded from: classes.dex */
 public abstract class TrackSelectionUtil {
+    public static LoadErrorHandlingPolicy.FallbackOptions createFallbackOptions(ExoTrackSelection exoTrackSelection) {
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        int length = exoTrackSelection.length();
+        int i = 0;
+        for (int i2 = 0; i2 < length; i2++) {
+            if (exoTrackSelection.isBlacklisted(i2, elapsedRealtime)) {
+                i++;
+            }
+        }
+        return new LoadErrorHandlingPolicy.FallbackOptions(1, 0, length, i);
+    }
+
     public static Tracks buildTracks(MappingTrackSelector.MappedTrackInfo mappedTrackInfo, TrackSelection[] trackSelectionArr) {
         List[] listArr = new List[trackSelectionArr.length];
         for (int i = 0; i < trackSelectionArr.length; i++) {
@@ -61,17 +73,5 @@ public abstract class TrackSelectionUtil {
             builder.add((Object) new Tracks.Group(trackGroup2, false, iArr2, new boolean[trackGroup2.length]));
         }
         return new Tracks(builder.build());
-    }
-
-    public static LoadErrorHandlingPolicy.FallbackOptions createFallbackOptions(ExoTrackSelection exoTrackSelection) {
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        int length = exoTrackSelection.length();
-        int i = 0;
-        for (int i2 = 0; i2 < length; i2++) {
-            if (exoTrackSelection.isBlacklisted(i2, elapsedRealtime)) {
-                i++;
-            }
-        }
-        return new LoadErrorHandlingPolicy.FallbackOptions(1, 0, length, i);
     }
 }

@@ -5,19 +5,6 @@ import java.util.Comparator;
 
 /* loaded from: classes2.dex */
 final class Y extends A implements Spliterator {
-    Y() {
-    }
-
-    @Override // j$.util.Spliterator
-    public final void a(Consumer consumer) {
-        consumer.getClass();
-    }
-
-    @Override // j$.util.Spliterator
-    public final Comparator getComparator() {
-        throw new IllegalStateException();
-    }
-
     @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
         return A.j(this);
@@ -29,8 +16,18 @@ final class Y extends A implements Spliterator {
     }
 
     @Override // j$.util.Spliterator
+    public final void a(Consumer consumer) {
+        consumer.getClass();
+    }
+
+    @Override // j$.util.Spliterator
     public final boolean s(Consumer consumer) {
         consumer.getClass();
         return false;
+    }
+
+    @Override // j$.util.Spliterator
+    public final Comparator getComparator() {
+        throw new IllegalStateException();
     }
 }

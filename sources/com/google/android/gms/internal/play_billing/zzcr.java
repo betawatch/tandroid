@@ -1,31 +1,226 @@
 package com.google.android.gms.internal.play_billing;
 
+import j$.util.Map;
+import j$.util.function.BiConsumer;
+import j$.util.function.BiFunction;
+import j$.util.function.Function;
+import java.io.Serializable;
+import java.util.Map;
+import java.util.Set;
+
 /* loaded from: classes.dex */
-final class zzcr extends zzct {
-    /* synthetic */ zzcr(zzcq zzcqVar) {
-        super(null);
+public abstract class zzcr implements Map, Serializable, j$.util.Map {
+    private transient zzcv zza;
+    private transient zzcv zzb;
+    private transient zzcj zzc;
+
+    zzcr() {
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzct
-    final void zza(Object obj, long j) {
-        ((zzcf) zzeq.zzf(obj, j)).zzb();
+    public static zzcr zzc(Object obj, Object obj2, Object obj3, Object obj4, Object obj5, Object obj6) {
+        zzbw.zzb("com.android.vending.billing.PURCHASES_UPDATED", obj2);
+        zzbw.zzb("com.android.vending.billing.LOCAL_BROADCAST_PURCHASES_UPDATED", obj4);
+        zzbw.zzb("com.android.vending.billing.ALTERNATIVE_BILLING", obj6);
+        return zzdp.zzg(3, new Object[]{"com.android.vending.billing.PURCHASES_UPDATED", obj2, "com.android.vending.billing.LOCAL_BROADCAST_PURCHASES_UPDATED", obj4, "com.android.vending.billing.ALTERNATIVE_BILLING", obj6}, null);
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzct
-    final void zzb(Object obj, Object obj2, long j) {
-        zzcf zzcfVar = (zzcf) zzeq.zzf(obj, j);
-        zzcf zzcfVar2 = (zzcf) zzeq.zzf(obj2, j);
-        int size = zzcfVar.size();
-        int size2 = zzcfVar2.size();
-        if (size > 0 && size2 > 0) {
-            if (!zzcfVar.zzc()) {
-                zzcfVar = zzcfVar.zzd(size2 + size);
+    @Override // java.util.Map
+    public final void clear() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // j$.util.Map
+    public /* synthetic */ Object compute(Object obj, BiFunction biFunction) {
+        return Map.-CC.$default$compute(this, obj, biFunction);
+    }
+
+    @Override // java.util.Map
+    public /* synthetic */ Object compute(Object obj, java.util.function.BiFunction biFunction) {
+        return compute(obj, BiFunction.VivifiedWrapper.convert(biFunction));
+    }
+
+    @Override // j$.util.Map
+    public /* synthetic */ Object computeIfAbsent(Object obj, Function function) {
+        return Map.-CC.$default$computeIfAbsent(this, obj, function);
+    }
+
+    @Override // java.util.Map
+    public /* synthetic */ Object computeIfAbsent(Object obj, java.util.function.Function function) {
+        return computeIfAbsent(obj, Function.VivifiedWrapper.convert(function));
+    }
+
+    @Override // j$.util.Map
+    public /* synthetic */ Object computeIfPresent(Object obj, BiFunction biFunction) {
+        return Map.-CC.$default$computeIfPresent(this, obj, biFunction);
+    }
+
+    @Override // java.util.Map
+    public /* synthetic */ Object computeIfPresent(Object obj, java.util.function.BiFunction biFunction) {
+        return computeIfPresent(obj, BiFunction.VivifiedWrapper.convert(biFunction));
+    }
+
+    @Override // java.util.Map
+    public final boolean containsKey(Object obj) {
+        return get(obj) != null;
+    }
+
+    @Override // java.util.Map
+    public final boolean containsValue(Object obj) {
+        return values().contains(obj);
+    }
+
+    @Override // java.util.Map
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof java.util.Map) {
+            return entrySet().equals(((java.util.Map) obj).entrySet());
+        }
+        return false;
+    }
+
+    @Override // j$.util.Map
+    public /* synthetic */ void forEach(BiConsumer biConsumer) {
+        Map.-CC.$default$forEach(this, biConsumer);
+    }
+
+    @Override // java.util.Map
+    public /* synthetic */ void forEach(java.util.function.BiConsumer biConsumer) {
+        forEach(BiConsumer.VivifiedWrapper.convert(biConsumer));
+    }
+
+    @Override // java.util.Map
+    public abstract Object get(Object obj);
+
+    @Override // java.util.Map, j$.util.Map
+    public final Object getOrDefault(Object obj, Object obj2) {
+        Object obj3 = get(obj);
+        return obj3 != null ? obj3 : obj2;
+    }
+
+    @Override // java.util.Map
+    public final int hashCode() {
+        return zzds.zza(entrySet());
+    }
+
+    @Override // java.util.Map
+    public final boolean isEmpty() {
+        return size() == 0;
+    }
+
+    @Override // java.util.Map
+    public final /* bridge */ /* synthetic */ Set keySet() {
+        zzcv zzcvVar = this.zzb;
+        if (zzcvVar != null) {
+            return zzcvVar;
+        }
+        zzcv zze = zze();
+        this.zzb = zze;
+        return zze;
+    }
+
+    @Override // j$.util.Map
+    public /* synthetic */ Object merge(Object obj, Object obj2, BiFunction biFunction) {
+        return Map.-CC.$default$merge(this, obj, obj2, biFunction);
+    }
+
+    @Override // java.util.Map
+    public /* synthetic */ Object merge(Object obj, Object obj2, java.util.function.BiFunction biFunction) {
+        return merge(obj, obj2, BiFunction.VivifiedWrapper.convert(biFunction));
+    }
+
+    @Override // java.util.Map
+    public final Object put(Object obj, Object obj2) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.Map
+    public final void putAll(java.util.Map map) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.Map, j$.util.Map
+    public /* synthetic */ Object putIfAbsent(Object obj, Object obj2) {
+        return Map.-CC.$default$putIfAbsent(this, obj, obj2);
+    }
+
+    @Override // java.util.Map
+    public final Object remove(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.Map, j$.util.Map
+    public /* synthetic */ boolean remove(Object obj, Object obj2) {
+        return Map.-CC.$default$remove(this, obj, obj2);
+    }
+
+    @Override // java.util.Map, j$.util.Map
+    public /* synthetic */ Object replace(Object obj, Object obj2) {
+        return Map.-CC.$default$replace(this, obj, obj2);
+    }
+
+    @Override // java.util.Map, j$.util.Map
+    public /* synthetic */ boolean replace(Object obj, Object obj2, Object obj3) {
+        return Map.-CC.$default$replace(this, obj, obj2, obj3);
+    }
+
+    @Override // j$.util.Map
+    public /* synthetic */ void replaceAll(BiFunction biFunction) {
+        Map.-CC.$default$replaceAll(this, biFunction);
+    }
+
+    @Override // java.util.Map
+    public /* synthetic */ void replaceAll(java.util.function.BiFunction biFunction) {
+        replaceAll(BiFunction.VivifiedWrapper.convert(biFunction));
+    }
+
+    public final String toString() {
+        int size = size();
+        zzbw.zza(size, "size");
+        StringBuilder sb = new StringBuilder((int) Math.min(size * 8, 1073741824L));
+        sb.append('{');
+        boolean z = true;
+        for (Map.Entry entry : entrySet()) {
+            if (!z) {
+                sb.append(", ");
             }
-            zzcfVar.addAll(zzcfVar2);
+            sb.append(entry.getKey());
+            sb.append('=');
+            sb.append(entry.getValue());
+            z = false;
         }
-        if (size > 0) {
-            zzcfVar2 = zzcfVar;
+        sb.append('}');
+        return sb.toString();
+    }
+
+    abstract zzcj zza();
+
+    @Override // java.util.Map
+    /* renamed from: zzb, reason: merged with bridge method [inline-methods] */
+    public final zzcj values() {
+        zzcj zzcjVar = this.zzc;
+        if (zzcjVar != null) {
+            return zzcjVar;
         }
-        zzeq.zzs(obj, j, zzcfVar2);
+        zzcj zza = zza();
+        this.zzc = zza;
+        return zza;
+    }
+
+    abstract zzcv zzd();
+
+    abstract zzcv zze();
+
+    @Override // java.util.Map
+    /* renamed from: zzf, reason: merged with bridge method [inline-methods] */
+    public final zzcv entrySet() {
+        zzcv zzcvVar = this.zza;
+        if (zzcvVar != null) {
+            return zzcvVar;
+        }
+        zzcv zzd = zzd();
+        this.zza = zzd;
+        return zzd;
     }
 }

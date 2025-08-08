@@ -9,7 +9,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.BlurringShader;
 import org.telegram.ui.PhotoViewer;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class PhotoViewerBlurDrawable extends CompatDrawable {
     private boolean applyBounds;
     private final BlurringShader.StoryBlurDrawer backgroundBlur;
@@ -28,6 +28,11 @@ public class PhotoViewerBlurDrawable extends CompatDrawable {
         this.photoViewer = photoViewer;
         this.view = view;
         this.backgroundBlur = new BlurringShader.StoryBlurDrawer(blurManager, view, 0, false);
+    }
+
+    public PhotoViewerBlurDrawable setApplyBounds(boolean z) {
+        this.applyBounds = z;
+        return this;
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -50,10 +55,5 @@ public class PhotoViewerBlurDrawable extends CompatDrawable {
         }
         this.photoViewer.drawCaptionBlur(canvas, this.backgroundBlur, Theme.multAlpha(-14277082, alpha), Theme.multAlpha(AndroidUtilities.DARK_STATUS_BAR_OVERLAY, alpha), false, true, false);
         canvas.restore();
-    }
-
-    public PhotoViewerBlurDrawable setApplyBounds(boolean z) {
-        this.applyBounds = z;
-        return this;
     }
 }

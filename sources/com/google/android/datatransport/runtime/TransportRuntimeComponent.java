@@ -13,6 +13,10 @@ abstract class TransportRuntimeComponent implements Closeable {
         Builder setApplicationContext(Context context);
     }
 
+    abstract EventStore getEventStore();
+
+    abstract TransportRuntime getTransportRuntime();
+
     TransportRuntimeComponent() {
     }
 
@@ -20,8 +24,4 @@ abstract class TransportRuntimeComponent implements Closeable {
     public void close() {
         getEventStore().close();
     }
-
-    abstract EventStore getEventStore();
-
-    abstract TransportRuntime getTransportRuntime();
 }

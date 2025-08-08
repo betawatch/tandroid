@@ -32,67 +32,6 @@ public final class ContentDataSource extends BaseDataSource {
     }
 
     @Override // com.google.android.exoplayer2.upstream.DataSource
-    public void close() {
-        this.uri = null;
-        try {
-            try {
-                FileInputStream fileInputStream = this.inputStream;
-                if (fileInputStream != null) {
-                    fileInputStream.close();
-                }
-                this.inputStream = null;
-                try {
-                    try {
-                        AssetFileDescriptor assetFileDescriptor = this.assetFileDescriptor;
-                        if (assetFileDescriptor != null) {
-                            assetFileDescriptor.close();
-                        }
-                    } catch (IOException e) {
-                        throw new ContentDataSourceException(e, 2000);
-                    }
-                } finally {
-                    this.assetFileDescriptor = null;
-                    if (this.opened) {
-                        this.opened = false;
-                        transferEnded();
-                    }
-                }
-            } catch (IOException e2) {
-                throw new ContentDataSourceException(e2, 2000);
-            }
-        } catch (Throwable th) {
-            this.inputStream = null;
-            try {
-                try {
-                    AssetFileDescriptor assetFileDescriptor2 = this.assetFileDescriptor;
-                    if (assetFileDescriptor2 != null) {
-                        assetFileDescriptor2.close();
-                    }
-                    this.assetFileDescriptor = null;
-                    if (this.opened) {
-                        this.opened = false;
-                        transferEnded();
-                    }
-                    throw th;
-                } catch (IOException e3) {
-                    throw new ContentDataSourceException(e3, 2000);
-                }
-            } finally {
-                this.assetFileDescriptor = null;
-                if (this.opened) {
-                    this.opened = false;
-                    transferEnded();
-                }
-            }
-        }
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.DataSource
-    public Uri getUri() {
-        return this.uri;
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.DataSource
     public long open(DataSpec dataSpec) {
         AssetFileDescriptor openAssetFileDescriptor;
         try {
@@ -185,5 +124,66 @@ public final class ContentDataSource extends BaseDataSource {
         }
         bytesTransferred(read);
         return read;
+    }
+
+    @Override // com.google.android.exoplayer2.upstream.DataSource
+    public Uri getUri() {
+        return this.uri;
+    }
+
+    @Override // com.google.android.exoplayer2.upstream.DataSource
+    public void close() {
+        this.uri = null;
+        try {
+            try {
+                FileInputStream fileInputStream = this.inputStream;
+                if (fileInputStream != null) {
+                    fileInputStream.close();
+                }
+                this.inputStream = null;
+                try {
+                    try {
+                        AssetFileDescriptor assetFileDescriptor = this.assetFileDescriptor;
+                        if (assetFileDescriptor != null) {
+                            assetFileDescriptor.close();
+                        }
+                    } catch (IOException e) {
+                        throw new ContentDataSourceException(e, 2000);
+                    }
+                } finally {
+                    this.assetFileDescriptor = null;
+                    if (this.opened) {
+                        this.opened = false;
+                        transferEnded();
+                    }
+                }
+            } catch (IOException e2) {
+                throw new ContentDataSourceException(e2, 2000);
+            }
+        } catch (Throwable th) {
+            this.inputStream = null;
+            try {
+                try {
+                    AssetFileDescriptor assetFileDescriptor2 = this.assetFileDescriptor;
+                    if (assetFileDescriptor2 != null) {
+                        assetFileDescriptor2.close();
+                    }
+                    this.assetFileDescriptor = null;
+                    if (this.opened) {
+                        this.opened = false;
+                        transferEnded();
+                    }
+                    throw th;
+                } catch (IOException e3) {
+                    throw new ContentDataSourceException(e3, 2000);
+                }
+            } finally {
+                this.assetFileDescriptor = null;
+                if (this.opened) {
+                    this.opened = false;
+                    transferEnded();
+                }
+            }
+        }
     }
 }

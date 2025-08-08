@@ -1,6 +1,5 @@
 package com.microsoft.appcenter.distribute;
 
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -11,7 +10,7 @@ import java.util.HashSet;
 import java.util.Set;
 import org.telegram.tgnet.TLObject;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class InstallerUtils {
     private static final Set LOCAL_STORES;
     private static Boolean sInstalledFromAppStore;
@@ -59,17 +58,15 @@ public abstract class InstallerUtils {
 
     public static boolean isUnknownSourcesEnabled(Context context) {
         boolean canRequestPackageInstalls;
-        int i = Build.VERSION.SDK_INT;
-        if (i < 26) {
-            ContentResolver contentResolver = context.getContentResolver();
-            return "1".equals(i < 21 ? Settings.Global.getString(contentResolver, "install_non_market_apps") : Settings.Secure.getString(contentResolver, "install_non_market_apps"));
-        }
-        if (context.getApplicationInfo().targetSdkVersion >= 26) {
-            canRequestPackageInstalls = context.getPackageManager().canRequestPackageInstalls();
-            if (!canRequestPackageInstalls) {
-                return false;
+        if (Build.VERSION.SDK_INT >= 26) {
+            if (context.getApplicationInfo().targetSdkVersion >= 26) {
+                canRequestPackageInstalls = context.getPackageManager().canRequestPackageInstalls();
+                if (!canRequestPackageInstalls) {
+                    return false;
+                }
             }
+            return true;
         }
-        return true;
+        return "1".equals(Settings.Secure.getString(context.getContentResolver(), "install_non_market_apps"));
     }
 }

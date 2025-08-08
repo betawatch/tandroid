@@ -53,6 +53,11 @@ public class IdenticonActivity extends BaseFragment implements NotificationCente
     private LinearLayout linearLayout1;
     private TextView textView;
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ boolean lambda$createView$0(View view, MotionEvent motionEvent) {
+        return true;
+    }
+
     private static class LinkMovementMethodMy extends LinkMovementMethod {
         private LinkMovementMethodMy() {
         }
@@ -72,63 +77,17 @@ public class IdenticonActivity extends BaseFragment implements NotificationCente
         super(bundle);
     }
 
-    private void fixLayout() {
-        this.fragmentView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() { // from class: org.telegram.ui.IdenticonActivity.4
-            @Override // android.view.ViewTreeObserver.OnPreDrawListener
-            public boolean onPreDraw() {
-                View view = IdenticonActivity.this.fragmentView;
-                if (view == null) {
-                    return true;
-                }
-                view.getViewTreeObserver().removeOnPreDrawListener(this);
-                int rotation = ((WindowManager) ApplicationLoader.applicationContext.getSystemService("window")).getDefaultDisplay().getRotation();
-                if (rotation == 3 || rotation == 1) {
-                    IdenticonActivity.this.linearLayout.setOrientation(0);
-                } else {
-                    IdenticonActivity.this.linearLayout.setOrientation(1);
-                }
-                View view2 = IdenticonActivity.this.fragmentView;
-                view2.setPadding(view2.getPaddingLeft(), 0, IdenticonActivity.this.fragmentView.getPaddingRight(), IdenticonActivity.this.fragmentView.getPaddingBottom());
-                return true;
-            }
-        });
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean onFragmentCreate() {
+        this.chat_id = getArguments().getInt("chat_id");
+        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.emojiLoaded);
+        return super.onFragmentCreate();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$createView$0(View view, MotionEvent motionEvent) {
-        return true;
-    }
-
-    private void updateEmojiButton(boolean z) {
-        AnimatorSet animatorSet = this.animatorSet;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-            this.animatorSet = null;
-        }
-        if (z) {
-            AnimatorSet animatorSet2 = new AnimatorSet();
-            this.animatorSet = animatorSet2;
-            animatorSet2.playTogether(ObjectAnimator.ofFloat(this.emojiTextView, "alpha", this.emojiSelected ? 1.0f : 0.0f), ObjectAnimator.ofFloat(this.codeTextView, "alpha", this.emojiSelected ? 0.0f : 1.0f), ObjectAnimator.ofFloat(this.emojiTextView, "scaleX", this.emojiSelected ? 1.0f : 0.0f), ObjectAnimator.ofFloat(this.emojiTextView, "scaleY", this.emojiSelected ? 1.0f : 0.0f), ObjectAnimator.ofFloat(this.codeTextView, "scaleX", this.emojiSelected ? 0.0f : 1.0f), ObjectAnimator.ofFloat(this.codeTextView, "scaleY", this.emojiSelected ? 0.0f : 1.0f));
-            this.animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.IdenticonActivity.3
-                @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-                public void onAnimationEnd(Animator animator) {
-                    if (animator.equals(IdenticonActivity.this.animatorSet)) {
-                        IdenticonActivity.this.animatorSet = null;
-                    }
-                }
-            });
-            this.animatorSet.setInterpolator(new DecelerateInterpolator());
-            this.animatorSet.setDuration(150L);
-            this.animatorSet.start();
-        } else {
-            this.emojiTextView.setAlpha(this.emojiSelected ? 1.0f : 0.0f);
-            this.codeTextView.setAlpha(this.emojiSelected ? 0.0f : 1.0f);
-            this.emojiTextView.setScaleX(this.emojiSelected ? 1.0f : 0.0f);
-            this.emojiTextView.setScaleY(this.emojiSelected ? 1.0f : 0.0f);
-            this.codeTextView.setScaleX(this.emojiSelected ? 0.0f : 1.0f);
-            this.codeTextView.setScaleY(this.emojiSelected ? 0.0f : 1.0f);
-        }
-        this.emojiTextView.setTag(Integer.valueOf(!this.emojiSelected ? Theme.key_chat_emojiPanelIcon : Theme.key_chat_emojiPanelIconSelected));
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public void onFragmentDestroy() {
+        super.onFragmentDestroy();
+        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.emojiLoaded);
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -260,6 +219,18 @@ public class IdenticonActivity extends BaseFragment implements NotificationCente
         return this.fragmentView;
     }
 
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public void onConfigurationChanged(Configuration configuration) {
+        super.onConfigurationChanged(configuration);
+        fixLayout();
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public void onResume() {
+        super.onResume();
+        fixLayout();
+    }
+
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public void didReceivedNotification(int i, int i2, Object... objArr) {
         TextView textView;
@@ -267,6 +238,70 @@ public class IdenticonActivity extends BaseFragment implements NotificationCente
             return;
         }
         textView.invalidate();
+    }
+
+    private void updateEmojiButton(boolean z) {
+        AnimatorSet animatorSet = this.animatorSet;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+            this.animatorSet = null;
+        }
+        if (z) {
+            AnimatorSet animatorSet2 = new AnimatorSet();
+            this.animatorSet = animatorSet2;
+            animatorSet2.playTogether(ObjectAnimator.ofFloat(this.emojiTextView, "alpha", this.emojiSelected ? 1.0f : 0.0f), ObjectAnimator.ofFloat(this.codeTextView, "alpha", this.emojiSelected ? 0.0f : 1.0f), ObjectAnimator.ofFloat(this.emojiTextView, "scaleX", this.emojiSelected ? 1.0f : 0.0f), ObjectAnimator.ofFloat(this.emojiTextView, "scaleY", this.emojiSelected ? 1.0f : 0.0f), ObjectAnimator.ofFloat(this.codeTextView, "scaleX", this.emojiSelected ? 0.0f : 1.0f), ObjectAnimator.ofFloat(this.codeTextView, "scaleY", this.emojiSelected ? 0.0f : 1.0f));
+            this.animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.IdenticonActivity.3
+                @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+                public void onAnimationEnd(Animator animator) {
+                    if (animator.equals(IdenticonActivity.this.animatorSet)) {
+                        IdenticonActivity.this.animatorSet = null;
+                    }
+                }
+            });
+            this.animatorSet.setInterpolator(new DecelerateInterpolator());
+            this.animatorSet.setDuration(150L);
+            this.animatorSet.start();
+        } else {
+            this.emojiTextView.setAlpha(this.emojiSelected ? 1.0f : 0.0f);
+            this.codeTextView.setAlpha(this.emojiSelected ? 0.0f : 1.0f);
+            this.emojiTextView.setScaleX(this.emojiSelected ? 1.0f : 0.0f);
+            this.emojiTextView.setScaleY(this.emojiSelected ? 1.0f : 0.0f);
+            this.codeTextView.setScaleX(this.emojiSelected ? 0.0f : 1.0f);
+            this.codeTextView.setScaleY(this.emojiSelected ? 0.0f : 1.0f);
+        }
+        this.emojiTextView.setTag(Integer.valueOf(!this.emojiSelected ? Theme.key_chat_emojiPanelIcon : Theme.key_chat_emojiPanelIconSelected));
+    }
+
+    private void fixLayout() {
+        this.fragmentView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() { // from class: org.telegram.ui.IdenticonActivity.4
+            @Override // android.view.ViewTreeObserver.OnPreDrawListener
+            public boolean onPreDraw() {
+                View view = IdenticonActivity.this.fragmentView;
+                if (view == null) {
+                    return true;
+                }
+                view.getViewTreeObserver().removeOnPreDrawListener(this);
+                int rotation = ((WindowManager) ApplicationLoader.applicationContext.getSystemService("window")).getDefaultDisplay().getRotation();
+                if (rotation == 3 || rotation == 1) {
+                    IdenticonActivity.this.linearLayout.setOrientation(0);
+                } else {
+                    IdenticonActivity.this.linearLayout.setOrientation(1);
+                }
+                View view2 = IdenticonActivity.this.fragmentView;
+                view2.setPadding(view2.getPaddingLeft(), 0, IdenticonActivity.this.fragmentView.getPaddingRight(), IdenticonActivity.this.fragmentView.getPaddingBottom());
+                return true;
+            }
+        });
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public void onTransitionAnimationEnd(boolean z, boolean z2) {
+        String str;
+        if (!z || z2 || (str = this.emojiText) == null) {
+            return;
+        }
+        TextView textView = this.emojiTextView;
+        textView.setText(Emoji.replaceEmoji(str, textView.getPaint().getFontMetricsInt(), false));
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -285,40 +320,5 @@ public class IdenticonActivity extends BaseFragment implements NotificationCente
         arrayList.add(new ThemeDescription(this.codeTextView, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, i2));
         arrayList.add(new ThemeDescription(this.textView, ThemeDescription.FLAG_LINKCOLOR, null, null, null, null, Theme.key_windowBackgroundWhiteLinkText));
         return arrayList;
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public void onConfigurationChanged(Configuration configuration) {
-        super.onConfigurationChanged(configuration);
-        fixLayout();
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public boolean onFragmentCreate() {
-        this.chat_id = getArguments().getInt("chat_id");
-        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.emojiLoaded);
-        return super.onFragmentCreate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public void onFragmentDestroy() {
-        super.onFragmentDestroy();
-        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.emojiLoaded);
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public void onResume() {
-        super.onResume();
-        fixLayout();
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public void onTransitionAnimationEnd(boolean z, boolean z2) {
-        String str;
-        if (!z || z2 || (str = this.emojiText) == null) {
-            return;
-        }
-        TextView textView = this.emojiTextView;
-        textView.setText(Emoji.replaceEmoji(str, textView.getPaint().getFontMetricsInt(), false));
     }
 }

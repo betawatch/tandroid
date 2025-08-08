@@ -6,11 +6,15 @@ import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class ExecutorCoroutineDispatcher extends CoroutineDispatcher implements Closeable {
     public static final Key Key = new Key(null);
 
     public static final class Key extends AbstractCoroutineContextKey {
+        public /* synthetic */ Key(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
         private Key() {
             super(CoroutineDispatcher.Key, new Function1() { // from class: kotlinx.coroutines.ExecutorCoroutineDispatcher.Key.1
                 @Override // kotlin.jvm.functions.Function1
@@ -21,10 +25,6 @@ public abstract class ExecutorCoroutineDispatcher extends CoroutineDispatcher im
                     return null;
                 }
             });
-        }
-
-        public /* synthetic */ Key(DefaultConstructorMarker defaultConstructorMarker) {
-            this();
         }
     }
 }

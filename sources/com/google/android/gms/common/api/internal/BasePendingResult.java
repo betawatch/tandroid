@@ -33,44 +33,6 @@ public abstract class BasePendingResult<R extends Result> extends PendingResult 
     private final AtomicReference zai = new AtomicReference();
     private boolean zaq = false;
 
-    public static class CallbackHandler extends com.google.android.gms.internal.base.zau {
-        public CallbackHandler(Looper looper) {
-            super(looper);
-        }
-
-        @Override // android.os.Handler
-        public final void handleMessage(Message message) {
-            int i = message.what;
-            if (i == 1) {
-                Pair pair = (Pair) message.obj;
-                ResultCallback resultCallback = (ResultCallback) pair.first;
-                Result result = (Result) pair.second;
-                try {
-                    resultCallback.onResult(result);
-                    return;
-                } catch (RuntimeException e) {
-                    BasePendingResult.zal(result);
-                    throw e;
-                }
-            }
-            if (i == 2) {
-                ((BasePendingResult) message.obj).forceFailureUnlessReady(Status.RESULT_TIMEOUT);
-                return;
-            }
-            Log.wtf("BasePendingResult", "Don't know how to handle message: " + i, new Exception());
-        }
-
-        public final void zaa(ResultCallback resultCallback, Result result) {
-            ThreadLocal threadLocal = BasePendingResult.zaa;
-            sendMessage(obtainMessage(1, new Pair((ResultCallback) Preconditions.checkNotNull(resultCallback), result)));
-        }
-    }
-
-    protected BasePendingResult(GoogleApiClient googleApiClient) {
-        this.zab = new CallbackHandler(googleApiClient != null ? googleApiClient.getLooper() : Looper.getMainLooper());
-        this.zac = new WeakReference(googleApiClient);
-    }
-
     private final Result zaa() {
         Result result;
         synchronized (this.zae) {
@@ -129,24 +91,6 @@ public abstract class BasePendingResult<R extends Result> extends PendingResult 
     }
 
     @Override // com.google.android.gms.common.api.PendingResult
-    public final Result await(long j, TimeUnit timeUnit) {
-        if (j > 0) {
-            Preconditions.checkNotMainThread("await must not be called on the UI thread when time is greater than zero.");
-        }
-        Preconditions.checkState(!this.zal, "Result has already been consumed.");
-        Preconditions.checkState(true, "Cannot await if then() has been called.");
-        try {
-            if (!this.zaf.await(j, timeUnit)) {
-                forceFailureUnlessReady(Status.RESULT_TIMEOUT);
-            }
-        } catch (InterruptedException unused) {
-            forceFailureUnlessReady(Status.RESULT_INTERRUPTED);
-        }
-        Preconditions.checkState(isReady(), "Result is not ready.");
-        return zaa();
-    }
-
-    @Override // com.google.android.gms.common.api.PendingResult
     public void cancel() {
         synchronized (this.zae) {
             try {
@@ -185,23 +129,6 @@ public abstract class BasePendingResult<R extends Result> extends PendingResult 
 
     public final boolean isReady() {
         return this.zaf.getCount() == 0;
-    }
-
-    public final void setResult(Result result) {
-        synchronized (this.zae) {
-            try {
-                if (this.zan || this.zam) {
-                    zal(result);
-                    return;
-                }
-                isReady();
-                Preconditions.checkState(!isReady(), "Results have already been set");
-                Preconditions.checkState(!this.zal, "Result has already been consumed");
-                zab(result);
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
     }
 
     @Override // com.google.android.gms.common.api.PendingResult
@@ -256,5 +183,78 @@ public abstract class BasePendingResult<R extends Result> extends PendingResult 
 
     public final void zan(zadb zadbVar) {
         this.zai.set(zadbVar);
+    }
+
+    public static class CallbackHandler extends com.google.android.gms.internal.base.zau {
+        @Override // android.os.Handler
+        public final void handleMessage(Message message) {
+            int i = message.what;
+            if (i != 1) {
+                if (i == 2) {
+                    ((BasePendingResult) message.obj).forceFailureUnlessReady(Status.RESULT_TIMEOUT);
+                    return;
+                }
+                Log.wtf("BasePendingResult", "Don't know how to handle message: " + i, new Exception());
+                return;
+            }
+            Pair pair = (Pair) message.obj;
+            ResultCallback resultCallback = (ResultCallback) pair.first;
+            Result result = (Result) pair.second;
+            try {
+                resultCallback.onResult(result);
+            } catch (RuntimeException e) {
+                BasePendingResult.zal(result);
+                throw e;
+            }
+        }
+
+        public final void zaa(ResultCallback resultCallback, Result result) {
+            ThreadLocal threadLocal = BasePendingResult.zaa;
+            sendMessage(obtainMessage(1, new Pair((ResultCallback) Preconditions.checkNotNull(resultCallback), result)));
+        }
+
+        public CallbackHandler(Looper looper) {
+            super(looper);
+        }
+    }
+
+    public final void setResult(Result result) {
+        synchronized (this.zae) {
+            try {
+                if (this.zan || this.zam) {
+                    zal(result);
+                    return;
+                }
+                isReady();
+                Preconditions.checkState(!isReady(), "Results have already been set");
+                Preconditions.checkState(!this.zal, "Result has already been consumed");
+                zab(result);
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+    }
+
+    @Override // com.google.android.gms.common.api.PendingResult
+    public final Result await(long j, TimeUnit timeUnit) {
+        if (j > 0) {
+            Preconditions.checkNotMainThread("await must not be called on the UI thread when time is greater than zero.");
+        }
+        Preconditions.checkState(!this.zal, "Result has already been consumed.");
+        Preconditions.checkState(true, "Cannot await if then() has been called.");
+        try {
+            if (!this.zaf.await(j, timeUnit)) {
+                forceFailureUnlessReady(Status.RESULT_TIMEOUT);
+            }
+        } catch (InterruptedException unused) {
+            forceFailureUnlessReady(Status.RESULT_INTERRUPTED);
+        }
+        Preconditions.checkState(isReady(), "Result is not ready.");
+        return zaa();
+    }
+
+    protected BasePendingResult(GoogleApiClient googleApiClient) {
+        this.zab = new CallbackHandler(googleApiClient != null ? googleApiClient.getLooper() : Looper.getMainLooper());
+        this.zac = new WeakReference(googleApiClient);
     }
 }

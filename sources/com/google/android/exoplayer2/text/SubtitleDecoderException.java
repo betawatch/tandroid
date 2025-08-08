@@ -8,11 +8,11 @@ public class SubtitleDecoderException extends DecoderException {
         super(str);
     }
 
-    public SubtitleDecoderException(String str, Throwable th) {
-        super(str, th);
-    }
-
     public SubtitleDecoderException(Throwable th) {
         super(th);
+    }
+
+    public SubtitleDecoderException(String str, Throwable th) {
+        super(str, th);
     }
 }

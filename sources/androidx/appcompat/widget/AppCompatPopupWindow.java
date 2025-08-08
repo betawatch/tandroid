@@ -1,7 +1,6 @@
 package androidx.appcompat.widget;
 
 import android.content.Context;
-import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.PopupWindow;
@@ -10,12 +9,8 @@ import androidx.core.widget.PopupWindowCompat;
 
 /* loaded from: classes.dex */
 class AppCompatPopupWindow extends PopupWindow {
-    private static final boolean COMPAT_OVERLAP_ANCHOR;
+    private static final boolean COMPAT_OVERLAP_ANCHOR = false;
     private boolean mOverlapAnchor;
-
-    static {
-        COMPAT_OVERLAP_ANCHOR = Build.VERSION.SDK_INT < 21;
-    }
 
     public AppCompatPopupWindow(Context context, AttributeSet attributeSet, int i, int i2) {
         super(context, attributeSet, i, i2);
@@ -30,14 +25,6 @@ class AppCompatPopupWindow extends PopupWindow {
         }
         setBackgroundDrawable(obtainStyledAttributes.getDrawable(R$styleable.PopupWindow_android_popupBackground));
         obtainStyledAttributes.recycle();
-    }
-
-    private void setSupportOverlapAnchor(boolean z) {
-        if (COMPAT_OVERLAP_ANCHOR) {
-            this.mOverlapAnchor = z;
-        } else {
-            PopupWindowCompat.setOverlapAnchor(this, z);
-        }
     }
 
     @Override // android.widget.PopupWindow
@@ -62,5 +49,13 @@ class AppCompatPopupWindow extends PopupWindow {
             i2 -= view.getHeight();
         }
         super.update(view, i, i2, i3, i4);
+    }
+
+    private void setSupportOverlapAnchor(boolean z) {
+        if (COMPAT_OVERLAP_ANCHOR) {
+            this.mOverlapAnchor = z;
+        } else {
+            PopupWindowCompat.setOverlapAnchor(this, z);
+        }
     }
 }

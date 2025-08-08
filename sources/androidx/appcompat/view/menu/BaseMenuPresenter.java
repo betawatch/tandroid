@@ -21,21 +21,6 @@ public abstract class BaseMenuPresenter implements MenuPresenter {
     protected Context mSystemContext;
     protected LayoutInflater mSystemInflater;
 
-    public BaseMenuPresenter(Context context, int i, int i2) {
-        this.mSystemContext = context;
-        this.mSystemInflater = LayoutInflater.from(context);
-        this.mMenuLayoutRes = i;
-        this.mItemLayoutRes = i2;
-    }
-
-    protected void addItemView(View view, int i) {
-        ViewGroup viewGroup = (ViewGroup) view.getParent();
-        if (viewGroup != null) {
-            viewGroup.removeView(view);
-        }
-        ((ViewGroup) this.mMenuView).addView(view, i);
-    }
-
     public abstract void bindItemView(MenuItemImpl menuItemImpl, MenuView.ItemView itemView);
 
     @Override // androidx.appcompat.view.menu.MenuPresenter
@@ -43,29 +28,25 @@ public abstract class BaseMenuPresenter implements MenuPresenter {
         return false;
     }
 
-    public MenuView.ItemView createItemView(ViewGroup viewGroup) {
-        return (MenuView.ItemView) this.mSystemInflater.inflate(this.mItemLayoutRes, viewGroup, false);
-    }
-
     @Override // androidx.appcompat.view.menu.MenuPresenter
     public boolean expandItemActionView(MenuBuilder menuBuilder, MenuItemImpl menuItemImpl) {
         return false;
     }
 
-    protected boolean filterLeftoverView(ViewGroup viewGroup, int i) {
-        viewGroup.removeViewAt(i);
-        return true;
+    public abstract boolean shouldIncludeItem(int i, MenuItemImpl menuItemImpl);
+
+    public BaseMenuPresenter(Context context, int i, int i2) {
+        this.mSystemContext = context;
+        this.mSystemInflater = LayoutInflater.from(context);
+        this.mMenuLayoutRes = i;
+        this.mItemLayoutRes = i2;
     }
 
-    public MenuPresenter.Callback getCallback() {
-        return this.mCallback;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public View getItemView(MenuItemImpl menuItemImpl, View view, ViewGroup viewGroup) {
-        MenuView.ItemView createItemView = view instanceof MenuView.ItemView ? (MenuView.ItemView) view : createItemView(viewGroup);
-        bindItemView(menuItemImpl, createItemView);
-        return (View) createItemView;
+    @Override // androidx.appcompat.view.menu.MenuPresenter
+    public void initForMenu(Context context, MenuBuilder menuBuilder) {
+        this.mContext = context;
+        this.mInflater = LayoutInflater.from(context);
+        this.mMenu = menuBuilder;
     }
 
     public MenuView getMenuView(ViewGroup viewGroup) {
@@ -77,47 +58,6 @@ public abstract class BaseMenuPresenter implements MenuPresenter {
         }
         return this.mMenuView;
     }
-
-    @Override // androidx.appcompat.view.menu.MenuPresenter
-    public void initForMenu(Context context, MenuBuilder menuBuilder) {
-        this.mContext = context;
-        this.mInflater = LayoutInflater.from(context);
-        this.mMenu = menuBuilder;
-    }
-
-    @Override // androidx.appcompat.view.menu.MenuPresenter
-    public void onCloseMenu(MenuBuilder menuBuilder, boolean z) {
-        MenuPresenter.Callback callback = this.mCallback;
-        if (callback != null) {
-            callback.onCloseMenu(menuBuilder, z);
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r2v4, types: [androidx.appcompat.view.menu.MenuBuilder] */
-    @Override // androidx.appcompat.view.menu.MenuPresenter
-    public boolean onSubMenuSelected(SubMenuBuilder subMenuBuilder) {
-        MenuPresenter.Callback callback = this.mCallback;
-        SubMenuBuilder subMenuBuilder2 = subMenuBuilder;
-        if (callback == null) {
-            return false;
-        }
-        if (subMenuBuilder == null) {
-            subMenuBuilder2 = this.mMenu;
-        }
-        return callback.onOpenSubMenu(subMenuBuilder2);
-    }
-
-    @Override // androidx.appcompat.view.menu.MenuPresenter
-    public void setCallback(MenuPresenter.Callback callback) {
-        this.mCallback = callback;
-    }
-
-    public void setId(int i) {
-        this.mId = i;
-    }
-
-    public abstract boolean shouldIncludeItem(int i, MenuItemImpl menuItemImpl);
 
     /* JADX WARN: Multi-variable type inference failed */
     @Override // androidx.appcompat.view.menu.MenuPresenter
@@ -156,5 +96,70 @@ public abstract class BaseMenuPresenter implements MenuPresenter {
                 i++;
             }
         }
+    }
+
+    protected void addItemView(View view, int i) {
+        ViewGroup viewGroup = (ViewGroup) view.getParent();
+        if (viewGroup != null) {
+            viewGroup.removeView(view);
+        }
+        ((ViewGroup) this.mMenuView).addView(view, i);
+    }
+
+    protected boolean filterLeftoverView(ViewGroup viewGroup, int i) {
+        viewGroup.removeViewAt(i);
+        return true;
+    }
+
+    @Override // androidx.appcompat.view.menu.MenuPresenter
+    public void setCallback(MenuPresenter.Callback callback) {
+        this.mCallback = callback;
+    }
+
+    public MenuPresenter.Callback getCallback() {
+        return this.mCallback;
+    }
+
+    public MenuView.ItemView createItemView(ViewGroup viewGroup) {
+        return (MenuView.ItemView) this.mSystemInflater.inflate(this.mItemLayoutRes, viewGroup, false);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public View getItemView(MenuItemImpl menuItemImpl, View view, ViewGroup viewGroup) {
+        MenuView.ItemView itemView;
+        if (view instanceof MenuView.ItemView) {
+            itemView = (MenuView.ItemView) view;
+        } else {
+            itemView = createItemView(viewGroup);
+        }
+        bindItemView(menuItemImpl, itemView);
+        return (View) itemView;
+    }
+
+    @Override // androidx.appcompat.view.menu.MenuPresenter
+    public void onCloseMenu(MenuBuilder menuBuilder, boolean z) {
+        MenuPresenter.Callback callback = this.mCallback;
+        if (callback != null) {
+            callback.onCloseMenu(menuBuilder, z);
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r2v4, types: [androidx.appcompat.view.menu.MenuBuilder] */
+    @Override // androidx.appcompat.view.menu.MenuPresenter
+    public boolean onSubMenuSelected(SubMenuBuilder subMenuBuilder) {
+        MenuPresenter.Callback callback = this.mCallback;
+        SubMenuBuilder subMenuBuilder2 = subMenuBuilder;
+        if (callback == null) {
+            return false;
+        }
+        if (subMenuBuilder == null) {
+            subMenuBuilder2 = this.mMenu;
+        }
+        return callback.onOpenSubMenu(subMenuBuilder2);
+    }
+
+    public void setId(int i) {
+        this.mId = i;
     }
 }

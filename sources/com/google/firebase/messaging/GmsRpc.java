@@ -20,7 +20,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.concurrent.ExecutionException;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 class GmsRpc {
     private final FirebaseApp app;
     private final FirebaseInstallationsApi firebaseInstallations;
@@ -28,6 +28,10 @@ class GmsRpc {
     private final Metadata metadata;
     private final Rpc rpc;
     private final Provider userAgentPublisher;
+
+    GmsRpc(FirebaseApp firebaseApp, Metadata metadata, Provider provider, Provider provider2, FirebaseInstallationsApi firebaseInstallationsApi) {
+        this(firebaseApp, metadata, new Rpc(firebaseApp.getApplicationContext()), provider, provider2, firebaseInstallationsApi);
+    }
 
     GmsRpc(FirebaseApp firebaseApp, Metadata metadata, Rpc rpc, Provider provider, Provider provider2, FirebaseInstallationsApi firebaseInstallationsApi) {
         this.app = firebaseApp;
@@ -38,23 +42,34 @@ class GmsRpc {
         this.firebaseInstallations = firebaseInstallationsApi;
     }
 
-    GmsRpc(FirebaseApp firebaseApp, Metadata metadata, Provider provider, Provider provider2, FirebaseInstallationsApi firebaseInstallationsApi) {
-        this(firebaseApp, metadata, new Rpc(firebaseApp.getApplicationContext()), provider, provider2, firebaseInstallationsApi);
+    Task getToken() {
+        return extractResponseWhenComplete(startRpc(Metadata.getDefaultSenderId(this.app), "*", new Bundle()));
+    }
+
+    Task subscribeToTopic(String str, String str2) {
+        Bundle bundle = new Bundle();
+        bundle.putString("gcm.topic", "/topics/" + str2);
+        return extractResponseWhenComplete(startRpc(str, "/topics/" + str2, bundle));
+    }
+
+    Task unsubscribeFromTopic(String str, String str2) {
+        Bundle bundle = new Bundle();
+        bundle.putString("gcm.topic", "/topics/" + str2);
+        bundle.putString("delete", "1");
+        return extractResponseWhenComplete(startRpc(str, "/topics/" + str2, bundle));
+    }
+
+    private Task startRpc(String str, String str2, Bundle bundle) {
+        try {
+            setDefaultAttributesToBundle(str, str2, bundle);
+            return this.rpc.send(bundle);
+        } catch (InterruptedException | ExecutionException e) {
+            return Tasks.forException(e);
+        }
     }
 
     private static String base64UrlSafe(byte[] bArr) {
         return Base64.encodeToString(bArr, 11);
-    }
-
-    private Task extractResponseWhenComplete(Task task) {
-        return task.continueWith(new EnhancedIntentService$$ExternalSyntheticLambda0(), new Continuation() { // from class: com.google.firebase.messaging.GmsRpc$$ExternalSyntheticLambda0
-            @Override // com.google.android.gms.tasks.Continuation
-            public final Object then(Task task2) {
-                String lambda$extractResponseWhenComplete$0;
-                lambda$extractResponseWhenComplete$0 = GmsRpc.this.lambda$extractResponseWhenComplete$0(task2);
-                return lambda$extractResponseWhenComplete$0;
-            }
-        });
     }
 
     private String getHashedFirebaseAppName() {
@@ -63,38 +78,6 @@ class GmsRpc {
         } catch (NoSuchAlgorithmException unused) {
             return "[HASH-ERROR]";
         }
-    }
-
-    private String handleResponse(Bundle bundle) {
-        if (bundle == null) {
-            throw new IOException("SERVICE_NOT_AVAILABLE");
-        }
-        String string = bundle.getString("registration_id");
-        if (string != null) {
-            return string;
-        }
-        String string2 = bundle.getString("unregistered");
-        if (string2 != null) {
-            return string2;
-        }
-        String string3 = bundle.getString("error");
-        if ("RST".equals(string3)) {
-            throw new IOException("INSTANCE_ID_RESET");
-        }
-        if (string3 != null) {
-            throw new IOException(string3);
-        }
-        Log.w("FirebaseMessaging", "Unexpected response: " + bundle, new Throwable());
-        throw new IOException("SERVICE_NOT_AVAILABLE");
-    }
-
-    static boolean isErrorMessageForRetryableError(String str) {
-        return "SERVICE_NOT_AVAILABLE".equals(str) || "INTERNAL_SERVER_ERROR".equals(str) || "InternalServerError".equals(str);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ String lambda$extractResponseWhenComplete$0(Task task) {
-        return handleResponse((Bundle) task.getResult(IOException.class));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:17:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
@@ -154,29 +137,46 @@ class GmsRpc {
         bundle.putString("Firebase-Client", userAgentPublisher22.getUserAgent());
     }
 
-    private Task startRpc(String str, String str2, Bundle bundle) {
-        try {
-            setDefaultAttributesToBundle(str, str2, bundle);
-            return this.rpc.send(bundle);
-        } catch (InterruptedException | ExecutionException e) {
-            return Tasks.forException(e);
+    private String handleResponse(Bundle bundle) {
+        if (bundle == null) {
+            throw new IOException("SERVICE_NOT_AVAILABLE");
         }
+        String string = bundle.getString("registration_id");
+        if (string != null) {
+            return string;
+        }
+        String string2 = bundle.getString("unregistered");
+        if (string2 != null) {
+            return string2;
+        }
+        String string3 = bundle.getString("error");
+        if ("RST".equals(string3)) {
+            throw new IOException("INSTANCE_ID_RESET");
+        }
+        if (string3 != null) {
+            throw new IOException(string3);
+        }
+        Log.w("FirebaseMessaging", "Unexpected response: " + bundle, new Throwable());
+        throw new IOException("SERVICE_NOT_AVAILABLE");
     }
 
-    Task getToken() {
-        return extractResponseWhenComplete(startRpc(Metadata.getDefaultSenderId(this.app), "*", new Bundle()));
+    private Task extractResponseWhenComplete(Task task) {
+        return task.continueWith(new EnhancedIntentService$$ExternalSyntheticLambda0(), new Continuation() { // from class: com.google.firebase.messaging.GmsRpc$$ExternalSyntheticLambda0
+            @Override // com.google.android.gms.tasks.Continuation
+            public final Object then(Task task2) {
+                String lambda$extractResponseWhenComplete$0;
+                lambda$extractResponseWhenComplete$0 = GmsRpc.this.lambda$extractResponseWhenComplete$0(task2);
+                return lambda$extractResponseWhenComplete$0;
+            }
+        });
     }
 
-    Task subscribeToTopic(String str, String str2) {
-        Bundle bundle = new Bundle();
-        bundle.putString("gcm.topic", "/topics/" + str2);
-        return extractResponseWhenComplete(startRpc(str, "/topics/" + str2, bundle));
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ String lambda$extractResponseWhenComplete$0(Task task) {
+        return handleResponse((Bundle) task.getResult(IOException.class));
     }
 
-    Task unsubscribeFromTopic(String str, String str2) {
-        Bundle bundle = new Bundle();
-        bundle.putString("gcm.topic", "/topics/" + str2);
-        bundle.putString("delete", "1");
-        return extractResponseWhenComplete(startRpc(str, "/topics/" + str2, bundle));
+    static boolean isErrorMessageForRetryableError(String str) {
+        return "SERVICE_NOT_AVAILABLE".equals(str) || "INTERNAL_SERVER_ERROR".equals(str) || "InternalServerError".equals(str);
     }
 }

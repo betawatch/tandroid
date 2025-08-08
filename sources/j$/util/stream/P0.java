@@ -1,43 +1,39 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import j$.util.function.Consumer;
 import j$.util.function.IntFunction;
 
 /* loaded from: classes2.dex */
-final class P0 extends Q0 implements E0 {
-    P0(E0 e0, E0 e02) {
-        super(e0, e02);
-    }
-
-    @Override // j$.util.stream.G0
-    /* renamed from: b, reason: merged with bridge method [inline-methods] */
-    public final /* synthetic */ void i(Long[] lArr, int i) {
-        u0.p(this, lArr, i);
-    }
-
+abstract class P0 extends H0 implements E0 {
     @Override // j$.util.stream.F0
-    public final Object c(int i) {
-        return new long[i];
+    public final /* synthetic */ Object[] s(IntFunction intFunction) {
+        return t0.m(this, intFunction);
     }
 
-    @Override // j$.util.stream.G0
-    public final /* synthetic */ void forEach(Consumer consumer) {
-        u0.s(this, consumer);
+    @Override // j$.util.stream.E0
+    public final void g(Object obj) {
+        ((E0) this.a).g(obj);
+        ((E0) this.b).g(obj);
     }
 
-    @Override // j$.util.stream.G0
-    public final j$.util.M spliterator() {
-        return new g1(this);
+    @Override // j$.util.stream.E0
+    public final void d(Object obj, int i) {
+        F0 f0 = this.a;
+        ((E0) f0).d(obj, i);
+        ((E0) this.b).d(obj, i + ((int) ((E0) f0).count()));
     }
 
-    @Override // j$.util.stream.G0
-    public final Spliterator spliterator() {
-        return new g1(this);
+    @Override // j$.util.stream.E0
+    public final Object e() {
+        long count = count();
+        if (count >= 2147483639) {
+            throw new IllegalArgumentException("Stream size exceeds max array size");
+        }
+        Object c = c((int) count);
+        d(c, 0);
+        return c;
     }
 
-    @Override // j$.util.stream.G0
-    public final /* synthetic */ G0 t(long j, long j2, IntFunction intFunction) {
-        return u0.v(this, j, j2);
+    public final String toString() {
+        return count() < 32 ? String.format("%s[%s.%s]", getClass().getName(), this.a, this.b) : String.format("%s[size=%d]", getClass().getName(), Long.valueOf(count()));
     }
 }

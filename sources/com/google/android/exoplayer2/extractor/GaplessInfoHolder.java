@@ -13,27 +13,15 @@ public final class GaplessInfoHolder {
     public int encoderDelay = -1;
     public int encoderPadding = -1;
 
-    private boolean setFromComment(String str) {
-        Matcher matcher = GAPLESS_COMMENT_PATTERN.matcher(str);
-        if (!matcher.find()) {
+    public boolean setFromXingHeaderValue(int i) {
+        int i2 = i >> 12;
+        int i3 = i & 4095;
+        if (i2 <= 0 && i3 <= 0) {
             return false;
         }
-        try {
-            int parseInt = Integer.parseInt((String) Util.castNonNull(matcher.group(1)), 16);
-            int parseInt2 = Integer.parseInt((String) Util.castNonNull(matcher.group(2)), 16);
-            if (parseInt <= 0 && parseInt2 <= 0) {
-                return false;
-            }
-            this.encoderDelay = parseInt;
-            this.encoderPadding = parseInt2;
-            return true;
-        } catch (NumberFormatException unused) {
-            return false;
-        }
-    }
-
-    public boolean hasGaplessInfo() {
-        return (this.encoderDelay == -1 || this.encoderPadding == -1) ? false : true;
+        this.encoderDelay = i2;
+        this.encoderPadding = i3;
+        return true;
     }
 
     public boolean setFromMetadata(Metadata metadata) {
@@ -56,14 +44,26 @@ public final class GaplessInfoHolder {
         return false;
     }
 
-    public boolean setFromXingHeaderValue(int i) {
-        int i2 = i >> 12;
-        int i3 = i & 4095;
-        if (i2 <= 0 && i3 <= 0) {
+    private boolean setFromComment(String str) {
+        Matcher matcher = GAPLESS_COMMENT_PATTERN.matcher(str);
+        if (!matcher.find()) {
             return false;
         }
-        this.encoderDelay = i2;
-        this.encoderPadding = i3;
-        return true;
+        try {
+            int parseInt = Integer.parseInt((String) Util.castNonNull(matcher.group(1)), 16);
+            int parseInt2 = Integer.parseInt((String) Util.castNonNull(matcher.group(2)), 16);
+            if (parseInt <= 0 && parseInt2 <= 0) {
+                return false;
+            }
+            this.encoderDelay = parseInt;
+            this.encoderPadding = parseInt2;
+            return true;
+        } catch (NumberFormatException unused) {
+            return false;
+        }
+    }
+
+    public boolean hasGaplessInfo() {
+        return (this.encoderDelay == -1 || this.encoderPadding == -1) ? false : true;
     }
 }

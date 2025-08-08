@@ -29,32 +29,6 @@ public final class AssetDataSource extends BaseDataSource {
     }
 
     @Override // com.google.android.exoplayer2.upstream.DataSource
-    public void close() {
-        this.uri = null;
-        try {
-            try {
-                InputStream inputStream = this.inputStream;
-                if (inputStream != null) {
-                    inputStream.close();
-                }
-            } catch (IOException e) {
-                throw new AssetDataSourceException(e, 2000);
-            }
-        } finally {
-            this.inputStream = null;
-            if (this.opened) {
-                this.opened = false;
-                transferEnded();
-            }
-        }
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.DataSource
-    public Uri getUri() {
-        return this.uri;
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.DataSource
     public long open(DataSpec dataSpec) {
         try {
             Uri uri = dataSpec.uri;
@@ -117,5 +91,31 @@ public final class AssetDataSource extends BaseDataSource {
         }
         bytesTransferred(read);
         return read;
+    }
+
+    @Override // com.google.android.exoplayer2.upstream.DataSource
+    public Uri getUri() {
+        return this.uri;
+    }
+
+    @Override // com.google.android.exoplayer2.upstream.DataSource
+    public void close() {
+        this.uri = null;
+        try {
+            try {
+                InputStream inputStream = this.inputStream;
+                if (inputStream != null) {
+                    inputStream.close();
+                }
+            } catch (IOException e) {
+                throw new AssetDataSourceException(e, 2000);
+            }
+        } finally {
+            this.inputStream = null;
+            if (this.opened) {
+                this.opened = false;
+                transferEnded();
+            }
+        }
     }
 }

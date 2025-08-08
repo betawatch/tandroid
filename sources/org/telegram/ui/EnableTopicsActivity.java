@@ -44,6 +44,138 @@ public class EnableTopicsActivity extends BaseFragment {
     private UniversalRecyclerView listView;
     private Utilities.Callback2 onForumChanged;
 
+    public EnableTopicsActivity(long j) {
+        this.dialogId = j;
+    }
+
+    public void setOnForumChanged(boolean z, boolean z2, Utilities.Callback2 callback2) {
+        this.forum = z;
+        this.isTabs = z2;
+        this.onForumChanged = callback2;
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean onFragmentCreate() {
+        this.currentChat = getMessagesController().getChat(Long.valueOf(-this.dialogId));
+        return super.onFragmentCreate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public View createView(Context context) {
+        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.actionBar.setAllowOverlayTitle(true);
+        this.actionBar.setActionBarMenuOnItemClick(new ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.EnableTopicsActivity.1
+            @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
+            public void onItemClick(int i) {
+                if (i == -1) {
+                    EnableTopicsActivity.this.lambda$onBackPressed$355();
+                }
+            }
+        });
+        this.actionBar.setTitle(LocaleController.getString(R.string.TopicsTitle));
+        FrameLayout frameLayout = new FrameLayout(context);
+        UniversalRecyclerView universalRecyclerView = new UniversalRecyclerView(this, new Utilities.Callback2() { // from class: org.telegram.ui.EnableTopicsActivity$$ExternalSyntheticLambda0
+            @Override // org.telegram.messenger.Utilities.Callback2
+            public final void run(Object obj, Object obj2) {
+                EnableTopicsActivity.this.fillItems((ArrayList) obj, (UniversalAdapter) obj2);
+            }
+        }, new Utilities.Callback5() { // from class: org.telegram.ui.EnableTopicsActivity$$ExternalSyntheticLambda1
+            @Override // org.telegram.messenger.Utilities.Callback5
+            public final void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+                EnableTopicsActivity.this.onItemClick((UItem) obj, (View) obj2, ((Integer) obj3).intValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue());
+            }
+        }, null) { // from class: org.telegram.ui.EnableTopicsActivity.2
+            @Override // org.telegram.ui.Components.RecyclerListView
+            public Integer getSelectorColor(int i) {
+                UItem item = this.adapter.getItem(i);
+                if (item != null && item.id == 2) {
+                    return 0;
+                }
+                return super.getSelectorColor(i);
+            }
+        };
+        this.listView = universalRecyclerView;
+        universalRecyclerView.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray, this.resourceProvider));
+        frameLayout.addView(this.listView, LayoutHelper.createFrame(-1, -1, 119));
+        this.fragmentView = frameLayout;
+        return frameLayout;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter) {
+        arrayList.add(UItem.asTopView(LocaleController.getString(R.string.TopicsInfo), R.raw.topics_top));
+        arrayList.add(UItem.asCheck(1, LocaleController.getString(R.string.TopicsEnable)).setChecked(this.forum));
+        if (this.forum) {
+            arrayList.add(UItem.asShadow(null));
+            arrayList.add(UItem.asHeader(LocaleController.getString(R.string.TopicsLayout)));
+            arrayList.add(TopicsLayoutSwitcher.Factory.asSwitcher(2, new View.OnClickListener() { // from class: org.telegram.ui.EnableTopicsActivity$$ExternalSyntheticLambda2
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    EnableTopicsActivity.this.lambda$fillItems$0(view);
+                }
+            }, new View.OnClickListener() { // from class: org.telegram.ui.EnableTopicsActivity$$ExternalSyntheticLambda3
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    EnableTopicsActivity.this.lambda$fillItems$1(view);
+                }
+            }).setChecked(this.isTabs));
+            arrayList.add(UItem.asShadow(LocaleController.getString(R.string.TopicsLayoutInfo)));
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$fillItems$0(View view) {
+        TopicsLayoutSwitcher topicsLayoutSwitcher = (TopicsLayoutSwitcher) view.getParent();
+        this.isTabs = true;
+        topicsLayoutSwitcher.setChecked(true, true);
+        Utilities.Callback2 callback2 = this.onForumChanged;
+        if (callback2 != null) {
+            callback2.run(Boolean.valueOf(this.forum), Boolean.valueOf(this.isTabs));
+        }
+        topicsLayoutChanged();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$fillItems$1(View view) {
+        TopicsLayoutSwitcher topicsLayoutSwitcher = (TopicsLayoutSwitcher) view.getParent();
+        this.isTabs = false;
+        topicsLayoutSwitcher.setChecked(false, true);
+        Utilities.Callback2 callback2 = this.onForumChanged;
+        if (callback2 != null) {
+            callback2.run(Boolean.valueOf(this.forum), Boolean.valueOf(this.isTabs));
+        }
+        topicsLayoutChanged();
+    }
+
+    private void topicsLayoutChanged() {
+        if (!this.isTabs || getParentLayout() == null) {
+            return;
+        }
+        for (BaseFragment baseFragment : getParentLayout().getFragmentStack()) {
+            if (baseFragment instanceof DialogsActivity) {
+                RightSlidingDialogContainer rightSlidingDialogContainer = ((DialogsActivity) baseFragment).rightSlidingDialogContainer;
+                if (rightSlidingDialogContainer.hasFragment()) {
+                    rightSlidingDialogContainer.lambda$presentFragment$1();
+                }
+            }
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void onItemClick(UItem uItem, View view, int i, float f, float f2) {
+        if (uItem.id != 1 || this.currentChat == null) {
+            return;
+        }
+        boolean z = !this.forum;
+        this.forum = z;
+        Utilities.Callback2 callback2 = this.onForumChanged;
+        if (callback2 != null) {
+            callback2.run(Boolean.valueOf(z), Boolean.valueOf(this.isTabs));
+        }
+        ((TextCheckCell) view).setChecked(this.forum);
+        this.listView.adapter.update(true);
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     static class TopicsLayoutSwitcher extends LinearLayout {
         private ValueAnimator animator;
@@ -61,33 +193,6 @@ public class EnableTopicsActivity extends BaseFragment {
         private final TextView rightTitleSelected;
         private final TextView rightTitleUnselected;
         private float tabsAlpha;
-
-        public static final class Factory extends UItem.UItemFactory {
-            static {
-                UItem.UItemFactory.setup(new Factory());
-            }
-
-            public static UItem asSwitcher(int i, View.OnClickListener onClickListener, View.OnClickListener onClickListener2) {
-                UItem ofFactory = UItem.ofFactory(Factory.class);
-                ofFactory.id = i;
-                ofFactory.object = onClickListener;
-                ofFactory.object2 = onClickListener2;
-                return ofFactory;
-            }
-
-            @Override // org.telegram.ui.Components.UItem.UItemFactory
-            public void bindView(View view, UItem uItem, boolean z, UniversalAdapter universalAdapter, UniversalRecyclerView universalRecyclerView) {
-                TopicsLayoutSwitcher topicsLayoutSwitcher = (TopicsLayoutSwitcher) view;
-                topicsLayoutSwitcher.leftLayout.setOnClickListener((View.OnClickListener) uItem.object);
-                topicsLayoutSwitcher.rightLayout.setOnClickListener((View.OnClickListener) uItem.object2);
-                topicsLayoutSwitcher.setChecked(uItem.checked, false);
-            }
-
-            @Override // org.telegram.ui.Components.UItem.UItemFactory
-            public TopicsLayoutSwitcher createView(Context context, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
-                return new TopicsLayoutSwitcher(context, resourcesProvider);
-            }
-        }
 
         public TopicsLayoutSwitcher(Context context, Theme.ResourcesProvider resourcesProvider) {
             super(context);
@@ -151,21 +256,6 @@ public class EnableTopicsActivity extends BaseFragment {
             frameLayout6.addView(makeTextView4, LayoutHelper.createFrame(-2, -2, 17));
             frameLayout4.addView(frameLayout5, LayoutHelper.createFrame(-2, 26.0f, 49, 0.0f, 182.0f, 0.0f, 0.0f));
             setChecked(false, false);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setChecked$0(ValueAnimator valueAnimator) {
-            this.tabsAlpha = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-            BackupImageView backupImageView = this.leftImageView;
-            int i = Theme.key_windowBackgroundWhiteGrayText5;
-            int color = Theme.getColor(i, this.resourcesProvider);
-            int i2 = Theme.key_featuredStickers_addButton;
-            int blendARGB = ColorUtils.blendARGB(color, Theme.getColor(i2, this.resourcesProvider), this.tabsAlpha);
-            PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-            backupImageView.setColorFilter(new PorterDuffColorFilter(blendARGB, mode));
-            this.leftImageView.invalidate();
-            this.rightImageView.setColorFilter(new PorterDuffColorFilter(ColorUtils.blendARGB(Theme.getColor(i, this.resourcesProvider), Theme.getColor(i2, this.resourcesProvider), 1.0f - this.tabsAlpha), mode));
-            this.rightImageView.invalidate();
         }
 
         @Override // android.widget.LinearLayout, android.view.View
@@ -240,137 +330,47 @@ public class EnableTopicsActivity extends BaseFragment {
                 lottieAnimation.restart(true);
             }
         }
-    }
 
-    public EnableTopicsActivity(long j) {
-        this.dialogId = j;
-    }
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$setChecked$0(ValueAnimator valueAnimator) {
+            this.tabsAlpha = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+            BackupImageView backupImageView = this.leftImageView;
+            int i = Theme.key_windowBackgroundWhiteGrayText5;
+            int color = Theme.getColor(i, this.resourcesProvider);
+            int i2 = Theme.key_featuredStickers_addButton;
+            int blendARGB = ColorUtils.blendARGB(color, Theme.getColor(i2, this.resourcesProvider), this.tabsAlpha);
+            PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
+            backupImageView.setColorFilter(new PorterDuffColorFilter(blendARGB, mode));
+            this.leftImageView.invalidate();
+            this.rightImageView.setColorFilter(new PorterDuffColorFilter(ColorUtils.blendARGB(Theme.getColor(i, this.resourcesProvider), Theme.getColor(i2, this.resourcesProvider), 1.0f - this.tabsAlpha), mode));
+            this.rightImageView.invalidate();
+        }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter) {
-        arrayList.add(UItem.asTopView(LocaleController.getString(R.string.TopicsInfo), R.raw.topics_top));
-        arrayList.add(UItem.asCheck(1, LocaleController.getString(R.string.TopicsEnable)).setChecked(this.forum));
-        if (this.forum) {
-            arrayList.add(UItem.asShadow(null));
-            arrayList.add(UItem.asHeader(LocaleController.getString(R.string.TopicsLayout)));
-            arrayList.add(TopicsLayoutSwitcher.Factory.asSwitcher(2, new View.OnClickListener() { // from class: org.telegram.ui.EnableTopicsActivity$$ExternalSyntheticLambda2
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    EnableTopicsActivity.this.lambda$fillItems$0(view);
-                }
-            }, new View.OnClickListener() { // from class: org.telegram.ui.EnableTopicsActivity$$ExternalSyntheticLambda3
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    EnableTopicsActivity.this.lambda$fillItems$1(view);
-                }
-            }).setChecked(this.isTabs));
-            arrayList.add(UItem.asShadow(LocaleController.getString(R.string.TopicsLayoutInfo)));
-        }
-    }
+        public static final class Factory extends UItem.UItemFactory {
+            static {
+                UItem.UItemFactory.setup(new Factory());
+            }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$fillItems$0(View view) {
-        TopicsLayoutSwitcher topicsLayoutSwitcher = (TopicsLayoutSwitcher) view.getParent();
-        this.isTabs = true;
-        topicsLayoutSwitcher.setChecked(true, true);
-        Utilities.Callback2 callback2 = this.onForumChanged;
-        if (callback2 != null) {
-            callback2.run(Boolean.valueOf(this.forum), Boolean.valueOf(this.isTabs));
-        }
-        topicsLayoutChanged();
-    }
+            @Override // org.telegram.ui.Components.UItem.UItemFactory
+            public TopicsLayoutSwitcher createView(Context context, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
+                return new TopicsLayoutSwitcher(context, resourcesProvider);
+            }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$fillItems$1(View view) {
-        TopicsLayoutSwitcher topicsLayoutSwitcher = (TopicsLayoutSwitcher) view.getParent();
-        this.isTabs = false;
-        topicsLayoutSwitcher.setChecked(false, true);
-        Utilities.Callback2 callback2 = this.onForumChanged;
-        if (callback2 != null) {
-            callback2.run(Boolean.valueOf(this.forum), Boolean.valueOf(this.isTabs));
-        }
-        topicsLayoutChanged();
-    }
+            @Override // org.telegram.ui.Components.UItem.UItemFactory
+            public void bindView(View view, UItem uItem, boolean z, UniversalAdapter universalAdapter, UniversalRecyclerView universalRecyclerView) {
+                TopicsLayoutSwitcher topicsLayoutSwitcher = (TopicsLayoutSwitcher) view;
+                topicsLayoutSwitcher.leftLayout.setOnClickListener((View.OnClickListener) uItem.object);
+                topicsLayoutSwitcher.rightLayout.setOnClickListener((View.OnClickListener) uItem.object2);
+                topicsLayoutSwitcher.setChecked(uItem.checked, false);
+            }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public void onItemClick(UItem uItem, View view, int i, float f, float f2) {
-        if (uItem.id != 1 || this.currentChat == null) {
-            return;
-        }
-        boolean z = !this.forum;
-        this.forum = z;
-        Utilities.Callback2 callback2 = this.onForumChanged;
-        if (callback2 != null) {
-            callback2.run(Boolean.valueOf(z), Boolean.valueOf(this.isTabs));
-        }
-        ((TextCheckCell) view).setChecked(this.forum);
-        this.listView.adapter.update(true);
-    }
-
-    private void topicsLayoutChanged() {
-        if (!this.isTabs || getParentLayout() == null) {
-            return;
-        }
-        for (BaseFragment baseFragment : getParentLayout().getFragmentStack()) {
-            if (baseFragment instanceof DialogsActivity) {
-                RightSlidingDialogContainer rightSlidingDialogContainer = ((DialogsActivity) baseFragment).rightSlidingDialogContainer;
-                if (rightSlidingDialogContainer.hasFragment()) {
-                    rightSlidingDialogContainer.lambda$presentFragment$1();
-                }
+            public static UItem asSwitcher(int i, View.OnClickListener onClickListener, View.OnClickListener onClickListener2) {
+                UItem ofFactory = UItem.ofFactory(Factory.class);
+                ofFactory.id = i;
+                ofFactory.object = onClickListener;
+                ofFactory.object2 = onClickListener2;
+                return ofFactory;
             }
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public View createView(Context context) {
-        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setActionBarMenuOnItemClick(new ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.EnableTopicsActivity.1
-            @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
-            public void onItemClick(int i) {
-                if (i == -1) {
-                    EnableTopicsActivity.this.lambda$onBackPressed$355();
-                }
-            }
-        });
-        this.actionBar.setTitle(LocaleController.getString(R.string.TopicsTitle));
-        FrameLayout frameLayout = new FrameLayout(context);
-        UniversalRecyclerView universalRecyclerView = new UniversalRecyclerView(this, new Utilities.Callback2() { // from class: org.telegram.ui.EnableTopicsActivity$$ExternalSyntheticLambda0
-            @Override // org.telegram.messenger.Utilities.Callback2
-            public final void run(Object obj, Object obj2) {
-                EnableTopicsActivity.this.fillItems((ArrayList) obj, (UniversalAdapter) obj2);
-            }
-        }, new Utilities.Callback5() { // from class: org.telegram.ui.EnableTopicsActivity$$ExternalSyntheticLambda1
-            @Override // org.telegram.messenger.Utilities.Callback5
-            public final void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-                EnableTopicsActivity.this.onItemClick((UItem) obj, (View) obj2, ((Integer) obj3).intValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue());
-            }
-        }, null) { // from class: org.telegram.ui.EnableTopicsActivity.2
-            @Override // org.telegram.ui.Components.RecyclerListView
-            public Integer getSelectorColor(int i) {
-                UItem item = this.adapter.getItem(i);
-                if (item == null || item.id != 2) {
-                    return super.getSelectorColor(i);
-                }
-                return 0;
-            }
-        };
-        this.listView = universalRecyclerView;
-        universalRecyclerView.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray, this.resourceProvider));
-        frameLayout.addView(this.listView, LayoutHelper.createFrame(-1, -1, 119));
-        this.fragmentView = frameLayout;
-        return frameLayout;
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public boolean onFragmentCreate() {
-        this.currentChat = getMessagesController().getChat(Long.valueOf(-this.dialogId));
-        return super.onFragmentCreate();
-    }
-
-    public void setOnForumChanged(boolean z, boolean z2, Utilities.Callback2 callback2) {
-        this.forum = z;
-        this.isTabs = z2;
-        this.onForumChanged = callback2;
     }
 }

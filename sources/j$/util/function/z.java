@@ -1,33 +1,43 @@
 package j$.util.function;
 
-import java.util.function.IntBinaryOperator;
+import j$.util.function.Function;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class z implements IntBinaryOperator {
-    public final /* synthetic */ A a;
+public final /* synthetic */ class z implements java.util.function.Function {
+    public final /* synthetic */ Function a;
 
-    private /* synthetic */ z(A a) {
-        this.a = a;
+    private /* synthetic */ z(Function function) {
+        this.a = function;
     }
 
-    public static /* synthetic */ IntBinaryOperator a(A a) {
-        if (a == null) {
+    public static /* synthetic */ java.util.function.Function a(Function function) {
+        if (function == null) {
             return null;
         }
-        return a instanceof y ? ((y) a).a : new z(a);
+        return function instanceof Function.VivifiedWrapper ? ((Function.VivifiedWrapper) function).a : function instanceof UnaryOperator ? F0.a((UnaryOperator) function) : new z(function);
     }
 
-    @Override // java.util.function.IntBinaryOperator
-    public final /* synthetic */ int applyAsInt(int i, int i2) {
-        return this.a.applyAsInt(i, i2);
+    @Override // java.util.function.Function
+    public final /* synthetic */ java.util.function.Function andThen(java.util.function.Function function) {
+        return a(this.a.andThen(Function.VivifiedWrapper.convert(function)));
+    }
+
+    @Override // java.util.function.Function
+    public final /* synthetic */ Object apply(Object obj) {
+        return this.a.apply(obj);
+    }
+
+    @Override // java.util.function.Function
+    public final /* synthetic */ java.util.function.Function compose(java.util.function.Function function) {
+        return a(this.a.compose(Function.VivifiedWrapper.convert(function)));
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        A a = this.a;
+        Function function = this.a;
         if (obj instanceof z) {
             obj = ((z) obj).a;
         }
-        return a.equals(obj);
+        return function.equals(obj);
     }
 
     public final /* synthetic */ int hashCode() {

@@ -1,11 +1,8 @@
 package androidx.media;
 
+import android.media.AudioAttributes;
 import android.os.Build;
 import android.util.SparseIntArray;
-import androidx.media.AudioAttributesImpl;
-import androidx.media.AudioAttributesImplApi21;
-import androidx.media.AudioAttributesImplApi26;
-import androidx.media.AudioAttributesImplBase;
 import androidx.versionedparcelable.VersionedParcelable;
 
 /* loaded from: classes.dex */
@@ -14,30 +11,6 @@ public class AudioAttributesCompat implements VersionedParcelable {
     private static final SparseIntArray SUPPRESSIBLE_USAGES;
     static boolean sForceLegacyBehavior;
     public AudioAttributesImpl mImpl;
-
-    public static class Builder {
-        final AudioAttributesImpl.Builder mBuilderImpl;
-
-        public Builder() {
-            AudioAttributesImpl.Builder builder;
-            if (AudioAttributesCompat.sForceLegacyBehavior) {
-                builder = new AudioAttributesImplBase.Builder();
-            } else {
-                int i = Build.VERSION.SDK_INT;
-                builder = i >= 26 ? new AudioAttributesImplApi26.Builder() : i >= 21 ? new AudioAttributesImplApi21.Builder() : new AudioAttributesImplBase.Builder();
-            }
-            this.mBuilderImpl = builder;
-        }
-
-        public AudioAttributesCompat build() {
-            return new AudioAttributesCompat(this.mBuilderImpl.build());
-        }
-
-        public Builder setLegacyStreamType(int i) {
-            this.mBuilderImpl.setLegacyStreamType(i);
-            return this;
-        }
-    }
 
     static {
         SparseIntArray sparseIntArray = new SparseIntArray();
@@ -56,6 +29,64 @@ public class AudioAttributesCompat implements VersionedParcelable {
 
     AudioAttributesCompat(AudioAttributesImpl audioAttributesImpl) {
         this.mImpl = audioAttributesImpl;
+    }
+
+    public static AudioAttributesCompat wrap(Object obj) {
+        if (sForceLegacyBehavior) {
+            return null;
+        }
+        if (Build.VERSION.SDK_INT >= 26) {
+            return new AudioAttributesCompat(new AudioAttributesImplApi26((AudioAttributes) obj));
+        }
+        return new AudioAttributesCompat(new AudioAttributesImplApi21((AudioAttributes) obj));
+    }
+
+    public int hashCode() {
+        return this.mImpl.hashCode();
+    }
+
+    public String toString() {
+        return this.mImpl.toString();
+    }
+
+    static String usageToString(int i) {
+        switch (i) {
+            case 0:
+                return "USAGE_UNKNOWN";
+            case 1:
+                return "USAGE_MEDIA";
+            case 2:
+                return "USAGE_VOICE_COMMUNICATION";
+            case 3:
+                return "USAGE_VOICE_COMMUNICATION_SIGNALLING";
+            case 4:
+                return "USAGE_ALARM";
+            case 5:
+                return "USAGE_NOTIFICATION";
+            case 6:
+                return "USAGE_NOTIFICATION_RINGTONE";
+            case 7:
+                return "USAGE_NOTIFICATION_COMMUNICATION_REQUEST";
+            case 8:
+                return "USAGE_NOTIFICATION_COMMUNICATION_INSTANT";
+            case 9:
+                return "USAGE_NOTIFICATION_COMMUNICATION_DELAYED";
+            case 10:
+                return "USAGE_NOTIFICATION_EVENT";
+            case 11:
+                return "USAGE_ASSISTANCE_ACCESSIBILITY";
+            case 12:
+                return "USAGE_ASSISTANCE_NAVIGATION_GUIDANCE";
+            case 13:
+                return "USAGE_ASSISTANCE_SONIFICATION";
+            case 14:
+                return "USAGE_GAME";
+            case 15:
+            default:
+                return "unknown usage " + i;
+            case 16:
+                return "USAGE_ASSISTANT";
+        }
     }
 
     static int toVolumeStreamType(boolean z, int i, int i2) {
@@ -99,74 +130,15 @@ public class AudioAttributesCompat implements VersionedParcelable {
         }
     }
 
-    static String usageToString(int i) {
-        switch (i) {
-            case 0:
-                return "USAGE_UNKNOWN";
-            case 1:
-                return "USAGE_MEDIA";
-            case 2:
-                return "USAGE_VOICE_COMMUNICATION";
-            case 3:
-                return "USAGE_VOICE_COMMUNICATION_SIGNALLING";
-            case 4:
-                return "USAGE_ALARM";
-            case 5:
-                return "USAGE_NOTIFICATION";
-            case 6:
-                return "USAGE_NOTIFICATION_RINGTONE";
-            case 7:
-                return "USAGE_NOTIFICATION_COMMUNICATION_REQUEST";
-            case 8:
-                return "USAGE_NOTIFICATION_COMMUNICATION_INSTANT";
-            case 9:
-                return "USAGE_NOTIFICATION_COMMUNICATION_DELAYED";
-            case 10:
-                return "USAGE_NOTIFICATION_EVENT";
-            case 11:
-                return "USAGE_ASSISTANCE_ACCESSIBILITY";
-            case 12:
-                return "USAGE_ASSISTANCE_NAVIGATION_GUIDANCE";
-            case 13:
-                return "USAGE_ASSISTANCE_SONIFICATION";
-            case 14:
-                return "USAGE_GAME";
-            case 15:
-            default:
-                return "unknown usage " + i;
-            case 16:
-                return "USAGE_ASSISTANT";
-        }
-    }
-
-    public static AudioAttributesCompat wrap(Object obj) {
-        if (sForceLegacyBehavior) {
-            return null;
-        }
-        int i = Build.VERSION.SDK_INT;
-        if (i >= 26) {
-            return new AudioAttributesCompat(new AudioAttributesImplApi26(AudioAttributesCompat$$ExternalSyntheticApiModelOutline0.m(obj)));
-        }
-        if (i >= 21) {
-            return new AudioAttributesCompat(new AudioAttributesImplApi21(AudioAttributesCompat$$ExternalSyntheticApiModelOutline0.m(obj)));
-        }
-        return null;
-    }
-
     public boolean equals(Object obj) {
         if (!(obj instanceof AudioAttributesCompat)) {
             return false;
         }
+        AudioAttributesCompat audioAttributesCompat = (AudioAttributesCompat) obj;
         AudioAttributesImpl audioAttributesImpl = this.mImpl;
-        AudioAttributesImpl audioAttributesImpl2 = ((AudioAttributesCompat) obj).mImpl;
-        return audioAttributesImpl == null ? audioAttributesImpl2 == null : audioAttributesImpl.equals(audioAttributesImpl2);
-    }
-
-    public int hashCode() {
-        return this.mImpl.hashCode();
-    }
-
-    public String toString() {
-        return this.mImpl.toString();
+        if (audioAttributesImpl == null) {
+            return audioAttributesCompat.mImpl == null;
+        }
+        return audioAttributesImpl.equals(audioAttributesCompat.mImpl);
     }
 }

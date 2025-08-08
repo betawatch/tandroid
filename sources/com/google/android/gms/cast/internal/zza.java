@@ -11,10 +11,6 @@ public final class zza extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zza> CREATOR = new zzb();
     private final String zza;
 
-    zza(String str) {
-        this.zza = str;
-    }
-
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -39,5 +35,9 @@ public final class zza extends AbstractSafeParcelable {
 
     public final String zza() {
         return this.zza;
+    }
+
+    zza(String str) {
+        this.zza = str;
     }
 }

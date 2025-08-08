@@ -33,10 +33,10 @@ public final class zah extends zad {
         zaci zaciVar = (zaci) zabqVar.zah().remove(this.zab);
         if (zaciVar == null) {
             this.zaa.trySetResult(Boolean.FALSE);
-        } else {
-            zaciVar.zab.unregisterListener(zabqVar.zaf(), this.zaa);
-            zaciVar.zaa.clearListener();
+            return;
         }
+        zaciVar.zab.unregisterListener(zabqVar.zaf(), this.zaa);
+        zaciVar.zaa.clearListener();
     }
 
     @Override // com.google.android.gms.common.api.internal.zai

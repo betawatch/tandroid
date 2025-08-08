@@ -33,53 +33,8 @@ public final class H262Reader implements ElementaryStreamReader {
     private final ParsableByteArray userDataParsable;
     private final UserDataReader userDataReader;
 
-    private static final class CsdBuffer {
-        private static final byte[] START_CODE = {0, 0, 1};
-        public byte[] data;
-        private boolean isFilling;
-        public int length;
-        public int sequenceExtensionPosition;
-
-        public CsdBuffer(int i) {
-            this.data = new byte[i];
-        }
-
-        public void onData(byte[] bArr, int i, int i2) {
-            if (this.isFilling) {
-                int i3 = i2 - i;
-                byte[] bArr2 = this.data;
-                int length = bArr2.length;
-                int i4 = this.length + i3;
-                if (length < i4) {
-                    this.data = Arrays.copyOf(bArr2, i4 * 2);
-                }
-                System.arraycopy(bArr, i, this.data, this.length, i3);
-                this.length += i3;
-            }
-        }
-
-        public boolean onStartCode(int i, int i2) {
-            if (this.isFilling) {
-                int i3 = this.length - i2;
-                this.length = i3;
-                if (this.sequenceExtensionPosition != 0 || i != 181) {
-                    this.isFilling = false;
-                    return true;
-                }
-                this.sequenceExtensionPosition = i3;
-            } else if (i == 179) {
-                this.isFilling = true;
-            }
-            byte[] bArr = START_CODE;
-            onData(bArr, 0, bArr.length);
-            return false;
-        }
-
-        public void reset() {
-            this.isFilling = false;
-            this.length = 0;
-            this.sequenceExtensionPosition = 0;
-        }
+    @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
+    public void packetFinished() {
     }
 
     public H262Reader() {
@@ -87,80 +42,48 @@ public final class H262Reader implements ElementaryStreamReader {
     }
 
     H262Reader(UserDataReader userDataReader) {
-        ParsableByteArray parsableByteArray;
         this.userDataReader = userDataReader;
         this.prefixFlags = new boolean[4];
         this.csdBuffer = new CsdBuffer(128);
         if (userDataReader != null) {
             this.userData = new NalUnitTargetBuffer(NotificationCenter.dialogFiltersUpdated, 128);
-            parsableByteArray = new ParsableByteArray();
+            this.userDataParsable = new ParsableByteArray();
         } else {
-            parsableByteArray = null;
             this.userData = null;
+            this.userDataParsable = null;
         }
-        this.userDataParsable = parsableByteArray;
         this.pesTimeUs = -9223372036854775807L;
         this.sampleTimeUs = -9223372036854775807L;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0073  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    private static Pair parseCsdBuffer(CsdBuffer csdBuffer, String str) {
-        float f;
-        int i;
-        float f2;
-        int i2;
-        long j;
-        byte[] copyOf = Arrays.copyOf(csdBuffer.data, csdBuffer.length);
-        int i3 = copyOf[4] & 255;
-        byte b = copyOf[5];
-        int i4 = (i3 << 4) | ((b & 255) >> 4);
-        int i5 = ((b & 15) << 8) | (copyOf[6] & 255);
-        int i6 = (copyOf[7] & 240) >> 4;
-        if (i6 == 2) {
-            f = i5 * 4;
-            i = i4 * 3;
-        } else if (i6 == 3) {
-            f = i5 * 16;
-            i = i4 * 9;
-        } else {
-            if (i6 != 4) {
-                f2 = 1.0f;
-                Format build = new Format.Builder().setId(str).setSampleMimeType("video/mpeg2").setWidth(i4).setHeight(i5).setPixelWidthHeightRatio(f2).setInitializationData(Collections.singletonList(copyOf)).build();
-                i2 = (copyOf[7] & 15) - 1;
-                if (i2 >= 0) {
-                    double[] dArr = FRAME_RATE_VALUES;
-                    if (i2 < dArr.length) {
-                        double d = dArr[i2];
-                        byte b2 = copyOf[csdBuffer.sequenceExtensionPosition + 9];
-                        int i7 = (b2 & 96) >> 5;
-                        int i8 = b2 & 31;
-                        if (i7 != i8) {
-                            double d2 = i7;
-                            Double.isNaN(d2);
-                            double d3 = i8 + 1;
-                            Double.isNaN(d3);
-                            d *= (d2 + 1.0d) / d3;
-                        }
-                        j = (long) (1000000.0d / d);
-                        return Pair.create(build, Long.valueOf(j));
-                    }
-                }
-                j = 0;
-                return Pair.create(build, Long.valueOf(j));
-            }
-            f = i5 * 121;
-            i = i4 * 100;
+    @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
+    public void seek() {
+        NalUnitUtil.clearPrefixFlags(this.prefixFlags);
+        this.csdBuffer.reset();
+        NalUnitTargetBuffer nalUnitTargetBuffer = this.userData;
+        if (nalUnitTargetBuffer != null) {
+            nalUnitTargetBuffer.reset();
         }
-        f2 = f / i;
-        Format build2 = new Format.Builder().setId(str).setSampleMimeType("video/mpeg2").setWidth(i4).setHeight(i5).setPixelWidthHeightRatio(f2).setInitializationData(Collections.singletonList(copyOf)).build();
-        i2 = (copyOf[7] & 15) - 1;
-        if (i2 >= 0) {
+        this.totalBytesWritten = 0L;
+        this.startedFirstSample = false;
+        this.pesTimeUs = -9223372036854775807L;
+        this.sampleTimeUs = -9223372036854775807L;
+    }
+
+    @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
+    public void createTracks(ExtractorOutput extractorOutput, TsPayloadReader.TrackIdGenerator trackIdGenerator) {
+        trackIdGenerator.generateNewId();
+        this.formatId = trackIdGenerator.getFormatId();
+        this.output = extractorOutput.track(trackIdGenerator.getTrackId(), 2);
+        UserDataReader userDataReader = this.userDataReader;
+        if (userDataReader != null) {
+            userDataReader.createTracks(extractorOutput, trackIdGenerator);
         }
-        j = 0;
-        return Pair.create(build2, Long.valueOf(j));
+    }
+
+    @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
+    public void packetStarted(long j, int i) {
+        this.pesTimeUs = j;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:49:0x0142  */
@@ -263,37 +186,108 @@ public final class H262Reader implements ElementaryStreamReader {
         }
     }
 
-    @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
-    public void createTracks(ExtractorOutput extractorOutput, TsPayloadReader.TrackIdGenerator trackIdGenerator) {
-        trackIdGenerator.generateNewId();
-        this.formatId = trackIdGenerator.getFormatId();
-        this.output = extractorOutput.track(trackIdGenerator.getTrackId(), 2);
-        UserDataReader userDataReader = this.userDataReader;
-        if (userDataReader != null) {
-            userDataReader.createTracks(extractorOutput, trackIdGenerator);
+    /* JADX WARN: Removed duplicated region for block: B:9:0x0073  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    private static Pair parseCsdBuffer(CsdBuffer csdBuffer, String str) {
+        float f;
+        int i;
+        float f2;
+        int i2;
+        long j;
+        byte[] copyOf = Arrays.copyOf(csdBuffer.data, csdBuffer.length);
+        int i3 = copyOf[4] & 255;
+        byte b = copyOf[5];
+        int i4 = (i3 << 4) | ((b & 255) >> 4);
+        int i5 = ((b & 15) << 8) | (copyOf[6] & 255);
+        int i6 = (copyOf[7] & 240) >> 4;
+        if (i6 == 2) {
+            f = i5 * 4;
+            i = i4 * 3;
+        } else if (i6 == 3) {
+            f = i5 * 16;
+            i = i4 * 9;
+        } else {
+            if (i6 != 4) {
+                f2 = 1.0f;
+                Format build = new Format.Builder().setId(str).setSampleMimeType("video/mpeg2").setWidth(i4).setHeight(i5).setPixelWidthHeightRatio(f2).setInitializationData(Collections.singletonList(copyOf)).build();
+                i2 = (copyOf[7] & 15) - 1;
+                if (i2 >= 0) {
+                    double[] dArr = FRAME_RATE_VALUES;
+                    if (i2 < dArr.length) {
+                        double d = dArr[i2];
+                        byte b2 = copyOf[csdBuffer.sequenceExtensionPosition + 9];
+                        int i7 = (b2 & 96) >> 5;
+                        if (i7 != (b2 & 31)) {
+                            d *= (i7 + 1.0d) / (r8 + 1);
+                        }
+                        j = (long) (1000000.0d / d);
+                        return Pair.create(build, Long.valueOf(j));
+                    }
+                }
+                j = 0;
+                return Pair.create(build, Long.valueOf(j));
+            }
+            f = i5 * 121;
+            i = i4 * 100;
         }
-    }
-
-    @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
-    public void packetFinished() {
-    }
-
-    @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
-    public void packetStarted(long j, int i) {
-        this.pesTimeUs = j;
-    }
-
-    @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
-    public void seek() {
-        NalUnitUtil.clearPrefixFlags(this.prefixFlags);
-        this.csdBuffer.reset();
-        NalUnitTargetBuffer nalUnitTargetBuffer = this.userData;
-        if (nalUnitTargetBuffer != null) {
-            nalUnitTargetBuffer.reset();
+        f2 = f / i;
+        Format build2 = new Format.Builder().setId(str).setSampleMimeType("video/mpeg2").setWidth(i4).setHeight(i5).setPixelWidthHeightRatio(f2).setInitializationData(Collections.singletonList(copyOf)).build();
+        i2 = (copyOf[7] & 15) - 1;
+        if (i2 >= 0) {
         }
-        this.totalBytesWritten = 0L;
-        this.startedFirstSample = false;
-        this.pesTimeUs = -9223372036854775807L;
-        this.sampleTimeUs = -9223372036854775807L;
+        j = 0;
+        return Pair.create(build2, Long.valueOf(j));
+    }
+
+    private static final class CsdBuffer {
+        private static final byte[] START_CODE = {0, 0, 1};
+        public byte[] data;
+        private boolean isFilling;
+        public int length;
+        public int sequenceExtensionPosition;
+
+        public CsdBuffer(int i) {
+            this.data = new byte[i];
+        }
+
+        public void reset() {
+            this.isFilling = false;
+            this.length = 0;
+            this.sequenceExtensionPosition = 0;
+        }
+
+        public boolean onStartCode(int i, int i2) {
+            if (this.isFilling) {
+                int i3 = this.length - i2;
+                this.length = i3;
+                if (this.sequenceExtensionPosition == 0 && i == 181) {
+                    this.sequenceExtensionPosition = i3;
+                } else {
+                    this.isFilling = false;
+                    return true;
+                }
+            } else if (i == 179) {
+                this.isFilling = true;
+            }
+            byte[] bArr = START_CODE;
+            onData(bArr, 0, bArr.length);
+            return false;
+        }
+
+        public void onData(byte[] bArr, int i, int i2) {
+            if (this.isFilling) {
+                int i3 = i2 - i;
+                byte[] bArr2 = this.data;
+                int length = bArr2.length;
+                int i4 = this.length + i3;
+                if (length < i4) {
+                    this.data = Arrays.copyOf(bArr2, i4 * 2);
+                }
+                System.arraycopy(bArr, i, this.data, this.length, i3);
+                this.length += i3;
+            }
+        }
     }
 }

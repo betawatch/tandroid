@@ -5,64 +5,61 @@ import j$.time.ZoneOffset;
 
 /* loaded from: classes2.dex */
 final class h implements f {
-    h() {
-    }
-
     @Override // j$.time.format.f
     public final boolean f(r rVar, StringBuilder sb) {
         Long e = rVar.e(j$.time.temporal.a.INSTANT_SECONDS);
         j$.time.temporal.k d = rVar.d();
         j$.time.temporal.a aVar = j$.time.temporal.a.NANO_OF_SECOND;
-        Long valueOf = d.k(aVar) ? Long.valueOf(rVar.d().h(aVar)) : null;
+        Long valueOf = d.j(aVar) ? Long.valueOf(rVar.d().f(aVar)) : null;
         int i = 0;
         if (e == null) {
             return false;
         }
         long longValue = e.longValue();
-        int m = aVar.m(valueOf != null ? valueOf.longValue() : 0L);
+        int i2 = aVar.i(valueOf != null ? valueOf.longValue() : 0L);
         if (longValue >= -62167219200L) {
             long j = longValue - 253402300800L;
-            long j2 = j$.com.android.tools.r8.a.j(j, 315569520000L) + 1;
-            LocalDateTime u = LocalDateTime.u(j$.com.android.tools.r8.a.i(j, 315569520000L) - 62167219200L, 0, ZoneOffset.UTC);
-            if (j2 > 0) {
+            long i3 = j$.com.android.tools.r8.a.i(j, 315569520000L) + 1;
+            LocalDateTime t = LocalDateTime.t(j$.com.android.tools.r8.a.h(j, 315569520000L) - 62167219200L, 0, ZoneOffset.UTC);
+            if (i3 > 0) {
                 sb.append('+');
-                sb.append(j2);
+                sb.append(i3);
             }
-            sb.append(u);
-            if (u.o() == 0) {
+            sb.append(t);
+            if (t.n() == 0) {
                 sb.append(":00");
             }
         } else {
-            long j3 = longValue + 62167219200L;
-            long j4 = j3 / 315569520000L;
-            long j5 = j3 % 315569520000L;
-            LocalDateTime u2 = LocalDateTime.u(j5 - 62167219200L, 0, ZoneOffset.UTC);
+            long j2 = longValue + 62167219200L;
+            long j3 = j2 / 315569520000L;
+            long j4 = j2 % 315569520000L;
+            LocalDateTime t2 = LocalDateTime.t(j4 - 62167219200L, 0, ZoneOffset.UTC);
             int length = sb.length();
-            sb.append(u2);
-            if (u2.o() == 0) {
+            sb.append(t2);
+            if (t2.n() == 0) {
                 sb.append(":00");
             }
-            if (j4 < 0) {
-                if (u2.p() == -10000) {
-                    sb.replace(length, length + 2, Long.toString(j4 - 1));
-                } else if (j5 == 0) {
-                    sb.insert(length, j4);
+            if (j3 < 0) {
+                if (t2.o() == -10000) {
+                    sb.replace(length, length + 2, Long.toString(j3 - 1));
+                } else if (j4 == 0) {
+                    sb.insert(length, j3);
                 } else {
-                    sb.insert(length + 1, Math.abs(j4));
+                    sb.insert(length + 1, Math.abs(j3));
                 }
             }
         }
-        if (m > 0) {
+        if (i2 > 0) {
             sb.append('.');
-            int i2 = 100000000;
+            int i4 = 100000000;
             while (true) {
-                if (m <= 0 && i % 3 == 0 && i >= -2) {
+                if (i2 <= 0 && i % 3 == 0 && i >= -2) {
                     break;
                 }
-                int i3 = m / i2;
-                sb.append((char) (i3 + 48));
-                m -= i3 * i2;
-                i2 /= 10;
+                int i5 = i2 / i4;
+                sb.append((char) (i5 + 48));
+                i2 -= i5 * i4;
+                i4 /= 10;
                 i++;
             }
         }

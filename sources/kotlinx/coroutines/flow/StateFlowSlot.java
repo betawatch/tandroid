@@ -5,8 +5,7 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import kotlin.Result;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugProbesKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CancellableContinuationImpl;
@@ -14,7 +13,7 @@ import kotlinx.coroutines.flow.internal.AbstractSharedFlowKt;
 import kotlinx.coroutines.flow.internal.AbstractSharedFlowSlot;
 import kotlinx.coroutines.internal.Symbol;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class StateFlowSlot extends AbstractSharedFlowSlot {
     private static final AtomicReferenceFieldUpdater _state$FU = AtomicReferenceFieldUpdater.newUpdater(StateFlowSlot.class, Object.class, "_state");
     private volatile Object _state;
@@ -29,29 +28,6 @@ final class StateFlowSlot extends AbstractSharedFlowSlot {
         symbol = StateFlowKt.NONE;
         atomicReferenceFieldUpdater.set(this, symbol);
         return true;
-    }
-
-    public final Object awaitPending(Continuation continuation) {
-        Continuation intercepted;
-        Symbol symbol;
-        Object coroutine_suspended;
-        Object coroutine_suspended2;
-        intercepted = IntrinsicsKt__IntrinsicsJvmKt.intercepted(continuation);
-        CancellableContinuationImpl cancellableContinuationImpl = new CancellableContinuationImpl(intercepted, 1);
-        cancellableContinuationImpl.initCancellability();
-        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _state$FU;
-        symbol = StateFlowKt.NONE;
-        if (!AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(atomicReferenceFieldUpdater, this, symbol, cancellableContinuationImpl)) {
-            Result.Companion companion = Result.Companion;
-            cancellableContinuationImpl.resumeWith(Result.constructor-impl(Unit.INSTANCE));
-        }
-        Object result = cancellableContinuationImpl.getResult();
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        if (result == coroutine_suspended) {
-            DebugProbesKt.probeCoroutineSuspended(continuation);
-        }
-        coroutine_suspended2 = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        return result == coroutine_suspended2 ? result : Unit.INSTANCE;
     }
 
     @Override // kotlinx.coroutines.flow.internal.AbstractSharedFlowSlot
@@ -103,5 +79,22 @@ final class StateFlowSlot extends AbstractSharedFlowSlot {
         Intrinsics.checkNotNull(andSet);
         symbol2 = StateFlowKt.PENDING;
         return andSet == symbol2;
+    }
+
+    public final Object awaitPending(Continuation continuation) {
+        Symbol symbol;
+        CancellableContinuationImpl cancellableContinuationImpl = new CancellableContinuationImpl(IntrinsicsKt.intercepted(continuation), 1);
+        cancellableContinuationImpl.initCancellability();
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _state$FU;
+        symbol = StateFlowKt.NONE;
+        if (!AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(atomicReferenceFieldUpdater, this, symbol, cancellableContinuationImpl)) {
+            Result.Companion companion = Result.Companion;
+            cancellableContinuationImpl.resumeWith(Result.constructor-impl(Unit.INSTANCE));
+        }
+        Object result = cancellableContinuationImpl.getResult();
+        if (result == IntrinsicsKt.getCOROUTINE_SUSPENDED()) {
+            DebugProbesKt.probeCoroutineSuspended(continuation);
+        }
+        return result == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? result : Unit.INSTANCE;
     }
 }

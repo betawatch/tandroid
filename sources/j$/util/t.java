@@ -6,7 +6,7 @@ import j$.util.function.Consumer;
 public interface t extends y {
     void a(Consumer consumer);
 
-    void c(j$.util.function.E e);
+    void c(j$.util.function.G g);
 
     @Override // java.util.Iterator
     Integer next();

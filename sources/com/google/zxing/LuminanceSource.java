@@ -1,25 +1,25 @@
 package com.google.zxing;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class LuminanceSource {
     private final int height;
     private final int width;
+
+    public abstract byte[] getMatrix();
+
+    public abstract byte[] getRow(int i, byte[] bArr);
 
     protected LuminanceSource(int i, int i2) {
         this.width = i;
         this.height = i2;
     }
 
-    public final int getHeight() {
-        return this.height;
-    }
-
-    public abstract byte[] getMatrix();
-
-    public abstract byte[] getRow(int i, byte[] bArr);
-
     public final int getWidth() {
         return this.width;
+    }
+
+    public final int getHeight() {
+        return this.height;
     }
 
     public final String toString() {

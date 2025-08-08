@@ -9,29 +9,26 @@ public abstract class InstantApps {
     private static Boolean zzb;
 
     public static synchronized boolean isInstantApp(Context context) {
-        Boolean bool;
         boolean isInstantApp;
-        Boolean bool2;
+        Boolean bool;
         synchronized (InstantApps.class) {
             Context applicationContext = context.getApplicationContext();
             Context context2 = zza;
-            if (context2 != null && (bool2 = zzb) != null && context2 == applicationContext) {
-                return bool2.booleanValue();
+            if (context2 != null && (bool = zzb) != null && context2 == applicationContext) {
+                return bool.booleanValue();
             }
             zzb = null;
-            if (!PlatformVersion.isAtLeastO()) {
+            if (PlatformVersion.isAtLeastO()) {
+                isInstantApp = applicationContext.getPackageManager().isInstantApp();
+                zzb = Boolean.valueOf(isInstantApp);
+            } else {
                 try {
                     context.getClassLoader().loadClass("com.google.android.instantapps.supervisor.InstantAppsRuntime");
                     zzb = Boolean.TRUE;
                 } catch (ClassNotFoundException unused) {
-                    bool = Boolean.FALSE;
+                    zzb = Boolean.FALSE;
                 }
-                zza = applicationContext;
-                return zzb.booleanValue();
             }
-            isInstantApp = applicationContext.getPackageManager().isInstantApp();
-            bool = Boolean.valueOf(isInstantApp);
-            zzb = bool;
             zza = applicationContext;
             return zzb.booleanValue();
         }

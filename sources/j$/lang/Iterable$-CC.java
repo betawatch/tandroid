@@ -14,7 +14,7 @@ public final /* synthetic */ class Iterable$-CC {
         consumer.getClass();
         Iterator it = iterable.iterator();
         while (it.hasNext()) {
-            consumer.r(it.next());
+            consumer.accept(it.next());
         }
     }
 }

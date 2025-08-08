@@ -1,6 +1,6 @@
 package com.google.firebase.iid.internal;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public interface FirebaseInstanceIdInternal {
 
     public interface NewTokenListener {

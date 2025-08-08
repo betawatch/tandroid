@@ -22,15 +22,15 @@ import org.telegram.ui.Components.LayoutHelper;
 /* loaded from: classes4.dex */
 public class TextCheckbox2Cell extends FrameLayout {
     public static final Property ANIMATION_PROGRESS = new AnimationProperties.FloatProperty("animationProgress") { // from class: org.telegram.ui.Cells.TextCheckbox2Cell.1
-        @Override // android.util.Property
-        public Float get(TextCheckbox2Cell textCheckbox2Cell) {
-            return Float.valueOf(textCheckbox2Cell.animationProgress);
-        }
-
         @Override // org.telegram.ui.Components.AnimationProperties.FloatProperty
         public void setValue(TextCheckbox2Cell textCheckbox2Cell, float f) {
             textCheckbox2Cell.setAnimationProgress(f);
             textCheckbox2Cell.invalidate();
+        }
+
+        @Override // android.util.Property
+        public Float get(TextCheckbox2Cell textCheckbox2Cell) {
+            return Float.valueOf(textCheckbox2Cell.animationProgress);
         }
     };
     private int animatedColorBackground;
@@ -92,50 +92,17 @@ public class TextCheckbox2Cell extends FrameLayout {
         setClipChildren(false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public void setAnimationProgress(float f) {
-        this.animationProgress = f;
-        Math.max(this.lastTouchX, getMeasuredWidth() - this.lastTouchX);
-        AndroidUtilities.dp(40.0f);
-        getMeasuredHeight();
-    }
-
-    @Override // android.view.View
-    protected void onDraw(Canvas canvas) {
-        if (this.animatedColorBackground != 0) {
-            canvas.drawCircle(this.lastTouchX, getMeasuredHeight() / 2, (Math.max(this.lastTouchX, getMeasuredWidth() - this.lastTouchX) + AndroidUtilities.dp(40.0f)) * this.animationProgress, this.animationPaint);
-        }
-        if (this.needDivider) {
-            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(64.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(64.0f) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
-        }
-    }
-
-    @Override // android.view.View
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName("android.widget.checkbox");
-        accessibilityNodeInfo.setCheckable(true);
-        accessibilityNodeInfo.setChecked(this.checkbox.isChecked());
-        StringBuilder sb = new StringBuilder();
-        sb.append(this.textView.getText());
-        if (this.valueTextView != null) {
-            sb.append("\n");
-            sb.append(this.valueTextView.getText());
-        }
-        accessibilityNodeInfo.setText(sb);
+    public void setCheckboxGravityTop() {
+        this.checkbox.setLayoutParams(LayoutHelper.createFrame(20, 20.0f, (LocaleController.isRTL ? 5 : 3) | 48, 22.0f, 22.0f, 22.0f, 0.0f));
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        int makeMeasureSpec;
-        boolean z = this.isMultiline;
-        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30);
-        if (z) {
-            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
+        if (this.isMultiline) {
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
         } else {
-            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.valueTextView.getVisibility() == 0 ? 64.0f : this.height) + (this.needDivider ? 1 : 0), TLObject.FLAG_30);
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.valueTextView.getVisibility() == 0 ? 64.0f : this.height) + (this.needDivider ? 1 : 0), TLObject.FLAG_30));
         }
-        super.onMeasure(makeMeasureSpec2, makeMeasureSpec);
     }
 
     @Override // android.view.View
@@ -144,19 +111,8 @@ public class TextCheckbox2Cell extends FrameLayout {
         return super.onTouchEvent(motionEvent);
     }
 
-    @Override // android.view.View
-    public void setBackgroundColor(int i) {
-        clearAnimation();
-        this.animatedColorBackground = 0;
-        super.setBackgroundColor(i);
-    }
-
-    public void setCheckboxGravityTop() {
-        this.checkbox.setLayoutParams(LayoutHelper.createFrame(20, 20.0f, (LocaleController.isRTL ? 5 : 3) | 48, 22.0f, 22.0f, 22.0f, 0.0f));
-    }
-
-    public void setChecked(boolean z) {
-        this.checkbox.setChecked(z, true);
+    public void setTypeface(Typeface typeface) {
+        this.textView.setTypeface(typeface);
     }
 
     public void setHeight(int i) {
@@ -194,7 +150,47 @@ public class TextCheckbox2Cell extends FrameLayout {
         setWillNotDraw(true ^ z2);
     }
 
-    public void setTypeface(Typeface typeface) {
-        this.textView.setTypeface(typeface);
+    public void setChecked(boolean z) {
+        this.checkbox.setChecked(z, true);
+    }
+
+    @Override // android.view.View
+    public void setBackgroundColor(int i) {
+        clearAnimation();
+        this.animatedColorBackground = 0;
+        super.setBackgroundColor(i);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void setAnimationProgress(float f) {
+        this.animationProgress = f;
+        Math.max(this.lastTouchX, getMeasuredWidth() - this.lastTouchX);
+        AndroidUtilities.dp(40.0f);
+        getMeasuredHeight();
+    }
+
+    @Override // android.view.View
+    protected void onDraw(Canvas canvas) {
+        if (this.animatedColorBackground != 0) {
+            canvas.drawCircle(this.lastTouchX, getMeasuredHeight() / 2, (Math.max(this.lastTouchX, getMeasuredWidth() - this.lastTouchX) + AndroidUtilities.dp(40.0f)) * this.animationProgress, this.animationPaint);
+        }
+        if (this.needDivider) {
+            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(64.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(64.0f) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
+        }
+    }
+
+    @Override // android.view.View
+    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.widget.checkbox");
+        accessibilityNodeInfo.setCheckable(true);
+        accessibilityNodeInfo.setChecked(this.checkbox.isChecked());
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.textView.getText());
+        if (this.valueTextView != null) {
+            sb.append("\n");
+            sb.append(this.valueTextView.getText());
+        }
+        accessibilityNodeInfo.setText(sb);
     }
 }

@@ -14,11 +14,6 @@ public abstract class zzro extends zzfi implements Future {
     }
 
     @Override // java.util.concurrent.Future
-    public final Object get(long j, TimeUnit timeUnit) {
-        return zzb().get(j, timeUnit);
-    }
-
-    @Override // java.util.concurrent.Future
     public final boolean isCancelled() {
         return zzb().isCancelled();
     }
@@ -29,4 +24,9 @@ public abstract class zzro extends zzfi implements Future {
     }
 
     protected abstract Future zzb();
+
+    @Override // java.util.concurrent.Future
+    public final Object get(long j, TimeUnit timeUnit) {
+        return zzb().get(j, timeUnit);
+    }
 }

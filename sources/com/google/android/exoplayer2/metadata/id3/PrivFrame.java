@@ -21,16 +21,16 @@ public final class PrivFrame extends Id3Frame {
     public final String owner;
     public final byte[] privateData;
 
-    PrivFrame(Parcel parcel) {
-        super("PRIV");
-        this.owner = (String) Util.castNonNull(parcel.readString());
-        this.privateData = (byte[]) Util.castNonNull(parcel.createByteArray());
-    }
-
     public PrivFrame(String str, byte[] bArr) {
         super("PRIV");
         this.owner = str;
         this.privateData = bArr;
+    }
+
+    PrivFrame(Parcel parcel) {
+        super("PRIV");
+        this.owner = (String) Util.castNonNull(parcel.readString());
+        this.privateData = (byte[]) Util.castNonNull(parcel.createByteArray());
     }
 
     public boolean equals(Object obj) {

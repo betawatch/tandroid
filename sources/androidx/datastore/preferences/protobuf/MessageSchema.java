@@ -1,6 +1,6 @@
 package androidx.datastore.preferences.protobuf;
 
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import androidx.datastore.preferences.protobuf.Internal;
 import androidx.datastore.preferences.protobuf.InvalidProtocolBufferException;
 import androidx.datastore.preferences.protobuf.WireFormat;
@@ -37,6 +37,22 @@ final class MessageSchema implements Schema {
     private final UnknownFieldSchema unknownFieldSchema;
     private final boolean useCachedSizeField;
 
+    private static boolean isEnforceUtf8(int i) {
+        return (i & TLObject.FLAG_29) != 0;
+    }
+
+    private static boolean isRequired(int i) {
+        return (i & TLObject.FLAG_28) != 0;
+    }
+
+    private static long offset(int i) {
+        return i & 1048575;
+    }
+
+    private static int type(int i) {
+        return (i & 267386880) >>> 20;
+    }
+
     private MessageSchema(int[] iArr, Object[] objArr, int i, int i2, MessageLite messageLite, boolean z, boolean z2, int[] iArr2, int i3, int i4, NewInstanceSchema newInstanceSchema, ListFieldSchema listFieldSchema, UnknownFieldSchema unknownFieldSchema, ExtensionSchema extensionSchema, MapFieldSchema mapFieldSchema) {
         this.buffer = iArr;
         this.objects = objArr;
@@ -57,1998 +73,12 @@ final class MessageSchema implements Schema {
         this.mapFieldSchema = mapFieldSchema;
     }
 
-    private boolean arePresentForEquals(Object obj, Object obj2, int i) {
-        return isFieldPresent(obj, i) == isFieldPresent(obj2, i);
-    }
-
-    private static boolean booleanAt(Object obj, long j) {
-        return UnsafeUtil.getBoolean(obj, j);
-    }
-
-    private static double doubleAt(Object obj, long j) {
-        return UnsafeUtil.getDouble(obj, j);
-    }
-
-    private boolean equals(Object obj, Object obj2, int i) {
-        int typeAndOffsetAt = typeAndOffsetAt(i);
-        long offset = offset(typeAndOffsetAt);
-        switch (type(typeAndOffsetAt)) {
-            case 0:
-                return arePresentForEquals(obj, obj2, i) && Double.doubleToLongBits(UnsafeUtil.getDouble(obj, offset)) == Double.doubleToLongBits(UnsafeUtil.getDouble(obj2, offset));
-            case 1:
-                return arePresentForEquals(obj, obj2, i) && Float.floatToIntBits(UnsafeUtil.getFloat(obj, offset)) == Float.floatToIntBits(UnsafeUtil.getFloat(obj2, offset));
-            case 2:
-                return arePresentForEquals(obj, obj2, i) && UnsafeUtil.getLong(obj, offset) == UnsafeUtil.getLong(obj2, offset);
-            case 3:
-                return arePresentForEquals(obj, obj2, i) && UnsafeUtil.getLong(obj, offset) == UnsafeUtil.getLong(obj2, offset);
-            case 4:
-                return arePresentForEquals(obj, obj2, i) && UnsafeUtil.getInt(obj, offset) == UnsafeUtil.getInt(obj2, offset);
-            case 5:
-                return arePresentForEquals(obj, obj2, i) && UnsafeUtil.getLong(obj, offset) == UnsafeUtil.getLong(obj2, offset);
-            case 6:
-                return arePresentForEquals(obj, obj2, i) && UnsafeUtil.getInt(obj, offset) == UnsafeUtil.getInt(obj2, offset);
-            case 7:
-                return arePresentForEquals(obj, obj2, i) && UnsafeUtil.getBoolean(obj, offset) == UnsafeUtil.getBoolean(obj2, offset);
-            case 8:
-                return arePresentForEquals(obj, obj2, i) && SchemaUtil.safeEquals(UnsafeUtil.getObject(obj, offset), UnsafeUtil.getObject(obj2, offset));
-            case 9:
-                return arePresentForEquals(obj, obj2, i) && SchemaUtil.safeEquals(UnsafeUtil.getObject(obj, offset), UnsafeUtil.getObject(obj2, offset));
-            case 10:
-                return arePresentForEquals(obj, obj2, i) && SchemaUtil.safeEquals(UnsafeUtil.getObject(obj, offset), UnsafeUtil.getObject(obj2, offset));
-            case 11:
-                return arePresentForEquals(obj, obj2, i) && UnsafeUtil.getInt(obj, offset) == UnsafeUtil.getInt(obj2, offset);
-            case 12:
-                return arePresentForEquals(obj, obj2, i) && UnsafeUtil.getInt(obj, offset) == UnsafeUtil.getInt(obj2, offset);
-            case 13:
-                return arePresentForEquals(obj, obj2, i) && UnsafeUtil.getInt(obj, offset) == UnsafeUtil.getInt(obj2, offset);
-            case 14:
-                return arePresentForEquals(obj, obj2, i) && UnsafeUtil.getLong(obj, offset) == UnsafeUtil.getLong(obj2, offset);
-            case 15:
-                return arePresentForEquals(obj, obj2, i) && UnsafeUtil.getInt(obj, offset) == UnsafeUtil.getInt(obj2, offset);
-            case 16:
-                return arePresentForEquals(obj, obj2, i) && UnsafeUtil.getLong(obj, offset) == UnsafeUtil.getLong(obj2, offset);
-            case 17:
-                return arePresentForEquals(obj, obj2, i) && SchemaUtil.safeEquals(UnsafeUtil.getObject(obj, offset), UnsafeUtil.getObject(obj2, offset));
-            case 18:
-            case 19:
-            case 20:
-            case 21:
-            case 22:
-            case 23:
-            case 24:
-            case 25:
-            case 26:
-            case 27:
-            case 28:
-            case 29:
-            case 30:
-            case 31:
-            case 32:
-            case 33:
-            case 34:
-            case 35:
-            case 36:
-            case 37:
-            case 38:
-            case 39:
-            case 40:
-            case 41:
-            case 42:
-            case 43:
-            case 44:
-            case 45:
-            case 46:
-            case 47:
-            case 48:
-            case 49:
-            case 50:
-                return SchemaUtil.safeEquals(UnsafeUtil.getObject(obj, offset), UnsafeUtil.getObject(obj2, offset));
-            case 51:
-            case 52:
-            case 53:
-            case 54:
-            case 55:
-            case 56:
-            case 57:
-            case 58:
-            case 59:
-            case 60:
-            case 61:
-            case 62:
-            case 63:
-            case 64:
-            case 65:
-            case 66:
-            case 67:
-            case 68:
-                return isOneofCaseEqual(obj, obj2, i) && SchemaUtil.safeEquals(UnsafeUtil.getObject(obj, offset), UnsafeUtil.getObject(obj2, offset));
-            default:
-                return true;
-        }
-    }
-
-    private final Object filterMapUnknownEnumValues(Object obj, int i, Object obj2, UnknownFieldSchema unknownFieldSchema) {
-        numberAt(i);
-        if (UnsafeUtil.getObject(obj, offset(typeAndOffsetAt(i))) == null) {
-            return obj2;
-        }
-        getEnumFieldVerifier(i);
-        return obj2;
-    }
-
-    private static float floatAt(Object obj, long j) {
-        return UnsafeUtil.getFloat(obj, j);
-    }
-
-    private Internal.EnumVerifier getEnumFieldVerifier(int i) {
-        ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(this.objects[((i / 3) * 2) + 1]);
-        return null;
-    }
-
-    private Object getMapFieldDefaultEntry(int i) {
-        return this.objects[(i / 3) * 2];
-    }
-
-    private Schema getMessageFieldSchema(int i) {
-        int i2 = (i / 3) * 2;
-        Schema schema = (Schema) this.objects[i2];
-        if (schema != null) {
-            return schema;
-        }
-        Schema schemaFor = Protobuf.getInstance().schemaFor((Class) this.objects[i2 + 1]);
-        this.objects[i2] = schemaFor;
-        return schemaFor;
-    }
-
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:102:0x0213, code lost:
-    
-        if (r16.useCachedSizeField != false) goto L93;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:106:0x0224, code lost:
-    
-        if (r16.useCachedSizeField != false) goto L93;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:110:0x0235, code lost:
-    
-        if (r16.useCachedSizeField != false) goto L93;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:114:0x0247, code lost:
-    
-        if (r16.useCachedSizeField != false) goto L93;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:118:0x0259, code lost:
-    
-        if (r16.useCachedSizeField != false) goto L93;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:122:0x026b, code lost:
-    
-        if (r16.useCachedSizeField != false) goto L93;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:126:0x027d, code lost:
-    
-        if (r16.useCachedSizeField != false) goto L93;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:130:0x028f, code lost:
-    
-        if (r16.useCachedSizeField != false) goto L93;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:134:0x02a1, code lost:
-    
-        if (r16.useCachedSizeField != false) goto L93;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x0068, code lost:
-    
-        if (isOneofPresent(r17, r9, r5) != false) goto L25;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:149:0x0351, code lost:
-    
-        if ((r7 & r14) != 0) goto L25;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x006a, code lost:
-    
-        r3 = androidx.datastore.preferences.protobuf.CodedOutputStream.computeGroupSize(r9, (androidx.datastore.preferences.protobuf.MessageLite) r2.getObject(r17, r12), getMessageFieldSchema(r5));
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:157:0x036b, code lost:
-    
-        if ((r7 & r14) != 0) goto L38;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:159:0x0371, code lost:
-    
-        if ((r7 & r14) != 0) goto L41;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:167:0x038b, code lost:
-    
-        if ((r7 & r14) != 0) goto L53;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:169:0x0391, code lost:
-    
-        if ((r7 & r14) != 0) goto L56;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:177:0x03b3, code lost:
-    
-        if ((r7 & r14) != 0) goto L65;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:25:0x009e, code lost:
-    
-        if (isOneofPresent(r17, r9, r5) != false) goto L38;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x00a0, code lost:
-    
-        r3 = androidx.datastore.preferences.protobuf.CodedOutputStream.computeSFixed64Size(r9, 0);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x00a9, code lost:
-    
-        if (isOneofPresent(r17, r9, r5) != false) goto L41;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x00ab, code lost:
-    
-        r4 = androidx.datastore.preferences.protobuf.CodedOutputStream.computeSFixed32Size(r9, 0);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:40:0x00d4, code lost:
-    
-        if (isOneofPresent(r17, r9, r5) != false) goto L53;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:41:0x00d6, code lost:
-    
-        r3 = androidx.datastore.preferences.protobuf.CodedOutputStream.computeBytesSize(r9, (androidx.datastore.preferences.protobuf.ByteString) r2.getObject(r17, r12));
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:43:0x00e5, code lost:
-    
-        if (isOneofPresent(r17, r9, r5) != false) goto L56;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:44:0x00e7, code lost:
-    
-        r3 = androidx.datastore.preferences.protobuf.SchemaUtil.computeSizeMessage(r9, r2.getObject(r17, r12), getMessageFieldSchema(r5));
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:52:0x0116, code lost:
-    
-        if (isOneofPresent(r17, r9, r5) != false) goto L65;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x0118, code lost:
-    
-        r3 = androidx.datastore.preferences.protobuf.CodedOutputStream.computeBoolSize(r9, true);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:80:0x01af, code lost:
-    
-        if (r16.useCachedSizeField != false) goto L93;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:81:0x01b1, code lost:
-    
-        r2.putInt(r17, r11, r3);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:82:0x01b5, code lost:
-    
-        r4 = (androidx.datastore.preferences.protobuf.CodedOutputStream.computeTagSize(r9) + androidx.datastore.preferences.protobuf.CodedOutputStream.computeUInt32SizeNoTag(r3)) + r3;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:86:0x01cf, code lost:
-    
-        if (r16.useCachedSizeField != false) goto L93;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:90:0x01e0, code lost:
-    
-        if (r16.useCachedSizeField != false) goto L93;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:94:0x01f1, code lost:
-    
-        if (r16.useCachedSizeField != false) goto L93;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:98:0x0202, code lost:
-    
-        if (r16.useCachedSizeField != false) goto L93;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    private int getSerializedSizeProto2(Object obj) {
-        int i;
-        int i2;
-        int computeDoubleSize;
-        int computeBytesSize;
-        int i3;
-        int i4;
-        int i5;
-        long j;
-        int computeSizeFixed64ListNoTag;
-        Unsafe unsafe = UNSAFE;
-        int i6 = -1;
-        int i7 = 0;
-        int i8 = 0;
-        int i9 = 0;
-        while (i7 < this.buffer.length) {
-            int typeAndOffsetAt = typeAndOffsetAt(i7);
-            int numberAt = numberAt(i7);
-            int type = type(typeAndOffsetAt);
-            if (type <= 17) {
-                i = this.buffer[i7 + 2];
-                int i10 = 1048575 & i;
-                int i11 = 1 << (i >>> 20);
-                if (i10 != i6) {
-                    i9 = unsafe.getInt(obj, i10);
-                    i6 = i10;
-                }
-                i2 = i11;
-            } else {
-                i = (!this.useCachedSizeField || type < FieldType.DOUBLE_LIST_PACKED.id() || type > FieldType.SINT64_LIST_PACKED.id()) ? 0 : this.buffer[i7 + 2] & 1048575;
-                i2 = 0;
-            }
-            long offset = offset(typeAndOffsetAt);
-            int i12 = i6;
-            switch (type) {
-                case 0:
-                    if ((i9 & i2) == 0) {
-                        break;
-                    } else {
-                        computeDoubleSize = CodedOutputStream.computeDoubleSize(numberAt, 0.0d);
-                        i8 += computeDoubleSize;
-                        break;
-                    }
-                case 1:
-                    if ((i9 & i2) == 0) {
-                        break;
-                    } else {
-                        computeDoubleSize = CodedOutputStream.computeFloatSize(numberAt, 0.0f);
-                        i8 += computeDoubleSize;
-                        break;
-                    }
-                case 2:
-                    if ((i9 & i2) == 0) {
-                        break;
-                    } else {
-                        computeDoubleSize = CodedOutputStream.computeInt64Size(numberAt, unsafe.getLong(obj, offset));
-                        i8 += computeDoubleSize;
-                        break;
-                    }
-                case 3:
-                    if ((i9 & i2) == 0) {
-                        break;
-                    } else {
-                        computeDoubleSize = CodedOutputStream.computeUInt64Size(numberAt, unsafe.getLong(obj, offset));
-                        i8 += computeDoubleSize;
-                        break;
-                    }
-                case 4:
-                    if ((i9 & i2) == 0) {
-                        break;
-                    } else {
-                        computeDoubleSize = CodedOutputStream.computeInt32Size(numberAt, unsafe.getInt(obj, offset));
-                        i8 += computeDoubleSize;
-                        break;
-                    }
-                case 5:
-                    if ((i9 & i2) == 0) {
-                        break;
-                    } else {
-                        computeDoubleSize = CodedOutputStream.computeFixed64Size(numberAt, 0L);
-                        i8 += computeDoubleSize;
-                        break;
-                    }
-                case 6:
-                    if ((i9 & i2) != 0) {
-                        computeDoubleSize = CodedOutputStream.computeFixed32Size(numberAt, 0);
-                        i8 += computeDoubleSize;
-                        break;
-                    }
-                    break;
-                case 8:
-                    if ((i9 & i2) != 0) {
-                        Object object = unsafe.getObject(obj, offset);
-                        computeBytesSize = object instanceof ByteString ? CodedOutputStream.computeBytesSize(numberAt, (ByteString) object) : CodedOutputStream.computeStringSize(numberAt, (String) object);
-                        i8 += computeBytesSize;
-                    }
-                    break;
-                case 11:
-                    if ((i9 & i2) != 0) {
-                        i3 = unsafe.getInt(obj, offset);
-                        computeBytesSize = CodedOutputStream.computeUInt32Size(numberAt, i3);
-                        i8 += computeBytesSize;
-                    }
-                    break;
-                case 12:
-                    if ((i9 & i2) != 0) {
-                        i4 = unsafe.getInt(obj, offset);
-                        computeBytesSize = CodedOutputStream.computeEnumSize(numberAt, i4);
-                        i8 += computeBytesSize;
-                    }
-                    break;
-                case 15:
-                    if ((i9 & i2) != 0) {
-                        i5 = unsafe.getInt(obj, offset);
-                        computeBytesSize = CodedOutputStream.computeSInt32Size(numberAt, i5);
-                        i8 += computeBytesSize;
-                    }
-                    break;
-                case 16:
-                    if ((i9 & i2) != 0) {
-                        j = unsafe.getLong(obj, offset);
-                        computeBytesSize = CodedOutputStream.computeSInt64Size(numberAt, j);
-                        i8 += computeBytesSize;
-                    }
-                    break;
-                case 18:
-                case 23:
-                case 32:
-                    computeBytesSize = SchemaUtil.computeSizeFixed64List(numberAt, (List) unsafe.getObject(obj, offset), false);
-                    i8 += computeBytesSize;
-                    break;
-                case 19:
-                case 24:
-                case 31:
-                    computeBytesSize = SchemaUtil.computeSizeFixed32List(numberAt, (List) unsafe.getObject(obj, offset), false);
-                    i8 += computeBytesSize;
-                    break;
-                case 20:
-                    computeBytesSize = SchemaUtil.computeSizeInt64List(numberAt, (List) unsafe.getObject(obj, offset), false);
-                    i8 += computeBytesSize;
-                    break;
-                case 21:
-                    computeBytesSize = SchemaUtil.computeSizeUInt64List(numberAt, (List) unsafe.getObject(obj, offset), false);
-                    i8 += computeBytesSize;
-                    break;
-                case 22:
-                    computeBytesSize = SchemaUtil.computeSizeInt32List(numberAt, (List) unsafe.getObject(obj, offset), false);
-                    i8 += computeBytesSize;
-                    break;
-                case 25:
-                    computeBytesSize = SchemaUtil.computeSizeBoolList(numberAt, (List) unsafe.getObject(obj, offset), false);
-                    i8 += computeBytesSize;
-                    break;
-                case 26:
-                    computeBytesSize = SchemaUtil.computeSizeStringList(numberAt, (List) unsafe.getObject(obj, offset));
-                    i8 += computeBytesSize;
-                    break;
-                case 27:
-                    computeBytesSize = SchemaUtil.computeSizeMessageList(numberAt, (List) unsafe.getObject(obj, offset), getMessageFieldSchema(i7));
-                    i8 += computeBytesSize;
-                    break;
-                case 28:
-                    computeBytesSize = SchemaUtil.computeSizeByteStringList(numberAt, (List) unsafe.getObject(obj, offset));
-                    i8 += computeBytesSize;
-                    break;
-                case 29:
-                    computeBytesSize = SchemaUtil.computeSizeUInt32List(numberAt, (List) unsafe.getObject(obj, offset), false);
-                    i8 += computeBytesSize;
-                    break;
-                case 30:
-                    computeBytesSize = SchemaUtil.computeSizeEnumList(numberAt, (List) unsafe.getObject(obj, offset), false);
-                    i8 += computeBytesSize;
-                    break;
-                case 33:
-                    computeBytesSize = SchemaUtil.computeSizeSInt32List(numberAt, (List) unsafe.getObject(obj, offset), false);
-                    i8 += computeBytesSize;
-                    break;
-                case 34:
-                    computeBytesSize = SchemaUtil.computeSizeSInt64List(numberAt, (List) unsafe.getObject(obj, offset), false);
-                    i8 += computeBytesSize;
-                    break;
-                case 35:
-                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeFixed64ListNoTag((List) unsafe.getObject(obj, offset));
-                    if (computeSizeFixed64ListNoTag > 0) {
-                        break;
-                    }
-                    break;
-                case 36:
-                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeFixed32ListNoTag((List) unsafe.getObject(obj, offset));
-                    if (computeSizeFixed64ListNoTag > 0) {
-                        break;
-                    }
-                    break;
-                case 37:
-                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeInt64ListNoTag((List) unsafe.getObject(obj, offset));
-                    if (computeSizeFixed64ListNoTag > 0) {
-                        break;
-                    }
-                    break;
-                case 38:
-                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeUInt64ListNoTag((List) unsafe.getObject(obj, offset));
-                    if (computeSizeFixed64ListNoTag > 0) {
-                        break;
-                    }
-                    break;
-                case 39:
-                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeInt32ListNoTag((List) unsafe.getObject(obj, offset));
-                    if (computeSizeFixed64ListNoTag > 0) {
-                        break;
-                    }
-                    break;
-                case 40:
-                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeFixed64ListNoTag((List) unsafe.getObject(obj, offset));
-                    if (computeSizeFixed64ListNoTag > 0) {
-                        break;
-                    }
-                    break;
-                case 41:
-                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeFixed32ListNoTag((List) unsafe.getObject(obj, offset));
-                    if (computeSizeFixed64ListNoTag > 0) {
-                        break;
-                    }
-                    break;
-                case 42:
-                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeBoolListNoTag((List) unsafe.getObject(obj, offset));
-                    if (computeSizeFixed64ListNoTag > 0) {
-                        break;
-                    }
-                    break;
-                case 43:
-                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeUInt32ListNoTag((List) unsafe.getObject(obj, offset));
-                    if (computeSizeFixed64ListNoTag > 0) {
-                        break;
-                    }
-                    break;
-                case 44:
-                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeEnumListNoTag((List) unsafe.getObject(obj, offset));
-                    if (computeSizeFixed64ListNoTag > 0) {
-                        break;
-                    }
-                    break;
-                case 45:
-                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeFixed32ListNoTag((List) unsafe.getObject(obj, offset));
-                    if (computeSizeFixed64ListNoTag > 0) {
-                        break;
-                    }
-                    break;
-                case 46:
-                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeFixed64ListNoTag((List) unsafe.getObject(obj, offset));
-                    if (computeSizeFixed64ListNoTag > 0) {
-                        break;
-                    }
-                    break;
-                case 47:
-                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeSInt32ListNoTag((List) unsafe.getObject(obj, offset));
-                    if (computeSizeFixed64ListNoTag > 0) {
-                        break;
-                    }
-                    break;
-                case 48:
-                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeSInt64ListNoTag((List) unsafe.getObject(obj, offset));
-                    if (computeSizeFixed64ListNoTag > 0) {
-                        break;
-                    }
-                    break;
-                case 49:
-                    computeBytesSize = SchemaUtil.computeSizeGroupList(numberAt, (List) unsafe.getObject(obj, offset), getMessageFieldSchema(i7));
-                    i8 += computeBytesSize;
-                    break;
-                case 50:
-                    computeBytesSize = this.mapFieldSchema.getSerializedSize(numberAt, unsafe.getObject(obj, offset), getMapFieldDefaultEntry(i7));
-                    i8 += computeBytesSize;
-                    break;
-                case 51:
-                    if (isOneofPresent(obj, numberAt, i7)) {
-                        computeBytesSize = CodedOutputStream.computeDoubleSize(numberAt, 0.0d);
-                        i8 += computeBytesSize;
-                    }
-                    break;
-                case 52:
-                    if (isOneofPresent(obj, numberAt, i7)) {
-                        computeBytesSize = CodedOutputStream.computeFloatSize(numberAt, 0.0f);
-                        i8 += computeBytesSize;
-                    }
-                    break;
-                case 53:
-                    if (isOneofPresent(obj, numberAt, i7)) {
-                        computeBytesSize = CodedOutputStream.computeInt64Size(numberAt, oneofLongAt(obj, offset));
-                        i8 += computeBytesSize;
-                    }
-                    break;
-                case 54:
-                    if (isOneofPresent(obj, numberAt, i7)) {
-                        computeBytesSize = CodedOutputStream.computeUInt64Size(numberAt, oneofLongAt(obj, offset));
-                        i8 += computeBytesSize;
-                    }
-                    break;
-                case 55:
-                    if (isOneofPresent(obj, numberAt, i7)) {
-                        computeBytesSize = CodedOutputStream.computeInt32Size(numberAt, oneofIntAt(obj, offset));
-                        i8 += computeBytesSize;
-                    }
-                    break;
-                case 56:
-                    if (isOneofPresent(obj, numberAt, i7)) {
-                        computeBytesSize = CodedOutputStream.computeFixed64Size(numberAt, 0L);
-                        i8 += computeBytesSize;
-                    }
-                    break;
-                case 57:
-                    if (isOneofPresent(obj, numberAt, i7)) {
-                        int computeTagSize = CodedOutputStream.computeFixed32Size(numberAt, 0);
-                        i8 += computeTagSize;
-                    }
-                    break;
-                case 59:
-                    if (isOneofPresent(obj, numberAt, i7)) {
-                        Object object2 = unsafe.getObject(obj, offset);
-                        computeBytesSize = object2 instanceof ByteString ? CodedOutputStream.computeBytesSize(numberAt, (ByteString) object2) : CodedOutputStream.computeStringSize(numberAt, (String) object2);
-                        i8 += computeBytesSize;
-                    }
-                    break;
-                case 62:
-                    if (isOneofPresent(obj, numberAt, i7)) {
-                        i3 = oneofIntAt(obj, offset);
-                        computeBytesSize = CodedOutputStream.computeUInt32Size(numberAt, i3);
-                        i8 += computeBytesSize;
-                    }
-                    break;
-                case 63:
-                    if (isOneofPresent(obj, numberAt, i7)) {
-                        i4 = oneofIntAt(obj, offset);
-                        computeBytesSize = CodedOutputStream.computeEnumSize(numberAt, i4);
-                        i8 += computeBytesSize;
-                    }
-                    break;
-                case 66:
-                    if (isOneofPresent(obj, numberAt, i7)) {
-                        i5 = oneofIntAt(obj, offset);
-                        computeBytesSize = CodedOutputStream.computeSInt32Size(numberAt, i5);
-                        i8 += computeBytesSize;
-                    }
-                    break;
-                case 67:
-                    if (isOneofPresent(obj, numberAt, i7)) {
-                        j = oneofLongAt(obj, offset);
-                        computeBytesSize = CodedOutputStream.computeSInt64Size(numberAt, j);
-                        i8 += computeBytesSize;
-                    }
-                    break;
-            }
-            i7 += 3;
-            i6 = i12;
-        }
-        int unknownFieldsSerializedSize = i8 + getUnknownFieldsSerializedSize(this.unknownFieldSchema, obj);
-        return this.hasExtensions ? unknownFieldsSerializedSize + this.extensionSchema.getExtensions(obj).getSerializedSize() : unknownFieldsSerializedSize;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:101:0x0180, code lost:
-    
-        if (r15.useCachedSizeField != false) goto L86;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:102:0x0182, code lost:
-    
-        r2.putInt(r16, r6, r7);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:103:0x0186, code lost:
-    
-        r6 = (androidx.datastore.preferences.protobuf.CodedOutputStream.computeTagSize(r8) + androidx.datastore.preferences.protobuf.CodedOutputStream.computeUInt32SizeNoTag(r7)) + r7;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:108:0x01a0, code lost:
-    
-        if (r15.useCachedSizeField != false) goto L86;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:113:0x01b1, code lost:
-    
-        if (r15.useCachedSizeField != false) goto L86;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:118:0x01c2, code lost:
-    
-        if (r15.useCachedSizeField != false) goto L86;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:123:0x01d3, code lost:
-    
-        if (r15.useCachedSizeField != false) goto L86;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:128:0x01e4, code lost:
-    
-        if (r15.useCachedSizeField != false) goto L86;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:133:0x01f5, code lost:
-    
-        if (r15.useCachedSizeField != false) goto L86;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:138:0x0206, code lost:
-    
-        if (r15.useCachedSizeField != false) goto L86;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:143:0x0218, code lost:
-    
-        if (r15.useCachedSizeField != false) goto L86;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:148:0x022a, code lost:
-    
-        if (r15.useCachedSizeField != false) goto L86;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:153:0x023c, code lost:
-    
-        if (r15.useCachedSizeField != false) goto L86;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:158:0x024e, code lost:
-    
-        if (r15.useCachedSizeField != false) goto L86;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:163:0x0260, code lost:
-    
-        if (r15.useCachedSizeField != false) goto L86;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:168:0x0272, code lost:
-    
-        if (r15.useCachedSizeField != false) goto L86;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:217:0x0360, code lost:
-    
-        if ((r6 instanceof androidx.datastore.preferences.protobuf.ByteString) != false) goto L43;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:58:0x00db, code lost:
-    
-        if ((r6 instanceof androidx.datastore.preferences.protobuf.ByteString) != false) goto L43;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:59:0x00de, code lost:
-    
-        r6 = androidx.datastore.preferences.protobuf.CodedOutputStream.computeStringSize(r8, (java.lang.String) r6);
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    private int getSerializedSizeProto3(Object obj) {
-        long j;
-        long j2;
-        int i;
-        Object object;
-        int i2;
-        int i3;
-        int i4;
-        long j3;
-        int computeSizeInt64List;
-        int computeSizeFixed64ListNoTag;
-        Unsafe unsafe = UNSAFE;
-        int i5 = 0;
-        for (int i6 = 0; i6 < this.buffer.length; i6 += 3) {
-            int typeAndOffsetAt = typeAndOffsetAt(i6);
-            int type = type(typeAndOffsetAt);
-            int numberAt = numberAt(i6);
-            long offset = offset(typeAndOffsetAt);
-            int i7 = (type < FieldType.DOUBLE_LIST_PACKED.id() || type > FieldType.SINT64_LIST_PACKED.id()) ? 0 : this.buffer[i6 + 2] & 1048575;
-            switch (type) {
-                case 0:
-                    if (!isFieldPresent(obj, i6)) {
-                        break;
-                    }
-                    computeSizeInt64List = CodedOutputStream.computeDoubleSize(numberAt, 0.0d);
-                    i5 += computeSizeInt64List;
-                    break;
-                case 1:
-                    if (!isFieldPresent(obj, i6)) {
-                        break;
-                    }
-                    computeSizeInt64List = CodedOutputStream.computeFloatSize(numberAt, 0.0f);
-                    i5 += computeSizeInt64List;
-                    break;
-                case 2:
-                    if (isFieldPresent(obj, i6)) {
-                        j = UnsafeUtil.getLong(obj, offset);
-                        computeSizeInt64List = CodedOutputStream.computeInt64Size(numberAt, j);
-                        i5 += computeSizeInt64List;
-                        break;
-                    } else {
-                        break;
-                    }
-                case 3:
-                    if (isFieldPresent(obj, i6)) {
-                        j2 = UnsafeUtil.getLong(obj, offset);
-                        computeSizeInt64List = CodedOutputStream.computeUInt64Size(numberAt, j2);
-                        i5 += computeSizeInt64List;
-                        break;
-                    } else {
-                        break;
-                    }
-                case 4:
-                    if (isFieldPresent(obj, i6)) {
-                        i = UnsafeUtil.getInt(obj, offset);
-                        computeSizeInt64List = CodedOutputStream.computeInt32Size(numberAt, i);
-                        i5 += computeSizeInt64List;
-                        break;
-                    } else {
-                        break;
-                    }
-                case 5:
-                    if (!isFieldPresent(obj, i6)) {
-                        break;
-                    }
-                    computeSizeInt64List = CodedOutputStream.computeFixed64Size(numberAt, 0L);
-                    i5 += computeSizeInt64List;
-                    break;
-                case 6:
-                    if (!isFieldPresent(obj, i6)) {
-                        break;
-                    }
-                    computeSizeInt64List = CodedOutputStream.computeFixed32Size(numberAt, 0);
-                    i5 += computeSizeInt64List;
-                    break;
-                case 7:
-                    if (!isFieldPresent(obj, i6)) {
-                        break;
-                    }
-                    computeSizeInt64List = CodedOutputStream.computeBoolSize(numberAt, true);
-                    i5 += computeSizeInt64List;
-                    break;
-                case 8:
-                    if (isFieldPresent(obj, i6)) {
-                        object = UnsafeUtil.getObject(obj, offset);
-                        break;
-                    } else {
-                        break;
-                    }
-                case 9:
-                    if (!isFieldPresent(obj, i6)) {
-                        break;
-                    }
-                    computeSizeInt64List = SchemaUtil.computeSizeMessage(numberAt, UnsafeUtil.getObject(obj, offset), getMessageFieldSchema(i6));
-                    i5 += computeSizeInt64List;
-                    break;
-                case 10:
-                    if (!isFieldPresent(obj, i6)) {
-                        break;
-                    }
-                    object = UnsafeUtil.getObject(obj, offset);
-                    computeSizeInt64List = CodedOutputStream.computeBytesSize(numberAt, (ByteString) object);
-                    i5 += computeSizeInt64List;
-                    break;
-                case 11:
-                    if (isFieldPresent(obj, i6)) {
-                        i2 = UnsafeUtil.getInt(obj, offset);
-                        computeSizeInt64List = CodedOutputStream.computeUInt32Size(numberAt, i2);
-                        i5 += computeSizeInt64List;
-                        break;
-                    } else {
-                        break;
-                    }
-                case 12:
-                    if (isFieldPresent(obj, i6)) {
-                        i3 = UnsafeUtil.getInt(obj, offset);
-                        computeSizeInt64List = CodedOutputStream.computeEnumSize(numberAt, i3);
-                        i5 += computeSizeInt64List;
-                        break;
-                    } else {
-                        break;
-                    }
-                case 13:
-                    if (!isFieldPresent(obj, i6)) {
-                        break;
-                    }
-                    computeSizeInt64List = CodedOutputStream.computeSFixed32Size(numberAt, 0);
-                    i5 += computeSizeInt64List;
-                    break;
-                case 14:
-                    if (!isFieldPresent(obj, i6)) {
-                        break;
-                    }
-                    computeSizeInt64List = CodedOutputStream.computeSFixed64Size(numberAt, 0L);
-                    i5 += computeSizeInt64List;
-                    break;
-                case 15:
-                    if (isFieldPresent(obj, i6)) {
-                        i4 = UnsafeUtil.getInt(obj, offset);
-                        computeSizeInt64List = CodedOutputStream.computeSInt32Size(numberAt, i4);
-                        i5 += computeSizeInt64List;
-                        break;
-                    } else {
-                        break;
-                    }
-                case 16:
-                    if (isFieldPresent(obj, i6)) {
-                        j3 = UnsafeUtil.getLong(obj, offset);
-                        computeSizeInt64List = CodedOutputStream.computeSInt64Size(numberAt, j3);
-                        i5 += computeSizeInt64List;
-                        break;
-                    } else {
-                        break;
-                    }
-                case 17:
-                    if (!isFieldPresent(obj, i6)) {
-                        break;
-                    }
-                    computeSizeInt64List = CodedOutputStream.computeGroupSize(numberAt, (MessageLite) UnsafeUtil.getObject(obj, offset), getMessageFieldSchema(i6));
-                    i5 += computeSizeInt64List;
-                    break;
-                case 18:
-                case 23:
-                case 32:
-                    computeSizeInt64List = SchemaUtil.computeSizeFixed64List(numberAt, listAt(obj, offset), false);
-                    i5 += computeSizeInt64List;
-                    break;
-                case 19:
-                case 24:
-                case 31:
-                    computeSizeInt64List = SchemaUtil.computeSizeFixed32List(numberAt, listAt(obj, offset), false);
-                    i5 += computeSizeInt64List;
-                    break;
-                case 20:
-                    computeSizeInt64List = SchemaUtil.computeSizeInt64List(numberAt, listAt(obj, offset), false);
-                    i5 += computeSizeInt64List;
-                    break;
-                case 21:
-                    computeSizeInt64List = SchemaUtil.computeSizeUInt64List(numberAt, listAt(obj, offset), false);
-                    i5 += computeSizeInt64List;
-                    break;
-                case 22:
-                    computeSizeInt64List = SchemaUtil.computeSizeInt32List(numberAt, listAt(obj, offset), false);
-                    i5 += computeSizeInt64List;
-                    break;
-                case 25:
-                    computeSizeInt64List = SchemaUtil.computeSizeBoolList(numberAt, listAt(obj, offset), false);
-                    i5 += computeSizeInt64List;
-                    break;
-                case 26:
-                    computeSizeInt64List = SchemaUtil.computeSizeStringList(numberAt, listAt(obj, offset));
-                    i5 += computeSizeInt64List;
-                    break;
-                case 27:
-                    computeSizeInt64List = SchemaUtil.computeSizeMessageList(numberAt, listAt(obj, offset), getMessageFieldSchema(i6));
-                    i5 += computeSizeInt64List;
-                    break;
-                case 28:
-                    computeSizeInt64List = SchemaUtil.computeSizeByteStringList(numberAt, listAt(obj, offset));
-                    i5 += computeSizeInt64List;
-                    break;
-                case 29:
-                    computeSizeInt64List = SchemaUtil.computeSizeUInt32List(numberAt, listAt(obj, offset), false);
-                    i5 += computeSizeInt64List;
-                    break;
-                case 30:
-                    computeSizeInt64List = SchemaUtil.computeSizeEnumList(numberAt, listAt(obj, offset), false);
-                    i5 += computeSizeInt64List;
-                    break;
-                case 33:
-                    computeSizeInt64List = SchemaUtil.computeSizeSInt32List(numberAt, listAt(obj, offset), false);
-                    i5 += computeSizeInt64List;
-                    break;
-                case 34:
-                    computeSizeInt64List = SchemaUtil.computeSizeSInt64List(numberAt, listAt(obj, offset), false);
-                    i5 += computeSizeInt64List;
-                    break;
-                case 35:
-                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeFixed64ListNoTag((List) unsafe.getObject(obj, offset));
-                    if (computeSizeFixed64ListNoTag <= 0) {
-                        break;
-                    } else {
-                        break;
-                    }
-                case 36:
-                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeFixed32ListNoTag((List) unsafe.getObject(obj, offset));
-                    if (computeSizeFixed64ListNoTag <= 0) {
-                        break;
-                    } else {
-                        break;
-                    }
-                case 37:
-                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeInt64ListNoTag((List) unsafe.getObject(obj, offset));
-                    if (computeSizeFixed64ListNoTag <= 0) {
-                        break;
-                    } else {
-                        break;
-                    }
-                case 38:
-                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeUInt64ListNoTag((List) unsafe.getObject(obj, offset));
-                    if (computeSizeFixed64ListNoTag <= 0) {
-                        break;
-                    } else {
-                        break;
-                    }
-                case 39:
-                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeInt32ListNoTag((List) unsafe.getObject(obj, offset));
-                    if (computeSizeFixed64ListNoTag <= 0) {
-                        break;
-                    } else {
-                        break;
-                    }
-                case 40:
-                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeFixed64ListNoTag((List) unsafe.getObject(obj, offset));
-                    if (computeSizeFixed64ListNoTag <= 0) {
-                        break;
-                    } else {
-                        break;
-                    }
-                case 41:
-                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeFixed32ListNoTag((List) unsafe.getObject(obj, offset));
-                    if (computeSizeFixed64ListNoTag <= 0) {
-                        break;
-                    } else {
-                        break;
-                    }
-                case 42:
-                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeBoolListNoTag((List) unsafe.getObject(obj, offset));
-                    if (computeSizeFixed64ListNoTag <= 0) {
-                        break;
-                    } else {
-                        break;
-                    }
-                case 43:
-                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeUInt32ListNoTag((List) unsafe.getObject(obj, offset));
-                    if (computeSizeFixed64ListNoTag <= 0) {
-                        break;
-                    } else {
-                        break;
-                    }
-                case 44:
-                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeEnumListNoTag((List) unsafe.getObject(obj, offset));
-                    if (computeSizeFixed64ListNoTag <= 0) {
-                        break;
-                    } else {
-                        break;
-                    }
-                case 45:
-                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeFixed32ListNoTag((List) unsafe.getObject(obj, offset));
-                    if (computeSizeFixed64ListNoTag <= 0) {
-                        break;
-                    } else {
-                        break;
-                    }
-                case 46:
-                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeFixed64ListNoTag((List) unsafe.getObject(obj, offset));
-                    if (computeSizeFixed64ListNoTag <= 0) {
-                        break;
-                    } else {
-                        break;
-                    }
-                case 47:
-                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeSInt32ListNoTag((List) unsafe.getObject(obj, offset));
-                    if (computeSizeFixed64ListNoTag <= 0) {
-                        break;
-                    } else {
-                        break;
-                    }
-                case 48:
-                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeSInt64ListNoTag((List) unsafe.getObject(obj, offset));
-                    if (computeSizeFixed64ListNoTag <= 0) {
-                        break;
-                    } else {
-                        break;
-                    }
-                case 49:
-                    computeSizeInt64List = SchemaUtil.computeSizeGroupList(numberAt, listAt(obj, offset), getMessageFieldSchema(i6));
-                    i5 += computeSizeInt64List;
-                    break;
-                case 50:
-                    computeSizeInt64List = this.mapFieldSchema.getSerializedSize(numberAt, UnsafeUtil.getObject(obj, offset), getMapFieldDefaultEntry(i6));
-                    i5 += computeSizeInt64List;
-                    break;
-                case 51:
-                    if (!isOneofPresent(obj, numberAt, i6)) {
-                        break;
-                    }
-                    computeSizeInt64List = CodedOutputStream.computeDoubleSize(numberAt, 0.0d);
-                    i5 += computeSizeInt64List;
-                    break;
-                case 52:
-                    if (!isOneofPresent(obj, numberAt, i6)) {
-                        break;
-                    }
-                    computeSizeInt64List = CodedOutputStream.computeFloatSize(numberAt, 0.0f);
-                    i5 += computeSizeInt64List;
-                    break;
-                case 53:
-                    if (isOneofPresent(obj, numberAt, i6)) {
-                        j = oneofLongAt(obj, offset);
-                        computeSizeInt64List = CodedOutputStream.computeInt64Size(numberAt, j);
-                        i5 += computeSizeInt64List;
-                        break;
-                    } else {
-                        break;
-                    }
-                case 54:
-                    if (isOneofPresent(obj, numberAt, i6)) {
-                        j2 = oneofLongAt(obj, offset);
-                        computeSizeInt64List = CodedOutputStream.computeUInt64Size(numberAt, j2);
-                        i5 += computeSizeInt64List;
-                        break;
-                    } else {
-                        break;
-                    }
-                case 55:
-                    if (isOneofPresent(obj, numberAt, i6)) {
-                        i = oneofIntAt(obj, offset);
-                        computeSizeInt64List = CodedOutputStream.computeInt32Size(numberAt, i);
-                        i5 += computeSizeInt64List;
-                        break;
-                    } else {
-                        break;
-                    }
-                case 56:
-                    if (!isOneofPresent(obj, numberAt, i6)) {
-                        break;
-                    }
-                    computeSizeInt64List = CodedOutputStream.computeFixed64Size(numberAt, 0L);
-                    i5 += computeSizeInt64List;
-                    break;
-                case 57:
-                    if (!isOneofPresent(obj, numberAt, i6)) {
-                        break;
-                    }
-                    computeSizeInt64List = CodedOutputStream.computeFixed32Size(numberAt, 0);
-                    i5 += computeSizeInt64List;
-                    break;
-                case 58:
-                    if (!isOneofPresent(obj, numberAt, i6)) {
-                        break;
-                    }
-                    computeSizeInt64List = CodedOutputStream.computeBoolSize(numberAt, true);
-                    i5 += computeSizeInt64List;
-                    break;
-                case 59:
-                    if (isOneofPresent(obj, numberAt, i6)) {
-                        object = UnsafeUtil.getObject(obj, offset);
-                        break;
-                    } else {
-                        break;
-                    }
-                case 60:
-                    if (!isOneofPresent(obj, numberAt, i6)) {
-                        break;
-                    }
-                    computeSizeInt64List = SchemaUtil.computeSizeMessage(numberAt, UnsafeUtil.getObject(obj, offset), getMessageFieldSchema(i6));
-                    i5 += computeSizeInt64List;
-                    break;
-                case 61:
-                    if (!isOneofPresent(obj, numberAt, i6)) {
-                        break;
-                    }
-                    object = UnsafeUtil.getObject(obj, offset);
-                    computeSizeInt64List = CodedOutputStream.computeBytesSize(numberAt, (ByteString) object);
-                    i5 += computeSizeInt64List;
-                    break;
-                case 62:
-                    if (isOneofPresent(obj, numberAt, i6)) {
-                        i2 = oneofIntAt(obj, offset);
-                        computeSizeInt64List = CodedOutputStream.computeUInt32Size(numberAt, i2);
-                        i5 += computeSizeInt64List;
-                        break;
-                    } else {
-                        break;
-                    }
-                case 63:
-                    if (isOneofPresent(obj, numberAt, i6)) {
-                        i3 = oneofIntAt(obj, offset);
-                        computeSizeInt64List = CodedOutputStream.computeEnumSize(numberAt, i3);
-                        i5 += computeSizeInt64List;
-                        break;
-                    } else {
-                        break;
-                    }
-                case 64:
-                    if (!isOneofPresent(obj, numberAt, i6)) {
-                        break;
-                    }
-                    computeSizeInt64List = CodedOutputStream.computeSFixed32Size(numberAt, 0);
-                    i5 += computeSizeInt64List;
-                    break;
-                case 65:
-                    if (!isOneofPresent(obj, numberAt, i6)) {
-                        break;
-                    }
-                    computeSizeInt64List = CodedOutputStream.computeSFixed64Size(numberAt, 0L);
-                    i5 += computeSizeInt64List;
-                    break;
-                case 66:
-                    if (isOneofPresent(obj, numberAt, i6)) {
-                        i4 = oneofIntAt(obj, offset);
-                        computeSizeInt64List = CodedOutputStream.computeSInt32Size(numberAt, i4);
-                        i5 += computeSizeInt64List;
-                        break;
-                    } else {
-                        break;
-                    }
-                case 67:
-                    if (isOneofPresent(obj, numberAt, i6)) {
-                        j3 = oneofLongAt(obj, offset);
-                        computeSizeInt64List = CodedOutputStream.computeSInt64Size(numberAt, j3);
-                        i5 += computeSizeInt64List;
-                        break;
-                    } else {
-                        break;
-                    }
-                case 68:
-                    if (!isOneofPresent(obj, numberAt, i6)) {
-                        break;
-                    }
-                    computeSizeInt64List = CodedOutputStream.computeGroupSize(numberAt, (MessageLite) UnsafeUtil.getObject(obj, offset), getMessageFieldSchema(i6));
-                    i5 += computeSizeInt64List;
-                    break;
-            }
-        }
-        return i5 + getUnknownFieldsSerializedSize(this.unknownFieldSchema, obj);
-    }
-
-    private int getUnknownFieldsSerializedSize(UnknownFieldSchema unknownFieldSchema, Object obj) {
-        return unknownFieldSchema.getSerializedSize(unknownFieldSchema.getFromMessage(obj));
-    }
-
-    private static int intAt(Object obj, long j) {
-        return UnsafeUtil.getInt(obj, j);
-    }
-
-    private static boolean isEnforceUtf8(int i) {
-        return (i & TLObject.FLAG_29) != 0;
-    }
-
-    private boolean isFieldPresent(Object obj, int i) {
-        if (!this.proto3) {
-            int presenceMaskAndOffsetAt = presenceMaskAndOffsetAt(i);
-            return (UnsafeUtil.getInt(obj, (long) (presenceMaskAndOffsetAt & 1048575)) & (1 << (presenceMaskAndOffsetAt >>> 20))) != 0;
-        }
-        int typeAndOffsetAt = typeAndOffsetAt(i);
-        long offset = offset(typeAndOffsetAt);
-        switch (type(typeAndOffsetAt)) {
-            case 0:
-                return UnsafeUtil.getDouble(obj, offset) != 0.0d;
-            case 1:
-                return UnsafeUtil.getFloat(obj, offset) != 0.0f;
-            case 2:
-                return UnsafeUtil.getLong(obj, offset) != 0;
-            case 3:
-                return UnsafeUtil.getLong(obj, offset) != 0;
-            case 4:
-                return UnsafeUtil.getInt(obj, offset) != 0;
-            case 5:
-                return UnsafeUtil.getLong(obj, offset) != 0;
-            case 6:
-                return UnsafeUtil.getInt(obj, offset) != 0;
-            case 7:
-                return UnsafeUtil.getBoolean(obj, offset);
-            case 8:
-                Object object = UnsafeUtil.getObject(obj, offset);
-                if (object instanceof String) {
-                    return !((String) object).isEmpty();
-                }
-                if (object instanceof ByteString) {
-                    return !ByteString.EMPTY.equals(object);
-                }
-                throw new IllegalArgumentException();
-            case 9:
-                return UnsafeUtil.getObject(obj, offset) != null;
-            case 10:
-                return !ByteString.EMPTY.equals(UnsafeUtil.getObject(obj, offset));
-            case 11:
-                return UnsafeUtil.getInt(obj, offset) != 0;
-            case 12:
-                return UnsafeUtil.getInt(obj, offset) != 0;
-            case 13:
-                return UnsafeUtil.getInt(obj, offset) != 0;
-            case 14:
-                return UnsafeUtil.getLong(obj, offset) != 0;
-            case 15:
-                return UnsafeUtil.getInt(obj, offset) != 0;
-            case 16:
-                return UnsafeUtil.getLong(obj, offset) != 0;
-            case 17:
-                return UnsafeUtil.getObject(obj, offset) != null;
-            default:
-                throw new IllegalArgumentException();
-        }
-    }
-
-    private boolean isFieldPresent(Object obj, int i, int i2, int i3) {
-        return this.proto3 ? isFieldPresent(obj, i) : (i2 & i3) != 0;
-    }
-
-    private static boolean isInitialized(Object obj, int i, Schema schema) {
-        return schema.isInitialized(UnsafeUtil.getObject(obj, offset(i)));
-    }
-
-    private boolean isListInitialized(Object obj, int i, int i2) {
-        List list = (List) UnsafeUtil.getObject(obj, offset(i));
-        if (list.isEmpty()) {
-            return true;
-        }
-        Schema messageFieldSchema = getMessageFieldSchema(i2);
-        for (int i3 = 0; i3 < list.size(); i3++) {
-            if (!messageFieldSchema.isInitialized(list.get(i3))) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    private boolean isMapInitialized(Object obj, int i, int i2) {
-        Map forMapData = this.mapFieldSchema.forMapData(UnsafeUtil.getObject(obj, offset(i)));
-        if (forMapData.isEmpty()) {
-            return true;
-        }
-        if (this.mapFieldSchema.forMapMetadata(getMapFieldDefaultEntry(i2)).valueType.getJavaType() != WireFormat.JavaType.MESSAGE) {
-            return true;
-        }
-        Schema schema = null;
-        for (Object obj2 : forMapData.values()) {
-            if (schema == null) {
-                schema = Protobuf.getInstance().schemaFor((Class) obj2.getClass());
-            }
-            if (!schema.isInitialized(obj2)) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    private boolean isOneofCaseEqual(Object obj, Object obj2, int i) {
-        long presenceMaskAndOffsetAt = presenceMaskAndOffsetAt(i) & 1048575;
-        return UnsafeUtil.getInt(obj, presenceMaskAndOffsetAt) == UnsafeUtil.getInt(obj2, presenceMaskAndOffsetAt);
-    }
-
-    private boolean isOneofPresent(Object obj, int i, int i2) {
-        return UnsafeUtil.getInt(obj, (long) (presenceMaskAndOffsetAt(i2) & 1048575)) == i;
-    }
-
-    private static boolean isRequired(int i) {
-        return (i & TLObject.FLAG_28) != 0;
-    }
-
-    private static List listAt(Object obj, long j) {
-        return (List) UnsafeUtil.getObject(obj, j);
-    }
-
-    private static long longAt(Object obj, long j) {
-        return UnsafeUtil.getLong(obj, j);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:269:0x007b, code lost:
-    
-        r0 = r16.checkInitializedCount;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:271:0x007f, code lost:
-    
-        if (r0 >= r16.repeatedFieldOffsetStart) goto L308;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:272:0x0081, code lost:
-    
-        r13 = filterMapUnknownEnumValues(r19, r16.intArray[r0], r13, r17);
-        r0 = r0 + 1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:274:0x008c, code lost:
-    
-        if (r13 == null) goto L312;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:275:0x008e, code lost:
-    
-        r17.setBuilderToMessage(r19, r13);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:276:0x0091, code lost:
-    
-        return;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:277:?, code lost:
-    
-        return;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    private void mergeFromHelper(UnknownFieldSchema unknownFieldSchema, ExtensionSchema extensionSchema, Object obj, Reader reader, ExtensionRegistryLite extensionRegistryLite) {
-        Object mergeMessage;
-        long offset;
-        List mutableListAt;
-        List mutableListAt2;
-        List mutableListAt3;
-        List mutableListAt4;
-        List mutableListAt5;
-        List mutableListAt6;
-        List mutableListAt7;
-        List mutableListAt8;
-        List mutableListAt9;
-        List mutableListAt10;
-        List mutableListAt11;
-        List mutableListAt12;
-        List mutableListAt13;
-        List mutableListAt14;
-        Object obj2 = null;
-        FieldSet fieldSet = null;
-        while (true) {
-            try {
-                int fieldNumber = reader.getFieldNumber();
-                int positionForFieldNumber = positionForFieldNumber(fieldNumber);
-                if (positionForFieldNumber >= 0) {
-                    int typeAndOffsetAt = typeAndOffsetAt(positionForFieldNumber);
-                    try {
-                        switch (type(typeAndOffsetAt)) {
-                            case 0:
-                                UnsafeUtil.putDouble(obj, offset(typeAndOffsetAt), reader.readDouble());
-                                setFieldPresent(obj, positionForFieldNumber);
-                                break;
-                            case 1:
-                                UnsafeUtil.putFloat(obj, offset(typeAndOffsetAt), reader.readFloat());
-                                setFieldPresent(obj, positionForFieldNumber);
-                                break;
-                            case 2:
-                                UnsafeUtil.putLong(obj, offset(typeAndOffsetAt), reader.readInt64());
-                                setFieldPresent(obj, positionForFieldNumber);
-                                break;
-                            case 3:
-                                UnsafeUtil.putLong(obj, offset(typeAndOffsetAt), reader.readUInt64());
-                                setFieldPresent(obj, positionForFieldNumber);
-                                break;
-                            case 4:
-                                UnsafeUtil.putInt(obj, offset(typeAndOffsetAt), reader.readInt32());
-                                setFieldPresent(obj, positionForFieldNumber);
-                                break;
-                            case 5:
-                                UnsafeUtil.putLong(obj, offset(typeAndOffsetAt), reader.readFixed64());
-                                setFieldPresent(obj, positionForFieldNumber);
-                                break;
-                            case 6:
-                                UnsafeUtil.putInt(obj, offset(typeAndOffsetAt), reader.readFixed32());
-                                setFieldPresent(obj, positionForFieldNumber);
-                                break;
-                            case 7:
-                                UnsafeUtil.putBoolean(obj, offset(typeAndOffsetAt), reader.readBool());
-                                setFieldPresent(obj, positionForFieldNumber);
-                                break;
-                            case 8:
-                                readString(obj, typeAndOffsetAt, reader);
-                                setFieldPresent(obj, positionForFieldNumber);
-                                break;
-                            case 9:
-                                if (isFieldPresent(obj, positionForFieldNumber)) {
-                                    mergeMessage = Internal.mergeMessage(UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)), reader.readMessageBySchemaWithCheck(getMessageFieldSchema(positionForFieldNumber), extensionRegistryLite));
-                                    offset = offset(typeAndOffsetAt);
-                                    UnsafeUtil.putObject(obj, offset, mergeMessage);
-                                    break;
-                                } else {
-                                    UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), reader.readMessageBySchemaWithCheck(getMessageFieldSchema(positionForFieldNumber), extensionRegistryLite));
-                                    setFieldPresent(obj, positionForFieldNumber);
-                                    break;
-                                }
-                            case 10:
-                                UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), reader.readBytes());
-                                setFieldPresent(obj, positionForFieldNumber);
-                                break;
-                            case 11:
-                                UnsafeUtil.putInt(obj, offset(typeAndOffsetAt), reader.readUInt32());
-                                setFieldPresent(obj, positionForFieldNumber);
-                                break;
-                            case 12:
-                                int readEnum = reader.readEnum();
-                                getEnumFieldVerifier(positionForFieldNumber);
-                                UnsafeUtil.putInt(obj, offset(typeAndOffsetAt), readEnum);
-                                setFieldPresent(obj, positionForFieldNumber);
-                                break;
-                            case 13:
-                                UnsafeUtil.putInt(obj, offset(typeAndOffsetAt), reader.readSFixed32());
-                                setFieldPresent(obj, positionForFieldNumber);
-                                break;
-                            case 14:
-                                UnsafeUtil.putLong(obj, offset(typeAndOffsetAt), reader.readSFixed64());
-                                setFieldPresent(obj, positionForFieldNumber);
-                                break;
-                            case 15:
-                                UnsafeUtil.putInt(obj, offset(typeAndOffsetAt), reader.readSInt32());
-                                setFieldPresent(obj, positionForFieldNumber);
-                                break;
-                            case 16:
-                                UnsafeUtil.putLong(obj, offset(typeAndOffsetAt), reader.readSInt64());
-                                setFieldPresent(obj, positionForFieldNumber);
-                                break;
-                            case 17:
-                                if (isFieldPresent(obj, positionForFieldNumber)) {
-                                    mergeMessage = Internal.mergeMessage(UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)), reader.readGroupBySchemaWithCheck(getMessageFieldSchema(positionForFieldNumber), extensionRegistryLite));
-                                    offset = offset(typeAndOffsetAt);
-                                    UnsafeUtil.putObject(obj, offset, mergeMessage);
-                                    break;
-                                } else {
-                                    UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), reader.readGroupBySchemaWithCheck(getMessageFieldSchema(positionForFieldNumber), extensionRegistryLite));
-                                    setFieldPresent(obj, positionForFieldNumber);
-                                    break;
-                                }
-                            case 18:
-                                mutableListAt = this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt));
-                                reader.readDoubleList(mutableListAt);
-                                break;
-                            case 19:
-                                mutableListAt2 = this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt));
-                                reader.readFloatList(mutableListAt2);
-                                break;
-                            case 20:
-                                mutableListAt3 = this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt));
-                                reader.readInt64List(mutableListAt3);
-                                break;
-                            case 21:
-                                mutableListAt4 = this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt));
-                                reader.readUInt64List(mutableListAt4);
-                                break;
-                            case 22:
-                                mutableListAt5 = this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt));
-                                reader.readInt32List(mutableListAt5);
-                                break;
-                            case 23:
-                                mutableListAt6 = this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt));
-                                reader.readFixed64List(mutableListAt6);
-                                break;
-                            case 24:
-                                mutableListAt7 = this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt));
-                                reader.readFixed32List(mutableListAt7);
-                                break;
-                            case 25:
-                                mutableListAt8 = this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt));
-                                reader.readBoolList(mutableListAt8);
-                                break;
-                            case 26:
-                                readStringList(obj, typeAndOffsetAt, reader);
-                                break;
-                            case 27:
-                                readMessageList(obj, typeAndOffsetAt, reader, getMessageFieldSchema(positionForFieldNumber), extensionRegistryLite);
-                                break;
-                            case 28:
-                                reader.readBytesList(this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt)));
-                                break;
-                            case 29:
-                                mutableListAt9 = this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt));
-                                reader.readUInt32List(mutableListAt9);
-                                break;
-                            case 30:
-                                mutableListAt10 = this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt));
-                                reader.readEnumList(mutableListAt10);
-                                getEnumFieldVerifier(positionForFieldNumber);
-                                obj2 = SchemaUtil.filterUnknownEnumList(fieldNumber, mutableListAt10, null, obj2, unknownFieldSchema);
-                                break;
-                            case 31:
-                                mutableListAt11 = this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt));
-                                reader.readSFixed32List(mutableListAt11);
-                                break;
-                            case 32:
-                                mutableListAt12 = this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt));
-                                reader.readSFixed64List(mutableListAt12);
-                                break;
-                            case 33:
-                                mutableListAt13 = this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt));
-                                reader.readSInt32List(mutableListAt13);
-                                break;
-                            case 34:
-                                mutableListAt14 = this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt));
-                                reader.readSInt64List(mutableListAt14);
-                                break;
-                            case 35:
-                                mutableListAt = this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt));
-                                reader.readDoubleList(mutableListAt);
-                                break;
-                            case 36:
-                                mutableListAt2 = this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt));
-                                reader.readFloatList(mutableListAt2);
-                                break;
-                            case 37:
-                                mutableListAt3 = this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt));
-                                reader.readInt64List(mutableListAt3);
-                                break;
-                            case 38:
-                                mutableListAt4 = this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt));
-                                reader.readUInt64List(mutableListAt4);
-                                break;
-                            case 39:
-                                mutableListAt5 = this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt));
-                                reader.readInt32List(mutableListAt5);
-                                break;
-                            case 40:
-                                mutableListAt6 = this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt));
-                                reader.readFixed64List(mutableListAt6);
-                                break;
-                            case 41:
-                                mutableListAt7 = this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt));
-                                reader.readFixed32List(mutableListAt7);
-                                break;
-                            case 42:
-                                mutableListAt8 = this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt));
-                                reader.readBoolList(mutableListAt8);
-                                break;
-                            case 43:
-                                mutableListAt9 = this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt));
-                                reader.readUInt32List(mutableListAt9);
-                                break;
-                            case 44:
-                                mutableListAt10 = this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt));
-                                reader.readEnumList(mutableListAt10);
-                                getEnumFieldVerifier(positionForFieldNumber);
-                                obj2 = SchemaUtil.filterUnknownEnumList(fieldNumber, mutableListAt10, null, obj2, unknownFieldSchema);
-                                break;
-                            case 45:
-                                mutableListAt11 = this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt));
-                                reader.readSFixed32List(mutableListAt11);
-                                break;
-                            case 46:
-                                mutableListAt12 = this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt));
-                                reader.readSFixed64List(mutableListAt12);
-                                break;
-                            case 47:
-                                mutableListAt13 = this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt));
-                                reader.readSInt32List(mutableListAt13);
-                                break;
-                            case 48:
-                                mutableListAt14 = this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt));
-                                reader.readSInt64List(mutableListAt14);
-                                break;
-                            case 49:
-                                readGroupList(obj, offset(typeAndOffsetAt), reader, getMessageFieldSchema(positionForFieldNumber), extensionRegistryLite);
-                                break;
-                            case 50:
-                                mergeMap(obj, positionForFieldNumber, getMapFieldDefaultEntry(positionForFieldNumber), extensionRegistryLite, reader);
-                                break;
-                            case 51:
-                                UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), Double.valueOf(reader.readDouble()));
-                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
-                                break;
-                            case 52:
-                                UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), Float.valueOf(reader.readFloat()));
-                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
-                                break;
-                            case 53:
-                                UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), Long.valueOf(reader.readInt64()));
-                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
-                                break;
-                            case 54:
-                                UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), Long.valueOf(reader.readUInt64()));
-                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
-                                break;
-                            case 55:
-                                UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), Integer.valueOf(reader.readInt32()));
-                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
-                                break;
-                            case 56:
-                                UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), Long.valueOf(reader.readFixed64()));
-                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
-                                break;
-                            case 57:
-                                UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), Integer.valueOf(reader.readFixed32()));
-                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
-                                break;
-                            case 58:
-                                UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), Boolean.valueOf(reader.readBool()));
-                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
-                                break;
-                            case 59:
-                                readString(obj, typeAndOffsetAt, reader);
-                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
-                                break;
-                            case 60:
-                                if (isOneofPresent(obj, fieldNumber, positionForFieldNumber)) {
-                                    UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), Internal.mergeMessage(UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)), reader.readMessageBySchemaWithCheck(getMessageFieldSchema(positionForFieldNumber), extensionRegistryLite)));
-                                } else {
-                                    UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), reader.readMessageBySchemaWithCheck(getMessageFieldSchema(positionForFieldNumber), extensionRegistryLite));
-                                    setFieldPresent(obj, positionForFieldNumber);
-                                }
-                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
-                                break;
-                            case 61:
-                                UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), reader.readBytes());
-                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
-                                break;
-                            case 62:
-                                UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), Integer.valueOf(reader.readUInt32()));
-                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
-                                break;
-                            case 63:
-                                int readEnum2 = reader.readEnum();
-                                getEnumFieldVerifier(positionForFieldNumber);
-                                UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), Integer.valueOf(readEnum2));
-                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
-                                break;
-                            case 64:
-                                UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), Integer.valueOf(reader.readSFixed32()));
-                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
-                                break;
-                            case 65:
-                                UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), Long.valueOf(reader.readSFixed64()));
-                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
-                                break;
-                            case 66:
-                                UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), Integer.valueOf(reader.readSInt32()));
-                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
-                                break;
-                            case 67:
-                                UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), Long.valueOf(reader.readSInt64()));
-                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
-                                break;
-                            case 68:
-                                UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), reader.readGroupBySchemaWithCheck(getMessageFieldSchema(positionForFieldNumber), extensionRegistryLite));
-                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
-                                break;
-                            default:
-                                if (obj2 == null) {
-                                    obj2 = unknownFieldSchema.newBuilder();
-                                }
-                                if (!unknownFieldSchema.mergeOneFieldFrom(obj2, reader)) {
-                                    for (int i = this.checkInitializedCount; i < this.repeatedFieldOffsetStart; i++) {
-                                        obj2 = filterMapUnknownEnumValues(obj, this.intArray[i], obj2, unknownFieldSchema);
-                                    }
-                                    if (obj2 != null) {
-                                        unknownFieldSchema.setBuilderToMessage(obj, obj2);
-                                        return;
-                                    }
-                                    return;
-                                }
-                                break;
-                        }
-                    } catch (InvalidProtocolBufferException.InvalidWireTypeException unused) {
-                        if (!unknownFieldSchema.shouldDiscardUnknownFields(reader)) {
-                            if (obj2 == null) {
-                                obj2 = unknownFieldSchema.getBuilderFromMessage(obj);
-                            }
-                            if (!unknownFieldSchema.mergeOneFieldFrom(obj2, reader)) {
-                                for (int i2 = this.checkInitializedCount; i2 < this.repeatedFieldOffsetStart; i2++) {
-                                    obj2 = filterMapUnknownEnumValues(obj, this.intArray[i2], obj2, unknownFieldSchema);
-                                }
-                                if (obj2 != null) {
-                                    unknownFieldSchema.setBuilderToMessage(obj, obj2);
-                                    return;
-                                }
-                                return;
-                            }
-                        } else if (!reader.skipField()) {
-                            for (int i3 = this.checkInitializedCount; i3 < this.repeatedFieldOffsetStart; i3++) {
-                                obj2 = filterMapUnknownEnumValues(obj, this.intArray[i3], obj2, unknownFieldSchema);
-                            }
-                            if (obj2 != null) {
-                                unknownFieldSchema.setBuilderToMessage(obj, obj2);
-                                return;
-                            }
-                            return;
-                        }
-                    }
-                } else {
-                    if (fieldNumber == Integer.MAX_VALUE) {
-                        for (int i4 = this.checkInitializedCount; i4 < this.repeatedFieldOffsetStart; i4++) {
-                            obj2 = filterMapUnknownEnumValues(obj, this.intArray[i4], obj2, unknownFieldSchema);
-                        }
-                        if (obj2 != null) {
-                            unknownFieldSchema.setBuilderToMessage(obj, obj2);
-                            return;
-                        }
-                        return;
-                    }
-                    Object findExtensionByNumber = !this.hasExtensions ? null : extensionSchema.findExtensionByNumber(extensionRegistryLite, this.defaultInstance, fieldNumber);
-                    if (findExtensionByNumber != null) {
-                        if (fieldSet == null) {
-                            fieldSet = extensionSchema.getMutableExtensions(obj);
-                        }
-                        obj2 = extensionSchema.parseExtension(reader, findExtensionByNumber, extensionRegistryLite, fieldSet, obj2, unknownFieldSchema);
-                    } else if (!unknownFieldSchema.shouldDiscardUnknownFields(reader)) {
-                        if (obj2 == null) {
-                            obj2 = unknownFieldSchema.getBuilderFromMessage(obj);
-                        }
-                        if (unknownFieldSchema.mergeOneFieldFrom(obj2, reader)) {
-                        }
-                    } else if (reader.skipField()) {
-                    }
-                }
-            } catch (Throwable th) {
-                for (int i5 = this.checkInitializedCount; i5 < this.repeatedFieldOffsetStart; i5++) {
-                    obj2 = filterMapUnknownEnumValues(obj, this.intArray[i5], obj2, unknownFieldSchema);
-                }
-                if (obj2 != null) {
-                    unknownFieldSchema.setBuilderToMessage(obj, obj2);
-                }
-                throw th;
-            }
-        }
-    }
-
-    private final void mergeMap(Object obj, int i, Object obj2, ExtensionRegistryLite extensionRegistryLite, Reader reader) {
-        long offset = offset(typeAndOffsetAt(i));
-        Object object = UnsafeUtil.getObject(obj, offset);
-        if (object == null) {
-            object = this.mapFieldSchema.newMapField(obj2);
-            UnsafeUtil.putObject(obj, offset, object);
-        } else if (this.mapFieldSchema.isImmutable(object)) {
-            Object newMapField = this.mapFieldSchema.newMapField(obj2);
-            this.mapFieldSchema.mergeFrom(newMapField, object);
-            UnsafeUtil.putObject(obj, offset, newMapField);
-            object = newMapField;
-        }
-        reader.readMap(this.mapFieldSchema.forMutableMapData(object), this.mapFieldSchema.forMapMetadata(obj2), extensionRegistryLite);
-    }
-
-    private void mergeMessage(Object obj, Object obj2, int i) {
-        long offset = offset(typeAndOffsetAt(i));
-        if (isFieldPresent(obj2, i)) {
-            Object object = UnsafeUtil.getObject(obj, offset);
-            Object object2 = UnsafeUtil.getObject(obj2, offset);
-            if (object != null && object2 != null) {
-                object2 = Internal.mergeMessage(object, object2);
-            } else if (object2 == null) {
-                return;
-            }
-            UnsafeUtil.putObject(obj, offset, object2);
-            setFieldPresent(obj, i);
-        }
-    }
-
-    private void mergeOneofMessage(Object obj, Object obj2, int i) {
-        int typeAndOffsetAt = typeAndOffsetAt(i);
-        int numberAt = numberAt(i);
-        long offset = offset(typeAndOffsetAt);
-        if (isOneofPresent(obj2, numberAt, i)) {
-            Object object = UnsafeUtil.getObject(obj, offset);
-            Object object2 = UnsafeUtil.getObject(obj2, offset);
-            if (object != null && object2 != null) {
-                object2 = Internal.mergeMessage(object, object2);
-            } else if (object2 == null) {
-                return;
-            }
-            UnsafeUtil.putObject(obj, offset, object2);
-            setOneofPresent(obj, numberAt, i);
-        }
-    }
-
-    private void mergeSingleField(Object obj, Object obj2, int i) {
-        int typeAndOffsetAt = typeAndOffsetAt(i);
-        long offset = offset(typeAndOffsetAt);
-        int numberAt = numberAt(i);
-        switch (type(typeAndOffsetAt)) {
-            case 0:
-                if (isFieldPresent(obj2, i)) {
-                    UnsafeUtil.putDouble(obj, offset, UnsafeUtil.getDouble(obj2, offset));
-                    setFieldPresent(obj, i);
-                    break;
-                }
-                break;
-            case 1:
-                if (isFieldPresent(obj2, i)) {
-                    UnsafeUtil.putFloat(obj, offset, UnsafeUtil.getFloat(obj2, offset));
-                    setFieldPresent(obj, i);
-                    break;
-                }
-                break;
-            case 2:
-                if (!isFieldPresent(obj2, i)) {
-                }
-                UnsafeUtil.putLong(obj, offset, UnsafeUtil.getLong(obj2, offset));
-                setFieldPresent(obj, i);
-                break;
-            case 3:
-                if (!isFieldPresent(obj2, i)) {
-                }
-                UnsafeUtil.putLong(obj, offset, UnsafeUtil.getLong(obj2, offset));
-                setFieldPresent(obj, i);
-                break;
-            case 4:
-                if (!isFieldPresent(obj2, i)) {
-                }
-                UnsafeUtil.putInt(obj, offset, UnsafeUtil.getInt(obj2, offset));
-                setFieldPresent(obj, i);
-                break;
-            case 5:
-                if (!isFieldPresent(obj2, i)) {
-                }
-                UnsafeUtil.putLong(obj, offset, UnsafeUtil.getLong(obj2, offset));
-                setFieldPresent(obj, i);
-                break;
-            case 6:
-                if (!isFieldPresent(obj2, i)) {
-                }
-                UnsafeUtil.putInt(obj, offset, UnsafeUtil.getInt(obj2, offset));
-                setFieldPresent(obj, i);
-                break;
-            case 7:
-                if (isFieldPresent(obj2, i)) {
-                    UnsafeUtil.putBoolean(obj, offset, UnsafeUtil.getBoolean(obj2, offset));
-                    setFieldPresent(obj, i);
-                    break;
-                }
-                break;
-            case 8:
-                if (!isFieldPresent(obj2, i)) {
-                }
-                UnsafeUtil.putObject(obj, offset, UnsafeUtil.getObject(obj2, offset));
-                setFieldPresent(obj, i);
-                break;
-            case 9:
-            case 17:
-                mergeMessage(obj, obj2, i);
-                break;
-            case 10:
-                if (!isFieldPresent(obj2, i)) {
-                }
-                UnsafeUtil.putObject(obj, offset, UnsafeUtil.getObject(obj2, offset));
-                setFieldPresent(obj, i);
-                break;
-            case 11:
-                if (!isFieldPresent(obj2, i)) {
-                }
-                UnsafeUtil.putInt(obj, offset, UnsafeUtil.getInt(obj2, offset));
-                setFieldPresent(obj, i);
-                break;
-            case 12:
-                if (!isFieldPresent(obj2, i)) {
-                }
-                UnsafeUtil.putInt(obj, offset, UnsafeUtil.getInt(obj2, offset));
-                setFieldPresent(obj, i);
-                break;
-            case 13:
-                if (!isFieldPresent(obj2, i)) {
-                }
-                UnsafeUtil.putInt(obj, offset, UnsafeUtil.getInt(obj2, offset));
-                setFieldPresent(obj, i);
-                break;
-            case 14:
-                if (!isFieldPresent(obj2, i)) {
-                }
-                UnsafeUtil.putLong(obj, offset, UnsafeUtil.getLong(obj2, offset));
-                setFieldPresent(obj, i);
-                break;
-            case 15:
-                if (!isFieldPresent(obj2, i)) {
-                }
-                UnsafeUtil.putInt(obj, offset, UnsafeUtil.getInt(obj2, offset));
-                setFieldPresent(obj, i);
-                break;
-            case 16:
-                if (!isFieldPresent(obj2, i)) {
-                }
-                UnsafeUtil.putLong(obj, offset, UnsafeUtil.getLong(obj2, offset));
-                setFieldPresent(obj, i);
-                break;
-            case 18:
-            case 19:
-            case 20:
-            case 21:
-            case 22:
-            case 23:
-            case 24:
-            case 25:
-            case 26:
-            case 27:
-            case 28:
-            case 29:
-            case 30:
-            case 31:
-            case 32:
-            case 33:
-            case 34:
-            case 35:
-            case 36:
-            case 37:
-            case 38:
-            case 39:
-            case 40:
-            case 41:
-            case 42:
-            case 43:
-            case 44:
-            case 45:
-            case 46:
-            case 47:
-            case 48:
-            case 49:
-                this.listFieldSchema.mergeListsAt(obj, obj2, offset);
-                break;
-            case 50:
-                SchemaUtil.mergeMap(this.mapFieldSchema, obj, obj2, offset);
-                break;
-            case 51:
-            case 52:
-            case 53:
-            case 54:
-            case 55:
-            case 56:
-            case 57:
-            case 58:
-            case 59:
-                if (!isOneofPresent(obj2, numberAt, i)) {
-                }
-                UnsafeUtil.putObject(obj, offset, UnsafeUtil.getObject(obj2, offset));
-                setOneofPresent(obj, numberAt, i);
-                break;
-            case 60:
-            case 68:
-                mergeOneofMessage(obj, obj2, i);
-                break;
-            case 61:
-            case 62:
-            case 63:
-            case 64:
-            case 65:
-            case 66:
-            case 67:
-                if (!isOneofPresent(obj2, numberAt, i)) {
-                }
-                UnsafeUtil.putObject(obj, offset, UnsafeUtil.getObject(obj2, offset));
-                setOneofPresent(obj, numberAt, i);
-                break;
-        }
-    }
-
     static MessageSchema newSchema(Class cls, MessageInfo messageInfo, NewInstanceSchema newInstanceSchema, ListFieldSchema listFieldSchema, UnknownFieldSchema unknownFieldSchema, ExtensionSchema extensionSchema, MapFieldSchema mapFieldSchema) {
         if (messageInfo instanceof RawMessageInfo) {
             return newSchemaForRawMessageInfo((RawMessageInfo) messageInfo, newInstanceSchema, listFieldSchema, unknownFieldSchema, extensionSchema, mapFieldSchema);
         }
-        ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(messageInfo);
+        WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(messageInfo);
         return newSchemaForMessageInfo(null, newInstanceSchema, listFieldSchema, unknownFieldSchema, extensionSchema, mapFieldSchema);
-    }
-
-    static MessageSchema newSchemaForMessageInfo(StructuralMessageInfo structuralMessageInfo, NewInstanceSchema newInstanceSchema, ListFieldSchema listFieldSchema, UnknownFieldSchema unknownFieldSchema, ExtensionSchema extensionSchema, MapFieldSchema mapFieldSchema) {
-        throw null;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:65:0x0278  */
@@ -2417,22 +447,22 @@ final class MessageSchema implements Schema {
                     }
                     int i83 = charAt27 * 2;
                     obj = objects[i83];
-                    if (obj instanceof Field) {
+                    if (!(obj instanceof Field)) {
+                        reflectField2 = (Field) obj;
+                    } else {
                         reflectField2 = reflectField(cls2, (String) obj);
                         objects[i83] = reflectField2;
-                    } else {
-                        reflectField2 = (Field) obj;
                     }
                     iArr2 = iArr4;
                     i16 = charAt25;
                     int objectFieldOffset2 = (int) unsafe.objectFieldOffset(reflectField2);
                     int i84 = i83 + 1;
                     obj2 = objects[i84];
-                    if (obj2 instanceof Field) {
+                    if (!(obj2 instanceof Field)) {
+                        reflectField3 = (Field) obj2;
+                    } else {
                         reflectField3 = reflectField(cls2, (String) obj2);
                         objects[i84] = reflectField3;
-                    } else {
-                        reflectField3 = (Field) obj2;
                     }
                     int objectFieldOffset3 = (int) unsafe.objectFieldOffset(reflectField3);
                     i18 = i28;
@@ -2446,14 +476,14 @@ final class MessageSchema implements Schema {
                 i2 = i23;
                 int i832 = charAt27 * 2;
                 obj = objects[i832];
-                if (obj instanceof Field) {
+                if (!(obj instanceof Field)) {
                 }
                 iArr2 = iArr4;
                 i16 = charAt25;
                 int objectFieldOffset22 = (int) unsafe.objectFieldOffset(reflectField2);
                 int i842 = i832 + 1;
                 obj2 = objects[i842];
-                if (obj2 instanceof Field) {
+                if (!(obj2 instanceof Field)) {
                 }
                 int objectFieldOffset32 = (int) unsafe.objectFieldOffset(reflectField3);
                 i18 = i28;
@@ -2576,77 +606,6 @@ final class MessageSchema implements Schema {
         return new MessageSchema(iArr4, objArr, i28, charAt, rawMessageInfo.getDefaultInstance(), z2, false, iArr, charAt3, i61, newInstanceSchema, listFieldSchema, unknownFieldSchema, extensionSchema, mapFieldSchema);
     }
 
-    private int numberAt(int i) {
-        return this.buffer[i];
-    }
-
-    private static long offset(int i) {
-        return i & 1048575;
-    }
-
-    private static boolean oneofBooleanAt(Object obj, long j) {
-        return ((Boolean) UnsafeUtil.getObject(obj, j)).booleanValue();
-    }
-
-    private static double oneofDoubleAt(Object obj, long j) {
-        return ((Double) UnsafeUtil.getObject(obj, j)).doubleValue();
-    }
-
-    private static float oneofFloatAt(Object obj, long j) {
-        return ((Float) UnsafeUtil.getObject(obj, j)).floatValue();
-    }
-
-    private static int oneofIntAt(Object obj, long j) {
-        return ((Integer) UnsafeUtil.getObject(obj, j)).intValue();
-    }
-
-    private static long oneofLongAt(Object obj, long j) {
-        return ((Long) UnsafeUtil.getObject(obj, j)).longValue();
-    }
-
-    private int positionForFieldNumber(int i) {
-        if (i < this.minFieldNumber || i > this.maxFieldNumber) {
-            return -1;
-        }
-        return slowPositionForFieldNumber(i, 0);
-    }
-
-    private int presenceMaskAndOffsetAt(int i) {
-        return this.buffer[i + 2];
-    }
-
-    private void readGroupList(Object obj, long j, Reader reader, Schema schema, ExtensionRegistryLite extensionRegistryLite) {
-        reader.readGroupList(this.listFieldSchema.mutableListAt(obj, j), schema, extensionRegistryLite);
-    }
-
-    private void readMessageList(Object obj, int i, Reader reader, Schema schema, ExtensionRegistryLite extensionRegistryLite) {
-        reader.readMessageList(this.listFieldSchema.mutableListAt(obj, offset(i)), schema, extensionRegistryLite);
-    }
-
-    private void readString(Object obj, int i, Reader reader) {
-        long offset;
-        Object readBytes;
-        if (isEnforceUtf8(i)) {
-            offset = offset(i);
-            readBytes = reader.readStringRequireUtf8();
-        } else if (this.lite) {
-            offset = offset(i);
-            readBytes = reader.readString();
-        } else {
-            offset = offset(i);
-            readBytes = reader.readBytes();
-        }
-        UnsafeUtil.putObject(obj, offset, readBytes);
-    }
-
-    private void readStringList(Object obj, int i, Reader reader) {
-        if (isEnforceUtf8(i)) {
-            reader.readStringListRequireUtf8(this.listFieldSchema.mutableListAt(obj, offset(i)));
-        } else {
-            reader.readStringList(this.listFieldSchema.mutableListAt(obj, offset(i)));
-        }
-    }
-
     private static Field reflectField(Class cls, String str) {
         try {
             return cls.getDeclaredField(str);
@@ -2661,43 +620,1827 @@ final class MessageSchema implements Schema {
         }
     }
 
-    private void setFieldPresent(Object obj, int i) {
+    static MessageSchema newSchemaForMessageInfo(StructuralMessageInfo structuralMessageInfo, NewInstanceSchema newInstanceSchema, ListFieldSchema listFieldSchema, UnknownFieldSchema unknownFieldSchema, ExtensionSchema extensionSchema, MapFieldSchema mapFieldSchema) {
+        throw null;
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.Schema
+    public Object newInstance() {
+        return this.newInstanceSchema.newInstance(this.defaultInstance);
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.Schema
+    public boolean equals(Object obj, Object obj2) {
+        int length = this.buffer.length;
+        for (int i = 0; i < length; i += 3) {
+            if (!equals(obj, obj2, i)) {
+                return false;
+            }
+        }
+        if (!this.unknownFieldSchema.getFromMessage(obj).equals(this.unknownFieldSchema.getFromMessage(obj2))) {
+            return false;
+        }
+        if (this.hasExtensions) {
+            return this.extensionSchema.getExtensions(obj).equals(this.extensionSchema.getExtensions(obj2));
+        }
+        return true;
+    }
+
+    private boolean equals(Object obj, Object obj2, int i) {
+        int typeAndOffsetAt = typeAndOffsetAt(i);
+        long offset = offset(typeAndOffsetAt);
+        switch (type(typeAndOffsetAt)) {
+            case 0:
+                return arePresentForEquals(obj, obj2, i) && Double.doubleToLongBits(UnsafeUtil.getDouble(obj, offset)) == Double.doubleToLongBits(UnsafeUtil.getDouble(obj2, offset));
+            case 1:
+                return arePresentForEquals(obj, obj2, i) && Float.floatToIntBits(UnsafeUtil.getFloat(obj, offset)) == Float.floatToIntBits(UnsafeUtil.getFloat(obj2, offset));
+            case 2:
+                return arePresentForEquals(obj, obj2, i) && UnsafeUtil.getLong(obj, offset) == UnsafeUtil.getLong(obj2, offset);
+            case 3:
+                return arePresentForEquals(obj, obj2, i) && UnsafeUtil.getLong(obj, offset) == UnsafeUtil.getLong(obj2, offset);
+            case 4:
+                return arePresentForEquals(obj, obj2, i) && UnsafeUtil.getInt(obj, offset) == UnsafeUtil.getInt(obj2, offset);
+            case 5:
+                return arePresentForEquals(obj, obj2, i) && UnsafeUtil.getLong(obj, offset) == UnsafeUtil.getLong(obj2, offset);
+            case 6:
+                return arePresentForEquals(obj, obj2, i) && UnsafeUtil.getInt(obj, offset) == UnsafeUtil.getInt(obj2, offset);
+            case 7:
+                return arePresentForEquals(obj, obj2, i) && UnsafeUtil.getBoolean(obj, offset) == UnsafeUtil.getBoolean(obj2, offset);
+            case 8:
+                return arePresentForEquals(obj, obj2, i) && SchemaUtil.safeEquals(UnsafeUtil.getObject(obj, offset), UnsafeUtil.getObject(obj2, offset));
+            case 9:
+                return arePresentForEquals(obj, obj2, i) && SchemaUtil.safeEquals(UnsafeUtil.getObject(obj, offset), UnsafeUtil.getObject(obj2, offset));
+            case 10:
+                return arePresentForEquals(obj, obj2, i) && SchemaUtil.safeEquals(UnsafeUtil.getObject(obj, offset), UnsafeUtil.getObject(obj2, offset));
+            case 11:
+                return arePresentForEquals(obj, obj2, i) && UnsafeUtil.getInt(obj, offset) == UnsafeUtil.getInt(obj2, offset);
+            case 12:
+                return arePresentForEquals(obj, obj2, i) && UnsafeUtil.getInt(obj, offset) == UnsafeUtil.getInt(obj2, offset);
+            case 13:
+                return arePresentForEquals(obj, obj2, i) && UnsafeUtil.getInt(obj, offset) == UnsafeUtil.getInt(obj2, offset);
+            case 14:
+                return arePresentForEquals(obj, obj2, i) && UnsafeUtil.getLong(obj, offset) == UnsafeUtil.getLong(obj2, offset);
+            case 15:
+                return arePresentForEquals(obj, obj2, i) && UnsafeUtil.getInt(obj, offset) == UnsafeUtil.getInt(obj2, offset);
+            case 16:
+                return arePresentForEquals(obj, obj2, i) && UnsafeUtil.getLong(obj, offset) == UnsafeUtil.getLong(obj2, offset);
+            case 17:
+                return arePresentForEquals(obj, obj2, i) && SchemaUtil.safeEquals(UnsafeUtil.getObject(obj, offset), UnsafeUtil.getObject(obj2, offset));
+            case 18:
+            case 19:
+            case 20:
+            case 21:
+            case 22:
+            case 23:
+            case 24:
+            case 25:
+            case 26:
+            case 27:
+            case 28:
+            case 29:
+            case 30:
+            case 31:
+            case 32:
+            case 33:
+            case 34:
+            case 35:
+            case 36:
+            case 37:
+            case 38:
+            case 39:
+            case 40:
+            case 41:
+            case 42:
+            case 43:
+            case 44:
+            case 45:
+            case 46:
+            case 47:
+            case 48:
+            case 49:
+                return SchemaUtil.safeEquals(UnsafeUtil.getObject(obj, offset), UnsafeUtil.getObject(obj2, offset));
+            case 50:
+                return SchemaUtil.safeEquals(UnsafeUtil.getObject(obj, offset), UnsafeUtil.getObject(obj2, offset));
+            case 51:
+            case 52:
+            case 53:
+            case 54:
+            case 55:
+            case 56:
+            case 57:
+            case 58:
+            case 59:
+            case 60:
+            case 61:
+            case 62:
+            case 63:
+            case 64:
+            case 65:
+            case 66:
+            case 67:
+            case 68:
+                return isOneofCaseEqual(obj, obj2, i) && SchemaUtil.safeEquals(UnsafeUtil.getObject(obj, offset), UnsafeUtil.getObject(obj2, offset));
+            default:
+                return true;
+        }
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.Schema
+    public int hashCode(Object obj) {
+        int i;
+        int hashLong;
+        int length = this.buffer.length;
+        int i2 = 0;
+        for (int i3 = 0; i3 < length; i3 += 3) {
+            int typeAndOffsetAt = typeAndOffsetAt(i3);
+            int numberAt = numberAt(i3);
+            long offset = offset(typeAndOffsetAt);
+            int i4 = 37;
+            switch (type(typeAndOffsetAt)) {
+                case 0:
+                    i = i2 * 53;
+                    hashLong = Internal.hashLong(Double.doubleToLongBits(UnsafeUtil.getDouble(obj, offset)));
+                    i2 = i + hashLong;
+                    break;
+                case 1:
+                    i = i2 * 53;
+                    hashLong = Float.floatToIntBits(UnsafeUtil.getFloat(obj, offset));
+                    i2 = i + hashLong;
+                    break;
+                case 2:
+                    i = i2 * 53;
+                    hashLong = Internal.hashLong(UnsafeUtil.getLong(obj, offset));
+                    i2 = i + hashLong;
+                    break;
+                case 3:
+                    i = i2 * 53;
+                    hashLong = Internal.hashLong(UnsafeUtil.getLong(obj, offset));
+                    i2 = i + hashLong;
+                    break;
+                case 4:
+                    i = i2 * 53;
+                    hashLong = UnsafeUtil.getInt(obj, offset);
+                    i2 = i + hashLong;
+                    break;
+                case 5:
+                    i = i2 * 53;
+                    hashLong = Internal.hashLong(UnsafeUtil.getLong(obj, offset));
+                    i2 = i + hashLong;
+                    break;
+                case 6:
+                    i = i2 * 53;
+                    hashLong = UnsafeUtil.getInt(obj, offset);
+                    i2 = i + hashLong;
+                    break;
+                case 7:
+                    i = i2 * 53;
+                    hashLong = Internal.hashBoolean(UnsafeUtil.getBoolean(obj, offset));
+                    i2 = i + hashLong;
+                    break;
+                case 8:
+                    i = i2 * 53;
+                    hashLong = ((String) UnsafeUtil.getObject(obj, offset)).hashCode();
+                    i2 = i + hashLong;
+                    break;
+                case 9:
+                    Object object = UnsafeUtil.getObject(obj, offset);
+                    if (object != null) {
+                        i4 = object.hashCode();
+                    }
+                    i2 = (i2 * 53) + i4;
+                    break;
+                case 10:
+                    i = i2 * 53;
+                    hashLong = UnsafeUtil.getObject(obj, offset).hashCode();
+                    i2 = i + hashLong;
+                    break;
+                case 11:
+                    i = i2 * 53;
+                    hashLong = UnsafeUtil.getInt(obj, offset);
+                    i2 = i + hashLong;
+                    break;
+                case 12:
+                    i = i2 * 53;
+                    hashLong = UnsafeUtil.getInt(obj, offset);
+                    i2 = i + hashLong;
+                    break;
+                case 13:
+                    i = i2 * 53;
+                    hashLong = UnsafeUtil.getInt(obj, offset);
+                    i2 = i + hashLong;
+                    break;
+                case 14:
+                    i = i2 * 53;
+                    hashLong = Internal.hashLong(UnsafeUtil.getLong(obj, offset));
+                    i2 = i + hashLong;
+                    break;
+                case 15:
+                    i = i2 * 53;
+                    hashLong = UnsafeUtil.getInt(obj, offset);
+                    i2 = i + hashLong;
+                    break;
+                case 16:
+                    i = i2 * 53;
+                    hashLong = Internal.hashLong(UnsafeUtil.getLong(obj, offset));
+                    i2 = i + hashLong;
+                    break;
+                case 17:
+                    Object object2 = UnsafeUtil.getObject(obj, offset);
+                    if (object2 != null) {
+                        i4 = object2.hashCode();
+                    }
+                    i2 = (i2 * 53) + i4;
+                    break;
+                case 18:
+                case 19:
+                case 20:
+                case 21:
+                case 22:
+                case 23:
+                case 24:
+                case 25:
+                case 26:
+                case 27:
+                case 28:
+                case 29:
+                case 30:
+                case 31:
+                case 32:
+                case 33:
+                case 34:
+                case 35:
+                case 36:
+                case 37:
+                case 38:
+                case 39:
+                case 40:
+                case 41:
+                case 42:
+                case 43:
+                case 44:
+                case 45:
+                case 46:
+                case 47:
+                case 48:
+                case 49:
+                    i = i2 * 53;
+                    hashLong = UnsafeUtil.getObject(obj, offset).hashCode();
+                    i2 = i + hashLong;
+                    break;
+                case 50:
+                    i = i2 * 53;
+                    hashLong = UnsafeUtil.getObject(obj, offset).hashCode();
+                    i2 = i + hashLong;
+                    break;
+                case 51:
+                    if (isOneofPresent(obj, numberAt, i3)) {
+                        i = i2 * 53;
+                        hashLong = Internal.hashLong(Double.doubleToLongBits(oneofDoubleAt(obj, offset)));
+                        i2 = i + hashLong;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 52:
+                    if (isOneofPresent(obj, numberAt, i3)) {
+                        i = i2 * 53;
+                        hashLong = Float.floatToIntBits(oneofFloatAt(obj, offset));
+                        i2 = i + hashLong;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 53:
+                    if (isOneofPresent(obj, numberAt, i3)) {
+                        i = i2 * 53;
+                        hashLong = Internal.hashLong(oneofLongAt(obj, offset));
+                        i2 = i + hashLong;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 54:
+                    if (isOneofPresent(obj, numberAt, i3)) {
+                        i = i2 * 53;
+                        hashLong = Internal.hashLong(oneofLongAt(obj, offset));
+                        i2 = i + hashLong;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 55:
+                    if (isOneofPresent(obj, numberAt, i3)) {
+                        i = i2 * 53;
+                        hashLong = oneofIntAt(obj, offset);
+                        i2 = i + hashLong;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 56:
+                    if (isOneofPresent(obj, numberAt, i3)) {
+                        i = i2 * 53;
+                        hashLong = Internal.hashLong(oneofLongAt(obj, offset));
+                        i2 = i + hashLong;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 57:
+                    if (isOneofPresent(obj, numberAt, i3)) {
+                        i = i2 * 53;
+                        hashLong = oneofIntAt(obj, offset);
+                        i2 = i + hashLong;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 58:
+                    if (isOneofPresent(obj, numberAt, i3)) {
+                        i = i2 * 53;
+                        hashLong = Internal.hashBoolean(oneofBooleanAt(obj, offset));
+                        i2 = i + hashLong;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 59:
+                    if (isOneofPresent(obj, numberAt, i3)) {
+                        i = i2 * 53;
+                        hashLong = ((String) UnsafeUtil.getObject(obj, offset)).hashCode();
+                        i2 = i + hashLong;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 60:
+                    if (isOneofPresent(obj, numberAt, i3)) {
+                        i = i2 * 53;
+                        hashLong = UnsafeUtil.getObject(obj, offset).hashCode();
+                        i2 = i + hashLong;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 61:
+                    if (isOneofPresent(obj, numberAt, i3)) {
+                        i = i2 * 53;
+                        hashLong = UnsafeUtil.getObject(obj, offset).hashCode();
+                        i2 = i + hashLong;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 62:
+                    if (isOneofPresent(obj, numberAt, i3)) {
+                        i = i2 * 53;
+                        hashLong = oneofIntAt(obj, offset);
+                        i2 = i + hashLong;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 63:
+                    if (isOneofPresent(obj, numberAt, i3)) {
+                        i = i2 * 53;
+                        hashLong = oneofIntAt(obj, offset);
+                        i2 = i + hashLong;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 64:
+                    if (isOneofPresent(obj, numberAt, i3)) {
+                        i = i2 * 53;
+                        hashLong = oneofIntAt(obj, offset);
+                        i2 = i + hashLong;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 65:
+                    if (isOneofPresent(obj, numberAt, i3)) {
+                        i = i2 * 53;
+                        hashLong = Internal.hashLong(oneofLongAt(obj, offset));
+                        i2 = i + hashLong;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 66:
+                    if (isOneofPresent(obj, numberAt, i3)) {
+                        i = i2 * 53;
+                        hashLong = oneofIntAt(obj, offset);
+                        i2 = i + hashLong;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 67:
+                    if (isOneofPresent(obj, numberAt, i3)) {
+                        i = i2 * 53;
+                        hashLong = Internal.hashLong(oneofLongAt(obj, offset));
+                        i2 = i + hashLong;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 68:
+                    if (isOneofPresent(obj, numberAt, i3)) {
+                        i = i2 * 53;
+                        hashLong = UnsafeUtil.getObject(obj, offset).hashCode();
+                        i2 = i + hashLong;
+                        break;
+                    } else {
+                        break;
+                    }
+            }
+        }
+        int hashCode = (i2 * 53) + this.unknownFieldSchema.getFromMessage(obj).hashCode();
+        return this.hasExtensions ? (hashCode * 53) + this.extensionSchema.getExtensions(obj).hashCode() : hashCode;
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.Schema
+    public void mergeFrom(Object obj, Object obj2) {
+        obj2.getClass();
+        for (int i = 0; i < this.buffer.length; i += 3) {
+            mergeSingleField(obj, obj2, i);
+        }
         if (this.proto3) {
             return;
         }
-        int presenceMaskAndOffsetAt = presenceMaskAndOffsetAt(i);
-        long j = presenceMaskAndOffsetAt & 1048575;
-        UnsafeUtil.putInt(obj, j, UnsafeUtil.getInt(obj, j) | (1 << (presenceMaskAndOffsetAt >>> 20)));
+        SchemaUtil.mergeUnknownFields(this.unknownFieldSchema, obj, obj2);
+        if (this.hasExtensions) {
+            SchemaUtil.mergeExtensions(this.extensionSchema, obj, obj2);
+        }
     }
 
-    private void setOneofPresent(Object obj, int i, int i2) {
-        UnsafeUtil.putInt(obj, presenceMaskAndOffsetAt(i2) & 1048575, i);
+    private void mergeSingleField(Object obj, Object obj2, int i) {
+        int typeAndOffsetAt = typeAndOffsetAt(i);
+        long offset = offset(typeAndOffsetAt);
+        int numberAt = numberAt(i);
+        switch (type(typeAndOffsetAt)) {
+            case 0:
+                if (isFieldPresent(obj2, i)) {
+                    UnsafeUtil.putDouble(obj, offset, UnsafeUtil.getDouble(obj2, offset));
+                    setFieldPresent(obj, i);
+                    break;
+                }
+                break;
+            case 1:
+                if (isFieldPresent(obj2, i)) {
+                    UnsafeUtil.putFloat(obj, offset, UnsafeUtil.getFloat(obj2, offset));
+                    setFieldPresent(obj, i);
+                    break;
+                }
+                break;
+            case 2:
+                if (isFieldPresent(obj2, i)) {
+                    UnsafeUtil.putLong(obj, offset, UnsafeUtil.getLong(obj2, offset));
+                    setFieldPresent(obj, i);
+                    break;
+                }
+                break;
+            case 3:
+                if (isFieldPresent(obj2, i)) {
+                    UnsafeUtil.putLong(obj, offset, UnsafeUtil.getLong(obj2, offset));
+                    setFieldPresent(obj, i);
+                    break;
+                }
+                break;
+            case 4:
+                if (isFieldPresent(obj2, i)) {
+                    UnsafeUtil.putInt(obj, offset, UnsafeUtil.getInt(obj2, offset));
+                    setFieldPresent(obj, i);
+                    break;
+                }
+                break;
+            case 5:
+                if (isFieldPresent(obj2, i)) {
+                    UnsafeUtil.putLong(obj, offset, UnsafeUtil.getLong(obj2, offset));
+                    setFieldPresent(obj, i);
+                    break;
+                }
+                break;
+            case 6:
+                if (isFieldPresent(obj2, i)) {
+                    UnsafeUtil.putInt(obj, offset, UnsafeUtil.getInt(obj2, offset));
+                    setFieldPresent(obj, i);
+                    break;
+                }
+                break;
+            case 7:
+                if (isFieldPresent(obj2, i)) {
+                    UnsafeUtil.putBoolean(obj, offset, UnsafeUtil.getBoolean(obj2, offset));
+                    setFieldPresent(obj, i);
+                    break;
+                }
+                break;
+            case 8:
+                if (isFieldPresent(obj2, i)) {
+                    UnsafeUtil.putObject(obj, offset, UnsafeUtil.getObject(obj2, offset));
+                    setFieldPresent(obj, i);
+                    break;
+                }
+                break;
+            case 9:
+                mergeMessage(obj, obj2, i);
+                break;
+            case 10:
+                if (isFieldPresent(obj2, i)) {
+                    UnsafeUtil.putObject(obj, offset, UnsafeUtil.getObject(obj2, offset));
+                    setFieldPresent(obj, i);
+                    break;
+                }
+                break;
+            case 11:
+                if (isFieldPresent(obj2, i)) {
+                    UnsafeUtil.putInt(obj, offset, UnsafeUtil.getInt(obj2, offset));
+                    setFieldPresent(obj, i);
+                    break;
+                }
+                break;
+            case 12:
+                if (isFieldPresent(obj2, i)) {
+                    UnsafeUtil.putInt(obj, offset, UnsafeUtil.getInt(obj2, offset));
+                    setFieldPresent(obj, i);
+                    break;
+                }
+                break;
+            case 13:
+                if (isFieldPresent(obj2, i)) {
+                    UnsafeUtil.putInt(obj, offset, UnsafeUtil.getInt(obj2, offset));
+                    setFieldPresent(obj, i);
+                    break;
+                }
+                break;
+            case 14:
+                if (isFieldPresent(obj2, i)) {
+                    UnsafeUtil.putLong(obj, offset, UnsafeUtil.getLong(obj2, offset));
+                    setFieldPresent(obj, i);
+                    break;
+                }
+                break;
+            case 15:
+                if (isFieldPresent(obj2, i)) {
+                    UnsafeUtil.putInt(obj, offset, UnsafeUtil.getInt(obj2, offset));
+                    setFieldPresent(obj, i);
+                    break;
+                }
+                break;
+            case 16:
+                if (isFieldPresent(obj2, i)) {
+                    UnsafeUtil.putLong(obj, offset, UnsafeUtil.getLong(obj2, offset));
+                    setFieldPresent(obj, i);
+                    break;
+                }
+                break;
+            case 17:
+                mergeMessage(obj, obj2, i);
+                break;
+            case 18:
+            case 19:
+            case 20:
+            case 21:
+            case 22:
+            case 23:
+            case 24:
+            case 25:
+            case 26:
+            case 27:
+            case 28:
+            case 29:
+            case 30:
+            case 31:
+            case 32:
+            case 33:
+            case 34:
+            case 35:
+            case 36:
+            case 37:
+            case 38:
+            case 39:
+            case 40:
+            case 41:
+            case 42:
+            case 43:
+            case 44:
+            case 45:
+            case 46:
+            case 47:
+            case 48:
+            case 49:
+                this.listFieldSchema.mergeListsAt(obj, obj2, offset);
+                break;
+            case 50:
+                SchemaUtil.mergeMap(this.mapFieldSchema, obj, obj2, offset);
+                break;
+            case 51:
+            case 52:
+            case 53:
+            case 54:
+            case 55:
+            case 56:
+            case 57:
+            case 58:
+            case 59:
+                if (isOneofPresent(obj2, numberAt, i)) {
+                    UnsafeUtil.putObject(obj, offset, UnsafeUtil.getObject(obj2, offset));
+                    setOneofPresent(obj, numberAt, i);
+                    break;
+                }
+                break;
+            case 60:
+                mergeOneofMessage(obj, obj2, i);
+                break;
+            case 61:
+            case 62:
+            case 63:
+            case 64:
+            case 65:
+            case 66:
+            case 67:
+                if (isOneofPresent(obj2, numberAt, i)) {
+                    UnsafeUtil.putObject(obj, offset, UnsafeUtil.getObject(obj2, offset));
+                    setOneofPresent(obj, numberAt, i);
+                    break;
+                }
+                break;
+            case 68:
+                mergeOneofMessage(obj, obj2, i);
+                break;
+        }
     }
 
-    private int slowPositionForFieldNumber(int i, int i2) {
-        int length = (this.buffer.length / 3) - 1;
-        while (i2 <= length) {
-            int i3 = (length + i2) >>> 1;
-            int i4 = i3 * 3;
-            int numberAt = numberAt(i4);
-            if (i == numberAt) {
-                return i4;
-            }
-            if (i < numberAt) {
-                length = i3 - 1;
-            } else {
-                i2 = i3 + 1;
+    private void mergeMessage(Object obj, Object obj2, int i) {
+        long offset = offset(typeAndOffsetAt(i));
+        if (isFieldPresent(obj2, i)) {
+            Object object = UnsafeUtil.getObject(obj, offset);
+            Object object2 = UnsafeUtil.getObject(obj2, offset);
+            if (object != null && object2 != null) {
+                UnsafeUtil.putObject(obj, offset, Internal.mergeMessage(object, object2));
+                setFieldPresent(obj, i);
+            } else if (object2 != null) {
+                UnsafeUtil.putObject(obj, offset, object2);
+                setFieldPresent(obj, i);
             }
         }
-        return -1;
     }
 
-    private static int type(int i) {
-        return (i & 267386880) >>> 20;
+    private void mergeOneofMessage(Object obj, Object obj2, int i) {
+        int typeAndOffsetAt = typeAndOffsetAt(i);
+        int numberAt = numberAt(i);
+        long offset = offset(typeAndOffsetAt);
+        if (isOneofPresent(obj2, numberAt, i)) {
+            Object object = UnsafeUtil.getObject(obj, offset);
+            Object object2 = UnsafeUtil.getObject(obj2, offset);
+            if (object != null && object2 != null) {
+                UnsafeUtil.putObject(obj, offset, Internal.mergeMessage(object, object2));
+                setOneofPresent(obj, numberAt, i);
+            } else if (object2 != null) {
+                UnsafeUtil.putObject(obj, offset, object2);
+                setOneofPresent(obj, numberAt, i);
+            }
+        }
     }
 
-    private int typeAndOffsetAt(int i) {
-        return this.buffer[i + 1];
+    @Override // androidx.datastore.preferences.protobuf.Schema
+    public int getSerializedSize(Object obj) {
+        return this.proto3 ? getSerializedSizeProto3(obj) : getSerializedSizeProto2(obj);
+    }
+
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    private int getSerializedSizeProto2(Object obj) {
+        int i;
+        int i2;
+        int computeDoubleSize;
+        int computeBoolSize;
+        int computeSFixed32Size;
+        int computeSizeFixed64ListNoTag;
+        int computeTagSize;
+        int computeUInt32SizeNoTag;
+        Unsafe unsafe = UNSAFE;
+        int i3 = -1;
+        int i4 = 0;
+        int i5 = 0;
+        int i6 = 0;
+        while (i4 < this.buffer.length) {
+            int typeAndOffsetAt = typeAndOffsetAt(i4);
+            int numberAt = numberAt(i4);
+            int type = type(typeAndOffsetAt);
+            if (type <= 17) {
+                i = this.buffer[i4 + 2];
+                int i7 = 1048575 & i;
+                int i8 = 1 << (i >>> 20);
+                if (i7 != i3) {
+                    i6 = unsafe.getInt(obj, i7);
+                    i3 = i7;
+                }
+                i2 = i8;
+            } else {
+                i = (!this.useCachedSizeField || type < FieldType.DOUBLE_LIST_PACKED.id() || type > FieldType.SINT64_LIST_PACKED.id()) ? 0 : this.buffer[i4 + 2] & 1048575;
+                i2 = 0;
+            }
+            long offset = offset(typeAndOffsetAt);
+            int i9 = i3;
+            switch (type) {
+                case 0:
+                    if ((i6 & i2) == 0) {
+                        break;
+                    } else {
+                        computeDoubleSize = CodedOutputStream.computeDoubleSize(numberAt, 0.0d);
+                        i5 += computeDoubleSize;
+                        break;
+                    }
+                case 1:
+                    if ((i6 & i2) == 0) {
+                        break;
+                    } else {
+                        computeDoubleSize = CodedOutputStream.computeFloatSize(numberAt, 0.0f);
+                        i5 += computeDoubleSize;
+                        break;
+                    }
+                case 2:
+                    if ((i6 & i2) == 0) {
+                        break;
+                    } else {
+                        computeDoubleSize = CodedOutputStream.computeInt64Size(numberAt, unsafe.getLong(obj, offset));
+                        i5 += computeDoubleSize;
+                        break;
+                    }
+                case 3:
+                    if ((i6 & i2) == 0) {
+                        break;
+                    } else {
+                        computeDoubleSize = CodedOutputStream.computeUInt64Size(numberAt, unsafe.getLong(obj, offset));
+                        i5 += computeDoubleSize;
+                        break;
+                    }
+                case 4:
+                    if ((i6 & i2) == 0) {
+                        break;
+                    } else {
+                        computeDoubleSize = CodedOutputStream.computeInt32Size(numberAt, unsafe.getInt(obj, offset));
+                        i5 += computeDoubleSize;
+                        break;
+                    }
+                case 5:
+                    if ((i6 & i2) == 0) {
+                        break;
+                    } else {
+                        computeDoubleSize = CodedOutputStream.computeFixed64Size(numberAt, 0L);
+                        i5 += computeDoubleSize;
+                        break;
+                    }
+                case 6:
+                    if ((i6 & i2) != 0) {
+                        computeDoubleSize = CodedOutputStream.computeFixed32Size(numberAt, 0);
+                        i5 += computeDoubleSize;
+                        break;
+                    }
+                    break;
+                case 7:
+                    if ((i6 & i2) != 0) {
+                        computeBoolSize = CodedOutputStream.computeBoolSize(numberAt, true);
+                        i5 += computeBoolSize;
+                    }
+                    break;
+                case 8:
+                    if ((i6 & i2) != 0) {
+                        Object object = unsafe.getObject(obj, offset);
+                        if (object instanceof ByteString) {
+                            computeBoolSize = CodedOutputStream.computeBytesSize(numberAt, (ByteString) object);
+                        } else {
+                            computeBoolSize = CodedOutputStream.computeStringSize(numberAt, (String) object);
+                        }
+                        i5 += computeBoolSize;
+                    }
+                    break;
+                case 9:
+                    if ((i6 & i2) != 0) {
+                        computeBoolSize = SchemaUtil.computeSizeMessage(numberAt, unsafe.getObject(obj, offset), getMessageFieldSchema(i4));
+                        i5 += computeBoolSize;
+                    }
+                    break;
+                case 10:
+                    if ((i6 & i2) != 0) {
+                        computeBoolSize = CodedOutputStream.computeBytesSize(numberAt, (ByteString) unsafe.getObject(obj, offset));
+                        i5 += computeBoolSize;
+                    }
+                    break;
+                case 11:
+                    if ((i6 & i2) != 0) {
+                        computeBoolSize = CodedOutputStream.computeUInt32Size(numberAt, unsafe.getInt(obj, offset));
+                        i5 += computeBoolSize;
+                    }
+                    break;
+                case 12:
+                    if ((i6 & i2) != 0) {
+                        computeBoolSize = CodedOutputStream.computeEnumSize(numberAt, unsafe.getInt(obj, offset));
+                        i5 += computeBoolSize;
+                    }
+                    break;
+                case 13:
+                    if ((i6 & i2) != 0) {
+                        computeSFixed32Size = CodedOutputStream.computeSFixed32Size(numberAt, 0);
+                        i5 += computeSFixed32Size;
+                    }
+                    break;
+                case 14:
+                    if ((i6 & i2) != 0) {
+                        computeBoolSize = CodedOutputStream.computeSFixed64Size(numberAt, 0L);
+                        i5 += computeBoolSize;
+                    }
+                    break;
+                case 15:
+                    if ((i6 & i2) != 0) {
+                        computeBoolSize = CodedOutputStream.computeSInt32Size(numberAt, unsafe.getInt(obj, offset));
+                        i5 += computeBoolSize;
+                    }
+                    break;
+                case 16:
+                    if ((i6 & i2) != 0) {
+                        computeBoolSize = CodedOutputStream.computeSInt64Size(numberAt, unsafe.getLong(obj, offset));
+                        i5 += computeBoolSize;
+                    }
+                    break;
+                case 17:
+                    if ((i6 & i2) != 0) {
+                        computeBoolSize = CodedOutputStream.computeGroupSize(numberAt, (MessageLite) unsafe.getObject(obj, offset), getMessageFieldSchema(i4));
+                        i5 += computeBoolSize;
+                    }
+                    break;
+                case 18:
+                    computeBoolSize = SchemaUtil.computeSizeFixed64List(numberAt, (List) unsafe.getObject(obj, offset), false);
+                    i5 += computeBoolSize;
+                    break;
+                case 19:
+                    computeBoolSize = SchemaUtil.computeSizeFixed32List(numberAt, (List) unsafe.getObject(obj, offset), false);
+                    i5 += computeBoolSize;
+                    break;
+                case 20:
+                    computeBoolSize = SchemaUtil.computeSizeInt64List(numberAt, (List) unsafe.getObject(obj, offset), false);
+                    i5 += computeBoolSize;
+                    break;
+                case 21:
+                    computeBoolSize = SchemaUtil.computeSizeUInt64List(numberAt, (List) unsafe.getObject(obj, offset), false);
+                    i5 += computeBoolSize;
+                    break;
+                case 22:
+                    computeBoolSize = SchemaUtil.computeSizeInt32List(numberAt, (List) unsafe.getObject(obj, offset), false);
+                    i5 += computeBoolSize;
+                    break;
+                case 23:
+                    computeBoolSize = SchemaUtil.computeSizeFixed64List(numberAt, (List) unsafe.getObject(obj, offset), false);
+                    i5 += computeBoolSize;
+                    break;
+                case 24:
+                    computeBoolSize = SchemaUtil.computeSizeFixed32List(numberAt, (List) unsafe.getObject(obj, offset), false);
+                    i5 += computeBoolSize;
+                    break;
+                case 25:
+                    computeBoolSize = SchemaUtil.computeSizeBoolList(numberAt, (List) unsafe.getObject(obj, offset), false);
+                    i5 += computeBoolSize;
+                    break;
+                case 26:
+                    computeBoolSize = SchemaUtil.computeSizeStringList(numberAt, (List) unsafe.getObject(obj, offset));
+                    i5 += computeBoolSize;
+                    break;
+                case 27:
+                    computeBoolSize = SchemaUtil.computeSizeMessageList(numberAt, (List) unsafe.getObject(obj, offset), getMessageFieldSchema(i4));
+                    i5 += computeBoolSize;
+                    break;
+                case 28:
+                    computeBoolSize = SchemaUtil.computeSizeByteStringList(numberAt, (List) unsafe.getObject(obj, offset));
+                    i5 += computeBoolSize;
+                    break;
+                case 29:
+                    computeBoolSize = SchemaUtil.computeSizeUInt32List(numberAt, (List) unsafe.getObject(obj, offset), false);
+                    i5 += computeBoolSize;
+                    break;
+                case 30:
+                    computeBoolSize = SchemaUtil.computeSizeEnumList(numberAt, (List) unsafe.getObject(obj, offset), false);
+                    i5 += computeBoolSize;
+                    break;
+                case 31:
+                    computeBoolSize = SchemaUtil.computeSizeFixed32List(numberAt, (List) unsafe.getObject(obj, offset), false);
+                    i5 += computeBoolSize;
+                    break;
+                case 32:
+                    computeBoolSize = SchemaUtil.computeSizeFixed64List(numberAt, (List) unsafe.getObject(obj, offset), false);
+                    i5 += computeBoolSize;
+                    break;
+                case 33:
+                    computeBoolSize = SchemaUtil.computeSizeSInt32List(numberAt, (List) unsafe.getObject(obj, offset), false);
+                    i5 += computeBoolSize;
+                    break;
+                case 34:
+                    computeBoolSize = SchemaUtil.computeSizeSInt64List(numberAt, (List) unsafe.getObject(obj, offset), false);
+                    i5 += computeBoolSize;
+                    break;
+                case 35:
+                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeFixed64ListNoTag((List) unsafe.getObject(obj, offset));
+                    if (computeSizeFixed64ListNoTag > 0) {
+                        if (this.useCachedSizeField) {
+                            unsafe.putInt(obj, i, computeSizeFixed64ListNoTag);
+                        }
+                        computeTagSize = CodedOutputStream.computeTagSize(numberAt);
+                        computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
+                        computeSFixed32Size = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
+                        i5 += computeSFixed32Size;
+                    }
+                    break;
+                case 36:
+                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeFixed32ListNoTag((List) unsafe.getObject(obj, offset));
+                    if (computeSizeFixed64ListNoTag > 0) {
+                        if (this.useCachedSizeField) {
+                            unsafe.putInt(obj, i, computeSizeFixed64ListNoTag);
+                        }
+                        computeTagSize = CodedOutputStream.computeTagSize(numberAt);
+                        computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
+                        computeSFixed32Size = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
+                        i5 += computeSFixed32Size;
+                    }
+                    break;
+                case 37:
+                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeInt64ListNoTag((List) unsafe.getObject(obj, offset));
+                    if (computeSizeFixed64ListNoTag > 0) {
+                        if (this.useCachedSizeField) {
+                            unsafe.putInt(obj, i, computeSizeFixed64ListNoTag);
+                        }
+                        computeTagSize = CodedOutputStream.computeTagSize(numberAt);
+                        computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
+                        computeSFixed32Size = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
+                        i5 += computeSFixed32Size;
+                    }
+                    break;
+                case 38:
+                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeUInt64ListNoTag((List) unsafe.getObject(obj, offset));
+                    if (computeSizeFixed64ListNoTag > 0) {
+                        if (this.useCachedSizeField) {
+                            unsafe.putInt(obj, i, computeSizeFixed64ListNoTag);
+                        }
+                        computeTagSize = CodedOutputStream.computeTagSize(numberAt);
+                        computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
+                        computeSFixed32Size = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
+                        i5 += computeSFixed32Size;
+                    }
+                    break;
+                case 39:
+                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeInt32ListNoTag((List) unsafe.getObject(obj, offset));
+                    if (computeSizeFixed64ListNoTag > 0) {
+                        if (this.useCachedSizeField) {
+                            unsafe.putInt(obj, i, computeSizeFixed64ListNoTag);
+                        }
+                        computeTagSize = CodedOutputStream.computeTagSize(numberAt);
+                        computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
+                        computeSFixed32Size = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
+                        i5 += computeSFixed32Size;
+                    }
+                    break;
+                case 40:
+                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeFixed64ListNoTag((List) unsafe.getObject(obj, offset));
+                    if (computeSizeFixed64ListNoTag > 0) {
+                        if (this.useCachedSizeField) {
+                            unsafe.putInt(obj, i, computeSizeFixed64ListNoTag);
+                        }
+                        computeTagSize = CodedOutputStream.computeTagSize(numberAt);
+                        computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
+                        computeSFixed32Size = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
+                        i5 += computeSFixed32Size;
+                    }
+                    break;
+                case 41:
+                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeFixed32ListNoTag((List) unsafe.getObject(obj, offset));
+                    if (computeSizeFixed64ListNoTag > 0) {
+                        if (this.useCachedSizeField) {
+                            unsafe.putInt(obj, i, computeSizeFixed64ListNoTag);
+                        }
+                        computeTagSize = CodedOutputStream.computeTagSize(numberAt);
+                        computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
+                        computeSFixed32Size = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
+                        i5 += computeSFixed32Size;
+                    }
+                    break;
+                case 42:
+                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeBoolListNoTag((List) unsafe.getObject(obj, offset));
+                    if (computeSizeFixed64ListNoTag > 0) {
+                        if (this.useCachedSizeField) {
+                            unsafe.putInt(obj, i, computeSizeFixed64ListNoTag);
+                        }
+                        computeTagSize = CodedOutputStream.computeTagSize(numberAt);
+                        computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
+                        computeSFixed32Size = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
+                        i5 += computeSFixed32Size;
+                    }
+                    break;
+                case 43:
+                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeUInt32ListNoTag((List) unsafe.getObject(obj, offset));
+                    if (computeSizeFixed64ListNoTag > 0) {
+                        if (this.useCachedSizeField) {
+                            unsafe.putInt(obj, i, computeSizeFixed64ListNoTag);
+                        }
+                        computeTagSize = CodedOutputStream.computeTagSize(numberAt);
+                        computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
+                        computeSFixed32Size = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
+                        i5 += computeSFixed32Size;
+                    }
+                    break;
+                case 44:
+                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeEnumListNoTag((List) unsafe.getObject(obj, offset));
+                    if (computeSizeFixed64ListNoTag > 0) {
+                        if (this.useCachedSizeField) {
+                            unsafe.putInt(obj, i, computeSizeFixed64ListNoTag);
+                        }
+                        computeTagSize = CodedOutputStream.computeTagSize(numberAt);
+                        computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
+                        computeSFixed32Size = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
+                        i5 += computeSFixed32Size;
+                    }
+                    break;
+                case 45:
+                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeFixed32ListNoTag((List) unsafe.getObject(obj, offset));
+                    if (computeSizeFixed64ListNoTag > 0) {
+                        if (this.useCachedSizeField) {
+                            unsafe.putInt(obj, i, computeSizeFixed64ListNoTag);
+                        }
+                        computeTagSize = CodedOutputStream.computeTagSize(numberAt);
+                        computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
+                        computeSFixed32Size = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
+                        i5 += computeSFixed32Size;
+                    }
+                    break;
+                case 46:
+                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeFixed64ListNoTag((List) unsafe.getObject(obj, offset));
+                    if (computeSizeFixed64ListNoTag > 0) {
+                        if (this.useCachedSizeField) {
+                            unsafe.putInt(obj, i, computeSizeFixed64ListNoTag);
+                        }
+                        computeTagSize = CodedOutputStream.computeTagSize(numberAt);
+                        computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
+                        computeSFixed32Size = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
+                        i5 += computeSFixed32Size;
+                    }
+                    break;
+                case 47:
+                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeSInt32ListNoTag((List) unsafe.getObject(obj, offset));
+                    if (computeSizeFixed64ListNoTag > 0) {
+                        if (this.useCachedSizeField) {
+                            unsafe.putInt(obj, i, computeSizeFixed64ListNoTag);
+                        }
+                        computeTagSize = CodedOutputStream.computeTagSize(numberAt);
+                        computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
+                        computeSFixed32Size = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
+                        i5 += computeSFixed32Size;
+                    }
+                    break;
+                case 48:
+                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeSInt64ListNoTag((List) unsafe.getObject(obj, offset));
+                    if (computeSizeFixed64ListNoTag > 0) {
+                        if (this.useCachedSizeField) {
+                            unsafe.putInt(obj, i, computeSizeFixed64ListNoTag);
+                        }
+                        computeTagSize = CodedOutputStream.computeTagSize(numberAt);
+                        computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
+                        computeSFixed32Size = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
+                        i5 += computeSFixed32Size;
+                    }
+                    break;
+                case 49:
+                    computeBoolSize = SchemaUtil.computeSizeGroupList(numberAt, (List) unsafe.getObject(obj, offset), getMessageFieldSchema(i4));
+                    i5 += computeBoolSize;
+                    break;
+                case 50:
+                    computeBoolSize = this.mapFieldSchema.getSerializedSize(numberAt, unsafe.getObject(obj, offset), getMapFieldDefaultEntry(i4));
+                    i5 += computeBoolSize;
+                    break;
+                case 51:
+                    if (isOneofPresent(obj, numberAt, i4)) {
+                        computeBoolSize = CodedOutputStream.computeDoubleSize(numberAt, 0.0d);
+                        i5 += computeBoolSize;
+                    }
+                    break;
+                case 52:
+                    if (isOneofPresent(obj, numberAt, i4)) {
+                        computeBoolSize = CodedOutputStream.computeFloatSize(numberAt, 0.0f);
+                        i5 += computeBoolSize;
+                    }
+                    break;
+                case 53:
+                    if (isOneofPresent(obj, numberAt, i4)) {
+                        computeBoolSize = CodedOutputStream.computeInt64Size(numberAt, oneofLongAt(obj, offset));
+                        i5 += computeBoolSize;
+                    }
+                    break;
+                case 54:
+                    if (isOneofPresent(obj, numberAt, i4)) {
+                        computeBoolSize = CodedOutputStream.computeUInt64Size(numberAt, oneofLongAt(obj, offset));
+                        i5 += computeBoolSize;
+                    }
+                    break;
+                case 55:
+                    if (isOneofPresent(obj, numberAt, i4)) {
+                        computeBoolSize = CodedOutputStream.computeInt32Size(numberAt, oneofIntAt(obj, offset));
+                        i5 += computeBoolSize;
+                    }
+                    break;
+                case 56:
+                    if (isOneofPresent(obj, numberAt, i4)) {
+                        computeBoolSize = CodedOutputStream.computeFixed64Size(numberAt, 0L);
+                        i5 += computeBoolSize;
+                    }
+                    break;
+                case 57:
+                    if (isOneofPresent(obj, numberAt, i4)) {
+                        computeSFixed32Size = CodedOutputStream.computeFixed32Size(numberAt, 0);
+                        i5 += computeSFixed32Size;
+                    }
+                    break;
+                case 58:
+                    if (isOneofPresent(obj, numberAt, i4)) {
+                        computeBoolSize = CodedOutputStream.computeBoolSize(numberAt, true);
+                        i5 += computeBoolSize;
+                    }
+                    break;
+                case 59:
+                    if (isOneofPresent(obj, numberAt, i4)) {
+                        Object object2 = unsafe.getObject(obj, offset);
+                        if (object2 instanceof ByteString) {
+                            computeBoolSize = CodedOutputStream.computeBytesSize(numberAt, (ByteString) object2);
+                        } else {
+                            computeBoolSize = CodedOutputStream.computeStringSize(numberAt, (String) object2);
+                        }
+                        i5 += computeBoolSize;
+                    }
+                    break;
+                case 60:
+                    if (isOneofPresent(obj, numberAt, i4)) {
+                        computeBoolSize = SchemaUtil.computeSizeMessage(numberAt, unsafe.getObject(obj, offset), getMessageFieldSchema(i4));
+                        i5 += computeBoolSize;
+                    }
+                    break;
+                case 61:
+                    if (isOneofPresent(obj, numberAt, i4)) {
+                        computeBoolSize = CodedOutputStream.computeBytesSize(numberAt, (ByteString) unsafe.getObject(obj, offset));
+                        i5 += computeBoolSize;
+                    }
+                    break;
+                case 62:
+                    if (isOneofPresent(obj, numberAt, i4)) {
+                        computeBoolSize = CodedOutputStream.computeUInt32Size(numberAt, oneofIntAt(obj, offset));
+                        i5 += computeBoolSize;
+                    }
+                    break;
+                case 63:
+                    if (isOneofPresent(obj, numberAt, i4)) {
+                        computeBoolSize = CodedOutputStream.computeEnumSize(numberAt, oneofIntAt(obj, offset));
+                        i5 += computeBoolSize;
+                    }
+                    break;
+                case 64:
+                    if (isOneofPresent(obj, numberAt, i4)) {
+                        computeSFixed32Size = CodedOutputStream.computeSFixed32Size(numberAt, 0);
+                        i5 += computeSFixed32Size;
+                    }
+                    break;
+                case 65:
+                    if (isOneofPresent(obj, numberAt, i4)) {
+                        computeBoolSize = CodedOutputStream.computeSFixed64Size(numberAt, 0L);
+                        i5 += computeBoolSize;
+                    }
+                    break;
+                case 66:
+                    if (isOneofPresent(obj, numberAt, i4)) {
+                        computeBoolSize = CodedOutputStream.computeSInt32Size(numberAt, oneofIntAt(obj, offset));
+                        i5 += computeBoolSize;
+                    }
+                    break;
+                case 67:
+                    if (isOneofPresent(obj, numberAt, i4)) {
+                        computeBoolSize = CodedOutputStream.computeSInt64Size(numberAt, oneofLongAt(obj, offset));
+                        i5 += computeBoolSize;
+                    }
+                    break;
+                case 68:
+                    if (isOneofPresent(obj, numberAt, i4)) {
+                        computeBoolSize = CodedOutputStream.computeGroupSize(numberAt, (MessageLite) unsafe.getObject(obj, offset), getMessageFieldSchema(i4));
+                        i5 += computeBoolSize;
+                    }
+                    break;
+            }
+            i4 += 3;
+            i3 = i9;
+        }
+        int unknownFieldsSerializedSize = i5 + getUnknownFieldsSerializedSize(this.unknownFieldSchema, obj);
+        return this.hasExtensions ? unknownFieldsSerializedSize + this.extensionSchema.getExtensions(obj).getSerializedSize() : unknownFieldsSerializedSize;
+    }
+
+    private int getSerializedSizeProto3(Object obj) {
+        int computeDoubleSize;
+        int computeSizeFixed64ListNoTag;
+        int computeTagSize;
+        int computeUInt32SizeNoTag;
+        Unsafe unsafe = UNSAFE;
+        int i = 0;
+        for (int i2 = 0; i2 < this.buffer.length; i2 += 3) {
+            int typeAndOffsetAt = typeAndOffsetAt(i2);
+            int type = type(typeAndOffsetAt);
+            int numberAt = numberAt(i2);
+            long offset = offset(typeAndOffsetAt);
+            int i3 = (type < FieldType.DOUBLE_LIST_PACKED.id() || type > FieldType.SINT64_LIST_PACKED.id()) ? 0 : this.buffer[i2 + 2] & 1048575;
+            switch (type) {
+                case 0:
+                    if (isFieldPresent(obj, i2)) {
+                        computeDoubleSize = CodedOutputStream.computeDoubleSize(numberAt, 0.0d);
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 1:
+                    if (isFieldPresent(obj, i2)) {
+                        computeDoubleSize = CodedOutputStream.computeFloatSize(numberAt, 0.0f);
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 2:
+                    if (isFieldPresent(obj, i2)) {
+                        computeDoubleSize = CodedOutputStream.computeInt64Size(numberAt, UnsafeUtil.getLong(obj, offset));
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 3:
+                    if (isFieldPresent(obj, i2)) {
+                        computeDoubleSize = CodedOutputStream.computeUInt64Size(numberAt, UnsafeUtil.getLong(obj, offset));
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 4:
+                    if (isFieldPresent(obj, i2)) {
+                        computeDoubleSize = CodedOutputStream.computeInt32Size(numberAt, UnsafeUtil.getInt(obj, offset));
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 5:
+                    if (isFieldPresent(obj, i2)) {
+                        computeDoubleSize = CodedOutputStream.computeFixed64Size(numberAt, 0L);
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 6:
+                    if (isFieldPresent(obj, i2)) {
+                        computeDoubleSize = CodedOutputStream.computeFixed32Size(numberAt, 0);
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 7:
+                    if (isFieldPresent(obj, i2)) {
+                        computeDoubleSize = CodedOutputStream.computeBoolSize(numberAt, true);
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 8:
+                    if (isFieldPresent(obj, i2)) {
+                        Object object = UnsafeUtil.getObject(obj, offset);
+                        if (object instanceof ByteString) {
+                            computeDoubleSize = CodedOutputStream.computeBytesSize(numberAt, (ByteString) object);
+                        } else {
+                            computeDoubleSize = CodedOutputStream.computeStringSize(numberAt, (String) object);
+                        }
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 9:
+                    if (isFieldPresent(obj, i2)) {
+                        computeDoubleSize = SchemaUtil.computeSizeMessage(numberAt, UnsafeUtil.getObject(obj, offset), getMessageFieldSchema(i2));
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 10:
+                    if (isFieldPresent(obj, i2)) {
+                        computeDoubleSize = CodedOutputStream.computeBytesSize(numberAt, (ByteString) UnsafeUtil.getObject(obj, offset));
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 11:
+                    if (isFieldPresent(obj, i2)) {
+                        computeDoubleSize = CodedOutputStream.computeUInt32Size(numberAt, UnsafeUtil.getInt(obj, offset));
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 12:
+                    if (isFieldPresent(obj, i2)) {
+                        computeDoubleSize = CodedOutputStream.computeEnumSize(numberAt, UnsafeUtil.getInt(obj, offset));
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 13:
+                    if (isFieldPresent(obj, i2)) {
+                        computeDoubleSize = CodedOutputStream.computeSFixed32Size(numberAt, 0);
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 14:
+                    if (isFieldPresent(obj, i2)) {
+                        computeDoubleSize = CodedOutputStream.computeSFixed64Size(numberAt, 0L);
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 15:
+                    if (isFieldPresent(obj, i2)) {
+                        computeDoubleSize = CodedOutputStream.computeSInt32Size(numberAt, UnsafeUtil.getInt(obj, offset));
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 16:
+                    if (isFieldPresent(obj, i2)) {
+                        computeDoubleSize = CodedOutputStream.computeSInt64Size(numberAt, UnsafeUtil.getLong(obj, offset));
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 17:
+                    if (isFieldPresent(obj, i2)) {
+                        computeDoubleSize = CodedOutputStream.computeGroupSize(numberAt, (MessageLite) UnsafeUtil.getObject(obj, offset), getMessageFieldSchema(i2));
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 18:
+                    computeDoubleSize = SchemaUtil.computeSizeFixed64List(numberAt, listAt(obj, offset), false);
+                    i += computeDoubleSize;
+                    break;
+                case 19:
+                    computeDoubleSize = SchemaUtil.computeSizeFixed32List(numberAt, listAt(obj, offset), false);
+                    i += computeDoubleSize;
+                    break;
+                case 20:
+                    computeDoubleSize = SchemaUtil.computeSizeInt64List(numberAt, listAt(obj, offset), false);
+                    i += computeDoubleSize;
+                    break;
+                case 21:
+                    computeDoubleSize = SchemaUtil.computeSizeUInt64List(numberAt, listAt(obj, offset), false);
+                    i += computeDoubleSize;
+                    break;
+                case 22:
+                    computeDoubleSize = SchemaUtil.computeSizeInt32List(numberAt, listAt(obj, offset), false);
+                    i += computeDoubleSize;
+                    break;
+                case 23:
+                    computeDoubleSize = SchemaUtil.computeSizeFixed64List(numberAt, listAt(obj, offset), false);
+                    i += computeDoubleSize;
+                    break;
+                case 24:
+                    computeDoubleSize = SchemaUtil.computeSizeFixed32List(numberAt, listAt(obj, offset), false);
+                    i += computeDoubleSize;
+                    break;
+                case 25:
+                    computeDoubleSize = SchemaUtil.computeSizeBoolList(numberAt, listAt(obj, offset), false);
+                    i += computeDoubleSize;
+                    break;
+                case 26:
+                    computeDoubleSize = SchemaUtil.computeSizeStringList(numberAt, listAt(obj, offset));
+                    i += computeDoubleSize;
+                    break;
+                case 27:
+                    computeDoubleSize = SchemaUtil.computeSizeMessageList(numberAt, listAt(obj, offset), getMessageFieldSchema(i2));
+                    i += computeDoubleSize;
+                    break;
+                case 28:
+                    computeDoubleSize = SchemaUtil.computeSizeByteStringList(numberAt, listAt(obj, offset));
+                    i += computeDoubleSize;
+                    break;
+                case 29:
+                    computeDoubleSize = SchemaUtil.computeSizeUInt32List(numberAt, listAt(obj, offset), false);
+                    i += computeDoubleSize;
+                    break;
+                case 30:
+                    computeDoubleSize = SchemaUtil.computeSizeEnumList(numberAt, listAt(obj, offset), false);
+                    i += computeDoubleSize;
+                    break;
+                case 31:
+                    computeDoubleSize = SchemaUtil.computeSizeFixed32List(numberAt, listAt(obj, offset), false);
+                    i += computeDoubleSize;
+                    break;
+                case 32:
+                    computeDoubleSize = SchemaUtil.computeSizeFixed64List(numberAt, listAt(obj, offset), false);
+                    i += computeDoubleSize;
+                    break;
+                case 33:
+                    computeDoubleSize = SchemaUtil.computeSizeSInt32List(numberAt, listAt(obj, offset), false);
+                    i += computeDoubleSize;
+                    break;
+                case 34:
+                    computeDoubleSize = SchemaUtil.computeSizeSInt64List(numberAt, listAt(obj, offset), false);
+                    i += computeDoubleSize;
+                    break;
+                case 35:
+                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeFixed64ListNoTag((List) unsafe.getObject(obj, offset));
+                    if (computeSizeFixed64ListNoTag <= 0) {
+                        break;
+                    } else {
+                        if (this.useCachedSizeField) {
+                            unsafe.putInt(obj, i3, computeSizeFixed64ListNoTag);
+                        }
+                        computeTagSize = CodedOutputStream.computeTagSize(numberAt);
+                        computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
+                        computeDoubleSize = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
+                        i += computeDoubleSize;
+                        break;
+                    }
+                case 36:
+                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeFixed32ListNoTag((List) unsafe.getObject(obj, offset));
+                    if (computeSizeFixed64ListNoTag <= 0) {
+                        break;
+                    } else {
+                        if (this.useCachedSizeField) {
+                            unsafe.putInt(obj, i3, computeSizeFixed64ListNoTag);
+                        }
+                        computeTagSize = CodedOutputStream.computeTagSize(numberAt);
+                        computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
+                        computeDoubleSize = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
+                        i += computeDoubleSize;
+                        break;
+                    }
+                case 37:
+                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeInt64ListNoTag((List) unsafe.getObject(obj, offset));
+                    if (computeSizeFixed64ListNoTag <= 0) {
+                        break;
+                    } else {
+                        if (this.useCachedSizeField) {
+                            unsafe.putInt(obj, i3, computeSizeFixed64ListNoTag);
+                        }
+                        computeTagSize = CodedOutputStream.computeTagSize(numberAt);
+                        computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
+                        computeDoubleSize = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
+                        i += computeDoubleSize;
+                        break;
+                    }
+                case 38:
+                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeUInt64ListNoTag((List) unsafe.getObject(obj, offset));
+                    if (computeSizeFixed64ListNoTag <= 0) {
+                        break;
+                    } else {
+                        if (this.useCachedSizeField) {
+                            unsafe.putInt(obj, i3, computeSizeFixed64ListNoTag);
+                        }
+                        computeTagSize = CodedOutputStream.computeTagSize(numberAt);
+                        computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
+                        computeDoubleSize = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
+                        i += computeDoubleSize;
+                        break;
+                    }
+                case 39:
+                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeInt32ListNoTag((List) unsafe.getObject(obj, offset));
+                    if (computeSizeFixed64ListNoTag <= 0) {
+                        break;
+                    } else {
+                        if (this.useCachedSizeField) {
+                            unsafe.putInt(obj, i3, computeSizeFixed64ListNoTag);
+                        }
+                        computeTagSize = CodedOutputStream.computeTagSize(numberAt);
+                        computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
+                        computeDoubleSize = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
+                        i += computeDoubleSize;
+                        break;
+                    }
+                case 40:
+                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeFixed64ListNoTag((List) unsafe.getObject(obj, offset));
+                    if (computeSizeFixed64ListNoTag <= 0) {
+                        break;
+                    } else {
+                        if (this.useCachedSizeField) {
+                            unsafe.putInt(obj, i3, computeSizeFixed64ListNoTag);
+                        }
+                        computeTagSize = CodedOutputStream.computeTagSize(numberAt);
+                        computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
+                        computeDoubleSize = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
+                        i += computeDoubleSize;
+                        break;
+                    }
+                case 41:
+                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeFixed32ListNoTag((List) unsafe.getObject(obj, offset));
+                    if (computeSizeFixed64ListNoTag <= 0) {
+                        break;
+                    } else {
+                        if (this.useCachedSizeField) {
+                            unsafe.putInt(obj, i3, computeSizeFixed64ListNoTag);
+                        }
+                        computeTagSize = CodedOutputStream.computeTagSize(numberAt);
+                        computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
+                        computeDoubleSize = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
+                        i += computeDoubleSize;
+                        break;
+                    }
+                case 42:
+                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeBoolListNoTag((List) unsafe.getObject(obj, offset));
+                    if (computeSizeFixed64ListNoTag <= 0) {
+                        break;
+                    } else {
+                        if (this.useCachedSizeField) {
+                            unsafe.putInt(obj, i3, computeSizeFixed64ListNoTag);
+                        }
+                        computeTagSize = CodedOutputStream.computeTagSize(numberAt);
+                        computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
+                        computeDoubleSize = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
+                        i += computeDoubleSize;
+                        break;
+                    }
+                case 43:
+                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeUInt32ListNoTag((List) unsafe.getObject(obj, offset));
+                    if (computeSizeFixed64ListNoTag <= 0) {
+                        break;
+                    } else {
+                        if (this.useCachedSizeField) {
+                            unsafe.putInt(obj, i3, computeSizeFixed64ListNoTag);
+                        }
+                        computeTagSize = CodedOutputStream.computeTagSize(numberAt);
+                        computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
+                        computeDoubleSize = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
+                        i += computeDoubleSize;
+                        break;
+                    }
+                case 44:
+                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeEnumListNoTag((List) unsafe.getObject(obj, offset));
+                    if (computeSizeFixed64ListNoTag <= 0) {
+                        break;
+                    } else {
+                        if (this.useCachedSizeField) {
+                            unsafe.putInt(obj, i3, computeSizeFixed64ListNoTag);
+                        }
+                        computeTagSize = CodedOutputStream.computeTagSize(numberAt);
+                        computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
+                        computeDoubleSize = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
+                        i += computeDoubleSize;
+                        break;
+                    }
+                case 45:
+                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeFixed32ListNoTag((List) unsafe.getObject(obj, offset));
+                    if (computeSizeFixed64ListNoTag <= 0) {
+                        break;
+                    } else {
+                        if (this.useCachedSizeField) {
+                            unsafe.putInt(obj, i3, computeSizeFixed64ListNoTag);
+                        }
+                        computeTagSize = CodedOutputStream.computeTagSize(numberAt);
+                        computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
+                        computeDoubleSize = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
+                        i += computeDoubleSize;
+                        break;
+                    }
+                case 46:
+                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeFixed64ListNoTag((List) unsafe.getObject(obj, offset));
+                    if (computeSizeFixed64ListNoTag <= 0) {
+                        break;
+                    } else {
+                        if (this.useCachedSizeField) {
+                            unsafe.putInt(obj, i3, computeSizeFixed64ListNoTag);
+                        }
+                        computeTagSize = CodedOutputStream.computeTagSize(numberAt);
+                        computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
+                        computeDoubleSize = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
+                        i += computeDoubleSize;
+                        break;
+                    }
+                case 47:
+                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeSInt32ListNoTag((List) unsafe.getObject(obj, offset));
+                    if (computeSizeFixed64ListNoTag <= 0) {
+                        break;
+                    } else {
+                        if (this.useCachedSizeField) {
+                            unsafe.putInt(obj, i3, computeSizeFixed64ListNoTag);
+                        }
+                        computeTagSize = CodedOutputStream.computeTagSize(numberAt);
+                        computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
+                        computeDoubleSize = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
+                        i += computeDoubleSize;
+                        break;
+                    }
+                case 48:
+                    computeSizeFixed64ListNoTag = SchemaUtil.computeSizeSInt64ListNoTag((List) unsafe.getObject(obj, offset));
+                    if (computeSizeFixed64ListNoTag <= 0) {
+                        break;
+                    } else {
+                        if (this.useCachedSizeField) {
+                            unsafe.putInt(obj, i3, computeSizeFixed64ListNoTag);
+                        }
+                        computeTagSize = CodedOutputStream.computeTagSize(numberAt);
+                        computeUInt32SizeNoTag = CodedOutputStream.computeUInt32SizeNoTag(computeSizeFixed64ListNoTag);
+                        computeDoubleSize = computeTagSize + computeUInt32SizeNoTag + computeSizeFixed64ListNoTag;
+                        i += computeDoubleSize;
+                        break;
+                    }
+                case 49:
+                    computeDoubleSize = SchemaUtil.computeSizeGroupList(numberAt, listAt(obj, offset), getMessageFieldSchema(i2));
+                    i += computeDoubleSize;
+                    break;
+                case 50:
+                    computeDoubleSize = this.mapFieldSchema.getSerializedSize(numberAt, UnsafeUtil.getObject(obj, offset), getMapFieldDefaultEntry(i2));
+                    i += computeDoubleSize;
+                    break;
+                case 51:
+                    if (isOneofPresent(obj, numberAt, i2)) {
+                        computeDoubleSize = CodedOutputStream.computeDoubleSize(numberAt, 0.0d);
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 52:
+                    if (isOneofPresent(obj, numberAt, i2)) {
+                        computeDoubleSize = CodedOutputStream.computeFloatSize(numberAt, 0.0f);
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 53:
+                    if (isOneofPresent(obj, numberAt, i2)) {
+                        computeDoubleSize = CodedOutputStream.computeInt64Size(numberAt, oneofLongAt(obj, offset));
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 54:
+                    if (isOneofPresent(obj, numberAt, i2)) {
+                        computeDoubleSize = CodedOutputStream.computeUInt64Size(numberAt, oneofLongAt(obj, offset));
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 55:
+                    if (isOneofPresent(obj, numberAt, i2)) {
+                        computeDoubleSize = CodedOutputStream.computeInt32Size(numberAt, oneofIntAt(obj, offset));
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 56:
+                    if (isOneofPresent(obj, numberAt, i2)) {
+                        computeDoubleSize = CodedOutputStream.computeFixed64Size(numberAt, 0L);
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 57:
+                    if (isOneofPresent(obj, numberAt, i2)) {
+                        computeDoubleSize = CodedOutputStream.computeFixed32Size(numberAt, 0);
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 58:
+                    if (isOneofPresent(obj, numberAt, i2)) {
+                        computeDoubleSize = CodedOutputStream.computeBoolSize(numberAt, true);
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 59:
+                    if (isOneofPresent(obj, numberAt, i2)) {
+                        Object object2 = UnsafeUtil.getObject(obj, offset);
+                        if (object2 instanceof ByteString) {
+                            computeDoubleSize = CodedOutputStream.computeBytesSize(numberAt, (ByteString) object2);
+                        } else {
+                            computeDoubleSize = CodedOutputStream.computeStringSize(numberAt, (String) object2);
+                        }
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 60:
+                    if (isOneofPresent(obj, numberAt, i2)) {
+                        computeDoubleSize = SchemaUtil.computeSizeMessage(numberAt, UnsafeUtil.getObject(obj, offset), getMessageFieldSchema(i2));
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 61:
+                    if (isOneofPresent(obj, numberAt, i2)) {
+                        computeDoubleSize = CodedOutputStream.computeBytesSize(numberAt, (ByteString) UnsafeUtil.getObject(obj, offset));
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 62:
+                    if (isOneofPresent(obj, numberAt, i2)) {
+                        computeDoubleSize = CodedOutputStream.computeUInt32Size(numberAt, oneofIntAt(obj, offset));
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 63:
+                    if (isOneofPresent(obj, numberAt, i2)) {
+                        computeDoubleSize = CodedOutputStream.computeEnumSize(numberAt, oneofIntAt(obj, offset));
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 64:
+                    if (isOneofPresent(obj, numberAt, i2)) {
+                        computeDoubleSize = CodedOutputStream.computeSFixed32Size(numberAt, 0);
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 65:
+                    if (isOneofPresent(obj, numberAt, i2)) {
+                        computeDoubleSize = CodedOutputStream.computeSFixed64Size(numberAt, 0L);
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 66:
+                    if (isOneofPresent(obj, numberAt, i2)) {
+                        computeDoubleSize = CodedOutputStream.computeSInt32Size(numberAt, oneofIntAt(obj, offset));
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 67:
+                    if (isOneofPresent(obj, numberAt, i2)) {
+                        computeDoubleSize = CodedOutputStream.computeSInt64Size(numberAt, oneofLongAt(obj, offset));
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+                case 68:
+                    if (isOneofPresent(obj, numberAt, i2)) {
+                        computeDoubleSize = CodedOutputStream.computeGroupSize(numberAt, (MessageLite) UnsafeUtil.getObject(obj, offset), getMessageFieldSchema(i2));
+                        i += computeDoubleSize;
+                        break;
+                    } else {
+                        break;
+                    }
+            }
+        }
+        return i + getUnknownFieldsSerializedSize(this.unknownFieldSchema, obj);
+    }
+
+    private int getUnknownFieldsSerializedSize(UnknownFieldSchema unknownFieldSchema, Object obj) {
+        return unknownFieldSchema.getSerializedSize(unknownFieldSchema.getFromMessage(obj));
+    }
+
+    private static List listAt(Object obj, long j) {
+        return (List) UnsafeUtil.getObject(obj, j);
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.Schema
+    public void writeTo(Object obj, Writer writer) {
+        if (writer.fieldOrder() == Writer.FieldOrder.DESCENDING) {
+            writeFieldsInDescendingOrder(obj, writer);
+        } else if (this.proto3) {
+            writeFieldsInAscendingOrderProto3(obj, writer);
+        } else {
+            writeFieldsInAscendingOrderProto2(obj, writer);
+        }
     }
 
     /* JADX WARN: Removed duplicated region for block: B:231:0x049e  */
@@ -3107,7 +2850,7 @@ final class MessageSchema implements Schema {
         writeUnknownInMessageTo(this.unknownFieldSchema, obj, writer);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:267:0x0530  */
+    /* JADX WARN: Removed duplicated region for block: B:275:0x0588  */
     /* JADX WARN: Removed duplicated region for block: B:8:0x0025  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -3117,20 +2860,6 @@ final class MessageSchema implements Schema {
         Map.Entry entry;
         int length;
         int i;
-        double doubleAt;
-        float floatAt;
-        long longAt;
-        long longAt2;
-        int intAt;
-        long longAt3;
-        int intAt2;
-        boolean booleanAt;
-        int intAt3;
-        int intAt4;
-        int intAt5;
-        long longAt4;
-        int intAt6;
-        long longAt5;
         if (this.hasExtensions) {
             FieldSet extensions = this.extensionSchema.getExtensions(obj);
             if (!extensions.isEmpty()) {
@@ -3147,140 +2876,130 @@ final class MessageSchema implements Schema {
                     switch (type(typeAndOffsetAt)) {
                         case 0:
                             if (isFieldPresent(obj, i)) {
-                                doubleAt = doubleAt(obj, offset(typeAndOffsetAt));
-                                writer.writeDouble(numberAt, doubleAt);
+                                writer.writeDouble(numberAt, doubleAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 1:
                             if (isFieldPresent(obj, i)) {
-                                floatAt = floatAt(obj, offset(typeAndOffsetAt));
-                                writer.writeFloat(numberAt, floatAt);
+                                writer.writeFloat(numberAt, floatAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 2:
                             if (isFieldPresent(obj, i)) {
-                                longAt = longAt(obj, offset(typeAndOffsetAt));
-                                writer.writeInt64(numberAt, longAt);
+                                writer.writeInt64(numberAt, longAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 3:
                             if (isFieldPresent(obj, i)) {
-                                longAt2 = longAt(obj, offset(typeAndOffsetAt));
-                                writer.writeUInt64(numberAt, longAt2);
+                                writer.writeUInt64(numberAt, longAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 4:
                             if (isFieldPresent(obj, i)) {
-                                intAt = intAt(obj, offset(typeAndOffsetAt));
-                                writer.writeInt32(numberAt, intAt);
+                                writer.writeInt32(numberAt, intAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 5:
                             if (isFieldPresent(obj, i)) {
-                                longAt3 = longAt(obj, offset(typeAndOffsetAt));
-                                writer.writeFixed64(numberAt, longAt3);
+                                writer.writeFixed64(numberAt, longAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 6:
                             if (isFieldPresent(obj, i)) {
-                                intAt2 = intAt(obj, offset(typeAndOffsetAt));
-                                writer.writeFixed32(numberAt, intAt2);
+                                writer.writeFixed32(numberAt, intAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 7:
                             if (isFieldPresent(obj, i)) {
-                                booleanAt = booleanAt(obj, offset(typeAndOffsetAt));
-                                writer.writeBool(numberAt, booleanAt);
+                                writer.writeBool(numberAt, booleanAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 8:
-                            if (!isFieldPresent(obj, i)) {
+                            if (isFieldPresent(obj, i)) {
+                                writeString(numberAt, UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)), writer);
+                                break;
+                            } else {
                                 break;
                             }
-                            writeString(numberAt, UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)), writer);
-                            break;
                         case 9:
-                            if (!isFieldPresent(obj, i)) {
+                            if (isFieldPresent(obj, i)) {
+                                writer.writeMessage(numberAt, UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)), getMessageFieldSchema(i));
+                                break;
+                            } else {
                                 break;
                             }
-                            writer.writeMessage(numberAt, UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)), getMessageFieldSchema(i));
-                            break;
                         case 10:
-                            if (!isFieldPresent(obj, i)) {
+                            if (isFieldPresent(obj, i)) {
+                                writer.writeBytes(numberAt, (ByteString) UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)));
+                                break;
+                            } else {
                                 break;
                             }
-                            writer.writeBytes(numberAt, (ByteString) UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)));
-                            break;
                         case 11:
                             if (isFieldPresent(obj, i)) {
-                                intAt3 = intAt(obj, offset(typeAndOffsetAt));
-                                writer.writeUInt32(numberAt, intAt3);
+                                writer.writeUInt32(numberAt, intAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 12:
                             if (isFieldPresent(obj, i)) {
-                                intAt4 = intAt(obj, offset(typeAndOffsetAt));
-                                writer.writeEnum(numberAt, intAt4);
+                                writer.writeEnum(numberAt, intAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 13:
                             if (isFieldPresent(obj, i)) {
-                                intAt5 = intAt(obj, offset(typeAndOffsetAt));
-                                writer.writeSFixed32(numberAt, intAt5);
+                                writer.writeSFixed32(numberAt, intAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 14:
                             if (isFieldPresent(obj, i)) {
-                                longAt4 = longAt(obj, offset(typeAndOffsetAt));
-                                writer.writeSFixed64(numberAt, longAt4);
+                                writer.writeSFixed64(numberAt, longAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 15:
                             if (isFieldPresent(obj, i)) {
-                                intAt6 = intAt(obj, offset(typeAndOffsetAt));
-                                writer.writeSInt32(numberAt, intAt6);
+                                writer.writeSInt32(numberAt, intAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 16:
                             if (isFieldPresent(obj, i)) {
-                                longAt5 = longAt(obj, offset(typeAndOffsetAt));
-                                writer.writeSInt64(numberAt, longAt5);
+                                writer.writeSInt64(numberAt, longAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 17:
-                            if (!isFieldPresent(obj, i)) {
+                            if (isFieldPresent(obj, i)) {
+                                writer.writeGroup(numberAt, UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)), getMessageFieldSchema(i));
+                                break;
+                            } else {
                                 break;
                             }
-                            writer.writeGroup(numberAt, UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)), getMessageFieldSchema(i));
-                            break;
                         case 18:
                             SchemaUtil.writeDoubleList(numberAt(i), (List) UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)), writer, false);
                             break;
@@ -3382,140 +3101,130 @@ final class MessageSchema implements Schema {
                             break;
                         case 51:
                             if (isOneofPresent(obj, numberAt, i)) {
-                                doubleAt = oneofDoubleAt(obj, offset(typeAndOffsetAt));
-                                writer.writeDouble(numberAt, doubleAt);
+                                writer.writeDouble(numberAt, oneofDoubleAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 52:
                             if (isOneofPresent(obj, numberAt, i)) {
-                                floatAt = oneofFloatAt(obj, offset(typeAndOffsetAt));
-                                writer.writeFloat(numberAt, floatAt);
+                                writer.writeFloat(numberAt, oneofFloatAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 53:
                             if (isOneofPresent(obj, numberAt, i)) {
-                                longAt = oneofLongAt(obj, offset(typeAndOffsetAt));
-                                writer.writeInt64(numberAt, longAt);
+                                writer.writeInt64(numberAt, oneofLongAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 54:
                             if (isOneofPresent(obj, numberAt, i)) {
-                                longAt2 = oneofLongAt(obj, offset(typeAndOffsetAt));
-                                writer.writeUInt64(numberAt, longAt2);
+                                writer.writeUInt64(numberAt, oneofLongAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 55:
                             if (isOneofPresent(obj, numberAt, i)) {
-                                intAt = oneofIntAt(obj, offset(typeAndOffsetAt));
-                                writer.writeInt32(numberAt, intAt);
+                                writer.writeInt32(numberAt, oneofIntAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 56:
                             if (isOneofPresent(obj, numberAt, i)) {
-                                longAt3 = oneofLongAt(obj, offset(typeAndOffsetAt));
-                                writer.writeFixed64(numberAt, longAt3);
+                                writer.writeFixed64(numberAt, oneofLongAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 57:
                             if (isOneofPresent(obj, numberAt, i)) {
-                                intAt2 = oneofIntAt(obj, offset(typeAndOffsetAt));
-                                writer.writeFixed32(numberAt, intAt2);
+                                writer.writeFixed32(numberAt, oneofIntAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 58:
                             if (isOneofPresent(obj, numberAt, i)) {
-                                booleanAt = oneofBooleanAt(obj, offset(typeAndOffsetAt));
-                                writer.writeBool(numberAt, booleanAt);
+                                writer.writeBool(numberAt, oneofBooleanAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 59:
-                            if (!isOneofPresent(obj, numberAt, i)) {
+                            if (isOneofPresent(obj, numberAt, i)) {
+                                writeString(numberAt, UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)), writer);
+                                break;
+                            } else {
                                 break;
                             }
-                            writeString(numberAt, UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)), writer);
-                            break;
                         case 60:
-                            if (!isOneofPresent(obj, numberAt, i)) {
+                            if (isOneofPresent(obj, numberAt, i)) {
+                                writer.writeMessage(numberAt, UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)), getMessageFieldSchema(i));
+                                break;
+                            } else {
                                 break;
                             }
-                            writer.writeMessage(numberAt, UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)), getMessageFieldSchema(i));
-                            break;
                         case 61:
-                            if (!isOneofPresent(obj, numberAt, i)) {
+                            if (isOneofPresent(obj, numberAt, i)) {
+                                writer.writeBytes(numberAt, (ByteString) UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)));
+                                break;
+                            } else {
                                 break;
                             }
-                            writer.writeBytes(numberAt, (ByteString) UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)));
-                            break;
                         case 62:
                             if (isOneofPresent(obj, numberAt, i)) {
-                                intAt3 = oneofIntAt(obj, offset(typeAndOffsetAt));
-                                writer.writeUInt32(numberAt, intAt3);
+                                writer.writeUInt32(numberAt, oneofIntAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 63:
                             if (isOneofPresent(obj, numberAt, i)) {
-                                intAt4 = oneofIntAt(obj, offset(typeAndOffsetAt));
-                                writer.writeEnum(numberAt, intAt4);
+                                writer.writeEnum(numberAt, oneofIntAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 64:
                             if (isOneofPresent(obj, numberAt, i)) {
-                                intAt5 = oneofIntAt(obj, offset(typeAndOffsetAt));
-                                writer.writeSFixed32(numberAt, intAt5);
+                                writer.writeSFixed32(numberAt, oneofIntAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 65:
                             if (isOneofPresent(obj, numberAt, i)) {
-                                longAt4 = oneofLongAt(obj, offset(typeAndOffsetAt));
-                                writer.writeSFixed64(numberAt, longAt4);
+                                writer.writeSFixed64(numberAt, oneofLongAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 66:
                             if (isOneofPresent(obj, numberAt, i)) {
-                                intAt6 = oneofIntAt(obj, offset(typeAndOffsetAt));
-                                writer.writeSInt32(numberAt, intAt6);
+                                writer.writeSInt32(numberAt, oneofIntAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 67:
                             if (isOneofPresent(obj, numberAt, i)) {
-                                longAt5 = oneofLongAt(obj, offset(typeAndOffsetAt));
-                                writer.writeSInt64(numberAt, longAt5);
+                                writer.writeSInt64(numberAt, oneofLongAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 68:
-                            if (!isOneofPresent(obj, numberAt, i)) {
+                            if (isOneofPresent(obj, numberAt, i)) {
+                                writer.writeGroup(numberAt, UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)), getMessageFieldSchema(i));
+                                break;
+                            } else {
                                 break;
                             }
-                            writer.writeGroup(numberAt, UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)), getMessageFieldSchema(i));
-                            break;
                     }
                 }
                 while (entry != null) {
@@ -3535,7 +3244,7 @@ final class MessageSchema implements Schema {
         writeUnknownInMessageTo(this.unknownFieldSchema, obj, writer);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:267:0x0536  */
+    /* JADX WARN: Removed duplicated region for block: B:275:0x058e  */
     /* JADX WARN: Removed duplicated region for block: B:8:0x002a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -3544,20 +3253,6 @@ final class MessageSchema implements Schema {
         Iterator it;
         Map.Entry entry;
         int length;
-        double doubleAt;
-        float floatAt;
-        long longAt;
-        long longAt2;
-        int intAt;
-        long longAt3;
-        int intAt2;
-        boolean booleanAt;
-        int intAt3;
-        int intAt4;
-        int intAt5;
-        long longAt4;
-        int intAt6;
-        long longAt5;
         writeUnknownInMessageTo(this.unknownFieldSchema, obj, writer);
         if (this.hasExtensions) {
             FieldSet extensions = this.extensionSchema.getExtensions(obj);
@@ -3574,140 +3269,130 @@ final class MessageSchema implements Schema {
                     switch (type(typeAndOffsetAt)) {
                         case 0:
                             if (isFieldPresent(obj, length)) {
-                                doubleAt = doubleAt(obj, offset(typeAndOffsetAt));
-                                writer.writeDouble(numberAt, doubleAt);
+                                writer.writeDouble(numberAt, doubleAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 1:
                             if (isFieldPresent(obj, length)) {
-                                floatAt = floatAt(obj, offset(typeAndOffsetAt));
-                                writer.writeFloat(numberAt, floatAt);
+                                writer.writeFloat(numberAt, floatAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 2:
                             if (isFieldPresent(obj, length)) {
-                                longAt = longAt(obj, offset(typeAndOffsetAt));
-                                writer.writeInt64(numberAt, longAt);
+                                writer.writeInt64(numberAt, longAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 3:
                             if (isFieldPresent(obj, length)) {
-                                longAt2 = longAt(obj, offset(typeAndOffsetAt));
-                                writer.writeUInt64(numberAt, longAt2);
+                                writer.writeUInt64(numberAt, longAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 4:
                             if (isFieldPresent(obj, length)) {
-                                intAt = intAt(obj, offset(typeAndOffsetAt));
-                                writer.writeInt32(numberAt, intAt);
+                                writer.writeInt32(numberAt, intAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 5:
                             if (isFieldPresent(obj, length)) {
-                                longAt3 = longAt(obj, offset(typeAndOffsetAt));
-                                writer.writeFixed64(numberAt, longAt3);
+                                writer.writeFixed64(numberAt, longAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 6:
                             if (isFieldPresent(obj, length)) {
-                                intAt2 = intAt(obj, offset(typeAndOffsetAt));
-                                writer.writeFixed32(numberAt, intAt2);
+                                writer.writeFixed32(numberAt, intAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 7:
                             if (isFieldPresent(obj, length)) {
-                                booleanAt = booleanAt(obj, offset(typeAndOffsetAt));
-                                writer.writeBool(numberAt, booleanAt);
+                                writer.writeBool(numberAt, booleanAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 8:
-                            if (!isFieldPresent(obj, length)) {
+                            if (isFieldPresent(obj, length)) {
+                                writeString(numberAt, UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)), writer);
+                                break;
+                            } else {
                                 break;
                             }
-                            writeString(numberAt, UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)), writer);
-                            break;
                         case 9:
-                            if (!isFieldPresent(obj, length)) {
+                            if (isFieldPresent(obj, length)) {
+                                writer.writeMessage(numberAt, UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)), getMessageFieldSchema(length));
+                                break;
+                            } else {
                                 break;
                             }
-                            writer.writeMessage(numberAt, UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)), getMessageFieldSchema(length));
-                            break;
                         case 10:
-                            if (!isFieldPresent(obj, length)) {
+                            if (isFieldPresent(obj, length)) {
+                                writer.writeBytes(numberAt, (ByteString) UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)));
+                                break;
+                            } else {
                                 break;
                             }
-                            writer.writeBytes(numberAt, (ByteString) UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)));
-                            break;
                         case 11:
                             if (isFieldPresent(obj, length)) {
-                                intAt3 = intAt(obj, offset(typeAndOffsetAt));
-                                writer.writeUInt32(numberAt, intAt3);
+                                writer.writeUInt32(numberAt, intAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 12:
                             if (isFieldPresent(obj, length)) {
-                                intAt4 = intAt(obj, offset(typeAndOffsetAt));
-                                writer.writeEnum(numberAt, intAt4);
+                                writer.writeEnum(numberAt, intAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 13:
                             if (isFieldPresent(obj, length)) {
-                                intAt5 = intAt(obj, offset(typeAndOffsetAt));
-                                writer.writeSFixed32(numberAt, intAt5);
+                                writer.writeSFixed32(numberAt, intAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 14:
                             if (isFieldPresent(obj, length)) {
-                                longAt4 = longAt(obj, offset(typeAndOffsetAt));
-                                writer.writeSFixed64(numberAt, longAt4);
+                                writer.writeSFixed64(numberAt, longAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 15:
                             if (isFieldPresent(obj, length)) {
-                                intAt6 = intAt(obj, offset(typeAndOffsetAt));
-                                writer.writeSInt32(numberAt, intAt6);
+                                writer.writeSInt32(numberAt, intAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 16:
                             if (isFieldPresent(obj, length)) {
-                                longAt5 = longAt(obj, offset(typeAndOffsetAt));
-                                writer.writeSInt64(numberAt, longAt5);
+                                writer.writeSInt64(numberAt, longAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 17:
-                            if (!isFieldPresent(obj, length)) {
+                            if (isFieldPresent(obj, length)) {
+                                writer.writeGroup(numberAt, UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)), getMessageFieldSchema(length));
+                                break;
+                            } else {
                                 break;
                             }
-                            writer.writeGroup(numberAt, UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)), getMessageFieldSchema(length));
-                            break;
                         case 18:
                             SchemaUtil.writeDoubleList(numberAt(length), (List) UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)), writer, false);
                             break;
@@ -3809,140 +3494,130 @@ final class MessageSchema implements Schema {
                             break;
                         case 51:
                             if (isOneofPresent(obj, numberAt, length)) {
-                                doubleAt = oneofDoubleAt(obj, offset(typeAndOffsetAt));
-                                writer.writeDouble(numberAt, doubleAt);
+                                writer.writeDouble(numberAt, oneofDoubleAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 52:
                             if (isOneofPresent(obj, numberAt, length)) {
-                                floatAt = oneofFloatAt(obj, offset(typeAndOffsetAt));
-                                writer.writeFloat(numberAt, floatAt);
+                                writer.writeFloat(numberAt, oneofFloatAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 53:
                             if (isOneofPresent(obj, numberAt, length)) {
-                                longAt = oneofLongAt(obj, offset(typeAndOffsetAt));
-                                writer.writeInt64(numberAt, longAt);
+                                writer.writeInt64(numberAt, oneofLongAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 54:
                             if (isOneofPresent(obj, numberAt, length)) {
-                                longAt2 = oneofLongAt(obj, offset(typeAndOffsetAt));
-                                writer.writeUInt64(numberAt, longAt2);
+                                writer.writeUInt64(numberAt, oneofLongAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 55:
                             if (isOneofPresent(obj, numberAt, length)) {
-                                intAt = oneofIntAt(obj, offset(typeAndOffsetAt));
-                                writer.writeInt32(numberAt, intAt);
+                                writer.writeInt32(numberAt, oneofIntAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 56:
                             if (isOneofPresent(obj, numberAt, length)) {
-                                longAt3 = oneofLongAt(obj, offset(typeAndOffsetAt));
-                                writer.writeFixed64(numberAt, longAt3);
+                                writer.writeFixed64(numberAt, oneofLongAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 57:
                             if (isOneofPresent(obj, numberAt, length)) {
-                                intAt2 = oneofIntAt(obj, offset(typeAndOffsetAt));
-                                writer.writeFixed32(numberAt, intAt2);
+                                writer.writeFixed32(numberAt, oneofIntAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 58:
                             if (isOneofPresent(obj, numberAt, length)) {
-                                booleanAt = oneofBooleanAt(obj, offset(typeAndOffsetAt));
-                                writer.writeBool(numberAt, booleanAt);
+                                writer.writeBool(numberAt, oneofBooleanAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 59:
-                            if (!isOneofPresent(obj, numberAt, length)) {
+                            if (isOneofPresent(obj, numberAt, length)) {
+                                writeString(numberAt, UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)), writer);
+                                break;
+                            } else {
                                 break;
                             }
-                            writeString(numberAt, UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)), writer);
-                            break;
                         case 60:
-                            if (!isOneofPresent(obj, numberAt, length)) {
+                            if (isOneofPresent(obj, numberAt, length)) {
+                                writer.writeMessage(numberAt, UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)), getMessageFieldSchema(length));
+                                break;
+                            } else {
                                 break;
                             }
-                            writer.writeMessage(numberAt, UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)), getMessageFieldSchema(length));
-                            break;
                         case 61:
-                            if (!isOneofPresent(obj, numberAt, length)) {
+                            if (isOneofPresent(obj, numberAt, length)) {
+                                writer.writeBytes(numberAt, (ByteString) UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)));
+                                break;
+                            } else {
                                 break;
                             }
-                            writer.writeBytes(numberAt, (ByteString) UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)));
-                            break;
                         case 62:
                             if (isOneofPresent(obj, numberAt, length)) {
-                                intAt3 = oneofIntAt(obj, offset(typeAndOffsetAt));
-                                writer.writeUInt32(numberAt, intAt3);
+                                writer.writeUInt32(numberAt, oneofIntAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 63:
                             if (isOneofPresent(obj, numberAt, length)) {
-                                intAt4 = oneofIntAt(obj, offset(typeAndOffsetAt));
-                                writer.writeEnum(numberAt, intAt4);
+                                writer.writeEnum(numberAt, oneofIntAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 64:
                             if (isOneofPresent(obj, numberAt, length)) {
-                                intAt5 = oneofIntAt(obj, offset(typeAndOffsetAt));
-                                writer.writeSFixed32(numberAt, intAt5);
+                                writer.writeSFixed32(numberAt, oneofIntAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 65:
                             if (isOneofPresent(obj, numberAt, length)) {
-                                longAt4 = oneofLongAt(obj, offset(typeAndOffsetAt));
-                                writer.writeSFixed64(numberAt, longAt4);
+                                writer.writeSFixed64(numberAt, oneofLongAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 66:
                             if (isOneofPresent(obj, numberAt, length)) {
-                                intAt6 = oneofIntAt(obj, offset(typeAndOffsetAt));
-                                writer.writeSInt32(numberAt, intAt6);
+                                writer.writeSInt32(numberAt, oneofIntAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 67:
                             if (isOneofPresent(obj, numberAt, length)) {
-                                longAt5 = oneofLongAt(obj, offset(typeAndOffsetAt));
-                                writer.writeSInt64(numberAt, longAt5);
+                                writer.writeSInt64(numberAt, oneofLongAt(obj, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
                         case 68:
-                            if (!isOneofPresent(obj, numberAt, length)) {
+                            if (isOneofPresent(obj, numberAt, length)) {
+                                writer.writeGroup(numberAt, UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)), getMessageFieldSchema(length));
+                                break;
+                            } else {
                                 break;
                             }
-                            writer.writeGroup(numberAt, UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)), getMessageFieldSchema(length));
-                            break;
                     }
                 }
                 while (entry != null) {
@@ -3965,376 +3640,425 @@ final class MessageSchema implements Schema {
         }
     }
 
-    private void writeString(int i, Object obj, Writer writer) {
-        if (obj instanceof String) {
-            writer.writeString(i, (String) obj);
-        } else {
-            writer.writeBytes(i, (ByteString) obj);
-        }
-    }
-
     private void writeUnknownInMessageTo(UnknownFieldSchema unknownFieldSchema, Object obj, Writer writer) {
         unknownFieldSchema.writeTo(unknownFieldSchema.getFromMessage(obj), writer);
     }
 
     @Override // androidx.datastore.preferences.protobuf.Schema
-    public boolean equals(Object obj, Object obj2) {
-        int length = this.buffer.length;
-        for (int i = 0; i < length; i += 3) {
-            if (!equals(obj, obj2, i)) {
-                return false;
-            }
-        }
-        if (!this.unknownFieldSchema.getFromMessage(obj).equals(this.unknownFieldSchema.getFromMessage(obj2))) {
-            return false;
-        }
-        if (this.hasExtensions) {
-            return this.extensionSchema.getExtensions(obj).equals(this.extensionSchema.getExtensions(obj2));
-        }
-        return true;
+    public void mergeFrom(Object obj, Reader reader, ExtensionRegistryLite extensionRegistryLite) {
+        extensionRegistryLite.getClass();
+        mergeFromHelper(this.unknownFieldSchema, this.extensionSchema, obj, reader, extensionRegistryLite);
     }
 
-    @Override // androidx.datastore.preferences.protobuf.Schema
-    public int getSerializedSize(Object obj) {
-        return this.proto3 ? getSerializedSizeProto3(obj) : getSerializedSizeProto2(obj);
-    }
-
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:76:0x00f0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:302:0x007b, code lost:
     
-        if (r3 != null) goto L69;
+        r0 = r16.checkInitializedCount;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:77:0x00f2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:304:0x007f, code lost:
     
-        r7 = r3.hashCode();
+        if (r0 >= r16.repeatedFieldOffsetStart) goto L339;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:78:0x00f6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:305:0x0081, code lost:
     
-        r2 = (r2 * 53) + r7;
+        r13 = filterMapUnknownEnumValues(r19, r16.intArray[r0], r13, r17);
+        r0 = r0 + 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:83:0x010e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:307:0x008c, code lost:
     
-        if (r3 != null) goto L69;
+        if (r13 == null) goto L343;
      */
-    @Override // androidx.datastore.preferences.protobuf.Schema
+    /* JADX WARN: Code restructure failed: missing block: B:308:0x008e, code lost:
+    
+        r17.setBuilderToMessage(r19, r13);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:309:0x0091, code lost:
+    
+        return;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:310:?, code lost:
+    
+        return;
+     */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public int hashCode(Object obj) {
-        int i;
-        double d;
-        float f;
-        boolean z;
-        Object object;
-        int i2;
-        long j;
-        Object object2;
-        int length = this.buffer.length;
-        int i3 = 0;
-        for (int i4 = 0; i4 < length; i4 += 3) {
-            int typeAndOffsetAt = typeAndOffsetAt(i4);
-            int numberAt = numberAt(i4);
-            long offset = offset(typeAndOffsetAt);
-            int i5 = 37;
-            switch (type(typeAndOffsetAt)) {
-                case 0:
-                    i = i3 * 53;
-                    d = UnsafeUtil.getDouble(obj, offset);
-                    j = Double.doubleToLongBits(d);
-                    i2 = Internal.hashLong(j);
-                    i3 = i + i2;
-                    break;
-                case 1:
-                    i = i3 * 53;
-                    f = UnsafeUtil.getFloat(obj, offset);
-                    i2 = Float.floatToIntBits(f);
-                    i3 = i + i2;
-                    break;
-                case 2:
-                case 3:
-                case 5:
-                case 14:
-                case 16:
-                    i = i3 * 53;
-                    j = UnsafeUtil.getLong(obj, offset);
-                    i2 = Internal.hashLong(j);
-                    i3 = i + i2;
-                    break;
-                case 4:
-                case 6:
-                case 11:
-                case 12:
-                case 13:
-                case 15:
-                    i = i3 * 53;
-                    i2 = UnsafeUtil.getInt(obj, offset);
-                    i3 = i + i2;
-                    break;
-                case 7:
-                    i = i3 * 53;
-                    z = UnsafeUtil.getBoolean(obj, offset);
-                    i2 = Internal.hashBoolean(z);
-                    i3 = i + i2;
-                    break;
-                case 8:
-                    i = i3 * 53;
-                    i2 = ((String) UnsafeUtil.getObject(obj, offset)).hashCode();
-                    i3 = i + i2;
-                    break;
-                case 9:
-                    object = UnsafeUtil.getObject(obj, offset);
-                    break;
-                case 10:
-                case 18:
-                case 19:
-                case 20:
-                case 21:
-                case 22:
-                case 23:
-                case 24:
-                case 25:
-                case 26:
-                case 27:
-                case 28:
-                case 29:
-                case 30:
-                case 31:
-                case 32:
-                case 33:
-                case 34:
-                case 35:
-                case 36:
-                case 37:
-                case 38:
-                case 39:
-                case 40:
-                case 41:
-                case 42:
-                case 43:
-                case 44:
-                case 45:
-                case 46:
-                case 47:
-                case 48:
-                case 49:
-                case 50:
-                    i = i3 * 53;
-                    object2 = UnsafeUtil.getObject(obj, offset);
-                    i2 = object2.hashCode();
-                    i3 = i + i2;
-                    break;
-                case 17:
-                    object = UnsafeUtil.getObject(obj, offset);
-                    break;
-                case 51:
-                    if (isOneofPresent(obj, numberAt, i4)) {
-                        i = i3 * 53;
-                        d = oneofDoubleAt(obj, offset);
-                        j = Double.doubleToLongBits(d);
-                        i2 = Internal.hashLong(j);
-                        i3 = i + i2;
-                        break;
-                    } else {
-                        break;
+    private void mergeFromHelper(UnknownFieldSchema unknownFieldSchema, ExtensionSchema extensionSchema, Object obj, Reader reader, ExtensionRegistryLite extensionRegistryLite) {
+        Object obj2 = null;
+        FieldSet fieldSet = null;
+        while (true) {
+            try {
+                int fieldNumber = reader.getFieldNumber();
+                int positionForFieldNumber = positionForFieldNumber(fieldNumber);
+                if (positionForFieldNumber >= 0) {
+                    int typeAndOffsetAt = typeAndOffsetAt(positionForFieldNumber);
+                    try {
+                        switch (type(typeAndOffsetAt)) {
+                            case 0:
+                                UnsafeUtil.putDouble(obj, offset(typeAndOffsetAt), reader.readDouble());
+                                setFieldPresent(obj, positionForFieldNumber);
+                                break;
+                            case 1:
+                                UnsafeUtil.putFloat(obj, offset(typeAndOffsetAt), reader.readFloat());
+                                setFieldPresent(obj, positionForFieldNumber);
+                                break;
+                            case 2:
+                                UnsafeUtil.putLong(obj, offset(typeAndOffsetAt), reader.readInt64());
+                                setFieldPresent(obj, positionForFieldNumber);
+                                break;
+                            case 3:
+                                UnsafeUtil.putLong(obj, offset(typeAndOffsetAt), reader.readUInt64());
+                                setFieldPresent(obj, positionForFieldNumber);
+                                break;
+                            case 4:
+                                UnsafeUtil.putInt(obj, offset(typeAndOffsetAt), reader.readInt32());
+                                setFieldPresent(obj, positionForFieldNumber);
+                                break;
+                            case 5:
+                                UnsafeUtil.putLong(obj, offset(typeAndOffsetAt), reader.readFixed64());
+                                setFieldPresent(obj, positionForFieldNumber);
+                                break;
+                            case 6:
+                                UnsafeUtil.putInt(obj, offset(typeAndOffsetAt), reader.readFixed32());
+                                setFieldPresent(obj, positionForFieldNumber);
+                                break;
+                            case 7:
+                                UnsafeUtil.putBoolean(obj, offset(typeAndOffsetAt), reader.readBool());
+                                setFieldPresent(obj, positionForFieldNumber);
+                                break;
+                            case 8:
+                                readString(obj, typeAndOffsetAt, reader);
+                                setFieldPresent(obj, positionForFieldNumber);
+                                break;
+                            case 9:
+                                if (isFieldPresent(obj, positionForFieldNumber)) {
+                                    UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), Internal.mergeMessage(UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)), reader.readMessageBySchemaWithCheck(getMessageFieldSchema(positionForFieldNumber), extensionRegistryLite)));
+                                    break;
+                                } else {
+                                    UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), reader.readMessageBySchemaWithCheck(getMessageFieldSchema(positionForFieldNumber), extensionRegistryLite));
+                                    setFieldPresent(obj, positionForFieldNumber);
+                                    break;
+                                }
+                            case 10:
+                                UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), reader.readBytes());
+                                setFieldPresent(obj, positionForFieldNumber);
+                                break;
+                            case 11:
+                                UnsafeUtil.putInt(obj, offset(typeAndOffsetAt), reader.readUInt32());
+                                setFieldPresent(obj, positionForFieldNumber);
+                                break;
+                            case 12:
+                                int readEnum = reader.readEnum();
+                                getEnumFieldVerifier(positionForFieldNumber);
+                                UnsafeUtil.putInt(obj, offset(typeAndOffsetAt), readEnum);
+                                setFieldPresent(obj, positionForFieldNumber);
+                                break;
+                            case 13:
+                                UnsafeUtil.putInt(obj, offset(typeAndOffsetAt), reader.readSFixed32());
+                                setFieldPresent(obj, positionForFieldNumber);
+                                break;
+                            case 14:
+                                UnsafeUtil.putLong(obj, offset(typeAndOffsetAt), reader.readSFixed64());
+                                setFieldPresent(obj, positionForFieldNumber);
+                                break;
+                            case 15:
+                                UnsafeUtil.putInt(obj, offset(typeAndOffsetAt), reader.readSInt32());
+                                setFieldPresent(obj, positionForFieldNumber);
+                                break;
+                            case 16:
+                                UnsafeUtil.putLong(obj, offset(typeAndOffsetAt), reader.readSInt64());
+                                setFieldPresent(obj, positionForFieldNumber);
+                                break;
+                            case 17:
+                                if (isFieldPresent(obj, positionForFieldNumber)) {
+                                    UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), Internal.mergeMessage(UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)), reader.readGroupBySchemaWithCheck(getMessageFieldSchema(positionForFieldNumber), extensionRegistryLite)));
+                                    break;
+                                } else {
+                                    UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), reader.readGroupBySchemaWithCheck(getMessageFieldSchema(positionForFieldNumber), extensionRegistryLite));
+                                    setFieldPresent(obj, positionForFieldNumber);
+                                    break;
+                                }
+                            case 18:
+                                reader.readDoubleList(this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt)));
+                                break;
+                            case 19:
+                                reader.readFloatList(this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt)));
+                                break;
+                            case 20:
+                                reader.readInt64List(this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt)));
+                                break;
+                            case 21:
+                                reader.readUInt64List(this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt)));
+                                break;
+                            case 22:
+                                reader.readInt32List(this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt)));
+                                break;
+                            case 23:
+                                reader.readFixed64List(this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt)));
+                                break;
+                            case 24:
+                                reader.readFixed32List(this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt)));
+                                break;
+                            case 25:
+                                reader.readBoolList(this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt)));
+                                break;
+                            case 26:
+                                readStringList(obj, typeAndOffsetAt, reader);
+                                break;
+                            case 27:
+                                readMessageList(obj, typeAndOffsetAt, reader, getMessageFieldSchema(positionForFieldNumber), extensionRegistryLite);
+                                break;
+                            case 28:
+                                reader.readBytesList(this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt)));
+                                break;
+                            case 29:
+                                reader.readUInt32List(this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt)));
+                                break;
+                            case 30:
+                                List mutableListAt = this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt));
+                                reader.readEnumList(mutableListAt);
+                                getEnumFieldVerifier(positionForFieldNumber);
+                                obj2 = SchemaUtil.filterUnknownEnumList(fieldNumber, mutableListAt, null, obj2, unknownFieldSchema);
+                                break;
+                            case 31:
+                                reader.readSFixed32List(this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt)));
+                                break;
+                            case 32:
+                                reader.readSFixed64List(this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt)));
+                                break;
+                            case 33:
+                                reader.readSInt32List(this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt)));
+                                break;
+                            case 34:
+                                reader.readSInt64List(this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt)));
+                                break;
+                            case 35:
+                                reader.readDoubleList(this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt)));
+                                break;
+                            case 36:
+                                reader.readFloatList(this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt)));
+                                break;
+                            case 37:
+                                reader.readInt64List(this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt)));
+                                break;
+                            case 38:
+                                reader.readUInt64List(this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt)));
+                                break;
+                            case 39:
+                                reader.readInt32List(this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt)));
+                                break;
+                            case 40:
+                                reader.readFixed64List(this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt)));
+                                break;
+                            case 41:
+                                reader.readFixed32List(this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt)));
+                                break;
+                            case 42:
+                                reader.readBoolList(this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt)));
+                                break;
+                            case 43:
+                                reader.readUInt32List(this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt)));
+                                break;
+                            case 44:
+                                List mutableListAt2 = this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt));
+                                reader.readEnumList(mutableListAt2);
+                                getEnumFieldVerifier(positionForFieldNumber);
+                                obj2 = SchemaUtil.filterUnknownEnumList(fieldNumber, mutableListAt2, null, obj2, unknownFieldSchema);
+                                break;
+                            case 45:
+                                reader.readSFixed32List(this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt)));
+                                break;
+                            case 46:
+                                reader.readSFixed64List(this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt)));
+                                break;
+                            case 47:
+                                reader.readSInt32List(this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt)));
+                                break;
+                            case 48:
+                                reader.readSInt64List(this.listFieldSchema.mutableListAt(obj, offset(typeAndOffsetAt)));
+                                break;
+                            case 49:
+                                readGroupList(obj, offset(typeAndOffsetAt), reader, getMessageFieldSchema(positionForFieldNumber), extensionRegistryLite);
+                                break;
+                            case 50:
+                                mergeMap(obj, positionForFieldNumber, getMapFieldDefaultEntry(positionForFieldNumber), extensionRegistryLite, reader);
+                                break;
+                            case 51:
+                                UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), Double.valueOf(reader.readDouble()));
+                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
+                                break;
+                            case 52:
+                                UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), Float.valueOf(reader.readFloat()));
+                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
+                                break;
+                            case 53:
+                                UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), Long.valueOf(reader.readInt64()));
+                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
+                                break;
+                            case 54:
+                                UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), Long.valueOf(reader.readUInt64()));
+                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
+                                break;
+                            case 55:
+                                UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), Integer.valueOf(reader.readInt32()));
+                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
+                                break;
+                            case 56:
+                                UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), Long.valueOf(reader.readFixed64()));
+                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
+                                break;
+                            case 57:
+                                UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), Integer.valueOf(reader.readFixed32()));
+                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
+                                break;
+                            case 58:
+                                UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), Boolean.valueOf(reader.readBool()));
+                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
+                                break;
+                            case 59:
+                                readString(obj, typeAndOffsetAt, reader);
+                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
+                                break;
+                            case 60:
+                                if (isOneofPresent(obj, fieldNumber, positionForFieldNumber)) {
+                                    UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), Internal.mergeMessage(UnsafeUtil.getObject(obj, offset(typeAndOffsetAt)), reader.readMessageBySchemaWithCheck(getMessageFieldSchema(positionForFieldNumber), extensionRegistryLite)));
+                                } else {
+                                    UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), reader.readMessageBySchemaWithCheck(getMessageFieldSchema(positionForFieldNumber), extensionRegistryLite));
+                                    setFieldPresent(obj, positionForFieldNumber);
+                                }
+                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
+                                break;
+                            case 61:
+                                UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), reader.readBytes());
+                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
+                                break;
+                            case 62:
+                                UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), Integer.valueOf(reader.readUInt32()));
+                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
+                                break;
+                            case 63:
+                                int readEnum2 = reader.readEnum();
+                                getEnumFieldVerifier(positionForFieldNumber);
+                                UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), Integer.valueOf(readEnum2));
+                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
+                                break;
+                            case 64:
+                                UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), Integer.valueOf(reader.readSFixed32()));
+                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
+                                break;
+                            case 65:
+                                UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), Long.valueOf(reader.readSFixed64()));
+                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
+                                break;
+                            case 66:
+                                UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), Integer.valueOf(reader.readSInt32()));
+                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
+                                break;
+                            case 67:
+                                UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), Long.valueOf(reader.readSInt64()));
+                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
+                                break;
+                            case 68:
+                                UnsafeUtil.putObject(obj, offset(typeAndOffsetAt), reader.readGroupBySchemaWithCheck(getMessageFieldSchema(positionForFieldNumber), extensionRegistryLite));
+                                setOneofPresent(obj, fieldNumber, positionForFieldNumber);
+                                break;
+                            default:
+                                if (obj2 == null) {
+                                    obj2 = unknownFieldSchema.newBuilder();
+                                }
+                                if (!unknownFieldSchema.mergeOneFieldFrom(obj2, reader)) {
+                                    for (int i = this.checkInitializedCount; i < this.repeatedFieldOffsetStart; i++) {
+                                        obj2 = filterMapUnknownEnumValues(obj, this.intArray[i], obj2, unknownFieldSchema);
+                                    }
+                                    if (obj2 != null) {
+                                        unknownFieldSchema.setBuilderToMessage(obj, obj2);
+                                        return;
+                                    }
+                                    return;
+                                }
+                                break;
+                        }
+                    } catch (InvalidProtocolBufferException.InvalidWireTypeException unused) {
+                        if (!unknownFieldSchema.shouldDiscardUnknownFields(reader)) {
+                            if (obj2 == null) {
+                                obj2 = unknownFieldSchema.getBuilderFromMessage(obj);
+                            }
+                            if (!unknownFieldSchema.mergeOneFieldFrom(obj2, reader)) {
+                                for (int i2 = this.checkInitializedCount; i2 < this.repeatedFieldOffsetStart; i2++) {
+                                    obj2 = filterMapUnknownEnumValues(obj, this.intArray[i2], obj2, unknownFieldSchema);
+                                }
+                                if (obj2 != null) {
+                                    unknownFieldSchema.setBuilderToMessage(obj, obj2);
+                                    return;
+                                }
+                                return;
+                            }
+                        } else if (!reader.skipField()) {
+                            for (int i3 = this.checkInitializedCount; i3 < this.repeatedFieldOffsetStart; i3++) {
+                                obj2 = filterMapUnknownEnumValues(obj, this.intArray[i3], obj2, unknownFieldSchema);
+                            }
+                            if (obj2 != null) {
+                                unknownFieldSchema.setBuilderToMessage(obj, obj2);
+                                return;
+                            }
+                            return;
+                        }
                     }
-                case 52:
-                    if (isOneofPresent(obj, numberAt, i4)) {
-                        i = i3 * 53;
-                        f = oneofFloatAt(obj, offset);
-                        i2 = Float.floatToIntBits(f);
-                        i3 = i + i2;
-                        break;
-                    } else {
-                        break;
+                } else {
+                    if (fieldNumber == Integer.MAX_VALUE) {
+                        for (int i4 = this.checkInitializedCount; i4 < this.repeatedFieldOffsetStart; i4++) {
+                            obj2 = filterMapUnknownEnumValues(obj, this.intArray[i4], obj2, unknownFieldSchema);
+                        }
+                        if (obj2 != null) {
+                            unknownFieldSchema.setBuilderToMessage(obj, obj2);
+                            return;
+                        }
+                        return;
                     }
-                case 53:
-                    if (!isOneofPresent(obj, numberAt, i4)) {
-                        break;
+                    Object findExtensionByNumber = !this.hasExtensions ? null : extensionSchema.findExtensionByNumber(extensionRegistryLite, this.defaultInstance, fieldNumber);
+                    if (findExtensionByNumber != null) {
+                        if (fieldSet == null) {
+                            fieldSet = extensionSchema.getMutableExtensions(obj);
+                        }
+                        obj2 = extensionSchema.parseExtension(reader, findExtensionByNumber, extensionRegistryLite, fieldSet, obj2, unknownFieldSchema);
+                    } else if (!unknownFieldSchema.shouldDiscardUnknownFields(reader)) {
+                        if (obj2 == null) {
+                            obj2 = unknownFieldSchema.getBuilderFromMessage(obj);
+                        }
+                        if (unknownFieldSchema.mergeOneFieldFrom(obj2, reader)) {
+                        }
+                    } else if (reader.skipField()) {
                     }
-                    i = i3 * 53;
-                    j = oneofLongAt(obj, offset);
-                    i2 = Internal.hashLong(j);
-                    i3 = i + i2;
-                    break;
-                case 54:
-                    if (!isOneofPresent(obj, numberAt, i4)) {
-                        break;
-                    }
-                    i = i3 * 53;
-                    j = oneofLongAt(obj, offset);
-                    i2 = Internal.hashLong(j);
-                    i3 = i + i2;
-                    break;
-                case 55:
-                    if (!isOneofPresent(obj, numberAt, i4)) {
-                        break;
-                    }
-                    i = i3 * 53;
-                    i2 = oneofIntAt(obj, offset);
-                    i3 = i + i2;
-                    break;
-                case 56:
-                    if (!isOneofPresent(obj, numberAt, i4)) {
-                        break;
-                    }
-                    i = i3 * 53;
-                    j = oneofLongAt(obj, offset);
-                    i2 = Internal.hashLong(j);
-                    i3 = i + i2;
-                    break;
-                case 57:
-                    if (!isOneofPresent(obj, numberAt, i4)) {
-                        break;
-                    }
-                    i = i3 * 53;
-                    i2 = oneofIntAt(obj, offset);
-                    i3 = i + i2;
-                    break;
-                case 58:
-                    if (isOneofPresent(obj, numberAt, i4)) {
-                        i = i3 * 53;
-                        z = oneofBooleanAt(obj, offset);
-                        i2 = Internal.hashBoolean(z);
-                        i3 = i + i2;
-                        break;
-                    } else {
-                        break;
-                    }
-                case 59:
-                    if (!isOneofPresent(obj, numberAt, i4)) {
-                        break;
-                    }
-                    i = i3 * 53;
-                    i2 = ((String) UnsafeUtil.getObject(obj, offset)).hashCode();
-                    i3 = i + i2;
-                    break;
-                case 60:
-                    if (!isOneofPresent(obj, numberAt, i4)) {
-                        break;
-                    }
-                    object2 = UnsafeUtil.getObject(obj, offset);
-                    i = i3 * 53;
-                    i2 = object2.hashCode();
-                    i3 = i + i2;
-                    break;
-                case 61:
-                    if (!isOneofPresent(obj, numberAt, i4)) {
-                        break;
-                    }
-                    i = i3 * 53;
-                    object2 = UnsafeUtil.getObject(obj, offset);
-                    i2 = object2.hashCode();
-                    i3 = i + i2;
-                    break;
-                case 62:
-                    if (!isOneofPresent(obj, numberAt, i4)) {
-                        break;
-                    }
-                    i = i3 * 53;
-                    i2 = oneofIntAt(obj, offset);
-                    i3 = i + i2;
-                    break;
-                case 63:
-                    if (!isOneofPresent(obj, numberAt, i4)) {
-                        break;
-                    }
-                    i = i3 * 53;
-                    i2 = oneofIntAt(obj, offset);
-                    i3 = i + i2;
-                    break;
-                case 64:
-                    if (!isOneofPresent(obj, numberAt, i4)) {
-                        break;
-                    }
-                    i = i3 * 53;
-                    i2 = oneofIntAt(obj, offset);
-                    i3 = i + i2;
-                    break;
-                case 65:
-                    if (!isOneofPresent(obj, numberAt, i4)) {
-                        break;
-                    }
-                    i = i3 * 53;
-                    j = oneofLongAt(obj, offset);
-                    i2 = Internal.hashLong(j);
-                    i3 = i + i2;
-                    break;
-                case 66:
-                    if (!isOneofPresent(obj, numberAt, i4)) {
-                        break;
-                    }
-                    i = i3 * 53;
-                    i2 = oneofIntAt(obj, offset);
-                    i3 = i + i2;
-                    break;
-                case 67:
-                    if (!isOneofPresent(obj, numberAt, i4)) {
-                        break;
-                    }
-                    i = i3 * 53;
-                    j = oneofLongAt(obj, offset);
-                    i2 = Internal.hashLong(j);
-                    i3 = i + i2;
-                    break;
-                case 68:
-                    if (!isOneofPresent(obj, numberAt, i4)) {
-                        break;
-                    }
-                    object2 = UnsafeUtil.getObject(obj, offset);
-                    i = i3 * 53;
-                    i2 = object2.hashCode();
-                    i3 = i + i2;
-                    break;
+                }
+            } catch (Throwable th) {
+                for (int i5 = this.checkInitializedCount; i5 < this.repeatedFieldOffsetStart; i5++) {
+                    obj2 = filterMapUnknownEnumValues(obj, this.intArray[i5], obj2, unknownFieldSchema);
+                }
+                if (obj2 != null) {
+                    unknownFieldSchema.setBuilderToMessage(obj, obj2);
+                }
+                throw th;
             }
         }
-        int hashCode = (i3 * 53) + this.unknownFieldSchema.getFromMessage(obj).hashCode();
-        return this.hasExtensions ? (hashCode * 53) + this.extensionSchema.getExtensions(obj).hashCode() : hashCode;
     }
 
-    @Override // androidx.datastore.preferences.protobuf.Schema
-    public final boolean isInitialized(Object obj) {
-        int i;
-        int i2 = -1;
-        int i3 = 0;
-        for (int i4 = 0; i4 < this.checkInitializedCount; i4++) {
-            int i5 = this.intArray[i4];
-            int numberAt = numberAt(i5);
-            int typeAndOffsetAt = typeAndOffsetAt(i5);
-            if (this.proto3) {
-                i = 0;
-            } else {
-                int i6 = this.buffer[i5 + 2];
-                int i7 = 1048575 & i6;
-                i = 1 << (i6 >>> 20);
-                if (i7 != i2) {
-                    i3 = UNSAFE.getInt(obj, i7);
-                    i2 = i7;
-                }
-            }
-            if (isRequired(typeAndOffsetAt) && !isFieldPresent(obj, i5, i3, i)) {
-                return false;
-            }
-            int type = type(typeAndOffsetAt);
-            if (type != 9 && type != 17) {
-                if (type != 27) {
-                    if (type == 60 || type == 68) {
-                        if (isOneofPresent(obj, numberAt, i5) && !isInitialized(obj, typeAndOffsetAt, getMessageFieldSchema(i5))) {
-                            return false;
-                        }
-                    } else if (type != 49) {
-                        if (type == 50 && !isMapInitialized(obj, typeAndOffsetAt, i5)) {
-                            return false;
-                        }
-                    }
-                }
-                if (!isListInitialized(obj, typeAndOffsetAt, i5)) {
-                    return false;
-                }
-            } else if (isFieldPresent(obj, i5, i3, i) && !isInitialized(obj, typeAndOffsetAt, getMessageFieldSchema(i5))) {
-                return false;
-            }
+    private Schema getMessageFieldSchema(int i) {
+        int i2 = (i / 3) * 2;
+        Schema schema = (Schema) this.objects[i2];
+        if (schema != null) {
+            return schema;
         }
-        return !this.hasExtensions || this.extensionSchema.getExtensions(obj).isInitialized();
+        Schema schemaFor = Protobuf.getInstance().schemaFor((Class) this.objects[i2 + 1]);
+        this.objects[i2] = schemaFor;
+        return schemaFor;
+    }
+
+    private Object getMapFieldDefaultEntry(int i) {
+        return this.objects[(i / 3) * 2];
+    }
+
+    private Internal.EnumVerifier getEnumFieldVerifier(int i) {
+        WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(this.objects[((i / 3) * 2) + 1]);
+        return null;
     }
 
     @Override // androidx.datastore.preferences.protobuf.Schema
@@ -4364,40 +4088,313 @@ final class MessageSchema implements Schema {
         }
     }
 
-    @Override // androidx.datastore.preferences.protobuf.Schema
-    public void mergeFrom(Object obj, Reader reader, ExtensionRegistryLite extensionRegistryLite) {
-        extensionRegistryLite.getClass();
-        mergeFromHelper(this.unknownFieldSchema, this.extensionSchema, obj, reader, extensionRegistryLite);
+    private final void mergeMap(Object obj, int i, Object obj2, ExtensionRegistryLite extensionRegistryLite, Reader reader) {
+        long offset = offset(typeAndOffsetAt(i));
+        Object object = UnsafeUtil.getObject(obj, offset);
+        if (object == null) {
+            object = this.mapFieldSchema.newMapField(obj2);
+            UnsafeUtil.putObject(obj, offset, object);
+        } else if (this.mapFieldSchema.isImmutable(object)) {
+            Object newMapField = this.mapFieldSchema.newMapField(obj2);
+            this.mapFieldSchema.mergeFrom(newMapField, object);
+            UnsafeUtil.putObject(obj, offset, newMapField);
+            object = newMapField;
+        }
+        reader.readMap(this.mapFieldSchema.forMutableMapData(object), this.mapFieldSchema.forMapMetadata(obj2), extensionRegistryLite);
+    }
+
+    private final Object filterMapUnknownEnumValues(Object obj, int i, Object obj2, UnknownFieldSchema unknownFieldSchema) {
+        numberAt(i);
+        if (UnsafeUtil.getObject(obj, offset(typeAndOffsetAt(i))) == null) {
+            return obj2;
+        }
+        getEnumFieldVerifier(i);
+        return obj2;
     }
 
     @Override // androidx.datastore.preferences.protobuf.Schema
-    public void mergeFrom(Object obj, Object obj2) {
-        obj2.getClass();
-        for (int i = 0; i < this.buffer.length; i += 3) {
-            mergeSingleField(obj, obj2, i);
+    public final boolean isInitialized(Object obj) {
+        int i;
+        int i2 = -1;
+        int i3 = 0;
+        for (int i4 = 0; i4 < this.checkInitializedCount; i4++) {
+            int i5 = this.intArray[i4];
+            int numberAt = numberAt(i5);
+            int typeAndOffsetAt = typeAndOffsetAt(i5);
+            if (this.proto3) {
+                i = 0;
+            } else {
+                int i6 = this.buffer[i5 + 2];
+                int i7 = 1048575 & i6;
+                i = 1 << (i6 >>> 20);
+                if (i7 != i2) {
+                    i3 = UNSAFE.getInt(obj, i7);
+                    i2 = i7;
+                }
+            }
+            if (isRequired(typeAndOffsetAt) && !isFieldPresent(obj, i5, i3, i)) {
+                return false;
+            }
+            int type = type(typeAndOffsetAt);
+            if (type == 9 || type == 17) {
+                if (isFieldPresent(obj, i5, i3, i) && !isInitialized(obj, typeAndOffsetAt, getMessageFieldSchema(i5))) {
+                    return false;
+                }
+            } else {
+                if (type != 27) {
+                    if (type == 60 || type == 68) {
+                        if (isOneofPresent(obj, numberAt, i5) && !isInitialized(obj, typeAndOffsetAt, getMessageFieldSchema(i5))) {
+                            return false;
+                        }
+                    } else if (type != 49) {
+                        if (type == 50 && !isMapInitialized(obj, typeAndOffsetAt, i5)) {
+                            return false;
+                        }
+                    }
+                }
+                if (!isListInitialized(obj, typeAndOffsetAt, i5)) {
+                    return false;
+                }
+            }
         }
+        return !this.hasExtensions || this.extensionSchema.getExtensions(obj).isInitialized();
+    }
+
+    private static boolean isInitialized(Object obj, int i, Schema schema) {
+        return schema.isInitialized(UnsafeUtil.getObject(obj, offset(i)));
+    }
+
+    private boolean isListInitialized(Object obj, int i, int i2) {
+        List list = (List) UnsafeUtil.getObject(obj, offset(i));
+        if (list.isEmpty()) {
+            return true;
+        }
+        Schema messageFieldSchema = getMessageFieldSchema(i2);
+        for (int i3 = 0; i3 < list.size(); i3++) {
+            if (!messageFieldSchema.isInitialized(list.get(i3))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private boolean isMapInitialized(Object obj, int i, int i2) {
+        Map forMapData = this.mapFieldSchema.forMapData(UnsafeUtil.getObject(obj, offset(i)));
+        if (forMapData.isEmpty()) {
+            return true;
+        }
+        if (this.mapFieldSchema.forMapMetadata(getMapFieldDefaultEntry(i2)).valueType.getJavaType() != WireFormat.JavaType.MESSAGE) {
+            return true;
+        }
+        Schema schema = null;
+        for (Object obj2 : forMapData.values()) {
+            if (schema == null) {
+                schema = Protobuf.getInstance().schemaFor((Class) obj2.getClass());
+            }
+            if (!schema.isInitialized(obj2)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private void writeString(int i, Object obj, Writer writer) {
+        if (obj instanceof String) {
+            writer.writeString(i, (String) obj);
+        } else {
+            writer.writeBytes(i, (ByteString) obj);
+        }
+    }
+
+    private void readString(Object obj, int i, Reader reader) {
+        if (isEnforceUtf8(i)) {
+            UnsafeUtil.putObject(obj, offset(i), reader.readStringRequireUtf8());
+        } else if (this.lite) {
+            UnsafeUtil.putObject(obj, offset(i), reader.readString());
+        } else {
+            UnsafeUtil.putObject(obj, offset(i), reader.readBytes());
+        }
+    }
+
+    private void readStringList(Object obj, int i, Reader reader) {
+        if (isEnforceUtf8(i)) {
+            reader.readStringListRequireUtf8(this.listFieldSchema.mutableListAt(obj, offset(i)));
+        } else {
+            reader.readStringList(this.listFieldSchema.mutableListAt(obj, offset(i)));
+        }
+    }
+
+    private void readMessageList(Object obj, int i, Reader reader, Schema schema, ExtensionRegistryLite extensionRegistryLite) {
+        reader.readMessageList(this.listFieldSchema.mutableListAt(obj, offset(i)), schema, extensionRegistryLite);
+    }
+
+    private void readGroupList(Object obj, long j, Reader reader, Schema schema, ExtensionRegistryLite extensionRegistryLite) {
+        reader.readGroupList(this.listFieldSchema.mutableListAt(obj, j), schema, extensionRegistryLite);
+    }
+
+    private int numberAt(int i) {
+        return this.buffer[i];
+    }
+
+    private int typeAndOffsetAt(int i) {
+        return this.buffer[i + 1];
+    }
+
+    private int presenceMaskAndOffsetAt(int i) {
+        return this.buffer[i + 2];
+    }
+
+    private static double doubleAt(Object obj, long j) {
+        return UnsafeUtil.getDouble(obj, j);
+    }
+
+    private static float floatAt(Object obj, long j) {
+        return UnsafeUtil.getFloat(obj, j);
+    }
+
+    private static int intAt(Object obj, long j) {
+        return UnsafeUtil.getInt(obj, j);
+    }
+
+    private static long longAt(Object obj, long j) {
+        return UnsafeUtil.getLong(obj, j);
+    }
+
+    private static boolean booleanAt(Object obj, long j) {
+        return UnsafeUtil.getBoolean(obj, j);
+    }
+
+    private static double oneofDoubleAt(Object obj, long j) {
+        return ((Double) UnsafeUtil.getObject(obj, j)).doubleValue();
+    }
+
+    private static float oneofFloatAt(Object obj, long j) {
+        return ((Float) UnsafeUtil.getObject(obj, j)).floatValue();
+    }
+
+    private static int oneofIntAt(Object obj, long j) {
+        return ((Integer) UnsafeUtil.getObject(obj, j)).intValue();
+    }
+
+    private static long oneofLongAt(Object obj, long j) {
+        return ((Long) UnsafeUtil.getObject(obj, j)).longValue();
+    }
+
+    private static boolean oneofBooleanAt(Object obj, long j) {
+        return ((Boolean) UnsafeUtil.getObject(obj, j)).booleanValue();
+    }
+
+    private boolean arePresentForEquals(Object obj, Object obj2, int i) {
+        return isFieldPresent(obj, i) == isFieldPresent(obj2, i);
+    }
+
+    private boolean isFieldPresent(Object obj, int i, int i2, int i3) {
+        if (this.proto3) {
+            return isFieldPresent(obj, i);
+        }
+        return (i2 & i3) != 0;
+    }
+
+    private boolean isFieldPresent(Object obj, int i) {
+        if (this.proto3) {
+            int typeAndOffsetAt = typeAndOffsetAt(i);
+            long offset = offset(typeAndOffsetAt);
+            switch (type(typeAndOffsetAt)) {
+                case 0:
+                    return UnsafeUtil.getDouble(obj, offset) != 0.0d;
+                case 1:
+                    return UnsafeUtil.getFloat(obj, offset) != 0.0f;
+                case 2:
+                    return UnsafeUtil.getLong(obj, offset) != 0;
+                case 3:
+                    return UnsafeUtil.getLong(obj, offset) != 0;
+                case 4:
+                    return UnsafeUtil.getInt(obj, offset) != 0;
+                case 5:
+                    return UnsafeUtil.getLong(obj, offset) != 0;
+                case 6:
+                    return UnsafeUtil.getInt(obj, offset) != 0;
+                case 7:
+                    return UnsafeUtil.getBoolean(obj, offset);
+                case 8:
+                    Object object = UnsafeUtil.getObject(obj, offset);
+                    if (object instanceof String) {
+                        return !((String) object).isEmpty();
+                    }
+                    if (object instanceof ByteString) {
+                        return !ByteString.EMPTY.equals(object);
+                    }
+                    throw new IllegalArgumentException();
+                case 9:
+                    return UnsafeUtil.getObject(obj, offset) != null;
+                case 10:
+                    return !ByteString.EMPTY.equals(UnsafeUtil.getObject(obj, offset));
+                case 11:
+                    return UnsafeUtil.getInt(obj, offset) != 0;
+                case 12:
+                    return UnsafeUtil.getInt(obj, offset) != 0;
+                case 13:
+                    return UnsafeUtil.getInt(obj, offset) != 0;
+                case 14:
+                    return UnsafeUtil.getLong(obj, offset) != 0;
+                case 15:
+                    return UnsafeUtil.getInt(obj, offset) != 0;
+                case 16:
+                    return UnsafeUtil.getLong(obj, offset) != 0;
+                case 17:
+                    return UnsafeUtil.getObject(obj, offset) != null;
+                default:
+                    throw new IllegalArgumentException();
+            }
+        }
+        int presenceMaskAndOffsetAt = presenceMaskAndOffsetAt(i);
+        return (UnsafeUtil.getInt(obj, (long) (presenceMaskAndOffsetAt & 1048575)) & (1 << (presenceMaskAndOffsetAt >>> 20))) != 0;
+    }
+
+    private void setFieldPresent(Object obj, int i) {
         if (this.proto3) {
             return;
         }
-        SchemaUtil.mergeUnknownFields(this.unknownFieldSchema, obj, obj2);
-        if (this.hasExtensions) {
-            SchemaUtil.mergeExtensions(this.extensionSchema, obj, obj2);
-        }
+        int presenceMaskAndOffsetAt = presenceMaskAndOffsetAt(i);
+        long j = presenceMaskAndOffsetAt & 1048575;
+        UnsafeUtil.putInt(obj, j, UnsafeUtil.getInt(obj, j) | (1 << (presenceMaskAndOffsetAt >>> 20)));
     }
 
-    @Override // androidx.datastore.preferences.protobuf.Schema
-    public Object newInstance() {
-        return this.newInstanceSchema.newInstance(this.defaultInstance);
+    private boolean isOneofPresent(Object obj, int i, int i2) {
+        return UnsafeUtil.getInt(obj, (long) (presenceMaskAndOffsetAt(i2) & 1048575)) == i;
     }
 
-    @Override // androidx.datastore.preferences.protobuf.Schema
-    public void writeTo(Object obj, Writer writer) {
-        if (writer.fieldOrder() == Writer.FieldOrder.DESCENDING) {
-            writeFieldsInDescendingOrder(obj, writer);
-        } else if (this.proto3) {
-            writeFieldsInAscendingOrderProto3(obj, writer);
-        } else {
-            writeFieldsInAscendingOrderProto2(obj, writer);
+    private boolean isOneofCaseEqual(Object obj, Object obj2, int i) {
+        long presenceMaskAndOffsetAt = presenceMaskAndOffsetAt(i) & 1048575;
+        return UnsafeUtil.getInt(obj, presenceMaskAndOffsetAt) == UnsafeUtil.getInt(obj2, presenceMaskAndOffsetAt);
+    }
+
+    private void setOneofPresent(Object obj, int i, int i2) {
+        UnsafeUtil.putInt(obj, presenceMaskAndOffsetAt(i2) & 1048575, i);
+    }
+
+    private int positionForFieldNumber(int i) {
+        if (i < this.minFieldNumber || i > this.maxFieldNumber) {
+            return -1;
         }
+        return slowPositionForFieldNumber(i, 0);
+    }
+
+    private int slowPositionForFieldNumber(int i, int i2) {
+        int length = (this.buffer.length / 3) - 1;
+        while (i2 <= length) {
+            int i3 = (length + i2) >>> 1;
+            int i4 = i3 * 3;
+            int numberAt = numberAt(i4);
+            if (i == numberAt) {
+                return i4;
+            }
+            if (i < numberAt) {
+                length = i3 - 1;
+            } else {
+                i2 = i3 + 1;
+            }
+        }
+        return -1;
     }
 }

@@ -6,6 +6,11 @@ import android.media.session.MediaSessionManager;
 final class MediaSessionManagerImplApi28$RemoteUserInfoImplApi28 extends MediaSessionManagerImplBase$RemoteUserInfoImplBase {
     final MediaSessionManager.RemoteUserInfo mObject;
 
+    MediaSessionManagerImplApi28$RemoteUserInfoImplApi28(String str, int i, int i2) {
+        super(str, i, i2);
+        this.mObject = MediaSessionManagerImplApi28$RemoteUserInfoImplApi28$$ExternalSyntheticApiModelOutline0.m(str, i, i2);
+    }
+
     /* JADX WARN: Illegal instructions before constructor call */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -19,11 +24,6 @@ final class MediaSessionManagerImplApi28$RemoteUserInfoImplApi28 extends MediaSe
         pid = remoteUserInfo.getPid();
         uid = remoteUserInfo.getUid();
         this.mObject = remoteUserInfo;
-    }
-
-    MediaSessionManagerImplApi28$RemoteUserInfoImplApi28(String str, int i, int i2) {
-        super(str, i, i2);
-        this.mObject = new MediaSessionManager.RemoteUserInfo(str, i, i2);
     }
 
     static String getPackageName(MediaSessionManager.RemoteUserInfo remoteUserInfo) {

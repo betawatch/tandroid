@@ -8,7 +8,7 @@ import java.lang.Thread;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 class UncaughtExceptionHandler implements Thread.UncaughtExceptionHandler {
     private final Channel mChannel;
     private Thread.UncaughtExceptionHandler mDefaultUncaughtExceptionHandler;
@@ -17,11 +17,6 @@ class UncaughtExceptionHandler implements Thread.UncaughtExceptionHandler {
     UncaughtExceptionHandler(Handler handler, Channel channel) {
         this.mHandler = handler;
         this.mChannel = channel;
-    }
-
-    void register() {
-        this.mDefaultUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
-        Thread.setDefaultUncaughtExceptionHandler(this);
     }
 
     @Override // java.lang.Thread.UncaughtExceptionHandler
@@ -50,5 +45,10 @@ class UncaughtExceptionHandler implements Thread.UncaughtExceptionHandler {
         } else {
             ShutdownHelper.shutdown(10);
         }
+    }
+
+    void register() {
+        this.mDefaultUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
+        Thread.setDefaultUncaughtExceptionHandler(this);
     }
 }

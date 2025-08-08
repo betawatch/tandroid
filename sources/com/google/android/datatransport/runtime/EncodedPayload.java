@@ -19,6 +19,14 @@ public final class EncodedPayload {
         this.bytes = bArr;
     }
 
+    public Encoding getEncoding() {
+        return this.encoding;
+    }
+
+    public byte[] getBytes() {
+        return this.bytes;
+    }
+
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -31,14 +39,6 @@ public final class EncodedPayload {
             return Arrays.equals(this.bytes, encodedPayload.bytes);
         }
         return false;
-    }
-
-    public byte[] getBytes() {
-        return this.bytes;
-    }
-
-    public Encoding getEncoding() {
-        return this.encoding;
     }
 
     public int hashCode() {

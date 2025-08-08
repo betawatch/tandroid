@@ -4,9 +4,25 @@ import com.google.firebase.crashlytics.internal.common.CurrentTimeProvider;
 import com.google.firebase.crashlytics.internal.settings.Settings;
 import org.json.JSONObject;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 class SettingsV3JsonTransform implements SettingsJsonTransform {
     SettingsV3JsonTransform() {
+    }
+
+    @Override // com.google.firebase.crashlytics.internal.settings.SettingsJsonTransform
+    public Settings buildFromJson(CurrentTimeProvider currentTimeProvider, JSONObject jSONObject) {
+        Settings.SessionData buildSessionDataFrom;
+        int optInt = jSONObject.optInt("settings_version", 0);
+        int optInt2 = jSONObject.optInt("cache_duration", 3600);
+        double optDouble = jSONObject.optDouble("on_demand_upload_rate_per_minute", 10.0d);
+        double optDouble2 = jSONObject.optDouble("on_demand_backoff_base", 1.2d);
+        int optInt3 = jSONObject.optInt("on_demand_backoff_step_duration_seconds", 60);
+        if (jSONObject.has("session")) {
+            buildSessionDataFrom = buildSessionDataFrom(jSONObject.getJSONObject("session"));
+        } else {
+            buildSessionDataFrom = buildSessionDataFrom(new JSONObject());
+        }
+        return new Settings(getExpiresAtFrom(currentTimeProvider, optInt2, jSONObject), buildSessionDataFrom, buildFeatureFlagDataFrom(jSONObject.getJSONObject("features")), optInt, optInt2, optDouble, optDouble2, optInt3);
     }
 
     private static Settings.FeatureFlagData buildFeatureFlagDataFrom(JSONObject jSONObject) {
@@ -21,13 +37,6 @@ class SettingsV3JsonTransform implements SettingsJsonTransform {
         if (jSONObject.has("expires_at")) {
             return jSONObject.optLong("expires_at");
         }
-        return (j * 1000) + currentTimeProvider.getCurrentTimeMillis();
-    }
-
-    @Override // com.google.firebase.crashlytics.internal.settings.SettingsJsonTransform
-    public Settings buildFromJson(CurrentTimeProvider currentTimeProvider, JSONObject jSONObject) {
-        int optInt = jSONObject.optInt("settings_version", 0);
-        int optInt2 = jSONObject.optInt("cache_duration", 3600);
-        return new Settings(getExpiresAtFrom(currentTimeProvider, optInt2, jSONObject), buildSessionDataFrom(jSONObject.has("session") ? jSONObject.getJSONObject("session") : new JSONObject()), buildFeatureFlagDataFrom(jSONObject.getJSONObject("features")), optInt, optInt2, jSONObject.optDouble("on_demand_upload_rate_per_minute", 10.0d), jSONObject.optDouble("on_demand_backoff_base", 1.2d), jSONObject.optInt("on_demand_backoff_step_duration_seconds", 60));
+        return currentTimeProvider.getCurrentTimeMillis() + (j * 1000);
     }
 }

@@ -18,12 +18,6 @@ abstract class ResourcesFlusher {
     private static Field sThemedResourceCache_mUnthemedEntriesField;
     private static boolean sThemedResourceCache_mUnthemedEntriesFieldFetched;
 
-    static class Api16Impl {
-        static void clear(LongSparseArray longSparseArray) {
-            longSparseArray.clear();
-        }
-    }
-
     static void flush(Resources resources) {
         int i = Build.VERSION.SDK_INT;
         if (i >= 28) {
@@ -33,7 +27,7 @@ abstract class ResourcesFlusher {
             flushNougats(resources);
         } else if (i >= 23) {
             flushMarshmallows(resources);
-        } else if (i >= 21) {
+        } else {
             flushLollipops(resources);
         }
     }
@@ -184,6 +178,12 @@ abstract class ResourcesFlusher {
         }
         if (longSparseArray != null) {
             Api16Impl.clear(longSparseArray);
+        }
+    }
+
+    static class Api16Impl {
+        static void clear(LongSparseArray longSparseArray) {
+            longSparseArray.clear();
         }
     }
 }

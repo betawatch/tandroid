@@ -11,26 +11,26 @@ import androidx.core.util.Preconditions;
 /* loaded from: classes.dex */
 public abstract class FontsContractCompat {
 
-    public static class FontFamilyResult {
-        private final FontInfo[] mFonts;
-        private final int mStatusCode;
+    public static class FontRequestCallback {
+        public abstract void onTypefaceRequestFailed(int i);
 
-        public FontFamilyResult(int i, FontInfo[] fontInfoArr) {
-            this.mStatusCode = i;
-            this.mFonts = fontInfoArr;
-        }
+        public abstract void onTypefaceRetrieved(Typeface typeface);
+    }
 
-        static FontFamilyResult create(int i, FontInfo[] fontInfoArr) {
-            return new FontFamilyResult(i, fontInfoArr);
-        }
+    public static Typeface buildTypeface(Context context, CancellationSignal cancellationSignal, FontInfo[] fontInfoArr) {
+        return TypefaceCompat.createFromFontInfo(context, cancellationSignal, fontInfoArr, 0);
+    }
 
-        public FontInfo[] getFonts() {
-            return this.mFonts;
-        }
+    public static FontFamilyResult fetchFonts(Context context, CancellationSignal cancellationSignal, FontRequest fontRequest) {
+        return FontProvider.getFontFamilyResult(context, fontRequest, cancellationSignal);
+    }
 
-        public int getStatusCode() {
-            return this.mStatusCode;
+    public static Typeface requestFont(Context context, FontRequest fontRequest, int i, boolean z, int i2, Handler handler, FontRequestCallback fontRequestCallback) {
+        CallbackWithHandler callbackWithHandler = new CallbackWithHandler(fontRequestCallback, handler);
+        if (z) {
+            return FontRequestWorker.requestFontSync(context, fontRequest, callbackWithHandler, i, i2);
         }
+        return FontRequestWorker.requestFontAsync(context, fontRequest, i, null, callbackWithHandler);
     }
 
     public static class FontInfo {
@@ -52,16 +52,12 @@ public abstract class FontsContractCompat {
             return new FontInfo(uri, i, i2, z, i3);
         }
 
-        public int getResultCode() {
-            return this.mResultCode;
+        public Uri getUri() {
+            return this.mUri;
         }
 
         public int getTtcIndex() {
             return this.mTtcIndex;
-        }
-
-        public Uri getUri() {
-            return this.mUri;
         }
 
         public int getWeight() {
@@ -71,24 +67,31 @@ public abstract class FontsContractCompat {
         public boolean isItalic() {
             return this.mItalic;
         }
+
+        public int getResultCode() {
+            return this.mResultCode;
+        }
     }
 
-    public static class FontRequestCallback {
-        public abstract void onTypefaceRequestFailed(int i);
+    public static class FontFamilyResult {
+        private final FontInfo[] mFonts;
+        private final int mStatusCode;
 
-        public abstract void onTypefaceRetrieved(Typeface typeface);
-    }
+        public FontFamilyResult(int i, FontInfo[] fontInfoArr) {
+            this.mStatusCode = i;
+            this.mFonts = fontInfoArr;
+        }
 
-    public static Typeface buildTypeface(Context context, CancellationSignal cancellationSignal, FontInfo[] fontInfoArr) {
-        return TypefaceCompat.createFromFontInfo(context, cancellationSignal, fontInfoArr, 0);
-    }
+        public int getStatusCode() {
+            return this.mStatusCode;
+        }
 
-    public static FontFamilyResult fetchFonts(Context context, CancellationSignal cancellationSignal, FontRequest fontRequest) {
-        return FontProvider.getFontFamilyResult(context, fontRequest, cancellationSignal);
-    }
+        public FontInfo[] getFonts() {
+            return this.mFonts;
+        }
 
-    public static Typeface requestFont(Context context, FontRequest fontRequest, int i, boolean z, int i2, Handler handler, FontRequestCallback fontRequestCallback) {
-        CallbackWithHandler callbackWithHandler = new CallbackWithHandler(fontRequestCallback, handler);
-        return z ? FontRequestWorker.requestFontSync(context, fontRequest, callbackWithHandler, i, i2) : FontRequestWorker.requestFontAsync(context, fontRequest, i, null, callbackWithHandler);
+        static FontFamilyResult create(int i, FontInfo[] fontInfoArr) {
+            return new FontFamilyResult(i, fontInfoArr);
+        }
     }
 }

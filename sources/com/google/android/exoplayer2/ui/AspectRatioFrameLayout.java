@@ -19,31 +19,12 @@ public class AspectRatioFrameLayout extends FrameLayout {
     public interface AspectRatioListener {
     }
 
-    private final class AspectRatioUpdateDispatcher implements Runnable {
-        private boolean aspectRatioMismatch;
-        private boolean isScheduled;
-        private float naturalAspectRatio;
-        private float targetAspectRatio;
+    public void setAspectRatioListener(AspectRatioListener aspectRatioListener) {
+    }
 
-        private AspectRatioUpdateDispatcher() {
-        }
-
-        @Override // java.lang.Runnable
-        public void run() {
-            this.isScheduled = false;
-            AspectRatioFrameLayout.access$100(AspectRatioFrameLayout.this);
-        }
-
-        public void scheduleUpdate(float f, float f2, boolean z) {
-            this.targetAspectRatio = f;
-            this.naturalAspectRatio = f2;
-            this.aspectRatioMismatch = z;
-            if (this.isScheduled) {
-                return;
-            }
-            this.isScheduled = true;
-            AspectRatioFrameLayout.this.post(this);
-        }
+    static /* synthetic */ AspectRatioListener access$100(AspectRatioFrameLayout aspectRatioFrameLayout) {
+        aspectRatioFrameLayout.getClass();
+        return null;
     }
 
     public AspectRatioFrameLayout(Context context) {
@@ -53,17 +34,34 @@ public class AspectRatioFrameLayout extends FrameLayout {
         this.aspectRatioUpdateDispatcher = new AspectRatioUpdateDispatcher();
     }
 
-    static /* synthetic */ AspectRatioListener access$100(AspectRatioFrameLayout aspectRatioFrameLayout) {
-        aspectRatioFrameLayout.getClass();
-        return null;
-    }
-
-    public float getAspectRatio() {
-        return this.videoAspectRatio;
+    public void setAspectRatio(float f, int i) {
+        if (this.videoAspectRatio != f) {
+            this.videoAspectRatio = f;
+            this.rotation = i;
+            requestLayout();
+        }
     }
 
     public int getResizeMode() {
         return this.resizeMode;
+    }
+
+    public void setResizeMode(int i) {
+        if (this.resizeMode != i) {
+            this.resizeMode = i;
+            requestLayout();
+        }
+    }
+
+    public void setDrawingReady(boolean z) {
+        if (this.drawingReady == z) {
+            return;
+        }
+        this.drawingReady = z;
+    }
+
+    public float getAspectRatio() {
+        return this.videoAspectRatio;
     }
 
     public int getVideoRotation() {
@@ -74,51 +72,55 @@ public class AspectRatioFrameLayout extends FrameLayout {
         return this.drawingReady;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x0044, code lost:
-    
-        if (r4 > 0.0f) goto L27;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:35:0x0049, code lost:
-    
-        if (r4 <= 0.0f) goto L26;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x004e, code lost:
-    
-        if (r4 > 0.0f) goto L26;
-     */
     @Override // android.widget.FrameLayout, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     protected void onMeasure(int i, int i2) {
+        float f;
+        float f2;
         super.onMeasure(i, i2);
         if (this.videoAspectRatio <= 0.0f) {
             return;
         }
         int measuredWidth = getMeasuredWidth();
         int measuredHeight = getMeasuredHeight();
-        float f = measuredWidth;
-        float f2 = measuredHeight;
-        float f3 = f / f2;
-        float f4 = (this.videoAspectRatio / f3) - 1.0f;
-        if (Math.abs(f4) <= 0.01f) {
-            this.aspectRatioUpdateDispatcher.scheduleUpdate(this.videoAspectRatio, f3, false);
+        float f3 = measuredWidth;
+        float f4 = measuredHeight;
+        float f5 = f3 / f4;
+        float f6 = (this.videoAspectRatio / f5) - 1.0f;
+        if (Math.abs(f6) <= 0.01f) {
+            this.aspectRatioUpdateDispatcher.scheduleUpdate(this.videoAspectRatio, f5, false);
             return;
         }
         int i3 = this.resizeMode;
         if (i3 != 0) {
             if (i3 != 1) {
-                if (i3 != 2) {
-                    if (i3 != 3) {
-                        if (i3 == 4) {
+                if (i3 == 2) {
+                    f = this.videoAspectRatio;
+                } else if (i3 != 3) {
+                    if (i3 == 4) {
+                        if (f6 > 0.0f) {
+                            f = this.videoAspectRatio;
+                        } else {
+                            f2 = this.videoAspectRatio;
                         }
                     }
+                } else if (f6 <= 0.0f) {
+                    f2 = this.videoAspectRatio;
+                } else {
+                    f = this.videoAspectRatio;
                 }
-                measuredWidth = (int) (f2 * this.videoAspectRatio);
+                measuredWidth = (int) (f4 * f);
+            } else {
+                f2 = this.videoAspectRatio;
             }
-            measuredHeight = (int) (f / this.videoAspectRatio);
+            measuredHeight = (int) (f3 / f2);
+        } else if (f6 > 0.0f) {
+            f2 = this.videoAspectRatio;
+            measuredHeight = (int) (f3 / f2);
+        } else {
+            f = this.videoAspectRatio;
+            measuredWidth = (int) (f4 * f);
         }
-        this.aspectRatioUpdateDispatcher.scheduleUpdate(this.videoAspectRatio, f3, true);
+        this.aspectRatioUpdateDispatcher.scheduleUpdate(this.videoAspectRatio, f5, true);
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(measuredHeight, TLObject.FLAG_30));
         int childCount = getChildCount();
         for (int i4 = 0; i4 < childCount; i4++) {
@@ -139,28 +141,30 @@ public class AspectRatioFrameLayout extends FrameLayout {
         }
     }
 
-    public void setAspectRatio(float f, int i) {
-        if (this.videoAspectRatio != f) {
-            this.videoAspectRatio = f;
-            this.rotation = i;
-            requestLayout();
+    private final class AspectRatioUpdateDispatcher implements Runnable {
+        private boolean aspectRatioMismatch;
+        private boolean isScheduled;
+        private float naturalAspectRatio;
+        private float targetAspectRatio;
+
+        private AspectRatioUpdateDispatcher() {
         }
-    }
 
-    public void setAspectRatioListener(AspectRatioListener aspectRatioListener) {
-    }
-
-    public void setDrawingReady(boolean z) {
-        if (this.drawingReady == z) {
-            return;
+        public void scheduleUpdate(float f, float f2, boolean z) {
+            this.targetAspectRatio = f;
+            this.naturalAspectRatio = f2;
+            this.aspectRatioMismatch = z;
+            if (this.isScheduled) {
+                return;
+            }
+            this.isScheduled = true;
+            AspectRatioFrameLayout.this.post(this);
         }
-        this.drawingReady = z;
-    }
 
-    public void setResizeMode(int i) {
-        if (this.resizeMode != i) {
-            this.resizeMode = i;
-            requestLayout();
+        @Override // java.lang.Runnable
+        public void run() {
+            this.isScheduled = false;
+            AspectRatioFrameLayout.access$100(AspectRatioFrameLayout.this);
         }
     }
 }

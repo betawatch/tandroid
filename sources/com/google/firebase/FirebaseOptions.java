@@ -37,14 +37,6 @@ public final class FirebaseOptions {
         return new FirebaseOptions(string, stringResourceValueReader.getString("google_api_key"), stringResourceValueReader.getString("firebase_database_url"), stringResourceValueReader.getString("ga_trackingId"), stringResourceValueReader.getString("gcm_defaultSenderId"), stringResourceValueReader.getString("google_storage_bucket"), stringResourceValueReader.getString("project_id"));
     }
 
-    public boolean equals(Object obj) {
-        if (!(obj instanceof FirebaseOptions)) {
-            return false;
-        }
-        FirebaseOptions firebaseOptions = (FirebaseOptions) obj;
-        return Objects.equal(this.applicationId, firebaseOptions.applicationId) && Objects.equal(this.apiKey, firebaseOptions.apiKey) && Objects.equal(this.databaseUrl, firebaseOptions.databaseUrl) && Objects.equal(this.gaTrackingId, firebaseOptions.gaTrackingId) && Objects.equal(this.gcmSenderId, firebaseOptions.gcmSenderId) && Objects.equal(this.storageBucket, firebaseOptions.storageBucket) && Objects.equal(this.projectId, firebaseOptions.projectId);
-    }
-
     public String getApiKey() {
         return this.apiKey;
     }
@@ -59,6 +51,14 @@ public final class FirebaseOptions {
 
     public String getProjectId() {
         return this.projectId;
+    }
+
+    public boolean equals(Object obj) {
+        if (!(obj instanceof FirebaseOptions)) {
+            return false;
+        }
+        FirebaseOptions firebaseOptions = (FirebaseOptions) obj;
+        return Objects.equal(this.applicationId, firebaseOptions.applicationId) && Objects.equal(this.apiKey, firebaseOptions.apiKey) && Objects.equal(this.databaseUrl, firebaseOptions.databaseUrl) && Objects.equal(this.gaTrackingId, firebaseOptions.gaTrackingId) && Objects.equal(this.gcmSenderId, firebaseOptions.gcmSenderId) && Objects.equal(this.storageBucket, firebaseOptions.storageBucket) && Objects.equal(this.projectId, firebaseOptions.projectId);
     }
 
     public int hashCode() {

@@ -5,7 +5,7 @@ import android.os.AsyncTask;
 import com.microsoft.appcenter.utils.AppCenterLog;
 import com.microsoft.appcenter.utils.storage.SharedPreferencesManager;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 class ResumeFromBackgroundTask extends AsyncTask {
     private final Context mContext;
     private final long mDownloadedId;
@@ -22,11 +22,11 @@ class ResumeFromBackgroundTask extends AsyncTask {
         distribute.startFromBackground(this.mContext);
         AppCenterLog.debug("AppCenterDistribute", "Check download id=" + this.mDownloadedId);
         long j = SharedPreferencesManager.getLong("Distribute.download_id", -1L);
-        if (j != -1 && j == this.mDownloadedId) {
-            distribute.resumeDownload();
+        if (j == -1 || j != this.mDownloadedId) {
+            AppCenterLog.debug("AppCenterDistribute", "Ignoring download identifier we didn't expect, id=" + this.mDownloadedId);
             return null;
         }
-        AppCenterLog.debug("AppCenterDistribute", "Ignoring download identifier we didn't expect, id=" + this.mDownloadedId);
+        distribute.resumeDownload();
         return null;
     }
 }

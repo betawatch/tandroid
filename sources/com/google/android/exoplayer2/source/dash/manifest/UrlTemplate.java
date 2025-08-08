@@ -9,13 +9,6 @@ public final class UrlTemplate {
     private final int[] identifiers;
     private final String[] urlPieces;
 
-    private UrlTemplate(String[] strArr, int[] iArr, String[] strArr2, int i) {
-        this.urlPieces = strArr;
-        this.identifiers = iArr;
-        this.identifierFormatTags = strArr2;
-        this.identifierCount = i;
-    }
-
     public static UrlTemplate compile(String str) {
         String[] strArr = new String[5];
         int[] iArr = new int[4];
@@ -23,8 +16,42 @@ public final class UrlTemplate {
         return new UrlTemplate(strArr, iArr, strArr2, parseTemplate(str, strArr, iArr, strArr2));
     }
 
+    private UrlTemplate(String[] strArr, int[] iArr, String[] strArr2, int i) {
+        this.urlPieces = strArr;
+        this.identifiers = iArr;
+        this.identifierFormatTags = strArr2;
+        this.identifierCount = i;
+    }
+
+    public String buildUri(String str, long j, int i, long j2) {
+        StringBuilder sb = new StringBuilder();
+        int i2 = 0;
+        while (true) {
+            int i3 = this.identifierCount;
+            if (i2 < i3) {
+                sb.append(this.urlPieces[i2]);
+                int i4 = this.identifiers[i2];
+                if (i4 == 1) {
+                    sb.append(str);
+                } else if (i4 == 2) {
+                    sb.append(String.format(Locale.US, this.identifierFormatTags[i2], Long.valueOf(j)));
+                } else if (i4 == 3) {
+                    sb.append(String.format(Locale.US, this.identifierFormatTags[i2], Integer.valueOf(i)));
+                } else if (i4 == 4) {
+                    sb.append(String.format(Locale.US, this.identifierFormatTags[i2], Long.valueOf(j2)));
+                }
+                i2++;
+            } else {
+                sb.append(this.urlPieces[i3]);
+                return sb.toString();
+            }
+        }
+    }
+
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     private static int parseTemplate(String str, String[] strArr, int[] iArr, String[] strArr2) {
         String str2;
+        char c;
         strArr[0] = "";
         int i = 0;
         int i2 = 0;
@@ -47,24 +74,50 @@ public final class UrlTemplate {
                     iArr[i2] = 1;
                 } else {
                     int indexOf3 = substring.indexOf("%0");
-                    if (indexOf3 != -1) {
+                    if (indexOf3 == -1) {
+                        str2 = "%01d";
+                    } else {
                         str2 = substring.substring(indexOf3);
                         if (!str2.endsWith("d") && !str2.endsWith("x") && !str2.endsWith("X")) {
                             str2 = str2 + "d";
                         }
                         substring = substring.substring(0, indexOf3);
-                    } else {
-                        str2 = "%01d";
                     }
                     substring.hashCode();
-                    switch (substring) {
-                        case "Number":
+                    switch (substring.hashCode()) {
+                        case -1950496919:
+                            if (substring.equals("Number")) {
+                                c = 0;
+                                break;
+                            }
+                            c = 65535;
+                            break;
+                        case 2606829:
+                            if (substring.equals("Time")) {
+                                c = 1;
+                                break;
+                            }
+                            c = 65535;
+                            break;
+                        case 38199441:
+                            if (substring.equals("Bandwidth")) {
+                                c = 2;
+                                break;
+                            }
+                            c = 65535;
+                            break;
+                        default:
+                            c = 65535;
+                            break;
+                    }
+                    switch (c) {
+                        case 0:
                             iArr[i2] = 2;
                             break;
-                        case "Time":
+                        case 1:
                             iArr[i2] = 4;
                             break;
-                        case "Bandwidth":
+                        case 2:
                             iArr[i2] = 3;
                             break;
                         default:
@@ -78,33 +131,5 @@ public final class UrlTemplate {
             }
         }
         return i2;
-    }
-
-    public String buildUri(String str, long j, int i, long j2) {
-        String format;
-        StringBuilder sb = new StringBuilder();
-        int i2 = 0;
-        while (true) {
-            int i3 = this.identifierCount;
-            if (i2 >= i3) {
-                sb.append(this.urlPieces[i3]);
-                return sb.toString();
-            }
-            sb.append(this.urlPieces[i2]);
-            int i4 = this.identifiers[i2];
-            if (i4 == 1) {
-                sb.append(str);
-            } else {
-                if (i4 == 2) {
-                    format = String.format(Locale.US, this.identifierFormatTags[i2], Long.valueOf(j));
-                } else if (i4 == 3) {
-                    format = String.format(Locale.US, this.identifierFormatTags[i2], Integer.valueOf(i));
-                } else if (i4 == 4) {
-                    format = String.format(Locale.US, this.identifierFormatTags[i2], Long.valueOf(j2));
-                }
-                sb.append(format);
-            }
-            i2++;
-        }
     }
 }

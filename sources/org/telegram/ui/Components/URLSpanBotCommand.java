@@ -4,7 +4,7 @@ import android.text.TextPaint;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.TextStyleSpan;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class URLSpanBotCommand extends URLSpanNoUnderline {
     public static boolean enabled = true;
     public int currentType;
@@ -22,15 +22,15 @@ public class URLSpanBotCommand extends URLSpanNoUnderline {
 
     @Override // org.telegram.ui.Components.URLSpanNoUnderline, android.text.style.ClickableSpan, android.text.style.CharacterStyle
     public void updateDrawState(TextPaint textPaint) {
-        int color;
         super.updateDrawState(textPaint);
         int i = this.currentType;
         if (i == 2) {
-            color = -1;
+            textPaint.setColor(-1);
+        } else if (i == 1) {
+            textPaint.setColor(Theme.getColor(enabled ? Theme.key_chat_messageLinkOut : Theme.key_chat_messageTextOut));
         } else {
-            color = Theme.getColor(i == 1 ? enabled ? Theme.key_chat_messageLinkOut : Theme.key_chat_messageTextOut : enabled ? Theme.key_chat_messageLinkIn : Theme.key_chat_messageTextIn);
+            textPaint.setColor(Theme.getColor(enabled ? Theme.key_chat_messageLinkIn : Theme.key_chat_messageTextIn));
         }
-        textPaint.setColor(color);
         TextStyleSpan.TextStyleRun textStyleRun = this.style;
         if (textStyleRun != null) {
             textStyleRun.applyStyle(textPaint);

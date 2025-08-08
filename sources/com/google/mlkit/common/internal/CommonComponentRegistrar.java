@@ -1,6 +1,6 @@
 package com.google.mlkit.common.internal;
 
-import com.google.android.gms.internal.mlkit_common.zzaq;
+import com.google.android.gms.internal.mlkit_common.zzaf;
 import com.google.firebase.components.Component;
 import com.google.firebase.components.ComponentContainer;
 import com.google.firebase.components.ComponentFactory;
@@ -17,11 +17,11 @@ import com.google.mlkit.common.sdkinternal.SharedPrefManager;
 import com.google.mlkit.common.sdkinternal.model.ModelFileHelper;
 import java.util.List;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class CommonComponentRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
     public final List getComponents() {
-        return zzaq.zzi(SharedPrefManager.COMPONENT, Component.builder(ModelFileHelper.class).add(Dependency.required(MlKitContext.class)).factory(new ComponentFactory() { // from class: com.google.mlkit.common.internal.zza
+        return zzaf.zzi(SharedPrefManager.COMPONENT, Component.builder(ModelFileHelper.class).add(Dependency.required(MlKitContext.class)).factory(new ComponentFactory() { // from class: com.google.mlkit.common.internal.zza
             @Override // com.google.firebase.components.ComponentFactory
             public final Object create(ComponentContainer componentContainer) {
                 return new ModelFileHelper((MlKitContext) componentContainer.get(MlKitContext.class));

@@ -12,12 +12,6 @@ public final class InstrumentInfo extends AbstractSafeParcelable {
     private String zzb;
     private int zzc;
 
-    public InstrumentInfo(String str, String str2, int i) {
-        this.zza = str;
-        this.zzb = str2;
-        this.zzc = i;
-    }
-
     public int getCardClass() {
         int i = this.zzc;
         if (i == 1 || i == 2 || i == 3) {
@@ -41,5 +35,11 @@ public final class InstrumentInfo extends AbstractSafeParcelable {
         SafeParcelWriter.writeString(parcel, 3, getInstrumentDetails(), false);
         SafeParcelWriter.writeInt(parcel, 4, getCardClass());
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    public InstrumentInfo(String str, String str2, int i) {
+        this.zza = str;
+        this.zzb = str2;
+        this.zzc = i;
     }
 }

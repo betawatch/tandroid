@@ -80,7 +80,7 @@ public final class zzmg {
 
     private static Method zzd(String str) {
         try {
-            return Class.forName("java.time.Instant").getMethod(str, null);
+            return Class.forName("j$.time.Instant").getMethod(str, null);
         } catch (Exception unused) {
             return null;
         }

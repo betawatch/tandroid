@@ -2,7 +2,7 @@ package com.google.zxing.common;
 
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class BitSource {
     private int bitOffset;
     private int byteOffset;
@@ -10,10 +10,6 @@ public final class BitSource {
 
     public BitSource(byte[] bArr) {
         this.bytes = bArr;
-    }
-
-    public int available() {
-        return ((this.bytes.length - this.byteOffset) * 8) - this.bitOffset;
     }
 
     public int readBits(int i) {
@@ -57,5 +53,9 @@ public final class BitSource {
         int i13 = (i3 << i) | ((((NotificationCenter.goingToPreviewTheme >> i12) << i12) & this.bytes[this.byteOffset]) >> i12);
         this.bitOffset += i;
         return i13;
+    }
+
+    public int available() {
+        return ((this.bytes.length - this.byteOffset) * 8) - this.bitOffset;
     }
 }

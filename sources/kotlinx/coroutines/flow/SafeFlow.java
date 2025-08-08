@@ -2,10 +2,10 @@ package kotlinx.coroutines.flow;
 
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.jvm.functions.Function2;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class SafeFlow extends AbstractFlow {
     private final Function2 block;
 
@@ -15,9 +15,7 @@ final class SafeFlow extends AbstractFlow {
 
     @Override // kotlinx.coroutines.flow.AbstractFlow
     public Object collectSafely(FlowCollector flowCollector, Continuation continuation) {
-        Object coroutine_suspended;
         Object invoke = this.block.invoke(flowCollector, continuation);
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        return invoke == coroutine_suspended ? invoke : Unit.INSTANCE;
+        return invoke == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? invoke : Unit.INSTANCE;
     }
 }

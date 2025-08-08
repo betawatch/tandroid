@@ -2,7 +2,7 @@ package com.google.firebase.remoteconfig;
 
 import android.app.Application;
 import android.content.Context;
-import com.google.android.exoplayer2.mediacodec.AsynchronousMediaCodecBufferEnqueuer$$ExternalSyntheticBackportWithForwarding0;
+import com.google.android.exoplayer2.mediacodec.AsynchronousMediaCodecBufferEnqueuer$$ExternalSyntheticBackportWithForwarding1;
 import com.google.android.gms.common.api.internal.BackgroundDetector;
 import com.google.android.gms.common.util.BiConsumer;
 import com.google.android.gms.common.util.Clock;
@@ -35,7 +35,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class RemoteConfigComponent implements FirebaseRemoteConfigInterop {
     private static final Clock DEFAULT_CLOCK = DefaultClock.getInstance();
     private static final Random DEFAULT_RANDOM = new Random();
@@ -50,33 +50,12 @@ public class RemoteConfigComponent implements FirebaseRemoteConfigInterop {
     private final FirebaseInstallationsApi firebaseInstallations;
     private final Map frcNamespaceInstances;
 
-    private static class GlobalBackgroundListener implements BackgroundDetector.BackgroundStateChangeListener {
-        private static final AtomicReference INSTANCE = new AtomicReference();
-
-        private GlobalBackgroundListener() {
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static void ensureBackgroundListenerIsRegistered(Context context) {
-            Application application = (Application) context.getApplicationContext();
-            AtomicReference atomicReference = INSTANCE;
-            if (atomicReference.get() == null) {
-                GlobalBackgroundListener globalBackgroundListener = new GlobalBackgroundListener();
-                if (AsynchronousMediaCodecBufferEnqueuer$$ExternalSyntheticBackportWithForwarding0.m(atomicReference, null, globalBackgroundListener)) {
-                    BackgroundDetector.initialize(application);
-                    BackgroundDetector.getInstance().addListener(globalBackgroundListener);
-                }
-            }
-        }
-
-        @Override // com.google.android.gms.common.api.internal.BackgroundDetector.BackgroundStateChangeListener
-        public void onBackgroundStateChanged(boolean z) {
-            RemoteConfigComponent.notifyRCInstances(z);
-        }
-    }
-
     public static /* synthetic */ AnalyticsConnector $r8$lambda$Sf9RT1RfRnHdNJXG7KvWe-BAHSc() {
         lambda$getFetchHandler$0();
+        return null;
+    }
+
+    private static /* synthetic */ AnalyticsConnector lambda$getFetchHandler$0() {
         return null;
     }
 
@@ -105,63 +84,8 @@ public class RemoteConfigComponent implements FirebaseRemoteConfigInterop {
         }
     }
 
-    private ConfigCacheClient getCacheClient(String str, String str2) {
-        return ConfigCacheClient.getInstance(this.executor, ConfigStorageClient.getInstance(this.context, String.format("%s_%s_%s_%s.json", "frc", this.appId, str, str2)));
-    }
-
-    private ConfigGetParameterHandler getGetHandler(ConfigCacheClient configCacheClient, ConfigCacheClient configCacheClient2) {
-        return new ConfigGetParameterHandler(this.executor, configCacheClient, configCacheClient2);
-    }
-
-    static ConfigMetadataClient getMetadataClient(Context context, String str, String str2) {
-        return new ConfigMetadataClient(context.getSharedPreferences(String.format("%s_%s_%s_%s", "frc", str, str2, "settings"), 0));
-    }
-
-    private static Personalization getPersonalization(FirebaseApp firebaseApp, String str, Provider provider) {
-        if (isPrimaryApp(firebaseApp) && str.equals("firebase")) {
-            return new Personalization(provider);
-        }
-        return null;
-    }
-
-    private RolloutsStateSubscriptionsHandler getRolloutsStateSubscriptionsHandler(ConfigCacheClient configCacheClient, ConfigGetParameterHandler configGetParameterHandler) {
-        return new RolloutsStateSubscriptionsHandler(configCacheClient, RolloutsStateFactory.create(configGetParameterHandler), this.executor);
-    }
-
-    private static boolean isAbtSupported(FirebaseApp firebaseApp, String str) {
-        return str.equals("firebase") && isPrimaryApp(firebaseApp);
-    }
-
-    private static boolean isPrimaryApp(FirebaseApp firebaseApp) {
-        return firebaseApp.getName().equals("[DEFAULT]");
-    }
-
-    private static /* synthetic */ AnalyticsConnector lambda$getFetchHandler$0() {
-        return null;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static synchronized void notifyRCInstances(boolean z) {
-        synchronized (RemoteConfigComponent.class) {
-            Iterator it = frcNamespaceInstancesStatic.values().iterator();
-            while (it.hasNext()) {
-                ((FirebaseRemoteConfig) it.next()).setConfigUpdateBackgroundState(z);
-            }
-        }
-    }
-
-    synchronized FirebaseRemoteConfig get(FirebaseApp firebaseApp, String str, FirebaseInstallationsApi firebaseInstallationsApi, FirebaseABTesting firebaseABTesting, Executor executor, ConfigCacheClient configCacheClient, ConfigCacheClient configCacheClient2, ConfigCacheClient configCacheClient3, ConfigFetchHandler configFetchHandler, ConfigGetParameterHandler configGetParameterHandler, ConfigMetadataClient configMetadataClient, RolloutsStateSubscriptionsHandler rolloutsStateSubscriptionsHandler) {
-        try {
-            if (!this.frcNamespaceInstances.containsKey(str)) {
-                FirebaseRemoteConfig firebaseRemoteConfig = new FirebaseRemoteConfig(this.context, firebaseApp, firebaseInstallationsApi, isAbtSupported(firebaseApp, str) ? firebaseABTesting : null, executor, configCacheClient, configCacheClient2, configCacheClient3, configFetchHandler, configGetParameterHandler, configMetadataClient, getRealtime(firebaseApp, firebaseInstallationsApi, configFetchHandler, configCacheClient2, this.context, str, configMetadataClient), rolloutsStateSubscriptionsHandler);
-                firebaseRemoteConfig.startLoadingConfigsFromDisk();
-                this.frcNamespaceInstances.put(str, firebaseRemoteConfig);
-                frcNamespaceInstancesStatic.put(str, firebaseRemoteConfig);
-            }
-        } catch (Throwable th) {
-            throw th;
-        }
-        return (FirebaseRemoteConfig) this.frcNamespaceInstances.get(str);
+    FirebaseRemoteConfig getDefault() {
+        return get("firebase");
     }
 
     public synchronized FirebaseRemoteConfig get(String str) {
@@ -191,8 +115,26 @@ public class RemoteConfigComponent implements FirebaseRemoteConfigInterop {
         return get(this.firebaseApp, str, this.firebaseInstallations, this.firebaseAbt, this.executor, cacheClient, cacheClient2, cacheClient3, getFetchHandler(str, cacheClient, metadataClient), getHandler, metadataClient, getRolloutsStateSubscriptionsHandler(cacheClient2, getHandler));
     }
 
-    FirebaseRemoteConfig getDefault() {
-        return get("firebase");
+    synchronized FirebaseRemoteConfig get(FirebaseApp firebaseApp, String str, FirebaseInstallationsApi firebaseInstallationsApi, FirebaseABTesting firebaseABTesting, Executor executor, ConfigCacheClient configCacheClient, ConfigCacheClient configCacheClient2, ConfigCacheClient configCacheClient3, ConfigFetchHandler configFetchHandler, ConfigGetParameterHandler configGetParameterHandler, ConfigMetadataClient configMetadataClient, RolloutsStateSubscriptionsHandler rolloutsStateSubscriptionsHandler) {
+        try {
+            if (!this.frcNamespaceInstances.containsKey(str)) {
+                FirebaseRemoteConfig firebaseRemoteConfig = new FirebaseRemoteConfig(this.context, firebaseApp, firebaseInstallationsApi, isAbtSupported(firebaseApp, str) ? firebaseABTesting : null, executor, configCacheClient, configCacheClient2, configCacheClient3, configFetchHandler, configGetParameterHandler, configMetadataClient, getRealtime(firebaseApp, firebaseInstallationsApi, configFetchHandler, configCacheClient2, this.context, str, configMetadataClient), rolloutsStateSubscriptionsHandler);
+                firebaseRemoteConfig.startLoadingConfigsFromDisk();
+                this.frcNamespaceInstances.put(str, firebaseRemoteConfig);
+                frcNamespaceInstancesStatic.put(str, firebaseRemoteConfig);
+            }
+        } catch (Throwable th) {
+            throw th;
+        }
+        return (FirebaseRemoteConfig) this.frcNamespaceInstances.get(str);
+    }
+
+    private ConfigCacheClient getCacheClient(String str, String str2) {
+        return ConfigCacheClient.getInstance(this.executor, ConfigStorageClient.getInstance(this.context, String.format("%s_%s_%s_%s.json", "frc", this.appId, str, str2)));
+    }
+
+    ConfigFetchHttpClient getFrcBackendApiClient(String str, String str2, ConfigMetadataClient configMetadataClient) {
+        return new ConfigFetchHttpClient(this.context, this.firebaseApp.getOptions().getApplicationId(), str, str2, configMetadataClient.getFetchTimeoutInSeconds(), configMetadataClient.getFetchTimeoutInSeconds());
     }
 
     synchronized ConfigFetchHandler getFetchHandler(String str, ConfigCacheClient configCacheClient, ConfigMetadataClient configMetadataClient) {
@@ -209,16 +151,74 @@ public class RemoteConfigComponent implements FirebaseRemoteConfigInterop {
         }, this.executor, DEFAULT_CLOCK, DEFAULT_RANDOM, configCacheClient, getFrcBackendApiClient(this.firebaseApp.getOptions().getApiKey(), str, configMetadataClient), configMetadataClient, this.customHeaders);
     }
 
-    ConfigFetchHttpClient getFrcBackendApiClient(String str, String str2, ConfigMetadataClient configMetadataClient) {
-        return new ConfigFetchHttpClient(this.context, this.firebaseApp.getOptions().getApplicationId(), str, str2, configMetadataClient.getFetchTimeoutInSeconds(), configMetadataClient.getFetchTimeoutInSeconds());
-    }
-
     synchronized ConfigRealtimeHandler getRealtime(FirebaseApp firebaseApp, FirebaseInstallationsApi firebaseInstallationsApi, ConfigFetchHandler configFetchHandler, ConfigCacheClient configCacheClient, Context context, String str, ConfigMetadataClient configMetadataClient) {
         return new ConfigRealtimeHandler(firebaseApp, firebaseInstallationsApi, configFetchHandler, configCacheClient, context, str, configMetadataClient, this.executor);
+    }
+
+    private ConfigGetParameterHandler getGetHandler(ConfigCacheClient configCacheClient, ConfigCacheClient configCacheClient2) {
+        return new ConfigGetParameterHandler(this.executor, configCacheClient, configCacheClient2);
+    }
+
+    static ConfigMetadataClient getMetadataClient(Context context, String str, String str2) {
+        return new ConfigMetadataClient(context.getSharedPreferences(String.format("%s_%s_%s_%s", "frc", str, str2, "settings"), 0));
+    }
+
+    private static Personalization getPersonalization(FirebaseApp firebaseApp, String str, Provider provider) {
+        if (isPrimaryApp(firebaseApp) && str.equals("firebase")) {
+            return new Personalization(provider);
+        }
+        return null;
+    }
+
+    private RolloutsStateSubscriptionsHandler getRolloutsStateSubscriptionsHandler(ConfigCacheClient configCacheClient, ConfigGetParameterHandler configGetParameterHandler) {
+        return new RolloutsStateSubscriptionsHandler(configCacheClient, RolloutsStateFactory.create(configGetParameterHandler), this.executor);
+    }
+
+    private static boolean isAbtSupported(FirebaseApp firebaseApp, String str) {
+        return str.equals("firebase") && isPrimaryApp(firebaseApp);
+    }
+
+    private static boolean isPrimaryApp(FirebaseApp firebaseApp) {
+        return firebaseApp.getName().equals("[DEFAULT]");
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static synchronized void notifyRCInstances(boolean z) {
+        synchronized (RemoteConfigComponent.class) {
+            Iterator it = frcNamespaceInstancesStatic.values().iterator();
+            while (it.hasNext()) {
+                ((FirebaseRemoteConfig) it.next()).setConfigUpdateBackgroundState(z);
+            }
+        }
     }
 
     @Override // com.google.firebase.remoteconfig.interop.FirebaseRemoteConfigInterop
     public void registerRolloutsStateSubscriber(String str, RolloutsStateSubscriber rolloutsStateSubscriber) {
         get(str).getRolloutsStateSubscriptionsHandler().registerRolloutsStateSubscriber(rolloutsStateSubscriber);
+    }
+
+    private static class GlobalBackgroundListener implements BackgroundDetector.BackgroundStateChangeListener {
+        private static final AtomicReference INSTANCE = new AtomicReference();
+
+        private GlobalBackgroundListener() {
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static void ensureBackgroundListenerIsRegistered(Context context) {
+            Application application = (Application) context.getApplicationContext();
+            AtomicReference atomicReference = INSTANCE;
+            if (atomicReference.get() == null) {
+                GlobalBackgroundListener globalBackgroundListener = new GlobalBackgroundListener();
+                if (AsynchronousMediaCodecBufferEnqueuer$$ExternalSyntheticBackportWithForwarding1.m(atomicReference, null, globalBackgroundListener)) {
+                    BackgroundDetector.initialize(application);
+                    BackgroundDetector.getInstance().addListener(globalBackgroundListener);
+                }
+            }
+        }
+
+        @Override // com.google.android.gms.common.api.internal.BackgroundDetector.BackgroundStateChangeListener
+        public void onBackgroundStateChanged(boolean z) {
+            RemoteConfigComponent.notifyRCInstances(z);
+        }
     }
 }

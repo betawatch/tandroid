@@ -12,28 +12,31 @@ import java.util.Collections;
 import java.util.Set;
 import java.util.WeakHashMap;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 class FcmLifecycleCallbacks implements Application.ActivityLifecycleCallbacks {
     private final Set seenIntents = Collections.newSetFromMap(new WeakHashMap());
 
-    FcmLifecycleCallbacks() {
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityDestroyed(Activity activity) {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: logNotificationOpen, reason: merged with bridge method [inline-methods] */
-    public void lambda$onActivityCreated$0(Intent intent) {
-        Bundle bundle = null;
-        try {
-            Bundle extras = intent.getExtras();
-            if (extras != null) {
-                bundle = extras.getBundle("gcm.n.analytics_data");
-            }
-        } catch (RuntimeException e) {
-            Log.w("FirebaseMessaging", "Failed trying to get analytics data from Intent extras.", e);
-        }
-        if (MessagingAnalytics.shouldUploadScionMetrics(bundle)) {
-            MessagingAnalytics.logNotificationOpen(bundle);
-        }
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityResumed(Activity activity) {
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivitySaveInstanceState(Activity activity, Bundle bundle) {
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityStarted(Activity activity) {
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityStopped(Activity activity) {
+    }
+
+    FcmLifecycleCallbacks() {
     }
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
@@ -55,29 +58,26 @@ class FcmLifecycleCallbacks implements Application.ActivityLifecycleCallbacks {
     }
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
-    public void onActivityDestroyed(Activity activity) {
-    }
-
-    @Override // android.app.Application.ActivityLifecycleCallbacks
     public void onActivityPaused(Activity activity) {
         if (activity.isFinishing()) {
             this.seenIntents.remove(activity.getIntent());
         }
     }
 
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public void onActivityResumed(Activity activity) {
-    }
-
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public void onActivitySaveInstanceState(Activity activity, Bundle bundle) {
-    }
-
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public void onActivityStarted(Activity activity) {
-    }
-
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public void onActivityStopped(Activity activity) {
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: logNotificationOpen, reason: merged with bridge method [inline-methods] */
+    public void lambda$onActivityCreated$0(Intent intent) {
+        Bundle bundle = null;
+        try {
+            Bundle extras = intent.getExtras();
+            if (extras != null) {
+                bundle = extras.getBundle("gcm.n.analytics_data");
+            }
+        } catch (RuntimeException e) {
+            Log.w("FirebaseMessaging", "Failed trying to get analytics data from Intent extras.", e);
+        }
+        if (MessagingAnalytics.shouldUploadScionMetrics(bundle)) {
+            MessagingAnalytics.logNotificationOpen(bundle);
+        }
     }
 }

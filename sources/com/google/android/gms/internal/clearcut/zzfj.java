@@ -27,11 +27,11 @@ final class zzfj extends zzfg {
         return zzd;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:56:0x00c2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x0060, code lost:
     
         return -1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:71:0x0060, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:63:0x00bb, code lost:
     
         return -1;
      */
@@ -48,41 +48,40 @@ final class zzfj extends zzfg {
         }
         long j = i2;
         int i7 = (int) (i3 - j);
-        long j2 = 1;
         if (i7 >= 16) {
-            long j3 = j;
+            long j2 = j;
             i4 = 0;
             while (true) {
                 if (i4 >= i7) {
                     i4 = i7;
                     break;
                 }
-                long j4 = j3 + 1;
-                if (zzfd.zza(bArr, j3) < 0) {
+                long j3 = j2 + 1;
+                if (zzfd.zza(bArr, j2) < 0) {
                     break;
                 }
                 i4++;
-                j3 = j4;
+                j2 = j3;
             }
         } else {
             i4 = 0;
         }
         int i8 = i7 - i4;
-        long j5 = j + i4;
+        long j4 = j + i4;
         while (true) {
             byte b = 0;
             while (true) {
                 if (i8 <= 0) {
                     break;
                 }
-                long j6 = j5 + j2;
-                b = zzfd.zza(bArr, j5);
+                long j5 = j4 + 1;
+                b = zzfd.zza(bArr, j4);
                 if (b < 0) {
-                    j5 = j6;
+                    j4 = j5;
                     break;
                 }
                 i8--;
-                j5 = j6;
+                j4 = j5;
             }
             if (i8 == 0) {
                 return i6;
@@ -92,54 +91,51 @@ final class zzfj extends zzfg {
                 if (b >= -16) {
                     if (i9 >= 3) {
                         i8 -= 4;
-                        long j7 = j5 + j2;
-                        byte zza = zzfd.zza(bArr, j5);
+                        long j6 = j4 + 1;
+                        byte zza = zzfd.zza(bArr, j4);
                         if (zza > -65 || (((b << 28) + (zza + 112)) >> 30) != 0) {
                             break;
                         }
-                        long j8 = j5 + 2;
+                        long j7 = j4 + 2;
+                        if (zzfd.zza(bArr, j6) > -65) {
+                            break;
+                        }
+                        j4 += 3;
                         if (zzfd.zza(bArr, j7) > -65) {
                             break;
                         }
-                        j5 += 3;
-                        if (zzfd.zza(bArr, j8) > -65) {
-                            break;
-                        }
                     } else {
-                        return zza(bArr, b, j5, i9);
+                        return zza(bArr, b, j4, i9);
                     }
                 } else if (i9 >= i5) {
                     i8 -= 3;
-                    long j9 = j5 + j2;
-                    byte zza2 = zzfd.zza(bArr, j5);
+                    long j8 = j4 + 1;
+                    byte zza2 = zzfd.zza(bArr, j4);
                     if (zza2 > -65 || ((b == -32 && zza2 < -96) || (b == -19 && zza2 >= -96))) {
                         break;
                     }
-                    j5 += 2;
-                    if (zzfd.zza(bArr, j9) > -65) {
+                    j4 += 2;
+                    if (zzfd.zza(bArr, j8) > -65) {
                         break;
                     }
-                    i5 = 2;
-                    i6 = 0;
                 } else {
-                    return zza(bArr, b, j5, i9);
+                    return zza(bArr, b, j4, i9);
                 }
             } else if (i9 != 0) {
                 i8 -= 2;
                 if (b < -62) {
                     break;
                 }
-                long j10 = j5 + j2;
-                if (zzfd.zza(bArr, j5) > -65) {
+                long j9 = j4 + 1;
+                if (zzfd.zza(bArr, j4) > -65) {
                     break;
                 }
-                j5 = j10;
+                j4 = j9;
             } else {
                 return b;
             }
             i5 = 2;
             i6 = 0;
-            j2 = 1;
         }
         return -1;
     }
@@ -207,7 +203,7 @@ final class zzfj extends zzfg {
                                 zzfd.zza(bArr, j4, (byte) ((codePoint >>> 18) | NotificationCenter.wallpapersNeedReload));
                                 j3 = j5;
                                 zzfd.zza(bArr, j4 + 1, (byte) (((codePoint >>> 12) & 63) | 128));
-                                long j6 = 3 + j4;
+                                long j6 = j4 + 3;
                                 zzfd.zza(bArr, j4 + 2, (byte) (((codePoint >>> 6) & 63) | 128));
                                 j4 += 4;
                                 zzfd.zza(bArr, j6, (byte) ((codePoint & 63) | 128));

@@ -33,42 +33,13 @@ public final class Ac3Extractor implements Extractor {
     private final ParsableByteArray sampleData = new ParsableByteArray(2786);
     private boolean startedPacket;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Extractor[] lambda$static$0() {
-        return new Extractor[]{new Ac3Extractor()};
-    }
-
-    @Override // com.google.android.exoplayer2.extractor.Extractor
-    public void init(ExtractorOutput extractorOutput) {
-        this.reader.createTracks(extractorOutput, new TsPayloadReader.TrackIdGenerator(0, 1));
-        extractorOutput.endTracks();
-        extractorOutput.seekMap(new SeekMap.Unseekable(-9223372036854775807L));
-    }
-
-    @Override // com.google.android.exoplayer2.extractor.Extractor
-    public int read(ExtractorInput extractorInput, PositionHolder positionHolder) {
-        int read = extractorInput.read(this.sampleData.getData(), 0, 2786);
-        if (read == -1) {
-            return -1;
-        }
-        this.sampleData.setPosition(0);
-        this.sampleData.setLimit(read);
-        if (!this.startedPacket) {
-            this.reader.packetStarted(0L, 4);
-            this.startedPacket = true;
-        }
-        this.reader.consume(this.sampleData);
-        return 0;
-    }
-
     @Override // com.google.android.exoplayer2.extractor.Extractor
     public void release() {
     }
 
-    @Override // com.google.android.exoplayer2.extractor.Extractor
-    public void seek(long j, long j2) {
-        this.startedPacket = false;
-        this.reader.seek();
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ Extractor[] lambda$static$0() {
+        return new Extractor[]{new Ac3Extractor()};
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:21:0x0037, code lost:
@@ -125,5 +96,34 @@ public final class Ac3Extractor implements Extractor {
             }
             extractorInput.advancePeekPosition(i2);
         }
+    }
+
+    @Override // com.google.android.exoplayer2.extractor.Extractor
+    public void init(ExtractorOutput extractorOutput) {
+        this.reader.createTracks(extractorOutput, new TsPayloadReader.TrackIdGenerator(0, 1));
+        extractorOutput.endTracks();
+        extractorOutput.seekMap(new SeekMap.Unseekable(-9223372036854775807L));
+    }
+
+    @Override // com.google.android.exoplayer2.extractor.Extractor
+    public void seek(long j, long j2) {
+        this.startedPacket = false;
+        this.reader.seek();
+    }
+
+    @Override // com.google.android.exoplayer2.extractor.Extractor
+    public int read(ExtractorInput extractorInput, PositionHolder positionHolder) {
+        int read = extractorInput.read(this.sampleData.getData(), 0, 2786);
+        if (read == -1) {
+            return -1;
+        }
+        this.sampleData.setPosition(0);
+        this.sampleData.setLimit(read);
+        if (!this.startedPacket) {
+            this.reader.packetStarted(0L, 4);
+            this.startedPacket = true;
+        }
+        this.reader.consume(this.sampleData);
+        return 0;
     }
 }

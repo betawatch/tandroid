@@ -31,10 +31,8 @@ public final class HeartRating extends Rating {
         this.isHeart = z;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static HeartRating fromBundle(Bundle bundle) {
-        Assertions.checkArgument(bundle.getInt(Rating.FIELD_RATING_TYPE, -1) == 0);
-        return bundle.getBoolean(FIELD_RATED, false) ? new HeartRating(bundle.getBoolean(FIELD_IS_HEART, false)) : new HeartRating();
+    public int hashCode() {
+        return Objects.hashCode(Boolean.valueOf(this.rated), Boolean.valueOf(this.isHeart));
     }
 
     public boolean equals(Object obj) {
@@ -45,10 +43,6 @@ public final class HeartRating extends Rating {
         return this.isHeart == heartRating.isHeart && this.rated == heartRating.rated;
     }
 
-    public int hashCode() {
-        return Objects.hashCode(Boolean.valueOf(this.rated), Boolean.valueOf(this.isHeart));
-    }
-
     @Override // com.google.android.exoplayer2.Bundleable
     public Bundle toBundle() {
         Bundle bundle = new Bundle();
@@ -56,5 +50,14 @@ public final class HeartRating extends Rating {
         bundle.putBoolean(FIELD_RATED, this.rated);
         bundle.putBoolean(FIELD_IS_HEART, this.isHeart);
         return bundle;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static HeartRating fromBundle(Bundle bundle) {
+        Assertions.checkArgument(bundle.getInt(Rating.FIELD_RATING_TYPE, -1) == 0);
+        if (bundle.getBoolean(FIELD_RATED, false)) {
+            return new HeartRating(bundle.getBoolean(FIELD_IS_HEART, false));
+        }
+        return new HeartRating();
     }
 }

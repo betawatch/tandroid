@@ -18,11 +18,6 @@ public abstract class Log {
             }
 
             @Override // com.google.android.exoplayer2.util.Log.Logger
-            public void e(String str, String str2) {
-                android.util.Log.e(str, str2);
-            }
-
-            @Override // com.google.android.exoplayer2.util.Log.Logger
             public void i(String str, String str2) {
                 android.util.Log.i(str, str2);
             }
@@ -30,6 +25,11 @@ public abstract class Log {
             @Override // com.google.android.exoplayer2.util.Log.Logger
             public void w(String str, String str2) {
                 android.util.Log.w(str, str2);
+            }
+
+            @Override // com.google.android.exoplayer2.util.Log.Logger
+            public void e(String str, String str2) {
+                android.util.Log.e(str, str2);
             }
         };
 
@@ -42,14 +42,6 @@ public abstract class Log {
         void w(String str, String str2);
     }
 
-    private static String appendThrowableString(String str, Throwable th) {
-        String throwableString = getThrowableString(th);
-        if (TextUtils.isEmpty(throwableString)) {
-            return str;
-        }
-        return str + "\n  " + throwableString.replace("\n", "\n  ") + '\n';
-    }
-
     public static void d(String str, String str2) {
         synchronized (lock) {
             try {
@@ -60,6 +52,38 @@ public abstract class Log {
                 throw th;
             }
         }
+    }
+
+    public static void i(String str, String str2) {
+        synchronized (lock) {
+            try {
+                if (logLevel <= 1) {
+                    logger.i(str, str2);
+                }
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+    }
+
+    public static void i(String str, String str2, Throwable th) {
+        i(str, appendThrowableString(str2, th));
+    }
+
+    public static void w(String str, String str2) {
+        synchronized (lock) {
+            try {
+                if (logLevel <= 2) {
+                    logger.w(str, str2);
+                }
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+    }
+
+    public static void w(String str, String str2, Throwable th) {
+        w(str, appendThrowableString(str2, th));
     }
 
     public static void e(String str, String str2) {
@@ -87,30 +111,22 @@ public abstract class Log {
                 if (isCausedByUnknownHostException(th)) {
                     return "UnknownHostException (no network)";
                 }
-                if (logStackTraces) {
-                    return android.util.Log.getStackTraceString(th).trim().replace("\t", "    ");
+                if (!logStackTraces) {
+                    return th.getMessage();
                 }
-                return th.getMessage();
+                return android.util.Log.getStackTraceString(th).trim().replace("\t", "    ");
             } catch (Throwable th2) {
                 throw th2;
             }
         }
     }
 
-    public static void i(String str, String str2) {
-        synchronized (lock) {
-            try {
-                if (logLevel <= 1) {
-                    logger.i(str, str2);
-                }
-            } catch (Throwable th) {
-                throw th;
-            }
+    private static String appendThrowableString(String str, Throwable th) {
+        String throwableString = getThrowableString(th);
+        if (TextUtils.isEmpty(throwableString)) {
+            return str;
         }
-    }
-
-    public static void i(String str, String str2, Throwable th) {
-        i(str, appendThrowableString(str2, th));
+        return str + "\n  " + throwableString.replace("\n", "\n  ") + '\n';
     }
 
     private static boolean isCausedByUnknownHostException(Throwable th) {
@@ -121,21 +137,5 @@ public abstract class Log {
             th = th.getCause();
         }
         return false;
-    }
-
-    public static void w(String str, String str2) {
-        synchronized (lock) {
-            try {
-                if (logLevel <= 2) {
-                    logger.w(str, str2);
-                }
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-    }
-
-    public static void w(String str, String str2, Throwable th) {
-        w(str, appendThrowableString(str2, th));
     }
 }

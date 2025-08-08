@@ -6,7 +6,7 @@ import com.coremedia.iso.boxes.Container;
 import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class AbstractContainerBox extends BasicContainer implements Box {
     protected boolean largeBox;
     Container parent;
@@ -16,9 +16,24 @@ public abstract class AbstractContainerBox extends BasicContainer implements Box
         this.type = str;
     }
 
-    public void getBox(WritableByteChannel writableByteChannel) {
-        writableByteChannel.write(getHeader());
-        writeContainer(writableByteChannel);
+    @Override // com.coremedia.iso.boxes.Box
+    public Container getParent() {
+        return this.parent;
+    }
+
+    @Override // com.coremedia.iso.boxes.Box
+    public void setParent(Container container) {
+        this.parent = container;
+    }
+
+    public long getSize() {
+        long containerSize = getContainerSize();
+        return containerSize + ((this.largeBox || 8 + containerSize >= 4294967296L) ? 16 : 8);
+    }
+
+    @Override // com.coremedia.iso.boxes.Box
+    public String getType() {
+        return this.type;
     }
 
     protected ByteBuffer getHeader() {
@@ -41,23 +56,8 @@ public abstract class AbstractContainerBox extends BasicContainer implements Box
         return wrap;
     }
 
-    @Override // com.coremedia.iso.boxes.Box
-    public Container getParent() {
-        return this.parent;
-    }
-
-    public long getSize() {
-        long containerSize = getContainerSize();
-        return containerSize + ((this.largeBox || 8 + containerSize >= 4294967296L) ? 16 : 8);
-    }
-
-    @Override // com.coremedia.iso.boxes.Box
-    public String getType() {
-        return this.type;
-    }
-
-    @Override // com.coremedia.iso.boxes.Box
-    public void setParent(Container container) {
-        this.parent = container;
+    public void getBox(WritableByteChannel writableByteChannel) {
+        writableByteChannel.write(getHeader());
+        writeContainer(writableByteChannel);
     }
 }

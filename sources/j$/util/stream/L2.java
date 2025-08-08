@@ -1,87 +1,157 @@
 package j$.util.stream;
 
-import j$.util.Spliterators;
-import j$.util.function.Consumer;
-import java.util.Arrays;
-import java.util.Iterator;
-import org.telegram.messenger.NotificationCenter;
+import java.util.Comparator;
 
 /* loaded from: classes2.dex */
-class L2 extends N2 implements j$.util.function.T {
-    L2() {
+abstract class L2 implements j$.util.M {
+    int a;
+    final int b;
+    int c;
+    final int d;
+    Object e;
+    final /* synthetic */ M2 f;
+
+    abstract void b(int i, Object obj, Object obj2);
+
+    @Override // j$.util.Spliterator
+    public final int characteristics() {
+        return 16464;
     }
 
-    L2(int i) {
-        super(i);
+    abstract j$.util.M f(Object obj, int i, int i2);
+
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ long getExactSizeIfKnown() {
+        return j$.util.A.j(this);
     }
 
-    @Override // j$.util.stream.N2, java.lang.Iterable
-    /* renamed from: A, reason: merged with bridge method [inline-methods] */
-    public j$.util.J spliterator() {
-        return new K2(this, 0, this.c, 0, this.b);
+    abstract j$.util.M h(int i, int i2, int i3, int i4);
+
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean hasCharacteristics(int i) {
+        return j$.util.A.k(this, i);
     }
 
-    @Override // j$.util.function.T
-    public void accept(long j) {
-        z();
-        long[] jArr = (long[]) this.e;
-        int i = this.b;
-        this.b = i + 1;
-        jArr[i] = j;
-    }
-
-    @Override // j$.util.stream.N2
-    public final Object c(int i) {
-        return new long[i];
-    }
-
-    @Override // j$.util.function.T
-    public final /* synthetic */ j$.util.function.T f(j$.util.function.T t) {
-        return j$.com.android.tools.r8.a.d(this, t);
-    }
-
-    public final void forEach(Consumer consumer) {
-        if (consumer instanceof j$.util.function.T) {
-            g((j$.util.function.T) consumer);
-        } else {
-            if (z3.a) {
-                z3.a(getClass(), "{0} calling SpinedBuffer.OfLong.forEach(Consumer)");
-                throw null;
+    @Override // j$.util.M
+    /* renamed from: forEachRemaining, reason: merged with bridge method [inline-methods] and merged with bridge method [inline-methods] and merged with bridge method [inline-methods] */
+    public final void e(Object obj) {
+        M2 m2;
+        obj.getClass();
+        int i = this.a;
+        int i2 = this.d;
+        int i3 = this.b;
+        if (i < i3 || (i == i3 && this.c < i2)) {
+            int i4 = this.c;
+            while (true) {
+                m2 = this.f;
+                if (i >= i3) {
+                    break;
+                }
+                Object obj2 = m2.f[i];
+                m2.u(obj2, i4, m2.v(obj2), obj);
+                i++;
+                i4 = 0;
             }
-            j$.util.A.h((K2) spliterator(), consumer);
+            m2.u(this.a == i3 ? this.e : m2.f[i3], i4, i2, obj);
+            this.a = i3;
+            this.c = i2;
         }
     }
 
-    @Override // java.lang.Iterable
-    public final Iterator iterator() {
-        return Spliterators.h(spliterator());
-    }
-
-    public final String toString() {
-        long[] jArr = (long[]) e();
-        if (jArr.length < 200) {
-            return String.format("%s[length=%d, chunks=%d]%s", getClass().getSimpleName(), Integer.valueOf(jArr.length), Integer.valueOf(this.c), Arrays.toString(jArr));
+    @Override // j$.util.M
+    /* renamed from: tryAdvance, reason: merged with bridge method [inline-methods] and merged with bridge method [inline-methods] and merged with bridge method [inline-methods] */
+    public final boolean p(Object obj) {
+        obj.getClass();
+        int i = this.a;
+        int i2 = this.b;
+        if (i >= i2 && (i != i2 || this.c >= this.d)) {
+            return false;
         }
-        return String.format("%s[length=%d, chunks=%d]%s...", getClass().getSimpleName(), Integer.valueOf(jArr.length), Integer.valueOf(this.c), Arrays.toString(Arrays.copyOf(jArr, NotificationCenter.savedMessagesForwarded)));
-    }
-
-    @Override // j$.util.stream.N2
-    protected final void u(Object obj, int i, int i2, Object obj2) {
-        long[] jArr = (long[]) obj;
-        j$.util.function.T t = (j$.util.function.T) obj2;
-        while (i < i2) {
-            t.accept(jArr[i]);
-            i++;
+        Object obj2 = this.e;
+        int i3 = this.c;
+        this.c = i3 + 1;
+        b(i3, obj2, obj);
+        int i4 = this.c;
+        Object obj3 = this.e;
+        M2 m2 = this.f;
+        if (i4 == m2.v(obj3)) {
+            this.c = 0;
+            int i5 = this.a + 1;
+            this.a = i5;
+            Object[] objArr = m2.f;
+            if (objArr != null && i5 <= i2) {
+                this.e = objArr[i5];
+            }
         }
+        return true;
     }
 
-    @Override // j$.util.stream.N2
-    protected final int v(Object obj) {
-        return ((long[]) obj).length;
+    @Override // j$.util.Spliterator
+    public final Comparator getComparator() {
+        throw new IllegalStateException();
     }
 
-    @Override // j$.util.stream.N2
-    protected final Object[] y() {
-        return new long[8][];
+    L2(M2 m2, int i, int i2, int i3, int i4) {
+        this.f = m2;
+        this.a = i;
+        this.b = i2;
+        this.c = i3;
+        this.d = i4;
+        Object[] objArr = m2.f;
+        this.e = objArr == null ? m2.e : objArr[i];
+    }
+
+    @Override // j$.util.Spliterator
+    public final long estimateSize() {
+        int i = this.a;
+        int i2 = this.d;
+        int i3 = this.b;
+        if (i == i3) {
+            return i2 - this.c;
+        }
+        long[] jArr = this.f.d;
+        return ((jArr[i3] + i2) - jArr[i]) - this.c;
+    }
+
+    @Override // j$.util.Spliterator
+    public final j$.util.M trySplit() {
+        int i = this.a;
+        int i2 = this.b;
+        if (i < i2) {
+            int i3 = i2 - 1;
+            int i4 = this.c;
+            M2 m2 = this.f;
+            j$.util.M h = h(i, i3, i4, m2.v(m2.f[i3]));
+            this.a = i2;
+            this.c = 0;
+            this.e = m2.f[i2];
+            return h;
+        }
+        if (i != i2) {
+            return null;
+        }
+        int i5 = this.c;
+        int i6 = (this.d - i5) / 2;
+        if (i6 == 0) {
+            return null;
+        }
+        j$.util.M f = f(this.e, i5, i6);
+        this.c += i6;
+        return f;
+    }
+
+    @Override // j$.util.M, j$.util.Spliterator
+    public /* bridge */ /* synthetic */ j$.util.G trySplit() {
+        return (j$.util.G) trySplit();
+    }
+
+    @Override // j$.util.M, j$.util.Spliterator
+    public /* bridge */ /* synthetic */ j$.util.J trySplit() {
+        return (j$.util.J) trySplit();
+    }
+
+    @Override // j$.util.M, j$.util.Spliterator
+    public /* bridge */ /* synthetic */ j$.util.D trySplit() {
+        return (j$.util.D) trySplit();
     }
 }

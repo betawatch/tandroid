@@ -29,15 +29,6 @@ public final class IsReadyToPayRequest extends AbstractSafeParcelable {
     IsReadyToPayRequest() {
     }
 
-    IsReadyToPayRequest(ArrayList arrayList, String str, String str2, ArrayList arrayList2, boolean z, String str3) {
-        this.zza = arrayList;
-        this.zzb = str;
-        this.zzc = str2;
-        this.zzd = arrayList2;
-        this.zze = z;
-        this.zzf = str3;
-    }
-
     public static IsReadyToPayRequest fromJson(String str) {
         Builder newBuilder = newBuilder();
         IsReadyToPayRequest.this.zzf = (String) Preconditions.checkNotNull(str, "isReadyToPayRequestJson cannot be null!");
@@ -58,5 +49,14 @@ public final class IsReadyToPayRequest extends AbstractSafeParcelable {
         SafeParcelWriter.writeBoolean(parcel, 7, this.zze);
         SafeParcelWriter.writeString(parcel, 8, this.zzf, false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    IsReadyToPayRequest(ArrayList arrayList, String str, String str2, ArrayList arrayList2, boolean z, String str3) {
+        this.zza = arrayList;
+        this.zzb = str;
+        this.zzc = str2;
+        this.zzd = arrayList2;
+        this.zze = z;
+        this.zzf = str3;
     }
 }

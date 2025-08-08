@@ -14,7 +14,7 @@ public interface IntFunction<R> {
             if (intFunction == null) {
                 return null;
             }
-            return intFunction instanceof F ? ((F) intFunction).a : new VivifiedWrapper(intFunction);
+            return intFunction instanceof H ? ((H) intFunction).a : new VivifiedWrapper(intFunction);
         }
 
         @Override // j$.util.function.IntFunction

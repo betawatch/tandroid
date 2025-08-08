@@ -3,9 +3,15 @@ package kotlinx.coroutines;
 import java.util.concurrent.CancellationException;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class JobCancellationException extends CancellationException {
     public final transient Job job;
+
+    @Override // java.lang.Throwable
+    public Throwable fillInStackTrace() {
+        setStackTrace(new StackTraceElement[0]);
+        return this;
+    }
 
     public JobCancellationException(String str, Throwable th, Job job) {
         super(str);
@@ -13,6 +19,11 @@ public final class JobCancellationException extends CancellationException {
         if (th != null) {
             initCause(th);
         }
+    }
+
+    @Override // java.lang.Throwable
+    public String toString() {
+        return super.toString() + "; job=" + this.job;
     }
 
     public boolean equals(Object obj) {
@@ -27,22 +38,11 @@ public final class JobCancellationException extends CancellationException {
         return true;
     }
 
-    @Override // java.lang.Throwable
-    public Throwable fillInStackTrace() {
-        setStackTrace(new StackTraceElement[0]);
-        return this;
-    }
-
     public int hashCode() {
         String message = getMessage();
         Intrinsics.checkNotNull(message);
         int hashCode = ((message.hashCode() * 31) + this.job.hashCode()) * 31;
         Throwable cause = getCause();
         return hashCode + (cause != null ? cause.hashCode() : 0);
-    }
-
-    @Override // java.lang.Throwable
-    public String toString() {
-        return super.toString() + "; job=" + this.job;
     }
 }

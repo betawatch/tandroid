@@ -2,7 +2,7 @@ package kotlinx.coroutines;
 
 import kotlin.coroutines.CoroutineContext;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 class DeferredCoroutine extends AbstractCoroutine implements Deferred {
     public DeferredCoroutine(CoroutineContext coroutineContext, boolean z) {
         super(coroutineContext, true, z);

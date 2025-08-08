@@ -55,6 +55,47 @@ public class ConferenceCall {
     };
     private final int[] pollRequestId = new int[2];
 
+    public static native CallState call_apply_block(long j, byte[] bArr);
+
+    public static native long call_create(long j, long j2, byte[] bArr);
+
+    public static native byte[] call_create_change_state_block(long j, CallState callState);
+
+    public static native byte[] call_create_self_add_block(long j, byte[] bArr, CallParticipant callParticipant);
+
+    public static native byte[] call_create_zero_block(long j, CallState callState);
+
+    public static native String call_describe(long j);
+
+    public static native String call_describe_block(byte[] bArr);
+
+    public static native String call_describe_message(byte[] bArr);
+
+    public static native void call_destroy(long j);
+
+    public static native void call_destroy_all();
+
+    public static native int call_get_height(long j);
+
+    public static native CallState call_get_state(long j);
+
+    public static native CallVerificationState call_get_verification_state(long j);
+
+    public static native CallVerificationWords call_get_verification_words(long j);
+
+    public static native byte[][] call_pull_outbound_messages(long j);
+
+    public static native CallVerificationState call_receive_inbound_message(long j, byte[] bArr);
+
+    public static native long key_from_public_key(byte[] bArr);
+
+    public static native long key_generate_temporary_private_key();
+
+    public static native byte[] key_to_public_key(long j);
+
+    protected void gotCallId(long j) {
+    }
+
     public static final class CallParticipant {
         int permissions;
         long public_key_id;
@@ -91,11 +132,19 @@ public class ConferenceCall {
                     sb.append(", ");
                 }
                 CallParticipant callParticipant = this.participants[i];
-                sb.append(callParticipant == null ? "null" : callParticipant.toString());
+                if (callParticipant == null) {
+                    sb.append("null");
+                } else {
+                    sb.append(callParticipant.toString());
+                }
             }
             sb.append("]}");
             return sb.toString();
         }
+    }
+
+    private static String blockStr(byte[] bArr) {
+        return "Block{" + Utilities.bytesToHex(bArr) + "}";
     }
 
     public static final class CallVerificationState {
@@ -136,48 +185,6 @@ public class ConferenceCall {
         }
     }
 
-    public ConferenceCall(int i, long j) {
-        this.currentAccount = i;
-        this.my_user_id = j;
-        init();
-    }
-
-    private static String blockStr(byte[] bArr) {
-        return "Block{" + Utilities.bytesToHex(bArr) + "}";
-    }
-
-    public static native CallState call_apply_block(long j, byte[] bArr);
-
-    public static native long call_create(long j, long j2, byte[] bArr);
-
-    public static native byte[] call_create_change_state_block(long j, CallState callState);
-
-    public static native byte[] call_create_self_add_block(long j, byte[] bArr, CallParticipant callParticipant);
-
-    public static native byte[] call_create_zero_block(long j, CallState callState);
-
-    public static native String call_describe(long j);
-
-    public static native String call_describe_block(byte[] bArr);
-
-    public static native String call_describe_message(byte[] bArr);
-
-    public static native void call_destroy(long j);
-
-    public static native void call_destroy_all();
-
-    public static native int call_get_height(long j);
-
-    public static native CallState call_get_state(long j);
-
-    public static native CallVerificationState call_get_verification_state(long j);
-
-    public static native CallVerificationWords call_get_verification_words(long j);
-
-    public static native byte[][] call_pull_outbound_messages(long j);
-
-    public static native CallVerificationState call_receive_inbound_message(long j, byte[] bArr);
-
     private void checkEmojiHash() {
         String[] verificationEmojis = getVerificationEmojis();
         if (eq(verificationEmojis, this.lastVerificationEmojis)) {
@@ -190,6 +197,11 @@ public class ConferenceCall {
                 ConferenceCall.this.lambda$checkEmojiHash$0();
             }
         });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$checkEmojiHash$0() {
+        NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.conferenceEmojiUpdated, new Object[0]);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:34:? A[RETURN, SYNTHETIC] */
@@ -229,9 +241,7 @@ public class ConferenceCall {
             }
         }
         if (eq(hashSet, this.lastParticipants)) {
-            if (this.lastParticipants == null || hashSet == null) {
-                this.joiningBlockchainParticipants.clear();
-            } else {
+            if (this.lastParticipants != null && hashSet != null) {
                 Iterator<Long> it = hashSet.iterator();
                 while (it.hasNext()) {
                     Long next = it.next();
@@ -248,6 +258,8 @@ public class ConferenceCall {
                         it2.remove();
                     }
                 }
+            } else {
+                this.joiningBlockchainParticipants.clear();
             }
             this.lastParticipants = hashSet;
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.ConferenceCall$$ExternalSyntheticLambda12
@@ -257,6 +269,42 @@ public class ConferenceCall {
                 }
             });
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$checkParticipants$1() {
+        VoIPService sharedInstance;
+        ChatObject.Call call;
+        TLRPC.GroupCall groupCall;
+        if (this.groupCall == null || (sharedInstance = VoIPService.getSharedInstance()) == null || (call = sharedInstance.groupCall) == null || (groupCall = call.call) == null || groupCall.id != this.groupCall.id) {
+            return;
+        }
+        updateParticipants(call.sortedParticipants, false);
+        sharedInstance.groupCall.shadyLeftParticipants.clear();
+        ChatObject.Call call2 = sharedInstance.groupCall;
+        call2.shadyLeftParticipants.addAll(sharedInstance.conference.getShadyLeftParticipants(call2.sortedParticipants));
+        sharedInstance.groupCall.shadyJoinParticipants.clear();
+        ChatObject.Call call3 = sharedInstance.groupCall;
+        call3.shadyJoinParticipants.addAll(sharedInstance.conference.getShadyJoiningParticipants(call3.sortedParticipants));
+        NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallUpdated, 0L, Long.valueOf(this.groupCall.id), Boolean.FALSE);
+    }
+
+    private boolean eq(String[] strArr, String[] strArr2) {
+        if (strArr == strArr2) {
+            return true;
+        }
+        if (strArr == null && strArr2 == null) {
+            return true;
+        }
+        if (strArr == null || strArr2 == null || strArr.length != strArr2.length) {
+            return false;
+        }
+        for (int i = 0; i < strArr.length; i++) {
+            if (!TextUtils.equals(strArr[i], strArr2[i])) {
+                return false;
+            }
+        }
+        return true;
     }
 
     private boolean eq(HashSet<Long> hashSet, HashSet<Long> hashSet2) {
@@ -278,28 +326,6 @@ public class ConferenceCall {
             }
         }
         return true;
-    }
-
-    private boolean eq(String[] strArr, String[] strArr2) {
-        if (strArr == strArr2) {
-            return true;
-        }
-        if (strArr == null && strArr2 == null) {
-            return true;
-        }
-        if (strArr == null || strArr2 == null || strArr.length != strArr2.length) {
-            return false;
-        }
-        for (int i = 0; i < strArr.length; i++) {
-            if (!TextUtils.equals(strArr[i], strArr2[i])) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    private long getPollTimeout() {
-        return getVerificationEmojis() == null ? 1000L : 5000L;
     }
 
     private String[] getVerificationEmojis() {
@@ -325,6 +351,16 @@ public class ConferenceCall {
         return EncryptionKeyEmojifier.emojifyForCall(bArr);
     }
 
+    public String[] getEmojis() {
+        return this.lastVerificationEmojis;
+    }
+
+    public ConferenceCall(int i, long j) {
+        this.currentAccount = i;
+        this.my_user_id = j;
+        init();
+    }
+
     private void init() {
         long key_generate_temporary_private_key = key_generate_temporary_private_key();
         this.my_private_key_id = key_generate_temporary_private_key;
@@ -341,107 +377,23 @@ public class ConferenceCall {
         callParticipant.permissions = 3;
     }
 
-    public static native long key_from_public_key(byte[] bArr);
-
-    public static native long key_generate_temporary_private_key();
-
-    public static native byte[] key_to_public_key(long j);
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkEmojiHash$0() {
-        NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.conferenceEmojiUpdated, new Object[0]);
+    public byte[] getMyPublicKey() {
+        return this.my_public_key;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkParticipants$1() {
-        VoIPService sharedInstance;
-        ChatObject.Call call;
-        TLRPC.GroupCall groupCall;
-        if (this.groupCall == null || (sharedInstance = VoIPService.getSharedInstance()) == null || (call = sharedInstance.groupCall) == null || (groupCall = call.call) == null || groupCall.id != this.groupCall.id) {
-            return;
-        }
-        updateParticipants(call.sortedParticipants, false);
-        sharedInstance.groupCall.shadyLeftParticipants.clear();
-        ChatObject.Call call2 = sharedInstance.groupCall;
-        call2.shadyLeftParticipants.addAll(sharedInstance.conference.getShadyLeftParticipants(call2.sortedParticipants));
-        sharedInstance.groupCall.shadyJoinParticipants.clear();
-        ChatObject.Call call3 = sharedInstance.groupCall;
-        call3.shadyJoinParticipants.addAll(sharedInstance.conference.getShadyJoiningParticipants(call3.sortedParticipants));
-        NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallUpdated, 0L, Long.valueOf(this.groupCall.id), Boolean.FALSE);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$kick$12(long j, TLObject tLObject, TLRPC.TL_error tL_error) {
-        processUpdates(null, Long.valueOf(j), tLObject, tL_error);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$kick$13(final long j, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.ConferenceCall$$ExternalSyntheticLambda11
-            @Override // java.lang.Runnable
-            public final void run() {
-                ConferenceCall.this.lambda$kick$12(j, tLObject, tL_error);
+    public void requestLastBlock(final Runnable runnable) {
+        final long currentTimeMillis = System.currentTimeMillis();
+        TL_phone.getGroupCallChainBlocks getgroupcallchainblocks = new TL_phone.getGroupCallChainBlocks();
+        getgroupcallchainblocks.call = this.inputGroupCall;
+        getgroupcallchainblocks.sub_chain_id = 0;
+        getgroupcallchainblocks.offset = -1;
+        getgroupcallchainblocks.limit = 1;
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(getgroupcallchainblocks, new RequestDelegate() { // from class: org.telegram.messenger.voip.ConferenceCall$$ExternalSyntheticLambda6
+            @Override // org.telegram.tgnet.RequestDelegate
+            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                ConferenceCall.this.lambda$requestLastBlock$3(currentTimeMillis, runnable, tLObject, tL_error);
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$poll$7(TL_phone.getGroupCallChainBlocks getgroupcallchainblocks, long j, TLObject tLObject, TLRPC.TL_error tL_error, AtomicBoolean atomicBoolean, AtomicInteger atomicInteger) {
-        if (processUpdates(Integer.valueOf(getgroupcallchainblocks.offset), Long.valueOf(j), tLObject, tL_error)) {
-            atomicBoolean.set(true);
-        }
-        if (atomicInteger.incrementAndGet() == 2) {
-            this.polling = false;
-            if (atomicBoolean.get()) {
-                forcePoll();
-            } else {
-                AndroidUtilities.cancelRunOnUIThread(this.pollRunnable);
-                AndroidUtilities.runOnUIThread(this.pollRunnable, getPollTimeout());
-            }
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$poll$8(final TL_phone.getGroupCallChainBlocks getgroupcallchainblocks, final long j, final AtomicBoolean atomicBoolean, final AtomicInteger atomicInteger, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.ConferenceCall$$ExternalSyntheticLambda4
-            @Override // java.lang.Runnable
-            public final void run() {
-                ConferenceCall.this.lambda$poll$7(getgroupcallchainblocks, j, tLObject, tL_error, atomicBoolean, atomicInteger);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ String lambda$poll$9(CallParticipant callParticipant) {
-        return "[" + callParticipant.user_id + "]: " + DialogObject.getName(callParticipant.user_id);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processUpdates$4(TLObject tLObject) {
-        MessagesController.getInstance(this.currentAccount).processUpdates((TLRPC.Updates) tLObject, false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$pull_outbound$5(long j, TLObject tLObject, TLRPC.TL_error tL_error) {
-        processUpdates(null, Long.valueOf(j), tLObject, tL_error);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$pull_outbound$6(final long j, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.ConferenceCall$$ExternalSyntheticLambda0
-            @Override // java.lang.Runnable
-            public final void run() {
-                ConferenceCall.this.lambda$pull_outbound$5(j, tLObject, tL_error);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$requestLastBlock$2(long j, TLObject tLObject, TLRPC.TL_error tL_error, Runnable runnable) {
-        processUpdates(-1, Long.valueOf(j), tLObject, tL_error);
-        if (runnable != null) {
-            runnable.run();
-        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -455,83 +407,11 @@ public class ConferenceCall {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateParticipants$10(long j, TLObject tLObject, TLRPC.TL_error tL_error) {
-        processUpdates(null, Long.valueOf(j), tLObject, tL_error);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateParticipants$11(final long j, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.ConferenceCall$$ExternalSyntheticLambda7
-            @Override // java.lang.Runnable
-            public final void run() {
-                ConferenceCall.this.lambda$updateParticipants$10(j, tLObject, tL_error);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public void poll() {
-        if (this.destroyed) {
-            FileLog.d("[tde2e] conference.poll but destroyed!");
-            return;
+    public /* synthetic */ void lambda$requestLastBlock$2(long j, TLObject tLObject, TLRPC.TL_error tL_error, Runnable runnable) {
+        processUpdates(-1, Long.valueOf(j), tLObject, tL_error);
+        if (runnable != null) {
+            runnable.run();
         }
-        if (!this.joined) {
-            FileLog.d("[tde2e] conference.poll but not joined!");
-            return;
-        }
-        this.polling = true;
-        final AtomicInteger atomicInteger = new AtomicInteger(0);
-        final AtomicBoolean atomicBoolean = new AtomicBoolean(false);
-        for (int i = 0; i < 2; i++) {
-            final TL_phone.getGroupCallChainBlocks getgroupcallchainblocks = new TL_phone.getGroupCallChainBlocks();
-            getgroupcallchainblocks.call = this.inputGroupCall;
-            getgroupcallchainblocks.sub_chain_id = i;
-            getgroupcallchainblocks.offset = Math.max(0, this.last_offset[i]);
-            getgroupcallchainblocks.limit = 10;
-            FileLog.d("[tde2e] requesting getGroupCallChainBlocks sub_chain_id=" + getgroupcallchainblocks.sub_chain_id + " offset=" + getgroupcallchainblocks.offset + " limit=10");
-            final long currentTimeMillis = System.currentTimeMillis();
-            this.pollRequestId[i] = ConnectionsManager.getInstance(this.currentAccount).sendRequest(getgroupcallchainblocks, new RequestDelegate() { // from class: org.telegram.messenger.voip.ConferenceCall$$ExternalSyntheticLambda13
-                @Override // org.telegram.tgnet.RequestDelegate
-                public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    ConferenceCall.this.lambda$poll$8(getgroupcallchainblocks, currentTimeMillis, atomicBoolean, atomicInteger, tLObject, tL_error);
-                }
-            });
-        }
-        if (this.call_id >= 0) {
-            try {
-                FileLog.d("[tde2e] state = " + call_get_verification_state(this.call_id));
-            } catch (Exception e) {
-                FileLog.e(e);
-            }
-            try {
-                FileLog.d("[tde2e] call_describe(" + this.call_id + "): " + call_describe(this.call_id));
-                StringBuilder sb = new StringBuilder();
-                sb.append("[tde2e] call users:\n ");
-                sb.append(TextUtils.join("\n ", (Iterable) DesugarArrays.stream(call_get_state(this.call_id).participants).map(new Function() { // from class: org.telegram.messenger.voip.ConferenceCall$$ExternalSyntheticLambda14
-                    @Override // j$.util.function.Function
-                    public /* synthetic */ Function andThen(Function function) {
-                        return Function.-CC.$default$andThen(this, function);
-                    }
-
-                    @Override // j$.util.function.Function
-                    public final Object apply(Object obj) {
-                        String lambda$poll$9;
-                        lambda$poll$9 = ConferenceCall.lambda$poll$9((ConferenceCall.CallParticipant) obj);
-                        return lambda$poll$9;
-                    }
-
-                    @Override // j$.util.function.Function
-                    public /* synthetic */ Function compose(Function function) {
-                        return Function.-CC.$default$compose(this, function);
-                    }
-                }).collect(Collectors.toSet())));
-                FileLog.d(sb.toString());
-            } catch (Exception e2) {
-                FileLog.e(e2);
-            }
-        }
-        checkEmojiHash();
-        checkParticipants();
     }
 
     private boolean processUpdates(Integer num, Long l, final TLObject tLObject, TLRPC.TL_error tL_error) {
@@ -552,6 +432,186 @@ public class ConferenceCall {
             }
         });
         return z;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$processUpdates$4(TLObject tLObject) {
+        MessagesController.getInstance(this.currentAccount).processUpdates((TLRPC.Updates) tLObject, false);
+    }
+
+    public byte[] getLastBlock() {
+        return this.last_block;
+    }
+
+    public byte[] generateAddSelfBlock() {
+        CallParticipant callParticipant = new CallParticipant();
+        callParticipant.user_id = this.my_user_id;
+        callParticipant.public_key_id = this.my_public_key_id;
+        callParticipant.permissions = 3;
+        byte[] bArr = this.last_block;
+        if (bArr == null) {
+            CallState callState = new CallState();
+            this.state = callState;
+            callState.height = 1;
+            callState.participants = new CallParticipant[]{callParticipant};
+            byte[] call_create_zero_block = call_create_zero_block(this.my_private_key_id, callState);
+            this.zero_block = call_create_zero_block;
+            this.last_block = call_create_zero_block;
+            FileLog.d("[tde2e] call_create_zero_block(" + this.my_private_key_id + ", " + this.state + ")");
+        } else {
+            try {
+                byte[] call_create_self_add_block = call_create_self_add_block(this.my_private_key_id, bArr, callParticipant);
+                FileLog.d("[tde2e] call_create_self_add_block(" + this.my_private_key_id + ", " + blockStr(this.last_block) + ", " + this.state + ") = " + blockStr(call_create_self_add_block));
+                StringBuilder sb = new StringBuilder();
+                sb.append("[tde2e] call_create_self_add_block last_block=");
+                sb.append(call_describe_block(this.last_block));
+                sb.append(" new_block=");
+                sb.append(call_describe_block(call_create_self_add_block));
+                FileLog.d(sb.toString());
+                this.last_block = call_create_self_add_block;
+            } catch (Exception e) {
+                FileLog.e(e);
+            }
+        }
+        return this.last_block;
+    }
+
+    public CallVerificationWords getVerificationWords() {
+        return call_get_verification_words(this.call_id);
+    }
+
+    public CallVerificationState getVerificationState() {
+        return call_get_verification_state(this.call_id);
+    }
+
+    private void readQueue(int i) {
+        if (this.destroyed) {
+            FileLog.d("[tde2e] conference.readQueue(" + i + ") but destroyed!");
+            return;
+        }
+        if (i != 0 && this.call_id < 0) {
+            FileLog.d("[tde2e] conference.readQueue(" + i + ") but there is no call yet!");
+            return;
+        }
+        int i2 = this.last_offset[i];
+        if (i2 == -1) {
+            FileLog.d("[tde2e] conference.readQueue(" + i + ") but last_offset == -1!");
+            return;
+        }
+        int max = Math.max(0, i2);
+        FileLog.d("[tde2e] {subchain: " + i + "} processing blocks queue from " + max);
+        while (true) {
+            long j = max;
+            byte[] bArr = this.blocksQueue[i].get(j);
+            if (bArr == null) {
+                FileLog.d("[tde2e] {subchain: " + i + "} got into hole (might be the end) in " + i + " subchain at #" + max + ", when our last_offset[" + i + "] = " + this.last_offset[i]);
+                this.last_offset[i] = max;
+                return;
+            }
+            try {
+                FileLog.d("[tde2e] {subchain: " + i + "} processing #" + max + " block from queue");
+                this.blocksQueue[i].remove(j);
+                long j2 = this.call_id;
+                if (j2 < 0) {
+                    FileLog.d("[tde2e] #" + max + " call_create block=" + call_describe_block(bArr));
+                    long j3 = this.my_user_id;
+                    long j4 = this.my_private_key_id;
+                    this.last_block = bArr;
+                    long call_create = call_create(j3, j4, bArr);
+                    this.call_id = call_create;
+                    gotCallId(call_create);
+                } else if (i == 0) {
+                    if (max > call_get_height(j2)) {
+                        FileLog.d("[tde2e] #" + max + " call_apply_block block=" + call_describe_block(bArr));
+                        FileLog.d("[tde2e] #" + max + " call_apply_block(" + this.call_id + ", " + blockStr(bArr) + ") = " + call_apply_block(this.call_id, bArr));
+                    } else {
+                        FileLog.d("[tde2e] #" + max + " block from queue is under call's height!");
+                    }
+                } else if (i == 1) {
+                    FileLog.d("[tde2e] #" + max + " call_receive_inbound_message message=" + call_describe_message(bArr));
+                    FileLog.d("[tde2e] #" + max + " call_receive_inbound_message(" + this.call_id + ", " + blockStr(bArr) + ") = " + call_receive_inbound_message(this.call_id, bArr));
+                }
+                max++;
+                this.last_offset[i] = max;
+            } catch (Exception e) {
+                FileLog.e("[tde2e] {subchain: " + i + "} #" + max + " block got into error: ", e);
+                return;
+            }
+        }
+    }
+
+    public boolean applyUpdate(Integer num, TLRPC.TL_updateGroupCallChainBlocks tL_updateGroupCallChainBlocks, boolean z, Long l) {
+        if (this.destroyed) {
+            FileLog.d("[tde2e] conference.applyUpdate but destroyed!");
+            return false;
+        }
+        if (tL_updateGroupCallChainBlocks == null) {
+            return false;
+        }
+        TLRPC.GroupCall groupCall = this.groupCall;
+        if (groupCall == null) {
+            FileLog.d("[tde2e] received updateGroupCallChainBlocks but we dont have groupcall yet!");
+            return false;
+        }
+        if (tL_updateGroupCallChainBlocks.call.id != groupCall.id) {
+            FileLog.d("[tde2e] received updateGroupCallChainBlocks for " + tL_updateGroupCallChainBlocks.call.id + " but we have " + this.groupCall.id);
+            return false;
+        }
+        StringBuilder sb = new StringBuilder();
+        sb.append("[tde2e] received update with ");
+        sb.append(tL_updateGroupCallChainBlocks.blocks.size());
+        sb.append(" blocks for ");
+        sb.append(tL_updateGroupCallChainBlocks.sub_chain_id);
+        sb.append(" subchain, next_offset=");
+        sb.append(tL_updateGroupCallChainBlocks.next_offset);
+        sb.append(" requested_offset=");
+        sb.append(num);
+        sb.append(l != null ? " in " + (System.currentTimeMillis() - l.longValue()) + "ms" : "");
+        FileLog.d(sb.toString());
+        int i = tL_updateGroupCallChainBlocks.sub_chain_id;
+        int i2 = tL_updateGroupCallChainBlocks.next_offset;
+        if (i == 0 || i == 1) {
+            for (int i3 = 0; i3 < tL_updateGroupCallChainBlocks.blocks.size(); i3++) {
+                byte[] bArr = tL_updateGroupCallChainBlocks.blocks.get(i3);
+                int size = (i2 - tL_updateGroupCallChainBlocks.blocks.size()) + i3;
+                if (num == null || num.intValue() != -1) {
+                    if (size >= this.last_offset[i]) {
+                        FileLog.d("[tde2e] {subchain: " + i + "} put #" + size + " into queue");
+                        this.blocksQueue[i].put((long) size, bArr);
+                    } else {
+                        FileLog.d("[tde2e] {subchain: " + i + "} received #" + size + " that was already processed from queue");
+                    }
+                } else if (i == 0) {
+                    this.last_block = bArr;
+                }
+            }
+            if (this.last_offset[i] == -1) {
+                if (num != null && num.intValue() == 0) {
+                    this.last_offset[i] = i2 - tL_updateGroupCallChainBlocks.blocks.size();
+                } else if (num != null && num.intValue() == -1) {
+                    FileLog.d("[tde2e] no offset, but we were asking for last block anyway");
+                } else {
+                    FileLog.e("[tde2e] received update where we can't know what the start offset is of " + i + " sub chain (we requested " + num + ")");
+                }
+            }
+            if (this.last_offset[i] != -1) {
+                boolean z2 = this.call_id >= 0;
+                readQueue(i);
+                boolean z3 = this.call_id >= 0;
+                if (i == 0 && !z2 && z3) {
+                    readQueue(1);
+                }
+            }
+        }
+        if (i == 1) {
+            pull_outbound();
+        }
+        checkEmojiHash();
+        checkParticipants();
+        if (z && tL_updateGroupCallChainBlocks.blocks.size() > 0) {
+            forcePoll();
+        }
+        return tL_updateGroupCallChainBlocks.blocks.size() > 0;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:24:0x00ec  */
@@ -623,164 +683,119 @@ public class ConferenceCall {
         }
     }
 
-    private void readQueue(int i) {
-        StringBuilder sb;
-        String str;
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$pull_outbound$6(final long j, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.ConferenceCall$$ExternalSyntheticLambda0
+            @Override // java.lang.Runnable
+            public final void run() {
+                ConferenceCall.this.lambda$pull_outbound$5(j, tLObject, tL_error);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$pull_outbound$5(long j, TLObject tLObject, TLRPC.TL_error tL_error) {
+        processUpdates(null, Long.valueOf(j), tLObject, tL_error);
+    }
+
+    private long getPollTimeout() {
+        return getVerificationEmojis() == null ? 1000L : 5000L;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void poll() {
         if (this.destroyed) {
-            FileLog.d("[tde2e] conference.readQueue(" + i + ") but destroyed!");
+            FileLog.d("[tde2e] conference.poll but destroyed!");
             return;
         }
-        if (i != 0 && this.call_id < 0) {
-            FileLog.d("[tde2e] conference.readQueue(" + i + ") but there is no call yet!");
+        if (!this.joined) {
+            FileLog.d("[tde2e] conference.poll but not joined!");
             return;
         }
-        int i2 = this.last_offset[i];
-        if (i2 == -1) {
-            FileLog.d("[tde2e] conference.readQueue(" + i + ") but last_offset == -1!");
-            return;
+        this.polling = true;
+        final AtomicInteger atomicInteger = new AtomicInteger(0);
+        final AtomicBoolean atomicBoolean = new AtomicBoolean(false);
+        for (int i = 0; i < 2; i++) {
+            final TL_phone.getGroupCallChainBlocks getgroupcallchainblocks = new TL_phone.getGroupCallChainBlocks();
+            getgroupcallchainblocks.call = this.inputGroupCall;
+            getgroupcallchainblocks.sub_chain_id = i;
+            getgroupcallchainblocks.offset = Math.max(0, this.last_offset[i]);
+            getgroupcallchainblocks.limit = 10;
+            FileLog.d("[tde2e] requesting getGroupCallChainBlocks sub_chain_id=" + getgroupcallchainblocks.sub_chain_id + " offset=" + getgroupcallchainblocks.offset + " limit=10");
+            final long currentTimeMillis = System.currentTimeMillis();
+            this.pollRequestId[i] = ConnectionsManager.getInstance(this.currentAccount).sendRequest(getgroupcallchainblocks, new RequestDelegate() { // from class: org.telegram.messenger.voip.ConferenceCall$$ExternalSyntheticLambda13
+                @Override // org.telegram.tgnet.RequestDelegate
+                public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                    ConferenceCall.this.lambda$poll$8(getgroupcallchainblocks, currentTimeMillis, atomicBoolean, atomicInteger, tLObject, tL_error);
+                }
+            });
         }
-        int max = Math.max(0, i2);
-        FileLog.d("[tde2e] {subchain: " + i + "} processing blocks queue from " + max);
-        while (true) {
-            long j = max;
-            byte[] bArr = this.blocksQueue[i].get(j);
-            if (bArr == null) {
-                FileLog.d("[tde2e] {subchain: " + i + "} got into hole (might be the end) in " + i + " subchain at #" + max + ", when our last_offset[" + i + "] = " + this.last_offset[i]);
-                this.last_offset[i] = max;
-                return;
+        if (this.call_id >= 0) {
+            try {
+                FileLog.d("[tde2e] state = " + call_get_verification_state(this.call_id));
+            } catch (Exception e) {
+                FileLog.e(e);
             }
             try {
-                FileLog.d("[tde2e] {subchain: " + i + "} processing #" + max + " block from queue");
-                this.blocksQueue[i].remove(j);
-                long j2 = this.call_id;
-                if (j2 < 0) {
-                    FileLog.d("[tde2e] #" + max + " call_create block=" + call_describe_block(bArr));
-                    long j3 = this.my_user_id;
-                    long j4 = this.my_private_key_id;
-                    this.last_block = bArr;
-                    long call_create = call_create(j3, j4, bArr);
-                    this.call_id = call_create;
-                    gotCallId(call_create);
-                } else {
-                    if (i == 0) {
-                        if (max > call_get_height(j2)) {
-                            FileLog.d("[tde2e] #" + max + " call_apply_block block=" + call_describe_block(bArr));
-                            sb = new StringBuilder();
-                            sb.append("[tde2e] #");
-                            sb.append(max);
-                            sb.append(" call_apply_block(");
-                            sb.append(this.call_id);
-                            sb.append(", ");
-                            sb.append(blockStr(bArr));
-                            sb.append(") = ");
-                            sb.append(call_apply_block(this.call_id, bArr));
-                        } else {
-                            str = "[tde2e] #" + max + " block from queue is under call's height!";
-                            FileLog.d(str);
-                        }
-                    } else if (i == 1) {
-                        FileLog.d("[tde2e] #" + max + " call_receive_inbound_message message=" + call_describe_message(bArr));
-                        sb = new StringBuilder();
-                        sb.append("[tde2e] #");
-                        sb.append(max);
-                        sb.append(" call_receive_inbound_message(");
-                        sb.append(this.call_id);
-                        sb.append(", ");
-                        sb.append(blockStr(bArr));
-                        sb.append(") = ");
-                        sb.append(call_receive_inbound_message(this.call_id, bArr));
+                FileLog.d("[tde2e] call_describe(" + this.call_id + "): " + call_describe(this.call_id));
+                StringBuilder sb = new StringBuilder();
+                sb.append("[tde2e] call users:\n ");
+                sb.append(TextUtils.join("\n ", (Iterable) DesugarArrays.stream(call_get_state(this.call_id).participants).map(new Function() { // from class: org.telegram.messenger.voip.ConferenceCall$$ExternalSyntheticLambda14
+                    @Override // j$.util.function.Function
+                    public /* synthetic */ Function andThen(Function function) {
+                        return Function.-CC.$default$andThen(this, function);
                     }
-                    str = sb.toString();
-                    FileLog.d(str);
-                }
-                max++;
-                this.last_offset[i] = max;
-            } catch (Exception e) {
-                FileLog.e("[tde2e] {subchain: " + i + "} #" + max + " block got into error: ", e);
-                return;
+
+                    @Override // j$.util.function.Function
+                    public final Object apply(Object obj) {
+                        String lambda$poll$9;
+                        lambda$poll$9 = ConferenceCall.lambda$poll$9((ConferenceCall.CallParticipant) obj);
+                        return lambda$poll$9;
+                    }
+
+                    @Override // j$.util.function.Function
+                    public /* synthetic */ Function compose(Function function) {
+                        return Function.-CC.$default$compose(this, function);
+                    }
+                }).collect(Collectors.toSet())));
+                FileLog.d(sb.toString());
+            } catch (Exception e2) {
+                FileLog.e(e2);
             }
         }
+        checkEmojiHash();
+        checkParticipants();
     }
 
-    public boolean applyUpdate(Integer num, TLRPC.TL_updateGroupCallChainBlocks tL_updateGroupCallChainBlocks, boolean z, Long l) {
-        String str;
-        if (this.destroyed) {
-            str = "[tde2e] conference.applyUpdate but destroyed!";
-        } else {
-            if (tL_updateGroupCallChainBlocks == null) {
-                return false;
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$poll$8(final TL_phone.getGroupCallChainBlocks getgroupcallchainblocks, final long j, final AtomicBoolean atomicBoolean, final AtomicInteger atomicInteger, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.ConferenceCall$$ExternalSyntheticLambda4
+            @Override // java.lang.Runnable
+            public final void run() {
+                ConferenceCall.this.lambda$poll$7(getgroupcallchainblocks, j, tLObject, tL_error, atomicBoolean, atomicInteger);
             }
-            TLRPC.GroupCall groupCall = this.groupCall;
-            if (groupCall == null) {
-                str = "[tde2e] received updateGroupCallChainBlocks but we dont have groupcall yet!";
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$poll$7(TL_phone.getGroupCallChainBlocks getgroupcallchainblocks, long j, TLObject tLObject, TLRPC.TL_error tL_error, AtomicBoolean atomicBoolean, AtomicInteger atomicInteger) {
+        if (processUpdates(Integer.valueOf(getgroupcallchainblocks.offset), Long.valueOf(j), tLObject, tL_error)) {
+            atomicBoolean.set(true);
+        }
+        if (atomicInteger.incrementAndGet() == 2) {
+            this.polling = false;
+            if (atomicBoolean.get()) {
+                forcePoll();
             } else {
-                if (tL_updateGroupCallChainBlocks.call.id == groupCall.id) {
-                    StringBuilder sb = new StringBuilder();
-                    sb.append("[tde2e] received update with ");
-                    sb.append(tL_updateGroupCallChainBlocks.blocks.size());
-                    sb.append(" blocks for ");
-                    sb.append(tL_updateGroupCallChainBlocks.sub_chain_id);
-                    sb.append(" subchain, next_offset=");
-                    sb.append(tL_updateGroupCallChainBlocks.next_offset);
-                    sb.append(" requested_offset=");
-                    sb.append(num);
-                    sb.append(l != null ? " in " + (System.currentTimeMillis() - l.longValue()) + "ms" : "");
-                    FileLog.d(sb.toString());
-                    int i = tL_updateGroupCallChainBlocks.sub_chain_id;
-                    int i2 = tL_updateGroupCallChainBlocks.next_offset;
-                    if (i == 0 || i == 1) {
-                        for (int i3 = 0; i3 < tL_updateGroupCallChainBlocks.blocks.size(); i3++) {
-                            byte[] bArr = tL_updateGroupCallChainBlocks.blocks.get(i3);
-                            int size = (i2 - tL_updateGroupCallChainBlocks.blocks.size()) + i3;
-                            if (num == null || num.intValue() != -1) {
-                                if (size >= this.last_offset[i]) {
-                                    FileLog.d("[tde2e] {subchain: " + i + "} put #" + size + " into queue");
-                                    this.blocksQueue[i].put((long) size, bArr);
-                                } else {
-                                    FileLog.d("[tde2e] {subchain: " + i + "} received #" + size + " that was already processed from queue");
-                                }
-                            } else if (i == 0) {
-                                this.last_block = bArr;
-                            }
-                        }
-                        if (this.last_offset[i] == -1) {
-                            if (num != null && num.intValue() == 0) {
-                                this.last_offset[i] = i2 - tL_updateGroupCallChainBlocks.blocks.size();
-                            } else if (num == null || num.intValue() != -1) {
-                                FileLog.e("[tde2e] received update where we can't know what the start offset is of " + i + " sub chain (we requested " + num + ")");
-                            } else {
-                                FileLog.d("[tde2e] no offset, but we were asking for last block anyway");
-                            }
-                        }
-                        if (this.last_offset[i] != -1) {
-                            boolean z2 = this.call_id >= 0;
-                            readQueue(i);
-                            boolean z3 = this.call_id >= 0;
-                            if (i == 0 && !z2 && z3) {
-                                readQueue(1);
-                            }
-                        }
-                    }
-                    if (i == 1) {
-                        pull_outbound();
-                    }
-                    checkEmojiHash();
-                    checkParticipants();
-                    if (z && tL_updateGroupCallChainBlocks.blocks.size() > 0) {
-                        forcePoll();
-                    }
-                    return tL_updateGroupCallChainBlocks.blocks.size() > 0;
-                }
-                str = "[tde2e] received updateGroupCallChainBlocks for " + tL_updateGroupCallChainBlocks.call.id + " but we have " + this.groupCall.id;
+                AndroidUtilities.cancelRunOnUIThread(this.pollRunnable);
+                AndroidUtilities.runOnUIThread(this.pollRunnable, getPollTimeout());
             }
         }
-        FileLog.d(str);
-        return false;
     }
 
-    public void destroy() {
-        this.destroyed = true;
-        reset();
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ String lambda$poll$9(CallParticipant callParticipant) {
+        return "[" + callParticipant.user_id + "]: " + DialogObject.getName(callParticipant.user_id);
     }
 
     public void forcePoll() {
@@ -799,37 +814,145 @@ public class ConferenceCall {
         }
     }
 
-    public byte[] generateAddSelfBlock() {
-        CallParticipant callParticipant = new CallParticipant();
-        callParticipant.user_id = this.my_user_id;
-        callParticipant.public_key_id = this.my_public_key_id;
-        callParticipant.permissions = 3;
-        byte[] bArr = this.last_block;
-        if (bArr == null) {
-            CallState callState = new CallState();
-            this.state = callState;
-            callState.height = 1;
-            callState.participants = new CallParticipant[]{callParticipant};
-            byte[] call_create_zero_block = call_create_zero_block(this.my_private_key_id, callState);
-            this.zero_block = call_create_zero_block;
-            this.last_block = call_create_zero_block;
-            FileLog.d("[tde2e] call_create_zero_block(" + this.my_private_key_id + ", " + this.state + ")");
-        } else {
+    public void updateParticipants(ArrayList<TLRPC.GroupCallParticipant> arrayList, boolean z) {
+        if (this.destroyed) {
+            FileLog.d("[tde2e] conference.updateParticipants but destroyed!");
+            return;
+        }
+        Iterator<TLRPC.GroupCallParticipant> it = arrayList.iterator();
+        while (it.hasNext()) {
+            this.joiningBlockchainParticipants.remove(Long.valueOf(DialogObject.getPeerDialogId(it.next().peer)));
+        }
+        HashSet<Long> shadyLeftParticipants = getShadyLeftParticipants(arrayList);
+        if (!shadyLeftParticipants.isEmpty()) {
             try {
-                byte[] call_create_self_add_block = call_create_self_add_block(this.my_private_key_id, bArr, callParticipant);
-                FileLog.d("[tde2e] call_create_self_add_block(" + this.my_private_key_id + ", " + blockStr(this.last_block) + ", " + this.state + ") = " + blockStr(call_create_self_add_block));
+                CallState call_get_state = call_get_state(this.call_id);
+                CallState callState = new CallState();
+                callState.height = call_get_state.height + 1;
+                ArrayList arrayList2 = new ArrayList();
+                int i = 0;
+                while (true) {
+                    CallParticipant[] callParticipantArr = call_get_state.participants;
+                    if (i >= callParticipantArr.length) {
+                        break;
+                    }
+                    if (!shadyLeftParticipants.contains(Long.valueOf(callParticipantArr[i].user_id))) {
+                        CallParticipant callParticipant = new CallParticipant();
+                        CallParticipant callParticipant2 = call_get_state.participants[i];
+                        callParticipant.user_id = callParticipant2.user_id;
+                        callParticipant.public_key_id = callParticipant2.public_key_id;
+                        callParticipant.permissions = callParticipant2.permissions;
+                        arrayList2.add(callParticipant);
+                    }
+                    i++;
+                }
+                callState.participants = (CallParticipant[]) arrayList2.toArray(new CallParticipant[0]);
+                FileLog.d("[tde2e] call_create_change_state_block from " + this.state + " to " + callState);
+                byte[] call_create_change_state_block = call_create_change_state_block(this.call_id, callState);
                 StringBuilder sb = new StringBuilder();
-                sb.append("[tde2e] call_create_self_add_block last_block=");
-                sb.append(call_describe_block(this.last_block));
-                sb.append(" new_block=");
-                sb.append(call_describe_block(call_create_self_add_block));
+                sb.append("[tde2e] call_create_change_state_block returns ");
+                sb.append(call_describe_block(call_create_change_state_block));
                 FileLog.d(sb.toString());
-                this.last_block = call_create_self_add_block;
+                this.state = callState;
+                TL_phone.deleteConferenceCallParticipants deleteconferencecallparticipants = new TL_phone.deleteConferenceCallParticipants();
+                deleteconferencecallparticipants.only_left = true;
+                deleteconferencecallparticipants.call = this.inputGroupCall;
+                deleteconferencecallparticipants.block = call_create_change_state_block;
+                deleteconferencecallparticipants.ids.addAll(shadyLeftParticipants);
+                final long currentTimeMillis = System.currentTimeMillis();
+                ConnectionsManager.getInstance(this.currentAccount).sendRequest(deleteconferencecallparticipants, new RequestDelegate() { // from class: org.telegram.messenger.voip.ConferenceCall$$ExternalSyntheticLambda1
+                    @Override // org.telegram.tgnet.RequestDelegate
+                    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                        ConferenceCall.this.lambda$updateParticipants$11(currentTimeMillis, tLObject, tL_error);
+                    }
+                });
             } catch (Exception e) {
                 FileLog.e(e);
             }
         }
-        return this.last_block;
+        if (z) {
+            forcePoll();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$updateParticipants$11(final long j, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.ConferenceCall$$ExternalSyntheticLambda7
+            @Override // java.lang.Runnable
+            public final void run() {
+                ConferenceCall.this.lambda$updateParticipants$10(j, tLObject, tL_error);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$updateParticipants$10(long j, TLObject tLObject, TLRPC.TL_error tL_error) {
+        processUpdates(null, Long.valueOf(j), tLObject, tL_error);
+    }
+
+    public void kick(long j) {
+        if (this.destroyed) {
+            FileLog.d("[tde2e] conference.kick but destroyed!");
+            return;
+        }
+        if (this.call_id < 0 || !getBlockchainParticipants().contains(Long.valueOf(j))) {
+            return;
+        }
+        CallState call_get_state = call_get_state(this.call_id);
+        CallState callState = new CallState();
+        callState.height = call_get_state.height + 1;
+        ArrayList arrayList = new ArrayList();
+        int i = 0;
+        while (true) {
+            CallParticipant[] callParticipantArr = call_get_state.participants;
+            if (i >= callParticipantArr.length) {
+                callState.participants = (CallParticipant[]) arrayList.toArray(new CallParticipant[0]);
+                FileLog.d("[tde2e] kick: call_create_change_state_block from " + this.state + " to " + callState);
+                byte[] call_create_change_state_block = call_create_change_state_block(this.call_id, callState);
+                StringBuilder sb = new StringBuilder();
+                sb.append("[tde2e] kick: call_create_change_state_block returns ");
+                sb.append(call_describe_block(call_create_change_state_block));
+                FileLog.d(sb.toString());
+                this.state = callState;
+                TL_phone.deleteConferenceCallParticipants deleteconferencecallparticipants = new TL_phone.deleteConferenceCallParticipants();
+                deleteconferencecallparticipants.kick = true;
+                deleteconferencecallparticipants.call = this.inputGroupCall;
+                deleteconferencecallparticipants.block = call_create_change_state_block;
+                deleteconferencecallparticipants.ids.add(Long.valueOf(j));
+                final long currentTimeMillis = System.currentTimeMillis();
+                ConnectionsManager.getInstance(this.currentAccount).sendRequest(deleteconferencecallparticipants, new RequestDelegate() { // from class: org.telegram.messenger.voip.ConferenceCall$$ExternalSyntheticLambda8
+                    @Override // org.telegram.tgnet.RequestDelegate
+                    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                        ConferenceCall.this.lambda$kick$13(currentTimeMillis, tLObject, tL_error);
+                    }
+                });
+                return;
+            }
+            if (j != callParticipantArr[i].user_id) {
+                CallParticipant callParticipant = new CallParticipant();
+                CallParticipant callParticipant2 = call_get_state.participants[i];
+                callParticipant.user_id = callParticipant2.user_id;
+                callParticipant.public_key_id = callParticipant2.public_key_id;
+                callParticipant.permissions = callParticipant2.permissions;
+                arrayList.add(callParticipant);
+            }
+            i++;
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$kick$13(final long j, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.ConferenceCall$$ExternalSyntheticLambda11
+            @Override // java.lang.Runnable
+            public final void run() {
+                ConferenceCall.this.lambda$kick$12(j, tLObject, tL_error);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$kick$12(long j, TLObject tLObject, TLRPC.TL_error tL_error) {
+        processUpdates(null, Long.valueOf(j), tLObject, tL_error);
     }
 
     public HashSet<Long> getBlockchainParticipants() {
@@ -861,22 +984,6 @@ public class ConferenceCall {
             }
         }
         return hashSet;
-    }
-
-    public long getCallId() {
-        return this.call_id;
-    }
-
-    public String[] getEmojis() {
-        return this.lastVerificationEmojis;
-    }
-
-    public byte[] getLastBlock() {
-        return this.last_block;
-    }
-
-    public byte[] getMyPublicKey() {
-        return this.my_public_key;
     }
 
     public HashSet<Long> getShadyJoiningParticipants(ArrayList<TLRPC.GroupCallParticipant> arrayList) {
@@ -973,86 +1080,6 @@ public class ConferenceCall {
         return hashSet;
     }
 
-    public CallVerificationState getVerificationState() {
-        return call_get_verification_state(this.call_id);
-    }
-
-    public CallVerificationWords getVerificationWords() {
-        return call_get_verification_words(this.call_id);
-    }
-
-    protected void gotCallId(long j) {
-    }
-
-    public void joined() {
-        this.joined = true;
-    }
-
-    public void kick(long j) {
-        if (this.destroyed) {
-            FileLog.d("[tde2e] conference.kick but destroyed!");
-            return;
-        }
-        if (this.call_id < 0 || !getBlockchainParticipants().contains(Long.valueOf(j))) {
-            return;
-        }
-        CallState call_get_state = call_get_state(this.call_id);
-        CallState callState = new CallState();
-        callState.height = call_get_state.height + 1;
-        ArrayList arrayList = new ArrayList();
-        int i = 0;
-        while (true) {
-            CallParticipant[] callParticipantArr = call_get_state.participants;
-            if (i >= callParticipantArr.length) {
-                callState.participants = (CallParticipant[]) arrayList.toArray(new CallParticipant[0]);
-                FileLog.d("[tde2e] kick: call_create_change_state_block from " + this.state + " to " + callState);
-                byte[] call_create_change_state_block = call_create_change_state_block(this.call_id, callState);
-                StringBuilder sb = new StringBuilder();
-                sb.append("[tde2e] kick: call_create_change_state_block returns ");
-                sb.append(call_describe_block(call_create_change_state_block));
-                FileLog.d(sb.toString());
-                this.state = callState;
-                TL_phone.deleteConferenceCallParticipants deleteconferencecallparticipants = new TL_phone.deleteConferenceCallParticipants();
-                deleteconferencecallparticipants.kick = true;
-                deleteconferencecallparticipants.call = this.inputGroupCall;
-                deleteconferencecallparticipants.block = call_create_change_state_block;
-                deleteconferencecallparticipants.ids.add(Long.valueOf(j));
-                final long currentTimeMillis = System.currentTimeMillis();
-                ConnectionsManager.getInstance(this.currentAccount).sendRequest(deleteconferencecallparticipants, new RequestDelegate() { // from class: org.telegram.messenger.voip.ConferenceCall$$ExternalSyntheticLambda8
-                    @Override // org.telegram.tgnet.RequestDelegate
-                    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                        ConferenceCall.this.lambda$kick$13(currentTimeMillis, tLObject, tL_error);
-                    }
-                });
-                return;
-            }
-            if (j != callParticipantArr[i].user_id) {
-                CallParticipant callParticipant = new CallParticipant();
-                CallParticipant callParticipant2 = call_get_state.participants[i];
-                callParticipant.user_id = callParticipant2.user_id;
-                callParticipant.public_key_id = callParticipant2.public_key_id;
-                callParticipant.permissions = callParticipant2.permissions;
-                arrayList.add(callParticipant);
-            }
-            i++;
-        }
-    }
-
-    public void requestLastBlock(final Runnable runnable) {
-        final long currentTimeMillis = System.currentTimeMillis();
-        TL_phone.getGroupCallChainBlocks getgroupcallchainblocks = new TL_phone.getGroupCallChainBlocks();
-        getgroupcallchainblocks.call = this.inputGroupCall;
-        getgroupcallchainblocks.sub_chain_id = 0;
-        getgroupcallchainblocks.offset = -1;
-        getgroupcallchainblocks.limit = 1;
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(getgroupcallchainblocks, new RequestDelegate() { // from class: org.telegram.messenger.voip.ConferenceCall$$ExternalSyntheticLambda6
-            @Override // org.telegram.tgnet.RequestDelegate
-            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                ConferenceCall.this.lambda$requestLastBlock$3(currentTimeMillis, runnable, tLObject, tL_error);
-            }
-        });
-    }
-
     public void reset() {
         AndroidUtilities.cancelRunOnUIThread(this.pollRunnable);
         if (this.call_id != -1) {
@@ -1074,64 +1101,16 @@ public class ConferenceCall {
         init();
     }
 
-    public void updateParticipants(ArrayList<TLRPC.GroupCallParticipant> arrayList, boolean z) {
-        if (this.destroyed) {
-            FileLog.d("[tde2e] conference.updateParticipants but destroyed!");
-            return;
-        }
-        Iterator<TLRPC.GroupCallParticipant> it = arrayList.iterator();
-        while (it.hasNext()) {
-            this.joiningBlockchainParticipants.remove(Long.valueOf(DialogObject.getPeerDialogId(it.next().peer)));
-        }
-        HashSet<Long> shadyLeftParticipants = getShadyLeftParticipants(arrayList);
-        if (!shadyLeftParticipants.isEmpty()) {
-            try {
-                CallState call_get_state = call_get_state(this.call_id);
-                CallState callState = new CallState();
-                callState.height = call_get_state.height + 1;
-                ArrayList arrayList2 = new ArrayList();
-                int i = 0;
-                while (true) {
-                    CallParticipant[] callParticipantArr = call_get_state.participants;
-                    if (i >= callParticipantArr.length) {
-                        break;
-                    }
-                    if (!shadyLeftParticipants.contains(Long.valueOf(callParticipantArr[i].user_id))) {
-                        CallParticipant callParticipant = new CallParticipant();
-                        CallParticipant callParticipant2 = call_get_state.participants[i];
-                        callParticipant.user_id = callParticipant2.user_id;
-                        callParticipant.public_key_id = callParticipant2.public_key_id;
-                        callParticipant.permissions = callParticipant2.permissions;
-                        arrayList2.add(callParticipant);
-                    }
-                    i++;
-                }
-                callState.participants = (CallParticipant[]) arrayList2.toArray(new CallParticipant[0]);
-                FileLog.d("[tde2e] call_create_change_state_block from " + this.state + " to " + callState);
-                byte[] call_create_change_state_block = call_create_change_state_block(this.call_id, callState);
-                StringBuilder sb = new StringBuilder();
-                sb.append("[tde2e] call_create_change_state_block returns ");
-                sb.append(call_describe_block(call_create_change_state_block));
-                FileLog.d(sb.toString());
-                this.state = callState;
-                TL_phone.deleteConferenceCallParticipants deleteconferencecallparticipants = new TL_phone.deleteConferenceCallParticipants();
-                deleteconferencecallparticipants.only_left = true;
-                deleteconferencecallparticipants.call = this.inputGroupCall;
-                deleteconferencecallparticipants.block = call_create_change_state_block;
-                deleteconferencecallparticipants.ids.addAll(shadyLeftParticipants);
-                final long currentTimeMillis = System.currentTimeMillis();
-                ConnectionsManager.getInstance(this.currentAccount).sendRequest(deleteconferencecallparticipants, new RequestDelegate() { // from class: org.telegram.messenger.voip.ConferenceCall$$ExternalSyntheticLambda1
-                    @Override // org.telegram.tgnet.RequestDelegate
-                    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                        ConferenceCall.this.lambda$updateParticipants$11(currentTimeMillis, tLObject, tL_error);
-                    }
-                });
-            } catch (Exception e) {
-                FileLog.e(e);
-            }
-        }
-        if (z) {
-            forcePoll();
-        }
+    public void joined() {
+        this.joined = true;
+    }
+
+    public void destroy() {
+        this.destroyed = true;
+        reset();
+    }
+
+    public long getCallId() {
+        return this.call_id;
     }
 }

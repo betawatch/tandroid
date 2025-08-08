@@ -25,14 +25,6 @@ import org.telegram.ui.Components.ShareAlert;
 public class ShareActivity extends Activity {
     private Dialog visibleDialog;
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onCreate$0(DialogInterface dialogInterface) {
-        if (!isFinishing()) {
-            finish();
-        }
-        this.visibleDialog = null;
-    }
-
     @Override // android.app.Activity
     protected void onCreate(Bundle bundle) {
         ApplicationLoader.postInitApplication();
@@ -87,6 +79,14 @@ public class ShareActivity extends Activity {
             FileLog.e(e);
             finish();
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$onCreate$0(DialogInterface dialogInterface) {
+        if (!isFinishing()) {
+            finish();
+        }
+        this.visibleDialog = null;
     }
 
     @Override // android.app.Activity

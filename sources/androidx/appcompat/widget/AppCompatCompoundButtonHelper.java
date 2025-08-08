@@ -22,39 +22,12 @@ class AppCompatCompoundButtonHelper {
     private boolean mSkipNextApply;
     private final CompoundButton mView;
 
-    AppCompatCompoundButtonHelper(CompoundButton compoundButton) {
-        this.mView = compoundButton;
-    }
-
-    void applyButtonTint() {
-        Drawable buttonDrawable = CompoundButtonCompat.getButtonDrawable(this.mView);
-        if (buttonDrawable != null) {
-            if (this.mHasButtonTint || this.mHasButtonTintMode) {
-                Drawable mutate = DrawableCompat.wrap(buttonDrawable).mutate();
-                if (this.mHasButtonTint) {
-                    DrawableCompat.setTintList(mutate, this.mButtonTintList);
-                }
-                if (this.mHasButtonTintMode) {
-                    DrawableCompat.setTintMode(mutate, this.mButtonTintMode);
-                }
-                if (mutate.isStateful()) {
-                    mutate.setState(this.mView.getDrawableState());
-                }
-                this.mView.setButtonDrawable(mutate);
-            }
-        }
-    }
-
     int getCompoundPaddingLeft(int i) {
         return i;
     }
 
-    ColorStateList getSupportButtonTintList() {
-        return this.mButtonTintList;
-    }
-
-    PorterDuff.Mode getSupportButtonTintMode() {
-        return this.mButtonTintMode;
+    AppCompatCompoundButtonHelper(CompoundButton compoundButton) {
+        this.mView = compoundButton;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:11:0x005e A[Catch: all -> 0x0039, TryCatch #1 {all -> 0x0039, blocks: (B:3:0x001d, B:5:0x0025, B:8:0x002b, B:9:0x0056, B:11:0x005e, B:12:0x0067, B:14:0x006f, B:21:0x003b, B:23:0x0043, B:25:0x0049), top: B:2:0x001d }] */
@@ -105,6 +78,26 @@ class AppCompatCompoundButtonHelper {
         }
     }
 
+    void setSupportButtonTintList(ColorStateList colorStateList) {
+        this.mButtonTintList = colorStateList;
+        this.mHasButtonTint = true;
+        applyButtonTint();
+    }
+
+    ColorStateList getSupportButtonTintList() {
+        return this.mButtonTintList;
+    }
+
+    void setSupportButtonTintMode(PorterDuff.Mode mode) {
+        this.mButtonTintMode = mode;
+        this.mHasButtonTintMode = true;
+        applyButtonTint();
+    }
+
+    PorterDuff.Mode getSupportButtonTintMode() {
+        return this.mButtonTintMode;
+    }
+
     void onSetButtonDrawable() {
         if (this.mSkipNextApply) {
             this.mSkipNextApply = false;
@@ -114,15 +107,22 @@ class AppCompatCompoundButtonHelper {
         }
     }
 
-    void setSupportButtonTintList(ColorStateList colorStateList) {
-        this.mButtonTintList = colorStateList;
-        this.mHasButtonTint = true;
-        applyButtonTint();
-    }
-
-    void setSupportButtonTintMode(PorterDuff.Mode mode) {
-        this.mButtonTintMode = mode;
-        this.mHasButtonTintMode = true;
-        applyButtonTint();
+    void applyButtonTint() {
+        Drawable buttonDrawable = CompoundButtonCompat.getButtonDrawable(this.mView);
+        if (buttonDrawable != null) {
+            if (this.mHasButtonTint || this.mHasButtonTintMode) {
+                Drawable mutate = DrawableCompat.wrap(buttonDrawable).mutate();
+                if (this.mHasButtonTint) {
+                    DrawableCompat.setTintList(mutate, this.mButtonTintList);
+                }
+                if (this.mHasButtonTintMode) {
+                    DrawableCompat.setTintMode(mutate, this.mButtonTintMode);
+                }
+                if (mutate.isStateful()) {
+                    mutate.setState(this.mView.getDrawableState());
+                }
+                this.mView.setButtonDrawable(mutate);
+            }
+        }
     }
 }

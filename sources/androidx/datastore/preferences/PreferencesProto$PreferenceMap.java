@@ -17,40 +17,15 @@ public final class PreferencesProto$PreferenceMap extends GeneratedMessageLite i
     public static final int PREFERENCES_FIELD_NUMBER = 1;
     private MapFieldLite preferences_ = MapFieldLite.emptyMapField();
 
-    public static final class Builder extends GeneratedMessageLite.Builder implements MessageLiteOrBuilder {
-        private Builder() {
-            super(PreferencesProto$PreferenceMap.DEFAULT_INSTANCE);
-        }
-
-        /* synthetic */ Builder(PreferencesProto$1 preferencesProto$1) {
-            this();
-        }
-
-        public Builder putPreferences(String str, PreferencesProto$Value preferencesProto$Value) {
-            str.getClass();
-            preferencesProto$Value.getClass();
-            copyOnWrite();
-            ((PreferencesProto$PreferenceMap) this.instance).getMutablePreferencesMap().put(str, preferencesProto$Value);
-            return this;
-        }
-    }
-
     private static final class PreferencesDefaultEntryHolder {
         static final MapEntryLite defaultEntry = MapEntryLite.newDefaultInstance(WireFormat.FieldType.STRING, "", WireFormat.FieldType.MESSAGE, PreferencesProto$Value.getDefaultInstance());
-    }
-
-    static {
-        PreferencesProto$PreferenceMap preferencesProto$PreferenceMap = new PreferencesProto$PreferenceMap();
-        DEFAULT_INSTANCE = preferencesProto$PreferenceMap;
-        GeneratedMessageLite.registerDefaultInstance(PreferencesProto$PreferenceMap.class, preferencesProto$PreferenceMap);
     }
 
     private PreferencesProto$PreferenceMap() {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public Map getMutablePreferencesMap() {
-        return internalGetMutablePreferences();
+    private MapFieldLite internalGetPreferences() {
+        return this.preferences_;
     }
 
     private MapFieldLite internalGetMutablePreferences() {
@@ -60,16 +35,39 @@ public final class PreferencesProto$PreferenceMap extends GeneratedMessageLite i
         return this.preferences_;
     }
 
-    private MapFieldLite internalGetPreferences() {
-        return this.preferences_;
+    public Map getPreferencesMap() {
+        return Collections.unmodifiableMap(internalGetPreferences());
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public Map getMutablePreferencesMap() {
+        return internalGetMutablePreferences();
+    }
+
+    public static PreferencesProto$PreferenceMap parseFrom(InputStream inputStream) {
+        return (PreferencesProto$PreferenceMap) GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, inputStream);
     }
 
     public static Builder newBuilder() {
         return (Builder) DEFAULT_INSTANCE.createBuilder();
     }
 
-    public static PreferencesProto$PreferenceMap parseFrom(InputStream inputStream) {
-        return (PreferencesProto$PreferenceMap) GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, inputStream);
+    public static final class Builder extends GeneratedMessageLite.Builder implements MessageLiteOrBuilder {
+        /* synthetic */ Builder(PreferencesProto$1 preferencesProto$1) {
+            this();
+        }
+
+        private Builder() {
+            super(PreferencesProto$PreferenceMap.DEFAULT_INSTANCE);
+        }
+
+        public Builder putPreferences(String str, PreferencesProto$Value preferencesProto$Value) {
+            str.getClass();
+            preferencesProto$Value.getClass();
+            copyOnWrite();
+            ((PreferencesProto$PreferenceMap) this.instance).getMutablePreferencesMap().put(str, preferencesProto$Value);
+            return this;
+        }
     }
 
     @Override // androidx.datastore.preferences.protobuf.GeneratedMessageLite
@@ -108,7 +106,9 @@ public final class PreferencesProto$PreferenceMap extends GeneratedMessageLite i
         }
     }
 
-    public Map getPreferencesMap() {
-        return Collections.unmodifiableMap(internalGetPreferences());
+    static {
+        PreferencesProto$PreferenceMap preferencesProto$PreferenceMap = new PreferencesProto$PreferenceMap();
+        DEFAULT_INSTANCE = preferencesProto$PreferenceMap;
+        GeneratedMessageLite.registerDefaultInstance(PreferencesProto$PreferenceMap.class, preferencesProto$PreferenceMap);
     }
 }

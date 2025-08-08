@@ -26,33 +26,6 @@ class AppCompatCheckedTextViewHelper {
         this.mView = checkedTextView;
     }
 
-    void applyCheckMarkTint() {
-        Drawable checkMarkDrawable = CheckedTextViewCompat.getCheckMarkDrawable(this.mView);
-        if (checkMarkDrawable != null) {
-            if (this.mHasCheckMarkTint || this.mHasCheckMarkTintMode) {
-                Drawable mutate = DrawableCompat.wrap(checkMarkDrawable).mutate();
-                if (this.mHasCheckMarkTint) {
-                    DrawableCompat.setTintList(mutate, this.mCheckMarkTintList);
-                }
-                if (this.mHasCheckMarkTintMode) {
-                    DrawableCompat.setTintMode(mutate, this.mCheckMarkTintMode);
-                }
-                if (mutate.isStateful()) {
-                    mutate.setState(this.mView.getDrawableState());
-                }
-                this.mView.setCheckMarkDrawable(mutate);
-            }
-        }
-    }
-
-    ColorStateList getSupportCheckMarkTintList() {
-        return this.mCheckMarkTintList;
-    }
-
-    PorterDuff.Mode getSupportCheckMarkTintMode() {
-        return this.mCheckMarkTintMode;
-    }
-
     /* JADX WARN: Removed duplicated region for block: B:11:0x005e A[Catch: all -> 0x0039, TryCatch #1 {all -> 0x0039, blocks: (B:3:0x001d, B:5:0x0025, B:8:0x002b, B:9:0x0056, B:11:0x005e, B:12:0x0067, B:14:0x006f, B:21:0x003b, B:23:0x0043, B:25:0x0049), top: B:2:0x001d }] */
     /* JADX WARN: Removed duplicated region for block: B:14:0x006f A[Catch: all -> 0x0039, TRY_LEAVE, TryCatch #1 {all -> 0x0039, blocks: (B:3:0x001d, B:5:0x0025, B:8:0x002b, B:9:0x0056, B:11:0x005e, B:12:0x0067, B:14:0x006f, B:21:0x003b, B:23:0x0043, B:25:0x0049), top: B:2:0x001d }] */
     /*
@@ -101,6 +74,26 @@ class AppCompatCheckedTextViewHelper {
         }
     }
 
+    void setSupportCheckMarkTintList(ColorStateList colorStateList) {
+        this.mCheckMarkTintList = colorStateList;
+        this.mHasCheckMarkTint = true;
+        applyCheckMarkTint();
+    }
+
+    ColorStateList getSupportCheckMarkTintList() {
+        return this.mCheckMarkTintList;
+    }
+
+    void setSupportCheckMarkTintMode(PorterDuff.Mode mode) {
+        this.mCheckMarkTintMode = mode;
+        this.mHasCheckMarkTintMode = true;
+        applyCheckMarkTint();
+    }
+
+    PorterDuff.Mode getSupportCheckMarkTintMode() {
+        return this.mCheckMarkTintMode;
+    }
+
     void onSetCheckMarkDrawable() {
         if (this.mSkipNextApply) {
             this.mSkipNextApply = false;
@@ -110,15 +103,22 @@ class AppCompatCheckedTextViewHelper {
         }
     }
 
-    void setSupportCheckMarkTintList(ColorStateList colorStateList) {
-        this.mCheckMarkTintList = colorStateList;
-        this.mHasCheckMarkTint = true;
-        applyCheckMarkTint();
-    }
-
-    void setSupportCheckMarkTintMode(PorterDuff.Mode mode) {
-        this.mCheckMarkTintMode = mode;
-        this.mHasCheckMarkTintMode = true;
-        applyCheckMarkTint();
+    void applyCheckMarkTint() {
+        Drawable checkMarkDrawable = CheckedTextViewCompat.getCheckMarkDrawable(this.mView);
+        if (checkMarkDrawable != null) {
+            if (this.mHasCheckMarkTint || this.mHasCheckMarkTintMode) {
+                Drawable mutate = DrawableCompat.wrap(checkMarkDrawable).mutate();
+                if (this.mHasCheckMarkTint) {
+                    DrawableCompat.setTintList(mutate, this.mCheckMarkTintList);
+                }
+                if (this.mHasCheckMarkTintMode) {
+                    DrawableCompat.setTintMode(mutate, this.mCheckMarkTintMode);
+                }
+                if (mutate.isStateful()) {
+                    mutate.setState(this.mView.getDrawableState());
+                }
+                this.mView.setCheckMarkDrawable(mutate);
+            }
+        }
     }
 }

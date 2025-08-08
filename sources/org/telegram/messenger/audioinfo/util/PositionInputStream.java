@@ -17,14 +17,16 @@ public class PositionInputStream extends FilterInputStream {
         this.position = j;
     }
 
-    public long getPosition() {
-        return this.position;
-    }
-
     @Override // java.io.FilterInputStream, java.io.InputStream
     public synchronized void mark(int i) {
         this.positionMark = this.position;
         super.mark(i);
+    }
+
+    @Override // java.io.FilterInputStream, java.io.InputStream
+    public synchronized void reset() {
+        super.reset();
+        this.position = this.positionMark;
     }
 
     @Override // java.io.FilterInputStream, java.io.InputStream
@@ -34,11 +36,6 @@ public class PositionInputStream extends FilterInputStream {
             this.position++;
         }
         return read;
-    }
-
-    @Override // java.io.FilterInputStream, java.io.InputStream
-    public final int read(byte[] bArr) {
-        return read(bArr, 0, bArr.length);
     }
 
     @Override // java.io.FilterInputStream, java.io.InputStream
@@ -52,9 +49,8 @@ public class PositionInputStream extends FilterInputStream {
     }
 
     @Override // java.io.FilterInputStream, java.io.InputStream
-    public synchronized void reset() {
-        super.reset();
-        this.position = this.positionMark;
+    public final int read(byte[] bArr) {
+        return read(bArr, 0, bArr.length);
     }
 
     @Override // java.io.FilterInputStream, java.io.InputStream
@@ -63,5 +59,9 @@ public class PositionInputStream extends FilterInputStream {
         long skip = super.skip(j);
         this.position = j2 + skip;
         return skip;
+    }
+
+    public long getPosition() {
+        return this.position;
     }
 }

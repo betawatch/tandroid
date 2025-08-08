@@ -5,6 +5,14 @@ import java.util.Map;
 
 /* loaded from: classes.dex */
 public abstract class WidevineUtil {
+    public static Pair getLicenseDurationRemainingSec(DrmSession drmSession) {
+        Map queryKeyStatus = drmSession.queryKeyStatus();
+        if (queryKeyStatus == null) {
+            return null;
+        }
+        return new Pair(Long.valueOf(getDurationRemainingSec(queryKeyStatus, "LicenseDurationRemaining")), Long.valueOf(getDurationRemainingSec(queryKeyStatus, "PlaybackDurationRemaining")));
+    }
+
     private static long getDurationRemainingSec(Map map, String str) {
         if (map == null) {
             return -9223372036854775807L;
@@ -18,13 +26,5 @@ public abstract class WidevineUtil {
         } catch (NumberFormatException unused) {
             return -9223372036854775807L;
         }
-    }
-
-    public static Pair getLicenseDurationRemainingSec(DrmSession drmSession) {
-        Map queryKeyStatus = drmSession.queryKeyStatus();
-        if (queryKeyStatus == null) {
-            return null;
-        }
-        return new Pair(Long.valueOf(getDurationRemainingSec(queryKeyStatus, "LicenseDurationRemaining")), Long.valueOf(getDurationRemainingSec(queryKeyStatus, "PlaybackDurationRemaining")));
     }
 }

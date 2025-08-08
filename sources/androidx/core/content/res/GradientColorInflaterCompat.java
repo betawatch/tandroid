@@ -15,36 +15,6 @@ import org.xmlpull.v1.XmlPullParserException;
 
 /* loaded from: classes.dex */
 abstract class GradientColorInflaterCompat {
-
-    static final class ColorStops {
-        final int[] mColors;
-        final float[] mOffsets;
-
-        ColorStops(int i, int i2) {
-            this.mColors = new int[]{i, i2};
-            this.mOffsets = new float[]{0.0f, 1.0f};
-        }
-
-        ColorStops(int i, int i2, int i3) {
-            this.mColors = new int[]{i, i2, i3};
-            this.mOffsets = new float[]{0.0f, 0.5f, 1.0f};
-        }
-
-        ColorStops(List list, List list2) {
-            int size = list.size();
-            this.mColors = new int[size];
-            this.mOffsets = new float[size];
-            for (int i = 0; i < size; i++) {
-                this.mColors[i] = ((Integer) list.get(i)).intValue();
-                this.mOffsets[i] = ((Float) list2.get(i)).floatValue();
-            }
-        }
-    }
-
-    private static ColorStops checkColors(ColorStops colorStops, int i, int i2, boolean z, int i3) {
-        return colorStops != null ? colorStops : z ? new ColorStops(i, i3, i2) : new ColorStops(i, i2);
-    }
-
     static Shader createFromXmlInner(Resources resources, XmlPullParser xmlPullParser, AttributeSet attributeSet, Resources.Theme theme) {
         String name = xmlPullParser.getName();
         if (!name.equals("gradient")) {
@@ -67,12 +37,15 @@ abstract class GradientColorInflaterCompat {
         obtainAttributes.recycle();
         ColorStops checkColors = checkColors(inflateChildElements(resources, xmlPullParser, attributeSet, theme), namedColor, namedColor3, hasAttribute, namedColor2);
         if (namedInt != 1) {
-            return namedInt != 2 ? new LinearGradient(namedFloat, namedFloat2, namedFloat3, namedFloat4, checkColors.mColors, checkColors.mOffsets, parseTileMode(namedInt2)) : new SweepGradient(namedFloat5, namedFloat6, checkColors.mColors, checkColors.mOffsets);
+            if (namedInt == 2) {
+                return new SweepGradient(namedFloat5, namedFloat6, checkColors.mColors, checkColors.mOffsets);
+            }
+            return new LinearGradient(namedFloat, namedFloat2, namedFloat3, namedFloat4, checkColors.mColors, checkColors.mOffsets, parseTileMode(namedInt2));
         }
-        if (namedFloat7 > 0.0f) {
-            return new RadialGradient(namedFloat5, namedFloat6, namedFloat7, checkColors.mColors, checkColors.mOffsets, parseTileMode(namedInt2));
+        if (namedFloat7 <= 0.0f) {
+            throw new XmlPullParserException("<gradient> tag requires 'gradientRadius' attribute with radial type");
         }
-        throw new XmlPullParserException("<gradient> tag requires 'gradientRadius' attribute with radial type");
+        return new RadialGradient(namedFloat5, namedFloat6, namedFloat7, checkColors.mColors, checkColors.mOffsets, parseTileMode(namedInt2));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:31:0x0080, code lost:
@@ -114,7 +87,48 @@ abstract class GradientColorInflaterCompat {
         return null;
     }
 
+    private static ColorStops checkColors(ColorStops colorStops, int i, int i2, boolean z, int i3) {
+        if (colorStops != null) {
+            return colorStops;
+        }
+        if (z) {
+            return new ColorStops(i, i3, i2);
+        }
+        return new ColorStops(i, i2);
+    }
+
     private static Shader.TileMode parseTileMode(int i) {
-        return i != 1 ? i != 2 ? Shader.TileMode.CLAMP : Shader.TileMode.MIRROR : Shader.TileMode.REPEAT;
+        if (i == 1) {
+            return Shader.TileMode.REPEAT;
+        }
+        if (i == 2) {
+            return Shader.TileMode.MIRROR;
+        }
+        return Shader.TileMode.CLAMP;
+    }
+
+    static final class ColorStops {
+        final int[] mColors;
+        final float[] mOffsets;
+
+        ColorStops(List list, List list2) {
+            int size = list.size();
+            this.mColors = new int[size];
+            this.mOffsets = new float[size];
+            for (int i = 0; i < size; i++) {
+                this.mColors[i] = ((Integer) list.get(i)).intValue();
+                this.mOffsets[i] = ((Float) list2.get(i)).floatValue();
+            }
+        }
+
+        ColorStops(int i, int i2) {
+            this.mColors = new int[]{i, i2};
+            this.mOffsets = new float[]{0.0f, 1.0f};
+        }
+
+        ColorStops(int i, int i2, int i3) {
+            this.mColors = new int[]{i, i2, i3};
+            this.mOffsets = new float[]{0.0f, 0.5f, 1.0f};
+        }
     }
 }

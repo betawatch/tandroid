@@ -20,19 +20,19 @@ public abstract class PriorityMapping {
         }
     }
 
-    public static int toInt(Priority priority) {
-        Integer num = (Integer) PRIORITY_INT_MAP.get(priority);
-        if (num != null) {
-            return num.intValue();
-        }
-        throw new IllegalStateException("PriorityMapping is missing known Priority value " + priority);
-    }
-
     public static Priority valueOf(int i) {
         Priority priority = (Priority) PRIORITY_MAP.get(i);
         if (priority != null) {
             return priority;
         }
         throw new IllegalArgumentException("Unknown Priority for value " + i);
+    }
+
+    public static int toInt(Priority priority) {
+        Integer num = (Integer) PRIORITY_INT_MAP.get(priority);
+        if (num == null) {
+            throw new IllegalStateException("PriorityMapping is missing known Priority value " + priority);
+        }
+        return num.intValue();
     }
 }

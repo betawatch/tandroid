@@ -2,16 +2,15 @@ package com.google.android.exoplayer2;
 
 /* loaded from: classes.dex */
 public interface RendererCapabilities {
+    String getName();
+
+    int getTrackType();
+
+    int supportsFormat(Format format);
+
+    int supportsMixedMimeTypeAdaptation();
 
     public abstract /* synthetic */ class -CC {
-        public static int create(int i) {
-            return create(i, 0, 0);
-        }
-
-        public static int create(int i, int i2, int i3) {
-            return create(i, i2, i3, 0, 128);
-        }
-
         public static int create(int i, int i2, int i3, int i4, int i5) {
             return i | i2 | i3 | i4 | i5;
         }
@@ -35,13 +34,13 @@ public interface RendererCapabilities {
         public static int getTunnelingSupport(int i) {
             return i & 32;
         }
+
+        public static int create(int i) {
+            return create(i, 0, 0);
+        }
+
+        public static int create(int i, int i2, int i3) {
+            return create(i, i2, i3, 0, 128);
+        }
     }
-
-    String getName();
-
-    int getTrackType();
-
-    int supportsFormat(Format format);
-
-    int supportsMixedMimeTypeAdaptation();
 }

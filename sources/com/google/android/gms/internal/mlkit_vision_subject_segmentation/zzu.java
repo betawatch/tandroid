@@ -13,12 +13,6 @@ final class zzu extends zzs implements ListIterator {
         this.zzd = zzvVar;
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzu(zzv zzvVar, int i) {
-        super(zzvVar, ((List) zzvVar.zzb).listIterator(i));
-        this.zzd = zzvVar;
-    }
-
     @Override // java.util.ListIterator
     public final void add(Object obj) {
         int i;
@@ -61,5 +55,11 @@ final class zzu extends zzs implements ListIterator {
     public final void set(Object obj) {
         zza();
         ((ListIterator) this.zza).set(obj);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zzu(zzv zzvVar, int i) {
+        super(zzvVar, ((List) zzvVar.zzb).listIterator(i));
+        this.zzd = zzvVar;
     }
 }

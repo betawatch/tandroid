@@ -59,104 +59,115 @@ class PipActivityHandler implements IPipActivityHandler {
         this.activity = activity;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public void dispatchAction(String str, int i) {
+    void addPipListener(IPipActivityListener iPipActivityListener) {
+        this.listeners.add(iPipActivityListener);
+    }
+
+    void removePipListener(IPipActivityListener iPipActivityListener) {
+        this.listeners.remove(iPipActivityListener);
+    }
+
+    void addAnimationListener(IPipActivityAnimationListener iPipActivityAnimationListener) {
+        this.animationListeners.add(iPipActivityAnimationListener);
+    }
+
+    void removeAnimationListener(IPipActivityAnimationListener iPipActivityAnimationListener) {
+        this.animationListeners.remove(iPipActivityAnimationListener);
+    }
+
+    void addActionListener(String str, IPipActivityActionListener iPipActivityActionListener) {
+        ArrayList arrayList = (ArrayList) this.actionListeners.get(str);
+        if (arrayList == null) {
+            arrayList = new ArrayList();
+            this.actionListeners.put(str, arrayList);
+        }
+        arrayList.add(iPipActivityActionListener);
+    }
+
+    void removeActionListener(String str, IPipActivityActionListener iPipActivityActionListener) {
         ArrayList arrayList = (ArrayList) this.actionListeners.get(str);
         if (arrayList == null) {
             return;
         }
-        Iterator it = arrayList.iterator();
-        if (it.hasNext()) {
-            ExoPlayerImpl$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
-            throw null;
+        arrayList.remove(iPipActivityActionListener);
+        if (arrayList.isEmpty()) {
+            this.actionListeners.remove(str);
         }
     }
 
-    private void dispatchCompleteEnterPip() {
-        dispatchEnterAnimationEnd();
-        Iterator it = this.listeners.iterator();
-        while (it.hasNext()) {
-            ((IPipActivityListener) it.next()).onCompleteEnterToPip();
+    @Override // org.telegram.messenger.pip.activity.IPipActivityHandler
+    public void onPictureInPictureRequested() {
+        Log.i("PIP_DEBUG", "[Activity] onPictureInPictureRequested");
+        manualEnterPictureInPictureModeInternal();
+    }
+
+    @Override // org.telegram.messenger.pip.activity.IPipActivityHandler
+    public void onUserLeaveHint() {
+        Log.i("PIP_DEBUG", "[Activity] onUserLeaveHint");
+        manualEnterPictureInPictureModeInternal();
+    }
+
+    @Override // org.telegram.messenger.pip.activity.IPipActivityHandler
+    public void onStart() {
+        Log.i("PIP_DEBUG", "[Activity] onStart");
+        this.isActivityStarted = true;
+        IntentFilter intentFilter = new IntentFilter("PIP_CUSTOM_EVENT");
+        if (Build.VERSION.SDK_INT >= 33) {
+            this.activity.registerReceiver(this.broadcastReceiver, intentFilter, 4);
+        } else {
+            this.activity.registerReceiver(this.broadcastReceiver, intentFilter);
         }
     }
 
-    private void dispatchCompleteExitPip(boolean z) {
-        dispatchLeaveAnimationEnd();
-        this.isInPictureInPictureModeInternal = false;
-        Iterator it = this.listeners.iterator();
-        while (it.hasNext()) {
-            ((IPipActivityListener) it.next()).onCompleteExitFromPip(z);
+    @Override // org.telegram.messenger.pip.activity.IPipActivityHandler
+    public void onResume() {
+        Log.i("PIP_DEBUG", "[Activity] onResume");
+        if (this.isInPictureInPictureModeInternal) {
+            dispatchCompleteExitPip(false);
         }
     }
 
-    private void dispatchEnterAnimationEnd() {
-        dispatchTransitionAnimationProgress(1.0f);
-        long end = this.durationEnter.end();
-        Iterator it = this.animationListeners.iterator();
-        while (it.hasNext()) {
-            ((IPipActivityAnimationListener) it.next()).onEnterAnimationEnd(end);
+    @Override // org.telegram.messenger.pip.activity.IPipActivityHandler
+    public void onPause() {
+        Log.i("PIP_DEBUG", "[Activity] onPause");
+        if (AndroidUtilities.isInPictureInPictureMode(this.activity) && hasContentForPictureInPictureMode() && PipUtils.useAutoEnterInPictureInPictureMode()) {
+            dispatchStartEnterPip();
         }
-        unsubscribeFromFrameUpdates();
     }
 
-    private void dispatchEnterAnimationStart() {
-        long estimated = this.durationEnter.estimated();
-        Iterator it = this.animationListeners.iterator();
-        while (it.hasNext()) {
-            ((IPipActivityAnimationListener) it.next()).onEnterAnimationStart(estimated);
+    @Override // org.telegram.messenger.pip.activity.IPipActivityHandler
+    public void onStop() {
+        Log.i("PIP_DEBUG", "[Activity] onStop");
+        this.isActivityStarted = false;
+        if (this.isInPictureInPictureModeInternal) {
+            dispatchStartExitPip(true);
         }
-        dispatchTransitionAnimationProgress(0.0f);
-        this.durationEnter.start();
-        subscribeToFrameUpdates();
+        this.activity.unregisterReceiver(this.broadcastReceiver);
     }
 
-    private void dispatchLeaveAnimationEnd() {
-        dispatchTransitionAnimationProgress(0.0f);
-        long end = this.durationLeave.end();
-        Iterator it = this.animationListeners.iterator();
-        while (it.hasNext()) {
-            ((IPipActivityAnimationListener) it.next()).onLeaveAnimationEnd(end);
+    @Override // org.telegram.messenger.pip.activity.IPipActivityHandler
+    public void onPictureInPictureModeChanged(boolean z, Configuration configuration) {
+        Log.i("PIP_DEBUG", "[Activity] onPictureInPictureModeChanged " + z);
+        if (this.isInPictureInPictureModeInternal) {
+            if (z) {
+                dispatchCompleteEnterPip();
+            } else if (this.isActivityStarted) {
+                dispatchStartExitPip(false);
+            } else {
+                dispatchCompleteExitPip(true);
+            }
         }
-        unsubscribeFromFrameUpdates();
     }
 
-    private void dispatchLeaveAnimationStart() {
-        long estimated = this.durationLeave.estimated();
-        Iterator it = this.animationListeners.iterator();
-        while (it.hasNext()) {
-            ((IPipActivityAnimationListener) it.next()).onLeaveAnimationStart(estimated);
-        }
-        dispatchTransitionAnimationProgress(1.0f);
-        this.durationLeave.start();
-        subscribeToFrameUpdates();
+    @Override // org.telegram.messenger.pip.activity.IPipActivityHandler
+    public void onConfigurationChanged(Configuration configuration) {
+        Log.i("PIP_DEBUG", "[Activity] onConfigurationChanged");
     }
 
-    private void dispatchStartEnterPip() {
-        this.isInPictureInPictureModeInternal = true;
-        Iterator it = this.listeners.iterator();
-        while (it.hasNext()) {
-            ((IPipActivityListener) it.next()).onStartEnterToPip();
-        }
-        dispatchEnterAnimationStart();
-    }
-
-    private void dispatchStartExitPip(boolean z) {
-        Iterator it = this.listeners.iterator();
-        while (it.hasNext()) {
-            ((IPipActivityListener) it.next()).onStartExitFromPip(z);
-        }
-        dispatchLeaveAnimationStart();
-    }
-
-    private void dispatchTransitionAnimationProgress(float f) {
-        if (f == this.lastProgress) {
-            return;
-        }
-        this.lastProgress = f;
-        Iterator it = this.animationListeners.iterator();
-        while (it.hasNext()) {
-            ((IPipActivityAnimationListener) it.next()).onTransitionAnimationProgress(f);
-        }
+    @Override // org.telegram.messenger.pip.activity.IPipActivityHandler
+    public void setPictureInPictureParams(PictureInPictureParams pictureInPictureParams) {
+        Log.i("PIP_DEBUG", "[Activity] setPictureInPictureParams");
+        this.pictureInPictureParams = pictureInPictureParams;
     }
 
     private boolean hasContentForPictureInPictureMode() {
@@ -175,23 +186,103 @@ class PipActivityHandler implements IPipActivityHandler {
         this.activity.enterPictureInPictureMode(this.pictureInPictureParams);
     }
 
+    private void dispatchStartEnterPip() {
+        this.isInPictureInPictureModeInternal = true;
+        Iterator it = this.listeners.iterator();
+        while (it.hasNext()) {
+            ((IPipActivityListener) it.next()).onStartEnterToPip();
+        }
+        dispatchEnterAnimationStart();
+    }
+
+    private void dispatchCompleteEnterPip() {
+        dispatchEnterAnimationEnd();
+        Iterator it = this.listeners.iterator();
+        while (it.hasNext()) {
+            ((IPipActivityListener) it.next()).onCompleteEnterToPip();
+        }
+    }
+
+    private void dispatchStartExitPip(boolean z) {
+        Iterator it = this.listeners.iterator();
+        while (it.hasNext()) {
+            ((IPipActivityListener) it.next()).onStartExitFromPip(z);
+        }
+        dispatchLeaveAnimationStart();
+    }
+
+    private void dispatchCompleteExitPip(boolean z) {
+        dispatchLeaveAnimationEnd();
+        this.isInPictureInPictureModeInternal = false;
+        Iterator it = this.listeners.iterator();
+        while (it.hasNext()) {
+            ((IPipActivityListener) it.next()).onCompleteExitFromPip(z);
+        }
+    }
+
+    private void dispatchEnterAnimationStart() {
+        long estimated = this.durationEnter.estimated();
+        Iterator it = this.animationListeners.iterator();
+        while (it.hasNext()) {
+            ((IPipActivityAnimationListener) it.next()).onEnterAnimationStart(estimated);
+        }
+        dispatchTransitionAnimationProgress(0.0f);
+        this.durationEnter.start();
+        subscribeToFrameUpdates();
+    }
+
+    private void dispatchEnterAnimationEnd() {
+        dispatchTransitionAnimationProgress(1.0f);
+        long end = this.durationEnter.end();
+        Iterator it = this.animationListeners.iterator();
+        while (it.hasNext()) {
+            ((IPipActivityAnimationListener) it.next()).onEnterAnimationEnd(end);
+        }
+        unsubscribeFromFrameUpdates();
+    }
+
+    private void dispatchLeaveAnimationStart() {
+        long estimated = this.durationLeave.estimated();
+        Iterator it = this.animationListeners.iterator();
+        while (it.hasNext()) {
+            ((IPipActivityAnimationListener) it.next()).onLeaveAnimationStart(estimated);
+        }
+        dispatchTransitionAnimationProgress(1.0f);
+        this.durationLeave.start();
+        subscribeToFrameUpdates();
+    }
+
+    private void dispatchLeaveAnimationEnd() {
+        dispatchTransitionAnimationProgress(0.0f);
+        long end = this.durationLeave.end();
+        Iterator it = this.animationListeners.iterator();
+        while (it.hasNext()) {
+            ((IPipActivityAnimationListener) it.next()).onLeaveAnimationEnd(end);
+        }
+        unsubscribeFromFrameUpdates();
+    }
+
+    private void dispatchTransitionAnimationProgress(float f) {
+        if (f == this.lastProgress) {
+            return;
+        }
+        this.lastProgress = f;
+        Iterator it = this.animationListeners.iterator();
+        while (it.hasNext()) {
+            ((IPipActivityAnimationListener) it.next()).onTransitionAnimationProgress(f);
+        }
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
-    public void onFrameInternal(long j) {
-        float progress;
-        if (this.hasFrameListener) {
-            Iterator it = this.animationListeners.iterator();
-            while (it.hasNext()) {
-                ((IPipActivityAnimationListener) it.next()).onTransitionAnimationFrame();
-            }
-            if (!this.durationEnter.isStarted()) {
-                if (this.durationLeave.isStarted()) {
-                    progress = 1.0f - (this.durationLeave.progress() / 0.95f);
-                }
-                this.choreographer.postFrameCallback(this.callback);
-            }
-            progress = this.durationEnter.progress() / 0.95f;
-            dispatchTransitionAnimationProgress(MathUtils.clamp(progress, 0.0f, 1.0f));
-            this.choreographer.postFrameCallback(this.callback);
+    public void dispatchAction(String str, int i) {
+        ArrayList arrayList = (ArrayList) this.actionListeners.get(str);
+        if (arrayList == null) {
+            return;
+        }
+        Iterator it = arrayList.iterator();
+        if (it.hasNext()) {
+            ExoPlayerImpl$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
+            throw null;
         }
     }
 
@@ -210,114 +301,19 @@ class PipActivityHandler implements IPipActivityHandler {
         }
     }
 
-    void addActionListener(String str, IPipActivityActionListener iPipActivityActionListener) {
-        ArrayList arrayList = (ArrayList) this.actionListeners.get(str);
-        if (arrayList == null) {
-            arrayList = new ArrayList();
-            this.actionListeners.put(str, arrayList);
-        }
-        arrayList.add(iPipActivityActionListener);
-    }
-
-    void addAnimationListener(IPipActivityAnimationListener iPipActivityAnimationListener) {
-        this.animationListeners.add(iPipActivityAnimationListener);
-    }
-
-    void addPipListener(IPipActivityListener iPipActivityListener) {
-        this.listeners.add(iPipActivityListener);
-    }
-
-    @Override // org.telegram.messenger.pip.activity.IPipActivityHandler
-    public void onConfigurationChanged(Configuration configuration) {
-        Log.i("PIP_DEBUG", "[Activity] onConfigurationChanged");
-    }
-
-    @Override // org.telegram.messenger.pip.activity.IPipActivityHandler
-    public void onPause() {
-        Log.i("PIP_DEBUG", "[Activity] onPause");
-        if (AndroidUtilities.isInPictureInPictureMode(this.activity) && hasContentForPictureInPictureMode() && PipUtils.useAutoEnterInPictureInPictureMode()) {
-            dispatchStartEnterPip();
-        }
-    }
-
-    @Override // org.telegram.messenger.pip.activity.IPipActivityHandler
-    public void onPictureInPictureModeChanged(boolean z, Configuration configuration) {
-        Log.i("PIP_DEBUG", "[Activity] onPictureInPictureModeChanged " + z);
-        if (this.isInPictureInPictureModeInternal) {
-            if (z) {
-                dispatchCompleteEnterPip();
-            } else if (this.isActivityStarted) {
-                dispatchStartExitPip(false);
-            } else {
-                dispatchCompleteExitPip(true);
+    /* JADX INFO: Access modifiers changed from: private */
+    public void onFrameInternal(long j) {
+        if (this.hasFrameListener) {
+            Iterator it = this.animationListeners.iterator();
+            while (it.hasNext()) {
+                ((IPipActivityAnimationListener) it.next()).onTransitionAnimationFrame();
             }
+            if (this.durationEnter.isStarted()) {
+                dispatchTransitionAnimationProgress(MathUtils.clamp(this.durationEnter.progress() / 0.95f, 0.0f, 1.0f));
+            } else if (this.durationLeave.isStarted()) {
+                dispatchTransitionAnimationProgress(MathUtils.clamp(1.0f - (this.durationLeave.progress() / 0.95f), 0.0f, 1.0f));
+            }
+            this.choreographer.postFrameCallback(this.callback);
         }
-    }
-
-    @Override // org.telegram.messenger.pip.activity.IPipActivityHandler
-    public void onPictureInPictureRequested() {
-        Log.i("PIP_DEBUG", "[Activity] onPictureInPictureRequested");
-        manualEnterPictureInPictureModeInternal();
-    }
-
-    @Override // org.telegram.messenger.pip.activity.IPipActivityHandler
-    public void onResume() {
-        Log.i("PIP_DEBUG", "[Activity] onResume");
-        if (this.isInPictureInPictureModeInternal) {
-            dispatchCompleteExitPip(false);
-        }
-    }
-
-    @Override // org.telegram.messenger.pip.activity.IPipActivityHandler
-    public void onStart() {
-        Log.i("PIP_DEBUG", "[Activity] onStart");
-        this.isActivityStarted = true;
-        IntentFilter intentFilter = new IntentFilter("PIP_CUSTOM_EVENT");
-        if (Build.VERSION.SDK_INT >= 33) {
-            this.activity.registerReceiver(this.broadcastReceiver, intentFilter, 4);
-        } else {
-            this.activity.registerReceiver(this.broadcastReceiver, intentFilter);
-        }
-    }
-
-    @Override // org.telegram.messenger.pip.activity.IPipActivityHandler
-    public void onStop() {
-        Log.i("PIP_DEBUG", "[Activity] onStop");
-        this.isActivityStarted = false;
-        if (this.isInPictureInPictureModeInternal) {
-            dispatchStartExitPip(true);
-        }
-        this.activity.unregisterReceiver(this.broadcastReceiver);
-    }
-
-    @Override // org.telegram.messenger.pip.activity.IPipActivityHandler
-    public void onUserLeaveHint() {
-        Log.i("PIP_DEBUG", "[Activity] onUserLeaveHint");
-        manualEnterPictureInPictureModeInternal();
-    }
-
-    void removeActionListener(String str, IPipActivityActionListener iPipActivityActionListener) {
-        ArrayList arrayList = (ArrayList) this.actionListeners.get(str);
-        if (arrayList == null) {
-            return;
-        }
-        arrayList.remove(iPipActivityActionListener);
-        if (arrayList.isEmpty()) {
-            this.actionListeners.remove(str);
-        }
-    }
-
-    void removeAnimationListener(IPipActivityAnimationListener iPipActivityAnimationListener) {
-        this.animationListeners.remove(iPipActivityAnimationListener);
-    }
-
-    void removePipListener(IPipActivityListener iPipActivityListener) {
-        this.listeners.remove(iPipActivityListener);
-    }
-
-    @Override // org.telegram.messenger.pip.activity.IPipActivityHandler
-    public void setPictureInPictureParams(PictureInPictureParams pictureInPictureParams) {
-        Log.i("PIP_DEBUG", "[Activity] setPictureInPictureParams");
-        this.pictureInPictureParams = pictureInPictureParams;
     }
 }

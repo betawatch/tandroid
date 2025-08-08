@@ -13,12 +13,12 @@ public final class Qualified {
         this.type = cls2;
     }
 
-    public static Qualified qualified(Class cls, Class cls2) {
-        return new Qualified(cls, cls2);
-    }
-
     public static Qualified unqualified(Class cls) {
         return new Qualified(Unqualified.class, cls);
+    }
+
+    public static Qualified qualified(Class cls, Class cls2) {
+        return new Qualified(cls, cls2);
     }
 
     public boolean equals(Object obj) {

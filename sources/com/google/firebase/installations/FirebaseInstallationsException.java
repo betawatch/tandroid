@@ -2,7 +2,7 @@ package com.google.firebase.installations;
 
 import com.google.firebase.FirebaseException;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class FirebaseInstallationsException extends FirebaseException {
     private final Status status;
 

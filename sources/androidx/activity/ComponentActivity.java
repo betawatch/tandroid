@@ -18,6 +18,8 @@ import android.view.Window;
 import android.window.OnBackInvokedDispatcher;
 import androidx.activity.contextaware.ContextAwareHelper;
 import androidx.activity.contextaware.OnContextAvailableListener;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.ActivityResultRegistry;
 import androidx.activity.result.ActivityResultRegistryOwner;
 import androidx.activity.result.IntentSenderRequest;
@@ -26,7 +28,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.app.ActivityOptionsCompat;
 import androidx.core.app.MultiWindowModeChangedInfo;
 import androidx.core.app.PictureInPictureModeChangedInfo;
-import androidx.core.content.ContextCompat;
 import androidx.core.os.BuildCompat;
 import androidx.core.util.Consumer;
 import androidx.core.view.MenuHostHelper;
@@ -79,16 +80,8 @@ public abstract class ComponentActivity extends androidx.core.app.ComponentActiv
     });
     private final LifecycleRegistry mLifecycleRegistry = new LifecycleRegistry(this);
 
-    static class Api19Impl {
-        static void cancelPendingInputEvents(View view) {
-            view.cancelPendingInputEvents();
-        }
-    }
-
-    static class Api33Impl {
-        static OnBackInvokedDispatcher getOnBackInvokedDispatcher(Activity activity) {
-            return activity.getOnBackInvokedDispatcher();
-        }
+    public Object onRetainCustomNonConfigurationInstance() {
+        return null;
     }
 
     static final class NonConfigurationInstances {
@@ -149,21 +142,22 @@ public abstract class ComponentActivity extends androidx.core.app.ComponentActiv
                     ActivityCompat.requestPermissions(componentActivity, stringArrayExtra, i);
                     return;
                 }
-                if (!"androidx.activity.result.contract.action.INTENT_SENDER_REQUEST".equals(createIntent.getAction())) {
-                    ActivityCompat.startActivityForResult(componentActivity, createIntent, i, bundle);
-                    return;
+                if ("androidx.activity.result.contract.action.INTENT_SENDER_REQUEST".equals(createIntent.getAction())) {
+                    IntentSenderRequest intentSenderRequest = (IntentSenderRequest) createIntent.getParcelableExtra("androidx.activity.result.contract.extra.INTENT_SENDER_REQUEST");
+                    try {
+                        ActivityCompat.startIntentSenderForResult(componentActivity, intentSenderRequest.getIntentSender(), i, intentSenderRequest.getFillInIntent(), intentSenderRequest.getFlagsMask(), intentSenderRequest.getFlagsValues(), 0, bundle);
+                        return;
+                    } catch (IntentSender.SendIntentException e) {
+                        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: androidx.activity.ComponentActivity.2.2
+                            @Override // java.lang.Runnable
+                            public void run() {
+                                dispatchResult(i, 0, new Intent().setAction("androidx.activity.result.contract.action.INTENT_SENDER_REQUEST").putExtra("androidx.activity.result.contract.extra.SEND_INTENT_EXCEPTION", e));
+                            }
+                        });
+                        return;
+                    }
                 }
-                IntentSenderRequest intentSenderRequest = (IntentSenderRequest) createIntent.getParcelableExtra("androidx.activity.result.contract.extra.INTENT_SENDER_REQUEST");
-                try {
-                    ActivityCompat.startIntentSenderForResult(componentActivity, intentSenderRequest.getIntentSender(), i, intentSenderRequest.getFillInIntent(), intentSenderRequest.getFlagsMask(), intentSenderRequest.getFlagsValues(), 0, bundle);
-                } catch (IntentSender.SendIntentException e) {
-                    new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: androidx.activity.ComponentActivity.2.2
-                        @Override // java.lang.Runnable
-                        public void run() {
-                            dispatchResult(i, 0, new Intent().setAction("androidx.activity.result.contract.action.INTENT_SENDER_REQUEST").putExtra("androidx.activity.result.contract.extra.SEND_INTENT_EXCEPTION", e));
-                        }
-                    });
-                }
+                ActivityCompat.startActivityForResult(componentActivity, createIntent, i, bundle);
             }
         };
         this.mOnConfigurationChangedListeners = new CopyOnWriteArrayList();
@@ -229,13 +223,6 @@ public abstract class ComponentActivity extends androidx.core.app.ComponentActiv
         });
     }
 
-    private void initViewTreeOwners() {
-        ViewTreeLifecycleOwner.set(getWindow().getDecorView(), this);
-        ViewTreeViewModelStoreOwner.set(getWindow().getDecorView(), this);
-        ViewTreeSavedStateRegistryOwner.set(getWindow().getDecorView(), this);
-        ViewTreeOnBackPressedDispatcherOwner.set(getWindow().getDecorView(), this);
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ Bundle lambda$new$0() {
         Bundle bundle = new Bundle();
@@ -248,105 +235,6 @@ public abstract class ComponentActivity extends androidx.core.app.ComponentActiv
         Bundle consumeRestoredStateForKey = getSavedStateRegistry().consumeRestoredStateForKey("android:support:activity-result");
         if (consumeRestoredStateForKey != null) {
             this.mActivityResultRegistry.onRestoreInstanceState(consumeRestoredStateForKey);
-        }
-    }
-
-    @Override // android.app.Activity
-    public void addContentView(View view, ViewGroup.LayoutParams layoutParams) {
-        initViewTreeOwners();
-        super.addContentView(view, layoutParams);
-    }
-
-    public final void addOnContextAvailableListener(OnContextAvailableListener onContextAvailableListener) {
-        this.mContextAwareHelper.addOnContextAvailableListener(onContextAvailableListener);
-    }
-
-    void ensureViewModelStore() {
-        if (this.mViewModelStore == null) {
-            NonConfigurationInstances nonConfigurationInstances = (NonConfigurationInstances) getLastNonConfigurationInstance();
-            if (nonConfigurationInstances != null) {
-                this.mViewModelStore = nonConfigurationInstances.viewModelStore;
-            }
-            if (this.mViewModelStore == null) {
-                this.mViewModelStore = new ViewModelStore();
-            }
-        }
-    }
-
-    @Override // androidx.activity.result.ActivityResultRegistryOwner
-    public final ActivityResultRegistry getActivityResultRegistry() {
-        return this.mActivityResultRegistry;
-    }
-
-    @Override // androidx.lifecycle.HasDefaultViewModelProviderFactory
-    public CreationExtras getDefaultViewModelCreationExtras() {
-        MutableCreationExtras mutableCreationExtras = new MutableCreationExtras();
-        if (getApplication() != null) {
-            mutableCreationExtras.set(ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY, getApplication());
-        }
-        mutableCreationExtras.set(SavedStateHandleSupport.SAVED_STATE_REGISTRY_OWNER_KEY, this);
-        mutableCreationExtras.set(SavedStateHandleSupport.VIEW_MODEL_STORE_OWNER_KEY, this);
-        if (getIntent() != null && getIntent().getExtras() != null) {
-            mutableCreationExtras.set(SavedStateHandleSupport.DEFAULT_ARGS_KEY, getIntent().getExtras());
-        }
-        return mutableCreationExtras;
-    }
-
-    @Override // androidx.lifecycle.HasDefaultViewModelProviderFactory
-    public ViewModelProvider.Factory getDefaultViewModelProviderFactory() {
-        if (this.mDefaultFactory == null) {
-            this.mDefaultFactory = new SavedStateViewModelFactory(getApplication(), this, getIntent() != null ? getIntent().getExtras() : null);
-        }
-        return this.mDefaultFactory;
-    }
-
-    @Override // androidx.lifecycle.LifecycleOwner
-    public Lifecycle getLifecycle() {
-        return this.mLifecycleRegistry;
-    }
-
-    @Override // androidx.activity.OnBackPressedDispatcherOwner
-    public final OnBackPressedDispatcher getOnBackPressedDispatcher() {
-        return this.mOnBackPressedDispatcher;
-    }
-
-    @Override // androidx.savedstate.SavedStateRegistryOwner
-    public final SavedStateRegistry getSavedStateRegistry() {
-        return this.mSavedStateRegistryController.getSavedStateRegistry();
-    }
-
-    @Override // androidx.lifecycle.ViewModelStoreOwner
-    public ViewModelStore getViewModelStore() {
-        if (getApplication() == null) {
-            throw new IllegalStateException("Your activity is not yet attached to the Application instance. You can't request ViewModel before onCreate call.");
-        }
-        ensureViewModelStore();
-        return this.mViewModelStore;
-    }
-
-    public void invalidateMenu() {
-        invalidateOptionsMenu();
-    }
-
-    @Override // android.app.Activity
-    protected void onActivityResult(int i, int i2, Intent intent) {
-        if (this.mActivityResultRegistry.dispatchResult(i, i2, intent)) {
-            return;
-        }
-        super.onActivityResult(i, i2, intent);
-    }
-
-    @Override // android.app.Activity
-    public void onBackPressed() {
-        this.mOnBackPressedDispatcher.onBackPressed();
-    }
-
-    @Override // android.app.Activity, android.content.ComponentCallbacks
-    public void onConfigurationChanged(Configuration configuration) {
-        super.onConfigurationChanged(configuration);
-        Iterator it = this.mOnConfigurationChangedListeners.iterator();
-        while (it.hasNext()) {
-            ((Consumer) it.next()).accept(configuration);
         }
     }
 
@@ -363,6 +251,78 @@ public abstract class ComponentActivity extends androidx.core.app.ComponentActiv
         if (i != 0) {
             setContentView(i);
         }
+    }
+
+    @Override // androidx.core.app.ComponentActivity, android.app.Activity
+    protected void onSaveInstanceState(Bundle bundle) {
+        Lifecycle lifecycle = getLifecycle();
+        if (lifecycle instanceof LifecycleRegistry) {
+            ((LifecycleRegistry) lifecycle).setCurrentState(Lifecycle.State.CREATED);
+        }
+        super.onSaveInstanceState(bundle);
+        this.mSavedStateRegistryController.performSave(bundle);
+    }
+
+    @Override // android.app.Activity
+    public final Object onRetainNonConfigurationInstance() {
+        NonConfigurationInstances nonConfigurationInstances;
+        Object onRetainCustomNonConfigurationInstance = onRetainCustomNonConfigurationInstance();
+        ViewModelStore viewModelStore = this.mViewModelStore;
+        if (viewModelStore == null && (nonConfigurationInstances = (NonConfigurationInstances) getLastNonConfigurationInstance()) != null) {
+            viewModelStore = nonConfigurationInstances.viewModelStore;
+        }
+        if (viewModelStore == null && onRetainCustomNonConfigurationInstance == null) {
+            return null;
+        }
+        NonConfigurationInstances nonConfigurationInstances2 = new NonConfigurationInstances();
+        nonConfigurationInstances2.custom = onRetainCustomNonConfigurationInstance;
+        nonConfigurationInstances2.viewModelStore = viewModelStore;
+        return nonConfigurationInstances2;
+    }
+
+    @Override // android.app.Activity
+    public void setContentView(int i) {
+        initViewTreeOwners();
+        super.setContentView(i);
+    }
+
+    @Override // android.app.Activity
+    public void setContentView(View view) {
+        initViewTreeOwners();
+        super.setContentView(view);
+    }
+
+    @Override // android.app.Activity
+    public void setContentView(View view, ViewGroup.LayoutParams layoutParams) {
+        initViewTreeOwners();
+        super.setContentView(view, layoutParams);
+    }
+
+    @Override // android.app.Activity
+    public void addContentView(View view, ViewGroup.LayoutParams layoutParams) {
+        initViewTreeOwners();
+        super.addContentView(view, layoutParams);
+    }
+
+    private void initViewTreeOwners() {
+        ViewTreeLifecycleOwner.set(getWindow().getDecorView(), this);
+        ViewTreeViewModelStoreOwner.set(getWindow().getDecorView(), this);
+        ViewTreeSavedStateRegistryOwner.set(getWindow().getDecorView(), this);
+        ViewTreeOnBackPressedDispatcherOwner.set(getWindow().getDecorView(), this);
+    }
+
+    public final void addOnContextAvailableListener(OnContextAvailableListener onContextAvailableListener) {
+        this.mContextAwareHelper.addOnContextAvailableListener(onContextAvailableListener);
+    }
+
+    @Override // android.app.Activity, android.view.Window.Callback
+    public boolean onPreparePanel(int i, View view, Menu menu) {
+        if (i != 0) {
+            return true;
+        }
+        super.onPreparePanel(i, view, menu);
+        this.mMenuHostHelper.onPrepareMenu(menu);
+        return true;
     }
 
     @Override // android.app.Activity, android.view.Window.Callback
@@ -386,144 +346,77 @@ public abstract class ComponentActivity extends androidx.core.app.ComponentActiv
         return false;
     }
 
-    @Override // android.app.Activity
-    public void onMultiWindowModeChanged(boolean z, Configuration configuration) {
-        this.mDispatchingOnMultiWindowModeChanged = true;
-        try {
-            super.onMultiWindowModeChanged(z, configuration);
-            this.mDispatchingOnMultiWindowModeChanged = false;
-            Iterator it = this.mOnMultiWindowModeChangedListeners.iterator();
-            while (it.hasNext()) {
-                ((Consumer) it.next()).accept(new MultiWindowModeChangedInfo(z, configuration));
-            }
-        } catch (Throwable th) {
-            this.mDispatchingOnMultiWindowModeChanged = false;
-            throw th;
-        }
-    }
-
-    @Override // android.app.Activity
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-        Iterator it = this.mOnNewIntentListeners.iterator();
-        while (it.hasNext()) {
-            ((Consumer) it.next()).accept(intent);
-        }
-    }
-
     @Override // android.app.Activity, android.view.Window.Callback
     public void onPanelClosed(int i, Menu menu) {
         this.mMenuHostHelper.onMenuClosed(menu);
         super.onPanelClosed(i, menu);
     }
 
-    @Override // android.app.Activity
-    public void onPictureInPictureModeChanged(boolean z, Configuration configuration) {
-        this.mDispatchingOnPictureInPictureModeChanged = true;
-        try {
-            super.onPictureInPictureModeChanged(z, configuration);
-            this.mDispatchingOnPictureInPictureModeChanged = false;
-            Iterator it = this.mOnPictureInPictureModeChangedListeners.iterator();
-            while (it.hasNext()) {
-                ((Consumer) it.next()).accept(new PictureInPictureModeChangedInfo(z, configuration));
+    public void invalidateMenu() {
+        invalidateOptionsMenu();
+    }
+
+    @Override // androidx.lifecycle.LifecycleOwner
+    public Lifecycle getLifecycle() {
+        return this.mLifecycleRegistry;
+    }
+
+    @Override // androidx.lifecycle.ViewModelStoreOwner
+    public ViewModelStore getViewModelStore() {
+        if (getApplication() == null) {
+            throw new IllegalStateException("Your activity is not yet attached to the Application instance. You can't request ViewModel before onCreate call.");
+        }
+        ensureViewModelStore();
+        return this.mViewModelStore;
+    }
+
+    void ensureViewModelStore() {
+        if (this.mViewModelStore == null) {
+            NonConfigurationInstances nonConfigurationInstances = (NonConfigurationInstances) getLastNonConfigurationInstance();
+            if (nonConfigurationInstances != null) {
+                this.mViewModelStore = nonConfigurationInstances.viewModelStore;
             }
-        } catch (Throwable th) {
-            this.mDispatchingOnPictureInPictureModeChanged = false;
-            throw th;
-        }
-    }
-
-    @Override // android.app.Activity, android.view.Window.Callback
-    public boolean onPreparePanel(int i, View view, Menu menu) {
-        if (i != 0) {
-            return true;
-        }
-        super.onPreparePanel(i, view, menu);
-        this.mMenuHostHelper.onPrepareMenu(menu);
-        return true;
-    }
-
-    @Override // android.app.Activity
-    public void onRequestPermissionsResult(int i, String[] strArr, int[] iArr) {
-        if (this.mActivityResultRegistry.dispatchResult(i, -1, new Intent().putExtra("androidx.activity.result.contract.extra.PERMISSIONS", strArr).putExtra("androidx.activity.result.contract.extra.PERMISSION_GRANT_RESULTS", iArr)) || Build.VERSION.SDK_INT < 23) {
-            return;
-        }
-        super.onRequestPermissionsResult(i, strArr, iArr);
-    }
-
-    public Object onRetainCustomNonConfigurationInstance() {
-        return null;
-    }
-
-    @Override // android.app.Activity
-    public final Object onRetainNonConfigurationInstance() {
-        NonConfigurationInstances nonConfigurationInstances;
-        Object onRetainCustomNonConfigurationInstance = onRetainCustomNonConfigurationInstance();
-        ViewModelStore viewModelStore = this.mViewModelStore;
-        if (viewModelStore == null && (nonConfigurationInstances = (NonConfigurationInstances) getLastNonConfigurationInstance()) != null) {
-            viewModelStore = nonConfigurationInstances.viewModelStore;
-        }
-        if (viewModelStore == null && onRetainCustomNonConfigurationInstance == null) {
-            return null;
-        }
-        NonConfigurationInstances nonConfigurationInstances2 = new NonConfigurationInstances();
-        nonConfigurationInstances2.custom = onRetainCustomNonConfigurationInstance;
-        nonConfigurationInstances2.viewModelStore = viewModelStore;
-        return nonConfigurationInstances2;
-    }
-
-    @Override // androidx.core.app.ComponentActivity, android.app.Activity
-    protected void onSaveInstanceState(Bundle bundle) {
-        Lifecycle lifecycle = getLifecycle();
-        if (lifecycle instanceof LifecycleRegistry) {
-            ((LifecycleRegistry) lifecycle).setCurrentState(Lifecycle.State.CREATED);
-        }
-        super.onSaveInstanceState(bundle);
-        this.mSavedStateRegistryController.performSave(bundle);
-    }
-
-    @Override // android.app.Activity, android.content.ComponentCallbacks2
-    public void onTrimMemory(int i) {
-        super.onTrimMemory(i);
-        Iterator it = this.mOnTrimMemoryListeners.iterator();
-        while (it.hasNext()) {
-            ((Consumer) it.next()).accept(Integer.valueOf(i));
-        }
-    }
-
-    @Override // android.app.Activity
-    public void reportFullyDrawn() {
-        try {
-            if (Trace.isEnabled()) {
-                Trace.beginSection("reportFullyDrawn() for ComponentActivity");
+            if (this.mViewModelStore == null) {
+                this.mViewModelStore = new ViewModelStore();
             }
-            int i = Build.VERSION.SDK_INT;
-            if (i > 19 || (i == 19 && ContextCompat.checkSelfPermission(this, "android.permission.UPDATE_DEVICE_STATS") == 0)) {
-                super.reportFullyDrawn();
-            }
-            Trace.endSection();
-        } catch (Throwable th) {
-            Trace.endSection();
-            throw th;
         }
     }
 
-    @Override // android.app.Activity
-    public void setContentView(int i) {
-        initViewTreeOwners();
-        super.setContentView(i);
+    @Override // androidx.lifecycle.HasDefaultViewModelProviderFactory
+    public ViewModelProvider.Factory getDefaultViewModelProviderFactory() {
+        if (this.mDefaultFactory == null) {
+            this.mDefaultFactory = new SavedStateViewModelFactory(getApplication(), this, getIntent() != null ? getIntent().getExtras() : null);
+        }
+        return this.mDefaultFactory;
+    }
+
+    @Override // androidx.lifecycle.HasDefaultViewModelProviderFactory
+    public CreationExtras getDefaultViewModelCreationExtras() {
+        MutableCreationExtras mutableCreationExtras = new MutableCreationExtras();
+        if (getApplication() != null) {
+            mutableCreationExtras.set(ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY, getApplication());
+        }
+        mutableCreationExtras.set(SavedStateHandleSupport.SAVED_STATE_REGISTRY_OWNER_KEY, this);
+        mutableCreationExtras.set(SavedStateHandleSupport.VIEW_MODEL_STORE_OWNER_KEY, this);
+        if (getIntent() != null && getIntent().getExtras() != null) {
+            mutableCreationExtras.set(SavedStateHandleSupport.DEFAULT_ARGS_KEY, getIntent().getExtras());
+        }
+        return mutableCreationExtras;
     }
 
     @Override // android.app.Activity
-    public void setContentView(View view) {
-        initViewTreeOwners();
-        super.setContentView(view);
+    public void onBackPressed() {
+        this.mOnBackPressedDispatcher.onBackPressed();
     }
 
-    @Override // android.app.Activity
-    public void setContentView(View view, ViewGroup.LayoutParams layoutParams) {
-        initViewTreeOwners();
-        super.setContentView(view, layoutParams);
+    @Override // androidx.activity.OnBackPressedDispatcherOwner
+    public final OnBackPressedDispatcher getOnBackPressedDispatcher() {
+        return this.mOnBackPressedDispatcher;
+    }
+
+    @Override // androidx.savedstate.SavedStateRegistryOwner
+    public final SavedStateRegistry getSavedStateRegistry() {
+        return this.mSavedStateRegistryController.getSavedStateRegistry();
     }
 
     @Override // android.app.Activity
@@ -544,5 +437,141 @@ public abstract class ComponentActivity extends androidx.core.app.ComponentActiv
     @Override // android.app.Activity
     public void startIntentSenderForResult(IntentSender intentSender, int i, Intent intent, int i2, int i3, int i4, Bundle bundle) {
         super.startIntentSenderForResult(intentSender, i, intent, i2, i3, i4, bundle);
+    }
+
+    @Override // android.app.Activity
+    protected void onActivityResult(int i, int i2, Intent intent) {
+        if (this.mActivityResultRegistry.dispatchResult(i, i2, intent)) {
+            return;
+        }
+        super.onActivityResult(i, i2, intent);
+    }
+
+    @Override // android.app.Activity
+    public void onRequestPermissionsResult(int i, String[] strArr, int[] iArr) {
+        if (this.mActivityResultRegistry.dispatchResult(i, -1, new Intent().putExtra("androidx.activity.result.contract.extra.PERMISSIONS", strArr).putExtra("androidx.activity.result.contract.extra.PERMISSION_GRANT_RESULTS", iArr)) || Build.VERSION.SDK_INT < 23) {
+            return;
+        }
+        super.onRequestPermissionsResult(i, strArr, iArr);
+    }
+
+    public final ActivityResultLauncher registerForActivityResult(ActivityResultContract activityResultContract, ActivityResultRegistry activityResultRegistry, ActivityResultCallback activityResultCallback) {
+        return activityResultRegistry.register("activity_rq#" + this.mNextLocalRequestCode.getAndIncrement(), this, activityResultContract, activityResultCallback);
+    }
+
+    public final ActivityResultLauncher registerForActivityResult(ActivityResultContract activityResultContract, ActivityResultCallback activityResultCallback) {
+        return registerForActivityResult(activityResultContract, this.mActivityResultRegistry, activityResultCallback);
+    }
+
+    @Override // androidx.activity.result.ActivityResultRegistryOwner
+    public final ActivityResultRegistry getActivityResultRegistry() {
+        return this.mActivityResultRegistry;
+    }
+
+    @Override // android.app.Activity, android.content.ComponentCallbacks
+    public void onConfigurationChanged(Configuration configuration) {
+        super.onConfigurationChanged(configuration);
+        Iterator it = this.mOnConfigurationChangedListeners.iterator();
+        while (it.hasNext()) {
+            ((Consumer) it.next()).accept(configuration);
+        }
+    }
+
+    @Override // android.app.Activity, android.content.ComponentCallbacks2
+    public void onTrimMemory(int i) {
+        super.onTrimMemory(i);
+        Iterator it = this.mOnTrimMemoryListeners.iterator();
+        while (it.hasNext()) {
+            ((Consumer) it.next()).accept(Integer.valueOf(i));
+        }
+    }
+
+    @Override // android.app.Activity
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        Iterator it = this.mOnNewIntentListeners.iterator();
+        while (it.hasNext()) {
+            ((Consumer) it.next()).accept(intent);
+        }
+    }
+
+    @Override // android.app.Activity
+    public void onMultiWindowModeChanged(boolean z) {
+        if (this.mDispatchingOnMultiWindowModeChanged) {
+            return;
+        }
+        Iterator it = this.mOnMultiWindowModeChangedListeners.iterator();
+        while (it.hasNext()) {
+            ((Consumer) it.next()).accept(new MultiWindowModeChangedInfo(z));
+        }
+    }
+
+    @Override // android.app.Activity
+    public void onMultiWindowModeChanged(boolean z, Configuration configuration) {
+        this.mDispatchingOnMultiWindowModeChanged = true;
+        try {
+            super.onMultiWindowModeChanged(z, configuration);
+            this.mDispatchingOnMultiWindowModeChanged = false;
+            Iterator it = this.mOnMultiWindowModeChangedListeners.iterator();
+            while (it.hasNext()) {
+                ((Consumer) it.next()).accept(new MultiWindowModeChangedInfo(z, configuration));
+            }
+        } catch (Throwable th) {
+            this.mDispatchingOnMultiWindowModeChanged = false;
+            throw th;
+        }
+    }
+
+    @Override // android.app.Activity
+    public void onPictureInPictureModeChanged(boolean z) {
+        if (this.mDispatchingOnPictureInPictureModeChanged) {
+            return;
+        }
+        Iterator it = this.mOnPictureInPictureModeChangedListeners.iterator();
+        while (it.hasNext()) {
+            ((Consumer) it.next()).accept(new PictureInPictureModeChangedInfo(z));
+        }
+    }
+
+    @Override // android.app.Activity
+    public void onPictureInPictureModeChanged(boolean z, Configuration configuration) {
+        this.mDispatchingOnPictureInPictureModeChanged = true;
+        try {
+            super.onPictureInPictureModeChanged(z, configuration);
+            this.mDispatchingOnPictureInPictureModeChanged = false;
+            Iterator it = this.mOnPictureInPictureModeChangedListeners.iterator();
+            while (it.hasNext()) {
+                ((Consumer) it.next()).accept(new PictureInPictureModeChangedInfo(z, configuration));
+            }
+        } catch (Throwable th) {
+            this.mDispatchingOnPictureInPictureModeChanged = false;
+            throw th;
+        }
+    }
+
+    @Override // android.app.Activity
+    public void reportFullyDrawn() {
+        try {
+            if (Trace.isEnabled()) {
+                Trace.beginSection("reportFullyDrawn() for ComponentActivity");
+            }
+            super.reportFullyDrawn();
+            Trace.endSection();
+        } catch (Throwable th) {
+            Trace.endSection();
+            throw th;
+        }
+    }
+
+    static class Api19Impl {
+        static void cancelPendingInputEvents(View view) {
+            view.cancelPendingInputEvents();
+        }
+    }
+
+    static class Api33Impl {
+        static OnBackInvokedDispatcher getOnBackInvokedDispatcher(Activity activity) {
+            return activity.getOnBackInvokedDispatcher();
+        }
     }
 }

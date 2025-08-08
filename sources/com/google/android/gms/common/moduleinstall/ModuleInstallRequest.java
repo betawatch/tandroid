@@ -10,12 +10,10 @@ import java.util.concurrent.Executor;
 public final class ModuleInstallRequest {
     private final List zaa;
     private final Executor zac;
-    private final boolean zad;
 
     public static class Builder {
         private final List zaa = new ArrayList();
-        private boolean zab = true;
-        private Executor zad;
+        private Executor zac;
 
         public Builder addApi(OptionalModuleApi optionalModuleApi) {
             this.zaa.add(optionalModuleApi);
@@ -23,7 +21,7 @@ public final class ModuleInstallRequest {
         }
 
         public ModuleInstallRequest build() {
-            return new ModuleInstallRequest(this.zaa, null, this.zad, this.zab, null);
+            return new ModuleInstallRequest(this.zaa, null, this.zac, true, null);
         }
     }
 
@@ -35,7 +33,6 @@ public final class ModuleInstallRequest {
         }
         this.zaa = list;
         this.zac = executor;
-        this.zad = z;
     }
 
     public static Builder newBuilder() {
@@ -52,9 +49,5 @@ public final class ModuleInstallRequest {
 
     public Executor getListenerExecutor() {
         return this.zac;
-    }
-
-    public final boolean zaa() {
-        return this.zad;
     }
 }

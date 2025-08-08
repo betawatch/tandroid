@@ -33,6 +33,11 @@ public final class BundledHlsMediaChunkExtractor implements HlsMediaChunkExtract
     }
 
     @Override // com.google.android.exoplayer2.source.hls.HlsMediaChunkExtractor
+    public boolean read(ExtractorInput extractorInput) {
+        return this.extractor.read(extractorInput, POSITION_HOLDER) == 0;
+    }
+
+    @Override // com.google.android.exoplayer2.source.hls.HlsMediaChunkExtractor
     public boolean isPackedAudioExtractor() {
         Extractor extractor = this.extractor;
         return (extractor instanceof AdtsExtractor) || (extractor instanceof Ac3Extractor) || (extractor instanceof Ac4Extractor) || (extractor instanceof Mp3Extractor);
@@ -42,16 +47,6 @@ public final class BundledHlsMediaChunkExtractor implements HlsMediaChunkExtract
     public boolean isReusable() {
         Extractor extractor = this.extractor;
         return (extractor instanceof TsExtractor) || (extractor instanceof FragmentedMp4Extractor);
-    }
-
-    @Override // com.google.android.exoplayer2.source.hls.HlsMediaChunkExtractor
-    public void onTruncatedSegmentParsed() {
-        this.extractor.seek(0L, 0L);
-    }
-
-    @Override // com.google.android.exoplayer2.source.hls.HlsMediaChunkExtractor
-    public boolean read(ExtractorInput extractorInput) {
-        return this.extractor.read(extractorInput, POSITION_HOLDER) == 0;
     }
 
     @Override // com.google.android.exoplayer2.source.hls.HlsMediaChunkExtractor
@@ -67,12 +62,16 @@ public final class BundledHlsMediaChunkExtractor implements HlsMediaChunkExtract
             mp3Extractor = new Ac3Extractor();
         } else if (extractor instanceof Ac4Extractor) {
             mp3Extractor = new Ac4Extractor();
-        } else {
-            if (!(extractor instanceof Mp3Extractor)) {
-                throw new IllegalStateException("Unexpected extractor type for recreation: " + this.extractor.getClass().getSimpleName());
-            }
+        } else if (extractor instanceof Mp3Extractor) {
             mp3Extractor = new Mp3Extractor();
+        } else {
+            throw new IllegalStateException("Unexpected extractor type for recreation: " + this.extractor.getClass().getSimpleName());
         }
         return new BundledHlsMediaChunkExtractor(mp3Extractor, this.multivariantPlaylistFormat, this.timestampAdjuster);
+    }
+
+    @Override // com.google.android.exoplayer2.source.hls.HlsMediaChunkExtractor
+    public void onTruncatedSegmentParsed() {
+        this.extractor.seek(0L, 0L);
     }
 }

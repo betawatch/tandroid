@@ -23,13 +23,12 @@ final class TtmlSubtitle implements Subtitle {
     }
 
     @Override // com.google.android.exoplayer2.text.Subtitle
-    public List getCues(long j) {
-        return this.root.getCues(j, this.globalStyles, this.regionMap, this.imageMap);
-    }
-
-    @Override // com.google.android.exoplayer2.text.Subtitle
-    public long getEventTime(int i) {
-        return this.eventTimesUs[i];
+    public int getNextEventTimeIndex(long j) {
+        int binarySearchCeil = Util.binarySearchCeil(this.eventTimesUs, j, false, false);
+        if (binarySearchCeil < this.eventTimesUs.length) {
+            return binarySearchCeil;
+        }
+        return -1;
     }
 
     @Override // com.google.android.exoplayer2.text.Subtitle
@@ -38,11 +37,12 @@ final class TtmlSubtitle implements Subtitle {
     }
 
     @Override // com.google.android.exoplayer2.text.Subtitle
-    public int getNextEventTimeIndex(long j) {
-        int binarySearchCeil = Util.binarySearchCeil(this.eventTimesUs, j, false, false);
-        if (binarySearchCeil < this.eventTimesUs.length) {
-            return binarySearchCeil;
-        }
-        return -1;
+    public long getEventTime(int i) {
+        return this.eventTimesUs[i];
+    }
+
+    @Override // com.google.android.exoplayer2.text.Subtitle
+    public List getCues(long j) {
+        return this.root.getCues(j, this.globalStyles, this.regionMap, this.imageMap);
     }
 }

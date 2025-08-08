@@ -18,12 +18,6 @@ public class ContextThemeWrapper extends ContextWrapper {
     private Resources.Theme mTheme;
     private int mThemeResource;
 
-    static class Api17Impl {
-        static Context createConfigurationContext(ContextThemeWrapper contextThemeWrapper, Configuration configuration) {
-            return contextThemeWrapper.createConfigurationContext(configuration);
-        }
-    }
-
     public ContextThemeWrapper(Context context, int i) {
         super(context);
         this.mThemeResource = i;
@@ -34,46 +28,9 @@ public class ContextThemeWrapper extends ContextWrapper {
         this.mTheme = theme;
     }
 
-    private Resources getResourcesInternal() {
-        if (this.mResources == null) {
-            Configuration configuration = this.mOverrideConfiguration;
-            this.mResources = (configuration == null || (Build.VERSION.SDK_INT >= 26 && isEmptyConfiguration(configuration))) ? super.getResources() : Api17Impl.createConfigurationContext(this, this.mOverrideConfiguration).getResources();
-        }
-        return this.mResources;
-    }
-
-    private void initializeTheme() {
-        boolean z = this.mTheme == null;
-        if (z) {
-            this.mTheme = getResources().newTheme();
-            Resources.Theme theme = getBaseContext().getTheme();
-            if (theme != null) {
-                this.mTheme.setTo(theme);
-            }
-        }
-        onApplyThemeResource(this.mTheme, this.mThemeResource, z);
-    }
-
-    private static boolean isEmptyConfiguration(Configuration configuration) {
-        if (configuration == null) {
-            return true;
-        }
-        if (sEmptyConfig == null) {
-            Configuration configuration2 = new Configuration();
-            configuration2.fontScale = 0.0f;
-            sEmptyConfig = configuration2;
-        }
-        return configuration.equals(sEmptyConfig);
-    }
-
     @Override // android.content.ContextWrapper
     protected void attachBaseContext(Context context) {
         super.attachBaseContext(context);
-    }
-
-    @Override // android.content.ContextWrapper, android.content.Context
-    public AssetManager getAssets() {
-        return getResources().getAssets();
     }
 
     @Override // android.content.ContextWrapper, android.content.Context
@@ -81,15 +38,28 @@ public class ContextThemeWrapper extends ContextWrapper {
         return getResourcesInternal();
     }
 
+    private Resources getResourcesInternal() {
+        if (this.mResources == null) {
+            Configuration configuration = this.mOverrideConfiguration;
+            if (configuration == null || (Build.VERSION.SDK_INT >= 26 && isEmptyConfiguration(configuration))) {
+                this.mResources = super.getResources();
+            } else {
+                this.mResources = Api17Impl.createConfigurationContext(this, this.mOverrideConfiguration).getResources();
+            }
+        }
+        return this.mResources;
+    }
+
     @Override // android.content.ContextWrapper, android.content.Context
-    public Object getSystemService(String str) {
-        if (!"layout_inflater".equals(str)) {
-            return getBaseContext().getSystemService(str);
+    public void setTheme(int i) {
+        if (this.mThemeResource != i) {
+            this.mThemeResource = i;
+            initializeTheme();
         }
-        if (this.mInflater == null) {
-            this.mInflater = LayoutInflater.from(getBaseContext()).cloneInContext(this);
-        }
-        return this.mInflater;
+    }
+
+    public int getThemeResId() {
+        return this.mThemeResource;
     }
 
     @Override // android.content.ContextWrapper, android.content.Context
@@ -105,19 +75,53 @@ public class ContextThemeWrapper extends ContextWrapper {
         return this.mTheme;
     }
 
-    public int getThemeResId() {
-        return this.mThemeResource;
+    @Override // android.content.ContextWrapper, android.content.Context
+    public Object getSystemService(String str) {
+        if ("layout_inflater".equals(str)) {
+            if (this.mInflater == null) {
+                this.mInflater = LayoutInflater.from(getBaseContext()).cloneInContext(this);
+            }
+            return this.mInflater;
+        }
+        return getBaseContext().getSystemService(str);
     }
 
     protected void onApplyThemeResource(Resources.Theme theme, int i, boolean z) {
         theme.applyStyle(i, true);
     }
 
+    private void initializeTheme() {
+        boolean z = this.mTheme == null;
+        if (z) {
+            this.mTheme = getResources().newTheme();
+            Resources.Theme theme = getBaseContext().getTheme();
+            if (theme != null) {
+                this.mTheme.setTo(theme);
+            }
+        }
+        onApplyThemeResource(this.mTheme, this.mThemeResource, z);
+    }
+
     @Override // android.content.ContextWrapper, android.content.Context
-    public void setTheme(int i) {
-        if (this.mThemeResource != i) {
-            this.mThemeResource = i;
-            initializeTheme();
+    public AssetManager getAssets() {
+        return getResources().getAssets();
+    }
+
+    private static boolean isEmptyConfiguration(Configuration configuration) {
+        if (configuration == null) {
+            return true;
+        }
+        if (sEmptyConfig == null) {
+            Configuration configuration2 = new Configuration();
+            configuration2.fontScale = 0.0f;
+            sEmptyConfig = configuration2;
+        }
+        return configuration.equals(sEmptyConfig);
+    }
+
+    static class Api17Impl {
+        static Context createConfigurationContext(ContextThemeWrapper contextThemeWrapper, Configuration configuration) {
+            return contextThemeWrapper.createConfigurationContext(configuration);
         }
     }
 }

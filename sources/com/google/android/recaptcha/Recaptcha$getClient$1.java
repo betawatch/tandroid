@@ -2,7 +2,7 @@ package com.google.android.recaptcha;
 
 import kotlin.Result;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import org.telegram.tgnet.TLObject;
 
@@ -20,11 +20,9 @@ final class Recaptcha$getClient$1 extends ContinuationImpl {
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object coroutine_suspended;
         this.zza = obj;
         this.zzc |= TLObject.FLAG_31;
         Object obj2 = this.zzb.getClient-BWLJW6A(null, null, 0L, this);
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        return obj2 == coroutine_suspended ? obj2 : Result.box-impl(obj2);
+        return obj2 == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? obj2 : Result.box-impl(obj2);
     }
 }

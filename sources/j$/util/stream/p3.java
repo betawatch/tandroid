@@ -1,52 +1,76 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
-import j$.util.function.Consumer;
+import java.util.Comparator;
 
 /* loaded from: classes2.dex */
-final class p3 extends q3 implements j$.util.J, j$.util.function.T {
-    long e;
-
-    p3(j$.util.J j, long j2, long j3) {
-        super(j, j2, j3);
-    }
-
-    p3(j$.util.J j, p3 p3Var) {
-        super(j, p3Var);
+abstract class p3 extends s3 implements j$.util.M {
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ long getExactSizeIfKnown() {
+        return j$.util.A.j(this);
     }
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ void a(Consumer consumer) {
-        j$.util.A.h(this, consumer);
+    public final /* synthetic */ boolean hasCharacteristics(int i) {
+        return j$.util.A.k(this, i);
     }
 
-    @Override // j$.util.function.T
-    public final void accept(long j) {
-        this.e = j;
+    protected abstract void w(Object obj);
+
+    protected abstract W2 x();
+
+    @Override // j$.util.M
+    /* renamed from: forEachRemaining, reason: merged with bridge method [inline-methods] and merged with bridge method [inline-methods] and merged with bridge method [inline-methods] */
+    public final void e(Object obj) {
+        obj.getClass();
+        W2 w2 = null;
+        while (true) {
+            r3 v = v();
+            if (v == r3.NO_MORE) {
+                return;
+            }
+            r3 r3Var = r3.MAYBE_MORE;
+            Spliterator spliterator = this.a;
+            if (v == r3Var) {
+                if (w2 == null) {
+                    w2 = x();
+                } else {
+                    w2.b = 0;
+                }
+                long j = 0;
+                while (((j$.util.M) spliterator).p(w2)) {
+                    j++;
+                    if (j >= 128) {
+                        break;
+                    }
+                }
+                if (j == 0) {
+                    return;
+                } else {
+                    w2.a(obj, t(j));
+                }
+            } else {
+                ((j$.util.M) spliterator).e(obj);
+                return;
+            }
+        }
     }
 
-    @Override // j$.util.function.T
-    public final /* synthetic */ j$.util.function.T f(j$.util.function.T t) {
-        return j$.com.android.tools.r8.a.d(this, t);
+    @Override // j$.util.M
+    /* renamed from: tryAdvance, reason: merged with bridge method [inline-methods] and merged with bridge method [inline-methods] and merged with bridge method [inline-methods] */
+    public final boolean p(Object obj) {
+        obj.getClass();
+        while (v() != r3.NO_MORE && ((j$.util.M) this.a).p(this)) {
+            if (t(1L) == 1) {
+                w(obj);
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean s(Consumer consumer) {
-        return j$.util.A.n(this, consumer);
-    }
-
-    @Override // j$.util.stream.t3
-    protected final Spliterator u(Spliterator spliterator) {
-        return new p3((j$.util.J) spliterator, this);
-    }
-
-    @Override // j$.util.stream.q3
-    protected final void w(Object obj) {
-        ((j$.util.function.T) obj).accept(this.e);
-    }
-
-    @Override // j$.util.stream.q3
-    protected final X2 x() {
-        return new W2();
+    public final Comparator getComparator() {
+        throw new IllegalStateException();
     }
 }

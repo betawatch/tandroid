@@ -10,19 +10,10 @@ import com.google.firebase.FirebaseApp;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class SessionLifecycleServiceBinderImpl implements SessionLifecycleServiceBinder {
     public static final Companion Companion = new Companion(null);
     private final FirebaseApp firebaseApp;
-
-    public static final class Companion {
-        private Companion() {
-        }
-
-        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
-            this();
-        }
-    }
 
     public SessionLifecycleServiceBinderImpl(FirebaseApp firebaseApp) {
         Intrinsics.checkNotNullParameter(firebaseApp, "firebaseApp");
@@ -39,5 +30,14 @@ public final class SessionLifecycleServiceBinderImpl implements SessionLifecycle
         intent.setAction(String.valueOf(Process.myPid()));
         intent.putExtra("ClientCallbackMessenger", callback);
         applicationContext.bindService(intent, serviceConnection, 65);
+    }
+
+    public static final class Companion {
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        private Companion() {
+        }
     }
 }

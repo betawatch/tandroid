@@ -3,13 +3,21 @@ package kotlin.jvm.internal;
 import kotlin.reflect.KCallable;
 import kotlin.reflect.KProperty;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class PropertyReference extends CallableReference implements KProperty {
     private final boolean syntheticJavaProperty;
 
     public PropertyReference(Object obj, Class cls, String str, String str2, int i) {
         super(obj, cls, str, str2, (i & 1) == 1);
         this.syntheticJavaProperty = (i & 2) == 2;
+    }
+
+    @Override // kotlin.jvm.internal.CallableReference
+    protected KProperty getReflected() {
+        if (this.syntheticJavaProperty) {
+            throw new UnsupportedOperationException("Kotlin reflection is not yet supported for synthetic Java properties");
+        }
+        return (KProperty) super.getReflected();
     }
 
     @Override // kotlin.jvm.internal.CallableReference
@@ -29,14 +37,6 @@ public abstract class PropertyReference extends CallableReference implements KPr
             return obj.equals(compute());
         }
         return false;
-    }
-
-    @Override // kotlin.jvm.internal.CallableReference
-    protected KProperty getReflected() {
-        if (this.syntheticJavaProperty) {
-            throw new UnsupportedOperationException("Kotlin reflection is not yet supported for synthetic Java properties");
-        }
-        return (KProperty) super.getReflected();
     }
 
     public int hashCode() {

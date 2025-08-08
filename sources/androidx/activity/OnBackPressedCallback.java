@@ -10,15 +10,19 @@ public abstract class OnBackPressedCallback {
     private boolean mEnabled;
     private Consumer mEnabledConsumer;
 
+    public abstract void handleOnBackPressed();
+
     public OnBackPressedCallback(boolean z) {
         this.mEnabled = z;
     }
 
-    void addCancellable(Cancellable cancellable) {
-        this.mCancellables.add(cancellable);
+    public final void setEnabled(boolean z) {
+        this.mEnabled = z;
+        Consumer consumer = this.mEnabledConsumer;
+        if (consumer != null) {
+            consumer.accept(Boolean.valueOf(z));
+        }
     }
-
-    public abstract void handleOnBackPressed();
 
     public final boolean isEnabled() {
         return this.mEnabled;
@@ -31,16 +35,12 @@ public abstract class OnBackPressedCallback {
         }
     }
 
-    void removeCancellable(Cancellable cancellable) {
-        this.mCancellables.remove(cancellable);
+    void addCancellable(Cancellable cancellable) {
+        this.mCancellables.add(cancellable);
     }
 
-    public final void setEnabled(boolean z) {
-        this.mEnabled = z;
-        Consumer consumer = this.mEnabledConsumer;
-        if (consumer != null) {
-            consumer.accept(Boolean.valueOf(z));
-        }
+    void removeCancellable(Cancellable cancellable) {
+        this.mCancellables.remove(cancellable);
     }
 
     void setIsEnabledConsumer(Consumer consumer) {

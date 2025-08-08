@@ -13,7 +13,7 @@ import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class TreeTypeAdapter extends SerializationDelegatingTypeAdapter {
     private final GsonContextImpl context;
     private volatile TypeAdapter delegate;
@@ -23,14 +23,57 @@ public final class TreeTypeAdapter extends SerializationDelegatingTypeAdapter {
     private final TypeAdapterFactory skipPastForGetDelegateAdapter;
     private final TypeToken typeToken;
 
-    private final class GsonContextImpl implements JsonSerializationContext {
-        private GsonContextImpl() {
-        }
+    public TreeTypeAdapter(JsonSerializer jsonSerializer, JsonDeserializer jsonDeserializer, Gson gson, TypeToken typeToken, TypeAdapterFactory typeAdapterFactory, boolean z) {
+        this.context = new GsonContextImpl();
+        this.serializer = jsonSerializer;
+        this.gson = gson;
+        this.typeToken = typeToken;
+        this.skipPastForGetDelegateAdapter = typeAdapterFactory;
+        this.nullSafe = z;
+    }
 
-        @Override // com.google.gson.JsonSerializationContext
-        public JsonElement serialize(Object obj) {
-            return TreeTypeAdapter.this.gson.toJsonTree(obj);
+    public TreeTypeAdapter(JsonSerializer jsonSerializer, JsonDeserializer jsonDeserializer, Gson gson, TypeToken typeToken, TypeAdapterFactory typeAdapterFactory) {
+        this(jsonSerializer, jsonDeserializer, gson, typeToken, typeAdapterFactory, true);
+    }
+
+    @Override // com.google.gson.TypeAdapter
+    public Object read(JsonReader jsonReader) {
+        return delegate().read(jsonReader);
+    }
+
+    @Override // com.google.gson.TypeAdapter
+    public void write(JsonWriter jsonWriter, Object obj) {
+        JsonSerializer jsonSerializer = this.serializer;
+        if (jsonSerializer == null) {
+            delegate().write(jsonWriter, obj);
+        } else if (this.nullSafe && obj == null) {
+            jsonWriter.nullValue();
+        } else {
+            Streams.write(jsonSerializer.serialize(obj, this.typeToken.getType(), this.context), jsonWriter);
         }
+    }
+
+    private TypeAdapter delegate() {
+        TypeAdapter typeAdapter = this.delegate;
+        if (typeAdapter != null) {
+            return typeAdapter;
+        }
+        TypeAdapter delegateAdapter = this.gson.getDelegateAdapter(this.skipPastForGetDelegateAdapter, this.typeToken);
+        this.delegate = delegateAdapter;
+        return delegateAdapter;
+    }
+
+    @Override // com.google.gson.internal.bind.SerializationDelegatingTypeAdapter
+    public TypeAdapter getSerializationDelegate() {
+        return this.serializer != null ? this : delegate();
+    }
+
+    public static TypeAdapterFactory newFactoryWithMatchRawType(TypeToken typeToken, Object obj) {
+        return new SingleTypeFactory(obj, typeToken, typeToken.getType() == typeToken.getRawType(), null);
+    }
+
+    public static TypeAdapterFactory newTypeHierarchyFactory(Class cls, Object obj) {
+        return new SingleTypeFactory(obj, null, false, cls);
     }
 
     private static final class SingleTypeFactory implements TypeAdapterFactory {
@@ -50,64 +93,27 @@ public final class TreeTypeAdapter extends SerializationDelegatingTypeAdapter {
 
         @Override // com.google.gson.TypeAdapterFactory
         public TypeAdapter create(Gson gson, TypeToken typeToken) {
+            boolean isAssignableFrom;
             TypeToken typeToken2 = this.exactType;
-            if (typeToken2 != null ? typeToken2.equals(typeToken) || (this.matchRawType && this.exactType.getType() == typeToken.getRawType()) : this.hierarchyType.isAssignableFrom(typeToken.getRawType())) {
+            if (typeToken2 != null) {
+                isAssignableFrom = typeToken2.equals(typeToken) || (this.matchRawType && this.exactType.getType() == typeToken.getRawType());
+            } else {
+                isAssignableFrom = this.hierarchyType.isAssignableFrom(typeToken.getRawType());
+            }
+            if (isAssignableFrom) {
                 return new TreeTypeAdapter(this.serializer, null, gson, typeToken, this);
             }
             return null;
         }
     }
 
-    public TreeTypeAdapter(JsonSerializer jsonSerializer, JsonDeserializer jsonDeserializer, Gson gson, TypeToken typeToken, TypeAdapterFactory typeAdapterFactory) {
-        this(jsonSerializer, jsonDeserializer, gson, typeToken, typeAdapterFactory, true);
-    }
-
-    public TreeTypeAdapter(JsonSerializer jsonSerializer, JsonDeserializer jsonDeserializer, Gson gson, TypeToken typeToken, TypeAdapterFactory typeAdapterFactory, boolean z) {
-        this.context = new GsonContextImpl();
-        this.serializer = jsonSerializer;
-        this.gson = gson;
-        this.typeToken = typeToken;
-        this.skipPastForGetDelegateAdapter = typeAdapterFactory;
-        this.nullSafe = z;
-    }
-
-    private TypeAdapter delegate() {
-        TypeAdapter typeAdapter = this.delegate;
-        if (typeAdapter != null) {
-            return typeAdapter;
+    private final class GsonContextImpl implements JsonSerializationContext {
+        private GsonContextImpl() {
         }
-        TypeAdapter delegateAdapter = this.gson.getDelegateAdapter(this.skipPastForGetDelegateAdapter, this.typeToken);
-        this.delegate = delegateAdapter;
-        return delegateAdapter;
-    }
 
-    public static TypeAdapterFactory newFactoryWithMatchRawType(TypeToken typeToken, Object obj) {
-        return new SingleTypeFactory(obj, typeToken, typeToken.getType() == typeToken.getRawType(), null);
-    }
-
-    public static TypeAdapterFactory newTypeHierarchyFactory(Class cls, Object obj) {
-        return new SingleTypeFactory(obj, null, false, cls);
-    }
-
-    @Override // com.google.gson.internal.bind.SerializationDelegatingTypeAdapter
-    public TypeAdapter getSerializationDelegate() {
-        return this.serializer != null ? this : delegate();
-    }
-
-    @Override // com.google.gson.TypeAdapter
-    public Object read(JsonReader jsonReader) {
-        return delegate().read(jsonReader);
-    }
-
-    @Override // com.google.gson.TypeAdapter
-    public void write(JsonWriter jsonWriter, Object obj) {
-        JsonSerializer jsonSerializer = this.serializer;
-        if (jsonSerializer == null) {
-            delegate().write(jsonWriter, obj);
-        } else if (this.nullSafe && obj == null) {
-            jsonWriter.nullValue();
-        } else {
-            Streams.write(jsonSerializer.serialize(obj, this.typeToken.getType(), this.context), jsonWriter);
+        @Override // com.google.gson.JsonSerializationContext
+        public JsonElement serialize(Object obj) {
+            return TreeTypeAdapter.this.gson.toJsonTree(obj);
         }
     }
 }

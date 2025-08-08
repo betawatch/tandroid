@@ -17,19 +17,6 @@ final class zzlj implements Iterator {
         this.zza = list.size();
     }
 
-    /* synthetic */ zzlj(zzlh zzlhVar, zzlg zzlgVar) {
-        this(zzlhVar);
-    }
-
-    private final Iterator zza() {
-        Map map;
-        if (this.zzb == null) {
-            map = this.zzc.zzf;
-            this.zzb = map.entrySet().iterator();
-        }
-        return this.zzb;
-    }
-
     @Override // java.util.Iterator
     public final boolean hasNext() {
         List list;
@@ -44,22 +31,32 @@ final class zzlj implements Iterator {
     }
 
     @Override // java.util.Iterator
-    public final /* synthetic */ Object next() {
-        List list;
-        Object obj;
-        if (zza().hasNext()) {
-            obj = zza().next();
-        } else {
-            list = this.zzc.zzb;
-            int i = this.zza - 1;
-            this.zza = i;
-            obj = list.get(i);
+    public final void remove() {
+        throw new UnsupportedOperationException();
+    }
+
+    private final Iterator zza() {
+        Map map;
+        if (this.zzb == null) {
+            map = this.zzc.zzf;
+            this.zzb = map.entrySet().iterator();
         }
-        return (Map.Entry) obj;
+        return this.zzb;
     }
 
     @Override // java.util.Iterator
-    public final void remove() {
-        throw new UnsupportedOperationException();
+    public final /* synthetic */ Object next() {
+        List list;
+        if (zza().hasNext()) {
+            return (Map.Entry) zza().next();
+        }
+        list = this.zzc.zzb;
+        int i = this.zza - 1;
+        this.zza = i;
+        return (Map.Entry) list.get(i);
+    }
+
+    /* synthetic */ zzlj(zzlh zzlhVar, zzlg zzlgVar) {
+        this(zzlhVar);
     }
 }

@@ -8,16 +8,20 @@ import android.os.Parcelable;
 public abstract class zzd {
     private static final ClassLoader zza = zzd.class.getClassLoader();
 
-    public static void zza(Parcel parcel, IInterface iInterface) {
-        parcel.writeStrongBinder(iInterface == null ? null : iInterface.asBinder());
-    }
-
     public static void zza(Parcel parcel, Parcelable parcelable) {
         if (parcelable == null) {
             parcel.writeInt(0);
         } else {
             parcel.writeInt(1);
             parcelable.writeToParcel(parcel, 0);
+        }
+    }
+
+    public static void zza(Parcel parcel, IInterface iInterface) {
+        if (iInterface == null) {
+            parcel.writeStrongBinder(null);
+        } else {
+            parcel.writeStrongBinder(iInterface.asBinder());
         }
     }
 }

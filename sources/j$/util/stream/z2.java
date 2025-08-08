@@ -1,47 +1,57 @@
 package j$.util.stream;
 
-import j$.util.Comparator$-CC;
-import j$.util.Spliterator;
-import j$.util.function.IntFunction;
-import java.util.Arrays;
+import j$.util.Collection;
+import j$.util.List;
+import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Iterator;
+import java.util.List;
 
 /* loaded from: classes2.dex */
-final class z2 extends V1 {
-    private final boolean m;
-    private final Comparator n;
+final class z2 extends r2 {
+    private ArrayList d;
 
-    z2(b bVar) {
-        super(bVar, R2.q | R2.o, 0);
-        this.m = true;
-        this.n = Comparator$-CC.a();
-    }
-
-    z2(b bVar, Comparator comparator) {
-        super(bVar, R2.q | R2.p, 0);
-        this.m = false;
-        comparator.getClass();
-        this.n = comparator;
-    }
-
-    @Override // j$.util.stream.b
-    public final G0 t0(Spliterator spliterator, IntFunction intFunction, b bVar) {
-        if (R2.SORTED.j(bVar.p0()) && this.m) {
-            return bVar.h0(spliterator, false, intFunction);
+    @Override // j$.util.stream.Z1, j$.util.stream.d2
+    public final void n(long j) {
+        if (j >= 2147483639) {
+            throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        Object[] s = bVar.h0(spliterator, true, intFunction).s(intFunction);
-        Arrays.sort(s, this.n);
-        return new J0(s);
+        this.d = j >= 0 ? new ArrayList((int) j) : new ArrayList();
     }
 
-    @Override // j$.util.stream.b
-    public final e2 w0(int i, e2 e2Var) {
-        e2Var.getClass();
-        if (R2.SORTED.j(i) && this.m) {
-            return e2Var;
+    @Override // j$.util.stream.Z1, j$.util.stream.d2
+    public final void m() {
+        List list = this.d;
+        boolean z = list instanceof j$.util.List;
+        Comparator comparator = this.b;
+        if (z) {
+            ((j$.util.List) list).sort(comparator);
+        } else {
+            List.-CC.$default$sort(list, comparator);
         }
-        boolean j = R2.SIZED.j(i);
-        Comparator comparator = this.n;
-        return j ? new E2(e2Var, comparator) : new A2(e2Var, comparator);
+        long size = this.d.size();
+        d2 d2Var = this.a;
+        d2Var.n(size);
+        if (this.c) {
+            Iterator it = this.d.iterator();
+            while (it.hasNext()) {
+                Object next = it.next();
+                if (d2Var.q()) {
+                    break;
+                } else {
+                    d2Var.r((d2) next);
+                }
+            }
+        } else {
+            Collection.-EL.a(this.d, new a(d2Var, 2));
+        }
+        d2Var.m();
+        this.d = null;
+    }
+
+    @Override // j$.util.function.Consumer
+    /* renamed from: accept */
+    public final void r(Object obj) {
+        this.d.add(obj);
     }
 }

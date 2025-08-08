@@ -1,58 +1,34 @@
 package com.google.android.gms.internal.play_billing;
 
+import java.util.Objects;
+
 /* loaded from: classes.dex */
-final class zzdo implements zzdc {
-    private final zzdf zza;
-    private final String zzb;
-    private final Object[] zzc;
-    private final int zzd;
+final class zzdo extends zzco {
+    private final transient Object[] zza;
+    private final transient int zzb;
+    private final transient int zzc;
 
-    zzdo(zzdf zzdfVar, String str, Object[] objArr) {
-        this.zza = zzdfVar;
-        this.zzb = str;
-        this.zzc = objArr;
-        char charAt = str.charAt(0);
-        if (charAt < 55296) {
-            this.zzd = charAt;
-            return;
-        }
-        int i = charAt & 8191;
-        int i2 = 1;
-        int i3 = 13;
-        while (true) {
-            int i4 = i2 + 1;
-            char charAt2 = str.charAt(i2);
-            if (charAt2 < 55296) {
-                this.zzd = i | (charAt2 << i3);
-                return;
-            } else {
-                i |= (charAt2 & 8191) << i3;
-                i3 += 13;
-                i2 = i4;
-            }
-        }
+    zzdo(Object[] objArr, int i, int i2) {
+        this.zza = objArr;
+        this.zzb = i;
+        this.zzc = i2;
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzdc
-    public final zzdf zza() {
-        return this.zza;
+    @Override // java.util.List
+    public final Object get(int i) {
+        zzbe.zza(i, this.zzc, "index");
+        Object obj = this.zza[i + i + this.zzb];
+        Objects.requireNonNull(obj);
+        return obj;
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzdc
-    public final boolean zzb() {
-        return (this.zzd & 2) == 2;
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.zzdc
-    public final int zzc() {
-        return (this.zzd & 1) != 0 ? 1 : 2;
-    }
-
-    final String zzd() {
-        return this.zzb;
-    }
-
-    final Object[] zze() {
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
         return this.zzc;
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.zzcj
+    final boolean zzf() {
+        return true;
     }
 }

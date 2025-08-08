@@ -24,41 +24,111 @@ public abstract class ImmutableMap implements Map, Serializable, j$.util.Map {
     private transient ImmutableSet keySet;
     private transient ImmutableCollection values;
 
+    @Override // j$.util.Map
+    public /* synthetic */ Object compute(Object obj, BiFunction biFunction) {
+        return Map.-CC.$default$compute(this, obj, biFunction);
+    }
+
+    @Override // java.util.Map
+    public /* synthetic */ Object compute(Object obj, java.util.function.BiFunction biFunction) {
+        return compute(obj, BiFunction.VivifiedWrapper.convert(biFunction));
+    }
+
+    @Override // j$.util.Map
+    public /* synthetic */ Object computeIfAbsent(Object obj, Function function) {
+        return Map.-CC.$default$computeIfAbsent(this, obj, function);
+    }
+
+    @Override // java.util.Map
+    public /* synthetic */ Object computeIfAbsent(Object obj, java.util.function.Function function) {
+        return computeIfAbsent(obj, Function.VivifiedWrapper.convert(function));
+    }
+
+    @Override // j$.util.Map
+    public /* synthetic */ Object computeIfPresent(Object obj, BiFunction biFunction) {
+        return Map.-CC.$default$computeIfPresent(this, obj, biFunction);
+    }
+
+    @Override // java.util.Map
+    public /* synthetic */ Object computeIfPresent(Object obj, java.util.function.BiFunction biFunction) {
+        return computeIfPresent(obj, BiFunction.VivifiedWrapper.convert(biFunction));
+    }
+
+    abstract ImmutableSet createEntrySet();
+
+    abstract ImmutableSet createKeySet();
+
+    abstract ImmutableCollection createValues();
+
+    @Override // j$.util.Map
+    public /* synthetic */ void forEach(BiConsumer biConsumer) {
+        Map.-CC.$default$forEach(this, biConsumer);
+    }
+
+    @Override // java.util.Map
+    public /* synthetic */ void forEach(java.util.function.BiConsumer biConsumer) {
+        forEach(BiConsumer.VivifiedWrapper.convert(biConsumer));
+    }
+
+    @Override // java.util.Map
+    public abstract Object get(Object obj);
+
+    abstract boolean isPartialView();
+
+    @Override // j$.util.Map
+    public /* synthetic */ Object merge(Object obj, Object obj2, BiFunction biFunction) {
+        return Map.-CC.$default$merge(this, obj, obj2, biFunction);
+    }
+
+    @Override // java.util.Map
+    public /* synthetic */ Object merge(Object obj, Object obj2, java.util.function.BiFunction biFunction) {
+        return merge(obj, obj2, BiFunction.VivifiedWrapper.convert(biFunction));
+    }
+
+    @Override // java.util.Map, j$.util.Map
+    public /* synthetic */ Object putIfAbsent(Object obj, Object obj2) {
+        return Map.-CC.$default$putIfAbsent(this, obj, obj2);
+    }
+
+    @Override // java.util.Map, j$.util.Map
+    public /* synthetic */ boolean remove(Object obj, Object obj2) {
+        return Map.-CC.$default$remove(this, obj, obj2);
+    }
+
+    @Override // java.util.Map, j$.util.Map
+    public /* synthetic */ Object replace(Object obj, Object obj2) {
+        return Map.-CC.$default$replace(this, obj, obj2);
+    }
+
+    @Override // java.util.Map, j$.util.Map
+    public /* synthetic */ boolean replace(Object obj, Object obj2, Object obj3) {
+        return Map.-CC.$default$replace(this, obj, obj2, obj3);
+    }
+
+    @Override // j$.util.Map
+    public /* synthetic */ void replaceAll(BiFunction biFunction) {
+        Map.-CC.$default$replaceAll(this, biFunction);
+    }
+
+    @Override // java.util.Map
+    public /* synthetic */ void replaceAll(java.util.function.BiFunction biFunction) {
+        replaceAll(BiFunction.VivifiedWrapper.convert(biFunction));
+    }
+
+    public static ImmutableMap of() {
+        return RegularImmutableMap.EMPTY;
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
     public static class Builder {
         Object[] alternatingKeysAndValues;
         DuplicateKey duplicateKey;
         boolean entriesUsed;
         int size;
         Comparator valueComparator;
-
-        static final class DuplicateKey {
-            private final Object key;
-            private final Object value1;
-            private final Object value2;
-
-            DuplicateKey(Object obj, Object obj2, Object obj3) {
-                this.key = obj;
-                this.value1 = obj2;
-                this.value2 = obj3;
-            }
-
-            IllegalArgumentException exception() {
-                String valueOf = String.valueOf(this.key);
-                String valueOf2 = String.valueOf(this.value1);
-                String valueOf3 = String.valueOf(this.key);
-                String valueOf4 = String.valueOf(this.value2);
-                StringBuilder sb = new StringBuilder(valueOf.length() + 39 + valueOf2.length() + valueOf3.length() + valueOf4.length());
-                sb.append("Multiple entries with same key: ");
-                sb.append(valueOf);
-                sb.append("=");
-                sb.append(valueOf2);
-                sb.append(" and ");
-                sb.append(valueOf3);
-                sb.append("=");
-                sb.append(valueOf4);
-                return new IllegalArgumentException(sb.toString());
-            }
-        }
 
         public Builder() {
             this(4);
@@ -68,6 +138,41 @@ public abstract class ImmutableMap implements Map, Serializable, j$.util.Map {
             this.alternatingKeysAndValues = new Object[i * 2];
             this.size = 0;
             this.entriesUsed = false;
+        }
+
+        private void ensureCapacity(int i) {
+            int i2 = i * 2;
+            Object[] objArr = this.alternatingKeysAndValues;
+            if (i2 > objArr.length) {
+                this.alternatingKeysAndValues = Arrays.copyOf(objArr, ImmutableCollection.Builder.expandedCapacity(objArr.length, i2));
+                this.entriesUsed = false;
+            }
+        }
+
+        public Builder put(Object obj, Object obj2) {
+            ensureCapacity(this.size + 1);
+            CollectPreconditions.checkEntryNotNull(obj, obj2);
+            Object[] objArr = this.alternatingKeysAndValues;
+            int i = this.size;
+            objArr[i * 2] = obj;
+            objArr[(i * 2) + 1] = obj2;
+            this.size = i + 1;
+            return this;
+        }
+
+        public Builder put(Map.Entry entry) {
+            return put(entry.getKey(), entry.getValue());
+        }
+
+        public Builder putAll(Iterable iterable) {
+            if (iterable instanceof Collection) {
+                ensureCapacity(this.size + ((Collection) iterable).size());
+            }
+            Iterator it = iterable.iterator();
+            while (it.hasNext()) {
+                put((Map.Entry) it.next());
+            }
+            return this;
         }
 
         private ImmutableMap build(boolean z) {
@@ -101,12 +206,29 @@ public abstract class ImmutableMap implements Map, Serializable, j$.util.Map {
             throw duplicateKey.exception();
         }
 
-        private void ensureCapacity(int i) {
-            int i2 = i * 2;
-            Object[] objArr = this.alternatingKeysAndValues;
-            if (i2 > objArr.length) {
-                this.alternatingKeysAndValues = Arrays.copyOf(objArr, ImmutableCollection.Builder.expandedCapacity(objArr.length, i2));
-                this.entriesUsed = false;
+        public ImmutableMap build() {
+            return buildOrThrow();
+        }
+
+        public ImmutableMap buildOrThrow() {
+            return build(true);
+        }
+
+        static void sortEntries(Object[] objArr, int i, Comparator comparator) {
+            Map.Entry[] entryArr = new Map.Entry[i];
+            for (int i2 = 0; i2 < i; i2++) {
+                int i3 = i2 * 2;
+                Object obj = objArr[i3];
+                Objects.requireNonNull(obj);
+                Object obj2 = objArr[i3 + 1];
+                Objects.requireNonNull(obj2);
+                entryArr[i2] = new AbstractMap.SimpleImmutableEntry(obj, obj2);
+            }
+            Arrays.sort(entryArr, 0, i, Ordering.from(comparator).onResultOf(Maps.valueFunction()));
+            for (int i4 = 0; i4 < i; i4++) {
+                int i5 = i4 * 2;
+                objArr[i5] = entryArr[i4].getKey();
+                objArr[i5 + 1] = entryArr[i4].getValue();
             }
         }
 
@@ -145,73 +267,37 @@ public abstract class ImmutableMap implements Map, Serializable, j$.util.Map {
             return objArr2;
         }
 
-        static void sortEntries(Object[] objArr, int i, Comparator comparator) {
-            Map.Entry[] entryArr = new Map.Entry[i];
-            for (int i2 = 0; i2 < i; i2++) {
-                int i3 = i2 * 2;
-                Object obj = objArr[i3];
-                Objects.requireNonNull(obj);
-                Object obj2 = objArr[i3 + 1];
-                Objects.requireNonNull(obj2);
-                entryArr[i2] = new AbstractMap.SimpleImmutableEntry(obj, obj2);
+        static final class DuplicateKey {
+            private final Object key;
+            private final Object value1;
+            private final Object value2;
+
+            DuplicateKey(Object obj, Object obj2, Object obj3) {
+                this.key = obj;
+                this.value1 = obj2;
+                this.value2 = obj3;
             }
-            Arrays.sort(entryArr, 0, i, Ordering.from(comparator).onResultOf(Maps.valueFunction()));
-            for (int i4 = 0; i4 < i; i4++) {
-                int i5 = i4 * 2;
-                objArr[i5] = entryArr[i4].getKey();
-                objArr[i5 + 1] = entryArr[i4].getValue();
+
+            IllegalArgumentException exception() {
+                String valueOf = String.valueOf(this.key);
+                String valueOf2 = String.valueOf(this.value1);
+                String valueOf3 = String.valueOf(this.key);
+                String valueOf4 = String.valueOf(this.value2);
+                StringBuilder sb = new StringBuilder(valueOf.length() + 39 + valueOf2.length() + valueOf3.length() + valueOf4.length());
+                sb.append("Multiple entries with same key: ");
+                sb.append(valueOf);
+                sb.append("=");
+                sb.append(valueOf2);
+                sb.append(" and ");
+                sb.append(valueOf3);
+                sb.append("=");
+                sb.append(valueOf4);
+                return new IllegalArgumentException(sb.toString());
             }
-        }
-
-        public ImmutableMap build() {
-            return buildOrThrow();
-        }
-
-        public ImmutableMap buildOrThrow() {
-            return build(true);
-        }
-
-        public Builder put(Object obj, Object obj2) {
-            ensureCapacity(this.size + 1);
-            CollectPreconditions.checkEntryNotNull(obj, obj2);
-            Object[] objArr = this.alternatingKeysAndValues;
-            int i = this.size;
-            objArr[i * 2] = obj;
-            objArr[(i * 2) + 1] = obj2;
-            this.size = i + 1;
-            return this;
-        }
-
-        public Builder put(Map.Entry entry) {
-            return put(entry.getKey(), entry.getValue());
-        }
-
-        public Builder putAll(Iterable iterable) {
-            if (iterable instanceof Collection) {
-                ensureCapacity(this.size + ((Collection) iterable).size());
-            }
-            Iterator it = iterable.iterator();
-            while (it.hasNext()) {
-                put((Map.Entry) it.next());
-            }
-            return this;
         }
     }
 
-    ImmutableMap() {
-    }
-
-    public static Builder builder() {
-        return new Builder();
-    }
-
-    public static ImmutableMap copyOf(Iterable iterable) {
-        Builder builder = new Builder(iterable instanceof Collection ? ((Collection) iterable).size() : 4);
-        builder.putAll(iterable);
-        return builder.build();
-    }
-
-    public static ImmutableMap copyOf(Map map) {
+    public static ImmutableMap copyOf(java.util.Map map) {
         if ((map instanceof ImmutableMap) && !(map instanceof SortedMap)) {
             ImmutableMap immutableMap = (ImmutableMap) map;
             if (!immutableMap.isPartialView()) {
@@ -221,8 +307,28 @@ public abstract class ImmutableMap implements Map, Serializable, j$.util.Map {
         return copyOf(map.entrySet());
     }
 
-    public static ImmutableMap of() {
-        return RegularImmutableMap.EMPTY;
+    public static ImmutableMap copyOf(Iterable iterable) {
+        Builder builder = new Builder(iterable instanceof Collection ? ((Collection) iterable).size() : 4);
+        builder.putAll(iterable);
+        return builder.build();
+    }
+
+    ImmutableMap() {
+    }
+
+    @Override // java.util.Map
+    public final Object put(Object obj, Object obj2) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.Map
+    public final Object remove(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.Map
+    public final void putAll(java.util.Map map) {
+        throw new UnsupportedOperationException();
     }
 
     @Override // java.util.Map
@@ -230,34 +336,9 @@ public abstract class ImmutableMap implements Map, Serializable, j$.util.Map {
         throw new UnsupportedOperationException();
     }
 
-    @Override // j$.util.Map
-    public /* synthetic */ Object compute(Object obj, BiFunction biFunction) {
-        return Map.-CC.$default$compute(this, obj, biFunction);
-    }
-
     @Override // java.util.Map
-    public /* synthetic */ Object compute(Object obj, java.util.function.BiFunction biFunction) {
-        return compute(obj, BiFunction.VivifiedWrapper.convert(biFunction));
-    }
-
-    @Override // j$.util.Map
-    public /* synthetic */ Object computeIfAbsent(Object obj, Function function) {
-        return Map.-CC.$default$computeIfAbsent(this, obj, function);
-    }
-
-    @Override // java.util.Map
-    public /* synthetic */ Object computeIfAbsent(Object obj, java.util.function.Function function) {
-        return computeIfAbsent(obj, Function.VivifiedWrapper.convert(function));
-    }
-
-    @Override // j$.util.Map
-    public /* synthetic */ Object computeIfPresent(Object obj, BiFunction biFunction) {
-        return Map.-CC.$default$computeIfPresent(this, obj, biFunction);
-    }
-
-    @Override // java.util.Map
-    public /* synthetic */ Object computeIfPresent(Object obj, java.util.function.BiFunction biFunction) {
-        return computeIfPresent(obj, BiFunction.VivifiedWrapper.convert(biFunction));
+    public boolean isEmpty() {
+        return size() == 0;
     }
 
     @Override // java.util.Map
@@ -270,11 +351,11 @@ public abstract class ImmutableMap implements Map, Serializable, j$.util.Map {
         return values().contains(obj);
     }
 
-    abstract ImmutableSet createEntrySet();
-
-    abstract ImmutableSet createKeySet();
-
-    abstract ImmutableCollection createValues();
+    @Override // java.util.Map, j$.util.Map
+    public final Object getOrDefault(Object obj, Object obj2) {
+        Object obj3 = get(obj);
+        return obj3 != null ? obj3 : obj2;
+    }
 
     @Override // java.util.Map
     public ImmutableSet entrySet() {
@@ -288,42 +369,6 @@ public abstract class ImmutableMap implements Map, Serializable, j$.util.Map {
     }
 
     @Override // java.util.Map
-    public boolean equals(Object obj) {
-        return Maps.equalsImpl(this, obj);
-    }
-
-    @Override // j$.util.Map
-    public /* synthetic */ void forEach(BiConsumer biConsumer) {
-        Map.-CC.$default$forEach(this, biConsumer);
-    }
-
-    @Override // java.util.Map
-    public /* synthetic */ void forEach(java.util.function.BiConsumer biConsumer) {
-        forEach(BiConsumer.VivifiedWrapper.convert(biConsumer));
-    }
-
-    @Override // java.util.Map
-    public abstract Object get(Object obj);
-
-    @Override // java.util.Map, j$.util.Map
-    public final Object getOrDefault(Object obj, Object obj2) {
-        Object obj3 = get(obj);
-        return obj3 != null ? obj3 : obj2;
-    }
-
-    @Override // java.util.Map
-    public int hashCode() {
-        return Sets.hashCodeImpl(entrySet());
-    }
-
-    @Override // java.util.Map
-    public boolean isEmpty() {
-        return size() == 0;
-    }
-
-    abstract boolean isPartialView();
-
-    @Override // java.util.Map
     public ImmutableSet keySet() {
         ImmutableSet immutableSet = this.keySet;
         if (immutableSet != null) {
@@ -332,65 +377,6 @@ public abstract class ImmutableMap implements Map, Serializable, j$.util.Map {
         ImmutableSet createKeySet = createKeySet();
         this.keySet = createKeySet;
         return createKeySet;
-    }
-
-    @Override // j$.util.Map
-    public /* synthetic */ Object merge(Object obj, Object obj2, BiFunction biFunction) {
-        return Map.-CC.$default$merge(this, obj, obj2, biFunction);
-    }
-
-    @Override // java.util.Map
-    public /* synthetic */ Object merge(Object obj, Object obj2, java.util.function.BiFunction biFunction) {
-        return merge(obj, obj2, BiFunction.VivifiedWrapper.convert(biFunction));
-    }
-
-    @Override // java.util.Map
-    public final Object put(Object obj, Object obj2) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Map
-    public final void putAll(java.util.Map map) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Map, j$.util.Map
-    public /* synthetic */ Object putIfAbsent(Object obj, Object obj2) {
-        return Map.-CC.$default$putIfAbsent(this, obj, obj2);
-    }
-
-    @Override // java.util.Map
-    public final Object remove(Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Map, j$.util.Map
-    public /* synthetic */ boolean remove(Object obj, Object obj2) {
-        return Map.-CC.$default$remove(this, obj, obj2);
-    }
-
-    @Override // java.util.Map, j$.util.Map
-    public /* synthetic */ Object replace(Object obj, Object obj2) {
-        return Map.-CC.$default$replace(this, obj, obj2);
-    }
-
-    @Override // java.util.Map, j$.util.Map
-    public /* synthetic */ boolean replace(Object obj, Object obj2, Object obj3) {
-        return Map.-CC.$default$replace(this, obj, obj2, obj3);
-    }
-
-    @Override // j$.util.Map
-    public /* synthetic */ void replaceAll(BiFunction biFunction) {
-        Map.-CC.$default$replaceAll(this, biFunction);
-    }
-
-    @Override // java.util.Map
-    public /* synthetic */ void replaceAll(java.util.function.BiFunction biFunction) {
-        replaceAll(BiFunction.VivifiedWrapper.convert(biFunction));
-    }
-
-    public String toString() {
-        return Maps.toStringImpl(this);
     }
 
     @Override // java.util.Map
@@ -402,5 +388,19 @@ public abstract class ImmutableMap implements Map, Serializable, j$.util.Map {
         ImmutableCollection createValues = createValues();
         this.values = createValues;
         return createValues;
+    }
+
+    @Override // java.util.Map
+    public boolean equals(Object obj) {
+        return Maps.equalsImpl(this, obj);
+    }
+
+    @Override // java.util.Map
+    public int hashCode() {
+        return Sets.hashCodeImpl(entrySet());
+    }
+
+    public String toString() {
+        return Maps.toStringImpl(this);
     }
 }

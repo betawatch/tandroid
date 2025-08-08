@@ -45,6 +45,10 @@ public class BotAdView extends FrameLayout {
     public final LinkSpanDrawable.LinksTextView textView;
     public final TextView titleView;
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$new$0(View view) {
+    }
+
     public BotAdView(Context context, Theme.ResourcesProvider resourcesProvider) {
         super(context);
         this.invalidatedMeasure = true;
@@ -118,8 +122,83 @@ public class BotAdView extends FrameLayout {
         linearLayout.addView(imageView, LayoutHelper.createLinear(32, 32, 53, 10, 3, 0, 2));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$0(View view) {
+    public void set(final ChatActivity chatActivity, final MessageObject messageObject, final Runnable runnable, final Runnable runnable2) {
+        if (messageObject == null) {
+            return;
+        }
+        boolean z = true;
+        this.invalidatedMeasure = true;
+        CharSequence replaceEmoji = Emoji.replaceEmoji(messageObject.sponsoredTitle, this.titleView.getPaint().getFontMetricsInt(), false);
+        CharSequence replaceEmoji2 = Emoji.replaceEmoji(messageObject.messageText, this.textView.getPaint().getFontMetricsInt(), false);
+        final String str = messageObject.sponsoredUrl;
+        if (messageObject.sponsoredMedia != null) {
+            this.imageView.setVisibility(0);
+            this.closeView.setVisibility(8);
+            TLRPC.MessageMedia messageMedia = messageObject.sponsoredMedia;
+            TLRPC.Document document = messageMedia.document;
+            if (document != null) {
+                this.imageView.setImage(ImageLocation.getForDocument(messageObject.sponsoredMedia.document), "48_48", ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 48), messageObject.sponsoredMedia.document), "48_48", null, 0L, 0, null);
+            } else {
+                TLRPC.Photo photo = messageMedia.photo;
+                if (photo != null) {
+                    TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, 48, true, null, true);
+                    this.imageView.setImage(ImageLocation.getForPhoto(closestPhotoSizeWithSize, messageObject.sponsoredMedia.photo), "48_48", ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(messageObject.sponsoredMedia.photo.sizes, 48, true, closestPhotoSizeWithSize, false), messageObject.sponsoredMedia.photo), "48_48", null, 0L, 0, null);
+                }
+            }
+        } else {
+            TLRPC.Photo photo2 = messageObject.sponsoredPhoto;
+            if (photo2 != null) {
+                TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(photo2.sizes, 48, true, null, true);
+                this.imageView.setImage(ImageLocation.getForPhoto(closestPhotoSizeWithSize2, messageObject.sponsoredPhoto), "48_48", ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(messageObject.sponsoredPhoto.sizes, 48, true, closestPhotoSizeWithSize2, false), messageObject.sponsoredPhoto), "48_48", null, 0L, 0, null);
+                this.imageView.setVisibility(0);
+                this.closeView.setVisibility(8);
+            } else {
+                this.imageView.setVisibility(8);
+                this.closeView.setVisibility(0);
+                z = false;
+            }
+        }
+        int i = R.string.SponsoredMessageAd;
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString(i));
+        int i2 = Theme.key_featuredStickers_addButton;
+        spannableStringBuilder.setSpan(new ForegroundColorSpan(Theme.getColor(i2, this.resourcesProvider)), 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.append((CharSequence) " \u2009");
+        spannableStringBuilder.append(replaceEmoji);
+        if (this.titleView.getPaint().measureText(spannableStringBuilder.toString()) > (((AndroidUtilities.displaySize.x - AndroidUtilities.dp(44.660004f)) - this.removeView.getPaint().measureText(this.removeView.getText().toString())) - AndroidUtilities.dp(32.0f)) - AndroidUtilities.dp(z ? 58.0f : 0.0f)) {
+            spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString(i));
+            spannableStringBuilder.setSpan(new ForegroundColorSpan(Theme.getColor(i2, this.resourcesProvider)), 0, spannableStringBuilder.length(), 33);
+            this.channelTitleView.setVisibility(0);
+            this.channelTitleView.setText(replaceEmoji);
+        } else {
+            this.channelTitleView.setVisibility(8);
+        }
+        this.titleView.setText(spannableStringBuilder);
+        this.textView.setText(replaceEmoji2);
+        setLayoutParams(LayoutHelper.createFrame(-1, -2, 83));
+        this.textView.setOnLinkPressListener(new LinkSpanDrawable.LinksTextView.OnLinkPress() { // from class: org.telegram.ui.bots.BotAdView$$ExternalSyntheticLambda0
+            @Override // org.telegram.ui.Components.LinkSpanDrawable.LinksTextView.OnLinkPress
+            public final void run(ClickableSpan clickableSpan) {
+                BotAdView.this.lambda$set$1(chatActivity, messageObject, clickableSpan);
+            }
+        });
+        this.removeView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.BotAdView$$ExternalSyntheticLambda1
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                BotAdView.lambda$set$2(runnable, view);
+            }
+        });
+        setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.BotAdView$$ExternalSyntheticLambda2
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                BotAdView.this.lambda$set$3(chatActivity, messageObject, str, view);
+            }
+        });
+        this.closeView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.BotAdView$$ExternalSyntheticLambda3
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                BotAdView.lambda$set$4(runnable2, view);
+            }
+        });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -173,94 +252,5 @@ public class BotAdView extends FrameLayout {
     protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         this.invalidatedMeasure = false;
-    }
-
-    public void set(final ChatActivity chatActivity, final MessageObject messageObject, final Runnable runnable, final Runnable runnable2) {
-        BackupImageView backupImageView;
-        ImageLocation forPhoto;
-        ImageLocation forPhoto2;
-        if (messageObject == null) {
-            return;
-        }
-        boolean z = true;
-        this.invalidatedMeasure = true;
-        CharSequence replaceEmoji = Emoji.replaceEmoji(messageObject.sponsoredTitle, this.titleView.getPaint().getFontMetricsInt(), false);
-        CharSequence replaceEmoji2 = Emoji.replaceEmoji(messageObject.messageText, this.textView.getPaint().getFontMetricsInt(), false);
-        final String str = messageObject.sponsoredUrl;
-        if (messageObject.sponsoredMedia != null) {
-            this.imageView.setVisibility(0);
-            this.closeView.setVisibility(8);
-            TLRPC.MessageMedia messageMedia = messageObject.sponsoredMedia;
-            TLRPC.Document document = messageMedia.document;
-            if (document != null) {
-                TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 48);
-                backupImageView = this.imageView;
-                forPhoto = ImageLocation.getForDocument(messageObject.sponsoredMedia.document);
-                forPhoto2 = ImageLocation.getForDocument(closestPhotoSizeWithSize, messageObject.sponsoredMedia.document);
-            } else {
-                TLRPC.Photo photo = messageMedia.photo;
-                if (photo != null) {
-                    TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, 48, true, null, true);
-                    TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(messageObject.sponsoredMedia.photo.sizes, 48, true, closestPhotoSizeWithSize2, false);
-                    backupImageView = this.imageView;
-                    forPhoto = ImageLocation.getForPhoto(closestPhotoSizeWithSize2, messageObject.sponsoredMedia.photo);
-                    forPhoto2 = ImageLocation.getForPhoto(closestPhotoSizeWithSize3, messageObject.sponsoredMedia.photo);
-                }
-            }
-            backupImageView.setImage(forPhoto, "48_48", forPhoto2, "48_48", null, 0L, 0, null);
-        } else {
-            TLRPC.Photo photo2 = messageObject.sponsoredPhoto;
-            if (photo2 != null) {
-                TLRPC.PhotoSize closestPhotoSizeWithSize4 = FileLoader.getClosestPhotoSizeWithSize(photo2.sizes, 48, true, null, true);
-                this.imageView.setImage(ImageLocation.getForPhoto(closestPhotoSizeWithSize4, messageObject.sponsoredPhoto), "48_48", ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(messageObject.sponsoredPhoto.sizes, 48, true, closestPhotoSizeWithSize4, false), messageObject.sponsoredPhoto), "48_48", null, 0L, 0, null);
-                this.imageView.setVisibility(0);
-                this.closeView.setVisibility(8);
-            } else {
-                this.imageView.setVisibility(8);
-                this.closeView.setVisibility(0);
-                z = false;
-            }
-        }
-        int i = R.string.SponsoredMessageAd;
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString(i));
-        int i2 = Theme.key_featuredStickers_addButton;
-        spannableStringBuilder.setSpan(new ForegroundColorSpan(Theme.getColor(i2, this.resourcesProvider)), 0, spannableStringBuilder.length(), 33);
-        spannableStringBuilder.append((CharSequence) " \u2009");
-        spannableStringBuilder.append(replaceEmoji);
-        if (this.titleView.getPaint().measureText(spannableStringBuilder.toString()) > (((AndroidUtilities.displaySize.x - AndroidUtilities.dp(44.660004f)) - this.removeView.getPaint().measureText(this.removeView.getText().toString())) - AndroidUtilities.dp(32.0f)) - AndroidUtilities.dp(z ? 58.0f : 0.0f)) {
-            spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString(i));
-            spannableStringBuilder.setSpan(new ForegroundColorSpan(Theme.getColor(i2, this.resourcesProvider)), 0, spannableStringBuilder.length(), 33);
-            this.channelTitleView.setVisibility(0);
-            this.channelTitleView.setText(replaceEmoji);
-        } else {
-            this.channelTitleView.setVisibility(8);
-        }
-        this.titleView.setText(spannableStringBuilder);
-        this.textView.setText(replaceEmoji2);
-        setLayoutParams(LayoutHelper.createFrame(-1, -2, 83));
-        this.textView.setOnLinkPressListener(new LinkSpanDrawable.LinksTextView.OnLinkPress() { // from class: org.telegram.ui.bots.BotAdView$$ExternalSyntheticLambda0
-            @Override // org.telegram.ui.Components.LinkSpanDrawable.LinksTextView.OnLinkPress
-            public final void run(ClickableSpan clickableSpan) {
-                BotAdView.this.lambda$set$1(chatActivity, messageObject, clickableSpan);
-            }
-        });
-        this.removeView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.BotAdView$$ExternalSyntheticLambda1
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                BotAdView.lambda$set$2(runnable, view);
-            }
-        });
-        setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.BotAdView$$ExternalSyntheticLambda2
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                BotAdView.this.lambda$set$3(chatActivity, messageObject, str, view);
-            }
-        });
-        this.closeView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.BotAdView$$ExternalSyntheticLambda3
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                BotAdView.lambda$set$4(runnable2, view);
-            }
-        });
     }
 }

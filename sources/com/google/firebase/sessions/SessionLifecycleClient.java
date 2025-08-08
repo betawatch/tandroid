@@ -21,7 +21,7 @@ import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Job;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class SessionLifecycleClient {
     public static final Companion Companion = new Companion(null);
     private final CoroutineContext backgroundDispatcher;
@@ -29,47 +29,6 @@ public final class SessionLifecycleClient {
     private Messenger service;
     private boolean serviceBound;
     private final SessionLifecycleClient$serviceConnection$1 serviceConnection;
-
-    public static final class ClientUpdateHandler extends Handler {
-        private final CoroutineContext backgroundDispatcher;
-
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public ClientUpdateHandler(CoroutineContext backgroundDispatcher) {
-            super(Looper.getMainLooper());
-            Intrinsics.checkNotNullParameter(backgroundDispatcher, "backgroundDispatcher");
-            this.backgroundDispatcher = backgroundDispatcher;
-        }
-
-        private final void handleSessionUpdate(String str) {
-            Log.d("SessionLifecycleClient", "Session update received: " + str);
-            BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(this.backgroundDispatcher), null, null, new SessionLifecycleClient$ClientUpdateHandler$handleSessionUpdate$1(str, null), 3, null);
-        }
-
-        @Override // android.os.Handler
-        public void handleMessage(Message msg) {
-            String str;
-            Intrinsics.checkNotNullParameter(msg, "msg");
-            if (msg.what == 3) {
-                Bundle data = msg.getData();
-                if (data == null || (str = data.getString("SessionUpdateExtra")) == null) {
-                    str = "";
-                }
-                handleSessionUpdate(str);
-                return;
-            }
-            Log.w("SessionLifecycleClient", "Received unexpected event from the SessionLifecycleService: " + msg);
-            super.handleMessage(msg);
-        }
-    }
-
-    public static final class Companion {
-        private Companion() {
-        }
-
-        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
-            this();
-        }
-    }
 
     /* JADX WARN: Type inference failed for: r2v2, types: [com.google.firebase.sessions.SessionLifecycleClient$serviceConnection$1] */
     public SessionLifecycleClient(CoroutineContext backgroundDispatcher) {
@@ -100,6 +59,93 @@ public final class SessionLifecycleClient {
                 SessionLifecycleClient.this.serviceBound = false;
             }
         };
+    }
+
+    public static final class ClientUpdateHandler extends Handler {
+        private final CoroutineContext backgroundDispatcher;
+
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        public ClientUpdateHandler(CoroutineContext backgroundDispatcher) {
+            super(Looper.getMainLooper());
+            Intrinsics.checkNotNullParameter(backgroundDispatcher, "backgroundDispatcher");
+            this.backgroundDispatcher = backgroundDispatcher;
+        }
+
+        @Override // android.os.Handler
+        public void handleMessage(Message msg) {
+            String str;
+            Intrinsics.checkNotNullParameter(msg, "msg");
+            if (msg.what == 3) {
+                Bundle data = msg.getData();
+                if (data == null || (str = data.getString("SessionUpdateExtra")) == null) {
+                    str = "";
+                }
+                handleSessionUpdate(str);
+                return;
+            }
+            Log.w("SessionLifecycleClient", "Received unexpected event from the SessionLifecycleService: " + msg);
+            super.handleMessage(msg);
+        }
+
+        private final void handleSessionUpdate(String str) {
+            Log.d("SessionLifecycleClient", "Session update received: " + str);
+            BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(this.backgroundDispatcher), null, null, new SessionLifecycleClient$ClientUpdateHandler$handleSessionUpdate$1(str, null), 3, null);
+        }
+    }
+
+    public final void bindToService() {
+        SessionLifecycleServiceBinder.Companion.getInstance().bindToService(new Messenger(new ClientUpdateHandler(this.backgroundDispatcher)), this.serviceConnection);
+    }
+
+    public final void foregrounded() {
+        sendLifecycleEvent(1);
+    }
+
+    public final void backgrounded() {
+        sendLifecycleEvent(2);
+    }
+
+    private final void sendLifecycleEvent(int i) {
+        List drainQueue = drainQueue();
+        Message obtain = Message.obtain(null, i, 0, 0);
+        Intrinsics.checkNotNullExpressionValue(obtain, "obtain(null, messageCode, 0, 0)");
+        drainQueue.add(obtain);
+        sendLifecycleEvents(drainQueue);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final Job sendLifecycleEvents(List list) {
+        Job launch$default;
+        launch$default = BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(this.backgroundDispatcher), null, null, new SessionLifecycleClient$sendLifecycleEvents$1(this, list, null), 3, null);
+        return launch$default;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void sendMessageToServer(Message message) {
+        if (this.service != null) {
+            try {
+                Log.d("SessionLifecycleClient", "Sending lifecycle " + message.what + " to service");
+                Messenger messenger = this.service;
+                if (messenger != null) {
+                    messenger.send(message);
+                    return;
+                }
+                return;
+            } catch (RemoteException e) {
+                Log.w("SessionLifecycleClient", "Unable to deliver message: " + message.what, e);
+                queueMessage(message);
+                return;
+            }
+        }
+        queueMessage(message);
+    }
+
+    private final void queueMessage(Message message) {
+        if (this.queuedMessages.offer(message)) {
+            Log.d("SessionLifecycleClient", "Queued message " + message.what + ". Queue size " + this.queuedMessages.size());
+            return;
+        }
+        Log.d("SessionLifecycleClient", "Failed to enqueue message " + message.what + ". Dropping.");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -139,65 +185,12 @@ public final class SessionLifecycleClient {
         return (Message) obj;
     }
 
-    private final void queueMessage(Message message) {
-        StringBuilder sb;
-        if (this.queuedMessages.offer(message)) {
-            sb = new StringBuilder();
-            sb.append("Queued message ");
-            sb.append(message.what);
-            sb.append(". Queue size ");
-            sb.append(this.queuedMessages.size());
-        } else {
-            sb = new StringBuilder();
-            sb.append("Failed to enqueue message ");
-            sb.append(message.what);
-            sb.append(". Dropping.");
+    public static final class Companion {
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
         }
-        Log.d("SessionLifecycleClient", sb.toString());
-    }
 
-    private final void sendLifecycleEvent(int i) {
-        List drainQueue = drainQueue();
-        Message obtain = Message.obtain(null, i, 0, 0);
-        Intrinsics.checkNotNullExpressionValue(obtain, "obtain(null, messageCode, 0, 0)");
-        drainQueue.add(obtain);
-        sendLifecycleEvents(drainQueue);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public final Job sendLifecycleEvents(List list) {
-        Job launch$default;
-        launch$default = BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(this.backgroundDispatcher), null, null, new SessionLifecycleClient$sendLifecycleEvents$1(this, list, null), 3, null);
-        return launch$default;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public final void sendMessageToServer(Message message) {
-        if (this.service != null) {
-            try {
-                Log.d("SessionLifecycleClient", "Sending lifecycle " + message.what + " to service");
-                Messenger messenger = this.service;
-                if (messenger != null) {
-                    messenger.send(message);
-                    return;
-                }
-                return;
-            } catch (RemoteException e) {
-                Log.w("SessionLifecycleClient", "Unable to deliver message: " + message.what, e);
-            }
+        private Companion() {
         }
-        queueMessage(message);
-    }
-
-    public final void backgrounded() {
-        sendLifecycleEvent(2);
-    }
-
-    public final void bindToService() {
-        SessionLifecycleServiceBinder.Companion.getInstance().bindToService(new Messenger(new ClientUpdateHandler(this.backgroundDispatcher)), this.serviceConnection);
-    }
-
-    public final void foregrounded() {
-        sendLifecycleEvent(1);
     }
 }

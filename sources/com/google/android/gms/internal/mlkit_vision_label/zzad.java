@@ -126,18 +126,6 @@ abstract class zzad extends AbstractCollection {
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean retainAll(Collection collection) {
-        collection.getClass();
-        int size = size();
-        boolean retainAll = this.zzb.retainAll(collection);
-        if (retainAll) {
-            zzag.zzf(this.zze, this.zzb.size() - size);
-            zzc();
-        }
-        return retainAll;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
     public final int size() {
         zzb();
         return this.zzb.size();
@@ -186,5 +174,17 @@ abstract class zzad extends AbstractCollection {
             map = this.zze.zza;
             map.remove(this.zza);
         }
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean retainAll(Collection collection) {
+        collection.getClass();
+        int size = size();
+        boolean retainAll = this.zzb.retainAll(collection);
+        if (retainAll) {
+            zzag.zzf(this.zze, this.zzb.size() - size);
+            zzc();
+        }
+        return retainAll;
     }
 }

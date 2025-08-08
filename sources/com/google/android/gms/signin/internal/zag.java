@@ -26,8 +26,9 @@ public final class zag extends AbstractSafeParcelable implements Result {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
+        List list = this.zaa;
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeStringList(parcel, 1, this.zaa, false);
+        SafeParcelWriter.writeStringList(parcel, 1, list, false);
         SafeParcelWriter.writeString(parcel, 2, this.zab, false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
     }

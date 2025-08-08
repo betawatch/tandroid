@@ -4,7 +4,7 @@ import com.google.android.gms.internal.mlkit_vision_subject_segmentation.zztw;
 import com.google.mlkit.common.sdkinternal.ExecutorSelector;
 import com.google.mlkit.vision.segmentation.subject.SubjectSegmenterOptions;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class zzc {
     private final zze zza;
     private final ExecutorSelector zzb;

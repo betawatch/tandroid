@@ -2,7 +2,7 @@ package com.google.android.gms.common.api.internal;
 
 import android.os.Bundle;
 import android.os.DeadObjectException;
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.Api;
 import com.google.android.gms.common.api.Status;
@@ -84,7 +84,7 @@ public final class zaaj implements zabf {
         if (!it.hasNext()) {
             return false;
         }
-        ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
+        WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
         throw null;
     }
 }

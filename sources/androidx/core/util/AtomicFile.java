@@ -18,58 +18,6 @@ public class AtomicFile {
         this.mLegacyBackupName = new File(file.getPath() + ".bak");
     }
 
-    private static void rename(File file, File file2) {
-        if (file2.isDirectory() && !file2.delete()) {
-            Log.e("AtomicFile", "Failed to delete file which is a directory " + file2);
-        }
-        if (file.renameTo(file2)) {
-            return;
-        }
-        Log.e("AtomicFile", "Failed to rename " + file + " to " + file2);
-    }
-
-    private static boolean sync(FileOutputStream fileOutputStream) {
-        try {
-            fileOutputStream.getFD().sync();
-            return true;
-        } catch (IOException unused) {
-            return false;
-        }
-    }
-
-    public void failWrite(FileOutputStream fileOutputStream) {
-        if (fileOutputStream == null) {
-            return;
-        }
-        if (!sync(fileOutputStream)) {
-            Log.e("AtomicFile", "Failed to sync file output stream");
-        }
-        try {
-            fileOutputStream.close();
-        } catch (IOException e) {
-            Log.e("AtomicFile", "Failed to close file output stream", e);
-        }
-        if (this.mNewName.delete()) {
-            return;
-        }
-        Log.e("AtomicFile", "Failed to delete new file " + this.mNewName);
-    }
-
-    public void finishWrite(FileOutputStream fileOutputStream) {
-        if (fileOutputStream == null) {
-            return;
-        }
-        if (!sync(fileOutputStream)) {
-            Log.e("AtomicFile", "Failed to sync file output stream");
-        }
-        try {
-            fileOutputStream.close();
-        } catch (IOException e) {
-            Log.e("AtomicFile", "Failed to close file output stream", e);
-        }
-        rename(this.mNewName, this.mBaseName);
-    }
-
     public File getBaseFile() {
         return this.mBaseName;
     }
@@ -90,5 +38,57 @@ public class AtomicFile {
                 throw new IOException("Failed to create new file " + this.mNewName, e);
             }
         }
+    }
+
+    public void finishWrite(FileOutputStream fileOutputStream) {
+        if (fileOutputStream == null) {
+            return;
+        }
+        if (!sync(fileOutputStream)) {
+            Log.e("AtomicFile", "Failed to sync file output stream");
+        }
+        try {
+            fileOutputStream.close();
+        } catch (IOException e) {
+            Log.e("AtomicFile", "Failed to close file output stream", e);
+        }
+        rename(this.mNewName, this.mBaseName);
+    }
+
+    public void failWrite(FileOutputStream fileOutputStream) {
+        if (fileOutputStream == null) {
+            return;
+        }
+        if (!sync(fileOutputStream)) {
+            Log.e("AtomicFile", "Failed to sync file output stream");
+        }
+        try {
+            fileOutputStream.close();
+        } catch (IOException e) {
+            Log.e("AtomicFile", "Failed to close file output stream", e);
+        }
+        if (this.mNewName.delete()) {
+            return;
+        }
+        Log.e("AtomicFile", "Failed to delete new file " + this.mNewName);
+    }
+
+    private static boolean sync(FileOutputStream fileOutputStream) {
+        try {
+            fileOutputStream.getFD().sync();
+            return true;
+        } catch (IOException unused) {
+            return false;
+        }
+    }
+
+    private static void rename(File file, File file2) {
+        if (file2.isDirectory() && !file2.delete()) {
+            Log.e("AtomicFile", "Failed to delete file which is a directory " + file2);
+        }
+        if (file.renameTo(file2)) {
+            return;
+        }
+        Log.e("AtomicFile", "Failed to rename " + file + " to " + file2);
     }
 }

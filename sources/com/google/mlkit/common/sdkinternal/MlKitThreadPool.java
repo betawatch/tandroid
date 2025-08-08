@@ -1,7 +1,7 @@
 package com.google.mlkit.common.sdkinternal;
 
 import com.google.android.gms.common.internal.Preconditions;
-import com.google.android.gms.internal.mlkit_common.zzbg;
+import com.google.android.gms.internal.mlkit_common.zzav;
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.concurrent.ExecutorService;
@@ -11,8 +11,8 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* loaded from: classes3.dex */
-public class MlKitThreadPool extends zzbg {
+/* loaded from: classes.dex */
+public class MlKitThreadPool extends zzav {
     private static final ThreadLocal zza = new ThreadLocal();
     private final ThreadPoolExecutor zzb;
 
@@ -67,12 +67,12 @@ public class MlKitThreadPool extends zzbg {
         }
     }
 
-    @Override // com.google.android.gms.internal.mlkit_common.zzai
+    @Override // com.google.android.gms.internal.mlkit_common.zzx
     protected final /* synthetic */ Object zza() {
         return this.zzb;
     }
 
-    @Override // com.google.android.gms.internal.mlkit_common.zzbg
+    @Override // com.google.android.gms.internal.mlkit_common.zzav
     protected final ExecutorService zzb() {
         return this.zzb;
     }

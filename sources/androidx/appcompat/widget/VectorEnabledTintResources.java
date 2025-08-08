@@ -9,7 +9,6 @@ import android.content.res.TypedArray;
 import android.content.res.XmlResourceParser;
 import android.graphics.Movie;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
@@ -21,19 +20,6 @@ import java.lang.ref.WeakReference;
 public class VectorEnabledTintResources extends ResourcesWrapper {
     private static boolean sCompatVectorFromResourcesEnabled = false;
     private final WeakReference mContextRef;
-
-    public VectorEnabledTintResources(Context context, Resources resources) {
-        super(resources);
-        this.mContextRef = new WeakReference(context);
-    }
-
-    public static boolean isCompatVectorFromResourcesEnabled() {
-        return sCompatVectorFromResourcesEnabled;
-    }
-
-    public static boolean shouldBeUsed() {
-        return isCompatVectorFromResourcesEnabled() && Build.VERSION.SDK_INT <= 20;
-    }
 
     @Override // androidx.appcompat.widget.ResourcesWrapper, android.content.res.Resources
     public /* bridge */ /* synthetic */ XmlResourceParser getAnimation(int i) {
@@ -78,12 +64,6 @@ public class VectorEnabledTintResources extends ResourcesWrapper {
     @Override // androidx.appcompat.widget.ResourcesWrapper, android.content.res.Resources
     public /* bridge */ /* synthetic */ DisplayMetrics getDisplayMetrics() {
         return super.getDisplayMetrics();
-    }
-
-    @Override // android.content.res.Resources
-    public Drawable getDrawable(int i) {
-        Context context = (Context) this.mContextRef.get();
-        return context != null ? ResourceManagerInternal.get().onDrawableLoadedFromResources(context, this, i) : getDrawableCanonical(i);
     }
 
     @Override // androidx.appcompat.widget.ResourcesWrapper, android.content.res.Resources
@@ -254,5 +234,28 @@ public class VectorEnabledTintResources extends ResourcesWrapper {
     @Override // androidx.appcompat.widget.ResourcesWrapper, android.content.res.Resources
     public /* bridge */ /* synthetic */ void updateConfiguration(Configuration configuration, DisplayMetrics displayMetrics) {
         super.updateConfiguration(configuration, displayMetrics);
+    }
+
+    public static boolean shouldBeUsed() {
+        isCompatVectorFromResourcesEnabled();
+        return false;
+    }
+
+    public VectorEnabledTintResources(Context context, Resources resources) {
+        super(resources);
+        this.mContextRef = new WeakReference(context);
+    }
+
+    @Override // android.content.res.Resources
+    public Drawable getDrawable(int i) {
+        Context context = (Context) this.mContextRef.get();
+        if (context != null) {
+            return ResourceManagerInternal.get().onDrawableLoadedFromResources(context, this, i);
+        }
+        return getDrawableCanonical(i);
+    }
+
+    public static boolean isCompatVectorFromResourcesEnabled() {
+        return sCompatVectorFromResourcesEnabled;
     }
 }

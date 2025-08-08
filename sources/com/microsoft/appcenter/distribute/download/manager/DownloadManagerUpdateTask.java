@@ -5,7 +5,7 @@ import android.database.Cursor;
 import android.os.AsyncTask;
 import java.util.NoSuchElementException;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 class DownloadManagerUpdateTask extends AsyncTask {
     private final DownloadManagerReleaseDownloader mDownloader;
 

@@ -3,17 +3,9 @@ package com.microsoft.appcenter.ingestion.models.properties;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class BooleanTypedProperty extends TypedProperty {
     private boolean value;
-
-    @Override // com.microsoft.appcenter.ingestion.models.properties.TypedProperty
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        return obj != null && getClass() == obj.getClass() && super.equals(obj) && this.value == ((BooleanTypedProperty) obj).value;
-    }
 
     @Override // com.microsoft.appcenter.ingestion.models.properties.TypedProperty
     public String getType() {
@@ -24,9 +16,8 @@ public class BooleanTypedProperty extends TypedProperty {
         return this.value;
     }
 
-    @Override // com.microsoft.appcenter.ingestion.models.properties.TypedProperty
-    public int hashCode() {
-        return (super.hashCode() * 31) + (this.value ? 1 : 0);
+    public void setValue(boolean z) {
+        this.value = z;
     }
 
     @Override // com.microsoft.appcenter.ingestion.models.properties.TypedProperty, com.microsoft.appcenter.ingestion.models.Model
@@ -35,13 +26,22 @@ public class BooleanTypedProperty extends TypedProperty {
         setValue(jSONObject.getBoolean("value"));
     }
 
-    public void setValue(boolean z) {
-        this.value = z;
-    }
-
     @Override // com.microsoft.appcenter.ingestion.models.properties.TypedProperty, com.microsoft.appcenter.ingestion.models.Model
     public void write(JSONStringer jSONStringer) {
         super.write(jSONStringer);
         jSONStringer.key("value").value(getValue());
+    }
+
+    @Override // com.microsoft.appcenter.ingestion.models.properties.TypedProperty
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        return obj != null && getClass() == obj.getClass() && super.equals(obj) && this.value == ((BooleanTypedProperty) obj).value;
+    }
+
+    @Override // com.microsoft.appcenter.ingestion.models.properties.TypedProperty
+    public int hashCode() {
+        return (super.hashCode() * 31) + (this.value ? 1 : 0);
     }
 }

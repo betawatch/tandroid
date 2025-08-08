@@ -3,13 +3,9 @@ package com.googlecode.mp4parser.util;
 import java.nio.ByteBuffer;
 import java.nio.channels.ByteChannel;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class ByteBufferByteChannel implements ByteChannel {
     ByteBuffer byteBuffer;
-
-    public ByteBufferByteChannel(ByteBuffer byteBuffer) {
-        this.byteBuffer = byteBuffer;
-    }
 
     @Override // java.nio.channels.Channel, java.io.Closeable, java.lang.AutoCloseable
     public void close() {
@@ -18,6 +14,10 @@ public class ByteBufferByteChannel implements ByteChannel {
     @Override // java.nio.channels.Channel
     public boolean isOpen() {
         return true;
+    }
+
+    public ByteBufferByteChannel(ByteBuffer byteBuffer) {
+        this.byteBuffer = byteBuffer;
     }
 
     @Override // java.nio.channels.ReadableByteChannel

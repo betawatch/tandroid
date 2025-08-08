@@ -1,6 +1,6 @@
 package com.google.android.datatransport.runtime;
 
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import com.google.android.datatransport.runtime.firebase.transport.ClientMetrics;
 import com.google.android.datatransport.runtime.firebase.transport.GlobalMetrics;
 import com.google.android.datatransport.runtime.firebase.transport.LogEventDropped;
@@ -17,6 +17,38 @@ import com.google.firebase.encoders.proto.AtProtobuf;
 /* loaded from: classes.dex */
 public final class AutoProtoEncoderDoNotUseEncoder implements Configurator {
     public static final Configurator CONFIG = new AutoProtoEncoderDoNotUseEncoder();
+
+    private AutoProtoEncoderDoNotUseEncoder() {
+    }
+
+    @Override // com.google.firebase.encoders.config.Configurator
+    public void configure(EncoderConfig encoderConfig) {
+        encoderConfig.registerEncoder(ProtoEncoderDoNotUse.class, ProtoEncoderDoNotUseEncoder.INSTANCE);
+        encoderConfig.registerEncoder(ClientMetrics.class, ClientMetricsEncoder.INSTANCE);
+        encoderConfig.registerEncoder(TimeWindow.class, TimeWindowEncoder.INSTANCE);
+        encoderConfig.registerEncoder(LogSourceMetrics.class, LogSourceMetricsEncoder.INSTANCE);
+        encoderConfig.registerEncoder(LogEventDropped.class, LogEventDroppedEncoder.INSTANCE);
+        encoderConfig.registerEncoder(GlobalMetrics.class, GlobalMetricsEncoder.INSTANCE);
+        encoderConfig.registerEncoder(StorageMetrics.class, StorageMetricsEncoder.INSTANCE);
+    }
+
+    private static final class ProtoEncoderDoNotUseEncoder implements ObjectEncoder {
+        static final ProtoEncoderDoNotUseEncoder INSTANCE = new ProtoEncoderDoNotUseEncoder();
+        private static final FieldDescriptor CLIENTMETRICS_DESCRIPTOR = FieldDescriptor.of("clientMetrics");
+
+        private ProtoEncoderDoNotUseEncoder() {
+        }
+
+        @Override // com.google.firebase.encoders.ObjectEncoder
+        public /* bridge */ /* synthetic */ void encode(Object obj, Object obj2) {
+            WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(obj);
+            encode((ProtoEncoderDoNotUse) null, (ObjectEncoderContext) obj2);
+        }
+
+        public void encode(ProtoEncoderDoNotUse protoEncoderDoNotUse, ObjectEncoderContext objectEncoderContext) {
+            throw null;
+        }
+    }
 
     private static final class ClientMetricsEncoder implements ObjectEncoder {
         static final ClientMetricsEncoder INSTANCE = new ClientMetricsEncoder();
@@ -37,31 +69,18 @@ public final class AutoProtoEncoderDoNotUseEncoder implements Configurator {
         }
     }
 
-    private static final class GlobalMetricsEncoder implements ObjectEncoder {
-        static final GlobalMetricsEncoder INSTANCE = new GlobalMetricsEncoder();
-        private static final FieldDescriptor STORAGEMETRICS_DESCRIPTOR = FieldDescriptor.builder("storageMetrics").withProperty(AtProtobuf.builder().tag(1).build()).build();
+    private static final class TimeWindowEncoder implements ObjectEncoder {
+        static final TimeWindowEncoder INSTANCE = new TimeWindowEncoder();
+        private static final FieldDescriptor STARTMS_DESCRIPTOR = FieldDescriptor.builder("startMs").withProperty(AtProtobuf.builder().tag(1).build()).build();
+        private static final FieldDescriptor ENDMS_DESCRIPTOR = FieldDescriptor.builder("endMs").withProperty(AtProtobuf.builder().tag(2).build()).build();
 
-        private GlobalMetricsEncoder() {
+        private TimeWindowEncoder() {
         }
 
         @Override // com.google.firebase.encoders.ObjectEncoder
-        public void encode(GlobalMetrics globalMetrics, ObjectEncoderContext objectEncoderContext) {
-            objectEncoderContext.add(STORAGEMETRICS_DESCRIPTOR, globalMetrics.getStorageMetricsInternal());
-        }
-    }
-
-    private static final class LogEventDroppedEncoder implements ObjectEncoder {
-        static final LogEventDroppedEncoder INSTANCE = new LogEventDroppedEncoder();
-        private static final FieldDescriptor EVENTSDROPPEDCOUNT_DESCRIPTOR = FieldDescriptor.builder("eventsDroppedCount").withProperty(AtProtobuf.builder().tag(1).build()).build();
-        private static final FieldDescriptor REASON_DESCRIPTOR = FieldDescriptor.builder("reason").withProperty(AtProtobuf.builder().tag(3).build()).build();
-
-        private LogEventDroppedEncoder() {
-        }
-
-        @Override // com.google.firebase.encoders.ObjectEncoder
-        public void encode(LogEventDropped logEventDropped, ObjectEncoderContext objectEncoderContext) {
-            objectEncoderContext.add(EVENTSDROPPEDCOUNT_DESCRIPTOR, logEventDropped.getEventsDroppedCount());
-            objectEncoderContext.add(REASON_DESCRIPTOR, logEventDropped.getReason());
+        public void encode(TimeWindow timeWindow, ObjectEncoderContext objectEncoderContext) {
+            objectEncoderContext.add(STARTMS_DESCRIPTOR, timeWindow.getStartMs());
+            objectEncoderContext.add(ENDMS_DESCRIPTOR, timeWindow.getEndMs());
         }
     }
 
@@ -80,21 +99,31 @@ public final class AutoProtoEncoderDoNotUseEncoder implements Configurator {
         }
     }
 
-    private static final class ProtoEncoderDoNotUseEncoder implements ObjectEncoder {
-        static final ProtoEncoderDoNotUseEncoder INSTANCE = new ProtoEncoderDoNotUseEncoder();
-        private static final FieldDescriptor CLIENTMETRICS_DESCRIPTOR = FieldDescriptor.of("clientMetrics");
+    private static final class LogEventDroppedEncoder implements ObjectEncoder {
+        static final LogEventDroppedEncoder INSTANCE = new LogEventDroppedEncoder();
+        private static final FieldDescriptor EVENTSDROPPEDCOUNT_DESCRIPTOR = FieldDescriptor.builder("eventsDroppedCount").withProperty(AtProtobuf.builder().tag(1).build()).build();
+        private static final FieldDescriptor REASON_DESCRIPTOR = FieldDescriptor.builder("reason").withProperty(AtProtobuf.builder().tag(3).build()).build();
 
-        private ProtoEncoderDoNotUseEncoder() {
-        }
-
-        public void encode(ProtoEncoderDoNotUse protoEncoderDoNotUse, ObjectEncoderContext objectEncoderContext) {
-            throw null;
+        private LogEventDroppedEncoder() {
         }
 
         @Override // com.google.firebase.encoders.ObjectEncoder
-        public /* bridge */ /* synthetic */ void encode(Object obj, Object obj2) {
-            ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(obj);
-            encode((ProtoEncoderDoNotUse) null, (ObjectEncoderContext) obj2);
+        public void encode(LogEventDropped logEventDropped, ObjectEncoderContext objectEncoderContext) {
+            objectEncoderContext.add(EVENTSDROPPEDCOUNT_DESCRIPTOR, logEventDropped.getEventsDroppedCount());
+            objectEncoderContext.add(REASON_DESCRIPTOR, logEventDropped.getReason());
+        }
+    }
+
+    private static final class GlobalMetricsEncoder implements ObjectEncoder {
+        static final GlobalMetricsEncoder INSTANCE = new GlobalMetricsEncoder();
+        private static final FieldDescriptor STORAGEMETRICS_DESCRIPTOR = FieldDescriptor.builder("storageMetrics").withProperty(AtProtobuf.builder().tag(1).build()).build();
+
+        private GlobalMetricsEncoder() {
+        }
+
+        @Override // com.google.firebase.encoders.ObjectEncoder
+        public void encode(GlobalMetrics globalMetrics, ObjectEncoderContext objectEncoderContext) {
+            objectEncoderContext.add(STORAGEMETRICS_DESCRIPTOR, globalMetrics.getStorageMetricsInternal());
         }
     }
 
@@ -111,34 +140,5 @@ public final class AutoProtoEncoderDoNotUseEncoder implements Configurator {
             objectEncoderContext.add(CURRENTCACHESIZEBYTES_DESCRIPTOR, storageMetrics.getCurrentCacheSizeBytes());
             objectEncoderContext.add(MAXCACHESIZEBYTES_DESCRIPTOR, storageMetrics.getMaxCacheSizeBytes());
         }
-    }
-
-    private static final class TimeWindowEncoder implements ObjectEncoder {
-        static final TimeWindowEncoder INSTANCE = new TimeWindowEncoder();
-        private static final FieldDescriptor STARTMS_DESCRIPTOR = FieldDescriptor.builder("startMs").withProperty(AtProtobuf.builder().tag(1).build()).build();
-        private static final FieldDescriptor ENDMS_DESCRIPTOR = FieldDescriptor.builder("endMs").withProperty(AtProtobuf.builder().tag(2).build()).build();
-
-        private TimeWindowEncoder() {
-        }
-
-        @Override // com.google.firebase.encoders.ObjectEncoder
-        public void encode(TimeWindow timeWindow, ObjectEncoderContext objectEncoderContext) {
-            objectEncoderContext.add(STARTMS_DESCRIPTOR, timeWindow.getStartMs());
-            objectEncoderContext.add(ENDMS_DESCRIPTOR, timeWindow.getEndMs());
-        }
-    }
-
-    private AutoProtoEncoderDoNotUseEncoder() {
-    }
-
-    @Override // com.google.firebase.encoders.config.Configurator
-    public void configure(EncoderConfig encoderConfig) {
-        encoderConfig.registerEncoder(ProtoEncoderDoNotUse.class, ProtoEncoderDoNotUseEncoder.INSTANCE);
-        encoderConfig.registerEncoder(ClientMetrics.class, ClientMetricsEncoder.INSTANCE);
-        encoderConfig.registerEncoder(TimeWindow.class, TimeWindowEncoder.INSTANCE);
-        encoderConfig.registerEncoder(LogSourceMetrics.class, LogSourceMetricsEncoder.INSTANCE);
-        encoderConfig.registerEncoder(LogEventDropped.class, LogEventDroppedEncoder.INSTANCE);
-        encoderConfig.registerEncoder(GlobalMetrics.class, GlobalMetricsEncoder.INSTANCE);
-        encoderConfig.registerEncoder(StorageMetrics.class, StorageMetricsEncoder.INSTANCE);
     }
 }

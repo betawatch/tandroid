@@ -25,7 +25,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class CrashlyticsCore {
     private final AnalyticsEventLogger analyticsEventLogger;
     private final FirebaseApp app;
@@ -61,19 +61,43 @@ public class CrashlyticsCore {
         this.remoteConfigDeferredProxy = remoteConfigDeferredProxy;
     }
 
-    private void checkForPreviousCrash() {
-        boolean z;
-        try {
-            z = Boolean.TRUE.equals((Boolean) Utils.awaitEvenIfOnMainThread(this.backgroundWorker.submit(new Callable() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsCore.4
-                @Override // java.util.concurrent.Callable
-                public Boolean call() {
-                    return Boolean.valueOf(CrashlyticsCore.this.controller.didCrashOnPreviousExecution());
-                }
-            })));
-        } catch (Exception unused) {
-            z = false;
+    public boolean onPreExecute(AppData appData, SettingsProvider settingsProvider) {
+        if (!isBuildIdValid(appData.buildId, CommonUtils.getBooleanResourceValue(this.context, "com.crashlytics.RequireBuildId", true))) {
+            throw new IllegalStateException("The Crashlytics build ID is missing. This occurs when the Crashlytics Gradle plugin is missing from your app's build configuration. Please review the Firebase Crashlytics onboarding instructions at https://firebase.google.com/docs/crashlytics/get-started?platform=android#add-plugin");
         }
-        this.didCrashOnPreviousExecution = z;
+        String clsuuid = new CLSUUID(this.idManager).toString();
+        try {
+            this.crashMarker = new CrashlyticsFileMarker("crash_marker", this.fileStore);
+            this.initializationMarker = new CrashlyticsFileMarker("initialization_marker", this.fileStore);
+            UserMetadata userMetadata = new UserMetadata(clsuuid, this.fileStore, this.backgroundWorker);
+            LogFileManager logFileManager = new LogFileManager(this.fileStore);
+            MiddleOutFallbackStrategy middleOutFallbackStrategy = new MiddleOutFallbackStrategy(1024, new RemoveRepeatsStrategy(10));
+            this.remoteConfigDeferredProxy.setupListener(userMetadata);
+            this.controller = new CrashlyticsController(this.context, this.backgroundWorker, this.idManager, this.dataCollectionArbiter, this.fileStore, this.crashMarker, appData, userMetadata, logFileManager, SessionReportingCoordinator.create(this.context, this.idManager, this.fileStore, appData, logFileManager, userMetadata, middleOutFallbackStrategy, settingsProvider, this.onDemandCounter, this.sessionsSubscriber), this.nativeComponent, this.analyticsEventLogger, this.sessionsSubscriber);
+            boolean didPreviousInitializationFail = didPreviousInitializationFail();
+            checkForPreviousCrash();
+            this.controller.enableExceptionHandling(clsuuid, Thread.getDefaultUncaughtExceptionHandler(), settingsProvider);
+            if (didPreviousInitializationFail && CommonUtils.canTryConnection(this.context)) {
+                Logger.getLogger().d("Crashlytics did not finish previous background initialization. Initializing synchronously.");
+                finishInitSynchronously(settingsProvider);
+                return false;
+            }
+            Logger.getLogger().d("Successfully configured exception handler.");
+            return true;
+        } catch (Exception e) {
+            Logger.getLogger().e("Crashlytics was not started due to an exception during initialization", e);
+            this.controller = null;
+            return false;
+        }
+    }
+
+    public Task doBackgroundInitializationAsync(final SettingsProvider settingsProvider) {
+        return Utils.callTask(this.crashHandlerExecutor, new Callable() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsCore.1
+            @Override // java.util.concurrent.Callable
+            public Task call() {
+                return CrashlyticsCore.this.doBackgroundInitialization(settingsProvider);
+            }
+        });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -99,9 +123,27 @@ public class CrashlyticsCore {
         }
     }
 
+    public void setCrashlyticsCollectionEnabled(Boolean bool) {
+        this.dataCollectionArbiter.setCrashlyticsDataCollectionEnabled(bool);
+    }
+
+    public static String getVersion() {
+        return "18.6.0";
+    }
+
+    public void logException(Throwable th) {
+        this.controller.writeNonFatalException(Thread.currentThread(), th);
+    }
+
+    public void setUserId(String str) {
+        this.controller.setUserId(str);
+    }
+
+    public void setCustomKey(String str, String str2) {
+        this.controller.setCustomKey(str, str2);
+    }
+
     private void finishInitSynchronously(final SettingsProvider settingsProvider) {
-        Logger logger;
-        String str;
         Future<?> submit = this.crashHandlerExecutor.submit(new Runnable() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsCore.2
             @Override // java.lang.Runnable
             public void run() {
@@ -112,25 +154,53 @@ public class CrashlyticsCore {
         try {
             submit.get(3L, TimeUnit.SECONDS);
         } catch (InterruptedException e) {
-            e = e;
-            logger = Logger.getLogger();
-            str = "Crashlytics was interrupted during initialization.";
-            logger.e(str, e);
+            Logger.getLogger().e("Crashlytics was interrupted during initialization.", e);
         } catch (ExecutionException e2) {
-            e = e2;
-            logger = Logger.getLogger();
-            str = "Crashlytics encountered a problem during initialization.";
-            logger.e(str, e);
+            Logger.getLogger().e("Crashlytics encountered a problem during initialization.", e2);
         } catch (TimeoutException e3) {
-            e = e3;
-            logger = Logger.getLogger();
-            str = "Crashlytics timed out during initialization.";
-            logger.e(str, e);
+            Logger.getLogger().e("Crashlytics timed out during initialization.", e3);
         }
     }
 
-    public static String getVersion() {
-        return "18.6.0";
+    void markInitializationStarted() {
+        this.backgroundWorker.checkRunningOnThread();
+        this.initializationMarker.create();
+        Logger.getLogger().v("Initialization marker file was created.");
+    }
+
+    void markInitializationComplete() {
+        this.backgroundWorker.submit(new Callable() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsCore.3
+            @Override // java.util.concurrent.Callable
+            public Boolean call() {
+                try {
+                    boolean remove = CrashlyticsCore.this.initializationMarker.remove();
+                    if (!remove) {
+                        Logger.getLogger().w("Initialization marker file was not properly removed.");
+                    }
+                    return Boolean.valueOf(remove);
+                } catch (Exception e) {
+                    Logger.getLogger().e("Problem encountered deleting Crashlytics initialization marker.", e);
+                    return Boolean.FALSE;
+                }
+            }
+        });
+    }
+
+    boolean didPreviousInitializationFail() {
+        return this.initializationMarker.isPresent();
+    }
+
+    private void checkForPreviousCrash() {
+        try {
+            this.didCrashOnPreviousExecution = Boolean.TRUE.equals((Boolean) Utils.awaitEvenIfOnMainThread(this.backgroundWorker.submit(new Callable() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsCore.4
+                @Override // java.util.concurrent.Callable
+                public Boolean call() {
+                    return Boolean.valueOf(CrashlyticsCore.this.controller.didCrashOnPreviousExecution());
+                }
+            })));
+        } catch (Exception unused) {
+            this.didCrashOnPreviousExecution = false;
+        }
     }
 
     static boolean isBuildIdValid(String str, boolean z) {
@@ -161,88 +231,5 @@ public class CrashlyticsCore {
         Log.e("FirebaseCrashlytics", ".     |  |");
         Log.e("FirebaseCrashlytics", ".");
         return false;
-    }
-
-    boolean didPreviousInitializationFail() {
-        return this.initializationMarker.isPresent();
-    }
-
-    public Task doBackgroundInitializationAsync(final SettingsProvider settingsProvider) {
-        return Utils.callTask(this.crashHandlerExecutor, new Callable() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsCore.1
-            @Override // java.util.concurrent.Callable
-            public Task call() {
-                return CrashlyticsCore.this.doBackgroundInitialization(settingsProvider);
-            }
-        });
-    }
-
-    public void logException(Throwable th) {
-        this.controller.writeNonFatalException(Thread.currentThread(), th);
-    }
-
-    void markInitializationComplete() {
-        this.backgroundWorker.submit(new Callable() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsCore.3
-            @Override // java.util.concurrent.Callable
-            public Boolean call() {
-                try {
-                    boolean remove = CrashlyticsCore.this.initializationMarker.remove();
-                    if (!remove) {
-                        Logger.getLogger().w("Initialization marker file was not properly removed.");
-                    }
-                    return Boolean.valueOf(remove);
-                } catch (Exception e) {
-                    Logger.getLogger().e("Problem encountered deleting Crashlytics initialization marker.", e);
-                    return Boolean.FALSE;
-                }
-            }
-        });
-    }
-
-    void markInitializationStarted() {
-        this.backgroundWorker.checkRunningOnThread();
-        this.initializationMarker.create();
-        Logger.getLogger().v("Initialization marker file was created.");
-    }
-
-    public boolean onPreExecute(AppData appData, SettingsProvider settingsProvider) {
-        if (!isBuildIdValid(appData.buildId, CommonUtils.getBooleanResourceValue(this.context, "com.crashlytics.RequireBuildId", true))) {
-            throw new IllegalStateException("The Crashlytics build ID is missing. This occurs when the Crashlytics Gradle plugin is missing from your app's build configuration. Please review the Firebase Crashlytics onboarding instructions at https://firebase.google.com/docs/crashlytics/get-started?platform=android#add-plugin");
-        }
-        String clsuuid = new CLSUUID(this.idManager).toString();
-        try {
-            this.crashMarker = new CrashlyticsFileMarker("crash_marker", this.fileStore);
-            this.initializationMarker = new CrashlyticsFileMarker("initialization_marker", this.fileStore);
-            UserMetadata userMetadata = new UserMetadata(clsuuid, this.fileStore, this.backgroundWorker);
-            LogFileManager logFileManager = new LogFileManager(this.fileStore);
-            MiddleOutFallbackStrategy middleOutFallbackStrategy = new MiddleOutFallbackStrategy(1024, new RemoveRepeatsStrategy(10));
-            this.remoteConfigDeferredProxy.setupListener(userMetadata);
-            this.controller = new CrashlyticsController(this.context, this.backgroundWorker, this.idManager, this.dataCollectionArbiter, this.fileStore, this.crashMarker, appData, userMetadata, logFileManager, SessionReportingCoordinator.create(this.context, this.idManager, this.fileStore, appData, logFileManager, userMetadata, middleOutFallbackStrategy, settingsProvider, this.onDemandCounter, this.sessionsSubscriber), this.nativeComponent, this.analyticsEventLogger, this.sessionsSubscriber);
-            boolean didPreviousInitializationFail = didPreviousInitializationFail();
-            checkForPreviousCrash();
-            this.controller.enableExceptionHandling(clsuuid, Thread.getDefaultUncaughtExceptionHandler(), settingsProvider);
-            if (!didPreviousInitializationFail || !CommonUtils.canTryConnection(this.context)) {
-                Logger.getLogger().d("Successfully configured exception handler.");
-                return true;
-            }
-            Logger.getLogger().d("Crashlytics did not finish previous background initialization. Initializing synchronously.");
-            finishInitSynchronously(settingsProvider);
-            return false;
-        } catch (Exception e) {
-            Logger.getLogger().e("Crashlytics was not started due to an exception during initialization", e);
-            this.controller = null;
-            return false;
-        }
-    }
-
-    public void setCrashlyticsCollectionEnabled(Boolean bool) {
-        this.dataCollectionArbiter.setCrashlyticsDataCollectionEnabled(bool);
-    }
-
-    public void setCustomKey(String str, String str2) {
-        this.controller.setCustomKey(str, str2);
-    }
-
-    public void setUserId(String str) {
-        this.controller.setUserId(str);
     }
 }

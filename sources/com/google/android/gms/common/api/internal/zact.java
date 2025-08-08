@@ -3,7 +3,6 @@ package com.google.android.gms.common.api.internal;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Looper;
 import android.util.Log;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.Api;
@@ -36,16 +35,18 @@ public final class zact extends com.google.android.gms.signin.internal.zac imple
         ConnectionResult zaa2 = zakVar.zaa();
         if (zaa2.isSuccess()) {
             com.google.android.gms.common.internal.zav zavVar = (com.google.android.gms.common.internal.zav) Preconditions.checkNotNull(zakVar.zab());
-            zaa2 = zavVar.zaa();
-            if (zaa2.isSuccess()) {
-                zactVar.zah.zaf(zavVar.zab(), zactVar.zae);
-                zactVar.zag.disconnect();
-            } else {
-                String valueOf = String.valueOf(zaa2);
+            ConnectionResult zaa3 = zavVar.zaa();
+            if (!zaa3.isSuccess()) {
+                String valueOf = String.valueOf(zaa3);
                 Log.wtf("SignInCoordinator", "Sign-in succeeded with resolve account failure: ".concat(valueOf), new Exception());
+                zactVar.zah.zae(zaa3);
+                zactVar.zag.disconnect();
+                return;
             }
+            zactVar.zah.zaf(zavVar.zab(), zactVar.zae);
+        } else {
+            zactVar.zah.zae(zaa2);
         }
-        zactVar.zah.zae(zaa2);
         zactVar.zag.disconnect();
     }
 
@@ -61,7 +62,7 @@ public final class zact extends com.google.android.gms.signin.internal.zac imple
 
     @Override // com.google.android.gms.common.api.internal.ConnectionCallbacks
     public final void onConnectionSuspended(int i) {
-        this.zag.disconnect();
+        this.zah.zag(i);
     }
 
     @Override // com.google.android.gms.signin.internal.zae
@@ -78,9 +79,9 @@ public final class zact extends com.google.android.gms.signin.internal.zac imple
         this.zaf.zae(Integer.valueOf(System.identityHashCode(this)));
         Api.AbstractClientBuilder abstractClientBuilder = this.zad;
         Context context = this.zab;
-        Looper looper = this.zac.getLooper();
+        Handler handler = this.zac;
         ClientSettings clientSettings = this.zaf;
-        this.zag = abstractClientBuilder.buildClient(context, looper, clientSettings, (Object) clientSettings.zaa(), (GoogleApiClient.ConnectionCallbacks) this, (GoogleApiClient.OnConnectionFailedListener) this);
+        this.zag = abstractClientBuilder.buildClient(context, handler.getLooper(), clientSettings, (Object) clientSettings.zaa(), (GoogleApiClient.ConnectionCallbacks) this, (GoogleApiClient.OnConnectionFailedListener) this);
         this.zah = zacsVar;
         Set set = this.zae;
         if (set == null || set.isEmpty()) {

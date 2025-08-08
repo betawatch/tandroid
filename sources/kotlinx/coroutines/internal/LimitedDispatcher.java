@@ -9,7 +9,7 @@ import kotlinx.coroutines.DefaultExecutorKt;
 import kotlinx.coroutines.Delay;
 import kotlinx.coroutines.DisposableHandle;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class LimitedDispatcher extends CoroutineDispatcher implements Delay {
     private static final AtomicIntegerFieldUpdater runningWorkers$FU = AtomicIntegerFieldUpdater.newUpdater(LimitedDispatcher.class, "runningWorkers");
     private final /* synthetic */ Delay $$delegate_0;
@@ -18,6 +18,60 @@ public final class LimitedDispatcher extends CoroutineDispatcher implements Dela
     private final LockFreeTaskQueue queue;
     private volatile int runningWorkers;
     private final Object workerAllocationLock;
+
+    @Override // kotlinx.coroutines.Delay
+    public DisposableHandle invokeOnTimeout(long j, Runnable runnable, CoroutineContext coroutineContext) {
+        return this.$$delegate_0.invokeOnTimeout(j, runnable, coroutineContext);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public LimitedDispatcher(CoroutineDispatcher coroutineDispatcher, int i) {
+        this.dispatcher = coroutineDispatcher;
+        this.parallelism = i;
+        Delay delay = coroutineDispatcher instanceof Delay ? (Delay) coroutineDispatcher : null;
+        this.$$delegate_0 = delay == null ? DefaultExecutorKt.getDefaultDelay() : delay;
+        this.queue = new LockFreeTaskQueue(false);
+        this.workerAllocationLock = new Object();
+    }
+
+    @Override // kotlinx.coroutines.CoroutineDispatcher
+    public void dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+        Runnable obtainTaskOrDeallocateWorker;
+        this.queue.addLast(runnable);
+        if (runningWorkers$FU.get(this) >= this.parallelism || !tryAllocateWorker() || (obtainTaskOrDeallocateWorker = obtainTaskOrDeallocateWorker()) == null) {
+            return;
+        }
+        this.dispatcher.dispatch(this, new Worker(obtainTaskOrDeallocateWorker));
+    }
+
+    private final boolean tryAllocateWorker() {
+        synchronized (this.workerAllocationLock) {
+            AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = runningWorkers$FU;
+            if (atomicIntegerFieldUpdater.get(this) >= this.parallelism) {
+                return false;
+            }
+            atomicIntegerFieldUpdater.incrementAndGet(this);
+            return true;
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final Runnable obtainTaskOrDeallocateWorker() {
+        while (true) {
+            Runnable runnable = (Runnable) this.queue.removeFirstOrNull();
+            if (runnable != null) {
+                return runnable;
+            }
+            synchronized (this.workerAllocationLock) {
+                AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = runningWorkers$FU;
+                atomicIntegerFieldUpdater.decrementAndGet(this);
+                if (this.queue.getSize() == 0) {
+                    return null;
+                }
+                atomicIntegerFieldUpdater.incrementAndGet(this);
+            }
+        }
+    }
 
     private final class Worker implements Runnable {
         private Runnable currentTask;
@@ -47,59 +101,5 @@ public final class LimitedDispatcher extends CoroutineDispatcher implements Dela
                 }
             }
         }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public LimitedDispatcher(CoroutineDispatcher coroutineDispatcher, int i) {
-        this.dispatcher = coroutineDispatcher;
-        this.parallelism = i;
-        Delay delay = coroutineDispatcher instanceof Delay ? (Delay) coroutineDispatcher : null;
-        this.$$delegate_0 = delay == null ? DefaultExecutorKt.getDefaultDelay() : delay;
-        this.queue = new LockFreeTaskQueue(false);
-        this.workerAllocationLock = new Object();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public final Runnable obtainTaskOrDeallocateWorker() {
-        while (true) {
-            Runnable runnable = (Runnable) this.queue.removeFirstOrNull();
-            if (runnable != null) {
-                return runnable;
-            }
-            synchronized (this.workerAllocationLock) {
-                AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = runningWorkers$FU;
-                atomicIntegerFieldUpdater.decrementAndGet(this);
-                if (this.queue.getSize() == 0) {
-                    return null;
-                }
-                atomicIntegerFieldUpdater.incrementAndGet(this);
-            }
-        }
-    }
-
-    private final boolean tryAllocateWorker() {
-        synchronized (this.workerAllocationLock) {
-            AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = runningWorkers$FU;
-            if (atomicIntegerFieldUpdater.get(this) >= this.parallelism) {
-                return false;
-            }
-            atomicIntegerFieldUpdater.incrementAndGet(this);
-            return true;
-        }
-    }
-
-    @Override // kotlinx.coroutines.CoroutineDispatcher
-    public void dispatch(CoroutineContext coroutineContext, Runnable runnable) {
-        Runnable obtainTaskOrDeallocateWorker;
-        this.queue.addLast(runnable);
-        if (runningWorkers$FU.get(this) >= this.parallelism || !tryAllocateWorker() || (obtainTaskOrDeallocateWorker = obtainTaskOrDeallocateWorker()) == null) {
-            return;
-        }
-        this.dispatcher.dispatch(this, new Worker(obtainTaskOrDeallocateWorker));
-    }
-
-    @Override // kotlinx.coroutines.Delay
-    public DisposableHandle invokeOnTimeout(long j, Runnable runnable, CoroutineContext coroutineContext) {
-        return this.$$delegate_0.invokeOnTimeout(j, runnable, coroutineContext);
     }
 }

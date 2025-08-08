@@ -4,9 +4,11 @@ import com.google.firebase.Firebase;
 import com.google.firebase.FirebaseKt;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public interface SessionFirelogPublisher {
     public static final Companion Companion = Companion.$$INSTANCE;
+
+    void logSession(SessionDetails sessionDetails);
 
     public static final class Companion {
         static final /* synthetic */ Companion $$INSTANCE = new Companion();
@@ -20,6 +22,4 @@ public interface SessionFirelogPublisher {
             return (SessionFirelogPublisher) obj;
         }
     }
-
-    void logSession(SessionDetails sessionDetails);
 }

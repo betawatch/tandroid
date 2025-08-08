@@ -4,7 +4,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Type;
 import java.util.Objects;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class FieldAttributes {
     private final Field field;
 
@@ -13,12 +13,12 @@ public final class FieldAttributes {
         this.field = field;
     }
 
-    public Type getDeclaredType() {
-        return this.field.getGenericType();
-    }
-
     public String getName() {
         return this.field.getName();
+    }
+
+    public Type getDeclaredType() {
+        return this.field.getGenericType();
     }
 
     public String toString() {

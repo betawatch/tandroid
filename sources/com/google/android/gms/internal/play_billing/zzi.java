@@ -1,8 +1,15 @@
 package com.google.android.gms.internal.play_billing;
 
-import android.os.Binder;
-import android.os.IInterface;
-
 /* loaded from: classes.dex */
-public abstract class zzi extends Binder implements IInterface {
+final class zzi {
+    final Throwable zza;
+
+    static {
+        new zzi(new zzh("Failure occurred while trying to finish a future."));
+    }
+
+    zzi(Throwable th) {
+        boolean z = zzq.zza;
+        this.zza = th;
+    }
 }

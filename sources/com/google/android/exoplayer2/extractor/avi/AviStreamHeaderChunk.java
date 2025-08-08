@@ -13,13 +13,9 @@ final class AviStreamHeaderChunk implements AviChunk {
     public final int streamType;
     public final int suggestedBufferSize;
 
-    private AviStreamHeaderChunk(int i, int i2, int i3, int i4, int i5, int i6) {
-        this.streamType = i;
-        this.initialFrames = i2;
-        this.scale = i3;
-        this.rate = i4;
-        this.length = i5;
-        this.suggestedBufferSize = i6;
+    @Override // com.google.android.exoplayer2.extractor.avi.AviChunk
+    public int getType() {
+        return 1752331379;
     }
 
     public static AviStreamHeaderChunk parseFrom(ParsableByteArray parsableByteArray) {
@@ -35,8 +31,13 @@ final class AviStreamHeaderChunk implements AviChunk {
         return new AviStreamHeaderChunk(readLittleEndianInt, readLittleEndianInt2, readLittleEndianInt3, readLittleEndianInt4, readLittleEndianInt5, readLittleEndianInt6);
     }
 
-    public long getDurationUs() {
-        return Util.scaleLargeTimestamp(this.length, this.scale * 1000000, this.rate);
+    private AviStreamHeaderChunk(int i, int i2, int i3, int i4, int i5, int i6) {
+        this.streamType = i;
+        this.initialFrames = i2;
+        this.scale = i3;
+        this.rate = i4;
+        this.length = i5;
+        this.suggestedBufferSize = i6;
     }
 
     public int getTrackType() {
@@ -54,8 +55,7 @@ final class AviStreamHeaderChunk implements AviChunk {
         return -1;
     }
 
-    @Override // com.google.android.exoplayer2.extractor.avi.AviChunk
-    public int getType() {
-        return 1752331379;
+    public long getDurationUs() {
+        return Util.scaleLargeTimestamp(this.length, this.scale * 1000000, this.rate);
     }
 }

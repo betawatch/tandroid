@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class CropGestureDetector {
     private ScaleGestureDetector mDetector;
     private boolean mIsDragging;
@@ -39,6 +39,15 @@ public class CropGestureDetector {
         this.mMinimumVelocity = ViewConfiguration.get(context).getScaledMinimumFlingVelocity();
         this.mDetector = new ScaleGestureDetector(context, new ScaleGestureDetector.OnScaleGestureListener() { // from class: org.telegram.ui.Components.Crop.CropGestureDetector.1
             @Override // android.view.ScaleGestureDetector.OnScaleGestureListener
+            public boolean onScaleBegin(ScaleGestureDetector scaleGestureDetector) {
+                return true;
+            }
+
+            @Override // android.view.ScaleGestureDetector.OnScaleGestureListener
+            public void onScaleEnd(ScaleGestureDetector scaleGestureDetector) {
+            }
+
+            @Override // android.view.ScaleGestureDetector.OnScaleGestureListener
             public boolean onScale(ScaleGestureDetector scaleGestureDetector) {
                 float scaleFactor = scaleGestureDetector.getScaleFactor();
                 if (Float.isNaN(scaleFactor) || Float.isInfinite(scaleFactor)) {
@@ -46,15 +55,6 @@ public class CropGestureDetector {
                 }
                 CropGestureDetector.this.mListener.onScale(scaleFactor, scaleGestureDetector.getFocusX(), scaleGestureDetector.getFocusY());
                 return true;
-            }
-
-            @Override // android.view.ScaleGestureDetector.OnScaleGestureListener
-            public boolean onScaleBegin(ScaleGestureDetector scaleGestureDetector) {
-                return true;
-            }
-
-            @Override // android.view.ScaleGestureDetector.OnScaleGestureListener
-            public void onScaleEnd(ScaleGestureDetector scaleGestureDetector) {
             }
         });
     }
@@ -75,12 +75,16 @@ public class CropGestureDetector {
         }
     }
 
-    public boolean isDragging() {
-        return this.mIsDragging;
+    public void setOnGestureListener(CropGestureListener cropGestureListener) {
+        this.mListener = cropGestureListener;
     }
 
     public boolean isScaling() {
         return this.mDetector.isInProgress();
+    }
+
+    public boolean isDragging() {
+        return this.mIsDragging;
     }
 
     public boolean onTouchEvent(MotionEvent motionEvent) {
@@ -173,9 +177,5 @@ public class CropGestureDetector {
             }
         }
         return true;
-    }
-
-    public void setOnGestureListener(CropGestureListener cropGestureListener) {
-        this.mListener = cropGestureListener;
     }
 }

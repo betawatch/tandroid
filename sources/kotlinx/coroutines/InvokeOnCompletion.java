@@ -3,18 +3,18 @@ package kotlinx.coroutines;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class InvokeOnCompletion extends JobNode {
     private final Function1 handler;
-
-    public InvokeOnCompletion(Function1 function1) {
-        this.handler = function1;
-    }
 
     @Override // kotlin.jvm.functions.Function1
     public /* bridge */ /* synthetic */ Object invoke(Object obj) {
         invoke((Throwable) obj);
         return Unit.INSTANCE;
+    }
+
+    public InvokeOnCompletion(Function1 function1) {
+        this.handler = function1;
     }
 
     @Override // kotlinx.coroutines.CompletionHandlerBase

@@ -19,22 +19,6 @@ public interface HlsPlaylistTracker {
         boolean onPlaylistError(Uri uri, LoadErrorHandlingPolicy.LoadErrorInfo loadErrorInfo, boolean z);
     }
 
-    public static final class PlaylistResetException extends IOException {
-        public final Uri url;
-
-        public PlaylistResetException(Uri uri) {
-            this.url = uri;
-        }
-    }
-
-    public static final class PlaylistStuckException extends IOException {
-        public final Uri url;
-
-        public PlaylistStuckException(Uri uri) {
-            this.url = uri;
-        }
-    }
-
     public interface PrimaryPlaylistListener {
         void onPrimaryPlaylistRefreshed(HlsMediaPlaylist hlsMediaPlaylist);
     }
@@ -64,4 +48,20 @@ public interface HlsPlaylistTracker {
     void start(Uri uri, MediaSourceEventListener.EventDispatcher eventDispatcher, PrimaryPlaylistListener primaryPlaylistListener);
 
     void stop();
+
+    public static final class PlaylistStuckException extends IOException {
+        public final Uri url;
+
+        public PlaylistStuckException(Uri uri) {
+            this.url = uri;
+        }
+    }
+
+    public static final class PlaylistResetException extends IOException {
+        public final Uri url;
+
+        public PlaylistResetException(Uri uri) {
+            this.url = uri;
+        }
+    }
 }

@@ -1,73 +1,31 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import j$.util.function.Consumer;
-import j$.util.function.Supplier;
-
 /* loaded from: classes2.dex */
-final class u3 extends T2 {
-    u3(b bVar, Spliterator spliterator, boolean z) {
-        super(bVar, spliterator, z);
+final class u3 implements Runnable {
+    final /* synthetic */ Runnable a;
+    final /* synthetic */ Runnable b;
+
+    u3(Runnable runnable, Runnable runnable2) {
+        this.a = runnable;
+        this.b = runnable2;
     }
 
-    u3(b bVar, Supplier supplier, boolean z) {
-        super(bVar, supplier, z);
-    }
-
-    @Override // j$.util.Spliterator
-    public final void a(Consumer consumer) {
-        if (this.h != null || this.i) {
-            while (s(consumer)) {
-            }
-            return;
-        }
-        consumer.getClass();
-        h();
-        a aVar = new a(consumer, 8);
-        this.b.A0(this.d, aVar);
-        this.i = true;
-    }
-
-    @Override // j$.util.stream.T2
-    final void j() {
-        O2 o2 = new O2();
-        this.h = o2;
-        this.e = this.b.B0(new a(o2, 6));
-        this.f = new a(this, 7);
-    }
-
-    @Override // j$.util.stream.T2
-    final T2 k(Spliterator spliterator) {
-        return new u3(this.b, spliterator, this.a);
-    }
-
-    @Override // j$.util.Spliterator
-    public final boolean s(Consumer consumer) {
-        Object obj;
-        consumer.getClass();
-        boolean b = b();
-        if (b) {
-            O2 o2 = (O2) this.h;
-            long j = this.g;
-            if (o2.c != 0) {
-                if (j >= o2.count()) {
-                    throw new IndexOutOfBoundsException(Long.toString(j));
+    @Override // java.lang.Runnable
+    public final void run() {
+        Runnable runnable = this.b;
+        try {
+            this.a.run();
+            runnable.run();
+        } catch (Throwable th) {
+            try {
+                runnable.run();
+            } catch (Throwable th2) {
+                try {
+                    th.addSuppressed(th2);
+                } catch (Throwable unused) {
                 }
-                for (int i = 0; i <= o2.c; i++) {
-                    long j2 = o2.d[i];
-                    Object[] objArr = o2.f[i];
-                    if (j < objArr.length + j2) {
-                        obj = objArr[(int) (j - j2)];
-                    }
-                }
-                throw new IndexOutOfBoundsException(Long.toString(j));
             }
-            if (j >= o2.b) {
-                throw new IndexOutOfBoundsException(Long.toString(j));
-            }
-            obj = o2.e[(int) j];
-            consumer.r(obj);
+            throw th;
         }
-        return b;
     }
 }

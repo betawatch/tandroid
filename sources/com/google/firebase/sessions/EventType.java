@@ -2,7 +2,7 @@ package com.google.firebase.sessions;
 
 import com.google.firebase.encoders.json.NumberedEnum;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public enum EventType implements NumberedEnum {
     EVENT_TYPE_UNKNOWN(0),
     SESSION_START(1);

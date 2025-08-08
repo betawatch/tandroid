@@ -8,7 +8,7 @@ import org.telegram.messenger.browser.Browser;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.TextStyleSpan;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class URLSpanNoUnderline extends URLSpan {
     private boolean forceNoUnderline;
     public String label;
@@ -19,33 +19,25 @@ public class URLSpanNoUnderline extends URLSpan {
         this(str, (TextStyleSpan.TextStyleRun) null);
     }
 
+    public URLSpanNoUnderline(String str, boolean z) {
+        this(str, (TextStyleSpan.TextStyleRun) null);
+        this.forceNoUnderline = z;
+    }
+
     public URLSpanNoUnderline(String str, TextStyleSpan.TextStyleRun textStyleRun) {
         super(str != null ? str.replace((char) 8238, ' ') : str);
         this.forceNoUnderline = false;
         this.style = textStyleRun;
     }
 
-    public URLSpanNoUnderline(String str, boolean z) {
-        this(str, (TextStyleSpan.TextStyleRun) null);
-        this.forceNoUnderline = z;
-    }
-
-    public TLObject getObject() {
-        return this.object;
-    }
-
     @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
     public void onClick(View view) {
         String url = getURL();
-        if (!url.startsWith("@")) {
-            Browser.openUrl(view.getContext(), url);
+        if (url.startsWith("@")) {
+            Browser.openUrl(view.getContext(), Uri.parse("https://t.me/" + url.substring(1)));
             return;
         }
-        Browser.openUrl(view.getContext(), Uri.parse("https://t.me/" + url.substring(1)));
-    }
-
-    public void setObject(TLObject tLObject) {
-        this.object = tLObject;
+        Browser.openUrl(view.getContext(), url);
     }
 
     @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
@@ -58,5 +50,13 @@ public class URLSpanNoUnderline extends URLSpan {
             textStyleRun.applyStyle(textPaint);
         }
         textPaint.setUnderlineText(i == color && !this.forceNoUnderline);
+    }
+
+    public void setObject(TLObject tLObject) {
+        this.object = tLObject;
+    }
+
+    public TLObject getObject() {
+        return this.object;
     }
 }

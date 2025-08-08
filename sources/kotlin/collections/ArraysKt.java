@@ -1,5 +1,5 @@
 package kotlin.collections;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class ArraysKt extends ArraysKt___ArraysKt {
 }

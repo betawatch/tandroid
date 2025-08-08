@@ -1,36 +1,50 @@
 package j$.util.function;
 
-import java.util.function.ObjIntConsumer;
-
 /* loaded from: classes2.dex */
-public final /* synthetic */ class h0 implements ObjIntConsumer {
-    public final /* synthetic */ i0 a;
+public final /* synthetic */ class h0 implements k0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k0 b;
+    public final /* synthetic */ k0 c;
 
-    private /* synthetic */ h0(i0 i0Var) {
-        this.a = i0Var;
+    public /* synthetic */ h0(k0 k0Var, k0 k0Var2, int i) {
+        this.a = i;
+        this.b = k0Var;
+        this.c = k0Var2;
     }
 
-    public static /* synthetic */ ObjIntConsumer a(i0 i0Var) {
-        if (i0Var == null) {
-            return null;
+    @Override // j$.util.function.k0
+    public final long applyAsLong(long j) {
+        switch (this.a) {
+            case 0:
+                return this.c.applyAsLong(this.b.applyAsLong(j));
+            default:
+                return this.b.applyAsLong(this.c.applyAsLong(j));
         }
-        return i0Var instanceof g0 ? ((g0) i0Var).a : new h0(i0Var);
     }
 
-    @Override // java.util.function.ObjIntConsumer
-    public final /* synthetic */ void accept(Object obj, int i) {
-        this.a.accept(obj, i);
-    }
-
-    public final /* synthetic */ boolean equals(Object obj) {
-        i0 i0Var = this.a;
-        if (obj instanceof h0) {
-            obj = ((h0) obj).a;
+    @Override // j$.util.function.k0
+    public final k0 a(k0 k0Var) {
+        switch (this.a) {
+            case 0:
+                k0Var.getClass();
+                break;
+            default:
+                k0Var.getClass();
+                break;
         }
-        return i0Var.equals(obj);
+        return new h0(this, k0Var, 0);
     }
 
-    public final /* synthetic */ int hashCode() {
-        return this.a.hashCode();
+    @Override // j$.util.function.k0
+    public final k0 b(k0 k0Var) {
+        switch (this.a) {
+            case 0:
+                k0Var.getClass();
+                break;
+            default:
+                k0Var.getClass();
+                break;
+        }
+        return new h0(this, k0Var, 1);
     }
 }

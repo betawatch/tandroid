@@ -2,19 +2,17 @@ package kotlinx.coroutines;
 
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.CoroutineContext;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.intrinsics.CancellableKt;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class LazyDeferredCoroutine extends DeferredCoroutine {
     private final Continuation continuation;
 
     public LazyDeferredCoroutine(CoroutineContext coroutineContext, Function2 function2) {
         super(coroutineContext, false);
-        Continuation createCoroutineUnintercepted;
-        createCoroutineUnintercepted = IntrinsicsKt__IntrinsicsJvmKt.createCoroutineUnintercepted(function2, this, this);
-        this.continuation = createCoroutineUnintercepted;
+        this.continuation = IntrinsicsKt.createCoroutineUnintercepted(function2, this, this);
     }
 
     @Override // kotlinx.coroutines.JobSupport

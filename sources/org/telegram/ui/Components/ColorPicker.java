@@ -41,7 +41,7 @@ import org.telegram.ui.ActionBar.ActionBarMenuItem;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ActionBar.ThemeDescription;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class ColorPicker extends FrameLayout {
     private ImageView addButton;
     private Drawable circleDrawable;
@@ -104,6 +104,10 @@ public class ColorPicker extends FrameLayout {
         void setColor(int i, int i2, boolean z);
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$new$4(View view) {
+    }
+
     private static class RadioButton extends View {
         private ObjectAnimator checkAnimator;
         private boolean checked;
@@ -116,14 +120,49 @@ public class ColorPicker extends FrameLayout {
             this.paint = new Paint(1);
         }
 
+        void updateCheckedState(boolean z) {
+            ObjectAnimator objectAnimator = this.checkAnimator;
+            if (objectAnimator != null) {
+                objectAnimator.cancel();
+            }
+            if (z) {
+                ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "checkedState", this.checked ? 1.0f : 0.0f);
+                this.checkAnimator = ofFloat;
+                ofFloat.setDuration(200L);
+                this.checkAnimator.start();
+                return;
+            }
+            setCheckedState(this.checked ? 1.0f : 0.0f);
+        }
+
+        public void setChecked(boolean z, boolean z2) {
+            this.checked = z;
+            updateCheckedState(z2);
+        }
+
+        public void setColor(int i) {
+            this.currentColor = i;
+            invalidate();
+        }
+
         public int getColor() {
             return this.currentColor;
+        }
+
+        public void setCheckedState(float f) {
+            this.checkedState = f;
+            invalidate();
         }
 
         @Override // android.view.View
         protected void onAttachedToWindow() {
             super.onAttachedToWindow();
             updateCheckedState(false);
+        }
+
+        @Override // android.view.View
+        protected void onMeasure(int i, int i2) {
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30));
         }
 
         @Override // android.view.View
@@ -149,41 +188,6 @@ public class ColorPicker extends FrameLayout {
             accessibilityNodeInfo.setChecked(this.checked);
             accessibilityNodeInfo.setCheckable(true);
             accessibilityNodeInfo.setEnabled(true);
-        }
-
-        @Override // android.view.View
-        protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30));
-        }
-
-        public void setChecked(boolean z, boolean z2) {
-            this.checked = z;
-            updateCheckedState(z2);
-        }
-
-        public void setCheckedState(float f) {
-            this.checkedState = f;
-            invalidate();
-        }
-
-        public void setColor(int i) {
-            this.currentColor = i;
-            invalidate();
-        }
-
-        void updateCheckedState(boolean z) {
-            ObjectAnimator objectAnimator = this.checkAnimator;
-            if (objectAnimator != null) {
-                objectAnimator.cancel();
-            }
-            if (!z) {
-                setCheckedState(this.checked ? 1.0f : 0.0f);
-                return;
-            }
-            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "checkedState", this.checked ? 1.0f : 0.0f);
-            this.checkAnimator = ofFloat;
-            ofFloat.setDuration(200L);
-            this.checkAnimator.start();
         }
     }
 
@@ -271,6 +275,19 @@ public class ColorPicker extends FrameLayout {
                 this.linearLayout.addView(this.colorEditText[i2], LayoutHelper.createLinear(-2, -1, 0.0f, 0.0f, 0.0f, 0.0f));
             } else {
                 editTextBoldCursorArr[i2] = new EditTextBoldCursor(context) { // from class: org.telegram.ui.Components.ColorPicker.3
+                    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+                    public boolean onTouchEvent(MotionEvent motionEvent) {
+                        if (getAlpha() != 1.0f) {
+                            return false;
+                        }
+                        if (!isFocused()) {
+                            requestFocus();
+                            return false;
+                        }
+                        AndroidUtilities.showKeyboard(this);
+                        return super.onTouchEvent(motionEvent);
+                    }
+
                     @Override // android.view.View
                     public boolean getGlobalVisibleRect(android.graphics.Rect rect, android.graphics.Point point) {
                         boolean globalVisibleRect = super.getGlobalVisibleRect(rect, point);
@@ -283,19 +300,6 @@ public class ColorPicker extends FrameLayout {
                         super.invalidate();
                         ColorPicker.this.colorEditText[i2 - 1].invalidate();
                     }
-
-                    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-                    public boolean onTouchEvent(MotionEvent motionEvent) {
-                        if (getAlpha() != 1.0f) {
-                            return false;
-                        }
-                        if (isFocused()) {
-                            AndroidUtilities.showKeyboard(this);
-                            return super.onTouchEvent(motionEvent);
-                        }
-                        requestFocus();
-                        return false;
-                    }
                 };
                 this.colorEditText[i2].setBackgroundDrawable(null);
                 this.colorEditText[i2].setFilters(new InputFilter[]{new InputFilter.LengthFilter(6)});
@@ -303,6 +307,14 @@ public class ColorPicker extends FrameLayout {
                 this.colorEditText[i2].setPadding(0, AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(16.0f));
                 this.linearLayout.addView(this.colorEditText[i2], LayoutHelper.createLinear(71, -1, 0.0f, 0.0f, 0.0f, 0.0f));
                 this.colorEditText[i2].addTextChangedListener(new TextWatcher() { // from class: org.telegram.ui.Components.ColorPicker.4
+                    @Override // android.text.TextWatcher
+                    public void beforeTextChanged(CharSequence charSequence, int i3, int i4, int i5) {
+                    }
+
+                    @Override // android.text.TextWatcher
+                    public void onTextChanged(CharSequence charSequence, int i3, int i4, int i5) {
+                    }
+
                     @Override // android.text.TextWatcher
                     public void afterTextChanged(Editable editable) {
                         ColorPicker colorPicker = ColorPicker.this;
@@ -319,26 +331,20 @@ public class ColorPicker extends FrameLayout {
                             }
                             i3++;
                         }
-                        if (editable.length() != 0) {
-                            ColorPicker colorPicker2 = ColorPicker.this;
-                            colorPicker2.setColorInner(colorPicker2.getFieldColor(i2, -1));
-                            int color = ColorPicker.this.getColor();
-                            if (editable.length() == 6) {
-                                editable.replace(0, editable.length(), String.format("%02x%02x%02x", Byte.valueOf((byte) Color.red(color)), Byte.valueOf((byte) Color.green(color)), Byte.valueOf((byte) Color.blue(color))).toUpperCase());
-                                ColorPicker.this.colorEditText[i2].setSelection(editable.length());
-                            }
-                            ColorPicker.this.radioButton[ColorPicker.this.selectedColor].setColor(color);
-                            ColorPicker.this.delegate.setColor(color, ColorPicker.this.selectedColor, true);
+                        if (editable.length() == 0) {
+                            ColorPicker.this.ignoreTextChange = false;
+                            return;
                         }
+                        ColorPicker colorPicker2 = ColorPicker.this;
+                        colorPicker2.setColorInner(colorPicker2.getFieldColor(i2, -1));
+                        int color = ColorPicker.this.getColor();
+                        if (editable.length() == 6) {
+                            editable.replace(0, editable.length(), String.format("%02x%02x%02x", Byte.valueOf((byte) Color.red(color)), Byte.valueOf((byte) Color.green(color)), Byte.valueOf((byte) Color.blue(color))).toUpperCase());
+                            ColorPicker.this.colorEditText[i2].setSelection(editable.length());
+                        }
+                        ColorPicker.this.radioButton[ColorPicker.this.selectedColor].setColor(color);
+                        ColorPicker.this.delegate.setColor(color, ColorPicker.this.selectedColor, true);
                         ColorPicker.this.ignoreTextChange = false;
-                    }
-
-                    @Override // android.text.TextWatcher
-                    public void beforeTextChanged(CharSequence charSequence, int i3, int i4, int i5) {
-                    }
-
-                    @Override // android.text.TextWatcher
-                    public void onTextChanged(CharSequence charSequence, int i3, int i4, int i5) {
                     }
                 });
                 this.colorEditText[i2].setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.Components.ColorPicker$$ExternalSyntheticLambda1
@@ -461,76 +467,13 @@ public class ColorPicker extends FrameLayout {
         updateColorsPosition(null, 0, false, getMeasuredWidth());
     }
 
-    private Bitmap createColorWheelBitmap(int i, int i2) {
-        Bitmap createBitmap = Bitmap.createBitmap(i, i2, Bitmap.Config.ARGB_8888);
-        float f = i;
-        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-        float f2 = i2;
-        this.colorWheelPaint.setShader(new ComposeShader(new LinearGradient(0.0f, i2 / 3, 0.0f, f2, new int[]{-1, 0}, (float[]) null, tileMode), new LinearGradient(0.0f, 0.0f, f, 0.0f, new int[]{-65536, -256, -16711936, -16711681, -16776961, -65281, -65536}, (float[]) null, tileMode), PorterDuff.Mode.MULTIPLY));
-        new Canvas(createBitmap).drawRect(0.0f, 0.0f, f, f2, this.colorWheelPaint);
-        return createBitmap;
-    }
-
-    private void drawPointerArrow(Canvas canvas, int i, int i2, int i3, boolean z) {
-        int dp = AndroidUtilities.dp(z ? 12.0f : 16.0f);
-        this.circleDrawable.setBounds(i - dp, i2 - dp, i + dp, dp + i2);
-        this.circleDrawable.draw(canvas);
-        this.circlePaint.setColor(-1);
-        float f = i;
-        float f2 = i2;
-        canvas.drawCircle(f, f2, AndroidUtilities.dp(z ? 11.0f : 15.0f), this.circlePaint);
-        this.circlePaint.setColor(i3);
-        canvas.drawCircle(f, f2, AndroidUtilities.dp(z ? 9.0f : 13.0f), this.circlePaint);
-    }
-
-    public static int generateGradientColors(int i) {
-        float[] fArr = new float[3];
-        Color.colorToHSV(i, fArr);
-        float f = fArr[1];
-        if (f > 0.5f) {
-            fArr[1] = f - 0.15f;
-        } else {
-            fArr[1] = f + 0.15f;
-        }
-        float f2 = fArr[0];
-        if (f2 > 180.0f) {
-            fArr[0] = f2 - 20.0f;
-        } else {
-            fArr[0] = f2 + 20.0f;
-        }
-        return Color.HSVToColor(NotificationCenter.goingToPreviewTheme, fArr);
-    }
-
-    private float getBrightness() {
-        return Math.max(this.minHsvBrightness, Math.min(this.colorHSV[2], this.maxHsvBrightness));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public int getFieldColor(int i, int i2) {
-        try {
-            return Integer.parseInt(this.colorEditText[i].getText().toString(), 16) | (-16777216);
-        } catch (Exception unused) {
-            return i2;
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public int getThemedColor(int i) {
-        return Theme.getColor(i, this.resourcesProvider);
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$0(View view) {
         RadioButton radioButton = (RadioButton) view;
         int i = 0;
         while (true) {
             RadioButton[] radioButtonArr = this.radioButton;
-            if (i >= radioButtonArr.length) {
-                int color = radioButton.getColor();
-                setColorInner(color);
-                this.colorEditText[1].setText(String.format("%02x%02x%02x", Byte.valueOf((byte) Color.red(color)), Byte.valueOf((byte) Color.green(color)), Byte.valueOf((byte) Color.blue(color))).toUpperCase());
-                return;
-            } else {
+            if (i < radioButtonArr.length) {
                 RadioButton radioButton2 = radioButtonArr[i];
                 boolean z = radioButton2 == radioButton;
                 radioButton2.setChecked(z, true);
@@ -539,6 +482,11 @@ public class ColorPicker extends FrameLayout {
                     this.selectedColor = i;
                 }
                 i++;
+            } else {
+                int color = radioButton.getColor();
+                setColorInner(color);
+                this.colorEditText[1].setText(String.format("%02x%02x%02x", Byte.valueOf((byte) Color.red(color)), Byte.valueOf((byte) Color.green(color)), Byte.valueOf((byte) Color.blue(color))).toUpperCase());
+                return;
             }
         }
     }
@@ -554,7 +502,6 @@ public class ColorPicker extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$2(View view) {
-        ObjectAnimator ofFloat;
         if (this.colorsAnimator != null) {
             return;
         }
@@ -599,14 +546,13 @@ public class ColorPicker extends FrameLayout {
             arrayList.add(ObjectAnimator.ofFloat(this.addButton, (Property<ImageView, Float>) View.ALPHA, 1.0f));
             arrayList.add(ObjectAnimator.ofFloat(this.addButton, (Property<ImageView, Float>) View.SCALE_X, 1.0f));
             arrayList.add(ObjectAnimator.ofFloat(this.addButton, (Property<ImageView, Float>) View.SCALE_Y, 1.0f));
-            ofFloat = ObjectAnimator.ofFloat(this.addButton, (Property<ImageView, Float>) View.TRANSLATION_X, (AndroidUtilities.dp(30.0f) * (this.colorsCount - 1)) + (AndroidUtilities.dp(13.0f) * (this.colorsCount - 1)));
+            arrayList.add(ObjectAnimator.ofFloat(this.addButton, (Property<ImageView, Float>) View.TRANSLATION_X, (AndroidUtilities.dp(30.0f) * (this.colorsCount - 1)) + (AndroidUtilities.dp(13.0f) * (this.colorsCount - 1))));
         } else {
             arrayList.add(ObjectAnimator.ofFloat(this.addButton, (Property<ImageView, Float>) View.TRANSLATION_X, (AndroidUtilities.dp(30.0f) * (this.colorsCount - 1)) + (AndroidUtilities.dp(13.0f) * (this.colorsCount - 1))));
             arrayList.add(ObjectAnimator.ofFloat(this.addButton, (Property<ImageView, Float>) View.ALPHA, 0.0f));
             arrayList.add(ObjectAnimator.ofFloat(this.addButton, (Property<ImageView, Float>) View.SCALE_X, 0.0f));
-            ofFloat = ObjectAnimator.ofFloat(this.addButton, (Property<ImageView, Float>) View.SCALE_Y, 0.0f);
+            arrayList.add(ObjectAnimator.ofFloat(this.addButton, (Property<ImageView, Float>) View.SCALE_Y, 0.0f));
         }
-        arrayList.add(ofFloat);
         if (this.colorsCount > 1) {
             if (this.clearButton.getVisibility() != 0) {
                 this.clearButton.setScaleX(0.0f);
@@ -636,73 +582,70 @@ public class ColorPicker extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:33:0x013c, code lost:
-    
-        if (r2 == (r9.radioButton.length - 1)) goto L45;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public /* synthetic */ void lambda$new$3(View view) {
-        ObjectAnimator ofFloat;
-        ObjectAnimator ofFloat2;
-        ColorPickerDelegate colorPickerDelegate;
-        int i;
-        boolean z;
         RadioButton[] radioButtonArr;
         if (this.colorsAnimator != null) {
             return;
         }
         ArrayList arrayList = new ArrayList();
-        int i2 = this.colorsCount;
-        if (i2 == 2) {
+        int i = this.colorsCount;
+        if (i == 2) {
             this.colorsCount = 1;
             arrayList.add(ObjectAnimator.ofFloat(this.clearButton, (Property<ImageView, Float>) View.ALPHA, 0.0f));
             arrayList.add(ObjectAnimator.ofFloat(this.clearButton, (Property<ImageView, Float>) View.SCALE_X, 0.0f));
             arrayList.add(ObjectAnimator.ofFloat(this.clearButton, (Property<ImageView, Float>) View.SCALE_Y, 0.0f));
-            ofFloat = ObjectAnimator.ofFloat(this.addButton, (Property<ImageView, Float>) View.TRANSLATION_X, 0.0f);
-        } else if (i2 == 3) {
+            arrayList.add(ObjectAnimator.ofFloat(this.addButton, (Property<ImageView, Float>) View.TRANSLATION_X, 0.0f));
+        } else if (i == 3) {
             this.colorsCount = 2;
-            ofFloat = ObjectAnimator.ofFloat(this.addButton, (Property<ImageView, Float>) View.TRANSLATION_X, AndroidUtilities.dp(30.0f) + AndroidUtilities.dp(13.0f));
+            arrayList.add(ObjectAnimator.ofFloat(this.addButton, (Property<ImageView, Float>) View.TRANSLATION_X, AndroidUtilities.dp(30.0f) + AndroidUtilities.dp(13.0f)));
         } else {
-            if (i2 != 4) {
+            if (i != 4) {
                 return;
             }
             this.colorsCount = 3;
-            ofFloat = ObjectAnimator.ofFloat(this.addButton, (Property<ImageView, Float>) View.TRANSLATION_X, (AndroidUtilities.dp(30.0f) * 2) + (AndroidUtilities.dp(13.0f) * 2));
+            arrayList.add(ObjectAnimator.ofFloat(this.addButton, (Property<ImageView, Float>) View.TRANSLATION_X, (AndroidUtilities.dp(30.0f) * 2) + (AndroidUtilities.dp(13.0f) * 2)));
         }
-        arrayList.add(ofFloat);
         if (this.colorsCount < this.maxColorsCount) {
             this.addButton.setVisibility(0);
             arrayList.add(ObjectAnimator.ofFloat(this.addButton, (Property<ImageView, Float>) View.ALPHA, 1.0f));
             arrayList.add(ObjectAnimator.ofFloat(this.addButton, (Property<ImageView, Float>) View.SCALE_X, 1.0f));
-            ofFloat2 = ObjectAnimator.ofFloat(this.addButton, (Property<ImageView, Float>) View.SCALE_Y, 1.0f);
+            arrayList.add(ObjectAnimator.ofFloat(this.addButton, (Property<ImageView, Float>) View.SCALE_Y, 1.0f));
         } else {
             arrayList.add(ObjectAnimator.ofFloat(this.addButton, (Property<ImageView, Float>) View.ALPHA, 0.0f));
             arrayList.add(ObjectAnimator.ofFloat(this.addButton, (Property<ImageView, Float>) View.SCALE_X, 0.0f));
-            ofFloat2 = ObjectAnimator.ofFloat(this.addButton, (Property<ImageView, Float>) View.SCALE_Y, 0.0f);
+            arrayList.add(ObjectAnimator.ofFloat(this.addButton, (Property<ImageView, Float>) View.SCALE_Y, 0.0f));
         }
-        arrayList.add(ofFloat2);
-        int i3 = this.selectedColor;
-        if (i3 != 3) {
-            RadioButton radioButton = this.radioButton[i3];
+        int i2 = this.selectedColor;
+        if (i2 != 3) {
+            RadioButton radioButton = this.radioButton[i2];
             while (true) {
-                i3++;
+                i2++;
                 radioButtonArr = this.radioButton;
-                if (i3 >= radioButtonArr.length) {
+                if (i2 >= radioButtonArr.length) {
                     break;
                 } else {
-                    radioButtonArr[i3 - 1] = radioButtonArr[i3];
+                    radioButtonArr[i2 - 1] = radioButtonArr[i2];
                 }
             }
             radioButtonArr[3] = radioButton;
         }
-        int i4 = this.prevSelectedColor;
-        ((i4 < 0 || i4 >= this.selectedColor) ? this.radioButton[this.colorsCount - 1] : this.radioButton[i4]).callOnClick();
-        int i5 = 0;
+        int i3 = this.prevSelectedColor;
+        if (i3 >= 0 && i3 < this.selectedColor) {
+            this.radioButton[i3].callOnClick();
+        } else {
+            this.radioButton[this.colorsCount - 1].callOnClick();
+        }
+        int i4 = 0;
         while (true) {
             RadioButton[] radioButtonArr2 = this.radioButton;
-            if (i5 >= radioButtonArr2.length) {
+            if (i4 < radioButtonArr2.length) {
+                if (i4 < this.colorsCount) {
+                    this.delegate.setColor(radioButtonArr2[i4].getColor(), i4, i4 == this.radioButton.length - 1);
+                } else {
+                    this.delegate.setColor(0, i4, i4 == radioButtonArr2.length - 1);
+                }
+                i4++;
+            } else {
                 this.colorsAnimator = new AnimatorSet();
                 updateColorsPosition(arrayList, this.selectedColor, true, getMeasuredWidth());
                 this.colorsAnimator.playTogether(arrayList);
@@ -714,9 +657,9 @@ public class ColorPicker extends FrameLayout {
                         if (ColorPicker.this.colorsCount == 1) {
                             ColorPicker.this.clearButton.setVisibility(4);
                         }
-                        for (int i6 = 0; i6 < ColorPicker.this.radioButton.length; i6++) {
-                            if (ColorPicker.this.radioButton[i6].getTag(R.id.index_tag) == null) {
-                                ColorPicker.this.radioButton[i6].setVisibility(4);
+                        for (int i5 = 0; i5 < ColorPicker.this.radioButton.length; i5++) {
+                            if (ColorPicker.this.radioButton[i5].getTag(R.id.index_tag) == null) {
+                                ColorPicker.this.radioButton[i5].setVisibility(4);
                             }
                         }
                         ColorPicker.this.colorsAnimator = null;
@@ -725,26 +668,7 @@ public class ColorPicker extends FrameLayout {
                 this.colorsAnimator.start();
                 return;
             }
-            if (i5 < this.colorsCount) {
-                colorPickerDelegate = this.delegate;
-                i = radioButtonArr2[i5].getColor();
-            } else {
-                colorPickerDelegate = this.delegate;
-                if (i5 == radioButtonArr2.length - 1) {
-                    i = 0;
-                    z = true;
-                } else {
-                    i = 0;
-                    z = false;
-                }
-            }
-            colorPickerDelegate.setColor(i, i5, z);
-            i5++;
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$4(View view) {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -762,36 +686,23 @@ public class ColorPicker extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$provideThemeDescriptions$7() {
-        this.menuItem.setIconColor(getThemedColor(Theme.key_windowBackgroundWhiteBlackText));
-        Theme.setDrawableColor(this.menuItem.getBackground(), getThemedColor(Theme.key_dialogButtonSelector));
-        this.menuItem.setPopupItemsColor(getThemedColor(Theme.key_actionBarDefaultSubmenuItem), false);
-        this.menuItem.setPopupItemsColor(getThemedColor(Theme.key_actionBarDefaultSubmenuItemIcon), true);
-        this.menuItem.redrawPopup(getThemedColor(Theme.key_actionBarDefaultSubmenuBackground));
+    public int getThemedColor(int i) {
+        return Theme.getColor(i, this.resourcesProvider);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public void setColorInner(int i) {
-        Color.colorToHSV(i, this.colorHSV);
-        int defaultColor = this.delegate.getDefaultColor(this.selectedColor);
-        if (defaultColor == 0 || defaultColor != i) {
-            updateHsvMinMaxBrightness();
-        }
-        this.colorGradient = null;
-        invalidate();
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        updateColorsPosition(null, 0, false, getMeasuredWidth());
     }
 
     private void updateColorsPosition(ArrayList arrayList, int i, boolean z, int i2) {
-        RadioButton radioButton;
-        Integer num;
-        RadioButton radioButton2;
         int i3 = this.colorsCount;
         float f = this.radioContainer.getLeft() + ((AndroidUtilities.dp(30.0f) * i3) + ((i3 - 1) * AndroidUtilities.dp(13.0f))) > i2 - AndroidUtilities.dp(this.currentResetType == 1 ? 50.0f : 0.0f) ? r0 - r14 : 0.0f;
-        FrameLayout frameLayout = this.radioContainer;
         if (arrayList != null) {
-            arrayList.add(ObjectAnimator.ofFloat(frameLayout, (Property<FrameLayout, Float>) View.TRANSLATION_X, -f));
+            arrayList.add(ObjectAnimator.ofFloat(this.radioContainer, (Property<FrameLayout, Float>) View.TRANSLATION_X, -f));
         } else {
-            frameLayout.setTranslationX(-f);
+            this.radioContainer.setTranslationX(-f);
         }
         int i4 = 0;
         int i5 = 0;
@@ -800,9 +711,9 @@ public class ColorPicker extends FrameLayout {
             if (i4 >= radioButtonArr.length) {
                 return;
             }
-            RadioButton radioButton3 = radioButtonArr[i4];
+            RadioButton radioButton = radioButtonArr[i4];
             int i6 = R.id.index_tag;
-            boolean z2 = radioButton3.getTag(i6) != null;
+            boolean z2 = radioButton.getTag(i6) != null;
             if (i4 < this.colorsCount) {
                 this.radioButton[i4].setVisibility(0);
                 if (arrayList != null) {
@@ -813,10 +724,8 @@ public class ColorPicker extends FrameLayout {
                     }
                     if (z || !(z || i4 == this.colorsCount - 1)) {
                         arrayList.add(ObjectAnimator.ofFloat(this.radioButton[i4], (Property<RadioButton, Float>) View.TRANSLATION_X, i5));
-                        radioButton = this.radioButton[i4];
-                        num = 1;
                     } else {
-                        radioButton2 = this.radioButton[i4];
+                        this.radioButton[i4].setTranslationX(i5);
                     }
                 } else {
                     this.radioButton[i4].setVisibility(0);
@@ -825,11 +734,9 @@ public class ColorPicker extends FrameLayout {
                         this.radioButton[i4].setScaleX(1.0f);
                         this.radioButton[i4].setScaleY(1.0f);
                     }
-                    radioButton2 = this.radioButton[i4];
+                    this.radioButton[i4].setTranslationX(i5);
                 }
-                radioButton2.setTranslationX(i5);
-                radioButton = this.radioButton[i4];
-                num = 1;
+                this.radioButton[i4].setTag(i6, 1);
             } else {
                 if (arrayList == null) {
                     this.radioButton[i4].setVisibility(4);
@@ -846,55 +753,15 @@ public class ColorPicker extends FrameLayout {
                 if (!z) {
                     this.radioButton[i4].setTranslationX(i5);
                 }
-                radioButton = this.radioButton[i4];
-                num = null;
+                this.radioButton[i4].setTag(i6, null);
             }
-            radioButton.setTag(i6, num);
             i5 += AndroidUtilities.dp(30.0f) + AndroidUtilities.dp(13.0f);
             i4++;
         }
     }
 
-    private void updateHsvMinMaxBrightness() {
-        ImageView imageView = this.clearButton;
-        if (imageView == null) {
-            return;
-        }
-        float f = imageView.getTag() != null ? 0.0f : this.minBrightness;
-        float f2 = this.clearButton.getTag() != null ? 1.0f : this.maxBrightness;
-        float[] fArr = this.colorHSV;
-        float f3 = fArr[2];
-        if (f == 0.0f && f2 == 1.0f) {
-            this.minHsvBrightness = 0.0f;
-            this.maxHsvBrightness = 1.0f;
-            return;
-        }
-        fArr[2] = 1.0f;
-        int HSVToColor = Color.HSVToColor(fArr);
-        this.colorHSV[2] = f3;
-        float computePerceivedBrightness = AndroidUtilities.computePerceivedBrightness(HSVToColor);
-        float max = Math.max(0.0f, Math.min(f / computePerceivedBrightness, 1.0f));
-        this.minHsvBrightness = max;
-        this.maxHsvBrightness = Math.max(max, Math.min(f2 / computePerceivedBrightness, 1.0f));
-    }
-
-    public int getColor() {
-        float[] fArr = this.hsvTemp;
-        float[] fArr2 = this.colorHSV;
-        fArr[0] = fArr2[0];
-        fArr[1] = fArr2[1];
-        fArr[2] = getBrightness();
-        return (Color.HSVToColor(this.hsvTemp) & 16777215) | (-16777216);
-    }
-
     public void hideKeyboard() {
         AndroidUtilities.hideKeyboard(this.colorEditText[1]);
-    }
-
-    @Override // android.view.View
-    public void invalidate() {
-        super.invalidate();
-        this.linearLayout.invalidate();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x00a9  */
@@ -978,10 +845,25 @@ public class ColorPicker extends FrameLayout {
         invalidate();
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        updateColorsPosition(null, 0, false, getMeasuredWidth());
+    /* JADX INFO: Access modifiers changed from: private */
+    public int getFieldColor(int i, int i2) {
+        try {
+            return Integer.parseInt(this.colorEditText[i].getText().toString(), 16) | (-16777216);
+        } catch (Exception unused) {
+            return i2;
+        }
+    }
+
+    private void drawPointerArrow(Canvas canvas, int i, int i2, int i3, boolean z) {
+        int dp = AndroidUtilities.dp(z ? 12.0f : 16.0f);
+        this.circleDrawable.setBounds(i - dp, i2 - dp, i + dp, dp + i2);
+        this.circleDrawable.draw(canvas);
+        this.circlePaint.setColor(-1);
+        float f = i;
+        float f2 = i2;
+        canvas.drawCircle(f, f2, AndroidUtilities.dp(z ? 11.0f : 15.0f), this.circlePaint);
+        this.circlePaint.setColor(i3);
+        canvas.drawCircle(f, f2, AndroidUtilities.dp(z ? 9.0f : 13.0f), this.circlePaint);
     }
 
     @Override // android.view.View
@@ -991,6 +873,16 @@ public class ColorPicker extends FrameLayout {
             this.colorWheelBitmap = createColorWheelBitmap(i, AndroidUtilities.dp(180.0f));
             this.colorGradient = null;
         }
+    }
+
+    private Bitmap createColorWheelBitmap(int i, int i2) {
+        Bitmap createBitmap = Bitmap.createBitmap(i, i2, Bitmap.Config.ARGB_8888);
+        float f = i;
+        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+        float f2 = i2;
+        this.colorWheelPaint.setShader(new ComposeShader(new LinearGradient(0.0f, i2 / 3, 0.0f, f2, new int[]{-1, 0}, (float[]) null, tileMode), new LinearGradient(0.0f, 0.0f, f, 0.0f, new int[]{-65536, -256, -16711936, -16711681, -16776961, -65281, -65536}, (float[]) null, tileMode), PorterDuff.Mode.MULTIPLY));
+        new Canvas(createBitmap).drawRect(0.0f, 0.0f, f, f2, this.colorWheelPaint);
+        return createBitmap;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:27:0x00fa, code lost:
@@ -1090,44 +982,15 @@ public class ColorPicker extends FrameLayout {
         return true;
     }
 
-    public void provideThemeDescriptions(List list) {
-        for (int i = 0; i < this.colorEditText.length; i++) {
-            EditTextBoldCursor editTextBoldCursor = this.colorEditText[i];
-            int i2 = ThemeDescription.FLAG_TEXTCOLOR;
-            int i3 = Theme.key_windowBackgroundWhiteBlackText;
-            list.add(new ThemeDescription(editTextBoldCursor, i2, null, null, null, null, i3));
-            list.add(new ThemeDescription(this.colorEditText[i], ThemeDescription.FLAG_CURSORCOLOR, null, null, null, null, i3));
-            list.add(new ThemeDescription(this.colorEditText[i], ThemeDescription.FLAG_HINTTEXTCOLOR, null, null, null, null, Theme.key_windowBackgroundWhiteHintText));
-            list.add(new ThemeDescription(this.colorEditText[i], ThemeDescription.FLAG_PROGRESSBAR | ThemeDescription.FLAG_HINTTEXTCOLOR, null, null, null, null, Theme.key_windowBackgroundWhiteBlueHeader));
-            list.add(new ThemeDescription(this.colorEditText[i], ThemeDescription.FLAG_BACKGROUNDFILTER, null, null, null, null, Theme.key_windowBackgroundWhiteInputField));
-            list.add(new ThemeDescription(this.colorEditText[i], ThemeDescription.FLAG_DRAWABLESELECTEDSTATE | ThemeDescription.FLAG_BACKGROUNDFILTER, null, null, null, null, Theme.key_windowBackgroundWhiteInputFieldActivated));
+    /* JADX INFO: Access modifiers changed from: private */
+    public void setColorInner(int i) {
+        Color.colorToHSV(i, this.colorHSV);
+        int defaultColor = this.delegate.getDefaultColor(this.selectedColor);
+        if (defaultColor == 0 || defaultColor != i) {
+            updateHsvMinMaxBrightness();
         }
-        ImageView imageView = this.clearButton;
-        int i4 = ThemeDescription.FLAG_IMAGECOLOR;
-        int i5 = Theme.key_windowBackgroundWhiteBlackText;
-        list.add(new ThemeDescription(imageView, i4, null, null, null, null, i5));
-        ImageView imageView2 = this.clearButton;
-        int i6 = ThemeDescription.FLAG_BACKGROUNDFILTER;
-        int i7 = Theme.key_dialogButtonSelector;
-        list.add(new ThemeDescription(imageView2, i6, null, null, null, null, i7));
-        if (this.menuItem != null) {
-            ThemeDescription.ThemeDescriptionDelegate themeDescriptionDelegate = new ThemeDescription.ThemeDescriptionDelegate() { // from class: org.telegram.ui.Components.ColorPicker$$ExternalSyntheticLambda7
-                @Override // org.telegram.ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
-                public final void didSetColor() {
-                    ColorPicker.this.lambda$provideThemeDescriptions$7();
-                }
-
-                @Override // org.telegram.ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
-                public /* synthetic */ void onAnimationProgress(float f) {
-                    ThemeDescription.ThemeDescriptionDelegate.-CC.$default$onAnimationProgress(this, f);
-                }
-            };
-            list.add(new ThemeDescription(this.menuItem, 0, null, null, null, themeDescriptionDelegate, i5));
-            list.add(new ThemeDescription(this.menuItem, 0, null, null, null, themeDescriptionDelegate, i7));
-            list.add(new ThemeDescription(this.menuItem, 0, null, null, null, themeDescriptionDelegate, Theme.key_actionBarDefaultSubmenuItem));
-            list.add(new ThemeDescription(this.menuItem, 0, null, null, null, themeDescriptionDelegate, Theme.key_actionBarDefaultSubmenuItemIcon));
-            list.add(new ThemeDescription(this.menuItem, 0, null, null, null, themeDescriptionDelegate, Theme.key_actionBarDefaultSubmenuBackground));
-        }
+        this.colorGradient = null;
+        invalidate();
     }
 
     public void setColor(int i, int i2) {
@@ -1170,29 +1033,7 @@ public class ColorPicker extends FrameLayout {
         }
     }
 
-    public void setMaxBrightness(float f) {
-        this.maxBrightness = f;
-        updateHsvMinMaxBrightness();
-    }
-
-    public void setMinBrightness(float f) {
-        this.minBrightness = f;
-        updateHsvMinMaxBrightness();
-    }
-
-    public void setResourcesProvider(Theme.ResourcesProvider resourcesProvider) {
-        this.resourcesProvider = resourcesProvider;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:27:0x00cf  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public void setType(int i, boolean z, final int i2, int i3, boolean z2, int i4, boolean z3) {
-        ImageView imageView;
-        int dp;
-        int dp2;
-        ArrayList arrayList;
         if (i != this.currentResetType) {
             this.prevSelectedColor = 0;
             this.selectedColor = 0;
@@ -1208,19 +1049,12 @@ public class ColorPicker extends FrameLayout {
         this.colorsCount = i3;
         if (i3 == 1) {
             this.addButton.setTranslationX(0.0f);
+        } else if (i3 == 2) {
+            this.addButton.setTranslationX(AndroidUtilities.dp(30.0f) + AndroidUtilities.dp(13.0f));
+        } else if (i3 == 3) {
+            this.addButton.setTranslationX((AndroidUtilities.dp(30.0f) * 2) + (AndroidUtilities.dp(13.0f) * 2));
         } else {
-            if (i3 == 2) {
-                imageView = this.addButton;
-                dp = AndroidUtilities.dp(30.0f);
-                dp2 = AndroidUtilities.dp(13.0f);
-            } else if (i3 == 3) {
-                this.addButton.setTranslationX((AndroidUtilities.dp(30.0f) * 2) + (AndroidUtilities.dp(13.0f) * 2));
-            } else {
-                imageView = this.addButton;
-                dp = AndroidUtilities.dp(30.0f) * 3;
-                dp2 = AndroidUtilities.dp(13.0f) * 3;
-            }
-            imageView.setTranslationX(dp + dp2);
+            this.addButton.setTranslationX((AndroidUtilities.dp(30.0f) * 3) + (AndroidUtilities.dp(13.0f) * 3));
         }
         ActionBarMenuItem actionBarMenuItem = this.menuItem;
         if (actionBarMenuItem != null) {
@@ -1233,47 +1067,165 @@ public class ColorPicker extends FrameLayout {
         }
         if (i2 <= 1) {
             this.addButton.setVisibility(8);
+            this.clearButton.setVisibility(8);
         } else {
-            ImageView imageView2 = this.addButton;
             if (i3 < i2) {
-                imageView2.setVisibility(0);
+                this.addButton.setVisibility(0);
                 this.addButton.setScaleX(1.0f);
                 this.addButton.setScaleY(1.0f);
                 this.addButton.setAlpha(1.0f);
             } else {
-                imageView2.setVisibility(8);
+                this.addButton.setVisibility(8);
             }
             if (i3 > 1) {
                 this.clearButton.setVisibility(0);
                 this.clearButton.setScaleX(1.0f);
                 this.clearButton.setScaleY(1.0f);
                 this.clearButton.setAlpha(1.0f);
-                this.linearLayout.invalidate();
-                updateColorsPosition(null, 0, false, getMeasuredWidth());
-                arrayList = z3 ? new ArrayList() : null;
-                if (arrayList != null || arrayList.isEmpty()) {
-                }
-                AnimatorSet animatorSet = new AnimatorSet();
-                animatorSet.playTogether(arrayList);
-                animatorSet.setDuration(180L);
-                animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ColorPicker.9
-                    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-                    public void onAnimationEnd(Animator animator) {
-                        if (i2 <= 1) {
-                            ColorPicker.this.clearButton.setVisibility(8);
-                        }
-                    }
-                });
-                animatorSet.start();
-                return;
+            } else {
+                this.clearButton.setVisibility(8);
             }
         }
-        this.clearButton.setVisibility(8);
         this.linearLayout.invalidate();
         updateColorsPosition(null, 0, false, getMeasuredWidth());
-        if (z3) {
+        ArrayList arrayList = z3 ? new ArrayList() : null;
+        if (arrayList == null || arrayList.isEmpty()) {
+            return;
         }
-        if (arrayList != null) {
+        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.playTogether(arrayList);
+        animatorSet.setDuration(180L);
+        animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ColorPicker.9
+            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+            public void onAnimationEnd(Animator animator) {
+                if (i2 <= 1) {
+                    ColorPicker.this.clearButton.setVisibility(8);
+                }
+            }
+        });
+        animatorSet.start();
+    }
+
+    public int getColor() {
+        float[] fArr = this.hsvTemp;
+        float[] fArr2 = this.colorHSV;
+        fArr[0] = fArr2[0];
+        fArr[1] = fArr2[1];
+        fArr[2] = getBrightness();
+        return (Color.HSVToColor(this.hsvTemp) & 16777215) | (-16777216);
+    }
+
+    private float getBrightness() {
+        return Math.max(this.minHsvBrightness, Math.min(this.colorHSV[2], this.maxHsvBrightness));
+    }
+
+    private void updateHsvMinMaxBrightness() {
+        ImageView imageView = this.clearButton;
+        if (imageView == null) {
+            return;
         }
+        float f = imageView.getTag() != null ? 0.0f : this.minBrightness;
+        float f2 = this.clearButton.getTag() != null ? 1.0f : this.maxBrightness;
+        float[] fArr = this.colorHSV;
+        float f3 = fArr[2];
+        if (f == 0.0f && f2 == 1.0f) {
+            this.minHsvBrightness = 0.0f;
+            this.maxHsvBrightness = 1.0f;
+            return;
+        }
+        fArr[2] = 1.0f;
+        int HSVToColor = Color.HSVToColor(fArr);
+        this.colorHSV[2] = f3;
+        float computePerceivedBrightness = AndroidUtilities.computePerceivedBrightness(HSVToColor);
+        float max = Math.max(0.0f, Math.min(f / computePerceivedBrightness, 1.0f));
+        this.minHsvBrightness = max;
+        this.maxHsvBrightness = Math.max(max, Math.min(f2 / computePerceivedBrightness, 1.0f));
+    }
+
+    public void setMinBrightness(float f) {
+        this.minBrightness = f;
+        updateHsvMinMaxBrightness();
+    }
+
+    public void setMaxBrightness(float f) {
+        this.maxBrightness = f;
+        updateHsvMinMaxBrightness();
+    }
+
+    public void provideThemeDescriptions(List list) {
+        for (int i = 0; i < this.colorEditText.length; i++) {
+            EditTextBoldCursor editTextBoldCursor = this.colorEditText[i];
+            int i2 = ThemeDescription.FLAG_TEXTCOLOR;
+            int i3 = Theme.key_windowBackgroundWhiteBlackText;
+            list.add(new ThemeDescription(editTextBoldCursor, i2, null, null, null, null, i3));
+            list.add(new ThemeDescription(this.colorEditText[i], ThemeDescription.FLAG_CURSORCOLOR, null, null, null, null, i3));
+            list.add(new ThemeDescription(this.colorEditText[i], ThemeDescription.FLAG_HINTTEXTCOLOR, null, null, null, null, Theme.key_windowBackgroundWhiteHintText));
+            list.add(new ThemeDescription(this.colorEditText[i], ThemeDescription.FLAG_PROGRESSBAR | ThemeDescription.FLAG_HINTTEXTCOLOR, null, null, null, null, Theme.key_windowBackgroundWhiteBlueHeader));
+            list.add(new ThemeDescription(this.colorEditText[i], ThemeDescription.FLAG_BACKGROUNDFILTER, null, null, null, null, Theme.key_windowBackgroundWhiteInputField));
+            list.add(new ThemeDescription(this.colorEditText[i], ThemeDescription.FLAG_DRAWABLESELECTEDSTATE | ThemeDescription.FLAG_BACKGROUNDFILTER, null, null, null, null, Theme.key_windowBackgroundWhiteInputFieldActivated));
+        }
+        ImageView imageView = this.clearButton;
+        int i4 = ThemeDescription.FLAG_IMAGECOLOR;
+        int i5 = Theme.key_windowBackgroundWhiteBlackText;
+        list.add(new ThemeDescription(imageView, i4, null, null, null, null, i5));
+        ImageView imageView2 = this.clearButton;
+        int i6 = ThemeDescription.FLAG_BACKGROUNDFILTER;
+        int i7 = Theme.key_dialogButtonSelector;
+        list.add(new ThemeDescription(imageView2, i6, null, null, null, null, i7));
+        if (this.menuItem != null) {
+            ThemeDescription.ThemeDescriptionDelegate themeDescriptionDelegate = new ThemeDescription.ThemeDescriptionDelegate() { // from class: org.telegram.ui.Components.ColorPicker$$ExternalSyntheticLambda7
+                @Override // org.telegram.ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+                public final void didSetColor() {
+                    ColorPicker.this.lambda$provideThemeDescriptions$7();
+                }
+
+                @Override // org.telegram.ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+                public /* synthetic */ void onAnimationProgress(float f) {
+                    ThemeDescription.ThemeDescriptionDelegate.-CC.$default$onAnimationProgress(this, f);
+                }
+            };
+            list.add(new ThemeDescription(this.menuItem, 0, null, null, null, themeDescriptionDelegate, i5));
+            list.add(new ThemeDescription(this.menuItem, 0, null, null, null, themeDescriptionDelegate, i7));
+            list.add(new ThemeDescription(this.menuItem, 0, null, null, null, themeDescriptionDelegate, Theme.key_actionBarDefaultSubmenuItem));
+            list.add(new ThemeDescription(this.menuItem, 0, null, null, null, themeDescriptionDelegate, Theme.key_actionBarDefaultSubmenuItemIcon));
+            list.add(new ThemeDescription(this.menuItem, 0, null, null, null, themeDescriptionDelegate, Theme.key_actionBarDefaultSubmenuBackground));
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$provideThemeDescriptions$7() {
+        this.menuItem.setIconColor(getThemedColor(Theme.key_windowBackgroundWhiteBlackText));
+        Theme.setDrawableColor(this.menuItem.getBackground(), getThemedColor(Theme.key_dialogButtonSelector));
+        this.menuItem.setPopupItemsColor(getThemedColor(Theme.key_actionBarDefaultSubmenuItem), false);
+        this.menuItem.setPopupItemsColor(getThemedColor(Theme.key_actionBarDefaultSubmenuItemIcon), true);
+        this.menuItem.redrawPopup(getThemedColor(Theme.key_actionBarDefaultSubmenuBackground));
+    }
+
+    public static int generateGradientColors(int i) {
+        float[] fArr = new float[3];
+        Color.colorToHSV(i, fArr);
+        float f = fArr[1];
+        if (f > 0.5f) {
+            fArr[1] = f - 0.15f;
+        } else {
+            fArr[1] = f + 0.15f;
+        }
+        float f2 = fArr[0];
+        if (f2 > 180.0f) {
+            fArr[0] = f2 - 20.0f;
+        } else {
+            fArr[0] = f2 + 20.0f;
+        }
+        return Color.HSVToColor(NotificationCenter.goingToPreviewTheme, fArr);
+    }
+
+    public void setResourcesProvider(Theme.ResourcesProvider resourcesProvider) {
+        this.resourcesProvider = resourcesProvider;
+    }
+
+    @Override // android.view.View
+    public void invalidate() {
+        super.invalidate();
+        this.linearLayout.invalidate();
     }
 }

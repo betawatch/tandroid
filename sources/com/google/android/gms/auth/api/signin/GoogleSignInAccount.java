@@ -22,23 +22,24 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+@Deprecated
 /* loaded from: classes.dex */
 public class GoogleSignInAccount extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<GoogleSignInAccount> CREATOR = new zab();
-    public static Clock zaa = DefaultClock.getInstance();
+    public static final Clock zaa = DefaultClock.getInstance();
     final int zab;
-    List zac;
-    private String zad;
-    private String zae;
-    private String zaf;
-    private String zag;
-    private Uri zah;
+    final List zac;
+    private final String zad;
+    private final String zae;
+    private final String zaf;
+    private final String zag;
+    private final Uri zah;
     private String zai;
-    private long zaj;
-    private String zak;
-    private String zal;
-    private String zam;
-    private Set zan = new HashSet();
+    private final long zaj;
+    private final String zak;
+    private final String zal;
+    private final String zam;
+    private final Set zan = new HashSet();
 
     GoogleSignInAccount(int i, String str, String str2, String str3, String str4, Uri uri, String str5, long j, String str6, List list, String str7, String str8) {
         this.zab = i;

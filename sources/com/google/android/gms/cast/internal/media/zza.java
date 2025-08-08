@@ -51,16 +51,6 @@ public abstract class zza {
         }
     }
 
-    public static JSONArray zzc(List list) {
-        list.getClass();
-        JSONArray jSONArray = new JSONArray();
-        Iterator it = list.iterator();
-        while (it.hasNext()) {
-            jSONArray.put(((WebImage) it.next()).toJson());
-        }
-        return jSONArray;
-    }
-
     public static void zzd(List list, JSONArray jSONArray) {
         try {
             list.clear();
@@ -120,5 +110,15 @@ public abstract class zza {
             zza.e(e, "Error extracting the time substring: %s", new Object[0]);
             return null;
         }
+    }
+
+    public static JSONArray zzc(List list) {
+        list.getClass();
+        JSONArray jSONArray = new JSONArray();
+        Iterator it = list.iterator();
+        while (it.hasNext()) {
+            jSONArray.put(((WebImage) it.next()).toJson());
+        }
+        return jSONArray;
     }
 }

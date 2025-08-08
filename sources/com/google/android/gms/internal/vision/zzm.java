@@ -22,26 +22,15 @@ public final class zzm extends zzt {
         zzd();
     }
 
-    @Override // com.google.android.gms.internal.vision.zzt
-    protected final /* synthetic */ Object zza(DynamiteModule dynamiteModule, Context context) {
-        zzn zzpVar;
-        IBinder instantiate = dynamiteModule.instantiate("com.google.android.gms.vision.barcode.ChimeraNativeBarcodeDetectorCreator");
-        if (instantiate == null) {
-            zzpVar = null;
-        } else {
-            IInterface queryLocalInterface = instantiate.queryLocalInterface("com.google.android.gms.vision.barcode.internal.client.INativeBarcodeDetectorCreator");
-            zzpVar = queryLocalInterface instanceof zzn ? (zzn) queryLocalInterface : new zzp(instantiate);
+    public final Barcode[] zza(ByteBuffer byteBuffer, zzs zzsVar) {
+        if (!zzb()) {
+            return new Barcode[0];
         }
-        if (zzpVar == null) {
-            return null;
-        }
-        return zzpVar.zza(ObjectWrapper.wrap(context), (zzk) Preconditions.checkNotNull(this.zza));
-    }
-
-    @Override // com.google.android.gms.internal.vision.zzt
-    protected final void zza() {
-        if (zzb()) {
-            ((zzl) Preconditions.checkNotNull((zzl) zzd())).zza();
+        try {
+            return ((zzl) Preconditions.checkNotNull((zzl) zzd())).zza(ObjectWrapper.wrap(byteBuffer), zzsVar);
+        } catch (RemoteException e) {
+            Log.e("BarcodeNativeHandle", "Error calling native barcode detector", e);
+            return new Barcode[0];
         }
     }
 
@@ -57,15 +46,30 @@ public final class zzm extends zzt {
         }
     }
 
-    public final Barcode[] zza(ByteBuffer byteBuffer, zzs zzsVar) {
-        if (!zzb()) {
-            return new Barcode[0];
+    @Override // com.google.android.gms.internal.vision.zzt
+    protected final void zza() {
+        if (zzb()) {
+            ((zzl) Preconditions.checkNotNull((zzl) zzd())).zza();
         }
-        try {
-            return ((zzl) Preconditions.checkNotNull((zzl) zzd())).zza(ObjectWrapper.wrap(byteBuffer), zzsVar);
-        } catch (RemoteException e) {
-            Log.e("BarcodeNativeHandle", "Error calling native barcode detector", e);
-            return new Barcode[0];
+    }
+
+    @Override // com.google.android.gms.internal.vision.zzt
+    protected final /* synthetic */ Object zza(DynamiteModule dynamiteModule, Context context) {
+        zzn zzpVar;
+        IBinder instantiate = dynamiteModule.instantiate("com.google.android.gms.vision.barcode.ChimeraNativeBarcodeDetectorCreator");
+        if (instantiate == null) {
+            zzpVar = null;
+        } else {
+            IInterface queryLocalInterface = instantiate.queryLocalInterface("com.google.android.gms.vision.barcode.internal.client.INativeBarcodeDetectorCreator");
+            if (queryLocalInterface instanceof zzn) {
+                zzpVar = (zzn) queryLocalInterface;
+            } else {
+                zzpVar = new zzp(instantiate);
+            }
         }
+        if (zzpVar == null) {
+            return null;
+        }
+        return zzpVar.zza(ObjectWrapper.wrap(context), (zzk) Preconditions.checkNotNull(this.zza));
     }
 }

@@ -15,7 +15,7 @@ import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.RecyclerListView;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class UniversalRecyclerView extends RecyclerListView {
     public final UniversalAdapter adapter;
     private boolean doNotDetachViews;
@@ -24,70 +24,15 @@ public class UniversalRecyclerView extends RecyclerListView {
     private boolean reorderingAllowed;
     private boolean reorderingOnOtherAxis;
 
-    private class TouchHelperCallback extends ItemTouchHelper.Callback {
-        private TouchHelperCallback() {
-        }
+    protected void swappedElements() {
+    }
 
-        @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
-        public void clearView(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
-            super.clearView(recyclerView, viewHolder);
-            viewHolder.itemView.setPressed(false);
-        }
+    public void doNotDetachViews() {
+        this.doNotDetachViews = true;
+    }
 
-        @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
-        public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
-            int i;
-            if (!UniversalRecyclerView.this.reorderingAllowed || !UniversalRecyclerView.this.adapter.isReorderItem(viewHolder.getAdapterPosition())) {
-                return ItemTouchHelper.Callback.makeMovementFlags(0, 0);
-            }
-            if (UniversalRecyclerView.this.layoutManager.getOrientation() == 0) {
-                if (!UniversalRecyclerView.this.reorderingOnOtherAxis) {
-                    i = 12;
-                }
-                i = 15;
-            } else {
-                if (!UniversalRecyclerView.this.reorderingOnOtherAxis) {
-                    i = 3;
-                }
-                i = 15;
-            }
-            return ItemTouchHelper.Callback.makeMovementFlags(i, 0);
-        }
-
-        @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
-        public boolean isLongPressDragEnabled() {
-            return UniversalRecyclerView.this.reorderingAllowed;
-        }
-
-        @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
-        public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder viewHolder2) {
-            if (!UniversalRecyclerView.this.adapter.isReorderItem(viewHolder.getAdapterPosition()) || UniversalRecyclerView.this.adapter.getReorderSectionId(viewHolder.getAdapterPosition()) != UniversalRecyclerView.this.adapter.getReorderSectionId(viewHolder2.getAdapterPosition())) {
-                return false;
-            }
-            UniversalRecyclerView.this.adapter.swapElements(viewHolder.getAdapterPosition(), viewHolder2.getAdapterPosition());
-            UniversalRecyclerView.this.swappedElements();
-            return true;
-        }
-
-        @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
-        public void onSelectedChanged(RecyclerView.ViewHolder viewHolder, int i) {
-            if (viewHolder != null) {
-                UniversalRecyclerView.this.hideSelector(false);
-            }
-            if (i == 0) {
-                UniversalRecyclerView.this.adapter.reorderDone();
-            } else {
-                UniversalRecyclerView.this.cancelClickRunnables(false);
-                if (viewHolder != null) {
-                    viewHolder.itemView.setPressed(true);
-                }
-            }
-            super.onSelectedChanged(viewHolder, i);
-        }
-
-        @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
-        public void onSwiped(RecyclerView.ViewHolder viewHolder, int i) {
-        }
+    public UniversalRecyclerView(BaseFragment baseFragment, Utilities.Callback2 callback2, Utilities.Callback5 callback5, Utilities.Callback5Return callback5Return) {
+        this(baseFragment.getContext(), baseFragment.getCurrentAccount(), baseFragment.getClassGuid(), callback2, callback5, callback5Return, baseFragment.getResourceProvider());
     }
 
     public UniversalRecyclerView(Context context, int i, int i2, Utilities.Callback2 callback2, Utilities.Callback5 callback5, Utilities.Callback5Return callback5Return, Theme.ResourcesProvider resourcesProvider) {
@@ -120,10 +65,13 @@ public class UniversalRecyclerView extends RecyclerListView {
             extendedGridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: org.telegram.ui.Components.UniversalRecyclerView.3
                 @Override // androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
                 public int getSpanSize(int i5) {
-                    UItem item;
                     int i6;
                     UniversalAdapter universalAdapter = UniversalRecyclerView.this.adapter;
-                    return (universalAdapter == null || (item = universalAdapter.getItem(i5)) == null || (i6 = item.spanCount) == -1) ? extendedGridLayoutManager.getSpanCount() : i6;
+                    if (universalAdapter == null) {
+                        return extendedGridLayoutManager.getSpanCount();
+                    }
+                    UItem item = universalAdapter.getItem(i5);
+                    return (item == null || (i6 = item.spanCount) == -1) ? extendedGridLayoutManager.getSpanCount() : i6;
                 }
             });
             this.layoutManager = extendedGridLayoutManager;
@@ -184,15 +132,6 @@ public class UniversalRecyclerView extends RecyclerListView {
         setItemAnimator(defaultItemAnimator);
     }
 
-    public UniversalRecyclerView(BaseFragment baseFragment, Utilities.Callback2 callback2, Utilities.Callback5 callback5, Utilities.Callback5Return callback5Return) {
-        this(baseFragment.getContext(), baseFragment.getCurrentAccount(), baseFragment.getClassGuid(), callback2, callback5, callback5Return, baseFragment.getResourceProvider());
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$allowReorder$2(View view) {
-        this.adapter.updateReorder(getChildViewHolder(view), this.reorderingAllowed);
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$0(Utilities.Callback5 callback5, View view, int i, float f, float f2) {
         UItem item = this.adapter.getItem(i);
@@ -209,95 +148,6 @@ public class UniversalRecyclerView extends RecyclerListView {
             return false;
         }
         return ((Boolean) callback5Return.run(item, view, Integer.valueOf(i), Float.valueOf(f), Float.valueOf(f2))).booleanValue();
-    }
-
-    public void allowReorder(boolean z) {
-        if (this.reorderingAllowed == z) {
-            return;
-        }
-        UniversalAdapter universalAdapter = this.adapter;
-        this.reorderingAllowed = z;
-        universalAdapter.updateReorder(z);
-        AndroidUtilities.forEachViews((RecyclerView) this, new Consumer() { // from class: org.telegram.ui.Components.UniversalRecyclerView$$ExternalSyntheticLambda2
-            @Override // com.google.android.exoplayer2.util.Consumer
-            public final void accept(Object obj) {
-                UniversalRecyclerView.this.lambda$allowReorder$2((View) obj);
-            }
-        });
-    }
-
-    @Override // org.telegram.ui.Components.RecyclerListView, android.view.ViewGroup, android.view.View
-    protected void dispatchDraw(Canvas canvas) {
-        this.adapter.drawWhiteSections(canvas, this);
-        super.dispatchDraw(canvas);
-    }
-
-    public void doNotDetachViews() {
-        this.doNotDetachViews = true;
-    }
-
-    public int findPositionByItemId(int i) {
-        for (int i2 = 0; i2 < this.adapter.getItemCount(); i2++) {
-            UItem item = this.adapter.getItem(i2);
-            if (item != null && item.id == i) {
-                return i2;
-            }
-        }
-        return -1;
-    }
-
-    public View findViewByItemId(int i) {
-        int i2 = 0;
-        while (true) {
-            if (i2 >= this.adapter.getItemCount()) {
-                i2 = -1;
-                break;
-            }
-            UItem item = this.adapter.getItem(i2);
-            if (item != null && item.id == i) {
-                break;
-            }
-            i2++;
-        }
-        return findViewByPosition(i2);
-    }
-
-    public View findViewByPosition(int i) {
-        if (i == -1) {
-            return null;
-        }
-        for (int i2 = 0; i2 < getChildCount(); i2++) {
-            View childAt = getChildAt(i2);
-            int childAdapterPosition = getChildAdapterPosition(childAt);
-            if (childAdapterPosition != -1 && childAdapterPosition == i) {
-                return childAt;
-            }
-        }
-        return null;
-    }
-
-    public int getSpanCount() {
-        LinearLayoutManager linearLayoutManager = this.layoutManager;
-        if (linearLayoutManager instanceof ExtendedGridLayoutManager) {
-            return ((ExtendedGridLayoutManager) linearLayoutManager).getSpanCount();
-        }
-        return -1;
-    }
-
-    public boolean isReorderAllowed() {
-        return this.reorderingAllowed;
-    }
-
-    public void listenReorder(Utilities.Callback2 callback2) {
-        listenReorder(callback2, false);
-    }
-
-    public void listenReorder(Utilities.Callback2 callback2, boolean z) {
-        this.reorderingOnOtherAxis = z;
-        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new TouchHelperCallback());
-        this.itemTouchHelper = itemTouchHelper;
-        itemTouchHelper.attachToRecyclerView(this);
-        this.adapter.listenReorder(callback2);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -330,16 +180,172 @@ public class UniversalRecyclerView extends RecyclerListView {
         extendedGridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: org.telegram.ui.Components.UniversalRecyclerView.7
             @Override // androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
             public int getSpanSize(int i2) {
-                UItem item;
                 int i3;
                 UniversalAdapter universalAdapter = UniversalRecyclerView.this.adapter;
-                return (universalAdapter == null || (item = universalAdapter.getItem(i2)) == null || (i3 = item.spanCount) == -1) ? extendedGridLayoutManager.getSpanCount() : i3;
+                if (universalAdapter == null) {
+                    return extendedGridLayoutManager.getSpanCount();
+                }
+                UItem item = universalAdapter.getItem(i2);
+                return (item == null || (i3 = item.spanCount) == -1) ? extendedGridLayoutManager.getSpanCount() : i3;
             }
         });
         this.layoutManager = extendedGridLayoutManager;
         setLayoutManager(extendedGridLayoutManager);
     }
 
-    protected void swappedElements() {
+    public int getSpanCount() {
+        LinearLayoutManager linearLayoutManager = this.layoutManager;
+        if (linearLayoutManager instanceof ExtendedGridLayoutManager) {
+            return ((ExtendedGridLayoutManager) linearLayoutManager).getSpanCount();
+        }
+        return -1;
+    }
+
+    public void listenReorder(Utilities.Callback2 callback2) {
+        listenReorder(callback2, false);
+    }
+
+    public void listenReorder(Utilities.Callback2 callback2, boolean z) {
+        this.reorderingOnOtherAxis = z;
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new TouchHelperCallback());
+        this.itemTouchHelper = itemTouchHelper;
+        itemTouchHelper.attachToRecyclerView(this);
+        this.adapter.listenReorder(callback2);
+    }
+
+    public boolean isReorderAllowed() {
+        return this.reorderingAllowed;
+    }
+
+    public void allowReorder(boolean z) {
+        if (this.reorderingAllowed == z) {
+            return;
+        }
+        UniversalAdapter universalAdapter = this.adapter;
+        this.reorderingAllowed = z;
+        universalAdapter.updateReorder(z);
+        AndroidUtilities.forEachViews((RecyclerView) this, new Consumer() { // from class: org.telegram.ui.Components.UniversalRecyclerView$$ExternalSyntheticLambda2
+            @Override // com.google.android.exoplayer2.util.Consumer
+            public final void accept(Object obj) {
+                UniversalRecyclerView.this.lambda$allowReorder$2((View) obj);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$allowReorder$2(View view) {
+        this.adapter.updateReorder(getChildViewHolder(view), this.reorderingAllowed);
+    }
+
+    @Override // org.telegram.ui.Components.RecyclerListView, android.view.ViewGroup, android.view.View
+    protected void dispatchDraw(Canvas canvas) {
+        this.adapter.drawWhiteSections(canvas, this);
+        super.dispatchDraw(canvas);
+    }
+
+    public View findViewByItemId(int i) {
+        int i2 = 0;
+        while (true) {
+            if (i2 >= this.adapter.getItemCount()) {
+                i2 = -1;
+                break;
+            }
+            UItem item = this.adapter.getItem(i2);
+            if (item != null && item.id == i) {
+                break;
+            }
+            i2++;
+        }
+        return findViewByPosition(i2);
+    }
+
+    public int findPositionByItemId(int i) {
+        for (int i2 = 0; i2 < this.adapter.getItemCount(); i2++) {
+            UItem item = this.adapter.getItem(i2);
+            if (item != null && item.id == i) {
+                return i2;
+            }
+        }
+        return -1;
+    }
+
+    public View findViewByPosition(int i) {
+        if (i == -1) {
+            return null;
+        }
+        for (int i2 = 0; i2 < getChildCount(); i2++) {
+            View childAt = getChildAt(i2);
+            int childAdapterPosition = getChildAdapterPosition(childAt);
+            if (childAdapterPosition != -1 && childAdapterPosition == i) {
+                return childAt;
+            }
+        }
+        return null;
+    }
+
+    private class TouchHelperCallback extends ItemTouchHelper.Callback {
+        @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
+        public void onSwiped(RecyclerView.ViewHolder viewHolder, int i) {
+        }
+
+        private TouchHelperCallback() {
+        }
+
+        @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
+        public boolean isLongPressDragEnabled() {
+            return UniversalRecyclerView.this.reorderingAllowed;
+        }
+
+        @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
+        public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
+            int i;
+            if (UniversalRecyclerView.this.reorderingAllowed && UniversalRecyclerView.this.adapter.isReorderItem(viewHolder.getAdapterPosition())) {
+                if (UniversalRecyclerView.this.layoutManager.getOrientation() == 0) {
+                    if (!UniversalRecyclerView.this.reorderingOnOtherAxis) {
+                        i = 12;
+                    }
+                    i = 15;
+                } else {
+                    if (!UniversalRecyclerView.this.reorderingOnOtherAxis) {
+                        i = 3;
+                    }
+                    i = 15;
+                }
+                return ItemTouchHelper.Callback.makeMovementFlags(i, 0);
+            }
+            return ItemTouchHelper.Callback.makeMovementFlags(0, 0);
+        }
+
+        @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
+        public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder viewHolder2) {
+            if (!UniversalRecyclerView.this.adapter.isReorderItem(viewHolder.getAdapterPosition()) || UniversalRecyclerView.this.adapter.getReorderSectionId(viewHolder.getAdapterPosition()) != UniversalRecyclerView.this.adapter.getReorderSectionId(viewHolder2.getAdapterPosition())) {
+                return false;
+            }
+            UniversalRecyclerView.this.adapter.swapElements(viewHolder.getAdapterPosition(), viewHolder2.getAdapterPosition());
+            UniversalRecyclerView.this.swappedElements();
+            return true;
+        }
+
+        @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
+        public void onSelectedChanged(RecyclerView.ViewHolder viewHolder, int i) {
+            if (viewHolder != null) {
+                UniversalRecyclerView.this.hideSelector(false);
+            }
+            if (i == 0) {
+                UniversalRecyclerView.this.adapter.reorderDone();
+            } else {
+                UniversalRecyclerView.this.cancelClickRunnables(false);
+                if (viewHolder != null) {
+                    viewHolder.itemView.setPressed(true);
+                }
+            }
+            super.onSelectedChanged(viewHolder, i);
+        }
+
+        @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
+        public void clearView(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
+            super.clearView(recyclerView, viewHolder);
+            viewHolder.itemView.setPressed(false);
+        }
     }
 }

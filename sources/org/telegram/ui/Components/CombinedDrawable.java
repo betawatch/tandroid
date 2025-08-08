@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.drawable.Drawable;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class CombinedDrawable extends Drawable implements Drawable.Callback {
     private int backHeight;
     private int backWidth;
@@ -22,12 +22,9 @@ public class CombinedDrawable extends Drawable implements Drawable.Callback {
     public float translateX;
     public float translateY;
 
-    public CombinedDrawable(Drawable drawable, Drawable drawable2) {
-        this.background = drawable;
-        this.icon = drawable2;
-        if (drawable2 != null) {
-            drawable2.setCallback(this);
-        }
+    @Override // android.graphics.drawable.Drawable
+    protected boolean onStateChange(int[] iArr) {
+        return true;
     }
 
     public CombinedDrawable(Drawable drawable, Drawable drawable2, int i, int i2) {
@@ -38,6 +35,84 @@ public class CombinedDrawable extends Drawable implements Drawable.Callback {
         if (drawable2 != null) {
             drawable2.setCallback(this);
         }
+    }
+
+    public void setIconSize(int i, int i2) {
+        this.iconWidth = i;
+        this.iconHeight = i2;
+    }
+
+    public CombinedDrawable(Drawable drawable, Drawable drawable2) {
+        this.background = drawable;
+        this.icon = drawable2;
+        if (drawable2 != null) {
+            drawable2.setCallback(this);
+        }
+    }
+
+    public void setBackgroundDrawable(Drawable drawable) {
+        this.background = drawable;
+        invalidateSelf();
+    }
+
+    public void setCustomSize(int i, int i2) {
+        this.backWidth = i;
+        this.backHeight = i2;
+    }
+
+    public void setCenter(boolean z) {
+        this.center = z;
+    }
+
+    public void setIconOffset(int i, int i2) {
+        this.offsetX = i;
+        this.offsetY = i2;
+    }
+
+    public Drawable getIcon() {
+        return this.icon;
+    }
+
+    public Drawable getBackground() {
+        return this.background;
+    }
+
+    public void setFullsize(boolean z) {
+        this.fullSize = z;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setColorFilter(ColorFilter colorFilter) {
+        this.icon.setColorFilter(colorFilter);
+        if (this.both) {
+            this.background.setColorFilter(colorFilter);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public boolean isStateful() {
+        return this.icon.isStateful();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public boolean setState(int[] iArr) {
+        this.icon.setState(iArr);
+        return true;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int[] getState() {
+        return this.icon.getState();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void jumpToCurrentState() {
+        this.icon.jumpToCurrentState();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public Drawable.ConstantState getConstantState() {
+        return this.icon.getConstantState();
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -83,27 +158,10 @@ public class CombinedDrawable extends Drawable implements Drawable.Callback {
         canvas.restore();
     }
 
-    public Drawable getBackground() {
-        return this.background;
-    }
-
-    public Drawable getBackgroundDrawable() {
-        return this.background;
-    }
-
     @Override // android.graphics.drawable.Drawable
-    public Drawable.ConstantState getConstantState() {
-        return this.icon.getConstantState();
-    }
-
-    public Drawable getIcon() {
-        return this.icon;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int getIntrinsicHeight() {
-        int i = this.backHeight;
-        return i != 0 ? i : this.background.getIntrinsicHeight();
+    public void setAlpha(int i) {
+        this.icon.setAlpha(i);
+        this.background.setAlpha(i);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -113,9 +171,9 @@ public class CombinedDrawable extends Drawable implements Drawable.Callback {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public int getMinimumHeight() {
+    public int getIntrinsicHeight() {
         int i = this.backHeight;
-        return i != 0 ? i : this.background.getMinimumHeight();
+        return i != 0 ? i : this.background.getIntrinsicHeight();
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -125,13 +183,14 @@ public class CombinedDrawable extends Drawable implements Drawable.Callback {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public int getOpacity() {
-        return this.icon.getOpacity();
+    public int getMinimumHeight() {
+        int i = this.backHeight;
+        return i != 0 ? i : this.background.getMinimumHeight();
     }
 
     @Override // android.graphics.drawable.Drawable
-    public int[] getState() {
-        return this.icon.getState();
+    public int getOpacity() {
+        return this.icon.getOpacity();
     }
 
     @Override // android.graphics.drawable.Drawable.Callback
@@ -139,76 +198,17 @@ public class CombinedDrawable extends Drawable implements Drawable.Callback {
         invalidateSelf();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public boolean isStateful() {
-        return this.icon.isStateful();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void jumpToCurrentState() {
-        this.icon.jumpToCurrentState();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    protected boolean onStateChange(int[] iArr) {
-        return true;
-    }
-
     @Override // android.graphics.drawable.Drawable.Callback
     public void scheduleDrawable(Drawable drawable, Runnable runnable, long j) {
         scheduleSelf(runnable, j);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public void setAlpha(int i) {
-        this.icon.setAlpha(i);
-        this.background.setAlpha(i);
-    }
-
-    public void setBackgroundDrawable(Drawable drawable) {
-        this.background = drawable;
-        invalidateSelf();
-    }
-
-    public void setCenter(boolean z) {
-        this.center = z;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setColorFilter(ColorFilter colorFilter) {
-        this.icon.setColorFilter(colorFilter);
-        if (this.both) {
-            this.background.setColorFilter(colorFilter);
-        }
-    }
-
-    public void setCustomSize(int i, int i2) {
-        this.backWidth = i;
-        this.backHeight = i2;
-    }
-
-    public void setFullsize(boolean z) {
-        this.fullSize = z;
-    }
-
-    public void setIconOffset(int i, int i2) {
-        this.offsetX = i;
-        this.offsetY = i2;
-    }
-
-    public void setIconSize(int i, int i2) {
-        this.iconWidth = i;
-        this.iconHeight = i2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public boolean setState(int[] iArr) {
-        this.icon.setState(iArr);
-        return true;
-    }
-
     @Override // android.graphics.drawable.Drawable.Callback
     public void unscheduleDrawable(Drawable drawable, Runnable runnable) {
         unscheduleSelf(runnable);
+    }
+
+    public Drawable getBackgroundDrawable() {
+        return this.background;
     }
 }

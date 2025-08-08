@@ -23,20 +23,12 @@ public class ResultReceiver implements Parcelable {
     final boolean mLocal = false;
     final Handler mHandler = null;
 
-    class MyResultReceiver extends IResultReceiver.Stub {
-        MyResultReceiver() {
-        }
+    @Override // android.os.Parcelable
+    public int describeContents() {
+        return 0;
+    }
 
-        @Override // android.support.v4.os.IResultReceiver
-        public void send(int i, Bundle bundle) {
-            ResultReceiver resultReceiver = ResultReceiver.this;
-            Handler handler = resultReceiver.mHandler;
-            if (handler != null) {
-                handler.post(resultReceiver.new MyRunnable(i, bundle));
-            } else {
-                resultReceiver.onReceiveResult(i, bundle);
-            }
-        }
+    protected void onReceiveResult(int i, Bundle bundle) {
     }
 
     class MyRunnable implements Runnable {
@@ -54,16 +46,20 @@ public class ResultReceiver implements Parcelable {
         }
     }
 
-    ResultReceiver(Parcel parcel) {
-        this.mReceiver = IResultReceiver.Stub.asInterface(parcel.readStrongBinder());
-    }
+    class MyResultReceiver extends IResultReceiver.Stub {
+        MyResultReceiver() {
+        }
 
-    @Override // android.os.Parcelable
-    public int describeContents() {
-        return 0;
-    }
-
-    protected void onReceiveResult(int i, Bundle bundle) {
+        @Override // android.support.v4.os.IResultReceiver
+        public void send(int i, Bundle bundle) {
+            ResultReceiver resultReceiver = ResultReceiver.this;
+            Handler handler = resultReceiver.mHandler;
+            if (handler != null) {
+                handler.post(resultReceiver.new MyRunnable(i, bundle));
+            } else {
+                resultReceiver.onReceiveResult(i, bundle);
+            }
+        }
     }
 
     @Override // android.os.Parcelable
@@ -78,5 +74,9 @@ public class ResultReceiver implements Parcelable {
                 throw th;
             }
         }
+    }
+
+    ResultReceiver(Parcel parcel) {
+        this.mReceiver = IResultReceiver.Stub.asInterface(parcel.readStrongBinder());
     }
 }

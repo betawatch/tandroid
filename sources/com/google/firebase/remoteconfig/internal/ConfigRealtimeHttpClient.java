@@ -37,7 +37,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.json.JSONObject;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class ConfigRealtimeHttpClient {
     static final int[] BACKOFF_TIME_DURATIONS_IN_MINUTES = {2, 4, 8, 16, 32, 64, 128, 256};
     private static final Pattern GMP_APP_ID_PATTERN = Pattern.compile("^[^:]+:([0-9]+):(android|ios|web):([0-9a-f]+)");
@@ -58,6 +58,10 @@ public class ConfigRealtimeHttpClient {
     private boolean isRealtimeDisabled = false;
     private boolean isInBackground = false;
 
+    private boolean isStatusCodeRetryable(int i) {
+        return i == 408 || i == 429 || i == 502 || i == 503 || i == 504;
+    }
+
     public ConfigRealtimeHttpClient(FirebaseApp firebaseApp, FirebaseInstallationsApi firebaseInstallationsApi, ConfigFetchHandler configFetchHandler, ConfigCacheClient configCacheClient, Context context, String str, Set set, ConfigMetadataClient configMetadataClient, ScheduledExecutorService scheduledExecutorService) {
         this.listeners = set;
         this.scheduledExecutorService = scheduledExecutorService;
@@ -69,30 +73,6 @@ public class ConfigRealtimeHttpClient {
         this.context = context;
         this.namespace = str;
         this.metadataClient = configMetadataClient;
-    }
-
-    private synchronized boolean canMakeHttpStreamConnection() {
-        boolean z;
-        if (!this.listeners.isEmpty() && !this.isHttpConnectionRunning && !this.isRealtimeDisabled) {
-            z = this.isInBackground ? false : true;
-        }
-        return z;
-    }
-
-    private JSONObject createRequestBody(String str) {
-        HashMap hashMap = new HashMap();
-        hashMap.put("project", extractProjectNumberFromAppId(this.firebaseApp.getOptions().getApplicationId()));
-        hashMap.put("namespace", this.namespace);
-        hashMap.put("lastKnownVersionNumber", Long.toString(this.configFetchHandler.getTemplateVersionNumber()));
-        hashMap.put("appId", this.firebaseApp.getOptions().getApplicationId());
-        hashMap.put("sdkVersion", "21.6.0");
-        hashMap.put("appInstanceId", str);
-        return new JSONObject(hashMap);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public synchronized void enableBackoff() {
-        this.isRealtimeDisabled = true;
     }
 
     private static String extractProjectNumberFromAppId(String str) {
@@ -107,15 +87,60 @@ public class ConfigRealtimeHttpClient {
         try {
             Context context = this.context;
             byte[] packageCertificateHashBytes = AndroidUtilsLight.getPackageCertificateHashBytes(context, context.getPackageName());
-            if (packageCertificateHashBytes != null) {
-                return Hex.bytesToStringUppercase(packageCertificateHashBytes, false);
+            if (packageCertificateHashBytes == null) {
+                Log.e("FirebaseRemoteConfig", "Could not get fingerprint hash for package: " + this.context.getPackageName());
+                return null;
             }
-            Log.e("FirebaseRemoteConfig", "Could not get fingerprint hash for package: " + this.context.getPackageName());
-            return null;
+            return Hex.bytesToStringUppercase(packageCertificateHashBytes, false);
         } catch (PackageManager.NameNotFoundException unused) {
             Log.i("FirebaseRemoteConfig", "No such package: " + this.context.getPackageName());
             return null;
         }
+    }
+
+    private void setCommonRequestHeaders(HttpURLConnection httpURLConnection, String str) {
+        httpURLConnection.setRequestProperty("X-Goog-Firebase-Installations-Auth", str);
+        httpURLConnection.setRequestProperty("X-Goog-Api-Key", this.firebaseApp.getOptions().getApiKey());
+        httpURLConnection.setRequestProperty("X-Android-Package", this.context.getPackageName());
+        httpURLConnection.setRequestProperty("X-Android-Cert", getFingerprintHashForPackage());
+        httpURLConnection.setRequestProperty("X-Google-GFE-Can-Retry", "yes");
+        httpURLConnection.setRequestProperty("X-Accept-Response-Streaming", "true");
+        httpURLConnection.setRequestProperty("Content-Type", "application/json");
+        httpURLConnection.setRequestProperty("Accept", "application/json");
+    }
+
+    private JSONObject createRequestBody(String str) {
+        HashMap hashMap = new HashMap();
+        hashMap.put("project", extractProjectNumberFromAppId(this.firebaseApp.getOptions().getApplicationId()));
+        hashMap.put("namespace", this.namespace);
+        hashMap.put("lastKnownVersionNumber", Long.toString(this.configFetchHandler.getTemplateVersionNumber()));
+        hashMap.put("appId", this.firebaseApp.getOptions().getApplicationId());
+        hashMap.put("sdkVersion", "21.6.0");
+        hashMap.put("appInstanceId", str);
+        return new JSONObject(hashMap);
+    }
+
+    public void setRequestParams(HttpURLConnection httpURLConnection, String str, String str2) {
+        httpURLConnection.setRequestMethod("POST");
+        setCommonRequestHeaders(httpURLConnection, str2);
+        byte[] bytes = createRequestBody(str).toString().getBytes("utf-8");
+        BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(httpURLConnection.getOutputStream());
+        bufferedOutputStream.write(bytes);
+        bufferedOutputStream.flush();
+        bufferedOutputStream.close();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public synchronized void propagateErrors(FirebaseRemoteConfigException firebaseRemoteConfigException) {
+        Iterator it = this.listeners.iterator();
+        while (it.hasNext()) {
+            ((ConfigUpdateListener) it.next()).onError(firebaseRemoteConfigException);
+        }
+    }
+
+    private void updateBackoffMetadataWithLastFailedStreamConnectionTime(Date date) {
+        int numFailedStreams = this.metadataClient.getRealtimeBackoffMetadata().getNumFailedStreams() + 1;
+        this.metadataClient.setRealtimeBackoffMetadata(numFailedStreams, new Date(date.getTime() + getRandomizedBackoffDurationInMillis(numFailedStreams)));
     }
 
     private long getRandomizedBackoffDurationInMillis(int i) {
@@ -124,6 +149,19 @@ public class ConfigRealtimeHttpClient {
             i = length;
         }
         return (TimeUnit.MINUTES.toMillis(r0[i - 1]) / 2) + this.random.nextInt((int) r0);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public synchronized void enableBackoff() {
+        this.isRealtimeDisabled = true;
+    }
+
+    private synchronized boolean canMakeHttpStreamConnection() {
+        boolean z;
+        if (!this.listeners.isEmpty() && !this.isHttpConnectionRunning && !this.isRealtimeDisabled) {
+            z = this.isInBackground ? false : true;
+        }
+        return z;
     }
 
     private String getRealtimeURL(String str) {
@@ -139,8 +177,126 @@ public class ConfigRealtimeHttpClient {
         }
     }
 
-    private boolean isStatusCodeRetryable(int i) {
-        return i == 408 || i == 429 || i == 502 || i == 503 || i == 504;
+    public Task createRealtimeConnection() {
+        final Task token = this.firebaseInstallations.getToken(false);
+        final Task id = this.firebaseInstallations.getId();
+        return Tasks.whenAllComplete((Task<?>[]) new Task[]{token, id}).continueWithTask(this.scheduledExecutorService, new Continuation() { // from class: com.google.firebase.remoteconfig.internal.ConfigRealtimeHttpClient$$ExternalSyntheticLambda1
+            @Override // com.google.android.gms.tasks.Continuation
+            public final Object then(Task task) {
+                Task lambda$createRealtimeConnection$0;
+                lambda$createRealtimeConnection$0 = ConfigRealtimeHttpClient.this.lambda$createRealtimeConnection$0(token, id, task);
+                return lambda$createRealtimeConnection$0;
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ Task lambda$createRealtimeConnection$0(Task task, Task task2, Task task3) {
+        if (!task.isSuccessful()) {
+            return Tasks.forException(new FirebaseRemoteConfigClientException("Firebase Installations failed to get installation auth token for config update listener connection.", task.getException()));
+        }
+        if (!task2.isSuccessful()) {
+            return Tasks.forException(new FirebaseRemoteConfigClientException("Firebase Installations failed to get installation ID for config update listener connection.", task2.getException()));
+        }
+        try {
+            HttpURLConnection httpURLConnection = (HttpURLConnection) getUrl().openConnection();
+            setRequestParams(httpURLConnection, (String) task2.getResult(), ((InstallationTokenResult) task.getResult()).getToken());
+            return Tasks.forResult(httpURLConnection);
+        } catch (IOException e) {
+            return Tasks.forException(new FirebaseRemoteConfigClientException("Failed to open HTTP stream connection", e));
+        }
+    }
+
+    public void startHttpConnection() {
+        makeRealtimeHttpConnection(0L);
+    }
+
+    public synchronized void retryHttpConnectionWhenBackoffEnds() {
+        makeRealtimeHttpConnection(Math.max(0L, this.metadataClient.getRealtimeBackoffMetadata().getBackoffEndTime().getTime() - new Date(this.clock.currentTimeMillis()).getTime()));
+    }
+
+    private synchronized void makeRealtimeHttpConnection(long j) {
+        try {
+            if (canMakeHttpStreamConnection()) {
+                int i = this.httpRetriesRemaining;
+                if (i > 0) {
+                    this.httpRetriesRemaining = i - 1;
+                    this.scheduledExecutorService.schedule(new Runnable() { // from class: com.google.firebase.remoteconfig.internal.ConfigRealtimeHttpClient.1
+                        @Override // java.lang.Runnable
+                        public void run() {
+                            ConfigRealtimeHttpClient.this.beginRealtimeHttpStream();
+                        }
+                    }, j, TimeUnit.MILLISECONDS);
+                } else if (!this.isInBackground) {
+                    propagateErrors(new FirebaseRemoteConfigClientException("Unable to connect to the server. Check your connection and try again.", FirebaseRemoteConfigException.Code.CONFIG_UPDATE_STREAM_ERROR));
+                }
+            }
+        } catch (Throwable th) {
+            throw th;
+        }
+    }
+
+    void setRealtimeBackgroundState(boolean z) {
+        this.isInBackground = z;
+    }
+
+    private synchronized void resetRetryCount() {
+        this.httpRetriesRemaining = 8;
+    }
+
+    private synchronized void setIsHttpConnectionRunning(boolean z) {
+        this.isHttpConnectionRunning = z;
+    }
+
+    public synchronized ConfigAutoFetch startAutoFetch(HttpURLConnection httpURLConnection) {
+        return new ConfigAutoFetch(httpURLConnection, this.configFetchHandler, this.activatedCache, this.listeners, new ConfigUpdateListener() { // from class: com.google.firebase.remoteconfig.internal.ConfigRealtimeHttpClient.2
+            @Override // com.google.firebase.remoteconfig.ConfigUpdateListener
+            public void onUpdate(ConfigUpdate configUpdate) {
+            }
+
+            @Override // com.google.firebase.remoteconfig.ConfigUpdateListener
+            public void onError(FirebaseRemoteConfigException firebaseRemoteConfigException) {
+                ConfigRealtimeHttpClient.this.enableBackoff();
+                ConfigRealtimeHttpClient.this.propagateErrors(firebaseRemoteConfigException);
+            }
+        }, this.scheduledExecutorService);
+    }
+
+    private String parseForbiddenErrorResponseMessage(InputStream inputStream) {
+        StringBuilder sb = new StringBuilder();
+        try {
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            while (true) {
+                String readLine = bufferedReader.readLine();
+                if (readLine == null) {
+                    break;
+                }
+                sb.append(readLine);
+            }
+        } catch (IOException unused) {
+            if (sb.length() == 0) {
+                return "Unable to connect to the server, access is forbidden. HTTP status code: 403";
+            }
+        }
+        return sb.toString();
+    }
+
+    public void beginRealtimeHttpStream() {
+        if (canMakeHttpStreamConnection()) {
+            if (new Date(this.clock.currentTimeMillis()).before(this.metadataClient.getRealtimeBackoffMetadata().getBackoffEndTime())) {
+                retryHttpConnectionWhenBackoffEnds();
+            } else {
+                final Task createRealtimeConnection = createRealtimeConnection();
+                Tasks.whenAllComplete((Task<?>[]) new Task[]{createRealtimeConnection}).continueWith(this.scheduledExecutorService, new Continuation() { // from class: com.google.firebase.remoteconfig.internal.ConfigRealtimeHttpClient$$ExternalSyntheticLambda0
+                    @Override // com.google.android.gms.tasks.Continuation
+                    public final Object then(Task task) {
+                        Task lambda$beginRealtimeHttpStream$1;
+                        lambda$beginRealtimeHttpStream$1 = ConfigRealtimeHttpClient.this.lambda$beginRealtimeHttpStream$1(createRealtimeConnection, task);
+                        return lambda$beginRealtimeHttpStream$1;
+                    }
+                });
+            }
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -250,113 +406,6 @@ public class ConfigRealtimeHttpClient {
         return Tasks.forResult(null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Task lambda$createRealtimeConnection$0(Task task, Task task2, Task task3) {
-        if (!task.isSuccessful()) {
-            return Tasks.forException(new FirebaseRemoteConfigClientException("Firebase Installations failed to get installation auth token for config update listener connection.", task.getException()));
-        }
-        if (!task2.isSuccessful()) {
-            return Tasks.forException(new FirebaseRemoteConfigClientException("Firebase Installations failed to get installation ID for config update listener connection.", task2.getException()));
-        }
-        try {
-            HttpURLConnection httpURLConnection = (HttpURLConnection) getUrl().openConnection();
-            setRequestParams(httpURLConnection, (String) task2.getResult(), ((InstallationTokenResult) task.getResult()).getToken());
-            return Tasks.forResult(httpURLConnection);
-        } catch (IOException e) {
-            return Tasks.forException(new FirebaseRemoteConfigClientException("Failed to open HTTP stream connection", e));
-        }
-    }
-
-    private synchronized void makeRealtimeHttpConnection(long j) {
-        try {
-            if (canMakeHttpStreamConnection()) {
-                int i = this.httpRetriesRemaining;
-                if (i > 0) {
-                    this.httpRetriesRemaining = i - 1;
-                    this.scheduledExecutorService.schedule(new Runnable() { // from class: com.google.firebase.remoteconfig.internal.ConfigRealtimeHttpClient.1
-                        @Override // java.lang.Runnable
-                        public void run() {
-                            ConfigRealtimeHttpClient.this.beginRealtimeHttpStream();
-                        }
-                    }, j, TimeUnit.MILLISECONDS);
-                } else if (!this.isInBackground) {
-                    propagateErrors(new FirebaseRemoteConfigClientException("Unable to connect to the server. Check your connection and try again.", FirebaseRemoteConfigException.Code.CONFIG_UPDATE_STREAM_ERROR));
-                }
-            }
-        } catch (Throwable th) {
-            throw th;
-        }
-    }
-
-    private String parseForbiddenErrorResponseMessage(InputStream inputStream) {
-        StringBuilder sb = new StringBuilder();
-        try {
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-            while (true) {
-                String readLine = bufferedReader.readLine();
-                if (readLine == null) {
-                    break;
-                }
-                sb.append(readLine);
-            }
-        } catch (IOException unused) {
-            if (sb.length() == 0) {
-                return "Unable to connect to the server, access is forbidden. HTTP status code: 403";
-            }
-        }
-        return sb.toString();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public synchronized void propagateErrors(FirebaseRemoteConfigException firebaseRemoteConfigException) {
-        Iterator it = this.listeners.iterator();
-        while (it.hasNext()) {
-            ((ConfigUpdateListener) it.next()).onError(firebaseRemoteConfigException);
-        }
-    }
-
-    private synchronized void resetRetryCount() {
-        this.httpRetriesRemaining = 8;
-    }
-
-    private void setCommonRequestHeaders(HttpURLConnection httpURLConnection, String str) {
-        httpURLConnection.setRequestProperty("X-Goog-Firebase-Installations-Auth", str);
-        httpURLConnection.setRequestProperty("X-Goog-Api-Key", this.firebaseApp.getOptions().getApiKey());
-        httpURLConnection.setRequestProperty("X-Android-Package", this.context.getPackageName());
-        httpURLConnection.setRequestProperty("X-Android-Cert", getFingerprintHashForPackage());
-        httpURLConnection.setRequestProperty("X-Google-GFE-Can-Retry", "yes");
-        httpURLConnection.setRequestProperty("X-Accept-Response-Streaming", "true");
-        httpURLConnection.setRequestProperty("Content-Type", "application/json");
-        httpURLConnection.setRequestProperty("Accept", "application/json");
-    }
-
-    private synchronized void setIsHttpConnectionRunning(boolean z) {
-        this.isHttpConnectionRunning = z;
-    }
-
-    private void updateBackoffMetadataWithLastFailedStreamConnectionTime(Date date) {
-        int numFailedStreams = this.metadataClient.getRealtimeBackoffMetadata().getNumFailedStreams() + 1;
-        this.metadataClient.setRealtimeBackoffMetadata(numFailedStreams, new Date(date.getTime() + getRandomizedBackoffDurationInMillis(numFailedStreams)));
-    }
-
-    public void beginRealtimeHttpStream() {
-        if (canMakeHttpStreamConnection()) {
-            if (new Date(this.clock.currentTimeMillis()).before(this.metadataClient.getRealtimeBackoffMetadata().getBackoffEndTime())) {
-                retryHttpConnectionWhenBackoffEnds();
-            } else {
-                final Task createRealtimeConnection = createRealtimeConnection();
-                Tasks.whenAllComplete((Task<?>[]) new Task[]{createRealtimeConnection}).continueWith(this.scheduledExecutorService, new Continuation() { // from class: com.google.firebase.remoteconfig.internal.ConfigRealtimeHttpClient$$ExternalSyntheticLambda0
-                    @Override // com.google.android.gms.tasks.Continuation
-                    public final Object then(Task task) {
-                        Task lambda$beginRealtimeHttpStream$1;
-                        lambda$beginRealtimeHttpStream$1 = ConfigRealtimeHttpClient.this.lambda$beginRealtimeHttpStream$1(createRealtimeConnection, task);
-                        return lambda$beginRealtimeHttpStream$1;
-                    }
-                });
-            }
-        }
-    }
-
     public void closeRealtimeHttpStream(HttpURLConnection httpURLConnection) {
         if (httpURLConnection != null) {
             httpURLConnection.disconnect();
@@ -368,54 +417,5 @@ public class ConfigRealtimeHttpClient {
             } catch (IOException unused) {
             }
         }
-    }
-
-    public Task createRealtimeConnection() {
-        final Task token = this.firebaseInstallations.getToken(false);
-        final Task id = this.firebaseInstallations.getId();
-        return Tasks.whenAllComplete((Task<?>[]) new Task[]{token, id}).continueWithTask(this.scheduledExecutorService, new Continuation() { // from class: com.google.firebase.remoteconfig.internal.ConfigRealtimeHttpClient$$ExternalSyntheticLambda1
-            @Override // com.google.android.gms.tasks.Continuation
-            public final Object then(Task task) {
-                Task lambda$createRealtimeConnection$0;
-                lambda$createRealtimeConnection$0 = ConfigRealtimeHttpClient.this.lambda$createRealtimeConnection$0(token, id, task);
-                return lambda$createRealtimeConnection$0;
-            }
-        });
-    }
-
-    public synchronized void retryHttpConnectionWhenBackoffEnds() {
-        makeRealtimeHttpConnection(Math.max(0L, this.metadataClient.getRealtimeBackoffMetadata().getBackoffEndTime().getTime() - new Date(this.clock.currentTimeMillis()).getTime()));
-    }
-
-    void setRealtimeBackgroundState(boolean z) {
-        this.isInBackground = z;
-    }
-
-    public void setRequestParams(HttpURLConnection httpURLConnection, String str, String str2) {
-        httpURLConnection.setRequestMethod("POST");
-        setCommonRequestHeaders(httpURLConnection, str2);
-        byte[] bytes = createRequestBody(str).toString().getBytes("utf-8");
-        BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(httpURLConnection.getOutputStream());
-        bufferedOutputStream.write(bytes);
-        bufferedOutputStream.flush();
-        bufferedOutputStream.close();
-    }
-
-    public synchronized ConfigAutoFetch startAutoFetch(HttpURLConnection httpURLConnection) {
-        return new ConfigAutoFetch(httpURLConnection, this.configFetchHandler, this.activatedCache, this.listeners, new ConfigUpdateListener() { // from class: com.google.firebase.remoteconfig.internal.ConfigRealtimeHttpClient.2
-            @Override // com.google.firebase.remoteconfig.ConfigUpdateListener
-            public void onError(FirebaseRemoteConfigException firebaseRemoteConfigException) {
-                ConfigRealtimeHttpClient.this.enableBackoff();
-                ConfigRealtimeHttpClient.this.propagateErrors(firebaseRemoteConfigException);
-            }
-
-            @Override // com.google.firebase.remoteconfig.ConfigUpdateListener
-            public void onUpdate(ConfigUpdate configUpdate) {
-            }
-        }, this.scheduledExecutorService);
-    }
-
-    public void startHttpConnection() {
-        makeRealtimeHttpConnection(0L);
     }
 }

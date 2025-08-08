@@ -10,19 +10,37 @@ import android.util.Pair;
 import java.util.HashMap;
 import java.util.Map;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class EditTextSuggestionsFix implements TextWatcher {
     private HashMap beforeSpans;
     private int beforeSuggestionsCount;
     private boolean ignore;
 
-    private static void applySpans(CharSequence charSequence, HashMap hashMap) {
-        if (hashMap != null && (charSequence instanceof Spannable)) {
-            Spannable spannable = (Spannable) charSequence;
-            for (Map.Entry entry : hashMap.entrySet()) {
-                if (spannable.getSpanStart(entry.getKey()) == -1) {
-                    spannable.setSpan(entry.getKey(), ((Integer) ((Pair) entry.getValue()).first).intValue(), ((Integer) ((Pair) entry.getValue()).second).intValue(), 33);
-                }
+    @Override // android.text.TextWatcher
+    public void afterTextChanged(Editable editable) {
+    }
+
+    @Override // android.text.TextWatcher
+    public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+        if (this.ignore) {
+            return;
+        }
+        this.beforeSpans = saveSpans(charSequence);
+        this.beforeSuggestionsCount = charSequence instanceof Spannable ? ((SuggestionSpan[]) ((Spannable) charSequence).getSpans(0, charSequence.length(), SuggestionSpan.class)).length : 0;
+    }
+
+    @Override // android.text.TextWatcher
+    public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+        if (this.ignore) {
+            return;
+        }
+        int length = charSequence instanceof Spannable ? ((SuggestionSpan[]) ((Spannable) charSequence).getSpans(0, charSequence.length(), SuggestionSpan.class)).length : 0;
+        HashMap hashMap = this.beforeSpans;
+        if (hashMap != null) {
+            if ((length > 0 || this.beforeSuggestionsCount > 0) && i == 0 && i2 == i3) {
+                this.ignore = true;
+                applySpans(charSequence, hashMap);
+                this.ignore = false;
             }
         }
     }
@@ -52,31 +70,13 @@ public class EditTextSuggestionsFix implements TextWatcher {
         return hashMap;
     }
 
-    @Override // android.text.TextWatcher
-    public void afterTextChanged(Editable editable) {
-    }
-
-    @Override // android.text.TextWatcher
-    public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-        if (this.ignore) {
-            return;
-        }
-        this.beforeSpans = saveSpans(charSequence);
-        this.beforeSuggestionsCount = charSequence instanceof Spannable ? ((SuggestionSpan[]) ((Spannable) charSequence).getSpans(0, charSequence.length(), SuggestionSpan.class)).length : 0;
-    }
-
-    @Override // android.text.TextWatcher
-    public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-        if (this.ignore) {
-            return;
-        }
-        int length = charSequence instanceof Spannable ? ((SuggestionSpan[]) ((Spannable) charSequence).getSpans(0, charSequence.length(), SuggestionSpan.class)).length : 0;
-        HashMap hashMap = this.beforeSpans;
-        if (hashMap != null) {
-            if ((length > 0 || this.beforeSuggestionsCount > 0) && i == 0 && i2 == i3) {
-                this.ignore = true;
-                applySpans(charSequence, hashMap);
-                this.ignore = false;
+    private static void applySpans(CharSequence charSequence, HashMap hashMap) {
+        if (hashMap != null && (charSequence instanceof Spannable)) {
+            Spannable spannable = (Spannable) charSequence;
+            for (Map.Entry entry : hashMap.entrySet()) {
+                if (spannable.getSpanStart(entry.getKey()) == -1) {
+                    spannable.setSpan(entry.getKey(), ((Integer) ((Pair) entry.getValue()).first).intValue(), ((Integer) ((Pair) entry.getValue()).second).intValue(), 33);
+                }
             }
         }
     }

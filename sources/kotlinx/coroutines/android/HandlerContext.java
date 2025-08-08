@@ -6,28 +6,20 @@ import java.util.concurrent.CancellationException;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.ranges.RangesKt___RangesKt;
+import kotlin.ranges.RangesKt;
 import kotlinx.coroutines.Delay;
 import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.DisposableHandle;
 import kotlinx.coroutines.JobKt;
 import kotlinx.coroutines.NonDisposableHandle;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class HandlerContext extends HandlerDispatcher implements Delay {
     private volatile HandlerContext _immediate;
     private final Handler handler;
     private final HandlerContext immediate;
     private final boolean invokeImmediately;
     private final String name;
-
-    public HandlerContext(Handler handler, String str) {
-        this(handler, str, false);
-    }
-
-    public /* synthetic */ HandlerContext(Handler handler, String str, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(handler, (i & 2) != 0 ? null : str);
-    }
 
     private HandlerContext(Handler handler, String str, boolean z) {
         super(null);
@@ -43,14 +35,22 @@ public final class HandlerContext extends HandlerDispatcher implements Delay {
         this.immediate = handlerContext;
     }
 
-    private final void cancelOnRejection(CoroutineContext coroutineContext, Runnable runnable) {
-        JobKt.cancel(coroutineContext, new CancellationException("The task was rejected, the handler underlying the dispatcher '" + this + "' was closed"));
-        Dispatchers.getIO().dispatch(coroutineContext, runnable);
+    public /* synthetic */ HandlerContext(Handler handler, String str, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this(handler, (i & 2) != 0 ? null : str);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void invokeOnTimeout$lambda$3(HandlerContext handlerContext, Runnable runnable) {
-        handlerContext.handler.removeCallbacks(runnable);
+    public HandlerContext(Handler handler, String str) {
+        this(handler, str, false);
+    }
+
+    @Override // kotlinx.coroutines.MainCoroutineDispatcher
+    public HandlerContext getImmediate() {
+        return this.immediate;
+    }
+
+    @Override // kotlinx.coroutines.CoroutineDispatcher
+    public boolean isDispatchNeeded(CoroutineContext coroutineContext) {
+        return (this.invokeImmediately && Intrinsics.areEqual(Looper.myLooper(), this.handler.getLooper())) ? false : true;
     }
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
@@ -61,25 +61,9 @@ public final class HandlerContext extends HandlerDispatcher implements Delay {
         cancelOnRejection(coroutineContext, runnable);
     }
 
-    public boolean equals(Object obj) {
-        return (obj instanceof HandlerContext) && ((HandlerContext) obj).handler == this.handler;
-    }
-
-    @Override // kotlinx.coroutines.MainCoroutineDispatcher
-    public HandlerContext getImmediate() {
-        return this.immediate;
-    }
-
-    public int hashCode() {
-        return System.identityHashCode(this.handler);
-    }
-
     @Override // kotlinx.coroutines.Delay
     public DisposableHandle invokeOnTimeout(long j, final Runnable runnable, CoroutineContext coroutineContext) {
-        long coerceAtMost;
-        Handler handler = this.handler;
-        coerceAtMost = RangesKt___RangesKt.coerceAtMost(j, 4611686018427387903L);
-        if (handler.postDelayed(runnable, coerceAtMost)) {
+        if (this.handler.postDelayed(runnable, RangesKt.coerceAtMost(j, 4611686018427387903L))) {
             return new DisposableHandle() { // from class: kotlinx.coroutines.android.HandlerContext$$ExternalSyntheticLambda0
                 @Override // kotlinx.coroutines.DisposableHandle
                 public final void dispose() {
@@ -91,9 +75,14 @@ public final class HandlerContext extends HandlerDispatcher implements Delay {
         return NonDisposableHandle.INSTANCE;
     }
 
-    @Override // kotlinx.coroutines.CoroutineDispatcher
-    public boolean isDispatchNeeded(CoroutineContext coroutineContext) {
-        return (this.invokeImmediately && Intrinsics.areEqual(Looper.myLooper(), this.handler.getLooper())) ? false : true;
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void invokeOnTimeout$lambda$3(HandlerContext handlerContext, Runnable runnable) {
+        handlerContext.handler.removeCallbacks(runnable);
+    }
+
+    private final void cancelOnRejection(CoroutineContext coroutineContext, Runnable runnable) {
+        JobKt.cancel(coroutineContext, new CancellationException("The task was rejected, the handler underlying the dispatcher '" + this + "' was closed"));
+        Dispatchers.getIO().dispatch(coroutineContext, runnable);
     }
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
@@ -110,5 +99,13 @@ public final class HandlerContext extends HandlerDispatcher implements Delay {
             return str;
         }
         return str + ".immediate";
+    }
+
+    public boolean equals(Object obj) {
+        return (obj instanceof HandlerContext) && ((HandlerContext) obj).handler == this.handler;
+    }
+
+    public int hashCode() {
+        return System.identityHashCode(this.handler);
     }
 }

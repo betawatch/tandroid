@@ -7,7 +7,6 @@ import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
 import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
@@ -23,7 +22,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.Forum.ForumUtilities;
 import org.telegram.ui.Components.TopicSeparator;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class TopicSeparator {
     private final Paint arrowPaint;
     private final Path arrowPath;
@@ -45,70 +44,6 @@ public class TopicSeparator {
     public final AvatarDrawable avatarDrawable = new AvatarDrawable();
     private final Path path = new Path();
 
-    public static class Cell extends View {
-        private Utilities.Callback onClickListener;
-        public final TopicSeparator separator;
-
-        public Cell(Context context, int i, Theme.ResourcesProvider resourcesProvider) {
-            super(context);
-            TopicSeparator topicSeparator = new TopicSeparator(i, this, resourcesProvider, false);
-            this.separator = topicSeparator;
-            topicSeparator.setOnClickListener(new Runnable() { // from class: org.telegram.ui.Components.TopicSeparator$Cell$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    TopicSeparator.Cell.this.lambda$new$0();
-                }
-            });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0() {
-            Utilities.Callback callback = this.onClickListener;
-            if (callback != null) {
-                callback.run(Long.valueOf(this.separator.topicId));
-            }
-        }
-
-        @Override // android.view.View
-        protected void dispatchDraw(Canvas canvas) {
-            super.dispatchDraw(canvas);
-            this.separator.draw(canvas, getWidth(), 0.0f, 0.0f, 0.75f, 1.0f, true);
-        }
-
-        @Override // android.view.View
-        protected void onAttachedToWindow() {
-            super.onAttachedToWindow();
-            this.separator.attach();
-        }
-
-        @Override // android.view.View
-        protected void onDetachedFromWindow() {
-            super.onDetachedFromWindow();
-            this.separator.detach();
-        }
-
-        @Override // android.view.View
-        protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(33.0f), TLObject.FLAG_30));
-        }
-
-        @Override // android.view.View
-        public boolean onTouchEvent(MotionEvent motionEvent) {
-            return this.separator.onTouchEvent(motionEvent, false) || super.onTouchEvent(motionEvent);
-        }
-
-        public void set(MessageObject messageObject) {
-            this.separator.update(messageObject);
-            if (isAttachedToWindow()) {
-                this.separator.attach();
-            }
-        }
-
-        public void setOnTopicClickListener(Utilities.Callback<Long> callback) {
-            this.onClickListener = callback;
-        }
-    }
-
     public TopicSeparator(int i, View view, Theme.ResourcesProvider resourcesProvider, boolean z) {
         Paint paint = new Paint(1);
         this.arrowPaint = paint;
@@ -128,6 +63,56 @@ public class TopicSeparator {
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeJoin(Paint.Join.ROUND);
         paint.setStrokeCap(Paint.Cap.ROUND);
+    }
+
+    public void setOnClickListener(Runnable runnable) {
+        this.onClickListener = runnable;
+    }
+
+    public boolean update(MessageObject messageObject) {
+        AnimatedEmojiDrawable animatedEmojiDrawable = this.emojiImage;
+        if (animatedEmojiDrawable != null) {
+            animatedEmojiDrawable.removeView(this.cell);
+            this.emojiImage = null;
+        }
+        this.pathWidth = 0;
+        this.topicId = 0L;
+        if (messageObject == null) {
+            this.text = null;
+            this.topicId = 0L;
+        } else if (ChatObject.isMonoForum(MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-messageObject.getDialogId())))) {
+            this.image.setRoundRadius(AndroidUtilities.dp(10.0f));
+            long monoForumTopicId = messageObject.getMonoForumTopicId();
+            TLObject userOrChat = MessagesController.getInstance(this.currentAccount).getUserOrChat(monoForumTopicId);
+            this.topicId = monoForumTopicId;
+            if (userOrChat == null) {
+                this.text = null;
+                return false;
+            }
+            this.avatarDrawable.setInfo(userOrChat);
+            this.image.setForUserOrChat(userOrChat, this.avatarDrawable);
+            this.text = new Text(DialogObject.getName(userOrChat), 14.0f, AndroidUtilities.bold());
+        } else {
+            this.image.setRoundRadius(0);
+            long topicId = messageObject.getTopicId();
+            this.topicId = topicId;
+            TLRPC.TL_forumTopic findTopic = MessagesController.getInstance(this.currentAccount).getTopicsController().findTopic(-messageObject.getDialogId(), topicId);
+            if (findTopic == null) {
+                this.text = null;
+                return false;
+            }
+            if (topicId == 1) {
+                this.image.setImageBitmap(ForumUtilities.createGeneralTopicDrawable(this.cell.getContext(), 0.75f, Theme.getColor(Theme.key_actionBarDefaultIcon, this.resourcesProvider), false, false));
+            } else if (findTopic.icon_emoji_id != 0) {
+                this.emojiImage = new AnimatedEmojiDrawable(0, this.currentAccount, findTopic.icon_emoji_id);
+                this.image.onDetachedFromWindow();
+                this.emojiImage.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+            } else {
+                this.image.setImageBitmap(ForumUtilities.createTopicDrawable(findTopic, false));
+            }
+            this.text = new Text(findTopic.title, 14.0f, AndroidUtilities.bold());
+        }
+        return this.text != null;
     }
 
     public void attach() {
@@ -232,14 +217,6 @@ public class TopicSeparator {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x0040, code lost:
-    
-        if (r7 == false) goto L30;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x005e, code lost:
-    
-        if (r6.getAction() == 3) goto L30;
-     */
     /* JADX WARN: Removed duplicated region for block: B:11:0x002b  */
     /* JADX WARN: Removed duplicated region for block: B:15:0x0031  */
     /*
@@ -253,14 +230,17 @@ public class TopicSeparator {
                 z2 = true;
                 if (motionEvent.getAction() != 0) {
                     this.bounce.setPressed(z2);
-                } else if (motionEvent.getAction() != 2) {
-                    if (motionEvent.getAction() == 1) {
-                        if (this.bounce.isPressed() && (runnable = this.onClickListener) != null) {
-                            runnable.run();
-                        }
+                } else if (motionEvent.getAction() == 2) {
+                    if (this.bounce.isPressed() && !z2) {
+                        this.bounce.setPressed(false);
+                    }
+                } else if (motionEvent.getAction() == 1) {
+                    if (this.bounce.isPressed() && (runnable = this.onClickListener) != null) {
+                        runnable.run();
                     }
                     this.bounce.setPressed(false);
-                } else if (this.bounce.isPressed()) {
+                } else if (motionEvent.getAction() == 3) {
+                    this.bounce.setPressed(false);
                 }
                 return this.bounce.isPressed();
             }
@@ -271,63 +251,67 @@ public class TopicSeparator {
         return this.bounce.isPressed();
     }
 
-    public void setOnClickListener(Runnable runnable) {
-        this.onClickListener = runnable;
-    }
+    public static class Cell extends View {
+        private Utilities.Callback onClickListener;
+        public final TopicSeparator separator;
 
-    public boolean update(MessageObject messageObject) {
-        ImageReceiver imageReceiver;
-        Drawable createTopicDrawable;
-        Text text;
-        AnimatedEmojiDrawable animatedEmojiDrawable = this.emojiImage;
-        if (animatedEmojiDrawable != null) {
-            animatedEmojiDrawable.removeView(this.cell);
-            this.emojiImage = null;
+        public Cell(Context context, int i, Theme.ResourcesProvider resourcesProvider) {
+            super(context);
+            TopicSeparator topicSeparator = new TopicSeparator(i, this, resourcesProvider, false);
+            this.separator = topicSeparator;
+            topicSeparator.setOnClickListener(new Runnable() { // from class: org.telegram.ui.Components.TopicSeparator$Cell$$ExternalSyntheticLambda0
+                @Override // java.lang.Runnable
+                public final void run() {
+                    TopicSeparator.Cell.this.lambda$new$0();
+                }
+            });
         }
-        this.pathWidth = 0;
-        this.topicId = 0L;
-        if (messageObject == null) {
-            this.text = null;
-            this.topicId = 0L;
-        } else {
-            if (ChatObject.isMonoForum(MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-messageObject.getDialogId())))) {
-                this.image.setRoundRadius(AndroidUtilities.dp(10.0f));
-                long monoForumTopicId = messageObject.getMonoForumTopicId();
-                TLObject userOrChat = MessagesController.getInstance(this.currentAccount).getUserOrChat(monoForumTopicId);
-                this.topicId = monoForumTopicId;
-                if (userOrChat == null) {
-                    this.text = null;
-                    return false;
-                }
-                this.avatarDrawable.setInfo(userOrChat);
-                this.image.setForUserOrChat(userOrChat, this.avatarDrawable);
-                text = new Text(DialogObject.getName(userOrChat), 14.0f, AndroidUtilities.bold());
-            } else {
-                this.image.setRoundRadius(0);
-                long topicId = messageObject.getTopicId();
-                this.topicId = topicId;
-                TLRPC.TL_forumTopic findTopic = MessagesController.getInstance(this.currentAccount).getTopicsController().findTopic(-messageObject.getDialogId(), topicId);
-                if (findTopic == null) {
-                    this.text = null;
-                    return false;
-                }
-                if (topicId == 1) {
-                    imageReceiver = this.image;
-                    createTopicDrawable = ForumUtilities.createGeneralTopicDrawable(this.cell.getContext(), 0.75f, Theme.getColor(Theme.key_actionBarDefaultIcon, this.resourcesProvider), false, false);
-                } else if (findTopic.icon_emoji_id != 0) {
-                    this.emojiImage = new AnimatedEmojiDrawable(0, this.currentAccount, findTopic.icon_emoji_id);
-                    this.image.onDetachedFromWindow();
-                    this.emojiImage.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-                    text = new Text(findTopic.title, 14.0f, AndroidUtilities.bold());
-                } else {
-                    imageReceiver = this.image;
-                    createTopicDrawable = ForumUtilities.createTopicDrawable(findTopic, false);
-                }
-                imageReceiver.setImageBitmap(createTopicDrawable);
-                text = new Text(findTopic.title, 14.0f, AndroidUtilities.bold());
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$new$0() {
+            Utilities.Callback callback = this.onClickListener;
+            if (callback != null) {
+                callback.run(Long.valueOf(this.separator.topicId));
             }
-            this.text = text;
         }
-        return this.text != null;
+
+        public void setOnTopicClickListener(Utilities.Callback<Long> callback) {
+            this.onClickListener = callback;
+        }
+
+        @Override // android.view.View
+        public boolean onTouchEvent(MotionEvent motionEvent) {
+            return this.separator.onTouchEvent(motionEvent, false) || super.onTouchEvent(motionEvent);
+        }
+
+        public void set(MessageObject messageObject) {
+            this.separator.update(messageObject);
+            if (isAttachedToWindow()) {
+                this.separator.attach();
+            }
+        }
+
+        @Override // android.view.View
+        protected void onAttachedToWindow() {
+            super.onAttachedToWindow();
+            this.separator.attach();
+        }
+
+        @Override // android.view.View
+        protected void onDetachedFromWindow() {
+            super.onDetachedFromWindow();
+            this.separator.detach();
+        }
+
+        @Override // android.view.View
+        protected void onMeasure(int i, int i2) {
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(33.0f), TLObject.FLAG_30));
+        }
+
+        @Override // android.view.View
+        protected void dispatchDraw(Canvas canvas) {
+            super.dispatchDraw(canvas);
+            this.separator.draw(canvas, getWidth(), 0.0f, 0.0f, 0.75f, 1.0f, true);
+        }
     }
 }

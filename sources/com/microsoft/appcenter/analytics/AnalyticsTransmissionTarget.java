@@ -9,7 +9,7 @@ import com.microsoft.appcenter.utils.storage.SharedPreferencesManager;
 import java.util.HashMap;
 import java.util.Map;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class AnalyticsTransmissionTarget {
     private Channel mChannel;
     Context mContext;
@@ -18,22 +18,19 @@ public class AnalyticsTransmissionTarget {
     private final Map mChildrenTargets = new HashMap();
     private final PropertyConfigurator mPropertyConfigurator = new PropertyConfigurator(this);
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static void addTicketToLog(Log log) {
+    }
+
     AnalyticsTransmissionTarget(String str, AnalyticsTransmissionTarget analyticsTransmissionTarget) {
         this.mTransmissionTargetToken = str;
         this.mParentTarget = analyticsTransmissionTarget;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static void addTicketToLog(Log log) {
-    }
-
-    private boolean areAncestorsEnabled() {
-        for (AnalyticsTransmissionTarget analyticsTransmissionTarget = this.mParentTarget; analyticsTransmissionTarget != null; analyticsTransmissionTarget = analyticsTransmissionTarget.mParentTarget) {
-            if (!analyticsTransmissionTarget.isEnabledInStorage()) {
-                return false;
-            }
-        }
-        return true;
+    void initInBackground(Context context, Channel channel) {
+        this.mContext = context;
+        this.mChannel = channel;
+        channel.addListener(this.mPropertyConfigurator);
     }
 
     static Channel.Listener getChannelListener() {
@@ -53,17 +50,20 @@ public class AnalyticsTransmissionTarget {
         return SharedPreferencesManager.getBoolean(getEnabledPreferenceKey(), true);
     }
 
-    public PropertyConfigurator getPropertyConfigurator() {
-        return this.mPropertyConfigurator;
-    }
-
-    void initInBackground(Context context, Channel channel) {
-        this.mContext = context;
-        this.mChannel = channel;
-        channel.addListener(this.mPropertyConfigurator);
+    private boolean areAncestorsEnabled() {
+        for (AnalyticsTransmissionTarget analyticsTransmissionTarget = this.mParentTarget; analyticsTransmissionTarget != null; analyticsTransmissionTarget = analyticsTransmissionTarget.mParentTarget) {
+            if (!analyticsTransmissionTarget.isEnabledInStorage()) {
+                return false;
+            }
+        }
+        return true;
     }
 
     boolean isEnabled() {
         return areAncestorsEnabled() && isEnabledInStorage();
+    }
+
+    public PropertyConfigurator getPropertyConfigurator() {
+        return this.mPropertyConfigurator;
     }
 }

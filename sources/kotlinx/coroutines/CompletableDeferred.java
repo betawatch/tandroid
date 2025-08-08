@@ -1,6 +1,6 @@
 package kotlinx.coroutines;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public interface CompletableDeferred extends Deferred {
     boolean complete(Object obj);
 

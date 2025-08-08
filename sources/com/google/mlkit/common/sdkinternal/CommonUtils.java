@@ -7,7 +7,7 @@ import com.google.android.gms.common.internal.GmsLogger;
 import com.google.android.gms.common.util.PlatformVersion;
 import java.util.Locale;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class CommonUtils {
     private static final GmsLogger zza = new GmsLogger("CommonUtils", "");
 
@@ -21,10 +21,8 @@ public abstract class CommonUtils {
     }
 
     public static String languageTagFromLocale(Locale locale) {
-        String languageTag;
         if (PlatformVersion.isAtLeastLollipop()) {
-            languageTag = locale.toLanguageTag();
-            return languageTag;
+            return locale.toLanguageTag();
         }
         StringBuilder sb = new StringBuilder(locale.getLanguage());
         if (!TextUtils.isEmpty(locale.getCountry())) {

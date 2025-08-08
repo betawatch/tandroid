@@ -25,7 +25,7 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class CrashlyticsReportPersistence {
     private final AtomicInteger eventCounter = new AtomicInteger(0);
     private final FileStore fileStore;
@@ -51,10 +51,103 @@ public class CrashlyticsReportPersistence {
         }
     };
 
+    private static long convertTimestampFromSecondsToMs(long j) {
+        return j * 1000;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ int lambda$static$0(File file, File file2) {
+        return file2.getName().compareTo(file.getName());
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ boolean lambda$static$1(File file, String str) {
+        return str.startsWith("event");
+    }
+
     public CrashlyticsReportPersistence(FileStore fileStore, SettingsProvider settingsProvider, CrashlyticsAppQualitySessionsSubscriber crashlyticsAppQualitySessionsSubscriber) {
         this.fileStore = fileStore;
         this.settingsProvider = settingsProvider;
         this.sessionsSubscriber = crashlyticsAppQualitySessionsSubscriber;
+    }
+
+    public void persistReport(CrashlyticsReport crashlyticsReport) {
+        CrashlyticsReport.Session session = crashlyticsReport.getSession();
+        if (session == null) {
+            Logger.getLogger().d("Could not get session for report");
+            return;
+        }
+        String identifier = session.getIdentifier();
+        try {
+            writeTextFile(this.fileStore.getSessionFile(identifier, "report"), TRANSFORM.reportToJson(crashlyticsReport));
+            writeTextFile(this.fileStore.getSessionFile(identifier, "start-time"), "", session.getStartedAt());
+        } catch (IOException e) {
+            Logger.getLogger().d("Could not persist report for session " + identifier, e);
+        }
+    }
+
+    public void persistEvent(CrashlyticsReport.Session.Event event, String str, boolean z) {
+        int i = this.settingsProvider.getSettingsSync().sessionData.maxCustomExceptionEvents;
+        try {
+            writeTextFile(this.fileStore.getSessionFile(str, generateEventFilename(this.eventCounter.getAndIncrement(), z)), TRANSFORM.eventToJson(event));
+        } catch (IOException e) {
+            Logger.getLogger().w("Could not persist event for session " + str, e);
+        }
+        trimEvents(str, i);
+    }
+
+    public SortedSet getOpenSessionIds() {
+        return new TreeSet(this.fileStore.getAllOpenSessionIds()).descendingSet();
+    }
+
+    public long getStartTimestampMillis(String str) {
+        return this.fileStore.getSessionFile(str, "start-time").lastModified();
+    }
+
+    public boolean hasFinalizedReports() {
+        return (this.fileStore.getReports().isEmpty() && this.fileStore.getPriorityReports().isEmpty() && this.fileStore.getNativeReports().isEmpty()) ? false : true;
+    }
+
+    public void deleteAllReports() {
+        deleteFiles(this.fileStore.getReports());
+        deleteFiles(this.fileStore.getPriorityReports());
+        deleteFiles(this.fileStore.getNativeReports());
+    }
+
+    private void deleteFiles(List list) {
+        Iterator it = list.iterator();
+        while (it.hasNext()) {
+            ((File) it.next()).delete();
+        }
+    }
+
+    public void finalizeReports(String str, long j) {
+        for (String str2 : capAndGetOpenSessions(str)) {
+            Logger.getLogger().v("Finalizing report for session " + str2);
+            synthesizeReport(str2, j);
+            this.fileStore.deleteSessionFiles(str2);
+        }
+        capFinalizedReports();
+    }
+
+    public void finalizeSessionWithNativeEvent(String str, CrashlyticsReport.FilesPayload filesPayload, CrashlyticsReport.ApplicationExitInfo applicationExitInfo) {
+        File sessionFile = this.fileStore.getSessionFile(str, "report");
+        Logger.getLogger().d("Writing native session report for " + str + " to file: " + sessionFile);
+        synthesizeNativeReportFile(sessionFile, filesPayload, str, applicationExitInfo);
+    }
+
+    public List loadFinalizedReports() {
+        List<File> allFinalizedReportFiles = getAllFinalizedReportFiles();
+        ArrayList arrayList = new ArrayList();
+        for (File file : allFinalizedReportFiles) {
+            try {
+                arrayList.add(CrashlyticsReportWithSessionId.create(TRANSFORM.reportFromJson(readTextFile(file)), file.getName(), file));
+            } catch (IOException e) {
+                Logger.getLogger().w("Could not load report file " + file + "; deleting", e);
+                file.delete();
+            }
+        }
+        return arrayList;
     }
 
     private SortedSet capAndGetOpenSessions(String str) {
@@ -75,20 +168,6 @@ public class CrashlyticsReportPersistence {
         return openSessionIds;
     }
 
-    private static int capFilesCount(List list, int i) {
-        int size = list.size();
-        Iterator it = list.iterator();
-        while (it.hasNext()) {
-            File file = (File) it.next();
-            if (size <= i) {
-                return size;
-            }
-            FileStore.recursiveDelete(file);
-            size--;
-        }
-        return size;
-    }
-
     private void capFinalizedReports() {
         int i = this.settingsProvider.getSettingsSync().sessionData.maxCompleteSessionsCount;
         List allFinalizedReportFiles = getAllFinalizedReportFiles();
@@ -102,21 +181,6 @@ public class CrashlyticsReportPersistence {
         }
     }
 
-    private static long convertTimestampFromSecondsToMs(long j) {
-        return j * 1000;
-    }
-
-    private void deleteFiles(List list) {
-        Iterator it = list.iterator();
-        while (it.hasNext()) {
-            ((File) it.next()).delete();
-        }
-    }
-
-    private static String generateEventFilename(int i, boolean z) {
-        return "event" + String.format(Locale.US, "%010d", Integer.valueOf(i)) + (z ? "_" : "");
-    }
-
     private List getAllFinalizedReportFiles() {
         ArrayList arrayList = new ArrayList();
         arrayList.addAll(this.fileStore.getPriorityReports());
@@ -127,68 +191,6 @@ public class CrashlyticsReportPersistence {
         Collections.sort(reports, comparator);
         arrayList.addAll(reports);
         return arrayList;
-    }
-
-    private static String getEventNameWithoutPriority(String str) {
-        return str.substring(0, EVENT_NAME_LENGTH);
-    }
-
-    private static boolean isHighPriorityEventFile(String str) {
-        return str.startsWith("event") && str.endsWith("_");
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static boolean isNormalPriorityEventFile(File file, String str) {
-        return str.startsWith("event") && !str.endsWith("_");
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$static$0(File file, File file2) {
-        return file2.getName().compareTo(file.getName());
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$static$1(File file, String str) {
-        return str.startsWith("event");
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static int oldestEventFileFirst(File file, File file2) {
-        return getEventNameWithoutPriority(file.getName()).compareTo(getEventNameWithoutPriority(file2.getName()));
-    }
-
-    private static String readTextFile(File file) {
-        byte[] bArr = new byte[8192];
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        FileInputStream fileInputStream = new FileInputStream(file);
-        while (true) {
-            try {
-                int read = fileInputStream.read(bArr);
-                if (read <= 0) {
-                    String str = new String(byteArrayOutputStream.toByteArray(), UTF_8);
-                    fileInputStream.close();
-                    return str;
-                }
-                byteArrayOutputStream.write(bArr, 0, read);
-            } catch (Throwable th) {
-                try {
-                    fileInputStream.close();
-                } catch (Throwable th2) {
-                    th.addSuppressed(th2);
-                }
-                throw th;
-            }
-        }
-    }
-
-    private void synthesizeNativeReportFile(File file, CrashlyticsReport.FilesPayload filesPayload, String str, CrashlyticsReport.ApplicationExitInfo applicationExitInfo) {
-        String appQualitySessionId = this.sessionsSubscriber.getAppQualitySessionId(str);
-        try {
-            CrashlyticsReportJsonTransform crashlyticsReportJsonTransform = TRANSFORM;
-            writeTextFile(this.fileStore.getNativeReport(str), crashlyticsReportJsonTransform.reportToJson(crashlyticsReportJsonTransform.reportFromJson(readTextFile(file)).withNdkPayload(filesPayload).withApplicationExitInfo(applicationExitInfo).withAppQualitySessionId(appQualitySessionId)));
-        } catch (IOException e) {
-            Logger.getLogger().w("Could not synthesize final native report file for " + file, e);
-        }
     }
 
     private void synthesizeReport(String str, long j) {
@@ -213,14 +215,25 @@ public class CrashlyticsReportPersistence {
                 }
             }
         }
-        if (!arrayList.isEmpty()) {
-            synthesizeReportFile(this.fileStore.getSessionFile(str, "report"), arrayList, j, z, UserMetadata.readUserId(str, this.fileStore), this.sessionsSubscriber.getAppQualitySessionId(str));
-        } else {
+        if (arrayList.isEmpty()) {
             Logger.getLogger().w("Could not parse event files for session " + str);
+            return;
+        }
+        synthesizeReportFile(this.fileStore.getSessionFile(str, "report"), arrayList, j, z, UserMetadata.readUserId(str, this.fileStore), this.sessionsSubscriber.getAppQualitySessionId(str));
+    }
+
+    private void synthesizeNativeReportFile(File file, CrashlyticsReport.FilesPayload filesPayload, String str, CrashlyticsReport.ApplicationExitInfo applicationExitInfo) {
+        String appQualitySessionId = this.sessionsSubscriber.getAppQualitySessionId(str);
+        try {
+            CrashlyticsReportJsonTransform crashlyticsReportJsonTransform = TRANSFORM;
+            writeTextFile(this.fileStore.getNativeReport(str), crashlyticsReportJsonTransform.reportToJson(crashlyticsReportJsonTransform.reportFromJson(readTextFile(file)).withNdkPayload(filesPayload).withApplicationExitInfo(applicationExitInfo).withAppQualitySessionId(appQualitySessionId)));
+        } catch (IOException e) {
+            Logger.getLogger().w("Could not synthesize final native report file for " + file, e);
         }
     }
 
     private void synthesizeReportFile(File file, List list, long j, boolean z, String str, String str2) {
+        File report;
         try {
             CrashlyticsReportJsonTransform crashlyticsReportJsonTransform = TRANSFORM;
             CrashlyticsReport withEvents = crashlyticsReportJsonTransform.reportFromJson(readTextFile(file)).withSessionEndFields(j, z, str).withAppQualitySessionId(str2).withEvents(list);
@@ -229,10 +242,28 @@ public class CrashlyticsReportPersistence {
                 return;
             }
             Logger.getLogger().d("appQualitySessionId: " + str2);
-            writeTextFile(z ? this.fileStore.getPriorityReport(session.getIdentifier()) : this.fileStore.getReport(session.getIdentifier()), crashlyticsReportJsonTransform.reportToJson(withEvents));
+            if (z) {
+                report = this.fileStore.getPriorityReport(session.getIdentifier());
+            } else {
+                report = this.fileStore.getReport(session.getIdentifier());
+            }
+            writeTextFile(report, crashlyticsReportJsonTransform.reportToJson(withEvents));
         } catch (IOException e) {
             Logger.getLogger().w("Could not synthesize final report file for " + file, e);
         }
+    }
+
+    private static boolean isHighPriorityEventFile(String str) {
+        return str.startsWith("event") && str.endsWith("_");
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static boolean isNormalPriorityEventFile(File file, String str) {
+        return str.startsWith("event") && !str.endsWith("_");
+    }
+
+    private static String generateEventFilename(int i, boolean z) {
+        return "event" + String.format(Locale.US, "%010d", Integer.valueOf(i)) + (z ? "_" : "");
     }
 
     private int trimEvents(String str, int i) {
@@ -253,6 +284,15 @@ public class CrashlyticsReportPersistence {
             }
         });
         return capFilesCount(sessionFiles, i);
+    }
+
+    private static String getEventNameWithoutPriority(String str) {
+        return str.substring(0, EVENT_NAME_LENGTH);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static int oldestEventFileFirst(File file, File file2) {
+        return getEventNameWithoutPriority(file.getName()).compareTo(getEventNameWithoutPriority(file2.getName()));
     }
 
     private static void writeTextFile(File file, String str) {
@@ -286,75 +326,42 @@ public class CrashlyticsReportPersistence {
         }
     }
 
-    public void deleteAllReports() {
-        deleteFiles(this.fileStore.getReports());
-        deleteFiles(this.fileStore.getPriorityReports());
-        deleteFiles(this.fileStore.getNativeReports());
-    }
-
-    public void finalizeReports(String str, long j) {
-        for (String str2 : capAndGetOpenSessions(str)) {
-            Logger.getLogger().v("Finalizing report for session " + str2);
-            synthesizeReport(str2, j);
-            this.fileStore.deleteSessionFiles(str2);
-        }
-        capFinalizedReports();
-    }
-
-    public void finalizeSessionWithNativeEvent(String str, CrashlyticsReport.FilesPayload filesPayload, CrashlyticsReport.ApplicationExitInfo applicationExitInfo) {
-        File sessionFile = this.fileStore.getSessionFile(str, "report");
-        Logger.getLogger().d("Writing native session report for " + str + " to file: " + sessionFile);
-        synthesizeNativeReportFile(sessionFile, filesPayload, str, applicationExitInfo);
-    }
-
-    public SortedSet getOpenSessionIds() {
-        return new TreeSet(this.fileStore.getAllOpenSessionIds()).descendingSet();
-    }
-
-    public long getStartTimestampMillis(String str) {
-        return this.fileStore.getSessionFile(str, "start-time").lastModified();
-    }
-
-    public boolean hasFinalizedReports() {
-        return (this.fileStore.getReports().isEmpty() && this.fileStore.getPriorityReports().isEmpty() && this.fileStore.getNativeReports().isEmpty()) ? false : true;
-    }
-
-    public List loadFinalizedReports() {
-        List<File> allFinalizedReportFiles = getAllFinalizedReportFiles();
-        ArrayList arrayList = new ArrayList();
-        for (File file : allFinalizedReportFiles) {
+    private static String readTextFile(File file) {
+        byte[] bArr = new byte[8192];
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        FileInputStream fileInputStream = new FileInputStream(file);
+        while (true) {
             try {
-                arrayList.add(CrashlyticsReportWithSessionId.create(TRANSFORM.reportFromJson(readTextFile(file)), file.getName(), file));
-            } catch (IOException e) {
-                Logger.getLogger().w("Could not load report file " + file + "; deleting", e);
-                file.delete();
+                int read = fileInputStream.read(bArr);
+                if (read > 0) {
+                    byteArrayOutputStream.write(bArr, 0, read);
+                } else {
+                    String str = new String(byteArrayOutputStream.toByteArray(), UTF_8);
+                    fileInputStream.close();
+                    return str;
+                }
+            } catch (Throwable th) {
+                try {
+                    fileInputStream.close();
+                } catch (Throwable th2) {
+                    th.addSuppressed(th2);
+                }
+                throw th;
             }
         }
-        return arrayList;
     }
 
-    public void persistEvent(CrashlyticsReport.Session.Event event, String str, boolean z) {
-        int i = this.settingsProvider.getSettingsSync().sessionData.maxCustomExceptionEvents;
-        try {
-            writeTextFile(this.fileStore.getSessionFile(str, generateEventFilename(this.eventCounter.getAndIncrement(), z)), TRANSFORM.eventToJson(event));
-        } catch (IOException e) {
-            Logger.getLogger().w("Could not persist event for session " + str, e);
+    private static int capFilesCount(List list, int i) {
+        int size = list.size();
+        Iterator it = list.iterator();
+        while (it.hasNext()) {
+            File file = (File) it.next();
+            if (size <= i) {
+                return size;
+            }
+            FileStore.recursiveDelete(file);
+            size--;
         }
-        trimEvents(str, i);
-    }
-
-    public void persistReport(CrashlyticsReport crashlyticsReport) {
-        CrashlyticsReport.Session session = crashlyticsReport.getSession();
-        if (session == null) {
-            Logger.getLogger().d("Could not get session for report");
-            return;
-        }
-        String identifier = session.getIdentifier();
-        try {
-            writeTextFile(this.fileStore.getSessionFile(identifier, "report"), TRANSFORM.reportToJson(crashlyticsReport));
-            writeTextFile(this.fileStore.getSessionFile(identifier, "start-time"), "", session.getStartedAt());
-        } catch (IOException e) {
-            Logger.getLogger().d("Could not persist report for session " + identifier, e);
-        }
+        return size;
     }
 }

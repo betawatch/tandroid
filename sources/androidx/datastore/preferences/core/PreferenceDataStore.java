@@ -10,14 +10,14 @@ import kotlinx.coroutines.flow.Flow;
 public final class PreferenceDataStore implements DataStore {
     private final DataStore delegate;
 
-    public PreferenceDataStore(DataStore delegate) {
-        Intrinsics.checkNotNullParameter(delegate, "delegate");
-        this.delegate = delegate;
-    }
-
     @Override // androidx.datastore.core.DataStore
     public Flow getData() {
         return this.delegate.getData();
+    }
+
+    public PreferenceDataStore(DataStore delegate) {
+        Intrinsics.checkNotNullParameter(delegate, "delegate");
+        this.delegate = delegate;
     }
 
     @Override // androidx.datastore.core.DataStore

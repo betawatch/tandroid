@@ -17,32 +17,14 @@ public class Logger {
         this(str, null);
     }
 
-    protected Logger(String str, String str2) {
-        Preconditions.checkNotEmpty(str, "The log tag cannot be null or empty.");
-        this.zza = str;
-        this.zzb = str.length() <= 23;
-        this.zzc = false;
-        this.zzd = TextUtils.isEmpty(str2) ? null : String.format("[%s] ", str2);
-    }
-
     public void d(String str, Object... objArr) {
         if (zzc()) {
             Log.d(this.zza, zza(str, objArr));
         }
     }
 
-    public void d(Throwable th, String str, Object... objArr) {
-        if (zzc()) {
-            Log.d(this.zza, zza(str, objArr), th);
-        }
-    }
-
     public void e(String str, Object... objArr) {
         Log.e(this.zza, zza(str, objArr));
-    }
-
-    public void e(Throwable th, String str, Object... objArr) {
-        Log.e(this.zza, zza(str, objArr), th);
     }
 
     public void i(String str, Object... objArr) {
@@ -51,10 +33,6 @@ public class Logger {
 
     public void w(String str, Object... objArr) {
         Log.w(this.zza, zza(str, objArr));
-    }
-
-    public void w(Throwable th, String str, Object... objArr) {
-        Log.w(this.zza, zza(str, objArr), th);
     }
 
     protected final String zza(String str, Object... objArr) {
@@ -76,5 +54,27 @@ public class Logger {
             return true;
         }
         return this.zzb && Log.isLoggable(this.zza, 3);
+    }
+
+    protected Logger(String str, String str2) {
+        Preconditions.checkNotEmpty(str, "The log tag cannot be null or empty.");
+        this.zza = str;
+        this.zzb = str.length() <= 23;
+        this.zzc = false;
+        this.zzd = TextUtils.isEmpty(str2) ? null : String.format("[%s] ", str2);
+    }
+
+    public void e(Throwable th, String str, Object... objArr) {
+        Log.e(this.zza, zza(str, objArr), th);
+    }
+
+    public void w(Throwable th, String str, Object... objArr) {
+        Log.w(this.zza, zza(str, objArr), th);
+    }
+
+    public void d(Throwable th, String str, Object... objArr) {
+        if (zzc()) {
+            Log.d(this.zza, zza(str, objArr), th);
+        }
     }
 }

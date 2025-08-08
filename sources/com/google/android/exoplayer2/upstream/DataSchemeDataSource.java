@@ -20,24 +20,6 @@ public final class DataSchemeDataSource extends BaseDataSource {
     }
 
     @Override // com.google.android.exoplayer2.upstream.DataSource
-    public void close() {
-        if (this.data != null) {
-            this.data = null;
-            transferEnded();
-        }
-        this.dataSpec = null;
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.DataSource
-    public Uri getUri() {
-        DataSpec dataSpec = this.dataSpec;
-        if (dataSpec != null) {
-            return dataSpec.uri;
-        }
-        return null;
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.DataSource
     public long open(DataSpec dataSpec) {
         transferInitializing(dataSpec);
         this.dataSpec = dataSpec;
@@ -92,5 +74,23 @@ public final class DataSchemeDataSource extends BaseDataSource {
         this.bytesRemaining -= min;
         bytesTransferred(min);
         return min;
+    }
+
+    @Override // com.google.android.exoplayer2.upstream.DataSource
+    public Uri getUri() {
+        DataSpec dataSpec = this.dataSpec;
+        if (dataSpec != null) {
+            return dataSpec.uri;
+        }
+        return null;
+    }
+
+    @Override // com.google.android.exoplayer2.upstream.DataSource
+    public void close() {
+        if (this.data != null) {
+            this.data = null;
+            transferEnded();
+        }
+        this.dataSpec = null;
     }
 }

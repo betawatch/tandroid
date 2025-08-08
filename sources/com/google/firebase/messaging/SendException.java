@@ -2,7 +2,7 @@ package com.google.firebase.messaging;
 
 import java.util.Locale;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class SendException extends Exception {
     private final int errorCode;
 

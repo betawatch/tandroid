@@ -16,6 +16,14 @@ public abstract class zzcb {
         return i;
     }
 
+    static boolean zzc(Set set, Iterator it) {
+        boolean z = false;
+        while (it.hasNext()) {
+            z |= set.remove(it.next());
+        }
+        return z;
+    }
+
     static boolean zzb(Set set, Collection collection) {
         collection.getClass();
         if (collection instanceof zzbs) {
@@ -32,14 +40,6 @@ public abstract class zzcb {
                 it.remove();
                 z = true;
             }
-        }
-        return z;
-    }
-
-    static boolean zzc(Set set, Iterator it) {
-        boolean z = false;
-        while (it.hasNext()) {
-            z |= set.remove(it.next());
         }
         return z;
     }

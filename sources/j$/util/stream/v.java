@@ -1,9 +1,7 @@
 package j$.util.stream;
 
-import j$.util.function.Consumer;
-
 /* loaded from: classes2.dex */
-final class v extends V1 {
+final class v extends Z {
     public final /* synthetic */ int m;
     final /* synthetic */ Object n;
 
@@ -14,26 +12,32 @@ final class v extends V1 {
         this.n = obj;
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v(b bVar, Consumer consumer) {
-        super(bVar, 0, 1);
-        this.m = 3;
-        this.n = consumer;
-    }
-
     @Override // j$.util.stream.b
-    final e2 w0(int i, e2 e2Var) {
+    final d2 w0(int i, d2 d2Var) {
         switch (this.m) {
             case 0:
-                return new t(this, e2Var, 1);
+                return new s(this, d2Var, 2);
             case 1:
-                return new W(this, e2Var, 2);
+                return new V(this, d2Var, 0);
             case 2:
-                return new f0(this, e2Var, 1);
+                return new V(this, d2Var, 1);
             case 3:
-                return new o(this, e2Var, 1);
+                return new V(this, d2Var, 5);
+            case 4:
+                return new V(this, d2Var, 6);
+            case 5:
+                return new e0(this, d2Var, 2);
+            case 6:
+                return new n(this, d2Var, 4);
             default:
-                return new o(this, e2Var, 2);
+                return new Q1(this, d2Var);
         }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v(a0 a0Var, j$.util.function.G g) {
+        super(a0Var, 0, 1);
+        this.m = 1;
+        this.n = g;
     }
 }

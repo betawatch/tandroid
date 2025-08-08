@@ -15,27 +15,23 @@ public class LruCache {
     private int putCount;
     private int size;
 
+    protected Object create(Object obj) {
+        return null;
+    }
+
+    protected void entryRemoved(boolean z, Object obj, Object obj2, Object obj3) {
+    }
+
+    protected int sizeOf(Object obj, Object obj2) {
+        return 1;
+    }
+
     public LruCache(int i) {
         if (i <= 0) {
             throw new IllegalArgumentException("maxSize <= 0");
         }
         this.maxSize = i;
         this.map = new LinkedHashMap(0, 0.75f, true);
-    }
-
-    private int safeSizeOf(Object obj, Object obj2) {
-        int sizeOf = sizeOf(obj, obj2);
-        if (sizeOf >= 0) {
-            return sizeOf;
-        }
-        throw new IllegalStateException("Negative size: " + obj + "=" + obj2);
-    }
-
-    protected Object create(Object obj) {
-        return null;
-    }
-
-    protected void entryRemoved(boolean z, Object obj, Object obj2, Object obj3) {
     }
 
     public final Object get(Object obj) {
@@ -102,22 +98,6 @@ public class LruCache {
         return put;
     }
 
-    protected int sizeOf(Object obj, Object obj2) {
-        return 1;
-    }
-
-    public final synchronized String toString() {
-        int i;
-        int i2;
-        try {
-            i = this.hitCount;
-            i2 = this.missCount + i;
-        } catch (Throwable th) {
-            throw th;
-        }
-        return String.format(Locale.US, "LruCache[maxSize=%d,hits=%d,misses=%d,hitRate=%d%%]", Integer.valueOf(this.maxSize), Integer.valueOf(this.hitCount), Integer.valueOf(this.missCount), Integer.valueOf(i2 != 0 ? (i * 100) / i2 : 0));
-    }
-
     /* JADX WARN: Code restructure failed: missing block: B:12:0x0073, code lost:
     
         throw new java.lang.IllegalStateException(getClass().getName() + ".sizeOf() is reporting inconsistent results!");
@@ -148,5 +128,25 @@ public class LruCache {
             }
             entryRemoved(true, key, value, null);
         }
+    }
+
+    private int safeSizeOf(Object obj, Object obj2) {
+        int sizeOf = sizeOf(obj, obj2);
+        if (sizeOf >= 0) {
+            return sizeOf;
+        }
+        throw new IllegalStateException("Negative size: " + obj + "=" + obj2);
+    }
+
+    public final synchronized String toString() {
+        int i;
+        int i2;
+        try {
+            i = this.hitCount;
+            i2 = this.missCount + i;
+        } catch (Throwable th) {
+            throw th;
+        }
+        return String.format(Locale.US, "LruCache[maxSize=%d,hits=%d,misses=%d,hitRate=%d%%]", Integer.valueOf(this.maxSize), Integer.valueOf(this.hitCount), Integer.valueOf(this.missCount), Integer.valueOf(i2 != 0 ? (i * 100) / i2 : 0));
     }
 }

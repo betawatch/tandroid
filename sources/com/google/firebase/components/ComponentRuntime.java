@@ -1,7 +1,7 @@
 package com.google.firebase.components;
 
 import android.util.Log;
-import com.google.android.exoplayer2.mediacodec.AsynchronousMediaCodecBufferEnqueuer$$ExternalSyntheticBackportWithForwarding0;
+import com.google.android.exoplayer2.mediacodec.AsynchronousMediaCodecBufferEnqueuer$$ExternalSyntheticBackportWithForwarding1;
 import com.google.firebase.components.ComponentContainer;
 import com.google.firebase.components.ComponentRuntime;
 import com.google.firebase.dynamicloading.ComponentLoader;
@@ -38,51 +38,46 @@ public class ComponentRuntime implements ComponentContainer, ComponentLoader {
     private Set processedCoroutineDispatcherInterfaces;
     private final List unprocessedRegistrarProviders;
 
-    public static final class Builder {
-        private final Executor defaultExecutor;
-        private final List lazyRegistrars = new ArrayList();
-        private final List additionalComponents = new ArrayList();
-        private ComponentRegistrarProcessor componentRegistrarProcessor = ComponentRegistrarProcessor.NOOP;
+    @Override // com.google.firebase.components.ComponentContainer
+    public /* synthetic */ Object get(Qualified qualified) {
+        return ComponentContainer.-CC.$default$get(this, qualified);
+    }
 
-        Builder(Executor executor) {
-            this.defaultExecutor = executor;
-        }
+    @Override // com.google.firebase.components.ComponentContainer
+    public /* synthetic */ Object get(Class cls) {
+        Object obj;
+        obj = get(Qualified.unqualified(cls));
+        return obj;
+    }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ ComponentRegistrar lambda$addComponentRegistrar$0(ComponentRegistrar componentRegistrar) {
-            return componentRegistrar;
-        }
+    @Override // com.google.firebase.components.ComponentContainer
+    public /* synthetic */ Deferred getDeferred(Class cls) {
+        Deferred deferred;
+        deferred = getDeferred(Qualified.unqualified(cls));
+        return deferred;
+    }
 
-        public Builder addComponent(Component component) {
-            this.additionalComponents.add(component);
-            return this;
-        }
+    @Override // com.google.firebase.components.ComponentContainer
+    public /* synthetic */ Provider getProvider(Class cls) {
+        Provider provider;
+        provider = getProvider(Qualified.unqualified(cls));
+        return provider;
+    }
 
-        public Builder addComponentRegistrar(final ComponentRegistrar componentRegistrar) {
-            this.lazyRegistrars.add(new Provider() { // from class: com.google.firebase.components.ComponentRuntime$Builder$$ExternalSyntheticLambda0
-                @Override // com.google.firebase.inject.Provider
-                public final Object get() {
-                    ComponentRegistrar lambda$addComponentRegistrar$0;
-                    lambda$addComponentRegistrar$0 = ComponentRuntime.Builder.lambda$addComponentRegistrar$0(ComponentRegistrar.this);
-                    return lambda$addComponentRegistrar$0;
-                }
-            });
-            return this;
-        }
+    @Override // com.google.firebase.components.ComponentContainer
+    public /* synthetic */ Set setOf(Qualified qualified) {
+        return ComponentContainer.-CC.$default$setOf(this, qualified);
+    }
 
-        public Builder addLazyComponentRegistrars(Collection collection) {
-            this.lazyRegistrars.addAll(collection);
-            return this;
-        }
+    @Override // com.google.firebase.components.ComponentContainer
+    public /* synthetic */ Set setOf(Class cls) {
+        Set of;
+        of = setOf(Qualified.unqualified(cls));
+        return of;
+    }
 
-        public ComponentRuntime build() {
-            return new ComponentRuntime(this.defaultExecutor, this.lazyRegistrars, this.additionalComponents, this.componentRegistrarProcessor);
-        }
-
-        public Builder setProcessor(ComponentRegistrarProcessor componentRegistrarProcessor) {
-            this.componentRegistrarProcessor = componentRegistrarProcessor;
-            return this;
-        }
+    public static Builder builder(Executor executor) {
+        return new Builder(executor);
     }
 
     private ComponentRuntime(Executor executor, Iterable iterable, Collection collection, ComponentRegistrarProcessor componentRegistrarProcessor) {
@@ -106,10 +101,6 @@ public class ComponentRuntime implements ComponentContainer, ComponentLoader {
         }
         this.unprocessedRegistrarProviders = iterableToList(iterable);
         discoverComponents(arrayList);
-    }
-
-    public static Builder builder(Executor executor) {
-        return new Builder(executor);
     }
 
     private void discoverComponents(List list) {
@@ -177,26 +168,6 @@ public class ComponentRuntime implements ComponentContainer, ComponentLoader {
         maybeInitializeEagerComponents();
     }
 
-    private void doInitializeEagerComponents(Map map, boolean z) {
-        for (Map.Entry entry : map.entrySet()) {
-            Component component = (Component) entry.getKey();
-            Provider provider = (Provider) entry.getValue();
-            if (component.isAlwaysEager() || (component.isEagerInDefaultApp() && z)) {
-                provider.get();
-            }
-        }
-        this.eventBus.enablePublishingAndFlushPending();
-    }
-
-    private static List iterableToList(Iterable iterable) {
-        ArrayList arrayList = new ArrayList();
-        Iterator it = iterable.iterator();
-        while (it.hasNext()) {
-            arrayList.add(it.next());
-        }
-        return arrayList;
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ Object lambda$discoverComponents$0(Component component) {
         return component.getFactory().create(new RestrictedComponentContainer(component, this));
@@ -209,31 +180,13 @@ public class ComponentRuntime implements ComponentContainer, ComponentLoader {
         }
     }
 
-    private void processDependencies() {
-        Map map;
-        Qualified qualified;
-        Provider empty;
-        for (Component component : this.components.keySet()) {
-            for (Dependency dependency : component.getDependencies()) {
-                if (dependency.isSet() && !this.lazySetMap.containsKey(dependency.getInterface())) {
-                    map = this.lazySetMap;
-                    qualified = dependency.getInterface();
-                    empty = LazySet.fromCollection(Collections.emptySet());
-                } else if (this.lazyInstanceMap.containsKey(dependency.getInterface())) {
-                    continue;
-                } else {
-                    if (dependency.isRequired()) {
-                        throw new MissingDependencyException(String.format("Unsatisfied dependency for component %s: %s", component, dependency.getInterface()));
-                    }
-                    if (!dependency.isSet()) {
-                        map = this.lazyInstanceMap;
-                        qualified = dependency.getInterface();
-                        empty = OptionalProvider.empty();
-                    }
-                }
-                map.put(qualified, empty);
-            }
+    private static List iterableToList(Iterable iterable) {
+        ArrayList arrayList = new ArrayList();
+        Iterator it = iterable.iterator();
+        while (it.hasNext()) {
+            arrayList.add(it.next());
         }
+        return arrayList;
     }
 
     private List processInstanceComponents(List list) {
@@ -244,7 +197,9 @@ public class ComponentRuntime implements ComponentContainer, ComponentLoader {
             if (component.isValue()) {
                 final Provider provider = (Provider) this.components.get(component);
                 for (Qualified qualified : component.getProvidedInterfaces()) {
-                    if (this.lazyInstanceMap.containsKey(qualified)) {
+                    if (!this.lazyInstanceMap.containsKey(qualified)) {
+                        this.lazyInstanceMap.put(qualified, provider);
+                    } else {
                         final OptionalProvider optionalProvider = (OptionalProvider) ((Provider) this.lazyInstanceMap.get(qualified));
                         arrayList.add(new Runnable() { // from class: com.google.firebase.components.ComponentRuntime$$ExternalSyntheticLambda2
                             @Override // java.lang.Runnable
@@ -252,8 +207,6 @@ public class ComponentRuntime implements ComponentContainer, ComponentLoader {
                                 OptionalProvider.this.set(provider);
                             }
                         });
-                    } else {
-                        this.lazyInstanceMap.put(qualified, provider);
                     }
                 }
             }
@@ -277,7 +230,9 @@ public class ComponentRuntime implements ComponentContainer, ComponentLoader {
             }
         }
         for (Map.Entry entry2 : hashMap.entrySet()) {
-            if (this.lazySetMap.containsKey(entry2.getKey())) {
+            if (!this.lazySetMap.containsKey(entry2.getKey())) {
+                this.lazySetMap.put((Qualified) entry2.getKey(), LazySet.fromCollection((Collection) entry2.getValue()));
+            } else {
                 final LazySet lazySet = (LazySet) this.lazySetMap.get(entry2.getKey());
                 for (final Provider provider2 : (Set) entry2.getValue()) {
                     arrayList.add(new Runnable() { // from class: com.google.firebase.components.ComponentRuntime$$ExternalSyntheticLambda3
@@ -287,36 +242,9 @@ public class ComponentRuntime implements ComponentContainer, ComponentLoader {
                         }
                     });
                 }
-            } else {
-                this.lazySetMap.put((Qualified) entry2.getKey(), LazySet.fromCollection((Collection) entry2.getValue()));
             }
         }
         return arrayList;
-    }
-
-    @Override // com.google.firebase.components.ComponentContainer
-    public /* synthetic */ Object get(Qualified qualified) {
-        return ComponentContainer.-CC.$default$get(this, qualified);
-    }
-
-    @Override // com.google.firebase.components.ComponentContainer
-    public /* synthetic */ Object get(Class cls) {
-        Object obj;
-        obj = get(Qualified.unqualified(cls));
-        return obj;
-    }
-
-    @Override // com.google.firebase.components.ComponentContainer
-    public Deferred getDeferred(Qualified qualified) {
-        Provider provider = getProvider(qualified);
-        return provider == null ? OptionalProvider.empty() : provider instanceof OptionalProvider ? (OptionalProvider) provider : OptionalProvider.of(provider);
-    }
-
-    @Override // com.google.firebase.components.ComponentContainer
-    public /* synthetic */ Deferred getDeferred(Class cls) {
-        Deferred deferred;
-        deferred = getDeferred(Qualified.unqualified(cls));
-        return deferred;
     }
 
     @Override // com.google.firebase.components.ComponentContainer
@@ -326,32 +254,15 @@ public class ComponentRuntime implements ComponentContainer, ComponentLoader {
     }
 
     @Override // com.google.firebase.components.ComponentContainer
-    public /* synthetic */ Provider getProvider(Class cls) {
-        Provider provider;
-        provider = getProvider(Qualified.unqualified(cls));
-        return provider;
-    }
-
-    public void initializeEagerComponents(boolean z) {
-        HashMap hashMap;
-        if (AsynchronousMediaCodecBufferEnqueuer$$ExternalSyntheticBackportWithForwarding0.m(this.eagerComponentsInitializedWith, null, Boolean.valueOf(z))) {
-            synchronized (this) {
-                hashMap = new HashMap(this.components);
-            }
-            doInitializeEagerComponents(hashMap, z);
+    public Deferred getDeferred(Qualified qualified) {
+        Provider provider = getProvider(qualified);
+        if (provider == null) {
+            return OptionalProvider.empty();
         }
-    }
-
-    @Override // com.google.firebase.components.ComponentContainer
-    public /* synthetic */ Set setOf(Qualified qualified) {
-        return ComponentContainer.-CC.$default$setOf(this, qualified);
-    }
-
-    @Override // com.google.firebase.components.ComponentContainer
-    public /* synthetic */ Set setOf(Class cls) {
-        Set of;
-        of = setOf(Qualified.unqualified(cls));
-        return of;
+        if (provider instanceof OptionalProvider) {
+            return (OptionalProvider) provider;
+        }
+        return OptionalProvider.of(provider);
     }
 
     @Override // com.google.firebase.components.ComponentContainer
@@ -361,5 +272,92 @@ public class ComponentRuntime implements ComponentContainer, ComponentLoader {
             return lazySet;
         }
         return EMPTY_PROVIDER;
+    }
+
+    public void initializeEagerComponents(boolean z) {
+        HashMap hashMap;
+        if (AsynchronousMediaCodecBufferEnqueuer$$ExternalSyntheticBackportWithForwarding1.m(this.eagerComponentsInitializedWith, null, Boolean.valueOf(z))) {
+            synchronized (this) {
+                hashMap = new HashMap(this.components);
+            }
+            doInitializeEagerComponents(hashMap, z);
+        }
+    }
+
+    private void doInitializeEagerComponents(Map map, boolean z) {
+        for (Map.Entry entry : map.entrySet()) {
+            Component component = (Component) entry.getKey();
+            Provider provider = (Provider) entry.getValue();
+            if (component.isAlwaysEager() || (component.isEagerInDefaultApp() && z)) {
+                provider.get();
+            }
+        }
+        this.eventBus.enablePublishingAndFlushPending();
+    }
+
+    private void processDependencies() {
+        for (Component component : this.components.keySet()) {
+            for (Dependency dependency : component.getDependencies()) {
+                if (dependency.isSet() && !this.lazySetMap.containsKey(dependency.getInterface())) {
+                    this.lazySetMap.put(dependency.getInterface(), LazySet.fromCollection(Collections.emptySet()));
+                } else if (this.lazyInstanceMap.containsKey(dependency.getInterface())) {
+                    continue;
+                } else {
+                    if (dependency.isRequired()) {
+                        throw new MissingDependencyException(String.format("Unsatisfied dependency for component %s: %s", component, dependency.getInterface()));
+                    }
+                    if (!dependency.isSet()) {
+                        this.lazyInstanceMap.put(dependency.getInterface(), OptionalProvider.empty());
+                    }
+                }
+            }
+        }
+    }
+
+    public static final class Builder {
+        private final Executor defaultExecutor;
+        private final List lazyRegistrars = new ArrayList();
+        private final List additionalComponents = new ArrayList();
+        private ComponentRegistrarProcessor componentRegistrarProcessor = ComponentRegistrarProcessor.NOOP;
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static /* synthetic */ ComponentRegistrar lambda$addComponentRegistrar$0(ComponentRegistrar componentRegistrar) {
+            return componentRegistrar;
+        }
+
+        Builder(Executor executor) {
+            this.defaultExecutor = executor;
+        }
+
+        public Builder addLazyComponentRegistrars(Collection collection) {
+            this.lazyRegistrars.addAll(collection);
+            return this;
+        }
+
+        public Builder addComponentRegistrar(final ComponentRegistrar componentRegistrar) {
+            this.lazyRegistrars.add(new Provider() { // from class: com.google.firebase.components.ComponentRuntime$Builder$$ExternalSyntheticLambda0
+                @Override // com.google.firebase.inject.Provider
+                public final Object get() {
+                    ComponentRegistrar lambda$addComponentRegistrar$0;
+                    lambda$addComponentRegistrar$0 = ComponentRuntime.Builder.lambda$addComponentRegistrar$0(ComponentRegistrar.this);
+                    return lambda$addComponentRegistrar$0;
+                }
+            });
+            return this;
+        }
+
+        public Builder addComponent(Component component) {
+            this.additionalComponents.add(component);
+            return this;
+        }
+
+        public Builder setProcessor(ComponentRegistrarProcessor componentRegistrarProcessor) {
+            this.componentRegistrarProcessor = componentRegistrarProcessor;
+            return this;
+        }
+
+        public ComponentRuntime build() {
+            return new ComponentRuntime(this.defaultExecutor, this.lazyRegistrars, this.additionalComponents, this.componentRegistrarProcessor);
+        }
     }
 }

@@ -2,8 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;
-import java.util.List;
-import kotlin.collections.ArraysKt___ArraysKt;
+import kotlin.collections.ArraysKt;
 
 /* loaded from: classes.dex */
 public final class zzdl implements zzdd {
@@ -14,7 +13,6 @@ public final class zzdl implements zzdd {
 
     @Override // com.google.android.recaptcha.internal.zzdd
     public final void zza(int i, zzcj zzcjVar, zzpq... zzpqVarArr) {
-        List list;
         int length = zzpqVarArr.length;
         if (length < 2) {
             throw new zzae(4, 3, null);
@@ -28,9 +26,7 @@ public final class zzdl implements zzdd {
             throw new zzae(4, 5, null);
         }
         Object zza3 = zzcjVar.zzc().zza(zzpqVarArr[1]);
-        zzck zzc = zzcjVar.zzc();
-        list = ArraysKt___ArraysKt.toList(zzpqVarArr);
-        Object[] zzh = zzc.zzh(list.subList(2, length));
+        Object[] zzh = zzcjVar.zzc().zzh(ArraysKt.toList(zzpqVarArr).subList(2, length));
         try {
             zzcjVar.zzc().zzf(i, method.invoke(zza3, Arrays.copyOf(zzh, zzh.length)));
         } catch (Exception e) {

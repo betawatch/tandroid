@@ -39,6 +39,8 @@ abstract class zzll {
 
     abstract void zzq(Object obj, zzmd zzmdVar);
 
+    abstract boolean zzs(zzkq zzkqVar);
+
     final boolean zzr(Object obj, zzkq zzkqVar) {
         int zzd = zzkqVar.zzd();
         int i = zzd >>> 3;
@@ -76,6 +78,4 @@ abstract class zzll {
         zzj(obj, i, zzf);
         return true;
     }
-
-    abstract boolean zzs(zzkq zzkqVar);
 }

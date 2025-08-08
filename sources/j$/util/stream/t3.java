@@ -1,92 +1,65 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
-import java.util.concurrent.atomic.AtomicLong;
+import j$.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-abstract class t3 {
-    protected final Spliterator a;
-    protected final boolean b;
-    private final long c;
-    private final AtomicLong d;
-
-    t3(Spliterator spliterator, long j, long j2) {
-        this.a = spliterator;
-        this.b = j2 < 0;
-        this.c = j2 >= 0 ? j2 : 0L;
-        this.d = new AtomicLong(j2 >= 0 ? j + j2 : j);
-    }
-
-    t3(Spliterator spliterator, t3 t3Var) {
-        this.a = spliterator;
-        this.b = t3Var.b;
-        this.d = t3Var.d;
-        this.c = t3Var.c;
-    }
-
-    public final int characteristics() {
-        return this.a.characteristics() & (-16465);
-    }
-
-    public final long estimateSize() {
-        return this.a.estimateSize();
-    }
-
-    protected final long t(long j) {
-        AtomicLong atomicLong;
-        long j2;
-        boolean z;
-        long min;
-        do {
-            atomicLong = this.d;
-            j2 = atomicLong.get();
-            z = this.b;
-            if (j2 != 0) {
-                min = Math.min(j2, j);
-                if (min <= 0) {
-                    break;
+final class t3 extends S2 {
+    @Override // j$.util.Spliterator
+    public final boolean s(Consumer consumer) {
+        Object obj;
+        consumer.getClass();
+        boolean b = b();
+        if (b) {
+            N2 n2 = (N2) this.h;
+            long j = this.g;
+            if (n2.c != 0) {
+                if (j >= n2.count()) {
+                    throw new IndexOutOfBoundsException(Long.toString(j));
                 }
-            } else {
-                if (z) {
-                    return j;
+                for (int i = 0; i <= n2.c; i++) {
+                    long j2 = n2.d[i];
+                    Object[] objArr = n2.f[i];
+                    if (j < objArr.length + j2) {
+                        obj = objArr[(int) (j - j2)];
+                    }
                 }
-                return 0L;
+                throw new IndexOutOfBoundsException(Long.toString(j));
             }
-        } while (!atomicLong.compareAndSet(j2, j2 - min));
-        if (z) {
-            return Math.max(j - min, 0L);
+            if (j < n2.b) {
+                obj = n2.e[(int) j];
+            } else {
+                throw new IndexOutOfBoundsException(Long.toString(j));
+            }
+            consumer.r(obj);
         }
-        long j3 = this.c;
-        return j2 > j3 ? Math.max(min - (j2 - j3), 0L) : min;
+        return b;
     }
 
-    public /* bridge */ /* synthetic */ j$.util.D trySplit() {
-        return (j$.util.D) trySplit();
+    @Override // j$.util.stream.S2
+    final S2 k(Spliterator spliterator) {
+        return new t3(this.b, spliterator, this.a);
     }
 
-    public /* bridge */ /* synthetic */ j$.util.G trySplit() {
-        return (j$.util.G) trySplit();
+    @Override // j$.util.stream.S2
+    final void j() {
+        N2 n2 = new N2();
+        this.h = n2;
+        this.e = this.b.B0(new a(n2, 6));
+        this.f = new a(this, 7);
     }
 
-    public /* bridge */ /* synthetic */ j$.util.J trySplit() {
-        return (j$.util.J) trySplit();
-    }
-
-    public /* bridge */ /* synthetic */ j$.util.M trySplit() {
-        return (j$.util.M) trySplit();
-    }
-
-    public final Spliterator trySplit() {
-        Spliterator trySplit;
-        if (this.d.get() == 0 || (trySplit = this.a.trySplit()) == null) {
-            return null;
+    @Override // j$.util.Spliterator
+    public final void a(Consumer consumer) {
+        if (this.h == null && !this.i) {
+            consumer.getClass();
+            h();
+            a aVar = new a(consumer, 8);
+            this.b.A0(this.d, aVar);
+            this.i = true;
+            return;
         }
-        return u(trySplit);
-    }
-
-    protected abstract Spliterator u(Spliterator spliterator);
-
-    protected final s3 v() {
-        return this.d.get() > 0 ? s3.MAYBE_MORE : this.b ? s3.UNLIMITED : s3.NO_MORE;
+        while (s(consumer)) {
+        }
     }
 }

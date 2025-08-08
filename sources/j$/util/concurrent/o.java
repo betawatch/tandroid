@@ -39,10 +39,10 @@ class o {
             } else if (l instanceof f) {
                 this.a = ((f) l).e;
                 n nVar2 = this.d;
-                if (nVar2 != null) {
-                    this.d = nVar2.d;
-                } else {
+                if (nVar2 == null) {
                     nVar2 = new n();
+                } else {
+                    this.d = nVar2.d;
                 }
                 nVar2.c = kVarArr;
                 nVar2.a = length;

@@ -30,16 +30,6 @@ public abstract class BrowserHistory {
         public String url;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            this.id = inputSerializedData.readInt64(z);
-            this.time = inputSerializedData.readInt64(z);
-            this.url = inputSerializedData.readString(z);
-            WebMetadataCache.WebMetadata webMetadata = new WebMetadataCache.WebMetadata();
-            this.meta = webMetadata;
-            webMetadata.readParams(inputSerializedData, z);
-        }
-
-        @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt64(this.id);
             outputSerializedData.writeInt64(this.time);
@@ -50,63 +40,35 @@ public abstract class BrowserHistory {
             outputSerializedData.writeString(str);
             this.meta.serializeToStream(outputSerializedData);
         }
-    }
 
-    public static void clearHistory() {
-        try {
-            history.clear();
-            historyById.clear();
-            File historyFile = getHistoryFile();
-            if (historyFile.exists()) {
-                historyFile.delete();
-            }
-        } catch (Exception e) {
-            FileLog.e(e);
+        @Override // org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            this.id = inputSerializedData.readInt64(z);
+            this.time = inputSerializedData.readInt64(z);
+            this.url = inputSerializedData.readString(z);
+            WebMetadataCache.WebMetadata webMetadata = new WebMetadataCache.WebMetadata();
+            this.meta = webMetadata;
+            webMetadata.readParams(inputSerializedData, z);
         }
-    }
-
-    public static ArrayList getHistory() {
-        return getHistory(null);
-    }
-
-    public static ArrayList getHistory(Utilities.Callback callback) {
-        boolean z;
-        if (callback == null || historyLoaded) {
-            z = false;
-        } else {
-            if (callbacks == null) {
-                callbacks = new ArrayList();
-            }
-            callbacks.add(callback);
-            z = true;
-        }
-        preloadHistory();
-        if (z) {
-            return null;
-        }
-        return history;
     }
 
     public static File getHistoryFile() {
         return new File(FileLoader.getDirectory(4), "webhistory.dat");
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$preloadHistory$0(ArrayList arrayList, LongSparseArray longSparseArray) {
-        history.addAll(0, arrayList);
-        for (int i = 0; i < longSparseArray.size(); i++) {
-            historyById.put(longSparseArray.keyAt(i), (Entry) longSparseArray.valueAt(i));
+    public static void preloadHistory() {
+        if (historyLoading || historyLoaded) {
+            return;
         }
-        historyLoaded = true;
-        historyLoading = false;
-        ArrayList arrayList2 = callbacks;
-        if (arrayList2 != null) {
-            Iterator it = arrayList2.iterator();
-            while (it.hasNext()) {
-                ((Utilities.Callback) it.next()).run(arrayList);
+        historyLoading = true;
+        history = new ArrayList();
+        historyById = new LongSparseArray();
+        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.web.BrowserHistory$$ExternalSyntheticLambda1
+            @Override // java.lang.Runnable
+            public final void run() {
+                BrowserHistory.lambda$preloadHistory$1();
             }
-            callbacks = null;
-        }
+        });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -132,6 +94,86 @@ public abstract class BrowserHistory {
             @Override // java.lang.Runnable
             public final void run() {
                 BrowserHistory.lambda$preloadHistory$0(arrayList, longSparseArray);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$preloadHistory$0(ArrayList arrayList, LongSparseArray longSparseArray) {
+        history.addAll(0, arrayList);
+        for (int i = 0; i < longSparseArray.size(); i++) {
+            historyById.put(longSparseArray.keyAt(i), (Entry) longSparseArray.valueAt(i));
+        }
+        historyLoaded = true;
+        historyLoading = false;
+        ArrayList arrayList2 = callbacks;
+        if (arrayList2 != null) {
+            Iterator it = arrayList2.iterator();
+            while (it.hasNext()) {
+                ((Utilities.Callback) it.next()).run(arrayList);
+            }
+            callbacks = null;
+        }
+    }
+
+    public static ArrayList getHistory() {
+        return getHistory(null);
+    }
+
+    public static ArrayList getHistory(Utilities.Callback callback) {
+        boolean z;
+        if (callback == null || historyLoaded) {
+            z = false;
+        } else {
+            if (callbacks == null) {
+                callbacks = new ArrayList();
+            }
+            callbacks.add(callback);
+            z = true;
+        }
+        preloadHistory();
+        if (z) {
+            return null;
+        }
+        return history;
+    }
+
+    public static void pushHistory(Entry entry) {
+        if (entry == null || entry.meta == null) {
+            return;
+        }
+        preloadHistory();
+        Entry entry2 = (Entry) historyById.get(entry.id);
+        if (entry2 != null) {
+            entry2.meta = entry.meta;
+        } else {
+            history.add(entry);
+            historyById.put(entry.id, entry);
+        }
+        scheduleHistorySave();
+    }
+
+    private static void scheduleHistorySave() {
+        AndroidUtilities.cancelRunOnUIThread(new Runnable() { // from class: org.telegram.ui.web.BrowserHistory$$ExternalSyntheticLambda0
+            @Override // java.lang.Runnable
+            public final void run() {
+                BrowserHistory.saveHistory();
+            }
+        });
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.BrowserHistory$$ExternalSyntheticLambda0
+            @Override // java.lang.Runnable
+            public final void run() {
+                BrowserHistory.saveHistory();
+            }
+        }, 1000L);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static void saveHistory() {
+        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.web.BrowserHistory$$ExternalSyntheticLambda2
+            @Override // java.lang.Runnable
+            public final void run() {
+                BrowserHistory.lambda$saveHistory$2();
             }
         });
     }
@@ -168,58 +210,16 @@ public abstract class BrowserHistory {
         }
     }
 
-    public static void preloadHistory() {
-        if (historyLoading || historyLoaded) {
-            return;
+    public static void clearHistory() {
+        try {
+            history.clear();
+            historyById.clear();
+            File historyFile = getHistoryFile();
+            if (historyFile.exists()) {
+                historyFile.delete();
+            }
+        } catch (Exception e) {
+            FileLog.e(e);
         }
-        historyLoading = true;
-        history = new ArrayList();
-        historyById = new LongSparseArray();
-        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.web.BrowserHistory$$ExternalSyntheticLambda1
-            @Override // java.lang.Runnable
-            public final void run() {
-                BrowserHistory.lambda$preloadHistory$1();
-            }
-        });
-    }
-
-    public static void pushHistory(Entry entry) {
-        if (entry == null || entry.meta == null) {
-            return;
-        }
-        preloadHistory();
-        Entry entry2 = (Entry) historyById.get(entry.id);
-        if (entry2 != null) {
-            entry2.meta = entry.meta;
-        } else {
-            history.add(entry);
-            historyById.put(entry.id, entry);
-        }
-        scheduleHistorySave();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static void saveHistory() {
-        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.web.BrowserHistory$$ExternalSyntheticLambda2
-            @Override // java.lang.Runnable
-            public final void run() {
-                BrowserHistory.lambda$saveHistory$2();
-            }
-        });
-    }
-
-    private static void scheduleHistorySave() {
-        AndroidUtilities.cancelRunOnUIThread(new Runnable() { // from class: org.telegram.ui.web.BrowserHistory$$ExternalSyntheticLambda0
-            @Override // java.lang.Runnable
-            public final void run() {
-                BrowserHistory.saveHistory();
-            }
-        });
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.BrowserHistory$$ExternalSyntheticLambda0
-            @Override // java.lang.Runnable
-            public final void run() {
-                BrowserHistory.saveHistory();
-            }
-        }, 1000L);
     }
 }

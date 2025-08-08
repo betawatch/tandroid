@@ -1,73 +1,38 @@
 package j$.util.stream;
 
-import j$.util.function.BiConsumer;
+import j$.util.Spliterator;
+import j$.util.function.Predicate;
 import j$.util.function.Supplier;
 
 /* loaded from: classes2.dex */
-public interface E extends BaseStream {
-    double D(double d, j$.util.function.i iVar);
+final class E implements v3 {
+    final boolean a;
+    final Object b;
+    final Predicate c;
+    final Supplier d;
 
-    Stream G(j$.util.function.p pVar);
+    E(boolean z, R2 r2, Object obj, Predicate predicate, Supplier supplier) {
+        this.a = z;
+        this.b = obj;
+        this.c = predicate;
+        this.d = supplier;
+    }
 
-    E L(j$.util.function.v vVar);
+    @Override // j$.util.stream.v3
+    public final int d() {
+        return Q2.u | (this.a ? 0 : Q2.r);
+    }
 
-    IntStream Q(j$.util.function.r rVar);
+    @Override // j$.util.stream.v3
+    public final Object a(b bVar, Spliterator spliterator) {
+        w3 w3Var = (w3) this.d.get();
+        bVar.A0(spliterator, w3Var);
+        Object obj = w3Var.get();
+        return obj != null ? obj : this.b;
+    }
 
-    E S(j$.util.function.q qVar);
-
-    E a(j$.util.function.m mVar);
-
-    boolean a0(j$.util.function.q qVar);
-
-    j$.util.j average();
-
-    Stream boxed();
-
-    void c0(j$.util.function.m mVar);
-
-    long count();
-
-    boolean d0(j$.util.function.q qVar);
-
-    E distinct();
-
-    j$.util.j findAny();
-
-    j$.util.j findFirst();
-
-    void i(j$.util.function.m mVar);
-
-    j$.util.p iterator();
-
-    boolean j(j$.util.function.q qVar);
-
-    E limit(long j);
-
-    j$.util.j max();
-
-    j$.util.j min();
-
-    E parallel();
-
-    E q(j$.util.function.p pVar);
-
-    LongStream r(j$.util.function.u uVar);
-
-    E sequential();
-
-    E skip(long j);
-
-    E sorted();
-
-    j$.util.D spliterator();
-
-    double sum();
-
-    j$.util.f summaryStatistics();
-
-    double[] toArray();
-
-    j$.util.j x(j$.util.function.i iVar);
-
-    Object z(Supplier supplier, j$.util.function.f0 f0Var, BiConsumer biConsumer);
+    @Override // j$.util.stream.v3
+    public final Object c(b bVar, Spliterator spliterator) {
+        return new K(this, bVar, spliterator).invoke();
+    }
 }

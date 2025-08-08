@@ -25,6 +25,8 @@ public class DatabaseMigrationHelper {
         int i3;
         int i4;
         int i5;
+        NativeByteBuffer nativeByteBuffer2;
+        NativeByteBuffer nativeByteBuffer3;
         SQLiteCursor sQLiteCursor3;
         SQLiteCursor sQLiteCursor4;
         SQLiteCursor sQLiteCursor5;
@@ -185,13 +187,13 @@ public class DatabaseMigrationHelper {
                         tL_chatFull.notify_settings = new TLRPC.TL_peerNotifySettingsEmpty_layer77();
                         tL_chatFull.exported_invite = null;
                         tL_chatFull.participants = TLdeserialize;
-                        NativeByteBuffer nativeByteBuffer2 = new NativeByteBuffer(tL_chatFull.getObjectSize());
-                        tL_chatFull.serializeToStream(nativeByteBuffer2);
+                        NativeByteBuffer nativeByteBuffer4 = new NativeByteBuffer(tL_chatFull.getObjectSize());
+                        tL_chatFull.serializeToStream(nativeByteBuffer4);
                         executeFast2.requery();
                         executeFast2.bindLong(1, intValue2);
-                        executeFast2.bindByteBuffer(2, nativeByteBuffer2);
+                        executeFast2.bindByteBuffer(2, nativeByteBuffer4);
                         executeFast2.step();
-                        nativeByteBuffer2.reuse();
+                        nativeByteBuffer4.reuse();
                     }
                 }
             }
@@ -832,28 +834,31 @@ public class DatabaseMigrationHelper {
                         executeFast10.bindInteger(7, i3);
                         executeFast10.bindInteger(8, i5);
                         executeFast10.bindInteger(9, intValue24);
-                        NativeByteBuffer nativeByteBuffer3 = nativeByteBuffer;
                         if (nativeByteBuffer != null) {
-                            executeFast10.bindByteBuffer(10, nativeByteBuffer3);
+                            nativeByteBuffer2 = nativeByteBuffer;
+                            executeFast10.bindByteBuffer(10, nativeByteBuffer2);
                         } else {
+                            nativeByteBuffer2 = nativeByteBuffer;
                             executeFast10.bindNull(10);
                         }
                         executeFast10.bindInteger(11, intValue25);
                         executeFast10.bindInteger(12, intValue26);
                         executeFast10.bindInteger(13, intValue27);
                         if (byteBufferValue8 != null) {
-                            executeFast10.bindByteBuffer(14, byteBufferValue8);
+                            nativeByteBuffer3 = byteBufferValue8;
+                            executeFast10.bindByteBuffer(14, nativeByteBuffer3);
                         } else {
+                            nativeByteBuffer3 = byteBufferValue8;
                             executeFast10.bindNull(14);
                         }
                         executeFast10.bindInteger(15, i2);
                         executeFast10.bindInteger(16, i4 > 0 ? 1 : 0);
                         executeFast10.step();
+                        if (nativeByteBuffer2 != null) {
+                            nativeByteBuffer2.reuse();
+                        }
                         if (nativeByteBuffer3 != null) {
                             nativeByteBuffer3.reuse();
-                        }
-                        if (byteBufferValue8 != null) {
-                            byteBufferValue8.reuse();
                         }
                         byteBufferValue6.reuse();
                         database = sQLiteDatabase3;
@@ -1459,8 +1464,8 @@ public class DatabaseMigrationHelper {
         return 167;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:58:0x02bb A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x02bd A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x02c0 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x02c2 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1472,8 +1477,6 @@ public class DatabaseMigrationHelper {
         long j2;
         SQLiteCursor sQLiteCursor;
         int i2;
-        Long valueOf;
-        ArrayList arrayList;
         int i3 = 0;
         File file4 = new File(ApplicationLoader.getFilesDirFixed(), "recover_database_" + i + "/");
         file4.mkdirs();
@@ -1487,8 +1490,8 @@ public class DatabaseMigrationHelper {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
-        ArrayList arrayList3 = new ArrayList();
         FileLog.d("start recover database");
         try {
             j = System.currentTimeMillis();
@@ -1549,17 +1552,14 @@ public class DatabaseMigrationHelper {
         while (queryFinalized.next()) {
             long longValue = queryFinalized.longValue(0);
             if (DialogObject.isEncryptedDialog(longValue)) {
-                valueOf = Long.valueOf(longValue);
-                arrayList = arrayList2;
+                arrayList.add(Long.valueOf(longValue));
             } else {
-                valueOf = Long.valueOf(longValue);
-                arrayList = arrayList3;
+                arrayList2.add(Long.valueOf(longValue));
             }
-            arrayList.add(valueOf);
         }
         queryFinalized.dispose();
-        for (int i5 = 0; i5 < arrayList2.size(); i5++) {
-            Long l = (Long) arrayList2.get(i5);
+        for (int i5 = 0; i5 < arrayList.size(); i5++) {
+            Long l = (Long) arrayList.get(i5);
             l.longValue();
             Locale locale = Locale.US;
             sQLiteDatabase.executeFast(String.format(locale, "INSERT OR IGNORE INTO messages_v2 SELECT * FROM old.messages_v2 WHERE uid = %d;", l)).stepThis().dispose();
@@ -1570,8 +1570,8 @@ public class DatabaseMigrationHelper {
         SQLitePreparedStatement executeFast = sQLiteDatabase.executeFast("REPLACE INTO messages_holes VALUES(?, ?, ?)");
         SQLitePreparedStatement executeFast2 = sQLiteDatabase.executeFast("REPLACE INTO media_holes_v2 VALUES(?, ?, ?, ?)");
         int i6 = 0;
-        while (i6 < arrayList3.size()) {
-            Long l2 = (Long) arrayList3.get(i6);
+        while (i6 < arrayList2.size()) {
+            Long l2 = (Long) arrayList2.get(i6);
             SQLiteCursor queryFinalized2 = sQLiteDatabase.queryFinalized("SELECT last_mid_i, last_mid FROM old.dialogs WHERE did = " + l2, new Object[i3]);
             if (queryFinalized2.next()) {
                 long longValue2 = queryFinalized2.longValue(i3);

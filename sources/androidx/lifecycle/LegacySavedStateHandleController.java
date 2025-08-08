@@ -8,6 +8,12 @@ import java.util.Iterator;
 
 /* loaded from: classes.dex */
 abstract class LegacySavedStateHandleController {
+    static SavedStateHandleController create(SavedStateRegistry savedStateRegistry, Lifecycle lifecycle, String str, Bundle bundle) {
+        SavedStateHandleController savedStateHandleController = new SavedStateHandleController(str, SavedStateHandle.createHandle(savedStateRegistry.consumeRestoredStateForKey(str), bundle));
+        savedStateHandleController.attachToLifecycle(savedStateRegistry, lifecycle);
+        tryToAddRecreator(savedStateRegistry, lifecycle);
+        return savedStateHandleController;
+    }
 
     static final class OnRecreation implements SavedStateRegistry.AutoRecreated {
         OnRecreation() {
@@ -38,13 +44,6 @@ abstract class LegacySavedStateHandleController {
         }
         savedStateHandleController.attachToLifecycle(savedStateRegistry, lifecycle);
         tryToAddRecreator(savedStateRegistry, lifecycle);
-    }
-
-    static SavedStateHandleController create(SavedStateRegistry savedStateRegistry, Lifecycle lifecycle, String str, Bundle bundle) {
-        SavedStateHandleController savedStateHandleController = new SavedStateHandleController(str, SavedStateHandle.createHandle(savedStateRegistry.consumeRestoredStateForKey(str), bundle));
-        savedStateHandleController.attachToLifecycle(savedStateRegistry, lifecycle);
-        tryToAddRecreator(savedStateRegistry, lifecycle);
-        return savedStateHandleController;
     }
 
     private static void tryToAddRecreator(final SavedStateRegistry savedStateRegistry, final Lifecycle lifecycle) {

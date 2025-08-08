@@ -1,5 +1,5 @@
 package com.google.firebase.crashlytics.internal.breadcrumbs;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public interface BreadcrumbHandler {
 }

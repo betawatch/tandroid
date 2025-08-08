@@ -2,21 +2,13 @@ package com.google.firebase.sessions.settings;
 
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class SessionConfigs {
     private final Integer cacheDuration;
     private final Long cacheUpdatedTime;
     private final Boolean sessionEnabled;
     private final Integer sessionRestartTimeout;
     private final Double sessionSamplingRate;
-
-    public SessionConfigs(Boolean bool, Double d, Integer num, Integer num2, Long l) {
-        this.sessionEnabled = bool;
-        this.sessionSamplingRate = d;
-        this.sessionRestartTimeout = num;
-        this.cacheDuration = num2;
-        this.cacheUpdatedTime = l;
-    }
 
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -27,26 +19,6 @@ public final class SessionConfigs {
         }
         SessionConfigs sessionConfigs = (SessionConfigs) obj;
         return Intrinsics.areEqual(this.sessionEnabled, sessionConfigs.sessionEnabled) && Intrinsics.areEqual(this.sessionSamplingRate, sessionConfigs.sessionSamplingRate) && Intrinsics.areEqual(this.sessionRestartTimeout, sessionConfigs.sessionRestartTimeout) && Intrinsics.areEqual(this.cacheDuration, sessionConfigs.cacheDuration) && Intrinsics.areEqual(this.cacheUpdatedTime, sessionConfigs.cacheUpdatedTime);
-    }
-
-    public final Integer getCacheDuration() {
-        return this.cacheDuration;
-    }
-
-    public final Long getCacheUpdatedTime() {
-        return this.cacheUpdatedTime;
-    }
-
-    public final Boolean getSessionEnabled() {
-        return this.sessionEnabled;
-    }
-
-    public final Integer getSessionRestartTimeout() {
-        return this.sessionRestartTimeout;
-    }
-
-    public final Double getSessionSamplingRate() {
-        return this.sessionSamplingRate;
     }
 
     public int hashCode() {
@@ -64,5 +36,33 @@ public final class SessionConfigs {
 
     public String toString() {
         return "SessionConfigs(sessionEnabled=" + this.sessionEnabled + ", sessionSamplingRate=" + this.sessionSamplingRate + ", sessionRestartTimeout=" + this.sessionRestartTimeout + ", cacheDuration=" + this.cacheDuration + ", cacheUpdatedTime=" + this.cacheUpdatedTime + ')';
+    }
+
+    public SessionConfigs(Boolean bool, Double d, Integer num, Integer num2, Long l) {
+        this.sessionEnabled = bool;
+        this.sessionSamplingRate = d;
+        this.sessionRestartTimeout = num;
+        this.cacheDuration = num2;
+        this.cacheUpdatedTime = l;
+    }
+
+    public final Boolean getSessionEnabled() {
+        return this.sessionEnabled;
+    }
+
+    public final Double getSessionSamplingRate() {
+        return this.sessionSamplingRate;
+    }
+
+    public final Integer getSessionRestartTimeout() {
+        return this.sessionRestartTimeout;
+    }
+
+    public final Integer getCacheDuration() {
+        return this.cacheDuration;
+    }
+
+    public final Long getCacheUpdatedTime() {
+        return this.cacheUpdatedTime;
     }
 }

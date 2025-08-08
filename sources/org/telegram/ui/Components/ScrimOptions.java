@@ -46,7 +46,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.ChatMessageCell;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class ScrimOptions extends Dialog {
     private Bitmap blurBitmap;
     private Paint blurBitmapPaint;
@@ -108,11 +108,11 @@ public class ScrimOptions extends Dialog {
 
             @Override // android.view.ViewGroup, android.view.View
             public boolean dispatchKeyEventPreIme(KeyEvent keyEvent) {
-                if (keyEvent == null || keyEvent.getKeyCode() != 4 || keyEvent.getAction() != 1) {
-                    return super.dispatchKeyEventPreIme(keyEvent);
+                if (keyEvent != null && keyEvent.getKeyCode() == 4 && keyEvent.getAction() == 1) {
+                    ScrimOptions.this.onBackPressed();
+                    return true;
                 }
-                ScrimOptions.this.onBackPressed();
-                return true;
+                return super.dispatchKeyEventPreIme(keyEvent);
             }
 
             @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
@@ -122,7 +122,7 @@ public class ScrimOptions extends Dialog {
             }
         };
         this.windowView = frameLayout;
-        frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda10
+        frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ScrimOptions.this.lambda$new$0(view);
@@ -132,50 +132,128 @@ public class ScrimOptions extends Dialog {
         this.containerView = sizeNotifierFrameLayout;
         sizeNotifierFrameLayout.setClipToPadding(false);
         frameLayout.addView(sizeNotifierFrameLayout, LayoutHelper.createFrame(-1, -1, 119));
-        if (Build.VERSION.SDK_INT >= 21) {
-            frameLayout.setFitsSystemWindows(true);
-            frameLayout.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() { // from class: org.telegram.ui.Components.ScrimOptions.2
-                @Override // android.view.View.OnApplyWindowInsetsListener
-                public WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-                    int systemWindowInsetLeft;
-                    int systemWindowInsetTop;
-                    int systemWindowInsetRight;
-                    int systemWindowInsetBottom;
-                    WindowInsets consumeSystemWindowInsets;
-                    WindowInsets windowInsets2;
-                    Insets insets;
-                    int i;
-                    int i2;
-                    int i3;
-                    int i4;
-                    int i5 = Build.VERSION.SDK_INT;
-                    if (i5 >= 30) {
-                        insets = windowInsets.getInsets(WindowInsetsCompat.Type.displayCutout() | WindowInsetsCompat.Type.systemBars());
-                        android.graphics.Rect rect = ScrimOptions.this.insets;
-                        i = insets.left;
-                        i2 = insets.top;
-                        i3 = insets.right;
-                        i4 = insets.bottom;
-                        rect.set(i, i2, i3, i4);
-                    } else {
-                        android.graphics.Rect rect2 = ScrimOptions.this.insets;
-                        systemWindowInsetLeft = windowInsets.getSystemWindowInsetLeft();
-                        systemWindowInsetTop = windowInsets.getSystemWindowInsetTop();
-                        systemWindowInsetRight = windowInsets.getSystemWindowInsetRight();
-                        systemWindowInsetBottom = windowInsets.getSystemWindowInsetBottom();
-                        rect2.set(systemWindowInsetLeft, systemWindowInsetTop, systemWindowInsetRight, systemWindowInsetBottom);
-                    }
-                    ScrimOptions.this.containerView.setPadding(ScrimOptions.this.insets.left, ScrimOptions.this.insets.top, ScrimOptions.this.insets.right, ScrimOptions.this.insets.bottom);
-                    ScrimOptions.this.windowView.requestLayout();
-                    if (i5 >= 30) {
-                        windowInsets2 = WindowInsets.CONSUMED;
-                        return windowInsets2;
-                    }
-                    consumeSystemWindowInsets = windowInsets.consumeSystemWindowInsets();
-                    return consumeSystemWindowInsets;
+        frameLayout.setFitsSystemWindows(true);
+        frameLayout.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() { // from class: org.telegram.ui.Components.ScrimOptions.2
+            @Override // android.view.View.OnApplyWindowInsetsListener
+            public WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
+                WindowInsets windowInsets2;
+                Insets insets;
+                int i;
+                int i2;
+                int i3;
+                int i4;
+                int i5 = Build.VERSION.SDK_INT;
+                if (i5 < 30) {
+                    ScrimOptions.this.insets.set(windowInsets.getSystemWindowInsetLeft(), windowInsets.getSystemWindowInsetTop(), windowInsets.getSystemWindowInsetRight(), windowInsets.getSystemWindowInsetBottom());
+                } else {
+                    insets = windowInsets.getInsets(WindowInsetsCompat.Type.displayCutout() | WindowInsetsCompat.Type.systemBars());
+                    android.graphics.Rect rect = ScrimOptions.this.insets;
+                    i = insets.left;
+                    i2 = insets.top;
+                    i3 = insets.right;
+                    i4 = insets.bottom;
+                    rect.set(i, i2, i3, i4);
                 }
-            });
+                ScrimOptions.this.containerView.setPadding(ScrimOptions.this.insets.left, ScrimOptions.this.insets.top, ScrimOptions.this.insets.right, ScrimOptions.this.insets.bottom);
+                ScrimOptions.this.windowView.requestLayout();
+                if (i5 >= 30) {
+                    windowInsets2 = WindowInsets.CONSUMED;
+                    return windowInsets2;
+                }
+                return windowInsets.consumeSystemWindowInsets();
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$0(View view) {
+        onBackPressed();
+    }
+
+    public void setItemOptions(ItemOptions itemOptions) {
+        this.options = itemOptions;
+        this.optionsView = itemOptions.getLayout();
+        FrameLayout frameLayout = new FrameLayout(this.context);
+        this.optionsContainer = frameLayout;
+        frameLayout.addView(this.optionsView, LayoutHelper.createFrame(-2, -2.0f));
+        this.containerView.addView(this.optionsContainer, LayoutHelper.createFrame(-2, -2.0f));
+    }
+
+    @Override // android.app.Dialog
+    public boolean isShowing() {
+        return !this.dismissing;
+    }
+
+    @Override // android.app.Dialog
+    public void show() {
+        if (AndroidUtilities.isSafeToShow(getContext())) {
+            super.show();
+            prepareBlur(null);
+            animateOpenTo(true, null);
         }
+    }
+
+    @Override // android.app.Dialog, android.content.DialogInterface
+    public void dismiss() {
+        if (this.dismissing) {
+            return;
+        }
+        this.dismissing = true;
+        animateOpenTo(false, new Runnable() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda5
+            @Override // java.lang.Runnable
+            public final void run() {
+                ScrimOptions.this.lambda$dismiss$2();
+            }
+        });
+        this.windowView.invalidate();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$dismiss$1() {
+        super.dismiss();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$dismiss$2() {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda9
+            @Override // java.lang.Runnable
+            public final void run() {
+                ScrimOptions.this.lambda$dismiss$1();
+            }
+        });
+    }
+
+    public void dismissFast() {
+        if (this.dismissing) {
+            return;
+        }
+        this.dismissing = true;
+        animateOpenTo(false, 2.0f, new Runnable() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda3
+            @Override // java.lang.Runnable
+            public final void run() {
+                ScrimOptions.this.lambda$dismissFast$4();
+            }
+        });
+        this.windowView.invalidate();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$dismissFast$3() {
+        super.dismiss();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$dismissFast$4() {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda8
+            @Override // java.lang.Runnable
+            public final void run() {
+                ScrimOptions.this.lambda$dismissFast$3();
+            }
+        });
+    }
+
+    private void animateOpenTo(boolean z, Runnable runnable) {
+        animateOpenTo(z, 1.0f, runnable);
     }
 
     private void animateOpenTo(final boolean z, float f, final Runnable runnable) {
@@ -185,7 +263,7 @@ public class ScrimOptions extends Dialog {
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.openProgress, z ? 1.0f : 0.0f);
         this.openAnimator = ofFloat;
-        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda9
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda6
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
                 ScrimOptions.this.lambda$animateOpenTo$5(valueAnimator2);
@@ -211,10 +289,6 @@ public class ScrimOptions extends Dialog {
         this.openAnimator.start();
     }
 
-    private void animateOpenTo(boolean z, Runnable runnable) {
-        animateOpenTo(z, 1.0f, runnable);
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$animateOpenTo$5(ValueAnimator valueAnimator) {
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
@@ -226,39 +300,40 @@ public class ScrimOptions extends Dialog {
         this.containerView.invalidate();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$dismiss$1() {
-        super.dismiss();
+    @Override // android.app.Dialog
+    protected void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        Window window = getWindow();
+        window.setWindowAnimations(R.style.DialogNoAnimation);
+        setContentView(this.windowView, new ViewGroup.LayoutParams(-1, -1));
+        WindowManager.LayoutParams attributes = window.getAttributes();
+        attributes.width = -1;
+        attributes.height = -1;
+        attributes.gravity = 119;
+        attributes.dimAmount = 0.0f;
+        int i = attributes.flags & (-3);
+        attributes.softInputMode = 16;
+        attributes.flags = 131072 | i;
+        int i2 = Build.VERSION.SDK_INT;
+        attributes.flags = i | (-1945959040);
+        if (i2 >= 28) {
+            attributes.layoutInDisplayCutoutMode = 1;
+        }
+        window.setAttributes(attributes);
+        this.windowView.setSystemUiVisibility(256);
+        AndroidUtilities.setLightNavigationBar(this.windowView, !Theme.isCurrentThemeDark());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$dismiss$2() {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda12
-            @Override // java.lang.Runnable
-            public final void run() {
-                ScrimOptions.this.lambda$dismiss$1();
+    private void prepareBlur(final View view) {
+        if (view != null) {
+            view.setVisibility(4);
+        }
+        AndroidUtilities.makeGlobalBlurBitmap(new Utilities.Callback() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda4
+            @Override // org.telegram.messenger.Utilities.Callback
+            public final void run(Object obj) {
+                ScrimOptions.this.lambda$prepareBlur$6(view, (Bitmap) obj);
             }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$dismissFast$3() {
-        super.dismiss();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$dismissFast$4() {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda11
-            @Override // java.lang.Runnable
-            public final void run() {
-                ScrimOptions.this.lambda$dismissFast$3();
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        onBackPressed();
+        }, 14.0f);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -279,52 +354,6 @@ public class ScrimOptions extends Dialog {
         AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, Theme.isCurrentThemeDark() ? -0.02f : -0.07f);
         this.blurBitmapPaint.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
         this.blurMatrix = new Matrix();
-    }
-
-    private void prepareBlur(final View view) {
-        if (view != null) {
-            view.setVisibility(4);
-        }
-        AndroidUtilities.makeGlobalBlurBitmap(new Utilities.Callback() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda7
-            @Override // org.telegram.messenger.Utilities.Callback
-            public final void run(Object obj) {
-                ScrimOptions.this.lambda$prepareBlur$6(view, (Bitmap) obj);
-            }
-        }, 14.0f);
-    }
-
-    @Override // android.app.Dialog, android.content.DialogInterface
-    public void dismiss() {
-        if (this.dismissing) {
-            return;
-        }
-        this.dismissing = true;
-        animateOpenTo(false, new Runnable() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda8
-            @Override // java.lang.Runnable
-            public final void run() {
-                ScrimOptions.this.lambda$dismiss$2();
-            }
-        });
-        this.windowView.invalidate();
-    }
-
-    public void dismissFast() {
-        if (this.dismissing) {
-            return;
-        }
-        this.dismissing = true;
-        animateOpenTo(false, 2.0f, new Runnable() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda6
-            @Override // java.lang.Runnable
-            public final void run() {
-                ScrimOptions.this.lambda$dismissFast$4();
-            }
-        });
-        this.windowView.invalidate();
-    }
-
-    @Override // android.app.Dialog
-    public boolean isShowing() {
-        return !this.dismissing;
     }
 
     public void layout() {
@@ -366,52 +395,15 @@ public class ScrimOptions extends Dialog {
         }
     }
 
-    @Override // android.app.Dialog
-    protected void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
-        Window window = getWindow();
-        window.setWindowAnimations(R.style.DialogNoAnimation);
-        setContentView(this.windowView, new ViewGroup.LayoutParams(-1, -1));
-        WindowManager.LayoutParams attributes = window.getAttributes();
-        attributes.width = -1;
-        attributes.height = -1;
-        attributes.gravity = 119;
-        attributes.dimAmount = 0.0f;
-        int i = attributes.flags & (-3);
-        attributes.softInputMode = 16;
-        attributes.flags = 131072 | i;
-        int i2 = Build.VERSION.SDK_INT;
-        if (i2 >= 21) {
-            attributes.flags = i | (-1945960192);
-        }
-        attributes.flags |= 1152;
-        if (i2 >= 28) {
-            attributes.layoutInDisplayCutoutMode = 1;
-        }
-        window.setAttributes(attributes);
-        this.windowView.setSystemUiVisibility(256);
-        AndroidUtilities.setLightNavigationBar(this.windowView, !Theme.isCurrentThemeDark());
-    }
-
-    public void setItemOptions(ItemOptions itemOptions) {
-        this.options = itemOptions;
-        this.optionsView = itemOptions.getLayout();
-        FrameLayout frameLayout = new FrameLayout(this.context);
-        this.optionsContainer = frameLayout;
-        frameLayout.addView(this.optionsView, LayoutHelper.createFrame(-2, -2.0f));
-        this.containerView.addView(this.optionsContainer, LayoutHelper.createFrame(-2, -2.0f));
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:112:0x036c  */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x0391  */
-    /* JADX WARN: Removed duplicated region for block: B:118:0x03a0  */
-    /* JADX WARN: Removed duplicated region for block: B:121:0x03c1  */
-    /* JADX WARN: Removed duplicated region for block: B:124:0x03d2  */
-    /* JADX WARN: Removed duplicated region for block: B:127:0x03e3  */
-    /* JADX WARN: Removed duplicated region for block: B:130:0x0451  */
-    /* JADX WARN: Removed duplicated region for block: B:140:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:141:0x03e8  */
-    /* JADX WARN: Removed duplicated region for block: B:142:0x03cb  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x038d  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x039c  */
+    /* JADX WARN: Removed duplicated region for block: B:118:0x03bd  */
+    /* JADX WARN: Removed duplicated region for block: B:121:0x03ce  */
+    /* JADX WARN: Removed duplicated region for block: B:124:0x03df  */
+    /* JADX WARN: Removed duplicated region for block: B:127:0x044d  */
+    /* JADX WARN: Removed duplicated region for block: B:137:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:138:0x03e4  */
+    /* JADX WARN: Removed duplicated region for block: B:139:0x03c7  */
     /* JADX WARN: Removed duplicated region for block: B:40:0x00d8  */
     /* JADX WARN: Removed duplicated region for block: B:93:0x01ca A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:94:0x01cb  */
@@ -441,9 +433,6 @@ public class ScrimOptions extends Dialog {
         int i7;
         int endHyphenEdit;
         String fontVariationSettings;
-        float letterSpacing;
-        String fontFeatureSettings;
-        boolean isElegantTextHeight;
         ArrayList<ChatMessageCell.PollButton> pollButtons;
         float f6;
         int i8;
@@ -630,14 +619,9 @@ public class ScrimOptions extends Dialog {
                                     textPaint.setTypeface(staticLayout3.getPaint().getTypeface());
                                     textPaint.setLinearText(staticLayout3.getPaint().isLinearText());
                                     i6 = Build.VERSION.SDK_INT;
-                                    if (i6 >= 21) {
-                                        letterSpacing = staticLayout3.getPaint().getLetterSpacing();
-                                        textPaint.setLetterSpacing(letterSpacing);
-                                        fontFeatureSettings = staticLayout3.getPaint().getFontFeatureSettings();
-                                        textPaint.setFontFeatureSettings(fontFeatureSettings);
-                                        isElegantTextHeight = staticLayout3.getPaint().isElegantTextHeight();
-                                        textPaint.setElegantTextHeight(isElegantTextHeight);
-                                    }
+                                    textPaint.setLetterSpacing(staticLayout3.getPaint().getLetterSpacing());
+                                    textPaint.setFontFeatureSettings(staticLayout3.getPaint().getFontFeatureSettings());
+                                    textPaint.setElegantTextHeight(staticLayout3.getPaint().isElegantTextHeight());
                                     if (i6 >= 26) {
                                         fontVariationSettings = staticLayout3.getPaint().getFontVariationSettings();
                                         textPaint.setFontVariationSettings(fontVariationSettings);
@@ -664,6 +648,15 @@ public class ScrimOptions extends Dialog {
                                         private int alpha = NotificationCenter.goingToPreviewTheme;
 
                                         @Override // android.graphics.drawable.Drawable
+                                        public int getOpacity() {
+                                            return -2;
+                                        }
+
+                                        @Override // android.graphics.drawable.Drawable
+                                        public void setColorFilter(ColorFilter colorFilter) {
+                                        }
+
+                                        @Override // android.graphics.drawable.Drawable
                                         public void draw(Canvas canvas2) {
                                             if (this.alpha <= 0) {
                                                 return;
@@ -676,11 +669,14 @@ public class ScrimOptions extends Dialog {
                                             int[] iArr3 = iArr2;
                                             canvas2.translate(iArr3[0], iArr3[1]);
                                             ChatMessageCell chatMessageCell2 = chatMessageCell;
-                                            if (chatMessageCell2 == null || !chatMessageCell2.drawBackgroundInParent()) {
-                                                canvas2.drawPath(linkPath2, paint);
-                                            } else {
+                                            if (chatMessageCell2 != null && chatMessageCell2.drawBackgroundInParent()) {
                                                 Theme.MessageDrawable messageDrawable = chatMessageCell.currentBackgroundDrawable;
-                                                if (messageDrawable == null || messageDrawable.getPaint() == null) {
+                                                if (messageDrawable != null && messageDrawable.getPaint() != null) {
+                                                    canvas2.save();
+                                                    canvas2.translate(0.0f, -chatMessageCell.currentBackgroundDrawable.getTopY());
+                                                    canvas2.drawPaint(chatMessageCell.currentBackgroundDrawable.getPaint());
+                                                    canvas2.restore();
+                                                } else {
                                                     int[] iArr4 = iArr2;
                                                     canvas2.translate(-iArr4[0], -iArr4[1]);
                                                     int[] iArr5 = iArr;
@@ -690,11 +686,6 @@ public class ScrimOptions extends Dialog {
                                                     canvas2.translate(-iArr6[0], (-iArr6[1]) - chatMessageCell.getPaddingTop());
                                                     int[] iArr7 = iArr2;
                                                     canvas2.translate(iArr7[0], iArr7[1]);
-                                                } else {
-                                                    canvas2.save();
-                                                    canvas2.translate(0.0f, -chatMessageCell.currentBackgroundDrawable.getTopY());
-                                                    canvas2.drawPaint(chatMessageCell.currentBackgroundDrawable.getPaint());
-                                                    canvas2.restore();
                                                 }
                                                 if (bitmap != null) {
                                                     canvas2.save();
@@ -703,6 +694,8 @@ public class ScrimOptions extends Dialog {
                                                     canvas2.drawBitmap(bitmap2, rectF6.left, rectF6.top, paint4);
                                                     canvas2.restore();
                                                 }
+                                            } else {
+                                                canvas2.drawPath(linkPath2, paint);
                                             }
                                             canvas2.clipPath(linkPath2);
                                             makeStaticLayout2.draw(canvas2);
@@ -710,17 +703,8 @@ public class ScrimOptions extends Dialog {
                                         }
 
                                         @Override // android.graphics.drawable.Drawable
-                                        public int getOpacity() {
-                                            return -2;
-                                        }
-
-                                        @Override // android.graphics.drawable.Drawable
                                         public void setAlpha(int i15) {
                                             this.alpha = i15;
-                                        }
-
-                                        @Override // android.graphics.drawable.Drawable
-                                        public void setColorFilter(ColorFilter colorFilter) {
                                         }
                                     };
                                     int radius = (int) (iArr[0] + f4 + rectF4.left + (LinkPath.getRadius() / 2.0f));
@@ -758,8 +742,9 @@ public class ScrimOptions extends Dialog {
                             textPaint2.setTypeface(staticLayout3.getPaint().getTypeface());
                             textPaint2.setLinearText(staticLayout3.getPaint().isLinearText());
                             i6 = Build.VERSION.SDK_INT;
-                            if (i6 >= 21) {
-                            }
+                            textPaint2.setLetterSpacing(staticLayout3.getPaint().getLetterSpacing());
+                            textPaint2.setFontFeatureSettings(staticLayout3.getPaint().getFontFeatureSettings());
+                            textPaint2.setElegantTextHeight(staticLayout3.getPaint().isElegantTextHeight());
                             if (i6 >= 26) {
                             }
                             if (i6 >= 29) {
@@ -777,6 +762,15 @@ public class ScrimOptions extends Dialog {
                                 private int alpha = NotificationCenter.goingToPreviewTheme;
 
                                 @Override // android.graphics.drawable.Drawable
+                                public int getOpacity() {
+                                    return -2;
+                                }
+
+                                @Override // android.graphics.drawable.Drawable
+                                public void setColorFilter(ColorFilter colorFilter) {
+                                }
+
+                                @Override // android.graphics.drawable.Drawable
                                 public void draw(Canvas canvas2) {
                                     if (this.alpha <= 0) {
                                         return;
@@ -789,11 +783,14 @@ public class ScrimOptions extends Dialog {
                                     int[] iArr32 = iArr22;
                                     canvas2.translate(iArr32[0], iArr32[1]);
                                     ChatMessageCell chatMessageCell2 = chatMessageCell;
-                                    if (chatMessageCell2 == null || !chatMessageCell2.drawBackgroundInParent()) {
-                                        canvas2.drawPath(linkPath2, paint);
-                                    } else {
+                                    if (chatMessageCell2 != null && chatMessageCell2.drawBackgroundInParent()) {
                                         Theme.MessageDrawable messageDrawable = chatMessageCell.currentBackgroundDrawable;
-                                        if (messageDrawable == null || messageDrawable.getPaint() == null) {
+                                        if (messageDrawable != null && messageDrawable.getPaint() != null) {
+                                            canvas2.save();
+                                            canvas2.translate(0.0f, -chatMessageCell.currentBackgroundDrawable.getTopY());
+                                            canvas2.drawPaint(chatMessageCell.currentBackgroundDrawable.getPaint());
+                                            canvas2.restore();
+                                        } else {
                                             int[] iArr4 = iArr22;
                                             canvas2.translate(-iArr4[0], -iArr4[1]);
                                             int[] iArr5 = iArr3;
@@ -803,11 +800,6 @@ public class ScrimOptions extends Dialog {
                                             canvas2.translate(-iArr6[0], (-iArr6[1]) - chatMessageCell.getPaddingTop());
                                             int[] iArr7 = iArr22;
                                             canvas2.translate(iArr7[0], iArr7[1]);
-                                        } else {
-                                            canvas2.save();
-                                            canvas2.translate(0.0f, -chatMessageCell.currentBackgroundDrawable.getTopY());
-                                            canvas2.drawPaint(chatMessageCell.currentBackgroundDrawable.getPaint());
-                                            canvas2.restore();
                                         }
                                         if (bitmap != null) {
                                             canvas2.save();
@@ -816,6 +808,8 @@ public class ScrimOptions extends Dialog {
                                             canvas2.drawBitmap(bitmap2, rectF6.left, rectF6.top, paint42);
                                             canvas2.restore();
                                         }
+                                    } else {
+                                        canvas2.drawPath(linkPath2, paint);
                                     }
                                     canvas2.clipPath(linkPath2);
                                     makeStaticLayout22.draw(canvas2);
@@ -823,17 +817,8 @@ public class ScrimOptions extends Dialog {
                                 }
 
                                 @Override // android.graphics.drawable.Drawable
-                                public int getOpacity() {
-                                    return -2;
-                                }
-
-                                @Override // android.graphics.drawable.Drawable
                                 public void setAlpha(int i152) {
                                     this.alpha = i152;
-                                }
-
-                                @Override // android.graphics.drawable.Drawable
-                                public void setColorFilter(ColorFilter colorFilter) {
                                 }
                             };
                             int radius2 = (int) (iArr3[0] + f4 + rectF4.left + (LinkPath.getRadius() / 2.0f));
@@ -865,15 +850,6 @@ public class ScrimOptions extends Dialog {
         i5 = i2;
         staticLayout2 = staticLayout;
         if (staticLayout2 != null) {
-        }
-    }
-
-    @Override // android.app.Dialog
-    public void show() {
-        if (AndroidUtilities.isSafeToShow(getContext())) {
-            super.show();
-            prepareBlur(null);
-            animateOpenTo(true, null);
         }
     }
 }

@@ -16,13 +16,6 @@ public final class zzg extends AbstractSafeParcelable {
     public final boolean zzc;
     public final Account zzd;
 
-    zzg(zzk[] zzkVarArr, String str, boolean z, Account account) {
-        this.zza = zzkVarArr;
-        this.zzb = str;
-        this.zzc = z;
-        this.zzd = account;
-    }
-
     public final boolean equals(Object obj) {
         if (obj instanceof zzg) {
             zzg zzgVar = (zzg) obj;
@@ -45,5 +38,12 @@ public final class zzg extends AbstractSafeParcelable {
         SafeParcelWriter.writeBoolean(parcel, 3, this.zzc);
         SafeParcelWriter.writeParcelable(parcel, 4, this.zzd, i, false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    zzg(zzk[] zzkVarArr, String str, boolean z, Account account) {
+        this.zza = zzkVarArr;
+        this.zzb = str;
+        this.zzc = z;
+        this.zzd = account;
     }
 }

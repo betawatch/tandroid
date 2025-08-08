@@ -15,11 +15,11 @@ public final class zzie {
         this.zzd = new HashMap();
     }
 
-    zzie(boolean z) {
-        this.zzd = Collections.emptyMap();
-    }
-
     public final zzir zza(zzke zzkeVar, int i) {
         return (zzir) this.zzd.get(new zzid(zzkeVar, i));
+    }
+
+    zzie(boolean z) {
+        this.zzd = Collections.emptyMap();
     }
 }

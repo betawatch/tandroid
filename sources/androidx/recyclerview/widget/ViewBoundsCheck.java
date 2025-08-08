@@ -7,6 +7,22 @@ class ViewBoundsCheck {
     BoundFlags mBoundFlags = new BoundFlags();
     final Callback mCallback;
 
+    interface Callback {
+        View getChildAt(int i);
+
+        int getChildEnd(View view);
+
+        int getChildStart(View view);
+
+        int getParentEnd();
+
+        int getParentStart();
+    }
+
+    ViewBoundsCheck(Callback callback) {
+        this.mCallback = callback;
+    }
+
     static class BoundFlags {
         int mBoundFlags = 0;
         int mChildEnd;
@@ -14,11 +30,29 @@ class ViewBoundsCheck {
         int mRvEnd;
         int mRvStart;
 
+        int compare(int i, int i2) {
+            if (i > i2) {
+                return 1;
+            }
+            return i == i2 ? 2 : 4;
+        }
+
         BoundFlags() {
+        }
+
+        void setBounds(int i, int i2, int i3, int i4) {
+            this.mRvStart = i;
+            this.mRvEnd = i2;
+            this.mChildStart = i3;
+            this.mChildEnd = i4;
         }
 
         void addFlags(int i) {
             this.mBoundFlags = i | this.mBoundFlags;
+        }
+
+        void resetFlags() {
+            this.mBoundFlags = 0;
         }
 
         boolean boundsMatch() {
@@ -37,40 +71,6 @@ class ViewBoundsCheck {
             int i4 = this.mBoundFlags;
             return (i4 & 28672) == 0 || (i4 & (compare(this.mChildEnd, this.mRvEnd) << 12)) != 0;
         }
-
-        int compare(int i, int i2) {
-            if (i > i2) {
-                return 1;
-            }
-            return i == i2 ? 2 : 4;
-        }
-
-        void resetFlags() {
-            this.mBoundFlags = 0;
-        }
-
-        void setBounds(int i, int i2, int i3, int i4) {
-            this.mRvStart = i;
-            this.mRvEnd = i2;
-            this.mChildStart = i3;
-            this.mChildEnd = i4;
-        }
-    }
-
-    interface Callback {
-        View getChildAt(int i);
-
-        int getChildEnd(View view);
-
-        int getChildStart(View view);
-
-        int getParentEnd();
-
-        int getParentStart();
-    }
-
-    ViewBoundsCheck(Callback callback) {
-        this.mCallback = callback;
     }
 
     View findOneViewWithinBoundFlags(int i, int i2, int i3, int i4) {

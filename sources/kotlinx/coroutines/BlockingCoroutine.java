@@ -4,10 +4,15 @@ import java.util.concurrent.locks.LockSupport;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class BlockingCoroutine extends AbstractCoroutine {
     private final Thread blockedThread;
     private final EventLoop eventLoop;
+
+    @Override // kotlinx.coroutines.JobSupport
+    protected boolean isScopedCoroutine() {
+        return true;
+    }
 
     public BlockingCoroutine(CoroutineContext coroutineContext, Thread thread, EventLoop eventLoop) {
         super(coroutineContext, true, true);
@@ -25,11 +30,6 @@ final class BlockingCoroutine extends AbstractCoroutine {
         LockSupport.unpark(thread);
     }
 
-    @Override // kotlinx.coroutines.JobSupport
-    protected boolean isScopedCoroutine() {
-        return true;
-    }
-
     public final Object joinBlocking() {
         AbstractTimeSourceKt.getTimeSource();
         try {
@@ -41,7 +41,10 @@ final class BlockingCoroutine extends AbstractCoroutine {
                 try {
                     EventLoop eventLoop2 = this.eventLoop;
                     long processNextEvent = eventLoop2 != null ? eventLoop2.processNextEvent() : Long.MAX_VALUE;
-                    if (isCompleted()) {
+                    if (!isCompleted()) {
+                        AbstractTimeSourceKt.getTimeSource();
+                        LockSupport.parkNanos(this, processNextEvent);
+                    } else {
                         EventLoop eventLoop3 = this.eventLoop;
                         if (eventLoop3 != null) {
                             EventLoop.decrementUseCount$default(eventLoop3, false, 1, null);
@@ -54,8 +57,6 @@ final class BlockingCoroutine extends AbstractCoroutine {
                         }
                         throw completedExceptionally.cause;
                     }
-                    AbstractTimeSourceKt.getTimeSource();
-                    LockSupport.parkNanos(this, processNextEvent);
                 } catch (Throwable th) {
                     EventLoop eventLoop4 = this.eventLoop;
                     if (eventLoop4 != null) {

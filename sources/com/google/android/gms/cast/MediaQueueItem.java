@@ -26,23 +26,6 @@ public class MediaQueueItem extends AbstractSafeParcelable {
     private JSONObject zzi;
     private final Writer zzj;
 
-    public static class Builder {
-        private final MediaQueueItem zza;
-
-        public Builder(MediaInfo mediaInfo) {
-            this.zza = new MediaQueueItem(mediaInfo, null);
-        }
-
-        public Builder(JSONObject jSONObject) {
-            this.zza = new MediaQueueItem(jSONObject);
-        }
-
-        public MediaQueueItem build() {
-            this.zza.zzi();
-            return this.zza;
-        }
-    }
-
     public class Writer {
         public Writer() {
         }
@@ -69,18 +52,6 @@ public class MediaQueueItem extends AbstractSafeParcelable {
             this.zzi = null;
             this.zza = null;
         }
-    }
-
-    /* synthetic */ MediaQueueItem(MediaInfo mediaInfo, zzcj zzcjVar) {
-        this(mediaInfo, 0, true, Double.NaN, Double.POSITIVE_INFINITY, 0.0d, null, null);
-        if (mediaInfo == null) {
-            throw new IllegalArgumentException("media cannot be null.");
-        }
-    }
-
-    public MediaQueueItem(JSONObject jSONObject) {
-        this(null, 0, true, Double.NaN, Double.POSITIVE_INFINITY, 0.0d, null, null);
-        fromJson(jSONObject);
     }
 
     public boolean equals(Object obj) {
@@ -237,6 +208,38 @@ public class MediaQueueItem extends AbstractSafeParcelable {
         return jSONObject;
     }
 
+    final void zzi() {
+        if (this.zzb == null) {
+            throw new IllegalArgumentException("media cannot be null.");
+        }
+        if (!Double.isNaN(this.zze) && this.zze < 0.0d) {
+            throw new IllegalArgumentException("startTime cannot be negative or NaN.");
+        }
+        if (Double.isNaN(this.zzf)) {
+            throw new IllegalArgumentException("playbackDuration cannot be NaN.");
+        }
+        if (Double.isNaN(this.zzg) || this.zzg < 0.0d) {
+            throw new IllegalArgumentException("preloadTime cannot be negative or Nan.");
+        }
+    }
+
+    public static class Builder {
+        private final MediaQueueItem zza;
+
+        public Builder(MediaInfo mediaInfo) {
+            this.zza = new MediaQueueItem(mediaInfo, null);
+        }
+
+        public MediaQueueItem build() {
+            this.zza.zzi();
+            return this.zza;
+        }
+
+        public Builder(JSONObject jSONObject) {
+            this.zza = new MediaQueueItem(jSONObject);
+        }
+    }
+
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         JSONObject jSONObject = this.zzi;
@@ -253,18 +256,15 @@ public class MediaQueueItem extends AbstractSafeParcelable {
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
     }
 
-    final void zzi() {
-        if (this.zzb == null) {
+    /* synthetic */ MediaQueueItem(MediaInfo mediaInfo, zzcj zzcjVar) {
+        this(mediaInfo, 0, true, Double.NaN, Double.POSITIVE_INFINITY, 0.0d, null, null);
+        if (mediaInfo == null) {
             throw new IllegalArgumentException("media cannot be null.");
         }
-        if (!Double.isNaN(this.zze) && this.zze < 0.0d) {
-            throw new IllegalArgumentException("startTime cannot be negative or NaN.");
-        }
-        if (Double.isNaN(this.zzf)) {
-            throw new IllegalArgumentException("playbackDuration cannot be NaN.");
-        }
-        if (Double.isNaN(this.zzg) || this.zzg < 0.0d) {
-            throw new IllegalArgumentException("preloadTime cannot be negative or Nan.");
-        }
+    }
+
+    public MediaQueueItem(JSONObject jSONObject) {
+        this(null, 0, true, Double.NaN, Double.POSITIVE_INFINITY, 0.0d, null, null);
+        fromJson(jSONObject);
     }
 }

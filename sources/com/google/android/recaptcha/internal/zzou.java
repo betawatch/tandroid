@@ -12,6 +12,12 @@ public final class zzou extends zzin implements zzkf {
         zzovVar = zzov.zzb;
     }
 
+    public final zzou zzd(String str) {
+        zzm();
+        zzov.zzi((zzov) this.zza, str);
+        return this;
+    }
+
     /* JADX WARN: Illegal instructions before constructor call */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -20,11 +26,5 @@ public final class zzou extends zzin implements zzkf {
         super(r1);
         zzov zzovVar;
         zzovVar = zzov.zzb;
-    }
-
-    public final zzou zzd(String str) {
-        zzm();
-        zzov.zzi((zzov) this.zza, str);
-        return this;
     }
 }

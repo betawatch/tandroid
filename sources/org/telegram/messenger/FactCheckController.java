@@ -62,69 +62,9 @@ public class FactCheckController {
         }
     };
 
-    /* JADX INFO: Access modifiers changed from: private */
-    static class Key {
-        public final long dialogId;
-        public final long hash;
-        public final int messageId;
-
-        private Key(long j, int i, long j2) {
-            this.dialogId = j;
-            this.messageId = i;
-            this.hash = j2;
-        }
-
-        public static Key of(MessageObject messageObject) {
-            TLRPC.Message message;
-            if (messageObject == null || (message = messageObject.messageOwner) == null || message.factcheck == null) {
-                return null;
-            }
-            return new Key(messageObject.getDialogId(), messageObject.getId(), messageObject.messageOwner.factcheck.hash);
-        }
-
-        public int hashCode() {
-            return SessionDetails$$ExternalSyntheticBackport0.m(this.hash);
-        }
-    }
-
     static {
         for (int i = 0; i < 4; i++) {
             lockObjects[i] = new Object();
-        }
-    }
-
-    private FactCheckController(int i) {
-        this.currentAccount = i;
-    }
-
-    private void clearExpiredInDatabase() {
-        if (this.clearedExpiredInDatabase) {
-            return;
-        }
-        this.clearedExpiredInDatabase = true;
-        final MessagesStorage messagesStorage = MessagesStorage.getInstance(this.currentAccount);
-        messagesStorage.getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.FactCheckController$$ExternalSyntheticLambda10
-            @Override // java.lang.Runnable
-            public final void run() {
-                FactCheckController.lambda$clearExpiredInDatabase$7(MessagesStorage.this);
-            }
-        });
-    }
-
-    private void getFromDatabase(final ArrayList<Key> arrayList, final Utilities.Callback<ArrayList<TLRPC.TL_factCheck>> callback) {
-        if (callback == null) {
-            return;
-        }
-        if (arrayList == null || arrayList.isEmpty()) {
-            callback.run(new ArrayList<>());
-        } else {
-            final MessagesStorage messagesStorage = MessagesStorage.getInstance(this.currentAccount);
-            messagesStorage.getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.FactCheckController$$ExternalSyntheticLambda14
-                @Override // java.lang.Runnable
-                public final void run() {
-                    FactCheckController.lambda$getFromDatabase$5(MessagesStorage.this, arrayList, callback);
-                }
-            });
         }
     }
 
@@ -147,54 +87,206 @@ public class FactCheckController {
         return factCheckController;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$applyFactCheck$14(TLObject tLObject) {
-        MessagesController.getInstance(this.currentAccount).processUpdates((TLRPC.Updates) tLObject, false);
+    private FactCheckController(int i) {
+        this.currentAccount = i;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$applyFactCheck$15(final TLObject tLObject, TLRPC.TL_textWithEntities tL_textWithEntities, boolean z, AlertDialog alertDialog) {
-        if (tLObject instanceof TLRPC.Updates) {
-            Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FactCheckController$$ExternalSyntheticLambda13
-                @Override // java.lang.Runnable
-                public final void run() {
-                    FactCheckController.this.lambda$applyFactCheck$14(tLObject);
+    public TLRPC.TL_factCheck getFactCheck(final MessageObject messageObject) {
+        TLRPC.Message message;
+        TLRPC.TL_factCheck tL_factCheck;
+        if (messageObject == null || (message = messageObject.messageOwner) == null || (tL_factCheck = message.factcheck) == null) {
+            return null;
+        }
+        if (!tL_factCheck.need_check) {
+            if (this.localCache.get(tL_factCheck.hash) == null) {
+                LongSparseArray<TLRPC.TL_factCheck> longSparseArray = this.localCache;
+                TLRPC.TL_factCheck tL_factCheck2 = messageObject.messageOwner.factcheck;
+                longSparseArray.put(tL_factCheck2.hash, tL_factCheck2);
+                saveToDatabase(messageObject.messageOwner.factcheck);
+            }
+            return messageObject.messageOwner.factcheck;
+        }
+        final Key of = Key.of(messageObject);
+        if (of == null || of.messageId < 0) {
+            return null;
+        }
+        TLRPC.TL_factCheck tL_factCheck3 = this.localCache.get(of.hash);
+        if (tL_factCheck3 != null) {
+            messageObject.messageOwner.factcheck = tL_factCheck3;
+            return tL_factCheck3;
+        }
+        if (this.loading.contains(of)) {
+            return messageObject.messageOwner.factcheck;
+        }
+        HashMap<Key, Utilities.Callback<TLRPC.TL_factCheck>> hashMap = this.toload.get(of.dialogId);
+        if (hashMap == null) {
+            LongSparseArray<HashMap<Key, Utilities.Callback<TLRPC.TL_factCheck>>> longSparseArray2 = this.toload;
+            long j = of.dialogId;
+            HashMap<Key, Utilities.Callback<TLRPC.TL_factCheck>> hashMap2 = new HashMap<>();
+            longSparseArray2.put(j, hashMap2);
+            hashMap = hashMap2;
+        }
+        if (!hashMap.containsKey(of)) {
+            hashMap.put(of, new Utilities.Callback() { // from class: org.telegram.messenger.FactCheckController$$ExternalSyntheticLambda15
+                @Override // org.telegram.messenger.Utilities.Callback
+                public final void run(Object obj) {
+                    FactCheckController.this.lambda$getFactCheck$0(of, messageObject, (TLRPC.TL_factCheck) obj);
                 }
             });
-            BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
-            if (safeLastFragment != null) {
-                boolean z2 = tL_textWithEntities == null || TextUtils.isEmpty(tL_textWithEntities.text);
-                if (z2 || !z) {
-                    BulletinFactory.of(safeLastFragment).createSimpleBulletin(z2 ? R.raw.ic_delete : R.raw.contact_check, LocaleController.getString(z2 ? R.string.FactCheckDeleted : R.string.FactCheckEdited)).show();
-                }
-            }
+            scheduleLoadMissing();
         }
-        alertDialog.dismiss();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$applyFactCheck$16(final TLRPC.TL_textWithEntities tL_textWithEntities, final boolean z, final AlertDialog alertDialog, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.FactCheckController$$ExternalSyntheticLambda12
-            @Override // java.lang.Runnable
-            public final void run() {
-                FactCheckController.this.lambda$applyFactCheck$15(tLObject, tL_textWithEntities, z, alertDialog);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$clearExpiredInDatabase$7(MessagesStorage messagesStorage) {
-        try {
-            messagesStorage.getDatabase().executeFast("DELETE FROM fact_checks WHERE expires > " + System.currentTimeMillis()).stepThis().dispose();
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
+        return messageObject.messageOwner.factcheck;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$getFactCheck$0(Key key, MessageObject messageObject, TLRPC.TL_factCheck tL_factCheck) {
         this.localCache.put(key.hash, tL_factCheck);
         messageObject.messageOwner.factcheck = tL_factCheck;
+    }
+
+    private void scheduleLoadMissing() {
+        AndroidUtilities.cancelRunOnUIThread(this.loadMissingRunnable);
+        AndroidUtilities.runOnUIThread(this.loadMissingRunnable, 80L);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void loadMissing() {
+        while (this.toload.size() > 0) {
+            final long keyAt = this.toload.keyAt(0);
+            final HashMap<Key, Utilities.Callback<TLRPC.TL_factCheck>> valueAt = this.toload.valueAt(0);
+            this.toload.removeAt(0);
+            final ArrayList<Key> arrayList = new ArrayList<>(valueAt.keySet());
+            this.loading.addAll(arrayList);
+            getFromDatabase(arrayList, new Utilities.Callback() { // from class: org.telegram.messenger.FactCheckController$$ExternalSyntheticLambda11
+                @Override // org.telegram.messenger.Utilities.Callback
+                public final void run(Object obj) {
+                    FactCheckController.this.lambda$loadMissing$3(keyAt, arrayList, valueAt, (ArrayList) obj);
+                }
+            });
+        }
+        this.toload.clear();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$loadMissing$3(long j, ArrayList arrayList, final HashMap hashMap, ArrayList arrayList2) {
+        final TLRPC.TL_getFactCheck tL_getFactCheck = new TLRPC.TL_getFactCheck();
+        tL_getFactCheck.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(j);
+        final ArrayList arrayList3 = new ArrayList();
+        int i = 0;
+        for (int i2 = 0; i2 < arrayList2.size(); i2++) {
+            Key key = (Key) arrayList.get(i2);
+            TLRPC.TL_factCheck tL_factCheck = (TLRPC.TL_factCheck) arrayList2.get(i2);
+            if (tL_factCheck == null) {
+                arrayList3.add(key);
+                tL_getFactCheck.msg_id.add(Integer.valueOf(key.messageId));
+            } else {
+                this.loading.remove(key);
+                Utilities.Callback callback = (Utilities.Callback) hashMap.get(key);
+                if (callback != null) {
+                    callback.run(tL_factCheck);
+                    i++;
+                }
+            }
+        }
+        if (i > 0) {
+            NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.factCheckLoaded, new Object[0]);
+        }
+        if (tL_getFactCheck.msg_id.isEmpty()) {
+            return;
+        }
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_getFactCheck, new RequestDelegate() { // from class: org.telegram.messenger.FactCheckController$$ExternalSyntheticLambda16
+            @Override // org.telegram.tgnet.RequestDelegate
+            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                FactCheckController.this.lambda$loadMissing$2(tL_getFactCheck, arrayList3, hashMap, tLObject, tL_error);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$loadMissing$2(final TLRPC.TL_getFactCheck tL_getFactCheck, final ArrayList arrayList, final HashMap hashMap, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.FactCheckController$$ExternalSyntheticLambda1
+            @Override // java.lang.Runnable
+            public final void run() {
+                FactCheckController.this.lambda$loadMissing$1(tLObject, tL_getFactCheck, arrayList, hashMap);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$loadMissing$1(TLObject tLObject, TLRPC.TL_getFactCheck tL_getFactCheck, ArrayList arrayList, HashMap hashMap) {
+        ArrayList arrayList2 = new ArrayList();
+        if (tLObject instanceof Vector) {
+            ArrayList<T> arrayList3 = ((Vector) tLObject).objects;
+            for (int i = 0; i < arrayList3.size(); i++) {
+                if (arrayList3.get(i) instanceof TLRPC.TL_factCheck) {
+                    arrayList2.add((TLRPC.TL_factCheck) arrayList3.get(i));
+                }
+            }
+        }
+        HashMap hashMap2 = new HashMap();
+        for (int i2 = 0; i2 < Math.min(tL_getFactCheck.msg_id.size(), arrayList2.size()); i2++) {
+            Integer num = tL_getFactCheck.msg_id.get(i2);
+            num.intValue();
+            hashMap2.put(num, (TLRPC.TL_factCheck) arrayList2.get(i2));
+        }
+        int i3 = 0;
+        for (int i4 = 0; i4 < tL_getFactCheck.msg_id.size(); i4++) {
+            Key key = (Key) arrayList.get(i4);
+            Integer num2 = tL_getFactCheck.msg_id.get(i4);
+            num2.intValue();
+            TLRPC.TL_factCheck tL_factCheck = (TLRPC.TL_factCheck) hashMap2.get(num2);
+            Utilities.Callback callback = (Utilities.Callback) hashMap.get(key);
+            if (tL_factCheck != null && !tL_factCheck.need_check && callback != null) {
+                callback.run(tL_factCheck);
+                i3++;
+                this.loading.remove(key);
+            }
+        }
+        if (i3 > 0) {
+            NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.factCheckLoaded, new Object[0]);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    static class Key {
+        public final long dialogId;
+        public final long hash;
+        public final int messageId;
+
+        private Key(long j, int i, long j2) {
+            this.dialogId = j;
+            this.messageId = i;
+            this.hash = j2;
+        }
+
+        public int hashCode() {
+            return SessionDetails$$ExternalSyntheticBackport0.m(this.hash);
+        }
+
+        public static Key of(MessageObject messageObject) {
+            TLRPC.Message message;
+            if (messageObject == null || (message = messageObject.messageOwner) == null || message.factcheck == null) {
+                return null;
+            }
+            return new Key(messageObject.getDialogId(), messageObject.getId(), messageObject.messageOwner.factcheck.hash);
+        }
+    }
+
+    private void getFromDatabase(final ArrayList<Key> arrayList, final Utilities.Callback<ArrayList<TLRPC.TL_factCheck>> callback) {
+        if (callback == null) {
+            return;
+        }
+        if (arrayList == null || arrayList.isEmpty()) {
+            callback.run(new ArrayList<>());
+        } else {
+            final MessagesStorage messagesStorage = MessagesStorage.getInstance(this.currentAccount);
+            messagesStorage.getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.FactCheckController$$ExternalSyntheticLambda14
+                @Override // java.lang.Runnable
+                public final void run() {
+                    FactCheckController.lambda$getFromDatabase$5(MessagesStorage.this, arrayList, callback);
+                }
+            });
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -250,117 +342,18 @@ public class FactCheckController {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadMissing$1(TLObject tLObject, TLRPC.TL_getFactCheck tL_getFactCheck, ArrayList arrayList, HashMap hashMap) {
-        ArrayList arrayList2 = new ArrayList();
-        if (tLObject instanceof Vector) {
-            ArrayList<T> arrayList3 = ((Vector) tLObject).objects;
-            for (int i = 0; i < arrayList3.size(); i++) {
-                if (arrayList3.get(i) instanceof TLRPC.TL_factCheck) {
-                    arrayList2.add((TLRPC.TL_factCheck) arrayList3.get(i));
-                }
-            }
+    private void saveToDatabase(final TLRPC.TL_factCheck tL_factCheck) {
+        if (tL_factCheck == null) {
+            return;
         }
-        HashMap hashMap2 = new HashMap();
-        for (int i2 = 0; i2 < Math.min(tL_getFactCheck.msg_id.size(), arrayList2.size()); i2++) {
-            Integer num = tL_getFactCheck.msg_id.get(i2);
-            num.intValue();
-            hashMap2.put(num, (TLRPC.TL_factCheck) arrayList2.get(i2));
-        }
-        int i3 = 0;
-        for (int i4 = 0; i4 < tL_getFactCheck.msg_id.size(); i4++) {
-            Key key = (Key) arrayList.get(i4);
-            Integer num2 = tL_getFactCheck.msg_id.get(i4);
-            num2.intValue();
-            TLRPC.TL_factCheck tL_factCheck = (TLRPC.TL_factCheck) hashMap2.get(num2);
-            Utilities.Callback callback = (Utilities.Callback) hashMap.get(key);
-            if (tL_factCheck != null && !tL_factCheck.need_check && callback != null) {
-                callback.run(tL_factCheck);
-                i3++;
-                this.loading.remove(key);
-            }
-        }
-        if (i3 > 0) {
-            NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.factCheckLoaded, new Object[0]);
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadMissing$2(final TLRPC.TL_getFactCheck tL_getFactCheck, final ArrayList arrayList, final HashMap hashMap, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.FactCheckController$$ExternalSyntheticLambda1
+        final MessagesStorage messagesStorage = MessagesStorage.getInstance(this.currentAccount);
+        messagesStorage.getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.FactCheckController$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
-                FactCheckController.this.lambda$loadMissing$1(tLObject, tL_getFactCheck, arrayList, hashMap);
+                FactCheckController.lambda$saveToDatabase$6(MessagesStorage.this, tL_factCheck);
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadMissing$3(long j, ArrayList arrayList, final HashMap hashMap, ArrayList arrayList2) {
-        final TLRPC.TL_getFactCheck tL_getFactCheck = new TLRPC.TL_getFactCheck();
-        tL_getFactCheck.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(j);
-        final ArrayList arrayList3 = new ArrayList();
-        int i = 0;
-        for (int i2 = 0; i2 < arrayList2.size(); i2++) {
-            Key key = (Key) arrayList.get(i2);
-            TLRPC.TL_factCheck tL_factCheck = (TLRPC.TL_factCheck) arrayList2.get(i2);
-            if (tL_factCheck == null) {
-                arrayList3.add(key);
-                tL_getFactCheck.msg_id.add(Integer.valueOf(key.messageId));
-            } else {
-                this.loading.remove(key);
-                Utilities.Callback callback = (Utilities.Callback) hashMap.get(key);
-                if (callback != null) {
-                    callback.run(tL_factCheck);
-                    i++;
-                }
-            }
-        }
-        if (i > 0) {
-            NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.factCheckLoaded, new Object[0]);
-        }
-        if (tL_getFactCheck.msg_id.isEmpty()) {
-            return;
-        }
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_getFactCheck, new RequestDelegate() { // from class: org.telegram.messenger.FactCheckController$$ExternalSyntheticLambda16
-            @Override // org.telegram.tgnet.RequestDelegate
-            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                FactCheckController.this.lambda$loadMissing$2(tL_getFactCheck, arrayList3, hashMap, tLObject, tL_error);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openFactCheckEditor$10(View view, DialogInterface dialogInterface) {
-        currentDialog = null;
-        view.requestFocus();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openFactCheckEditor$11(EditTextCaption editTextCaption, DialogInterface dialogInterface) {
-        editTextCaption.requestFocus();
-        AndroidUtilities.showKeyboard(editTextCaption);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openFactCheckEditor$13(EditTextCaption editTextCaption, DialogInterface dialogInterface) {
-        editTextCaption.requestFocus();
-        AndroidUtilities.showKeyboard(editTextCaption);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openFactCheckEditor$8(EditTextCaption editTextCaption, int i, MessageObject messageObject, boolean z, AlertDialog alertDialog, int i2) {
-        if (editTextCaption.getText().toString().length() > i) {
-            AndroidUtilities.shakeView(editTextCaption);
-            return;
-        }
-        TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
-        CharSequence[] charSequenceArr = {editTextCaption.getText()};
-        tL_textWithEntities.entities = MediaDataController.getInstance(this.currentAccount).getEntities(charSequenceArr, true);
-        CharSequence charSequence = charSequenceArr[0];
-        tL_textWithEntities.text = charSequence == null ? "" : charSequence.toString();
-        applyFactCheck(messageObject, tL_textWithEntities, z);
-        alertDialog.dismiss();
+        clearExpiredInDatabase();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -391,117 +384,27 @@ public class FactCheckController {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public void loadMissing() {
-        while (this.toload.size() > 0) {
-            final long keyAt = this.toload.keyAt(0);
-            final HashMap<Key, Utilities.Callback<TLRPC.TL_factCheck>> valueAt = this.toload.valueAt(0);
-            this.toload.removeAt(0);
-            final ArrayList<Key> arrayList = new ArrayList<>(valueAt.keySet());
-            this.loading.addAll(arrayList);
-            getFromDatabase(arrayList, new Utilities.Callback() { // from class: org.telegram.messenger.FactCheckController$$ExternalSyntheticLambda11
-                @Override // org.telegram.messenger.Utilities.Callback
-                public final void run(Object obj) {
-                    FactCheckController.this.lambda$loadMissing$3(keyAt, arrayList, valueAt, (ArrayList) obj);
-                }
-            });
-        }
-        this.toload.clear();
-    }
-
-    private void saveToDatabase(final TLRPC.TL_factCheck tL_factCheck) {
-        if (tL_factCheck == null) {
+    private void clearExpiredInDatabase() {
+        if (this.clearedExpiredInDatabase) {
             return;
         }
+        this.clearedExpiredInDatabase = true;
         final MessagesStorage messagesStorage = MessagesStorage.getInstance(this.currentAccount);
-        messagesStorage.getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.FactCheckController$$ExternalSyntheticLambda8
+        messagesStorage.getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.FactCheckController$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
-                FactCheckController.lambda$saveToDatabase$6(MessagesStorage.this, tL_factCheck);
-            }
-        });
-        clearExpiredInDatabase();
-    }
-
-    private void scheduleLoadMissing() {
-        AndroidUtilities.cancelRunOnUIThread(this.loadMissingRunnable);
-        AndroidUtilities.runOnUIThread(this.loadMissingRunnable, 80L);
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public void applyFactCheck(MessageObject messageObject, final TLRPC.TL_textWithEntities tL_textWithEntities, final boolean z) {
-        TLRPC.TL_deleteFactCheck tL_deleteFactCheck;
-        if (tL_textWithEntities != null && !TextUtils.isEmpty(tL_textWithEntities.text)) {
-            TLRPC.TL_editFactCheck tL_editFactCheck = new TLRPC.TL_editFactCheck();
-            tL_editFactCheck.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(messageObject.getDialogId());
-            tL_editFactCheck.msg_id = messageObject.getId();
-            tL_editFactCheck.text = tL_textWithEntities;
-            tL_deleteFactCheck = tL_editFactCheck;
-        } else {
-            if (z) {
-                return;
-            }
-            TLRPC.TL_deleteFactCheck tL_deleteFactCheck2 = new TLRPC.TL_deleteFactCheck();
-            tL_deleteFactCheck2.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(messageObject.getDialogId());
-            tL_deleteFactCheck2.msg_id = messageObject.getId();
-            tL_deleteFactCheck = tL_deleteFactCheck2;
-        }
-        Context context = LaunchActivity.instance;
-        if (context == null) {
-            context = ApplicationLoader.applicationContext;
-        }
-        final AlertDialog alertDialog = new AlertDialog(context, 3);
-        alertDialog.showDelayed(320L);
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_deleteFactCheck, new RequestDelegate() { // from class: org.telegram.messenger.FactCheckController$$ExternalSyntheticLambda0
-            @Override // org.telegram.tgnet.RequestDelegate
-            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                FactCheckController.this.lambda$applyFactCheck$16(tL_textWithEntities, z, alertDialog, tLObject, tL_error);
+                FactCheckController.lambda$clearExpiredInDatabase$7(MessagesStorage.this);
             }
         });
     }
 
-    public TLRPC.TL_factCheck getFactCheck(final MessageObject messageObject) {
-        TLRPC.Message message;
-        TLRPC.TL_factCheck tL_factCheck;
-        if (messageObject == null || (message = messageObject.messageOwner) == null || (tL_factCheck = message.factcheck) == null) {
-            return null;
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$clearExpiredInDatabase$7(MessagesStorage messagesStorage) {
+        try {
+            messagesStorage.getDatabase().executeFast("DELETE FROM fact_checks WHERE expires > " + System.currentTimeMillis()).stepThis().dispose();
+        } catch (Exception e) {
+            FileLog.e(e);
         }
-        if (tL_factCheck.need_check) {
-            final Key of = Key.of(messageObject);
-            if (of == null || of.messageId < 0) {
-                return null;
-            }
-            TLRPC.TL_factCheck tL_factCheck2 = this.localCache.get(of.hash);
-            if (tL_factCheck2 != null) {
-                messageObject.messageOwner.factcheck = tL_factCheck2;
-                return tL_factCheck2;
-            }
-            if (!this.loading.contains(of)) {
-                HashMap<Key, Utilities.Callback<TLRPC.TL_factCheck>> hashMap = this.toload.get(of.dialogId);
-                if (hashMap == null) {
-                    LongSparseArray<HashMap<Key, Utilities.Callback<TLRPC.TL_factCheck>>> longSparseArray = this.toload;
-                    long j = of.dialogId;
-                    HashMap<Key, Utilities.Callback<TLRPC.TL_factCheck>> hashMap2 = new HashMap<>();
-                    longSparseArray.put(j, hashMap2);
-                    hashMap = hashMap2;
-                }
-                if (!hashMap.containsKey(of)) {
-                    hashMap.put(of, new Utilities.Callback() { // from class: org.telegram.messenger.FactCheckController$$ExternalSyntheticLambda15
-                        @Override // org.telegram.messenger.Utilities.Callback
-                        public final void run(Object obj) {
-                            FactCheckController.this.lambda$getFactCheck$0(of, messageObject, (TLRPC.TL_factCheck) obj);
-                        }
-                    });
-                    scheduleLoadMissing();
-                }
-            }
-        } else if (this.localCache.get(tL_factCheck.hash) == null) {
-            LongSparseArray<TLRPC.TL_factCheck> longSparseArray2 = this.localCache;
-            TLRPC.TL_factCheck tL_factCheck3 = messageObject.messageOwner.factcheck;
-            longSparseArray2.put(tL_factCheck3.hash, tL_factCheck3);
-            saveToDatabase(messageObject.messageOwner.factcheck);
-        }
-        return messageObject.messageOwner.factcheck;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -509,6 +412,7 @@ public class FactCheckController {
     /* JADX WARN: Type inference failed for: r1v13, types: [boolean] */
     /* JADX WARN: Type inference failed for: r1v18 */
     public void openFactCheckEditor(Context context, final Theme.ResourcesProvider resourcesProvider, final MessageObject messageObject, boolean z) {
+        AlertDialog.Builder builder;
         ?? r1;
         TLRPC.TL_textWithEntities tL_textWithEntities;
         TLRPC.Message message;
@@ -517,10 +421,15 @@ public class FactCheckController {
         final View currentFocus = findActivity != null ? findActivity.getCurrentFocus() : null;
         boolean z2 = lastFragment != null && (lastFragment.getFragmentView() instanceof SizeNotifierFrameLayout) && ((SizeNotifierFrameLayout) lastFragment.getFragmentView()).measureKeyboardHeight() > AndroidUtilities.dp(20.0f) && !z;
         final AlertDialog[] alertDialogArr = new AlertDialog[1];
-        AlertDialog.Builder builder = z2 ? new AlertDialogDecor.Builder(context, resourcesProvider) : new AlertDialog.Builder(context, resourcesProvider);
+        if (z2) {
+            builder = new AlertDialogDecor.Builder(context, resourcesProvider);
+        } else {
+            builder = new AlertDialog.Builder(context, resourcesProvider);
+        }
+        AlertDialog.Builder builder2 = builder;
         final TextView[] textViewArr = new TextView[1];
         boolean z3 = messageObject == null || (message = messageObject.messageOwner) == null || message.factcheck == null;
-        builder.setTitle(LocaleController.getString(R.string.FactCheckDialog));
+        builder2.setTitle(LocaleController.getString(R.string.FactCheckDialog));
         final int i = MessagesController.getInstance(this.currentAccount).factcheckLengthLimit;
         final EditTextCaption editTextCaption = new EditTextCaption(context, resourcesProvider) { // from class: org.telegram.messenger.FactCheckController.1
             AnimatedTextView.AnimatedTextDrawable limit;
@@ -536,12 +445,24 @@ public class FactCheckController {
                 this.limit.setGravity(5);
             }
 
-            @Override // org.telegram.ui.Components.EditTextBoldCursor, android.view.View
-            protected void dispatchDraw(Canvas canvas) {
-                super.dispatchDraw(canvas);
-                this.limit.setTextColor(this.limitColor.set(Theme.getColor(this.limitCount < 0 ? Theme.key_text_RedRegular : Theme.key_dialogSearchHint, resourcesProvider)));
-                this.limit.setBounds(getScrollX(), 0, getScrollX() + getWidth(), getHeight());
-                this.limit.draw(canvas);
+            @Override // android.widget.TextView, android.view.View
+            protected boolean verifyDrawable(Drawable drawable) {
+                return drawable == this.limit || super.verifyDrawable(drawable);
+            }
+
+            @Override // org.telegram.ui.Components.EditTextEffects, android.widget.TextView
+            protected void onTextChanged(CharSequence charSequence, int i2, int i3, int i4) {
+                super.onTextChanged(charSequence, i2, i3, i4);
+                if (this.limit != null) {
+                    this.limitCount = i - charSequence.length();
+                    this.limit.cancelAnimation();
+                    AnimatedTextView.AnimatedTextDrawable animatedTextDrawable = this.limit;
+                    String str = "";
+                    if (this.limitCount <= 4) {
+                        str = "" + this.limitCount;
+                    }
+                    animatedTextDrawable.setText(str);
+                }
             }
 
             @Override // org.telegram.ui.Components.EditTextBoldCursor
@@ -564,24 +485,12 @@ public class FactCheckController {
                 menu.add(i3, R.id.menu_regular, 9, LocaleController.getString(R.string.Regular));
             }
 
-            @Override // org.telegram.ui.Components.EditTextEffects, android.widget.TextView
-            protected void onTextChanged(CharSequence charSequence, int i2, int i3, int i4) {
-                super.onTextChanged(charSequence, i2, i3, i4);
-                if (this.limit != null) {
-                    this.limitCount = i - charSequence.length();
-                    this.limit.cancelAnimation();
-                    AnimatedTextView.AnimatedTextDrawable animatedTextDrawable = this.limit;
-                    String str = "";
-                    if (this.limitCount <= 4) {
-                        str = "" + this.limitCount;
-                    }
-                    animatedTextDrawable.setText(str);
-                }
-            }
-
-            @Override // android.widget.TextView, android.view.View
-            protected boolean verifyDrawable(Drawable drawable) {
-                return drawable == this.limit || super.verifyDrawable(drawable);
+            @Override // org.telegram.ui.Components.EditTextBoldCursor, android.view.View
+            protected void dispatchDraw(Canvas canvas) {
+                super.dispatchDraw(canvas);
+                this.limit.setTextColor(this.limitColor.set(Theme.getColor(this.limitCount < 0 ? Theme.key_text_RedRegular : Theme.key_dialogSearchHint, resourcesProvider)));
+                this.limit.setBounds(getScrollX(), 0, getScrollX() + getWidth(), getHeight());
+                this.limit.draw(canvas);
             }
         };
         editTextCaption.lineYFix = true;
@@ -638,6 +547,14 @@ public class FactCheckController {
             boolean ignoreTextChange;
 
             @Override // android.text.TextWatcher
+            public void beforeTextChanged(CharSequence charSequence, int i2, int i3, int i4) {
+            }
+
+            @Override // android.text.TextWatcher
+            public void onTextChanged(CharSequence charSequence, int i2, int i3, int i4) {
+            }
+
+            @Override // android.text.TextWatcher
             public void afterTextChanged(Editable editable) {
                 if (this.ignoreTextChange) {
                     return;
@@ -663,36 +580,28 @@ public class FactCheckController {
                     textViewArr[0].setTextColor(Theme.getColor(z5 ? Theme.key_dialogButton : Theme.key_text_RedBold));
                 }
             }
-
-            @Override // android.text.TextWatcher
-            public void beforeTextChanged(CharSequence charSequence, int i2, int i3, int i4) {
-            }
-
-            @Override // android.text.TextWatcher
-            public void onTextChanged(CharSequence charSequence, int i2, int i3, int i4) {
-            }
         });
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         linearLayout.addView(editTextCaption, LayoutHelper.createLinear(-1, -2, 24.0f, 0.0f, 24.0f, 10.0f));
-        builder.makeCustomMaxHeight();
-        builder.setView(linearLayout);
-        builder.setWidth(AndroidUtilities.dp(292.0f));
+        builder2.makeCustomMaxHeight();
+        builder2.setView(linearLayout);
+        builder2.setWidth(AndroidUtilities.dp(292.0f));
         final boolean z5 = z3;
-        builder.setPositiveButton(LocaleController.getString(R.string.Done), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.messenger.FactCheckController$$ExternalSyntheticLambda2
+        builder2.setPositiveButton(LocaleController.getString(R.string.Done), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.messenger.FactCheckController$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i2) {
                 FactCheckController.this.lambda$openFactCheckEditor$8(editTextCaption, i, messageObject, z5, alertDialog, i2);
             }
         });
-        builder.setNegativeButton(LocaleController.getString("Cancel", R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.messenger.FactCheckController$$ExternalSyntheticLambda3
+        builder2.setNegativeButton(LocaleController.getString("Cancel", R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.messenger.FactCheckController$$ExternalSyntheticLambda3
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i2) {
                 alertDialog.dismiss();
             }
         });
-        AlertDialog create = builder.create();
         if (z2) {
+            AlertDialog create = builder2.create();
             currentDialog = create;
             alertDialogArr[0] = create;
             create.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.messenger.FactCheckController$$ExternalSyntheticLambda4
@@ -710,9 +619,10 @@ public class FactCheckController {
             currentDialog.showDelayed(250L);
             r1 = 0;
         } else {
+            AlertDialog create2 = builder2.create();
             r1 = 0;
-            alertDialogArr[0] = create;
-            create.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.messenger.FactCheckController$$ExternalSyntheticLambda6
+            alertDialogArr[0] = create2;
+            create2.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.messenger.FactCheckController$$ExternalSyntheticLambda6
                 @Override // android.content.DialogInterface.OnDismissListener
                 public final void onDismiss(DialogInterface dialogInterface) {
                     AndroidUtilities.hideKeyboard(EditTextCaption.this);
@@ -732,5 +642,105 @@ public class FactCheckController {
             textViewArr[r1] = (TextView) button;
         }
         editTextCaption.setSelection(editTextCaption.getText().length());
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$openFactCheckEditor$8(EditTextCaption editTextCaption, int i, MessageObject messageObject, boolean z, AlertDialog alertDialog, int i2) {
+        if (editTextCaption.getText().toString().length() > i) {
+            AndroidUtilities.shakeView(editTextCaption);
+            return;
+        }
+        TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
+        CharSequence[] charSequenceArr = {editTextCaption.getText()};
+        tL_textWithEntities.entities = MediaDataController.getInstance(this.currentAccount).getEntities(charSequenceArr, true);
+        CharSequence charSequence = charSequenceArr[0];
+        tL_textWithEntities.text = charSequence == null ? "" : charSequence.toString();
+        applyFactCheck(messageObject, tL_textWithEntities, z);
+        alertDialog.dismiss();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$openFactCheckEditor$10(View view, DialogInterface dialogInterface) {
+        currentDialog = null;
+        view.requestFocus();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$openFactCheckEditor$11(EditTextCaption editTextCaption, DialogInterface dialogInterface) {
+        editTextCaption.requestFocus();
+        AndroidUtilities.showKeyboard(editTextCaption);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$openFactCheckEditor$13(EditTextCaption editTextCaption, DialogInterface dialogInterface) {
+        editTextCaption.requestFocus();
+        AndroidUtilities.showKeyboard(editTextCaption);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public void applyFactCheck(MessageObject messageObject, final TLRPC.TL_textWithEntities tL_textWithEntities, final boolean z) {
+        TLRPC.TL_deleteFactCheck tL_deleteFactCheck;
+        if (tL_textWithEntities != null && !TextUtils.isEmpty(tL_textWithEntities.text)) {
+            TLRPC.TL_editFactCheck tL_editFactCheck = new TLRPC.TL_editFactCheck();
+            tL_editFactCheck.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(messageObject.getDialogId());
+            tL_editFactCheck.msg_id = messageObject.getId();
+            tL_editFactCheck.text = tL_textWithEntities;
+            tL_deleteFactCheck = tL_editFactCheck;
+        } else {
+            if (z) {
+                return;
+            }
+            TLRPC.TL_deleteFactCheck tL_deleteFactCheck2 = new TLRPC.TL_deleteFactCheck();
+            tL_deleteFactCheck2.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(messageObject.getDialogId());
+            tL_deleteFactCheck2.msg_id = messageObject.getId();
+            tL_deleteFactCheck = tL_deleteFactCheck2;
+        }
+        Context context = LaunchActivity.instance;
+        if (context == null) {
+            context = ApplicationLoader.applicationContext;
+        }
+        final AlertDialog alertDialog = new AlertDialog(context, 3);
+        alertDialog.showDelayed(320L);
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_deleteFactCheck, new RequestDelegate() { // from class: org.telegram.messenger.FactCheckController$$ExternalSyntheticLambda0
+            @Override // org.telegram.tgnet.RequestDelegate
+            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                FactCheckController.this.lambda$applyFactCheck$16(tL_textWithEntities, z, alertDialog, tLObject, tL_error);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$applyFactCheck$16(final TLRPC.TL_textWithEntities tL_textWithEntities, final boolean z, final AlertDialog alertDialog, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.FactCheckController$$ExternalSyntheticLambda12
+            @Override // java.lang.Runnable
+            public final void run() {
+                FactCheckController.this.lambda$applyFactCheck$15(tLObject, tL_textWithEntities, z, alertDialog);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$applyFactCheck$15(final TLObject tLObject, TLRPC.TL_textWithEntities tL_textWithEntities, boolean z, AlertDialog alertDialog) {
+        if (tLObject instanceof TLRPC.Updates) {
+            Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FactCheckController$$ExternalSyntheticLambda13
+                @Override // java.lang.Runnable
+                public final void run() {
+                    FactCheckController.this.lambda$applyFactCheck$14(tLObject);
+                }
+            });
+            BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
+            if (safeLastFragment != null) {
+                boolean z2 = tL_textWithEntities == null || TextUtils.isEmpty(tL_textWithEntities.text);
+                if (z2 || !z) {
+                    BulletinFactory.of(safeLastFragment).createSimpleBulletin(z2 ? R.raw.ic_delete : R.raw.contact_check, LocaleController.getString(z2 ? R.string.FactCheckDeleted : R.string.FactCheckEdited)).show();
+                }
+            }
+        }
+        alertDialog.dismiss();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$applyFactCheck$14(TLObject tLObject) {
+        MessagesController.getInstance(this.currentAccount).processUpdates((TLRPC.Updates) tLObject, false);
     }
 }

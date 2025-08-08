@@ -1,31 +1,54 @@
 package com.google.android.gms.internal.play_billing;
 
-/* loaded from: classes.dex */
-final class zzfc implements zzce {
-    static final zzce zza = new zzfc();
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
 
-    private zzfc() {
+/* loaded from: classes.dex */
+final class zzfc implements Runnable {
+    zzff zza;
+
+    zzfc(zzff zzffVar) {
+        this.zza = zzffVar;
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzce
-    public final boolean zza(int i) {
-        switch (i) {
-            case 0:
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-            case 5:
-            case 6:
-            case 7:
-            case 8:
-            case 9:
-            case 10:
-            case 11:
-            case 12:
-                return true;
-            default:
-                return false;
+    /* JADX WARN: Code restructure failed: missing block: B:3:0x0006, code lost:
+    
+        r1 = r0.zzc;
+     */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        zzeu zzeuVar;
+        ScheduledFuture scheduledFuture;
+        zzff zzffVar = this.zza;
+        if (zzffVar == null || zzeuVar == null) {
+            return;
+        }
+        this.zza = null;
+        if (zzeuVar.isDone()) {
+            zzffVar.zzp(zzeuVar);
+            return;
+        }
+        try {
+            scheduledFuture = zzffVar.zzd;
+            zzffVar.zzd = null;
+            String str = "Timed out";
+            if (scheduledFuture != null) {
+                try {
+                    long abs = Math.abs(scheduledFuture.getDelay(TimeUnit.MILLISECONDS));
+                    if (abs > 10) {
+                        str = "Timed out (timeout delayed by " + abs + " ms after scheduled time)";
+                    }
+                } catch (Throwable th) {
+                    zzffVar.zzo(new zzfd(str, null));
+                    throw th;
+                }
+            }
+            zzffVar.zzo(new zzfd(str + ": " + zzeuVar.toString(), null));
+        } finally {
+            zzeuVar.cancel(true);
         }
     }
 }

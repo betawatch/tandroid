@@ -8,7 +8,7 @@ import com.google.firebase.sessions.settings.SessionsSettings;
 import kotlin.ResultKt;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.CoroutineContext;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.Boxing;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -17,7 +17,7 @@ import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.tasks.TasksKt;
 import org.telegram.tgnet.TLObject;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class SessionFirelogPublisherImpl implements SessionFirelogPublisher {
     public static final Companion Companion = new Companion(null);
     private static final double randomValueForSampling = Math.random();
@@ -26,15 +26,6 @@ public final class SessionFirelogPublisherImpl implements SessionFirelogPublishe
     private final FirebaseApp firebaseApp;
     private final FirebaseInstallationsApi firebaseInstallations;
     private final SessionsSettings sessionSettings;
-
-    public static final class Companion {
-        private Companion() {
-        }
-
-        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
-            this();
-        }
-    }
 
     public SessionFirelogPublisherImpl(FirebaseApp firebaseApp, FirebaseInstallationsApi firebaseInstallations, SessionsSettings sessionSettings, EventGDTLoggerInterface eventGDTLogger, CoroutineContext backgroundDispatcher) {
         Intrinsics.checkNotNullParameter(firebaseApp, "firebaseApp");
@@ -49,6 +40,12 @@ public final class SessionFirelogPublisherImpl implements SessionFirelogPublishe
         this.backgroundDispatcher = backgroundDispatcher;
     }
 
+    @Override // com.google.firebase.sessions.SessionFirelogPublisher
+    public void logSession(SessionDetails sessionDetails) {
+        Intrinsics.checkNotNullParameter(sessionDetails, "sessionDetails");
+        BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(this.backgroundDispatcher), null, null, new SessionFirelogPublisherImpl$logSession$1(this, sessionDetails, null), 3, null);
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     public final void attemptLoggingSessionEvent(SessionEvent sessionEvent) {
         try {
@@ -60,6 +57,64 @@ public final class SessionFirelogPublisherImpl implements SessionFirelogPublishe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x0056  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0060  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0037  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0025  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object shouldLogSession(Continuation continuation) {
+        SessionFirelogPublisherImpl$shouldLogSession$1 sessionFirelogPublisherImpl$shouldLogSession$1;
+        int i;
+        SessionFirelogPublisherImpl sessionFirelogPublisherImpl;
+        if (continuation instanceof SessionFirelogPublisherImpl$shouldLogSession$1) {
+            sessionFirelogPublisherImpl$shouldLogSession$1 = (SessionFirelogPublisherImpl$shouldLogSession$1) continuation;
+            int i2 = sessionFirelogPublisherImpl$shouldLogSession$1.label;
+            if ((i2 & TLObject.FLAG_31) != 0) {
+                sessionFirelogPublisherImpl$shouldLogSession$1.label = i2 - TLObject.FLAG_31;
+                Object obj = sessionFirelogPublisherImpl$shouldLogSession$1.result;
+                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                i = sessionFirelogPublisherImpl$shouldLogSession$1.label;
+                if (i != 0) {
+                    ResultKt.throwOnFailure(obj);
+                    Log.d("SessionFirelogPublisher", "Data Collection is enabled for at least one Subscriber");
+                    SessionsSettings sessionsSettings = this.sessionSettings;
+                    sessionFirelogPublisherImpl$shouldLogSession$1.L$0 = this;
+                    sessionFirelogPublisherImpl$shouldLogSession$1.label = 1;
+                    if (sessionsSettings.updateSettings(sessionFirelogPublisherImpl$shouldLogSession$1) == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    sessionFirelogPublisherImpl = this;
+                } else {
+                    if (i != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    sessionFirelogPublisherImpl = (SessionFirelogPublisherImpl) sessionFirelogPublisherImpl$shouldLogSession$1.L$0;
+                    ResultKt.throwOnFailure(obj);
+                }
+                if (sessionFirelogPublisherImpl.sessionSettings.getSessionsEnabled()) {
+                    Log.d("SessionFirelogPublisher", "Sessions SDK disabled. Events will not be sent.");
+                    return Boxing.boxBoolean(false);
+                }
+                if (!sessionFirelogPublisherImpl.shouldCollectEvents()) {
+                    Log.d("SessionFirelogPublisher", "Sessions SDK has dropped this session due to sampling.");
+                    return Boxing.boxBoolean(false);
+                }
+                return Boxing.boxBoolean(true);
+            }
+        }
+        sessionFirelogPublisherImpl$shouldLogSession$1 = new SessionFirelogPublisherImpl$shouldLogSession$1(this, continuation);
+        Object obj2 = sessionFirelogPublisherImpl$shouldLogSession$1.result;
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        i = sessionFirelogPublisherImpl$shouldLogSession$1.label;
+        if (i != 0) {
+        }
+        if (sessionFirelogPublisherImpl.sessionSettings.getSessionsEnabled()) {
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Removed duplicated region for block: B:17:0x0033  */
     /* JADX WARN: Removed duplicated region for block: B:9:0x0023  */
     /*
@@ -67,7 +122,6 @@ public final class SessionFirelogPublisherImpl implements SessionFirelogPublishe
     */
     public final Object getFirebaseInstallationId(Continuation continuation) {
         SessionFirelogPublisherImpl$getFirebaseInstallationId$1 sessionFirelogPublisherImpl$getFirebaseInstallationId$1;
-        Object coroutine_suspended;
         int i;
         try {
             if (continuation instanceof SessionFirelogPublisherImpl$getFirebaseInstallationId$1) {
@@ -76,7 +130,7 @@ public final class SessionFirelogPublisherImpl implements SessionFirelogPublishe
                 if ((i2 & TLObject.FLAG_31) != 0) {
                     sessionFirelogPublisherImpl$getFirebaseInstallationId$1.label = i2 - TLObject.FLAG_31;
                     Object obj = sessionFirelogPublisherImpl$getFirebaseInstallationId$1.result;
-                    coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                    Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                     i = sessionFirelogPublisherImpl$getFirebaseInstallationId$1.label;
                     if (i != 0) {
                         ResultKt.throwOnFailure(obj);
@@ -105,7 +159,7 @@ public final class SessionFirelogPublisherImpl implements SessionFirelogPublishe
         }
         sessionFirelogPublisherImpl$getFirebaseInstallationId$1 = new SessionFirelogPublisherImpl$getFirebaseInstallationId$1(this, continuation);
         Object obj2 = sessionFirelogPublisherImpl$getFirebaseInstallationId$1.result;
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = sessionFirelogPublisherImpl$getFirebaseInstallationId$1.label;
     }
 
@@ -113,72 +167,12 @@ public final class SessionFirelogPublisherImpl implements SessionFirelogPublishe
         return randomValueForSampling <= this.sessionSettings.getSamplingRate();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:12:0x0056  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0060  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0037  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0025  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Object shouldLogSession(Continuation continuation) {
-        SessionFirelogPublisherImpl$shouldLogSession$1 sessionFirelogPublisherImpl$shouldLogSession$1;
-        Object coroutine_suspended;
-        int i;
-        SessionFirelogPublisherImpl sessionFirelogPublisherImpl;
-        String str;
-        if (continuation instanceof SessionFirelogPublisherImpl$shouldLogSession$1) {
-            sessionFirelogPublisherImpl$shouldLogSession$1 = (SessionFirelogPublisherImpl$shouldLogSession$1) continuation;
-            int i2 = sessionFirelogPublisherImpl$shouldLogSession$1.label;
-            if ((i2 & TLObject.FLAG_31) != 0) {
-                sessionFirelogPublisherImpl$shouldLogSession$1.label = i2 - TLObject.FLAG_31;
-                Object obj = sessionFirelogPublisherImpl$shouldLogSession$1.result;
-                coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                i = sessionFirelogPublisherImpl$shouldLogSession$1.label;
-                if (i != 0) {
-                    ResultKt.throwOnFailure(obj);
-                    Log.d("SessionFirelogPublisher", "Data Collection is enabled for at least one Subscriber");
-                    SessionsSettings sessionsSettings = this.sessionSettings;
-                    sessionFirelogPublisherImpl$shouldLogSession$1.L$0 = this;
-                    sessionFirelogPublisherImpl$shouldLogSession$1.label = 1;
-                    if (sessionsSettings.updateSettings(sessionFirelogPublisherImpl$shouldLogSession$1) == coroutine_suspended) {
-                        return coroutine_suspended;
-                    }
-                    sessionFirelogPublisherImpl = this;
-                } else {
-                    if (i != 1) {
-                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                    }
-                    sessionFirelogPublisherImpl = (SessionFirelogPublisherImpl) sessionFirelogPublisherImpl$shouldLogSession$1.L$0;
-                    ResultKt.throwOnFailure(obj);
-                }
-                if (sessionFirelogPublisherImpl.sessionSettings.getSessionsEnabled()) {
-                    str = "Sessions SDK disabled. Events will not be sent.";
-                } else {
-                    if (sessionFirelogPublisherImpl.shouldCollectEvents()) {
-                        return Boxing.boxBoolean(true);
-                    }
-                    str = "Sessions SDK has dropped this session due to sampling.";
-                }
-                Log.d("SessionFirelogPublisher", str);
-                return Boxing.boxBoolean(false);
-            }
+    public static final class Companion {
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
         }
-        sessionFirelogPublisherImpl$shouldLogSession$1 = new SessionFirelogPublisherImpl$shouldLogSession$1(this, continuation);
-        Object obj2 = sessionFirelogPublisherImpl$shouldLogSession$1.result;
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        i = sessionFirelogPublisherImpl$shouldLogSession$1.label;
-        if (i != 0) {
-        }
-        if (sessionFirelogPublisherImpl.sessionSettings.getSessionsEnabled()) {
-        }
-        Log.d("SessionFirelogPublisher", str);
-        return Boxing.boxBoolean(false);
-    }
 
-    @Override // com.google.firebase.sessions.SessionFirelogPublisher
-    public void logSession(SessionDetails sessionDetails) {
-        Intrinsics.checkNotNullParameter(sessionDetails, "sessionDetails");
-        BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(this.backgroundDispatcher), null, null, new SessionFirelogPublisherImpl$logSession$1(this, sessionDetails, null), 3, null);
+        private Companion() {
+        }
     }
 }

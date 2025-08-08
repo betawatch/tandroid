@@ -12,11 +12,35 @@ import kotlinx.coroutines.internal.DispatchedContinuation;
 import kotlinx.coroutines.internal.LimitedDispatcher;
 import kotlinx.coroutines.internal.LimitedDispatcherKt;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class CoroutineDispatcher extends AbstractCoroutineContextElement implements ContinuationInterceptor {
     public static final Key Key = new Key(null);
 
+    public abstract void dispatch(CoroutineContext coroutineContext, Runnable runnable);
+
+    public boolean isDispatchNeeded(CoroutineContext coroutineContext) {
+        return true;
+    }
+
+    @Override // kotlin.coroutines.AbstractCoroutineContextElement, kotlin.coroutines.CoroutineContext.Element, kotlin.coroutines.CoroutineContext
+    public CoroutineContext.Element get(CoroutineContext.Key key) {
+        return ContinuationInterceptor.DefaultImpls.get(this, key);
+    }
+
+    @Override // kotlin.coroutines.AbstractCoroutineContextElement, kotlin.coroutines.CoroutineContext
+    public CoroutineContext minusKey(CoroutineContext.Key key) {
+        return ContinuationInterceptor.DefaultImpls.minusKey(this, key);
+    }
+
+    public CoroutineDispatcher() {
+        super(ContinuationInterceptor.Key);
+    }
+
     public static final class Key extends AbstractCoroutineContextKey {
+        public /* synthetic */ Key(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
         private Key() {
             super(ContinuationInterceptor.Key, new Function1() { // from class: kotlinx.coroutines.CoroutineDispatcher.Key.1
                 @Override // kotlin.jvm.functions.Function1
@@ -28,30 +52,6 @@ public abstract class CoroutineDispatcher extends AbstractCoroutineContextElemen
                 }
             });
         }
-
-        public /* synthetic */ Key(DefaultConstructorMarker defaultConstructorMarker) {
-            this();
-        }
-    }
-
-    public CoroutineDispatcher() {
-        super(ContinuationInterceptor.Key);
-    }
-
-    public abstract void dispatch(CoroutineContext coroutineContext, Runnable runnable);
-
-    @Override // kotlin.coroutines.AbstractCoroutineContextElement, kotlin.coroutines.CoroutineContext.Element, kotlin.coroutines.CoroutineContext
-    public CoroutineContext.Element get(CoroutineContext.Key key) {
-        return ContinuationInterceptor.DefaultImpls.get(this, key);
-    }
-
-    @Override // kotlin.coroutines.ContinuationInterceptor
-    public final Continuation interceptContinuation(Continuation continuation) {
-        return new DispatchedContinuation(this, continuation);
-    }
-
-    public boolean isDispatchNeeded(CoroutineContext coroutineContext) {
-        return true;
     }
 
     public CoroutineDispatcher limitedParallelism(int i) {
@@ -59,9 +59,9 @@ public abstract class CoroutineDispatcher extends AbstractCoroutineContextElemen
         return new LimitedDispatcher(this, i);
     }
 
-    @Override // kotlin.coroutines.AbstractCoroutineContextElement, kotlin.coroutines.CoroutineContext
-    public CoroutineContext minusKey(CoroutineContext.Key key) {
-        return ContinuationInterceptor.DefaultImpls.minusKey(this, key);
+    @Override // kotlin.coroutines.ContinuationInterceptor
+    public final Continuation interceptContinuation(Continuation continuation) {
+        return new DispatchedContinuation(this, continuation);
     }
 
     @Override // kotlin.coroutines.ContinuationInterceptor

@@ -16,16 +16,16 @@ public final class SchemaManager_Factory implements Factory {
         this.schemaVersionProvider = provider3;
     }
 
+    @Override // javax.inject.Provider
+    public SchemaManager get() {
+        return newInstance((Context) this.contextProvider.get(), (String) this.dbNameProvider.get(), ((Integer) this.schemaVersionProvider.get()).intValue());
+    }
+
     public static SchemaManager_Factory create(Provider provider, Provider provider2, Provider provider3) {
         return new SchemaManager_Factory(provider, provider2, provider3);
     }
 
     public static SchemaManager newInstance(Context context, String str, int i) {
         return new SchemaManager(context, str, i);
-    }
-
-    @Override // javax.inject.Provider
-    public SchemaManager get() {
-        return newInstance((Context) this.contextProvider.get(), (String) this.dbNameProvider.get(), ((Integer) this.schemaVersionProvider.get()).intValue());
     }
 }

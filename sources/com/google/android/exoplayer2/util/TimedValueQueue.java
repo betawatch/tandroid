@@ -18,14 +18,53 @@ public final class TimedValueQueue {
         this.values = newArray(i);
     }
 
-    private void addUnchecked(long j, Object obj) {
-        int i = this.first;
-        int i2 = this.size;
+    public synchronized void add(long j, Object obj) {
+        clearBufferOnTimeDiscontinuity(j);
+        doubleCapacityIfFull();
+        addUnchecked(j, obj);
+    }
+
+    public synchronized void clear() {
+        this.first = 0;
+        this.size = 0;
+        Arrays.fill(this.values, (Object) null);
+    }
+
+    public synchronized int size() {
+        return this.size;
+    }
+
+    public synchronized Object pollFirst() {
+        return this.size == 0 ? null : popFirst();
+    }
+
+    public synchronized Object pollFloor(long j) {
+        return poll(j, true);
+    }
+
+    private Object poll(long j, boolean z) {
+        Object obj = null;
+        long j2 = Long.MAX_VALUE;
+        while (this.size > 0) {
+            long j3 = j - this.timestamps[this.first];
+            if (j3 < 0 && (z || (-j3) >= j2)) {
+                break;
+            }
+            obj = popFirst();
+            j2 = j3;
+        }
+        return obj;
+    }
+
+    private Object popFirst() {
+        Assertions.checkState(this.size > 0);
         Object[] objArr = this.values;
-        int length = (i + i2) % objArr.length;
-        this.timestamps[length] = j;
-        objArr[length] = obj;
-        this.size = i2 + 1;
+        int i = this.first;
+        Object obj = objArr[i];
+        objArr[i] = null;
+        this.first = (i + 1) % objArr.length;
+        this.size--;
+        return obj;
     }
 
     private void clearBufferOnTimeDiscontinuity(long j) {
@@ -58,56 +97,17 @@ public final class TimedValueQueue {
         this.first = 0;
     }
 
+    private void addUnchecked(long j, Object obj) {
+        int i = this.first;
+        int i2 = this.size;
+        Object[] objArr = this.values;
+        int length = (i + i2) % objArr.length;
+        this.timestamps[length] = j;
+        objArr[length] = obj;
+        this.size = i2 + 1;
+    }
+
     private static Object[] newArray(int i) {
         return new Object[i];
-    }
-
-    private Object poll(long j, boolean z) {
-        Object obj = null;
-        long j2 = Long.MAX_VALUE;
-        while (this.size > 0) {
-            long j3 = j - this.timestamps[this.first];
-            if (j3 < 0 && (z || (-j3) >= j2)) {
-                break;
-            }
-            obj = popFirst();
-            j2 = j3;
-        }
-        return obj;
-    }
-
-    private Object popFirst() {
-        Assertions.checkState(this.size > 0);
-        Object[] objArr = this.values;
-        int i = this.first;
-        Object obj = objArr[i];
-        objArr[i] = null;
-        this.first = (i + 1) % objArr.length;
-        this.size--;
-        return obj;
-    }
-
-    public synchronized void add(long j, Object obj) {
-        clearBufferOnTimeDiscontinuity(j);
-        doubleCapacityIfFull();
-        addUnchecked(j, obj);
-    }
-
-    public synchronized void clear() {
-        this.first = 0;
-        this.size = 0;
-        Arrays.fill(this.values, (Object) null);
-    }
-
-    public synchronized Object pollFirst() {
-        return this.size == 0 ? null : popFirst();
-    }
-
-    public synchronized Object pollFloor(long j) {
-        return poll(j, true);
-    }
-
-    public synchronized int size() {
-        return this.size;
     }
 }

@@ -1,5 +1,5 @@
 package kotlin.text;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class StringsKt extends StringsKt___StringsKt {
 }

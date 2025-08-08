@@ -48,6 +48,7 @@ final class zaz implements zabz {
         Lock lock2;
         boolean z2;
         zabi zabiVar;
+        Lock lock3;
         lock = this.zaa.zam;
         lock.lock();
         try {
@@ -61,9 +62,12 @@ final class zaz implements zabz {
                 zabiVar = this.zaa.zad;
                 zabiVar.onConnectionSuspended(i);
             }
-        } finally {
+            lock3 = this.zaa.zam;
+            lock3.unlock();
+        } catch (Throwable th) {
             lock2 = this.zaa.zam;
             lock2.unlock();
+            throw th;
         }
     }
 }

@@ -24,7 +24,7 @@ final class zabu implements BaseGmsClient.ConnectionProgressReportCallbacks, zac
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final void zag() {
+    public final void zah() {
         IAccountAccessor iAccountAccessor;
         if (!this.zaf || (iAccountAccessor = this.zad) == null) {
             return;
@@ -34,16 +34,32 @@ final class zabu implements BaseGmsClient.ConnectionProgressReportCallbacks, zac
 
     @Override // com.google.android.gms.common.internal.BaseGmsClient.ConnectionProgressReportCallbacks
     public final void onReportServiceBinding(ConnectionResult connectionResult) {
-        this.zaa.zat.post(new zabt(this, connectionResult));
+        this.zaa.zar.post(new zabt(this, connectionResult));
     }
 
     @Override // com.google.android.gms.common.api.internal.zacs
     public final void zae(ConnectionResult connectionResult) {
         Map map;
-        map = this.zaa.zap;
+        map = this.zaa.zan;
         zabq zabqVar = (zabq) map.get(this.zac);
         if (zabqVar != null) {
             zabqVar.zas(connectionResult);
+        }
+    }
+
+    @Override // com.google.android.gms.common.api.internal.zacs
+    public final void zag(int i) {
+        Map map;
+        boolean z;
+        map = this.zaa.zan;
+        zabq zabqVar = (zabq) map.get(this.zac);
+        if (zabqVar != null) {
+            z = zabqVar.zaj;
+            if (z) {
+                zabqVar.zas(new ConnectionResult(17));
+            } else {
+                zabqVar.onConnectionSuspended(i);
+            }
         }
     }
 
@@ -55,7 +71,7 @@ final class zabu implements BaseGmsClient.ConnectionProgressReportCallbacks, zac
         } else {
             this.zad = iAccountAccessor;
             this.zae = set;
-            zag();
+            zah();
         }
     }
 }

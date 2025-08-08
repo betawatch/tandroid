@@ -5,11 +5,11 @@ import androidx.datastore.preferences.core.Preferences;
 import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class SettingsCache$updateConfigValue$2 extends SuspendLambda implements Function2 {
     final /* synthetic */ Preferences.Key $key;
     final /* synthetic */ Object $value;
@@ -39,7 +39,7 @@ final class SettingsCache$updateConfigValue$2 extends SuspendLambda implements F
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        IntrinsicsKt.getCOROUTINE_SUSPENDED();
         if (this.label != 0) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }

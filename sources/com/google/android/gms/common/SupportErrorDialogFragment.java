@@ -15,18 +15,6 @@ public class SupportErrorDialogFragment extends DialogFragment {
     private DialogInterface.OnCancelListener zab;
     private Dialog zac;
 
-    public static SupportErrorDialogFragment newInstance(Dialog dialog, DialogInterface.OnCancelListener onCancelListener) {
-        SupportErrorDialogFragment supportErrorDialogFragment = new SupportErrorDialogFragment();
-        Dialog dialog2 = (Dialog) Preconditions.checkNotNull(dialog, "Cannot display null dialog");
-        dialog2.setOnCancelListener(null);
-        dialog2.setOnDismissListener(null);
-        supportErrorDialogFragment.zaa = dialog2;
-        if (onCancelListener != null) {
-            supportErrorDialogFragment.zab = onCancelListener;
-        }
-        return supportErrorDialogFragment;
-    }
-
     @Override // androidx.fragment.app.DialogFragment, android.content.DialogInterface.OnCancelListener
     public void onCancel(DialogInterface dialogInterface) {
         DialogInterface.OnCancelListener onCancelListener = this.zab;
@@ -51,5 +39,17 @@ public class SupportErrorDialogFragment extends DialogFragment {
     @Override // androidx.fragment.app.DialogFragment
     public void show(FragmentManager fragmentManager, String str) {
         super.show(fragmentManager, str);
+    }
+
+    public static SupportErrorDialogFragment newInstance(Dialog dialog, DialogInterface.OnCancelListener onCancelListener) {
+        SupportErrorDialogFragment supportErrorDialogFragment = new SupportErrorDialogFragment();
+        Dialog dialog2 = (Dialog) Preconditions.checkNotNull(dialog, "Cannot display null dialog");
+        dialog2.setOnCancelListener(null);
+        dialog2.setOnDismissListener(null);
+        supportErrorDialogFragment.zaa = dialog2;
+        if (onCancelListener != null) {
+            supportErrorDialogFragment.zab = onCancelListener;
+        }
+        return supportErrorDialogFragment;
     }
 }

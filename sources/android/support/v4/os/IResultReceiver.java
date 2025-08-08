@@ -11,7 +11,45 @@ import android.os.Parcelable;
 public interface IResultReceiver extends IInterface {
     public static final String DESCRIPTOR = "android$support$v4$os$IResultReceiver".replace('$', '.');
 
+    void send(int i, Bundle bundle);
+
     public static abstract class Stub extends Binder implements IResultReceiver {
+        @Override // android.os.IInterface
+        public IBinder asBinder() {
+            return this;
+        }
+
+        public Stub() {
+            attachInterface(this, IResultReceiver.DESCRIPTOR);
+        }
+
+        public static IResultReceiver asInterface(IBinder iBinder) {
+            if (iBinder == null) {
+                return null;
+            }
+            IInterface queryLocalInterface = iBinder.queryLocalInterface(IResultReceiver.DESCRIPTOR);
+            if (queryLocalInterface != null && (queryLocalInterface instanceof IResultReceiver)) {
+                return (IResultReceiver) queryLocalInterface;
+            }
+            return new Proxy(iBinder);
+        }
+
+        @Override // android.os.Binder
+        public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
+            String str = IResultReceiver.DESCRIPTOR;
+            if (i >= 1 && i <= 16777215) {
+                parcel.enforceInterface(str);
+            }
+            if (i == 1598968902) {
+                parcel2.writeString(str);
+                return true;
+            }
+            if (i == 1) {
+                send(parcel.readInt(), (Bundle) _Parcel.readTypedObject(parcel, Bundle.CREATOR));
+                return true;
+            }
+            return super.onTransact(i, parcel, parcel2, i2);
+        }
 
         private static class Proxy implements IResultReceiver {
             private IBinder mRemote;
@@ -25,40 +63,6 @@ public interface IResultReceiver extends IInterface {
                 return this.mRemote;
             }
         }
-
-        public Stub() {
-            attachInterface(this, IResultReceiver.DESCRIPTOR);
-        }
-
-        public static IResultReceiver asInterface(IBinder iBinder) {
-            if (iBinder == null) {
-                return null;
-            }
-            IInterface queryLocalInterface = iBinder.queryLocalInterface(IResultReceiver.DESCRIPTOR);
-            return (queryLocalInterface == null || !(queryLocalInterface instanceof IResultReceiver)) ? new Proxy(iBinder) : (IResultReceiver) queryLocalInterface;
-        }
-
-        @Override // android.os.IInterface
-        public IBinder asBinder() {
-            return this;
-        }
-
-        @Override // android.os.Binder
-        public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
-            String str = IResultReceiver.DESCRIPTOR;
-            if (i >= 1 && i <= 16777215) {
-                parcel.enforceInterface(str);
-            }
-            if (i == 1598968902) {
-                parcel2.writeString(str);
-                return true;
-            }
-            if (i != 1) {
-                return super.onTransact(i, parcel, parcel2, i2);
-            }
-            send(parcel.readInt(), (Bundle) _Parcel.readTypedObject(parcel, Bundle.CREATOR));
-            return true;
-        }
     }
 
     public static class _Parcel {
@@ -70,6 +74,4 @@ public interface IResultReceiver extends IInterface {
             return null;
         }
     }
-
-    void send(int i, Bundle bundle);
 }

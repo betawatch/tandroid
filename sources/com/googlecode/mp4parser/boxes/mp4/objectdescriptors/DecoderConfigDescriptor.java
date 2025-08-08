@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Logger;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class DecoderConfigDescriptor extends BaseDescriptor {
     private static Logger log = Logger.getLogger(DecoderConfigDescriptor.class.getName());
     AudioSpecificConfig audioSpecificInfo;
@@ -68,6 +68,11 @@ public class DecoderConfigDescriptor extends BaseDescriptor {
         }
     }
 
+    public int serializedSize() {
+        AudioSpecificConfig audioSpecificConfig = this.audioSpecificInfo;
+        return (audioSpecificConfig == null ? 0 : audioSpecificConfig.serializedSize()) + 15;
+    }
+
     public ByteBuffer serialize() {
         ByteBuffer allocate = ByteBuffer.allocate(serializedSize());
         IsoTypeWriter.writeUInt8(allocate, 4);
@@ -84,17 +89,16 @@ public class DecoderConfigDescriptor extends BaseDescriptor {
         return allocate;
     }
 
-    public int serializedSize() {
-        AudioSpecificConfig audioSpecificConfig = this.audioSpecificInfo;
-        return (audioSpecificConfig == null ? 0 : audioSpecificConfig.serializedSize()) + 15;
-    }
-
     public void setAudioSpecificInfo(AudioSpecificConfig audioSpecificConfig) {
         this.audioSpecificInfo = audioSpecificConfig;
     }
 
-    public void setAvgBitRate(long j) {
-        this.avgBitRate = j;
+    public void setObjectTypeIndication(int i) {
+        this.objectTypeIndication = i;
+    }
+
+    public void setStreamType(int i) {
+        this.streamType = i;
     }
 
     public void setBufferSizeDB(int i) {
@@ -105,12 +109,8 @@ public class DecoderConfigDescriptor extends BaseDescriptor {
         this.maxBitRate = j;
     }
 
-    public void setObjectTypeIndication(int i) {
-        this.objectTypeIndication = i;
-    }
-
-    public void setStreamType(int i) {
-        this.streamType = i;
+    public void setAvgBitRate(long j) {
+        this.avgBitRate = j;
     }
 
     public String toString() {

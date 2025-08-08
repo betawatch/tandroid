@@ -25,31 +25,9 @@ public final class IcyInfo implements Metadata.Entry {
     public final String title;
     public final String url;
 
-    IcyInfo(Parcel parcel) {
-        this.rawMetadata = (byte[]) Assertions.checkNotNull(parcel.createByteArray());
-        this.title = parcel.readString();
-        this.url = parcel.readString();
-    }
-
-    public IcyInfo(byte[] bArr, String str, String str2) {
-        this.rawMetadata = bArr;
-        this.title = str;
-        this.url = str2;
-    }
-
     @Override // android.os.Parcelable
     public int describeContents() {
         return 0;
-    }
-
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || IcyInfo.class != obj.getClass()) {
-            return false;
-        }
-        return Arrays.equals(this.rawMetadata, ((IcyInfo) obj).rawMetadata);
     }
 
     @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
@@ -62,8 +40,16 @@ public final class IcyInfo implements Metadata.Entry {
         return Metadata.Entry.-CC.$default$getWrappedMetadataFormat(this);
     }
 
-    public int hashCode() {
-        return Arrays.hashCode(this.rawMetadata);
+    public IcyInfo(byte[] bArr, String str, String str2) {
+        this.rawMetadata = bArr;
+        this.title = str;
+        this.url = str2;
+    }
+
+    IcyInfo(Parcel parcel) {
+        this.rawMetadata = (byte[]) Assertions.checkNotNull(parcel.createByteArray());
+        this.title = parcel.readString();
+        this.url = parcel.readString();
     }
 
     @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
@@ -72,6 +58,20 @@ public final class IcyInfo implements Metadata.Entry {
         if (str != null) {
             builder.setTitle(str);
         }
+    }
+
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || IcyInfo.class != obj.getClass()) {
+            return false;
+        }
+        return Arrays.equals(this.rawMetadata, ((IcyInfo) obj).rawMetadata);
+    }
+
+    public int hashCode() {
+        return Arrays.hashCode(this.rawMetadata);
     }
 
     public String toString() {

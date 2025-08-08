@@ -16,17 +16,17 @@ class MediaBrowserCompat$SearchResultReceiver extends ResultReceiver {
         if (i != 0) {
             throw null;
         }
-        if (bundle == null) {
+        if (bundle != null) {
+            if (!bundle.containsKey("search_results")) {
+                throw null;
+            }
+            Parcelable[] parcelableArray = bundle.getParcelableArray("search_results");
+            parcelableArray.getClass();
+            ArrayList arrayList = new ArrayList(parcelableArray.length);
+            for (Parcelable parcelable : parcelableArray) {
+                arrayList.add((MediaBrowserCompat$MediaItem) parcelable);
+            }
             throw null;
-        }
-        if (!bundle.containsKey("search_results")) {
-            throw null;
-        }
-        Parcelable[] parcelableArray = bundle.getParcelableArray("search_results");
-        parcelableArray.getClass();
-        ArrayList arrayList = new ArrayList(parcelableArray.length);
-        for (Parcelable parcelable : parcelableArray) {
-            arrayList.add((MediaBrowserCompat$MediaItem) parcelable);
         }
         throw null;
     }

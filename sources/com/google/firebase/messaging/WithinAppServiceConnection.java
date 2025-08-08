@@ -19,7 +19,7 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 class WithinAppServiceConnection implements ServiceConnection {
     private WithinAppServiceBinder binder;
     private boolean connectionInProgress;
@@ -34,12 +34,6 @@ class WithinAppServiceConnection implements ServiceConnection {
 
         BindRequest(Intent intent) {
             this.intent = intent;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$arrangeTimeout$0() {
-            Log.w("FirebaseMessaging", "Service took too long to process intent: " + this.intent.getAction() + " finishing.");
-            finish();
         }
 
         void arrangeTimeout(ScheduledExecutorService scheduledExecutorService) {
@@ -57,13 +51,19 @@ class WithinAppServiceConnection implements ServiceConnection {
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: package-private */
-        public void finish() {
-            this.taskCompletionSource.trySetResult(null);
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$arrangeTimeout$0() {
+            Log.w("FirebaseMessaging", "Service took too long to process intent: " + this.intent.getAction() + " finishing.");
+            finish();
         }
 
         Task getTask() {
             return this.taskCompletionSource.getTask();
+        }
+
+        /* JADX INFO: Access modifiers changed from: package-private */
+        public void finish() {
+            this.taskCompletionSource.trySetResult(null);
         }
     }
 
@@ -80,10 +80,20 @@ class WithinAppServiceConnection implements ServiceConnection {
         this.scheduledExecutorService = scheduledExecutorService;
     }
 
-    private void finishAllInQueue() {
-        while (!this.intentQueue.isEmpty()) {
-            ((BindRequest) this.intentQueue.poll()).finish();
+    synchronized Task sendIntent(Intent intent) {
+        BindRequest bindRequest;
+        try {
+            if (Log.isLoggable("FirebaseMessaging", 3)) {
+                Log.d("FirebaseMessaging", "new intent queued in the bind-strategy delivery");
+            }
+            bindRequest = new BindRequest(intent);
+            bindRequest.arrangeTimeout(this.scheduledExecutorService);
+            this.intentQueue.add(bindRequest);
+            flushQueue();
+        } catch (Throwable th) {
+            throw th;
         }
+        return bindRequest.getTask();
     }
 
     private synchronized void flushQueue() {
@@ -96,14 +106,15 @@ class WithinAppServiceConnection implements ServiceConnection {
                     Log.d("FirebaseMessaging", "found intent to be delivered");
                 }
                 WithinAppServiceBinder withinAppServiceBinder = this.binder;
-                if (withinAppServiceBinder == null || !withinAppServiceBinder.isBinderAlive()) {
+                if (withinAppServiceBinder != null && withinAppServiceBinder.isBinderAlive()) {
+                    if (Log.isLoggable("FirebaseMessaging", 3)) {
+                        Log.d("FirebaseMessaging", "binder is alive, sending the intent.");
+                    }
+                    this.binder.send((BindRequest) this.intentQueue.poll());
+                } else {
                     startConnectionIfNeeded();
                     return;
                 }
-                if (Log.isLoggable("FirebaseMessaging", 3)) {
-                    Log.d("FirebaseMessaging", "binder is alive, sending the intent.");
-                }
-                this.binder.send((BindRequest) this.intentQueue.poll());
             }
         } catch (Throwable th) {
             throw th;
@@ -133,6 +144,12 @@ class WithinAppServiceConnection implements ServiceConnection {
         finishAllInQueue();
     }
 
+    private void finishAllInQueue() {
+        while (!this.intentQueue.isEmpty()) {
+            ((BindRequest) this.intentQueue.poll()).finish();
+        }
+    }
+
     @Override // android.content.ServiceConnection
     public synchronized void onServiceConnected(ComponentName componentName, IBinder iBinder) {
         try {
@@ -140,13 +157,13 @@ class WithinAppServiceConnection implements ServiceConnection {
                 Log.d("FirebaseMessaging", "onServiceConnected: " + componentName);
             }
             this.connectionInProgress = false;
-            if (iBinder instanceof WithinAppServiceBinder) {
-                this.binder = (WithinAppServiceBinder) iBinder;
-                flushQueue();
+            if (!(iBinder instanceof WithinAppServiceBinder)) {
+                Log.e("FirebaseMessaging", "Invalid service connection: " + iBinder);
+                finishAllInQueue();
                 return;
             }
-            Log.e("FirebaseMessaging", "Invalid service connection: " + iBinder);
-            finishAllInQueue();
+            this.binder = (WithinAppServiceBinder) iBinder;
+            flushQueue();
         } catch (Throwable th) {
             throw th;
         }
@@ -158,21 +175,5 @@ class WithinAppServiceConnection implements ServiceConnection {
             Log.d("FirebaseMessaging", "onServiceDisconnected: " + componentName);
         }
         flushQueue();
-    }
-
-    synchronized Task sendIntent(Intent intent) {
-        BindRequest bindRequest;
-        try {
-            if (Log.isLoggable("FirebaseMessaging", 3)) {
-                Log.d("FirebaseMessaging", "new intent queued in the bind-strategy delivery");
-            }
-            bindRequest = new BindRequest(intent);
-            bindRequest.arrangeTimeout(this.scheduledExecutorService);
-            this.intentQueue.add(bindRequest);
-            flushQueue();
-        } catch (Throwable th) {
-            throw th;
-        }
-        return bindRequest.getTask();
     }
 }

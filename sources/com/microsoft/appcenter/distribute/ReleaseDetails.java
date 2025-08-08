@@ -4,7 +4,7 @@ import android.net.Uri;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class ReleaseDetails {
     private String distributionGroupId;
     private Uri downloadUrl;
@@ -40,24 +40,16 @@ public class ReleaseDetails {
         return releaseDetails;
     }
 
-    public String getDistributionGroupId() {
-        return this.distributionGroupId;
-    }
-
-    public Uri getDownloadUrl() {
-        return this.downloadUrl;
-    }
-
     public int getId() {
         return this.id;
     }
 
-    int getMinApiLevel() {
-        return this.minApiLevel;
+    public int getVersion() {
+        return this.version;
     }
 
-    public String getReleaseHash() {
-        return this.releaseHash;
+    public String getShortVersion() {
+        return this.shortVersion;
     }
 
     public String getReleaseNotes() {
@@ -68,19 +60,23 @@ public class ReleaseDetails {
         return this.releaseNotesUrl;
     }
 
-    public String getShortVersion() {
-        return this.shortVersion;
+    int getMinApiLevel() {
+        return this.minApiLevel;
     }
 
-    public long getSize() {
-        return this.size;
-    }
-
-    public int getVersion() {
-        return this.version;
+    public Uri getDownloadUrl() {
+        return this.downloadUrl;
     }
 
     public boolean isMandatoryUpdate() {
         return this.mandatoryUpdate;
+    }
+
+    public String getReleaseHash() {
+        return this.releaseHash;
+    }
+
+    public String getDistributionGroupId() {
+        return this.distributionGroupId;
     }
 }

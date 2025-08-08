@@ -73,21 +73,21 @@ public class VoIPPermissionActivity extends Activity {
                 return;
             }
             shouldShowRequestPermissionRationale = shouldShowRequestPermissionRationale("android.permission.RECORD_AUDIO");
-            if (shouldShowRequestPermissionRationale) {
-                finish();
+            if (!shouldShowRequestPermissionRationale) {
+                if (VoIPService.getSharedInstance() != null) {
+                    VoIPService.getSharedInstance().declineIncomingCall();
+                } else {
+                    VoIPPreNotificationService.decline(this, 1);
+                }
+                VoIPHelper.permissionDenied(this, new Runnable() { // from class: org.telegram.ui.VoIPPermissionActivity$$ExternalSyntheticLambda0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        VoIPPermissionActivity.this.finish();
+                    }
+                }, i);
                 return;
             }
-            if (VoIPService.getSharedInstance() != null) {
-                VoIPService.getSharedInstance().declineIncomingCall();
-            } else {
-                VoIPPreNotificationService.decline(this, 1);
-            }
-            VoIPHelper.permissionDenied(this, new Runnable() { // from class: org.telegram.ui.VoIPPermissionActivity$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    VoIPPermissionActivity.this.finish();
-                }
-            }, i);
+            finish();
         }
     }
 }

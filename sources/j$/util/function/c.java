@@ -1,9 +1,10 @@
 package j$.util.function;
 
+import j$.util.function.BiFunction;
 import java.util.Comparator;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class c implements f {
+public final /* synthetic */ class c implements BinaryOperator {
     public final /* synthetic */ int a;
     public final /* synthetic */ Comparator b;
 
@@ -16,7 +17,7 @@ public final /* synthetic */ class c implements f {
     public final /* synthetic */ BiFunction andThen(Function function) {
         switch (this.a) {
         }
-        return j$.com.android.tools.r8.a.a(this, function);
+        return BiFunction.-CC.$default$andThen(this, function);
     }
 
     @Override // j$.util.function.BiFunction

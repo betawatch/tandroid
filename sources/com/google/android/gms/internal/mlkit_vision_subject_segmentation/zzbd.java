@@ -25,9 +25,11 @@ abstract class zzbd extends zzbr {
 
     @Override // com.google.android.gms.internal.mlkit_vision_subject_segmentation.zzbr, java.util.AbstractSet, java.util.AbstractCollection, java.util.Collection, java.util.Set
     public final boolean removeAll(Collection collection) {
-        collection.getClass();
         try {
-            return zzbs.zzb(this, collection);
+            if (collection != null) {
+                return zzbs.zzb(this, collection);
+            }
+            throw null;
         } catch (UnsupportedOperationException unused) {
             return zzbs.zzc(this, collection.iterator());
         }
@@ -35,23 +37,21 @@ abstract class zzbd extends zzbr {
 
     @Override // com.google.android.gms.internal.mlkit_vision_subject_segmentation.zzbr, java.util.AbstractCollection, java.util.Collection, java.util.Set
     public final boolean retainAll(Collection collection) {
-        int i;
-        collection.getClass();
+        int ceil;
         try {
-            return super.retainAll(collection);
+            if (collection != null) {
+                return super.retainAll(collection);
+            }
+            throw null;
         } catch (UnsupportedOperationException unused) {
             int size = collection.size();
             if (size < 3) {
                 zzab.zza(size, "expectedSize");
-                i = size + 1;
-            } else if (size < 1073741824) {
-                double d = size;
-                Double.isNaN(d);
-                i = (int) Math.ceil(d / 0.75d);
+                ceil = size + 1;
             } else {
-                i = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                ceil = size < 1073741824 ? (int) Math.ceil(size / 0.75d) : ConnectionsManager.DEFAULT_DATACENTER_ID;
             }
-            HashSet hashSet = new HashSet(i);
+            HashSet hashSet = new HashSet(ceil);
             for (Object obj : collection) {
                 if (contains(obj) && (obj instanceof Map.Entry)) {
                     hashSet.add(((Map.Entry) obj).getKey());

@@ -8,37 +8,17 @@ import com.google.android.gms.common.util.ProcessUtils;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import kotlin.collections.CollectionsKt__CollectionsKt;
-import kotlin.collections.CollectionsKt__IterablesKt;
-import kotlin.collections.CollectionsKt___CollectionsKt;
+import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class ProcessDetailsProvider {
     public static final ProcessDetailsProvider INSTANCE = new ProcessDetailsProvider();
 
     private ProcessDetailsProvider() {
     }
 
-    private final ProcessDetails buildProcessDetails(String str, int i, int i2, boolean z) {
-        return new ProcessDetails(str, i, i2, z);
-    }
-
-    static /* synthetic */ ProcessDetails buildProcessDetails$default(ProcessDetailsProvider processDetailsProvider, String str, int i, int i2, boolean z, int i3, Object obj) {
-        if ((i3 & 2) != 0) {
-            i = 0;
-        }
-        if ((i3 & 4) != 0) {
-            i2 = 0;
-        }
-        if ((i3 & 8) != 0) {
-            z = false;
-        }
-        return processDetailsProvider.buildProcessDetails(str, i, i2, z);
-    }
-
     public final List getAppProcessDetails(Context context) {
-        List filterNotNull;
         Intrinsics.checkNotNullParameter(context, "context");
         int i = context.getApplicationInfo().uid;
         String str = context.getApplicationInfo().processName;
@@ -46,16 +26,16 @@ public final class ProcessDetailsProvider {
         ActivityManager activityManager = systemService instanceof ActivityManager ? (ActivityManager) systemService : null;
         List<ActivityManager.RunningAppProcessInfo> runningAppProcesses = activityManager != null ? activityManager.getRunningAppProcesses() : null;
         if (runningAppProcesses == null) {
-            runningAppProcesses = CollectionsKt__CollectionsKt.emptyList();
+            runningAppProcesses = CollectionsKt.emptyList();
         }
-        filterNotNull = CollectionsKt___CollectionsKt.filterNotNull(runningAppProcesses);
+        List filterNotNull = CollectionsKt.filterNotNull(runningAppProcesses);
         ArrayList<ActivityManager.RunningAppProcessInfo> arrayList = new ArrayList();
         for (Object obj : filterNotNull) {
             if (((ActivityManager.RunningAppProcessInfo) obj).uid == i) {
                 arrayList.add(obj);
             }
         }
-        ArrayList arrayList2 = new ArrayList(CollectionsKt__IterablesKt.collectionSizeOrDefault(arrayList, 10));
+        ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(arrayList, 10));
         for (ActivityManager.RunningAppProcessInfo runningAppProcessInfo : arrayList) {
             String str2 = runningAppProcessInfo.processName;
             Intrinsics.checkNotNullExpressionValue(str2, "runningAppProcessInfo.processName");
@@ -81,6 +61,23 @@ public final class ProcessDetailsProvider {
         }
         ProcessDetails processDetails = (ProcessDetails) obj;
         return processDetails == null ? buildProcessDetails$default(this, getProcessName$com_google_firebase_firebase_sessions(), myPid, 0, false, 12, null) : processDetails;
+    }
+
+    static /* synthetic */ ProcessDetails buildProcessDetails$default(ProcessDetailsProvider processDetailsProvider, String str, int i, int i2, boolean z, int i3, Object obj) {
+        if ((i3 & 2) != 0) {
+            i = 0;
+        }
+        if ((i3 & 4) != 0) {
+            i2 = 0;
+        }
+        if ((i3 & 8) != 0) {
+            z = false;
+        }
+        return processDetailsProvider.buildProcessDetails(str, i, i2, z);
+    }
+
+    private final ProcessDetails buildProcessDetails(String str, int i, int i2, boolean z) {
+        return new ProcessDetails(str, i, i2, z);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:8:0x0014, code lost:

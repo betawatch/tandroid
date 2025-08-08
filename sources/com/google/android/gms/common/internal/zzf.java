@@ -30,35 +30,33 @@ public final class zzf extends zza {
 
     @Override // com.google.android.gms.common.internal.zza
     protected final boolean zzd() {
-        String str;
-        String interfaceDescriptor;
         BaseGmsClient.BaseConnectionCallbacks baseConnectionCallbacks;
         BaseGmsClient.BaseConnectionCallbacks baseConnectionCallbacks2;
         try {
             IBinder iBinder = this.zze;
             Preconditions.checkNotNull(iBinder);
-            interfaceDescriptor = iBinder.getInterfaceDescriptor();
-        } catch (RemoteException unused) {
-            str = "service probably died";
-        }
-        if (!this.zzf.getServiceDescriptor().equals(interfaceDescriptor)) {
-            str = "service descriptor mismatch: " + this.zzf.getServiceDescriptor() + " vs. " + interfaceDescriptor;
-            Log.w("GmsClient", str);
-            return false;
-        }
-        IInterface createServiceInterface = this.zzf.createServiceInterface(this.zze);
-        if (createServiceInterface == null || !(BaseGmsClient.zzn(this.zzf, 2, 4, createServiceInterface) || BaseGmsClient.zzn(this.zzf, 3, 4, createServiceInterface))) {
-            return false;
-        }
-        this.zzf.zzB = null;
-        Bundle connectionHint = this.zzf.getConnectionHint();
-        BaseGmsClient baseGmsClient = this.zzf;
-        baseConnectionCallbacks = baseGmsClient.zzw;
-        if (baseConnectionCallbacks == null) {
+            String interfaceDescriptor = iBinder.getInterfaceDescriptor();
+            if (!this.zzf.getServiceDescriptor().equals(interfaceDescriptor)) {
+                Log.w("GmsClient", "service descriptor mismatch: " + this.zzf.getServiceDescriptor() + " vs. " + interfaceDescriptor);
+                return false;
+            }
+            IInterface createServiceInterface = this.zzf.createServiceInterface(this.zze);
+            if (createServiceInterface == null || !(BaseGmsClient.zzn(this.zzf, 2, 4, createServiceInterface) || BaseGmsClient.zzn(this.zzf, 3, 4, createServiceInterface))) {
+                return false;
+            }
+            this.zzf.zzB = null;
+            BaseGmsClient baseGmsClient = this.zzf;
+            Bundle connectionHint = baseGmsClient.getConnectionHint();
+            baseConnectionCallbacks = baseGmsClient.zzw;
+            if (baseConnectionCallbacks == null) {
+                return true;
+            }
+            baseConnectionCallbacks2 = this.zzf.zzw;
+            baseConnectionCallbacks2.onConnected(connectionHint);
             return true;
+        } catch (RemoteException unused) {
+            Log.w("GmsClient", "service probably died");
+            return false;
         }
-        baseConnectionCallbacks2 = baseGmsClient.zzw;
-        baseConnectionCallbacks2.onConnected(connectionHint);
-        return true;
     }
 }

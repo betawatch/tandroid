@@ -5,12 +5,12 @@ public final class InstanceFactory implements Factory {
     private static final InstanceFactory NULL_INSTANCE_FACTORY = new InstanceFactory(null);
     private final Object instance;
 
-    private InstanceFactory(Object obj) {
-        this.instance = obj;
-    }
-
     public static Factory create(Object obj) {
         return new InstanceFactory(Preconditions.checkNotNull(obj, "instance cannot be null"));
+    }
+
+    private InstanceFactory(Object obj) {
+        this.instance = obj;
     }
 
     @Override // javax.inject.Provider

@@ -14,10 +14,6 @@ public class AuthenticatorService extends Service {
     private static Authenticator authenticator;
 
     private static class Authenticator extends AbstractAccountAuthenticator {
-        public Authenticator(Context context) {
-            super(context);
-        }
-
         @Override // android.accounts.AbstractAccountAuthenticator
         public Bundle addAccount(AccountAuthenticatorResponse accountAuthenticatorResponse, String str, String str2, String[] strArr, Bundle bundle) {
             return null;
@@ -31,11 +27,6 @@ public class AuthenticatorService extends Service {
         @Override // android.accounts.AbstractAccountAuthenticator
         public Bundle editProperties(AccountAuthenticatorResponse accountAuthenticatorResponse, String str) {
             return null;
-        }
-
-        @Override // android.accounts.AbstractAccountAuthenticator
-        public Bundle getAccountRemovalAllowed(AccountAuthenticatorResponse accountAuthenticatorResponse, Account account) {
-            return super.getAccountRemovalAllowed(accountAuthenticatorResponse, account);
         }
 
         @Override // android.accounts.AbstractAccountAuthenticator
@@ -56,6 +47,15 @@ public class AuthenticatorService extends Service {
         @Override // android.accounts.AbstractAccountAuthenticator
         public Bundle updateCredentials(AccountAuthenticatorResponse accountAuthenticatorResponse, Account account, String str, Bundle bundle) {
             return null;
+        }
+
+        public Authenticator(Context context) {
+            super(context);
+        }
+
+        @Override // android.accounts.AbstractAccountAuthenticator
+        public Bundle getAccountRemovalAllowed(AccountAuthenticatorResponse accountAuthenticatorResponse, Account account) {
+            return super.getAccountRemovalAllowed(accountAuthenticatorResponse, account);
         }
     }
 

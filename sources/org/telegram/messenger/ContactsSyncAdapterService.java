@@ -33,6 +33,11 @@ public class ContactsSyncAdapterService extends Service {
         }
     }
 
+    @Override // android.app.Service
+    public IBinder onBind(Intent intent) {
+        return getSyncAdapter().getSyncAdapterBinder();
+    }
+
     private SyncAdapterImpl getSyncAdapter() {
         if (sSyncAdapter == null) {
             sSyncAdapter = new SyncAdapterImpl(this);
@@ -45,10 +50,5 @@ public class ContactsSyncAdapterService extends Service {
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d("performSync: " + account.toString());
         }
-    }
-
-    @Override // android.app.Service
-    public IBinder onBind(Intent intent) {
-        return getSyncAdapter().getSyncAdapterBinder();
     }
 }

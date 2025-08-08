@@ -16,71 +16,9 @@ class PipSourcePlaceholder {
     private Drawable placeholderSourceDrawable;
     private final View placeholderSourceView;
 
-    private static class PlaceholderDrawable extends Drawable {
-        private final Bitmap bitmap;
-        private final Rect rect;
-
-        private PlaceholderDrawable(Bitmap bitmap) {
-            this.rect = new Rect();
-            this.bitmap = bitmap;
-        }
-
-        @Override // android.graphics.drawable.Drawable
-        public void draw(Canvas canvas) {
-            if (this.bitmap.isRecycled()) {
-                return;
-            }
-            canvas.drawBitmap(this.bitmap, (Rect) null, this.rect, (Paint) null);
-        }
-
-        @Override // android.graphics.drawable.Drawable
-        public int getOpacity() {
-            return -3;
-        }
-
-        @Override // android.graphics.drawable.Drawable
-        public void setAlpha(int i) {
-        }
-
-        @Override // android.graphics.drawable.Drawable
-        public void setBounds(int i, int i2, int i3, int i4) {
-            super.setBounds(i, i2, i3, i4);
-            if (this.bitmap.isRecycled()) {
-                return;
-            }
-            int i5 = i3 - i;
-            int i6 = i4 - i2;
-            float width = this.bitmap.getWidth();
-            float height = this.bitmap.getHeight();
-            float min = Math.min(i5 / width, i6 / height);
-            int round = Math.round(width * min);
-            int round2 = Math.round(height * min);
-            int i7 = i + ((i5 - round) / 2);
-            int i8 = i2 + ((i6 - round2) / 2);
-            this.rect.set(i7, i8, round + i7, round2 + i8);
-        }
-
-        @Override // android.graphics.drawable.Drawable
-        public void setColorFilter(ColorFilter colorFilter) {
-        }
-    }
-
     public PipSourcePlaceholder(View view, View view2) {
         this.placeholderActivityView = view;
         this.placeholderSourceView = view2;
-    }
-
-    private void maybeClearPlaceholder() {
-        Bitmap bitmap;
-        if (this.placeholderSourceDrawable == null && this.placeholderActivityDrawable == null && (bitmap = this.placeholder) != null) {
-            bitmap.recycle();
-            this.placeholder = null;
-        }
-    }
-
-    public void clear() {
-        stopPlaceholderForActivity();
-        stopPlaceholderForSource();
     }
 
     public void setPlaceholder(Bitmap bitmap) {
@@ -116,5 +54,67 @@ class PipSourcePlaceholder {
             }
         }
         maybeClearPlaceholder();
+    }
+
+    public void clear() {
+        stopPlaceholderForActivity();
+        stopPlaceholderForSource();
+    }
+
+    private void maybeClearPlaceholder() {
+        Bitmap bitmap;
+        if (this.placeholderSourceDrawable == null && this.placeholderActivityDrawable == null && (bitmap = this.placeholder) != null) {
+            bitmap.recycle();
+            this.placeholder = null;
+        }
+    }
+
+    private static class PlaceholderDrawable extends Drawable {
+        private final Bitmap bitmap;
+        private final Rect rect;
+
+        @Override // android.graphics.drawable.Drawable
+        public int getOpacity() {
+            return -3;
+        }
+
+        @Override // android.graphics.drawable.Drawable
+        public void setAlpha(int i) {
+        }
+
+        @Override // android.graphics.drawable.Drawable
+        public void setColorFilter(ColorFilter colorFilter) {
+        }
+
+        private PlaceholderDrawable(Bitmap bitmap) {
+            this.rect = new Rect();
+            this.bitmap = bitmap;
+        }
+
+        @Override // android.graphics.drawable.Drawable
+        public void draw(Canvas canvas) {
+            if (this.bitmap.isRecycled()) {
+                return;
+            }
+            canvas.drawBitmap(this.bitmap, (Rect) null, this.rect, (Paint) null);
+        }
+
+        @Override // android.graphics.drawable.Drawable
+        public void setBounds(int i, int i2, int i3, int i4) {
+            super.setBounds(i, i2, i3, i4);
+            if (this.bitmap.isRecycled()) {
+                return;
+            }
+            int i5 = i3 - i;
+            int i6 = i4 - i2;
+            float width = this.bitmap.getWidth();
+            float height = this.bitmap.getHeight();
+            float min = Math.min(i5 / width, i6 / height);
+            int round = Math.round(width * min);
+            int round2 = Math.round(height * min);
+            int i7 = i + ((i5 - round) / 2);
+            int i8 = i2 + ((i6 - round2) / 2);
+            this.rect.set(i7, i8, round + i7, round2 + i8);
+        }
     }
 }

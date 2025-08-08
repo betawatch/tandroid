@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.Premium.PremiumGradient;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class AvatarsImageView extends View {
     public final AvatarsDrawable avatarsDrawable;
     private Paint plusBgPaint;
@@ -22,8 +22,11 @@ public class AvatarsImageView extends View {
         this.avatarsDrawable = new AvatarsDrawable(this, z);
     }
 
-    public void commitTransition(boolean z) {
-        this.avatarsDrawable.commitTransition(z);
+    @Override // android.view.View
+    protected void onMeasure(int i, int i2) {
+        super.onMeasure(i, i2);
+        this.avatarsDrawable.width = getMeasuredWidth();
+        this.avatarsDrawable.height = getMeasuredHeight();
     }
 
     @Override // android.view.View
@@ -32,10 +35,12 @@ public class AvatarsImageView extends View {
         this.avatarsDrawable.onAttachedToWindow();
     }
 
-    @Override // android.view.View
-    protected void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.avatarsDrawable.onDetachedFromWindow();
+    public void setPlus(int i, int i2) {
+        this.premiumGradient = new PremiumGradient.PremiumGradientTools(Theme.key_premiumGradient1, Theme.key_premiumGradient2, -1, -1, -1, null);
+        this.plusText = new Text("+" + i, 12.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
+        Paint paint = new Paint(1);
+        this.plusBgPaint = paint;
+        paint.setColor(i2);
     }
 
     @Override // android.view.View
@@ -53,26 +58,13 @@ public class AvatarsImageView extends View {
     }
 
     @Override // android.view.View
-    protected void onMeasure(int i, int i2) {
-        super.onMeasure(i, i2);
-        this.avatarsDrawable.width = getMeasuredWidth();
-        this.avatarsDrawable.height = getMeasuredHeight();
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.avatarsDrawable.onDetachedFromWindow();
     }
 
-    public void reset() {
-        this.avatarsDrawable.reset();
-    }
-
-    public void setAvatarsTextSize(int i) {
-        this.avatarsDrawable.setAvatarsTextSize(i);
-    }
-
-    public void setCentered(boolean z) {
-        this.avatarsDrawable.setCentered(z);
-    }
-
-    public void setCount(int i) {
-        this.avatarsDrawable.setCount(i);
+    public void setStyle(int i) {
+        this.avatarsDrawable.setStyle(i);
     }
 
     public void setDelegate(Runnable runnable) {
@@ -83,12 +75,8 @@ public class AvatarsImageView extends View {
         this.avatarsDrawable.setObject(i, i2, tLObject);
     }
 
-    public void setPlus(int i, int i2) {
-        this.premiumGradient = new PremiumGradient.PremiumGradientTools(Theme.key_premiumGradient1, Theme.key_premiumGradient2, -1, -1, -1, null);
-        this.plusText = new Text("+" + i, 12.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
-        Paint paint = new Paint(1);
-        this.plusBgPaint = paint;
-        paint.setColor(i2);
+    public void setAvatarsTextSize(int i) {
+        this.avatarsDrawable.setAvatarsTextSize(i);
     }
 
     public void setSize(int i) {
@@ -99,11 +87,23 @@ public class AvatarsImageView extends View {
         this.avatarsDrawable.setStepFactor(f);
     }
 
-    public void setStyle(int i) {
-        this.avatarsDrawable.setStyle(i);
+    public void reset() {
+        this.avatarsDrawable.reset();
+    }
+
+    public void setCount(int i) {
+        this.avatarsDrawable.setCount(i);
+    }
+
+    public void commitTransition(boolean z) {
+        this.avatarsDrawable.commitTransition(z);
     }
 
     public void updateAfterTransitionEnd() {
         this.avatarsDrawable.updateAfterTransitionEnd();
+    }
+
+    public void setCentered(boolean z) {
+        this.avatarsDrawable.setCentered(z);
     }
 }

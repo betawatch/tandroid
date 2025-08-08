@@ -10,11 +10,6 @@ public final class zal {
     private final SparseIntArray zaa = new SparseIntArray();
     private GoogleApiAvailabilityLight zab;
 
-    public zal(GoogleApiAvailabilityLight googleApiAvailabilityLight) {
-        Preconditions.checkNotNull(googleApiAvailabilityLight);
-        this.zab = googleApiAvailabilityLight;
-    }
-
     public final int zaa(Context context, int i) {
         return this.zaa.get(i, -1);
     }
@@ -49,5 +44,10 @@ public final class zal {
 
     public final void zac() {
         this.zaa.clear();
+    }
+
+    public zal(GoogleApiAvailabilityLight googleApiAvailabilityLight) {
+        Preconditions.checkNotNull(googleApiAvailabilityLight);
+        this.zab = googleApiAvailabilityLight;
     }
 }

@@ -2,18 +2,19 @@ package com.google.firebase.remoteconfig;
 
 import com.google.firebase.remoteconfig.internal.ConfigFetchHandler;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class FirebaseRemoteConfigSettings {
     private final long fetchTimeoutInSeconds;
     private final long minimumFetchInterval;
 
+    private FirebaseRemoteConfigSettings(Builder builder) {
+        this.fetchTimeoutInSeconds = builder.fetchTimeoutInSeconds;
+        this.minimumFetchInterval = builder.minimumFetchInterval;
+    }
+
     public static class Builder {
         private long fetchTimeoutInSeconds = 60;
         private long minimumFetchInterval = ConfigFetchHandler.DEFAULT_MINIMUM_FETCH_INTERVAL_IN_SECONDS;
-
-        public FirebaseRemoteConfigSettings build() {
-            return new FirebaseRemoteConfigSettings(this);
-        }
 
         public Builder setFetchTimeoutInSeconds(long j) {
             if (j < 0) {
@@ -24,16 +25,15 @@ public class FirebaseRemoteConfigSettings {
         }
 
         public Builder setMinimumFetchIntervalInSeconds(long j) {
-            if (j >= 0) {
-                this.minimumFetchInterval = j;
-                return this;
+            if (j < 0) {
+                throw new IllegalArgumentException("Minimum interval between fetches has to be a non-negative number. " + j + " is an invalid argument");
             }
-            throw new IllegalArgumentException("Minimum interval between fetches has to be a non-negative number. " + j + " is an invalid argument");
+            this.minimumFetchInterval = j;
+            return this;
         }
-    }
 
-    private FirebaseRemoteConfigSettings(Builder builder) {
-        this.fetchTimeoutInSeconds = builder.fetchTimeoutInSeconds;
-        this.minimumFetchInterval = builder.minimumFetchInterval;
+        public FirebaseRemoteConfigSettings build() {
+            return new FirebaseRemoteConfigSettings(this);
+        }
     }
 }

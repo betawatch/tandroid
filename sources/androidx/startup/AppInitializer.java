@@ -24,6 +24,43 @@ public final class AppInitializer {
         this.mContext = context.getApplicationContext();
     }
 
+    public static AppInitializer getInstance(Context context) {
+        if (sInstance == null) {
+            synchronized (sLock) {
+                try {
+                    if (sInstance == null) {
+                        sInstance = new AppInitializer(context);
+                    }
+                } finally {
+                }
+            }
+        }
+        return sInstance;
+    }
+
+    public Object initializeComponent(Class cls) {
+        return doInitialize(cls);
+    }
+
+    public boolean isEagerlyInitialized(Class cls) {
+        return this.mDiscovered.contains(cls);
+    }
+
+    Object doInitialize(Class cls) {
+        Object obj;
+        synchronized (sLock) {
+            try {
+                obj = this.mInitialized.get(cls);
+                if (obj == null) {
+                    obj = doInitialize(cls, new HashSet());
+                }
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+        return obj;
+    }
+
     private Object doInitialize(Class cls, Set set) {
         Object obj;
         if (Trace.isEnabled()) {
@@ -37,9 +74,7 @@ public final class AppInitializer {
         if (set.contains(cls)) {
             throw new IllegalStateException(String.format("Cannot initialize %s. Cycle detected.", cls.getName()));
         }
-        if (this.mInitialized.containsKey(cls)) {
-            obj = this.mInitialized.get(cls);
-        } else {
+        if (!this.mInitialized.containsKey(cls)) {
             set.add(cls);
             try {
                 Initializer initializer = (Initializer) cls.getDeclaredConstructor(null).newInstance(null);
@@ -57,23 +92,11 @@ public final class AppInitializer {
             } catch (Throwable th2) {
                 throw new StartupException(th2);
             }
+        } else {
+            obj = this.mInitialized.get(cls);
         }
         Trace.endSection();
         return obj;
-    }
-
-    public static AppInitializer getInstance(Context context) {
-        if (sInstance == null) {
-            synchronized (sLock) {
-                try {
-                    if (sInstance == null) {
-                        sInstance = new AppInitializer(context);
-                    }
-                } finally {
-                }
-            }
-        }
-        return sInstance;
     }
 
     void discoverAndInitialize() {
@@ -110,28 +133,5 @@ public final class AppInitializer {
                 throw new StartupException(e);
             }
         }
-    }
-
-    Object doInitialize(Class cls) {
-        Object obj;
-        synchronized (sLock) {
-            try {
-                obj = this.mInitialized.get(cls);
-                if (obj == null) {
-                    obj = doInitialize(cls, new HashSet());
-                }
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-        return obj;
-    }
-
-    public Object initializeComponent(Class cls) {
-        return doInitialize(cls);
-    }
-
-    public boolean isEagerlyInitialized(Class cls) {
-        return this.mDiscovered.contains(cls);
     }
 }

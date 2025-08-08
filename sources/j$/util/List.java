@@ -7,18 +7,24 @@ import java.util.ListIterator;
 
 /* loaded from: classes2.dex */
 public interface List<E> extends Collection<E> {
+    void replaceAll(UnaryOperator<E> unaryOperator);
+
+    void sort(Comparator<? super E> comparator);
+
+    @Override // j$.util.Collection, java.lang.Iterable
+    Spliterator<E> spliterator();
 
     public final /* synthetic */ class -CC {
         public static void $default$replaceAll(java.util.List list, UnaryOperator unaryOperator) {
-            if (DesugarCollections.b.isInstance(list)) {
-                DesugarCollections.e(list, unaryOperator);
+            if (!DesugarCollections.b.isInstance(list)) {
+                unaryOperator.getClass();
+                ListIterator listIterator = list.listIterator();
+                while (listIterator.hasNext()) {
+                    listIterator.set(unaryOperator.apply(listIterator.next()));
+                }
                 return;
             }
-            unaryOperator.getClass();
-            ListIterator listIterator = list.listIterator();
-            while (listIterator.hasNext()) {
-                listIterator.set(unaryOperator.apply(listIterator.next()));
-            }
+            DesugarCollections.e(list, unaryOperator);
         }
 
         public static void $default$sort(java.util.List list, Comparator comparator) {
@@ -35,8 +41,4 @@ public interface List<E> extends Collection<E> {
             }
         }
     }
-
-    void replaceAll(UnaryOperator<E> unaryOperator);
-
-    void sort(Comparator<? super E> comparator);
 }

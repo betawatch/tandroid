@@ -7,7 +7,7 @@ import com.google.android.gms.tasks.Task;
 import java.util.Map;
 import java.util.concurrent.Executor;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 class RequestDeduplicator {
     private final Executor executor;
     private final Map getTokenRequests = new ArrayMap();
@@ -18,14 +18,6 @@ class RequestDeduplicator {
 
     RequestDeduplicator(Executor executor) {
         this.executor = executor;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Task lambda$getOrStartGetTokenRequest$0(String str, Task task) {
-        synchronized (this) {
-            this.getTokenRequests.remove(str);
-        }
-        return task;
     }
 
     synchronized Task getOrStartGetTokenRequest(final String str, GetTokenRequest getTokenRequest) {
@@ -49,5 +41,13 @@ class RequestDeduplicator {
         });
         this.getTokenRequests.put(str, continueWithTask);
         return continueWithTask;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ Task lambda$getOrStartGetTokenRequest$0(String str, Task task) {
+        synchronized (this) {
+            this.getTokenRequests.remove(str);
+        }
+        return task;
     }
 }

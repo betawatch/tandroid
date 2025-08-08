@@ -27,17 +27,9 @@ final class zzig extends zzif {
         return zzieVar.zza(zzkeVar, i);
     }
 
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x00f0  */
     @Override // com.google.android.recaptcha.internal.zzif
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     final Object zze(Object obj, zzkq zzkqVar, Object obj2, zzie zzieVar, zzij zzijVar, Object obj3, zzll zzllVar) {
-        int ordinal;
         Object zze;
-        long zzl;
-        int zzg;
         zzir zzirVar = (zzir) obj2;
         zzmb zzmbVar = zzirVar.zzb.zzb;
         Object obj4 = null;
@@ -48,91 +40,31 @@ final class zzig extends zzif {
         switch (zzmbVar.ordinal()) {
             case 0:
                 obj4 = Double.valueOf(zzkqVar.zza());
-                ordinal = zzirVar.zzb.zzb.ordinal();
-                if ((ordinal != 9 || ordinal == 10) && (zze = zzijVar.zze(zzirVar.zzb)) != null) {
-                    byte[] bArr = zzjc.zzd;
-                    obj4 = ((zzke) zze).zzX().zzc((zzke) obj4).zzk();
-                }
-                zzijVar.zzi(zzirVar.zzb, obj4);
-                return obj3;
+                break;
             case 1:
                 obj4 = Float.valueOf(zzkqVar.zzb());
-                ordinal = zzirVar.zzb.zzb.ordinal();
-                if (ordinal != 9) {
-                    break;
-                }
-                byte[] bArr2 = zzjc.zzd;
-                obj4 = ((zzke) zze).zzX().zzc((zzke) obj4).zzk();
-                zzijVar.zzi(zzirVar.zzb, obj4);
-                return obj3;
+                break;
             case 2:
-                zzl = zzkqVar.zzl();
-                obj4 = Long.valueOf(zzl);
-                ordinal = zzirVar.zzb.zzb.ordinal();
-                if (ordinal != 9) {
-                }
-                byte[] bArr22 = zzjc.zzd;
-                obj4 = ((zzke) zze).zzX().zzc((zzke) obj4).zzk();
-                zzijVar.zzi(zzirVar.zzb, obj4);
-                return obj3;
+                obj4 = Long.valueOf(zzkqVar.zzl());
+                break;
             case 3:
-                zzl = zzkqVar.zzo();
-                obj4 = Long.valueOf(zzl);
-                ordinal = zzirVar.zzb.zzb.ordinal();
-                if (ordinal != 9) {
-                }
-                byte[] bArr222 = zzjc.zzd;
-                obj4 = ((zzke) zze).zzX().zzc((zzke) obj4).zzk();
-                zzijVar.zzi(zzirVar.zzb, obj4);
-                return obj3;
+                obj4 = Long.valueOf(zzkqVar.zzo());
+                break;
             case 4:
-                zzg = zzkqVar.zzg();
-                obj4 = Integer.valueOf(zzg);
-                ordinal = zzirVar.zzb.zzb.ordinal();
-                if (ordinal != 9) {
-                }
-                byte[] bArr2222 = zzjc.zzd;
-                obj4 = ((zzke) zze).zzX().zzc((zzke) obj4).zzk();
-                zzijVar.zzi(zzirVar.zzb, obj4);
-                return obj3;
+                obj4 = Integer.valueOf(zzkqVar.zzg());
+                break;
             case 5:
-                zzl = zzkqVar.zzk();
-                obj4 = Long.valueOf(zzl);
-                ordinal = zzirVar.zzb.zzb.ordinal();
-                if (ordinal != 9) {
-                }
-                byte[] bArr22222 = zzjc.zzd;
-                obj4 = ((zzke) zze).zzX().zzc((zzke) obj4).zzk();
-                zzijVar.zzi(zzirVar.zzb, obj4);
-                return obj3;
+                obj4 = Long.valueOf(zzkqVar.zzk());
+                break;
             case 6:
-                zzg = zzkqVar.zzf();
-                obj4 = Integer.valueOf(zzg);
-                ordinal = zzirVar.zzb.zzb.ordinal();
-                if (ordinal != 9) {
-                }
-                byte[] bArr222222 = zzjc.zzd;
-                obj4 = ((zzke) zze).zzX().zzc((zzke) obj4).zzk();
-                zzijVar.zzi(zzirVar.zzb, obj4);
-                return obj3;
+                obj4 = Integer.valueOf(zzkqVar.zzf());
+                break;
             case 7:
                 obj4 = Boolean.valueOf(zzkqVar.zzN());
-                ordinal = zzirVar.zzb.zzb.ordinal();
-                if (ordinal != 9) {
-                }
-                byte[] bArr2222222 = zzjc.zzd;
-                obj4 = ((zzke) zze).zzX().zzc((zzke) obj4).zzk();
-                zzijVar.zzi(zzirVar.zzb, obj4);
-                return obj3;
+                break;
             case 8:
                 obj4 = zzkqVar.zzr();
-                ordinal = zzirVar.zzb.zzb.ordinal();
-                if (ordinal != 9) {
-                }
-                byte[] bArr22222222 = zzjc.zzd;
-                obj4 = ((zzke) zze).zzX().zzc((zzke) obj4).zzk();
-                zzijVar.zzi(zzirVar.zzb, obj4);
-                return obj3;
+                break;
             case 9:
                 Object zze2 = zzijVar.zze(zzirVar.zzb);
                 if (!(zze2 instanceof zzit)) {
@@ -163,74 +95,32 @@ final class zzig extends zzif {
                 return obj3;
             case 11:
                 obj4 = zzkqVar.zzp();
-                ordinal = zzirVar.zzb.zzb.ordinal();
-                if (ordinal != 9) {
-                }
-                byte[] bArr222222222 = zzjc.zzd;
-                obj4 = ((zzke) zze).zzX().zzc((zzke) obj4).zzk();
-                zzijVar.zzi(zzirVar.zzb, obj4);
-                return obj3;
+                break;
             case 12:
-                zzg = zzkqVar.zzj();
-                obj4 = Integer.valueOf(zzg);
-                ordinal = zzirVar.zzb.zzb.ordinal();
-                if (ordinal != 9) {
-                }
-                byte[] bArr2222222222 = zzjc.zzd;
-                obj4 = ((zzke) zze).zzX().zzc((zzke) obj4).zzk();
-                zzijVar.zzi(zzirVar.zzb, obj4);
-                return obj3;
+                obj4 = Integer.valueOf(zzkqVar.zzj());
+                break;
             case 13:
                 throw new IllegalStateException("Shouldn't reach here.");
             case 14:
-                zzg = zzkqVar.zzh();
-                obj4 = Integer.valueOf(zzg);
-                ordinal = zzirVar.zzb.zzb.ordinal();
-                if (ordinal != 9) {
-                }
-                byte[] bArr22222222222 = zzjc.zzd;
-                obj4 = ((zzke) zze).zzX().zzc((zzke) obj4).zzk();
-                zzijVar.zzi(zzirVar.zzb, obj4);
-                return obj3;
+                obj4 = Integer.valueOf(zzkqVar.zzh());
+                break;
             case 15:
-                zzl = zzkqVar.zzm();
-                obj4 = Long.valueOf(zzl);
-                ordinal = zzirVar.zzb.zzb.ordinal();
-                if (ordinal != 9) {
-                }
-                byte[] bArr222222222222 = zzjc.zzd;
-                obj4 = ((zzke) zze).zzX().zzc((zzke) obj4).zzk();
-                zzijVar.zzi(zzirVar.zzb, obj4);
-                return obj3;
+                obj4 = Long.valueOf(zzkqVar.zzm());
+                break;
             case 16:
-                zzg = zzkqVar.zzi();
-                obj4 = Integer.valueOf(zzg);
-                ordinal = zzirVar.zzb.zzb.ordinal();
-                if (ordinal != 9) {
-                }
-                byte[] bArr2222222222222 = zzjc.zzd;
-                obj4 = ((zzke) zze).zzX().zzc((zzke) obj4).zzk();
-                zzijVar.zzi(zzirVar.zzb, obj4);
-                return obj3;
+                obj4 = Integer.valueOf(zzkqVar.zzi());
+                break;
             case 17:
-                zzl = zzkqVar.zzn();
-                obj4 = Long.valueOf(zzl);
-                ordinal = zzirVar.zzb.zzb.ordinal();
-                if (ordinal != 9) {
-                }
-                byte[] bArr22222222222222 = zzjc.zzd;
-                obj4 = ((zzke) zze).zzX().zzc((zzke) obj4).zzk();
-                zzijVar.zzi(zzirVar.zzb, obj4);
-                return obj3;
-            default:
-                ordinal = zzirVar.zzb.zzb.ordinal();
-                if (ordinal != 9) {
-                }
-                byte[] bArr222222222222222 = zzjc.zzd;
-                obj4 = ((zzke) zze).zzX().zzc((zzke) obj4).zzk();
-                zzijVar.zzi(zzirVar.zzb, obj4);
-                return obj3;
+                obj4 = Long.valueOf(zzkqVar.zzn());
+                break;
         }
+        int ordinal = zzirVar.zzb.zzb.ordinal();
+        if ((ordinal == 9 || ordinal == 10) && (zze = zzijVar.zze(zzirVar.zzb)) != null) {
+            byte[] bArr = zzjc.zzd;
+            obj4 = ((zzke) zze).zzX().zzc((zzke) obj4).zzk();
+        }
+        zzijVar.zzi(zzirVar.zzb, obj4);
+        return obj3;
     }
 
     @Override // com.google.android.recaptcha.internal.zzif

@@ -1,6 +1,6 @@
 package com.google.firebase.sessions;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class WallClock implements TimeProvider {
     public static final WallClock INSTANCE = new WallClock();
 

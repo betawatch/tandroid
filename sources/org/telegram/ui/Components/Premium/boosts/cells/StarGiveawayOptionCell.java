@@ -80,8 +80,38 @@ public class StarGiveawayOptionCell extends FrameLayout {
         addView(this.radioButton, LayoutHelper.createFrame(20, 20.0f, 19, 22.0f, 0.0f, 0.0f, 0.0f));
     }
 
+    public void setOption(TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption, int i, long j, boolean z, boolean z2) {
+        boolean z3 = this.currentOption == tL_starsGiveawayOption;
+        this.radioButton.setChecked(z, z3);
+        this.currentOption = tL_starsGiveawayOption;
+        this.currentOptionStarsPerUser = j;
+        if (z3) {
+            this.subtitleView.cancelAnimation();
+        }
+        if (tL_starsGiveawayOption == null) {
+            this.titleView.setText(this.loading1, false);
+            this.subtitleView.setText(this.loading2, z3);
+            this.priceView.setText("");
+        } else {
+            this.titleView.setText(LocaleController.formatPluralStringComma("GiveawayStars", (int) tL_starsGiveawayOption.stars, ' '), false);
+            this.subtitleView.setText(LocaleController.formatPluralStringComma("BoostingStarOptionPerUser", (int) j, ','), z3);
+            this.priceView.setText(BillingController.getInstance().formatCurrency(tL_starsGiveawayOption.amount, tL_starsGiveawayOption.currency));
+        }
+        int i2 = i + 1;
+        this.starsCount = i2;
+        if (!z3) {
+            this.animatedStarsCount.set(i2, true);
+        }
+        invalidate();
+    }
+
     public TL_stars.TL_starsGiveawayOption getOption() {
         return this.currentOption;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    protected void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), TLObject.FLAG_30));
     }
 
     @Override // android.view.View
@@ -109,35 +139,5 @@ public class StarGiveawayOptionCell extends FrameLayout {
             this.starDrawable.draw(canvas);
         }
         this.titleView.setTranslationX(AndroidUtilities.dp(22.0f) + (dp3 * f));
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), TLObject.FLAG_30));
-    }
-
-    public void setOption(TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption, int i, long j, boolean z, boolean z2) {
-        boolean z3 = this.currentOption == tL_starsGiveawayOption;
-        this.radioButton.setChecked(z, z3);
-        this.currentOption = tL_starsGiveawayOption;
-        this.currentOptionStarsPerUser = j;
-        if (z3) {
-            this.subtitleView.cancelAnimation();
-        }
-        if (tL_starsGiveawayOption == null) {
-            this.titleView.setText(this.loading1, false);
-            this.subtitleView.setText(this.loading2, z3);
-            this.priceView.setText("");
-        } else {
-            this.titleView.setText(LocaleController.formatPluralStringComma("GiveawayStars", (int) tL_starsGiveawayOption.stars, ' '), false);
-            this.subtitleView.setText(LocaleController.formatPluralStringComma("BoostingStarOptionPerUser", (int) j, ','), z3);
-            this.priceView.setText(BillingController.getInstance().formatCurrency(tL_starsGiveawayOption.amount, tL_starsGiveawayOption.currency));
-        }
-        int i2 = i + 1;
-        this.starsCount = i2;
-        if (!z3) {
-            this.animatedStarsCount.set(i2, true);
-        }
-        invalidate();
     }
 }

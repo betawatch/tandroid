@@ -6,7 +6,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class TypedPropertyUtils {
     public static TypedProperty create(String str) {
         if ("boolean".equals(str)) {

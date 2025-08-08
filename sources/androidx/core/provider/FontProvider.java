@@ -30,39 +30,12 @@ abstract class FontProvider {
         }
     };
 
-    static class Api16Impl {
-        static Cursor query(ContentResolver contentResolver, Uri uri, String[] strArr, String str, String[] strArr2, String str2, Object obj) {
-            return contentResolver.query(uri, strArr, str, strArr2, str2, (CancellationSignal) obj);
-        }
-    }
-
-    private static List convertToByteArrayList(Signature[] signatureArr) {
-        ArrayList arrayList = new ArrayList();
-        for (Signature signature : signatureArr) {
-            arrayList.add(signature.toByteArray());
-        }
-        return arrayList;
-    }
-
-    private static boolean equalsByteArrayList(List list, List list2) {
-        if (list.size() != list2.size()) {
-            return false;
-        }
-        for (int i = 0; i < list.size(); i++) {
-            if (!Arrays.equals((byte[]) list.get(i), (byte[]) list2.get(i))) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    private static List getCertificates(FontRequest fontRequest, Resources resources) {
-        return fontRequest.getCertificates() != null ? fontRequest.getCertificates() : FontResourcesParserCompat.readCerts(resources, fontRequest.getCertificatesArrayResId());
-    }
-
     static FontsContractCompat.FontFamilyResult getFontFamilyResult(Context context, FontRequest fontRequest, CancellationSignal cancellationSignal) {
         ProviderInfo provider = getProvider(context.getPackageManager(), fontRequest, context.getResources());
-        return provider == null ? FontsContractCompat.FontFamilyResult.create(1, null) : FontsContractCompat.FontFamilyResult.create(0, query(context, fontRequest, provider.authority, cancellationSignal));
+        if (provider == null) {
+            return FontsContractCompat.FontFamilyResult.create(1, null);
+        }
+        return FontsContractCompat.FontFamilyResult.create(0, query(context, fontRequest, provider.authority, cancellationSignal));
     }
 
     static ProviderInfo getProvider(PackageManager packageManager, FontRequest fontRequest, Resources resources) {
@@ -87,22 +60,8 @@ abstract class FontProvider {
         return null;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$static$0(byte[] bArr, byte[] bArr2) {
-        if (bArr.length != bArr2.length) {
-            return bArr.length - bArr2.length;
-        }
-        for (int i = 0; i < bArr.length; i++) {
-            byte b = bArr[i];
-            byte b2 = bArr2[i];
-            if (b != b2) {
-                return b - b2;
-            }
-        }
-        return 0;
-    }
-
     static FontsContractCompat.FontInfo[] query(Context context, FontRequest fontRequest, String str, CancellationSignal cancellationSignal) {
+        Uri withAppendedId;
         boolean z;
         ArrayList arrayList = new ArrayList();
         Uri build = new Uri.Builder().scheme("content").authority(str).build();
@@ -121,7 +80,11 @@ abstract class FontProvider {
                 while (cursor.moveToNext()) {
                     int i = columnIndex != -1 ? cursor.getInt(columnIndex) : 0;
                     int i2 = columnIndex4 != -1 ? cursor.getInt(columnIndex4) : 0;
-                    Uri withAppendedId = columnIndex3 == -1 ? ContentUris.withAppendedId(build, cursor.getLong(columnIndex2)) : ContentUris.withAppendedId(build2, cursor.getLong(columnIndex3));
+                    if (columnIndex3 == -1) {
+                        withAppendedId = ContentUris.withAppendedId(build, cursor.getLong(columnIndex2));
+                    } else {
+                        withAppendedId = ContentUris.withAppendedId(build2, cursor.getLong(columnIndex3));
+                    }
                     int i3 = columnIndex5 != -1 ? cursor.getInt(columnIndex5) : 400;
                     if (columnIndex6 != -1) {
                         z = true;
@@ -143,6 +106,54 @@ abstract class FontProvider {
                 cursor.close();
             }
             throw th;
+        }
+    }
+
+    private static List getCertificates(FontRequest fontRequest, Resources resources) {
+        if (fontRequest.getCertificates() != null) {
+            return fontRequest.getCertificates();
+        }
+        return FontResourcesParserCompat.readCerts(resources, fontRequest.getCertificatesArrayResId());
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ int lambda$static$0(byte[] bArr, byte[] bArr2) {
+        if (bArr.length != bArr2.length) {
+            return bArr.length - bArr2.length;
+        }
+        for (int i = 0; i < bArr.length; i++) {
+            byte b = bArr[i];
+            byte b2 = bArr2[i];
+            if (b != b2) {
+                return b - b2;
+            }
+        }
+        return 0;
+    }
+
+    private static boolean equalsByteArrayList(List list, List list2) {
+        if (list.size() != list2.size()) {
+            return false;
+        }
+        for (int i = 0; i < list.size(); i++) {
+            if (!Arrays.equals((byte[]) list.get(i), (byte[]) list2.get(i))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static List convertToByteArrayList(Signature[] signatureArr) {
+        ArrayList arrayList = new ArrayList();
+        for (Signature signature : signatureArr) {
+            arrayList.add(signature.toByteArray());
+        }
+        return arrayList;
+    }
+
+    static class Api16Impl {
+        static Cursor query(ContentResolver contentResolver, Uri uri, String[] strArr, String str, String[] strArr2, String str2, Object obj) {
+            return contentResolver.query(uri, strArr, str, strArr2, str2, (CancellationSignal) obj);
         }
     }
 }

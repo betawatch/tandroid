@@ -28,6 +28,18 @@ final class FfmpegAudioDecoder extends SimpleDecoder {
     private final int outputBufferSize;
     private volatile int sampleRate;
 
+    private native int ffmpegDecode(long j, ByteBuffer byteBuffer, int i, ByteBuffer byteBuffer2, int i2);
+
+    private native int ffmpegGetChannelCount(long j);
+
+    private native int ffmpegGetSampleRate(long j);
+
+    private native long ffmpegInitialize(String str, byte[] bArr, boolean z, int i, int i2);
+
+    private native void ffmpegRelease(long j);
+
+    private native long ffmpegReset(long j, byte[] bArr);
+
     public FfmpegAudioDecoder(Format format, int i, int i2, int i3, boolean z) {
         super(new DecoderInputBuffer[i], new SimpleDecoderOutputBuffer[i2]);
         if (!FfmpegLibrary.isAvailable()) {
@@ -48,57 +60,9 @@ final class FfmpegAudioDecoder extends SimpleDecoder {
         setInitialInputBufferSize(i3);
     }
 
-    private native int ffmpegDecode(long j, ByteBuffer byteBuffer, int i, ByteBuffer byteBuffer2, int i2);
-
-    private native int ffmpegGetChannelCount(long j);
-
-    private native int ffmpegGetSampleRate(long j);
-
-    private native long ffmpegInitialize(String str, byte[] bArr, boolean z, int i, int i2);
-
-    private native void ffmpegRelease(long j);
-
-    private native long ffmpegReset(long j, byte[] bArr);
-
-    private static byte[] getAlacExtraData(List<byte[]> list) {
-        byte[] bArr = list.get(0);
-        int length = bArr.length + 12;
-        ByteBuffer allocate = ByteBuffer.allocate(length);
-        allocate.putInt(length);
-        allocate.putInt(1634492771);
-        allocate.putInt(0);
-        allocate.put(bArr, 0, bArr.length);
-        return allocate.array();
-    }
-
-    private static byte[] getExtraData(String str, List<byte[]> list) {
-        str.hashCode();
-        switch (str) {
-            case "audio/vorbis":
-                return getVorbisExtraData(list);
-            case "audio/mp4a-latm":
-            case "audio/opus":
-                return list.get(0);
-            case "audio/alac":
-                return getAlacExtraData(list);
-            default:
-                return null;
-        }
-    }
-
-    private static byte[] getVorbisExtraData(List<byte[]> list) {
-        byte[] bArr = list.get(0);
-        byte[] bArr2 = list.get(1);
-        byte[] bArr3 = new byte[bArr.length + bArr2.length + 6];
-        bArr3[0] = (byte) (bArr.length >> 8);
-        bArr3[1] = (byte) (bArr.length & NotificationCenter.goingToPreviewTheme);
-        System.arraycopy(bArr, 0, bArr3, 2, bArr.length);
-        bArr3[bArr.length + 2] = 0;
-        bArr3[bArr.length + 3] = 0;
-        bArr3[bArr.length + 4] = (byte) (bArr2.length >> 8);
-        bArr3[bArr.length + 5] = (byte) (bArr2.length & NotificationCenter.goingToPreviewTheme);
-        System.arraycopy(bArr2, 0, bArr3, bArr.length + 6, bArr2.length);
-        return bArr3;
+    @Override // com.google.android.exoplayer2.decoder.Decoder
+    public String getName() {
+        return "ffmpeg" + FfmpegLibrary.getVersion() + "-" + this.codecName;
     }
 
     @Override // com.google.android.exoplayer2.decoder.SimpleDecoder
@@ -164,27 +128,63 @@ final class FfmpegAudioDecoder extends SimpleDecoder {
         return null;
     }
 
+    @Override // com.google.android.exoplayer2.decoder.SimpleDecoder, com.google.android.exoplayer2.decoder.Decoder
+    public void release() {
+        super.release();
+        ffmpegRelease(this.nativeContext);
+        this.nativeContext = 0L;
+    }
+
     public int getChannelCount() {
         return this.channelCount;
-    }
-
-    public int getEncoding() {
-        return this.encoding;
-    }
-
-    @Override // com.google.android.exoplayer2.decoder.Decoder
-    public String getName() {
-        return "ffmpeg" + FfmpegLibrary.getVersion() + "-" + this.codecName;
     }
 
     public int getSampleRate() {
         return this.sampleRate;
     }
 
-    @Override // com.google.android.exoplayer2.decoder.SimpleDecoder, com.google.android.exoplayer2.decoder.Decoder
-    public void release() {
-        super.release();
-        ffmpegRelease(this.nativeContext);
-        this.nativeContext = 0L;
+    public int getEncoding() {
+        return this.encoding;
+    }
+
+    private static byte[] getExtraData(String str, List<byte[]> list) {
+        str.hashCode();
+        switch (str) {
+            case "audio/vorbis":
+                return getVorbisExtraData(list);
+            case "audio/mp4a-latm":
+            case "audio/opus":
+                return list.get(0);
+            case "audio/alac":
+                return getAlacExtraData(list);
+            default:
+                return null;
+        }
+    }
+
+    private static byte[] getAlacExtraData(List<byte[]> list) {
+        byte[] bArr = list.get(0);
+        int length = bArr.length + 12;
+        ByteBuffer allocate = ByteBuffer.allocate(length);
+        allocate.putInt(length);
+        allocate.putInt(1634492771);
+        allocate.putInt(0);
+        allocate.put(bArr, 0, bArr.length);
+        return allocate.array();
+    }
+
+    private static byte[] getVorbisExtraData(List<byte[]> list) {
+        byte[] bArr = list.get(0);
+        byte[] bArr2 = list.get(1);
+        byte[] bArr3 = new byte[bArr.length + bArr2.length + 6];
+        bArr3[0] = (byte) (bArr.length >> 8);
+        bArr3[1] = (byte) (bArr.length & NotificationCenter.goingToPreviewTheme);
+        System.arraycopy(bArr, 0, bArr3, 2, bArr.length);
+        bArr3[bArr.length + 2] = 0;
+        bArr3[bArr.length + 3] = 0;
+        bArr3[bArr.length + 4] = (byte) (bArr2.length >> 8);
+        bArr3[bArr.length + 5] = (byte) (bArr2.length & NotificationCenter.goingToPreviewTheme);
+        System.arraycopy(bArr2, 0, bArr3, bArr.length + 6, bArr2.length);
+        return bArr3;
     }
 }

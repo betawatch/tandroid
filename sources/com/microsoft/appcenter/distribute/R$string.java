@@ -1,6 +1,6 @@
 package com.microsoft.appcenter.distribute;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class R$string {
     public static final int appcenter_distribute_dialog_actioned_on_disabled_toast = 2131699071;
     public static final int appcenter_distribute_download_progress_number_format = 2131699072;

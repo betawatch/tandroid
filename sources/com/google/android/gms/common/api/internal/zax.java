@@ -48,6 +48,7 @@ final class zax implements zabz {
         Lock lock;
         Lock lock2;
         boolean z2;
+        Lock lock3;
         ConnectionResult connectionResult;
         ConnectionResult connectionResult2;
         zabi zabiVar;
@@ -64,14 +65,19 @@ final class zax implements zabz {
                         this.zaa.zal = true;
                         zabiVar = this.zaa.zae;
                         zabiVar.onConnectionSuspended(i);
+                        lock3 = this.zaa.zam;
+                        lock3.unlock();
                     }
                 }
             }
             this.zaa.zal = false;
             zaaa.zan(this.zaa, i, z);
-        } finally {
+            lock3 = this.zaa.zam;
+            lock3.unlock();
+        } catch (Throwable th) {
             lock2 = this.zaa.zam;
             lock2.unlock();
+            throw th;
         }
     }
 }

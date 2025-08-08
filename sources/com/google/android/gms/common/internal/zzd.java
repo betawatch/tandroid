@@ -5,7 +5,7 @@ import android.os.IBinder;
 import android.util.Log;
 
 /* loaded from: classes.dex */
-public final class zzd extends zzab {
+public final class zzd extends zzac {
     private BaseGmsClient zza;
     private final int zzb;
 
@@ -27,11 +27,11 @@ public final class zzd extends zzab {
     }
 
     @Override // com.google.android.gms.common.internal.IGmsCallbacks
-    public final void zzc(int i, IBinder iBinder, zzj zzjVar) {
+    public final void zzc(int i, IBinder iBinder, zzk zzkVar) {
         BaseGmsClient baseGmsClient = this.zza;
         Preconditions.checkNotNull(baseGmsClient, "onPostInitCompleteWithConnectionInfo can be called only once per call togetRemoteService");
-        Preconditions.checkNotNull(zzjVar);
-        BaseGmsClient.zzj(baseGmsClient, zzjVar);
-        onPostInitComplete(i, iBinder, zzjVar.zza);
+        Preconditions.checkNotNull(zzkVar);
+        BaseGmsClient.zzj(baseGmsClient, zzkVar);
+        onPostInitComplete(i, iBinder, zzkVar.zza);
     }
 }

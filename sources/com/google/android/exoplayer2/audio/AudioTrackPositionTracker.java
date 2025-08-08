@@ -64,66 +64,137 @@ final class AudioTrackPositionTracker {
         this.playheadOffsets = new long[10];
     }
 
-    private boolean forceHasPendingData() {
-        return this.needsPassthroughWorkarounds && ((AudioTrack) Assertions.checkNotNull(this.audioTrack)).getPlayState() == 2 && getPlaybackHeadPosition() == 0;
+    public void setAudioTrack(AudioTrack audioTrack, boolean z, int i, int i2, int i3) {
+        this.audioTrack = audioTrack;
+        this.outputPcmFrameSize = i2;
+        this.bufferSize = i3;
+        this.audioTimestampPoller = new AudioTimestampPoller(audioTrack);
+        this.outputSampleRate = audioTrack.getSampleRate();
+        this.needsPassthroughWorkarounds = z && needsPassthroughWorkarounds(i);
+        boolean isEncodingLinearPcm = Util.isEncodingLinearPcm(i);
+        this.isOutputPcm = isEncodingLinearPcm;
+        this.bufferSizeUs = isEncodingLinearPcm ? framesToDurationUs(i3 / i2) : -9223372036854775807L;
+        this.lastRawPlaybackHeadPosition = 0L;
+        this.rawPlaybackHeadWrapCount = 0L;
+        this.passthroughWorkaroundPauseOffset = 0L;
+        this.hasData = false;
+        this.stopTimestampUs = -9223372036854775807L;
+        this.forceResetWorkaroundTimeMs = -9223372036854775807L;
+        this.lastLatencySampleTimeUs = 0L;
+        this.latencyUs = 0L;
+        this.audioTrackPlaybackSpeed = 1.0f;
     }
 
-    private long framesToDurationUs(long j) {
-        return (j * 1000000) / this.outputSampleRate;
+    public void setAudioTrackPlaybackSpeed(float f) {
+        this.audioTrackPlaybackSpeed = f;
+        AudioTimestampPoller audioTimestampPoller = this.audioTimestampPoller;
+        if (audioTimestampPoller != null) {
+            audioTimestampPoller.reset();
+        }
     }
 
-    private long getPlaybackHeadPosition() {
-        AudioTrack audioTrack = (AudioTrack) Assertions.checkNotNull(this.audioTrack);
-        if (this.stopTimestampUs != -9223372036854775807L) {
-            return Math.min(this.endPlaybackHeadPosition, this.stopPlaybackHeadPosition + ((((SystemClock.elapsedRealtime() * 1000) - this.stopTimestampUs) * this.outputSampleRate) / 1000000));
+    public long getCurrentPositionUs(boolean z) {
+        long j;
+        if (((AudioTrack) Assertions.checkNotNull(this.audioTrack)).getPlayState() == 3) {
+            maybeSampleSyncParams();
         }
-        int playState = audioTrack.getPlayState();
-        if (playState == 1) {
-            return 0L;
-        }
-        long playbackHeadPosition = audioTrack.getPlaybackHeadPosition() & 4294967295L;
-        if (this.needsPassthroughWorkarounds) {
-            if (playState == 2 && playbackHeadPosition == 0) {
-                this.passthroughWorkaroundPauseOffset = this.lastRawPlaybackHeadPosition;
-            }
-            playbackHeadPosition += this.passthroughWorkaroundPauseOffset;
-        }
-        if (Util.SDK_INT <= 29) {
-            if (playbackHeadPosition == 0 && this.lastRawPlaybackHeadPosition > 0 && playState == 3) {
-                if (this.forceResetWorkaroundTimeMs == -9223372036854775807L) {
-                    this.forceResetWorkaroundTimeMs = SystemClock.elapsedRealtime();
-                }
-                return this.lastRawPlaybackHeadPosition;
-            }
-            this.forceResetWorkaroundTimeMs = -9223372036854775807L;
-        }
-        if (this.lastRawPlaybackHeadPosition > playbackHeadPosition) {
-            this.rawPlaybackHeadWrapCount++;
-        }
-        this.lastRawPlaybackHeadPosition = playbackHeadPosition;
-        return playbackHeadPosition + (this.rawPlaybackHeadWrapCount << 32);
-    }
-
-    private long getPlaybackHeadPositionUs() {
-        return framesToDurationUs(getPlaybackHeadPosition());
-    }
-
-    private void maybePollAndCheckTimestamp(long j, long j2) {
+        long nanoTime = System.nanoTime() / 1000;
         AudioTimestampPoller audioTimestampPoller = (AudioTimestampPoller) Assertions.checkNotNull(this.audioTimestampPoller);
-        if (audioTimestampPoller.maybePollTimestamp(j)) {
-            long timestampSystemTimeUs = audioTimestampPoller.getTimestampSystemTimeUs();
-            long timestampPositionFrames = audioTimestampPoller.getTimestampPositionFrames();
-            if (Math.abs(timestampSystemTimeUs - j) > 5000000) {
-                this.listener.onSystemTimeUsMismatch(timestampPositionFrames, timestampSystemTimeUs, j, j2);
+        boolean hasAdvancingTimestamp = audioTimestampPoller.hasAdvancingTimestamp();
+        if (hasAdvancingTimestamp) {
+            j = framesToDurationUs(audioTimestampPoller.getTimestampPositionFrames()) + Util.getMediaDurationForPlayoutDuration(nanoTime - audioTimestampPoller.getTimestampSystemTimeUs(), this.audioTrackPlaybackSpeed);
+        } else {
+            if (this.playheadOffsetCount == 0) {
+                j = getPlaybackHeadPositionUs();
             } else {
-                if (Math.abs(framesToDurationUs(timestampPositionFrames) - j2) <= 5000000) {
-                    audioTimestampPoller.acceptTimestamp();
-                    return;
-                }
-                this.listener.onPositionFramesMismatch(timestampPositionFrames, timestampSystemTimeUs, j, j2);
+                j = this.smoothedPlayheadOffsetUs + nanoTime;
             }
-            audioTimestampPoller.rejectTimestamp();
+            if (!z) {
+                j = Math.max(0L, j - this.latencyUs);
+            }
         }
+        if (this.lastSampleUsedGetTimestampMode != hasAdvancingTimestamp) {
+            this.previousModeSystemTimeUs = this.lastSystemTimeUs;
+            this.previousModePositionUs = this.lastPositionUs;
+        }
+        long j2 = nanoTime - this.previousModeSystemTimeUs;
+        if (j2 < 1000000) {
+            long mediaDurationForPlayoutDuration = this.previousModePositionUs + Util.getMediaDurationForPlayoutDuration(j2, this.audioTrackPlaybackSpeed);
+            long j3 = (j2 * 1000) / 1000000;
+            j = ((j * j3) + ((1000 - j3) * mediaDurationForPlayoutDuration)) / 1000;
+        }
+        if (!this.notifiedPositionIncreasing) {
+            long j4 = this.lastPositionUs;
+            if (j > j4) {
+                this.notifiedPositionIncreasing = true;
+                this.listener.onPositionAdvancing(System.currentTimeMillis() - Util.usToMs(Util.getPlayoutDurationForMediaDuration(Util.usToMs(j - j4), this.audioTrackPlaybackSpeed)));
+            }
+        }
+        this.lastSystemTimeUs = nanoTime;
+        this.lastPositionUs = j;
+        this.lastSampleUsedGetTimestampMode = hasAdvancingTimestamp;
+        return j;
+    }
+
+    public void start() {
+        ((AudioTimestampPoller) Assertions.checkNotNull(this.audioTimestampPoller)).reset();
+    }
+
+    public boolean isPlaying() {
+        return ((AudioTrack) Assertions.checkNotNull(this.audioTrack)).getPlayState() == 3;
+    }
+
+    public boolean mayHandleBuffer(long j) {
+        int playState = ((AudioTrack) Assertions.checkNotNull(this.audioTrack)).getPlayState();
+        if (this.needsPassthroughWorkarounds) {
+            if (playState == 2) {
+                this.hasData = false;
+                return false;
+            }
+            if (playState == 1 && getPlaybackHeadPosition() == 0) {
+                return false;
+            }
+        }
+        boolean z = this.hasData;
+        boolean hasPendingData = hasPendingData(j);
+        this.hasData = hasPendingData;
+        if (z && !hasPendingData && playState != 1) {
+            this.listener.onUnderrun(this.bufferSize, Util.usToMs(this.bufferSizeUs));
+        }
+        return true;
+    }
+
+    public int getAvailableBufferSize(long j) {
+        return this.bufferSize - ((int) (j - (getPlaybackHeadPosition() * this.outputPcmFrameSize)));
+    }
+
+    public boolean isStalled(long j) {
+        return this.forceResetWorkaroundTimeMs != -9223372036854775807L && j > 0 && SystemClock.elapsedRealtime() - this.forceResetWorkaroundTimeMs >= 200;
+    }
+
+    public void handleEndOfStream(long j) {
+        this.stopPlaybackHeadPosition = getPlaybackHeadPosition();
+        this.stopTimestampUs = SystemClock.elapsedRealtime() * 1000;
+        this.endPlaybackHeadPosition = j;
+    }
+
+    public boolean hasPendingData(long j) {
+        return j > getPlaybackHeadPosition() || forceHasPendingData();
+    }
+
+    public boolean pause() {
+        resetSyncParams();
+        if (this.stopTimestampUs != -9223372036854775807L) {
+            return false;
+        }
+        ((AudioTimestampPoller) Assertions.checkNotNull(this.audioTimestampPoller)).reset();
+        return true;
+    }
+
+    public void reset() {
+        resetSyncParams();
+        this.audioTrack = null;
+        this.audioTimestampPoller = null;
     }
 
     private void maybeSampleSyncParams() {
@@ -160,6 +231,23 @@ final class AudioTrackPositionTracker {
         maybeUpdateLatency(nanoTime);
     }
 
+    private void maybePollAndCheckTimestamp(long j, long j2) {
+        AudioTimestampPoller audioTimestampPoller = (AudioTimestampPoller) Assertions.checkNotNull(this.audioTimestampPoller);
+        if (audioTimestampPoller.maybePollTimestamp(j)) {
+            long timestampSystemTimeUs = audioTimestampPoller.getTimestampSystemTimeUs();
+            long timestampPositionFrames = audioTimestampPoller.getTimestampPositionFrames();
+            if (Math.abs(timestampSystemTimeUs - j) > 5000000) {
+                this.listener.onSystemTimeUsMismatch(timestampPositionFrames, timestampSystemTimeUs, j, j2);
+                audioTimestampPoller.rejectTimestamp();
+            } else if (Math.abs(framesToDurationUs(timestampPositionFrames) - j2) > 5000000) {
+                this.listener.onPositionFramesMismatch(timestampPositionFrames, timestampSystemTimeUs, j, j2);
+                audioTimestampPoller.rejectTimestamp();
+            } else {
+                audioTimestampPoller.acceptTimestamp();
+            }
+        }
+    }
+
     private void maybeUpdateLatency(long j) {
         Method method;
         if (!this.isOutputPcm || (method = this.getLatencyMethod) == null || j - this.lastLatencySampleTimeUs < 500000) {
@@ -180,8 +268,8 @@ final class AudioTrackPositionTracker {
         this.lastLatencySampleTimeUs = j;
     }
 
-    private static boolean needsPassthroughWorkarounds(int i) {
-        return Util.SDK_INT < 23 && (i == 5 || i == 6);
+    private long framesToDurationUs(long j) {
+        return (j * 1000000) / this.outputSampleRate;
     }
 
     private void resetSyncParams() {
@@ -194,132 +282,47 @@ final class AudioTrackPositionTracker {
         this.notifiedPositionIncreasing = false;
     }
 
-    public int getAvailableBufferSize(long j) {
-        return this.bufferSize - ((int) (j - (getPlaybackHeadPosition() * this.outputPcmFrameSize)));
+    private boolean forceHasPendingData() {
+        return this.needsPassthroughWorkarounds && ((AudioTrack) Assertions.checkNotNull(this.audioTrack)).getPlayState() == 2 && getPlaybackHeadPosition() == 0;
     }
 
-    public long getCurrentPositionUs(boolean z) {
-        long playbackHeadPositionUs;
-        if (((AudioTrack) Assertions.checkNotNull(this.audioTrack)).getPlayState() == 3) {
-            maybeSampleSyncParams();
-        }
-        long nanoTime = System.nanoTime() / 1000;
-        AudioTimestampPoller audioTimestampPoller = (AudioTimestampPoller) Assertions.checkNotNull(this.audioTimestampPoller);
-        boolean hasAdvancingTimestamp = audioTimestampPoller.hasAdvancingTimestamp();
-        if (hasAdvancingTimestamp) {
-            playbackHeadPositionUs = framesToDurationUs(audioTimestampPoller.getTimestampPositionFrames()) + Util.getMediaDurationForPlayoutDuration(nanoTime - audioTimestampPoller.getTimestampSystemTimeUs(), this.audioTrackPlaybackSpeed);
-        } else {
-            playbackHeadPositionUs = this.playheadOffsetCount == 0 ? getPlaybackHeadPositionUs() : this.smoothedPlayheadOffsetUs + nanoTime;
-            if (!z) {
-                playbackHeadPositionUs = Math.max(0L, playbackHeadPositionUs - this.latencyUs);
-            }
-        }
-        if (this.lastSampleUsedGetTimestampMode != hasAdvancingTimestamp) {
-            this.previousModeSystemTimeUs = this.lastSystemTimeUs;
-            this.previousModePositionUs = this.lastPositionUs;
-        }
-        long j = nanoTime - this.previousModeSystemTimeUs;
-        if (j < 1000000) {
-            long mediaDurationForPlayoutDuration = this.previousModePositionUs + Util.getMediaDurationForPlayoutDuration(j, this.audioTrackPlaybackSpeed);
-            long j2 = (j * 1000) / 1000000;
-            playbackHeadPositionUs = ((playbackHeadPositionUs * j2) + ((1000 - j2) * mediaDurationForPlayoutDuration)) / 1000;
-        }
-        if (!this.notifiedPositionIncreasing) {
-            long j3 = this.lastPositionUs;
-            if (playbackHeadPositionUs > j3) {
-                this.notifiedPositionIncreasing = true;
-                this.listener.onPositionAdvancing(System.currentTimeMillis() - Util.usToMs(Util.getPlayoutDurationForMediaDuration(Util.usToMs(playbackHeadPositionUs - j3), this.audioTrackPlaybackSpeed)));
-            }
-        }
-        this.lastSystemTimeUs = nanoTime;
-        this.lastPositionUs = playbackHeadPositionUs;
-        this.lastSampleUsedGetTimestampMode = hasAdvancingTimestamp;
-        return playbackHeadPositionUs;
+    private static boolean needsPassthroughWorkarounds(int i) {
+        return Util.SDK_INT < 23 && (i == 5 || i == 6);
     }
 
-    public void handleEndOfStream(long j) {
-        this.stopPlaybackHeadPosition = getPlaybackHeadPosition();
-        this.stopTimestampUs = SystemClock.elapsedRealtime() * 1000;
-        this.endPlaybackHeadPosition = j;
+    private long getPlaybackHeadPositionUs() {
+        return framesToDurationUs(getPlaybackHeadPosition());
     }
 
-    public boolean hasPendingData(long j) {
-        return j > getPlaybackHeadPosition() || forceHasPendingData();
-    }
-
-    public boolean isPlaying() {
-        return ((AudioTrack) Assertions.checkNotNull(this.audioTrack)).getPlayState() == 3;
-    }
-
-    public boolean isStalled(long j) {
-        return this.forceResetWorkaroundTimeMs != -9223372036854775807L && j > 0 && SystemClock.elapsedRealtime() - this.forceResetWorkaroundTimeMs >= 200;
-    }
-
-    public boolean mayHandleBuffer(long j) {
-        int playState = ((AudioTrack) Assertions.checkNotNull(this.audioTrack)).getPlayState();
-        if (this.needsPassthroughWorkarounds) {
-            if (playState == 2) {
-                this.hasData = false;
-                return false;
-            }
-            if (playState == 1 && getPlaybackHeadPosition() == 0) {
-                return false;
-            }
-        }
-        boolean z = this.hasData;
-        boolean hasPendingData = hasPendingData(j);
-        this.hasData = hasPendingData;
-        if (z && !hasPendingData && playState != 1) {
-            this.listener.onUnderrun(this.bufferSize, Util.usToMs(this.bufferSizeUs));
-        }
-        return true;
-    }
-
-    public boolean pause() {
-        resetSyncParams();
+    private long getPlaybackHeadPosition() {
+        AudioTrack audioTrack = (AudioTrack) Assertions.checkNotNull(this.audioTrack);
         if (this.stopTimestampUs != -9223372036854775807L) {
-            return false;
+            return Math.min(this.endPlaybackHeadPosition, this.stopPlaybackHeadPosition + ((((SystemClock.elapsedRealtime() * 1000) - this.stopTimestampUs) * this.outputSampleRate) / 1000000));
         }
-        ((AudioTimestampPoller) Assertions.checkNotNull(this.audioTimestampPoller)).reset();
-        return true;
-    }
-
-    public void reset() {
-        resetSyncParams();
-        this.audioTrack = null;
-        this.audioTimestampPoller = null;
-    }
-
-    public void setAudioTrack(AudioTrack audioTrack, boolean z, int i, int i2, int i3) {
-        this.audioTrack = audioTrack;
-        this.outputPcmFrameSize = i2;
-        this.bufferSize = i3;
-        this.audioTimestampPoller = new AudioTimestampPoller(audioTrack);
-        this.outputSampleRate = audioTrack.getSampleRate();
-        this.needsPassthroughWorkarounds = z && needsPassthroughWorkarounds(i);
-        boolean isEncodingLinearPcm = Util.isEncodingLinearPcm(i);
-        this.isOutputPcm = isEncodingLinearPcm;
-        this.bufferSizeUs = isEncodingLinearPcm ? framesToDurationUs(i3 / i2) : -9223372036854775807L;
-        this.lastRawPlaybackHeadPosition = 0L;
-        this.rawPlaybackHeadWrapCount = 0L;
-        this.passthroughWorkaroundPauseOffset = 0L;
-        this.hasData = false;
-        this.stopTimestampUs = -9223372036854775807L;
-        this.forceResetWorkaroundTimeMs = -9223372036854775807L;
-        this.lastLatencySampleTimeUs = 0L;
-        this.latencyUs = 0L;
-        this.audioTrackPlaybackSpeed = 1.0f;
-    }
-
-    public void setAudioTrackPlaybackSpeed(float f) {
-        this.audioTrackPlaybackSpeed = f;
-        AudioTimestampPoller audioTimestampPoller = this.audioTimestampPoller;
-        if (audioTimestampPoller != null) {
-            audioTimestampPoller.reset();
+        int playState = audioTrack.getPlayState();
+        if (playState == 1) {
+            return 0L;
         }
-    }
-
-    public void start() {
-        ((AudioTimestampPoller) Assertions.checkNotNull(this.audioTimestampPoller)).reset();
+        long playbackHeadPosition = audioTrack.getPlaybackHeadPosition() & 4294967295L;
+        if (this.needsPassthroughWorkarounds) {
+            if (playState == 2 && playbackHeadPosition == 0) {
+                this.passthroughWorkaroundPauseOffset = this.lastRawPlaybackHeadPosition;
+            }
+            playbackHeadPosition += this.passthroughWorkaroundPauseOffset;
+        }
+        if (Util.SDK_INT <= 29) {
+            if (playbackHeadPosition == 0 && this.lastRawPlaybackHeadPosition > 0 && playState == 3) {
+                if (this.forceResetWorkaroundTimeMs == -9223372036854775807L) {
+                    this.forceResetWorkaroundTimeMs = SystemClock.elapsedRealtime();
+                }
+                return this.lastRawPlaybackHeadPosition;
+            }
+            this.forceResetWorkaroundTimeMs = -9223372036854775807L;
+        }
+        if (this.lastRawPlaybackHeadPosition > playbackHeadPosition) {
+            this.rawPlaybackHeadWrapCount++;
+        }
+        this.lastRawPlaybackHeadPosition = playbackHeadPosition;
+        return playbackHeadPosition + (this.rawPlaybackHeadWrapCount << 32);
     }
 }

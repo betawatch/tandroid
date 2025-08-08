@@ -45,15 +45,6 @@ public class zzlx implements Closeable {
         return (zzlx) map.get("detectorTaskWithResource#run");
     }
 
-    @Override // java.io.Closeable, java.lang.AutoCloseable
-    public void close() {
-        long j = this.zze;
-        if (j == 0) {
-            throw new IllegalStateException("Did you forget to call start()?");
-        }
-        zzd(j);
-    }
-
     public zzlx zzb() {
         this.zze = SystemClock.elapsedRealtimeNanos() / 1000;
         return this;
@@ -67,23 +58,11 @@ public class zzlx implements Closeable {
         }
         this.zzf = elapsedRealtimeNanos;
         this.zzc++;
-        double d = this.zzd;
-        double d2 = j;
-        Double.isNaN(d2);
-        this.zzd = d + d2;
+        this.zzd += j;
         this.zzg = Math.min(this.zzg, j);
         this.zzh = Math.max(this.zzh, j);
         if (this.zzc % 50 == 0) {
-            Locale locale = Locale.US;
-            String str = this.zzb;
-            Long valueOf = Long.valueOf(j);
-            Integer valueOf2 = Integer.valueOf(this.zzc);
-            Long valueOf3 = Long.valueOf(this.zzg);
-            Long valueOf4 = Long.valueOf(this.zzh);
-            double d3 = this.zzd;
-            double d4 = this.zzc;
-            Double.isNaN(d4);
-            String.format(locale, "[%s] cur=%dus, counts=%d, min=%dus, max=%dus, avg=%dus", str, valueOf, valueOf2, valueOf3, valueOf4, Integer.valueOf((int) (d3 / d4)));
+            String.format(Locale.US, "[%s] cur=%dus, counts=%d, min=%dus, max=%dus, avg=%dus", this.zzb, Long.valueOf(j), Integer.valueOf(this.zzc), Long.valueOf(this.zzg), Long.valueOf(this.zzh), Integer.valueOf((int) (this.zzd / this.zzc)));
             zzmw.zza();
         }
         if (this.zzc % 500 == 0) {
@@ -93,5 +72,14 @@ public class zzlx implements Closeable {
 
     public void zzd(long j) {
         zzc((SystemClock.elapsedRealtimeNanos() / 1000) - j);
+    }
+
+    @Override // java.io.Closeable, java.lang.AutoCloseable
+    public void close() {
+        long j = this.zze;
+        if (j == 0) {
+            throw new IllegalStateException("Did you forget to call start()?");
+        }
+        zzd(j);
     }
 }

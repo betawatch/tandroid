@@ -15,21 +15,12 @@ import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.LaunchActivity;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class PermissionRequest {
     private static int lastId = 1500;
 
-    public static boolean canAskPermission(String str) {
-        boolean shouldShowRequestPermissionRationale;
-        Activity activity = LaunchActivity.instance;
-        if (activity == null) {
-            activity = AndroidUtilities.findActivity(ApplicationLoader.applicationContext);
-        }
-        if (activity == null || Build.VERSION.SDK_INT < 23) {
-            return false;
-        }
-        shouldShowRequestPermissionRationale = activity.shouldShowRequestPermissionRationale(str);
-        return shouldShowRequestPermissionRationale;
+    public static void ensurePermission(int i, int i2, String str, Utilities.Callback callback) {
+        ensureEitherPermission(i, i2, new String[]{str}, new String[]{str}, callback);
     }
 
     public static void ensureEitherPermission(int i, int i2, String[] strArr, final String[] strArr2, final Utilities.Callback callback) {
@@ -83,26 +74,6 @@ public abstract class PermissionRequest {
         });
     }
 
-    public static void ensurePermission(int i, int i2, String str, Utilities.Callback callback) {
-        ensureEitherPermission(i, i2, new String[]{str}, new String[]{str}, callback);
-    }
-
-    public static boolean hasPermission(String str) {
-        int checkSelfPermission;
-        Activity activity = LaunchActivity.instance;
-        if (activity == null) {
-            activity = AndroidUtilities.findActivity(ApplicationLoader.applicationContext);
-        }
-        if (activity == null) {
-            return false;
-        }
-        if (Build.VERSION.SDK_INT < 23) {
-            return true;
-        }
-        checkSelfPermission = activity.checkSelfPermission(str);
-        return checkSelfPermission == 0;
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$ensureEitherPermission$0(Activity activity, AlertDialog alertDialog, int i) {
         try {
@@ -136,15 +107,6 @@ public abstract class PermissionRequest {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$requestPermission$4(Utilities.Callback callback, int[] iArr) {
-        boolean z = false;
-        if (iArr.length >= 1 && iArr[0] == 0) {
-            z = true;
-        }
-        callback.run(Boolean.valueOf(z));
-    }
-
     public static void requestPermission(String str, final Utilities.Callback callback) {
         requestPermissions(new String[]{str}, callback != null ? new Utilities.Callback() { // from class: org.telegram.ui.Components.PermissionRequest$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.Utilities.Callback
@@ -152,6 +114,15 @@ public abstract class PermissionRequest {
                 PermissionRequest.lambda$requestPermission$4(Utilities.Callback.this, (int[]) obj);
             }
         } : null);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$requestPermission$4(Utilities.Callback callback, int[] iArr) {
+        boolean z = false;
+        if (iArr.length >= 1 && iArr[0] == 0) {
+            z = true;
+        }
+        callback.run(Boolean.valueOf(z));
     }
 
     public static void requestPermissions(String[] strArr, final Utilities.Callback callback) {
@@ -194,6 +165,35 @@ public abstract class PermissionRequest {
             }
             callback.run(iArr);
         }
+    }
+
+    public static boolean hasPermission(String str) {
+        int checkSelfPermission;
+        Activity activity = LaunchActivity.instance;
+        if (activity == null) {
+            activity = AndroidUtilities.findActivity(ApplicationLoader.applicationContext);
+        }
+        if (activity == null) {
+            return false;
+        }
+        if (Build.VERSION.SDK_INT < 23) {
+            return true;
+        }
+        checkSelfPermission = activity.checkSelfPermission(str);
+        return checkSelfPermission == 0;
+    }
+
+    public static boolean canAskPermission(String str) {
+        boolean shouldShowRequestPermissionRationale;
+        Activity activity = LaunchActivity.instance;
+        if (activity == null) {
+            activity = AndroidUtilities.findActivity(ApplicationLoader.applicationContext);
+        }
+        if (activity == null || Build.VERSION.SDK_INT < 23) {
+            return false;
+        }
+        shouldShowRequestPermissionRationale = activity.shouldShowRequestPermissionRationale(str);
+        return shouldShowRequestPermissionRationale;
     }
 
     public static void showPermissionSettings(String str) {

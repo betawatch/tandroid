@@ -21,20 +21,19 @@ public abstract class Rating implements Bundleable {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static Rating fromBundle(Bundle bundle) {
-        Bundleable.Creator creator;
         int i = bundle.getInt(FIELD_RATING_TYPE, -1);
         if (i == 0) {
-            creator = HeartRating.CREATOR;
-        } else if (i == 1) {
-            creator = PercentageRating.CREATOR;
-        } else if (i == 2) {
-            creator = StarRating.CREATOR;
-        } else {
-            if (i != 3) {
-                throw new IllegalArgumentException("Unknown RatingType: " + i);
-            }
-            creator = ThumbRating.CREATOR;
+            return (Rating) HeartRating.CREATOR.fromBundle(bundle);
         }
-        return (Rating) creator.fromBundle(bundle);
+        if (i == 1) {
+            return (Rating) PercentageRating.CREATOR.fromBundle(bundle);
+        }
+        if (i == 2) {
+            return (Rating) StarRating.CREATOR.fromBundle(bundle);
+        }
+        if (i == 3) {
+            return (Rating) ThumbRating.CREATOR.fromBundle(bundle);
+        }
+        throw new IllegalArgumentException("Unknown RatingType: " + i);
     }
 }

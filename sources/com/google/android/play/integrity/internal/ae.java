@@ -8,7 +8,7 @@ import android.os.HandlerThread;
 import android.os.IBinder;
 import android.os.IInterface;
 import android.os.RemoteException;
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
@@ -55,7 +55,7 @@ public final class ae {
 
     public static /* synthetic */ void k(ae aeVar) {
         aeVar.c.d("reportBinderDeath", new Object[0]);
-        ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(aeVar.k.get());
+        WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(aeVar.k.get());
         aeVar.c.d("%s : Binder has died.", aeVar.d);
         Iterator it = aeVar.e.iterator();
         while (it.hasNext()) {
@@ -75,34 +75,6 @@ public final class ae {
                 ae.this.u(taskCompletionSource, task);
             }
         });
-    }
-
-    static /* bridge */ /* synthetic */ void q(ae aeVar, t tVar) {
-        if (aeVar.o != null || aeVar.h) {
-            if (!aeVar.h) {
-                tVar.run();
-                return;
-            } else {
-                aeVar.c.d("Waiting to bind to the service.", new Object[0]);
-                aeVar.e.add(tVar);
-                return;
-            }
-        }
-        aeVar.c.d("Initiate binding to the service.", new Object[0]);
-        aeVar.e.add(tVar);
-        ad adVar = new ad(aeVar, null);
-        aeVar.n = adVar;
-        aeVar.h = true;
-        if (aeVar.b.bindService(aeVar.i, adVar, 1)) {
-            return;
-        }
-        aeVar.c.d("Failed to bind to the service.", new Object[0]);
-        aeVar.h = false;
-        Iterator it = aeVar.e.iterator();
-        while (it.hasNext()) {
-            ((t) it.next()).a(new af());
-        }
-        aeVar.e.clear();
     }
 
     static /* bridge */ /* synthetic */ void r(ae aeVar) {
@@ -169,5 +141,33 @@ public final class ae {
             this.f.remove(taskCompletionSource);
         }
         c().post(new x(this));
+    }
+
+    static /* bridge */ /* synthetic */ void q(ae aeVar, t tVar) {
+        if (aeVar.o != null || aeVar.h) {
+            if (!aeVar.h) {
+                tVar.run();
+                return;
+            } else {
+                aeVar.c.d("Waiting to bind to the service.", new Object[0]);
+                aeVar.e.add(tVar);
+                return;
+            }
+        }
+        aeVar.c.d("Initiate binding to the service.", new Object[0]);
+        aeVar.e.add(tVar);
+        ad adVar = new ad(aeVar, null);
+        aeVar.n = adVar;
+        aeVar.h = true;
+        if (aeVar.b.bindService(aeVar.i, adVar, 1)) {
+            return;
+        }
+        aeVar.c.d("Failed to bind to the service.", new Object[0]);
+        aeVar.h = false;
+        Iterator it = aeVar.e.iterator();
+        while (it.hasNext()) {
+            ((t) it.next()).a(new af());
+        }
+        aeVar.e.clear();
     }
 }

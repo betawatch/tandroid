@@ -11,12 +11,11 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.Button;
 import androidx.appcompat.R$attr;
-import androidx.core.view.TintableBackgroundView;
 import androidx.core.widget.TextViewCompat;
 import androidx.core.widget.TintableCompoundDrawablesView;
 
 /* loaded from: classes.dex */
-public class AppCompatButton extends Button implements TintableBackgroundView, TintableCompoundDrawablesView {
+public class AppCompatButton extends Button implements TintableCompoundDrawablesView {
     private AppCompatEmojiTextHelper mAppCompatEmojiTextHelper;
     private final AppCompatBackgroundHelper mBackgroundTintHelper;
     private final AppCompatTextHelper mTextHelper;
@@ -38,11 +37,52 @@ public class AppCompatButton extends Button implements TintableBackgroundView, T
         getEmojiTextViewHelper().loadFromAttributes(attributeSet, i);
     }
 
-    private AppCompatEmojiTextHelper getEmojiTextViewHelper() {
-        if (this.mAppCompatEmojiTextHelper == null) {
-            this.mAppCompatEmojiTextHelper = new AppCompatEmojiTextHelper(this);
+    @Override // android.view.View
+    public void setBackgroundResource(int i) {
+        super.setBackgroundResource(i);
+        AppCompatBackgroundHelper appCompatBackgroundHelper = this.mBackgroundTintHelper;
+        if (appCompatBackgroundHelper != null) {
+            appCompatBackgroundHelper.onSetBackgroundResource(i);
         }
-        return this.mAppCompatEmojiTextHelper;
+    }
+
+    @Override // android.view.View
+    public void setBackgroundDrawable(Drawable drawable) {
+        super.setBackgroundDrawable(drawable);
+        AppCompatBackgroundHelper appCompatBackgroundHelper = this.mBackgroundTintHelper;
+        if (appCompatBackgroundHelper != null) {
+            appCompatBackgroundHelper.onSetBackgroundDrawable(drawable);
+        }
+    }
+
+    public void setSupportBackgroundTintList(ColorStateList colorStateList) {
+        AppCompatBackgroundHelper appCompatBackgroundHelper = this.mBackgroundTintHelper;
+        if (appCompatBackgroundHelper != null) {
+            appCompatBackgroundHelper.setSupportBackgroundTintList(colorStateList);
+        }
+    }
+
+    public ColorStateList getSupportBackgroundTintList() {
+        AppCompatBackgroundHelper appCompatBackgroundHelper = this.mBackgroundTintHelper;
+        if (appCompatBackgroundHelper != null) {
+            return appCompatBackgroundHelper.getSupportBackgroundTintList();
+        }
+        return null;
+    }
+
+    public void setSupportBackgroundTintMode(PorterDuff.Mode mode) {
+        AppCompatBackgroundHelper appCompatBackgroundHelper = this.mBackgroundTintHelper;
+        if (appCompatBackgroundHelper != null) {
+            appCompatBackgroundHelper.setSupportBackgroundTintMode(mode);
+        }
+    }
+
+    public PorterDuff.Mode getSupportBackgroundTintMode() {
+        AppCompatBackgroundHelper appCompatBackgroundHelper = this.mBackgroundTintHelper;
+        if (appCompatBackgroundHelper != null) {
+            return appCompatBackgroundHelper.getSupportBackgroundTintMode();
+        }
+        return null;
     }
 
     @Override // android.widget.TextView, android.view.View
@@ -59,91 +99,12 @@ public class AppCompatButton extends Button implements TintableBackgroundView, T
     }
 
     @Override // android.widget.TextView
-    public int getAutoSizeMaxTextSize() {
-        if (ViewUtils.SDK_LEVEL_SUPPORTS_AUTOSIZE) {
-            return super.getAutoSizeMaxTextSize();
-        }
+    public void setTextAppearance(Context context, int i) {
+        super.setTextAppearance(context, i);
         AppCompatTextHelper appCompatTextHelper = this.mTextHelper;
         if (appCompatTextHelper != null) {
-            return appCompatTextHelper.getAutoSizeMaxTextSize();
+            appCompatTextHelper.onSetTextAppearance(context, i);
         }
-        return -1;
-    }
-
-    @Override // android.widget.TextView
-    public int getAutoSizeMinTextSize() {
-        if (ViewUtils.SDK_LEVEL_SUPPORTS_AUTOSIZE) {
-            return super.getAutoSizeMinTextSize();
-        }
-        AppCompatTextHelper appCompatTextHelper = this.mTextHelper;
-        if (appCompatTextHelper != null) {
-            return appCompatTextHelper.getAutoSizeMinTextSize();
-        }
-        return -1;
-    }
-
-    @Override // android.widget.TextView
-    public int getAutoSizeStepGranularity() {
-        if (ViewUtils.SDK_LEVEL_SUPPORTS_AUTOSIZE) {
-            return super.getAutoSizeStepGranularity();
-        }
-        AppCompatTextHelper appCompatTextHelper = this.mTextHelper;
-        if (appCompatTextHelper != null) {
-            return appCompatTextHelper.getAutoSizeStepGranularity();
-        }
-        return -1;
-    }
-
-    @Override // android.widget.TextView
-    public int[] getAutoSizeTextAvailableSizes() {
-        if (ViewUtils.SDK_LEVEL_SUPPORTS_AUTOSIZE) {
-            return super.getAutoSizeTextAvailableSizes();
-        }
-        AppCompatTextHelper appCompatTextHelper = this.mTextHelper;
-        return appCompatTextHelper != null ? appCompatTextHelper.getAutoSizeTextAvailableSizes() : new int[0];
-    }
-
-    @Override // android.widget.TextView
-    public int getAutoSizeTextType() {
-        if (ViewUtils.SDK_LEVEL_SUPPORTS_AUTOSIZE) {
-            return super.getAutoSizeTextType() == 1 ? 1 : 0;
-        }
-        AppCompatTextHelper appCompatTextHelper = this.mTextHelper;
-        if (appCompatTextHelper != null) {
-            return appCompatTextHelper.getAutoSizeTextType();
-        }
-        return 0;
-    }
-
-    @Override // android.widget.TextView
-    public ActionMode.Callback getCustomSelectionActionModeCallback() {
-        return TextViewCompat.unwrapCustomSelectionActionModeCallback(super.getCustomSelectionActionModeCallback());
-    }
-
-    @Override // androidx.core.view.TintableBackgroundView
-    public ColorStateList getSupportBackgroundTintList() {
-        AppCompatBackgroundHelper appCompatBackgroundHelper = this.mBackgroundTintHelper;
-        if (appCompatBackgroundHelper != null) {
-            return appCompatBackgroundHelper.getSupportBackgroundTintList();
-        }
-        return null;
-    }
-
-    @Override // androidx.core.view.TintableBackgroundView
-    public PorterDuff.Mode getSupportBackgroundTintMode() {
-        AppCompatBackgroundHelper appCompatBackgroundHelper = this.mBackgroundTintHelper;
-        if (appCompatBackgroundHelper != null) {
-            return appCompatBackgroundHelper.getSupportBackgroundTintMode();
-        }
-        return null;
-    }
-
-    public ColorStateList getSupportCompoundDrawablesTintList() {
-        return this.mTextHelper.getCompoundDrawableTintList();
-    }
-
-    public PorterDuff.Mode getSupportCompoundDrawablesTintMode() {
-        return this.mTextHelper.getCompoundDrawableTintMode();
     }
 
     @Override // android.view.View
@@ -168,6 +129,18 @@ public class AppCompatButton extends Button implements TintableBackgroundView, T
     }
 
     @Override // android.widget.TextView
+    public void setTextSize(int i, float f) {
+        if (ViewUtils.SDK_LEVEL_SUPPORTS_AUTOSIZE) {
+            super.setTextSize(i, f);
+            return;
+        }
+        AppCompatTextHelper appCompatTextHelper = this.mTextHelper;
+        if (appCompatTextHelper != null) {
+            appCompatTextHelper.setTextSize(i, f);
+        }
+    }
+
+    @Override // android.widget.TextView
     protected void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
         super.onTextChanged(charSequence, i, i2, i3);
         AppCompatTextHelper appCompatTextHelper = this.mTextHelper;
@@ -178,9 +151,15 @@ public class AppCompatButton extends Button implements TintableBackgroundView, T
     }
 
     @Override // android.widget.TextView
-    public void setAllCaps(boolean z) {
-        super.setAllCaps(z);
-        getEmojiTextViewHelper().setAllCaps(z);
+    public void setAutoSizeTextTypeWithDefaults(int i) {
+        if (ViewUtils.SDK_LEVEL_SUPPORTS_AUTOSIZE) {
+            super.setAutoSizeTextTypeWithDefaults(i);
+            return;
+        }
+        AppCompatTextHelper appCompatTextHelper = this.mTextHelper;
+        if (appCompatTextHelper != null) {
+            appCompatTextHelper.setAutoSizeTextTypeWithDefaults(i);
+        }
     }
 
     @Override // android.widget.TextView
@@ -208,47 +187,63 @@ public class AppCompatButton extends Button implements TintableBackgroundView, T
     }
 
     @Override // android.widget.TextView
-    public void setAutoSizeTextTypeWithDefaults(int i) {
+    public int getAutoSizeTextType() {
         if (ViewUtils.SDK_LEVEL_SUPPORTS_AUTOSIZE) {
-            super.setAutoSizeTextTypeWithDefaults(i);
-            return;
+            return super.getAutoSizeTextType() == 1 ? 1 : 0;
         }
         AppCompatTextHelper appCompatTextHelper = this.mTextHelper;
         if (appCompatTextHelper != null) {
-            appCompatTextHelper.setAutoSizeTextTypeWithDefaults(i);
+            return appCompatTextHelper.getAutoSizeTextType();
         }
-    }
-
-    @Override // android.view.View
-    public void setBackgroundDrawable(Drawable drawable) {
-        super.setBackgroundDrawable(drawable);
-        AppCompatBackgroundHelper appCompatBackgroundHelper = this.mBackgroundTintHelper;
-        if (appCompatBackgroundHelper != null) {
-            appCompatBackgroundHelper.onSetBackgroundDrawable(drawable);
-        }
-    }
-
-    @Override // android.view.View
-    public void setBackgroundResource(int i) {
-        super.setBackgroundResource(i);
-        AppCompatBackgroundHelper appCompatBackgroundHelper = this.mBackgroundTintHelper;
-        if (appCompatBackgroundHelper != null) {
-            appCompatBackgroundHelper.onSetBackgroundResource(i);
-        }
+        return 0;
     }
 
     @Override // android.widget.TextView
-    public void setCustomSelectionActionModeCallback(ActionMode.Callback callback) {
-        super.setCustomSelectionActionModeCallback(TextViewCompat.wrapCustomSelectionActionModeCallback(this, callback));
-    }
-
-    public void setEmojiCompatEnabled(boolean z) {
-        getEmojiTextViewHelper().setEnabled(z);
+    public int getAutoSizeStepGranularity() {
+        if (ViewUtils.SDK_LEVEL_SUPPORTS_AUTOSIZE) {
+            return super.getAutoSizeStepGranularity();
+        }
+        AppCompatTextHelper appCompatTextHelper = this.mTextHelper;
+        if (appCompatTextHelper != null) {
+            return appCompatTextHelper.getAutoSizeStepGranularity();
+        }
+        return -1;
     }
 
     @Override // android.widget.TextView
-    public void setFilters(InputFilter[] inputFilterArr) {
-        super.setFilters(getEmojiTextViewHelper().getFilters(inputFilterArr));
+    public int getAutoSizeMinTextSize() {
+        if (ViewUtils.SDK_LEVEL_SUPPORTS_AUTOSIZE) {
+            return super.getAutoSizeMinTextSize();
+        }
+        AppCompatTextHelper appCompatTextHelper = this.mTextHelper;
+        if (appCompatTextHelper != null) {
+            return appCompatTextHelper.getAutoSizeMinTextSize();
+        }
+        return -1;
+    }
+
+    @Override // android.widget.TextView
+    public int getAutoSizeMaxTextSize() {
+        if (ViewUtils.SDK_LEVEL_SUPPORTS_AUTOSIZE) {
+            return super.getAutoSizeMaxTextSize();
+        }
+        AppCompatTextHelper appCompatTextHelper = this.mTextHelper;
+        if (appCompatTextHelper != null) {
+            return appCompatTextHelper.getAutoSizeMaxTextSize();
+        }
+        return -1;
+    }
+
+    @Override // android.widget.TextView
+    public int[] getAutoSizeTextAvailableSizes() {
+        if (ViewUtils.SDK_LEVEL_SUPPORTS_AUTOSIZE) {
+            return super.getAutoSizeTextAvailableSizes();
+        }
+        AppCompatTextHelper appCompatTextHelper = this.mTextHelper;
+        if (appCompatTextHelper != null) {
+            return appCompatTextHelper.getAutoSizeTextAvailableSizes();
+        }
+        return new int[0];
     }
 
     public void setSupportAllCaps(boolean z) {
@@ -258,20 +253,14 @@ public class AppCompatButton extends Button implements TintableBackgroundView, T
         }
     }
 
-    @Override // androidx.core.view.TintableBackgroundView
-    public void setSupportBackgroundTintList(ColorStateList colorStateList) {
-        AppCompatBackgroundHelper appCompatBackgroundHelper = this.mBackgroundTintHelper;
-        if (appCompatBackgroundHelper != null) {
-            appCompatBackgroundHelper.setSupportBackgroundTintList(colorStateList);
-        }
+    @Override // android.widget.TextView
+    public void setCustomSelectionActionModeCallback(ActionMode.Callback callback) {
+        super.setCustomSelectionActionModeCallback(TextViewCompat.wrapCustomSelectionActionModeCallback(this, callback));
     }
 
-    @Override // androidx.core.view.TintableBackgroundView
-    public void setSupportBackgroundTintMode(PorterDuff.Mode mode) {
-        AppCompatBackgroundHelper appCompatBackgroundHelper = this.mBackgroundTintHelper;
-        if (appCompatBackgroundHelper != null) {
-            appCompatBackgroundHelper.setSupportBackgroundTintMode(mode);
-        }
+    @Override // android.widget.TextView
+    public ActionMode.Callback getCustomSelectionActionModeCallback() {
+        return TextViewCompat.unwrapCustomSelectionActionModeCallback(super.getCustomSelectionActionModeCallback());
     }
 
     @Override // androidx.core.widget.TintableCompoundDrawablesView
@@ -280,30 +269,39 @@ public class AppCompatButton extends Button implements TintableBackgroundView, T
         this.mTextHelper.applyCompoundDrawablesTints();
     }
 
+    public ColorStateList getSupportCompoundDrawablesTintList() {
+        return this.mTextHelper.getCompoundDrawableTintList();
+    }
+
     @Override // androidx.core.widget.TintableCompoundDrawablesView
     public void setSupportCompoundDrawablesTintMode(PorterDuff.Mode mode) {
         this.mTextHelper.setCompoundDrawableTintMode(mode);
         this.mTextHelper.applyCompoundDrawablesTints();
     }
 
-    @Override // android.widget.TextView
-    public void setTextAppearance(Context context, int i) {
-        super.setTextAppearance(context, i);
-        AppCompatTextHelper appCompatTextHelper = this.mTextHelper;
-        if (appCompatTextHelper != null) {
-            appCompatTextHelper.onSetTextAppearance(context, i);
-        }
+    public PorterDuff.Mode getSupportCompoundDrawablesTintMode() {
+        return this.mTextHelper.getCompoundDrawableTintMode();
     }
 
     @Override // android.widget.TextView
-    public void setTextSize(int i, float f) {
-        if (ViewUtils.SDK_LEVEL_SUPPORTS_AUTOSIZE) {
-            super.setTextSize(i, f);
-            return;
+    public void setFilters(InputFilter[] inputFilterArr) {
+        super.setFilters(getEmojiTextViewHelper().getFilters(inputFilterArr));
+    }
+
+    private AppCompatEmojiTextHelper getEmojiTextViewHelper() {
+        if (this.mAppCompatEmojiTextHelper == null) {
+            this.mAppCompatEmojiTextHelper = new AppCompatEmojiTextHelper(this);
         }
-        AppCompatTextHelper appCompatTextHelper = this.mTextHelper;
-        if (appCompatTextHelper != null) {
-            appCompatTextHelper.setTextSize(i, f);
-        }
+        return this.mAppCompatEmojiTextHelper;
+    }
+
+    @Override // android.widget.TextView
+    public void setAllCaps(boolean z) {
+        super.setAllCaps(z);
+        getEmojiTextViewHelper().setAllCaps(z);
+    }
+
+    public void setEmojiCompatEnabled(boolean z) {
+        getEmojiTextViewHelper().setEnabled(z);
     }
 }

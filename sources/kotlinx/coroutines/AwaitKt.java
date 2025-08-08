@@ -4,15 +4,15 @@ import java.util.Collection;
 import java.util.Iterator;
 import kotlin.ResultKt;
 import kotlin.Unit;
-import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.collections.CollectionsKt;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import org.telegram.tgnet.TLObject;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class AwaitKt {
     public static final Object awaitAll(Deferred[] deferredArr, Continuation continuation) {
-        return deferredArr.length == 0 ? CollectionsKt__CollectionsKt.emptyList() : new AwaitAll(deferredArr).await(continuation);
+        return deferredArr.length == 0 ? CollectionsKt.emptyList() : new AwaitAll(deferredArr).await(continuation);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:13:0x0044  */
@@ -23,7 +23,6 @@ public abstract class AwaitKt {
     */
     public static final Object joinAll(Collection collection, Continuation continuation) {
         AwaitKt$joinAll$3 awaitKt$joinAll$3;
-        Object coroutine_suspended;
         int i;
         Iterator it;
         if (continuation instanceof AwaitKt$joinAll$3) {
@@ -32,7 +31,7 @@ public abstract class AwaitKt {
             if ((i2 & TLObject.FLAG_31) != 0) {
                 awaitKt$joinAll$3.label = i2 - TLObject.FLAG_31;
                 Object obj = awaitKt$joinAll$3.result;
-                coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = awaitKt$joinAll$3.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
@@ -57,7 +56,7 @@ public abstract class AwaitKt {
         }
         awaitKt$joinAll$3 = new AwaitKt$joinAll$3(continuation);
         Object obj2 = awaitKt$joinAll$3.result;
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = awaitKt$joinAll$3.label;
         if (i != 0) {
         }

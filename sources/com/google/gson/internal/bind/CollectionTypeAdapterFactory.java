@@ -14,9 +14,24 @@ import java.lang.reflect.Type;
 import java.util.Collection;
 import java.util.Iterator;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class CollectionTypeAdapterFactory implements TypeAdapterFactory {
     private final ConstructorConstructor constructorConstructor;
+
+    public CollectionTypeAdapterFactory(ConstructorConstructor constructorConstructor) {
+        this.constructorConstructor = constructorConstructor;
+    }
+
+    @Override // com.google.gson.TypeAdapterFactory
+    public TypeAdapter create(Gson gson, TypeToken typeToken) {
+        Type type = typeToken.getType();
+        Class rawType = typeToken.getRawType();
+        if (!Collection.class.isAssignableFrom(rawType)) {
+            return null;
+        }
+        Type collectionElementType = $Gson$Types.getCollectionElementType(type, rawType);
+        return new Adapter(gson, collectionElementType, gson.getAdapter(TypeToken.get(collectionElementType)), this.constructorConstructor.get(typeToken));
+    }
 
     private static final class Adapter extends TypeAdapter {
         private final ObjectConstructor constructor;
@@ -55,20 +70,5 @@ public final class CollectionTypeAdapterFactory implements TypeAdapterFactory {
             }
             jsonWriter.endArray();
         }
-    }
-
-    public CollectionTypeAdapterFactory(ConstructorConstructor constructorConstructor) {
-        this.constructorConstructor = constructorConstructor;
-    }
-
-    @Override // com.google.gson.TypeAdapterFactory
-    public TypeAdapter create(Gson gson, TypeToken typeToken) {
-        Type type = typeToken.getType();
-        Class rawType = typeToken.getRawType();
-        if (!Collection.class.isAssignableFrom(rawType)) {
-            return null;
-        }
-        Type collectionElementType = $Gson$Types.getCollectionElementType(type, rawType);
-        return new Adapter(gson, collectionElementType, gson.getAdapter(TypeToken.get(collectionElementType)), this.constructorConstructor.get(typeToken));
     }
 }

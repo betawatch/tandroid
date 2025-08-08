@@ -5,24 +5,20 @@ import j$.util.function.IntFunction;
 import java.util.Arrays;
 
 /* loaded from: classes2.dex */
-final class w2 extends A {
-    w2(b bVar) {
-        super(bVar, R2.q | R2.o, 0);
-    }
-
+final class w2 extends Z {
     @Override // j$.util.stream.b
-    public final G0 t0(Spliterator spliterator, IntFunction intFunction, b bVar) {
-        if (R2.SORTED.j(bVar.p0())) {
+    public final F0 t0(b bVar, Spliterator spliterator, IntFunction intFunction) {
+        if (Q2.SORTED.i(bVar.p0())) {
             return bVar.h0(spliterator, false, intFunction);
         }
-        double[] dArr = (double[]) ((A0) bVar.h0(spliterator, true, intFunction)).e();
-        Arrays.sort(dArr);
-        return new S0(dArr);
+        int[] iArr = (int[]) ((B0) bVar.h0(spliterator, true, intFunction)).e();
+        Arrays.sort(iArr);
+        return new a1(iArr);
     }
 
     @Override // j$.util.stream.b
-    public final e2 w0(int i, e2 e2Var) {
-        e2Var.getClass();
-        return R2.SORTED.j(i) ? e2Var : R2.SIZED.j(i) ? new B2(e2Var) : new t2(e2Var);
+    public final d2 w0(int i, d2 d2Var) {
+        d2Var.getClass();
+        return Q2.SORTED.i(i) ? d2Var : Q2.SIZED.i(i) ? new B2(d2Var) : new t2(d2Var);
     }
 }

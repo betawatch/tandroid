@@ -18,6 +18,13 @@ public final class EncryptedFileDataSource extends BaseDataSource {
     private boolean opened;
     private Uri uri;
 
+    @Override // com.google.android.exoplayer2.upstream.BaseDataSource, com.google.android.exoplayer2.upstream.DataSource
+    public /* bridge */ /* synthetic */ Map getResponseHeaders() {
+        Map emptyMap;
+        emptyMap = Collections.emptyMap();
+        return emptyMap;
+    }
+
     public static class EncryptedFileDataSourceException extends IOException {
         public EncryptedFileDataSourceException(Throwable th) {
             super(th);
@@ -34,33 +41,6 @@ public final class EncryptedFileDataSource extends BaseDataSource {
         if (transferListener != null) {
             addTransferListener(transferListener);
         }
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.DataSource
-    public void close() {
-        try {
-            this.fileInputStream.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        if (this.opened) {
-            this.opened = false;
-            transferEnded();
-        }
-        this.fileInputStream = null;
-        this.uri = null;
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.BaseDataSource, com.google.android.exoplayer2.upstream.DataSource
-    public /* bridge */ /* synthetic */ Map getResponseHeaders() {
-        Map emptyMap;
-        emptyMap = Collections.emptyMap();
-        return emptyMap;
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.DataSource
-    public Uri getUri() {
-        return this.uri;
     }
 
     @Override // com.google.android.exoplayer2.upstream.DataSource
@@ -108,5 +88,25 @@ public final class EncryptedFileDataSource extends BaseDataSource {
         this.bytesRemaining -= min;
         bytesTransferred(min);
         return min;
+    }
+
+    @Override // com.google.android.exoplayer2.upstream.DataSource
+    public Uri getUri() {
+        return this.uri;
+    }
+
+    @Override // com.google.android.exoplayer2.upstream.DataSource
+    public void close() {
+        try {
+            this.fileInputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (this.opened) {
+            this.opened = false;
+            transferEnded();
+        }
+        this.fileInputStream = null;
+        this.uri = null;
     }
 }

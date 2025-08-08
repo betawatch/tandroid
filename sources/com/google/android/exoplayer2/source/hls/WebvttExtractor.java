@@ -28,16 +28,59 @@ public final class WebvttExtractor implements Extractor {
     private final ParsableByteArray sampleDataWrapper = new ParsableByteArray();
     private byte[] sampleData = new byte[1024];
 
+    @Override // com.google.android.exoplayer2.extractor.Extractor
+    public void release() {
+    }
+
     public WebvttExtractor(String str, TimestampAdjuster timestampAdjuster) {
         this.language = str;
         this.timestampAdjuster = timestampAdjuster;
     }
 
-    private TrackOutput buildTrackOutput(long j) {
-        TrackOutput track = this.output.track(0, 3);
-        track.format(new Format.Builder().setSampleMimeType("text/vtt").setLanguage(this.language).setSubsampleOffsetUs(j).build());
-        this.output.endTracks();
-        return track;
+    @Override // com.google.android.exoplayer2.extractor.Extractor
+    public boolean sniff(ExtractorInput extractorInput) {
+        extractorInput.peekFully(this.sampleData, 0, 6, false);
+        this.sampleDataWrapper.reset(this.sampleData, 6);
+        if (WebvttParserUtil.isWebvttHeaderLine(this.sampleDataWrapper)) {
+            return true;
+        }
+        extractorInput.peekFully(this.sampleData, 6, 3, false);
+        this.sampleDataWrapper.reset(this.sampleData, 9);
+        return WebvttParserUtil.isWebvttHeaderLine(this.sampleDataWrapper);
+    }
+
+    @Override // com.google.android.exoplayer2.extractor.Extractor
+    public void init(ExtractorOutput extractorOutput) {
+        this.output = extractorOutput;
+        extractorOutput.seekMap(new SeekMap.Unseekable(-9223372036854775807L));
+    }
+
+    @Override // com.google.android.exoplayer2.extractor.Extractor
+    public void seek(long j, long j2) {
+        throw new IllegalStateException();
+    }
+
+    @Override // com.google.android.exoplayer2.extractor.Extractor
+    public int read(ExtractorInput extractorInput, PositionHolder positionHolder) {
+        Assertions.checkNotNull(this.output);
+        int length = (int) extractorInput.getLength();
+        int i = this.sampleSize;
+        byte[] bArr = this.sampleData;
+        if (i == bArr.length) {
+            this.sampleData = Arrays.copyOf(bArr, ((length != -1 ? length : bArr.length) * 3) / 2);
+        }
+        byte[] bArr2 = this.sampleData;
+        int i2 = this.sampleSize;
+        int read = extractorInput.read(bArr2, i2, bArr2.length - i2);
+        if (read != -1) {
+            int i3 = this.sampleSize + read;
+            this.sampleSize = i3;
+            if (length == -1 || i3 != length) {
+                return 0;
+            }
+        }
+        processSample();
+        return -1;
     }
 
     private void processSample() {
@@ -72,53 +115,10 @@ public final class WebvttExtractor implements Extractor {
         buildTrackOutput.sampleMetadata(adjustTsTimestamp, 1, this.sampleSize, 0, null);
     }
 
-    @Override // com.google.android.exoplayer2.extractor.Extractor
-    public void init(ExtractorOutput extractorOutput) {
-        this.output = extractorOutput;
-        extractorOutput.seekMap(new SeekMap.Unseekable(-9223372036854775807L));
-    }
-
-    @Override // com.google.android.exoplayer2.extractor.Extractor
-    public int read(ExtractorInput extractorInput, PositionHolder positionHolder) {
-        Assertions.checkNotNull(this.output);
-        int length = (int) extractorInput.getLength();
-        int i = this.sampleSize;
-        byte[] bArr = this.sampleData;
-        if (i == bArr.length) {
-            this.sampleData = Arrays.copyOf(bArr, ((length != -1 ? length : bArr.length) * 3) / 2);
-        }
-        byte[] bArr2 = this.sampleData;
-        int i2 = this.sampleSize;
-        int read = extractorInput.read(bArr2, i2, bArr2.length - i2);
-        if (read != -1) {
-            int i3 = this.sampleSize + read;
-            this.sampleSize = i3;
-            if (length == -1 || i3 != length) {
-                return 0;
-            }
-        }
-        processSample();
-        return -1;
-    }
-
-    @Override // com.google.android.exoplayer2.extractor.Extractor
-    public void release() {
-    }
-
-    @Override // com.google.android.exoplayer2.extractor.Extractor
-    public void seek(long j, long j2) {
-        throw new IllegalStateException();
-    }
-
-    @Override // com.google.android.exoplayer2.extractor.Extractor
-    public boolean sniff(ExtractorInput extractorInput) {
-        extractorInput.peekFully(this.sampleData, 0, 6, false);
-        this.sampleDataWrapper.reset(this.sampleData, 6);
-        if (WebvttParserUtil.isWebvttHeaderLine(this.sampleDataWrapper)) {
-            return true;
-        }
-        extractorInput.peekFully(this.sampleData, 6, 3, false);
-        this.sampleDataWrapper.reset(this.sampleData, 9);
-        return WebvttParserUtil.isWebvttHeaderLine(this.sampleDataWrapper);
+    private TrackOutput buildTrackOutput(long j) {
+        TrackOutput track = this.output.track(0, 3);
+        track.format(new Format.Builder().setSampleMimeType("text/vtt").setLanguage(this.language).setSubsampleOffsetUs(j).build());
+        this.output.endTracks();
+        return track;
     }
 }

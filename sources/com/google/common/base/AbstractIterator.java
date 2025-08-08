@@ -8,6 +8,23 @@ abstract class AbstractIterator implements Iterator {
     private Object next;
     private State state = State.NOT_READY;
 
+    private enum State {
+        READY,
+        NOT_READY,
+        DONE,
+        FAILED
+    }
+
+    protected abstract Object computeNext();
+
+    protected AbstractIterator() {
+    }
+
+    protected final Object endOfData() {
+        this.state = State.DONE;
+        return null;
+    }
+
     static /* synthetic */ class 1 {
         static final /* synthetic */ int[] $SwitchMap$com$google$common$base$AbstractIterator$State;
 
@@ -25,33 +42,6 @@ abstract class AbstractIterator implements Iterator {
         }
     }
 
-    private enum State {
-        READY,
-        NOT_READY,
-        DONE,
-        FAILED
-    }
-
-    protected AbstractIterator() {
-    }
-
-    private boolean tryToComputeNext() {
-        this.state = State.FAILED;
-        this.next = computeNext();
-        if (this.state == State.DONE) {
-            return false;
-        }
-        this.state = State.READY;
-        return true;
-    }
-
-    protected abstract Object computeNext();
-
-    protected final Object endOfData() {
-        this.state = State.DONE;
-        return null;
-    }
-
     @Override // java.util.Iterator
     public final boolean hasNext() {
         Preconditions.checkState(this.state != State.FAILED);
@@ -62,6 +52,16 @@ abstract class AbstractIterator implements Iterator {
         if (i != 2) {
             return tryToComputeNext();
         }
+        return true;
+    }
+
+    private boolean tryToComputeNext() {
+        this.state = State.FAILED;
+        this.next = computeNext();
+        if (this.state == State.DONE) {
+            return false;
+        }
+        this.state = State.READY;
         return true;
     }
 

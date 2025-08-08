@@ -41,23 +41,20 @@ class MediaRouteExpandCollapseButton extends AppCompatImageButton {
         super.setOnClickListener(new View.OnClickListener() { // from class: androidx.mediarouter.app.MediaRouteExpandCollapseButton.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
-                MediaRouteExpandCollapseButton mediaRouteExpandCollapseButton;
-                String str;
-                MediaRouteExpandCollapseButton mediaRouteExpandCollapseButton2 = MediaRouteExpandCollapseButton.this;
-                boolean z = !mediaRouteExpandCollapseButton2.mIsGroupExpanded;
-                mediaRouteExpandCollapseButton2.mIsGroupExpanded = z;
-                if (z) {
-                    mediaRouteExpandCollapseButton2.setImageDrawable(mediaRouteExpandCollapseButton2.mExpandAnimationDrawable);
+                MediaRouteExpandCollapseButton mediaRouteExpandCollapseButton = MediaRouteExpandCollapseButton.this;
+                boolean z = mediaRouteExpandCollapseButton.mIsGroupExpanded;
+                mediaRouteExpandCollapseButton.mIsGroupExpanded = !z;
+                if (!z) {
+                    mediaRouteExpandCollapseButton.setImageDrawable(mediaRouteExpandCollapseButton.mExpandAnimationDrawable);
                     MediaRouteExpandCollapseButton.this.mExpandAnimationDrawable.start();
-                    mediaRouteExpandCollapseButton = MediaRouteExpandCollapseButton.this;
-                    str = mediaRouteExpandCollapseButton.mCollapseGroupDescription;
+                    MediaRouteExpandCollapseButton mediaRouteExpandCollapseButton2 = MediaRouteExpandCollapseButton.this;
+                    mediaRouteExpandCollapseButton2.setContentDescription(mediaRouteExpandCollapseButton2.mCollapseGroupDescription);
                 } else {
-                    mediaRouteExpandCollapseButton2.setImageDrawable(mediaRouteExpandCollapseButton2.mCollapseAnimationDrawable);
+                    mediaRouteExpandCollapseButton.setImageDrawable(mediaRouteExpandCollapseButton.mCollapseAnimationDrawable);
                     MediaRouteExpandCollapseButton.this.mCollapseAnimationDrawable.start();
-                    mediaRouteExpandCollapseButton = MediaRouteExpandCollapseButton.this;
-                    str = mediaRouteExpandCollapseButton.mExpandGroupDescription;
+                    MediaRouteExpandCollapseButton mediaRouteExpandCollapseButton3 = MediaRouteExpandCollapseButton.this;
+                    mediaRouteExpandCollapseButton3.setContentDescription(mediaRouteExpandCollapseButton3.mExpandGroupDescription);
                 }
-                mediaRouteExpandCollapseButton.setContentDescription(str);
                 View.OnClickListener onClickListener = MediaRouteExpandCollapseButton.this.mListener;
                 if (onClickListener != null) {
                     onClickListener.onClick(view);

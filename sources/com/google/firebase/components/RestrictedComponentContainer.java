@@ -17,14 +17,11 @@ final class RestrictedComponentContainer implements ComponentContainer {
     private final Set allowedSetProviderInterfaces;
     private final ComponentContainer delegateContainer;
 
-    private static class RestrictedPublisher implements Publisher {
-        private final Set allowedPublishedEvents;
-        private final Publisher delegate;
-
-        public RestrictedPublisher(Set set, Publisher publisher) {
-            this.allowedPublishedEvents = set;
-            this.delegate = publisher;
-        }
+    @Override // com.google.firebase.components.ComponentContainer
+    public /* synthetic */ Set setOf(Class cls) {
+        Set of;
+        of = setOf(Qualified.unqualified(cls));
+        return of;
     }
 
     RestrictedComponentContainer(Component component, ComponentContainer componentContainer) {
@@ -35,23 +32,17 @@ final class RestrictedComponentContainer implements ComponentContainer {
         HashSet hashSet5 = new HashSet();
         for (Dependency dependency : component.getDependencies()) {
             if (dependency.isDirectInjection()) {
-                boolean isSet = dependency.isSet();
-                Qualified qualified = dependency.getInterface();
-                if (isSet) {
-                    hashSet4.add(qualified);
+                if (dependency.isSet()) {
+                    hashSet4.add(dependency.getInterface());
                 } else {
-                    hashSet.add(qualified);
+                    hashSet.add(dependency.getInterface());
                 }
             } else if (dependency.isDeferred()) {
                 hashSet3.add(dependency.getInterface());
+            } else if (dependency.isSet()) {
+                hashSet5.add(dependency.getInterface());
             } else {
-                boolean isSet2 = dependency.isSet();
-                Qualified qualified2 = dependency.getInterface();
-                if (isSet2) {
-                    hashSet5.add(qualified2);
-                } else {
-                    hashSet2.add(qualified2);
-                }
+                hashSet2.add(dependency.getInterface());
             }
         }
         if (!component.getPublishedEvents().isEmpty()) {
@@ -67,14 +58,6 @@ final class RestrictedComponentContainer implements ComponentContainer {
     }
 
     @Override // com.google.firebase.components.ComponentContainer
-    public Object get(Qualified qualified) {
-        if (this.allowedDirectInterfaces.contains(qualified)) {
-            return this.delegateContainer.get(qualified);
-        }
-        throw new DependencyException(String.format("Attempting to request an undeclared dependency %s.", qualified));
-    }
-
-    @Override // com.google.firebase.components.ComponentContainer
     public Object get(Class cls) {
         if (!this.allowedDirectInterfaces.contains(Qualified.unqualified(cls))) {
             throw new DependencyException(String.format("Attempting to request an undeclared dependency %s.", cls));
@@ -84,11 +67,16 @@ final class RestrictedComponentContainer implements ComponentContainer {
     }
 
     @Override // com.google.firebase.components.ComponentContainer
-    public Deferred getDeferred(Qualified qualified) {
-        if (this.allowedDeferredInterfaces.contains(qualified)) {
-            return this.delegateContainer.getDeferred(qualified);
+    public Object get(Qualified qualified) {
+        if (!this.allowedDirectInterfaces.contains(qualified)) {
+            throw new DependencyException(String.format("Attempting to request an undeclared dependency %s.", qualified));
         }
-        throw new DependencyException(String.format("Attempting to request an undeclared dependency Deferred<%s>.", qualified));
+        return this.delegateContainer.get(qualified);
+    }
+
+    @Override // com.google.firebase.components.ComponentContainer
+    public Provider getProvider(Class cls) {
+        return getProvider(Qualified.unqualified(cls));
     }
 
     @Override // com.google.firebase.components.ComponentContainer
@@ -98,37 +86,43 @@ final class RestrictedComponentContainer implements ComponentContainer {
 
     @Override // com.google.firebase.components.ComponentContainer
     public Provider getProvider(Qualified qualified) {
-        if (this.allowedProviderInterfaces.contains(qualified)) {
-            return this.delegateContainer.getProvider(qualified);
+        if (!this.allowedProviderInterfaces.contains(qualified)) {
+            throw new DependencyException(String.format("Attempting to request an undeclared dependency Provider<%s>.", qualified));
         }
-        throw new DependencyException(String.format("Attempting to request an undeclared dependency Provider<%s>.", qualified));
+        return this.delegateContainer.getProvider(qualified);
     }
 
     @Override // com.google.firebase.components.ComponentContainer
-    public Provider getProvider(Class cls) {
-        return getProvider(Qualified.unqualified(cls));
-    }
-
-    @Override // com.google.firebase.components.ComponentContainer
-    public Set setOf(Qualified qualified) {
-        if (this.allowedSetDirectInterfaces.contains(qualified)) {
-            return this.delegateContainer.setOf(qualified);
+    public Deferred getDeferred(Qualified qualified) {
+        if (!this.allowedDeferredInterfaces.contains(qualified)) {
+            throw new DependencyException(String.format("Attempting to request an undeclared dependency Deferred<%s>.", qualified));
         }
-        throw new DependencyException(String.format("Attempting to request an undeclared dependency Set<%s>.", qualified));
-    }
-
-    @Override // com.google.firebase.components.ComponentContainer
-    public /* synthetic */ Set setOf(Class cls) {
-        Set of;
-        of = setOf(Qualified.unqualified(cls));
-        return of;
+        return this.delegateContainer.getDeferred(qualified);
     }
 
     @Override // com.google.firebase.components.ComponentContainer
     public Provider setOfProvider(Qualified qualified) {
-        if (this.allowedSetProviderInterfaces.contains(qualified)) {
-            return this.delegateContainer.setOfProvider(qualified);
+        if (!this.allowedSetProviderInterfaces.contains(qualified)) {
+            throw new DependencyException(String.format("Attempting to request an undeclared dependency Provider<Set<%s>>.", qualified));
         }
-        throw new DependencyException(String.format("Attempting to request an undeclared dependency Provider<Set<%s>>.", qualified));
+        return this.delegateContainer.setOfProvider(qualified);
+    }
+
+    @Override // com.google.firebase.components.ComponentContainer
+    public Set setOf(Qualified qualified) {
+        if (!this.allowedSetDirectInterfaces.contains(qualified)) {
+            throw new DependencyException(String.format("Attempting to request an undeclared dependency Set<%s>.", qualified));
+        }
+        return this.delegateContainer.setOf(qualified);
+    }
+
+    private static class RestrictedPublisher implements Publisher {
+        private final Set allowedPublishedEvents;
+        private final Publisher delegate;
+
+        public RestrictedPublisher(Set set, Publisher publisher) {
+            this.allowedPublishedEvents = set;
+            this.delegate = publisher;
+        }
     }
 }

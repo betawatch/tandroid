@@ -11,6 +11,25 @@ import java.util.List;
 public class AccessibilityNodeProviderCompat {
     private final Object mProvider;
 
+    public void addExtraDataToAccessibilityNodeInfo(int i, AccessibilityNodeInfoCompat accessibilityNodeInfoCompat, String str, Bundle bundle) {
+    }
+
+    public AccessibilityNodeInfoCompat createAccessibilityNodeInfo(int i) {
+        return null;
+    }
+
+    public List findAccessibilityNodeInfosByText(String str, int i) {
+        return null;
+    }
+
+    public AccessibilityNodeInfoCompat findFocus(int i) {
+        return null;
+    }
+
+    public boolean performAction(int i, int i2, Bundle bundle) {
+        return false;
+    }
+
     static class AccessibilityNodeProviderApi16 extends AccessibilityNodeProvider {
         final AccessibilityNodeProviderCompat mCompat;
 
@@ -74,33 +93,18 @@ public class AccessibilityNodeProviderCompat {
     }
 
     public AccessibilityNodeProviderCompat() {
-        this.mProvider = Build.VERSION.SDK_INT >= 26 ? new AccessibilityNodeProviderApi26(this) : new AccessibilityNodeProviderApi19(this);
+        if (Build.VERSION.SDK_INT >= 26) {
+            this.mProvider = new AccessibilityNodeProviderApi26(this);
+        } else {
+            this.mProvider = new AccessibilityNodeProviderApi19(this);
+        }
     }
 
     public AccessibilityNodeProviderCompat(Object obj) {
         this.mProvider = obj;
     }
 
-    public void addExtraDataToAccessibilityNodeInfo(int i, AccessibilityNodeInfoCompat accessibilityNodeInfoCompat, String str, Bundle bundle) {
-    }
-
-    public AccessibilityNodeInfoCompat createAccessibilityNodeInfo(int i) {
-        return null;
-    }
-
-    public List findAccessibilityNodeInfosByText(String str, int i) {
-        return null;
-    }
-
-    public AccessibilityNodeInfoCompat findFocus(int i) {
-        return null;
-    }
-
     public Object getProvider() {
         return this.mProvider;
-    }
-
-    public boolean performAction(int i, int i2, Bundle bundle) {
-        return false;
     }
 }

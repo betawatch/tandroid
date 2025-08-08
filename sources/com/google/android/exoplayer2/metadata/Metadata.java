@@ -47,8 +47,13 @@ public final class Metadata implements Parcelable {
         void populateMediaMetadata(MediaMetadata.Builder builder);
     }
 
-    public Metadata(long j, List list) {
-        this(j, (Entry[]) list.toArray(new Entry[0]));
+    @Override // android.os.Parcelable
+    public int describeContents() {
+        return 0;
+    }
+
+    public Metadata(Entry... entryArr) {
+        this(-9223372036854775807L, entryArr);
     }
 
     public Metadata(long j, Entry... entryArr) {
@@ -56,44 +61,47 @@ public final class Metadata implements Parcelable {
         this.entries = entryArr;
     }
 
+    public Metadata(List list) {
+        this((Entry[]) list.toArray(new Entry[0]));
+    }
+
+    public Metadata(long j, List list) {
+        this(j, (Entry[]) list.toArray(new Entry[0]));
+    }
+
     Metadata(Parcel parcel) {
         this.entries = new Entry[parcel.readInt()];
         int i = 0;
         while (true) {
             Entry[] entryArr = this.entries;
-            if (i >= entryArr.length) {
-                this.presentationTimeUs = parcel.readLong();
-                return;
-            } else {
+            if (i < entryArr.length) {
                 entryArr[i] = (Entry) parcel.readParcelable(Entry.class.getClassLoader());
                 i++;
+            } else {
+                this.presentationTimeUs = parcel.readLong();
+                return;
             }
         }
     }
 
-    public Metadata(List list) {
-        this((Entry[]) list.toArray(new Entry[0]));
+    public int length() {
+        return this.entries.length;
     }
 
-    public Metadata(Entry... entryArr) {
-        this(-9223372036854775807L, entryArr);
-    }
-
-    public Metadata copyWithAppendedEntries(Entry... entryArr) {
-        return entryArr.length == 0 ? this : new Metadata(this.presentationTimeUs, (Entry[]) Util.nullSafeArrayConcatenation(this.entries, entryArr));
+    public Entry get(int i) {
+        return this.entries[i];
     }
 
     public Metadata copyWithAppendedEntriesFrom(Metadata metadata) {
         return metadata == null ? this : copyWithAppendedEntries(metadata.entries);
     }
 
-    public Metadata copyWithPresentationTimeUs(long j) {
-        return this.presentationTimeUs == j ? this : new Metadata(j, this.entries);
+    public Metadata copyWithAppendedEntries(Entry... entryArr) {
+        return entryArr.length == 0 ? this : new Metadata(this.presentationTimeUs, (Entry[]) Util.nullSafeArrayConcatenation(this.entries, entryArr));
     }
 
-    @Override // android.os.Parcelable
-    public int describeContents() {
-        return 0;
+    public Metadata copyWithPresentationTimeUs(long j) {
+        return this.presentationTimeUs == j ? this : new Metadata(j, this.entries);
     }
 
     public boolean equals(Object obj) {
@@ -107,16 +115,8 @@ public final class Metadata implements Parcelable {
         return Arrays.equals(this.entries, metadata.entries) && this.presentationTimeUs == metadata.presentationTimeUs;
     }
 
-    public Entry get(int i) {
-        return this.entries[i];
-    }
-
     public int hashCode() {
         return (Arrays.hashCode(this.entries) * 31) + Longs.hashCode(this.presentationTimeUs);
-    }
-
-    public int length() {
-        return this.entries.length;
     }
 
     public String toString() {

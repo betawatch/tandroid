@@ -4,7 +4,7 @@ import com.microsoft.appcenter.ingestion.models.Model;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class Extensions implements Model {
     private AppExtension app;
     private DeviceExtension device;
@@ -16,106 +16,76 @@ public class Extensions implements Model {
     private SdkExtension sdk;
     private UserExtension user;
 
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
-        }
-        Extensions extensions = (Extensions) obj;
-        MetadataExtension metadataExtension = this.metadata;
-        if (metadataExtension == null ? extensions.metadata != null : !metadataExtension.equals(extensions.metadata)) {
-            return false;
-        }
-        ProtocolExtension protocolExtension = this.protocol;
-        if (protocolExtension == null ? extensions.protocol != null : !protocolExtension.equals(extensions.protocol)) {
-            return false;
-        }
-        UserExtension userExtension = this.user;
-        if (userExtension == null ? extensions.user != null : !userExtension.equals(extensions.user)) {
-            return false;
-        }
-        DeviceExtension deviceExtension = this.device;
-        if (deviceExtension == null ? extensions.device != null : !deviceExtension.equals(extensions.device)) {
-            return false;
-        }
-        OsExtension osExtension = this.os;
-        if (osExtension == null ? extensions.os != null : !osExtension.equals(extensions.os)) {
-            return false;
-        }
-        AppExtension appExtension = this.app;
-        if (appExtension == null ? extensions.app != null : !appExtension.equals(extensions.app)) {
-            return false;
-        }
-        NetExtension netExtension = this.net;
-        if (netExtension == null ? extensions.net != null : !netExtension.equals(extensions.net)) {
-            return false;
-        }
-        SdkExtension sdkExtension = this.sdk;
-        if (sdkExtension == null ? extensions.sdk != null : !sdkExtension.equals(extensions.sdk)) {
-            return false;
-        }
-        LocExtension locExtension = this.loc;
-        LocExtension locExtension2 = extensions.loc;
-        return locExtension != null ? locExtension.equals(locExtension2) : locExtension2 == null;
-    }
-
-    public AppExtension getApp() {
-        return this.app;
-    }
-
-    public DeviceExtension getDevice() {
-        return this.device;
-    }
-
-    public LocExtension getLoc() {
-        return this.loc;
-    }
-
     public MetadataExtension getMetadata() {
         return this.metadata;
     }
 
-    public NetExtension getNet() {
-        return this.net;
-    }
-
-    public OsExtension getOs() {
-        return this.os;
+    public void setMetadata(MetadataExtension metadataExtension) {
+        this.metadata = metadataExtension;
     }
 
     public ProtocolExtension getProtocol() {
         return this.protocol;
     }
 
-    public SdkExtension getSdk() {
-        return this.sdk;
+    public void setProtocol(ProtocolExtension protocolExtension) {
+        this.protocol = protocolExtension;
     }
 
     public UserExtension getUser() {
         return this.user;
     }
 
-    public int hashCode() {
-        MetadataExtension metadataExtension = this.metadata;
-        int hashCode = (metadataExtension != null ? metadataExtension.hashCode() : 0) * 31;
-        ProtocolExtension protocolExtension = this.protocol;
-        int hashCode2 = (hashCode + (protocolExtension != null ? protocolExtension.hashCode() : 0)) * 31;
-        UserExtension userExtension = this.user;
-        int hashCode3 = (hashCode2 + (userExtension != null ? userExtension.hashCode() : 0)) * 31;
-        DeviceExtension deviceExtension = this.device;
-        int hashCode4 = (hashCode3 + (deviceExtension != null ? deviceExtension.hashCode() : 0)) * 31;
-        OsExtension osExtension = this.os;
-        int hashCode5 = (hashCode4 + (osExtension != null ? osExtension.hashCode() : 0)) * 31;
-        AppExtension appExtension = this.app;
-        int hashCode6 = (hashCode5 + (appExtension != null ? appExtension.hashCode() : 0)) * 31;
-        NetExtension netExtension = this.net;
-        int hashCode7 = (hashCode6 + (netExtension != null ? netExtension.hashCode() : 0)) * 31;
-        SdkExtension sdkExtension = this.sdk;
-        int hashCode8 = (hashCode7 + (sdkExtension != null ? sdkExtension.hashCode() : 0)) * 31;
-        LocExtension locExtension = this.loc;
-        return hashCode8 + (locExtension != null ? locExtension.hashCode() : 0);
+    public void setUser(UserExtension userExtension) {
+        this.user = userExtension;
+    }
+
+    public DeviceExtension getDevice() {
+        return this.device;
+    }
+
+    public void setDevice(DeviceExtension deviceExtension) {
+        this.device = deviceExtension;
+    }
+
+    public OsExtension getOs() {
+        return this.os;
+    }
+
+    public void setOs(OsExtension osExtension) {
+        this.os = osExtension;
+    }
+
+    public AppExtension getApp() {
+        return this.app;
+    }
+
+    public void setApp(AppExtension appExtension) {
+        this.app = appExtension;
+    }
+
+    public NetExtension getNet() {
+        return this.net;
+    }
+
+    public void setNet(NetExtension netExtension) {
+        this.net = netExtension;
+    }
+
+    public SdkExtension getSdk() {
+        return this.sdk;
+    }
+
+    public void setSdk(SdkExtension sdkExtension) {
+        this.sdk = sdkExtension;
+    }
+
+    public LocExtension getLoc() {
+        return this.loc;
+    }
+
+    public void setLoc(LocExtension locExtension) {
+        this.loc = locExtension;
     }
 
     @Override // com.microsoft.appcenter.ingestion.models.Model
@@ -167,42 +137,6 @@ public class Extensions implements Model {
         }
     }
 
-    public void setApp(AppExtension appExtension) {
-        this.app = appExtension;
-    }
-
-    public void setDevice(DeviceExtension deviceExtension) {
-        this.device = deviceExtension;
-    }
-
-    public void setLoc(LocExtension locExtension) {
-        this.loc = locExtension;
-    }
-
-    public void setMetadata(MetadataExtension metadataExtension) {
-        this.metadata = metadataExtension;
-    }
-
-    public void setNet(NetExtension netExtension) {
-        this.net = netExtension;
-    }
-
-    public void setOs(OsExtension osExtension) {
-        this.os = osExtension;
-    }
-
-    public void setProtocol(ProtocolExtension protocolExtension) {
-        this.protocol = protocolExtension;
-    }
-
-    public void setSdk(SdkExtension sdkExtension) {
-        this.sdk = sdkExtension;
-    }
-
-    public void setUser(UserExtension userExtension) {
-        this.user = userExtension;
-    }
-
     @Override // com.microsoft.appcenter.ingestion.models.Model
     public void write(JSONStringer jSONStringer) {
         if (getMetadata() != null) {
@@ -250,5 +184,71 @@ public class Extensions implements Model {
             getLoc().write(jSONStringer);
             jSONStringer.endObject();
         }
+    }
+
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Extensions extensions = (Extensions) obj;
+        MetadataExtension metadataExtension = this.metadata;
+        if (metadataExtension == null ? extensions.metadata != null : !metadataExtension.equals(extensions.metadata)) {
+            return false;
+        }
+        ProtocolExtension protocolExtension = this.protocol;
+        if (protocolExtension == null ? extensions.protocol != null : !protocolExtension.equals(extensions.protocol)) {
+            return false;
+        }
+        UserExtension userExtension = this.user;
+        if (userExtension == null ? extensions.user != null : !userExtension.equals(extensions.user)) {
+            return false;
+        }
+        DeviceExtension deviceExtension = this.device;
+        if (deviceExtension == null ? extensions.device != null : !deviceExtension.equals(extensions.device)) {
+            return false;
+        }
+        OsExtension osExtension = this.os;
+        if (osExtension == null ? extensions.os != null : !osExtension.equals(extensions.os)) {
+            return false;
+        }
+        AppExtension appExtension = this.app;
+        if (appExtension == null ? extensions.app != null : !appExtension.equals(extensions.app)) {
+            return false;
+        }
+        NetExtension netExtension = this.net;
+        if (netExtension == null ? extensions.net != null : !netExtension.equals(extensions.net)) {
+            return false;
+        }
+        SdkExtension sdkExtension = this.sdk;
+        if (sdkExtension == null ? extensions.sdk != null : !sdkExtension.equals(extensions.sdk)) {
+            return false;
+        }
+        LocExtension locExtension = this.loc;
+        LocExtension locExtension2 = extensions.loc;
+        return locExtension != null ? locExtension.equals(locExtension2) : locExtension2 == null;
+    }
+
+    public int hashCode() {
+        MetadataExtension metadataExtension = this.metadata;
+        int hashCode = (metadataExtension != null ? metadataExtension.hashCode() : 0) * 31;
+        ProtocolExtension protocolExtension = this.protocol;
+        int hashCode2 = (hashCode + (protocolExtension != null ? protocolExtension.hashCode() : 0)) * 31;
+        UserExtension userExtension = this.user;
+        int hashCode3 = (hashCode2 + (userExtension != null ? userExtension.hashCode() : 0)) * 31;
+        DeviceExtension deviceExtension = this.device;
+        int hashCode4 = (hashCode3 + (deviceExtension != null ? deviceExtension.hashCode() : 0)) * 31;
+        OsExtension osExtension = this.os;
+        int hashCode5 = (hashCode4 + (osExtension != null ? osExtension.hashCode() : 0)) * 31;
+        AppExtension appExtension = this.app;
+        int hashCode6 = (hashCode5 + (appExtension != null ? appExtension.hashCode() : 0)) * 31;
+        NetExtension netExtension = this.net;
+        int hashCode7 = (hashCode6 + (netExtension != null ? netExtension.hashCode() : 0)) * 31;
+        SdkExtension sdkExtension = this.sdk;
+        int hashCode8 = (hashCode7 + (sdkExtension != null ? sdkExtension.hashCode() : 0)) * 31;
+        LocExtension locExtension = this.loc;
+        return hashCode8 + (locExtension != null ? locExtension.hashCode() : 0);
     }
 }

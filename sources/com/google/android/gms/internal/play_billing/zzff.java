@@ -1,50 +1,55 @@
 package com.google.android.gms.internal.play_billing;
 
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
+
 /* loaded from: classes.dex */
-public final class zzff extends zzcb implements zzdg {
-    private static final zzff zzb;
-    private int zzd;
-    private int zze = 0;
-    private Object zzf;
-    private int zzg;
+final class zzff extends zzee {
+    private zzeu zzc;
+    private ScheduledFuture zzd;
 
-    static {
-        zzff zzffVar = new zzff();
-        zzb = zzffVar;
-        zzcb.zzp(zzff.class, zzffVar);
+    private zzff(zzeu zzeuVar) {
+        this.zzc = zzeuVar;
     }
 
-    private zzff() {
+    static zzeu zzs(zzeu zzeuVar, long j, TimeUnit timeUnit, ScheduledExecutorService scheduledExecutorService) {
+        zzff zzffVar = new zzff(zzeuVar);
+        zzfc zzfcVar = new zzfc(zzffVar);
+        zzffVar.zzd = scheduledExecutorService.schedule(zzfcVar, 28500L, timeUnit);
+        zzeuVar.zzb(zzfcVar, zzed.zza);
+        return zzffVar;
     }
 
-    public static zzfe zzv() {
-        return (zzfe) zzb.zzg();
-    }
-
-    static /* synthetic */ void zzy(zzff zzffVar, int i) {
-        zzffVar.zzg = i - 1;
-        zzffVar.zzd |= 1;
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.zzcb
-    protected final Object zzu(int i, Object obj, Object obj2) {
-        int i2 = i - 1;
-        if (i2 == 0) {
-            return (byte) 1;
-        }
-        if (i2 == 2) {
-            return zzcb.zzm(zzb, "\u0001\u0002\u0001\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001᠌\u0000\u0002<\u0000", new Object[]{"zzf", "zze", "zzd", "zzg", zzfc.zza, zzfw.class});
-        }
-        if (i2 == 3) {
-            return new zzff();
-        }
-        zzfd zzfdVar = null;
-        if (i2 == 4) {
-            return new zzfe(zzfdVar);
-        }
-        if (i2 != 5) {
+    @Override // com.google.android.gms.internal.play_billing.zzdy
+    protected final String zzg() {
+        zzeu zzeuVar = this.zzc;
+        ScheduledFuture scheduledFuture = this.zzd;
+        if (zzeuVar == null) {
             return null;
         }
-        return zzb;
+        String str = "inputFuture=[" + zzeuVar.toString() + "]";
+        if (scheduledFuture == null) {
+            return str;
+        }
+        long delay = scheduledFuture.getDelay(TimeUnit.MILLISECONDS);
+        if (delay <= 0) {
+            return str;
+        }
+        return str + ", remaining delay=[" + delay + " ms]";
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.zzdy
+    protected final void zzm() {
+        zzeu zzeuVar = this.zzc;
+        if ((zzeuVar != null) & isCancelled()) {
+            zzeuVar.cancel(zzq());
+        }
+        ScheduledFuture scheduledFuture = this.zzd;
+        if (scheduledFuture != null) {
+            scheduledFuture.cancel(false);
+        }
+        this.zzc = null;
+        this.zzd = null;
     }
 }

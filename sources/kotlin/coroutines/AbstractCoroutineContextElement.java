@@ -4,7 +4,7 @@ import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class AbstractCoroutineContextElement implements CoroutineContext.Element {
     private final CoroutineContext.Key key;
 
@@ -23,11 +23,6 @@ public abstract class AbstractCoroutineContextElement implements CoroutineContex
         return CoroutineContext.Element.DefaultImpls.get(this, key);
     }
 
-    @Override // kotlin.coroutines.CoroutineContext.Element
-    public CoroutineContext.Key getKey() {
-        return this.key;
-    }
-
     @Override // kotlin.coroutines.CoroutineContext
     public CoroutineContext minusKey(CoroutineContext.Key key) {
         return CoroutineContext.Element.DefaultImpls.minusKey(this, key);
@@ -36,5 +31,10 @@ public abstract class AbstractCoroutineContextElement implements CoroutineContex
     @Override // kotlin.coroutines.CoroutineContext
     public CoroutineContext plus(CoroutineContext coroutineContext) {
         return CoroutineContext.Element.DefaultImpls.plus(this, coroutineContext);
+    }
+
+    @Override // kotlin.coroutines.CoroutineContext.Element
+    public CoroutineContext.Key getKey() {
+        return this.key;
     }
 }

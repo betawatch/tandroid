@@ -9,6 +9,8 @@ import com.google.android.exoplayer2.util.Assertions;
 public abstract class MediaChunk extends Chunk {
     public final long chunkIndex;
 
+    public abstract boolean isLoadCompleted();
+
     public MediaChunk(DataSource dataSource, DataSpec dataSpec, Format format, int i, Object obj, long j, long j2, long j3) {
         super(dataSource, dataSpec, 1, format, i, obj, j, j2);
         Assertions.checkNotNull(format);
@@ -22,6 +24,4 @@ public abstract class MediaChunk extends Chunk {
         }
         return -1L;
     }
-
-    public abstract boolean isLoadCompleted();
 }

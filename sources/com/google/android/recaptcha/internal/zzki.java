@@ -194,7 +194,11 @@ final class zzki implements zzkr {
             }
             zziiVar.zzg();
             zziiVar.zzf();
-            zzmdVar.zzw(zziiVar.zza(), entry instanceof zzjh ? ((zzjh) entry).zza().zzb() : entry.getValue());
+            if (entry instanceof zzjh) {
+                zzmdVar.zzw(zziiVar.zza(), ((zzjh) entry).zza().zzb());
+            } else {
+                zzmdVar.zzw(zziiVar.zza(), entry.getValue());
+            }
         }
         zzll zzllVar = this.zzb;
         zzllVar.zzp(zzllVar.zzd(obj), zzmdVar);

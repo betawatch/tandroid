@@ -15,15 +15,16 @@ final class j implements f {
         int i = 0;
         while (true) {
             String[] strArr = c;
-            if (i >= 9) {
+            if (i < 9) {
+                if (strArr[i].equals(str)) {
+                    this.b = i;
+                    this.a = str2;
+                    return;
+                }
+                i++;
+            } else {
                 throw new IllegalArgumentException("Invalid zone offset pattern: ".concat(str));
             }
-            if (strArr[i].equals(str)) {
-                this.b = i;
-                this.a = str2;
-                return;
-            }
-            i++;
         }
     }
 
@@ -39,7 +40,9 @@ final class j implements f {
             throw new ArithmeticException();
         }
         String str = this.a;
-        if (i != 0) {
+        if (i == 0) {
+            sb.append(str);
+        } else {
             int abs = Math.abs((i / 3600) % 100);
             int abs2 = Math.abs((i / 60) % 60);
             int abs3 = Math.abs(i % 60);
@@ -63,10 +66,9 @@ final class j implements f {
             }
             if (abs == 0) {
                 sb.setLength(length);
+                sb.append(str);
             }
-            return true;
         }
-        sb.append(str);
         return true;
     }
 

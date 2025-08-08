@@ -17,17 +17,14 @@ class FragmentLayoutInflaterFactory implements LayoutInflater.Factory2 {
         this.mFragmentManager = fragmentManager;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:42:0x014b  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x016a  */
+    @Override // android.view.LayoutInflater.Factory
+    public View onCreateView(String str, Context context, AttributeSet attributeSet) {
+        return onCreateView(null, str, context, attributeSet);
+    }
+
     @Override // android.view.LayoutInflater.Factory2
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public View onCreateView(View view, String str, Context context, AttributeSet attributeSet) {
         final FragmentStateManager createOrGetFragmentStateManager;
-        StringBuilder sb;
-        String str2;
-        View view2;
         if (FragmentContainerView.class.getName().equals(str)) {
             return new FragmentContainerView(context, attributeSet, this.mFragmentManager);
         }
@@ -69,69 +66,47 @@ class FragmentLayoutInflaterFactory implements LayoutInflater.Factory2 {
             findFragmentById.onInflate(this.mFragmentManager.getHost().getContext(), attributeSet, findFragmentById.mSavedFragmentState);
             createOrGetFragmentStateManager = this.mFragmentManager.addFragment(findFragmentById);
             if (FragmentManager.isLoggingEnabled(2)) {
-                sb = new StringBuilder();
-                sb.append("Fragment ");
-                sb.append(findFragmentById);
-                str2 = " has been inflated via the <fragment> tag: id=0x";
-                sb.append(str2);
-                sb.append(Integer.toHexString(resourceId));
-                Log.v("FragmentManager", sb.toString());
+                Log.v("FragmentManager", "Fragment " + findFragmentById + " has been inflated via the <fragment> tag: id=0x" + Integer.toHexString(resourceId));
             }
-            findFragmentById.mContainer = (ViewGroup) view;
-            createOrGetFragmentStateManager.moveToExpectedState();
-            createOrGetFragmentStateManager.ensureInflatedView();
-            view2 = findFragmentById.mView;
-            if (view2 != null) {
-                throw new IllegalStateException("Fragment " + attributeValue + " did not create a view.");
+        } else {
+            if (findFragmentById.mInLayout) {
+                throw new IllegalArgumentException(attributeSet.getPositionDescription() + ": Duplicate id 0x" + Integer.toHexString(resourceId) + ", tag " + string + ", or parent id 0x" + Integer.toHexString(id) + " with another fragment for " + attributeValue);
             }
-            if (resourceId != 0) {
-                view2.setId(resourceId);
+            findFragmentById.mInLayout = true;
+            FragmentManager fragmentManager2 = this.mFragmentManager;
+            findFragmentById.mFragmentManager = fragmentManager2;
+            findFragmentById.mHost = fragmentManager2.getHost();
+            findFragmentById.onInflate(this.mFragmentManager.getHost().getContext(), attributeSet, findFragmentById.mSavedFragmentState);
+            createOrGetFragmentStateManager = this.mFragmentManager.createOrGetFragmentStateManager(findFragmentById);
+            if (FragmentManager.isLoggingEnabled(2)) {
+                Log.v("FragmentManager", "Retained Fragment " + findFragmentById + " has been re-attached via the <fragment> tag: id=0x" + Integer.toHexString(resourceId));
             }
-            if (findFragmentById.mView.getTag() == null) {
-                findFragmentById.mView.setTag(string);
-            }
-            findFragmentById.mView.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() { // from class: androidx.fragment.app.FragmentLayoutInflaterFactory.1
-                @Override // android.view.View.OnAttachStateChangeListener
-                public void onViewAttachedToWindow(View view3) {
-                    Fragment fragment = createOrGetFragmentStateManager.getFragment();
-                    createOrGetFragmentStateManager.moveToExpectedState();
-                    SpecialEffectsController.getOrCreateController((ViewGroup) fragment.mView.getParent(), FragmentLayoutInflaterFactory.this.mFragmentManager).forceCompleteAllOperations();
-                }
-
-                @Override // android.view.View.OnAttachStateChangeListener
-                public void onViewDetachedFromWindow(View view3) {
-                }
-            });
-            return findFragmentById.mView;
-        }
-        if (findFragmentById.mInLayout) {
-            throw new IllegalArgumentException(attributeSet.getPositionDescription() + ": Duplicate id 0x" + Integer.toHexString(resourceId) + ", tag " + string + ", or parent id 0x" + Integer.toHexString(id) + " with another fragment for " + attributeValue);
-        }
-        findFragmentById.mInLayout = true;
-        FragmentManager fragmentManager2 = this.mFragmentManager;
-        findFragmentById.mFragmentManager = fragmentManager2;
-        findFragmentById.mHost = fragmentManager2.getHost();
-        findFragmentById.onInflate(this.mFragmentManager.getHost().getContext(), attributeSet, findFragmentById.mSavedFragmentState);
-        createOrGetFragmentStateManager = this.mFragmentManager.createOrGetFragmentStateManager(findFragmentById);
-        if (FragmentManager.isLoggingEnabled(2)) {
-            sb = new StringBuilder();
-            sb.append("Retained Fragment ");
-            sb.append(findFragmentById);
-            str2 = " has been re-attached via the <fragment> tag: id=0x";
-            sb.append(str2);
-            sb.append(Integer.toHexString(resourceId));
-            Log.v("FragmentManager", sb.toString());
         }
         findFragmentById.mContainer = (ViewGroup) view;
         createOrGetFragmentStateManager.moveToExpectedState();
         createOrGetFragmentStateManager.ensureInflatedView();
-        view2 = findFragmentById.mView;
-        if (view2 != null) {
+        View view2 = findFragmentById.mView;
+        if (view2 == null) {
+            throw new IllegalStateException("Fragment " + attributeValue + " did not create a view.");
         }
-    }
+        if (resourceId != 0) {
+            view2.setId(resourceId);
+        }
+        if (findFragmentById.mView.getTag() == null) {
+            findFragmentById.mView.setTag(string);
+        }
+        findFragmentById.mView.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() { // from class: androidx.fragment.app.FragmentLayoutInflaterFactory.1
+            @Override // android.view.View.OnAttachStateChangeListener
+            public void onViewDetachedFromWindow(View view3) {
+            }
 
-    @Override // android.view.LayoutInflater.Factory
-    public View onCreateView(String str, Context context, AttributeSet attributeSet) {
-        return onCreateView(null, str, context, attributeSet);
+            @Override // android.view.View.OnAttachStateChangeListener
+            public void onViewAttachedToWindow(View view3) {
+                Fragment fragment = createOrGetFragmentStateManager.getFragment();
+                createOrGetFragmentStateManager.moveToExpectedState();
+                SpecialEffectsController.getOrCreateController((ViewGroup) fragment.mView.getParent(), FragmentLayoutInflaterFactory.this.mFragmentManager).forceCompleteAllOperations();
+            }
+        });
+        return findFragmentById.mView;
     }
 }

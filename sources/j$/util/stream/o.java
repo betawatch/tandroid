@@ -1,114 +1,60 @@
 package j$.util.stream;
 
-import j$.util.function.Consumer;
-import j$.util.function.Predicate;
-import j$.util.function.ToDoubleFunction;
-import j$.util.function.ToIntFunction;
-import j$.util.function.ToLongFunction;
+import j$.util.Spliterator;
+import j$.util.concurrent.ConcurrentHashMap;
+import j$.util.function.IntFunction;
+import java.util.Collection;
 import java.util.HashSet;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /* loaded from: classes2.dex */
-final class o extends a2 {
-    public final /* synthetic */ int b;
-    Object c;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ o(b bVar, e2 e2Var, int i) {
-        super(e2Var);
-        this.b = i;
-        this.c = bVar;
+final class o extends U1 {
+    static J0 D0(b bVar, Spliterator spliterator) {
+        k kVar = new k(21);
+        k kVar2 = new k(22);
+        return new J0((Collection) new u1(R2.REFERENCE, new k(23), kVar2, kVar, 3).c(bVar, spliterator));
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o(e2 e2Var) {
-        super(e2Var);
-        this.b = 0;
-    }
-
-    @Override // j$.util.function.Consumer
-    /* renamed from: accept */
-    public final void r(Object obj) {
-        switch (this.b) {
-            case 0:
-                if (((HashSet) this.c).contains(obj)) {
-                    return;
-                }
-                ((HashSet) this.c).add(obj);
-                this.a.r((e2) obj);
-                return;
-            case 1:
-                ((Consumer) ((v) this.c).n).r(obj);
-                this.a.r((e2) obj);
-                return;
-            case 2:
-                if (((Predicate) ((v) this.c).n).test(obj)) {
-                    this.a.r((e2) obj);
-                    return;
-                }
-                return;
-            case 3:
-                this.a.r((e2) ((T1) this.c).n.apply(obj));
-                return;
-            case 4:
-                this.a.accept(((ToIntFunction) ((w) this.c).n).applyAsInt(obj));
-                return;
-            case 5:
-                this.a.accept(((ToLongFunction) ((x) this.c).n).applyAsLong(obj));
-                return;
-            case 6:
-                this.a.accept(((ToDoubleFunction) ((u) this.c).n).applyAsDouble(obj));
-                return;
-            default:
-                Stream stream = (Stream) ((T1) this.c).n.apply(obj);
-                if (stream != null) {
-                    try {
-                        ((Stream) stream.sequential()).forEach(this.a);
-                    } catch (Throwable th) {
-                        try {
-                            stream.close();
-                        } catch (Throwable th2) {
-                            th.addSuppressed(th2);
-                        }
-                        throw th;
-                    }
-                }
-                if (stream != null) {
-                    stream.close();
-                    return;
-                }
-                return;
+    @Override // j$.util.stream.b
+    final F0 t0(b bVar, Spliterator spliterator, IntFunction intFunction) {
+        if (Q2.DISTINCT.i(bVar.p0())) {
+            return bVar.h0(spliterator, false, intFunction);
         }
+        if (Q2.ORDERED.i(bVar.p0())) {
+            return D0(bVar, spliterator);
+        }
+        AtomicBoolean atomicBoolean = new AtomicBoolean(false);
+        ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
+        new O(new k0(5, atomicBoolean, concurrentHashMap), false).c(bVar, spliterator);
+        Collection keySet = concurrentHashMap.keySet();
+        if (atomicBoolean.get()) {
+            HashSet hashSet = new HashSet(keySet);
+            hashSet.add(null);
+            keySet = hashSet;
+        }
+        return new J0(keySet);
     }
 
-    @Override // j$.util.stream.a2, j$.util.stream.e2
-    public void m() {
-        switch (this.b) {
-            case 0:
-                this.c = null;
-                this.a.m();
-                break;
-            default:
-                super.m();
-                break;
+    @Override // j$.util.stream.b
+    final Spliterator u0(b bVar, Spliterator spliterator) {
+        if (Q2.DISTINCT.i(bVar.p0())) {
+            return bVar.C0(spliterator);
         }
+        if (Q2.ORDERED.i(bVar.p0())) {
+            return D0(bVar, spliterator).spliterator();
+        }
+        return new Z2(bVar.C0(spliterator));
     }
 
-    @Override // j$.util.stream.a2, j$.util.stream.e2
-    public void n(long j) {
-        switch (this.b) {
-            case 0:
-                this.c = new HashSet();
-                this.a.n(-1L);
-                break;
-            case 2:
-                this.a.n(-1L);
-                break;
-            case 7:
-                this.a.n(-1L);
-                break;
-            default:
-                super.n(j);
-                break;
+    @Override // j$.util.stream.b
+    final d2 w0(int i, d2 d2Var) {
+        d2Var.getClass();
+        if (Q2.DISTINCT.i(i)) {
+            return d2Var;
         }
+        if (Q2.SORTED.i(i)) {
+            return new m(d2Var);
+        }
+        return new n(d2Var);
     }
 }

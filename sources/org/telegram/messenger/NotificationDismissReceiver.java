@@ -9,8 +9,6 @@ import android.content.SharedPreferences;
 public class NotificationDismissReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
     public void onReceive(Context context, Intent intent) {
-        StringBuilder sb;
-        SharedPreferences.Editor edit;
         if (intent == null) {
             return;
         }
@@ -26,24 +24,17 @@ public class NotificationDismissReceiver extends BroadcastReceiver {
                 NotificationsController.getInstance(intExtra).processIgnoreStoryReactions();
                 return;
             }
-            String str = "dismissDate";
             if (longExtra == 0) {
-                sb = new StringBuilder();
-                sb.append("set dismissDate of global to ");
-                sb.append(intExtra2);
-                FileLog.d(sb.toString());
-                edit = MessagesController.getNotificationsSettings(intExtra).edit();
-            } else {
-                sb = new StringBuilder();
-                sb.append("set dismissDate of ");
-                sb.append(longExtra);
-                sb.append(" to ");
-                sb.append(intExtra2);
-                FileLog.d(sb.toString());
-                edit = MessagesController.getNotificationsSettings(intExtra).edit();
-                str = "dismissDate" + longExtra;
+                FileLog.d("set dismissDate of global to " + intExtra2);
+                MessagesController.getNotificationsSettings(intExtra).edit().putInt("dismissDate", intExtra2).commit();
+                return;
             }
-            edit.putInt(str, intExtra2).commit();
+            FileLog.d("set dismissDate of " + longExtra + " to " + intExtra2);
+            SharedPreferences.Editor edit = MessagesController.getNotificationsSettings(intExtra).edit();
+            StringBuilder sb = new StringBuilder();
+            sb.append("dismissDate");
+            sb.append(longExtra);
+            edit.putInt(sb.toString(), intExtra2).commit();
         }
     }
 }

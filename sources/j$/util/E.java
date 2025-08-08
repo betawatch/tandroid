@@ -26,8 +26,8 @@ public final /* synthetic */ class E implements G {
 
     @Override // j$.util.G
     /* renamed from: c */
-    public final /* synthetic */ void forEachRemaining(j$.util.function.E e) {
-        this.a.forEachRemaining(j$.util.function.D.a(e));
+    public final /* synthetic */ void forEachRemaining(j$.util.function.G g) {
+        this.a.forEachRemaining(j$.util.function.F.a(g));
     }
 
     @Override // j$.util.Spliterator
@@ -56,8 +56,8 @@ public final /* synthetic */ class E implements G {
 
     @Override // j$.util.G
     /* renamed from: g */
-    public final /* synthetic */ boolean tryAdvance(j$.util.function.E e) {
-        return this.a.tryAdvance(j$.util.function.D.a(e));
+    public final /* synthetic */ boolean tryAdvance(j$.util.function.G g) {
+        return this.a.tryAdvance(j$.util.function.F.a(g));
     }
 
     @Override // j$.util.Spliterator

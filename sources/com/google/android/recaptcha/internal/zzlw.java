@@ -11,6 +11,21 @@ final class zzlw {
         cArr[i + 1] = (char) ((i2 & 1023) + 56320);
     }
 
+    static /* bridge */ /* synthetic */ void zzc(byte b, byte b2, char[] cArr, int i) {
+        if (b < -62 || zze(b2)) {
+            throw zzje.zzd();
+        }
+        cArr[i] = (char) (((b & 31) << 6) | (b2 & 63));
+    }
+
+    static /* bridge */ /* synthetic */ boolean zzd(byte b) {
+        return b >= 0;
+    }
+
+    private static boolean zze(byte b) {
+        return b > -65;
+    }
+
     static /* bridge */ /* synthetic */ void zzb(byte b, byte b2, byte b3, char[] cArr, int i) {
         if (!zze(b2)) {
             if (b == -32) {
@@ -29,20 +44,5 @@ final class zzlw {
             }
         }
         throw zzje.zzd();
-    }
-
-    static /* bridge */ /* synthetic */ void zzc(byte b, byte b2, char[] cArr, int i) {
-        if (b < -62 || zze(b2)) {
-            throw zzje.zzd();
-        }
-        cArr[i] = (char) (((b & 31) << 6) | (b2 & 63));
-    }
-
-    static /* bridge */ /* synthetic */ boolean zzd(byte b) {
-        return b >= 0;
-    }
-
-    private static boolean zze(byte b) {
-        return b > -65;
     }
 }

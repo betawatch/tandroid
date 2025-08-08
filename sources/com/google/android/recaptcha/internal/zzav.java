@@ -7,7 +7,7 @@ import java.net.URLConnection;
 import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
@@ -47,7 +47,7 @@ final class zzav extends SuspendLambda implements Function2 {
         zzbg zzbgVar2;
         zzab zzabVar;
         zzbg zzbgVar3;
-        IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        IntrinsicsKt.getCOROUTINE_SUSPENDED();
         ResultKt.throwOnFailure(obj);
         zzbb zza = this.zza.zza(zzne.zzq);
         zzbgVar = this.zzb.zzi;

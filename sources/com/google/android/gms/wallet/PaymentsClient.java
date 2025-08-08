@@ -10,10 +10,6 @@ import com.google.android.gms.wallet.Wallet;
 
 /* loaded from: classes.dex */
 public class PaymentsClient extends GoogleApi {
-    PaymentsClient(Context context, Wallet.WalletOptions walletOptions) {
-        super(context, Wallet.API, walletOptions, GoogleApi.Settings.DEFAULT_SETTINGS);
-    }
-
     public Task isReadyToPay(final IsReadyToPayRequest isReadyToPayRequest) {
         return doRead(TaskApiCall.builder().setMethodKey(23705).run(new RemoteCall() { // from class: com.google.android.gms.wallet.zzag
             @Override // com.google.android.gms.common.api.internal.RemoteCall
@@ -30,5 +26,9 @@ public class PaymentsClient extends GoogleApi {
                 ((com.google.android.gms.internal.wallet.zzac) obj).zzt(PaymentDataRequest.this, (TaskCompletionSource) obj2);
             }
         }).setFeatures(zzk.zzc).setAutoResolveMissingFeatures(true).setMethodKey(23707).build());
+    }
+
+    PaymentsClient(Context context, Wallet.WalletOptions walletOptions) {
+        super(context, Wallet.API, walletOptions, GoogleApi.Settings.DEFAULT_SETTINGS);
     }
 }

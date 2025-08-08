@@ -1,20 +1,54 @@
 package j$.util.stream;
 
-import j$.util.function.Consumer;
+import j$.util.Spliterator;
+import java.util.ArrayDeque;
 
 /* loaded from: classes2.dex */
-final class g1 extends h1 implements j$.util.J {
-    g1(E0 e0) {
-        super(e0);
+abstract class g1 extends i1 implements j$.util.M {
+    @Override // j$.util.M
+    /* renamed from: tryAdvance, reason: merged with bridge method [inline-methods] and merged with bridge method [inline-methods] and merged with bridge method [inline-methods] */
+    public final boolean p(Object obj) {
+        E0 e0;
+        if (!h()) {
+            return false;
+        }
+        boolean p = ((j$.util.M) this.d).p(obj);
+        if (!p) {
+            if (this.c == null && (e0 = (E0) i1.b(this.e)) != null) {
+                j$.util.M spliterator = e0.spliterator();
+                this.d = spliterator;
+                return spliterator.p(obj);
+            }
+            this.a = null;
+        }
+        return p;
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ void a(Consumer consumer) {
-        j$.util.A.h(this, consumer);
-    }
-
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean s(Consumer consumer) {
-        return j$.util.A.n(this, consumer);
+    @Override // j$.util.M
+    /* renamed from: forEachRemaining, reason: merged with bridge method [inline-methods] and merged with bridge method [inline-methods] and merged with bridge method [inline-methods] */
+    public final void e(Object obj) {
+        if (this.a == null) {
+            return;
+        }
+        if (this.d == null) {
+            Spliterator spliterator = this.c;
+            if (spliterator == null) {
+                ArrayDeque f = f();
+                while (true) {
+                    E0 e0 = (E0) i1.b(f);
+                    if (e0 != null) {
+                        e0.g(obj);
+                    } else {
+                        this.a = null;
+                        return;
+                    }
+                }
+            } else {
+                ((j$.util.M) spliterator).e(obj);
+            }
+        } else {
+            while (p(obj)) {
+            }
+        }
     }
 }

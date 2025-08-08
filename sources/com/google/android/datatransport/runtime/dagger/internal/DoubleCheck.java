@@ -12,18 +12,6 @@ public final class DoubleCheck implements Provider {
         this.provider = provider;
     }
 
-    public static Provider provider(Provider provider) {
-        Preconditions.checkNotNull(provider);
-        return provider instanceof DoubleCheck ? provider : new DoubleCheck(provider);
-    }
-
-    public static Object reentrantCheck(Object obj, Object obj2) {
-        if (obj == UNINITIALIZED || obj == obj2) {
-            return obj2;
-        }
-        throw new IllegalStateException("Scoped provider was invoked recursively returning different results: " + obj + " & " + obj2 + ". This is likely due to a circular dependency.");
-    }
-
     @Override // javax.inject.Provider
     public Object get() {
         Object obj = this.instance;
@@ -42,5 +30,17 @@ public final class DoubleCheck implements Provider {
             }
         }
         return obj;
+    }
+
+    public static Object reentrantCheck(Object obj, Object obj2) {
+        if (obj == UNINITIALIZED || obj == obj2) {
+            return obj2;
+        }
+        throw new IllegalStateException("Scoped provider was invoked recursively returning different results: " + obj + " & " + obj2 + ". This is likely due to a circular dependency.");
+    }
+
+    public static Provider provider(Provider provider) {
+        Preconditions.checkNotNull(provider);
+        return provider instanceof DoubleCheck ? provider : new DoubleCheck(provider);
     }
 }

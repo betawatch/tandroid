@@ -49,6 +49,11 @@ public class UserCell2 extends FrameLayout {
     private int statusOnlineColor;
     private SimpleTextView statusTextView;
 
+    @Override // android.view.View
+    public boolean hasOverlappingRendering() {
+        return false;
+    }
+
     public UserCell2(Context context, int i, int i2) {
         this(context, i, i2, null);
     }
@@ -127,9 +132,41 @@ public class UserCell2 extends FrameLayout {
         }
     }
 
-    @Override // android.view.View
-    public boolean hasOverlappingRendering() {
-        return false;
+    public void setData(TLObject tLObject, CharSequence charSequence, CharSequence charSequence2, int i) {
+        if (tLObject == null && charSequence == null && charSequence2 == null) {
+            this.currentStatus = null;
+            this.currentName = null;
+            this.currentObject = null;
+            this.nameTextView.setText("");
+            this.statusTextView.setText("");
+            this.avatarImageView.setImageDrawable(null);
+            return;
+        }
+        this.currentStatus = charSequence2;
+        this.currentName = charSequence;
+        this.currentObject = tLObject;
+        this.currentDrawable = i;
+        update(0);
+    }
+
+    public void setNameTypeface(Typeface typeface) {
+        this.nameTextView.setTypeface(typeface);
+    }
+
+    public void setCurrentId(int i) {
+        this.currentId = i;
+    }
+
+    public void setCheckDisabled(boolean z) {
+        CheckBoxSquare checkBoxSquare = this.checkBoxBig;
+        if (checkBoxSquare != null) {
+            checkBoxSquare.setDisabled(z);
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    protected void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(70.0f), TLObject.FLAG_30));
     }
 
     @Override // android.view.View
@@ -141,54 +178,11 @@ public class UserCell2 extends FrameLayout {
         }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(70.0f), TLObject.FLAG_30));
-    }
-
-    public void setCheckDisabled(boolean z) {
-        CheckBoxSquare checkBoxSquare = this.checkBoxBig;
-        if (checkBoxSquare != null) {
-            checkBoxSquare.setDisabled(z);
-        }
-    }
-
-    public void setCurrentId(int i) {
-        this.currentId = i;
-    }
-
-    public void setData(TLObject tLObject, CharSequence charSequence, CharSequence charSequence2, int i) {
-        if (tLObject != null || charSequence != null || charSequence2 != null) {
-            this.currentStatus = charSequence2;
-            this.currentName = charSequence;
-            this.currentObject = tLObject;
-            this.currentDrawable = i;
-            update(0);
-            return;
-        }
-        this.currentStatus = null;
-        this.currentName = null;
-        this.currentObject = null;
-        this.nameTextView.setText("");
-        this.statusTextView.setText("");
-        this.avatarImageView.setImageDrawable(null);
-    }
-
-    public void setNameTypeface(Typeface typeface) {
-        this.nameTextView.setTypeface(typeface);
-    }
-
     /* JADX WARN: Code restructure failed: missing block: B:35:0x0088, code lost:
     
         if (r13.equals(r12.lastName) == false) goto L59;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:51:0x0103, code lost:
-    
-        if (r13 != null) goto L87;
-     */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x01fb  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0216  */
     /* JADX WARN: Type inference failed for: r3v0 */
     /* JADX WARN: Type inference failed for: r3v1 */
     /* JADX WARN: Type inference failed for: r3v14 */
@@ -202,15 +196,7 @@ public class UserCell2 extends FrameLayout {
         TLRPC.Chat chat;
         ?? r3;
         String str;
-        SimpleTextView simpleTextView;
-        int i2;
-        SimpleTextView simpleTextView2;
-        String formatPluralString;
-        SimpleTextView simpleTextView3;
-        int i3;
         TLRPC.UserStatus userStatus;
-        String formatUserStatus;
-        BackupImageView backupImageView;
         TLRPC.FileLocation fileLocation;
         TLObject tLObject = this.currentObject;
         if (tLObject instanceof TLRPC.User) {
@@ -251,8 +237,10 @@ public class UserCell2 extends FrameLayout {
             }
             if (z2 || this.currentName != null || this.lastName == null || (i & MessagesController.UPDATE_MASK_NAME) == 0) {
                 str = null;
+            } else if (user != null) {
+                str = UserObject.getUserName(user);
             } else {
-                str = user != null ? UserObject.getUserName(user) : chat.title;
+                str = chat.title;
             }
             z = z2;
             if (!z) {
@@ -289,101 +277,70 @@ public class UserCell2 extends FrameLayout {
                 if (str == null) {
                     str = UserObject.getUserName(user);
                 }
-            } else if (str == null) {
-                str = chat.title;
+                this.lastName = str;
+            } else {
+                if (str == null) {
+                    str = chat.title;
+                }
+                this.lastName = str;
             }
-            this.lastName = str;
-            this.nameTextView.setText(str);
+            this.nameTextView.setText(this.lastName);
         }
-        if (this.currentStatus == null) {
-            if (user == null) {
-                if (chat != null) {
-                    this.statusTextView.setTextColor(this.statusColor);
-                    if (!ChatObject.isChannel(chat) || chat.megagroup) {
-                        int i4 = chat.participants_count;
-                        if (i4 != 0) {
-                            simpleTextView2 = this.statusTextView;
-                            formatPluralString = LocaleController.formatPluralString("Members", i4, new Object[0]);
-                            simpleTextView2.setText(formatPluralString);
-                        } else {
-                            if (chat.has_geo) {
-                                simpleTextView = this.statusTextView;
-                                i2 = R.string.MegaLocation;
-                            } else if (ChatObject.isPublic(chat)) {
-                                simpleTextView = this.statusTextView;
-                                i2 = R.string.MegaPublic;
-                            } else {
-                                simpleTextView = this.statusTextView;
-                                i2 = R.string.MegaPrivate;
-                            }
-                            simpleTextView.setText(LocaleController.getString(i2));
-                        }
-                    } else {
-                        int i5 = chat.participants_count;
-                        if (i5 != 0) {
-                            simpleTextView2 = this.statusTextView;
-                            formatPluralString = LocaleController.formatPluralString("Subscribers", i5, new Object[0]);
-                            simpleTextView2.setText(formatPluralString);
-                        } else {
-                            if (ChatObject.isPublic(chat)) {
-                                simpleTextView = this.statusTextView;
-                                i2 = R.string.ChannelPublic;
-                            } else {
-                                simpleTextView = this.statusTextView;
-                                i2 = R.string.ChannelPrivate;
-                            }
-                            simpleTextView.setText(LocaleController.getString(i2));
-                        }
-                    }
-                    this.avatarImageView.setForUserOrChat(chat, this.avatarDrawable);
-                } else {
-                    this.avatarImageView.setImageDrawable(this.avatarDrawable);
-                }
-                this.avatarImageView.setRoundRadius(AndroidUtilities.dp((chat == null && chat.forum) ? 14.0f : 24.0f));
-                if (this.imageView.getVisibility() == 0) {
-                }
-                return;
+        if (this.currentStatus != null) {
+            this.statusTextView.setTextColor(this.statusColor);
+            this.statusTextView.setText(this.currentStatus);
+            BackupImageView backupImageView = this.avatarImageView;
+            if (backupImageView != null) {
+                backupImageView.setForUserOrChat(user, this.avatarDrawable);
             }
+        } else if (user != null) {
             if (user.bot) {
                 this.statusTextView.setTextColor(this.statusColor);
                 if (user.bot_chat_history) {
-                    simpleTextView3 = this.statusTextView;
-                    i3 = R.string.BotStatusRead;
+                    this.statusTextView.setText(LocaleController.getString(R.string.BotStatusRead));
                 } else {
-                    simpleTextView3 = this.statusTextView;
-                    i3 = R.string.BotStatusCantRead;
+                    this.statusTextView.setText(LocaleController.getString(R.string.BotStatusCantRead));
+                }
+            } else if (user.id == UserConfig.getInstance(this.currentAccount).getClientUserId() || (((userStatus = user.status) != null && userStatus.expires > ConnectionsManager.getInstance(this.currentAccount).getCurrentTime()) || MessagesController.getInstance(this.currentAccount).onlinePrivacy.containsKey(Long.valueOf(user.id)))) {
+                this.statusTextView.setTextColor(this.statusOnlineColor);
+                this.statusTextView.setText(LocaleController.getString(R.string.Online));
+            } else {
+                this.statusTextView.setTextColor(this.statusColor);
+                this.statusTextView.setText(LocaleController.formatUserStatus(this.currentAccount, user));
+            }
+            this.avatarImageView.setForUserOrChat(user, this.avatarDrawable);
+        } else if (chat != null) {
+            this.statusTextView.setTextColor(this.statusColor);
+            if (ChatObject.isChannel(chat) && !chat.megagroup) {
+                int i2 = chat.participants_count;
+                if (i2 != 0) {
+                    this.statusTextView.setText(LocaleController.formatPluralString("Subscribers", i2, new Object[0]));
+                } else if (!ChatObject.isPublic(chat)) {
+                    this.statusTextView.setText(LocaleController.getString(R.string.ChannelPrivate));
+                } else {
+                    this.statusTextView.setText(LocaleController.getString(R.string.ChannelPublic));
                 }
             } else {
-                if (user.id != UserConfig.getInstance(this.currentAccount).getClientUserId() && (((userStatus = user.status) == null || userStatus.expires <= ConnectionsManager.getInstance(this.currentAccount).getCurrentTime()) && !MessagesController.getInstance(this.currentAccount).onlinePrivacy.containsKey(Long.valueOf(user.id)))) {
-                    this.statusTextView.setTextColor(this.statusColor);
-                    simpleTextView3 = this.statusTextView;
-                    formatUserStatus = LocaleController.formatUserStatus(this.currentAccount, user);
-                    simpleTextView3.setText(formatUserStatus);
-                    backupImageView = this.avatarImageView;
-                    backupImageView.setForUserOrChat(user, this.avatarDrawable);
-                    this.avatarImageView.setRoundRadius(AndroidUtilities.dp((chat == null && chat.forum) ? 14.0f : 24.0f));
-                    if ((this.imageView.getVisibility() == 0 || this.currentDrawable != 0) && (this.imageView.getVisibility() != 8 || this.currentDrawable == 0)) {
-                        return;
-                    }
-                    this.imageView.setVisibility(this.currentDrawable == 0 ? 8 : 0);
-                    this.imageView.setImageResource(this.currentDrawable);
-                    return;
+                int i3 = chat.participants_count;
+                if (i3 != 0) {
+                    this.statusTextView.setText(LocaleController.formatPluralString("Members", i3, new Object[0]));
+                } else if (chat.has_geo) {
+                    this.statusTextView.setText(LocaleController.getString(R.string.MegaLocation));
+                } else if (!ChatObject.isPublic(chat)) {
+                    this.statusTextView.setText(LocaleController.getString(R.string.MegaPrivate));
+                } else {
+                    this.statusTextView.setText(LocaleController.getString(R.string.MegaPublic));
                 }
-                this.statusTextView.setTextColor(this.statusOnlineColor);
-                simpleTextView3 = this.statusTextView;
-                i3 = R.string.Online;
             }
-            formatUserStatus = LocaleController.getString(i3);
-            simpleTextView3.setText(formatUserStatus);
-            backupImageView = this.avatarImageView;
-            backupImageView.setForUserOrChat(user, this.avatarDrawable);
-            this.avatarImageView.setRoundRadius(AndroidUtilities.dp((chat == null && chat.forum) ? 14.0f : 24.0f));
-            if (this.imageView.getVisibility() == 0) {
-            }
+            this.avatarImageView.setForUserOrChat(chat, this.avatarDrawable);
+        } else {
+            this.avatarImageView.setImageDrawable(this.avatarDrawable);
+        }
+        this.avatarImageView.setRoundRadius(AndroidUtilities.dp((chat == null || !chat.forum) ? 24.0f : 14.0f));
+        if (!(this.imageView.getVisibility() == 0 && this.currentDrawable == 0) && (this.imageView.getVisibility() != 8 || this.currentDrawable == 0)) {
             return;
         }
-        this.statusTextView.setTextColor(this.statusColor);
-        this.statusTextView.setText(this.currentStatus);
-        backupImageView = this.avatarImageView;
+        this.imageView.setVisibility(this.currentDrawable == 0 ? 8 : 0);
+        this.imageView.setImageResource(this.currentDrawable);
     }
 }

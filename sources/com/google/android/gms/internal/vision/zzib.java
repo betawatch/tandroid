@@ -11,10 +11,6 @@ final class zzib {
         this.zza = zzii.zza(bArr);
     }
 
-    /* synthetic */ zzib(int i, zzhs zzhsVar) {
-        this(i);
-    }
-
     public final zzht zza() {
         this.zza.zzb();
         return new zzid(this.zzb);
@@ -22,5 +18,9 @@ final class zzib {
 
     public final zzii zzb() {
         return this.zza;
+    }
+
+    /* synthetic */ zzib(int i, zzhs zzhsVar) {
+        this(i);
     }
 }

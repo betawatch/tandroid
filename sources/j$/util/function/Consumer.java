@@ -3,13 +3,6 @@ package j$.util.function;
 /* loaded from: classes2.dex */
 public interface Consumer<T> {
 
-    public final /* synthetic */ class -CC {
-        public static Consumer $default$andThen(Consumer consumer, Consumer consumer2) {
-            consumer2.getClass();
-            return new j$.util.concurrent.s(3, consumer, consumer2);
-        }
-    }
-
     public final /* synthetic */ class VivifiedWrapper implements Consumer {
         public final /* synthetic */ java.util.function.Consumer a;
 
@@ -84,4 +77,11 @@ public interface Consumer<T> {
     void accept(T t);
 
     Consumer<T> andThen(Consumer<? super T> consumer);
+
+    public final /* synthetic */ class -CC {
+        public static Consumer $default$andThen(Consumer consumer, Consumer consumer2) {
+            consumer2.getClass();
+            return new j$.util.concurrent.s(3, consumer, consumer2);
+        }
+    }
 }

@@ -6,6 +6,14 @@ import java.util.Comparator;
 
 /* loaded from: classes2.dex */
 public final /* synthetic */ class Comparator$-EL {
+    public static Comparator reversed(Comparator comparator) {
+        if (!(comparator instanceof c)) {
+            return Collections.reverseOrder(comparator);
+        }
+        ((d) ((c) comparator)).getClass();
+        return Comparator$-CC.reverseOrder();
+    }
+
     public static b a(Comparator comparator, Comparator comparator2) {
         if (!(comparator instanceof c)) {
             comparator2.getClass();
@@ -15,14 +23,6 @@ public final /* synthetic */ class Comparator$-EL {
         dVar.getClass();
         comparator2.getClass();
         return new b(dVar, comparator2, 0);
-    }
-
-    public static Comparator reversed(Comparator comparator) {
-        if (!(comparator instanceof c)) {
-            return Collections.reverseOrder(comparator);
-        }
-        ((d) ((c) comparator)).getClass();
-        return Comparator$-CC.reverseOrder();
     }
 
     public static Comparator thenComparingInt(Comparator comparator, ToIntFunction toIntFunction) {

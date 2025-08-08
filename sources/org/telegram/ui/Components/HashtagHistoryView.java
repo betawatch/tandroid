@@ -22,7 +22,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class HashtagHistoryView extends FrameLayout {
     private UniversalAdapter adapter;
     private AnimatorSet animation;
@@ -33,6 +33,11 @@ public abstract class HashtagHistoryView extends FrameLayout {
     private ArrayList history;
     private UniversalRecyclerView recyclerView;
     private Theme.ResourcesProvider resourcesProvider;
+
+    protected abstract void onClick(String str);
+
+    protected void onScrolled(RecyclerView recyclerView, int i, int i2) {
+    }
 
     public HashtagHistoryView(Context context, Theme.ResourcesProvider resourcesProvider, int i) {
         super(context);
@@ -85,6 +90,54 @@ public abstract class HashtagHistoryView extends FrameLayout {
         this.recyclerView.setEmptyView(this.emptyView);
     }
 
+    public void show(final boolean z) {
+        if (z == isShowing()) {
+            return;
+        }
+        AnimatorSet animatorSet = this.animation;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+            this.animation = null;
+        }
+        if (z) {
+            setVisibility(0);
+        }
+        setTag(z ? 1 : null);
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        this.animation = animatorSet2;
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(this, (Property<HashtagHistoryView, Float>) View.ALPHA, z ? 1.0f : 0.0f));
+        this.animation.setInterpolator(CubicBezierInterpolator.EASE_IN);
+        this.animation.setDuration(180L);
+        this.animation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.HashtagHistoryView.2
+            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+            public void onAnimationEnd(Animator animator) {
+                if (animator.equals(HashtagHistoryView.this.animation)) {
+                    HashtagHistoryView.this.animation = null;
+                    if (z) {
+                        return;
+                    }
+                    HashtagHistoryView.this.setVisibility(8);
+                }
+            }
+
+            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+            public void onAnimationCancel(Animator animator) {
+                if (animator.equals(HashtagHistoryView.this.animation)) {
+                    HashtagHistoryView.this.animation = null;
+                }
+            }
+        });
+        this.animation.start();
+    }
+
+    public boolean isShowing() {
+        return getTag() != null;
+    }
+
+    public void update() {
+        this.adapter.update(true);
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     public void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter) {
         ArrayList arrayList2 = new ArrayList(0);
@@ -103,19 +156,13 @@ public abstract class HashtagHistoryView extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onLongClick$0(String str, AlertDialog alertDialog, int i) {
-        HashtagSearchController.getInstance(this.currentAccount).removeHashtagFromHistory(str);
-        update();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
     public void onClick(UItem uItem, View view, int i, float f, float f2) {
         int i2 = uItem.id;
-        if (i2 != 0) {
-            onClick((String) this.history.get(i2 - 1));
-        } else {
+        if (i2 == 0) {
             HashtagSearchController.getInstance(this.currentAccount).clearHistory();
             update();
+        } else {
+            onClick((String) this.history.get(i2 - 1));
         }
     }
 
@@ -140,56 +187,9 @@ public abstract class HashtagHistoryView extends FrameLayout {
         return true;
     }
 
-    public boolean isShowing() {
-        return getTag() != null;
-    }
-
-    protected abstract void onClick(String str);
-
-    protected void onScrolled(RecyclerView recyclerView, int i, int i2) {
-    }
-
-    public void show(final boolean z) {
-        if (z == isShowing()) {
-            return;
-        }
-        AnimatorSet animatorSet = this.animation;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-            this.animation = null;
-        }
-        if (z) {
-            setVisibility(0);
-        }
-        setTag(z ? 1 : null);
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        this.animation = animatorSet2;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(this, (Property<HashtagHistoryView, Float>) View.ALPHA, z ? 1.0f : 0.0f));
-        this.animation.setInterpolator(CubicBezierInterpolator.EASE_IN);
-        this.animation.setDuration(180L);
-        this.animation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.HashtagHistoryView.2
-            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-            public void onAnimationCancel(Animator animator) {
-                if (animator.equals(HashtagHistoryView.this.animation)) {
-                    HashtagHistoryView.this.animation = null;
-                }
-            }
-
-            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-            public void onAnimationEnd(Animator animator) {
-                if (animator.equals(HashtagHistoryView.this.animation)) {
-                    HashtagHistoryView.this.animation = null;
-                    if (z) {
-                        return;
-                    }
-                    HashtagHistoryView.this.setVisibility(8);
-                }
-            }
-        });
-        this.animation.start();
-    }
-
-    public void update() {
-        this.adapter.update(true);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$onLongClick$0(String str, AlertDialog alertDialog, int i) {
+        HashtagSearchController.getInstance(this.currentAccount).removeHashtagFromHistory(str);
+        update();
     }
 }

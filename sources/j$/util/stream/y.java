@@ -2,23 +2,47 @@ package j$.util.stream;
 
 /* loaded from: classes2.dex */
 final class y extends A {
-    public final /* synthetic */ int m;
+    @Override // j$.util.stream.b, j$.util.stream.BaseStream
+    public final /* bridge */ /* synthetic */ D parallel() {
+        parallel();
+        return this;
+    }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ y(b bVar, int i, int i2) {
-        super(bVar, i, 1);
-        this.m = i2;
+    @Override // j$.util.stream.b, j$.util.stream.BaseStream
+    public final /* bridge */ /* synthetic */ D sequential() {
+        sequential();
+        return this;
     }
 
     @Override // j$.util.stream.b
-    final e2 w0(int i, e2 e2Var) {
-        switch (this.m) {
-            case 0:
-                return e2Var;
-            case 1:
-                return new V(1, e2Var);
-            default:
-                return new e0(e2Var);
+    final boolean v0() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // j$.util.stream.b
+    final d2 w0(int i, d2 d2Var) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // j$.util.stream.A, j$.util.stream.D
+    public final void i(j$.util.function.l lVar) {
+        j$.util.D E0;
+        if (!isParallel()) {
+            E0 = A.E0(y0());
+            E0.e(lVar);
+        } else {
+            super.i(lVar);
+        }
+    }
+
+    @Override // j$.util.stream.A, j$.util.stream.D
+    public final void c0(j$.util.function.l lVar) {
+        j$.util.D E0;
+        if (!isParallel()) {
+            E0 = A.E0(y0());
+            E0.e(lVar);
+        } else {
+            super.c0(lVar);
         }
     }
 }

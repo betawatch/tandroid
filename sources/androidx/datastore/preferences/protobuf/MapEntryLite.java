@@ -28,10 +28,6 @@ public class MapEntryLite {
         this.value = obj2;
     }
 
-    static int computeSerializedSize(Metadata metadata, Object obj, Object obj2) {
-        return FieldSet.computeElementSize(metadata.keyType, 1, obj) + FieldSet.computeElementSize(metadata.valueType, 2, obj2);
-    }
-
     public static MapEntryLite newDefaultInstance(WireFormat.FieldType fieldType, Object obj, WireFormat.FieldType fieldType2, Object obj2) {
         return new MapEntryLite(fieldType, obj, fieldType2, obj2);
     }
@@ -39,6 +35,10 @@ public class MapEntryLite {
     static void writeTo(CodedOutputStream codedOutputStream, Metadata metadata, Object obj, Object obj2) {
         FieldSet.writeElement(codedOutputStream, metadata.keyType, 1, obj);
         FieldSet.writeElement(codedOutputStream, metadata.valueType, 2, obj2);
+    }
+
+    static int computeSerializedSize(Metadata metadata, Object obj, Object obj2) {
+        return FieldSet.computeElementSize(metadata.keyType, 1, obj) + FieldSet.computeElementSize(metadata.valueType, 2, obj2);
     }
 
     public int computeMessageSize(int i, Object obj, Object obj2) {

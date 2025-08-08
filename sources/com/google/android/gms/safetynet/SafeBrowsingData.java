@@ -24,14 +24,6 @@ public class SafeBrowsingData extends AbstractSafeParcelable {
     private byte[] zzg;
     private File zzh;
 
-    public SafeBrowsingData(String str, DataHolder dataHolder, ParcelFileDescriptor parcelFileDescriptor, long j, byte[] bArr) {
-        this.zzb = str;
-        this.zzc = dataHolder;
-        this.zzd = parcelFileDescriptor;
-        this.zze = j;
-        this.zzf = bArr;
-    }
-
     private static final void zza(Closeable closeable) {
         try {
             closeable.close();
@@ -57,6 +49,14 @@ public class SafeBrowsingData extends AbstractSafeParcelable {
 
     public byte[] getState() {
         return this.zzf;
+    }
+
+    public SafeBrowsingData(String str, DataHolder dataHolder, ParcelFileDescriptor parcelFileDescriptor, long j, byte[] bArr) {
+        this.zzb = str;
+        this.zzc = dataHolder;
+        this.zzd = parcelFileDescriptor;
+        this.zze = j;
+        this.zzf = bArr;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:9:0x0043  */
@@ -107,13 +107,14 @@ public class SafeBrowsingData extends AbstractSafeParcelable {
                         dataOutputStream.writeInt(this.zzg.length);
                         dataOutputStream.write(this.zzg);
                         zza(dataOutputStream);
-                        i |= 1;
+                        zzj.zza(this, parcel, i | 1);
                     } catch (IOException unused3) {
                         zza(dataOutputStream);
                     } catch (Throwable th3) {
                         zza(dataOutputStream);
                         throw th3;
                     }
+                    this.zzd = null;
                 }
             }
             fileOutputStream = null;

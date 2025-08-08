@@ -14,13 +14,6 @@ public final class CardRequirements extends AbstractSafeParcelable {
     boolean zzc;
     int zzd;
 
-    CardRequirements(ArrayList arrayList, boolean z, boolean z2, int i) {
-        this.zza = arrayList;
-        this.zzb = z;
-        this.zzc = z2;
-        this.zzd = i;
-    }
-
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
@@ -29,5 +22,12 @@ public final class CardRequirements extends AbstractSafeParcelable {
         SafeParcelWriter.writeBoolean(parcel, 3, this.zzc);
         SafeParcelWriter.writeInt(parcel, 4, this.zzd);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    CardRequirements(ArrayList arrayList, boolean z, boolean z2, int i) {
+        this.zza = arrayList;
+        this.zzb = z;
+        this.zzc = z2;
+        this.zzd = i;
     }
 }

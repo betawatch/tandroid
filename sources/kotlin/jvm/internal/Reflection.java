@@ -6,7 +6,7 @@ import kotlin.reflect.KFunction;
 import kotlin.reflect.KProperty0;
 import kotlin.reflect.KProperty2;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class Reflection {
     private static final KClass[] EMPTY_K_CLASS_ARRAY;
     private static final ReflectionFactory factory;
@@ -24,16 +24,24 @@ public abstract class Reflection {
         EMPTY_K_CLASS_ARRAY = new KClass[0];
     }
 
-    public static KFunction function(FunctionReference functionReference) {
-        return factory.function(functionReference);
+    public static KDeclarationContainer getOrCreateKotlinPackage(Class cls) {
+        return factory.getOrCreateKotlinPackage(cls, "");
     }
 
     public static KClass getOrCreateKotlinClass(Class cls) {
         return factory.getOrCreateKotlinClass(cls);
     }
 
-    public static KDeclarationContainer getOrCreateKotlinPackage(Class cls) {
-        return factory.getOrCreateKotlinPackage(cls, "");
+    public static String renderLambdaToString(Lambda lambda) {
+        return factory.renderLambdaToString(lambda);
+    }
+
+    public static String renderLambdaToString(FunctionBase functionBase) {
+        return factory.renderLambdaToString(functionBase);
+    }
+
+    public static KFunction function(FunctionReference functionReference) {
+        return factory.function(functionReference);
     }
 
     public static KProperty0 property0(PropertyReference0 propertyReference0) {
@@ -42,13 +50,5 @@ public abstract class Reflection {
 
     public static KProperty2 property2(PropertyReference2 propertyReference2) {
         return factory.property2(propertyReference2);
-    }
-
-    public static String renderLambdaToString(FunctionBase functionBase) {
-        return factory.renderLambdaToString(functionBase);
-    }
-
-    public static String renderLambdaToString(Lambda lambda) {
-        return factory.renderLambdaToString(lambda);
     }
 }

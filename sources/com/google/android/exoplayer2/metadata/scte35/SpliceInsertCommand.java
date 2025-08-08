@@ -35,28 +35,6 @@ public final class SpliceInsertCommand extends SpliceCommand {
     public final boolean spliceImmediateFlag;
     public final int uniqueProgramId;
 
-    public static final class ComponentSplice {
-        public final long componentSplicePlaybackPositionUs;
-        public final long componentSplicePts;
-        public final int componentTag;
-
-        private ComponentSplice(int i, long j, long j2) {
-            this.componentTag = i;
-            this.componentSplicePts = j;
-            this.componentSplicePlaybackPositionUs = j2;
-        }
-
-        public static ComponentSplice createFromParcel(Parcel parcel) {
-            return new ComponentSplice(parcel.readInt(), parcel.readLong(), parcel.readLong());
-        }
-
-        public void writeToParcel(Parcel parcel) {
-            parcel.writeInt(this.componentTag);
-            parcel.writeLong(this.componentSplicePts);
-            parcel.writeLong(this.componentSplicePlaybackPositionUs);
-        }
-    }
-
     private SpliceInsertCommand(long j, boolean z, boolean z2, boolean z3, boolean z4, long j2, long j3, List list, boolean z5, long j4, int i, int i2, int i3) {
         this.spliceEventId = j;
         this.spliceEventCancelIndicator = z;
@@ -160,6 +138,28 @@ public final class SpliceInsertCommand extends SpliceCommand {
             j2 = j5;
         }
         return new SpliceInsertCommand(readUnsignedInt, z6, z, z4, z2, j2, timestampAdjuster.adjustTsTimestamp(j2), list, z3, j3, i, i2, i3);
+    }
+
+    public static final class ComponentSplice {
+        public final long componentSplicePlaybackPositionUs;
+        public final long componentSplicePts;
+        public final int componentTag;
+
+        private ComponentSplice(int i, long j, long j2) {
+            this.componentTag = i;
+            this.componentSplicePts = j;
+            this.componentSplicePlaybackPositionUs = j2;
+        }
+
+        public void writeToParcel(Parcel parcel) {
+            parcel.writeInt(this.componentTag);
+            parcel.writeLong(this.componentSplicePts);
+            parcel.writeLong(this.componentSplicePlaybackPositionUs);
+        }
+
+        public static ComponentSplice createFromParcel(Parcel parcel) {
+            return new ComponentSplice(parcel.readInt(), parcel.readLong(), parcel.readLong());
+        }
     }
 
     @Override // android.os.Parcelable

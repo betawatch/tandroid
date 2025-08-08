@@ -16,15 +16,8 @@ public final class StatsDataSource implements DataSource {
         this.dataSource = (DataSource) Assertions.checkNotNull(dataSource);
     }
 
-    @Override // com.google.android.exoplayer2.upstream.DataSource
-    public void addTransferListener(TransferListener transferListener) {
-        Assertions.checkNotNull(transferListener);
-        this.dataSource.addTransferListener(transferListener);
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.DataSource
-    public void close() {
-        this.dataSource.close();
+    public void resetBytesRead() {
+        this.bytesRead = 0L;
     }
 
     public long getBytesRead() {
@@ -40,13 +33,9 @@ public final class StatsDataSource implements DataSource {
     }
 
     @Override // com.google.android.exoplayer2.upstream.DataSource
-    public Map getResponseHeaders() {
-        return this.dataSource.getResponseHeaders();
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.DataSource
-    public Uri getUri() {
-        return this.dataSource.getUri();
+    public void addTransferListener(TransferListener transferListener) {
+        Assertions.checkNotNull(transferListener);
+        this.dataSource.addTransferListener(transferListener);
     }
 
     @Override // com.google.android.exoplayer2.upstream.DataSource
@@ -68,7 +57,18 @@ public final class StatsDataSource implements DataSource {
         return read;
     }
 
-    public void resetBytesRead() {
-        this.bytesRead = 0L;
+    @Override // com.google.android.exoplayer2.upstream.DataSource
+    public Uri getUri() {
+        return this.dataSource.getUri();
+    }
+
+    @Override // com.google.android.exoplayer2.upstream.DataSource
+    public Map getResponseHeaders() {
+        return this.dataSource.getResponseHeaders();
+    }
+
+    @Override // com.google.android.exoplayer2.upstream.DataSource
+    public void close() {
+        this.dataSource.close();
     }
 }

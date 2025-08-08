@@ -12,16 +12,16 @@ public final class zzau extends AbstractSafeParcelable {
     String zza;
     Bundle zzb;
 
-    zzau(String str, Bundle bundle) {
-        this.zza = str;
-        this.zzb = bundle;
-    }
-
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
         SafeParcelWriter.writeString(parcel, 2, this.zza, false);
         SafeParcelWriter.writeBundle(parcel, 3, this.zzb, false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    zzau(String str, Bundle bundle) {
+        this.zza = str;
+        this.zzb = bundle;
     }
 }

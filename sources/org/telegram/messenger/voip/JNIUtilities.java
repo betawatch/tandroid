@@ -1,6 +1,7 @@
 package org.telegram.messenger.voip;
 
 import android.net.ConnectivityManager;
+import android.net.LinkAddress;
 import android.net.LinkProperties;
 import android.net.Network;
 import android.net.wifi.WifiInfo;
@@ -15,80 +16,40 @@ import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.util.Enumeration;
 import java.util.Iterator;
-import java.util.List;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 
 /* loaded from: classes3.dex */
 public class JNIUtilities {
-    public static String[] getCarrierInfo() {
-        String str;
-        String str2;
-        int defaultDataSubscriptionId;
-        TelephonyManager telephonyManager = (TelephonyManager) ApplicationLoader.applicationContext.getSystemService("phone");
-        if (Build.VERSION.SDK_INT >= 24) {
-            defaultDataSubscriptionId = SubscriptionManager.getDefaultDataSubscriptionId();
-            telephonyManager = telephonyManager.createForSubscriptionId(defaultDataSubscriptionId);
-        }
-        if (TextUtils.isEmpty(telephonyManager.getNetworkOperatorName())) {
-            return null;
-        }
-        String networkOperator = telephonyManager.getNetworkOperator();
-        if (networkOperator == null || networkOperator.length() <= 3) {
-            str = "";
-            str2 = "";
-        } else {
-            str = networkOperator.substring(0, 3);
-            str2 = networkOperator.substring(3);
-        }
-        return new String[]{telephonyManager.getNetworkOperatorName(), telephonyManager.getNetworkCountryIso().toUpperCase(), str, str2};
+    public static int getMaxVideoResolution() {
+        return 320;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:5:0x0012, code lost:
-    
-        r0 = r0.getLinkProperties(r1);
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public static String getCurrentNetworkInterfaceName() {
         Network activeNetwork;
         LinkProperties linkProperties;
-        String interfaceName;
         ConnectivityManager connectivityManager = (ConnectivityManager) ApplicationLoader.applicationContext.getSystemService("connectivity");
         activeNetwork = connectivityManager.getActiveNetwork();
-        if (activeNetwork == null || linkProperties == null) {
+        if (activeNetwork == null || (linkProperties = connectivityManager.getLinkProperties(activeNetwork)) == null) {
             return null;
         }
-        interfaceName = linkProperties.getInterfaceName();
-        return interfaceName;
+        return linkProperties.getInterfaceName();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:7:0x001b, code lost:
-    
-        r0 = r0.getLinkProperties(r1);
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public static String[] getLocalNetworkAddressesAndInterfaceName() {
         Network activeNetwork;
         LinkProperties linkProperties;
-        List linkAddresses;
-        String interfaceName;
-        InetAddress address;
         ConnectivityManager connectivityManager = (ConnectivityManager) ApplicationLoader.applicationContext.getSystemService("connectivity");
         String str = null;
         if (Build.VERSION.SDK_INT >= 23) {
             activeNetwork = connectivityManager.getActiveNetwork();
-            if (activeNetwork == null || linkProperties == null) {
+            if (activeNetwork == null || (linkProperties = connectivityManager.getLinkProperties(activeNetwork)) == null) {
                 return null;
             }
-            linkAddresses = linkProperties.getLinkAddresses();
-            Iterator it = linkAddresses.iterator();
+            Iterator<LinkAddress> it = linkProperties.getLinkAddresses().iterator();
             String str2 = null;
             while (it.hasNext()) {
-                address = JNIUtilities$$ExternalSyntheticApiModelOutline1.m(it.next()).getAddress();
+                InetAddress address = it.next().getAddress();
                 if (address instanceof Inet4Address) {
                     if (!address.isLinkLocalAddress()) {
                         str = address.getHostAddress();
@@ -97,8 +58,7 @@ public class JNIUtilities {
                     str2 = address.getHostAddress();
                 }
             }
-            interfaceName = linkProperties.getInterfaceName();
-            return new String[]{interfaceName, str, str2};
+            return new String[]{linkProperties.getInterfaceName(), str, str2};
         }
         try {
             Enumeration<NetworkInterface> networkInterfaces = NetworkInterface.getNetworkInterfaces();
@@ -131,12 +91,27 @@ public class JNIUtilities {
         }
     }
 
-    public static int getMaxVideoResolution() {
-        return 320;
-    }
-
-    public static String getSupportedVideoCodecs() {
-        return "";
+    public static String[] getCarrierInfo() {
+        String str;
+        String str2;
+        int defaultDataSubscriptionId;
+        TelephonyManager telephonyManager = (TelephonyManager) ApplicationLoader.applicationContext.getSystemService("phone");
+        if (Build.VERSION.SDK_INT >= 24) {
+            defaultDataSubscriptionId = SubscriptionManager.getDefaultDataSubscriptionId();
+            telephonyManager = telephonyManager.createForSubscriptionId(defaultDataSubscriptionId);
+        }
+        if (TextUtils.isEmpty(telephonyManager.getNetworkOperatorName())) {
+            return null;
+        }
+        String networkOperator = telephonyManager.getNetworkOperator();
+        if (networkOperator != null && networkOperator.length() > 3) {
+            str = networkOperator.substring(0, 3);
+            str2 = networkOperator.substring(3);
+        } else {
+            str = "";
+            str2 = "";
+        }
+        return new String[]{telephonyManager.getNetworkOperatorName(), telephonyManager.getNetworkCountryIso().toUpperCase(), str, str2};
     }
 
     public static int[] getWifiInfo() {
@@ -146,5 +121,9 @@ public class JNIUtilities {
         } catch (Exception unused) {
             return null;
         }
+    }
+
+    public static String getSupportedVideoCodecs() {
+        return "";
     }
 }

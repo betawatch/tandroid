@@ -33,6 +33,9 @@ final class EmojiEditableFactory extends Editable.Factory {
     @Override // android.text.Editable.Factory
     public Editable newEditable(CharSequence charSequence) {
         Class cls = sWatcherClass;
-        return cls != null ? SpannableBuilder.create(cls, charSequence) : super.newEditable(charSequence);
+        if (cls != null) {
+            return SpannableBuilder.create(cls, charSequence);
+        }
+        return super.newEditable(charSequence);
     }
 }

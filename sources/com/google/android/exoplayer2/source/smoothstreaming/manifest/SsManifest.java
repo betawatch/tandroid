@@ -77,17 +77,16 @@ public class SsManifest implements FilterableManifest {
             this.chunkCount = list.size();
         }
 
-        public Uri buildRequestUri(int i, int i2) {
-            Assertions.checkState(this.formats != null);
-            Assertions.checkState(this.chunkStartTimes != null);
-            Assertions.checkState(i2 < this.chunkStartTimes.size());
-            String num = Integer.toString(this.formats[i].bitrate);
-            String l = ((Long) this.chunkStartTimes.get(i2)).toString();
-            return UriUtil.resolveToUri(this.baseUri, this.chunkTemplate.replace("{bitrate}", num).replace("{Bitrate}", num).replace("{start time}", l).replace("{start_time}", l));
-        }
-
         public StreamElement copy(Format[] formatArr) {
             return new StreamElement(this.baseUri, this.chunkTemplate, this.type, this.subType, this.timescale, this.name, this.maxWidth, this.maxHeight, this.displayWidth, this.displayHeight, this.language, formatArr, this.chunkStartTimes, this.chunkStartTimesUs, this.lastChunkDurationUs);
+        }
+
+        public int getChunkIndex(long j) {
+            return Util.binarySearchFloor(this.chunkStartTimesUs, j, true, true);
+        }
+
+        public long getStartTimeUs(int i) {
+            return this.chunkStartTimesUs[i];
         }
 
         public long getChunkDurationUs(int i) {
@@ -98,13 +97,18 @@ public class SsManifest implements FilterableManifest {
             return jArr[i + 1] - jArr[i];
         }
 
-        public int getChunkIndex(long j) {
-            return Util.binarySearchFloor(this.chunkStartTimesUs, j, true, true);
+        public Uri buildRequestUri(int i, int i2) {
+            Assertions.checkState(this.formats != null);
+            Assertions.checkState(this.chunkStartTimes != null);
+            Assertions.checkState(i2 < this.chunkStartTimes.size());
+            String num = Integer.toString(this.formats[i].bitrate);
+            String l = ((Long) this.chunkStartTimes.get(i2)).toString();
+            return UriUtil.resolveToUri(this.baseUri, this.chunkTemplate.replace("{bitrate}", num).replace("{Bitrate}", num).replace("{start time}", l).replace("{start_time}", l));
         }
+    }
 
-        public long getStartTimeUs(int i) {
-            return this.chunkStartTimesUs[i];
-        }
+    public SsManifest(int i, int i2, long j, long j2, long j3, int i3, boolean z, ProtectionElement protectionElement, StreamElement[] streamElementArr) {
+        this(i, i2, j2 == 0 ? -9223372036854775807L : Util.scaleLargeTimestamp(j2, 1000000L, j), j3 != 0 ? Util.scaleLargeTimestamp(j3, 1000000L, j) : -9223372036854775807L, i3, z, protectionElement, streamElementArr);
     }
 
     private SsManifest(int i, int i2, long j, long j2, int i3, boolean z, ProtectionElement protectionElement, StreamElement[] streamElementArr) {
@@ -116,10 +120,6 @@ public class SsManifest implements FilterableManifest {
         this.isLive = z;
         this.protectionElement = protectionElement;
         this.streamElements = streamElementArr;
-    }
-
-    public SsManifest(int i, int i2, long j, long j2, long j3, int i3, boolean z, ProtectionElement protectionElement, StreamElement[] streamElementArr) {
-        this(i, i2, j2 == 0 ? -9223372036854775807L : Util.scaleLargeTimestamp(j2, 1000000L, j), j3 != 0 ? Util.scaleLargeTimestamp(j3, 1000000L, j) : -9223372036854775807L, i3, z, protectionElement, streamElementArr);
     }
 
     @Override // com.google.android.exoplayer2.offline.FilterableManifest

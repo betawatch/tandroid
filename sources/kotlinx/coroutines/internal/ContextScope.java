@@ -3,7 +3,7 @@ package kotlinx.coroutines.internal;
 import kotlin.coroutines.CoroutineContext;
 import kotlinx.coroutines.CoroutineScope;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class ContextScope implements CoroutineScope {
     private final CoroutineContext coroutineContext;
 

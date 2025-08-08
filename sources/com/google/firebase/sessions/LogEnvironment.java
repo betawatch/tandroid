@@ -2,7 +2,7 @@ package com.google.firebase.sessions;
 
 import com.google.firebase.encoders.json.NumberedEnum;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public enum LogEnvironment implements NumberedEnum {
     LOG_ENVIRONMENT_UNKNOWN(0),
     LOG_ENVIRONMENT_AUTOPUSH(1),

@@ -50,6 +50,15 @@ public final class FlacExtractor implements Extractor {
     private final byte[] streamMarkerAndInfoBlock;
     private TrackOutput trackOutput;
 
+    @Override // com.google.android.exoplayer2.extractor.Extractor
+    public void release() {
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ Extractor[] lambda$static$0() {
+        return new Extractor[]{new FlacExtractor()};
+    }
+
     public FlacExtractor() {
         this(0);
     }
@@ -62,67 +71,66 @@ public final class FlacExtractor implements Extractor {
         this.state = 0;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x0020, code lost:
-    
-        r5.setPosition(r0);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x0027, code lost:
-    
-        return r4.sampleNumberHolder.sampleNumber;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    private long findFrame(ParsableByteArray parsableByteArray, boolean z) {
-        boolean z2;
-        Assertions.checkNotNull(this.flacStreamMetadata);
-        int position = parsableByteArray.getPosition();
-        while (true) {
-            if (position > parsableByteArray.limit() - 16) {
-                if (!z) {
-                    parsableByteArray.setPosition(position);
-                    return -1L;
-                }
-                while (position <= parsableByteArray.limit() - this.minFrameSize) {
-                    parsableByteArray.setPosition(position);
-                    try {
-                        z2 = FlacFrameReader.checkAndReadFrameHeader(parsableByteArray, this.flacStreamMetadata, this.frameStartMarker, this.sampleNumberHolder);
-                    } catch (IndexOutOfBoundsException unused) {
-                        z2 = false;
-                    }
-                    if (!(parsableByteArray.getPosition() <= parsableByteArray.limit() ? z2 : false)) {
-                        position++;
-                    }
-                }
-                parsableByteArray.setPosition(parsableByteArray.limit());
-                return -1L;
-            }
-            parsableByteArray.setPosition(position);
-            if (FlacFrameReader.checkAndReadFrameHeader(parsableByteArray, this.flacStreamMetadata, this.frameStartMarker, this.sampleNumberHolder)) {
-                break;
-            }
-            position++;
-        }
+    @Override // com.google.android.exoplayer2.extractor.Extractor
+    public boolean sniff(ExtractorInput extractorInput) {
+        FlacMetadataReader.peekId3Metadata(extractorInput, false);
+        return FlacMetadataReader.checkAndPeekStreamMarker(extractorInput);
     }
 
-    private void getFrameStartMarker(ExtractorInput extractorInput) {
-        this.frameStartMarker = FlacMetadataReader.getFrameStartMarker(extractorInput);
-        ((ExtractorOutput) Util.castNonNull(this.extractorOutput)).seekMap(getSeekMap(extractorInput.getPosition(), extractorInput.getLength()));
-        this.state = 5;
+    @Override // com.google.android.exoplayer2.extractor.Extractor
+    public void init(ExtractorOutput extractorOutput) {
+        this.extractorOutput = extractorOutput;
+        this.trackOutput = extractorOutput.track(0, 1);
+        extractorOutput.endTracks();
     }
 
-    private SeekMap getSeekMap(long j, long j2) {
-        Assertions.checkNotNull(this.flacStreamMetadata);
-        FlacStreamMetadata flacStreamMetadata = this.flacStreamMetadata;
-        if (flacStreamMetadata.seekTable != null) {
-            return new FlacSeekTableSeekMap(flacStreamMetadata, j);
+    @Override // com.google.android.exoplayer2.extractor.Extractor
+    public int read(ExtractorInput extractorInput, PositionHolder positionHolder) {
+        int i = this.state;
+        if (i == 0) {
+            readId3Metadata(extractorInput);
+            return 0;
         }
-        if (j2 == -1 || flacStreamMetadata.totalSamples <= 0) {
-            return new SeekMap.Unseekable(flacStreamMetadata.getDurationUs());
+        if (i == 1) {
+            getStreamMarkerAndInfoBlockBytes(extractorInput);
+            return 0;
         }
-        FlacBinarySearchSeeker flacBinarySearchSeeker = new FlacBinarySearchSeeker(flacStreamMetadata, this.frameStartMarker, j, j2);
-        this.binarySearchSeeker = flacBinarySearchSeeker;
-        return flacBinarySearchSeeker.getSeekMap();
+        if (i == 2) {
+            readStreamMarker(extractorInput);
+            return 0;
+        }
+        if (i == 3) {
+            readMetadataBlocks(extractorInput);
+            return 0;
+        }
+        if (i == 4) {
+            getFrameStartMarker(extractorInput);
+            return 0;
+        }
+        if (i == 5) {
+            return readFrames(extractorInput, positionHolder);
+        }
+        throw new IllegalStateException();
+    }
+
+    @Override // com.google.android.exoplayer2.extractor.Extractor
+    public void seek(long j, long j2) {
+        if (j == 0) {
+            this.state = 0;
+        } else {
+            FlacBinarySearchSeeker flacBinarySearchSeeker = this.binarySearchSeeker;
+            if (flacBinarySearchSeeker != null) {
+                flacBinarySearchSeeker.setSeekTargetUs(j2);
+            }
+        }
+        this.currentFrameFirstSampleNumber = j2 != 0 ? -1L : 0L;
+        this.currentFrameBytesWritten = 0;
+        this.buffer.reset(0);
+    }
+
+    private void readId3Metadata(ExtractorInput extractorInput) {
+        this.id3Metadata = FlacMetadataReader.readId3Metadata(extractorInput, !this.id3MetadataDisabled);
+        this.state = 1;
     }
 
     private void getStreamMarkerAndInfoBlockBytes(ExtractorInput extractorInput) {
@@ -132,13 +140,28 @@ public final class FlacExtractor implements Extractor {
         this.state = 2;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Extractor[] lambda$static$0() {
-        return new Extractor[]{new FlacExtractor()};
+    private void readStreamMarker(ExtractorInput extractorInput) {
+        FlacMetadataReader.readStreamMarker(extractorInput);
+        this.state = 3;
     }
 
-    private void outputSampleMetadata() {
-        ((TrackOutput) Util.castNonNull(this.trackOutput)).sampleMetadata((this.currentFrameFirstSampleNumber * 1000000) / ((FlacStreamMetadata) Util.castNonNull(this.flacStreamMetadata)).sampleRate, 1, this.currentFrameBytesWritten, 0, null);
+    private void readMetadataBlocks(ExtractorInput extractorInput) {
+        FlacMetadataReader.FlacStreamMetadataHolder flacStreamMetadataHolder = new FlacMetadataReader.FlacStreamMetadataHolder(this.flacStreamMetadata);
+        boolean z = false;
+        while (!z) {
+            z = FlacMetadataReader.readMetadataBlock(extractorInput, flacStreamMetadataHolder);
+            this.flacStreamMetadata = (FlacStreamMetadata) Util.castNonNull(flacStreamMetadataHolder.flacStreamMetadata);
+        }
+        Assertions.checkNotNull(this.flacStreamMetadata);
+        this.minFrameSize = Math.max(this.flacStreamMetadata.minFrameSize, 6);
+        ((TrackOutput) Util.castNonNull(this.trackOutput)).format(this.flacStreamMetadata.getFormat(this.streamMarkerAndInfoBlock, this.id3Metadata));
+        this.state = 4;
+    }
+
+    private void getFrameStartMarker(ExtractorInput extractorInput) {
+        this.frameStartMarker = FlacMetadataReader.getFrameStartMarker(extractorInput);
+        ((ExtractorOutput) Util.castNonNull(this.extractorOutput)).seekMap(getSeekMap(extractorInput.getPosition(), extractorInput.getLength()));
+        this.state = 5;
     }
 
     private int readFrames(ExtractorInput extractorInput, PositionHolder positionHolder) {
@@ -192,87 +215,54 @@ public final class FlacExtractor implements Extractor {
         return 0;
     }
 
-    private void readId3Metadata(ExtractorInput extractorInput) {
-        this.id3Metadata = FlacMetadataReader.readId3Metadata(extractorInput, !this.id3MetadataDisabled);
-        this.state = 1;
-    }
-
-    private void readMetadataBlocks(ExtractorInput extractorInput) {
-        FlacMetadataReader.FlacStreamMetadataHolder flacStreamMetadataHolder = new FlacMetadataReader.FlacStreamMetadataHolder(this.flacStreamMetadata);
-        boolean z = false;
-        while (!z) {
-            z = FlacMetadataReader.readMetadataBlock(extractorInput, flacStreamMetadataHolder);
-            this.flacStreamMetadata = (FlacStreamMetadata) Util.castNonNull(flacStreamMetadataHolder.flacStreamMetadata);
-        }
+    private SeekMap getSeekMap(long j, long j2) {
         Assertions.checkNotNull(this.flacStreamMetadata);
-        this.minFrameSize = Math.max(this.flacStreamMetadata.minFrameSize, 6);
-        ((TrackOutput) Util.castNonNull(this.trackOutput)).format(this.flacStreamMetadata.getFormat(this.streamMarkerAndInfoBlock, this.id3Metadata));
-        this.state = 4;
+        FlacStreamMetadata flacStreamMetadata = this.flacStreamMetadata;
+        if (flacStreamMetadata.seekTable != null) {
+            return new FlacSeekTableSeekMap(flacStreamMetadata, j);
+        }
+        if (j2 != -1 && flacStreamMetadata.totalSamples > 0) {
+            FlacBinarySearchSeeker flacBinarySearchSeeker = new FlacBinarySearchSeeker(flacStreamMetadata, this.frameStartMarker, j, j2);
+            this.binarySearchSeeker = flacBinarySearchSeeker;
+            return flacBinarySearchSeeker.getSeekMap();
+        }
+        return new SeekMap.Unseekable(flacStreamMetadata.getDurationUs());
     }
 
-    private void readStreamMarker(ExtractorInput extractorInput) {
-        FlacMetadataReader.readStreamMarker(extractorInput);
-        this.state = 3;
-    }
-
-    @Override // com.google.android.exoplayer2.extractor.Extractor
-    public void init(ExtractorOutput extractorOutput) {
-        this.extractorOutput = extractorOutput;
-        this.trackOutput = extractorOutput.track(0, 1);
-        extractorOutput.endTracks();
-    }
-
-    @Override // com.google.android.exoplayer2.extractor.Extractor
-    public int read(ExtractorInput extractorInput, PositionHolder positionHolder) {
-        int i = this.state;
-        if (i == 0) {
-            readId3Metadata(extractorInput);
-            return 0;
-        }
-        if (i == 1) {
-            getStreamMarkerAndInfoBlockBytes(extractorInput);
-            return 0;
-        }
-        if (i == 2) {
-            readStreamMarker(extractorInput);
-            return 0;
-        }
-        if (i == 3) {
-            readMetadataBlocks(extractorInput);
-            return 0;
-        }
-        if (i == 4) {
-            getFrameStartMarker(extractorInput);
-            return 0;
-        }
-        if (i == 5) {
-            return readFrames(extractorInput, positionHolder);
-        }
-        throw new IllegalStateException();
-    }
-
-    @Override // com.google.android.exoplayer2.extractor.Extractor
-    public void release() {
-    }
-
-    @Override // com.google.android.exoplayer2.extractor.Extractor
-    public void seek(long j, long j2) {
-        if (j == 0) {
-            this.state = 0;
-        } else {
-            FlacBinarySearchSeeker flacBinarySearchSeeker = this.binarySearchSeeker;
-            if (flacBinarySearchSeeker != null) {
-                flacBinarySearchSeeker.setSeekTargetUs(j2);
+    private long findFrame(ParsableByteArray parsableByteArray, boolean z) {
+        boolean z2;
+        Assertions.checkNotNull(this.flacStreamMetadata);
+        int position = parsableByteArray.getPosition();
+        while (position <= parsableByteArray.limit() - 16) {
+            parsableByteArray.setPosition(position);
+            if (FlacFrameReader.checkAndReadFrameHeader(parsableByteArray, this.flacStreamMetadata, this.frameStartMarker, this.sampleNumberHolder)) {
+                parsableByteArray.setPosition(position);
+                return this.sampleNumberHolder.sampleNumber;
             }
+            position++;
         }
-        this.currentFrameFirstSampleNumber = j2 != 0 ? -1L : 0L;
-        this.currentFrameBytesWritten = 0;
-        this.buffer.reset(0);
+        if (z) {
+            while (position <= parsableByteArray.limit() - this.minFrameSize) {
+                parsableByteArray.setPosition(position);
+                try {
+                    z2 = FlacFrameReader.checkAndReadFrameHeader(parsableByteArray, this.flacStreamMetadata, this.frameStartMarker, this.sampleNumberHolder);
+                } catch (IndexOutOfBoundsException unused) {
+                    z2 = false;
+                }
+                if (parsableByteArray.getPosition() <= parsableByteArray.limit() ? z2 : false) {
+                    parsableByteArray.setPosition(position);
+                    return this.sampleNumberHolder.sampleNumber;
+                }
+                position++;
+            }
+            parsableByteArray.setPosition(parsableByteArray.limit());
+            return -1L;
+        }
+        parsableByteArray.setPosition(position);
+        return -1L;
     }
 
-    @Override // com.google.android.exoplayer2.extractor.Extractor
-    public boolean sniff(ExtractorInput extractorInput) {
-        FlacMetadataReader.peekId3Metadata(extractorInput, false);
-        return FlacMetadataReader.checkAndPeekStreamMarker(extractorInput);
+    private void outputSampleMetadata() {
+        ((TrackOutput) Util.castNonNull(this.trackOutput)).sampleMetadata((this.currentFrameFirstSampleNumber * 1000000) / ((FlacStreamMetadata) Util.castNonNull(this.flacStreamMetadata)).sampleRate, 1, this.currentFrameBytesWritten, 0, null);
     }
 }

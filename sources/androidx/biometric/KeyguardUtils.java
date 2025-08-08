@@ -6,23 +6,6 @@ import android.os.Build;
 
 /* loaded from: classes.dex */
 abstract class KeyguardUtils {
-
-    private static class Api16Impl {
-        static boolean isKeyguardSecure(KeyguardManager keyguardManager) {
-            return keyguardManager.isKeyguardSecure();
-        }
-    }
-
-    private static class Api23Impl {
-        static KeyguardManager getKeyguardManager(Context context) {
-            return (KeyguardManager) context.getSystemService(KeyguardManager.class);
-        }
-
-        static boolean isDeviceSecure(KeyguardManager keyguardManager) {
-            return keyguardManager.isDeviceSecure();
-        }
-    }
-
     static KeyguardManager getKeyguardManager(Context context) {
         if (Build.VERSION.SDK_INT >= 23) {
             return Api23Impl.getKeyguardManager(context);
@@ -39,6 +22,25 @@ abstract class KeyguardUtils {
         if (keyguardManager == null) {
             return false;
         }
-        return Build.VERSION.SDK_INT >= 23 ? Api23Impl.isDeviceSecure(keyguardManager) : Api16Impl.isKeyguardSecure(keyguardManager);
+        if (Build.VERSION.SDK_INT >= 23) {
+            return Api23Impl.isDeviceSecure(keyguardManager);
+        }
+        return Api16Impl.isKeyguardSecure(keyguardManager);
+    }
+
+    private static class Api23Impl {
+        static KeyguardManager getKeyguardManager(Context context) {
+            return (KeyguardManager) context.getSystemService(KeyguardManager.class);
+        }
+
+        static boolean isDeviceSecure(KeyguardManager keyguardManager) {
+            return keyguardManager.isDeviceSecure();
+        }
+    }
+
+    private static class Api16Impl {
+        static boolean isKeyguardSecure(KeyguardManager keyguardManager) {
+            return keyguardManager.isKeyguardSecure();
+        }
     }
 }

@@ -14,12 +14,12 @@ class TwilightManager {
     private final LocationManager mLocationManager;
     private final TwilightState mTwilightState = new TwilightState();
 
-    private static class TwilightState {
-        boolean isNight;
-        long nextUpdate;
-
-        TwilightState() {
+    static TwilightManager getInstance(Context context) {
+        if (sInstance == null) {
+            Context applicationContext = context.getApplicationContext();
+            sInstance = new TwilightManager(applicationContext, (LocationManager) applicationContext.getSystemService("location"));
         }
+        return sInstance;
     }
 
     TwilightManager(Context context, LocationManager locationManager) {
@@ -27,12 +27,19 @@ class TwilightManager {
         this.mLocationManager = locationManager;
     }
 
-    static TwilightManager getInstance(Context context) {
-        if (sInstance == null) {
-            Context applicationContext = context.getApplicationContext();
-            sInstance = new TwilightManager(applicationContext, (LocationManager) applicationContext.getSystemService("location"));
+    boolean isNight() {
+        TwilightState twilightState = this.mTwilightState;
+        if (isStateValid()) {
+            return twilightState.isNight;
         }
-        return sInstance;
+        Location lastKnownLocation = getLastKnownLocation();
+        if (lastKnownLocation != null) {
+            updateState(lastKnownLocation);
+            return twilightState.isNight;
+        }
+        Log.i("TwilightManager", "Could not get last known location. This is probably because the app does not have any location permissions. Falling back to hardcoded sunrise/sunset values.");
+        int i = Calendar.getInstance().get(11);
+        return i < 6 || i >= 22;
     }
 
     private Location getLastKnownLocation() {
@@ -81,18 +88,11 @@ class TwilightManager {
         twilightState.nextUpdate = j;
     }
 
-    boolean isNight() {
-        TwilightState twilightState = this.mTwilightState;
-        if (isStateValid()) {
-            return twilightState.isNight;
+    private static class TwilightState {
+        boolean isNight;
+        long nextUpdate;
+
+        TwilightState() {
         }
-        Location lastKnownLocation = getLastKnownLocation();
-        if (lastKnownLocation != null) {
-            updateState(lastKnownLocation);
-            return twilightState.isNight;
-        }
-        Log.i("TwilightManager", "Could not get last known location. This is probably because the app does not have any location permissions. Falling back to hardcoded sunrise/sunset values.");
-        int i = Calendar.getInstance().get(11);
-        return i < 6 || i >= 22;
     }
 }

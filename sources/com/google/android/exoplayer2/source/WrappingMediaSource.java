@@ -10,8 +10,32 @@ public abstract class WrappingMediaSource extends CompositeMediaSource {
     private static final Void CHILD_SOURCE_ID = null;
     protected final MediaSource mediaSource;
 
+    protected MediaSource.MediaPeriodId getMediaPeriodIdForChildMediaPeriodId(MediaSource.MediaPeriodId mediaPeriodId) {
+        return mediaPeriodId;
+    }
+
+    protected long getMediaTimeForChildMediaTime(long j) {
+        return j;
+    }
+
+    protected int getWindowIndexForChildWindowIndex(int i) {
+        return i;
+    }
+
+    protected abstract void onChildSourceInfoRefreshed(Timeline timeline);
+
     protected WrappingMediaSource(MediaSource mediaSource) {
         this.mediaSource = mediaSource;
+    }
+
+    @Override // com.google.android.exoplayer2.source.CompositeMediaSource, com.google.android.exoplayer2.source.BaseMediaSource
+    protected final void prepareSourceInternal(TransferListener transferListener) {
+        super.prepareSourceInternal(transferListener);
+        prepareSourceInternal();
+    }
+
+    protected void prepareSourceInternal() {
+        prepareChildSource();
     }
 
     @Override // com.google.android.exoplayer2.source.BaseMediaSource, com.google.android.exoplayer2.source.MediaSource
@@ -19,47 +43,15 @@ public abstract class WrappingMediaSource extends CompositeMediaSource {
         return this.mediaSource.getInitialTimeline();
     }
 
-    @Override // com.google.android.exoplayer2.source.MediaSource
-    public MediaItem getMediaItem() {
-        return this.mediaSource.getMediaItem();
-    }
-
-    protected MediaSource.MediaPeriodId getMediaPeriodIdForChildMediaPeriodId(MediaSource.MediaPeriodId mediaPeriodId) {
-        return mediaPeriodId;
-    }
-
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.android.exoplayer2.source.CompositeMediaSource
-    public final MediaSource.MediaPeriodId getMediaPeriodIdForChildMediaPeriodId(Void r1, MediaSource.MediaPeriodId mediaPeriodId) {
-        return getMediaPeriodIdForChildMediaPeriodId(mediaPeriodId);
-    }
-
-    protected long getMediaTimeForChildMediaTime(long j) {
-        return j;
-    }
-
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.android.exoplayer2.source.CompositeMediaSource
-    public final long getMediaTimeForChildMediaTime(Void r1, long j) {
-        return getMediaTimeForChildMediaTime(j);
-    }
-
-    protected int getWindowIndexForChildWindowIndex(int i) {
-        return i;
-    }
-
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.android.exoplayer2.source.CompositeMediaSource
-    public final int getWindowIndexForChildWindowIndex(Void r1, int i) {
-        return getWindowIndexForChildWindowIndex(i);
-    }
-
     @Override // com.google.android.exoplayer2.source.BaseMediaSource, com.google.android.exoplayer2.source.MediaSource
     public boolean isSingleWindow() {
         return this.mediaSource.isSingleWindow();
     }
 
-    protected abstract void onChildSourceInfoRefreshed(Timeline timeline);
+    @Override // com.google.android.exoplayer2.source.MediaSource
+    public MediaItem getMediaItem() {
+        return this.mediaSource.getMediaItem();
+    }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.google.android.exoplayer2.source.CompositeMediaSource
@@ -68,17 +60,25 @@ public abstract class WrappingMediaSource extends CompositeMediaSource {
         onChildSourceInfoRefreshed(timeline);
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
+    @Override // com.google.android.exoplayer2.source.CompositeMediaSource
+    public final int getWindowIndexForChildWindowIndex(Void r1, int i) {
+        return getWindowIndexForChildWindowIndex(i);
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    @Override // com.google.android.exoplayer2.source.CompositeMediaSource
+    public final MediaSource.MediaPeriodId getMediaPeriodIdForChildMediaPeriodId(Void r1, MediaSource.MediaPeriodId mediaPeriodId) {
+        return getMediaPeriodIdForChildMediaPeriodId(mediaPeriodId);
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    @Override // com.google.android.exoplayer2.source.CompositeMediaSource
+    public final long getMediaTimeForChildMediaTime(Void r1, long j) {
+        return getMediaTimeForChildMediaTime(j);
+    }
+
     protected final void prepareChildSource() {
         prepareChildSource(CHILD_SOURCE_ID, this.mediaSource);
-    }
-
-    protected void prepareSourceInternal() {
-        prepareChildSource();
-    }
-
-    @Override // com.google.android.exoplayer2.source.CompositeMediaSource, com.google.android.exoplayer2.source.BaseMediaSource
-    protected final void prepareSourceInternal(TransferListener transferListener) {
-        super.prepareSourceInternal(transferListener);
-        prepareSourceInternal();
     }
 }

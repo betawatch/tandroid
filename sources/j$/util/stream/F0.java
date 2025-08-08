@@ -1,18 +1,24 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
+import j$.util.function.Consumer;
+import j$.util.function.IntFunction;
+
 /* loaded from: classes2.dex */
-public interface F0 extends G0 {
-    @Override // j$.util.stream.G0
+interface F0 {
     F0 a(int i);
 
-    Object c(int i);
+    long count();
 
-    void d(Object obj, int i);
+    void forEach(Consumer consumer);
 
-    Object e();
+    void i(Object[] objArr, int i);
 
-    void g(Object obj);
+    int p();
 
-    @Override // j$.util.stream.G0
-    j$.util.M spliterator();
+    Object[] s(IntFunction intFunction);
+
+    Spliterator spliterator();
+
+    F0 t(long j, long j2, IntFunction intFunction);
 }

@@ -4,7 +4,7 @@ import com.microsoft.appcenter.ingestion.models.json.JSONUtils;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class WrapperSdk implements Model {
     private String liveUpdateDeploymentKey;
     private String liveUpdatePackageHash;
@@ -12,6 +12,74 @@ public abstract class WrapperSdk implements Model {
     private String wrapperRuntimeVersion;
     private String wrapperSdkName;
     private String wrapperSdkVersion;
+
+    public String getWrapperSdkVersion() {
+        return this.wrapperSdkVersion;
+    }
+
+    public void setWrapperSdkVersion(String str) {
+        this.wrapperSdkVersion = str;
+    }
+
+    public String getWrapperSdkName() {
+        return this.wrapperSdkName;
+    }
+
+    public void setWrapperSdkName(String str) {
+        this.wrapperSdkName = str;
+    }
+
+    public String getWrapperRuntimeVersion() {
+        return this.wrapperRuntimeVersion;
+    }
+
+    public void setWrapperRuntimeVersion(String str) {
+        this.wrapperRuntimeVersion = str;
+    }
+
+    public String getLiveUpdateReleaseLabel() {
+        return this.liveUpdateReleaseLabel;
+    }
+
+    public void setLiveUpdateReleaseLabel(String str) {
+        this.liveUpdateReleaseLabel = str;
+    }
+
+    public String getLiveUpdateDeploymentKey() {
+        return this.liveUpdateDeploymentKey;
+    }
+
+    public void setLiveUpdateDeploymentKey(String str) {
+        this.liveUpdateDeploymentKey = str;
+    }
+
+    public String getLiveUpdatePackageHash() {
+        return this.liveUpdatePackageHash;
+    }
+
+    public void setLiveUpdatePackageHash(String str) {
+        this.liveUpdatePackageHash = str;
+    }
+
+    @Override // com.microsoft.appcenter.ingestion.models.Model
+    public void read(JSONObject jSONObject) {
+        setWrapperSdkVersion(jSONObject.optString("wrapperSdkVersion", null));
+        setWrapperSdkName(jSONObject.optString("wrapperSdkName", null));
+        setWrapperRuntimeVersion(jSONObject.optString("wrapperRuntimeVersion", null));
+        setLiveUpdateReleaseLabel(jSONObject.optString("liveUpdateReleaseLabel", null));
+        setLiveUpdateDeploymentKey(jSONObject.optString("liveUpdateDeploymentKey", null));
+        setLiveUpdatePackageHash(jSONObject.optString("liveUpdatePackageHash", null));
+    }
+
+    @Override // com.microsoft.appcenter.ingestion.models.Model
+    public void write(JSONStringer jSONStringer) {
+        JSONUtils.write(jSONStringer, "wrapperSdkVersion", getWrapperSdkVersion());
+        JSONUtils.write(jSONStringer, "wrapperSdkName", getWrapperSdkName());
+        JSONUtils.write(jSONStringer, "wrapperRuntimeVersion", getWrapperRuntimeVersion());
+        JSONUtils.write(jSONStringer, "liveUpdateReleaseLabel", getLiveUpdateReleaseLabel());
+        JSONUtils.write(jSONStringer, "liveUpdateDeploymentKey", getLiveUpdateDeploymentKey());
+        JSONUtils.write(jSONStringer, "liveUpdatePackageHash", getLiveUpdatePackageHash());
+    }
 
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -46,30 +114,6 @@ public abstract class WrapperSdk implements Model {
         return str6 != null ? str6.equals(str7) : str7 == null;
     }
 
-    public String getLiveUpdateDeploymentKey() {
-        return this.liveUpdateDeploymentKey;
-    }
-
-    public String getLiveUpdatePackageHash() {
-        return this.liveUpdatePackageHash;
-    }
-
-    public String getLiveUpdateReleaseLabel() {
-        return this.liveUpdateReleaseLabel;
-    }
-
-    public String getWrapperRuntimeVersion() {
-        return this.wrapperRuntimeVersion;
-    }
-
-    public String getWrapperSdkName() {
-        return this.wrapperSdkName;
-    }
-
-    public String getWrapperSdkVersion() {
-        return this.wrapperSdkVersion;
-    }
-
     public int hashCode() {
         String str = this.wrapperSdkVersion;
         int hashCode = (str != null ? str.hashCode() : 0) * 31;
@@ -83,49 +127,5 @@ public abstract class WrapperSdk implements Model {
         int hashCode5 = (hashCode4 + (str5 != null ? str5.hashCode() : 0)) * 31;
         String str6 = this.liveUpdatePackageHash;
         return hashCode5 + (str6 != null ? str6.hashCode() : 0);
-    }
-
-    @Override // com.microsoft.appcenter.ingestion.models.Model
-    public void read(JSONObject jSONObject) {
-        setWrapperSdkVersion(jSONObject.optString("wrapperSdkVersion", null));
-        setWrapperSdkName(jSONObject.optString("wrapperSdkName", null));
-        setWrapperRuntimeVersion(jSONObject.optString("wrapperRuntimeVersion", null));
-        setLiveUpdateReleaseLabel(jSONObject.optString("liveUpdateReleaseLabel", null));
-        setLiveUpdateDeploymentKey(jSONObject.optString("liveUpdateDeploymentKey", null));
-        setLiveUpdatePackageHash(jSONObject.optString("liveUpdatePackageHash", null));
-    }
-
-    public void setLiveUpdateDeploymentKey(String str) {
-        this.liveUpdateDeploymentKey = str;
-    }
-
-    public void setLiveUpdatePackageHash(String str) {
-        this.liveUpdatePackageHash = str;
-    }
-
-    public void setLiveUpdateReleaseLabel(String str) {
-        this.liveUpdateReleaseLabel = str;
-    }
-
-    public void setWrapperRuntimeVersion(String str) {
-        this.wrapperRuntimeVersion = str;
-    }
-
-    public void setWrapperSdkName(String str) {
-        this.wrapperSdkName = str;
-    }
-
-    public void setWrapperSdkVersion(String str) {
-        this.wrapperSdkVersion = str;
-    }
-
-    @Override // com.microsoft.appcenter.ingestion.models.Model
-    public void write(JSONStringer jSONStringer) {
-        JSONUtils.write(jSONStringer, "wrapperSdkVersion", getWrapperSdkVersion());
-        JSONUtils.write(jSONStringer, "wrapperSdkName", getWrapperSdkName());
-        JSONUtils.write(jSONStringer, "wrapperRuntimeVersion", getWrapperRuntimeVersion());
-        JSONUtils.write(jSONStringer, "liveUpdateReleaseLabel", getLiveUpdateReleaseLabel());
-        JSONUtils.write(jSONStringer, "liveUpdateDeploymentKey", getLiveUpdateDeploymentKey());
-        JSONUtils.write(jSONStringer, "liveUpdatePackageHash", getLiveUpdatePackageHash());
     }
 }

@@ -6,11 +6,11 @@ import android.view.View;
 
 /* loaded from: classes.dex */
 public abstract class FragmentContainer {
-    public Fragment instantiate(Context context, String str, Bundle bundle) {
-        return Fragment.instantiate(context, str, bundle);
-    }
-
     public abstract View onFindViewById(int i);
 
     public abstract boolean onHasView();
+
+    public Fragment instantiate(Context context, String str, Bundle bundle) {
+        return Fragment.instantiate(context, str, bundle);
+    }
 }

@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class ExtendedGridLayoutManager extends GridLayoutManager {
     private int calculatedWidth;
     private final boolean firstRowFullWidth;
@@ -16,6 +16,16 @@ public class ExtendedGridLayoutManager extends GridLayoutManager {
     private SparseIntArray itemsToRow;
     private final boolean lastRowFullWidth;
     private int rowsCount;
+
+    @Override // androidx.recyclerview.widget.GridLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
+    public int getColumnCountForAccessibility(RecyclerView.Recycler recycler, RecyclerView.State state) {
+        return 1;
+    }
+
+    @Override // androidx.recyclerview.widget.GridLayoutManager, androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
+    public boolean supportsPredictiveItemAnimations() {
+        return false;
+    }
 
     public ExtendedGridLayoutManager(Context context, int i) {
         this(context, i, false);
@@ -31,14 +41,6 @@ public class ExtendedGridLayoutManager extends GridLayoutManager {
         this.itemsToRow = new SparseIntArray();
         this.lastRowFullWidth = z;
         this.firstRowFullWidth = z2;
-    }
-
-    private void checkLayout() {
-        if (this.itemSpans.size() == getFlowItemCount() && this.calculatedWidth == getWidth()) {
-            return;
-        }
-        this.calculatedWidth = getWidth();
-        prepareLayout(getWidth());
     }
 
     private void prepareLayout(float f) {
@@ -65,6 +67,7 @@ public class ExtendedGridLayoutManager extends GridLayoutManager {
                 SparseIntArray sparseIntArray = this.itemSpans;
                 sparseIntArray.put(i4, sparseIntArray.get(i4) + spanCount);
                 this.itemsToRow.put(i, this.rowsCount);
+                this.rowsCount++;
             } else {
                 Size sizeForItem = i4 < flowItemCount ? sizeForItem(i4) : null;
                 if (sizeForItem == null) {
@@ -75,6 +78,7 @@ public class ExtendedGridLayoutManager extends GridLayoutManager {
                     boolean z2 = i3 < min || (min > 33 && i3 < min + (-15));
                     if (sizeForItem.full) {
                         this.itemSpans.put(i4, i3);
+                        this.rowsCount++;
                     } else {
                         z = z2;
                     }
@@ -122,7 +126,6 @@ public class ExtendedGridLayoutManager extends GridLayoutManager {
                 i4++;
                 i = 0;
             }
-            this.rowsCount++;
             i3 = spanCount;
             i5 = 0;
             i4++;
@@ -156,18 +159,21 @@ public class ExtendedGridLayoutManager extends GridLayoutManager {
         return size;
     }
 
-    @Override // androidx.recyclerview.widget.GridLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
-    public int getColumnCountForAccessibility(RecyclerView.Recycler recycler, RecyclerView.State state) {
-        return 1;
+    protected Size getSizeForItem(int i) {
+        return new Size(100.0f, 100.0f);
     }
 
-    protected int getFlowItemCount() {
-        return getItemCount();
+    private void checkLayout() {
+        if (this.itemSpans.size() == getFlowItemCount() && this.calculatedWidth == getWidth()) {
+            return;
+        }
+        this.calculatedWidth = getWidth();
+        prepareLayout(getWidth());
     }
 
-    @Override // androidx.recyclerview.widget.GridLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
-    public int getRowCountForAccessibility(RecyclerView.Recycler recycler, RecyclerView.State state) {
-        return state.getItemCount();
+    public int getSpanSizeForItem(int i) {
+        checkLayout();
+        return this.itemSpans.get(i);
     }
 
     public int getRowsCount(int i) {
@@ -177,13 +183,9 @@ public class ExtendedGridLayoutManager extends GridLayoutManager {
         return this.rowsCount;
     }
 
-    protected Size getSizeForItem(int i) {
-        return new Size(100.0f, 100.0f);
-    }
-
-    public int getSpanSizeForItem(int i) {
+    public boolean isLastInRow(int i) {
         checkLayout();
-        return this.itemSpans.get(i);
+        return this.itemsToRow.get(i, ConnectionsManager.DEFAULT_DATACENTER_ID) != Integer.MAX_VALUE;
     }
 
     public boolean isFirstRow(int i) {
@@ -191,13 +193,12 @@ public class ExtendedGridLayoutManager extends GridLayoutManager {
         return i <= this.firstRowMax;
     }
 
-    public boolean isLastInRow(int i) {
-        checkLayout();
-        return this.itemsToRow.get(i, ConnectionsManager.DEFAULT_DATACENTER_ID) != Integer.MAX_VALUE;
+    protected int getFlowItemCount() {
+        return getItemCount();
     }
 
-    @Override // androidx.recyclerview.widget.GridLayoutManager, androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
-    public boolean supportsPredictiveItemAnimations() {
-        return false;
+    @Override // androidx.recyclerview.widget.GridLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
+    public int getRowCountForAccessibility(RecyclerView.Recycler recycler, RecyclerView.State state) {
+        return state.getItemCount();
     }
 }

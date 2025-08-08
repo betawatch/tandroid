@@ -31,10 +31,8 @@ public final class ThumbRating extends Rating {
         this.isThumbsUp = z;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static ThumbRating fromBundle(Bundle bundle) {
-        Assertions.checkArgument(bundle.getInt(Rating.FIELD_RATING_TYPE, -1) == 3);
-        return bundle.getBoolean(FIELD_RATED, false) ? new ThumbRating(bundle.getBoolean(FIELD_IS_THUMBS_UP, false)) : new ThumbRating();
+    public int hashCode() {
+        return Objects.hashCode(Boolean.valueOf(this.rated), Boolean.valueOf(this.isThumbsUp));
     }
 
     public boolean equals(Object obj) {
@@ -45,10 +43,6 @@ public final class ThumbRating extends Rating {
         return this.isThumbsUp == thumbRating.isThumbsUp && this.rated == thumbRating.rated;
     }
 
-    public int hashCode() {
-        return Objects.hashCode(Boolean.valueOf(this.rated), Boolean.valueOf(this.isThumbsUp));
-    }
-
     @Override // com.google.android.exoplayer2.Bundleable
     public Bundle toBundle() {
         Bundle bundle = new Bundle();
@@ -56,5 +50,14 @@ public final class ThumbRating extends Rating {
         bundle.putBoolean(FIELD_RATED, this.rated);
         bundle.putBoolean(FIELD_IS_THUMBS_UP, this.isThumbsUp);
         return bundle;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static ThumbRating fromBundle(Bundle bundle) {
+        Assertions.checkArgument(bundle.getInt(Rating.FIELD_RATING_TYPE, -1) == 3);
+        if (bundle.getBoolean(FIELD_RATED, false)) {
+            return new ThumbRating(bundle.getBoolean(FIELD_IS_THUMBS_UP, false));
+        }
+        return new ThumbRating();
     }
 }

@@ -6,11 +6,11 @@ public abstract class DecoderException extends Exception {
         super(str);
     }
 
-    public DecoderException(String str, Throwable th) {
-        super(str, th);
-    }
-
     public DecoderException(Throwable th) {
         super(th);
+    }
+
+    public DecoderException(String str, Throwable th) {
+        super(str, th);
     }
 }

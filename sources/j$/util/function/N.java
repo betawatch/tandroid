@@ -1,25 +1,25 @@
 package j$.util.function;
 
-import java.util.function.LongBinaryOperator;
+import java.util.function.IntToLongFunction;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class N implements LongBinaryOperator {
+public final /* synthetic */ class N implements IntToLongFunction {
     public final /* synthetic */ O a;
 
     private /* synthetic */ N(O o) {
         this.a = o;
     }
 
-    public static /* synthetic */ LongBinaryOperator a(O o) {
+    public static /* synthetic */ IntToLongFunction a(O o) {
         if (o == null) {
             return null;
         }
         return o instanceof M ? ((M) o).a : new N(o);
     }
 
-    @Override // java.util.function.LongBinaryOperator
-    public final /* synthetic */ long applyAsLong(long j, long j2) {
-        return this.a.applyAsLong(j, j2);
+    @Override // java.util.function.IntToLongFunction
+    public final /* synthetic */ long applyAsLong(int i) {
+        return this.a.applyAsLong(i);
     }
 
     public final /* synthetic */ boolean equals(Object obj) {

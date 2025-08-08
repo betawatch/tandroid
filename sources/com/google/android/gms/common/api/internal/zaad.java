@@ -44,23 +44,16 @@ public final class zaad {
         taskCompletionSource.getTask().addOnCompleteListener(new zaac(this, taskCompletionSource));
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:6:0x0018  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     final void zae(int i, String str) {
-        String str2;
         StringBuilder sb = new StringBuilder("The connection to Google Play services was lost");
-        if (i != 1) {
-            str2 = i == 3 ? " due to dead object exception." : " due to service disconnection.";
-            if (str != null) {
-                sb.append(" Last reason for disconnect: ");
-                sb.append(str);
-            }
-            zah(true, new Status(20, sb.toString()));
+        if (i == 1) {
+            sb.append(" due to service disconnection.");
+        } else if (i == 3) {
+            sb.append(" due to dead object exception.");
         }
-        sb.append(str2);
         if (str != null) {
+            sb.append(" Last reason for disconnect: ");
+            sb.append(str);
         }
         zah(true, new Status(20, sb.toString()));
     }

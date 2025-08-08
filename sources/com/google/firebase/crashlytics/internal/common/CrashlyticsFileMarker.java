@@ -5,7 +5,7 @@ import com.google.firebase.crashlytics.internal.persistence.FileStore;
 import java.io.File;
 import java.io.IOException;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 class CrashlyticsFileMarker {
     private final FileStore fileStore;
     private final String markerName;
@@ -13,10 +13,6 @@ class CrashlyticsFileMarker {
     public CrashlyticsFileMarker(String str, FileStore fileStore) {
         this.markerName = str;
         this.fileStore = fileStore;
-    }
-
-    private File getMarkerFile() {
-        return this.fileStore.getCommonFile(this.markerName);
     }
 
     public boolean create() {
@@ -34,5 +30,9 @@ class CrashlyticsFileMarker {
 
     public boolean remove() {
         return getMarkerFile().delete();
+    }
+
+    private File getMarkerFile() {
+        return this.fileStore.getCommonFile(this.markerName);
     }
 }

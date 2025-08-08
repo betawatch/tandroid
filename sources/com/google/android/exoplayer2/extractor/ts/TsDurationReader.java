@@ -23,6 +23,44 @@ final class TsDurationReader {
         this.timestampSearchBytes = i;
     }
 
+    public boolean isDurationReadFinished() {
+        return this.isDurationRead;
+    }
+
+    public int readDuration(ExtractorInput extractorInput, PositionHolder positionHolder, int i) {
+        if (i <= 0) {
+            return finishReadDuration(extractorInput);
+        }
+        if (!this.isLastPcrValueRead) {
+            return readLastPcrValue(extractorInput, positionHolder, i);
+        }
+        if (this.lastPcrValue == -9223372036854775807L) {
+            return finishReadDuration(extractorInput);
+        }
+        if (!this.isFirstPcrValueRead) {
+            return readFirstPcrValue(extractorInput, positionHolder, i);
+        }
+        long j = this.firstPcrValue;
+        if (j == -9223372036854775807L) {
+            return finishReadDuration(extractorInput);
+        }
+        long adjustTsTimestamp = this.pcrTimestampAdjuster.adjustTsTimestamp(this.lastPcrValue) - this.pcrTimestampAdjuster.adjustTsTimestamp(j);
+        this.durationUs = adjustTsTimestamp;
+        if (adjustTsTimestamp < 0) {
+            Log.w("TsDurationReader", "Invalid duration: " + this.durationUs + ". Using TIME_UNSET instead.");
+            this.durationUs = -9223372036854775807L;
+        }
+        return finishReadDuration(extractorInput);
+    }
+
+    public long getDurationUs() {
+        return this.durationUs;
+    }
+
+    public TimestampAdjuster getPcrTimestampAdjuster() {
+        return this.pcrTimestampAdjuster;
+    }
+
     private int finishReadDuration(ExtractorInput extractorInput) {
         this.packetBuffer.reset(Util.EMPTY_BYTE_ARRAY);
         this.isDurationRead = true;
@@ -86,43 +124,5 @@ final class TsDurationReader {
             }
         }
         return -9223372036854775807L;
-    }
-
-    public long getDurationUs() {
-        return this.durationUs;
-    }
-
-    public TimestampAdjuster getPcrTimestampAdjuster() {
-        return this.pcrTimestampAdjuster;
-    }
-
-    public boolean isDurationReadFinished() {
-        return this.isDurationRead;
-    }
-
-    public int readDuration(ExtractorInput extractorInput, PositionHolder positionHolder, int i) {
-        if (i <= 0) {
-            return finishReadDuration(extractorInput);
-        }
-        if (!this.isLastPcrValueRead) {
-            return readLastPcrValue(extractorInput, positionHolder, i);
-        }
-        if (this.lastPcrValue == -9223372036854775807L) {
-            return finishReadDuration(extractorInput);
-        }
-        if (!this.isFirstPcrValueRead) {
-            return readFirstPcrValue(extractorInput, positionHolder, i);
-        }
-        long j = this.firstPcrValue;
-        if (j == -9223372036854775807L) {
-            return finishReadDuration(extractorInput);
-        }
-        long adjustTsTimestamp = this.pcrTimestampAdjuster.adjustTsTimestamp(this.lastPcrValue) - this.pcrTimestampAdjuster.adjustTsTimestamp(j);
-        this.durationUs = adjustTsTimestamp;
-        if (adjustTsTimestamp < 0) {
-            Log.w("TsDurationReader", "Invalid duration: " + this.durationUs + ". Using TIME_UNSET instead.");
-            this.durationUs = -9223372036854775807L;
-        }
-        return finishReadDuration(extractorInput);
     }
 }

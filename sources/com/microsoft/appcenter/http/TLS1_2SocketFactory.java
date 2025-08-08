@@ -9,7 +9,7 @@ import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 class TLS1_2SocketFactory extends SSLSocketFactory {
     private static final String[] ENABLED_PROTOCOLS = {"TLSv1.2"};
     private final SSLSocketFactory delegate;
@@ -31,6 +31,16 @@ class TLS1_2SocketFactory extends SSLSocketFactory {
         return sSLSocket;
     }
 
+    @Override // javax.net.ssl.SSLSocketFactory
+    public String[] getDefaultCipherSuites() {
+        return this.delegate.getDefaultCipherSuites();
+    }
+
+    @Override // javax.net.ssl.SSLSocketFactory
+    public String[] getSupportedCipherSuites() {
+        return this.delegate.getSupportedCipherSuites();
+    }
+
     @Override // javax.net.SocketFactory
     public SSLSocket createSocket() {
         return forceTLS1_2(this.delegate.createSocket());
@@ -42,13 +52,13 @@ class TLS1_2SocketFactory extends SSLSocketFactory {
     }
 
     @Override // javax.net.SocketFactory
-    public SSLSocket createSocket(String str, int i, InetAddress inetAddress, int i2) {
-        return forceTLS1_2(this.delegate.createSocket(str, i, inetAddress, i2));
+    public SSLSocket createSocket(InetAddress inetAddress, int i) {
+        return forceTLS1_2(this.delegate.createSocket(inetAddress, i));
     }
 
     @Override // javax.net.SocketFactory
-    public SSLSocket createSocket(InetAddress inetAddress, int i) {
-        return forceTLS1_2(this.delegate.createSocket(inetAddress, i));
+    public SSLSocket createSocket(String str, int i, InetAddress inetAddress, int i2) {
+        return forceTLS1_2(this.delegate.createSocket(str, i, inetAddress, i2));
     }
 
     @Override // javax.net.SocketFactory
@@ -59,15 +69,5 @@ class TLS1_2SocketFactory extends SSLSocketFactory {
     @Override // javax.net.ssl.SSLSocketFactory
     public SSLSocket createSocket(Socket socket, String str, int i, boolean z) {
         return forceTLS1_2(this.delegate.createSocket(socket, str, i, z));
-    }
-
-    @Override // javax.net.ssl.SSLSocketFactory
-    public String[] getDefaultCipherSuites() {
-        return this.delegate.getDefaultCipherSuites();
-    }
-
-    @Override // javax.net.ssl.SSLSocketFactory
-    public String[] getSupportedCipherSuites() {
-        return this.delegate.getSupportedCipherSuites();
     }
 }

@@ -11,14 +11,14 @@ public class PaymentCardRecognitionIntentResponse extends AbstractSafeParcelable
     public static final Parcelable.Creator<PaymentCardRecognitionIntentResponse> CREATOR = new zzz();
     PendingIntent zza;
 
-    PaymentCardRecognitionIntentResponse(PendingIntent pendingIntent) {
-        this.zza = pendingIntent;
-    }
-
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
         SafeParcelWriter.writeParcelable(parcel, 1, this.zza, i, false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    PaymentCardRecognitionIntentResponse(PendingIntent pendingIntent) {
+        this.zza = pendingIntent;
     }
 }

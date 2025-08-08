@@ -16,10 +16,6 @@ public class UpdateReactionsButton extends ButtonWithCounterView {
         super(context, resourcesProvider);
     }
 
-    public void removeLvlRequiredState() {
-        setSubText(null, true);
-    }
-
     public void setDefaultState() {
         setText(new SpannableStringBuilder(LocaleController.getString(R.string.ReactionUpdateReactionsBtn)), false);
         this.lock = new SpannableStringBuilder("l");
@@ -32,5 +28,9 @@ public class UpdateReactionsButton extends ButtonWithCounterView {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) this.lock).append((CharSequence) LocaleController.formatPluralString("ReactionLevelRequiredBtn", i, new Object[0]));
         setSubText(spannableStringBuilder, true);
+    }
+
+    public void removeLvlRequiredState() {
+        setSubText(null, true);
     }
 }

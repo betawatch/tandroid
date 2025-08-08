@@ -33,10 +33,6 @@ public abstract class AndroidClientInfo {
         public abstract Builder setSdkVersion(Integer num);
     }
 
-    public static Builder builder() {
-        return new AutoValue_AndroidClientInfo.Builder();
-    }
-
     public abstract String getApplicationBuild();
 
     public abstract String getCountry();
@@ -60,4 +56,8 @@ public abstract class AndroidClientInfo {
     public abstract String getProduct();
 
     public abstract Integer getSdkVersion();
+
+    public static Builder builder() {
+        return new AutoValue_AndroidClientInfo.Builder();
+    }
 }

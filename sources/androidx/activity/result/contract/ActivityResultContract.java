@@ -6,6 +6,14 @@ import kotlin.jvm.internal.Intrinsics;
 
 /* loaded from: classes.dex */
 public abstract class ActivityResultContract {
+    public abstract Intent createIntent(Context context, Object obj);
+
+    public SynchronousResult getSynchronousResult(Context context, Object obj) {
+        Intrinsics.checkNotNullParameter(context, "context");
+        return null;
+    }
+
+    public abstract Object parseResult(int i, Intent intent);
 
     public static final class SynchronousResult {
         private final Object value;
@@ -18,13 +26,4 @@ public abstract class ActivityResultContract {
             return this.value;
         }
     }
-
-    public abstract Intent createIntent(Context context, Object obj);
-
-    public SynchronousResult getSynchronousResult(Context context, Object obj) {
-        Intrinsics.checkNotNullParameter(context, "context");
-        return null;
-    }
-
-    public abstract Object parseResult(int i, Intent intent);
 }

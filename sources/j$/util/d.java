@@ -1,9 +1,9 @@
 package j$.util;
 
+import j$.util.function.B0;
+import j$.util.function.D0;
 import j$.util.function.Function;
-import j$.util.function.r0;
-import j$.util.function.t0;
-import j$.util.function.v0;
+import j$.util.function.z0;
 import java.util.Comparator;
 import java.util.function.Function;
 import java.util.function.ToDoubleFunction;
@@ -16,15 +16,6 @@ import java.util.function.ToLongFunction;
 final class d implements Comparator, c {
     public static final d INSTANCE;
     private static final /* synthetic */ d[] a;
-
-    static {
-        d dVar = new d();
-        INSTANCE = dVar;
-        a = new d[]{dVar};
-    }
-
-    private d() {
-    }
 
     public static d valueOf(String str) {
         return (d) Enum.valueOf(d.class, str);
@@ -39,6 +30,12 @@ final class d implements Comparator, c {
         return ((Comparable) obj).compareTo((Comparable) obj2);
     }
 
+    static {
+        d dVar = new d("INSTANCE", 0);
+        INSTANCE = dVar;
+        a = new d[]{dVar};
+    }
+
     @Override // java.util.Comparator
     public final Comparator reversed() {
         return Comparator$-CC.reverseOrder();
@@ -51,12 +48,7 @@ final class d implements Comparator, c {
     }
 
     @Override // java.util.Comparator
-    public final Comparator thenComparing(Function function) {
-        return Comparator$-EL.a(this, Comparator$-CC.comparing(Function.VivifiedWrapper.convert(function)));
-    }
-
-    @Override // java.util.Comparator
-    public final Comparator thenComparing(java.util.function.Function function, Comparator comparator) {
+    public final Comparator thenComparing(Function function, Comparator comparator) {
         j$.util.function.Function convert = Function.VivifiedWrapper.convert(function);
         convert.getClass();
         comparator.getClass();
@@ -64,17 +56,22 @@ final class d implements Comparator, c {
     }
 
     @Override // java.util.Comparator
-    public final Comparator thenComparingDouble(ToDoubleFunction toDoubleFunction) {
-        return Comparator$-EL.a(this, Comparator$-CC.comparingDouble(r0.a(toDoubleFunction)));
+    public final Comparator thenComparing(java.util.function.Function function) {
+        return Comparator$-EL.a(this, Comparator$-CC.comparing(Function.VivifiedWrapper.convert(function)));
     }
 
     @Override // java.util.Comparator
     public final Comparator thenComparingInt(ToIntFunction toIntFunction) {
-        return Comparator$-EL.a(this, Comparator$-CC.comparingInt(t0.a(toIntFunction)));
+        return Comparator$-EL.a(this, Comparator$-CC.comparingInt(B0.a(toIntFunction)));
     }
 
     @Override // java.util.Comparator
     public final Comparator thenComparingLong(ToLongFunction toLongFunction) {
-        return Comparator$-EL.a(this, Comparator$-CC.comparingLong(v0.a(toLongFunction)));
+        return Comparator$-EL.a(this, Comparator$-CC.comparingLong(D0.a(toLongFunction)));
+    }
+
+    @Override // java.util.Comparator
+    public final Comparator thenComparingDouble(ToDoubleFunction toDoubleFunction) {
+        return Comparator$-EL.a(this, Comparator$-CC.comparingDouble(z0.a(toDoubleFunction)));
     }
 }

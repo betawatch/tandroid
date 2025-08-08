@@ -29,94 +29,54 @@ public final class DefaultExtractorInput implements ExtractorInput {
         this.streamLength = j2;
     }
 
-    private void commitBytesRead(int i) {
-        if (i != -1) {
-            this.position += i;
+    @Override // com.google.android.exoplayer2.extractor.ExtractorInput, com.google.android.exoplayer2.upstream.DataReader
+    public int read(byte[] bArr, int i, int i2) {
+        int readFromPeekBuffer = readFromPeekBuffer(bArr, i, i2);
+        if (readFromPeekBuffer == 0) {
+            readFromPeekBuffer = readFromUpstream(bArr, i, i2, 0, true);
         }
-    }
-
-    private void ensureSpaceForPeek(int i) {
-        int i2 = this.peekBufferPosition + i;
-        byte[] bArr = this.peekBuffer;
-        if (i2 > bArr.length) {
-            this.peekBuffer = Arrays.copyOf(this.peekBuffer, Util.constrainValue(bArr.length * 2, 65536 + i2, i2 + TLObject.FLAG_19));
-        }
-    }
-
-    private int readFromPeekBuffer(byte[] bArr, int i, int i2) {
-        int i3 = this.peekBufferLength;
-        if (i3 == 0) {
-            return 0;
-        }
-        int min = Math.min(i3, i2);
-        System.arraycopy(this.peekBuffer, 0, bArr, i, min);
-        updatePeekBuffer(min);
-        return min;
-    }
-
-    private int readFromUpstream(byte[] bArr, int i, int i2, int i3, boolean z) {
-        if (Thread.interrupted()) {
-            throw new InterruptedIOException();
-        }
-        int read = this.dataReader.read(bArr, i + i3, i2 - i3);
-        if (read != -1) {
-            return i3 + read;
-        }
-        if (i3 == 0 && z) {
-            return -1;
-        }
-        throw new EOFException();
-    }
-
-    private int skipFromPeekBuffer(int i) {
-        int min = Math.min(this.peekBufferLength, i);
-        updatePeekBuffer(min);
-        return min;
-    }
-
-    private void updatePeekBuffer(int i) {
-        int i2 = this.peekBufferLength - i;
-        this.peekBufferLength = i2;
-        this.peekBufferPosition = 0;
-        byte[] bArr = this.peekBuffer;
-        byte[] bArr2 = i2 < bArr.length - TLObject.FLAG_19 ? new byte[65536 + i2] : bArr;
-        System.arraycopy(bArr, i, bArr2, 0, i2);
-        this.peekBuffer = bArr2;
+        commitBytesRead(readFromPeekBuffer);
+        return readFromPeekBuffer;
     }
 
     @Override // com.google.android.exoplayer2.extractor.ExtractorInput
-    public void advancePeekPosition(int i) {
-        advancePeekPosition(i, false);
-    }
-
-    @Override // com.google.android.exoplayer2.extractor.ExtractorInput
-    public boolean advancePeekPosition(int i, boolean z) {
-        ensureSpaceForPeek(i);
-        int i2 = this.peekBufferLength - this.peekBufferPosition;
-        while (i2 < i) {
-            i2 = readFromUpstream(this.peekBuffer, this.peekBufferPosition, i, i2, z);
-            if (i2 == -1) {
-                return false;
-            }
-            this.peekBufferLength = this.peekBufferPosition + i2;
+    public boolean readFully(byte[] bArr, int i, int i2, boolean z) {
+        int readFromPeekBuffer = readFromPeekBuffer(bArr, i, i2);
+        while (readFromPeekBuffer < i2 && readFromPeekBuffer != -1) {
+            readFromPeekBuffer = readFromUpstream(bArr, i, i2, readFromPeekBuffer, z);
         }
-        this.peekBufferPosition += i;
-        return true;
+        commitBytesRead(readFromPeekBuffer);
+        return readFromPeekBuffer != -1;
     }
 
     @Override // com.google.android.exoplayer2.extractor.ExtractorInput
-    public long getLength() {
-        return this.streamLength;
+    public void readFully(byte[] bArr, int i, int i2) {
+        readFully(bArr, i, i2, false);
     }
 
     @Override // com.google.android.exoplayer2.extractor.ExtractorInput
-    public long getPeekPosition() {
-        return this.position + this.peekBufferPosition;
+    public int skip(int i) {
+        int skipFromPeekBuffer = skipFromPeekBuffer(i);
+        if (skipFromPeekBuffer == 0) {
+            byte[] bArr = this.scratchSpace;
+            skipFromPeekBuffer = readFromUpstream(bArr, 0, Math.min(i, bArr.length), 0, true);
+        }
+        commitBytesRead(skipFromPeekBuffer);
+        return skipFromPeekBuffer;
+    }
+
+    public boolean skipFully(int i, boolean z) {
+        int skipFromPeekBuffer = skipFromPeekBuffer(i);
+        while (skipFromPeekBuffer < i && skipFromPeekBuffer != -1) {
+            skipFromPeekBuffer = readFromUpstream(this.scratchSpace, -skipFromPeekBuffer, Math.min(i, this.scratchSpace.length + skipFromPeekBuffer), skipFromPeekBuffer, z);
+        }
+        commitBytesRead(skipFromPeekBuffer);
+        return skipFromPeekBuffer != -1;
     }
 
     @Override // com.google.android.exoplayer2.extractor.ExtractorInput
-    public long getPosition() {
-        return this.position;
+    public void skipFully(int i) {
+        skipFully(i, false);
     }
 
     @Override // com.google.android.exoplayer2.extractor.ExtractorInput
@@ -141,11 +101,6 @@ public final class DefaultExtractorInput implements ExtractorInput {
     }
 
     @Override // com.google.android.exoplayer2.extractor.ExtractorInput
-    public void peekFully(byte[] bArr, int i, int i2) {
-        peekFully(bArr, i, i2, false);
-    }
-
-    @Override // com.google.android.exoplayer2.extractor.ExtractorInput
     public boolean peekFully(byte[] bArr, int i, int i2, boolean z) {
         if (!advancePeekPosition(i2, z)) {
             return false;
@@ -154,34 +109,49 @@ public final class DefaultExtractorInput implements ExtractorInput {
         return true;
     }
 
-    @Override // com.google.android.exoplayer2.extractor.ExtractorInput, com.google.android.exoplayer2.upstream.DataReader
-    public int read(byte[] bArr, int i, int i2) {
-        int readFromPeekBuffer = readFromPeekBuffer(bArr, i, i2);
-        if (readFromPeekBuffer == 0) {
-            readFromPeekBuffer = readFromUpstream(bArr, i, i2, 0, true);
-        }
-        commitBytesRead(readFromPeekBuffer);
-        return readFromPeekBuffer;
+    @Override // com.google.android.exoplayer2.extractor.ExtractorInput
+    public void peekFully(byte[] bArr, int i, int i2) {
+        peekFully(bArr, i, i2, false);
     }
 
     @Override // com.google.android.exoplayer2.extractor.ExtractorInput
-    public void readFully(byte[] bArr, int i, int i2) {
-        readFully(bArr, i, i2, false);
+    public boolean advancePeekPosition(int i, boolean z) {
+        ensureSpaceForPeek(i);
+        int i2 = this.peekBufferLength - this.peekBufferPosition;
+        while (i2 < i) {
+            i2 = readFromUpstream(this.peekBuffer, this.peekBufferPosition, i, i2, z);
+            if (i2 == -1) {
+                return false;
+            }
+            this.peekBufferLength = this.peekBufferPosition + i2;
+        }
+        this.peekBufferPosition += i;
+        return true;
     }
 
     @Override // com.google.android.exoplayer2.extractor.ExtractorInput
-    public boolean readFully(byte[] bArr, int i, int i2, boolean z) {
-        int readFromPeekBuffer = readFromPeekBuffer(bArr, i, i2);
-        while (readFromPeekBuffer < i2 && readFromPeekBuffer != -1) {
-            readFromPeekBuffer = readFromUpstream(bArr, i, i2, readFromPeekBuffer, z);
-        }
-        commitBytesRead(readFromPeekBuffer);
-        return readFromPeekBuffer != -1;
+    public void advancePeekPosition(int i) {
+        advancePeekPosition(i, false);
     }
 
     @Override // com.google.android.exoplayer2.extractor.ExtractorInput
     public void resetPeekPosition() {
         this.peekBufferPosition = 0;
+    }
+
+    @Override // com.google.android.exoplayer2.extractor.ExtractorInput
+    public long getPeekPosition() {
+        return this.position + this.peekBufferPosition;
+    }
+
+    @Override // com.google.android.exoplayer2.extractor.ExtractorInput
+    public long getPosition() {
+        return this.position;
+    }
+
+    @Override // com.google.android.exoplayer2.extractor.ExtractorInput
+    public long getLength() {
+        return this.streamLength;
     }
 
     @Override // com.google.android.exoplayer2.extractor.ExtractorInput
@@ -191,28 +161,58 @@ public final class DefaultExtractorInput implements ExtractorInput {
         throw th;
     }
 
-    @Override // com.google.android.exoplayer2.extractor.ExtractorInput
-    public int skip(int i) {
-        int skipFromPeekBuffer = skipFromPeekBuffer(i);
-        if (skipFromPeekBuffer == 0) {
-            byte[] bArr = this.scratchSpace;
-            skipFromPeekBuffer = readFromUpstream(bArr, 0, Math.min(i, bArr.length), 0, true);
+    private void ensureSpaceForPeek(int i) {
+        int i2 = this.peekBufferPosition + i;
+        byte[] bArr = this.peekBuffer;
+        if (i2 > bArr.length) {
+            this.peekBuffer = Arrays.copyOf(this.peekBuffer, Util.constrainValue(bArr.length * 2, 65536 + i2, i2 + TLObject.FLAG_19));
         }
-        commitBytesRead(skipFromPeekBuffer);
-        return skipFromPeekBuffer;
     }
 
-    @Override // com.google.android.exoplayer2.extractor.ExtractorInput
-    public void skipFully(int i) {
-        skipFully(i, false);
+    private int skipFromPeekBuffer(int i) {
+        int min = Math.min(this.peekBufferLength, i);
+        updatePeekBuffer(min);
+        return min;
     }
 
-    public boolean skipFully(int i, boolean z) {
-        int skipFromPeekBuffer = skipFromPeekBuffer(i);
-        while (skipFromPeekBuffer < i && skipFromPeekBuffer != -1) {
-            skipFromPeekBuffer = readFromUpstream(this.scratchSpace, -skipFromPeekBuffer, Math.min(i, this.scratchSpace.length + skipFromPeekBuffer), skipFromPeekBuffer, z);
+    private int readFromPeekBuffer(byte[] bArr, int i, int i2) {
+        int i3 = this.peekBufferLength;
+        if (i3 == 0) {
+            return 0;
         }
-        commitBytesRead(skipFromPeekBuffer);
-        return skipFromPeekBuffer != -1;
+        int min = Math.min(i3, i2);
+        System.arraycopy(this.peekBuffer, 0, bArr, i, min);
+        updatePeekBuffer(min);
+        return min;
+    }
+
+    private void updatePeekBuffer(int i) {
+        int i2 = this.peekBufferLength - i;
+        this.peekBufferLength = i2;
+        this.peekBufferPosition = 0;
+        byte[] bArr = this.peekBuffer;
+        byte[] bArr2 = i2 < bArr.length - TLObject.FLAG_19 ? new byte[65536 + i2] : bArr;
+        System.arraycopy(bArr, i, bArr2, 0, i2);
+        this.peekBuffer = bArr2;
+    }
+
+    private int readFromUpstream(byte[] bArr, int i, int i2, int i3, boolean z) {
+        if (Thread.interrupted()) {
+            throw new InterruptedIOException();
+        }
+        int read = this.dataReader.read(bArr, i + i3, i2 - i3);
+        if (read != -1) {
+            return i3 + read;
+        }
+        if (i3 == 0 && z) {
+            return -1;
+        }
+        throw new EOFException();
+    }
+
+    private void commitBytesRead(int i) {
+        if (i != -1) {
+            this.position += i;
+        }
     }
 }

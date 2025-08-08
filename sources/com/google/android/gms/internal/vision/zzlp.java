@@ -16,19 +16,6 @@ final class zzlp implements Iterator {
         this.zza = -1;
     }
 
-    /* synthetic */ zzlp(zzlh zzlhVar, zzlg zzlgVar) {
-        this(zzlhVar);
-    }
-
-    private final Iterator zza() {
-        Map map;
-        if (this.zzc == null) {
-            map = this.zzd.zzc;
-            this.zzc = map.entrySet().iterator();
-        }
-        return this.zzc;
-    }
-
     @Override // java.util.Iterator
     public final boolean hasNext() {
         List list;
@@ -45,24 +32,6 @@ final class zzlp implements Iterator {
     }
 
     @Override // java.util.Iterator
-    public final /* synthetic */ Object next() {
-        List list;
-        Object next;
-        List list2;
-        this.zzb = true;
-        int i = this.zza + 1;
-        this.zza = i;
-        list = this.zzd.zzb;
-        if (i < list.size()) {
-            list2 = this.zzd.zzb;
-            next = list2.get(this.zza);
-        } else {
-            next = zza().next();
-        }
-        return (Map.Entry) next;
-    }
-
-    @Override // java.util.Iterator
     public final void remove() {
         List list;
         if (!this.zzb) {
@@ -72,13 +41,41 @@ final class zzlp implements Iterator {
         this.zzd.zzf();
         int i = this.zza;
         list = this.zzd.zzb;
-        if (i >= list.size()) {
-            zza().remove();
+        if (i < list.size()) {
+            zzlh zzlhVar = this.zzd;
+            int i2 = this.zza;
+            this.zza = i2 - 1;
+            zzlhVar.zzc(i2);
             return;
         }
-        zzlh zzlhVar = this.zzd;
-        int i2 = this.zza;
-        this.zza = i2 - 1;
-        zzlhVar.zzc(i2);
+        zza().remove();
+    }
+
+    private final Iterator zza() {
+        Map map;
+        if (this.zzc == null) {
+            map = this.zzd.zzc;
+            this.zzc = map.entrySet().iterator();
+        }
+        return this.zzc;
+    }
+
+    @Override // java.util.Iterator
+    public final /* synthetic */ Object next() {
+        List list;
+        List list2;
+        this.zzb = true;
+        int i = this.zza + 1;
+        this.zza = i;
+        list = this.zzd.zzb;
+        if (i >= list.size()) {
+            return (Map.Entry) zza().next();
+        }
+        list2 = this.zzd.zzb;
+        return (Map.Entry) list2.get(this.zza);
+    }
+
+    /* synthetic */ zzlp(zzlh zzlhVar, zzlg zzlgVar) {
+        this(zzlhVar);
     }
 }

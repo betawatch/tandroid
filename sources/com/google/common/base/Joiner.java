@@ -7,23 +7,21 @@ import java.util.Iterator;
 public class Joiner {
     private final String separator;
 
-    private Joiner(String str) {
-        this.separator = (String) Preconditions.checkNotNull(str);
-    }
-
     public static Joiner on(char c) {
         return new Joiner(String.valueOf(c));
+    }
+
+    private Joiner(String str) {
+        this.separator = (String) Preconditions.checkNotNull(str);
     }
 
     public Appendable appendTo(Appendable appendable, Iterator it) {
         Preconditions.checkNotNull(appendable);
         if (it.hasNext()) {
-            while (true) {
-                appendable.append(toString(it.next()));
-                if (!it.hasNext()) {
-                    break;
-                }
+            appendable.append(toString(it.next()));
+            while (it.hasNext()) {
                 appendable.append(this.separator);
+                appendable.append(toString(it.next()));
             }
         }
         return appendable;

@@ -26,11 +26,24 @@ public final class MdtaMetadataEntry implements Metadata.Entry {
     public final int typeIndicator;
     public final byte[] value;
 
-    private MdtaMetadataEntry(Parcel parcel) {
-        this.key = (String) Util.castNonNull(parcel.readString());
-        this.value = (byte[]) Util.castNonNull(parcel.createByteArray());
-        this.localeIndicator = parcel.readInt();
-        this.typeIndicator = parcel.readInt();
+    @Override // android.os.Parcelable
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
+    public /* synthetic */ byte[] getWrappedMetadataBytes() {
+        return Metadata.Entry.-CC.$default$getWrappedMetadataBytes(this);
+    }
+
+    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
+    public /* synthetic */ Format getWrappedMetadataFormat() {
+        return Metadata.Entry.-CC.$default$getWrappedMetadataFormat(this);
+    }
+
+    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
+    public /* synthetic */ void populateMediaMetadata(MediaMetadata.Builder builder) {
+        Metadata.Entry.-CC.$default$populateMediaMetadata(this, builder);
     }
 
     public MdtaMetadataEntry(String str, byte[] bArr, int i, int i2) {
@@ -40,9 +53,11 @@ public final class MdtaMetadataEntry implements Metadata.Entry {
         this.typeIndicator = i2;
     }
 
-    @Override // android.os.Parcelable
-    public int describeContents() {
-        return 0;
+    private MdtaMetadataEntry(Parcel parcel) {
+        this.key = (String) Util.castNonNull(parcel.readString());
+        this.value = (byte[]) Util.castNonNull(parcel.createByteArray());
+        this.localeIndicator = parcel.readInt();
+        this.typeIndicator = parcel.readInt();
     }
 
     public boolean equals(Object obj) {
@@ -56,23 +71,8 @@ public final class MdtaMetadataEntry implements Metadata.Entry {
         return this.key.equals(mdtaMetadataEntry.key) && Arrays.equals(this.value, mdtaMetadataEntry.value) && this.localeIndicator == mdtaMetadataEntry.localeIndicator && this.typeIndicator == mdtaMetadataEntry.typeIndicator;
     }
 
-    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
-    public /* synthetic */ byte[] getWrappedMetadataBytes() {
-        return Metadata.Entry.-CC.$default$getWrappedMetadataBytes(this);
-    }
-
-    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
-    public /* synthetic */ Format getWrappedMetadataFormat() {
-        return Metadata.Entry.-CC.$default$getWrappedMetadataFormat(this);
-    }
-
     public int hashCode() {
         return ((((((this.key.hashCode() + 527) * 31) + Arrays.hashCode(this.value)) * 31) + this.localeIndicator) * 31) + this.typeIndicator;
-    }
-
-    @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
-    public /* synthetic */ void populateMediaMetadata(MediaMetadata.Builder builder) {
-        Metadata.Entry.-CC.$default$populateMediaMetadata(this, builder);
     }
 
     public String toString() {

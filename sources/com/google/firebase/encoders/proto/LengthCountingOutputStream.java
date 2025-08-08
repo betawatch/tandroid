@@ -2,15 +2,11 @@ package com.google.firebase.encoders.proto;
 
 import java.io.OutputStream;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class LengthCountingOutputStream extends OutputStream {
     private long length = 0;
 
     LengthCountingOutputStream() {
-    }
-
-    long getLength() {
-        return this.length;
     }
 
     @Override // java.io.OutputStream
@@ -30,5 +26,9 @@ final class LengthCountingOutputStream extends OutputStream {
             throw new IndexOutOfBoundsException();
         }
         this.length += i2;
+    }
+
+    long getLength() {
+        return this.length;
     }
 }

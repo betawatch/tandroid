@@ -7,11 +7,6 @@ import org.telegram.messenger.Utilities;
 
 /* loaded from: classes3.dex */
 public class ShortcutResultReceiver extends BroadcastReceiver {
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onReceive$0(Utilities.Callback callback) {
-        callback.run(Boolean.TRUE);
-    }
-
     @Override // android.content.BroadcastReceiver
     public void onReceive(Context context, Intent intent) {
         int intExtra = intent.getIntExtra("account", UserConfig.selectedAccount);
@@ -24,5 +19,10 @@ public class ShortcutResultReceiver extends BroadcastReceiver {
                 }
             });
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$onReceive$0(Utilities.Callback callback) {
+        callback.run(Boolean.TRUE);
     }
 }

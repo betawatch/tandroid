@@ -23,8 +23,9 @@ public enum zzgz implements zzje {
     };
     private final int zzr;
 
-    zzgz(int i) {
-        this.zzr = i;
+    @Override // com.google.android.gms.internal.vision.zzje
+    public final int zza() {
+        return this.zzr;
     }
 
     public static zzgz zza(int i) {
@@ -76,8 +77,7 @@ public enum zzgz implements zzje {
         return "<" + zzgz.class.getName() + '@' + Integer.toHexString(System.identityHashCode(this)) + " number=" + this.zzr + " name=" + name() + '>';
     }
 
-    @Override // com.google.android.gms.internal.vision.zzje
-    public final int zza() {
-        return this.zzr;
+    zzgz(int i) {
+        this.zzr = i;
     }
 }

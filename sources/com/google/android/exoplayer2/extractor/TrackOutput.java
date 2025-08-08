@@ -7,9 +7,17 @@ import java.util.Arrays;
 
 /* loaded from: classes.dex */
 public interface TrackOutput {
+    void format(Format format);
 
-    public abstract /* synthetic */ class -CC {
-    }
+    int sampleData(DataReader dataReader, int i, boolean z);
+
+    int sampleData(DataReader dataReader, int i, boolean z, int i2);
+
+    void sampleData(ParsableByteArray parsableByteArray, int i);
+
+    void sampleData(ParsableByteArray parsableByteArray, int i, int i2);
+
+    void sampleMetadata(long j, int i, int i2, int i3, CryptoData cryptoData);
 
     public static final class CryptoData {
         public final int clearBlocks;
@@ -40,15 +48,6 @@ public interface TrackOutput {
         }
     }
 
-    void format(Format format);
-
-    int sampleData(DataReader dataReader, int i, boolean z);
-
-    int sampleData(DataReader dataReader, int i, boolean z, int i2);
-
-    void sampleData(ParsableByteArray parsableByteArray, int i);
-
-    void sampleData(ParsableByteArray parsableByteArray, int i, int i2);
-
-    void sampleMetadata(long j, int i, int i2, int i3, CryptoData cryptoData);
+    public abstract /* synthetic */ class -CC {
+    }
 }

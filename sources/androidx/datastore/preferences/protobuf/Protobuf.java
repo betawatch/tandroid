@@ -9,17 +9,8 @@ final class Protobuf {
     private final ConcurrentMap schemaCache = new ConcurrentHashMap();
     private final SchemaFactory schemaFactory = new ManifestSchemaFactory();
 
-    private Protobuf() {
-    }
-
     public static Protobuf getInstance() {
         return INSTANCE;
-    }
-
-    public Schema registerSchema(Class cls, Schema schema) {
-        Internal.checkNotNull(cls, "messageType");
-        Internal.checkNotNull(schema, "schema");
-        return (Schema) this.schemaCache.putIfAbsent(cls, schema);
     }
 
     public Schema schemaFor(Class cls) {
@@ -35,5 +26,14 @@ final class Protobuf {
 
     public Schema schemaFor(Object obj) {
         return schemaFor((Class) obj.getClass());
+    }
+
+    public Schema registerSchema(Class cls, Schema schema) {
+        Internal.checkNotNull(cls, "messageType");
+        Internal.checkNotNull(schema, "schema");
+        return (Schema) this.schemaCache.putIfAbsent(cls, schema);
+    }
+
+    private Protobuf() {
     }
 }

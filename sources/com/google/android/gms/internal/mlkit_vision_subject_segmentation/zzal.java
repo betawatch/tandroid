@@ -22,10 +22,6 @@ final class zzal extends AbstractMap implements Serializable {
     private transient Set zzi;
     private transient Collection zzj;
 
-    zzal(int i) {
-        zzm(12);
-    }
-
     static /* synthetic */ Object zzh(zzal zzalVar) {
         Object obj = zzalVar.zze;
         obj.getClass();
@@ -48,7 +44,7 @@ final class zzal extends AbstractMap implements Serializable {
         obj2.getClass();
         int zzc = zzam.zzc(obj2, zza & zzp);
         if (zzc != 0) {
-            int i = zzp ^ (-1);
+            int i = ~zzp;
             int i2 = zza & i;
             do {
                 int i3 = zzc - 1;
@@ -83,11 +79,11 @@ final class zzal extends AbstractMap implements Serializable {
             while (zzc != 0) {
                 int i7 = zzc - 1;
                 int i8 = iArr[i7];
-                int i9 = ((i ^ (-1)) & i8) | i6;
+                int i9 = ((~i) & i8) | i6;
                 int i10 = i9 & i5;
                 int zzc2 = zzam.zzc(zzd2, i10);
                 zzam.zze(zzd2, i10, zzc);
-                iArr[i7] = ((i5 ^ (-1)) & i9) | (zzc2 & i5);
+                iArr[i7] = ((~i5) & i9) | (zzc2 & i5);
                 zzc = i8 & i;
             }
         }
@@ -132,30 +128,31 @@ final class zzal extends AbstractMap implements Serializable {
         }
         zzl();
         Map zzj = zzj();
-        if (zzj == null) {
-            Object[] objArr = this.zzb;
-            objArr.getClass();
-            Arrays.fill(objArr, 0, this.zzg, (Object) null);
-            Object[] objArr2 = this.zzc;
-            objArr2.getClass();
-            Arrays.fill(objArr2, 0, this.zzg, (Object) null);
-            Object obj = this.zze;
-            obj.getClass();
-            if (obj instanceof byte[]) {
-                Arrays.fill((byte[]) obj, (byte) 0);
-            } else if (obj instanceof short[]) {
-                Arrays.fill((short[]) obj, (short) 0);
-            } else {
-                Arrays.fill((int[]) obj, 0);
-            }
-            int[] iArr = this.zza;
-            iArr.getClass();
-            Arrays.fill(iArr, 0, this.zzg, 0);
-        } else {
+        if (zzj != null) {
             this.zzf = zzbw.zza(size(), 3, 1073741823);
             zzj.clear();
             this.zze = null;
+            this.zzg = 0;
+            return;
         }
+        Object[] objArr = this.zzb;
+        objArr.getClass();
+        Arrays.fill(objArr, 0, this.zzg, (Object) null);
+        Object[] objArr2 = this.zzc;
+        objArr2.getClass();
+        Arrays.fill(objArr2, 0, this.zzg, (Object) null);
+        Object obj = this.zze;
+        obj.getClass();
+        if (obj instanceof byte[]) {
+            Arrays.fill((byte[]) obj, (byte) 0);
+        } else if (obj instanceof short[]) {
+            Arrays.fill((short[]) obj, (short) 0);
+        } else {
+            Arrays.fill((int[]) obj, 0);
+        }
+        int[] iArr = this.zza;
+        iArr.getClass();
+        Arrays.fill(iArr, 0, this.zzg, 0);
         this.zzg = 0;
     }
 
@@ -225,7 +222,6 @@ final class zzal extends AbstractMap implements Serializable {
 
     @Override // java.util.AbstractMap, java.util.Map
     public final Object put(Object obj, Object obj2) {
-        int length;
         int min;
         if (zzo()) {
             zzi.zzd(zzo(), "Arrays already allocated");
@@ -260,107 +256,84 @@ final class zzal extends AbstractMap implements Serializable {
         Object obj3 = this.zze;
         obj3.getClass();
         int zzc = zzam.zzc(obj3, i4);
-        if (zzc == 0) {
-            if (i3 <= zzp) {
-                Object obj4 = this.zze;
-                obj4.getClass();
-                zzam.zze(obj4, i4, i3);
-                int[] iArr2 = this.zza;
-                iArr2.getClass();
-                length = iArr2.length;
-                if (i3 > length && (min = Math.min(1073741823, (Math.max(1, length >>> 1) + length) | 1)) != length) {
-                    int[] iArr3 = this.zza;
-                    iArr3.getClass();
-                    this.zza = Arrays.copyOf(iArr3, min);
-                    Object[] objArr3 = this.zzb;
-                    objArr3.getClass();
-                    this.zzb = Arrays.copyOf(objArr3, min);
-                    Object[] objArr4 = this.zzc;
-                    objArr4.getClass();
-                    this.zzc = Arrays.copyOf(objArr4, min);
+        if (zzc != 0) {
+            int i5 = ~zzp;
+            int i6 = zza & i5;
+            int i7 = 0;
+            while (true) {
+                int i8 = zzc - 1;
+                int i9 = iArr[i8];
+                int i10 = i9 & i5;
+                if (i10 == i6 && zze.zza(obj, objArr[i8])) {
+                    Object obj4 = objArr2[i8];
+                    objArr2[i8] = obj2;
+                    return obj4;
                 }
-                int[] iArr4 = this.zza;
-                iArr4.getClass();
-                iArr4[i2] = (zzp ^ (-1)) & zza;
-                Object[] objArr5 = this.zzb;
-                objArr5.getClass();
-                objArr5[i2] = obj;
-                Object[] objArr6 = this.zzc;
-                objArr6.getClass();
-                objArr6[i2] = obj2;
-                this.zzg = i3;
-                zzl();
-                return null;
-            }
-            zzp = zzr(zzp, zzam.zza(zzp), zza, i2);
-            int[] iArr22 = this.zza;
-            iArr22.getClass();
-            length = iArr22.length;
-            if (i3 > length) {
-                int[] iArr32 = this.zza;
-                iArr32.getClass();
-                this.zza = Arrays.copyOf(iArr32, min);
-                Object[] objArr32 = this.zzb;
-                objArr32.getClass();
-                this.zzb = Arrays.copyOf(objArr32, min);
-                Object[] objArr42 = this.zzc;
-                objArr42.getClass();
-                this.zzc = Arrays.copyOf(objArr42, min);
-            }
-            int[] iArr42 = this.zza;
-            iArr42.getClass();
-            iArr42[i2] = (zzp ^ (-1)) & zza;
-            Object[] objArr52 = this.zzb;
-            objArr52.getClass();
-            objArr52[i2] = obj;
-            Object[] objArr62 = this.zzc;
-            objArr62.getClass();
-            objArr62[i2] = obj2;
-            this.zzg = i3;
-            zzl();
-            return null;
-        }
-        int i5 = zzp ^ (-1);
-        int i6 = zza & i5;
-        int i7 = 0;
-        while (true) {
-            int i8 = zzc - 1;
-            int i9 = iArr[i8];
-            int i10 = i9 & i5;
-            if (i10 == i6 && zze.zza(obj, objArr[i8])) {
-                Object obj5 = objArr2[i8];
-                objArr2[i8] = obj2;
-                return obj5;
-            }
-            int i11 = i9 & zzp;
-            i7++;
-            if (i11 != 0) {
-                zzc = i11;
-            } else {
-                if (i7 >= 9) {
-                    LinkedHashMap linkedHashMap = new LinkedHashMap(zzp() + 1, 1.0f);
-                    int zze = zze();
-                    while (zze >= 0) {
-                        Object[] objArr7 = this.zzb;
-                        objArr7.getClass();
-                        Object obj6 = objArr7[zze];
-                        Object[] objArr8 = this.zzc;
-                        objArr8.getClass();
-                        linkedHashMap.put(obj6, objArr8[zze]);
-                        zze = zzf(zze);
+                int i11 = i9 & zzp;
+                i7++;
+                if (i11 != 0) {
+                    zzc = i11;
+                } else {
+                    if (i7 >= 9) {
+                        LinkedHashMap linkedHashMap = new LinkedHashMap(zzp() + 1, 1.0f);
+                        int zze = zze();
+                        while (zze >= 0) {
+                            Object[] objArr3 = this.zzb;
+                            objArr3.getClass();
+                            Object obj5 = objArr3[zze];
+                            Object[] objArr4 = this.zzc;
+                            objArr4.getClass();
+                            linkedHashMap.put(obj5, objArr4[zze]);
+                            zze = zzf(zze);
+                        }
+                        this.zze = linkedHashMap;
+                        this.zza = null;
+                        this.zzb = null;
+                        this.zzc = null;
+                        zzl();
+                        return linkedHashMap.put(obj, obj2);
                     }
-                    this.zze = linkedHashMap;
-                    this.zza = null;
-                    this.zzb = null;
-                    this.zzc = null;
-                    zzl();
-                    return linkedHashMap.put(obj, obj2);
-                }
-                if (i3 <= zzp) {
-                    iArr[i8] = (i3 & zzp) | i10;
+                    if (i3 > zzp) {
+                        zzp = zzr(zzp, zzam.zza(zzp), zza, i2);
+                    } else {
+                        iArr[i8] = (i3 & zzp) | i10;
+                    }
                 }
             }
+        } else if (i3 > zzp) {
+            zzp = zzr(zzp, zzam.zza(zzp), zza, i2);
+        } else {
+            Object obj6 = this.zze;
+            obj6.getClass();
+            zzam.zze(obj6, i4, i3);
         }
+        int[] iArr2 = this.zza;
+        iArr2.getClass();
+        int length = iArr2.length;
+        if (i3 > length && (min = Math.min(1073741823, (Math.max(1, length >>> 1) + length) | 1)) != length) {
+            int[] iArr3 = this.zza;
+            iArr3.getClass();
+            this.zza = Arrays.copyOf(iArr3, min);
+            Object[] objArr5 = this.zzb;
+            objArr5.getClass();
+            this.zzb = Arrays.copyOf(objArr5, min);
+            Object[] objArr6 = this.zzc;
+            objArr6.getClass();
+            this.zzc = Arrays.copyOf(objArr6, min);
+        }
+        int i12 = (~zzp) & zza;
+        int[] iArr4 = this.zza;
+        iArr4.getClass();
+        iArr4[i2] = i12;
+        Object[] objArr7 = this.zzb;
+        objArr7.getClass();
+        objArr7[i2] = obj;
+        Object[] objArr8 = this.zzc;
+        objArr8.getClass();
+        objArr8[i2] = obj2;
+        this.zzg = i3;
+        zzl();
+        return null;
     }
 
     @Override // java.util.AbstractMap, java.util.Map
@@ -457,7 +430,7 @@ final class zzal extends AbstractMap implements Serializable {
             int i6 = iArr[i5];
             int i7 = i6 & i2;
             if (i7 == size) {
-                iArr[i5] = (i6 & (i2 ^ (-1))) | (i2 & i4);
+                iArr[i5] = (i6 & (~i2)) | (i2 & i4);
                 return;
             }
             zzc = i7;
@@ -466,5 +439,9 @@ final class zzal extends AbstractMap implements Serializable {
 
     final boolean zzo() {
         return this.zze == null;
+    }
+
+    zzal(int i) {
+        zzm(12);
     }
 }

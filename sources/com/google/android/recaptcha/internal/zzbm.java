@@ -4,7 +4,7 @@ import android.content.Context;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
-import kotlin.collections.CollectionsKt___CollectionsKt;
+import kotlin.collections.CollectionsKt;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScope;
 
@@ -34,15 +34,13 @@ public final class zzbm implements zzbh {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void zzg() {
-        List<List> windowed;
         zzaz zzazVar;
         zzpd zzk;
         int zzJ;
         int i;
         zzaz zzazVar2 = this.zze;
         if (zzazVar2 != null) {
-            windowed = CollectionsKt___CollectionsKt.windowed(zzazVar2.zzd(), 20, 20, true);
-            for (List<zzba> list : windowed) {
+            for (List<zzba> list : CollectionsKt.windowed(zzazVar2.zzd(), 20, 20, true)) {
                 zznh zzi = zzni.zzi();
                 ArrayList arrayList = new ArrayList();
                 for (zzba zzbaVar : list) {

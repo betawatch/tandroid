@@ -2,25 +2,6 @@ package com.google.common.base;
 
 /* loaded from: classes.dex */
 public abstract class Ascii {
-    public static boolean equalsIgnoreCase(CharSequence charSequence, CharSequence charSequence2) {
-        int alphaIndex;
-        int length = charSequence.length();
-        if (charSequence == charSequence2) {
-            return true;
-        }
-        if (length != charSequence2.length()) {
-            return false;
-        }
-        for (int i = 0; i < length; i++) {
-            char charAt = charSequence.charAt(i);
-            char charAt2 = charSequence2.charAt(i);
-            if (charAt != charAt2 && ((alphaIndex = getAlphaIndex(charAt)) >= 26 || alphaIndex != getAlphaIndex(charAt2))) {
-                return false;
-            }
-        }
-        return true;
-    }
-
     private static int getAlphaIndex(char c) {
         return (char) ((c | ' ') - 97);
     }
@@ -71,5 +52,24 @@ public abstract class Ascii {
             i++;
         }
         return str;
+    }
+
+    public static boolean equalsIgnoreCase(CharSequence charSequence, CharSequence charSequence2) {
+        int alphaIndex;
+        int length = charSequence.length();
+        if (charSequence == charSequence2) {
+            return true;
+        }
+        if (length != charSequence2.length()) {
+            return false;
+        }
+        for (int i = 0; i < length; i++) {
+            char charAt = charSequence.charAt(i);
+            char charAt2 = charSequence2.charAt(i);
+            if (charAt != charAt2 && ((alphaIndex = getAlphaIndex(charAt)) >= 26 || alphaIndex != getAlphaIndex(charAt2))) {
+                return false;
+            }
+        }
+        return true;
     }
 }

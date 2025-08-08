@@ -5,7 +5,7 @@ import android.view.ViewConfiguration;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Interpolator;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class Scroller {
     private static float sViscousFluidNormalize;
     private static float sViscousFluidScale;
@@ -85,25 +85,40 @@ public class Scroller {
         return this.mPpi * 386.0878f * f;
     }
 
-    static float viscousFluid(float f) {
-        float f2 = f * sViscousFluidScale;
-        return (f2 < 1.0f ? f2 - (1.0f - ((float) Math.exp(-f2))) : 0.36787945f + ((1.0f - ((float) Math.exp(1.0f - f2))) * 0.63212055f)) * sViscousFluidNormalize;
+    public final boolean isFinished() {
+        return this.mFinished;
     }
 
-    public void abortAnimation() {
-        this.mCurrX = this.mFinalX;
-        this.mCurrY = this.mFinalY;
-        this.mFinished = true;
+    public final void forceFinished(boolean z) {
+        this.mFinished = z;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x007c, code lost:
-    
-        if (r0 == r7.mFinalY) goto L16;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
+    public final int getCurrX() {
+        return this.mCurrX;
+    }
+
+    public final int getCurrY() {
+        return this.mCurrY;
+    }
+
+    public float getCurrVelocity() {
+        return this.mVelocity - ((this.mDeceleration * timePassed()) / 2000.0f);
+    }
+
+    public final int getStartX() {
+        return this.mStartX;
+    }
+
+    public final int getStartY() {
+        return this.mStartY;
+    }
+
+    public final int getFinalY() {
+        return this.mFinalY;
+    }
+
     public boolean computeScrollOffset() {
+        float interpolation;
         if (this.mFinished) {
             return false;
         }
@@ -114,9 +129,13 @@ public class Scroller {
             if (i2 == 0) {
                 float f = currentAnimationTimeMillis * this.mDurationReciprocal;
                 Interpolator interpolator = this.mInterpolator;
-                float viscousFluid = interpolator == null ? viscousFluid(f) : interpolator.getInterpolation(f);
-                this.mCurrX = this.mStartX + Math.round(this.mDeltaX * viscousFluid);
-                this.mCurrY = this.mStartY + Math.round(viscousFluid * this.mDeltaY);
+                if (interpolator == null) {
+                    interpolation = viscousFluid(f);
+                } else {
+                    interpolation = interpolator.getInterpolation(f);
+                }
+                this.mCurrX = this.mStartX + Math.round(this.mDeltaX * interpolation);
+                this.mCurrY = this.mStartY + Math.round(interpolation * this.mDeltaY);
             } else if (i2 == 1) {
                 float f2 = currentAnimationTimeMillis / i;
                 int i3 = (int) (f2 * 100.0f);
@@ -136,20 +155,35 @@ public class Scroller {
                 this.mCurrY = min2;
                 int max = Math.max(min2, this.mMinY);
                 this.mCurrY = max;
-                if (this.mCurrX == this.mFinalX) {
+                if (this.mCurrX == this.mFinalX && max == this.mFinalY) {
+                    this.mFinished = true;
                 }
             }
-            return true;
+        } else {
+            this.mCurrX = this.mFinalX;
+            this.mCurrY = this.mFinalY;
+            this.mFinished = true;
         }
-        this.mCurrX = this.mFinalX;
-        this.mCurrY = this.mFinalY;
-        this.mFinished = true;
         return true;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x00a2  */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x00ac  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x00a5  */
+    public void startScroll(int i, int i2, int i3, int i4, int i5) {
+        this.mMode = 0;
+        this.mFinished = false;
+        this.mDuration = i5;
+        this.mStartTime = AnimationUtils.currentAnimationTimeMillis();
+        this.mStartX = i;
+        this.mStartY = i2;
+        this.mFinalX = i + i3;
+        this.mFinalY = i2 + i4;
+        this.mDeltaX = i3;
+        this.mDeltaY = i4;
+        this.mDurationReciprocal = 1.0f / this.mDuration;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:12:0x009f  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x00a7  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x00a2  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -179,25 +213,19 @@ public class Scroller {
                 float sqrt2 = (float) Math.sqrt((i9 * i9) + (i10 * i10));
                 this.mVelocity = sqrt2;
                 double log = Math.log((START_TENSION * sqrt2) / 800.0f);
-                double d = DECELERATION_RATE;
-                Double.isNaN(d);
-                this.mDuration = (int) (Math.exp(log / (d - 1.0d)) * 1000.0d);
+                this.mDuration = (int) (Math.exp(log / (DECELERATION_RATE - 1.0d)) * 1000.0d);
                 this.mStartTime = AnimationUtils.currentAnimationTimeMillis();
                 this.mStartX = i;
                 this.mStartY = i2;
                 float f7 = sqrt2 != 0.0f ? 1.0f : i9 / sqrt2;
                 float f8 = sqrt2 != 0.0f ? i10 / sqrt2 : 1.0f;
-                double d2 = 800.0f;
-                double d3 = DECELERATION_RATE;
-                Double.isNaN(d3);
-                Double.isNaN(d3);
-                double exp = Math.exp((d3 / (d3 - 1.0d)) * log);
-                Double.isNaN(d2);
+                double d = DECELERATION_RATE;
+                int exp = (int) (800.0f * Math.exp((d / (d - 1.0d)) * log));
                 this.mMinX = i5;
                 this.mMaxX = i6;
                 this.mMinY = i7;
                 this.mMaxY = i8;
-                float f9 = (int) (d2 * exp);
+                float f9 = exp;
                 int round = i + Math.round(f7 * f9);
                 this.mFinalX = round;
                 int min = Math.min(round, this.mMaxX);
@@ -216,9 +244,7 @@ public class Scroller {
         float sqrt22 = (float) Math.sqrt((i9 * i9) + (i10 * i10));
         this.mVelocity = sqrt22;
         double log2 = Math.log((START_TENSION * sqrt22) / 800.0f);
-        double d4 = DECELERATION_RATE;
-        Double.isNaN(d4);
-        this.mDuration = (int) (Math.exp(log2 / (d4 - 1.0d)) * 1000.0d);
+        this.mDuration = (int) (Math.exp(log2 / (DECELERATION_RATE - 1.0d)) * 1000.0d);
         this.mStartTime = AnimationUtils.currentAnimationTimeMillis();
         this.mStartX = i;
         this.mStartY = i2;
@@ -226,17 +252,13 @@ public class Scroller {
         }
         if (sqrt22 != 0.0f) {
         }
-        double d22 = 800.0f;
-        double d32 = DECELERATION_RATE;
-        Double.isNaN(d32);
-        Double.isNaN(d32);
-        double exp2 = Math.exp((d32 / (d32 - 1.0d)) * log2);
-        Double.isNaN(d22);
+        double d2 = DECELERATION_RATE;
+        int exp2 = (int) (800.0f * Math.exp((d2 / (d2 - 1.0d)) * log2));
         this.mMinX = i5;
         this.mMaxX = i6;
         this.mMinY = i7;
         this.mMaxY = i8;
-        float f92 = (int) (d22 * exp2);
+        float f92 = exp2;
         int round3 = i + Math.round(f7 * f92);
         this.mFinalX = round3;
         int min3 = Math.min(round3, this.mMaxX);
@@ -249,50 +271,21 @@ public class Scroller {
         this.mFinalY = Math.max(min22, this.mMinY);
     }
 
-    public final void forceFinished(boolean z) {
-        this.mFinished = z;
+    static float viscousFluid(float f) {
+        float exp;
+        float f2 = f * sViscousFluidScale;
+        if (f2 < 1.0f) {
+            exp = f2 - (1.0f - ((float) Math.exp(-f2)));
+        } else {
+            exp = 0.36787945f + ((1.0f - ((float) Math.exp(1.0f - f2))) * 0.63212055f);
+        }
+        return exp * sViscousFluidNormalize;
     }
 
-    public float getCurrVelocity() {
-        return this.mVelocity - ((this.mDeceleration * timePassed()) / 2000.0f);
-    }
-
-    public final int getCurrX() {
-        return this.mCurrX;
-    }
-
-    public final int getCurrY() {
-        return this.mCurrY;
-    }
-
-    public final int getFinalY() {
-        return this.mFinalY;
-    }
-
-    public final int getStartX() {
-        return this.mStartX;
-    }
-
-    public final int getStartY() {
-        return this.mStartY;
-    }
-
-    public final boolean isFinished() {
-        return this.mFinished;
-    }
-
-    public void startScroll(int i, int i2, int i3, int i4, int i5) {
-        this.mMode = 0;
-        this.mFinished = false;
-        this.mDuration = i5;
-        this.mStartTime = AnimationUtils.currentAnimationTimeMillis();
-        this.mStartX = i;
-        this.mStartY = i2;
-        this.mFinalX = i + i3;
-        this.mFinalY = i2 + i4;
-        this.mDeltaX = i3;
-        this.mDeltaY = i4;
-        this.mDurationReciprocal = 1.0f / this.mDuration;
+    public void abortAnimation() {
+        this.mCurrX = this.mFinalX;
+        this.mCurrY = this.mFinalY;
+        this.mFinished = true;
     }
 
     public int timePassed() {

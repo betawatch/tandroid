@@ -14,6 +14,10 @@ import java.nio.ByteBuffer;
 public final class BarcodeDetector extends Detector {
     private final com.google.android.gms.internal.vision.zzm zza;
 
+    private BarcodeDetector(com.google.android.gms.internal.vision.zzm zzmVar) {
+        this.zza = zzmVar;
+    }
+
     public static class Builder {
         private Context zza;
         private com.google.android.gms.internal.vision.zzk zzb = new com.google.android.gms.internal.vision.zzk();
@@ -22,18 +26,20 @@ public final class BarcodeDetector extends Detector {
             this.zza = context;
         }
 
-        public BarcodeDetector build() {
-            return new BarcodeDetector(new com.google.android.gms.internal.vision.zzm(this.zza, this.zzb));
-        }
-
         public Builder setBarcodeFormats(int i) {
             this.zzb.zza = i;
             return this;
         }
+
+        public BarcodeDetector build() {
+            return new BarcodeDetector(new com.google.android.gms.internal.vision.zzm(this.zza, this.zzb));
+        }
     }
 
-    private BarcodeDetector(com.google.android.gms.internal.vision.zzm zzmVar) {
-        this.zza = zzmVar;
+    @Override // com.google.android.gms.vision.Detector
+    public final void release() {
+        super.release();
+        this.zza.zzc();
     }
 
     public final SparseArray detect(Frame frame) {
@@ -61,11 +67,5 @@ public final class BarcodeDetector extends Detector {
 
     public final boolean isOperational() {
         return this.zza.zzb();
-    }
-
-    @Override // com.google.android.gms.vision.Detector
-    public final void release() {
-        super.release();
-        this.zza.zzc();
     }
 }

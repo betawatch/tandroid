@@ -37,75 +37,6 @@ public final class MediaRouter {
     final ArrayList mCallbackRecords = new ArrayList();
     final Context mContext;
 
-    public static abstract class Callback {
-        public void onProviderAdded(MediaRouter mediaRouter, ProviderInfo providerInfo) {
-        }
-
-        public void onProviderChanged(MediaRouter mediaRouter, ProviderInfo providerInfo) {
-        }
-
-        public void onProviderRemoved(MediaRouter mediaRouter, ProviderInfo providerInfo) {
-        }
-
-        public void onRouteAdded(MediaRouter mediaRouter, RouteInfo routeInfo) {
-        }
-
-        public abstract void onRouteChanged(MediaRouter mediaRouter, RouteInfo routeInfo);
-
-        public void onRoutePresentationDisplayChanged(MediaRouter mediaRouter, RouteInfo routeInfo) {
-        }
-
-        public void onRouteRemoved(MediaRouter mediaRouter, RouteInfo routeInfo) {
-        }
-
-        public void onRouteSelected(MediaRouter mediaRouter, RouteInfo routeInfo) {
-        }
-
-        public void onRouteSelected(MediaRouter mediaRouter, RouteInfo routeInfo, int i) {
-            onRouteSelected(mediaRouter, routeInfo);
-        }
-
-        public void onRouteSelected(MediaRouter mediaRouter, RouteInfo routeInfo, int i, RouteInfo routeInfo2) {
-            onRouteSelected(mediaRouter, routeInfo, i);
-        }
-
-        public void onRouteUnselected(MediaRouter mediaRouter, RouteInfo routeInfo) {
-        }
-
-        public void onRouteUnselected(MediaRouter mediaRouter, RouteInfo routeInfo, int i) {
-            onRouteUnselected(mediaRouter, routeInfo);
-        }
-
-        public void onRouteVolumeChanged(MediaRouter mediaRouter, RouteInfo routeInfo) {
-        }
-
-        public void onRouterParamsChanged(MediaRouter mediaRouter, MediaRouterParams mediaRouterParams) {
-        }
-    }
-
-    static final class CallbackRecord {
-        public final Callback mCallback;
-        public int mFlags;
-        public final MediaRouter mRouter;
-        public MediaRouteSelector mSelector = MediaRouteSelector.EMPTY;
-        public long mTimestamp;
-
-        public CallbackRecord(MediaRouter mediaRouter, Callback callback) {
-            this.mRouter = mediaRouter;
-            this.mCallback = callback;
-        }
-
-        public boolean filterRouteEvent(RouteInfo routeInfo, int i, RouteInfo routeInfo2, int i2) {
-            if ((this.mFlags & 2) != 0 || routeInfo.matchesSelector(this.mSelector)) {
-                return true;
-            }
-            if (MediaRouter.isTransferToLocalEnabled() && routeInfo.isDefaultOrBluetooth() && i == 262 && i2 == 3 && routeInfo2 != null) {
-                return !routeInfo2.isDefaultOrBluetooth();
-            }
-            return false;
-        }
-    }
-
     public static abstract class ControlRequestCallback {
         public abstract void onError(String str, Bundle bundle);
 
@@ -116,195 +47,227 @@ public final class MediaRouter {
         ListenableFuture onPrepareTransfer(RouteInfo routeInfo, RouteInfo routeInfo2);
     }
 
-    static final class PrepareTransferNotifier {
-        private final RouteInfo mFromRoute;
-        final List mMemberRoutes;
-        final int mReason;
-        private final RouteInfo mRequestedRoute;
-        private final WeakReference mRouter;
-        final RouteInfo mToRoute;
-        final MediaRouteProvider.RouteController mToRouteController;
-        private ListenableFuture mFuture = null;
-        private boolean mFinished = false;
-        private boolean mCanceled = false;
+    static {
+        Log.isLoggable("AxMediaRouter", 3);
+    }
 
-        PrepareTransferNotifier(GlobalMediaRouter globalMediaRouter, RouteInfo routeInfo, MediaRouteProvider.RouteController routeController, int i, RouteInfo routeInfo2, Collection collection) {
-            this.mRouter = new WeakReference(globalMediaRouter);
-            this.mToRoute = routeInfo;
-            this.mToRouteController = routeController;
-            this.mReason = i;
-            this.mFromRoute = globalMediaRouter.mSelectedRoute;
-            this.mRequestedRoute = routeInfo2;
-            this.mMemberRoutes = collection != null ? new ArrayList(collection) : null;
-            globalMediaRouter.mCallbackHandler.postDelayed(new MediaRouter$PrepareTransferNotifier$$ExternalSyntheticLambda0(this), 15000L);
+    MediaRouter(Context context) {
+        this.mContext = context;
+    }
+
+    public static MediaRouter getInstance(Context context) {
+        if (context == null) {
+            throw new IllegalArgumentException("context must not be null");
         }
-
-        private void selectToRouteAndNotify() {
-            GlobalMediaRouter globalMediaRouter = (GlobalMediaRouter) this.mRouter.get();
-            if (globalMediaRouter == null) {
-                return;
-            }
-            RouteInfo routeInfo = this.mToRoute;
-            globalMediaRouter.mSelectedRoute = routeInfo;
-            globalMediaRouter.mSelectedRouteController = this.mToRouteController;
-            RouteInfo routeInfo2 = this.mRequestedRoute;
-            if (routeInfo2 == null) {
-                globalMediaRouter.mCallbackHandler.post(NotificationCenter.proxyCheckDone, new Pair(this.mFromRoute, routeInfo), this.mReason);
-            } else {
-                globalMediaRouter.mCallbackHandler.post(NotificationCenter.liveLocationsChanged, new Pair(routeInfo2, routeInfo), this.mReason);
-            }
-            globalMediaRouter.mRouteControllerMap.clear();
-            globalMediaRouter.maybeUpdateMemberRouteControllers();
-            globalMediaRouter.updatePlaybackInfoFromSelectedRoute();
-            List list = this.mMemberRoutes;
-            if (list != null) {
-                globalMediaRouter.mSelectedRoute.updateDynamicDescriptors(list);
-            }
+        checkCallingThread();
+        if (sGlobal == null) {
+            sGlobal = new GlobalMediaRouter(context.getApplicationContext());
         }
+        return sGlobal.getRouter(context);
+    }
 
-        private void unselectFromRouteAndNotify() {
-            GlobalMediaRouter globalMediaRouter = (GlobalMediaRouter) this.mRouter.get();
-            if (globalMediaRouter != null) {
-                RouteInfo routeInfo = globalMediaRouter.mSelectedRoute;
-                RouteInfo routeInfo2 = this.mFromRoute;
-                if (routeInfo != routeInfo2) {
-                    return;
-                }
-                globalMediaRouter.mCallbackHandler.post(NotificationCenter.proxyChangedByRotation, routeInfo2, this.mReason);
-                MediaRouteProvider.RouteController routeController = globalMediaRouter.mSelectedRouteController;
-                if (routeController != null) {
-                    routeController.onUnselect(this.mReason);
-                    globalMediaRouter.mSelectedRouteController.onRelease();
-                }
-                if (!globalMediaRouter.mRouteControllerMap.isEmpty()) {
-                    for (MediaRouteProvider.RouteController routeController2 : globalMediaRouter.mRouteControllerMap.values()) {
-                        routeController2.onUnselect(this.mReason);
-                        routeController2.onRelease();
-                    }
-                    globalMediaRouter.mRouteControllerMap.clear();
-                }
-                globalMediaRouter.mSelectedRouteController = null;
-            }
+    static GlobalMediaRouter getGlobalRouter() {
+        GlobalMediaRouter globalMediaRouter = sGlobal;
+        if (globalMediaRouter != null) {
+            return globalMediaRouter;
         }
+        throw new IllegalStateException("getGlobalRouter cannot be called when sGlobal is null");
+    }
 
-        void cancel() {
-            if (this.mFinished || this.mCanceled) {
-                return;
-            }
-            this.mCanceled = true;
-            MediaRouteProvider.RouteController routeController = this.mToRouteController;
-            if (routeController != null) {
-                routeController.onUnselect(0);
-                this.mToRouteController.onRelease();
-            }
+    public List getRoutes() {
+        checkCallingThread();
+        return getGlobalRouter().getRoutes();
+    }
+
+    public RouteInfo getDefaultRoute() {
+        checkCallingThread();
+        return getGlobalRouter().getDefaultRoute();
+    }
+
+    public RouteInfo getBluetoothRoute() {
+        checkCallingThread();
+        return getGlobalRouter().getBluetoothRoute();
+    }
+
+    public RouteInfo getSelectedRoute() {
+        checkCallingThread();
+        return getGlobalRouter().getSelectedRoute();
+    }
+
+    public void selectRoute(RouteInfo routeInfo) {
+        if (routeInfo == null) {
+            throw new IllegalArgumentException("route must not be null");
         }
+        checkCallingThread();
+        getGlobalRouter().selectRoute(routeInfo, 3);
+    }
 
-        void finishTransfer() {
-            ListenableFuture listenableFuture;
-            MediaRouter.checkCallingThread();
-            if (this.mFinished || this.mCanceled) {
-                return;
-            }
-            GlobalMediaRouter globalMediaRouter = (GlobalMediaRouter) this.mRouter.get();
-            if (globalMediaRouter == null || globalMediaRouter.mTransferNotifier != this || ((listenableFuture = this.mFuture) != null && listenableFuture.isCancelled())) {
-                cancel();
-                return;
-            }
-            this.mFinished = true;
-            globalMediaRouter.mTransferNotifier = null;
-            unselectFromRouteAndNotify();
-            selectToRouteAndNotify();
+    public void unselect(int i) {
+        if (i < 0 || i > 3) {
+            throw new IllegalArgumentException("Unsupported reason to unselect route");
         }
-
-        void setFuture(ListenableFuture listenableFuture) {
-            GlobalMediaRouter globalMediaRouter = (GlobalMediaRouter) this.mRouter.get();
-            if (globalMediaRouter == null || globalMediaRouter.mTransferNotifier != this) {
-                Log.w("AxMediaRouter", "Router is released. Cancel transfer");
-                cancel();
-            } else {
-                if (this.mFuture != null) {
-                    throw new IllegalStateException("future is already set");
-                }
-                this.mFuture = listenableFuture;
-                MediaRouter$PrepareTransferNotifier$$ExternalSyntheticLambda0 mediaRouter$PrepareTransferNotifier$$ExternalSyntheticLambda0 = new MediaRouter$PrepareTransferNotifier$$ExternalSyntheticLambda0(this);
-                final GlobalMediaRouter.CallbackHandler callbackHandler = globalMediaRouter.mCallbackHandler;
-                Objects.requireNonNull(callbackHandler);
-                listenableFuture.addListener(mediaRouter$PrepareTransferNotifier$$ExternalSyntheticLambda0, new Executor() { // from class: androidx.mediarouter.media.MediaRouter$PrepareTransferNotifier$$ExternalSyntheticLambda1
-                    @Override // java.util.concurrent.Executor
-                    public final void execute(Runnable runnable) {
-                        GlobalMediaRouter.CallbackHandler.this.post(runnable);
-                    }
-                });
-            }
+        checkCallingThread();
+        GlobalMediaRouter globalRouter = getGlobalRouter();
+        RouteInfo chooseFallbackRoute = globalRouter.chooseFallbackRoute();
+        if (globalRouter.getSelectedRoute() != chooseFallbackRoute) {
+            globalRouter.selectRoute(chooseFallbackRoute, i);
         }
     }
 
-    public static final class ProviderInfo {
-        private MediaRouteProviderDescriptor mDescriptor;
-        private final MediaRouteProvider.ProviderMetadata mMetadata;
-        final MediaRouteProvider mProviderInstance;
-        final List mRoutes = new ArrayList();
-        final boolean mTreatRouteDescriptorIdsAsUnique;
-
-        ProviderInfo(MediaRouteProvider mediaRouteProvider, boolean z) {
-            this.mProviderInstance = mediaRouteProvider;
-            this.mMetadata = mediaRouteProvider.getMetadata();
-            this.mTreatRouteDescriptorIdsAsUnique = z;
+    public void addMemberToDynamicGroup(RouteInfo routeInfo) {
+        if (routeInfo == null) {
+            throw new NullPointerException("route must not be null");
         }
+        checkCallingThread();
+        getGlobalRouter().addMemberToDynamicGroup(routeInfo);
+    }
 
-        RouteInfo findRouteByDescriptorId(String str) {
-            for (RouteInfo routeInfo : this.mRoutes) {
-                if (routeInfo.mDescriptorId.equals(str)) {
-                    return routeInfo;
-                }
+    public void removeMemberFromDynamicGroup(RouteInfo routeInfo) {
+        if (routeInfo == null) {
+            throw new NullPointerException("route must not be null");
+        }
+        checkCallingThread();
+        getGlobalRouter().removeMemberFromDynamicGroup(routeInfo);
+    }
+
+    public void transferToRoute(RouteInfo routeInfo) {
+        if (routeInfo == null) {
+            throw new NullPointerException("route must not be null");
+        }
+        checkCallingThread();
+        getGlobalRouter().transferToRoute(routeInfo);
+    }
+
+    public boolean isRouteAvailable(MediaRouteSelector mediaRouteSelector, int i) {
+        if (mediaRouteSelector == null) {
+            throw new IllegalArgumentException("selector must not be null");
+        }
+        checkCallingThread();
+        return getGlobalRouter().isRouteAvailable(mediaRouteSelector, i);
+    }
+
+    public void addCallback(MediaRouteSelector mediaRouteSelector, Callback callback) {
+        addCallback(mediaRouteSelector, callback, 0);
+    }
+
+    public void addCallback(MediaRouteSelector mediaRouteSelector, Callback callback, int i) {
+        CallbackRecord callbackRecord;
+        boolean z;
+        if (mediaRouteSelector == null) {
+            throw new IllegalArgumentException("selector must not be null");
+        }
+        if (callback == null) {
+            throw new IllegalArgumentException("callback must not be null");
+        }
+        checkCallingThread();
+        int findCallbackRecord = findCallbackRecord(callback);
+        if (findCallbackRecord < 0) {
+            callbackRecord = new CallbackRecord(this, callback);
+            this.mCallbackRecords.add(callbackRecord);
+        } else {
+            callbackRecord = (CallbackRecord) this.mCallbackRecords.get(findCallbackRecord);
+        }
+        boolean z2 = true;
+        if (i != callbackRecord.mFlags) {
+            callbackRecord.mFlags = i;
+            z = true;
+        } else {
+            z = false;
+        }
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        if ((i & 1) != 0) {
+            z = true;
+        }
+        callbackRecord.mTimestamp = elapsedRealtime;
+        if (callbackRecord.mSelector.contains(mediaRouteSelector)) {
+            z2 = z;
+        } else {
+            callbackRecord.mSelector = new MediaRouteSelector.Builder(callbackRecord.mSelector).addSelector(mediaRouteSelector).build();
+        }
+        if (z2) {
+            getGlobalRouter().updateDiscoveryRequest();
+        }
+    }
+
+    public void removeCallback(Callback callback) {
+        if (callback == null) {
+            throw new IllegalArgumentException("callback must not be null");
+        }
+        checkCallingThread();
+        int findCallbackRecord = findCallbackRecord(callback);
+        if (findCallbackRecord >= 0) {
+            this.mCallbackRecords.remove(findCallbackRecord);
+            getGlobalRouter().updateDiscoveryRequest();
+        }
+    }
+
+    private int findCallbackRecord(Callback callback) {
+        int size = this.mCallbackRecords.size();
+        for (int i = 0; i < size; i++) {
+            if (((CallbackRecord) this.mCallbackRecords.get(i)).mCallback == callback) {
+                return i;
             }
+        }
+        return -1;
+    }
+
+    public void setOnPrepareTransferListener(OnPrepareTransferListener onPrepareTransferListener) {
+        checkCallingThread();
+        getGlobalRouter().mOnPrepareTransferListener = onPrepareTransferListener;
+    }
+
+    public void setMediaSessionCompat(MediaSessionCompat mediaSessionCompat) {
+        checkCallingThread();
+        getGlobalRouter().setMediaSessionCompat(mediaSessionCompat);
+    }
+
+    public MediaSessionCompat.Token getMediaSessionToken() {
+        GlobalMediaRouter globalMediaRouter = sGlobal;
+        if (globalMediaRouter == null) {
             return null;
         }
+        return globalMediaRouter.getMediaSessionToken();
+    }
 
-        int findRouteIndexByDescriptorId(String str) {
-            int size = this.mRoutes.size();
-            for (int i = 0; i < size; i++) {
-                if (((RouteInfo) this.mRoutes.get(i)).mDescriptorId.equals(str)) {
-                    return i;
-                }
-            }
-            return -1;
-        }
+    public MediaRouterParams getRouterParams() {
+        checkCallingThread();
+        return getGlobalRouter().getRouterParams();
+    }
 
-        public ComponentName getComponentName() {
-            return this.mMetadata.getComponentName();
-        }
+    public void setRouterParams(MediaRouterParams mediaRouterParams) {
+        checkCallingThread();
+        getGlobalRouter().setRouterParams(mediaRouterParams);
+    }
 
-        public String getPackageName() {
-            return this.mMetadata.getPackageName();
+    static void checkCallingThread() {
+        if (Looper.myLooper() != Looper.getMainLooper()) {
+            throw new IllegalStateException("The media router service must only be accessed on the application's main thread.");
         }
+    }
 
-        public MediaRouteProvider getProviderInstance() {
-            MediaRouter.checkCallingThread();
-            return this.mProviderInstance;
+    public static boolean isMediaTransferEnabled() {
+        if (sGlobal == null) {
+            return false;
         }
+        return getGlobalRouter().isMediaTransferEnabled();
+    }
 
-        public List getRoutes() {
-            MediaRouter.checkCallingThread();
-            return Collections.unmodifiableList(this.mRoutes);
+    public static boolean isGroupVolumeUxEnabled() {
+        if (sGlobal == null) {
+            return false;
         }
+        return getGlobalRouter().isGroupVolumeUxEnabled();
+    }
 
-        boolean supportsDynamicGroup() {
-            MediaRouteProviderDescriptor mediaRouteProviderDescriptor = this.mDescriptor;
-            return mediaRouteProviderDescriptor != null && mediaRouteProviderDescriptor.supportsDynamicGroupRoute();
+    static int getGlobalCallbackCount() {
+        if (sGlobal == null) {
+            return 0;
         }
+        return getGlobalRouter().getCallbackCount();
+    }
 
-        public String toString() {
-            return "MediaRouter.RouteProviderInfo{ packageName=" + getPackageName() + " }";
-        }
-
-        boolean updateDescriptor(MediaRouteProviderDescriptor mediaRouteProviderDescriptor) {
-            if (this.mDescriptor == mediaRouteProviderDescriptor) {
-                return false;
-            }
-            this.mDescriptor = mediaRouteProviderDescriptor;
-            return true;
-        }
+    static boolean isTransferToLocalEnabled() {
+        return getGlobalRouter().isTransferToLocalEnabled();
     }
 
     public static class RouteInfo {
@@ -333,37 +296,6 @@ public final class MediaRouter {
         private int mVolumeHandling;
         private int mVolumeMax;
 
-        public static final class DynamicGroupState {
-            final MediaRouteProvider.DynamicGroupRouteController.DynamicRouteDescriptor mDynamicDescriptor;
-
-            DynamicGroupState(MediaRouteProvider.DynamicGroupRouteController.DynamicRouteDescriptor dynamicRouteDescriptor) {
-                this.mDynamicDescriptor = dynamicRouteDescriptor;
-            }
-
-            public int getSelectionState() {
-                MediaRouteProvider.DynamicGroupRouteController.DynamicRouteDescriptor dynamicRouteDescriptor = this.mDynamicDescriptor;
-                if (dynamicRouteDescriptor != null) {
-                    return dynamicRouteDescriptor.getSelectionState();
-                }
-                return 1;
-            }
-
-            public boolean isGroupable() {
-                MediaRouteProvider.DynamicGroupRouteController.DynamicRouteDescriptor dynamicRouteDescriptor = this.mDynamicDescriptor;
-                return dynamicRouteDescriptor != null && dynamicRouteDescriptor.isGroupable();
-            }
-
-            public boolean isTransferable() {
-                MediaRouteProvider.DynamicGroupRouteController.DynamicRouteDescriptor dynamicRouteDescriptor = this.mDynamicDescriptor;
-                return dynamicRouteDescriptor != null && dynamicRouteDescriptor.isTransferable();
-            }
-
-            public boolean isUnselectable() {
-                MediaRouteProvider.DynamicGroupRouteController.DynamicRouteDescriptor dynamicRouteDescriptor = this.mDynamicDescriptor;
-                return dynamicRouteDescriptor == null || dynamicRouteDescriptor.isUnselectable();
-            }
-        }
-
         RouteInfo(ProviderInfo providerInfo, String str, String str2) {
             this(providerInfo, str, str2, false);
         }
@@ -378,178 +310,42 @@ public final class MediaRouter {
             this.mIsSystemRoute = z;
         }
 
-        private boolean isSameControlFilter(IntentFilter intentFilter, IntentFilter intentFilter2) {
-            int countActions;
-            if (intentFilter == intentFilter2) {
-                return true;
-            }
-            if (intentFilter == null || intentFilter2 == null || (countActions = intentFilter.countActions()) != intentFilter2.countActions()) {
-                return false;
-            }
-            for (int i = 0; i < countActions; i++) {
-                if (!intentFilter.getAction(i).equals(intentFilter2.getAction(i))) {
-                    return false;
-                }
-            }
-            int countCategories = intentFilter.countCategories();
-            if (countCategories != intentFilter2.countCategories()) {
-                return false;
-            }
-            for (int i2 = 0; i2 < countCategories; i2++) {
-                if (!intentFilter.getCategory(i2).equals(intentFilter2.getCategory(i2))) {
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        private boolean isSameControlFilters(List list, List list2) {
-            if (list == list2) {
-                return true;
-            }
-            if (list == null || list2 == null) {
-                return false;
-            }
-            ListIterator listIterator = list.listIterator();
-            ListIterator listIterator2 = list2.listIterator();
-            while (listIterator.hasNext() && listIterator2.hasNext()) {
-                if (!isSameControlFilter((IntentFilter) listIterator.next(), (IntentFilter) listIterator2.next())) {
-                    return false;
-                }
-            }
-            return (listIterator.hasNext() || listIterator2.hasNext()) ? false : true;
-        }
-
-        private static boolean isSystemMediaRouteProvider(RouteInfo routeInfo) {
-            return TextUtils.equals(routeInfo.getProviderInstance().getMetadata().getPackageName(), "android");
-        }
-
-        public boolean canDisconnect() {
-            return this.mCanDisconnect;
-        }
-
-        RouteInfo findRouteByDynamicRouteDescriptor(MediaRouteProvider.DynamicGroupRouteController.DynamicRouteDescriptor dynamicRouteDescriptor) {
-            return getProvider().findRouteByDescriptorId(dynamicRouteDescriptor.getRouteDescriptor().getId());
-        }
-
-        public int getConnectionState() {
-            return this.mConnectionState;
-        }
-
-        public String getDescription() {
-            return this.mDescription;
-        }
-
-        String getDescriptorId() {
-            return this.mDescriptorId;
-        }
-
-        public int getDeviceType() {
-            return this.mDeviceType;
-        }
-
-        public MediaRouteProvider.DynamicGroupRouteController getDynamicGroupController() {
-            MediaRouter.checkCallingThread();
-            MediaRouteProvider.RouteController routeController = MediaRouter.getGlobalRouter().mSelectedRouteController;
-            if (routeController instanceof MediaRouteProvider.DynamicGroupRouteController) {
-                return (MediaRouteProvider.DynamicGroupRouteController) routeController;
-            }
-            return null;
-        }
-
-        public DynamicGroupState getDynamicGroupState(RouteInfo routeInfo) {
-            if (routeInfo == null) {
-                throw new NullPointerException("route must not be null");
-            }
-            Map map = this.mDynamicGroupDescriptors;
-            if (map == null || !map.containsKey(routeInfo.mUniqueId)) {
-                return null;
-            }
-            return new DynamicGroupState((MediaRouteProvider.DynamicGroupRouteController.DynamicRouteDescriptor) this.mDynamicGroupDescriptors.get(routeInfo.mUniqueId));
-        }
-
-        public Bundle getExtras() {
-            return this.mExtras;
-        }
-
-        public Uri getIconUri() {
-            return this.mIconUri;
+        public ProviderInfo getProvider() {
+            return this.mProvider;
         }
 
         public String getId() {
             return this.mUniqueId;
         }
 
-        public List getMemberRoutes() {
-            return Collections.unmodifiableList(this.mMemberRoutes);
-        }
-
         public String getName() {
             return this.mName;
         }
 
-        public int getPlaybackStream() {
-            return this.mPlaybackStream;
+        public String getDescription() {
+            return this.mDescription;
         }
 
-        public int getPlaybackType() {
-            return this.mPlaybackType;
-        }
-
-        public int getPresentationDisplayId() {
-            return this.mPresentationDisplayId;
-        }
-
-        public ProviderInfo getProvider() {
-            return this.mProvider;
-        }
-
-        public MediaRouteProvider getProviderInstance() {
-            return this.mProvider.getProviderInstance();
-        }
-
-        public int getVolume() {
-            return this.mVolume;
-        }
-
-        public int getVolumeHandling() {
-            if (!isGroup() || MediaRouter.isGroupVolumeUxEnabled()) {
-                return this.mVolumeHandling;
-            }
-            return 0;
-        }
-
-        public int getVolumeMax() {
-            return this.mVolumeMax;
-        }
-
-        public boolean isDefault() {
-            MediaRouter.checkCallingThread();
-            return MediaRouter.getGlobalRouter().getDefaultRoute() == this;
-        }
-
-        public boolean isDefaultOrBluetooth() {
-            if (isDefault() || this.mDeviceType == 3) {
-                return true;
-            }
-            return isSystemMediaRouteProvider(this) && supportsControlCategory("android.media.intent.category.LIVE_AUDIO") && !supportsControlCategory("android.media.intent.category.LIVE_VIDEO");
+        public Uri getIconUri() {
+            return this.mIconUri;
         }
 
         public boolean isEnabled() {
             return this.mEnabled;
         }
 
-        public boolean isGroup() {
-            return getMemberRoutes().size() >= 1;
-        }
-
-        boolean isSelectable() {
-            return this.mDescriptor != null && this.mEnabled;
+        public int getConnectionState() {
+            return this.mConnectionState;
         }
 
         public boolean isSelected() {
             MediaRouter.checkCallingThread();
             return MediaRouter.getGlobalRouter().getSelectedRoute() == this;
+        }
+
+        public boolean isDefault() {
+            MediaRouter.checkCallingThread();
+            return MediaRouter.getGlobalRouter().getDefaultRoute() == this;
         }
 
         public boolean matchesSelector(MediaRouteSelector mediaRouteSelector) {
@@ -558,30 +354,6 @@ public final class MediaRouter {
             }
             MediaRouter.checkCallingThread();
             return mediaRouteSelector.matchesControlFilters(this.mControlFilters);
-        }
-
-        int maybeUpdateDescriptor(MediaRouteDescriptor mediaRouteDescriptor) {
-            if (this.mDescriptor != mediaRouteDescriptor) {
-                return updateDescriptor(mediaRouteDescriptor);
-            }
-            return 0;
-        }
-
-        public void requestSetVolume(int i) {
-            MediaRouter.checkCallingThread();
-            MediaRouter.getGlobalRouter().requestSetVolume(this, Math.min(this.mVolumeMax, Math.max(0, i)));
-        }
-
-        public void requestUpdateVolume(int i) {
-            MediaRouter.checkCallingThread();
-            if (i != 0) {
-                MediaRouter.getGlobalRouter().requestUpdateVolume(this, i);
-            }
-        }
-
-        public void select() {
-            MediaRouter.checkCallingThread();
-            MediaRouter.getGlobalRouter().selectRoute(this, 3);
         }
 
         public boolean supportsControlCategory(String str) {
@@ -596,6 +368,105 @@ public final class MediaRouter {
                 }
             }
             return false;
+        }
+
+        public int getPlaybackType() {
+            return this.mPlaybackType;
+        }
+
+        public int getPlaybackStream() {
+            return this.mPlaybackStream;
+        }
+
+        public int getDeviceType() {
+            return this.mDeviceType;
+        }
+
+        public boolean isDefaultOrBluetooth() {
+            if (isDefault() || this.mDeviceType == 3) {
+                return true;
+            }
+            return isSystemMediaRouteProvider(this) && supportsControlCategory("android.media.intent.category.LIVE_AUDIO") && !supportsControlCategory("android.media.intent.category.LIVE_VIDEO");
+        }
+
+        boolean isSelectable() {
+            return this.mDescriptor != null && this.mEnabled;
+        }
+
+        private static boolean isSystemMediaRouteProvider(RouteInfo routeInfo) {
+            return TextUtils.equals(routeInfo.getProviderInstance().getMetadata().getPackageName(), "android");
+        }
+
+        public int getVolumeHandling() {
+            if (!isGroup() || MediaRouter.isGroupVolumeUxEnabled()) {
+                return this.mVolumeHandling;
+            }
+            return 0;
+        }
+
+        public int getVolume() {
+            return this.mVolume;
+        }
+
+        public int getVolumeMax() {
+            return this.mVolumeMax;
+        }
+
+        public boolean canDisconnect() {
+            return this.mCanDisconnect;
+        }
+
+        public void requestSetVolume(int i) {
+            MediaRouter.checkCallingThread();
+            MediaRouter.getGlobalRouter().requestSetVolume(this, Math.min(this.mVolumeMax, Math.max(0, i)));
+        }
+
+        public void requestUpdateVolume(int i) {
+            MediaRouter.checkCallingThread();
+            if (i != 0) {
+                MediaRouter.getGlobalRouter().requestUpdateVolume(this, i);
+            }
+        }
+
+        public int getPresentationDisplayId() {
+            return this.mPresentationDisplayId;
+        }
+
+        public Bundle getExtras() {
+            return this.mExtras;
+        }
+
+        public void select() {
+            MediaRouter.checkCallingThread();
+            MediaRouter.getGlobalRouter().selectRoute(this, 3);
+        }
+
+        public boolean isGroup() {
+            return getMemberRoutes().size() >= 1;
+        }
+
+        public DynamicGroupState getDynamicGroupState(RouteInfo routeInfo) {
+            if (routeInfo == null) {
+                throw new NullPointerException("route must not be null");
+            }
+            Map map = this.mDynamicGroupDescriptors;
+            if (map == null || !map.containsKey(routeInfo.mUniqueId)) {
+                return null;
+            }
+            return new DynamicGroupState((MediaRouteProvider.DynamicGroupRouteController.DynamicRouteDescriptor) this.mDynamicGroupDescriptors.get(routeInfo.mUniqueId));
+        }
+
+        public List getMemberRoutes() {
+            return Collections.unmodifiableList(this.mMemberRoutes);
+        }
+
+        public MediaRouteProvider.DynamicGroupRouteController getDynamicGroupController() {
+            MediaRouter.checkCallingThread();
+            MediaRouteProvider.RouteController routeController = MediaRouter.getGlobalRouter().mSelectedRouteController;
+            if (routeController instanceof MediaRouteProvider.DynamicGroupRouteController) {
+                return (MediaRouteProvider.DynamicGroupRouteController) routeController;
+            }
+            return null;
         }
 
         public String toString() {
@@ -651,6 +522,55 @@ public final class MediaRouter {
             }
             sb.append(" }");
             return sb.toString();
+        }
+
+        int maybeUpdateDescriptor(MediaRouteDescriptor mediaRouteDescriptor) {
+            if (this.mDescriptor != mediaRouteDescriptor) {
+                return updateDescriptor(mediaRouteDescriptor);
+            }
+            return 0;
+        }
+
+        private boolean isSameControlFilters(List list, List list2) {
+            if (list == list2) {
+                return true;
+            }
+            if (list == null || list2 == null) {
+                return false;
+            }
+            ListIterator listIterator = list.listIterator();
+            ListIterator listIterator2 = list2.listIterator();
+            while (listIterator.hasNext() && listIterator2.hasNext()) {
+                if (!isSameControlFilter((IntentFilter) listIterator.next(), (IntentFilter) listIterator2.next())) {
+                    return false;
+                }
+            }
+            return (listIterator.hasNext() || listIterator2.hasNext()) ? false : true;
+        }
+
+        private boolean isSameControlFilter(IntentFilter intentFilter, IntentFilter intentFilter2) {
+            int countActions;
+            if (intentFilter == intentFilter2) {
+                return true;
+            }
+            if (intentFilter == null || intentFilter2 == null || (countActions = intentFilter.countActions()) != intentFilter2.countActions()) {
+                return false;
+            }
+            for (int i = 0; i < countActions; i++) {
+                if (!intentFilter.getAction(i).equals(intentFilter2.getAction(i))) {
+                    return false;
+                }
+            }
+            int countCategories = intentFilter.countCategories();
+            if (countCategories != intentFilter2.countCategories()) {
+                return false;
+            }
+            for (int i2 = 0; i2 < countCategories; i2++) {
+                if (!intentFilter.getCategory(i2).equals(intentFilter2.getCategory(i2))) {
+                    return false;
+                }
+            }
+            return true;
         }
 
         int updateDescriptor(MediaRouteDescriptor mediaRouteDescriptor) {
@@ -752,6 +672,14 @@ public final class MediaRouter {
             return i2 | 1;
         }
 
+        String getDescriptorId() {
+            return this.mDescriptorId;
+        }
+
+        public MediaRouteProvider getProviderInstance() {
+            return this.mProvider.getProviderInstance();
+        }
+
         void updateDynamicDescriptors(Collection collection) {
             this.mMemberRoutes.clear();
             if (this.mDynamicGroupDescriptors == null) {
@@ -771,228 +699,300 @@ public final class MediaRouter {
             }
             MediaRouter.getGlobalRouter().mCallbackHandler.post(NotificationCenter.suggestedLangpack, this);
         }
-    }
 
-    static {
-        Log.isLoggable("AxMediaRouter", 3);
-    }
-
-    MediaRouter(Context context) {
-        this.mContext = context;
-    }
-
-    static void checkCallingThread() {
-        if (Looper.myLooper() != Looper.getMainLooper()) {
-            throw new IllegalStateException("The media router service must only be accessed on the application's main thread.");
+        RouteInfo findRouteByDynamicRouteDescriptor(MediaRouteProvider.DynamicGroupRouteController.DynamicRouteDescriptor dynamicRouteDescriptor) {
+            return getProvider().findRouteByDescriptorId(dynamicRouteDescriptor.getRouteDescriptor().getId());
         }
-    }
 
-    private int findCallbackRecord(Callback callback) {
-        int size = this.mCallbackRecords.size();
-        for (int i = 0; i < size; i++) {
-            if (((CallbackRecord) this.mCallbackRecords.get(i)).mCallback == callback) {
-                return i;
+        public static final class DynamicGroupState {
+            final MediaRouteProvider.DynamicGroupRouteController.DynamicRouteDescriptor mDynamicDescriptor;
+
+            DynamicGroupState(MediaRouteProvider.DynamicGroupRouteController.DynamicRouteDescriptor dynamicRouteDescriptor) {
+                this.mDynamicDescriptor = dynamicRouteDescriptor;
+            }
+
+            public int getSelectionState() {
+                MediaRouteProvider.DynamicGroupRouteController.DynamicRouteDescriptor dynamicRouteDescriptor = this.mDynamicDescriptor;
+                if (dynamicRouteDescriptor != null) {
+                    return dynamicRouteDescriptor.getSelectionState();
+                }
+                return 1;
+            }
+
+            public boolean isUnselectable() {
+                MediaRouteProvider.DynamicGroupRouteController.DynamicRouteDescriptor dynamicRouteDescriptor = this.mDynamicDescriptor;
+                return dynamicRouteDescriptor == null || dynamicRouteDescriptor.isUnselectable();
+            }
+
+            public boolean isGroupable() {
+                MediaRouteProvider.DynamicGroupRouteController.DynamicRouteDescriptor dynamicRouteDescriptor = this.mDynamicDescriptor;
+                return dynamicRouteDescriptor != null && dynamicRouteDescriptor.isGroupable();
+            }
+
+            public boolean isTransferable() {
+                MediaRouteProvider.DynamicGroupRouteController.DynamicRouteDescriptor dynamicRouteDescriptor = this.mDynamicDescriptor;
+                return dynamicRouteDescriptor != null && dynamicRouteDescriptor.isTransferable();
             }
         }
-        return -1;
     }
 
-    static int getGlobalCallbackCount() {
-        if (sGlobal == null) {
-            return 0;
-        }
-        return getGlobalRouter().getCallbackCount();
-    }
+    public static final class ProviderInfo {
+        private MediaRouteProviderDescriptor mDescriptor;
+        private final MediaRouteProvider.ProviderMetadata mMetadata;
+        final MediaRouteProvider mProviderInstance;
+        final List mRoutes = new ArrayList();
+        final boolean mTreatRouteDescriptorIdsAsUnique;
 
-    static GlobalMediaRouter getGlobalRouter() {
-        GlobalMediaRouter globalMediaRouter = sGlobal;
-        if (globalMediaRouter != null) {
-            return globalMediaRouter;
+        ProviderInfo(MediaRouteProvider mediaRouteProvider, boolean z) {
+            this.mProviderInstance = mediaRouteProvider;
+            this.mMetadata = mediaRouteProvider.getMetadata();
+            this.mTreatRouteDescriptorIdsAsUnique = z;
         }
-        throw new IllegalStateException("getGlobalRouter cannot be called when sGlobal is null");
-    }
 
-    public static MediaRouter getInstance(Context context) {
-        if (context == null) {
-            throw new IllegalArgumentException("context must not be null");
+        public MediaRouteProvider getProviderInstance() {
+            MediaRouter.checkCallingThread();
+            return this.mProviderInstance;
         }
-        checkCallingThread();
-        if (sGlobal == null) {
-            sGlobal = new GlobalMediaRouter(context.getApplicationContext());
-        }
-        return sGlobal.getRouter(context);
-    }
 
-    public static boolean isGroupVolumeUxEnabled() {
-        if (sGlobal == null) {
-            return false;
+        public String getPackageName() {
+            return this.mMetadata.getPackageName();
         }
-        return getGlobalRouter().isGroupVolumeUxEnabled();
-    }
 
-    public static boolean isMediaTransferEnabled() {
-        if (sGlobal == null) {
-            return false;
+        public ComponentName getComponentName() {
+            return this.mMetadata.getComponentName();
         }
-        return getGlobalRouter().isMediaTransferEnabled();
-    }
 
-    static boolean isTransferToLocalEnabled() {
-        return getGlobalRouter().isTransferToLocalEnabled();
-    }
+        public List getRoutes() {
+            MediaRouter.checkCallingThread();
+            return Collections.unmodifiableList(this.mRoutes);
+        }
 
-    public void addCallback(MediaRouteSelector mediaRouteSelector, Callback callback) {
-        addCallback(mediaRouteSelector, callback, 0);
-    }
+        boolean updateDescriptor(MediaRouteProviderDescriptor mediaRouteProviderDescriptor) {
+            if (this.mDescriptor == mediaRouteProviderDescriptor) {
+                return false;
+            }
+            this.mDescriptor = mediaRouteProviderDescriptor;
+            return true;
+        }
 
-    public void addCallback(MediaRouteSelector mediaRouteSelector, Callback callback, int i) {
-        CallbackRecord callbackRecord;
-        boolean z;
-        if (mediaRouteSelector == null) {
-            throw new IllegalArgumentException("selector must not be null");
+        int findRouteIndexByDescriptorId(String str) {
+            int size = this.mRoutes.size();
+            for (int i = 0; i < size; i++) {
+                if (((RouteInfo) this.mRoutes.get(i)).mDescriptorId.equals(str)) {
+                    return i;
+                }
+            }
+            return -1;
         }
-        if (callback == null) {
-            throw new IllegalArgumentException("callback must not be null");
-        }
-        checkCallingThread();
-        int findCallbackRecord = findCallbackRecord(callback);
-        if (findCallbackRecord < 0) {
-            callbackRecord = new CallbackRecord(this, callback);
-            this.mCallbackRecords.add(callbackRecord);
-        } else {
-            callbackRecord = (CallbackRecord) this.mCallbackRecords.get(findCallbackRecord);
-        }
-        boolean z2 = true;
-        if (i != callbackRecord.mFlags) {
-            callbackRecord.mFlags = i;
-            z = true;
-        } else {
-            z = false;
-        }
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        if ((i & 1) != 0) {
-            z = true;
-        }
-        callbackRecord.mTimestamp = elapsedRealtime;
-        if (callbackRecord.mSelector.contains(mediaRouteSelector)) {
-            z2 = z;
-        } else {
-            callbackRecord.mSelector = new MediaRouteSelector.Builder(callbackRecord.mSelector).addSelector(mediaRouteSelector).build();
-        }
-        if (z2) {
-            getGlobalRouter().updateDiscoveryRequest();
-        }
-    }
 
-    public void addMemberToDynamicGroup(RouteInfo routeInfo) {
-        if (routeInfo == null) {
-            throw new NullPointerException("route must not be null");
-        }
-        checkCallingThread();
-        getGlobalRouter().addMemberToDynamicGroup(routeInfo);
-    }
-
-    public RouteInfo getBluetoothRoute() {
-        checkCallingThread();
-        return getGlobalRouter().getBluetoothRoute();
-    }
-
-    public RouteInfo getDefaultRoute() {
-        checkCallingThread();
-        return getGlobalRouter().getDefaultRoute();
-    }
-
-    public MediaSessionCompat.Token getMediaSessionToken() {
-        GlobalMediaRouter globalMediaRouter = sGlobal;
-        if (globalMediaRouter == null) {
+        RouteInfo findRouteByDescriptorId(String str) {
+            for (RouteInfo routeInfo : this.mRoutes) {
+                if (routeInfo.mDescriptorId.equals(str)) {
+                    return routeInfo;
+                }
+            }
             return null;
         }
-        return globalMediaRouter.getMediaSessionToken();
-    }
 
-    public MediaRouterParams getRouterParams() {
-        checkCallingThread();
-        return getGlobalRouter().getRouterParams();
-    }
-
-    public List getRoutes() {
-        checkCallingThread();
-        return getGlobalRouter().getRoutes();
-    }
-
-    public RouteInfo getSelectedRoute() {
-        checkCallingThread();
-        return getGlobalRouter().getSelectedRoute();
-    }
-
-    public boolean isRouteAvailable(MediaRouteSelector mediaRouteSelector, int i) {
-        if (mediaRouteSelector == null) {
-            throw new IllegalArgumentException("selector must not be null");
+        boolean supportsDynamicGroup() {
+            MediaRouteProviderDescriptor mediaRouteProviderDescriptor = this.mDescriptor;
+            return mediaRouteProviderDescriptor != null && mediaRouteProviderDescriptor.supportsDynamicGroupRoute();
         }
-        checkCallingThread();
-        return getGlobalRouter().isRouteAvailable(mediaRouteSelector, i);
-    }
 
-    public void removeCallback(Callback callback) {
-        if (callback == null) {
-            throw new IllegalArgumentException("callback must not be null");
-        }
-        checkCallingThread();
-        int findCallbackRecord = findCallbackRecord(callback);
-        if (findCallbackRecord >= 0) {
-            this.mCallbackRecords.remove(findCallbackRecord);
-            getGlobalRouter().updateDiscoveryRequest();
+        public String toString() {
+            return "MediaRouter.RouteProviderInfo{ packageName=" + getPackageName() + " }";
         }
     }
 
-    public void removeMemberFromDynamicGroup(RouteInfo routeInfo) {
-        if (routeInfo == null) {
-            throw new NullPointerException("route must not be null");
+    public static abstract class Callback {
+        public void onProviderAdded(MediaRouter mediaRouter, ProviderInfo providerInfo) {
         }
-        checkCallingThread();
-        getGlobalRouter().removeMemberFromDynamicGroup(routeInfo);
-    }
 
-    public void selectRoute(RouteInfo routeInfo) {
-        if (routeInfo == null) {
-            throw new IllegalArgumentException("route must not be null");
+        public void onProviderChanged(MediaRouter mediaRouter, ProviderInfo providerInfo) {
         }
-        checkCallingThread();
-        getGlobalRouter().selectRoute(routeInfo, 3);
-    }
 
-    public void setMediaSessionCompat(MediaSessionCompat mediaSessionCompat) {
-        checkCallingThread();
-        getGlobalRouter().setMediaSessionCompat(mediaSessionCompat);
-    }
-
-    public void setOnPrepareTransferListener(OnPrepareTransferListener onPrepareTransferListener) {
-        checkCallingThread();
-        getGlobalRouter().mOnPrepareTransferListener = onPrepareTransferListener;
-    }
-
-    public void setRouterParams(MediaRouterParams mediaRouterParams) {
-        checkCallingThread();
-        getGlobalRouter().setRouterParams(mediaRouterParams);
-    }
-
-    public void transferToRoute(RouteInfo routeInfo) {
-        if (routeInfo == null) {
-            throw new NullPointerException("route must not be null");
+        public void onProviderRemoved(MediaRouter mediaRouter, ProviderInfo providerInfo) {
         }
-        checkCallingThread();
-        getGlobalRouter().transferToRoute(routeInfo);
+
+        public void onRouteAdded(MediaRouter mediaRouter, RouteInfo routeInfo) {
+        }
+
+        public abstract void onRouteChanged(MediaRouter mediaRouter, RouteInfo routeInfo);
+
+        public void onRoutePresentationDisplayChanged(MediaRouter mediaRouter, RouteInfo routeInfo) {
+        }
+
+        public void onRouteRemoved(MediaRouter mediaRouter, RouteInfo routeInfo) {
+        }
+
+        public void onRouteSelected(MediaRouter mediaRouter, RouteInfo routeInfo) {
+        }
+
+        public void onRouteUnselected(MediaRouter mediaRouter, RouteInfo routeInfo) {
+        }
+
+        public void onRouteVolumeChanged(MediaRouter mediaRouter, RouteInfo routeInfo) {
+        }
+
+        public void onRouterParamsChanged(MediaRouter mediaRouter, MediaRouterParams mediaRouterParams) {
+        }
+
+        public void onRouteSelected(MediaRouter mediaRouter, RouteInfo routeInfo, int i) {
+            onRouteSelected(mediaRouter, routeInfo);
+        }
+
+        public void onRouteSelected(MediaRouter mediaRouter, RouteInfo routeInfo, int i, RouteInfo routeInfo2) {
+            onRouteSelected(mediaRouter, routeInfo, i);
+        }
+
+        public void onRouteUnselected(MediaRouter mediaRouter, RouteInfo routeInfo, int i) {
+            onRouteUnselected(mediaRouter, routeInfo);
+        }
     }
 
-    public void unselect(int i) {
-        if (i < 0 || i > 3) {
-            throw new IllegalArgumentException("Unsupported reason to unselect route");
+    static final class CallbackRecord {
+        public final Callback mCallback;
+        public int mFlags;
+        public final MediaRouter mRouter;
+        public MediaRouteSelector mSelector = MediaRouteSelector.EMPTY;
+        public long mTimestamp;
+
+        public CallbackRecord(MediaRouter mediaRouter, Callback callback) {
+            this.mRouter = mediaRouter;
+            this.mCallback = callback;
         }
-        checkCallingThread();
-        GlobalMediaRouter globalRouter = getGlobalRouter();
-        RouteInfo chooseFallbackRoute = globalRouter.chooseFallbackRoute();
-        if (globalRouter.getSelectedRoute() != chooseFallbackRoute) {
-            globalRouter.selectRoute(chooseFallbackRoute, i);
+
+        public boolean filterRouteEvent(RouteInfo routeInfo, int i, RouteInfo routeInfo2, int i2) {
+            if ((this.mFlags & 2) != 0 || routeInfo.matchesSelector(this.mSelector)) {
+                return true;
+            }
+            if (MediaRouter.isTransferToLocalEnabled() && routeInfo.isDefaultOrBluetooth() && i == 262 && i2 == 3 && routeInfo2 != null) {
+                return !routeInfo2.isDefaultOrBluetooth();
+            }
+            return false;
+        }
+    }
+
+    static final class PrepareTransferNotifier {
+        private final RouteInfo mFromRoute;
+        final List mMemberRoutes;
+        final int mReason;
+        private final RouteInfo mRequestedRoute;
+        private final WeakReference mRouter;
+        final RouteInfo mToRoute;
+        final MediaRouteProvider.RouteController mToRouteController;
+        private ListenableFuture mFuture = null;
+        private boolean mFinished = false;
+        private boolean mCanceled = false;
+
+        PrepareTransferNotifier(GlobalMediaRouter globalMediaRouter, RouteInfo routeInfo, MediaRouteProvider.RouteController routeController, int i, RouteInfo routeInfo2, Collection collection) {
+            this.mRouter = new WeakReference(globalMediaRouter);
+            this.mToRoute = routeInfo;
+            this.mToRouteController = routeController;
+            this.mReason = i;
+            this.mFromRoute = globalMediaRouter.mSelectedRoute;
+            this.mRequestedRoute = routeInfo2;
+            this.mMemberRoutes = collection != null ? new ArrayList(collection) : null;
+            globalMediaRouter.mCallbackHandler.postDelayed(new MediaRouter$PrepareTransferNotifier$$ExternalSyntheticLambda0(this), 15000L);
+        }
+
+        void setFuture(ListenableFuture listenableFuture) {
+            GlobalMediaRouter globalMediaRouter = (GlobalMediaRouter) this.mRouter.get();
+            if (globalMediaRouter == null || globalMediaRouter.mTransferNotifier != this) {
+                Log.w("AxMediaRouter", "Router is released. Cancel transfer");
+                cancel();
+            } else {
+                if (this.mFuture != null) {
+                    throw new IllegalStateException("future is already set");
+                }
+                this.mFuture = listenableFuture;
+                MediaRouter$PrepareTransferNotifier$$ExternalSyntheticLambda0 mediaRouter$PrepareTransferNotifier$$ExternalSyntheticLambda0 = new MediaRouter$PrepareTransferNotifier$$ExternalSyntheticLambda0(this);
+                final GlobalMediaRouter.CallbackHandler callbackHandler = globalMediaRouter.mCallbackHandler;
+                Objects.requireNonNull(callbackHandler);
+                listenableFuture.addListener(mediaRouter$PrepareTransferNotifier$$ExternalSyntheticLambda0, new Executor() { // from class: androidx.mediarouter.media.MediaRouter$PrepareTransferNotifier$$ExternalSyntheticLambda1
+                    @Override // java.util.concurrent.Executor
+                    public final void execute(Runnable runnable) {
+                        GlobalMediaRouter.CallbackHandler.this.post(runnable);
+                    }
+                });
+            }
+        }
+
+        void finishTransfer() {
+            ListenableFuture listenableFuture;
+            MediaRouter.checkCallingThread();
+            if (this.mFinished || this.mCanceled) {
+                return;
+            }
+            GlobalMediaRouter globalMediaRouter = (GlobalMediaRouter) this.mRouter.get();
+            if (globalMediaRouter == null || globalMediaRouter.mTransferNotifier != this || ((listenableFuture = this.mFuture) != null && listenableFuture.isCancelled())) {
+                cancel();
+                return;
+            }
+            this.mFinished = true;
+            globalMediaRouter.mTransferNotifier = null;
+            unselectFromRouteAndNotify();
+            selectToRouteAndNotify();
+        }
+
+        void cancel() {
+            if (this.mFinished || this.mCanceled) {
+                return;
+            }
+            this.mCanceled = true;
+            MediaRouteProvider.RouteController routeController = this.mToRouteController;
+            if (routeController != null) {
+                routeController.onUnselect(0);
+                this.mToRouteController.onRelease();
+            }
+        }
+
+        private void unselectFromRouteAndNotify() {
+            GlobalMediaRouter globalMediaRouter = (GlobalMediaRouter) this.mRouter.get();
+            if (globalMediaRouter != null) {
+                RouteInfo routeInfo = globalMediaRouter.mSelectedRoute;
+                RouteInfo routeInfo2 = this.mFromRoute;
+                if (routeInfo != routeInfo2) {
+                    return;
+                }
+                globalMediaRouter.mCallbackHandler.post(NotificationCenter.proxyChangedByRotation, routeInfo2, this.mReason);
+                MediaRouteProvider.RouteController routeController = globalMediaRouter.mSelectedRouteController;
+                if (routeController != null) {
+                    routeController.onUnselect(this.mReason);
+                    globalMediaRouter.mSelectedRouteController.onRelease();
+                }
+                if (!globalMediaRouter.mRouteControllerMap.isEmpty()) {
+                    for (MediaRouteProvider.RouteController routeController2 : globalMediaRouter.mRouteControllerMap.values()) {
+                        routeController2.onUnselect(this.mReason);
+                        routeController2.onRelease();
+                    }
+                    globalMediaRouter.mRouteControllerMap.clear();
+                }
+                globalMediaRouter.mSelectedRouteController = null;
+            }
+        }
+
+        private void selectToRouteAndNotify() {
+            GlobalMediaRouter globalMediaRouter = (GlobalMediaRouter) this.mRouter.get();
+            if (globalMediaRouter == null) {
+                return;
+            }
+            RouteInfo routeInfo = this.mToRoute;
+            globalMediaRouter.mSelectedRoute = routeInfo;
+            globalMediaRouter.mSelectedRouteController = this.mToRouteController;
+            RouteInfo routeInfo2 = this.mRequestedRoute;
+            if (routeInfo2 == null) {
+                globalMediaRouter.mCallbackHandler.post(NotificationCenter.proxyCheckDone, new Pair(this.mFromRoute, routeInfo), this.mReason);
+            } else {
+                globalMediaRouter.mCallbackHandler.post(NotificationCenter.liveLocationsChanged, new Pair(routeInfo2, routeInfo), this.mReason);
+            }
+            globalMediaRouter.mRouteControllerMap.clear();
+            globalMediaRouter.maybeUpdateMemberRouteControllers();
+            globalMediaRouter.updatePlaybackInfoFromSelectedRoute();
+            List list = this.mMemberRoutes;
+            if (list != null) {
+                globalMediaRouter.mSelectedRoute.updateDynamicDescriptors(list);
+            }
         }
     }
 }

@@ -11,16 +11,19 @@ public class Frame {
     private ByteBuffer zzb;
     private Bitmap zzd;
 
+    private static class zza {
+    }
+
+    public Metadata getMetadata() {
+        return this.zza;
+    }
+
+    public Image.Plane[] getPlanes() {
+        return null;
+    }
+
     public static class Builder {
         private final Frame zza = new Frame();
-
-        public Frame build() {
-            if (this.zza.zzb != null || this.zza.zzd != null) {
-                return this.zza;
-            }
-            Frame.zzc(this.zza);
-            throw new IllegalStateException("Missing image data.  Call either setBitmap or setImageData to specify the image");
-        }
 
         public Builder setBitmap(Bitmap bitmap) {
             int width = bitmap.getWidth();
@@ -57,53 +60,14 @@ public class Frame {
             this.zza.getMetadata().zze = i;
             return this;
         }
-    }
 
-    public static class Metadata {
-        private int zza;
-        private int zzb;
-        private int zzc;
-        private long zzd;
-        private int zze;
-        private int zzf = -1;
-
-        public int getHeight() {
-            return this.zzb;
-        }
-
-        public int getId() {
-            return this.zzc;
-        }
-
-        public int getRotation() {
-            return this.zze;
-        }
-
-        public long getTimestampMillis() {
-            return this.zzd;
-        }
-
-        public int getWidth() {
+        public Frame build() {
+            if (this.zza.zzb == null && this.zza.zzd == null) {
+                Frame.zzc(this.zza);
+                throw new IllegalStateException("Missing image data.  Call either setBitmap or setImageData to specify the image");
+            }
             return this.zza;
         }
-    }
-
-    private static class zza {
-    }
-
-    private Frame() {
-        this.zza = new Metadata();
-        this.zzb = null;
-        this.zzd = null;
-    }
-
-    static /* synthetic */ zza zzc(Frame frame) {
-        frame.getClass();
-        return null;
-    }
-
-    public Bitmap getBitmap() {
-        return this.zzd;
     }
 
     public ByteBuffer getGrayscaleImageData() {
@@ -125,11 +89,47 @@ public class Frame {
         return ByteBuffer.wrap(bArr);
     }
 
-    public Metadata getMetadata() {
-        return this.zza;
+    public static class Metadata {
+        private int zza;
+        private int zzb;
+        private int zzc;
+        private long zzd;
+        private int zze;
+        private int zzf = -1;
+
+        public int getWidth() {
+            return this.zza;
+        }
+
+        public int getHeight() {
+            return this.zzb;
+        }
+
+        public int getId() {
+            return this.zzc;
+        }
+
+        public long getTimestampMillis() {
+            return this.zzd;
+        }
+
+        public int getRotation() {
+            return this.zze;
+        }
     }
 
-    public Image.Plane[] getPlanes() {
+    public Bitmap getBitmap() {
+        return this.zzd;
+    }
+
+    private Frame() {
+        this.zza = new Metadata();
+        this.zzb = null;
+        this.zzd = null;
+    }
+
+    static /* synthetic */ zza zzc(Frame frame) {
+        frame.getClass();
         return null;
     }
 }

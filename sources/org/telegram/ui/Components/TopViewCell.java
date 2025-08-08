@@ -11,7 +11,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.LinkSpanDrawable;
 import org.telegram.ui.Stories.recorder.HintView2;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class TopViewCell extends LinearLayout {
     public final BackupImageView imageView;
     private int lastIconResId;
@@ -56,9 +56,8 @@ public class TopViewCell extends LinearLayout {
         this.imageView.getImageReceiver().startAnimation();
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
+    public void setEmoji(String str, String str2) {
+        MediaDataController.getInstance(UserConfig.selectedAccount).setPlaceholderImage(this.imageView, str, str2, "90_90");
     }
 
     public void setEmoji(int i) {
@@ -68,10 +67,6 @@ public class TopViewCell extends LinearLayout {
             backupImageView.setImageDrawable(new RLottieDrawable(i, "" + i, AndroidUtilities.dp(90.0f), AndroidUtilities.dp(90.0f)));
             this.imageView.getImageReceiver().setAutoRepeat(2);
         }
-    }
-
-    public void setEmoji(String str, String str2) {
-        MediaDataController.getInstance(UserConfig.selectedAccount).setPlaceholderImage(this.imageView, str, str2, "90_90");
     }
 
     public void setEmojiStatic(int i) {
@@ -87,5 +82,10 @@ public class TopViewCell extends LinearLayout {
         this.textView.setText(charSequence);
         this.maxWidth = HintView2.cutInFancyHalf(charSequence, this.textView.getPaint());
         this.textView.requestLayout();
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    protected void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
     }
 }

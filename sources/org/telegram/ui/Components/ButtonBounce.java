@@ -6,7 +6,7 @@ import android.animation.ValueAnimator;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class ButtonBounce {
     private Runnable additionalInvalidate;
     private ValueAnimator animator;
@@ -30,6 +30,10 @@ public class ButtonBounce {
         this.overshoot = f2;
     }
 
+    public View getView() {
+        return this.view;
+    }
+
     public ButtonBounce(View view, float f, float f2, float f3) {
         this.releaseDelay = 0L;
         this.view = view;
@@ -38,55 +42,33 @@ public class ButtonBounce {
         this.overshoot = f3;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setPressed$0(ValueAnimator valueAnimator) {
-        this.pressedT = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        invalidate();
-    }
-
-    public float getScale(float f) {
-        return (1.0f - f) + (f * (1.0f - this.pressedT));
-    }
-
-    public View getView() {
-        return this.view;
-    }
-
-    public void invalidate() {
-        View view = this.view;
-        if (view != null) {
-            view.invalidate();
-        }
-        Runnable runnable = this.additionalInvalidate;
-        if (runnable != null) {
-            runnable.run();
-        }
-    }
-
-    public boolean isPressed() {
-        return this.isPressed;
-    }
-
     public void setAdditionalInvalidate(Runnable runnable) {
         this.additionalInvalidate = runnable;
     }
 
+    public ButtonBounce setReleaseDelay(long j) {
+        this.releaseDelay = j;
+        return this;
+    }
+
+    public void setView(View view) {
+        this.view = view;
+    }
+
     public void setPressed(final boolean z) {
-        ValueAnimator valueAnimator;
-        long j;
         if (this.isPressed != z) {
             this.isPressed = z;
-            ValueAnimator valueAnimator2 = this.animator;
+            ValueAnimator valueAnimator = this.animator;
             this.animator = null;
-            if (valueAnimator2 != null) {
-                valueAnimator2.cancel();
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
             }
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.pressedT, z ? 1.0f : 0.0f);
             this.animator = ofFloat;
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ButtonBounce$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                public final void onAnimationUpdate(ValueAnimator valueAnimator3) {
-                    ButtonBounce.this.lambda$setPressed$0(valueAnimator3);
+                public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
+                    ButtonBounce.this.lambda$setPressed$0(valueAnimator2);
                 }
             });
             this.animator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ButtonBounce.1
@@ -102,25 +84,38 @@ public class ButtonBounce {
             if (this.isPressed) {
                 this.animator.setInterpolator(CubicBezierInterpolator.DEFAULT);
                 this.animator.setDuration((long) (this.durationPressMultiplier * 60.0f));
-                valueAnimator = this.animator;
-                j = 0;
+                this.animator.setStartDelay(0L);
             } else {
                 this.animator.setInterpolator(new OvershootInterpolator(this.overshoot));
                 this.animator.setDuration((long) (this.durationReleaseMultiplier * 350.0f));
-                valueAnimator = this.animator;
-                j = this.releaseDelay;
+                this.animator.setStartDelay(this.releaseDelay);
             }
-            valueAnimator.setStartDelay(j);
             this.animator.start();
         }
     }
 
-    public ButtonBounce setReleaseDelay(long j) {
-        this.releaseDelay = j;
-        return this;
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setPressed$0(ValueAnimator valueAnimator) {
+        this.pressedT = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        invalidate();
     }
 
-    public void setView(View view) {
-        this.view = view;
+    public float getScale(float f) {
+        return (1.0f - f) + (f * (1.0f - this.pressedT));
+    }
+
+    public boolean isPressed() {
+        return this.isPressed;
+    }
+
+    public void invalidate() {
+        View view = this.view;
+        if (view != null) {
+            view.invalidate();
+        }
+        Runnable runnable = this.additionalInvalidate;
+        if (runnable != null) {
+            runnable.run();
+        }
     }
 }

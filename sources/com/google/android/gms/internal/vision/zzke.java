@@ -12,12 +12,6 @@ public final class zzke extends LinkedHashMap {
     private static final zzke zzb;
     private boolean zza;
 
-    static {
-        zzke zzkeVar = new zzke();
-        zzb = zzkeVar;
-        zzkeVar.zza = false;
-    }
-
     private zzke() {
         this.zza = true;
     }
@@ -27,30 +21,16 @@ public final class zzke extends LinkedHashMap {
         this.zza = true;
     }
 
-    private static int zza(Object obj) {
-        if (obj instanceof byte[]) {
-            return zzjf.zzc((byte[]) obj);
-        }
-        if (obj instanceof zzje) {
-            throw new UnsupportedOperationException();
-        }
-        return obj.hashCode();
-    }
-
     public static zzke zza() {
         return zzb;
     }
 
-    private final void zze() {
-        if (!this.zza) {
-            throw new UnsupportedOperationException();
-        }
-    }
-
-    @Override // java.util.LinkedHashMap, java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public final void clear() {
+    public final void zza(zzke zzkeVar) {
         zze();
-        super.clear();
+        if (zzkeVar.isEmpty()) {
+            return;
+        }
+        putAll(zzkeVar);
     }
 
     @Override // java.util.LinkedHashMap, java.util.HashMap, java.util.AbstractMap, java.util.Map
@@ -58,49 +38,10 @@ public final class zzke extends LinkedHashMap {
         return isEmpty() ? Collections.emptySet() : super.entrySet();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:9:0x005c A[RETURN] */
-    @Override // java.util.AbstractMap, java.util.Map
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean equals(Object obj) {
-        boolean z;
-        if (obj instanceof Map) {
-            Map map = (Map) obj;
-            if (this != map) {
-                if (size() == map.size()) {
-                    Iterator it = entrySet().iterator();
-                    while (it.hasNext()) {
-                        Map.Entry entry = (Map.Entry) it.next();
-                        if (map.containsKey(entry.getKey())) {
-                            Object value = entry.getValue();
-                            Object obj2 = map.get(entry.getKey());
-                            if (!(((value instanceof byte[]) && (obj2 instanceof byte[])) ? Arrays.equals((byte[]) value, (byte[]) obj2) : value.equals(obj2))) {
-                            }
-                        }
-                    }
-                }
-                z = false;
-                if (!z) {
-                    return true;
-                }
-            }
-            z = true;
-            if (!z) {
-            }
-        }
-        return false;
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
-    public final int hashCode() {
-        Iterator it = entrySet().iterator();
-        int i = 0;
-        while (it.hasNext()) {
-            Map.Entry entry = (Map.Entry) it.next();
-            i += zza(entry.getValue()) ^ zza(entry.getKey());
-        }
-        return i;
+    @Override // java.util.LinkedHashMap, java.util.HashMap, java.util.AbstractMap, java.util.Map
+    public final void clear() {
+        zze();
+        super.clear();
     }
 
     @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
@@ -127,12 +68,65 @@ public final class zzke extends LinkedHashMap {
         return super.remove(obj);
     }
 
-    public final void zza(zzke zzkeVar) {
-        zze();
-        if (zzkeVar.isEmpty()) {
-            return;
+    /* JADX WARN: Removed duplicated region for block: B:9:0x005c A[RETURN] */
+    @Override // java.util.AbstractMap, java.util.Map
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean equals(Object obj) {
+        boolean z;
+        boolean equals;
+        if (obj instanceof Map) {
+            Map map = (Map) obj;
+            if (this != map) {
+                if (size() == map.size()) {
+                    Iterator it = entrySet().iterator();
+                    while (it.hasNext()) {
+                        Map.Entry entry = (Map.Entry) it.next();
+                        if (map.containsKey(entry.getKey())) {
+                            Object value = entry.getValue();
+                            Object obj2 = map.get(entry.getKey());
+                            if ((value instanceof byte[]) && (obj2 instanceof byte[])) {
+                                equals = Arrays.equals((byte[]) value, (byte[]) obj2);
+                            } else {
+                                equals = value.equals(obj2);
+                            }
+                            if (!equals) {
+                            }
+                        }
+                    }
+                }
+                z = false;
+                if (!z) {
+                    return true;
+                }
+            }
+            z = true;
+            if (!z) {
+            }
         }
-        putAll(zzkeVar);
+        return false;
+    }
+
+    private static int zza(Object obj) {
+        if (obj instanceof byte[]) {
+            return zzjf.zzc((byte[]) obj);
+        }
+        if (obj instanceof zzje) {
+            throw new UnsupportedOperationException();
+        }
+        return obj.hashCode();
+    }
+
+    @Override // java.util.AbstractMap, java.util.Map
+    public final int hashCode() {
+        Iterator it = entrySet().iterator();
+        int i = 0;
+        while (it.hasNext()) {
+            Map.Entry entry = (Map.Entry) it.next();
+            i += zza(entry.getValue()) ^ zza(entry.getKey());
+        }
+        return i;
     }
 
     public final zzke zzb() {
@@ -145,5 +139,17 @@ public final class zzke extends LinkedHashMap {
 
     public final boolean zzd() {
         return this.zza;
+    }
+
+    private final void zze() {
+        if (!this.zza) {
+            throw new UnsupportedOperationException();
+        }
+    }
+
+    static {
+        zzke zzkeVar = new zzke();
+        zzb = zzkeVar;
+        zzkeVar.zza = false;
     }
 }

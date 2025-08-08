@@ -51,9 +51,11 @@ final class zzbo extends AbstractCollection {
 
     @Override // java.util.AbstractCollection, java.util.Collection
     public final boolean removeAll(Collection collection) {
-        collection.getClass();
         try {
-            return super.removeAll(collection);
+            if (collection != null) {
+                return super.removeAll(collection);
+            }
+            throw null;
         } catch (UnsupportedOperationException unused) {
             HashSet hashSet = new HashSet();
             for (Map.Entry entry : this.zza.entrySet()) {
@@ -67,9 +69,11 @@ final class zzbo extends AbstractCollection {
 
     @Override // java.util.AbstractCollection, java.util.Collection
     public final boolean retainAll(Collection collection) {
-        collection.getClass();
         try {
-            return super.retainAll(collection);
+            if (collection != null) {
+                return super.retainAll(collection);
+            }
+            throw null;
         } catch (UnsupportedOperationException unused) {
             HashSet hashSet = new HashSet();
             for (Map.Entry entry : this.zza.entrySet()) {

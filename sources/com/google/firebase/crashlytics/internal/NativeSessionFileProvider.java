@@ -3,7 +3,7 @@ package com.google.firebase.crashlytics.internal;
 import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
 import java.io.File;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public interface NativeSessionFileProvider {
     File getAppFile();
 

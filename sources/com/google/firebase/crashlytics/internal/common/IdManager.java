@@ -10,7 +10,7 @@ import java.util.Locale;
 import java.util.UUID;
 import java.util.regex.Pattern;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class IdManager implements InstallIdProvider {
     private final Context appContext;
     private final String appIdentifier;
@@ -35,18 +35,6 @@ public class IdManager implements InstallIdProvider {
         this.installerPackageNameProvider = new InstallerPackageNameProvider();
     }
 
-    private synchronized String createAndCacheCrashlyticsInstallId(String str, SharedPreferences sharedPreferences) {
-        String formatId;
-        formatId = formatId(UUID.randomUUID().toString());
-        Logger.getLogger().v("Created new Crashlytics installation ID: " + formatId + " for FID: " + str);
-        sharedPreferences.edit().putString("crashlytics.installation.id", formatId).putString("firebase.installation.id", str).apply();
-        return formatId;
-    }
-
-    static String createSyntheticFid() {
-        return "SYN_" + UUID.randomUUID().toString();
-    }
-
     private static String formatId(String str) {
         if (str == null) {
             return null;
@@ -54,39 +42,8 @@ public class IdManager implements InstallIdProvider {
         return ID_PATTERN.matcher(str).replaceAll("").toLowerCase(Locale.US);
     }
 
-    static boolean isSyntheticFid(String str) {
-        return str != null && str.startsWith("SYN_");
-    }
-
-    private String readCachedCrashlyticsInstallId(SharedPreferences sharedPreferences) {
-        return sharedPreferences.getString("crashlytics.installation.id", null);
-    }
-
-    private String removeForwardSlashesIn(String str) {
-        return str.replaceAll(FORWARD_SLASH_REGEX, "");
-    }
-
-    private boolean shouldRefresh() {
-        InstallIdProvider.InstallIds installIds = this.installIds;
-        return installIds == null || (installIds.getFirebaseInstallationId() == null && this.dataCollectionArbiter.isAutomaticDataCollectionEnabled());
-    }
-
-    public String fetchTrueFid() {
-        try {
-            return (String) Utils.awaitEvenIfOnMainThread(this.firebaseInstallationsApi.getId());
-        } catch (Exception e) {
-            Logger.getLogger().w("Failed to retrieve Firebase Installation ID.", e);
-            return null;
-        }
-    }
-
-    public String getAppIdentifier() {
-        return this.appIdentifier;
-    }
-
     @Override // com.google.firebase.crashlytics.internal.common.InstallIdProvider
     public synchronized InstallIdProvider.InstallIds getInstallIds() {
-        InstallIdProvider.InstallIds createWithoutFid;
         if (!shouldRefresh()) {
             return this.installIds;
         }
@@ -100,28 +57,75 @@ public class IdManager implements InstallIdProvider {
             if (fetchTrueFid == null) {
                 fetchTrueFid = string == null ? createSyntheticFid() : string;
             }
-            createWithoutFid = fetchTrueFid.equals(string) ? InstallIdProvider.InstallIds.create(readCachedCrashlyticsInstallId(sharedPrefs), fetchTrueFid) : InstallIdProvider.InstallIds.create(createAndCacheCrashlyticsInstallId(fetchTrueFid, sharedPrefs), fetchTrueFid);
+            if (fetchTrueFid.equals(string)) {
+                this.installIds = InstallIdProvider.InstallIds.create(readCachedCrashlyticsInstallId(sharedPrefs), fetchTrueFid);
+            } else {
+                this.installIds = InstallIdProvider.InstallIds.create(createAndCacheCrashlyticsInstallId(fetchTrueFid, sharedPrefs), fetchTrueFid);
+            }
+        } else if (isSyntheticFid(string)) {
+            this.installIds = InstallIdProvider.InstallIds.createWithoutFid(readCachedCrashlyticsInstallId(sharedPrefs));
         } else {
-            createWithoutFid = isSyntheticFid(string) ? InstallIdProvider.InstallIds.createWithoutFid(readCachedCrashlyticsInstallId(sharedPrefs)) : InstallIdProvider.InstallIds.createWithoutFid(createAndCacheCrashlyticsInstallId(createSyntheticFid(), sharedPrefs));
+            this.installIds = InstallIdProvider.InstallIds.createWithoutFid(createAndCacheCrashlyticsInstallId(createSyntheticFid(), sharedPrefs));
         }
-        this.installIds = createWithoutFid;
         Logger.getLogger().v("Install IDs: " + this.installIds);
         return this.installIds;
     }
 
-    public String getInstallerPackageName() {
-        return this.installerPackageNameProvider.getInstallerPackageName(this.appContext);
+    private boolean shouldRefresh() {
+        InstallIdProvider.InstallIds installIds = this.installIds;
+        return installIds == null || (installIds.getFirebaseInstallationId() == null && this.dataCollectionArbiter.isAutomaticDataCollectionEnabled());
     }
 
-    public String getModelName() {
-        return String.format(Locale.US, "%s/%s", removeForwardSlashesIn(Build.MANUFACTURER), removeForwardSlashesIn(Build.MODEL));
+    static String createSyntheticFid() {
+        return "SYN_" + UUID.randomUUID().toString();
+    }
+
+    static boolean isSyntheticFid(String str) {
+        return str != null && str.startsWith("SYN_");
+    }
+
+    private String readCachedCrashlyticsInstallId(SharedPreferences sharedPreferences) {
+        return sharedPreferences.getString("crashlytics.installation.id", null);
+    }
+
+    public String fetchTrueFid() {
+        try {
+            return (String) Utils.awaitEvenIfOnMainThread(this.firebaseInstallationsApi.getId());
+        } catch (Exception e) {
+            Logger.getLogger().w("Failed to retrieve Firebase Installation ID.", e);
+            return null;
+        }
+    }
+
+    private synchronized String createAndCacheCrashlyticsInstallId(String str, SharedPreferences sharedPreferences) {
+        String formatId;
+        formatId = formatId(UUID.randomUUID().toString());
+        Logger.getLogger().v("Created new Crashlytics installation ID: " + formatId + " for FID: " + str);
+        sharedPreferences.edit().putString("crashlytics.installation.id", formatId).putString("firebase.installation.id", str).apply();
+        return formatId;
+    }
+
+    public String getAppIdentifier() {
+        return this.appIdentifier;
+    }
+
+    public String getOsDisplayVersionString() {
+        return removeForwardSlashesIn(Build.VERSION.RELEASE);
     }
 
     public String getOsBuildVersionString() {
         return removeForwardSlashesIn(Build.VERSION.INCREMENTAL);
     }
 
-    public String getOsDisplayVersionString() {
-        return removeForwardSlashesIn(Build.VERSION.RELEASE);
+    public String getModelName() {
+        return String.format(Locale.US, "%s/%s", removeForwardSlashesIn(Build.MANUFACTURER), removeForwardSlashesIn(Build.MODEL));
+    }
+
+    private String removeForwardSlashesIn(String str) {
+        return str.replaceAll(FORWARD_SLASH_REGEX, "");
+    }
+
+    public String getInstallerPackageName() {
+        return this.installerPackageNameProvider.getInstallerPackageName(this.appContext);
     }
 }

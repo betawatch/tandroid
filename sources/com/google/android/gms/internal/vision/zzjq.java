@@ -17,14 +17,14 @@ final class zzjq implements Iterator {
     }
 
     @Override // java.util.Iterator
+    public final void remove() {
+        this.zza.remove();
+    }
+
+    @Override // java.util.Iterator
     public final /* synthetic */ Object next() {
         Map.Entry entry = (Map.Entry) this.zza.next();
         entry.getValue();
         return entry;
-    }
-
-    @Override // java.util.Iterator
-    public final void remove() {
-        this.zza.remove();
     }
 }

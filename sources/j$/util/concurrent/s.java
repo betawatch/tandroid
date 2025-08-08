@@ -24,11 +24,32 @@ public final /* synthetic */ class s implements BiConsumer, BiFunction, Consumer
         this.b = function;
     }
 
+    @Override // j$.util.function.BiConsumer
+    public /* synthetic */ BiConsumer andThen(BiConsumer biConsumer) {
+        switch (this.a) {
+        }
+        return BiConsumer.-CC.$default$andThen(this, biConsumer);
+    }
+
+    @Override // j$.util.function.BiFunction
+    public /* synthetic */ BiFunction andThen(Function function) {
+        return BiFunction.-CC.$default$andThen(this, function);
+    }
+
     @Override // j$.util.function.Consumer
-    /* renamed from: accept */
-    public void r(Object obj) {
-        ((Consumer) this.b).r(obj);
-        ((Consumer) this.c).r(obj);
+    public /* synthetic */ Consumer andThen(Consumer consumer) {
+        return Consumer.-CC.$default$andThen(this, consumer);
+    }
+
+    @Override // j$.util.function.Consumer
+    public void accept(Object obj) {
+        ((Consumer) this.b).accept(obj);
+        ((Consumer) this.c).accept(obj);
+    }
+
+    @Override // j$.util.function.BiFunction
+    public Object apply(Object obj, Object obj2) {
+        return ((Function) this.b).apply(((BiFunction) this.c).apply(obj, obj2));
     }
 
     @Override // j$.util.function.BiConsumer
@@ -50,27 +71,5 @@ public final /* synthetic */ class s implements BiConsumer, BiFunction, Consumer
                 obj2 = concurrentMap.get(obj);
             }
         } while (obj2 != null);
-    }
-
-    @Override // j$.util.function.BiConsumer
-    public /* synthetic */ BiConsumer andThen(BiConsumer biConsumer) {
-        switch (this.a) {
-        }
-        return BiConsumer.-CC.$default$andThen(this, biConsumer);
-    }
-
-    @Override // j$.util.function.BiFunction
-    public /* synthetic */ BiFunction andThen(Function function) {
-        return j$.com.android.tools.r8.a.a(this, function);
-    }
-
-    @Override // j$.util.function.Consumer
-    public /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer.-CC.$default$andThen(this, consumer);
-    }
-
-    @Override // j$.util.function.BiFunction
-    public Object apply(Object obj, Object obj2) {
-        return ((Function) this.b).apply(((BiFunction) this.c).apply(obj, obj2));
     }
 }

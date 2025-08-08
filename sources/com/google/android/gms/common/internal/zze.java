@@ -29,7 +29,7 @@ public final class zze implements ServiceConnection {
             try {
                 BaseGmsClient baseGmsClient2 = this.zza;
                 IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.common.internal.IGmsServiceBroker");
-                baseGmsClient2.zzr = (queryLocalInterface == null || !(queryLocalInterface instanceof IGmsServiceBroker)) ? new zzac(iBinder) : (IGmsServiceBroker) queryLocalInterface;
+                baseGmsClient2.zzr = (queryLocalInterface == null || !(queryLocalInterface instanceof IGmsServiceBroker)) ? new zzad(iBinder) : (IGmsServiceBroker) queryLocalInterface;
             } catch (Throwable th) {
                 throw th;
             }
@@ -44,7 +44,9 @@ public final class zze implements ServiceConnection {
         synchronized (obj) {
             this.zza.zzr = null;
         }
-        Handler handler = this.zza.zzb;
-        handler.sendMessage(handler.obtainMessage(6, this.zzb, 1));
+        BaseGmsClient baseGmsClient = this.zza;
+        int i = this.zzb;
+        Handler handler = baseGmsClient.zzb;
+        handler.sendMessage(handler.obtainMessage(6, i, 1));
     }
 }

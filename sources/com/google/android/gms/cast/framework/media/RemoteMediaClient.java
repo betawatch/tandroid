@@ -2,7 +2,7 @@ package com.google.android.gms.cast.framework.media;
 
 import android.os.Handler;
 import android.os.Looper;
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import com.google.android.gms.cast.Cast;
 import com.google.android.gms.cast.CastDevice;
 import com.google.android.gms.cast.MediaError;
@@ -123,11 +123,13 @@ public class RemoteMediaClient implements Cast.MessageReceivedCallback {
     static /* bridge */ /* synthetic */ void zzo(RemoteMediaClient remoteMediaClient) {
         Iterator it = remoteMediaClient.zzl.values().iterator();
         if (it.hasNext()) {
-            ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
+            WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
             if (remoteMediaClient.hasMediaSession()) {
                 throw null;
             }
-            remoteMediaClient.hasMediaSession();
+            if (!remoteMediaClient.hasMediaSession()) {
+                throw null;
+            }
             throw null;
         }
     }
@@ -272,29 +274,6 @@ public class RemoteMediaClient implements Cast.MessageReceivedCallback {
         return mediaStatus != null && mediaStatus.isPlayingAd();
     }
 
-    public PendingResult load(MediaInfo mediaInfo, MediaLoadOptions mediaLoadOptions) {
-        MediaLoadRequestData.Builder builder = new MediaLoadRequestData.Builder();
-        builder.setMediaInfo(mediaInfo);
-        builder.setAutoplay(Boolean.valueOf(mediaLoadOptions.getAutoplay()));
-        builder.setCurrentTime(mediaLoadOptions.getPlayPosition());
-        builder.setPlaybackRate(mediaLoadOptions.getPlaybackRate());
-        builder.setActiveTrackIds(mediaLoadOptions.getActiveTrackIds());
-        builder.setCustomData(mediaLoadOptions.getCustomData());
-        builder.setCredentials(mediaLoadOptions.getCredentials());
-        builder.setCredentialsType(mediaLoadOptions.getCredentialsType());
-        return load(builder.build());
-    }
-
-    public PendingResult load(MediaLoadRequestData mediaLoadRequestData) {
-        Preconditions.checkMainThread("Must be called from the main thread.");
-        if (!zzy()) {
-            return zzf(17, null);
-        }
-        zzav zzavVar = new zzav(this, mediaLoadRequestData);
-        zzz(zzavVar);
-        return zzavVar;
-    }
-
     @Override // com.google.android.gms.cast.Cast.MessageReceivedCallback
     public void onMessageReceived(CastDevice castDevice, String str, String str2) {
         this.zzd.zzO(str2);
@@ -304,28 +283,8 @@ public class RemoteMediaClient implements Cast.MessageReceivedCallback {
         return pause(null);
     }
 
-    public PendingResult pause(JSONObject jSONObject) {
-        Preconditions.checkMainThread("Must be called from the main thread.");
-        if (!zzy()) {
-            return zzf(17, null);
-        }
-        zzax zzaxVar = new zzax(this, jSONObject);
-        zzz(zzaxVar);
-        return zzaxVar;
-    }
-
     public PendingResult play() {
         return play(null);
-    }
-
-    public PendingResult play(JSONObject jSONObject) {
-        Preconditions.checkMainThread("Must be called from the main thread.");
-        if (!zzy()) {
-            return zzf(17, null);
-        }
-        zzaz zzazVar = new zzaz(this, jSONObject);
-        zzz(zzazVar);
-        return zzazVar;
     }
 
     public PendingResult queueNext(JSONObject jSONObject) {
@@ -379,50 +338,12 @@ public class RemoteMediaClient implements Cast.MessageReceivedCallback {
         return seek(j, 0, null);
     }
 
-    public PendingResult seek(long j, int i, JSONObject jSONObject) {
-        MediaSeekOptions.Builder builder = new MediaSeekOptions.Builder();
-        builder.setPosition(j);
-        builder.setResumeState(i);
-        builder.setCustomData(jSONObject);
-        return seek(builder.build());
-    }
-
-    public PendingResult seek(MediaSeekOptions mediaSeekOptions) {
-        Preconditions.checkMainThread("Must be called from the main thread.");
-        if (!zzy()) {
-            return zzf(17, null);
-        }
-        zzba zzbaVar = new zzba(this, mediaSeekOptions);
-        zzz(zzbaVar);
-        return zzbaVar;
-    }
-
     public PendingResult setPlaybackRate(double d) {
         return setPlaybackRate(d, null);
     }
 
-    public PendingResult setPlaybackRate(double d, JSONObject jSONObject) {
-        Preconditions.checkMainThread("Must be called from the main thread.");
-        if (!zzy()) {
-            return zzf(17, null);
-        }
-        zzbd zzbdVar = new zzbd(this, d, jSONObject);
-        zzz(zzbdVar);
-        return zzbdVar;
-    }
-
     public PendingResult setStreamVolume(double d) {
         return setStreamVolume(d, null);
-    }
-
-    public PendingResult setStreamVolume(double d, JSONObject jSONObject) {
-        Preconditions.checkMainThread("Must be called from the main thread.");
-        if (!zzy()) {
-            return zzf(17, null);
-        }
-        zzbb zzbbVar = new zzbb(this, d, jSONObject);
-        zzz(zzbbVar);
-        return zzbbVar;
     }
 
     public void togglePlayback() {
@@ -504,11 +425,10 @@ public class RemoteMediaClient implements Cast.MessageReceivedCallback {
             builder2.setLoadRequestData(build);
             sessionState = builder2.build();
         }
-        TaskCompletionSource taskCompletionSource = this.zzh;
         if (sessionState != null) {
-            taskCompletionSource.setResult(sessionState);
+            this.zzh.setResult(sessionState);
         } else {
-            taskCompletionSource.setException(new com.google.android.gms.cast.internal.zzao());
+            this.zzh.setException(new com.google.android.gms.cast.internal.zzao());
         }
         return this.zzh.getTask();
     }
@@ -571,5 +491,86 @@ public class RemoteMediaClient implements Cast.MessageReceivedCallback {
         Preconditions.checkMainThread("Must be called from the main thread.");
         MediaStatus mediaStatus = getMediaStatus();
         return mediaStatus != null && mediaStatus.getPlayerState() == 5;
+    }
+
+    public PendingResult load(MediaInfo mediaInfo, MediaLoadOptions mediaLoadOptions) {
+        MediaLoadRequestData.Builder builder = new MediaLoadRequestData.Builder();
+        builder.setMediaInfo(mediaInfo);
+        builder.setAutoplay(Boolean.valueOf(mediaLoadOptions.getAutoplay()));
+        builder.setCurrentTime(mediaLoadOptions.getPlayPosition());
+        builder.setPlaybackRate(mediaLoadOptions.getPlaybackRate());
+        builder.setActiveTrackIds(mediaLoadOptions.getActiveTrackIds());
+        builder.setCustomData(mediaLoadOptions.getCustomData());
+        builder.setCredentials(mediaLoadOptions.getCredentials());
+        builder.setCredentialsType(mediaLoadOptions.getCredentialsType());
+        return load(builder.build());
+    }
+
+    public PendingResult pause(JSONObject jSONObject) {
+        Preconditions.checkMainThread("Must be called from the main thread.");
+        if (!zzy()) {
+            return zzf(17, null);
+        }
+        zzax zzaxVar = new zzax(this, jSONObject);
+        zzz(zzaxVar);
+        return zzaxVar;
+    }
+
+    public PendingResult play(JSONObject jSONObject) {
+        Preconditions.checkMainThread("Must be called from the main thread.");
+        if (!zzy()) {
+            return zzf(17, null);
+        }
+        zzaz zzazVar = new zzaz(this, jSONObject);
+        zzz(zzazVar);
+        return zzazVar;
+    }
+
+    public PendingResult setPlaybackRate(double d, JSONObject jSONObject) {
+        Preconditions.checkMainThread("Must be called from the main thread.");
+        if (!zzy()) {
+            return zzf(17, null);
+        }
+        zzbd zzbdVar = new zzbd(this, d, jSONObject);
+        zzz(zzbdVar);
+        return zzbdVar;
+    }
+
+    public PendingResult setStreamVolume(double d, JSONObject jSONObject) {
+        Preconditions.checkMainThread("Must be called from the main thread.");
+        if (!zzy()) {
+            return zzf(17, null);
+        }
+        zzbb zzbbVar = new zzbb(this, d, jSONObject);
+        zzz(zzbbVar);
+        return zzbbVar;
+    }
+
+    public PendingResult seek(long j, int i, JSONObject jSONObject) {
+        MediaSeekOptions.Builder builder = new MediaSeekOptions.Builder();
+        builder.setPosition(j);
+        builder.setResumeState(i);
+        builder.setCustomData(jSONObject);
+        return seek(builder.build());
+    }
+
+    public PendingResult seek(MediaSeekOptions mediaSeekOptions) {
+        Preconditions.checkMainThread("Must be called from the main thread.");
+        if (!zzy()) {
+            return zzf(17, null);
+        }
+        zzba zzbaVar = new zzba(this, mediaSeekOptions);
+        zzz(zzbaVar);
+        return zzbaVar;
+    }
+
+    public PendingResult load(MediaLoadRequestData mediaLoadRequestData) {
+        Preconditions.checkMainThread("Must be called from the main thread.");
+        if (!zzy()) {
+            return zzf(17, null);
+        }
+        zzav zzavVar = new zzav(this, mediaLoadRequestData);
+        zzz(zzavVar);
+        return zzavVar;
     }
 }

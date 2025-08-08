@@ -128,100 +128,6 @@ public class MediaInfo extends AbstractSafeParcelable implements ReflectedParcel
         }
     }
 
-    MediaInfo(JSONObject jSONObject) {
-        this(jSONObject.optString("contentId"), -1, null, null, -1L, null, null, null, null, null, null, null, -1L, null, null, null, null);
-        MediaInfo mediaInfo;
-        int i;
-        zzfq zzfqVar;
-        String optString = jSONObject.optString("streamType", "NONE");
-        if ("NONE".equals(optString)) {
-            mediaInfo = this;
-            mediaInfo.zzd = 0;
-        } else {
-            mediaInfo = this;
-            if ("BUFFERED".equals(optString)) {
-                mediaInfo.zzd = 1;
-            } else if ("LIVE".equals(optString)) {
-                mediaInfo.zzd = 2;
-            } else {
-                mediaInfo.zzd = -1;
-            }
-        }
-        mediaInfo.zze = CastUtils.optStringOrNull(jSONObject, "contentType");
-        if (jSONObject.has("metadata")) {
-            JSONObject jSONObject2 = jSONObject.getJSONObject("metadata");
-            MediaMetadata mediaMetadata = new MediaMetadata(jSONObject2.getInt("metadataType"));
-            mediaInfo.zzf = mediaMetadata;
-            mediaMetadata.zzc(jSONObject2);
-        }
-        mediaInfo.zzg = -1L;
-        if (mediaInfo.zzd != 2 && jSONObject.has("duration") && !jSONObject.isNull("duration")) {
-            double optDouble = jSONObject.optDouble("duration", 0.0d);
-            if (!Double.isNaN(optDouble) && !Double.isInfinite(optDouble) && optDouble >= 0.0d) {
-                mediaInfo.zzg = CastUtils.secToMillisec(optDouble);
-            }
-        }
-        if (jSONObject.has("tracks")) {
-            ArrayList arrayList = new ArrayList();
-            JSONArray jSONArray = jSONObject.getJSONArray("tracks");
-            for (int i2 = 0; i2 < jSONArray.length(); i2++) {
-                JSONObject jSONObject3 = jSONArray.getJSONObject(i2);
-                Parcelable.Creator<MediaTrack> creator = MediaTrack.CREATOR;
-                long j = jSONObject3.getLong("trackId");
-                String optString2 = jSONObject3.optString("type");
-                int i3 = "TEXT".equals(optString2) ? 1 : "AUDIO".equals(optString2) ? 2 : "VIDEO".equals(optString2) ? 3 : 0;
-                String optStringOrNull = CastUtils.optStringOrNull(jSONObject3, "trackContentId");
-                String optStringOrNull2 = CastUtils.optStringOrNull(jSONObject3, "trackContentType");
-                String optStringOrNull3 = CastUtils.optStringOrNull(jSONObject3, "name");
-                String optStringOrNull4 = CastUtils.optStringOrNull(jSONObject3, "language");
-                if (jSONObject3.has("subtype")) {
-                    String string = jSONObject3.getString("subtype");
-                    i = "SUBTITLES".equals(string) ? 1 : "CAPTIONS".equals(string) ? 2 : "DESCRIPTIONS".equals(string) ? 3 : "CHAPTERS".equals(string) ? 4 : "METADATA".equals(string) ? 5 : -1;
-                } else {
-                    i = 0;
-                }
-                if (jSONObject3.has("roles")) {
-                    zzfn zzfnVar = new zzfn();
-                    JSONArray jSONArray2 = jSONObject3.getJSONArray("roles");
-                    for (int i4 = 0; i4 < jSONArray2.length(); i4++) {
-                        zzfnVar.zzb(jSONArray2.optString(i4));
-                    }
-                    zzfqVar = zzfnVar.zzc();
-                } else {
-                    zzfqVar = null;
-                }
-                arrayList.add(new MediaTrack(j, i3, optStringOrNull, optStringOrNull2, optStringOrNull3, optStringOrNull4, i, zzfqVar, jSONObject3.optJSONObject("customData")));
-            }
-            mediaInfo.zzh = new ArrayList(arrayList);
-        } else {
-            mediaInfo.zzh = null;
-        }
-        if (jSONObject.has("textTrackStyle")) {
-            JSONObject jSONObject4 = jSONObject.getJSONObject("textTrackStyle");
-            TextTrackStyle textTrackStyle = new TextTrackStyle();
-            textTrackStyle.fromJson(jSONObject4);
-            mediaInfo.zzi = textTrackStyle;
-        } else {
-            mediaInfo.zzi = null;
-        }
-        zzr(jSONObject);
-        mediaInfo.zzs = jSONObject.optJSONObject("customData");
-        mediaInfo.zzl = CastUtils.optStringOrNull(jSONObject, "entity");
-        mediaInfo.zzo = CastUtils.optStringOrNull(jSONObject, "atvEntity");
-        mediaInfo.zzm = VastAdsRequest.fromJson(jSONObject.optJSONObject("vmapAdsRequest"));
-        if (jSONObject.has("startAbsoluteTime") && !jSONObject.isNull("startAbsoluteTime")) {
-            double optDouble2 = jSONObject.optDouble("startAbsoluteTime");
-            if (!Double.isNaN(optDouble2) && !Double.isInfinite(optDouble2) && optDouble2 >= 0.0d) {
-                mediaInfo.zzn = CastUtils.secToMillisec(optDouble2);
-            }
-        }
-        if (jSONObject.has("contentUrl")) {
-            mediaInfo.zzp = jSONObject.optString("contentUrl");
-        }
-        mediaInfo.zzq = CastUtils.optStringOrNull(jSONObject, "hlsSegmentFormat");
-        mediaInfo.zzr = CastUtils.optStringOrNull(jSONObject, "hlsVideoSegmentFormat");
-    }
-
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -310,31 +216,6 @@ public class MediaInfo extends AbstractSafeParcelable implements ReflectedParcel
 
     public int hashCode() {
         return Objects.hashCode(this.zzc, Integer.valueOf(this.zzd), this.zze, this.zzf, Long.valueOf(this.zzg), String.valueOf(this.zzs), this.zzh, this.zzi, this.zzj, this.zzk, this.zzl, this.zzm, Long.valueOf(this.zzn), this.zzo, this.zzq, this.zzr);
-    }
-
-    @Override // android.os.Parcelable
-    public void writeToParcel(Parcel parcel, int i) {
-        JSONObject jSONObject = this.zzs;
-        this.zzb = jSONObject == null ? null : jSONObject.toString();
-        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeString(parcel, 2, getContentId(), false);
-        SafeParcelWriter.writeInt(parcel, 3, getStreamType());
-        SafeParcelWriter.writeString(parcel, 4, getContentType(), false);
-        SafeParcelWriter.writeParcelable(parcel, 5, getMetadata(), i, false);
-        SafeParcelWriter.writeLong(parcel, 6, getStreamDuration());
-        SafeParcelWriter.writeTypedList(parcel, 7, getMediaTracks(), false);
-        SafeParcelWriter.writeParcelable(parcel, 8, getTextTrackStyle(), i, false);
-        SafeParcelWriter.writeString(parcel, 9, this.zzb, false);
-        SafeParcelWriter.writeTypedList(parcel, 10, getAdBreaks(), false);
-        SafeParcelWriter.writeTypedList(parcel, 11, getAdBreakClips(), false);
-        SafeParcelWriter.writeString(parcel, 12, getEntity(), false);
-        SafeParcelWriter.writeParcelable(parcel, 13, getVmapAdsRequest(), i, false);
-        SafeParcelWriter.writeLong(parcel, 14, getStartAbsoluteTime());
-        SafeParcelWriter.writeString(parcel, 15, this.zzo, false);
-        SafeParcelWriter.writeString(parcel, 16, getContentUrl(), false);
-        SafeParcelWriter.writeString(parcel, 17, getHlsSegmentFormat(), false);
-        SafeParcelWriter.writeString(parcel, 18, getHlsVideoSegmentFormat(), false);
-        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
     }
 
     public final JSONObject zza() {
@@ -509,5 +390,124 @@ public class MediaInfo extends AbstractSafeParcelable implements ReflectedParcel
             }
             this.zzk = new ArrayList(arrayList2);
         }
+    }
+
+    @Override // android.os.Parcelable
+    public void writeToParcel(Parcel parcel, int i) {
+        JSONObject jSONObject = this.zzs;
+        this.zzb = jSONObject == null ? null : jSONObject.toString();
+        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
+        SafeParcelWriter.writeString(parcel, 2, getContentId(), false);
+        SafeParcelWriter.writeInt(parcel, 3, getStreamType());
+        SafeParcelWriter.writeString(parcel, 4, getContentType(), false);
+        SafeParcelWriter.writeParcelable(parcel, 5, getMetadata(), i, false);
+        SafeParcelWriter.writeLong(parcel, 6, getStreamDuration());
+        SafeParcelWriter.writeTypedList(parcel, 7, getMediaTracks(), false);
+        SafeParcelWriter.writeParcelable(parcel, 8, getTextTrackStyle(), i, false);
+        SafeParcelWriter.writeString(parcel, 9, this.zzb, false);
+        SafeParcelWriter.writeTypedList(parcel, 10, getAdBreaks(), false);
+        SafeParcelWriter.writeTypedList(parcel, 11, getAdBreakClips(), false);
+        SafeParcelWriter.writeString(parcel, 12, getEntity(), false);
+        SafeParcelWriter.writeParcelable(parcel, 13, getVmapAdsRequest(), i, false);
+        SafeParcelWriter.writeLong(parcel, 14, getStartAbsoluteTime());
+        SafeParcelWriter.writeString(parcel, 15, this.zzo, false);
+        SafeParcelWriter.writeString(parcel, 16, getContentUrl(), false);
+        SafeParcelWriter.writeString(parcel, 17, getHlsSegmentFormat(), false);
+        SafeParcelWriter.writeString(parcel, 18, getHlsVideoSegmentFormat(), false);
+        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    MediaInfo(JSONObject jSONObject) {
+        this(jSONObject.optString("contentId"), -1, null, null, -1L, null, null, null, null, null, null, null, -1L, null, null, null, null);
+        MediaInfo mediaInfo;
+        int i;
+        zzfq zzfqVar;
+        String optString = jSONObject.optString("streamType", "NONE");
+        if ("NONE".equals(optString)) {
+            mediaInfo = this;
+            mediaInfo.zzd = 0;
+        } else {
+            mediaInfo = this;
+            if ("BUFFERED".equals(optString)) {
+                mediaInfo.zzd = 1;
+            } else if ("LIVE".equals(optString)) {
+                mediaInfo.zzd = 2;
+            } else {
+                mediaInfo.zzd = -1;
+            }
+        }
+        mediaInfo.zze = CastUtils.optStringOrNull(jSONObject, "contentType");
+        if (jSONObject.has("metadata")) {
+            JSONObject jSONObject2 = jSONObject.getJSONObject("metadata");
+            MediaMetadata mediaMetadata = new MediaMetadata(jSONObject2.getInt("metadataType"));
+            mediaInfo.zzf = mediaMetadata;
+            mediaMetadata.zzc(jSONObject2);
+        }
+        mediaInfo.zzg = -1L;
+        if (mediaInfo.zzd != 2 && jSONObject.has("duration") && !jSONObject.isNull("duration")) {
+            double optDouble = jSONObject.optDouble("duration", 0.0d);
+            if (!Double.isNaN(optDouble) && !Double.isInfinite(optDouble) && optDouble >= 0.0d) {
+                mediaInfo.zzg = CastUtils.secToMillisec(optDouble);
+            }
+        }
+        if (jSONObject.has("tracks")) {
+            ArrayList arrayList = new ArrayList();
+            JSONArray jSONArray = jSONObject.getJSONArray("tracks");
+            for (int i2 = 0; i2 < jSONArray.length(); i2++) {
+                JSONObject jSONObject3 = jSONArray.getJSONObject(i2);
+                Parcelable.Creator<MediaTrack> creator = MediaTrack.CREATOR;
+                long j = jSONObject3.getLong("trackId");
+                String optString2 = jSONObject3.optString("type");
+                int i3 = "TEXT".equals(optString2) ? 1 : "AUDIO".equals(optString2) ? 2 : "VIDEO".equals(optString2) ? 3 : 0;
+                String optStringOrNull = CastUtils.optStringOrNull(jSONObject3, "trackContentId");
+                String optStringOrNull2 = CastUtils.optStringOrNull(jSONObject3, "trackContentType");
+                String optStringOrNull3 = CastUtils.optStringOrNull(jSONObject3, "name");
+                String optStringOrNull4 = CastUtils.optStringOrNull(jSONObject3, "language");
+                if (jSONObject3.has("subtype")) {
+                    String string = jSONObject3.getString("subtype");
+                    i = "SUBTITLES".equals(string) ? 1 : "CAPTIONS".equals(string) ? 2 : "DESCRIPTIONS".equals(string) ? 3 : "CHAPTERS".equals(string) ? 4 : "METADATA".equals(string) ? 5 : -1;
+                } else {
+                    i = 0;
+                }
+                if (jSONObject3.has("roles")) {
+                    zzfn zzfnVar = new zzfn();
+                    JSONArray jSONArray2 = jSONObject3.getJSONArray("roles");
+                    for (int i4 = 0; i4 < jSONArray2.length(); i4++) {
+                        zzfnVar.zzb(jSONArray2.optString(i4));
+                    }
+                    zzfqVar = zzfnVar.zzc();
+                } else {
+                    zzfqVar = null;
+                }
+                arrayList.add(new MediaTrack(j, i3, optStringOrNull, optStringOrNull2, optStringOrNull3, optStringOrNull4, i, zzfqVar, jSONObject3.optJSONObject("customData")));
+            }
+            mediaInfo.zzh = new ArrayList(arrayList);
+        } else {
+            mediaInfo.zzh = null;
+        }
+        if (jSONObject.has("textTrackStyle")) {
+            JSONObject jSONObject4 = jSONObject.getJSONObject("textTrackStyle");
+            TextTrackStyle textTrackStyle = new TextTrackStyle();
+            textTrackStyle.fromJson(jSONObject4);
+            mediaInfo.zzi = textTrackStyle;
+        } else {
+            mediaInfo.zzi = null;
+        }
+        zzr(jSONObject);
+        mediaInfo.zzs = jSONObject.optJSONObject("customData");
+        mediaInfo.zzl = CastUtils.optStringOrNull(jSONObject, "entity");
+        mediaInfo.zzo = CastUtils.optStringOrNull(jSONObject, "atvEntity");
+        mediaInfo.zzm = VastAdsRequest.fromJson(jSONObject.optJSONObject("vmapAdsRequest"));
+        if (jSONObject.has("startAbsoluteTime") && !jSONObject.isNull("startAbsoluteTime")) {
+            double optDouble2 = jSONObject.optDouble("startAbsoluteTime");
+            if (!Double.isNaN(optDouble2) && !Double.isInfinite(optDouble2) && optDouble2 >= 0.0d) {
+                mediaInfo.zzn = CastUtils.secToMillisec(optDouble2);
+            }
+        }
+        if (jSONObject.has("contentUrl")) {
+            mediaInfo.zzp = jSONObject.optString("contentUrl");
+        }
+        mediaInfo.zzq = CastUtils.optStringOrNull(jSONObject, "hlsSegmentFormat");
+        mediaInfo.zzr = CastUtils.optStringOrNull(jSONObject, "hlsVideoSegmentFormat");
     }
 }

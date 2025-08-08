@@ -16,15 +16,6 @@ public final class HevcConfig {
     public final float pixelWidthHeightRatio;
     public final int width;
 
-    private HevcConfig(List list, int i, int i2, int i3, float f, String str) {
-        this.initializationData = list;
-        this.nalUnitLengthFieldLength = i;
-        this.width = i2;
-        this.height = i3;
-        this.pixelWidthHeightRatio = f;
-        this.codecs = str;
-    }
-
     public static HevcConfig parse(ParsableByteArray parsableByteArray) {
         int i;
         int i2;
@@ -91,5 +82,14 @@ public final class HevcConfig {
         } catch (ArrayIndexOutOfBoundsException e) {
             throw ParserException.createForMalformedContainer("Error parsing HEVC config", e);
         }
+    }
+
+    private HevcConfig(List list, int i, int i2, int i3, float f, String str) {
+        this.initializationData = list;
+        this.nalUnitLengthFieldLength = i;
+        this.width = i2;
+        this.height = i3;
+        this.pixelWidthHeightRatio = f;
+        this.codecs = str;
     }
 }

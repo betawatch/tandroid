@@ -14,22 +14,6 @@ public final class zzfi$zzk extends zzjb implements zzkm {
     private String zzd = "";
     private String zzg = "";
 
-    public static final class zza extends zzjb.zzb implements zzkm {
-        private zza() {
-            super(zzfi$zzk.zzj);
-        }
-
-        /* synthetic */ zza(zzfk zzfkVar) {
-            this();
-        }
-    }
-
-    static {
-        zzfi$zzk zzfi_zzk = new zzfi$zzk();
-        zzj = zzfi_zzk;
-        zzjb.zza(zzfi$zzk.class, zzfi_zzk);
-    }
-
     private zzfi$zzk() {
     }
 
@@ -71,5 +55,21 @@ public final class zzfi$zzk extends zzjb implements zzkm {
             default:
                 throw new UnsupportedOperationException();
         }
+    }
+
+    public static final class zza extends zzjb.zzb implements zzkm {
+        private zza() {
+            super(zzfi$zzk.zzj);
+        }
+
+        /* synthetic */ zza(zzfk zzfkVar) {
+            this();
+        }
+    }
+
+    static {
+        zzfi$zzk zzfi_zzk = new zzfi$zzk();
+        zzj = zzfi_zzk;
+        zzjb.zza(zzfi$zzk.class, zzfi_zzk);
     }
 }

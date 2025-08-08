@@ -13,7 +13,6 @@ public class ConstantBitrateSeekMap implements SeekMap {
     private final long inputLength;
 
     public ConstantBitrateSeekMap(long j, long j2, int i, int i2, boolean z) {
-        long timeUsAtPosition;
         this.inputLength = j;
         this.firstFrameBytePosition = j2;
         this.frameSize = i2 == -1 ? 1 : i2;
@@ -21,31 +20,16 @@ public class ConstantBitrateSeekMap implements SeekMap {
         this.allowSeeksIfLengthUnknown = z;
         if (j == -1) {
             this.dataSize = -1L;
-            timeUsAtPosition = -9223372036854775807L;
+            this.durationUs = -9223372036854775807L;
         } else {
             this.dataSize = j - j2;
-            timeUsAtPosition = getTimeUsAtPosition(j, j2, i);
+            this.durationUs = getTimeUsAtPosition(j, j2, i);
         }
-        this.durationUs = timeUsAtPosition;
-    }
-
-    private long getFramePositionForTimeUs(long j) {
-        long j2 = this.frameSize;
-        long j3 = (((j * this.bitrate) / 8000000) / j2) * j2;
-        long j4 = this.dataSize;
-        if (j4 != -1) {
-            j3 = Math.min(j3, j4 - j2);
-        }
-        return this.firstFrameBytePosition + Math.max(j3, 0L);
-    }
-
-    private static long getTimeUsAtPosition(long j, long j2, int i) {
-        return (Math.max(0L, j - j2) * 8000000) / i;
     }
 
     @Override // com.google.android.exoplayer2.extractor.SeekMap
-    public long getDurationUs() {
-        return this.durationUs;
+    public boolean isSeekable() {
+        return this.dataSize != -1 || this.allowSeeksIfLengthUnknown;
     }
 
     @Override // com.google.android.exoplayer2.extractor.SeekMap
@@ -65,12 +49,26 @@ public class ConstantBitrateSeekMap implements SeekMap {
         return new SeekMap.SeekPoints(seekPoint);
     }
 
+    @Override // com.google.android.exoplayer2.extractor.SeekMap
+    public long getDurationUs() {
+        return this.durationUs;
+    }
+
     public long getTimeUsAtPosition(long j) {
         return getTimeUsAtPosition(j, this.firstFrameBytePosition, this.bitrate);
     }
 
-    @Override // com.google.android.exoplayer2.extractor.SeekMap
-    public boolean isSeekable() {
-        return this.dataSize != -1 || this.allowSeeksIfLengthUnknown;
+    private static long getTimeUsAtPosition(long j, long j2, int i) {
+        return (Math.max(0L, j - j2) * 8000000) / i;
+    }
+
+    private long getFramePositionForTimeUs(long j) {
+        long j2 = this.frameSize;
+        long j3 = (((j * this.bitrate) / 8000000) / j2) * j2;
+        long j4 = this.dataSize;
+        if (j4 != -1) {
+            j3 = Math.min(j3, j4 - j2);
+        }
+        return this.firstFrameBytePosition + Math.max(j3, 0L);
     }
 }

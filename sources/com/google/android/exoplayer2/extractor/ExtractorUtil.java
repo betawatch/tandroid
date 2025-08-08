@@ -11,17 +11,6 @@ public abstract class ExtractorUtil {
         }
     }
 
-    public static boolean peekFullyQuietly(ExtractorInput extractorInput, byte[] bArr, int i, int i2, boolean z) {
-        try {
-            return extractorInput.peekFully(bArr, i, i2, z);
-        } catch (EOFException e) {
-            if (z) {
-                return false;
-            }
-            throw e;
-        }
-    }
-
     public static int peekToLength(ExtractorInput extractorInput, byte[] bArr, int i, int i2) {
         int i3 = 0;
         while (i3 < i2) {
@@ -49,6 +38,17 @@ public abstract class ExtractorUtil {
             return true;
         } catch (EOFException unused) {
             return false;
+        }
+    }
+
+    public static boolean peekFullyQuietly(ExtractorInput extractorInput, byte[] bArr, int i, int i2, boolean z) {
+        try {
+            return extractorInput.peekFully(bArr, i, i2, z);
+        } catch (EOFException e) {
+            if (z) {
+                return false;
+            }
+            throw e;
         }
     }
 }

@@ -38,13 +38,13 @@ class DelegatingScheduledFuture extends AbstractResolvableFuture implements Sche
         this.upstreamFuture.cancel(wasInterrupted());
     }
 
-    @Override // java.lang.Comparable
-    public int compareTo(Delayed delayed) {
-        return this.upstreamFuture.compareTo(delayed);
-    }
-
     @Override // java.util.concurrent.Delayed
     public long getDelay(TimeUnit timeUnit) {
         return this.upstreamFuture.getDelay(timeUnit);
+    }
+
+    @Override // java.lang.Comparable
+    public int compareTo(Delayed delayed) {
+        return this.upstreamFuture.compareTo(delayed);
     }
 }

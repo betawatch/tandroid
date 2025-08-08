@@ -88,8 +88,17 @@ public class KeyboardNotifier {
         }
     }
 
-    public void awaitKeyboard() {
-        this.awaitingKeyboard = true;
+    public int getKeyboardHeight() {
+        return this.keyboardHeight;
+    }
+
+    public boolean keyboardVisible() {
+        return this.keyboardHeight > AndroidUtilities.navigationBarHeight + AndroidUtilities.dp(20.0f) || this.awaitingKeyboard;
+    }
+
+    public void ignore(boolean z) {
+        this.ignoring = z;
+        update();
     }
 
     public void fire() {
@@ -106,16 +115,7 @@ public class KeyboardNotifier {
         }
     }
 
-    public int getKeyboardHeight() {
-        return this.keyboardHeight;
-    }
-
-    public void ignore(boolean z) {
-        this.ignoring = z;
-        update();
-    }
-
-    public boolean keyboardVisible() {
-        return this.keyboardHeight > AndroidUtilities.navigationBarHeight + AndroidUtilities.dp(20.0f) || this.awaitingKeyboard;
+    public void awaitKeyboard() {
+        this.awaitingKeyboard = true;
     }
 }

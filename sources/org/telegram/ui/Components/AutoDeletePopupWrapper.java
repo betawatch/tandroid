@@ -17,7 +17,7 @@ import org.telegram.ui.Components.AlertsCreator;
 import org.telegram.ui.Components.AutoDeletePopupWrapper;
 import org.telegram.ui.Components.LinkSpanDrawable;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class AutoDeletePopupWrapper {
     View backItem;
     Callback callback;
@@ -113,16 +113,6 @@ public class AutoDeletePopupWrapper {
         }
     }
 
-    private void dismiss() {
-        this.callback.dismiss();
-        this.lastDismissTime = System.currentTimeMillis();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$allowExtendedHint$8() {
-        this.callback.showGlobalAutoDeleteScreen();
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$1(Callback callback, View view) {
         dismiss();
@@ -142,11 +132,6 @@ public class AutoDeletePopupWrapper {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$4(Callback callback, boolean z, int i) {
-        callback.setAutoDeleteHistory(i * 60, i == 0 ? 71 : 70);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$5(Context context, int i, Theme.ResourcesProvider resourcesProvider, final Callback callback, View view) {
         dismiss();
         AlertsCreator.createAutoDeleteDatePickerDialog(context, i, resourcesProvider, new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.AutoDeletePopupWrapper$$ExternalSyntheticLambda8
@@ -158,9 +143,35 @@ public class AutoDeletePopupWrapper {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$new$4(Callback callback, boolean z, int i) {
+        callback.setAutoDeleteHistory(i * 60, i == 0 ? 71 : 70);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$6(Callback callback, View view) {
         dismiss();
         callback.setAutoDeleteHistory(0, 71);
+    }
+
+    private void dismiss() {
+        this.callback.dismiss();
+        this.lastDismissTime = System.currentTimeMillis();
+    }
+
+    /* renamed from: updateItems, reason: merged with bridge method [inline-methods] */
+    public void lambda$updateItems$7(final int i) {
+        if (System.currentTimeMillis() - this.lastDismissTime < 200) {
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.AutoDeletePopupWrapper$$ExternalSyntheticLambda1
+                @Override // java.lang.Runnable
+                public final void run() {
+                    AutoDeletePopupWrapper.this.lambda$updateItems$7(i);
+                }
+            });
+        } else if (i == 0) {
+            this.disableItem.setVisibility(8);
+        } else {
+            this.disableItem.setVisibility(0);
+        }
     }
 
     public void allowExtendedHint(int i) {
@@ -179,26 +190,8 @@ public class AutoDeletePopupWrapper {
         this.textView.setText(spannableStringBuilder);
     }
 
-    /* renamed from: updateItems, reason: merged with bridge method [inline-methods] */
-    public void lambda$updateItems$7(final int i) {
-        ActionBarMenuSubItem actionBarMenuSubItem;
-        int i2;
-        if (System.currentTimeMillis() - this.lastDismissTime < 200) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.AutoDeletePopupWrapper$$ExternalSyntheticLambda1
-                @Override // java.lang.Runnable
-                public final void run() {
-                    AutoDeletePopupWrapper.this.lambda$updateItems$7(i);
-                }
-            });
-            return;
-        }
-        if (i == 0) {
-            actionBarMenuSubItem = this.disableItem;
-            i2 = 8;
-        } else {
-            actionBarMenuSubItem = this.disableItem;
-            i2 = 0;
-        }
-        actionBarMenuSubItem.setVisibility(i2);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$allowExtendedHint$8() {
+        this.callback.showGlobalAutoDeleteScreen();
     }
 }

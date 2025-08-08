@@ -28,29 +28,11 @@ public final class AudioAttributes implements Bundleable {
         }
     };
 
-    private static final class Api29 {
-        public static void setAllowedCapturePolicy(AudioAttributes.Builder builder, int i) {
-            builder.setAllowedCapturePolicy(i);
-        }
-    }
-
-    private static final class Api32 {
-        public static void setSpatializationBehavior(AudioAttributes.Builder builder, int i) {
-            builder.setSpatializationBehavior(i);
-        }
-    }
-
     public static final class AudioAttributesV21 {
         public final android.media.AudioAttributes audioAttributes;
 
         private AudioAttributesV21(AudioAttributes audioAttributes) {
-            AudioAttributes.Builder contentType;
-            AudioAttributes.Builder flags;
-            AudioAttributes.Builder usage;
-            android.media.AudioAttributes build;
-            contentType = new AudioAttributes.Builder().setContentType(audioAttributes.contentType);
-            flags = contentType.setFlags(audioAttributes.flags);
-            usage = flags.setUsage(audioAttributes.usage);
+            AudioAttributes.Builder usage = new AudioAttributes.Builder().setContentType(audioAttributes.contentType).setFlags(audioAttributes.flags).setUsage(audioAttributes.usage);
             int i = Util.SDK_INT;
             if (i >= 29) {
                 Api29.setAllowedCapturePolicy(usage, audioAttributes.allowedCapturePolicy);
@@ -58,8 +40,7 @@ public final class AudioAttributes implements Bundleable {
             if (i >= 32) {
                 Api32.setSpatializationBehavior(usage, audioAttributes.spatializationBehavior);
             }
-            build = usage.build();
-            this.audioAttributes = build;
+            this.audioAttributes = usage.build();
         }
     }
 
@@ -69,15 +50,6 @@ public final class AudioAttributes implements Bundleable {
         private int usage = 1;
         private int allowedCapturePolicy = 1;
         private int spatializationBehavior = 0;
-
-        public AudioAttributes build() {
-            return new AudioAttributes(this.contentType, this.flags, this.usage, this.allowedCapturePolicy, this.spatializationBehavior);
-        }
-
-        public Builder setAllowedCapturePolicy(int i) {
-            this.allowedCapturePolicy = i;
-            return this;
-        }
 
         public Builder setContentType(int i) {
             this.contentType = i;
@@ -89,14 +61,23 @@ public final class AudioAttributes implements Bundleable {
             return this;
         }
 
+        public Builder setUsage(int i) {
+            this.usage = i;
+            return this;
+        }
+
+        public Builder setAllowedCapturePolicy(int i) {
+            this.allowedCapturePolicy = i;
+            return this;
+        }
+
         public Builder setSpatializationBehavior(int i) {
             this.spatializationBehavior = i;
             return this;
         }
 
-        public Builder setUsage(int i) {
-            this.usage = i;
-            return this;
+        public AudioAttributes build() {
+            return new AudioAttributes(this.contentType, this.flags, this.usage, this.allowedCapturePolicy, this.spatializationBehavior);
         }
     }
 
@@ -106,6 +87,39 @@ public final class AudioAttributes implements Bundleable {
         this.usage = i3;
         this.allowedCapturePolicy = i4;
         this.spatializationBehavior = i5;
+    }
+
+    public AudioAttributesV21 getAudioAttributesV21() {
+        if (this.audioAttributesV21 == null) {
+            this.audioAttributesV21 = new AudioAttributesV21();
+        }
+        return this.audioAttributesV21;
+    }
+
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || AudioAttributes.class != obj.getClass()) {
+            return false;
+        }
+        AudioAttributes audioAttributes = (AudioAttributes) obj;
+        return this.contentType == audioAttributes.contentType && this.flags == audioAttributes.flags && this.usage == audioAttributes.usage && this.allowedCapturePolicy == audioAttributes.allowedCapturePolicy && this.spatializationBehavior == audioAttributes.spatializationBehavior;
+    }
+
+    public int hashCode() {
+        return ((((((((this.contentType + 527) * 31) + this.flags) * 31) + this.usage) * 31) + this.allowedCapturePolicy) * 31) + this.spatializationBehavior;
+    }
+
+    @Override // com.google.android.exoplayer2.Bundleable
+    public Bundle toBundle() {
+        Bundle bundle = new Bundle();
+        bundle.putInt(FIELD_CONTENT_TYPE, this.contentType);
+        bundle.putInt(FIELD_FLAGS, this.flags);
+        bundle.putInt(FIELD_USAGE, this.usage);
+        bundle.putInt(FIELD_ALLOWED_CAPTURE_POLICY, this.allowedCapturePolicy);
+        bundle.putInt(FIELD_SPATIALIZATION_BEHAVIOR, this.spatializationBehavior);
+        return bundle;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -134,36 +148,15 @@ public final class AudioAttributes implements Bundleable {
         return builder.build();
     }
 
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    private static final class Api29 {
+        public static void setAllowedCapturePolicy(AudioAttributes.Builder builder, int i) {
+            builder.setAllowedCapturePolicy(i);
         }
-        if (obj == null || AudioAttributes.class != obj.getClass()) {
-            return false;
-        }
-        AudioAttributes audioAttributes = (AudioAttributes) obj;
-        return this.contentType == audioAttributes.contentType && this.flags == audioAttributes.flags && this.usage == audioAttributes.usage && this.allowedCapturePolicy == audioAttributes.allowedCapturePolicy && this.spatializationBehavior == audioAttributes.spatializationBehavior;
     }
 
-    public AudioAttributesV21 getAudioAttributesV21() {
-        if (this.audioAttributesV21 == null) {
-            this.audioAttributesV21 = new AudioAttributesV21();
+    private static final class Api32 {
+        public static void setSpatializationBehavior(AudioAttributes.Builder builder, int i) {
+            builder.setSpatializationBehavior(i);
         }
-        return this.audioAttributesV21;
-    }
-
-    public int hashCode() {
-        return ((((((((this.contentType + 527) * 31) + this.flags) * 31) + this.usage) * 31) + this.allowedCapturePolicy) * 31) + this.spatializationBehavior;
-    }
-
-    @Override // com.google.android.exoplayer2.Bundleable
-    public Bundle toBundle() {
-        Bundle bundle = new Bundle();
-        bundle.putInt(FIELD_CONTENT_TYPE, this.contentType);
-        bundle.putInt(FIELD_FLAGS, this.flags);
-        bundle.putInt(FIELD_USAGE, this.usage);
-        bundle.putInt(FIELD_ALLOWED_CAPTURE_POLICY, this.allowedCapturePolicy);
-        bundle.putInt(FIELD_SPATIALIZATION_BEHAVIOR, this.spatializationBehavior);
-        return bundle;
     }
 }

@@ -1,25 +1,32 @@
 package com.google.android.gms.internal.play_billing;
 
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+
 /* loaded from: classes.dex */
-abstract class zzeg {
-    zzeg() {
+public abstract class zzeg extends zzcf implements Future {
+    protected zzeg() {
     }
 
-    abstract int zza(Object obj);
+    @Override // java.util.concurrent.Future
+    public final Object get() {
+        return zzc().get();
+    }
 
-    abstract int zzb(Object obj);
+    @Override // java.util.concurrent.Future
+    public final boolean isCancelled() {
+        return zzc().isCancelled();
+    }
 
-    abstract Object zzc(Object obj);
+    @Override // java.util.concurrent.Future
+    public final boolean isDone() {
+        return zzc().isDone();
+    }
 
-    abstract Object zzd(Object obj);
+    protected abstract Future zzc();
 
-    abstract Object zze(Object obj, Object obj2);
-
-    abstract void zzf(Object obj, int i, long j);
-
-    abstract void zzg(Object obj);
-
-    abstract void zzh(Object obj, Object obj2);
-
-    abstract void zzi(Object obj, zzey zzeyVar);
+    @Override // java.util.concurrent.Future
+    public final Object get(long j, TimeUnit timeUnit) {
+        return zzc().get(j, timeUnit);
+    }
 }

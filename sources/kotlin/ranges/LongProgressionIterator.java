@@ -3,7 +3,7 @@ package kotlin.ranges;
 import java.util.NoSuchElementException;
 import kotlin.collections.LongIterator;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class LongProgressionIterator extends LongIterator {
     private final long finalElement;
     private boolean hasNext;
@@ -29,13 +29,13 @@ public final class LongProgressionIterator extends LongIterator {
     @Override // kotlin.collections.LongIterator
     public long nextLong() {
         long j = this.next;
-        if (j != this.finalElement) {
-            this.next = this.step + j;
-        } else {
+        if (j == this.finalElement) {
             if (!this.hasNext) {
                 throw new NoSuchElementException();
             }
             this.hasNext = false;
+        } else {
+            this.next = this.step + j;
         }
         return j;
     }

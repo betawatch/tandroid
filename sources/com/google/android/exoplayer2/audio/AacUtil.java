@@ -22,58 +22,8 @@ public abstract class AacUtil {
         }
     }
 
-    public static byte[] buildAacLcAudioSpecificConfig(int i, int i2) {
-        int i3 = 0;
-        int i4 = 0;
-        int i5 = -1;
-        while (true) {
-            int[] iArr = AUDIO_SPECIFIC_CONFIG_SAMPLING_RATE_TABLE;
-            if (i4 >= iArr.length) {
-                break;
-            }
-            if (i == iArr[i4]) {
-                i5 = i4;
-            }
-            i4++;
-        }
-        int i6 = -1;
-        while (true) {
-            int[] iArr2 = AUDIO_SPECIFIC_CONFIG_CHANNEL_COUNT_TABLE;
-            if (i3 >= iArr2.length) {
-                break;
-            }
-            if (i2 == iArr2[i3]) {
-                i6 = i3;
-            }
-            i3++;
-        }
-        if (i != -1 && i6 != -1) {
-            return buildAudioSpecificConfig(2, i5, i6);
-        }
-        throw new IllegalArgumentException("Invalid sample rate or number of channels: " + i + ", " + i2);
-    }
-
-    public static byte[] buildAudioSpecificConfig(int i, int i2, int i3) {
-        return new byte[]{(byte) (((i << 3) & NotificationCenter.didSetNewTheme) | ((i2 >> 1) & 7)), (byte) (((i2 << 7) & 128) | ((i3 << 3) & 120))};
-    }
-
-    private static int getAudioObjectType(ParsableBitArray parsableBitArray) {
-        int readBits = parsableBitArray.readBits(5);
-        return readBits == 31 ? parsableBitArray.readBits(6) + 32 : readBits;
-    }
-
-    private static int getSamplingFrequency(ParsableBitArray parsableBitArray) {
-        int readBits = parsableBitArray.readBits(4);
-        if (readBits == 15) {
-            if (parsableBitArray.bitsLeft() >= 24) {
-                return parsableBitArray.readBits(24);
-            }
-            throw ParserException.createForMalformedContainer("AAC header insufficient data", null);
-        }
-        if (readBits < 13) {
-            return AUDIO_SPECIFIC_CONFIG_SAMPLING_RATE_TABLE[readBits];
-        }
-        throw ParserException.createForMalformedContainer("AAC header wrong Sampling Frequency Index", null);
+    public static Config parseAudioSpecificConfig(byte[] bArr) {
+        return parseAudioSpecificConfig(new ParsableBitArray(bArr), false);
     }
 
     public static Config parseAudioSpecificConfig(ParsableBitArray parsableBitArray, boolean z) {
@@ -116,14 +66,64 @@ public abstract class AacUtil {
             }
         }
         int i = AUDIO_SPECIFIC_CONFIG_CHANNEL_COUNT_TABLE[readBits];
-        if (i != -1) {
-            return new Config(samplingFrequency, i, str);
+        if (i == -1) {
+            throw ParserException.createForMalformedContainer(null, null);
         }
-        throw ParserException.createForMalformedContainer(null, null);
+        return new Config(samplingFrequency, i, str);
     }
 
-    public static Config parseAudioSpecificConfig(byte[] bArr) {
-        return parseAudioSpecificConfig(new ParsableBitArray(bArr), false);
+    public static byte[] buildAacLcAudioSpecificConfig(int i, int i2) {
+        int i3 = 0;
+        int i4 = 0;
+        int i5 = -1;
+        while (true) {
+            int[] iArr = AUDIO_SPECIFIC_CONFIG_SAMPLING_RATE_TABLE;
+            if (i4 >= iArr.length) {
+                break;
+            }
+            if (i == iArr[i4]) {
+                i5 = i4;
+            }
+            i4++;
+        }
+        int i6 = -1;
+        while (true) {
+            int[] iArr2 = AUDIO_SPECIFIC_CONFIG_CHANNEL_COUNT_TABLE;
+            if (i3 >= iArr2.length) {
+                break;
+            }
+            if (i2 == iArr2[i3]) {
+                i6 = i3;
+            }
+            i3++;
+        }
+        if (i == -1 || i6 == -1) {
+            throw new IllegalArgumentException("Invalid sample rate or number of channels: " + i + ", " + i2);
+        }
+        return buildAudioSpecificConfig(2, i5, i6);
+    }
+
+    public static byte[] buildAudioSpecificConfig(int i, int i2, int i3) {
+        return new byte[]{(byte) (((i << 3) & NotificationCenter.didSetNewTheme) | ((i2 >> 1) & 7)), (byte) (((i2 << 7) & 128) | ((i3 << 3) & 120))};
+    }
+
+    private static int getAudioObjectType(ParsableBitArray parsableBitArray) {
+        int readBits = parsableBitArray.readBits(5);
+        return readBits == 31 ? parsableBitArray.readBits(6) + 32 : readBits;
+    }
+
+    private static int getSamplingFrequency(ParsableBitArray parsableBitArray) {
+        int readBits = parsableBitArray.readBits(4);
+        if (readBits == 15) {
+            if (parsableBitArray.bitsLeft() < 24) {
+                throw ParserException.createForMalformedContainer("AAC header insufficient data", null);
+            }
+            return parsableBitArray.readBits(24);
+        }
+        if (readBits < 13) {
+            return AUDIO_SPECIFIC_CONFIG_SAMPLING_RATE_TABLE[readBits];
+        }
+        throw ParserException.createForMalformedContainer("AAC header wrong Sampling Frequency Index", null);
     }
 
     private static void parseGaSpecificConfig(ParsableBitArray parsableBitArray, int i, int i2) {

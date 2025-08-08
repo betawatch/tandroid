@@ -22,20 +22,6 @@ final class zzih extends zzif {
         this.zze = z;
     }
 
-    private final void zzz() {
-        int i = this.zzf + this.zzg;
-        this.zzf = i;
-        int i2 = i - this.zzi;
-        int i3 = this.zzk;
-        if (i2 <= i3) {
-            this.zzg = 0;
-            return;
-        }
-        int i4 = i2 - i3;
-        this.zzg = i4;
-        this.zzf = i - i4;
-    }
-
     @Override // com.google.android.gms.internal.vision.zzif
     public final int zzc(int i) {
         if (i < 0) {
@@ -49,6 +35,20 @@ final class zzih extends zzif {
         this.zzk = zzu;
         zzz();
         return i2;
+    }
+
+    private final void zzz() {
+        int i = this.zzf + this.zzg;
+        this.zzf = i;
+        int i2 = i - this.zzi;
+        int i3 = this.zzk;
+        if (i2 > i3) {
+            int i4 = i2 - i3;
+            this.zzg = i4;
+            this.zzf = i - i4;
+            return;
+        }
+        this.zzg = 0;
     }
 
     @Override // com.google.android.gms.internal.vision.zzif

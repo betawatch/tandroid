@@ -2,167 +2,81 @@ package com.google.android.gms.common.internal;
 
 import android.content.ComponentName;
 import android.content.Context;
-import android.content.ServiceConnection;
-import android.os.Handler;
-import android.os.IBinder;
-import android.os.Message;
-import android.os.StrictMode;
-import com.google.android.gms.common.stats.ConnectionTracker;
-import com.google.android.gms.common.util.PlatformVersion;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.concurrent.Executor;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.util.Log;
 
 /* loaded from: classes.dex */
-final class zzo implements ServiceConnection, zzs {
-    final /* synthetic */ zzr zza;
-    private final Map zzb = new HashMap();
-    private int zzc = 2;
-    private boolean zzd;
-    private IBinder zze;
-    private final zzn zzf;
-    private ComponentName zzg;
+public final class zzo {
+    private static final Uri zza = new Uri.Builder().scheme("content").authority("com.google.android.gms.chimera").build();
+    private final String zzb;
+    private final String zzc;
+    private final ComponentName zzd;
+    private final int zze;
+    private final boolean zzf;
 
-    public zzo(zzr zzrVar, zzn zznVar) {
-        this.zza = zzrVar;
-        this.zzf = zznVar;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof zzo)) {
+            return false;
+        }
+        zzo zzoVar = (zzo) obj;
+        return Objects.equal(this.zzb, zzoVar.zzb) && Objects.equal(this.zzc, zzoVar.zzc) && Objects.equal(this.zzd, zzoVar.zzd) && this.zzf == zzoVar.zzf;
     }
 
-    @Override // android.content.ServiceConnection
-    public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-        HashMap hashMap;
-        Handler handler;
-        hashMap = this.zza.zzb;
-        synchronized (hashMap) {
+    public final int hashCode() {
+        return Objects.hashCode(this.zzb, this.zzc, this.zzd, 4225, Boolean.valueOf(this.zzf));
+    }
+
+    public final String toString() {
+        String str = this.zzb;
+        if (str != null) {
+            return str;
+        }
+        Preconditions.checkNotNull(this.zzd);
+        return this.zzd.flattenToString();
+    }
+
+    public final ComponentName zza() {
+        return this.zzd;
+    }
+
+    public final Intent zzb(Context context) {
+        Bundle bundle;
+        if (this.zzb == null) {
+            return new Intent().setComponent(this.zzd);
+        }
+        if (this.zzf) {
+            Bundle bundle2 = new Bundle();
+            bundle2.putString("serviceActionBundleKey", this.zzb);
             try {
-                handler = this.zza.zzd;
-                handler.removeMessages(1, this.zzf);
-                this.zze = iBinder;
-                this.zzg = componentName;
-                Iterator it = this.zzb.values().iterator();
-                while (it.hasNext()) {
-                    ((ServiceConnection) it.next()).onServiceConnected(componentName, iBinder);
-                }
-                this.zzc = 1;
-            } catch (Throwable th) {
-                throw th;
+                bundle = context.getContentResolver().call(zza, "serviceIntentCall", (String) null, bundle2);
+            } catch (IllegalArgumentException e) {
+                Log.w("ConnectionStatusConfig", "Dynamic intent resolution failed: ".concat(e.toString()));
+                bundle = null;
+            }
+            r2 = bundle != null ? (Intent) bundle.getParcelable("serviceResponseIntentKey") : null;
+            if (r2 == null) {
+                Log.w("ConnectionStatusConfig", "Dynamic lookup for intent failed for action: ".concat(String.valueOf(this.zzb)));
             }
         }
+        return r2 == null ? new Intent(this.zzb).setPackage(this.zzc) : r2;
     }
 
-    @Override // android.content.ServiceConnection
-    public final void onServiceDisconnected(ComponentName componentName) {
-        HashMap hashMap;
-        Handler handler;
-        hashMap = this.zza.zzb;
-        synchronized (hashMap) {
-            try {
-                handler = this.zza.zzd;
-                handler.removeMessages(1, this.zzf);
-                this.zze = null;
-                this.zzg = componentName;
-                Iterator it = this.zzb.values().iterator();
-                while (it.hasNext()) {
-                    ((ServiceConnection) it.next()).onServiceDisconnected(componentName);
-                }
-                this.zzc = 2;
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-    }
-
-    public final int zza() {
+    public final String zzc() {
         return this.zzc;
     }
 
-    public final ComponentName zzb() {
-        return this.zzg;
-    }
-
-    public final IBinder zzc() {
-        return this.zze;
-    }
-
-    public final void zzd(ServiceConnection serviceConnection, ServiceConnection serviceConnection2, String str) {
-        this.zzb.put(serviceConnection, serviceConnection2);
-    }
-
-    public final void zze(String str, Executor executor) {
-        ConnectionTracker connectionTracker;
-        Context context;
-        Context context2;
-        ConnectionTracker connectionTracker2;
-        Context context3;
-        Handler handler;
-        Handler handler2;
-        long j;
-        StrictMode.VmPolicy.Builder permitUnsafeIntentLaunch;
-        this.zzc = 3;
-        StrictMode.VmPolicy vmPolicy = StrictMode.getVmPolicy();
-        if (PlatformVersion.isAtLeastS()) {
-            permitUnsafeIntentLaunch = new StrictMode.VmPolicy.Builder(vmPolicy).permitUnsafeIntentLaunch();
-            StrictMode.setVmPolicy(permitUnsafeIntentLaunch.build());
-        }
-        try {
-            zzr zzrVar = this.zza;
-            connectionTracker = zzrVar.zzf;
-            context = zzrVar.zzc;
-            zzn zznVar = this.zzf;
-            context2 = zzrVar.zzc;
-            boolean zza = connectionTracker.zza(context, str, zznVar.zzc(context2), this, this.zzf.zza(), executor);
-            this.zzd = zza;
-            if (zza) {
-                handler = this.zza.zzd;
-                Message obtainMessage = handler.obtainMessage(1, this.zzf);
-                handler2 = this.zza.zzd;
-                j = this.zza.zzh;
-                handler2.sendMessageDelayed(obtainMessage, j);
-            } else {
-                this.zzc = 2;
-                try {
-                    zzr zzrVar2 = this.zza;
-                    connectionTracker2 = zzrVar2.zzf;
-                    context3 = zzrVar2.zzc;
-                    connectionTracker2.unbindService(context3, this);
-                } catch (IllegalArgumentException unused) {
-                }
-            }
-            StrictMode.setVmPolicy(vmPolicy);
-        } catch (Throwable th) {
-            StrictMode.setVmPolicy(vmPolicy);
-            throw th;
-        }
-    }
-
-    public final void zzf(ServiceConnection serviceConnection, String str) {
-        this.zzb.remove(serviceConnection);
-    }
-
-    public final void zzg(String str) {
-        Handler handler;
-        ConnectionTracker connectionTracker;
-        Context context;
-        handler = this.zza.zzd;
-        handler.removeMessages(1, this.zzf);
-        zzr zzrVar = this.zza;
-        connectionTracker = zzrVar.zzf;
-        context = zzrVar.zzc;
-        connectionTracker.unbindService(context, this);
-        this.zzd = false;
-        this.zzc = 2;
-    }
-
-    public final boolean zzh(ServiceConnection serviceConnection) {
-        return this.zzb.containsKey(serviceConnection);
-    }
-
-    public final boolean zzi() {
-        return this.zzb.isEmpty();
-    }
-
-    public final boolean zzj() {
-        return this.zzd;
+    public zzo(String str, String str2, int i, boolean z) {
+        Preconditions.checkNotEmpty(str);
+        this.zzb = str;
+        Preconditions.checkNotEmpty(str2);
+        this.zzc = str2;
+        this.zzd = null;
+        this.zze = 4225;
+        this.zzf = z;
     }
 }

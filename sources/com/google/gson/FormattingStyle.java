@@ -2,7 +2,7 @@ package com.google.gson;
 
 import java.util.Objects;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class FormattingStyle {
     public static final FormattingStyle COMPACT = new FormattingStyle("", "", false);
     public static final FormattingStyle PRETTY = new FormattingStyle("\n", "  ", true);
@@ -24,12 +24,12 @@ public class FormattingStyle {
         this.spaceAfterSeparators = z;
     }
 
-    public String getIndent() {
-        return this.indent;
-    }
-
     public String getNewline() {
         return this.newline;
+    }
+
+    public String getIndent() {
+        return this.indent;
     }
 
     public boolean usesSpaceAfterSeparators() {

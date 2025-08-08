@@ -4,7 +4,6 @@ import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 
 /* loaded from: classes.dex */
 final class WrappedDrawableState extends Drawable.ConstantState {
@@ -24,8 +23,14 @@ final class WrappedDrawableState extends Drawable.ConstantState {
         }
     }
 
-    boolean canConstantState() {
-        return this.mDrawableState != null;
+    @Override // android.graphics.drawable.Drawable.ConstantState
+    public Drawable newDrawable() {
+        return newDrawable(null);
+    }
+
+    @Override // android.graphics.drawable.Drawable.ConstantState
+    public Drawable newDrawable(Resources resources) {
+        return new WrappedDrawableApi21(this, resources);
     }
 
     @Override // android.graphics.drawable.Drawable.ConstantState
@@ -35,13 +40,7 @@ final class WrappedDrawableState extends Drawable.ConstantState {
         return i | (constantState != null ? constantState.getChangingConfigurations() : 0);
     }
 
-    @Override // android.graphics.drawable.Drawable.ConstantState
-    public Drawable newDrawable() {
-        return newDrawable(null);
-    }
-
-    @Override // android.graphics.drawable.Drawable.ConstantState
-    public Drawable newDrawable(Resources resources) {
-        return Build.VERSION.SDK_INT >= 21 ? new WrappedDrawableApi21(this, resources) : new WrappedDrawableApi14(this, resources);
+    boolean canConstantState() {
+        return this.mDrawableState != null;
     }
 }

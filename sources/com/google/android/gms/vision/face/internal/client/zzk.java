@@ -23,7 +23,11 @@ public final class zzk extends com.google.android.gms.internal.vision.zzb implem
             zzjVar = null;
         } else {
             IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.vision.face.internal.client.INativeFaceDetector");
-            zzjVar = queryLocalInterface instanceof zzh ? (zzh) queryLocalInterface : new zzj(readStrongBinder);
+            if (queryLocalInterface instanceof zzh) {
+                zzjVar = (zzh) queryLocalInterface;
+            } else {
+                zzjVar = new zzj(readStrongBinder);
+            }
         }
         zza.recycle();
         return zzjVar;

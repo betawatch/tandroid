@@ -8,38 +8,24 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.coroutines.EmptyCoroutineContext;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugProbesKt;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class SequenceBuilderIterator extends SequenceScope implements Iterator, Continuation {
     private Iterator nextIterator;
     private Continuation nextStep;
     private Object nextValue;
     private int state;
 
-    private final Throwable exceptionalState() {
-        int i = this.state;
-        if (i == 4) {
-            return new NoSuchElementException();
-        }
-        if (i == 5) {
-            return new IllegalStateException("Iterator has failed.");
-        }
-        return new IllegalStateException("Unexpected state of the iterator: " + this.state);
+    @Override // java.util.Iterator
+    public void remove() {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
-    private final Object nextNotReady() {
-        if (hasNext()) {
-            return next();
-        }
-        throw new NoSuchElementException();
-    }
-
-    @Override // kotlin.coroutines.Continuation
-    public CoroutineContext getContext() {
-        return EmptyCoroutineContext.INSTANCE;
+    public final void setNextStep(Continuation continuation) {
+        this.nextStep = continuation;
     }
 
     @Override // java.util.Iterator
@@ -85,18 +71,43 @@ final class SequenceBuilderIterator extends SequenceScope implements Iterator, C
             Intrinsics.checkNotNull(it);
             return it.next();
         }
-        if (i != 3) {
-            throw exceptionalState();
+        if (i == 3) {
+            this.state = 0;
+            Object obj = this.nextValue;
+            this.nextValue = null;
+            return obj;
         }
-        this.state = 0;
-        Object obj = this.nextValue;
-        this.nextValue = null;
-        return obj;
+        throw exceptionalState();
     }
 
-    @Override // java.util.Iterator
-    public void remove() {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    private final Object nextNotReady() {
+        if (hasNext()) {
+            return next();
+        }
+        throw new NoSuchElementException();
+    }
+
+    private final Throwable exceptionalState() {
+        int i = this.state;
+        if (i == 4) {
+            return new NoSuchElementException();
+        }
+        if (i == 5) {
+            return new IllegalStateException("Iterator has failed.");
+        }
+        return new IllegalStateException("Unexpected state of the iterator: " + this.state);
+    }
+
+    @Override // kotlin.sequences.SequenceScope
+    public Object yield(Object obj, Continuation continuation) {
+        this.nextValue = obj;
+        this.state = 3;
+        this.nextStep = continuation;
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        if (coroutine_suspended == IntrinsicsKt.getCOROUTINE_SUSPENDED()) {
+            DebugProbesKt.probeCoroutineSuspended(continuation);
+        }
+        return coroutine_suspended == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? coroutine_suspended : Unit.INSTANCE;
     }
 
     @Override // kotlin.coroutines.Continuation
@@ -105,24 +116,8 @@ final class SequenceBuilderIterator extends SequenceScope implements Iterator, C
         this.state = 4;
     }
 
-    public final void setNextStep(Continuation continuation) {
-        this.nextStep = continuation;
-    }
-
-    @Override // kotlin.sequences.SequenceScope
-    public Object yield(Object obj, Continuation continuation) {
-        Object coroutine_suspended;
-        Object coroutine_suspended2;
-        Object coroutine_suspended3;
-        this.nextValue = obj;
-        this.state = 3;
-        this.nextStep = continuation;
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        coroutine_suspended2 = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        if (coroutine_suspended == coroutine_suspended2) {
-            DebugProbesKt.probeCoroutineSuspended(continuation);
-        }
-        coroutine_suspended3 = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        return coroutine_suspended == coroutine_suspended3 ? coroutine_suspended : Unit.INSTANCE;
+    @Override // kotlin.coroutines.Continuation
+    public CoroutineContext getContext() {
+        return EmptyCoroutineContext.INSTANCE;
     }
 }

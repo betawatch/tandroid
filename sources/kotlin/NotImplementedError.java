@@ -3,7 +3,7 @@ package kotlin;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class NotImplementedError extends Error {
     /* JADX WARN: Multi-variable type inference failed */
     public NotImplementedError() {

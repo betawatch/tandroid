@@ -10,9 +10,31 @@ public final class d implements Comparable, Serializable {
     private final long a;
     private final int b;
 
+    @Override // java.lang.Comparable
+    public final int compareTo(Object obj) {
+        d dVar = (d) obj;
+        int compare = Long.compare(this.a, dVar.a);
+        return compare != 0 ? compare : this.b - dVar.b;
+    }
+
     static {
         BigInteger.valueOf(1000000000L);
         Pattern.compile("([-+]?)P(?:([-+]?[0-9]+)D)?(T(?:([-+]?[0-9]+)H)?(?:([-+]?[0-9]+)M)?(?:([-+]?[0-9]+)(?:[.,]([0-9]{0,9}))?S)?)?", 2);
+    }
+
+    public static d i(long j) {
+        return f(j, 0);
+    }
+
+    public static d h() {
+        return f(j$.com.android.tools.r8.a.f(Long.MAX_VALUE, j$.com.android.tools.r8.a.i(999999999L, 1000000000L)), (int) j$.com.android.tools.r8.a.h(999999999L, 1000000000L));
+    }
+
+    private static d f(long j, int i) {
+        if ((i | j) == 0) {
+            return c;
+        }
+        return new d(j, i);
     }
 
     private d(long j, int i) {
@@ -20,23 +42,8 @@ public final class d implements Comparable, Serializable {
         this.b = i;
     }
 
-    private static d f(long j, int i) {
-        return (((long) i) | j) == 0 ? c : new d(j, i);
-    }
-
-    public static d i() {
-        return f(j$.com.android.tools.r8.a.g(Long.MAX_VALUE, j$.com.android.tools.r8.a.j(999999999L, 1000000000L)), (int) j$.com.android.tools.r8.a.i(999999999L, 1000000000L));
-    }
-
-    public static d j(long j) {
-        return f(j, 0);
-    }
-
-    @Override // java.lang.Comparable
-    public final int compareTo(Object obj) {
-        d dVar = (d) obj;
-        int compare = Long.compare(this.a, dVar.a);
-        return compare != 0 ? compare : this.b - dVar.b;
+    public final long g() {
+        return this.a;
     }
 
     public final boolean equals(Object obj) {
@@ -48,10 +55,6 @@ public final class d implements Comparable, Serializable {
         }
         d dVar = (d) obj;
         return this.a == dVar.a && this.b == dVar.b;
-    }
-
-    public final long h() {
-        return this.a;
     }
 
     public final int hashCode() {

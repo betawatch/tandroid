@@ -4,16 +4,16 @@ import kotlin.coroutines.AbstractCoroutineContextElement;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class YieldContext extends AbstractCoroutineContextElement {
     public static final Key Key = new Key(null);
 
     public static final class Key implements CoroutineContext.Key {
-        private Key() {
-        }
-
         public /* synthetic */ Key(DefaultConstructorMarker defaultConstructorMarker) {
             this();
+        }
+
+        private Key() {
         }
     }
 }

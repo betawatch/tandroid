@@ -31,8 +31,8 @@ public final /* synthetic */ class B implements D {
 
     @Override // j$.util.D
     /* renamed from: e */
-    public final /* synthetic */ void forEachRemaining(j$.util.function.m mVar) {
-        this.a.forEachRemaining(j$.util.function.l.a(mVar));
+    public final /* synthetic */ void forEachRemaining(j$.util.function.l lVar) {
+        this.a.forEachRemaining(j$.util.function.k.a(lVar));
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
@@ -75,8 +75,8 @@ public final /* synthetic */ class B implements D {
 
     @Override // j$.util.D
     /* renamed from: p */
-    public final /* synthetic */ boolean tryAdvance(j$.util.function.m mVar) {
-        return this.a.tryAdvance(j$.util.function.l.a(mVar));
+    public final /* synthetic */ boolean tryAdvance(j$.util.function.l lVar) {
+        return this.a.tryAdvance(j$.util.function.k.a(lVar));
     }
 
     @Override // j$.util.Spliterator

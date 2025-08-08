@@ -11,10 +11,33 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class NumberTypeAdapter extends TypeAdapter {
     private static final TypeAdapterFactory LAZILY_PARSED_NUMBER_FACTORY = newFactory(ToNumberPolicy.LAZILY_PARSED_NUMBER);
     private final ToNumberStrategy toNumberStrategy;
+
+    private NumberTypeAdapter(ToNumberStrategy toNumberStrategy) {
+        this.toNumberStrategy = toNumberStrategy;
+    }
+
+    private static TypeAdapterFactory newFactory(ToNumberStrategy toNumberStrategy) {
+        return new TypeAdapterFactory() { // from class: com.google.gson.internal.bind.NumberTypeAdapter.1
+            @Override // com.google.gson.TypeAdapterFactory
+            public TypeAdapter create(Gson gson, TypeToken typeToken) {
+                if (typeToken.getRawType() == Number.class) {
+                    return NumberTypeAdapter.this;
+                }
+                return null;
+            }
+        };
+    }
+
+    public static TypeAdapterFactory getFactory(ToNumberStrategy toNumberStrategy) {
+        if (toNumberStrategy == ToNumberPolicy.LAZILY_PARSED_NUMBER) {
+            return LAZILY_PARSED_NUMBER_FACTORY;
+        }
+        return newFactory(toNumberStrategy);
+    }
 
     static /* synthetic */ class 2 {
         static final /* synthetic */ int[] $SwitchMap$com$google$gson$stream$JsonToken;
@@ -35,26 +58,6 @@ public final class NumberTypeAdapter extends TypeAdapter {
             } catch (NoSuchFieldError unused3) {
             }
         }
-    }
-
-    private NumberTypeAdapter(ToNumberStrategy toNumberStrategy) {
-        this.toNumberStrategy = toNumberStrategy;
-    }
-
-    public static TypeAdapterFactory getFactory(ToNumberStrategy toNumberStrategy) {
-        return toNumberStrategy == ToNumberPolicy.LAZILY_PARSED_NUMBER ? LAZILY_PARSED_NUMBER_FACTORY : newFactory(toNumberStrategy);
-    }
-
-    private static TypeAdapterFactory newFactory(ToNumberStrategy toNumberStrategy) {
-        return new TypeAdapterFactory() { // from class: com.google.gson.internal.bind.NumberTypeAdapter.1
-            @Override // com.google.gson.TypeAdapterFactory
-            public TypeAdapter create(Gson gson, TypeToken typeToken) {
-                if (typeToken.getRawType() == Number.class) {
-                    return NumberTypeAdapter.this;
-                }
-                return null;
-            }
-        };
     }
 
     @Override // com.google.gson.TypeAdapter

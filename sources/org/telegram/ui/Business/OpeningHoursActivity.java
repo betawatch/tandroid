@@ -51,122 +51,84 @@ public class OpeningHoursActivity extends BaseFragment implements NotificationCe
     public ArrayList[] currentValue = null;
     public ArrayList[] value = {new ArrayList(), new ArrayList(), new ArrayList(), new ArrayList(), new ArrayList(), new ArrayList(), new ArrayList()};
 
-    public static class Period {
-        public int end;
-        public int start;
-
-        public Period(int i, int i2) {
-            this.start = i;
-            this.end = i2;
-        }
-
-        public static String timeToString(int i) {
-            return timeToString(i, true);
-        }
-
-        public static String timeToString(int i, boolean z) {
-            int i2 = i % 60;
-            Calendar calendar = Calendar.getInstance();
-            calendar.set(0, 0, 0, ((i - i2) / 60) % 24, i2);
-            String format = LocaleController.getInstance().getFormatterConstDay().format(calendar.getTime());
-            return (i <= 1440 || !z) ? format : LocaleController.formatString(R.string.BusinessHoursNextDay, format);
-        }
-
-        public String toString() {
-            return timeToString(this.start) + " - " + timeToString(this.end);
-        }
-    }
-
-    private void adaptPrevDay(int i) {
-        Period period;
-        Period period2 = null;
-        if (this.value[i].isEmpty()) {
-            period = null;
-        } else {
-            ArrayList arrayList = this.value[i];
-            period = (Period) arrayList.get(arrayList.size() - 1);
-        }
-        if (period == null) {
-            return;
-        }
-        int i2 = (i + 6) % 7;
-        if (!this.value[i2].isEmpty()) {
-            ArrayList arrayList2 = this.value[i2];
-            period2 = (Period) arrayList2.get(arrayList2.size() - 1);
-        }
-        if (period2 == null || period2.end <= 1439) {
-            return;
-        }
-        period2.end = 1439;
-        if (period2.start >= 1439) {
-            this.value[i2].remove(period2);
-        }
-        View findViewByItemId = this.listView.findViewByItemId(i2);
-        if (findViewByItemId instanceof NotificationsCheckCell) {
-            ((NotificationsCheckCell) findViewByItemId).setValue(getPeriodsValue(this.value[i2]));
-        } else {
-            this.listView.adapter.update(true);
-        }
-    }
-
-    public static ArrayList adaptWeeklyOpen(ArrayList arrayList, int i) {
-        int i2;
-        ArrayList arrayList2 = new ArrayList(arrayList);
-        ArrayList arrayList3 = new ArrayList(arrayList2.size());
-        for (int i3 = 0; i3 < arrayList2.size(); i3++) {
-            TL_account.TL_businessWeeklyOpen tL_businessWeeklyOpen = (TL_account.TL_businessWeeklyOpen) arrayList2.get(i3);
-            TL_account.TL_businessWeeklyOpen tL_businessWeeklyOpen2 = new TL_account.TL_businessWeeklyOpen();
-            if (i != 0) {
-                int i4 = tL_businessWeeklyOpen.start_minute;
-                int i5 = i4 % 1440;
-                int i6 = tL_businessWeeklyOpen.end_minute;
-                int i7 = (i6 - i4) + i5;
-                if (i5 == 0 && (i7 == 1440 || i7 == 1439)) {
-                    tL_businessWeeklyOpen2.start_minute = i4;
-                    tL_businessWeeklyOpen2.end_minute = i6;
-                    arrayList3.add(tL_businessWeeklyOpen2);
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public View createView(Context context) {
+        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.actionBar.setAllowOverlayTitle(true);
+        this.actionBar.setTitle(LocaleController.getString(R.string.BusinessHours));
+        this.actionBar.setActionBarMenuOnItemClick(new ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.Business.OpeningHoursActivity.1
+            @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
+            public void onItemClick(int i) {
+                if (i == -1) {
+                    if (OpeningHoursActivity.this.onBackPressed()) {
+                        OpeningHoursActivity.this.lambda$onBackPressed$355();
+                    }
+                } else if (i == 1) {
+                    OpeningHoursActivity.this.processDone();
                 }
-            }
-            tL_businessWeeklyOpen2.start_minute = tL_businessWeeklyOpen.start_minute + i;
-            tL_businessWeeklyOpen2.end_minute = tL_businessWeeklyOpen.end_minute + i;
-            arrayList3.add(tL_businessWeeklyOpen2);
-            int i8 = tL_businessWeeklyOpen2.start_minute;
-            int i9 = tL_businessWeeklyOpen2.end_minute;
-            if (i8 < 0) {
-                if (i9 < 0) {
-                    tL_businessWeeklyOpen2.start_minute = i8 + 10080;
-                    i2 = i9 + 10080;
-                    tL_businessWeeklyOpen2.end_minute = i2;
-                } else {
-                    tL_businessWeeklyOpen2.start_minute = 0;
-                    tL_businessWeeklyOpen2 = new TL_account.TL_businessWeeklyOpen();
-                    tL_businessWeeklyOpen2.start_minute = tL_businessWeeklyOpen.start_minute + 10080 + i;
-                    tL_businessWeeklyOpen2.end_minute = 10079;
-                    arrayList3.add(tL_businessWeeklyOpen2);
-                }
-            } else if (i9 > 10080) {
-                if (i8 > 10080) {
-                    tL_businessWeeklyOpen2.start_minute = i8 - 10080;
-                    i2 = i9 - 10080;
-                    tL_businessWeeklyOpen2.end_minute = i2;
-                } else {
-                    tL_businessWeeklyOpen2.end_minute = 10079;
-                    tL_businessWeeklyOpen2 = new TL_account.TL_businessWeeklyOpen();
-                    tL_businessWeeklyOpen2.start_minute = 0;
-                    tL_businessWeeklyOpen2.end_minute = (tL_businessWeeklyOpen.end_minute + i) - 10079;
-                    arrayList3.add(tL_businessWeeklyOpen2);
-                }
-            }
-        }
-        Collections.sort(arrayList3, new Comparator() { // from class: org.telegram.ui.Business.OpeningHoursActivity$$ExternalSyntheticLambda0
-            @Override // java.util.Comparator
-            public final int compare(Object obj, Object obj2) {
-                int lambda$adaptWeeklyOpen$0;
-                lambda$adaptWeeklyOpen$0 = OpeningHoursActivity.lambda$adaptWeeklyOpen$0((TL_account.TL_businessWeeklyOpen) obj, (TL_account.TL_businessWeeklyOpen) obj2);
-                return lambda$adaptWeeklyOpen$0;
             }
         });
-        return arrayList3;
+        Drawable mutate = context.getResources().getDrawable(R.drawable.ic_ab_done).mutate();
+        int i = Theme.key_actionBarDefaultIcon;
+        mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i), PorterDuff.Mode.MULTIPLY));
+        this.doneButtonDrawable = new CrossfadeDrawable(mutate, new CircularProgressDrawable(Theme.getColor(i)));
+        this.doneButton = this.actionBar.createMenu().addItemWithWidth(1, this.doneButtonDrawable, AndroidUtilities.dp(56.0f), LocaleController.getString(R.string.Done));
+        checkDone(false);
+        FrameLayout frameLayout = new FrameLayout(context);
+        frameLayout.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
+        UniversalRecyclerView universalRecyclerView = new UniversalRecyclerView(this, new Utilities.Callback2() { // from class: org.telegram.ui.Business.OpeningHoursActivity$$ExternalSyntheticLambda1
+            @Override // org.telegram.messenger.Utilities.Callback2
+            public final void run(Object obj, Object obj2) {
+                OpeningHoursActivity.this.fillItems((ArrayList) obj, (UniversalAdapter) obj2);
+            }
+        }, new Utilities.Callback5() { // from class: org.telegram.ui.Business.OpeningHoursActivity$$ExternalSyntheticLambda2
+            @Override // org.telegram.messenger.Utilities.Callback5
+            public final void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+                OpeningHoursActivity.this.onClick((UItem) obj, (View) obj2, ((Integer) obj3).intValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue());
+            }
+        }, null);
+        this.listView = universalRecyclerView;
+        frameLayout.addView(universalRecyclerView, LayoutHelper.createFrame(-1, -1.0f));
+        setValue();
+        this.fragmentView = frameLayout;
+        return frameLayout;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x006c, code lost:
+    
+        return true;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public boolean hasChanges() {
+        if ((this.currentValue != null) != this.enabled || !TextUtils.equals(this.currentTimezoneId, this.timezoneId)) {
+            return true;
+        }
+        if (this.currentValue != null && this.enabled) {
+            if (this.value == null) {
+                return true;
+            }
+            int i = 0;
+            loop0: while (true) {
+                ArrayList[] arrayListArr = this.currentValue;
+                if (i >= arrayListArr.length) {
+                    break;
+                }
+                if (arrayListArr[i].size() != this.value[i].size()) {
+                    return true;
+                }
+                for (int i2 = 0; i2 < this.value[i].size(); i2++) {
+                    Period period = (Period) this.currentValue[i].get(i2);
+                    Period period2 = (Period) this.value[i].get(i2);
+                    if (period.start != period2.start || period.end != period2.end) {
+                        break loop0;
+                    }
+                }
+                i++;
+            }
+        }
+        return false;
     }
 
     private void checkDone(boolean z) {
@@ -184,50 +146,149 @@ public class OpeningHoursActivity extends BaseFragment implements NotificationCe
         this.doneButton.setScaleY(hasChanges ? 1.0f : 0.0f);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter) {
-        arrayList.add(UItem.asTopView(LocaleController.getString(R.string.BusinessHoursInfo), R.raw.biz_clock));
-        arrayList.add(UItem.asCheck(-1, LocaleController.getString(R.string.BusinessHoursShow)).setChecked(this.enabled));
-        arrayList.add(UItem.asShadow(-100, null));
-        if (!this.enabled) {
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean onFragmentCreate() {
+        TimezonesController.getInstance(this.currentAccount).load();
+        this.timezoneId = TimezonesController.getInstance(this.currentAccount).getSystemTimezoneId();
+        getNotificationCenter().addObserver(this, NotificationCenter.userInfoDidLoad);
+        return super.onFragmentCreate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public void onFragmentDestroy() {
+        getNotificationCenter().removeObserver(this, NotificationCenter.userInfoDidLoad);
+        super.onFragmentDestroy();
+        processDone();
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public void didReceivedNotification(int i, int i2, Object... objArr) {
+        UniversalAdapter universalAdapter;
+        if (i == NotificationCenter.userInfoDidLoad) {
+            setValue();
             return;
         }
-        arrayList.add(UItem.asHeader(LocaleController.getString(R.string.BusinessHours)));
-        int i = 0;
-        while (true) {
-            ArrayList[] arrayListArr = this.value;
-            if (i >= arrayListArr.length) {
-                arrayList.add(UItem.asShadow(-101, null));
-                arrayList.add(UItem.asButton(-2, LocaleController.getString(R.string.BusinessHoursTimezone), TimezonesController.getInstance(this.currentAccount).getTimezoneName(this.timezoneId, false)));
-                arrayList.add(UItem.asShadow(-102, null));
+        if (i == NotificationCenter.timezonesUpdated) {
+            if (this.currentValue == null) {
+                this.timezoneId = TimezonesController.getInstance(this.currentAccount).getSystemTimezoneId();
+            }
+            UniversalRecyclerView universalRecyclerView = this.listView;
+            if (universalRecyclerView == null || (universalAdapter = universalRecyclerView.adapter) == null) {
                 return;
             }
-            if (arrayListArr[i] == null) {
-                arrayListArr[i] = new ArrayList();
-            }
-            String displayName = DayOfWeek.values()[i].getDisplayName(TextStyle.FULL, LocaleController.getInstance().getCurrentLocale());
-            arrayList.add(UItem.asButtonCheck(i, displayName.substring(0, 1).toUpperCase() + displayName.substring(1), getPeriodsValue(this.value[i])).setChecked(!this.value[i].isEmpty()));
-            i++;
+            universalAdapter.update(true);
         }
     }
 
-    public static ArrayList fromDaysHours(ArrayList[] arrayListArr) {
-        ArrayList arrayList = new ArrayList();
-        if (arrayListArr != null) {
-            for (int i = 0; i < arrayListArr.length; i++) {
-                if (arrayListArr[i] != null) {
-                    for (int i2 = 0; i2 < arrayListArr[i].size(); i2++) {
-                        Period period = (Period) arrayListArr[i].get(i2);
-                        TL_account.TL_businessWeeklyOpen tL_businessWeeklyOpen = new TL_account.TL_businessWeeklyOpen();
-                        int i3 = i * 1440;
-                        tL_businessWeeklyOpen.start_minute = period.start + i3;
-                        tL_businessWeeklyOpen.end_minute = i3 + period.end;
-                        arrayList.add(tL_businessWeeklyOpen);
+    private void setValue() {
+        UniversalAdapter universalAdapter;
+        if (this.valueSet) {
+            return;
+        }
+        TLRPC.UserFull userFull = getMessagesController().getUserFull(getUserConfig().getClientUserId());
+        if (userFull == null) {
+            getMessagesController().loadUserInfo(getUserConfig().getCurrentUser(), true, getClassGuid());
+            return;
+        }
+        TL_account.TL_businessWorkHours tL_businessWorkHours = userFull.business_work_hours;
+        boolean z = tL_businessWorkHours != null;
+        this.enabled = z;
+        if (z) {
+            String str = tL_businessWorkHours.timezone_id;
+            this.timezoneId = str;
+            this.currentTimezoneId = str;
+            this.currentValue = getDaysHours(tL_businessWorkHours.weekly_open);
+            this.value = getDaysHours(userFull.business_work_hours.weekly_open);
+        } else {
+            String systemTimezoneId = TimezonesController.getInstance(this.currentAccount).getSystemTimezoneId();
+            this.timezoneId = systemTimezoneId;
+            this.currentTimezoneId = systemTimezoneId;
+            this.currentValue = null;
+            this.value = new ArrayList[7];
+            int i = 0;
+            while (true) {
+                ArrayList[] arrayListArr = this.value;
+                if (i >= arrayListArr.length) {
+                    break;
+                }
+                arrayListArr[i] = new ArrayList();
+                if (i >= 0 && i < 5) {
+                    this.value[i].add(new Period(0, 1439));
+                }
+                i++;
+            }
+        }
+        UniversalRecyclerView universalRecyclerView = this.listView;
+        if (universalRecyclerView != null && (universalAdapter = universalRecyclerView.adapter) != null) {
+            universalAdapter.update(true);
+        }
+        checkDone(false);
+        this.valueSet = true;
+    }
+
+    public static ArrayList adaptWeeklyOpen(ArrayList arrayList, int i) {
+        ArrayList arrayList2 = new ArrayList(arrayList);
+        ArrayList arrayList3 = new ArrayList(arrayList2.size());
+        for (int i2 = 0; i2 < arrayList2.size(); i2++) {
+            TL_account.TL_businessWeeklyOpen tL_businessWeeklyOpen = (TL_account.TL_businessWeeklyOpen) arrayList2.get(i2);
+            TL_account.TL_businessWeeklyOpen tL_businessWeeklyOpen2 = new TL_account.TL_businessWeeklyOpen();
+            if (i != 0) {
+                int i3 = tL_businessWeeklyOpen.start_minute;
+                int i4 = i3 % 1440;
+                int i5 = tL_businessWeeklyOpen.end_minute;
+                int i6 = (i5 - i3) + i4;
+                if (i4 == 0 && (i6 == 1440 || i6 == 1439)) {
+                    tL_businessWeeklyOpen2.start_minute = i3;
+                    tL_businessWeeklyOpen2.end_minute = i5;
+                    arrayList3.add(tL_businessWeeklyOpen2);
+                }
+            }
+            tL_businessWeeklyOpen2.start_minute = tL_businessWeeklyOpen.start_minute + i;
+            tL_businessWeeklyOpen2.end_minute = tL_businessWeeklyOpen.end_minute + i;
+            arrayList3.add(tL_businessWeeklyOpen2);
+            int i7 = tL_businessWeeklyOpen2.start_minute;
+            if (i7 < 0) {
+                int i8 = tL_businessWeeklyOpen2.end_minute;
+                if (i8 < 0) {
+                    tL_businessWeeklyOpen2.start_minute = i7 + 10080;
+                    tL_businessWeeklyOpen2.end_minute = i8 + 10080;
+                } else {
+                    tL_businessWeeklyOpen2.start_minute = 0;
+                    TL_account.TL_businessWeeklyOpen tL_businessWeeklyOpen3 = new TL_account.TL_businessWeeklyOpen();
+                    tL_businessWeeklyOpen3.start_minute = tL_businessWeeklyOpen.start_minute + 10080 + i;
+                    tL_businessWeeklyOpen3.end_minute = 10079;
+                    arrayList3.add(tL_businessWeeklyOpen3);
+                }
+            } else {
+                int i9 = tL_businessWeeklyOpen2.end_minute;
+                if (i9 > 10080) {
+                    if (i7 > 10080) {
+                        tL_businessWeeklyOpen2.start_minute = i7 - 10080;
+                        tL_businessWeeklyOpen2.end_minute = i9 - 10080;
+                    } else {
+                        tL_businessWeeklyOpen2.end_minute = 10079;
+                        TL_account.TL_businessWeeklyOpen tL_businessWeeklyOpen4 = new TL_account.TL_businessWeeklyOpen();
+                        tL_businessWeeklyOpen4.start_minute = 0;
+                        tL_businessWeeklyOpen4.end_minute = (tL_businessWeeklyOpen.end_minute + i) - 10079;
+                        arrayList3.add(tL_businessWeeklyOpen4);
                     }
                 }
             }
         }
-        return arrayList;
+        Collections.sort(arrayList3, new Comparator() { // from class: org.telegram.ui.Business.OpeningHoursActivity$$ExternalSyntheticLambda0
+            @Override // java.util.Comparator
+            public final int compare(Object obj, Object obj2) {
+                int lambda$adaptWeeklyOpen$0;
+                lambda$adaptWeeklyOpen$0 = OpeningHoursActivity.lambda$adaptWeeklyOpen$0((TL_account.TL_businessWeeklyOpen) obj, (TL_account.TL_businessWeeklyOpen) obj2);
+                return lambda$adaptWeeklyOpen$0;
+            }
+        });
+        return arrayList3;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ int lambda$adaptWeeklyOpen$0(TL_account.TL_businessWeeklyOpen tL_businessWeeklyOpen, TL_account.TL_businessWeeklyOpen tL_businessWeeklyOpen2) {
+        return tL_businessWeeklyOpen.start_minute - tL_businessWeeklyOpen2.start_minute;
     }
 
     public static ArrayList[] getDaysHours(ArrayList arrayList) {
@@ -284,190 +345,62 @@ public class OpeningHoursActivity extends BaseFragment implements NotificationCe
         return arrayListArr;
     }
 
-    private String getPeriodsValue(ArrayList arrayList) {
-        int i;
-        if (arrayList.isEmpty()) {
-            i = R.string.BusinessHoursDayClosed;
-        } else {
-            if (!isFull(arrayList)) {
-                String str = "";
-                for (int i2 = 0; i2 < arrayList.size(); i2++) {
-                    Period period = (Period) arrayList.get(i2);
-                    if (i2 > 0) {
-                        str = str + "\n";
+    public static ArrayList fromDaysHours(ArrayList[] arrayListArr) {
+        ArrayList arrayList = new ArrayList();
+        if (arrayListArr != null) {
+            for (int i = 0; i < arrayListArr.length; i++) {
+                if (arrayListArr[i] != null) {
+                    for (int i2 = 0; i2 < arrayListArr[i].size(); i2++) {
+                        Period period = (Period) arrayListArr[i].get(i2);
+                        TL_account.TL_businessWeeklyOpen tL_businessWeeklyOpen = new TL_account.TL_businessWeeklyOpen();
+                        int i3 = i * 1440;
+                        tL_businessWeeklyOpen.start_minute = period.start + i3;
+                        tL_businessWeeklyOpen.end_minute = i3 + period.end;
+                        arrayList.add(tL_businessWeeklyOpen);
                     }
-                    str = str + Period.timeToString(period.start) + " - " + Period.timeToString(period.end);
                 }
-                return str;
-            }
-            i = R.string.BusinessHoursDayFullOpened;
-        }
-        return LocaleController.getString(i);
-    }
-
-    public static boolean is24x7(TL_account.TL_businessWorkHours tL_businessWorkHours) {
-        if (tL_businessWorkHours == null || tL_businessWorkHours.weekly_open.isEmpty()) {
-            return false;
-        }
-        int i = 0;
-        for (int i2 = 0; i2 < tL_businessWorkHours.weekly_open.size(); i2++) {
-            TL_account.TL_businessWeeklyOpen tL_businessWeeklyOpen = tL_businessWorkHours.weekly_open.get(i2);
-            if (tL_businessWeeklyOpen.start_minute > i + 1) {
-                return false;
-            }
-            i = tL_businessWeeklyOpen.end_minute;
-        }
-        return i >= 10079;
-    }
-
-    public static boolean isFull(ArrayList arrayList) {
-        if (arrayList == null || arrayList.isEmpty()) {
-            return false;
-        }
-        int i = 0;
-        for (int i2 = 0; i2 < arrayList.size(); i2++) {
-            Period period = (Period) arrayList.get(i2);
-            if (i < period.start) {
-                return false;
-            }
-            i = period.end;
-        }
-        return i == 1439 || i == 1440;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$adaptWeeklyOpen$0(TL_account.TL_businessWeeklyOpen tL_businessWeeklyOpen, TL_account.TL_businessWeeklyOpen tL_businessWeeklyOpen2) {
-        return tL_businessWeeklyOpen.start_minute - tL_businessWeeklyOpen2.start_minute;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$3(View view, String str) {
-        TimezonesController timezonesController = TimezonesController.getInstance(this.currentAccount);
-        this.timezoneId = str;
-        ((TextCell) view).setValue(timezonesController.getTimezoneName(str, false), true);
-        checkDone(true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$4() {
-        this.listView.adapter.update(true);
-        checkDone(true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$5(UItem uItem) {
-        adaptPrevDay(uItem.id);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processDone$1(TLRPC.TL_error tL_error, TLObject tLObject) {
-        if (tL_error != null) {
-            this.doneButtonDrawable.animateToProgress(0.0f);
-            BulletinFactory.showError(tL_error);
-        } else {
-            if (tLObject instanceof TLRPC.TL_boolFalse) {
-                if (getContext() == null) {
-                    return;
-                }
-                this.doneButtonDrawable.animateToProgress(0.0f);
-                BulletinFactory.of(this).createErrorBulletin(LocaleController.getString(R.string.UnknownError)).show();
-                return;
-            }
-            if (this.isFinished || this.finishing) {
-                return;
-            }
-            lambda$onBackPressed$355();
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processDone$2(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Business.OpeningHoursActivity$$ExternalSyntheticLambda7
-            @Override // java.lang.Runnable
-            public final void run() {
-                OpeningHoursActivity.this.lambda$processDone$1(tL_error, tLObject);
-            }
-        });
-    }
-
-    private int maxPeriodsFor(int i) {
-        int i2 = 0;
-        for (int i3 = 0; i3 < 7; i3++) {
-            ArrayList arrayList = this.value[i3];
-            if (arrayList != null) {
-                i2 += Math.max(1, arrayList.size());
             }
         }
-        return 28 - i2;
+        return arrayList;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public void onClick(final UItem uItem, final View view, int i, float f, float f2) {
-        BaseFragment onDone;
-        int i2 = uItem.id;
-        if (i2 != -1) {
-            if (i2 == -2) {
-                onDone = new TimezoneSelector().setValue(this.timezoneId).whenSelected(new Utilities.Callback() { // from class: org.telegram.ui.Business.OpeningHoursActivity$$ExternalSyntheticLambda4
-                    @Override // org.telegram.messenger.Utilities.Callback
-                    public final void run(Object obj) {
-                        OpeningHoursActivity.this.lambda$onClick$3(view, (String) obj);
-                    }
-                });
+    public static String toString(int i, TLRPC.User user, TL_account.TL_businessWorkHours tL_businessWorkHours) {
+        if (tL_businessWorkHours == null) {
+            return null;
+        }
+        ArrayList[] daysHours = getDaysHours(tL_businessWorkHours.weekly_open);
+        StringBuilder sb = new StringBuilder();
+        if (user != null) {
+            sb.append(LocaleController.formatString(R.string.BusinessHoursCopyHeader, UserObject.getUserName(user)));
+            sb.append("\n");
+        }
+        for (int i2 = 0; i2 < daysHours.length; i2++) {
+            ArrayList arrayList = daysHours[i2];
+            String displayName = DayOfWeek.values()[i2].getDisplayName(TextStyle.FULL, LocaleController.getInstance().getCurrentLocale());
+            sb.append(displayName.substring(0, 1).toUpperCase() + displayName.substring(1));
+            sb.append(": ");
+            if (isFull(arrayList)) {
+                sb.append(LocaleController.getString(R.string.BusinessHoursProfileOpen));
+            } else if (arrayList.isEmpty()) {
+                sb.append(LocaleController.getString(R.string.BusinessHoursProfileClose));
             } else {
-                if (uItem.viewType != 5 || i2 < 0 || i2 >= this.value.length) {
-                    return;
-                }
-                if (!LocaleController.isRTL ? f < view.getMeasuredWidth() - AndroidUtilities.dp(76.0f) : f > AndroidUtilities.dp(76.0f)) {
-                    int i3 = (uItem.id + 6) % 7;
-                    int i4 = 0;
-                    for (int i5 = 0; i5 < this.value[i3].size(); i5++) {
-                        if (((Period) this.value[i3].get(i5)).end > i4) {
-                            i4 = ((Period) this.value[i3].get(i5)).end;
-                        }
+                for (int i3 = 0; i3 < arrayList.size(); i3++) {
+                    if (i3 > 0) {
+                        sb.append(", ");
                     }
-                    int max = Math.max(0, i4 - 1439);
-                    int i6 = (uItem.id + 1) % 7;
-                    int i7 = 1440;
-                    for (int i8 = 0; i8 < this.value[i6].size(); i8++) {
-                        if (((Period) this.value[i6].get(i8)).start < i7) {
-                            i7 = ((Period) this.value[i6].get(i8)).start;
-                        }
-                    }
-                    int i9 = i7 + 1439;
-                    CharSequence charSequence = uItem.text;
-                    ArrayList[] arrayListArr = this.value;
-                    int i10 = uItem.id;
-                    onDone = new OpeningHoursDayActivity(charSequence, arrayListArr[i10], max, i9, maxPeriodsFor(i10)).onApplied(new Runnable() { // from class: org.telegram.ui.Business.OpeningHoursActivity$$ExternalSyntheticLambda5
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            OpeningHoursActivity.this.lambda$onClick$4();
-                        }
-                    }).onDone(new Runnable() { // from class: org.telegram.ui.Business.OpeningHoursActivity$$ExternalSyntheticLambda6
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            OpeningHoursActivity.this.lambda$onClick$5(uItem);
-                        }
-                    });
-                } else {
-                    if (this.value[uItem.id].isEmpty()) {
-                        ((NotificationsCheckCell) view).setChecked(true);
-                        this.value[uItem.id].add(new Period(0, 1439));
-                        adaptPrevDay(uItem.id);
-                    } else {
-                        this.value[uItem.id].clear();
-                        ((NotificationsCheckCell) view).setChecked(false);
-                    }
-                    ((NotificationsCheckCell) view).setValue(getPeriodsValue(this.value[uItem.id]));
+                    Period period = (Period) arrayList.get(i3);
+                    sb.append(Period.timeToString(period.start));
+                    sb.append(" - ");
+                    sb.append(Period.timeToString(period.end));
                 }
             }
-            presentFragment(onDone);
-            return;
+            sb.append("\n");
         }
-        boolean z = !this.enabled;
-        this.enabled = z;
-        ((TextCheckCell) view).setChecked(z);
-        this.listView.adapter.update(true);
-        checkDone(true);
+        TLRPC.TL_timezone findTimezone = TimezonesController.getInstance(i).findTimezone(tL_businessWorkHours.timezone_id);
+        if (((Calendar.getInstance().getTimeZone().getRawOffset() / MediaDataController.MAX_STYLE_RUNS_COUNT) - (findTimezone == null ? 0 : findTimezone.utc_offset)) / 60 != 0 && findTimezone != null) {
+            sb.append(LocaleController.formatString(R.string.BusinessHoursCopyFooter, TimezonesController.getInstance(i).getTimezoneName(findTimezone, true)));
+        }
+        return sb.toString();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -506,205 +439,266 @@ public class OpeningHoursActivity extends BaseFragment implements NotificationCe
         getMessagesStorage().updateUserInfo(userFull, false);
     }
 
-    private void setValue() {
-        UniversalAdapter universalAdapter;
-        if (this.valueSet) {
-            return;
-        }
-        TLRPC.UserFull userFull = getMessagesController().getUserFull(getUserConfig().getClientUserId());
-        if (userFull == null) {
-            getMessagesController().loadUserInfo(getUserConfig().getCurrentUser(), true, getClassGuid());
-            return;
-        }
-        TL_account.TL_businessWorkHours tL_businessWorkHours = userFull.business_work_hours;
-        boolean z = tL_businessWorkHours != null;
-        this.enabled = z;
-        if (!z) {
-            String systemTimezoneId = TimezonesController.getInstance(this.currentAccount).getSystemTimezoneId();
-            this.timezoneId = systemTimezoneId;
-            this.currentTimezoneId = systemTimezoneId;
-            this.currentValue = null;
-            this.value = new ArrayList[7];
-            int i = 0;
-            while (true) {
-                ArrayList[] arrayListArr = this.value;
-                if (i >= arrayListArr.length) {
-                    break;
-                }
-                arrayListArr[i] = new ArrayList();
-                if (i >= 0 && i < 5) {
-                    this.value[i].add(new Period(0, 1439));
-                }
-                i++;
-            }
-        } else {
-            String str = tL_businessWorkHours.timezone_id;
-            this.timezoneId = str;
-            this.currentTimezoneId = str;
-            this.currentValue = getDaysHours(tL_businessWorkHours.weekly_open);
-            this.value = getDaysHours(userFull.business_work_hours.weekly_open);
-        }
-        UniversalRecyclerView universalRecyclerView = this.listView;
-        if (universalRecyclerView != null && (universalAdapter = universalRecyclerView.adapter) != null) {
-            universalAdapter.update(true);
-        }
-        checkDone(false);
-        this.valueSet = true;
-    }
-
-    public static String toString(int i, TLRPC.User user, TL_account.TL_businessWorkHours tL_businessWorkHours) {
-        int i2;
-        if (tL_businessWorkHours == null) {
-            return null;
-        }
-        ArrayList[] daysHours = getDaysHours(tL_businessWorkHours.weekly_open);
-        StringBuilder sb = new StringBuilder();
-        if (user != null) {
-            sb.append(LocaleController.formatString(R.string.BusinessHoursCopyHeader, UserObject.getUserName(user)));
-            sb.append("\n");
-        }
-        for (int i3 = 0; i3 < daysHours.length; i3++) {
-            ArrayList arrayList = daysHours[i3];
-            String displayName = DayOfWeek.values()[i3].getDisplayName(TextStyle.FULL, LocaleController.getInstance().getCurrentLocale());
-            sb.append(displayName.substring(0, 1).toUpperCase() + displayName.substring(1));
-            sb.append(": ");
-            if (isFull(arrayList)) {
-                i2 = R.string.BusinessHoursProfileOpen;
-            } else if (arrayList.isEmpty()) {
-                i2 = R.string.BusinessHoursProfileClose;
-            } else {
-                for (int i4 = 0; i4 < arrayList.size(); i4++) {
-                    if (i4 > 0) {
-                        sb.append(", ");
-                    }
-                    Period period = (Period) arrayList.get(i4);
-                    sb.append(Period.timeToString(period.start));
-                    sb.append(" - ");
-                    sb.append(Period.timeToString(period.end));
-                }
-                sb.append("\n");
-            }
-            sb.append(LocaleController.getString(i2));
-            sb.append("\n");
-        }
-        TLRPC.TL_timezone findTimezone = TimezonesController.getInstance(i).findTimezone(tL_businessWorkHours.timezone_id);
-        if (((Calendar.getInstance().getTimeZone().getRawOffset() / MediaDataController.MAX_STYLE_RUNS_COUNT) - (findTimezone == null ? 0 : findTimezone.utc_offset)) / 60 != 0 && findTimezone != null) {
-            sb.append(LocaleController.formatString(R.string.BusinessHoursCopyFooter, TimezonesController.getInstance(i).getTimezoneName(findTimezone, true)));
-        }
-        return sb.toString();
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public View createView(Context context) {
-        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(LocaleController.getString(R.string.BusinessHours));
-        this.actionBar.setActionBarMenuOnItemClick(new ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.Business.OpeningHoursActivity.1
-            @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
-            public void onItemClick(int i) {
-                if (i == -1) {
-                    if (OpeningHoursActivity.this.onBackPressed()) {
-                        OpeningHoursActivity.this.lambda$onBackPressed$355();
-                    }
-                } else if (i == 1) {
-                    OpeningHoursActivity.this.processDone();
-                }
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$processDone$2(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Business.OpeningHoursActivity$$ExternalSyntheticLambda7
+            @Override // java.lang.Runnable
+            public final void run() {
+                OpeningHoursActivity.this.lambda$processDone$1(tL_error, tLObject);
             }
         });
-        Drawable mutate = context.getResources().getDrawable(R.drawable.ic_ab_done).mutate();
-        int i = Theme.key_actionBarDefaultIcon;
-        mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i), PorterDuff.Mode.MULTIPLY));
-        this.doneButtonDrawable = new CrossfadeDrawable(mutate, new CircularProgressDrawable(Theme.getColor(i)));
-        this.doneButton = this.actionBar.createMenu().addItemWithWidth(1, this.doneButtonDrawable, AndroidUtilities.dp(56.0f), LocaleController.getString(R.string.Done));
-        checkDone(false);
-        FrameLayout frameLayout = new FrameLayout(context);
-        frameLayout.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
-        UniversalRecyclerView universalRecyclerView = new UniversalRecyclerView(this, new Utilities.Callback2() { // from class: org.telegram.ui.Business.OpeningHoursActivity$$ExternalSyntheticLambda1
-            @Override // org.telegram.messenger.Utilities.Callback2
-            public final void run(Object obj, Object obj2) {
-                OpeningHoursActivity.this.fillItems((ArrayList) obj, (UniversalAdapter) obj2);
-            }
-        }, new Utilities.Callback5() { // from class: org.telegram.ui.Business.OpeningHoursActivity$$ExternalSyntheticLambda2
-            @Override // org.telegram.messenger.Utilities.Callback5
-            public final void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-                OpeningHoursActivity.this.onClick((UItem) obj, (View) obj2, ((Integer) obj3).intValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue());
-            }
-        }, null);
-        this.listView = universalRecyclerView;
-        frameLayout.addView(universalRecyclerView, LayoutHelper.createFrame(-1, -1.0f));
-        setValue();
-        this.fragmentView = frameLayout;
-        return frameLayout;
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public void didReceivedNotification(int i, int i2, Object... objArr) {
-        UniversalAdapter universalAdapter;
-        if (i == NotificationCenter.userInfoDidLoad) {
-            setValue();
-            return;
-        }
-        if (i == NotificationCenter.timezonesUpdated) {
-            if (this.currentValue == null) {
-                this.timezoneId = TimezonesController.getInstance(this.currentAccount).getSystemTimezoneId();
-            }
-            UniversalRecyclerView universalRecyclerView = this.listView;
-            if (universalRecyclerView == null || (universalAdapter = universalRecyclerView.adapter) == null) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$processDone$1(TLRPC.TL_error tL_error, TLObject tLObject) {
+        if (tL_error != null) {
+            this.doneButtonDrawable.animateToProgress(0.0f);
+            BulletinFactory.showError(tL_error);
+        } else {
+            if (tLObject instanceof TLRPC.TL_boolFalse) {
+                if (getContext() == null) {
+                    return;
+                }
+                this.doneButtonDrawable.animateToProgress(0.0f);
+                BulletinFactory.of(this).createErrorBulletin(LocaleController.getString(R.string.UnknownError)).show();
                 return;
             }
-            universalAdapter.update(true);
+            if (this.isFinished || this.finishing) {
+                return;
+            }
+            lambda$onBackPressed$355();
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:32:0x006c, code lost:
-    
-        return true;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public boolean hasChanges() {
-        if ((this.currentValue != null) != this.enabled || !TextUtils.equals(this.currentTimezoneId, this.timezoneId)) {
-            return true;
+    public static class Period {
+        public int end;
+        public int start;
+
+        public Period(int i, int i2) {
+            this.start = i;
+            this.end = i2;
         }
-        if (this.currentValue != null && this.enabled) {
-            if (this.value == null) {
-                return true;
+
+        public String toString() {
+            return timeToString(this.start) + " - " + timeToString(this.end);
+        }
+
+        public static String timeToString(int i) {
+            return timeToString(i, true);
+        }
+
+        public static String timeToString(int i, boolean z) {
+            int i2 = i % 60;
+            Calendar calendar = Calendar.getInstance();
+            calendar.set(0, 0, 0, ((i - i2) / 60) % 24, i2);
+            String format = LocaleController.getInstance().getFormatterConstDay().format(calendar.getTime());
+            return (i <= 1440 || !z) ? format : LocaleController.formatString(R.string.BusinessHoursNextDay, format);
+        }
+    }
+
+    public static boolean is24x7(TL_account.TL_businessWorkHours tL_businessWorkHours) {
+        if (tL_businessWorkHours == null || tL_businessWorkHours.weekly_open.isEmpty()) {
+            return false;
+        }
+        int i = 0;
+        for (int i2 = 0; i2 < tL_businessWorkHours.weekly_open.size(); i2++) {
+            TL_account.TL_businessWeeklyOpen tL_businessWeeklyOpen = tL_businessWorkHours.weekly_open.get(i2);
+            if (tL_businessWeeklyOpen.start_minute > i + 1) {
+                return false;
             }
-            int i = 0;
-            loop0: while (true) {
-                ArrayList[] arrayListArr = this.currentValue;
-                if (i >= arrayListArr.length) {
-                    break;
+            i = tL_businessWeeklyOpen.end_minute;
+        }
+        return i >= 10079;
+    }
+
+    public static boolean isFull(ArrayList arrayList) {
+        if (arrayList == null || arrayList.isEmpty()) {
+            return false;
+        }
+        int i = 0;
+        for (int i2 = 0; i2 < arrayList.size(); i2++) {
+            Period period = (Period) arrayList.get(i2);
+            if (i < period.start) {
+                return false;
+            }
+            i = period.end;
+        }
+        return i == 1439 || i == 1440;
+    }
+
+    private String getPeriodsValue(ArrayList arrayList) {
+        if (arrayList.isEmpty()) {
+            return LocaleController.getString(R.string.BusinessHoursDayClosed);
+        }
+        if (isFull(arrayList)) {
+            return LocaleController.getString(R.string.BusinessHoursDayFullOpened);
+        }
+        String str = "";
+        for (int i = 0; i < arrayList.size(); i++) {
+            Period period = (Period) arrayList.get(i);
+            if (i > 0) {
+                str = str + "\n";
+            }
+            str = str + Period.timeToString(period.start) + " - " + Period.timeToString(period.end);
+        }
+        return str;
+    }
+
+    private int maxPeriodsFor(int i) {
+        int i2 = 0;
+        for (int i3 = 0; i3 < 7; i3++) {
+            ArrayList arrayList = this.value[i3];
+            if (arrayList != null) {
+                i2 += Math.max(1, arrayList.size());
+            }
+        }
+        return 28 - i2;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter) {
+        arrayList.add(UItem.asTopView(LocaleController.getString(R.string.BusinessHoursInfo), R.raw.biz_clock));
+        arrayList.add(UItem.asCheck(-1, LocaleController.getString(R.string.BusinessHoursShow)).setChecked(this.enabled));
+        arrayList.add(UItem.asShadow(-100, null));
+        if (!this.enabled) {
+            return;
+        }
+        arrayList.add(UItem.asHeader(LocaleController.getString(R.string.BusinessHours)));
+        int i = 0;
+        while (true) {
+            ArrayList[] arrayListArr = this.value;
+            if (i < arrayListArr.length) {
+                if (arrayListArr[i] == null) {
+                    arrayListArr[i] = new ArrayList();
                 }
-                if (arrayListArr[i].size() != this.value[i].size()) {
-                    return true;
-                }
-                for (int i2 = 0; i2 < this.value[i].size(); i2++) {
-                    Period period = (Period) this.currentValue[i].get(i2);
-                    Period period2 = (Period) this.value[i].get(i2);
-                    if (period.start != period2.start || period.end != period2.end) {
-                        break loop0;
-                    }
-                }
+                String displayName = DayOfWeek.values()[i].getDisplayName(TextStyle.FULL, LocaleController.getInstance().getCurrentLocale());
+                arrayList.add(UItem.asButtonCheck(i, displayName.substring(0, 1).toUpperCase() + displayName.substring(1), getPeriodsValue(this.value[i])).setChecked(!this.value[i].isEmpty()));
                 i++;
+            } else {
+                arrayList.add(UItem.asShadow(-101, null));
+                arrayList.add(UItem.asButton(-2, LocaleController.getString(R.string.BusinessHoursTimezone), TimezonesController.getInstance(this.currentAccount).getTimezoneName(this.timezoneId, false)));
+                arrayList.add(UItem.asShadow(-102, null));
+                return;
             }
         }
-        return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public boolean onFragmentCreate() {
-        TimezonesController.getInstance(this.currentAccount).load();
-        this.timezoneId = TimezonesController.getInstance(this.currentAccount).getSystemTimezoneId();
-        getNotificationCenter().addObserver(this, NotificationCenter.userInfoDidLoad);
-        return super.onFragmentCreate();
+    /* JADX INFO: Access modifiers changed from: private */
+    public void onClick(final UItem uItem, final View view, int i, float f, float f2) {
+        int i2 = uItem.id;
+        if (i2 == -1) {
+            boolean z = !this.enabled;
+            this.enabled = z;
+            ((TextCheckCell) view).setChecked(z);
+            this.listView.adapter.update(true);
+            checkDone(true);
+            return;
+        }
+        if (i2 == -2) {
+            presentFragment(new TimezoneSelector().setValue(this.timezoneId).whenSelected(new Utilities.Callback() { // from class: org.telegram.ui.Business.OpeningHoursActivity$$ExternalSyntheticLambda4
+                @Override // org.telegram.messenger.Utilities.Callback
+                public final void run(Object obj) {
+                    OpeningHoursActivity.this.lambda$onClick$3(view, (String) obj);
+                }
+            }));
+            return;
+        }
+        if (uItem.viewType != 5 || i2 < 0 || i2 >= this.value.length) {
+            return;
+        }
+        if (!LocaleController.isRTL ? f >= view.getMeasuredWidth() - AndroidUtilities.dp(76.0f) : f <= AndroidUtilities.dp(76.0f)) {
+            if (this.value[uItem.id].isEmpty()) {
+                ((NotificationsCheckCell) view).setChecked(true);
+                this.value[uItem.id].add(new Period(0, 1439));
+                adaptPrevDay(uItem.id);
+            } else {
+                this.value[uItem.id].clear();
+                ((NotificationsCheckCell) view).setChecked(false);
+            }
+            ((NotificationsCheckCell) view).setValue(getPeriodsValue(this.value[uItem.id]));
+            checkDone(true);
+            return;
+        }
+        int i3 = (uItem.id + 6) % 7;
+        int i4 = 0;
+        for (int i5 = 0; i5 < this.value[i3].size(); i5++) {
+            if (((Period) this.value[i3].get(i5)).end > i4) {
+                i4 = ((Period) this.value[i3].get(i5)).end;
+            }
+        }
+        int max = Math.max(0, i4 - 1439);
+        int i6 = (uItem.id + 1) % 7;
+        int i7 = 1440;
+        for (int i8 = 0; i8 < this.value[i6].size(); i8++) {
+            if (((Period) this.value[i6].get(i8)).start < i7) {
+                i7 = ((Period) this.value[i6].get(i8)).start;
+            }
+        }
+        int i9 = i7 + 1439;
+        CharSequence charSequence = uItem.text;
+        ArrayList[] arrayListArr = this.value;
+        int i10 = uItem.id;
+        presentFragment(new OpeningHoursDayActivity(charSequence, arrayListArr[i10], max, i9, maxPeriodsFor(i10)).onApplied(new Runnable() { // from class: org.telegram.ui.Business.OpeningHoursActivity$$ExternalSyntheticLambda5
+            @Override // java.lang.Runnable
+            public final void run() {
+                OpeningHoursActivity.this.lambda$onClick$4();
+            }
+        }).onDone(new Runnable() { // from class: org.telegram.ui.Business.OpeningHoursActivity$$ExternalSyntheticLambda6
+            @Override // java.lang.Runnable
+            public final void run() {
+                OpeningHoursActivity.this.lambda$onClick$5(uItem);
+            }
+        }));
     }
 
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public void onFragmentDestroy() {
-        getNotificationCenter().removeObserver(this, NotificationCenter.userInfoDidLoad);
-        super.onFragmentDestroy();
-        processDone();
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$onClick$3(View view, String str) {
+        TimezonesController timezonesController = TimezonesController.getInstance(this.currentAccount);
+        this.timezoneId = str;
+        ((TextCell) view).setValue(timezonesController.getTimezoneName(str, false), true);
+        checkDone(true);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$onClick$4() {
+        this.listView.adapter.update(true);
+        checkDone(true);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$onClick$5(UItem uItem) {
+        adaptPrevDay(uItem.id);
+    }
+
+    private void adaptPrevDay(int i) {
+        Period period;
+        Period period2 = null;
+        if (this.value[i].isEmpty()) {
+            period = null;
+        } else {
+            ArrayList arrayList = this.value[i];
+            period = (Period) arrayList.get(arrayList.size() - 1);
+        }
+        if (period == null) {
+            return;
+        }
+        int i2 = (i + 6) % 7;
+        if (!this.value[i2].isEmpty()) {
+            ArrayList arrayList2 = this.value[i2];
+            period2 = (Period) arrayList2.get(arrayList2.size() - 1);
+        }
+        if (period2 == null || period2.end <= 1439) {
+            return;
+        }
+        period2.end = 1439;
+        if (period2.start >= 1439) {
+            this.value[i2].remove(period2);
+        }
+        View findViewByItemId = this.listView.findViewByItemId(i2);
+        if (findViewByItemId instanceof NotificationsCheckCell) {
+            ((NotificationsCheckCell) findViewByItemId).setValue(getPeriodsValue(this.value[i2]));
+        } else {
+            this.listView.adapter.update(true);
+        }
     }
 }

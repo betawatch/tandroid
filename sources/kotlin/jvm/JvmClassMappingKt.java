@@ -4,7 +4,7 @@ import kotlin.jvm.internal.ClassBasedDeclarationContainer;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.reflect.KClass;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class JvmClassMappingKt {
     public static final Class getJavaClass(KClass kClass) {
         Intrinsics.checkNotNullParameter(kClass, "<this>");

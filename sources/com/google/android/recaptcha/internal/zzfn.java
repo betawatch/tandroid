@@ -66,15 +66,15 @@ public abstract class zzfn extends zzfo implements Collection {
         return zzc().toArray();
     }
 
-    @Override // java.util.Collection
-    public final Object[] toArray(Object[] objArr) {
-        return zzc().toArray(objArr);
-    }
-
     @Override // com.google.android.recaptcha.internal.zzfo
     protected /* bridge */ /* synthetic */ Object zzb() {
         throw null;
     }
 
     protected abstract Collection zzc();
+
+    @Override // java.util.Collection
+    public final Object[] toArray(Object[] objArr) {
+        return zzc().toArray(objArr);
+    }
 }

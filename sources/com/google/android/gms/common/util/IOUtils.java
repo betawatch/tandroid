@@ -8,6 +8,10 @@ import java.io.OutputStream;
 
 /* loaded from: classes.dex */
 public abstract class IOUtils {
+    public static byte[] readInputStreamFully(InputStream inputStream) {
+        return readInputStreamFully(inputStream, true);
+    }
+
     public static void closeQuietly(Closeable closeable) {
         if (closeable != null) {
             try {
@@ -41,10 +45,6 @@ public abstract class IOUtils {
             closeQuietly(outputStream);
         }
         return j;
-    }
-
-    public static byte[] readInputStreamFully(InputStream inputStream) {
-        return readInputStreamFully(inputStream, true);
     }
 
     public static byte[] readInputStreamFully(InputStream inputStream, boolean z) {

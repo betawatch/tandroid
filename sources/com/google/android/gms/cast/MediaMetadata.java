@@ -69,17 +69,6 @@ public class MediaMetadata extends AbstractSafeParcelable {
         this(0);
     }
 
-    public MediaMetadata(int i) {
-        this(new ArrayList(), new Bundle(), i);
-    }
-
-    MediaMetadata(List list, Bundle bundle, int i) {
-        this.zzf = new Writer();
-        this.zzd = list;
-        this.zza = bundle;
-        this.zze = i;
-    }
-
     public static void throwIfWrongType(String str, int i) {
         if (TextUtils.isEmpty(str)) {
             throw new IllegalArgumentException("null and empty keys are not allowed");
@@ -185,7 +174,6 @@ public class MediaMetadata extends AbstractSafeParcelable {
     public final JSONObject zza() {
         zzcd zzcdVar;
         String zzc2;
-        double d;
         JSONObject jSONObject = new JSONObject();
         try {
             jSONObject.put("metadataType", this.zze);
@@ -219,17 +207,14 @@ public class MediaMetadata extends AbstractSafeParcelable {
                 if (str != null && this.zza.containsKey(str) && (zzc2 = (zzcdVar = zzc).zzc(str)) != null) {
                     int zza = zzcdVar.zza(str);
                     if (zza != 1) {
-                        if (zza != 2) {
-                            if (zza == 3) {
-                                d = this.zza.getDouble(str);
-                            } else if (zza != 4) {
-                                if (zza == 5) {
-                                    d = CastUtils.millisecToSec(this.zza.getLong(str));
-                                }
-                            }
-                            jSONObject.put(zzc2, d);
-                        } else {
+                        if (zza == 2) {
                             jSONObject.put(zzc2, this.zza.getInt(str));
+                        } else if (zza == 3) {
+                            jSONObject.put(zzc2, this.zza.getDouble(str));
+                        } else if (zza != 4) {
+                            if (zza == 5) {
+                                jSONObject.put(zzc2, CastUtils.millisecToSec(this.zza.getLong(str)));
+                            }
                         }
                     }
                     jSONObject.put(zzc2, this.zza.getString(str));
@@ -238,9 +223,13 @@ public class MediaMetadata extends AbstractSafeParcelable {
             for (String str2 : this.zza.keySet()) {
                 if (!str2.startsWith("com.google.")) {
                     Object obj = this.zza.get(str2);
-                    if (!(obj instanceof String) && !(obj instanceof Integer) && !(obj instanceof Double)) {
+                    if (obj instanceof String) {
+                        jSONObject.put(str2, obj);
+                    } else if (obj instanceof Integer) {
+                        jSONObject.put(str2, obj);
+                    } else if (obj instanceof Double) {
+                        jSONObject.put(str2, obj);
                     }
-                    jSONObject.put(str2, obj);
                 }
             }
         } catch (JSONException unused3) {
@@ -249,8 +238,6 @@ public class MediaMetadata extends AbstractSafeParcelable {
     }
 
     public final void zzc(JSONObject jSONObject) {
-        String str;
-        Bundle bundle;
         clear();
         this.zze = 0;
         try {
@@ -311,19 +298,17 @@ public class MediaMetadata extends AbstractSafeParcelable {
                                                 this.zza.putLong(zzd, CastUtils.secToMillisec(jSONObject.optLong(next)));
                                             }
                                         } else if (obj2 instanceof String) {
-                                            str = (String) obj2;
+                                            String str = (String) obj2;
                                             if (com.google.android.gms.cast.internal.media.zza.zzb(str) != null) {
-                                                bundle = this.zza;
+                                                this.zza.putString(zzd, str);
                                             }
                                         }
                                     } else if (obj2 instanceof Integer) {
                                         this.zza.putInt(zzd, ((Integer) obj2).intValue());
                                     }
                                 } else if (obj2 instanceof String) {
-                                    bundle = this.zza;
-                                    str = (String) obj2;
+                                    this.zza.putString(zzd, (String) obj2);
                                 }
-                                bundle.putString(zzd, str);
                             }
                         } catch (JSONException unused2) {
                         }
@@ -332,5 +317,16 @@ public class MediaMetadata extends AbstractSafeParcelable {
             }
         } catch (JSONException unused3) {
         }
+    }
+
+    public MediaMetadata(int i) {
+        this(new ArrayList(), new Bundle(), i);
+    }
+
+    MediaMetadata(List list, Bundle bundle, int i) {
+        this.zzf = new Writer();
+        this.zzd = list;
+        this.zza = bundle;
+        this.zze = i;
     }
 }

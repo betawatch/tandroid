@@ -1,6 +1,6 @@
 package com.google.firebase.messaging;
 
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import com.google.android.datatransport.TransportFactory;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.components.Component;
@@ -17,16 +17,9 @@ import com.google.firebase.platforminfo.UserAgentPublisher;
 import java.util.Arrays;
 import java.util.List;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class FirebaseMessagingRegistrar implements ComponentRegistrar {
     private static final String LIBRARY_NAME = "fire-fcm";
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ FirebaseMessaging lambda$getComponents$0(ComponentContainer componentContainer) {
-        FirebaseApp firebaseApp = (FirebaseApp) componentContainer.get(FirebaseApp.class);
-        ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(componentContainer.get(FirebaseInstanceIdInternal.class));
-        return new FirebaseMessaging(firebaseApp, null, componentContainer.getProvider(UserAgentPublisher.class), componentContainer.getProvider(HeartBeatInfo.class), (FirebaseInstallationsApi) componentContainer.get(FirebaseInstallationsApi.class), (TransportFactory) componentContainer.get(TransportFactory.class), (Subscriber) componentContainer.get(Subscriber.class));
-    }
 
     @Override // com.google.firebase.components.ComponentRegistrar
     public List<Component> getComponents() {
@@ -38,5 +31,12 @@ public class FirebaseMessagingRegistrar implements ComponentRegistrar {
                 return lambda$getComponents$0;
             }
         }).alwaysEager().build(), LibraryVersionComponent.create(LIBRARY_NAME, "23.4.0"));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ FirebaseMessaging lambda$getComponents$0(ComponentContainer componentContainer) {
+        FirebaseApp firebaseApp = (FirebaseApp) componentContainer.get(FirebaseApp.class);
+        WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(componentContainer.get(FirebaseInstanceIdInternal.class));
+        return new FirebaseMessaging(firebaseApp, null, componentContainer.getProvider(UserAgentPublisher.class), componentContainer.getProvider(HeartBeatInfo.class), (FirebaseInstallationsApi) componentContainer.get(FirebaseInstallationsApi.class), (TransportFactory) componentContainer.get(TransportFactory.class), (Subscriber) componentContainer.get(Subscriber.class));
     }
 }

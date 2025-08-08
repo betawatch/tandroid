@@ -7,11 +7,49 @@ import java.util.List;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class Thread implements Model {
     private List frames;
     private long id;
     private String name;
+
+    public long getId() {
+        return this.id;
+    }
+
+    public void setId(long j) {
+        this.id = j;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String str) {
+        this.name = str;
+    }
+
+    public List getFrames() {
+        return this.frames;
+    }
+
+    public void setFrames(List list) {
+        this.frames = list;
+    }
+
+    @Override // com.microsoft.appcenter.ingestion.models.Model
+    public void read(JSONObject jSONObject) {
+        setId(jSONObject.getLong("id"));
+        setName(jSONObject.optString("name", null));
+        setFrames(JSONUtils.readArray(jSONObject, "frames", StackFrameFactory.getInstance()));
+    }
+
+    @Override // com.microsoft.appcenter.ingestion.models.Model
+    public void write(JSONStringer jSONStringer) {
+        JSONUtils.write(jSONStringer, "id", Long.valueOf(getId()));
+        JSONUtils.write(jSONStringer, "name", getName());
+        JSONUtils.writeArray(jSONStringer, "frames", getFrames());
+    }
 
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -33,18 +71,6 @@ public class Thread implements Model {
         return list != null ? list.equals(list2) : list2 == null;
     }
 
-    public List getFrames() {
-        return this.frames;
-    }
-
-    public long getId() {
-        return this.id;
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
     public int hashCode() {
         long j = this.id;
         int i = ((int) (j ^ (j >>> 32))) * 31;
@@ -52,31 +78,5 @@ public class Thread implements Model {
         int hashCode = (i + (str != null ? str.hashCode() : 0)) * 31;
         List list = this.frames;
         return hashCode + (list != null ? list.hashCode() : 0);
-    }
-
-    @Override // com.microsoft.appcenter.ingestion.models.Model
-    public void read(JSONObject jSONObject) {
-        setId(jSONObject.getLong("id"));
-        setName(jSONObject.optString("name", null));
-        setFrames(JSONUtils.readArray(jSONObject, "frames", StackFrameFactory.getInstance()));
-    }
-
-    public void setFrames(List list) {
-        this.frames = list;
-    }
-
-    public void setId(long j) {
-        this.id = j;
-    }
-
-    public void setName(String str) {
-        this.name = str;
-    }
-
-    @Override // com.microsoft.appcenter.ingestion.models.Model
-    public void write(JSONStringer jSONStringer) {
-        JSONUtils.write(jSONStringer, "id", Long.valueOf(getId()));
-        JSONUtils.write(jSONStringer, "name", getName());
-        JSONUtils.writeArray(jSONStringer, "frames", getFrames());
     }
 }

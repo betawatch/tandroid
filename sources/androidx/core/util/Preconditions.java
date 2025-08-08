@@ -11,35 +11,11 @@ public abstract class Preconditions {
         }
     }
 
-    public static int checkArgumentInRange(int i, int i2, int i3, String str) {
-        if (i < i2) {
-            throw new IllegalArgumentException(String.format(Locale.US, "%s is out of range of [%d, %d] (too low)", str, Integer.valueOf(i2), Integer.valueOf(i3)));
+    public static CharSequence checkStringNotEmpty(CharSequence charSequence, Object obj) {
+        if (TextUtils.isEmpty(charSequence)) {
+            throw new IllegalArgumentException(String.valueOf(obj));
         }
-        if (i <= i3) {
-            return i;
-        }
-        throw new IllegalArgumentException(String.format(Locale.US, "%s is out of range of [%d, %d] (too high)", str, Integer.valueOf(i2), Integer.valueOf(i3)));
-    }
-
-    public static int checkArgumentNonnegative(int i) {
-        if (i >= 0) {
-            return i;
-        }
-        throw new IllegalArgumentException();
-    }
-
-    public static int checkArgumentNonnegative(int i, String str) {
-        if (i >= 0) {
-            return i;
-        }
-        throw new IllegalArgumentException(str);
-    }
-
-    public static int checkFlagsArgument(int i, int i2) {
-        if ((i & i2) == i) {
-            return i;
-        }
-        throw new IllegalArgumentException("Requested flags 0x" + Integer.toHexString(i) + ", but only 0x" + Integer.toHexString(i2) + " are allowed");
+        return charSequence;
     }
 
     public static Object checkNotNull(Object obj) {
@@ -60,10 +36,34 @@ public abstract class Preconditions {
         }
     }
 
-    public static CharSequence checkStringNotEmpty(CharSequence charSequence, Object obj) {
-        if (TextUtils.isEmpty(charSequence)) {
-            throw new IllegalArgumentException(String.valueOf(obj));
+    public static int checkFlagsArgument(int i, int i2) {
+        if ((i & i2) == i) {
+            return i;
         }
-        return charSequence;
+        throw new IllegalArgumentException("Requested flags 0x" + Integer.toHexString(i) + ", but only 0x" + Integer.toHexString(i2) + " are allowed");
+    }
+
+    public static int checkArgumentNonnegative(int i, String str) {
+        if (i >= 0) {
+            return i;
+        }
+        throw new IllegalArgumentException(str);
+    }
+
+    public static int checkArgumentNonnegative(int i) {
+        if (i >= 0) {
+            return i;
+        }
+        throw new IllegalArgumentException();
+    }
+
+    public static int checkArgumentInRange(int i, int i2, int i3, String str) {
+        if (i < i2) {
+            throw new IllegalArgumentException(String.format(Locale.US, "%s is out of range of [%d, %d] (too low)", str, Integer.valueOf(i2), Integer.valueOf(i3)));
+        }
+        if (i <= i3) {
+            return i;
+        }
+        throw new IllegalArgumentException(String.format(Locale.US, "%s is out of range of [%d, %d] (too high)", str, Integer.valueOf(i2), Integer.valueOf(i3)));
     }
 }

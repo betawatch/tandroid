@@ -2,7 +2,7 @@ package kotlin.time;
 
 import java.util.concurrent.TimeUnit;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public enum DurationUnit {
     NANOSECONDS(TimeUnit.NANOSECONDS),
     MICROSECONDS(TimeUnit.MICROSECONDS),

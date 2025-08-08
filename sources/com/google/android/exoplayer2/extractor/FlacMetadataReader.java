@@ -22,31 +22,18 @@ public abstract class FlacMetadataReader {
         }
     }
 
-    public static boolean checkAndPeekStreamMarker(ExtractorInput extractorInput) {
-        ParsableByteArray parsableByteArray = new ParsableByteArray(4);
-        extractorInput.peekFully(parsableByteArray.getData(), 0, 4);
-        return parsableByteArray.readUnsignedInt() == 1716281667;
-    }
-
-    public static int getFrameStartMarker(ExtractorInput extractorInput) {
-        extractorInput.resetPeekPosition();
-        ParsableByteArray parsableByteArray = new ParsableByteArray(2);
-        extractorInput.peekFully(parsableByteArray.getData(), 0, 2);
-        int readUnsignedShort = parsableByteArray.readUnsignedShort();
-        int i = readUnsignedShort >> 2;
-        extractorInput.resetPeekPosition();
-        if (i == 16382) {
-            return readUnsignedShort;
-        }
-        throw ParserException.createForMalformedContainer("First frame does not start with sync code.", null);
-    }
-
     public static Metadata peekId3Metadata(ExtractorInput extractorInput, boolean z) {
         Metadata peekId3Data = new Id3Peeker().peekId3Data(extractorInput, z ? null : Id3Decoder.NO_FRAMES_PREDICATE);
         if (peekId3Data == null || peekId3Data.length() == 0) {
             return null;
         }
         return peekId3Data;
+    }
+
+    public static boolean checkAndPeekStreamMarker(ExtractorInput extractorInput) {
+        ParsableByteArray parsableByteArray = new ParsableByteArray(4);
+        extractorInput.peekFully(parsableByteArray.getData(), 0, 4);
+        return parsableByteArray.readUnsignedInt() == 1716281667;
     }
 
     public static Metadata readId3Metadata(ExtractorInput extractorInput, boolean z) {
@@ -57,8 +44,15 @@ public abstract class FlacMetadataReader {
         return peekId3Metadata;
     }
 
+    public static void readStreamMarker(ExtractorInput extractorInput) {
+        ParsableByteArray parsableByteArray = new ParsableByteArray(4);
+        extractorInput.readFully(parsableByteArray.getData(), 0, 4);
+        if (parsableByteArray.readUnsignedInt() != 1716281667) {
+            throw ParserException.createForMalformedContainer("Failed to read FLAC stream marker.", null);
+        }
+    }
+
     public static boolean readMetadataBlock(ExtractorInput extractorInput, FlacStreamMetadataHolder flacStreamMetadataHolder) {
-        FlacStreamMetadata copyWithPictureFrames;
         extractorInput.resetPeekPosition();
         ParsableBitArray parsableBitArray = new ParsableBitArray(new byte[4]);
         extractorInput.peekFully(parsableBitArray.data, 0, 4);
@@ -66,35 +60,26 @@ public abstract class FlacMetadataReader {
         int readBits = parsableBitArray.readBits(7);
         int readBits2 = parsableBitArray.readBits(24) + 4;
         if (readBits == 0) {
-            copyWithPictureFrames = readStreamInfoBlock(extractorInput);
+            flacStreamMetadataHolder.flacStreamMetadata = readStreamInfoBlock(extractorInput);
         } else {
             FlacStreamMetadata flacStreamMetadata = flacStreamMetadataHolder.flacStreamMetadata;
             if (flacStreamMetadata == null) {
                 throw new IllegalArgumentException();
             }
             if (readBits == 3) {
-                copyWithPictureFrames = flacStreamMetadata.copyWithSeekTable(readSeekTableMetadataBlock(extractorInput, readBits2));
+                flacStreamMetadataHolder.flacStreamMetadata = flacStreamMetadata.copyWithSeekTable(readSeekTableMetadataBlock(extractorInput, readBits2));
             } else if (readBits == 4) {
-                copyWithPictureFrames = flacStreamMetadata.copyWithVorbisComments(readVorbisCommentMetadataBlock(extractorInput, readBits2));
-            } else {
-                if (readBits != 6) {
-                    extractorInput.skipFully(readBits2);
-                    return readBit;
-                }
+                flacStreamMetadataHolder.flacStreamMetadata = flacStreamMetadata.copyWithVorbisComments(readVorbisCommentMetadataBlock(extractorInput, readBits2));
+            } else if (readBits == 6) {
                 ParsableByteArray parsableByteArray = new ParsableByteArray(readBits2);
                 extractorInput.readFully(parsableByteArray.getData(), 0, readBits2);
                 parsableByteArray.skipBytes(4);
-                copyWithPictureFrames = flacStreamMetadata.copyWithPictureFrames(ImmutableList.of((Object) PictureFrame.fromPictureBlock(parsableByteArray)));
+                flacStreamMetadataHolder.flacStreamMetadata = flacStreamMetadata.copyWithPictureFrames(ImmutableList.of((Object) PictureFrame.fromPictureBlock(parsableByteArray)));
+            } else {
+                extractorInput.skipFully(readBits2);
             }
         }
-        flacStreamMetadataHolder.flacStreamMetadata = copyWithPictureFrames;
         return readBit;
-    }
-
-    private static FlacStreamMetadata.SeekTable readSeekTableMetadataBlock(ExtractorInput extractorInput, int i) {
-        ParsableByteArray parsableByteArray = new ParsableByteArray(i);
-        extractorInput.readFully(parsableByteArray.getData(), 0, i);
-        return readSeekTableMetadataBlock(parsableByteArray);
     }
 
     public static FlacStreamMetadata.SeekTable readSeekTableMetadataBlock(ParsableByteArray parsableByteArray) {
@@ -124,18 +109,29 @@ public abstract class FlacMetadataReader {
         return new FlacStreamMetadata.SeekTable(jArr, jArr2);
     }
 
+    public static int getFrameStartMarker(ExtractorInput extractorInput) {
+        extractorInput.resetPeekPosition();
+        ParsableByteArray parsableByteArray = new ParsableByteArray(2);
+        extractorInput.peekFully(parsableByteArray.getData(), 0, 2);
+        int readUnsignedShort = parsableByteArray.readUnsignedShort();
+        if ((readUnsignedShort >> 2) != 16382) {
+            extractorInput.resetPeekPosition();
+            throw ParserException.createForMalformedContainer("First frame does not start with sync code.", null);
+        }
+        extractorInput.resetPeekPosition();
+        return readUnsignedShort;
+    }
+
     private static FlacStreamMetadata readStreamInfoBlock(ExtractorInput extractorInput) {
         byte[] bArr = new byte[38];
         extractorInput.readFully(bArr, 0, 38);
         return new FlacStreamMetadata(bArr, 4);
     }
 
-    public static void readStreamMarker(ExtractorInput extractorInput) {
-        ParsableByteArray parsableByteArray = new ParsableByteArray(4);
-        extractorInput.readFully(parsableByteArray.getData(), 0, 4);
-        if (parsableByteArray.readUnsignedInt() != 1716281667) {
-            throw ParserException.createForMalformedContainer("Failed to read FLAC stream marker.", null);
-        }
+    private static FlacStreamMetadata.SeekTable readSeekTableMetadataBlock(ExtractorInput extractorInput, int i) {
+        ParsableByteArray parsableByteArray = new ParsableByteArray(i);
+        extractorInput.readFully(parsableByteArray.getData(), 0, i);
+        return readSeekTableMetadataBlock(parsableByteArray);
     }
 
     private static List readVorbisCommentMetadataBlock(ExtractorInput extractorInput, int i) {

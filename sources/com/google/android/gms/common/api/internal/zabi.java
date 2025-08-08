@@ -132,11 +132,13 @@ public final class zabi implements zaca, zau {
     }
 
     final void zal(zabg zabgVar) {
-        this.zam.sendMessage(this.zam.obtainMessage(1, zabgVar));
+        zabh zabhVar = this.zam;
+        zabhVar.sendMessage(zabhVar.obtainMessage(1, zabgVar));
     }
 
     final void zam(RuntimeException runtimeException) {
-        this.zam.sendMessage(this.zam.obtainMessage(2, runtimeException));
+        zabh zabhVar = this.zam;
+        zabhVar.sendMessage(zabhVar.obtainMessage(2, runtimeException));
     }
 
     @Override // com.google.android.gms.common.api.internal.zaca
@@ -153,11 +155,11 @@ public final class zabi implements zaca, zau {
 
     @Override // com.google.android.gms.common.api.internal.zaca
     public final void zas(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
-        String concat = String.valueOf(str).concat("  ");
         printWriter.append((CharSequence) str).append("mState=").println(this.zan);
         for (Api api : this.zad.keySet()) {
+            String valueOf = String.valueOf(str);
             printWriter.append((CharSequence) str).append((CharSequence) api.zad()).println(":");
-            ((Api.Client) Preconditions.checkNotNull((Api.Client) this.zaa.get(api.zab()))).dump(concat, fileDescriptor, printWriter, strArr);
+            ((Api.Client) Preconditions.checkNotNull((Api.Client) this.zaa.get(api.zab()))).dump(valueOf.concat("  "), fileDescriptor, printWriter, strArr);
         }
     }
 

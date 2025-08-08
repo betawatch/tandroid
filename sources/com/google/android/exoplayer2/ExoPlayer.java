@@ -38,6 +38,22 @@ public interface ExoPlayer extends Player {
         void onExperimentalSleepingForOffloadChanged(boolean z);
     }
 
+    void addAnalyticsListener(AnalyticsListener analyticsListener);
+
+    void addVideoListener(VideoListener videoListener);
+
+    Renderer getRenderer(int i);
+
+    Format getVideoFormat();
+
+    void setAudioAttributes(AudioAttributes audioAttributes, boolean z);
+
+    void setMediaSource(MediaSource mediaSource, boolean z);
+
+    void setSeekParameters(SeekParameters seekParameters);
+
+    void setWorkerQueue(DispatchQueue dispatchQueue);
+
     public static final class Builder {
         Function analyticsCollectorFunction;
         AudioAttributes audioAttributes;
@@ -69,6 +85,21 @@ public interface ExoPlayer extends Player {
         int videoScalingMode;
         int wakeMode;
 
+        /* JADX INFO: Access modifiers changed from: private */
+        public static /* synthetic */ LoadControl lambda$setLoadControl$19(LoadControl loadControl) {
+            return loadControl;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static /* synthetic */ RenderersFactory lambda$setRenderersFactory$16(RenderersFactory renderersFactory) {
+            return renderersFactory;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static /* synthetic */ TrackSelector lambda$setTrackSelector$18(TrackSelector trackSelector) {
+            return trackSelector;
+        }
+
         public Builder(final Context context) {
             this(context, new Supplier() { // from class: com.google.android.exoplayer2.ExoPlayer$Builder$$ExternalSyntheticLambda1
                 @Override // com.google.common.base.Supplier
@@ -85,6 +116,16 @@ public interface ExoPlayer extends Player {
                     return lambda$new$1;
                 }
             });
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static /* synthetic */ RenderersFactory lambda$new$0(Context context) {
+            return new DefaultRenderersFactory(context);
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static /* synthetic */ MediaSource.Factory lambda$new$1(Context context) {
+            return new DefaultMediaSourceFactory(context, new DefaultExtractorsFactory());
         }
 
         private Builder(final Context context, Supplier supplier, Supplier supplier2) {
@@ -115,6 +156,11 @@ public interface ExoPlayer extends Player {
             });
         }
 
+        /* JADX INFO: Access modifiers changed from: private */
+        public static /* synthetic */ TrackSelector lambda$new$14(Context context) {
+            return new DefaultTrackSelector(context);
+        }
+
         private Builder(Context context, Supplier supplier, Supplier supplier2, Supplier supplier3, Supplier supplier4, Supplier supplier5, Function function) {
             this.context = (Context) Assertions.checkNotNull(context);
             this.renderersFactorySupplier = supplier;
@@ -137,69 +183,6 @@ public interface ExoPlayer extends Player {
             this.releaseTimeoutMs = 500L;
             this.detachSurfaceTimeoutMs = 2000L;
             this.usePlatformDiagnostics = true;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ RenderersFactory lambda$new$0(Context context) {
-            return new DefaultRenderersFactory(context);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ MediaSource.Factory lambda$new$1(Context context) {
-            return new DefaultMediaSourceFactory(context, new DefaultExtractorsFactory());
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ TrackSelector lambda$new$14(Context context) {
-            return new DefaultTrackSelector(context);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ LoadControl lambda$setLoadControl$19(LoadControl loadControl) {
-            return loadControl;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ RenderersFactory lambda$setRenderersFactory$16(RenderersFactory renderersFactory) {
-            return renderersFactory;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ TrackSelector lambda$setTrackSelector$18(TrackSelector trackSelector) {
-            return trackSelector;
-        }
-
-        public ExoPlayer build() {
-            Assertions.checkState(!this.buildCalled);
-            this.buildCalled = true;
-            return new ExoPlayerImpl(this, null);
-        }
-
-        public SimpleExoPlayer buildSimpleExoPlayer() {
-            Assertions.checkState(!this.buildCalled);
-            this.buildCalled = true;
-            return new SimpleExoPlayer(this);
-        }
-
-        public Builder setLoadControl(final LoadControl loadControl) {
-            Assertions.checkState(!this.buildCalled);
-            Assertions.checkNotNull(loadControl);
-            this.loadControlSupplier = new Supplier() { // from class: com.google.android.exoplayer2.ExoPlayer$Builder$$ExternalSyntheticLambda0
-                @Override // com.google.common.base.Supplier
-                public final Object get() {
-                    LoadControl lambda$setLoadControl$19;
-                    lambda$setLoadControl$19 = ExoPlayer.Builder.lambda$setLoadControl$19(LoadControl.this);
-                    return lambda$setLoadControl$19;
-                }
-            };
-            return this;
-        }
-
-        public Builder setLooper(Looper looper) {
-            Assertions.checkState(!this.buildCalled);
-            Assertions.checkNotNull(looper);
-            this.looper = looper;
-            return this;
         }
 
         public Builder setRenderersFactory(final RenderersFactory renderersFactory) {
@@ -229,21 +212,38 @@ public interface ExoPlayer extends Player {
             };
             return this;
         }
+
+        public Builder setLoadControl(final LoadControl loadControl) {
+            Assertions.checkState(!this.buildCalled);
+            Assertions.checkNotNull(loadControl);
+            this.loadControlSupplier = new Supplier() { // from class: com.google.android.exoplayer2.ExoPlayer$Builder$$ExternalSyntheticLambda0
+                @Override // com.google.common.base.Supplier
+                public final Object get() {
+                    LoadControl lambda$setLoadControl$19;
+                    lambda$setLoadControl$19 = ExoPlayer.Builder.lambda$setLoadControl$19(LoadControl.this);
+                    return lambda$setLoadControl$19;
+                }
+            };
+            return this;
+        }
+
+        public Builder setLooper(Looper looper) {
+            Assertions.checkState(!this.buildCalled);
+            Assertions.checkNotNull(looper);
+            this.looper = looper;
+            return this;
+        }
+
+        public ExoPlayer build() {
+            Assertions.checkState(!this.buildCalled);
+            this.buildCalled = true;
+            return new ExoPlayerImpl(this, null);
+        }
+
+        public SimpleExoPlayer buildSimpleExoPlayer() {
+            Assertions.checkState(!this.buildCalled);
+            this.buildCalled = true;
+            return new SimpleExoPlayer(this);
+        }
     }
-
-    void addAnalyticsListener(AnalyticsListener analyticsListener);
-
-    void addVideoListener(VideoListener videoListener);
-
-    Renderer getRenderer(int i);
-
-    Format getVideoFormat();
-
-    void setAudioAttributes(AudioAttributes audioAttributes, boolean z);
-
-    void setMediaSource(MediaSource mediaSource, boolean z);
-
-    void setSeekParameters(SeekParameters seekParameters);
-
-    void setWorkerQueue(DispatchQueue dispatchQueue);
 }

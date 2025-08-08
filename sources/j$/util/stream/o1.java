@@ -3,12 +3,28 @@ package j$.util.stream;
 import j$.util.Spliterator;
 
 /* loaded from: classes2.dex */
-final class o1 extends r1 implements c2 {
-    private final int[] h;
+final class o1 extends q1 implements c2 {
+    private final long[] h;
 
-    o1(Spliterator spliterator, b bVar, int[] iArr) {
-        super(iArr.length, spliterator, bVar);
-        this.h = iArr;
+    @Override // j$.util.function.Consumer
+    /* renamed from: accept */
+    public final /* bridge */ /* synthetic */ void r(Object obj) {
+        j((Long) obj);
+    }
+
+    @Override // j$.util.function.Y
+    public final /* synthetic */ j$.util.function.Y f(j$.util.function.Y y) {
+        return j$.com.android.tools.r8.a.c(this, y);
+    }
+
+    @Override // j$.util.stream.c2
+    public final /* synthetic */ void j(Long l) {
+        t0.i(this, l);
+    }
+
+    o1(Spliterator spliterator, b bVar, long[] jArr) {
+        super(spliterator, bVar, jArr.length);
+        this.h = jArr;
     }
 
     o1(o1 o1Var, Spliterator spliterator, long j, long j2) {
@@ -16,35 +32,19 @@ final class o1 extends r1 implements c2 {
         this.h = o1Var.h;
     }
 
-    @Override // j$.util.stream.r1
-    final r1 a(Spliterator spliterator, long j, long j2) {
+    @Override // j$.util.stream.q1
+    final q1 a(Spliterator spliterator, long j, long j2) {
         return new o1(this, spliterator, j, j2);
     }
 
-    @Override // j$.util.stream.r1, j$.util.stream.e2
-    public final void accept(int i) {
-        int i2 = this.f;
-        if (i2 >= this.g) {
+    @Override // j$.util.stream.q1, j$.util.stream.d2
+    public final void accept(long j) {
+        int i = this.f;
+        if (i >= this.g) {
             throw new IndexOutOfBoundsException(Integer.toString(this.f));
         }
-        int[] iArr = this.h;
-        this.f = i2 + 1;
-        iArr[i2] = i;
-    }
-
-    @Override // j$.util.function.Consumer
-    /* renamed from: accept */
-    public final /* bridge */ /* synthetic */ void r(Object obj) {
-        o((Integer) obj);
-    }
-
-    @Override // j$.util.function.E
-    public final /* synthetic */ j$.util.function.E l(j$.util.function.E e) {
-        return j$.com.android.tools.r8.a.c(this, e);
-    }
-
-    @Override // j$.util.stream.c2
-    public final /* synthetic */ void o(Integer num) {
-        u0.g(this, num);
+        long[] jArr = this.h;
+        this.f = i + 1;
+        jArr[i] = j;
     }
 }

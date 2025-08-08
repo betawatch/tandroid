@@ -18,6 +18,33 @@ public final class Id3Reader implements ElementaryStreamReader {
     private long sampleTimeUs = -9223372036854775807L;
 
     @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
+    public void seek() {
+        this.writingSample = false;
+        this.sampleTimeUs = -9223372036854775807L;
+    }
+
+    @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
+    public void createTracks(ExtractorOutput extractorOutput, TsPayloadReader.TrackIdGenerator trackIdGenerator) {
+        trackIdGenerator.generateNewId();
+        TrackOutput track = extractorOutput.track(trackIdGenerator.getTrackId(), 5);
+        this.output = track;
+        track.format(new Format.Builder().setId(trackIdGenerator.getFormatId()).setSampleMimeType("application/id3").build());
+    }
+
+    @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
+    public void packetStarted(long j, int i) {
+        if ((i & 4) == 0) {
+            return;
+        }
+        this.writingSample = true;
+        if (j != -9223372036854775807L) {
+            this.sampleTimeUs = j;
+        }
+        this.sampleSize = 0;
+        this.sampleBytesRead = 0;
+    }
+
+    @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
     public void consume(ParsableByteArray parsableByteArray) {
         Assertions.checkStateNotNull(this.output);
         if (this.writingSample) {
@@ -45,14 +72,6 @@ public final class Id3Reader implements ElementaryStreamReader {
     }
 
     @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
-    public void createTracks(ExtractorOutput extractorOutput, TsPayloadReader.TrackIdGenerator trackIdGenerator) {
-        trackIdGenerator.generateNewId();
-        TrackOutput track = extractorOutput.track(trackIdGenerator.getTrackId(), 5);
-        this.output = track;
-        track.format(new Format.Builder().setId(trackIdGenerator.getFormatId()).setSampleMimeType("application/id3").build());
-    }
-
-    @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
     public void packetFinished() {
         int i;
         Assertions.checkStateNotNull(this.output);
@@ -63,24 +82,5 @@ public final class Id3Reader implements ElementaryStreamReader {
             }
             this.writingSample = false;
         }
-    }
-
-    @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
-    public void packetStarted(long j, int i) {
-        if ((i & 4) == 0) {
-            return;
-        }
-        this.writingSample = true;
-        if (j != -9223372036854775807L) {
-            this.sampleTimeUs = j;
-        }
-        this.sampleSize = 0;
-        this.sampleBytesRead = 0;
-    }
-
-    @Override // com.google.android.exoplayer2.extractor.ts.ElementaryStreamReader
-    public void seek() {
-        this.writingSample = false;
-        this.sampleTimeUs = -9223372036854775807L;
     }
 }

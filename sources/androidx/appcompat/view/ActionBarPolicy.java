@@ -8,20 +8,16 @@ import androidx.appcompat.R$bool;
 public class ActionBarPolicy {
     private Context mContext;
 
-    private ActionBarPolicy(Context context) {
-        this.mContext = context;
+    public boolean showsOverflowMenuButton() {
+        return true;
     }
 
     public static ActionBarPolicy get(Context context) {
         return new ActionBarPolicy(context);
     }
 
-    public boolean enableHomeButtonByDefault() {
-        return this.mContext.getApplicationInfo().targetSdkVersion < 14;
-    }
-
-    public int getEmbeddedMenuWidthLimit() {
-        return this.mContext.getResources().getDisplayMetrics().widthPixels / 2;
+    private ActionBarPolicy(Context context) {
+        this.mContext = context;
     }
 
     public int getMaxActionButtons() {
@@ -49,11 +45,15 @@ public class ActionBarPolicy {
         return 4;
     }
 
+    public int getEmbeddedMenuWidthLimit() {
+        return this.mContext.getResources().getDisplayMetrics().widthPixels / 2;
+    }
+
     public boolean hasEmbeddedTabs() {
         return this.mContext.getResources().getBoolean(R$bool.abc_action_bar_embed_tabs);
     }
 
-    public boolean showsOverflowMenuButton() {
-        return true;
+    public boolean enableHomeButtonByDefault() {
+        return this.mContext.getApplicationInfo().targetSdkVersion < 14;
     }
 }

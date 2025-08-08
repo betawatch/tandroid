@@ -60,19 +60,6 @@ final class zaaa implements zaca {
         this.zaf = Collections.unmodifiableMap(arrayMap);
     }
 
-    private final void zaA(ConnectionResult connectionResult) {
-        int i = this.zan;
-        if (i != 1) {
-            if (i != 2) {
-                Log.wtf("CompositeGAC", "Attempted to call failure callbacks in CONNECTION_MODE_NONE. Callbacks should be disabled via GmsClientSupervisor", new Exception());
-                this.zan = 0;
-            }
-            this.zab.zaa(connectionResult);
-        }
-        zaB();
-        this.zan = 0;
-    }
-
     private final void zaB() {
         Iterator it = this.zag.iterator();
         while (it.hasNext()) {
@@ -105,12 +92,10 @@ final class zaaa implements zaca {
             if (true == client2.providesSignIn()) {
                 client = client2;
             }
-            boolean requiresSignIn = client2.requiresSignIn();
-            Api.AnyClientKey anyClientKey = (Api.AnyClientKey) entry.getKey();
-            if (requiresSignIn) {
-                arrayMap.put(anyClientKey, client2);
+            if (client2.requiresSignIn()) {
+                arrayMap.put((Api.AnyClientKey) entry.getKey(), client2);
             } else {
-                arrayMap2.put(anyClientKey, client2);
+                arrayMap2.put((Api.AnyClientKey) entry.getKey(), client2);
             }
         }
         Preconditions.checkState(!arrayMap.isEmpty(), "CompositeGoogleApiClient should not be used without any APIs that require sign-in.");
@@ -204,10 +189,11 @@ final class zaaa implements zaca {
     }
 
     private final PendingIntent zaz() {
-        if (this.zah == null) {
+        Api.Client client = this.zah;
+        if (client == null) {
             return null;
         }
-        return PendingIntent.getActivity(this.zaa, System.identityHashCode(this.zab), this.zah.getSignInIntent(), com.google.android.gms.internal.base.zap.zaa | TLObject.FLAG_27);
+        return PendingIntent.getActivity(this.zaa, System.identityHashCode(this.zab), client.getSignInIntent(), com.google.android.gms.internal.base.zap.zaa | TLObject.FLAG_27);
     }
 
     @Override // com.google.android.gms.common.api.internal.zaca
@@ -319,27 +305,40 @@ final class zaaa implements zaca {
     public final boolean zay(SignInConnectionListener signInConnectionListener) {
         this.zam.lock();
         try {
+            boolean z = false;
             if (!zax()) {
                 if (zaw()) {
                 }
                 this.zam.unlock();
-                return false;
+                return z;
             }
             if (!this.zae.zaw()) {
                 this.zag.add(signInConnectionListener);
+                z = true;
                 if (this.zan == 0) {
                     this.zan = 1;
                 }
                 this.zak = null;
                 this.zae.zaq();
-                this.zam.unlock();
-                return true;
             }
             this.zam.unlock();
-            return false;
+            return z;
         } catch (Throwable th) {
             this.zam.unlock();
             throw th;
         }
+    }
+
+    private final void zaA(ConnectionResult connectionResult) {
+        int i = this.zan;
+        if (i != 1) {
+            if (i != 2) {
+                Log.wtf("CompositeGAC", "Attempted to call failure callbacks in CONNECTION_MODE_NONE. Callbacks should be disabled via GmsClientSupervisor", new Exception());
+                this.zan = 0;
+            }
+            this.zab.zaa(connectionResult);
+        }
+        zaB();
+        this.zan = 0;
     }
 }

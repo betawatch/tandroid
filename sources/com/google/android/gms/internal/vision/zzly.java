@@ -16,11 +16,6 @@ final class zzly implements ListIterator {
         this.zza = zzjvVar.listIterator(i);
     }
 
-    @Override // java.util.ListIterator
-    public final /* synthetic */ void add(Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
     @Override // java.util.ListIterator, java.util.Iterator
     public final boolean hasNext() {
         return this.zza.hasNext();
@@ -31,19 +26,9 @@ final class zzly implements ListIterator {
         return this.zza.hasPrevious();
     }
 
-    @Override // java.util.ListIterator, java.util.Iterator
-    public final /* synthetic */ Object next() {
-        return (String) this.zza.next();
-    }
-
     @Override // java.util.ListIterator
     public final int nextIndex() {
         return this.zza.nextIndex();
-    }
-
-    @Override // java.util.ListIterator
-    public final /* synthetic */ Object previous() {
-        return (String) this.zza.previous();
     }
 
     @Override // java.util.ListIterator
@@ -57,7 +42,22 @@ final class zzly implements ListIterator {
     }
 
     @Override // java.util.ListIterator
+    public final /* synthetic */ void add(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.ListIterator
     public final /* synthetic */ void set(Object obj) {
         throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.ListIterator
+    public final /* synthetic */ Object previous() {
+        return (String) this.zza.previous();
+    }
+
+    @Override // java.util.ListIterator, java.util.Iterator
+    public final /* synthetic */ Object next() {
+        return (String) this.zza.next();
     }
 }

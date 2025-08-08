@@ -1,6 +1,6 @@
 package kotlin.jvm.internal;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class PackageReference implements ClassBasedDeclarationContainer {
     private final Class jClass;
     private final String moduleName;
@@ -12,13 +12,13 @@ public final class PackageReference implements ClassBasedDeclarationContainer {
         this.moduleName = moduleName;
     }
 
-    public boolean equals(Object obj) {
-        return (obj instanceof PackageReference) && Intrinsics.areEqual(getJClass(), ((PackageReference) obj).getJClass());
-    }
-
     @Override // kotlin.jvm.internal.ClassBasedDeclarationContainer
     public Class getJClass() {
         return this.jClass;
+    }
+
+    public boolean equals(Object obj) {
+        return (obj instanceof PackageReference) && Intrinsics.areEqual(getJClass(), ((PackageReference) obj).getJClass());
     }
 
     public int hashCode() {

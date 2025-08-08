@@ -10,7 +10,6 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
@@ -20,47 +19,17 @@ import android.text.TextUtils;
 import android.util.Log;
 import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
+import com.google.android.gms.cast.framework.media.internal.zzo$$ExternalSyntheticApiModelOutline2;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.tgnet.TLObject;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class CommonNotificationBuilder {
     private static final AtomicInteger requestCodeProvider = new AtomicInteger((int) SystemClock.elapsedRealtime());
 
-    public static class DisplayNotificationInfo {
-        public final int id;
-        public final NotificationCompat.Builder notificationBuilder;
-        public final String tag;
-
-        DisplayNotificationInfo(NotificationCompat.Builder builder, String str, int i) {
-            this.notificationBuilder = builder;
-            this.tag = str;
-            this.id = i;
-        }
-    }
-
-    private static PendingIntent createContentIntent(Context context, NotificationParams notificationParams, String str, PackageManager packageManager) {
-        Intent createTargetIntent = createTargetIntent(str, notificationParams, packageManager);
-        if (createTargetIntent == null) {
-            return null;
-        }
-        createTargetIntent.addFlags(67108864);
-        createTargetIntent.putExtras(notificationParams.paramsWithReservedKeysRemoved());
-        if (shouldUploadMetrics(notificationParams)) {
-            createTargetIntent.putExtra("gcm.n.analytics_data", notificationParams.paramsForAnalyticsIntent());
-        }
-        return PendingIntent.getActivity(context, generatePendingIntentRequestCode(), createTargetIntent, getPendingIntentFlags(TLObject.FLAG_30));
-    }
-
-    private static PendingIntent createDeleteIntent(Context context, Context context2, NotificationParams notificationParams) {
-        if (shouldUploadMetrics(notificationParams)) {
-            return createMessagingPendingIntent(context, context2, new Intent("com.google.firebase.messaging.NOTIFICATION_DISMISS").putExtras(notificationParams.paramsForAnalyticsIntent()));
-        }
-        return null;
-    }
-
-    private static PendingIntent createMessagingPendingIntent(Context context, Context context2, Intent intent) {
-        return PendingIntent.getBroadcast(context, generatePendingIntentRequestCode(), new Intent("com.google.android.c2dm.intent.RECEIVE").setPackage(context2.getPackageName()).putExtra("wrapped_intent", intent), getPendingIntentFlags(TLObject.FLAG_30));
+    static DisplayNotificationInfo createNotificationInfo(Context context, NotificationParams notificationParams) {
+        Bundle manifestMetadata = getManifestMetadata(context.getPackageManager(), context.getPackageName());
+        return createNotificationInfo(context, context, notificationParams, getOrCreateChannel(context, notificationParams.getNotificationChannelId(), manifestMetadata), manifestMetadata);
     }
 
     public static DisplayNotificationInfo createNotificationInfo(Context context, Context context2, NotificationParams notificationParams, String str, Bundle bundle) {
@@ -126,59 +95,6 @@ public abstract class CommonNotificationBuilder {
         return new DisplayNotificationInfo(builder, getTag(notificationParams), 0);
     }
 
-    static DisplayNotificationInfo createNotificationInfo(Context context, NotificationParams notificationParams) {
-        Bundle manifestMetadata = getManifestMetadata(context.getPackageManager(), context.getPackageName());
-        return createNotificationInfo(context, context, notificationParams, getOrCreateChannel(context, notificationParams.getNotificationChannelId(), manifestMetadata), manifestMetadata);
-    }
-
-    private static Intent createTargetIntent(String str, NotificationParams notificationParams, PackageManager packageManager) {
-        String string = notificationParams.getString("gcm.n.click_action");
-        if (!TextUtils.isEmpty(string)) {
-            Intent intent = new Intent(string);
-            intent.setPackage(str);
-            intent.setFlags(TLObject.FLAG_28);
-            return intent;
-        }
-        Uri link = notificationParams.getLink();
-        if (link != null) {
-            Intent intent2 = new Intent("android.intent.action.VIEW");
-            intent2.setPackage(str);
-            intent2.setData(link);
-            return intent2;
-        }
-        Intent launchIntentForPackage = packageManager.getLaunchIntentForPackage(str);
-        if (launchIntentForPackage == null) {
-            Log.w("FirebaseMessaging", "No activity found to launch app");
-        }
-        return launchIntentForPackage;
-    }
-
-    private static int generatePendingIntentRequestCode() {
-        return requestCodeProvider.incrementAndGet();
-    }
-
-    private static Integer getColor(Context context, String str, Bundle bundle) {
-        if (Build.VERSION.SDK_INT < 21) {
-            return null;
-        }
-        if (!TextUtils.isEmpty(str)) {
-            try {
-                return Integer.valueOf(Color.parseColor(str));
-            } catch (IllegalArgumentException unused) {
-                Log.w("FirebaseMessaging", "Color is invalid: " + str + ". Notification will use default color.");
-            }
-        }
-        int i = bundle.getInt("com.google.firebase.messaging.default_notification_color", 0);
-        if (i != 0) {
-            try {
-                return Integer.valueOf(ContextCompat.getColor(context, i));
-            } catch (Resources.NotFoundException unused2) {
-                Log.w("FirebaseMessaging", "Cannot find the color resource referenced in AndroidManifest.");
-            }
-        }
-        return null;
-    }
-
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v2, types: [int] */
     /* JADX WARN: Type inference failed for: r0v6 */
@@ -192,74 +108,20 @@ public abstract class CommonNotificationBuilder {
         return notificationParams.getBoolean("gcm.n.default_light_settings") ? r0 | 4 : r0;
     }
 
-    private static Bundle getManifestMetadata(PackageManager packageManager, String str) {
-        try {
-            ApplicationInfo applicationInfo = packageManager.getApplicationInfo(str, 128);
-            if (applicationInfo != null) {
-                Bundle bundle = applicationInfo.metaData;
-                if (bundle != null) {
-                    return bundle;
-                }
-            }
-        } catch (PackageManager.NameNotFoundException e) {
-            Log.w("FirebaseMessaging", "Couldn't get own application info: " + e);
-        }
-        return Bundle.EMPTY;
-    }
-
-    public static String getOrCreateChannel(Context context, String str, Bundle bundle) {
-        Object systemService;
-        String str2;
-        NotificationChannel notificationChannel;
-        String string;
-        NotificationChannel notificationChannel2;
-        NotificationChannel notificationChannel3;
-        if (Build.VERSION.SDK_INT < 26) {
-            return null;
+    private static boolean isValidIcon(Resources resources, int i) {
+        if (Build.VERSION.SDK_INT != 26) {
+            return true;
         }
         try {
-            if (context.getPackageManager().getApplicationInfo(context.getPackageName(), 0).targetSdkVersion < 26) {
-                return null;
+            if (!CommonNotificationBuilder$$ExternalSyntheticApiModelOutline0.m(resources.getDrawable(i, null))) {
+                return true;
             }
-            systemService = context.getSystemService((Class<Object>) NotificationManager.class);
-            NotificationManager notificationManager = (NotificationManager) systemService;
-            if (!TextUtils.isEmpty(str)) {
-                notificationChannel3 = notificationManager.getNotificationChannel(str);
-                if (notificationChannel3 != null) {
-                    return str;
-                }
-                Log.w("FirebaseMessaging", "Notification Channel requested (" + str + ") has not been created by the app. Manifest configuration, or default, value will be used.");
-            }
-            String string2 = bundle.getString("com.google.firebase.messaging.default_notification_channel_id");
-            if (TextUtils.isEmpty(string2)) {
-                str2 = "Missing Default Notification Channel metadata in AndroidManifest. Default value will be used.";
-            } else {
-                notificationChannel2 = notificationManager.getNotificationChannel(string2);
-                if (notificationChannel2 != null) {
-                    return string2;
-                }
-                str2 = "Notification Channel set in AndroidManifest.xml has not been created by the app. Default value will be used.";
-            }
-            Log.w("FirebaseMessaging", str2);
-            notificationChannel = notificationManager.getNotificationChannel("fcm_fallback_notification_channel");
-            if (notificationChannel == null) {
-                int identifier = context.getResources().getIdentifier("fcm_fallback_notification_channel_label", "string", context.getPackageName());
-                if (identifier == 0) {
-                    Log.e("FirebaseMessaging", "String resource \"fcm_fallback_notification_channel_label\" is not found. Using default string channel name.");
-                    string = "Misc";
-                } else {
-                    string = context.getString(identifier);
-                }
-                notificationManager.createNotificationChannel(new NotificationChannel("fcm_fallback_notification_channel", string, 3));
-            }
-            return "fcm_fallback_notification_channel";
-        } catch (PackageManager.NameNotFoundException unused) {
-            return null;
+            Log.e("FirebaseMessaging", "Adaptive icons cannot be used in notifications. Ignoring icon id: " + i);
+            return false;
+        } catch (Resources.NotFoundException unused) {
+            Log.e("FirebaseMessaging", "Couldn't find resource " + i + ", treating it as an invalid icon");
+            return false;
         }
-    }
-
-    private static int getPendingIntentFlags(int i) {
-        return Build.VERSION.SDK_INT >= 23 ? i | 67108864 : i;
     }
 
     private static int getSmallIcon(PackageManager packageManager, Resources resources, String str, String str2, Bundle bundle) {
@@ -285,15 +147,157 @@ public abstract class CommonNotificationBuilder {
         return (i == 0 || !isValidIcon(resources, i)) ? R.drawable.sym_def_app_icon : i;
     }
 
+    private static Integer getColor(Context context, String str, Bundle bundle) {
+        if (!TextUtils.isEmpty(str)) {
+            try {
+                return Integer.valueOf(Color.parseColor(str));
+            } catch (IllegalArgumentException unused) {
+                Log.w("FirebaseMessaging", "Color is invalid: " + str + ". Notification will use default color.");
+            }
+        }
+        int i = bundle.getInt("com.google.firebase.messaging.default_notification_color", 0);
+        if (i == 0) {
+            return null;
+        }
+        try {
+            return Integer.valueOf(ContextCompat.getColor(context, i));
+        } catch (Resources.NotFoundException unused2) {
+            Log.w("FirebaseMessaging", "Cannot find the color resource referenced in AndroidManifest.");
+            return null;
+        }
+    }
+
     private static Uri getSound(String str, NotificationParams notificationParams, Resources resources) {
         String soundResourceName = notificationParams.getSoundResourceName();
         if (TextUtils.isEmpty(soundResourceName)) {
             return null;
         }
-        if ("default".equals(soundResourceName) || resources.getIdentifier(soundResourceName, "raw", str) == 0) {
-            return RingtoneManager.getDefaultUri(2);
+        if (!"default".equals(soundResourceName) && resources.getIdentifier(soundResourceName, "raw", str) != 0) {
+            return Uri.parse("android.resource://" + str + "/raw/" + soundResourceName);
         }
-        return Uri.parse("android.resource://" + str + "/raw/" + soundResourceName);
+        return RingtoneManager.getDefaultUri(2);
+    }
+
+    private static PendingIntent createContentIntent(Context context, NotificationParams notificationParams, String str, PackageManager packageManager) {
+        Intent createTargetIntent = createTargetIntent(str, notificationParams, packageManager);
+        if (createTargetIntent == null) {
+            return null;
+        }
+        createTargetIntent.addFlags(67108864);
+        createTargetIntent.putExtras(notificationParams.paramsWithReservedKeysRemoved());
+        if (shouldUploadMetrics(notificationParams)) {
+            createTargetIntent.putExtra("gcm.n.analytics_data", notificationParams.paramsForAnalyticsIntent());
+        }
+        return PendingIntent.getActivity(context, generatePendingIntentRequestCode(), createTargetIntent, getPendingIntentFlags(TLObject.FLAG_30));
+    }
+
+    private static Intent createTargetIntent(String str, NotificationParams notificationParams, PackageManager packageManager) {
+        String string = notificationParams.getString("gcm.n.click_action");
+        if (!TextUtils.isEmpty(string)) {
+            Intent intent = new Intent(string);
+            intent.setPackage(str);
+            intent.setFlags(TLObject.FLAG_28);
+            return intent;
+        }
+        Uri link = notificationParams.getLink();
+        if (link != null) {
+            Intent intent2 = new Intent("android.intent.action.VIEW");
+            intent2.setPackage(str);
+            intent2.setData(link);
+            return intent2;
+        }
+        Intent launchIntentForPackage = packageManager.getLaunchIntentForPackage(str);
+        if (launchIntentForPackage == null) {
+            Log.w("FirebaseMessaging", "No activity found to launch app");
+        }
+        return launchIntentForPackage;
+    }
+
+    private static Bundle getManifestMetadata(PackageManager packageManager, String str) {
+        try {
+            ApplicationInfo applicationInfo = packageManager.getApplicationInfo(str, 128);
+            if (applicationInfo != null) {
+                Bundle bundle = applicationInfo.metaData;
+                if (bundle != null) {
+                    return bundle;
+                }
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+            Log.w("FirebaseMessaging", "Couldn't get own application info: " + e);
+        }
+        return Bundle.EMPTY;
+    }
+
+    public static String getOrCreateChannel(Context context, String str, Bundle bundle) {
+        Object systemService;
+        NotificationChannel notificationChannel;
+        String string;
+        NotificationChannel notificationChannel2;
+        NotificationChannel notificationChannel3;
+        if (Build.VERSION.SDK_INT < 26) {
+            return null;
+        }
+        try {
+            if (context.getPackageManager().getApplicationInfo(context.getPackageName(), 0).targetSdkVersion < 26) {
+                return null;
+            }
+            systemService = context.getSystemService((Class<Object>) NotificationManager.class);
+            NotificationManager notificationManager = (NotificationManager) systemService;
+            if (!TextUtils.isEmpty(str)) {
+                notificationChannel3 = notificationManager.getNotificationChannel(str);
+                if (notificationChannel3 != null) {
+                    return str;
+                }
+                Log.w("FirebaseMessaging", "Notification Channel requested (" + str + ") has not been created by the app. Manifest configuration, or default, value will be used.");
+            }
+            String string2 = bundle.getString("com.google.firebase.messaging.default_notification_channel_id");
+            if (!TextUtils.isEmpty(string2)) {
+                notificationChannel2 = notificationManager.getNotificationChannel(string2);
+                if (notificationChannel2 != null) {
+                    return string2;
+                }
+                Log.w("FirebaseMessaging", "Notification Channel set in AndroidManifest.xml has not been created by the app. Default value will be used.");
+            } else {
+                Log.w("FirebaseMessaging", "Missing Default Notification Channel metadata in AndroidManifest. Default value will be used.");
+            }
+            notificationChannel = notificationManager.getNotificationChannel("fcm_fallback_notification_channel");
+            if (notificationChannel == null) {
+                int identifier = context.getResources().getIdentifier("fcm_fallback_notification_channel_label", "string", context.getPackageName());
+                if (identifier == 0) {
+                    Log.e("FirebaseMessaging", "String resource \"fcm_fallback_notification_channel_label\" is not found. Using default string channel name.");
+                    string = "Misc";
+                } else {
+                    string = context.getString(identifier);
+                }
+                notificationManager.createNotificationChannel(zzo$$ExternalSyntheticApiModelOutline2.m("fcm_fallback_notification_channel", string, 3));
+            }
+            return "fcm_fallback_notification_channel";
+        } catch (PackageManager.NameNotFoundException unused) {
+            return null;
+        }
+    }
+
+    private static int generatePendingIntentRequestCode() {
+        return requestCodeProvider.incrementAndGet();
+    }
+
+    private static int getPendingIntentFlags(int i) {
+        return Build.VERSION.SDK_INT >= 23 ? i | 67108864 : i;
+    }
+
+    private static PendingIntent createDeleteIntent(Context context, Context context2, NotificationParams notificationParams) {
+        if (shouldUploadMetrics(notificationParams)) {
+            return createMessagingPendingIntent(context, context2, new Intent("com.google.firebase.messaging.NOTIFICATION_DISMISS").putExtras(notificationParams.paramsForAnalyticsIntent()));
+        }
+        return null;
+    }
+
+    private static PendingIntent createMessagingPendingIntent(Context context, Context context2, Intent intent) {
+        return PendingIntent.getBroadcast(context, generatePendingIntentRequestCode(), new Intent("com.google.android.c2dm.intent.RECEIVE").setPackage(context2.getPackageName()).putExtra("wrapped_intent", intent), getPendingIntentFlags(TLObject.FLAG_30));
+    }
+
+    static boolean shouldUploadMetrics(NotificationParams notificationParams) {
+        return notificationParams.getBoolean("google.c.a.e");
     }
 
     private static String getTag(NotificationParams notificationParams) {
@@ -304,25 +308,15 @@ public abstract class CommonNotificationBuilder {
         return "FCM-Notification:" + SystemClock.uptimeMillis();
     }
 
-    private static boolean isValidIcon(Resources resources, int i) {
-        Drawable drawable;
-        if (Build.VERSION.SDK_INT != 26) {
-            return true;
-        }
-        try {
-            drawable = resources.getDrawable(i, null);
-            if (!CommonNotificationBuilder$$ExternalSyntheticApiModelOutline1.m(drawable)) {
-                return true;
-            }
-            Log.e("FirebaseMessaging", "Adaptive icons cannot be used in notifications. Ignoring icon id: " + i);
-            return false;
-        } catch (Resources.NotFoundException unused) {
-            Log.e("FirebaseMessaging", "Couldn't find resource " + i + ", treating it as an invalid icon");
-            return false;
-        }
-    }
+    public static class DisplayNotificationInfo {
+        public final int id;
+        public final NotificationCompat.Builder notificationBuilder;
+        public final String tag;
 
-    static boolean shouldUploadMetrics(NotificationParams notificationParams) {
-        return notificationParams.getBoolean("google.c.a.e");
+        DisplayNotificationInfo(NotificationCompat.Builder builder, String str, int i) {
+            this.notificationBuilder = builder;
+            this.tag = str;
+            this.id = i;
+        }
     }
 }

@@ -22,17 +22,18 @@ public final class zat extends AbstractSafeParcelable {
         this.zad = googleSignInAccount;
     }
 
-    public zat(Account account, int i, GoogleSignInAccount googleSignInAccount) {
-        this(2, account, i, googleSignInAccount);
-    }
-
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
+        int i2 = this.zaa;
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeInt(parcel, 1, this.zaa);
+        SafeParcelWriter.writeInt(parcel, 1, i2);
         SafeParcelWriter.writeParcelable(parcel, 2, this.zab, i, false);
         SafeParcelWriter.writeInt(parcel, 3, this.zac);
         SafeParcelWriter.writeParcelable(parcel, 4, this.zad, i, false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    public zat(Account account, int i, GoogleSignInAccount googleSignInAccount) {
+        this(2, account, i, googleSignInAccount);
     }
 }

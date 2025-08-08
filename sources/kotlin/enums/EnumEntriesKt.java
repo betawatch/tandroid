@@ -3,7 +3,7 @@ package kotlin.enums;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class EnumEntriesKt {
     public static final EnumEntries enumEntries(final Enum[] entries) {
         Intrinsics.checkNotNullParameter(entries, "entries");

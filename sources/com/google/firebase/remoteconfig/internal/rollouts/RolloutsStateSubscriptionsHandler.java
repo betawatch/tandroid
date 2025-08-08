@@ -13,7 +13,7 @@ import java.util.Collections;
 import java.util.Set;
 import java.util.concurrent.Executor;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class RolloutsStateSubscriptionsHandler {
     private ConfigCacheClient activatedConfigsCache;
     private Executor executor;
@@ -24,6 +24,17 @@ public class RolloutsStateSubscriptionsHandler {
         this.activatedConfigsCache = configCacheClient;
         this.rolloutsStateFactory = rolloutsStateFactory;
         this.executor = executor;
+    }
+
+    public void registerRolloutsStateSubscriber(final RolloutsStateSubscriber rolloutsStateSubscriber) {
+        this.subscribers.add(rolloutsStateSubscriber);
+        final Task task = this.activatedConfigsCache.get();
+        task.addOnSuccessListener(this.executor, new OnSuccessListener() { // from class: com.google.firebase.remoteconfig.internal.rollouts.RolloutsStateSubscriptionsHandler$$ExternalSyntheticLambda0
+            @Override // com.google.android.gms.tasks.OnSuccessListener
+            public final void onSuccess(Object obj) {
+                RolloutsStateSubscriptionsHandler.this.lambda$registerRolloutsStateSubscriber$1(task, rolloutsStateSubscriber, (ConfigContainer) obj);
+            }
+        });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -58,16 +69,5 @@ public class RolloutsStateSubscriptionsHandler {
         } catch (FirebaseRemoteConfigException e) {
             Log.w("FirebaseRemoteConfig", "Exception publishing RolloutsState to subscribers. Continuing to listen for changes.", e);
         }
-    }
-
-    public void registerRolloutsStateSubscriber(final RolloutsStateSubscriber rolloutsStateSubscriber) {
-        this.subscribers.add(rolloutsStateSubscriber);
-        final Task task = this.activatedConfigsCache.get();
-        task.addOnSuccessListener(this.executor, new OnSuccessListener() { // from class: com.google.firebase.remoteconfig.internal.rollouts.RolloutsStateSubscriptionsHandler$$ExternalSyntheticLambda0
-            @Override // com.google.android.gms.tasks.OnSuccessListener
-            public final void onSuccess(Object obj) {
-                RolloutsStateSubscriptionsHandler.this.lambda$registerRolloutsStateSubscriber$1(task, rolloutsStateSubscriber, (ConfigContainer) obj);
-            }
-        });
     }
 }

@@ -1,33 +1,31 @@
 package j$.util.function;
 
-import java.util.function.IntToLongFunction;
+import java.util.function.IntPredicate;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class I implements K {
-    public final /* synthetic */ IntToLongFunction a;
+public final /* synthetic */ class I {
+    public final /* synthetic */ IntPredicate a;
 
-    private /* synthetic */ I(IntToLongFunction intToLongFunction) {
-        this.a = intToLongFunction;
+    private /* synthetic */ I(IntPredicate intPredicate) {
+        this.a = intPredicate;
     }
 
-    public static /* synthetic */ K a(IntToLongFunction intToLongFunction) {
-        if (intToLongFunction == null) {
+    public static /* synthetic */ I a(IntPredicate intPredicate) {
+        if (intPredicate == null) {
             return null;
         }
-        return intToLongFunction instanceof J ? ((J) intToLongFunction).a : new I(intToLongFunction);
-    }
-
-    @Override // j$.util.function.K
-    public final /* synthetic */ long applyAsLong(int i) {
-        return this.a.applyAsLong(i);
+        if (!(intPredicate instanceof J)) {
+            return new I(intPredicate);
+        }
+        throw null;
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        IntToLongFunction intToLongFunction = this.a;
+        IntPredicate intPredicate = this.a;
         if (obj instanceof I) {
             obj = ((I) obj).a;
         }
-        return intToLongFunction.equals(obj);
+        return intPredicate.equals(obj);
     }
 
     public final /* synthetic */ int hashCode() {

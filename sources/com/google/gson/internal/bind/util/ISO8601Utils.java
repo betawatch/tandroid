@@ -7,24 +7,9 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class ISO8601Utils {
     private static final TimeZone TIMEZONE_UTC = DesugarTimeZone.getTimeZone("UTC");
-
-    private static boolean checkOffset(String str, int i, char c) {
-        return i < str.length() && str.charAt(i) == c;
-    }
-
-    private static int indexOfNonDigit(String str, int i) {
-        while (i < str.length()) {
-            char charAt = str.charAt(i);
-            if (charAt < '0' || charAt > '9') {
-                return i;
-            }
-            i++;
-        }
-        return str.length();
-    }
 
     /* JADX WARN: Removed duplicated region for block: B:82:0x01d0  */
     /* JADX WARN: Removed duplicated region for block: B:90:0x01d2  */
@@ -179,6 +164,10 @@ public abstract class ISO8601Utils {
         }
     }
 
+    private static boolean checkOffset(String str, int i, char c) {
+        return i < str.length() && str.charAt(i) == c;
+    }
+
     private static int parseInt(String str, int i, int i2) {
         int i3;
         int i4;
@@ -206,5 +195,16 @@ public abstract class ISO8601Utils {
             i4 = i5;
         }
         return -i3;
+    }
+
+    private static int indexOfNonDigit(String str, int i) {
+        while (i < str.length()) {
+            char charAt = str.charAt(i);
+            if (charAt < '0' || charAt > '9') {
+                return i;
+            }
+            i++;
+        }
+        return str.length();
     }
 }

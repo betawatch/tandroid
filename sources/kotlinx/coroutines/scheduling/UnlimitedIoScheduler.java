@@ -4,7 +4,7 @@ import kotlin.coroutines.CoroutineContext;
 import kotlinx.coroutines.CoroutineDispatcher;
 import kotlinx.coroutines.internal.LimitedDispatcherKt;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class UnlimitedIoScheduler extends CoroutineDispatcher {
     public static final UnlimitedIoScheduler INSTANCE = new UnlimitedIoScheduler();
 

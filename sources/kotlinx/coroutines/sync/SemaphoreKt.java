@@ -3,7 +3,7 @@ package kotlinx.coroutines.sync;
 import kotlinx.coroutines.internal.Symbol;
 import kotlinx.coroutines.internal.SystemPropsKt__SystemProps_commonKt;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class SemaphoreKt {
     private static final Symbol BROKEN;
     private static final Symbol CANCELLED;
@@ -11,6 +11,11 @@ public abstract class SemaphoreKt {
     private static final Symbol PERMIT;
     private static final int SEGMENT_SIZE;
     private static final Symbol TAKEN;
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final SemaphoreSegment createSegment(long j, SemaphoreSegment semaphoreSegment) {
+        return new SemaphoreSegment(j, semaphoreSegment, 0);
+    }
 
     static {
         int systemProp$default;
@@ -23,10 +28,5 @@ public abstract class SemaphoreKt {
         CANCELLED = new Symbol("CANCELLED");
         systemProp$default2 = SystemPropsKt__SystemProps_commonKt.systemProp$default("kotlinx.coroutines.semaphore.segmentSize", 16, 0, 0, 12, (Object) null);
         SEGMENT_SIZE = systemProp$default2;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final SemaphoreSegment createSegment(long j, SemaphoreSegment semaphoreSegment) {
-        return new SemaphoreSegment(j, semaphoreSegment, 0);
     }
 }

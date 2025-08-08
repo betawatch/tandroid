@@ -1,51 +1,36 @@
 package j$.util.function;
 
-import j$.util.function.Predicate;
+import java.util.function.ObjIntConsumer;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class o0 implements java.util.function.Predicate {
-    public final /* synthetic */ Predicate a;
+public final /* synthetic */ class o0 implements q0 {
+    public final /* synthetic */ ObjIntConsumer a;
 
-    private /* synthetic */ o0(Predicate predicate) {
-        this.a = predicate;
+    private /* synthetic */ o0(ObjIntConsumer objIntConsumer) {
+        this.a = objIntConsumer;
     }
 
-    public static /* synthetic */ java.util.function.Predicate a(Predicate predicate) {
-        if (predicate == null) {
+    public static /* synthetic */ q0 a(ObjIntConsumer objIntConsumer) {
+        if (objIntConsumer == null) {
             return null;
         }
-        return predicate instanceof Predicate.VivifiedWrapper ? ((Predicate.VivifiedWrapper) predicate).a : new o0(predicate);
+        return objIntConsumer instanceof p0 ? ((p0) objIntConsumer).a : new o0(objIntConsumer);
     }
 
-    @Override // java.util.function.Predicate
-    public final /* synthetic */ java.util.function.Predicate and(java.util.function.Predicate predicate) {
-        return a(this.a.and(Predicate.VivifiedWrapper.convert(predicate)));
+    @Override // j$.util.function.q0
+    public final /* synthetic */ void accept(Object obj, int i) {
+        this.a.accept(obj, i);
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        Predicate predicate = this.a;
+        ObjIntConsumer objIntConsumer = this.a;
         if (obj instanceof o0) {
             obj = ((o0) obj).a;
         }
-        return predicate.equals(obj);
+        return objIntConsumer.equals(obj);
     }
 
     public final /* synthetic */ int hashCode() {
         return this.a.hashCode();
-    }
-
-    @Override // java.util.function.Predicate
-    public final /* synthetic */ java.util.function.Predicate negate() {
-        return a(this.a.negate());
-    }
-
-    @Override // java.util.function.Predicate
-    public final /* synthetic */ java.util.function.Predicate or(java.util.function.Predicate predicate) {
-        return a(this.a.or(Predicate.VivifiedWrapper.convert(predicate)));
-    }
-
-    @Override // java.util.function.Predicate
-    public final /* synthetic */ boolean test(Object obj) {
-        return this.a.test(obj);
     }
 }

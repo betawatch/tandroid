@@ -193,7 +193,13 @@ public final class zzik {
         this.zzac = i2;
         this.zzab = zzjfVar;
         int i4 = i3 - 1;
-        this.zzad = (i4 == 1 || i4 == 3) ? zzjfVar.zza() : null;
+        if (i4 == 1) {
+            this.zzad = zzjfVar.zza();
+        } else if (i4 != 3) {
+            this.zzad = null;
+        } else {
+            this.zzad = zzjfVar.zza();
+        }
         if (i3 == 1) {
             zzjf zzjfVar2 = zzjf.zza;
             zzjfVar.ordinal();

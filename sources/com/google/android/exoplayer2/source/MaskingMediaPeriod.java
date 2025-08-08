@@ -24,15 +24,21 @@ public final class MaskingMediaPeriod implements MediaPeriod, MediaPeriod.Callba
         this.preparePositionUs = j;
     }
 
-    private long getPreparePositionWithOverride(long j) {
-        long j2 = this.preparePositionOverrideUs;
-        return j2 != -9223372036854775807L ? j2 : j;
+    public long getPreparePositionUs() {
+        return this.preparePositionUs;
     }
 
-    @Override // com.google.android.exoplayer2.source.MediaPeriod, com.google.android.exoplayer2.source.SequenceableLoader
-    public boolean continueLoading(long j) {
-        MediaPeriod mediaPeriod = this.mediaPeriod;
-        return mediaPeriod != null && mediaPeriod.continueLoading(j);
+    public void overridePreparePositionUs(long j) {
+        this.preparePositionOverrideUs = j;
+    }
+
+    public long getPreparePositionOverrideUs() {
+        return this.preparePositionOverrideUs;
+    }
+
+    public void setMediaSource(MediaSource mediaSource) {
+        Assertions.checkState(this.mediaSource == null);
+        this.mediaSource = mediaSource;
     }
 
     public void createPeriod(MediaSource.MediaPeriodId mediaPeriodId) {
@@ -44,43 +50,19 @@ public final class MaskingMediaPeriod implements MediaPeriod, MediaPeriod.Callba
         }
     }
 
-    @Override // com.google.android.exoplayer2.source.MediaPeriod
-    public void discardBuffer(long j, boolean z) {
-        ((MediaPeriod) Util.castNonNull(this.mediaPeriod)).discardBuffer(j, z);
+    public void releasePeriod() {
+        if (this.mediaPeriod != null) {
+            ((MediaSource) Assertions.checkNotNull(this.mediaSource)).releasePeriod(this.mediaPeriod);
+        }
     }
 
     @Override // com.google.android.exoplayer2.source.MediaPeriod
-    public long getAdjustedSeekPositionUs(long j, SeekParameters seekParameters) {
-        return ((MediaPeriod) Util.castNonNull(this.mediaPeriod)).getAdjustedSeekPositionUs(j, seekParameters);
-    }
-
-    @Override // com.google.android.exoplayer2.source.MediaPeriod, com.google.android.exoplayer2.source.SequenceableLoader
-    public long getBufferedPositionUs() {
-        return ((MediaPeriod) Util.castNonNull(this.mediaPeriod)).getBufferedPositionUs();
-    }
-
-    @Override // com.google.android.exoplayer2.source.MediaPeriod, com.google.android.exoplayer2.source.SequenceableLoader
-    public long getNextLoadPositionUs() {
-        return ((MediaPeriod) Util.castNonNull(this.mediaPeriod)).getNextLoadPositionUs();
-    }
-
-    public long getPreparePositionOverrideUs() {
-        return this.preparePositionOverrideUs;
-    }
-
-    public long getPreparePositionUs() {
-        return this.preparePositionUs;
-    }
-
-    @Override // com.google.android.exoplayer2.source.MediaPeriod
-    public TrackGroupArray getTrackGroups() {
-        return ((MediaPeriod) Util.castNonNull(this.mediaPeriod)).getTrackGroups();
-    }
-
-    @Override // com.google.android.exoplayer2.source.MediaPeriod, com.google.android.exoplayer2.source.SequenceableLoader
-    public boolean isLoading() {
+    public void prepare(MediaPeriod.Callback callback, long j) {
+        this.callback = callback;
         MediaPeriod mediaPeriod = this.mediaPeriod;
-        return mediaPeriod != null && mediaPeriod.isLoading();
+        if (mediaPeriod != null) {
+            mediaPeriod.prepare(this, getPreparePositionWithOverride(this.preparePositionUs));
+        }
     }
 
     @Override // com.google.android.exoplayer2.source.MediaPeriod
@@ -96,48 +78,9 @@ public final class MaskingMediaPeriod implements MediaPeriod, MediaPeriod.Callba
         }
     }
 
-    @Override // com.google.android.exoplayer2.source.SequenceableLoader.Callback
-    public void onContinueLoadingRequested(MediaPeriod mediaPeriod) {
-        ((MediaPeriod.Callback) Util.castNonNull(this.callback)).onContinueLoadingRequested(this);
-    }
-
-    @Override // com.google.android.exoplayer2.source.MediaPeriod.Callback
-    public void onPrepared(MediaPeriod mediaPeriod) {
-        ((MediaPeriod.Callback) Util.castNonNull(this.callback)).onPrepared(this);
-    }
-
-    public void overridePreparePositionUs(long j) {
-        this.preparePositionOverrideUs = j;
-    }
-
     @Override // com.google.android.exoplayer2.source.MediaPeriod
-    public void prepare(MediaPeriod.Callback callback, long j) {
-        this.callback = callback;
-        MediaPeriod mediaPeriod = this.mediaPeriod;
-        if (mediaPeriod != null) {
-            mediaPeriod.prepare(this, getPreparePositionWithOverride(this.preparePositionUs));
-        }
-    }
-
-    @Override // com.google.android.exoplayer2.source.MediaPeriod
-    public long readDiscontinuity() {
-        return ((MediaPeriod) Util.castNonNull(this.mediaPeriod)).readDiscontinuity();
-    }
-
-    @Override // com.google.android.exoplayer2.source.MediaPeriod, com.google.android.exoplayer2.source.SequenceableLoader
-    public void reevaluateBuffer(long j) {
-        ((MediaPeriod) Util.castNonNull(this.mediaPeriod)).reevaluateBuffer(j);
-    }
-
-    public void releasePeriod() {
-        if (this.mediaPeriod != null) {
-            ((MediaSource) Assertions.checkNotNull(this.mediaSource)).releasePeriod(this.mediaPeriod);
-        }
-    }
-
-    @Override // com.google.android.exoplayer2.source.MediaPeriod
-    public long seekToUs(long j) {
-        return ((MediaPeriod) Util.castNonNull(this.mediaPeriod)).seekToUs(j);
+    public TrackGroupArray getTrackGroups() {
+        return ((MediaPeriod) Util.castNonNull(this.mediaPeriod)).getTrackGroups();
     }
 
     @Override // com.google.android.exoplayer2.source.MediaPeriod
@@ -153,8 +96,65 @@ public final class MaskingMediaPeriod implements MediaPeriod, MediaPeriod.Callba
         return ((MediaPeriod) Util.castNonNull(this.mediaPeriod)).selectTracks(exoTrackSelectionArr, zArr, sampleStreamArr, zArr2, j2);
     }
 
-    public void setMediaSource(MediaSource mediaSource) {
-        Assertions.checkState(this.mediaSource == null);
-        this.mediaSource = mediaSource;
+    @Override // com.google.android.exoplayer2.source.MediaPeriod
+    public void discardBuffer(long j, boolean z) {
+        ((MediaPeriod) Util.castNonNull(this.mediaPeriod)).discardBuffer(j, z);
+    }
+
+    @Override // com.google.android.exoplayer2.source.MediaPeriod
+    public long readDiscontinuity() {
+        return ((MediaPeriod) Util.castNonNull(this.mediaPeriod)).readDiscontinuity();
+    }
+
+    @Override // com.google.android.exoplayer2.source.MediaPeriod, com.google.android.exoplayer2.source.SequenceableLoader
+    public long getBufferedPositionUs() {
+        return ((MediaPeriod) Util.castNonNull(this.mediaPeriod)).getBufferedPositionUs();
+    }
+
+    @Override // com.google.android.exoplayer2.source.MediaPeriod
+    public long seekToUs(long j) {
+        return ((MediaPeriod) Util.castNonNull(this.mediaPeriod)).seekToUs(j);
+    }
+
+    @Override // com.google.android.exoplayer2.source.MediaPeriod
+    public long getAdjustedSeekPositionUs(long j, SeekParameters seekParameters) {
+        return ((MediaPeriod) Util.castNonNull(this.mediaPeriod)).getAdjustedSeekPositionUs(j, seekParameters);
+    }
+
+    @Override // com.google.android.exoplayer2.source.MediaPeriod, com.google.android.exoplayer2.source.SequenceableLoader
+    public long getNextLoadPositionUs() {
+        return ((MediaPeriod) Util.castNonNull(this.mediaPeriod)).getNextLoadPositionUs();
+    }
+
+    @Override // com.google.android.exoplayer2.source.MediaPeriod, com.google.android.exoplayer2.source.SequenceableLoader
+    public void reevaluateBuffer(long j) {
+        ((MediaPeriod) Util.castNonNull(this.mediaPeriod)).reevaluateBuffer(j);
+    }
+
+    @Override // com.google.android.exoplayer2.source.MediaPeriod, com.google.android.exoplayer2.source.SequenceableLoader
+    public boolean continueLoading(long j) {
+        MediaPeriod mediaPeriod = this.mediaPeriod;
+        return mediaPeriod != null && mediaPeriod.continueLoading(j);
+    }
+
+    @Override // com.google.android.exoplayer2.source.MediaPeriod, com.google.android.exoplayer2.source.SequenceableLoader
+    public boolean isLoading() {
+        MediaPeriod mediaPeriod = this.mediaPeriod;
+        return mediaPeriod != null && mediaPeriod.isLoading();
+    }
+
+    @Override // com.google.android.exoplayer2.source.SequenceableLoader.Callback
+    public void onContinueLoadingRequested(MediaPeriod mediaPeriod) {
+        ((MediaPeriod.Callback) Util.castNonNull(this.callback)).onContinueLoadingRequested(this);
+    }
+
+    @Override // com.google.android.exoplayer2.source.MediaPeriod.Callback
+    public void onPrepared(MediaPeriod mediaPeriod) {
+        ((MediaPeriod.Callback) Util.castNonNull(this.callback)).onPrepared(this);
+    }
+
+    private long getPreparePositionWithOverride(long j) {
+        long j2 = this.preparePositionOverrideUs;
+        return j2 != -9223372036854775807L ? j2 : j;
     }
 }

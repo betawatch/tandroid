@@ -22,15 +22,6 @@ class OptionalProvider implements Provider, Deferred {
         }
     };
 
-    private OptionalProvider(Deferred.DeferredHandler deferredHandler, Provider provider) {
-        this.handler = deferredHandler;
-        this.delegate = provider;
-    }
-
-    static OptionalProvider empty() {
-        return new OptionalProvider(NOOP_HANDLER, EMPTY_PROVIDER);
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$static$0(Provider provider) {
     }
@@ -40,10 +31,13 @@ class OptionalProvider implements Provider, Deferred {
         return null;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$whenAvailable$2(Deferred.DeferredHandler deferredHandler, Deferred.DeferredHandler deferredHandler2, Provider provider) {
-        deferredHandler.handle(provider);
-        deferredHandler2.handle(provider);
+    private OptionalProvider(Deferred.DeferredHandler deferredHandler, Provider provider) {
+        this.handler = deferredHandler;
+        this.delegate = provider;
+    }
+
+    static OptionalProvider empty() {
+        return new OptionalProvider(NOOP_HANDLER, EMPTY_PROVIDER);
     }
 
     static OptionalProvider of(Provider provider) {
@@ -96,5 +90,11 @@ class OptionalProvider implements Provider, Deferred {
         if (provider2 != null) {
             deferredHandler.handle(provider);
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$whenAvailable$2(Deferred.DeferredHandler deferredHandler, Deferred.DeferredHandler deferredHandler2, Provider provider) {
+        deferredHandler.handle(provider);
+        deferredHandler2.handle(provider);
     }
 }

@@ -3,20 +3,26 @@ package com.android.billingclient.api;
 import java.util.List;
 
 /* loaded from: classes.dex */
-public final class zzbj {
+final class zzbj {
     private final List zza;
-    private final BillingResult zzb;
+    private final int zzb;
+    private final String zzc;
 
-    public zzbj(BillingResult billingResult, List list) {
+    zzbj(int i, String str, List list) {
+        this.zzb = i;
+        this.zzc = str;
         this.zza = list;
-        this.zzb = billingResult;
     }
 
-    public final BillingResult zza() {
+    final int zza() {
         return this.zzb;
     }
 
-    public final List zzb() {
+    final String zzb() {
+        return this.zzc;
+    }
+
+    final List zzc() {
         return this.zza;
     }
 }

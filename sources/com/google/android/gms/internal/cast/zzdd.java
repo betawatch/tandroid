@@ -5,7 +5,7 @@ import android.net.ConnectivityManager;
 import android.net.LinkProperties;
 import android.net.Network;
 import android.net.NetworkRequest;
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import androidx.core.content.ContextCompat;
 import com.google.android.gms.cast.internal.Logger;
 import com.google.android.gms.common.internal.Preconditions;
@@ -90,7 +90,7 @@ public final class zzdd implements zzda {
             try {
                 Iterator it = this.zza.iterator();
                 while (it.hasNext()) {
-                    ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
+                    WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
                     if (!this.zzc.isShutdown()) {
                         final zzcz zzczVar = null;
                         this.zzc.execute(new Runnable(zzczVar) { // from class: com.google.android.gms.internal.cast.zzdb
@@ -108,31 +108,19 @@ public final class zzdd implements zzda {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x0025, code lost:
-    
-        r1 = r4.zze.getLinkProperties(r0);
-     */
     @Override // com.google.android.gms.internal.cast.zzda
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final void zza() {
         Network activeNetwork;
-        NetworkRequest.Builder addTransportType;
-        NetworkRequest build;
         LinkProperties linkProperties;
         zzb.d("Start monitoring connectivity changes", new Object[0]);
         if (this.zzh || this.zze == null || ContextCompat.checkSelfPermission(this.zzi, "android.permission.ACCESS_NETWORK_STATE") != 0) {
             return;
         }
         activeNetwork = this.zze.getActiveNetwork();
-        if (activeNetwork != null && linkProperties != null) {
+        if (activeNetwork != null && (linkProperties = this.zze.getLinkProperties(activeNetwork)) != null) {
             zzf(activeNetwork, linkProperties);
         }
-        ConnectivityManager connectivityManager = this.zze;
-        addTransportType = new NetworkRequest.Builder().addTransportType(1);
-        build = addTransportType.build();
-        connectivityManager.registerNetworkCallback(build, this.zzd);
+        this.zze.registerNetworkCallback(new NetworkRequest.Builder().addTransportType(1).build(), this.zzd);
         this.zzh = true;
     }
 

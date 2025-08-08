@@ -3,12 +3,14 @@ package kotlinx.coroutines.flow;
 import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlinx.coroutines.flow.internal.SafeCollector;
 import org.telegram.tgnet.TLObject;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class AbstractFlow implements Flow {
+    public abstract Object collectSafely(FlowCollector flowCollector, Continuation continuation);
+
     /* JADX WARN: Removed duplicated region for block: B:21:0x0037  */
     /* JADX WARN: Removed duplicated region for block: B:8:0x0023  */
     @Override // kotlinx.coroutines.flow.Flow
@@ -17,7 +19,6 @@ public abstract class AbstractFlow implements Flow {
     */
     public final Object collect(FlowCollector flowCollector, Continuation continuation) {
         AbstractFlow$collect$1 abstractFlow$collect$1;
-        Object coroutine_suspended;
         int i;
         Throwable th;
         SafeCollector safeCollector;
@@ -27,7 +28,7 @@ public abstract class AbstractFlow implements Flow {
             if ((i2 & TLObject.FLAG_31) != 0) {
                 abstractFlow$collect$1.label = i2 - TLObject.FLAG_31;
                 Object obj = abstractFlow$collect$1.result;
-                coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = abstractFlow$collect$1.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
@@ -64,13 +65,11 @@ public abstract class AbstractFlow implements Flow {
         }
         abstractFlow$collect$1 = new AbstractFlow$collect$1(this, continuation);
         Object obj2 = abstractFlow$collect$1.result;
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = abstractFlow$collect$1.label;
         if (i != 0) {
         }
         safeCollector.releaseIntercepted();
         return Unit.INSTANCE;
     }
-
-    public abstract Object collectSafely(FlowCollector flowCollector, Continuation continuation);
 }

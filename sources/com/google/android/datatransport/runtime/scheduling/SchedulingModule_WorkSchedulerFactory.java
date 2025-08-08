@@ -23,16 +23,16 @@ public final class SchedulingModule_WorkSchedulerFactory implements Factory {
         this.clockProvider = provider4;
     }
 
+    @Override // javax.inject.Provider
+    public WorkScheduler get() {
+        return workScheduler((Context) this.contextProvider.get(), (EventStore) this.eventStoreProvider.get(), (SchedulerConfig) this.configProvider.get(), (Clock) this.clockProvider.get());
+    }
+
     public static SchedulingModule_WorkSchedulerFactory create(Provider provider, Provider provider2, Provider provider3, Provider provider4) {
         return new SchedulingModule_WorkSchedulerFactory(provider, provider2, provider3, provider4);
     }
 
     public static WorkScheduler workScheduler(Context context, EventStore eventStore, SchedulerConfig schedulerConfig, Clock clock) {
         return (WorkScheduler) Preconditions.checkNotNull(SchedulingModule.workScheduler(context, eventStore, schedulerConfig, clock), "Cannot return null from a non-@Nullable @Provides method");
-    }
-
-    @Override // javax.inject.Provider
-    public WorkScheduler get() {
-        return workScheduler((Context) this.contextProvider.get(), (EventStore) this.eventStoreProvider.get(), (SchedulerConfig) this.configProvider.get(), (Clock) this.clockProvider.get());
     }
 }

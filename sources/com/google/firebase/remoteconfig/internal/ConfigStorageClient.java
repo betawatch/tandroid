@@ -9,7 +9,7 @@ import java.util.Map;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class ConfigStorageClient {
     private static final Map clientInstances = new HashMap();
     private final Context context;
@@ -20,29 +20,14 @@ public class ConfigStorageClient {
         this.fileName = str;
     }
 
-    public static synchronized ConfigStorageClient getInstance(Context context, String str) {
-        ConfigStorageClient configStorageClient;
-        synchronized (ConfigStorageClient.class) {
-            try {
-                Map map = clientInstances;
-                if (!map.containsKey(str)) {
-                    map.put(str, new ConfigStorageClient(context, str));
-                }
-                configStorageClient = (ConfigStorageClient) map.get(str);
-            } catch (Throwable th) {
-                throw th;
-            }
+    public synchronized Void write(ConfigContainer configContainer) {
+        FileOutputStream openFileOutput = this.context.openFileOutput(this.fileName, 0);
+        try {
+            openFileOutput.write(configContainer.toString().getBytes("UTF-8"));
+        } finally {
+            openFileOutput.close();
         }
-        return configStorageClient;
-    }
-
-    public synchronized Void clear() {
-        this.context.deleteFile(this.fileName);
         return null;
-    }
-
-    String getFileName() {
-        return this.fileName;
     }
 
     public synchronized ConfigContainer read() {
@@ -77,13 +62,28 @@ public class ConfigStorageClient {
         }
     }
 
-    public synchronized Void write(ConfigContainer configContainer) {
-        FileOutputStream openFileOutput = this.context.openFileOutput(this.fileName, 0);
-        try {
-            openFileOutput.write(configContainer.toString().getBytes("UTF-8"));
-        } finally {
-            openFileOutput.close();
-        }
+    public synchronized Void clear() {
+        this.context.deleteFile(this.fileName);
         return null;
+    }
+
+    public static synchronized ConfigStorageClient getInstance(Context context, String str) {
+        ConfigStorageClient configStorageClient;
+        synchronized (ConfigStorageClient.class) {
+            try {
+                Map map = clientInstances;
+                if (!map.containsKey(str)) {
+                    map.put(str, new ConfigStorageClient(context, str));
+                }
+                configStorageClient = (ConfigStorageClient) map.get(str);
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+        return configStorageClient;
+    }
+
+    String getFileName() {
+        return this.fileName;
     }
 }

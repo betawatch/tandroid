@@ -11,7 +11,6 @@ import android.graphics.Canvas;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
-import android.os.Build;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -55,6 +54,44 @@ public class PollEditTextCell extends FrameLayout implements SuggestEmojiView.An
     private SimpleTextView textView2;
     private ValueAnimator valueAnimator;
 
+    protected boolean drawDivider() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.SuggestEmojiView.AnchorViewDelegate
+    public BaseFragment getParentFragment() {
+        return null;
+    }
+
+    protected boolean isChecked(PollEditTextCell pollEditTextCell) {
+        return false;
+    }
+
+    protected void onActionModeStart(EditTextBoldCursor editTextBoldCursor, ActionMode actionMode) {
+    }
+
+    protected void onEditTextDraw(EditTextBoldCursor editTextBoldCursor, Canvas canvas) {
+    }
+
+    protected void onEditTextFocusChanged(boolean z) {
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    /* renamed from: onEmojiButtonClicked, reason: merged with bridge method [inline-methods] */
+    public void lambda$new$1(PollEditTextCell pollEditTextCell) {
+    }
+
+    protected void onFieldTouchUp(EditTextBoldCursor editTextBoldCursor) {
+    }
+
+    public boolean onPastedMultipleLines(ArrayList arrayList) {
+        return false;
+    }
+
+    protected boolean shouldShowCheckBox() {
+        return false;
+    }
+
     public PollEditTextCell(Context context, View.OnClickListener onClickListener) {
         this(context, false, 0, onClickListener);
     }
@@ -88,9 +125,34 @@ public class PollEditTextCell extends FrameLayout implements SuggestEmojiView.An
             }
 
             @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+            public boolean onTouchEvent(MotionEvent motionEvent) {
+                if (!isEnabled()) {
+                    return false;
+                }
+                if (motionEvent.getAction() == 1) {
+                    PollEditTextCell.this.onFieldTouchUp(this);
+                }
+                return super.onTouchEvent(motionEvent);
+            }
+
+            @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
             protected void onFocusChanged(boolean z2, int i2, Rect rect) {
                 super.onFocusChanged(z2, i2, rect);
                 PollEditTextCell.this.onEditTextFocusChanged(z2);
+            }
+
+            @Override // org.telegram.ui.Components.EditTextCaption, org.telegram.ui.Components.EditTextBoldCursor, android.view.View
+            public ActionMode startActionMode(ActionMode.Callback callback, int i2) {
+                ActionMode startActionMode = super.startActionMode(callback, i2);
+                PollEditTextCell.this.onActionModeStart(this, startActionMode);
+                return startActionMode;
+            }
+
+            @Override // org.telegram.ui.Components.EditTextCaption, org.telegram.ui.Components.EditTextBoldCursor, android.view.View
+            public ActionMode startActionMode(ActionMode.Callback callback) {
+                ActionMode startActionMode = super.startActionMode(callback);
+                PollEditTextCell.this.onActionModeStart(this, startActionMode);
+                return startActionMode;
             }
 
             @Override // org.telegram.ui.Components.EditTextCaption, android.widget.EditText, android.widget.TextView
@@ -117,31 +179,6 @@ public class PollEditTextCell extends FrameLayout implements SuggestEmojiView.An
                     }
                 }
                 return super.onTextContextMenuItem(i2);
-            }
-
-            @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-            public boolean onTouchEvent(MotionEvent motionEvent) {
-                if (!isEnabled()) {
-                    return false;
-                }
-                if (motionEvent.getAction() == 1) {
-                    PollEditTextCell.this.onFieldTouchUp(this);
-                }
-                return super.onTouchEvent(motionEvent);
-            }
-
-            @Override // org.telegram.ui.Components.EditTextCaption, org.telegram.ui.Components.EditTextBoldCursor, android.view.View
-            public ActionMode startActionMode(ActionMode.Callback callback) {
-                ActionMode startActionMode = super.startActionMode(callback);
-                PollEditTextCell.this.onActionModeStart(this, startActionMode);
-                return startActionMode;
-            }
-
-            @Override // org.telegram.ui.Components.EditTextCaption, org.telegram.ui.Components.EditTextBoldCursor, android.view.View
-            public ActionMode startActionMode(ActionMode.Callback callback, int i2) {
-                ActionMode startActionMode = super.startActionMode(callback, i2);
-                PollEditTextCell.this.onActionModeStart(this, startActionMode);
-                return startActionMode;
             }
         };
         this.textView = editTextCaption;
@@ -228,9 +265,7 @@ public class PollEditTextCell extends FrameLayout implements SuggestEmojiView.An
             ChatActivityEnterViewAnimatedIconView chatActivityEnterViewAnimatedIconView2 = this.emojiButton;
             boolean z6 = LocaleController.isRTL;
             addView(chatActivityEnterViewAnimatedIconView2, LayoutHelper.createFrame(48, 48.0f, z6 ? 3 : 5, z6 ? i5 : 0.0f, 0.0f, z6 ? 0.0f : i5, 0.0f));
-            if (Build.VERSION.SDK_INT >= 21) {
-                this.emojiButton.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_stickers_menuSelector, resourcesProvider)));
-            }
+            this.emojiButton.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_stickers_menuSelector, resourcesProvider)));
             this.emojiButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.PollEditTextCell$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -249,35 +284,6 @@ public class PollEditTextCell extends FrameLayout implements SuggestEmojiView.An
         onCheckBoxClick(this, !this.checkBox.isChecked());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setEmojiButtonVisibility$2(ValueAnimator valueAnimator) {
-        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.emojiButton.setScaleX(floatValue);
-        this.emojiButton.setScaleY(floatValue);
-        this.emojiButton.setAlpha(Math.max(floatValue, 0.8f));
-        SimpleTextView simpleTextView = this.textView2;
-        if (simpleTextView != null && this.deleteImageView == null && simpleTextView.getVisibility() == 0) {
-            this.textView2.setTranslationY(AndroidUtilities.dp(26.0f) * floatValue);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.SuggestEmojiView.AnchorViewDelegate
-    public void addTextChangedListener(TextWatcher textWatcher) {
-        this.textView.addTextChangedListener(textWatcher);
-    }
-
-    public void addTextWatcher(TextWatcher textWatcher) {
-        this.textView.addTextChangedListener(textWatcher);
-    }
-
-    public void callOnDelete() {
-        ImageView imageView = this.deleteImageView;
-        if (imageView == null) {
-            return;
-        }
-        imageView.callOnClick();
-    }
-
     public void createErrorTextView() {
         this.alwaysShowText2 = true;
         SimpleTextView simpleTextView = new SimpleTextView(getContext());
@@ -289,110 +295,9 @@ public class PollEditTextCell extends FrameLayout implements SuggestEmojiView.An
         addView(simpleTextView2, LayoutHelper.createFrame(48, 24.0f, (z ? 3 : 5) | 48, z ? 20.0f : 0.0f, 17.0f, z ? 0.0f : 20.0f, 0.0f));
     }
 
-    protected boolean drawDivider() {
-        return true;
-    }
-
-    public CheckBox2 getCheckBox() {
-        return this.checkBox;
-    }
-
-    @Override // org.telegram.ui.Components.SuggestEmojiView.AnchorViewDelegate
-    public EditTextBoldCursor getEditField() {
-        return this.textView;
-    }
-
-    @Override // org.telegram.ui.Components.SuggestEmojiView.AnchorViewDelegate
-    public Editable getEditText() {
-        return this.textView.getText();
-    }
-
-    public ChatActivityEnterViewAnimatedIconView getEmojiButton() {
-        return this.emojiButton;
-    }
-
-    @Override // org.telegram.ui.Components.SuggestEmojiView.AnchorViewDelegate
-    public CharSequence getFieldText() {
-        if (this.textView.length() > 0) {
-            return this.textView.getText();
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.SuggestEmojiView.AnchorViewDelegate
-    public BaseFragment getParentFragment() {
-        return null;
-    }
-
-    public String getText() {
-        return this.textView.getText().toString();
-    }
-
-    public EditTextBoldCursor getTextView() {
-        return this.textView;
-    }
-
-    public SimpleTextView getTextView2() {
-        return this.textView2;
-    }
-
-    protected boolean isChecked(PollEditTextCell pollEditTextCell) {
-        return false;
-    }
-
-    protected void onActionModeStart(EditTextBoldCursor editTextBoldCursor, ActionMode actionMode) {
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    protected void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        if (this.checkBox != null) {
-            setShowCheckBox(shouldShowCheckBox(), false);
-            this.checkBox.setChecked(isChecked(this), false);
-        }
-    }
-
-    protected void onCheckBoxClick(PollEditTextCell pollEditTextCell, boolean z) {
-        this.checkBox.setChecked(z, true);
-    }
-
-    @Override // android.view.View
-    protected void onDraw(Canvas canvas) {
-        float dp;
-        int i;
-        if (this.needDivider && drawDivider()) {
-            if (LocaleController.isRTL) {
-                dp = 0.0f;
-            } else {
-                dp = AndroidUtilities.dp(this.moveImageView != null ? 63.0f : 20.0f);
-            }
-            float measuredHeight = getMeasuredHeight() - 1;
-            int measuredWidth = getMeasuredWidth();
-            if (LocaleController.isRTL) {
-                i = AndroidUtilities.dp(this.moveImageView != null ? 63.0f : 20.0f);
-            } else {
-                i = 0;
-            }
-            canvas.drawLine(dp, measuredHeight, measuredWidth - i, getMeasuredHeight() - 1, Theme.dividerPaint);
-        }
-    }
-
-    protected void onEditTextDraw(EditTextBoldCursor editTextBoldCursor, Canvas canvas) {
-    }
-
-    protected void onEditTextFocusChanged(boolean z) {
-    }
-
-    /* JADX INFO: Access modifiers changed from: protected */
-    /* renamed from: onEmojiButtonClicked, reason: merged with bridge method [inline-methods] */
-    public void lambda$new$1(PollEditTextCell pollEditTextCell) {
-    }
-
-    protected void onFieldTouchUp(EditTextBoldCursor editTextBoldCursor) {
-    }
-
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
+        int i3;
         int size = View.MeasureSpec.getSize(i);
         ImageView imageView = this.deleteImageView;
         if (imageView != null) {
@@ -414,7 +319,14 @@ public class PollEditTextCell extends FrameLayout implements SuggestEmojiView.An
         if (checkBox2 != null) {
             checkBox2.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
         }
-        this.textView.measure(View.MeasureSpec.makeMeasureSpec(((size - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.dp(this.textView2 == null ? 42 : this.deleteImageView == null ? 70 : this.emojiButton != null ? NotificationCenter.dialogsUnreadCounterChanged : 122), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
+        if (this.textView2 == null) {
+            i3 = 42;
+        } else if (this.deleteImageView == null) {
+            i3 = 70;
+        } else {
+            i3 = this.emojiButton != null ? NotificationCenter.dialogsUnreadCounterChanged : 122;
+        }
+        this.textView.measure(View.MeasureSpec.makeMeasureSpec(((size - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.dp(i3), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
         int measuredHeight = this.textView.getMeasuredHeight();
         setMeasuredDimension(size, Math.max(AndroidUtilities.dp(50.0f), this.textView.getMeasuredHeight()) + (this.needDivider ? 1 : 0));
         SimpleTextView simpleTextView2 = this.textView2;
@@ -424,12 +336,108 @@ public class PollEditTextCell extends FrameLayout implements SuggestEmojiView.An
         simpleTextView2.setAlpha(measuredHeight >= AndroidUtilities.dp(52.0f) ? 1.0f : 0.0f);
     }
 
-    public boolean onPastedMultipleLines(ArrayList arrayList) {
-        return false;
+    @Override // android.view.ViewGroup, android.view.View
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        if (this.checkBox != null) {
+            setShowCheckBox(shouldShowCheckBox(), false);
+            this.checkBox.setChecked(isChecked(this), false);
+        }
+    }
+
+    protected void onCheckBoxClick(PollEditTextCell pollEditTextCell, boolean z) {
+        this.checkBox.setChecked(z, true);
+    }
+
+    public void callOnDelete() {
+        ImageView imageView = this.deleteImageView;
+        if (imageView == null) {
+            return;
+        }
+        imageView.callOnClick();
+    }
+
+    public void setShowNextButton(boolean z) {
+        this.showNextButton = z;
+    }
+
+    public EditTextBoldCursor getTextView() {
+        return this.textView;
+    }
+
+    public CheckBox2 getCheckBox() {
+        return this.checkBox;
+    }
+
+    public void addTextWatcher(TextWatcher textWatcher) {
+        this.textView.addTextChangedListener(textWatcher);
     }
 
     public void setChecked(boolean z, boolean z2) {
         this.checkBox.setChecked(z, z2);
+    }
+
+    public String getText() {
+        return this.textView.getText().toString();
+    }
+
+    public void setTextColor(int i) {
+        this.textView.setTextColor(i);
+    }
+
+    public void setShowCheckBox(boolean z, boolean z2) {
+        if (z == (this.checkBox.getTag() != null)) {
+            return;
+        }
+        AnimatorSet animatorSet = this.checkBoxAnimation;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+            this.checkBoxAnimation = null;
+        }
+        this.checkBox.setTag(z ? 1 : null);
+        if (z2) {
+            AnimatorSet animatorSet2 = new AnimatorSet();
+            this.checkBoxAnimation = animatorSet2;
+            CheckBox2 checkBox2 = this.checkBox;
+            Property property = View.ALPHA;
+            animatorSet2.playTogether(ObjectAnimator.ofFloat(checkBox2, (Property<CheckBox2, Float>) property, z ? 1.0f : 0.0f), ObjectAnimator.ofFloat(this.moveImageView, (Property<ImageView, Float>) property, z ? 0.0f : 1.0f));
+            this.checkBoxAnimation.setDuration(180L);
+            this.checkBoxAnimation.start();
+            return;
+        }
+        this.checkBox.setAlpha(z ? 1.0f : 0.0f);
+        this.moveImageView.setAlpha(z ? 0.0f : 1.0f);
+    }
+
+    public void setTextAndHint(CharSequence charSequence, String str, boolean z) {
+        ImageView imageView = this.deleteImageView;
+        if (imageView != null) {
+            imageView.setTag(null);
+        }
+        this.textView.setText(charSequence);
+        if (!TextUtils.isEmpty(charSequence)) {
+            EditTextBoldCursor editTextBoldCursor = this.textView;
+            editTextBoldCursor.setSelection(editTextBoldCursor.length());
+        }
+        this.textView.setHint(str);
+        this.needDivider = z;
+        setWillNotDraw(!z);
+    }
+
+    public ChatActivityEnterViewAnimatedIconView getEmojiButton() {
+        return this.emojiButton;
+    }
+
+    public void setText2(String str) {
+        SimpleTextView simpleTextView = this.textView2;
+        if (simpleTextView == null) {
+            return;
+        }
+        simpleTextView.setText(str);
+    }
+
+    public SimpleTextView getTextView2() {
+        return this.textView2;
     }
 
     public void setEmojiButtonVisibility(final boolean z) {
@@ -457,6 +465,14 @@ public class PollEditTextCell extends FrameLayout implements SuggestEmojiView.An
             }
 
             @Override // android.animation.Animator.AnimatorListener
+            public void onAnimationRepeat(Animator animator) {
+            }
+
+            @Override // android.animation.Animator.AnimatorListener
+            public void onAnimationStart(Animator animator) {
+            }
+
+            @Override // android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 if (!z) {
                     PollEditTextCell.this.emojiButton.setVisibility(8);
@@ -466,17 +482,42 @@ public class PollEditTextCell extends FrameLayout implements SuggestEmojiView.An
                 PollEditTextCell.this.emojiButton.setScaleY(1.0f);
                 PollEditTextCell.this.emojiButton.setAlpha(0.8f);
             }
-
-            @Override // android.animation.Animator.AnimatorListener
-            public void onAnimationRepeat(Animator animator) {
-            }
-
-            @Override // android.animation.Animator.AnimatorListener
-            public void onAnimationStart(Animator animator) {
-            }
         });
         this.valueAnimator.setDuration(200L);
         this.valueAnimator.start();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setEmojiButtonVisibility$2(ValueAnimator valueAnimator) {
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        this.emojiButton.setScaleX(floatValue);
+        this.emojiButton.setScaleY(floatValue);
+        this.emojiButton.setAlpha(Math.max(floatValue, 0.8f));
+        SimpleTextView simpleTextView = this.textView2;
+        if (simpleTextView != null && this.deleteImageView == null && simpleTextView.getVisibility() == 0) {
+            this.textView2.setTranslationY(AndroidUtilities.dp(26.0f) * floatValue);
+        }
+    }
+
+    @Override // android.view.View
+    protected void onDraw(Canvas canvas) {
+        float dp;
+        int i;
+        if (this.needDivider && drawDivider()) {
+            if (LocaleController.isRTL) {
+                dp = 0.0f;
+            } else {
+                dp = AndroidUtilities.dp(this.moveImageView != null ? 63.0f : 20.0f);
+            }
+            float measuredHeight = getMeasuredHeight() - 1;
+            int measuredWidth = getMeasuredWidth();
+            if (LocaleController.isRTL) {
+                i = AndroidUtilities.dp(this.moveImageView != null ? 63.0f : 20.0f);
+            } else {
+                i = 0;
+            }
+            canvas.drawLine(dp, measuredHeight, measuredWidth - i, getMeasuredHeight() - 1, Theme.dividerPaint);
+        }
     }
 
     @Override // org.telegram.ui.Components.SuggestEmojiView.AnchorViewDelegate
@@ -484,62 +525,26 @@ public class PollEditTextCell extends FrameLayout implements SuggestEmojiView.An
         this.textView.setText(charSequence);
     }
 
-    public void setShowCheckBox(boolean z, boolean z2) {
-        if (z == (this.checkBox.getTag() != null)) {
-            return;
-        }
-        AnimatorSet animatorSet = this.checkBoxAnimation;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-            this.checkBoxAnimation = null;
-        }
-        this.checkBox.setTag(z ? 1 : null);
-        if (!z2) {
-            this.checkBox.setAlpha(z ? 1.0f : 0.0f);
-            this.moveImageView.setAlpha(z ? 0.0f : 1.0f);
-            return;
-        }
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        this.checkBoxAnimation = animatorSet2;
-        CheckBox2 checkBox2 = this.checkBox;
-        Property property = View.ALPHA;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(checkBox2, (Property<CheckBox2, Float>) property, z ? 1.0f : 0.0f), ObjectAnimator.ofFloat(this.moveImageView, (Property<ImageView, Float>) property, z ? 0.0f : 1.0f));
-        this.checkBoxAnimation.setDuration(180L);
-        this.checkBoxAnimation.start();
+    @Override // org.telegram.ui.Components.SuggestEmojiView.AnchorViewDelegate
+    public void addTextChangedListener(TextWatcher textWatcher) {
+        this.textView.addTextChangedListener(textWatcher);
     }
 
-    public void setShowNextButton(boolean z) {
-        this.showNextButton = z;
+    @Override // org.telegram.ui.Components.SuggestEmojiView.AnchorViewDelegate
+    public EditTextBoldCursor getEditField() {
+        return this.textView;
     }
 
-    public void setText2(String str) {
-        SimpleTextView simpleTextView = this.textView2;
-        if (simpleTextView == null) {
-            return;
+    @Override // org.telegram.ui.Components.SuggestEmojiView.AnchorViewDelegate
+    public CharSequence getFieldText() {
+        if (this.textView.length() > 0) {
+            return this.textView.getText();
         }
-        simpleTextView.setText(str);
+        return null;
     }
 
-    public void setTextAndHint(CharSequence charSequence, String str, boolean z) {
-        ImageView imageView = this.deleteImageView;
-        if (imageView != null) {
-            imageView.setTag(null);
-        }
-        this.textView.setText(charSequence);
-        if (!TextUtils.isEmpty(charSequence)) {
-            EditTextBoldCursor editTextBoldCursor = this.textView;
-            editTextBoldCursor.setSelection(editTextBoldCursor.length());
-        }
-        this.textView.setHint(str);
-        this.needDivider = z;
-        setWillNotDraw(!z);
-    }
-
-    public void setTextColor(int i) {
-        this.textView.setTextColor(i);
-    }
-
-    protected boolean shouldShowCheckBox() {
-        return false;
+    @Override // org.telegram.ui.Components.SuggestEmojiView.AnchorViewDelegate
+    public Editable getEditText() {
+        return this.textView.getText();
     }
 }

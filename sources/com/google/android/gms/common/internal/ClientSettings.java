@@ -2,7 +2,7 @@ package com.google.android.gms.common.internal;
 
 import android.accounts.Account;
 import android.view.View;
-import androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import androidx.collection.ArraySet;
 import com.google.android.gms.common.api.Api;
 import com.google.android.gms.signin.SignInOptions;
@@ -31,7 +31,7 @@ public final class ClientSettings {
         private ArraySet zab;
         private String zac;
         private String zad;
-        private SignInOptions zae = SignInOptions.zaa;
+        private final SignInOptions zae = SignInOptions.zaa;
 
         public ClientSettings build() {
             return new ClientSettings(this.zaa, this.zab, null, 0, null, this.zac, this.zad, this.zae, false);
@@ -61,26 +61,6 @@ public final class ClientSettings {
         }
     }
 
-    public ClientSettings(Account account, Set set, Map map, int i, View view, String str, String str2, SignInOptions signInOptions, boolean z) {
-        this.zaa = account;
-        Set emptySet = set == null ? Collections.emptySet() : Collections.unmodifiableSet(set);
-        this.zab = emptySet;
-        map = map == null ? Collections.emptyMap() : map;
-        this.zad = map;
-        this.zaf = view;
-        this.zae = i;
-        this.zag = str;
-        this.zah = str2;
-        this.zai = signInOptions == null ? SignInOptions.zaa : signInOptions;
-        HashSet hashSet = new HashSet(emptySet);
-        Iterator it = map.values().iterator();
-        if (it.hasNext()) {
-            ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
-            throw null;
-        }
-        this.zac = Collections.unmodifiableSet(hashSet);
-    }
-
     public Account getAccount() {
         return this.zaa;
     }
@@ -103,7 +83,7 @@ public final class ClientSettings {
     }
 
     public Set getApplicableScopes(Api api) {
-        ActivityResultRegistry$$ExternalSyntheticThrowCCEIfNotNull0.m(this.zad.get(api));
+        WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(this.zad.get(api));
         return this.zab;
     }
 
@@ -133,5 +113,25 @@ public final class ClientSettings {
 
     public final void zae(Integer num) {
         this.zaj = num;
+    }
+
+    public ClientSettings(Account account, Set set, Map map, int i, View view, String str, String str2, SignInOptions signInOptions, boolean z) {
+        this.zaa = account;
+        Set emptySet = set == null ? Collections.emptySet() : Collections.unmodifiableSet(set);
+        this.zab = emptySet;
+        map = map == null ? Collections.emptyMap() : map;
+        this.zad = map;
+        this.zaf = view;
+        this.zae = i;
+        this.zag = str;
+        this.zah = str2;
+        this.zai = signInOptions == null ? SignInOptions.zaa : signInOptions;
+        HashSet hashSet = new HashSet(emptySet);
+        Iterator it = map.values().iterator();
+        if (it.hasNext()) {
+            WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
+            throw null;
+        }
+        this.zac = Collections.unmodifiableSet(hashSet);
     }
 }

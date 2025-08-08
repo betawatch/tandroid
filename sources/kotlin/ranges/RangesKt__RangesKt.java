@@ -1,5 +1,5 @@
 package kotlin.ranges;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 abstract class RangesKt__RangesKt {
 }

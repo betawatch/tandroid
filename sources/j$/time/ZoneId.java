@@ -15,6 +15,10 @@ import java.util.TimeZone;
 public abstract class ZoneId implements Serializable {
     public static final Map a;
 
+    public abstract String getId();
+
+    public abstract ZoneRules getRules();
+
     static {
         HashMap hashMap = new HashMap(64);
         hashMap.put("ACT", "Australia/Darwin");
@@ -48,60 +52,6 @@ public abstract class ZoneId implements Serializable {
         a = Collections.unmodifiableMap(hashMap);
     }
 
-    ZoneId() {
-        if (getClass() != ZoneOffset.class && getClass() != n.class) {
-            throw new AssertionError("Invalid subclass");
-        }
-    }
-
-    public static ZoneId m(String str, ZoneOffset zoneOffset) {
-        A.z(str, "prefix");
-        A.z(zoneOffset, "offset");
-        if (str.length() == 0) {
-            return zoneOffset;
-        }
-        if (!str.equals("GMT") && !str.equals("UTC") && !str.equals("UT")) {
-            throw new IllegalArgumentException("prefix should be GMT, UTC or UT, is: ".concat(str));
-        }
-        if (zoneOffset.getTotalSeconds() != 0) {
-            str = str.concat(zoneOffset.getId());
-        }
-        return new n(str, ZoneRules.i(zoneOffset));
-    }
-
-    private static ZoneId n(String str, int i) {
-        String substring = str.substring(0, i);
-        if (str.length() == i) {
-            return m(substring, ZoneOffset.UTC);
-        }
-        if (str.charAt(i) != '+' && str.charAt(i) != '-') {
-            return n.o(str);
-        }
-        try {
-            ZoneOffset o = ZoneOffset.o(str.substring(i));
-            return o == ZoneOffset.UTC ? m(substring, o) : m(substring, o);
-        } catch (c e) {
-            throw new c("Invalid ID for offset-based ZoneId: ".concat(str), e);
-        }
-    }
-
-    public static ZoneId of(String str) {
-        int i;
-        A.z(str, "zoneId");
-        if (str.length() <= 1 || str.startsWith("+") || str.startsWith("-")) {
-            return ZoneOffset.o(str);
-        }
-        if (str.startsWith("UTC") || str.startsWith("GMT")) {
-            i = 3;
-        } else {
-            if (!str.startsWith("UT")) {
-                return n.o(str);
-            }
-            i = 2;
-        }
-        return n(str, i);
-    }
-
     public static ZoneId systemDefault() {
         String id = TimeZone.getDefault().getID();
         A.z(id, "zoneId");
@@ -114,6 +64,66 @@ public abstract class ZoneId implements Serializable {
         return of(id);
     }
 
+    public static ZoneId l(String str, ZoneOffset zoneOffset) {
+        A.z(str, "prefix");
+        A.z(zoneOffset, "offset");
+        if (str.length() == 0) {
+            return zoneOffset;
+        }
+        if (!str.equals("GMT") && !str.equals("UTC") && !str.equals("UT")) {
+            throw new IllegalArgumentException("prefix should be GMT, UTC or UT, is: ".concat(str));
+        }
+        if (zoneOffset.getTotalSeconds() != 0) {
+            str = str.concat(zoneOffset.getId());
+        }
+        return new n(str, ZoneRules.h(zoneOffset));
+    }
+
+    public static ZoneId of(String str) {
+        A.z(str, "zoneId");
+        if (str.length() <= 1 || str.startsWith("+") || str.startsWith("-")) {
+            return ZoneOffset.n(str);
+        }
+        if (str.startsWith("UTC") || str.startsWith("GMT")) {
+            return m(str, 3);
+        }
+        if (str.startsWith("UT")) {
+            return m(str, 2);
+        }
+        return n.n(str);
+    }
+
+    private static ZoneId m(String str, int i) {
+        String substring = str.substring(0, i);
+        if (str.length() == i) {
+            return l(substring, ZoneOffset.UTC);
+        }
+        if (str.charAt(i) != '+' && str.charAt(i) != '-') {
+            return n.n(str);
+        }
+        try {
+            ZoneOffset n = ZoneOffset.n(str.substring(i));
+            if (n == ZoneOffset.UTC) {
+                return l(substring, n);
+            }
+            return l(substring, n);
+        } catch (c e) {
+            throw new c("Invalid ID for offset-based ZoneId: ".concat(str), e);
+        }
+    }
+
+    ZoneId() {
+        if (getClass() != ZoneOffset.class && getClass() != n.class) {
+            throw new AssertionError("Invalid subclass");
+        }
+    }
+
+    public String getDisplayName(TextStyle textStyle, Locale locale) {
+        p pVar = new p();
+        pVar.o(textStyle);
+        return pVar.v(locale).a(new m(this));
+    }
+
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -123,16 +133,6 @@ public abstract class ZoneId implements Serializable {
         }
         return false;
     }
-
-    public String getDisplayName(TextStyle textStyle, Locale locale) {
-        p pVar = new p();
-        pVar.o(textStyle);
-        return pVar.v(locale).a(new m(this));
-    }
-
-    public abstract String getId();
-
-    public abstract ZoneRules getRules();
 
     public int hashCode() {
         return getId().hashCode();

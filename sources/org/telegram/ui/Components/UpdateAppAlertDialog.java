@@ -31,7 +31,7 @@ import org.telegram.ui.ActionBar.BottomSheet;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class UpdateAppAlertDialog extends BottomSheet {
     private int accountNum;
     private BetaUpdate appUpdate;
@@ -42,6 +42,11 @@ public class UpdateAppAlertDialog extends BottomSheet {
     private View shadow;
     private AnimatorSet shadowAnimation;
     private Drawable shadowDrawable;
+
+    @Override // org.telegram.ui.ActionBar.BottomSheet
+    protected boolean canDismissWithSwipe() {
+        return false;
+    }
 
     public UpdateAppAlertDialog(Context context, BetaUpdate betaUpdate, int i) {
         super(context, false);
@@ -56,18 +61,18 @@ public class UpdateAppAlertDialog extends BottomSheet {
         mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_dialogBackground), PorterDuff.Mode.MULTIPLY));
         FrameLayout frameLayout = new FrameLayout(context) { // from class: org.telegram.ui.Components.UpdateAppAlertDialog.1
             @Override // android.view.View
-            protected void onDraw(Canvas canvas) {
-                UpdateAppAlertDialog.this.shadowDrawable.setBounds(0, (int) ((UpdateAppAlertDialog.this.scrollOffsetY - ((BottomSheet) UpdateAppAlertDialog.this).backgroundPaddingTop) - getTranslationY()), getMeasuredWidth(), getMeasuredHeight());
-                UpdateAppAlertDialog.this.shadowDrawable.draw(canvas);
+            public void setTranslationY(float f) {
+                super.setTranslationY(f);
+                UpdateAppAlertDialog.this.updateLayout();
             }
 
             @Override // android.view.ViewGroup
             public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-                if (motionEvent.getAction() != 0 || UpdateAppAlertDialog.this.scrollOffsetY == 0 || motionEvent.getY() >= UpdateAppAlertDialog.this.scrollOffsetY) {
-                    return super.onInterceptTouchEvent(motionEvent);
+                if (motionEvent.getAction() == 0 && UpdateAppAlertDialog.this.scrollOffsetY != 0 && motionEvent.getY() < UpdateAppAlertDialog.this.scrollOffsetY) {
+                    UpdateAppAlertDialog.this.dismiss();
+                    return true;
                 }
-                UpdateAppAlertDialog.this.dismiss();
-                return true;
+                return super.onInterceptTouchEvent(motionEvent);
             }
 
             @Override // android.view.View
@@ -76,21 +81,15 @@ public class UpdateAppAlertDialog extends BottomSheet {
             }
 
             @Override // android.view.View
-            public void setTranslationY(float f) {
-                super.setTranslationY(f);
-                UpdateAppAlertDialog.this.updateLayout();
+            protected void onDraw(Canvas canvas) {
+                UpdateAppAlertDialog.this.shadowDrawable.setBounds(0, (int) ((UpdateAppAlertDialog.this.scrollOffsetY - ((BottomSheet) UpdateAppAlertDialog.this).backgroundPaddingTop) - getTranslationY()), getMeasuredWidth(), getMeasuredHeight());
+                UpdateAppAlertDialog.this.shadowDrawable.draw(canvas);
             }
         };
         frameLayout.setWillNotDraw(false);
         this.containerView = frameLayout;
         NestedScrollView nestedScrollView = new NestedScrollView(context) { // from class: org.telegram.ui.Components.UpdateAppAlertDialog.2
             private boolean ignoreLayout;
-
-            @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-            protected void onLayout(boolean z, int i2, int i3, int i4, int i5) {
-                super.onLayout(z, i2, i3, i4, i5);
-                UpdateAppAlertDialog.this.updateLayout();
-            }
 
             @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i2, int i3) {
@@ -112,9 +111,9 @@ public class UpdateAppAlertDialog extends BottomSheet {
                 super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
             }
 
-            @Override // androidx.core.widget.NestedScrollView, android.view.View
-            protected void onScrollChanged(int i2, int i3, int i4, int i5) {
-                super.onScrollChanged(i2, i3, i4, i5);
+            @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+            protected void onLayout(boolean z, int i2, int i3, int i4, int i5) {
+                super.onLayout(z, i2, i3, i4, i5);
                 UpdateAppAlertDialog.this.updateLayout();
             }
 
@@ -124,6 +123,12 @@ public class UpdateAppAlertDialog extends BottomSheet {
                     return;
                 }
                 super.requestLayout();
+            }
+
+            @Override // androidx.core.widget.NestedScrollView, android.view.View
+            protected void onScrollChanged(int i2, int i3, int i4, int i5) {
+                super.onScrollChanged(i2, i3, i4, i5);
+                UpdateAppAlertDialog.this.updateLayout();
             }
         };
         this.scrollView = nestedScrollView;
@@ -244,20 +249,20 @@ public class UpdateAppAlertDialog extends BottomSheet {
         this.shadowAnimation.setDuration(150L);
         this.shadowAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.UpdateAppAlertDialog.3
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-            public void onAnimationCancel(Animator animator) {
-                if (UpdateAppAlertDialog.this.shadowAnimation == null || !UpdateAppAlertDialog.this.shadowAnimation.equals(animator)) {
-                    return;
-                }
-                UpdateAppAlertDialog.this.shadowAnimation = null;
-            }
-
-            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 if (UpdateAppAlertDialog.this.shadowAnimation == null || !UpdateAppAlertDialog.this.shadowAnimation.equals(animator)) {
                     return;
                 }
                 if (!z) {
                     UpdateAppAlertDialog.this.shadow.setVisibility(4);
+                }
+                UpdateAppAlertDialog.this.shadowAnimation = null;
+            }
+
+            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+            public void onAnimationCancel(Animator animator) {
+                if (UpdateAppAlertDialog.this.shadowAnimation == null || !UpdateAppAlertDialog.this.shadowAnimation.equals(animator)) {
+                    return;
                 }
                 UpdateAppAlertDialog.this.shadowAnimation = null;
             }
@@ -278,10 +283,5 @@ public class UpdateAppAlertDialog extends BottomSheet {
             this.scrollOffsetY = max;
             this.scrollView.invalidate();
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.BottomSheet
-    protected boolean canDismissWithSwipe() {
-        return false;
     }
 }

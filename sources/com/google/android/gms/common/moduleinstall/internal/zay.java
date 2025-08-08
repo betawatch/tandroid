@@ -31,10 +31,6 @@ public final class zay extends GoogleApi implements ModuleInstallClient {
         zae = new Api("ModuleInstall.API", zaqVar, clientKey);
     }
 
-    public zay(Context context) {
-        super(context, zae, Api.ApiOptions.NO_OPTIONS, GoogleApi.Settings.DEFAULT_SETTINGS);
-    }
-
     static final ApiFeatureRequest zad(boolean z, OptionalModuleApi... optionalModuleApiArr) {
         Preconditions.checkNotNull(optionalModuleApiArr, "Requested APIs must not be null.");
         Preconditions.checkArgument(optionalModuleApiArr.length > 0, "Please provide at least one OptionalModuleApi.");
@@ -54,12 +50,10 @@ public final class zay extends GoogleApi implements ModuleInstallClient {
         builder.setFeatures(zav.zaa);
         builder.setMethodKey(27301);
         builder.setAutoResolveMissingFeatures(false);
-        builder.run(new RemoteCall() { // from class: com.google.android.gms.common.moduleinstall.internal.zap
+        builder.run(new RemoteCall() { // from class: com.google.android.gms.common.moduleinstall.internal.zal
             @Override // com.google.android.gms.common.api.internal.RemoteCall
             public final void accept(Object obj, Object obj2) {
-                zay zayVar = zay.this;
-                ApiFeatureRequest apiFeatureRequest = zad2;
-                ((zaf) ((zaz) obj).getService()).zae(new zar(zayVar, (TaskCompletionSource) obj2), apiFeatureRequest);
+                ((zaf) ((zaz) obj).getService()).zae(new zar(zay.this, (TaskCompletionSource) obj2), zad2);
             }
         });
         return doRead(builder.build());
@@ -70,22 +64,23 @@ public final class zay extends GoogleApi implements ModuleInstallClient {
         final ApiFeatureRequest fromModuleInstallRequest = ApiFeatureRequest.fromModuleInstallRequest(moduleInstallRequest);
         moduleInstallRequest.getListener();
         moduleInstallRequest.getListenerExecutor();
-        boolean zaa = moduleInstallRequest.zaa();
         if (fromModuleInstallRequest.getApiFeatures().isEmpty()) {
             return Tasks.forResult(new ModuleInstallResponse(0));
         }
         TaskApiCall.Builder builder = TaskApiCall.builder();
         builder.setFeatures(zav.zaa);
-        builder.setAutoResolveMissingFeatures(zaa);
+        builder.setAutoResolveMissingFeatures(true);
         builder.setMethodKey(27304);
         builder.run(new RemoteCall() { // from class: com.google.android.gms.common.moduleinstall.internal.zao
             @Override // com.google.android.gms.common.api.internal.RemoteCall
             public final void accept(Object obj, Object obj2) {
-                zay zayVar = zay.this;
-                ApiFeatureRequest apiFeatureRequest = fromModuleInstallRequest;
-                ((zaf) ((zaz) obj).getService()).zag(new zat(zayVar, (TaskCompletionSource) obj2), apiFeatureRequest, null);
+                ((zaf) ((zaz) obj).getService()).zag(new zat(zay.this, (TaskCompletionSource) obj2), fromModuleInstallRequest, null);
             }
         });
         return doRead(builder.build());
+    }
+
+    public zay(Context context) {
+        super(context, zae, Api.ApiOptions.NO_OPTIONS, GoogleApi.Settings.DEFAULT_SETTINGS);
     }
 }

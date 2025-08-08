@@ -13,15 +13,6 @@ public class SimpleDecoderOutputBuffer extends DecoderOutputBuffer {
         this.owner = owner;
     }
 
-    @Override // com.google.android.exoplayer2.decoder.Buffer
-    public void clear() {
-        super.clear();
-        ByteBuffer byteBuffer = this.data;
-        if (byteBuffer != null) {
-            byteBuffer.clear();
-        }
-    }
-
     public ByteBuffer init(long j, int i) {
         this.timeUs = j;
         ByteBuffer byteBuffer = this.data;
@@ -31,6 +22,15 @@ public class SimpleDecoderOutputBuffer extends DecoderOutputBuffer {
         this.data.position(0);
         this.data.limit(i);
         return this.data;
+    }
+
+    @Override // com.google.android.exoplayer2.decoder.Buffer
+    public void clear() {
+        super.clear();
+        ByteBuffer byteBuffer = this.data;
+        if (byteBuffer != null) {
+            byteBuffer.clear();
+        }
     }
 
     @Override // com.google.android.exoplayer2.decoder.DecoderOutputBuffer

@@ -55,37 +55,10 @@ final class zzw<TResult> extends Task<TResult> {
     }
 
     @Override // com.google.android.gms.tasks.Task
-    public final Task<TResult> addOnCanceledListener(OnCanceledListener onCanceledListener) {
-        addOnCanceledListener(TaskExecutors.MAIN_THREAD, onCanceledListener);
-        return this;
-    }
-
-    @Override // com.google.android.gms.tasks.Task
-    public final Task<TResult> addOnCanceledListener(Executor executor, OnCanceledListener onCanceledListener) {
-        this.zzb.zza(new zzh(executor, onCanceledListener));
-        zzi();
-        return this;
-    }
-
-    @Override // com.google.android.gms.tasks.Task
     public final Task<TResult> addOnCompleteListener(Activity activity, OnCompleteListener<TResult> onCompleteListener) {
         zzj zzjVar = new zzj(TaskExecutors.MAIN_THREAD, onCompleteListener);
         this.zzb.zza(zzjVar);
         zzv.zza(activity).zzb(zzjVar);
-        zzi();
-        return this;
-    }
-
-    @Override // com.google.android.gms.tasks.Task
-    public final Task<TResult> addOnCompleteListener(OnCompleteListener<TResult> onCompleteListener) {
-        this.zzb.zza(new zzj(TaskExecutors.MAIN_THREAD, onCompleteListener));
-        zzi();
-        return this;
-    }
-
-    @Override // com.google.android.gms.tasks.Task
-    public final Task<TResult> addOnCompleteListener(Executor executor, OnCompleteListener<TResult> onCompleteListener) {
-        this.zzb.zza(new zzj(executor, onCompleteListener));
         zzi();
         return this;
     }
@@ -100,36 +73,10 @@ final class zzw<TResult> extends Task<TResult> {
     }
 
     @Override // com.google.android.gms.tasks.Task
-    public final Task<TResult> addOnFailureListener(OnFailureListener onFailureListener) {
-        addOnFailureListener(TaskExecutors.MAIN_THREAD, onFailureListener);
-        return this;
-    }
-
-    @Override // com.google.android.gms.tasks.Task
-    public final Task<TResult> addOnFailureListener(Executor executor, OnFailureListener onFailureListener) {
-        this.zzb.zza(new zzl(executor, onFailureListener));
-        zzi();
-        return this;
-    }
-
-    @Override // com.google.android.gms.tasks.Task
     public final Task<TResult> addOnSuccessListener(Activity activity, OnSuccessListener<? super TResult> onSuccessListener) {
         zzn zznVar = new zzn(TaskExecutors.MAIN_THREAD, onSuccessListener);
         this.zzb.zza(zznVar);
         zzv.zza(activity).zzb(zznVar);
-        zzi();
-        return this;
-    }
-
-    @Override // com.google.android.gms.tasks.Task
-    public final Task<TResult> addOnSuccessListener(OnSuccessListener<? super TResult> onSuccessListener) {
-        addOnSuccessListener(TaskExecutors.MAIN_THREAD, onSuccessListener);
-        return this;
-    }
-
-    @Override // com.google.android.gms.tasks.Task
-    public final Task<TResult> addOnSuccessListener(Executor executor, OnSuccessListener<? super TResult> onSuccessListener) {
-        this.zzb.zza(new zzn(executor, onSuccessListener));
         zzi();
         return this;
     }
@@ -140,24 +87,8 @@ final class zzw<TResult> extends Task<TResult> {
     }
 
     @Override // com.google.android.gms.tasks.Task
-    public final <TContinuationResult> Task<TContinuationResult> continueWith(Executor executor, Continuation<TResult, TContinuationResult> continuation) {
-        zzw zzwVar = new zzw();
-        this.zzb.zza(new zzd(executor, continuation, zzwVar));
-        zzi();
-        return zzwVar;
-    }
-
-    @Override // com.google.android.gms.tasks.Task
     public final <TContinuationResult> Task<TContinuationResult> continueWithTask(Continuation<TResult, Task<TContinuationResult>> continuation) {
         return continueWithTask(TaskExecutors.MAIN_THREAD, continuation);
-    }
-
-    @Override // com.google.android.gms.tasks.Task
-    public final <TContinuationResult> Task<TContinuationResult> continueWithTask(Executor executor, Continuation<TResult, Task<TContinuationResult>> continuation) {
-        zzw zzwVar = new zzw();
-        this.zzb.zza(new zzf(executor, continuation, zzwVar));
-        zzi();
-        return zzwVar;
     }
 
     @Override // com.google.android.gms.tasks.Task
@@ -176,28 +107,6 @@ final class zzw<TResult> extends Task<TResult> {
             try {
                 zzf();
                 zzg();
-                Exception exc = this.zzf;
-                if (exc != null) {
-                    throw new RuntimeExecutionException(exc);
-                }
-                tresult = (TResult) this.zze;
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-        return tresult;
-    }
-
-    @Override // com.google.android.gms.tasks.Task
-    public final <X extends Throwable> TResult getResult(Class<X> cls) {
-        TResult tresult;
-        synchronized (this.zza) {
-            try {
-                zzf();
-                zzg();
-                if (cls.isInstance(this.zzf)) {
-                    throw cls.cast(this.zzf);
-                }
                 Exception exc = this.zzf;
                 if (exc != null) {
                     throw new RuntimeExecutionException(exc);
@@ -242,14 +151,6 @@ final class zzw<TResult> extends Task<TResult> {
     @Override // com.google.android.gms.tasks.Task
     public final <TContinuationResult> Task<TContinuationResult> onSuccessTask(SuccessContinuation<TResult, TContinuationResult> successContinuation) {
         Executor executor = TaskExecutors.MAIN_THREAD;
-        zzw zzwVar = new zzw();
-        this.zzb.zza(new zzp(executor, successContinuation, zzwVar));
-        zzi();
-        return zzwVar;
-    }
-
-    @Override // com.google.android.gms.tasks.Task
-    public final <TContinuationResult> Task<TContinuationResult> onSuccessTask(Executor executor, SuccessContinuation<TResult, TContinuationResult> successContinuation) {
         zzw zzwVar = new zzw();
         this.zzb.zza(new zzp(executor, successContinuation, zzwVar));
         zzi();
@@ -322,5 +223,106 @@ final class zzw<TResult> extends Task<TResult> {
                 throw th;
             }
         }
+    }
+
+    @Override // com.google.android.gms.tasks.Task
+    public final <TContinuationResult> Task<TContinuationResult> continueWith(Executor executor, Continuation<TResult, TContinuationResult> continuation) {
+        zzw zzwVar = new zzw();
+        this.zzb.zza(new zzd(executor, continuation, zzwVar));
+        zzi();
+        return zzwVar;
+    }
+
+    @Override // com.google.android.gms.tasks.Task
+    public final <TContinuationResult> Task<TContinuationResult> continueWithTask(Executor executor, Continuation<TResult, Task<TContinuationResult>> continuation) {
+        zzw zzwVar = new zzw();
+        this.zzb.zza(new zzf(executor, continuation, zzwVar));
+        zzi();
+        return zzwVar;
+    }
+
+    @Override // com.google.android.gms.tasks.Task
+    public final Task<TResult> addOnCanceledListener(OnCanceledListener onCanceledListener) {
+        addOnCanceledListener(TaskExecutors.MAIN_THREAD, onCanceledListener);
+        return this;
+    }
+
+    @Override // com.google.android.gms.tasks.Task
+    public final Task<TResult> addOnCompleteListener(OnCompleteListener<TResult> onCompleteListener) {
+        this.zzb.zza(new zzj(TaskExecutors.MAIN_THREAD, onCompleteListener));
+        zzi();
+        return this;
+    }
+
+    @Override // com.google.android.gms.tasks.Task
+    public final Task<TResult> addOnFailureListener(OnFailureListener onFailureListener) {
+        addOnFailureListener(TaskExecutors.MAIN_THREAD, onFailureListener);
+        return this;
+    }
+
+    @Override // com.google.android.gms.tasks.Task
+    public final Task<TResult> addOnSuccessListener(OnSuccessListener<? super TResult> onSuccessListener) {
+        addOnSuccessListener(TaskExecutors.MAIN_THREAD, onSuccessListener);
+        return this;
+    }
+
+    @Override // com.google.android.gms.tasks.Task
+    public final <TContinuationResult> Task<TContinuationResult> onSuccessTask(Executor executor, SuccessContinuation<TResult, TContinuationResult> successContinuation) {
+        zzw zzwVar = new zzw();
+        this.zzb.zza(new zzp(executor, successContinuation, zzwVar));
+        zzi();
+        return zzwVar;
+    }
+
+    @Override // com.google.android.gms.tasks.Task
+    public final Task<TResult> addOnCanceledListener(Executor executor, OnCanceledListener onCanceledListener) {
+        this.zzb.zza(new zzh(executor, onCanceledListener));
+        zzi();
+        return this;
+    }
+
+    @Override // com.google.android.gms.tasks.Task
+    public final Task<TResult> addOnFailureListener(Executor executor, OnFailureListener onFailureListener) {
+        this.zzb.zza(new zzl(executor, onFailureListener));
+        zzi();
+        return this;
+    }
+
+    @Override // com.google.android.gms.tasks.Task
+    public final Task<TResult> addOnSuccessListener(Executor executor, OnSuccessListener<? super TResult> onSuccessListener) {
+        this.zzb.zza(new zzn(executor, onSuccessListener));
+        zzi();
+        return this;
+    }
+
+    @Override // com.google.android.gms.tasks.Task
+    public final <X extends Throwable> TResult getResult(Class<X> cls) {
+        TResult tresult;
+        synchronized (this.zza) {
+            try {
+                zzf();
+                zzg();
+                if (!cls.isInstance(this.zzf)) {
+                    Exception exc = this.zzf;
+                    if (exc == null) {
+                        tresult = (TResult) this.zze;
+                    } else {
+                        throw new RuntimeExecutionException(exc);
+                    }
+                } else {
+                    throw cls.cast(this.zzf);
+                }
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+        return tresult;
+    }
+
+    @Override // com.google.android.gms.tasks.Task
+    public final Task<TResult> addOnCompleteListener(Executor executor, OnCompleteListener<TResult> onCompleteListener) {
+        this.zzb.zza(new zzj(executor, onCompleteListener));
+        zzi();
+        return this;
     }
 }

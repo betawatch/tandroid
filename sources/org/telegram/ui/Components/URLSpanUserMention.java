@@ -5,7 +5,7 @@ import android.view.View;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.TextStyleSpan;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class URLSpanUserMention extends URLSpanNoUnderline {
     private int currentType;
     private TextStyleSpan.TextStyleRun style;
@@ -25,39 +25,24 @@ public class URLSpanUserMention extends URLSpanNoUnderline {
         super.onClick(view);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x0028  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0024  */
     @Override // org.telegram.ui.Components.URLSpanNoUnderline, android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public void updateDrawState(TextPaint textPaint) {
-        int i;
-        int i2;
-        TextStyleSpan.TextStyleRun textStyleRun;
         super.updateDrawState(textPaint);
-        int i3 = this.currentType;
-        if (i3 == 3) {
-            i = Theme.key_windowBackgroundWhiteLinkText;
+        int i = this.currentType;
+        if (i == 3) {
+            textPaint.setColor(Theme.getColor(Theme.key_windowBackgroundWhiteLinkText));
+        } else if (i == 2) {
+            textPaint.setColor(-1);
+        } else if (i == 1) {
+            textPaint.setColor(Theme.getColor(Theme.key_chat_messageLinkOut));
         } else {
-            if (i3 == 2) {
-                i2 = -1;
-                textPaint.setColor(i2);
-                textStyleRun = this.style;
-                if (textStyleRun == null) {
-                    textStyleRun.applyStyle(textPaint);
-                    return;
-                } else {
-                    textPaint.setUnderlineText(false);
-                    return;
-                }
-            }
-            i = i3 == 1 ? Theme.key_chat_messageLinkOut : Theme.key_chat_messageLinkIn;
+            textPaint.setColor(Theme.getColor(Theme.key_chat_messageLinkIn));
         }
-        i2 = Theme.getColor(i);
-        textPaint.setColor(i2);
-        textStyleRun = this.style;
-        if (textStyleRun == null) {
+        TextStyleSpan.TextStyleRun textStyleRun = this.style;
+        if (textStyleRun != null) {
+            textStyleRun.applyStyle(textPaint);
+        } else {
+            textPaint.setUnderlineText(false);
         }
     }
 }

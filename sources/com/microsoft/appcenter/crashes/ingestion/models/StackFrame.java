@@ -5,12 +5,60 @@ import com.microsoft.appcenter.ingestion.models.json.JSONUtils;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class StackFrame implements Model {
     private String className;
     private String fileName;
     private Integer lineNumber;
     private String methodName;
+
+    public String getClassName() {
+        return this.className;
+    }
+
+    public void setClassName(String str) {
+        this.className = str;
+    }
+
+    public String getMethodName() {
+        return this.methodName;
+    }
+
+    public void setMethodName(String str) {
+        this.methodName = str;
+    }
+
+    public Integer getLineNumber() {
+        return this.lineNumber;
+    }
+
+    public void setLineNumber(Integer num) {
+        this.lineNumber = num;
+    }
+
+    public String getFileName() {
+        return this.fileName;
+    }
+
+    public void setFileName(String str) {
+        this.fileName = str;
+    }
+
+    @Override // com.microsoft.appcenter.ingestion.models.Model
+    public void read(JSONObject jSONObject) {
+        setClassName(jSONObject.optString("className", null));
+        setMethodName(jSONObject.optString("methodName", null));
+        setLineNumber(JSONUtils.readInteger(jSONObject, "lineNumber"));
+        setFileName(jSONObject.optString("fileName", null));
+    }
+
+    @Override // com.microsoft.appcenter.ingestion.models.Model
+    public void write(JSONStringer jSONStringer) {
+        JSONUtils.write(jSONStringer, "className", getClassName());
+        JSONUtils.write(jSONStringer, "methodName", getMethodName());
+        JSONUtils.write(jSONStringer, "lineNumber", getLineNumber());
+        JSONUtils.write(jSONStringer, "fileName", getFileName());
+    }
 
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -37,22 +85,6 @@ public class StackFrame implements Model {
         return str3 != null ? str3.equals(str4) : str4 == null;
     }
 
-    public String getClassName() {
-        return this.className;
-    }
-
-    public String getFileName() {
-        return this.fileName;
-    }
-
-    public Integer getLineNumber() {
-        return this.lineNumber;
-    }
-
-    public String getMethodName() {
-        return this.methodName;
-    }
-
     public int hashCode() {
         String str = this.className;
         int hashCode = (str != null ? str.hashCode() : 0) * 31;
@@ -62,37 +94,5 @@ public class StackFrame implements Model {
         int hashCode3 = (hashCode2 + (num != null ? num.hashCode() : 0)) * 31;
         String str3 = this.fileName;
         return hashCode3 + (str3 != null ? str3.hashCode() : 0);
-    }
-
-    @Override // com.microsoft.appcenter.ingestion.models.Model
-    public void read(JSONObject jSONObject) {
-        setClassName(jSONObject.optString("className", null));
-        setMethodName(jSONObject.optString("methodName", null));
-        setLineNumber(JSONUtils.readInteger(jSONObject, "lineNumber"));
-        setFileName(jSONObject.optString("fileName", null));
-    }
-
-    public void setClassName(String str) {
-        this.className = str;
-    }
-
-    public void setFileName(String str) {
-        this.fileName = str;
-    }
-
-    public void setLineNumber(Integer num) {
-        this.lineNumber = num;
-    }
-
-    public void setMethodName(String str) {
-        this.methodName = str;
-    }
-
-    @Override // com.microsoft.appcenter.ingestion.models.Model
-    public void write(JSONStringer jSONStringer) {
-        JSONUtils.write(jSONStringer, "className", getClassName());
-        JSONUtils.write(jSONStringer, "methodName", getMethodName());
-        JSONUtils.write(jSONStringer, "lineNumber", getLineNumber());
-        JSONUtils.write(jSONStringer, "fileName", getFileName());
     }
 }

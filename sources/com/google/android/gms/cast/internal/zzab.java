@@ -20,16 +20,6 @@ public final class zzab extends AbstractSafeParcelable {
     private zzav zzf;
     private double zzg;
 
-    zzab(double d, boolean z, int i, ApplicationMetadata applicationMetadata, int i2, zzav zzavVar, double d2) {
-        this.zza = d;
-        this.zzb = z;
-        this.zzc = i;
-        this.zzd = applicationMetadata;
-        this.zze = i2;
-        this.zzf = zzavVar;
-        this.zzg = d2;
-    }
-
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -94,5 +84,15 @@ public final class zzab extends AbstractSafeParcelable {
 
     public final boolean zzg() {
         return this.zzb;
+    }
+
+    zzab(double d, boolean z, int i, ApplicationMetadata applicationMetadata, int i2, zzav zzavVar, double d2) {
+        this.zza = d;
+        this.zzb = z;
+        this.zzc = i;
+        this.zzd = applicationMetadata;
+        this.zze = i2;
+        this.zzf = zzavVar;
+        this.zzg = d2;
     }
 }

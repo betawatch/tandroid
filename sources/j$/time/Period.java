@@ -17,18 +17,25 @@ public final class Period implements Serializable {
         Collections.unmodifiableList(Arrays.asList(j$.time.temporal.b.YEARS, j$.time.temporal.b.MONTHS, j$.time.temporal.b.DAYS));
     }
 
+    public static Period between(LocalDate localDate, LocalDate localDate2) {
+        return localDate.y(localDate2);
+    }
+
+    public static Period a(int i, int i2, int i3) {
+        if ((i | i2 | i3) == 0) {
+            return d;
+        }
+        return new Period(i, i2, i3);
+    }
+
     private Period(int i, int i2, int i3) {
         this.a = i;
         this.b = i2;
         this.c = i3;
     }
 
-    public static Period a(int i, int i2, int i3) {
-        return ((i | i2) | i3) == 0 ? d : new Period(i, i2, i3);
-    }
-
-    public static Period between(LocalDate localDate, LocalDate localDate2) {
-        return localDate.z(localDate2);
+    public int getYears() {
+        return this.a;
     }
 
     public final boolean equals(Object obj) {
@@ -40,10 +47,6 @@ public final class Period implements Serializable {
         }
         Period period = (Period) obj;
         return this.a == period.a && this.b == period.b && this.c == period.c;
-    }
-
-    public int getYears() {
-        return this.a;
     }
 
     public final int hashCode() {

@@ -58,22 +58,6 @@ public class MobileVisionBase<DetectionResultT> implements Closeable, LifecycleO
         this.zzd.unpin(this.zzf);
     }
 
-    public synchronized Task processBase(final InputImage inputImage) {
-        Preconditions.checkNotNull(inputImage, "InputImage can not be null");
-        if (this.zzc.get()) {
-            return Tasks.forException(new MlKitException("This detector is already closed!", 14));
-        }
-        if (inputImage.getWidth() < 32 || inputImage.getHeight() < 32) {
-            return Tasks.forException(new MlKitException("InputImage width and height should be at least 32!", 3));
-        }
-        return this.zzd.callAfterLoad(this.zzf, new Callable() { // from class: com.google.mlkit.vision.common.internal.zza
-            @Override // java.util.concurrent.Callable
-            public final Object call() {
-                return MobileVisionBase.this.zza(inputImage);
-            }
-        }, this.zze.getToken());
-    }
-
     final /* synthetic */ Object zza(InputImage inputImage) {
         zzlx zze = zzlx.zze("detectorTaskWithResource#run");
         zze.zzb();
@@ -92,5 +76,21 @@ public class MobileVisionBase<DetectionResultT> implements Closeable, LifecycleO
             }
             throw th;
         }
+    }
+
+    public synchronized Task processBase(final InputImage inputImage) {
+        Preconditions.checkNotNull(inputImage, "InputImage can not be null");
+        if (this.zzc.get()) {
+            return Tasks.forException(new MlKitException("This detector is already closed!", 14));
+        }
+        if (inputImage.getWidth() < 32 || inputImage.getHeight() < 32) {
+            return Tasks.forException(new MlKitException("InputImage width and height should be at least 32!", 3));
+        }
+        return this.zzd.callAfterLoad(this.zzf, new Callable() { // from class: com.google.mlkit.vision.common.internal.zza
+            @Override // java.util.concurrent.Callable
+            public final Object call() {
+                return MobileVisionBase.this.zza(inputImage);
+            }
+        }, this.zze.getToken());
     }
 }

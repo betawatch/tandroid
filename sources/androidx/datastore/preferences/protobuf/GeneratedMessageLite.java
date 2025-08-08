@@ -15,79 +15,6 @@ public abstract class GeneratedMessageLite extends AbstractMessageLite {
     protected UnknownFieldSetLite unknownFields = UnknownFieldSetLite.getDefaultInstance();
     protected int memoizedSerializedSize = -1;
 
-    public static abstract class Builder extends AbstractMessageLite.Builder {
-        private final GeneratedMessageLite defaultInstance;
-        protected GeneratedMessageLite instance;
-        protected boolean isBuilt = false;
-
-        protected Builder(GeneratedMessageLite generatedMessageLite) {
-            this.defaultInstance = generatedMessageLite;
-            this.instance = (GeneratedMessageLite) generatedMessageLite.dynamicMethod(MethodToInvoke.NEW_MUTABLE_INSTANCE);
-        }
-
-        private void mergeFromInstance(GeneratedMessageLite generatedMessageLite, GeneratedMessageLite generatedMessageLite2) {
-            Protobuf.getInstance().schemaFor(generatedMessageLite).mergeFrom(generatedMessageLite, generatedMessageLite2);
-        }
-
-        public final GeneratedMessageLite build() {
-            GeneratedMessageLite buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
-            }
-            throw AbstractMessageLite.Builder.newUninitializedMessageException(buildPartial);
-        }
-
-        @Override // androidx.datastore.preferences.protobuf.MessageLite.Builder
-        public GeneratedMessageLite buildPartial() {
-            if (this.isBuilt) {
-                return this.instance;
-            }
-            this.instance.makeImmutable();
-            this.isBuilt = true;
-            return this.instance;
-        }
-
-        public Builder clone() {
-            Builder newBuilderForType = getDefaultInstanceForType().newBuilderForType();
-            newBuilderForType.mergeFrom(buildPartial());
-            return newBuilderForType;
-        }
-
-        protected void copyOnWrite() {
-            if (this.isBuilt) {
-                GeneratedMessageLite generatedMessageLite = (GeneratedMessageLite) this.instance.dynamicMethod(MethodToInvoke.NEW_MUTABLE_INSTANCE);
-                mergeFromInstance(generatedMessageLite, this.instance);
-                this.instance = generatedMessageLite;
-                this.isBuilt = false;
-            }
-        }
-
-        @Override // androidx.datastore.preferences.protobuf.MessageLiteOrBuilder
-        public GeneratedMessageLite getDefaultInstanceForType() {
-            return this.defaultInstance;
-        }
-
-        /* JADX INFO: Access modifiers changed from: protected */
-        @Override // androidx.datastore.preferences.protobuf.AbstractMessageLite.Builder
-        public Builder internalMergeFrom(GeneratedMessageLite generatedMessageLite) {
-            return mergeFrom(generatedMessageLite);
-        }
-
-        public Builder mergeFrom(GeneratedMessageLite generatedMessageLite) {
-            copyOnWrite();
-            mergeFromInstance(this.instance, generatedMessageLite);
-            return this;
-        }
-    }
-
-    protected static class DefaultInstanceBasedParser extends AbstractParser {
-        private final GeneratedMessageLite defaultInstance;
-
-        public DefaultInstanceBasedParser(GeneratedMessageLite generatedMessageLite) {
-            this.defaultInstance = generatedMessageLite;
-        }
-    }
-
     public static class GeneratedExtension extends ExtensionLite {
     }
 
@@ -101,15 +28,94 @@ public abstract class GeneratedMessageLite extends AbstractMessageLite {
         GET_PARSER
     }
 
-    private static GeneratedMessageLite checkMessageInitialized(GeneratedMessageLite generatedMessageLite) {
-        if (generatedMessageLite == null || generatedMessageLite.isInitialized()) {
-            return generatedMessageLite;
-        }
-        throw generatedMessageLite.newUninitializedMessageException().asInvalidProtocolBufferException().setUnfinishedMessage(generatedMessageLite);
+    protected abstract Object dynamicMethod(MethodToInvoke methodToInvoke, Object obj, Object obj2);
+
+    @Override // androidx.datastore.preferences.protobuf.MessageLiteOrBuilder
+    public final GeneratedMessageLite getDefaultInstanceForType() {
+        return (GeneratedMessageLite) dynamicMethod(MethodToInvoke.GET_DEFAULT_INSTANCE);
     }
 
-    protected static Internal.ProtobufList emptyProtobufList() {
-        return ProtobufArrayList.emptyList();
+    @Override // androidx.datastore.preferences.protobuf.MessageLite
+    public final Builder newBuilderForType() {
+        return (Builder) dynamicMethod(MethodToInvoke.NEW_BUILDER);
+    }
+
+    public String toString() {
+        return MessageLiteToString.toString(this, super.toString());
+    }
+
+    public int hashCode() {
+        int i = this.memoizedHashCode;
+        if (i != 0) {
+            return i;
+        }
+        int hashCode = Protobuf.getInstance().schemaFor(this).hashCode(this);
+        this.memoizedHashCode = hashCode;
+        return hashCode;
+    }
+
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (getDefaultInstanceForType().getClass().isInstance(obj)) {
+            return Protobuf.getInstance().schemaFor(this).equals(this, (GeneratedMessageLite) obj);
+        }
+        return false;
+    }
+
+    protected void makeImmutable() {
+        Protobuf.getInstance().schemaFor(this).makeImmutable(this);
+    }
+
+    protected final Builder createBuilder() {
+        return (Builder) dynamicMethod(MethodToInvoke.NEW_BUILDER);
+    }
+
+    public final boolean isInitialized() {
+        return isInitialized(this, true);
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.MessageLite
+    public final Builder toBuilder() {
+        Builder builder = (Builder) dynamicMethod(MethodToInvoke.NEW_BUILDER);
+        builder.mergeFrom(this);
+        return builder;
+    }
+
+    protected Object dynamicMethod(MethodToInvoke methodToInvoke, Object obj) {
+        return dynamicMethod(methodToInvoke, obj, null);
+    }
+
+    protected Object dynamicMethod(MethodToInvoke methodToInvoke) {
+        return dynamicMethod(methodToInvoke, null, null);
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.AbstractMessageLite
+    int getMemoizedSerializedSize() {
+        return this.memoizedSerializedSize;
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.AbstractMessageLite
+    void setMemoizedSerializedSize(int i) {
+        this.memoizedSerializedSize = i;
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.MessageLite
+    public void writeTo(CodedOutputStream codedOutputStream) {
+        Protobuf.getInstance().schemaFor(this).writeTo(this, CodedOutputStreamWriter.forCodedOutput(codedOutputStream));
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.MessageLite
+    public int getSerializedSize() {
+        if (this.memoizedSerializedSize == -1) {
+            this.memoizedSerializedSize = Protobuf.getInstance().schemaFor(this).getSerializedSize(this);
+        }
+        return this.memoizedSerializedSize;
+    }
+
+    Object buildMessageInfo() {
+        return dynamicMethod(MethodToInvoke.BUILD_MESSAGE_INFO);
     }
 
     static GeneratedMessageLite getDefaultInstance(Class cls) {
@@ -130,6 +136,79 @@ public abstract class GeneratedMessageLite extends AbstractMessageLite {
             defaultInstanceMap.put(cls, generatedMessageLite);
         }
         return generatedMessageLite;
+    }
+
+    protected static void registerDefaultInstance(Class cls, GeneratedMessageLite generatedMessageLite) {
+        defaultInstanceMap.put(cls, generatedMessageLite);
+    }
+
+    protected static Object newMessageInfo(MessageLite messageLite, String str, Object[] objArr) {
+        return new RawMessageInfo(messageLite, str, objArr);
+    }
+
+    public static abstract class Builder extends AbstractMessageLite.Builder {
+        private final GeneratedMessageLite defaultInstance;
+        protected GeneratedMessageLite instance;
+        protected boolean isBuilt = false;
+
+        protected Builder(GeneratedMessageLite generatedMessageLite) {
+            this.defaultInstance = generatedMessageLite;
+            this.instance = (GeneratedMessageLite) generatedMessageLite.dynamicMethod(MethodToInvoke.NEW_MUTABLE_INSTANCE);
+        }
+
+        protected void copyOnWrite() {
+            if (this.isBuilt) {
+                GeneratedMessageLite generatedMessageLite = (GeneratedMessageLite) this.instance.dynamicMethod(MethodToInvoke.NEW_MUTABLE_INSTANCE);
+                mergeFromInstance(generatedMessageLite, this.instance);
+                this.instance = generatedMessageLite;
+                this.isBuilt = false;
+            }
+        }
+
+        public Builder clone() {
+            Builder newBuilderForType = getDefaultInstanceForType().newBuilderForType();
+            newBuilderForType.mergeFrom(buildPartial());
+            return newBuilderForType;
+        }
+
+        @Override // androidx.datastore.preferences.protobuf.MessageLite.Builder
+        public GeneratedMessageLite buildPartial() {
+            if (this.isBuilt) {
+                return this.instance;
+            }
+            this.instance.makeImmutable();
+            this.isBuilt = true;
+            return this.instance;
+        }
+
+        public final GeneratedMessageLite build() {
+            GeneratedMessageLite buildPartial = buildPartial();
+            if (buildPartial.isInitialized()) {
+                return buildPartial;
+            }
+            throw AbstractMessageLite.Builder.newUninitializedMessageException(buildPartial);
+        }
+
+        /* JADX INFO: Access modifiers changed from: protected */
+        @Override // androidx.datastore.preferences.protobuf.AbstractMessageLite.Builder
+        public Builder internalMergeFrom(GeneratedMessageLite generatedMessageLite) {
+            return mergeFrom(generatedMessageLite);
+        }
+
+        public Builder mergeFrom(GeneratedMessageLite generatedMessageLite) {
+            copyOnWrite();
+            mergeFromInstance(this.instance, generatedMessageLite);
+            return this;
+        }
+
+        private void mergeFromInstance(GeneratedMessageLite generatedMessageLite, GeneratedMessageLite generatedMessageLite2) {
+            Protobuf.getInstance().schemaFor(generatedMessageLite).mergeFrom(generatedMessageLite, generatedMessageLite2);
+        }
+
+        @Override // androidx.datastore.preferences.protobuf.MessageLiteOrBuilder
+        public GeneratedMessageLite getDefaultInstanceForType() {
+            return this.defaultInstance;
+        }
     }
 
     static Object invokeOrDie(Method method, Object obj, Object... objArr) {
@@ -164,17 +243,21 @@ public abstract class GeneratedMessageLite extends AbstractMessageLite {
         return isInitialized;
     }
 
+    protected static Internal.ProtobufList emptyProtobufList() {
+        return ProtobufArrayList.emptyList();
+    }
+
     protected static Internal.ProtobufList mutableCopy(Internal.ProtobufList protobufList) {
         int size = protobufList.size();
         return protobufList.mutableCopyWithCapacity(size == 0 ? 10 : size * 2);
     }
 
-    protected static Object newMessageInfo(MessageLite messageLite, String str, Object[] objArr) {
-        return new RawMessageInfo(messageLite, str, objArr);
-    }
+    protected static class DefaultInstanceBasedParser extends AbstractParser {
+        private final GeneratedMessageLite defaultInstance;
 
-    protected static GeneratedMessageLite parseFrom(GeneratedMessageLite generatedMessageLite, InputStream inputStream) {
-        return checkMessageInitialized(parsePartialFrom(generatedMessageLite, CodedInputStream.newInstance(inputStream), ExtensionRegistryLite.getEmptyRegistry()));
+        public DefaultInstanceBasedParser(GeneratedMessageLite generatedMessageLite) {
+            this.defaultInstance = generatedMessageLite;
+        }
     }
 
     static GeneratedMessageLite parsePartialFrom(GeneratedMessageLite generatedMessageLite, CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) {
@@ -197,97 +280,14 @@ public abstract class GeneratedMessageLite extends AbstractMessageLite {
         }
     }
 
-    protected static void registerDefaultInstance(Class cls, GeneratedMessageLite generatedMessageLite) {
-        defaultInstanceMap.put(cls, generatedMessageLite);
-    }
-
-    Object buildMessageInfo() {
-        return dynamicMethod(MethodToInvoke.BUILD_MESSAGE_INFO);
-    }
-
-    protected final Builder createBuilder() {
-        return (Builder) dynamicMethod(MethodToInvoke.NEW_BUILDER);
-    }
-
-    protected Object dynamicMethod(MethodToInvoke methodToInvoke) {
-        return dynamicMethod(methodToInvoke, null, null);
-    }
-
-    protected Object dynamicMethod(MethodToInvoke methodToInvoke, Object obj) {
-        return dynamicMethod(methodToInvoke, obj, null);
-    }
-
-    protected abstract Object dynamicMethod(MethodToInvoke methodToInvoke, Object obj, Object obj2);
-
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    private static GeneratedMessageLite checkMessageInitialized(GeneratedMessageLite generatedMessageLite) {
+        if (generatedMessageLite == null || generatedMessageLite.isInitialized()) {
+            return generatedMessageLite;
         }
-        if (getDefaultInstanceForType().getClass().isInstance(obj)) {
-            return Protobuf.getInstance().schemaFor(this).equals(this, (GeneratedMessageLite) obj);
-        }
-        return false;
+        throw generatedMessageLite.newUninitializedMessageException().asInvalidProtocolBufferException().setUnfinishedMessage(generatedMessageLite);
     }
 
-    @Override // androidx.datastore.preferences.protobuf.MessageLiteOrBuilder
-    public final GeneratedMessageLite getDefaultInstanceForType() {
-        return (GeneratedMessageLite) dynamicMethod(MethodToInvoke.GET_DEFAULT_INSTANCE);
-    }
-
-    @Override // androidx.datastore.preferences.protobuf.AbstractMessageLite
-    int getMemoizedSerializedSize() {
-        return this.memoizedSerializedSize;
-    }
-
-    @Override // androidx.datastore.preferences.protobuf.MessageLite
-    public int getSerializedSize() {
-        if (this.memoizedSerializedSize == -1) {
-            this.memoizedSerializedSize = Protobuf.getInstance().schemaFor(this).getSerializedSize(this);
-        }
-        return this.memoizedSerializedSize;
-    }
-
-    public int hashCode() {
-        int i = this.memoizedHashCode;
-        if (i != 0) {
-            return i;
-        }
-        int hashCode = Protobuf.getInstance().schemaFor(this).hashCode(this);
-        this.memoizedHashCode = hashCode;
-        return hashCode;
-    }
-
-    public final boolean isInitialized() {
-        return isInitialized(this, true);
-    }
-
-    protected void makeImmutable() {
-        Protobuf.getInstance().schemaFor(this).makeImmutable(this);
-    }
-
-    @Override // androidx.datastore.preferences.protobuf.MessageLite
-    public final Builder newBuilderForType() {
-        return (Builder) dynamicMethod(MethodToInvoke.NEW_BUILDER);
-    }
-
-    @Override // androidx.datastore.preferences.protobuf.AbstractMessageLite
-    void setMemoizedSerializedSize(int i) {
-        this.memoizedSerializedSize = i;
-    }
-
-    @Override // androidx.datastore.preferences.protobuf.MessageLite
-    public final Builder toBuilder() {
-        Builder builder = (Builder) dynamicMethod(MethodToInvoke.NEW_BUILDER);
-        builder.mergeFrom(this);
-        return builder;
-    }
-
-    public String toString() {
-        return MessageLiteToString.toString(this, super.toString());
-    }
-
-    @Override // androidx.datastore.preferences.protobuf.MessageLite
-    public void writeTo(CodedOutputStream codedOutputStream) {
-        Protobuf.getInstance().schemaFor(this).writeTo(this, CodedOutputStreamWriter.forCodedOutput(codedOutputStream));
+    protected static GeneratedMessageLite parseFrom(GeneratedMessageLite generatedMessageLite, InputStream inputStream) {
+        return checkMessageInitialized(parsePartialFrom(generatedMessageLite, CodedInputStream.newInstance(inputStream), ExtensionRegistryLite.getEmptyRegistry()));
     }
 }

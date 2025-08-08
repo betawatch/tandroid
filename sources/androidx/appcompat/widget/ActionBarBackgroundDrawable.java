@@ -9,10 +9,17 @@ import android.graphics.drawable.Drawable;
 class ActionBarBackgroundDrawable extends Drawable {
     final ActionBarContainer mContainer;
 
-    private static class Api21Impl {
-        public static void getOutline(Drawable drawable, Outline outline) {
-            drawable.getOutline(outline);
-        }
+    @Override // android.graphics.drawable.Drawable
+    public int getOpacity() {
+        return 0;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setAlpha(int i) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setColorFilter(ColorFilter colorFilter) {
     }
 
     public ActionBarBackgroundDrawable(ActionBarContainer actionBarContainer) {
@@ -43,32 +50,23 @@ class ActionBarBackgroundDrawable extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public int getOpacity() {
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable
     public void getOutline(Outline outline) {
-        Drawable drawable;
         ActionBarContainer actionBarContainer = this.mContainer;
-        if (!actionBarContainer.mIsSplit) {
-            drawable = actionBarContainer.mBackground;
-            if (drawable == null) {
-                return;
+        if (actionBarContainer.mIsSplit) {
+            if (actionBarContainer.mSplitBackground != null) {
+                Api21Impl.getOutline(actionBarContainer.mBackground, outline);
             }
-        } else if (actionBarContainer.mSplitBackground == null) {
-            return;
         } else {
-            drawable = actionBarContainer.mBackground;
+            Drawable drawable = actionBarContainer.mBackground;
+            if (drawable != null) {
+                Api21Impl.getOutline(drawable, outline);
+            }
         }
-        Api21Impl.getOutline(drawable, outline);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public void setAlpha(int i) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setColorFilter(ColorFilter colorFilter) {
+    private static class Api21Impl {
+        public static void getOutline(Drawable drawable, Outline outline) {
+            drawable.getOutline(outline);
+        }
     }
 }

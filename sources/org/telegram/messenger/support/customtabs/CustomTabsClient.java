@@ -28,9 +28,30 @@ public abstract class CustomTabsClient {
         return context.bindService(intent, customTabsServiceConnection, 33);
     }
 
+    public boolean warmup(long j) {
+        try {
+            return this.mService.warmup(j);
+        } catch (RemoteException unused) {
+            return false;
+        }
+    }
+
     public CustomTabsSession newSession(final CustomTabsCallback customTabsCallback) {
         ICustomTabsCallback.Stub stub = new ICustomTabsCallback.Stub() { // from class: org.telegram.messenger.support.customtabs.CustomTabsClient.2
             private Handler mHandler = new Handler(Looper.getMainLooper());
+
+            @Override // org.telegram.messenger.support.customtabs.ICustomTabsCallback
+            public void onNavigationEvent(final int i, final Bundle bundle) {
+                if (customTabsCallback == null) {
+                    return;
+                }
+                this.mHandler.post(new Runnable() { // from class: org.telegram.messenger.support.customtabs.CustomTabsClient.2.1
+                    @Override // java.lang.Runnable
+                    public void run() {
+                        customTabsCallback.onNavigationEvent(i, bundle);
+                    }
+                });
+            }
 
             @Override // org.telegram.messenger.support.customtabs.ICustomTabsCallback
             public void extraCallback(final String str, final Bundle bundle) {
@@ -59,19 +80,6 @@ public abstract class CustomTabsClient {
             }
 
             @Override // org.telegram.messenger.support.customtabs.ICustomTabsCallback
-            public void onNavigationEvent(final int i, final Bundle bundle) {
-                if (customTabsCallback == null) {
-                    return;
-                }
-                this.mHandler.post(new Runnable() { // from class: org.telegram.messenger.support.customtabs.CustomTabsClient.2.1
-                    @Override // java.lang.Runnable
-                    public void run() {
-                        customTabsCallback.onNavigationEvent(i, bundle);
-                    }
-                });
-            }
-
-            @Override // org.telegram.messenger.support.customtabs.ICustomTabsCallback
             public void onPostMessage(final String str, final Bundle bundle) {
                 if (customTabsCallback == null) {
                     return;
@@ -91,14 +99,6 @@ public abstract class CustomTabsClient {
             return null;
         } catch (RemoteException unused) {
             return null;
-        }
-    }
-
-    public boolean warmup(long j) {
-        try {
-            return this.mService.warmup(j);
-        } catch (RemoteException unused) {
-            return false;
         }
     }
 }

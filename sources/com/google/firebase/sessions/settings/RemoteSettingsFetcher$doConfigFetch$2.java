@@ -10,7 +10,7 @@ import javax.net.ssl.HttpsURLConnection;
 import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
@@ -18,7 +18,7 @@ import kotlin.jvm.internal.Ref$ObjectRef;
 import kotlinx.coroutines.CoroutineScope;
 import org.json.JSONObject;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class RemoteSettingsFetcher$doConfigFetch$2 extends SuspendLambda implements Function2 {
     final /* synthetic */ Map $headerOptions;
     final /* synthetic */ Function2 $onFailure;
@@ -47,9 +47,8 @@ final class RemoteSettingsFetcher$doConfigFetch$2 extends SuspendLambda implemen
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object coroutine_suspended;
         URL url;
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         try {
             if (i == 0) {

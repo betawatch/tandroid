@@ -92,8 +92,9 @@ public final class DataHolder extends AbstractSafeParcelable implements Closeabl
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
+        String[] strArr = this.zag;
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeStringArray(parcel, 1, this.zag, false);
+        SafeParcelWriter.writeStringArray(parcel, 1, strArr, false);
         SafeParcelWriter.writeTypedArray(parcel, 2, this.zah, i, false);
         SafeParcelWriter.writeInt(parcel, 3, getStatusCode());
         SafeParcelWriter.writeBundle(parcel, 4, getMetadata(), false);

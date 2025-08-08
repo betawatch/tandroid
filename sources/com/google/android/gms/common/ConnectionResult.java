@@ -31,10 +31,6 @@ public final class ConnectionResult extends AbstractSafeParcelable {
         this(i, pendingIntent, null);
     }
 
-    public ConnectionResult(int i, PendingIntent pendingIntent, String str) {
-        this(1, i, pendingIntent, str);
-    }
-
     static String zza(int i) {
         if (i == 99) {
             return "UNFINISHED";
@@ -146,11 +142,16 @@ public final class ConnectionResult extends AbstractSafeParcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
+        int i2 = this.zza;
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeInt(parcel, 1, this.zza);
+        SafeParcelWriter.writeInt(parcel, 1, i2);
         SafeParcelWriter.writeInt(parcel, 2, getErrorCode());
         SafeParcelWriter.writeParcelable(parcel, 3, getResolution(), i, false);
         SafeParcelWriter.writeString(parcel, 4, getErrorMessage(), false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    public ConnectionResult(int i, PendingIntent pendingIntent, String str) {
+        this(1, i, pendingIntent, str);
     }
 }

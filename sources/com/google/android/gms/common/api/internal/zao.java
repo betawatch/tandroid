@@ -28,17 +28,17 @@ final class zao implements Runnable {
             zap zapVar2 = this.zaa;
             if (zapVar2.zac.getErrorResolutionIntent(zapVar2.getActivity(), zab.getErrorCode(), null) != null) {
                 zap zapVar3 = this.zaa;
-                zapVar3.zac.zag(zapVar3.getActivity(), this.zaa.mLifecycleFragment, zab.getErrorCode(), 2, this.zaa);
-            } else {
-                if (zab.getErrorCode() != 18) {
-                    this.zaa.zaa(zab, this.zab.zaa());
-                    return;
-                }
-                zap zapVar4 = this.zaa;
-                Dialog zab2 = zapVar4.zac.zab(zapVar4.getActivity(), this.zaa);
-                zap zapVar5 = this.zaa;
-                zapVar5.zac.zac(zapVar5.getActivity().getApplicationContext(), new zan(this, zab2));
+                zapVar3.zac.zag(zapVar3.getActivity(), zapVar3.mLifecycleFragment, zab.getErrorCode(), 2, this.zaa);
+                return;
             }
+            if (zab.getErrorCode() != 18) {
+                this.zaa.zaa(zab, this.zab.zaa());
+                return;
+            }
+            zap zapVar4 = this.zaa;
+            Dialog zab2 = zapVar4.zac.zab(zapVar4.getActivity(), zapVar4);
+            zap zapVar5 = this.zaa;
+            zapVar5.zac.zac(zapVar5.getActivity().getApplicationContext(), new zan(this, zab2));
         }
     }
 }

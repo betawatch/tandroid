@@ -29,6 +29,30 @@ final class AutoValue_CreationContext extends CreationContext {
         this.backendName = str;
     }
 
+    @Override // com.google.android.datatransport.runtime.backends.CreationContext
+    public Context getApplicationContext() {
+        return this.applicationContext;
+    }
+
+    @Override // com.google.android.datatransport.runtime.backends.CreationContext
+    public Clock getWallClock() {
+        return this.wallClock;
+    }
+
+    @Override // com.google.android.datatransport.runtime.backends.CreationContext
+    public Clock getMonotonicClock() {
+        return this.monotonicClock;
+    }
+
+    @Override // com.google.android.datatransport.runtime.backends.CreationContext
+    public String getBackendName() {
+        return this.backendName;
+    }
+
+    public String toString() {
+        return "CreationContext{applicationContext=" + this.applicationContext + ", wallClock=" + this.wallClock + ", monotonicClock=" + this.monotonicClock + ", backendName=" + this.backendName + "}";
+    }
+
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -40,31 +64,7 @@ final class AutoValue_CreationContext extends CreationContext {
         return this.applicationContext.equals(creationContext.getApplicationContext()) && this.wallClock.equals(creationContext.getWallClock()) && this.monotonicClock.equals(creationContext.getMonotonicClock()) && this.backendName.equals(creationContext.getBackendName());
     }
 
-    @Override // com.google.android.datatransport.runtime.backends.CreationContext
-    public Context getApplicationContext() {
-        return this.applicationContext;
-    }
-
-    @Override // com.google.android.datatransport.runtime.backends.CreationContext
-    public String getBackendName() {
-        return this.backendName;
-    }
-
-    @Override // com.google.android.datatransport.runtime.backends.CreationContext
-    public Clock getMonotonicClock() {
-        return this.monotonicClock;
-    }
-
-    @Override // com.google.android.datatransport.runtime.backends.CreationContext
-    public Clock getWallClock() {
-        return this.wallClock;
-    }
-
     public int hashCode() {
         return ((((((this.applicationContext.hashCode() ^ 1000003) * 1000003) ^ this.wallClock.hashCode()) * 1000003) ^ this.monotonicClock.hashCode()) * 1000003) ^ this.backendName.hashCode();
-    }
-
-    public String toString() {
-        return "CreationContext{applicationContext=" + this.applicationContext + ", wallClock=" + this.wallClock + ", monotonicClock=" + this.monotonicClock + ", backendName=" + this.backendName + "}";
     }
 }

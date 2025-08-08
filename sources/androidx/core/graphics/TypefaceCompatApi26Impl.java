@@ -63,10 +63,18 @@ public class TypefaceCompatApi26Impl extends TypefaceCompatApi21Impl {
         this.mCreateFromFamiliesWithDefault = method5;
     }
 
-    private void abortCreation(Object obj) {
+    private boolean isFontFamilyPrivateAPIAvailable() {
+        if (this.mAddFontFromAssetManager == null) {
+            Log.w("TypefaceCompatApi26Impl", "Unable to collect necessary private methods. Fallback to legacy implementation.");
+        }
+        return this.mAddFontFromAssetManager != null;
+    }
+
+    private Object newFamily() {
         try {
-            this.mAbortCreation.invoke(obj, null);
-        } catch (IllegalAccessException | InvocationTargetException unused) {
+            return this.mFontFamilyCtor.newInstance(null);
+        } catch (IllegalAccessException | InstantiationException | InvocationTargetException unused) {
+            return null;
         }
     }
 
@@ -86,6 +94,16 @@ public class TypefaceCompatApi26Impl extends TypefaceCompatApi21Impl {
         }
     }
 
+    protected Typeface createFromFamiliesWithDefault(Object obj) {
+        try {
+            Object newInstance = Array.newInstance((Class<?>) this.mFontFamily, 1);
+            Array.set(newInstance, 0, obj);
+            return (Typeface) this.mCreateFromFamiliesWithDefault.invoke(null, newInstance, -1, -1);
+        } catch (IllegalAccessException | InvocationTargetException unused) {
+            return null;
+        }
+    }
+
     private boolean freeze(Object obj) {
         try {
             return ((Boolean) this.mFreeze.invoke(obj, null)).booleanValue();
@@ -94,28 +112,10 @@ public class TypefaceCompatApi26Impl extends TypefaceCompatApi21Impl {
         }
     }
 
-    private boolean isFontFamilyPrivateAPIAvailable() {
-        if (this.mAddFontFromAssetManager == null) {
-            Log.w("TypefaceCompatApi26Impl", "Unable to collect necessary private methods. Fallback to legacy implementation.");
-        }
-        return this.mAddFontFromAssetManager != null;
-    }
-
-    private Object newFamily() {
+    private void abortCreation(Object obj) {
         try {
-            return this.mFontFamilyCtor.newInstance(null);
-        } catch (IllegalAccessException | InstantiationException | InvocationTargetException unused) {
-            return null;
-        }
-    }
-
-    protected Typeface createFromFamiliesWithDefault(Object obj) {
-        try {
-            Object newInstance = Array.newInstance((Class<?>) this.mFontFamily, 1);
-            Array.set(newInstance, 0, obj);
-            return (Typeface) this.mCreateFromFamiliesWithDefault.invoke(null, newInstance, -1, -1);
+            this.mAbortCreation.invoke(obj, null);
         } catch (IllegalAccessException | InvocationTargetException unused) {
-            return null;
         }
     }
 
@@ -211,8 +211,12 @@ public class TypefaceCompatApi26Impl extends TypefaceCompatApi21Impl {
         return null;
     }
 
-    protected Method obtainAbortCreationMethod(Class cls) {
-        return cls.getMethod("abortCreation", null);
+    protected Class obtainFontFamily() {
+        return Class.forName("android.graphics.FontFamily");
+    }
+
+    protected Constructor obtainFontFamilyCtor(Class cls) {
+        return cls.getConstructor(null);
     }
 
     protected Method obtainAddFontFromAssetManagerMethod(Class cls) {
@@ -225,22 +229,18 @@ public class TypefaceCompatApi26Impl extends TypefaceCompatApi21Impl {
         return cls.getMethod("addFontFromBuffer", ByteBuffer.class, cls2, FontVariationAxis[].class, cls2, cls2);
     }
 
+    protected Method obtainFreezeMethod(Class cls) {
+        return cls.getMethod("freeze", null);
+    }
+
+    protected Method obtainAbortCreationMethod(Class cls) {
+        return cls.getMethod("abortCreation", null);
+    }
+
     protected Method obtainCreateFromFamiliesWithDefaultMethod(Class cls) {
         Class cls2 = Integer.TYPE;
         Method declaredMethod = Typeface.class.getDeclaredMethod("createFromFamiliesWithDefault", Array.newInstance((Class<?>) cls, 1).getClass(), cls2, cls2);
         declaredMethod.setAccessible(true);
         return declaredMethod;
-    }
-
-    protected Class obtainFontFamily() {
-        return Class.forName("android.graphics.FontFamily");
-    }
-
-    protected Constructor obtainFontFamilyCtor(Class cls) {
-        return cls.getConstructor(null);
-    }
-
-    protected Method obtainFreezeMethod(Class cls) {
-        return cls.getMethod("freeze", null);
     }
 }

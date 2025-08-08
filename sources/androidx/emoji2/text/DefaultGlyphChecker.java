@@ -16,14 +16,6 @@ class DefaultGlyphChecker implements EmojiCompat.GlyphChecker {
         textPaint.setTextSize(10.0f);
     }
 
-    private static StringBuilder getStringBuilder() {
-        ThreadLocal threadLocal = sStringBuilder;
-        if (threadLocal.get() == null) {
-            threadLocal.set(new StringBuilder());
-        }
-        return (StringBuilder) threadLocal.get();
-    }
-
     @Override // androidx.emoji2.text.EmojiCompat.GlyphChecker
     public boolean hasGlyph(CharSequence charSequence, int i, int i2, int i3) {
         int i4 = Build.VERSION.SDK_INT;
@@ -37,5 +29,13 @@ class DefaultGlyphChecker implements EmojiCompat.GlyphChecker {
             i++;
         }
         return PaintCompat.hasGlyph(this.mTextPaint, stringBuilder.toString());
+    }
+
+    private static StringBuilder getStringBuilder() {
+        ThreadLocal threadLocal = sStringBuilder;
+        if (threadLocal.get() == null) {
+            threadLocal.set(new StringBuilder());
+        }
+        return (StringBuilder) threadLocal.get();
     }
 }

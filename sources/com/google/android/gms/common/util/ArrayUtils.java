@@ -6,15 +6,18 @@ import java.util.ArrayList;
 /* loaded from: classes.dex */
 public abstract class ArrayUtils {
     public static boolean contains(int[] iArr, int i) {
-        if (iArr == null) {
-            return false;
-        }
-        for (int i2 : iArr) {
-            if (i2 == i) {
-                return true;
+        if (iArr != null) {
+            for (int i2 : iArr) {
+                if (i2 == i) {
+                    return true;
+                }
             }
         }
         return false;
+    }
+
+    public static ArrayList newArrayList() {
+        return new ArrayList();
     }
 
     public static boolean contains(Object[] objArr, Object obj) {
@@ -31,9 +34,5 @@ public abstract class ArrayUtils {
             }
         }
         return false;
-    }
-
-    public static ArrayList newArrayList() {
-        return new ArrayList();
     }
 }

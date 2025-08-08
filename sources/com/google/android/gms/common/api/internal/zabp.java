@@ -12,6 +12,6 @@ final class zabp implements BaseGmsClient.SignOutCallbacks {
 
     @Override // com.google.android.gms.common.internal.BaseGmsClient.SignOutCallbacks
     public final void onSignOutComplete() {
-        this.zaa.zaa.zat.post(new zabo(this));
+        this.zaa.zaa.zar.post(new zabo(this));
     }
 }

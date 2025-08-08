@@ -8,16 +8,12 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
-import android.os.Build;
 import android.support.v4.media.session.MediaSessionCompat;
 import android.text.TextUtils;
 import android.widget.RemoteViews;
 import androidx.core.app.NotificationBuilderWithBuilderAccessor;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.TaskStackBuilder;
-import androidx.media.R$id;
-import androidx.media.R$integer;
-import androidx.media.R$layout;
 import com.google.android.gms.cast.CastDevice;
 import com.google.android.gms.cast.MediaInfo;
 import com.google.android.gms.cast.MediaMetadata;
@@ -84,16 +80,20 @@ final class zzo {
         Resources resources = context.getResources();
         this.zzn = resources;
         this.zzg = new ComponentName(context.getApplicationContext(), castMediaOptions.getMediaIntentReceiverClassName());
-        this.zzh = !TextUtils.isEmpty(notificationOptions.getTargetActivityClassName()) ? new ComponentName(context.getApplicationContext(), notificationOptions.getTargetActivityClassName()) : null;
+        if (TextUtils.isEmpty(notificationOptions.getTargetActivityClassName())) {
+            this.zzh = null;
+        } else {
+            this.zzh = new ComponentName(context.getApplicationContext(), notificationOptions.getTargetActivityClassName());
+        }
         this.zzk = notificationOptions.getSkipStepMs();
         int dimensionPixelSize = resources.getDimensionPixelSize(notificationOptions.zze());
         ImageHints imageHints = new ImageHints(1, dimensionPixelSize, dimensionPixelSize);
         this.zzm = imageHints;
         this.zzl = new zzb(context.getApplicationContext(), imageHints);
         if (PlatformVersion.isAtLeastO() && notificationManager != null) {
-            NotificationChannel notificationChannel = new NotificationChannel("cast_media_notification", ((Context) Preconditions.checkNotNull(context)).getResources().getString(R$string.media_notification_channel_name), 2);
-            notificationChannel.setShowBadge(false);
-            notificationManager.createNotificationChannel(notificationChannel);
+            NotificationChannel m = zzo$$ExternalSyntheticApiModelOutline2.m("cast_media_notification", ((Context) Preconditions.checkNotNull(context)).getResources().getString(R$string.media_notification_channel_name), 2);
+            m.setShowBadge(false);
+            notificationManager.createNotificationChannel(m);
         }
         com.google.android.gms.internal.cast.zzo.zzd(zzml.zzad);
     }
@@ -204,13 +204,14 @@ final class zzo {
                     return this.zzr;
                 }
                 if (this.zzs == null) {
-                    NotificationOptions notificationOptions2 = this.zze;
                     if (i == 2) {
+                        NotificationOptions notificationOptions2 = this.zze;
                         pauseDrawableResId = notificationOptions2.getStopLiveStreamDrawableResId();
                         zzf = notificationOptions2.getStopLiveStreamTitleResId();
                     } else {
-                        pauseDrawableResId = notificationOptions2.getPauseDrawableResId();
-                        zzf = notificationOptions2.zzf();
+                        NotificationOptions notificationOptions3 = this.zze;
+                        pauseDrawableResId = notificationOptions3.getPauseDrawableResId();
+                        zzf = notificationOptions3.zzf();
                     }
                     Intent intent2 = new Intent(MediaIntentReceiver.ACTION_TOGGLE_PLAYBACK);
                     intent2.setComponent(this.zzg);
@@ -225,8 +226,8 @@ final class zzo {
                         intent3.setComponent(this.zzg);
                         pendingIntent = PendingIntent.getBroadcast(this.zzb, 0, intent3, zzdy.zza);
                     }
-                    NotificationOptions notificationOptions3 = this.zze;
-                    this.zzt = new NotificationCompat.Action.Builder(notificationOptions3.getSkipNextDrawableResId(), this.zzn.getString(notificationOptions3.zzk()), pendingIntent).build();
+                    NotificationOptions notificationOptions4 = this.zze;
+                    this.zzt = new NotificationCompat.Action.Builder(notificationOptions4.getSkipNextDrawableResId(), this.zzn.getString(notificationOptions4.zzk()), pendingIntent).build();
                 }
                 return this.zzt;
             case 2:
@@ -237,8 +238,8 @@ final class zzo {
                         intent4.setComponent(this.zzg);
                         pendingIntent = PendingIntent.getBroadcast(this.zzb, 0, intent4, zzdy.zza);
                     }
-                    NotificationOptions notificationOptions4 = this.zze;
-                    this.zzu = new NotificationCompat.Action.Builder(notificationOptions4.getSkipPrevDrawableResId(), this.zzn.getString(notificationOptions4.zzl()), pendingIntent).build();
+                    NotificationOptions notificationOptions5 = this.zze;
+                    this.zzu = new NotificationCompat.Action.Builder(notificationOptions5.getSkipPrevDrawableResId(), this.zzn.getString(notificationOptions5.zzl()), pendingIntent).build();
                 }
                 return this.zzu;
             case 3:
@@ -264,8 +265,8 @@ final class zzo {
                     Intent intent7 = new Intent(MediaIntentReceiver.ACTION_STOP_CASTING);
                     intent7.setComponent(this.zzg);
                     PendingIntent broadcast2 = PendingIntent.getBroadcast(this.zzb, 0, intent7, zzdy.zza);
-                    NotificationOptions notificationOptions5 = this.zze;
-                    this.zzy = new NotificationCompat.Action.Builder(notificationOptions5.getDisconnectDrawableResId(), this.zzn.getString(notificationOptions5.zza()), broadcast2).build();
+                    NotificationOptions notificationOptions6 = this.zze;
+                    this.zzy = new NotificationCompat.Action.Builder(notificationOptions6.getDisconnectDrawableResId(), this.zzn.getString(notificationOptions6.zza()), broadcast2).build();
                 }
                 return this.zzy;
             case 6:
@@ -273,8 +274,8 @@ final class zzo {
                     Intent intent8 = new Intent(MediaIntentReceiver.ACTION_DISCONNECT);
                     intent8.setComponent(this.zzg);
                     PendingIntent broadcast3 = PendingIntent.getBroadcast(this.zzb, 0, intent8, zzdy.zza);
-                    NotificationOptions notificationOptions6 = this.zze;
-                    this.zzx = new NotificationCompat.Action.Builder(notificationOptions6.getDisconnectDrawableResId(), this.zzn.getString(notificationOptions6.zza(), ""), broadcast3).build();
+                    NotificationOptions notificationOptions7 = this.zze;
+                    this.zzx = new NotificationCompat.Action.Builder(notificationOptions7.getDisconnectDrawableResId(), this.zzn.getString(notificationOptions7.zza(), ""), broadcast3).build();
                 }
                 return this.zzx;
             default:
@@ -285,7 +286,7 @@ final class zzo {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r0v14, types: [androidx.core.app.NotificationCompat$Style, androidx.media.app.NotificationCompat$MediaStyle] */
+    /* JADX WARN: Type inference failed for: r0v12, types: [androidx.core.app.NotificationCompat$Style, androidx.media.app.NotificationCompat$MediaStyle] */
     public final void zzg() {
         PendingIntent pendingIntent;
         NotificationCompat.Action zzf;
@@ -347,125 +348,44 @@ final class zzo {
         while (it2.hasNext()) {
             visibility.addAction((NotificationCompat.Action) it2.next());
         }
-        if (Build.VERSION.SDK_INT >= 21) {
-            ?? r0 = new NotificationCompat.Style() { // from class: androidx.media.app.NotificationCompat$MediaStyle
-                int[] mActionsToShowInCompact = null;
-                PendingIntent mCancelButtonIntent;
-                boolean mShowCancelButton;
-                MediaSessionCompat.Token mToken;
+        ?? r0 = new NotificationCompat.Style() { // from class: androidx.media.app.NotificationCompat$MediaStyle
+            int[] mActionsToShowInCompact = null;
+            MediaSessionCompat.Token mToken;
 
-                private RemoteViews generateMediaActionButton(NotificationCompat.Action action2) {
-                    boolean z = action2.getActionIntent() == null;
-                    RemoteViews remoteViews = new RemoteViews(this.mBuilder.mContext.getPackageName(), R$layout.notification_media_action);
-                    int i = R$id.action0;
-                    remoteViews.setImageViewResource(i, action2.getIcon());
-                    if (!z) {
-                        remoteViews.setOnClickPendingIntent(i, action2.getActionIntent());
-                    }
-                    NotificationCompat$Api15Impl.setContentDescription(remoteViews, i, action2.getTitle());
-                    return remoteViews;
-                }
-
-                @Override // androidx.core.app.NotificationCompat.Style
-                public void apply(NotificationBuilderWithBuilderAccessor notificationBuilderWithBuilderAccessor) {
-                    if (Build.VERSION.SDK_INT >= 21) {
-                        NotificationCompat$Api21Impl.setMediaStyle(notificationBuilderWithBuilderAccessor.getBuilder(), NotificationCompat$Api21Impl.fillInMediaStyle(NotificationCompat$Api21Impl.createMediaStyle(), this.mActionsToShowInCompact, this.mToken));
-                    } else if (this.mShowCancelButton) {
-                        notificationBuilderWithBuilderAccessor.getBuilder().setOngoing(true);
-                    }
-                }
-
-                RemoteViews generateBigContentView() {
-                    int min = Math.min(this.mBuilder.mActions.size(), 5);
-                    RemoteViews applyStandardTemplate = applyStandardTemplate(false, getBigContentViewLayoutResource(min), false);
-                    applyStandardTemplate.removeAllViews(R$id.media_actions);
-                    if (min > 0) {
-                        for (int i = 0; i < min; i++) {
-                            applyStandardTemplate.addView(R$id.media_actions, generateMediaActionButton((NotificationCompat.Action) this.mBuilder.mActions.get(i)));
-                        }
-                    }
-                    if (this.mShowCancelButton) {
-                        int i2 = R$id.cancel_action;
-                        applyStandardTemplate.setViewVisibility(i2, 0);
-                        applyStandardTemplate.setInt(i2, "setAlpha", this.mBuilder.mContext.getResources().getInteger(R$integer.cancel_button_image_alpha));
-                        applyStandardTemplate.setOnClickPendingIntent(i2, this.mCancelButtonIntent);
-                    } else {
-                        applyStandardTemplate.setViewVisibility(R$id.cancel_action, 8);
-                    }
-                    return applyStandardTemplate;
-                }
-
-                RemoteViews generateContentView() {
-                    RemoteViews applyStandardTemplate = applyStandardTemplate(false, getContentViewLayoutResource(), true);
-                    int size = this.mBuilder.mActions.size();
-                    int[] iArr = this.mActionsToShowInCompact;
-                    int min = iArr == null ? 0 : Math.min(iArr.length, 3);
-                    applyStandardTemplate.removeAllViews(R$id.media_actions);
-                    if (min > 0) {
-                        for (int i = 0; i < min; i++) {
-                            if (i >= size) {
-                                throw new IllegalArgumentException(String.format("setShowActionsInCompactView: action %d out of bounds (max %d)", Integer.valueOf(i), Integer.valueOf(size - 1)));
-                            }
-                            applyStandardTemplate.addView(R$id.media_actions, generateMediaActionButton((NotificationCompat.Action) this.mBuilder.mActions.get(this.mActionsToShowInCompact[i])));
-                        }
-                    }
-                    if (this.mShowCancelButton) {
-                        applyStandardTemplate.setViewVisibility(R$id.end_padder, 8);
-                        int i2 = R$id.cancel_action;
-                        applyStandardTemplate.setViewVisibility(i2, 0);
-                        applyStandardTemplate.setOnClickPendingIntent(i2, this.mCancelButtonIntent);
-                        applyStandardTemplate.setInt(i2, "setAlpha", this.mBuilder.mContext.getResources().getInteger(R$integer.cancel_button_image_alpha));
-                    } else {
-                        applyStandardTemplate.setViewVisibility(R$id.end_padder, 0);
-                        applyStandardTemplate.setViewVisibility(R$id.cancel_action, 8);
-                    }
-                    return applyStandardTemplate;
-                }
-
-                int getBigContentViewLayoutResource(int i) {
-                    return i <= 3 ? R$layout.notification_template_big_media_narrow : R$layout.notification_template_big_media;
-                }
-
-                int getContentViewLayoutResource() {
-                    return R$layout.notification_template_media;
-                }
-
-                @Override // androidx.core.app.NotificationCompat.Style
-                public RemoteViews makeBigContentView(NotificationBuilderWithBuilderAccessor notificationBuilderWithBuilderAccessor) {
-                    if (Build.VERSION.SDK_INT >= 21) {
-                        return null;
-                    }
-                    return generateBigContentView();
-                }
-
-                @Override // androidx.core.app.NotificationCompat.Style
-                public RemoteViews makeContentView(NotificationBuilderWithBuilderAccessor notificationBuilderWithBuilderAccessor) {
-                    if (Build.VERSION.SDK_INT >= 21) {
-                        return null;
-                    }
-                    return generateContentView();
-                }
-
-                public NotificationCompat$MediaStyle setMediaSession(MediaSessionCompat.Token token) {
-                    this.mToken = token;
-                    return this;
-                }
-
-                public NotificationCompat$MediaStyle setShowActionsInCompactView(int... iArr) {
-                    this.mActionsToShowInCompact = iArr;
-                    return this;
-                }
-            };
-            int[] iArr = this.zzj;
-            if (iArr != null) {
-                r0.setShowActionsInCompactView(iArr);
+            @Override // androidx.core.app.NotificationCompat.Style
+            public RemoteViews makeBigContentView(NotificationBuilderWithBuilderAccessor notificationBuilderWithBuilderAccessor) {
+                return null;
             }
-            MediaSessionCompat.Token token = this.zzo.zza;
-            if (token != null) {
-                r0.setMediaSession(token);
+
+            @Override // androidx.core.app.NotificationCompat.Style
+            public RemoteViews makeContentView(NotificationBuilderWithBuilderAccessor notificationBuilderWithBuilderAccessor) {
+                return null;
             }
-            visibility.setStyle(r0);
+
+            public NotificationCompat$MediaStyle setShowActionsInCompactView(int... iArr) {
+                this.mActionsToShowInCompact = iArr;
+                return this;
+            }
+
+            public NotificationCompat$MediaStyle setMediaSession(MediaSessionCompat.Token token) {
+                this.mToken = token;
+                return this;
+            }
+
+            @Override // androidx.core.app.NotificationCompat.Style
+            public void apply(NotificationBuilderWithBuilderAccessor notificationBuilderWithBuilderAccessor) {
+                NotificationCompat$Api21Impl.setMediaStyle(notificationBuilderWithBuilderAccessor.getBuilder(), NotificationCompat$Api21Impl.fillInMediaStyle(NotificationCompat$Api21Impl.createMediaStyle(), this.mActionsToShowInCompact, this.mToken));
+            }
+        };
+        int[] iArr = this.zzj;
+        if (iArr != null) {
+            r0.setShowActionsInCompactView(iArr);
         }
+        MediaSessionCompat.Token token = this.zzo.zza;
+        if (token != null) {
+            r0.setMediaSession(token);
+        }
+        visibility.setStyle(r0);
         Notification build = visibility.build();
         this.zzq = build;
         this.zzc.notify("castMediaNotification", 1, build);
@@ -479,10 +399,10 @@ final class zzo {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:26:0x005c  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x00b6  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x00c1  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x005e  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x005e  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x00b8  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x00c3  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x0060  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -507,8 +427,14 @@ final class zzo {
             } else {
                 Integer indexById = mediaStatus.getIndexById(mediaStatus.getCurrentItemId());
                 if (indexById != null) {
-                    z3 = indexById.intValue() > 0;
-                    z2 = indexById.intValue() < mediaStatus.getQueueItemCount() + (-1);
+                    boolean z4 = indexById.intValue() > 0;
+                    if (indexById.intValue() < mediaStatus.getQueueItemCount() - 1) {
+                        z3 = z4;
+                        z2 = true;
+                    } else {
+                        z3 = z4;
+                        z2 = false;
+                    }
                 }
             }
             zzmVar = new zzm(remoteMediaClient.getPlayerState() != 2, mediaInfo.getStreamType(), metadata.getString("com.google.android.gms.cast.metadata.TITLE"), castDevice.getFriendlyName(), mediaSessionCompat.getSessionToken(), z2, z3);

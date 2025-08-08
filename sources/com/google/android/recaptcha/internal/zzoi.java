@@ -12,16 +12,6 @@ public final class zzoi extends zzin implements zzkf {
         zzojVar = zzoj.zzb;
     }
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    /* synthetic */ zzoi(zzoh zzohVar) {
-        super(r1);
-        zzoj zzojVar;
-        zzojVar = zzoj.zzb;
-    }
-
     public final zzoi zzd(String str) {
         zzm();
         zzoj.zzj((zzoj) this.zza, str);
@@ -62,5 +52,15 @@ public final class zzoi extends zzin implements zzkf {
         zzm();
         zzoj.zzK((zzoj) this.zza, str);
         return this;
+    }
+
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    /* synthetic */ zzoi(zzoh zzohVar) {
+        super(r1);
+        zzoj zzojVar;
+        zzojVar = zzoj.zzb;
     }
 }

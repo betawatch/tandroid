@@ -16,16 +16,31 @@ final class BatchBuffer extends DecoderInputBuffer {
         this.maxSampleCount = 32;
     }
 
-    private boolean canAppendSampleBuffer(DecoderInputBuffer decoderInputBuffer) {
-        ByteBuffer byteBuffer;
-        if (!hasSamples()) {
-            return true;
-        }
-        if (this.sampleCount >= this.maxSampleCount || decoderInputBuffer.isDecodeOnly() != isDecodeOnly()) {
-            return false;
-        }
-        ByteBuffer byteBuffer2 = decoderInputBuffer.data;
-        return byteBuffer2 == null || (byteBuffer = this.data) == null || byteBuffer.position() + byteBuffer2.remaining() <= 3072000;
+    @Override // com.google.android.exoplayer2.decoder.DecoderInputBuffer, com.google.android.exoplayer2.decoder.Buffer
+    public void clear() {
+        super.clear();
+        this.sampleCount = 0;
+    }
+
+    public void setMaxSampleCount(int i) {
+        Assertions.checkArgument(i > 0);
+        this.maxSampleCount = i;
+    }
+
+    public long getFirstSampleTimeUs() {
+        return this.timeUs;
+    }
+
+    public long getLastSampleTimeUs() {
+        return this.lastSampleTimeUs;
+    }
+
+    public int getSampleCount() {
+        return this.sampleCount;
+    }
+
+    public boolean hasSamples() {
+        return this.sampleCount > 0;
     }
 
     public boolean append(DecoderInputBuffer decoderInputBuffer) {
@@ -55,30 +70,15 @@ final class BatchBuffer extends DecoderInputBuffer {
         return true;
     }
 
-    @Override // com.google.android.exoplayer2.decoder.DecoderInputBuffer, com.google.android.exoplayer2.decoder.Buffer
-    public void clear() {
-        super.clear();
-        this.sampleCount = 0;
-    }
-
-    public long getFirstSampleTimeUs() {
-        return this.timeUs;
-    }
-
-    public long getLastSampleTimeUs() {
-        return this.lastSampleTimeUs;
-    }
-
-    public int getSampleCount() {
-        return this.sampleCount;
-    }
-
-    public boolean hasSamples() {
-        return this.sampleCount > 0;
-    }
-
-    public void setMaxSampleCount(int i) {
-        Assertions.checkArgument(i > 0);
-        this.maxSampleCount = i;
+    private boolean canAppendSampleBuffer(DecoderInputBuffer decoderInputBuffer) {
+        ByteBuffer byteBuffer;
+        if (!hasSamples()) {
+            return true;
+        }
+        if (this.sampleCount >= this.maxSampleCount || decoderInputBuffer.isDecodeOnly() != isDecodeOnly()) {
+            return false;
+        }
+        ByteBuffer byteBuffer2 = decoderInputBuffer.data;
+        return byteBuffer2 == null || (byteBuffer = this.data) == null || byteBuffer.position() + byteBuffer2.remaining() <= 3072000;
     }
 }

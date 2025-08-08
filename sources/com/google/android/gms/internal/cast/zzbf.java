@@ -41,9 +41,9 @@ public final class zzbf extends zzal {
         this.zze = new zzbn(castOptions);
         Intent intent = new Intent(context, (Class<?>) MediaTransferReceiver.class);
         intent.setPackage(context.getPackageName());
-        boolean z = !context.getPackageManager().queryBroadcastReceivers(intent, 0).isEmpty();
-        this.zzf = z;
-        if (z) {
+        boolean isEmpty = context.getPackageManager().queryBroadcastReceivers(intent, 0).isEmpty();
+        this.zzf = !isEmpty;
+        if (!isEmpty) {
             zzo.zzd(zzml.zzJ);
         }
         zznVar.zza(new String[]{"com.google.android.gms.cast.FLAG_OUTPUT_SWITCHER_ENABLED"}).addOnCompleteListener(new OnCompleteListener() { // from class: com.google.android.gms.internal.cast.zzbc

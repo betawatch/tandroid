@@ -98,6 +98,10 @@ public final class Format implements Bundleable {
         }
     };
 
+    private static Object defaultIfNull(Object obj, Object obj2) {
+        return obj != null ? obj : obj2;
+    }
+
     public static class Builder {
         private int accessibilityChannel;
         private int averageBitrate;
@@ -195,17 +199,13 @@ public final class Format implements Bundleable {
             this.documentFilename = format.documentFilename;
         }
 
-        public Format build() {
-            return new Format(this);
-        }
-
-        public Builder setAccessibilityChannel(int i) {
-            this.accessibilityChannel = i;
+        public Builder setId(String str) {
+            this.id = str;
             return this;
         }
 
-        public Builder setAverageBitrate(int i) {
-            this.averageBitrate = i;
+        public Builder setId(int i) {
+            this.id = Integer.toString(i);
             return this;
         }
 
@@ -214,28 +214,16 @@ public final class Format implements Bundleable {
             return this;
         }
 
-        public Builder setChannelCount(int i) {
-            this.channelCount = i;
+        public Builder setDocumentId(String str) {
+            try {
+                this.documentId = Long.parseLong(str);
+            } catch (Exception unused) {
+            }
             return this;
         }
 
-        public Builder setCodecs(String str) {
-            this.codecs = str;
-            return this;
-        }
-
-        public Builder setColorInfo(ColorInfo colorInfo) {
-            this.colorInfo = colorInfo;
-            return this;
-        }
-
-        public Builder setContainerMimeType(String str) {
-            this.containerMimeType = str;
-            return this;
-        }
-
-        public Builder setCryptoType(int i) {
-            this.cryptoType = i;
+        public Builder setDocumentId(long j) {
+            this.documentId = j;
             return this;
         }
 
@@ -257,59 +245,6 @@ public final class Format implements Bundleable {
             return this;
         }
 
-        public Builder setDocumentId(long j) {
-            this.documentId = j;
-            return this;
-        }
-
-        public Builder setDocumentId(String str) {
-            try {
-                this.documentId = Long.parseLong(str);
-            } catch (Exception unused) {
-            }
-            return this;
-        }
-
-        public Builder setDrmInitData(DrmInitData drmInitData) {
-            this.drmInitData = drmInitData;
-            return this;
-        }
-
-        public Builder setEncoderDelay(int i) {
-            this.encoderDelay = i;
-            return this;
-        }
-
-        public Builder setEncoderPadding(int i) {
-            this.encoderPadding = i;
-            return this;
-        }
-
-        public Builder setFrameRate(float f) {
-            this.frameRate = f;
-            return this;
-        }
-
-        public Builder setHeight(int i) {
-            this.height = i;
-            return this;
-        }
-
-        public Builder setId(int i) {
-            this.id = Integer.toString(i);
-            return this;
-        }
-
-        public Builder setId(String str) {
-            this.id = str;
-            return this;
-        }
-
-        public Builder setInitializationData(List list) {
-            this.initializationData = list;
-            return this;
-        }
-
         public Builder setLabel(String str) {
             this.label = str;
             return this;
@@ -320,8 +255,28 @@ public final class Format implements Bundleable {
             return this;
         }
 
-        public Builder setMaxInputSize(int i) {
-            this.maxInputSize = i;
+        public Builder setSelectionFlags(int i) {
+            this.selectionFlags = i;
+            return this;
+        }
+
+        public Builder setRoleFlags(int i) {
+            this.roleFlags = i;
+            return this;
+        }
+
+        public Builder setAverageBitrate(int i) {
+            this.averageBitrate = i;
+            return this;
+        }
+
+        public Builder setPeakBitrate(int i) {
+            this.peakBitrate = i;
+            return this;
+        }
+
+        public Builder setCodecs(String str) {
+            this.codecs = str;
             return this;
         }
 
@@ -330,13 +285,53 @@ public final class Format implements Bundleable {
             return this;
         }
 
-        public Builder setPcmEncoding(int i) {
-            this.pcmEncoding = i;
+        public Builder setContainerMimeType(String str) {
+            this.containerMimeType = str;
             return this;
         }
 
-        public Builder setPeakBitrate(int i) {
-            this.peakBitrate = i;
+        public Builder setSampleMimeType(String str) {
+            this.sampleMimeType = str;
+            return this;
+        }
+
+        public Builder setMaxInputSize(int i) {
+            this.maxInputSize = i;
+            return this;
+        }
+
+        public Builder setInitializationData(List list) {
+            this.initializationData = list;
+            return this;
+        }
+
+        public Builder setDrmInitData(DrmInitData drmInitData) {
+            this.drmInitData = drmInitData;
+            return this;
+        }
+
+        public Builder setSubsampleOffsetUs(long j) {
+            this.subsampleOffsetUs = j;
+            return this;
+        }
+
+        public Builder setWidth(int i) {
+            this.width = i;
+            return this;
+        }
+
+        public Builder setHeight(int i) {
+            this.height = i;
+            return this;
+        }
+
+        public Builder setFrameRate(float f) {
+            this.frameRate = f;
+            return this;
+        }
+
+        public Builder setRotationDegrees(int i) {
+            this.rotationDegrees = i;
             return this;
         }
 
@@ -350,18 +345,18 @@ public final class Format implements Bundleable {
             return this;
         }
 
-        public Builder setRoleFlags(int i) {
-            this.roleFlags = i;
+        public Builder setStereoMode(int i) {
+            this.stereoMode = i;
             return this;
         }
 
-        public Builder setRotationDegrees(int i) {
-            this.rotationDegrees = i;
+        public Builder setColorInfo(ColorInfo colorInfo) {
+            this.colorInfo = colorInfo;
             return this;
         }
 
-        public Builder setSampleMimeType(String str) {
-            this.sampleMimeType = str;
+        public Builder setChannelCount(int i) {
+            this.channelCount = i;
             return this;
         }
 
@@ -370,18 +365,23 @@ public final class Format implements Bundleable {
             return this;
         }
 
-        public Builder setSelectionFlags(int i) {
-            this.selectionFlags = i;
+        public Builder setPcmEncoding(int i) {
+            this.pcmEncoding = i;
             return this;
         }
 
-        public Builder setStereoMode(int i) {
-            this.stereoMode = i;
+        public Builder setEncoderDelay(int i) {
+            this.encoderDelay = i;
             return this;
         }
 
-        public Builder setSubsampleOffsetUs(long j) {
-            this.subsampleOffsetUs = j;
+        public Builder setEncoderPadding(int i) {
+            this.encoderPadding = i;
+            return this;
+        }
+
+        public Builder setAccessibilityChannel(int i) {
+            this.accessibilityChannel = i;
             return this;
         }
 
@@ -395,9 +395,13 @@ public final class Format implements Bundleable {
             return this;
         }
 
-        public Builder setWidth(int i) {
-            this.width = i;
+        public Builder setCryptoType(int i) {
+            this.cryptoType = i;
             return this;
+        }
+
+        public Format build() {
+            return new Format(this);
         }
     }
 
@@ -441,48 +445,125 @@ public final class Format implements Bundleable {
         this.accessibilityChannel = builder.accessibilityChannel;
         this.tileCountHorizontal = builder.tileCountHorizontal;
         this.tileCountVertical = builder.tileCountVertical;
-        this.cryptoType = (builder.cryptoType != 0 || drmInitData == null) ? builder.cryptoType : 1;
+        if (builder.cryptoType != 0 || drmInitData == null) {
+            this.cryptoType = builder.cryptoType;
+        } else {
+            this.cryptoType = 1;
+        }
     }
 
-    private static Object defaultIfNull(Object obj, Object obj2) {
-        return obj != null ? obj : obj2;
+    public Builder buildUpon() {
+        return new Builder();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static Format fromBundle(Bundle bundle) {
-        Builder builder = new Builder();
-        BundleableUtil.ensureClassLoader(bundle);
-        String string = bundle.getString(FIELD_ID);
-        Format format = DEFAULT;
-        builder.setId((String) defaultIfNull(string, format.id)).setLabel((String) defaultIfNull(bundle.getString(FIELD_LABEL), format.label)).setLanguage((String) defaultIfNull(bundle.getString(FIELD_LANGUAGE), format.language)).setSelectionFlags(bundle.getInt(FIELD_SELECTION_FLAGS, format.selectionFlags)).setRoleFlags(bundle.getInt(FIELD_ROLE_FLAGS, format.roleFlags)).setAverageBitrate(bundle.getInt(FIELD_AVERAGE_BITRATE, format.averageBitrate)).setPeakBitrate(bundle.getInt(FIELD_PEAK_BITRATE, format.peakBitrate)).setCodecs((String) defaultIfNull(bundle.getString(FIELD_CODECS), format.codecs)).setMetadata((Metadata) defaultIfNull((Metadata) bundle.getParcelable(FIELD_METADATA), format.metadata)).setContainerMimeType((String) defaultIfNull(bundle.getString(FIELD_CONTAINER_MIME_TYPE), format.containerMimeType)).setSampleMimeType((String) defaultIfNull(bundle.getString(FIELD_SAMPLE_MIME_TYPE), format.sampleMimeType)).setMaxInputSize(bundle.getInt(FIELD_MAX_INPUT_SIZE, format.maxInputSize));
-        ArrayList arrayList = new ArrayList();
-        int i = 0;
-        while (true) {
-            byte[] byteArray = bundle.getByteArray(keyForInitializationData(i));
-            if (byteArray == null) {
-                break;
+    public Format withManifestFormatInfo(Format format) {
+        String str;
+        Metadata copyWithAppendedEntriesFrom;
+        if (this == format) {
+            return this;
+        }
+        int trackType = MimeTypes.getTrackType(this.sampleMimeType);
+        String str2 = format.id;
+        String str3 = format.label;
+        if (str3 == null) {
+            str3 = this.label;
+        }
+        String str4 = this.language;
+        if ((trackType == 3 || trackType == 1) && (str = format.language) != null) {
+            str4 = str;
+        }
+        int i = this.averageBitrate;
+        if (i == -1) {
+            i = format.averageBitrate;
+        }
+        int i2 = this.peakBitrate;
+        if (i2 == -1) {
+            i2 = format.peakBitrate;
+        }
+        String str5 = this.codecs;
+        if (str5 == null) {
+            String codecsOfType = Util.getCodecsOfType(format.codecs, trackType);
+            if (Util.splitCodecs(codecsOfType).length == 1) {
+                str5 = codecsOfType;
             }
-            arrayList.add(byteArray);
-            i++;
         }
-        Builder drmInitData = builder.setInitializationData(arrayList).setDrmInitData((DrmInitData) bundle.getParcelable(FIELD_DRM_INIT_DATA));
-        String str = FIELD_SUBSAMPLE_OFFSET_US;
-        Format format2 = DEFAULT;
-        drmInitData.setSubsampleOffsetUs(bundle.getLong(str, format2.subsampleOffsetUs)).setWidth(bundle.getInt(FIELD_WIDTH, format2.width)).setHeight(bundle.getInt(FIELD_HEIGHT, format2.height)).setFrameRate(bundle.getFloat(FIELD_FRAME_RATE, format2.frameRate)).setRotationDegrees(bundle.getInt(FIELD_ROTATION_DEGREES, format2.rotationDegrees)).setPixelWidthHeightRatio(bundle.getFloat(FIELD_PIXEL_WIDTH_HEIGHT_RATIO, format2.pixelWidthHeightRatio)).setProjectionData(bundle.getByteArray(FIELD_PROJECTION_DATA)).setStereoMode(bundle.getInt(FIELD_STEREO_MODE, format2.stereoMode));
-        Bundle bundle2 = bundle.getBundle(FIELD_COLOR_INFO);
-        if (bundle2 != null) {
-            builder.setColorInfo((ColorInfo) ColorInfo.CREATOR.fromBundle(bundle2));
+        Metadata metadata = this.metadata;
+        if (metadata == null) {
+            copyWithAppendedEntriesFrom = format.metadata;
+        } else {
+            copyWithAppendedEntriesFrom = metadata.copyWithAppendedEntriesFrom(format.metadata);
         }
-        builder.setChannelCount(bundle.getInt(FIELD_CHANNEL_COUNT, format2.channelCount)).setSampleRate(bundle.getInt(FIELD_SAMPLE_RATE, format2.sampleRate)).setPcmEncoding(bundle.getInt(FIELD_PCM_ENCODING, format2.pcmEncoding)).setEncoderDelay(bundle.getInt(FIELD_ENCODER_DELAY, format2.encoderDelay)).setEncoderPadding(bundle.getInt(FIELD_ENCODER_PADDING, format2.encoderPadding)).setAccessibilityChannel(bundle.getInt(FIELD_ACCESSIBILITY_CHANNEL, format2.accessibilityChannel)).setTileCountHorizontal(bundle.getInt(FIELD_TILE_COUNT_HORIZONTAL, format2.tileCountHorizontal)).setTileCountVertical(bundle.getInt(FIELD_TILE_COUNT_VERTICAL, format2.tileCountVertical)).setCryptoType(bundle.getInt(FIELD_CRYPTO_TYPE, format2.cryptoType));
-        return builder.build();
+        float f = this.frameRate;
+        if (f == -1.0f && trackType == 2) {
+            f = format.frameRate;
+        }
+        int i3 = this.selectionFlags | format.selectionFlags;
+        return buildUpon().setId(str2).setLabel(str3).setLanguage(str4).setSelectionFlags(i3).setRoleFlags(this.roleFlags | format.roleFlags).setAverageBitrate(i).setPeakBitrate(i2).setCodecs(str5).setMetadata(copyWithAppendedEntriesFrom).setDrmInitData(DrmInitData.createSessionCreationData(format.drmInitData, this.drmInitData)).setFrameRate(f).build();
     }
 
-    private static String keyForInitializationData(int i) {
-        return FIELD_INITIALIZATION_DATA + "_" + Integer.toString(i, 36);
+    public Format copyWithCryptoType(int i) {
+        return buildUpon().setCryptoType(i).build();
+    }
+
+    public int getPixelCount() {
+        int i;
+        int i2 = this.width;
+        if (i2 == -1 || (i = this.height) == -1) {
+            return -1;
+        }
+        return i2 * i;
+    }
+
+    public String toString() {
+        return "Format(" + this.id + ", " + this.label + ", " + this.containerMimeType + ", " + this.sampleMimeType + ", " + this.codecs + ", " + this.bitrate + ", " + this.language + ", [" + this.width + ", " + this.height + ", " + this.frameRate + "], [" + this.channelCount + ", " + this.sampleRate + "])";
+    }
+
+    public int hashCode() {
+        if (this.hashCode == 0) {
+            String str = this.id;
+            int hashCode = ((str == null ? 0 : str.hashCode()) + 527) * 31;
+            String str2 = this.label;
+            int hashCode2 = (hashCode + (str2 != null ? str2.hashCode() : 0)) * 31;
+            String str3 = this.language;
+            int hashCode3 = (((((((((hashCode2 + (str3 == null ? 0 : str3.hashCode())) * 31) + this.selectionFlags) * 31) + this.roleFlags) * 31) + this.averageBitrate) * 31) + this.peakBitrate) * 31;
+            String str4 = this.codecs;
+            int hashCode4 = (hashCode3 + (str4 == null ? 0 : str4.hashCode())) * 31;
+            Metadata metadata = this.metadata;
+            int hashCode5 = (hashCode4 + (metadata == null ? 0 : metadata.hashCode())) * 31;
+            String str5 = this.containerMimeType;
+            int hashCode6 = (hashCode5 + (str5 == null ? 0 : str5.hashCode())) * 31;
+            String str6 = this.sampleMimeType;
+            this.hashCode = ((((((((((((((((((((((((((((((((((hashCode6 + (str6 != null ? str6.hashCode() : 0)) * 31) + this.maxInputSize) * 31) + ((int) this.subsampleOffsetUs)) * 31) + this.width) * 31) + this.height) * 31) + Float.floatToIntBits(this.frameRate)) * 31) + this.rotationDegrees) * 31) + Float.floatToIntBits(this.pixelWidthHeightRatio)) * 31) + this.stereoMode) * 31) + this.channelCount) * 31) + this.sampleRate) * 31) + this.pcmEncoding) * 31) + this.encoderDelay) * 31) + this.encoderPadding) * 31) + this.accessibilityChannel) * 31) + this.tileCountHorizontal) * 31) + this.tileCountVertical) * 31) + this.cryptoType;
+        }
+        return this.hashCode;
+    }
+
+    public boolean equals(Object obj) {
+        int i;
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || Format.class != obj.getClass()) {
+            return false;
+        }
+        Format format = (Format) obj;
+        int i2 = this.hashCode;
+        return (i2 == 0 || (i = format.hashCode) == 0 || i2 == i) && this.selectionFlags == format.selectionFlags && this.roleFlags == format.roleFlags && this.averageBitrate == format.averageBitrate && this.peakBitrate == format.peakBitrate && this.maxInputSize == format.maxInputSize && this.subsampleOffsetUs == format.subsampleOffsetUs && this.width == format.width && this.height == format.height && this.rotationDegrees == format.rotationDegrees && this.stereoMode == format.stereoMode && this.channelCount == format.channelCount && this.sampleRate == format.sampleRate && this.pcmEncoding == format.pcmEncoding && this.encoderDelay == format.encoderDelay && this.encoderPadding == format.encoderPadding && this.accessibilityChannel == format.accessibilityChannel && this.tileCountHorizontal == format.tileCountHorizontal && this.tileCountVertical == format.tileCountVertical && this.cryptoType == format.cryptoType && Float.compare(this.frameRate, format.frameRate) == 0 && Float.compare(this.pixelWidthHeightRatio, format.pixelWidthHeightRatio) == 0 && Util.areEqual(this.id, format.id) && Util.areEqual(this.label, format.label) && Util.areEqual(this.codecs, format.codecs) && Util.areEqual(this.containerMimeType, format.containerMimeType) && Util.areEqual(this.sampleMimeType, format.sampleMimeType) && Util.areEqual(this.language, format.language) && Arrays.equals(this.projectionData, format.projectionData) && Util.areEqual(this.metadata, format.metadata) && Util.areEqual(this.colorInfo, format.colorInfo) && Util.areEqual(this.drmInitData, format.drmInitData) && initializationDataEquals(format);
+    }
+
+    public boolean initializationDataEquals(Format format) {
+        if (this.initializationData.size() != format.initializationData.size()) {
+            return false;
+        }
+        for (int i = 0; i < this.initializationData.size(); i++) {
+            if (!Arrays.equals((byte[]) this.initializationData.get(i), (byte[]) format.initializationData.get(i))) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public static String toLogString(Format format) {
-        String str;
         if (format == null) {
             return "null";
         }
@@ -509,19 +590,18 @@ public final class Format implements Bundleable {
                 }
                 UUID uuid = drmInitData.get(i).uuid;
                 if (uuid.equals(C.COMMON_PSSH_UUID)) {
-                    str = "cenc";
+                    linkedHashSet.add("cenc");
                 } else if (uuid.equals(C.CLEARKEY_UUID)) {
-                    str = "clearkey";
+                    linkedHashSet.add("clearkey");
                 } else if (uuid.equals(C.PLAYREADY_UUID)) {
-                    str = "playready";
+                    linkedHashSet.add("playready");
                 } else if (uuid.equals(C.WIDEVINE_UUID)) {
-                    str = "widevine";
+                    linkedHashSet.add("widevine");
                 } else if (uuid.equals(C.UUID_NIL)) {
-                    str = "universal";
+                    linkedHashSet.add("universal");
                 } else {
-                    str = "unknown (" + uuid + ")";
+                    linkedHashSet.add("unknown (" + uuid + ")");
                 }
-                linkedHashSet.add(str);
                 i++;
             }
             sb.append(", drm=[");
@@ -623,68 +703,6 @@ public final class Format implements Bundleable {
         return sb.toString();
     }
 
-    public Builder buildUpon() {
-        return new Builder();
-    }
-
-    public Format copyWithCryptoType(int i) {
-        return buildUpon().setCryptoType(i).build();
-    }
-
-    public boolean equals(Object obj) {
-        int i;
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || Format.class != obj.getClass()) {
-            return false;
-        }
-        Format format = (Format) obj;
-        int i2 = this.hashCode;
-        return (i2 == 0 || (i = format.hashCode) == 0 || i2 == i) && this.selectionFlags == format.selectionFlags && this.roleFlags == format.roleFlags && this.averageBitrate == format.averageBitrate && this.peakBitrate == format.peakBitrate && this.maxInputSize == format.maxInputSize && this.subsampleOffsetUs == format.subsampleOffsetUs && this.width == format.width && this.height == format.height && this.rotationDegrees == format.rotationDegrees && this.stereoMode == format.stereoMode && this.channelCount == format.channelCount && this.sampleRate == format.sampleRate && this.pcmEncoding == format.pcmEncoding && this.encoderDelay == format.encoderDelay && this.encoderPadding == format.encoderPadding && this.accessibilityChannel == format.accessibilityChannel && this.tileCountHorizontal == format.tileCountHorizontal && this.tileCountVertical == format.tileCountVertical && this.cryptoType == format.cryptoType && Float.compare(this.frameRate, format.frameRate) == 0 && Float.compare(this.pixelWidthHeightRatio, format.pixelWidthHeightRatio) == 0 && Util.areEqual(this.id, format.id) && Util.areEqual(this.label, format.label) && Util.areEqual(this.codecs, format.codecs) && Util.areEqual(this.containerMimeType, format.containerMimeType) && Util.areEqual(this.sampleMimeType, format.sampleMimeType) && Util.areEqual(this.language, format.language) && Arrays.equals(this.projectionData, format.projectionData) && Util.areEqual(this.metadata, format.metadata) && Util.areEqual(this.colorInfo, format.colorInfo) && Util.areEqual(this.drmInitData, format.drmInitData) && initializationDataEquals(format);
-    }
-
-    public int getPixelCount() {
-        int i;
-        int i2 = this.width;
-        if (i2 == -1 || (i = this.height) == -1) {
-            return -1;
-        }
-        return i2 * i;
-    }
-
-    public int hashCode() {
-        if (this.hashCode == 0) {
-            String str = this.id;
-            int hashCode = ((str == null ? 0 : str.hashCode()) + 527) * 31;
-            String str2 = this.label;
-            int hashCode2 = (hashCode + (str2 != null ? str2.hashCode() : 0)) * 31;
-            String str3 = this.language;
-            int hashCode3 = (((((((((hashCode2 + (str3 == null ? 0 : str3.hashCode())) * 31) + this.selectionFlags) * 31) + this.roleFlags) * 31) + this.averageBitrate) * 31) + this.peakBitrate) * 31;
-            String str4 = this.codecs;
-            int hashCode4 = (hashCode3 + (str4 == null ? 0 : str4.hashCode())) * 31;
-            Metadata metadata = this.metadata;
-            int hashCode5 = (hashCode4 + (metadata == null ? 0 : metadata.hashCode())) * 31;
-            String str5 = this.containerMimeType;
-            int hashCode6 = (hashCode5 + (str5 == null ? 0 : str5.hashCode())) * 31;
-            String str6 = this.sampleMimeType;
-            this.hashCode = ((((((((((((((((((((((((((((((((((hashCode6 + (str6 != null ? str6.hashCode() : 0)) * 31) + this.maxInputSize) * 31) + ((int) this.subsampleOffsetUs)) * 31) + this.width) * 31) + this.height) * 31) + Float.floatToIntBits(this.frameRate)) * 31) + this.rotationDegrees) * 31) + Float.floatToIntBits(this.pixelWidthHeightRatio)) * 31) + this.stereoMode) * 31) + this.channelCount) * 31) + this.sampleRate) * 31) + this.pcmEncoding) * 31) + this.encoderDelay) * 31) + this.encoderPadding) * 31) + this.accessibilityChannel) * 31) + this.tileCountHorizontal) * 31) + this.tileCountVertical) * 31) + this.cryptoType;
-        }
-        return this.hashCode;
-    }
-
-    public boolean initializationDataEquals(Format format) {
-        if (this.initializationData.size() != format.initializationData.size()) {
-            return false;
-        }
-        for (int i = 0; i < this.initializationData.size(); i++) {
-            if (!Arrays.equals((byte[]) this.initializationData.get(i), (byte[]) format.initializationData.get(i))) {
-                return false;
-            }
-        }
-        return true;
-    }
-
     @Override // com.google.android.exoplayer2.Bundleable
     public Bundle toBundle() {
         return toBundle(false);
@@ -734,46 +752,36 @@ public final class Format implements Bundleable {
         return bundle;
     }
 
-    public String toString() {
-        return "Format(" + this.id + ", " + this.label + ", " + this.containerMimeType + ", " + this.sampleMimeType + ", " + this.codecs + ", " + this.bitrate + ", " + this.language + ", [" + this.width + ", " + this.height + ", " + this.frameRate + "], [" + this.channelCount + ", " + this.sampleRate + "])";
+    /* JADX INFO: Access modifiers changed from: private */
+    public static Format fromBundle(Bundle bundle) {
+        Builder builder = new Builder();
+        BundleableUtil.ensureClassLoader(bundle);
+        String string = bundle.getString(FIELD_ID);
+        Format format = DEFAULT;
+        builder.setId((String) defaultIfNull(string, format.id)).setLabel((String) defaultIfNull(bundle.getString(FIELD_LABEL), format.label)).setLanguage((String) defaultIfNull(bundle.getString(FIELD_LANGUAGE), format.language)).setSelectionFlags(bundle.getInt(FIELD_SELECTION_FLAGS, format.selectionFlags)).setRoleFlags(bundle.getInt(FIELD_ROLE_FLAGS, format.roleFlags)).setAverageBitrate(bundle.getInt(FIELD_AVERAGE_BITRATE, format.averageBitrate)).setPeakBitrate(bundle.getInt(FIELD_PEAK_BITRATE, format.peakBitrate)).setCodecs((String) defaultIfNull(bundle.getString(FIELD_CODECS), format.codecs)).setMetadata((Metadata) defaultIfNull((Metadata) bundle.getParcelable(FIELD_METADATA), format.metadata)).setContainerMimeType((String) defaultIfNull(bundle.getString(FIELD_CONTAINER_MIME_TYPE), format.containerMimeType)).setSampleMimeType((String) defaultIfNull(bundle.getString(FIELD_SAMPLE_MIME_TYPE), format.sampleMimeType)).setMaxInputSize(bundle.getInt(FIELD_MAX_INPUT_SIZE, format.maxInputSize));
+        ArrayList arrayList = new ArrayList();
+        int i = 0;
+        while (true) {
+            byte[] byteArray = bundle.getByteArray(keyForInitializationData(i));
+            if (byteArray == null) {
+                break;
+            }
+            arrayList.add(byteArray);
+            i++;
+        }
+        Builder drmInitData = builder.setInitializationData(arrayList).setDrmInitData((DrmInitData) bundle.getParcelable(FIELD_DRM_INIT_DATA));
+        String str = FIELD_SUBSAMPLE_OFFSET_US;
+        Format format2 = DEFAULT;
+        drmInitData.setSubsampleOffsetUs(bundle.getLong(str, format2.subsampleOffsetUs)).setWidth(bundle.getInt(FIELD_WIDTH, format2.width)).setHeight(bundle.getInt(FIELD_HEIGHT, format2.height)).setFrameRate(bundle.getFloat(FIELD_FRAME_RATE, format2.frameRate)).setRotationDegrees(bundle.getInt(FIELD_ROTATION_DEGREES, format2.rotationDegrees)).setPixelWidthHeightRatio(bundle.getFloat(FIELD_PIXEL_WIDTH_HEIGHT_RATIO, format2.pixelWidthHeightRatio)).setProjectionData(bundle.getByteArray(FIELD_PROJECTION_DATA)).setStereoMode(bundle.getInt(FIELD_STEREO_MODE, format2.stereoMode));
+        Bundle bundle2 = bundle.getBundle(FIELD_COLOR_INFO);
+        if (bundle2 != null) {
+            builder.setColorInfo((ColorInfo) ColorInfo.CREATOR.fromBundle(bundle2));
+        }
+        builder.setChannelCount(bundle.getInt(FIELD_CHANNEL_COUNT, format2.channelCount)).setSampleRate(bundle.getInt(FIELD_SAMPLE_RATE, format2.sampleRate)).setPcmEncoding(bundle.getInt(FIELD_PCM_ENCODING, format2.pcmEncoding)).setEncoderDelay(bundle.getInt(FIELD_ENCODER_DELAY, format2.encoderDelay)).setEncoderPadding(bundle.getInt(FIELD_ENCODER_PADDING, format2.encoderPadding)).setAccessibilityChannel(bundle.getInt(FIELD_ACCESSIBILITY_CHANNEL, format2.accessibilityChannel)).setTileCountHorizontal(bundle.getInt(FIELD_TILE_COUNT_HORIZONTAL, format2.tileCountHorizontal)).setTileCountVertical(bundle.getInt(FIELD_TILE_COUNT_VERTICAL, format2.tileCountVertical)).setCryptoType(bundle.getInt(FIELD_CRYPTO_TYPE, format2.cryptoType));
+        return builder.build();
     }
 
-    public Format withManifestFormatInfo(Format format) {
-        String str;
-        if (this == format) {
-            return this;
-        }
-        int trackType = MimeTypes.getTrackType(this.sampleMimeType);
-        String str2 = format.id;
-        String str3 = format.label;
-        if (str3 == null) {
-            str3 = this.label;
-        }
-        String str4 = this.language;
-        if ((trackType == 3 || trackType == 1) && (str = format.language) != null) {
-            str4 = str;
-        }
-        int i = this.averageBitrate;
-        if (i == -1) {
-            i = format.averageBitrate;
-        }
-        int i2 = this.peakBitrate;
-        if (i2 == -1) {
-            i2 = format.peakBitrate;
-        }
-        String str5 = this.codecs;
-        if (str5 == null) {
-            String codecsOfType = Util.getCodecsOfType(format.codecs, trackType);
-            if (Util.splitCodecs(codecsOfType).length == 1) {
-                str5 = codecsOfType;
-            }
-        }
-        Metadata metadata = this.metadata;
-        Metadata copyWithAppendedEntriesFrom = metadata == null ? format.metadata : metadata.copyWithAppendedEntriesFrom(format.metadata);
-        float f = this.frameRate;
-        if (f == -1.0f && trackType == 2) {
-            f = format.frameRate;
-        }
-        return buildUpon().setId(str2).setLabel(str3).setLanguage(str4).setSelectionFlags(this.selectionFlags | format.selectionFlags).setRoleFlags(this.roleFlags | format.roleFlags).setAverageBitrate(i).setPeakBitrate(i2).setCodecs(str5).setMetadata(copyWithAppendedEntriesFrom).setDrmInitData(DrmInitData.createSessionCreationData(format.drmInitData, this.drmInitData)).setFrameRate(f).build();
+    private static String keyForInitializationData(int i) {
+        return FIELD_INITIALIZATION_DATA + "_" + Integer.toString(i, 36);
     }
 }

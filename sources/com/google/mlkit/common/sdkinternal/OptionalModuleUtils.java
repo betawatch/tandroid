@@ -11,16 +11,16 @@ import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.moduleinstall.ModuleAvailabilityResponse;
 import com.google.android.gms.common.moduleinstall.ModuleInstall;
 import com.google.android.gms.common.moduleinstall.ModuleInstallRequest;
-import com.google.android.gms.internal.mlkit_common.zzaq;
-import com.google.android.gms.internal.mlkit_common.zzas;
-import com.google.android.gms.internal.mlkit_common.zzat;
+import com.google.android.gms.internal.mlkit_common.zzaf;
+import com.google.android.gms.internal.mlkit_common.zzah;
+import com.google.android.gms.internal.mlkit_common.zzai;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Tasks;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class OptionalModuleUtils {
     public static final Feature[] EMPTY_FEATURES = new Feature[0];
     public static final Feature FEATURE_BARCODE;
@@ -48,8 +48,8 @@ public abstract class OptionalModuleUtils {
     public static final Feature FEATURE_SMART_REPLY;
     public static final Feature FEATURE_SUBJECT_SEGMENTATION;
     public static final Feature FEATURE_TFLITE_DYNAMITE;
-    private static final zzat zza;
-    private static final zzat zzb;
+    private static final zzai zza;
+    private static final zzai zzb;
 
     static {
         Feature feature = new Feature("vision.barcode", 1L);
@@ -87,29 +87,54 @@ public abstract class OptionalModuleUtils {
         FEATURE_IMAGE_QUALITY_AESTHETIC = new Feature("mlkit.quality.aesthetic", 1L);
         FEATURE_IMAGE_QUALITY_TECHNICAL = new Feature("mlkit.quality.technical", 1L);
         FEATURE_SUBJECT_SEGMENTATION = new Feature("mlkit.segmentation.subject", 1L);
-        zzas zzasVar = new zzas();
-        zzasVar.zza("barcode", feature);
-        zzasVar.zza("custom_ica", feature2);
-        zzasVar.zza("face", feature3);
-        zzasVar.zza("ica", feature4);
-        zzasVar.zza("ocr", feature5);
-        zzasVar.zza("langid", feature6);
-        zzasVar.zza("nlclassifier", feature7);
-        zzasVar.zza("tflite_dynamite", feature8);
-        zzasVar.zza("barcode_ui", feature9);
-        zzasVar.zza("smart_reply", feature10);
-        zza = zzasVar.zzb();
-        zzas zzasVar2 = new zzas();
-        zzasVar2.zza("com.google.android.gms.vision.barcode", feature);
-        zzasVar2.zza("com.google.android.gms.vision.custom.ica", feature2);
-        zzasVar2.zza("com.google.android.gms.vision.face", feature3);
-        zzasVar2.zza("com.google.android.gms.vision.ica", feature4);
-        zzasVar2.zza("com.google.android.gms.vision.ocr", feature5);
-        zzasVar2.zza("com.google.android.gms.mlkit.langid", feature6);
-        zzasVar2.zza("com.google.android.gms.mlkit.nlclassifier", feature7);
-        zzasVar2.zza("com.google.android.gms.tflite_dynamite", feature8);
-        zzasVar2.zza("com.google.android.gms.mlkit_smartreply", feature10);
-        zzb = zzasVar2.zzb();
+        zzah zzahVar = new zzah();
+        zzahVar.zza("barcode", feature);
+        zzahVar.zza("custom_ica", feature2);
+        zzahVar.zza("face", feature3);
+        zzahVar.zza("ica", feature4);
+        zzahVar.zza("ocr", feature5);
+        zzahVar.zza("langid", feature6);
+        zzahVar.zza("nlclassifier", feature7);
+        zzahVar.zza("tflite_dynamite", feature8);
+        zzahVar.zza("barcode_ui", feature9);
+        zzahVar.zza("smart_reply", feature10);
+        zza = zzahVar.zzb();
+        zzah zzahVar2 = new zzah();
+        zzahVar2.zza("com.google.android.gms.vision.barcode", feature);
+        zzahVar2.zza("com.google.android.gms.vision.custom.ica", feature2);
+        zzahVar2.zza("com.google.android.gms.vision.face", feature3);
+        zzahVar2.zza("com.google.android.gms.vision.ica", feature4);
+        zzahVar2.zza("com.google.android.gms.vision.ocr", feature5);
+        zzahVar2.zza("com.google.android.gms.mlkit.langid", feature6);
+        zzahVar2.zza("com.google.android.gms.mlkit.nlclassifier", feature7);
+        zzahVar2.zza("com.google.android.gms.tflite_dynamite", feature8);
+        zzahVar2.zza("com.google.android.gms.mlkit_smartreply", feature10);
+        zzb = zzahVar2.zzb();
+    }
+
+    public static void requestDownload(Context context, String str) {
+        requestDownload(context, zzaf.zzh(str));
+    }
+
+    private static Feature[] zza(Map map, List list) {
+        Feature[] featureArr = new Feature[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            featureArr[i] = (Feature) Preconditions.checkNotNull((Feature) map.get(list.get(i)));
+        }
+        return featureArr;
+    }
+
+    public static void requestDownload(Context context, List list) {
+        if (GoogleApiAvailabilityLight.getInstance().getApkVersion(context) >= 221500000) {
+            requestDownload(context, zza(zza, list));
+            return;
+        }
+        Intent intent = new Intent();
+        intent.setClassName("com.google.android.gms", "com.google.android.gms.vision.DependencyBroadcastReceiverProxy");
+        intent.setAction("com.google.android.gms.vision.DEPENDENCY");
+        intent.putExtra("com.google.android.gms.vision.DEPENDENCIES", TextUtils.join(",", list));
+        intent.putExtra("requester_app_package", context.getApplicationInfo().packageName);
+        context.sendBroadcast(intent);
     }
 
     public static boolean areAllRequiredModulesAvailable(Context context, final Feature[] featureArr) {
@@ -132,23 +157,6 @@ public abstract class OptionalModuleUtils {
         }
     }
 
-    public static void requestDownload(Context context, String str) {
-        requestDownload(context, zzaq.zzh(str));
-    }
-
-    public static void requestDownload(Context context, List list) {
-        if (GoogleApiAvailabilityLight.getInstance().getApkVersion(context) >= 221500000) {
-            requestDownload(context, zza(zza, list));
-            return;
-        }
-        Intent intent = new Intent();
-        intent.setClassName("com.google.android.gms", "com.google.android.gms.vision.DependencyBroadcastReceiverProxy");
-        intent.setAction("com.google.android.gms.vision.DEPENDENCY");
-        intent.putExtra("com.google.android.gms.vision.DEPENDENCIES", TextUtils.join(",", list));
-        intent.putExtra("requester_app_package", context.getApplicationInfo().packageName);
-        context.sendBroadcast(intent);
-    }
-
     public static void requestDownload(Context context, final Feature[] featureArr) {
         ModuleInstall.getClient(context).installModules(ModuleInstallRequest.newBuilder().addApi(new OptionalModuleApi() { // from class: com.google.mlkit.common.sdkinternal.zzo
             @Override // com.google.android.gms.common.api.OptionalModuleApi
@@ -162,13 +170,5 @@ public abstract class OptionalModuleUtils {
                 Log.e("OptionalModuleUtils", "Failed to request modules install request", exc);
             }
         });
-    }
-
-    private static Feature[] zza(Map map, List list) {
-        Feature[] featureArr = new Feature[list.size()];
-        for (int i = 0; i < list.size(); i++) {
-            featureArr[i] = (Feature) Preconditions.checkNotNull((Feature) map.get(list.get(i)));
-        }
-        return featureArr;
     }
 }

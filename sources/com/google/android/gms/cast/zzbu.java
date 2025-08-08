@@ -11,10 +11,6 @@ public final class zzbu extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzbu> CREATOR = new zzbv();
     private final int zza;
 
-    zzbu(int i) {
-        this.zza = i;
-    }
-
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -36,5 +32,9 @@ public final class zzbu extends AbstractSafeParcelable {
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
         SafeParcelWriter.writeInt(parcel, 2, this.zza);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    zzbu(int i) {
+        this.zza = i;
     }
 }

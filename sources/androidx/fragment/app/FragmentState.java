@@ -31,20 +31,9 @@ final class FragmentState implements Parcelable {
     final String mTag;
     final String mWho;
 
-    FragmentState(Parcel parcel) {
-        this.mClassName = parcel.readString();
-        this.mWho = parcel.readString();
-        this.mFromLayout = parcel.readInt() != 0;
-        this.mFragmentId = parcel.readInt();
-        this.mContainerId = parcel.readInt();
-        this.mTag = parcel.readString();
-        this.mRetainInstance = parcel.readInt() != 0;
-        this.mRemoving = parcel.readInt() != 0;
-        this.mDetached = parcel.readInt() != 0;
-        this.mArguments = parcel.readBundle();
-        this.mHidden = parcel.readInt() != 0;
-        this.mSavedFragmentState = parcel.readBundle();
-        this.mMaxLifecycleState = parcel.readInt();
+    @Override // android.os.Parcelable
+    public int describeContents() {
+        return 0;
     }
 
     FragmentState(Fragment fragment) {
@@ -62,9 +51,20 @@ final class FragmentState implements Parcelable {
         this.mMaxLifecycleState = fragment.mMaxState.ordinal();
     }
 
-    @Override // android.os.Parcelable
-    public int describeContents() {
-        return 0;
+    FragmentState(Parcel parcel) {
+        this.mClassName = parcel.readString();
+        this.mWho = parcel.readString();
+        this.mFromLayout = parcel.readInt() != 0;
+        this.mFragmentId = parcel.readInt();
+        this.mContainerId = parcel.readInt();
+        this.mTag = parcel.readString();
+        this.mRetainInstance = parcel.readInt() != 0;
+        this.mRemoving = parcel.readInt() != 0;
+        this.mDetached = parcel.readInt() != 0;
+        this.mArguments = parcel.readBundle();
+        this.mHidden = parcel.readInt() != 0;
+        this.mSavedFragmentState = parcel.readBundle();
+        this.mMaxLifecycleState = parcel.readInt();
     }
 
     public String toString() {

@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 class KeysMap {
     private final Map keys = new HashMap();
     private final int maxEntries;
@@ -15,21 +15,6 @@ class KeysMap {
     public KeysMap(int i, int i2) {
         this.maxEntries = i;
         this.maxEntryLength = i2;
-    }
-
-    private String sanitizeKey(String str) {
-        if (str != null) {
-            return sanitizeString(str, this.maxEntryLength);
-        }
-        throw new IllegalArgumentException("Custom attribute key must not be null.");
-    }
-
-    public static String sanitizeString(String str, int i) {
-        if (str == null) {
-            return str;
-        }
-        String trim = str.trim();
-        return trim.length() > i ? trim.substring(0, i) : trim;
     }
 
     public synchronized Map getKeys() {
@@ -71,5 +56,20 @@ class KeysMap {
         } catch (Throwable th) {
             throw th;
         }
+    }
+
+    private String sanitizeKey(String str) {
+        if (str == null) {
+            throw new IllegalArgumentException("Custom attribute key must not be null.");
+        }
+        return sanitizeString(str, this.maxEntryLength);
+    }
+
+    public static String sanitizeString(String str, int i) {
+        if (str == null) {
+            return str;
+        }
+        String trim = str.trim();
+        return trim.length() > i ? trim.substring(0, i) : trim;
     }
 }

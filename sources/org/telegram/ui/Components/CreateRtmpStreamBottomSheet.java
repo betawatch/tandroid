@@ -31,7 +31,7 @@ import org.telegram.ui.Components.JoinCallAlert;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.UItem;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView {
     private UniversalAdapter adapter;
     private final boolean hasFewPeers;
@@ -40,76 +40,12 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
     private String rtmpUrl;
     private TLRPC.InputPeer selectAfterDismiss;
 
-    public static class TextDetailCellFactory extends UItem.UItemFactory {
-        static {
-            UItem.UItemFactory.setup(new TextDetailCellFactory());
-        }
-
-        private void copyRtmpValue(Context context, String str) {
-            AndroidUtilities.addToClipboard(str);
-            if (AndroidUtilities.shouldShowClipboardToast()) {
-                Toast.makeText(context, LocaleController.getString(R.string.TextCopied), 0).show();
-            }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$createView$0(Context context, TextDetailCell textDetailCell, View view) {
-            copyRtmpValue(context, textDetailCell.textView.getText().toString());
-        }
-
-        public static UItem of(String str, String str2, boolean z) {
-            UItem ofFactory = UItem.ofFactory(TextDetailCellFactory.class);
-            ofFactory.text = str;
-            ofFactory.textValue = str2;
-            ofFactory.hideDivider = !z;
-            ofFactory.enabled = false;
-            return ofFactory;
-        }
-
-        @Override // org.telegram.ui.Components.UItem.UItemFactory
-        public void bindView(View view, UItem uItem, boolean z, UniversalAdapter universalAdapter, UniversalRecyclerView universalRecyclerView) {
-            ((TextDetailCell) view).setTextAndValue(uItem.text, uItem.textValue, !uItem.hideDivider);
-        }
-
-        @Override // org.telegram.ui.Components.UItem.UItemFactory
-        public TextDetailCell createView(final Context context, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
-            final TextDetailCell textDetailCell = new TextDetailCell(context);
-            textDetailCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite, resourcesProvider));
-            Drawable mutate = ContextCompat.getDrawable(context, R.drawable.msg_copy).mutate();
-            mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteBlueHeader), PorterDuff.Mode.MULTIPLY));
-            textDetailCell.setImage(mutate);
-            textDetailCell.setImageClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$TextDetailCellFactory$$ExternalSyntheticLambda0
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    CreateRtmpStreamBottomSheet.TextDetailCellFactory.this.lambda$createView$0(context, textDetailCell, view);
-                }
-            });
-            return textDetailCell;
-        }
-    }
-
-    private static class TopCell extends LinearLayout {
-        public TopCell(Context context) {
-            super(context);
-            setOrientation(1);
-            RLottieImageView rLottieImageView = new RLottieImageView(context);
-            rLottieImageView.setAutoRepeat(true);
-            rLottieImageView.setAnimation(R.raw.utyan_streaming, 112, 112);
-            rLottieImageView.playAnimation();
-            addView(rLottieImageView, LayoutHelper.createLinear(112, 112, 49, 0, 24, 0, 0));
-            TextView textView = new TextView(context);
-            textView.setTypeface(AndroidUtilities.bold());
-            textView.setText(LocaleController.formatString(R.string.Streaming, new Object[0]));
-            textView.setTextSize(1, 20.0f);
-            textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
-            addView(textView, LayoutHelper.createLinear(-2, -2, 1, 0, 14, 0, 7));
-            TextView textView2 = new TextView(context);
-            textView2.setTextSize(1, 14.0f);
-            textView2.setGravity(1);
-            textView2.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
-            textView2.setText(LocaleController.formatString(R.string.VoipStreamStart, new Object[0]));
-            textView2.setLineSpacing(textView2.getLineSpacingExtra(), textView2.getLineSpacingMultiplier() * 1.1f);
-            addView(textView2, LayoutHelper.createLinear(-2, -2, 1, 28, 0, 28, 17));
+    public static void show(TLRPC.Peer peer, BaseFragment baseFragment, long j, boolean z, JoinCallAlert.JoinCallAlertDelegate joinCallAlertDelegate) {
+        CreateRtmpStreamBottomSheet createRtmpStreamBottomSheet = new CreateRtmpStreamBottomSheet(baseFragment, peer, j, z, joinCallAlertDelegate);
+        if (baseFragment != null && baseFragment.getParentActivity() != null) {
+            baseFragment.showDialog(createRtmpStreamBottomSheet);
+        } else {
+            createRtmpStreamBottomSheet.show();
         }
     }
 
@@ -151,30 +87,9 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter) {
-        arrayList.add(UItem.asCustom(new TopCell(getContext())));
-        arrayList.add(UItem.asShadow(null));
-        arrayList.add(UItem.asHeader(LocaleController.getString(R.string.VoipChatStreamSettings)));
-        arrayList.add(TextDetailCellFactory.of(this.rtmpUrl, LocaleController.getString(R.string.VoipChatStreamServerUrl), true));
-        arrayList.add(TextDetailCellFactory.of(this.rtmpKey, LocaleController.getString(R.string.VoipChatStreamKey), false));
-        arrayList.add(UItem.asShadow(LocaleController.getString(R.string.VoipChatStreamWithAnotherAppDescription)));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$0(TLRPC.Peer peer, View view) {
         this.selectAfterDismiss = MessagesController.getInstance(this.currentAccount).getInputPeer(MessageObject.getPeerId(peer));
         lambda$new$0();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(TLObject tLObject) {
-        if (tLObject == null || !(tLObject instanceof TL_phone.groupCallStreamRtmpUrl)) {
-            return;
-        }
-        TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl = (TL_phone.groupCallStreamRtmpUrl) tLObject;
-        this.rtmpUrl = groupcallstreamrtmpurl.url;
-        this.rtmpKey = groupcallstreamrtmpurl.key;
-        this.adapter.update(false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -187,25 +102,15 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
         });
     }
 
-    public static void show(TLRPC.Peer peer, BaseFragment baseFragment, long j, boolean z, JoinCallAlert.JoinCallAlertDelegate joinCallAlertDelegate) {
-        CreateRtmpStreamBottomSheet createRtmpStreamBottomSheet = new CreateRtmpStreamBottomSheet(baseFragment, peer, j, z, joinCallAlertDelegate);
-        if (baseFragment == null || baseFragment.getParentActivity() == null) {
-            createRtmpStreamBottomSheet.show();
-        } else {
-            baseFragment.showDialog(createRtmpStreamBottomSheet);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$1(TLObject tLObject) {
+        if (tLObject == null || !(tLObject instanceof TL_phone.groupCallStreamRtmpUrl)) {
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
-    public RecyclerListView.SelectionAdapter createAdapter(RecyclerListView recyclerListView) {
-        UniversalAdapter universalAdapter = new UniversalAdapter(recyclerListView, getContext(), this.currentAccount, 0, true, new Utilities.Callback2() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda0
-            @Override // org.telegram.messenger.Utilities.Callback2
-            public final void run(Object obj, Object obj2) {
-                CreateRtmpStreamBottomSheet.this.fillItems((ArrayList) obj, (UniversalAdapter) obj2);
-            }
-        }, this.resourcesProvider);
-        this.adapter = universalAdapter;
-        return universalAdapter;
+        TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl = (TL_phone.groupCallStreamRtmpUrl) tLObject;
+        this.rtmpUrl = groupcallstreamrtmpurl.url;
+        this.rtmpKey = groupcallstreamrtmpurl.key;
+        this.adapter.update(false);
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet
@@ -220,5 +125,100 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
     @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
     protected CharSequence getTitle() {
         return LocaleController.getString(R.string.Streaming);
+    }
+
+    @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
+    public RecyclerListView.SelectionAdapter createAdapter(RecyclerListView recyclerListView) {
+        UniversalAdapter universalAdapter = new UniversalAdapter(recyclerListView, getContext(), this.currentAccount, 0, true, new Utilities.Callback2() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda0
+            @Override // org.telegram.messenger.Utilities.Callback2
+            public final void run(Object obj, Object obj2) {
+                CreateRtmpStreamBottomSheet.this.fillItems((ArrayList) obj, (UniversalAdapter) obj2);
+            }
+        }, this.resourcesProvider);
+        this.adapter = universalAdapter;
+        return universalAdapter;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter) {
+        arrayList.add(UItem.asCustom(new TopCell(getContext())));
+        arrayList.add(UItem.asShadow(null));
+        arrayList.add(UItem.asHeader(LocaleController.getString(R.string.VoipChatStreamSettings)));
+        arrayList.add(TextDetailCellFactory.of(this.rtmpUrl, LocaleController.getString(R.string.VoipChatStreamServerUrl), true));
+        arrayList.add(TextDetailCellFactory.of(this.rtmpKey, LocaleController.getString(R.string.VoipChatStreamKey), false));
+        arrayList.add(UItem.asShadow(LocaleController.getString(R.string.VoipChatStreamWithAnotherAppDescription)));
+    }
+
+    private static class TopCell extends LinearLayout {
+        public TopCell(Context context) {
+            super(context);
+            setOrientation(1);
+            RLottieImageView rLottieImageView = new RLottieImageView(context);
+            rLottieImageView.setAutoRepeat(true);
+            rLottieImageView.setAnimation(R.raw.utyan_streaming, 112, 112);
+            rLottieImageView.playAnimation();
+            addView(rLottieImageView, LayoutHelper.createLinear(112, 112, 49, 0, 24, 0, 0));
+            TextView textView = new TextView(context);
+            textView.setTypeface(AndroidUtilities.bold());
+            textView.setText(LocaleController.formatString(R.string.Streaming, new Object[0]));
+            textView.setTextSize(1, 20.0f);
+            textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
+            addView(textView, LayoutHelper.createLinear(-2, -2, 1, 0, 14, 0, 7));
+            TextView textView2 = new TextView(context);
+            textView2.setTextSize(1, 14.0f);
+            textView2.setGravity(1);
+            textView2.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
+            textView2.setText(LocaleController.formatString(R.string.VoipStreamStart, new Object[0]));
+            textView2.setLineSpacing(textView2.getLineSpacingExtra(), textView2.getLineSpacingMultiplier() * 1.1f);
+            addView(textView2, LayoutHelper.createLinear(-2, -2, 1, 28, 0, 28, 17));
+        }
+    }
+
+    public static class TextDetailCellFactory extends UItem.UItemFactory {
+        static {
+            UItem.UItemFactory.setup(new TextDetailCellFactory());
+        }
+
+        @Override // org.telegram.ui.Components.UItem.UItemFactory
+        public TextDetailCell createView(final Context context, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
+            final TextDetailCell textDetailCell = new TextDetailCell(context);
+            textDetailCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite, resourcesProvider));
+            Drawable mutate = ContextCompat.getDrawable(context, R.drawable.msg_copy).mutate();
+            mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteBlueHeader), PorterDuff.Mode.MULTIPLY));
+            textDetailCell.setImage(mutate);
+            textDetailCell.setImageClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$TextDetailCellFactory$$ExternalSyntheticLambda0
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    CreateRtmpStreamBottomSheet.TextDetailCellFactory.this.lambda$createView$0(context, textDetailCell, view);
+                }
+            });
+            return textDetailCell;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$createView$0(Context context, TextDetailCell textDetailCell, View view) {
+            copyRtmpValue(context, textDetailCell.textView.getText().toString());
+        }
+
+        @Override // org.telegram.ui.Components.UItem.UItemFactory
+        public void bindView(View view, UItem uItem, boolean z, UniversalAdapter universalAdapter, UniversalRecyclerView universalRecyclerView) {
+            ((TextDetailCell) view).setTextAndValue(uItem.text, uItem.textValue, !uItem.hideDivider);
+        }
+
+        public static UItem of(String str, String str2, boolean z) {
+            UItem ofFactory = UItem.ofFactory(TextDetailCellFactory.class);
+            ofFactory.text = str;
+            ofFactory.textValue = str2;
+            ofFactory.hideDivider = !z;
+            ofFactory.enabled = false;
+            return ofFactory;
+        }
+
+        private void copyRtmpValue(Context context, String str) {
+            AndroidUtilities.addToClipboard(str);
+            if (AndroidUtilities.shouldShowClipboardToast()) {
+                Toast.makeText(context, LocaleController.getString(R.string.TextCopied), 0).show();
+            }
+        }
     }
 }

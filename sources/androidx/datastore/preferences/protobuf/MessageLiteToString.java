@@ -10,103 +10,12 @@ import java.util.TreeSet;
 
 /* loaded from: classes.dex */
 abstract class MessageLiteToString {
-    private static final String camelCaseToSnakeCase(String str) {
+    static String toString(MessageLite messageLite, String str) {
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < str.length(); i++) {
-            char charAt = str.charAt(i);
-            if (Character.isUpperCase(charAt)) {
-                sb.append("_");
-            }
-            sb.append(Character.toLowerCase(charAt));
-        }
-        return sb.toString();
-    }
-
-    private static boolean isDefaultValue(Object obj) {
-        Object obj2;
-        if (obj instanceof Boolean) {
-            return !((Boolean) obj).booleanValue();
-        }
-        if (obj instanceof Integer) {
-            return ((Integer) obj).intValue() == 0;
-        }
-        if (obj instanceof Float) {
-            return ((Float) obj).floatValue() == 0.0f;
-        }
-        if (obj instanceof Double) {
-            return ((Double) obj).doubleValue() == 0.0d;
-        }
-        if (obj instanceof String) {
-            obj2 = "";
-        } else {
-            if (!(obj instanceof ByteString)) {
-                return obj instanceof MessageLite ? obj == ((MessageLite) obj).getDefaultInstanceForType() : (obj instanceof Enum) && ((Enum) obj).ordinal() == 0;
-            }
-            obj2 = ByteString.EMPTY;
-        }
-        return obj.equals(obj2);
-    }
-
-    static final void printField(StringBuilder sb, int i, String str, Object obj) {
-        String escapeBytes;
-        if (obj instanceof List) {
-            Iterator it = ((List) obj).iterator();
-            while (it.hasNext()) {
-                printField(sb, i, str, it.next());
-            }
-            return;
-        }
-        if (obj instanceof Map) {
-            Iterator it2 = ((Map) obj).entrySet().iterator();
-            while (it2.hasNext()) {
-                printField(sb, i, str, (Map.Entry) it2.next());
-            }
-            return;
-        }
-        sb.append('\n');
-        int i2 = 0;
-        for (int i3 = 0; i3 < i; i3++) {
-            sb.append(' ');
-        }
+        sb.append("# ");
         sb.append(str);
-        if (obj instanceof String) {
-            sb.append(": \"");
-            escapeBytes = TextFormatEscaper.escapeText((String) obj);
-        } else {
-            if (!(obj instanceof ByteString)) {
-                if (obj instanceof GeneratedMessageLite) {
-                    sb.append(" {");
-                    reflectivePrintWithIndent((GeneratedMessageLite) obj, sb, i + 2);
-                    sb.append("\n");
-                    while (i2 < i) {
-                        sb.append(' ');
-                        i2++;
-                    }
-                } else {
-                    if (!(obj instanceof Map.Entry)) {
-                        sb.append(": ");
-                        sb.append(obj.toString());
-                        return;
-                    }
-                    sb.append(" {");
-                    Map.Entry entry = (Map.Entry) obj;
-                    int i4 = i + 2;
-                    printField(sb, i4, "key", entry.getKey());
-                    printField(sb, i4, "value", entry.getValue());
-                    sb.append("\n");
-                    while (i2 < i) {
-                        sb.append(' ');
-                        i2++;
-                    }
-                }
-                sb.append("}");
-                return;
-            }
-            sb.append(": \"");
-            escapeBytes = TextFormatEscaper.escapeBytes((ByteString) obj);
-        }
-        sb.append(escapeBytes);
-        sb.append('\"');
+        reflectivePrintWithIndent(messageLite, sb, 0);
+        return sb.toString();
     }
 
     private static void reflectivePrintWithIndent(MessageLite messageLite, StringBuilder sb, int i) {
@@ -149,10 +58,12 @@ abstract class MessageLiteToString {
                 Method method5 = (Method) hashMap.get("has" + replaceFirst);
                 if (method4 != null) {
                     Object invokeOrDie = GeneratedMessageLite.invokeOrDie(method4, messageLite, new Object[0]);
-                    if (method5 != null) {
+                    if (method5 == null) {
+                        if (isDefaultValue(invokeOrDie)) {
+                            z = false;
+                        }
+                    } else {
                         z = ((Boolean) GeneratedMessageLite.invokeOrDie(method5, messageLite, new Object[0])).booleanValue();
-                    } else if (isDefaultValue(invokeOrDie)) {
-                        z = false;
                     }
                     if (z) {
                         printField(sb, i, camelCaseToSnakeCase(str4), invokeOrDie);
@@ -166,11 +77,99 @@ abstract class MessageLiteToString {
         }
     }
 
-    static String toString(MessageLite messageLite, String str) {
-        StringBuilder sb = new StringBuilder();
-        sb.append("# ");
+    private static boolean isDefaultValue(Object obj) {
+        if (obj instanceof Boolean) {
+            return !((Boolean) obj).booleanValue();
+        }
+        if (obj instanceof Integer) {
+            return ((Integer) obj).intValue() == 0;
+        }
+        if (obj instanceof Float) {
+            return ((Float) obj).floatValue() == 0.0f;
+        }
+        if (obj instanceof Double) {
+            return ((Double) obj).doubleValue() == 0.0d;
+        }
+        if (obj instanceof String) {
+            return obj.equals("");
+        }
+        if (obj instanceof ByteString) {
+            return obj.equals(ByteString.EMPTY);
+        }
+        return obj instanceof MessageLite ? obj == ((MessageLite) obj).getDefaultInstanceForType() : (obj instanceof Enum) && ((Enum) obj).ordinal() == 0;
+    }
+
+    static final void printField(StringBuilder sb, int i, String str, Object obj) {
+        if (obj instanceof List) {
+            Iterator it = ((List) obj).iterator();
+            while (it.hasNext()) {
+                printField(sb, i, str, it.next());
+            }
+            return;
+        }
+        if (obj instanceof Map) {
+            Iterator it2 = ((Map) obj).entrySet().iterator();
+            while (it2.hasNext()) {
+                printField(sb, i, str, (Map.Entry) it2.next());
+            }
+            return;
+        }
+        sb.append('\n');
+        int i2 = 0;
+        for (int i3 = 0; i3 < i; i3++) {
+            sb.append(' ');
+        }
         sb.append(str);
-        reflectivePrintWithIndent(messageLite, sb, 0);
+        if (obj instanceof String) {
+            sb.append(": \"");
+            sb.append(TextFormatEscaper.escapeText((String) obj));
+            sb.append('\"');
+            return;
+        }
+        if (obj instanceof ByteString) {
+            sb.append(": \"");
+            sb.append(TextFormatEscaper.escapeBytes((ByteString) obj));
+            sb.append('\"');
+            return;
+        }
+        if (obj instanceof GeneratedMessageLite) {
+            sb.append(" {");
+            reflectivePrintWithIndent((GeneratedMessageLite) obj, sb, i + 2);
+            sb.append("\n");
+            while (i2 < i) {
+                sb.append(' ');
+                i2++;
+            }
+            sb.append("}");
+            return;
+        }
+        if (obj instanceof Map.Entry) {
+            sb.append(" {");
+            Map.Entry entry = (Map.Entry) obj;
+            int i4 = i + 2;
+            printField(sb, i4, "key", entry.getKey());
+            printField(sb, i4, "value", entry.getValue());
+            sb.append("\n");
+            while (i2 < i) {
+                sb.append(' ');
+                i2++;
+            }
+            sb.append("}");
+            return;
+        }
+        sb.append(": ");
+        sb.append(obj.toString());
+    }
+
+    private static final String camelCaseToSnakeCase(String str) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < str.length(); i++) {
+            char charAt = str.charAt(i);
+            if (Character.isUpperCase(charAt)) {
+                sb.append("_");
+            }
+            sb.append(Character.toLowerCase(charAt));
+        }
         return sb.toString();
     }
 }

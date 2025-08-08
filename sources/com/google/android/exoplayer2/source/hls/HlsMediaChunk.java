@@ -60,40 +60,6 @@ final class HlsMediaChunk extends MediaChunk {
     private final TimestampAdjuster timestampAdjuster;
     public final int uid;
 
-    private HlsMediaChunk(HlsExtractorFactory hlsExtractorFactory, DataSource dataSource, DataSpec dataSpec, Format format, boolean z, DataSource dataSource2, DataSpec dataSpec2, boolean z2, Uri uri, List list, int i, Object obj, long j, long j2, long j3, int i2, boolean z3, int i3, boolean z4, boolean z5, TimestampAdjuster timestampAdjuster, DrmInitData drmInitData, HlsMediaChunkExtractor hlsMediaChunkExtractor, Id3Decoder id3Decoder, ParsableByteArray parsableByteArray, boolean z6, PlayerId playerId) {
-        super(dataSource, dataSpec, format, i, obj, j, j2, j3);
-        this.mediaSegmentEncrypted = z;
-        this.partIndex = i2;
-        this.isPublished = z3;
-        this.discontinuitySequenceNumber = i3;
-        this.initDataSpec = dataSpec2;
-        this.initDataSource = dataSource2;
-        this.initDataLoadRequired = dataSpec2 != null;
-        this.initSegmentEncrypted = z2;
-        this.playlistUrl = uri;
-        this.isMasterTimestampSource = z5;
-        this.timestampAdjuster = timestampAdjuster;
-        this.hasGapTag = z4;
-        this.extractorFactory = hlsExtractorFactory;
-        this.muxedCaptionFormats = list;
-        this.drmInitData = drmInitData;
-        this.previousExtractor = hlsMediaChunkExtractor;
-        this.id3Decoder = id3Decoder;
-        this.scratchId3Data = parsableByteArray;
-        this.shouldSpliceIn = z6;
-        this.playerId = playerId;
-        this.sampleQueueFirstSampleIndices = ImmutableList.of();
-        this.uid = uidSource.getAndIncrement();
-    }
-
-    private static DataSource buildDataSource(DataSource dataSource, byte[] bArr, byte[] bArr2) {
-        if (bArr == null) {
-            return dataSource;
-        }
-        Assertions.checkNotNull(bArr2);
-        return new Aes128DataSource(dataSource, bArr, bArr2);
-    }
-
     public static HlsMediaChunk createInstance(HlsExtractorFactory hlsExtractorFactory, DataSource dataSource, Format format, long j, HlsMediaPlaylist hlsMediaPlaylist, HlsChunkSource.SegmentBaseHolder segmentBaseHolder, Uri uri, List list, int i, Object obj, boolean z, TimestampAdjusterProvider timestampAdjusterProvider, HlsMediaChunk hlsMediaChunk, byte[] bArr, byte[] bArr2, boolean z2, PlayerId playerId) {
         boolean z3;
         DataSource dataSource2;
@@ -138,6 +104,109 @@ final class HlsMediaChunk extends MediaChunk {
         return new HlsMediaChunk(hlsExtractorFactory, buildDataSource, build, format, z3, dataSource2, dataSpec, z4, uri, list, i, obj, j2, j3, segmentBaseHolder.mediaSequence, segmentBaseHolder.partIndex, !segmentBaseHolder.isPreload, i2, segmentBase.hasGapTag, z, timestampAdjusterProvider.getAdjuster(i2), segmentBase.drmInitData, hlsMediaChunkExtractor, id3Decoder, parsableByteArray, z2, playerId);
     }
 
+    public static boolean shouldSpliceIn(HlsMediaChunk hlsMediaChunk, Uri uri, HlsMediaPlaylist hlsMediaPlaylist, HlsChunkSource.SegmentBaseHolder segmentBaseHolder, long j) {
+        if (hlsMediaChunk == null) {
+            return false;
+        }
+        if (uri.equals(hlsMediaChunk.playlistUrl) && hlsMediaChunk.loadCompleted) {
+            return false;
+        }
+        return !isIndependent(segmentBaseHolder, hlsMediaPlaylist) || j + segmentBaseHolder.segmentBase.relativeStartTimeUs < hlsMediaChunk.endTimeUs;
+    }
+
+    private HlsMediaChunk(HlsExtractorFactory hlsExtractorFactory, DataSource dataSource, DataSpec dataSpec, Format format, boolean z, DataSource dataSource2, DataSpec dataSpec2, boolean z2, Uri uri, List list, int i, Object obj, long j, long j2, long j3, int i2, boolean z3, int i3, boolean z4, boolean z5, TimestampAdjuster timestampAdjuster, DrmInitData drmInitData, HlsMediaChunkExtractor hlsMediaChunkExtractor, Id3Decoder id3Decoder, ParsableByteArray parsableByteArray, boolean z6, PlayerId playerId) {
+        super(dataSource, dataSpec, format, i, obj, j, j2, j3);
+        this.mediaSegmentEncrypted = z;
+        this.partIndex = i2;
+        this.isPublished = z3;
+        this.discontinuitySequenceNumber = i3;
+        this.initDataSpec = dataSpec2;
+        this.initDataSource = dataSource2;
+        this.initDataLoadRequired = dataSpec2 != null;
+        this.initSegmentEncrypted = z2;
+        this.playlistUrl = uri;
+        this.isMasterTimestampSource = z5;
+        this.timestampAdjuster = timestampAdjuster;
+        this.hasGapTag = z4;
+        this.extractorFactory = hlsExtractorFactory;
+        this.muxedCaptionFormats = list;
+        this.drmInitData = drmInitData;
+        this.previousExtractor = hlsMediaChunkExtractor;
+        this.id3Decoder = id3Decoder;
+        this.scratchId3Data = parsableByteArray;
+        this.shouldSpliceIn = z6;
+        this.playerId = playerId;
+        this.sampleQueueFirstSampleIndices = ImmutableList.of();
+        this.uid = uidSource.getAndIncrement();
+    }
+
+    public void init(HlsSampleStreamWrapper hlsSampleStreamWrapper, ImmutableList immutableList) {
+        this.output = hlsSampleStreamWrapper;
+        this.sampleQueueFirstSampleIndices = immutableList;
+    }
+
+    public int getFirstSampleIndex(int i) {
+        Assertions.checkState(!this.shouldSpliceIn);
+        if (i >= this.sampleQueueFirstSampleIndices.size()) {
+            return 0;
+        }
+        return ((Integer) this.sampleQueueFirstSampleIndices.get(i)).intValue();
+    }
+
+    public void invalidateExtractor() {
+        this.extractorInvalidated = true;
+    }
+
+    @Override // com.google.android.exoplayer2.source.chunk.MediaChunk
+    public boolean isLoadCompleted() {
+        return this.loadCompleted;
+    }
+
+    @Override // com.google.android.exoplayer2.upstream.Loader.Loadable
+    public void cancelLoad() {
+        this.loadCanceled = true;
+    }
+
+    @Override // com.google.android.exoplayer2.upstream.Loader.Loadable
+    public void load() {
+        HlsMediaChunkExtractor hlsMediaChunkExtractor;
+        Assertions.checkNotNull(this.output);
+        if (this.extractor == null && (hlsMediaChunkExtractor = this.previousExtractor) != null && hlsMediaChunkExtractor.isReusable()) {
+            this.extractor = this.previousExtractor;
+            this.initDataLoadRequired = false;
+        }
+        maybeLoadInitData();
+        if (this.loadCanceled) {
+            return;
+        }
+        if (!this.hasGapTag) {
+            loadMedia();
+        }
+        this.loadCompleted = !this.loadCanceled;
+    }
+
+    public boolean isPublished() {
+        return this.isPublished;
+    }
+
+    public void publish() {
+        this.isPublished = true;
+    }
+
+    private void maybeLoadInitData() {
+        if (this.initDataLoadRequired) {
+            Assertions.checkNotNull(this.initDataSource);
+            Assertions.checkNotNull(this.initDataSpec);
+            feedDataToExtractor(this.initDataSource, this.initDataSpec, this.initSegmentEncrypted, true);
+            this.nextLoadPosition = 0;
+            this.initDataLoadRequired = false;
+        }
+    }
+
+    private void loadMedia() {
+        feedDataToExtractor(this.dataSource, this.dataSpec, this.mediaSegmentEncrypted, true);
+    }
+
     private void feedDataToExtractor(DataSource dataSource, DataSpec dataSpec, boolean z, boolean z2) {
         DataSpec subrange;
         long position;
@@ -157,11 +226,12 @@ final class HlsMediaChunk extends MediaChunk {
                     try {
                         try {
                         } catch (EOFException e) {
-                            if ((this.trackFormat.roleFlags & 16384) == 0) {
+                            if ((this.trackFormat.roleFlags & 16384) != 0) {
+                                this.extractor.onTruncatedSegmentParsed();
+                                position = prepareExtraction.getPosition();
+                            } else {
                                 throw e;
                             }
-                            this.extractor.onTruncatedSegmentParsed();
-                            position = prepareExtraction.getPosition();
                         }
                     } catch (Throwable th) {
                         this.nextLoadPosition = (int) (prepareExtraction.getPosition() - dataSpec.position);
@@ -178,34 +248,44 @@ final class HlsMediaChunk extends MediaChunk {
         }
     }
 
-    private static byte[] getEncryptionIvArray(String str) {
-        if (Ascii.toLowerCase(str).startsWith("0x")) {
-            str = str.substring(2);
+    private DefaultExtractorInput prepareExtraction(DataSource dataSource, DataSpec dataSpec, boolean z) {
+        HlsMediaChunkExtractor createExtractor;
+        long j;
+        long open = dataSource.open(dataSpec);
+        if (z) {
+            try {
+                this.timestampAdjuster.sharedInitializeOrWait(this.isMasterTimestampSource, this.startTimeUs);
+            } catch (InterruptedException unused) {
+                throw new InterruptedIOException();
+            }
         }
-        byte[] byteArray = new BigInteger(str, 16).toByteArray();
-        byte[] bArr = new byte[16];
-        int length = byteArray.length > 16 ? byteArray.length - 16 : 0;
-        System.arraycopy(byteArray, length, bArr, (16 - byteArray.length) + length, byteArray.length - length);
-        return bArr;
-    }
-
-    private static boolean isIndependent(HlsChunkSource.SegmentBaseHolder segmentBaseHolder, HlsMediaPlaylist hlsMediaPlaylist) {
-        HlsMediaPlaylist.SegmentBase segmentBase = segmentBaseHolder.segmentBase;
-        return segmentBase instanceof HlsMediaPlaylist.Part ? ((HlsMediaPlaylist.Part) segmentBase).isIndependent || (segmentBaseHolder.partIndex == 0 && hlsMediaPlaylist.hasIndependentSegments) : hlsMediaPlaylist.hasIndependentSegments;
-    }
-
-    private void loadMedia() {
-        feedDataToExtractor(this.dataSource, this.dataSpec, this.mediaSegmentEncrypted, true);
-    }
-
-    private void maybeLoadInitData() {
-        if (this.initDataLoadRequired) {
-            Assertions.checkNotNull(this.initDataSource);
-            Assertions.checkNotNull(this.initDataSpec);
-            feedDataToExtractor(this.initDataSource, this.initDataSpec, this.initSegmentEncrypted, true);
-            this.nextLoadPosition = 0;
-            this.initDataLoadRequired = false;
+        DefaultExtractorInput defaultExtractorInput = new DefaultExtractorInput(dataSource, dataSpec.position, open);
+        if (this.extractor == null) {
+            long peekId3PrivTimestamp = peekId3PrivTimestamp(defaultExtractorInput);
+            defaultExtractorInput.resetPeekPosition();
+            HlsMediaChunkExtractor hlsMediaChunkExtractor = this.previousExtractor;
+            if (hlsMediaChunkExtractor != null) {
+                createExtractor = hlsMediaChunkExtractor.recreate();
+            } else {
+                createExtractor = this.extractorFactory.createExtractor(dataSpec.uri, this.trackFormat, this.muxedCaptionFormats, this.timestampAdjuster, dataSource.getResponseHeaders(), defaultExtractorInput, this.playerId);
+            }
+            this.extractor = createExtractor;
+            if (createExtractor.isPackedAudioExtractor()) {
+                HlsSampleStreamWrapper hlsSampleStreamWrapper = this.output;
+                if (peekId3PrivTimestamp != -9223372036854775807L) {
+                    j = this.timestampAdjuster.adjustTsTimestamp(peekId3PrivTimestamp);
+                } else {
+                    j = this.startTimeUs;
+                }
+                hlsSampleStreamWrapper.setSampleOffsetUs(j);
+            } else {
+                this.output.setSampleOffsetUs(0L);
+            }
+            this.output.onNewExtractor();
+            this.extractor.init(this.output);
         }
+        this.output.setDrmInitData(this.drmInitData);
+        return defaultExtractorInput;
     }
 
     private long peekId3PrivTimestamp(ExtractorInput extractorInput) {
@@ -247,99 +327,30 @@ final class HlsMediaChunk extends MediaChunk {
         return -9223372036854775807L;
     }
 
-    private DefaultExtractorInput prepareExtraction(DataSource dataSource, DataSpec dataSpec, boolean z) {
-        HlsSampleStreamWrapper hlsSampleStreamWrapper;
-        long j;
-        long open = dataSource.open(dataSpec);
-        if (z) {
-            try {
-                this.timestampAdjuster.sharedInitializeOrWait(this.isMasterTimestampSource, this.startTimeUs);
-            } catch (InterruptedException unused) {
-                throw new InterruptedIOException();
-            }
+    private static byte[] getEncryptionIvArray(String str) {
+        if (Ascii.toLowerCase(str).startsWith("0x")) {
+            str = str.substring(2);
         }
-        DefaultExtractorInput defaultExtractorInput = new DefaultExtractorInput(dataSource, dataSpec.position, open);
-        if (this.extractor == null) {
-            long peekId3PrivTimestamp = peekId3PrivTimestamp(defaultExtractorInput);
-            defaultExtractorInput.resetPeekPosition();
-            HlsMediaChunkExtractor hlsMediaChunkExtractor = this.previousExtractor;
-            HlsMediaChunkExtractor recreate = hlsMediaChunkExtractor != null ? hlsMediaChunkExtractor.recreate() : this.extractorFactory.createExtractor(dataSpec.uri, this.trackFormat, this.muxedCaptionFormats, this.timestampAdjuster, dataSource.getResponseHeaders(), defaultExtractorInput, this.playerId);
-            this.extractor = recreate;
-            if (recreate.isPackedAudioExtractor()) {
-                hlsSampleStreamWrapper = this.output;
-                j = peekId3PrivTimestamp != -9223372036854775807L ? this.timestampAdjuster.adjustTsTimestamp(peekId3PrivTimestamp) : this.startTimeUs;
-            } else {
-                hlsSampleStreamWrapper = this.output;
-                j = 0;
-            }
-            hlsSampleStreamWrapper.setSampleOffsetUs(j);
-            this.output.onNewExtractor();
-            this.extractor.init(this.output);
+        byte[] byteArray = new BigInteger(str, 16).toByteArray();
+        byte[] bArr = new byte[16];
+        int length = byteArray.length > 16 ? byteArray.length - 16 : 0;
+        System.arraycopy(byteArray, length, bArr, (16 - byteArray.length) + length, byteArray.length - length);
+        return bArr;
+    }
+
+    private static DataSource buildDataSource(DataSource dataSource, byte[] bArr, byte[] bArr2) {
+        if (bArr == null) {
+            return dataSource;
         }
-        this.output.setDrmInitData(this.drmInitData);
-        return defaultExtractorInput;
+        Assertions.checkNotNull(bArr2);
+        return new Aes128DataSource(dataSource, bArr, bArr2);
     }
 
-    public static boolean shouldSpliceIn(HlsMediaChunk hlsMediaChunk, Uri uri, HlsMediaPlaylist hlsMediaPlaylist, HlsChunkSource.SegmentBaseHolder segmentBaseHolder, long j) {
-        if (hlsMediaChunk == null) {
-            return false;
+    private static boolean isIndependent(HlsChunkSource.SegmentBaseHolder segmentBaseHolder, HlsMediaPlaylist hlsMediaPlaylist) {
+        HlsMediaPlaylist.SegmentBase segmentBase = segmentBaseHolder.segmentBase;
+        if (segmentBase instanceof HlsMediaPlaylist.Part) {
+            return ((HlsMediaPlaylist.Part) segmentBase).isIndependent || (segmentBaseHolder.partIndex == 0 && hlsMediaPlaylist.hasIndependentSegments);
         }
-        if (uri.equals(hlsMediaChunk.playlistUrl) && hlsMediaChunk.loadCompleted) {
-            return false;
-        }
-        return !isIndependent(segmentBaseHolder, hlsMediaPlaylist) || j + segmentBaseHolder.segmentBase.relativeStartTimeUs < hlsMediaChunk.endTimeUs;
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.Loader.Loadable
-    public void cancelLoad() {
-        this.loadCanceled = true;
-    }
-
-    public int getFirstSampleIndex(int i) {
-        Assertions.checkState(!this.shouldSpliceIn);
-        if (i >= this.sampleQueueFirstSampleIndices.size()) {
-            return 0;
-        }
-        return ((Integer) this.sampleQueueFirstSampleIndices.get(i)).intValue();
-    }
-
-    public void init(HlsSampleStreamWrapper hlsSampleStreamWrapper, ImmutableList immutableList) {
-        this.output = hlsSampleStreamWrapper;
-        this.sampleQueueFirstSampleIndices = immutableList;
-    }
-
-    public void invalidateExtractor() {
-        this.extractorInvalidated = true;
-    }
-
-    @Override // com.google.android.exoplayer2.source.chunk.MediaChunk
-    public boolean isLoadCompleted() {
-        return this.loadCompleted;
-    }
-
-    public boolean isPublished() {
-        return this.isPublished;
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.Loader.Loadable
-    public void load() {
-        HlsMediaChunkExtractor hlsMediaChunkExtractor;
-        Assertions.checkNotNull(this.output);
-        if (this.extractor == null && (hlsMediaChunkExtractor = this.previousExtractor) != null && hlsMediaChunkExtractor.isReusable()) {
-            this.extractor = this.previousExtractor;
-            this.initDataLoadRequired = false;
-        }
-        maybeLoadInitData();
-        if (this.loadCanceled) {
-            return;
-        }
-        if (!this.hasGapTag) {
-            loadMedia();
-        }
-        this.loadCompleted = !this.loadCanceled;
-    }
-
-    public void publish() {
-        this.isPublished = true;
+        return hlsMediaPlaylist.hasIndependentSegments;
     }
 }

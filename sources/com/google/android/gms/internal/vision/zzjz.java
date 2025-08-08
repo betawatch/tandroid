@@ -6,8 +6,9 @@ final class zzjz extends zzju {
         super();
     }
 
-    private static zzjl zzc(Object obj, long j) {
-        return (zzjl) zzma.zzf(obj, j);
+    @Override // com.google.android.gms.internal.vision.zzju
+    final void zzb(Object obj, long j) {
+        zzc(obj, j).zzb();
     }
 
     @Override // com.google.android.gms.internal.vision.zzju
@@ -28,8 +29,7 @@ final class zzjz extends zzju {
         zzma.zza(obj, j, zzc2);
     }
 
-    @Override // com.google.android.gms.internal.vision.zzju
-    final void zzb(Object obj, long j) {
-        zzc(obj, j).zzb();
+    private static zzjl zzc(Object obj, long j) {
+        return (zzjl) zzma.zzf(obj, j);
     }
 }

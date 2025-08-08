@@ -14,29 +14,17 @@ class LayoutIncludeDetector {
     LayoutIncludeDetector() {
     }
 
-    private static boolean isParserOutdated(XmlPullParser xmlPullParser) {
-        if (xmlPullParser == null) {
-            return true;
+    boolean detect(AttributeSet attributeSet) {
+        if (!(attributeSet instanceof XmlPullParser)) {
+            return false;
         }
-        try {
-            if (xmlPullParser.getEventType() != 3) {
-                return xmlPullParser.getEventType() == 1;
-            }
-            return true;
-        } catch (XmlPullParserException unused) {
-            return true;
+        XmlPullParser xmlPullParser = (XmlPullParser) attributeSet;
+        if (xmlPullParser.getDepth() != 1) {
+            return false;
         }
-    }
-
-    private static XmlPullParser popOutdatedAttrHolders(Deque deque) {
-        while (!deque.isEmpty()) {
-            XmlPullParser xmlPullParser = (XmlPullParser) ((WeakReference) deque.peek()).get();
-            if (!isParserOutdated(xmlPullParser)) {
-                return xmlPullParser;
-            }
-            deque.pop();
-        }
-        return null;
+        XmlPullParser popOutdatedAttrHolders = popOutdatedAttrHolders(this.mXmlParserStack);
+        this.mXmlParserStack.push(new WeakReference(xmlPullParser));
+        return shouldInheritContext(xmlPullParser, popOutdatedAttrHolders);
     }
 
     private static boolean shouldInheritContext(XmlPullParser xmlPullParser, XmlPullParser xmlPullParser2) {
@@ -53,16 +41,28 @@ class LayoutIncludeDetector {
         }
     }
 
-    boolean detect(AttributeSet attributeSet) {
-        if (!(attributeSet instanceof XmlPullParser)) {
-            return false;
+    private static XmlPullParser popOutdatedAttrHolders(Deque deque) {
+        while (!deque.isEmpty()) {
+            XmlPullParser xmlPullParser = (XmlPullParser) ((WeakReference) deque.peek()).get();
+            if (!isParserOutdated(xmlPullParser)) {
+                return xmlPullParser;
+            }
+            deque.pop();
         }
-        XmlPullParser xmlPullParser = (XmlPullParser) attributeSet;
-        if (xmlPullParser.getDepth() != 1) {
-            return false;
+        return null;
+    }
+
+    private static boolean isParserOutdated(XmlPullParser xmlPullParser) {
+        if (xmlPullParser == null) {
+            return true;
         }
-        XmlPullParser popOutdatedAttrHolders = popOutdatedAttrHolders(this.mXmlParserStack);
-        this.mXmlParserStack.push(new WeakReference(xmlPullParser));
-        return shouldInheritContext(xmlPullParser, popOutdatedAttrHolders);
+        try {
+            if (xmlPullParser.getEventType() != 3) {
+                return xmlPullParser.getEventType() == 1;
+            }
+            return true;
+        } catch (XmlPullParserException unused) {
+            return true;
+        }
     }
 }

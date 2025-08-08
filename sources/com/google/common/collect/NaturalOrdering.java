@@ -7,9 +7,6 @@ import java.io.Serializable;
 final class NaturalOrdering extends Ordering implements Serializable {
     static final NaturalOrdering INSTANCE = new NaturalOrdering();
 
-    private NaturalOrdering() {
-    }
-
     @Override // com.google.common.collect.Ordering, java.util.Comparator
     public int compare(Comparable comparable, Comparable comparable2) {
         Preconditions.checkNotNull(comparable);
@@ -24,5 +21,8 @@ final class NaturalOrdering extends Ordering implements Serializable {
 
     public String toString() {
         return "Ordering.natural()";
+    }
+
+    private NaturalOrdering() {
     }
 }

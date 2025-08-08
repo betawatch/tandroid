@@ -6,7 +6,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.SizeNotifierFrameLayout;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class SizeNotifierFrameLayoutPhoto extends SizeNotifierFrameLayout {
     private Activity activity;
     private int keyboardHeight;
@@ -21,15 +21,18 @@ public abstract class SizeNotifierFrameLayoutPhoto extends SizeNotifierFrameLayo
         this.useSmoothKeyboard = z;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$notifyHeightChanged$0(boolean z) {
-        SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate sizeNotifierFrameLayoutDelegate = this.delegate;
-        if (sizeNotifierFrameLayoutDelegate != null) {
-            sizeNotifierFrameLayoutDelegate.onSizeChanged(this.keyboardHeight, z);
-        }
-        for (int i = 0; i < this.delegates.size(); i++) {
-            ((SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate) this.delegates.get(i)).onSizeChanged(this.keyboardHeight, z);
-        }
+    public void setActivity(Activity activity) {
+        this.activity = activity;
+    }
+
+    public void setWithoutWindow(boolean z) {
+        this.withoutWindow = z;
+    }
+
+    @Override // org.telegram.ui.Components.SizeNotifierFrameLayout, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        notifyHeightChanged();
     }
 
     @Override // org.telegram.ui.Components.SizeNotifierFrameLayout
@@ -69,17 +72,14 @@ public abstract class SizeNotifierFrameLayoutPhoto extends SizeNotifierFrameLayo
         });
     }
 
-    @Override // org.telegram.ui.Components.SizeNotifierFrameLayout, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        notifyHeightChanged();
-    }
-
-    public void setActivity(Activity activity) {
-        this.activity = activity;
-    }
-
-    public void setWithoutWindow(boolean z) {
-        this.withoutWindow = z;
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$notifyHeightChanged$0(boolean z) {
+        SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate sizeNotifierFrameLayoutDelegate = this.delegate;
+        if (sizeNotifierFrameLayoutDelegate != null) {
+            sizeNotifierFrameLayoutDelegate.onSizeChanged(this.keyboardHeight, z);
+        }
+        for (int i = 0; i < this.delegates.size(); i++) {
+            ((SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate) this.delegates.get(i)).onSizeChanged(this.keyboardHeight, z);
+        }
     }
 }

@@ -106,8 +106,6 @@ class zzle extends AbstractMap {
 
     @Override // java.util.AbstractMap, java.util.Map
     public final boolean equals(Object obj) {
-        Object entrySet;
-        Object entrySet2;
         if (this == obj) {
             return true;
         }
@@ -120,22 +118,18 @@ class zzle extends AbstractMap {
             return false;
         }
         int zzb = zzb();
-        if (zzb == zzleVar.zzb()) {
-            for (int i = 0; i < zzb; i++) {
-                if (!zzg(i).equals(zzleVar.zzg(i))) {
-                    return false;
-                }
-            }
-            if (zzb == size) {
-                return true;
-            }
-            entrySet = this.zzc;
-            entrySet2 = zzleVar.zzc;
-        } else {
-            entrySet = entrySet();
-            entrySet2 = zzleVar.entrySet();
+        if (zzb != zzleVar.zzb()) {
+            return entrySet().equals(zzleVar.entrySet());
         }
-        return entrySet.equals(entrySet2);
+        for (int i = 0; i < zzb; i++) {
+            if (!zzg(i).equals(zzleVar.zzg(i))) {
+                return false;
+            }
+        }
+        if (zzb != size) {
+            return this.zzc.equals(zzleVar.zzc);
+        }
+        return true;
     }
 
     @Override // java.util.AbstractMap, java.util.Map

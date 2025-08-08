@@ -7,7 +7,7 @@ import android.os.Parcelable;
 /* loaded from: classes.dex */
 public final class BinderWrapper implements Parcelable {
     public static final Parcelable.Creator<BinderWrapper> CREATOR = new zzh();
-    private IBinder zza;
+    private final IBinder zza;
 
     public BinderWrapper(IBinder iBinder) {
         this.zza = iBinder;

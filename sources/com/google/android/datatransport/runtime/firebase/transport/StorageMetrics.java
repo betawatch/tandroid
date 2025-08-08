@@ -6,6 +6,23 @@ public final class StorageMetrics {
     private final long current_cache_size_bytes_;
     private final long max_cache_size_bytes_;
 
+    StorageMetrics(long j, long j2) {
+        this.current_cache_size_bytes_ = j;
+        this.max_cache_size_bytes_ = j2;
+    }
+
+    public static Builder newBuilder() {
+        return new Builder();
+    }
+
+    public long getCurrentCacheSizeBytes() {
+        return this.current_cache_size_bytes_;
+    }
+
+    public long getMaxCacheSizeBytes() {
+        return this.max_cache_size_bytes_;
+    }
+
     public static final class Builder {
         private long current_cache_size_bytes_ = 0;
         private long max_cache_size_bytes_ = 0;
@@ -26,22 +43,5 @@ public final class StorageMetrics {
             this.max_cache_size_bytes_ = j;
             return this;
         }
-    }
-
-    StorageMetrics(long j, long j2) {
-        this.current_cache_size_bytes_ = j;
-        this.max_cache_size_bytes_ = j2;
-    }
-
-    public static Builder newBuilder() {
-        return new Builder();
-    }
-
-    public long getCurrentCacheSizeBytes() {
-        return this.current_cache_size_bytes_;
-    }
-
-    public long getMaxCacheSizeBytes() {
-        return this.max_cache_size_bytes_;
     }
 }

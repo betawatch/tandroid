@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.SharedConfig;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class BlurredFrameLayout extends FrameLayout {
     public int backgroundColor;
     public int backgroundPaddingBottom;
@@ -39,20 +39,31 @@ public class BlurredFrameLayout extends FrameLayout {
             View view = this;
             while (true) {
                 SizeNotifierFrameLayout sizeNotifierFrameLayout = this.sizeNotifierFrameLayout;
-                if (view == sizeNotifierFrameLayout) {
+                if (view != sizeNotifierFrameLayout) {
+                    f += view.getY();
+                    Object parent = view.getParent();
+                    if (parent instanceof View) {
+                        view = (View) parent;
+                    } else {
+                        super.dispatchDraw(canvas);
+                        return;
+                    }
+                } else {
                     sizeNotifierFrameLayout.drawBlurRect(canvas, f, this.blurBounds, this.backgroundPaint, this.isTopView);
                     break;
                 }
-                f += view.getY();
-                Object parent = view.getParent();
-                if (!(parent instanceof View)) {
-                    super.dispatchDraw(canvas);
-                    return;
-                }
-                view = (View) parent;
             }
         }
         super.dispatchDraw(canvas);
+    }
+
+    @Override // android.view.View
+    public void setBackgroundColor(int i) {
+        if (SharedConfig.chatBlurEnabled() && this.sizeNotifierFrameLayout != null) {
+            this.backgroundColor = i;
+        } else {
+            super.setBackgroundColor(i);
+        }
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -71,14 +82,5 @@ public class BlurredFrameLayout extends FrameLayout {
             sizeNotifierFrameLayout.blurBehindViews.remove(this);
         }
         super.onDetachedFromWindow();
-    }
-
-    @Override // android.view.View
-    public void setBackgroundColor(int i) {
-        if (!SharedConfig.chatBlurEnabled() || this.sizeNotifierFrameLayout == null) {
-            super.setBackgroundColor(i);
-        } else {
-            this.backgroundColor = i;
-        }
     }
 }

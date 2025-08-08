@@ -1,6 +1,6 @@
 package kotlinx.coroutines.internal;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class Removed {
     public final LockFreeLinkedListNode ref;
 

@@ -23,55 +23,53 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     protected boolean mDataValid;
     protected int mRowIDColumn;
 
-    private class ChangeObserver extends ContentObserver {
-        ChangeObserver() {
-            super(new Handler());
-        }
+    public abstract void bindView(View view, Context context, Cursor cursor);
 
-        @Override // android.database.ContentObserver
-        public boolean deliverSelfNotifications() {
-            return true;
-        }
+    public abstract CharSequence convertToString(Cursor cursor);
 
-        @Override // android.database.ContentObserver
-        public void onChange(boolean z) {
-            CursorAdapter.this.onContentChanged();
-        }
-    }
+    public abstract View newDropDownView(Context context, Cursor cursor, ViewGroup viewGroup);
 
-    private class MyDataSetObserver extends DataSetObserver {
-        MyDataSetObserver() {
-        }
-
-        @Override // android.database.DataSetObserver
-        public void onChanged() {
-            CursorAdapter cursorAdapter = CursorAdapter.this;
-            cursorAdapter.mDataValid = true;
-            cursorAdapter.notifyDataSetChanged();
-        }
-
-        @Override // android.database.DataSetObserver
-        public void onInvalidated() {
-            CursorAdapter cursorAdapter = CursorAdapter.this;
-            cursorAdapter.mDataValid = false;
-            cursorAdapter.notifyDataSetInvalidated();
-        }
-    }
+    public abstract View newView(Context context, Cursor cursor, ViewGroup viewGroup);
 
     public CursorAdapter(Context context, Cursor cursor, boolean z) {
         init(context, cursor, z ? 1 : 2);
     }
 
-    public abstract void bindView(View view, Context context, Cursor cursor);
-
-    public void changeCursor(Cursor cursor) {
-        Cursor swapCursor = swapCursor(cursor);
-        if (swapCursor != null) {
-            swapCursor.close();
+    void init(Context context, Cursor cursor, int i) {
+        if ((i & 1) == 1) {
+            i |= 2;
+            this.mAutoRequery = true;
+        } else {
+            this.mAutoRequery = false;
+        }
+        boolean z = cursor != null;
+        this.mCursor = cursor;
+        this.mDataValid = z;
+        this.mContext = context;
+        this.mRowIDColumn = z ? cursor.getColumnIndexOrThrow("_id") : -1;
+        if ((i & 2) == 2) {
+            this.mChangeObserver = new ChangeObserver();
+            this.mDataSetObserver = new MyDataSetObserver();
+        } else {
+            this.mChangeObserver = null;
+            this.mDataSetObserver = null;
+        }
+        if (z) {
+            ChangeObserver changeObserver = this.mChangeObserver;
+            if (changeObserver != null) {
+                cursor.registerContentObserver(changeObserver);
+            }
+            DataSetObserver dataSetObserver = this.mDataSetObserver;
+            if (dataSetObserver != null) {
+                cursor.registerDataSetObserver(dataSetObserver);
+            }
         }
     }
 
-    public abstract CharSequence convertToString(Cursor cursor);
+    @Override // androidx.cursoradapter.widget.CursorFilter.CursorFilterClient
+    public Cursor getCursor() {
+        return this.mCursor;
+    }
 
     @Override // android.widget.Adapter
     public int getCount() {
@@ -80,32 +78,6 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
             return 0;
         }
         return cursor.getCount();
-    }
-
-    @Override // androidx.cursoradapter.widget.CursorFilter.CursorFilterClient
-    public Cursor getCursor() {
-        return this.mCursor;
-    }
-
-    @Override // android.widget.BaseAdapter, android.widget.SpinnerAdapter
-    public View getDropDownView(int i, View view, ViewGroup viewGroup) {
-        if (!this.mDataValid) {
-            return null;
-        }
-        this.mCursor.moveToPosition(i);
-        if (view == null) {
-            view = newDropDownView(this.mContext, this.mCursor, viewGroup);
-        }
-        bindView(view, this.mContext, this.mCursor);
-        return view;
-    }
-
-    @Override // android.widget.Filterable
-    public Filter getFilter() {
-        if (this.mCursorFilter == null) {
-            this.mCursorFilter = new CursorFilter(this);
-        }
-        return this.mCursorFilter;
     }
 
     @Override // android.widget.Adapter
@@ -132,59 +104,34 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
         if (!this.mDataValid) {
             throw new IllegalStateException("this should only be called when the cursor is valid");
         }
-        if (this.mCursor.moveToPosition(i)) {
-            if (view == null) {
-                view = newView(this.mContext, this.mCursor, viewGroup);
-            }
-            bindView(view, this.mContext, this.mCursor);
-            return view;
+        if (!this.mCursor.moveToPosition(i)) {
+            throw new IllegalStateException("couldn't move cursor to position " + i);
         }
-        throw new IllegalStateException("couldn't move cursor to position " + i);
+        if (view == null) {
+            view = newView(this.mContext, this.mCursor, viewGroup);
+        }
+        bindView(view, this.mContext, this.mCursor);
+        return view;
     }
 
-    void init(Context context, Cursor cursor, int i) {
-        MyDataSetObserver myDataSetObserver;
-        if ((i & 1) == 1) {
-            i |= 2;
-            this.mAutoRequery = true;
-        } else {
-            this.mAutoRequery = false;
+    @Override // android.widget.BaseAdapter, android.widget.SpinnerAdapter
+    public View getDropDownView(int i, View view, ViewGroup viewGroup) {
+        if (!this.mDataValid) {
+            return null;
         }
-        boolean z = cursor != null;
-        this.mCursor = cursor;
-        this.mDataValid = z;
-        this.mContext = context;
-        this.mRowIDColumn = z ? cursor.getColumnIndexOrThrow("_id") : -1;
-        if ((i & 2) == 2) {
-            this.mChangeObserver = new ChangeObserver();
-            myDataSetObserver = new MyDataSetObserver();
-        } else {
-            myDataSetObserver = null;
-            this.mChangeObserver = null;
+        this.mCursor.moveToPosition(i);
+        if (view == null) {
+            view = newDropDownView(this.mContext, this.mCursor, viewGroup);
         }
-        this.mDataSetObserver = myDataSetObserver;
-        if (z) {
-            ChangeObserver changeObserver = this.mChangeObserver;
-            if (changeObserver != null) {
-                cursor.registerContentObserver(changeObserver);
-            }
-            DataSetObserver dataSetObserver = this.mDataSetObserver;
-            if (dataSetObserver != null) {
-                cursor.registerDataSetObserver(dataSetObserver);
-            }
-        }
+        bindView(view, this.mContext, this.mCursor);
+        return view;
     }
 
-    public abstract View newDropDownView(Context context, Cursor cursor, ViewGroup viewGroup);
-
-    public abstract View newView(Context context, Cursor cursor, ViewGroup viewGroup);
-
-    protected void onContentChanged() {
-        Cursor cursor;
-        if (!this.mAutoRequery || (cursor = this.mCursor) == null || cursor.isClosed()) {
-            return;
+    public void changeCursor(Cursor cursor) {
+        Cursor swapCursor = swapCursor(cursor);
+        if (swapCursor != null) {
+            swapCursor.close();
         }
-        this.mDataValid = this.mCursor.requery();
     }
 
     public Cursor swapCursor(Cursor cursor) {
@@ -221,5 +168,56 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
             notifyDataSetInvalidated();
         }
         return cursor2;
+    }
+
+    @Override // android.widget.Filterable
+    public Filter getFilter() {
+        if (this.mCursorFilter == null) {
+            this.mCursorFilter = new CursorFilter(this);
+        }
+        return this.mCursorFilter;
+    }
+
+    protected void onContentChanged() {
+        Cursor cursor;
+        if (!this.mAutoRequery || (cursor = this.mCursor) == null || cursor.isClosed()) {
+            return;
+        }
+        this.mDataValid = this.mCursor.requery();
+    }
+
+    private class ChangeObserver extends ContentObserver {
+        @Override // android.database.ContentObserver
+        public boolean deliverSelfNotifications() {
+            return true;
+        }
+
+        ChangeObserver() {
+            super(new Handler());
+        }
+
+        @Override // android.database.ContentObserver
+        public void onChange(boolean z) {
+            CursorAdapter.this.onContentChanged();
+        }
+    }
+
+    private class MyDataSetObserver extends DataSetObserver {
+        MyDataSetObserver() {
+        }
+
+        @Override // android.database.DataSetObserver
+        public void onChanged() {
+            CursorAdapter cursorAdapter = CursorAdapter.this;
+            cursorAdapter.mDataValid = true;
+            cursorAdapter.notifyDataSetChanged();
+        }
+
+        @Override // android.database.DataSetObserver
+        public void onInvalidated() {
+            CursorAdapter cursorAdapter = CursorAdapter.this;
+            cursorAdapter.mDataValid = false;
+            cursorAdapter.notifyDataSetInvalidated();
+        }
     }
 }

@@ -10,15 +10,13 @@ import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
-import org.telegram.messenger.MediaDataController;
 
 /* loaded from: classes.dex */
 public final class Status extends AbstractSafeParcelable implements Result, ReflectedParcelable {
-    final int zzb;
-    private final int zzc;
-    private final String zzd;
-    private final PendingIntent zze;
-    private final ConnectionResult zzf;
+    private final int zzb;
+    private final String zzc;
+    private final PendingIntent zzd;
+    private final ConnectionResult zze;
     public static final Status RESULT_SUCCESS_CACHE = new Status(-1);
     public static final Status RESULT_SUCCESS = new Status(0);
     public static final Status RESULT_INTERRUPTED = new Status(14);
@@ -33,28 +31,15 @@ public final class Status extends AbstractSafeParcelable implements Result, Refl
         this(i, (String) null);
     }
 
-    Status(int i, int i2, String str, PendingIntent pendingIntent, ConnectionResult connectionResult) {
+    Status(int i, String str, PendingIntent pendingIntent, ConnectionResult connectionResult) {
         this.zzb = i;
-        this.zzc = i2;
-        this.zzd = str;
-        this.zze = pendingIntent;
-        this.zzf = connectionResult;
-    }
-
-    public Status(int i, String str) {
-        this(1, i, str, null, null);
-    }
-
-    public Status(int i, String str, PendingIntent pendingIntent) {
-        this(1, i, str, pendingIntent, null);
+        this.zzc = str;
+        this.zzd = pendingIntent;
+        this.zze = connectionResult;
     }
 
     public Status(ConnectionResult connectionResult, String str) {
         this(connectionResult, str, 17);
-    }
-
-    public Status(ConnectionResult connectionResult, String str, int i) {
-        this(1, i, str, connectionResult.getResolution(), connectionResult);
     }
 
     public boolean equals(Object obj) {
@@ -62,11 +47,11 @@ public final class Status extends AbstractSafeParcelable implements Result, Refl
             return false;
         }
         Status status = (Status) obj;
-        return this.zzb == status.zzb && this.zzc == status.zzc && Objects.equal(this.zzd, status.zzd) && Objects.equal(this.zze, status.zze) && Objects.equal(this.zzf, status.zzf);
+        return this.zzb == status.zzb && Objects.equal(this.zzc, status.zzc) && Objects.equal(this.zzd, status.zzd) && Objects.equal(this.zze, status.zze);
     }
 
     public ConnectionResult getConnectionResult() {
-        return this.zzf;
+        return this.zze;
     }
 
     @Override // com.google.android.gms.common.api.Result
@@ -75,28 +60,28 @@ public final class Status extends AbstractSafeParcelable implements Result, Refl
     }
 
     public int getStatusCode() {
-        return this.zzc;
+        return this.zzb;
     }
 
     public String getStatusMessage() {
-        return this.zzd;
+        return this.zzc;
     }
 
     public boolean hasResolution() {
-        return this.zze != null;
+        return this.zzd != null;
     }
 
     public int hashCode() {
-        return Objects.hashCode(Integer.valueOf(this.zzb), Integer.valueOf(this.zzc), this.zzd, this.zze, this.zzf);
+        return Objects.hashCode(Integer.valueOf(this.zzb), this.zzc, this.zzd, this.zze);
     }
 
     public boolean isSuccess() {
-        return this.zzc <= 0;
+        return this.zzb <= 0;
     }
 
     public void startResolutionForResult(Activity activity, int i) {
         if (hasResolution()) {
-            PendingIntent pendingIntent = this.zze;
+            PendingIntent pendingIntent = this.zzd;
             Preconditions.checkNotNull(pendingIntent);
             activity.startIntentSenderForResult(pendingIntent.getIntentSender(), i, null, 0, 0, 0);
         }
@@ -105,7 +90,7 @@ public final class Status extends AbstractSafeParcelable implements Result, Refl
     public String toString() {
         Objects.ToStringHelper stringHelper = Objects.toStringHelper(this);
         stringHelper.add("statusCode", zza());
-        stringHelper.add("resolution", this.zze);
+        stringHelper.add("resolution", this.zzd);
         return stringHelper.toString();
     }
 
@@ -114,14 +99,25 @@ public final class Status extends AbstractSafeParcelable implements Result, Refl
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
         SafeParcelWriter.writeInt(parcel, 1, getStatusCode());
         SafeParcelWriter.writeString(parcel, 2, getStatusMessage(), false);
-        SafeParcelWriter.writeParcelable(parcel, 3, this.zze, i, false);
+        SafeParcelWriter.writeParcelable(parcel, 3, this.zzd, i, false);
         SafeParcelWriter.writeParcelable(parcel, 4, getConnectionResult(), i, false);
-        SafeParcelWriter.writeInt(parcel, MediaDataController.MAX_STYLE_RUNS_COUNT, this.zzb);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
     }
 
     public final String zza() {
-        String str = this.zzd;
-        return str != null ? str : CommonStatusCodes.getStatusCodeString(this.zzc);
+        String str = this.zzc;
+        return str != null ? str : CommonStatusCodes.getStatusCodeString(this.zzb);
+    }
+
+    public Status(int i, String str) {
+        this(i, str, (PendingIntent) null);
+    }
+
+    public Status(ConnectionResult connectionResult, String str, int i) {
+        this(i, str, connectionResult.getResolution(), connectionResult);
+    }
+
+    public Status(int i, String str, PendingIntent pendingIntent) {
+        this(i, str, pendingIntent, null);
     }
 }

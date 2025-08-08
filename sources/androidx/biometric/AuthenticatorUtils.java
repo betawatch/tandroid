@@ -6,8 +6,35 @@ import org.telegram.messenger.NotificationCenter;
 
 /* loaded from: classes.dex */
 abstract class AuthenticatorUtils {
+    static boolean isDeviceCredentialAllowed(int i) {
+        return (i & 32768) != 0;
+    }
+
+    static boolean isSomeBiometricAllowed(int i) {
+        return (i & 32767) != 0;
+    }
+
+    static boolean isWeakBiometricAllowed(int i) {
+        return (i & NotificationCenter.goingToPreviewTheme) == 255;
+    }
+
     static String convertToString(int i) {
-        return i != 15 ? i != 255 ? i != 32768 ? i != 32783 ? i != 33023 ? String.valueOf(i) : "BIOMETRIC_WEAK | DEVICE_CREDENTIAL" : "BIOMETRIC_STRONG | DEVICE_CREDENTIAL" : "DEVICE_CREDENTIAL" : "BIOMETRIC_WEAK" : "BIOMETRIC_STRONG";
+        if (i == 15) {
+            return "BIOMETRIC_STRONG";
+        }
+        if (i == 255) {
+            return "BIOMETRIC_WEAK";
+        }
+        if (i == 32768) {
+            return "DEVICE_CREDENTIAL";
+        }
+        if (i == 32783) {
+            return "BIOMETRIC_STRONG | DEVICE_CREDENTIAL";
+        }
+        if (i == 33023) {
+            return "BIOMETRIC_WEAK | DEVICE_CREDENTIAL";
+        }
+        return String.valueOf(i);
     }
 
     static int getConsolidatedAuthenticators(BiometricPrompt.PromptInfo promptInfo, BiometricPrompt.CryptoObject cryptoObject) {
@@ -16,14 +43,6 @@ abstract class AuthenticatorUtils {
         }
         int i = cryptoObject != null ? 15 : NotificationCenter.goingToPreviewTheme;
         return promptInfo.isDeviceCredentialAllowed() ? 32768 | i : i;
-    }
-
-    static boolean isDeviceCredentialAllowed(int i) {
-        return (i & 32768) != 0;
-    }
-
-    static boolean isSomeBiometricAllowed(int i) {
-        return (i & 32767) != 0;
     }
 
     static boolean isSupportedCombination(int i) {
@@ -38,9 +57,5 @@ abstract class AuthenticatorUtils {
         }
         int i2 = Build.VERSION.SDK_INT;
         return i2 < 28 || i2 > 29;
-    }
-
-    static boolean isWeakBiometricAllowed(int i) {
-        return (i & NotificationCenter.goingToPreviewTheme) == 255;
     }
 }

@@ -1,50 +1,41 @@
 package j$.util.stream;
 
-import j$.util.function.BiConsumer;
-import j$.util.function.Function;
-import j$.util.function.Supplier;
-import java.util.Set;
-
 /* loaded from: classes2.dex */
-final class m implements Collector {
-    private final Supplier a;
-    private final BiConsumer b;
-    private final j$.util.function.f c;
-    private final Function d;
-    private final Set e;
+final class m extends Z1 {
+    boolean b;
+    Object c;
 
-    m(Supplier supplier, BiConsumer biConsumer, j$.util.function.f fVar, Set set) {
-        Set set2 = Collectors.a;
-        l lVar = new l(0);
-        this.a = supplier;
-        this.b = biConsumer;
-        this.c = fVar;
-        this.d = lVar;
-        this.e = set;
+    @Override // j$.util.stream.Z1, j$.util.stream.d2
+    public final void n(long j) {
+        this.b = false;
+        this.c = null;
+        this.a.n(-1L);
     }
 
-    @Override // j$.util.stream.Collector
-    public final BiConsumer accumulator() {
-        return this.b;
+    @Override // j$.util.stream.Z1, j$.util.stream.d2
+    public final void m() {
+        this.b = false;
+        this.c = null;
+        this.a.m();
     }
 
-    @Override // j$.util.stream.Collector
-    public final Set characteristics() {
-        return this.e;
-    }
-
-    @Override // j$.util.stream.Collector
-    public final j$.util.function.f combiner() {
-        return this.c;
-    }
-
-    @Override // j$.util.stream.Collector
-    public final Function finisher() {
-        return this.d;
-    }
-
-    @Override // j$.util.stream.Collector
-    public final Supplier supplier() {
-        return this.a;
+    @Override // j$.util.function.Consumer
+    /* renamed from: accept */
+    public final void r(Object obj) {
+        d2 d2Var = this.a;
+        if (obj == null) {
+            if (this.b) {
+                return;
+            }
+            this.b = true;
+            this.c = null;
+            d2Var.r((d2) null);
+            return;
+        }
+        Object obj2 = this.c;
+        if (obj2 == null || !obj.equals(obj2)) {
+            this.c = obj;
+            d2Var.r((d2) obj);
+        }
     }
 }

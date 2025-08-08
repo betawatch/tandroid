@@ -1,6 +1,6 @@
 package com.google.firebase.crashlytics.internal.common;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public enum DeliveryMechanism {
     DEVELOPER(1),
     USER_SIDELOAD(2),
@@ -13,10 +13,6 @@ public enum DeliveryMechanism {
         this.id = i;
     }
 
-    public static DeliveryMechanism determineFrom(String str) {
-        return str != null ? APP_STORE : DEVELOPER;
-    }
-
     public int getId() {
         return this.id;
     }
@@ -24,5 +20,9 @@ public enum DeliveryMechanism {
     @Override // java.lang.Enum
     public String toString() {
         return Integer.toString(this.id);
+    }
+
+    public static DeliveryMechanism determineFrom(String str) {
+        return str != null ? APP_STORE : DEVELOPER;
     }
 }

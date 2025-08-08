@@ -13,12 +13,12 @@ import kotlin.Pair;
 import kotlin.Result;
 import kotlin.ResultKt;
 import kotlin.TuplesKt;
-import kotlin.collections.CollectionsKt__IterablesKt;
-import kotlin.collections.MapsKt__MapsJVMKt;
+import kotlin.collections.CollectionsKt;
+import kotlin.collections.MapsKt;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.CoroutineContext;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
-import kotlin.ranges.RangesKt___RangesKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.ranges.RangesKt;
 import kotlin.text.Regex;
 import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
@@ -61,11 +61,10 @@ public final class zzaw implements RecaptchaClient, RecaptchaTasksClient {
         if (j < 5000) {
             zzpVar = new zzp(zzn.zzc, zzl.zzT, null);
         }
-        zzbg zzbgVar = zzawVar.zzi;
         if (zzpVar == null) {
-            zzbgVar.zza(zza2);
+            zzawVar.zzi.zza(zza2);
         } else {
-            zzbgVar.zzb(zza2, zzpVar, null);
+            zzawVar.zzi.zzb(zza2, zzpVar, null);
             throw zzpVar;
         }
     }
@@ -80,7 +79,6 @@ public final class zzaw implements RecaptchaClient, RecaptchaTasksClient {
     */
     public final Object zzj(long j, String str, zzbd zzbdVar, Continuation continuation) {
         zzao zzaoVar;
-        Object coroutine_suspended;
         int i;
         Exception e;
         zzaw zzawVar;
@@ -91,7 +89,7 @@ public final class zzaw implements RecaptchaClient, RecaptchaTasksClient {
             if ((i2 & TLObject.FLAG_31) != 0) {
                 zzaoVar.zzc = i2 - TLObject.FLAG_31;
                 Object obj = zzaoVar.zza;
-                coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = zzaoVar.zzc;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
@@ -139,7 +137,7 @@ public final class zzaw implements RecaptchaClient, RecaptchaTasksClient {
         }
         zzaoVar = new zzao(this, continuation);
         Object obj2 = zzaoVar.zza;
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = zzaoVar.zzc;
         if (i != 0) {
         }
@@ -158,7 +156,6 @@ public final class zzaw implements RecaptchaClient, RecaptchaTasksClient {
     */
     public final Object zzk(RecaptchaAction recaptchaAction, long j, Continuation continuation) {
         zzas zzasVar;
-        Object coroutine_suspended;
         int i;
         zzaw zzawVar;
         zzbd zzbdVar;
@@ -170,7 +167,7 @@ public final class zzaw implements RecaptchaClient, RecaptchaTasksClient {
                 zzasVar.zzc = i2 - TLObject.FLAG_31;
                 zzas zzasVar2 = zzasVar;
                 Object obj = zzasVar2.zza;
-                coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = zzasVar2.zzc;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
@@ -227,7 +224,7 @@ public final class zzaw implements RecaptchaClient, RecaptchaTasksClient {
         zzasVar = new zzas(this, continuation);
         zzas zzasVar22 = zzasVar;
         Object obj2 = zzasVar22.zza;
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = zzasVar22.zzc;
         if (i != 0) {
         }
@@ -236,15 +233,11 @@ public final class zzaw implements RecaptchaClient, RecaptchaTasksClient {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void zzl(zzol zzolVar, zzbd zzbdVar) {
-        int mapCapacity;
-        int coerceAtLeast;
         zzbb zza2 = zzbdVar.zza(zzne.zzr);
         r0.zze.put(zza2, new zzbf(zza2, this.zzi.zza, new zzac()));
         try {
             List<zzon> zzj = zzolVar.zzj();
-            mapCapacity = MapsKt__MapsJVMKt.mapCapacity(CollectionsKt__IterablesKt.collectionSizeOrDefault(zzj, 10));
-            coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
-            LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
+            LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(zzj, 10)), 16));
             for (zzon zzonVar : zzj) {
                 Pair pair = TuplesKt.to(zzonVar.zzg(), zzonVar.zzi());
                 linkedHashMap.put(pair.getFirst(), pair.getSecond());
@@ -266,7 +259,6 @@ public final class zzaw implements RecaptchaClient, RecaptchaTasksClient {
     */
     public final Object execute-0E7RQCE(RecaptchaAction recaptchaAction, long j, Continuation continuation) {
         zzap zzapVar;
-        Object coroutine_suspended;
         int i;
         if (continuation instanceof zzap) {
             zzapVar = (zzap) continuation;
@@ -274,7 +266,7 @@ public final class zzaw implements RecaptchaClient, RecaptchaTasksClient {
             if ((i2 & TLObject.FLAG_31) != 0) {
                 zzapVar.zzc = i2 - TLObject.FLAG_31;
                 Object obj = zzapVar.zza;
-                coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = zzapVar.zzc;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
@@ -296,7 +288,7 @@ public final class zzaw implements RecaptchaClient, RecaptchaTasksClient {
         }
         zzapVar = new zzap(this, continuation);
         Object obj2 = zzapVar.zza;
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = zzapVar.zzc;
         if (i != 0) {
         }
@@ -311,7 +303,6 @@ public final class zzaw implements RecaptchaClient, RecaptchaTasksClient {
     */
     public final Object execute-gIAlu-s(RecaptchaAction recaptchaAction, Continuation continuation) {
         zzar zzarVar;
-        Object coroutine_suspended;
         int i;
         if (continuation instanceof zzar) {
             zzarVar = (zzar) continuation;
@@ -319,7 +310,7 @@ public final class zzaw implements RecaptchaClient, RecaptchaTasksClient {
             if ((i2 & TLObject.FLAG_31) != 0) {
                 zzarVar.zzc = i2 - TLObject.FLAG_31;
                 Object obj = zzarVar.zza;
-                coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = zzarVar.zzc;
                 if (i == 0) {
                     if (i != 1) {
@@ -336,7 +327,7 @@ public final class zzaw implements RecaptchaClient, RecaptchaTasksClient {
         }
         zzarVar = new zzar(this, continuation);
         Object obj3 = zzarVar.zza;
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = zzarVar.zzc;
         if (i == 0) {
         }
@@ -349,14 +340,14 @@ public final class zzaw implements RecaptchaClient, RecaptchaTasksClient {
         return zzj.zza(async$default);
     }
 
+    public final String zzg() {
+        return this.zze;
+    }
+
     @Override // com.google.android.recaptcha.RecaptchaTasksClient
     public final Task<String> executeTask(RecaptchaAction recaptchaAction, long j) {
         Deferred async$default;
         async$default = BuildersKt__Builders_commonKt.async$default(this.zzl.zzb(), null, null, new zzau(this, recaptchaAction, j, null), 3, null);
         return zzj.zza(async$default);
-    }
-
-    public final String zzg() {
-        return this.zze;
     }
 }

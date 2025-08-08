@@ -5,10 +5,8 @@ import android.os.Looper;
 
 /* loaded from: classes.dex */
 public final class zza extends Handler {
-    private final Looper zza;
-
     public zza(Looper looper) {
         super(looper);
-        this.zza = Looper.getMainLooper();
+        Looper.getMainLooper();
     }
 }

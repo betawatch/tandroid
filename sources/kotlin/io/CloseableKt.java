@@ -1,9 +1,9 @@
 package kotlin.io;
 
 import java.io.Closeable;
-import kotlin.ExceptionsKt__ExceptionsKt;
+import kotlin.ExceptionsKt;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class CloseableKt {
     public static final void closeFinally(Closeable closeable, Throwable th) {
         if (closeable != null) {
@@ -14,7 +14,7 @@ public abstract class CloseableKt {
             try {
                 closeable.close();
             } catch (Throwable th2) {
-                ExceptionsKt__ExceptionsKt.addSuppressed(th, th2);
+                ExceptionsKt.addSuppressed(th, th2);
             }
         }
     }

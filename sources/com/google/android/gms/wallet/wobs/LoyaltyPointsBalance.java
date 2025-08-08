@@ -15,15 +15,6 @@ public final class LoyaltyPointsBalance extends AbstractSafeParcelable {
     long zze;
     int zzf;
 
-    LoyaltyPointsBalance(int i, String str, double d, String str2, long j, int i2) {
-        this.zza = i;
-        this.zzb = str;
-        this.zzc = d;
-        this.zzd = str2;
-        this.zze = j;
-        this.zzf = i2;
-    }
-
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
@@ -34,5 +25,14 @@ public final class LoyaltyPointsBalance extends AbstractSafeParcelable {
         SafeParcelWriter.writeLong(parcel, 6, this.zze);
         SafeParcelWriter.writeInt(parcel, 7, this.zzf);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    LoyaltyPointsBalance(int i, String str, double d, String str2, long j, int i2) {
+        this.zza = i;
+        this.zzb = str;
+        this.zzc = d;
+        this.zzd = str2;
+        this.zze = j;
+        this.zzf = i2;
     }
 }

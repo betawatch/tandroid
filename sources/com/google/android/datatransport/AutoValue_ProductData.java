@@ -8,6 +8,15 @@ final class AutoValue_ProductData extends ProductData {
         this.productId = num;
     }
 
+    @Override // com.google.android.datatransport.ProductData
+    public Integer getProductId() {
+        return this.productId;
+    }
+
+    public String toString() {
+        return "ProductData{productId=" + this.productId + "}";
+    }
+
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -20,17 +29,8 @@ final class AutoValue_ProductData extends ProductData {
         return num == null ? productId == null : num.equals(productId);
     }
 
-    @Override // com.google.android.datatransport.ProductData
-    public Integer getProductId() {
-        return this.productId;
-    }
-
     public int hashCode() {
         Integer num = this.productId;
         return (num == null ? 0 : num.hashCode()) ^ 1000003;
-    }
-
-    public String toString() {
-        return "ProductData{productId=" + this.productId + "}";
     }
 }

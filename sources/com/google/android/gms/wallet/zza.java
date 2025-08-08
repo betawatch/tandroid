@@ -20,20 +20,6 @@ public final class zza extends AbstractSafeParcelable {
     boolean zzj;
     String zzk;
 
-    zza(String str, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9, boolean z, String str10) {
-        this.zza = str;
-        this.zzb = str2;
-        this.zzc = str3;
-        this.zzd = str4;
-        this.zze = str5;
-        this.zzf = str6;
-        this.zzg = str7;
-        this.zzh = str8;
-        this.zzi = str9;
-        this.zzj = z;
-        this.zzk = str10;
-    }
-
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
@@ -49,5 +35,19 @@ public final class zza extends AbstractSafeParcelable {
         SafeParcelWriter.writeBoolean(parcel, 11, this.zzj);
         SafeParcelWriter.writeString(parcel, 12, this.zzk, false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    zza(String str, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9, boolean z, String str10) {
+        this.zza = str;
+        this.zzb = str2;
+        this.zzc = str3;
+        this.zzd = str4;
+        this.zze = str5;
+        this.zzf = str6;
+        this.zzg = str7;
+        this.zzh = str8;
+        this.zzi = str9;
+        this.zzj = z;
+        this.zzk = str10;
     }
 }

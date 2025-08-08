@@ -25,6 +25,9 @@ public class OrientationHelper {
     };
     private int rotation;
 
+    protected void onOrientationUpdate(int i) {
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     public int roundOrientation(int i, int i2) {
         if (i2 != -1) {
@@ -34,16 +37,6 @@ public class OrientationHelper {
             }
         }
         return (((i + 45) / 90) * 90) % 360;
-    }
-
-    public int getOrientation() {
-        if (cameraRotationDisabled) {
-            return 0;
-        }
-        return this.rotation;
-    }
-
-    protected void onOrientationUpdate(int i) {
     }
 
     public void start() {
@@ -61,5 +54,12 @@ public class OrientationHelper {
             orientationEventListener.disable();
             this.orientationEventListener = null;
         }
+    }
+
+    public int getOrientation() {
+        if (cameraRotationDisabled) {
+            return 0;
+        }
+        return this.rotation;
     }
 }

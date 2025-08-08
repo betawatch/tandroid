@@ -7,7 +7,7 @@ public final class ConsumeParams {
     public static final class Builder {
         private String zza;
 
-        /* synthetic */ Builder(zzau zzauVar) {
+        /* synthetic */ Builder(zzck zzckVar) {
         }
 
         public ConsumeParams build() {
@@ -26,7 +26,7 @@ public final class ConsumeParams {
         }
     }
 
-    /* synthetic */ ConsumeParams(zzav zzavVar) {
+    /* synthetic */ ConsumeParams(zzck zzckVar) {
     }
 
     public static Builder newBuilder() {

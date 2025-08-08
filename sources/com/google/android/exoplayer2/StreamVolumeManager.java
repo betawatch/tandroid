@@ -28,22 +28,9 @@ final class StreamVolumeManager {
         void onStreamVolumeChanged(int i, boolean z);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    final class VolumeChangeReceiver extends BroadcastReceiver {
-        private VolumeChangeReceiver() {
-        }
-
-        @Override // android.content.BroadcastReceiver
-        public void onReceive(Context context, Intent intent) {
-            Handler handler = StreamVolumeManager.this.eventHandler;
-            final StreamVolumeManager streamVolumeManager = StreamVolumeManager.this;
-            handler.post(new Runnable() { // from class: com.google.android.exoplayer2.StreamVolumeManager$VolumeChangeReceiver$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    StreamVolumeManager.access$200(StreamVolumeManager.this);
-                }
-            });
-        }
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static /* synthetic */ void access$200(StreamVolumeManager streamVolumeManager) {
+        streamVolumeManager.updateVolumeAndNotifyIfChanged();
     }
 
     public StreamVolumeManager(Context context, Handler handler, Listener listener) {
@@ -65,26 +52,37 @@ final class StreamVolumeManager {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void access$200(StreamVolumeManager streamVolumeManager) {
-        streamVolumeManager.updateVolumeAndNotifyIfChanged();
-    }
-
-    private static boolean getMutedFromManager(AudioManager audioManager, int i) {
-        boolean isStreamMute;
-        if (Util.SDK_INT < 23) {
-            return getVolumeFromManager(audioManager, i) == 0;
+    public void setStreamType(int i) {
+        if (this.streamType == i) {
+            return;
         }
-        isStreamMute = audioManager.isStreamMute(i);
-        return isStreamMute;
+        this.streamType = i;
+        updateVolumeAndNotifyIfChanged();
+        this.listener.onStreamTypeChanged(i);
     }
 
-    private static int getVolumeFromManager(AudioManager audioManager, int i) {
-        try {
-            return audioManager.getStreamVolume(i);
-        } catch (RuntimeException e) {
-            Log.w("StreamVolumeManager", "Could not retrieve stream volume for stream type " + i, e);
-            return audioManager.getStreamMaxVolume(i);
+    public int getMinVolume() {
+        int streamMinVolume;
+        if (Util.SDK_INT < 28) {
+            return 0;
+        }
+        streamMinVolume = this.audioManager.getStreamMinVolume(this.streamType);
+        return streamMinVolume;
+    }
+
+    public int getMaxVolume() {
+        return this.audioManager.getStreamMaxVolume(this.streamType);
+    }
+
+    public void release() {
+        VolumeChangeReceiver volumeChangeReceiver = this.receiver;
+        if (volumeChangeReceiver != null) {
+            try {
+                this.applicationContext.unregisterReceiver(volumeChangeReceiver);
+            } catch (RuntimeException e) {
+                Log.w("StreamVolumeManager", "Error unregistering stream volume receiver", e);
+            }
+            this.receiver = null;
         }
     }
 
@@ -100,37 +98,39 @@ final class StreamVolumeManager {
         this.listener.onStreamVolumeChanged(volumeFromManager, mutedFromManager);
     }
 
-    public int getMaxVolume() {
-        return this.audioManager.getStreamMaxVolume(this.streamType);
-    }
-
-    public int getMinVolume() {
-        int streamMinVolume;
-        if (Util.SDK_INT < 28) {
-            return 0;
-        }
-        streamMinVolume = this.audioManager.getStreamMinVolume(this.streamType);
-        return streamMinVolume;
-    }
-
-    public void release() {
-        VolumeChangeReceiver volumeChangeReceiver = this.receiver;
-        if (volumeChangeReceiver != null) {
-            try {
-                this.applicationContext.unregisterReceiver(volumeChangeReceiver);
-            } catch (RuntimeException e) {
-                Log.w("StreamVolumeManager", "Error unregistering stream volume receiver", e);
-            }
-            this.receiver = null;
+    private static int getVolumeFromManager(AudioManager audioManager, int i) {
+        try {
+            return audioManager.getStreamVolume(i);
+        } catch (RuntimeException e) {
+            Log.w("StreamVolumeManager", "Could not retrieve stream volume for stream type " + i, e);
+            return audioManager.getStreamMaxVolume(i);
         }
     }
 
-    public void setStreamType(int i) {
-        if (this.streamType == i) {
-            return;
+    private static boolean getMutedFromManager(AudioManager audioManager, int i) {
+        boolean isStreamMute;
+        if (Util.SDK_INT < 23) {
+            return getVolumeFromManager(audioManager, i) == 0;
         }
-        this.streamType = i;
-        updateVolumeAndNotifyIfChanged();
-        this.listener.onStreamTypeChanged(i);
+        isStreamMute = audioManager.isStreamMute(i);
+        return isStreamMute;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    final class VolumeChangeReceiver extends BroadcastReceiver {
+        private VolumeChangeReceiver() {
+        }
+
+        @Override // android.content.BroadcastReceiver
+        public void onReceive(Context context, Intent intent) {
+            Handler handler = StreamVolumeManager.this.eventHandler;
+            final StreamVolumeManager streamVolumeManager = StreamVolumeManager.this;
+            handler.post(new Runnable() { // from class: com.google.android.exoplayer2.StreamVolumeManager$VolumeChangeReceiver$$ExternalSyntheticLambda0
+                @Override // java.lang.Runnable
+                public final void run() {
+                    StreamVolumeManager.access$200(StreamVolumeManager.this);
+                }
+            });
+        }
     }
 }

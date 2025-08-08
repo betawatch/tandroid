@@ -1,56 +1,148 @@
 package kotlin.collections;
 
-import java.util.Collection;
+import j$.lang.Iterable$-CC;
+import j$.util.Collection;
+import j$.util.List;
+import j$.util.Spliterator;
+import j$.util.Spliterators;
+import j$.util.function.Consumer;
+import j$.util.function.IntFunction;
+import j$.util.function.Predicate;
+import j$.util.function.UnaryOperator;
+import j$.util.stream.Stream;
+import j$.util.stream.t0;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+import java.util.SequencedCollection;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.ranges.RangesKt___RangesKt;
+import kotlin.ranges.RangesKt;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* loaded from: classes3.dex */
-public final class ArrayDeque extends AbstractMutableList {
+/* loaded from: classes.dex */
+public final class ArrayDeque extends AbstractMutableList implements List {
     public static final Companion Companion = new Companion(null);
     private static final Object[] emptyElementData = new Object[0];
     private Object[] elementData = emptyElementData;
     private int head;
     private int size;
 
-    public static final class Companion {
-        private Companion() {
-        }
-
-        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
-            this();
-        }
-
-        public final int newCapacity$kotlin_stdlib(int i, int i2) {
-            int i3 = i + (i >> 1);
-            if (i3 - i2 < 0) {
-                i3 = i2;
-            }
-            if (i3 - 2147483639 <= 0) {
-                return i3;
-            }
-            if (i2 > 2147483639) {
-                return ConnectionsManager.DEFAULT_DATACENTER_ID;
-            }
-            return 2147483639;
-        }
+    @Override // j$.util.Collection, j$.lang.a
+    public /* synthetic */ void forEach(Consumer consumer) {
+        Iterable$-CC.$default$forEach(this, consumer);
     }
 
-    private final void copyCollectionElements(int i, Collection collection) {
-        Iterator it = collection.iterator();
-        int length = this.elementData.length;
-        while (i < length && it.hasNext()) {
-            this.elementData[i] = it.next();
-            i++;
+    @Override // java.lang.Iterable
+    public /* synthetic */ void forEach(java.util.function.Consumer consumer) {
+        forEach(Consumer.VivifiedWrapper.convert(consumer));
+    }
+
+    public /* synthetic */ Object getFirst() {
+        return List.-CC.$default$getFirst(this);
+    }
+
+    public /* synthetic */ Object getLast() {
+        return List.-CC.$default$getLast(this);
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public /* synthetic */ Stream parallelStream() {
+        Stream e0;
+        e0 = t0.e0(Collection.-EL.b(this), true);
+        return e0;
+    }
+
+    @Override // java.util.Collection
+    public /* synthetic */ java.util.stream.Stream parallelStream() {
+        return Stream.Wrapper.convert(parallelStream());
+    }
+
+    @Override // j$.util.Collection
+    public /* synthetic */ boolean removeIf(Predicate predicate) {
+        return Collection.-CC.$default$removeIf(this, predicate);
+    }
+
+    @Override // java.util.Collection
+    public /* synthetic */ boolean removeIf(java.util.function.Predicate predicate) {
+        return removeIf(Predicate.VivifiedWrapper.convert(predicate));
+    }
+
+    @Override // j$.util.List
+    public /* synthetic */ void replaceAll(UnaryOperator unaryOperator) {
+        List.-CC.$default$replaceAll(this, unaryOperator);
+    }
+
+    @Override // java.util.List
+    public /* synthetic */ void replaceAll(java.util.function.UnaryOperator unaryOperator) {
+        replaceAll(UnaryOperator.VivifiedWrapper.convert(unaryOperator));
+    }
+
+    public /* synthetic */ java.util.List reversed() {
+        return List.-CC.$default$reversed(this);
+    }
+
+    public /* bridge */ /* synthetic */ SequencedCollection reversed() {
+        return List.-CC.$default$reversed(this);
+    }
+
+    @Override // java.util.List, j$.util.List
+    public /* synthetic */ void sort(Comparator comparator) {
+        List.-CC.$default$sort(this, comparator);
+    }
+
+    @Override // java.util.Collection, java.lang.Iterable, java.util.List, j$.util.List, j$.util.Collection
+    public /* synthetic */ Spliterator spliterator() {
+        Spliterator spliterator;
+        spliterator = Spliterators.spliterator(this, 16);
+        return spliterator;
+    }
+
+    @Override // java.util.Collection, java.lang.Iterable, java.util.List
+    public /* synthetic */ java.util.Spliterator spliterator() {
+        return Spliterator.Wrapper.convert(spliterator());
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public /* synthetic */ Stream stream() {
+        return Collection.-CC.$default$stream(this);
+    }
+
+    @Override // java.util.Collection
+    public /* synthetic */ java.util.stream.Stream stream() {
+        return Stream.Wrapper.convert(stream());
+    }
+
+    @Override // j$.util.Collection
+    public /* synthetic */ Object[] toArray(IntFunction intFunction) {
+        Object[] array;
+        array = toArray((Object[]) intFunction.apply(0));
+        return array;
+    }
+
+    @Override // java.util.Collection
+    public /* synthetic */ Object[] toArray(java.util.function.IntFunction intFunction) {
+        return toArray(IntFunction.VivifiedWrapper.convert(intFunction));
+    }
+
+    @Override // kotlin.collections.AbstractMutableList
+    public int getSize() {
+        return this.size;
+    }
+
+    private final void ensureCapacity(int i) {
+        if (i < 0) {
+            throw new IllegalStateException("Deque is too big.");
         }
-        int i2 = this.head;
-        for (int i3 = 0; i3 < i2 && it.hasNext(); i3++) {
-            this.elementData[i3] = it.next();
+        Object[] objArr = this.elementData;
+        if (i <= objArr.length) {
+            return;
         }
-        this.size = size() + collection.size();
+        if (objArr == emptyElementData) {
+            this.elementData = new Object[RangesKt.coerceAtLeast(i, 10)];
+        } else {
+            copyElements(Companion.newCapacity$kotlin_stdlib(objArr.length, i));
+        }
     }
 
     private final void copyElements(int i) {
@@ -65,25 +157,13 @@ public final class ArrayDeque extends AbstractMutableList {
         this.elementData = objArr;
     }
 
-    private final int decremented(int i) {
-        return i == 0 ? ArraysKt___ArraysKt.getLastIndex(this.elementData) : i - 1;
+    private final int positiveMod(int i) {
+        Object[] objArr = this.elementData;
+        return i >= objArr.length ? i - objArr.length : i;
     }
 
-    private final void ensureCapacity(int i) {
-        int coerceAtLeast;
-        if (i < 0) {
-            throw new IllegalStateException("Deque is too big.");
-        }
-        Object[] objArr = this.elementData;
-        if (i <= objArr.length) {
-            return;
-        }
-        if (objArr != emptyElementData) {
-            copyElements(Companion.newCapacity$kotlin_stdlib(objArr.length, i));
-        } else {
-            coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(i, 10);
-            this.elementData = new Object[coerceAtLeast];
-        }
+    private final int negativeMod(int i) {
+        return i < 0 ? i + this.elementData.length : i;
     }
 
     private final int incremented(int i) {
@@ -93,13 +173,65 @@ public final class ArrayDeque extends AbstractMutableList {
         return i + 1;
     }
 
-    private final int negativeMod(int i) {
-        return i < 0 ? i + this.elementData.length : i;
+    private final int decremented(int i) {
+        return i == 0 ? ArraysKt___ArraysKt.getLastIndex(this.elementData) : i - 1;
     }
 
-    private final int positiveMod(int i) {
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public boolean isEmpty() {
+        return size() == 0;
+    }
+
+    public final void addFirst(Object obj) {
+        ensureCapacity(size() + 1);
+        int decremented = decremented(this.head);
+        this.head = decremented;
+        this.elementData[decremented] = obj;
+        this.size = size() + 1;
+    }
+
+    public final void addLast(Object obj) {
+        ensureCapacity(size() + 1);
+        this.elementData[positiveMod(this.head + size())] = obj;
+        this.size = size() + 1;
+    }
+
+    public final Object removeFirst() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("ArrayDeque is empty.");
+        }
         Object[] objArr = this.elementData;
-        return i >= objArr.length ? i - objArr.length : i;
+        int i = this.head;
+        Object obj = objArr[i];
+        objArr[i] = null;
+        this.head = incremented(i);
+        this.size = size() - 1;
+        return obj;
+    }
+
+    public final Object removeFirstOrNull() {
+        if (isEmpty()) {
+            return null;
+        }
+        return removeFirst();
+    }
+
+    public final Object removeLast() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("ArrayDeque is empty.");
+        }
+        int positiveMod = positiveMod(this.head + CollectionsKt.getLastIndex(this));
+        Object[] objArr = this.elementData;
+        Object obj = objArr[positiveMod];
+        objArr[positiveMod] = null;
+        this.size = size() - 1;
+        return obj;
+    }
+
+    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public boolean add(Object obj) {
+        addLast(obj);
+        return true;
     }
 
     @Override // java.util.AbstractList, java.util.List
@@ -134,28 +266,48 @@ public final class ArrayDeque extends AbstractMutableList {
             this.head = decremented2;
         } else {
             int positiveMod2 = positiveMod(this.head + size());
-            Object[] objArr4 = this.elementData;
             if (positiveMod < positiveMod2) {
+                Object[] objArr4 = this.elementData;
                 ArraysKt___ArraysJvmKt.copyInto(objArr4, objArr4, positiveMod + 1, positiveMod, positiveMod2);
             } else {
-                ArraysKt___ArraysJvmKt.copyInto(objArr4, objArr4, 1, 0, positiveMod2);
                 Object[] objArr5 = this.elementData;
-                objArr5[0] = objArr5[objArr5.length - 1];
-                ArraysKt___ArraysJvmKt.copyInto(objArr5, objArr5, positiveMod + 1, positiveMod, objArr5.length - 1);
+                ArraysKt___ArraysJvmKt.copyInto(objArr5, objArr5, 1, 0, positiveMod2);
+                Object[] objArr6 = this.elementData;
+                objArr6[0] = objArr6[objArr6.length - 1];
+                ArraysKt___ArraysJvmKt.copyInto(objArr6, objArr6, positiveMod + 1, positiveMod, objArr6.length - 1);
             }
             this.elementData[positiveMod] = obj;
         }
         this.size = size() + 1;
     }
 
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public boolean add(Object obj) {
-        addLast(obj);
+    private final void copyCollectionElements(int i, java.util.Collection collection) {
+        Iterator it = collection.iterator();
+        int length = this.elementData.length;
+        while (i < length && it.hasNext()) {
+            this.elementData[i] = it.next();
+            i++;
+        }
+        int i2 = this.head;
+        for (int i3 = 0; i3 < i2 && it.hasNext(); i3++) {
+            this.elementData[i3] = it.next();
+        }
+        this.size = size() + collection.size();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public boolean addAll(java.util.Collection elements) {
+        Intrinsics.checkNotNullParameter(elements, "elements");
+        if (elements.isEmpty()) {
+            return false;
+        }
+        ensureCapacity(size() + elements.size());
+        copyCollectionElements(positiveMod(this.head + size()), elements);
         return true;
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public boolean addAll(int i, Collection elements) {
+    public boolean addAll(int i, java.util.Collection elements) {
         Intrinsics.checkNotNullParameter(elements, "elements");
         AbstractList.Companion.checkPositionIndex$kotlin_stdlib(i, size());
         if (elements.isEmpty()) {
@@ -174,28 +326,29 @@ public final class ArrayDeque extends AbstractMutableList {
             if (positiveMod2 < i2) {
                 Object[] objArr = this.elementData;
                 ArraysKt___ArraysJvmKt.copyInto(objArr, objArr, i3, i2, objArr.length);
-                Object[] objArr2 = this.elementData;
                 if (size >= positiveMod2) {
+                    Object[] objArr2 = this.elementData;
                     ArraysKt___ArraysJvmKt.copyInto(objArr2, objArr2, objArr2.length - size, 0, positiveMod2);
                 } else {
-                    ArraysKt___ArraysJvmKt.copyInto(objArr2, objArr2, objArr2.length - size, 0, size);
                     Object[] objArr3 = this.elementData;
-                    ArraysKt___ArraysJvmKt.copyInto(objArr3, objArr3, 0, size, positiveMod2);
+                    ArraysKt___ArraysJvmKt.copyInto(objArr3, objArr3, objArr3.length - size, 0, size);
+                    Object[] objArr4 = this.elementData;
+                    ArraysKt___ArraysJvmKt.copyInto(objArr4, objArr4, 0, size, positiveMod2);
                 }
             } else if (i3 >= 0) {
-                Object[] objArr4 = this.elementData;
-                ArraysKt___ArraysJvmKt.copyInto(objArr4, objArr4, i3, i2, positiveMod2);
-            } else {
                 Object[] objArr5 = this.elementData;
-                i3 += objArr5.length;
+                ArraysKt___ArraysJvmKt.copyInto(objArr5, objArr5, i3, i2, positiveMod2);
+            } else {
+                Object[] objArr6 = this.elementData;
+                i3 += objArr6.length;
                 int i4 = positiveMod2 - i2;
-                int length = objArr5.length - i3;
+                int length = objArr6.length - i3;
                 if (length >= i4) {
-                    ArraysKt___ArraysJvmKt.copyInto(objArr5, objArr5, i3, i2, positiveMod2);
+                    ArraysKt___ArraysJvmKt.copyInto(objArr6, objArr6, i3, i2, positiveMod2);
                 } else {
-                    ArraysKt___ArraysJvmKt.copyInto(objArr5, objArr5, i3, i2, i2 + length);
-                    Object[] objArr6 = this.elementData;
-                    ArraysKt___ArraysJvmKt.copyInto(objArr6, objArr6, 0, this.head + length, positiveMod2);
+                    ArraysKt___ArraysJvmKt.copyInto(objArr6, objArr6, i3, i2, i2 + length);
+                    Object[] objArr7 = this.elementData;
+                    ArraysKt___ArraysJvmKt.copyInto(objArr7, objArr7, 0, this.head + length, positiveMod2);
                 }
             }
             this.head = i3;
@@ -204,78 +357,32 @@ public final class ArrayDeque extends AbstractMutableList {
             int i5 = positiveMod2 + size;
             if (positiveMod2 < positiveMod) {
                 int i6 = size + positiveMod;
-                Object[] objArr7 = this.elementData;
-                if (i6 > objArr7.length) {
-                    if (i5 >= objArr7.length) {
-                        i5 -= objArr7.length;
-                    } else {
-                        int length2 = positiveMod - (i6 - objArr7.length);
-                        ArraysKt___ArraysJvmKt.copyInto(objArr7, objArr7, 0, length2, positiveMod);
-                        Object[] objArr8 = this.elementData;
-                        ArraysKt___ArraysJvmKt.copyInto(objArr8, objArr8, i5, positiveMod2, length2);
-                    }
-                }
-                ArraysKt___ArraysJvmKt.copyInto(objArr7, objArr7, i5, positiveMod2, positiveMod);
-            } else {
-                Object[] objArr9 = this.elementData;
-                ArraysKt___ArraysJvmKt.copyInto(objArr9, objArr9, size, 0, positiveMod);
-                Object[] objArr10 = this.elementData;
-                if (i5 >= objArr10.length) {
-                    ArraysKt___ArraysJvmKt.copyInto(objArr10, objArr10, i5 - objArr10.length, positiveMod2, objArr10.length);
+                Object[] objArr8 = this.elementData;
+                if (i6 <= objArr8.length) {
+                    ArraysKt___ArraysJvmKt.copyInto(objArr8, objArr8, i5, positiveMod2, positiveMod);
+                } else if (i5 >= objArr8.length) {
+                    ArraysKt___ArraysJvmKt.copyInto(objArr8, objArr8, i5 - objArr8.length, positiveMod2, positiveMod);
                 } else {
-                    ArraysKt___ArraysJvmKt.copyInto(objArr10, objArr10, 0, objArr10.length - size, objArr10.length);
-                    Object[] objArr11 = this.elementData;
-                    ArraysKt___ArraysJvmKt.copyInto(objArr11, objArr11, i5, positiveMod2, objArr11.length - size);
+                    int length2 = positiveMod - (i6 - objArr8.length);
+                    ArraysKt___ArraysJvmKt.copyInto(objArr8, objArr8, 0, length2, positiveMod);
+                    Object[] objArr9 = this.elementData;
+                    ArraysKt___ArraysJvmKt.copyInto(objArr9, objArr9, i5, positiveMod2, length2);
+                }
+            } else {
+                Object[] objArr10 = this.elementData;
+                ArraysKt___ArraysJvmKt.copyInto(objArr10, objArr10, size, 0, positiveMod);
+                Object[] objArr11 = this.elementData;
+                if (i5 >= objArr11.length) {
+                    ArraysKt___ArraysJvmKt.copyInto(objArr11, objArr11, i5 - objArr11.length, positiveMod2, objArr11.length);
+                } else {
+                    ArraysKt___ArraysJvmKt.copyInto(objArr11, objArr11, 0, objArr11.length - size, objArr11.length);
+                    Object[] objArr12 = this.elementData;
+                    ArraysKt___ArraysJvmKt.copyInto(objArr12, objArr12, i5, positiveMod2, objArr12.length - size);
                 }
             }
             copyCollectionElements(positiveMod2, elements);
         }
         return true;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public boolean addAll(Collection elements) {
-        Intrinsics.checkNotNullParameter(elements, "elements");
-        if (elements.isEmpty()) {
-            return false;
-        }
-        ensureCapacity(size() + elements.size());
-        copyCollectionElements(positiveMod(this.head + size()), elements);
-        return true;
-    }
-
-    public final void addFirst(Object obj) {
-        ensureCapacity(size() + 1);
-        int decremented = decremented(this.head);
-        this.head = decremented;
-        this.elementData[decremented] = obj;
-        this.size = size() + 1;
-    }
-
-    public final void addLast(Object obj) {
-        ensureCapacity(size() + 1);
-        this.elementData[positiveMod(this.head + size())] = obj;
-        this.size = size() + 1;
-    }
-
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public void clear() {
-        int positiveMod = positiveMod(this.head + size());
-        int i = this.head;
-        if (i < positiveMod) {
-            ArraysKt___ArraysJvmKt.fill(this.elementData, null, i, positiveMod);
-        } else if (!isEmpty()) {
-            Object[] objArr = this.elementData;
-            ArraysKt___ArraysJvmKt.fill(objArr, null, this.head, objArr.length);
-            ArraysKt___ArraysJvmKt.fill(this.elementData, null, 0, positiveMod);
-        }
-        this.head = 0;
-        this.size = 0;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public boolean contains(Object obj) {
-        return indexOf(obj) != -1;
     }
 
     @Override // java.util.AbstractList, java.util.List
@@ -284,85 +391,99 @@ public final class ArrayDeque extends AbstractMutableList {
         return this.elementData[positiveMod(this.head + i)];
     }
 
-    @Override // kotlin.collections.AbstractMutableList
-    public int getSize() {
-        return this.size;
+    @Override // java.util.AbstractList, java.util.List
+    public Object set(int i, Object obj) {
+        AbstractList.Companion.checkElementIndex$kotlin_stdlib(i, size());
+        int positiveMod = positiveMod(this.head + i);
+        Object[] objArr = this.elementData;
+        Object obj2 = objArr[positiveMod];
+        objArr[positiveMod] = obj;
+        return obj2;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public boolean contains(Object obj) {
+        return indexOf(obj) != -1;
     }
 
     @Override // java.util.AbstractList, java.util.List
     public int indexOf(Object obj) {
+        int i;
         int positiveMod = positiveMod(this.head + size());
-        int i = this.head;
-        if (i < positiveMod) {
-            while (i < positiveMod) {
-                if (!Intrinsics.areEqual(obj, this.elementData[i])) {
-                    i++;
+        int i2 = this.head;
+        if (i2 < positiveMod) {
+            while (i2 < positiveMod) {
+                if (Intrinsics.areEqual(obj, this.elementData[i2])) {
+                    i = this.head;
+                } else {
+                    i2++;
                 }
             }
             return -1;
         }
-        if (i < positiveMod) {
+        if (i2 < positiveMod) {
             return -1;
         }
         int length = this.elementData.length;
         while (true) {
-            if (i >= length) {
-                for (int i2 = 0; i2 < positiveMod; i2++) {
-                    if (Intrinsics.areEqual(obj, this.elementData[i2])) {
-                        i = i2 + this.elementData.length;
+            if (i2 >= length) {
+                for (int i3 = 0; i3 < positiveMod; i3++) {
+                    if (Intrinsics.areEqual(obj, this.elementData[i3])) {
+                        i2 = i3 + this.elementData.length;
+                        i = this.head;
                     }
                 }
                 return -1;
             }
-            if (Intrinsics.areEqual(obj, this.elementData[i])) {
+            if (Intrinsics.areEqual(obj, this.elementData[i2])) {
+                i = this.head;
                 break;
             }
-            i++;
+            i2++;
         }
-        return i - this.head;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public boolean isEmpty() {
-        return size() == 0;
+        return i2 - i;
     }
 
     @Override // java.util.AbstractList, java.util.List
     public int lastIndexOf(Object obj) {
         int lastIndex;
+        int i;
         int positiveMod = positiveMod(this.head + size());
-        int i = this.head;
-        if (i < positiveMod) {
+        int i2 = this.head;
+        if (i2 < positiveMod) {
             lastIndex = positiveMod - 1;
-            if (i <= lastIndex) {
+            if (i2 <= lastIndex) {
                 while (!Intrinsics.areEqual(obj, this.elementData[lastIndex])) {
-                    if (lastIndex != i) {
+                    if (lastIndex != i2) {
                         lastIndex--;
                     }
                 }
-                return lastIndex - this.head;
+                i = this.head;
+                return lastIndex - i;
             }
             return -1;
         }
-        if (i > positiveMod) {
-            int i2 = positiveMod - 1;
+        if (i2 > positiveMod) {
+            int i3 = positiveMod - 1;
             while (true) {
-                if (-1 >= i2) {
+                if (-1 < i3) {
+                    if (Intrinsics.areEqual(obj, this.elementData[i3])) {
+                        lastIndex = i3 + this.elementData.length;
+                        i = this.head;
+                        break;
+                    }
+                    i3--;
+                } else {
                     lastIndex = ArraysKt___ArraysKt.getLastIndex(this.elementData);
-                    int i3 = this.head;
-                    if (i3 <= lastIndex) {
+                    int i4 = this.head;
+                    if (i4 <= lastIndex) {
                         while (!Intrinsics.areEqual(obj, this.elementData[lastIndex])) {
-                            if (lastIndex != i3) {
+                            if (lastIndex != i4) {
                                 lastIndex--;
                             }
                         }
+                        i = this.head;
                     }
-                } else {
-                    if (Intrinsics.areEqual(obj, this.elementData[i2])) {
-                        lastIndex = i2 + this.elementData.length;
-                        break;
-                    }
-                    i2--;
                 }
             }
         }
@@ -379,73 +500,10 @@ public final class ArrayDeque extends AbstractMutableList {
         return true;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public boolean removeAll(Collection elements) {
-        int positiveMod;
-        Intrinsics.checkNotNullParameter(elements, "elements");
-        boolean z = false;
-        z = false;
-        z = false;
-        if (!isEmpty() && this.elementData.length != 0) {
-            int positiveMod2 = positiveMod(this.head + size());
-            int i = this.head;
-            if (i < positiveMod2) {
-                positiveMod = i;
-                while (i < positiveMod2) {
-                    Object obj = this.elementData[i];
-                    if (!elements.contains(obj)) {
-                        this.elementData[positiveMod] = obj;
-                        positiveMod++;
-                    } else {
-                        z = true;
-                    }
-                    i++;
-                }
-                ArraysKt___ArraysJvmKt.fill(this.elementData, null, positiveMod, positiveMod2);
-            } else {
-                int length = this.elementData.length;
-                int i2 = i;
-                boolean z2 = false;
-                while (i < length) {
-                    Object[] objArr = this.elementData;
-                    Object obj2 = objArr[i];
-                    objArr[i] = null;
-                    if (!elements.contains(obj2)) {
-                        this.elementData[i2] = obj2;
-                        i2++;
-                    } else {
-                        z2 = true;
-                    }
-                    i++;
-                }
-                positiveMod = positiveMod(i2);
-                for (int i3 = 0; i3 < positiveMod2; i3++) {
-                    Object[] objArr2 = this.elementData;
-                    Object obj3 = objArr2[i3];
-                    objArr2[i3] = null;
-                    if (!elements.contains(obj3)) {
-                        this.elementData[positiveMod] = obj3;
-                        positiveMod = incremented(positiveMod);
-                    } else {
-                        z2 = true;
-                    }
-                }
-                z = z2;
-            }
-            if (z) {
-                this.size = negativeMod(positiveMod - this.head);
-            }
-        }
-        return z;
-    }
-
     @Override // kotlin.collections.AbstractMutableList
     public Object removeAt(int i) {
-        int lastIndex;
-        int lastIndex2;
         AbstractList.Companion.checkElementIndex$kotlin_stdlib(i, size());
-        lastIndex = CollectionsKt__CollectionsKt.getLastIndex(this);
-        if (i == lastIndex) {
+        if (i == CollectionsKt.getLastIndex(this)) {
             return removeLast();
         }
         if (i == 0) {
@@ -471,17 +529,16 @@ public final class ArrayDeque extends AbstractMutableList {
             objArr4[i4] = null;
             this.head = incremented(i4);
         } else {
-            int i5 = this.head;
-            lastIndex2 = CollectionsKt__CollectionsKt.getLastIndex(this);
-            int positiveMod2 = positiveMod(i5 + lastIndex2);
-            Object[] objArr5 = this.elementData;
+            int positiveMod2 = positiveMod(this.head + CollectionsKt.getLastIndex(this));
             if (positiveMod <= positiveMod2) {
+                Object[] objArr5 = this.elementData;
                 ArraysKt___ArraysJvmKt.copyInto(objArr5, objArr5, positiveMod, positiveMod + 1, positiveMod2 + 1);
             } else {
-                ArraysKt___ArraysJvmKt.copyInto(objArr5, objArr5, positiveMod, positiveMod + 1, objArr5.length);
                 Object[] objArr6 = this.elementData;
-                objArr6[objArr6.length - 1] = objArr6[0];
-                ArraysKt___ArraysJvmKt.copyInto(objArr6, objArr6, 0, 1, positiveMod2 + 1);
+                ArraysKt___ArraysJvmKt.copyInto(objArr6, objArr6, positiveMod, positiveMod + 1, objArr6.length);
+                Object[] objArr7 = this.elementData;
+                objArr7[objArr7.length - 1] = objArr7[0];
+                ArraysKt___ArraysJvmKt.copyInto(objArr7, objArr7, 0, 1, positiveMod2 + 1);
             }
             this.elementData[positiveMod2] = null;
         }
@@ -489,43 +546,68 @@ public final class ArrayDeque extends AbstractMutableList {
         return obj;
     }
 
-    public final Object removeFirst() {
-        if (isEmpty()) {
-            throw new NoSuchElementException("ArrayDeque is empty.");
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public boolean removeAll(java.util.Collection elements) {
+        int positiveMod;
+        Intrinsics.checkNotNullParameter(elements, "elements");
+        boolean z = false;
+        z = false;
+        z = false;
+        if (!isEmpty() && this.elementData.length != 0) {
+            int positiveMod2 = positiveMod(this.head + size());
+            int i = this.head;
+            if (i < positiveMod2) {
+                positiveMod = i;
+                while (i < positiveMod2) {
+                    Object obj = this.elementData[i];
+                    if (elements.contains(obj)) {
+                        z = true;
+                    } else {
+                        this.elementData[positiveMod] = obj;
+                        positiveMod++;
+                    }
+                    i++;
+                }
+                ArraysKt___ArraysJvmKt.fill(this.elementData, null, positiveMod, positiveMod2);
+            } else {
+                int length = this.elementData.length;
+                int i2 = i;
+                boolean z2 = false;
+                while (i < length) {
+                    Object[] objArr = this.elementData;
+                    Object obj2 = objArr[i];
+                    objArr[i] = null;
+                    if (elements.contains(obj2)) {
+                        z2 = true;
+                    } else {
+                        this.elementData[i2] = obj2;
+                        i2++;
+                    }
+                    i++;
+                }
+                positiveMod = positiveMod(i2);
+                for (int i3 = 0; i3 < positiveMod2; i3++) {
+                    Object[] objArr2 = this.elementData;
+                    Object obj3 = objArr2[i3];
+                    objArr2[i3] = null;
+                    if (elements.contains(obj3)) {
+                        z2 = true;
+                    } else {
+                        this.elementData[positiveMod] = obj3;
+                        positiveMod = incremented(positiveMod);
+                    }
+                }
+                z = z2;
+            }
+            if (z) {
+                this.size = negativeMod(positiveMod - this.head);
+            }
         }
-        Object[] objArr = this.elementData;
-        int i = this.head;
-        Object obj = objArr[i];
-        objArr[i] = null;
-        this.head = incremented(i);
-        this.size = size() - 1;
-        return obj;
-    }
-
-    public final Object removeFirstOrNull() {
-        if (isEmpty()) {
-            return null;
-        }
-        return removeFirst();
-    }
-
-    public final Object removeLast() {
-        int lastIndex;
-        if (isEmpty()) {
-            throw new NoSuchElementException("ArrayDeque is empty.");
-        }
-        int i = this.head;
-        lastIndex = CollectionsKt__CollectionsKt.getLastIndex(this);
-        int positiveMod = positiveMod(i + lastIndex);
-        Object[] objArr = this.elementData;
-        Object obj = objArr[positiveMod];
-        objArr[positiveMod] = null;
-        this.size = size() - 1;
-        return obj;
+        return z;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public boolean retainAll(Collection elements) {
+    public boolean retainAll(java.util.Collection elements) {
         int positiveMod;
         Intrinsics.checkNotNullParameter(elements, "elements");
         boolean z = false;
@@ -584,19 +666,19 @@ public final class ArrayDeque extends AbstractMutableList {
         return z;
     }
 
-    @Override // java.util.AbstractList, java.util.List
-    public Object set(int i, Object obj) {
-        AbstractList.Companion.checkElementIndex$kotlin_stdlib(i, size());
-        int positiveMod = positiveMod(this.head + i);
-        Object[] objArr = this.elementData;
-        Object obj2 = objArr[positiveMod];
-        objArr[positiveMod] = obj;
-        return obj2;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public Object[] toArray() {
-        return toArray(new Object[size()]);
+    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public void clear() {
+        int positiveMod = positiveMod(this.head + size());
+        int i = this.head;
+        if (i < positiveMod) {
+            ArraysKt___ArraysJvmKt.fill(this.elementData, null, i, positiveMod);
+        } else if (!isEmpty()) {
+            Object[] objArr = this.elementData;
+            ArraysKt___ArraysJvmKt.fill(objArr, null, this.head, objArr.length);
+            ArraysKt___ArraysJvmKt.fill(this.elementData, null, 0, positiveMod);
+        }
+        this.head = 0;
+        this.size = 0;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
@@ -619,5 +701,33 @@ public final class ArrayDeque extends AbstractMutableList {
             array[size()] = null;
         }
         return array;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public Object[] toArray() {
+        return toArray(new Object[size()]);
+    }
+
+    public static final class Companion {
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        public final int newCapacity$kotlin_stdlib(int i, int i2) {
+            int i3 = i + (i >> 1);
+            if (i3 - i2 < 0) {
+                i3 = i2;
+            }
+            if (i3 - 2147483639 <= 0) {
+                return i3;
+            }
+            if (i2 > 2147483639) {
+                return ConnectionsManager.DEFAULT_DATACENTER_ID;
+            }
+            return 2147483639;
+        }
+
+        private Companion() {
+        }
     }
 }

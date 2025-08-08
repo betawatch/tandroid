@@ -11,7 +11,6 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Objects;
@@ -37,6 +36,13 @@ public class FileStreamLoadOperation extends BaseDataSource implements FileLoadO
     private long requestedLength;
     private Uri uri;
 
+    @Override // com.google.android.exoplayer2.upstream.BaseDataSource, com.google.android.exoplayer2.upstream.DataSource
+    public /* bridge */ /* synthetic */ Map getResponseHeaders() {
+        Map emptyMap;
+        emptyMap = Collections.emptyMap();
+        return emptyMap;
+    }
+
     public FileStreamLoadOperation() {
         super(true);
     }
@@ -49,14 +55,6 @@ public class FileStreamLoadOperation extends BaseDataSource implements FileLoadO
         }
     }
 
-    private int getCurrentPriority() {
-        Integer num = (Integer) ConcurrentMap$-EL.getOrDefault(priorityMap, Long.valueOf(this.document.id), null);
-        if (num != null) {
-            return num.intValue();
-        }
-        return 3;
-    }
-
     public static int getStreamPrioriy(TLRPC.Document document) {
         Integer num;
         if (document == null || (num = priorityMap.get(Long.valueOf(document.id))) == null) {
@@ -65,110 +63,8 @@ public class FileStreamLoadOperation extends BaseDataSource implements FileLoadO
         return num.intValue();
     }
 
-    public static Uri prepareUri(int i, TLRPC.Document document, Object obj) {
-        String attachFileName = FileLoader.getAttachFileName(document);
-        File pathToAttach = FileLoader.getInstance(i).getPathToAttach(document);
-        if (pathToAttach != null && pathToAttach.exists()) {
-            return Uri.fromFile(pathToAttach);
-        }
-        try {
-            StringBuilder sb = new StringBuilder();
-            sb.append("?account=");
-            sb.append(i);
-            sb.append("&id=");
-            sb.append(document.id);
-            sb.append("&hash=");
-            sb.append(document.access_hash);
-            sb.append("&dc=");
-            sb.append(document.dc_id);
-            sb.append("&size=");
-            sb.append(document.size);
-            sb.append("&mime=");
-            sb.append(URLEncoder.encode(document.mime_type, "UTF-8"));
-            sb.append("&rid=");
-            sb.append(FileLoader.getInstance(i).getFileReference(obj));
-            sb.append("&name=");
-            sb.append(URLEncoder.encode(FileLoader.getDocumentFileName(document), "UTF-8"));
-            sb.append("&reference=");
-            byte[] bArr = document.file_reference;
-            if (bArr == null) {
-                bArr = new byte[0];
-            }
-            sb.append(Utilities.bytesToHex(bArr));
-            return Uri.parse("tg://" + attachFileName + sb.toString());
-        } catch (UnsupportedEncodingException e) {
-            FileLog.e(e);
-            return null;
-        }
-    }
-
-    public static void setPriorityForDocument(TLRPC.Document document, int i) {
-        if (document != null) {
-            priorityMap.put(Long.valueOf(document.id), Integer.valueOf(i));
-        }
-    }
-
     @Override // com.google.android.exoplayer2.upstream.DataSource
-    public void close() {
-        FileLog.e("FileStreamLoadOperation " + this.document.id + " close me=" + this);
-        FileLoadOperation fileLoadOperation = this.loadOperation;
-        if (fileLoadOperation != null) {
-            fileLoadOperation.removeStreamListener(this);
-        }
-        RandomAccessFile randomAccessFile = this.file;
-        if (randomAccessFile != null) {
-            try {
-                randomAccessFile.close();
-            } catch (Exception e) {
-                FileLog.e(e);
-            }
-            this.file = null;
-        }
-        this.uri = null;
-        allStreams.remove(Long.valueOf(this.document.id));
-        if (this.opened) {
-            this.opened = false;
-            transferEnded();
-        }
-        CountDownLatch countDownLatch = this.countDownLatch;
-        if (countDownLatch != null) {
-            countDownLatch.countDown();
-            this.countDownLatch = null;
-        }
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.BaseDataSource, com.google.android.exoplayer2.upstream.DataSource
-    public /* bridge */ /* synthetic */ Map getResponseHeaders() {
-        Map emptyMap;
-        emptyMap = Collections.emptyMap();
-        return emptyMap;
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.DataSource
-    public Uri getUri() {
-        return this.uri;
-    }
-
-    @Override // org.telegram.messenger.FileLoadOperationStream
-    public void newDataAvailable() {
-        CountDownLatch countDownLatch = this.countDownLatch;
-        this.countDownLatch = null;
-        if (countDownLatch != null) {
-            countDownLatch.countDown();
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:10:0x013c  */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x012c  */
-    @Override // com.google.android.exoplayer2.upstream.DataSource
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public long open(DataSpec dataSpec) {
-        ArrayList<TLRPC.DocumentAttribute> arrayList;
-        TLRPC.DocumentAttribute tL_documentAttributeAudio;
-        long j;
-        FileLoadOperation fileLoadOperation;
         this.uri = dataSpec.uri;
         transferInitializing(dataSpec);
         int intValue = Utilities.parseInt((CharSequence) this.uri.getQueryParameter("account")).intValue();
@@ -185,75 +81,61 @@ public class FileStreamLoadOperation extends BaseDataSource implements FileLoadO
         TLRPC.TL_documentAttributeFilename tL_documentAttributeFilename = new TLRPC.TL_documentAttributeFilename();
         tL_documentAttributeFilename.file_name = this.uri.getQueryParameter("name");
         this.document.attributes.add(tL_documentAttributeFilename);
-        if (!this.document.mime_type.startsWith(MediaStreamTrack.VIDEO_TRACK_KIND)) {
-            if (this.document.mime_type.startsWith(MediaStreamTrack.AUDIO_TRACK_KIND)) {
-                arrayList = this.document.attributes;
-                tL_documentAttributeAudio = new TLRPC.TL_documentAttributeAudio();
-            }
-            allStreams.put(Long.valueOf(this.document.id), this);
-            this.currentOffset = dataSpec.position;
-            this.requestedLength = dataSpec.length;
-            this.loadOperation = FileLoader.getInstance(this.currentAccount).loadStreamFile(this, this.document, null, this.parentObject, this.currentOffset, false, getCurrentPriority());
-            this.bytesTransferred = 0L;
-            long j2 = this.document.size - dataSpec.position;
-            this.bytesRemaining = j2;
-            j = this.requestedLength;
-            if (j != -1) {
-                this.bytesRemaining = Math.min(j2, j);
-            }
-            this.opened = true;
-            transferStarted(dataSpec);
-            fileLoadOperation = this.loadOperation;
-            if (fileLoadOperation != null) {
-                File currentFile = fileLoadOperation.getCurrentFile();
-                this.currentFile = currentFile;
-                if (currentFile != null) {
-                    try {
-                        RandomAccessFile randomAccessFile = new RandomAccessFile(this.currentFile, "r");
-                        this.file = randomAccessFile;
-                        randomAccessFile.seek(this.currentOffset);
-                        if (this.loadOperation.isFinished()) {
-                            this.isNetwork = false;
-                            long length = this.currentFile.length() - this.currentOffset;
-                            this.bytesRemaining = length;
-                            long j3 = this.requestedLength;
-                            if (j3 != -1) {
-                                this.bytesRemaining = Math.min(length, j3 - this.bytesTransferred);
-                            }
-                        }
-                    } catch (Throwable unused) {
-                    }
-                }
-            }
-            FileLog.e("FileStreamLoadOperation " + this.document.id + " open operation=" + this.loadOperation + " currentFile=" + this.currentFile + " file=" + this.file + " bytesRemaining=" + this.bytesRemaining + " me=" + this);
-            FileLog.e("FileStreamLoadOperation " + this.document.id + " " + MessageObject.getVideoWidth(this.document) + "x" + MessageObject.getVideoWidth(this.document) + " mime_type=" + this.document.mime_type + " codec=" + MessageObject.getVideoCodec(this.document) + " size=" + this.document.size);
-            return this.bytesRemaining;
+        if (this.document.mime_type.startsWith(MediaStreamTrack.VIDEO_TRACK_KIND)) {
+            this.document.attributes.add(new TLRPC.TL_documentAttributeVideo());
+        } else if (this.document.mime_type.startsWith(MediaStreamTrack.AUDIO_TRACK_KIND)) {
+            this.document.attributes.add(new TLRPC.TL_documentAttributeAudio());
         }
-        arrayList = this.document.attributes;
-        tL_documentAttributeAudio = new TLRPC.TL_documentAttributeVideo();
-        arrayList.add(tL_documentAttributeAudio);
         allStreams.put(Long.valueOf(this.document.id), this);
         this.currentOffset = dataSpec.position;
         this.requestedLength = dataSpec.length;
         this.loadOperation = FileLoader.getInstance(this.currentAccount).loadStreamFile(this, this.document, null, this.parentObject, this.currentOffset, false, getCurrentPriority());
         this.bytesTransferred = 0L;
-        long j22 = this.document.size - dataSpec.position;
-        this.bytesRemaining = j22;
-        j = this.requestedLength;
-        if (j != -1) {
+        long j = this.document.size - dataSpec.position;
+        this.bytesRemaining = j;
+        long j2 = this.requestedLength;
+        if (j2 != -1) {
+            this.bytesRemaining = Math.min(j, j2);
         }
         this.opened = true;
         transferStarted(dataSpec);
-        fileLoadOperation = this.loadOperation;
+        FileLoadOperation fileLoadOperation = this.loadOperation;
         if (fileLoadOperation != null) {
+            File currentFile = fileLoadOperation.getCurrentFile();
+            this.currentFile = currentFile;
+            if (currentFile != null) {
+                try {
+                    RandomAccessFile randomAccessFile = new RandomAccessFile(this.currentFile, "r");
+                    this.file = randomAccessFile;
+                    randomAccessFile.seek(this.currentOffset);
+                    if (this.loadOperation.isFinished()) {
+                        this.isNetwork = false;
+                        long length = this.currentFile.length() - this.currentOffset;
+                        this.bytesRemaining = length;
+                        long j3 = this.requestedLength;
+                        if (j3 != -1) {
+                            this.bytesRemaining = Math.min(length, j3 - this.bytesTransferred);
+                        }
+                    }
+                } catch (Throwable unused) {
+                }
+            }
         }
         FileLog.e("FileStreamLoadOperation " + this.document.id + " open operation=" + this.loadOperation + " currentFile=" + this.currentFile + " file=" + this.file + " bytesRemaining=" + this.bytesRemaining + " me=" + this);
         FileLog.e("FileStreamLoadOperation " + this.document.id + " " + MessageObject.getVideoWidth(this.document) + "x" + MessageObject.getVideoWidth(this.document) + " mime_type=" + this.document.mime_type + " codec=" + MessageObject.getVideoCodec(this.document) + " size=" + this.document.size);
         return this.bytesRemaining;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0034 A[Catch: Exception -> 0x001c, InterruptedException -> 0x001f, TryCatch #4 {InterruptedException -> 0x001f, Exception -> 0x001c, blocks: (B:88:0x0017, B:15:0x0026, B:17:0x0034, B:19:0x0057, B:20:0x005c, B:22:0x0060, B:23:0x0066, B:25:0x0070, B:28:0x0078, B:30:0x007c, B:31:0x0090, B:33:0x0097, B:49:0x00d3, B:52:0x00db, B:55:0x00e3, B:58:0x010d, B:13:0x0022, B:79:0x0114, B:82:0x0119, B:84:0x011f, B:36:0x009b, B:41:0x00b3, B:44:0x00c8), top: B:87:0x0017, inners: #0 }] */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x007c A[Catch: Exception -> 0x001c, InterruptedException -> 0x001f, TryCatch #4 {InterruptedException -> 0x001f, Exception -> 0x001c, blocks: (B:88:0x0017, B:15:0x0026, B:17:0x0034, B:19:0x0057, B:20:0x005c, B:22:0x0060, B:23:0x0066, B:25:0x0070, B:28:0x0078, B:30:0x007c, B:31:0x0090, B:33:0x0097, B:49:0x00d3, B:52:0x00db, B:55:0x00e3, B:58:0x010d, B:13:0x0022, B:79:0x0114, B:82:0x0119, B:84:0x011f, B:36:0x009b, B:41:0x00b3, B:44:0x00c8), top: B:87:0x0017, inners: #0 }] */
+    private int getCurrentPriority() {
+        Integer num = (Integer) ConcurrentMap$-EL.getOrDefault(priorityMap, Long.valueOf(this.document.id), null);
+        if (num != null) {
+            return num.intValue();
+        }
+        return 3;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0034 A[Catch: Exception -> 0x001c, InterruptedException -> 0x001f, TryCatch #4 {InterruptedException -> 0x001f, Exception -> 0x001c, blocks: (B:88:0x0017, B:15:0x0026, B:17:0x0034, B:19:0x0057, B:20:0x005c, B:22:0x0060, B:23:0x0066, B:25:0x0070, B:28:0x0078, B:30:0x007c, B:31:0x0090, B:33:0x0097, B:49:0x00d4, B:52:0x00dc, B:55:0x00e4, B:58:0x010e, B:13:0x0022, B:79:0x0115, B:82:0x011a, B:84:0x0120, B:36:0x009b, B:41:0x00b4, B:44:0x00c9), top: B:87:0x0017, inners: #0 }] */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x007c A[Catch: Exception -> 0x001c, InterruptedException -> 0x001f, TryCatch #4 {InterruptedException -> 0x001f, Exception -> 0x001c, blocks: (B:88:0x0017, B:15:0x0026, B:17:0x0034, B:19:0x0057, B:20:0x005c, B:22:0x0060, B:23:0x0066, B:25:0x0070, B:28:0x0078, B:30:0x007c, B:31:0x0090, B:33:0x0097, B:49:0x00d4, B:52:0x00dc, B:55:0x00e4, B:58:0x010e, B:13:0x0022, B:79:0x0115, B:82:0x011a, B:84:0x0120, B:36:0x009b, B:41:0x00b4, B:44:0x00c9), top: B:87:0x0017, inners: #0 }] */
     /* JADX WARN: Removed duplicated region for block: B:35:0x009b A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:71:0x0015 A[SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:72:0x0094 A[EXC_TOP_SPLITTER, SYNTHETIC] */
@@ -374,5 +256,91 @@ public class FileStreamLoadOperation extends BaseDataSource implements FileLoadO
             bytesTransferred(read);
         }
         return read;
+    }
+
+    @Override // com.google.android.exoplayer2.upstream.DataSource
+    public Uri getUri() {
+        return this.uri;
+    }
+
+    @Override // com.google.android.exoplayer2.upstream.DataSource
+    public void close() {
+        FileLog.e("FileStreamLoadOperation " + this.document.id + " close me=" + this);
+        FileLoadOperation fileLoadOperation = this.loadOperation;
+        if (fileLoadOperation != null) {
+            fileLoadOperation.removeStreamListener(this);
+        }
+        RandomAccessFile randomAccessFile = this.file;
+        if (randomAccessFile != null) {
+            try {
+                randomAccessFile.close();
+            } catch (Exception e) {
+                FileLog.e(e);
+            }
+            this.file = null;
+        }
+        this.uri = null;
+        allStreams.remove(Long.valueOf(this.document.id));
+        if (this.opened) {
+            this.opened = false;
+            transferEnded();
+        }
+        CountDownLatch countDownLatch = this.countDownLatch;
+        if (countDownLatch != null) {
+            countDownLatch.countDown();
+            this.countDownLatch = null;
+        }
+    }
+
+    @Override // org.telegram.messenger.FileLoadOperationStream
+    public void newDataAvailable() {
+        CountDownLatch countDownLatch = this.countDownLatch;
+        this.countDownLatch = null;
+        if (countDownLatch != null) {
+            countDownLatch.countDown();
+        }
+    }
+
+    public static void setPriorityForDocument(TLRPC.Document document, int i) {
+        if (document != null) {
+            priorityMap.put(Long.valueOf(document.id), Integer.valueOf(i));
+        }
+    }
+
+    public static Uri prepareUri(int i, TLRPC.Document document, Object obj) {
+        String attachFileName = FileLoader.getAttachFileName(document);
+        File pathToAttach = FileLoader.getInstance(i).getPathToAttach(document);
+        if (pathToAttach != null && pathToAttach.exists()) {
+            return Uri.fromFile(pathToAttach);
+        }
+        try {
+            StringBuilder sb = new StringBuilder();
+            sb.append("?account=");
+            sb.append(i);
+            sb.append("&id=");
+            sb.append(document.id);
+            sb.append("&hash=");
+            sb.append(document.access_hash);
+            sb.append("&dc=");
+            sb.append(document.dc_id);
+            sb.append("&size=");
+            sb.append(document.size);
+            sb.append("&mime=");
+            sb.append(URLEncoder.encode(document.mime_type, "UTF-8"));
+            sb.append("&rid=");
+            sb.append(FileLoader.getInstance(i).getFileReference(obj));
+            sb.append("&name=");
+            sb.append(URLEncoder.encode(FileLoader.getDocumentFileName(document), "UTF-8"));
+            sb.append("&reference=");
+            byte[] bArr = document.file_reference;
+            if (bArr == null) {
+                bArr = new byte[0];
+            }
+            sb.append(Utilities.bytesToHex(bArr));
+            return Uri.parse("tg://" + attachFileName + sb.toString());
+        } catch (UnsupportedEncodingException e) {
+            FileLog.e(e);
+            return null;
+        }
     }
 }

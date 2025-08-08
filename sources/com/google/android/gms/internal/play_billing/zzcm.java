@@ -1,139 +1,73 @@
 package com.google.android.gms.internal.play_billing;
 
-import java.util.AbstractList;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
-import java.util.RandomAccess;
 
 /* loaded from: classes.dex */
-public final class zzcm extends zzal implements RandomAccess, zzcn {
-    public static final zzcn zza;
-    private static final zzcm zzb;
-    private final List zzc;
+final class zzcm extends zzco {
+    private final transient zzco zza;
 
-    static {
-        zzcm zzcmVar = new zzcm(false);
-        zzb = zzcmVar;
-        zza = zzcmVar;
+    zzcm(zzco zzcoVar) {
+        this.zza = zzcoVar;
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzcm(int i) {
-        super(true);
-        ArrayList arrayList = new ArrayList(i);
-        this.zzc = arrayList;
+    private final int zzp(int i) {
+        return (this.zza.size() - 1) - i;
     }
 
-    private zzcm(ArrayList arrayList) {
-        super(true);
-        this.zzc = arrayList;
+    @Override // com.google.android.gms.internal.play_billing.zzco, com.google.android.gms.internal.play_billing.zzcj, java.util.AbstractCollection, java.util.Collection
+    public final boolean contains(Object obj) {
+        return this.zza.contains(obj);
     }
 
-    private zzcm(boolean z) {
-        super(false);
-        this.zzc = Collections.emptyList();
+    @Override // java.util.List
+    public final Object get(int i) {
+        zzbe.zza(i, this.zza.size(), "index");
+        return this.zza.get(zzp(i));
     }
 
-    private static String zzi(Object obj) {
-        return obj instanceof String ? (String) obj : obj instanceof zzba ? ((zzba) obj).zzm(zzcg.zzb) : zzcg.zzd((byte[]) obj);
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final /* bridge */ /* synthetic */ void add(int i, Object obj) {
-        zza();
-        this.zzc.add(i, (String) obj);
-        ((AbstractList) this).modCount++;
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.zzal, java.util.AbstractList, java.util.List
-    public final boolean addAll(int i, Collection collection) {
-        zza();
-        if (collection instanceof zzcn) {
-            collection = ((zzcn) collection).zzh();
+    @Override // com.google.android.gms.internal.play_billing.zzco, java.util.List
+    public final int indexOf(Object obj) {
+        int lastIndexOf = this.zza.lastIndexOf(obj);
+        if (lastIndexOf >= 0) {
+            return zzp(lastIndexOf);
         }
-        boolean addAll = this.zzc.addAll(i, collection);
-        ((AbstractList) this).modCount++;
-        return addAll;
+        return -1;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean addAll(Collection collection) {
-        return addAll(size(), collection);
-    }
-
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final void clear() {
-        zza();
-        this.zzc.clear();
-        ((AbstractList) this).modCount++;
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.zzal, java.util.AbstractList, java.util.List
-    public final /* bridge */ /* synthetic */ Object remove(int i) {
-        zza();
-        Object remove = this.zzc.remove(i);
-        ((AbstractList) this).modCount++;
-        return zzi(remove);
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final /* bridge */ /* synthetic */ Object set(int i, Object obj) {
-        zza();
-        return zzi(this.zzc.set(i, (String) obj));
+    @Override // com.google.android.gms.internal.play_billing.zzco, java.util.List
+    public final int lastIndexOf(Object obj) {
+        int indexOf = this.zza.indexOf(obj);
+        if (indexOf >= 0) {
+            return zzp(indexOf);
+        }
+        return -1;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final int size() {
-        return this.zzc.size();
+        return this.zza.size();
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzcf
-    public final /* bridge */ /* synthetic */ zzcf zzd(int i) {
-        if (i < size()) {
-            throw new IllegalArgumentException();
-        }
-        ArrayList arrayList = new ArrayList(i);
-        arrayList.addAll(this.zzc);
-        return new zzcm(arrayList);
+    @Override // com.google.android.gms.internal.play_billing.zzco, java.util.List
+    public final /* bridge */ /* synthetic */ List subList(int i, int i2) {
+        return subList(i, i2);
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzcn
-    public final zzcn zze() {
-        return zzc() ? new zzel(this) : this;
+    @Override // com.google.android.gms.internal.play_billing.zzcj
+    final boolean zzf() {
+        return this.zza.zzf();
     }
 
-    @Override // com.google.android.gms.internal.play_billing.zzcn
-    public final Object zzf(int i) {
-        return this.zzc.get(i);
+    @Override // com.google.android.gms.internal.play_billing.zzco
+    public final zzco zzh() {
+        return this.zza;
     }
 
-    @Override // java.util.AbstractList, java.util.List
-    /* renamed from: zzg, reason: merged with bridge method [inline-methods] */
-    public final String get(int i) {
-        Object obj = this.zzc.get(i);
-        if (obj instanceof String) {
-            return (String) obj;
-        }
-        if (obj instanceof zzba) {
-            zzba zzbaVar = (zzba) obj;
-            String zzm = zzbaVar.zzm(zzcg.zzb);
-            if (zzbaVar.zzi()) {
-                this.zzc.set(i, zzm);
-            }
-            return zzm;
-        }
-        byte[] bArr = (byte[]) obj;
-        String zzd = zzcg.zzd(bArr);
-        if (zzev.zzd(bArr)) {
-            this.zzc.set(i, zzd);
-        }
-        return zzd;
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.zzcn
-    public final List zzh() {
-        return Collections.unmodifiableList(this.zzc);
+    @Override // com.google.android.gms.internal.play_billing.zzco
+    /* renamed from: zzi */
+    public final zzco subList(int i, int i2) {
+        zzbe.zze(i, i2, this.zza.size());
+        zzco zzcoVar = this.zza;
+        return zzcoVar.subList(zzcoVar.size() - i2, this.zza.size() - i).zzh();
     }
 }

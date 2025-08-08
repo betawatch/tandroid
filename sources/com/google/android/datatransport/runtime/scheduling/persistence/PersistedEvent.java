@@ -5,13 +5,13 @@ import com.google.android.datatransport.runtime.TransportContext;
 
 /* loaded from: classes.dex */
 public abstract class PersistedEvent {
-    public static PersistedEvent create(long j, TransportContext transportContext, EventInternal eventInternal) {
-        return new AutoValue_PersistedEvent(j, transportContext, eventInternal);
-    }
-
     public abstract EventInternal getEvent();
 
     public abstract long getId();
 
     public abstract TransportContext getTransportContext();
+
+    public static PersistedEvent create(long j, TransportContext transportContext, EventInternal eventInternal) {
+        return new AutoValue_PersistedEvent(j, transportContext, eventInternal);
+    }
 }

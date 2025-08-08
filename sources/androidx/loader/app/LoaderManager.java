@@ -18,13 +18,13 @@ public abstract class LoaderManager {
         void onLoaderReset(Loader loader);
     }
 
-    public static LoaderManager getInstance(LifecycleOwner lifecycleOwner) {
-        return new LoaderManagerImpl(lifecycleOwner, ((ViewModelStoreOwner) lifecycleOwner).getViewModelStore());
-    }
-
     public abstract void dump(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr);
 
     public abstract Loader initLoader(int i, Bundle bundle, LoaderCallbacks loaderCallbacks);
 
     public abstract void markForRedelivery();
+
+    public static LoaderManager getInstance(LifecycleOwner lifecycleOwner) {
+        return new LoaderManagerImpl(lifecycleOwner, ((ViewModelStoreOwner) lifecycleOwner).getViewModelStore());
+    }
 }

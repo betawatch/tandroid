@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
+import com.google.android.gms.common.GooglePlayServicesUtilLight;
 
 /* loaded from: classes.dex */
 public abstract class zzal extends zzb implements zzam {
@@ -11,17 +12,9 @@ public abstract class zzal extends zzb implements zzam {
         super("com.google.android.gms.cast.framework.internal.IMediaRouter");
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r3v21 */
-    /* JADX WARN: Type inference failed for: r3v22, types: [int] */
-    /* JADX WARN: Type inference failed for: r3v30 */
-    /* JADX WARN: Type inference failed for: r3v31 */
-    /* JADX WARN: Type inference failed for: r5v0, types: [android.os.Parcel] */
     @Override // com.google.android.gms.internal.cast.zzb
     protected final boolean zza(int i, Parcel parcel, Parcel parcel2, int i2) {
         zzao zzanVar;
-        ?? r3;
-        boolean z;
         switch (i) {
             case 1:
                 Bundle bundle = (Bundle) zzc.zza(parcel, Bundle.CREATOR);
@@ -55,8 +48,7 @@ public abstract class zzal extends zzb implements zzam {
                 zzc.zzb(parcel);
                 boolean zzm = zzm(bundle4, readInt2);
                 parcel2.writeNoException();
-                r3 = zzm;
-                parcel2.writeInt(r3);
+                parcel2.writeInt(zzm ? 1 : 0);
                 return true;
             case 5:
                 String readString = parcel.readString();
@@ -69,11 +61,10 @@ public abstract class zzal extends zzb implements zzam {
                 parcel2.writeNoException();
                 return true;
             case 7:
-                z = zzl();
+                boolean zzl = zzl();
                 parcel2.writeNoException();
                 int i3 = zzc.$r8$clinit;
-                r3 = z;
-                parcel2.writeInt(r3);
+                parcel2.writeInt(zzl ? 1 : 0);
                 return true;
             case 8:
                 String readString2 = parcel.readString();
@@ -89,19 +80,17 @@ public abstract class zzal extends zzb implements zzam {
                 return true;
             case 10:
                 parcel2.writeNoException();
-                r3 = 12451000;
-                parcel2.writeInt(r3);
+                parcel2.writeInt(GooglePlayServicesUtilLight.GOOGLE_PLAY_SERVICES_VERSION_CODE);
                 return true;
             case 11:
                 zzf();
                 parcel2.writeNoException();
                 return true;
             case 12:
-                z = zzk();
+                boolean zzk = zzk();
                 parcel2.writeNoException();
-                int i32 = zzc.$r8$clinit;
-                r3 = z;
-                parcel2.writeInt(r3);
+                int i4 = zzc.$r8$clinit;
+                parcel2.writeInt(zzk ? 1 : 0);
                 return true;
             case 13:
                 int readInt3 = parcel.readInt();

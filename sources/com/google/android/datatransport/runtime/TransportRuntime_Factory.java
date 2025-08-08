@@ -23,16 +23,16 @@ public final class TransportRuntime_Factory implements Factory {
         this.initializerProvider = provider5;
     }
 
+    @Override // javax.inject.Provider
+    public TransportRuntime get() {
+        return newInstance((Clock) this.eventClockProvider.get(), (Clock) this.uptimeClockProvider.get(), (Scheduler) this.schedulerProvider.get(), (Uploader) this.uploaderProvider.get(), (WorkInitializer) this.initializerProvider.get());
+    }
+
     public static TransportRuntime_Factory create(Provider provider, Provider provider2, Provider provider3, Provider provider4, Provider provider5) {
         return new TransportRuntime_Factory(provider, provider2, provider3, provider4, provider5);
     }
 
     public static TransportRuntime newInstance(Clock clock, Clock clock2, Scheduler scheduler, Uploader uploader, WorkInitializer workInitializer) {
         return new TransportRuntime(clock, clock2, scheduler, uploader, workInitializer);
-    }
-
-    @Override // javax.inject.Provider
-    public TransportRuntime get() {
-        return newInstance((Clock) this.eventClockProvider.get(), (Clock) this.uptimeClockProvider.get(), (Scheduler) this.schedulerProvider.get(), (Uploader) this.uploaderProvider.get(), (WorkInitializer) this.initializerProvider.get());
     }
 }

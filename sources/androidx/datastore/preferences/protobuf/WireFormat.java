@@ -7,6 +7,36 @@ public abstract class WireFormat {
     static final int MESSAGE_SET_TYPE_ID_TAG = makeTag(2, 0);
     static final int MESSAGE_SET_MESSAGE_TAG = makeTag(3, 2);
 
+    public static int getTagFieldNumber(int i) {
+        return i >>> 3;
+    }
+
+    public static int getTagWireType(int i) {
+        return i & 7;
+    }
+
+    static int makeTag(int i, int i2) {
+        return (i << 3) | i2;
+    }
+
+    public enum JavaType {
+        INT(0),
+        LONG(0L),
+        FLOAT(Float.valueOf(0.0f)),
+        DOUBLE(Double.valueOf(0.0d)),
+        BOOLEAN(Boolean.FALSE),
+        STRING(""),
+        BYTE_STRING(ByteString.EMPTY),
+        ENUM(null),
+        MESSAGE(null);
+
+        private final Object defaultDefault;
+
+        JavaType(Object obj) {
+            this.defaultDefault = obj;
+        }
+    }
+
     /* JADX WARN: Enum visitor error
     jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'INT64' uses external variables
     	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
@@ -39,6 +69,14 @@ public abstract class WireFormat {
         public static final FieldType UINT64;
         private final JavaType javaType;
         private final int wireType;
+
+        public static FieldType valueOf(String str) {
+            return (FieldType) Enum.valueOf(FieldType.class, str);
+        }
+
+        public static FieldType[] values() {
+            return (FieldType[]) $VALUES.clone();
+        }
 
         static {
             FieldType fieldType = new FieldType("DOUBLE", 0, JavaType.DOUBLE, 1);
@@ -93,14 +131,6 @@ public abstract class WireFormat {
             this.wireType = i2;
         }
 
-        public static FieldType valueOf(String str) {
-            return (FieldType) Enum.valueOf(FieldType.class, str);
-        }
-
-        public static FieldType[] values() {
-            return (FieldType[]) $VALUES.clone();
-        }
-
         public JavaType getJavaType() {
             return this.javaType;
         }
@@ -108,35 +138,5 @@ public abstract class WireFormat {
         public int getWireType() {
             return this.wireType;
         }
-    }
-
-    public enum JavaType {
-        INT(0),
-        LONG(0L),
-        FLOAT(Float.valueOf(0.0f)),
-        DOUBLE(Double.valueOf(0.0d)),
-        BOOLEAN(Boolean.FALSE),
-        STRING(""),
-        BYTE_STRING(ByteString.EMPTY),
-        ENUM(null),
-        MESSAGE(null);
-
-        private final Object defaultDefault;
-
-        JavaType(Object obj) {
-            this.defaultDefault = obj;
-        }
-    }
-
-    public static int getTagFieldNumber(int i) {
-        return i >>> 3;
-    }
-
-    public static int getTagWireType(int i) {
-        return i & 7;
-    }
-
-    static int makeTag(int i, int i2) {
-        return (i << 3) | i2;
     }
 }

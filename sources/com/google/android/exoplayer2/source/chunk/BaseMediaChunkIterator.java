@@ -14,17 +14,6 @@ public abstract class BaseMediaChunkIterator implements MediaChunkIterator {
         reset();
     }
 
-    protected final void checkInBounds() {
-        long j = this.currentIndex;
-        if (j < this.fromIndex || j > this.toIndex) {
-            throw new NoSuchElementException();
-        }
-    }
-
-    protected final long getCurrentIndex() {
-        return this.currentIndex;
-    }
-
     public boolean isEnded() {
         return this.currentIndex > this.toIndex;
     }
@@ -37,5 +26,16 @@ public abstract class BaseMediaChunkIterator implements MediaChunkIterator {
 
     public void reset() {
         this.currentIndex = this.fromIndex - 1;
+    }
+
+    protected final void checkInBounds() {
+        long j = this.currentIndex;
+        if (j < this.fromIndex || j > this.toIndex) {
+            throw new NoSuchElementException();
+        }
+    }
+
+    protected final long getCurrentIndex() {
+        return this.currentIndex;
     }
 }

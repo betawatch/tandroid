@@ -20,9 +20,9 @@ final class TransportFactoryImpl implements TransportFactory {
 
     @Override // com.google.android.datatransport.TransportFactory
     public Transport getTransport(String str, Class cls, Encoding encoding, Transformer transformer) {
-        if (this.supportedPayloadEncodings.contains(encoding)) {
-            return new TransportImpl(this.transportContext, str, encoding, transformer, this.transportInternal);
+        if (!this.supportedPayloadEncodings.contains(encoding)) {
+            throw new IllegalArgumentException(String.format("%s is not supported byt this factory. Supported encodings are: %s.", encoding, this.supportedPayloadEncodings));
         }
-        throw new IllegalArgumentException(String.format("%s is not supported byt this factory. Supported encodings are: %s.", encoding, this.supportedPayloadEncodings));
+        return new TransportImpl(this.transportContext, str, encoding, transformer, this.transportInternal);
     }
 }

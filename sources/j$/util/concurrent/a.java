@@ -11,11 +11,11 @@ abstract class a extends o {
         b();
     }
 
-    public final boolean hasMoreElements() {
+    public final boolean hasNext() {
         return this.b != null;
     }
 
-    public final boolean hasNext() {
+    public final boolean hasMoreElements() {
         return this.b != null;
     }
 

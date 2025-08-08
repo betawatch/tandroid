@@ -61,8 +61,7 @@ public final class zztl {
     }
 
     static long zza(List list, double d) {
-        Double.isNaN(list.size());
-        return ((Long) list.get(Math.max(((int) Math.ceil((d / 100.0d) * r0)) - 1, 0))).longValue();
+        return ((Long) list.get(Math.max(((int) Math.ceil((d / 100.0d) * list.size())) - 1, 0))).longValue();
     }
 
     private static synchronized zzav zzi() {

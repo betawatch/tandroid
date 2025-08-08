@@ -31,7 +31,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ChatActivity;
 import org.telegram.ui.RestrictedLanguagesSelectActivity;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class TranslateButton extends FrameLayout {
     private boolean[] accusative;
     private final int currentAccount;
@@ -42,6 +42,14 @@ public abstract class TranslateButton extends FrameLayout {
     private AnimatedTextView textView;
     private final Drawable translateDrawable;
     public final SpannableString translateIcon;
+
+    protected abstract void onButtonClick();
+
+    protected abstract void onCloseClick();
+
+    public TranslateButton(Context context, ChatActivity chatActivity, Theme.ResourcesProvider resourcesProvider) {
+        this(context, chatActivity.getCurrentAccount(), chatActivity.getDialogId(), chatActivity, resourcesProvider);
+    }
 
     public TranslateButton(Context context, final int i, final long j, BaseFragment baseFragment, Theme.ResourcesProvider resourcesProvider) {
         super(context);
@@ -87,10 +95,6 @@ public abstract class TranslateButton extends FrameLayout {
         updateColors();
     }
 
-    public TranslateButton(Context context, ChatActivity chatActivity, Theme.ResourcesProvider resourcesProvider) {
-        this(context, chatActivity.getCurrentAccount(), chatActivity.getDialogId(), chatActivity, resourcesProvider);
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$0(View view) {
         onButtonClick();
@@ -106,72 +110,25 @@ public abstract class TranslateButton extends FrameLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onMenuClick$2(ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout, int i, View view) {
-        actionBarPopupWindowLayout.getSwipeBack().openForeground(i);
+    public void updateColors() {
+        AnimatedTextView animatedTextView = this.textView;
+        int i = Theme.key_chat_addContact;
+        animatedTextView.setTextColor(Theme.getColor(i, this.resourcesProvider));
+        this.textView.setBackground(Theme.createSelectorDrawable(Theme.getColor(i, this.resourcesProvider) & 436207615, 3));
+        this.menuView.setBackground(Theme.createSelectorDrawable(Theme.getColor(i, this.resourcesProvider) & 436207615, 7));
+        ImageView imageView = this.menuView;
+        int color = Theme.getColor(i, this.resourcesProvider);
+        PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
+        imageView.setColorFilter(new PorterDuffColorFilter(color, mode));
+        this.translateDrawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i, this.resourcesProvider), mode));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onMenuClick$3(ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout, View view) {
-        actionBarPopupWindowLayout.getSwipeBack().closeForeground();
+    public void setLeftMargin(float f) {
+        this.textView.setTranslationX(f / 2.0f);
     }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onMenuClick$4(TranslateController translateController, String str, ActionBarPopupWindow actionBarPopupWindow, View view) {
-        translateController.setDialogTranslateTo(this.dialogId, str);
-        actionBarPopupWindow.dismiss();
-        updateText();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onMenuClick$5(TranslateController translateController, String str, ActionBarPopupWindow actionBarPopupWindow, View view) {
-        translateController.setDialogTranslateTo(this.dialogId, str);
-        actionBarPopupWindow.dismiss();
-        updateText();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onMenuClick$6() {
-        this.fragment.presentFragment(new RestrictedLanguagesSelectActivity());
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onMenuClick$7(String str, TranslateController translateController, String str2, ActionBarPopupWindow actionBarPopupWindow, View view) {
-        RestrictedLanguagesSelectActivity.toggleLanguage(str, true);
-        translateController.checkRestrictedLanguagesUpdate();
-        translateController.setHideTranslateDialog(this.dialogId, true);
-        BulletinFactory.of(this.fragment).createSimpleBulletin(R.raw.msg_translate, TranslateAlert2.capitalFirst(AndroidUtilities.replaceTags(this.accusative[0] ? LocaleController.formatString("AddedToDoNotTranslate", R.string.AddedToDoNotTranslate, str2) : LocaleController.formatString("AddedToDoNotTranslateOther", R.string.AddedToDoNotTranslateOther, str2))), LocaleController.getString(R.string.Settings), new Runnable() { // from class: org.telegram.ui.Components.TranslateButton$$ExternalSyntheticLambda9
-            @Override // java.lang.Runnable
-            public final void run() {
-                TranslateButton.this.lambda$onMenuClick$6();
-            }
-        }).show();
-        actionBarPopupWindow.dismiss();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onMenuClick$8(TranslateController translateController) {
-        translateController.setHideTranslateDialog(this.dialogId, false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onMenuClick$9(final TranslateController translateController, ActionBarPopupWindow actionBarPopupWindow, View view) {
-        translateController.setHideTranslateDialog(this.dialogId, true);
-        TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-this.dialogId));
-        BulletinFactory.of(this.fragment).createSimpleBulletin(R.raw.msg_translate, AndroidUtilities.replaceTags(LocaleController.getString((chat == null || !ChatObject.isChannelAndNotMegaGroup(chat)) ? chat != null ? R.string.TranslationBarHiddenForGroup : R.string.TranslationBarHiddenForChat : R.string.TranslationBarHiddenForChannel)), LocaleController.getString(R.string.Undo), new Runnable() { // from class: org.telegram.ui.Components.TranslateButton$$ExternalSyntheticLambda8
-            @Override // java.lang.Runnable
-            public final void run() {
-                TranslateButton.this.lambda$onMenuClick$8(translateController);
-            }
-        }).show();
-        actionBarPopupWindow.dismiss();
-    }
-
-    protected abstract void onButtonClick();
-
-    protected abstract void onCloseClick();
 
     protected void onMenuClick() {
+        String formatString;
         String capitalFirst;
         final TranslateController translateController = MessagesController.getInstance(this.currentAccount).getTranslateController();
         final ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(getContext(), R.drawable.popup_fixed_alert2, this.resourcesProvider, 1);
@@ -184,6 +141,16 @@ public abstract class TranslateButton extends FrameLayout {
             Drawable topShadowDrawable;
             private boolean wasCanScrollVertically;
 
+            @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
+            public void onNestedScroll(View view, int i, int i2, int i3, int i4) {
+                super.onNestedScroll(view, i, i2, i3, i4);
+                boolean canScrollVertically = canScrollVertically(-1);
+                if (this.wasCanScrollVertically != canScrollVertically) {
+                    invalidate();
+                    this.wasCanScrollVertically = canScrollVertically;
+                }
+            }
+
             @Override // android.view.ViewGroup, android.view.View
             protected void dispatchDraw(Canvas canvas) {
                 super.dispatchDraw(canvas);
@@ -195,16 +162,6 @@ public abstract class TranslateButton extends FrameLayout {
                     this.topShadowDrawable.setBounds(0, getScrollY(), getWidth(), getScrollY() + this.topShadowDrawable.getIntrinsicHeight());
                     this.topShadowDrawable.setAlpha((int) (f * 255.0f));
                     this.topShadowDrawable.draw(canvas);
-                }
-            }
-
-            @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
-            public void onNestedScroll(View view, int i, int i2, int i3, int i4) {
-                super.onNestedScroll(view, i, i2, i3, i4);
-                boolean canScrollVertically = canScrollVertically(-1);
-                if (this.wasCanScrollVertically != canScrollVertically) {
-                    invalidate();
-                    this.wasCanScrollVertically = canScrollVertically;
                 }
             }
         };
@@ -291,7 +248,12 @@ public abstract class TranslateButton extends FrameLayout {
         actionBarPopupWindowLayout.addView(new ActionBarPopupWindow.GapView(getContext(), this.resourcesProvider), LayoutHelper.createLinear(-1, 8));
         if (UserConfig.getInstance(this.currentAccount).isPremium() && languageName != null) {
             ActionBarMenuSubItem actionBarMenuSubItem6 = new ActionBarMenuSubItem(getContext(), true, false, this.resourcesProvider);
-            actionBarMenuSubItem6.setTextAndIcon(this.accusative[0] ? LocaleController.formatString(R.string.DoNotTranslateLanguage, languageName) : LocaleController.formatString(R.string.DoNotTranslateLanguageOther, languageName), R.drawable.msg_block2);
+            if (this.accusative[0]) {
+                formatString = LocaleController.formatString(R.string.DoNotTranslateLanguage, languageName);
+            } else {
+                formatString = LocaleController.formatString(R.string.DoNotTranslateLanguageOther, languageName);
+            }
+            actionBarMenuSubItem6.setTextAndIcon(formatString, R.drawable.msg_block2);
             actionBarMenuSubItem6.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.TranslateButton$$ExternalSyntheticLambda6
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -321,50 +283,105 @@ public abstract class TranslateButton extends FrameLayout {
         actionBarPopupWindow.showAsDropDown(imageView, 0, (-imageView.getMeasuredHeight()) - AndroidUtilities.dp(8.0f));
     }
 
-    public void setLeftMargin(float f) {
-        this.textView.setTranslationX(f / 2.0f);
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$onMenuClick$2(ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout, int i, View view) {
+        actionBarPopupWindowLayout.getSwipeBack().openForeground(i);
     }
 
-    public void updateColors() {
-        AnimatedTextView animatedTextView = this.textView;
-        int i = Theme.key_chat_addContact;
-        animatedTextView.setTextColor(Theme.getColor(i, this.resourcesProvider));
-        this.textView.setBackground(Theme.createSelectorDrawable(Theme.getColor(i, this.resourcesProvider) & 436207615, 3));
-        this.menuView.setBackground(Theme.createSelectorDrawable(Theme.getColor(i, this.resourcesProvider) & 436207615, 7));
-        ImageView imageView = this.menuView;
-        int color = Theme.getColor(i, this.resourcesProvider);
-        PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-        imageView.setColorFilter(new PorterDuffColorFilter(color, mode));
-        this.translateDrawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i, this.resourcesProvider), mode));
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$onMenuClick$3(ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout, View view) {
+        actionBarPopupWindowLayout.getSwipeBack().closeForeground();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$onMenuClick$4(TranslateController translateController, String str, ActionBarPopupWindow actionBarPopupWindow, View view) {
+        translateController.setDialogTranslateTo(this.dialogId, str);
+        actionBarPopupWindow.dismiss();
+        updateText();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$onMenuClick$5(TranslateController translateController, String str, ActionBarPopupWindow actionBarPopupWindow, View view) {
+        translateController.setDialogTranslateTo(this.dialogId, str);
+        actionBarPopupWindow.dismiss();
+        updateText();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$onMenuClick$7(String str, TranslateController translateController, String str2, ActionBarPopupWindow actionBarPopupWindow, View view) {
+        String formatString;
+        RestrictedLanguagesSelectActivity.toggleLanguage(str, true);
+        translateController.checkRestrictedLanguagesUpdate();
+        translateController.setHideTranslateDialog(this.dialogId, true);
+        if (this.accusative[0]) {
+            formatString = LocaleController.formatString("AddedToDoNotTranslate", R.string.AddedToDoNotTranslate, str2);
+        } else {
+            formatString = LocaleController.formatString("AddedToDoNotTranslateOther", R.string.AddedToDoNotTranslateOther, str2);
+        }
+        BulletinFactory.of(this.fragment).createSimpleBulletin(R.raw.msg_translate, TranslateAlert2.capitalFirst(AndroidUtilities.replaceTags(formatString)), LocaleController.getString(R.string.Settings), new Runnable() { // from class: org.telegram.ui.Components.TranslateButton$$ExternalSyntheticLambda9
+            @Override // java.lang.Runnable
+            public final void run() {
+                TranslateButton.this.lambda$onMenuClick$6();
+            }
+        }).show();
+        actionBarPopupWindow.dismiss();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$onMenuClick$6() {
+        this.fragment.presentFragment(new RestrictedLanguagesSelectActivity());
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$onMenuClick$9(final TranslateController translateController, ActionBarPopupWindow actionBarPopupWindow, View view) {
+        String string;
+        translateController.setHideTranslateDialog(this.dialogId, true);
+        TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-this.dialogId));
+        if (chat != null && ChatObject.isChannelAndNotMegaGroup(chat)) {
+            string = LocaleController.getString(R.string.TranslationBarHiddenForChannel);
+        } else if (chat != null) {
+            string = LocaleController.getString(R.string.TranslationBarHiddenForGroup);
+        } else {
+            string = LocaleController.getString(R.string.TranslationBarHiddenForChat);
+        }
+        BulletinFactory.of(this.fragment).createSimpleBulletin(R.raw.msg_translate, AndroidUtilities.replaceTags(string), LocaleController.getString(R.string.Undo), new Runnable() { // from class: org.telegram.ui.Components.TranslateButton$$ExternalSyntheticLambda8
+            @Override // java.lang.Runnable
+            public final void run() {
+                TranslateButton.this.lambda$onMenuClick$8(translateController);
+            }
+        }).show();
+        actionBarPopupWindow.dismiss();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$onMenuClick$8(TranslateController translateController) {
+        translateController.setHideTranslateDialog(this.dialogId, false);
     }
 
     public void updateText() {
-        AnimatedTextView animatedTextView;
-        CharSequence concat;
+        String formatString;
         TranslateController translateController = MessagesController.getInstance(this.currentAccount).getTranslateController();
         TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-this.dialogId));
-        boolean isTranslatingDialog = translateController.isTranslatingDialog(this.dialogId);
-        long j = this.dialogId;
-        if (isTranslatingDialog) {
-            String languageName = TranslateAlert2.languageName(translateController.getDialogDetectedLanguage(j));
-            if (TextUtils.isEmpty(languageName)) {
-                this.textView.setText(TextUtils.concat(this.translateIcon, " ", LocaleController.getString(R.string.ShowOriginalButton)));
-                this.menuView.setImageResource((!UserConfig.getInstance(this.currentAccount).isPremium() || (chat != null && chat.autotranslation)) ? R.drawable.msg_mini_customize : R.drawable.msg_close);
+        if (translateController.isTranslatingDialog(this.dialogId)) {
+            String languageName = TranslateAlert2.languageName(translateController.getDialogDetectedLanguage(this.dialogId));
+            if (!TextUtils.isEmpty(languageName)) {
+                this.textView.setText(TextUtils.concat(this.translateIcon, " ", LocaleController.formatString(R.string.ShowOriginalButtonLanguage, languageName)));
             } else {
-                animatedTextView = this.textView;
-                concat = TextUtils.concat(this.translateIcon, " ", LocaleController.formatString(R.string.ShowOriginalButtonLanguage, languageName));
+                this.textView.setText(TextUtils.concat(this.translateIcon, " ", LocaleController.getString(R.string.ShowOriginalButton)));
             }
         } else {
-            String dialogTranslateTo = translateController.getDialogTranslateTo(j);
+            String dialogTranslateTo = translateController.getDialogTranslateTo(this.dialogId);
             if (dialogTranslateTo == null) {
                 dialogTranslateTo = "en";
             }
             String languageName2 = TranslateAlert2.languageName(dialogTranslateTo, this.accusative);
-            String formatString = this.accusative[0] ? LocaleController.formatString(R.string.TranslateToButton, languageName2) : LocaleController.formatString(R.string.TranslateToButtonOther, languageName2);
-            animatedTextView = this.textView;
-            concat = TextUtils.concat(this.translateIcon, " ", formatString);
+            if (this.accusative[0]) {
+                formatString = LocaleController.formatString(R.string.TranslateToButton, languageName2);
+            } else {
+                formatString = LocaleController.formatString(R.string.TranslateToButtonOther, languageName2);
+            }
+            this.textView.setText(TextUtils.concat(this.translateIcon, " ", formatString));
         }
-        animatedTextView.setText(concat);
-        this.menuView.setImageResource((!UserConfig.getInstance(this.currentAccount).isPremium() || (chat != null && chat.autotranslation)) ? R.drawable.msg_mini_customize : R.drawable.msg_close);
+        this.menuView.setImageResource((UserConfig.getInstance(this.currentAccount).isPremium() || (chat != null && chat.autotranslation)) ? R.drawable.msg_mini_customize : R.drawable.msg_close);
     }
 }

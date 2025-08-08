@@ -10,6 +10,21 @@ final class RegularImmutableSet extends ImmutableSet {
     private final transient int size;
     final transient Object[] table;
 
+    @Override // com.google.common.collect.ImmutableCollection
+    int internalArrayStart() {
+        return 0;
+    }
+
+    @Override // com.google.common.collect.ImmutableSet
+    boolean isHashCodeFast() {
+        return true;
+    }
+
+    @Override // com.google.common.collect.ImmutableCollection
+    boolean isPartialView() {
+        return false;
+    }
+
     static {
         Object[] objArr = new Object[0];
         EMPTY_ARRAY = objArr;
@@ -44,6 +59,26 @@ final class RegularImmutableSet extends ImmutableSet {
         }
     }
 
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public int size() {
+        return this.size;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public UnmodifiableIterator iterator() {
+        return asList().iterator();
+    }
+
+    @Override // com.google.common.collect.ImmutableCollection
+    Object[] internalArray() {
+        return this.elements;
+    }
+
+    @Override // com.google.common.collect.ImmutableCollection
+    int internalArrayEnd() {
+        return this.size;
+    }
+
     @Override // com.google.common.collect.ImmutableCollection
     int copyIntoArray(Object[] objArr, int i) {
         System.arraycopy(this.elements, 0, objArr, i, this.size);
@@ -58,40 +93,5 @@ final class RegularImmutableSet extends ImmutableSet {
     @Override // com.google.common.collect.ImmutableSet, java.util.Collection, java.util.Set
     public int hashCode() {
         return this.hashCode;
-    }
-
-    @Override // com.google.common.collect.ImmutableCollection
-    Object[] internalArray() {
-        return this.elements;
-    }
-
-    @Override // com.google.common.collect.ImmutableCollection
-    int internalArrayEnd() {
-        return this.size;
-    }
-
-    @Override // com.google.common.collect.ImmutableCollection
-    int internalArrayStart() {
-        return 0;
-    }
-
-    @Override // com.google.common.collect.ImmutableSet
-    boolean isHashCodeFast() {
-        return true;
-    }
-
-    @Override // com.google.common.collect.ImmutableCollection
-    boolean isPartialView() {
-        return false;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public UnmodifiableIterator iterator() {
-        return asList().iterator();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public int size() {
-        return this.size;
     }
 }

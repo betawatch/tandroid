@@ -5,7 +5,7 @@ import android.graphics.Typeface;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class OutlineEditText extends OutlineTextContainerView {
     EditTextBoldCursor editText;
 
@@ -33,11 +33,11 @@ public class OutlineEditText extends OutlineTextContainerView {
         addView(this.editText, LayoutHelper.createFrame(-1, -2, 16));
     }
 
-    public EditTextBoldCursor getEditText() {
-        return this.editText;
-    }
-
     public void setHint(String str) {
         setText(str);
+    }
+
+    public EditTextBoldCursor getEditText() {
+        return this.editText;
     }
 }

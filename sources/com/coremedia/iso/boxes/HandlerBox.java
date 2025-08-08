@@ -31,6 +31,16 @@ public class HandlerBox extends AbstractFullBox {
     private long shouldBeZeroButAppleWritesHereSomeValue;
     private boolean zeroTerm;
 
+    private static /* synthetic */ void ajc$preClinit() {
+        Factory factory = new Factory("HandlerBox.java", HandlerBox.class);
+        ajc$tjp_0 = factory.makeSJP("method-execution", factory.makeMethodSig("1", "getHandlerType", "com.coremedia.iso.boxes.HandlerBox", "", "", "", "java.lang.String"), 78);
+        ajc$tjp_1 = factory.makeSJP("method-execution", factory.makeMethodSig("1", "setName", "com.coremedia.iso.boxes.HandlerBox", "java.lang.String", "name", "", "void"), 87);
+        ajc$tjp_2 = factory.makeSJP("method-execution", factory.makeMethodSig("1", "setHandlerType", "com.coremedia.iso.boxes.HandlerBox", "java.lang.String", "handlerType", "", "void"), 91);
+        ajc$tjp_3 = factory.makeSJP("method-execution", factory.makeMethodSig("1", "getName", "com.coremedia.iso.boxes.HandlerBox", "", "", "", "java.lang.String"), 95);
+        ajc$tjp_4 = factory.makeSJP("method-execution", factory.makeMethodSig("1", "getHumanReadableTrackType", "com.coremedia.iso.boxes.HandlerBox", "", "", "", "java.lang.String"), 99);
+        ajc$tjp_5 = factory.makeSJP("method-execution", factory.makeMethodSig("1", "toString", "com.coremedia.iso.boxes.HandlerBox", "", "", "", "java.lang.String"), NotificationCenter.messagePlayingDidSeek);
+    }
+
     static {
         ajc$preClinit();
         HashMap hashMap = new HashMap();
@@ -58,14 +68,35 @@ public class HandlerBox extends AbstractFullBox {
         this.zeroTerm = true;
     }
 
-    private static /* synthetic */ void ajc$preClinit() {
-        Factory factory = new Factory("HandlerBox.java", HandlerBox.class);
-        ajc$tjp_0 = factory.makeSJP("method-execution", factory.makeMethodSig("1", "getHandlerType", "com.coremedia.iso.boxes.HandlerBox", "", "", "", "java.lang.String"), 78);
-        ajc$tjp_1 = factory.makeSJP("method-execution", factory.makeMethodSig("1", "setName", "com.coremedia.iso.boxes.HandlerBox", "java.lang.String", "name", "", "void"), 87);
-        ajc$tjp_2 = factory.makeSJP("method-execution", factory.makeMethodSig("1", "setHandlerType", "com.coremedia.iso.boxes.HandlerBox", "java.lang.String", "handlerType", "", "void"), 91);
-        ajc$tjp_3 = factory.makeSJP("method-execution", factory.makeMethodSig("1", "getName", "com.coremedia.iso.boxes.HandlerBox", "", "", "", "java.lang.String"), 95);
-        ajc$tjp_4 = factory.makeSJP("method-execution", factory.makeMethodSig("1", "getHumanReadableTrackType", "com.coremedia.iso.boxes.HandlerBox", "", "", "", "java.lang.String"), 99);
-        ajc$tjp_5 = factory.makeSJP("method-execution", factory.makeMethodSig("1", "toString", "com.coremedia.iso.boxes.HandlerBox", "", "", "", "java.lang.String"), NotificationCenter.messagePlayingDidSeek);
+    public String getHandlerType() {
+        RequiresParseDetailAspect.aspectOf().before(Factory.makeJP(ajc$tjp_0, this, this));
+        return this.handlerType;
+    }
+
+    public void setName(String str) {
+        RequiresParseDetailAspect.aspectOf().before(Factory.makeJP(ajc$tjp_1, this, this, str));
+        this.name = str;
+    }
+
+    public void setHandlerType(String str) {
+        RequiresParseDetailAspect.aspectOf().before(Factory.makeJP(ajc$tjp_2, this, this, str));
+        this.handlerType = str;
+    }
+
+    public String getName() {
+        RequiresParseDetailAspect.aspectOf().before(Factory.makeJP(ajc$tjp_3, this, this));
+        return this.name;
+    }
+
+    @Override // com.googlecode.mp4parser.AbstractBox
+    protected long getContentSize() {
+        int utf8StringLengthInBytes;
+        if (this.zeroTerm) {
+            utf8StringLengthInBytes = Utf8.utf8StringLengthInBytes(this.name) + 25;
+        } else {
+            utf8StringLengthInBytes = Utf8.utf8StringLengthInBytes(this.name) + 24;
+        }
+        return utf8StringLengthInBytes;
     }
 
     @Override // com.googlecode.mp4parser.AbstractBox
@@ -85,6 +116,8 @@ public class HandlerBox extends AbstractFullBox {
                 this.zeroTerm = true;
                 return;
             }
+            this.zeroTerm = false;
+            return;
         }
         this.zeroTerm = false;
     }
@@ -104,31 +137,6 @@ public class HandlerBox extends AbstractFullBox {
         if (this.zeroTerm) {
             byteBuffer.put((byte) 0);
         }
-    }
-
-    @Override // com.googlecode.mp4parser.AbstractBox
-    protected long getContentSize() {
-        return this.zeroTerm ? Utf8.utf8StringLengthInBytes(this.name) + 25 : Utf8.utf8StringLengthInBytes(this.name) + 24;
-    }
-
-    public String getHandlerType() {
-        RequiresParseDetailAspect.aspectOf().before(Factory.makeJP(ajc$tjp_0, this, this));
-        return this.handlerType;
-    }
-
-    public String getName() {
-        RequiresParseDetailAspect.aspectOf().before(Factory.makeJP(ajc$tjp_3, this, this));
-        return this.name;
-    }
-
-    public void setHandlerType(String str) {
-        RequiresParseDetailAspect.aspectOf().before(Factory.makeJP(ajc$tjp_2, this, this, str));
-        this.handlerType = str;
-    }
-
-    public void setName(String str) {
-        RequiresParseDetailAspect.aspectOf().before(Factory.makeJP(ajc$tjp_1, this, this, str));
-        this.name = str;
     }
 
     public String toString() {

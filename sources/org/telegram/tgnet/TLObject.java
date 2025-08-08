@@ -1,6 +1,6 @@
 package org.telegram.tgnet;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class TLObject {
     public static final int FLAG_0 = 1;
     public static final int FLAG_1 = 2;
@@ -49,7 +49,7 @@ public class TLObject {
     }
 
     public static int setFlag(int i, int i2, boolean z) {
-        return z ? i | i2 : i & (i2 ^ (-1));
+        return z ? i | i2 : i & (~i2);
     }
 
     public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
@@ -59,17 +59,17 @@ public class TLObject {
     public void freeResources() {
     }
 
+    public void readParams(InputSerializedData inputSerializedData, boolean z) {
+    }
+
+    public void serializeToStream(OutputSerializedData outputSerializedData) {
+    }
+
     public int getObjectSize() {
         ThreadLocal<NativeByteBuffer> threadLocal = sizeCalculator;
         NativeByteBuffer nativeByteBuffer = threadLocal.get();
         nativeByteBuffer.rewind();
         serializeToStream(threadLocal.get());
         return nativeByteBuffer.length();
-    }
-
-    public void readParams(InputSerializedData inputSerializedData, boolean z) {
-    }
-
-    public void serializeToStream(OutputSerializedData outputSerializedData) {
     }
 }

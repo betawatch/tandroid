@@ -24,54 +24,63 @@ public abstract class zzaz extends zzb implements zzba {
                 IObjectWrapper asInterface = IObjectWrapper.Stub.asInterface(parcel.readStrongBinder());
                 zzc.zzb(parcel);
                 zzj(asInterface);
-                break;
+                parcel2.writeNoException();
+                return true;
             case 3:
                 IObjectWrapper asInterface2 = IObjectWrapper.Stub.asInterface(parcel.readStrongBinder());
                 String readString = parcel.readString();
                 zzc.zzb(parcel);
                 zzi(asInterface2, readString);
-                break;
+                parcel2.writeNoException();
+                return true;
             case 4:
                 IObjectWrapper asInterface3 = IObjectWrapper.Stub.asInterface(parcel.readStrongBinder());
                 int readInt = parcel.readInt();
                 zzc.zzb(parcel);
                 zzh(asInterface3, readInt);
-                break;
+                parcel2.writeNoException();
+                return true;
             case 5:
                 IObjectWrapper asInterface4 = IObjectWrapper.Stub.asInterface(parcel.readStrongBinder());
                 zzc.zzb(parcel);
                 zzd(asInterface4);
-                break;
+                parcel2.writeNoException();
+                return true;
             case 6:
                 IObjectWrapper asInterface5 = IObjectWrapper.Stub.asInterface(parcel.readStrongBinder());
                 int readInt2 = parcel.readInt();
                 zzc.zzb(parcel);
                 zzc(asInterface5, readInt2);
-                break;
+                parcel2.writeNoException();
+                return true;
             case 7:
                 IObjectWrapper asInterface6 = IObjectWrapper.Stub.asInterface(parcel.readStrongBinder());
                 String readString2 = parcel.readString();
                 zzc.zzb(parcel);
                 zzg(asInterface6, readString2);
-                break;
+                parcel2.writeNoException();
+                return true;
             case 8:
                 IObjectWrapper asInterface7 = IObjectWrapper.Stub.asInterface(parcel.readStrongBinder());
                 boolean zzf = zzc.zzf(parcel);
                 zzc.zzb(parcel);
                 zzf(asInterface7, zzf);
-                break;
+                parcel2.writeNoException();
+                return true;
             case 9:
                 IObjectWrapper asInterface8 = IObjectWrapper.Stub.asInterface(parcel.readStrongBinder());
                 int readInt3 = parcel.readInt();
                 zzc.zzb(parcel);
                 zze(asInterface8, readInt3);
-                break;
+                parcel2.writeNoException();
+                return true;
             case 10:
                 IObjectWrapper asInterface9 = IObjectWrapper.Stub.asInterface(parcel.readStrongBinder());
                 int readInt4 = parcel.readInt();
                 zzc.zzb(parcel);
                 zzk(asInterface9, readInt4);
-                break;
+                parcel2.writeNoException();
+                return true;
             case 11:
                 parcel2.writeNoException();
                 parcel2.writeInt(GooglePlayServicesUtilLight.GOOGLE_PLAY_SERVICES_VERSION_CODE);
@@ -79,7 +88,5 @@ public abstract class zzaz extends zzb implements zzba {
             default:
                 return false;
         }
-        parcel2.writeNoException();
-        return true;
     }
 }

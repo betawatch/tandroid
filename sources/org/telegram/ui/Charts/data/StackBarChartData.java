@@ -14,10 +14,6 @@ public class StackBarChartData extends ChartData {
         init();
     }
 
-    public long findMax(int i, int i2) {
-        return this.ySumSegmentTree.rMaxQ(i, i2);
-    }
-
     public void init() {
         int length = ((ChartData.Line) this.lines.get(0)).y.length;
         int size = this.lines.size();
@@ -30,5 +26,9 @@ public class StackBarChartData extends ChartData {
             }
         }
         this.ySumSegmentTree = new SegmentTree(this.ySum);
+    }
+
+    public long findMax(int i, int i2) {
+        return this.ySumSegmentTree.rMaxQ(i, i2);
     }
 }

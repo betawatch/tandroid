@@ -15,11 +15,6 @@ import java.util.List;
 public class AbtRegistrar implements ComponentRegistrar {
     private static final String LIBRARY_NAME = "fire-abt";
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ AbtComponent lambda$getComponents$0(ComponentContainer componentContainer) {
-        return new AbtComponent((Context) componentContainer.get(Context.class), componentContainer.getProvider(AnalyticsConnector.class));
-    }
-
     @Override // com.google.firebase.components.ComponentRegistrar
     public List<Component> getComponents() {
         return Arrays.asList(Component.builder(AbtComponent.class).name(LIBRARY_NAME).add(Dependency.required(Context.class)).add(Dependency.optionalProvider(AnalyticsConnector.class)).factory(new ComponentFactory() { // from class: com.google.firebase.abt.component.AbtRegistrar$$ExternalSyntheticLambda0
@@ -30,5 +25,10 @@ public class AbtRegistrar implements ComponentRegistrar {
                 return lambda$getComponents$0;
             }
         }).build(), LibraryVersionComponent.create(LIBRARY_NAME, "21.1.1"));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ AbtComponent lambda$getComponents$0(ComponentContainer componentContainer) {
+        return new AbtComponent((Context) componentContainer.get(Context.class), componentContainer.getProvider(AnalyticsConnector.class));
     }
 }

@@ -11,11 +11,11 @@ import com.google.android.gms.tasks.Task;
 
 /* loaded from: classes.dex */
 public class SafetyNetClient extends GoogleApi {
-    SafetyNetClient(Context context) {
-        super(context, SafetyNet.API, (Api.ApiOptions) null, new ApiExceptionMapper());
-    }
-
     public Task attest(byte[] bArr, String str) {
         return PendingResultUtil.toResponseTask(zzae.zza(asGoogleApiClient(), bArr, str), new SafetyNetApi.AttestationResponse());
+    }
+
+    SafetyNetClient(Context context) {
+        super(context, SafetyNet.API, (Api.ApiOptions) null, new ApiExceptionMapper());
     }
 }

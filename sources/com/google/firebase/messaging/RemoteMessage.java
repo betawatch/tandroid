@@ -8,7 +8,7 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 import com.google.firebase.messaging.Constants;
 import java.util.Map;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class RemoteMessage extends AbstractSafeParcelable {
     public static final Parcelable.Creator<RemoteMessage> CREATOR = new RemoteMessageCreator();
     Bundle bundle;
@@ -18,15 +18,20 @@ public final class RemoteMessage extends AbstractSafeParcelable {
         this.bundle = bundle;
     }
 
+    @Override // android.os.Parcelable
+    public void writeToParcel(Parcel parcel, int i) {
+        RemoteMessageCreator.writeToParcel(this, parcel, i);
+    }
+
+    public String getFrom() {
+        return this.bundle.getString("from");
+    }
+
     public Map getData() {
         if (this.data == null) {
             this.data = Constants.MessagePayloadKeys.extractDeveloperDefinedPayload(this.bundle);
         }
         return this.data;
-    }
-
-    public String getFrom() {
-        return this.bundle.getString("from");
     }
 
     public long getSentTime() {
@@ -43,10 +48,5 @@ public final class RemoteMessage extends AbstractSafeParcelable {
             Log.w("FirebaseMessaging", "Invalid sent time: " + obj);
             return 0L;
         }
-    }
-
-    @Override // android.os.Parcelable
-    public void writeToParcel(Parcel parcel, int i) {
-        RemoteMessageCreator.writeToParcel(this, parcel, i);
     }
 }

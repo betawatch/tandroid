@@ -4,7 +4,7 @@ import java.lang.ref.SoftReference;
 import java.util.StringTokenizer;
 import org.aspectj.lang.Signature;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 abstract class SignatureImpl implements Signature {
     private static boolean useCache = true;
     Class declaringType;
@@ -23,41 +23,7 @@ abstract class SignatureImpl implements Signature {
         void set(int i, String str);
     }
 
-    private static final class CacheImpl implements Cache {
-        private SoftReference toStringCacheRef;
-
-        public CacheImpl() {
-            makeCache();
-        }
-
-        private String[] array() {
-            return (String[]) this.toStringCacheRef.get();
-        }
-
-        private String[] makeCache() {
-            String[] strArr = new String[3];
-            this.toStringCacheRef = new SoftReference(strArr);
-            return strArr;
-        }
-
-        @Override // org.aspectj.runtime.reflect.SignatureImpl.Cache
-        public String get(int i) {
-            String[] array = array();
-            if (array == null) {
-                return null;
-            }
-            return array[i];
-        }
-
-        @Override // org.aspectj.runtime.reflect.SignatureImpl.Cache
-        public void set(int i, String str) {
-            String[] array = array();
-            if (array == null) {
-                array = makeCache();
-            }
-            array[i] = str;
-        }
-    }
+    protected abstract String createToString(StringMaker stringMaker);
 
     SignatureImpl(int i, String str, Class cls) {
         this.modifiers = i;
@@ -65,17 +31,77 @@ abstract class SignatureImpl implements Signature {
         this.declaringType = cls;
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0026  */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x001e  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    String toString(StringMaker stringMaker) {
+        String str;
+        if (useCache) {
+            Cache cache = this.stringCache;
+            if (cache == null) {
+                try {
+                    this.stringCache = new CacheImpl();
+                } catch (Throwable unused) {
+                    useCache = false;
+                }
+            } else {
+                str = cache.get(stringMaker.cacheOffset);
+                if (str == null) {
+                    str = createToString(stringMaker);
+                }
+                if (useCache) {
+                    this.stringCache.set(stringMaker.cacheOffset, str);
+                }
+                return str;
+            }
+        }
+        str = null;
+        if (str == null) {
+        }
+        if (useCache) {
+        }
+        return str;
+    }
+
+    public final String toString() {
+        return toString(StringMaker.middleStringMaker);
+    }
+
+    public int getModifiers() {
+        if (this.modifiers == -1) {
+            this.modifiers = extractInt(0);
+        }
+        return this.modifiers;
+    }
+
+    public String getName() {
+        if (this.name == null) {
+            this.name = extractString(1);
+        }
+        return this.name;
+    }
+
+    public Class getDeclaringType() {
+        if (this.declaringType == null) {
+            this.declaringType = extractType(2);
+        }
+        return this.declaringType;
+    }
+
+    public String getDeclaringTypeName() {
+        if (this.declaringTypeName == null) {
+            this.declaringTypeName = getDeclaringType().getName();
+        }
+        return this.declaringTypeName;
+    }
+
     private ClassLoader getLookupClassLoader() {
         if (this.lookupClassLoader == null) {
             this.lookupClassLoader = getClass().getClassLoader();
         }
         return this.lookupClassLoader;
-    }
-
-    protected abstract String createToString(StringMaker stringMaker);
-
-    int extractInt(int i) {
-        return Integer.parseInt(extractString(i), 16);
     }
 
     String extractString(int i) {
@@ -96,6 +122,10 @@ abstract class SignatureImpl implements Signature {
         return this.stringRep.substring(i2, indexOf);
     }
 
+    int extractInt(int i) {
+        return Integer.parseInt(extractString(i), 16);
+    }
+
     Class extractType(int i) {
         return Factory.makeClass(extractString(i), getLookupClassLoader());
     }
@@ -110,68 +140,39 @@ abstract class SignatureImpl implements Signature {
         return clsArr;
     }
 
-    public Class getDeclaringType() {
-        if (this.declaringType == null) {
-            this.declaringType = extractType(2);
+    private static final class CacheImpl implements Cache {
+        private SoftReference toStringCacheRef;
+
+        public CacheImpl() {
+            makeCache();
         }
-        return this.declaringType;
-    }
 
-    public String getDeclaringTypeName() {
-        if (this.declaringTypeName == null) {
-            this.declaringTypeName = getDeclaringType().getName();
-        }
-        return this.declaringTypeName;
-    }
-
-    public int getModifiers() {
-        if (this.modifiers == -1) {
-            this.modifiers = extractInt(0);
-        }
-        return this.modifiers;
-    }
-
-    public String getName() {
-        if (this.name == null) {
-            this.name = extractString(1);
-        }
-        return this.name;
-    }
-
-    public final String toString() {
-        return toString(StringMaker.middleStringMaker);
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0026  */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x001e  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    String toString(StringMaker stringMaker) {
-        String str;
-        if (useCache) {
-            Cache cache = this.stringCache;
-            if (cache != null) {
-                str = cache.get(stringMaker.cacheOffset);
-                if (str == null) {
-                    str = createToString(stringMaker);
-                }
-                if (useCache) {
-                    this.stringCache.set(stringMaker.cacheOffset, str);
-                }
-                return str;
+        @Override // org.aspectj.runtime.reflect.SignatureImpl.Cache
+        public String get(int i) {
+            String[] array = array();
+            if (array == null) {
+                return null;
             }
-            try {
-                this.stringCache = new CacheImpl();
-            } catch (Throwable unused) {
-                useCache = false;
+            return array[i];
+        }
+
+        @Override // org.aspectj.runtime.reflect.SignatureImpl.Cache
+        public void set(int i, String str) {
+            String[] array = array();
+            if (array == null) {
+                array = makeCache();
             }
+            array[i] = str;
         }
-        str = null;
-        if (str == null) {
+
+        private String[] array() {
+            return (String[]) this.toStringCacheRef.get();
         }
-        if (useCache) {
+
+        private String[] makeCache() {
+            String[] strArr = new String[3];
+            this.toStringCacheRef = new SoftReference(strArr);
+            return strArr;
         }
-        return str;
     }
 }

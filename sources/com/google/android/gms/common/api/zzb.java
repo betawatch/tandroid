@@ -15,26 +15,23 @@ public final class zzb implements Parcelable.Creator {
         PendingIntent pendingIntent = null;
         ConnectionResult connectionResult = null;
         int i = 0;
-        int i2 = 0;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             int fieldId = SafeParcelReader.getFieldId(readHeader);
             if (fieldId == 1) {
-                i2 = SafeParcelReader.readInt(parcel, readHeader);
+                i = SafeParcelReader.readInt(parcel, readHeader);
             } else if (fieldId == 2) {
                 str = SafeParcelReader.createString(parcel, readHeader);
             } else if (fieldId == 3) {
                 pendingIntent = (PendingIntent) SafeParcelReader.createParcelable(parcel, readHeader, PendingIntent.CREATOR);
-            } else if (fieldId == 4) {
-                connectionResult = (ConnectionResult) SafeParcelReader.createParcelable(parcel, readHeader, ConnectionResult.CREATOR);
-            } else if (fieldId != 1000) {
+            } else if (fieldId != 4) {
                 SafeParcelReader.skipUnknownField(parcel, readHeader);
             } else {
-                i = SafeParcelReader.readInt(parcel, readHeader);
+                connectionResult = (ConnectionResult) SafeParcelReader.createParcelable(parcel, readHeader, ConnectionResult.CREATOR);
             }
         }
         SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
-        return new Status(i, i2, str, pendingIntent, connectionResult);
+        return new Status(i, str, pendingIntent, connectionResult);
     }
 
     @Override // android.os.Parcelable.Creator

@@ -3,9 +3,14 @@ package kotlinx.coroutines;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.functions.Function2;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class UndispatchedMarker implements CoroutineContext.Element, CoroutineContext.Key {
     public static final UndispatchedMarker INSTANCE = new UndispatchedMarker();
+
+    @Override // kotlin.coroutines.CoroutineContext.Element
+    public CoroutineContext.Key getKey() {
+        return this;
+    }
 
     private UndispatchedMarker() {
     }
@@ -18,11 +23,6 @@ final class UndispatchedMarker implements CoroutineContext.Element, CoroutineCon
     @Override // kotlin.coroutines.CoroutineContext.Element, kotlin.coroutines.CoroutineContext
     public CoroutineContext.Element get(CoroutineContext.Key key) {
         return CoroutineContext.Element.DefaultImpls.get(this, key);
-    }
-
-    @Override // kotlin.coroutines.CoroutineContext.Element
-    public CoroutineContext.Key getKey() {
-        return this;
     }
 
     @Override // kotlin.coroutines.CoroutineContext

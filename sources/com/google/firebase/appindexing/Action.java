@@ -42,11 +42,6 @@ public interface Action {
             return new zzc(str, str2, str3, str4, zzbVar, this.zzg, this.zza);
         }
 
-        public Builder put(String str, String... strArr) {
-            IndexableBuilder.zza(this.zza, str, strArr);
-            return this;
-        }
-
         public Builder setActionStatus(String str) {
             Preconditions.checkNotNull(str);
             this.zzg = str;
@@ -83,6 +78,11 @@ public interface Action {
 
         protected final String zzc() {
             return new String(this.zzg);
+        }
+
+        public Builder put(String str, String... strArr) {
+            IndexableBuilder.zza(this.zza, str, strArr);
+            return this;
         }
     }
 }

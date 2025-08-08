@@ -1,39 +1,76 @@
 package j$.util.stream;
 
-import j$.util.function.BiConsumer;
-import j$.util.function.BiFunction;
-import j$.util.function.Function;
-
 /* loaded from: classes2.dex */
-public final /* synthetic */ class s implements j$.util.function.f {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ BiConsumer b;
+final class s extends W1 {
+    public final /* synthetic */ int b;
+    final /* synthetic */ b c;
 
-    public /* synthetic */ s(BiConsumer biConsumer, int i) {
-        this.a = i;
-        this.b = biConsumer;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ s(b bVar, d2 d2Var, int i) {
+        super(d2Var);
+        this.b = i;
+        this.c = bVar;
     }
 
-    @Override // j$.util.function.BiFunction
-    public final /* synthetic */ BiFunction andThen(Function function) {
-        switch (this.a) {
-        }
-        return j$.com.android.tools.r8.a.a(this, function);
-    }
-
-    @Override // j$.util.function.BiFunction
-    public final Object apply(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                this.b.accept(obj, obj2);
+    @Override // j$.util.stream.W1, j$.util.stream.d2
+    public void n(long j) {
+        switch (this.b) {
+            case 4:
+                this.a.n(-1L);
                 break;
-            case 1:
-                this.b.accept(obj, obj2);
+            case 5:
+                this.a.n(-1L);
                 break;
             default:
-                this.b.accept(obj, obj2);
+                super.n(j);
                 break;
         }
-        return obj;
+    }
+
+    @Override // j$.util.stream.d2, j$.util.function.l
+    public final void accept(double d) {
+        switch (this.b) {
+            case 0:
+                this.a.accept(((j$.util.function.w) ((t) this.c).n).a.applyAsDouble(d));
+                return;
+            case 1:
+                this.a.r((d2) ((j$.util.function.o) ((u) this.c).n).apply(d));
+                return;
+            case 2:
+                this.a.accept(((j$.util.function.r) ((v) this.c).n).a.applyAsInt(d));
+                return;
+            case 3:
+                this.a.accept(((j$.util.function.v) ((w) this.c).n).applyAsLong(d));
+                return;
+            case 4:
+                D d2 = (D) ((j$.util.function.o) ((t) this.c).n).apply(d);
+                if (d2 != null) {
+                    try {
+                        d2.sequential().i(new p(1, this));
+                    } catch (Throwable th) {
+                        try {
+                            d2.close();
+                        } catch (Throwable th2) {
+                            th.addSuppressed(th2);
+                        }
+                        throw th;
+                    }
+                }
+                if (d2 != null) {
+                    d2.close();
+                    return;
+                }
+                return;
+            case 5:
+                if (((j$.util.function.p) ((t) this.c).n).a.test(d)) {
+                    this.a.accept(d);
+                    return;
+                }
+                return;
+            default:
+                ((j$.util.function.l) ((t) this.c).n).accept(d);
+                this.a.accept(d);
+                return;
+        }
     }
 }

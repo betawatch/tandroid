@@ -3,13 +3,29 @@ package kotlinx.coroutines.internal;
 import androidx.concurrent.futures.AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class LockFreeTaskQueue {
     private static final AtomicReferenceFieldUpdater _cur$FU = AtomicReferenceFieldUpdater.newUpdater(LockFreeTaskQueue.class, Object.class, "_cur");
     private volatile Object _cur;
 
     public LockFreeTaskQueue(boolean z) {
         this._cur = new LockFreeTaskQueueCore(8, z);
+    }
+
+    public final int getSize() {
+        return ((LockFreeTaskQueueCore) _cur$FU.get(this)).getSize();
+    }
+
+    public final void close() {
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _cur$FU;
+        while (true) {
+            LockFreeTaskQueueCore lockFreeTaskQueueCore = (LockFreeTaskQueueCore) atomicReferenceFieldUpdater.get(this);
+            if (lockFreeTaskQueueCore.close()) {
+                return;
+            } else {
+                AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_cur$FU, this, lockFreeTaskQueueCore, lockFreeTaskQueueCore.next());
+            }
+        }
     }
 
     public final boolean addLast(Object obj) {
@@ -26,22 +42,6 @@ public class LockFreeTaskQueue {
                 return false;
             }
         }
-    }
-
-    public final void close() {
-        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _cur$FU;
-        while (true) {
-            LockFreeTaskQueueCore lockFreeTaskQueueCore = (LockFreeTaskQueueCore) atomicReferenceFieldUpdater.get(this);
-            if (lockFreeTaskQueueCore.close()) {
-                return;
-            } else {
-                AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_cur$FU, this, lockFreeTaskQueueCore, lockFreeTaskQueueCore.next());
-            }
-        }
-    }
-
-    public final int getSize() {
-        return ((LockFreeTaskQueueCore) _cur$FU.get(this)).getSize();
     }
 
     public final Object removeFirstOrNull() {

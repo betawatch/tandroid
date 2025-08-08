@@ -39,6 +39,16 @@ public class PreviewHighlightView extends FrameLayout {
     private final StoryCaptionView storyCaptionView;
     private final FrameLayout top;
 
+    @Override // android.view.ViewGroup
+    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        return false;
+    }
+
     public PreviewHighlightView(Context context, int i, Theme.ResourcesProvider resourcesProvider) {
         super(context);
         this.storiesCount = 1;
@@ -108,14 +118,13 @@ public class PreviewHighlightView extends FrameLayout {
         frameLayout2.setAlpha(0.0f);
     }
 
-    @Override // android.view.ViewGroup
-    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return false;
+    public void updateCount() {
+        this.storiesCount = MessagesController.getInstance(this.currentAccount).getStoriesController().getSelfStoriesCount() + 1;
+        this.top.invalidate();
     }
 
-    @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        return false;
+    public void updateCaption(CharSequence charSequence) {
+        this.storyCaptionView.captionTextview.setText(AnimatedEmojiSpan.cloneSpans(new SpannableString(charSequence)), null, false, false);
     }
 
     public void show(boolean z, boolean z2, View view) {
@@ -137,14 +146,5 @@ public class PreviewHighlightView extends FrameLayout {
             view.clearAnimation();
             view.animate().alpha(z2 ? 0.0f : 1.0f).start();
         }
-    }
-
-    public void updateCaption(CharSequence charSequence) {
-        this.storyCaptionView.captionTextview.setText(AnimatedEmojiSpan.cloneSpans(new SpannableString(charSequence)), null, false, false);
-    }
-
-    public void updateCount() {
-        this.storiesCount = MessagesController.getInstance(this.currentAccount).getStoriesController().getSelfStoriesCount() + 1;
-        this.top.invalidate();
     }
 }

@@ -2,30 +2,30 @@ package kotlin.ranges;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class IntRange extends IntProgression {
     public static final Companion Companion = new Companion(null);
     private static final IntRange EMPTY = new IntRange(1, 0);
-
-    public static final class Companion {
-        private Companion() {
-        }
-
-        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
-            this();
-        }
-
-        public final IntRange getEMPTY() {
-            return IntRange.EMPTY;
-        }
-    }
 
     public IntRange(int i, int i2) {
         super(i, i2, 1);
     }
 
+    public Integer getStart() {
+        return Integer.valueOf(getFirst());
+    }
+
+    public Integer getEndInclusive() {
+        return Integer.valueOf(getLast());
+    }
+
     public boolean contains(int i) {
         return getFirst() <= i && i <= getLast();
+    }
+
+    @Override // kotlin.ranges.IntProgression
+    public boolean isEmpty() {
+        return getFirst() > getLast();
     }
 
     @Override // kotlin.ranges.IntProgression
@@ -41,14 +41,6 @@ public final class IntRange extends IntProgression {
         return false;
     }
 
-    public Integer getEndInclusive() {
-        return Integer.valueOf(getLast());
-    }
-
-    public Integer getStart() {
-        return Integer.valueOf(getFirst());
-    }
-
     @Override // kotlin.ranges.IntProgression
     public int hashCode() {
         if (isEmpty()) {
@@ -58,12 +50,20 @@ public final class IntRange extends IntProgression {
     }
 
     @Override // kotlin.ranges.IntProgression
-    public boolean isEmpty() {
-        return getFirst() > getLast();
-    }
-
-    @Override // kotlin.ranges.IntProgression
     public String toString() {
         return getFirst() + ".." + getLast();
+    }
+
+    public static final class Companion {
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        private Companion() {
+        }
+
+        public final IntRange getEMPTY() {
+            return IntRange.EMPTY;
+        }
     }
 }

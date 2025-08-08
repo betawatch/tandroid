@@ -25,18 +25,6 @@ public final class FontRequest {
         return str + "-" + str2 + "-" + str3;
     }
 
-    public List getCertificates() {
-        return this.mCertificates;
-    }
-
-    public int getCertificatesArrayResId() {
-        return this.mCertificatesArray;
-    }
-
-    String getId() {
-        return this.mIdentifier;
-    }
-
     public String getProviderAuthority() {
         return this.mProviderAuthority;
     }
@@ -47,6 +35,18 @@ public final class FontRequest {
 
     public String getQuery() {
         return this.mQuery;
+    }
+
+    public List getCertificates() {
+        return this.mCertificates;
+    }
+
+    public int getCertificatesArrayResId() {
+        return this.mCertificatesArray;
+    }
+
+    String getId() {
+        return this.mIdentifier;
     }
 
     public String toString() {

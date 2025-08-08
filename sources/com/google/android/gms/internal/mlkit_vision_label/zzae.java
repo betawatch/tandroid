@@ -13,12 +13,6 @@ final class zzae extends zzac implements ListIterator {
         this.zzd = zzafVar;
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzae(zzaf zzafVar, int i) {
-        super(zzafVar, ((List) zzafVar.zzb).listIterator(i));
-        this.zzd = zzafVar;
-    }
-
     @Override // java.util.ListIterator
     public final void add(Object obj) {
         boolean isEmpty = this.zzd.isEmpty();
@@ -58,5 +52,11 @@ final class zzae extends zzac implements ListIterator {
     public final void set(Object obj) {
         zza();
         ((ListIterator) this.zza).set(obj);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zzae(zzaf zzafVar, int i) {
+        super(zzafVar, ((List) zzafVar.zzb).listIterator(i));
+        this.zzd = zzafVar;
     }
 }

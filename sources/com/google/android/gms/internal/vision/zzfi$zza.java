@@ -10,13 +10,12 @@ public final class zzfi$zza extends zzjb implements zzkm {
     private String zzd = "";
     private String zze = "";
 
+    private zzfi$zza() {
+    }
+
     public static final class zza extends zzjb.zzb implements zzkm {
         private zza() {
             super(zzfi$zza.zzf);
-        }
-
-        /* synthetic */ zza(zzfk zzfkVar) {
-            this();
         }
 
         public final zza zza(String str) {
@@ -36,19 +35,10 @@ public final class zzfi$zza extends zzjb implements zzkm {
             ((zzfi$zza) this.zza).zzb(str);
             return this;
         }
-    }
 
-    static {
-        zzfi$zza zzfi_zza = new zzfi$zza();
-        zzf = zzfi_zza;
-        zzjb.zza(zzfi$zza.class, zzfi_zza);
-    }
-
-    private zzfi$zza() {
-    }
-
-    public static zza zza() {
-        return (zza) zzf.zzj();
+        /* synthetic */ zza(zzfk zzfkVar) {
+            this();
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -63,6 +53,10 @@ public final class zzfi$zza extends zzjb implements zzkm {
         str.getClass();
         this.zzc |= 2;
         this.zze = str;
+    }
+
+    public static zza zza() {
+        return (zza) zzf.zzj();
     }
 
     /* JADX WARN: Type inference failed for: r2v14, types: [com.google.android.gms.internal.vision.zzjb$zza, com.google.android.gms.internal.vision.zzkx] */
@@ -103,5 +97,11 @@ public final class zzfi$zza extends zzjb implements zzkm {
             default:
                 throw new UnsupportedOperationException();
         }
+    }
+
+    static {
+        zzfi$zza zzfi_zza = new zzfi$zza();
+        zzf = zzfi_zza;
+        zzjb.zza(zzfi$zza.class, zzfi_zza);
     }
 }

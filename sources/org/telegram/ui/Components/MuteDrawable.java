@@ -11,13 +11,22 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class MuteDrawable extends Drawable {
     private final AnimatedFloat animatedMuted;
     private Drawable baseDrawable;
     private final Paint clipPaint;
     private boolean muted;
     private final Paint strokePaint;
+
+    @Override // android.graphics.drawable.Drawable
+    public int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setColorFilter(ColorFilter colorFilter) {
+    }
 
     public MuteDrawable(Context context) {
         Paint paint = new Paint(1);
@@ -78,19 +87,12 @@ public class MuteDrawable extends Drawable {
         canvas.restore();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public int getIntrinsicHeight() {
-        return AndroidUtilities.dp(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int getIntrinsicWidth() {
-        return AndroidUtilities.dp(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int getOpacity() {
-        return -2;
+    public void setMuted(boolean z, boolean z2) {
+        this.muted = z;
+        if (!z2) {
+            this.animatedMuted.set(z, true);
+        }
+        invalidateSelf();
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -99,14 +101,12 @@ public class MuteDrawable extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public void setColorFilter(ColorFilter colorFilter) {
+    public int getIntrinsicHeight() {
+        return AndroidUtilities.dp(24.0f);
     }
 
-    public void setMuted(boolean z, boolean z2) {
-        this.muted = z;
-        if (!z2) {
-            this.animatedMuted.set(z, true);
-        }
-        invalidateSelf();
+    @Override // android.graphics.drawable.Drawable
+    public int getIntrinsicWidth() {
+        return AndroidUtilities.dp(24.0f);
     }
 }

@@ -31,36 +31,11 @@ public class BiometricPrompt {
         }
     }
 
-    public static class AuthenticationResult {
-        private final int mAuthenticationType;
-        private final CryptoObject mCryptoObject;
-
-        AuthenticationResult(CryptoObject cryptoObject, int i) {
-            this.mCryptoObject = cryptoObject;
-            this.mAuthenticationType = i;
-        }
-
-        public int getAuthenticationType() {
-            return this.mAuthenticationType;
-        }
-
-        public CryptoObject getCryptoObject() {
-            return this.mCryptoObject;
-        }
-    }
-
     public static class CryptoObject {
         private final Cipher mCipher;
         private final IdentityCredential mIdentityCredential;
         private final Mac mMac;
         private final Signature mSignature;
-
-        public CryptoObject(IdentityCredential identityCredential) {
-            this.mSignature = null;
-            this.mCipher = null;
-            this.mMac = null;
-            this.mIdentityCredential = identityCredential;
-        }
 
         public CryptoObject(Signature signature) {
             this.mSignature = signature;
@@ -83,20 +58,45 @@ public class BiometricPrompt {
             this.mIdentityCredential = null;
         }
 
-        public Cipher getCipher() {
-            return this.mCipher;
+        public CryptoObject(IdentityCredential identityCredential) {
+            this.mSignature = null;
+            this.mCipher = null;
+            this.mMac = null;
+            this.mIdentityCredential = identityCredential;
         }
 
-        public IdentityCredential getIdentityCredential() {
-            return this.mIdentityCredential;
+        public Signature getSignature() {
+            return this.mSignature;
+        }
+
+        public Cipher getCipher() {
+            return this.mCipher;
         }
 
         public Mac getMac() {
             return this.mMac;
         }
 
-        public Signature getSignature() {
-            return this.mSignature;
+        public IdentityCredential getIdentityCredential() {
+            return this.mIdentityCredential;
+        }
+    }
+
+    public static class AuthenticationResult {
+        private final int mAuthenticationType;
+        private final CryptoObject mCryptoObject;
+
+        AuthenticationResult(CryptoObject cryptoObject, int i) {
+            this.mCryptoObject = cryptoObject;
+            this.mAuthenticationType = i;
+        }
+
+        public CryptoObject getCryptoObject() {
+            return this.mCryptoObject;
+        }
+
+        public int getAuthenticationType() {
+            return this.mAuthenticationType;
         }
     }
 
@@ -118,26 +118,8 @@ public class BiometricPrompt {
             private boolean mIsDeviceCredentialAllowed = false;
             private int mAllowedAuthenticators = 0;
 
-            public PromptInfo build() {
-                if (TextUtils.isEmpty(this.mTitle)) {
-                    throw new IllegalArgumentException("Title must be set and non-empty.");
-                }
-                if (!AuthenticatorUtils.isSupportedCombination(this.mAllowedAuthenticators)) {
-                    throw new IllegalArgumentException("Authenticator combination is unsupported on API " + Build.VERSION.SDK_INT + ": " + AuthenticatorUtils.convertToString(this.mAllowedAuthenticators));
-                }
-                int i = this.mAllowedAuthenticators;
-                boolean isDeviceCredentialAllowed = i != 0 ? AuthenticatorUtils.isDeviceCredentialAllowed(i) : this.mIsDeviceCredentialAllowed;
-                if (TextUtils.isEmpty(this.mNegativeButtonText) && !isDeviceCredentialAllowed) {
-                    throw new IllegalArgumentException("Negative text must be set and non-empty.");
-                }
-                if (TextUtils.isEmpty(this.mNegativeButtonText) || !isDeviceCredentialAllowed) {
-                    return new PromptInfo(this.mTitle, this.mSubtitle, this.mDescription, this.mNegativeButtonText, this.mIsConfirmationRequired, this.mIsDeviceCredentialAllowed, this.mAllowedAuthenticators);
-                }
-                throw new IllegalArgumentException("Negative text must not be set if device credential authentication is allowed.");
-            }
-
-            public Builder setAllowedAuthenticators(int i) {
-                this.mAllowedAuthenticators = i;
+            public Builder setTitle(CharSequence charSequence) {
+                this.mTitle = charSequence;
                 return this;
             }
 
@@ -151,9 +133,32 @@ public class BiometricPrompt {
                 return this;
             }
 
-            public Builder setTitle(CharSequence charSequence) {
-                this.mTitle = charSequence;
+            public Builder setAllowedAuthenticators(int i) {
+                this.mAllowedAuthenticators = i;
                 return this;
+            }
+
+            public PromptInfo build() {
+                boolean z;
+                if (TextUtils.isEmpty(this.mTitle)) {
+                    throw new IllegalArgumentException("Title must be set and non-empty.");
+                }
+                if (!AuthenticatorUtils.isSupportedCombination(this.mAllowedAuthenticators)) {
+                    throw new IllegalArgumentException("Authenticator combination is unsupported on API " + Build.VERSION.SDK_INT + ": " + AuthenticatorUtils.convertToString(this.mAllowedAuthenticators));
+                }
+                int i = this.mAllowedAuthenticators;
+                if (i != 0) {
+                    z = AuthenticatorUtils.isDeviceCredentialAllowed(i);
+                } else {
+                    z = this.mIsDeviceCredentialAllowed;
+                }
+                if (TextUtils.isEmpty(this.mNegativeButtonText) && !z) {
+                    throw new IllegalArgumentException("Negative text must be set and non-empty.");
+                }
+                if (!TextUtils.isEmpty(this.mNegativeButtonText) && z) {
+                    throw new IllegalArgumentException("Negative text must not be set if device credential authentication is allowed.");
+                }
+                return new PromptInfo(this.mTitle, this.mSubtitle, this.mDescription, this.mNegativeButtonText, this.mIsConfirmationRequired, this.mIsDeviceCredentialAllowed, this.mAllowedAuthenticators);
             }
         }
 
@@ -167,8 +172,12 @@ public class BiometricPrompt {
             this.mAllowedAuthenticators = i;
         }
 
-        public int getAllowedAuthenticators() {
-            return this.mAllowedAuthenticators;
+        public CharSequence getTitle() {
+            return this.mTitle;
+        }
+
+        public CharSequence getSubtitle() {
+            return this.mSubtitle;
         }
 
         public CharSequence getDescription() {
@@ -180,20 +189,16 @@ public class BiometricPrompt {
             return charSequence != null ? charSequence : "";
         }
 
-        public CharSequence getSubtitle() {
-            return this.mSubtitle;
-        }
-
-        public CharSequence getTitle() {
-            return this.mTitle;
-        }
-
         public boolean isConfirmationRequired() {
             return this.mIsConfirmationRequired;
         }
 
         public boolean isDeviceCredentialAllowed() {
             return this.mIsDeviceCredentialAllowed;
+        }
+
+        public int getAllowedAuthenticators() {
+            return this.mAllowedAuthenticators;
         }
     }
 
@@ -221,39 +226,6 @@ public class BiometricPrompt {
         init(fragmentActivity.getSupportFragmentManager(), getViewModel(fragmentActivity), executor, authenticationCallback);
     }
 
-    private void authenticateInternal(PromptInfo promptInfo, CryptoObject cryptoObject) {
-        FragmentManager fragmentManager = this.mClientFragmentManager;
-        if (fragmentManager == null) {
-            Log.e("BiometricPromptCompat", "Unable to start authentication. Client fragment manager was null.");
-        } else if (fragmentManager.isStateSaved()) {
-            Log.e("BiometricPromptCompat", "Unable to start authentication. Called after onSaveInstanceState().");
-        } else {
-            findOrAddBiometricFragment(this.mClientFragmentManager).authenticate(promptInfo, cryptoObject);
-        }
-    }
-
-    private static BiometricFragment findBiometricFragment(FragmentManager fragmentManager) {
-        return (BiometricFragment) fragmentManager.findFragmentByTag("androidx.biometric.BiometricFragment");
-    }
-
-    private static BiometricFragment findOrAddBiometricFragment(FragmentManager fragmentManager) {
-        BiometricFragment findBiometricFragment = findBiometricFragment(fragmentManager);
-        if (findBiometricFragment != null) {
-            return findBiometricFragment;
-        }
-        BiometricFragment newInstance = BiometricFragment.newInstance();
-        fragmentManager.beginTransaction().add(newInstance, "androidx.biometric.BiometricFragment").commitAllowingStateLoss();
-        fragmentManager.executePendingTransactions();
-        return newInstance;
-    }
-
-    private static BiometricViewModel getViewModel(FragmentActivity fragmentActivity) {
-        if (fragmentActivity != null) {
-            return (BiometricViewModel) new ViewModelProvider(fragmentActivity).get(BiometricViewModel.class);
-        }
-        return null;
-    }
-
     private void init(FragmentManager fragmentManager, BiometricViewModel biometricViewModel, Executor executor, AuthenticationCallback authenticationCallback) {
         this.mClientFragmentManager = fragmentManager;
         if (biometricViewModel != null) {
@@ -262,13 +234,6 @@ public class BiometricPrompt {
             }
             biometricViewModel.setClientCallback(authenticationCallback);
         }
-    }
-
-    public void authenticate(PromptInfo promptInfo) {
-        if (promptInfo == null) {
-            throw new IllegalArgumentException("PromptInfo cannot be null.");
-        }
-        authenticateInternal(promptInfo, null);
     }
 
     public void authenticate(PromptInfo promptInfo, CryptoObject cryptoObject) {
@@ -286,5 +251,45 @@ public class BiometricPrompt {
             throw new IllegalArgumentException("Crypto-based authentication is not supported for device credential prior to API 30.");
         }
         authenticateInternal(promptInfo, cryptoObject);
+    }
+
+    public void authenticate(PromptInfo promptInfo) {
+        if (promptInfo == null) {
+            throw new IllegalArgumentException("PromptInfo cannot be null.");
+        }
+        authenticateInternal(promptInfo, null);
+    }
+
+    private void authenticateInternal(PromptInfo promptInfo, CryptoObject cryptoObject) {
+        FragmentManager fragmentManager = this.mClientFragmentManager;
+        if (fragmentManager == null) {
+            Log.e("BiometricPromptCompat", "Unable to start authentication. Client fragment manager was null.");
+        } else if (fragmentManager.isStateSaved()) {
+            Log.e("BiometricPromptCompat", "Unable to start authentication. Called after onSaveInstanceState().");
+        } else {
+            findOrAddBiometricFragment(this.mClientFragmentManager).authenticate(promptInfo, cryptoObject);
+        }
+    }
+
+    private static BiometricViewModel getViewModel(FragmentActivity fragmentActivity) {
+        if (fragmentActivity != null) {
+            return (BiometricViewModel) new ViewModelProvider(fragmentActivity).get(BiometricViewModel.class);
+        }
+        return null;
+    }
+
+    private static BiometricFragment findBiometricFragment(FragmentManager fragmentManager) {
+        return (BiometricFragment) fragmentManager.findFragmentByTag("androidx.biometric.BiometricFragment");
+    }
+
+    private static BiometricFragment findOrAddBiometricFragment(FragmentManager fragmentManager) {
+        BiometricFragment findBiometricFragment = findBiometricFragment(fragmentManager);
+        if (findBiometricFragment != null) {
+            return findBiometricFragment;
+        }
+        BiometricFragment newInstance = BiometricFragment.newInstance();
+        fragmentManager.beginTransaction().add(newInstance, "androidx.biometric.BiometricFragment").commitAllowingStateLoss();
+        fragmentManager.executePendingTransactions();
+        return newInstance;
     }
 }

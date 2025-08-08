@@ -2,7 +2,7 @@ package kotlinx.coroutines.channels;
 
 import kotlinx.coroutines.Waiter;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class WaiterEB {
     public final Waiter waiter;
 

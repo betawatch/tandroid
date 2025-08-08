@@ -33,6 +33,19 @@ final class zzla implements zzki {
         }
     }
 
+    final String zzd() {
+        return this.zzb;
+    }
+
+    final Object[] zze() {
+        return this.zzc;
+    }
+
+    @Override // com.google.android.gms.internal.vision.zzki
+    public final zzkk zzc() {
+        return this.zza;
+    }
+
     @Override // com.google.android.gms.internal.vision.zzki
     public final int zza() {
         return (this.zzd & 1) == 1 ? zzkz.zza : zzkz.zzb;
@@ -41,18 +54,5 @@ final class zzla implements zzki {
     @Override // com.google.android.gms.internal.vision.zzki
     public final boolean zzb() {
         return (this.zzd & 2) == 2;
-    }
-
-    @Override // com.google.android.gms.internal.vision.zzki
-    public final zzkk zzc() {
-        return this.zza;
-    }
-
-    final String zzd() {
-        return this.zzb;
-    }
-
-    final Object[] zze() {
-        return this.zzc;
     }
 }

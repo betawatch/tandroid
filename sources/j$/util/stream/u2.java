@@ -4,50 +4,55 @@ import java.util.Arrays;
 
 /* loaded from: classes2.dex */
 final class u2 extends q2 {
-    private J2 c;
+    private K2 c;
 
-    u2(e2 e2Var) {
-        super(e2Var);
-    }
-
-    @Override // j$.util.stream.e2
-    public final void accept(int i) {
-        this.c.accept(i);
-    }
-
-    @Override // j$.util.stream.Y1, j$.util.stream.e2
-    public final void m() {
-        int[] iArr = (int[]) this.c.e();
-        Arrays.sort(iArr);
-        long length = iArr.length;
-        e2 e2Var = this.a;
-        e2Var.n(length);
-        int i = 0;
-        if (this.b) {
-            int length2 = iArr.length;
-            while (i < length2) {
-                int i2 = iArr[i];
-                if (e2Var.q()) {
-                    break;
-                }
-                e2Var.accept(i2);
-                i++;
-            }
-        } else {
-            int length3 = iArr.length;
-            while (i < length3) {
-                e2Var.accept(iArr[i]);
-                i++;
-            }
-        }
-        e2Var.m();
-    }
-
-    @Override // j$.util.stream.Y1, j$.util.stream.e2
+    /* JADX WARN: Type inference failed for: r0v2, types: [j$.util.stream.K2, j$.util.stream.M2] */
+    /* JADX WARN: Type inference failed for: r0v5, types: [j$.util.stream.M2] */
+    /* JADX WARN: Type inference failed for: r0v6, types: [j$.util.stream.M2] */
+    @Override // j$.util.stream.Y1, j$.util.stream.d2
     public final void n(long j) {
+        ?? r0;
         if (j >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        this.c = j > 0 ? new J2((int) j) : new J2();
+        if (j <= 0) {
+            r0 = new M2();
+        } else {
+            r0 = new K2((int) j);
+        }
+        this.c = r0;
+    }
+
+    @Override // j$.util.stream.Y1, j$.util.stream.d2
+    public final void m() {
+        long[] jArr = (long[]) this.c.e();
+        Arrays.sort(jArr);
+        long length = jArr.length;
+        d2 d2Var = this.a;
+        d2Var.n(length);
+        int i = 0;
+        if (!this.b) {
+            int length2 = jArr.length;
+            while (i < length2) {
+                d2Var.accept(jArr[i]);
+                i++;
+            }
+        } else {
+            int length3 = jArr.length;
+            while (i < length3) {
+                long j = jArr[i];
+                if (d2Var.q()) {
+                    break;
+                }
+                d2Var.accept(j);
+                i++;
+            }
+        }
+        d2Var.m();
+    }
+
+    @Override // j$.util.stream.d2
+    public final void accept(long j) {
+        this.c.accept(j);
     }
 }

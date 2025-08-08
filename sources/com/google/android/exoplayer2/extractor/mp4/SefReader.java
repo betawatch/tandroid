@@ -17,16 +17,32 @@ final class SefReader {
     private static final Splitter COLON_SPLITTER = Splitter.on(':');
     private static final Splitter ASTERISK_SPLITTER = Splitter.on('*');
 
-    private static final class DataReference {
-        public final int dataType;
-        public final int size;
-        public final long startOffset;
+    public void reset() {
+        this.dataReferences.clear();
+        this.readerState = 0;
+    }
 
-        public DataReference(int i, long j, int i2) {
-            this.dataType = i;
-            this.startOffset = j;
-            this.size = i2;
+    public int read(ExtractorInput extractorInput, PositionHolder positionHolder, List list) {
+        int i = this.readerState;
+        long j = 0;
+        if (i == 0) {
+            long length = extractorInput.getLength();
+            if (length != -1 && length >= 8) {
+                j = length - 8;
+            }
+            positionHolder.position = j;
+            this.readerState = 1;
+        } else if (i == 1) {
+            checkForSefData(extractorInput, positionHolder);
+        } else if (i == 2) {
+            readSdrs(extractorInput, positionHolder);
+        } else if (i == 3) {
+            readSefData(extractorInput, list);
+            positionHolder.position = 0L;
+        } else {
+            throw new IllegalStateException();
         }
+        return 1;
     }
 
     private void checkForSefData(ExtractorInput extractorInput, PositionHolder positionHolder) {
@@ -41,26 +57,7 @@ final class SefReader {
         }
     }
 
-    private static int nameToDataType(String str) {
-        str.hashCode();
-        switch (str) {
-            case "SlowMotion_Data":
-                return 2192;
-            case "Super_SlowMotion_Edit_Data":
-                return 2819;
-            case "Super_SlowMotion_Data":
-                return 2816;
-            case "Super_SlowMotion_Deflickering_On":
-                return 2820;
-            case "Super_SlowMotion_BGM":
-                return 2817;
-            default:
-                throw ParserException.createForMalformedContainer("Invalid SEF name", null);
-        }
-    }
-
     private void readSdrs(ExtractorInput extractorInput, PositionHolder positionHolder) {
-        long j;
         long length = extractorInput.getLength();
         int i = this.tailLength - 20;
         ParsableByteArray parsableByteArray = new ParsableByteArray(i);
@@ -75,12 +72,11 @@ final class SefReader {
             }
         }
         if (this.dataReferences.isEmpty()) {
-            j = 0;
+            positionHolder.position = 0L;
         } else {
             this.readerState = 3;
-            j = ((DataReference) this.dataReferences.get(0)).startOffset;
+            positionHolder.position = ((DataReference) this.dataReferences.get(0)).startOffset;
         }
-        positionHolder.position = j;
     }
 
     private void readSefData(ExtractorInput extractorInput, List list) {
@@ -120,32 +116,33 @@ final class SefReader {
         return new SlowMotionData(arrayList);
     }
 
-    public int read(ExtractorInput extractorInput, PositionHolder positionHolder, List list) {
-        int i = this.readerState;
-        long j = 0;
-        if (i == 0) {
-            long length = extractorInput.getLength();
-            if (length != -1 && length >= 8) {
-                j = length - 8;
-            }
-            positionHolder.position = j;
-            this.readerState = 1;
-        } else if (i == 1) {
-            checkForSefData(extractorInput, positionHolder);
-        } else if (i == 2) {
-            readSdrs(extractorInput, positionHolder);
-        } else {
-            if (i != 3) {
-                throw new IllegalStateException();
-            }
-            readSefData(extractorInput, list);
-            positionHolder.position = 0L;
+    private static int nameToDataType(String str) {
+        str.hashCode();
+        switch (str) {
+            case "SlowMotion_Data":
+                return 2192;
+            case "Super_SlowMotion_Edit_Data":
+                return 2819;
+            case "Super_SlowMotion_Data":
+                return 2816;
+            case "Super_SlowMotion_Deflickering_On":
+                return 2820;
+            case "Super_SlowMotion_BGM":
+                return 2817;
+            default:
+                throw ParserException.createForMalformedContainer("Invalid SEF name", null);
         }
-        return 1;
     }
 
-    public void reset() {
-        this.dataReferences.clear();
-        this.readerState = 0;
+    private static final class DataReference {
+        public final int dataType;
+        public final int size;
+        public final long startOffset;
+
+        public DataReference(int i, long j, int i2) {
+            this.dataType = i;
+            this.startOffset = j;
+            this.size = i2;
+        }
     }
 }

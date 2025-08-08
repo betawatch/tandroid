@@ -8,8 +8,25 @@ public class BlankAudioInput extends AudioInput {
     private int remainingShorts;
     private int requiredShortsForDuration;
 
+    @Override // org.telegram.messenger.video.audio_input.AudioInput
+    public int getSampleRate() {
+        return -1;
+    }
+
     public BlankAudioInput(long j) {
         this.durationUs = j;
+    }
+
+    @Override // org.telegram.messenger.video.audio_input.AudioInput
+    public boolean hasRemaining() {
+        return this.remainingShorts > 0;
+    }
+
+    @Override // org.telegram.messenger.video.audio_input.AudioInput
+    public void start(int i, int i2) {
+        int usToShorts = AudioConversions.usToShorts(this.durationUs, i, i2);
+        this.requiredShortsForDuration = usToShorts;
+        this.remainingShorts = usToShorts;
     }
 
     @Override // org.telegram.messenger.video.audio_input.AudioInput
@@ -26,24 +43,7 @@ public class BlankAudioInput extends AudioInput {
     }
 
     @Override // org.telegram.messenger.video.audio_input.AudioInput
-    public int getSampleRate() {
-        return -1;
-    }
-
-    @Override // org.telegram.messenger.video.audio_input.AudioInput
-    public boolean hasRemaining() {
-        return this.remainingShorts > 0;
-    }
-
-    @Override // org.telegram.messenger.video.audio_input.AudioInput
     public void release() {
         this.remainingShorts = 0;
-    }
-
-    @Override // org.telegram.messenger.video.audio_input.AudioInput
-    public void start(int i, int i2) {
-        int usToShorts = AudioConversions.usToShorts(this.durationUs, i, i2);
-        this.requiredShortsForDuration = usToShorts;
-        this.remainingShorts = usToShorts;
     }
 }

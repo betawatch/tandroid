@@ -22,6 +22,11 @@ public final class FragmentContainerView extends FrameLayout {
     private boolean mDrawDisappearingViewsFirst;
     private ArrayList mTransitioningFragmentViews;
 
+    @Override // android.view.View
+    public WindowInsets onApplyWindowInsets(WindowInsets windowInsets) {
+        return windowInsets;
+    }
+
     FragmentContainerView(Context context, AttributeSet attributeSet, FragmentManager fragmentManager) {
         super(context, attributeSet);
         String str;
@@ -49,43 +54,23 @@ public final class FragmentContainerView extends FrameLayout {
         fragmentManager.onContainerAvailable(this);
     }
 
-    private void addDisappearingFragmentView(View view) {
-        ArrayList arrayList = this.mTransitioningFragmentViews;
-        if (arrayList == null || !arrayList.contains(view)) {
-            return;
-        }
-        if (this.mDisappearingFragmentChildren == null) {
-            this.mDisappearingFragmentChildren = new ArrayList();
-        }
-        this.mDisappearingFragmentChildren.add(view);
+    @Override // android.view.ViewGroup
+    public void setLayoutTransition(LayoutTransition layoutTransition) {
+        throw new UnsupportedOperationException("FragmentContainerView does not support Layout Transitions or animateLayoutChanges=\"true\".");
     }
 
-    @Override // android.view.ViewGroup
-    public void addView(View view, int i, ViewGroup.LayoutParams layoutParams) {
-        if (FragmentManager.getViewFragment(view) != null) {
-            super.addView(view, i, layoutParams);
-            return;
-        }
-        throw new IllegalStateException("Views added to a FragmentContainerView must be associated with a Fragment. View " + view + " is not associated with a Fragment.");
-    }
-
-    @Override // android.view.ViewGroup
-    protected boolean addViewInLayout(View view, int i, ViewGroup.LayoutParams layoutParams, boolean z) {
-        if (FragmentManager.getViewFragment(view) != null) {
-            return super.addViewInLayout(view, i, layoutParams, z);
-        }
-        throw new IllegalStateException("Views added to a FragmentContainerView must be associated with a Fragment. View " + view + " is not associated with a Fragment.");
+    @Override // android.view.View
+    public void setOnApplyWindowInsetsListener(View.OnApplyWindowInsetsListener onApplyWindowInsetsListener) {
+        this.mApplyWindowInsetsListener = onApplyWindowInsetsListener;
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public WindowInsets dispatchApplyWindowInsets(WindowInsets windowInsets) {
         WindowInsetsCompat onApplyWindowInsets;
-        WindowInsets onApplyWindowInsets2;
         WindowInsetsCompat windowInsetsCompat = WindowInsetsCompat.toWindowInsetsCompat(windowInsets);
         View.OnApplyWindowInsetsListener onApplyWindowInsetsListener = this.mApplyWindowInsetsListener;
         if (onApplyWindowInsetsListener != null) {
-            onApplyWindowInsets2 = onApplyWindowInsetsListener.onApplyWindowInsets(this, windowInsets);
-            onApplyWindowInsets = WindowInsetsCompat.toWindowInsetsCompat(onApplyWindowInsets2);
+            onApplyWindowInsets = WindowInsetsCompat.toWindowInsetsCompat(onApplyWindowInsetsListener.onApplyWindowInsets(this, windowInsets));
         } else {
             onApplyWindowInsets = ViewCompat.onApplyWindowInsets(this, windowInsetsCompat);
         }
@@ -118,6 +103,17 @@ public final class FragmentContainerView extends FrameLayout {
     }
 
     @Override // android.view.ViewGroup
+    public void startViewTransition(View view) {
+        if (view.getParent() == this) {
+            if (this.mTransitioningFragmentViews == null) {
+                this.mTransitioningFragmentViews = new ArrayList();
+            }
+            this.mTransitioningFragmentViews.add(view);
+        }
+        super.startViewTransition(view);
+    }
+
+    @Override // android.view.ViewGroup
     public void endViewTransition(View view) {
         ArrayList arrayList = this.mTransitioningFragmentViews;
         if (arrayList != null) {
@@ -130,31 +126,24 @@ public final class FragmentContainerView extends FrameLayout {
         super.endViewTransition(view);
     }
 
-    @Override // android.view.View
-    public WindowInsets onApplyWindowInsets(WindowInsets windowInsets) {
-        return windowInsets;
+    void setDrawDisappearingViewsLast(boolean z) {
+        this.mDrawDisappearingViewsFirst = z;
     }
 
     @Override // android.view.ViewGroup
-    public void removeAllViewsInLayout() {
-        for (int childCount = getChildCount() - 1; childCount >= 0; childCount--) {
-            addDisappearingFragmentView(getChildAt(childCount));
+    public void addView(View view, int i, ViewGroup.LayoutParams layoutParams) {
+        if (FragmentManager.getViewFragment(view) == null) {
+            throw new IllegalStateException("Views added to a FragmentContainerView must be associated with a Fragment. View " + view + " is not associated with a Fragment.");
         }
-        super.removeAllViewsInLayout();
+        super.addView(view, i, layoutParams);
     }
 
     @Override // android.view.ViewGroup
-    protected void removeDetachedView(View view, boolean z) {
-        if (z) {
-            addDisappearingFragmentView(view);
+    protected boolean addViewInLayout(View view, int i, ViewGroup.LayoutParams layoutParams, boolean z) {
+        if (FragmentManager.getViewFragment(view) == null) {
+            throw new IllegalStateException("Views added to a FragmentContainerView must be associated with a Fragment. View " + view + " is not associated with a Fragment.");
         }
-        super.removeDetachedView(view, z);
-    }
-
-    @Override // android.view.ViewGroup, android.view.ViewManager
-    public void removeView(View view) {
-        addDisappearingFragmentView(view);
-        super.removeView(view);
+        return super.addViewInLayout(view, i, layoutParams, z);
     }
 
     @Override // android.view.ViewGroup
@@ -167,6 +156,12 @@ public final class FragmentContainerView extends FrameLayout {
     public void removeViewInLayout(View view) {
         addDisappearingFragmentView(view);
         super.removeViewInLayout(view);
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewManager
+    public void removeView(View view) {
+        addDisappearingFragmentView(view);
+        super.removeView(view);
     }
 
     @Override // android.view.ViewGroup
@@ -185,28 +180,30 @@ public final class FragmentContainerView extends FrameLayout {
         super.removeViewsInLayout(i, i2);
     }
 
-    void setDrawDisappearingViewsLast(boolean z) {
-        this.mDrawDisappearingViewsFirst = z;
-    }
-
     @Override // android.view.ViewGroup
-    public void setLayoutTransition(LayoutTransition layoutTransition) {
-        throw new UnsupportedOperationException("FragmentContainerView does not support Layout Transitions or animateLayoutChanges=\"true\".");
-    }
-
-    @Override // android.view.View
-    public void setOnApplyWindowInsetsListener(View.OnApplyWindowInsetsListener onApplyWindowInsetsListener) {
-        this.mApplyWindowInsetsListener = onApplyWindowInsetsListener;
-    }
-
-    @Override // android.view.ViewGroup
-    public void startViewTransition(View view) {
-        if (view.getParent() == this) {
-            if (this.mTransitioningFragmentViews == null) {
-                this.mTransitioningFragmentViews = new ArrayList();
-            }
-            this.mTransitioningFragmentViews.add(view);
+    public void removeAllViewsInLayout() {
+        for (int childCount = getChildCount() - 1; childCount >= 0; childCount--) {
+            addDisappearingFragmentView(getChildAt(childCount));
         }
-        super.startViewTransition(view);
+        super.removeAllViewsInLayout();
+    }
+
+    @Override // android.view.ViewGroup
+    protected void removeDetachedView(View view, boolean z) {
+        if (z) {
+            addDisappearingFragmentView(view);
+        }
+        super.removeDetachedView(view, z);
+    }
+
+    private void addDisappearingFragmentView(View view) {
+        ArrayList arrayList = this.mTransitioningFragmentViews;
+        if (arrayList == null || !arrayList.contains(view)) {
+            return;
+        }
+        if (this.mDisappearingFragmentChildren == null) {
+            this.mDisappearingFragmentChildren = new ArrayList();
+        }
+        this.mDisappearingFragmentChildren.add(view);
     }
 }

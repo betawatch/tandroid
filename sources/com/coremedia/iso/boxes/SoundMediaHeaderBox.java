@@ -17,14 +17,24 @@ public class SoundMediaHeaderBox extends AbstractMediaHeaderBox {
         ajc$preClinit();
     }
 
-    public SoundMediaHeaderBox() {
-        super("smhd");
-    }
-
     private static /* synthetic */ void ajc$preClinit() {
         Factory factory = new Factory("SoundMediaHeaderBox.java", SoundMediaHeaderBox.class);
         ajc$tjp_0 = factory.makeSJP("method-execution", factory.makeMethodSig("1", "getBalance", "com.coremedia.iso.boxes.SoundMediaHeaderBox", "", "", "", "float"), 36);
         ajc$tjp_1 = factory.makeSJP("method-execution", factory.makeMethodSig("1", "toString", "com.coremedia.iso.boxes.SoundMediaHeaderBox", "", "", "", "java.lang.String"), 58);
+    }
+
+    @Override // com.googlecode.mp4parser.AbstractBox
+    protected long getContentSize() {
+        return 8L;
+    }
+
+    public SoundMediaHeaderBox() {
+        super("smhd");
+    }
+
+    public float getBalance() {
+        RequiresParseDetailAspect.aspectOf().before(Factory.makeJP(ajc$tjp_0, this, this));
+        return this.balance;
     }
 
     @Override // com.googlecode.mp4parser.AbstractBox
@@ -34,21 +44,11 @@ public class SoundMediaHeaderBox extends AbstractMediaHeaderBox {
         IsoTypeReader.readUInt16(byteBuffer);
     }
 
-    public float getBalance() {
-        RequiresParseDetailAspect.aspectOf().before(Factory.makeJP(ajc$tjp_0, this, this));
-        return this.balance;
-    }
-
     @Override // com.googlecode.mp4parser.AbstractBox
     protected void getContent(ByteBuffer byteBuffer) {
         writeVersionAndFlags(byteBuffer);
         IsoTypeWriter.writeFixedPoint88(byteBuffer, this.balance);
         IsoTypeWriter.writeUInt16(byteBuffer, 0);
-    }
-
-    @Override // com.googlecode.mp4parser.AbstractBox
-    protected long getContentSize() {
-        return 8L;
     }
 
     public String toString() {

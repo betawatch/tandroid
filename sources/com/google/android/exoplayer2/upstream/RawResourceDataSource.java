@@ -29,75 +29,14 @@ public final class RawResourceDataSource extends BaseDataSource {
         }
     }
 
-    public RawResourceDataSource(Context context) {
-        super(false);
-        this.resources = context.getResources();
-        this.packageName = context.getPackageName();
-    }
-
     public static Uri buildRawResourceUri(int i) {
         return Uri.parse("rawresource:///" + i);
     }
 
-    @Override // com.google.android.exoplayer2.upstream.DataSource
-    public void close() {
-        this.uri = null;
-        try {
-            try {
-                InputStream inputStream = this.inputStream;
-                if (inputStream != null) {
-                    inputStream.close();
-                }
-                this.inputStream = null;
-                try {
-                    try {
-                        AssetFileDescriptor assetFileDescriptor = this.assetFileDescriptor;
-                        if (assetFileDescriptor != null) {
-                            assetFileDescriptor.close();
-                        }
-                    } catch (IOException e) {
-                        throw new RawResourceDataSourceException(null, e, 2000);
-                    }
-                } finally {
-                    this.assetFileDescriptor = null;
-                    if (this.opened) {
-                        this.opened = false;
-                        transferEnded();
-                    }
-                }
-            } catch (IOException e2) {
-                throw new RawResourceDataSourceException(null, e2, 2000);
-            }
-        } catch (Throwable th) {
-            this.inputStream = null;
-            try {
-                try {
-                    AssetFileDescriptor assetFileDescriptor2 = this.assetFileDescriptor;
-                    if (assetFileDescriptor2 != null) {
-                        assetFileDescriptor2.close();
-                    }
-                    this.assetFileDescriptor = null;
-                    if (this.opened) {
-                        this.opened = false;
-                        transferEnded();
-                    }
-                    throw th;
-                } catch (IOException e3) {
-                    throw new RawResourceDataSourceException(null, e3, 2000);
-                }
-            } finally {
-                this.assetFileDescriptor = null;
-                if (this.opened) {
-                    this.opened = false;
-                    transferEnded();
-                }
-            }
-        }
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.DataSource
-    public Uri getUri() {
-        return this.uri;
+    public RawResourceDataSource(Context context) {
+        super(false);
+        this.resources = context.getResources();
+        this.packageName = context.getPackageName();
     }
 
     @Override // com.google.android.exoplayer2.upstream.DataSource
@@ -112,10 +51,7 @@ public final class RawResourceDataSource extends BaseDataSource {
             } catch (NumberFormatException unused) {
                 throw new RawResourceDataSourceException("Resource identifier must be an integer.", null, 1004);
             }
-        } else {
-            if (!TextUtils.equals("android.resource", uri.getScheme())) {
-                throw new RawResourceDataSourceException("URI must either use scheme rawresource or android.resource", null, 1004);
-            }
+        } else if (TextUtils.equals("android.resource", uri.getScheme())) {
             String str2 = (String) Assertions.checkNotNull(uri.getPath());
             if (str2.startsWith("/")) {
                 str2 = str2.substring(1);
@@ -133,6 +69,8 @@ public final class RawResourceDataSource extends BaseDataSource {
             if (parseInt == 0) {
                 throw new RawResourceDataSourceException("Resource not found.", null, 2005);
             }
+        } else {
+            throw new RawResourceDataSourceException("URI must either use scheme rawresource or android.resource", null, 1004);
         }
         transferInitializing(dataSpec);
         try {
@@ -224,5 +162,66 @@ public final class RawResourceDataSource extends BaseDataSource {
         }
         bytesTransferred(read);
         return read;
+    }
+
+    @Override // com.google.android.exoplayer2.upstream.DataSource
+    public Uri getUri() {
+        return this.uri;
+    }
+
+    @Override // com.google.android.exoplayer2.upstream.DataSource
+    public void close() {
+        this.uri = null;
+        try {
+            try {
+                InputStream inputStream = this.inputStream;
+                if (inputStream != null) {
+                    inputStream.close();
+                }
+                this.inputStream = null;
+                try {
+                    try {
+                        AssetFileDescriptor assetFileDescriptor = this.assetFileDescriptor;
+                        if (assetFileDescriptor != null) {
+                            assetFileDescriptor.close();
+                        }
+                    } catch (IOException e) {
+                        throw new RawResourceDataSourceException(null, e, 2000);
+                    }
+                } finally {
+                    this.assetFileDescriptor = null;
+                    if (this.opened) {
+                        this.opened = false;
+                        transferEnded();
+                    }
+                }
+            } catch (IOException e2) {
+                throw new RawResourceDataSourceException(null, e2, 2000);
+            }
+        } catch (Throwable th) {
+            this.inputStream = null;
+            try {
+                try {
+                    AssetFileDescriptor assetFileDescriptor2 = this.assetFileDescriptor;
+                    if (assetFileDescriptor2 != null) {
+                        assetFileDescriptor2.close();
+                    }
+                    this.assetFileDescriptor = null;
+                    if (this.opened) {
+                        this.opened = false;
+                        transferEnded();
+                    }
+                    throw th;
+                } catch (IOException e3) {
+                    throw new RawResourceDataSourceException(null, e3, 2000);
+                }
+            } finally {
+                this.assetFileDescriptor = null;
+                if (this.opened) {
+                    this.opened = false;
+                    transferEnded();
+                }
+            }
+        }
     }
 }

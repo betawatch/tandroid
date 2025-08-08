@@ -10,17 +10,8 @@ import java.net.URI;
 import java.util.Iterator;
 import java.util.List;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 abstract class BrowserUtils {
-    static String appendUri(String str, String str2) {
-        URI uri = new URI(str);
-        String query = uri.getQuery();
-        if (query != null) {
-            str2 = query + "&" + str2;
-        }
-        return new URI(uri.getScheme(), uri.getAuthority(), uri.getPath(), str2, uri.getFragment()).toString();
-    }
-
     static void openBrowser(String str, Activity activity) {
         try {
             openBrowserWithoutIntentChooser(str, activity);
@@ -75,5 +66,14 @@ abstract class BrowserUtils {
         AppCenterLog.debug("AppCenterDistribute", "Launch browser=" + str4 + "/" + str2);
         intent.setClassName(str4, str2);
         activity.startActivity(intent);
+    }
+
+    static String appendUri(String str, String str2) {
+        URI uri = new URI(str);
+        String query = uri.getQuery();
+        if (query != null) {
+            str2 = query + "&" + str2;
+        }
+        return new URI(uri.getScheme(), uri.getAuthority(), uri.getPath(), str2, uri.getFragment()).toString();
     }
 }

@@ -5,7 +5,7 @@ import kotlin.jvm.internal.Intrinsics;
 
 /* loaded from: classes.dex */
 public abstract class PreferencesKeys {
-    public static final Preferences.Key booleanKey(String name) {
+    public static final Preferences.Key intKey(String name) {
         Intrinsics.checkNotNullParameter(name, "name");
         return new Preferences.Key(name);
     }
@@ -15,22 +15,22 @@ public abstract class PreferencesKeys {
         return new Preferences.Key(name);
     }
 
+    public static final Preferences.Key stringKey(String name) {
+        Intrinsics.checkNotNullParameter(name, "name");
+        return new Preferences.Key(name);
+    }
+
+    public static final Preferences.Key booleanKey(String name) {
+        Intrinsics.checkNotNullParameter(name, "name");
+        return new Preferences.Key(name);
+    }
+
     public static final Preferences.Key floatKey(String name) {
         Intrinsics.checkNotNullParameter(name, "name");
         return new Preferences.Key(name);
     }
 
-    public static final Preferences.Key intKey(String name) {
-        Intrinsics.checkNotNullParameter(name, "name");
-        return new Preferences.Key(name);
-    }
-
     public static final Preferences.Key longKey(String name) {
-        Intrinsics.checkNotNullParameter(name, "name");
-        return new Preferences.Key(name);
-    }
-
-    public static final Preferences.Key stringKey(String name) {
         Intrinsics.checkNotNullParameter(name, "name");
         return new Preferences.Key(name);
     }

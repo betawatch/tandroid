@@ -14,14 +14,7 @@ public abstract class ViewModel {
     private final Set mCloseables = new LinkedHashSet();
     private volatile boolean mCleared = false;
 
-    private static void closeWithRuntimeException(Object obj) {
-        if (obj instanceof Closeable) {
-            try {
-                ((Closeable) obj).close();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
+    protected void onCleared() {
     }
 
     final void clear() {
@@ -53,21 +46,6 @@ public abstract class ViewModel {
         onCleared();
     }
 
-    Object getTag(String str) {
-        Object obj;
-        Map map = this.mBagOfTags;
-        if (map == null) {
-            return null;
-        }
-        synchronized (map) {
-            obj = this.mBagOfTags.get(str);
-        }
-        return obj;
-    }
-
-    protected void onCleared() {
-    }
-
     Object setTagIfAbsent(String str, Object obj) {
         Object obj2;
         synchronized (this.mBagOfTags) {
@@ -87,5 +65,27 @@ public abstract class ViewModel {
             closeWithRuntimeException(obj);
         }
         return obj;
+    }
+
+    Object getTag(String str) {
+        Object obj;
+        Map map = this.mBagOfTags;
+        if (map == null) {
+            return null;
+        }
+        synchronized (map) {
+            obj = this.mBagOfTags.get(str);
+        }
+        return obj;
+    }
+
+    private static void closeWithRuntimeException(Object obj) {
+        if (obj instanceof Closeable) {
+            try {
+                ((Closeable) obj).close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 }

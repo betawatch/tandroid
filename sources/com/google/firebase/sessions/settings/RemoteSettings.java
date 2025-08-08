@@ -12,10 +12,10 @@ import kotlin.Pair;
 import kotlin.ResultKt;
 import kotlin.TuplesKt;
 import kotlin.Unit;
-import kotlin.collections.MapsKt__MapsKt;
+import kotlin.collections.MapsKt;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.CoroutineContext;
-import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.StringCompanionObject;
@@ -28,7 +28,7 @@ import kotlinx.coroutines.sync.MutexKt;
 import kotlinx.coroutines.tasks.TasksKt;
 import org.telegram.tgnet.TLObject;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class RemoteSettings implements SettingsProvider {
     private static final Companion Companion = new Companion(null);
     private final ApplicationInfo appInfo;
@@ -37,15 +37,6 @@ public final class RemoteSettings implements SettingsProvider {
     private final Mutex fetchInProgress;
     private final FirebaseInstallationsApi firebaseInstallationsApi;
     private final SettingsCache settingsCache;
-
-    private static final class Companion {
-        private Companion() {
-        }
-
-        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
-            this();
-        }
-    }
 
     public RemoteSettings(CoroutineContext backgroundDispatcher, FirebaseInstallationsApi firebaseInstallationsApi, ApplicationInfo appInfo, CrashlyticsSettingsFetcher configsFetcher, DataStore dataStore) {
         Intrinsics.checkNotNullParameter(backgroundDispatcher, "backgroundDispatcher");
@@ -61,15 +52,6 @@ public final class RemoteSettings implements SettingsProvider {
         this.fetchInProgress = MutexKt.Mutex$default(false, 1, null);
     }
 
-    private final String removeForwardSlashesIn(String str) {
-        return new Regex("/").replace(str, "");
-    }
-
-    @Override // com.google.firebase.sessions.settings.SettingsProvider
-    public Double getSamplingRate() {
-        return this.settingsCache.sessionSamplingRate();
-    }
-
     @Override // com.google.firebase.sessions.settings.SettingsProvider
     public Boolean getSessionEnabled() {
         return this.settingsCache.sessionsEnabled();
@@ -83,6 +65,11 @@ public final class RemoteSettings implements SettingsProvider {
         }
         Duration.Companion companion = Duration.Companion;
         return Duration.box-impl(DurationKt.toDuration(sessionRestartTimeout.intValue(), DurationUnit.SECONDS));
+    }
+
+    @Override // com.google.firebase.sessions.settings.SettingsProvider
+    public Double getSamplingRate() {
+        return this.settingsCache.sessionSamplingRate();
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(8:0|1|(4:(2:3|(7:5|6|7|(1:(1:(1:(8:12|13|14|15|16|17|18|19)(2:29|30))(4:31|32|33|(3:35|36|37)(2:38|(1:40)(5:41|16|17|18|19))))(1:45))(2:55|(2:61|(1:63)(1:64))(2:59|60))|46|47|(3:49|50|51)(4:52|(1:54)|33|(0)(0))))|46|47|(0)(0))|67|6|7|(0)(0)|(1:(0))) */
@@ -107,14 +94,12 @@ public final class RemoteSettings implements SettingsProvider {
     */
     public Object updateSettings(Continuation continuation) {
         RemoteSettings$updateSettings$1 remoteSettings$updateSettings$1;
-        Object coroutine_suspended;
         ?? r8;
         Mutex mutex;
         Object obj;
         Mutex mutex2;
         RemoteSettings remoteSettings;
         String str;
-        Map mapOf;
         Object obj2;
         try {
             if (continuation instanceof RemoteSettings$updateSettings$1) {
@@ -123,7 +108,7 @@ public final class RemoteSettings implements SettingsProvider {
                 if ((i & TLObject.FLAG_31) != 0) {
                     remoteSettings$updateSettings$1.label = i - TLObject.FLAG_31;
                     Object obj3 = remoteSettings$updateSettings$1.result;
-                    coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                    Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                     r8 = remoteSettings$updateSettings$1.label;
                     if (r8 != 0) {
                         ResultKt.throwOnFailure(obj3);
@@ -142,29 +127,29 @@ public final class RemoteSettings implements SettingsProvider {
                     } else {
                         if (r8 != 1) {
                             if (r8 != 2) {
-                                if (r8 != 3) {
-                                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                                }
-                                mutex = (Mutex) remoteSettings$updateSettings$1.L$0;
-                                try {
-                                    ResultKt.throwOnFailure(obj3);
-                                    obj2 = null;
+                                if (r8 == 3) {
+                                    mutex = (Mutex) remoteSettings$updateSettings$1.L$0;
                                     try {
-                                        Unit unit = Unit.INSTANCE;
-                                        mutex.unlock(obj2);
-                                        return Unit.INSTANCE;
-                                    } catch (Throwable th) {
-                                        th = th;
+                                        ResultKt.throwOnFailure(obj3);
+                                        obj2 = null;
+                                        try {
+                                            Unit unit = Unit.INSTANCE;
+                                            mutex.unlock(obj2);
+                                            return Unit.INSTANCE;
+                                        } catch (Throwable th) {
+                                            th = th;
+                                            obj = null;
+                                            mutex.unlock(obj);
+                                            throw th;
+                                        }
+                                    } catch (Throwable th2) {
+                                        th = th2;
                                         obj = null;
                                         mutex.unlock(obj);
                                         throw th;
                                     }
-                                } catch (Throwable th2) {
-                                    th = th2;
-                                    obj = null;
-                                    mutex.unlock(obj);
-                                    throw th;
                                 }
+                                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                             }
                             mutex2 = (Mutex) remoteSettings$updateSettings$1.L$1;
                             remoteSettings = (RemoteSettings) remoteSettings$updateSettings$1.L$0;
@@ -186,7 +171,7 @@ public final class RemoteSettings implements SettingsProvider {
                             Pair pair3 = TuplesKt.to("X-Crashlytics-OS-Build-Version", remoteSettings.removeForwardSlashesIn(INCREMENTAL));
                             String RELEASE = Build.VERSION.RELEASE;
                             Intrinsics.checkNotNullExpressionValue(RELEASE, "RELEASE");
-                            mapOf = MapsKt__MapsKt.mapOf(pair, pair2, pair3, TuplesKt.to("X-Crashlytics-OS-Display-Version", remoteSettings.removeForwardSlashesIn(RELEASE)), TuplesKt.to("X-Crashlytics-API-Client-Version", remoteSettings.appInfo.getSessionSdkVersion()));
+                            Map mapOf = MapsKt.mapOf(pair, pair2, pair3, TuplesKt.to("X-Crashlytics-OS-Display-Version", remoteSettings.removeForwardSlashesIn(RELEASE)), TuplesKt.to("X-Crashlytics-API-Client-Version", remoteSettings.appInfo.getSessionSdkVersion()));
                             Log.d("SessionConfigFetcher", "Fetching settings from server.");
                             CrashlyticsSettingsFetcher crashlyticsSettingsFetcher = remoteSettings.configsFetcher;
                             obj2 = null;
@@ -238,9 +223,22 @@ public final class RemoteSettings implements SettingsProvider {
         }
         remoteSettings$updateSettings$1 = new RemoteSettings$updateSettings$1(this, continuation);
         Object obj32 = remoteSettings$updateSettings$1.result;
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         r8 = remoteSettings$updateSettings$1.label;
         if (r8 != 0) {
+        }
+    }
+
+    private final String removeForwardSlashesIn(String str) {
+        return new Regex("/").replace(str, "");
+    }
+
+    private static final class Companion {
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        private Companion() {
         }
     }
 }
