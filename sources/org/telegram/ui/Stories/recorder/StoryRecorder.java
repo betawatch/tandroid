@@ -68,6 +68,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.dynamicanimation.animation.DynamicAnimation;
 import androidx.dynamicanimation.animation.SpringAnimation;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
+import j$.util.Objects;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
@@ -75,7 +76,6 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.ApplicationLoader;
@@ -2061,7 +2061,7 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
                     this.topGradient = linearGradient;
                     this.topGradientPaint.setShader(linearGradient);
                 }
-                this.topGradientPaint.setAlpha(NotificationCenter.goingToPreviewTheme);
+                this.topGradientPaint.setAlpha(NotificationCenter.needCheckSystemBarColors);
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(0.0f, 0.0f, getWidth(), AndroidUtilities.dp(84.0f) + f);
                 canvas.drawRoundRect(rectF, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), this.topGradientPaint);
@@ -4445,7 +4445,7 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
             int i3 = num.intValue() != -1 ? 0 : 90;
             if (num.intValue() != -1) {
                 if (i > i2) {
-                    i3 = NotificationCenter.messagePlayingSpeedChanged;
+                    i3 = NotificationCenter.notificationsCountUpdated;
                 }
             } else if (i2 > i && i3 != 0) {
                 i3 = 0;

@@ -38,12 +38,12 @@ import androidx.core.widget.NestedScrollView;
 import androidx.dynamicanimation.animation.DynamicAnimation;
 import androidx.dynamicanimation.animation.SpringAnimation;
 import com.google.android.exoplayer2.util.Consumer;
+import j$.util.Objects;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Objects;
 import java.util.Stack;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
@@ -1516,7 +1516,7 @@ public class StoryCaptionView extends NestedScrollView {
         @Override // android.view.View
         protected void onDraw(Canvas canvas) {
             if (this.showMore != null) {
-                canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.goingToPreviewTheme, 31);
+                canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.needCheckSystemBarColors, 31);
             } else {
                 canvas.save();
             }

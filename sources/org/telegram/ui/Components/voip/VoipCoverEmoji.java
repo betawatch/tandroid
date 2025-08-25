@@ -116,7 +116,7 @@ public class VoipCoverEmoji {
         long j2 = NotificationCenter.suggestedFiltersLoaded;
         ofFloat.setStartDelay(j2);
         ofFloat.start();
-        ValueAnimator ofInt = ValueAnimator.ofInt(0, NotificationCenter.goingToPreviewTheme, NotificationCenter.goingToPreviewTheme);
+        ValueAnimator ofInt = ValueAnimator.ofInt(0, NotificationCenter.needCheckSystemBarColors, NotificationCenter.needCheckSystemBarColors);
         ofInt.setInterpolator(CubicBezierInterpolator.DEFAULT);
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoipCoverEmoji$$ExternalSyntheticLambda2
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener

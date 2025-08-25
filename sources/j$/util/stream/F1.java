@@ -1,66 +1,75 @@
 package j$.util.stream;
 
-import j$.util.function.BiConsumer;
-import j$.util.function.Consumer;
-import j$.util.function.Supplier;
+import j$.util.function.Consumer$-CC;
+import java.util.function.Consumer;
+import java.util.function.DoubleConsumer;
+import java.util.function.ObjDoubleConsumer;
+import java.util.function.Supplier;
 
 /* loaded from: classes2.dex */
-final class F1 extends O1 implements N1 {
+final class F1 extends T1 implements S1, j2 {
     final /* synthetic */ Supplier b;
-    final /* synthetic */ BiConsumer c;
-    final /* synthetic */ BiConsumer d;
+    final /* synthetic */ ObjDoubleConsumer c;
+    final /* synthetic */ q d;
 
-    @Override // j$.util.stream.d2, j$.util.function.l
-    public final /* synthetic */ void accept(double d) {
-        t0.b();
-        throw null;
-    }
-
-    @Override // j$.util.stream.d2
+    @Override // j$.util.stream.m2
     public final /* synthetic */ void accept(int i) {
-        t0.k();
+        w0.k();
         throw null;
     }
 
-    @Override // j$.util.stream.d2
+    @Override // j$.util.stream.m2
     public final /* synthetic */ void accept(long j) {
-        t0.l();
+        w0.l();
         throw null;
     }
 
-    @Override // j$.util.function.Consumer
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final /* bridge */ /* synthetic */ void p(Object obj) {
+        p((Double) obj);
+    }
+
     public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer.-CC.$default$andThen(this, consumer);
+        return Consumer$-CC.$default$andThen(this, consumer);
     }
 
-    @Override // j$.util.stream.d2
-    public final /* synthetic */ void m() {
+    public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {
+        return j$.com.android.tools.r8.a.a(this, doubleConsumer);
     }
 
-    @Override // j$.util.stream.d2
-    public final /* synthetic */ boolean q() {
+    @Override // j$.util.stream.m2
+    public final /* synthetic */ void k() {
+    }
+
+    @Override // j$.util.stream.m2
+    public final /* synthetic */ boolean n() {
         return false;
     }
 
-    @Override // j$.util.stream.N1
-    public final void h(N1 n1) {
-        this.d.accept(this.a, ((F1) n1).a);
+    @Override // j$.util.stream.j2
+    public final /* synthetic */ void p(Double d) {
+        w0.e(this, d);
     }
 
-    @Override // j$.util.stream.d2
-    public final void n(long j) {
+    @Override // j$.util.stream.S1
+    public final void g(S1 s1) {
+        this.a = this.d.apply(this.a, ((F1) s1).a);
+    }
+
+    @Override // j$.util.stream.m2
+    public final void l(long j) {
         this.a = this.b.get();
     }
 
-    @Override // j$.util.function.Consumer
-    /* renamed from: accept */
-    public final void r(Object obj) {
-        this.c.accept(this.a, obj);
+    @Override // j$.util.stream.m2, j$.util.stream.j2, java.util.function.DoubleConsumer
+    public final void accept(double d) {
+        this.c.accept(this.a, d);
     }
 
-    F1(Supplier supplier, BiConsumer biConsumer, BiConsumer biConsumer2) {
+    F1(Supplier supplier, ObjDoubleConsumer objDoubleConsumer, q qVar) {
         this.b = supplier;
-        this.c = biConsumer;
-        this.d = biConsumer2;
+        this.c = objDoubleConsumer;
+        this.d = qVar;
     }
 }

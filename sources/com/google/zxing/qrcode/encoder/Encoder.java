@@ -465,7 +465,7 @@ public abstract class Encoder {
                         if (i != -1) {
                             throw new WriterException("Invalid byte sequence");
                         }
-                        bitArray.appendBits(((i >> 8) * NotificationCenter.storiesSendAsUpdate) + (i & NotificationCenter.goingToPreviewTheme), 13);
+                        bitArray.appendBits(((i >> 8) * NotificationCenter.storiesSendAsUpdate) + (i & NotificationCenter.needCheckSystemBarColors), 13);
                     } else {
                         i4 = 49472;
                     }

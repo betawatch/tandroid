@@ -243,7 +243,7 @@ public final class BulletinFactory {
         }
         Bulletin.TwoLineLayout twoLineLayout = new Bulletin.TwoLineLayout(getContext(), this.resourcesProvider);
         TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, AndroidUtilities.dp(28.0f), true, null, false);
-        twoLineLayout.imageView.setImage(ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, AndroidUtilities.dp(28.0f), true, closestPhotoSizeWithSize, true), document), "28_28", ImageLocation.getForDocument(closestPhotoSizeWithSize, document), "28_28", null, 0L, 0, null);
+        twoLineLayout.imageView.setImage(ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, AndroidUtilities.dp(28.0f), true, closestPhotoSizeWithSize, true), document), "28_28", ImageLocation.getForDocument(closestPhotoSizeWithSize, document), "28_28", (String) null, 0L, 0, (Object) null);
         twoLineLayout.imageView.getImageReceiver().setRoundRadius(AndroidUtilities.dp(5.0f));
         twoLineLayout.titleTextView.setSingleLine(false);
         twoLineLayout.titleTextView.setText(charSequence);
@@ -260,7 +260,7 @@ public final class BulletinFactory {
         }
         Bulletin.TwoLineLayout twoLineLayout = new Bulletin.TwoLineLayout(getContext(), this.resourcesProvider);
         TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, AndroidUtilities.dp(28.0f), true, null, false);
-        twoLineLayout.imageView.setImage(ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, AndroidUtilities.dp(28.0f), true, closestPhotoSizeWithSize, true), document), "28_28", ImageLocation.getForDocument(closestPhotoSizeWithSize, document), "28_28", null, 0L, 0, null);
+        twoLineLayout.imageView.setImage(ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, AndroidUtilities.dp(28.0f), true, closestPhotoSizeWithSize, true), document), "28_28", ImageLocation.getForDocument(closestPhotoSizeWithSize, document), "28_28", (String) null, 0L, 0, (Object) null);
         twoLineLayout.imageView.getImageReceiver().setRoundRadius(AndroidUtilities.dp(5.0f));
         twoLineLayout.titleTextView.setText(charSequence);
         twoLineLayout.titleTextView.setSingleLine(true);
@@ -1116,7 +1116,7 @@ public final class BulletinFactory {
     public static Bulletin createInviteSentBulletin(Context context, FrameLayout frameLayout, int i, long j, int i2, int i3, int i4) {
         SpannableStringBuilder replaceTags;
         final Bulletin.LottieLayout lottieLayout = new Bulletin.LottieLayout(context, null, i3, i4);
-        int i5 = NotificationCenter.permissionsGranted;
+        int i5 = NotificationCenter.premiumStickersPreviewLoaded;
         if (i > 1) {
             replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString("InvLinkToChats", R.string.InvLinkToChats, LocaleController.formatPluralString("Chats", i, new Object[0])));
             lottieLayout.setAnimation(R.raw.forward, 30, 30, new String[0]);
@@ -1290,7 +1290,7 @@ public final class BulletinFactory {
             public final void run() {
                 Bulletin.LottieLayout.this.performHapticFeedback(3, 2);
             }
-        }, NotificationCenter.permissionsGranted);
+        }, NotificationCenter.premiumStickersPreviewLoaded);
         if (frameLayout != null) {
             make = Bulletin.make(frameLayout, lottieLayout, i5);
         } else if (baseFragment != null) {

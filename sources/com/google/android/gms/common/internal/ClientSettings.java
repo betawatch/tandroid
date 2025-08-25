@@ -6,6 +6,7 @@ import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfN
 import androidx.collection.ArraySet;
 import com.google.android.gms.common.api.Api;
 import com.google.android.gms.signin.SignInOptions;
+import j$.util.DesugarCollections;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -117,7 +118,7 @@ public final class ClientSettings {
 
     public ClientSettings(Account account, Set set, Map map, int i, View view, String str, String str2, SignInOptions signInOptions, boolean z) {
         this.zaa = account;
-        Set emptySet = set == null ? Collections.emptySet() : Collections.unmodifiableSet(set);
+        Set emptySet = set == null ? Collections.emptySet() : DesugarCollections.unmodifiableSet(set);
         this.zab = emptySet;
         map = map == null ? Collections.emptyMap() : map;
         this.zad = map;
@@ -132,6 +133,6 @@ public final class ClientSettings {
             WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
             throw null;
         }
-        this.zac = Collections.unmodifiableSet(hashSet);
+        this.zac = DesugarCollections.unmodifiableSet(hashSet);
     }
 }

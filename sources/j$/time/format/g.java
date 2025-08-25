@@ -1,39 +1,48 @@
 package j$.time.format;
 
-import j$.util.A;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
 
 /* loaded from: classes2.dex */
-final class g implements f {
-    private final j$.time.temporal.a a;
-    private final int b;
-    private final boolean c;
+final class g extends i {
+    private final boolean g;
 
-    g(j$.time.temporal.a aVar) {
-        A.z(aVar, "field");
-        if (!aVar.m().f()) {
-            throw new IllegalArgumentException("Field must have a fixed set of values: " + aVar);
-        }
-        this.a = aVar;
-        this.b = 9;
-        this.c = true;
+    g(j$.time.temporal.r rVar, int i, int i2, boolean z, int i3) {
+        super(rVar, i, i2, x.NOT_NEGATIVE, i3);
+        this.g = z;
     }
 
-    @Override // j$.time.format.f
-    public final boolean f(r rVar, StringBuilder sb) {
-        j$.time.temporal.a aVar = this.a;
-        Long e = rVar.e(aVar);
+    /* JADX WARN: Type inference failed for: r3v0, types: [j$.time.temporal.r, java.lang.Enum] */
+    @Override // j$.time.format.i
+    final i b() {
+        if (this.e == -1) {
+            return this;
+        }
+        return new g(this.a, this.b, this.c, this.g, -1);
+    }
+
+    /* JADX WARN: Type inference failed for: r1v0, types: [j$.time.temporal.r, java.lang.Enum] */
+    @Override // j$.time.format.i
+    final i c(int i) {
+        return new g(this.a, this.b, this.c, this.g, this.e + i);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r0v0, types: [j$.time.temporal.r, java.lang.Enum] */
+    @Override // j$.time.format.i, j$.time.format.f
+    public final boolean i(r rVar, StringBuilder sb) {
+        ?? r0 = this.a;
+        Long e = rVar.e(r0);
         if (e == null) {
             return false;
         }
         v b = rVar.b();
         long longValue = e.longValue();
-        j$.time.temporal.q m = aVar.m();
-        m.b(longValue, aVar);
-        BigDecimal valueOf = BigDecimal.valueOf(m.e());
-        BigDecimal add = BigDecimal.valueOf(m.d()).subtract(valueOf).add(BigDecimal.ONE);
+        j$.time.temporal.w i = r0.i();
+        i.b(longValue, r0);
+        BigDecimal valueOf = BigDecimal.valueOf(i.e());
+        BigDecimal add = BigDecimal.valueOf(i.d()).subtract(valueOf).add(BigDecimal.ONE);
         BigDecimal subtract = BigDecimal.valueOf(longValue).subtract(valueOf);
         RoundingMode roundingMode = RoundingMode.FLOOR;
         BigDecimal divide = subtract.divide(add, 9, roundingMode);
@@ -41,19 +50,34 @@ final class g implements f {
         if (divide.compareTo(bigDecimal) != 0) {
             bigDecimal = divide.signum() == 0 ? new BigDecimal(BigInteger.ZERO, 0) : divide.stripTrailingZeros();
         }
-        if (bigDecimal.scale() == 0) {
+        int scale = bigDecimal.scale();
+        boolean z = this.g;
+        int i2 = this.b;
+        if (scale != 0) {
+            String substring = bigDecimal.setScale(Math.min(Math.max(bigDecimal.scale(), i2), this.c), roundingMode).toPlainString().substring(2);
+            b.getClass();
+            if (z) {
+                sb.append('.');
+            }
+            sb.append(substring);
             return true;
         }
-        String substring = bigDecimal.setScale(Math.min(Math.max(bigDecimal.scale(), 0), this.b), roundingMode).toPlainString().substring(2);
-        b.getClass();
-        if (this.c) {
+        if (i2 <= 0) {
+            return true;
+        }
+        if (z) {
+            b.getClass();
             sb.append('.');
         }
-        sb.append(substring);
+        for (int i3 = 0; i3 < i2; i3++) {
+            b.getClass();
+            sb.append('0');
+        }
         return true;
     }
 
+    @Override // j$.time.format.i
     public final String toString() {
-        return "Fraction(" + this.a + ",0," + this.b + (this.c ? ",DecimalPoint" : "") + ")";
+        return "Fraction(" + this.a + "," + this.b + "," + this.c + (this.g ? ",DecimalPoint" : "") + ")";
     }
 }

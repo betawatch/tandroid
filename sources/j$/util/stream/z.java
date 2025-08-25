@@ -1,5 +1,7 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
+
 /* loaded from: classes2.dex */
 abstract class z extends A {
     public final /* synthetic */ int l;
@@ -11,13 +13,32 @@ abstract class z extends A {
     }
 
     @Override // j$.util.stream.b
-    final boolean v0() {
+    final boolean P() {
         switch (this.l) {
             case 0:
                 return true;
             default:
                 return false;
         }
+    }
+
+    @Override // j$.util.stream.BaseStream
+    public final BaseStream unordered() {
+        switch (this.l) {
+            case 0:
+                if (!K()) {
+                    break;
+                } else {
+                    break;
+                }
+            default:
+                if (!K()) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return new t(this, a3.r, 1);
     }
 
     @Override // j$.util.stream.b, j$.util.stream.BaseStream
@@ -44,5 +65,12 @@ abstract class z extends A {
                 break;
         }
         return this;
+    }
+
+    @Override // j$.util.stream.b, j$.util.stream.BaseStream, j$.util.stream.D
+    public final /* bridge */ /* synthetic */ Spliterator spliterator() {
+        switch (this.l) {
+        }
+        return spliterator();
     }
 }

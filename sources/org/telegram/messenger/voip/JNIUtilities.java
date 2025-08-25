@@ -18,11 +18,12 @@ import java.util.Enumeration;
 import java.util.Iterator;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
+import org.telegram.messenger.NotificationCenter;
 
 /* loaded from: classes3.dex */
 public class JNIUtilities {
     public static int getMaxVideoResolution() {
-        return 320;
+        return NotificationCenter.nearEarEvent;
     }
 
     public static String getCurrentNetworkInterfaceName() {

@@ -2,12 +2,12 @@ package com.google.gson.reflect;
 
 import com.google.gson.internal.$Gson$Types;
 import com.google.gson.internal.TroubleshootingGuide;
+import j$.util.Objects;
 import java.lang.reflect.GenericArrayType;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.lang.reflect.TypeVariable;
 import java.lang.reflect.WildcardType;
-import java.util.Objects;
 
 /* loaded from: classes.dex */
 public class TypeToken<T> {

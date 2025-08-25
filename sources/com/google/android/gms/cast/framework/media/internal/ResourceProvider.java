@@ -3,7 +3,7 @@ package com.google.android.gms.cast.framework.media.internal;
 import com.google.android.gms.cast.framework.R$dimen;
 import com.google.android.gms.cast.framework.R$drawable;
 import com.google.android.gms.cast.framework.R$string;
-import java.util.Collections;
+import j$.util.DesugarCollections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -41,7 +41,7 @@ public final class ResourceProvider {
         hashMap.put("rewind10StringResId", Integer.valueOf(R$string.cast_rewind_10));
         hashMap.put("rewind30StringResId", Integer.valueOf(R$string.cast_rewind_30));
         hashMap.put("disconnectStringResId", Integer.valueOf(R$string.cast_disconnect));
-        zza = Collections.unmodifiableMap(hashMap);
+        zza = DesugarCollections.unmodifiableMap(hashMap);
     }
 
     public static Integer findResourceByName(String str) {

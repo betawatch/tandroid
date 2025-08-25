@@ -1,6 +1,7 @@
 package com.google.firebase.components;
 
 import com.google.firebase.inject.Provider;
+import j$.util.DesugarCollections;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.util.Collection;
 import java.util.Collections;
@@ -33,7 +34,7 @@ class LazySet implements Provider {
                 }
             }
         }
-        return Collections.unmodifiableSet(this.actualSet);
+        return DesugarCollections.unmodifiableSet(this.actualSet);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

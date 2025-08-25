@@ -4,6 +4,7 @@ import com.google.android.exoplayer2.text.Cue;
 import com.google.android.exoplayer2.text.Subtitle;
 import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.Util;
+import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -17,7 +18,7 @@ final class WebvttSubtitle implements Subtitle {
     private final long[] sortedCueTimesUs;
 
     public WebvttSubtitle(List list) {
-        this.cueInfos = Collections.unmodifiableList(new ArrayList(list));
+        this.cueInfos = DesugarCollections.unmodifiableList(new ArrayList(list));
         this.cueTimesUs = new long[list.size() * 2];
         for (int i = 0; i < list.size(); i++) {
             WebvttCueInfo webvttCueInfo = (WebvttCueInfo) list.get(i);

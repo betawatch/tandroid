@@ -1,54 +1,139 @@
 package j$.util.concurrent;
 
-import java.util.Map;
+import j$.util.S;
+import j$.util.Spliterator;
+import java.util.Comparator;
+import java.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-final class j implements Map.Entry {
-    final Object a;
-    Object b;
-    final ConcurrentHashMap c;
+final class j extends p implements Spliterator {
+    public final /* synthetic */ int i;
+    long j;
 
-    j(Object obj, Object obj2, ConcurrentHashMap concurrentHashMap) {
-        this.a = obj;
-        this.b = obj2;
-        this.c = concurrentHashMap;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ j(l[] lVarArr, int i, int i2, int i3, long j, int i4) {
+        super(lVarArr, i, i2, i3);
+        this.i = i4;
+        this.j = j;
     }
 
-    @Override // java.util.Map.Entry
-    public final Object getKey() {
-        return this.a;
+    @Override // j$.util.Spliterator
+    public final int characteristics() {
+        switch (this.i) {
+            case 0:
+                return 4353;
+            default:
+                return 4352;
+        }
     }
 
-    @Override // java.util.Map.Entry
-    public final Object getValue() {
-        return this.b;
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ long getExactSizeIfKnown() {
+        switch (this.i) {
+        }
+        return S.d(this);
     }
 
-    @Override // java.util.Map.Entry
-    public final int hashCode() {
-        return this.a.hashCode() ^ this.b.hashCode();
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean hasCharacteristics(int i) {
+        switch (this.i) {
+        }
+        return S.e(this, i);
     }
 
-    public final String toString() {
-        return this.a + "=" + this.b;
+    @Override // j$.util.Spliterator
+    public final Comparator getComparator() {
+        switch (this.i) {
+            case 0:
+                throw new IllegalStateException();
+            default:
+                throw new IllegalStateException();
+        }
     }
 
-    @Override // java.util.Map.Entry
-    public final boolean equals(Object obj) {
-        Map.Entry entry;
-        Object key;
-        Object value;
-        Object obj2;
-        Object obj3;
-        return (obj instanceof Map.Entry) && (key = (entry = (Map.Entry) obj).getKey()) != null && (value = entry.getValue()) != null && (key == (obj2 = this.a) || key.equals(obj2)) && (value == (obj3 = this.b) || value.equals(obj3));
+    @Override // j$.util.Spliterator
+    public final Spliterator trySplit() {
+        switch (this.i) {
+            case 0:
+                int i = this.f;
+                int i2 = this.g;
+                int i3 = (i + i2) >>> 1;
+                if (i3 <= i) {
+                    return null;
+                }
+                l[] lVarArr = this.a;
+                this.g = i3;
+                long j = this.j >>> 1;
+                this.j = j;
+                return new j(lVarArr, this.h, i3, i2, j, 0);
+            default:
+                int i4 = this.f;
+                int i5 = this.g;
+                int i6 = (i4 + i5) >>> 1;
+                if (i6 <= i4) {
+                    return null;
+                }
+                l[] lVarArr2 = this.a;
+                this.g = i6;
+                long j2 = this.j >>> 1;
+                this.j = j2;
+                return new j(lVarArr2, this.h, i6, i5, j2, 1);
+        }
     }
 
-    @Override // java.util.Map.Entry
-    public final Object setValue(Object obj) {
-        obj.getClass();
-        Object obj2 = this.b;
-        this.b = obj;
-        this.c.put(this.a, obj);
-        return obj2;
+    @Override // j$.util.Spliterator
+    public final void forEachRemaining(Consumer consumer) {
+        switch (this.i) {
+            case 0:
+                consumer.getClass();
+                while (true) {
+                    l a = a();
+                    if (a == null) {
+                        break;
+                    } else {
+                        consumer.accept(a.b);
+                    }
+                }
+            default:
+                consumer.getClass();
+                while (true) {
+                    l a2 = a();
+                    if (a2 == null) {
+                        break;
+                    } else {
+                        consumer.accept(a2.c);
+                    }
+                }
+        }
+    }
+
+    @Override // j$.util.Spliterator
+    public final boolean tryAdvance(Consumer consumer) {
+        switch (this.i) {
+            case 0:
+                consumer.getClass();
+                l a = a();
+                if (a != null) {
+                    consumer.accept(a.b);
+                    break;
+                }
+                break;
+            default:
+                consumer.getClass();
+                l a2 = a();
+                if (a2 != null) {
+                    consumer.accept(a2.c);
+                    break;
+                }
+                break;
+        }
+        return true;
+    }
+
+    @Override // j$.util.Spliterator
+    public final long estimateSize() {
+        switch (this.i) {
+        }
+        return this.j;
     }
 }

@@ -1,51 +1,43 @@
 package j$.util.stream;
 
-import j$.util.function.Consumer;
+import j$.util.Spliterator;
+import java.util.concurrent.CountedCompleter;
 
 /* loaded from: classes2.dex */
-public abstract class Z1 implements d2 {
-    protected final d2 a;
+final class Z1 extends e {
+    private final w0 h;
 
-    @Override // j$.util.stream.d2, j$.util.function.l
-    public final /* synthetic */ void accept(double d) {
-        t0.b();
-        throw null;
+    @Override // j$.util.stream.e, java.util.concurrent.CountedCompleter
+    public final void onCompletion(CountedCompleter countedCompleter) {
+        e eVar = this.d;
+        if (eVar != null) {
+            S1 s1 = (S1) ((Z1) eVar).c();
+            s1.g((S1) ((Z1) this.e).c());
+            f(s1);
+        }
+        super.onCompletion(countedCompleter);
     }
 
-    @Override // j$.util.stream.d2
-    public final /* synthetic */ void accept(int i) {
-        t0.k();
-        throw null;
+    Z1(w0 w0Var, b bVar, Spliterator spliterator) {
+        super(bVar, spliterator);
+        this.h = w0Var;
     }
 
-    @Override // j$.util.stream.d2
-    public final /* synthetic */ void accept(long j) {
-        t0.l();
-        throw null;
+    Z1(Z1 z1, Spliterator spliterator) {
+        super(z1, spliterator);
+        this.h = z1.h;
     }
 
-    @Override // j$.util.function.Consumer
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer.-CC.$default$andThen(this, consumer);
+    @Override // j$.util.stream.e
+    protected final e e(Spliterator spliterator) {
+        return new Z1(this, spliterator);
     }
 
-    public Z1(d2 d2Var) {
-        d2Var.getClass();
-        this.a = d2Var;
-    }
-
-    @Override // j$.util.stream.d2
-    public void n(long j) {
-        this.a.n(j);
-    }
-
-    @Override // j$.util.stream.d2
-    public void m() {
-        this.a.m();
-    }
-
-    @Override // j$.util.stream.d2
-    public boolean q() {
-        return this.a.q();
+    @Override // j$.util.stream.e
+    protected final Object a() {
+        b bVar = this.a;
+        S1 e0 = this.h.e0();
+        bVar.U(this.b, e0);
+        return e0;
     }
 }

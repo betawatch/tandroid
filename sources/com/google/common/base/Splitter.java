@@ -1,7 +1,7 @@
 package com.google.common.base;
 
+import j$.util.DesugarCollections;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
@@ -63,7 +63,7 @@ public final class Splitter {
         while (splittingIterator.hasNext()) {
             arrayList.add((String) splittingIterator.next());
         }
-        return Collections.unmodifiableList(arrayList);
+        return DesugarCollections.unmodifiableList(arrayList);
     }
 
     private static abstract class SplittingIterator extends AbstractIterator {

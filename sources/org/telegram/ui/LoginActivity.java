@@ -100,8 +100,9 @@ import com.google.android.play.core.integrity.IntegrityTokenRequest;
 import com.google.android.play.core.integrity.IntegrityTokenResponse;
 import j$.util.Collection;
 import j$.util.Comparator$-CC;
-import j$.util.function.Function;
-import j$.util.function.Predicate;
+import j$.util.Objects;
+import j$.util.function.Function$-CC;
+import j$.util.function.Predicate$-CC;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
@@ -113,10 +114,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.Function;
+import java.util.function.Predicate;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.PhoneFormat.PhoneFormat;
@@ -2766,21 +2768,19 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 FileLog.e(e);
             }
             Collections.sort(this.countriesArray, Comparator$-CC.comparing(new Function() { // from class: org.telegram.ui.LoginActivity$PhoneView$$ExternalSyntheticLambda12
-                @Override // j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
-                    return Function.-CC.$default$andThen(this, function);
+                    return Function$-CC.$default$andThen(this, function);
                 }
 
-                @Override // j$.util.function.Function
+                @Override // java.util.function.Function
                 public final Object apply(Object obj) {
                     String str3;
                     str3 = ((CountrySelectActivity.Country) obj).name;
                     return str3;
                 }
 
-                @Override // j$.util.function.Function
                 public /* synthetic */ Function compose(Function function) {
-                    return Function.-CC.$default$compose(this, function);
+                    return Function$-CC.$default$compose(this, function);
                 }
             }));
             try {
@@ -3452,22 +3452,19 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     if (!userPhoneNumbers.isEmpty()) {
                         tL_codeSettings.unknown_number = false;
                         tL_codeSettings.current_number = Collection.-EL.stream(userPhoneNumbers).anyMatch(new Predicate() { // from class: org.telegram.ui.LoginActivity$PhoneView$$ExternalSyntheticLambda4
-                            @Override // j$.util.function.Predicate
                             public /* synthetic */ Predicate and(Predicate predicate) {
-                                return Predicate.-CC.$default$and(this, predicate);
+                                return Predicate$-CC.$default$and(this, predicate);
                             }
 
-                            @Override // j$.util.function.Predicate
                             public /* synthetic */ Predicate negate() {
-                                return Predicate.-CC.$default$negate(this);
+                                return Predicate$-CC.$default$negate(this);
                             }
 
-                            @Override // j$.util.function.Predicate
                             public /* synthetic */ Predicate or(Predicate predicate) {
-                                return Predicate.-CC.$default$or(this, predicate);
+                                return Predicate$-CC.$default$or(this, predicate);
                             }
 
-                            @Override // j$.util.function.Predicate
+                            @Override // java.util.function.Predicate
                             public final boolean test(Object obj) {
                                 boolean compare;
                                 compare = PhoneNumberUtils.compare(stripExceptNumbers, (String) obj);

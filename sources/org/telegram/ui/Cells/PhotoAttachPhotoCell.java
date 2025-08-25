@@ -35,6 +35,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -518,9 +519,9 @@ public class PhotoAttachPhotoCell extends FrameLayout {
                         MessageObject.getDocumentVideoThumb(document);
                         TLRPC.VideoSize documentVideoThumb = MessageObject.getDocumentVideoThumb(searchImage.document);
                         if (documentVideoThumb != null) {
-                            this.imageView.setImage(ImageLocation.getForDocument(documentVideoThumb, searchImage.document), null, ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(searchImage.document.thumbs, 90), searchImage.document), "52_52", null, -1L, 1, searchImage);
+                            this.imageView.setImage(ImageLocation.getForDocument(documentVideoThumb, searchImage.document), (String) null, ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(searchImage.document.thumbs, 90), searchImage.document), "52_52", (String) null, -1L, 1, searchImage);
                         } else {
-                            this.imageView.setImage(ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(searchImage.document.thumbs, 320), searchImage.document), (String) null, drawable, searchImage);
+                            this.imageView.setImage(ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(searchImage.document.thumbs, NotificationCenter.nearEarEvent), searchImage.document), (String) null, drawable, searchImage);
                         }
                     } else {
                         this.imageView.setImageDrawable(drawable);

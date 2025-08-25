@@ -33,12 +33,12 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.TextView;
 import androidx.core.graphics.ColorUtils;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
+import j$.util.Objects;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
@@ -928,7 +928,7 @@ public class EditTextBoldCursor extends EditTextEffects {
         int i3;
         drawHint(canvas);
         if (this.ellipsizeByGradient) {
-            canvas.saveLayerAlpha((getScrollX() + getPaddingLeft()) - this.ellipsizeWidth, 0.0f, ((getScrollX() + getWidth()) - getPaddingRight()) + this.ellipsizeWidth, getHeight(), NotificationCenter.goingToPreviewTheme, 31);
+            canvas.saveLayerAlpha((getScrollX() + getPaddingLeft()) - this.ellipsizeWidth, 0.0f, ((getScrollX() + getWidth()) - getPaddingRight()) + this.ellipsizeWidth, getHeight(), NotificationCenter.needCheckSystemBarColors, 31);
         }
         int extendedPaddingTop = getExtendedPaddingTop();
         this.scrollY = ConnectionsManager.DEFAULT_DATACENTER_ID;

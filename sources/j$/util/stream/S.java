@@ -6,13 +6,13 @@ import java.util.concurrent.CountedCompleter;
 /* loaded from: classes2.dex */
 final class S extends CountedCompleter {
     private Spliterator a;
-    private final d2 b;
+    private final m2 b;
     private final b c;
     private long d;
 
-    S(b bVar, Spliterator spliterator, d2 d2Var) {
+    S(b bVar, Spliterator spliterator, m2 m2Var) {
         super(null);
-        this.b = d2Var;
+        this.b = m2Var;
         this.c = bVar;
         this.a = spliterator;
         this.d = 0L;
@@ -33,15 +33,15 @@ final class S extends CountedCompleter {
         long estimateSize = spliterator.estimateSize();
         long j = this.d;
         if (j == 0) {
-            j = e.f(estimateSize);
+            j = e.g(estimateSize);
             this.d = j;
         }
-        boolean i = Q2.SHORT_CIRCUIT.i(this.c.p0());
-        d2 d2Var = this.b;
+        boolean m = a3.SHORT_CIRCUIT.m(this.c.J());
+        m2 m2Var = this.b;
         boolean z = false;
         S s = this;
         while (true) {
-            if (i && d2Var.q()) {
+            if (m && m2Var.n()) {
                 break;
             }
             if (estimateSize <= j || (trySplit = spliterator.trySplit()) == null) {
@@ -61,7 +61,7 @@ final class S extends CountedCompleter {
             s = s2;
             estimateSize = spliterator.estimateSize();
         }
-        s.c.f0(spliterator, d2Var);
+        s.c.z(spliterator, m2Var);
         s.a = null;
         s.propagateCompletion();
     }

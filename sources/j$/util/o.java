@@ -1,74 +1,92 @@
 package j$.util;
 
-import j$.util.function.Consumer;
-import java.util.PrimitiveIterator;
-import java.util.function.Consumer;
-import java.util.function.DoubleConsumer;
+import java.util.Comparator;
+import java.util.ListIterator;
+import java.util.RandomAccess;
+import java.util.function.UnaryOperator;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class o implements PrimitiveIterator.OfDouble {
-    public final /* synthetic */ p a;
+class o extends m implements java.util.List, List {
+    private static final long serialVersionUID = -283967356065247728L;
+    final java.util.List b;
 
-    private /* synthetic */ o(p pVar) {
-        this.a = pVar;
+    o(java.util.List list) {
+        super(list);
+        this.b = list;
     }
 
-    public static /* synthetic */ PrimitiveIterator.OfDouble b(p pVar) {
-        if (pVar == null) {
-            return null;
-        }
-        return pVar instanceof n ? ((n) pVar).a : new o(pVar);
+    @Override // java.util.Collection, java.util.List
+    public final boolean equals(Object obj) {
+        return obj == this || this.b.equals(obj);
     }
 
-    public final /* synthetic */ boolean equals(Object obj) {
-        p pVar = this.a;
-        if (obj instanceof o) {
-            obj = ((o) obj).a;
-        }
-        return pVar.equals(obj);
+    @Override // java.util.Collection, java.util.List
+    public final int hashCode() {
+        return this.b.hashCode();
     }
 
-    @Override // java.util.PrimitiveIterator
-    public final /* synthetic */ void forEachRemaining(DoubleConsumer doubleConsumer) {
-        this.a.forEachRemaining(doubleConsumer);
+    @Override // java.util.List
+    public final Object get(int i) {
+        return this.b.get(i);
     }
 
-    @Override // java.util.PrimitiveIterator.OfDouble, java.util.Iterator
-    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        this.a.a(Consumer.VivifiedWrapper.convert(consumer));
+    @Override // java.util.List
+    public final Object set(int i, Object obj) {
+        throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.PrimitiveIterator.OfDouble
-    public final /* synthetic */ void forEachRemaining(DoubleConsumer doubleConsumer) {
-        this.a.e(j$.util.function.j.a(doubleConsumer));
+    @Override // java.util.List
+    public final void add(int i, Object obj) {
+        throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.Iterator
-    public final /* synthetic */ boolean hasNext() {
-        return this.a.hasNext();
+    @Override // java.util.List
+    public final Object remove(int i) {
+        throw new UnsupportedOperationException();
     }
 
-    public final /* synthetic */ int hashCode() {
-        return this.a.hashCode();
+    @Override // java.util.List
+    public final int indexOf(Object obj) {
+        return this.b.indexOf(obj);
     }
 
-    @Override // java.util.PrimitiveIterator.OfDouble, java.util.Iterator
-    public final /* synthetic */ Double next() {
-        return this.a.next();
+    @Override // java.util.List
+    public final int lastIndexOf(Object obj) {
+        return this.b.lastIndexOf(obj);
     }
 
-    @Override // java.util.PrimitiveIterator.OfDouble, java.util.Iterator
-    public final /* synthetic */ Object next() {
-        return this.a.next();
+    @Override // java.util.List
+    public final boolean addAll(int i, java.util.Collection collection) {
+        throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.PrimitiveIterator.OfDouble
-    public final /* synthetic */ double nextDouble() {
-        return this.a.nextDouble();
+    @Override // java.util.List, j$.util.List
+    public final void replaceAll(UnaryOperator unaryOperator) {
+        throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.Iterator
-    public final /* synthetic */ void remove() {
-        this.a.remove();
+    @Override // java.util.List, j$.util.List
+    public final void sort(Comparator comparator) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.List
+    public final ListIterator listIterator() {
+        return new n(this, 0);
+    }
+
+    @Override // java.util.List
+    public final ListIterator listIterator(int i) {
+        return new n(this, i);
+    }
+
+    @Override // java.util.List
+    public java.util.List subList(int i, int i2) {
+        return new o(this.b.subList(i, i2));
+    }
+
+    private Object readResolve() {
+        java.util.List list = this.b;
+        return list instanceof RandomAccess ? new u(list) : this;
     }
 }

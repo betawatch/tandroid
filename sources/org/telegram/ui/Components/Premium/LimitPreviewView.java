@@ -338,21 +338,21 @@ public class LimitPreviewView extends LinearLayout {
         this.limitIcon.requestLayout();
     }
 
-    public void setIconValue(int i, int i2, boolean z) {
+    public void setIconValue(int i, int i2, boolean z, boolean z2) {
         if (i < 0) {
-            setIconValue(i, z);
+            setIconValue(i, z2);
             return;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) "d").setSpan(new ColoredImageSpan(this.icon), 0, 1, 0);
         spannableStringBuilder.append((CharSequence) " ").setSpan(new RelativeSizeSpan(0.8f), 1, 2, 0);
-        spannableStringBuilder.append((CharSequence) LocaleController.formatNumber(i, ','));
+        spannableStringBuilder.append((CharSequence) ((!z || i <= 1200) ? LocaleController.formatNumber(i, ',') : LocaleController.formatShortNumber(i, null)));
         int length = spannableStringBuilder.length();
         spannableStringBuilder.append((CharSequence) "\u200a/\u200a");
-        spannableStringBuilder.append((CharSequence) LocaleController.formatNumber(i2, ','));
+        spannableStringBuilder.append((CharSequence) ((!z || i2 <= 1200) ? LocaleController.formatNumber(i2, ',') : LocaleController.formatShortNumber(i2, null)));
         spannableStringBuilder.setSpan(new EllipsizeSpanAnimator.TextAlphaSpan(NotificationCenter.closeInCallActivity), length, spannableStringBuilder.length(), 33);
         spannableStringBuilder.setSpan(new RelativeSizeSpan(0.65f), length, spannableStringBuilder.length(), 33);
-        this.limitIcon.setText(spannableStringBuilder, z);
+        this.limitIcon.setText(spannableStringBuilder, z2);
         this.limitIcon.requestLayout();
     }
 
@@ -794,7 +794,7 @@ public class LimitPreviewView extends LinearLayout {
         this.premiumText.setVisibility(8);
         this.premiumCount.setTextColor(this.isRatingNegative ? -1 : Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, this.resourcesProvider));
         this.defaultText.setTextColor(-1);
-        setIconValue((int) tl_starsRating.stars, (int) tl_starsRating.next_level_stars, false);
+        setIconValue((int) tl_starsRating.stars, (int) tl_starsRating.next_level_stars, true, false);
         this.isBoostsStyle = true;
         this.isSimpleStyle = true;
         this.isRatingStyle = true;
@@ -841,7 +841,7 @@ public class LimitPreviewView extends LinearLayout {
             requestLayout();
             this.premiumCount.setTextColor(this.isRatingNegative ? -1 : Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, this.resourcesProvider));
             this.defaultText.setTextColor(-1);
-            setIconValue((int) tl_starsRating2.stars, (int) tl_starsRating2.next_level_stars, false);
+            setIconValue((int) tl_starsRating2.stars, (int) tl_starsRating2.next_level_stars, true, false);
             return;
         }
         if (i3 > i2) {
@@ -863,7 +863,7 @@ public class LimitPreviewView extends LinearLayout {
             CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
             duration.setInterpolator(cubicBezierInterpolator).start();
             this.premiumCount.animate().alpha(0.0f).scaleX(0.7f).scaleY(0.7f).setDuration(320L).setInterpolator(cubicBezierInterpolator).start();
-            setIconValue((int) tl_starsRating.stars, (int) tl_starsRating.next_level_stars, false);
+            setIconValue((int) tl_starsRating.stars, (int) tl_starsRating.next_level_stars, true, false);
             Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.Premium.LimitPreviewView$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -895,7 +895,7 @@ public class LimitPreviewView extends LinearLayout {
             this.premiumCount.animate().alpha(0.0f).scaleX(0.7f).scaleY(0.7f).setDuration(320L).setInterpolator(cubicBezierInterpolator2).start();
             this.premiumCount.setTextColor(this.isRatingNegative ? -1 : Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, this.resourcesProvider));
             this.defaultText.setTextColor(-1);
-            setIconValue((int) tl_starsRating.stars, (int) tl_starsRating.next_level_stars, false);
+            setIconValue((int) tl_starsRating.stars, (int) tl_starsRating.next_level_stars, true, false);
             Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Components.Premium.LimitPreviewView$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -956,7 +956,7 @@ public class LimitPreviewView extends LinearLayout {
             this.premiumCount.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L).setInterpolator(cubicBezierInterpolator).start();
             this.premiumCount.setTextColor(this.isRatingNegative ? -1 : Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, this.resourcesProvider));
             this.defaultText.setTextColor(-1);
-            setIconValue((int) tl_starsRating.stars, (int) tl_starsRating.next_level_stars, false);
+            setIconValue((int) tl_starsRating.stars, (int) tl_starsRating.next_level_stars, true, false);
         }
     }
 
@@ -1009,7 +1009,7 @@ public class LimitPreviewView extends LinearLayout {
             this.premiumCount.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L).setInterpolator(cubicBezierInterpolator).start();
             this.premiumCount.setTextColor(this.isRatingNegative ? -1 : Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, this.resourcesProvider));
             this.defaultText.setTextColor(-1);
-            setIconValue((int) tl_starsRating.stars, (int) tl_starsRating.next_level_stars, false);
+            setIconValue((int) tl_starsRating.stars, (int) tl_starsRating.next_level_stars, true, false);
         }
     }
 

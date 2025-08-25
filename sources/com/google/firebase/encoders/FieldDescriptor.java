@@ -1,5 +1,6 @@
 package com.google.firebase.encoders;
 
+import j$.util.DesugarCollections;
 import java.lang.annotation.Annotation;
 import java.util.Collections;
 import java.util.HashMap;
@@ -72,7 +73,7 @@ public final class FieldDescriptor {
             if (this.properties == null) {
                 unmodifiableMap = Collections.emptyMap();
             } else {
-                unmodifiableMap = Collections.unmodifiableMap(new HashMap(this.properties));
+                unmodifiableMap = DesugarCollections.unmodifiableMap(new HashMap(this.properties));
             }
             return new FieldDescriptor(str, unmodifiableMap);
         }

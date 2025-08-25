@@ -1,5 +1,6 @@
 package com.google.android.recaptcha.internal;
 
+import j$.util.DesugarCollections;
 import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -118,7 +119,7 @@ public final class zzjl extends zzgh implements RandomAccess, zzjm {
 
     @Override // com.google.android.recaptcha.internal.zzjm
     public final List zzh() {
-        return Collections.unmodifiableList(this.zzc);
+        return DesugarCollections.unmodifiableList(this.zzc);
     }
 
     @Override // com.google.android.recaptcha.internal.zzjm

@@ -18,12 +18,12 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import androidx.core.graphics.ColorUtils;
 import androidx.recyclerview.widget.ChatListItemAnimator;
+import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.DocumentObject;
@@ -1055,7 +1055,7 @@ public class ReactionsLayoutInBubble {
                 if (view != null) {
                     view.invalidate();
                 }
-                this.particles.draw(canvas, ColorUtils.blendARGB(ColorUtils.setAlphaComponent(this.backgroundColor, NotificationCenter.goingToPreviewTheme), ColorUtils.blendARGB(this.serviceTextColor, ColorUtils.setAlphaComponent(this.backgroundColor, NotificationCenter.goingToPreviewTheme), 0.4f), getDrawServiceShaderBackground()));
+                this.particles.draw(canvas, ColorUtils.blendARGB(ColorUtils.setAlphaComponent(this.backgroundColor, NotificationCenter.needCheckSystemBarColors), ColorUtils.blendARGB(this.serviceTextColor, ColorUtils.setAlphaComponent(this.backgroundColor, NotificationCenter.needCheckSystemBarColors), 0.4f), getDrawServiceShaderBackground()));
                 canvas.save();
                 canvas.clipPath(this.tagPath);
                 this.particles.draw(canvas, this.textColor);
@@ -1191,7 +1191,7 @@ public class ReactionsLayoutInBubble {
             }
             if (z4) {
                 rectF.right += AndroidUtilities.dp(4.0f);
-                canvas.saveLayerAlpha(rectF, NotificationCenter.goingToPreviewTheme, 31);
+                canvas.saveLayerAlpha(rectF, NotificationCenter.needCheckSystemBarColors, 31);
                 rectF.right -= AndroidUtilities.dp(4.0f);
             }
             if (this.particles != null) {

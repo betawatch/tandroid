@@ -1,74 +1,73 @@
 package j$.util;
 
-import j$.util.Spliterator;
-import j$.util.function.Consumer;
-import java.util.Comparator;
-import java.util.Spliterator;
+import java.util.PrimitiveIterator;
+import java.util.function.Consumer;
+import java.util.function.LongConsumer;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class N implements Spliterator {
-    public final /* synthetic */ java.util.Spliterator a;
+public final /* synthetic */ class N implements PrimitiveIterator.OfLong {
+    public final /* synthetic */ O a;
 
-    private /* synthetic */ N(java.util.Spliterator spliterator) {
-        this.a = spliterator;
+    private /* synthetic */ N(O o) {
+        this.a = o;
     }
 
-    public static /* synthetic */ Spliterator b(java.util.Spliterator spliterator) {
-        if (spliterator == null) {
+    public static /* synthetic */ PrimitiveIterator.OfLong a(O o) {
+        if (o == null) {
             return null;
         }
-        return spliterator instanceof Spliterator.Wrapper ? Spliterator.this : spliterator instanceof Spliterator.OfPrimitive ? K.b((Spliterator.OfPrimitive) spliterator) : new N(spliterator);
-    }
-
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ void a(Consumer consumer) {
-        this.a.forEachRemaining(Consumer.Wrapper.convert(consumer));
-    }
-
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ int characteristics() {
-        return this.a.characteristics();
+        return o instanceof M ? ((M) o).a : new N(o);
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        java.util.Spliterator spliterator = this.a;
+        O o = this.a;
         if (obj instanceof N) {
             obj = ((N) obj).a;
         }
-        return spliterator.equals(obj);
+        return o.equals(obj);
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ long estimateSize() {
-        return this.a.estimateSize();
+    @Override // java.util.PrimitiveIterator
+    public final /* synthetic */ void forEachRemaining(LongConsumer longConsumer) {
+        this.a.forEachRemaining((Object) longConsumer);
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ Comparator getComparator() {
-        return this.a.getComparator();
+    @Override // java.util.PrimitiveIterator.OfLong, java.util.Iterator
+    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
+        this.a.forEachRemaining(consumer);
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ long getExactSizeIfKnown() {
-        return this.a.getExactSizeIfKnown();
+    @Override // java.util.PrimitiveIterator.OfLong
+    public final /* synthetic */ void forEachRemaining(LongConsumer longConsumer) {
+        this.a.forEachRemaining(longConsumer);
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return this.a.hasCharacteristics(i);
+    @Override // java.util.Iterator
+    public final /* synthetic */ boolean hasNext() {
+        return this.a.hasNext();
     }
 
     public final /* synthetic */ int hashCode() {
         return this.a.hashCode();
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean s(Consumer consumer) {
-        return this.a.tryAdvance(Consumer.Wrapper.convert(consumer));
+    @Override // java.util.PrimitiveIterator.OfLong, java.util.Iterator
+    public final /* synthetic */ Long next() {
+        return this.a.next();
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ Spliterator trySplit() {
-        return b(this.a.trySplit());
+    @Override // java.util.PrimitiveIterator.OfLong, java.util.Iterator
+    public final /* synthetic */ Object next() {
+        return this.a.next();
+    }
+
+    @Override // java.util.PrimitiveIterator.OfLong
+    public final /* synthetic */ long nextLong() {
+        return this.a.nextLong();
+    }
+
+    @Override // java.util.Iterator
+    public final /* synthetic */ void remove() {
+        this.a.remove();
     }
 }

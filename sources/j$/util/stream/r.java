@@ -1,40 +1,66 @@
 package j$.util.stream;
 
-import j$.util.function.BiConsumer;
-import j$.util.function.BiFunction;
-import j$.util.function.BinaryOperator;
-import j$.util.function.Function;
+import java.util.function.DoubleConsumer;
+import java.util.function.DoubleFunction;
+import java.util.function.DoublePredicate;
+import java.util.function.DoubleToIntFunction;
+import java.util.function.DoubleToLongFunction;
+import java.util.function.DoubleUnaryOperator;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class r implements BinaryOperator {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ BiConsumer b;
+final class r extends f2 {
+    public final /* synthetic */ int b;
+    final /* synthetic */ b c;
 
-    public /* synthetic */ r(BiConsumer biConsumer, int i) {
-        this.a = i;
-        this.b = biConsumer;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ r(b bVar, m2 m2Var, int i) {
+        super(m2Var);
+        this.b = i;
+        this.c = bVar;
     }
 
-    @Override // j$.util.function.BiFunction
-    public final /* synthetic */ BiFunction andThen(Function function) {
-        switch (this.a) {
-        }
-        return BiFunction.-CC.$default$andThen(this, function);
-    }
-
-    @Override // j$.util.function.BiFunction
-    public final Object apply(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                this.b.accept(obj, obj2);
-                break;
-            case 1:
-                this.b.accept(obj, obj2);
+    @Override // j$.util.stream.f2, j$.util.stream.m2
+    public void l(long j) {
+        switch (this.b) {
+            case 4:
+                this.a.l(-1L);
                 break;
             default:
-                this.b.accept(obj, obj2);
+                super.l(j);
                 break;
         }
-        return obj;
+    }
+
+    @Override // j$.util.stream.j2, java.util.function.DoubleConsumer
+    public final void accept(double d) {
+        switch (this.b) {
+            case 0:
+                this.a.accept((m2) ((DoubleFunction) ((s) this.c).n).apply(d));
+                return;
+            case 1:
+                ((t) this.c).getClass();
+                DoubleUnaryOperator doubleUnaryOperator = null;
+                doubleUnaryOperator.applyAsDouble(d);
+                throw null;
+            case 2:
+                ((u) this.c).getClass();
+                DoubleToIntFunction doubleToIntFunction = null;
+                doubleToIntFunction.applyAsInt(d);
+                throw null;
+            case 3:
+                ((v) this.c).getClass();
+                DoubleToLongFunction doubleToLongFunction = null;
+                doubleToLongFunction.applyAsLong(d);
+                throw null;
+            case 4:
+                ((t) this.c).getClass();
+                DoublePredicate doublePredicate = null;
+                doublePredicate.test(d);
+                throw null;
+            default:
+                ((DoubleConsumer) ((x) this.c).n).accept(d);
+                this.a.accept(d);
+                return;
+        }
     }
 }

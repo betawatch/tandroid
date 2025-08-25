@@ -1,46 +1,37 @@
 package j$.util.concurrent;
 
-import java.util.Enumeration;
-import java.util.Iterator;
-import java.util.NoSuchElementException;
-
 /* loaded from: classes2.dex */
-final class g extends a implements Iterator, Enumeration {
-    public final /* synthetic */ int k;
+final class g extends l {
+    final l[] e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ g(k[] kVarArr, int i, int i2, ConcurrentHashMap concurrentHashMap, int i3) {
-        super(kVarArr, i, i2, concurrentHashMap);
-        this.k = i3;
+    g(l[] lVarArr) {
+        super(-1, null, null);
+        this.e = lVarArr;
     }
 
-    @Override // java.util.Iterator
-    public final Object next() {
-        switch (this.k) {
-            case 0:
-                k kVar = this.b;
-                if (kVar == null) {
-                    throw new NoSuchElementException();
+    @Override // j$.util.concurrent.l
+    final l a(int i, Object obj) {
+        int length;
+        l k;
+        Object obj2;
+        l[] lVarArr = this.e;
+        loop0: while (obj != null && lVarArr != null && (length = lVarArr.length) != 0 && (k = ConcurrentHashMap.k(lVarArr, (length - 1) & i)) != null) {
+            do {
+                int i2 = k.a;
+                if (i2 == i && ((obj2 = k.b) == obj || (obj2 != null && obj.equals(obj2)))) {
+                    return k;
                 }
-                this.j = kVar;
-                b();
-                return kVar.b;
-            default:
-                k kVar2 = this.b;
-                if (kVar2 == null) {
-                    throw new NoSuchElementException();
+                if (i2 < 0) {
+                    if (k instanceof g) {
+                        lVarArr = ((g) k).e;
+                    } else {
+                        return k.a(i, obj);
+                    }
+                } else {
+                    k = k.d;
                 }
-                Object obj = kVar2.c;
-                this.j = kVar2;
-                b();
-                return obj;
+            } while (k != null);
         }
-    }
-
-    @Override // java.util.Enumeration
-    public final Object nextElement() {
-        switch (this.k) {
-        }
-        return next();
+        return null;
     }
 }

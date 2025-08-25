@@ -1,11 +1,11 @@
 package org.telegram.ui;
 
-import j$.util.function.Supplier;
 import java.util.ArrayList;
+import java.util.function.Supplier;
 
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ChatActivity$$ExternalSyntheticLambda251 implements Supplier {
-    @Override // j$.util.function.Supplier
+    @Override // java.util.function.Supplier
     public final Object get() {
         return new ArrayList();
     }

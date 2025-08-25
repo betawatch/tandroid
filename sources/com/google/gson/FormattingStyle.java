@@ -1,6 +1,6 @@
 package com.google.gson;
 
-import java.util.Objects;
+import j$.util.Objects;
 
 /* loaded from: classes.dex */
 public class FormattingStyle {

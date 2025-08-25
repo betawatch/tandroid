@@ -644,7 +644,7 @@ public abstract class FilterTabsView extends FrameLayout {
             float f17 = f5 + dp;
             int measuredHeight3 = (getMeasuredHeight() - AndroidUtilities.dp(20.0f)) / 2;
             if (z || ((!FilterTabsView.this.isEditing && FilterTabsView.this.editingStartAnimationProgress == f4) || str3 != null)) {
-                FilterTabsView.this.counterPaint.setAlpha(NotificationCenter.goingToPreviewTheme);
+                FilterTabsView.this.counterPaint.setAlpha(NotificationCenter.needCheckSystemBarColors);
             } else {
                 FilterTabsView.this.counterPaint.setAlpha((int) (FilterTabsView.this.editingStartAnimationProgress * 255.0f));
             }
@@ -710,7 +710,7 @@ public abstract class FilterTabsView extends FrameLayout {
                                 this.stableCounter.draw(canvas);
                                 canvas.restore();
                             }
-                            FilterTabsView.this.textCounterPaint.setAlpha(NotificationCenter.goingToPreviewTheme);
+                            FilterTabsView.this.textCounterPaint.setAlpha(NotificationCenter.needCheckSystemBarColors);
                         }
                         f23 += (dp2 - (lineBottom - lineTop)) / 2.0f;
                         if (z) {
@@ -721,7 +721,7 @@ public abstract class FilterTabsView extends FrameLayout {
                         }
                         if (this.stableCounter != null) {
                         }
-                        FilterTabsView.this.textCounterPaint.setAlpha(NotificationCenter.goingToPreviewTheme);
+                        FilterTabsView.this.textCounterPaint.setAlpha(NotificationCenter.needCheckSystemBarColors);
                     } else if (str3 != null) {
                         if (!z) {
                             FilterTabsView.this.textCounterPaint.setAlpha((int) ((1.0f - FilterTabsView.this.editingStartAnimationProgress) * 255.0f));

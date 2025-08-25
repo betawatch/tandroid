@@ -1,28 +1,19 @@
 package j$.util.stream;
 
-import j$.util.function.BinaryOperator;
+import java.util.function.LongBinaryOperator;
 
 /* loaded from: classes2.dex */
-final class y1 extends t0 {
-    public final /* synthetic */ int h;
-    final /* synthetic */ Object i;
+final class y1 extends w0 {
+    final /* synthetic */ LongBinaryOperator h;
+    final /* synthetic */ long i;
 
-    public /* synthetic */ y1(R2 r2, Object obj, int i) {
-        this.h = i;
-        this.i = obj;
+    @Override // j$.util.stream.w0
+    public final S1 e0() {
+        return new Q1(this.i, this.h);
     }
 
-    @Override // j$.util.stream.t0
-    public final N1 d0() {
-        switch (this.h) {
-            case 0:
-                return new z1((j$.util.function.h) this.i);
-            case 1:
-                return new C1((BinaryOperator) this.i);
-            case 2:
-                return new I1((j$.util.function.C) this.i);
-            default:
-                return new M1((j$.util.function.U) this.i);
-        }
+    y1(b3 b3Var, LongBinaryOperator longBinaryOperator, long j) {
+        this.h = longBinaryOperator;
+        this.i = j;
     }
 }

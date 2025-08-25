@@ -1,7 +1,7 @@
 package com.google.android.gms.internal.cast;
 
 import android.os.Bundle;
-import java.util.Collections;
+import j$.util.DesugarCollections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,6 +18,6 @@ public abstract class zzah {
                 hashMap.put((Integer) entry.getKey(), (Integer) entry.getValue());
             }
         }
-        return Collections.unmodifiableMap(hashMap);
+        return DesugarCollections.unmodifiableMap(hashMap);
     }
 }

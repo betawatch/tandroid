@@ -4,6 +4,7 @@ import android.app.job.JobInfo;
 import com.google.android.datatransport.Priority;
 import com.google.android.datatransport.runtime.scheduling.jobscheduling.AutoValue_SchedulerConfig_ConfigValue;
 import com.google.android.datatransport.runtime.time.Clock;
+import j$.util.DesugarCollections;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -117,6 +118,6 @@ public abstract class SchedulerConfig {
     }
 
     private static Set immutableSetOf(Object... objArr) {
-        return Collections.unmodifiableSet(new HashSet(Arrays.asList(objArr)));
+        return DesugarCollections.unmodifiableSet(new HashSet(Arrays.asList(objArr)));
     }
 }

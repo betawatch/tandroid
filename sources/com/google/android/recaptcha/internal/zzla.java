@@ -11,10 +11,6 @@ final class zzla implements Iterator {
     private boolean zzc;
     private Iterator zzd;
 
-    /* synthetic */ zzla(zzle zzleVar, zzkz zzkzVar) {
-        this.zza = zzleVar;
-    }
-
     private final Iterator zza() {
         Map map;
         if (this.zzd == null) {

@@ -422,11 +422,11 @@ public class CounterView extends View {
                 if (this.countAnimationStableLayout != null) {
                     canvas.save();
                     canvas.translate(this.countLeft, dp + AndroidUtilities.dp(4.0f));
-                    this.textPaint.setAlpha(NotificationCenter.goingToPreviewTheme);
+                    this.textPaint.setAlpha(NotificationCenter.needCheckSystemBarColors);
                     this.countAnimationStableLayout.draw(canvas);
                     canvas.restore();
                 }
-                this.textPaint.setAlpha(NotificationCenter.goingToPreviewTheme);
+                this.textPaint.setAlpha(NotificationCenter.needCheckSystemBarColors);
                 canvas.restore();
                 return;
             }

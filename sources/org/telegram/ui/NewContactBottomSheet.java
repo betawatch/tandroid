@@ -19,7 +19,8 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import j$.util.Comparator$-CC;
-import j$.util.function.Function;
+import j$.util.Objects;
+import j$.util.function.Function$-CC;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -28,7 +29,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
-import java.util.Objects;
+import java.util.function.Function;
 import org.telegram.PhoneFormat.PhoneFormat;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
@@ -534,21 +535,19 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
             FileLog.e(e);
         }
         Collections.sort(this.countriesArray, Comparator$-CC.comparing(new Function() { // from class: org.telegram.ui.NewContactBottomSheet$$ExternalSyntheticLambda8
-            @Override // j$.util.function.Function
             public /* synthetic */ Function andThen(Function function) {
-                return Function.-CC.$default$andThen(this, function);
+                return Function$-CC.$default$andThen(this, function);
             }
 
-            @Override // j$.util.function.Function
+            @Override // java.util.function.Function
             public final Object apply(Object obj) {
                 String str4;
                 str4 = ((CountrySelectActivity.Country) obj).name;
                 return str4;
             }
 
-            @Override // j$.util.function.Function
             public /* synthetic */ Function compose(Function function) {
-                return Function.-CC.$default$compose(this, function);
+                return Function$-CC.$default$compose(this, function);
             }
         }));
         if (!TextUtils.isEmpty(this.initialPhoneNumber)) {

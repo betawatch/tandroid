@@ -174,7 +174,7 @@ public class Track {
                     } else if (integer2 == 32) {
                         avcConfigurationBox.setAvcProfileIndication(122);
                     } else if (integer2 == 64) {
-                        avcConfigurationBox.setAvcProfileIndication(NotificationCenter.invalidateMotionBackground);
+                        avcConfigurationBox.setAvcProfileIndication(NotificationCenter.didReceiveSmsCode);
                     }
                 } else {
                     avcConfigurationBox.setAvcProfileIndication(100);

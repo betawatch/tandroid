@@ -14,6 +14,7 @@ import com.google.firebase.crashlytics.internal.persistence.FileStore;
 import com.google.firebase.crashlytics.internal.send.DataTransportCrashlyticsReportSender;
 import com.google.firebase.crashlytics.internal.settings.SettingsProvider;
 import com.google.firebase.crashlytics.internal.stacktrace.StackTraceTrimmingStrategy;
+import j$.util.DesugarCollections;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
@@ -85,7 +86,7 @@ public class SessionReportingCoordinator {
                 arrayList.add(asFilePayload);
             }
         }
-        this.reportPersistence.finalizeSessionWithNativeEvent(str, CrashlyticsReport.FilesPayload.builder().setFiles(Collections.unmodifiableList(arrayList)).build(), applicationExitInfo);
+        this.reportPersistence.finalizeSessionWithNativeEvent(str, CrashlyticsReport.FilesPayload.builder().setFiles(DesugarCollections.unmodifiableList(arrayList)).build(), applicationExitInfo);
     }
 
     public void finalizeSessions(long j, String str) {
@@ -198,7 +199,7 @@ public class SessionReportingCoordinator {
                 return lambda$getSortedCustomAttributes$0;
             }
         });
-        return Collections.unmodifiableList(arrayList);
+        return DesugarCollections.unmodifiableList(arrayList);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

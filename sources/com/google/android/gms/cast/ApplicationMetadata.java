@@ -7,7 +7,7 @@ import com.google.android.gms.cast.internal.CastUtils;
 import com.google.android.gms.common.internal.Objects;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
-import java.util.Collections;
+import j$.util.DesugarCollections;
 import java.util.List;
 
 /* loaded from: classes.dex */
@@ -55,7 +55,7 @@ public class ApplicationMetadata extends AbstractSafeParcelable {
     }
 
     public List getSupportedNamespaces() {
-        return Collections.unmodifiableList(this.zzc);
+        return DesugarCollections.unmodifiableList(this.zzc);
     }
 
     public int hashCode() {

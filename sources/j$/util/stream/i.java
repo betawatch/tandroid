@@ -23,17 +23,17 @@ public final /* synthetic */ class i implements java.util.stream.Collector {
 
     @Override // java.util.stream.Collector
     public final /* synthetic */ BiConsumer accumulator() {
-        return j$.util.function.a.a(this.a.accumulator());
+        return this.a.accumulator();
     }
 
     @Override // java.util.stream.Collector
     public final /* synthetic */ Set characteristics() {
-        return this.a.characteristics();
+        return X2.a(this.a.characteristics());
     }
 
     @Override // java.util.stream.Collector
     public final /* synthetic */ BinaryOperator combiner() {
-        return j$.util.function.e.a(this.a.combiner());
+        return this.a.combiner();
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
@@ -46,7 +46,7 @@ public final /* synthetic */ class i implements java.util.stream.Collector {
 
     @Override // java.util.stream.Collector
     public final /* synthetic */ Function finisher() {
-        return j$.util.function.z.a(this.a.finisher());
+        return this.a.finisher();
     }
 
     public final /* synthetic */ int hashCode() {
@@ -55,6 +55,6 @@ public final /* synthetic */ class i implements java.util.stream.Collector {
 
     @Override // java.util.stream.Collector
     public final /* synthetic */ Supplier supplier() {
-        return j$.util.function.y0.a(this.a.supplier());
+        return this.a.supplier();
     }
 }

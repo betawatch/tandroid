@@ -33,11 +33,11 @@ import androidx.core.util.Consumer;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import j$.util.Objects;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.GenericProvider;
@@ -575,7 +575,7 @@ public class RecyclerListView extends RecyclerView {
             for (int i3 = 0; i3 < 8; i3++) {
                 this.radii[i3] = AndroidUtilities.dp(44.0f);
             }
-            this.scrollX = AndroidUtilities.dp(this.isRtl ? 10.0f : (i == 0 ? NotificationCenter.httpFileDidLoad : NotificationCenter.wallpapersNeedReload) - 15);
+            this.scrollX = AndroidUtilities.dp(this.isRtl ? 10.0f : (i == 0 ? NotificationCenter.httpFileDidLoad : NotificationCenter.profileMusicUpdated) - 15);
             updateColors();
             setFocusableInTouchMode(true);
             this.touchSlop = ViewConfiguration.get(context).getScaledTouchSlop();

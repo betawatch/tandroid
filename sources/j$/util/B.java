@@ -1,107 +1,72 @@
 package j$.util;
 
-import j$.util.function.Consumer;
-import java.util.Comparator;
-import java.util.Spliterator;
+import java.util.NoSuchElementException;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class B implements D {
-    public final /* synthetic */ Spliterator.OfDouble a;
+public final class B {
+    private static final B c = new B();
+    private final boolean a;
+    private final int b;
 
-    private /* synthetic */ B(Spliterator.OfDouble ofDouble) {
-        this.a = ofDouble;
+    private B() {
+        this.a = false;
+        this.b = 0;
     }
 
-    public static /* synthetic */ D b(Spliterator.OfDouble ofDouble) {
-        if (ofDouble == null) {
-            return null;
+    public static B a() {
+        return c;
+    }
+
+    private B(int i) {
+        this.a = true;
+        this.b = i;
+    }
+
+    public static B d(int i) {
+        return new B(i);
+    }
+
+    public final int b() {
+        if (!this.a) {
+            throw new NoSuchElementException("No value present");
         }
-        return ofDouble instanceof C ? ((C) ofDouble).a : new B(ofDouble);
+        return this.b;
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ void a(Consumer consumer) {
-        this.a.forEachRemaining(Consumer.Wrapper.convert(consumer));
+    public final boolean c() {
+        return this.a;
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ int characteristics() {
-        return this.a.characteristics();
-    }
-
-    @Override // j$.util.D
-    /* renamed from: e */
-    public final /* synthetic */ void forEachRemaining(j$.util.function.l lVar) {
-        this.a.forEachRemaining(j$.util.function.k.a(lVar));
-    }
-
-    public final /* synthetic */ boolean equals(Object obj) {
-        Spliterator.OfDouble ofDouble = this.a;
-        if (obj instanceof B) {
-            obj = ((B) obj).a;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        return ofDouble.equals(obj);
+        if (!(obj instanceof B)) {
+            return false;
+        }
+        B b = (B) obj;
+        boolean z = this.a;
+        if (z && b.a) {
+            if (this.b == b.b) {
+                return true;
+            }
+        } else if (z == b.a) {
+            return true;
+        }
+        return false;
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ long estimateSize() {
-        return this.a.estimateSize();
+    public final int hashCode() {
+        if (this.a) {
+            return this.b;
+        }
+        return 0;
     }
 
-    @Override // j$.util.M
-    /* renamed from: forEachRemaining */
-    public final /* synthetic */ void e(Object obj) {
-        this.a.forEachRemaining((Spliterator.OfDouble) obj);
-    }
-
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ Comparator getComparator() {
-        return this.a.getComparator();
-    }
-
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ long getExactSizeIfKnown() {
-        return this.a.getExactSizeIfKnown();
-    }
-
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return this.a.hasCharacteristics(i);
-    }
-
-    public final /* synthetic */ int hashCode() {
-        return this.a.hashCode();
-    }
-
-    @Override // j$.util.D
-    /* renamed from: p */
-    public final /* synthetic */ boolean tryAdvance(j$.util.function.l lVar) {
-        return this.a.tryAdvance(j$.util.function.k.a(lVar));
-    }
-
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean s(Consumer consumer) {
-        return this.a.tryAdvance(Consumer.Wrapper.convert(consumer));
-    }
-
-    @Override // j$.util.M
-    /* renamed from: tryAdvance */
-    public final /* synthetic */ boolean p(Object obj) {
-        return this.a.tryAdvance((Spliterator.OfDouble) obj);
-    }
-
-    @Override // j$.util.D, j$.util.M, j$.util.Spliterator
-    public final /* synthetic */ D trySplit() {
-        return b(this.a.trySplit());
-    }
-
-    @Override // j$.util.M, j$.util.Spliterator
-    public final /* synthetic */ M trySplit() {
-        return K.b(this.a.trySplit());
-    }
-
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ Spliterator trySplit() {
-        return N.b(this.a.trySplit());
+    public final String toString() {
+        if (this.a) {
+            return "OptionalInt[" + this.b + "]";
+        }
+        return "OptionalInt.empty";
     }
 }

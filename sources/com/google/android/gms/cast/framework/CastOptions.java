@@ -9,8 +9,8 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 import com.google.android.gms.internal.cast.zzev;
 import com.google.android.gms.internal.cast.zzez;
+import j$.util.DesugarCollections;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /* loaded from: classes.dex */
@@ -123,7 +123,7 @@ public class CastOptions extends AbstractSafeParcelable {
     }
 
     public List getSupportedNamespaces() {
-        return Collections.unmodifiableList(this.zze);
+        return DesugarCollections.unmodifiableList(this.zze);
     }
 
     public double getVolumeDeltaBeforeIceCreamSandwich() {
@@ -144,7 +144,7 @@ public class CastOptions extends AbstractSafeParcelable {
         SafeParcelWriter.writeBoolean(parcel, 10, this.zzl);
         SafeParcelWriter.writeBoolean(parcel, 11, this.zzm);
         SafeParcelWriter.writeBoolean(parcel, 12, this.zzn);
-        SafeParcelWriter.writeStringList(parcel, 13, Collections.unmodifiableList(this.zzo), false);
+        SafeParcelWriter.writeStringList(parcel, 13, DesugarCollections.unmodifiableList(this.zzo), false);
         SafeParcelWriter.writeBoolean(parcel, 14, this.zzp);
         SafeParcelWriter.writeInt(parcel, 15, 0);
         SafeParcelWriter.writeBoolean(parcel, 16, this.zzq);
@@ -154,7 +154,7 @@ public class CastOptions extends AbstractSafeParcelable {
     }
 
     public final List zza() {
-        return Collections.unmodifiableList(this.zzo);
+        return DesugarCollections.unmodifiableList(this.zzo);
     }
 
     public final void zzb(zzl zzlVar) {

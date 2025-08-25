@@ -1,82 +1,168 @@
 package j$.util.concurrent;
 
-import j$.util.A;
+import j$.util.Collection;
 import j$.util.Spliterator;
-import j$.util.function.Consumer;
-import java.util.Comparator;
+import j$.util.stream.Stream;
+import java.util.AbstractMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+import java.util.Spliterator;
+import java.util.function.Consumer;
+import java.util.function.IntFunction;
+import java.util.function.Predicate;
 
 /* loaded from: classes2.dex */
-final class e extends o implements Spliterator {
-    final ConcurrentHashMap i;
-    long j;
+final class e extends b implements Set, j$.util.Set {
+    private static final long serialVersionUID = 2249069246763182397L;
 
-    @Override // j$.util.Spliterator
-    public final int characteristics() {
-        return 4353;
+    @Override // java.util.Collection, j$.util.Collection
+    public final /* synthetic */ Stream parallelStream() {
+        return Collection.-CC.$default$parallelStream(this);
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ long getExactSizeIfKnown() {
-        return A.j(this);
+    @Override // java.util.Collection
+    public final /* synthetic */ java.util.stream.Stream parallelStream() {
+        return Stream.Wrapper.convert(Collection.-CC.$default$parallelStream(this));
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return A.k(this, i);
+    @Override // java.util.Collection, java.lang.Iterable, java.util.Set
+    public final /* synthetic */ Spliterator spliterator() {
+        return Spliterator.Wrapper.convert(spliterator());
     }
 
-    @Override // j$.util.Spliterator
-    public final Comparator getComparator() {
-        throw new IllegalStateException();
+    @Override // java.util.Collection, j$.util.Collection
+    public final /* synthetic */ Stream stream() {
+        return Collection.-CC.$default$stream(this);
     }
 
-    e(k[] kVarArr, int i, int i2, int i3, long j, ConcurrentHashMap concurrentHashMap) {
-        super(kVarArr, i, i2, i3);
-        this.i = concurrentHashMap;
-        this.j = j;
+    @Override // java.util.Collection
+    public final /* synthetic */ java.util.stream.Stream stream() {
+        return Stream.Wrapper.convert(Collection.-CC.$default$stream(this));
     }
 
-    @Override // j$.util.Spliterator
-    public final Spliterator trySplit() {
-        int i = this.f;
-        int i2 = this.g;
-        int i3 = (i + i2) >>> 1;
-        if (i3 <= i) {
-            return null;
-        }
-        k[] kVarArr = this.a;
-        this.g = i3;
-        long j = this.j >>> 1;
-        this.j = j;
-        return new e(kVarArr, this.h, i3, i2, j, this.i);
+    @Override // java.util.Collection, j$.util.Collection
+    public final /* synthetic */ Object[] toArray(IntFunction intFunction) {
+        Object[] array;
+        array = toArray((Object[]) intFunction.apply(0));
+        return array;
     }
 
-    @Override // j$.util.Spliterator
-    public final void a(Consumer consumer) {
-        consumer.getClass();
-        while (true) {
-            k b = b();
-            if (b == null) {
-                return;
-            } else {
-                consumer.r(new j(b.b, b.c, this.i));
+    @Override // java.util.Collection, java.util.Set
+    public final boolean add(Object obj) {
+        Map.Entry entry = (Map.Entry) obj;
+        return this.a.f(entry.getKey(), entry.getValue(), false) == null;
+    }
+
+    @Override // j$.util.concurrent.b, java.util.Collection
+    public final boolean contains(Object obj) {
+        Map.Entry entry;
+        Object key;
+        Object obj2;
+        Object value;
+        return (!(obj instanceof Map.Entry) || (key = (entry = (Map.Entry) obj).getKey()) == null || (obj2 = this.a.get(key)) == null || (value = entry.getValue()) == null || (value != obj2 && !value.equals(obj2))) ? false : true;
+    }
+
+    @Override // j$.util.concurrent.b, java.util.Collection
+    public final boolean remove(Object obj) {
+        Map.Entry entry;
+        Object key;
+        Object value;
+        return (obj instanceof Map.Entry) && (key = (entry = (Map.Entry) obj).getKey()) != null && (value = entry.getValue()) != null && this.a.remove(key, value);
+    }
+
+    @Override // j$.util.concurrent.b, java.util.Collection, java.lang.Iterable
+    public final Iterator iterator() {
+        ConcurrentHashMap concurrentHashMap = this.a;
+        l[] lVarArr = concurrentHashMap.a;
+        int length = lVarArr == null ? 0 : lVarArr.length;
+        return new d(lVarArr, length, length, concurrentHashMap);
+    }
+
+    @Override // java.util.Collection, java.util.Set
+    public final boolean addAll(java.util.Collection collection) {
+        Iterator it = collection.iterator();
+        boolean z = false;
+        while (it.hasNext()) {
+            Map.Entry entry = (Map.Entry) it.next();
+            if (this.a.f(entry.getKey(), entry.getValue(), false) == null) {
+                z = true;
             }
         }
+        return z;
     }
 
-    @Override // j$.util.Spliterator
-    public final boolean s(Consumer consumer) {
-        consumer.getClass();
-        k b = b();
-        if (b == null) {
-            return false;
+    @Override // java.util.Collection, j$.util.Collection
+    public final boolean removeIf(Predicate predicate) {
+        ConcurrentHashMap concurrentHashMap = this.a;
+        concurrentHashMap.getClass();
+        predicate.getClass();
+        l[] lVarArr = concurrentHashMap.a;
+        boolean z = false;
+        if (lVarArr != null) {
+            p pVar = new p(lVarArr, lVarArr.length, 0, lVarArr.length);
+            while (true) {
+                l a = pVar.a();
+                if (a == null) {
+                    break;
+                }
+                Object obj = a.b;
+                Object obj2 = a.c;
+                if (predicate.test(new AbstractMap.SimpleImmutableEntry(obj, obj2)) && concurrentHashMap.g(obj, null, obj2) != null) {
+                    z = true;
+                }
+            }
         }
-        consumer.r(new j(b.b, b.c, this.i));
-        return true;
+        return z;
     }
 
-    @Override // j$.util.Spliterator
-    public final long estimateSize() {
-        return this.j;
+    @Override // java.util.Collection, java.util.Set
+    public final int hashCode() {
+        l[] lVarArr = this.a.a;
+        int i = 0;
+        if (lVarArr != null) {
+            p pVar = new p(lVarArr, lVarArr.length, 0, lVarArr.length);
+            while (true) {
+                l a = pVar.a();
+                if (a == null) {
+                    break;
+                }
+                i += a.hashCode();
+            }
+        }
+        return i;
+    }
+
+    @Override // java.util.Collection, java.util.Set
+    public final boolean equals(Object obj) {
+        Set set;
+        return (obj instanceof Set) && ((set = (Set) obj) == this || (containsAll(set) && set.containsAll(this)));
+    }
+
+    @Override // java.util.Collection, java.lang.Iterable, java.util.Set, j$.util.Collection
+    public final j$.util.Spliterator spliterator() {
+        ConcurrentHashMap concurrentHashMap = this.a;
+        long j = concurrentHashMap.j();
+        l[] lVarArr = concurrentHashMap.a;
+        int length = lVarArr == null ? 0 : lVarArr.length;
+        return new f(lVarArr, length, 0, length, j >= 0 ? j : 0L, concurrentHashMap);
+    }
+
+    @Override // java.lang.Iterable, j$.util.Collection, j$.lang.a
+    public final void forEach(Consumer consumer) {
+        consumer.getClass();
+        l[] lVarArr = this.a.a;
+        if (lVarArr == null) {
+            return;
+        }
+        p pVar = new p(lVarArr, lVarArr.length, 0, lVarArr.length);
+        while (true) {
+            l a = pVar.a();
+            if (a == null) {
+                return;
+            } else {
+                consumer.p(new k(a.b, a.c, this.a));
+            }
+        }
     }
 }

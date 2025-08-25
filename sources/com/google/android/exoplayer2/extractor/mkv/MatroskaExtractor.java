@@ -30,6 +30,7 @@ import com.google.android.exoplayer2.video.ColorInfo;
 import com.google.android.exoplayer2.video.DolbyVisionConfig;
 import com.google.android.exoplayer2.video.HevcConfig;
 import com.google.common.collect.ImmutableList;
+import j$.util.DesugarCollections;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.ArrayList;
@@ -134,9 +135,9 @@ public class MatroskaExtractor implements Extractor {
             case NotificationCenter.didUpdatePremiumGiftStickers /* 186 */:
             case NotificationCenter.starBalanceUpdated /* 215 */:
             case NotificationCenter.channelConnectedBotsUpdate /* 231 */:
-            case NotificationCenter.pushMessagesUpdated /* 238 */:
-            case NotificationCenter.didReceiveSmsCode /* 241 */:
-            case NotificationCenter.themeAccentListUpdated /* 251 */:
+            case NotificationCenter.musicListLoaded /* 238 */:
+            case NotificationCenter.pushMessagesUpdated /* 241 */:
+            case NotificationCenter.didSetNewTheme /* 251 */:
             case 16871:
             case 16980:
             case 17029:
@@ -240,8 +241,8 @@ public class MatroskaExtractor implements Extractor {
         hashMap.put("htc_video_rotA-000", 0);
         hashMap.put("htc_video_rotA-090", 90);
         hashMap.put("htc_video_rotA-180", Integer.valueOf(NotificationCenter.suggestedFiltersLoaded));
-        hashMap.put("htc_video_rotA-270", Integer.valueOf(NotificationCenter.messagePlayingSpeedChanged));
-        TRACK_NAME_TO_ROTATION_DEGREES = Collections.unmodifiableMap(hashMap);
+        hashMap.put("htc_video_rotA-270", Integer.valueOf(NotificationCenter.notificationsCountUpdated));
+        TRACK_NAME_TO_ROTATION_DEGREES = DesugarCollections.unmodifiableMap(hashMap);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -525,10 +526,10 @@ public class MatroskaExtractor implements Extractor {
             case NotificationCenter.channelConnectedBotsUpdate /* 231 */:
                 this.clusterTimecodeUs = scaleTimecodeToUs(j);
                 return;
-            case NotificationCenter.pushMessagesUpdated /* 238 */:
+            case NotificationCenter.musicListLoaded /* 238 */:
                 this.blockAdditionalId = (int) j;
                 return;
-            case NotificationCenter.didReceiveSmsCode /* 241 */:
+            case NotificationCenter.pushMessagesUpdated /* 241 */:
                 if (this.seenClusterPositionForCurrentCuePoint) {
                     return;
                 }
@@ -536,7 +537,7 @@ public class MatroskaExtractor implements Extractor {
                 this.cueClusterPositions.add(j);
                 this.seenClusterPositionForCurrentCuePoint = true;
                 return;
-            case NotificationCenter.themeAccentListUpdated /* 251 */:
+            case NotificationCenter.didSetNewTheme /* 251 */:
                 this.blockHasReferenceBlock = true;
                 return;
             case 16871:
@@ -1188,10 +1189,10 @@ public class MatroskaExtractor implements Extractor {
                 this.supplementalData.reset(0);
                 int limit = (this.sampleStrippedBytes.limit() + i) - this.sampleBytesRead;
                 this.scratch.reset(4);
-                this.scratch.getData()[0] = (byte) ((limit >> 24) & NotificationCenter.goingToPreviewTheme);
-                this.scratch.getData()[1] = (byte) ((limit >> 16) & NotificationCenter.goingToPreviewTheme);
-                this.scratch.getData()[2] = (byte) ((limit >> 8) & NotificationCenter.goingToPreviewTheme);
-                this.scratch.getData()[3] = (byte) (limit & NotificationCenter.goingToPreviewTheme);
+                this.scratch.getData()[0] = (byte) ((limit >> 24) & NotificationCenter.needCheckSystemBarColors);
+                this.scratch.getData()[1] = (byte) ((limit >> 16) & NotificationCenter.needCheckSystemBarColors);
+                this.scratch.getData()[2] = (byte) ((limit >> 8) & NotificationCenter.needCheckSystemBarColors);
+                this.scratch.getData()[3] = (byte) (limit & NotificationCenter.needCheckSystemBarColors);
                 trackOutput.sampleData(this.scratch, 4, 2);
                 this.sampleBytesWritten += 4;
             }
@@ -1867,7 +1868,7 @@ public class MatroskaExtractor implements Extractor {
                             } else if (Float.compare(this.projectionPosePitch, -180.0f) == 0 || Float.compare(this.projectionPosePitch, 180.0f) == 0) {
                                 i6 = NotificationCenter.suggestedFiltersLoaded;
                             } else if (Float.compare(this.projectionPosePitch, -90.0f) == 0) {
-                                i6 = NotificationCenter.messagePlayingSpeedChanged;
+                                i6 = NotificationCenter.notificationsCountUpdated;
                             }
                         }
                         builder.setWidth(this.width).setHeight(this.height).setPixelWidthHeightRatio(f).setRotationDegrees(i6).setProjectionData(this.projectionData).setStereoMode(this.stereoMode).setColorInfo(colorInfo);
@@ -2726,22 +2727,22 @@ public class MatroskaExtractor implements Extractor {
                 int i3 = 1;
                 int i4 = 0;
                 while (true) {
-                    i = bArr[i3] & NotificationCenter.goingToPreviewTheme;
+                    i = bArr[i3] & NotificationCenter.needCheckSystemBarColors;
                     if (i != 255) {
                         break;
                     }
-                    i4 += NotificationCenter.goingToPreviewTheme;
+                    i4 += NotificationCenter.needCheckSystemBarColors;
                     i3++;
                 }
                 int i5 = i3 + 1;
                 int i6 = i4 + i;
                 int i7 = 0;
                 while (true) {
-                    i2 = bArr[i5] & NotificationCenter.goingToPreviewTheme;
+                    i2 = bArr[i5] & NotificationCenter.needCheckSystemBarColors;
                     if (i2 != 255) {
                         break;
                     }
-                    i7 += NotificationCenter.goingToPreviewTheme;
+                    i7 += NotificationCenter.needCheckSystemBarColors;
                     i5++;
                 }
                 int i8 = i5 + 1;

@@ -33,10 +33,10 @@ import com.google.android.exoplayer2.util.ConditionVariable;
 import com.google.android.exoplayer2.util.MimeTypes;
 import com.google.android.exoplayer2.util.ParsableByteArray;
 import com.google.android.exoplayer2.util.Util;
+import j$.util.DesugarCollections;
 import java.io.IOException;
 import java.io.InterruptedIOException;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -508,7 +508,7 @@ final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutput, Load
 
     @Override // com.google.android.exoplayer2.extractor.ExtractorOutput
     public void seekMap(final SeekMap seekMap) {
-        this.handler.post(new Runnable() { // from class: com.google.android.exoplayer2.source.ProgressiveMediaPeriod$$ExternalSyntheticLambda3
+        this.handler.post(new Runnable() { // from class: com.google.android.exoplayer2.source.ProgressiveMediaPeriod$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
                 ProgressiveMediaPeriod.this.lambda$seekMap$1(seekMap);
@@ -532,7 +532,7 @@ final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutput, Load
 
     /* JADX INFO: Access modifiers changed from: private */
     public void onLengthKnown() {
-        this.handler.post(new Runnable() { // from class: com.google.android.exoplayer2.source.ProgressiveMediaPeriod$$ExternalSyntheticLambda2
+        this.handler.post(new Runnable() { // from class: com.google.android.exoplayer2.source.ProgressiveMediaPeriod$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
                 ProgressiveMediaPeriod.this.lambda$onLengthKnown$2();
@@ -889,6 +889,6 @@ final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutput, Load
     private static Map createIcyMetadataHeaders() {
         HashMap hashMap = new HashMap();
         hashMap.put("Icy-MetaData", "1");
-        return Collections.unmodifiableMap(hashMap);
+        return DesugarCollections.unmodifiableMap(hashMap);
     }
 }

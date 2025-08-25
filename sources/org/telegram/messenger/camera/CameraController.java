@@ -481,7 +481,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
                     if (pack5 != 8) {
                         return -1;
                     }
-                    return NotificationCenter.messagePlayingSpeedChanged;
+                    return NotificationCenter.notificationsCountUpdated;
                 }
                 i5 += 12;
                 i6 -= 12;

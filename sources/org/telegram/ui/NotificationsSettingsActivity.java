@@ -21,12 +21,12 @@ import android.widget.Toast;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import j$.util.Comparator$-CC;
-import j$.util.function.ToDoubleFunction;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.function.ToDoubleFunction;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.ChatObject;
@@ -390,7 +390,7 @@ public class NotificationsSettingsActivity extends BaseFragment implements Notif
         final ArrayList arrayList27 = arrayList24;
         if (arrayList26 != null) {
             Collections.sort(arrayList26, Comparator$-CC.comparingDouble(new ToDoubleFunction() { // from class: org.telegram.ui.NotificationsSettingsActivity$$ExternalSyntheticLambda7
-                @Override // j$.util.function.ToDoubleFunction
+                @Override // java.util.function.ToDoubleFunction
                 public final double applyAsDouble(Object obj) {
                     double d;
                     d = ((TLRPC.TL_topPeer) obj).rating;
@@ -1041,7 +1041,7 @@ public class NotificationsSettingsActivity extends BaseFragment implements Notif
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$9(int i, DialogInterface dialogInterface, int i2) {
-        MessagesController.getNotificationsSettings(this.currentAccount).edit().putInt("repeat_messages", i2 != 1 ? i2 == 2 ? 10 : i2 == 3 ? 30 : i2 == 4 ? 60 : i2 == 5 ? 120 : i2 == 6 ? NotificationCenter.wallpapersNeedReload : 0 : 5).commit();
+        MessagesController.getNotificationsSettings(this.currentAccount).edit().putInt("repeat_messages", i2 != 1 ? i2 == 2 ? 10 : i2 == 3 ? 30 : i2 == 4 ? 60 : i2 == 5 ? 120 : i2 == 6 ? NotificationCenter.profileMusicUpdated : 0 : 5).commit();
         this.updateRepeatNotifications = true;
         this.adapter.notifyItemChanged(i);
     }

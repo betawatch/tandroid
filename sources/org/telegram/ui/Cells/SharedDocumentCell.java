@@ -449,7 +449,7 @@ public class SharedDocumentCell extends FrameLayout implements DownloadControlle
             TextView textView = this.extTextView;
             int lastIndexOf = documentFileName.lastIndexOf(46);
             textView.setText(lastIndexOf != -1 ? documentFileName.substring(lastIndexOf + 1).toLowerCase() : "");
-            TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 320);
+            TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, NotificationCenter.nearEarEvent);
             TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 40);
             if (closestPhotoSizeWithSize2 == closestPhotoSizeWithSize) {
                 closestPhotoSizeWithSize = null;
@@ -466,7 +466,7 @@ public class SharedDocumentCell extends FrameLayout implements DownloadControlle
                 if (messageObject.strippedThumb != null) {
                     this.thumbImageView.setImage(ImageLocation.getForDocument(closestPhotoSizeWithSize, document), "40_40", (ImageLocation) null, (String) null, messageObject.strippedThumb, (Bitmap) null, (String) null, 1, messageObject);
                 } else {
-                    this.thumbImageView.setImage(ImageLocation.getForDocument(closestPhotoSizeWithSize, document), "40_40", ImageLocation.getForDocument(closestPhotoSizeWithSize2, document), "40_40_b", null, 0L, 1, messageObject);
+                    this.thumbImageView.setImage(ImageLocation.getForDocument(closestPhotoSizeWithSize, document), "40_40", ImageLocation.getForDocument(closestPhotoSizeWithSize2, document), "40_40_b", (String) null, 0L, 1, messageObject);
                 }
             }
             updateDateView();

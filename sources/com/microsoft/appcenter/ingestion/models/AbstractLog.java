@@ -2,7 +2,7 @@ package com.microsoft.appcenter.ingestion.models;
 
 import com.microsoft.appcenter.ingestion.models.json.JSONDateUtils;
 import com.microsoft.appcenter.ingestion.models.json.JSONUtils;
-import java.util.Collections;
+import j$.util.DesugarCollections;
 import java.util.Date;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -85,7 +85,7 @@ public abstract class AbstractLog implements Log {
 
     @Override // com.microsoft.appcenter.ingestion.models.Log
     public synchronized Set getTransmissionTargetTokens() {
-        return Collections.unmodifiableSet(this.transmissionTargetTokens);
+        return DesugarCollections.unmodifiableSet(this.transmissionTargetTokens);
     }
 
     @Override // com.microsoft.appcenter.ingestion.models.Model

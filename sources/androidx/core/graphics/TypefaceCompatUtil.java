@@ -10,6 +10,7 @@ import android.os.Process;
 import android.os.StrictMode;
 import android.util.Log;
 import androidx.core.provider.FontsContractCompat;
+import j$.util.DesugarCollections;
 import java.io.Closeable;
 import java.io.File;
 import java.io.FileInputStream;
@@ -19,7 +20,6 @@ import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -175,7 +175,7 @@ public abstract class TypefaceCompatUtil {
                 }
             }
         }
-        return Collections.unmodifiableMap(hashMap);
+        return DesugarCollections.unmodifiableMap(hashMap);
     }
 
     static class Api19Impl {

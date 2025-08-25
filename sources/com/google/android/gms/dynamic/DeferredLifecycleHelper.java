@@ -9,7 +9,6 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.google.android.gms.common.GoogleApiAvailability;
-import j$.util.List;
 import java.util.LinkedList;
 
 /* loaded from: classes.dex */
@@ -45,8 +44,8 @@ public abstract class DeferredLifecycleHelper {
     }
 
     private final void zae(int i) {
-        while (!this.zac.isEmpty() && ((zah) List.-EL.getLast(this.zac)).zaa() >= i) {
-            List.-EL.removeLast(this.zac);
+        while (!this.zac.isEmpty() && ((zah) this.zac.getLast()).zaa() >= i) {
+            this.zac.removeLast();
         }
     }
 

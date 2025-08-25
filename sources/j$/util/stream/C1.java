@@ -1,79 +1,40 @@
 package j$.util.stream;
 
-import j$.util.Optional;
-import j$.util.function.BinaryOperator;
-import j$.util.function.Consumer;
+import java.util.function.BiConsumer;
+import java.util.function.BiFunction;
+import java.util.function.BinaryOperator;
+import java.util.function.ObjDoubleConsumer;
+import java.util.function.ObjIntConsumer;
+import java.util.function.ObjLongConsumer;
+import java.util.function.Supplier;
 
 /* loaded from: classes2.dex */
-final class C1 implements N1 {
-    private boolean a;
-    private Object b;
-    final /* synthetic */ BinaryOperator c;
+final class C1 extends w0 {
+    public final /* synthetic */ int h;
+    final /* synthetic */ Object i;
+    final /* synthetic */ Object j;
+    final /* synthetic */ Object k;
 
-    @Override // j$.util.stream.d2, j$.util.function.l
-    public final /* synthetic */ void accept(double d) {
-        t0.b();
-        throw null;
+    public /* synthetic */ C1(b3 b3Var, Object obj, Object obj2, Object obj3, int i) {
+        this.h = i;
+        this.j = obj;
+        this.k = obj2;
+        this.i = obj3;
     }
 
-    @Override // j$.util.stream.d2
-    public final /* synthetic */ void accept(int i) {
-        t0.k();
-        throw null;
-    }
-
-    @Override // j$.util.stream.d2
-    public final /* synthetic */ void accept(long j) {
-        t0.l();
-        throw null;
-    }
-
-    @Override // j$.util.function.Consumer
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer.-CC.$default$andThen(this, consumer);
-    }
-
-    @Override // j$.util.stream.d2
-    public final /* synthetic */ void m() {
-    }
-
-    @Override // j$.util.stream.d2
-    public final /* synthetic */ boolean q() {
-        return false;
-    }
-
-    C1(BinaryOperator binaryOperator) {
-        this.c = binaryOperator;
-    }
-
-    @Override // j$.util.stream.N1
-    public final void h(N1 n1) {
-        C1 c1 = (C1) n1;
-        if (c1.a) {
-            return;
+    @Override // j$.util.stream.w0
+    public final S1 e0() {
+        switch (this.h) {
+            case 0:
+                return new z1((Supplier) this.i, (ObjLongConsumer) this.k, (q) this.j);
+            case 1:
+                return new F1((Supplier) this.i, (ObjDoubleConsumer) this.k, (q) this.j);
+            case 2:
+                return new H1(this.i, (BiFunction) this.k, (BinaryOperator) this.j);
+            case 3:
+                return new L1((Supplier) this.i, (BiConsumer) this.k, (BiConsumer) this.j);
+            default:
+                return new P1((Supplier) this.i, (ObjIntConsumer) this.k, (q) this.j);
         }
-        r(c1.b);
-    }
-
-    @Override // j$.util.stream.d2
-    public final void n(long j) {
-        this.a = true;
-        this.b = null;
-    }
-
-    @Override // j$.util.function.Consumer
-    /* renamed from: accept */
-    public final void r(Object obj) {
-        if (this.a) {
-            this.a = false;
-            this.b = obj;
-        } else {
-            this.b = this.c.apply(this.b, obj);
-        }
-    }
-
-    @Override // j$.util.function.Supplier
-    public final Object get() {
-        return this.a ? Optional.empty() : Optional.of(this.b);
     }
 }

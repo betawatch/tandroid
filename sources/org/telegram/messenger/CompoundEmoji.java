@@ -10,10 +10,10 @@ import android.graphics.Rect;
 import android.util.Pair;
 import android.util.SparseArray;
 import android.view.View;
+import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 import org.telegram.messenger.CompoundEmoji;
 import org.telegram.messenger.Emoji;
 import org.telegram.ui.Components.AnimatedFloat;
@@ -319,7 +319,7 @@ public class CompoundEmoji {
                     i = paint2.getAlpha();
                     paint2.setAlpha((int) (i * f));
                 } else {
-                    i = NotificationCenter.goingToPreviewTheme;
+                    i = NotificationCenter.needCheckSystemBarColors;
                 }
                 canvas.drawBitmap(bitmap, (Rect) null, rect2, paint2);
                 if (f < 1.0f) {

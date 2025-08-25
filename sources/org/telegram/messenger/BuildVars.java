@@ -3,9 +3,9 @@ package org.telegram.messenger;
 import android.content.SharedPreferences;
 import android.os.Build;
 import com.android.billingclient.api.ProductDetails;
+import j$.util.Objects;
 import java.lang.Thread;
 import java.util.Iterator;
-import java.util.Objects;
 
 /* loaded from: classes3.dex */
 public class BuildVars {

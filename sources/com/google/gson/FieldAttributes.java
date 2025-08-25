@@ -1,8 +1,8 @@
 package com.google.gson;
 
+import j$.util.Objects;
 import java.lang.reflect.Field;
 import java.lang.reflect.Type;
-import java.util.Objects;
 
 /* loaded from: classes.dex */
 public final class FieldAttributes {

@@ -9,7 +9,7 @@ abstract class c extends e {
     protected final AtomicReference h;
     protected volatile boolean i;
 
-    protected abstract Object i();
+    protected abstract Object j();
 
     protected c(b bVar, Spliterator spliterator) {
         super(bVar, spliterator);
@@ -29,7 +29,7 @@ abstract class c extends e {
         long estimateSize = spliterator.estimateSize();
         long j = this.c;
         if (j == 0) {
-            j = e.f(estimateSize);
+            j = e.g(estimateSize);
             this.c = j;
         }
         AtomicReference atomicReference = this.h;
@@ -53,15 +53,15 @@ abstract class c extends e {
                 }
             }
             if (z2) {
-                obj = cVar.i();
+                obj = cVar.j();
                 break;
             }
             if (estimateSize <= j || (trySplit = spliterator.trySplit()) == null) {
                 break;
             }
-            c cVar3 = (c) cVar.d(trySplit);
+            c cVar3 = (c) cVar.e(trySplit);
             cVar.d = cVar3;
-            c cVar4 = (c) cVar.d(spliterator);
+            c cVar4 = (c) cVar.e(spliterator);
             cVar.e = cVar4;
             cVar.setPendingCount(1);
             if (z) {
@@ -76,14 +76,14 @@ abstract class c extends e {
             estimateSize = spliterator.estimateSize();
         }
         obj = cVar.a();
-        cVar.e(obj);
+        cVar.f(obj);
         cVar.tryComplete();
     }
 
     @Override // j$.util.stream.e
-    protected final void e(Object obj) {
-        if (!c()) {
-            super.e(obj);
+    protected final void f(Object obj) {
+        if (!d()) {
+            super.f(obj);
         } else if (obj != null) {
             AtomicReference atomicReference = this.h;
             while (!atomicReference.compareAndSet(null, obj) && atomicReference.get() == null) {
@@ -93,29 +93,29 @@ abstract class c extends e {
 
     @Override // j$.util.stream.e, java.util.concurrent.CountedCompleter, java.util.concurrent.ForkJoinTask
     public final Object getRawResult() {
-        return b();
+        return c();
     }
 
     @Override // j$.util.stream.e
-    public final Object b() {
-        if (c()) {
+    public final Object c() {
+        if (d()) {
             Object obj = this.h.get();
-            return obj == null ? i() : obj;
+            return obj == null ? j() : obj;
         }
-        return super.b();
+        return super.c();
     }
 
-    protected void g() {
+    protected void h() {
         this.i = true;
     }
 
-    protected final void h() {
+    protected final void i() {
         c cVar = this;
         for (c cVar2 = (c) ((e) getCompleter()); cVar2 != null; cVar2 = (c) ((e) cVar2.getCompleter())) {
             if (cVar2.d == cVar) {
                 c cVar3 = (c) cVar2.e;
                 if (!cVar3.i) {
-                    cVar3.g();
+                    cVar3.h();
                 }
             }
             cVar = cVar2;

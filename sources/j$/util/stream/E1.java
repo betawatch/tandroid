@@ -1,67 +1,95 @@
 package j$.util.stream;
 
-import j$.util.function.BiConsumer;
-import j$.util.function.BinaryOperator;
-import j$.util.function.Consumer;
-import j$.util.function.Supplier;
+import j$.util.Spliterator;
 
 /* loaded from: classes2.dex */
-final class E1 extends O1 implements N1 {
-    final /* synthetic */ Supplier b;
-    final /* synthetic */ BiConsumer c;
-    final /* synthetic */ BinaryOperator d;
+final class E1 extends w0 {
+    public final /* synthetic */ int h;
 
-    @Override // j$.util.stream.d2, j$.util.function.l
-    public final /* synthetic */ void accept(double d) {
-        t0.b();
-        throw null;
+    public /* synthetic */ E1(int i) {
+        this.h = i;
     }
 
-    @Override // j$.util.stream.d2
-    public final /* synthetic */ void accept(int i) {
-        t0.k();
-        throw null;
+    @Override // j$.util.stream.w0
+    public final S1 e0() {
+        switch (this.h) {
+            case 0:
+                return new W1();
+            case 1:
+                return new U1();
+            case 2:
+                return new X1();
+            default:
+                return new V1();
+        }
     }
 
-    @Override // j$.util.stream.d2
-    public final /* synthetic */ void accept(long j) {
-        t0.l();
-        throw null;
+    @Override // j$.util.stream.w0, j$.util.stream.G3
+    public final Object b(b bVar, Spliterator spliterator) {
+        switch (this.h) {
+            case 0:
+                if (!a3.SIZED.m(bVar.J())) {
+                    break;
+                } else {
+                    break;
+                }
+            case 1:
+                if (!a3.SIZED.m(bVar.J())) {
+                    break;
+                } else {
+                    break;
+                }
+            case 2:
+                if (!a3.SIZED.m(bVar.J())) {
+                    break;
+                } else {
+                    break;
+                }
+            default:
+                if (!a3.SIZED.m(bVar.J())) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return (Long) super.b(bVar, spliterator);
     }
 
-    @Override // j$.util.function.Consumer
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer.-CC.$default$andThen(this, consumer);
+    @Override // j$.util.stream.w0, j$.util.stream.G3
+    public final Object c(b bVar, Spliterator spliterator) {
+        switch (this.h) {
+            case 0:
+                if (!a3.SIZED.m(bVar.J())) {
+                    break;
+                } else {
+                    break;
+                }
+            case 1:
+                if (!a3.SIZED.m(bVar.J())) {
+                    break;
+                } else {
+                    break;
+                }
+            case 2:
+                if (!a3.SIZED.m(bVar.J())) {
+                    break;
+                } else {
+                    break;
+                }
+            default:
+                if (!a3.SIZED.m(bVar.J())) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return (Long) super.c(bVar, spliterator);
     }
 
-    @Override // j$.util.stream.d2
-    public final /* synthetic */ void m() {
-    }
-
-    @Override // j$.util.stream.d2
-    public final /* synthetic */ boolean q() {
-        return false;
-    }
-
-    @Override // j$.util.stream.N1
-    public final void h(N1 n1) {
-        this.a = this.d.apply(this.a, ((E1) n1).a);
-    }
-
-    @Override // j$.util.stream.d2
-    public final void n(long j) {
-        this.a = this.b.get();
-    }
-
-    @Override // j$.util.function.Consumer
-    /* renamed from: accept */
-    public final void r(Object obj) {
-        this.c.accept(this.a, obj);
-    }
-
-    E1(Supplier supplier, BiConsumer biConsumer, BinaryOperator binaryOperator) {
-        this.b = supplier;
-        this.c = biConsumer;
-        this.d = binaryOperator;
+    @Override // j$.util.stream.w0, j$.util.stream.G3
+    public final int d() {
+        switch (this.h) {
+        }
+        return a3.r;
     }
 }

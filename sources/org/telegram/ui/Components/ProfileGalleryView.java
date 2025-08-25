@@ -36,12 +36,14 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.Components.CircularViewPager;
 import org.telegram.ui.Components.ProfileGalleryView;
+import org.telegram.ui.Components.SizeNotifierFrameLayout;
 import org.telegram.ui.PinchToZoomHelper;
 import org.telegram.ui.ProfileActivity;
 
 /* loaded from: classes3.dex */
 public class ProfileGalleryView extends CircularViewPager implements NotificationCenter.NotificationCenterDelegate {
     private ViewPagerAdapter adapter;
+    private ProfileGalleryBlurView blurView;
     private final Callback callback;
     private TLRPC.ChatFull chatInfo;
     private boolean createThumbFromParent;
@@ -152,6 +154,7 @@ public class ProfileGalleryView extends CircularViewPager implements Notificatio
         this.customAvatarIndex = -1;
         this.fallbackPhotoIndex = -1;
         setOffscreenPageLimit(2);
+        this.blurView = null;
         this.isProfileFragment = false;
         this.parentListView = recyclerListView;
         this.parentClassGuid = ConnectionsManager.generateClassGuid();
@@ -264,7 +267,7 @@ public class ProfileGalleryView extends CircularViewPager implements Notificatio
         this.imagesLayerNum = i;
     }
 
-    public ProfileGalleryView(Context context, long j, ActionBar actionBar, RecyclerListView recyclerListView, ProfileActivity.AvatarImageView avatarImageView, int i, Callback callback) {
+    public ProfileGalleryView(Context context, long j, ActionBar actionBar, RecyclerListView recyclerListView, ProfileActivity.AvatarImageView avatarImageView, int i, Callback callback, ProfileGalleryBlurView profileGalleryBlurView) {
         super(context);
         this.downPoint = new PointF();
         this.isScrollingListView = true;
@@ -286,6 +289,9 @@ public class ProfileGalleryView extends CircularViewPager implements Notificatio
         this.createThumbFromParent = true;
         this.customAvatarIndex = -1;
         this.fallbackPhotoIndex = -1;
+        this.blurView = profileGalleryBlurView;
+        setPadding(0, 0, 0, profileGalleryBlurView.actionSize);
+        profileGalleryBlurView.setView(this);
         setVisibility(8);
         setOverScrollMode(2);
         setOffscreenPageLimit(2);
@@ -366,7 +372,39 @@ public class ProfileGalleryView extends CircularViewPager implements Notificatio
         dialogPhotos.loadCache();
     }
 
+    @Override // android.view.View
+    public void setVisibility(int i) {
+        super.setVisibility(i);
+        ProfileGalleryBlurView profileGalleryBlurView = this.blurView;
+        if (profileGalleryBlurView != null) {
+            profileGalleryBlurView.setVisibility(i);
+        }
+    }
+
+    @Override // android.view.View
+    public void setAlpha(float f) {
+        super.setAlpha(f);
+        ProfileGalleryBlurView profileGalleryBlurView = this.blurView;
+        if (profileGalleryBlurView != null) {
+            profileGalleryBlurView.setAlpha(f);
+        }
+    }
+
+    @Override // androidx.viewpager.widget.ViewPager, android.view.ViewGroup, android.view.View
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        ProfileGalleryBlurView profileGalleryBlurView = this.blurView;
+        if (profileGalleryBlurView != null) {
+            profileGalleryBlurView.setTranslationY(getHeight() - this.blurView.getMeasuredHeight());
+        }
+    }
+
+    public ProfileGalleryBlurView getBlurDrawer() {
+        return this.blurView;
+    }
+
     public void onDestroy() {
+        this.blurView = null;
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.dialogPhotosLoaded);
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.fileLoaded);
         NotificationCenter notificationCenter = NotificationCenter.getInstance(this.currentAccount);
@@ -638,6 +676,16 @@ public class ProfileGalleryView extends CircularViewPager implements Notificatio
             return null;
         }
         return ((Item) this.adapter.objects.get(getCurrentItem())).imageView;
+    }
+
+    public View getItemViewAt(int i) {
+        ViewPagerAdapter viewPagerAdapter = this.adapter;
+        if (viewPagerAdapter == null || viewPagerAdapter.objects.size() <= i || i < 0) {
+            return null;
+        }
+        Item item = (Item) this.adapter.objects.get(i);
+        View view = item.textureViewStubView;
+        return view == null ? item.imageView : view;
     }
 
     public boolean isLoadingCurrentVideo() {
@@ -1494,9 +1542,24 @@ public class ProfileGalleryView extends CircularViewPager implements Notificatio
         this.createThumbFromParent = z;
     }
 
+    public boolean isZooming() {
+        PinchToZoomHelper pinchToZoomHelper = this.pinchToZoomHelper;
+        return pinchToZoomHelper != null && pinchToZoomHelper.isInOverlayMode();
+    }
+
+    @Override // androidx.viewpager.widget.ViewPager, android.view.View
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
+        super.onSizeChanged(i, i2, i3, i4);
+        ProfileGalleryBlurView profileGalleryBlurView = this.blurView;
+        if (profileGalleryBlurView != null) {
+            profileGalleryBlurView.notifyUpdateSize();
+        }
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
-    class AvatarImageView extends BackupImageView {
+    class AvatarImageView extends BackupImageView implements SizeNotifierFrameLayout.IViewWithInvalidateCallback {
         private long firstDrawTime;
+        Runnable invalidateCallback;
         public boolean isVideo;
         private final Paint placeholderPaint;
         private final int position;
@@ -1613,11 +1676,38 @@ public class ProfileGalleryView extends CircularViewPager implements Notificatio
             this.radialProgress.setOverrideAlpha(AndroidUtilities.lerp(this.radialProgressHideAnimatorStartValue, 0.0f, valueAnimator.getAnimatedFraction()));
         }
 
+        @Override // org.telegram.ui.Components.SizeNotifierFrameLayout.IViewWithInvalidateCallback
+        public void listenInvalidate(Runnable runnable) {
+            this.invalidateCallback = runnable;
+        }
+
+        @Override // android.view.View
+        public void invalidate(int i, int i2, int i3, int i4) {
+            super.invalidate(i, i2, i3, i4);
+            Runnable runnable = this.invalidateCallback;
+            if (runnable != null) {
+                runnable.run();
+            }
+        }
+
+        @Override // android.view.View
+        public void invalidate(android.graphics.Rect rect) {
+            super.invalidate(rect);
+            Runnable runnable = this.invalidateCallback;
+            if (runnable != null) {
+                runnable.run();
+            }
+        }
+
         @Override // android.view.View
         public void invalidate() {
             super.invalidate();
             if (ProfileGalleryView.this.invalidateWithParent) {
                 ProfileGalleryView.this.invalidate();
+            }
+            Runnable runnable = this.invalidateCallback;
+            if (runnable != null) {
+                runnable.run();
             }
         }
     }

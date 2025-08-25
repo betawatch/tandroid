@@ -266,7 +266,7 @@ public class Text {
         if (!this.doNotSave) {
             float f = this.ellipsizeWidth;
             if (f >= 0.0f && this.width > f) {
-                canvas.saveLayerAlpha(0.0f, -this.vertPad, f - 1.0f, r0.getHeight() + this.vertPad, NotificationCenter.goingToPreviewTheme, 31);
+                canvas.saveLayerAlpha(0.0f, -this.vertPad, f - 1.0f, r0.getHeight() + this.vertPad, NotificationCenter.needCheckSystemBarColors, 31);
             }
         }
         canvas.save();

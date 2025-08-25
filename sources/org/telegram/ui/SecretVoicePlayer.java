@@ -446,7 +446,7 @@ public class SecretVoicePlayer extends Dialog {
                         setImageCoords(SecretVoicePlayer.this.rect.left, SecretVoicePlayer.this.rect.top, SecretVoicePlayer.this.rect.width(), SecretVoicePlayer.this.rect.height());
                         getPhotoImage().setRoundRadius((int) SecretVoicePlayer.this.rect.width());
                         if (SecretVoicePlayer.this.openProgress > 0.0f && SecretVoicePlayer.this.renderedFirstFrame) {
-                            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.goingToPreviewTheme, 31);
+                            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.needCheckSystemBarColors, 31);
                         }
                         this.radialProgressAlpha = 1.0f - SecretVoicePlayer.this.openProgress;
                     }
@@ -537,7 +537,7 @@ public class SecretVoicePlayer extends Dialog {
                         this.radialMatrix.postScale(width2, width2);
                         this.radialMatrix.postTranslate(SecretVoicePlayer.this.rect.centerX(), SecretVoicePlayer.this.rect.centerY());
                         this.radialGradient.setLocalMatrix(this.radialMatrix);
-                        canvas.saveLayerAlpha(SecretVoicePlayer.this.rect, NotificationCenter.goingToPreviewTheme, 31);
+                        canvas.saveLayerAlpha(SecretVoicePlayer.this.rect, NotificationCenter.needCheckSystemBarColors, 31);
                         super.drawBlurredPhoto(canvas);
                         canvas.save();
                         canvas.drawRect(SecretVoicePlayer.this.rect, this.radialPaint);

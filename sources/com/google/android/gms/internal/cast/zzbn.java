@@ -15,7 +15,7 @@ import com.google.android.gms.cast.internal.Logger;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import java.util.Collections;
+import j$.util.DesugarCollections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
@@ -27,7 +27,7 @@ public final class zzbn {
     private SessionManager zzg;
     private CallbackToFutureAdapter.Completer zzh;
     private SessionState zzi;
-    private final Set zzc = Collections.synchronizedSet(new HashSet());
+    private final Set zzc = DesugarCollections.synchronizedSet(new HashSet());
     private int zzf = 0;
     private final Handler zzd = new zzed(Looper.getMainLooper());
     private final Runnable zze = new Runnable() { // from class: com.google.android.gms.internal.cast.zzbj

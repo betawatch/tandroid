@@ -47,10 +47,10 @@ import androidx.dynamicanimation.animation.FloatValueHolder;
 import androidx.dynamicanimation.animation.SpringAnimation;
 import androidx.dynamicanimation.animation.SpringForce;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
+import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
@@ -1452,12 +1452,12 @@ public class Bulletin {
                 if (!this.blurVisibilityDrawable.hasBitmap()) {
                     this.blurVisibilityDrawable.render(getMeasuredWidth(), getMeasuredHeight(), AndroidUtilities.dp(10.0f), 6.0f);
                 }
-                this.blurVisibilityDrawable.setAlpha(MathUtils.clamp((int) ((1.0f - (this.inOutOffset / getMeasuredHeight())) * 255.0f), 0, NotificationCenter.goingToPreviewTheme));
+                this.blurVisibilityDrawable.setAlpha(MathUtils.clamp((int) ((1.0f - (this.inOutOffset / getMeasuredHeight())) * 255.0f), 0, NotificationCenter.needCheckSystemBarColors));
                 this.blurVisibilityDrawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
                 this.blurVisibilityDrawable.draw(canvas);
                 return;
             }
-            dispatchDrawImpl(canvas, false, NotificationCenter.goingToPreviewTheme);
+            dispatchDrawImpl(canvas, false, NotificationCenter.needCheckSystemBarColors);
         }
 
         protected void dispatchDrawImplBlur(Canvas canvas, int i) {

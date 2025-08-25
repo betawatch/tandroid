@@ -15,7 +15,7 @@ abstract class AuthenticatorUtils {
     }
 
     static boolean isWeakBiometricAllowed(int i) {
-        return (i & NotificationCenter.goingToPreviewTheme) == 255;
+        return (i & NotificationCenter.needCheckSystemBarColors) == 255;
     }
 
     static String convertToString(int i) {
@@ -41,7 +41,7 @@ abstract class AuthenticatorUtils {
         if (promptInfo.getAllowedAuthenticators() != 0) {
             return promptInfo.getAllowedAuthenticators();
         }
-        int i = cryptoObject != null ? 15 : NotificationCenter.goingToPreviewTheme;
+        int i = cryptoObject != null ? 15 : NotificationCenter.needCheckSystemBarColors;
         return promptInfo.isDeviceCredentialAllowed() ? 32768 | i : i;
     }
 

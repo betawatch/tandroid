@@ -6,9 +6,9 @@ import android.graphics.Rect;
 import android.util.SparseBooleanArray;
 import androidx.collection.ArrayMap;
 import androidx.core.graphics.ColorUtils;
+import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import org.telegram.tgnet.TLObject;
@@ -50,7 +50,7 @@ public final class Palette {
     }
 
     public List getSwatches() {
-        return Collections.unmodifiableList(this.mSwatches);
+        return DesugarCollections.unmodifiableList(this.mSwatches);
     }
 
     void generate() {

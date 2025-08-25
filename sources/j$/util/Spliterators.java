@@ -4,69 +4,45 @@ import java.util.Iterator;
 
 /* loaded from: classes2.dex */
 public final class Spliterators {
-    private static final Spliterator a = new Y();
-    private static final G b = new W();
-    private static final J c = new X();
-    private static final D d = new V();
+    private static final Spliterator a = new p0();
+    private static final Y b = new n0();
+    private static final b0 c = new o0();
+    private static final V d = new m0();
 
     public static Spliterator e() {
         return a;
     }
 
-    public static G c() {
+    public static Y c() {
         return b;
     }
 
-    public static J d() {
+    public static b0 d() {
         return c;
     }
 
-    public static D b() {
+    public static V b() {
         return d;
     }
 
-    public static p f(D d2) {
-        d2.getClass();
-        return new S(d2);
-    }
-
-    public static t g(G g) {
-        g.getClass();
-        return new P(g);
-    }
-
-    public static x h(J j) {
-        j.getClass();
-        return new Q(j);
-    }
-
-    public static Iterator i(Spliterator spliterator) {
-        spliterator.getClass();
-        return new O(spliterator);
-    }
-
-    public static D j(double[] dArr, int i, int i2) {
-        dArr.getClass();
-        a(dArr.length, i, i2);
-        return new U(dArr, i, i2, 1040);
-    }
-
-    public static G k(int[] iArr, int i, int i2) {
-        iArr.getClass();
-        a(iArr.length, i, i2);
-        return new Z(iArr, i, i2, 1040);
-    }
-
-    public static J l(long[] jArr, int i, int i2) {
-        jArr.getClass();
-        a(jArr.length, i, i2);
-        return new b0(jArr, i, i2, 1040);
-    }
-
     public static Spliterator m(Object[] objArr, int i, int i2) {
-        objArr.getClass();
-        a(objArr.length, i, i2);
-        return new T(objArr, i, i2, 1040);
+        a(((Object[]) Objects.requireNonNull(objArr)).length, i, i2);
+        return new k0(objArr, i, i2, 1040);
+    }
+
+    public static Y k(int[] iArr, int i, int i2) {
+        a(((int[]) Objects.requireNonNull(iArr)).length, i, i2);
+        return new q0(iArr, i, i2, 1040);
+    }
+
+    public static b0 l(long[] jArr, int i, int i2) {
+        a(((long[]) Objects.requireNonNull(jArr)).length, i, i2);
+        return new s0(jArr, i, i2, 1040);
+    }
+
+    public static V j(double[] dArr, int i, int i2) {
+        a(((double[]) Objects.requireNonNull(dArr)).length, i, i2);
+        return new l0(dArr, i, i2, 1040);
     }
 
     private static void a(int i, int i2, int i3) {
@@ -83,7 +59,26 @@ public final class Spliterators {
     }
 
     public static <T> Spliterator<T> spliterator(java.util.Collection<? extends T> collection, int i) {
-        collection.getClass();
-        return new a0(collection, i);
+        return new r0((java.util.Collection) Objects.requireNonNull(collection), i);
+    }
+
+    public static Iterator i(Spliterator spliterator) {
+        Objects.requireNonNull(spliterator);
+        return new g0(spliterator);
+    }
+
+    public static K g(Y y) {
+        Objects.requireNonNull(y);
+        return new h0(y);
+    }
+
+    public static O h(b0 b0Var) {
+        Objects.requireNonNull(b0Var);
+        return new i0(b0Var);
+    }
+
+    public static G f(V v) {
+        Objects.requireNonNull(v);
+        return new j0(v);
     }
 }

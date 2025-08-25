@@ -1,5 +1,6 @@
 package com.google.android.exoplayer2.util;
 
+import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -21,12 +22,12 @@ public final class CopyOnWriteMultiset implements Iterable {
             try {
                 ArrayList arrayList = new ArrayList(this.elements);
                 arrayList.add(obj);
-                this.elements = Collections.unmodifiableList(arrayList);
+                this.elements = DesugarCollections.unmodifiableList(arrayList);
                 Integer num = (Integer) this.elementCounts.get(obj);
                 if (num == null) {
                     HashSet hashSet = new HashSet(this.elementSet);
                     hashSet.add(obj);
-                    this.elementSet = Collections.unmodifiableSet(hashSet);
+                    this.elementSet = DesugarCollections.unmodifiableSet(hashSet);
                 }
                 this.elementCounts.put(obj, Integer.valueOf(num != null ? 1 + num.intValue() : 1));
             } catch (Throwable th) {
@@ -44,12 +45,12 @@ public final class CopyOnWriteMultiset implements Iterable {
                 }
                 ArrayList arrayList = new ArrayList(this.elements);
                 arrayList.remove(obj);
-                this.elements = Collections.unmodifiableList(arrayList);
+                this.elements = DesugarCollections.unmodifiableList(arrayList);
                 if (num.intValue() == 1) {
                     this.elementCounts.remove(obj);
                     HashSet hashSet = new HashSet(this.elementSet);
                     hashSet.remove(obj);
-                    this.elementSet = Collections.unmodifiableSet(hashSet);
+                    this.elementSet = DesugarCollections.unmodifiableSet(hashSet);
                 } else {
                     this.elementCounts.put(obj, Integer.valueOf(num.intValue() - 1));
                 }

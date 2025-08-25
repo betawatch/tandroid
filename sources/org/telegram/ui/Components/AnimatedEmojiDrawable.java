@@ -13,13 +13,13 @@ import android.util.LongSparseArray;
 import android.util.SparseArray;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
+import j$.util.Objects;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Locale;
-import java.util.Objects;
 import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.SQLite.SQLiteException;
@@ -1185,7 +1185,7 @@ public class AnimatedEmojiDrawable extends Drawable {
     }
 
     public static class WrapSizeDrawable extends Drawable {
-        private int alpha = NotificationCenter.goingToPreviewTheme;
+        private int alpha = NotificationCenter.needCheckSystemBarColors;
         private Drawable drawable;
         int height;
         int width;
@@ -1299,7 +1299,7 @@ public class AnimatedEmojiDrawable extends Drawable {
             AnimatedFloat animatedFloat2 = new AnimatedFloat((View) null, 300L, cubicBezierInterpolator);
             this.particlesAlpha = animatedFloat2;
             this.drawables = new Drawable[2];
-            this.alpha = NotificationCenter.goingToPreviewTheme;
+            this.alpha = NotificationCenter.needCheckSystemBarColors;
             this.bounds = new android.graphics.Rect();
             this.parentView = view;
             animatedFloat.setParent(view);
@@ -1478,6 +1478,10 @@ public class AnimatedEmojiDrawable extends Drawable {
 
         public boolean isEmpty() {
             return this.drawables[0] == null;
+        }
+
+        public boolean isStable() {
+            return this.drawables[0] != null && this.changeProgress.get() == 1.0f;
         }
 
         public boolean set(long j, int i, boolean z) {

@@ -1,38 +1,30 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
-import j$.util.function.Consumer;
-import j$.util.function.IntFunction;
+import java.util.function.BinaryOperator;
+import java.util.function.LongFunction;
 
 /* loaded from: classes2.dex */
-final class N0 extends P0 implements B0 {
-    @Override // j$.util.stream.F0
-    public final /* synthetic */ void forEach(Consumer consumer) {
-        t0.r(this, consumer);
+final class N0 extends P0 {
+    public final /* synthetic */ int k;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ N0(b bVar, Spliterator spliterator, LongFunction longFunction, BinaryOperator binaryOperator, int i) {
+        super(bVar, spliterator, longFunction, binaryOperator);
+        this.k = i;
     }
 
-    @Override // j$.util.stream.F0
-    public final /* synthetic */ F0 t(long j, long j2, IntFunction intFunction) {
-        return t0.u(this, j, j2);
+    @Override // j$.util.stream.P0, j$.util.stream.e
+    protected final e e(Spliterator spliterator) {
+        switch (this.k) {
+        }
+        return new P0(this, spliterator);
     }
 
-    @Override // j$.util.stream.F0
-    public final /* synthetic */ void i(Object[] objArr, int i) {
-        t0.o(this, (Integer[]) objArr, i);
-    }
-
-    @Override // j$.util.stream.E0
-    public final Object c(int i) {
-        return new int[i];
-    }
-
-    @Override // j$.util.stream.F0
-    public final j$.util.M spliterator() {
-        return new e1(this);
-    }
-
-    @Override // j$.util.stream.F0
-    public final Spliterator spliterator() {
-        return new e1(this);
+    @Override // j$.util.stream.P0, j$.util.stream.e
+    protected final /* bridge */ /* synthetic */ Object a() {
+        switch (this.k) {
+        }
+        return a();
     }
 }

@@ -83,6 +83,7 @@ import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import androidx.recyclerview.widget.ChatListItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import j$.util.Objects;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -93,7 +94,6 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
-import java.util.Objects;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
@@ -2296,8 +2296,8 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                     int i2 = (int) (ChatActivityEnterView.this.slideToCancelProgress >= 0.93f ? ((ChatActivityEnterView.this.slideToCancelProgress - 0.93f) / 0.07f) * 255.0f : 0.0f);
                     drawable3.setAlpha(i2);
                     drawable3.draw(canvas);
-                    drawable3.setAlpha(NotificationCenter.goingToPreviewTheme);
-                    drawable.setAlpha(NotificationCenter.goingToPreviewTheme - i2);
+                    drawable3.setAlpha(NotificationCenter.needCheckSystemBarColors);
+                    drawable.setAlpha(NotificationCenter.needCheckSystemBarColors - i2);
                     drawable.draw(canvas);
                     return;
                 }
@@ -7899,7 +7899,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
         if (baseFragment != null) {
             new PremiumFeatureBottomSheet(baseFragment, 11, false).show();
         } else if (baseFragment.getContext() instanceof LaunchActivity) {
-            ((LaunchActivity) baseFragment.getContext()).lambda$runLinkRequest$94(new PremiumPreviewFragment(null));
+            ((LaunchActivity) baseFragment.getContext()).lambda$runLinkRequest$95(new PremiumPreviewFragment(null));
         }
     }
 
@@ -14727,7 +14727,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                     canvas.restore();
                 }
                 canvas.save();
-                this.textPaint.setAlpha(NotificationCenter.goingToPreviewTheme);
+                this.textPaint.setAlpha(NotificationCenter.needCheckSystemBarColors);
                 StaticLayout staticLayout2 = new StaticLayout(this.replaceStable, this.textPaint, getMeasuredWidth(), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                 canvas.translate(0.0f, measuredHeight - (staticLayout2.getHeight() / 2.0f));
                 staticLayout2.draw(canvas);
@@ -15250,7 +15250,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
             int i2;
             float f3;
             float f4;
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.goingToPreviewTheme, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.needCheckSystemBarColors, 31);
             updateColors();
             Drawable drawable = isInactive() ? this.inactiveDrawable : this.drawable;
             int measuredWidth = (getMeasuredWidth() - (getMeasuredHeight() / 2)) - (drawable.getIntrinsicWidth() / 2);
@@ -15504,7 +15504,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
         if (f <= 0.0f && f2 <= 0.0f) {
             return ((Boolean) callback0Return.run()).booleanValue();
         }
-        canvas.saveLayerAlpha(0.0f, 0.0f, this.messageEditText.getX() + this.messageEditText.getMeasuredWidth() + AndroidUtilities.dp(5.0f), this.messageEditText.getY() + this.messageEditText.getMeasuredHeight() + AndroidUtilities.dp(2.0f), NotificationCenter.goingToPreviewTheme, 31);
+        canvas.saveLayerAlpha(0.0f, 0.0f, this.messageEditText.getX() + this.messageEditText.getMeasuredWidth() + AndroidUtilities.dp(5.0f), this.messageEditText.getY() + this.messageEditText.getMeasuredHeight() + AndroidUtilities.dp(2.0f), NotificationCenter.needCheckSystemBarColors, 31);
         boolean booleanValue = ((Boolean) callback0Return.run()).booleanValue();
         canvas.save();
         if (f > 0.0f) {

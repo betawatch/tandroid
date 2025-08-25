@@ -16,10 +16,10 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.exoplayer2.util.Consumer;
+import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Locale;
-import java.util.Objects;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
@@ -220,11 +220,21 @@ public class ChannelBoostLayout extends FrameLayout {
                         };
                         ChannelBoostLayout.this.boostsTabs.setDelegate(new ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate() { // from class: org.telegram.ui.ChannelBoostLayout.1.2
                             @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate
+                            public /* synthetic */ boolean canReorder(int i3) {
+                                return ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate.-CC.$default$canReorder(this, i3);
+                            }
+
+                            @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate
                             public void onPageScrolled(float f) {
                             }
 
                             @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate
                             public void onSamePageSelected() {
+                            }
+
+                            @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate
+                            public /* synthetic */ boolean showOptions(int i3, View view2) {
+                                return ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate.-CC.$default$showOptions(this, i3, view2);
                             }
 
                             @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate
@@ -826,6 +836,6 @@ public class ChannelBoostLayout extends FrameLayout {
         this.progressLayout.addView(rLottieImageView, LayoutHelper.createLinear(120, 120, 1, 0, 0, 0, 20));
         this.progressLayout.addView(textView, LayoutHelper.createLinear(-2, -2, 1, 0, 0, 0, 10));
         this.progressLayout.addView(textView2, LayoutHelper.createLinear(-2, -2, 1));
-        addView(this.progressLayout, LayoutHelper.createFrame(NotificationCenter.wallpapersNeedReload, -2.0f, 17, 0.0f, 0.0f, 0.0f, 30.0f));
+        addView(this.progressLayout, LayoutHelper.createFrame(NotificationCenter.profileMusicUpdated, -2.0f, 17, 0.0f, 0.0f, 0.0f, 30.0f));
     }
 }

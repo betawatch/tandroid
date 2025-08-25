@@ -1,16 +1,31 @@
 package j$.util.stream;
 
+import java.util.function.LongConsumer;
+import java.util.function.LongPredicate;
+
 /* loaded from: classes2.dex */
-enum q0 {
-    ANY(true, true),
-    ALL(false, false),
-    NONE(true, false);
+final class q0 extends s0 implements l2 {
+    @Override // java.util.function.Consumer
+    public final /* bridge */ /* synthetic */ void accept(Object obj) {
+        j((Long) obj);
+    }
 
-    private final boolean a;
-    private final boolean b;
+    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
+        return j$.com.android.tools.r8.a.c(this, longConsumer);
+    }
 
-    q0(boolean z, boolean z2) {
-        this.a = z;
-        this.b = z2;
+    @Override // j$.util.stream.l2
+    public final /* synthetic */ void j(Long l) {
+        w0.i(this, l);
+    }
+
+    @Override // j$.util.stream.s0, j$.util.stream.m2
+    public final void accept(long j) {
+        if (this.a) {
+            return;
+        }
+        LongPredicate longPredicate = null;
+        longPredicate.test(j);
+        throw null;
     }
 }

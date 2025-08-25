@@ -1,30 +1,37 @@
 package j$.util;
 
-import j$.util.function.Function;
 import java.io.Serializable;
 import java.util.Comparator;
+import java.util.function.Function;
+import java.util.function.ToDoubleFunction;
+import java.util.function.ToIntFunction;
+import java.util.function.ToLongFunction;
 
 /* loaded from: classes2.dex */
 public final /* synthetic */ class b implements Comparator, Serializable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Comparator b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ b(Comparator comparator, Object obj, int i) {
+    public /* synthetic */ b(int i, Object obj) {
         this.a = i;
-        this.b = comparator;
-        this.c = obj;
+        this.b = obj;
     }
 
     @Override // java.util.Comparator
     public final int compare(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                int compare = this.b.compare(obj, obj2);
-                return compare != 0 ? compare : ((Comparator) this.c).compare(obj, obj2);
+                ToIntFunction toIntFunction = (ToIntFunction) this.b;
+                return Integer.compare(toIntFunction.applyAsInt(obj), toIntFunction.applyAsInt(obj2));
+            case 1:
+                ToDoubleFunction toDoubleFunction = (ToDoubleFunction) this.b;
+                return Double.compare(toDoubleFunction.applyAsDouble(obj), toDoubleFunction.applyAsDouble(obj2));
+            case 2:
+                Function function = (Function) this.b;
+                return ((Comparable) function.apply(obj)).compareTo(function.apply(obj2));
             default:
-                Function function = (Function) this.c;
-                return this.b.compare(function.apply(obj), function.apply(obj2));
+                ToLongFunction toLongFunction = (ToLongFunction) this.b;
+                return Long.compare(toLongFunction.applyAsLong(obj), toLongFunction.applyAsLong(obj2));
         }
     }
 }

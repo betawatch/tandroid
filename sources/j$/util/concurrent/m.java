@@ -1,8 +1,13 @@
 package j$.util.concurrent;
 
-import java.io.Serializable;
-import java.util.concurrent.locks.ReentrantLock;
-
 /* loaded from: classes2.dex */
-final class m extends ReentrantLock implements Serializable {
+final class m extends l {
+    @Override // j$.util.concurrent.l
+    final l a(int i, Object obj) {
+        return null;
+    }
+
+    m() {
+        super(-3, null, null);
+    }
 }

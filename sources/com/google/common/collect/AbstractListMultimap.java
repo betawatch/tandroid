@@ -1,7 +1,7 @@
 package com.google.common.collect;
 
+import j$.util.DesugarCollections;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -13,7 +13,7 @@ abstract class AbstractListMultimap extends AbstractMapBasedMultimap implements 
 
     @Override // com.google.common.collect.AbstractMapBasedMultimap
     Collection unmodifiableCollectionSubclass(Collection collection) {
-        return Collections.unmodifiableList((List) collection);
+        return DesugarCollections.unmodifiableList((List) collection);
     }
 
     @Override // com.google.common.collect.AbstractMapBasedMultimap

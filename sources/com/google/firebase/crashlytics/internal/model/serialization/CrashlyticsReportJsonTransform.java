@@ -6,10 +6,10 @@ import com.google.firebase.crashlytics.internal.model.AutoCrashlyticsReportEncod
 import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
 import com.google.firebase.encoders.DataEncoder;
 import com.google.firebase.encoders.json.JsonDataEncoderBuilder;
+import j$.util.DesugarCollections;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /* loaded from: classes.dex */
@@ -858,6 +858,6 @@ public class CrashlyticsReportJsonTransform {
             arrayList.add(objectParser.parse(jsonReader));
         }
         jsonReader.endArray();
-        return Collections.unmodifiableList(arrayList);
+        return DesugarCollections.unmodifiableList(arrayList);
     }
 }

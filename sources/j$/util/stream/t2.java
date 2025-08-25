@@ -1,58 +1,42 @@
 package j$.util.stream;
 
-import java.util.Arrays;
-
 /* loaded from: classes2.dex */
-final class t2 extends p2 {
-    private I2 c;
+final class t2 extends f2 {
+    long b;
+    long c;
+    final /* synthetic */ u2 d;
 
-    /* JADX WARN: Type inference failed for: r0v2, types: [j$.util.stream.I2, j$.util.stream.M2] */
-    /* JADX WARN: Type inference failed for: r0v5, types: [j$.util.stream.M2] */
-    /* JADX WARN: Type inference failed for: r0v6, types: [j$.util.stream.M2] */
-    @Override // j$.util.stream.X1, j$.util.stream.d2
-    public final void n(long j) {
-        ?? r0;
-        if (j >= 2147483639) {
-            throw new IllegalArgumentException("Stream size exceeds max array size");
-        }
-        if (j <= 0) {
-            r0 = new M2();
-        } else {
-            r0 = new I2((int) j);
-        }
-        this.c = r0;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    t2(u2 u2Var, m2 m2Var) {
+        super(m2Var);
+        this.d = u2Var;
+        this.b = u2Var.m;
+        long j = u2Var.n;
+        this.c = j < 0 ? Long.MAX_VALUE : j;
     }
 
-    @Override // j$.util.stream.X1, j$.util.stream.d2
-    public final void m() {
-        int[] iArr = (int[]) this.c.e();
-        Arrays.sort(iArr);
-        long length = iArr.length;
-        d2 d2Var = this.a;
-        d2Var.n(length);
-        int i = 0;
-        if (!this.b) {
-            int length2 = iArr.length;
-            while (i < length2) {
-                d2Var.accept(iArr[i]);
-                i++;
-            }
-        } else {
-            int length3 = iArr.length;
-            while (i < length3) {
-                int i2 = iArr[i];
-                if (d2Var.q()) {
-                    break;
-                }
-                d2Var.accept(i2);
-                i++;
-            }
-        }
-        d2Var.m();
+    @Override // j$.util.stream.f2, j$.util.stream.m2
+    public final void l(long j) {
+        this.a.l(w0.A(j, this.d.m, this.c));
     }
 
-    @Override // j$.util.stream.d2
-    public final void accept(int i) {
-        this.c.accept(i);
+    @Override // j$.util.stream.j2, java.util.function.DoubleConsumer
+    public final void accept(double d) {
+        long j = this.b;
+        if (j == 0) {
+            long j2 = this.c;
+            if (j2 > 0) {
+                this.c = j2 - 1;
+                this.a.accept(d);
+                return;
+            }
+            return;
+        }
+        this.b = j - 1;
+    }
+
+    @Override // j$.util.stream.f2, j$.util.stream.m2
+    public final boolean n() {
+        return this.c == 0 || this.a.n();
     }
 }

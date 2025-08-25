@@ -18,6 +18,7 @@ import com.google.android.exoplayer2.util.CodecSpecificDataUtil;
 import com.google.android.exoplayer2.util.Log;
 import com.google.android.exoplayer2.util.ParsableBitArray;
 import com.google.android.exoplayer2.util.ParsableByteArray;
+import j$.util.DesugarCollections;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -424,12 +425,12 @@ public final class Cea708Decoder extends CeaDecoder {
         if (i == 127) {
             this.currentCueInfoBuilder.append((char) 9835);
         } else {
-            this.currentCueInfoBuilder.append((char) (i & NotificationCenter.goingToPreviewTheme));
+            this.currentCueInfoBuilder.append((char) (i & NotificationCenter.needCheckSystemBarColors));
         }
     }
 
     private void handleG1Character(int i) {
-        this.currentCueInfoBuilder.append((char) (i & NotificationCenter.goingToPreviewTheme));
+        this.currentCueInfoBuilder.append((char) (i & NotificationCenter.needCheckSystemBarColors));
     }
 
     private void handleG2Character(int i) {
@@ -604,7 +605,7 @@ public final class Cea708Decoder extends CeaDecoder {
         for (int i2 = 0; i2 < arrayList.size(); i2++) {
             arrayList2.add(((Cea708CueInfo) arrayList.get(i2)).cue);
         }
-        return Collections.unmodifiableList(arrayList2);
+        return DesugarCollections.unmodifiableList(arrayList2);
     }
 
     private void resetCueBuilders() {
@@ -934,7 +935,7 @@ public final class Cea708Decoder extends CeaDecoder {
             Assertions.checkIndex(i2, 0, 4);
             Assertions.checkIndex(i3, 0, 4);
             Assertions.checkIndex(i4, 0, 4);
-            return Color.argb(i4 != 2 ? i4 != 3 ? NotificationCenter.goingToPreviewTheme : 0 : NotificationCenter.dialogIsTranslatable, i > 1 ? NotificationCenter.goingToPreviewTheme : 0, i2 > 1 ? NotificationCenter.goingToPreviewTheme : 0, i3 > 1 ? NotificationCenter.goingToPreviewTheme : 0);
+            return Color.argb(i4 != 2 ? i4 != 3 ? NotificationCenter.needCheckSystemBarColors : 0 : NotificationCenter.dialogIsTranslatable, i > 1 ? NotificationCenter.needCheckSystemBarColors : 0, i2 > 1 ? NotificationCenter.needCheckSystemBarColors : 0, i3 > 1 ? NotificationCenter.needCheckSystemBarColors : 0);
         }
     }
 

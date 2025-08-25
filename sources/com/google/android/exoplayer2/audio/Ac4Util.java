@@ -143,9 +143,9 @@ public abstract class Ac4Util {
         data[1] = 64;
         data[2] = -1;
         data[3] = -1;
-        data[4] = (byte) ((i >> 16) & NotificationCenter.goingToPreviewTheme);
-        data[5] = (byte) ((i >> 8) & NotificationCenter.goingToPreviewTheme);
-        data[6] = (byte) (i & NotificationCenter.goingToPreviewTheme);
+        data[4] = (byte) ((i >> 16) & NotificationCenter.needCheckSystemBarColors);
+        data[5] = (byte) ((i >> 8) & NotificationCenter.needCheckSystemBarColors);
+        data[6] = (byte) (i & NotificationCenter.needCheckSystemBarColors);
     }
 
     private static int readVariableBits(ParsableBitArray parsableBitArray, int i) {

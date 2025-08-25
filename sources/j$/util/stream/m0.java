@@ -1,47 +1,26 @@
 package j$.util.stream;
 
+import java.util.function.Supplier;
+
 /* loaded from: classes2.dex */
-final class m0 extends p0 implements b2 {
-    final /* synthetic */ q0 c;
-    final /* synthetic */ j$.util.function.I d;
+public final /* synthetic */ class m0 implements Supplier {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ t0 b;
 
-    @Override // j$.util.function.Consumer
-    /* renamed from: accept */
-    public final /* bridge */ /* synthetic */ void r(Object obj) {
-        o((Integer) obj);
+    public /* synthetic */ m0(t0 t0Var, int i) {
+        this.a = i;
+        this.b = t0Var;
     }
 
-    @Override // j$.util.function.G
-    public final /* synthetic */ j$.util.function.G l(j$.util.function.G g) {
-        return j$.com.android.tools.r8.a.b(this, g);
-    }
-
-    @Override // j$.util.stream.b2
-    public final /* synthetic */ void o(Integer num) {
-        t0.g(this, num);
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    m0(j$.util.function.I i, q0 q0Var) {
-        super(q0Var);
-        this.c = q0Var;
-        this.d = i;
-    }
-
-    @Override // j$.util.stream.p0, j$.util.stream.d2
-    public final void accept(int i) {
-        boolean z;
-        boolean z2;
-        if (this.a) {
-            return;
-        }
-        boolean test = this.d.a.test(i);
-        q0 q0Var = this.c;
-        z = q0Var.a;
-        if (test == z) {
-            this.a = true;
-            z2 = q0Var.b;
-            this.b = z2;
+    @Override // java.util.function.Supplier
+    public final Object get() {
+        switch (this.a) {
+            case 0:
+                return new q0(this.b);
+            case 1:
+                return new p0(this.b);
+            default:
+                return new r0(this.b);
         }
     }
 }

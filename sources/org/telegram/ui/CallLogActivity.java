@@ -39,14 +39,16 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import j$.util.Collection;
-import j$.util.function.Function;
-import j$.util.function.Predicate;
+import j$.util.function.Function$-CC;
+import j$.util.function.Predicate$-CC;
 import j$.util.stream.Collectors;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.function.Function;
+import java.util.function.Predicate;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
@@ -281,21 +283,19 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
                         TLRPC.TL_messageActionConferenceCall tL_messageActionConferenceCall = (TLRPC.TL_messageActionConferenceCall) messageAction;
                         long fromChatId2 = messageObject.getFromChatId();
                         Set<Long> set = (Set) Collection.-EL.stream(tL_messageActionConferenceCall.other_participants).map(new Function() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda5
-                            @Override // j$.util.function.Function
                             public /* synthetic */ Function andThen(Function function) {
-                                return Function.-CC.$default$andThen(this, function);
+                                return Function$-CC.$default$andThen(this, function);
                             }
 
-                            @Override // j$.util.function.Function
+                            @Override // java.util.function.Function
                             public final Object apply(Object obj) {
                                 Long lambda$didReceivedNotification$0;
                                 lambda$didReceivedNotification$0 = CallLogActivity.lambda$didReceivedNotification$0((TLRPC.Peer) obj);
                                 return lambda$didReceivedNotification$0;
                             }
 
-                            @Override // j$.util.function.Function
                             public /* synthetic */ Function compose(Function function) {
-                                return Function.-CC.$default$compose(this, function);
+                                return Function$-CC.$default$compose(this, function);
                             }
                         }).collect(Collectors.toSet());
                         set.add(Long.valueOf(fromChatId2 == getUserConfig().getClientUserId() ? messageObject.messageOwner.peer_id.user_id : fromChatId2));
@@ -1213,21 +1213,19 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
                         TLRPC.TL_messageActionConferenceCall tL_messageActionConferenceCall = (TLRPC.TL_messageActionConferenceCall) messageAction2;
                         hashSet.add(Long.valueOf(fromChatId));
                         hashSet.addAll((java.util.Collection) Collection.-EL.stream(tL_messageActionConferenceCall.other_participants).map(new Function() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda13
-                            @Override // j$.util.function.Function
                             public /* synthetic */ Function andThen(Function function) {
-                                return Function.-CC.$default$andThen(this, function);
+                                return Function$-CC.$default$andThen(this, function);
                             }
 
-                            @Override // j$.util.function.Function
+                            @Override // java.util.function.Function
                             public final Object apply(Object obj) {
                                 Long lambda$getCalls$11;
                                 lambda$getCalls$11 = CallLogActivity.lambda$getCalls$11((TLRPC.Peer) obj);
                                 return lambda$getCalls$11;
                             }
 
-                            @Override // j$.util.function.Function
                             public /* synthetic */ Function compose(Function function) {
-                                return Function.-CC.$default$compose(this, function);
+                                return Function$-CC.$default$compose(this, function);
                             }
                         }).collect(Collectors.toSet()));
                         if (i3 == z && tL_messageActionConferenceCall.missed) {
@@ -1267,22 +1265,19 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
                                     for (Long l2 : hashSet) {
                                         l2.longValue();
                                         if (Collection.-EL.stream(callLogRow3.users).noneMatch(new Predicate() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda14
-                                            @Override // j$.util.function.Predicate
                                             public /* synthetic */ Predicate and(Predicate predicate) {
-                                                return Predicate.-CC.$default$and(this, predicate);
+                                                return Predicate$-CC.$default$and(this, predicate);
                                             }
 
-                                            @Override // j$.util.function.Predicate
                                             public /* synthetic */ Predicate negate() {
-                                                return Predicate.-CC.$default$negate(this);
+                                                return Predicate$-CC.$default$negate(this);
                                             }
 
-                                            @Override // j$.util.function.Predicate
                                             public /* synthetic */ Predicate or(Predicate predicate) {
-                                                return Predicate.-CC.$default$or(this, predicate);
+                                                return Predicate$-CC.$default$or(this, predicate);
                                             }
 
-                                            @Override // j$.util.function.Predicate
+                                            @Override // java.util.function.Predicate
                                             public final boolean test(Object obj) {
                                                 boolean lambda$getCalls$12;
                                                 lambda$getCalls$12 = CallLogActivity.lambda$getCalls$12(fromChatId, (TLRPC.User) obj);
@@ -1335,22 +1330,19 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
                             for (Long l3 : hashSet) {
                                 l3.longValue();
                                 if (Collection.-EL.stream(callLogRow.users).noneMatch(new Predicate() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda15
-                                    @Override // j$.util.function.Predicate
                                     public /* synthetic */ Predicate and(Predicate predicate) {
-                                        return Predicate.-CC.$default$and(this, predicate);
+                                        return Predicate$-CC.$default$and(this, predicate);
                                     }
 
-                                    @Override // j$.util.function.Predicate
                                     public /* synthetic */ Predicate negate() {
-                                        return Predicate.-CC.$default$negate(this);
+                                        return Predicate$-CC.$default$negate(this);
                                     }
 
-                                    @Override // j$.util.function.Predicate
                                     public /* synthetic */ Predicate or(Predicate predicate) {
-                                        return Predicate.-CC.$default$or(this, predicate);
+                                        return Predicate$-CC.$default$or(this, predicate);
                                     }
 
-                                    @Override // j$.util.function.Predicate
+                                    @Override // java.util.function.Predicate
                                     public final boolean test(Object obj) {
                                         boolean lambda$getCalls$13;
                                         lambda$getCalls$13 = CallLogActivity.lambda$getCalls$13(fromChatId, (TLRPC.User) obj);

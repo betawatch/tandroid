@@ -4,8 +4,6 @@ package j$.util.concurrent;
 final class w extends ThreadLocal {
     @Override // java.lang.ThreadLocal
     protected final Object initialValue() {
-        ThreadLocalRandom threadLocalRandom = new ThreadLocalRandom();
-        threadLocalRandom.c = true;
-        return threadLocalRandom;
+        return new ThreadLocalRandom(0);
     }
 }

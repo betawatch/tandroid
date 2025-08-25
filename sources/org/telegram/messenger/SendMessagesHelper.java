@@ -29,6 +29,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.collection.LongSparseArray;
 import androidx.core.view.inputmethod.InputContentInfoCompat;
+import j$.util.Objects;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -44,7 +45,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Objects;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -2241,7 +2241,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
             message2.from_id = tL_peerUser;
             tL_peerUser.user_id = getUserConfig().getClientUserId();
-            message2.flags |= NotificationCenter.liveLocationsChanged;
+            message2.flags |= NotificationCenter.proxySettingsChanged;
             TLRPC.TL_messageReplyHeader tL_messageReplyHeader = new TLRPC.TL_messageReplyHeader();
             message2.reply_to = tL_messageReplyHeader;
             tL_messageReplyHeader.flags |= 16;
@@ -2397,7 +2397,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             file = new File(FileLoader.getDirectory(2), key + str2);
         }
         ensureMediaThumbExists(getAccountInstance(), false, document, file.getAbsolutePath(), null, 0L);
-        final String[] strArr = {getKeyForPhotoSize(getAccountInstance(), FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 320), bitmapArr, true, true)};
+        final String[] strArr = {getKeyForPhotoSize(getAccountInstance(), FileLoader.getClosestPhotoSizeWithSize(document.thumbs, NotificationCenter.nearEarEvent), bitmapArr, true, true)};
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda79
             @Override // java.lang.Runnable
             public final void run() {
@@ -9075,8 +9075,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 str3 = str13;
                 bArr = null;
                 messageMedia3 = messageMedia2;
-                TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(messageMedia3.document.thumbs, 320);
-                TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(messageMedia.document.thumbs, 320);
+                TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(messageMedia3.document.thumbs, NotificationCenter.nearEarEvent);
+                TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(messageMedia.document.thumbs, NotificationCenter.nearEarEvent);
                 if (closestPhotoSizeWithSize2 != null && (fileLocation2 = closestPhotoSizeWithSize2.location) != null && fileLocation2.volume_id == -2147483648L && closestPhotoSizeWithSize3 != null && closestPhotoSizeWithSize3.location != null && !(closestPhotoSizeWithSize3 instanceof TLRPC.TL_photoSizeEmpty) && !(closestPhotoSizeWithSize2 instanceof TLRPC.TL_photoSizeEmpty)) {
                     String str23 = closestPhotoSizeWithSize2.location.volume_id + "_" + closestPhotoSizeWithSize2.location.local_id;
                     String str24 = closestPhotoSizeWithSize3.location.volume_id + "_" + closestPhotoSizeWithSize3.location.local_id;
@@ -9616,27 +9616,27 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         return tL_photo2;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:125:0x0459  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x0477 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:147:0x04ea  */
-    /* JADX WARN: Removed duplicated region for block: B:150:0x050a  */
-    /* JADX WARN: Removed duplicated region for block: B:153:0x051a  */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x0524 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:159:0x052d  */
-    /* JADX WARN: Removed duplicated region for block: B:162:0x0539  */
-    /* JADX WARN: Removed duplicated region for block: B:168:0x0593 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:196:0x0510  */
-    /* JADX WARN: Removed duplicated region for block: B:240:0x04fe  */
-    /* JADX WARN: Removed duplicated region for block: B:253:0x028e  */
-    /* JADX WARN: Removed duplicated region for block: B:254:0x0247  */
-    /* JADX WARN: Removed duplicated region for block: B:304:0x01b3 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:314:0x01dc A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:125:0x045a  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x0478 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:147:0x04eb  */
+    /* JADX WARN: Removed duplicated region for block: B:150:0x050b  */
+    /* JADX WARN: Removed duplicated region for block: B:153:0x051b  */
+    /* JADX WARN: Removed duplicated region for block: B:156:0x0525 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:159:0x052e  */
+    /* JADX WARN: Removed duplicated region for block: B:162:0x053a  */
+    /* JADX WARN: Removed duplicated region for block: B:168:0x0594 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:196:0x0511  */
+    /* JADX WARN: Removed duplicated region for block: B:240:0x04ff  */
+    /* JADX WARN: Removed duplicated region for block: B:253:0x028f  */
+    /* JADX WARN: Removed duplicated region for block: B:254:0x0248  */
+    /* JADX WARN: Removed duplicated region for block: B:304:0x01b4 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:314:0x01dd A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:321:? A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:353:0x01ec  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x021e  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x024f  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x0292 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x0340  */
+    /* JADX WARN: Removed duplicated region for block: B:353:0x01ed  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x021f  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0250  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x0293 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x0341  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -11765,7 +11765,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                     } else {
                                         tL_document3.mime_type = "image/gif";
                                     }
-                                    int i5 = isEncryptedDialog ? 90 : 320;
+                                    int i5 = isEncryptedDialog ? 90 : NotificationCenter.nearEarEvent;
                                     try {
                                         if (str2.endsWith("mp4")) {
                                             loadBitmap = createVideoThumbnail(str2, 1);
@@ -11941,7 +11941,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         }
                     }
                     if (!MessageObject.isGifDocument((TLRPC.Document) tLObject)) {
-                        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(tLObject.thumbs, 320);
+                        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(tLObject.thumbs, NotificationCenter.nearEarEvent);
                         File pathToAttach = FileLoader.getInstance(accountInstance.getCurrentAccount()).getPathToAttach(tLObject);
                         if (!pathToAttach.exists()) {
                             pathToAttach = FileLoader.getInstance(accountInstance.getCurrentAccount()).getPathToAttach(tLObject, true);
@@ -12204,13 +12204,17 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         if (tLObject instanceof TLRPC.TL_document) {
             TLRPC.TL_document tL_document = (TLRPC.TL_document) tLObject;
             if ((MessageObject.isVideoDocument(tL_document) || MessageObject.isNewGifDocument(tL_document)) && MessageObject.isDocumentHasThumb(tL_document)) {
-                TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(tL_document.thumbs, 320);
+                ArrayList<TLRPC.PhotoSize> arrayList = tL_document.thumbs;
+                int i = NotificationCenter.nearEarEvent;
+                TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(arrayList, NotificationCenter.nearEarEvent);
                 if ((closestPhotoSizeWithSize3 instanceof TLRPC.TL_photoStrippedSize) || (closestPhotoSizeWithSize3 instanceof TLRPC.TL_photoPathSize) || FileLoader.getInstance(accountInstance.getCurrentAccount()).getPathToAttach(closestPhotoSizeWithSize3, true).exists()) {
                     return;
                 }
                 Bitmap createVideoThumbnailAtTime = createVideoThumbnailAtTime(str, j);
                 Bitmap createVideoThumbnail = createVideoThumbnailAtTime == null ? createVideoThumbnail(str, 1) : createVideoThumbnailAtTime;
-                int i = z ? 90 : 320;
+                if (z) {
+                    i = 90;
+                }
                 float f = i;
                 tL_document.thumbs.set(0, ImageLoader.scaleAndSaveImage(closestPhotoSizeWithSize3, createVideoThumbnail, f, f, i > 90 ? 80 : 55, false, true));
             }
@@ -12958,7 +12962,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                     if (!z6) {
                                         try {
                                             if (sendingMediaInfo5.ttl == 0) {
-                                                i27 = 320;
+                                                i27 = NotificationCenter.nearEarEvent;
                                                 if (!file2.getAbsolutePath().endsWith("mp4")) {
                                                     try {
                                                         createVideoThumbnail = createVideoThumbnail(file2.getAbsolutePath(), 1);
@@ -15007,7 +15011,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                     if (bitmap3 == null) {
                                         bitmap3 = createVideoThumbnail(str9, 1);
                                     }
-                                    int i7 = (isEncryptedDialog || i != 0) ? 90 : 320;
+                                    int i7 = (isEncryptedDialog || i != 0) ? 90 : NotificationCenter.nearEarEvent;
                                     float f = i7;
                                     TLRPC.PhotoSize scaleAndSaveImage = ImageLoader.scaleAndSaveImage(bitmap3, f, f, i7 > 90 ? 80 : 55, isEncryptedDialog);
                                     if (bitmap3 == null || scaleAndSaveImage == null) {
@@ -15131,7 +15135,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                         if (bitmap4 == null) {
                                             bitmap4 = createVideoThumbnail(str9, 1);
                                         }
-                                        int i9 = (isEncryptedDialog || i != 0) ? 90 : 320;
+                                        int i9 = (isEncryptedDialog || i != 0) ? 90 : NotificationCenter.nearEarEvent;
                                         float f2 = i9;
                                         TLRPC.PhotoSize scaleAndSaveImage2 = ImageLoader.scaleAndSaveImage(bitmap4, f2, f2, i9 > 90 ? 80 : 55, isEncryptedDialog);
                                         if (bitmap4 == null || scaleAndSaveImage2 == null) {

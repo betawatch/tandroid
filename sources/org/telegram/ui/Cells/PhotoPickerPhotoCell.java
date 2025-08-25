@@ -16,6 +16,7 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -166,7 +167,7 @@ public class PhotoPickerPhotoCell extends FrameLayout {
         if (str2 != null && str2.length() > 0) {
             this.imageView.setImage(searchImage.thumbUrl, null, drawable);
         } else if (MessageObject.isDocumentHasThumb(searchImage.document)) {
-            this.imageView.setImage(ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(searchImage.document.thumbs, 320), searchImage.document), (String) null, drawable, searchImage);
+            this.imageView.setImage(ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(searchImage.document.thumbs, NotificationCenter.nearEarEvent), searchImage.document), (String) null, drawable, searchImage);
         } else {
             this.imageView.setImageDrawable(drawable);
         }

@@ -9,8 +9,8 @@ import com.google.android.gms.cast.internal.media.MediaCommon;
 import com.google.android.gms.common.internal.Objects;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
+import j$.util.DesugarCollections;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import org.json.JSONArray;
@@ -220,7 +220,7 @@ public class MediaQueueData extends AbstractSafeParcelable {
         if (list == null) {
             return null;
         }
-        return Collections.unmodifiableList(list);
+        return DesugarCollections.unmodifiableList(list);
     }
 
     public String getName() {

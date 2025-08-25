@@ -1,6 +1,7 @@
 package fi.iki.elonen;
 
 import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
+import j$.util.DesugarCollections;
 import j$.util.DesugarTimeZone;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -27,7 +28,6 @@ import java.net.URLDecoder;
 import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -157,7 +157,7 @@ public abstract class NanoHTTPD {
 
     public static class DefaultAsyncRunner implements AsyncRunner {
         private long requestCount;
-        private final List running = Collections.synchronizedList(new ArrayList());
+        private final List running = DesugarCollections.synchronizedList(new ArrayList());
 
         @Override // fi.iki.elonen.NanoHTTPD.AsyncRunner
         public void closeAll() {
@@ -576,11 +576,11 @@ public abstract class NanoHTTPD {
             NO_CONTENT(NotificationCenter.openBoostForUsersDialog, "No Content"),
             PARTIAL_CONTENT(NotificationCenter.chatWasBoostedByUser, "Partial Content"),
             MULTI_STATUS(NotificationCenter.groupPackUpdated, "Multi-Status"),
-            REDIRECT(NotificationCenter.activityPermissionsGranted, "Moved Permanently"),
-            FOUND(NotificationCenter.topicsDidLoaded, "Found"),
-            REDIRECT_SEE_OTHER(NotificationCenter.chatSwitchedForum, "See Other"),
-            NOT_MODIFIED(NotificationCenter.didUpdateGlobalAutoDeleteTimer, "Not Modified"),
-            TEMPORARY_REDIRECT(NotificationCenter.storiesUpdated, "Temporary Redirect"),
+            REDIRECT(NotificationCenter.userEmojiStatusUpdated, "Moved Permanently"),
+            FOUND(NotificationCenter.requestPermissions, "Found"),
+            REDIRECT_SEE_OTHER(NotificationCenter.permissionsGranted, "See Other"),
+            NOT_MODIFIED(NotificationCenter.activityPermissionsGranted, "Not Modified"),
+            TEMPORARY_REDIRECT(NotificationCenter.didUpdateGlobalAutoDeleteTimer, "Temporary Redirect"),
             BAD_REQUEST(400, "Bad Request"),
             UNAUTHORIZED(401, "Unauthorized"),
             FORBIDDEN(403, "Forbidden"),

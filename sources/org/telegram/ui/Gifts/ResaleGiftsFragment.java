@@ -1084,7 +1084,7 @@ public class ResaleGiftsFragment extends BaseFragment {
         }
 
         @Override // org.telegram.ui.Stars.StarsController.IGiftsList
-        public void set(int i, Object obj) {
+        public void notifyUpdate() {
         }
 
         public enum Sorting {

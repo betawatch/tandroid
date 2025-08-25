@@ -3,13 +3,14 @@ package org.telegram.messenger.voip;
 import android.text.TextUtils;
 import android.util.LongSparseArray;
 import j$.util.DesugarArrays;
-import j$.util.function.Function;
+import j$.util.function.Function$-CC;
 import j$.util.stream.Collectors;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Function;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
@@ -741,21 +742,19 @@ public class ConferenceCall {
                 StringBuilder sb = new StringBuilder();
                 sb.append("[tde2e] call users:\n ");
                 sb.append(TextUtils.join("\n ", (Iterable) DesugarArrays.stream(call_get_state(this.call_id).participants).map(new Function() { // from class: org.telegram.messenger.voip.ConferenceCall$$ExternalSyntheticLambda14
-                    @Override // j$.util.function.Function
                     public /* synthetic */ Function andThen(Function function) {
-                        return Function.-CC.$default$andThen(this, function);
+                        return Function$-CC.$default$andThen(this, function);
                     }
 
-                    @Override // j$.util.function.Function
+                    @Override // java.util.function.Function
                     public final Object apply(Object obj) {
                         String lambda$poll$9;
                         lambda$poll$9 = ConferenceCall.lambda$poll$9((ConferenceCall.CallParticipant) obj);
                         return lambda$poll$9;
                     }
 
-                    @Override // j$.util.function.Function
                     public /* synthetic */ Function compose(Function function) {
-                        return Function.-CC.$default$compose(this, function);
+                        return Function$-CC.$default$compose(this, function);
                     }
                 }).collect(Collectors.toSet())));
                 FileLog.d(sb.toString());

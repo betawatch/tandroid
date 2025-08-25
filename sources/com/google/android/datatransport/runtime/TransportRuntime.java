@@ -8,6 +8,7 @@ import com.google.android.datatransport.runtime.scheduling.Scheduler;
 import com.google.android.datatransport.runtime.scheduling.jobscheduling.Uploader;
 import com.google.android.datatransport.runtime.scheduling.jobscheduling.WorkInitializer;
 import com.google.android.datatransport.runtime.time.Clock;
+import j$.util.DesugarCollections;
 import java.util.Collections;
 import java.util.Set;
 
@@ -54,7 +55,7 @@ public class TransportRuntime implements TransportInternal {
 
     private static Set getSupportedEncodings(Destination destination) {
         if (destination instanceof EncodedDestination) {
-            return Collections.unmodifiableSet(((EncodedDestination) destination).getSupportedEncodings());
+            return DesugarCollections.unmodifiableSet(((EncodedDestination) destination).getSupportedEncodings());
         }
         return Collections.singleton(Encoding.of("proto"));
     }

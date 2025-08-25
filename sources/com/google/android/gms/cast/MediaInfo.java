@@ -11,8 +11,8 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 import com.google.android.gms.common.util.JsonUtils;
 import com.google.android.gms.internal.cast.zzfn;
 import com.google.android.gms.internal.cast.zzfq;
+import j$.util.DesugarCollections;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
@@ -150,7 +150,7 @@ public class MediaInfo extends AbstractSafeParcelable implements ReflectedParcel
         if (list == null) {
             return null;
         }
-        return Collections.unmodifiableList(list);
+        return DesugarCollections.unmodifiableList(list);
     }
 
     public List getAdBreaks() {
@@ -158,7 +158,7 @@ public class MediaInfo extends AbstractSafeParcelable implements ReflectedParcel
         if (list == null) {
             return null;
         }
-        return Collections.unmodifiableList(list);
+        return DesugarCollections.unmodifiableList(list);
     }
 
     public String getContentId() {

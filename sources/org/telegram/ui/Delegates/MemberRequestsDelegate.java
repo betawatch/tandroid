@@ -1205,7 +1205,7 @@ public abstract class MemberRequestsDelegate implements MemberRequestCell.OnClic
         /* JADX INFO: Access modifiers changed from: private */
         public void updateBackgroundBitmap() {
             BitmapDrawable bitmapDrawable = this.backgroundDrawable;
-            int alpha = bitmapDrawable != null ? bitmapDrawable.getAlpha() : NotificationCenter.goingToPreviewTheme;
+            int alpha = bitmapDrawable != null ? bitmapDrawable.getAlpha() : NotificationCenter.needCheckSystemBarColors;
             BitmapDrawable bitmapDrawable2 = new BitmapDrawable(getContext().getResources(), getBlurredBitmap());
             this.backgroundDrawable = bitmapDrawable2;
             bitmapDrawable2.setAlpha(alpha);

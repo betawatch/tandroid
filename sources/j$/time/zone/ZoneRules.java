@@ -4,9 +4,14 @@ import j$.time.Instant;
 import j$.time.LocalDate;
 import j$.time.LocalDateTime;
 import j$.time.ZoneOffset;
-import j$.util.A;
+import j$.util.Objects;
 import j$.util.concurrent.ConcurrentHashMap;
+import java.io.InvalidObjectException;
+import java.io.ObjectInput;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutput;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -16,15 +21,16 @@ import org.telegram.messenger.MediaDataController;
 /* loaded from: classes2.dex */
 public final class ZoneRules implements Serializable {
     private static final long[] i = new long[0];
-    private static final b[] j = new b[0];
+    private static final e[] j = new e[0];
     private static final LocalDateTime[] k = new LocalDateTime[0];
-    private static final a[] l = new a[0];
+    private static final b[] l = new b[0];
+    private static final long serialVersionUID = 3044319355680032515L;
     private final long[] a;
     private final ZoneOffset[] b;
     private final long[] c;
     private final LocalDateTime[] d;
     private final ZoneOffset[] e;
-    private final b[] f;
+    private final e[] f;
     private final TimeZone g;
     private final transient ConcurrentHashMap h = new ConcurrentHashMap();
 
@@ -34,8 +40,36 @@ public final class ZoneRules implements Serializable {
     }
 
     public static ZoneRules h(ZoneOffset zoneOffset) {
-        A.z(zoneOffset, "offset");
+        Objects.requireNonNull(zoneOffset, "offset");
         return new ZoneRules(zoneOffset);
+    }
+
+    private ZoneRules(long[] jArr, ZoneOffset[] zoneOffsetArr, long[] jArr2, ZoneOffset[] zoneOffsetArr2, e[] eVarArr) {
+        this.a = jArr;
+        this.b = zoneOffsetArr;
+        this.c = jArr2;
+        this.e = zoneOffsetArr2;
+        this.f = eVarArr;
+        if (jArr2.length == 0) {
+            this.d = k;
+        } else {
+            ArrayList arrayList = new ArrayList();
+            int i2 = 0;
+            while (i2 < jArr2.length) {
+                int i3 = i2 + 1;
+                b bVar = new b(jArr2[i2], zoneOffsetArr2[i2], zoneOffsetArr2[i3]);
+                if (bVar.v()) {
+                    arrayList.add(bVar.j());
+                    arrayList.add(bVar.i());
+                } else {
+                    arrayList.add(bVar.i());
+                    arrayList.add(bVar.j());
+                }
+                i2 = i3;
+            }
+            this.d = (LocalDateTime[]) arrayList.toArray(new LocalDateTime[arrayList.size()]);
+        }
+        this.g = null;
     }
 
     private ZoneRules(ZoneOffset zoneOffset) {
@@ -63,7 +97,76 @@ public final class ZoneRules implements Serializable {
     }
 
     private static ZoneOffset i(int i2) {
-        return ZoneOffset.p(i2 / MediaDataController.MAX_STYLE_RUNS_COUNT);
+        return ZoneOffset.I(i2 / MediaDataController.MAX_STYLE_RUNS_COUNT);
+    }
+
+    private void readObject(ObjectInputStream objectInputStream) {
+        throw new InvalidObjectException("Deserialization via serialization delegate");
+    }
+
+    private Object writeReplace() {
+        return new a(this.g != null ? (byte) 100 : (byte) 1, this);
+    }
+
+    final void writeExternal(ObjectOutput objectOutput) {
+        long[] jArr = this.a;
+        objectOutput.writeInt(jArr.length);
+        for (long j2 : jArr) {
+            a.c(j2, objectOutput);
+        }
+        for (ZoneOffset zoneOffset : this.b) {
+            a.d(zoneOffset, objectOutput);
+        }
+        long[] jArr2 = this.c;
+        objectOutput.writeInt(jArr2.length);
+        for (long j3 : jArr2) {
+            a.c(j3, objectOutput);
+        }
+        for (ZoneOffset zoneOffset2 : this.e) {
+            a.d(zoneOffset2, objectOutput);
+        }
+        e[] eVarArr = this.f;
+        objectOutput.writeByte(eVarArr.length);
+        for (e eVar : eVarArr) {
+            eVar.writeExternal(objectOutput);
+        }
+    }
+
+    final void k(ObjectOutput objectOutput) {
+        objectOutput.writeUTF(this.g.getID());
+    }
+
+    static ZoneRules j(ObjectInput objectInput) {
+        int readInt = objectInput.readInt();
+        long[] jArr = i;
+        long[] jArr2 = readInt == 0 ? jArr : new long[readInt];
+        for (int i2 = 0; i2 < readInt; i2++) {
+            jArr2[i2] = a.a(objectInput);
+        }
+        int i3 = readInt + 1;
+        ZoneOffset[] zoneOffsetArr = new ZoneOffset[i3];
+        for (int i4 = 0; i4 < i3; i4++) {
+            zoneOffsetArr[i4] = a.b(objectInput);
+        }
+        int readInt2 = objectInput.readInt();
+        if (readInt2 != 0) {
+            jArr = new long[readInt2];
+        }
+        long[] jArr3 = jArr;
+        for (int i5 = 0; i5 < readInt2; i5++) {
+            jArr3[i5] = a.a(objectInput);
+        }
+        int i6 = readInt2 + 1;
+        ZoneOffset[] zoneOffsetArr2 = new ZoneOffset[i6];
+        for (int i7 = 0; i7 < i6; i7++) {
+            zoneOffsetArr2[i7] = a.b(objectInput);
+        }
+        int readByte = objectInput.readByte();
+        e[] eVarArr = readByte == 0 ? j : new e[readByte];
+        for (int i8 = 0; i8 < readByte; i8++) {
+            eVarArr[i8] = e.b(objectInput);
+        }
+        return new ZoneRules(jArr2, zoneOffsetArr, jArr3, zoneOffsetArr2, eVarArr);
     }
 
     public ZoneOffset getOffset(Instant instant) {
@@ -75,21 +178,21 @@ public final class ZoneRules implements Serializable {
         if (jArr.length == 0) {
             return this.b[0];
         }
-        long o = instant.o();
+        long D = instant.D();
         int length = this.f.length;
         ZoneOffset[] zoneOffsetArr = this.e;
-        if (length > 0 && o > jArr[jArr.length - 1]) {
-            a[] b = b(c(o, zoneOffsetArr[zoneOffsetArr.length - 1]));
-            a aVar = null;
+        if (length > 0 && D > jArr[jArr.length - 1]) {
+            b[] b = b(c(D, zoneOffsetArr[zoneOffsetArr.length - 1]));
+            b bVar = null;
             for (int i2 = 0; i2 < b.length; i2++) {
-                aVar = b[i2];
-                if (o < aVar.k()) {
-                    return aVar.j();
+                bVar = b[i2];
+                if (D < bVar.A()) {
+                    return bVar.r();
                 }
             }
-            return aVar.i();
+            return bVar.m();
         }
-        int binarySearch = Arrays.binarySearch(jArr, o);
+        int binarySearch = Arrays.binarySearch(jArr, D);
         if (binarySearch < 0) {
             binarySearch = (-binarySearch) - 2;
         }
@@ -98,16 +201,16 @@ public final class ZoneRules implements Serializable {
 
     public final List f(LocalDateTime localDateTime) {
         Object d = d(localDateTime);
-        if (d instanceof a) {
-            return ((a) d).l();
+        if (d instanceof b) {
+            return ((b) d).u();
         }
         return Collections.singletonList((ZoneOffset) d);
     }
 
-    public final a e(LocalDateTime localDateTime) {
+    public final b e(LocalDateTime localDateTime) {
         Object d = d(localDateTime);
-        if (d instanceof a) {
-            return (a) d;
+        if (d instanceof b) {
+            return (b) d;
         }
         return null;
     }
@@ -118,15 +221,15 @@ public final class ZoneRules implements Serializable {
         int i2 = 0;
         TimeZone timeZone = this.g;
         if (timeZone != null) {
-            a[] b = b(localDateTime.o());
+            b[] b = b(localDateTime.F());
             if (b.length == 0) {
-                return i(timeZone.getOffset(localDateTime.v(zoneOffsetArr[0]) * 1000));
+                return i(timeZone.getOffset(j$.time.chrono.h.n(localDateTime, zoneOffsetArr[0]) * 1000));
             }
             int length = b.length;
             while (i2 < length) {
-                a aVar = b[i2];
-                Object a = a(localDateTime, aVar);
-                if ((a instanceof a) || a.equals(aVar.j())) {
+                b bVar = b[i2];
+                Object a = a(localDateTime, bVar);
+                if ((a instanceof b) || a.equals(bVar.r())) {
                     return a;
                 }
                 i2++;
@@ -139,13 +242,13 @@ public final class ZoneRules implements Serializable {
         }
         int length2 = this.f.length;
         LocalDateTime[] localDateTimeArr = this.d;
-        if (length2 > 0 && localDateTime.p(localDateTimeArr[localDateTimeArr.length - 1])) {
-            a[] b2 = b(localDateTime.o());
+        if (length2 > 0 && localDateTime.G(localDateTimeArr[localDateTimeArr.length - 1])) {
+            b[] b2 = b(localDateTime.F());
             int length3 = b2.length;
             while (i2 < length3) {
-                a aVar2 = b2[i2];
-                Object a2 = a(localDateTime, aVar2);
-                if ((a2 instanceof a) || a2.equals(aVar2.j())) {
+                b bVar2 = b2[i2];
+                Object a2 = a(localDateTime, bVar2);
+                if ((a2 instanceof b) || a2.equals(bVar2.r())) {
                     return a2;
                 }
                 i2++;
@@ -166,102 +269,98 @@ public final class ZoneRules implements Serializable {
                 binarySearch = i3;
             }
         }
-        if ((binarySearch & 1) == 0) {
-            LocalDateTime localDateTime2 = localDateTimeArr[binarySearch];
-            LocalDateTime localDateTime3 = localDateTimeArr[binarySearch + 1];
-            int i4 = binarySearch / 2;
-            ZoneOffset zoneOffset = zoneOffsetArr2[i4];
-            ZoneOffset zoneOffset2 = zoneOffsetArr2[i4 + 1];
-            if (zoneOffset2.getTotalSeconds() > zoneOffset.getTotalSeconds()) {
-                return new a(localDateTime2, zoneOffset, zoneOffset2);
-            }
-            return new a(localDateTime3, zoneOffset, zoneOffset2);
+        if ((binarySearch & 1) != 0) {
+            return zoneOffsetArr2[(binarySearch / 2) + 1];
         }
-        return zoneOffsetArr2[(binarySearch / 2) + 1];
+        LocalDateTime localDateTime2 = localDateTimeArr[binarySearch];
+        LocalDateTime localDateTime3 = localDateTimeArr[binarySearch + 1];
+        int i4 = binarySearch / 2;
+        ZoneOffset zoneOffset = zoneOffsetArr2[i4];
+        ZoneOffset zoneOffset2 = zoneOffsetArr2[i4 + 1];
+        return zoneOffset2.getTotalSeconds() > zoneOffset.getTotalSeconds() ? new b(localDateTime2, zoneOffset, zoneOffset2) : new b(localDateTime3, zoneOffset, zoneOffset2);
     }
 
-    private static Object a(LocalDateTime localDateTime, a aVar) {
-        LocalDateTime g = aVar.g();
-        if (aVar.m()) {
-            if (localDateTime.q(g)) {
-                return aVar.j();
+    private static Object a(LocalDateTime localDateTime, b bVar) {
+        LocalDateTime j2 = bVar.j();
+        if (bVar.v()) {
+            if (localDateTime.H(j2)) {
+                return bVar.r();
             }
-            return localDateTime.q(aVar.f()) ? aVar : aVar.i();
+            return localDateTime.H(bVar.i()) ? bVar : bVar.m();
         }
-        if (localDateTime.q(g)) {
-            return localDateTime.q(aVar.f()) ? aVar.j() : aVar;
+        if (localDateTime.H(j2)) {
+            return localDateTime.H(bVar.i()) ? bVar.r() : bVar;
         }
-        return aVar.i();
+        return bVar.m();
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    private a[] b(int i2) {
+    private b[] b(int i2) {
         long j2;
         Integer valueOf = Integer.valueOf(i2);
         ConcurrentHashMap concurrentHashMap = this.h;
-        a[] aVarArr = (a[]) concurrentHashMap.get(valueOf);
-        if (aVarArr != null) {
-            return aVarArr;
+        b[] bVarArr = (b[]) concurrentHashMap.get(valueOf);
+        if (bVarArr != null) {
+            return bVarArr;
         }
         TimeZone timeZone = this.g;
-        if (timeZone != null) {
-            a[] aVarArr2 = l;
-            if (i2 < 1800) {
-                return aVarArr2;
+        if (timeZone == null) {
+            e[] eVarArr = this.f;
+            b[] bVarArr2 = new b[eVarArr.length];
+            for (int i3 = 0; i3 < eVarArr.length; i3++) {
+                bVarArr2[i3] = eVarArr[i3].a(i2);
             }
-            long v = LocalDateTime.r(i2 - 1).v(this.b[0]);
-            int offset = timeZone.getOffset(v * 1000);
-            long j3 = 31968000 + v;
-            while (v < j3) {
-                long j4 = 7776000 + v;
-                long j5 = v;
-                if (offset != timeZone.getOffset(j4 * 1000)) {
-                    v = j5;
-                    while (j4 - v > 1) {
-                        int i3 = offset;
-                        long j6 = j3;
-                        long i4 = j$.com.android.tools.r8.a.i(j4 + v, 2L);
-                        if (timeZone.getOffset(i4 * 1000) == i3) {
-                            v = i4;
-                        } else {
-                            j4 = i4;
-                        }
-                        offset = i3;
-                        j3 = j6;
+            if (i2 < 2100) {
+                concurrentHashMap.putIfAbsent(valueOf, bVarArr2);
+            }
+            return bVarArr2;
+        }
+        b[] bVarArr3 = l;
+        if (i2 < 1800) {
+            return bVarArr3;
+        }
+        long n = j$.time.chrono.h.n(LocalDateTime.I(i2 - 1), this.b[0]);
+        int offset = timeZone.getOffset(n * 1000);
+        long j3 = 31968000 + n;
+        while (n < j3) {
+            long j4 = 7776000 + n;
+            long j5 = n;
+            if (offset != timeZone.getOffset(j4 * 1000)) {
+                n = j5;
+                while (j4 - n > 1) {
+                    int i4 = offset;
+                    long j6 = j3;
+                    long k2 = j$.com.android.tools.r8.a.k(j4 + n, 2L);
+                    if (timeZone.getOffset(k2 * 1000) == i4) {
+                        n = k2;
+                    } else {
+                        j4 = k2;
                     }
-                    j2 = j3;
-                    int i5 = offset;
-                    if (timeZone.getOffset(v * 1000) == i5) {
-                        v = j4;
-                    }
-                    ZoneOffset i6 = i(i5);
-                    offset = timeZone.getOffset(v * 1000);
-                    ZoneOffset i7 = i(offset);
-                    if (c(v, i7) == i2) {
-                        aVarArr2 = (a[]) Arrays.copyOf(aVarArr2, aVarArr2.length + 1);
-                        aVarArr2[aVarArr2.length - 1] = new a(v, i6, i7);
-                    }
-                } else {
-                    j2 = j3;
-                    v = j4;
+                    offset = i4;
+                    j3 = j6;
                 }
-                j3 = j2;
+                j2 = j3;
+                int i5 = offset;
+                if (timeZone.getOffset(n * 1000) == i5) {
+                    n = j4;
+                }
+                ZoneOffset i6 = i(i5);
+                offset = timeZone.getOffset(n * 1000);
+                ZoneOffset i7 = i(offset);
+                if (c(n, i7) == i2) {
+                    bVarArr3 = (b[]) Arrays.copyOf(bVarArr3, bVarArr3.length + 1);
+                    bVarArr3[bVarArr3.length - 1] = new b(n, i6, i7);
+                }
+            } else {
+                j2 = j3;
+                n = j4;
             }
-            if (1916 <= i2 && i2 < 2100) {
-                concurrentHashMap.putIfAbsent(valueOf, aVarArr2);
-            }
-            return aVarArr2;
+            j3 = j2;
         }
-        b[] bVarArr = this.f;
-        a[] aVarArr3 = new a[bVarArr.length];
-        if (bVarArr.length > 0) {
-            b bVar = bVarArr[0];
-            throw null;
+        if (1916 <= i2 && i2 < 2100) {
+            concurrentHashMap.putIfAbsent(valueOf, bVarArr3);
         }
-        if (i2 < 2100) {
-            concurrentHashMap.putIfAbsent(valueOf, aVarArr3);
-        }
-        return aVarArr3;
+        return bVarArr3;
     }
 
     public final boolean g(Instant instant) {
@@ -275,7 +374,7 @@ public final class ZoneRules implements Serializable {
             if (length == 0) {
                 zoneOffset = zoneOffsetArr[0];
             } else {
-                int binarySearch = Arrays.binarySearch(this.a, instant.o());
+                int binarySearch = Arrays.binarySearch(this.a, instant.D());
                 if (binarySearch < 0) {
                     binarySearch = (-binarySearch) - 2;
                 }
@@ -286,7 +385,7 @@ public final class ZoneRules implements Serializable {
     }
 
     private static int c(long j2, ZoneOffset zoneOffset) {
-        return LocalDate.u(j$.com.android.tools.r8.a.i(j2 + zoneOffset.getTotalSeconds(), 86400L)).getYear();
+        return LocalDate.N(j$.com.android.tools.r8.a.k(j2 + zoneOffset.getTotalSeconds(), 86400)).getYear();
     }
 
     public final boolean equals(Object obj) {
@@ -297,7 +396,7 @@ public final class ZoneRules implements Serializable {
             return false;
         }
         ZoneRules zoneRules = (ZoneRules) obj;
-        return A.y(this.g, zoneRules.g) && Arrays.equals(this.a, zoneRules.a) && Arrays.equals(this.b, zoneRules.b) && Arrays.equals(this.c, zoneRules.c) && Arrays.equals(this.e, zoneRules.e) && Arrays.equals(this.f, zoneRules.f);
+        return Objects.equals(this.g, zoneRules.g) && Arrays.equals(this.a, zoneRules.a) && Arrays.equals(this.b, zoneRules.b) && Arrays.equals(this.c, zoneRules.c) && Arrays.equals(this.e, zoneRules.e) && Arrays.equals(this.f, zoneRules.f);
     }
 
     public final String toString() {
@@ -305,9 +404,6 @@ public final class ZoneRules implements Serializable {
         if (timeZone != null) {
             return "ZoneRules[timeZone=" + timeZone.getID() + "]";
         }
-        StringBuilder sb = new StringBuilder("ZoneRules[currentStandardOffset=");
-        sb.append(this.b[r2.length - 1]);
-        sb.append("]");
-        return sb.toString();
+        return "ZoneRules[currentStandardOffset=" + this.b[r1.length - 1] + "]";
     }
 }

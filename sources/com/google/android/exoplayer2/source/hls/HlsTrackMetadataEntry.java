@@ -6,8 +6,8 @@ import android.text.TextUtils;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.MediaMetadata;
 import com.google.android.exoplayer2.metadata.Metadata;
+import j$.util.DesugarCollections;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /* loaded from: classes.dex */
@@ -126,7 +126,7 @@ public final class HlsTrackMetadataEntry implements Metadata.Entry {
     public HlsTrackMetadataEntry(String str, String str2, List list) {
         this.groupId = str;
         this.name = str2;
-        this.variantInfos = Collections.unmodifiableList(new ArrayList(list));
+        this.variantInfos = DesugarCollections.unmodifiableList(new ArrayList(list));
     }
 
     HlsTrackMetadataEntry(Parcel parcel) {
@@ -137,7 +137,7 @@ public final class HlsTrackMetadataEntry implements Metadata.Entry {
         for (int i = 0; i < readInt; i++) {
             arrayList.add((VariantInfo) parcel.readParcelable(VariantInfo.class.getClassLoader()));
         }
-        this.variantInfos = Collections.unmodifiableList(arrayList);
+        this.variantInfos = DesugarCollections.unmodifiableList(arrayList);
     }
 
     public String toString() {

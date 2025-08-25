@@ -1,43 +1,59 @@
 package j$.util.stream;
 
+import j$.util.Objects;
+import java.util.function.DoubleConsumer;
+
 /* loaded from: classes2.dex */
-final class w extends g0 {
-    public final /* synthetic */ int m;
-    final /* synthetic */ Object n;
+final class w extends f2 {
+    boolean b;
+    p c;
+    final /* synthetic */ x d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ w(b bVar, int i, Object obj, int i2) {
-        super(bVar, i, 1);
-        this.m = i2;
-        this.n = obj;
+    w(x xVar, m2 m2Var) {
+        super(m2Var);
+        this.d = xVar;
+        m2 m2Var2 = this.a;
+        Objects.requireNonNull(m2Var2);
+        this.c = new p(m2Var2);
     }
 
-    @Override // j$.util.stream.b
-    final d2 w0(int i, d2 d2Var) {
-        switch (this.m) {
-            case 0:
-                return new s(this, d2Var, 3);
-            case 1:
-                return new V(this, d2Var, 3);
-            case 2:
-                return new e0(this, d2Var, 0);
-            case 3:
-                return new e0(this, d2Var, 4);
-            case 4:
-                return new e0(this, d2Var, 5);
-            case 5:
-                return new e0(this, d2Var, 6);
-            case 6:
-                return new Q1(this, d2Var);
-            default:
-                return new n(this, d2Var, 5);
+    @Override // j$.util.stream.f2, j$.util.stream.m2
+    public final void l(long j) {
+        this.a.l(-1L);
+    }
+
+    @Override // j$.util.stream.j2, java.util.function.DoubleConsumer
+    public final void accept(double d) {
+        D d2 = (D) ((a) this.d.n).apply(d);
+        if (d2 != null) {
+            try {
+                boolean z = this.b;
+                p pVar = this.c;
+                if (!z) {
+                    d2.sequential().forEach(pVar);
+                } else {
+                    j$.util.V spliterator = d2.sequential().spliterator();
+                    while (!this.a.n() && spliterator.tryAdvance((DoubleConsumer) pVar)) {
+                    }
+                }
+            } catch (Throwable th) {
+                try {
+                    d2.close();
+                } catch (Throwable th2) {
+                    th.addSuppressed(th2);
+                }
+                throw th;
+            }
+        }
+        if (d2 != null) {
+            d2.close();
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w(h0 h0Var, j$.util.function.Y y) {
-        super(h0Var, 0, 1);
-        this.m = 5;
-        this.n = y;
+    @Override // j$.util.stream.f2, j$.util.stream.m2
+    public final boolean n() {
+        this.b = true;
+        return this.a.n();
     }
 }

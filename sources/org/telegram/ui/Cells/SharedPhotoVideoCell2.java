@@ -40,6 +40,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
@@ -358,7 +359,7 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
             i6 = (((int) (AndroidUtilities.displaySize.x / AndroidUtilities.density)) * 3) / 5;
         }
         String filterString = this.sharedResources.getFilterString(i6);
-        int photoSize = (i3 <= 2 || z) ? AndroidUtilities.getPhotoSize() : 320;
+        int photoSize = (i3 <= 2 || z) ? AndroidUtilities.getPhotoSize() : NotificationCenter.nearEarEvent;
         this.videoText = null;
         this.videoInfoLayot = null;
         this.showVideoLayout = false;

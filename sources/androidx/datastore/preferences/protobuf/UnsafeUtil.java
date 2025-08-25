@@ -513,12 +513,12 @@ abstract class UnsafeUtil {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static byte getByteBigEndian(Object obj, long j) {
-        return (byte) ((getInt(obj, (-4) & j) >>> ((int) (((~j) & 3) << 3))) & NotificationCenter.goingToPreviewTheme);
+        return (byte) ((getInt(obj, (-4) & j) >>> ((int) (((~j) & 3) << 3))) & NotificationCenter.needCheckSystemBarColors);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static byte getByteLittleEndian(Object obj, long j) {
-        return (byte) ((getInt(obj, (-4) & j) >>> ((int) ((j & 3) << 3))) & NotificationCenter.goingToPreviewTheme);
+        return (byte) ((getInt(obj, (-4) & j) >>> ((int) ((j & 3) << 3))) & NotificationCenter.needCheckSystemBarColors);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -526,14 +526,14 @@ abstract class UnsafeUtil {
         long j2 = (-4) & j;
         int i = getInt(obj, j2);
         int i2 = ((~((int) j)) & 3) << 3;
-        putInt(obj, j2, ((255 & b) << i2) | (i & (~(NotificationCenter.goingToPreviewTheme << i2))));
+        putInt(obj, j2, ((255 & b) << i2) | (i & (~(NotificationCenter.needCheckSystemBarColors << i2))));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static void putByteLittleEndian(Object obj, long j, byte b) {
         long j2 = (-4) & j;
         int i = (((int) j) & 3) << 3;
-        putInt(obj, j2, ((255 & b) << i) | (getInt(obj, j2) & (~(NotificationCenter.goingToPreviewTheme << i))));
+        putInt(obj, j2, ((255 & b) << i) | (getInt(obj, j2) & (~(NotificationCenter.needCheckSystemBarColors << i))));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

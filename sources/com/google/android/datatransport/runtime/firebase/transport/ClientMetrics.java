@@ -1,8 +1,8 @@
 package com.google.android.datatransport.runtime.firebase.transport;
 
 import com.google.android.datatransport.runtime.ProtoEncoderDoNotUse;
+import j$.util.DesugarCollections;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /* loaded from: classes.dex */
@@ -54,7 +54,7 @@ public final class ClientMetrics {
         }
 
         public ClientMetrics build() {
-            return new ClientMetrics(this.window_, Collections.unmodifiableList(this.log_source_metrics_), this.global_metrics_, this.app_namespace_);
+            return new ClientMetrics(this.window_, DesugarCollections.unmodifiableList(this.log_source_metrics_), this.global_metrics_, this.app_namespace_);
         }
 
         public Builder setWindow(TimeWindow timeWindow) {

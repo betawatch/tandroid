@@ -1,6 +1,7 @@
 package androidx.datastore.preferences.protobuf;
 
 import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
+import j$.util.DesugarCollections;
 import java.util.AbstractMap;
 import java.util.AbstractSet;
 import java.util.ArrayList;
@@ -65,13 +66,13 @@ abstract class SmallSortedMap extends AbstractMap {
         if (this.overflowEntries.isEmpty()) {
             unmodifiableMap = Collections.emptyMap();
         } else {
-            unmodifiableMap = Collections.unmodifiableMap(this.overflowEntries);
+            unmodifiableMap = DesugarCollections.unmodifiableMap(this.overflowEntries);
         }
         this.overflowEntries = unmodifiableMap;
         if (this.overflowEntriesDescending.isEmpty()) {
             unmodifiableMap2 = Collections.emptyMap();
         } else {
-            unmodifiableMap2 = Collections.unmodifiableMap(this.overflowEntriesDescending);
+            unmodifiableMap2 = DesugarCollections.unmodifiableMap(this.overflowEntriesDescending);
         }
         this.overflowEntriesDescending = unmodifiableMap2;
         this.isImmutable = true;

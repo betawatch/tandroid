@@ -1,73 +1,58 @@
 package j$.util;
 
-import java.util.NoSuchElementException;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-public final class l {
-    private static final l c = new l();
-    private final boolean a;
-    private final long b;
+final class l implements Iterator, y {
+    public final /* synthetic */ int a = 0;
+    private final Iterator b;
 
-    private l() {
-        this.a = false;
-        this.b = 0L;
+    public l(m mVar) {
+        this.b = mVar.a.iterator();
     }
 
-    public static l a() {
-        return c;
-    }
-
-    private l(long j) {
-        this.a = true;
-        this.b = j;
-    }
-
-    public static l d(long j) {
-        return new l(j);
-    }
-
-    public final long b() {
-        if (!this.a) {
-            throw new NoSuchElementException("No value present");
+    @Override // java.util.Iterator, j$.util.y
+    public final void forEachRemaining(Consumer consumer) {
+        switch (this.a) {
+            case 0:
+                S.q(this.b, consumer);
+                break;
+            default:
+                S.q(this.b, new p(consumer));
+                break;
         }
-        return this.b;
     }
 
-    public final boolean c() {
-        return this.a;
+    public l(s sVar) {
+        this.b = sVar.a.iterator();
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        switch (this.a) {
         }
-        if (!(obj instanceof l)) {
-            return false;
-        }
-        l lVar = (l) obj;
-        boolean z = this.a;
-        if (z && lVar.a) {
-            if (this.b == lVar.b) {
-                return true;
-            }
-        } else if (z == lVar.a) {
-            return true;
-        }
-        return false;
+        return this.b.hasNext();
     }
 
-    public final int hashCode() {
-        if (!this.a) {
-            return 0;
+    @Override // java.util.Iterator
+    public final Object next() {
+        switch (this.a) {
+            case 0:
+                return this.b.next();
+            default:
+                return new q((Map.Entry) this.b.next());
         }
-        long j = this.b;
-        return (int) (j ^ (j >>> 32));
     }
 
-    public final String toString() {
-        if (this.a) {
-            return "OptionalLong[" + this.b + "]";
+    @Override // java.util.Iterator
+    public final void remove() {
+        switch (this.a) {
+            case 0:
+                throw new UnsupportedOperationException();
+            default:
+                throw new UnsupportedOperationException();
         }
-        return "OptionalLong.empty";
     }
 }

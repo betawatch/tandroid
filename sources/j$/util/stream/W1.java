@@ -1,61 +1,36 @@
 package j$.util.stream;
 
-import j$.util.function.Consumer;
+import java.util.function.LongConsumer;
 
 /* loaded from: classes2.dex */
-public abstract class W1 implements a2 {
-    protected final d2 a;
-
-    @Override // j$.util.stream.d2
-    public final /* synthetic */ void accept(int i) {
-        t0.k();
-        throw null;
-    }
-
-    @Override // j$.util.stream.d2
-    public final /* synthetic */ void accept(long j) {
-        t0.l();
-        throw null;
-    }
-
-    @Override // j$.util.function.Consumer
+final class W1 extends Y1 implements l2 {
+    @Override // java.util.function.Consumer
     /* renamed from: accept */
-    public final /* bridge */ /* synthetic */ void r(Object obj) {
-        r((Double) obj);
+    public final /* bridge */ /* synthetic */ void p(Object obj) {
+        j((Long) obj);
     }
 
-    @Override // j$.util.function.Consumer
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer.-CC.$default$andThen(this, consumer);
+    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
+        return j$.com.android.tools.r8.a.c(this, longConsumer);
     }
 
-    @Override // j$.util.function.l
-    public final /* synthetic */ j$.util.function.l k(j$.util.function.l lVar) {
-        return j$.com.android.tools.r8.a.a(this, lVar);
+    @Override // j$.util.stream.l2
+    public final /* synthetic */ void j(Long l) {
+        w0.i(this, l);
     }
 
-    @Override // j$.util.stream.a2
-    public final /* synthetic */ void r(Double d) {
-        t0.e(this, d);
+    @Override // j$.util.stream.T1, java.util.function.Supplier
+    public final Object get() {
+        return Long.valueOf(this.b);
     }
 
-    public W1(d2 d2Var) {
-        d2Var.getClass();
-        this.a = d2Var;
+    @Override // j$.util.stream.S1
+    public final void g(S1 s1) {
+        this.b += ((Y1) s1).b;
     }
 
-    @Override // j$.util.stream.d2
-    public void n(long j) {
-        this.a.n(j);
-    }
-
-    @Override // j$.util.stream.d2
-    public void m() {
-        this.a.m();
-    }
-
-    @Override // j$.util.stream.d2
-    public boolean q() {
-        return this.a.q();
+    @Override // j$.util.stream.Y1, j$.util.stream.m2
+    public final void accept(long j) {
+        this.b++;
     }
 }

@@ -15,12 +15,12 @@ import android.text.TextPaint;
 import android.view.View;
 import android.view.ViewGroup;
 import j$.util.Comparator$-CC;
-import j$.util.function.ToDoubleFunction;
 import java.io.File;
 import java.io.RandomAccessFile;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
+import java.util.function.ToDoubleFunction;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Bitmaps;
 import org.telegram.messenger.DispatchQueue;
@@ -519,7 +519,7 @@ public abstract class VideoSeekPreviewImage extends View implements Notification
                     }
                 } else {
                     Collections.sort(arrayList, Comparator$-CC.comparingDouble(new ToDoubleFunction() { // from class: org.telegram.ui.Components.VideoSeekPreviewImage$$ExternalSyntheticLambda1
-                        @Override // j$.util.function.ToDoubleFunction
+                        @Override // java.util.function.ToDoubleFunction
                         public final double applyAsDouble(Object obj) {
                             double d;
                             d = ((VideoSeekPreviewImage.StoryBoardFrame) obj).pts;

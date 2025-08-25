@@ -1,158 +1,142 @@
 package j$.util.stream;
 
+import j$.util.Objects;
 import j$.util.Spliterator;
 import j$.util.Spliterators;
-import j$.util.function.Consumer;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.Spliterator;
+import java.util.Comparator;
+import java.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-class N2 extends d implements Consumer, Iterable, j$.lang.a {
-    protected Object[] e = new Object[1 << 4];
-    protected Object[][] f;
+final class N2 implements Spliterator {
+    int a;
+    final int b;
+    int c;
+    final int d;
+    Object[] e;
+    final /* synthetic */ W2 f;
 
-    @Override // j$.util.function.Consumer
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer.-CC.$default$andThen(this, consumer);
+    @Override // j$.util.Spliterator
+    public final int characteristics() {
+        return 16464;
     }
 
-    @Override // java.lang.Iterable
-    public final /* synthetic */ void forEach(java.util.function.Consumer consumer) {
-        forEach(Consumer.VivifiedWrapper.convert(consumer));
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ long getExactSizeIfKnown() {
+        return j$.util.S.d(this);
     }
 
-    @Override // java.lang.Iterable
-    public final /* synthetic */ Spliterator spliterator() {
-        return Spliterator.Wrapper.convert(spliterator());
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean hasCharacteristics(int i) {
+        return j$.util.S.e(this, i);
     }
 
-    N2() {
+    N2(W2 w2, int i, int i2, int i3, int i4) {
+        this.f = w2;
+        this.a = i;
+        this.b = i2;
+        this.c = i3;
+        this.d = i4;
+        Object[][] objArr = w2.f;
+        this.e = objArr == null ? w2.e : objArr[i];
     }
 
-    protected final void u(long j) {
-        long length;
-        int i = this.c;
-        if (i == 0) {
-            length = this.e.length;
-        } else {
-            length = this.d[i] + this.f[i].length;
+    @Override // j$.util.Spliterator
+    public final long estimateSize() {
+        int i = this.a;
+        int i2 = this.d;
+        int i3 = this.b;
+        if (i == i3) {
+            return i2 - this.c;
         }
-        if (j > length) {
-            if (this.f == null) {
-                Object[][] objArr = new Object[8][];
-                this.f = objArr;
-                this.d = new long[8];
-                objArr[0] = this.e;
-            }
-            int i2 = i + 1;
-            while (j > length) {
-                Object[][] objArr2 = this.f;
-                if (i2 >= objArr2.length) {
-                    int length2 = objArr2.length * 2;
-                    this.f = (Object[][]) Arrays.copyOf(objArr2, length2);
-                    this.d = Arrays.copyOf(this.d, length2);
-                }
-                int i3 = this.a;
-                if (i2 != 0 && i2 != 1) {
-                    i3 = Math.min((i3 + i2) - 1, 30);
-                }
-                int i4 = 1 << i3;
-                this.f[i2] = new Object[i4];
-                long[] jArr = this.d;
-                jArr[i2] = jArr[i2 - 1] + r5[r7].length;
-                length += i4;
-                i2++;
-            }
-        }
+        long[] jArr = this.f.d;
+        return ((jArr[i3] + i2) - jArr[i]) - this.c;
     }
 
-    @Override // j$.util.stream.d
-    public final void clear() {
-        Object[][] objArr = this.f;
-        if (objArr != null) {
-            this.e = objArr[0];
-            int i = 0;
+    @Override // j$.util.Spliterator
+    public final boolean tryAdvance(Consumer consumer) {
+        Objects.requireNonNull(consumer);
+        int i = this.a;
+        int i2 = this.b;
+        if (i >= i2 && (i != i2 || this.c >= this.d)) {
+            return false;
+        }
+        Object[] objArr = this.e;
+        int i3 = this.c;
+        this.c = i3 + 1;
+        consumer.accept(objArr[i3]);
+        if (this.c == this.e.length) {
+            this.c = 0;
+            int i4 = this.a + 1;
+            this.a = i4;
+            Object[][] objArr2 = this.f.f;
+            if (objArr2 != null && i4 <= i2) {
+                this.e = objArr2[i4];
+            }
+        }
+        return true;
+    }
+
+    @Override // j$.util.Spliterator
+    public final void forEachRemaining(Consumer consumer) {
+        W2 w2;
+        Objects.requireNonNull(consumer);
+        int i = this.a;
+        int i2 = this.d;
+        int i3 = this.b;
+        if (i < i3 || (i == i3 && this.c < i2)) {
+            int i4 = this.c;
             while (true) {
-                Object[] objArr2 = this.e;
-                if (i >= objArr2.length) {
+                w2 = this.f;
+                if (i >= i3) {
                     break;
                 }
-                objArr2[i] = null;
-                i++;
-            }
-            this.f = null;
-            this.d = null;
-        } else {
-            for (int i2 = 0; i2 < this.b; i2++) {
-                this.e[i2] = null;
-            }
-        }
-        this.b = 0;
-        this.c = 0;
-    }
-
-    @Override // java.lang.Iterable
-    public final Iterator iterator() {
-        return Spliterators.i(spliterator());
-    }
-
-    @Override // j$.lang.a
-    public void forEach(Consumer consumer) {
-        for (int i = 0; i < this.c; i++) {
-            for (Object obj : this.f[i]) {
-                consumer.r(obj);
-            }
-        }
-        for (int i2 = 0; i2 < this.b; i2++) {
-            consumer.r(this.e[i2]);
-        }
-    }
-
-    @Override // j$.util.function.Consumer
-    /* renamed from: accept */
-    public void r(Object obj) {
-        long length;
-        int i = this.b;
-        Object[] objArr = this.e;
-        if (i == objArr.length) {
-            if (this.f == null) {
-                Object[][] objArr2 = new Object[8][];
-                this.f = objArr2;
-                this.d = new long[8];
-                objArr2[0] = objArr;
-            }
-            int i2 = this.c;
-            int i3 = i2 + 1;
-            Object[][] objArr3 = this.f;
-            if (i3 >= objArr3.length || objArr3[i3] == null) {
-                if (i2 == 0) {
-                    length = objArr.length;
-                } else {
-                    length = objArr3[i2].length + this.d[i2];
+                Object[] objArr = w2.f[i];
+                while (i4 < objArr.length) {
+                    consumer.accept(objArr[i4]);
+                    i4++;
                 }
-                u(length + 1);
+                i++;
+                i4 = 0;
             }
-            this.b = 0;
-            int i4 = this.c + 1;
-            this.c = i4;
-            this.e = this.f[i4];
+            Object[] objArr2 = this.a == i3 ? this.e : w2.f[i3];
+            while (i4 < i2) {
+                consumer.accept(objArr2[i4]);
+                i4++;
+            }
+            this.a = i3;
+            this.c = i2;
         }
-        Object[] objArr4 = this.e;
-        int i5 = this.b;
-        this.b = i5 + 1;
-        objArr4[i5] = obj;
     }
 
-    public final String toString() {
-        ArrayList arrayList = new ArrayList();
-        forEach(new a(arrayList, 10));
-        return "SpinedBuffer:" + arrayList.toString();
+    @Override // j$.util.Spliterator
+    public final Spliterator trySplit() {
+        int i = this.a;
+        int i2 = this.b;
+        if (i < i2) {
+            int i3 = i2 - 1;
+            int i4 = this.c;
+            W2 w2 = this.f;
+            N2 n2 = new N2(w2, i, i3, i4, w2.f[i3].length);
+            this.a = i2;
+            this.c = 0;
+            this.e = w2.f[i2];
+            return n2;
+        }
+        if (i != i2) {
+            return null;
+        }
+        int i5 = this.c;
+        int i6 = (this.d - i5) / 2;
+        if (i6 == 0) {
+            return null;
+        }
+        Spliterator m = Spliterators.m(this.e, i5, i5 + i6);
+        this.c += i6;
+        return m;
     }
 
-    @Override // java.lang.Iterable
-    public j$.util.Spliterator spliterator() {
-        return new E2(this, 0, this.c, 0, this.b);
+    @Override // j$.util.Spliterator
+    public final Comparator getComparator() {
+        throw new IllegalStateException();
     }
 }

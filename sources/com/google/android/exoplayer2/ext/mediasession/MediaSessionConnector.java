@@ -32,6 +32,7 @@ import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.ErrorMessageProvider;
 import com.google.android.exoplayer2.util.Util;
 import com.google.android.exoplayer2.video.VideoSize;
+import j$.util.DesugarCollections;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
@@ -373,7 +374,7 @@ public final class MediaSessionConnector {
                 builder.addCustomAction(customAction);
             }
         }
-        this.customActionMap = Collections.unmodifiableMap(hashMap);
+        this.customActionMap = DesugarCollections.unmodifiableMap(hashMap);
         Bundle bundle = new Bundle();
         int mediaSessionPlaybackState = (player.getPlayerError() == null && this.customError == null) ? getMediaSessionPlaybackState(player.getPlaybackState(), player.getPlayWhenReady()) : 7;
         Pair<Integer, CharSequence> pair = this.customError;

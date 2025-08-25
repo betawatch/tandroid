@@ -1,17 +1,67 @@
 package j$.util.stream;
 
-/* loaded from: classes2.dex */
-final class K1 extends t0 {
-    final /* synthetic */ j$.util.function.U h;
-    final /* synthetic */ long i;
+import j$.util.function.Consumer$-CC;
+import java.util.function.BiConsumer;
+import java.util.function.BinaryOperator;
+import java.util.function.Consumer;
+import java.util.function.Supplier;
 
-    @Override // j$.util.stream.t0
-    public final N1 d0() {
-        return new L1(this.i, this.h);
+/* loaded from: classes2.dex */
+final class K1 extends T1 implements S1 {
+    final /* synthetic */ Supplier b;
+    final /* synthetic */ BiConsumer c;
+    final /* synthetic */ BinaryOperator d;
+
+    @Override // j$.util.stream.m2, j$.util.stream.j2, java.util.function.DoubleConsumer
+    public final /* synthetic */ void accept(double d) {
+        w0.a();
+        throw null;
     }
 
-    K1(R2 r2, j$.util.function.U u, long j) {
-        this.h = u;
-        this.i = j;
+    @Override // j$.util.stream.m2
+    public final /* synthetic */ void accept(int i) {
+        w0.k();
+        throw null;
+    }
+
+    @Override // j$.util.stream.m2
+    public final /* synthetic */ void accept(long j) {
+        w0.l();
+        throw null;
+    }
+
+    public final /* synthetic */ Consumer andThen(Consumer consumer) {
+        return Consumer$-CC.$default$andThen(this, consumer);
+    }
+
+    @Override // j$.util.stream.m2
+    public final /* synthetic */ void k() {
+    }
+
+    @Override // j$.util.stream.m2
+    public final /* synthetic */ boolean n() {
+        return false;
+    }
+
+    @Override // j$.util.stream.S1
+    public final void g(S1 s1) {
+        this.a = this.d.apply(this.a, ((K1) s1).a);
+    }
+
+    @Override // j$.util.stream.m2
+    public final void l(long j) {
+        this.a = this.b.get();
+    }
+
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final void p(Object obj) {
+        this.c.accept(this.a, obj);
+    }
+
+    K1(Supplier supplier, BiConsumer biConsumer, BinaryOperator binaryOperator) {
+        this.b = supplier;
+        this.c = biConsumer;
+        this.d = binaryOperator;
     }
 }

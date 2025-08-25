@@ -4,14 +4,13 @@ import j$.lang.Iterable$-CC;
 import j$.util.Collection;
 import j$.util.Spliterator;
 import j$.util.Spliterators;
-import j$.util.function.Consumer;
-import j$.util.function.IntFunction;
-import j$.util.function.Predicate;
 import j$.util.stream.Stream;
-import j$.util.stream.t0;
 import java.io.Serializable;
 import java.util.AbstractCollection;
 import java.util.Arrays;
+import java.util.function.Consumer;
+import java.util.function.IntFunction;
+import java.util.function.Predicate;
 
 /* loaded from: classes.dex */
 public abstract class zzfm extends AbstractCollection implements Serializable, Collection {
@@ -38,21 +37,14 @@ public abstract class zzfm extends AbstractCollection implements Serializable, C
     @Override // java.util.AbstractCollection, java.util.Collection
     public abstract boolean contains(Object obj);
 
-    @Override // j$.util.Collection, j$.lang.a
+    @Override // java.lang.Iterable, j$.util.Collection, j$.lang.a
     public /* synthetic */ void forEach(Consumer consumer) {
         Iterable$-CC.$default$forEach(this, consumer);
     }
 
-    @Override // java.lang.Iterable
-    public /* synthetic */ void forEach(java.util.function.Consumer consumer) {
-        forEach(Consumer.VivifiedWrapper.convert(consumer));
-    }
-
     @Override // java.util.Collection, j$.util.Collection
     public /* synthetic */ Stream parallelStream() {
-        Stream e0;
-        e0 = t0.e0(Collection.-EL.b(this), true);
-        return e0;
+        return Collection.-CC.$default$parallelStream(this);
     }
 
     @Override // java.util.Collection
@@ -70,14 +62,9 @@ public abstract class zzfm extends AbstractCollection implements Serializable, C
         throw new UnsupportedOperationException();
     }
 
-    @Override // j$.util.Collection
+    @Override // java.util.Collection, j$.util.Collection
     public /* synthetic */ boolean removeIf(Predicate predicate) {
         return Collection.-CC.$default$removeIf(this, predicate);
-    }
-
-    @Override // java.util.Collection
-    public /* synthetic */ boolean removeIf(java.util.function.Predicate predicate) {
-        return removeIf(Predicate.VivifiedWrapper.convert(predicate));
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection
@@ -110,16 +97,11 @@ public abstract class zzfm extends AbstractCollection implements Serializable, C
         return toArray(zza);
     }
 
-    @Override // j$.util.Collection
+    @Override // java.util.Collection, j$.util.Collection
     public /* synthetic */ Object[] toArray(IntFunction intFunction) {
         Object[] array;
         array = toArray((Object[]) intFunction.apply(0));
         return array;
-    }
-
-    @Override // java.util.Collection
-    public /* synthetic */ Object[] toArray(java.util.function.IntFunction intFunction) {
-        return toArray(IntFunction.VivifiedWrapper.convert(intFunction));
     }
 
     abstract int zza(Object[] objArr, int i);

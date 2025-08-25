@@ -1,7 +1,15 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
+import java.util.function.DoubleConsumer;
+
 /* loaded from: classes2.dex */
 final class y extends A {
+    @Override // j$.util.stream.BaseStream
+    public final BaseStream unordered() {
+        return !K() ? this : new t(this, a3.r, 1);
+    }
+
     @Override // j$.util.stream.b, j$.util.stream.BaseStream
     public final /* bridge */ /* synthetic */ D parallel() {
         parallel();
@@ -14,35 +22,40 @@ final class y extends A {
         return this;
     }
 
+    @Override // j$.util.stream.b, j$.util.stream.BaseStream, j$.util.stream.D
+    public final /* bridge */ /* synthetic */ Spliterator spliterator() {
+        return spliterator();
+    }
+
     @Override // j$.util.stream.b
-    final boolean v0() {
+    final boolean P() {
         throw new UnsupportedOperationException();
     }
 
     @Override // j$.util.stream.b
-    final d2 w0(int i, d2 d2Var) {
+    final m2 Q(int i, m2 m2Var) {
         throw new UnsupportedOperationException();
     }
 
     @Override // j$.util.stream.A, j$.util.stream.D
-    public final void i(j$.util.function.l lVar) {
-        j$.util.D E0;
+    public final void forEach(DoubleConsumer doubleConsumer) {
+        j$.util.V Y;
         if (!isParallel()) {
-            E0 = A.E0(y0());
-            E0.e(lVar);
+            Y = A.Y(S());
+            Y.forEachRemaining(doubleConsumer);
         } else {
-            super.i(lVar);
+            super.forEach(doubleConsumer);
         }
     }
 
     @Override // j$.util.stream.A, j$.util.stream.D
-    public final void c0(j$.util.function.l lVar) {
-        j$.util.D E0;
+    public final void forEachOrdered(DoubleConsumer doubleConsumer) {
+        j$.util.V Y;
         if (!isParallel()) {
-            E0 = A.E0(y0());
-            E0.e(lVar);
+            Y = A.Y(S());
+            Y.forEachRemaining(doubleConsumer);
         } else {
-            super.c0(lVar);
+            super.forEachOrdered(doubleConsumer);
         }
     }
 }

@@ -4,8 +4,8 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
+import j$.util.DesugarCollections;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /* loaded from: classes.dex */
@@ -41,7 +41,7 @@ public final class LocationSettingsRequest extends AbstractSafeParcelable {
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeTypedList(parcel, 1, Collections.unmodifiableList(this.zza), false);
+        SafeParcelWriter.writeTypedList(parcel, 1, DesugarCollections.unmodifiableList(this.zza), false);
         SafeParcelWriter.writeBoolean(parcel, 2, this.zzb);
         SafeParcelWriter.writeBoolean(parcel, 3, this.zzc);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);

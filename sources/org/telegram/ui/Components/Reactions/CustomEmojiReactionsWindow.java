@@ -22,11 +22,11 @@ import android.view.animation.OvershootInterpolator;
 import android.widget.FrameLayout;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
+import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.ImageReceiver;
@@ -382,7 +382,7 @@ public class CustomEmojiReactionsWindow {
     public /* synthetic */ void lambda$new$1(ReactionsContainerLayout reactionsContainerLayout, Canvas canvas, int i, int i2, int i3, int i4, float f, float f2) {
         RectF rectF = AndroidUtilities.rectTmp;
         rectF.set(i, i2, i3, i4);
-        reactionsContainerLayout.getDelegate().drawRoundRect(canvas, rectF, 0.0f, this.containerView.getX() + f, getBlurOffset() + f2, NotificationCenter.goingToPreviewTheme, true);
+        reactionsContainerLayout.getDelegate().drawRoundRect(canvas, rectF, 0.0f, this.containerView.getX() + f, getBlurOffset() + f2, NotificationCenter.needCheckSystemBarColors, true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1028,7 +1028,7 @@ public class CustomEmojiReactionsWindow {
                 float lerp = AndroidUtilities.lerp(customEmojiReactionsWindow5.fromRadius, AndroidUtilities.dp(customEmojiReactionsWindow5.type == 5 ? 20.0f : 8.0f), CustomEmojiReactionsWindow.this.enterTransitionProgress);
                 this.transitionReactions.clear();
                 if (CustomEmojiReactionsWindow.this.type == 1 || (CustomEmojiReactionsWindow.this.reactionsContainerLayout.getDelegate() != null && CustomEmojiReactionsWindow.this.reactionsContainerLayout.getDelegate().drawBackground())) {
-                    CustomEmojiReactionsWindow.this.reactionsContainerLayout.getDelegate().drawRoundRect(canvas, CustomEmojiReactionsWindow.this.drawingRect, lerp, getX(), CustomEmojiReactionsWindow.this.getBlurOffset(), NotificationCenter.goingToPreviewTheme, true);
+                    CustomEmojiReactionsWindow.this.reactionsContainerLayout.getDelegate().drawRoundRect(canvas, CustomEmojiReactionsWindow.this.drawingRect, lerp, getX(), CustomEmojiReactionsWindow.this.getBlurOffset(), NotificationCenter.needCheckSystemBarColors, true);
                 } else {
                     this.shadow.setAlpha((int) (Utilities.clamp(clamp / 0.05f, 1.0f, 0.0f) * 255.0f));
                     Drawable drawable = this.shadow;

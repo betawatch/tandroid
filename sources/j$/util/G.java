@@ -1,11 +1,17 @@
 package j$.util;
 
+import java.util.function.Consumer;
+import java.util.function.DoubleConsumer;
+
 /* loaded from: classes2.dex */
-public interface G extends M {
-    void c(j$.util.function.G g);
+public interface G extends P {
+    @Override // java.util.Iterator, j$.util.y
+    void forEachRemaining(Consumer consumer);
 
-    boolean g(j$.util.function.G g);
+    void forEachRemaining(DoubleConsumer doubleConsumer);
 
-    @Override // j$.util.M, j$.util.Spliterator
-    G trySplit();
+    @Override // java.util.Iterator
+    Double next();
+
+    double nextDouble();
 }

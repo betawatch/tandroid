@@ -1,58 +1,66 @@
 package j$.util.stream;
 
-import j$.util.function.BiConsumer;
-import j$.util.function.Supplier;
+import java.util.function.BiConsumer;
+import java.util.function.DoubleBinaryOperator;
+import java.util.function.DoubleConsumer;
+import java.util.function.DoubleFunction;
+import java.util.function.ObjDoubleConsumer;
+import java.util.function.Supplier;
 
 /* loaded from: classes2.dex */
 public interface D extends BaseStream {
-    double D(double d, j$.util.function.h hVar);
+    D a();
 
-    Stream G(j$.util.function.o oVar);
+    j$.util.A average();
 
-    D L(j$.util.function.w wVar);
-
-    IntStream Q(j$.util.function.r rVar);
-
-    D S(j$.util.function.p pVar);
-
-    D a(j$.util.function.l lVar);
-
-    boolean a0(j$.util.function.p pVar);
-
-    j$.util.j average();
+    D b();
 
     Stream boxed();
 
-    void c0(j$.util.function.l lVar);
+    D c();
+
+    Object collect(Supplier supplier, ObjDoubleConsumer objDoubleConsumer, BiConsumer biConsumer);
 
     long count();
 
-    boolean d0(j$.util.function.p pVar);
+    D d();
 
     D distinct();
 
-    j$.util.j findAny();
+    D e(a aVar);
 
-    j$.util.j findFirst();
+    j$.util.A findAny();
 
-    void i(j$.util.function.l lVar);
+    j$.util.A findFirst();
 
-    j$.util.p iterator();
+    void forEach(DoubleConsumer doubleConsumer);
 
-    boolean j(j$.util.function.p pVar);
+    void forEachOrdered(DoubleConsumer doubleConsumer);
+
+    boolean h();
+
+    LongStream i();
+
+    j$.util.G iterator();
 
     D limit(long j);
 
-    j$.util.j max();
+    Stream mapToObj(DoubleFunction doubleFunction);
 
-    j$.util.j min();
+    j$.util.A max();
+
+    j$.util.A min();
+
+    boolean o();
 
     @Override // j$.util.stream.BaseStream
     D parallel();
 
-    D q(j$.util.function.o oVar);
+    D peek(DoubleConsumer doubleConsumer);
 
-    LongStream r(j$.util.function.v vVar);
+    double reduce(double d, DoubleBinaryOperator doubleBinaryOperator);
+
+    j$.util.A reduce(DoubleBinaryOperator doubleBinaryOperator);
 
     @Override // j$.util.stream.BaseStream
     D sequential();
@@ -61,15 +69,15 @@ public interface D extends BaseStream {
 
     D sorted();
 
-    j$.util.D spliterator();
+    j$.util.V spliterator();
 
     double sum();
 
-    j$.util.f summaryStatistics();
+    j$.util.w summaryStatistics();
+
+    IntStream t();
 
     double[] toArray();
 
-    j$.util.j x(j$.util.function.h hVar);
-
-    Object z(Supplier supplier, j$.util.function.n0 n0Var, BiConsumer biConsumer);
+    boolean x();
 }

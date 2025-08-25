@@ -9,12 +9,14 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.RecyclerView;
 import j$.util.Collection;
 import j$.util.DesugarArrays;
-import j$.util.function.Function;
-import j$.util.function.Predicate;
+import j$.util.function.Function$-CC;
+import j$.util.function.Predicate$-CC;
 import j$.util.stream.Collectors;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
+import java.util.function.Function;
+import java.util.function.Predicate;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotWebViewVibrationEffect;
 import org.telegram.messenger.ChatObject;
@@ -419,21 +421,19 @@ public class DeleteMessagesBottomSheet extends BottomSheetWithRecyclerListView {
                 }
             }
             this.participantsBannedRights = (ArrayList) DesugarArrays.stream(channelParticipantArr).map(new Function() { // from class: org.telegram.ui.Components.DeleteMessagesBottomSheet$$ExternalSyntheticLambda4
-                @Override // j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
-                    return Function.-CC.$default$andThen(this, function);
+                    return Function$-CC.$default$andThen(this, function);
                 }
 
-                @Override // j$.util.function.Function
+                @Override // java.util.function.Function
                 public final Object apply(Object obj) {
                     TLRPC.TL_chatBannedRights lambda$new$2;
                     lambda$new$2 = DeleteMessagesBottomSheet.lambda$new$2((TLRPC.ChannelParticipant) obj);
                     return lambda$new$2;
                 }
 
-                @Override // j$.util.function.Function
                 public /* synthetic */ Function compose(Function function) {
-                    return Function.-CC.$default$compose(this, function);
+                    return Function$-CC.$default$compose(this, function);
                 }
             }).collect(Collectors.toCollection(new ChatActivity$$ExternalSyntheticLambda251()));
             Action action = new Action(2, arrayList2);
@@ -646,22 +646,19 @@ public class DeleteMessagesBottomSheet extends BottomSheetWithRecyclerListView {
     public /* synthetic */ void lambda$updateParticipantMessageCounts$5(TLObject tLObject, final TLRPC.InputPeer inputPeer, int i, int[] iArr) {
         if (tLObject instanceof TLRPC.TL_messages_channelMessages) {
             this.participantMessageCounts[i] = ((TLRPC.TL_messages_channelMessages) tLObject).count - ((int) Collection.-EL.stream(this.messages).filter(new Predicate() { // from class: org.telegram.ui.Components.DeleteMessagesBottomSheet$$ExternalSyntheticLambda18
-                @Override // j$.util.function.Predicate
                 public /* synthetic */ Predicate and(Predicate predicate) {
-                    return Predicate.-CC.$default$and(this, predicate);
+                    return Predicate$-CC.$default$and(this, predicate);
                 }
 
-                @Override // j$.util.function.Predicate
                 public /* synthetic */ Predicate negate() {
-                    return Predicate.-CC.$default$negate(this);
+                    return Predicate$-CC.$default$negate(this);
                 }
 
-                @Override // j$.util.function.Predicate
                 public /* synthetic */ Predicate or(Predicate predicate) {
-                    return Predicate.-CC.$default$or(this, predicate);
+                    return Predicate$-CC.$default$or(this, predicate);
                 }
 
-                @Override // j$.util.function.Predicate
+                @Override // java.util.function.Predicate
                 public final boolean test(Object obj) {
                     boolean lambda$updateParticipantMessageCounts$4;
                     lambda$updateParticipantMessageCounts$4 = DeleteMessagesBottomSheet.lambda$updateParticipantMessageCounts$4(TLRPC.InputPeer.this, (MessageObject) obj);
@@ -1014,22 +1011,19 @@ public class DeleteMessagesBottomSheet extends BottomSheetWithRecyclerListView {
 
     private void performDelete() {
         ArrayList<Integer> arrayList = (ArrayList) Collection.-EL.stream(this.messages).filter(new Predicate() { // from class: org.telegram.ui.Components.DeleteMessagesBottomSheet$$ExternalSyntheticLambda7
-            @Override // j$.util.function.Predicate
             public /* synthetic */ Predicate and(Predicate predicate) {
-                return Predicate.-CC.$default$and(this, predicate);
+                return Predicate$-CC.$default$and(this, predicate);
             }
 
-            @Override // j$.util.function.Predicate
             public /* synthetic */ Predicate negate() {
-                return Predicate.-CC.$default$negate(this);
+                return Predicate$-CC.$default$negate(this);
             }
 
-            @Override // j$.util.function.Predicate
             public /* synthetic */ Predicate or(Predicate predicate) {
-                return Predicate.-CC.$default$or(this, predicate);
+                return Predicate$-CC.$default$or(this, predicate);
             }
 
-            @Override // j$.util.function.Predicate
+            @Override // java.util.function.Predicate
             public final boolean test(Object obj) {
                 boolean lambda$performDelete$10;
                 lambda$performDelete$10 = DeleteMessagesBottomSheet.this.lambda$performDelete$10((MessageObject) obj);
@@ -1037,22 +1031,19 @@ public class DeleteMessagesBottomSheet extends BottomSheetWithRecyclerListView {
             }
         }).map(new DeleteMessagesBottomSheet$$ExternalSyntheticLambda8()).collect(Collectors.toCollection(new ChatActivity$$ExternalSyntheticLambda251()));
         ArrayList<Integer> arrayList2 = (ArrayList) Collection.-EL.stream(this.messages).filter(new Predicate() { // from class: org.telegram.ui.Components.DeleteMessagesBottomSheet$$ExternalSyntheticLambda9
-            @Override // j$.util.function.Predicate
             public /* synthetic */ Predicate and(Predicate predicate) {
-                return Predicate.-CC.$default$and(this, predicate);
+                return Predicate$-CC.$default$and(this, predicate);
             }
 
-            @Override // j$.util.function.Predicate
             public /* synthetic */ Predicate negate() {
-                return Predicate.-CC.$default$negate(this);
+                return Predicate$-CC.$default$negate(this);
             }
 
-            @Override // j$.util.function.Predicate
             public /* synthetic */ Predicate or(Predicate predicate) {
-                return Predicate.-CC.$default$or(this, predicate);
+                return Predicate$-CC.$default$or(this, predicate);
             }
 
-            @Override // j$.util.function.Predicate
+            @Override // java.util.function.Predicate
             public final boolean test(Object obj) {
                 boolean lambda$performDelete$11;
                 lambda$performDelete$11 = DeleteMessagesBottomSheet.this.lambda$performDelete$11((MessageObject) obj);
@@ -1158,44 +1149,38 @@ public class DeleteMessagesBottomSheet extends BottomSheetWithRecyclerListView {
             tL_channels_reportSpam.participant = MessagesController.getInputPeer((TLRPC.Chat) tLObject);
         }
         tL_channels_reportSpam.id = (ArrayList) Collection.-EL.stream(this.messages).filter(new Predicate() { // from class: org.telegram.ui.Components.DeleteMessagesBottomSheet$$ExternalSyntheticLambda16
-            @Override // j$.util.function.Predicate
             public /* synthetic */ Predicate and(Predicate predicate) {
-                return Predicate.-CC.$default$and(this, predicate);
+                return Predicate$-CC.$default$and(this, predicate);
             }
 
-            @Override // j$.util.function.Predicate
             public /* synthetic */ Predicate negate() {
-                return Predicate.-CC.$default$negate(this);
+                return Predicate$-CC.$default$negate(this);
             }
 
-            @Override // j$.util.function.Predicate
             public /* synthetic */ Predicate or(Predicate predicate) {
-                return Predicate.-CC.$default$or(this, predicate);
+                return Predicate$-CC.$default$or(this, predicate);
             }
 
-            @Override // j$.util.function.Predicate
+            @Override // java.util.function.Predicate
             public final boolean test(Object obj) {
                 boolean lambda$performDelete$13;
                 lambda$performDelete$13 = DeleteMessagesBottomSheet.this.lambda$performDelete$13((MessageObject) obj);
                 return lambda$performDelete$13;
             }
         }).filter(new Predicate() { // from class: org.telegram.ui.Components.DeleteMessagesBottomSheet$$ExternalSyntheticLambda17
-            @Override // j$.util.function.Predicate
             public /* synthetic */ Predicate and(Predicate predicate) {
-                return Predicate.-CC.$default$and(this, predicate);
+                return Predicate$-CC.$default$and(this, predicate);
             }
 
-            @Override // j$.util.function.Predicate
             public /* synthetic */ Predicate negate() {
-                return Predicate.-CC.$default$negate(this);
+                return Predicate$-CC.$default$negate(this);
             }
 
-            @Override // j$.util.function.Predicate
             public /* synthetic */ Predicate or(Predicate predicate) {
-                return Predicate.-CC.$default$or(this, predicate);
+                return Predicate$-CC.$default$or(this, predicate);
             }
 
-            @Override // j$.util.function.Predicate
+            @Override // java.util.function.Predicate
             public final boolean test(Object obj) {
                 boolean lambda$performDelete$14;
                 lambda$performDelete$14 = DeleteMessagesBottomSheet.lambda$performDelete$14(TLObject.this, (MessageObject) obj);

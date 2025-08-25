@@ -3,6 +3,7 @@ package com.google.android.exoplayer2.source.hls.playlist;
 import android.net.Uri;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.offline.StreamKey;
+import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -64,16 +65,16 @@ public class HlsMultivariantPlaylist extends HlsPlaylist {
 
     public HlsMultivariantPlaylist(String str, List list, List list2, List list3, List list4, List list5, List list6, Format format, List list7, boolean z, Map map, List list8) {
         super(str, list, z);
-        this.mediaPlaylistUrls = Collections.unmodifiableList(getMediaPlaylistUrls(list2, list3, list4, list5, list6));
-        this.variants = Collections.unmodifiableList(list2);
-        this.videos = Collections.unmodifiableList(list3);
-        this.audios = Collections.unmodifiableList(list4);
-        this.subtitles = Collections.unmodifiableList(list5);
-        this.closedCaptions = Collections.unmodifiableList(list6);
+        this.mediaPlaylistUrls = DesugarCollections.unmodifiableList(getMediaPlaylistUrls(list2, list3, list4, list5, list6));
+        this.variants = DesugarCollections.unmodifiableList(list2);
+        this.videos = DesugarCollections.unmodifiableList(list3);
+        this.audios = DesugarCollections.unmodifiableList(list4);
+        this.subtitles = DesugarCollections.unmodifiableList(list5);
+        this.closedCaptions = DesugarCollections.unmodifiableList(list6);
         this.muxedAudioFormat = format;
-        this.muxedCaptionFormats = list7 != null ? Collections.unmodifiableList(list7) : null;
-        this.variableDefinitions = Collections.unmodifiableMap(map);
-        this.sessionKeyDrmInitData = Collections.unmodifiableList(list8);
+        this.muxedCaptionFormats = list7 != null ? DesugarCollections.unmodifiableList(list7) : null;
+        this.variableDefinitions = DesugarCollections.unmodifiableMap(map);
+        this.sessionKeyDrmInitData = DesugarCollections.unmodifiableList(list8);
     }
 
     @Override // com.google.android.exoplayer2.offline.FilterableManifest

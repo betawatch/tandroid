@@ -21,9 +21,9 @@ import com.google.android.exoplayer2.util.Consumer;
 import com.google.android.exoplayer2.util.CopyOnWriteMultiset;
 import com.google.android.exoplayer2.util.Log;
 import com.google.android.exoplayer2.util.Util;
+import j$.util.DesugarCollections;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -92,7 +92,7 @@ class DefaultDrmSession implements DrmSession {
             this.offlineLicenseKeySetId = bArr;
             this.schemeDatas = null;
         } else {
-            this.schemeDatas = Collections.unmodifiableList((List) Assertions.checkNotNull(list));
+            this.schemeDatas = DesugarCollections.unmodifiableList((List) Assertions.checkNotNull(list));
         }
         this.keyRequestParameters = hashMap;
         this.callback = mediaDrmCallback;

@@ -1,9 +1,9 @@
 package com.google.android.gms.internal.vision;
 
+import j$.util.DesugarCollections;
 import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 import java.util.RandomAccess;
 
@@ -77,7 +77,7 @@ public final class zzjs extends zzhj implements zzjv, RandomAccess {
 
     @Override // com.google.android.gms.internal.vision.zzjv
     public final List zzd() {
-        return Collections.unmodifiableList(this.zzc);
+        return DesugarCollections.unmodifiableList(this.zzc);
     }
 
     @Override // com.google.android.gms.internal.vision.zzjv

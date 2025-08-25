@@ -5,7 +5,6 @@ import android.graphics.BitmapFactory;
 import android.os.Build;
 import j$.util.Comparator$-CC;
 import j$.util.concurrent.ConcurrentHashMap;
-import j$.util.function.ToIntFunction;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -20,6 +19,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.ToIntFunction;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DispatchQueuePoolBackground;
 import org.telegram.messenger.FileLoader;
@@ -446,7 +446,7 @@ public class BitmapsCache {
                         }
                         int length = (int) randomAccessFile2.length();
                         Collections.sort(arrayList, Comparator$-CC.comparingInt(new ToIntFunction() { // from class: org.telegram.messenger.utils.BitmapsCache$$ExternalSyntheticLambda1
-                            @Override // j$.util.function.ToIntFunction
+                            @Override // java.util.function.ToIntFunction
                             public final int applyAsInt(Object obj) {
                                 int i10;
                                 i10 = ((BitmapsCache.FrameOffset) obj).index;

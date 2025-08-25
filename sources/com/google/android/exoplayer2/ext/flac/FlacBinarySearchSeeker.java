@@ -5,8 +5,8 @@ import com.google.android.exoplayer2.extractor.BinarySearchSeeker;
 import com.google.android.exoplayer2.extractor.ExtractorInput;
 import com.google.android.exoplayer2.extractor.FlacStreamMetadata;
 import com.google.android.exoplayer2.util.Assertions;
+import j$.util.Objects;
 import java.nio.ByteBuffer;
-import java.util.Objects;
 
 /* loaded from: classes.dex */
 final class FlacBinarySearchSeeker extends BinarySearchSeeker {

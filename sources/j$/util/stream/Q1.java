@@ -1,110 +1,78 @@
 package j$.util.stream;
 
-import j$.util.function.Function;
+import j$.util.function.Consumer$-CC;
+import java.util.function.Consumer;
+import java.util.function.LongBinaryOperator;
+import java.util.function.LongConsumer;
 
 /* loaded from: classes2.dex */
-final class Q1 extends Z1 {
-    public final /* synthetic */ int b = 2;
-    Object c;
-    final /* synthetic */ b d;
+final class Q1 implements S1, l2 {
+    private long a;
+    final /* synthetic */ long b;
+    final /* synthetic */ LongBinaryOperator c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public Q1(v vVar, d2 d2Var) {
-        super(d2Var);
-        this.d = vVar;
-        this.c = new T(0, d2Var);
+    @Override // j$.util.stream.m2, j$.util.stream.j2, java.util.function.DoubleConsumer
+    public final /* synthetic */ void accept(double d) {
+        w0.a();
+        throw null;
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public Q1(t tVar, d2 d2Var) {
-        super(d2Var);
-        this.d = tVar;
-        this.c = new p(0, d2Var);
+    @Override // j$.util.stream.m2
+    public final /* synthetic */ void accept(int i) {
+        w0.k();
+        throw null;
     }
 
-    @Override // j$.util.stream.Z1, j$.util.stream.d2
-    public final void n(long j) {
-        switch (this.b) {
-            case 0:
-                this.a.n(-1L);
-                break;
-            case 1:
-                this.a.n(-1L);
-                break;
-            default:
-                this.a.n(-1L);
-                break;
-        }
-    }
-
-    @Override // j$.util.function.Consumer
+    @Override // java.util.function.Consumer
     /* renamed from: accept */
-    public final void r(Object obj) {
-        switch (this.b) {
-            case 0:
-                LongStream longStream = (LongStream) ((Function) ((w) this.d).n).apply(obj);
-                if (longStream != null) {
-                    try {
-                        longStream.sequential().c((b0) this.c);
-                    } catch (Throwable th) {
-                        try {
-                            longStream.close();
-                        } catch (Throwable th2) {
-                            th.addSuppressed(th2);
-                        }
-                        throw th;
-                    }
-                }
-                if (longStream != null) {
-                    longStream.close();
-                    return;
-                }
-                return;
-            case 1:
-                IntStream intStream = (IntStream) ((Function) ((v) this.d).n).apply(obj);
-                if (intStream != null) {
-                    try {
-                        intStream.sequential().J((T) this.c);
-                    } catch (Throwable th3) {
-                        try {
-                            intStream.close();
-                        } catch (Throwable th4) {
-                            th3.addSuppressed(th4);
-                        }
-                        throw th3;
-                    }
-                }
-                if (intStream != null) {
-                    intStream.close();
-                    return;
-                }
-                return;
-            default:
-                D d = (D) ((Function) ((t) this.d).n).apply(obj);
-                if (d != null) {
-                    try {
-                        d.sequential().i((p) this.c);
-                    } catch (Throwable th5) {
-                        try {
-                            d.close();
-                        } catch (Throwable th6) {
-                            th5.addSuppressed(th6);
-                        }
-                        throw th5;
-                    }
-                }
-                if (d != null) {
-                    d.close();
-                    return;
-                }
-                return;
-        }
+    public final /* bridge */ /* synthetic */ void p(Object obj) {
+        j((Long) obj);
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public Q1(w wVar, d2 d2Var) {
-        super(d2Var);
-        this.d = wVar;
-        this.c = new b0(0, d2Var);
+    public final /* synthetic */ Consumer andThen(Consumer consumer) {
+        return Consumer$-CC.$default$andThen(this, consumer);
+    }
+
+    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
+        return j$.com.android.tools.r8.a.c(this, longConsumer);
+    }
+
+    @Override // j$.util.stream.l2
+    public final /* synthetic */ void j(Long l) {
+        w0.i(this, l);
+    }
+
+    @Override // j$.util.stream.m2
+    public final /* synthetic */ void k() {
+    }
+
+    @Override // j$.util.stream.m2
+    public final /* synthetic */ boolean n() {
+        return false;
+    }
+
+    Q1(long j, LongBinaryOperator longBinaryOperator) {
+        this.b = j;
+        this.c = longBinaryOperator;
+    }
+
+    @Override // j$.util.stream.S1
+    public final void g(S1 s1) {
+        accept(((Q1) s1).a);
+    }
+
+    @Override // j$.util.stream.m2
+    public final void l(long j) {
+        this.a = this.b;
+    }
+
+    @Override // j$.util.stream.m2
+    public final void accept(long j) {
+        this.a = this.c.applyAsLong(this.a, j);
+    }
+
+    @Override // java.util.function.Supplier
+    public final Object get() {
+        return Long.valueOf(this.a);
     }
 }

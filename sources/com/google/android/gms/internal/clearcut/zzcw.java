@@ -1,9 +1,9 @@
 package com.google.android.gms.internal.clearcut;
 
+import j$.util.DesugarCollections;
 import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 import java.util.RandomAccess;
 
@@ -139,7 +139,7 @@ public final class zzcw extends zzav implements zzcx, RandomAccess {
 
     @Override // com.google.android.gms.internal.clearcut.zzcx
     public final List zzbt() {
-        return Collections.unmodifiableList(this.zzls);
+        return DesugarCollections.unmodifiableList(this.zzls);
     }
 
     @Override // com.google.android.gms.internal.clearcut.zzcx

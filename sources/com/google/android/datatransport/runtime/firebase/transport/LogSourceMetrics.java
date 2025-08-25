@@ -1,7 +1,7 @@
 package com.google.android.datatransport.runtime.firebase.transport;
 
+import j$.util.DesugarCollections;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /* loaded from: classes.dex */
@@ -35,7 +35,7 @@ public final class LogSourceMetrics {
         }
 
         public LogSourceMetrics build() {
-            return new LogSourceMetrics(this.log_source_, Collections.unmodifiableList(this.log_event_dropped_));
+            return new LogSourceMetrics(this.log_source_, DesugarCollections.unmodifiableList(this.log_event_dropped_));
         }
 
         public Builder setLogSource(String str) {

@@ -20,11 +20,11 @@ import com.google.android.datatransport.runtime.scheduling.persistence.Persisted
 import com.google.android.datatransport.runtime.synchronization.SynchronizationException;
 import com.google.android.datatransport.runtime.synchronization.SynchronizationGuard;
 import com.google.android.datatransport.runtime.time.Clock;
+import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Objects;
 import java.util.concurrent.Executor;
 
 /* loaded from: classes.dex */

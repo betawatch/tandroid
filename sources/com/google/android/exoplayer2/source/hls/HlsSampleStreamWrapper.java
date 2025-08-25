@@ -44,6 +44,8 @@ import com.google.android.exoplayer2.util.ParsableByteArray;
 import com.google.android.exoplayer2.util.Util;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
+import j$.util.DesugarCollections;
+import j$.util.Objects;
 import java.io.EOFException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -53,12 +55,11 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Set;
 
 /* loaded from: classes.dex */
 final class HlsSampleStreamWrapper implements Loader.Callback, Loader.ReleaseCallback, SequenceableLoader, ExtractorOutput, SampleQueue.UpstreamFormatChangedListener {
-    private static final Set MAPPABLE_TYPES = Collections.unmodifiableSet(new HashSet(Arrays.asList(1, 2, 5)));
+    private static final Set MAPPABLE_TYPES = DesugarCollections.unmodifiableSet(new HashSet(Arrays.asList(1, 2, 5)));
     private final Allocator allocator;
     private final Callback callback;
     private final HlsChunkSource chunkSource;
@@ -151,7 +152,7 @@ final class HlsSampleStreamWrapper implements Loader.Callback, Loader.ReleaseCal
         this.sampleQueuesEnabledStates = new boolean[0];
         ArrayList arrayList = new ArrayList();
         this.mediaChunks = arrayList;
-        this.readOnlyMediaChunks = Collections.unmodifiableList(arrayList);
+        this.readOnlyMediaChunks = DesugarCollections.unmodifiableList(arrayList);
         this.hlsSampleStreams = new ArrayList();
         this.maybeFinishPrepareRunnable = new Runnable() { // from class: com.google.android.exoplayer2.source.hls.HlsSampleStreamWrapper$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable

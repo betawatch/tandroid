@@ -1,5 +1,6 @@
 package com.google.android.gms.internal.cast;
 
+import j$.util.DesugarCollections;
 import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -112,7 +113,7 @@ public final class zzue extends zzsi implements RandomAccess, zzuf {
 
     @Override // com.google.android.gms.internal.cast.zzuf
     public final List zzh() {
-        return Collections.unmodifiableList(this.zzc);
+        return DesugarCollections.unmodifiableList(this.zzc);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

@@ -1597,7 +1597,7 @@ public abstract class PreviewView extends FrameLayout {
             this.audioPlayer.setPlayWhenReady(z2);
             this.audioPlayer.seekTo(j3);
         } else if (z) {
-            if (Math.abs(this.audioPlayer.getCurrentPosition() - j3) > (isCollage() ? NotificationCenter.permissionsGranted : 120)) {
+            if (Math.abs(this.audioPlayer.getCurrentPosition() - j3) > (isCollage() ? NotificationCenter.premiumStickersPreviewLoaded : 120)) {
                 this.audioPlayer.seekTo(j3);
             }
         }
@@ -1656,7 +1656,7 @@ public abstract class PreviewView extends FrameLayout {
             this.roundPlayer.setPlayWhenReady(z2);
             this.roundPlayer.seekTo(j3);
         } else if (z) {
-            if (Math.abs(this.roundPlayer.getCurrentPosition() - j3) > (isCollage() ? NotificationCenter.permissionsGranted : 120)) {
+            if (Math.abs(this.roundPlayer.getCurrentPosition() - j3) > (isCollage() ? NotificationCenter.premiumStickersPreviewLoaded : 120)) {
                 this.roundPlayer.seekTo(j3);
             }
         }
@@ -1810,7 +1810,7 @@ public abstract class PreviewView extends FrameLayout {
                     canvas.translate((-storyEntry2.width) / 2.0f, (-storyEntry2.height) / 2.0f);
                 }
                 canvas.scale(this.entry.width / this.thumbBitmap.getWidth(), this.entry.height / this.thumbBitmap.getHeight());
-                this.bitmapPaint.setAlpha(NotificationCenter.goingToPreviewTheme);
+                this.bitmapPaint.setAlpha(NotificationCenter.needCheckSystemBarColors);
                 canvas.drawBitmap(this.thumbBitmap, 0.0f, 0.0f, this.bitmapPaint);
                 canvas.restore();
             }
@@ -1889,7 +1889,7 @@ public abstract class PreviewView extends FrameLayout {
         }
         this.matrix.reset();
         this.matrix.preScale(this.entry.width / this.bitmap.getWidth(), this.entry.height / this.bitmap.getHeight());
-        this.bitmapPaint.setAlpha(NotificationCenter.goingToPreviewTheme);
+        this.bitmapPaint.setAlpha(NotificationCenter.needCheckSystemBarColors);
         canvas.drawBitmap(this.bitmap, this.matrix, this.bitmapPaint);
     }
 

@@ -1,5 +1,6 @@
 package com.google.android.recaptcha.internal;
 
+import j$.util.DesugarCollections;
 import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -172,8 +173,8 @@ class zzle extends AbstractMap {
         if (this.zzd) {
             return;
         }
-        this.zzc = this.zzc.isEmpty() ? Collections.emptyMap() : Collections.unmodifiableMap(this.zzc);
-        this.zzf = this.zzf.isEmpty() ? Collections.emptyMap() : Collections.unmodifiableMap(this.zzf);
+        this.zzc = this.zzc.isEmpty() ? Collections.emptyMap() : DesugarCollections.unmodifiableMap(this.zzc);
+        this.zzf = this.zzf.isEmpty() ? Collections.emptyMap() : DesugarCollections.unmodifiableMap(this.zzf);
         this.zzd = true;
     }
 

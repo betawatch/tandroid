@@ -1,12 +1,13 @@
 package com.google.android.recaptcha.internal;
 
+import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 /* loaded from: classes.dex */
 final class zzjo extends zzjs {
-    private static final Class zza = Collections.unmodifiableList(Collections.emptyList()).getClass();
+    private static final Class zza = DesugarCollections.unmodifiableList(Collections.emptyList()).getClass();
 
     private zzjo() {
         super(null);
@@ -74,7 +75,7 @@ final class zzjo extends zzjs {
                 }
                 return;
             }
-            unmodifiableList = Collections.unmodifiableList(list);
+            unmodifiableList = DesugarCollections.unmodifiableList(list);
         }
         zzlv.zzs(obj, j, unmodifiableList);
     }

@@ -1,41 +1,206 @@
 package j$.util;
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
+import j$.util.Collection;
+import j$.util.Spliterator;
+import j$.util.stream.Stream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.Iterator;
+import java.util.function.Consumer;
+import java.util.function.IntFunction;
+import java.util.function.Predicate;
 
 /* loaded from: classes2.dex */
-public final class g implements j$.util.function.G {
-    private long count;
-    private long sum;
-    private int min = ConnectionsManager.DEFAULT_DATACENTER_ID;
-    private int max = TLObject.FLAG_31;
+class g implements java.util.Collection, Serializable, Collection {
+    private static final long serialVersionUID = 3053995032091335093L;
+    final java.util.Collection a;
+    final Object b;
 
-    @Override // j$.util.function.G
-    public final /* synthetic */ j$.util.function.G l(j$.util.function.G g) {
-        return j$.com.android.tools.r8.a.b(this, g);
+    @Override // java.util.Collection, j$.util.Collection
+    public final /* synthetic */ Object[] toArray(IntFunction intFunction) {
+        Object[] array;
+        array = toArray((Object[]) intFunction.apply(0));
+        return array;
     }
 
-    @Override // j$.util.function.G
-    public final void accept(int i) {
-        this.count++;
-        this.sum += i;
-        this.min = Math.min(this.min, i);
-        this.max = Math.max(this.max, i);
+    g(java.util.Collection collection) {
+        this.a = (java.util.Collection) Objects.requireNonNull(collection);
+        this.b = this;
     }
 
-    public final void a(g gVar) {
-        this.count += gVar.count;
-        this.sum += gVar.sum;
-        this.min = Math.min(this.min, gVar.min);
-        this.max = Math.max(this.max, gVar.max);
+    g(java.util.Collection collection, Object obj) {
+        this.a = (java.util.Collection) Objects.requireNonNull(collection);
+        this.b = Objects.requireNonNull(obj);
+    }
+
+    @Override // java.util.Collection
+    public final int size() {
+        int size;
+        synchronized (this.b) {
+            size = this.a.size();
+        }
+        return size;
+    }
+
+    @Override // java.util.Collection
+    public final boolean isEmpty() {
+        boolean isEmpty;
+        synchronized (this.b) {
+            isEmpty = this.a.isEmpty();
+        }
+        return isEmpty;
+    }
+
+    @Override // java.util.Collection
+    public final boolean contains(Object obj) {
+        boolean contains;
+        synchronized (this.b) {
+            contains = this.a.contains(obj);
+        }
+        return contains;
+    }
+
+    @Override // java.util.Collection
+    public final Object[] toArray() {
+        Object[] array;
+        synchronized (this.b) {
+            array = this.a.toArray();
+        }
+        return array;
+    }
+
+    @Override // java.util.Collection
+    public final Object[] toArray(Object[] objArr) {
+        Object[] array;
+        synchronized (this.b) {
+            array = this.a.toArray(objArr);
+        }
+        return array;
+    }
+
+    @Override // java.util.Collection, java.lang.Iterable
+    public final Iterator iterator() {
+        return this.a.iterator();
+    }
+
+    @Override // java.util.Collection
+    public final boolean add(Object obj) {
+        boolean add;
+        synchronized (this.b) {
+            add = this.a.add(obj);
+        }
+        return add;
+    }
+
+    @Override // java.util.Collection
+    public final boolean remove(Object obj) {
+        boolean remove;
+        synchronized (this.b) {
+            remove = this.a.remove(obj);
+        }
+        return remove;
+    }
+
+    @Override // java.util.Collection
+    public final boolean containsAll(java.util.Collection collection) {
+        boolean containsAll;
+        synchronized (this.b) {
+            containsAll = this.a.containsAll(collection);
+        }
+        return containsAll;
+    }
+
+    @Override // java.util.Collection
+    public final boolean addAll(java.util.Collection collection) {
+        boolean addAll;
+        synchronized (this.b) {
+            addAll = this.a.addAll(collection);
+        }
+        return addAll;
+    }
+
+    @Override // java.util.Collection
+    public final boolean removeAll(java.util.Collection collection) {
+        boolean removeAll;
+        synchronized (this.b) {
+            removeAll = this.a.removeAll(collection);
+        }
+        return removeAll;
+    }
+
+    @Override // java.util.Collection
+    public final boolean retainAll(java.util.Collection collection) {
+        boolean retainAll;
+        synchronized (this.b) {
+            retainAll = this.a.retainAll(collection);
+        }
+        return retainAll;
+    }
+
+    @Override // java.util.Collection
+    public final void clear() {
+        synchronized (this.b) {
+            this.a.clear();
+        }
     }
 
     public final String toString() {
-        String simpleName = g.class.getSimpleName();
-        Long valueOf = Long.valueOf(this.count);
-        Long valueOf2 = Long.valueOf(this.sum);
-        Integer valueOf3 = Integer.valueOf(this.min);
-        long j = this.count;
-        return String.format("%s{count=%d, sum=%d, min=%d, average=%f, max=%d}", simpleName, valueOf, valueOf2, valueOf3, Double.valueOf(j > 0 ? this.sum / j : 0.0d), Integer.valueOf(this.max));
+        String obj;
+        synchronized (this.b) {
+            obj = this.a.toString();
+        }
+        return obj;
+    }
+
+    @Override // java.lang.Iterable, j$.util.Collection, j$.lang.a
+    public final void forEach(Consumer consumer) {
+        synchronized (this.b) {
+            Collection.-EL.a(this.a, consumer);
+        }
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public final boolean removeIf(Predicate predicate) {
+        boolean removeIf;
+        synchronized (this.b) {
+            removeIf = Collection.-EL.removeIf(this.a, predicate);
+        }
+        return removeIf;
+    }
+
+    @Override // java.util.Collection, java.lang.Iterable, j$.util.Collection
+    public final Spliterator spliterator() {
+        return Collection.-EL.c(this.a);
+    }
+
+    @Override // java.util.Collection, java.lang.Iterable
+    public final java.util.Spliterator spliterator() {
+        return Spliterator.Wrapper.convert(Collection.-EL.c(this.a));
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public final Stream stream() {
+        return Collection.-EL.stream(this.a);
+    }
+
+    @Override // java.util.Collection
+    public final java.util.stream.Stream stream() {
+        return Stream.Wrapper.convert(Collection.-EL.stream(this.a));
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public final Stream parallelStream() {
+        return Collection.-EL.b(this.a);
+    }
+
+    @Override // java.util.Collection
+    public final java.util.stream.Stream parallelStream() {
+        return Stream.Wrapper.convert(Collection.-EL.b(this.a));
+    }
+
+    private void writeObject(ObjectOutputStream objectOutputStream) {
+        synchronized (this.b) {
+            objectOutputStream.defaultWriteObject();
+        }
     }
 }

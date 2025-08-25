@@ -128,7 +128,7 @@ public interface DrmSessionEventListener {
             while (it.hasNext()) {
                 ListenerAndHandler listenerAndHandler = (ListenerAndHandler) it.next();
                 final DrmSessionEventListener drmSessionEventListener = listenerAndHandler.listener;
-                Util.postOrRun(listenerAndHandler.handler, new Runnable() { // from class: com.google.android.exoplayer2.drm.DrmSessionEventListener$EventDispatcher$$ExternalSyntheticLambda4
+                Util.postOrRun(listenerAndHandler.handler, new Runnable() { // from class: com.google.android.exoplayer2.drm.DrmSessionEventListener$EventDispatcher$$ExternalSyntheticLambda3
                     @Override // java.lang.Runnable
                     public final void run() {
                         DrmSessionEventListener.EventDispatcher.this.lambda$drmKeysRestored$3(drmSessionEventListener);
@@ -147,7 +147,7 @@ public interface DrmSessionEventListener {
             while (it.hasNext()) {
                 ListenerAndHandler listenerAndHandler = (ListenerAndHandler) it.next();
                 final DrmSessionEventListener drmSessionEventListener = listenerAndHandler.listener;
-                Util.postOrRun(listenerAndHandler.handler, new Runnable() { // from class: com.google.android.exoplayer2.drm.DrmSessionEventListener$EventDispatcher$$ExternalSyntheticLambda3
+                Util.postOrRun(listenerAndHandler.handler, new Runnable() { // from class: com.google.android.exoplayer2.drm.DrmSessionEventListener$EventDispatcher$$ExternalSyntheticLambda4
                     @Override // java.lang.Runnable
                     public final void run() {
                         DrmSessionEventListener.EventDispatcher.this.lambda$drmKeysRemoved$4(drmSessionEventListener);

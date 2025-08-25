@@ -16,8 +16,7 @@ public final class Optional<T> {
     }
 
     private Optional(Object obj) {
-        obj.getClass();
-        this.a = obj;
+        this.a = Objects.requireNonNull(obj);
     }
 
     public final int hashCode() {
@@ -49,7 +48,7 @@ public final class Optional<T> {
             return true;
         }
         if (obj instanceof Optional) {
-            return A.y(this.a, ((Optional) obj).a);
+            return Objects.equals(this.a, ((Optional) obj).a);
         }
         return false;
     }

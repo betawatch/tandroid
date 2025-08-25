@@ -19,9 +19,9 @@ import android.util.StateSet;
 import androidx.core.graphics.ColorUtils;
 import androidx.core.math.MathUtils;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
+import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.ChatObject;
@@ -458,7 +458,7 @@ public abstract class TranscribeButton {
         }
         canvas.save();
         canvas.translate(this.bounds.centerX() + AndroidUtilities.dp(-13.0f), this.bounds.centerY() + AndroidUtilities.dp(-13.0f));
-        canvas.saveLayerAlpha(0.0f, 0.0f, AndroidUtilities.dp(26.0f), AndroidUtilities.dp(26.0f), NotificationCenter.goingToPreviewTheme, 31);
+        canvas.saveLayerAlpha(0.0f, 0.0f, AndroidUtilities.dp(26.0f), AndroidUtilities.dp(26.0f), NotificationCenter.needCheckSystemBarColors, 31);
         if (this.isOpen) {
             this.inIconDrawable.setAlpha((int) (this.inIconDrawableAlpha * f));
             this.inIconDrawable.draw(canvas);

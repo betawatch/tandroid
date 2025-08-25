@@ -13,7 +13,7 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.view.animation.LinearInterpolator;
 import android.widget.FrameLayout;
-import java.util.Objects;
+import j$.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.NotificationCenter;
@@ -191,8 +191,8 @@ public class VoIpGradientLayout extends FrameLayout {
             return;
         }
         this.state = gradientState2;
-        this.alphaBlueGreen = NotificationCenter.goingToPreviewTheme;
-        ValueAnimator ofInt = ValueAnimator.ofInt(NotificationCenter.goingToPreviewTheme, 0, NotificationCenter.goingToPreviewTheme);
+        this.alphaBlueGreen = NotificationCenter.needCheckSystemBarColors;
+        ValueAnimator ofInt = ValueAnimator.ofInt(NotificationCenter.needCheckSystemBarColors, 0, NotificationCenter.needCheckSystemBarColors);
         this.callingAnimator = ofInt;
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIpGradientLayout$$ExternalSyntheticLambda4
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -286,9 +286,9 @@ public class VoIpGradientLayout extends FrameLayout {
             this.callingAnimator.cancel();
             this.callingAnimator = null;
         }
-        this.alphaGreen = NotificationCenter.goingToPreviewTheme;
+        this.alphaGreen = NotificationCenter.needCheckSystemBarColors;
         this.connectedAnimatorSet = new AnimatorSet();
-        ValueAnimator ofInt = ValueAnimator.ofInt(0, NotificationCenter.goingToPreviewTheme, NotificationCenter.goingToPreviewTheme, NotificationCenter.goingToPreviewTheme, 0);
+        ValueAnimator ofInt = ValueAnimator.ofInt(0, NotificationCenter.needCheckSystemBarColors, NotificationCenter.needCheckSystemBarColors, NotificationCenter.needCheckSystemBarColors, 0);
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIpGradientLayout$$ExternalSyntheticLambda5
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
@@ -297,7 +297,7 @@ public class VoIpGradientLayout extends FrameLayout {
         });
         ofInt.setRepeatCount(-1);
         ofInt.setRepeatMode(1);
-        ValueAnimator ofInt2 = ValueAnimator.ofInt(0, 0, NotificationCenter.goingToPreviewTheme, 0, 0);
+        ValueAnimator ofInt2 = ValueAnimator.ofInt(0, 0, NotificationCenter.needCheckSystemBarColors, 0, 0);
         ofInt2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIpGradientLayout$$ExternalSyntheticLambda6
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
@@ -337,7 +337,7 @@ public class VoIpGradientLayout extends FrameLayout {
             return;
         }
         this.state = gradientState2;
-        ValueAnimator ofInt = ValueAnimator.ofInt(this.alphaOrangeRed, NotificationCenter.goingToPreviewTheme);
+        ValueAnimator ofInt = ValueAnimator.ofInt(this.alphaOrangeRed, NotificationCenter.needCheckSystemBarColors);
         this.badConnectionAnimator = ofInt;
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIpGradientLayout$$ExternalSyntheticLambda2
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -485,20 +485,20 @@ public class VoIpGradientLayout extends FrameLayout {
             Objects.requireNonNull(this.backgroundProvider);
             Objects.requireNonNull(this.backgroundProvider);
             canvas.scale(1.12f, 1.12f, width, height);
-            this.bgGreen.setAlpha(NotificationCenter.goingToPreviewTheme);
+            this.bgGreen.setAlpha(NotificationCenter.needCheckSystemBarColors);
             this.bgGreen.draw(canvas);
             this.clipPath.rewind();
             this.clipPath.addCircle(this.clipCx / 4.0f, this.clipCy / 4.0f, this.clipRadius / 4.0f, direction);
             this.backgroundProvider.getRevealCanvas().drawColor(0, mode);
             this.backgroundProvider.getRevealCanvas().save();
             this.backgroundProvider.getRevealCanvas().clipPath(this.clipPath);
-            this.bgGreenLightReveal.setAlpha(NotificationCenter.goingToPreviewTheme);
+            this.bgGreenLightReveal.setAlpha(NotificationCenter.needCheckSystemBarColors);
             this.bgGreenLightReveal.draw(this.backgroundProvider.getRevealCanvas());
             this.backgroundProvider.getRevealCanvas().restore();
             this.backgroundProvider.getRevealDrakCanvas().drawColor(0, mode);
             this.backgroundProvider.getRevealDrakCanvas().save();
             this.backgroundProvider.getRevealDrakCanvas().clipPath(this.clipPath);
-            this.bgGreenDarkReveal.setAlpha(NotificationCenter.goingToPreviewTheme);
+            this.bgGreenDarkReveal.setAlpha(NotificationCenter.needCheckSystemBarColors);
             this.bgGreenDarkReveal.draw(this.backgroundProvider.getRevealDrakCanvas());
             this.backgroundProvider.getRevealDrakCanvas().restore();
         }

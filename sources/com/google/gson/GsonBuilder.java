@@ -7,6 +7,7 @@ import com.google.gson.internal.bind.TreeTypeAdapter;
 import com.google.gson.internal.bind.TypeAdapters;
 import com.google.gson.internal.sql.SqlTypesSupport;
 import com.google.gson.reflect.TypeToken;
+import j$.util.Objects;
 import java.lang.reflect.Type;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -14,7 +15,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 /* loaded from: classes.dex */
 public final class GsonBuilder {

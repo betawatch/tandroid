@@ -15,8 +15,8 @@ import android.text.style.URLSpan;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
+import j$.util.Objects;
 import java.util.Iterator;
-import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLoader;
@@ -75,7 +75,7 @@ public class BotHelpCell extends View {
         this.imageReceiver = imageReceiver;
         imageReceiver.setInvalidateAll(true);
         this.imageReceiver.setCrossfadeWithOldImage(true);
-        this.imageReceiver.setCrossfadeDuration(NotificationCenter.permissionsGranted);
+        this.imageReceiver.setCrossfadeDuration(NotificationCenter.premiumStickersPreviewLoaded);
         int color = Theme.getColor(Theme.key_listSelector, resourcesProvider);
         int i = SharedConfig.bubbleRadius;
         this.selectorDrawableRadius = i;

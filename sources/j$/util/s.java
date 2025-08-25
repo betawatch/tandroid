@@ -1,74 +1,99 @@
 package j$.util;
 
-import j$.util.function.Consumer;
-import java.util.PrimitiveIterator;
+import j$.util.Collection;
+import j$.util.stream.Stream;
+import j$.util.stream.w0;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.function.Consumer;
-import java.util.function.IntConsumer;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class s implements PrimitiveIterator.OfInt {
-    public final /* synthetic */ t a;
+final class s extends v {
+    private static final long serialVersionUID = 7854390611657943733L;
 
-    private /* synthetic */ s(t tVar) {
-        this.a = tVar;
+    @Override // j$.util.m, java.lang.Iterable, j$.util.Collection, j$.lang.a
+    public final void forEach(Consumer consumer) {
+        Objects.requireNonNull(consumer);
+        Collection.-EL.a(this.a, new p(consumer));
     }
 
-    public static /* synthetic */ PrimitiveIterator.OfInt b(t tVar) {
-        if (tVar == null) {
-            return null;
+    @Override // j$.util.m, java.util.Collection, java.lang.Iterable, j$.util.Collection
+    public final Spliterator spliterator() {
+        return new r(Collection.-EL.c(this.a));
+    }
+
+    @Override // j$.util.m, java.util.Collection, j$.util.Collection
+    public final Stream stream() {
+        return w0.f0(spliterator(), false);
+    }
+
+    @Override // j$.util.m, java.util.Collection, j$.util.Collection
+    public final Stream parallelStream() {
+        return w0.f0(spliterator(), true);
+    }
+
+    @Override // j$.util.m, java.util.Collection, java.lang.Iterable
+    public final Iterator iterator() {
+        return new l(this);
+    }
+
+    @Override // j$.util.m, java.util.Collection
+    public final Object[] toArray() {
+        Object[] array = this.a.toArray();
+        for (int i = 0; i < array.length; i++) {
+            array[i] = new q((Map.Entry) array[i]);
         }
-        return tVar instanceof r ? ((r) tVar).a : new s(tVar);
+        return array;
     }
 
-    public final /* synthetic */ boolean equals(Object obj) {
-        t tVar = this.a;
-        if (obj instanceof s) {
-            obj = ((s) obj).a;
+    @Override // j$.util.m, java.util.Collection
+    public final Object[] toArray(Object[] objArr) {
+        Object[] array = this.a.toArray(objArr.length == 0 ? objArr : Arrays.copyOf(objArr, 0));
+        for (int i = 0; i < array.length; i++) {
+            array[i] = new q((Map.Entry) array[i]);
         }
-        return tVar.equals(obj);
+        if (array.length > objArr.length) {
+            return array;
+        }
+        System.arraycopy(array, 0, objArr, 0, array.length);
+        if (objArr.length > array.length) {
+            objArr[array.length] = null;
+        }
+        return objArr;
     }
 
-    @Override // java.util.PrimitiveIterator
-    public final /* synthetic */ void forEachRemaining(IntConsumer intConsumer) {
-        this.a.forEachRemaining(intConsumer);
+    @Override // j$.util.m, java.util.Collection
+    public final boolean contains(Object obj) {
+        if (!(obj instanceof Map.Entry)) {
+            return false;
+        }
+        return this.a.contains(new q((Map.Entry) obj));
     }
 
-    @Override // java.util.PrimitiveIterator.OfInt, java.util.Iterator
-    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        this.a.a(Consumer.VivifiedWrapper.convert(consumer));
+    @Override // j$.util.m, java.util.Collection
+    public final boolean containsAll(java.util.Collection collection) {
+        Iterator it = collection.iterator();
+        while (it.hasNext()) {
+            if (!contains(it.next())) {
+                return false;
+            }
+        }
+        return true;
     }
 
-    @Override // java.util.PrimitiveIterator.OfInt
-    public final /* synthetic */ void forEachRemaining(IntConsumer intConsumer) {
-        this.a.c(j$.util.function.E.a(intConsumer));
-    }
-
-    @Override // java.util.Iterator
-    public final /* synthetic */ boolean hasNext() {
-        return this.a.hasNext();
-    }
-
-    public final /* synthetic */ int hashCode() {
-        return this.a.hashCode();
-    }
-
-    @Override // java.util.PrimitiveIterator.OfInt, java.util.Iterator
-    public final /* synthetic */ Integer next() {
-        return this.a.next();
-    }
-
-    @Override // java.util.PrimitiveIterator.OfInt, java.util.Iterator
-    public final /* synthetic */ Object next() {
-        return this.a.next();
-    }
-
-    @Override // java.util.PrimitiveIterator.OfInt
-    public final /* synthetic */ int nextInt() {
-        return this.a.nextInt();
-    }
-
-    @Override // java.util.Iterator
-    public final /* synthetic */ void remove() {
-        this.a.remove();
+    @Override // j$.util.v, java.util.Collection, java.util.Set
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof java.util.Set)) {
+            return false;
+        }
+        java.util.Set set = (java.util.Set) obj;
+        if (set.size() != this.a.size()) {
+            return false;
+        }
+        return containsAll(set);
     }
 }

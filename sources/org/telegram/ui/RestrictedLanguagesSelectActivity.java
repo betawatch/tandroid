@@ -17,11 +17,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.common.collect.Sets;
 import j$.util.Collection;
-import j$.util.function.Predicate;
+import j$.util.function.Predicate$-CC;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
+import java.util.function.Predicate;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
@@ -243,22 +244,19 @@ public class RestrictedLanguagesSelectActivity extends BaseFragment implements N
         final String str = language.code;
         if (this.selectedLanguages.contains(str)) {
             Collection.-EL.removeIf(this.selectedLanguages, new Predicate() { // from class: org.telegram.ui.RestrictedLanguagesSelectActivity$$ExternalSyntheticLambda6
-                @Override // j$.util.function.Predicate
                 public /* synthetic */ Predicate and(Predicate predicate) {
-                    return Predicate.-CC.$default$and(this, predicate);
+                    return Predicate$-CC.$default$and(this, predicate);
                 }
 
-                @Override // j$.util.function.Predicate
                 public /* synthetic */ Predicate negate() {
-                    return Predicate.-CC.$default$negate(this);
+                    return Predicate$-CC.$default$negate(this);
                 }
 
-                @Override // j$.util.function.Predicate
                 public /* synthetic */ Predicate or(Predicate predicate) {
-                    return Predicate.-CC.$default$or(this, predicate);
+                    return Predicate$-CC.$default$or(this, predicate);
                 }
 
-                @Override // j$.util.function.Predicate
+                @Override // java.util.function.Predicate
                 public final boolean test(Object obj) {
                     boolean lambda$createView$0;
                     lambda$createView$0 = RestrictedLanguagesSelectActivity.lambda$createView$0(str, (String) obj);

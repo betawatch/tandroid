@@ -1,12 +1,12 @@
 package j$.util.stream;
 
-import j$.util.function.Supplier;
 import j$.util.stream.Collector;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.EnumSet;
 import java.util.List;
 import java.util.Set;
+import java.util.function.Supplier;
 
 /* loaded from: classes2.dex */
 public final class Collectors {
@@ -23,18 +23,19 @@ public final class Collectors {
         a = Collections.unmodifiableSet(EnumSet.of(characteristics3));
         b = Collections.unmodifiableSet(EnumSet.of(characteristics2, characteristics3));
         c = Collections.emptySet();
+        Collections.unmodifiableSet(EnumSet.of(characteristics2));
     }
 
     public static <T, C extends Collection<T>> Collector<T, ?, C> toCollection(Supplier<C> supplier) {
-        return new l(supplier, new k(14), new j(0), a);
+        return new k(supplier, new j(21), new j(0), a);
     }
 
     public static <T> Collector<T, ?, List<T>> toList() {
-        return new l(new k(17), new k(18), new j(1), a);
+        return new k(new j(22), new j(23), new j(1), a);
     }
 
     public static <T> Collector<T, ?, Set<T>> toSet() {
-        return new l(new k(19), new k(20), new j(2), b);
+        return new k(new j(25), new j(26), new j(3), b);
     }
 
     static void a(double[] dArr, double d) {

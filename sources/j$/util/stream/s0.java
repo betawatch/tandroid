@@ -1,48 +1,51 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import java.util.concurrent.atomic.AtomicReference;
+import j$.util.function.Consumer$-CC;
+import java.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-final class s0 extends c {
-    private final r0 j;
+abstract class s0 implements m2 {
+    boolean a;
+    boolean b;
 
-    s0(r0 r0Var, b bVar, Spliterator spliterator) {
-        super(bVar, spliterator);
-        this.j = r0Var;
+    @Override // j$.util.stream.m2, j$.util.stream.j2, java.util.function.DoubleConsumer
+    public /* synthetic */ void accept(double d) {
+        w0.a();
+        throw null;
     }
 
-    s0(s0 s0Var, Spliterator spliterator) {
-        super(s0Var, spliterator);
-        this.j = s0Var.j;
+    @Override // j$.util.stream.m2
+    public /* synthetic */ void accept(int i) {
+        w0.k();
+        throw null;
     }
 
-    @Override // j$.util.stream.e
-    protected final e d(Spliterator spliterator) {
-        return new s0(this, spliterator);
+    @Override // j$.util.stream.m2
+    public /* synthetic */ void accept(long j) {
+        w0.l();
+        throw null;
     }
 
-    @Override // j$.util.stream.e
-    protected final Object a() {
+    public final /* synthetic */ Consumer andThen(Consumer consumer) {
+        return Consumer$-CC.$default$andThen(this, consumer);
+    }
+
+    @Override // j$.util.stream.m2
+    public final /* synthetic */ void k() {
+    }
+
+    @Override // j$.util.stream.m2
+    public final /* synthetic */ void l(long j) {
+    }
+
+    s0(t0 t0Var) {
         boolean z;
-        b bVar = this.a;
-        p0 p0Var = (p0) this.j.b.get();
-        bVar.A0(this.b, p0Var);
-        boolean z2 = p0Var.b;
-        z = this.j.a.b;
-        if (z2 == z) {
-            Boolean valueOf = Boolean.valueOf(z2);
-            AtomicReference atomicReference = this.h;
-            while (!atomicReference.compareAndSet(null, valueOf) && atomicReference.get() == null) {
-            }
-        }
-        return null;
+        z = t0Var.b;
+        this.b = !z;
     }
 
-    @Override // j$.util.stream.c
-    protected final Object i() {
-        boolean z;
-        z = this.j.a.b;
-        return Boolean.valueOf(!z);
+    @Override // j$.util.stream.m2
+    public final boolean n() {
+        return this.a;
     }
 }

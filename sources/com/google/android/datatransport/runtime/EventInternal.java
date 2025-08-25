@@ -1,7 +1,7 @@
 package com.google.android.datatransport.runtime;
 
 import com.google.android.datatransport.runtime.AutoValue_EventInternal;
-import java.util.Collections;
+import j$.util.DesugarCollections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,7 +20,7 @@ public abstract class EventInternal {
     public abstract long getUptimeMillis();
 
     public final Map getMetadata() {
-        return Collections.unmodifiableMap(getAutoMetadata());
+        return DesugarCollections.unmodifiableMap(getAutoMetadata());
     }
 
     public final int getInteger(String str) {

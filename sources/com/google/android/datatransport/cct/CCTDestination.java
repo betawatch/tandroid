@@ -2,9 +2,9 @@ package com.google.android.datatransport.cct;
 
 import com.google.android.datatransport.Encoding;
 import com.google.android.datatransport.runtime.EncodedDestination;
+import j$.util.DesugarCollections;
 import java.nio.charset.Charset;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.regex.Pattern;
@@ -27,7 +27,7 @@ public final class CCTDestination implements EncodedDestination {
         LEGACY_END_POINT = mergeStrings2;
         String mergeStrings3 = StringMerger.mergeStrings("AzSCki82AwsLzKd5O8zo", "IayckHiZRO1EFl1aGoK");
         DEFAULT_API_KEY = mergeStrings3;
-        SUPPORTED_ENCODINGS = Collections.unmodifiableSet(new HashSet(Arrays.asList(Encoding.of("proto"), Encoding.of("json"))));
+        SUPPORTED_ENCODINGS = DesugarCollections.unmodifiableSet(new HashSet(Arrays.asList(Encoding.of("proto"), Encoding.of("json"))));
         INSTANCE = new CCTDestination(mergeStrings, null);
         LEGACY_INSTANCE = new CCTDestination(mergeStrings2, mergeStrings3);
     }

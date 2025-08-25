@@ -12,6 +12,7 @@ import com.google.android.gms.common.api.Api;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.internal.ClientSettings;
 import com.google.android.gms.common.internal.Preconditions;
+import j$.util.DesugarCollections;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -57,7 +58,7 @@ final class zaaa implements zaca {
         while (it2.hasNext()) {
             arrayMap.put((Api.AnyClientKey) it2.next(), this.zae);
         }
-        this.zaf = Collections.unmodifiableMap(arrayMap);
+        this.zaf = DesugarCollections.unmodifiableMap(arrayMap);
     }
 
     private final void zaB() {

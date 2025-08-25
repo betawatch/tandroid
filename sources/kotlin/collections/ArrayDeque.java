@@ -1,129 +1,20 @@
 package kotlin.collections;
 
-import j$.lang.Iterable$-CC;
-import j$.util.Collection;
-import j$.util.List;
-import j$.util.Spliterator;
-import j$.util.Spliterators;
-import j$.util.function.Consumer;
-import j$.util.function.IntFunction;
-import j$.util.function.Predicate;
-import j$.util.function.UnaryOperator;
-import j$.util.stream.Stream;
-import j$.util.stream.t0;
-import java.util.Comparator;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-import java.util.SequencedCollection;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt;
 import org.telegram.tgnet.ConnectionsManager;
 
 /* loaded from: classes.dex */
-public final class ArrayDeque extends AbstractMutableList implements List {
+public final class ArrayDeque extends AbstractMutableList {
     public static final Companion Companion = new Companion(null);
     private static final Object[] emptyElementData = new Object[0];
     private Object[] elementData = emptyElementData;
     private int head;
     private int size;
-
-    @Override // j$.util.Collection, j$.lang.a
-    public /* synthetic */ void forEach(Consumer consumer) {
-        Iterable$-CC.$default$forEach(this, consumer);
-    }
-
-    @Override // java.lang.Iterable
-    public /* synthetic */ void forEach(java.util.function.Consumer consumer) {
-        forEach(Consumer.VivifiedWrapper.convert(consumer));
-    }
-
-    public /* synthetic */ Object getFirst() {
-        return List.-CC.$default$getFirst(this);
-    }
-
-    public /* synthetic */ Object getLast() {
-        return List.-CC.$default$getLast(this);
-    }
-
-    @Override // java.util.Collection, j$.util.Collection
-    public /* synthetic */ Stream parallelStream() {
-        Stream e0;
-        e0 = t0.e0(Collection.-EL.b(this), true);
-        return e0;
-    }
-
-    @Override // java.util.Collection
-    public /* synthetic */ java.util.stream.Stream parallelStream() {
-        return Stream.Wrapper.convert(parallelStream());
-    }
-
-    @Override // j$.util.Collection
-    public /* synthetic */ boolean removeIf(Predicate predicate) {
-        return Collection.-CC.$default$removeIf(this, predicate);
-    }
-
-    @Override // java.util.Collection
-    public /* synthetic */ boolean removeIf(java.util.function.Predicate predicate) {
-        return removeIf(Predicate.VivifiedWrapper.convert(predicate));
-    }
-
-    @Override // j$.util.List
-    public /* synthetic */ void replaceAll(UnaryOperator unaryOperator) {
-        List.-CC.$default$replaceAll(this, unaryOperator);
-    }
-
-    @Override // java.util.List
-    public /* synthetic */ void replaceAll(java.util.function.UnaryOperator unaryOperator) {
-        replaceAll(UnaryOperator.VivifiedWrapper.convert(unaryOperator));
-    }
-
-    public /* synthetic */ java.util.List reversed() {
-        return List.-CC.$default$reversed(this);
-    }
-
-    public /* bridge */ /* synthetic */ SequencedCollection reversed() {
-        return List.-CC.$default$reversed(this);
-    }
-
-    @Override // java.util.List, j$.util.List
-    public /* synthetic */ void sort(Comparator comparator) {
-        List.-CC.$default$sort(this, comparator);
-    }
-
-    @Override // java.util.Collection, java.lang.Iterable, java.util.List, j$.util.List, j$.util.Collection
-    public /* synthetic */ Spliterator spliterator() {
-        Spliterator spliterator;
-        spliterator = Spliterators.spliterator(this, 16);
-        return spliterator;
-    }
-
-    @Override // java.util.Collection, java.lang.Iterable, java.util.List
-    public /* synthetic */ java.util.Spliterator spliterator() {
-        return Spliterator.Wrapper.convert(spliterator());
-    }
-
-    @Override // java.util.Collection, j$.util.Collection
-    public /* synthetic */ Stream stream() {
-        return Collection.-CC.$default$stream(this);
-    }
-
-    @Override // java.util.Collection
-    public /* synthetic */ java.util.stream.Stream stream() {
-        return Stream.Wrapper.convert(stream());
-    }
-
-    @Override // j$.util.Collection
-    public /* synthetic */ Object[] toArray(IntFunction intFunction) {
-        Object[] array;
-        array = toArray((Object[]) intFunction.apply(0));
-        return array;
-    }
-
-    @Override // java.util.Collection
-    public /* synthetic */ Object[] toArray(java.util.function.IntFunction intFunction) {
-        return toArray(IntFunction.VivifiedWrapper.convert(intFunction));
-    }
 
     @Override // kotlin.collections.AbstractMutableList
     public int getSize() {
@@ -281,7 +172,7 @@ public final class ArrayDeque extends AbstractMutableList implements List {
         this.size = size() + 1;
     }
 
-    private final void copyCollectionElements(int i, java.util.Collection collection) {
+    private final void copyCollectionElements(int i, Collection collection) {
         Iterator it = collection.iterator();
         int length = this.elementData.length;
         while (i < length && it.hasNext()) {
@@ -296,7 +187,7 @@ public final class ArrayDeque extends AbstractMutableList implements List {
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public boolean addAll(java.util.Collection elements) {
+    public boolean addAll(Collection elements) {
         Intrinsics.checkNotNullParameter(elements, "elements");
         if (elements.isEmpty()) {
             return false;
@@ -307,7 +198,7 @@ public final class ArrayDeque extends AbstractMutableList implements List {
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public boolean addAll(int i, java.util.Collection elements) {
+    public boolean addAll(int i, Collection elements) {
         Intrinsics.checkNotNullParameter(elements, "elements");
         AbstractList.Companion.checkPositionIndex$kotlin_stdlib(i, size());
         if (elements.isEmpty()) {
@@ -547,7 +438,7 @@ public final class ArrayDeque extends AbstractMutableList implements List {
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public boolean removeAll(java.util.Collection elements) {
+    public boolean removeAll(Collection elements) {
         int positiveMod;
         Intrinsics.checkNotNullParameter(elements, "elements");
         boolean z = false;
@@ -607,7 +498,7 @@ public final class ArrayDeque extends AbstractMutableList implements List {
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public boolean retainAll(java.util.Collection elements) {
+    public boolean retainAll(Collection elements) {
         int positiveMod;
         Intrinsics.checkNotNullParameter(elements, "elements");
         boolean z = false;

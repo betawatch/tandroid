@@ -2,13 +2,13 @@ package com.google.firebase.crashlytics.internal.common;
 
 import com.google.firebase.crashlytics.internal.Logger;
 import com.google.firebase.crashlytics.internal.persistence.FileStore;
+import j$.util.Objects;
 import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Objects;
 
 /* loaded from: classes.dex */
 class CrashlyticsAppQualitySessionsStore {

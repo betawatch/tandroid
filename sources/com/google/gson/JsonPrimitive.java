@@ -2,9 +2,9 @@ package com.google.gson;
 
 import com.google.gson.internal.LazilyParsedNumber;
 import com.google.gson.internal.NumberLimits;
+import j$.util.Objects;
 import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.util.Objects;
 
 /* loaded from: classes.dex */
 public final class JsonPrimitive extends JsonElement {

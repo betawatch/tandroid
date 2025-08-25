@@ -1,33 +1,31 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import j$.util.function.Supplier;
+import java.util.function.DoubleConsumer;
+import java.util.function.DoublePredicate;
 
 /* loaded from: classes2.dex */
-final class r0 implements v3 {
-    final q0 a;
-    final Supplier b;
-
-    r0(R2 r2, q0 q0Var, Supplier supplier) {
-        this.a = q0Var;
-        this.b = supplier;
+final class r0 extends s0 implements j2 {
+    @Override // java.util.function.Consumer
+    public final /* bridge */ /* synthetic */ void accept(Object obj) {
+        p((Double) obj);
     }
 
-    @Override // j$.util.stream.v3
-    public final int d() {
-        return Q2.u | Q2.r;
+    public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {
+        return j$.com.android.tools.r8.a.a(this, doubleConsumer);
     }
 
-    @Override // j$.util.stream.v3
-    public final Object a(b bVar, Spliterator spliterator) {
-        p0 p0Var = (p0) this.b.get();
-        bVar.A0(spliterator, p0Var);
-        return Boolean.valueOf(p0Var.b);
+    @Override // j$.util.stream.j2
+    public final /* synthetic */ void p(Double d) {
+        w0.e(this, d);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // j$.util.stream.v3
-    public final Object c(b bVar, Spliterator spliterator) {
-        return (Boolean) new s0(this, bVar, spliterator).invoke();
+    @Override // j$.util.stream.s0, j$.util.stream.m2, j$.util.stream.j2, java.util.function.DoubleConsumer
+    public final void accept(double d) {
+        if (this.a) {
+            return;
+        }
+        DoublePredicate doublePredicate = null;
+        doublePredicate.test(d);
+        throw null;
     }
 }

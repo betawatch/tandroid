@@ -1,99 +1,105 @@
 package j$.util;
 
-import j$.util.function.Consumer;
+import j$.util.Spliterator;
 import java.util.Comparator;
+import java.util.Spliterator;
+import java.util.function.Consumer;
+import java.util.function.DoubleConsumer;
 
 /* loaded from: classes2.dex */
-final class U implements D {
-    private final double[] a;
-    private int b;
-    private final int c;
-    private final int d;
+public final /* synthetic */ class U implements Spliterator.OfDouble {
+    public final /* synthetic */ V a;
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ void a(Consumer consumer) {
-        A.b(this, consumer);
+    private /* synthetic */ U(V v) {
+        this.a = v;
     }
 
-    @Override // j$.util.Spliterator
+    public static /* synthetic */ Spliterator.OfDouble a(V v) {
+        if (v == null) {
+            return null;
+        }
+        return v instanceof T ? ((T) v).a : new U(v);
+    }
+
+    @Override // java.util.Spliterator
+    public final /* synthetic */ int characteristics() {
+        return this.a.characteristics();
+    }
+
+    public final /* synthetic */ boolean equals(Object obj) {
+        V v = this.a;
+        if (obj instanceof U) {
+            obj = ((U) obj).a;
+        }
+        return v.equals(obj);
+    }
+
+    @Override // java.util.Spliterator
+    public final /* synthetic */ long estimateSize() {
+        return this.a.estimateSize();
+    }
+
+    @Override // java.util.Spliterator.OfPrimitive
+    public final /* synthetic */ void forEachRemaining(DoubleConsumer doubleConsumer) {
+        this.a.forEachRemaining((Object) doubleConsumer);
+    }
+
+    @Override // java.util.Spliterator.OfDouble, java.util.Spliterator
+    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
+        this.a.forEachRemaining(consumer);
+    }
+
+    @Override // java.util.Spliterator.OfDouble
+    public final /* synthetic */ void forEachRemaining(DoubleConsumer doubleConsumer) {
+        this.a.forEachRemaining(doubleConsumer);
+    }
+
+    @Override // java.util.Spliterator
+    public final /* synthetic */ Comparator getComparator() {
+        return this.a.getComparator();
+    }
+
+    @Override // java.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
-        return A.j(this);
+        return this.a.getExactSizeIfKnown();
     }
 
-    @Override // j$.util.Spliterator
+    @Override // java.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return A.k(this, i);
+        return this.a.hasCharacteristics(i);
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean s(Consumer consumer) {
-        return A.l(this, consumer);
+    public final /* synthetic */ int hashCode() {
+        return this.a.hashCode();
     }
 
-    public U(double[] dArr, int i, int i2, int i3) {
-        this.a = dArr;
-        this.b = i;
-        this.c = i2;
-        this.d = i3 | 16448;
+    @Override // java.util.Spliterator.OfPrimitive
+    public final /* synthetic */ boolean tryAdvance(DoubleConsumer doubleConsumer) {
+        return this.a.tryAdvance((Object) doubleConsumer);
     }
 
-    @Override // j$.util.Spliterator
-    public final D trySplit() {
-        int i = this.b;
-        int i2 = (this.c + i) >>> 1;
-        if (i >= i2) {
-            return null;
-        }
-        this.b = i2;
-        return new U(this.a, i, i2, this.d);
+    @Override // java.util.Spliterator.OfDouble, java.util.Spliterator
+    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
+        return this.a.tryAdvance(consumer);
     }
 
-    @Override // j$.util.M
-    public final void e(j$.util.function.l lVar) {
-        int i;
-        lVar.getClass();
-        double[] dArr = this.a;
-        int length = dArr.length;
-        int i2 = this.c;
-        if (length < i2 || (i = this.b) < 0) {
-            return;
-        }
-        this.b = i2;
-        if (i < i2) {
-            do {
-                lVar.accept(dArr[i]);
-                i++;
-            } while (i < i2);
-        }
+    @Override // java.util.Spliterator.OfDouble
+    public final /* synthetic */ boolean tryAdvance(DoubleConsumer doubleConsumer) {
+        return this.a.tryAdvance(doubleConsumer);
     }
 
-    @Override // j$.util.M
-    public final boolean p(j$.util.function.l lVar) {
-        lVar.getClass();
-        int i = this.b;
-        if (i < 0 || i >= this.c) {
-            return false;
-        }
-        this.b = i + 1;
-        lVar.accept(this.a[i]);
-        return true;
+    @Override // java.util.Spliterator.OfDouble, java.util.Spliterator.OfPrimitive, java.util.Spliterator
+    public final /* synthetic */ Spliterator.OfDouble trySplit() {
+        return a(this.a.trySplit());
     }
 
-    @Override // j$.util.Spliterator
-    public final long estimateSize() {
-        return this.c - this.b;
+    @Override // java.util.Spliterator.OfDouble, java.util.Spliterator.OfPrimitive, java.util.Spliterator
+    public final /* synthetic */ Spliterator.OfPrimitive trySplit() {
+        return d0.a(this.a.trySplit());
     }
 
-    @Override // j$.util.Spliterator
-    public final int characteristics() {
-        return this.d;
-    }
-
-    @Override // j$.util.Spliterator
-    public final Comparator getComparator() {
-        if (A.k(this, 4)) {
-            return null;
-        }
-        throw new IllegalStateException();
+    @Override // java.util.Spliterator.OfDouble, java.util.Spliterator.OfPrimitive, java.util.Spliterator
+    public final /* synthetic */ java.util.Spliterator trySplit() {
+        return Spliterator.Wrapper.convert(this.a.trySplit());
     }
 }

@@ -5,9 +5,11 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.Set;
 
 /* loaded from: classes2.dex */
 abstract class b implements Collection, Serializable {
+    private static final long serialVersionUID = 7249069246763182397L;
     final ConcurrentHashMap a;
 
     @Override // java.util.Collection
@@ -17,15 +19,18 @@ abstract class b implements Collection, Serializable {
     public abstract Iterator iterator();
 
     @Override // java.util.Collection
+    public abstract boolean remove(Object obj);
+
+    @Override // java.util.Collection
     public final Object[] toArray() {
-        long k = this.a.k();
-        if (k < 0) {
-            k = 0;
+        long j = this.a.j();
+        if (j < 0) {
+            j = 0;
         }
-        if (k > 2147483639) {
+        if (j > 2147483639) {
             throw new OutOfMemoryError("Required array size too large");
         }
-        int i = (int) k;
+        int i = (int) j;
         Object[] objArr = new Object[i];
         Iterator it = iterator();
         int i2 = 0;
@@ -47,14 +52,14 @@ abstract class b implements Collection, Serializable {
 
     @Override // java.util.Collection
     public final Object[] toArray(Object[] objArr) {
-        long k = this.a.k();
-        if (k < 0) {
-            k = 0;
+        long j = this.a.j();
+        if (j < 0) {
+            j = 0;
         }
-        if (k > 2147483639) {
+        if (j > 2147483639) {
             throw new OutOfMemoryError("Required array size too large");
         }
-        int i = (int) k;
+        int i = (int) j;
         Object[] objArr2 = objArr.length >= i ? objArr : (Object[]) Array.newInstance(objArr.getClass().getComponentType(), i);
         int length = objArr2.length;
         Iterator it = iterator();
@@ -132,14 +137,25 @@ abstract class b implements Collection, Serializable {
     }
 
     @Override // java.util.Collection
-    public final boolean removeAll(Collection collection) {
+    public boolean removeAll(Collection collection) {
         collection.getClass();
-        Iterator it = iterator();
+        l[] lVarArr = this.a.a;
         boolean z = false;
-        while (it.hasNext()) {
-            if (collection.contains(it.next())) {
-                it.remove();
-                z = true;
+        if (lVarArr == null) {
+            return false;
+        }
+        if ((collection instanceof Set) && collection.size() > lVarArr.length) {
+            Iterator it = iterator();
+            while (it.hasNext()) {
+                if (collection.contains(it.next())) {
+                    it.remove();
+                    z = true;
+                }
+            }
+        } else {
+            Iterator it2 = collection.iterator();
+            while (it2.hasNext()) {
+                z |= remove(it2.next());
             }
         }
         return z;

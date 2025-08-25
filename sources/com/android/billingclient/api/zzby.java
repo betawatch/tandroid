@@ -2,8 +2,8 @@ package com.android.billingclient.api;
 
 import com.google.android.gms.internal.play_billing.zze;
 import com.google.android.gms.internal.play_billing.zzej;
-import j$.util.function.Consumer;
 import java.util.concurrent.TimeoutException;
+import java.util.function.Consumer;
 
 /* loaded from: classes.dex */
 final class zzby implements zzej {
@@ -43,7 +43,7 @@ final class zzby implements zzej {
             this.zzb.run();
         } else {
             zzaQ = zzccVar.zzaQ(this.zzd, num.intValue());
-            this.zza.r(zzaQ);
+            this.zza.accept(zzaQ);
         }
     }
 }

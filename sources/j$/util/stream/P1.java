@@ -1,43 +1,75 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import java.util.concurrent.CountedCompleter;
+import j$.util.function.Consumer$-CC;
+import java.util.function.Consumer;
+import java.util.function.IntConsumer;
+import java.util.function.ObjIntConsumer;
+import java.util.function.Supplier;
 
 /* loaded from: classes2.dex */
-final class P1 extends e {
-    private final t0 h;
+final class P1 extends T1 implements S1, k2 {
+    final /* synthetic */ Supplier b;
+    final /* synthetic */ ObjIntConsumer c;
+    final /* synthetic */ q d;
 
-    @Override // j$.util.stream.e, java.util.concurrent.CountedCompleter
-    public final void onCompletion(CountedCompleter countedCompleter) {
-        e eVar = this.d;
-        if (eVar != null) {
-            N1 n1 = (N1) ((P1) eVar).b();
-            n1.h((N1) ((P1) this.e).b());
-            e(n1);
-        }
-        super.onCompletion(countedCompleter);
+    @Override // j$.util.stream.m2, j$.util.stream.j2, java.util.function.DoubleConsumer
+    public final /* synthetic */ void accept(double d) {
+        w0.a();
+        throw null;
     }
 
-    P1(t0 t0Var, b bVar, Spliterator spliterator) {
-        super(bVar, spliterator);
-        this.h = t0Var;
+    @Override // j$.util.stream.m2
+    public final /* synthetic */ void accept(long j) {
+        w0.l();
+        throw null;
     }
 
-    P1(P1 p1, Spliterator spliterator) {
-        super(p1, spliterator);
-        this.h = p1.h;
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final /* bridge */ /* synthetic */ void p(Object obj) {
+        m((Integer) obj);
     }
 
-    @Override // j$.util.stream.e
-    protected final e d(Spliterator spliterator) {
-        return new P1(this, spliterator);
+    public final /* synthetic */ Consumer andThen(Consumer consumer) {
+        return Consumer$-CC.$default$andThen(this, consumer);
     }
 
-    @Override // j$.util.stream.e
-    protected final Object a() {
-        b bVar = this.a;
-        N1 d0 = this.h.d0();
-        bVar.A0(this.b, d0);
-        return d0;
+    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
+        return j$.com.android.tools.r8.a.b(this, intConsumer);
+    }
+
+    @Override // j$.util.stream.m2
+    public final /* synthetic */ void k() {
+    }
+
+    @Override // j$.util.stream.k2
+    public final /* synthetic */ void m(Integer num) {
+        w0.g(this, num);
+    }
+
+    @Override // j$.util.stream.m2
+    public final /* synthetic */ boolean n() {
+        return false;
+    }
+
+    @Override // j$.util.stream.S1
+    public final void g(S1 s1) {
+        this.a = this.d.apply(this.a, ((P1) s1).a);
+    }
+
+    @Override // j$.util.stream.m2
+    public final void l(long j) {
+        this.a = this.b.get();
+    }
+
+    @Override // j$.util.stream.m2
+    public final void accept(int i) {
+        this.c.accept(this.a, i);
+    }
+
+    P1(Supplier supplier, ObjIntConsumer objIntConsumer, q qVar) {
+        this.b = supplier;
+        this.c = objIntConsumer;
+        this.d = qVar;
     }
 }

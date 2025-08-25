@@ -6,6 +6,7 @@ import com.google.android.exoplayer2.source.dash.DashSegmentIndex;
 import com.google.android.exoplayer2.source.dash.manifest.SegmentBase;
 import com.google.android.exoplayer2.util.Assertions;
 import com.google.common.collect.ImmutableList;
+import j$.util.DesugarCollections;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -46,7 +47,7 @@ public abstract class Representation {
         if (list2 == null) {
             unmodifiableList = Collections.emptyList();
         } else {
-            unmodifiableList = Collections.unmodifiableList(list2);
+            unmodifiableList = DesugarCollections.unmodifiableList(list2);
         }
         this.inbandEventStreams = unmodifiableList;
         this.essentialProperties = list3;

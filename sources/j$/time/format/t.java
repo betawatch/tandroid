@@ -23,7 +23,7 @@ final class t {
                 String str = (String) entry2.getValue();
                 String str2 = (String) entry2.getValue();
                 Long l = (Long) entry2.getKey();
-                int i = u.c;
+                int i = u.d;
                 hashMap2.put(str, new AbstractMap.SimpleImmutableEntry(str2, l));
             }
             ArrayList arrayList2 = new ArrayList(hashMap2.values());

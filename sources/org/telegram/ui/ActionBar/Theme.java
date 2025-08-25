@@ -54,6 +54,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import androidx.core.graphics.ColorUtils;
 import androidx.core.math.MathUtils;
+import j$.util.Objects;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -73,7 +74,6 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Objects;
 import java.util.concurrent.CountDownLatch;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -3985,7 +3985,7 @@ public abstract class Theme {
         themeInfo5.previewInColor = -1;
         themeInfo5.previewOutColor = -9657877;
         themeInfo5.sortIndex = 5;
-        themeInfo5.setAccentColorOptions(new int[]{-12537374, -12472227, -3240928, -11033621, -2194124, -3382903, -13332245, -12342073, -11359164, -3317869, -2981834, -8165684, -3256745, -2904512, -8681301}, new int[]{-13525046, -14113959, -7579073, -13597229, -3581840, -8883763, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-11616542, -9716647, -6400452, -12008744, -2592697, -4297041, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-3808528, -2433367, -2700891, -1838093, -1120848, -1712148, -2037779, -4202261, -4005713, -1058332, -925763, -1975316, -1189672, -1318451, -2302235}, new int[]{-1510157, -4398164, -1647697, -3610898, -1130838, -1980692, -4270093, -4202261, -3415654, -1259815, -1521765, -4341268, -1127744, -1318219, -3945761}, new int[]{-4924688, -3283031, -1523567, -2494477, -1126510, -595210, -2037517, -3478548, -4661623, -927514, -796762, -2696971, -1188403, -1319735, -1577487}, new int[]{-3149585, -5714021, -1978209, -4925720, -1134713, -1718833, -3613709, -5317397, -3218014, -999207, -2116466, -4343054, -931397, -1583186, -3815718}, new int[]{9, 10, 11, 12, 13, 14, 0, 1, 2, 3, 4, 5, 6, 7, 8}, new String[]{"MIo6r0qGSFAFAAAAtL8TsDzNX60", "dhf9pceaQVACAAAAbzdVo4SCiZA", "fqv01SQemVIBAAAApND8LDRUhRU", "p-pXcflrmFIBAAAAvXYQk-mCwZU", "JqSUrO0-mFIBAAAAWwTvLzoWGQI", "F5oWoCs7QFACAAAAgf2bD_mg8Bw", "fqv01SQemVIBAAAApND8LDRUhRU", "RepJ5uE_SVABAAAAr4d0YhgB850", "PllZ-bf_SFAEAAAA8crRfwZiDNg", "pgJfpFNRSFABAAAACDT8s5sEjfc", "ptuUd96JSFACAAAATobI23sPpz0", "dhf9pceaQVACAAAAbzdVo4SCiZA", "JqSUrO0-mFIBAAAAWwTvLzoWGQI", "9iklpvIPQVABAAAAORQXKur_Eyc", "F5oWoCs7QFACAAAAgf2bD_mg8Bw"}, new int[]{NotificationCenter.onReceivedChannelDifference, NotificationCenter.onReceivedChannelDifference, NotificationCenter.starUserGiftsLoaded, NotificationCenter.onReceivedChannelDifference, 0, NotificationCenter.suggestedFiltersLoaded, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{50, 50, 58, 47, 46, 50, 49, 46, 51, 50, 49, 34, 54, 50, 40});
+        themeInfo5.setAccentColorOptions(new int[]{-12537374, -12472227, -3240928, -11033621, -2194124, -3382903, -13332245, -12342073, -11359164, -3317869, -2981834, -8165684, -3256745, -2904512, -8681301}, new int[]{-13525046, -14113959, -7579073, -13597229, -3581840, -8883763, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-11616542, -9716647, -6400452, -12008744, -2592697, -4297041, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-3808528, -2433367, -2700891, -1838093, -1120848, -1712148, -2037779, -4202261, -4005713, -1058332, -925763, -1975316, -1189672, -1318451, -2302235}, new int[]{-1510157, -4398164, -1647697, -3610898, -1130838, -1980692, -4270093, -4202261, -3415654, -1259815, -1521765, -4341268, -1127744, -1318219, -3945761}, new int[]{-4924688, -3283031, -1523567, -2494477, -1126510, -595210, -2037517, -3478548, -4661623, -927514, -796762, -2696971, -1188403, -1319735, -1577487}, new int[]{-3149585, -5714021, -1978209, -4925720, -1134713, -1718833, -3613709, -5317397, -3218014, -999207, -2116466, -4343054, -931397, -1583186, -3815718}, new int[]{9, 10, 11, 12, 13, 14, 0, 1, 2, 3, 4, 5, 6, 7, 8}, new String[]{"MIo6r0qGSFAFAAAAtL8TsDzNX60", "dhf9pceaQVACAAAAbzdVo4SCiZA", "fqv01SQemVIBAAAApND8LDRUhRU", "p-pXcflrmFIBAAAAvXYQk-mCwZU", "JqSUrO0-mFIBAAAAWwTvLzoWGQI", "F5oWoCs7QFACAAAAgf2bD_mg8Bw", "fqv01SQemVIBAAAApND8LDRUhRU", "RepJ5uE_SVABAAAAr4d0YhgB850", "PllZ-bf_SFAEAAAA8crRfwZiDNg", "pgJfpFNRSFABAAAACDT8s5sEjfc", "ptuUd96JSFACAAAATobI23sPpz0", "dhf9pceaQVACAAAAbzdVo4SCiZA", "JqSUrO0-mFIBAAAAWwTvLzoWGQI", "9iklpvIPQVABAAAAORQXKur_Eyc", "F5oWoCs7QFACAAAAgf2bD_mg8Bw"}, new int[]{NotificationCenter.uploadStoryEnd, NotificationCenter.uploadStoryEnd, NotificationCenter.starUserGiftsLoaded, NotificationCenter.uploadStoryEnd, 0, NotificationCenter.suggestedFiltersLoaded, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{50, 50, 58, 47, 46, 50, 49, 46, 51, 50, 49, 34, 54, 50, 40});
         sortAccents(themeInfo5);
         themes.add(themeInfo5);
         themesDict.put("Arctic Blue", themeInfo5);
@@ -4499,7 +4499,7 @@ public abstract class Theme {
             this.isSelected = z2;
             this.path = new Path();
             this.selectedPaint = new Paint(1);
-            this.alpha = NotificationCenter.goingToPreviewTheme;
+            this.alpha = NotificationCenter.needCheckSystemBarColors;
         }
 
         public boolean hasGradient() {
@@ -5003,7 +5003,7 @@ public abstract class Theme {
                 messageDrawable.draw(canvas);
                 setAlpha((int) (this.crossfadeProgress * 255.0f));
                 draw(canvas, null);
-                setAlpha(NotificationCenter.goingToPreviewTheme);
+                setAlpha(NotificationCenter.needCheckSystemBarColors);
                 return;
             }
             draw(canvas, null);
@@ -6172,14 +6172,14 @@ public abstract class Theme {
                 float[] fArr3 = this.tempHSV;
                 float f4 = fArr3[2];
                 fArr3[2] = Math.max(0.0f, Math.min(1.0f, f4 - (f4 <= 0.7f ? 0.25f : 0.125f)));
-                return Theme.blendOver(i, Color.HSVToColor(NotificationCenter.goingToPreviewTheme, this.tempHSV));
+                return Theme.blendOver(i, Color.HSVToColor(NotificationCenter.needCheckSystemBarColors, this.tempHSV));
             }
             fArr2[0] = f;
             fArr2[1] = Math.max(0.0f, Math.min(1.0f, f2 + 0.6f));
             float[] fArr32 = this.tempHSV;
             float f42 = fArr32[2];
             fArr32[2] = Math.max(0.0f, Math.min(1.0f, f42 - (f42 <= 0.7f ? 0.25f : 0.125f)));
-            return Theme.blendOver(i, Color.HSVToColor(NotificationCenter.goingToPreviewTheme, this.tempHSV));
+            return Theme.blendOver(i, Color.HSVToColor(NotificationCenter.needCheckSystemBarColors, this.tempHSV));
         }
 
         private int linkSelectionBackground(int i, int i2, boolean z) {
@@ -6260,7 +6260,7 @@ public abstract class Theme {
             if (i == 0) {
                 return 0;
             }
-            return Color.argb(NotificationCenter.goingToPreviewTheme, i4 / i, i3 / i, i2 / i);
+            return Color.argb(NotificationCenter.needCheckSystemBarColors, i4 / i, i3 / i, i2 / i);
         }
 
         public File getPathToWallpaper() {
@@ -6330,10 +6330,10 @@ public abstract class Theme {
                 if (i6 == 0) {
                     i6 = 45;
                 }
-                String lowerCase = String.format("%02x%02x%02x", Integer.valueOf(((byte) (i2 >> 16)) & 255), Integer.valueOf(((byte) (i2 >> 8)) & 255), Byte.valueOf((byte) (i2 & NotificationCenter.goingToPreviewTheme))).toLowerCase();
-                String lowerCase2 = i3 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i3 >> 16)) & 255), Integer.valueOf(((byte) (i3 >> 8)) & 255), Byte.valueOf((byte) (i3 & NotificationCenter.goingToPreviewTheme))).toLowerCase() : null;
-                String lowerCase3 = i4 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i4 >> 16)) & 255), Integer.valueOf(((byte) (i4 >> 8)) & 255), Byte.valueOf((byte) (i4 & NotificationCenter.goingToPreviewTheme))).toLowerCase() : null;
-                String lowerCase4 = i5 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i5 >> 16)) & 255), Integer.valueOf(((byte) (i5 >> 8)) & 255), Byte.valueOf((byte) (i5 & NotificationCenter.goingToPreviewTheme))).toLowerCase() : null;
+                String lowerCase = String.format("%02x%02x%02x", Integer.valueOf(((byte) (i2 >> 16)) & 255), Integer.valueOf(((byte) (i2 >> 8)) & 255), Byte.valueOf((byte) (i2 & NotificationCenter.needCheckSystemBarColors))).toLowerCase();
+                String lowerCase2 = i3 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i3 >> 16)) & 255), Integer.valueOf(((byte) (i3 >> 8)) & 255), Byte.valueOf((byte) (i3 & NotificationCenter.needCheckSystemBarColors))).toLowerCase() : null;
+                String lowerCase3 = i4 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i4 >> 16)) & 255), Integer.valueOf(((byte) (i4 >> 8)) & 255), Byte.valueOf((byte) (i4 & NotificationCenter.needCheckSystemBarColors))).toLowerCase() : null;
+                String lowerCase4 = i5 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i5 >> 16)) & 255), Integer.valueOf(((byte) (i5 >> 8)) & 255), Byte.valueOf((byte) (i5 & NotificationCenter.needCheckSystemBarColors))).toLowerCase() : null;
                 if (lowerCase2 == null || lowerCase3 == null) {
                     if (lowerCase2 != null) {
                         lowerCase = (lowerCase + "-" + lowerCase2) + "&rotation=" + i6;
@@ -6444,7 +6444,7 @@ public abstract class Theme {
     }
 
     public static int multAlpha(int i, float f) {
-        return f == 1.0f ? i : ColorUtils.setAlphaComponent(i, MathUtils.clamp((int) (Color.alpha(i) * f), 0, NotificationCenter.goingToPreviewTheme));
+        return f == 1.0f ? i : ColorUtils.setAlphaComponent(i, MathUtils.clamp((int) (Color.alpha(i) * f), 0, NotificationCenter.needCheckSystemBarColors));
     }
 
     public static class OverrideWallpaperInfo {
@@ -9036,7 +9036,7 @@ public abstract class Theme {
         tempHsv[1] = (tempHsv2[1] * fArr[1]) / tempHsv[1];
         float f = ((((tempHsv2[2] / tempHsv[2]) + min) - 1.0f) * fArr[2]) / min;
         tempHsv[2] = f;
-        return f < 0.3f ? i2 : Color.HSVToColor(NotificationCenter.goingToPreviewTheme, tempHsv);
+        return f < 0.3f ? i2 : Color.HSVToColor(NotificationCenter.needCheckSystemBarColors, tempHsv);
     }
 
     public static int changeColorAccent(int i) {
@@ -9074,7 +9074,7 @@ public abstract class Theme {
         int red = (int) (Color.red(i) * f);
         int green = (int) (Color.green(i) * f);
         int blue = (int) (Color.blue(i) * f);
-        return Color.argb(Color.alpha(i), red < 0 ? 0 : Math.min(red, NotificationCenter.goingToPreviewTheme), green < 0 ? 0 : Math.min(green, NotificationCenter.goingToPreviewTheme), blue >= 0 ? Math.min(blue, NotificationCenter.goingToPreviewTheme) : 0);
+        return Color.argb(Color.alpha(i), red < 0 ? 0 : Math.min(red, NotificationCenter.needCheckSystemBarColors), green < 0 ? 0 : Math.min(green, NotificationCenter.needCheckSystemBarColors), blue >= 0 ? Math.min(blue, NotificationCenter.needCheckSystemBarColors) : 0);
     }
 
     public static boolean deleteThemeAccent(ThemeInfo themeInfo, ThemeAccent themeAccent, boolean z) {
@@ -9520,13 +9520,13 @@ public abstract class Theme {
         if (i == 0) {
             str = "https://attheme.org?slug=" + overrideWallpaperInfo.slug;
         } else {
-            String lowerCase = String.format("%02x%02x%02x", Integer.valueOf(((byte) (i >> 16)) & 255), Integer.valueOf(((byte) (overrideWallpaperInfo.color >> 8)) & 255), Byte.valueOf((byte) (overrideWallpaperInfo.color & NotificationCenter.goingToPreviewTheme))).toLowerCase();
+            String lowerCase = String.format("%02x%02x%02x", Integer.valueOf(((byte) (i >> 16)) & 255), Integer.valueOf(((byte) (overrideWallpaperInfo.color >> 8)) & 255), Byte.valueOf((byte) (overrideWallpaperInfo.color & NotificationCenter.needCheckSystemBarColors))).toLowerCase();
             int i2 = overrideWallpaperInfo.gradientColor1;
-            String lowerCase2 = i2 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i2 >> 16)) & 255), Integer.valueOf(((byte) (overrideWallpaperInfo.gradientColor1 >> 8)) & 255), Byte.valueOf((byte) (overrideWallpaperInfo.gradientColor1 & NotificationCenter.goingToPreviewTheme))).toLowerCase() : null;
+            String lowerCase2 = i2 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i2 >> 16)) & 255), Integer.valueOf(((byte) (overrideWallpaperInfo.gradientColor1 >> 8)) & 255), Byte.valueOf((byte) (overrideWallpaperInfo.gradientColor1 & NotificationCenter.needCheckSystemBarColors))).toLowerCase() : null;
             int i3 = overrideWallpaperInfo.gradientColor2;
-            String lowerCase3 = i3 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i3 >> 16)) & 255), Integer.valueOf(((byte) (overrideWallpaperInfo.gradientColor2 >> 8)) & 255), Byte.valueOf((byte) (overrideWallpaperInfo.gradientColor2 & NotificationCenter.goingToPreviewTheme))).toLowerCase() : null;
+            String lowerCase3 = i3 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i3 >> 16)) & 255), Integer.valueOf(((byte) (overrideWallpaperInfo.gradientColor2 >> 8)) & 255), Byte.valueOf((byte) (overrideWallpaperInfo.gradientColor2 & NotificationCenter.needCheckSystemBarColors))).toLowerCase() : null;
             int i4 = overrideWallpaperInfo.gradientColor3;
-            String lowerCase4 = i4 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i4 >> 16)) & 255), Integer.valueOf(((byte) (overrideWallpaperInfo.gradientColor3 >> 8)) & 255), Byte.valueOf((byte) (overrideWallpaperInfo.gradientColor3 & NotificationCenter.goingToPreviewTheme))).toLowerCase() : null;
+            String lowerCase4 = i4 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i4 >> 16)) & 255), Integer.valueOf(((byte) (overrideWallpaperInfo.gradientColor3 >> 8)) & 255), Byte.valueOf((byte) (overrideWallpaperInfo.gradientColor3 & NotificationCenter.needCheckSystemBarColors))).toLowerCase() : null;
             if (lowerCase2 == null || lowerCase3 == null) {
                 if (lowerCase2 != null) {
                     lowerCase = (lowerCase + "-" + lowerCase2) + "&rotation=" + overrideWallpaperInfo.rotation;
@@ -10438,7 +10438,7 @@ public abstract class Theme {
                                                             }
                                                             if (drawable != null) {
                                                             }
-                                                            messageDrawableArr[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.storiesListUpdated);
+                                                            messageDrawableArr[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.onDatabaseReset);
                                                             messageDrawableArr[1].setTop(0, 560, 522, false, false);
                                                             messageDrawableArr[1].draw(canvas);
                                                             messageDrawableArr[1].setBounds(NotificationCenter.audioRouteChanged, 430, createBitmap.getWidth() - 20, 522);
@@ -10506,7 +10506,7 @@ public abstract class Theme {
                                                             }
                                                             if (drawable != null) {
                                                             }
-                                                            messageDrawableArr2[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.storiesListUpdated);
+                                                            messageDrawableArr2[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.onDatabaseReset);
                                                             messageDrawableArr2[1].setTop(0, 560, 522, false, false);
                                                             messageDrawableArr2[1].draw(canvas);
                                                             messageDrawableArr2[1].setBounds(NotificationCenter.audioRouteChanged, 430, createBitmap.getWidth() - 20, 522);
@@ -10573,7 +10573,7 @@ public abstract class Theme {
                                                             }
                                                             if (drawable != null) {
                                                             }
-                                                            messageDrawableArr22[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.storiesListUpdated);
+                                                            messageDrawableArr22[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.onDatabaseReset);
                                                             messageDrawableArr22[1].setTop(0, 560, 522, false, false);
                                                             messageDrawableArr22[1].draw(canvas);
                                                             messageDrawableArr22[1].setBounds(NotificationCenter.audioRouteChanged, 430, createBitmap.getWidth() - 20, 522);
@@ -10689,7 +10689,7 @@ public abstract class Theme {
                                                                         }
                                                                         if (drawable != null) {
                                                                         }
-                                                                        messageDrawableArr222[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.storiesListUpdated);
+                                                                        messageDrawableArr222[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.onDatabaseReset);
                                                                         messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                         messageDrawableArr222[1].draw(canvas);
                                                                         messageDrawableArr222[1].setBounds(NotificationCenter.audioRouteChanged, 430, createBitmap.getWidth() - 20, 522);
@@ -10743,7 +10743,7 @@ public abstract class Theme {
                                                                 drawable.setBounds(width, intrinsicHeight2, drawable.getIntrinsicWidth() + width, drawable.getIntrinsicHeight() + intrinsicHeight2);
                                                                 drawable.draw(canvas);
                                                             }
-                                                            messageDrawableArr222[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.storiesListUpdated);
+                                                            messageDrawableArr222[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.onDatabaseReset);
                                                             messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                             messageDrawableArr222[1].draw(canvas);
                                                             messageDrawableArr222[1].setBounds(NotificationCenter.audioRouteChanged, 430, createBitmap.getWidth() - 20, 522);
@@ -10801,7 +10801,7 @@ public abstract class Theme {
                                                             }
                                                             if (drawable != null) {
                                                             }
-                                                            messageDrawableArr222[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.storiesListUpdated);
+                                                            messageDrawableArr222[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.onDatabaseReset);
                                                             messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                             messageDrawableArr222[1].draw(canvas);
                                                             messageDrawableArr222[1].setBounds(NotificationCenter.audioRouteChanged, 430, createBitmap.getWidth() - 20, 522);
@@ -10836,7 +10836,7 @@ public abstract class Theme {
                                                         }
                                                         if (drawable != null) {
                                                         }
-                                                        messageDrawableArr222[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.storiesListUpdated);
+                                                        messageDrawableArr222[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.onDatabaseReset);
                                                         messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                         messageDrawableArr222[1].draw(canvas);
                                                         messageDrawableArr222[1].setBounds(NotificationCenter.audioRouteChanged, 430, createBitmap.getWidth() - 20, 522);
@@ -10897,7 +10897,7 @@ public abstract class Theme {
                                                                                     }
                                                                                     if (drawable != null) {
                                                                                     }
-                                                                                    messageDrawableArr222[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.storiesListUpdated);
+                                                                                    messageDrawableArr222[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.onDatabaseReset);
                                                                                     messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                                     messageDrawableArr222[1].draw(canvas);
                                                                                     messageDrawableArr222[1].setBounds(NotificationCenter.audioRouteChanged, 430, createBitmap.getWidth() - 20, 522);
@@ -10931,7 +10931,7 @@ public abstract class Theme {
                                                                             }
                                                                             if (drawable != null) {
                                                                             }
-                                                                            messageDrawableArr222[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.storiesListUpdated);
+                                                                            messageDrawableArr222[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.onDatabaseReset);
                                                                             messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                             messageDrawableArr222[1].draw(canvas);
                                                                             messageDrawableArr222[1].setBounds(NotificationCenter.audioRouteChanged, 430, createBitmap.getWidth() - 20, 522);
@@ -10972,7 +10972,7 @@ public abstract class Theme {
                                                                     }
                                                                     if (drawable != null) {
                                                                     }
-                                                                    messageDrawableArr222[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.storiesListUpdated);
+                                                                    messageDrawableArr222[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.onDatabaseReset);
                                                                     messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                     messageDrawableArr222[1].draw(canvas);
                                                                     messageDrawableArr222[1].setBounds(NotificationCenter.audioRouteChanged, 430, createBitmap.getWidth() - 20, 522);
@@ -11041,7 +11041,7 @@ public abstract class Theme {
                                                                         }
                                                                         if (drawable != null) {
                                                                         }
-                                                                        messageDrawableArr222[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.storiesListUpdated);
+                                                                        messageDrawableArr222[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.onDatabaseReset);
                                                                         messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                         messageDrawableArr222[1].draw(canvas);
                                                                         messageDrawableArr222[1].setBounds(NotificationCenter.audioRouteChanged, 430, createBitmap.getWidth() - 20, 522);
@@ -11074,7 +11074,7 @@ public abstract class Theme {
                                                                 }
                                                                 if (drawable != null) {
                                                                 }
-                                                                messageDrawableArr222[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.storiesListUpdated);
+                                                                messageDrawableArr222[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.onDatabaseReset);
                                                                 messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                 messageDrawableArr222[1].draw(canvas);
                                                                 messageDrawableArr222[1].setBounds(NotificationCenter.audioRouteChanged, 430, createBitmap.getWidth() - 20, 522);
@@ -11110,7 +11110,7 @@ public abstract class Theme {
                                                         }
                                                         if (drawable != null) {
                                                         }
-                                                        messageDrawableArr222[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.storiesListUpdated);
+                                                        messageDrawableArr222[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.onDatabaseReset);
                                                         messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                         messageDrawableArr222[1].draw(canvas);
                                                         messageDrawableArr222[1].setBounds(NotificationCenter.audioRouteChanged, 430, createBitmap.getWidth() - 20, 522);
@@ -11145,7 +11145,7 @@ public abstract class Theme {
                                                 }
                                                 if (drawable != null) {
                                                 }
-                                                messageDrawableArr222[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.storiesListUpdated);
+                                                messageDrawableArr222[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.onDatabaseReset);
                                                 messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                 messageDrawableArr222[1].draw(canvas);
                                                 messageDrawableArr222[1].setBounds(NotificationCenter.audioRouteChanged, 430, createBitmap.getWidth() - 20, 522);
@@ -11201,7 +11201,7 @@ public abstract class Theme {
                                         }
                                         if (drawable != null) {
                                         }
-                                        messageDrawableArr2222[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.storiesListUpdated);
+                                        messageDrawableArr2222[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.onDatabaseReset);
                                         messageDrawableArr2222[1].setTop(0, 560, 522, false, false);
                                         messageDrawableArr2222[1].draw(canvas);
                                         messageDrawableArr2222[1].setBounds(NotificationCenter.audioRouteChanged, 430, createBitmap.getWidth() - 20, 522);
@@ -11264,7 +11264,7 @@ public abstract class Theme {
                                 }
                                 if (drawable != null) {
                                 }
-                                messageDrawableArr22222[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.storiesListUpdated);
+                                messageDrawableArr22222[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.onDatabaseReset);
                                 messageDrawableArr22222[1].setTop(0, 560, 522, false, false);
                                 messageDrawableArr22222[1].draw(canvas);
                                 messageDrawableArr22222[1].setBounds(NotificationCenter.audioRouteChanged, 430, createBitmap.getWidth() - 20, 522);
@@ -11341,7 +11341,7 @@ public abstract class Theme {
                         }
                         if (drawable != null) {
                         }
-                        messageDrawableArr222222[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.storiesListUpdated);
+                        messageDrawableArr222222[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.onDatabaseReset);
                         messageDrawableArr222222[1].setTop(0, 560, 522, false, false);
                         messageDrawableArr222222[1].draw(canvas);
                         messageDrawableArr222222[1].setBounds(NotificationCenter.audioRouteChanged, 430, createBitmap.getWidth() - 20, 522);
@@ -11433,7 +11433,7 @@ public abstract class Theme {
             }
             if (drawable != null) {
             }
-            messageDrawableArr2222222[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.storiesListUpdated);
+            messageDrawableArr2222222[1].setBounds(NotificationCenter.audioRouteChanged, NotificationCenter.starTransactionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.onDatabaseReset);
             messageDrawableArr2222222[1].setTop(0, 560, 522, false, false);
             messageDrawableArr2222222[1].draw(canvas);
             messageDrawableArr2222222[1].setBounds(NotificationCenter.audioRouteChanged, 430, createBitmap.getWidth() - 20, 522);
@@ -12844,7 +12844,7 @@ public abstract class Theme {
             chat_actionBackgroundPaint.setFilterBitmap(true);
             chat_actionBackgroundPaint.setShader(serviceBitmapShader);
             chat_actionBackgroundPaint.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
-            chat_actionBackgroundPaint.setAlpha(NotificationCenter.goingToPreviewTheme);
+            chat_actionBackgroundPaint.setAlpha(NotificationCenter.needCheckSystemBarColors);
             chat_actionBackgroundSelectedPaint.setFilterBitmap(true);
             chat_actionBackgroundSelectedPaint.setShader(serviceBitmapShader);
             ColorMatrix colorMatrix2 = new ColorMatrix(colorMatrix);
@@ -12852,7 +12852,7 @@ public abstract class Theme {
             isCurrentThemeDark();
             AndroidUtilities.multiplyBrightnessColorMatrix(colorMatrix2, 0.92f);
             chat_actionBackgroundSelectedPaint.setColorFilter(new ColorMatrixColorFilter(colorMatrix2));
-            chat_actionBackgroundSelectedPaint.setAlpha(NotificationCenter.goingToPreviewTheme);
+            chat_actionBackgroundSelectedPaint.setAlpha(NotificationCenter.needCheckSystemBarColors);
             chat_actionBackgroundGradientDarkenPaint.setAlpha(0);
             return;
         }
@@ -13204,47 +13204,66 @@ public abstract class Theme {
         }
     }
 
-    public static void setSelectorDrawableColor(Drawable drawable, int i, boolean z) {
+    public static boolean setSelectorDrawableColor(Drawable drawable, int i, boolean z) {
         Drawable stateDrawable;
+        boolean z2;
         if (drawable instanceof StateListDrawable) {
             try {
                 if (z) {
                     Drawable stateDrawable2 = getStateDrawable(drawable, 0);
                     if (stateDrawable2 instanceof ShapeDrawable) {
-                        ((ShapeDrawable) stateDrawable2).getPaint().setColor(i);
+                        z2 = ((ShapeDrawable) stateDrawable2).getPaint().getColor() != i;
+                        try {
+                            ((ShapeDrawable) stateDrawable2).getPaint().setColor(i);
+                        } catch (Throwable unused) {
+                        }
                     } else {
                         stateDrawable2.setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.MULTIPLY));
+                        z2 = false;
                     }
                     stateDrawable = getStateDrawable(drawable, 1);
                 } else {
                     stateDrawable = getStateDrawable(drawable, 2);
+                    z2 = false;
                 }
                 if (stateDrawable instanceof ShapeDrawable) {
-                    ((ShapeDrawable) stateDrawable).getPaint().setColor(i);
-                    return;
+                    if (((ShapeDrawable) stateDrawable).getPaint().getColor() == i && !z2) {
+                        r1 = false;
+                    }
+                    try {
+                        ((ShapeDrawable) stateDrawable).getPaint().setColor(i);
+                    } catch (Throwable unused2) {
+                    }
                 } else {
                     stateDrawable.setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.MULTIPLY));
-                    return;
+                    return z2;
                 }
-            } catch (Throwable unused) {
-                return;
+            } catch (Throwable unused3) {
+                return false;
             }
-        }
-        if (drawable instanceof RippleDrawable) {
+        } else {
+            if (!(drawable instanceof RippleDrawable)) {
+                return false;
+            }
             RippleDrawable rippleDrawable = (RippleDrawable) drawable;
             if (z) {
                 rippleDrawable.setColor(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{i}));
-                return;
+                return false;
             }
-            if (rippleDrawable.getNumberOfLayers() > 0) {
-                Drawable drawable2 = rippleDrawable.getDrawable(0);
-                if (drawable2 instanceof ShapeDrawable) {
-                    ((ShapeDrawable) drawable2).getPaint().setColor(i);
-                } else {
-                    drawable2.setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.MULTIPLY));
-                }
+            if (rippleDrawable.getNumberOfLayers() <= 0) {
+                return false;
+            }
+            Drawable drawable2 = rippleDrawable.getDrawable(0);
+            if (drawable2 instanceof ShapeDrawable) {
+                ShapeDrawable shapeDrawable = (ShapeDrawable) drawable2;
+                r1 = shapeDrawable.getPaint().getColor() != i;
+                shapeDrawable.getPaint().setColor(i);
+            } else {
+                drawable2.setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.MULTIPLY));
+                return false;
             }
         }
+        return r1;
     }
 
     public static boolean isThemeWallpaperPublic() {

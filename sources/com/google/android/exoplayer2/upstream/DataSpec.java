@@ -3,6 +3,7 @@ package com.google.android.exoplayer2.upstream;
 import android.net.Uri;
 import com.google.android.exoplayer2.ExoPlayerLibraryInfo;
 import com.google.android.exoplayer2.util.Assertions;
+import j$.util.DesugarCollections;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -138,7 +139,7 @@ public final class DataSpec {
         this.uriPositionOffset = j;
         this.httpMethod = i;
         this.httpBody = (bArr2 == null || bArr2.length == 0) ? null : bArr2;
-        this.httpRequestHeaders = Collections.unmodifiableMap(new HashMap(map));
+        this.httpRequestHeaders = DesugarCollections.unmodifiableMap(new HashMap(map));
         this.position = j2;
         this.absoluteStreamPosition = j4;
         this.length = j3;

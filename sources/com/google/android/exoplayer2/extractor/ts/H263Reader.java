@@ -245,7 +245,7 @@ public final class H263Reader implements ElementaryStreamReader {
                                 this.isFilling = false;
                                 return true;
                             }
-                        } else if ((i & NotificationCenter.wallpapersNeedReload) != 32) {
+                        } else if ((i & NotificationCenter.profileMusicUpdated) != 32) {
                             Log.w("H263Reader", "Unexpected start code value");
                             reset();
                         } else {

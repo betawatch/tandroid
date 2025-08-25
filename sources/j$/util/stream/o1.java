@@ -1,50 +1,97 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
+import j$.util.function.Consumer$-CC;
+import java.util.Arrays;
+import java.util.function.Consumer;
+import java.util.function.LongConsumer;
 
 /* loaded from: classes2.dex */
-final class o1 extends q1 implements c2 {
-    private final long[] h;
+final class o1 extends n1 implements z0 {
+    @Override // j$.util.stream.m2, j$.util.stream.j2, java.util.function.DoubleConsumer
+    public final /* synthetic */ void accept(double d) {
+        w0.a();
+        throw null;
+    }
 
-    @Override // j$.util.function.Consumer
+    @Override // j$.util.stream.m2
+    public final /* synthetic */ void accept(int i) {
+        w0.k();
+        throw null;
+    }
+
+    @Override // java.util.function.Consumer
     /* renamed from: accept */
-    public final /* bridge */ /* synthetic */ void r(Object obj) {
+    public final /* bridge */ /* synthetic */ void p(Object obj) {
         j((Long) obj);
     }
 
-    @Override // j$.util.function.Y
-    public final /* synthetic */ j$.util.function.Y f(j$.util.function.Y y) {
-        return j$.com.android.tools.r8.a.c(this, y);
+    public final /* synthetic */ Consumer andThen(Consumer consumer) {
+        return Consumer$-CC.$default$andThen(this, consumer);
     }
 
-    @Override // j$.util.stream.c2
+    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
+        return j$.com.android.tools.r8.a.c(this, longConsumer);
+    }
+
+    @Override // j$.util.stream.l2
     public final /* synthetic */ void j(Long l) {
-        t0.i(this, l);
+        w0.i(this, l);
     }
 
-    o1(Spliterator spliterator, b bVar, long[] jArr) {
-        super(spliterator, bVar, jArr.length);
-        this.h = jArr;
+    @Override // j$.util.stream.m2
+    public final /* synthetic */ boolean n() {
+        return false;
     }
 
-    o1(o1 o1Var, Spliterator spliterator, long j, long j2) {
-        super(o1Var, spliterator, j, j2, o1Var.h.length);
-        this.h = o1Var.h;
+    @Override // j$.util.stream.A0
+    public final /* bridge */ /* synthetic */ I0 a() {
+        a();
+        return this;
     }
 
-    @Override // j$.util.stream.q1
-    final q1 a(Spliterator spliterator, long j, long j2) {
-        return new o1(this, spliterator, j, j2);
-    }
-
-    @Override // j$.util.stream.q1, j$.util.stream.d2
-    public final void accept(long j) {
-        int i = this.f;
-        if (i >= this.g) {
-            throw new IndexOutOfBoundsException(Integer.toString(this.f));
+    @Override // j$.util.stream.z0, j$.util.stream.A0
+    public final G0 a() {
+        int i = this.b;
+        long[] jArr = this.a;
+        if (i >= jArr.length) {
+            return this;
         }
-        long[] jArr = this.h;
-        this.f = i + 1;
-        jArr[i] = j;
+        throw new IllegalStateException(String.format("Current size %d is less than fixed size %d", Integer.valueOf(this.b), Integer.valueOf(jArr.length)));
+    }
+
+    @Override // j$.util.stream.m2
+    public final void l(long j) {
+        long[] jArr = this.a;
+        if (j != jArr.length) {
+            throw new IllegalStateException(String.format("Begin size %d is not equal to fixed size %d", Long.valueOf(j), Integer.valueOf(jArr.length)));
+        }
+        this.b = 0;
+    }
+
+    @Override // j$.util.stream.m2
+    public final void accept(long j) {
+        int i = this.b;
+        long[] jArr = this.a;
+        if (i < jArr.length) {
+            this.b = 1 + i;
+            jArr[i] = j;
+            return;
+        }
+        throw new IllegalStateException(String.format("Accept exceeded fixed size of %d", Integer.valueOf(jArr.length)));
+    }
+
+    @Override // j$.util.stream.m2
+    public final void k() {
+        int i = this.b;
+        long[] jArr = this.a;
+        if (i < jArr.length) {
+            throw new IllegalStateException(String.format("End size %d is less than fixed size %d", Integer.valueOf(this.b), Integer.valueOf(jArr.length)));
+        }
+    }
+
+    @Override // j$.util.stream.n1
+    public final String toString() {
+        long[] jArr = this.a;
+        return String.format("LongFixedNodeBuilder[%d][%s]", Integer.valueOf(jArr.length - this.b), Arrays.toString(jArr));
     }
 }

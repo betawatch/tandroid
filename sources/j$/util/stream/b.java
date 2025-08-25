@@ -1,8 +1,9 @@
 package j$.util.stream;
 
+import j$.util.Objects;
 import j$.util.Spliterator;
-import j$.util.function.IntFunction;
-import j$.util.function.Supplier;
+import java.util.function.IntFunction;
+import java.util.function.Supplier;
 
 /* loaded from: classes2.dex */
 abstract class b implements BaseStream {
@@ -18,27 +19,27 @@ abstract class b implements BaseStream {
     private Runnable j;
     private boolean k;
 
-    abstract F0 k0(b bVar, Spliterator spliterator, boolean z, IntFunction intFunction);
+    abstract I0 E(b bVar, Spliterator spliterator, boolean z, IntFunction intFunction);
 
-    abstract void m0(Spliterator spliterator, d2 d2Var);
+    abstract boolean G(Spliterator spliterator, m2 m2Var);
 
-    abstract R2 n0();
+    abstract b3 H();
 
-    abstract x0 s0(long j, IntFunction intFunction);
+    abstract A0 M(long j, IntFunction intFunction);
 
-    abstract boolean v0();
+    abstract boolean P();
 
-    abstract d2 w0(int i, d2 d2Var);
+    abstract m2 Q(int i, m2 m2Var);
 
-    abstract Spliterator z0(b bVar, Supplier supplier, boolean z);
+    abstract Spliterator T(b bVar, Supplier supplier, boolean z);
 
     b(Spliterator spliterator, int i, boolean z) {
         this.b = null;
         this.g = spliterator;
         this.a = this;
-        int i2 = Q2.g & i;
+        int i2 = a3.g & i;
         this.c = i2;
-        this.f = (~(i2 << 1)) & Q2.l;
+        this.f = (~(i2 << 1)) & a3.l;
         this.e = 0;
         this.k = z;
     }
@@ -50,69 +51,41 @@ abstract class b implements BaseStream {
         bVar.h = true;
         bVar.d = this;
         this.b = bVar;
-        this.c = Q2.h & i;
-        this.f = Q2.f(i, bVar.f);
+        this.c = a3.h & i;
+        this.f = a3.i(i, bVar.f);
         b bVar2 = bVar.a;
         this.a = bVar2;
-        if (v0()) {
+        if (P()) {
             bVar2.i = true;
         }
         this.e = bVar.e + 1;
     }
 
-    final d2 A0(Spliterator spliterator, d2 d2Var) {
-        d2Var.getClass();
-        f0(spliterator, B0(d2Var));
-        return d2Var;
-    }
-
-    final d2 B0(d2 d2Var) {
-        d2Var.getClass();
-        b bVar = this;
-        while (bVar.e > 0) {
-            b bVar2 = bVar.b;
-            d2Var = bVar.w0(bVar2.f, d2Var);
-            bVar = bVar2;
-        }
-        return d2Var;
-    }
-
-    final void f0(Spliterator spliterator, d2 d2Var) {
-        d2Var.getClass();
-        if (!Q2.SHORT_CIRCUIT.i(this.f)) {
-            d2Var.n(spliterator.getExactSizeIfKnown());
-            spliterator.a(d2Var);
-            d2Var.m();
-            return;
-        }
-        g0(spliterator, d2Var);
-    }
-
-    final Object i0(v3 v3Var) {
+    final Object C(G3 g3) {
         if (this.h) {
             throw new IllegalStateException("stream has already been operated upon or closed");
         }
         this.h = true;
         if (this.a.k) {
-            return v3Var.c(this, x0(v3Var.d()));
+            return g3.c(this, R(g3.d()));
         }
-        return v3Var.a(this, x0(v3Var.d()));
+        return g3.b(this, R(g3.d()));
     }
 
-    final F0 j0(IntFunction intFunction) {
+    final I0 D(IntFunction intFunction) {
         b bVar;
         if (this.h) {
             throw new IllegalStateException("stream has already been operated upon or closed");
         }
         this.h = true;
-        if (this.a.k && (bVar = this.b) != null && v0()) {
+        if (this.a.k && (bVar = this.b) != null && P()) {
             this.e = 0;
-            return t0(bVar, bVar.x0(0), intFunction);
+            return N(bVar, bVar.R(0), intFunction);
         }
-        return h0(x0(0), true, intFunction);
+        return B(R(0), true, intFunction);
     }
 
-    final Spliterator y0() {
+    final Spliterator S() {
         b bVar = this.a;
         if (this != bVar) {
             throw new IllegalStateException();
@@ -155,10 +128,14 @@ abstract class b implements BaseStream {
 
     @Override // j$.util.stream.BaseStream
     public final BaseStream onClose(Runnable runnable) {
+        if (this.h) {
+            throw new IllegalStateException("stream has already been operated upon or closed");
+        }
+        Objects.requireNonNull(runnable);
         b bVar = this.a;
         Runnable runnable2 = bVar.j;
         if (runnable2 != null) {
-            runnable = new u3(runnable2, runnable);
+            runnable = new F3(runnable2, runnable);
         }
         bVar.j = runnable;
         return this;
@@ -179,20 +156,20 @@ abstract class b implements BaseStream {
             }
             throw new IllegalStateException("source already consumed or closed");
         }
-        return z0(this, new a(this, 0), bVar.k);
+        return T(this, new a(0, this), bVar.k);
     }
 
-    final /* synthetic */ Spliterator r0() {
-        return x0(0);
+    final /* synthetic */ Spliterator L() {
+        return R(0);
     }
 
-    final F0 h0(Spliterator spliterator, boolean z, IntFunction intFunction) {
+    final I0 B(Spliterator spliterator, boolean z, IntFunction intFunction) {
         if (this.a.k) {
-            return k0(this, spliterator, z, intFunction);
+            return E(this, spliterator, z, intFunction);
         }
-        x0 s0 = s0(l0(spliterator), intFunction);
-        A0(spliterator, s0);
-        return s0.b();
+        A0 M = M(F(spliterator), intFunction);
+        U(spliterator, M);
+        return M.a();
     }
 
     @Override // j$.util.stream.BaseStream
@@ -200,7 +177,7 @@ abstract class b implements BaseStream {
         return this.a.k;
     }
 
-    private Spliterator x0(int i) {
+    private Spliterator R(int i) {
         int i2;
         int i3;
         b bVar = this.a;
@@ -212,23 +189,23 @@ abstract class b implements BaseStream {
                 int i4 = 1;
                 while (bVar != this) {
                     int i5 = bVar2.c;
-                    if (bVar2.v0()) {
-                        if (Q2.SHORT_CIRCUIT.i(i5)) {
-                            i5 &= ~Q2.u;
+                    if (bVar2.P()) {
+                        if (a3.SHORT_CIRCUIT.m(i5)) {
+                            i5 &= ~a3.u;
                         }
-                        spliterator = bVar2.u0(bVar, spliterator);
+                        spliterator = bVar2.O(bVar, spliterator);
                         if (spliterator.hasCharacteristics(64)) {
-                            i2 = (~Q2.t) & i5;
-                            i3 = Q2.s;
+                            i2 = (~a3.t) & i5;
+                            i3 = a3.s;
                         } else {
-                            i2 = (~Q2.s) & i5;
-                            i3 = Q2.t;
+                            i2 = (~a3.s) & i5;
+                            i3 = a3.t;
                         }
                         i5 = i2 | i3;
                         i4 = 0;
                     }
                     bVar2.e = i4;
-                    bVar2.f = Q2.f(i5, bVar.f);
+                    bVar2.f = a3.i(i5, bVar.f);
                     i4++;
                     b bVar3 = bVar2;
                     bVar2 = bVar2.d;
@@ -236,55 +213,83 @@ abstract class b implements BaseStream {
                 }
             }
             if (i != 0) {
-                this.f = Q2.f(i, this.f);
+                this.f = a3.i(i, this.f);
             }
             return spliterator;
         }
         throw new IllegalStateException("source already consumed or closed");
     }
 
-    final R2 o0() {
+    final b3 I() {
         b bVar = this;
         while (bVar.e > 0) {
             bVar = bVar.b;
         }
-        return bVar.n0();
+        return bVar.H();
     }
 
-    final long l0(Spliterator spliterator) {
-        if (Q2.SIZED.i(this.f)) {
+    final long F(Spliterator spliterator) {
+        if (a3.SIZED.m(this.f)) {
             return spliterator.getExactSizeIfKnown();
         }
         return -1L;
     }
 
-    final void g0(Spliterator spliterator, d2 d2Var) {
+    final m2 U(Spliterator spliterator, m2 m2Var) {
+        z(spliterator, V((m2) Objects.requireNonNull(m2Var)));
+        return m2Var;
+    }
+
+    final void z(Spliterator spliterator, m2 m2Var) {
+        Objects.requireNonNull(m2Var);
+        if (!a3.SHORT_CIRCUIT.m(this.f)) {
+            m2Var.l(spliterator.getExactSizeIfKnown());
+            spliterator.forEachRemaining(m2Var);
+            m2Var.k();
+            return;
+        }
+        A(spliterator, m2Var);
+    }
+
+    final boolean A(Spliterator spliterator, m2 m2Var) {
         b bVar = this;
         while (bVar.e > 0) {
             bVar = bVar.b;
         }
-        d2Var.n(spliterator.getExactSizeIfKnown());
-        bVar.m0(spliterator, d2Var);
-        d2Var.m();
+        m2Var.l(spliterator.getExactSizeIfKnown());
+        boolean G = bVar.G(spliterator, m2Var);
+        m2Var.k();
+        return G;
     }
 
-    final int p0() {
+    final int J() {
         return this.f;
     }
 
-    final boolean q0() {
-        return Q2.ORDERED.i(this.f);
+    final boolean K() {
+        return a3.ORDERED.m(this.f);
     }
 
-    final Spliterator C0(Spliterator spliterator) {
-        return this.e == 0 ? spliterator : z0(this, new a(spliterator, 9), this.a.k);
+    final m2 V(m2 m2Var) {
+        Objects.requireNonNull(m2Var);
+        b bVar = this;
+        while (bVar.e > 0) {
+            b bVar2 = bVar.b;
+            m2Var = bVar.Q(bVar2.f, m2Var);
+            bVar = bVar2;
+        }
+        return m2Var;
     }
 
-    F0 t0(b bVar, Spliterator spliterator, IntFunction intFunction) {
+    final Spliterator W(Spliterator spliterator) {
+        return this.e == 0 ? spliterator : T(this, new a(6, spliterator), this.a.k);
+    }
+
+    I0 N(b bVar, Spliterator spliterator, IntFunction intFunction) {
         throw new UnsupportedOperationException("Parallel evaluation is not supported");
     }
 
-    Spliterator u0(b bVar, Spliterator spliterator) {
-        return t0(bVar, spliterator, new k(12)).spliterator();
+    Spliterator O(b bVar, Spliterator spliterator) {
+        return N(bVar, spliterator, new j(19)).spliterator();
     }
 }

@@ -1,33 +1,29 @@
 package j$.time.zone;
 
-import j$.time.temporal.p;
-import java.util.Collections;
-import java.util.LinkedHashSet;
-import java.util.Set;
-import java.util.TimeZone;
-
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
 /* loaded from: classes2.dex */
-final class d extends e {
-    private final Set c;
+public final class d {
+    public static final d STANDARD;
+    public static final d UTC;
+    public static final d WALL;
+    private static final /* synthetic */ d[] a;
 
-    d() {
-        LinkedHashSet linkedHashSet = new LinkedHashSet();
-        for (String str : TimeZone.getAvailableIDs()) {
-            linkedHashSet.add(str);
-        }
-        this.c = Collections.unmodifiableSet(linkedHashSet);
+    public static d valueOf(String str) {
+        return (d) Enum.valueOf(d.class, str);
     }
 
-    @Override // j$.time.zone.e
-    protected final Set c() {
-        return this.c;
+    public static d[] values() {
+        return (d[]) a.clone();
     }
 
-    @Override // j$.time.zone.e
-    protected final ZoneRules b(String str) {
-        if (this.c.contains(str)) {
-            return new ZoneRules(TimeZone.getTimeZone(str));
-        }
-        throw new p("Not a built-in time zone: " + str);
+    static {
+        d dVar = new d("UTC", 0);
+        UTC = dVar;
+        d dVar2 = new d("WALL", 1);
+        WALL = dVar2;
+        d dVar3 = new d("STANDARD", 2);
+        STANDARD = dVar3;
+        a = new d[]{dVar, dVar2, dVar3};
     }
 }

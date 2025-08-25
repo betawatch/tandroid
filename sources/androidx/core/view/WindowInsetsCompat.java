@@ -9,10 +9,10 @@ import android.view.WindowInsets;
 import androidx.core.graphics.Insets;
 import androidx.core.util.ObjectsCompat;
 import androidx.core.util.Preconditions;
+import j$.util.Objects;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.util.Objects;
 
 /* loaded from: classes.dex */
 public class WindowInsetsCompat {

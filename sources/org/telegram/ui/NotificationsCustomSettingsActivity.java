@@ -30,14 +30,14 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import j$.util.Comparator$-CC;
-import j$.util.function.ToDoubleFunction;
+import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Objects;
+import java.util.function.ToDoubleFunction;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ContactsController;
@@ -185,7 +185,7 @@ public class NotificationsCustomSettingsActivity extends BaseFragment implements
     private static boolean isTop5Peer(int i, long j) {
         ArrayList arrayList = new ArrayList(MediaDataController.getInstance(i).hints);
         Collections.sort(arrayList, Comparator$-CC.comparingDouble(new ToDoubleFunction() { // from class: org.telegram.ui.NotificationsCustomSettingsActivity$$ExternalSyntheticLambda3
-            @Override // j$.util.function.ToDoubleFunction
+            @Override // java.util.function.ToDoubleFunction
             public final double applyAsDouble(Object obj) {
                 double d;
                 d = ((TLRPC.TL_topPeer) obj).rating;
@@ -506,10 +506,10 @@ public class NotificationsCustomSettingsActivity extends BaseFragment implements
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:269:0x05d6 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:270:0x05d7  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x0117 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0118  */
+    /* JADX WARN: Removed duplicated region for block: B:269:0x05d4 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:270:0x05d5  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x0115 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0116  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1043,7 +1043,7 @@ public class NotificationsCustomSettingsActivity extends BaseFragment implements
                     }
                 }, getResourceProvider());
                 chatNotificationsPopupWrapper.lambda$update$11(j3, this.topicId, null);
-                chatNotificationsPopupWrapper.showAsOptions(this, view, f, f2);
+                chatNotificationsPopupWrapper.showAsOptions(this, view, f, f2, false);
                 return;
             }
             arrayList = this.searchAdapter.searchResult;
@@ -1508,7 +1508,7 @@ public class NotificationsCustomSettingsActivity extends BaseFragment implements
         final ArrayList arrayList29 = arrayList25;
         if (arrayList != null) {
             Collections.sort(arrayList, Comparator$-CC.comparingDouble(new ToDoubleFunction() { // from class: org.telegram.ui.NotificationsCustomSettingsActivity$$ExternalSyntheticLambda4
-                @Override // j$.util.function.ToDoubleFunction
+                @Override // java.util.function.ToDoubleFunction
                 public final double applyAsDouble(Object obj) {
                     double d;
                     d = ((TLRPC.TL_topPeer) obj).rating;

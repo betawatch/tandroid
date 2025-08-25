@@ -3,41 +3,34 @@ package j$.util.concurrent;
 import java.util.Map;
 
 /* loaded from: classes2.dex */
-class k implements Map.Entry {
-    final int a;
-    final Object b;
-    volatile Object c;
-    volatile k d;
+final class k implements Map.Entry {
+    final Object a;
+    Object b;
+    final ConcurrentHashMap c;
 
-    k(int i, Object obj, Object obj2, k kVar) {
-        this.a = i;
-        this.b = obj;
-        this.c = obj2;
-        this.d = kVar;
+    k(Object obj, Object obj2, ConcurrentHashMap concurrentHashMap) {
+        this.a = obj;
+        this.b = obj2;
+        this.c = concurrentHashMap;
     }
 
     @Override // java.util.Map.Entry
     public final Object getKey() {
-        return this.b;
+        return this.a;
     }
 
     @Override // java.util.Map.Entry
     public final Object getValue() {
-        return this.c;
+        return this.b;
     }
 
     @Override // java.util.Map.Entry
     public final int hashCode() {
-        return this.b.hashCode() ^ this.c.hashCode();
+        return this.a.hashCode() ^ this.b.hashCode();
     }
 
     public final String toString() {
-        return this.b + "=" + this.c;
-    }
-
-    @Override // java.util.Map.Entry
-    public final Object setValue(Object obj) {
-        throw new UnsupportedOperationException();
+        return u.b(this.a, this.b);
     }
 
     @Override // java.util.Map.Entry
@@ -47,21 +40,15 @@ class k implements Map.Entry {
         Object value;
         Object obj2;
         Object obj3;
-        return (obj instanceof Map.Entry) && (key = (entry = (Map.Entry) obj).getKey()) != null && (value = entry.getValue()) != null && (key == (obj2 = this.b) || key.equals(obj2)) && (value == (obj3 = this.c) || value.equals(obj3));
+        return (obj instanceof Map.Entry) && (key = (entry = (Map.Entry) obj).getKey()) != null && (value = entry.getValue()) != null && (key == (obj2 = this.a) || key.equals(obj2)) && (value == (obj3 = this.b) || value.equals(obj3));
     }
 
-    k a(Object obj, int i) {
-        Object obj2;
-        if (obj == null) {
-            return null;
-        }
-        k kVar = this;
-        do {
-            if (kVar.a == i && ((obj2 = kVar.b) == obj || (obj2 != null && obj.equals(obj2)))) {
-                return kVar;
-            }
-            kVar = kVar.d;
-        } while (kVar != null);
-        return null;
+    @Override // java.util.Map.Entry
+    public final Object setValue(Object obj) {
+        obj.getClass();
+        Object obj2 = this.b;
+        this.b = obj;
+        this.c.put(this.a, obj);
+        return obj2;
     }
 }

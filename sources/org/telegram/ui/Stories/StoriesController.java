@@ -7,8 +7,8 @@ import android.webkit.MimeTypeMap;
 import androidx.collection.LongSparseArray;
 import com.google.android.exoplayer2.util.Consumer;
 import j$.util.Comparator$-CC;
-import j$.util.function.Consumer;
-import j$.util.function.ToIntFunction;
+import j$.util.Objects;
+import j$.util.function.Consumer$-CC;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,9 +22,9 @@ import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
-import java.util.Objects;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.function.ToIntFunction;
 import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.SQLite.SQLitePreparedStatement;
@@ -84,7 +84,7 @@ import org.telegram.ui.Stories.recorder.StoryUploadingService;
 /* loaded from: classes5.dex */
 public class StoriesController {
     public static final Comparator storiesComparator = Comparator$-CC.comparingInt(new ToIntFunction() { // from class: org.telegram.ui.Stories.StoriesController$$ExternalSyntheticLambda4
-        @Override // j$.util.function.ToIntFunction
+        @Override // java.util.function.ToIntFunction
         public final int applyAsInt(Object obj) {
             int i;
             i = ((TL_stories.StoryItem) obj).date;
@@ -5567,16 +5567,15 @@ public class StoriesController {
             }
             this.loading = true;
             if (!this.loadedCache) {
-                MessagesStorage.getInstance(this.currentAccount).loadStoryAlbumsCache(this.dialogId, new j$.util.function.Consumer() { // from class: org.telegram.ui.Stories.StoriesController$StoriesCollections$$ExternalSyntheticLambda0
-                    @Override // j$.util.function.Consumer
+                MessagesStorage.getInstance(this.currentAccount).loadStoryAlbumsCache(this.dialogId, new java.util.function.Consumer() { // from class: org.telegram.ui.Stories.StoriesController$StoriesCollections$$ExternalSyntheticLambda0
+                    @Override // java.util.function.Consumer
                     /* renamed from: accept */
-                    public final void r(Object obj) {
+                    public final void p(Object obj) {
                         StoriesController.StoriesCollections.this.lambda$load$1((List) obj);
                     }
 
-                    @Override // j$.util.function.Consumer
-                    public /* synthetic */ j$.util.function.Consumer andThen(j$.util.function.Consumer consumer) {
-                        return Consumer.-CC.$default$andThen(this, consumer);
+                    public /* synthetic */ java.util.function.Consumer andThen(java.util.function.Consumer consumer) {
+                        return Consumer$-CC.$default$andThen(this, consumer);
                     }
                 });
                 return;

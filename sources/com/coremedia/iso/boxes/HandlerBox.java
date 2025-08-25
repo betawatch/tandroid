@@ -6,8 +6,8 @@ import com.coremedia.iso.IsoTypeWriter;
 import com.coremedia.iso.Utf8;
 import com.googlecode.mp4parser.AbstractFullBox;
 import com.googlecode.mp4parser.RequiresParseDetailAspect;
+import j$.util.DesugarCollections;
 import java.nio.ByteBuffer;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import org.aspectj.lang.JoinPoint;
@@ -59,7 +59,7 @@ public class HandlerBox extends AbstractFullBox {
         hashMap.put("hint", "Hint Track");
         hashMap.put("appl", "Apple specific");
         hashMap.put("meta", "Timed Metadata track - defined in ISO/IEC JTC1/SC29/WG11 - CODING OF MOVING PICTURES AND AUDIO");
-        readableTypes = Collections.unmodifiableMap(hashMap);
+        readableTypes = DesugarCollections.unmodifiableMap(hashMap);
     }
 
     public HandlerBox() {

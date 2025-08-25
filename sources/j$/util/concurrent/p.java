@@ -1,581 +1,100 @@
 package j$.util.concurrent;
 
-import java.util.concurrent.locks.LockSupport;
-import sun.misc.Unsafe;
-
 /* loaded from: classes2.dex */
-final class p extends k {
-    private static final Unsafe h;
-    private static final long i;
-    q e;
-    volatile q f;
-    volatile Thread g;
-    volatile int lockState;
+class p {
+    l[] a;
+    l b = null;
+    o c;
+    o d;
+    int e;
+    int f;
+    int g;
+    final int h;
 
-    static int j(Object obj, Object obj2) {
-        int compareTo;
-        return (obj == null || obj2 == null || (compareTo = obj.getClass().getName().compareTo(obj2.getClass().getName())) == 0) ? System.identityHashCode(obj) <= System.identityHashCode(obj2) ? -1 : 1 : compareTo;
+    p(l[] lVarArr, int i, int i2, int i3) {
+        this.a = lVarArr;
+        this.h = i;
+        this.e = i2;
+        this.f = i2;
+        this.g = i3;
     }
 
-    p(q qVar) {
-        super(-2, null, null, null);
-        int i2;
-        this.f = qVar;
-        q qVar2 = null;
-        while (qVar != null) {
-            q qVar3 = (q) qVar.d;
-            qVar.g = null;
-            qVar.f = null;
-            if (qVar2 == null) {
-                qVar.e = null;
-                qVar.i = false;
+    final l a() {
+        l[] lVarArr;
+        int length;
+        int i;
+        o oVar;
+        l lVar = this.b;
+        if (lVar != null) {
+            lVar = lVar.d;
+        }
+        while (lVar == null) {
+            if (this.f >= this.g || (lVarArr = this.a) == null || (length = lVarArr.length) <= (i = this.e) || i < 0) {
+                this.b = null;
+                return null;
+            }
+            l k = ConcurrentHashMap.k(lVarArr, i);
+            if (k == null || k.a >= 0) {
+                lVar = k;
+            } else if (k instanceof g) {
+                this.a = ((g) k).e;
+                o oVar2 = this.d;
+                if (oVar2 == null) {
+                    oVar2 = new o();
+                } else {
+                    this.d = oVar2.d;
+                }
+                oVar2.c = lVarArr;
+                oVar2.a = length;
+                oVar2.b = i;
+                oVar2.d = this.c;
+                this.c = oVar2;
+                lVar = null;
             } else {
-                Object obj = qVar.b;
-                int i3 = qVar.a;
-                q qVar4 = qVar2;
-                Class<?> cls = null;
+                lVar = k instanceof q ? ((q) k).f : null;
+            }
+            if (this.c != null) {
                 while (true) {
-                    Object obj2 = qVar4.b;
-                    int i4 = qVar4.a;
-                    if (i4 > i3) {
-                        i2 = -1;
-                    } else if (i4 < i3) {
-                        i2 = 1;
-                    } else {
-                        if (cls != null || (cls = ConcurrentHashMap.c(obj)) != null) {
-                            int i5 = ConcurrentHashMap.i;
-                            int compareTo = (obj2 == null || obj2.getClass() != cls) ? 0 : ((Comparable) obj).compareTo(obj2);
-                            if (compareTo != 0) {
-                                i2 = compareTo;
-                            }
-                        }
-                        i2 = j(obj, obj2);
-                    }
-                    q qVar5 = i2 <= 0 ? qVar4.f : qVar4.g;
-                    if (qVar5 == null) {
-                        break;
-                    } else {
-                        qVar4 = qVar5;
-                    }
-                }
-                qVar.e = qVar4;
-                if (i2 <= 0) {
-                    qVar4.f = qVar;
-                } else {
-                    qVar4.g = qVar;
-                }
-                qVar = c(qVar2, qVar);
-            }
-            qVar2 = qVar;
-            qVar = qVar3;
-        }
-        this.e = qVar2;
-    }
-
-    private final void e() {
-        if (h.compareAndSwapInt(this, i, 0, 1)) {
-            return;
-        }
-        d();
-    }
-
-    private final void d() {
-        boolean z = false;
-        while (true) {
-            int i2 = this.lockState;
-            if ((i2 & (-3)) == 0) {
-                if (h.compareAndSwapInt(this, i, i2, 1)) {
-                    break;
-                }
-            } else if ((i2 & 2) == 0) {
-                if (h.compareAndSwapInt(this, i, i2, i2 | 2)) {
-                    this.g = Thread.currentThread();
-                    z = true;
-                }
-            } else if (z) {
-                LockSupport.park(this);
-            }
-        }
-        if (z) {
-            this.g = null;
-        }
-    }
-
-    @Override // j$.util.concurrent.k
-    final k a(Object obj, int i2) {
-        Object obj2;
-        Thread thread;
-        Thread thread2;
-        q qVar = null;
-        if (obj != null) {
-            k kVar = this.f;
-            while (kVar != null) {
-                int i3 = this.lockState;
-                if ((i3 & 3) != 0) {
-                    if (kVar.a == i2 && ((obj2 = kVar.b) == obj || (obj2 != null && obj.equals(obj2)))) {
-                        return kVar;
-                    }
-                    kVar = kVar.d;
-                } else {
-                    Unsafe unsafe = h;
-                    long j = i;
-                    if (unsafe.compareAndSwapInt(this, j, i3, i3 + 4)) {
-                        try {
-                            q qVar2 = this.e;
-                            if (qVar2 != null) {
-                                qVar = qVar2.b(i2, obj, null);
-                            }
-                            if (u.a(unsafe, this, j) == 6 && (thread2 = this.g) != null) {
-                                LockSupport.unpark(thread2);
-                            }
-                            return qVar;
-                        } catch (Throwable th) {
-                            if (u.a(h, this, i) == 6 && (thread = this.g) != null) {
-                                LockSupport.unpark(thread);
-                            }
-                            throw th;
-                        }
-                    }
-                }
-            }
-        }
-        return null;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x00b3, code lost:
-    
-        return null;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:49:0x0070, code lost:
-    
-        return r3;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    final q f(int i2, Object obj, Object obj2) {
-        int i3;
-        q qVar;
-        q qVar2 = this.e;
-        Class<?> cls = null;
-        boolean z = false;
-        while (true) {
-            if (qVar2 == null) {
-                q qVar3 = new q(i2, obj, obj2, null, null);
-                this.e = qVar3;
-                this.f = qVar3;
-                break;
-            }
-            int i4 = qVar2.a;
-            if (i4 > i2) {
-                i3 = -1;
-            } else if (i4 < i2) {
-                i3 = 1;
-            } else {
-                Object obj3 = qVar2.b;
-                if (obj3 == obj || (obj3 != null && obj.equals(obj3))) {
-                    break;
-                }
-                if (cls != null || (cls = ConcurrentHashMap.c(obj)) != null) {
-                    int i5 = ConcurrentHashMap.i;
-                    int compareTo = (obj3 == null || obj3.getClass() != cls) ? 0 : ((Comparable) obj).compareTo(obj3);
-                    if (compareTo != 0) {
-                        i3 = compareTo;
-                    }
-                }
-                if (!z) {
-                    q qVar4 = qVar2.f;
-                    if ((qVar4 == null || (r3 = qVar4.b(i2, obj, cls)) == null) && ((qVar = qVar2.g) == null || (r3 = qVar.b(i2, obj, cls)) == null)) {
-                        z = true;
-                    }
-                }
-                i3 = j(obj, obj3);
-            }
-            q qVar5 = i3 <= 0 ? qVar2.f : qVar2.g;
-            if (qVar5 == null) {
-                q qVar6 = this.f;
-                q qVar7 = new q(i2, obj, obj2, qVar6, qVar2);
-                this.f = qVar7;
-                if (qVar6 != null) {
-                    qVar6.h = qVar7;
-                }
-                if (i3 <= 0) {
-                    qVar2.f = qVar7;
-                } else {
-                    qVar2.g = qVar7;
-                }
-                if (!qVar2.i) {
-                    qVar7.i = true;
-                } else {
-                    e();
-                    try {
-                        this.e = c(this.e, qVar7);
-                    } finally {
-                        this.lockState = 0;
-                    }
-                }
-            } else {
-                qVar2 = qVar5;
-            }
-        }
-        return qVar2;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0091 A[Catch: all -> 0x0052, TryCatch #0 {all -> 0x0052, blocks: (B:21:0x0030, B:25:0x0039, B:29:0x003f, B:31:0x004d, B:32:0x0068, B:34:0x006e, B:35:0x0070, B:41:0x0091, B:44:0x00a2, B:45:0x0099, B:47:0x009d, B:48:0x00a0, B:49:0x00a8, B:52:0x00b1, B:54:0x00b5, B:56:0x00b9, B:58:0x00bd, B:59:0x00c6, B:61:0x00c0, B:63:0x00c4, B:66:0x00ad, B:68:0x007a, B:70:0x007e, B:71:0x0081, B:72:0x0055, B:74:0x005b, B:76:0x005f, B:77:0x0062, B:78:0x0064), top: B:20:0x0030 }] */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x00ac  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x00b5 A[Catch: all -> 0x0052, TryCatch #0 {all -> 0x0052, blocks: (B:21:0x0030, B:25:0x0039, B:29:0x003f, B:31:0x004d, B:32:0x0068, B:34:0x006e, B:35:0x0070, B:41:0x0091, B:44:0x00a2, B:45:0x0099, B:47:0x009d, B:48:0x00a0, B:49:0x00a8, B:52:0x00b1, B:54:0x00b5, B:56:0x00b9, B:58:0x00bd, B:59:0x00c6, B:61:0x00c0, B:63:0x00c4, B:66:0x00ad, B:68:0x007a, B:70:0x007e, B:71:0x0081, B:72:0x0055, B:74:0x005b, B:76:0x005f, B:77:0x0062, B:78:0x0064), top: B:20:0x0030 }] */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x00bd A[Catch: all -> 0x0052, TryCatch #0 {all -> 0x0052, blocks: (B:21:0x0030, B:25:0x0039, B:29:0x003f, B:31:0x004d, B:32:0x0068, B:34:0x006e, B:35:0x0070, B:41:0x0091, B:44:0x00a2, B:45:0x0099, B:47:0x009d, B:48:0x00a0, B:49:0x00a8, B:52:0x00b1, B:54:0x00b5, B:56:0x00b9, B:58:0x00bd, B:59:0x00c6, B:61:0x00c0, B:63:0x00c4, B:66:0x00ad, B:68:0x007a, B:70:0x007e, B:71:0x0081, B:72:0x0055, B:74:0x005b, B:76:0x005f, B:77:0x0062, B:78:0x0064), top: B:20:0x0030 }] */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x00c0 A[Catch: all -> 0x0052, TryCatch #0 {all -> 0x0052, blocks: (B:21:0x0030, B:25:0x0039, B:29:0x003f, B:31:0x004d, B:32:0x0068, B:34:0x006e, B:35:0x0070, B:41:0x0091, B:44:0x00a2, B:45:0x0099, B:47:0x009d, B:48:0x00a0, B:49:0x00a8, B:52:0x00b1, B:54:0x00b5, B:56:0x00b9, B:58:0x00bd, B:59:0x00c6, B:61:0x00c0, B:63:0x00c4, B:66:0x00ad, B:68:0x007a, B:70:0x007e, B:71:0x0081, B:72:0x0055, B:74:0x005b, B:76:0x005f, B:77:0x0062, B:78:0x0064), top: B:20:0x0030 }] */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x00ad A[Catch: all -> 0x0052, TryCatch #0 {all -> 0x0052, blocks: (B:21:0x0030, B:25:0x0039, B:29:0x003f, B:31:0x004d, B:32:0x0068, B:34:0x006e, B:35:0x0070, B:41:0x0091, B:44:0x00a2, B:45:0x0099, B:47:0x009d, B:48:0x00a0, B:49:0x00a8, B:52:0x00b1, B:54:0x00b5, B:56:0x00b9, B:58:0x00bd, B:59:0x00c6, B:61:0x00c0, B:63:0x00c4, B:66:0x00ad, B:68:0x007a, B:70:0x007e, B:71:0x0081, B:72:0x0055, B:74:0x005b, B:76:0x005f, B:77:0x0062, B:78:0x0064), top: B:20:0x0030 }] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    final boolean g(q qVar) {
-        q qVar2;
-        q qVar3;
-        q qVar4 = (q) qVar.d;
-        q qVar5 = qVar.h;
-        if (qVar5 == null) {
-            this.f = qVar4;
-        } else {
-            qVar5.d = qVar4;
-        }
-        if (qVar4 != null) {
-            qVar4.h = qVar5;
-        }
-        if (this.f == null) {
-            this.e = null;
-            return true;
-        }
-        q qVar6 = this.e;
-        if (qVar6 == null || qVar6.g == null || (qVar2 = qVar6.f) == null || qVar2.f == null) {
-            return true;
-        }
-        e();
-        try {
-            q qVar7 = qVar.f;
-            q qVar8 = qVar.g;
-            if (qVar7 != null && qVar8 != null) {
-                q qVar9 = qVar8;
-                while (true) {
-                    q qVar10 = qVar9.f;
-                    if (qVar10 == null) {
+                    oVar = this.c;
+                    if (oVar == null) {
                         break;
                     }
-                    qVar9 = qVar10;
-                }
-                boolean z = qVar9.i;
-                qVar9.i = qVar.i;
-                qVar.i = z;
-                q qVar11 = qVar9.g;
-                q qVar12 = qVar.e;
-                if (qVar9 == qVar8) {
-                    qVar.e = qVar9;
-                    qVar9.g = qVar;
-                } else {
-                    q qVar13 = qVar9.e;
-                    qVar.e = qVar13;
-                    if (qVar13 != null) {
-                        if (qVar9 == qVar13.f) {
-                            qVar13.f = qVar;
-                        } else {
-                            qVar13.g = qVar;
-                        }
+                    int i2 = this.e;
+                    int i3 = oVar.a;
+                    int i4 = i2 + i3;
+                    this.e = i4;
+                    if (i4 < length) {
+                        break;
                     }
-                    qVar9.g = qVar8;
-                    qVar8.e = qVar9;
+                    this.e = oVar.b;
+                    this.a = oVar.c;
+                    oVar.c = null;
+                    o oVar3 = oVar.d;
+                    oVar.d = this.d;
+                    this.c = oVar3;
+                    this.d = oVar;
+                    length = i3;
                 }
-                qVar.f = null;
-                qVar.g = qVar11;
-                if (qVar11 != null) {
-                    qVar11.e = qVar;
-                }
-                qVar9.f = qVar7;
-                qVar7.e = qVar9;
-                qVar9.e = qVar12;
-                if (qVar12 == null) {
-                    qVar6 = qVar9;
-                } else if (qVar == qVar12.f) {
-                    qVar12.f = qVar9;
-                } else {
-                    qVar12.g = qVar9;
-                }
-                if (qVar11 != null) {
-                    qVar7 = qVar11;
-                    if (qVar7 != qVar) {
+                if (oVar == null) {
+                    int i5 = this.e + this.h;
+                    this.e = i5;
+                    if (i5 >= length) {
+                        int i6 = this.f + 1;
+                        this.f = i6;
+                        this.e = i6;
                     }
-                    if (!qVar.i) {
-                    }
-                    this.e = qVar6;
-                    if (qVar == qVar7) {
-                        if (qVar != qVar3.f) {
-                        }
-                        qVar.e = null;
-                    }
-                    this.lockState = 0;
-                    return false;
                 }
-                qVar7 = qVar;
-                if (qVar7 != qVar) {
-                }
-                if (!qVar.i) {
-                }
-                this.e = qVar6;
-                if (qVar == qVar7) {
-                }
-                this.lockState = 0;
-                return false;
-            }
-            if (qVar7 == null) {
-                if (qVar8 != null) {
-                    qVar7 = qVar8;
-                }
-                qVar7 = qVar;
-            }
-            if (qVar7 != qVar) {
-                q qVar14 = qVar.e;
-                qVar7.e = qVar14;
-                if (qVar14 == null) {
-                    qVar6 = qVar7;
-                } else if (qVar == qVar14.f) {
-                    qVar14.f = qVar7;
-                } else {
-                    qVar14.g = qVar7;
-                }
-                qVar.e = null;
-                qVar.g = null;
-                qVar.f = null;
-            }
-            if (!qVar.i) {
-                qVar6 = b(qVar6, qVar7);
-            }
-            this.e = qVar6;
-            if (qVar == qVar7 && (qVar3 = qVar.e) != null) {
-                if (qVar != qVar3.f) {
-                    qVar3.f = null;
-                } else if (qVar == qVar3.g) {
-                    qVar3.g = null;
-                }
-                qVar.e = null;
-            }
-            this.lockState = 0;
-            return false;
-        } catch (Throwable th) {
-            this.lockState = 0;
-            throw th;
-        }
-    }
-
-    static q h(q qVar, q qVar2) {
-        q qVar3;
-        if (qVar2 != null && (qVar3 = qVar2.g) != null) {
-            q qVar4 = qVar3.f;
-            qVar2.g = qVar4;
-            if (qVar4 != null) {
-                qVar4.e = qVar2;
-            }
-            q qVar5 = qVar2.e;
-            qVar3.e = qVar5;
-            if (qVar5 == null) {
-                qVar3.i = false;
-                qVar = qVar3;
-            } else if (qVar5.f == qVar2) {
-                qVar5.f = qVar3;
             } else {
-                qVar5.g = qVar3;
-            }
-            qVar3.f = qVar2;
-            qVar2.e = qVar3;
-        }
-        return qVar;
-    }
-
-    static q i(q qVar, q qVar2) {
-        q qVar3;
-        if (qVar2 != null && (qVar3 = qVar2.f) != null) {
-            q qVar4 = qVar3.g;
-            qVar2.f = qVar4;
-            if (qVar4 != null) {
-                qVar4.e = qVar2;
-            }
-            q qVar5 = qVar2.e;
-            qVar3.e = qVar5;
-            if (qVar5 == null) {
-                qVar3.i = false;
-                qVar = qVar3;
-            } else if (qVar5.g == qVar2) {
-                qVar5.g = qVar3;
-            } else {
-                qVar5.f = qVar3;
-            }
-            qVar3.g = qVar2;
-            qVar2.e = qVar3;
-        }
-        return qVar;
-    }
-
-    static q c(q qVar, q qVar2) {
-        q qVar3;
-        qVar2.i = true;
-        while (true) {
-            q qVar4 = qVar2.e;
-            if (qVar4 == null) {
-                qVar2.i = false;
-                return qVar2;
-            }
-            if (!qVar4.i || (qVar3 = qVar4.e) == null) {
-                break;
-            }
-            q qVar5 = qVar3.f;
-            if (qVar4 == qVar5) {
-                q qVar6 = qVar3.g;
-                if (qVar6 != null && qVar6.i) {
-                    qVar6.i = false;
-                    qVar4.i = false;
-                    qVar3.i = true;
-                    qVar2 = qVar3;
-                } else {
-                    if (qVar2 == qVar4.g) {
-                        qVar = h(qVar, qVar4);
-                        q qVar7 = qVar4.e;
-                        qVar3 = qVar7 == null ? null : qVar7.e;
-                        qVar4 = qVar7;
-                        qVar2 = qVar4;
-                    }
-                    if (qVar4 != null) {
-                        qVar4.i = false;
-                        if (qVar3 != null) {
-                            qVar3.i = true;
-                            qVar = i(qVar, qVar3);
-                        }
-                    }
-                }
-            } else if (qVar5 != null && qVar5.i) {
-                qVar5.i = false;
-                qVar4.i = false;
-                qVar3.i = true;
-                qVar2 = qVar3;
-            } else {
-                if (qVar2 == qVar4.f) {
-                    qVar = i(qVar, qVar4);
-                    q qVar8 = qVar4.e;
-                    qVar3 = qVar8 == null ? null : qVar8.e;
-                    qVar4 = qVar8;
-                    qVar2 = qVar4;
-                }
-                if (qVar4 != null) {
-                    qVar4.i = false;
-                    if (qVar3 != null) {
-                        qVar3.i = true;
-                        qVar = h(qVar, qVar3);
-                    }
+                int i7 = i + this.h;
+                this.e = i7;
+                if (i7 >= length) {
+                    int i8 = this.f + 1;
+                    this.f = i8;
+                    this.e = i8;
                 }
             }
         }
-        return qVar;
-    }
-
-    static q b(q qVar, q qVar2) {
-        while (qVar2 != null && qVar2 != qVar) {
-            q qVar3 = qVar2.e;
-            if (qVar3 == null) {
-                qVar2.i = false;
-                return qVar2;
-            }
-            if (qVar2.i) {
-                qVar2.i = false;
-                return qVar;
-            }
-            q qVar4 = qVar3.f;
-            if (qVar4 == qVar2) {
-                q qVar5 = qVar3.g;
-                if (qVar5 != null && qVar5.i) {
-                    qVar5.i = false;
-                    qVar3.i = true;
-                    qVar = h(qVar, qVar3);
-                    qVar3 = qVar2.e;
-                    qVar5 = qVar3 == null ? null : qVar3.g;
-                }
-                if (qVar5 != null) {
-                    q qVar6 = qVar5.f;
-                    q qVar7 = qVar5.g;
-                    if ((qVar7 == null || !qVar7.i) && (qVar6 == null || !qVar6.i)) {
-                        qVar5.i = true;
-                    } else {
-                        if (qVar7 == null || !qVar7.i) {
-                            if (qVar6 != null) {
-                                qVar6.i = false;
-                            }
-                            qVar5.i = true;
-                            qVar = i(qVar, qVar5);
-                            qVar3 = qVar2.e;
-                            qVar5 = qVar3 != null ? qVar3.g : null;
-                        }
-                        if (qVar5 != null) {
-                            qVar5.i = qVar3 == null ? false : qVar3.i;
-                            q qVar8 = qVar5.g;
-                            if (qVar8 != null) {
-                                qVar8.i = false;
-                            }
-                        }
-                        if (qVar3 != null) {
-                            qVar3.i = false;
-                            qVar = h(qVar, qVar3);
-                        }
-                        qVar2 = qVar;
-                    }
-                }
-                qVar2 = qVar3;
-            } else {
-                if (qVar4 != null && qVar4.i) {
-                    qVar4.i = false;
-                    qVar3.i = true;
-                    qVar = i(qVar, qVar3);
-                    qVar3 = qVar2.e;
-                    qVar4 = qVar3 == null ? null : qVar3.f;
-                }
-                if (qVar4 != null) {
-                    q qVar9 = qVar4.f;
-                    q qVar10 = qVar4.g;
-                    if ((qVar9 == null || !qVar9.i) && (qVar10 == null || !qVar10.i)) {
-                        qVar4.i = true;
-                    } else {
-                        if (qVar9 == null || !qVar9.i) {
-                            if (qVar10 != null) {
-                                qVar10.i = false;
-                            }
-                            qVar4.i = true;
-                            qVar = h(qVar, qVar4);
-                            qVar3 = qVar2.e;
-                            qVar4 = qVar3 != null ? qVar3.f : null;
-                        }
-                        if (qVar4 != null) {
-                            qVar4.i = qVar3 == null ? false : qVar3.i;
-                            q qVar11 = qVar4.f;
-                            if (qVar11 != null) {
-                                qVar11.i = false;
-                            }
-                        }
-                        if (qVar3 != null) {
-                            qVar3.i = false;
-                            qVar = i(qVar, qVar3);
-                        }
-                        qVar2 = qVar;
-                    }
-                }
-                qVar2 = qVar3;
-            }
-        }
-        return qVar;
-    }
-
-    static {
-        try {
-            Unsafe c = u.c();
-            h = c;
-            i = c.objectFieldOffset(p.class.getDeclaredField("lockState"));
-        } catch (Exception e) {
-            throw new Error(e);
-        }
+        this.b = lVar;
+        return lVar;
     }
 }

@@ -1,7 +1,7 @@
 package com.google.android.gms.cast.internal;
 
+import j$.util.DesugarCollections;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -11,7 +11,7 @@ public abstract class zzd extends zzp {
 
     public zzd(String str, String str2, String str3) {
         super(str, "MediaControlChannel", null);
-        this.zzb = Collections.synchronizedList(new ArrayList());
+        this.zzb = DesugarCollections.synchronizedList(new ArrayList());
     }
 
     protected final List zza() {

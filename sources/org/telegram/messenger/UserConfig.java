@@ -333,16 +333,16 @@ public class UserConfig extends BaseController {
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(20:9|(1:11)|12|(16:17|18|19|20|(1:24)|26|(1:28)|29|(1:33)|34|(1:38)|39|(1:41)|42|43|44)|47|18|19|20|(2:22|24)|26|(0)|29|(2:31|33)|34|(2:36|38)|39|(0)|42|43|44) */
-    /* JADX WARN: Code restructure failed: missing block: B:45:0x014e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:45:0x0150, code lost:
     
         r2 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:46:0x014f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:46:0x0151, code lost:
     
         org.telegram.messenger.FileLog.e(r2);
      */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x015c A[Catch: all -> 0x0009, TryCatch #1 {all -> 0x0009, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000c, B:11:0x0015, B:12:0x001e, B:14:0x00e3, B:18:0x00ef, B:20:0x012c, B:22:0x0135, B:24:0x013b, B:26:0x0152, B:28:0x015c, B:29:0x0184, B:31:0x018d, B:33:0x0193, B:34:0x01a5, B:36:0x01ae, B:38:0x01b4, B:39:0x01c6, B:41:0x01ca, B:42:0x01d3, B:43:0x01d5, B:46:0x014f), top: B:3:0x0003, inners: #0 }] */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x01ca A[Catch: all -> 0x0009, TryCatch #1 {all -> 0x0009, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000c, B:11:0x0015, B:12:0x001e, B:14:0x00e3, B:18:0x00ef, B:20:0x012c, B:22:0x0135, B:24:0x013b, B:26:0x0152, B:28:0x015c, B:29:0x0184, B:31:0x018d, B:33:0x0193, B:34:0x01a5, B:36:0x01ae, B:38:0x01b4, B:39:0x01c6, B:41:0x01ca, B:42:0x01d3, B:43:0x01d5, B:46:0x014f), top: B:3:0x0003, inners: #0 }] */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x015e A[Catch: all -> 0x0009, TryCatch #1 {all -> 0x0009, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000c, B:11:0x0015, B:12:0x001e, B:14:0x00e5, B:18:0x00f1, B:20:0x012e, B:22:0x0137, B:24:0x013d, B:26:0x0154, B:28:0x015e, B:29:0x0186, B:31:0x018f, B:33:0x0195, B:34:0x01a7, B:36:0x01b0, B:38:0x01b6, B:39:0x01c8, B:41:0x01cc, B:42:0x01d5, B:43:0x01d7, B:46:0x0151), top: B:3:0x0003, inners: #0 }] */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x01cc A[Catch: all -> 0x0009, TryCatch #1 {all -> 0x0009, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000c, B:11:0x0015, B:12:0x001e, B:14:0x00e5, B:18:0x00f1, B:20:0x012e, B:22:0x0137, B:24:0x013d, B:26:0x0154, B:28:0x015e, B:29:0x0186, B:31:0x018f, B:33:0x0195, B:34:0x01a7, B:36:0x01b0, B:38:0x01b6, B:39:0x01c8, B:41:0x01cc, B:42:0x01d5, B:43:0x01d7, B:46:0x0151), top: B:3:0x0003, inners: #0 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

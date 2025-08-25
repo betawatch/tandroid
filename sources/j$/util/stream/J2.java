@@ -1,40 +1,47 @@
 package j$.util.stream;
 
-import j$.util.Spliterators;
-import j$.util.function.Consumer;
+import java.util.Arrays;
 
 /* loaded from: classes2.dex */
-final class J2 extends L2 implements j$.util.J {
-    final /* synthetic */ K2 g;
+final class J2 extends x2 {
+    private double[] c;
+    private int d;
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ void a(Consumer consumer) {
-        j$.util.A.h(this, consumer);
+    @Override // j$.util.stream.f2, j$.util.stream.m2
+    public final void l(long j) {
+        if (j >= 2147483639) {
+            throw new IllegalArgumentException("Stream size exceeds max array size");
+        }
+        this.c = new double[(int) j];
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean s(Consumer consumer) {
-        return j$.util.A.n(this, consumer);
+    @Override // j$.util.stream.f2, j$.util.stream.m2
+    public final void k() {
+        int i = 0;
+        Arrays.sort(this.c, 0, this.d);
+        long j = this.d;
+        m2 m2Var = this.a;
+        m2Var.l(j);
+        if (!this.b) {
+            while (i < this.d) {
+                m2Var.accept(this.c[i]);
+                i++;
+            }
+        } else {
+            while (i < this.d && !m2Var.n()) {
+                m2Var.accept(this.c[i]);
+                i++;
+            }
+        }
+        m2Var.k();
+        this.c = null;
     }
 
-    @Override // j$.util.stream.L2
-    final void b(int i, Object obj, Object obj2) {
-        ((j$.util.function.Y) obj2).accept(((long[]) obj)[i]);
-    }
-
-    @Override // j$.util.stream.L2
-    final j$.util.M f(Object obj, int i, int i2) {
-        return Spliterators.l((long[]) obj, i, i2 + i);
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    J2(K2 k2, int i, int i2, int i3, int i4) {
-        super(k2, i, i2, i3, i4);
-        this.g = k2;
-    }
-
-    @Override // j$.util.stream.L2
-    final j$.util.M h(int i, int i2, int i3, int i4) {
-        return new J2(this.g, i, i2, i3, i4);
+    @Override // j$.util.stream.j2, java.util.function.DoubleConsumer
+    public final void accept(double d) {
+        double[] dArr = this.c;
+        int i = this.d;
+        this.d = i + 1;
+        dArr[i] = d;
     }
 }

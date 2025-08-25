@@ -10,6 +10,7 @@ import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
 import com.google.firebase.crashlytics.internal.settings.SettingsProvider;
 import com.google.firebase.crashlytics.internal.stacktrace.StackTraceTrimmingStrategy;
 import com.google.firebase.crashlytics.internal.stacktrace.TrimmedThrowableData;
+import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -77,7 +78,7 @@ public class CrashlyticsReportDataCapture {
             for (BuildIdInfo buildIdInfo : this.appData.buildIdInfoList) {
                 arrayList.add(CrashlyticsReport.ApplicationExitInfo.BuildIdMappingForArch.builder().setLibraryName(buildIdInfo.getLibraryName()).setArch(buildIdInfo.getArch()).setBuildId(buildIdInfo.getBuildId()).build());
             }
-            list = Collections.unmodifiableList(arrayList);
+            list = DesugarCollections.unmodifiableList(arrayList);
         }
         return CrashlyticsReport.ApplicationExitInfo.builder().setImportance(applicationExitInfo.getImportance()).setProcessName(applicationExitInfo.getProcessName()).setReasonCode(applicationExitInfo.getReasonCode()).setTimestamp(applicationExitInfo.getTimestamp()).setPid(applicationExitInfo.getPid()).setPss(applicationExitInfo.getPss()).setRss(applicationExitInfo.getRss()).setTraceFile(applicationExitInfo.getTraceFile()).setBuildIdMappingForArch(list).build();
     }
@@ -152,7 +153,7 @@ public class CrashlyticsReportDataCapture {
                 }
             }
         }
-        return Collections.unmodifiableList(arrayList);
+        return DesugarCollections.unmodifiableList(arrayList);
     }
 
     private CrashlyticsReport.Session.Event.Application.Execution.Thread populateThreadData(Thread thread, StackTraceElement[] stackTraceElementArr) {
@@ -168,7 +169,7 @@ public class CrashlyticsReportDataCapture {
         for (StackTraceElement stackTraceElement : stackTraceElementArr) {
             arrayList.add(populateFrameData(stackTraceElement, CrashlyticsReport.Session.Event.Application.Execution.Thread.Frame.builder().setImportance(i)));
         }
-        return Collections.unmodifiableList(arrayList);
+        return DesugarCollections.unmodifiableList(arrayList);
     }
 
     private CrashlyticsReport.Session.Event.Application.Execution.Exception populateExceptionData(TrimmedThrowableData trimmedThrowableData, int i, int i2) {

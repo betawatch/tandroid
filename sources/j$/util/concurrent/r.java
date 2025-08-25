@@ -1,140 +1,60 @@
 package j$.util.concurrent;
 
-import j$.util.Collection;
-import j$.util.Spliterator;
-import j$.util.function.Consumer;
-import j$.util.function.IntFunction;
-import j$.util.function.Predicate;
-import j$.util.stream.Stream;
-import j$.util.stream.t0;
-import java.util.Iterator;
-import java.util.Spliterator;
-import java.util.function.Consumer;
-
 /* loaded from: classes2.dex */
-final class r extends b implements Collection {
-    @Override // java.lang.Iterable
-    public final /* synthetic */ void forEach(Consumer consumer) {
-        forEach(Consumer.VivifiedWrapper.convert(consumer));
+final class r extends l {
+    r e;
+    r f;
+    r g;
+    r h;
+    boolean i;
+
+    r(int i, Object obj, Object obj2, l lVar, r rVar) {
+        super(i, obj, obj2, lVar);
+        this.e = rVar;
     }
 
-    @Override // java.util.Collection, j$.util.Collection
-    public final /* synthetic */ Stream parallelStream() {
-        Stream e0;
-        e0 = t0.e0(Collection.-EL.b(this), true);
-        return e0;
+    @Override // j$.util.concurrent.l
+    final l a(int i, Object obj) {
+        return b(i, obj, null);
     }
 
-    @Override // java.util.Collection
-    public final /* synthetic */ java.util.stream.Stream parallelStream() {
-        Stream e0;
-        e0 = t0.e0(Collection.-EL.b(this), true);
-        return Stream.Wrapper.convert(e0);
-    }
-
-    @Override // j$.util.Collection
-    public final /* synthetic */ boolean removeIf(Predicate predicate) {
-        return Collection.-CC.$default$removeIf(this, predicate);
-    }
-
-    @Override // java.util.Collection
-    public final /* synthetic */ boolean removeIf(java.util.function.Predicate predicate) {
-        return Collection.-CC.$default$removeIf(this, Predicate.VivifiedWrapper.convert(predicate));
-    }
-
-    @Override // java.util.Collection, java.lang.Iterable
-    public final /* synthetic */ Spliterator spliterator() {
-        return Spliterator.Wrapper.convert(spliterator());
-    }
-
-    @Override // java.util.Collection, j$.util.Collection
-    public final /* synthetic */ Stream stream() {
-        return Collection.-CC.$default$stream(this);
-    }
-
-    @Override // java.util.Collection
-    public final /* synthetic */ java.util.stream.Stream stream() {
-        return Stream.Wrapper.convert(Collection.-CC.$default$stream(this));
-    }
-
-    @Override // j$.util.Collection
-    public final /* synthetic */ Object[] toArray(IntFunction intFunction) {
-        Object[] array;
-        array = toArray((Object[]) intFunction.apply(0));
-        return array;
-    }
-
-    @Override // java.util.Collection
-    public final /* synthetic */ Object[] toArray(java.util.function.IntFunction intFunction) {
-        Object[] array;
-        array = toArray((Object[]) IntFunction.VivifiedWrapper.convert(intFunction).apply(0));
-        return array;
-    }
-
-    @Override // j$.util.concurrent.b, java.util.Collection
-    public final boolean contains(Object obj) {
-        return this.a.containsValue(obj);
-    }
-
-    @Override // java.util.Collection
-    public final boolean remove(Object obj) {
-        a aVar;
+    final r b(int i, Object obj, Class cls) {
         if (obj == null) {
-            return false;
+            return null;
         }
-        Object it = iterator();
+        r rVar = this;
         do {
-            aVar = (a) it;
-            if (!aVar.hasNext()) {
-                return false;
+            r rVar2 = rVar.f;
+            r rVar3 = rVar.g;
+            int i2 = rVar.a;
+            if (i2 <= i) {
+                if (i2 >= i) {
+                    Object obj2 = rVar.b;
+                    if (obj2 == obj || (obj2 != null && obj.equals(obj2))) {
+                        return rVar;
+                    }
+                    if (rVar2 != null) {
+                        if (rVar3 != null) {
+                            if (cls != null || (cls = ConcurrentHashMap.c(obj)) != null) {
+                                int i3 = ConcurrentHashMap.g;
+                                int compareTo = (obj2 == null || obj2.getClass() != cls) ? 0 : ((Comparable) obj).compareTo(obj2);
+                                if (compareTo != 0) {
+                                    if (compareTo >= 0) {
+                                        rVar2 = rVar3;
+                                    }
+                                }
+                            }
+                            r b = rVar3.b(i, obj, cls);
+                            if (b != null) {
+                                return b;
+                            }
+                        }
+                    }
+                }
+                rVar = rVar3;
             }
-        } while (!obj.equals(((g) it).next()));
-        aVar.remove();
-        return true;
-    }
-
-    @Override // j$.util.concurrent.b, java.util.Collection, java.lang.Iterable
-    public final Iterator iterator() {
-        ConcurrentHashMap concurrentHashMap = this.a;
-        k[] kVarArr = concurrentHashMap.a;
-        int length = kVarArr == null ? 0 : kVarArr.length;
-        return new g(kVarArr, length, length, concurrentHashMap, 1);
-    }
-
-    @Override // java.util.Collection
-    public final boolean add(Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Collection
-    public final boolean addAll(java.util.Collection collection) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Collection, java.lang.Iterable, j$.util.Collection
-    public final j$.util.Spliterator spliterator() {
-        ConcurrentHashMap concurrentHashMap = this.a;
-        long k = concurrentHashMap.k();
-        k[] kVarArr = concurrentHashMap.a;
-        int length = kVarArr == null ? 0 : kVarArr.length;
-        return new i(kVarArr, length, 0, length, k < 0 ? 0L : k, 1);
-    }
-
-    @Override // j$.util.Collection, j$.lang.a
-    public final void forEach(j$.util.function.Consumer consumer) {
-        consumer.getClass();
-        k[] kVarArr = this.a.a;
-        if (kVarArr == null) {
-            return;
-        }
-        o oVar = new o(kVarArr, kVarArr.length, 0, kVarArr.length);
-        while (true) {
-            k b = oVar.b();
-            if (b == null) {
-                return;
-            } else {
-                consumer.r(b.c);
-            }
-        }
+            rVar = rVar2;
+        } while (rVar != null);
+        return null;
     }
 }

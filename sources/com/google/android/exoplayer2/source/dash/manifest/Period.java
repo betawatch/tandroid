@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.source.dash.manifest;
 
-import java.util.Collections;
+import j$.util.DesugarCollections;
 import java.util.List;
 
 /* loaded from: classes.dex */
@@ -18,8 +18,8 @@ public class Period {
     public Period(String str, long j, List list, List list2, Descriptor descriptor) {
         this.id = str;
         this.startMs = j;
-        this.adaptationSets = Collections.unmodifiableList(list);
-        this.eventStreams = Collections.unmodifiableList(list2);
+        this.adaptationSets = DesugarCollections.unmodifiableList(list);
+        this.eventStreams = DesugarCollections.unmodifiableList(list2);
         this.assetIdentifier = descriptor;
     }
 

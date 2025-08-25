@@ -188,7 +188,7 @@ public abstract class ColorParser {
                 return (-16777216) | parseLong;
             }
             if (replace.length() == 9) {
-                return ((parseLong & NotificationCenter.goingToPreviewTheme) << 24) | (parseLong >>> 8);
+                return ((parseLong & NotificationCenter.needCheckSystemBarColors) << 24) | (parseLong >>> 8);
             }
             throw new IllegalArgumentException();
         }

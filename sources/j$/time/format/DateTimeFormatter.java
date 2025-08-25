@@ -1,6 +1,6 @@
 package j$.time.format;
 
-import j$.util.A;
+import j$.util.Objects;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Locale;
@@ -12,7 +12,7 @@ public final class DateTimeFormatter {
     private final e a;
     private final Locale b;
     private final v c;
-    private final j$.time.chrono.f d;
+    private final j$.time.chrono.s d;
 
     static {
         p pVar = new p();
@@ -26,20 +26,20 @@ public final class DateTimeFormatter {
         j$.time.temporal.a aVar3 = j$.time.temporal.a.DAY_OF_MONTH;
         pVar.l(aVar3, 2);
         w wVar = w.STRICT;
-        j$.time.chrono.f fVar = j$.time.chrono.f.a;
-        DateTimeFormatter u = pVar.u(wVar, fVar);
-        ISO_LOCAL_DATE = u;
+        j$.time.chrono.s sVar = j$.time.chrono.s.d;
+        DateTimeFormatter v = pVar.v(wVar, sVar);
+        ISO_LOCAL_DATE = v;
         p pVar2 = new p();
         pVar2.r();
-        pVar2.a(u);
+        pVar2.a(v);
         pVar2.h();
-        pVar2.u(wVar, fVar);
+        pVar2.v(wVar, sVar);
         p pVar3 = new p();
         pVar3.r();
-        pVar3.a(u);
+        pVar3.a(v);
         pVar3.q();
         pVar3.h();
-        pVar3.u(wVar, fVar);
+        pVar3.v(wVar, sVar);
         p pVar4 = new p();
         j$.time.temporal.a aVar4 = j$.time.temporal.a.HOUR_OF_DAY;
         pVar4.l(aVar4, 2);
@@ -52,39 +52,41 @@ public final class DateTimeFormatter {
         pVar4.l(aVar6, 2);
         pVar4.q();
         pVar4.b(j$.time.temporal.a.NANO_OF_SECOND);
-        DateTimeFormatter u2 = pVar4.u(wVar, null);
+        DateTimeFormatter v2 = pVar4.v(wVar, null);
         p pVar5 = new p();
         pVar5.r();
-        pVar5.a(u2);
+        pVar5.a(v2);
         pVar5.h();
-        pVar5.u(wVar, null);
+        pVar5.v(wVar, null);
         p pVar6 = new p();
         pVar6.r();
-        pVar6.a(u2);
+        pVar6.a(v2);
         pVar6.q();
         pVar6.h();
-        pVar6.u(wVar, null);
+        pVar6.v(wVar, null);
         p pVar7 = new p();
         pVar7.r();
-        pVar7.a(u);
+        pVar7.a(v);
         pVar7.e('T');
-        pVar7.a(u2);
-        DateTimeFormatter u3 = pVar7.u(wVar, fVar);
+        pVar7.a(v2);
+        DateTimeFormatter v3 = pVar7.v(wVar, sVar);
         p pVar8 = new p();
         pVar8.r();
-        pVar8.a(u3);
+        pVar8.a(v3);
+        pVar8.t();
         pVar8.h();
-        DateTimeFormatter u4 = pVar8.u(wVar, fVar);
+        pVar8.u();
+        DateTimeFormatter v4 = pVar8.v(wVar, sVar);
         p pVar9 = new p();
-        pVar9.a(u4);
+        pVar9.a(v4);
         pVar9.q();
         pVar9.e('[');
         pVar9.s();
         pVar9.n();
         pVar9.e(']');
-        pVar9.u(wVar, fVar);
+        pVar9.v(wVar, sVar);
         p pVar10 = new p();
-        pVar10.a(u3);
+        pVar10.a(v3);
         pVar10.q();
         pVar10.h();
         pVar10.q();
@@ -92,7 +94,7 @@ public final class DateTimeFormatter {
         pVar10.s();
         pVar10.n();
         pVar10.e(']');
-        pVar10.u(wVar, fVar);
+        pVar10.v(wVar, sVar);
         p pVar11 = new p();
         pVar11.r();
         pVar11.m(aVar, 4, 10, xVar);
@@ -100,30 +102,32 @@ public final class DateTimeFormatter {
         pVar11.l(j$.time.temporal.a.DAY_OF_YEAR, 3);
         pVar11.q();
         pVar11.h();
-        pVar11.u(wVar, fVar);
+        pVar11.v(wVar, sVar);
         p pVar12 = new p();
         pVar12.r();
-        pVar12.m(j$.time.temporal.i.c, 4, 10, xVar);
+        pVar12.m(j$.time.temporal.j.c, 4, 10, xVar);
         pVar12.f("-W");
-        pVar12.l(j$.time.temporal.i.b, 2);
+        pVar12.l(j$.time.temporal.j.b, 2);
         pVar12.e('-');
         j$.time.temporal.a aVar7 = j$.time.temporal.a.DAY_OF_WEEK;
         pVar12.l(aVar7, 1);
         pVar12.q();
         pVar12.h();
-        pVar12.u(wVar, fVar);
+        pVar12.v(wVar, sVar);
         p pVar13 = new p();
         pVar13.r();
         pVar13.c();
-        e = pVar13.u(wVar, null);
+        e = pVar13.v(wVar, null);
         p pVar14 = new p();
         pVar14.r();
         pVar14.l(aVar, 4);
         pVar14.l(aVar2, 2);
         pVar14.l(aVar3, 2);
         pVar14.q();
+        pVar14.t();
         pVar14.g("+HHMMss", "Z");
-        pVar14.u(wVar, fVar);
+        pVar14.u();
+        pVar14.v(wVar, sVar);
         HashMap hashMap = new HashMap();
         hashMap.put(1L, "Mon");
         hashMap.put(2L, "Tue");
@@ -167,17 +171,15 @@ public final class DateTimeFormatter {
         pVar15.p();
         pVar15.e(' ');
         pVar15.g("+HHMM", "GMT");
-        pVar15.u(w.SMART, fVar);
+        pVar15.v(w.SMART, sVar);
     }
 
-    DateTimeFormatter(e eVar, Locale locale, w wVar, j$.time.chrono.f fVar) {
+    DateTimeFormatter(e eVar, Locale locale, w wVar, j$.time.chrono.s sVar) {
         v vVar = v.a;
-        this.a = eVar;
-        A.z(locale, "locale");
-        this.b = locale;
-        this.c = vVar;
-        A.z(wVar, "resolverStyle");
-        this.d = fVar;
+        this.a = (e) Objects.requireNonNull(eVar, "printerParser");
+        this.b = (Locale) Objects.requireNonNull(locale, "locale");
+        this.c = (v) Objects.requireNonNull(vVar, "decimalStyle");
+        this.d = sVar;
     }
 
     public final Locale d() {
@@ -188,14 +190,16 @@ public final class DateTimeFormatter {
         return this.c;
     }
 
-    public final j$.time.chrono.e b() {
+    public final j$.time.chrono.l b() {
         return this.d;
     }
 
-    public final String a(j$.time.temporal.k kVar) {
+    public final String a(j$.time.temporal.o oVar) {
         StringBuilder sb = new StringBuilder(32);
+        Objects.requireNonNull(oVar, "temporal");
+        Objects.requireNonNull(sb, "appendable");
         try {
-            this.a.f(new r(kVar, this), sb);
+            this.a.i(new r(oVar, this), sb);
             return sb.toString();
         } catch (IOException e2) {
             throw new j$.time.c(e2.getMessage(), e2);

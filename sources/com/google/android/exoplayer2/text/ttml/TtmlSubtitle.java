@@ -2,6 +2,7 @@ package com.google.android.exoplayer2.text.ttml;
 
 import com.google.android.exoplayer2.text.Subtitle;
 import com.google.android.exoplayer2.util.Util;
+import j$.util.DesugarCollections;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -18,7 +19,7 @@ final class TtmlSubtitle implements Subtitle {
         this.root = ttmlNode;
         this.regionMap = map2;
         this.imageMap = map3;
-        this.globalStyles = map != null ? Collections.unmodifiableMap(map) : Collections.emptyMap();
+        this.globalStyles = map != null ? DesugarCollections.unmodifiableMap(map) : Collections.emptyMap();
         this.eventTimesUs = ttmlNode.getEventTimesUs();
     }
 

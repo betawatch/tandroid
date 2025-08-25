@@ -1,80 +1,94 @@
 package j$.util.stream;
 
+import j$.util.Spliterator;
+import j$.util.concurrent.ConcurrentHashMap;
+import j$.util.function.Consumer$-CC;
 import java.util.Comparator;
+import java.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-abstract class j3 extends l3 implements j$.util.M {
-    protected abstract Object f();
+final class j3 implements Spliterator, Consumer {
+    private static final Object d = new Object();
+    private final Spliterator a;
+    private final ConcurrentHashMap b;
+    private Object c;
+
+    public final /* synthetic */ Consumer andThen(Consumer consumer) {
+        return Consumer$-CC.$default$andThen(this, consumer);
+    }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.util.A.j(this);
+        return j$.util.S.d(this);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return j$.util.A.k(this, i);
+        return j$.util.S.e(this, i);
     }
 
-    @Override // j$.util.M
-    /* renamed from: forEachRemaining, reason: merged with bridge method [inline-methods] and merged with bridge method [inline-methods] and merged with bridge method [inline-methods] */
-    public final void e(Object obj) {
-        obj.getClass();
-        long j = this.e;
-        long j2 = this.a;
-        if (j2 >= j) {
-            return;
-        }
-        long j3 = this.d;
-        if (j3 >= j) {
-            return;
-        }
-        if (j3 >= j2 && ((j$.util.M) this.c).estimateSize() + j3 <= this.b) {
-            ((j$.util.M) this.c).e(obj);
-            this.d = this.e;
-            return;
-        }
-        while (j2 > this.d) {
-            ((j$.util.M) this.c).p(f());
-            this.d++;
-        }
-        while (this.d < this.e) {
-            ((j$.util.M) this.c).p(obj);
-            this.d++;
+    j3(Spliterator spliterator) {
+        this(spliterator, new ConcurrentHashMap());
+    }
+
+    private j3(Spliterator spliterator, ConcurrentHashMap concurrentHashMap) {
+        this.a = spliterator;
+        this.b = concurrentHashMap;
+    }
+
+    @Override // java.util.function.Consumer
+    public final void accept(Object obj) {
+        this.c = obj;
+    }
+
+    final void b(Consumer consumer, Object obj) {
+        if (this.b.putIfAbsent(obj != null ? obj : d, Boolean.TRUE) == null) {
+            consumer.accept(obj);
         }
     }
 
-    @Override // j$.util.M
-    /* renamed from: tryAdvance, reason: merged with bridge method [inline-methods] and merged with bridge method [inline-methods] and merged with bridge method [inline-methods] */
-    public final boolean p(Object obj) {
-        long j;
-        obj.getClass();
-        long j2 = this.e;
-        long j3 = this.a;
-        if (j3 >= j2) {
-            return false;
-        }
-        while (true) {
-            j = this.d;
-            if (j3 <= j) {
-                break;
+    @Override // j$.util.Spliterator
+    public final boolean tryAdvance(Consumer consumer) {
+        while (this.a.tryAdvance(this)) {
+            Object obj = this.c;
+            if (obj == null) {
+                obj = d;
             }
-            ((j$.util.M) this.c).p(f());
-            this.d++;
+            if (this.b.putIfAbsent(obj, Boolean.TRUE) == null) {
+                consumer.accept(this.c);
+                this.c = null;
+                return true;
+            }
         }
-        if (j >= this.e) {
-            return false;
+        return false;
+    }
+
+    @Override // j$.util.Spliterator
+    public final void forEachRemaining(Consumer consumer) {
+        this.a.forEachRemaining(new n0(1, this, consumer));
+    }
+
+    @Override // j$.util.Spliterator
+    public final Spliterator trySplit() {
+        Spliterator trySplit = this.a.trySplit();
+        if (trySplit != null) {
+            return new j3(trySplit, this.b);
         }
-        this.d = j + 1;
-        return ((j$.util.M) this.c).p(obj);
+        return null;
+    }
+
+    @Override // j$.util.Spliterator
+    public final long estimateSize() {
+        return this.a.estimateSize();
+    }
+
+    @Override // j$.util.Spliterator
+    public final int characteristics() {
+        return (this.a.characteristics() & (-16469)) | 1;
     }
 
     @Override // j$.util.Spliterator
     public final Comparator getComparator() {
-        throw new IllegalStateException();
-    }
-
-    j3(j$.util.M m, long j, long j2) {
-        super(m, j, j2, 0L, Math.min(m.estimateSize(), j2));
+        return this.a.getComparator();
     }
 }

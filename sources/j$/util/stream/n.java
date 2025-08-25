@@ -1,114 +1,93 @@
 package j$.util.stream;
 
-import j$.util.function.Consumer;
-import j$.util.function.Predicate;
-import j$.util.function.ToDoubleFunction;
-import j$.util.function.ToIntFunction;
-import j$.util.function.ToLongFunction;
 import java.util.HashSet;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.function.ToDoubleFunction;
+import java.util.function.ToIntFunction;
+import java.util.function.ToLongFunction;
 
 /* loaded from: classes2.dex */
-final class n extends Z1 {
+final class n extends i2 {
     public final /* synthetic */ int b;
     Object c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ n(b bVar, d2 d2Var, int i) {
-        super(d2Var);
+    public /* synthetic */ n(b bVar, m2 m2Var, int i) {
+        super(m2Var);
         this.b = i;
         this.c = bVar;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ n(d2 d2Var) {
-        super(d2Var);
+    public /* synthetic */ n(m2 m2Var) {
+        super(m2Var);
         this.b = 0;
     }
 
-    @Override // j$.util.stream.Z1, j$.util.stream.d2
-    public void m() {
+    @Override // j$.util.stream.i2, j$.util.stream.m2
+    public void k() {
         switch (this.b) {
             case 0:
                 this.c = null;
-                this.a.m();
+                this.a.k();
                 break;
             default:
-                super.m();
+                super.k();
                 break;
         }
     }
 
-    @Override // j$.util.stream.Z1, j$.util.stream.d2
-    public void n(long j) {
+    @Override // j$.util.stream.i2, j$.util.stream.m2
+    public void l(long j) {
         switch (this.b) {
             case 0:
                 this.c = new HashSet();
-                this.a.n(-1L);
+                this.a.l(-1L);
+                break;
+            case 1:
+            default:
+                super.l(j);
                 break;
             case 2:
-                this.a.n(-1L);
-                break;
-            case 7:
-                this.a.n(-1L);
-                break;
-            default:
-                super.n(j);
+                this.a.l(-1L);
                 break;
         }
     }
 
-    @Override // j$.util.function.Consumer
-    /* renamed from: accept */
-    public final void r(Object obj) {
+    @Override // java.util.function.Consumer
+    public final void accept(Object obj) {
         switch (this.b) {
             case 0:
-                if (((HashSet) this.c).contains(obj)) {
-                    return;
+                if (!((HashSet) this.c).contains(obj)) {
+                    ((HashSet) this.c).add(obj);
+                    this.a.accept((m2) obj);
+                    break;
                 }
-                ((HashSet) this.c).add(obj);
-                this.a.r((d2) obj);
-                return;
+                break;
             case 1:
-                ((Consumer) ((u) this.c).n).r(obj);
-                this.a.r((d2) obj);
-                return;
+                ((Consumer) ((s) this.c).n).accept(obj);
+                this.a.accept((m2) obj);
+                break;
             case 2:
-                if (((Predicate) ((u) this.c).n).test(obj)) {
-                    this.a.r((d2) obj);
-                    return;
+                if (((Predicate) ((s) this.c).n).test(obj)) {
+                    this.a.accept((m2) obj);
+                    break;
                 }
-                return;
+                break;
             case 3:
-                this.a.r((d2) ((S1) this.c).n.apply(obj));
-                return;
+                this.a.accept((m2) ((Function) ((s) this.c).n).apply(obj));
+                break;
             case 4:
-                this.a.accept(((ToIntFunction) ((v) this.c).n).applyAsInt(obj));
-                return;
+                this.a.accept(((ToIntFunction) ((V) this.c).n).applyAsInt(obj));
+                break;
             case 5:
-                this.a.accept(((ToLongFunction) ((w) this.c).n).applyAsLong(obj));
-                return;
-            case 6:
-                this.a.accept(((ToDoubleFunction) ((t) this.c).n).applyAsDouble(obj));
-                return;
+                this.a.accept(((ToLongFunction) ((g0) this.c).n).applyAsLong(obj));
+                break;
             default:
-                Stream stream = (Stream) ((S1) this.c).n.apply(obj);
-                if (stream != null) {
-                    try {
-                        ((Stream) stream.sequential()).forEach(this.a);
-                    } catch (Throwable th) {
-                        try {
-                            stream.close();
-                        } catch (Throwable th2) {
-                            th.addSuppressed(th2);
-                        }
-                        throw th;
-                    }
-                }
-                if (stream != null) {
-                    stream.close();
-                    return;
-                }
-                return;
+                this.a.accept(((ToDoubleFunction) ((x) this.c).n).applyAsDouble(obj));
+                break;
         }
     }
 }

@@ -1,37 +1,82 @@
 package j$.util.concurrent;
 
-/* loaded from: classes2.dex */
-final class f extends k {
-    final k[] e;
+import j$.util.S;
+import j$.util.Spliterator;
+import java.util.Comparator;
+import java.util.function.Consumer;
 
-    f(k[] kVarArr) {
-        super(-1, null, null, null);
-        this.e = kVarArr;
+/* loaded from: classes2.dex */
+final class f extends p implements Spliterator {
+    final ConcurrentHashMap i;
+    long j;
+
+    @Override // j$.util.Spliterator
+    public final int characteristics() {
+        return 4353;
     }
 
-    @Override // j$.util.concurrent.k
-    final k a(Object obj, int i) {
-        int length;
-        k l;
-        Object obj2;
-        k[] kVarArr = this.e;
-        loop0: while (obj != null && kVarArr != null && (length = kVarArr.length) != 0 && (l = ConcurrentHashMap.l(kVarArr, (length - 1) & i)) != null) {
-            do {
-                int i2 = l.a;
-                if (i2 == i && ((obj2 = l.b) == obj || (obj2 != null && obj.equals(obj2)))) {
-                    return l;
-                }
-                if (i2 < 0) {
-                    if (l instanceof f) {
-                        kVarArr = ((f) l).e;
-                    } else {
-                        return l.a(obj, i);
-                    }
-                } else {
-                    l = l.d;
-                }
-            } while (l != null);
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ long getExactSizeIfKnown() {
+        return S.d(this);
+    }
+
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean hasCharacteristics(int i) {
+        return S.e(this, i);
+    }
+
+    @Override // j$.util.Spliterator
+    public final Comparator getComparator() {
+        throw new IllegalStateException();
+    }
+
+    f(l[] lVarArr, int i, int i2, int i3, long j, ConcurrentHashMap concurrentHashMap) {
+        super(lVarArr, i, i2, i3);
+        this.i = concurrentHashMap;
+        this.j = j;
+    }
+
+    @Override // j$.util.Spliterator
+    public final Spliterator trySplit() {
+        int i = this.f;
+        int i2 = this.g;
+        int i3 = (i + i2) >>> 1;
+        if (i3 <= i) {
+            return null;
         }
-        return null;
+        l[] lVarArr = this.a;
+        this.g = i3;
+        long j = this.j >>> 1;
+        this.j = j;
+        return new f(lVarArr, this.h, i3, i2, j, this.i);
+    }
+
+    @Override // j$.util.Spliterator
+    public final void forEachRemaining(Consumer consumer) {
+        consumer.getClass();
+        while (true) {
+            l a = a();
+            if (a == null) {
+                return;
+            } else {
+                consumer.accept(new k(a.b, a.c, this.i));
+            }
+        }
+    }
+
+    @Override // j$.util.Spliterator
+    public final boolean tryAdvance(Consumer consumer) {
+        consumer.getClass();
+        l a = a();
+        if (a == null) {
+            return false;
+        }
+        consumer.accept(new k(a.b, a.c, this.i));
+        return true;
+    }
+
+    @Override // j$.util.Spliterator
+    public final long estimateSize() {
+        return this.j;
     }
 }

@@ -1,12 +1,13 @@
 package com.google.android.gms.internal.clearcut;
 
+import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 /* loaded from: classes.dex */
 final class zzda extends zzcy {
-    private static final Class zzlv = Collections.unmodifiableList(Collections.emptyList()).getClass();
+    private static final Class zzlv = DesugarCollections.unmodifiableList(Collections.emptyList()).getClass();
 
     private zzda() {
         super();
@@ -25,7 +26,7 @@ final class zzda extends zzcy {
         } else if (zzlv.isAssignableFrom(list.getClass())) {
             return;
         } else {
-            unmodifiableList = Collections.unmodifiableList(list);
+            unmodifiableList = DesugarCollections.unmodifiableList(list);
         }
         zzfd.zza(obj, j, unmodifiableList);
     }

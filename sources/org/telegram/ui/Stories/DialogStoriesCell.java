@@ -29,10 +29,10 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.exoplayer2.util.Consumer;
+import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotWebViewVibrationEffect;
 import org.telegram.messenger.DialogObject;
@@ -1531,7 +1531,7 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
                 } else {
                     unreadCirclePaint = StoriesUtilities.getUnreadCirclePaint(this.avatarImage, true);
                 }
-                unreadCirclePaint.setAlpha(NotificationCenter.goingToPreviewTheme);
+                unreadCirclePaint.setAlpha(NotificationCenter.needCheckSystemBarColors);
                 this.radialProgress.setPaint(unreadCirclePaint);
                 this.radialProgress.setProgressRect((int) (this.avatarImage.getImageX() - AndroidUtilities.dp(3.0f)), (int) (this.avatarImage.getImageY() - AndroidUtilities.dp(3.0f)), (int) (this.avatarImage.getImageX2() + AndroidUtilities.dp(3.0f)), (int) (this.avatarImage.getImageY2() + AndroidUtilities.dp(3.0f)));
                 this.radialProgress.setProgress(Utilities.clamp(f4, 1.0f, 0.0f), this.progressWasDrawn);

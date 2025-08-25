@@ -1,22 +1,24 @@
 package j$.util.stream;
 
 /* loaded from: classes2.dex */
-final class W extends g0 {
-    public final /* synthetic */ int m;
+final class W extends g2 {
+    public final /* synthetic */ int b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ W(b bVar, int i, int i2) {
-        super(bVar, i, 1);
-        this.m = i2;
+    public /* synthetic */ W(int i, m2 m2Var) {
+        super(m2Var);
+        this.b = i;
     }
 
-    @Override // j$.util.stream.b
-    final d2 w0(int i, d2 d2Var) {
-        switch (this.m) {
+    @Override // j$.util.stream.k2, j$.util.stream.m2
+    public final void accept(int i) {
+        switch (this.b) {
             case 0:
-                return new U(0, d2Var);
+                this.a.accept(i);
+                break;
             default:
-                return d2Var;
+                this.a.accept(i);
+                break;
         }
     }
 }

@@ -14,11 +14,11 @@ public final /* synthetic */ class g implements java.util.stream.BaseStream {
         this.a = baseStream;
     }
 
-    public static /* synthetic */ java.util.stream.BaseStream f0(BaseStream baseStream) {
+    public static /* synthetic */ java.util.stream.BaseStream j(BaseStream baseStream) {
         if (baseStream == null) {
             return null;
         }
-        return baseStream instanceof f ? ((f) baseStream).a : baseStream instanceof D ? C.f0((D) baseStream) : baseStream instanceof IntStream ? IntStream.Wrapper.convert((IntStream) baseStream) : baseStream instanceof LongStream ? j0.f0((LongStream) baseStream) : baseStream instanceof Stream ? Stream.Wrapper.convert((Stream) baseStream) : new g(baseStream);
+        return baseStream instanceof f ? ((f) baseStream).a : baseStream instanceof D ? C.j((D) baseStream) : baseStream instanceof IntStream ? IntStream.Wrapper.convert((IntStream) baseStream) : baseStream instanceof LongStream ? l0.j((LongStream) baseStream) : baseStream instanceof Stream ? Stream.Wrapper.convert((Stream) baseStream) : new g(baseStream);
     }
 
     @Override // java.util.stream.BaseStream, java.lang.AutoCloseable
@@ -50,17 +50,17 @@ public final /* synthetic */ class g implements java.util.stream.BaseStream {
 
     @Override // java.util.stream.BaseStream
     public final /* synthetic */ java.util.stream.BaseStream onClose(Runnable runnable) {
-        return f0(this.a.onClose(runnable));
+        return j(this.a.onClose(runnable));
     }
 
     @Override // java.util.stream.BaseStream
     public final /* synthetic */ java.util.stream.BaseStream parallel() {
-        return f0(this.a.parallel());
+        return j(this.a.parallel());
     }
 
     @Override // java.util.stream.BaseStream
     public final /* synthetic */ java.util.stream.BaseStream sequential() {
-        return f0(this.a.sequential());
+        return j(this.a.sequential());
     }
 
     @Override // java.util.stream.BaseStream
@@ -70,6 +70,6 @@ public final /* synthetic */ class g implements java.util.stream.BaseStream {
 
     @Override // java.util.stream.BaseStream
     public final /* synthetic */ java.util.stream.BaseStream unordered() {
-        return f0(this.a.unordered());
+        return j(this.a.unordered());
     }
 }

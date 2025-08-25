@@ -4,6 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.exoplayer2.util.ParsableByteArray;
 import com.google.android.exoplayer2.util.TimestampAdjuster;
+import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -43,7 +44,7 @@ public final class SpliceInsertCommand extends SpliceCommand {
         this.spliceImmediateFlag = z4;
         this.programSplicePts = j2;
         this.programSplicePlaybackPositionUs = j3;
-        this.componentSpliceList = Collections.unmodifiableList(list);
+        this.componentSpliceList = DesugarCollections.unmodifiableList(list);
         this.autoReturn = z5;
         this.breakDurationUs = j4;
         this.uniqueProgramId = i;
@@ -64,7 +65,7 @@ public final class SpliceInsertCommand extends SpliceCommand {
         for (int i = 0; i < readInt; i++) {
             arrayList.add(ComponentSplice.createFromParcel(parcel));
         }
-        this.componentSpliceList = Collections.unmodifiableList(arrayList);
+        this.componentSpliceList = DesugarCollections.unmodifiableList(arrayList);
         this.autoReturn = parcel.readByte() == 1;
         this.breakDurationUs = parcel.readLong();
         this.uniqueProgramId = parcel.readInt();

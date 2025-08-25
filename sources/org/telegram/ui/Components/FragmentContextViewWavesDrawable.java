@@ -167,11 +167,11 @@ public class FragmentContextViewWavesDrawable {
                             i2 = i;
                         }
                         if (i2 == 1 && z3) {
-                            this.paint.setAlpha(NotificationCenter.goingToPreviewTheme);
+                            this.paint.setAlpha(NotificationCenter.needCheckSystemBarColors);
                         } else if (i2 == 1) {
                             this.paint.setAlpha((int) (255.0f * f18));
                         } else {
-                            this.paint.setAlpha(NotificationCenter.goingToPreviewTheme);
+                            this.paint.setAlpha(NotificationCenter.needCheckSystemBarColors);
                         }
                         if (i2 == 1 && z3) {
                             this.path.reset();

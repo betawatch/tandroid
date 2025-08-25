@@ -2319,7 +2319,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
 
         /* JADX WARN: Code restructure failed: missing block: B:109:0x00db, code lost:
         
-            if (java.util.Objects.equals(r0, (r9 == null || (r9 = r9.transaction) == null) ? null : r9.replaceAll("^(.*?)(?:\\.\\.\\d*|)$", "$1")) != false) goto L45;
+            if (j$.util.Objects.equals(r0, (r9 == null || (r9 = r9.transaction) == null) ? null : r9.replaceAll("^(.*?)(?:\\.\\.\\d*|)$", "$1")) != false) goto L45;
          */
         /* JADX WARN: Code restructure failed: missing block: B:110:0x00e9, code lost:
         

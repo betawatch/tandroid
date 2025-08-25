@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-import java.util.Collections;
+import j$.util.DesugarCollections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -21,8 +21,8 @@ public final class zzgd {
         zzb(linkedHashMap, linkedHashMap2, Long.TYPE, Long.class);
         zzb(linkedHashMap, linkedHashMap2, Short.TYPE, Short.class);
         zzb(linkedHashMap, linkedHashMap2, Void.TYPE, Void.class);
-        zza = Collections.unmodifiableMap(linkedHashMap);
-        zzb = Collections.unmodifiableMap(linkedHashMap2);
+        zza = DesugarCollections.unmodifiableMap(linkedHashMap);
+        zzb = DesugarCollections.unmodifiableMap(linkedHashMap2);
     }
 
     private static void zzb(Map map, Map map2, Class cls, Class cls2) {

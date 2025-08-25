@@ -53,8 +53,6 @@ import androidx.core.graphics.drawable.IconCompat;
 import com.google.android.gms.cast.framework.media.internal.zzo$$ExternalSyntheticApiModelOutline2;
 import com.google.android.search.verification.client.SearchActionVerificationClientService$$ExternalSyntheticApiModelOutline2;
 import j$.util.Comparator$-CC;
-import j$.util.function.Consumer;
-import j$.util.function.ToLongFunction;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
@@ -68,6 +66,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
+import java.util.function.Consumer;
+import java.util.function.ToLongFunction;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.messenger.voip.VoIPGroupNotification;
@@ -1389,7 +1389,7 @@ public class NotificationsController extends BaseController {
                         z12 = true;
                     }
                     Collections.sort(this.storyPushMessages, Comparator$-CC.comparingLong(new ToLongFunction() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda25
-                        @Override // j$.util.function.ToLongFunction
+                        @Override // java.util.function.ToLongFunction
                         public final long applyAsLong(Object obj) {
                             long j11;
                             j11 = ((NotificationsController.StoryNotification) obj).date;
@@ -2194,7 +2194,7 @@ public class NotificationsController extends BaseController {
                 }
             }
             Collections.sort(this.storyPushMessages, Comparator$-CC.comparingLong(new ToLongFunction() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda33
-                @Override // j$.util.function.ToLongFunction
+                @Override // java.util.function.ToLongFunction
                 public final long applyAsLong(Object obj) {
                     long j15;
                     j15 = ((NotificationsController.StoryNotification) obj).date;
@@ -6760,20 +6760,20 @@ public class NotificationsController extends BaseController {
         this.channelGroupsCreated = true;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:101:0x05ee A[LOOP:1: B:99:0x05eb->B:101:0x05ee, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x0603  */
-    /* JADX WARN: Removed duplicated region for block: B:108:0x060f A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x0620 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:120:0x0638  */
-    /* JADX WARN: Removed duplicated region for block: B:146:0x0462  */
-    /* JADX WARN: Removed duplicated region for block: B:186:0x04df  */
-    /* JADX WARN: Removed duplicated region for block: B:207:0x052e  */
-    /* JADX WARN: Removed duplicated region for block: B:209:0x04d9  */
-    /* JADX WARN: Removed duplicated region for block: B:266:0x057e  */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x05f0 A[LOOP:1: B:99:0x05ed->B:101:0x05f0, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x0605  */
+    /* JADX WARN: Removed duplicated region for block: B:108:0x0611 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x0622 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:120:0x063a  */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x0464  */
+    /* JADX WARN: Removed duplicated region for block: B:186:0x04e1  */
+    /* JADX WARN: Removed duplicated region for block: B:207:0x0530  */
+    /* JADX WARN: Removed duplicated region for block: B:209:0x04db  */
+    /* JADX WARN: Removed duplicated region for block: B:266:0x0580  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x01d9  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x059e A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x064f  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x05dd A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x05a0 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0651  */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x05df A[ADDED_TO_REGION] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -12396,7 +12396,7 @@ public class NotificationsController extends BaseController {
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$loadTopicsNotificationsExceptions$50(Consumer consumer, HashSet hashSet) {
         if (consumer != null) {
-            consumer.r(hashSet);
+            consumer.p(hashSet);
         }
     }
 

@@ -1,40 +1,18 @@
 package j$.util.stream;
 
 /* loaded from: classes2.dex */
-abstract class H0 implements F0 {
-    protected final F0 a;
-    protected final F0 b;
-    private final long c;
+public interface H0 extends I0 {
+    @Override // j$.util.stream.I0
+    H0 b(int i);
 
-    @Override // j$.util.stream.F0
-    public final int p() {
-        return 2;
-    }
+    Object c(int i);
 
-    H0(F0 f0, F0 f02) {
-        this.a = f0;
-        this.b = f02;
-        this.c = f0.count() + f02.count();
-    }
+    Object d();
 
-    @Override // j$.util.stream.F0
-    public final F0 a(int i) {
-        if (i == 0) {
-            return this.a;
-        }
-        if (i == 1) {
-            return this.b;
-        }
-        throw new IndexOutOfBoundsException();
-    }
+    void e(Object obj);
 
-    @Override // j$.util.stream.F0
-    public final long count() {
-        return this.c;
-    }
+    void r(int i, Object obj);
 
-    @Override // j$.util.stream.F0
-    public /* bridge */ /* synthetic */ E0 a(int i) {
-        return (E0) a(i);
-    }
+    @Override // j$.util.stream.I0
+    j$.util.e0 spliterator();
 }

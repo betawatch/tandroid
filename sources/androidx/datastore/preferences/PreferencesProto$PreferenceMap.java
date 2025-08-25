@@ -6,8 +6,8 @@ import androidx.datastore.preferences.protobuf.MapFieldLite;
 import androidx.datastore.preferences.protobuf.MessageLiteOrBuilder;
 import androidx.datastore.preferences.protobuf.Parser;
 import androidx.datastore.preferences.protobuf.WireFormat;
+import j$.util.DesugarCollections;
 import java.io.InputStream;
-import java.util.Collections;
 import java.util.Map;
 
 /* loaded from: classes.dex */
@@ -36,7 +36,7 @@ public final class PreferencesProto$PreferenceMap extends GeneratedMessageLite i
     }
 
     public Map getPreferencesMap() {
-        return Collections.unmodifiableMap(internalGetPreferences());
+        return DesugarCollections.unmodifiableMap(internalGetPreferences());
     }
 
     /* JADX INFO: Access modifiers changed from: private */

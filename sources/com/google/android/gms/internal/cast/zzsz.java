@@ -50,15 +50,15 @@ final class zzsz extends zztc {
             int i2 = this.zze;
             int i3 = i2 + 1;
             this.zze = i3;
-            bArr[i2] = (byte) (i & NotificationCenter.goingToPreviewTheme);
+            bArr[i2] = (byte) (i & NotificationCenter.needCheckSystemBarColors);
             int i4 = i2 + 2;
             this.zze = i4;
-            bArr[i3] = (byte) ((i >> 8) & NotificationCenter.goingToPreviewTheme);
+            bArr[i3] = (byte) ((i >> 8) & NotificationCenter.needCheckSystemBarColors);
             int i5 = i2 + 3;
             this.zze = i5;
-            bArr[i4] = (byte) ((i >> 16) & NotificationCenter.goingToPreviewTheme);
+            bArr[i4] = (byte) ((i >> 16) & NotificationCenter.needCheckSystemBarColors);
             this.zze = i2 + 4;
-            bArr[i5] = (byte) ((i >> 24) & NotificationCenter.goingToPreviewTheme);
+            bArr[i5] = (byte) ((i >> 24) & NotificationCenter.needCheckSystemBarColors);
         } catch (IndexOutOfBoundsException e) {
             throw new zzta(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.zze), Integer.valueOf(this.zzd), 1), e);
         }
@@ -77,27 +77,27 @@ final class zzsz extends zztc {
             int i = this.zze;
             int i2 = i + 1;
             this.zze = i2;
-            bArr[i] = (byte) (((int) j) & NotificationCenter.goingToPreviewTheme);
+            bArr[i] = (byte) (((int) j) & NotificationCenter.needCheckSystemBarColors);
             int i3 = i + 2;
             this.zze = i3;
-            bArr[i2] = (byte) (((int) (j >> 8)) & NotificationCenter.goingToPreviewTheme);
+            bArr[i2] = (byte) (((int) (j >> 8)) & NotificationCenter.needCheckSystemBarColors);
             int i4 = i + 3;
             this.zze = i4;
-            bArr[i3] = (byte) (((int) (j >> 16)) & NotificationCenter.goingToPreviewTheme);
+            bArr[i3] = (byte) (((int) (j >> 16)) & NotificationCenter.needCheckSystemBarColors);
             int i5 = i + 4;
             this.zze = i5;
-            bArr[i4] = (byte) (((int) (j >> 24)) & NotificationCenter.goingToPreviewTheme);
+            bArr[i4] = (byte) (((int) (j >> 24)) & NotificationCenter.needCheckSystemBarColors);
             int i6 = i + 5;
             this.zze = i6;
-            bArr[i5] = (byte) (((int) (j >> 32)) & NotificationCenter.goingToPreviewTheme);
+            bArr[i5] = (byte) (((int) (j >> 32)) & NotificationCenter.needCheckSystemBarColors);
             int i7 = i + 6;
             this.zze = i7;
-            bArr[i6] = (byte) (((int) (j >> 40)) & NotificationCenter.goingToPreviewTheme);
+            bArr[i6] = (byte) (((int) (j >> 40)) & NotificationCenter.needCheckSystemBarColors);
             int i8 = i + 7;
             this.zze = i8;
-            bArr[i7] = (byte) (((int) (j >> 48)) & NotificationCenter.goingToPreviewTheme);
+            bArr[i7] = (byte) (((int) (j >> 48)) & NotificationCenter.needCheckSystemBarColors);
             this.zze = i + 8;
-            bArr[i8] = (byte) (((int) (j >> 56)) & NotificationCenter.goingToPreviewTheme);
+            bArr[i8] = (byte) (((int) (j >> 56)) & NotificationCenter.needCheckSystemBarColors);
         } catch (IndexOutOfBoundsException e) {
             throw new zzta(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.zze), Integer.valueOf(this.zzd), 1), e);
         }

@@ -358,7 +358,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
             int min = Math.min(2, (int) Math.ceil(f));
             BackupImageView backupImageView2 = this.mapPreview;
             TLRPC.GeoPoint geoPoint = this.geo;
-            backupImageView2.setImage(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(geoPoint.lat, geoPoint._long, 0L, min * i, min * NotificationCenter.wallpapersNeedReload, 15, min)), i + "_" + NotificationCenter.wallpapersNeedReload, this.mapLoadingDrawable, 0, (Object) null);
+            backupImageView2.setImage(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(geoPoint.lat, geoPoint._long, 0L, min * i, min * NotificationCenter.profileMusicUpdated, 15, min)), i + "_" + NotificationCenter.profileMusicUpdated, this.mapLoadingDrawable, 0, (Object) null);
             return;
         }
         backupImageView.setImageBitmap(null);

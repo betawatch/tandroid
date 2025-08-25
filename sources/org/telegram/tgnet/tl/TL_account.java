@@ -2106,12 +2106,13 @@ public class TL_account {
     }
 
     public static class webPagePreview extends TLObject {
-        public static final int constructor = -1254192351;
+        public static final int constructor = -1936029524;
         public TLRPC.MessageMedia media;
+        public ArrayList<TLRPC.Chat> chats = new ArrayList<>();
         public ArrayList<TLRPC.User> users = new ArrayList<>();
 
         public static webPagePreview TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
-            if (-1254192351 != i) {
+            if (-1936029524 != i) {
                 if (z) {
                     throw new RuntimeException(String.format("can't parse magic %x in webPagePreview", Integer.valueOf(i)));
                 }
@@ -2125,6 +2126,7 @@ public class TL_account {
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.media = TLRPC.MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -2132,6 +2134,7 @@ public class TL_account {
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
             this.media.serializeToStream(outputSerializedData);
+            Vector.serialize(outputSerializedData, this.chats);
             Vector.serialize(outputSerializedData, this.users);
         }
     }
@@ -4246,6 +4249,84 @@ public class TL_account {
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
             Vector.serialize(outputSerializedData, this.id);
+        }
+    }
+
+    public static class SavedMusicIds extends TLObject {
+        public ArrayList<Long> ids = new ArrayList<>();
+
+        public static SavedMusicIds TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
+            SavedMusicIds tL_savedMusicIds;
+            if (i != -1718786506) {
+                tL_savedMusicIds = i != 1338514798 ? null : new TL_savedMusicIdsNotModified();
+            } else {
+                tL_savedMusicIds = new TL_savedMusicIds();
+            }
+            if (tL_savedMusicIds == null && z) {
+                throw new RuntimeException(String.format("can't parse magic %x in SavedMusicIds", Integer.valueOf(i)));
+            }
+            if (tL_savedMusicIds != null) {
+                tL_savedMusicIds.readParams(inputSerializedData, z);
+            }
+            return tL_savedMusicIds;
+        }
+    }
+
+    public static class TL_savedMusicIds extends SavedMusicIds {
+        public static final int constructor = -1718786506;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            this.ids = Vector.deserializeLong(inputSerializedData, z);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            Vector.serializeLong(outputSerializedData, this.ids);
+        }
+    }
+
+    public static class TL_savedMusicIdsNotModified extends SavedMusicIds {
+        public static final int constructor = 1338514798;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+        }
+    }
+
+    public static class getSavedMusicIds extends TLObject {
+        public static final int constructor = -526557265;
+        public long hash;
+
+        @Override // org.telegram.tgnet.TLObject
+        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
+            return SavedMusicIds.TLdeserialize(inputSerializedData, i, z);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            outputSerializedData.writeInt64(this.hash);
+        }
+    }
+
+    public static class getSavedMusicByID extends TLObject {
+        public static final int constructor = 1970513129;
+        public ArrayList<TLRPC.InputDocument> documents = new ArrayList<>();
+        public TLRPC.InputUser id;
+
+        @Override // org.telegram.tgnet.TLObject
+        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
+            return TLRPC.SavedMusic.TLdeserialize(inputSerializedData, i, z);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            this.id.serializeToStream(outputSerializedData);
+            Vector.serialize(outputSerializedData, this.documents);
         }
     }
 }

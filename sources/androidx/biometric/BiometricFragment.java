@@ -208,7 +208,7 @@ public class BiometricFragment extends Fragment {
         } else {
             this.mViewModel.setNegativeButtonTextOverride(null);
         }
-        if (isManagingDeviceCredentialButton() && BiometricManager.from(activity).canAuthenticate(NotificationCenter.goingToPreviewTheme) != 0) {
+        if (isManagingDeviceCredentialButton() && BiometricManager.from(activity).canAuthenticate(NotificationCenter.needCheckSystemBarColors) != 0) {
             this.mViewModel.setAwaitingResult(true);
             launchConfirmCredentialActivity();
         } else if (this.mViewModel.isDelayingPrompt()) {

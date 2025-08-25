@@ -168,10 +168,10 @@ public class PhoneFormat {
             } else {
                 this.defaultCountry = Locale.getDefault().getCountry().toLowerCase();
             }
-            this.callingCodeOffsets = new HashMap(NotificationCenter.goingToPreviewTheme);
-            this.callingCodeCountries = new HashMap(NotificationCenter.goingToPreviewTheme);
+            this.callingCodeOffsets = new HashMap(NotificationCenter.needCheckSystemBarColors);
+            this.callingCodeCountries = new HashMap(NotificationCenter.needCheckSystemBarColors);
             this.callingCodeData = new HashMap(10);
-            this.countryCallingCode = new HashMap(NotificationCenter.goingToPreviewTheme);
+            this.countryCallingCode = new HashMap(NotificationCenter.needCheckSystemBarColors);
             parseDataHeader();
             this.initialzed = true;
         } catch (Exception e7) {

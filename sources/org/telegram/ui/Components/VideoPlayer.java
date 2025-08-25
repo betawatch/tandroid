@@ -1845,7 +1845,7 @@ public class VideoPlayer implements Player.Listener, VideoListener, AnalyticsLis
             if (Math.abs(min - 360) < 55) {
                 return 360;
             }
-            return Math.abs(min + (-240)) < 55 ? NotificationCenter.wallpapersNeedReload : Math.abs(min + (-144)) < 55 ? NotificationCenter.dialogsUnreadCounterChanged : min;
+            return Math.abs(min + (-240)) < 55 ? NotificationCenter.profileMusicUpdated : Math.abs(min + (-144)) < 55 ? NotificationCenter.dialogsUnreadCounterChanged : min;
         }
 
         public TLRPC.Document getDownloadDocument() {

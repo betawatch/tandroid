@@ -1,24 +1,27 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import j$.util.function.IntFunction;
-import java.util.Arrays;
-
 /* loaded from: classes2.dex */
-final class v2 extends z {
-    @Override // j$.util.stream.b
-    public final d2 w0(int i, d2 d2Var) {
-        d2Var.getClass();
-        return Q2.SORTED.i(i) ? d2Var : Q2.SIZED.i(i) ? new A2(d2Var) : new s2(d2Var);
-    }
+abstract /* synthetic */ class v2 {
+    static final /* synthetic */ int[] a;
 
-    @Override // j$.util.stream.b
-    public final F0 t0(b bVar, Spliterator spliterator, IntFunction intFunction) {
-        if (Q2.SORTED.i(bVar.p0())) {
-            return bVar.h0(spliterator, false, intFunction);
+    static {
+        int[] iArr = new int[b3.values().length];
+        a = iArr;
+        try {
+            iArr[b3.REFERENCE.ordinal()] = 1;
+        } catch (NoSuchFieldError unused) {
         }
-        double[] dArr = (double[]) ((z0) bVar.h0(spliterator, true, intFunction)).e();
-        Arrays.sort(dArr);
-        return new R0(dArr);
+        try {
+            a[b3.INT_VALUE.ordinal()] = 2;
+        } catch (NoSuchFieldError unused2) {
+        }
+        try {
+            a[b3.LONG_VALUE.ordinal()] = 3;
+        } catch (NoSuchFieldError unused3) {
+        }
+        try {
+            a[b3.DOUBLE_VALUE.ordinal()] = 4;
+        } catch (NoSuchFieldError unused4) {
+        }
     }
 }

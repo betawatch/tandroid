@@ -15,7 +15,7 @@ abstract class Atom {
     }
 
     public static int parseFullAtomVersion(int i) {
-        return (i >> 24) & NotificationCenter.goingToPreviewTheme;
+        return (i >> 24) & NotificationCenter.needCheckSystemBarColors;
     }
 
     public Atom(int i) {
@@ -84,6 +84,6 @@ abstract class Atom {
     }
 
     public static String getAtomTypeString(int i) {
-        return "" + ((char) ((i >> 24) & NotificationCenter.goingToPreviewTheme)) + ((char) ((i >> 16) & NotificationCenter.goingToPreviewTheme)) + ((char) ((i >> 8) & NotificationCenter.goingToPreviewTheme)) + ((char) (i & NotificationCenter.goingToPreviewTheme));
+        return "" + ((char) ((i >> 24) & NotificationCenter.needCheckSystemBarColors)) + ((char) ((i >> 16) & NotificationCenter.needCheckSystemBarColors)) + ((char) ((i >> 8) & NotificationCenter.needCheckSystemBarColors)) + ((char) (i & NotificationCenter.needCheckSystemBarColors));
     }
 }

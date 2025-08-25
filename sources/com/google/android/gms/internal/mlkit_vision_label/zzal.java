@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.mlkit_vision_label;
 
-import java.util.Objects;
+import j$.util.Objects;
 
 /* loaded from: classes.dex */
 abstract class zzal {

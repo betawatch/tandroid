@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
@@ -1216,12 +1217,15 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements I
 
     View findOneVisibleChild(int i, int i2, boolean z, boolean z2) {
         ensureLayoutState();
-        int i3 = z ? 24579 : 320;
-        int i4 = z2 ? 320 : 0;
-        if (this.mOrientation == 0) {
-            return this.mHorizontalBoundCheck.findOneViewWithinBoundFlags(i, i2, i3, i4);
+        int i3 = NotificationCenter.nearEarEvent;
+        int i4 = z ? 24579 : NotificationCenter.nearEarEvent;
+        if (!z2) {
+            i3 = 0;
         }
-        return this.mVerticalBoundCheck.findOneViewWithinBoundFlags(i, i2, i3, i4);
+        if (this.mOrientation == 0) {
+            return this.mHorizontalBoundCheck.findOneViewWithinBoundFlags(i, i2, i4, i3);
+        }
+        return this.mVerticalBoundCheck.findOneViewWithinBoundFlags(i, i2, i4, i3);
     }
 
     View findOnePartiallyOrCompletelyInvisibleChild(int i, int i2) {

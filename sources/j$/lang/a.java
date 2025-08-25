@@ -1,6 +1,6 @@
 package j$.lang;
 
-import j$.util.function.Consumer;
+import java.util.function.Consumer;
 
 /* loaded from: classes2.dex */
 public interface a {

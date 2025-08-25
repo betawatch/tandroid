@@ -25,8 +25,8 @@ import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.internal.cast.zzed;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
+import j$.util.DesugarCollections;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -72,7 +72,7 @@ public final class zzbt extends GoogleApi implements zzr {
         this.zza = new zzbs(this);
         this.zzn = new Object();
         this.zzo = new Object();
-        this.zzy = Collections.synchronizedList(new ArrayList());
+        this.zzy = DesugarCollections.synchronizedList(new ArrayList());
         Preconditions.checkNotNull(context, "context cannot be null");
         Preconditions.checkNotNull(castOptions, "CastOptions cannot be null");
         this.zzx = castOptions.zzb;

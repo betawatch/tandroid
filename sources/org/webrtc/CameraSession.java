@@ -46,7 +46,7 @@ interface CameraSession {
             if (rotation != 3) {
                 return 0;
             }
-            return NotificationCenter.messagePlayingSpeedChanged;
+            return NotificationCenter.notificationsCountUpdated;
         }
 
         public static VideoFrame.TextureBuffer createTextureBufferWithModifiedTransformMatrix(TextureBufferImpl textureBufferImpl, boolean z, int i) {

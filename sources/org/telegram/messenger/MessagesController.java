@@ -26,8 +26,9 @@ import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
 import androidx.core.util.Consumer;
+import j$.util.Objects;
 import j$.util.concurrent.ConcurrentHashMap;
-import j$.util.function.Consumer;
+import j$.util.function.Consumer$-CC;
 import java.io.File;
 import java.util.AbstractMap;
 import java.util.ArrayList;
@@ -40,7 +41,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -492,6 +492,7 @@ public class MessagesController extends BaseController implements NotificationCe
     public int savedGifsLimitDefault;
     public int savedGifsLimitPremium;
     public SavedMessagesController savedMessagesController;
+    private SavedMusicIds savedMusicIds;
     public boolean savedViewAsChats;
     public int secretWebpagePreview;
     public DialogFilter[] selectedDialogFilter;
@@ -1267,16 +1268,15 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     public void markAllTopicsAsRead(final long j) {
-        getMessagesStorage().loadTopics(j, new j$.util.function.Consumer() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda192
-            @Override // j$.util.function.Consumer
+        getMessagesStorage().loadTopics(j, new java.util.function.Consumer() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda192
+            @Override // java.util.function.Consumer
             /* renamed from: accept */
-            public final void r(Object obj) {
+            public final void p(Object obj) {
                 MessagesController.this.lambda$markAllTopicsAsRead$9(j, (ArrayList) obj);
             }
 
-            @Override // j$.util.function.Consumer
-            public /* synthetic */ j$.util.function.Consumer andThen(j$.util.function.Consumer consumer) {
-                return Consumer.-CC.$default$andThen(this, consumer);
+            public /* synthetic */ java.util.function.Consumer andThen(java.util.function.Consumer consumer) {
+                return Consumer$-CC.$default$andThen(this, consumer);
             }
         });
     }
@@ -2113,7 +2113,7 @@ public class MessagesController extends BaseController implements NotificationCe
         this.giveawayBoostsPerPremium = this.mainPreferences.getLong("giveaway_boosts_per_premium", 4L);
         this.boostsPerSentGift = this.mainPreferences.getLong("boosts_per_sent_gift", 3L);
         this.giveawayPeriodMax = this.mainPreferences.getLong("giveaway_period_max", 7L);
-        this.stealthModePast = this.mainPreferences.getInt("stories_stealth_past_period", NotificationCenter.permissionsGranted);
+        this.stealthModePast = this.mainPreferences.getInt("stories_stealth_past_period", NotificationCenter.premiumStickersPreviewLoaded);
         this.stealthModeCooldown = this.mainPreferences.getInt("stories_stealth_cooldown_period", 3600);
         boolean z = ConnectionsManager.native_isTestBackend(this.currentAccount) != 0;
         this.chatlistInvitesLimitDefault = this.mainPreferences.getInt("chatlistInvitesLimitDefault", 3);
@@ -2124,7 +2124,7 @@ public class MessagesController extends BaseController implements NotificationCe
         this.storiesSuggestedReactionsLimitPremium = this.mainPreferences.getInt("storiesSuggestedReactionsLimitPremium", 5);
         this.storiesSentWeeklyLimitPremium = this.mainPreferences.getInt("storiesSentWeeklyLimitPremium", 70);
         this.storiesSentMonthlyLimitDefault = this.mainPreferences.getInt("storiesSentMonthlyLimitDefault", 30);
-        this.storiesSentMonthlyLimitPremium = this.mainPreferences.getInt("storiesSentMonthlyLimitPremium", NotificationCenter.permissionsGranted);
+        this.storiesSentMonthlyLimitPremium = this.mainPreferences.getInt("storiesSentMonthlyLimitPremium", NotificationCenter.premiumStickersPreviewLoaded);
         this.channelBgIconLevelMin = this.mainPreferences.getInt("channelBgIconLevelMin", 1);
         this.channelProfileIconLevelMin = this.mainPreferences.getInt("channelProfileIconLevelMin", 1);
         this.channelEmojiStatusLevelMin = this.mainPreferences.getInt("channelEmojiStatusLevelMin", 1);
@@ -2141,8 +2141,8 @@ public class MessagesController extends BaseController implements NotificationCe
         this.chatlistInvitesLimitPremium = this.mainPreferences.getInt("chatlistInvitesLimitPremium", z ? 5 : 20);
         this.chatlistJoinedLimitDefault = this.mainPreferences.getInt("chatlistJoinedLimitDefault", 2);
         this.chatlistJoinedLimitPremium = this.mainPreferences.getInt("chatlistJoinedLimitPremium", z ? 5 : 20);
-        this.stargiftsMessageLengthMax = this.mainPreferences.getInt("stargiftsMessageLengthMax", NotificationCenter.goingToPreviewTheme);
-        this.stargiftsConvertPeriodMax = this.mainPreferences.getInt("stargiftsConvertPeriodMax", z ? NotificationCenter.permissionsGranted : 7776000);
+        this.stargiftsMessageLengthMax = this.mainPreferences.getInt("stargiftsMessageLengthMax", NotificationCenter.needCheckSystemBarColors);
+        this.stargiftsConvertPeriodMax = this.mainPreferences.getInt("stargiftsConvertPeriodMax", z ? NotificationCenter.premiumStickersPreviewLoaded : 7776000);
         this.videoIgnoreAltDocuments = this.mainPreferences.getBoolean("videoIgnoreAltDocuments", false);
         this.disableBotFullscreenBlur = this.mainPreferences.getBoolean("disableBotFullscreenBlur", false);
         this.tonBlockchainExplorerUrl = this.mainPreferences.getString("tonBlockchainExplorerUrl", "https://tonviewer.com/");
@@ -2173,7 +2173,7 @@ public class MessagesController extends BaseController implements NotificationCe
         int i4 = this.mainPreferences.getInt("transcribeAudioTrialWeeklyNumber", BuildVars.DEBUG_PRIVATE_VERSION ? 2 : 0);
         this.transcribeAudioTrialWeeklyNumber = i4;
         this.transcribeAudioTrialCurrentNumber = this.mainPreferences.getInt("transcribeAudioTrialCurrentNumber", i4);
-        this.transcribeAudioTrialDurationMax = this.mainPreferences.getInt("transcribeAudioTrialDurationMax", NotificationCenter.permissionsGranted);
+        this.transcribeAudioTrialDurationMax = this.mainPreferences.getInt("transcribeAudioTrialDurationMax", NotificationCenter.premiumStickersPreviewLoaded);
         this.transcribeAudioTrialCooldownUntil = this.mainPreferences.getInt("transcribeAudioTrialCooldownUntil", 0);
         this.recommendedChannelsLimitDefault = this.mainPreferences.getInt("recommendedChannelsLimitDefault", 10);
         this.recommendedChannelsLimitPremium = this.mainPreferences.getInt("recommendedChannelsLimitPremium", 100);
@@ -3205,7 +3205,7 @@ public class MessagesController extends BaseController implements NotificationCe
     public void addFilter(DialogFilter dialogFilter, boolean z) {
         if (z) {
             int size = this.dialogFilters.size();
-            int i = NotificationCenter.needSetDayNightTheme;
+            int i = NotificationCenter.themeAccentListUpdated;
             for (int i2 = 0; i2 < size; i2++) {
                 i = Math.min(i, this.dialogFilters.get(i2).order);
             }
@@ -12593,7 +12593,7 @@ public class MessagesController extends BaseController implements NotificationCe
         ArrayList<TLRPC.WallPaper> arrayList = new ArrayList<>();
         arrayList.add(wallPaper);
         getMessagesStorage().putWallpapers(arrayList, 2);
-        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(wallPaper.document.thumbs, 320);
+        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(wallPaper.document.thumbs, NotificationCenter.nearEarEvent);
         if (closestPhotoSizeWithSize != null) {
             ImageLoader.getInstance().replaceImageInCache(Utilities.MD5(file.getAbsolutePath()) + "@100_100", closestPhotoSizeWithSize.location.volume_id + "_" + closestPhotoSizeWithSize.location.local_id + "@100_100", ImageLocation.getForDocument(closestPhotoSizeWithSize, wallPaper.document), false);
         }
@@ -19337,10 +19337,10 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:11:0x002b  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x009e  */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x002f  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x00a2  */
     /* JADX WARN: Removed duplicated region for block: B:20:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0052  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0056  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -19354,6 +19354,7 @@ public class MessagesController extends BaseController implements NotificationCe
         if (tLObject instanceof TL_account.webPagePreview) {
             TL_account.webPagePreview webpagepreview = (TL_account.webPagePreview) tLObject;
             putUsers(webpagepreview.users, false);
+            putChats(webpagepreview.chats, false);
             TLRPC.MessageMedia messageMedia = webpagepreview.media;
             if (messageMedia instanceof TLRPC.TL_messageMediaWebPage) {
                 tL_messageMediaWebPage = (TLRPC.TL_messageMediaWebPage) messageMedia;
@@ -19393,11 +19394,11 @@ public class MessagesController extends BaseController implements NotificationCe
 
     /* JADX WARN: Code restructure failed: missing block: B:165:0x054e, code lost:
     
-        if (org.telegram.messenger.MessageObject.getMedia(r0).bytes[0] >= 211) goto L216;
+        if (org.telegram.messenger.MessageObject.getMedia(r0).bytes[0] >= 213) goto L216;
      */
     /* JADX WARN: Code restructure failed: missing block: B:170:0x0566, code lost:
     
-        if (org.telegram.messenger.Utilities.bytesToInt(org.telegram.messenger.MessageObject.getMedia(r0).bytes) < 211) goto L222;
+        if (org.telegram.messenger.Utilities.bytesToInt(org.telegram.messenger.MessageObject.getMedia(r0).bytes) < 213) goto L222;
      */
     /* JADX WARN: Code restructure failed: missing block: B:290:0x0206, code lost:
     
@@ -19717,7 +19718,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     messageObject.scheduled = i11 == 1;
                     arrayList.add(messageObject);
                     if (z) {
-                        if (message4.legacy && message4.layer < 211) {
+                        if (message4.legacy && message4.layer < 213) {
                             arrayList2.add(Integer.valueOf(message4.id));
                         } else if ((MessageObject.getMedia(message4) instanceof TLRPC.TL_messageMediaUnsupported) && MessageObject.getMedia(message4).bytes != null) {
                             if (MessageObject.getMedia(message4).bytes.length != 0) {
@@ -22672,7 +22673,7 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:150:0x03cf  */
+    /* JADX WARN: Removed duplicated region for block: B:150:0x03d0  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -24374,7 +24375,7 @@ public class MessagesController extends BaseController implements NotificationCe
         addUserToChat(j, user, i, str, baseFragment, false, runnable, null);
     }
 
-    public void addUsersToChat(final TLRPC.Chat chat, BaseFragment baseFragment, ArrayList<TLRPC.User> arrayList, int i, final androidx.core.util.Consumer consumer, final androidx.core.util.Consumer consumer2, final Runnable runnable) {
+    public void addUsersToChat(final TLRPC.Chat chat, BaseFragment baseFragment, ArrayList<TLRPC.User> arrayList, int i, final Consumer consumer, final Consumer consumer2, final Runnable runnable) {
         final int size = arrayList.size();
         final int[] iArr = {0};
         final TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers = new TLRPC.TL_messages_invitedUsers();
@@ -24385,13 +24386,13 @@ public class MessagesController extends BaseController implements NotificationCe
             addUserToChat(j, user, i, null, baseFragment, false, new Runnable() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda464
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MessagesController.lambda$addUsersToChat$271(androidx.core.util.Consumer.this, user);
+                    MessagesController.lambda$addUsersToChat$271(Consumer.this, user);
                 }
             }, new ErrorDelegate() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda465
                 @Override // org.telegram.messenger.MessagesController.ErrorDelegate
                 public final boolean run(TLRPC.TL_error tL_error) {
                     boolean lambda$addUsersToChat$272;
-                    lambda$addUsersToChat$272 = MessagesController.lambda$addUsersToChat$272(androidx.core.util.Consumer.this, user, tL_error);
+                    lambda$addUsersToChat$272 = MessagesController.lambda$addUsersToChat$272(Consumer.this, user, tL_error);
                     return lambda$addUsersToChat$272;
                 }
             }, new Utilities.Callback() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda466
@@ -24405,14 +24406,14 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$addUsersToChat$271(androidx.core.util.Consumer consumer, TLRPC.User user) {
+    public static /* synthetic */ void lambda$addUsersToChat$271(Consumer consumer, TLRPC.User user) {
         if (consumer != null) {
             consumer.accept(user);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$addUsersToChat$272(androidx.core.util.Consumer consumer, TLRPC.User user, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ boolean lambda$addUsersToChat$272(Consumer consumer, TLRPC.User user, TLRPC.TL_error tL_error) {
         if (consumer != null) {
             consumer.accept(user);
         }
@@ -25554,7 +25555,7 @@ public class MessagesController extends BaseController implements NotificationCe
         startShortPoll(chat, i, z, null);
     }
 
-    public void startShortPoll(final TLRPC.Chat chat, final int i, final boolean z, final androidx.core.util.Consumer consumer) {
+    public void startShortPoll(final TLRPC.Chat chat, final int i, final boolean z, final Consumer consumer) {
         if (chat == null) {
             return;
         }
@@ -25567,7 +25568,7 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$startShortPoll$307(TLRPC.Chat chat, boolean z, int i, final androidx.core.util.Consumer consumer) {
+    public /* synthetic */ void lambda$startShortPoll$307(TLRPC.Chat chat, boolean z, int i, final Consumer consumer) {
         ArrayList arrayList = (ArrayList) this.needShortPollChannels.get(chat.id);
         ArrayList arrayList2 = (ArrayList) this.needShortPollOnlines.get(chat.id);
         if (z) {
@@ -25601,7 +25602,7 @@ public class MessagesController extends BaseController implements NotificationCe
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda344
                     @Override // java.lang.Runnable
                     public final void run() {
-                        MessagesController.lambda$startShortPoll$305(androidx.core.util.Consumer.this);
+                        MessagesController.lambda$startShortPoll$305(Consumer.this);
                     }
                 });
             }
@@ -25610,7 +25611,7 @@ public class MessagesController extends BaseController implements NotificationCe
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda345
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MessagesController.lambda$startShortPoll$306(androidx.core.util.Consumer.this);
+                    MessagesController.lambda$startShortPoll$306(Consumer.this);
                 }
             });
         }
@@ -25630,12 +25631,12 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$startShortPoll$305(androidx.core.util.Consumer consumer) {
+    public static /* synthetic */ void lambda$startShortPoll$305(Consumer consumer) {
         consumer.accept(Boolean.TRUE);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$startShortPoll$306(androidx.core.util.Consumer consumer) {
+    public static /* synthetic */ void lambda$startShortPoll$306(Consumer consumer) {
         consumer.accept(Boolean.FALSE);
     }
 
@@ -31185,15 +31186,15 @@ public class MessagesController extends BaseController implements NotificationCe
         if (r4.getCallState() == 0) goto L525;
      */
     /* JADX WARN: Removed duplicated region for block: B:293:0x0697  */
-    /* JADX WARN: Removed duplicated region for block: B:569:0x0c95  */
-    /* JADX WARN: Removed duplicated region for block: B:878:0x14bb  */
-    /* JADX WARN: Removed duplicated region for block: B:884:0x14d6  */
-    /* JADX WARN: Removed duplicated region for block: B:953:0x1601  */
-    /* JADX WARN: Removed duplicated region for block: B:955:0x160f  */
-    /* JADX WARN: Removed duplicated region for block: B:957:0x1615  */
-    /* JADX WARN: Removed duplicated region for block: B:960:0x1621  */
-    /* JADX WARN: Removed duplicated region for block: B:969:0x165d  */
-    /* JADX WARN: Removed duplicated region for block: B:972:0x1673  */
+    /* JADX WARN: Removed duplicated region for block: B:569:0x0c96  */
+    /* JADX WARN: Removed duplicated region for block: B:878:0x14bc  */
+    /* JADX WARN: Removed duplicated region for block: B:884:0x14d7  */
+    /* JADX WARN: Removed duplicated region for block: B:953:0x1602  */
+    /* JADX WARN: Removed duplicated region for block: B:955:0x1610  */
+    /* JADX WARN: Removed duplicated region for block: B:957:0x1616  */
+    /* JADX WARN: Removed duplicated region for block: B:960:0x1622  */
+    /* JADX WARN: Removed duplicated region for block: B:969:0x165e  */
+    /* JADX WARN: Removed duplicated region for block: B:972:0x1674  */
     /* JADX WARN: Removed duplicated region for block: B:975:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -37275,6 +37276,229 @@ public class MessagesController extends BaseController implements NotificationCe
         this.sendingSuggestedMessageApprovalMap.remove(j + "_" + i);
         if (tL_error == null && tLObject != null) {
             processUpdates((TLRPC.Updates) tLObject, false);
+        }
+    }
+
+    public static class SavedMusicList {
+        public final int currentAccount;
+        public final long dialogId;
+        public boolean endReached;
+        public final ArrayList<MessageObject> list = new ArrayList<>();
+        public boolean loading;
+        public int totalCount;
+
+        public SavedMusicList(int i, long j) {
+            this.currentAccount = i;
+            this.dialogId = j;
+        }
+
+        public void setup(TLRPC.Document document) {
+            this.list.clear();
+            load();
+            this.list.add(0, toMessageObject(document));
+        }
+
+        public MessageObject toMessageObject(TLRPC.Document document) {
+            TLRPC.TL_message tL_message = new TLRPC.TL_message();
+            tL_message.id = SharedConfig.getLastLocalId();
+            tL_message.peer_id = MessagesController.getInstance(this.currentAccount).getPeer(this.dialogId);
+            tL_message.from_id = MessagesController.getInstance(this.currentAccount).getPeer(this.dialogId);
+            TLRPC.TL_messageMediaDocument tL_messageMediaDocument = new TLRPC.TL_messageMediaDocument();
+            tL_message.media = tL_messageMediaDocument;
+            tL_messageMediaDocument.document = document;
+            MessageObject messageObject = new MessageObject(this.currentAccount, tL_message, false, false);
+            messageObject.checkMediaExistance();
+            return messageObject;
+        }
+
+        public void load() {
+            if (this.loading || this.endReached) {
+                return;
+            }
+            this.loading = true;
+            TLRPC.TL_getSavedMusic tL_getSavedMusic = new TLRPC.TL_getSavedMusic();
+            tL_getSavedMusic.id = MessagesController.getInstance(this.currentAccount).getInputUser(this.dialogId);
+            tL_getSavedMusic.offset = this.list.size();
+            tL_getSavedMusic.limit = 30;
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_getSavedMusic, new RequestDelegate() { // from class: org.telegram.messenger.MessagesController$SavedMusicList$$ExternalSyntheticLambda0
+                @Override // org.telegram.tgnet.RequestDelegate
+                public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                    MessagesController.SavedMusicList.this.lambda$load$1(tLObject, tL_error);
+                }
+            });
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$load$1(final TLObject tLObject, TLRPC.TL_error tL_error) {
+            final ArrayList arrayList = new ArrayList();
+            if (tLObject instanceof TLRPC.TL_savedMusic) {
+                Iterator<TLRPC.Document> it = ((TLRPC.TL_savedMusic) tLObject).documents.iterator();
+                while (it.hasNext()) {
+                    arrayList.add(toMessageObject(it.next()));
+                }
+            }
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MessagesController$SavedMusicList$$ExternalSyntheticLambda1
+                @Override // java.lang.Runnable
+                public final void run() {
+                    MessagesController.SavedMusicList.this.lambda$load$0(tLObject, arrayList);
+                }
+            });
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$load$0(TLObject tLObject, ArrayList arrayList) {
+            if (tLObject instanceof TLRPC.TL_savedMusic) {
+                TLRPC.TL_savedMusic tL_savedMusic = (TLRPC.TL_savedMusic) tLObject;
+                if (this.totalCount <= 0 && this.list.size() == 1) {
+                    if (this.list.get(0).getDocument() != null && !arrayList.isEmpty() && ((MessageObject) arrayList.get(0)).getDocument() != null && this.list.get(0).getDocument().id == ((MessageObject) arrayList.get(0)).getDocument().id) {
+                        arrayList.remove(0);
+                    } else {
+                        this.list.clear();
+                    }
+                }
+                this.totalCount = tL_savedMusic.count;
+                this.list.addAll(arrayList);
+                this.endReached = this.list.size() >= this.totalCount;
+            }
+            this.loading = false;
+            NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.musicListLoaded, this);
+        }
+
+        public TLRPC.Document getFirstDocument() {
+            MessageObject messageObject;
+            if (this.list.isEmpty() || (messageObject = this.list.get(0)) == null) {
+                return null;
+            }
+            return messageObject.getDocument();
+        }
+
+        public void remove(MessageObject messageObject) {
+            TLRPC.Document firstDocument = getFirstDocument();
+            this.list.remove(messageObject);
+            if (getFirstDocument() != firstDocument) {
+                updateFirstMusic();
+            }
+        }
+
+        public void move(int i, int i2) {
+            TLRPC.Document firstDocument = getFirstDocument();
+            MessageObject messageObject = this.list.get(i2);
+            MessageObject messageObject2 = this.list.get(i);
+            this.list.set(i, messageObject);
+            this.list.set(i2, messageObject2);
+            if (getFirstDocument() != firstDocument) {
+                updateFirstMusic();
+            }
+            MessageObject messageObject3 = i2 == 0 ? null : this.list.get(i2 - 1);
+            TLRPC.Document document = messageObject2.getDocument();
+            TLRPC.Document document2 = messageObject3 == null ? null : messageObject3.getDocument();
+            TLRPC.TL_account_saveMusic tL_account_saveMusic = new TLRPC.TL_account_saveMusic();
+            if (document == null) {
+                return;
+            }
+            TLRPC.TL_inputDocument tL_inputDocument = new TLRPC.TL_inputDocument();
+            tL_account_saveMusic.id = tL_inputDocument;
+            tL_inputDocument.id = document.id;
+            tL_inputDocument.access_hash = document.access_hash;
+            byte[] bArr = document.file_reference;
+            tL_inputDocument.file_reference = bArr;
+            if (bArr == null) {
+                tL_inputDocument.file_reference = new byte[0];
+            }
+            if (document2 != null) {
+                tL_account_saveMusic.flags |= 2;
+                TLRPC.TL_inputDocument tL_inputDocument2 = new TLRPC.TL_inputDocument();
+                tL_account_saveMusic.after_id = tL_inputDocument2;
+                tL_inputDocument2.id = document2.id;
+                tL_inputDocument2.access_hash = document2.access_hash;
+                byte[] bArr2 = document2.file_reference;
+                tL_inputDocument2.file_reference = bArr2;
+                if (bArr2 == null) {
+                    tL_inputDocument2.file_reference = new byte[0];
+                }
+            }
+            tL_account_saveMusic.unsave = false;
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_account_saveMusic, null);
+        }
+
+        public void updateFirstMusic() {
+            TLRPC.Document firstDocument = getFirstDocument();
+            TLRPC.UserFull userFull = MessagesController.getInstance(this.currentAccount).getUserFull(this.dialogId);
+            if (userFull == null) {
+                return;
+            }
+            if (firstDocument == null) {
+                userFull.flags2 &= -2097153;
+                userFull.saved_music = null;
+            } else {
+                userFull.flags2 |= TLObject.FLAG_21;
+                userFull.saved_music = firstDocument;
+            }
+            MessagesStorage.getInstance(this.currentAccount).updateUserInfo(userFull, false);
+            UserConfig.getInstance(this.currentAccount).saveConfig(true);
+            NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.profileMusicUpdated, Long.valueOf(this.dialogId));
+        }
+    }
+
+    public SavedMusicIds getSavedMusicIds() {
+        if (this.savedMusicIds == null) {
+            this.savedMusicIds = new SavedMusicIds(this.currentAccount);
+        }
+        return this.savedMusicIds;
+    }
+
+    public static class SavedMusicIds {
+        public final int currentAccount;
+        public final HashSet<Long> ids = new HashSet<>();
+        public boolean loaded;
+        public boolean loading;
+
+        public SavedMusicIds(int i) {
+            this.currentAccount = i;
+            load();
+        }
+
+        public void load() {
+            if (this.loading || this.loaded) {
+                return;
+            }
+            this.loading = true;
+            TL_account.getSavedMusicIds getsavedmusicids = new TL_account.getSavedMusicIds();
+            getsavedmusicids.hash = 0L;
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(getsavedmusicids, new RequestDelegate() { // from class: org.telegram.messenger.MessagesController$SavedMusicIds$$ExternalSyntheticLambda0
+                @Override // org.telegram.tgnet.RequestDelegate
+                public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                    MessagesController.SavedMusicIds.this.lambda$load$1(tLObject, tL_error);
+                }
+            });
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$load$1(final TLObject tLObject, TLRPC.TL_error tL_error) {
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MessagesController$SavedMusicIds$$ExternalSyntheticLambda1
+                @Override // java.lang.Runnable
+                public final void run() {
+                    MessagesController.SavedMusicIds.this.lambda$load$0(tLObject);
+                }
+            });
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$load$0(TLObject tLObject) {
+            this.loading = false;
+            this.loaded = true;
+            if (tLObject instanceof TL_account.TL_savedMusicIds) {
+                this.ids.addAll(((TL_account.TL_savedMusicIds) tLObject).ids);
+            }
+            NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.musicIdsLoaded, new Object[0]);
+        }
+
+        public void update(long j, boolean z) {
+            if (z) {
+                this.ids.add(Long.valueOf(j));
+            } else {
+                this.ids.remove(Long.valueOf(j));
+            }
         }
     }
 }

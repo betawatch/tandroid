@@ -1,48 +1,59 @@
 package j$.util.stream;
 
+import j$.util.Objects;
+import java.util.function.LongConsumer;
+
 /* loaded from: classes2.dex */
-final class f0 extends h0 {
-    @Override // j$.util.stream.b, j$.util.stream.BaseStream
-    public final /* bridge */ /* synthetic */ LongStream parallel() {
-        parallel();
-        return this;
+final class f0 extends h2 {
+    boolean b;
+    b0 c;
+    final /* synthetic */ g0 d;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    f0(g0 g0Var, m2 m2Var) {
+        super(m2Var);
+        this.d = g0Var;
+        m2 m2Var2 = this.a;
+        Objects.requireNonNull(m2Var2);
+        this.c = new b0(m2Var2);
     }
 
-    @Override // j$.util.stream.b, j$.util.stream.BaseStream
-    public final /* bridge */ /* synthetic */ LongStream sequential() {
-        sequential();
-        return this;
+    @Override // j$.util.stream.h2, j$.util.stream.m2
+    public final void l(long j) {
+        this.a.l(-1L);
     }
 
-    @Override // j$.util.stream.b
-    final boolean v0() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // j$.util.stream.b
-    final d2 w0(int i, d2 d2Var) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // j$.util.stream.h0, j$.util.stream.LongStream
-    public final void c(j$.util.function.Y y) {
-        j$.util.J E0;
-        if (!isParallel()) {
-            E0 = h0.E0(y0());
-            E0.e(y);
-        } else {
-            super.c(y);
+    @Override // j$.util.stream.l2, j$.util.stream.m2
+    public final void accept(long j) {
+        LongStream longStream = (LongStream) ((a) this.d.n).apply(j);
+        if (longStream != null) {
+            try {
+                boolean z = this.b;
+                b0 b0Var = this.c;
+                if (!z) {
+                    longStream.sequential().forEach(b0Var);
+                } else {
+                    j$.util.b0 spliterator = longStream.sequential().spliterator();
+                    while (!this.a.n() && spliterator.tryAdvance((LongConsumer) b0Var)) {
+                    }
+                }
+            } catch (Throwable th) {
+                try {
+                    longStream.close();
+                } catch (Throwable th2) {
+                    th.addSuppressed(th2);
+                }
+                throw th;
+            }
+        }
+        if (longStream != null) {
+            longStream.close();
         }
     }
 
-    @Override // j$.util.stream.h0, j$.util.stream.LongStream
-    public final void T(j$.util.function.Y y) {
-        j$.util.J E0;
-        if (!isParallel()) {
-            E0 = h0.E0(y0());
-            E0.e(y);
-        } else {
-            super.T(y);
-        }
+    @Override // j$.util.stream.h2, j$.util.stream.m2
+    public final boolean n() {
+        this.b = true;
+        return this.a.n();
     }
 }

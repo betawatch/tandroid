@@ -1,22 +1,17 @@
 package j$.util.concurrent;
 
-import j$.util.A;
-import j$.util.J;
-import j$.util.function.Consumer;
-import j$.util.function.Y;
+import j$.util.S;
+import j$.util.Y;
 import java.util.Comparator;
+import java.util.function.Consumer;
+import java.util.function.IntConsumer;
 
 /* loaded from: classes2.dex */
-final class z implements J {
+final class z implements Y {
     long a;
     final long b;
-    final long c;
-    final long d;
-
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ void a(Consumer consumer) {
-        A.h(this, consumer);
-    }
+    final int c;
+    final int d;
 
     @Override // j$.util.Spliterator
     public final int characteristics() {
@@ -24,18 +19,23 @@ final class z implements J {
     }
 
     @Override // j$.util.Spliterator
+    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
+        S.b(this, consumer);
+    }
+
+    @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
-        return A.j(this);
+        return S.d(this);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return A.k(this, i);
+        return S.e(this, i);
     }
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean s(Consumer consumer) {
-        return A.n(this, consumer);
+    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
+        return S.g(this, consumer);
     }
 
     @Override // j$.util.Spliterator
@@ -43,15 +43,15 @@ final class z implements J {
         throw new IllegalStateException();
     }
 
-    z(long j, long j2, long j3, long j4) {
+    z(long j, long j2, int i, int i2) {
         this.a = j;
         this.b = j2;
-        this.c = j3;
-        this.d = j4;
+        this.c = i;
+        this.d = i2;
     }
 
-    @Override // j$.util.Spliterator
-    /* renamed from: b, reason: merged with bridge method [inline-methods] */
+    @Override // j$.util.e0, j$.util.Spliterator
+    /* renamed from: a, reason: merged with bridge method [inline-methods] */
     public final z trySplit() {
         long j = this.a;
         long j2 = (this.b + j) >>> 1;
@@ -67,30 +67,28 @@ final class z implements J {
         return this.b - this.a;
     }
 
-    @Override // j$.util.M
-    /* renamed from: i, reason: merged with bridge method [inline-methods] */
-    public final boolean p(Y y) {
-        y.getClass();
+    @Override // j$.util.e0
+    public final boolean tryAdvance(IntConsumer intConsumer) {
+        intConsumer.getClass();
         long j = this.a;
         if (j >= this.b) {
             return false;
         }
-        y.accept(ThreadLocalRandom.current().e(this.c, this.d));
+        intConsumer.accept(ThreadLocalRandom.current().d(this.c, this.d));
         this.a = j + 1;
         return true;
     }
 
-    @Override // j$.util.M
-    /* renamed from: d, reason: merged with bridge method [inline-methods] */
-    public final void e(Y y) {
-        y.getClass();
+    @Override // j$.util.e0
+    public final void forEachRemaining(IntConsumer intConsumer) {
+        intConsumer.getClass();
         long j = this.a;
         long j2 = this.b;
         if (j < j2) {
             this.a = j2;
             ThreadLocalRandom current = ThreadLocalRandom.current();
             do {
-                y.accept(current.e(this.c, this.d));
+                intConsumer.accept(current.d(this.c, this.d));
                 j++;
             } while (j < j2);
         }

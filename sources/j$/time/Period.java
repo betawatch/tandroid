@@ -1,24 +1,26 @@
 package j$.time;
 
+import java.io.InvalidObjectException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutput;
 import java.io.Serializable;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.regex.Pattern;
 
 /* loaded from: classes2.dex */
 public final class Period implements Serializable {
     public static final Period d = new Period(0, 0, 0);
+    private static final long serialVersionUID = -3587258372562876L;
     private final int a;
     private final int b;
     private final int c;
 
     static {
         Pattern.compile("([-+]?)P(?:([-+]?[0-9]+)Y)?(?:([-+]?[0-9]+)M)?(?:([-+]?[0-9]+)W)?(?:([-+]?[0-9]+)D)?", 2);
-        Collections.unmodifiableList(Arrays.asList(j$.time.temporal.b.YEARS, j$.time.temporal.b.MONTHS, j$.time.temporal.b.DAYS));
+        j$.com.android.tools.r8.a.h(new Object[]{j$.time.temporal.b.YEARS, j$.time.temporal.b.MONTHS, j$.time.temporal.b.DAYS});
     }
 
     public static Period between(LocalDate localDate, LocalDate localDate2) {
-        return localDate.y(localDate2);
+        return localDate.S(localDate2);
     }
 
     public static Period a(int i, int i2, int i3) {
@@ -74,5 +76,19 @@ public final class Period implements Serializable {
             sb.append('D');
         }
         return sb.toString();
+    }
+
+    private Object writeReplace() {
+        return new q((byte) 14, this);
+    }
+
+    private void readObject(ObjectInputStream objectInputStream) {
+        throw new InvalidObjectException("Deserialization via serialization delegate");
+    }
+
+    final void writeExternal(ObjectOutput objectOutput) {
+        objectOutput.writeInt(this.a);
+        objectOutput.writeInt(this.b);
+        objectOutput.writeInt(this.c);
     }
 }

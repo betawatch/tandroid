@@ -932,7 +932,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
         ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(imageViewInvertable, (Property<FlashViews.ImageViewInvertable, Float>) property, z ? 1.0f : 0.0f);
         ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(this.flashButton, (Property<FlashViews.ImageViewInvertable, Float>) property, z ? 1.0f : 0.0f);
         ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(this.muteImageView, (Property<ImageView, Float>) property, 0.0f);
-        ObjectAnimator ofInt = ObjectAnimator.ofInt(this.paint, (Property<Paint, Integer>) AnimationProperties.PAINT_ALPHA, z ? NotificationCenter.goingToPreviewTheme : 0);
+        ObjectAnimator ofInt = ObjectAnimator.ofInt(this.paint, (Property<Paint, Integer>) AnimationProperties.PAINT_ALPHA, z ? NotificationCenter.needCheckSystemBarColors : 0);
         ObjectAnimator ofFloat5 = ObjectAnimator.ofFloat(this.cameraContainer, (Property<InstantViewCameraContainer, Float>) property, z ? 1.0f : 0.0f);
         InstantViewCameraContainer instantViewCameraContainer = this.cameraContainer;
         Property property2 = View.SCALE_X;
@@ -1330,7 +1330,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
             if (Build.MANUFACTURER.equalsIgnoreCase("Xiaomi")) {
                 return CameraController.chooseOptimalSize(arrayList, 640, 480, this.aspectRatio, false);
             }
-            return CameraController.chooseOptimalSize(arrayList, 480, NotificationCenter.messagePlayingSpeedChanged, this.aspectRatio, false);
+            return CameraController.chooseOptimalSize(arrayList, 480, NotificationCenter.notificationsCountUpdated, this.aspectRatio, false);
         }
         Collections.sort(arrayList2, new Comparator() { // from class: org.telegram.ui.Components.InstantCameraView$$ExternalSyntheticLambda1
             @Override // java.util.Comparator

@@ -1,7 +1,7 @@
 package j$.time.format;
 
 /* loaded from: classes2.dex */
-final class i implements f {
+class i implements f {
     static final long[] f = {0, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000, 10000000000L};
     final Enum a;
     final int b;
@@ -10,8 +10,8 @@ final class i implements f {
     final int e;
 
     /* JADX WARN: Multi-variable type inference failed */
-    i(j$.time.temporal.l lVar, int i, int i2, x xVar) {
-        this.a = (Enum) lVar;
+    i(j$.time.temporal.r rVar, int i, int i2, x xVar) {
+        this.a = (Enum) rVar;
         this.b = i;
         this.c = i2;
         this.d = xVar;
@@ -19,29 +19,29 @@ final class i implements f {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    protected i(j$.time.temporal.l lVar, int i, int i2, x xVar, int i3) {
-        this.a = (Enum) lVar;
+    protected i(j$.time.temporal.r rVar, int i, int i2, x xVar, int i3) {
+        this.a = (Enum) rVar;
         this.b = i;
         this.c = i2;
         this.d = xVar;
         this.e = i3;
     }
 
-    /* JADX WARN: Type inference failed for: r3v0, types: [j$.time.temporal.l, java.lang.Enum] */
-    final i b() {
+    /* JADX WARN: Type inference failed for: r3v0, types: [j$.time.temporal.r, java.lang.Enum] */
+    i b() {
         return this.e == -1 ? this : new i(this.a, this.b, this.c, this.d, -1);
     }
 
-    /* JADX WARN: Type inference failed for: r1v0, types: [j$.time.temporal.l, java.lang.Enum] */
-    final i c(int i) {
+    /* JADX WARN: Type inference failed for: r1v0, types: [j$.time.temporal.r, java.lang.Enum] */
+    i c(int i) {
         int i2 = this.e + i;
         return new i(this.a, this.b, this.c, this.d, i2);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r0v0, types: [j$.time.temporal.l, java.lang.Enum, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r0v0, types: [j$.time.temporal.r, java.lang.Enum, java.lang.Object] */
     @Override // j$.time.format.f
-    public final boolean f(r rVar, StringBuilder sb) {
+    public boolean i(r rVar, StringBuilder sb) {
         ?? r0 = this.a;
         Long e = rVar.e(r0);
         if (e == null) {
@@ -82,10 +82,10 @@ final class i implements f {
         return true;
     }
 
-    public final String toString() {
+    public String toString() {
         Enum r0 = this.a;
-        x xVar = this.d;
         int i = this.c;
+        x xVar = this.d;
         int i2 = this.b;
         if (i2 == 1 && i == 19 && xVar == x.NORMAL) {
             return "Value(" + r0 + ")";

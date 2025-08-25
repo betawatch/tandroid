@@ -71,9 +71,9 @@ public class GroupCallStatusIcon {
         if (nextInt < 32) {
             i = 0;
         } else {
-            i = NotificationCenter.wallpapersNeedReload;
+            i = NotificationCenter.profileMusicUpdated;
             if (nextInt < 64) {
-                i2 = NotificationCenter.wallpapersNeedReload;
+                i2 = NotificationCenter.profileMusicUpdated;
                 i = 120;
             } else {
                 i2 = 420;

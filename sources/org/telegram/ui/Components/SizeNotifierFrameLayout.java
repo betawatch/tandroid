@@ -267,7 +267,7 @@ public class SizeNotifierFrameLayout extends FrameLayout {
                     if (i == 1 && SizeNotifierFrameLayout.this.oldBackgroundDrawable != null && SizeNotifierFrameLayout.this.parentLayout != null) {
                         drawable.setAlpha((int) (SizeNotifierFrameLayout.this.themeAnimationValue * 255.0f));
                     } else {
-                        drawable.setAlpha(NotificationCenter.goingToPreviewTheme);
+                        drawable.setAlpha(NotificationCenter.needCheckSystemBarColors);
                     }
                     if (i == 0 ? SizeNotifierFrameLayout.this.oldBackgroundMotion : SizeNotifierFrameLayout.this.backgroundMotion) {
                         f = SizeNotifierFrameLayout.this.parallaxScale;
@@ -427,7 +427,7 @@ public class SizeNotifierFrameLayout extends FrameLayout {
             if (this.parallaxEffect == null) {
                 WallpaperParallaxEffect wallpaperParallaxEffect = new WallpaperParallaxEffect(getContext());
                 this.parallaxEffect = wallpaperParallaxEffect;
-                wallpaperParallaxEffect.setCallback(new WallpaperParallaxEffect.Callback() { // from class: org.telegram.ui.Components.SizeNotifierFrameLayout$$ExternalSyntheticLambda6
+                wallpaperParallaxEffect.setCallback(new WallpaperParallaxEffect.Callback() { // from class: org.telegram.ui.Components.SizeNotifierFrameLayout$$ExternalSyntheticLambda3
                     @Override // org.telegram.ui.Components.WallpaperParallaxEffect.Callback
                     public final void onOffsetsChanged(int i, int i2, float f) {
                         SizeNotifierFrameLayout.this.lambda$checkMotion$0(i, i2, f);
@@ -535,7 +535,7 @@ public class SizeNotifierFrameLayout extends FrameLayout {
         this.keyboardHeight = measureKeyboardHeight();
         android.graphics.Point point = AndroidUtilities.displaySize;
         final boolean z = point.x > point.y;
-        post(new Runnable() { // from class: org.telegram.ui.Components.SizeNotifierFrameLayout$$ExternalSyntheticLambda5
+        post(new Runnable() { // from class: org.telegram.ui.Components.SizeNotifierFrameLayout$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
                 SizeNotifierFrameLayout.this.lambda$notifyHeightChanged$1(z);
@@ -973,7 +973,7 @@ public class SizeNotifierFrameLayout extends FrameLayout {
         }
         Iterator it2 = this.views.iterator();
         while (it2.hasNext()) {
-            ((IViewWithInvalidateCallback) it2.next()).listenInvalidate(new Runnable() { // from class: org.telegram.ui.Components.SizeNotifierFrameLayout$$ExternalSyntheticLambda7
+            ((IViewWithInvalidateCallback) it2.next()).listenInvalidate(new Runnable() { // from class: org.telegram.ui.Components.SizeNotifierFrameLayout$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
                     SizeNotifierFrameLayout.this.updateBlurContent();
@@ -1097,7 +1097,7 @@ public class SizeNotifierFrameLayout extends FrameLayout {
             return;
         }
         updateBlurShaderPosition(f, z);
-        paint.setAlpha(NotificationCenter.goingToPreviewTheme);
+        paint.setAlpha(NotificationCenter.needCheckSystemBarColors);
         if (this.blurCrossfadeProgress != 1.0f && this.selectedBlurPaint2.getShader() != null) {
             canvas.drawRect(rect, paint);
             canvas.drawRect(rect, this.selectedBlurPaint2);
@@ -1120,7 +1120,7 @@ public class SizeNotifierFrameLayout extends FrameLayout {
             return;
         }
         updateBlurShaderPosition(f, z);
-        paint.setAlpha(NotificationCenter.goingToPreviewTheme);
+        paint.setAlpha(NotificationCenter.needCheckSystemBarColors);
         if (this.blurCrossfadeProgress != 1.0f && this.selectedBlurPaint2.getShader() != null) {
             canvas.drawCircle(f2, f3, f4, paint);
             canvas.drawCircle(f2, f3, f4, this.selectedBlurPaint2);

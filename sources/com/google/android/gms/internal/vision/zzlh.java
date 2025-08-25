@@ -1,5 +1,6 @@
 package com.google.android.gms.internal.vision;
 
+import j$.util.DesugarCollections;
 import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -40,13 +41,13 @@ abstract class zzlh extends AbstractMap {
         if (this.zzc.isEmpty()) {
             unmodifiableMap = Collections.emptyMap();
         } else {
-            unmodifiableMap = Collections.unmodifiableMap(this.zzc);
+            unmodifiableMap = DesugarCollections.unmodifiableMap(this.zzc);
         }
         this.zzc = unmodifiableMap;
         if (this.zzf.isEmpty()) {
             unmodifiableMap2 = Collections.emptyMap();
         } else {
-            unmodifiableMap2 = Collections.unmodifiableMap(this.zzf);
+            unmodifiableMap2 = DesugarCollections.unmodifiableMap(this.zzf);
         }
         this.zzf = unmodifiableMap2;
         this.zzd = true;

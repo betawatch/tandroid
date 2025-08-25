@@ -16,15 +16,16 @@ import com.google.android.gms.internal.play_billing.zzjz;
 import com.google.android.gms.internal.play_billing.zzkd;
 import com.google.android.gms.internal.play_billing.zzr;
 import com.google.android.gms.internal.play_billing.zzv;
-import j$.util.function.Consumer;
+import j$.util.Objects;
+import j$.util.function.Consumer$-CC;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import java.util.function.Consumer;
 
 /* loaded from: classes.dex */
 final class zzcc extends BillingClientImpl {
@@ -159,15 +160,13 @@ final class zzcc extends BillingClientImpl {
     @Override // com.android.billingclient.api.BillingClientImpl, com.android.billingclient.api.BillingClient
     public final void consumeAsync(final ConsumeParams consumeParams, final ConsumeResponseListener consumeResponseListener) {
         zzaU(4, new Consumer() { // from class: com.android.billingclient.api.zzbq
-            @Override // j$.util.function.Consumer
-            /* renamed from: accept */
-            public final void r(Object obj) {
+            @Override // java.util.function.Consumer
+            public final void accept(Object obj) {
                 ConsumeResponseListener.this.onConsumeResponse((BillingResult) obj, consumeParams.getPurchaseToken());
             }
 
-            @Override // j$.util.function.Consumer
             public /* synthetic */ Consumer andThen(Consumer consumer) {
-                return Consumer.-CC.$default$andThen(this, consumer);
+                return Consumer$-CC.$default$andThen(this, consumer);
             }
         }, new Runnable() { // from class: com.android.billingclient.api.zzbr
             @Override // java.lang.Runnable
@@ -180,15 +179,13 @@ final class zzcc extends BillingClientImpl {
     @Override // com.android.billingclient.api.BillingClientImpl, com.android.billingclient.api.BillingClient
     public final BillingResult launchBillingFlow(final Activity activity, final BillingFlowParams billingFlowParams) {
         Consumer consumer = new Consumer() { // from class: com.android.billingclient.api.zzbx
-            @Override // j$.util.function.Consumer
-            /* renamed from: accept */
-            public final void r(Object obj) {
+            @Override // java.util.function.Consumer
+            public final void accept(Object obj) {
                 zzcc.this.zzaC((BillingResult) obj);
             }
 
-            @Override // j$.util.function.Consumer
             public /* synthetic */ Consumer andThen(Consumer consumer2) {
-                return Consumer.-CC.$default$andThen(this, consumer2);
+                return Consumer$-CC.$default$andThen(this, consumer2);
             }
         };
         Callable callable = new Callable() { // from class: com.android.billingclient.api.zzbo
@@ -200,7 +197,7 @@ final class zzcc extends BillingClientImpl {
         int zzaL = zzaL(zzaR(2));
         if (zzaP(zzaL)) {
             BillingResult zzaQ = zzaQ(2, zzaL);
-            consumer.r(zzaQ);
+            consumer.accept(zzaQ);
             return zzaQ;
         }
         try {
@@ -216,16 +213,14 @@ final class zzcc extends BillingClientImpl {
     @Override // com.android.billingclient.api.BillingClientImpl, com.android.billingclient.api.BillingClient
     public final void queryProductDetailsAsync(final QueryProductDetailsParams queryProductDetailsParams, final ProductDetailsResponseListener productDetailsResponseListener) {
         zzaU(7, new Consumer() { // from class: com.android.billingclient.api.zzbn
-            @Override // j$.util.function.Consumer
-            /* renamed from: accept */
-            public final void r(Object obj) {
+            @Override // java.util.function.Consumer
+            public final void accept(Object obj) {
                 ArrayList arrayList = new ArrayList();
                 ProductDetailsResponseListener.this.onProductDetailsResponse((BillingResult) obj, arrayList);
             }
 
-            @Override // j$.util.function.Consumer
             public /* synthetic */ Consumer andThen(Consumer consumer) {
-                return Consumer.-CC.$default$andThen(this, consumer);
+                return Consumer$-CC.$default$andThen(this, consumer);
             }
         }, new Runnable() { // from class: com.android.billingclient.api.zzbp
             @Override // java.lang.Runnable

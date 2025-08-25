@@ -297,7 +297,7 @@ public class CameraSession {
                     } else if (i3 == 2) {
                         i = NotificationCenter.suggestedFiltersLoaded;
                     } else if (i3 == 3) {
-                        i = NotificationCenter.messagePlayingSpeedChanged;
+                        i = NotificationCenter.notificationsCountUpdated;
                     }
                     cameraInfo = this.info;
                     if (cameraInfo.orientation % 90 != 0) {
@@ -506,13 +506,13 @@ public class CameraSession {
             } else if (rotation == 2) {
                 i = NotificationCenter.suggestedFiltersLoaded;
             } else if (rotation == 3) {
-                i = NotificationCenter.messagePlayingSpeedChanged;
+                i = NotificationCenter.notificationsCountUpdated;
             }
         }
         if (cameraInfo.facing == 1) {
             int i2 = (360 - ((cameraInfo.orientation + i) % 360)) % 360;
             if (!z && i2 == 90) {
-                i2 = NotificationCenter.messagePlayingSpeedChanged;
+                i2 = NotificationCenter.notificationsCountUpdated;
             }
             if (!z && "Huawei".equals(Build.MANUFACTURER) && "angler".equals(Build.PRODUCT) && i2 == 270) {
                 return 90;

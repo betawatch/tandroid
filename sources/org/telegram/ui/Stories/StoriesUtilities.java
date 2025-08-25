@@ -19,10 +19,10 @@ import android.view.ViewParent;
 import android.widget.TextView;
 import androidx.core.graphics.ColorUtils;
 import androidx.recyclerview.widget.RecyclerView;
+import j$.util.Objects;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
@@ -477,7 +477,7 @@ public abstract class StoriesUtilities {
                             paint6.getStrokeWidth();
                             paint6.setAlpha((int) ((1.0f - avatarStoryParams.progressToSegments) * 255.0f));
                             drawSegment(canvas, rectF, paint6, f5, f6, avatarStoryParams, z);
-                            paint6.setAlpha(NotificationCenter.goingToPreviewTheme);
+                            paint6.setAlpha(NotificationCenter.needCheckSystemBarColors);
                         }
                         i3 = i4 + 1;
                         max = i5;
@@ -497,7 +497,7 @@ public abstract class StoriesUtilities {
                 paint6.setAlpha((int) ((1.0f - f7) * 255.0f));
                 drawSegment(canvas, rectF2, paint6, -90.0f, 90.0f, avatarStoryParams, z);
                 drawSegment(canvas, rectF2, paint6, 90.0f, 270.0f, avatarStoryParams, z);
-                paint6.setAlpha(NotificationCenter.goingToPreviewTheme);
+                paint6.setAlpha(NotificationCenter.needCheckSystemBarColors);
                 return;
             }
             size = peerStories.stories.size();

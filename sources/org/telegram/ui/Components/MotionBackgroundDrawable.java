@@ -127,7 +127,7 @@ public class MotionBackgroundDrawable extends Drawable {
         this.patternBounds = new android.graphics.Rect();
         this.patternAlpha = 1.0f;
         this.backgroundAlpha = 1.0f;
-        this.alpha = NotificationCenter.goingToPreviewTheme;
+        this.alpha = NotificationCenter.needCheckSystemBarColors;
         this.indeterminateSpeedScale = 1.0f;
         this.bitmapWidth = 60;
         this.bitmapHeight = 80;
@@ -162,7 +162,7 @@ public class MotionBackgroundDrawable extends Drawable {
         this.patternBounds = new android.graphics.Rect();
         this.patternAlpha = 1.0f;
         this.backgroundAlpha = 1.0f;
-        this.alpha = NotificationCenter.goingToPreviewTheme;
+        this.alpha = NotificationCenter.needCheckSystemBarColors;
         this.indeterminateSpeedScale = 1.0f;
         this.bitmapWidth = 60;
         this.bitmapHeight = 80;
@@ -676,7 +676,7 @@ public class MotionBackgroundDrawable extends Drawable {
                             if (this.invalidateLegacy) {
                                 this.rect.set(0.0f, 0.0f, r1.getWidth(), this.legacyBitmap.getHeight());
                                 int alpha = this.paint.getAlpha();
-                                this.paint.setAlpha(NotificationCenter.goingToPreviewTheme);
+                                this.paint.setAlpha(NotificationCenter.needCheckSystemBarColors);
                                 this.legacyCanvas.drawBitmap(this.currentBitmap, (android.graphics.Rect) null, this.rect, this.paint);
                                 this.paint.setAlpha(alpha);
                                 float width4 = this.patternBitmap.getWidth();
@@ -811,7 +811,7 @@ public class MotionBackgroundDrawable extends Drawable {
                             if (this.invalidateLegacy) {
                                 this.rect.set(0.0f, 0.0f, r3.getWidth(), this.legacyBitmap.getHeight());
                                 int alpha = this.paint.getAlpha();
-                                this.paint.setAlpha(NotificationCenter.goingToPreviewTheme);
+                                this.paint.setAlpha(NotificationCenter.needCheckSystemBarColors);
                                 this.legacyCanvas.drawBitmap(this.currentBitmap, (android.graphics.Rect) null, this.rect, this.paint);
                                 this.paint.setAlpha(alpha);
                                 float width4 = this.patternBitmap.getWidth();

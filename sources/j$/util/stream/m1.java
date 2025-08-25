@@ -1,50 +1,153 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
+import java.util.ArrayDeque;
+import java.util.Comparator;
 
 /* loaded from: classes2.dex */
-final class m1 extends q1 implements a2 {
-    private final double[] h;
+abstract class m1 implements Spliterator {
+    I0 a;
+    int b;
+    Spliterator c;
+    Spliterator d;
+    ArrayDeque e;
 
-    @Override // j$.util.function.Consumer
-    /* renamed from: accept */
-    public final /* bridge */ /* synthetic */ void r(Object obj) {
-        r((Double) obj);
+    @Override // j$.util.Spliterator
+    public final int characteristics() {
+        return 64;
     }
 
-    @Override // j$.util.function.l
-    public final /* synthetic */ j$.util.function.l k(j$.util.function.l lVar) {
-        return j$.com.android.tools.r8.a.a(this, lVar);
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ long getExactSizeIfKnown() {
+        return j$.util.S.d(this);
     }
 
-    @Override // j$.util.stream.a2
-    public final /* synthetic */ void r(Double d) {
-        t0.e(this, d);
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean hasCharacteristics(int i) {
+        return j$.util.S.e(this, i);
     }
 
-    m1(Spliterator spliterator, b bVar, double[] dArr) {
-        super(spliterator, bVar, dArr.length);
-        this.h = dArr;
+    @Override // j$.util.Spliterator
+    public final Comparator getComparator() {
+        throw new IllegalStateException();
     }
 
-    m1(m1 m1Var, Spliterator spliterator, long j, long j2) {
-        super(m1Var, spliterator, j, j2, m1Var.h.length);
-        this.h = m1Var.h;
+    m1(I0 i0) {
+        this.a = i0;
     }
 
-    @Override // j$.util.stream.q1
-    final q1 a(Spliterator spliterator, long j, long j2) {
-        return new m1(this, spliterator, j, j2);
-    }
-
-    @Override // j$.util.stream.q1, j$.util.stream.d2, j$.util.function.l
-    public final void accept(double d) {
-        int i = this.f;
-        if (i >= this.g) {
-            throw new IndexOutOfBoundsException(Integer.toString(this.f));
+    protected final ArrayDeque b() {
+        ArrayDeque arrayDeque = new ArrayDeque(8);
+        int q = this.a.q();
+        while (true) {
+            q--;
+            if (q < this.b) {
+                return arrayDeque;
+            }
+            arrayDeque.addFirst(this.a.b(q));
         }
-        double[] dArr = this.h;
-        this.f = i + 1;
-        dArr[i] = d;
+    }
+
+    protected static I0 a(ArrayDeque arrayDeque) {
+        while (true) {
+            I0 i0 = (I0) arrayDeque.pollFirst();
+            if (i0 == null) {
+                return null;
+            }
+            if (i0.q() != 0) {
+                for (int q = i0.q() - 1; q >= 0; q--) {
+                    arrayDeque.addFirst(i0.b(q));
+                }
+            } else if (i0.count() > 0) {
+                return i0;
+            }
+        }
+    }
+
+    protected final boolean c() {
+        if (this.a == null) {
+            return false;
+        }
+        if (this.d != null) {
+            return true;
+        }
+        Spliterator spliterator = this.c;
+        if (spliterator == null) {
+            ArrayDeque b = b();
+            this.e = b;
+            I0 a = a(b);
+            if (a != null) {
+                this.d = a.spliterator();
+                return true;
+            }
+            this.a = null;
+            return false;
+        }
+        this.d = spliterator;
+        return true;
+    }
+
+    @Override // j$.util.Spliterator
+    public final Spliterator trySplit() {
+        I0 i0 = this.a;
+        if (i0 == null || this.d != null) {
+            return null;
+        }
+        Spliterator spliterator = this.c;
+        if (spliterator != null) {
+            return spliterator.trySplit();
+        }
+        if (this.b < i0.q() - 1) {
+            I0 i02 = this.a;
+            int i = this.b;
+            this.b = i + 1;
+            return i02.b(i).spliterator();
+        }
+        I0 b = this.a.b(this.b);
+        this.a = b;
+        if (b.q() == 0) {
+            Spliterator spliterator2 = this.a.spliterator();
+            this.c = spliterator2;
+            return spliterator2.trySplit();
+        }
+        I0 i03 = this.a;
+        this.b = 1;
+        return i03.b(0).spliterator();
+    }
+
+    @Override // j$.util.Spliterator
+    public final long estimateSize() {
+        long j = 0;
+        if (this.a == null) {
+            return 0L;
+        }
+        Spliterator spliterator = this.c;
+        if (spliterator != null) {
+            return spliterator.estimateSize();
+        }
+        for (int i = this.b; i < this.a.q(); i++) {
+            j += this.a.b(i).count();
+        }
+        return j;
+    }
+
+    @Override // j$.util.Spliterator
+    public /* bridge */ /* synthetic */ j$.util.e0 trySplit() {
+        return (j$.util.e0) trySplit();
+    }
+
+    @Override // j$.util.Spliterator
+    public /* bridge */ /* synthetic */ j$.util.Y trySplit() {
+        return (j$.util.Y) trySplit();
+    }
+
+    @Override // j$.util.Spliterator
+    public /* bridge */ /* synthetic */ j$.util.b0 trySplit() {
+        return (j$.util.b0) trySplit();
+    }
+
+    @Override // j$.util.Spliterator
+    public /* bridge */ /* synthetic */ j$.util.V trySplit() {
+        return (j$.util.V) trySplit();
     }
 }

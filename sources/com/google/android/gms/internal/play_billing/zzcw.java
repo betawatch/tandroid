@@ -3,8 +3,6 @@ package com.google.android.gms.internal.play_billing;
 import j$.util.SortedSet;
 import java.util.Comparator;
 import java.util.NavigableSet;
-import java.util.SequencedCollection;
-import java.util.SequencedSet;
 
 /* loaded from: classes.dex */
 public abstract class zzcw extends zzcv implements NavigableSet, zzdu, SortedSet {
@@ -78,18 +76,6 @@ public abstract class zzcw extends zzcv implements NavigableSet, zzdu, SortedSet
 
     public final Object removeLast() {
         throw new UnsupportedOperationException();
-    }
-
-    public /* bridge */ /* synthetic */ SequencedCollection reversed() {
-        return NavigableSet.-CC.$default$reversed(this);
-    }
-
-    public /* bridge */ /* synthetic */ SequencedSet reversed() {
-        return NavigableSet.-CC.$default$reversed(this);
-    }
-
-    public /* bridge */ /* synthetic */ java.util.SortedSet reversed() {
-        return NavigableSet.-CC.$default$reversed(this);
     }
 
     @Override // java.util.NavigableSet, java.util.SortedSet

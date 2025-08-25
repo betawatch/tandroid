@@ -1,61 +1,19 @@
 package j$.util.stream;
 
-import j$.util.function.Consumer;
-
 /* loaded from: classes2.dex */
-public abstract class X1 implements b2 {
-    protected final d2 a;
-
-    @Override // j$.util.stream.d2, j$.util.function.l
-    public final /* synthetic */ void accept(double d) {
-        t0.b();
-        throw null;
+final class X1 extends Y1 {
+    @Override // j$.util.stream.T1, java.util.function.Supplier
+    public final Object get() {
+        return Long.valueOf(this.b);
     }
 
-    @Override // j$.util.stream.d2
-    public final /* synthetic */ void accept(long j) {
-        t0.l();
-        throw null;
+    @Override // j$.util.stream.S1
+    public final void g(S1 s1) {
+        this.b += ((Y1) s1).b;
     }
 
-    @Override // j$.util.function.Consumer
-    /* renamed from: accept */
-    public final /* bridge */ /* synthetic */ void r(Object obj) {
-        o((Integer) obj);
-    }
-
-    @Override // j$.util.function.Consumer
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer.-CC.$default$andThen(this, consumer);
-    }
-
-    @Override // j$.util.function.G
-    public final /* synthetic */ j$.util.function.G l(j$.util.function.G g) {
-        return j$.com.android.tools.r8.a.b(this, g);
-    }
-
-    @Override // j$.util.stream.b2
-    public final /* synthetic */ void o(Integer num) {
-        t0.g(this, num);
-    }
-
-    public X1(d2 d2Var) {
-        d2Var.getClass();
-        this.a = d2Var;
-    }
-
-    @Override // j$.util.stream.d2
-    public void n(long j) {
-        this.a.n(j);
-    }
-
-    @Override // j$.util.stream.d2
-    public void m() {
-        this.a.m();
-    }
-
-    @Override // j$.util.stream.d2
-    public boolean q() {
-        return this.a.q();
+    @Override // java.util.function.Consumer
+    public final void accept(Object obj) {
+        this.b++;
     }
 }

@@ -7,9 +7,9 @@ import androidx.core.util.Consumer;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleEventObserver;
 import androidx.lifecycle.LifecycleOwner;
+import j$.util.Objects;
 import java.util.ArrayDeque;
 import java.util.Iterator;
-import java.util.Objects;
 
 /* loaded from: classes.dex */
 public final class OnBackPressedDispatcher {

@@ -178,7 +178,7 @@ abstract class zzwj {
         long j2 = (-4) & j;
         int i = zzwiVar.zza.getInt(obj, j2);
         int i2 = ((~((int) j)) & 3) << 3;
-        zzwiVar.zza.putInt(obj, j2, ((255 & b) << i2) | (i & (~(NotificationCenter.goingToPreviewTheme << i2))));
+        zzwiVar.zza.putInt(obj, j2, ((255 & b) << i2) | (i & (~(NotificationCenter.needCheckSystemBarColors << i2))));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -186,7 +186,7 @@ abstract class zzwj {
         zzwi zzwiVar = zzf;
         long j2 = (-4) & j;
         int i = (((int) j) & 3) << 3;
-        zzwiVar.zza.putInt(obj, j2, ((255 & b) << i) | (zzwiVar.zza.getInt(obj, j2) & (~(NotificationCenter.goingToPreviewTheme << i))));
+        zzwiVar.zza.putInt(obj, j2, ((255 & b) << i) | (zzwiVar.zza.getInt(obj, j2) & (~(NotificationCenter.needCheckSystemBarColors << i))));
     }
 
     static double zza(Object obj, long j) {
@@ -258,11 +258,11 @@ abstract class zzwj {
     }
 
     static /* bridge */ /* synthetic */ boolean zzt(Object obj, long j) {
-        return ((byte) ((zzf.zza.getInt(obj, (-4) & j) >>> ((int) (((~j) & 3) << 3))) & NotificationCenter.goingToPreviewTheme)) != 0;
+        return ((byte) ((zzf.zza.getInt(obj, (-4) & j) >>> ((int) (((~j) & 3) << 3))) & NotificationCenter.needCheckSystemBarColors)) != 0;
     }
 
     static /* bridge */ /* synthetic */ boolean zzu(Object obj, long j) {
-        return ((byte) ((zzf.zza.getInt(obj, (-4) & j) >>> ((int) ((j & 3) << 3))) & NotificationCenter.goingToPreviewTheme)) != 0;
+        return ((byte) ((zzf.zza.getInt(obj, (-4) & j) >>> ((int) ((j & 3) << 3))) & NotificationCenter.needCheckSystemBarColors)) != 0;
     }
 
     /* JADX WARN: Multi-variable type inference failed */

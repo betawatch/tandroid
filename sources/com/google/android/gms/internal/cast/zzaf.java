@@ -3,14 +3,14 @@ package com.google.android.gms.internal.cast;
 import com.google.android.gms.cast.internal.Logger;
 import com.google.android.gms.dynamic.IObjectWrapper;
 import com.google.android.gms.dynamic.ObjectWrapper;
-import java.util.Collections;
+import j$.util.DesugarCollections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
 /* loaded from: classes.dex */
 public final class zzaf extends com.google.android.gms.cast.framework.zzad {
-    public final Set zza = Collections.synchronizedSet(new HashSet());
+    public final Set zza = DesugarCollections.synchronizedSet(new HashSet());
     private int zzd = zzb;
     private static final Logger zzc = new Logger("AppVisibilityProxy");
     static final int zzb = 1;

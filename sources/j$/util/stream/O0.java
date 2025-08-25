@@ -1,38 +1,31 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import j$.util.function.Consumer;
-import j$.util.function.IntFunction;
+import j$.util.stream.IntStream;
+import java.util.function.IntFunction;
+import java.util.function.LongFunction;
 
 /* loaded from: classes2.dex */
-final class O0 extends P0 implements D0 {
-    @Override // j$.util.stream.F0
-    public final /* synthetic */ void forEach(Consumer consumer) {
-        t0.s(this, consumer);
+public final /* synthetic */ class O0 implements LongFunction, IntFunction {
+    public IntFunction a;
+
+    @Override // java.util.function.IntFunction
+    public Object apply(int i) {
+        Object apply = this.a.apply(i);
+        if (apply == null) {
+            return null;
+        }
+        if (apply instanceof IntStream) {
+            return IntStream.Wrapper.convert((IntStream) apply);
+        }
+        if (apply instanceof java.util.stream.IntStream) {
+            return IntStream.VivifiedWrapper.convert((java.util.stream.IntStream) apply);
+        }
+        j$.util.f.a("java.util.stream.IntStream", apply.getClass());
+        throw null;
     }
 
-    @Override // j$.util.stream.F0
-    public final /* synthetic */ F0 t(long j, long j2, IntFunction intFunction) {
-        return t0.v(this, j, j2);
-    }
-
-    @Override // j$.util.stream.F0
-    public final /* synthetic */ void i(Object[] objArr, int i) {
-        t0.p(this, (Long[]) objArr, i);
-    }
-
-    @Override // j$.util.stream.E0
-    public final Object c(int i) {
-        return new long[i];
-    }
-
-    @Override // j$.util.stream.F0
-    public final j$.util.M spliterator() {
-        return new f1(this);
-    }
-
-    @Override // j$.util.stream.F0
-    public final Spliterator spliterator() {
-        return new f1(this);
+    @Override // java.util.function.LongFunction
+    public Object apply(long j) {
+        return w0.D(j, this.a);
     }
 }

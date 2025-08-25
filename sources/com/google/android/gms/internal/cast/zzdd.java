@@ -11,7 +11,6 @@ import com.google.android.gms.cast.internal.Logger;
 import com.google.android.gms.common.internal.Preconditions;
 import j$.util.DesugarCollections;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -27,9 +26,9 @@ public final class zzdd implements zzda {
     private boolean zzh;
     private final Context zzi;
     private final Object zzj = new Object();
-    public final Set zza = Collections.synchronizedSet(new HashSet());
+    public final Set zza = DesugarCollections.synchronizedSet(new HashSet());
     private final Map zzf = DesugarCollections.synchronizedMap(new HashMap());
-    private final List zzg = Collections.synchronizedList(new ArrayList());
+    private final List zzg = DesugarCollections.synchronizedList(new ArrayList());
     private final ConnectivityManager.NetworkCallback zzd = new zzdc(this);
 
     public zzdd(Context context, zzrx zzrxVar) {

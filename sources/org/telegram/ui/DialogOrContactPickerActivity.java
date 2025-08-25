@@ -197,8 +197,18 @@ public class DialogOrContactPickerActivity extends BaseFragment {
         this.actionBar.addView(this.scrollSlidingTextTabStrip, LayoutHelper.createFrame(-1, 44, 83));
         this.scrollSlidingTextTabStrip.setDelegate(new ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate() { // from class: org.telegram.ui.DialogOrContactPickerActivity.3
             @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate
+            public /* synthetic */ boolean canReorder(int i) {
+                return ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate.-CC.$default$canReorder(this, i);
+            }
+
+            @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate
             public /* synthetic */ void onSamePageSelected() {
                 ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate.-CC.$default$onSamePageSelected(this);
+            }
+
+            @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate
+            public /* synthetic */ boolean showOptions(int i, View view) {
+                return ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate.-CC.$default$showOptions(this, i, view);
             }
 
             @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate

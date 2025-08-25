@@ -2,10 +2,10 @@ package com.google.common.collect;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
+import j$.util.Objects;
 import java.util.AbstractMap;
 import java.util.Arrays;
 import java.util.Map;
-import java.util.Objects;
 
 /* loaded from: classes.dex */
 final class RegularImmutableMap extends ImmutableMap {

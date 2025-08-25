@@ -381,7 +381,7 @@ public class GroupCallPipButton extends FrameLayout implements NotificationCente
                                                 } else if (i == 1) {
                                                     this.paint.setAlpha((int) (f3 * 255.0f));
                                                 } else {
-                                                    this.paint.setAlpha(NotificationCenter.goingToPreviewTheme);
+                                                    this.paint.setAlpha(NotificationCenter.needCheckSystemBarColors);
                                                 }
                                                 canvas.save();
                                                 canvas.scale(f6, f6, measuredWidth, measuredHeight);

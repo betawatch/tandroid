@@ -57,6 +57,7 @@ import androidx.dynamicanimation.animation.SpringForce;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.exoplayer2.util.Consumer;
+import j$.util.Objects;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -65,7 +66,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
-import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.ChatObject;
@@ -1182,7 +1182,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             ChatAttachAlert.this.attachButtonPaint.setStrokeWidth(AndroidUtilities.dp(3.0f) * scaleX);
             ChatAttachAlert.this.attachButtonPaint.setAlpha(Math.round(this.checkedState * 255.0f));
             canvas.drawCircle(left, top, dp - (ChatAttachAlert.this.attachButtonPaint.getStrokeWidth() * 0.5f), ChatAttachAlert.this.attachButtonPaint);
-            ChatAttachAlert.this.attachButtonPaint.setAlpha(NotificationCenter.goingToPreviewTheme);
+            ChatAttachAlert.this.attachButtonPaint.setAlpha(NotificationCenter.needCheckSystemBarColors);
             ChatAttachAlert.this.attachButtonPaint.setStyle(Paint.Style.FILL);
             canvas.drawCircle(left, top, dp - (AndroidUtilities.dp(5.0f) * this.checkedState), ChatAttachAlert.this.attachButtonPaint);
         }
@@ -1311,7 +1311,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 ChatAttachAlert.this.attachButtonPaint.setStrokeWidth(AndroidUtilities.dp(3.0f) * scaleX);
                 ChatAttachAlert.this.attachButtonPaint.setAlpha(Math.round(this.checkedState * 255.0f));
                 canvas.drawCircle(left, top, dp - (ChatAttachAlert.this.attachButtonPaint.getStrokeWidth() * 0.5f), ChatAttachAlert.this.attachButtonPaint);
-                ChatAttachAlert.this.attachButtonPaint.setAlpha(NotificationCenter.goingToPreviewTheme);
+                ChatAttachAlert.this.attachButtonPaint.setAlpha(NotificationCenter.needCheckSystemBarColors);
                 ChatAttachAlert.this.attachButtonPaint.setStyle(Paint.Style.FILL);
                 canvas.drawCircle(left, top, dp - (AndroidUtilities.dp(5.0f) * this.checkedState), ChatAttachAlert.this.attachButtonPaint);
             }
@@ -1440,8 +1440,8 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                             }
                     }
                 }
-                this.textColor = ColorUtils.setAlphaComponent(this.textColor, NotificationCenter.goingToPreviewTheme);
-                this.iconBackgroundColor = ColorUtils.setAlphaComponent(this.iconBackgroundColor, NotificationCenter.goingToPreviewTheme);
+                this.textColor = ColorUtils.setAlphaComponent(this.textColor, NotificationCenter.needCheckSystemBarColors);
+                this.iconBackgroundColor = ColorUtils.setAlphaComponent(this.iconBackgroundColor, NotificationCenter.needCheckSystemBarColors);
                 TLRPC.Document document = animatedAttachMenuBotIcon.icon;
                 this.imageView.getImageReceiver().setAllowStartLottieAnimation(false);
                 this.imageView.setImage(ImageLocation.getForDocument(document), String.valueOf(tL_attachMenuBot.bot_id), z ? "tgs" : "svg", DocumentObject.getSvgThumb(document, Theme.key_windowBackgroundGray, 1.0f), tL_attachMenuBot);
@@ -1873,7 +1873,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 canvas.clipPath(this.path);
                 this.backgroundPaint2.setColor(ChatAttachAlert.this.getThemedColor(Theme.key_graySection));
                 canvas.drawPaint(this.backgroundPaint2);
-                canvas.saveLayerAlpha(rectF, NotificationCenter.goingToPreviewTheme, 31);
+                canvas.saveLayerAlpha(rectF, NotificationCenter.needCheckSystemBarColors, 31);
                 super.dispatchDraw(canvas);
                 rectF.set(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getPaddingTop() + AndroidUtilities.dp(6.0f));
                 this.clip.draw(canvas, rectF, 1, 1.0f);
@@ -6073,7 +6073,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
     }
 
     private void setNavBarAlpha(float f) {
-        this.navBarColor = ColorUtils.setAlphaComponent(getThemedColor(Theme.key_windowBackgroundGray), Math.min(NotificationCenter.goingToPreviewTheme, Math.max(0, (int) (f * 255.0f))));
+        this.navBarColor = ColorUtils.setAlphaComponent(getThemedColor(Theme.key_windowBackgroundGray), Math.min(NotificationCenter.needCheckSystemBarColors, Math.max(0, (int) (f * 255.0f))));
         AndroidUtilities.setNavigationBarColor(getWindow(), this.navBarColor, false);
         AndroidUtilities.setLightNavigationBar(getWindow(), ((double) AndroidUtilities.computePerceivedBrightness(this.navBarColor)) > 0.721d);
         getContainer().invalidate();

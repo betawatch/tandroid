@@ -6,11 +6,11 @@ import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
 import com.google.gson.stream.JsonWriter;
+import j$.util.Objects;
 import java.io.IOException;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 /* loaded from: classes.dex */
 public final class JsonTreeWriter extends JsonWriter {

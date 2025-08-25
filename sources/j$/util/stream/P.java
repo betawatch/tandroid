@@ -1,47 +1,42 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
-import j$.util.function.Consumer;
+import j$.util.function.Consumer$-CC;
+import java.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-abstract class P implements v3, w3 {
+abstract class P implements G3, H3 {
     private final boolean a;
 
     public /* synthetic */ void accept(double d) {
-        t0.b();
+        w0.a();
         throw null;
     }
 
     public /* synthetic */ void accept(int i) {
-        t0.k();
+        w0.k();
         throw null;
     }
 
     public /* synthetic */ void accept(long j) {
-        t0.l();
+        w0.l();
         throw null;
     }
 
-    @Override // j$.util.function.Consumer
     public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer.-CC.$default$andThen(this, consumer);
+        return Consumer$-CC.$default$andThen(this, consumer);
     }
 
-    @Override // j$.util.function.Supplier
-    public final /* bridge */ /* synthetic */ Object get() {
-        return null;
+    @Override // j$.util.stream.m2
+    public final /* synthetic */ void k() {
     }
 
-    @Override // j$.util.stream.d2
-    public final /* synthetic */ void m() {
+    @Override // j$.util.stream.m2
+    public final /* synthetic */ void l(long j) {
     }
 
-    @Override // j$.util.stream.d2
-    public final /* synthetic */ void n(long j) {
-    }
-
-    @Override // j$.util.stream.d2
-    public final /* synthetic */ boolean q() {
+    @Override // j$.util.stream.m2
+    public final /* synthetic */ boolean n() {
         return false;
     }
 
@@ -49,27 +44,19 @@ abstract class P implements v3, w3 {
         this.a = z;
     }
 
-    @Override // j$.util.stream.v3
+    @Override // j$.util.stream.G3
     public final int d() {
         if (this.a) {
             return 0;
         }
-        return Q2.r;
+        return a3.r;
     }
 
-    @Override // j$.util.stream.v3
-    public final Object c(b bVar, Spliterator spliterator) {
+    public final void e(b bVar, Spliterator spliterator) {
         if (this.a) {
             new Q(bVar, spliterator, this).invoke();
-            return null;
+        } else {
+            new S(bVar, spliterator, bVar.V(this)).invoke();
         }
-        new S(bVar, spliterator, bVar.B0(this)).invoke();
-        return null;
-    }
-
-    @Override // j$.util.stream.v3
-    public final Object a(b bVar, Spliterator spliterator) {
-        bVar.f0(spliterator, bVar.B0(this));
-        return null;
     }
 }

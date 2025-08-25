@@ -19,15 +19,15 @@ import androidx.mediarouter.media.GlobalMediaRouter;
 import androidx.mediarouter.media.MediaRouteProvider;
 import androidx.mediarouter.media.MediaRouteSelector;
 import com.google.common.util.concurrent.ListenableFuture;
+import j$.util.DesugarCollections;
+import j$.util.Objects;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
-import java.util.Objects;
 import java.util.concurrent.Executor;
 import org.telegram.messenger.NotificationCenter;
 
@@ -457,7 +457,7 @@ public final class MediaRouter {
         }
 
         public List getMemberRoutes() {
-            return Collections.unmodifiableList(this.mMemberRoutes);
+            return DesugarCollections.unmodifiableList(this.mMemberRoutes);
         }
 
         public MediaRouteProvider.DynamicGroupRouteController getDynamicGroupController() {
@@ -697,7 +697,7 @@ public final class MediaRouter {
                     }
                 }
             }
-            MediaRouter.getGlobalRouter().mCallbackHandler.post(NotificationCenter.suggestedLangpack, this);
+            MediaRouter.getGlobalRouter().mCallbackHandler.post(NotificationCenter.locationPermissionGranted, this);
         }
 
         RouteInfo findRouteByDynamicRouteDescriptor(MediaRouteProvider.DynamicGroupRouteController.DynamicRouteDescriptor dynamicRouteDescriptor) {
@@ -764,7 +764,7 @@ public final class MediaRouter {
 
         public List getRoutes() {
             MediaRouter.checkCallingThread();
-            return Collections.unmodifiableList(this.mRoutes);
+            return DesugarCollections.unmodifiableList(this.mRoutes);
         }
 
         boolean updateDescriptor(MediaRouteProviderDescriptor mediaRouteProviderDescriptor) {
@@ -955,7 +955,7 @@ public final class MediaRouter {
                 if (routeInfo != routeInfo2) {
                     return;
                 }
-                globalMediaRouter.mCallbackHandler.post(NotificationCenter.proxyChangedByRotation, routeInfo2, this.mReason);
+                globalMediaRouter.mCallbackHandler.post(NotificationCenter.didSetNewWallpapper, routeInfo2, this.mReason);
                 MediaRouteProvider.RouteController routeController = globalMediaRouter.mSelectedRouteController;
                 if (routeController != null) {
                     routeController.onUnselect(this.mReason);
@@ -982,9 +982,9 @@ public final class MediaRouter {
             globalMediaRouter.mSelectedRouteController = this.mToRouteController;
             RouteInfo routeInfo2 = this.mRequestedRoute;
             if (routeInfo2 == null) {
-                globalMediaRouter.mCallbackHandler.post(NotificationCenter.proxyCheckDone, new Pair(this.mFromRoute, routeInfo), this.mReason);
+                globalMediaRouter.mCallbackHandler.post(NotificationCenter.suggestedLangpack, new Pair(this.mFromRoute, routeInfo), this.mReason);
             } else {
-                globalMediaRouter.mCallbackHandler.post(NotificationCenter.liveLocationsChanged, new Pair(routeInfo2, routeInfo), this.mReason);
+                globalMediaRouter.mCallbackHandler.post(NotificationCenter.proxySettingsChanged, new Pair(routeInfo2, routeInfo), this.mReason);
             }
             globalMediaRouter.mRouteControllerMap.clear();
             globalMediaRouter.maybeUpdateMemberRouteControllers();

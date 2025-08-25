@@ -1,45 +1,38 @@
 package j$.util.concurrent;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
-import sun.misc.Unsafe;
+import j$.util.Objects;
+import java.util.Map;
+import java.util.concurrent.ConcurrentMap;
+import java.util.function.BiConsumer;
 
 /* loaded from: classes2.dex */
-abstract class u {
-    private static final Unsafe a;
-
-    static {
-        Field b = b();
-        b.setAccessible(true);
-        try {
-            a = (Unsafe) b.get(null);
-        } catch (IllegalAccessException e) {
-            throw new Error("Couldn't get the Unsafe", e);
-        }
-    }
-
-    private static Field b() {
-        try {
-            return Unsafe.class.getDeclaredField("theUnsafe");
-        } catch (NoSuchFieldException e) {
-            for (Field field : Unsafe.class.getDeclaredFields()) {
-                if (Modifier.isStatic(field.getModifiers()) && Unsafe.class.isAssignableFrom(field.getType())) {
-                    return field;
-                }
+public abstract /* synthetic */ class u {
+    public static void a(ConcurrentMap concurrentMap, BiConsumer biConsumer) {
+        Objects.requireNonNull(biConsumer);
+        for (Map.Entry entry : concurrentMap.entrySet()) {
+            try {
+                biConsumer.accept(entry.getKey(), entry.getValue());
+            } catch (IllegalStateException unused) {
             }
-            throw new Error("Couldn't find the Unsafe", e);
         }
     }
 
-    public static Unsafe c() {
-        return a;
-    }
-
-    public static final int a(Unsafe unsafe, Object obj, long j) {
-        int intVolatile;
-        do {
-            intVolatile = unsafe.getIntVolatile(obj, j);
-        } while (!unsafe.compareAndSwapInt(obj, j, intVolatile, intVolatile - 4));
-        return intVolatile;
+    static String b(Object obj, Object obj2) {
+        String str;
+        String obj3;
+        String str2 = "null";
+        if (obj == null || (str = obj.toString()) == null) {
+            str = "null";
+        }
+        int length = str.length();
+        if (obj2 != null && (obj3 = obj2.toString()) != null) {
+            str2 = obj3;
+        }
+        int length2 = str2.length();
+        char[] cArr = new char[length + length2 + 1];
+        str.getChars(0, length, cArr, 0);
+        cArr[length] = '=';
+        str2.getChars(0, length2, cArr, length + 1);
+        return new String(cArr);
     }
 }

@@ -389,6 +389,13 @@ public class ViewPager extends ViewGroup {
         this.mOnPageChangeListeners.add(onPageChangeListener);
     }
 
+    public void removeOnPageChangeListener(OnPageChangeListener onPageChangeListener) {
+        List list = this.mOnPageChangeListeners;
+        if (list != null) {
+            list.remove(onPageChangeListener);
+        }
+    }
+
     public void setPageTransformer(boolean z, PageTransformer pageTransformer) {
         setPageTransformer(z, pageTransformer, 2);
     }
@@ -1484,7 +1491,7 @@ public class ViewPager extends ViewGroup {
 
     @Override // android.view.ViewGroup
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        int action = motionEvent.getAction() & NotificationCenter.goingToPreviewTheme;
+        int action = motionEvent.getAction() & NotificationCenter.needCheckSystemBarColors;
         if (action == 3 || action == 1) {
             resetTouch();
             return false;
@@ -1575,7 +1582,7 @@ public class ViewPager extends ViewGroup {
             this.mVelocityTracker = VelocityTracker.obtain();
         }
         this.mVelocityTracker.addMovement(motionEvent);
-        int action = motionEvent.getAction() & NotificationCenter.goingToPreviewTheme;
+        int action = motionEvent.getAction() & NotificationCenter.needCheckSystemBarColors;
         if (action == 0) {
             this.mScroller.abortAnimation();
             this.mPopulatePending = false;

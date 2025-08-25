@@ -1,60 +1,69 @@
 package j$.util.stream;
 
-import j$.util.function.BiConsumer;
-import j$.util.function.LongFunction;
-import j$.util.function.Supplier;
+import java.util.function.BiConsumer;
+import java.util.function.LongBinaryOperator;
+import java.util.function.LongConsumer;
+import java.util.function.LongFunction;
+import java.util.function.ObjLongConsumer;
+import java.util.function.Supplier;
 
 /* loaded from: classes2.dex */
 public interface LongStream extends BaseStream<Long, LongStream> {
-    boolean C(j$.util.function.b0 b0Var);
-
-    boolean E(j$.util.function.b0 b0Var);
-
-    LongStream K(j$.util.function.b0 b0Var);
-
-    void T(j$.util.function.Y y);
-
-    Object W(Supplier supplier, j$.util.function.t0 t0Var, BiConsumer biConsumer);
+    LongStream a();
 
     D asDoubleStream();
 
-    j$.util.j average();
+    j$.util.A average();
+
+    LongStream b();
 
     Stream boxed();
 
-    void c(j$.util.function.Y y);
+    LongStream c();
+
+    Object collect(Supplier supplier, ObjLongConsumer objLongConsumer, BiConsumer biConsumer);
 
     long count();
 
+    LongStream d();
+
     LongStream distinct();
 
-    j$.util.l findAny();
+    LongStream e(a aVar);
 
-    j$.util.l findFirst();
+    j$.util.C findAny();
 
-    j$.util.l g(j$.util.function.U u);
+    j$.util.C findFirst();
+
+    void forEach(LongConsumer longConsumer);
+
+    void forEachOrdered(LongConsumer longConsumer);
 
     @Override // j$.util.stream.BaseStream, j$.util.stream.D
-    j$.util.x iterator();
+    j$.util.O iterator();
+
+    D k();
 
     LongStream limit(long j);
 
-    LongStream m(j$.util.function.Y y);
+    boolean m();
 
     <U> Stream<U> mapToObj(LongFunction<? extends U> longFunction);
 
-    j$.util.l max();
+    j$.util.C max();
 
-    j$.util.l min();
-
-    LongStream n(LongFunction longFunction);
-
-    D p(j$.util.function.d0 d0Var);
+    j$.util.C min();
 
     @Override // j$.util.stream.BaseStream
     LongStream parallel();
 
-    boolean s(j$.util.function.b0 b0Var);
+    LongStream peek(LongConsumer longConsumer);
+
+    boolean q();
+
+    long reduce(long j, LongBinaryOperator longBinaryOperator);
+
+    j$.util.C reduce(LongBinaryOperator longBinaryOperator);
 
     @Override // j$.util.stream.BaseStream
     LongStream sequential();
@@ -64,17 +73,15 @@ public interface LongStream extends BaseStream<Long, LongStream> {
     LongStream sorted();
 
     @Override // j$.util.stream.BaseStream, j$.util.stream.D
-    j$.util.J spliterator();
+    j$.util.b0 spliterator();
 
     long sum();
 
-    j$.util.i summaryStatistics();
-
-    LongStream t(j$.util.function.k0 k0Var);
+    j$.util.z summaryStatistics();
 
     long[] toArray();
 
-    long v(long j, j$.util.function.U u);
+    boolean v();
 
-    IntStream y(j$.util.function.f0 f0Var);
+    IntStream w();
 }

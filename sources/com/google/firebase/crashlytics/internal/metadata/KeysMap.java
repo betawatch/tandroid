@@ -2,7 +2,7 @@ package com.google.firebase.crashlytics.internal.metadata;
 
 import com.google.firebase.crashlytics.internal.Logger;
 import com.google.firebase.crashlytics.internal.common.CommonUtils;
-import java.util.Collections;
+import j$.util.DesugarCollections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,7 +18,7 @@ class KeysMap {
     }
 
     public synchronized Map getKeys() {
-        return Collections.unmodifiableMap(new HashMap(this.keys));
+        return DesugarCollections.unmodifiableMap(new HashMap(this.keys));
     }
 
     public synchronized boolean setKey(String str, String str2) {

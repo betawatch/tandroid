@@ -1,5 +1,6 @@
 package com.google.gson.internal;
 
+import j$.util.Objects;
 import java.io.Serializable;
 import java.util.AbstractMap;
 import java.util.AbstractSet;
@@ -8,7 +9,6 @@ import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.NoSuchElementException;
-import java.util.Objects;
 import java.util.Set;
 
 /* loaded from: classes.dex */

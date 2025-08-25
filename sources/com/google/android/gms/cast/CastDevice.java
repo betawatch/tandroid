@@ -11,11 +11,11 @@ import com.google.android.gms.cast.internal.zzz;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
+import j$.util.DesugarCollections;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
@@ -110,7 +110,7 @@ public class CastDevice extends AbstractSafeParcelable implements ReflectedParce
     }
 
     public List getIcons() {
-        return Collections.unmodifiableList(this.zzh);
+        return DesugarCollections.unmodifiableList(this.zzh);
     }
 
     public String getModelName() {

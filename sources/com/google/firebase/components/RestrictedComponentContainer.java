@@ -3,7 +3,7 @@ package com.google.firebase.components;
 import com.google.firebase.events.Publisher;
 import com.google.firebase.inject.Deferred;
 import com.google.firebase.inject.Provider;
-import java.util.Collections;
+import j$.util.DesugarCollections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -48,11 +48,11 @@ final class RestrictedComponentContainer implements ComponentContainer {
         if (!component.getPublishedEvents().isEmpty()) {
             hashSet.add(Qualified.unqualified(Publisher.class));
         }
-        this.allowedDirectInterfaces = Collections.unmodifiableSet(hashSet);
-        this.allowedProviderInterfaces = Collections.unmodifiableSet(hashSet2);
-        this.allowedDeferredInterfaces = Collections.unmodifiableSet(hashSet3);
-        this.allowedSetDirectInterfaces = Collections.unmodifiableSet(hashSet4);
-        this.allowedSetProviderInterfaces = Collections.unmodifiableSet(hashSet5);
+        this.allowedDirectInterfaces = DesugarCollections.unmodifiableSet(hashSet);
+        this.allowedProviderInterfaces = DesugarCollections.unmodifiableSet(hashSet2);
+        this.allowedDeferredInterfaces = DesugarCollections.unmodifiableSet(hashSet3);
+        this.allowedSetDirectInterfaces = DesugarCollections.unmodifiableSet(hashSet4);
+        this.allowedSetProviderInterfaces = DesugarCollections.unmodifiableSet(hashSet5);
         this.allowedPublishedEvents = component.getPublishedEvents();
         this.delegateContainer = componentContainer;
     }

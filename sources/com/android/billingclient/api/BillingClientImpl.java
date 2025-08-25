@@ -32,13 +32,13 @@ import com.google.android.gms.internal.play_billing.zzku;
 import com.google.android.gms.internal.play_billing.zzlv;
 import com.google.android.gms.internal.play_billing.zzlx;
 import j$.util.Collection;
-import j$.util.function.Function;
-import j$.util.function.Predicate;
+import j$.util.Objects;
+import j$.util.function.Function$-CC;
+import j$.util.function.Predicate$-CC;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Objects;
 import java.util.Random;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
@@ -47,6 +47,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import java.util.function.Function;
+import java.util.function.Predicate;
 import org.json.JSONException;
 
 /* loaded from: classes.dex */
@@ -601,22 +603,19 @@ class BillingClientImpl extends BillingClient {
                 bundle.putBoolean("enableAlternativeBilling", z);
             }
             if (Collection.-EL.stream(billingFlowParams.zzh()).anyMatch(new Predicate() { // from class: com.google.android.gms.internal.play_billing.zza
-                @Override // j$.util.function.Predicate
                 public /* synthetic */ Predicate and(Predicate predicate) {
-                    return Predicate.-CC.$default$and(this, predicate);
+                    return Predicate$-CC.$default$and(this, predicate);
                 }
 
-                @Override // j$.util.function.Predicate
                 public /* synthetic */ Predicate negate() {
-                    return Predicate.-CC.$default$negate(this);
+                    return Predicate$-CC.$default$negate(this);
                 }
 
-                @Override // j$.util.function.Predicate
                 public /* synthetic */ Predicate or(Predicate predicate) {
-                    return Predicate.-CC.$default$or(this, predicate);
+                    return Predicate$-CC.$default$or(this, predicate);
                 }
 
-                @Override // j$.util.function.Predicate
+                @Override // java.util.function.Predicate
                 public final boolean test(Object obj2) {
                     int i2 = zze.zza;
                     return false;
@@ -624,33 +623,29 @@ class BillingClientImpl extends BillingClient {
             })) {
                 zzfm zza2 = zzfn.zza();
                 zza2.zza((Iterable) Collection.-EL.stream(billingFlowParams.zzh()).filter(new Predicate() { // from class: com.google.android.gms.internal.play_billing.zzb
-                    @Override // j$.util.function.Predicate
                     public /* synthetic */ Predicate and(Predicate predicate) {
-                        return Predicate.-CC.$default$and(this, predicate);
+                        return Predicate$-CC.$default$and(this, predicate);
                     }
 
-                    @Override // j$.util.function.Predicate
                     public /* synthetic */ Predicate negate() {
-                        return Predicate.-CC.$default$negate(this);
+                        return Predicate$-CC.$default$negate(this);
                     }
 
-                    @Override // j$.util.function.Predicate
                     public /* synthetic */ Predicate or(Predicate predicate) {
-                        return Predicate.-CC.$default$or(this, predicate);
+                        return Predicate$-CC.$default$or(this, predicate);
                     }
 
-                    @Override // j$.util.function.Predicate
+                    @Override // java.util.function.Predicate
                     public final boolean test(Object obj2) {
                         int i2 = zze.zza;
                         return false;
                     }
                 }).map(new Function() { // from class: com.google.android.gms.internal.play_billing.zzc
-                    @Override // j$.util.function.Function
                     public /* synthetic */ Function andThen(Function function) {
-                        return Function.-CC.$default$andThen(this, function);
+                        return Function$-CC.$default$andThen(this, function);
                     }
 
-                    @Override // j$.util.function.Function
+                    @Override // java.util.function.Function
                     public final Object apply(Object obj2) {
                         int i2 = zze.zza;
                         String productId2 = ((BillingFlowParams.ProductDetailsParams) obj2).zza().getProductId();
@@ -662,9 +657,8 @@ class BillingClientImpl extends BillingClient {
                         throw null;
                     }
 
-                    @Override // j$.util.function.Function
                     public /* synthetic */ Function compose(Function function) {
-                        return Function.-CC.$default$compose(this, function);
+                        return Function$-CC.$default$compose(this, function);
                     }
                 }).collect(com.google.android.gms.internal.play_billing.zzco.zzo()));
                 bundle.putByteArray("subscriptionProductReplacementParamsList", ((zzfn) zza2.zzf()).zzh());

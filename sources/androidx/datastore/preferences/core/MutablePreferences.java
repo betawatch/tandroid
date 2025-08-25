@@ -1,7 +1,7 @@
 package androidx.datastore.preferences.core;
 
 import androidx.datastore.preferences.core.Preferences;
-import java.util.Collections;
+import j$.util.DesugarCollections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
@@ -44,7 +44,7 @@ public final class MutablePreferences extends Preferences {
 
     @Override // androidx.datastore.preferences.core.Preferences
     public Map asMap() {
-        Map unmodifiableMap = Collections.unmodifiableMap(this.preferencesMap);
+        Map unmodifiableMap = DesugarCollections.unmodifiableMap(this.preferencesMap);
         Intrinsics.checkNotNullExpressionValue(unmodifiableMap, "unmodifiableMap(preferencesMap)");
         return unmodifiableMap;
     }
@@ -66,7 +66,7 @@ public final class MutablePreferences extends Preferences {
             return;
         }
         Map map = this.preferencesMap;
-        Set unmodifiableSet = Collections.unmodifiableSet(CollectionsKt.toSet((Iterable) obj));
+        Set unmodifiableSet = DesugarCollections.unmodifiableSet(CollectionsKt.toSet((Iterable) obj));
         Intrinsics.checkNotNullExpressionValue(unmodifiableSet, "unmodifiableSet(value.toSet())");
         map.put(key, unmodifiableSet);
     }

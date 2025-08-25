@@ -1,83 +1,118 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import j$.util.function.Consumer;
-import java.util.Comparator;
+import j$.util.function.Consumer$-CC;
+import java.util.function.Consumer;
+import java.util.function.DoubleConsumer;
 
 /* loaded from: classes2.dex */
-final class k3 extends l3 implements Spliterator {
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.util.A.j(this);
+public final /* synthetic */ class k3 implements j2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ DoubleConsumer b;
+
+    public /* synthetic */ k3(DoubleConsumer doubleConsumer, int i) {
+        this.a = i;
+        this.b = doubleConsumer;
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return j$.util.A.k(this, i);
+    private final /* synthetic */ void b(long j) {
     }
 
-    @Override // j$.util.Spliterator
-    public final void a(Consumer consumer) {
-        consumer.getClass();
-        long j = this.e;
-        long j2 = this.a;
-        if (j2 >= j) {
-            return;
-        }
-        long j3 = this.d;
-        if (j3 >= j) {
-            return;
-        }
-        if (j3 >= j2 && this.c.estimateSize() + j3 <= this.b) {
-            this.c.a(consumer);
-            this.d = this.e;
-            return;
-        }
-        while (j2 > this.d) {
-            this.c.s(new c0(11));
-            this.d++;
-        }
-        while (this.d < this.e) {
-            this.c.s(consumer);
-            this.d++;
-        }
+    private final /* synthetic */ void c(long j) {
     }
 
-    @Override // j$.util.Spliterator
-    public final boolean s(Consumer consumer) {
-        long j;
-        consumer.getClass();
-        long j2 = this.e;
-        long j3 = this.a;
-        if (j3 >= j2) {
-            return false;
-        }
-        while (true) {
-            j = this.d;
-            if (j3 <= j) {
+    private final /* synthetic */ void d() {
+    }
+
+    private final /* synthetic */ void e() {
+    }
+
+    @Override // j$.util.stream.j2, java.util.function.DoubleConsumer
+    public final void accept(double d) {
+        switch (this.a) {
+            case 0:
+                ((P2) this.b).accept(d);
                 break;
-            }
-            this.c.s(new c0(10));
-            this.d++;
+            default:
+                this.b.accept(d);
+                break;
         }
-        if (j >= this.e) {
-            return false;
+    }
+
+    @Override // j$.util.stream.m2
+    public final /* synthetic */ void accept(int i) {
+        switch (this.a) {
+            case 0:
+                w0.k();
+                throw null;
+            default:
+                w0.k();
+                throw null;
         }
-        this.d = j + 1;
-        return this.c.s(consumer);
     }
 
-    @Override // j$.util.Spliterator
-    public final Comparator getComparator() {
-        throw new IllegalStateException();
+    @Override // j$.util.stream.m2
+    public final /* synthetic */ void accept(long j) {
+        switch (this.a) {
+            case 0:
+                w0.l();
+                throw null;
+            default:
+                w0.l();
+                throw null;
+        }
     }
 
-    k3(Spliterator spliterator, long j, long j2) {
-        super(spliterator, j, j2, 0L, Math.min(spliterator.estimateSize(), j2));
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final /* bridge */ /* synthetic */ void p(Object obj) {
+        switch (this.a) {
+            case 0:
+                p((Double) obj);
+                break;
+            default:
+                p((Double) obj);
+                break;
+        }
     }
 
-    @Override // j$.util.stream.l3
-    protected final Spliterator b(Spliterator spliterator, long j, long j2, long j3, long j4) {
-        return new k3(spliterator, j, j2, j3, j4);
+    public final /* synthetic */ Consumer andThen(Consumer consumer) {
+        switch (this.a) {
+        }
+        return Consumer$-CC.$default$andThen(this, consumer);
+    }
+
+    public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {
+        switch (this.a) {
+        }
+        return j$.com.android.tools.r8.a.a(this, doubleConsumer);
+    }
+
+    @Override // j$.util.stream.m2
+    public final /* synthetic */ void k() {
+        int i = this.a;
+    }
+
+    @Override // j$.util.stream.m2
+    public final /* synthetic */ void l(long j) {
+        int i = this.a;
+    }
+
+    @Override // j$.util.stream.m2
+    public final /* synthetic */ boolean n() {
+        switch (this.a) {
+        }
+        return false;
+    }
+
+    @Override // j$.util.stream.j2
+    public final /* synthetic */ void p(Double d) {
+        switch (this.a) {
+            case 0:
+                w0.e(this, d);
+                break;
+            default:
+                w0.e(this, d);
+                break;
+        }
     }
 }

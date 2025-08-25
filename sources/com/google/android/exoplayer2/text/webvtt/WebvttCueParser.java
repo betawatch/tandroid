@@ -22,6 +22,7 @@ import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.Log;
 import com.google.android.exoplayer2.util.ParsableByteArray;
 import com.google.android.exoplayer2.util.Util;
+import j$.util.DesugarCollections;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -46,25 +47,25 @@ public abstract class WebvttCueParser {
 
     static {
         HashMap hashMap = new HashMap();
-        hashMap.put("white", Integer.valueOf(Color.rgb(NotificationCenter.goingToPreviewTheme, NotificationCenter.goingToPreviewTheme, NotificationCenter.goingToPreviewTheme)));
-        hashMap.put("lime", Integer.valueOf(Color.rgb(0, NotificationCenter.goingToPreviewTheme, 0)));
-        hashMap.put("cyan", Integer.valueOf(Color.rgb(0, NotificationCenter.goingToPreviewTheme, NotificationCenter.goingToPreviewTheme)));
-        hashMap.put("red", Integer.valueOf(Color.rgb(NotificationCenter.goingToPreviewTheme, 0, 0)));
-        hashMap.put("yellow", Integer.valueOf(Color.rgb(NotificationCenter.goingToPreviewTheme, NotificationCenter.goingToPreviewTheme, 0)));
-        hashMap.put("magenta", Integer.valueOf(Color.rgb(NotificationCenter.goingToPreviewTheme, 0, NotificationCenter.goingToPreviewTheme)));
-        hashMap.put("blue", Integer.valueOf(Color.rgb(0, 0, NotificationCenter.goingToPreviewTheme)));
+        hashMap.put("white", Integer.valueOf(Color.rgb(NotificationCenter.needCheckSystemBarColors, NotificationCenter.needCheckSystemBarColors, NotificationCenter.needCheckSystemBarColors)));
+        hashMap.put("lime", Integer.valueOf(Color.rgb(0, NotificationCenter.needCheckSystemBarColors, 0)));
+        hashMap.put("cyan", Integer.valueOf(Color.rgb(0, NotificationCenter.needCheckSystemBarColors, NotificationCenter.needCheckSystemBarColors)));
+        hashMap.put("red", Integer.valueOf(Color.rgb(NotificationCenter.needCheckSystemBarColors, 0, 0)));
+        hashMap.put("yellow", Integer.valueOf(Color.rgb(NotificationCenter.needCheckSystemBarColors, NotificationCenter.needCheckSystemBarColors, 0)));
+        hashMap.put("magenta", Integer.valueOf(Color.rgb(NotificationCenter.needCheckSystemBarColors, 0, NotificationCenter.needCheckSystemBarColors)));
+        hashMap.put("blue", Integer.valueOf(Color.rgb(0, 0, NotificationCenter.needCheckSystemBarColors)));
         hashMap.put("black", Integer.valueOf(Color.rgb(0, 0, 0)));
-        DEFAULT_TEXT_COLORS = Collections.unmodifiableMap(hashMap);
+        DEFAULT_TEXT_COLORS = DesugarCollections.unmodifiableMap(hashMap);
         HashMap hashMap2 = new HashMap();
-        hashMap2.put("bg_white", Integer.valueOf(Color.rgb(NotificationCenter.goingToPreviewTheme, NotificationCenter.goingToPreviewTheme, NotificationCenter.goingToPreviewTheme)));
-        hashMap2.put("bg_lime", Integer.valueOf(Color.rgb(0, NotificationCenter.goingToPreviewTheme, 0)));
-        hashMap2.put("bg_cyan", Integer.valueOf(Color.rgb(0, NotificationCenter.goingToPreviewTheme, NotificationCenter.goingToPreviewTheme)));
-        hashMap2.put("bg_red", Integer.valueOf(Color.rgb(NotificationCenter.goingToPreviewTheme, 0, 0)));
-        hashMap2.put("bg_yellow", Integer.valueOf(Color.rgb(NotificationCenter.goingToPreviewTheme, NotificationCenter.goingToPreviewTheme, 0)));
-        hashMap2.put("bg_magenta", Integer.valueOf(Color.rgb(NotificationCenter.goingToPreviewTheme, 0, NotificationCenter.goingToPreviewTheme)));
-        hashMap2.put("bg_blue", Integer.valueOf(Color.rgb(0, 0, NotificationCenter.goingToPreviewTheme)));
+        hashMap2.put("bg_white", Integer.valueOf(Color.rgb(NotificationCenter.needCheckSystemBarColors, NotificationCenter.needCheckSystemBarColors, NotificationCenter.needCheckSystemBarColors)));
+        hashMap2.put("bg_lime", Integer.valueOf(Color.rgb(0, NotificationCenter.needCheckSystemBarColors, 0)));
+        hashMap2.put("bg_cyan", Integer.valueOf(Color.rgb(0, NotificationCenter.needCheckSystemBarColors, NotificationCenter.needCheckSystemBarColors)));
+        hashMap2.put("bg_red", Integer.valueOf(Color.rgb(NotificationCenter.needCheckSystemBarColors, 0, 0)));
+        hashMap2.put("bg_yellow", Integer.valueOf(Color.rgb(NotificationCenter.needCheckSystemBarColors, NotificationCenter.needCheckSystemBarColors, 0)));
+        hashMap2.put("bg_magenta", Integer.valueOf(Color.rgb(NotificationCenter.needCheckSystemBarColors, 0, NotificationCenter.needCheckSystemBarColors)));
+        hashMap2.put("bg_blue", Integer.valueOf(Color.rgb(0, 0, NotificationCenter.needCheckSystemBarColors)));
         hashMap2.put("bg_black", Integer.valueOf(Color.rgb(0, 0, 0)));
-        DEFAULT_BACKGROUND_COLORS = Collections.unmodifiableMap(hashMap2);
+        DEFAULT_BACKGROUND_COLORS = DesugarCollections.unmodifiableMap(hashMap2);
     }
 
     public static WebvttCueInfo parseCue(ParsableByteArray parsableByteArray, List list) {

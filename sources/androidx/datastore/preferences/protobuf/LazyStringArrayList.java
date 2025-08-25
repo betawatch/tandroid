@@ -1,9 +1,9 @@
 package androidx.datastore.preferences.protobuf;
 
+import j$.util.DesugarCollections;
 import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 import java.util.RandomAccess;
 
@@ -167,7 +167,7 @@ public class LazyStringArrayList extends AbstractProtobufList implements LazyStr
 
     @Override // androidx.datastore.preferences.protobuf.LazyStringList
     public List getUnderlyingElements() {
-        return Collections.unmodifiableList(this.list);
+        return DesugarCollections.unmodifiableList(this.list);
     }
 
     @Override // androidx.datastore.preferences.protobuf.LazyStringList

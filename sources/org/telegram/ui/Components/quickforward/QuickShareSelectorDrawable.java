@@ -398,7 +398,7 @@ public class QuickShareSelectorDrawable extends Drawable implements Animator.Ani
 
     @Override // android.graphics.drawable.Drawable
     public void draw(Canvas canvas) {
-        draw(canvas, NotificationCenter.goingToPreviewTheme, false);
+        draw(canvas, NotificationCenter.needCheckSystemBarColors, false);
     }
 
     public void draw(Canvas canvas, int i, boolean z) {
@@ -776,22 +776,22 @@ public class QuickShareSelectorDrawable extends Drawable implements Animator.Ani
         static {
             LinearInterpolator linearInterpolator = new LinearInterpolator();
             LINEAR_INTERPOLATOR = linearInterpolator;
-            closeAlpha = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), 0, NotificationCenter.wallpapersNeedReload, NotificationCenter.wallpapersNeedReload);
-            closeAvatarPosition = QuickShareSelectorDrawable.interpolator(linearInterpolator, 0, NotificationCenter.wallpapersNeedReload, NotificationCenter.wallpapersNeedReload);
-            closeAvatarAlpha = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), NotificationCenter.botStarsTransactionsLoaded, NotificationCenter.wallpapersNeedReload, NotificationCenter.wallpapersNeedReload);
+            closeAlpha = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), 0, NotificationCenter.profileMusicUpdated, NotificationCenter.profileMusicUpdated);
+            closeAvatarPosition = QuickShareSelectorDrawable.interpolator(linearInterpolator, 0, NotificationCenter.profileMusicUpdated, NotificationCenter.profileMusicUpdated);
+            closeAvatarAlpha = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), NotificationCenter.botStarsTransactionsLoaded, NotificationCenter.profileMusicUpdated, NotificationCenter.profileMusicUpdated);
             buttonRotationUp = QuickShareSelectorDrawable.interpolator(new CubicBezierInterpolator(0.7f, -0.6f, 0.4f, 1.0f), 0, NotificationCenter.savedMessagesForwarded, 560);
             buttonRotationDown = QuickShareSelectorDrawable.interpolator(new CubicBezierInterpolator(0.7f, -0.6f, 0.4f, 1.0f), NotificationCenter.savedMessagesForwarded, 400, 560, true);
             buttonJumpUp = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), 0, 150, 560);
             buttonJumpDown = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), NotificationCenter.premiumFloodWaitReceived, 425, 560);
             CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
-            bgOpacity = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 0, 320, 560);
-            bgScale = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 40, 320, 560);
+            bgOpacity = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 0, NotificationCenter.nearEarEvent, 560);
+            bgScale = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 40, NotificationCenter.nearEarEvent, 560);
             heightExpansion = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), 0, 250, 560);
             widthExpansion = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 0, 460, 560);
             bubbleY = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 0, 325, 560);
             ballsRadius = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), 150, 250, 560);
             overshootCancel = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), NotificationCenter.savedMessagesForwarded, 480, 560);
-            avatar1 = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 60, 320, 560);
+            avatar1 = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 60, NotificationCenter.nearEarEvent, 560);
             avatar2 = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 90, 380, 560);
             avatar3 = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 110, 440, 560);
             avatarOvershootCancel = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), NotificationCenter.savedMessagesForwarded, 460, 560);

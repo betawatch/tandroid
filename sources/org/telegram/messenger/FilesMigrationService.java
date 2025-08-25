@@ -16,7 +16,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import com.microsoft.appcenter.distribute.Distribute$$ExternalSyntheticApiModelOutline0;
 import com.microsoft.appcenter.distribute.Distribute$$ExternalSyntheticApiModelOutline1;
-import j$.util.function.Consumer;
+import j$.util.function.Consumer$-CC;
 import j$.util.stream.Stream;
 import java.io.File;
 import java.nio.file.CopyOption;
@@ -24,6 +24,7 @@ import java.nio.file.Files;
 import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.function.Consumer;
 import org.telegram.messenger.FilesMigrationService;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.BottomSheet;
@@ -57,7 +58,7 @@ public class FilesMigrationService extends Service {
         Notification build = Distribute$$ExternalSyntheticApiModelOutline0.m(this, NotificationsController.OTHER_NOTIFICATIONS_CHANNEL).setContentTitle(getText(R.string.MigratingFiles)).setAutoCancel(false).setSmallIcon(R.drawable.notification).build();
         isRunning = true;
         new 1().start();
-        startForeground(NotificationCenter.activityPermissionsGranted, build);
+        startForeground(NotificationCenter.userEmojiStatusUpdated, build);
         return super.onStartCommand(intent, i, i2);
     }
 
@@ -135,15 +136,14 @@ public class FilesMigrationService extends Service {
                     convert = Stream.VivifiedWrapper.convert(Files.list(path));
                     try {
                         convert.forEach(new Consumer() { // from class: org.telegram.messenger.FilesMigrationService$$ExternalSyntheticLambda8
-                            @Override // j$.util.function.Consumer
+                            @Override // java.util.function.Consumer
                             /* renamed from: accept */
-                            public final void r(Object obj) {
+                            public final void p(Object obj) {
                                 FilesMigrationService.this.lambda$moveDirectory$0(file2, (Path) obj);
                             }
 
-                            @Override // j$.util.function.Consumer
                             public /* synthetic */ Consumer andThen(Consumer consumer) {
-                                return Consumer.-CC.$default$andThen(this, consumer);
+                                return Consumer$-CC.$default$andThen(this, consumer);
                             }
                         });
                         convert.close();
@@ -209,7 +209,7 @@ public class FilesMigrationService extends Service {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$updateProgress$1(int i) {
         Distribute$$ExternalSyntheticApiModelOutline1.m();
-        ((NotificationManager) getSystemService("notification")).notify(NotificationCenter.activityPermissionsGranted, Distribute$$ExternalSyntheticApiModelOutline0.m(this, NotificationsController.OTHER_NOTIFICATIONS_CHANNEL).setContentTitle(getText(R.string.MigratingFiles)).setContentText(String.format("%s/%s", Integer.valueOf(i), Integer.valueOf(this.totalFilesCount))).setSmallIcon(R.drawable.notification).setAutoCancel(false).setProgress(this.totalFilesCount, i, false).build());
+        ((NotificationManager) getSystemService("notification")).notify(NotificationCenter.userEmojiStatusUpdated, Distribute$$ExternalSyntheticApiModelOutline0.m(this, NotificationsController.OTHER_NOTIFICATIONS_CHANNEL).setContentTitle(getText(R.string.MigratingFiles)).setContentText(String.format("%s/%s", Integer.valueOf(i), Integer.valueOf(this.totalFilesCount))).setSmallIcon(R.drawable.notification).setAutoCancel(false).setProgress(this.totalFilesCount, i, false).build());
     }
 
     public static void checkBottomSheet(BaseFragment baseFragment) {

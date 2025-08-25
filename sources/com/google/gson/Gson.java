@@ -20,6 +20,8 @@ import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
+import j$.util.DesugarCollections;
+import j$.util.Objects;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.io.IOException;
 import java.io.StringWriter;
@@ -28,12 +30,10 @@ import java.lang.reflect.Type;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicLongArray;
@@ -144,7 +144,7 @@ public final class Gson {
         arrayList.add(jsonAdapterAnnotationTypeAdapterFactory);
         arrayList.add(TypeAdapters.ENUM_FACTORY);
         arrayList.add(new ReflectiveTypeAdapterFactory(constructorConstructor, fieldNamingStrategy, excluder, jsonAdapterAnnotationTypeAdapterFactory, list4));
-        this.factories = Collections.unmodifiableList(arrayList);
+        this.factories = DesugarCollections.unmodifiableList(arrayList);
     }
 
     private TypeAdapter doubleAdapter(boolean z) {

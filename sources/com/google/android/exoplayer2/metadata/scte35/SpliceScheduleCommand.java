@@ -3,8 +3,8 @@ package com.google.android.exoplayer2.metadata.scte35;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.exoplayer2.util.ParsableByteArray;
+import j$.util.DesugarCollections;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /* loaded from: classes.dex */
@@ -40,7 +40,7 @@ public final class SpliceScheduleCommand extends SpliceCommand {
             this.spliceEventCancelIndicator = z;
             this.outOfNetworkIndicator = z2;
             this.programSpliceFlag = z3;
-            this.componentSpliceList = Collections.unmodifiableList(list);
+            this.componentSpliceList = DesugarCollections.unmodifiableList(list);
             this.utcSpliceTime = j2;
             this.autoReturn = z4;
             this.breakDurationUs = j3;
@@ -59,7 +59,7 @@ public final class SpliceScheduleCommand extends SpliceCommand {
             for (int i = 0; i < readInt; i++) {
                 arrayList.add(ComponentSplice.createFromParcel(parcel));
             }
-            this.componentSpliceList = Collections.unmodifiableList(arrayList);
+            this.componentSpliceList = DesugarCollections.unmodifiableList(arrayList);
             this.utcSpliceTime = parcel.readLong();
             this.autoReturn = parcel.readByte() == 1;
             this.breakDurationUs = parcel.readLong();
@@ -181,7 +181,7 @@ public final class SpliceScheduleCommand extends SpliceCommand {
     }
 
     private SpliceScheduleCommand(List list) {
-        this.events = Collections.unmodifiableList(list);
+        this.events = DesugarCollections.unmodifiableList(list);
     }
 
     private SpliceScheduleCommand(Parcel parcel) {
@@ -190,7 +190,7 @@ public final class SpliceScheduleCommand extends SpliceCommand {
         for (int i = 0; i < readInt; i++) {
             arrayList.add(Event.createFromParcel(parcel));
         }
-        this.events = Collections.unmodifiableList(arrayList);
+        this.events = DesugarCollections.unmodifiableList(arrayList);
     }
 
     static SpliceScheduleCommand parseFromSection(ParsableByteArray parsableByteArray) {

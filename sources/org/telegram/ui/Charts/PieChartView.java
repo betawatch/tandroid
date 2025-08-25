@@ -102,7 +102,7 @@ public class PieChartView extends StackLinearChartView {
             float f5 = this.transitionParams.progress;
             i = (int) (f5 * f5 * 255.0f);
         } else {
-            i = NotificationCenter.goingToPreviewTheme;
+            i = NotificationCenter.needCheckSystemBarColors;
         }
         float f6 = 1.0f;
         float f7 = 0.0f;
@@ -183,7 +183,7 @@ public class PieChartView extends StackLinearChartView {
                                 ((PieChartViewData) this.lines.get(i4)).paint.setStyle(Paint.Style.STROKE);
                                 canvas.restore();
                             }
-                            ((PieChartViewData) this.lines.get(i4)).paint.setAlpha(NotificationCenter.goingToPreviewTheme);
+                            ((PieChartViewData) this.lines.get(i4)).paint.setAlpha(NotificationCenter.needCheckSystemBarColors);
                             f16 += f17 * 360.0f;
                             i7 = i4 + 1;
                             f14 = f4;
@@ -199,7 +199,7 @@ public class PieChartView extends StackLinearChartView {
                     if (canvas3 != null) {
                     }
                     i4 = i7;
-                    ((PieChartViewData) this.lines.get(i4)).paint.setAlpha(NotificationCenter.goingToPreviewTheme);
+                    ((PieChartViewData) this.lines.get(i4)).paint.setAlpha(NotificationCenter.needCheckSystemBarColors);
                     f16 += f17 * 360.0f;
                     i7 = i4 + 1;
                     f14 = f4;
@@ -244,7 +244,7 @@ public class PieChartView extends StackLinearChartView {
                         canvas2.drawText(this.lookupTable[i10], (float) (this.rectF.centerX() + (Math.cos(Math.toRadians(d3)) * d4)), ((float) (this.rectF.centerY() + (d4 * Math.sin(Math.toRadians(d3))))) - ((this.textPaint.descent() + this.textPaint.ascent()) / 2.0f), this.textPaint);
                     }
                     canvas.restore();
-                    ((PieChartViewData) this.lines.get(i9)).paint.setAlpha(NotificationCenter.goingToPreviewTheme);
+                    ((PieChartViewData) this.lines.get(i9)).paint.setAlpha(NotificationCenter.needCheckSystemBarColors);
                     f15 += f3 * 360.0f;
                 } else {
                     canvas2 = canvas3;
@@ -411,7 +411,7 @@ public class PieChartView extends StackLinearChartView {
             for (int i13 = 0; i13 < size; i13++) {
                 LineViewData lineViewData3 = (LineViewData) this.lines.get(i13);
                 lineViewData3.paint.setStrokeWidth(length2);
-                lineViewData3.paint.setAlpha(NotificationCenter.goingToPreviewTheme);
+                lineViewData3.paint.setAlpha(NotificationCenter.needCheckSystemBarColors);
                 lineViewData3.paint.setAntiAlias(false);
                 canvas.drawLines(lineViewData3.linesPath, 0, lineViewData3.linesPathBottomSize, lineViewData3.paint);
             }

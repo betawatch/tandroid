@@ -355,7 +355,7 @@ public class BlurBehindDrawable {
                 this.behindView.setTag(67108867, null);
                 this.blurCanvas[i].restore();
                 Utilities.stackBlurBitmap(this.blurredBitmapTmp[i], getBlurRadius());
-                this.emptyPaint.setAlpha(NotificationCenter.goingToPreviewTheme);
+                this.emptyPaint.setAlpha(NotificationCenter.needCheckSystemBarColors);
                 if (i == 1) {
                     this.renderingBitmap[i].eraseColor(getThemedColor(Theme.key_windowBackgroundWhite));
                 }
@@ -414,7 +414,7 @@ public class BlurBehindDrawable {
                 } else {
                     BlurBehindDrawable.this.backgroundBitmap[i2].eraseColor(0);
                 }
-                BlurBehindDrawable.this.emptyPaint.setAlpha(NotificationCenter.goingToPreviewTheme);
+                BlurBehindDrawable.this.emptyPaint.setAlpha(NotificationCenter.needCheckSystemBarColors);
                 Utilities.stackBlurBitmap(BlurBehindDrawable.this.blurredBitmapTmp[i2], BlurBehindDrawable.this.getBlurRadius());
                 if (BlurBehindDrawable.this.backgroundBitmapCanvas[i2] != null) {
                     BlurBehindDrawable.this.backgroundBitmapCanvas[i2].drawBitmap(BlurBehindDrawable.this.blurredBitmapTmp[i2], 0.0f, 0.0f, BlurBehindDrawable.this.emptyPaint);

@@ -1,106 +1,73 @@
 package j$.util;
 
-import j$.util.Spliterator;
-import j$.util.function.Consumer;
-import java.util.Comparator;
-import java.util.Spliterator;
-import java.util.function.Consumer;
-import java.util.function.DoubleConsumer;
+import java.util.NoSuchElementException;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class C implements Spliterator.OfDouble {
-    public final /* synthetic */ D a;
+public final class C {
+    private static final C c = new C();
+    private final boolean a;
+    private final long b;
 
-    private /* synthetic */ C(D d) {
-        this.a = d;
+    private C() {
+        this.a = false;
+        this.b = 0L;
     }
 
-    public static /* synthetic */ Spliterator.OfDouble a(D d) {
-        if (d == null) {
-            return null;
+    public static C a() {
+        return c;
+    }
+
+    private C(long j) {
+        this.a = true;
+        this.b = j;
+    }
+
+    public static C d(long j) {
+        return new C(j);
+    }
+
+    public final long b() {
+        if (!this.a) {
+            throw new NoSuchElementException("No value present");
         }
-        return d instanceof B ? ((B) d).a : new C(d);
+        return this.b;
     }
 
-    @Override // java.util.Spliterator
-    public final /* synthetic */ int characteristics() {
-        return this.a.characteristics();
+    public final boolean c() {
+        return this.a;
     }
 
-    public final /* synthetic */ boolean equals(Object obj) {
-        D d = this.a;
-        if (obj instanceof C) {
-            obj = ((C) obj).a;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        return d.equals(obj);
+        if (!(obj instanceof C)) {
+            return false;
+        }
+        C c2 = (C) obj;
+        boolean z = this.a;
+        if (z && c2.a) {
+            if (this.b == c2.b) {
+                return true;
+            }
+        } else if (z == c2.a) {
+            return true;
+        }
+        return false;
     }
 
-    @Override // java.util.Spliterator
-    public final /* synthetic */ long estimateSize() {
-        return this.a.estimateSize();
+    public final int hashCode() {
+        if (!this.a) {
+            return 0;
+        }
+        long j = this.b;
+        return (int) (j ^ (j >>> 32));
     }
 
-    @Override // java.util.Spliterator.OfPrimitive
-    public final /* synthetic */ void forEachRemaining(DoubleConsumer doubleConsumer) {
-        this.a.e(doubleConsumer);
-    }
-
-    @Override // java.util.Spliterator.OfDouble, java.util.Spliterator
-    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        this.a.a(Consumer.VivifiedWrapper.convert(consumer));
-    }
-
-    @Override // java.util.Spliterator.OfDouble
-    public final /* synthetic */ void forEachRemaining(DoubleConsumer doubleConsumer) {
-        this.a.forEachRemaining(j$.util.function.j.a(doubleConsumer));
-    }
-
-    @Override // java.util.Spliterator
-    public final /* synthetic */ Comparator getComparator() {
-        return this.a.getComparator();
-    }
-
-    @Override // java.util.Spliterator
-    public final /* synthetic */ long getExactSizeIfKnown() {
-        return this.a.getExactSizeIfKnown();
-    }
-
-    @Override // java.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return this.a.hasCharacteristics(i);
-    }
-
-    public final /* synthetic */ int hashCode() {
-        return this.a.hashCode();
-    }
-
-    @Override // java.util.Spliterator.OfPrimitive
-    public final /* synthetic */ boolean tryAdvance(DoubleConsumer doubleConsumer) {
-        return this.a.p(doubleConsumer);
-    }
-
-    @Override // java.util.Spliterator.OfDouble, java.util.Spliterator
-    public final /* synthetic */ boolean tryAdvance(java.util.function.Consumer consumer) {
-        return this.a.s(Consumer.VivifiedWrapper.convert(consumer));
-    }
-
-    @Override // java.util.Spliterator.OfDouble
-    public final /* synthetic */ boolean tryAdvance(DoubleConsumer doubleConsumer) {
-        return this.a.tryAdvance(j$.util.function.j.a(doubleConsumer));
-    }
-
-    @Override // java.util.Spliterator.OfDouble, java.util.Spliterator.OfPrimitive, java.util.Spliterator
-    public final /* synthetic */ Spliterator.OfDouble trySplit() {
-        return a(this.a.trySplit());
-    }
-
-    @Override // java.util.Spliterator.OfDouble, java.util.Spliterator.OfPrimitive, java.util.Spliterator
-    public final /* synthetic */ Spliterator.OfPrimitive trySplit() {
-        return L.a(this.a.trySplit());
-    }
-
-    @Override // java.util.Spliterator.OfDouble, java.util.Spliterator.OfPrimitive, java.util.Spliterator
-    public final /* synthetic */ java.util.Spliterator trySplit() {
-        return Spliterator.Wrapper.convert(this.a.trySplit());
+    public final String toString() {
+        if (this.a) {
+            return "OptionalLong[" + this.b + "]";
+        }
+        return "OptionalLong.empty";
     }
 }

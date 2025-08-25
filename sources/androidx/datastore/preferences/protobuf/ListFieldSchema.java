@@ -1,6 +1,7 @@
 package androidx.datastore.preferences.protobuf;
 
 import androidx.datastore.preferences.protobuf.Internal;
+import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -33,7 +34,7 @@ abstract class ListFieldSchema {
     }
 
     private static final class ListFieldSchemaFull extends ListFieldSchema {
-        private static final Class UNMODIFIABLE_LIST_CLASS = Collections.unmodifiableList(Collections.emptyList()).getClass();
+        private static final Class UNMODIFIABLE_LIST_CLASS = DesugarCollections.unmodifiableList(Collections.emptyList()).getClass();
 
         private ListFieldSchemaFull() {
             super();
@@ -62,7 +63,7 @@ abstract class ListFieldSchema {
                     }
                     return;
                 }
-                unmodifiableList = Collections.unmodifiableList(list);
+                unmodifiableList = DesugarCollections.unmodifiableList(list);
             }
             UnsafeUtil.putObject(obj, j, unmodifiableList);
         }

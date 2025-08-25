@@ -6,6 +6,6 @@ import java.util.Date;
 /* loaded from: classes2.dex */
 public final /* synthetic */ class DateRetargetClass {
     public static Instant toInstant(Date date) {
-        return Instant.q(date.getTime());
+        return Instant.F(date.getTime());
     }
 }

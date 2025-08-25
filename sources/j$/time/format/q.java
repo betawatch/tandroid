@@ -1,65 +1,80 @@
 package j$.time.format;
 
-import j$.time.LocalDate;
 import j$.time.ZoneId;
 
 /* loaded from: classes2.dex */
-final class q implements j$.time.temporal.k {
-    final /* synthetic */ LocalDate a;
-    final /* synthetic */ j$.time.temporal.k b;
-    final /* synthetic */ j$.time.chrono.e c;
+final class q implements j$.time.temporal.o {
+    final /* synthetic */ j$.time.chrono.b a;
+    final /* synthetic */ j$.time.temporal.o b;
+    final /* synthetic */ j$.time.chrono.l c;
     final /* synthetic */ ZoneId d;
 
-    @Override // j$.time.temporal.k
-    public final /* synthetic */ int h(j$.time.temporal.a aVar) {
-        return j$.time.temporal.j.a(this, aVar);
+    @Override // j$.time.temporal.o
+    public final /* synthetic */ int j(j$.time.temporal.r rVar) {
+        return j$.time.temporal.n.a(this, rVar);
     }
 
-    q(LocalDate localDate, j$.time.temporal.k kVar, j$.time.chrono.e eVar, ZoneId zoneId) {
-        this.a = localDate;
-        this.b = kVar;
-        this.c = eVar;
+    q(j$.time.chrono.b bVar, j$.time.temporal.o oVar, j$.time.chrono.l lVar, ZoneId zoneId) {
+        this.a = bVar;
+        this.b = oVar;
+        this.c = lVar;
         this.d = zoneId;
     }
 
-    @Override // j$.time.temporal.k
-    public final boolean j(j$.time.temporal.l lVar) {
-        LocalDate localDate = this.a;
-        if (localDate != null && lVar.h()) {
-            return localDate.j(lVar);
+    @Override // j$.time.temporal.o
+    public final boolean f(j$.time.temporal.r rVar) {
+        j$.time.chrono.b bVar = this.a;
+        if (bVar != null && rVar.u()) {
+            return bVar.f(rVar);
         }
-        return this.b.j(lVar);
+        return this.b.f(rVar);
     }
 
-    @Override // j$.time.temporal.k
-    public final j$.time.temporal.q i(j$.time.temporal.a aVar) {
-        LocalDate localDate = this.a;
-        if (localDate != null && aVar.h()) {
-            return localDate.i(aVar);
+    @Override // j$.time.temporal.o
+    public final j$.time.temporal.w m(j$.time.temporal.r rVar) {
+        j$.time.chrono.b bVar = this.a;
+        if (bVar != null && rVar.u()) {
+            return bVar.m(rVar);
         }
-        return this.b.i(aVar);
+        return this.b.m(rVar);
     }
 
-    @Override // j$.time.temporal.k
-    public final long f(j$.time.temporal.l lVar) {
-        LocalDate localDate = this.a;
-        if (localDate != null && lVar.h()) {
-            return localDate.f(lVar);
+    @Override // j$.time.temporal.o
+    public final long r(j$.time.temporal.r rVar) {
+        j$.time.chrono.b bVar = this.a;
+        if (bVar != null && rVar.u()) {
+            return bVar.r(rVar);
         }
-        return this.b.f(lVar);
+        return this.b.r(rVar);
     }
 
-    @Override // j$.time.temporal.k
-    public final Object g(j$.time.temporal.n nVar) {
-        if (nVar == j$.time.temporal.j.d()) {
+    @Override // j$.time.temporal.o
+    public final Object u(j$.time.temporal.t tVar) {
+        if (tVar == j$.time.temporal.n.e()) {
             return this.c;
         }
-        if (nVar == j$.time.temporal.j.j()) {
+        if (tVar == j$.time.temporal.n.k()) {
             return this.d;
         }
-        if (nVar == j$.time.temporal.j.h()) {
-            return this.b.g(nVar);
+        if (tVar == j$.time.temporal.n.i()) {
+            return this.b.u(tVar);
         }
-        return nVar.a(this);
+        return tVar.a(this);
+    }
+
+    public final String toString() {
+        String str;
+        String str2 = "";
+        j$.time.chrono.l lVar = this.c;
+        if (lVar != null) {
+            str = " with chronology " + lVar;
+        } else {
+            str = "";
+        }
+        ZoneId zoneId = this.d;
+        if (zoneId != null) {
+            str2 = " with zone " + zoneId;
+        }
+        return this.b + str + str2;
     }
 }

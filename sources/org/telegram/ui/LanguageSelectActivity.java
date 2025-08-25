@@ -15,12 +15,13 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import j$.util.Collection;
-import j$.util.function.Predicate;
+import j$.util.function.Predicate$-CC;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.function.Predicate;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
@@ -319,22 +320,19 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
                         HashSet hashSet = new HashSet(restrictedLanguages);
                         if (restrictedLanguages.contains(str2) && !restrictedLanguages.contains(str)) {
                             Collection.-EL.removeIf(hashSet, new Predicate() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda8
-                                @Override // j$.util.function.Predicate
                                 public /* synthetic */ Predicate and(Predicate predicate) {
-                                    return Predicate.-CC.$default$and(this, predicate);
+                                    return Predicate$-CC.$default$and(this, predicate);
                                 }
 
-                                @Override // j$.util.function.Predicate
                                 public /* synthetic */ Predicate negate() {
-                                    return Predicate.-CC.$default$negate(this);
+                                    return Predicate$-CC.$default$negate(this);
                                 }
 
-                                @Override // j$.util.function.Predicate
                                 public /* synthetic */ Predicate or(Predicate predicate) {
-                                    return Predicate.-CC.$default$or(this, predicate);
+                                    return Predicate$-CC.$default$or(this, predicate);
                                 }
 
-                                @Override // j$.util.function.Predicate
+                                @Override // java.util.function.Predicate
                                 public final boolean test(Object obj) {
                                     boolean lambda$createView$3;
                                     lambda$createView$3 = LanguageSelectActivity.lambda$createView$3(str2, (String) obj);

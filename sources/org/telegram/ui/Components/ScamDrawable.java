@@ -35,8 +35,8 @@ public class ScamDrawable extends Drawable {
     public ScamDrawable(int i, int i2) {
         TextPaint textPaint = new TextPaint(1);
         this.textPaint = textPaint;
-        this.colorAlpha = NotificationCenter.goingToPreviewTheme;
-        this.alpha = NotificationCenter.goingToPreviewTheme;
+        this.colorAlpha = NotificationCenter.needCheckSystemBarColors;
+        this.alpha = NotificationCenter.needCheckSystemBarColors;
         this.currentType = i2;
         textPaint.setTextSize(AndroidUtilities.dp(i));
         this.textPaint.setTypeface(AndroidUtilities.bold());

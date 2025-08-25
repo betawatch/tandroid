@@ -5,7 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import androidx.collection.LongSparseArray;
-import j$.util.function.Consumer;
+import j$.util.function.Consumer$-CC;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -15,6 +15,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
+import java.util.function.Consumer;
 import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.support.LongSparseIntArray;
@@ -101,15 +102,14 @@ public class TopicsController extends BaseController {
         this.topicsIsLoading.put(j, 1);
         if (z) {
             getMessagesStorage().loadTopics(-j, new Consumer() { // from class: org.telegram.messenger.TopicsController$$ExternalSyntheticLambda28
-                @Override // j$.util.function.Consumer
+                @Override // java.util.function.Consumer
                 /* renamed from: accept */
-                public final void r(Object obj) {
+                public final void p(Object obj) {
                     TopicsController.this.lambda$loadTopics$1(j, z, i, (ArrayList) obj);
                 }
 
-                @Override // j$.util.function.Consumer
                 public /* synthetic */ Consumer andThen(Consumer consumer) {
-                    return Consumer.-CC.$default$andThen(this, consumer);
+                    return Consumer$-CC.$default$andThen(this, consumer);
                 }
             });
             return;
@@ -1542,15 +1542,14 @@ public class TopicsController extends BaseController {
 
     public void loadTopic(final long j, final long j2, final Runnable runnable) {
         getMessagesStorage().loadTopics(-j, new Consumer() { // from class: org.telegram.messenger.TopicsController$$ExternalSyntheticLambda3
-            @Override // j$.util.function.Consumer
+            @Override // java.util.function.Consumer
             /* renamed from: accept */
-            public final void r(Object obj) {
+            public final void p(Object obj) {
                 TopicsController.this.lambda$loadTopic$28(j, j2, runnable, (ArrayList) obj);
             }
 
-            @Override // j$.util.function.Consumer
             public /* synthetic */ Consumer andThen(Consumer consumer) {
-                return Consumer.-CC.$default$andThen(this, consumer);
+                return Consumer$-CC.$default$andThen(this, consumer);
             }
         });
     }

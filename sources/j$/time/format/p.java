@@ -1,6 +1,6 @@
 package j$.time.format;
 
-import j$.util.A;
+import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -21,9 +21,9 @@ public final class p {
         hashMap.put('G', j$.time.temporal.a.ERA);
         hashMap.put('y', j$.time.temporal.a.YEAR_OF_ERA);
         hashMap.put('u', j$.time.temporal.a.YEAR);
-        j$.time.temporal.l lVar = j$.time.temporal.i.a;
-        hashMap.put('Q', lVar);
-        hashMap.put('q', lVar);
+        j$.time.temporal.r rVar = j$.time.temporal.j.a;
+        hashMap.put('Q', rVar);
+        hashMap.put('q', rVar);
         j$.time.temporal.a aVar = j$.time.temporal.a.MONTH_OF_YEAR;
         hashMap.put('M', aVar);
         hashMap.put('L', aVar);
@@ -46,6 +46,7 @@ public final class p {
         hashMap.put('A', j$.time.temporal.a.MILLI_OF_DAY);
         hashMap.put('n', aVar3);
         hashMap.put('N', j$.time.temporal.a.NANO_OF_DAY);
+        hashMap.put('g', j$.time.temporal.l.a);
     }
 
     public p() {
@@ -72,25 +73,29 @@ public final class p {
         d(k.INSENSITIVE);
     }
 
+    public final void u() {
+        d(k.STRICT);
+    }
+
     public final void t() {
         d(k.LENIENT);
     }
 
-    public final void l(j$.time.temporal.l lVar, int i) {
-        A.z(lVar, "field");
+    public final void l(j$.time.temporal.r rVar, int i) {
+        Objects.requireNonNull(rVar, "field");
         if (i < 1 || i > 19) {
             throw new IllegalArgumentException("The width must be from 1 to 19 inclusive but was " + i);
         }
-        k(new i(lVar, i, i, x.NOT_NEGATIVE));
+        k(new i(rVar, i, i, x.NOT_NEGATIVE));
     }
 
-    public final void m(j$.time.temporal.l lVar, int i, int i2, x xVar) {
+    public final void m(j$.time.temporal.r rVar, int i, int i2, x xVar) {
         if (i == i2 && xVar == x.NOT_NEGATIVE) {
-            l(lVar, i2);
+            l(rVar, i2);
             return;
         }
-        A.z(lVar, "field");
-        A.z(xVar, "signStyle");
+        Objects.requireNonNull(rVar, "field");
+        Objects.requireNonNull(xVar, "signStyle");
         if (i < 1 || i > 19) {
             throw new IllegalArgumentException("The minimum width must be from 1 to 19 inclusive but was " + i);
         }
@@ -100,7 +105,7 @@ public final class p {
         if (i2 < i) {
             throw new IllegalArgumentException("The maximum width must exceed or equal the minimum width but " + i2 + " < " + i);
         }
-        k(new i(lVar, i, i2, xVar));
+        k(new i(rVar, i, i2, xVar));
     }
 
     private void k(i iVar) {
@@ -131,17 +136,24 @@ public final class p {
     }
 
     public final void b(j$.time.temporal.a aVar) {
-        d(new g(aVar));
+        g gVar = new g(aVar, 0, 9, true, 0);
+        Objects.requireNonNull(aVar, "field");
+        if (aVar.i().g()) {
+            d(gVar);
+        } else {
+            throw new IllegalArgumentException("Field must have a fixed set of values: " + aVar);
+        }
     }
 
     public final void i(j$.time.temporal.a aVar, TextStyle textStyle) {
-        A.z(aVar, "field");
-        A.z(textStyle, "textStyle");
-        d(new m(aVar, textStyle, new u()));
+        Objects.requireNonNull(aVar, "field");
+        Objects.requireNonNull(textStyle, "textStyle");
+        d(new m(aVar, textStyle, u.b()));
     }
 
     public final void j(j$.time.temporal.a aVar, HashMap hashMap) {
-        A.z(aVar, "field");
+        Objects.requireNonNull(aVar, "field");
+        Objects.requireNonNull(hashMap, "textLookup");
         LinkedHashMap linkedHashMap = new LinkedHashMap(hashMap);
         TextStyle textStyle = TextStyle.FULL;
         d(new m(aVar, textStyle, new b(new t(Collections.singletonMap(textStyle, linkedHashMap)))));
@@ -152,7 +164,7 @@ public final class p {
     }
 
     public final void h() {
-        d(j.d);
+        d(j.e);
     }
 
     public final void g(String str, String str2) {
@@ -172,16 +184,19 @@ public final class p {
     }
 
     public final void f(String str) {
-        if (str.length() > 0) {
-            if (str.length() == 1) {
-                d(new d(str.charAt(0)));
-            } else {
-                d(new l(str));
-            }
+        Objects.requireNonNull(str, "literal");
+        if (str.isEmpty()) {
+            return;
+        }
+        if (str.length() == 1) {
+            d(new d(str.charAt(0)));
+        } else {
+            d(new l(str));
         }
     }
 
     public final void a(DateTimeFormatter dateTimeFormatter) {
+        Objects.requireNonNull(dateTimeFormatter, "formatter");
         d(dateTimeFormatter.e());
     }
 
@@ -207,7 +222,7 @@ public final class p {
     }
 
     private int d(f fVar) {
-        A.z(fVar, "pp");
+        Objects.requireNonNull(fVar, "pp");
         p pVar = this.a;
         pVar.getClass();
         pVar.c.add(fVar);
@@ -215,21 +230,21 @@ public final class p {
         return r2.c.size() - 1;
     }
 
-    public final DateTimeFormatter v(Locale locale) {
-        return w(locale, w.SMART, null);
+    public final DateTimeFormatter w(Locale locale) {
+        return x(locale, w.SMART, null);
     }
 
-    final DateTimeFormatter u(w wVar, j$.time.chrono.f fVar) {
-        return w(Locale.getDefault(), wVar, fVar);
+    final DateTimeFormatter v(w wVar, j$.time.chrono.s sVar) {
+        return x(Locale.getDefault(), wVar, sVar);
     }
 
-    private DateTimeFormatter w(Locale locale, w wVar, j$.time.chrono.f fVar) {
-        A.z(locale, "locale");
+    private DateTimeFormatter x(Locale locale, w wVar, j$.time.chrono.s sVar) {
+        Objects.requireNonNull(locale, "locale");
         while (this.a.b != null) {
             p();
         }
         e eVar = new e(this.c, false);
         v vVar = v.a;
-        return new DateTimeFormatter(eVar, locale, wVar, fVar);
+        return new DateTimeFormatter(eVar, locale, wVar, sVar);
     }
 }

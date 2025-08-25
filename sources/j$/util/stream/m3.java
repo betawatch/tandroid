@@ -1,44 +1,118 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import j$.util.function.Consumer;
+import j$.util.function.Consumer$-CC;
+import java.util.function.Consumer;
+import java.util.function.IntConsumer;
 
 /* loaded from: classes2.dex */
-final class m3 extends p3 implements j$.util.D, j$.util.function.l {
-    double e;
+public final /* synthetic */ class m3 implements k2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ IntConsumer b;
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ void a(Consumer consumer) {
-        j$.util.A.b(this, consumer);
+    public /* synthetic */ m3(IntConsumer intConsumer, int i) {
+        this.a = i;
+        this.b = intConsumer;
     }
 
-    @Override // j$.util.function.l
-    public final /* synthetic */ j$.util.function.l k(j$.util.function.l lVar) {
-        return j$.com.android.tools.r8.a.a(this, lVar);
+    private final /* synthetic */ void b(long j) {
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean s(Consumer consumer) {
-        return j$.util.A.l(this, consumer);
+    private final /* synthetic */ void c(long j) {
     }
 
-    @Override // j$.util.stream.s3
-    protected final Spliterator u(Spliterator spliterator) {
-        return new m3((j$.util.D) spliterator, this);
+    private final /* synthetic */ void d() {
     }
 
-    @Override // j$.util.stream.p3
-    protected final void w(Object obj) {
-        ((j$.util.function.l) obj).accept(this.e);
+    private final /* synthetic */ void e() {
     }
 
-    @Override // j$.util.function.l
-    public final void accept(double d) {
-        this.e = d;
+    @Override // j$.util.stream.m2, j$.util.stream.j2, java.util.function.DoubleConsumer
+    public final /* synthetic */ void accept(double d) {
+        switch (this.a) {
+            case 0:
+                w0.a();
+                throw null;
+            default:
+                w0.a();
+                throw null;
+        }
     }
 
-    @Override // j$.util.stream.p3
-    protected final W2 x() {
-        return new T2();
+    @Override // j$.util.stream.k2, j$.util.stream.m2
+    public final void accept(int i) {
+        switch (this.a) {
+            case 0:
+                ((R2) this.b).accept(i);
+                break;
+            default:
+                this.b.accept(i);
+                break;
+        }
+    }
+
+    @Override // j$.util.stream.m2
+    public final /* synthetic */ void accept(long j) {
+        switch (this.a) {
+            case 0:
+                w0.l();
+                throw null;
+            default:
+                w0.l();
+                throw null;
+        }
+    }
+
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final /* bridge */ /* synthetic */ void p(Object obj) {
+        switch (this.a) {
+            case 0:
+                m((Integer) obj);
+                break;
+            default:
+                m((Integer) obj);
+                break;
+        }
+    }
+
+    public final /* synthetic */ Consumer andThen(Consumer consumer) {
+        switch (this.a) {
+        }
+        return Consumer$-CC.$default$andThen(this, consumer);
+    }
+
+    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
+        switch (this.a) {
+        }
+        return j$.com.android.tools.r8.a.b(this, intConsumer);
+    }
+
+    @Override // j$.util.stream.m2
+    public final /* synthetic */ void k() {
+        int i = this.a;
+    }
+
+    @Override // j$.util.stream.m2
+    public final /* synthetic */ void l(long j) {
+        int i = this.a;
+    }
+
+    @Override // j$.util.stream.k2
+    public final /* synthetic */ void m(Integer num) {
+        switch (this.a) {
+            case 0:
+                w0.g(this, num);
+                break;
+            default:
+                w0.g(this, num);
+                break;
+        }
+    }
+
+    @Override // j$.util.stream.m2
+    public final /* synthetic */ boolean n() {
+        switch (this.a) {
+        }
+        return false;
     }
 }

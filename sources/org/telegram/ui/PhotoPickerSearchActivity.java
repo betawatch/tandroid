@@ -158,8 +158,18 @@ public class PhotoPickerSearchActivity extends BaseFragment {
         this.actionBar.addView(this.scrollSlidingTextTabStrip, LayoutHelper.createFrame(-1, 44, 83));
         this.scrollSlidingTextTabStrip.setDelegate(new ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate() { // from class: org.telegram.ui.PhotoPickerSearchActivity.3
             @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate
+            public /* synthetic */ boolean canReorder(int i4) {
+                return ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate.-CC.$default$canReorder(this, i4);
+            }
+
+            @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate
             public /* synthetic */ void onSamePageSelected() {
                 ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate.-CC.$default$onSamePageSelected(this);
+            }
+
+            @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate
+            public /* synthetic */ boolean showOptions(int i4, View view2) {
+                return ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate.-CC.$default$showOptions(this, i4, view2);
             }
 
             @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate

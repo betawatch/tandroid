@@ -1,7 +1,7 @@
 package com.google.common.collect;
 
 import com.google.common.base.Preconditions;
-import java.util.Objects;
+import j$.util.Objects;
 
 /* loaded from: classes.dex */
 class RegularImmutableList extends ImmutableList {

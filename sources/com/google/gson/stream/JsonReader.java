@@ -4,11 +4,11 @@ import com.google.gson.Strictness;
 import com.google.gson.internal.JsonReaderInternalAccess;
 import com.google.gson.internal.TroubleshootingGuide;
 import com.google.gson.internal.bind.JsonTreeReader;
+import j$.util.Objects;
 import java.io.Closeable;
 import java.io.EOFException;
 import java.io.Reader;
 import java.util.Arrays;
-import java.util.Objects;
 
 /* loaded from: classes.dex */
 public class JsonReader implements Closeable {

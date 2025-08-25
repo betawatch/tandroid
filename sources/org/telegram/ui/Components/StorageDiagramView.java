@@ -198,7 +198,7 @@ public abstract class StorageDiagramView extends View implements NotificationCen
             ClearViewData[] clearViewDataArr = this.data;
             int length = clearViewDataArr.length;
             d = 180.0d;
-            i = NotificationCenter.goingToPreviewTheme;
+            i = NotificationCenter.needCheckSystemBarColors;
             if (i2 >= length) {
                 break;
             }
@@ -210,7 +210,7 @@ public abstract class StorageDiagramView extends View implements NotificationCen
                         float f9 = ((-360.0f) * f8) + ((1.0f - this.singleProgress) * 10.0f);
                         float f10 = f9 > 0.0f ? 0.0f : f9;
                         clearViewData.paint.setColor(Theme.getColor(clearViewData.colorKey));
-                        this.data[i2].paint.setAlpha(NotificationCenter.goingToPreviewTheme);
+                        this.data[i2].paint.setAlpha(NotificationCenter.needCheckSystemBarColors);
                         double width = this.rectF.width() / 2.0f;
                         if (Math.abs((float) (f10 * ((3.141592653589793d * width) / 180.0d))) <= 1.0f) {
                             double d2 = (-90.0f) - (360.0f * f7);
@@ -250,18 +250,18 @@ public abstract class StorageDiagramView extends View implements NotificationCen
                             canvas.drawArc(this.rectF, (-90.0f) - (f11 * 360.0f), f14, false, this.data[i3].paint);
                             f11 += f12;
                             i3++;
-                            i = NotificationCenter.goingToPreviewTheme;
+                            i = NotificationCenter.needCheckSystemBarColors;
                             d = 180.0d;
                         }
                     }
                     f11 += f12;
                     i3++;
-                    i = NotificationCenter.goingToPreviewTheme;
+                    i = NotificationCenter.needCheckSystemBarColors;
                     d = 180.0d;
                 }
             }
             i3++;
-            i = NotificationCenter.goingToPreviewTheme;
+            i = NotificationCenter.needCheckSystemBarColors;
             d = 180.0d;
         }
         ImageReceiver imageReceiver = this.avatarImageReceiver;

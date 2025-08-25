@@ -1,92 +1,111 @@
 package j$.time.zone;
 
-import j$.time.LocalDateTime;
 import j$.time.ZoneOffset;
+import java.io.Externalizable;
+import java.io.InvalidClassException;
+import java.io.ObjectInput;
+import java.io.ObjectOutput;
 import java.io.Serializable;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.io.StreamCorruptedException;
+import java.util.TimeZone;
+import org.telegram.messenger.NotificationCenter;
 
 /* loaded from: classes2.dex */
-public final class a implements Comparable, Serializable {
-    private final LocalDateTime a;
-    private final ZoneOffset b;
-    private final ZoneOffset c;
+final class a implements Externalizable {
+    private static final long serialVersionUID = -8885321777449118786L;
+    private byte a;
+    private Serializable b;
 
-    @Override // java.lang.Comparable
-    public final int compareTo(Object obj) {
-        a aVar = (a) obj;
-        return this.a.toInstant(this.b).compareTo(aVar.a.toInstant(aVar.b));
+    public a() {
     }
 
-    a(LocalDateTime localDateTime, ZoneOffset zoneOffset, ZoneOffset zoneOffset2) {
-        this.a = localDateTime;
-        this.b = zoneOffset;
-        this.c = zoneOffset2;
+    a(byte b, Serializable serializable) {
+        this.a = b;
+        this.b = serializable;
     }
 
-    a(long j, ZoneOffset zoneOffset, ZoneOffset zoneOffset2) {
-        this.a = LocalDateTime.t(j, 0, zoneOffset);
-        this.b = zoneOffset;
-        this.c = zoneOffset2;
+    @Override // java.io.Externalizable
+    public final void writeExternal(ObjectOutput objectOutput) {
+        byte b = this.a;
+        Serializable serializable = this.b;
+        objectOutput.writeByte(b);
+        if (b == 1) {
+            ((ZoneRules) serializable).writeExternal(objectOutput);
+            return;
+        }
+        if (b == 2) {
+            ((b) serializable).writeExternal(objectOutput);
+        } else if (b == 3) {
+            ((e) serializable).writeExternal(objectOutput);
+        } else {
+            if (b == 100) {
+                ((ZoneRules) serializable).k(objectOutput);
+                return;
+            }
+            throw new InvalidClassException("Unknown serialized type");
+        }
     }
 
-    public final long k() {
-        return this.a.v(this.b);
+    @Override // java.io.Externalizable
+    public final void readExternal(ObjectInput objectInput) {
+        Serializable j;
+        byte readByte = objectInput.readByte();
+        this.a = readByte;
+        if (readByte == 1) {
+            j = ZoneRules.j(objectInput);
+        } else if (readByte == 2) {
+            long a = a(objectInput);
+            ZoneOffset b = b(objectInput);
+            ZoneOffset b2 = b(objectInput);
+            if (b.equals(b2)) {
+                throw new IllegalArgumentException("Offsets must not be equal");
+            }
+            j = new b(a, b, b2);
+        } else if (readByte == 3) {
+            j = e.b(objectInput);
+        } else {
+            if (readByte != 100) {
+                throw new StreamCorruptedException("Unknown serialized type");
+            }
+            j = new ZoneRules(TimeZone.getTimeZone(objectInput.readUTF()));
+        }
+        this.b = j;
     }
 
-    public final LocalDateTime g() {
-        return this.a;
-    }
-
-    public final ZoneOffset j() {
+    private Object readResolve() {
         return this.b;
     }
 
-    public final ZoneOffset i() {
-        return this.c;
-    }
-
-    public final LocalDateTime f() {
-        return this.a.u(this.c.getTotalSeconds() - this.b.getTotalSeconds());
-    }
-
-    public final j$.time.d h() {
-        return j$.time.d.i(this.c.getTotalSeconds() - this.b.getTotalSeconds());
-    }
-
-    public final boolean m() {
-        return this.c.getTotalSeconds() > this.b.getTotalSeconds();
-    }
-
-    final List l() {
-        return m() ? Collections.emptyList() : Arrays.asList(this.b, this.c);
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    static void d(ZoneOffset zoneOffset, ObjectOutput objectOutput) {
+        int totalSeconds = zoneOffset.getTotalSeconds();
+        int i = totalSeconds % 900 == 0 ? totalSeconds / 900 : NotificationCenter.dialogIsTranslatable;
+        objectOutput.writeByte(i);
+        if (i == 127) {
+            objectOutput.writeInt(totalSeconds);
         }
-        if (!(obj instanceof a)) {
-            return false;
+    }
+
+    static ZoneOffset b(ObjectInput objectInput) {
+        byte readByte = objectInput.readByte();
+        return readByte == Byte.MAX_VALUE ? ZoneOffset.I(objectInput.readInt()) : ZoneOffset.I(readByte * 900);
+    }
+
+    static void c(long j, ObjectOutput objectOutput) {
+        if (j >= -4575744000L && j < 10413792000L && j % 900 == 0) {
+            int i = (int) ((j + 4575744000L) / 900);
+            objectOutput.writeByte((i >>> 16) & NotificationCenter.needCheckSystemBarColors);
+            objectOutput.writeByte((i >>> 8) & NotificationCenter.needCheckSystemBarColors);
+            objectOutput.writeByte(i & NotificationCenter.needCheckSystemBarColors);
+            return;
         }
-        a aVar = (a) obj;
-        return this.a.equals(aVar.a) && this.b.equals(aVar.b) && this.c.equals(aVar.c);
+        objectOutput.writeByte(NotificationCenter.needCheckSystemBarColors);
+        objectOutput.writeLong(j);
     }
 
-    public final int hashCode() {
-        return (this.a.hashCode() ^ this.b.hashCode()) ^ Integer.rotateLeft(this.c.hashCode(), 16);
-    }
-
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("Transition[");
-        sb.append(m() ? "Gap" : "Overlap");
-        sb.append(" at ");
-        sb.append(this.a);
-        sb.append(this.b);
-        sb.append(" to ");
-        sb.append(this.c);
-        sb.append(']');
-        return sb.toString();
+    static long a(ObjectInput objectInput) {
+        if ((objectInput.readByte() & 255) == 255) {
+            return objectInput.readLong();
+        }
+        return ((((r0 << 16) + ((objectInput.readByte() & 255) << 8)) + (objectInput.readByte() & 255)) * 900) - 4575744000L;
     }
 }

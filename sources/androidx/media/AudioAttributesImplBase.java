@@ -31,7 +31,7 @@ public class AudioAttributesImplBase implements AudioAttributesImpl {
         } else if (legacyStreamType == 7) {
             i |= 1;
         }
-        return i & NotificationCenter.voipServiceCreated;
+        return i & NotificationCenter.messagePlayingSpeedChanged;
     }
 
     public int hashCode() {

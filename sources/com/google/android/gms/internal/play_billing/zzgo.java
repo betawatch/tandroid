@@ -68,10 +68,10 @@ final class zzgo extends zzgr {
         int i2 = this.zzd;
         try {
             byte[] bArr = this.zzb;
-            bArr[i2] = (byte) (i & NotificationCenter.goingToPreviewTheme);
-            bArr[i2 + 1] = (byte) ((i >> 8) & NotificationCenter.goingToPreviewTheme);
-            bArr[i2 + 2] = (byte) ((i >> 16) & NotificationCenter.goingToPreviewTheme);
-            bArr[i2 + 3] = (byte) ((i >> 24) & NotificationCenter.goingToPreviewTheme);
+            bArr[i2] = (byte) (i & NotificationCenter.needCheckSystemBarColors);
+            bArr[i2 + 1] = (byte) ((i >> 8) & NotificationCenter.needCheckSystemBarColors);
+            bArr[i2 + 2] = (byte) ((i >> 16) & NotificationCenter.needCheckSystemBarColors);
+            bArr[i2 + 3] = (byte) ((i >> 24) & NotificationCenter.needCheckSystemBarColors);
             this.zzd = i2 + 4;
         } catch (IndexOutOfBoundsException e) {
             throw new zzgp(i2, this.zzc, 4, e);
@@ -89,14 +89,14 @@ final class zzgo extends zzgr {
         int i = this.zzd;
         try {
             byte[] bArr = this.zzb;
-            bArr[i] = (byte) (((int) j) & NotificationCenter.goingToPreviewTheme);
-            bArr[i + 1] = (byte) (((int) (j >> 8)) & NotificationCenter.goingToPreviewTheme);
-            bArr[i + 2] = (byte) (((int) (j >> 16)) & NotificationCenter.goingToPreviewTheme);
-            bArr[i + 3] = (byte) (((int) (j >> 24)) & NotificationCenter.goingToPreviewTheme);
-            bArr[i + 4] = (byte) (((int) (j >> 32)) & NotificationCenter.goingToPreviewTheme);
-            bArr[i + 5] = (byte) (((int) (j >> 40)) & NotificationCenter.goingToPreviewTheme);
-            bArr[i + 6] = (byte) (((int) (j >> 48)) & NotificationCenter.goingToPreviewTheme);
-            bArr[i + 7] = (byte) (((int) (j >> 56)) & NotificationCenter.goingToPreviewTheme);
+            bArr[i] = (byte) (((int) j) & NotificationCenter.needCheckSystemBarColors);
+            bArr[i + 1] = (byte) (((int) (j >> 8)) & NotificationCenter.needCheckSystemBarColors);
+            bArr[i + 2] = (byte) (((int) (j >> 16)) & NotificationCenter.needCheckSystemBarColors);
+            bArr[i + 3] = (byte) (((int) (j >> 24)) & NotificationCenter.needCheckSystemBarColors);
+            bArr[i + 4] = (byte) (((int) (j >> 32)) & NotificationCenter.needCheckSystemBarColors);
+            bArr[i + 5] = (byte) (((int) (j >> 40)) & NotificationCenter.needCheckSystemBarColors);
+            bArr[i + 6] = (byte) (((int) (j >> 48)) & NotificationCenter.needCheckSystemBarColors);
+            bArr[i + 7] = (byte) (((int) (j >> 56)) & NotificationCenter.needCheckSystemBarColors);
             this.zzd = i + 8;
         } catch (IndexOutOfBoundsException e) {
             throw new zzgp(i, this.zzc, 8, e);
@@ -186,7 +186,7 @@ final class zzgo extends zzgr {
                 byte[] bArr = this.zzb;
                 int i2 = this.zzd;
                 this.zzd = i2 + 1;
-                bArr[i2] = (byte) ((i | 128) & NotificationCenter.goingToPreviewTheme);
+                bArr[i2] = (byte) ((i | 128) & NotificationCenter.needCheckSystemBarColors);
                 i >>>= 7;
             } catch (IndexOutOfBoundsException e) {
                 throw new zzgp(this.zzd, this.zzc, 1, e);
@@ -217,7 +217,7 @@ final class zzgo extends zzgr {
                     byte[] bArr = this.zzb;
                     int i = this.zzd;
                     this.zzd = i + 1;
-                    bArr[i] = (byte) ((((int) j) | 128) & NotificationCenter.goingToPreviewTheme);
+                    bArr[i] = (byte) ((((int) j) | 128) & NotificationCenter.needCheckSystemBarColors);
                     j >>>= 7;
                 } catch (IndexOutOfBoundsException e) {
                     throw new zzgp(this.zzd, this.zzc, 1, e);
@@ -241,7 +241,7 @@ final class zzgo extends zzgr {
             byte[] bArr4 = this.zzb;
             int i5 = this.zzd;
             this.zzd = i5 + 1;
-            zzjq.zzn(bArr4, i5, (byte) ((i3 | 128) & NotificationCenter.goingToPreviewTheme));
+            zzjq.zzn(bArr4, i5, (byte) ((i3 | 128) & NotificationCenter.needCheckSystemBarColors));
             j >>>= 7;
         }
     }

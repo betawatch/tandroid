@@ -8,7 +8,7 @@ import android.util.Pair;
 import android.util.SparseArray;
 import android.util.SparseIntArray;
 import androidx.collection.LongSparseArray;
-import j$.util.function.Consumer;
+import j$.util.Objects;
 import java.io.File;
 import java.util.AbstractMap;
 import java.util.ArrayList;
@@ -21,10 +21,10 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Objects;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.Consumer;
 import org.telegram.PhoneFormat.PhoneFormat;
 import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.SQLite.SQLiteDatabase;
@@ -2642,7 +2642,7 @@ public class MessagesStorage extends BaseController {
                                         checkSQLException(e);
                                         if (sQLiteCursor != null) {
                                         }
-                                        consumer.r(arrayList2);
+                                        consumer.p(arrayList2);
                                     } catch (Throwable th) {
                                         th = th;
                                         if (sQLiteCursor != null) {
@@ -2777,7 +2777,7 @@ public class MessagesStorage extends BaseController {
                                     checkSQLException(e);
                                     if (sQLiteCursor != null) {
                                     }
-                                    consumer.r(arrayList2);
+                                    consumer.p(arrayList2);
                                 }
                             }
                             String str3 = str;
@@ -2861,7 +2861,7 @@ public class MessagesStorage extends BaseController {
                                 sQLiteCursor3 = sQLiteCursor;
                                 sQLiteCursor3.dispose();
                             }
-                            consumer.r(arrayList2);
+                            consumer.p(arrayList2);
                         }
                     } catch (Exception e7) {
                         e = e7;
@@ -2884,7 +2884,7 @@ public class MessagesStorage extends BaseController {
             sQLiteCursor = null;
         }
         sQLiteCursor3.dispose();
-        consumer.r(arrayList2);
+        consumer.p(arrayList2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -24359,12 +24359,12 @@ public class MessagesStorage extends BaseController {
         TLRPC.MessageMedia messageMedia = message.media;
         if (messageMedia instanceof TLRPC.TL_messageMediaUnsupported_old) {
             if (messageMedia.bytes.length == 0) {
-                messageMedia.bytes = Utilities.intToBytes(211);
+                messageMedia.bytes = Utilities.intToBytes(213);
             }
         } else if (messageMedia instanceof TLRPC.TL_messageMediaUnsupported) {
             TLRPC.TL_messageMediaUnsupported_old tL_messageMediaUnsupported_old = new TLRPC.TL_messageMediaUnsupported_old();
             message.media = tL_messageMediaUnsupported_old;
-            tL_messageMediaUnsupported_old.bytes = Utilities.intToBytes(211);
+            tL_messageMediaUnsupported_old.bytes = Utilities.intToBytes(213);
             message.flags |= 512;
         }
     }
@@ -33589,7 +33589,7 @@ public class MessagesStorage extends BaseController {
                 checkSQLException(e);
             }
             sQLiteCursor.dispose();
-            consumer.r(arrayList);
+            consumer.p(arrayList);
         } catch (Throwable th) {
             if (sQLiteCursor != null) {
                 sQLiteCursor.dispose();

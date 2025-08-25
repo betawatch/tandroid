@@ -6,9 +6,9 @@ import com.google.android.exoplayer2.text.SimpleSubtitleDecoder;
 import com.google.android.exoplayer2.text.Subtitle;
 import com.google.android.exoplayer2.util.ParsableByteArray;
 import com.google.android.exoplayer2.util.Util;
+import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.zip.Inflater;
 import org.telegram.messenger.NotificationCenter;
 
@@ -38,7 +38,7 @@ public final class PgsDecoder extends SimpleSubtitleDecoder {
                 arrayList.add(readNextSection);
             }
         }
-        return new PgsSubtitle(Collections.unmodifiableList(arrayList));
+        return new PgsSubtitle(DesugarCollections.unmodifiableList(arrayList));
     }
 
     private void maybeInflateData(ParsableByteArray parsableByteArray) {
@@ -110,7 +110,7 @@ public final class PgsDecoder extends SimpleSubtitleDecoder {
                 double d = readUnsignedByte2;
                 double d2 = readUnsignedByte3 - 128;
                 double d3 = readUnsignedByte4 - 128;
-                this.colors[readUnsignedByte] = (Util.constrainValue((int) ((d - (0.34414d * d3)) - (d2 * 0.71414d)), 0, NotificationCenter.goingToPreviewTheme) << 8) | (parsableByteArray.readUnsignedByte() << 24) | (Util.constrainValue((int) ((1.402d * d2) + d), 0, NotificationCenter.goingToPreviewTheme) << 16) | Util.constrainValue((int) (d + (d3 * 1.772d)), 0, NotificationCenter.goingToPreviewTheme);
+                this.colors[readUnsignedByte] = (Util.constrainValue((int) ((d - (0.34414d * d3)) - (d2 * 0.71414d)), 0, NotificationCenter.needCheckSystemBarColors) << 8) | (parsableByteArray.readUnsignedByte() << 24) | (Util.constrainValue((int) ((1.402d * d2) + d), 0, NotificationCenter.needCheckSystemBarColors) << 16) | Util.constrainValue((int) (d + (d3 * 1.772d)), 0, NotificationCenter.needCheckSystemBarColors);
             }
             this.colorsSet = true;
         }

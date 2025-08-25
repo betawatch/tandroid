@@ -12,14 +12,14 @@ final class Q extends CountedCompleter {
     private final ConcurrentHashMap d;
     private final P e;
     private final Q f;
-    private F0 g;
+    private I0 g;
 
     protected Q(b bVar, Spliterator spliterator, P p) {
         super(null);
         this.a = bVar;
         this.b = spliterator;
-        this.c = e.f(spliterator.estimateSize());
-        this.d = new ConcurrentHashMap(Math.max(16, e.g << 1));
+        this.c = e.g(spliterator.estimateSize());
+        this.d = new ConcurrentHashMap(Math.max(16, e.b() << 1));
         this.e = p;
         this.f = null;
     }
@@ -66,11 +66,11 @@ final class Q extends CountedCompleter {
             q2.fork();
         }
         if (q.getPendingCount() > 0) {
-            q qVar = new q(8);
+            l lVar = new l(14);
             b bVar = q.a;
-            x0 s0 = bVar.s0(bVar.l0(spliterator), qVar);
-            q.a.A0(spliterator, s0);
-            q.g = s0.b();
+            A0 M = bVar.M(bVar.F(spliterator), lVar);
+            q.a.U(spliterator, M);
+            q.g = M.a();
             q.b = null;
         }
         q.tryComplete();
@@ -78,14 +78,14 @@ final class Q extends CountedCompleter {
 
     @Override // java.util.concurrent.CountedCompleter
     public final void onCompletion(CountedCompleter countedCompleter) {
-        F0 f0 = this.g;
-        if (f0 != null) {
-            f0.forEach(this.e);
+        I0 i0 = this.g;
+        if (i0 != null) {
+            i0.forEach(this.e);
             this.g = null;
         } else {
             Spliterator spliterator = this.b;
             if (spliterator != null) {
-                this.a.A0(spliterator, this.e);
+                this.a.U(spliterator, this.e);
                 this.b = null;
             }
         }

@@ -2,10 +2,10 @@ package com.google.android.exoplayer2.upstream;
 
 import com.google.android.exoplayer2.upstream.DataSource;
 import com.google.common.base.Ascii;
+import j$.util.DesugarCollections;
 import java.io.IOException;
 import java.io.InterruptedIOException;
 import java.net.SocketTimeoutException;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,7 +19,7 @@ public interface HttpDataSource extends DataSource {
         public synchronized Map getSnapshot() {
             try {
                 if (this.requestPropertiesSnapshot == null) {
-                    this.requestPropertiesSnapshot = Collections.unmodifiableMap(new HashMap(this.requestProperties));
+                    this.requestPropertiesSnapshot = DesugarCollections.unmodifiableMap(new HashMap(this.requestProperties));
                 }
             } catch (Throwable th) {
                 throw th;

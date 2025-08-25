@@ -1,93 +1,50 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
-import j$.util.function.Consumer;
-import java.util.concurrent.CountedCompleter;
+import java.util.function.DoubleConsumer;
 
 /* loaded from: classes2.dex */
-abstract class q1 extends CountedCompleter implements d2 {
-    protected final Spliterator a;
-    protected final b b;
-    protected final long c;
-    protected long d;
-    protected long e;
-    protected int f;
-    protected int g;
+final class q1 extends u1 implements j2 {
+    private final double[] h;
 
-    abstract q1 a(Spliterator spliterator, long j, long j2);
-
-    public /* synthetic */ void accept(double d) {
-        t0.b();
-        throw null;
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final /* bridge */ /* synthetic */ void p(Object obj) {
+        p((Double) obj);
     }
 
-    public /* synthetic */ void accept(int i) {
-        t0.k();
-        throw null;
+    public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {
+        return j$.com.android.tools.r8.a.a(this, doubleConsumer);
     }
 
-    public /* synthetic */ void accept(long j) {
-        t0.l();
-        throw null;
+    @Override // j$.util.stream.j2
+    public final /* synthetic */ void p(Double d) {
+        w0.e(this, d);
     }
 
-    @Override // j$.util.function.Consumer
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer.-CC.$default$andThen(this, consumer);
+    q1(Spliterator spliterator, b bVar, double[] dArr) {
+        super(spliterator, bVar, dArr.length);
+        this.h = dArr;
     }
 
-    @Override // j$.util.stream.d2
-    public final /* synthetic */ void m() {
+    q1(q1 q1Var, Spliterator spliterator, long j, long j2) {
+        super(q1Var, spliterator, j, j2, q1Var.h.length);
+        this.h = q1Var.h;
     }
 
-    @Override // j$.util.stream.d2
-    public final /* synthetic */ boolean q() {
-        return false;
+    @Override // j$.util.stream.u1
+    final u1 b(Spliterator spliterator, long j, long j2) {
+        return new q1(this, spliterator, j, j2);
     }
 
-    q1(Spliterator spliterator, b bVar, int i) {
-        this.a = spliterator;
-        this.b = bVar;
-        this.c = e.f(spliterator.estimateSize());
-        this.d = 0L;
-        this.e = i;
-    }
-
-    q1(q1 q1Var, Spliterator spliterator, long j, long j2, int i) {
-        super(q1Var);
-        this.a = spliterator;
-        this.b = q1Var.b;
-        this.c = q1Var.c;
-        this.d = j;
-        this.e = j2;
-        if (j < 0 || j2 < 0 || (j + j2) - 1 >= i) {
-            throw new IllegalArgumentException(String.format("offset and length interval [%d, %d + %d) is not within array size interval [0, %d)", Long.valueOf(j), Long.valueOf(j), Long.valueOf(j2), Integer.valueOf(i)));
+    @Override // j$.util.stream.u1, j$.util.stream.m2, j$.util.stream.j2, java.util.function.DoubleConsumer
+    public final void accept(double d) {
+        int i = this.f;
+        if (i >= this.g) {
+            throw new IndexOutOfBoundsException(Integer.toString(this.f));
         }
-    }
-
-    @Override // java.util.concurrent.CountedCompleter
-    public final void compute() {
-        Spliterator trySplit;
-        Spliterator spliterator = this.a;
-        q1 q1Var = this;
-        while (spliterator.estimateSize() > q1Var.c && (trySplit = spliterator.trySplit()) != null) {
-            q1Var.setPendingCount(1);
-            long estimateSize = trySplit.estimateSize();
-            q1Var.a(trySplit, q1Var.d, estimateSize).fork();
-            q1Var = q1Var.a(spliterator, q1Var.d + estimateSize, q1Var.e - estimateSize);
-        }
-        q1Var.b.A0(spliterator, q1Var);
-        q1Var.propagateCompletion();
-    }
-
-    @Override // j$.util.stream.d2
-    public final void n(long j) {
-        long j2 = this.e;
-        if (j > j2) {
-            throw new IllegalStateException("size passed to Sink.begin exceeds array length");
-        }
-        int i = (int) this.d;
-        this.f = i;
-        this.g = i + ((int) j2);
+        double[] dArr = this.h;
+        this.f = i + 1;
+        dArr[i] = d;
     }
 }

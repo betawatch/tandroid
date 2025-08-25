@@ -28,13 +28,13 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import j$.util.Comparator$-CC;
-import j$.util.function.ToLongFunction;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
+import java.util.function.ToLongFunction;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
@@ -240,7 +240,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
         this.recentAllSortedDataLoaded.addAll(this.recentPostsLoaded);
         this.recentAllSortedDataLoaded.addAll(this.recentStoriesLoaded);
         Collections.sort(this.recentAllSortedDataLoaded, Collections.reverseOrder(Comparator$-CC.comparingLong(new ToLongFunction() { // from class: org.telegram.ui.StatisticActivity$$ExternalSyntheticLambda5
-            @Override // j$.util.function.ToLongFunction
+            @Override // java.util.function.ToLongFunction
             public final long applyAsLong(Object obj) {
                 return ((StatisticActivity.RecentPostInfo) obj).getDate();
             }
@@ -827,7 +827,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
             this.progressLayout.addView(this.imageView, LayoutHelper.createLinear(120, 120, 1, 0, 0, 0, 20));
             this.progressLayout.addView(textView, LayoutHelper.createLinear(-2, -2, 1, 0, 0, 0, 10));
             this.progressLayout.addView(textView2, LayoutHelper.createLinear(-2, -2, 1));
-            frameLayout.addView(this.progressLayout, LayoutHelper.createFrame(NotificationCenter.wallpapersNeedReload, -2.0f, 17, 0.0f, 0.0f, 0.0f, 30.0f));
+            frameLayout.addView(this.progressLayout, LayoutHelper.createFrame(NotificationCenter.profileMusicUpdated, -2.0f, 17, 0.0f, 0.0f, 0.0f, 30.0f));
             if (this.adapter == null) {
                 this.adapter = new Adapter();
             }
@@ -954,7 +954,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
         this.progressLayout.addView(this.imageView, LayoutHelper.createLinear(120, 120, 1, 0, 0, 0, 20));
         this.progressLayout.addView(textView3, LayoutHelper.createLinear(-2, -2, 1, 0, 0, 0, 10));
         this.progressLayout.addView(textView22, LayoutHelper.createLinear(-2, -2, 1));
-        frameLayout.addView(this.progressLayout, LayoutHelper.createFrame(NotificationCenter.wallpapersNeedReload, -2.0f, 17, 0.0f, 0.0f, 0.0f, 30.0f));
+        frameLayout.addView(this.progressLayout, LayoutHelper.createFrame(NotificationCenter.profileMusicUpdated, -2.0f, 17, 0.0f, 0.0f, 0.0f, 30.0f));
         if (this.adapter == null) {
         }
         this.recyclerListView.setAdapter(this.adapter);

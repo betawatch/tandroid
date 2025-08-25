@@ -10,7 +10,6 @@ import com.google.android.gms.common.util.DefaultClock;
 import j$.util.DesugarCollections;
 import java.math.BigInteger;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -38,9 +37,9 @@ final class zzx {
             return ((CastContext) Preconditions.checkNotNull(CastContext.getSharedInstance())).getCastOptions().getReceiverApplicationId();
         }
     });
-    private final List zzh = Collections.synchronizedList(new ArrayList());
-    private final List zzi = Collections.synchronizedList(new ArrayList());
-    private final List zzj = Collections.synchronizedList(new ArrayList());
+    private final List zzh = DesugarCollections.synchronizedList(new ArrayList());
+    private final List zzi = DesugarCollections.synchronizedList(new ArrayList());
+    private final List zzj = DesugarCollections.synchronizedList(new ArrayList());
     private final Map zzk = DesugarCollections.synchronizedMap(new HashMap());
     private final long zzn = DefaultClock.getInstance().currentTimeMillis();
 

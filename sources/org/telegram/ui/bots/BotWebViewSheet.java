@@ -41,6 +41,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.dynamicanimation.animation.DynamicAnimation;
 import androidx.dynamicanimation.animation.SpringAnimation;
 import androidx.dynamicanimation.animation.SpringForce;
+import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -49,7 +50,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Objects;
 import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
@@ -1788,7 +1788,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
             Drawable mutate = getContext().getResources().getDrawable(R.drawable.verified_profile).mutate();
             this.verifiedDrawable = mutate;
             mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_featuredStickers_addButton, this.resourcesProvider), PorterDuff.Mode.SRC_IN));
-            this.verifiedDrawable.setAlpha(NotificationCenter.goingToPreviewTheme);
+            this.verifiedDrawable.setAlpha(NotificationCenter.needCheckSystemBarColors);
             this.actionBar.getTitleTextView().setDrawablePadding(AndroidUtilities.dp(2.0f));
             this.actionBar.getTitleTextView().setRightDrawable(new Drawable() { // from class: org.telegram.ui.bots.BotWebViewSheet.9
                 @Override // android.graphics.drawable.Drawable
@@ -2283,7 +2283,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
     public /* synthetic */ void lambda$openOptions$35() {
         Activity activity = this.parentActivity;
         if (activity instanceof LaunchActivity) {
-            ((LaunchActivity) activity).lambda$runLinkRequest$94(ChatActivity.of(this.botId));
+            ((LaunchActivity) activity).lambda$runLinkRequest$95(ChatActivity.of(this.botId));
         }
         dismiss(true);
     }

@@ -4,7 +4,6 @@ import android.net.Uri;
 import com.google.android.exoplayer2.offline.FilterableManifest;
 import com.google.android.exoplayer2.offline.StreamKey;
 import com.google.android.exoplayer2.util.Util;
-import j$.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -115,7 +114,7 @@ public class DashManifest implements FilterableManifest {
             } while (streamKey.groupIndex == i2);
             arrayList.add(new AdaptationSet(adaptationSet.id, adaptationSet.type, arrayList2, adaptationSet.accessibilityDescriptors, adaptationSet.essentialProperties, adaptationSet.supplementalProperties));
         } while (streamKey.periodIndex == i);
-        List.-EL.addFirst(linkedList, streamKey);
+        linkedList.addFirst(streamKey);
         return arrayList;
     }
 }

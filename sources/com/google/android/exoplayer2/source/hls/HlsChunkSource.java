@@ -25,10 +25,10 @@ import com.google.android.exoplayer2.util.Util;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.primitives.Ints;
+import j$.util.DesugarCollections;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 /* loaded from: classes.dex */
@@ -386,7 +386,7 @@ class HlsChunkSource {
                 arrayList.addAll(list3.subList(i3, list3.size()));
             }
         }
-        return Collections.unmodifiableList(arrayList);
+        return DesugarCollections.unmodifiableList(arrayList);
     }
 
     public boolean obtainsChunksForPlaylist(Uri uri) {

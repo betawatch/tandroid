@@ -347,7 +347,7 @@ public abstract class MultipleStoriesSelector extends FrameLayout {
         RectF rectF = this.buttonBounds;
         drawBlur(canvas, rectF, rectF.width() / 2.0f, 1.0f);
         this.strokePaint.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        this.strokePaint.setAlpha(NotificationCenter.goingToPreviewTheme);
+        this.strokePaint.setAlpha(NotificationCenter.needCheckSystemBarColors);
         canvas.drawCircle(this.buttonBounds.centerX(), this.buttonBounds.centerY(), (this.buttonBounds.width() / 2.0f) - AndroidUtilities.dp(0.9f), this.strokePaint);
         Text text = this.counter;
         if (text != null) {
@@ -790,7 +790,7 @@ public abstract class MultipleStoriesSelector extends FrameLayout {
                 this.fillPaint.setAlpha((int) (f2 * 255.0f));
                 canvas.drawCircle(this.cx, this.cy, this.r, this.fillPaint);
             }
-            this.strokePaint.setAlpha(NotificationCenter.goingToPreviewTheme);
+            this.strokePaint.setAlpha(NotificationCenter.needCheckSystemBarColors);
             canvas.drawCircle(this.cx, this.cy, this.r - AndroidUtilities.dp(1.0f), this.strokePaint);
             if (f2 > 0.0f) {
                 AnimatedTextView.AnimatedTextDrawable animatedTextDrawable = this.counter;

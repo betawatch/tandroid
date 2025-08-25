@@ -7,14 +7,14 @@ import java.util.NoSuchElementException;
 final class d extends a implements Iterator {
     @Override // java.util.Iterator
     public final Object next() {
-        k kVar = this.b;
-        if (kVar == null) {
+        l lVar = this.b;
+        if (lVar == null) {
             throw new NoSuchElementException();
         }
-        Object obj = kVar.b;
-        Object obj2 = kVar.c;
-        this.j = kVar;
-        b();
-        return new j(obj, obj2, this.i);
+        Object obj = lVar.b;
+        Object obj2 = lVar.c;
+        this.j = lVar;
+        a();
+        return new k(obj, obj2, this.i);
     }
 }

@@ -1,157 +1,47 @@
 package j$.util.stream;
 
-import java.util.Comparator;
+import java.util.Arrays;
 
 /* loaded from: classes2.dex */
-abstract class L2 implements j$.util.M {
-    int a;
-    final int b;
-    int c;
-    final int d;
-    Object e;
-    final /* synthetic */ M2 f;
+final class L2 extends z2 {
+    private long[] c;
+    private int d;
 
-    abstract void b(int i, Object obj, Object obj2);
-
-    @Override // j$.util.Spliterator
-    public final int characteristics() {
-        return 16464;
+    @Override // j$.util.stream.h2, j$.util.stream.m2
+    public final void l(long j) {
+        if (j >= 2147483639) {
+            throw new IllegalArgumentException("Stream size exceeds max array size");
+        }
+        this.c = new long[(int) j];
     }
 
-    abstract j$.util.M f(Object obj, int i, int i2);
-
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.util.A.j(this);
-    }
-
-    abstract j$.util.M h(int i, int i2, int i3, int i4);
-
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return j$.util.A.k(this, i);
-    }
-
-    @Override // j$.util.M
-    /* renamed from: forEachRemaining, reason: merged with bridge method [inline-methods] and merged with bridge method [inline-methods] and merged with bridge method [inline-methods] */
-    public final void e(Object obj) {
-        M2 m2;
-        obj.getClass();
-        int i = this.a;
-        int i2 = this.d;
-        int i3 = this.b;
-        if (i < i3 || (i == i3 && this.c < i2)) {
-            int i4 = this.c;
-            while (true) {
-                m2 = this.f;
-                if (i >= i3) {
-                    break;
-                }
-                Object obj2 = m2.f[i];
-                m2.u(obj2, i4, m2.v(obj2), obj);
+    @Override // j$.util.stream.h2, j$.util.stream.m2
+    public final void k() {
+        int i = 0;
+        Arrays.sort(this.c, 0, this.d);
+        long j = this.d;
+        m2 m2Var = this.a;
+        m2Var.l(j);
+        if (!this.b) {
+            while (i < this.d) {
+                m2Var.accept(this.c[i]);
                 i++;
-                i4 = 0;
             }
-            m2.u(this.a == i3 ? this.e : m2.f[i3], i4, i2, obj);
-            this.a = i3;
-            this.c = i2;
-        }
-    }
-
-    @Override // j$.util.M
-    /* renamed from: tryAdvance, reason: merged with bridge method [inline-methods] and merged with bridge method [inline-methods] and merged with bridge method [inline-methods] */
-    public final boolean p(Object obj) {
-        obj.getClass();
-        int i = this.a;
-        int i2 = this.b;
-        if (i >= i2 && (i != i2 || this.c >= this.d)) {
-            return false;
-        }
-        Object obj2 = this.e;
-        int i3 = this.c;
-        this.c = i3 + 1;
-        b(i3, obj2, obj);
-        int i4 = this.c;
-        Object obj3 = this.e;
-        M2 m2 = this.f;
-        if (i4 == m2.v(obj3)) {
-            this.c = 0;
-            int i5 = this.a + 1;
-            this.a = i5;
-            Object[] objArr = m2.f;
-            if (objArr != null && i5 <= i2) {
-                this.e = objArr[i5];
+        } else {
+            while (i < this.d && !m2Var.n()) {
+                m2Var.accept(this.c[i]);
+                i++;
             }
         }
-        return true;
+        m2Var.k();
+        this.c = null;
     }
 
-    @Override // j$.util.Spliterator
-    public final Comparator getComparator() {
-        throw new IllegalStateException();
-    }
-
-    L2(M2 m2, int i, int i2, int i3, int i4) {
-        this.f = m2;
-        this.a = i;
-        this.b = i2;
-        this.c = i3;
-        this.d = i4;
-        Object[] objArr = m2.f;
-        this.e = objArr == null ? m2.e : objArr[i];
-    }
-
-    @Override // j$.util.Spliterator
-    public final long estimateSize() {
-        int i = this.a;
-        int i2 = this.d;
-        int i3 = this.b;
-        if (i == i3) {
-            return i2 - this.c;
-        }
-        long[] jArr = this.f.d;
-        return ((jArr[i3] + i2) - jArr[i]) - this.c;
-    }
-
-    @Override // j$.util.Spliterator
-    public final j$.util.M trySplit() {
-        int i = this.a;
-        int i2 = this.b;
-        if (i < i2) {
-            int i3 = i2 - 1;
-            int i4 = this.c;
-            M2 m2 = this.f;
-            j$.util.M h = h(i, i3, i4, m2.v(m2.f[i3]));
-            this.a = i2;
-            this.c = 0;
-            this.e = m2.f[i2];
-            return h;
-        }
-        if (i != i2) {
-            return null;
-        }
-        int i5 = this.c;
-        int i6 = (this.d - i5) / 2;
-        if (i6 == 0) {
-            return null;
-        }
-        j$.util.M f = f(this.e, i5, i6);
-        this.c += i6;
-        return f;
-    }
-
-    @Override // j$.util.M, j$.util.Spliterator
-    public /* bridge */ /* synthetic */ j$.util.G trySplit() {
-        return (j$.util.G) trySplit();
-    }
-
-    @Override // j$.util.M, j$.util.Spliterator
-    public /* bridge */ /* synthetic */ j$.util.J trySplit() {
-        return (j$.util.J) trySplit();
-    }
-
-    @Override // j$.util.M, j$.util.Spliterator
-    public /* bridge */ /* synthetic */ j$.util.D trySplit() {
-        return (j$.util.D) trySplit();
+    @Override // j$.util.stream.l2, j$.util.stream.m2
+    public final void accept(long j) {
+        long[] jArr = this.c;
+        int i = this.d;
+        this.d = i + 1;
+        jArr[i] = j;
     }
 }

@@ -1,76 +1,60 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import j$.util.function.IntFunction;
+import j$.util.Objects;
+import j$.util.function.Consumer$-CC;
+import java.util.function.Consumer;
+import java.util.function.LongConsumer;
 
 /* loaded from: classes2.dex */
-final class h2 extends Z {
-    final /* synthetic */ long m;
-    final /* synthetic */ long n;
+public abstract class h2 implements l2 {
+    protected final m2 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    h2(a0 a0Var, int i, long j, long j2) {
-        super(a0Var, i, 0);
-        this.m = j;
-        this.n = j2;
+    @Override // j$.util.stream.m2, j$.util.stream.j2, java.util.function.DoubleConsumer
+    public final /* synthetic */ void accept(double d) {
+        w0.a();
+        throw null;
     }
 
-    @Override // j$.util.stream.b
-    final Spliterator u0(b bVar, Spliterator spliterator) {
-        long j;
-        long j2;
-        long l0 = bVar.l0(spliterator);
-        long j3 = this.n;
-        if (l0 > 0 && spliterator.hasCharacteristics(16384)) {
-            j$.util.G g = (j$.util.G) bVar.C0(spliterator);
-            long j4 = this.m;
-            return new h3(g, j4, t0.x(j4, j3));
-        }
-        if (Q2.ORDERED.i(bVar.p0())) {
-            return ((F0) new n2(this, bVar, spliterator, new c0(7), this.m, this.n).invoke()).spliterator();
-        }
-        j$.util.G g2 = (j$.util.G) bVar.C0(spliterator);
-        long j5 = this.m;
-        if (j5 <= l0) {
-            long j6 = l0 - j5;
-            if (j3 >= 0) {
-                j6 = Math.min(j3, j6);
-            }
-            j = j6;
-            j2 = 0;
-        } else {
-            j = j3;
-            j2 = j5;
-        }
-        return new n3(g2, j2, j);
+    @Override // j$.util.stream.m2
+    public final /* synthetic */ void accept(int i) {
+        w0.k();
+        throw null;
     }
 
-    @Override // j$.util.stream.b
-    final F0 t0(b bVar, Spliterator spliterator, IntFunction intFunction) {
-        long j;
-        long j2;
-        long l0 = bVar.l0(spliterator);
-        if (l0 > 0 && spliterator.hasCharacteristics(16384)) {
-            return t0.G(bVar, t0.y(bVar.o0(), spliterator, this.m, this.n), true);
-        }
-        if (!Q2.ORDERED.i(bVar.p0())) {
-            j$.util.G g = (j$.util.G) bVar.C0(spliterator);
-            long j3 = this.m;
-            long j4 = this.n;
-            if (j3 <= l0) {
-                j = j4 >= 0 ? Math.min(j4, l0 - j3) : l0 - j3;
-                j2 = 0;
-            } else {
-                j = j4;
-                j2 = j3;
-            }
-            return t0.G(this, new n3(g, j2, j), true);
-        }
-        return (F0) new n2(this, bVar, spliterator, intFunction, this.m, this.n).invoke();
+    @Override // java.util.function.Consumer
+    public final /* bridge */ /* synthetic */ void accept(Object obj) {
+        j((Long) obj);
     }
 
-    @Override // j$.util.stream.b
-    final d2 w0(int i, d2 d2Var) {
-        return new g2(this, d2Var);
+    public final /* synthetic */ Consumer andThen(Consumer consumer) {
+        return Consumer$-CC.$default$andThen(this, consumer);
+    }
+
+    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
+        return j$.com.android.tools.r8.a.c(this, longConsumer);
+    }
+
+    @Override // j$.util.stream.l2
+    public final /* synthetic */ void j(Long l) {
+        w0.i(this, l);
+    }
+
+    public h2(m2 m2Var) {
+        this.a = (m2) Objects.requireNonNull(m2Var);
+    }
+
+    @Override // j$.util.stream.m2
+    public void l(long j) {
+        this.a.l(j);
+    }
+
+    @Override // j$.util.stream.m2
+    public void k() {
+        this.a.k();
+    }
+
+    @Override // j$.util.stream.m2
+    public boolean n() {
+        return this.a.n();
     }
 }

@@ -52,14 +52,16 @@ import androidx.recyclerview.widget.LinearSmoothScrollerCustom;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.exoplayer2.ui.AspectRatioFrameLayout;
 import j$.util.Collection;
-import j$.util.function.Function;
-import j$.util.function.Predicate;
+import j$.util.function.Function$-CC;
+import j$.util.function.Predicate$-CC;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.function.Function;
+import java.util.function.Predicate;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.ApplicationLoader;
@@ -748,54 +750,47 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
             messageObject.actionDeleteGroupEventId = -1L;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(MessageObject.replaceWithLink(LocaleController.formatPluralString(z2 ? "EventLogDeletedMultipleMessagesToExpand" : "EventLogDeletedMultipleMessages", arrayList.size(), TextUtils.join(", ", Collection.-EL.stream(arrayList).map(new Function() { // from class: org.telegram.ui.ChannelAdminLogActivity$$ExternalSyntheticLambda17
-            @Override // j$.util.function.Function
             public /* synthetic */ Function andThen(Function function) {
-                return Function.-CC.$default$andThen(this, function);
+                return Function$-CC.$default$andThen(this, function);
             }
 
-            @Override // j$.util.function.Function
+            @Override // java.util.function.Function
             public final Object apply(Object obj) {
                 return Long.valueOf(((MessageObject) obj).getFromChatId());
             }
 
-            @Override // j$.util.function.Function
             public /* synthetic */ Function compose(Function function) {
-                return Function.-CC.$default$compose(this, function);
+                return Function$-CC.$default$compose(this, function);
             }
         }).distinct().map(new Function() { // from class: org.telegram.ui.ChannelAdminLogActivity$$ExternalSyntheticLambda18
-            @Override // j$.util.function.Function
             public /* synthetic */ Function andThen(Function function) {
-                return Function.-CC.$default$andThen(this, function);
+                return Function$-CC.$default$andThen(this, function);
             }
 
-            @Override // j$.util.function.Function
+            @Override // java.util.function.Function
             public final Object apply(Object obj) {
                 String lambda$actionMessagesDeletedBy$5;
                 lambda$actionMessagesDeletedBy$5 = ChannelAdminLogActivity.this.lambda$actionMessagesDeletedBy$5((Long) obj);
                 return lambda$actionMessagesDeletedBy$5;
             }
 
-            @Override // j$.util.function.Function
             public /* synthetic */ Function compose(Function function) {
-                return Function.-CC.$default$compose(this, function);
+                return Function$-CC.$default$compose(this, function);
             }
         }).filter(new Predicate() { // from class: org.telegram.ui.ChannelAdminLogActivity$$ExternalSyntheticLambda19
-            @Override // j$.util.function.Predicate
             public /* synthetic */ Predicate and(Predicate predicate) {
-                return Predicate.-CC.$default$and(this, predicate);
+                return Predicate$-CC.$default$and(this, predicate);
             }
 
-            @Override // j$.util.function.Predicate
             public /* synthetic */ Predicate negate() {
-                return Predicate.-CC.$default$negate(this);
+                return Predicate$-CC.$default$negate(this);
             }
 
-            @Override // j$.util.function.Predicate
             public /* synthetic */ Predicate or(Predicate predicate) {
-                return Predicate.-CC.$default$or(this, predicate);
+                return Predicate$-CC.$default$or(this, predicate);
             }
 
-            @Override // j$.util.function.Predicate
+            @Override // java.util.function.Predicate
             public final boolean test(Object obj) {
                 boolean lambda$actionMessagesDeletedBy$6;
                 lambda$actionMessagesDeletedBy$6 = ChannelAdminLogActivity.lambda$actionMessagesDeletedBy$6((String) obj);

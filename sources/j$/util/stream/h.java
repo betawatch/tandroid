@@ -1,10 +1,10 @@
 package j$.util.stream;
 
-import j$.util.function.BiConsumer;
-import j$.util.function.BinaryOperator;
-import j$.util.function.Function;
-import j$.util.function.Supplier;
 import java.util.Set;
+import java.util.function.BiConsumer;
+import java.util.function.BinaryOperator;
+import java.util.function.Function;
+import java.util.function.Supplier;
 
 /* loaded from: classes2.dex */
 public final /* synthetic */ class h implements Collector {
@@ -23,17 +23,17 @@ public final /* synthetic */ class h implements Collector {
 
     @Override // j$.util.stream.Collector
     public final /* synthetic */ BiConsumer accumulator() {
-        return BiConsumer.VivifiedWrapper.convert(this.a.accumulator());
+        return this.a.accumulator();
     }
 
     @Override // j$.util.stream.Collector
     public final /* synthetic */ Set characteristics() {
-        return this.a.characteristics();
+        return X2.a(this.a.characteristics());
     }
 
     @Override // j$.util.stream.Collector
     public final /* synthetic */ BinaryOperator combiner() {
-        return j$.util.function.d.a(this.a.combiner());
+        return this.a.combiner();
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
@@ -46,7 +46,7 @@ public final /* synthetic */ class h implements Collector {
 
     @Override // j$.util.stream.Collector
     public final /* synthetic */ Function finisher() {
-        return Function.VivifiedWrapper.convert(this.a.finisher());
+        return this.a.finisher();
     }
 
     public final /* synthetic */ int hashCode() {
@@ -55,6 +55,6 @@ public final /* synthetic */ class h implements Collector {
 
     @Override // j$.util.stream.Collector
     public final /* synthetic */ Supplier supplier() {
-        return j$.util.function.x0.a(this.a.supplier());
+        return this.a.supplier();
     }
 }

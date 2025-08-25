@@ -49,6 +49,7 @@ import androidx.recyclerview.widget.ChildHelper;
 import androidx.recyclerview.widget.GapWorker;
 import androidx.recyclerview.widget.ViewBoundsCheck;
 import androidx.recyclerview.widget.ViewInfoStore;
+import j$.util.DesugarCollections;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -70,7 +71,9 @@ public abstract class RecyclerView extends ViewGroup {
     static final boolean POST_UPDATES_ON_ANIMATION;
     static final Interpolator sQuinticInterpolator;
     private int bottomGlowOffset;
+    public boolean canStopFlinger;
     private Integer glowColor;
+    private boolean isFlingerWorking;
     RecyclerViewAccessibilityDelegate mAccessibilityDelegate;
     private final AccessibilityManager mAccessibilityManager;
     Adapter mAdapter;
@@ -397,6 +400,8 @@ public abstract class RecyclerView extends ViewGroup {
                 recyclerView.mLayout.removeAndRecycleView(viewHolder.itemView, recyclerView.mRecycler);
             }
         };
+        this.canStopFlinger = true;
+        this.isFlingerWorking = false;
         if (attributeSet != null) {
             TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, CLIP_TO_PADDING_ATTR, i, 0);
             this.mClipToPadding = obtainStyledAttributes.getBoolean(0, true);
@@ -3282,6 +3287,10 @@ public abstract class RecyclerView extends ViewGroup {
         return !this.mFirstLayoutComplete || this.mDataSetHasChangedAfterLayout || this.mAdapterHelper.hasPendingUpdates();
     }
 
+    public boolean isFlingerWorking() {
+        return this.isFlingerWorking;
+    }
+
     class ViewFlinger implements Runnable {
         private boolean mEatRunOnAnimationRequest;
         Interpolator mInterpolator;
@@ -3304,6 +3313,7 @@ public abstract class RecyclerView extends ViewGroup {
             int i2;
             RecyclerView recyclerView = RecyclerView.this;
             if (recyclerView.mLayout == null) {
+                recyclerView.canStopFlinger = true;
                 stop();
                 return;
             }
@@ -3311,6 +3321,7 @@ public abstract class RecyclerView extends ViewGroup {
             this.mEatRunOnAnimationRequest = true;
             recyclerView.consumePendingUpdateOperations();
             OverScroller overScroller = this.mOverScroller;
+            RecyclerView.this.isFlingerWorking = true;
             if (overScroller.computeScrollOffset()) {
                 int currX = overScroller.getCurrX();
                 int currY = overScroller.getCurrY();
@@ -3401,6 +3412,7 @@ public abstract class RecyclerView extends ViewGroup {
                     }
                 }
             }
+            RecyclerView.this.isFlingerWorking = false;
             SmoothScroller smoothScroller3 = RecyclerView.this.mLayout.mSmoothScroller;
             if (smoothScroller3 != null && smoothScroller3.isPendingInitialRun()) {
                 smoothScroller3.onAnimation(0, 0);
@@ -3491,8 +3503,11 @@ public abstract class RecyclerView extends ViewGroup {
         }
 
         public void stop() {
-            RecyclerView.this.removeCallbacks(this);
-            this.mOverScroller.abortAnimation();
+            RecyclerView recyclerView = RecyclerView.this;
+            if (recyclerView.canStopFlinger) {
+                recyclerView.removeCallbacks(this);
+                this.mOverScroller.abortAnimation();
+            }
         }
     }
 
@@ -3740,7 +3755,7 @@ public abstract class RecyclerView extends ViewGroup {
             this.mAttachedScrap = arrayList;
             this.mChangedScrap = null;
             this.mCachedViews = new ArrayList();
-            this.mUnmodifiableAttachedScrap = Collections.unmodifiableList(arrayList);
+            this.mUnmodifiableAttachedScrap = DesugarCollections.unmodifiableList(arrayList);
             this.mRequestedCacheMax = 2;
             this.mViewCacheMax = 2;
         }
@@ -5836,7 +5851,7 @@ public abstract class RecyclerView extends ViewGroup {
             if (this.mPayloads == null) {
                 ArrayList arrayList = new ArrayList();
                 this.mPayloads = arrayList;
-                this.mUnmodifiedPayloads = Collections.unmodifiableList(arrayList);
+                this.mUnmodifiedPayloads = DesugarCollections.unmodifiableList(arrayList);
             }
         }
 
@@ -6169,6 +6184,7 @@ public abstract class RecyclerView extends ViewGroup {
         protected abstract void onTargetFound(View view, State state, Action action);
 
         void start(RecyclerView recyclerView, LayoutManager layoutManager) {
+            recyclerView.canStopFlinger = true;
             recyclerView.mViewFlinger.stop();
             if (this.mStarted) {
                 Log.w("RecyclerView", "An instance of " + getClass().getSimpleName() + " was started more than once. Each instance of" + getClass().getSimpleName() + " is intended to only be used once. You should create a new instance for each use.");

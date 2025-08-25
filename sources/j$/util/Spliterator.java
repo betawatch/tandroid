@@ -1,6 +1,5 @@
 package j$.util;
 
-import j$.util.function.Consumer;
 import java.util.Comparator;
 import java.util.function.Consumer;
 
@@ -15,7 +14,7 @@ public interface Spliterator<T> {
             if (spliterator == null) {
                 return null;
             }
-            return spliterator instanceof N ? ((N) spliterator).a : spliterator instanceof M ? L.a((M) spliterator) : new Wrapper();
+            return spliterator instanceof f0 ? ((f0) spliterator).a : spliterator instanceof e0 ? d0.a((e0) spliterator) : new Wrapper();
         }
 
         @Override // java.util.Spliterator
@@ -38,7 +37,7 @@ public interface Spliterator<T> {
 
         @Override // java.util.Spliterator
         public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-            Spliterator.this.a(Consumer.VivifiedWrapper.convert(consumer));
+            Spliterator.this.forEachRemaining(consumer);
         }
 
         @Override // java.util.Spliterator
@@ -61,8 +60,8 @@ public interface Spliterator<T> {
         }
 
         @Override // java.util.Spliterator
-        public final /* synthetic */ boolean tryAdvance(java.util.function.Consumer consumer) {
-            return Spliterator.this.s(Consumer.VivifiedWrapper.convert(consumer));
+        public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
+            return Spliterator.this.tryAdvance(consumer);
         }
 
         @Override // java.util.Spliterator
@@ -71,11 +70,11 @@ public interface Spliterator<T> {
         }
     }
 
-    void a(j$.util.function.Consumer consumer);
-
     int characteristics();
 
     long estimateSize();
+
+    void forEachRemaining(Consumer consumer);
 
     Comparator getComparator();
 
@@ -83,7 +82,7 @@ public interface Spliterator<T> {
 
     boolean hasCharacteristics(int i);
 
-    boolean s(j$.util.function.Consumer consumer);
+    boolean tryAdvance(Consumer consumer);
 
     Spliterator trySplit();
 }

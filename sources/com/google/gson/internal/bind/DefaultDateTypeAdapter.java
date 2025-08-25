@@ -11,6 +11,7 @@ import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
+import j$.util.Objects;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.ParsePosition;
@@ -19,7 +20,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
-import java.util.Objects;
 import java.util.TimeZone;
 
 /* loaded from: classes.dex */

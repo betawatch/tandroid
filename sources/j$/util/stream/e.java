@@ -6,7 +6,7 @@ import java.util.concurrent.ForkJoinPool;
 
 /* loaded from: classes2.dex */
 abstract class e extends CountedCompleter {
-    static final int g = ForkJoinPool.getCommonPoolParallelism() << 2;
+    private static final int g = ForkJoinPool.getCommonPoolParallelism() << 2;
     protected final b a;
     protected Spliterator b;
     protected long c;
@@ -16,7 +16,7 @@ abstract class e extends CountedCompleter {
 
     protected abstract Object a();
 
-    protected abstract e d(Spliterator spliterator);
+    protected abstract e e(Spliterator spliterator);
 
     protected e(b bVar, Spliterator spliterator) {
         super(null);
@@ -32,7 +32,11 @@ abstract class e extends CountedCompleter {
         this.c = eVar.c;
     }
 
-    public static long f(long j) {
+    public static int b() {
+        return g;
+    }
+
+    public static long g(long j) {
         long j2 = j / g;
         if (j2 > 0) {
             return j2;
@@ -52,15 +56,15 @@ abstract class e extends CountedCompleter {
         }
     }
 
-    protected Object b() {
+    protected Object c() {
         return this.f;
     }
 
-    protected void e(Object obj) {
+    protected void f(Object obj) {
         this.f = obj;
     }
 
-    protected final boolean c() {
+    protected final boolean d() {
         return ((e) getCompleter()) == null;
     }
 
@@ -71,29 +75,29 @@ abstract class e extends CountedCompleter {
         long estimateSize = spliterator.estimateSize();
         long j = this.c;
         if (j == 0) {
-            j = f(estimateSize);
+            j = g(estimateSize);
             this.c = j;
         }
         boolean z = false;
         e eVar = this;
         while (estimateSize > j && (trySplit = spliterator.trySplit()) != null) {
-            e d = eVar.d(trySplit);
-            eVar.d = d;
-            e d2 = eVar.d(spliterator);
-            eVar.e = d2;
+            e e = eVar.e(trySplit);
+            eVar.d = e;
+            e e2 = eVar.e(spliterator);
+            eVar.e = e2;
             eVar.setPendingCount(1);
             if (z) {
                 spliterator = trySplit;
-                eVar = d;
-                d = d2;
+                eVar = e;
+                e = e2;
             } else {
-                eVar = d2;
+                eVar = e2;
             }
             z = !z;
-            d.fork();
+            e.fork();
             estimateSize = spliterator.estimateSize();
         }
-        eVar.e(eVar.a());
+        eVar.f(eVar.a());
         eVar.tryComplete();
     }
 

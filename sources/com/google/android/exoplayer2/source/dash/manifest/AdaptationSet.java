@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.source.dash.manifest;
 
-import java.util.Collections;
+import j$.util.DesugarCollections;
 import java.util.List;
 
 /* loaded from: classes.dex */
@@ -15,9 +15,9 @@ public class AdaptationSet {
     public AdaptationSet(int i, int i2, List list, List list2, List list3, List list4) {
         this.id = i;
         this.type = i2;
-        this.representations = Collections.unmodifiableList(list);
-        this.accessibilityDescriptors = Collections.unmodifiableList(list2);
-        this.essentialProperties = Collections.unmodifiableList(list3);
-        this.supplementalProperties = Collections.unmodifiableList(list4);
+        this.representations = DesugarCollections.unmodifiableList(list);
+        this.accessibilityDescriptors = DesugarCollections.unmodifiableList(list2);
+        this.essentialProperties = DesugarCollections.unmodifiableList(list3);
+        this.supplementalProperties = DesugarCollections.unmodifiableList(list4);
     }
 }

@@ -1,30 +1,19 @@
 package j$.time.zone;
 
-import java.security.PrivilegedAction;
-import java.util.ArrayList;
-
 /* loaded from: classes2.dex */
-final class c implements PrivilegedAction {
-    final /* synthetic */ ArrayList a;
+abstract /* synthetic */ class c {
+    static final /* synthetic */ int[] a;
 
-    c(ArrayList arrayList) {
-        this.a = arrayList;
-    }
-
-    @Override // java.security.PrivilegedAction
-    public final Object run() {
-        String property = System.getProperty("java.time.zone.DefaultZoneRulesProvider");
-        if (property != null) {
-            try {
-                e eVar = (e) e.class.cast(Class.forName(property, true, e.class.getClassLoader()).newInstance());
-                e.d(eVar);
-                this.a.add(eVar);
-                return null;
-            } catch (Exception e) {
-                throw new Error(e);
-            }
+    static {
+        int[] iArr = new int[d.values().length];
+        a = iArr;
+        try {
+            iArr[d.UTC.ordinal()] = 1;
+        } catch (NoSuchFieldError unused) {
         }
-        e.d(new d());
-        return null;
+        try {
+            a[d.STANDARD.ordinal()] = 2;
+        } catch (NoSuchFieldError unused2) {
+        }
     }
 }

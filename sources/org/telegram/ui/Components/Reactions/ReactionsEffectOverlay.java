@@ -1459,7 +1459,7 @@ public class ReactionsEffectOverlay {
             AnimatedEmojiDrawable animatedEmojiDrawable = this.animatedEmojiDrawable;
             if (animatedEmojiDrawable != null) {
                 animatedEmojiDrawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
-                this.animatedEmojiDrawable.setAlpha(NotificationCenter.goingToPreviewTheme);
+                this.animatedEmojiDrawable.setAlpha(NotificationCenter.needCheckSystemBarColors);
                 this.animatedEmojiDrawable.draw(canvas);
                 this.wasPlaying = true;
                 return;

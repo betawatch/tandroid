@@ -21,7 +21,7 @@ public class BlurVisibilityDrawable extends Drawable {
     private int top;
     private int width;
     private final Paint emptyPaint = new Paint(2);
-    private int alpha = NotificationCenter.goingToPreviewTheme;
+    private int alpha = NotificationCenter.needCheckSystemBarColors;
 
     public interface DrawRunnable {
         void draw(Canvas canvas, int i);
@@ -68,7 +68,7 @@ public class BlurVisibilityDrawable extends Drawable {
         this.canvas.translate(f2, f2);
         float f3 = 1.0f / f;
         this.canvas.scale(f3, f3);
-        this.drawRunnable.draw(this.canvas, NotificationCenter.goingToPreviewTheme);
+        this.drawRunnable.draw(this.canvas, NotificationCenter.needCheckSystemBarColors);
         Utilities.stackBlurBitmap(this.bitmap, (int) f2);
         this.canvas.restore();
     }
@@ -85,7 +85,7 @@ public class BlurVisibilityDrawable extends Drawable {
     public void draw(Canvas canvas) {
         int i = this.alpha;
         if (i == 255) {
-            drawNormal(canvas, NotificationCenter.goingToPreviewTheme);
+            drawNormal(canvas, NotificationCenter.needCheckSystemBarColors);
             return;
         }
         if (i == 0) {
@@ -95,8 +95,8 @@ public class BlurVisibilityDrawable extends Drawable {
         double d2 = d / ((1.0d - d) * 6.0d);
         double d3 = 1.0d + d2;
         double sqrt = ((-d3) + Math.sqrt((d3 * d3) - (((-d2) * 4.0d) * (-d)))) / ((-2.0d) * d2);
-        int clamp = MathUtils.clamp((int) (d2 * sqrt * 255.0d), 0, NotificationCenter.goingToPreviewTheme);
-        drawBlur(canvas, MathUtils.clamp((int) (sqrt * 255.0d), 0, NotificationCenter.goingToPreviewTheme));
+        int clamp = MathUtils.clamp((int) (d2 * sqrt * 255.0d), 0, NotificationCenter.needCheckSystemBarColors);
+        drawBlur(canvas, MathUtils.clamp((int) (sqrt * 255.0d), 0, NotificationCenter.needCheckSystemBarColors));
         drawNormal(canvas, clamp);
     }
 

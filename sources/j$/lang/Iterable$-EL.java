@@ -1,8 +1,9 @@
 package j$.lang;
 
-import j$.util.function.Consumer;
+import j$.util.Objects;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.function.Consumer;
 
 /* loaded from: classes2.dex */
 public final /* synthetic */ class Iterable$-EL {
@@ -15,7 +16,7 @@ public final /* synthetic */ class Iterable$-EL {
             Iterable$-CC.$default$forEach(iterable, consumer);
             return;
         }
-        consumer.getClass();
+        Objects.requireNonNull(consumer);
         Iterator it = ((Collection) iterable).iterator();
         while (it.hasNext()) {
             consumer.accept(it.next());

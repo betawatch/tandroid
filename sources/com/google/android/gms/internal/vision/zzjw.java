@@ -1,12 +1,13 @@
 package com.google.android.gms.internal.vision;
 
+import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 /* loaded from: classes.dex */
 final class zzjw extends zzju {
-    private static final Class zza = Collections.unmodifiableList(Collections.emptyList()).getClass();
+    private static final Class zza = DesugarCollections.unmodifiableList(Collections.emptyList()).getClass();
 
     private zzjw() {
         super();
@@ -30,7 +31,7 @@ final class zzjw extends zzju {
                 }
                 return;
             }
-            unmodifiableList = Collections.unmodifiableList(list);
+            unmodifiableList = DesugarCollections.unmodifiableList(list);
         }
         zzma.zza(obj, j, unmodifiableList);
     }

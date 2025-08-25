@@ -2,20 +2,21 @@ package j$.util.stream;
 
 import j$.util.Optional;
 import j$.util.Spliterator;
-import j$.util.function.BiConsumer;
-import j$.util.function.BiFunction;
-import j$.util.function.BinaryOperator;
-import j$.util.function.Consumer;
-import j$.util.function.Function;
-import j$.util.function.IntFunction;
-import j$.util.function.Predicate;
-import j$.util.function.Supplier;
-import j$.util.function.ToDoubleFunction;
-import j$.util.function.ToIntFunction;
-import j$.util.function.ToLongFunction;
 import j$.util.stream.IntStream;
 import java.util.Comparator;
 import java.util.Iterator;
+import java.util.List;
+import java.util.function.BiConsumer;
+import java.util.function.BiFunction;
+import java.util.function.BinaryOperator;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.IntFunction;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+import java.util.function.ToDoubleFunction;
+import java.util.function.ToIntFunction;
+import java.util.function.ToLongFunction;
 import java.util.stream.DoubleStream;
 
 /* loaded from: classes2.dex */
@@ -36,33 +37,13 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
         }
 
         @Override // j$.util.stream.Stream
-        public final /* synthetic */ Stream M(Consumer consumer) {
-            return convert(this.a.peek(Consumer.Wrapper.convert(consumer)));
-        }
-
-        @Override // j$.util.stream.Stream
-        public final /* synthetic */ boolean N(Predicate predicate) {
-            return this.a.allMatch(j$.util.function.w0.a(predicate));
-        }
-
-        @Override // j$.util.stream.Stream
-        public final /* synthetic */ LongStream P(Function function) {
-            return i0.f0(this.a.flatMapToLong(j$.util.function.z.a(function)));
-        }
-
-        @Override // j$.util.stream.Stream
-        public final /* synthetic */ D Z(ToDoubleFunction toDoubleFunction) {
-            return B.f0(this.a.mapToDouble(j$.util.function.A0.a(toDoubleFunction)));
+        public final /* synthetic */ boolean allMatch(Predicate predicate) {
+            return this.a.allMatch(predicate);
         }
 
         @Override // j$.util.stream.Stream
         public final /* synthetic */ boolean anyMatch(Predicate predicate) {
-            return this.a.anyMatch(j$.util.function.w0.a(predicate));
-        }
-
-        @Override // j$.util.stream.Stream
-        public final /* synthetic */ IntStream b(Function function) {
-            return IntStream.VivifiedWrapper.convert(this.a.flatMapToInt(j$.util.function.z.a(function)));
+            return this.a.anyMatch(predicate);
         }
 
         @Override // j$.util.stream.BaseStream, java.lang.AutoCloseable
@@ -76,6 +57,11 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
         }
 
         @Override // j$.util.stream.Stream
+        public final /* synthetic */ Object collect(Supplier supplier, BiConsumer biConsumer, BiConsumer biConsumer2) {
+            return this.a.collect(supplier, biConsumer, biConsumer2);
+        }
+
+        @Override // j$.util.stream.Stream
         public final /* synthetic */ long count() {
             return this.a.count();
         }
@@ -86,13 +72,13 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
         }
 
         @Override // j$.util.stream.Stream
-        public final /* synthetic */ void e(Consumer consumer) {
-            this.a.forEachOrdered(Consumer.Wrapper.convert(consumer));
+        public final /* synthetic */ Stream dropWhile(Predicate predicate) {
+            return convert(this.a.dropWhile(predicate));
         }
 
         @Override // j$.util.stream.Stream
-        public final /* synthetic */ Object e0(Object obj, BinaryOperator binaryOperator) {
-            return this.a.reduce(obj, j$.util.function.e.a(binaryOperator));
+        public final /* synthetic */ Stream e(a aVar) {
+            return convert(this.a.flatMap(w0.R(aVar)));
         }
 
         public final /* synthetic */ boolean equals(Object obj) {
@@ -105,27 +91,27 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
 
         @Override // j$.util.stream.Stream
         public final /* synthetic */ Stream filter(Predicate predicate) {
-            return convert(this.a.filter(j$.util.function.w0.a(predicate)));
+            return convert(this.a.filter(predicate));
         }
 
         @Override // j$.util.stream.Stream
         public final /* synthetic */ Optional findAny() {
-            return j$.util.A.o(this.a.findAny());
+            return j$.util.S.i(this.a.findAny());
         }
 
         @Override // j$.util.stream.Stream
         public final /* synthetic */ Optional findFirst() {
-            return j$.util.A.o(this.a.findFirst());
+            return j$.util.S.i(this.a.findFirst());
         }
 
         @Override // j$.util.stream.Stream
         public final /* synthetic */ void forEach(Consumer consumer) {
-            this.a.forEach(Consumer.Wrapper.convert(consumer));
+            this.a.forEach(consumer);
         }
 
         @Override // j$.util.stream.Stream
-        public final /* synthetic */ Object h(Supplier supplier, BiConsumer biConsumer, BiConsumer biConsumer2) {
-            return this.a.collect(j$.util.function.y0.a(supplier), j$.util.function.a.a(biConsumer), j$.util.function.a.a(biConsumer2));
+        public final /* synthetic */ void forEachOrdered(Consumer consumer) {
+            this.a.forEachOrdered(consumer);
         }
 
         public final /* synthetic */ int hashCode() {
@@ -143,63 +129,88 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
         }
 
         @Override // j$.util.stream.Stream
-        public final /* synthetic */ IntStream k(ToIntFunction toIntFunction) {
-            return IntStream.VivifiedWrapper.convert(this.a.mapToInt(j$.util.function.C0.a(toIntFunction)));
-        }
-
-        @Override // j$.util.stream.Stream
-        public final /* synthetic */ Stream l(Function function) {
-            return convert(this.a.flatMap(j$.util.function.z.a(function)));
-        }
-
-        @Override // j$.util.stream.Stream
         public final /* synthetic */ Stream limit(long j) {
             return convert(this.a.limit(j));
         }
 
         @Override // j$.util.stream.Stream
         public final /* synthetic */ Stream map(Function function) {
-            return convert(this.a.map(j$.util.function.z.a(function)));
+            return convert(this.a.map(function));
+        }
+
+        @Override // j$.util.stream.Stream
+        public final /* synthetic */ D mapToDouble(ToDoubleFunction toDoubleFunction) {
+            return B.j(this.a.mapToDouble(toDoubleFunction));
+        }
+
+        @Override // j$.util.stream.Stream
+        public final /* synthetic */ IntStream mapToInt(ToIntFunction toIntFunction) {
+            return IntStream.VivifiedWrapper.convert(this.a.mapToInt(toIntFunction));
         }
 
         @Override // j$.util.stream.Stream
         public final /* synthetic */ LongStream mapToLong(ToLongFunction toLongFunction) {
-            return i0.f0(this.a.mapToLong(j$.util.function.E0.a(toLongFunction)));
+            return k0.j(this.a.mapToLong(toLongFunction));
         }
 
         @Override // j$.util.stream.Stream
         public final /* synthetic */ Optional max(Comparator comparator) {
-            return j$.util.A.o(this.a.max(comparator));
+            return j$.util.S.i(this.a.max(comparator));
         }
 
         @Override // j$.util.stream.Stream
         public final /* synthetic */ Optional min(Comparator comparator) {
-            return j$.util.A.o(this.a.min(comparator));
+            return j$.util.S.i(this.a.min(comparator));
+        }
+
+        @Override // j$.util.stream.Stream
+        public final /* synthetic */ LongStream n(a aVar) {
+            return k0.j(this.a.flatMapToLong(w0.R(aVar)));
         }
 
         @Override // j$.util.stream.Stream
         public final /* synthetic */ boolean noneMatch(Predicate predicate) {
-            return this.a.noneMatch(j$.util.function.w0.a(predicate));
-        }
-
-        @Override // j$.util.stream.Stream
-        public final /* synthetic */ Optional o(BinaryOperator binaryOperator) {
-            return j$.util.A.o(this.a.reduce(j$.util.function.e.a(binaryOperator)));
+            return this.a.noneMatch(predicate);
         }
 
         @Override // j$.util.stream.BaseStream
         public final /* synthetic */ BaseStream onClose(Runnable runnable) {
-            return f.f0(this.a.onClose(runnable));
+            return f.j(this.a.onClose(runnable));
         }
 
         @Override // j$.util.stream.BaseStream
         public final /* synthetic */ BaseStream parallel() {
-            return f.f0(this.a.parallel());
+            return f.j(this.a.parallel());
+        }
+
+        @Override // j$.util.stream.Stream
+        public final /* synthetic */ Stream peek(Consumer consumer) {
+            return convert(this.a.peek(consumer));
+        }
+
+        @Override // j$.util.stream.Stream
+        public final /* synthetic */ Optional reduce(BinaryOperator binaryOperator) {
+            return j$.util.S.i(this.a.reduce(binaryOperator));
+        }
+
+        @Override // j$.util.stream.Stream
+        public final /* synthetic */ Object reduce(Object obj, BiFunction biFunction, BinaryOperator binaryOperator) {
+            return this.a.reduce(obj, biFunction, binaryOperator);
+        }
+
+        @Override // j$.util.stream.Stream
+        public final /* synthetic */ Object reduce(Object obj, BinaryOperator binaryOperator) {
+            return this.a.reduce(obj, binaryOperator);
+        }
+
+        @Override // j$.util.stream.Stream
+        public final /* synthetic */ IntStream s(a aVar) {
+            return IntStream.VivifiedWrapper.convert(this.a.flatMapToInt(w0.R(aVar)));
         }
 
         @Override // j$.util.stream.BaseStream
         public final /* synthetic */ BaseStream sequential() {
-            return f.f0(this.a.sequential());
+            return f.j(this.a.sequential());
         }
 
         @Override // j$.util.stream.Stream
@@ -219,7 +230,12 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
 
         @Override // j$.util.stream.BaseStream, j$.util.stream.D
         public final /* synthetic */ Spliterator spliterator() {
-            return j$.util.N.b(this.a.spliterator());
+            return j$.util.f0.a(this.a.spliterator());
+        }
+
+        @Override // j$.util.stream.Stream
+        public final /* synthetic */ Stream takeWhile(Predicate predicate) {
+            return convert(this.a.takeWhile(predicate));
         }
 
         @Override // j$.util.stream.Stream
@@ -229,22 +245,22 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
 
         @Override // j$.util.stream.Stream
         public final /* synthetic */ Object[] toArray(IntFunction intFunction) {
-            return this.a.toArray(j$.util.function.H.a(intFunction));
+            return this.a.toArray(intFunction);
         }
 
         @Override // j$.util.stream.Stream
-        public final /* synthetic */ Object u(Object obj, BiFunction biFunction, BinaryOperator binaryOperator) {
-            return this.a.reduce(obj, j$.util.function.b.a(biFunction), j$.util.function.e.a(binaryOperator));
+        public final /* synthetic */ List toList() {
+            return this.a.toList();
         }
 
         @Override // j$.util.stream.BaseStream
         public final /* synthetic */ BaseStream unordered() {
-            return f.f0(this.a.unordered());
+            return f.j(this.a.unordered());
         }
 
         @Override // j$.util.stream.Stream
-        public final /* synthetic */ D w(Function function) {
-            return B.f0(this.a.flatMapToDouble(j$.util.function.z.a(function)));
+        public final /* synthetic */ D y(a aVar) {
+            return B.j(this.a.flatMapToDouble(w0.R(aVar)));
         }
     }
 
@@ -260,13 +276,13 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
         }
 
         @Override // java.util.stream.Stream
-        public final /* synthetic */ boolean allMatch(java.util.function.Predicate predicate) {
-            return Stream.this.N(Predicate.VivifiedWrapper.convert(predicate));
+        public final /* synthetic */ boolean allMatch(Predicate predicate) {
+            return Stream.this.allMatch(predicate);
         }
 
         @Override // java.util.stream.Stream
-        public final /* synthetic */ boolean anyMatch(java.util.function.Predicate predicate) {
-            return Stream.this.anyMatch(Predicate.VivifiedWrapper.convert(predicate));
+        public final /* synthetic */ boolean anyMatch(Predicate predicate) {
+            return Stream.this.anyMatch(predicate);
         }
 
         @Override // java.util.stream.BaseStream, java.lang.AutoCloseable
@@ -275,8 +291,8 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
         }
 
         @Override // java.util.stream.Stream
-        public final /* synthetic */ Object collect(java.util.function.Supplier supplier, java.util.function.BiConsumer biConsumer, java.util.function.BiConsumer biConsumer2) {
-            return Stream.this.h(j$.util.function.x0.a(supplier), BiConsumer.VivifiedWrapper.convert(biConsumer), BiConsumer.VivifiedWrapper.convert(biConsumer2));
+        public final /* synthetic */ Object collect(Supplier supplier, BiConsumer biConsumer, BiConsumer biConsumer2) {
+            return Stream.this.collect(supplier, biConsumer, biConsumer2);
         }
 
         @Override // java.util.stream.Stream
@@ -294,6 +310,11 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
             return convert(Stream.this.distinct());
         }
 
+        @Override // java.util.stream.Stream
+        public final /* synthetic */ java.util.stream.Stream dropWhile(Predicate predicate) {
+            return convert(Stream.this.dropWhile(predicate));
+        }
+
         public final /* synthetic */ boolean equals(Object obj) {
             Stream stream = Stream.this;
             if (obj instanceof Wrapper) {
@@ -303,48 +324,48 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
         }
 
         @Override // java.util.stream.Stream
-        public final /* synthetic */ java.util.stream.Stream filter(java.util.function.Predicate predicate) {
-            return convert(Stream.this.filter(Predicate.VivifiedWrapper.convert(predicate)));
+        public final /* synthetic */ java.util.stream.Stream filter(Predicate predicate) {
+            return convert(Stream.this.filter(predicate));
         }
 
         @Override // java.util.stream.Stream
         public final /* synthetic */ java.util.Optional findAny() {
-            return j$.util.A.u(Stream.this.findAny());
+            return j$.util.S.m(Stream.this.findAny());
         }
 
         @Override // java.util.stream.Stream
         public final /* synthetic */ java.util.Optional findFirst() {
-            return j$.util.A.u(Stream.this.findFirst());
+            return j$.util.S.m(Stream.this.findFirst());
         }
 
         @Override // java.util.stream.Stream
-        public final /* synthetic */ java.util.stream.Stream flatMap(java.util.function.Function function) {
-            return convert(Stream.this.l(Function.VivifiedWrapper.convert(function)));
+        public final /* synthetic */ java.util.stream.Stream flatMap(Function function) {
+            return convert(Stream.this.e(w0.R(function)));
         }
 
         @Override // java.util.stream.Stream
-        public final /* synthetic */ DoubleStream flatMapToDouble(java.util.function.Function function) {
-            return C.f0(Stream.this.w(Function.VivifiedWrapper.convert(function)));
+        public final /* synthetic */ DoubleStream flatMapToDouble(Function function) {
+            return C.j(Stream.this.y(w0.R(function)));
         }
 
         @Override // java.util.stream.Stream
-        public final /* synthetic */ java.util.stream.IntStream flatMapToInt(java.util.function.Function function) {
-            return IntStream.Wrapper.convert(Stream.this.b(Function.VivifiedWrapper.convert(function)));
+        public final /* synthetic */ java.util.stream.IntStream flatMapToInt(Function function) {
+            return IntStream.Wrapper.convert(Stream.this.s(w0.R(function)));
         }
 
         @Override // java.util.stream.Stream
-        public final /* synthetic */ java.util.stream.LongStream flatMapToLong(java.util.function.Function function) {
-            return j0.f0(Stream.this.P(Function.VivifiedWrapper.convert(function)));
+        public final /* synthetic */ java.util.stream.LongStream flatMapToLong(Function function) {
+            return l0.j(Stream.this.n(w0.R(function)));
         }
 
         @Override // java.util.stream.Stream
-        public final /* synthetic */ void forEach(java.util.function.Consumer consumer) {
-            Stream.this.forEach(Consumer.VivifiedWrapper.convert(consumer));
+        public final /* synthetic */ void forEach(Consumer consumer) {
+            Stream.this.forEach(consumer);
         }
 
         @Override // java.util.stream.Stream
-        public final /* synthetic */ void forEachOrdered(java.util.function.Consumer consumer) {
-            Stream.this.e(Consumer.VivifiedWrapper.convert(consumer));
+        public final /* synthetic */ void forEachOrdered(Consumer consumer) {
+            Stream.this.forEachOrdered(consumer);
         }
 
         public final /* synthetic */ int hashCode() {
@@ -367,73 +388,73 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
         }
 
         @Override // java.util.stream.Stream
-        public final /* synthetic */ java.util.stream.Stream map(java.util.function.Function function) {
-            return convert(Stream.this.map(Function.VivifiedWrapper.convert(function)));
+        public final /* synthetic */ java.util.stream.Stream map(Function function) {
+            return convert(Stream.this.map(function));
         }
 
         @Override // java.util.stream.Stream
-        public final /* synthetic */ DoubleStream mapToDouble(java.util.function.ToDoubleFunction toDoubleFunction) {
-            return C.f0(Stream.this.Z(j$.util.function.z0.a(toDoubleFunction)));
+        public final /* synthetic */ DoubleStream mapToDouble(ToDoubleFunction toDoubleFunction) {
+            return C.j(Stream.this.mapToDouble(toDoubleFunction));
         }
 
         @Override // java.util.stream.Stream
-        public final /* synthetic */ java.util.stream.IntStream mapToInt(java.util.function.ToIntFunction toIntFunction) {
-            return IntStream.Wrapper.convert(Stream.this.k(j$.util.function.B0.a(toIntFunction)));
+        public final /* synthetic */ java.util.stream.IntStream mapToInt(ToIntFunction toIntFunction) {
+            return IntStream.Wrapper.convert(Stream.this.mapToInt(toIntFunction));
         }
 
         @Override // java.util.stream.Stream
-        public final /* synthetic */ java.util.stream.LongStream mapToLong(java.util.function.ToLongFunction toLongFunction) {
-            return j0.f0(Stream.this.mapToLong(j$.util.function.D0.a(toLongFunction)));
+        public final /* synthetic */ java.util.stream.LongStream mapToLong(ToLongFunction toLongFunction) {
+            return l0.j(Stream.this.mapToLong(toLongFunction));
         }
 
         @Override // java.util.stream.Stream
         public final /* synthetic */ java.util.Optional max(Comparator comparator) {
-            return j$.util.A.u(Stream.this.max(comparator));
+            return j$.util.S.m(Stream.this.max(comparator));
         }
 
         @Override // java.util.stream.Stream
         public final /* synthetic */ java.util.Optional min(Comparator comparator) {
-            return j$.util.A.u(Stream.this.min(comparator));
+            return j$.util.S.m(Stream.this.min(comparator));
         }
 
         @Override // java.util.stream.Stream
-        public final /* synthetic */ boolean noneMatch(java.util.function.Predicate predicate) {
-            return Stream.this.noneMatch(Predicate.VivifiedWrapper.convert(predicate));
+        public final /* synthetic */ boolean noneMatch(Predicate predicate) {
+            return Stream.this.noneMatch(predicate);
         }
 
         @Override // java.util.stream.BaseStream
         public final /* synthetic */ java.util.stream.BaseStream onClose(Runnable runnable) {
-            return g.f0(Stream.this.onClose(runnable));
+            return g.j(Stream.this.onClose(runnable));
         }
 
         @Override // java.util.stream.BaseStream
         public final /* synthetic */ java.util.stream.BaseStream parallel() {
-            return g.f0(Stream.this.parallel());
+            return g.j(Stream.this.parallel());
         }
 
         @Override // java.util.stream.Stream
-        public final /* synthetic */ java.util.stream.Stream peek(java.util.function.Consumer consumer) {
-            return convert(Stream.this.M(Consumer.VivifiedWrapper.convert(consumer)));
+        public final /* synthetic */ java.util.stream.Stream peek(Consumer consumer) {
+            return convert(Stream.this.peek(consumer));
         }
 
         @Override // java.util.stream.Stream
-        public final /* synthetic */ Object reduce(Object obj, java.util.function.BiFunction biFunction, java.util.function.BinaryOperator binaryOperator) {
-            return Stream.this.u(obj, BiFunction.VivifiedWrapper.convert(biFunction), j$.util.function.d.a(binaryOperator));
+        public final /* synthetic */ Object reduce(Object obj, BiFunction biFunction, BinaryOperator binaryOperator) {
+            return Stream.this.reduce(obj, biFunction, binaryOperator);
         }
 
         @Override // java.util.stream.Stream
-        public final /* synthetic */ Object reduce(Object obj, java.util.function.BinaryOperator binaryOperator) {
-            return Stream.this.e0(obj, j$.util.function.d.a(binaryOperator));
+        public final /* synthetic */ Object reduce(Object obj, BinaryOperator binaryOperator) {
+            return Stream.this.reduce(obj, binaryOperator);
         }
 
         @Override // java.util.stream.Stream
-        public final /* synthetic */ java.util.Optional reduce(java.util.function.BinaryOperator binaryOperator) {
-            return j$.util.A.u(Stream.this.o(j$.util.function.d.a(binaryOperator)));
+        public final /* synthetic */ java.util.Optional reduce(BinaryOperator binaryOperator) {
+            return j$.util.S.m(Stream.this.reduce(binaryOperator));
         }
 
         @Override // java.util.stream.BaseStream
         public final /* synthetic */ java.util.stream.BaseStream sequential() {
-            return g.f0(Stream.this.sequential());
+            return g.j(Stream.this.sequential());
         }
 
         @Override // java.util.stream.Stream
@@ -457,42 +478,46 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
         }
 
         @Override // java.util.stream.Stream
+        public final /* synthetic */ java.util.stream.Stream takeWhile(Predicate predicate) {
+            return convert(Stream.this.takeWhile(predicate));
+        }
+
+        @Override // java.util.stream.Stream
         public final /* synthetic */ Object[] toArray() {
             return Stream.this.toArray();
         }
 
         @Override // java.util.stream.Stream
-        public final /* synthetic */ Object[] toArray(java.util.function.IntFunction intFunction) {
-            return Stream.this.toArray(IntFunction.VivifiedWrapper.convert(intFunction));
+        public final /* synthetic */ Object[] toArray(IntFunction intFunction) {
+            return Stream.this.toArray(intFunction);
+        }
+
+        @Override // java.util.stream.Stream
+        public final /* synthetic */ List toList() {
+            return Stream.this.toList();
         }
 
         @Override // java.util.stream.BaseStream
         public final /* synthetic */ java.util.stream.BaseStream unordered() {
-            return g.f0(Stream.this.unordered());
+            return g.j(Stream.this.unordered());
         }
     }
 
-    Stream M(Consumer consumer);
-
-    boolean N(Predicate predicate);
-
-    LongStream P(Function function);
-
-    D Z(ToDoubleFunction toDoubleFunction);
+    boolean allMatch(Predicate predicate);
 
     boolean anyMatch(Predicate<? super T> predicate);
 
-    IntStream b(Function function);
-
     <R, A> R collect(Collector<? super T, A, R> collector);
+
+    Object collect(Supplier supplier, BiConsumer biConsumer, BiConsumer biConsumer2);
 
     long count();
 
     Stream<T> distinct();
 
-    void e(Consumer consumer);
+    Stream dropWhile(Predicate predicate);
 
-    Object e0(Object obj, BinaryOperator binaryOperator);
+    Stream e(a aVar);
 
     Stream<T> filter(Predicate<? super T> predicate);
 
@@ -502,15 +527,15 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
 
     void forEach(Consumer<? super T> consumer);
 
-    Object h(Supplier supplier, BiConsumer biConsumer, BiConsumer biConsumer2);
-
-    IntStream k(ToIntFunction toIntFunction);
-
-    Stream l(Function function);
+    void forEachOrdered(Consumer consumer);
 
     Stream<T> limit(long j);
 
     <R> Stream<R> map(Function<? super T, ? extends R> function);
+
+    D mapToDouble(ToDoubleFunction toDoubleFunction);
+
+    IntStream mapToInt(ToIntFunction toIntFunction);
 
     LongStream mapToLong(ToLongFunction<? super T> toLongFunction);
 
@@ -518,9 +543,19 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
 
     Optional min(Comparator comparator);
 
+    LongStream n(a aVar);
+
     boolean noneMatch(Predicate<? super T> predicate);
 
-    Optional o(BinaryOperator binaryOperator);
+    Stream peek(Consumer consumer);
+
+    Optional reduce(BinaryOperator binaryOperator);
+
+    Object reduce(Object obj, BiFunction biFunction, BinaryOperator binaryOperator);
+
+    Object reduce(Object obj, BinaryOperator binaryOperator);
+
+    IntStream s(a aVar);
 
     Stream skip(long j);
 
@@ -528,11 +563,13 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
 
     Stream sorted(Comparator comparator);
 
+    Stream takeWhile(Predicate predicate);
+
     Object[] toArray();
 
     Object[] toArray(IntFunction intFunction);
 
-    Object u(Object obj, BiFunction biFunction, BinaryOperator binaryOperator);
+    List toList();
 
-    D w(Function function);
+    D y(a aVar);
 }

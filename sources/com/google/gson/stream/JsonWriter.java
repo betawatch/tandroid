@@ -2,6 +2,7 @@ package com.google.gson.stream;
 
 import com.google.gson.FormattingStyle;
 import com.google.gson.Strictness;
+import j$.util.Objects;
 import java.io.Closeable;
 import java.io.Flushable;
 import java.io.IOException;
@@ -9,7 +10,6 @@ import java.io.Writer;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Arrays;
-import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.regex.Pattern;

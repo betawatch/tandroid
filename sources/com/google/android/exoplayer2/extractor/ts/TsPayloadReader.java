@@ -4,6 +4,7 @@ import android.util.SparseArray;
 import com.google.android.exoplayer2.extractor.ExtractorOutput;
 import com.google.android.exoplayer2.util.ParsableByteArray;
 import com.google.android.exoplayer2.util.TimestampAdjuster;
+import j$.util.DesugarCollections;
 import java.util.Collections;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
@@ -36,7 +37,7 @@ public interface TsPayloadReader {
             if (list == null) {
                 unmodifiableList = Collections.emptyList();
             } else {
-                unmodifiableList = Collections.unmodifiableList(list);
+                unmodifiableList = DesugarCollections.unmodifiableList(list);
             }
             this.dvbSubtitleInfos = unmodifiableList;
             this.descriptorBytes = bArr;

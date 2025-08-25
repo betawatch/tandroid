@@ -1,6 +1,6 @@
 package com.google.firebase.platforminfo;
 
-import java.util.Collections;
+import j$.util.DesugarCollections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,7 +15,7 @@ public class GlobalLibraryVersionRegistrar {
     Set getRegisteredVersions() {
         Set unmodifiableSet;
         synchronized (this.infos) {
-            unmodifiableSet = Collections.unmodifiableSet(this.infos);
+            unmodifiableSet = DesugarCollections.unmodifiableSet(this.infos);
         }
         return unmodifiableSet;
     }

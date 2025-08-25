@@ -21,11 +21,11 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.exoplayer2.util.Consumer;
+import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
-import java.util.Objects;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChannelBoostsController;
@@ -202,11 +202,21 @@ public class BoostsActivity extends GradientHeaderActivity implements Notificati
                     };
                     BoostsActivity.this.boostsTabs.setDelegate(new ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate() { // from class: org.telegram.ui.BoostsActivity.1.3
                         @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate
+                        public /* synthetic */ boolean canReorder(int i3) {
+                            return ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate.-CC.$default$canReorder(this, i3);
+                        }
+
+                        @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate
                         public void onPageScrolled(float f) {
                         }
 
                         @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate
                         public void onSamePageSelected() {
+                        }
+
+                        @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate
+                        public /* synthetic */ boolean showOptions(int i3, View view2) {
+                            return ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate.-CC.$default$showOptions(this, i3, view2);
                         }
 
                         @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate
@@ -806,7 +816,7 @@ public class BoostsActivity extends GradientHeaderActivity implements Notificati
             @Override // android.view.View
             protected void onDraw(Canvas canvas) {
                 this.drawable.setBounds(0, 0, getWidth(), getHeight());
-                this.drawable.setAlpha(NotificationCenter.goingToPreviewTheme);
+                this.drawable.setAlpha(NotificationCenter.needCheckSystemBarColors);
                 this.drawable.draw(canvas);
                 invalidate();
                 super.onDraw(canvas);

@@ -1,6 +1,7 @@
 package androidx.mediarouter.media;
 
 import android.os.Bundle;
+import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -17,7 +18,7 @@ public final class MediaRouteProviderDescriptor {
         if (list.isEmpty()) {
             this.mRoutes = Collections.emptyList();
         } else {
-            this.mRoutes = Collections.unmodifiableList(new ArrayList(list));
+            this.mRoutes = DesugarCollections.unmodifiableList(new ArrayList(list));
         }
         this.mSupportsDynamicGroupRoute = z;
     }

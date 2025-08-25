@@ -1,76 +1,82 @@
 package j$.util.stream;
 
+import j$.util.Objects;
 import j$.util.Spliterator;
-import java.util.Comparator;
+import java.util.function.Consumer;
+import java.util.function.LongConsumer;
 
 /* loaded from: classes2.dex */
-abstract class p3 extends s3 implements j$.util.M {
+final class p3 extends c3 implements j$.util.b0 {
     @Override // j$.util.Spliterator
-    public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.util.A.j(this);
+    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
+        j$.util.S.c(this, consumer);
     }
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return j$.util.A.k(this, i);
+    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
+        return j$.util.S.h(this, consumer);
     }
 
-    protected abstract void w(Object obj);
+    @Override // j$.util.stream.c3
+    final c3 e(Spliterator spliterator) {
+        return new p3(this.b, spliterator, this.a);
+    }
 
-    protected abstract W2 x();
+    @Override // j$.util.stream.c3
+    final void d() {
+        T2 t2 = new T2();
+        this.h = t2;
+        Objects.requireNonNull(t2);
+        this.e = this.b.V(new o3(t2, 0));
+        this.f = new a(4, this);
+    }
 
-    @Override // j$.util.M
-    /* renamed from: forEachRemaining, reason: merged with bridge method [inline-methods] and merged with bridge method [inline-methods] and merged with bridge method [inline-methods] */
-    public final void e(Object obj) {
-        obj.getClass();
-        W2 w2 = null;
-        while (true) {
-            r3 v = v();
-            if (v == r3.NO_MORE) {
-                return;
-            }
-            r3 r3Var = r3.MAYBE_MORE;
-            Spliterator spliterator = this.a;
-            if (v == r3Var) {
-                if (w2 == null) {
-                    w2 = x();
-                } else {
-                    w2.b = 0;
-                }
-                long j = 0;
-                while (((j$.util.M) spliterator).p(w2)) {
-                    j++;
-                    if (j >= 128) {
-                        break;
-                    }
-                }
-                if (j == 0) {
-                    return;
-                } else {
-                    w2.a(obj, t(j));
-                }
+    @Override // j$.util.stream.c3, j$.util.Spliterator
+    public final Spliterator trySplit() {
+        return (j$.util.b0) super.trySplit();
+    }
+
+    @Override // j$.util.stream.c3, j$.util.Spliterator
+    public final j$.util.b0 trySplit() {
+        return (j$.util.b0) super.trySplit();
+    }
+
+    @Override // j$.util.stream.c3, j$.util.Spliterator
+    public final j$.util.e0 trySplit() {
+        return (j$.util.b0) super.trySplit();
+    }
+
+    @Override // j$.util.e0
+    public final boolean tryAdvance(LongConsumer longConsumer) {
+        long j;
+        Objects.requireNonNull(longConsumer);
+        boolean a = a();
+        if (a) {
+            T2 t2 = (T2) this.h;
+            long j2 = this.g;
+            int u = t2.u(j2);
+            if (t2.c == 0 && u == 0) {
+                j = ((long[]) t2.e)[(int) j2];
             } else {
-                ((j$.util.M) spliterator).e(obj);
-                return;
+                j = ((long[][]) t2.f)[u][(int) (j2 - t2.d[u])];
             }
+            longConsumer.accept(j);
         }
+        return a;
     }
 
-    @Override // j$.util.M
-    /* renamed from: tryAdvance, reason: merged with bridge method [inline-methods] and merged with bridge method [inline-methods] and merged with bridge method [inline-methods] */
-    public final boolean p(Object obj) {
-        obj.getClass();
-        while (v() != r3.NO_MORE && ((j$.util.M) this.a).p(this)) {
-            if (t(1L) == 1) {
-                w(obj);
-                return true;
-            }
+    @Override // j$.util.e0
+    public final void forEachRemaining(LongConsumer longConsumer) {
+        if (this.h == null && !this.i) {
+            Objects.requireNonNull(longConsumer);
+            c();
+            Objects.requireNonNull(longConsumer);
+            o3 o3Var = new o3(longConsumer, 1);
+            this.b.U(this.d, o3Var);
+            this.i = true;
+            return;
         }
-        return false;
-    }
-
-    @Override // j$.util.Spliterator
-    public final Comparator getComparator() {
-        throw new IllegalStateException();
+        while (tryAdvance(longConsumer)) {
+        }
     }
 }

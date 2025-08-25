@@ -122,7 +122,7 @@ public class ScrimOptions extends Dialog {
             }
         };
         this.windowView = frameLayout;
-        frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda7
+        frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ScrimOptions.this.lambda$new$0(view);
@@ -199,7 +199,7 @@ public class ScrimOptions extends Dialog {
             return;
         }
         this.dismissing = true;
-        animateOpenTo(false, new Runnable() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda5
+        animateOpenTo(false, new Runnable() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
                 ScrimOptions.this.lambda$dismiss$2();
@@ -215,7 +215,7 @@ public class ScrimOptions extends Dialog {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$dismiss$2() {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda9
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
                 ScrimOptions.this.lambda$dismiss$1();
@@ -228,7 +228,7 @@ public class ScrimOptions extends Dialog {
             return;
         }
         this.dismissing = true;
-        animateOpenTo(false, 2.0f, new Runnable() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda3
+        animateOpenTo(false, 2.0f, new Runnable() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
                 ScrimOptions.this.lambda$dismissFast$4();
@@ -244,7 +244,7 @@ public class ScrimOptions extends Dialog {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$dismissFast$4() {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda8
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
                 ScrimOptions.this.lambda$dismissFast$3();
@@ -263,7 +263,7 @@ public class ScrimOptions extends Dialog {
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.openProgress, z ? 1.0f : 0.0f);
         this.openAnimator = ofFloat;
-        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda6
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda7
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
                 ScrimOptions.this.lambda$animateOpenTo$5(valueAnimator2);
@@ -328,7 +328,7 @@ public class ScrimOptions extends Dialog {
         if (view != null) {
             view.setVisibility(4);
         }
-        AndroidUtilities.makeGlobalBlurBitmap(new Utilities.Callback() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda4
+        AndroidUtilities.makeGlobalBlurBitmap(new Utilities.Callback() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda5
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 ScrimOptions.this.lambda$prepareBlur$6(view, (Bitmap) obj);
@@ -395,18 +395,19 @@ public class ScrimOptions extends Dialog {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:112:0x038d  */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x039c  */
-    /* JADX WARN: Removed duplicated region for block: B:118:0x03bd  */
-    /* JADX WARN: Removed duplicated region for block: B:121:0x03ce  */
-    /* JADX WARN: Removed duplicated region for block: B:124:0x03df  */
-    /* JADX WARN: Removed duplicated region for block: B:127:0x044d  */
-    /* JADX WARN: Removed duplicated region for block: B:137:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:138:0x03e4  */
-    /* JADX WARN: Removed duplicated region for block: B:139:0x03c7  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x00d8  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x01ca A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x01cb  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x0392  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x03a1  */
+    /* JADX WARN: Removed duplicated region for block: B:118:0x03c3  */
+    /* JADX WARN: Removed duplicated region for block: B:121:0x03d4  */
+    /* JADX WARN: Removed duplicated region for block: B:124:0x03e5  */
+    /* JADX WARN: Removed duplicated region for block: B:127:0x03ff  */
+    /* JADX WARN: Removed duplicated region for block: B:130:0x046b  */
+    /* JADX WARN: Removed duplicated region for block: B:140:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:141:0x03ea  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x03cd  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x00de  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x01cd A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x01ce  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -423,14 +424,15 @@ public class ScrimOptions extends Dialog {
         int i5;
         StaticLayout staticLayout2;
         float f4;
-        float f5;
         StaticLayout staticLayout3;
         RectF rectF;
-        RectF rectF2;
-        final Bitmap bitmap;
+        float f5;
+        Paint paint;
+        Bitmap bitmap;
         int i6;
         SpannableStringBuilder spannableStringBuilder;
         int i7;
+        RectF computeDrawingBoundingBox;
         int endHyphenEdit;
         String fontVariationSettings;
         ArrayList<ChatMessageCell.PollButton> pollButtons;
@@ -553,14 +555,14 @@ public class ScrimOptions extends Dialog {
                             }
                             if (charSequence != null) {
                                 int lineForOffset = staticLayout2.getLineForOffset(i4);
-                                float lineTop = staticLayout2.getLineTop(lineForOffset) + f2;
+                                float lineTop = f2 + staticLayout2.getLineTop(lineForOffset);
                                 float primaryHorizontal = staticLayout2.getPrimaryHorizontal(i4);
                                 float lineWidth = staticLayout2.getLineWidth(lineForOffset);
                                 LinkPath linkPath = new LinkPath(true);
                                 linkPath.setCurrentLayout(staticLayout2, i4, 0.0f);
                                 staticLayout2.getSelectionPath(i4, i3, linkPath);
-                                RectF rectF3 = new RectF();
-                                linkPath.computeBounds(rectF3, true);
+                                RectF rectF2 = new RectF();
+                                linkPath.computeBounds(rectF2, true);
                                 StaticLayout makeStaticLayout = MessageObject.makeStaticLayout(charSequence, staticLayout2.getPaint(), staticLayout2.getWidth(), 1.0f, 0.0f, false);
                                 i3 = charSequence.length();
                                 float width = makeStaticLayout.getWidth();
@@ -570,46 +572,46 @@ public class ScrimOptions extends Dialog {
                                     f7 = Math.max(f7, makeStaticLayout.getLineRight(i14));
                                 }
                                 f4 = f + Math.max(0.0f, Math.min(primaryHorizontal, lineWidth - Math.max(0.0f, f7 - width)));
-                                f5 = lineTop;
+                                rectF = rectF2;
                                 staticLayout3 = makeStaticLayout;
-                                rectF = rectF3;
                                 i4 = 0;
+                                f5 = lineTop;
                             } else {
                                 f4 = f;
-                                f5 = f2;
                                 staticLayout3 = staticLayout2;
                                 rectF = null;
+                                f5 = f2;
                             }
-                            final Paint paint = new Paint(1);
-                            paint.setColor(Theme.getColor(messageObject.isOutOwner() ? Theme.key_chat_outBubble : Theme.key_chat_inBubble, this.resourcesProvider));
-                            paint.setPathEffect(new CornerPathEffect(AndroidUtilities.dp(5.0f)));
+                            Paint paint2 = new Paint(1);
+                            paint2.setColor(Theme.getColor(messageObject.isOutOwner() ? Theme.key_chat_outBubble : Theme.key_chat_inBubble, this.resourcesProvider));
+                            paint2.setPathEffect(new CornerPathEffect(AndroidUtilities.dp(5.0f)));
                             final LinkPath linkPath2 = new LinkPath(true);
                             linkPath2.setUseCornerPathImplementation(true);
                             linkPath2.setCurrentLayout(staticLayout3, i4, 0.0f);
                             staticLayout3.getSelectionPath(i4, i3, linkPath2);
                             linkPath2.closeRects();
-                            final RectF rectF4 = new RectF();
-                            linkPath2.computeBounds(rectF4, true);
-                            int width2 = (int) (rectF4.width() + LinkPath.getRadius());
+                            final RectF rectF3 = new RectF();
+                            linkPath2.computeBounds(rectF3, true);
+                            int width2 = (int) (rectF3.width() + LinkPath.getRadius());
                             if (!chatMessageCell.drawBackgroundInParent() || width2 <= 0) {
-                                rectF2 = rectF;
+                                paint = paint2;
                             } else {
-                                if (rectF4.height() > 0.0f) {
-                                    Bitmap createBitmap = Bitmap.createBitmap(width2, (int) rectF4.height(), Bitmap.Config.ALPHA_8);
+                                if (rectF3.height() > 0.0f) {
+                                    Bitmap createBitmap = Bitmap.createBitmap(width2, (int) rectF3.height(), Bitmap.Config.ALPHA_8);
                                     Canvas canvas = new Canvas(createBitmap);
-                                    rectF2 = rectF;
-                                    Paint paint2 = new Paint(1);
-                                    paint2.setColor(-1);
-                                    canvas.drawRect(0.0f, 0.0f, width2, rectF4.height(), paint2);
+                                    paint = paint2;
+                                    bitmap = createBitmap;
                                     Paint paint3 = new Paint(1);
                                     paint3.setColor(-1);
-                                    paint3.setPathEffect(new CornerPathEffect(AndroidUtilities.dp(5.0f)));
-                                    paint3.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-                                    canvas.translate(-rectF4.left, -rectF4.top);
-                                    canvas.drawPath(linkPath2, paint3);
-                                    bitmap = createBitmap;
-                                    final Paint paint4 = new Paint(3);
-                                    paint4.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+                                    canvas.drawRect(0.0f, 0.0f, width2, rectF3.height(), paint3);
+                                    Paint paint4 = new Paint(1);
+                                    paint4.setColor(-1);
+                                    paint4.setPathEffect(new CornerPathEffect(AndroidUtilities.dp(5.0f)));
+                                    paint4.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+                                    canvas.translate(-rectF3.left, -rectF3.top);
+                                    canvas.drawPath(linkPath2, paint4);
+                                    final Paint paint5 = new Paint(3);
+                                    paint5.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
                                     chatMessageCell.setupTextColors();
                                     TextPaint textPaint = new TextPaint(1);
                                     textPaint.setColor(staticLayout3.getPaint().getColor());
@@ -641,11 +643,18 @@ public class ScrimOptions extends Dialog {
                                         spannableStringBuilder.setSpan(new ForegroundColorSpan(i7), i3, spannableStringBuilder.length(), 33);
                                     }
                                     final StaticLayout makeStaticLayout2 = MessageObject.makeStaticLayout(spannableStringBuilder, textPaint, i5, 1.0f, messageObject.totalAnimatedEmojiCount < 4 ? -1.0f : 0.0f, false);
+                                    final RectF rectF4 = new RectF();
+                                    if (i6 >= 35) {
+                                        computeDrawingBoundingBox = makeStaticLayout2.computeDrawingBoundingBox();
+                                        rectF4.set(computeDrawingBoundingBox);
+                                    }
                                     final int[] iArr = new int[2];
                                     chatMessageCell.getLocationOnScreen(iArr);
                                     final int[] iArr2 = {iArr[0] + ((int) f4), iArr[1] + ((int) f5)};
+                                    final Paint paint6 = paint;
+                                    final Bitmap bitmap2 = bitmap;
                                     this.scrimDrawable = new Drawable() { // from class: org.telegram.ui.Components.ScrimOptions.4
-                                        private int alpha = NotificationCenter.goingToPreviewTheme;
+                                        private int alpha = NotificationCenter.needCheckSystemBarColors;
 
                                         @Override // android.graphics.drawable.Drawable
                                         public int getOpacity() {
@@ -687,17 +696,19 @@ public class ScrimOptions extends Dialog {
                                                     int[] iArr7 = iArr2;
                                                     canvas2.translate(iArr7[0], iArr7[1]);
                                                 }
-                                                if (bitmap != null) {
+                                                if (bitmap2 != null) {
                                                     canvas2.save();
-                                                    Bitmap bitmap2 = bitmap;
-                                                    RectF rectF6 = rectF4;
-                                                    canvas2.drawBitmap(bitmap2, rectF6.left, rectF6.top, paint4);
+                                                    Bitmap bitmap3 = bitmap2;
+                                                    RectF rectF6 = rectF3;
+                                                    canvas2.drawBitmap(bitmap3, rectF6.left, rectF6.top, paint5);
                                                     canvas2.restore();
                                                 }
                                             } else {
-                                                canvas2.drawPath(linkPath2, paint);
+                                                canvas2.drawPath(linkPath2, paint6);
                                             }
                                             canvas2.clipPath(linkPath2);
+                                            RectF rectF7 = rectF4;
+                                            canvas2.translate(-rectF7.left, (-rectF7.top) / 2.0f);
                                             makeStaticLayout2.draw(canvas2);
                                             canvas2.restore();
                                         }
@@ -707,32 +718,32 @@ public class ScrimOptions extends Dialog {
                                             this.alpha = i15;
                                         }
                                     };
-                                    int radius = (int) (iArr[0] + f4 + rectF4.left + (LinkPath.getRadius() / 2.0f));
-                                    int i15 = (int) (iArr[1] + f5 + rectF4.top);
-                                    this.scrimDrawable.setBounds(radius, i15, ((int) rectF4.width()) + radius, ((int) rectF4.height()) + i15);
+                                    int radius = (int) (iArr[0] + f4 + rectF3.left + (LinkPath.getRadius() / 2.0f));
+                                    int i15 = (int) (iArr[1] + f5 + rectF3.top);
+                                    this.scrimDrawable.setBounds(radius, i15, ((int) rectF3.width()) + radius, ((int) rectF3.height()) + i15);
                                     if (charSequence == null) {
                                         float f8 = radius;
-                                        if (rectF4.width() + f8 > AndroidUtilities.displaySize.x - AndroidUtilities.dp(8.0f)) {
-                                            this.scrimDrawableTx2 -= (f8 + rectF4.width()) - (AndroidUtilities.displaySize.x - AndroidUtilities.dp(8.0f));
+                                        if (rectF3.width() + f8 > AndroidUtilities.displaySize.x - AndroidUtilities.dp(8.0f)) {
+                                            this.scrimDrawableTx2 -= (f8 + rectF3.width()) - (AndroidUtilities.displaySize.x - AndroidUtilities.dp(8.0f));
                                         }
                                         float f9 = i15;
-                                        if (rectF4.height() + f9 > ((AndroidUtilities.displaySize.y - AndroidUtilities.statusBarHeight) - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(8.0f)) {
-                                            this.scrimDrawableTy2 -= (f9 + rectF4.height()) - (((AndroidUtilities.displaySize.y - AndroidUtilities.statusBarHeight) - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(8.0f));
+                                        if (rectF3.height() + f9 > ((AndroidUtilities.displaySize.y - AndroidUtilities.statusBarHeight) - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(8.0f)) {
+                                            this.scrimDrawableTy2 -= (f9 + rectF3.height()) - (((AndroidUtilities.displaySize.y - AndroidUtilities.statusBarHeight) - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(8.0f));
                                         }
-                                        if (rectF2 != null) {
-                                            this.scrimDrawableSw = rectF2.width() / rectF4.width();
-                                            this.scrimDrawableSh = rectF2.height() / rectF4.height();
+                                        if (rectF != null) {
+                                            this.scrimDrawableSw = rectF.width() / rectF3.width();
+                                            this.scrimDrawableSh = rectF.height() / rectF3.height();
                                             return;
                                         }
                                         return;
                                     }
                                     return;
                                 }
-                                rectF2 = rectF;
+                                paint = paint2;
                             }
                             bitmap = null;
-                            final Paint paint42 = new Paint(3);
-                            paint42.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+                            final Paint paint52 = new Paint(3);
+                            paint52.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
                             chatMessageCell.setupTextColors();
                             TextPaint textPaint2 = new TextPaint(1);
                             textPaint2.setColor(staticLayout3.getPaint().getColor());
@@ -755,11 +766,16 @@ public class ScrimOptions extends Dialog {
                             if (i3 < spannableStringBuilder.length()) {
                             }
                             final StaticLayout makeStaticLayout22 = MessageObject.makeStaticLayout(spannableStringBuilder, textPaint2, i5, 1.0f, messageObject.totalAnimatedEmojiCount < 4 ? -1.0f : 0.0f, false);
+                            final RectF rectF42 = new RectF();
+                            if (i6 >= 35) {
+                            }
                             final int[] iArr3 = new int[2];
                             chatMessageCell.getLocationOnScreen(iArr3);
                             final int[] iArr22 = {iArr3[0] + ((int) f4), iArr3[1] + ((int) f5)};
+                            final Paint paint62 = paint;
+                            final Bitmap bitmap22 = bitmap;
                             this.scrimDrawable = new Drawable() { // from class: org.telegram.ui.Components.ScrimOptions.4
-                                private int alpha = NotificationCenter.goingToPreviewTheme;
+                                private int alpha = NotificationCenter.needCheckSystemBarColors;
 
                                 @Override // android.graphics.drawable.Drawable
                                 public int getOpacity() {
@@ -801,17 +817,19 @@ public class ScrimOptions extends Dialog {
                                             int[] iArr7 = iArr22;
                                             canvas2.translate(iArr7[0], iArr7[1]);
                                         }
-                                        if (bitmap != null) {
+                                        if (bitmap22 != null) {
                                             canvas2.save();
-                                            Bitmap bitmap2 = bitmap;
-                                            RectF rectF6 = rectF4;
-                                            canvas2.drawBitmap(bitmap2, rectF6.left, rectF6.top, paint42);
+                                            Bitmap bitmap3 = bitmap22;
+                                            RectF rectF6 = rectF3;
+                                            canvas2.drawBitmap(bitmap3, rectF6.left, rectF6.top, paint52);
                                             canvas2.restore();
                                         }
                                     } else {
-                                        canvas2.drawPath(linkPath2, paint);
+                                        canvas2.drawPath(linkPath2, paint62);
                                     }
                                     canvas2.clipPath(linkPath2);
+                                    RectF rectF7 = rectF42;
+                                    canvas2.translate(-rectF7.left, (-rectF7.top) / 2.0f);
                                     makeStaticLayout22.draw(canvas2);
                                     canvas2.restore();
                                 }
@@ -821,9 +839,9 @@ public class ScrimOptions extends Dialog {
                                     this.alpha = i152;
                                 }
                             };
-                            int radius2 = (int) (iArr3[0] + f4 + rectF4.left + (LinkPath.getRadius() / 2.0f));
-                            int i152 = (int) (iArr3[1] + f5 + rectF4.top);
-                            this.scrimDrawable.setBounds(radius2, i152, ((int) rectF4.width()) + radius2, ((int) rectF4.height()) + i152);
+                            int radius2 = (int) (iArr3[0] + f4 + rectF3.left + (LinkPath.getRadius() / 2.0f));
+                            int i152 = (int) (iArr3[1] + f5 + rectF3.top);
+                            this.scrimDrawable.setBounds(radius2, i152, ((int) rectF3.width()) + radius2, ((int) rectF3.height()) + i152);
                             if (charSequence == null) {
                             }
                         }

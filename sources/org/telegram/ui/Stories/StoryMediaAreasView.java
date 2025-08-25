@@ -24,8 +24,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 import android.widget.FrameLayout;
+import j$.util.Objects;
 import java.util.ArrayList;
-import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
@@ -559,7 +559,7 @@ public abstract class StoryMediaAreasView extends FrameLayout implements View.On
         boolean z = areaView2 != null && areaView2.scaleOnTap;
         float f2 = this.parentHighlightScaleAlpha.set(z);
         if (f > 0.0f) {
-            canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.goingToPreviewTheme, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.needCheckSystemBarColors, 31);
             canvas.drawColor(Theme.multAlpha(402653184, f));
             for (int i = 0; i < getChildCount(); i++) {
                 View childAt = getChildAt(i);

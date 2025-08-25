@@ -7,8 +7,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.mlkit.common.sdkinternal.CommonUtils;
 import com.google.mlkit.common.sdkinternal.MLTaskExecutor;
 import com.google.mlkit.common.sdkinternal.SharedPrefManager;
+import j$.util.Objects;
 import java.util.HashMap;
-import java.util.Objects;
 import java.util.concurrent.Callable;
 
 /* loaded from: classes.dex */

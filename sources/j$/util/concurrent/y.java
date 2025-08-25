@@ -1,21 +1,17 @@
 package j$.util.concurrent;
 
-import j$.util.A;
-import j$.util.G;
-import j$.util.function.Consumer;
+import j$.util.S;
+import j$.util.V;
 import java.util.Comparator;
+import java.util.function.Consumer;
+import java.util.function.DoubleConsumer;
 
 /* loaded from: classes2.dex */
-final class y implements G {
+final class y implements V {
     long a;
     final long b;
-    final int c;
-    final int d;
-
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ void a(Consumer consumer) {
-        A.f(this, consumer);
-    }
+    final double c;
+    final double d;
 
     @Override // j$.util.Spliterator
     public final int characteristics() {
@@ -23,18 +19,23 @@ final class y implements G {
     }
 
     @Override // j$.util.Spliterator
+    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
+        S.a(this, consumer);
+    }
+
+    @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
-        return A.j(this);
+        return S.d(this);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return A.k(this, i);
+        return S.e(this, i);
     }
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean s(Consumer consumer) {
-        return A.m(this, consumer);
+    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
+        return S.f(this, consumer);
     }
 
     @Override // j$.util.Spliterator
@@ -42,15 +43,15 @@ final class y implements G {
         throw new IllegalStateException();
     }
 
-    y(long j, long j2, int i, int i2) {
+    y(long j, long j2, double d, double d2) {
         this.a = j;
         this.b = j2;
-        this.c = i;
-        this.d = i2;
+        this.c = d;
+        this.d = d2;
     }
 
-    @Override // j$.util.Spliterator
-    /* renamed from: b, reason: merged with bridge method [inline-methods] */
+    @Override // j$.util.e0, j$.util.Spliterator
+    /* renamed from: a, reason: merged with bridge method [inline-methods] */
     public final y trySplit() {
         long j = this.a;
         long j2 = (this.b + j) >>> 1;
@@ -66,30 +67,28 @@ final class y implements G {
         return this.b - this.a;
     }
 
-    @Override // j$.util.M
-    /* renamed from: g, reason: merged with bridge method [inline-methods] */
-    public final boolean p(j$.util.function.G g) {
-        g.getClass();
+    @Override // j$.util.e0
+    public final boolean tryAdvance(DoubleConsumer doubleConsumer) {
+        doubleConsumer.getClass();
         long j = this.a;
         if (j >= this.b) {
             return false;
         }
-        g.accept(ThreadLocalRandom.current().d(this.c, this.d));
+        doubleConsumer.accept(ThreadLocalRandom.current().c(this.c, this.d));
         this.a = j + 1;
         return true;
     }
 
-    @Override // j$.util.M
-    /* renamed from: c, reason: merged with bridge method [inline-methods] */
-    public final void e(j$.util.function.G g) {
-        g.getClass();
+    @Override // j$.util.e0
+    public final void forEachRemaining(DoubleConsumer doubleConsumer) {
+        doubleConsumer.getClass();
         long j = this.a;
         long j2 = this.b;
         if (j < j2) {
             this.a = j2;
             ThreadLocalRandom current = ThreadLocalRandom.current();
             do {
-                g.accept(current.d(this.c, this.d));
+                doubleConsumer.accept(current.c(this.c, this.d));
                 j++;
             } while (j < j2);
         }

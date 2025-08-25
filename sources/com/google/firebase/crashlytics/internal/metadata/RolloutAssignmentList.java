@@ -1,8 +1,8 @@
 package com.google.firebase.crashlytics.internal.metadata;
 
 import com.google.firebase.crashlytics.internal.Logger;
+import j$.util.DesugarCollections;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /* loaded from: classes.dex */
@@ -15,7 +15,7 @@ public class RolloutAssignmentList {
     }
 
     public synchronized List getRolloutAssignmentList() {
-        return Collections.unmodifiableList(new ArrayList(this.rolloutsState));
+        return DesugarCollections.unmodifiableList(new ArrayList(this.rolloutsState));
     }
 
     public synchronized boolean updateRolloutAssignmentList(List list) {

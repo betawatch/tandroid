@@ -1,77 +1,73 @@
 package j$.util.stream;
 
-import j$.util.function.Consumer;
+import java.util.concurrent.CountedCompleter;
 
 /* loaded from: classes2.dex */
-final class x1 implements N1, a2 {
-    private double a;
-    final /* synthetic */ double b;
-    final /* synthetic */ j$.util.function.h c;
+class x1 extends CountedCompleter {
+    protected final I0 a;
+    protected final int b;
+    public final /* synthetic */ int c;
+    private final Object d;
 
-    @Override // j$.util.stream.d2
-    public final /* synthetic */ void accept(int i) {
-        t0.k();
-        throw null;
+    public x1(I0 i0, Object obj, int i) {
+        this.c = i;
+        this.a = i0;
+        this.b = 0;
+        this.d = obj;
     }
 
-    @Override // j$.util.stream.d2
-    public final /* synthetic */ void accept(long j) {
-        t0.l();
-        throw null;
+    x1(x1 x1Var, I0 i0, int i, byte b) {
+        super(x1Var);
+        this.a = i0;
+        this.b = i;
     }
 
-    @Override // j$.util.function.Consumer
-    /* renamed from: accept */
-    public final /* bridge */ /* synthetic */ void r(Object obj) {
-        r((Double) obj);
+    @Override // java.util.concurrent.CountedCompleter
+    public final void compute() {
+        x1 x1Var = this;
+        while (x1Var.a.q() != 0) {
+            x1Var.setPendingCount(x1Var.a.q() - 1);
+            int i = 0;
+            int i2 = 0;
+            while (i < x1Var.a.q() - 1) {
+                x1 a = x1Var.a(i, x1Var.b + i2);
+                i2 = (int) (i2 + a.a.count());
+                a.fork();
+                i++;
+            }
+            x1Var = x1Var.a(i, x1Var.b + i2);
+        }
+        switch (x1Var.c) {
+            case 0:
+                ((H0) x1Var.a).r(x1Var.b, x1Var.d);
+                break;
+            default:
+                x1Var.a.i((Object[]) x1Var.d, x1Var.b);
+                break;
+        }
+        x1Var.propagateCompletion();
     }
 
-    @Override // j$.util.function.Consumer
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer.-CC.$default$andThen(this, consumer);
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
+    public x1(x1 x1Var, I0 i0, int i) {
+        this(x1Var, i0, i, (byte) 0);
+        this.c = 1;
+        this.d = (Object[]) x1Var.d;
     }
 
-    @Override // j$.util.function.l
-    public final /* synthetic */ j$.util.function.l k(j$.util.function.l lVar) {
-        return j$.com.android.tools.r8.a.a(this, lVar);
+    final x1 a(int i, int i2) {
+        switch (this.c) {
+            case 0:
+                return new x1(this, ((H0) this.a).b(i), i2);
+            default:
+                return new x1(this, this.a.b(i), i2);
+        }
     }
 
-    @Override // j$.util.stream.d2
-    public final /* synthetic */ void m() {
-    }
-
-    @Override // j$.util.stream.d2
-    public final /* synthetic */ boolean q() {
-        return false;
-    }
-
-    @Override // j$.util.stream.a2
-    public final /* synthetic */ void r(Double d) {
-        t0.e(this, d);
-    }
-
-    x1(double d, j$.util.function.h hVar) {
-        this.b = d;
-        this.c = hVar;
-    }
-
-    @Override // j$.util.stream.N1
-    public final void h(N1 n1) {
-        accept(((x1) n1).a);
-    }
-
-    @Override // j$.util.stream.d2
-    public final void n(long j) {
-        this.a = this.b;
-    }
-
-    @Override // j$.util.stream.d2, j$.util.function.l
-    public final void accept(double d) {
-        this.a = this.c.applyAsDouble(this.a, d);
-    }
-
-    @Override // j$.util.function.Supplier
-    public final Object get() {
-        return Double.valueOf(this.a);
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
+    public x1(x1 x1Var, H0 h0, int i) {
+        this(x1Var, h0, i, (byte) 0);
+        this.c = 0;
+        this.d = x1Var.d;
     }
 }

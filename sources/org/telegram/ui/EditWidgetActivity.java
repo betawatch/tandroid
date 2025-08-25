@@ -884,7 +884,7 @@ public class EditWidgetActivity extends BaseFragment {
                     if (i == 1 && this.oldBackgroundDrawable != null && ((BaseFragment) EditWidgetActivity.this).parentLayout != null) {
                         drawable.setAlpha((int) (255.0f * themeAnimationValue));
                     } else {
-                        drawable.setAlpha(NotificationCenter.goingToPreviewTheme);
+                        drawable.setAlpha(NotificationCenter.needCheckSystemBarColors);
                     }
                     if ((drawable instanceof ColorDrawable) || (drawable instanceof GradientDrawable) || (drawable instanceof MotionBackgroundDrawable)) {
                         drawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());

@@ -438,11 +438,11 @@ public class StoryLinkSheet extends BottomSheetWithRecyclerListView implements N
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0046  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x004d  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0051  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0058  */
     /* JADX WARN: Removed duplicated region for block: B:22:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x003b  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0021  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0046  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x002c  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -452,6 +452,7 @@ public class StoryLinkSheet extends BottomSheetWithRecyclerListView implements N
         if (tLObject instanceof TL_account.webPagePreview) {
             TL_account.webPagePreview webpagepreview = (TL_account.webPagePreview) tLObject;
             MessagesController.getInstance(this.currentAccount).putUsers(webpagepreview.users, false);
+            MessagesController.getInstance(this.currentAccount).putChats(webpagepreview.chats, false);
             TLRPC.MessageMedia messageMedia = webpagepreview.media;
             if (messageMedia instanceof TLRPC.TL_messageMediaWebPage) {
                 tL_messageMediaWebPage = (TLRPC.TL_messageMediaWebPage) messageMedia;

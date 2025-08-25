@@ -1,5 +1,6 @@
 package com.google.firebase.components;
 
+import j$.util.DesugarCollections;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
@@ -27,12 +28,12 @@ public final class Component {
 
     private Component(String str, Set set, Set set2, int i, int i2, ComponentFactory componentFactory, Set set3) {
         this.name = str;
-        this.providedInterfaces = Collections.unmodifiableSet(set);
-        this.dependencies = Collections.unmodifiableSet(set2);
+        this.providedInterfaces = DesugarCollections.unmodifiableSet(set);
+        this.dependencies = DesugarCollections.unmodifiableSet(set2);
         this.instantiation = i;
         this.type = i2;
         this.factory = componentFactory;
-        this.publishedEvents = Collections.unmodifiableSet(set3);
+        this.publishedEvents = DesugarCollections.unmodifiableSet(set3);
     }
 
     public String getName() {

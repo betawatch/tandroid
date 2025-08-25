@@ -1,41 +1,58 @@
 package j$.util.function;
 
-import j$.util.function.BiConsumer;
+import java.util.Comparator;
+import java.util.function.BiFunction;
+import java.util.function.BinaryOperator;
+import java.util.function.Function;
+import java.util.function.Predicate;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class a implements java.util.function.BiConsumer {
-    public final /* synthetic */ BiConsumer a;
+public final /* synthetic */ class a implements BinaryOperator, Predicate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    private /* synthetic */ a(BiConsumer biConsumer) {
-        this.a = biConsumer;
+    public /* synthetic */ a(int i, Object obj) {
+        this.a = i;
+        this.b = obj;
     }
 
-    public static /* synthetic */ java.util.function.BiConsumer a(BiConsumer biConsumer) {
-        if (biConsumer == null) {
-            return null;
+    public /* synthetic */ Predicate and(Predicate predicate) {
+        return Predicate$-CC.$default$and(this, predicate);
+    }
+
+    public /* synthetic */ BiFunction andThen(Function function) {
+        switch (this.a) {
         }
-        return biConsumer instanceof BiConsumer.VivifiedWrapper ? ((BiConsumer.VivifiedWrapper) biConsumer).a : new a(biConsumer);
+        return BiFunction$-CC.$default$andThen(this, function);
     }
 
-    @Override // java.util.function.BiConsumer
-    public final /* synthetic */ void accept(Object obj, Object obj2) {
-        this.a.accept(obj, obj2);
+    public /* synthetic */ Predicate negate() {
+        return Predicate$-CC.$default$negate(this);
     }
 
-    @Override // java.util.function.BiConsumer
-    public final /* synthetic */ java.util.function.BiConsumer andThen(java.util.function.BiConsumer biConsumer) {
-        return a(this.a.andThen(BiConsumer.VivifiedWrapper.convert(biConsumer)));
+    public /* synthetic */ Predicate or(Predicate predicate) {
+        return Predicate$-CC.$default$or(this, predicate);
     }
 
-    public final /* synthetic */ boolean equals(Object obj) {
-        BiConsumer biConsumer = this.a;
-        if (obj instanceof a) {
-            obj = ((a) obj).a;
+    @Override // java.util.function.BiFunction
+    public Object apply(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                if (((Comparator) this.b).compare(obj, obj2) < 0) {
+                    break;
+                }
+                break;
+            default:
+                if (((Comparator) this.b).compare(obj, obj2) > 0) {
+                    break;
+                }
+                break;
         }
-        return biConsumer.equals(obj);
+        return obj2;
     }
 
-    public final /* synthetic */ int hashCode() {
-        return this.a.hashCode();
+    @Override // java.util.function.Predicate
+    public boolean test(Object obj) {
+        return !((Predicate) this.b).test(obj);
     }
 }

@@ -56,7 +56,7 @@ final class ResamplingAudioProcessor extends BaseAudioProcessor {
                     while (position < limit) {
                         short constrainValue = (short) (Util.constrainValue(byteBuffer.getFloat(position), -1.0f, 1.0f) * 32767.0f);
                         replaceOutputBuffer.put((byte) (constrainValue & 255));
-                        replaceOutputBuffer.put((byte) ((constrainValue >> 8) & NotificationCenter.goingToPreviewTheme));
+                        replaceOutputBuffer.put((byte) ((constrainValue >> 8) & NotificationCenter.needCheckSystemBarColors));
                         position += 4;
                     }
                 } else if (i == 268435456) {

@@ -7,11 +7,13 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import j$.util.Collection;
-import j$.util.function.Function;
-import j$.util.function.Predicate;
+import j$.util.function.Function$-CC;
+import j$.util.function.Predicate$-CC;
 import j$.util.stream.Collectors;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
+import java.util.function.Predicate;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DialogObject;
@@ -179,39 +181,34 @@ public abstract class GroupCallSheet {
         makeLinkTextView.setGravity(17);
         linearLayout.addView(makeLinkTextView, LayoutHelper.createLinear(-1, -2, 1, 2, 0, 2, 4));
         List list = (List) Collection.-EL.stream(arrayList).map(new Function() { // from class: org.telegram.ui.GroupCallSheet$$ExternalSyntheticLambda3
-            @Override // j$.util.function.Function
             public /* synthetic */ Function andThen(Function function) {
-                return Function.-CC.$default$andThen(this, function);
+                return Function$-CC.$default$andThen(this, function);
             }
 
-            @Override // j$.util.function.Function
+            @Override // java.util.function.Function
             public final Object apply(Object obj) {
                 Long lambda$show$3;
                 lambda$show$3 = GroupCallSheet.lambda$show$3((TLRPC.GroupCallParticipant) obj);
                 return lambda$show$3;
             }
 
-            @Override // j$.util.function.Function
             public /* synthetic */ Function compose(Function function) {
-                return Function.-CC.$default$compose(this, function);
+                return Function$-CC.$default$compose(this, function);
             }
         }).filter(new Predicate() { // from class: org.telegram.ui.GroupCallSheet$$ExternalSyntheticLambda4
-            @Override // j$.util.function.Predicate
             public /* synthetic */ Predicate and(Predicate predicate) {
-                return Predicate.-CC.$default$and(this, predicate);
+                return Predicate$-CC.$default$and(this, predicate);
             }
 
-            @Override // j$.util.function.Predicate
             public /* synthetic */ Predicate negate() {
-                return Predicate.-CC.$default$negate(this);
+                return Predicate$-CC.$default$negate(this);
             }
 
-            @Override // j$.util.function.Predicate
             public /* synthetic */ Predicate or(Predicate predicate) {
-                return Predicate.-CC.$default$or(this, predicate);
+                return Predicate$-CC.$default$or(this, predicate);
             }
 
-            @Override // j$.util.function.Predicate
+            @Override // java.util.function.Predicate
             public final boolean test(Object obj) {
                 boolean lambda$show$4;
                 lambda$show$4 = GroupCallSheet.lambda$show$4(i, j, (Long) obj);

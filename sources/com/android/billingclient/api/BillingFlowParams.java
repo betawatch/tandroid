@@ -7,12 +7,14 @@ import com.android.billingclient.api.ProductDetails;
 import com.google.android.gms.internal.play_billing.zzbe;
 import j$.lang.Iterable$-EL;
 import j$.util.Collection;
-import j$.util.function.Consumer;
-import j$.util.function.Predicate;
+import j$.util.function.Consumer$-CC;
+import j$.util.function.Predicate$-CC;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 /* loaded from: classes.dex */
 public class BillingFlowParams {
@@ -46,17 +48,16 @@ public class BillingFlowParams {
             zzcf zzcfVar = null;
             if (!z) {
                 Iterable$-EL.forEach(this.zzc, new Consumer() { // from class: com.android.billingclient.api.zzce
-                    @Override // j$.util.function.Consumer
+                    @Override // java.util.function.Consumer
                     /* renamed from: accept */
-                    public final void r(Object obj) {
+                    public final void p(Object obj) {
                         if (((BillingFlowParams.ProductDetailsParams) obj) == null) {
                             throw new IllegalArgumentException("ProductDetailsParams cannot be null.");
                         }
                     }
 
-                    @Override // j$.util.function.Consumer
                     public /* synthetic */ Consumer andThen(Consumer consumer) {
-                        return Consumer.-CC.$default$andThen(this, consumer);
+                        return Consumer$-CC.$default$andThen(this, consumer);
                     }
                 });
             } else {
@@ -339,22 +340,19 @@ public class BillingFlowParams {
 
     final boolean zzq() {
         return (this.zzb == null && this.zzc == null && this.zzd.zzd() == null && this.zzd.zza() == 0 && !Collection.-EL.stream(this.zze).anyMatch(new Predicate() { // from class: com.android.billingclient.api.zzcd
-            @Override // j$.util.function.Predicate
             public /* synthetic */ Predicate and(Predicate predicate) {
-                return Predicate.-CC.$default$and(this, predicate);
+                return Predicate$-CC.$default$and(this, predicate);
             }
 
-            @Override // j$.util.function.Predicate
             public /* synthetic */ Predicate negate() {
-                return Predicate.-CC.$default$negate(this);
+                return Predicate$-CC.$default$negate(this);
             }
 
-            @Override // j$.util.function.Predicate
             public /* synthetic */ Predicate or(Predicate predicate) {
-                return Predicate.-CC.$default$or(this, predicate);
+                return Predicate$-CC.$default$or(this, predicate);
             }
 
-            @Override // j$.util.function.Predicate
+            @Override // java.util.function.Predicate
             public final boolean test(Object obj) {
                 return false;
             }

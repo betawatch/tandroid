@@ -29,11 +29,11 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
+import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BirthdayController;
 import org.telegram.messenger.ChatObject;
@@ -1453,27 +1453,27 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             public void setAlpha(int i4) {
                 this.bg.setAlpha(i4);
             }
-        }).add(R.drawable.menu_gift_add, LocaleController.getString(R.string.Gift2CollectionsAdd), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda7
+        }).add(R.drawable.menu_gift_add, LocaleController.getString(R.string.Gift2CollectionsAdd), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
                 ProfileGiftsContainer.this.addGifts();
             }
-        }).addIf(!TextUtils.isEmpty(publicUsername), R.drawable.msg_share, LocaleController.getString(R.string.Gift2CollectionsShare), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda8
+        }).addIf(!TextUtils.isEmpty(publicUsername), R.drawable.msg_share, LocaleController.getString(R.string.Gift2CollectionsShare), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
                 ProfileGiftsContainer.this.lambda$new$1(i, publicUsername, tL_starGiftCollection2, context, resourcesProvider, baseFragment);
             }
-        }).add(R.drawable.msg_edit, LocaleController.getString(R.string.Gift2CollectionsRename), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda9
+        }).add(R.drawable.msg_edit, LocaleController.getString(R.string.Gift2CollectionsRename), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda11
             @Override // java.lang.Runnable
             public final void run() {
                 ProfileGiftsContainer.this.lambda$new$3(tL_starGiftCollection);
             }
-        }).add(R.drawable.tabs_reorder, LocaleController.getString(R.string.Gift2CollectionsReorder), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda10
+        }).add(R.drawable.tabs_reorder, LocaleController.getString(R.string.Gift2CollectionsReorder), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda12
             @Override // java.lang.Runnable
             public final void run() {
                 ProfileGiftsContainer.this.lambda$new$4();
             }
-        }).add(R.drawable.msg_delete, (CharSequence) LocaleController.getString(R.string.Gift2CollectionsDelete), true, new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda11
+        }).add(R.drawable.msg_delete, (CharSequence) LocaleController.getString(R.string.Gift2CollectionsDelete), true, new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda13
             @Override // java.lang.Runnable
             public final void run() {
                 ProfileGiftsContainer.this.lambda$new$5(i2, tL_starGiftCollection);
@@ -1515,7 +1515,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$3(final TL_stars.TL_starGiftCollection tL_starGiftCollection) {
-        openEnterNameAlert(tL_starGiftCollection.title, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda18
+        openEnterNameAlert(tL_starGiftCollection.title, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda20
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 ProfileGiftsContainer.this.lambda$new$2(tL_starGiftCollection, (String) obj);
@@ -1562,7 +1562,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         TL_stars.toggleChatStarGiftNotifications togglechatstargiftnotifications = new TL_stars.toggleChatStarGiftNotifications();
         togglechatstargiftnotifications.peer = MessagesController.getInstance(i).getInputPeer(this.dialogId);
         togglechatstargiftnotifications.enabled = isChecked;
-        ConnectionsManager.getInstance(i).sendRequest(togglechatstargiftnotifications, new RequestDelegate() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda6
+        ConnectionsManager.getInstance(i).sendRequest(togglechatstargiftnotifications, new RequestDelegate() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda8
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 ProfileGiftsContainer.this.lambda$new$8(resourcesProvider, tLObject, tL_error);
@@ -1572,7 +1572,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$8(final Theme.ResourcesProvider resourcesProvider, TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda20
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda22
             @Override // java.lang.Runnable
             public final void run() {
                 ProfileGiftsContainer.this.lambda$new$7(tL_error, resourcesProvider);
@@ -2253,13 +2253,13 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         builder.makeCustomMaxHeight();
         builder.setView(linearLayout);
         builder.setWidth(AndroidUtilities.dp(292.0f));
-        builder.setPositiveButton(LocaleController.getString(str != null ? R.string.Edit : R.string.Create), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda14
+        builder.setPositiveButton(LocaleController.getString(str != null ? R.string.Edit : R.string.Create), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda16
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
                 ProfileGiftsContainer.lambda$openEnterNameAlert$13(EditTextCaption.this, callback, alertDialog, i);
             }
         });
-        builder.setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda15
+        builder.setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda17
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
                 alertDialog.dismiss();
@@ -2271,13 +2271,13 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             actionBarPopupWindow.setSoftInputMode(48);
         }
         AndroidUtilities.requestAdjustNothing(findActivity, this.fragment.getClassGuid());
-        alertDialogArr[0].setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda16
+        alertDialogArr[0].setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda18
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
                 ProfileGiftsContainer.this.lambda$openEnterNameAlert$15(editTextCaption, findActivity, dialogInterface);
             }
         });
-        alertDialogArr[0].setOnShowListener(new DialogInterface.OnShowListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda17
+        alertDialogArr[0].setOnShowListener(new DialogInterface.OnShowListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda19
             @Override // android.content.DialogInterface.OnShowListener
             public final void onShow(DialogInterface dialogInterface) {
                 ProfileGiftsContainer.lambda$openEnterNameAlert$16(EditTextCaption.this, dialogInterface);
@@ -2313,7 +2313,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
     }
 
     public void createCollection() {
-        openEnterNameAlert(null, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda12
+        openEnterNameAlert(null, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda14
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 ProfileGiftsContainer.this.lambda$createCollection$18((String) obj);
@@ -2323,7 +2323,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createCollection$18(String str) {
-        this.collections.createCollection(str, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda19
+        this.collections.createCollection(str, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda21
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 ProfileGiftsContainer.this.lambda$createCollection$17((TL_stars.TL_starGiftCollection) obj);
@@ -2351,7 +2351,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             return;
         }
         final int i = giftsList.collectionId;
-        new SelectGiftsBottomSheet(this.fragment, this.dialogId, i, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda13
+        new SelectGiftsBottomSheet(this.fragment, this.dialogId, i, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda15
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 ProfileGiftsContainer.this.lambda$addGifts$19(i, currentPage, (ArrayList) obj);
@@ -2504,32 +2504,34 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                 final ActionBarMenuSubItem addChecked2 = itemOptions.addChecked();
                 addChecked2.setText(LocaleController.getString(R.string.Gift2FilterLimited));
                 final ActionBarMenuSubItem addChecked3 = itemOptions.addChecked();
-                addChecked3.setText(LocaleController.getString(R.string.Gift2FilterUnique));
+                addChecked3.setText(LocaleController.getString(R.string.Gift2FilterUpgradable));
+                final ActionBarMenuSubItem addChecked4 = itemOptions.addChecked();
+                addChecked4.setText(LocaleController.getString(R.string.Gift2FilterUnique));
                 if (canUserDoAction) {
                     itemOptions.addGap();
-                    ActionBarMenuSubItem addChecked4 = itemOptions.addChecked();
-                    addChecked4.setText(LocaleController.getString(R.string.Gift2FilterDisplayed));
                     ActionBarMenuSubItem addChecked5 = itemOptions.addChecked();
-                    addChecked5.setText(LocaleController.getString(R.string.Gift2FilterHidden));
-                    actionBarMenuSubItem = addChecked4;
+                    addChecked5.setText(LocaleController.getString(R.string.Gift2FilterDisplayed));
+                    ActionBarMenuSubItem addChecked6 = itemOptions.addChecked();
+                    addChecked6.setText(LocaleController.getString(R.string.Gift2FilterHidden));
                     actionBarMenuSubItem2 = addChecked5;
+                    actionBarMenuSubItem = addChecked6;
                 } else {
                     actionBarMenuSubItem = null;
                     actionBarMenuSubItem2 = null;
                 }
                 final ActionBarMenuSubItem actionBarMenuSubItem3 = actionBarMenuSubItem;
-                final boolean z = canUserDoAction;
                 final ActionBarMenuSubItem actionBarMenuSubItem4 = actionBarMenuSubItem2;
+                final boolean z = canUserDoAction;
                 Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$SelectGiftsBottomSheet$1$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ProfileGiftsContainer.SelectGiftsBottomSheet.1.this.lambda$onItemClick$0(add, addChecked, addChecked2, addChecked3, z, actionBarMenuSubItem3, actionBarMenuSubItem4);
+                        ProfileGiftsContainer.SelectGiftsBottomSheet.1.this.lambda$onItemClick$0(add, addChecked, addChecked2, addChecked3, addChecked4, z, actionBarMenuSubItem4, actionBarMenuSubItem3);
                     }
                 };
                 runnable2.run();
                 if (add != null) {
                     runnable = runnable2;
-                    add.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$SelectGiftsBottomSheet$1$$ExternalSyntheticLambda3
+                    add.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$SelectGiftsBottomSheet$1$$ExternalSyntheticLambda1
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
                             ProfileGiftsContainer.SelectGiftsBottomSheet.1.this.lambda$onItemClick$1(runnable, view);
@@ -2538,92 +2540,29 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                 } else {
                     runnable = runnable2;
                 }
-                addChecked.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$SelectGiftsBottomSheet$1$$ExternalSyntheticLambda4
-                    @Override // android.view.View.OnClickListener
-                    public final void onClick(View view) {
-                        ProfileGiftsContainer.SelectGiftsBottomSheet.1.this.lambda$onItemClick$2(runnable, view);
-                    }
-                });
-                addChecked.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$SelectGiftsBottomSheet$1$$ExternalSyntheticLambda5
-                    @Override // android.view.View.OnLongClickListener
-                    public final boolean onLongClick(View view) {
-                        boolean lambda$onItemClick$3;
-                        lambda$onItemClick$3 = ProfileGiftsContainer.SelectGiftsBottomSheet.1.this.lambda$onItemClick$3(runnable, view);
-                        return lambda$onItemClick$3;
-                    }
-                });
-                addChecked2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$SelectGiftsBottomSheet$1$$ExternalSyntheticLambda6
-                    @Override // android.view.View.OnClickListener
-                    public final void onClick(View view) {
-                        ProfileGiftsContainer.SelectGiftsBottomSheet.1.this.lambda$onItemClick$4(runnable, view);
-                    }
-                });
-                addChecked2.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$SelectGiftsBottomSheet$1$$ExternalSyntheticLambda7
-                    @Override // android.view.View.OnLongClickListener
-                    public final boolean onLongClick(View view) {
-                        boolean lambda$onItemClick$5;
-                        lambda$onItemClick$5 = ProfileGiftsContainer.SelectGiftsBottomSheet.1.this.lambda$onItemClick$5(runnable, view);
-                        return lambda$onItemClick$5;
-                    }
-                });
-                addChecked3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$SelectGiftsBottomSheet$1$$ExternalSyntheticLambda8
-                    @Override // android.view.View.OnClickListener
-                    public final void onClick(View view) {
-                        ProfileGiftsContainer.SelectGiftsBottomSheet.1.this.lambda$onItemClick$6(runnable, view);
-                    }
-                });
-                addChecked3.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$SelectGiftsBottomSheet$1$$ExternalSyntheticLambda9
-                    @Override // android.view.View.OnLongClickListener
-                    public final boolean onLongClick(View view) {
-                        boolean lambda$onItemClick$7;
-                        lambda$onItemClick$7 = ProfileGiftsContainer.SelectGiftsBottomSheet.1.this.lambda$onItemClick$7(runnable, view);
-                        return lambda$onItemClick$7;
-                    }
-                });
+                ProfileGiftsContainer.setGiftFilterOptionsClickListeners(addChecked, SelectGiftsBottomSheet.this.list, runnable, 1);
+                ProfileGiftsContainer.setGiftFilterOptionsClickListeners(addChecked2, SelectGiftsBottomSheet.this.list, runnable, 2);
+                ProfileGiftsContainer.setGiftFilterOptionsClickListeners(addChecked3, SelectGiftsBottomSheet.this.list, runnable, 4);
+                ProfileGiftsContainer.setGiftFilterOptionsClickListeners(addChecked4, SelectGiftsBottomSheet.this.list, runnable, 8);
                 if (canUserDoAction) {
-                    actionBarMenuSubItem3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$SelectGiftsBottomSheet$1$$ExternalSyntheticLambda10
-                        @Override // android.view.View.OnClickListener
-                        public final void onClick(View view) {
-                            ProfileGiftsContainer.SelectGiftsBottomSheet.1.this.lambda$onItemClick$8(runnable, view);
-                        }
-                    });
-                    actionBarMenuSubItem3.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$SelectGiftsBottomSheet$1$$ExternalSyntheticLambda11
-                        @Override // android.view.View.OnLongClickListener
-                        public final boolean onLongClick(View view) {
-                            boolean lambda$onItemClick$9;
-                            lambda$onItemClick$9 = ProfileGiftsContainer.SelectGiftsBottomSheet.1.this.lambda$onItemClick$9(runnable, view);
-                            return lambda$onItemClick$9;
-                        }
-                    });
-                    actionBarMenuSubItem4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$SelectGiftsBottomSheet$1$$ExternalSyntheticLambda1
-                        @Override // android.view.View.OnClickListener
-                        public final void onClick(View view) {
-                            ProfileGiftsContainer.SelectGiftsBottomSheet.1.this.lambda$onItemClick$10(runnable, view);
-                        }
-                    });
-                    actionBarMenuSubItem4.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$SelectGiftsBottomSheet$1$$ExternalSyntheticLambda2
-                        @Override // android.view.View.OnLongClickListener
-                        public final boolean onLongClick(View view) {
-                            boolean lambda$onItemClick$11;
-                            lambda$onItemClick$11 = ProfileGiftsContainer.SelectGiftsBottomSheet.1.this.lambda$onItemClick$11(runnable, view);
-                            return lambda$onItemClick$11;
-                        }
-                    });
+                    ProfileGiftsContainer.setGiftFilterOptionsClickListeners(actionBarMenuSubItem4, SelectGiftsBottomSheet.this.list, runnable, 256);
+                    ProfileGiftsContainer.setGiftFilterOptionsClickListeners(actionBarMenuSubItem3, SelectGiftsBottomSheet.this.list, runnable, 512);
                 }
                 itemOptions.setOnTopOfScrim().setDismissWithButtons(false).setDimAlpha(0).show();
             }
 
             /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$onItemClick$0(ActionBarMenuSubItem actionBarMenuSubItem, ActionBarMenuSubItem actionBarMenuSubItem2, ActionBarMenuSubItem actionBarMenuSubItem3, ActionBarMenuSubItem actionBarMenuSubItem4, boolean z, ActionBarMenuSubItem actionBarMenuSubItem5, ActionBarMenuSubItem actionBarMenuSubItem6) {
+            public /* synthetic */ void lambda$onItemClick$0(ActionBarMenuSubItem actionBarMenuSubItem, ActionBarMenuSubItem actionBarMenuSubItem2, ActionBarMenuSubItem actionBarMenuSubItem3, ActionBarMenuSubItem actionBarMenuSubItem4, ActionBarMenuSubItem actionBarMenuSubItem5, boolean z, ActionBarMenuSubItem actionBarMenuSubItem6, ActionBarMenuSubItem actionBarMenuSubItem7) {
                 if (actionBarMenuSubItem != null) {
                     actionBarMenuSubItem.setTextAndIcon(LocaleController.getString(SelectGiftsBottomSheet.this.list.sort_by_date ? R.string.Gift2FilterSortByValue : R.string.Gift2FilterSortByDate), SelectGiftsBottomSheet.this.list.sort_by_date ? R.drawable.menu_sort_value : R.drawable.menu_sort_date);
                 }
-                actionBarMenuSubItem2.setChecked(SelectGiftsBottomSheet.this.list.include_unlimited);
-                actionBarMenuSubItem3.setChecked(SelectGiftsBottomSheet.this.list.include_limited);
-                actionBarMenuSubItem4.setChecked(SelectGiftsBottomSheet.this.list.include_unique);
+                actionBarMenuSubItem2.setChecked(SelectGiftsBottomSheet.this.list.isInclude_unlimited());
+                actionBarMenuSubItem3.setChecked(SelectGiftsBottomSheet.this.list.isInclude_limited());
+                actionBarMenuSubItem4.setChecked(SelectGiftsBottomSheet.this.list.isInclude_upgradable());
+                actionBarMenuSubItem5.setChecked(SelectGiftsBottomSheet.this.list.isInclude_unique());
                 if (z) {
-                    actionBarMenuSubItem5.setChecked(SelectGiftsBottomSheet.this.list.include_displayed);
-                    actionBarMenuSubItem6.setChecked(SelectGiftsBottomSheet.this.list.include_hidden);
+                    actionBarMenuSubItem6.setChecked(SelectGiftsBottomSheet.this.list.isInclude_displayed());
+                    actionBarMenuSubItem7.setChecked(SelectGiftsBottomSheet.this.list.isInclude_hidden());
                 }
             }
 
@@ -2632,117 +2571,6 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                 SelectGiftsBottomSheet.this.list.sort_by_date = !SelectGiftsBottomSheet.this.list.sort_by_date;
                 runnable.run();
                 SelectGiftsBottomSheet.this.list.invalidate(true);
-            }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$onItemClick$2(Runnable runnable, View view) {
-                if (!SelectGiftsBottomSheet.this.list.include_unlimited || SelectGiftsBottomSheet.this.list.include_limited || SelectGiftsBottomSheet.this.list.include_unique) {
-                    SelectGiftsBottomSheet.this.list.include_unlimited = !SelectGiftsBottomSheet.this.list.include_unlimited;
-                } else {
-                    SelectGiftsBottomSheet.this.list.include_unlimited = false;
-                    SelectGiftsBottomSheet.this.list.include_limited = true;
-                    SelectGiftsBottomSheet.this.list.include_unique = true;
-                }
-                runnable.run();
-                SelectGiftsBottomSheet.this.list.invalidate(true);
-            }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ boolean lambda$onItemClick$3(Runnable runnable, View view) {
-                SelectGiftsBottomSheet.this.list.include_unlimited = true;
-                SelectGiftsBottomSheet.this.list.include_limited = false;
-                SelectGiftsBottomSheet.this.list.include_unique = false;
-                runnable.run();
-                SelectGiftsBottomSheet.this.list.invalidate(true);
-                return true;
-            }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$onItemClick$4(Runnable runnable, View view) {
-                if (!SelectGiftsBottomSheet.this.list.include_limited || SelectGiftsBottomSheet.this.list.include_unlimited || SelectGiftsBottomSheet.this.list.include_unique) {
-                    SelectGiftsBottomSheet.this.list.include_limited = !SelectGiftsBottomSheet.this.list.include_limited;
-                } else {
-                    SelectGiftsBottomSheet.this.list.include_limited = false;
-                    SelectGiftsBottomSheet.this.list.include_unlimited = true;
-                    SelectGiftsBottomSheet.this.list.include_unique = true;
-                }
-                runnable.run();
-                SelectGiftsBottomSheet.this.list.invalidate(true);
-            }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ boolean lambda$onItemClick$5(Runnable runnable, View view) {
-                SelectGiftsBottomSheet.this.list.include_unlimited = false;
-                SelectGiftsBottomSheet.this.list.include_limited = true;
-                SelectGiftsBottomSheet.this.list.include_unique = false;
-                runnable.run();
-                SelectGiftsBottomSheet.this.list.invalidate(true);
-                return true;
-            }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$onItemClick$6(Runnable runnable, View view) {
-                if (!SelectGiftsBottomSheet.this.list.include_unique || SelectGiftsBottomSheet.this.list.include_limited || SelectGiftsBottomSheet.this.list.include_unlimited) {
-                    SelectGiftsBottomSheet.this.list.include_unique = !SelectGiftsBottomSheet.this.list.include_unique;
-                } else {
-                    SelectGiftsBottomSheet.this.list.include_limited = true;
-                    SelectGiftsBottomSheet.this.list.include_unlimited = true;
-                    SelectGiftsBottomSheet.this.list.include_unique = false;
-                }
-                runnable.run();
-                SelectGiftsBottomSheet.this.list.invalidate(true);
-            }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ boolean lambda$onItemClick$7(Runnable runnable, View view) {
-                SelectGiftsBottomSheet.this.list.include_unlimited = false;
-                SelectGiftsBottomSheet.this.list.include_limited = false;
-                SelectGiftsBottomSheet.this.list.include_unique = true;
-                runnable.run();
-                SelectGiftsBottomSheet.this.list.invalidate(true);
-                return true;
-            }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$onItemClick$8(Runnable runnable, View view) {
-                if (!SelectGiftsBottomSheet.this.list.include_displayed || SelectGiftsBottomSheet.this.list.include_hidden) {
-                    SelectGiftsBottomSheet.this.list.include_displayed = !SelectGiftsBottomSheet.this.list.include_displayed;
-                } else {
-                    SelectGiftsBottomSheet.this.list.include_displayed = false;
-                    SelectGiftsBottomSheet.this.list.include_hidden = true;
-                }
-                runnable.run();
-                SelectGiftsBottomSheet.this.list.invalidate(true);
-            }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ boolean lambda$onItemClick$9(Runnable runnable, View view) {
-                SelectGiftsBottomSheet.this.list.include_displayed = true;
-                SelectGiftsBottomSheet.this.list.include_hidden = false;
-                runnable.run();
-                SelectGiftsBottomSheet.this.list.invalidate(true);
-                return true;
-            }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ void lambda$onItemClick$10(Runnable runnable, View view) {
-                if (!SelectGiftsBottomSheet.this.list.include_hidden || SelectGiftsBottomSheet.this.list.include_displayed) {
-                    SelectGiftsBottomSheet.this.list.include_hidden = !SelectGiftsBottomSheet.this.list.include_hidden;
-                } else {
-                    SelectGiftsBottomSheet.this.list.include_hidden = false;
-                    SelectGiftsBottomSheet.this.list.include_displayed = true;
-                }
-                runnable.run();
-                SelectGiftsBottomSheet.this.list.invalidate(true);
-            }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            public /* synthetic */ boolean lambda$onItemClick$11(Runnable runnable, View view) {
-                SelectGiftsBottomSheet.this.list.include_displayed = false;
-                SelectGiftsBottomSheet.this.list.include_hidden = true;
-                runnable.run();
-                SelectGiftsBottomSheet.this.list.invalidate(true);
-                return true;
             }
         }
 
@@ -2904,5 +2732,35 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             }
             arrayList.add(UItem.asSpace(AndroidUtilities.dp(68.0f)));
         }
+    }
+
+    public static void setGiftFilterOptionsClickListeners(View view, final StarsController.GiftsList giftsList, final Runnable runnable, final int i) {
+        view.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda6
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view2) {
+                ProfileGiftsContainer.lambda$setGiftFilterOptionsClickListeners$20(StarsController.GiftsList.this, i, runnable, view2);
+            }
+        });
+        view.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda7
+            @Override // android.view.View.OnLongClickListener
+            public final boolean onLongClick(View view2) {
+                boolean lambda$setGiftFilterOptionsClickListeners$21;
+                lambda$setGiftFilterOptionsClickListeners$21 = ProfileGiftsContainer.lambda$setGiftFilterOptionsClickListeners$21(StarsController.GiftsList.this, i, runnable, view2);
+                return lambda$setGiftFilterOptionsClickListeners$21;
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$setGiftFilterOptionsClickListeners$20(StarsController.GiftsList giftsList, int i, Runnable runnable, View view) {
+        giftsList.toggleTypeIncludeFlag(i);
+        runnable.run();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ boolean lambda$setGiftFilterOptionsClickListeners$21(StarsController.GiftsList giftsList, int i, Runnable runnable, View view) {
+        giftsList.forceTypeIncludeFlag(i, true);
+        runnable.run();
+        return true;
     }
 }

@@ -1,12 +1,13 @@
 package com.google.android.gms.internal.cast;
 
+import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 /* loaded from: classes.dex */
 final class zzuh extends zzul {
-    private static final Class zza = Collections.unmodifiableList(Collections.emptyList()).getClass();
+    private static final Class zza = DesugarCollections.unmodifiableList(Collections.emptyList()).getClass();
 
     /* synthetic */ zzuh(zzug zzugVar) {
         super(null);
@@ -30,7 +31,7 @@ final class zzuh extends zzul {
                 }
                 return;
             }
-            unmodifiableList = Collections.unmodifiableList(list);
+            unmodifiableList = DesugarCollections.unmodifiableList(list);
         }
         zzwj.zzs(obj, j, unmodifiableList);
     }

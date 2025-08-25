@@ -26,8 +26,9 @@ import android.text.TextUtils;
 import android.util.Pair;
 import android.util.SparseArray;
 import androidx.core.graphics.ColorUtils;
+import j$.util.Objects;
 import j$.util.concurrent.ConcurrentHashMap;
-import j$.util.function.Consumer;
+import j$.util.function.Consumer$-CC;
 import j$.util.stream.Stream;
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
@@ -55,7 +56,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Objects;
+import java.util.function.Consumer;
 import java.util.zip.GZIPInputStream;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -1337,11 +1338,11 @@ public class ImageLoader {
             	at jadx.core.dex.visitors.ssa.SSATransform.process(SSATransform.java:58)
             	at jadx.core.dex.visitors.ssa.SSATransform.visit(SSATransform.java:44)
             */
-        /* JADX WARN: Not initialized variable reg: 36, insn: 0x08cf: MOVE (r3 I:??[OBJECT, ARRAY]) = (r36 I:??[OBJECT, ARRAY]), block:B:771:0x08cf */
+        /* JADX WARN: Not initialized variable reg: 36, insn: 0x08d1: MOVE (r3 I:??[OBJECT, ARRAY]) = (r36 I:??[OBJECT, ARRAY]), block:B:771:0x08d1 */
         @Override // java.lang.Runnable
         public void run() {
             /*
-                Method dump skipped, instructions count: 3706
+                Method dump skipped, instructions count: 3708
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.ImageLoader.CacheOutTask.run():void");
@@ -1359,21 +1360,21 @@ public class ImageLoader {
             boolean z = true;
             if (wallPaperSettings2.second_background_color == 0) {
                 i = AndroidUtilities.getPatternColor(wallPaperSettings2.background_color);
-                canvas.drawColor(ColorUtils.setAlphaComponent(wallPaper.settings.background_color, NotificationCenter.goingToPreviewTheme));
+                canvas.drawColor(ColorUtils.setAlphaComponent(wallPaper.settings.background_color, NotificationCenter.needCheckSystemBarColors));
             } else if (wallPaperSettings2.third_background_color == 0) {
-                int alphaComponent = ColorUtils.setAlphaComponent(wallPaperSettings2.background_color, NotificationCenter.goingToPreviewTheme);
-                int alphaComponent2 = ColorUtils.setAlphaComponent(wallPaper.settings.second_background_color, NotificationCenter.goingToPreviewTheme);
+                int alphaComponent = ColorUtils.setAlphaComponent(wallPaperSettings2.background_color, NotificationCenter.needCheckSystemBarColors);
+                int alphaComponent2 = ColorUtils.setAlphaComponent(wallPaper.settings.second_background_color, NotificationCenter.needCheckSystemBarColors);
                 int averageColor = AndroidUtilities.getAverageColor(alphaComponent, alphaComponent2);
                 GradientDrawable gradientDrawable = new GradientDrawable(BackgroundGradientDrawable.getGradientOrientation(wallPaper.settings.rotation), new int[]{alphaComponent, alphaComponent2});
                 gradientDrawable.setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
                 gradientDrawable.draw(canvas);
                 i = averageColor;
             } else {
-                int alphaComponent3 = ColorUtils.setAlphaComponent(wallPaperSettings2.background_color, NotificationCenter.goingToPreviewTheme);
-                int alphaComponent4 = ColorUtils.setAlphaComponent(wallPaper.settings.second_background_color, NotificationCenter.goingToPreviewTheme);
-                int alphaComponent5 = ColorUtils.setAlphaComponent(wallPaper.settings.third_background_color, NotificationCenter.goingToPreviewTheme);
+                int alphaComponent3 = ColorUtils.setAlphaComponent(wallPaperSettings2.background_color, NotificationCenter.needCheckSystemBarColors);
+                int alphaComponent4 = ColorUtils.setAlphaComponent(wallPaper.settings.second_background_color, NotificationCenter.needCheckSystemBarColors);
+                int alphaComponent5 = ColorUtils.setAlphaComponent(wallPaper.settings.third_background_color, NotificationCenter.needCheckSystemBarColors);
                 int i2 = wallPaper.settings.fourth_background_color;
-                int alphaComponent6 = i2 == 0 ? 0 : ColorUtils.setAlphaComponent(i2, NotificationCenter.goingToPreviewTheme);
+                int alphaComponent6 = i2 == 0 ? 0 : ColorUtils.setAlphaComponent(i2, NotificationCenter.needCheckSystemBarColors);
                 int patternColor = MotionBackgroundDrawable.getPatternColor(alphaComponent3, alphaComponent4, alphaComponent5, alphaComponent6);
                 MotionBackgroundDrawable motionBackgroundDrawable = new MotionBackgroundDrawable();
                 motionBackgroundDrawable.setColors(alphaComponent3, alphaComponent4, alphaComponent5, alphaComponent6);
@@ -2333,15 +2334,14 @@ public class ImageLoader {
                     convert = Stream.VivifiedWrapper.convert(Files.list(path));
                     try {
                         convert.forEach(new Consumer() { // from class: org.telegram.messenger.ImageLoader$$ExternalSyntheticLambda11
-                            @Override // j$.util.function.Consumer
+                            @Override // java.util.function.Consumer
                             /* renamed from: accept */
-                            public final void r(Object obj) {
+                            public final void p(Object obj) {
                                 ImageLoader.lambda$moveDirectory$2(file2, (java.nio.file.Path) obj);
                             }
 
-                            @Override // j$.util.function.Consumer
                             public /* synthetic */ Consumer andThen(Consumer consumer) {
-                                return Consumer.-CC.$default$andThen(this, consumer);
+                                return Consumer$-CC.$default$andThen(this, consumer);
                             }
                         });
                         convert.close();
@@ -5702,7 +5702,7 @@ public class ImageLoader {
                 for (int i3 = 0; i3 < size; i3++) {
                     TLRPC.PhotoSize photoSize = message.media.document.thumbs.get(i3);
                     if (photoSize instanceof TLRPC.TL_photoStrippedSize) {
-                        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(message.media.document.thumbs, 320);
+                        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(message.media.document.thumbs, NotificationCenter.nearEarEvent);
                         if (closestPhotoSizeWithSize == null) {
                             int i4 = 0;
                             while (true) {

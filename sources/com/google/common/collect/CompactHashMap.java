@@ -694,28 +694,28 @@ class CompactHashMap extends AbstractMap implements Serializable {
     /* JADX INFO: Access modifiers changed from: private */
     public Object requireTable() {
         Object obj = this.table;
-        java.util.Objects.requireNonNull(obj);
+        j$.util.Objects.requireNonNull(obj);
         return obj;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public int[] requireEntries() {
         int[] iArr = this.entries;
-        java.util.Objects.requireNonNull(iArr);
+        j$.util.Objects.requireNonNull(iArr);
         return iArr;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public Object[] requireKeys() {
         Object[] objArr = this.keys;
-        java.util.Objects.requireNonNull(objArr);
+        j$.util.Objects.requireNonNull(objArr);
         return objArr;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public Object[] requireValues() {
         Object[] objArr = this.values;
-        java.util.Objects.requireNonNull(objArr);
+        j$.util.Objects.requireNonNull(objArr);
         return objArr;
     }
 

@@ -1,31 +1,50 @@
 package j$.util.stream;
 
-/* loaded from: classes2.dex */
-final class N extends P implements c2 {
-    final j$.util.function.Y b;
+import j$.util.Spliterator;
+import java.util.function.LongConsumer;
 
-    @Override // j$.util.function.Consumer
+/* loaded from: classes2.dex */
+final class N extends P implements l2 {
+    final LongConsumer b;
+
+    @Override // java.util.function.Consumer
     /* renamed from: accept */
-    public final /* bridge */ /* synthetic */ void r(Object obj) {
+    public final /* bridge */ /* synthetic */ void p(Object obj) {
         j((Long) obj);
     }
 
-    @Override // j$.util.function.Y
-    public final /* synthetic */ j$.util.function.Y f(j$.util.function.Y y) {
-        return j$.com.android.tools.r8.a.c(this, y);
+    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
+        return j$.com.android.tools.r8.a.c(this, longConsumer);
     }
 
-    @Override // j$.util.stream.c2
+    @Override // java.util.function.Supplier
+    public final /* bridge */ /* synthetic */ Object get() {
+        return null;
+    }
+
+    @Override // j$.util.stream.l2
     public final /* synthetic */ void j(Long l) {
-        t0.i(this, l);
+        w0.i(this, l);
     }
 
-    N(j$.util.function.Y y, boolean z) {
+    @Override // j$.util.stream.G3
+    public final Object b(b bVar, Spliterator spliterator) {
+        bVar.U(spliterator, this);
+        return null;
+    }
+
+    @Override // j$.util.stream.G3
+    public final /* bridge */ /* synthetic */ Object c(b bVar, Spliterator spliterator) {
+        e(bVar, spliterator);
+        return null;
+    }
+
+    N(LongConsumer longConsumer, boolean z) {
         super(z);
-        this.b = y;
+        this.b = longConsumer;
     }
 
-    @Override // j$.util.stream.P, j$.util.stream.d2
+    @Override // j$.util.stream.P, j$.util.stream.m2
     public final void accept(long j) {
         this.b.accept(j);
     }

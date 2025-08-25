@@ -18,6 +18,7 @@ import com.google.android.exoplayer2.upstream.Loader;
 import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.Log;
 import com.google.android.exoplayer2.util.Util;
+import j$.util.DesugarCollections;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -67,7 +68,7 @@ public class ChunkSampleStream implements SampleStream, SequenceableLoader, Load
         this.nextChunkHolder = new ChunkHolder();
         ArrayList arrayList = new ArrayList();
         this.mediaChunks = arrayList;
-        this.readOnlyMediaChunks = Collections.unmodifiableList(arrayList);
+        this.readOnlyMediaChunks = DesugarCollections.unmodifiableList(arrayList);
         int length = iArr.length;
         this.embeddedSampleQueues = new SampleQueue[length];
         this.embeddedTracksSelected = new boolean[length];

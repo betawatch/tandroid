@@ -8,7 +8,6 @@ import androidx.mediarouter.media.MediaRouter;
 import com.google.android.gms.cast.CastMediaControlIntent;
 import com.google.android.gms.cast.internal.Logger;
 import j$.util.DesugarCollections;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
@@ -22,7 +21,7 @@ public final class zzay extends MediaRouter.Callback {
     private final zzbg zzf;
     private final Map zzd = DesugarCollections.synchronizedMap(new HashMap());
     private final LinkedHashSet zze = new LinkedHashSet();
-    private final Set zzc = Collections.synchronizedSet(new LinkedHashSet());
+    private final Set zzc = DesugarCollections.synchronizedSet(new LinkedHashSet());
     public final zzax zza = new zzax(this);
 
     public zzay(Context context) {

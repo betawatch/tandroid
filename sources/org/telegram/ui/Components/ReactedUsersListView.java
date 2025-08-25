@@ -14,12 +14,12 @@ import android.widget.LinearLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import j$.util.Comparator$-CC;
-import j$.util.function.ToIntFunction;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.function.ToIntFunction;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
@@ -262,7 +262,7 @@ public class ReactedUsersListView extends FrameLayout {
         }
         this.userReactions.addAll(arrayList);
         Collections.sort(this.userReactions, Comparator$-CC.comparingInt(new ToIntFunction() { // from class: org.telegram.ui.Components.ReactedUsersListView$$ExternalSyntheticLambda1
-            @Override // j$.util.function.ToIntFunction
+            @Override // java.util.function.ToIntFunction
             public final int applyAsInt(Object obj) {
                 int lambda$setSeenUsers$1;
                 lambda$setSeenUsers$1 = ReactedUsersListView.lambda$setSeenUsers$1((TLRPC.MessagePeerReaction) obj);
@@ -370,7 +370,7 @@ public class ReactedUsersListView extends FrameLayout {
                 updateCustomReactionsButton();
             }
             Collections.sort(this.userReactions, Comparator$-CC.comparingInt(new ToIntFunction() { // from class: org.telegram.ui.Components.ReactedUsersListView$$ExternalSyntheticLambda6
-                @Override // j$.util.function.ToIntFunction
+                @Override // java.util.function.ToIntFunction
                 public final int applyAsInt(Object obj) {
                     int lambda$load$2;
                     lambda$load$2 = ReactedUsersListView.lambda$load$2((TLRPC.MessagePeerReaction) obj);

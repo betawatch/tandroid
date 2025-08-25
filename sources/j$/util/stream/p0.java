@@ -1,51 +1,31 @@
 package j$.util.stream;
 
-import j$.util.function.Consumer;
+import java.util.function.IntConsumer;
+import java.util.function.IntPredicate;
 
 /* loaded from: classes2.dex */
-abstract class p0 implements d2 {
-    boolean a;
-    boolean b;
+final class p0 extends s0 implements k2 {
+    @Override // java.util.function.Consumer
+    public final /* bridge */ /* synthetic */ void accept(Object obj) {
+        m((Integer) obj);
+    }
 
-    @Override // j$.util.stream.d2, j$.util.function.l
-    public /* synthetic */ void accept(double d) {
-        t0.b();
+    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
+        return j$.com.android.tools.r8.a.b(this, intConsumer);
+    }
+
+    @Override // j$.util.stream.k2
+    public final /* synthetic */ void m(Integer num) {
+        w0.g(this, num);
+    }
+
+    @Override // j$.util.stream.s0, j$.util.stream.m2
+    public final void accept(int i) {
+        if (this.a) {
+            return;
+        }
+        IntPredicate intPredicate = null;
+        intPredicate.test(i);
         throw null;
-    }
-
-    @Override // j$.util.stream.d2
-    public /* synthetic */ void accept(int i) {
-        t0.k();
-        throw null;
-    }
-
-    @Override // j$.util.stream.d2
-    public /* synthetic */ void accept(long j) {
-        t0.l();
-        throw null;
-    }
-
-    @Override // j$.util.function.Consumer
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer.-CC.$default$andThen(this, consumer);
-    }
-
-    @Override // j$.util.stream.d2
-    public final /* synthetic */ void m() {
-    }
-
-    @Override // j$.util.stream.d2
-    public final /* synthetic */ void n(long j) {
-    }
-
-    p0(q0 q0Var) {
-        boolean z;
-        z = q0Var.b;
-        this.b = !z;
-    }
-
-    @Override // j$.util.stream.d2
-    public final boolean q() {
-        return this.a;
     }
 }

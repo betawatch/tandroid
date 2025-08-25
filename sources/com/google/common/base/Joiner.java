@@ -41,7 +41,7 @@ public class Joiner {
     }
 
     CharSequence toString(Object obj) {
-        java.util.Objects.requireNonNull(obj);
+        j$.util.Objects.requireNonNull(obj);
         return obj instanceof CharSequence ? (CharSequence) obj : obj.toString();
     }
 }

@@ -1,162 +1,157 @@
 package j$.util.stream;
 
+import j$.util.Objects;
 import j$.util.Spliterator;
 import j$.util.Spliterators;
-import j$.util.function.BiConsumer;
-import j$.util.function.IntFunction;
-import j$.util.function.Supplier;
 import java.util.Set;
+import java.util.function.BiConsumer;
+import java.util.function.DoubleBinaryOperator;
+import java.util.function.DoubleConsumer;
+import java.util.function.DoubleFunction;
+import java.util.function.IntFunction;
+import java.util.function.ObjDoubleConsumer;
+import java.util.function.Supplier;
 
 /* loaded from: classes2.dex */
 abstract class A extends b implements D {
     @Override // j$.util.stream.D
+    public final j$.util.A findAny() {
+        return (j$.util.A) C(F.d);
+    }
+
+    @Override // j$.util.stream.D
+    public final j$.util.A findFirst() {
+        return (j$.util.A) C(F.c);
+    }
+
+    @Override // j$.util.stream.D
     public final D sorted() {
-        return new v2(this, Q2.q | Q2.o, 0);
-    }
-
-    @Override // j$.util.stream.D
-    public final j$.util.j findAny() {
-        return (j$.util.j) i0(new E(false, R2.DOUBLE_VALUE, j$.util.j.a(), new q(5), new k(6)));
-    }
-
-    @Override // j$.util.stream.D
-    public final j$.util.j findFirst() {
-        return (j$.util.j) i0(new E(true, R2.DOUBLE_VALUE, j$.util.j.a(), new q(5), new k(6)));
+        return new E2(this, a3.q | a3.o, 0);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static j$.util.D E0(Spliterator spliterator) {
-        if (spliterator instanceof j$.util.D) {
-            return (j$.util.D) spliterator;
+    public static j$.util.V Y(Spliterator spliterator) {
+        if (spliterator instanceof j$.util.V) {
+            return (j$.util.V) spliterator;
         }
-        if (y3.a) {
-            y3.a(b.class, "using DoubleStream.adapt(Spliterator<Double> s)");
+        if (J3.a) {
+            J3.a(b.class, "using DoubleStream.adapt(Spliterator<Double> s)");
             throw null;
         }
         throw new UnsupportedOperationException("DoubleStream.adapt(Spliterator<Double> s)");
     }
 
-    @Override // j$.util.stream.b
-    final R2 n0() {
-        return R2.DOUBLE_VALUE;
+    @Override // j$.util.stream.D
+    public void forEach(DoubleConsumer doubleConsumer) {
+        Objects.requireNonNull(doubleConsumer);
+        C(new L(doubleConsumer, false));
+    }
+
+    @Override // j$.util.stream.D
+    public void forEachOrdered(DoubleConsumer doubleConsumer) {
+        Objects.requireNonNull(doubleConsumer);
+        C(new L(doubleConsumer, true));
     }
 
     @Override // j$.util.stream.b
-    final F0 k0(b bVar, Spliterator spliterator, boolean z, IntFunction intFunction) {
-        return t0.F(bVar, spliterator, z);
+    final b3 H() {
+        return b3.DOUBLE_VALUE;
     }
 
     @Override // j$.util.stream.b
-    final Spliterator z0(b bVar, Supplier supplier, boolean z) {
-        return new b3(bVar, supplier, z);
+    final I0 E(b bVar, Spliterator spliterator, boolean z, IntFunction intFunction) {
+        return w0.F(bVar, spliterator, z);
     }
 
     @Override // j$.util.stream.b
-    final void m0(Spliterator spliterator, d2 d2Var) {
-        j$.util.function.l pVar;
-        j$.util.D E0 = E0(spliterator);
-        if (d2Var instanceof j$.util.function.l) {
-            pVar = (j$.util.function.l) d2Var;
+    final Spliterator T(b bVar, Supplier supplier, boolean z) {
+        return new l3(bVar, supplier, z);
+    }
+
+    @Override // j$.util.stream.b
+    final boolean G(Spliterator spliterator, m2 m2Var) {
+        DoubleConsumer pVar;
+        boolean n;
+        j$.util.V Y = Y(spliterator);
+        if (m2Var instanceof DoubleConsumer) {
+            pVar = (DoubleConsumer) m2Var;
         } else {
-            if (y3.a) {
-                y3.a(b.class, "using DoubleStream.adapt(Sink<Double> s)");
+            if (J3.a) {
+                J3.a(b.class, "using DoubleStream.adapt(Sink<Double> s)");
                 throw null;
             }
-            d2Var.getClass();
-            pVar = new p(0, d2Var);
+            Objects.requireNonNull(m2Var);
+            pVar = new p(m2Var);
         }
-        while (!d2Var.q() && E0.p(pVar)) {
-        }
+        do {
+            n = m2Var.n();
+            if (n) {
+                break;
+            }
+        } while (Y.tryAdvance(pVar));
+        return n;
     }
 
     @Override // j$.util.stream.b
-    final x0 s0(long j, IntFunction intFunction) {
-        return t0.J(j);
+    final A0 M(long j, IntFunction intFunction) {
+        return w0.J(j);
     }
 
     @Override // j$.util.stream.BaseStream, j$.util.stream.D
-    public final j$.util.p iterator() {
+    public final j$.util.G iterator() {
         return Spliterators.f(spliterator());
     }
 
     @Override // j$.util.stream.b, j$.util.stream.BaseStream, j$.util.stream.D
-    public final j$.util.D spliterator() {
-        return E0(super.spliterator());
+    public final j$.util.V spliterator() {
+        return Y(super.spliterator());
     }
 
     @Override // j$.util.stream.D
     public final Stream boxed() {
-        return G(new k(28));
+        return new s(this, 0, new l(5), 0);
     }
 
     @Override // j$.util.stream.D
-    public final double D(double d, j$.util.function.h hVar) {
-        hVar.getClass();
-        return ((Double) i0(new w1(R2.DOUBLE_VALUE, hVar, d))).doubleValue();
+    public final D d() {
+        Objects.requireNonNull(null);
+        return new t(this, a3.p | a3.n, 0);
     }
 
     @Override // j$.util.stream.D
-    public final Stream G(j$.util.function.o oVar) {
-        oVar.getClass();
-        return new u(this, Q2.p | Q2.n, oVar, 0);
+    public final Stream mapToObj(DoubleFunction doubleFunction) {
+        Objects.requireNonNull(doubleFunction);
+        return new s(this, a3.p | a3.n, doubleFunction, 0);
     }
 
     @Override // j$.util.stream.D
-    public final D L(j$.util.function.w wVar) {
-        wVar.getClass();
-        return new t(this, Q2.p | Q2.n, wVar, 0);
+    public final IntStream t() {
+        Objects.requireNonNull(null);
+        return new u(this, a3.p | a3.n, 0);
     }
 
     @Override // j$.util.stream.D
-    public final IntStream Q(j$.util.function.r rVar) {
-        rVar.getClass();
-        return new v(this, Q2.p | Q2.n, rVar, 0);
+    public final LongStream i() {
+        Objects.requireNonNull(null);
+        return new v(this, a3.p | a3.n, 0);
     }
 
     @Override // j$.util.stream.D
-    public final D S(j$.util.function.p pVar) {
-        pVar.getClass();
-        return new t(this, Q2.t, pVar, 2);
+    public final D e(a aVar) {
+        Objects.requireNonNull(aVar);
+        return new x(this, a3.p | a3.n | a3.t, aVar, 0);
     }
 
     @Override // j$.util.stream.D
-    public final D a(j$.util.function.l lVar) {
-        lVar.getClass();
-        return new t(this, lVar);
+    public final D b() {
+        Objects.requireNonNull(null);
+        return new t(this, a3.t, 2);
     }
 
     @Override // j$.util.stream.D
-    public void c0(j$.util.function.l lVar) {
-        lVar.getClass();
-        i0(new L(lVar, true));
-    }
-
-    @Override // j$.util.stream.D
-    public void i(j$.util.function.l lVar) {
-        lVar.getClass();
-        i0(new L(lVar, false));
-    }
-
-    @Override // j$.util.stream.D
-    public final LongStream r(j$.util.function.v vVar) {
-        vVar.getClass();
-        return new w(this, Q2.p | Q2.n, vVar, 0);
-    }
-
-    @Override // j$.util.stream.D
-    public final j$.util.j x(j$.util.function.h hVar) {
-        hVar.getClass();
-        return (j$.util.j) i0(new y1(R2.DOUBLE_VALUE, hVar, 0));
-    }
-
-    @Override // j$.util.stream.D
-    public final D q(j$.util.function.o oVar) {
-        return new t(this, Q2.p | Q2.n | Q2.t, oVar, 1);
-    }
-
-    @Override // j$.util.stream.BaseStream
-    public final BaseStream unordered() {
-        return !q0() ? this : new x(this, Q2.r, 0);
+    public final D peek(DoubleConsumer doubleConsumer) {
+        Objects.requireNonNull(doubleConsumer);
+        return new x(this, doubleConsumer);
     }
 
     @Override // j$.util.stream.D
@@ -164,25 +159,39 @@ abstract class A extends b implements D {
         if (j < 0) {
             throw new IllegalArgumentException(Long.toString(j));
         }
-        return t0.V(this, 0L, j);
+        return w0.W(this, 0L, j);
     }
 
     @Override // j$.util.stream.D
     public final D skip(long j) {
         if (j >= 0) {
-            return j == 0 ? this : t0.V(this, j, -1L);
+            return j == 0 ? this : w0.W(this, j, -1L);
         }
         throw new IllegalArgumentException(Long.toString(j));
     }
 
     @Override // j$.util.stream.D
+    public final D a() {
+        int i = i4.a;
+        Objects.requireNonNull(null);
+        return new W3(this, i4.a, 0);
+    }
+
+    @Override // j$.util.stream.D
+    public final D c() {
+        int i = i4.a;
+        Objects.requireNonNull(null);
+        return new Y3(this, i4.b, 0);
+    }
+
+    @Override // j$.util.stream.D
     public final D distinct() {
-        return ((V1) boxed()).distinct().Z(new q(0));
+        return ((e2) boxed()).distinct().mapToDouble(new l(6));
     }
 
     @Override // j$.util.stream.D
     public final double sum() {
-        double[] dArr = (double[]) z(new q(3), new k(1), new k(2));
+        double[] dArr = (double[]) collect(new l(9), new j(7), new j(4));
         Set set = Collectors.a;
         double d = dArr[0] + dArr[1];
         double d2 = dArr[dArr.length - 1];
@@ -190,20 +199,20 @@ abstract class A extends b implements D {
     }
 
     @Override // j$.util.stream.D
-    public final j$.util.j min() {
-        return x(new k(24));
+    public final j$.util.A min() {
+        return reduce(new l(1));
     }
 
     @Override // j$.util.stream.D
-    public final j$.util.j max() {
-        return x(new q(2));
+    public final j$.util.A max() {
+        return reduce(new l(8));
     }
 
     @Override // j$.util.stream.D
-    public final j$.util.j average() {
-        double[] dArr = (double[]) z(new k(25), new k(3), new k(4));
+    public final j$.util.A average() {
+        double[] dArr = (double[]) collect(new l(2), new j(5), new j(6));
         if (dArr[2] <= 0.0d) {
-            return j$.util.j.a();
+            return j$.util.A.a();
         }
         Set set = Collectors.a;
         double d = dArr[0] + dArr[1];
@@ -211,44 +220,58 @@ abstract class A extends b implements D {
         if (Double.isNaN(d) && Double.isInfinite(d2)) {
             d = d2;
         }
-        return j$.util.j.d(d / dArr[2]);
+        return j$.util.A.d(d / dArr[2]);
     }
 
     @Override // j$.util.stream.D
-    public final long count() {
-        return ((h0) r(new k(29))).sum();
+    public final j$.util.w summaryStatistics() {
+        return (j$.util.w) collect(new j(20), new l(3), new l(4));
     }
 
     @Override // j$.util.stream.D
-    public final j$.util.f summaryStatistics() {
-        return (j$.util.f) z(new k(13), new k(26), new k(27));
+    public final Object collect(Supplier supplier, ObjDoubleConsumer objDoubleConsumer, BiConsumer biConsumer) {
+        Objects.requireNonNull(biConsumer);
+        q qVar = new q(biConsumer, 0);
+        Objects.requireNonNull(supplier);
+        Objects.requireNonNull(objDoubleConsumer);
+        Objects.requireNonNull(qVar);
+        return C(new C1(b3.DOUBLE_VALUE, qVar, objDoubleConsumer, supplier, 1));
     }
 
     @Override // j$.util.stream.D
-    public final Object z(Supplier supplier, j$.util.function.n0 n0Var, BiConsumer biConsumer) {
-        r rVar = new r(biConsumer, 0);
-        supplier.getClass();
-        n0Var.getClass();
-        return i0(new u1(R2.DOUBLE_VALUE, rVar, n0Var, supplier, 1));
+    public final boolean o() {
+        return ((Boolean) C(w0.X(t0.ANY))).booleanValue();
     }
 
     @Override // j$.util.stream.D
-    public final boolean a0(j$.util.function.p pVar) {
-        return ((Boolean) i0(t0.W(pVar, q0.ANY))).booleanValue();
+    public final boolean h() {
+        return ((Boolean) C(w0.X(t0.ALL))).booleanValue();
     }
 
     @Override // j$.util.stream.D
-    public final boolean d0(j$.util.function.p pVar) {
-        return ((Boolean) i0(t0.W(pVar, q0.ALL))).booleanValue();
-    }
-
-    @Override // j$.util.stream.D
-    public final boolean j(j$.util.function.p pVar) {
-        return ((Boolean) i0(t0.W(pVar, q0.NONE))).booleanValue();
+    public final boolean x() {
+        return ((Boolean) C(w0.X(t0.NONE))).booleanValue();
     }
 
     @Override // j$.util.stream.D
     public final double[] toArray() {
-        return (double[]) t0.O((z0) j0(new q(1))).e();
+        return (double[]) w0.O((C0) D(new l(7))).d();
+    }
+
+    @Override // j$.util.stream.D
+    public final double reduce(double d, DoubleBinaryOperator doubleBinaryOperator) {
+        Objects.requireNonNull(doubleBinaryOperator);
+        return ((Double) C(new G1(b3.DOUBLE_VALUE, doubleBinaryOperator, d))).doubleValue();
+    }
+
+    @Override // j$.util.stream.D
+    public final j$.util.A reduce(DoubleBinaryOperator doubleBinaryOperator) {
+        Objects.requireNonNull(doubleBinaryOperator);
+        return (j$.util.A) C(new A1(b3.DOUBLE_VALUE, doubleBinaryOperator, 1));
+    }
+
+    @Override // j$.util.stream.D
+    public final long count() {
+        return ((Long) C(new E1(1))).longValue();
     }
 }

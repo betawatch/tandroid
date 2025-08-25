@@ -28,6 +28,7 @@ import com.google.android.exoplayer2.util.ParsableByteArray;
 import com.google.android.exoplayer2.util.TimestampAdjuster;
 import com.google.android.exoplayer2.util.Util;
 import com.google.common.base.Function;
+import j$.util.DesugarCollections;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -138,7 +139,7 @@ public class FragmentedMp4Extractor implements Extractor {
         this.flags = i;
         this.timestampAdjuster = timestampAdjuster;
         this.sideloadedTrack = track;
-        this.closedCaptionFormats = Collections.unmodifiableList(list);
+        this.closedCaptionFormats = DesugarCollections.unmodifiableList(list);
         this.additionalEmsgTrackOutput = trackOutput;
         this.eventMessageEncoder = new EventMessageEncoder();
         this.atomHeader = new ParsableByteArray(16);
@@ -905,7 +906,7 @@ public class FragmentedMp4Extractor implements Extractor {
         }
         parsableByteArray2.skipBytes(1);
         int readUnsignedByte = parsableByteArray2.readUnsignedByte();
-        int i3 = (readUnsignedByte & NotificationCenter.wallpapersNeedReload) >> 4;
+        int i3 = (readUnsignedByte & NotificationCenter.profileMusicUpdated) >> 4;
         int i4 = readUnsignedByte & 15;
         boolean z = parsableByteArray2.readUnsignedByte() == 1;
         if (z) {
@@ -1334,12 +1335,12 @@ public class FragmentedMp4Extractor implements Extractor {
                 byte[] data = this.scratch.getData();
                 data[0] = 0;
                 data[1] = 1;
-                data[2] = (byte) ((i2 >> 8) & NotificationCenter.goingToPreviewTheme);
-                data[3] = (byte) (i2 & NotificationCenter.goingToPreviewTheme);
-                data[4] = (byte) ((i >> 24) & NotificationCenter.goingToPreviewTheme);
-                data[5] = (byte) ((i >> 16) & NotificationCenter.goingToPreviewTheme);
-                data[6] = (byte) ((i >> 8) & NotificationCenter.goingToPreviewTheme);
-                data[7] = (byte) (i & NotificationCenter.goingToPreviewTheme);
+                data[2] = (byte) ((i2 >> 8) & NotificationCenter.needCheckSystemBarColors);
+                data[3] = (byte) (i2 & NotificationCenter.needCheckSystemBarColors);
+                data[4] = (byte) ((i >> 24) & NotificationCenter.needCheckSystemBarColors);
+                data[5] = (byte) ((i >> 16) & NotificationCenter.needCheckSystemBarColors);
+                data[6] = (byte) ((i >> 8) & NotificationCenter.needCheckSystemBarColors);
+                data[7] = (byte) (i & NotificationCenter.needCheckSystemBarColors);
                 this.output.sampleData(this.scratch, 8, 1);
                 return i3 + 9;
             }
@@ -1352,8 +1353,8 @@ public class FragmentedMp4Extractor implements Extractor {
                 byte[] data2 = this.scratch.getData();
                 parsableByteArray3.readBytes(data2, 0, i4);
                 int i5 = (((data2[2] & 255) << 8) | (data2[3] & 255)) + i2;
-                data2[2] = (byte) ((i5 >> 8) & NotificationCenter.goingToPreviewTheme);
-                data2[3] = (byte) (i5 & NotificationCenter.goingToPreviewTheme);
+                data2[2] = (byte) ((i5 >> 8) & NotificationCenter.needCheckSystemBarColors);
+                data2[3] = (byte) (i5 & NotificationCenter.needCheckSystemBarColors);
                 parsableByteArray3 = this.scratch;
             }
             this.output.sampleData(parsableByteArray3, i4, 1);

@@ -1,24 +1,29 @@
 package j$.util.stream;
 
-import j$.util.Spliterator;
-import j$.util.function.Consumer;
-import j$.util.function.IntFunction;
+import java.util.function.LongConsumer;
 
 /* loaded from: classes2.dex */
-interface F0 {
-    F0 a(int i);
+public final /* synthetic */ class F0 implements LongConsumer {
+    public final /* synthetic */ int a;
 
-    long count();
+    public /* synthetic */ F0(int i) {
+        this.a = i;
+    }
 
-    void forEach(Consumer consumer);
+    private final void accept$j$$util$stream$Node$OfLong$$ExternalSyntheticLambda0(long j) {
+    }
 
-    void i(Object[] objArr, int i);
+    private final void accept$j$$util$stream$StreamSpliterators$SliceSpliterator$OfLong$$ExternalSyntheticLambda0(long j) {
+    }
 
-    int p();
+    @Override // java.util.function.LongConsumer
+    public final void accept(long j) {
+        int i = this.a;
+    }
 
-    Object[] s(IntFunction intFunction);
-
-    Spliterator spliterator();
-
-    F0 t(long j, long j2, IntFunction intFunction);
+    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
+        switch (this.a) {
+        }
+        return j$.com.android.tools.r8.a.c(this, longConsumer);
+    }
 }

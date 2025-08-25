@@ -8,10 +8,10 @@ import com.google.gson.internal.bind.TypeAdapters;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.google.gson.stream.MalformedJsonException;
+import j$.util.Objects;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.Writer;
-import java.util.Objects;
 
 /* loaded from: classes.dex */
 public abstract class Streams {

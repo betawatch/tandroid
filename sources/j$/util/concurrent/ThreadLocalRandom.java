@@ -2,8 +2,9 @@ package j$.util.concurrent;
 
 import j$.util.stream.C;
 import j$.util.stream.IntStream;
-import j$.util.stream.j0;
-import j$.util.stream.t0;
+import j$.util.stream.l0;
+import j$.util.stream.w0;
+import java.io.ObjectOutputStream;
 import java.io.ObjectStreamField;
 import java.security.AccessController;
 import java.security.SecureRandom;
@@ -17,13 +18,19 @@ import org.telegram.tgnet.ConnectionsManager;
 
 /* loaded from: classes2.dex */
 public class ThreadLocalRandom extends Random {
-    private static final AtomicInteger d = new AtomicInteger();
-    private static final AtomicLong e;
-    private static final ThreadLocal f;
-    private static final ThreadLocal g;
+    private static final long serialVersionUID = -5851777807851030925L;
     long a;
     int b;
     boolean c;
+    private static final ObjectStreamField[] serialPersistentFields = {new ObjectStreamField("rnd", Long.TYPE), new ObjectStreamField("initialized", Boolean.TYPE)};
+    private static final ThreadLocal d = new ThreadLocal();
+    private static final AtomicInteger e = new AtomicInteger();
+    private static final ThreadLocal f = new w();
+    private static final AtomicLong g = new AtomicLong(h(System.currentTimeMillis()) ^ h(System.nanoTime()));
+
+    /* synthetic */ ThreadLocalRandom(int i) {
+        this();
+    }
 
     private static int g(long j) {
         long j2 = (j ^ (j >>> 33)) * (-49064778989728563L);
@@ -36,37 +43,23 @@ public class ThreadLocalRandom extends Random {
         return j3 ^ (j3 >>> 33);
     }
 
-    static {
-        long h;
-        if (((Boolean) AccessController.doPrivileged(new v())).booleanValue()) {
-            byte[] seed = SecureRandom.getSeed(8);
-            h = seed[0] & 255;
-            for (int i = 1; i < 8; i++) {
-                h = (h << 8) | (seed[i] & 255);
-            }
-        } else {
-            h = h(System.nanoTime()) ^ h(System.currentTimeMillis());
-        }
-        e = new AtomicLong(h);
-        f = new ThreadLocal();
-        g = new w();
-        new ObjectStreamField("rnd", Long.TYPE);
-        new ObjectStreamField("initialized", Boolean.TYPE);
+    private ThreadLocalRandom() {
+        this.c = true;
     }
 
     static final void f() {
-        int addAndGet = d.addAndGet(-1640531527);
+        int addAndGet = e.addAndGet(-1640531527);
         if (addAndGet == 0) {
             addAndGet = 1;
         }
-        long h = h(e.getAndAdd(-4942790177534073029L));
-        ThreadLocalRandom threadLocalRandom = (ThreadLocalRandom) g.get();
+        long h = h(g.getAndAdd(-4942790177534073029L));
+        ThreadLocalRandom threadLocalRandom = (ThreadLocalRandom) f.get();
         threadLocalRandom.a = h;
         threadLocalRandom.b = addAndGet;
     }
 
     public static ThreadLocalRandom current() {
-        ThreadLocalRandom threadLocalRandom = (ThreadLocalRandom) g.get();
+        ThreadLocalRandom threadLocalRandom = (ThreadLocalRandom) f.get();
         if (threadLocalRandom.b == 0) {
             f();
         }
@@ -88,7 +81,7 @@ public class ThreadLocalRandom extends Random {
 
     @Override // java.util.Random
     protected final int next(int i) {
-        return (int) (h(i()) >>> (64 - i));
+        return nextInt() >>> (32 - i);
     }
 
     final long e(long j, long j2) {
@@ -258,7 +251,7 @@ public class ThreadLocalRandom extends Random {
 
     @Override // java.util.Random
     public final double nextGaussian() {
-        ThreadLocal threadLocal = f;
+        ThreadLocal threadLocal = d;
         Double d2 = (Double) threadLocal.get();
         if (d2 != null) {
             threadLocal.set(null);
@@ -270,7 +263,7 @@ public class ThreadLocalRandom extends Random {
             double d3 = (nextDouble2 * nextDouble2) + (nextDouble * nextDouble);
             if (d3 < 1.0d && d3 != 0.0d) {
                 double sqrt = StrictMath.sqrt((StrictMath.log(d3) * (-2.0d)) / d3);
-                threadLocal.set(new Double(nextDouble2 * sqrt));
+                threadLocal.set(Double.valueOf(nextDouble2 * sqrt));
                 return nextDouble * sqrt;
             }
         }
@@ -279,14 +272,14 @@ public class ThreadLocalRandom extends Random {
     @Override // java.util.Random
     public final IntStream ints(long j) {
         if (j >= 0) {
-            return IntStream.Wrapper.convert(t0.S(new y(0L, j, ConnectionsManager.DEFAULT_DATACENTER_ID, 0)));
+            return IntStream.Wrapper.convert(w0.T(new z(0L, j, ConnectionsManager.DEFAULT_DATACENTER_ID, 0)));
         }
         throw new IllegalArgumentException("size must be non-negative");
     }
 
     @Override // java.util.Random
     public final java.util.stream.IntStream ints() {
-        return IntStream.Wrapper.convert(t0.S(new y(0L, Long.MAX_VALUE, ConnectionsManager.DEFAULT_DATACENTER_ID, 0)));
+        return IntStream.Wrapper.convert(w0.T(new z(0L, Long.MAX_VALUE, ConnectionsManager.DEFAULT_DATACENTER_ID, 0)));
     }
 
     @Override // java.util.Random
@@ -295,7 +288,7 @@ public class ThreadLocalRandom extends Random {
             throw new IllegalArgumentException("size must be non-negative");
         }
         if (i < i2) {
-            return IntStream.Wrapper.convert(t0.S(new y(0L, j, i, i2)));
+            return IntStream.Wrapper.convert(w0.T(new z(0L, j, i, i2)));
         }
         throw new IllegalArgumentException("bound must be greater than origin");
     }
@@ -303,7 +296,7 @@ public class ThreadLocalRandom extends Random {
     @Override // java.util.Random
     public final java.util.stream.IntStream ints(int i, int i2) {
         if (i < i2) {
-            return IntStream.Wrapper.convert(t0.S(new y(0L, Long.MAX_VALUE, i, i2)));
+            return IntStream.Wrapper.convert(w0.T(new z(0L, Long.MAX_VALUE, i, i2)));
         }
         throw new IllegalArgumentException("bound must be greater than origin");
     }
@@ -311,14 +304,14 @@ public class ThreadLocalRandom extends Random {
     @Override // java.util.Random
     public final LongStream longs(long j) {
         if (j >= 0) {
-            return j0.f0(t0.U(new z(0L, j, Long.MAX_VALUE, 0L)));
+            return l0.j(w0.V(new A(0L, j, Long.MAX_VALUE, 0L)));
         }
         throw new IllegalArgumentException("size must be non-negative");
     }
 
     @Override // java.util.Random
     public final LongStream longs() {
-        return j0.f0(t0.U(new z(0L, Long.MAX_VALUE, Long.MAX_VALUE, 0L)));
+        return l0.j(w0.V(new A(0L, Long.MAX_VALUE, Long.MAX_VALUE, 0L)));
     }
 
     @Override // java.util.Random
@@ -327,7 +320,7 @@ public class ThreadLocalRandom extends Random {
             throw new IllegalArgumentException("size must be non-negative");
         }
         if (j2 < j3) {
-            return j0.f0(t0.U(new z(0L, j, j2, j3)));
+            return l0.j(w0.V(new A(0L, j, j2, j3)));
         }
         throw new IllegalArgumentException("bound must be greater than origin");
     }
@@ -335,7 +328,7 @@ public class ThreadLocalRandom extends Random {
     @Override // java.util.Random
     public final LongStream longs(long j, long j2) {
         if (j < j2) {
-            return j0.f0(t0.U(new z(0L, Long.MAX_VALUE, j, j2)));
+            return l0.j(w0.V(new A(0L, Long.MAX_VALUE, j, j2)));
         }
         throw new IllegalArgumentException("bound must be greater than origin");
     }
@@ -343,14 +336,14 @@ public class ThreadLocalRandom extends Random {
     @Override // java.util.Random
     public final DoubleStream doubles(long j) {
         if (j >= 0) {
-            return C.f0(t0.K(new x(0L, j, Double.MAX_VALUE, 0.0d)));
+            return C.j(w0.K(new y(0L, j, Double.MAX_VALUE, 0.0d)));
         }
         throw new IllegalArgumentException("size must be non-negative");
     }
 
     @Override // java.util.Random
     public final DoubleStream doubles() {
-        return C.f0(t0.K(new x(0L, Long.MAX_VALUE, Double.MAX_VALUE, 0.0d)));
+        return C.j(w0.K(new y(0L, Long.MAX_VALUE, Double.MAX_VALUE, 0.0d)));
     }
 
     @Override // java.util.Random
@@ -359,7 +352,7 @@ public class ThreadLocalRandom extends Random {
             throw new IllegalArgumentException("size must be non-negative");
         }
         if (d2 < d3) {
-            return C.f0(t0.K(new x(0L, j, d2, d3)));
+            return C.j(w0.K(new y(0L, j, d2, d3)));
         }
         throw new IllegalArgumentException("bound must be greater than origin");
     }
@@ -367,20 +360,42 @@ public class ThreadLocalRandom extends Random {
     @Override // java.util.Random
     public final DoubleStream doubles(double d2, double d3) {
         if (d2 < d3) {
-            return C.f0(t0.K(new x(0L, Long.MAX_VALUE, d2, d3)));
+            return C.j(w0.K(new y(0L, Long.MAX_VALUE, d2, d3)));
         }
         throw new IllegalArgumentException("bound must be greater than origin");
     }
 
     static final int b() {
-        return ((ThreadLocalRandom) g.get()).b;
+        return ((ThreadLocalRandom) f.get()).b;
     }
 
     static final int a(int i) {
         int i2 = i ^ (i << 13);
         int i3 = i2 ^ (i2 >>> 17);
         int i4 = i3 ^ (i3 << 5);
-        ((ThreadLocalRandom) g.get()).b = i4;
+        ((ThreadLocalRandom) f.get()).b = i4;
         return i4;
+    }
+
+    static {
+        if (((Boolean) AccessController.doPrivileged(new x())).booleanValue()) {
+            byte[] seed = SecureRandom.getSeed(8);
+            long j = seed[0] & 255;
+            for (int i = 1; i < 8; i++) {
+                j = (j << 8) | (seed[i] & 255);
+            }
+            g.set(j);
+        }
+    }
+
+    private void writeObject(ObjectOutputStream objectOutputStream) {
+        ObjectOutputStream.PutField putFields = objectOutputStream.putFields();
+        putFields.put("rnd", this.a);
+        putFields.put("initialized", true);
+        objectOutputStream.writeFields();
+    }
+
+    private Object readResolve() {
+        return current();
     }
 }

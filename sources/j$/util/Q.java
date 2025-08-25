@@ -1,75 +1,19 @@
 package j$.util;
 
-import j$.util.function.Consumer;
-import java.util.NoSuchElementException;
+import java.util.Comparator;
 
 /* loaded from: classes2.dex */
-final class Q implements x, j$.util.function.Y, h {
-    boolean a = false;
-    long b;
-    final /* synthetic */ J c;
+final class Q extends r0 {
+    final /* synthetic */ java.util.SortedSet f;
 
-    @Override // j$.util.function.Y
-    public final /* synthetic */ j$.util.function.Y f(j$.util.function.Y y) {
-        return j$.com.android.tools.r8.a.c(this, y);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    Q(java.util.SortedSet sortedSet, java.util.Collection collection) {
+        super(collection, 21);
+        this.f = sortedSet;
     }
 
-    @Override // java.util.Iterator
-    public final Long next() {
-        if (d0.a) {
-            d0.a(Q.class, "{0} calling PrimitiveIterator.OfLong.nextLong()");
-            throw null;
-        }
-        return Long.valueOf(nextLong());
-    }
-
-    @Override // j$.util.y
-    /* renamed from: d, reason: merged with bridge method [inline-methods] */
-    public final void forEachRemaining(j$.util.function.Y y) {
-        y.getClass();
-        while (hasNext()) {
-            y.accept(nextLong());
-        }
-    }
-
-    @Override // j$.util.x, j$.util.h
-    public final void a(Consumer consumer) {
-        if (!(consumer instanceof j$.util.function.Y)) {
-            consumer.getClass();
-            if (d0.a) {
-                d0.a(Q.class, "{0} calling PrimitiveIterator.OfLong.forEachRemainingLong(action::accept)");
-                throw null;
-            }
-            forEachRemaining(new u(consumer));
-            return;
-        }
-        forEachRemaining((j$.util.function.Y) consumer);
-    }
-
-    Q(J j) {
-        this.c = j;
-    }
-
-    @Override // j$.util.function.Y
-    public final void accept(long j) {
-        this.a = true;
-        this.b = j;
-    }
-
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        if (!this.a) {
-            this.c.tryAdvance(this);
-        }
-        return this.a;
-    }
-
-    @Override // j$.util.x
-    public final long nextLong() {
-        if (!this.a && !hasNext()) {
-            throw new NoSuchElementException();
-        }
-        this.a = false;
-        return this.b;
+    @Override // j$.util.r0, j$.util.Spliterator
+    public final Comparator getComparator() {
+        return this.f.comparator();
     }
 }

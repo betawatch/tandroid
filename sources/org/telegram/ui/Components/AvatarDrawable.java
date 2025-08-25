@@ -91,7 +91,7 @@ public class AvatarDrawable extends Drawable {
         this.roundRadius = -1;
         this.drawAvatarBackground = true;
         this.rotate45Background = false;
-        this.alpha = NotificationCenter.goingToPreviewTheme;
+        this.alpha = NotificationCenter.needCheckSystemBarColors;
         this.resourcesProvider = resourcesProvider;
         TextPaint textPaint = new TextPaint(1);
         this.namePaint = textPaint;
@@ -676,7 +676,7 @@ public class AvatarDrawable extends Drawable {
                 if (i7 != 255) {
                     drawable3.setAlpha(i7);
                     drawable3.draw(canvas);
-                    drawable3.setAlpha(NotificationCenter.goingToPreviewTheme);
+                    drawable3.setAlpha(NotificationCenter.needCheckSystemBarColors);
                 } else {
                     drawable3.draw(canvas);
                 }

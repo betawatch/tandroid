@@ -14,7 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.microsoft.appcenter.utils.crypto.CryptoAesHandler$$ExternalSyntheticApiModelOutline5;
 import j$.util.Collection;
-import j$.util.function.Predicate;
+import j$.util.function.Predicate$-CC;
 import j$.util.stream.Collectors;
 import java.io.File;
 import java.io.FileInputStream;
@@ -29,6 +29,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
+import java.util.function.Predicate;
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
@@ -327,22 +328,19 @@ public class BotStorage {
                 }
             }
             Iterator it = ((Set) Collection.-EL.stream(readConfig().values()).filter(new Predicate() { // from class: org.telegram.ui.bots.BotStorage$$ExternalSyntheticLambda0
-                @Override // j$.util.function.Predicate
                 public /* synthetic */ Predicate and(Predicate predicate) {
-                    return Predicate.-CC.$default$and(this, predicate);
+                    return Predicate$-CC.$default$and(this, predicate);
                 }
 
-                @Override // j$.util.function.Predicate
                 public /* synthetic */ Predicate negate() {
-                    return Predicate.-CC.$default$negate(this);
+                    return Predicate$-CC.$default$negate(this);
                 }
 
-                @Override // j$.util.function.Predicate
                 public /* synthetic */ Predicate or(Predicate predicate) {
-                    return Predicate.-CC.$default$or(this, predicate);
+                    return Predicate$-CC.$default$or(this, predicate);
                 }
 
-                @Override // j$.util.function.Predicate
+                @Override // java.util.function.Predicate
                 public final boolean test(Object obj) {
                     boolean lambda$getKey$0;
                     lambda$getKey$0 = BotStorage.lambda$getKey$0(hashSet, (BotStorage.StorageConfig) obj);
@@ -389,22 +387,19 @@ public class BotStorage {
             }
         }
         for (StorageConfig storageConfig : (Set) Collection.-EL.stream(readConfig().values()).filter(new Predicate() { // from class: org.telegram.ui.bots.BotStorage$$ExternalSyntheticLambda1
-            @Override // j$.util.function.Predicate
             public /* synthetic */ Predicate and(Predicate predicate) {
-                return Predicate.-CC.$default$and(this, predicate);
+                return Predicate$-CC.$default$and(this, predicate);
             }
 
-            @Override // j$.util.function.Predicate
             public /* synthetic */ Predicate negate() {
-                return Predicate.-CC.$default$negate(this);
+                return Predicate$-CC.$default$negate(this);
             }
 
-            @Override // j$.util.function.Predicate
             public /* synthetic */ Predicate or(Predicate predicate) {
-                return Predicate.-CC.$default$or(this, predicate);
+                return Predicate$-CC.$default$or(this, predicate);
             }
 
-            @Override // j$.util.function.Predicate
+            @Override // java.util.function.Predicate
             public final boolean test(Object obj) {
                 boolean lambda$getStoragesWithKey$1;
                 lambda$getStoragesWithKey$1 = BotStorage.lambda$getStoragesWithKey$1(hashSet, (BotStorage.StorageConfig) obj);

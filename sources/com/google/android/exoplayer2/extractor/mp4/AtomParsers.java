@@ -780,7 +780,7 @@ abstract class AtomParsers {
         if (readInt2 == 0 && readInt3 == 65536 && readInt4 == -65536 && readInt5 == 0) {
             i2 = 90;
         } else if (readInt2 == 0 && readInt3 == -65536 && readInt4 == 65536 && readInt5 == 0) {
-            i2 = NotificationCenter.messagePlayingSpeedChanged;
+            i2 = NotificationCenter.notificationsCountUpdated;
         } else if (readInt2 == -65536 && readInt3 == 0 && readInt4 == 0 && readInt5 == -65536) {
             i2 = NotificationCenter.suggestedFiltersLoaded;
         }
@@ -1519,7 +1519,7 @@ abstract class AtomParsers {
                 } else {
                     int readUnsignedByte = parsableByteArray.readUnsignedByte();
                     i3 = readUnsignedByte & 15;
-                    i4 = (readUnsignedByte & NotificationCenter.wallpapersNeedReload) >> 4;
+                    i4 = (readUnsignedByte & NotificationCenter.profileMusicUpdated) >> 4;
                 }
                 boolean z = parsableByteArray.readUnsignedByte() == 1;
                 int readUnsignedByte2 = parsableByteArray.readUnsignedByte();
@@ -1702,7 +1702,7 @@ abstract class AtomParsers {
             ParsableByteArray parsableByteArray = leafAtom.data;
             this.data = parsableByteArray;
             parsableByteArray.setPosition(12);
-            this.fieldSize = parsableByteArray.readUnsignedIntToInt() & NotificationCenter.goingToPreviewTheme;
+            this.fieldSize = parsableByteArray.readUnsignedIntToInt() & NotificationCenter.needCheckSystemBarColors;
             this.sampleCount = parsableByteArray.readUnsignedIntToInt();
         }
 
@@ -1725,7 +1725,7 @@ abstract class AtomParsers {
             if (i2 % 2 == 0) {
                 int readUnsignedByte = this.data.readUnsignedByte();
                 this.currentByte = readUnsignedByte;
-                return (readUnsignedByte & NotificationCenter.wallpapersNeedReload) >> 4;
+                return (readUnsignedByte & NotificationCenter.profileMusicUpdated) >> 4;
             }
             return this.currentByte & 15;
         }

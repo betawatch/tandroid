@@ -1,39 +1,38 @@
 package j$.util.function;
 
-import j$.util.function.BiFunction;
-import java.util.Comparator;
+import java.util.function.Function;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class c implements BinaryOperator {
+public final /* synthetic */ class c implements Function {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Comparator b;
+    public final /* synthetic */ Function b;
+    public final /* synthetic */ Function c;
 
-    public /* synthetic */ c(Comparator comparator, int i) {
+    public /* synthetic */ c(Function function, Function function2, int i) {
         this.a = i;
-        this.b = comparator;
+        this.b = function;
+        this.c = function2;
     }
 
-    @Override // j$.util.function.BiFunction
-    public final /* synthetic */ BiFunction andThen(Function function) {
+    public final /* synthetic */ Function andThen(Function function) {
         switch (this.a) {
         }
-        return BiFunction.-CC.$default$andThen(this, function);
+        return Function$-CC.$default$andThen(this, function);
     }
 
-    @Override // j$.util.function.BiFunction
-    public final Object apply(Object obj, Object obj2) {
+    public final /* synthetic */ Function compose(Function function) {
+        switch (this.a) {
+        }
+        return Function$-CC.$default$compose(this, function);
+    }
+
+    @Override // java.util.function.Function
+    public final Object apply(Object obj) {
         switch (this.a) {
             case 0:
-                if (this.b.compare(obj, obj2) < 0) {
-                    break;
-                }
-                break;
+                return this.c.apply(this.b.apply(obj));
             default:
-                if (this.b.compare(obj, obj2) > 0) {
-                    break;
-                }
-                break;
+                return this.b.apply(this.c.apply(obj));
         }
-        return obj2;
     }
 }

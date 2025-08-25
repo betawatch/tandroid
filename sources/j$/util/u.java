@@ -1,22 +1,17 @@
 package j$.util;
 
-import j$.util.function.Consumer;
+import java.util.RandomAccess;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class u implements j$.util.function.Y {
-    public final /* synthetic */ Consumer a;
+final class u extends o implements RandomAccess {
+    private static final long serialVersionUID = -2542308836966382001L;
 
-    public /* synthetic */ u(Consumer consumer) {
-        this.a = consumer;
+    @Override // j$.util.o, java.util.List
+    public final java.util.List subList(int i, int i2) {
+        return new u(this.b.subList(i, i2));
     }
 
-    @Override // j$.util.function.Y
-    public final void accept(long j) {
-        this.a.r(Long.valueOf(j));
-    }
-
-    @Override // j$.util.function.Y
-    public final /* synthetic */ j$.util.function.Y f(j$.util.function.Y y) {
-        return j$.com.android.tools.r8.a.c(this, y);
+    private Object writeReplace() {
+        return new o(this.b);
     }
 }

@@ -1,27 +1,18 @@
 package j$.util.stream;
 
-/* loaded from: classes2.dex */
-abstract /* synthetic */ class m2 {
-    static final /* synthetic */ int[] a;
+import java.util.function.Consumer;
 
-    static {
-        int[] iArr = new int[R2.values().length];
-        a = iArr;
-        try {
-            iArr[R2.REFERENCE.ordinal()] = 1;
-        } catch (NoSuchFieldError unused) {
-        }
-        try {
-            a[R2.INT_VALUE.ordinal()] = 2;
-        } catch (NoSuchFieldError unused2) {
-        }
-        try {
-            a[R2.LONG_VALUE.ordinal()] = 3;
-        } catch (NoSuchFieldError unused3) {
-        }
-        try {
-            a[R2.DOUBLE_VALUE.ordinal()] = 4;
-        } catch (NoSuchFieldError unused4) {
-        }
-    }
+/* loaded from: classes2.dex */
+interface m2 extends Consumer {
+    void accept(double d);
+
+    void accept(int i);
+
+    void accept(long j);
+
+    void k();
+
+    void l(long j);
+
+    boolean n();
 }

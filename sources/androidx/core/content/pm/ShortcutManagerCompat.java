@@ -20,13 +20,13 @@ import androidx.core.content.pm.ShortcutInfoCompat;
 import androidx.core.content.pm.ShortcutInfoCompatSaver;
 import androidx.core.graphics.drawable.IconCompat;
 import androidx.core.util.Preconditions;
+import j$.util.Objects;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Objects;
 
 /* loaded from: classes.dex */
 public abstract class ShortcutManagerCompat {

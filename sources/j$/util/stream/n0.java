@@ -1,47 +1,53 @@
 package j$.util.stream;
 
+import j$.util.concurrent.ConcurrentHashMap;
+import j$.util.function.Consumer$-CC;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+
 /* loaded from: classes2.dex */
-final class n0 extends p0 implements c2 {
-    final /* synthetic */ q0 c;
-    final /* synthetic */ j$.util.function.b0 d;
+public final /* synthetic */ class n0 implements Supplier, Consumer {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    @Override // j$.util.function.Consumer
-    /* renamed from: accept */
-    public final /* bridge */ /* synthetic */ void r(Object obj) {
-        j((Long) obj);
+    public /* synthetic */ n0(int i, Object obj, Object obj2) {
+        this.a = i;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    @Override // j$.util.function.Y
-    public final /* synthetic */ j$.util.function.Y f(j$.util.function.Y y) {
-        return j$.com.android.tools.r8.a.c(this, y);
-    }
-
-    @Override // j$.util.stream.c2
-    public final /* synthetic */ void j(Long l) {
-        t0.i(this, l);
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    n0(j$.util.function.b0 b0Var, q0 q0Var) {
-        super(q0Var);
-        this.c = q0Var;
-        this.d = b0Var;
-    }
-
-    @Override // j$.util.stream.p0, j$.util.stream.d2
-    public final void accept(long j) {
-        boolean z;
-        boolean z2;
-        if (this.a) {
-            return;
+    public /* synthetic */ Consumer andThen(Consumer consumer) {
+        switch (this.a) {
         }
-        boolean test = this.d.a.test(j);
-        q0 q0Var = this.c;
-        z = q0Var.a;
-        if (test == z) {
-            this.a = true;
-            z2 = q0Var.b;
-            this.b = z2;
+        return Consumer$-CC.$default$andThen(this, consumer);
+    }
+
+    @Override // java.util.function.Supplier
+    public Object get() {
+        return new o0((t0) this.b, (Predicate) this.c);
+    }
+
+    @Override // java.util.function.Consumer
+    public void accept(Object obj) {
+        switch (this.a) {
+            case 1:
+                ((j3) this.b).b((Consumer) this.c, obj);
+                break;
+            case 2:
+                if (obj != null) {
+                    ((ConcurrentHashMap) this.c).putIfAbsent(obj, Boolean.TRUE);
+                    break;
+                } else {
+                    ((AtomicBoolean) this.b).set(true);
+                    break;
+                }
+            default:
+                ((BiConsumer) this.b).accept(this.c, obj);
+                break;
         }
     }
 }

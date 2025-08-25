@@ -1,5 +1,6 @@
 package com.google.gson.internal;
 
+import j$.util.Objects;
 import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.lang.reflect.GenericArrayType;
@@ -14,7 +15,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.NoSuchElementException;
-import java.util.Objects;
 import java.util.Properties;
 
 /* loaded from: classes.dex */

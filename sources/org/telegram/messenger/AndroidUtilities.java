@@ -1584,7 +1584,7 @@ public class AndroidUtilities {
             }
             i = -16777216;
         }
-        double[] rgbToHsv = rgbToHsv((i >> 16) & NotificationCenter.goingToPreviewTheme, (i >> 8) & NotificationCenter.goingToPreviewTheme, i & NotificationCenter.goingToPreviewTheme);
+        double[] rgbToHsv = rgbToHsv((i >> 16) & NotificationCenter.needCheckSystemBarColors, (i >> 8) & NotificationCenter.needCheckSystemBarColors, i & NotificationCenter.needCheckSystemBarColors);
         double d = rgbToHsv[1];
         rgbToHsv[1] = Math.min(1.0d, 0.05d + d + ((1.0d - d) * 0.1d));
         int[] hsvToRgb = hsvToRgb(rgbToHsv[0], rgbToHsv[1], Math.max(0.0d, rgbToHsv[2] * 0.65d));
@@ -1631,7 +1631,7 @@ public class AndroidUtilities {
 
     public static int hsvToColor(double d, double d2, double d3) {
         int[] hsvToRgb = hsvToRgb(d, d2, d3);
-        return Color.argb(NotificationCenter.goingToPreviewTheme, hsvToRgb[0], hsvToRgb[1], hsvToRgb[2]);
+        return Color.argb(NotificationCenter.needCheckSystemBarColors, hsvToRgb[0], hsvToRgb[1], hsvToRgb[2]);
     }
 
     public static int[] hsvToRgb(double d, double d2, double d3) {
@@ -3053,7 +3053,7 @@ public class AndroidUtilities {
     public static int getPhotoSize(boolean z) {
         if (z) {
             if (highQualityPhotoSize == null) {
-                highQualityPhotoSize = 2048;
+                highQualityPhotoSize = 2560;
             }
             return highQualityPhotoSize.intValue();
         }
@@ -5048,7 +5048,7 @@ public class AndroidUtilities {
             i2 = (int) ((f5 * 255.0f) + 0.5f);
             i3 = (int) ((f7 * 255.0f) + 0.5f);
         }
-        return ((i & NotificationCenter.goingToPreviewTheme) << 16) | (-16777216) | ((i2 & NotificationCenter.goingToPreviewTheme) << 8) | (i3 & NotificationCenter.goingToPreviewTheme);
+        return ((i & NotificationCenter.needCheckSystemBarColors) << 16) | (-16777216) | ((i2 & NotificationCenter.needCheckSystemBarColors) << 8) | (i3 & NotificationCenter.needCheckSystemBarColors);
     }
 
     public static float computePerceivedBrightness(int i) {
@@ -5358,7 +5358,7 @@ public class AndroidUtilities {
     }
 
     public static int getAverageColor(int i, int i2) {
-        return Color.argb(NotificationCenter.goingToPreviewTheme, (Color.red(i) / 2) + (Color.red(i2) / 2), (Color.green(i) / 2) + (Color.green(i2) / 2), (Color.blue(i) / 2) + (Color.blue(i2) / 2));
+        return Color.argb(NotificationCenter.needCheckSystemBarColors, (Color.red(i) / 2) + (Color.red(i2) / 2), (Color.green(i) / 2) + (Color.green(i2) / 2), (Color.blue(i) / 2) + (Color.blue(i2) / 2));
     }
 
     public static void setLightStatusBar(Window window, boolean z) {
@@ -6338,7 +6338,7 @@ public class AndroidUtilities {
         try {
             int i = 1;
             int attributeInt = exifInterface.getAttributeInt("Orientation", 1);
-            int i2 = NotificationCenter.messagePlayingSpeedChanged;
+            int i2 = NotificationCenter.notificationsCountUpdated;
             switch (attributeInt) {
                 case 2:
                     i2 = 0;
@@ -6429,7 +6429,7 @@ public class AndroidUtilities {
         if (i == 0) {
             return 0;
         }
-        return Color.argb(NotificationCenter.goingToPreviewTheme, i4 / i, i3 / i, i2 / i);
+        return Color.argb(NotificationCenter.needCheckSystemBarColors, i4 / i, i3 / i, i2 / i);
     }
 
     public static String translitSafe(String str) {
@@ -6872,5 +6872,12 @@ public class AndroidUtilities {
     public static void logFlagSecure() {
         FileLog.d("[FLAG_SECURE]");
         printStackTrace("FLAG_SECURE");
+    }
+
+    public static <T> T randomOf(ArrayList<T> arrayList) {
+        if (arrayList.isEmpty()) {
+            return null;
+        }
+        return arrayList.get(Math.abs(Utilities.fastRandom.nextInt() % arrayList.size()));
     }
 }

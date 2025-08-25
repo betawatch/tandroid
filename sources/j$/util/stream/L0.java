@@ -1,48 +1,77 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
-import j$.util.function.BinaryOperator;
-import j$.util.function.LongFunction;
-import java.util.concurrent.CountedCompleter;
+import j$.util.Spliterators;
+import java.util.Arrays;
+import java.util.function.Consumer;
+import java.util.function.IntFunction;
 
 /* loaded from: classes2.dex */
-class L0 extends e {
-    protected final b h;
-    protected final LongFunction i;
-    protected final BinaryOperator j;
+class L0 implements I0 {
+    final Object[] a;
+    int b;
 
-    @Override // j$.util.stream.e, java.util.concurrent.CountedCompleter
-    public final void onCompletion(CountedCompleter countedCompleter) {
-        e eVar = this.d;
-        if (eVar != null) {
-            e((F0) this.j.apply((F0) ((L0) eVar).b(), (F0) ((L0) this.e).b()));
+    @Override // j$.util.stream.I0
+    public final /* synthetic */ I0 h(long j, long j2, IntFunction intFunction) {
+        return w0.w(this, j, j2, intFunction);
+    }
+
+    @Override // j$.util.stream.I0
+    public final /* synthetic */ int q() {
+        return 0;
+    }
+
+    @Override // j$.util.stream.I0
+    public final I0 b(int i) {
+        throw new IndexOutOfBoundsException();
+    }
+
+    L0(long j, IntFunction intFunction) {
+        if (j >= 2147483639) {
+            throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        super.onCompletion(countedCompleter);
+        this.a = (Object[]) intFunction.apply((int) j);
+        this.b = 0;
     }
 
-    L0(b bVar, Spliterator spliterator, LongFunction longFunction, BinaryOperator binaryOperator) {
-        super(bVar, spliterator);
-        this.h = bVar;
-        this.i = longFunction;
-        this.j = binaryOperator;
+    L0(Object[] objArr) {
+        this.a = objArr;
+        this.b = objArr.length;
     }
 
-    L0(L0 l0, Spliterator spliterator) {
-        super(l0, spliterator);
-        this.h = l0.h;
-        this.i = l0.i;
-        this.j = l0.j;
+    @Override // j$.util.stream.I0
+    public final Spliterator spliterator() {
+        return Spliterators.m(this.a, 0, this.b);
     }
 
-    @Override // j$.util.stream.e
-    protected final e d(Spliterator spliterator) {
-        return new L0(this, spliterator);
+    @Override // j$.util.stream.I0
+    public final void i(Object[] objArr, int i) {
+        System.arraycopy(this.a, 0, objArr, i, this.b);
     }
 
-    @Override // j$.util.stream.e
-    protected final Object a() {
-        x0 x0Var = (x0) this.i.apply(this.h.l0(this.b));
-        this.h.A0(this.b, x0Var);
-        return x0Var.b();
+    @Override // j$.util.stream.I0
+    public final Object[] o(IntFunction intFunction) {
+        Object[] objArr = this.a;
+        if (objArr.length == this.b) {
+            return objArr;
+        }
+        throw new IllegalStateException();
+    }
+
+    @Override // j$.util.stream.I0
+    public final long count() {
+        return this.b;
+    }
+
+    @Override // j$.util.stream.I0
+    public final void forEach(Consumer consumer) {
+        for (int i = 0; i < this.b; i++) {
+            consumer.p(this.a[i]);
+        }
+    }
+
+    public String toString() {
+        Object[] objArr = this.a;
+        return String.format("ArrayNode[%d][%s]", Integer.valueOf(objArr.length - this.b), Arrays.toString(objArr));
     }
 }
