@@ -2517,8 +2517,14 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         if (i >= playlist.size()) {
             i = 0;
         }
+        if (i <= -1) {
+            i = playlist.size() - 1;
+        }
         if (i2 <= -1) {
             i2 = playlist.size() - 1;
+        }
+        if (i2 >= playlist.size()) {
+            i2 = 0;
         }
         arrayList.add(playlist.get(i));
         if (i != i2) {
@@ -2679,12 +2685,12 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
                 messageObject = (MessageObject) this.searchResult.get(i);
             }
             audioPlayerCell.setBackgroundColor(Theme.getColor(Theme.key_dialogBackground, ((BottomSheet) AudioPlayerAlert.this).resourcesProvider));
-            audioPlayerCell.setMessageObject(messageObject, AudioPlayerAlert.this.isMyList(), (!AudioPlayerAlert.this.isMyList() || (AudioPlayerAlert.this.noforwards && messageObject.getId() <= 0)) ? new View.OnClickListener() { // from class: org.telegram.ui.Components.AudioPlayerAlert$ListAdapter$$ExternalSyntheticLambda4
+            audioPlayerCell.setMessageObject(messageObject, AudioPlayerAlert.this.isMyList(), (AudioPlayerAlert.this.isMyList() || !AudioPlayerAlert.this.noforwards || messageObject.getId() > 0) ? null : new View.OnClickListener() { // from class: org.telegram.ui.Components.AudioPlayerAlert$ListAdapter$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     AudioPlayerAlert.ListAdapter.this.lambda$onBindViewHolder$3(audioPlayerCell, messageObject, view);
                 }
-            } : null, z);
+            }, z);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -3208,7 +3214,9 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
                     ItemOptions.this.openSwipeback(makeSwipeback);
                 }
             });
-            makeOptions.getLast().setRightIcon(R.drawable.msg_arrowright);
+            if (!this.noforwards && makeOptions.getLast() != null) {
+                makeOptions.getLast().setRightIcon(R.drawable.msg_arrowright);
+            }
             makeOptions.addGap();
             makeOptions.addIf(!this.noforwards, R.drawable.msg_forward, LocaleController.getString(R.string.Forward), new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda31
                 @Override // java.lang.Runnable
