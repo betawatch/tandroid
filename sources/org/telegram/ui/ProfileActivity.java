@@ -15073,22 +15073,23 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         return Theme.changeColorAccent(getThemedColor(Theme.key_windowBackgroundWhiteBlueIcon), bgColor2, i, Theme.isCurrentThemeDark(), bgColor2);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:102:0x0792  */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x07a9  */
-    /* JADX WARN: Removed duplicated region for block: B:108:0x05b7  */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x07a1  */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x07b8  */
+    /* JADX WARN: Removed duplicated region for block: B:108:0x05c6  */
     /* JADX WARN: Removed duplicated region for block: B:163:0x02cc  */
-    /* JADX WARN: Removed duplicated region for block: B:247:0x03c7  */
-    /* JADX WARN: Removed duplicated region for block: B:275:0x056e  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x058d  */
-    /* JADX WARN: Removed duplicated region for block: B:317:0x03c9  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x05d0  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x05d7  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x05ee  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0613  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x06ab  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x075a  */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x0764  */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x077b  */
+    /* JADX WARN: Removed duplicated region for block: B:248:0x03c7  */
+    /* JADX WARN: Removed duplicated region for block: B:279:0x057d  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x059c  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x05df  */
+    /* JADX WARN: Removed duplicated region for block: B:322:0x03c9  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x05e6  */
+    /* JADX WARN: Removed duplicated region for block: B:353:0x0535  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x05fd  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0622  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x06ba  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x0769  */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x0773  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x078a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -15099,8 +15100,8 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         boolean z5;
         boolean z6;
         boolean z7;
-        TLRPC.ChatFull chatFull;
         boolean z8;
+        TLRPC.ChatFull chatFull;
         boolean z9;
         boolean z10;
         boolean z11;
@@ -15109,12 +15110,13 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         boolean z14;
         boolean z15;
         TLRPC.TL_chatAdminRights tL_chatAdminRights;
-        TLRPC.ChatFull chatFull2;
         boolean z16;
+        TLRPC.ChatFull chatFull2;
+        boolean z17;
         ProfileActionsView profileActionsView;
         PagerIndicatorView pagerIndicatorView;
         SharedMediaLayout sharedMediaLayout;
-        boolean z17;
+        boolean z18;
         long j;
         ActionBar actionBar = this.actionBar;
         if (actionBar == null || this.otherItem == null) {
@@ -15156,10 +15158,10 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 z3 = false;
                 z4 = false;
                 z5 = false;
-                z10 = false;
                 z7 = false;
-                z9 = false;
-                z16 = true;
+                z8 = false;
+                z10 = false;
+                z17 = true;
                 if (this.imageUpdater == null) {
                     this.otherItem.addSubItem(33, R.drawable.msg_openprofile, LocaleController.getString(R.string.SetAsMain));
                     this.otherItem.addSubItem(21, R.drawable.msg_gallery, LocaleController.getString(R.string.SaveToGallery));
@@ -15170,7 +15172,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 if (getMessagesController().isChatNoForwards(this.currentChat)) {
                     this.otherItem.hideSubItem(21);
                 }
-                if (z16 && !this.myProfile) {
+                if (z17 && !this.myProfile) {
                     this.otherItem.addSubItem(31, R.drawable.msg_leave, LocaleController.getString(R.string.LogOut));
                 }
                 if (!this.isPulledDown) {
@@ -15187,15 +15189,15 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     this.actionsView.set(4, z2);
                     this.actionsView.set(5, this.callItemVisible);
                     this.actionsView.set(6, this.videoCallItemVisible);
-                    this.actionsView.set(2, z9);
+                    this.actionsView.set(2, z10);
                     this.actionsView.set(9, z4);
-                    this.actionsView.set(12, z10);
-                    this.actionsView.set(10, z7);
-                    this.actionsView.set(11, z3);
+                    this.actionsView.set(12, z7);
+                    this.actionsView.set(10, z3);
+                    this.actionsView.set(11, z8);
                     this.actionsView.set(3, z5);
                     this.videoCallItemVisible = false;
                     this.callItemVisible = false;
-                    if (!z9) {
+                    if (!z10) {
                         if (this.isTopic) {
                             this.actionsView.set(0, true);
                         } else if (this.chatId != 0) {
@@ -15319,27 +15321,27 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                         j = this.userId;
                         if (j != 333000 && j != 777000 && j != 42777) {
                             if (!BuildVars.IS_BILLING_UNAVAILABLE || user.self || user.bot || MessagesController.isSupportUser(user) || getMessagesController().premiumPurchaseBlocked()) {
-                                z17 = false;
+                                z18 = false;
                             } else {
                                 StarsController.getInstance(this.currentAccount).loadStarGifts();
                                 this.otherItem.addSubItem(38, R.drawable.msg_gift_premium, LocaleController.getString(R.string.ProfileSendAGift));
-                                z17 = true;
+                                z18 = true;
                             }
                             this.otherItem.addSubItem(20, R.drawable.msg_secret, LocaleController.getString(R.string.StartEncryptedChat));
                             this.otherItem.setSubItemShown(20, DialogObject.isEmpty(getMessagesController().isUserContactBlocked(this.userId)));
                             if (!this.isBot && getContactsController().contactsDict.get(Long.valueOf(this.userId)) != null) {
                                 this.otherItem.addSubItem(14, R.drawable.msg_home, LocaleController.getString(R.string.AddShortcut));
                             }
-                            z5 = z17;
+                            z5 = z18;
                             z3 = false;
                             z4 = false;
                         }
                     }
-                    z17 = false;
+                    z18 = false;
                     if (!this.isBot) {
                         this.otherItem.addSubItem(14, R.drawable.msg_home, LocaleController.getString(R.string.AddShortcut));
                     }
-                    z5 = z17;
+                    z5 = z18;
                     z3 = false;
                     z4 = false;
                 }
@@ -15360,20 +15362,20 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 if (j != 333000) {
                     if (BuildVars.IS_BILLING_UNAVAILABLE) {
                     }
-                    z17 = false;
+                    z18 = false;
                     this.otherItem.addSubItem(20, R.drawable.msg_secret, LocaleController.getString(R.string.StartEncryptedChat));
                     this.otherItem.setSubItemShown(20, DialogObject.isEmpty(getMessagesController().isUserContactBlocked(this.userId)));
                     if (!this.isBot) {
                     }
-                    z5 = z17;
+                    z5 = z18;
                     z3 = false;
                     z4 = false;
                 }
             }
-            z17 = false;
+            z18 = false;
             if (!this.isBot) {
             }
-            z5 = z17;
+            z5 = z18;
             z3 = false;
             z4 = false;
         } else {
@@ -15396,25 +15398,30 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                             this.otherItem.addSubItem(15, R.drawable.msg_voicechat, LocaleController.getString((!chat2.megagroup || chat2.gigagroup) ? R.string.StartVoipChannel : R.string.StartVoipChat));
                             this.hasVoiceChatItem = true;
                             if (!chat2.megagroup || chat2.gigagroup) {
-                                z11 = true;
-                            } else {
-                                z11 = false;
+                                z16 = false;
                                 z12 = true;
                                 chatFull2 = this.chatInfo;
                                 if ((!chatFull2.can_view_stats || chatFull2.can_view_revenue || chatFull2.can_view_stars_revenue || getMessagesController().getStoriesController().canPostStories(getDialogId())) && this.topicId == 0) {
                                     this.otherItem.addSubItem(19, R.drawable.msg_stats, LocaleController.getString(R.string.Statistics));
                                 }
-                                this.callItemVisible = getMessagesController().getGroupCall(this.chatId, false) == null;
+                                ChatObject.Call groupCall = getMessagesController().getGroupCall(this.chatId, false);
+                                this.callItemVisible = groupCall == null;
+                                z11 = groupCall == null || z16;
+                            } else {
+                                z16 = true;
                             }
                         } else {
-                            z11 = false;
+                            z16 = false;
                         }
                         z12 = false;
                         chatFull2 = this.chatInfo;
                         if (!chatFull2.can_view_stats) {
                         }
                         this.otherItem.addSubItem(19, R.drawable.msg_stats, LocaleController.getString(R.string.Statistics));
-                        this.callItemVisible = getMessagesController().getGroupCall(this.chatId, false) == null;
+                        ChatObject.Call groupCall2 = getMessagesController().getGroupCall(this.chatId, false);
+                        this.callItemVisible = groupCall2 == null;
+                        if (groupCall2 == null) {
+                        }
                     } else {
                         z11 = false;
                         z12 = false;
@@ -15435,8 +15442,10 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                             this.otherItem.addSubItem(23, R.drawable.msg_delete, LocaleController.getPluralString("DeleteTopics", 1));
                         }
                         z3 = z11;
-                        z7 = z12;
+                        z8 = z12;
                         z2 = false;
+                        z5 = false;
+                        z7 = false;
                     } else {
                         if (chat2.creator || ((tL_chatAdminRights = chat2.admin_rights) != null && tL_chatAdminRights.edit_stories)) {
                             this.otherItem.addSubItem(39, R.drawable.msg_archive, LocaleController.getString(R.string.OpenChannelArchiveStories));
@@ -15469,29 +15478,29 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                         }
                         TLRPC.Chat chat3 = this.currentChat;
                         if (chat3.creator || chat3.left || chat3.kicked) {
-                            z9 = z15;
-                            z7 = z12;
-                            z10 = z13;
+                            z10 = z15;
+                            z8 = z12;
+                            z7 = z13;
                             z4 = false;
                         } else {
                             this.otherItem.addSubItem(7, R.drawable.msg_leave, LocaleController.getString(R.string.LeaveChannelMenu));
-                            z9 = z15;
-                            z7 = z12;
-                            z10 = z13;
+                            z10 = z15;
+                            z8 = z12;
+                            z7 = z13;
                             z4 = true;
                         }
-                        boolean z18 = z14;
+                        boolean z19 = z14;
                         z3 = z11;
-                        z2 = z18;
+                        z2 = z19;
                         if (this.topicId == 0) {
                             this.otherItem.addSubItem(14, R.drawable.msg_home, LocaleController.getString(R.string.AddShortcut));
                         }
-                        z16 = false;
+                        z17 = false;
                         if (this.imageUpdater == null) {
                         }
                         if (getMessagesController().isChatNoForwards(this.currentChat)) {
                         }
-                        if (z16) {
+                        if (z17) {
                             this.otherItem.addSubItem(31, R.drawable.msg_leave, LocaleController.getString(R.string.LogOut));
                         }
                         if (!this.isPulledDown) {
@@ -15521,39 +15530,54 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                         if (ChatObject.canManageCalls(chat2) && this.chatInfo.call == null) {
                             this.otherItem.addSubItem(15, R.drawable.msg_voicechat, LocaleController.getString(R.string.StartVoipChat));
                             this.hasVoiceChatItem = true;
-                            z8 = true;
+                            z9 = true;
                         } else {
+                            z9 = false;
+                        }
+                        ChatObject.Call groupCall3 = getMessagesController().getGroupCall(this.chatId, false);
+                        this.callItemVisible = groupCall3 != null;
+                        if (groupCall3 != null || z9) {
+                            z6 = true;
+                            if (ChatObject.canChangeChatInfo(chat2)) {
+                                this.editItemVisible = true;
+                            }
+                            if (!ChatObject.isKickedFromChat(chat2) && !ChatObject.isLeftFromChat(chat2) && ((chatFull = this.chatInfo) == null || !chatFull.participants_hidden || ChatObject.hasAdminRights(chat2))) {
+                                this.canSearchMembers = true;
+                                this.otherItem.addSubItem(17, R.drawable.msg_search, LocaleController.getString(R.string.SearchMembers));
+                            }
+                            this.otherItem.addSubItem(7, R.drawable.msg_leave, LocaleController.getString(R.string.DeleteAndExit));
+                            z3 = z6;
+                            z2 = false;
+                            z4 = true;
+                            z5 = false;
+                            z7 = false;
                             z8 = false;
                         }
-                        this.callItemVisible = getMessagesController().getGroupCall(this.chatId, false) != null;
-                        z6 = z8;
-                    } else {
-                        z6 = false;
                     }
+                    z6 = false;
                     if (ChatObject.canChangeChatInfo(chat2)) {
-                        this.editItemVisible = true;
                     }
-                    if (!ChatObject.isKickedFromChat(chat2) && !ChatObject.isLeftFromChat(chat2) && ((chatFull = this.chatInfo) == null || !chatFull.participants_hidden || ChatObject.hasAdminRights(chat2))) {
+                    if (!ChatObject.isKickedFromChat(chat2)) {
                         this.canSearchMembers = true;
                         this.otherItem.addSubItem(17, R.drawable.msg_search, LocaleController.getString(R.string.SearchMembers));
                     }
                     this.otherItem.addSubItem(7, R.drawable.msg_leave, LocaleController.getString(R.string.DeleteAndExit));
-                    z7 = z6;
+                    z3 = z6;
                     z2 = false;
-                    z3 = false;
                     z4 = true;
+                    z5 = false;
+                    z7 = false;
+                    z8 = false;
                 }
-                z5 = false;
                 z10 = false;
-                z9 = false;
                 if (this.topicId == 0) {
                 }
-                z16 = false;
+                z17 = false;
                 if (this.imageUpdater == null) {
                 }
                 if (getMessagesController().isChatNoForwards(this.currentChat)) {
                 }
-                if (z16) {
+                if (z17) {
                 }
                 if (!this.isPulledDown) {
                 }
@@ -15576,15 +15600,15 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             z4 = false;
             z5 = false;
         }
-        z10 = false;
         z7 = false;
-        z9 = false;
-        z16 = false;
+        z8 = false;
+        z10 = false;
+        z17 = false;
         if (this.imageUpdater == null) {
         }
         if (getMessagesController().isChatNoForwards(this.currentChat)) {
         }
-        if (z16) {
+        if (z17) {
         }
         if (!this.isPulledDown) {
         }
