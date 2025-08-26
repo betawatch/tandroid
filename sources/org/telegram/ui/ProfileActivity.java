@@ -1135,6 +1135,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         public float backgroundGradientY;
         private final Paint backgroundPaint;
         private Rect blurBounds;
+        private int btnColor;
         public int color1;
         private final AnimatedColor color1Animated;
         public int color2;
@@ -1190,8 +1191,10 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 int i = peerColor.patternColor;
                 if (i != 0) {
                     this.emojiColor = i;
+                    this.btnColor = Theme.multAlpha(i, 0.45f);
                 } else {
-                    this.emojiColor = Theme.multAlpha(PeerColorActivity.adaptProfileEmojiColor(this.color1), 0.15f);
+                    this.emojiColor = PeerColorActivity.adaptProfileEmojiColor(this.color1);
+                    this.btnColor = Theme.multAlpha(PeerColorActivity.adaptProfileEmojiColor(this.color1), 0.15f);
                 }
             } else {
                 ProfileActivity.this.actionBarBackgroundColor = this.currentColor;
@@ -1199,11 +1202,16 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 ProfileActivity profileActivity = ProfileActivity.this;
                 int i2 = Theme.key_actionBarDefault;
                 if (AndroidUtilities.computePerceivedBrightness(profileActivity.getThemedColor(i2)) > 0.8f) {
-                    this.emojiColor = Theme.multAlpha(ProfileActivity.this.getThemedColor(Theme.key_windowBackgroundWhiteBlueText), 0.15f);
+                    ProfileActivity profileActivity2 = ProfileActivity.this;
+                    int i3 = Theme.key_windowBackgroundWhiteBlueText;
+                    this.emojiColor = profileActivity2.getThemedColor(i3);
+                    this.btnColor = Theme.multAlpha(ProfileActivity.this.getThemedColor(i3), 0.15f);
                 } else if (AndroidUtilities.computePerceivedBrightness(ProfileActivity.this.getThemedColor(i2)) < 0.2f) {
-                    this.emojiColor = Theme.multAlpha(Theme.adaptHSV(ProfileActivity.this.getThemedColor(i2), 0.02f, 0.25f), 0.35f);
+                    this.emojiColor = Theme.multAlpha(Theme.adaptHSV(ProfileActivity.this.getThemedColor(i2), 0.02f, 0.25f), 0.5f);
+                    this.btnColor = Theme.multAlpha(Theme.adaptHSV(ProfileActivity.this.getThemedColor(i2), 0.02f, 0.25f), 0.35f);
                 } else {
-                    this.emojiColor = Theme.multAlpha(PeerColorActivity.adaptProfileEmojiColor(ProfileActivity.this.getThemedColor(i2)), 0.15f);
+                    this.emojiColor = PeerColorActivity.adaptProfileEmojiColor(ProfileActivity.this.getThemedColor(i2));
+                    this.btnColor = Theme.multAlpha(PeerColorActivity.adaptProfileEmojiColor(ProfileActivity.this.getThemedColor(i2)), 0.15f);
                 }
             }
             if (!z) {
@@ -1259,7 +1267,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 ProfileActivity.this.metaball.setFrameBackgroundColor(ProfileActivity.this.actionBarBackgroundColor);
             }
             if (ProfileActivity.this.actionsView != null) {
-                ProfileActivity.this.actionsView.setActionsColor(this.emojiColor, this.hasColorById);
+                ProfileActivity.this.actionsView.setActionsColor(this.btnColor, this.hasColorById);
             }
             int width = getWidth() / 2;
             if (this.backgroundGradient != null && this.backgroundGradientColor1 == i && this.backgroundGradientColor2 == i2 && this.backgroundGradientX == width) {
