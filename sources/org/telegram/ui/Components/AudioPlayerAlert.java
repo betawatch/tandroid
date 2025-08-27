@@ -2685,7 +2685,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
                 messageObject = (MessageObject) this.searchResult.get(i);
             }
             audioPlayerCell.setBackgroundColor(Theme.getColor(Theme.key_dialogBackground, ((BottomSheet) AudioPlayerAlert.this).resourcesProvider));
-            audioPlayerCell.setMessageObject(messageObject, AudioPlayerAlert.this.isMyList(), (AudioPlayerAlert.this.isMyList() || !AudioPlayerAlert.this.noforwards || messageObject.getId() > 0) ? null : new View.OnClickListener() { // from class: org.telegram.ui.Components.AudioPlayerAlert$ListAdapter$$ExternalSyntheticLambda4
+            audioPlayerCell.setMessageObject(messageObject, AudioPlayerAlert.this.isMyList(), (AudioPlayerAlert.this.isMyList() || AudioPlayerAlert.this.noforwards || messageObject.getId() <= 0) ? null : new View.OnClickListener() { // from class: org.telegram.ui.Components.AudioPlayerAlert$ListAdapter$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     AudioPlayerAlert.ListAdapter.this.lambda$onBindViewHolder$3(audioPlayerCell, messageObject, view);
