@@ -176,7 +176,7 @@ public class SharedPhotoVideoCell extends FrameLayout {
                 this.videoTextView.setText(AndroidUtilities.formatShortDuration((int) messageObject.getDuration()));
                 TLRPC.Document document = messageObject.getDocument();
                 TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 50);
-                TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, NotificationCenter.nearEarEvent);
+                TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, NotificationCenter.onReceivedChannelDifference);
                 photoSize = closestPhotoSizeWithSize != closestPhotoSizeWithSize2 ? closestPhotoSizeWithSize2 : null;
                 if (closestPhotoSizeWithSize != null) {
                     if (messageObject.strippedThumb != null) {
@@ -194,7 +194,7 @@ public class SharedPhotoVideoCell extends FrameLayout {
             if ((messageMedia instanceof TLRPC.TL_messageMediaPhoto) && messageMedia.photo != null && !messageObject.photoThumbs.isEmpty()) {
                 this.videoInfoContainer.setVisibility(4);
                 TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(messageObject.photoThumbs, 50);
-                TLRPC.PhotoSize closestPhotoSizeWithSize4 = FileLoader.getClosestPhotoSizeWithSize(messageObject.photoThumbs, NotificationCenter.nearEarEvent, false, closestPhotoSizeWithSize3, false);
+                TLRPC.PhotoSize closestPhotoSizeWithSize4 = FileLoader.getClosestPhotoSizeWithSize(messageObject.photoThumbs, NotificationCenter.onReceivedChannelDifference, false, closestPhotoSizeWithSize3, false);
                 if (messageObject.mediaExists || DownloadController.getInstance(SharedPhotoVideoCell.this.currentAccount).canDownloadMedia(messageObject)) {
                     photoSize = closestPhotoSizeWithSize4 != closestPhotoSizeWithSize3 ? closestPhotoSizeWithSize3 : null;
                     if (messageObject.strippedThumb != null) {

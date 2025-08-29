@@ -342,7 +342,7 @@ public abstract class SelfStoryViewsPage extends FrameLayout implements Notifica
                 return false;
             }
             boolean z4 = z3;
-            ItemOptions cutTextInFancyHalf = ItemOptions.makeOptions(this.val$storyViewer.containerView, SelfStoryViewsPage.this.resourcesProvider, view).setGravity(3).ignoreX().setScrimViewBackground(new ColorDrawable(Theme.getColor(Theme.key_dialogBackground, SelfStoryViewsPage.this.resourcesProvider))).setDimAlpha(NotificationCenter.httpFileDidFailedLoad).addIf((!isStoryShownToUser || isBlocked || z2 || isUserSelf) ? false : true, R.drawable.msg_stories_myhide, LocaleController.formatString(R.string.StoryHideFrom, str2), new Runnable() { // from class: org.telegram.ui.Stories.SelfStoryViewsPage$4$$ExternalSyntheticLambda0
+            ItemOptions cutTextInFancyHalf = ItemOptions.makeOptions(this.val$storyViewer.containerView, SelfStoryViewsPage.this.resourcesProvider, view).setGravity(3).ignoreX().setScrimViewBackground(new ColorDrawable(Theme.getColor(Theme.key_dialogBackground, SelfStoryViewsPage.this.resourcesProvider))).setDimAlpha(NotificationCenter.walletSyncProgressChanged).addIf((!isStoryShownToUser || isBlocked || z2 || isUserSelf) ? false : true, R.drawable.msg_stories_myhide, LocaleController.formatString(R.string.StoryHideFrom, str2), new Runnable() { // from class: org.telegram.ui.Stories.SelfStoryViewsPage$4$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
                     SelfStoryViewsPage.4.this.lambda$onItemClick$0(messagesController, user, str2, reactedUserHolderView, storyView);

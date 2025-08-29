@@ -752,10 +752,10 @@ public class AvatarConstructorFragment extends BaseFragment {
 
     public void startFrom(TLRPC.VideoSize videoSize) {
         BackgroundGradient backgroundGradient = new BackgroundGradient();
-        backgroundGradient.color1 = ColorUtils.setAlphaComponent(videoSize.background_colors.get(0).intValue(), NotificationCenter.needCheckSystemBarColors);
-        backgroundGradient.color2 = videoSize.background_colors.size() > 1 ? ColorUtils.setAlphaComponent(videoSize.background_colors.get(1).intValue(), NotificationCenter.needCheckSystemBarColors) : 0;
-        backgroundGradient.color3 = videoSize.background_colors.size() > 2 ? ColorUtils.setAlphaComponent(videoSize.background_colors.get(2).intValue(), NotificationCenter.needCheckSystemBarColors) : 0;
-        backgroundGradient.color4 = videoSize.background_colors.size() > 3 ? ColorUtils.setAlphaComponent(videoSize.background_colors.get(3).intValue(), NotificationCenter.needCheckSystemBarColors) : 0;
+        backgroundGradient.color1 = ColorUtils.setAlphaComponent(videoSize.background_colors.get(0).intValue(), NotificationCenter.didApplyNewTheme);
+        backgroundGradient.color2 = videoSize.background_colors.size() > 1 ? ColorUtils.setAlphaComponent(videoSize.background_colors.get(1).intValue(), NotificationCenter.didApplyNewTheme) : 0;
+        backgroundGradient.color3 = videoSize.background_colors.size() > 2 ? ColorUtils.setAlphaComponent(videoSize.background_colors.get(2).intValue(), NotificationCenter.didApplyNewTheme) : 0;
+        backgroundGradient.color4 = videoSize.background_colors.size() > 3 ? ColorUtils.setAlphaComponent(videoSize.background_colors.get(3).intValue(), NotificationCenter.didApplyNewTheme) : 0;
         this.previewView.setGradient(backgroundGradient, false);
         updateButton();
         TLRPC.Document document = null;
@@ -889,7 +889,7 @@ public class AvatarConstructorFragment extends BaseFragment {
                     float f6 = this.size;
                     float f7 = this.cy;
                     gradientTools2.setBounds(f5 - f6, f7 - f6, f5 + f6, f7 + f6);
-                    this.outGradientTools.paint.setAlpha(NotificationCenter.needCheckSystemBarColors);
+                    this.outGradientTools.paint.setAlpha(NotificationCenter.didApplyNewTheme);
                     float f8 = measuredWidth;
                     drawBackround(canvas, this.cx, this.cy, f8, this.size, this.outGradientTools.paint);
                     this.gradientTools.paint.setAlpha((int) (this.changeBackgroundProgress * 255.0f));
@@ -901,7 +901,7 @@ public class AvatarConstructorFragment extends BaseFragment {
                     }
                     invalidate();
                 } else {
-                    this.gradientTools.paint.setAlpha(NotificationCenter.needCheckSystemBarColors);
+                    this.gradientTools.paint.setAlpha(NotificationCenter.didApplyNewTheme);
                     drawBackround(canvas, this.cx, this.cy, measuredWidth, this.size, this.gradientTools.paint);
                 }
             }
@@ -1001,7 +1001,7 @@ public class AvatarConstructorFragment extends BaseFragment {
         public BackgroundSelectView(Context context) {
             super(context);
             this.gradients = new ArrayList();
-            this.stableIdPointer = NotificationCenter.savedMessagesForwarded;
+            this.stableIdPointer = NotificationCenter.userIsPremiumBlockedUpadted;
             this.selectedItemId = -1;
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
             linearLayoutManager.setOrientation(0);

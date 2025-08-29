@@ -92,7 +92,7 @@ public class GroupCallPipAlertView extends LinearLayout implements VoIPService.S
         this.invalidateGradient = true;
         setOrientation(1);
         this.currentAccount = i;
-        this.paint.setAlpha(NotificationCenter.commonChatsLoaded);
+        this.paint.setAlpha(NotificationCenter.adminedChannelsLoaded);
         FrameLayout frameLayout = new FrameLayout(context) { // from class: org.telegram.ui.Components.GroupCallPipAlertView.1
             @Override // android.view.View
             public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
@@ -131,7 +131,7 @@ public class GroupCallPipAlertView extends LinearLayout implements VoIPService.S
         TextView textView2 = new TextView(context);
         this.subtitleView = textView2;
         textView2.setTextSize(12.0f);
-        this.subtitleView.setTextColor(ColorUtils.setAlphaComponent(-1, NotificationCenter.recordStartError));
+        this.subtitleView.setTextColor(ColorUtils.setAlphaComponent(-1, NotificationCenter.recordProgressChanged));
         linearLayout.addView(this.subtitleView, LayoutHelper.createLinear(-1, -2));
         this.groupInfoContainer.addView(linearLayout, LayoutHelper.createFrame(-1, -2.0f, 16, 55.0f, 0.0f, 0.0f, 0.0f));
         addView(this.groupInfoContainer, LayoutHelper.createLinear(-1, -2, 0, 10, 10, 10, 10));

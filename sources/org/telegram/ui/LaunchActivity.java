@@ -7436,7 +7436,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     Bitmap snapshotView = AndroidUtilities.snapshotView(this.drawerLayoutContainer);
                     View view2 = this.rippleAbove;
                     if (view2 != null && view2.getBackground() != null) {
-                        this.rippleAbove.getBackground().setAlpha(NotificationCenter.needCheckSystemBarColors);
+                        this.rippleAbove.getBackground().setAlpha(NotificationCenter.didApplyNewTheme);
                     }
                     this.frameLayout.removeView(this.themeSwitchImageView);
                     ImageView imageView = new ImageView(this);
@@ -7579,7 +7579,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             }
             if (i == NotificationCenter.needShowPlayServicesAlert) {
                 try {
-                    ((Status) objArr[0]).startResolutionForResult(this, NotificationCenter.fileLoadFailed);
+                    ((Status) objArr[0]).startResolutionForResult(this, NotificationCenter.fileLoadProgressChanged);
                     return;
                 } catch (Throwable unused2) {
                     return;

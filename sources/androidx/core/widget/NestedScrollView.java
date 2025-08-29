@@ -403,7 +403,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
     public boolean executeKeyEvent(KeyEvent keyEvent) {
         this.mTempRect.setEmpty();
         boolean canScroll = canScroll();
-        int i = NotificationCenter.walletPendingTransactionsChanged;
+        int i = NotificationCenter.dialogTranslate;
         if (!canScroll) {
             if (!isFocused() || keyEvent.getKeyCode() == 4) {
                 return false;
@@ -412,8 +412,8 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
             if (findFocus == this) {
                 findFocus = null;
             }
-            View findNextFocus = FocusFinder.getInstance().findNextFocus(this, findFocus, NotificationCenter.walletPendingTransactionsChanged);
-            return (findNextFocus == null || findNextFocus == this || !findNextFocus.requestFocus(NotificationCenter.walletPendingTransactionsChanged)) ? false : true;
+            View findNextFocus = FocusFinder.getInstance().findNextFocus(this, findFocus, NotificationCenter.dialogTranslate);
+            return (findNextFocus == null || findNextFocus == this || !findNextFocus.requestFocus(NotificationCenter.dialogTranslate)) ? false : true;
         }
         if (keyEvent.getAction() != 0) {
             return false;
@@ -427,9 +427,9 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
         }
         if (keyCode == 20) {
             if (!keyEvent.isAltPressed()) {
-                return arrowScroll(NotificationCenter.walletPendingTransactionsChanged);
+                return arrowScroll(NotificationCenter.dialogTranslate);
             }
-            return fullScroll(NotificationCenter.walletPendingTransactionsChanged);
+            return fullScroll(NotificationCenter.dialogTranslate);
         }
         if (keyCode != 62) {
             return false;
@@ -488,7 +488,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
         if (action == 2 && this.mIsBeingDragged) {
             return true;
         }
-        int i = action & NotificationCenter.needCheckSystemBarColors;
+        int i = action & NotificationCenter.didApplyNewTheme;
         if (i == 0) {
             int y = (int) motionEvent.getY();
             if (!inChild((int) motionEvent.getX(), y)) {
@@ -1314,7 +1314,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
     protected boolean onRequestFocusInDescendants(int i, Rect rect) {
         View findNextFocusFromRect;
         if (i == 2) {
-            i = NotificationCenter.walletPendingTransactionsChanged;
+            i = NotificationCenter.dialogTranslate;
         } else if (i == 1) {
             i = 33;
         }

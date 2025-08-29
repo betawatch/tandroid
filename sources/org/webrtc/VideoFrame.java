@@ -119,14 +119,14 @@ public class VideoFrame implements RefCounted {
     }
 
     public int getRotatedWidth() {
-        if (this.rotation % NotificationCenter.suggestedFiltersLoaded == 0) {
+        if (this.rotation % NotificationCenter.dialogFiltersUpdated == 0) {
             return this.buffer.getWidth();
         }
         return this.buffer.getHeight();
     }
 
     public int getRotatedHeight() {
-        if (this.rotation % NotificationCenter.suggestedFiltersLoaded == 0) {
+        if (this.rotation % NotificationCenter.dialogFiltersUpdated == 0) {
             return this.buffer.getHeight();
         }
         return this.buffer.getWidth();

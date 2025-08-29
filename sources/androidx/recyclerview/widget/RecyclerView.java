@@ -1598,7 +1598,7 @@ public abstract class RecyclerView extends ViewGroup {
         FocusFinder focusFinder = FocusFinder.getInstance();
         if (z2 && (i == 2 || i == 1)) {
             if (this.mLayout.canScrollVertically()) {
-                int i2 = i == 2 ? NotificationCenter.walletPendingTransactionsChanged : 33;
+                int i2 = i == 2 ? NotificationCenter.dialogTranslate : 33;
                 z = focusFinder.findNextFocus(this, view, i2) == null;
                 if (FORCE_ABS_FOCUS_SEARCH_DIRECTION) {
                     i = i2;

@@ -293,7 +293,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
             this.parentActivity = (Activity) context;
         }
         cellFlickerDrawable.drawFrame = false;
-        cellFlickerDrawable.setColors(i, NotificationCenter.recordStartError, NotificationCenter.openBoostForUsersDialog);
+        cellFlickerDrawable.setColors(i, NotificationCenter.recordProgressChanged, NotificationCenter.smsJobStatusUpdate);
         BackupImageView backupImageView = new BackupImageView(context) { // from class: org.telegram.ui.web.BotWebViewContainer.1
             {
                 this.imageReceiver = new 1(this);
@@ -616,7 +616,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
     }
 
     public void updateFlickerBackgroundColor(int i) {
-        this.flickerDrawable.setColors(i, NotificationCenter.recordStartError, NotificationCenter.openBoostForUsersDialog);
+        this.flickerDrawable.setColors(i, NotificationCenter.recordProgressChanged, NotificationCenter.smsJobStatusUpdate);
     }
 
     public boolean onBackPressed() {

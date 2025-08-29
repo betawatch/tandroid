@@ -490,7 +490,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         CustomPhoneKeyboardView customPhoneKeyboardView = new CustomPhoneKeyboardView(context);
         this.keyboardView = customPhoneKeyboardView;
         customPhoneKeyboardView.setViewToFindFocus(this.slideViewsContainer);
-        this.keyboardLinearLayout.addView(this.keyboardView, LayoutHelper.createLinear(-1, NotificationCenter.channelSuggestedBotsUpdate));
+        this.keyboardLinearLayout.addView(this.keyboardView, LayoutHelper.createLinear(-1, NotificationCenter.updateStories));
         this.views[0] = new PhoneView(context);
         this.views[1] = new LoginActivitySmsView(context, 1);
         this.views[2] = new LoginActivitySmsView(context, 2);
@@ -1445,7 +1445,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             timeInterpolator = null;
         } else if (z) {
             timeInterpolator = AndroidUtilities.decelerateInterpolator;
-            i3 = NotificationCenter.savedMessagesForwarded;
+            i3 = NotificationCenter.userIsPremiumBlockedUpadted;
         } else {
             timeInterpolator = AndroidUtilities.accelerateInterpolator;
         }
@@ -6527,7 +6527,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     this.codeField.setMaxLines(1);
                     int dp = AndroidUtilities.dp(16.0f);
                     this.codeField.setPadding(dp, dp, dp, dp);
-                    this.codeField.setInputType(NotificationCenter.didGenerateFingerprintKeyPair);
+                    this.codeField.setInputType(NotificationCenter.dialogIsTranslatable);
                     this.codeField.setTransformationMethod(PasswordTransformationMethod.getInstance());
                     this.codeField.setTypeface(Typeface.DEFAULT);
                     this.codeField.setGravity(!LocaleController.isRTL ? 5 : 3);
@@ -6598,7 +6598,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.codeField.setMaxLines(1);
             int dp2 = AndroidUtilities.dp(16.0f);
             this.codeField.setPadding(dp2, dp2, dp2, dp2);
-            this.codeField.setInputType(NotificationCenter.didGenerateFingerprintKeyPair);
+            this.codeField.setInputType(NotificationCenter.dialogIsTranslatable);
             this.codeField.setTransformationMethod(PasswordTransformationMethod.getInstance());
             this.codeField.setTypeface(Typeface.DEFAULT);
             this.codeField.setGravity(!LocaleController.isRTL ? 5 : 3);
@@ -7502,7 +7502,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             if (LoginActivity.this.getParentActivity() == null || LoginActivity.this.getParentActivity().isFinishing()) {
                 return;
             }
-            LoginActivity.this.getParentActivity().startActivityForResult(googleSignInClient.getSignInIntent(), NotificationCenter.savedMessagesForwarded);
+            LoginActivity.this.getParentActivity().startActivityForResult(googleSignInClient.getSignInIntent(), NotificationCenter.userIsPremiumBlockedUpadted);
         }
 
         @Override // org.telegram.ui.Components.SlideView
@@ -8201,7 +8201,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             if (LoginActivity.this.getParentActivity() == null) {
                 return;
             }
-            LoginActivity.this.getParentActivity().startActivityForResult(googleSignInClient.getSignInIntent(), NotificationCenter.savedMessagesForwarded);
+            LoginActivity.this.getParentActivity().startActivityForResult(googleSignInClient.getSignInIntent(), NotificationCenter.userIsPremiumBlockedUpadted);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -9530,7 +9530,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 int dp = AndroidUtilities.dp(16.0f);
                 this.codeField[i5].setPadding(dp, dp, dp, dp);
                 if (i == 0) {
-                    this.codeField[i5].setInputType(NotificationCenter.didGenerateFingerprintKeyPair);
+                    this.codeField[i5].setInputType(NotificationCenter.dialogIsTranslatable);
                     this.codeField[i5].setTransformationMethod(PasswordTransformationMethod.getInstance());
                 }
                 this.codeField[i5].setTypeface(Typeface.DEFAULT);
@@ -9643,7 +9643,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 }
                 int selectionStart = editTextBoldCursorArr[i].getSelectionStart();
                 int selectionEnd = this.codeField[i].getSelectionEnd();
-                this.codeField[i].setInputType((this.isPasswordVisible ? NotificationCenter.dialogsUnreadCounterChanged : 128) | 1);
+                this.codeField[i].setInputType((this.isPasswordVisible ? NotificationCenter.fileNewChunkAvailable : 128) | 1);
                 this.codeField[i].setSelection(selectionStart, selectionEnd);
                 i++;
             }
@@ -12752,7 +12752,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             FrameLayout frameLayout = new FrameLayout(context);
             frameLayout.setClipChildren(false);
             frameLayout.setClipToPadding(false);
-            addView(frameLayout, LayoutHelper.createLinear(-1, NotificationCenter.savedMessagesForwarded));
+            addView(frameLayout, LayoutHelper.createLinear(-1, NotificationCenter.userIsPremiumBlockedUpadted));
             StarParticlesView starParticlesView = new StarParticlesView(context) { // from class: org.telegram.ui.LoginActivity.LoginPayView.1
                 @Override // org.telegram.ui.Components.Premium.StarParticlesView, android.view.View
                 protected void onMeasure(int i, int i2) {
@@ -12779,7 +12779,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 }
             };
             this.starParticlesView = starParticlesView;
-            frameLayout.addView(starParticlesView, LayoutHelper.createFrame(-1, NotificationCenter.savedMessagesForwarded, 119));
+            frameLayout.addView(starParticlesView, LayoutHelper.createFrame(-1, NotificationCenter.userIsPremiumBlockedUpadted, 119));
             ImageView imageView = new ImageView(context);
             this.optionsButton = imageView;
             imageView.setImageResource(org.telegram.messenger.R.drawable.ic_ab_other);
@@ -12812,7 +12812,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             gLIconRenderer.colorKey1 = i2;
             gLIconRenderer.colorKey2 = Theme.key_premiumGradient1;
             gLIconRenderer.updateColors();
-            frameLayout.addView(gLIconTextureView, LayoutHelper.createFrame(NotificationCenter.audioRecordTooShort, NotificationCenter.audioRecordTooShort, 1));
+            frameLayout.addView(gLIconTextureView, LayoutHelper.createFrame(NotificationCenter.albumsDidLoad, NotificationCenter.albumsDidLoad, 1));
             TextView textView = new TextView(context);
             textView.setText(LocaleController.getString(org.telegram.messenger.R.string.SMSFeeTitle));
             textView.setTextColor(Theme.getColor(i));

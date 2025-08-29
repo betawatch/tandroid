@@ -319,7 +319,7 @@ public class CompoundEmoji {
                     i = paint2.getAlpha();
                     paint2.setAlpha((int) (i * f));
                 } else {
-                    i = NotificationCenter.needCheckSystemBarColors;
+                    i = NotificationCenter.didApplyNewTheme;
                 }
                 canvas.drawBitmap(bitmap, (Rect) null, rect2, paint2);
                 if (f < 1.0f) {

@@ -270,7 +270,7 @@ public final class ZoneOffset extends ZoneId implements j$.time.temporal.o, j$.t
 
     final void L(DataOutput dataOutput) {
         int i = this.b;
-        int i2 = i % 900 == 0 ? i / 900 : NotificationCenter.dialogIsTranslatable;
+        int i2 = i % 900 == 0 ? i / 900 : NotificationCenter.messageTranslated;
         dataOutput.writeByte(i2);
         if (i2 == 127) {
             dataOutput.writeInt(i);

@@ -69,7 +69,7 @@ public class GoogleSignatureVerifier {
             }
             if ("com.android.vending".equals(packageInfo.packageName) || "com.google.android.gms".equals(packageInfo.packageName)) {
                 ApplicationInfo applicationInfo = packageInfo.applicationInfo;
-                z = (applicationInfo == null || (applicationInfo.flags & NotificationCenter.didGenerateFingerprintKeyPair) == 0) ? false : true;
+                z = (applicationInfo == null || (applicationInfo.flags & NotificationCenter.dialogIsTranslatable) == 0) ? false : true;
             }
         }
         packageInfo2 = packageInfo;

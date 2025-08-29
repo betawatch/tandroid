@@ -113,7 +113,7 @@ public abstract class SelectorSearchCell extends ScrollView {
                     SelectorSearchCell.this.currentDeletingSpan = null;
                 }
                 if (motionEvent.getAction() == 0 && !AndroidUtilities.showKeyboard(this)) {
-                    SelectorSearchCell.this.fullScroll(NotificationCenter.walletPendingTransactionsChanged);
+                    SelectorSearchCell.this.fullScroll(NotificationCenter.dialogTranslate);
                     clearFocus();
                     requestFocus();
                 }
@@ -268,7 +268,7 @@ public abstract class SelectorSearchCell extends ScrollView {
     @Override // android.view.ViewGroup, android.view.View
     protected void dispatchDraw(Canvas canvas) {
         float scrollY = getScrollY();
-        canvas.saveLayerAlpha(0.0f, scrollY, getWidth(), getHeight() + r0, NotificationCenter.needCheckSystemBarColors, 31);
+        canvas.saveLayerAlpha(0.0f, scrollY, getWidth(), getHeight() + r0, NotificationCenter.didApplyNewTheme, 31);
         super.dispatchDraw(canvas);
         canvas.save();
         float f = this.topGradientAlpha.set(canScrollVertically(-1));
@@ -507,7 +507,7 @@ public abstract class SelectorSearchCell extends ScrollView {
                     SelectorSearchCell.this.editText.bringPointIntoView(SelectorSearchCell.this.editText.getSelectionStart());
                 }
                 if (SelectorSearchCell.this.scroll) {
-                    SelectorSearchCell.this.fullScroll(NotificationCenter.walletPendingTransactionsChanged);
+                    SelectorSearchCell.this.fullScroll(NotificationCenter.dialogTranslate);
                     SelectorSearchCell.this.scroll = false;
                 }
             }
@@ -516,7 +516,7 @@ public abstract class SelectorSearchCell extends ScrollView {
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onMeasure$0() {
-            SelectorSearchCell.this.fullScroll(NotificationCenter.walletPendingTransactionsChanged);
+            SelectorSearchCell.this.fullScroll(NotificationCenter.dialogTranslate);
         }
 
         @Override // android.view.ViewGroup, android.view.View
@@ -548,7 +548,7 @@ public abstract class SelectorSearchCell extends ScrollView {
                         SelectorSearchCell.this.updateHeight.run();
                     }
                     if (SelectorSearchCell.this.scroll) {
-                        SelectorSearchCell.this.fullScroll(NotificationCenter.walletPendingTransactionsChanged);
+                        SelectorSearchCell.this.fullScroll(NotificationCenter.dialogTranslate);
                         SelectorSearchCell.this.scroll = false;
                     }
                 }
@@ -594,7 +594,7 @@ public abstract class SelectorSearchCell extends ScrollView {
                             SelectorSearchCell.this.updateHeight.run();
                         }
                         if (SelectorSearchCell.this.scroll) {
-                            SelectorSearchCell.this.fullScroll(NotificationCenter.walletPendingTransactionsChanged);
+                            SelectorSearchCell.this.fullScroll(NotificationCenter.dialogTranslate);
                             SelectorSearchCell.this.scroll = false;
                         }
                     }
@@ -660,7 +660,7 @@ public abstract class SelectorSearchCell extends ScrollView {
                             SelectorSearchCell.this.updateHeight.run();
                         }
                         if (SelectorSearchCell.this.scroll) {
-                            SelectorSearchCell.this.fullScroll(NotificationCenter.walletPendingTransactionsChanged);
+                            SelectorSearchCell.this.fullScroll(NotificationCenter.dialogTranslate);
                             SelectorSearchCell.this.scroll = false;
                         }
                     }

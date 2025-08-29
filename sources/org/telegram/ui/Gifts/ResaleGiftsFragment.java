@@ -1451,7 +1451,7 @@ public class ResaleGiftsFragment extends BaseFragment {
             BackupImageView backupImageView = new BackupImageView(context);
             this.imageView = backupImageView;
             backupImageView.setImageDrawable(new RLottieDrawable(R.raw.utyan_empty, "utyan_empty", AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
-            linearLayout.addView(backupImageView, LayoutHelper.createLinear(NotificationCenter.walletPendingTransactionsChanged, NotificationCenter.walletPendingTransactionsChanged, 17));
+            linearLayout.addView(backupImageView, LayoutHelper.createLinear(NotificationCenter.dialogTranslate, NotificationCenter.dialogTranslate, 17));
             TextView textView = new TextView(context);
             this.titleView = textView;
             textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, resourcesProvider));

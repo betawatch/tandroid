@@ -654,7 +654,7 @@ public class ScrimOptions extends Dialog {
                                     final Paint paint6 = paint;
                                     final Bitmap bitmap2 = bitmap;
                                     this.scrimDrawable = new Drawable() { // from class: org.telegram.ui.Components.ScrimOptions.4
-                                        private int alpha = NotificationCenter.needCheckSystemBarColors;
+                                        private int alpha = NotificationCenter.didApplyNewTheme;
 
                                         @Override // android.graphics.drawable.Drawable
                                         public int getOpacity() {
@@ -775,7 +775,7 @@ public class ScrimOptions extends Dialog {
                             final Paint paint62 = paint;
                             final Bitmap bitmap22 = bitmap;
                             this.scrimDrawable = new Drawable() { // from class: org.telegram.ui.Components.ScrimOptions.4
-                                private int alpha = NotificationCenter.needCheckSystemBarColors;
+                                private int alpha = NotificationCenter.didApplyNewTheme;
 
                                 @Override // android.graphics.drawable.Drawable
                                 public int getOpacity() {

@@ -10838,7 +10838,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                     actionBarMenuSubItem2.setEmojiCacheType(dialogFilter3.title_noanimate ? 26 : 0);
                     actionBarMenuSubItem2.setTextAndIcon(replaceAnimatedEmoji, 0, new FolderDrawable(getContext(), R.drawable.msg_folders, dialogFilter3.color));
                     actionBarMenuSubItem2.getTextView().setEmojiColor(Theme.getColor(Theme.key_featuredStickers_addButton, this.resourceProvider));
-                    actionBarMenuSubItem2.setMinimumWidth(NotificationCenter.audioRecordTooShort);
+                    actionBarMenuSubItem2.setMinimumWidth(NotificationCenter.albumsDidLoad);
                     z5 = z7;
                     scrollView = scrollView3;
                     bundle3 = bundle4;
@@ -10902,7 +10902,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 gapView.setTag(R.id.fit_width_tag, 1);
                 ActionBarMenuSubItem actionBarMenuSubItem3 = new ActionBarMenuSubItem(getParentActivity(), true, false);
                 actionBarMenuSubItem3.setTextAndIcon(LocaleController.getString(R.string.Back), R.drawable.ic_ab_back);
-                actionBarMenuSubItem3.setMinimumWidth(NotificationCenter.audioRecordTooShort);
+                actionBarMenuSubItem3.setMinimumWidth(NotificationCenter.albumsDidLoad);
                 actionBarMenuSubItem3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.DialogsActivity$$ExternalSyntheticLambda32
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -10929,7 +10929,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             final int[] iArr = {actionBarPopupWindowLayout.addViewToSwipeBack(viewGroup)};
             ActionBarMenuSubItem actionBarMenuSubItem4 = new ActionBarMenuSubItem(getParentActivity(), true, false);
             actionBarMenuSubItem4.setTextAndIcon(LocaleController.getString(R.string.FilterAddTo), R.drawable.msg_addfolder);
-            actionBarMenuSubItem4.setMinimumWidth(NotificationCenter.audioRecordTooShort);
+            actionBarMenuSubItem4.setMinimumWidth(NotificationCenter.albumsDidLoad);
             actionBarMenuSubItem4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.DialogsActivity$$ExternalSyntheticLambda33
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -10950,7 +10950,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         } else {
             actionBarMenuSubItem5.setTextAndIcon(LocaleController.getString(R.string.MarkAsUnread), R.drawable.msg_markunread);
         }
-        actionBarMenuSubItem5.setMinimumWidth(NotificationCenter.audioRecordTooShort);
+        actionBarMenuSubItem5.setMinimumWidth(NotificationCenter.albumsDidLoad);
         actionBarMenuSubItem5.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.DialogsActivity$$ExternalSyntheticLambda35
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -11071,7 +11071,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 } else {
                     actionBarMenuSubItem6.setTextAndIcon(LocaleController.getString(R.string.PinMessage), R.drawable.msg_pin);
                 }
-                actionBarMenuSubItem6.setMinimumWidth(NotificationCenter.audioRecordTooShort);
+                actionBarMenuSubItem6.setMinimumWidth(NotificationCenter.albumsDidLoad);
                 actionBarMenuSubItem6.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.DialogsActivity$$ExternalSyntheticLambda36
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -11087,7 +11087,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 } else {
                     actionBarMenuSubItem7.setTextAndIcon(LocaleController.getString(R.string.Unmute), R.drawable.msg_unmute);
                 }
-                actionBarMenuSubItem7.setMinimumWidth(NotificationCenter.audioRecordTooShort);
+                actionBarMenuSubItem7.setMinimumWidth(NotificationCenter.albumsDidLoad);
                 actionBarMenuSubItem7.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.DialogsActivity$$ExternalSyntheticLambda37
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -11105,7 +11105,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             actionBarMenuSubItem8.setTextColor(getThemedColor(i14));
             actionBarMenuSubItem8.setSelectorColor(Theme.multAlpha(getThemedColor(i14), 0.12f));
             actionBarMenuSubItem8.setTextAndIcon(LocaleController.getString(R.string.Delete), R.drawable.msg_delete);
-            actionBarMenuSubItem8.setMinimumWidth(NotificationCenter.audioRecordTooShort);
+            actionBarMenuSubItem8.setMinimumWidth(NotificationCenter.albumsDidLoad);
             final ArrayList arrayList5 = arrayList;
             actionBarMenuSubItem8.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.DialogsActivity$$ExternalSyntheticLambda38
                 @Override // android.view.View.OnClickListener
@@ -11158,7 +11158,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         ActionBarMenuSubItem actionBarMenuSubItem72 = new ActionBarMenuSubItem(getParentActivity(), false, false);
         if (getMessagesController().isDialogMuted(dialogId, 0L)) {
         }
-        actionBarMenuSubItem72.setMinimumWidth(NotificationCenter.audioRecordTooShort);
+        actionBarMenuSubItem72.setMinimumWidth(NotificationCenter.albumsDidLoad);
         actionBarMenuSubItem72.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.DialogsActivity$$ExternalSyntheticLambda37
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -11173,7 +11173,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         actionBarMenuSubItem82.setTextColor(getThemedColor(i142));
         actionBarMenuSubItem82.setSelectorColor(Theme.multAlpha(getThemedColor(i142), 0.12f));
         actionBarMenuSubItem82.setTextAndIcon(LocaleController.getString(R.string.Delete), R.drawable.msg_delete);
-        actionBarMenuSubItem82.setMinimumWidth(NotificationCenter.audioRecordTooShort);
+        actionBarMenuSubItem82.setMinimumWidth(NotificationCenter.albumsDidLoad);
         final ArrayList arrayList52 = arrayList;
         actionBarMenuSubItem82.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.DialogsActivity$$ExternalSyntheticLambda38
             @Override // android.view.View.OnClickListener
@@ -11460,7 +11460,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         Canvas canvas = new Canvas(createBitmap);
         canvas.scale(0.16666667f, 0.16666667f);
         this.fragmentView.draw(canvas);
-        Utilities.stackBlurBitmap(createBitmap, Math.max(7, Math.max(measuredWidth, measuredHeight) / NotificationCenter.suggestedFiltersLoaded));
+        Utilities.stackBlurBitmap(createBitmap, Math.max(7, Math.max(measuredWidth, measuredHeight) / NotificationCenter.dialogFiltersUpdated));
         this.blurredView.setBackground(new BitmapDrawable(createBitmap));
         this.blurredView.setAlpha(0.0f);
         this.blurredView.setVisibility(0);

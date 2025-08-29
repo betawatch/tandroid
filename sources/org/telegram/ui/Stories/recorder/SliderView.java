@@ -158,7 +158,7 @@ public class SliderView extends View {
         path.addRoundRect(rectF, f, f, Path.Direction.CW);
         canvas.clipPath(this.clipPath);
         float f2 = this.valueIsAnimated ? this.valueAnimated.set(this.value) : this.value;
-        canvas.saveLayerAlpha(0.0f, 0.0f, this.w, this.h, NotificationCenter.needCheckSystemBarColors, 31);
+        canvas.saveLayerAlpha(0.0f, 0.0f, this.w, this.h, NotificationCenter.didApplyNewTheme, 31);
         if (this.currentType == 0) {
             this.text.setBounds(AndroidUtilities.dp(42.0f), -AndroidUtilities.dp(1.0f), this.w, this.h - AndroidUtilities.dp(1.0f));
             this.text.draw(canvas);

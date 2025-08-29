@@ -51,11 +51,11 @@ public abstract class MpegAudioUtil {
                 this.bitrate = i8;
                 this.frameSize = (((i8 * 12) / this.sampleRate) + i7) * 4;
             } else {
-                int i9 = NotificationCenter.dialogsUnreadCounterChanged;
+                int i9 = NotificationCenter.fileNewChunkAvailable;
                 if (i2 == 3) {
                     int i10 = i3 == 2 ? MpegAudioUtil.BITRATE_V1_L2[i4 - 1] : MpegAudioUtil.BITRATE_V1_L3[i4 - 1];
                     this.bitrate = i10;
-                    this.frameSize = ((i10 * NotificationCenter.dialogsUnreadCounterChanged) / this.sampleRate) + i7;
+                    this.frameSize = ((i10 * NotificationCenter.fileNewChunkAvailable) / this.sampleRate) + i7;
                 } else {
                     int i11 = MpegAudioUtil.BITRATE_V2[i4 - 1];
                     this.bitrate = i11;
@@ -94,9 +94,9 @@ public abstract class MpegAudioUtil {
         } else {
             i6 = BITRATE_V2[i4 - 1];
         }
-        int i9 = NotificationCenter.dialogsUnreadCounterChanged;
+        int i9 = NotificationCenter.fileNewChunkAvailable;
         if (i2 == 3) {
-            return ((i6 * NotificationCenter.dialogsUnreadCounterChanged) / i7) + i8;
+            return ((i6 * NotificationCenter.fileNewChunkAvailable) / i7) + i8;
         }
         if (i3 == 1) {
             i9 = 72;

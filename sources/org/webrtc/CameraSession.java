@@ -41,12 +41,12 @@ interface CameraSession {
                 return 90;
             }
             if (rotation == 2) {
-                return NotificationCenter.suggestedFiltersLoaded;
+                return NotificationCenter.dialogFiltersUpdated;
             }
             if (rotation != 3) {
                 return 0;
             }
-            return NotificationCenter.notificationsCountUpdated;
+            return NotificationCenter.newLocationAvailable;
         }
 
         public static VideoFrame.TextureBuffer createTextureBufferWithModifiedTransformMatrix(TextureBufferImpl textureBufferImpl, boolean z, int i) {

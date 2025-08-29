@@ -102,7 +102,7 @@ abstract class zzax {
 
     static int zza(int i, byte[] bArr, int i2, zzay zzayVar) {
         int i3;
-        int i4 = i & NotificationCenter.dialogIsTranslatable;
+        int i4 = i & NotificationCenter.messageTranslated;
         int i5 = i2 + 1;
         byte b = bArr[i2];
         if (b >= 0) {

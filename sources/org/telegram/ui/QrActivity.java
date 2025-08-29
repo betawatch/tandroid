@@ -78,6 +78,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.browser.Browser;
+import org.telegram.messenger.wallpaper.WallpaperBitmapHolder;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -87,6 +88,7 @@ import org.telegram.ui.ActionBar.EmojiThemes;
 import org.telegram.ui.ActionBar.INavigationLayout;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ActionBar.ThemeDescription;
+import org.telegram.ui.ActionBar.theme.ThemeKey;
 import org.telegram.ui.CameraScanActivity;
 import org.telegram.ui.Cells.SettingsSearchCell;
 import org.telegram.ui.Components.AnimatedFloat;
@@ -635,7 +637,7 @@ public class QrActivity extends BaseFragment {
                 i = -1;
                 break;
             } else {
-                if (((ChatThemeBottomSheet.ChatThemeItem) arrayList.get(i)).chatTheme.getEmoticon().equals(this.currentTheme.getEmoticon())) {
+                if (ThemeKey.equals(((ChatThemeBottomSheet.ChatThemeItem) arrayList.get(i)).chatTheme.getThemeKey(), this.currentTheme.getThemeKey())) {
                     this.themesViewController.selectedItem = (ChatThemeBottomSheet.ChatThemeItem) arrayList.get(i);
                     break;
                 }
@@ -720,7 +722,7 @@ public class QrActivity extends BaseFragment {
         MotionBackgroundDrawable motionBackgroundDrawable = this.currMotionDrawable;
         this.prevMotionDrawable = motionBackgroundDrawable;
         motionBackgroundDrawable.setIndeterminateAnimation(false);
-        this.prevMotionDrawable.setAlpha(NotificationCenter.needCheckSystemBarColors);
+        this.prevMotionDrawable.setAlpha(NotificationCenter.didApplyNewTheme);
         MotionBackgroundDrawable motionBackgroundDrawable2 = new MotionBackgroundDrawable();
         this.currMotionDrawable = motionBackgroundDrawable2;
         motionBackgroundDrawable2.setCallback(this.backgroundView);
@@ -774,7 +776,7 @@ public class QrActivity extends BaseFragment {
                 this.prevQrColors = iArr2;
                 System.arraycopy(iArr, 0, iArr2, 0, 4);
             }
-            this.currMotionDrawable.setAlpha(NotificationCenter.needCheckSystemBarColors);
+            this.currMotionDrawable.setAlpha(NotificationCenter.didApplyNewTheme);
             this.currMotionDrawable.setBackgroundAlpha(0.0f);
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             this.patternAlphaAnimator = ofFloat;
@@ -832,12 +834,13 @@ public class QrActivity extends BaseFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onItemSelected$9(boolean z, long j, Pair pair) {
-        if (pair == null || this.currentTheme.getTlTheme(z ? 1 : 0) == null) {
+        long themeId = this.currentTheme.getThemeId(z ? 1 : 0);
+        if (pair == null || themeId == 0) {
             return;
         }
         long longValue = ((Long) pair.first).longValue();
-        Bitmap bitmap = (Bitmap) pair.second;
-        if (longValue != this.currentTheme.getTlTheme(z ? 1 : 0).id || bitmap == null) {
+        Bitmap bitmap = ((WallpaperBitmapHolder) pair.second).bitmap;
+        if (longValue != themeId || bitmap == null) {
             return;
         }
         onPatternLoaded(bitmap, this.currMotionDrawable.getIntensity(), SystemClock.elapsedRealtime() - j > 150);
@@ -1336,7 +1339,7 @@ public class QrActivity extends BaseFragment {
                 int i2 = height;
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-                canvas.saveLayerAlpha(rectF, NotificationCenter.needCheckSystemBarColors, 31);
+                canvas.saveLayerAlpha(rectF, NotificationCenter.didApplyNewTheme, 31);
                 int i3 = width2 + 16;
                 int i4 = i2 + 16;
                 canvas.drawRect(i3, i4, (getWidth() - width2) - 16, (((getWidth() + i2) - width2) - width2) - 16, this.bitmapGradientPaint);
@@ -1381,7 +1384,7 @@ public class QrActivity extends BaseFragment {
                 if (z) {
                     RectF rectF = AndroidUtilities.rectTmp;
                     rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-                    canvas.saveLayerAlpha(rectF, NotificationCenter.needCheckSystemBarColors, 31);
+                    canvas.saveLayerAlpha(rectF, NotificationCenter.didApplyNewTheme, 31);
                 }
                 Bitmap bitmap2 = this.oldContentBitmap;
                 if (bitmap2 != null) {
@@ -1394,7 +1397,7 @@ public class QrActivity extends BaseFragment {
                     canvas.save();
                     canvas.translate(0.0f, (-dp) + ((getHeight() + dp) * (1.0f - f)));
                     Paint paint = this.crossfadeToPaint;
-                    i2 = NotificationCenter.needCheckSystemBarColors;
+                    i2 = NotificationCenter.didApplyNewTheme;
                     i = 31;
                     canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight() + dp, paint);
                     canvas.restore();
@@ -1443,7 +1446,7 @@ public class QrActivity extends BaseFragment {
                 }
             }
             i = 31;
-            i2 = NotificationCenter.needCheckSystemBarColors;
+            i2 = NotificationCenter.didApplyNewTheme;
             if (f > 0.0f) {
             }
             if (this.hasTimer) {
@@ -1907,7 +1910,7 @@ public class QrActivity extends BaseFragment {
                         ThemeListViewController.this.topShadow.setVisibility(8);
                     } else {
                         ThemeListViewController themeListViewController3 = ThemeListViewController.this;
-                        int i3 = themeListViewController3.shareButton != null ? NotificationCenter.fileUploadFailed : 80;
+                        int i3 = themeListViewController3.shareButton != null ? NotificationCenter.didUpdateConnectionState : 80;
                         themeListViewController3.bottomShadow.setVisibility(0);
                         ThemeListViewController.this.bottomShadow.setLayoutParams(LayoutHelper.createFrame(-1, AndroidUtilities.dp(2.0f), 80, 0.0f, 0.0f, 0.0f, i3));
                         ThemeListViewController.this.topShadow.setVisibility(0);

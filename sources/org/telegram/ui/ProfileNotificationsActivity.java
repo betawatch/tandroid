@@ -508,7 +508,7 @@ public class ProfileNotificationsActivity extends BaseFragment implements Notifi
                 }
                 SharedPreferences notificationsSettings2 = MessagesController.getNotificationsSettings(this.currentAccount);
                 int i2 = notificationsSettings2.getInt("smart_max_count_" + str, 2);
-                AlertsCreator.createSoundFrequencyPickerDialog(getParentActivity(), i2 != 0 ? i2 : 2, notificationsSettings2.getInt("smart_delay_" + str, NotificationCenter.suggestedFiltersLoaded), new AlertsCreator.SoundFrequencyDelegate() { // from class: org.telegram.ui.ProfileNotificationsActivity$$ExternalSyntheticLambda6
+                AlertsCreator.createSoundFrequencyPickerDialog(getParentActivity(), i2 != 0 ? i2 : 2, notificationsSettings2.getInt("smart_delay_" + str, NotificationCenter.dialogFiltersUpdated), new AlertsCreator.SoundFrequencyDelegate() { // from class: org.telegram.ui.ProfileNotificationsActivity$$ExternalSyntheticLambda6
                     @Override // org.telegram.ui.Components.AlertsCreator.SoundFrequencyDelegate
                     public final void didSelectValues(int i3, int i4) {
                         ProfileNotificationsActivity.this.lambda$createView$4(str, i3, i4);
@@ -866,7 +866,7 @@ public class ProfileNotificationsActivity extends BaseFragment implements Notifi
                                             }
                                         } else {
                                             int i4 = notificationsSettings.getInt("smart_max_count_" + sharedPrefKey, 2);
-                                            int i5 = notificationsSettings.getInt("smart_delay_" + sharedPrefKey, NotificationCenter.suggestedFiltersLoaded);
+                                            int i5 = notificationsSettings.getInt("smart_delay_" + sharedPrefKey, NotificationCenter.dialogFiltersUpdated);
                                             if (i4 == 0) {
                                                 textSettingsCell.setTextAndValue(LocaleController.getString(R.string.SmartNotifications), LocaleController.getString(R.string.SmartNotificationsDisabled), ProfileNotificationsActivity.this.priorityRow != -1);
                                                 break;

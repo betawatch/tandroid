@@ -35,7 +35,7 @@ public class ImageWithWavesView extends FrameLayout {
         avatarWavesDrawable.setShowWaves(true, this);
         BackupImageView backupImageView = new BackupImageView(context);
         this.backupImageView = backupImageView;
-        addView(backupImageView, LayoutHelper.createFrame(NotificationCenter.fileUploaded, NotificationCenter.fileUploaded, 17));
+        addView(backupImageView, LayoutHelper.createFrame(NotificationCenter.httpFileDidFailedLoad, NotificationCenter.httpFileDidFailedLoad, 17));
         setWillNotDraw(false);
         AnimatorSet animatorSet = new AnimatorSet();
         this.animatorSet = animatorSet;

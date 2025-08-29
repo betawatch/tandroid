@@ -629,7 +629,7 @@ public class AnimatedEmojiDrawable extends Drawable {
             return;
         }
         if (i == 24) {
-            this.sizedp = NotificationCenter.fileLoadFailed;
+            this.sizedp = NotificationCenter.fileLoadProgressChanged;
             return;
         }
         if (i == 23) {
@@ -1185,7 +1185,7 @@ public class AnimatedEmojiDrawable extends Drawable {
     }
 
     public static class WrapSizeDrawable extends Drawable {
-        private int alpha = NotificationCenter.needCheckSystemBarColors;
+        private int alpha = NotificationCenter.didApplyNewTheme;
         private Drawable drawable;
         int height;
         int width;
@@ -1299,7 +1299,7 @@ public class AnimatedEmojiDrawable extends Drawable {
             AnimatedFloat animatedFloat2 = new AnimatedFloat((View) null, 300L, cubicBezierInterpolator);
             this.particlesAlpha = animatedFloat2;
             this.drawables = new Drawable[2];
-            this.alpha = NotificationCenter.needCheckSystemBarColors;
+            this.alpha = NotificationCenter.didApplyNewTheme;
             this.bounds = new android.graphics.Rect();
             this.parentView = view;
             animatedFloat.setParent(view);

@@ -178,7 +178,7 @@ public class ThemePreviewMessagesCell extends LinearLayout {
             webPage3.description = LocaleController.getString(z ? R.string.ChannelColorPreviewLinkDescription : R.string.UserColorPreviewLinkDescription);
             tL_message.date = currentTimeMillis - 3540;
             tL_message.dialog_id = 1L;
-            tL_message.flags = NotificationCenter.locationPermissionGranted;
+            tL_message.flags = NotificationCenter.needSetDayNightTheme;
             if (j == 0) {
                 TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
                 tL_message.from_id = tL_peerUser;
@@ -209,7 +209,7 @@ public class ThemePreviewMessagesCell extends LinearLayout {
             tL_message2.message = LocaleController.getString(R.string.DoubleTapPreviewMessage);
             tL_message2.date = currentTimeMillis - 3540;
             tL_message2.dialog_id = 1L;
-            tL_message2.flags = NotificationCenter.locationPermissionGranted;
+            tL_message2.flags = NotificationCenter.needSetDayNightTheme;
             TLRPC.TL_peerUser tL_peerUser3 = new TLRPC.TL_peerUser();
             tL_message2.from_id = tL_peerUser3;
             tL_peerUser3.user_id = UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId();
@@ -245,7 +245,7 @@ public class ThemePreviewMessagesCell extends LinearLayout {
             int i4 = currentTimeMillis - 3540;
             tL_message3.date = i4;
             tL_message3.dialog_id = 1L;
-            tL_message3.flags = NotificationCenter.locationPermissionGranted;
+            tL_message3.flags = NotificationCenter.needSetDayNightTheme;
             TLRPC.TL_peerUser tL_peerUser5 = new TLRPC.TL_peerUser();
             tL_message3.from_id = tL_peerUser5;
             tL_peerUser5.user_id = UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId();
@@ -285,7 +285,7 @@ public class ThemePreviewMessagesCell extends LinearLayout {
             }
             tL_message4.date = currentTimeMillis - 2640;
             tL_message4.dialog_id = 1L;
-            tL_message4.flags = NotificationCenter.locationPermissionGranted;
+            tL_message4.flags = NotificationCenter.needSetDayNightTheme;
             TLRPC.TL_peerUser tL_peerUser7 = new TLRPC.TL_peerUser();
             tL_message4.from_id = tL_peerUser7;
             tL_peerUser7.user_id = UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId();
@@ -308,7 +308,7 @@ public class ThemePreviewMessagesCell extends LinearLayout {
             }
             tL_message5.date = i4;
             tL_message5.dialog_id = 1L;
-            tL_message5.flags = NotificationCenter.proxyCheckDone;
+            tL_message5.flags = NotificationCenter.didSetNewWallpapper;
             tL_message5.from_id = new TLRPC.TL_peerUser();
             tL_message5.id = 1;
             TLRPC.TL_messageReplyHeader tL_messageReplyHeader2 = new TLRPC.TL_messageReplyHeader();
@@ -947,7 +947,7 @@ public class ThemePreviewMessagesCell extends LinearLayout {
         while (i < 2) {
             Drawable drawable2 = i == 0 ? this.oldBackgroundDrawable : this.backgroundDrawable;
             if (drawable2 != null) {
-                int i2 = (i != 1 || this.oldBackgroundDrawable == null || (this.parentLayout == null && !this.customAnimation)) ? NotificationCenter.needCheckSystemBarColors : (int) (255.0f * themeAnimationValue);
+                int i2 = (i != 1 || this.oldBackgroundDrawable == null || (this.parentLayout == null && !this.customAnimation)) ? NotificationCenter.didApplyNewTheme : (int) (255.0f * themeAnimationValue);
                 if (i2 > 0) {
                     drawable2.setAlpha(i2);
                     if ((drawable2 instanceof ColorDrawable) || (drawable2 instanceof GradientDrawable) || (drawable2 instanceof MotionBackgroundDrawable)) {

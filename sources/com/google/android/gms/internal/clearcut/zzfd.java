@@ -358,7 +358,7 @@ abstract class zzfd {
         long j2 = (-4) & j;
         int zzj = zzj(obj, j2);
         int i = ((~((int) j)) & 3) << 3;
-        zza(obj, j2, ((255 & b) << i) | (zzj & (~(NotificationCenter.needCheckSystemBarColors << i))));
+        zza(obj, j2, ((255 & b) << i) | (zzj & (~(NotificationCenter.didApplyNewTheme << i))));
     }
 
     static void zza(Object obj, long j, double d) {
@@ -419,7 +419,7 @@ abstract class zzfd {
     public static void zzb(Object obj, long j, byte b) {
         long j2 = (-4) & j;
         int i = (((int) j) & 3) << 3;
-        zza(obj, j2, ((255 & b) << i) | (zzj(obj, j2) & (~(NotificationCenter.needCheckSystemBarColors << i))));
+        zza(obj, j2, ((255 & b) << i) | (zzj(obj, j2) & (~(NotificationCenter.didApplyNewTheme << i))));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

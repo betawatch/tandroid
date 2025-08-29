@@ -47,23 +47,23 @@ public abstract class WebvttCueParser {
 
     static {
         HashMap hashMap = new HashMap();
-        hashMap.put("white", Integer.valueOf(Color.rgb(NotificationCenter.needCheckSystemBarColors, NotificationCenter.needCheckSystemBarColors, NotificationCenter.needCheckSystemBarColors)));
-        hashMap.put("lime", Integer.valueOf(Color.rgb(0, NotificationCenter.needCheckSystemBarColors, 0)));
-        hashMap.put("cyan", Integer.valueOf(Color.rgb(0, NotificationCenter.needCheckSystemBarColors, NotificationCenter.needCheckSystemBarColors)));
-        hashMap.put("red", Integer.valueOf(Color.rgb(NotificationCenter.needCheckSystemBarColors, 0, 0)));
-        hashMap.put("yellow", Integer.valueOf(Color.rgb(NotificationCenter.needCheckSystemBarColors, NotificationCenter.needCheckSystemBarColors, 0)));
-        hashMap.put("magenta", Integer.valueOf(Color.rgb(NotificationCenter.needCheckSystemBarColors, 0, NotificationCenter.needCheckSystemBarColors)));
-        hashMap.put("blue", Integer.valueOf(Color.rgb(0, 0, NotificationCenter.needCheckSystemBarColors)));
+        hashMap.put("white", Integer.valueOf(Color.rgb(NotificationCenter.didApplyNewTheme, NotificationCenter.didApplyNewTheme, NotificationCenter.didApplyNewTheme)));
+        hashMap.put("lime", Integer.valueOf(Color.rgb(0, NotificationCenter.didApplyNewTheme, 0)));
+        hashMap.put("cyan", Integer.valueOf(Color.rgb(0, NotificationCenter.didApplyNewTheme, NotificationCenter.didApplyNewTheme)));
+        hashMap.put("red", Integer.valueOf(Color.rgb(NotificationCenter.didApplyNewTheme, 0, 0)));
+        hashMap.put("yellow", Integer.valueOf(Color.rgb(NotificationCenter.didApplyNewTheme, NotificationCenter.didApplyNewTheme, 0)));
+        hashMap.put("magenta", Integer.valueOf(Color.rgb(NotificationCenter.didApplyNewTheme, 0, NotificationCenter.didApplyNewTheme)));
+        hashMap.put("blue", Integer.valueOf(Color.rgb(0, 0, NotificationCenter.didApplyNewTheme)));
         hashMap.put("black", Integer.valueOf(Color.rgb(0, 0, 0)));
         DEFAULT_TEXT_COLORS = DesugarCollections.unmodifiableMap(hashMap);
         HashMap hashMap2 = new HashMap();
-        hashMap2.put("bg_white", Integer.valueOf(Color.rgb(NotificationCenter.needCheckSystemBarColors, NotificationCenter.needCheckSystemBarColors, NotificationCenter.needCheckSystemBarColors)));
-        hashMap2.put("bg_lime", Integer.valueOf(Color.rgb(0, NotificationCenter.needCheckSystemBarColors, 0)));
-        hashMap2.put("bg_cyan", Integer.valueOf(Color.rgb(0, NotificationCenter.needCheckSystemBarColors, NotificationCenter.needCheckSystemBarColors)));
-        hashMap2.put("bg_red", Integer.valueOf(Color.rgb(NotificationCenter.needCheckSystemBarColors, 0, 0)));
-        hashMap2.put("bg_yellow", Integer.valueOf(Color.rgb(NotificationCenter.needCheckSystemBarColors, NotificationCenter.needCheckSystemBarColors, 0)));
-        hashMap2.put("bg_magenta", Integer.valueOf(Color.rgb(NotificationCenter.needCheckSystemBarColors, 0, NotificationCenter.needCheckSystemBarColors)));
-        hashMap2.put("bg_blue", Integer.valueOf(Color.rgb(0, 0, NotificationCenter.needCheckSystemBarColors)));
+        hashMap2.put("bg_white", Integer.valueOf(Color.rgb(NotificationCenter.didApplyNewTheme, NotificationCenter.didApplyNewTheme, NotificationCenter.didApplyNewTheme)));
+        hashMap2.put("bg_lime", Integer.valueOf(Color.rgb(0, NotificationCenter.didApplyNewTheme, 0)));
+        hashMap2.put("bg_cyan", Integer.valueOf(Color.rgb(0, NotificationCenter.didApplyNewTheme, NotificationCenter.didApplyNewTheme)));
+        hashMap2.put("bg_red", Integer.valueOf(Color.rgb(NotificationCenter.didApplyNewTheme, 0, 0)));
+        hashMap2.put("bg_yellow", Integer.valueOf(Color.rgb(NotificationCenter.didApplyNewTheme, NotificationCenter.didApplyNewTheme, 0)));
+        hashMap2.put("bg_magenta", Integer.valueOf(Color.rgb(NotificationCenter.didApplyNewTheme, 0, NotificationCenter.didApplyNewTheme)));
+        hashMap2.put("bg_blue", Integer.valueOf(Color.rgb(0, 0, NotificationCenter.didApplyNewTheme)));
         hashMap2.put("bg_black", Integer.valueOf(Color.rgb(0, 0, 0)));
         DEFAULT_BACKGROUND_COLORS = DesugarCollections.unmodifiableMap(hashMap2);
     }

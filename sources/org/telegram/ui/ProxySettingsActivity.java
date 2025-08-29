@@ -315,7 +315,7 @@ public class ProxySettingsActivity extends BaseFragment {
                     }
                 });
             } else if (i2 == 3) {
-                this.inputFields[i2].setInputType(NotificationCenter.didGenerateFingerprintKeyPair);
+                this.inputFields[i2].setInputType(NotificationCenter.dialogIsTranslatable);
                 this.inputFields[i2].setTypeface(Typeface.DEFAULT);
                 this.inputFields[i2].setTransformationMethod(PasswordTransformationMethod.getInstance());
             } else {

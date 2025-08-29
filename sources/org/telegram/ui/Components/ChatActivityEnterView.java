@@ -2296,8 +2296,8 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                     int i2 = (int) (ChatActivityEnterView.this.slideToCancelProgress >= 0.93f ? ((ChatActivityEnterView.this.slideToCancelProgress - 0.93f) / 0.07f) * 255.0f : 0.0f);
                     drawable3.setAlpha(i2);
                     drawable3.draw(canvas);
-                    drawable3.setAlpha(NotificationCenter.needCheckSystemBarColors);
-                    drawable.setAlpha(NotificationCenter.needCheckSystemBarColors - i2);
+                    drawable3.setAlpha(NotificationCenter.didApplyNewTheme);
+                    drawable.setAlpha(NotificationCenter.didApplyNewTheme - i2);
                     drawable.draw(canvas);
                     return;
                 }
@@ -4193,7 +4193,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
             };
             this.senderSelectPopupWindow = senderSelectPopup2;
             senderSelectPopup2.setPauseNotifications(true);
-            this.senderSelectPopupWindow.setDismissAnimationDuration(NotificationCenter.botStarsTransactionsLoaded);
+            this.senderSelectPopupWindow.setDismissAnimationDuration(NotificationCenter.factCheckLoaded);
             this.senderSelectPopupWindow.setOutsideTouchable(true);
             this.senderSelectPopupWindow.setClippingEnabled(true);
             this.senderSelectPopupWindow.setFocusable(true);
@@ -11196,25 +11196,25 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
         return this.messageEditText.getText();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x00a0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x00a6, code lost:
     
-        if (org.telegram.messenger.MessagesController.getInstance(r9.currentAccount).getMainSettings().getBoolean("show_gift_for_" + r9.parentFragment.getDialogId(), true) == false) goto L32;
+        if (org.telegram.messenger.MessagesController.getInstance(r9.currentAccount).getMainSettings().getBoolean("show_gift_for_" + r9.parentFragment.getDialogId(), true) == false) goto L35;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:32:0x0100, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:35:0x0106, code lost:
     
-        if (r0.getChatMode() == 0) goto L57;
+        if (r0.getChatMode() == 0) goto L60;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:65:0x00d8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:68:0x00de, code lost:
     
-        if (org.telegram.messenger.MessagesController.getInstance(r9.currentAccount).getMainSettings().getBoolean(java.util.Calendar.getInstance().get(1) + "show_gift_for_" + r9.parentFragment.getDialogId(), true) == false) goto L36;
+        if (org.telegram.messenger.MessagesController.getInstance(r9.currentAccount).getMainSettings().getBoolean(java.util.Calendar.getInstance().get(1) + "show_gift_for_" + r9.parentFragment.getDialogId(), true) == false) goto L39;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:70:0x00e2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:73:0x00e8, code lost:
     
-        if (r2.display_gifts_button == false) goto L56;
+        if (r2.display_gifts_button == false) goto L59;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:80:0x00f6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:83:0x00fc, code lost:
     
-        if (r0.disallow_unique_stargifts != false) goto L56;
+        if (r0.disallow_unique_stargifts != false) goto L59;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -11225,7 +11225,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
         TLRPC.UserFull currentUserInfo = getParentFragment() == null ? null : getParentFragment().getCurrentUserInfo();
         TLRPC.UserFull userFull = MessagesController.getInstance(this.currentAccount).getUserFull(UserConfig.getInstance(this.currentAccount).getClientUserId());
         TLRPC.User currentUser = getParentFragment() != null ? getParentFragment().getCurrentUser() : null;
-        if (!MessagesController.getInstance(this.currentAccount).premiumPurchaseBlocked() && getParentFragment() != null && currentUser != null && !BuildVars.IS_BILLING_UNAVAILABLE && !UserObject.isUserSelf(currentUser) && !UserObject.isBot(currentUser) && !MessagesController.isSupportUser(currentUser) && currentUserInfo != null) {
+        if (!MessagesController.getInstance(this.currentAccount).premiumPurchaseBlocked() && getParentFragment() != null && currentUser != null && !BuildVars.IS_BILLING_UNAVAILABLE && ((!UserObject.isUserSelf(currentUser) || (userFull != null && userFull.display_gifts_button)) && !UserObject.isBot(currentUser) && !MessagesController.isSupportUser(currentUser) && currentUserInfo != null)) {
             z2 = true;
             if (!currentUser.premium && MessagesController.getInstance(this.currentAccount).giftAttachMenuIcon && MessagesController.getInstance(this.currentAccount).giftTextFieldIcon) {
             }
@@ -14727,7 +14727,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                     canvas.restore();
                 }
                 canvas.save();
-                this.textPaint.setAlpha(NotificationCenter.needCheckSystemBarColors);
+                this.textPaint.setAlpha(NotificationCenter.didApplyNewTheme);
                 StaticLayout staticLayout2 = new StaticLayout(this.replaceStable, this.textPaint, getMeasuredWidth(), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                 canvas.translate(0.0f, measuredHeight - (staticLayout2.getHeight() / 2.0f));
                 staticLayout2.draw(canvas);
@@ -15250,7 +15250,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
             int i2;
             float f3;
             float f4;
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.needCheckSystemBarColors, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didApplyNewTheme, 31);
             updateColors();
             Drawable drawable = isInactive() ? this.inactiveDrawable : this.drawable;
             int measuredWidth = (getMeasuredWidth() - (getMeasuredHeight() / 2)) - (drawable.getIntrinsicWidth() / 2);
@@ -15417,7 +15417,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                 PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
                 drawable.setColorFilter(new PorterDuffColorFilter(color2, mode));
                 int color3 = Theme.getColor(Theme.key_chat_messagePanelIcons, this.resourcesProvider);
-                this.inactiveDrawable.setColorFilter(new PorterDuffColorFilter(Color.argb(NotificationCenter.suggestedFiltersLoaded, Color.red(color3), Color.green(color3), Color.blue(color3)), mode));
+                this.inactiveDrawable.setColorFilter(new PorterDuffColorFilter(Color.argb(NotificationCenter.dialogFiltersUpdated, Color.red(color3), Color.green(color3), Color.blue(color3)), mode));
                 this.drawableInverse.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chat_messagePanelVoicePressed, this.resourcesProvider), mode));
             }
             if (shouldDrawBackground()) {
@@ -15504,7 +15504,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
         if (f <= 0.0f && f2 <= 0.0f) {
             return ((Boolean) callback0Return.run()).booleanValue();
         }
-        canvas.saveLayerAlpha(0.0f, 0.0f, this.messageEditText.getX() + this.messageEditText.getMeasuredWidth() + AndroidUtilities.dp(5.0f), this.messageEditText.getY() + this.messageEditText.getMeasuredHeight() + AndroidUtilities.dp(2.0f), NotificationCenter.needCheckSystemBarColors, 31);
+        canvas.saveLayerAlpha(0.0f, 0.0f, this.messageEditText.getX() + this.messageEditText.getMeasuredWidth() + AndroidUtilities.dp(5.0f), this.messageEditText.getY() + this.messageEditText.getMeasuredHeight() + AndroidUtilities.dp(2.0f), NotificationCenter.didApplyNewTheme, 31);
         boolean booleanValue = ((Boolean) callback0Return.run()).booleanValue();
         canvas.save();
         if (f > 0.0f) {

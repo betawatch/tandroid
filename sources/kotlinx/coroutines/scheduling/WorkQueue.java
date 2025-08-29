@@ -58,7 +58,7 @@ public final class WorkQueue {
         if (task.taskContext.getTaskMode() == 1) {
             blockingTasksInBuffer$FU.incrementAndGet(this);
         }
-        int i = producerIndex$FU.get(this) & NotificationCenter.dialogIsTranslatable;
+        int i = producerIndex$FU.get(this) & NotificationCenter.messageTranslated;
         while (this.buffer.get(i) != null) {
             Thread.yield();
         }
@@ -131,7 +131,7 @@ public final class WorkQueue {
     }
 
     private final Task tryExtractFromTheMiddle(int i, boolean z) {
-        int i2 = i & NotificationCenter.dialogIsTranslatable;
+        int i2 = i & NotificationCenter.messageTranslated;
         Task task = (Task) this.buffer.get(i2);
         if (task != null) {
             if ((task.taskContext.getTaskMode() == 1) == z && ChannelSegment$$ExternalSyntheticBackportWithForwarding0.m(this.buffer, i2, task, null)) {
@@ -192,7 +192,7 @@ public final class WorkQueue {
             if (i - producerIndex$FU.get(this) == 0) {
                 return null;
             }
-            int i2 = i & NotificationCenter.dialogIsTranslatable;
+            int i2 = i & NotificationCenter.messageTranslated;
             if (atomicIntegerFieldUpdater.compareAndSet(this, i, i + 1) && (task = (Task) this.buffer.getAndSet(i2, null)) != null) {
                 decrementIfBlocking(task);
                 return task;

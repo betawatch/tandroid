@@ -1232,7 +1232,7 @@ public class SearchView extends LinearLayoutCompat implements CollapsibleActionV
             int i = configuration.screenWidthDp;
             int i2 = configuration.screenHeightDp;
             if (i < 960 || i2 < 720 || configuration.orientation != 2) {
-                return i < 600 ? (i < 640 || i2 < 480) ? NotificationCenter.audioRecordTooShort : NotificationCenter.storiesSendAsUpdate : NotificationCenter.storiesSendAsUpdate;
+                return i < 600 ? (i < 640 || i2 < 480) ? NotificationCenter.albumsDidLoad : NotificationCenter.storiesBlocklistUpdate : NotificationCenter.storiesBlocklistUpdate;
             }
             return 256;
         }

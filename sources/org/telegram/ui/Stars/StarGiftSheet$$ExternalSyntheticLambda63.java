@@ -1,10 +1,10 @@
 package org.telegram.ui.Stars;
 
 /* loaded from: classes5.dex */
-public final /* synthetic */ class StarGiftSheet$$ExternalSyntheticLambda58 implements Runnable {
+public final /* synthetic */ class StarGiftSheet$$ExternalSyntheticLambda63 implements Runnable {
     public final /* synthetic */ StarGiftSheet f$0;
 
-    public /* synthetic */ StarGiftSheet$$ExternalSyntheticLambda58(StarGiftSheet starGiftSheet) {
+    public /* synthetic */ StarGiftSheet$$ExternalSyntheticLambda63(StarGiftSheet starGiftSheet) {
         this.f$0 = starGiftSheet;
     }
 

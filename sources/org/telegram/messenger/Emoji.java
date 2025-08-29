@@ -954,7 +954,7 @@ public class Emoji {
                 canvas.restore();
             }
             if (z) {
-                getDrawable().setAlpha(NotificationCenter.needCheckSystemBarColors);
+                getDrawable().setAlpha(NotificationCenter.didApplyNewTheme);
             }
         }
 

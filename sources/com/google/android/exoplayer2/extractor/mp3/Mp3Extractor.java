@@ -393,7 +393,7 @@ public final class Mp3Extractor implements Extractor {
         XingSeeker create2 = XingSeeker.create(extractorInput.getLength(), extractorInput.getPosition(), this.synchronizedHeader, parsableByteArray);
         if (create2 != null && !this.gaplessInfoHolder.hasGaplessInfo()) {
             extractorInput.resetPeekPosition();
-            extractorInput.advancePeekPosition(i + NotificationCenter.filePreparingStarted);
+            extractorInput.advancePeekPosition(i + NotificationCenter.fileLoaded);
             extractorInput.peekFully(this.scratch.getData(), 0, 3);
             this.scratch.setPosition(0);
             this.gaplessInfoHolder.setFromXingHeaderValue(this.scratch.readUnsignedInt24());

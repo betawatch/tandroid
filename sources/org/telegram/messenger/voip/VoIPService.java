@@ -7022,7 +7022,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x00e1  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x00e2  */
     /* JADX WARN: Type inference failed for: r15v2 */
     /* JADX WARN: Type inference failed for: r15v4 */
     /*
@@ -7208,7 +7208,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         int checkSelfPermission;
         int checkSelfPermission2;
         if (Build.VERSION.SDK_INT < 29) {
-            return NotificationCenter.starUserGiftCollectionsLoaded;
+            return NotificationCenter.starGiftsLoaded;
         }
         checkSelfPermission = contextWrapper.checkSelfPermission("android.permission.CAMERA");
         int i = checkSelfPermission == 0 ? 64 : 0;

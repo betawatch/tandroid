@@ -163,7 +163,7 @@ public class DialogCellTags {
         RectF rectF = AndroidUtilities.rectTmp;
         float f = i;
         rectF.set(0.0f, 0.0f, f, AndroidUtilities.dp(14.66f));
-        canvas.saveLayerAlpha(rectF, NotificationCenter.needCheckSystemBarColors, 31);
+        canvas.saveLayerAlpha(rectF, NotificationCenter.didApplyNewTheme, 31);
         if (LocaleController.isRTL) {
             canvas.translate(f, 0.0f);
         }

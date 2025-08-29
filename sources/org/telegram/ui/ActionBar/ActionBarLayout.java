@@ -189,7 +189,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
 
     @Override // org.telegram.ui.ActionBar.INavigationLayout
     public /* synthetic */ void drawHeaderShadow(Canvas canvas, int i) {
-        drawHeaderShadow(canvas, NotificationCenter.needCheckSystemBarColors, i);
+        drawHeaderShadow(canvas, NotificationCenter.didApplyNewTheme, i);
     }
 
     @Override // org.telegram.ui.ActionBar.INavigationLayout
@@ -2587,7 +2587,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 int green2 = Color.green(iArr[i2]);
                 int blue2 = Color.blue(iArr[i2]);
                 int i3 = size;
-                int argb = Color.argb(Math.min(NotificationCenter.needCheckSystemBarColors, (int) (Color.alpha(iArr[i2]) + ((alpha - r2) * f))), Math.min(NotificationCenter.needCheckSystemBarColors, (int) (red2 + ((red - red2) * f))), Math.min(NotificationCenter.needCheckSystemBarColors, (int) (green2 + ((green - green2) * f))), Math.min(NotificationCenter.needCheckSystemBarColors, (int) (blue2 + ((blue - blue2) * f))));
+                int argb = Color.argb(Math.min(NotificationCenter.didApplyNewTheme, (int) (Color.alpha(iArr[i2]) + ((alpha - r2) * f))), Math.min(NotificationCenter.didApplyNewTheme, (int) (red2 + ((red - red2) * f))), Math.min(NotificationCenter.didApplyNewTheme, (int) (green2 + ((green - green2) * f))), Math.min(NotificationCenter.didApplyNewTheme, (int) (blue2 + ((blue - blue2) * f))));
                 ThemeDescription themeDescription = (ThemeDescription) arrayList.get(i2);
                 themeDescription.setAnimatedColor(argb);
                 themeDescription.setColor(argb, false, false);

@@ -72,7 +72,7 @@ public final class DefaultTsPayloadReaderFactory implements TsPayloadReader.Fact
                                     break;
                                 default:
                                     switch (i) {
-                                        case NotificationCenter.walletPendingTransactionsChanged /* 130 */:
+                                        case NotificationCenter.dialogTranslate /* 130 */:
                                             if (!isSet(64)) {
                                             }
                                             break;

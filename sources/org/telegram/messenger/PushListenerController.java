@@ -4359,7 +4359,7 @@ public class PushListenerController {
                                                                                                                     i6 = i28;
                                                                                                                     reactedText = LocaleController.formatString(R.string.NotificationPinnedGiveaway, strArr2[0]);
                                                                                                                     break;
-                                                                                                                case NotificationCenter.dialogIsTranslatable /* 127 */:
+                                                                                                                case NotificationCenter.messageTranslated /* 127 */:
                                                                                                                     i6 = i28;
                                                                                                                     if (j12 > 0) {
                                                                                                                         reactedText = LocaleController.formatString(R.string.NotificationActionPinnedQuizUser, strArr2[0], strArr2[1]);
@@ -4383,7 +4383,7 @@ public class PushListenerController {
                                                                                                                         reactedText = LocaleController.formatString(R.string.NotificationActionPinnedPollChannel2, strArr2[0], strArr2[1]);
                                                                                                                         break;
                                                                                                                     }
-                                                                                                                case NotificationCenter.didGenerateFingerprintKeyPair /* 129 */:
+                                                                                                                case NotificationCenter.dialogIsTranslatable /* 129 */:
                                                                                                                     i6 = i28;
                                                                                                                     if (j12 > 0) {
                                                                                                                         reactedText = LocaleController.formatString(R.string.NotificationActionPinnedTodoUser, strArr2[0], strArr2[1]);
@@ -4395,7 +4395,7 @@ public class PushListenerController {
                                                                                                                         reactedText = LocaleController.formatString(R.string.NotificationActionPinnedTodoChannel2, strArr2[0], strArr2[1]);
                                                                                                                         break;
                                                                                                                     }
-                                                                                                                case NotificationCenter.walletPendingTransactionsChanged /* 130 */:
+                                                                                                                case NotificationCenter.dialogTranslate /* 130 */:
                                                                                                                     i6 = i28;
                                                                                                                     if (j12 > 0) {
                                                                                                                         reactedText = LocaleController.formatString(R.string.NotificationActionPinnedGeoUser, strArr2[0], strArr2[1]);
@@ -4407,7 +4407,7 @@ public class PushListenerController {
                                                                                                                         reactedText = LocaleController.formatString(R.string.NotificationActionPinnedGeoChannel, strArr2[0]);
                                                                                                                         break;
                                                                                                                     }
-                                                                                                                case NotificationCenter.walletSyncProgressChanged /* 131 */:
+                                                                                                                case NotificationCenter.didGenerateFingerprintKeyPair /* 131 */:
                                                                                                                     i6 = i28;
                                                                                                                     if (j12 > 0) {
                                                                                                                         reactedText = LocaleController.formatString(R.string.NotificationActionPinnedGeoLiveUser, strArr2[0], strArr2[1]);
@@ -4419,7 +4419,7 @@ public class PushListenerController {
                                                                                                                         reactedText = LocaleController.formatString(R.string.NotificationActionPinnedGeoLiveChannel, strArr2[0]);
                                                                                                                         break;
                                                                                                                     }
-                                                                                                                case NotificationCenter.httpFileDidLoad /* 132 */:
+                                                                                                                case NotificationCenter.walletPendingTransactionsChanged /* 132 */:
                                                                                                                     i6 = i28;
                                                                                                                     if (j12 > 0) {
                                                                                                                         reactedText = LocaleController.formatString(R.string.NotificationActionPinnedGameUser, strArr2[0], strArr2[1]);
@@ -4431,7 +4431,7 @@ public class PushListenerController {
                                                                                                                         reactedText = LocaleController.formatString(R.string.NotificationActionPinnedGameChannel, strArr2[0]);
                                                                                                                         break;
                                                                                                                     }
-                                                                                                                case NotificationCenter.httpFileDidFailedLoad /* 133 */:
+                                                                                                                case NotificationCenter.walletSyncProgressChanged /* 133 */:
                                                                                                                     i6 = i28;
                                                                                                                     if (j12 > 0) {
                                                                                                                         reactedText = LocaleController.formatString(R.string.NotificationActionPinnedGameScoreUser, strArr2[0], strArr2[1]);
@@ -4443,7 +4443,7 @@ public class PushListenerController {
                                                                                                                         reactedText = LocaleController.formatString(R.string.NotificationActionPinnedGameScoreChannel, strArr2[0]);
                                                                                                                         break;
                                                                                                                     }
-                                                                                                                case NotificationCenter.didUpdateConnectionState /* 134 */:
+                                                                                                                case NotificationCenter.httpFileDidLoad /* 134 */:
                                                                                                                     i6 = i28;
                                                                                                                     if (j12 > 0) {
                                                                                                                         reactedText = LocaleController.formatString(R.string.NotificationActionPinnedInvoiceUser, strArr2[0], strArr2[1]);
@@ -4455,7 +4455,7 @@ public class PushListenerController {
                                                                                                                         reactedText = LocaleController.formatString(R.string.NotificationActionPinnedInvoiceChannel, strArr2[0]);
                                                                                                                         break;
                                                                                                                     }
-                                                                                                                case NotificationCenter.fileUploaded /* 135 */:
+                                                                                                                case NotificationCenter.httpFileDidFailedLoad /* 135 */:
                                                                                                                     i6 = i28;
                                                                                                                     if (j12 > 0) {
                                                                                                                         reactedText = LocaleController.formatString(R.string.NotificationActionPinnedGifUser, strArr2[0], strArr2[1]);
@@ -4467,7 +4467,7 @@ public class PushListenerController {
                                                                                                                         reactedText = LocaleController.formatString(R.string.NotificationActionPinnedGifChannel, strArr2[0]);
                                                                                                                         break;
                                                                                                                     }
-                                                                                                                case NotificationCenter.fileUploadFailed /* 136 */:
+                                                                                                                case NotificationCenter.didUpdateConnectionState /* 136 */:
                                                                                                                     i6 = i28;
                                                                                                                     formatString2 = LocaleController.getString(R.string.YouHaveNewMessage);
                                                                                                                     str24 = LocaleController.getString(R.string.SecretChatName);
@@ -4480,7 +4480,7 @@ public class PushListenerController {
                                                                                                                     if (str22 != null) {
                                                                                                                     }
                                                                                                                     break;
-                                                                                                                case NotificationCenter.fileUploadProgressChanged /* 137 */:
+                                                                                                                case NotificationCenter.fileUploaded /* 137 */:
                                                                                                                     i6 = i28;
                                                                                                                     VoIPGroupNotification.hideByCallId(ApplicationLoader.applicationContext, i6, jSONObject2.getLong(str10));
                                                                                                                     int parseInt7 = Integer.parseInt(strArr2[1]);
@@ -4495,16 +4495,16 @@ public class PushListenerController {
                                                                                                                     if (BuildVars.LOGS_ENABLED) {
                                                                                                                         FileLog.w("unhandled loc_key = " + string);
                                                                                                                     }
-                                                                                                                case NotificationCenter.fileLoadProgressChanged /* 138 */:
-                                                                                                                case NotificationCenter.fileLoaded /* 139 */:
-                                                                                                                case NotificationCenter.fileLoadFailed /* 140 */:
-                                                                                                                case NotificationCenter.filePreparingStarted /* 141 */:
-                                                                                                                case NotificationCenter.fileNewChunkAvailable /* 142 */:
-                                                                                                                case NotificationCenter.filePreparingFailed /* 143 */:
-                                                                                                                case NotificationCenter.dialogsUnreadCounterChanged /* 144 */:
-                                                                                                                case NotificationCenter.messagePlayingProgressDidChanged /* 145 */:
-                                                                                                                case NotificationCenter.messagePlayingDidReset /* 146 */:
-                                                                                                                case NotificationCenter.messagePlayingPlayStateChanged /* 147 */:
+                                                                                                                case NotificationCenter.fileUploadFailed /* 138 */:
+                                                                                                                case NotificationCenter.fileUploadProgressChanged /* 139 */:
+                                                                                                                case NotificationCenter.fileLoadProgressChanged /* 140 */:
+                                                                                                                case NotificationCenter.fileLoaded /* 141 */:
+                                                                                                                case NotificationCenter.fileLoadFailed /* 142 */:
+                                                                                                                case NotificationCenter.filePreparingStarted /* 143 */:
+                                                                                                                case NotificationCenter.fileNewChunkAvailable /* 144 */:
+                                                                                                                case NotificationCenter.filePreparingFailed /* 145 */:
+                                                                                                                case NotificationCenter.dialogsUnreadCounterChanged /* 146 */:
+                                                                                                                case NotificationCenter.messagePlayingProgressDidChanged /* 147 */:
                                                                                                                     str22 = null;
                                                                                                                     i11 = i27;
                                                                                                                     i6 = i28;

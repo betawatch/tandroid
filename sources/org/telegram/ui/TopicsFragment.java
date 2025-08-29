@@ -900,7 +900,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         getMessagesStorage().loadChatInfo(this.chatId, true, null, true, false, 0);
         FrameLayout frameLayout5 = new FrameLayout(context);
         this.topView = frameLayout5;
-        this.contentView.addView(frameLayout5, LayoutHelper.createFrame(-1, NotificationCenter.savedMessagesForwarded, 48));
+        this.contentView.addView(frameLayout5, LayoutHelper.createFrame(-1, NotificationCenter.userIsPremiumBlockedUpadted, 48));
         TLRPC.Chat currentChat = getCurrentChat();
         if (currentChat != null) {
             ChatActivityMemberRequestsDelegate chatActivityMemberRequestsDelegate = new ChatActivityMemberRequestsDelegate(this, this.contentView, currentChat, new ChatActivityMemberRequestsDelegate.Callback() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda7
@@ -2157,7 +2157,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             } else {
                 actionBarMenuSubItem.setTextAndIcon(LocaleController.getString(R.string.DialogPin), R.drawable.msg_pin);
             }
-            actionBarMenuSubItem.setMinimumWidth(NotificationCenter.audioRecordTooShort);
+            actionBarMenuSubItem.setMinimumWidth(NotificationCenter.albumsDidLoad);
             actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda12
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -2172,7 +2172,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         } else {
             actionBarMenuSubItem2.setTextAndIcon(LocaleController.getString(R.string.Mute), R.drawable.msg_unmute);
         }
-        actionBarMenuSubItem2.setMinimumWidth(NotificationCenter.audioRecordTooShort);
+        actionBarMenuSubItem2.setMinimumWidth(NotificationCenter.albumsDidLoad);
         actionBarMenuSubItem2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda13
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -2187,7 +2187,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             } else {
                 actionBarMenuSubItem3.setTextAndIcon(LocaleController.getString(R.string.CloseTopic), R.drawable.msg_topic_close);
             }
-            actionBarMenuSubItem3.setMinimumWidth(NotificationCenter.audioRecordTooShort);
+            actionBarMenuSubItem3.setMinimumWidth(NotificationCenter.albumsDidLoad);
             actionBarMenuSubItem3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda14
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -2201,7 +2201,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             actionBarMenuSubItem4.setTextAndIcon(LocaleController.getPluralString("DeleteTopics", 1), R.drawable.msg_delete);
             actionBarMenuSubItem4.setIconColor(getThemedColor(Theme.key_text_RedRegular));
             actionBarMenuSubItem4.setTextColor(getThemedColor(Theme.key_text_RedBold));
-            actionBarMenuSubItem4.setMinimumWidth(NotificationCenter.audioRecordTooShort);
+            actionBarMenuSubItem4.setMinimumWidth(NotificationCenter.albumsDidLoad);
             actionBarMenuSubItem4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda15
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -4443,7 +4443,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         Canvas canvas = new Canvas(createBitmap);
         canvas.scale(0.16666667f, 0.16666667f);
         this.parentLayout.getView().draw(canvas);
-        Utilities.stackBlurBitmap(createBitmap, Math.max(7, Math.max(measuredWidth, measuredHeight) / NotificationCenter.suggestedFiltersLoaded));
+        Utilities.stackBlurBitmap(createBitmap, Math.max(7, Math.max(measuredWidth, measuredHeight) / NotificationCenter.dialogFiltersUpdated));
         this.blurredView.setBackground(new BitmapDrawable(createBitmap));
         this.blurredView.setAlpha(0.0f);
         if (this.blurredView.getParent() != null) {

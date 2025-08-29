@@ -274,7 +274,7 @@ public class GroupCallMiniTextureView extends FrameLayout implements GroupCallSt
                     if (videoParticipant == call.videoNotAvailableParticipant) {
                         if (groupCallMiniTextureView4.showingInFullscreen || !groupCallRenderersContainer.inFullscreenMode) {
                             float dp3 = AndroidUtilities.dp(48.0f);
-                            textPaint.setAlpha(NotificationCenter.needCheckSystemBarColors);
+                            textPaint.setAlpha(NotificationCenter.didApplyNewTheme);
                             canvas.save();
                             canvas.translate((((getMeasuredWidth() - dp3) / 2.0f) - (AndroidUtilities.dp(400.0f) / 2.0f)) + (dp3 / 2.0f), ((getMeasuredHeight() / 2) - dp3) + dp3 + AndroidUtilities.dp(10.0f));
                             staticLayout2.draw(canvas);
@@ -565,7 +565,7 @@ public class GroupCallMiniTextureView extends FrameLayout implements GroupCallSt
         SimpleTextView simpleTextView = new SimpleTextView(groupCallRenderersContainer.getContext());
         this.nameView = simpleTextView;
         simpleTextView.setTextSize(13);
-        simpleTextView.setTextColor(ColorUtils.setAlphaComponent(-1, NotificationCenter.botDownloadsUpdate));
+        simpleTextView.setTextColor(ColorUtils.setAlphaComponent(-1, NotificationCenter.starGiftSoldOut));
         simpleTextView.setTypeface(AndroidUtilities.bold());
         simpleTextView.setFullTextMaxLines(1);
         simpleTextView.setBuildFullLayout(true);
@@ -1911,7 +1911,7 @@ public class GroupCallMiniTextureView extends FrameLayout implements GroupCallSt
         if (bitmap == null || bitmap.getPixel(0, 0) == 0) {
             return;
         }
-        Utilities.stackBlurBitmap(bitmap, Math.max(7, Math.max(bitmap.getWidth(), bitmap.getHeight()) / NotificationCenter.suggestedFiltersLoaded));
+        Utilities.stackBlurBitmap(bitmap, Math.max(7, Math.max(bitmap.getWidth(), bitmap.getHeight()) / NotificationCenter.dialogFiltersUpdated));
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.voip.GroupCallMiniTextureView$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
@@ -2126,7 +2126,7 @@ public class GroupCallMiniTextureView extends FrameLayout implements GroupCallSt
             this.bigWaveDrawable.generateBlob();
             this.paint.setColor(ColorUtils.blendARGB(Theme.getColor(Theme.key_voipgroup_listeningText), Theme.getColor(Theme.key_voipgroup_speakingText), this.speakingProgress));
             this.paint.setAlpha(102);
-            this.backgroundPaint.setColor(ColorUtils.setAlphaComponent(-16777216, NotificationCenter.dialogIsTranslatable));
+            this.backgroundPaint.setColor(ColorUtils.setAlphaComponent(-16777216, NotificationCenter.messageTranslated));
         }
 
         @Override // android.view.View

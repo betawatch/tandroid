@@ -2816,7 +2816,7 @@ public class MediaDataController extends BaseController {
     }
 
     public static long calcDocumentsHash(ArrayList<TLRPC.Document> arrayList) {
-        return calcDocumentsHash(arrayList, NotificationCenter.savedMessagesForwarded);
+        return calcDocumentsHash(arrayList, NotificationCenter.userIsPremiumBlockedUpadted);
     }
 
     public static long calcDocumentsHash(ArrayList<TLRPC.Document> arrayList, int i) {
@@ -3090,7 +3090,7 @@ public class MediaDataController extends BaseController {
                         i3 = getMessagesController().maxRecentStickersCount;
                     }
                 }
-                i3 = NotificationCenter.savedMessagesForwarded;
+                i3 = NotificationCenter.userIsPremiumBlockedUpadted;
             }
             database.beginTransaction();
             SQLitePreparedStatement executeFast = database.executeFast("REPLACE INTO web_recent_v3 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
@@ -5765,7 +5765,7 @@ public class MediaDataController extends BaseController {
                     ArrayList<MessageObject> arrayList2 = this.searchLocalResultMessages;
                     j8 = j6;
                     j9 = 0;
-                    messagesStorage.searchSavedByTag(tLReaction, j10, str2, NotificationCenter.premiumStickersPreviewLoaded, arrayList2 == null ? 0 : arrayList2.size(), new Utilities.Callback4() { // from class: org.telegram.messenger.MediaDataController$$ExternalSyntheticLambda117
+                    messagesStorage.searchSavedByTag(tLReaction, j10, str2, NotificationCenter.billingProductDetailsUpdated, arrayList2 == null ? 0 : arrayList2.size(), new Utilities.Callback4() { // from class: org.telegram.messenger.MediaDataController$$ExternalSyntheticLambda117
                         @Override // org.telegram.messenger.Utilities.Callback4
                         public final void run(Object obj, Object obj2, Object obj3, Object obj4) {
                             MediaDataController.this.lambda$searchMessagesInChat$122(i7, savedTagCount, i, j, (ArrayList) obj, (ArrayList) obj2, (ArrayList) obj3, (ArrayList) obj4);

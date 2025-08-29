@@ -69,7 +69,7 @@ public abstract class GigagroupConvertAlert extends BottomSheet {
         rLottieImageView.setAutoRepeat(true);
         rLottieImageView.setAnimation(R.raw.utyan_gigagroup, 120, 120);
         rLottieImageView.playAnimation();
-        linearLayout.addView(rLottieImageView, LayoutHelper.createLinear(NotificationCenter.audioRecordTooShort, NotificationCenter.audioRecordTooShort, 49, 17, 30, 17, 0));
+        linearLayout.addView(rLottieImageView, LayoutHelper.createLinear(NotificationCenter.albumsDidLoad, NotificationCenter.albumsDidLoad, 49, 17, 30, 17, 0));
         TextView textView = new TextView(context);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setTextSize(1, 24.0f);

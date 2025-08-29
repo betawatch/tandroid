@@ -125,11 +125,11 @@ public final class l implements j$.time.temporal.o, j$.time.temporal.p {
             case 2:
                 return (z ? 1 : 0) + 91;
             case 3:
-                return (z ? 1 : 0) + NotificationCenter.recordStarted;
+                return (z ? 1 : 0) + NotificationCenter.messagePlayingGoingToStop;
             case 4:
-                return (z ? 1 : 0) + NotificationCenter.didReceiveSmsCode;
+                return (z ? 1 : 0) + NotificationCenter.wallpapersDidLoad;
             case 5:
-                return (z ? 1 : 0) + NotificationCenter.topicsDidLoaded;
+                return (z ? 1 : 0) + NotificationCenter.permissionsGranted;
             case 6:
                 return 1;
             case 7:
@@ -137,11 +137,11 @@ public final class l implements j$.time.temporal.o, j$.time.temporal.p {
             case 8:
                 return (z ? 1 : 0) + 121;
             case 9:
-                return (z ? 1 : 0) + NotificationCenter.giftsToUserSent;
+                return (z ? 1 : 0) + NotificationCenter.suggestedFiltersLoaded;
             case 10:
-                return (z ? 1 : 0) + 213;
+                return (z ? 1 : 0) + NotificationCenter.availableEffectsUpdate;
             case 11:
-                return (z ? 1 : 0) + NotificationCenter.screenStateChanged;
+                return (z ? 1 : 0) + NotificationCenter.closeSearchByActiveAction;
             default:
                 return (z ? 1 : 0) + 335;
         }

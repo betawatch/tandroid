@@ -449,7 +449,7 @@ public class VideoEditedInfo {
         PhotoFilterView.CurvesValue curvesValue;
         ArrayList<MediaEntity> arrayList;
         if (this.avatarStartTime != -1 || this.filterState != null || this.paintPath != null || this.blurPath != null || (((arrayList = this.mediaEntities) != null && !arrayList.isEmpty()) || this.cropState != null)) {
-            int i = this.filterState != null ? NotificationCenter.closeInCallActivity : 10;
+            int i = this.filterState != null ? NotificationCenter.groupCallTypingsUpdated : 10;
             String str = this.paintPath;
             byte[] bArr2 = null;
             if (str != null) {

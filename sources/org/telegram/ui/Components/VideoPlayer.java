@@ -1845,7 +1845,7 @@ public class VideoPlayer implements Player.Listener, VideoListener, AnalyticsLis
             if (Math.abs(min - 360) < 55) {
                 return 360;
             }
-            return Math.abs(min + (-240)) < 55 ? NotificationCenter.profileMusicUpdated : Math.abs(min + (-144)) < 55 ? NotificationCenter.dialogsUnreadCounterChanged : min;
+            return Math.abs(min + (-240)) < 55 ? NotificationCenter.musicListLoaded : Math.abs(min + (-144)) < 55 ? NotificationCenter.fileNewChunkAvailable : min;
         }
 
         public TLRPC.Document getDownloadDocument() {
@@ -2581,7 +2581,7 @@ public class VideoPlayer implements Player.Listener, VideoListener, AnalyticsLis
                             }
                         } else {
                             while (i < 6) {
-                                int i5 = NotificationCenter.closeInCallActivity * i;
+                                int i5 = NotificationCenter.groupCallTypingsUpdated * i;
                                 float f5 = this.fft.getSpectrumReal()[i5];
                                 float f6 = this.fft.getSpectrumImaginary()[i5];
                                 float sqrt3 = (float) (Math.sqrt((f5 * f5) + (f6 * f6)) / 30.0d);

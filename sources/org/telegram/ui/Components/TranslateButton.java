@@ -272,7 +272,7 @@ public abstract class TranslateButton extends FrameLayout {
         });
         actionBarPopupWindowLayout.addView(actionBarMenuSubItem7);
         actionBarPopupWindow.setPauseNotifications(true);
-        actionBarPopupWindow.setDismissAnimationDuration(NotificationCenter.botStarsTransactionsLoaded);
+        actionBarPopupWindow.setDismissAnimationDuration(NotificationCenter.factCheckLoaded);
         actionBarPopupWindow.setOutsideTouchable(true);
         actionBarPopupWindow.setClippingEnabled(true);
         actionBarPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);

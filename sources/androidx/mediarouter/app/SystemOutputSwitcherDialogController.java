@@ -53,7 +53,7 @@ public abstract class SystemOutputSwitcherDialogController {
         Iterator<ResolveInfo> it = context.getPackageManager().queryBroadcastReceivers(putExtra, 0).iterator();
         while (it.hasNext()) {
             ActivityInfo activityInfo = it.next().activityInfo;
-            if (activityInfo != null && (applicationInfo = activityInfo.applicationInfo) != null && (applicationInfo.flags & NotificationCenter.didGenerateFingerprintKeyPair) != 0) {
+            if (activityInfo != null && (applicationInfo = activityInfo.applicationInfo) != null && (applicationInfo.flags & NotificationCenter.dialogIsTranslatable) != 0) {
                 context.sendBroadcast(putExtra);
                 return true;
             }
@@ -67,7 +67,7 @@ public abstract class SystemOutputSwitcherDialogController {
         Iterator<ResolveInfo> it = context.getPackageManager().queryIntentActivities(putExtra, 0).iterator();
         while (it.hasNext()) {
             ActivityInfo activityInfo = it.next().activityInfo;
-            if (activityInfo != null && (applicationInfo = activityInfo.applicationInfo) != null && (applicationInfo.flags & NotificationCenter.didGenerateFingerprintKeyPair) != 0) {
+            if (activityInfo != null && (applicationInfo = activityInfo.applicationInfo) != null && (applicationInfo.flags & NotificationCenter.dialogIsTranslatable) != 0) {
                 context.startActivity(putExtra);
                 return true;
             }
@@ -81,7 +81,7 @@ public abstract class SystemOutputSwitcherDialogController {
         Iterator<ResolveInfo> it = context.getPackageManager().queryIntentActivities(putExtra, 0).iterator();
         while (it.hasNext()) {
             ActivityInfo activityInfo = it.next().activityInfo;
-            if (activityInfo != null && (applicationInfo = activityInfo.applicationInfo) != null && (applicationInfo.flags & NotificationCenter.didGenerateFingerprintKeyPair) != 0) {
+            if (activityInfo != null && (applicationInfo = activityInfo.applicationInfo) != null && (applicationInfo.flags & NotificationCenter.dialogIsTranslatable) != 0) {
                 context.startActivity(putExtra);
                 return true;
             }

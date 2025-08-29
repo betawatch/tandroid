@@ -234,7 +234,7 @@ public abstract class PrivateVideoPreviewDialog extends FrameLayout implements V
             protected void onDraw(Canvas canvas) {
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-                this.gradientPaint[PrivateVideoPreviewDialog.this.currentPage].setAlpha(NotificationCenter.needCheckSystemBarColors);
+                this.gradientPaint[PrivateVideoPreviewDialog.this.currentPage].setAlpha(NotificationCenter.didApplyNewTheme);
                 canvas.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), this.gradientPaint[PrivateVideoPreviewDialog.this.currentPage]);
                 if (PrivateVideoPreviewDialog.this.pageOffset > 0.0f) {
                     int i = PrivateVideoPreviewDialog.this.currentPage + 1;

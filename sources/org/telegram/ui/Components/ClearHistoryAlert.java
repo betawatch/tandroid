@@ -312,7 +312,7 @@ public class ClearHistoryAlert extends BottomSheet {
                     rLottieImageView.setAnimation(R.raw.utyan_private, 120, 120);
                     rLottieImageView.setPadding(0, AndroidUtilities.dp(20.0f), 0, 0);
                     rLottieImageView.playAnimation();
-                    this.linearLayout.addView(rLottieImageView, LayoutHelper.createLinear(NotificationCenter.audioRecordTooShort, NotificationCenter.audioRecordTooShort, 49, 17, 0, 17, 0));
+                    this.linearLayout.addView(rLottieImageView, LayoutHelper.createLinear(NotificationCenter.albumsDidLoad, NotificationCenter.albumsDidLoad, 49, 17, 0, 17, 0));
                     TextView textView3 = new TextView(context);
                     textView3.setTypeface(AndroidUtilities.bold());
                     textView3.setTextSize(1, 24.0f);

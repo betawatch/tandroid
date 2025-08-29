@@ -145,7 +145,7 @@ public final class PsExtractor implements Extractor {
             extractorInput.skipFully(1);
             return 0;
         }
-        int i = readInt & NotificationCenter.needCheckSystemBarColors;
+        int i = readInt & NotificationCenter.didApplyNewTheme;
         PesReader pesReader = (PesReader) this.psPayloadReaders.get(i);
         if (!this.foundAllTracks) {
             if (pesReader == null) {
@@ -153,11 +153,11 @@ public final class PsExtractor implements Extractor {
                     elementaryStreamReader = new Ac3Reader();
                     this.foundAudioTrack = true;
                     this.lastTrackPosition = extractorInput.getPosition();
-                } else if ((readInt & NotificationCenter.starGiftsLoaded) == 192) {
+                } else if ((readInt & NotificationCenter.webViewResolved) == 192) {
                     elementaryStreamReader = new MpegAudioReader();
                     this.foundAudioTrack = true;
                     this.lastTrackPosition = extractorInput.getPosition();
-                } else if ((readInt & NotificationCenter.profileMusicUpdated) == 224) {
+                } else if ((readInt & NotificationCenter.musicListLoaded) == 224) {
                     elementaryStreamReader = new H262Reader();
                     this.foundVideoTrack = true;
                     this.lastTrackPosition = extractorInput.getPosition();

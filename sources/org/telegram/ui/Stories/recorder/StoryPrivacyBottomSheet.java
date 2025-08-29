@@ -680,7 +680,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                     public final void run(Object obj) {
                         StoryPrivacyBottomSheet.Page.this.lambda$new$3(j, (TLRPC.TL_channels_channelParticipants) obj);
                     }
-                }, NotificationCenter.savedMessagesForwarded);
+                }, NotificationCenter.userIsPremiumBlockedUpadted);
             } else {
                 MessagesController.getInstance(((BottomSheet) StoryPrivacyBottomSheet.this).currentAccount).loadFullChat(j, 0, true);
             }
@@ -3797,7 +3797,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                         SearchUsersCell.this.currentDeletingSpan = null;
                     }
                     if (motionEvent.getAction() == 0 && !AndroidUtilities.showKeyboard(this)) {
-                        SearchUsersCell.this.fullScroll(NotificationCenter.walletPendingTransactionsChanged);
+                        SearchUsersCell.this.fullScroll(NotificationCenter.dialogTranslate);
                         clearFocus();
                         requestFocus();
                     }
@@ -3857,7 +3857,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
         @Override // android.view.ViewGroup, android.view.View
         protected void dispatchDraw(Canvas canvas) {
             float scrollY = getScrollY();
-            canvas.saveLayerAlpha(0.0f, scrollY, getWidth(), getHeight() + r0, NotificationCenter.needCheckSystemBarColors, 31);
+            canvas.saveLayerAlpha(0.0f, scrollY, getWidth(), getHeight() + r0, NotificationCenter.didApplyNewTheme, 31);
             super.dispatchDraw(canvas);
             canvas.save();
             float f = this.topGradientAlpha.set(canScrollVertically(-1));
@@ -4104,7 +4104,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                         SearchUsersCell.this.editText.bringPointIntoView(SearchUsersCell.this.editText.getSelectionStart());
                     }
                     if (SearchUsersCell.this.scroll) {
-                        SearchUsersCell.this.fullScroll(NotificationCenter.walletPendingTransactionsChanged);
+                        SearchUsersCell.this.fullScroll(NotificationCenter.dialogTranslate);
                         SearchUsersCell.this.scroll = false;
                     }
                 }
@@ -4113,7 +4113,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
 
             /* JADX INFO: Access modifiers changed from: private */
             public /* synthetic */ void lambda$onMeasure$0() {
-                SearchUsersCell.this.fullScroll(NotificationCenter.walletPendingTransactionsChanged);
+                SearchUsersCell.this.fullScroll(NotificationCenter.dialogTranslate);
             }
 
             @Override // android.view.ViewGroup, android.view.View
@@ -4145,7 +4145,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                             SearchUsersCell.this.updateHeight.run();
                         }
                         if (SearchUsersCell.this.scroll) {
-                            SearchUsersCell.this.fullScroll(NotificationCenter.walletPendingTransactionsChanged);
+                            SearchUsersCell.this.fullScroll(NotificationCenter.dialogTranslate);
                             SearchUsersCell.this.scroll = false;
                         }
                     }
@@ -4191,7 +4191,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                                 SearchUsersCell.this.updateHeight.run();
                             }
                             if (SearchUsersCell.this.scroll) {
-                                SearchUsersCell.this.fullScroll(NotificationCenter.walletPendingTransactionsChanged);
+                                SearchUsersCell.this.fullScroll(NotificationCenter.dialogTranslate);
                                 SearchUsersCell.this.scroll = false;
                             }
                         }
@@ -4257,7 +4257,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                                 SearchUsersCell.this.updateHeight.run();
                             }
                             if (SearchUsersCell.this.scroll) {
-                                SearchUsersCell.this.fullScroll(NotificationCenter.walletPendingTransactionsChanged);
+                                SearchUsersCell.this.fullScroll(NotificationCenter.dialogTranslate);
                                 SearchUsersCell.this.scroll = false;
                             }
                         }

@@ -194,7 +194,7 @@ public class AnimatedTextView extends View {
             this.animateWave = -1.0f;
             this.moveAmplitude = 0.3f;
             this.scaleAmplitude = 0.0f;
-            this.alpha = NotificationCenter.needCheckSystemBarColors;
+            this.alpha = NotificationCenter.didApplyNewTheme;
             this.bounds = new android.graphics.Rect();
             this.includeFontPadding = true;
             this.centerY = true;
@@ -249,7 +249,7 @@ public class AnimatedTextView extends View {
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(this.bounds);
                 rectF.right -= this.rightPadding;
-                canvas.saveLayerAlpha(rectF, NotificationCenter.needCheckSystemBarColors, 31);
+                canvas.saveLayerAlpha(rectF, NotificationCenter.didApplyNewTheme, 31);
             }
             canvas.save();
             android.graphics.Rect rect = this.bounds;

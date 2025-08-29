@@ -25,7 +25,7 @@ public class StoryReactionWidgetBackground extends Drawable {
     private Paint xRefPaint;
     private final int STYLE_FILLED = 0;
     private final int STYLE_TRANSCLUENT = 1;
-    int alpha = NotificationCenter.needCheckSystemBarColors;
+    int alpha = NotificationCenter.didApplyNewTheme;
     float[] points = new float[15];
     Path path = new Path();
 
@@ -84,7 +84,7 @@ public class StoryReactionWidgetBackground extends Drawable {
                 this.xRefPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
                 this.xRefPaint.setStrokeWidth(AndroidUtilities.dp(3.0f));
             }
-            this.backgroundPaint.setColor(ColorUtils.setAlphaComponent(-16777216, NotificationCenter.dialogIsTranslatable));
+            this.backgroundPaint.setColor(ColorUtils.setAlphaComponent(-16777216, NotificationCenter.messageTranslated));
         }
         if (this.alpha != 255 || this.style == 1) {
             canvas.saveLayerAlpha(getBounds().left - (getBounds().width() * 0.2f), getBounds().top, getBounds().right + (getBounds().width() * 0.2f), getBounds().bottom + (getBounds().height() * 0.2f), this.alpha, 31);

@@ -135,7 +135,7 @@ public abstract class SelfStoriesPreviewView extends View {
             }
         });
         this.scroller = new Scroller(context, new OvershootInterpolator());
-        this.gradientDrawable = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{0, ColorUtils.setAlphaComponent(-16777216, NotificationCenter.audioRecordTooShort)});
+        this.gradientDrawable = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{0, ColorUtils.setAlphaComponent(-16777216, NotificationCenter.albumsDidLoad)});
     }
 
     @Override // android.view.View

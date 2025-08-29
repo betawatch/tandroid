@@ -339,8 +339,8 @@ public class ProfileMetaballView extends View {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:138:0x047c A[ORIG_RETURN, RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x027a  */
+    /* JADX WARN: Removed duplicated region for block: B:136:0x0473 A[ORIG_RETURN, RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x0271  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -379,7 +379,7 @@ public class ProfileMetaballView extends View {
         }
         float f12 = width;
         float f13 = y;
-        boolean z = f12 <= ((float) AndroidUtilities.dp(40.0f)) && f12 > ((float) AndroidUtilities.dp(12.0f));
+        boolean z = f12 <= ((float) AndroidUtilities.dp(40.0f));
         boolean z2 = f12 <= ((float) AndroidUtilities.dp(32.0f));
         if (!z) {
             if (this.isBackward) {
@@ -400,7 +400,7 @@ public class ProfileMetaballView extends View {
             this.alpha = (int) (255.0f * lerp2);
             this.blurRadius = ((int) ((1.0f - max) * 20.0f)) + 2;
         } else {
-            this.alpha = NotificationCenter.needCheckSystemBarColors;
+            this.alpha = NotificationCenter.didApplyNewTheme;
             this.blurRadius = 1;
         }
         if (!this.isBackward) {

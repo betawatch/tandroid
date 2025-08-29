@@ -723,7 +723,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         FrameLayout frameLayout = new FrameLayout(context);
         this.bulletinContainer = frameLayout;
         WindowView windowView4 = this.windowView;
-        FrameLayout.LayoutParams createFrame3 = LayoutHelper.createFrame(-1, NotificationCenter.savedMessagesForwarded, 55);
+        FrameLayout.LayoutParams createFrame3 = LayoutHelper.createFrame(-1, NotificationCenter.userIsPremiumBlockedUpadted, 55);
         this.bulletinContainerLayoutParams = createFrame3;
         windowView4.addView(frameLayout, createFrame3);
         this.actionBarShadow = ContextCompat.getDrawable(getContext(), R.drawable.header_shadow).mutate();
@@ -1788,7 +1788,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
             Drawable mutate = getContext().getResources().getDrawable(R.drawable.verified_profile).mutate();
             this.verifiedDrawable = mutate;
             mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_featuredStickers_addButton, this.resourcesProvider), PorterDuff.Mode.SRC_IN));
-            this.verifiedDrawable.setAlpha(NotificationCenter.needCheckSystemBarColors);
+            this.verifiedDrawable.setAlpha(NotificationCenter.didApplyNewTheme);
             this.actionBar.getTitleTextView().setDrawablePadding(AndroidUtilities.dp(2.0f));
             this.actionBar.getTitleTextView().setRightDrawable(new Drawable() { // from class: org.telegram.ui.bots.BotWebViewSheet.9
                 @Override // android.graphics.drawable.Drawable

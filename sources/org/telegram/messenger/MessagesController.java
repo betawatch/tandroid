@@ -1899,7 +1899,7 @@ public class MessagesController extends BaseController implements NotificationCe
         this.uploadingThemes = new HashMap<>();
         this.appConfigFetcher = new 1();
         this.maxBroadcastCount = 100;
-        this.minGroupConvertSize = NotificationCenter.savedMessagesForwarded;
+        this.minGroupConvertSize = NotificationCenter.userIsPremiumBlockedUpadted;
         this.gifSearchEmojies = new ArrayList<>();
         this.diceSuccess = new HashMap<>();
         this.emojiSounds = new HashMap<>();
@@ -1995,9 +1995,9 @@ public class MessagesController extends BaseController implements NotificationCe
         System.currentTimeMillis();
         this.remoteConfigLoaded = this.mainPreferences.getBoolean("remoteConfigLoaded", false);
         this.secretWebpagePreview = this.mainPreferences.getInt("secretWebpage2", 2);
-        this.maxGroupCount = this.mainPreferences.getInt("maxGroupCount", NotificationCenter.savedMessagesForwarded);
+        this.maxGroupCount = this.mainPreferences.getInt("maxGroupCount", NotificationCenter.userIsPremiumBlockedUpadted);
         this.maxMegagroupCount = this.mainPreferences.getInt("maxMegagroupCount", 10000);
-        this.maxRecentGifsCount = this.mainPreferences.getInt("maxRecentGifsCount", NotificationCenter.savedMessagesForwarded);
+        this.maxRecentGifsCount = this.mainPreferences.getInt("maxRecentGifsCount", NotificationCenter.userIsPremiumBlockedUpadted);
         this.maxRecentStickersCount = this.mainPreferences.getInt("maxRecentStickersCount", 30);
         this.maxFaveStickersCount = this.mainPreferences.getInt("maxFaveStickersCount", 5);
         this.maxEditTime = this.mainPreferences.getInt("maxEditTime", 3600);
@@ -2058,10 +2058,10 @@ public class MessagesController extends BaseController implements NotificationCe
         int i2 = this.mainPreferences.getInt("channelsLimitDefault", 500);
         this.channelsLimitDefault = i2;
         this.channelsLimitPremium = this.mainPreferences.getInt("channelsLimitPremium", i2 * 2);
-        this.savedGifsLimitDefault = this.mainPreferences.getInt("savedGifsLimitDefault", NotificationCenter.savedMessagesForwarded);
+        this.savedGifsLimitDefault = this.mainPreferences.getInt("savedGifsLimitDefault", NotificationCenter.userIsPremiumBlockedUpadted);
         this.savedGifsLimitPremium = this.mainPreferences.getInt("savedGifsLimitPremium", 400);
         this.stickersFavedLimitDefault = this.mainPreferences.getInt("stickersFavedLimitDefault", 5);
-        this.stickersFavedLimitPremium = this.mainPreferences.getInt("stickersFavedLimitPremium", NotificationCenter.savedMessagesForwarded);
+        this.stickersFavedLimitPremium = this.mainPreferences.getInt("stickersFavedLimitPremium", NotificationCenter.userIsPremiumBlockedUpadted);
         this.maxPinnedDialogsCountDefault = this.mainPreferences.getInt("maxPinnedDialogsCountDefault", 5);
         this.maxPinnedDialogsCountPremium = this.mainPreferences.getInt("maxPinnedDialogsCountPremium", 5);
         this.maxPinnedDialogsCountDefault = this.mainPreferences.getInt("maxPinnedDialogsCountDefault", 5);
@@ -2069,17 +2069,17 @@ public class MessagesController extends BaseController implements NotificationCe
         this.dialogFiltersLimitDefault = this.mainPreferences.getInt("dialogFiltersLimitDefault", 10);
         this.dialogFiltersLimitPremium = this.mainPreferences.getInt("dialogFiltersLimitPremium", 20);
         this.dialogFiltersChatsLimitDefault = this.mainPreferences.getInt("dialogFiltersChatsLimitDefault", 100);
-        this.dialogFiltersChatsLimitPremium = this.mainPreferences.getInt("dialogFiltersChatsLimitPremium", NotificationCenter.savedMessagesForwarded);
+        this.dialogFiltersChatsLimitPremium = this.mainPreferences.getInt("dialogFiltersChatsLimitPremium", NotificationCenter.userIsPremiumBlockedUpadted);
         this.dialogFiltersPinnedLimitDefault = this.mainPreferences.getInt("dialogFiltersPinnedLimitDefault", 5);
         this.dialogFiltersPinnedLimitPremium = this.mainPreferences.getInt("dialogFiltersPinnedLimitPremium", 10);
         this.publicLinksLimitDefault = this.mainPreferences.getInt("publicLinksLimitDefault", 10);
         this.publicLinksLimitPremium = this.mainPreferences.getInt("publicLinksLimitPremium", 20);
         this.captionLengthLimitDefault = this.mainPreferences.getInt("captionLengthLimitDefault", 1024);
         this.captionLengthLimitPremium = this.mainPreferences.getInt("captionLengthLimitPremium", 4096);
-        this.storyCaptionLengthLimitDefault = this.mainPreferences.getInt("storyCaptionLengthLimit", NotificationCenter.savedMessagesForwarded);
+        this.storyCaptionLengthLimitDefault = this.mainPreferences.getInt("storyCaptionLengthLimit", NotificationCenter.userIsPremiumBlockedUpadted);
         this.storyCaptionLengthLimitPremium = this.mainPreferences.getInt("storyCaptionLengthLimitPremium", 2048);
         this.aboutLengthLimitDefault = this.mainPreferences.getInt("aboutLengthLimitDefault", 70);
-        this.aboutLengthLimitPremium = this.mainPreferences.getInt("aboutLengthLimitPremium", NotificationCenter.fileLoadFailed);
+        this.aboutLengthLimitPremium = this.mainPreferences.getInt("aboutLengthLimitPremium", NotificationCenter.fileLoadProgressChanged);
         this.reactionsUserMaxDefault = this.mainPreferences.getInt("reactionsUserMaxDefault", 1);
         this.reactionsUserMaxPremium = this.mainPreferences.getInt("reactionsUserMaxPremium", 3);
         this.reactionsInChatMax = this.mainPreferences.getInt("reactionsInChatMax", 3);
@@ -2094,7 +2094,7 @@ public class MessagesController extends BaseController implements NotificationCe
         this.premiumLocked = this.mainPreferences.getBoolean("premiumLocked", false);
         this.starsLocked = this.mainPreferences.getBoolean("starsLocked", true);
         this.transcribeButtonPressed = this.mainPreferences.getInt("transcribeButtonPressed", 0);
-        this.forumUpgradeParticipantsMin = this.mainPreferences.getInt("forumUpgradeParticipantsMin", NotificationCenter.savedMessagesForwarded);
+        this.forumUpgradeParticipantsMin = this.mainPreferences.getInt("forumUpgradeParticipantsMin", NotificationCenter.userIsPremiumBlockedUpadted);
         this.topicsPinnedLimit = this.mainPreferences.getInt("topicsPinnedLimit", 3);
         this.telegramAntispamUserId = this.mainPreferences.getLong("telegramAntispamUserId", -1L);
         this.telegramAntispamGroupSizeMin = this.mainPreferences.getInt("telegramAntispamGroupSizeMin", 100);
@@ -2113,7 +2113,7 @@ public class MessagesController extends BaseController implements NotificationCe
         this.giveawayBoostsPerPremium = this.mainPreferences.getLong("giveaway_boosts_per_premium", 4L);
         this.boostsPerSentGift = this.mainPreferences.getLong("boosts_per_sent_gift", 3L);
         this.giveawayPeriodMax = this.mainPreferences.getLong("giveaway_period_max", 7L);
-        this.stealthModePast = this.mainPreferences.getInt("stories_stealth_past_period", NotificationCenter.premiumStickersPreviewLoaded);
+        this.stealthModePast = this.mainPreferences.getInt("stories_stealth_past_period", NotificationCenter.billingProductDetailsUpdated);
         this.stealthModeCooldown = this.mainPreferences.getInt("stories_stealth_cooldown_period", 3600);
         boolean z = ConnectionsManager.native_isTestBackend(this.currentAccount) != 0;
         this.chatlistInvitesLimitDefault = this.mainPreferences.getInt("chatlistInvitesLimitDefault", 3);
@@ -2124,7 +2124,7 @@ public class MessagesController extends BaseController implements NotificationCe
         this.storiesSuggestedReactionsLimitPremium = this.mainPreferences.getInt("storiesSuggestedReactionsLimitPremium", 5);
         this.storiesSentWeeklyLimitPremium = this.mainPreferences.getInt("storiesSentWeeklyLimitPremium", 70);
         this.storiesSentMonthlyLimitDefault = this.mainPreferences.getInt("storiesSentMonthlyLimitDefault", 30);
-        this.storiesSentMonthlyLimitPremium = this.mainPreferences.getInt("storiesSentMonthlyLimitPremium", NotificationCenter.premiumStickersPreviewLoaded);
+        this.storiesSentMonthlyLimitPremium = this.mainPreferences.getInt("storiesSentMonthlyLimitPremium", NotificationCenter.billingProductDetailsUpdated);
         this.channelBgIconLevelMin = this.mainPreferences.getInt("channelBgIconLevelMin", 1);
         this.channelProfileIconLevelMin = this.mainPreferences.getInt("channelProfileIconLevelMin", 1);
         this.channelEmojiStatusLevelMin = this.mainPreferences.getInt("channelEmojiStatusLevelMin", 1);
@@ -2141,8 +2141,8 @@ public class MessagesController extends BaseController implements NotificationCe
         this.chatlistInvitesLimitPremium = this.mainPreferences.getInt("chatlistInvitesLimitPremium", z ? 5 : 20);
         this.chatlistJoinedLimitDefault = this.mainPreferences.getInt("chatlistJoinedLimitDefault", 2);
         this.chatlistJoinedLimitPremium = this.mainPreferences.getInt("chatlistJoinedLimitPremium", z ? 5 : 20);
-        this.stargiftsMessageLengthMax = this.mainPreferences.getInt("stargiftsMessageLengthMax", NotificationCenter.needCheckSystemBarColors);
-        this.stargiftsConvertPeriodMax = this.mainPreferences.getInt("stargiftsConvertPeriodMax", z ? NotificationCenter.premiumStickersPreviewLoaded : 7776000);
+        this.stargiftsMessageLengthMax = this.mainPreferences.getInt("stargiftsMessageLengthMax", NotificationCenter.didApplyNewTheme);
+        this.stargiftsConvertPeriodMax = this.mainPreferences.getInt("stargiftsConvertPeriodMax", z ? NotificationCenter.billingProductDetailsUpdated : 7776000);
         this.videoIgnoreAltDocuments = this.mainPreferences.getBoolean("videoIgnoreAltDocuments", false);
         this.disableBotFullscreenBlur = this.mainPreferences.getBoolean("disableBotFullscreenBlur", false);
         this.tonBlockchainExplorerUrl = this.mainPreferences.getString("tonBlockchainExplorerUrl", "https://tonviewer.com/");
@@ -2173,7 +2173,7 @@ public class MessagesController extends BaseController implements NotificationCe
         int i4 = this.mainPreferences.getInt("transcribeAudioTrialWeeklyNumber", BuildVars.DEBUG_PRIVATE_VERSION ? 2 : 0);
         this.transcribeAudioTrialWeeklyNumber = i4;
         this.transcribeAudioTrialCurrentNumber = this.mainPreferences.getInt("transcribeAudioTrialCurrentNumber", i4);
-        this.transcribeAudioTrialDurationMax = this.mainPreferences.getInt("transcribeAudioTrialDurationMax", NotificationCenter.premiumStickersPreviewLoaded);
+        this.transcribeAudioTrialDurationMax = this.mainPreferences.getInt("transcribeAudioTrialDurationMax", NotificationCenter.billingProductDetailsUpdated);
         this.transcribeAudioTrialCooldownUntil = this.mainPreferences.getInt("transcribeAudioTrialCooldownUntil", 0);
         this.recommendedChannelsLimitDefault = this.mainPreferences.getInt("recommendedChannelsLimitDefault", 10);
         this.recommendedChannelsLimitPremium = this.mainPreferences.getInt("recommendedChannelsLimitPremium", 100);
@@ -3205,7 +3205,7 @@ public class MessagesController extends BaseController implements NotificationCe
     public void addFilter(DialogFilter dialogFilter, boolean z) {
         if (z) {
             int size = this.dialogFilters.size();
-            int i = NotificationCenter.themeAccentListUpdated;
+            int i = NotificationCenter.themeListUpdated;
             for (int i2 = 0; i2 < size; i2++) {
                 i = Math.min(i, this.dialogFilters.get(i2).order);
             }
@@ -8656,7 +8656,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.dialogIsTranslatable /* 127 */:
+                case NotificationCenter.messageTranslated /* 127 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -8722,7 +8722,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.didGenerateFingerprintKeyPair /* 129 */:
+                case NotificationCenter.dialogIsTranslatable /* 129 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -8757,7 +8757,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.walletPendingTransactionsChanged /* 130 */:
+                case NotificationCenter.dialogTranslate /* 130 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -8793,7 +8793,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.walletSyncProgressChanged /* 131 */:
+                case NotificationCenter.didGenerateFingerprintKeyPair /* 131 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -8828,7 +8828,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.httpFileDidLoad /* 132 */:
+                case NotificationCenter.walletPendingTransactionsChanged /* 132 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -8863,7 +8863,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.httpFileDidFailedLoad /* 133 */:
+                case NotificationCenter.walletSyncProgressChanged /* 133 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -8898,7 +8898,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.didUpdateConnectionState /* 134 */:
+                case NotificationCenter.httpFileDidLoad /* 134 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -8957,7 +8957,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     z14 = true;
                     z28 = z14;
                     break;
-                case NotificationCenter.fileUploaded /* 135 */:
+                case NotificationCenter.httpFileDidFailedLoad /* 135 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -8992,7 +8992,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.fileUploadFailed /* 136 */:
+                case NotificationCenter.didUpdateConnectionState /* 136 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -9027,7 +9027,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.fileUploadProgressChanged /* 137 */:
+                case NotificationCenter.fileUploaded /* 137 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -9062,7 +9062,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.fileLoadProgressChanged /* 138 */:
+                case NotificationCenter.fileUploadFailed /* 138 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -9097,7 +9097,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.fileLoaded /* 139 */:
+                case NotificationCenter.fileUploadProgressChanged /* 139 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -9132,7 +9132,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.fileLoadFailed /* 140 */:
+                case NotificationCenter.fileLoadProgressChanged /* 140 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -9166,7 +9166,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.filePreparingStarted /* 141 */:
+                case NotificationCenter.fileLoaded /* 141 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -9201,7 +9201,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.fileNewChunkAvailable /* 142 */:
+                case NotificationCenter.fileLoadFailed /* 142 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -9235,7 +9235,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.filePreparingFailed /* 143 */:
+                case NotificationCenter.filePreparingStarted /* 143 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -9267,7 +9267,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str7 = str17;
                     str6 = str16;
                     break;
-                case NotificationCenter.dialogsUnreadCounterChanged /* 144 */:
+                case NotificationCenter.fileNewChunkAvailable /* 144 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -9302,7 +9302,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.messagePlayingProgressDidChanged /* 145 */:
+                case NotificationCenter.filePreparingFailed /* 145 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -9336,7 +9336,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.messagePlayingDidReset /* 146 */:
+                case NotificationCenter.dialogsUnreadCounterChanged /* 146 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -9371,7 +9371,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.messagePlayingPlayStateChanged /* 147 */:
+                case NotificationCenter.messagePlayingProgressDidChanged /* 147 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -9407,7 +9407,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.messagePlayingDidStart /* 148 */:
+                case NotificationCenter.messagePlayingDidReset /* 148 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -9442,7 +9442,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.messagePlayingDidSeek /* 149 */:
+                case NotificationCenter.messagePlayingPlayStateChanged /* 149 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -9590,7 +9590,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str7 = str17;
                     str6 = str16;
                     break;
-                case NotificationCenter.recordProgressChanged /* 151 */:
+                case NotificationCenter.messagePlayingDidSeek /* 151 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -9625,7 +9625,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.recordStarted /* 152 */:
+                case NotificationCenter.messagePlayingGoingToStop /* 152 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -9654,7 +9654,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str7 = str17;
                     str6 = str16;
                     break;
-                case NotificationCenter.recordStartError /* 153 */:
+                case NotificationCenter.recordProgressChanged /* 153 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -9689,7 +9689,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.recordStopped /* 154 */:
+                case NotificationCenter.recordStarted /* 154 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -9724,7 +9724,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.recordPaused /* 155 */:
+                case NotificationCenter.recordStartError /* 155 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -9760,7 +9760,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.recordResumed /* 156 */:
+                case NotificationCenter.recordStopped /* 156 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -9796,7 +9796,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.screenshotTook /* 157 */:
+                case NotificationCenter.recordPaused /* 157 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -9825,7 +9825,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str7 = str17;
                     str6 = str16;
                     break;
-                case NotificationCenter.albumsDidLoad /* 158 */:
+                case NotificationCenter.recordResumed /* 158 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -9860,7 +9860,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.audioDidSent /* 159 */:
+                case NotificationCenter.screenshotTook /* 159 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -9895,7 +9895,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.audioRecordTooShort /* 160 */:
+                case NotificationCenter.albumsDidLoad /* 160 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -9930,7 +9930,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.audioRouteChanged /* 161 */:
+                case NotificationCenter.audioDidSent /* 161 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -9965,7 +9965,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.didStartedCall /* 162 */:
+                case NotificationCenter.audioRecordTooShort /* 162 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -10000,7 +10000,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.groupCallUpdated /* 163 */:
+                case NotificationCenter.audioRouteChanged /* 163 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -10032,7 +10032,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str7 = str17;
                     str6 = str16;
                     break;
-                case NotificationCenter.groupCallSpeakingUsersUpdated /* 164 */:
+                case NotificationCenter.didStartedCall /* 164 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -10067,7 +10067,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.groupCallScreencastStateChanged /* 165 */:
+                case NotificationCenter.groupCallUpdated /* 165 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -10102,7 +10102,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.activeGroupCallsUpdated /* 166 */:
+                case NotificationCenter.groupCallSpeakingUsersUpdated /* 166 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -10136,7 +10136,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case 167:
+                case NotificationCenter.groupCallScreencastStateChanged /* 167 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -10157,7 +10157,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str7 = str17;
                     str6 = str16;
                     break;
-                case NotificationCenter.groupCallTypingsUpdated /* 168 */:
+                case 168:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -10192,7 +10192,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.didEndCall /* 169 */:
+                case NotificationCenter.applyGroupCallVisibleParticipants /* 169 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -10227,7 +10227,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.closeInCallActivity /* 170 */:
+                case NotificationCenter.groupCallTypingsUpdated /* 170 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -10262,7 +10262,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.groupCallVisibilityChanged /* 171 */:
+                case NotificationCenter.didEndCall /* 171 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -10304,7 +10304,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.appDidLogout /* 172 */:
+                case NotificationCenter.closeInCallActivity /* 172 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -10325,7 +10325,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str7 = str17;
                     str6 = str16;
                     break;
-                case NotificationCenter.configLoaded /* 173 */:
+                case NotificationCenter.groupCallVisibilityChanged /* 173 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -10360,7 +10360,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.needDeleteDialog /* 174 */:
+                case NotificationCenter.appDidLogout /* 174 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -10392,7 +10392,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str7 = str17;
                     str6 = str16;
                     break;
-                case NotificationCenter.newEmojiSuggestionsAvailable /* 175 */:
+                case NotificationCenter.configLoaded /* 175 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -10424,7 +10424,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str7 = str17;
                     str6 = str16;
                     break;
-                case NotificationCenter.themeUploadedToServer /* 176 */:
+                case NotificationCenter.needDeleteDialog /* 176 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -10459,7 +10459,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.themeUploadError /* 177 */:
+                case NotificationCenter.newEmojiSuggestionsAvailable /* 177 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -10491,7 +10491,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str7 = str17;
                     str6 = str16;
                     break;
-                case NotificationCenter.dialogFiltersUpdated /* 178 */:
+                case NotificationCenter.themeUploadedToServer /* 178 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -10526,7 +10526,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.filterSettingsUpdated /* 179 */:
+                case NotificationCenter.themeUploadError /* 179 */:
                     String str54 = str32;
                     str19 = str33;
                     try {
@@ -10668,7 +10668,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str7 = str17;
                     str6 = str16;
                     break;
-                case NotificationCenter.suggestedFiltersLoaded /* 180 */:
+                case NotificationCenter.dialogFiltersUpdated /* 180 */:
                     str24 = str32;
                     str10 = str33;
                     TLRPC.JSONValue jSONValue196 = tL_jsonObjectValue.value;
@@ -10701,7 +10701,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str7 = str31;
                     str8 = str24;
                     str9 = str10;
-                case NotificationCenter.updateBotMenuButton /* 181 */:
+                case NotificationCenter.filterSettingsUpdated /* 181 */:
                     str24 = str32;
                     str10 = str33;
                     TLRPC.JSONValue jSONValue197 = tL_jsonObjectValue.value;
@@ -10734,7 +10734,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str7 = str31;
                     str8 = str24;
                     str9 = str10;
-                case NotificationCenter.giftsToUserSent /* 182 */:
+                case NotificationCenter.suggestedFiltersLoaded /* 182 */:
                     str24 = str32;
                     str10 = str33;
                     TLRPC.JSONValue jSONValue198 = tL_jsonObjectValue.value;
@@ -10767,7 +10767,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str7 = str31;
                     str8 = str24;
                     str9 = str10;
-                case NotificationCenter.didStartedMultiGiftsSelector /* 183 */:
+                case NotificationCenter.updateBotMenuButton /* 183 */:
                     str24 = str32;
                     str10 = str33;
                     HashSet hashSet11 = new HashSet();
@@ -10807,7 +10807,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str7 = str31;
                     str8 = str24;
                     str9 = str10;
-                case NotificationCenter.boostedChannelByUser /* 184 */:
+                case NotificationCenter.giftsToUserSent /* 184 */:
                     str24 = str32;
                     str10 = str33;
                     TLRPC.JSONValue jSONValue201 = tL_jsonObjectValue.value;
@@ -10841,7 +10841,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str7 = str31;
                     str8 = str24;
                     str9 = str10;
-                case NotificationCenter.boostByChannelCreated /* 185 */:
+                case NotificationCenter.didStartedMultiGiftsSelector /* 185 */:
                     str24 = str32;
                     str10 = str33;
                     TLRPC.JSONValue jSONValue202 = tL_jsonObjectValue.value;
@@ -10874,7 +10874,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str7 = str31;
                     str8 = str24;
                     str9 = str10;
-                case NotificationCenter.didUpdatePremiumGiftStickers /* 186 */:
+                case NotificationCenter.boostedChannelByUser /* 186 */:
                     str24 = str32;
                     str10 = str33;
                     TLRPC.JSONValue jSONValue203 = tL_jsonObjectValue.value;
@@ -10907,7 +10907,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str7 = str31;
                     str8 = str24;
                     str9 = str10;
-                case NotificationCenter.didUpdateTonGiftStickers /* 187 */:
+                case NotificationCenter.boostByChannelCreated /* 187 */:
                     str24 = str32;
                     str10 = str33;
                     HashSet hashSet12 = new HashSet();
@@ -10947,7 +10947,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str7 = str31;
                     str8 = str24;
                     str9 = str10;
-                case NotificationCenter.didUpdatePremiumGiftFieldIcon /* 188 */:
+                case NotificationCenter.didUpdatePremiumGiftStickers /* 188 */:
                     str24 = str32;
                     str10 = str33;
                     TLRPC.JSONValue jSONValue206 = tL_jsonObjectValue.value;
@@ -10980,7 +10980,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str7 = str31;
                     str8 = str24;
                     str9 = str10;
-                case NotificationCenter.storiesEnabledUpdate /* 189 */:
+                case NotificationCenter.didUpdateTonGiftStickers /* 189 */:
                     str24 = str32;
                     str10 = str33;
                     TLRPC.JSONValue jSONValue207 = tL_jsonObjectValue.value;
@@ -11014,7 +11014,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str7 = str31;
                     str8 = str24;
                     str9 = str10;
-                case NotificationCenter.storiesBlocklistUpdate /* 190 */:
+                case NotificationCenter.didUpdatePremiumGiftFieldIcon /* 190 */:
                     TLRPC.JSONValue jSONValue208 = tL_jsonObjectValue.value;
                     if (jSONValue208 instanceof TLRPC.TL_jsonNumber) {
                         double d106 = ((TLRPC.TL_jsonNumber) jSONValue208).value;
@@ -11056,7 +11056,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str7 = str31;
                     str8 = str32;
                     str9 = str33;
-                case NotificationCenter.storiesLimitUpdate /* 191 */:
+                case NotificationCenter.storiesEnabledUpdate /* 191 */:
                     TLRPC.JSONValue jSONValue209 = tL_jsonObjectValue.value;
                     if ((jSONValue209 instanceof TLRPC.TL_jsonBool) && (z27 = ((TLRPC.TL_jsonBool) jSONValue209).value) != this.filtersEnabled) {
                         this.filtersEnabled = z27;
@@ -12593,7 +12593,7 @@ public class MessagesController extends BaseController implements NotificationCe
         ArrayList<TLRPC.WallPaper> arrayList = new ArrayList<>();
         arrayList.add(wallPaper);
         getMessagesStorage().putWallpapers(arrayList, 2);
-        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(wallPaper.document.thumbs, NotificationCenter.nearEarEvent);
+        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(wallPaper.document.thumbs, NotificationCenter.onReceivedChannelDifference);
         if (closestPhotoSizeWithSize != null) {
             ImageLoader.getInstance().replaceImageInCache(Utilities.MD5(file.getAbsolutePath()) + "@100_100", closestPhotoSizeWithSize.location.volume_id + "_" + closestPhotoSizeWithSize.location.local_id + "@100_100", ImageLocation.getForDocument(closestPhotoSizeWithSize, wallPaper.document), false);
         }
@@ -18077,27 +18077,27 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x0062, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x0063, code lost:
     
         if (r13.restricted == false) goto L31;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:54:0x006a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x006b, code lost:
     
         r2 = r0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:67:0x0090, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:67:0x0091, code lost:
     
         if (r3.restricted == false) goto L31;
      */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0134  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0135  */
     /* JADX WARN: Removed duplicated region for block: B:12:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x009e  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x00f6  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0104  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0115  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0108  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x00fa  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x00a3  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x009f  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00f7  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0105  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0116  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0109  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00fb  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00a4  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -19394,11 +19394,11 @@ public class MessagesController extends BaseController implements NotificationCe
 
     /* JADX WARN: Code restructure failed: missing block: B:165:0x054e, code lost:
     
-        if (org.telegram.messenger.MessageObject.getMedia(r0).bytes[0] >= 213) goto L216;
+        if (org.telegram.messenger.MessageObject.getMedia(r0).bytes[0] >= 214) goto L216;
      */
     /* JADX WARN: Code restructure failed: missing block: B:170:0x0566, code lost:
     
-        if (org.telegram.messenger.Utilities.bytesToInt(org.telegram.messenger.MessageObject.getMedia(r0).bytes) < 213) goto L222;
+        if (org.telegram.messenger.Utilities.bytesToInt(org.telegram.messenger.MessageObject.getMedia(r0).bytes) < 214) goto L222;
      */
     /* JADX WARN: Code restructure failed: missing block: B:290:0x0206, code lost:
     
@@ -19718,7 +19718,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     messageObject.scheduled = i11 == 1;
                     arrayList.add(messageObject);
                     if (z) {
-                        if (message4.legacy && message4.layer < 213) {
+                        if (message4.legacy && message4.layer < 214) {
                             arrayList2.add(Integer.valueOf(message4.id));
                         } else if ((MessageObject.getMedia(message4) instanceof TLRPC.TL_messageMediaUnsupported) && MessageObject.getMedia(message4).bytes != null) {
                             if (MessageObject.getMedia(message4).bytes.length != 0) {
@@ -28377,36 +28377,36 @@ public class MessagesController extends BaseController implements NotificationCe
         return z;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:1006:0x1866  */
-    /* JADX WARN: Removed duplicated region for block: B:1012:0x1897  */
-    /* JADX WARN: Removed duplicated region for block: B:1015:0x18a7  */
-    /* JADX WARN: Removed duplicated region for block: B:1018:0x18b9  */
-    /* JADX WARN: Removed duplicated region for block: B:1021:0x18cc  */
-    /* JADX WARN: Removed duplicated region for block: B:1032:0x18e6  */
-    /* JADX WARN: Removed duplicated region for block: B:1034:0x18ec  */
-    /* JADX WARN: Removed duplicated region for block: B:1035:0x18ad  */
-    /* JADX WARN: Removed duplicated region for block: B:1036:0x189e  */
-    /* JADX WARN: Removed duplicated region for block: B:1039:0x1873  */
+    /* JADX WARN: Removed duplicated region for block: B:1006:0x1868  */
+    /* JADX WARN: Removed duplicated region for block: B:1012:0x1899  */
+    /* JADX WARN: Removed duplicated region for block: B:1015:0x18a9  */
+    /* JADX WARN: Removed duplicated region for block: B:1018:0x18bb  */
+    /* JADX WARN: Removed duplicated region for block: B:1021:0x18ce  */
+    /* JADX WARN: Removed duplicated region for block: B:1032:0x18e8  */
+    /* JADX WARN: Removed duplicated region for block: B:1034:0x18ee  */
+    /* JADX WARN: Removed duplicated region for block: B:1035:0x18af  */
+    /* JADX WARN: Removed duplicated region for block: B:1036:0x18a0  */
+    /* JADX WARN: Removed duplicated region for block: B:1039:0x1875  */
     /* JADX WARN: Removed duplicated region for block: B:1045:0x15c3  */
-    /* JADX WARN: Removed duplicated region for block: B:1120:0x1b58  */
-    /* JADX WARN: Removed duplicated region for block: B:1127:0x1b8b  */
-    /* JADX WARN: Removed duplicated region for block: B:1130:0x1b9d  */
-    /* JADX WARN: Removed duplicated region for block: B:1137:0x1bd0  */
-    /* JADX WARN: Removed duplicated region for block: B:1139:0x1be0  */
-    /* JADX WARN: Removed duplicated region for block: B:1145:0x1c0d  */
-    /* JADX WARN: Removed duplicated region for block: B:1151:0x1c39  */
-    /* JADX WARN: Removed duplicated region for block: B:1157:0x1c6e  */
-    /* JADX WARN: Removed duplicated region for block: B:1163:0x1c97  */
-    /* JADX WARN: Removed duplicated region for block: B:1169:0x1cbd  */
+    /* JADX WARN: Removed duplicated region for block: B:1120:0x1b5a  */
+    /* JADX WARN: Removed duplicated region for block: B:1127:0x1b8d  */
+    /* JADX WARN: Removed duplicated region for block: B:1130:0x1b9f  */
+    /* JADX WARN: Removed duplicated region for block: B:1137:0x1bd2  */
+    /* JADX WARN: Removed duplicated region for block: B:1139:0x1be2  */
+    /* JADX WARN: Removed duplicated region for block: B:1145:0x1c0f  */
+    /* JADX WARN: Removed duplicated region for block: B:1151:0x1c3b  */
+    /* JADX WARN: Removed duplicated region for block: B:1157:0x1c70  */
+    /* JADX WARN: Removed duplicated region for block: B:1163:0x1c99  */
+    /* JADX WARN: Removed duplicated region for block: B:1169:0x1cbf  */
     /* JADX WARN: Removed duplicated region for block: B:762:0x14ba  */
     /* JADX WARN: Removed duplicated region for block: B:840:0x1598  */
     /* JADX WARN: Removed duplicated region for block: B:848:0x15c6  */
-    /* JADX WARN: Removed duplicated region for block: B:870:0x1635  */
-    /* JADX WARN: Removed duplicated region for block: B:912:0x16c3  */
-    /* JADX WARN: Removed duplicated region for block: B:931:0x16d4  */
-    /* JADX WARN: Removed duplicated region for block: B:973:0x1790  */
-    /* JADX WARN: Removed duplicated region for block: B:977:0x17a0  */
-    /* JADX WARN: Removed duplicated region for block: B:986:0x1805  */
+    /* JADX WARN: Removed duplicated region for block: B:870:0x1636  */
+    /* JADX WARN: Removed duplicated region for block: B:912:0x16c5  */
+    /* JADX WARN: Removed duplicated region for block: B:931:0x16d6  */
+    /* JADX WARN: Removed duplicated region for block: B:973:0x1792  */
+    /* JADX WARN: Removed duplicated region for block: B:977:0x17a2  */
+    /* JADX WARN: Removed duplicated region for block: B:986:0x1807  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -33421,10 +33421,8 @@ public class MessagesController extends BaseController implements NotificationCe
         return false;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:159:0x035d  */
-    /* JADX WARN: Removed duplicated region for block: B:179:0x03c0  */
-    /* JADX WARN: Removed duplicated region for block: B:183:0x04c7  */
-    /* JADX WARN: Removed duplicated region for block: B:185:0x04cc  */
+    /* JADX WARN: Removed duplicated region for block: B:183:0x04c8  */
+    /* JADX WARN: Removed duplicated region for block: B:185:0x04cd  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -33435,11 +33433,10 @@ public class MessagesController extends BaseController implements NotificationCe
         LongSparseArray longSparseArray;
         boolean z2;
         boolean z3;
-        int i2;
         boolean z4;
         TLRPC.Chat chat;
         long j3;
-        int i3;
+        int i2;
         TLRPC.ChatFull chatFull;
         TLRPC.InputGroupCall inputGroupCall;
         if (arrayList == null || arrayList.isEmpty()) {
@@ -33455,12 +33452,12 @@ public class MessagesController extends BaseController implements NotificationCe
             z = false;
         } else {
             long j5 = 0;
-            int i4 = 0;
+            int i3 = 0;
             MessageObject messageObject2 = null;
             boolean z7 = false;
             z = false;
-            while (i4 < arrayList.size()) {
-                MessageObject messageObject3 = arrayList.get(i4);
+            while (i3 < arrayList.size()) {
+                MessageObject messageObject3 = arrayList.get(i3);
                 if (messageObject2 == null || ((!isEncryptedDialog && messageObject3.getId() > messageObject2.getId()) || (((isEncryptedDialog || (messageObject3.getId() < 0 && messageObject2.getId() < 0)) && messageObject3.getId() < messageObject2.getId()) || messageObject3.messageOwner.date > messageObject2.messageOwner.date))) {
                     long j6 = messageObject3.messageOwner.peer_id.channel_id;
                     if (j6 != j4) {
@@ -33489,12 +33486,12 @@ public class MessagesController extends BaseController implements NotificationCe
                     }
                 }
                 if (messageObject3.isOut() && messageObject3.isSent()) {
-                    i3 = 1;
+                    i2 = 1;
                     z = true;
                 } else {
-                    i3 = 1;
+                    i2 = 1;
                 }
-                i4 += i3;
+                i3 += i2;
                 j4 = 0;
             }
             messageObject = messageObject2;
@@ -33518,18 +33515,18 @@ public class MessagesController extends BaseController implements NotificationCe
                 this.dialogsMyChannels.remove(tL_dialog);
                 this.dialogsChannelsOnly.remove(tL_dialog);
                 this.dialogsGroupsOnly.remove(tL_dialog);
-                int i5 = 0;
+                int i4 = 0;
                 while (true) {
                     DialogFilter[] dialogFilterArr = this.selectedDialogFilter;
-                    if (i5 >= dialogFilterArr.length) {
+                    if (i4 >= dialogFilterArr.length) {
                         break;
                     }
-                    DialogFilter dialogFilter = dialogFilterArr[i5];
+                    DialogFilter dialogFilter = dialogFilterArr[i4];
                     if (dialogFilter != null) {
                         dialogFilter.dialogs.remove(tL_dialog);
-                        this.selectedDialogFilter[i5].dialogsForward.remove(tL_dialog);
+                        this.selectedDialogFilter[i4].dialogsForward.remove(tL_dialog);
                     }
-                    i5++;
+                    i4++;
                 }
                 this.dialogsUsersOnly.remove(tL_dialog);
                 this.dialogsForBlock.remove(tL_dialog);
@@ -33537,9 +33534,9 @@ public class MessagesController extends BaseController implements NotificationCe
                 this.dialogs_dict.remove(tL_dialog.id);
                 this.dialogs_read_inbox_max.remove(Long.valueOf(tL_dialog.id));
                 this.dialogs_read_outbox_max.remove(Long.valueOf(tL_dialog.id));
-                int i6 = this.nextDialogsCacheOffset.get(tL_dialog.folder_id, 0);
-                if (i6 > 0) {
-                    this.nextDialogsCacheOffset.put(tL_dialog.folder_id, i6 - 1);
+                int i5 = this.nextDialogsCacheOffset.get(tL_dialog.folder_id, 0);
+                if (i5 > 0) {
+                    this.nextDialogsCacheOffset.put(tL_dialog.folder_id, i5 - 1);
                 }
                 this.dialogMessage.remove(tL_dialog.id);
                 ArrayList<TLRPC.Dialog> arrayList2 = this.dialogsByFolder.get(tL_dialog.folder_id);
@@ -33600,59 +33597,43 @@ public class MessagesController extends BaseController implements NotificationCe
                 if (!isDialogMuted(j, 0L)) {
                     this.unreadUnmutedDialogs++;
                 }
-                int i7 = 0;
+                int i6 = 0;
                 while (true) {
                     DialogFilter[] dialogFilterArr2 = this.selectedDialogFilter;
-                    if (i7 >= dialogFilterArr2.length) {
+                    if (i6 >= dialogFilterArr2.length) {
                         break;
                     }
-                    DialogFilter dialogFilter2 = dialogFilterArr2[i7];
+                    DialogFilter dialogFilter2 = dialogFilterArr2[i6];
                     if (dialogFilter2 != null && (dialogFilter2.flags & DIALOG_FILTER_FLAG_EXCLUDE_READ) != 0) {
                         z3 = true;
                         break;
                     }
-                    i7++;
+                    i6++;
                 }
-                this.dialogs_dict.put(j, tL_dialog2);
-                this.allDialogs.add(tL_dialog2);
-                ArrayList arrayList3 = new ArrayList();
-                for (i2 = 0; i2 < arrayList.size(); i2++) {
-                    MessageObject messageObject5 = arrayList.get(i2);
-                    if (messageObject5 != null && (messageObject5.getId() == messageObject.getId() || (messageObject5.hasValidGroupId() && messageObject.hasValidGroupId() && messageObject5.getGroupIdForUse() == messageObject.getGroupIdForUse()))) {
-                        arrayList3.add(messageObject5);
-                        if (messageObject5.messageOwner.peer_id.channel_id == 0) {
-                            this.dialogMessagesByIds.put(messageObject5.getId(), messageObject5);
-                            long j8 = messageObject5.messageOwner.random_id;
-                            if (j8 != 0) {
-                                this.dialogMessagesByRandomIds.put(j8, messageObject5);
-                            }
-                        }
-                    }
-                }
-                this.dialogMessage.put(j, arrayList3);
-                getTranslateController().checkDialogMessage(j);
-                longSparseArray = null;
-                if (z3) {
-                    sortDialogs(null);
-                    getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogsNeedReload, new Object[0]);
-                }
-                getMessagesStorage().getDialogFolderId(j, new MessagesStorage.IntCallback() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda72
-                    @Override // org.telegram.messenger.MessagesStorage.IntCallback
-                    public final void run(int i8) {
-                        MessagesController.this.lambda$updateInterfaceWithMessages$396(tL_dialog2, id, j, i8);
-                    }
-                });
             }
             z3 = false;
             this.dialogs_dict.put(j, tL_dialog2);
             this.allDialogs.add(tL_dialog2);
-            ArrayList arrayList32 = new ArrayList();
-            while (i2 < arrayList.size()) {
+            ArrayList arrayList3 = new ArrayList();
+            for (int i7 = 0; i7 < arrayList.size(); i7++) {
+                MessageObject messageObject5 = arrayList.get(i7);
+                if (messageObject5 != null && (messageObject5.getId() == messageObject.getId() || (messageObject5.hasValidGroupId() && messageObject.hasValidGroupId() && messageObject5.getGroupIdForUse() == messageObject.getGroupIdForUse()))) {
+                    arrayList3.add(messageObject5);
+                    if (messageObject5.messageOwner.peer_id.channel_id == 0) {
+                        this.dialogMessagesByIds.put(messageObject5.getId(), messageObject5);
+                        long j8 = messageObject5.messageOwner.random_id;
+                        if (j8 != 0) {
+                            this.dialogMessagesByRandomIds.put(j8, messageObject5);
+                        }
+                    }
+                }
             }
-            this.dialogMessage.put(j, arrayList32);
+            this.dialogMessage.put(j, arrayList3);
             getTranslateController().checkDialogMessage(j);
             longSparseArray = null;
             if (z3) {
+                sortDialogs(null);
+                getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogsNeedReload, new Object[0]);
             }
             getMessagesStorage().getDialogFolderId(j, new MessagesStorage.IntCallback() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda72
                 @Override // org.telegram.messenger.MessagesStorage.IntCallback

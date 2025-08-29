@@ -70,14 +70,14 @@ public class GroupCreateSpan extends View {
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0300  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x030f  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x031b  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x032d  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x038c  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x033e  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0312  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x0302  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0301  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0310  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x031c  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x032e  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x038d  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x033f  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0313  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x0303  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -317,7 +317,7 @@ public class GroupCreateSpan extends View {
                 min = AndroidUtilities.dp(398 - (z ? 28 : 32)) / 2;
             } else {
                 android.graphics.Point point = AndroidUtilities.displaySize;
-                min = (Math.min(point.x, point.y) - AndroidUtilities.dp((z ? 28 : 32) + NotificationCenter.httpFileDidLoad)) / 2;
+                min = (Math.min(point.x, point.y) - AndroidUtilities.dp((z ? 28 : 32) + NotificationCenter.walletPendingTransactionsChanged)) / 2;
             }
             staticLayout = new StaticLayout(TextUtils.ellipsize(Emoji.replaceEmoji(str.replace('\n', ' '), textPaint.getFontMetricsInt(), false), textPaint, min, TextUtils.TruncateAt.END), textPaint, MediaDataController.MAX_STYLE_RUNS_COUNT, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
             this.nameLayout = staticLayout;

@@ -47,6 +47,7 @@ public class BillingController implements PurchasesUpdatedListener, BillingClien
     public static ProductDetails PREMIUM_PRODUCT_DETAILS = null;
     public static boolean billingClientEmpty;
     private static NumberFormat currencyInstance;
+    private static NumberFormat currencyInstanceRounded;
     private static BillingController instance;
     private final BillingClient billingClient;
     private boolean isDisconnected;
@@ -109,8 +110,13 @@ public class BillingController implements PurchasesUpdatedListener, BillingClien
             }
             currencyInstance.setCurrency(currency);
             if (z) {
+                currencyInstance.setMaximumFractionDigits(0);
+                currencyInstance.setMinimumFractionDigits(0);
                 return currencyInstance.format(Math.round(j / Math.pow(10.0d, i)));
             }
+            int defaultFractionDigits = currency.getDefaultFractionDigits();
+            currencyInstance.setMinimumFractionDigits(defaultFractionDigits);
+            currencyInstance.setMaximumFractionDigits(defaultFractionDigits);
             return currencyInstance.format(j / Math.pow(10.0d, i));
         }
         return j + " " + str;

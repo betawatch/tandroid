@@ -294,7 +294,7 @@ public class AvatarPreviewPagerIndicator extends View implements ProfileGalleryV
                     this.rect.set(f10, dp, (measuredWidth * f2) + f10, AndroidUtilities.dp(2.0f) + dp);
                     if (i3 == this.selectedPosition) {
                         if (this.overlayCountVisible == 3) {
-                            this.barPaint.setAlpha((int) (AndroidUtilities.lerp(i2, NotificationCenter.needCheckSystemBarColors, CubicBezierInterpolator.EASE_BOTH.getInterpolation(this.alphas[i3])) * this.alpha));
+                            this.barPaint.setAlpha((int) (AndroidUtilities.lerp(i2, NotificationCenter.didApplyNewTheme, CubicBezierInterpolator.EASE_BOTH.getInterpolation(this.alphas[i3])) * this.alpha));
                         }
                     } else {
                         this.alphas[i3] = 0.75f;

@@ -132,16 +132,16 @@ public abstract class SntpClient {
         int i4 = bArr[i + 2];
         int i5 = bArr[i + 3];
         if ((i2 & 128) == 128) {
-            i2 = (i2 & NotificationCenter.dialogIsTranslatable) + 128;
+            i2 = (i2 & NotificationCenter.messageTranslated) + 128;
         }
         if ((i3 & 128) == 128) {
-            i3 = (i3 & NotificationCenter.dialogIsTranslatable) + 128;
+            i3 = (i3 & NotificationCenter.messageTranslated) + 128;
         }
         if ((i4 & 128) == 128) {
-            i4 = (i4 & NotificationCenter.dialogIsTranslatable) + 128;
+            i4 = (i4 & NotificationCenter.messageTranslated) + 128;
         }
         if ((i5 & 128) == 128) {
-            i5 = (i5 & NotificationCenter.dialogIsTranslatable) + 128;
+            i5 = (i5 & NotificationCenter.messageTranslated) + 128;
         }
         return (i2 << 24) + (i3 << 16) + (i4 << 8) + i5;
     }

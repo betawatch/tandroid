@@ -78,7 +78,7 @@ public class HeaderCell extends FrameLayout {
         gLIconRenderer.colorKey1 = i;
         gLIconRenderer.colorKey2 = Theme.key_premiumGradient1;
         gLIconRenderer.updateColors();
-        linearLayout.addView(gLIconTextureView, LayoutHelper.createLinear(NotificationCenter.audioRecordTooShort, NotificationCenter.audioRecordTooShort, 1));
+        linearLayout.addView(gLIconTextureView, LayoutHelper.createLinear(NotificationCenter.albumsDidLoad, NotificationCenter.albumsDidLoad, 1));
         StarParticlesView starParticlesView = new StarParticlesView(context) { // from class: org.telegram.ui.Components.Premium.boosts.cells.HeaderCell.2
             @Override // org.telegram.ui.Components.Premium.StarParticlesView, android.view.View
             protected void onMeasure(int i2, int i3) {
@@ -136,7 +136,7 @@ public class HeaderCell extends FrameLayout {
         linksTextView.setImportantForAccessibility(2);
         linearLayout.addView(linksTextView, LayoutHelper.createFrame(-1, -2.0f, 17, 24.0f, 8.0f, 24.0f, 18.0f));
         setClipChildren(false);
-        addView(starParticlesView, LayoutHelper.createFrame(-1, NotificationCenter.commonChatsLoaded, 48));
+        addView(starParticlesView, LayoutHelper.createFrame(-1, NotificationCenter.adminedChannelsLoaded, 48));
         addView(linearLayout);
         setWillNotDraw(false);
     }

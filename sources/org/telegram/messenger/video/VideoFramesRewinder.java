@@ -58,7 +58,7 @@ public class VideoFramesRewinder {
     public VideoFramesRewinder() {
         int devicePerformanceClass = SharedConfig.getDevicePerformanceClass();
         if (devicePerformanceClass == 1) {
-            this.maxFramesCount = NotificationCenter.savedMessagesForwarded;
+            this.maxFramesCount = NotificationCenter.userIsPremiumBlockedUpadted;
             this.maxFrameSide = 580;
         } else if (devicePerformanceClass == 2) {
             this.maxFramesCount = 400;

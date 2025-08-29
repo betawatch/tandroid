@@ -360,7 +360,7 @@ public class PostSuggestionsEditActivity extends BaseFragment {
                 }
                 SlideIntChooseView slideIntChooseView = (SlideIntChooseView) viewHolder.itemView;
                 if (i == PostSuggestionsEditActivity.this.rowSuggestionPriceSlider) {
-                    slideIntChooseView.set((int) Utilities.clamp(PostSuggestionsEditActivity.this.suggestionsStarsCount, 10000L, 0L), SlideIntChooseView.Options.make(1, SlideIntChooseView.cut(new int[]{0, 10, 50, 100, NotificationCenter.savedMessagesForwarded, 250, 400, 500, MediaDataController.MAX_STYLE_RUNS_COUNT, 2500, 5000, 7500, 9000, 10000}, (int) PostSuggestionsEditActivity.this.getMessagesController().starsPaidMessageAmountMax), 20, new Utilities.Callback2Return() { // from class: org.telegram.ui.PostSuggestionsEditActivity$ListAdapter$$ExternalSyntheticLambda0
+                    slideIntChooseView.set((int) Utilities.clamp(PostSuggestionsEditActivity.this.suggestionsStarsCount, 10000L, 0L), SlideIntChooseView.Options.make(1, SlideIntChooseView.cut(new int[]{0, 10, 50, 100, NotificationCenter.userIsPremiumBlockedUpadted, 250, 400, 500, MediaDataController.MAX_STYLE_RUNS_COUNT, 2500, 5000, 7500, 9000, 10000}, (int) PostSuggestionsEditActivity.this.getMessagesController().starsPaidMessageAmountMax), 20, new Utilities.Callback2Return() { // from class: org.telegram.ui.PostSuggestionsEditActivity$ListAdapter$$ExternalSyntheticLambda0
                         @Override // org.telegram.messenger.Utilities.Callback2Return
                         public final Object run(Object obj, Object obj2) {
                             CharSequence lambda$onBindViewHolder$0;

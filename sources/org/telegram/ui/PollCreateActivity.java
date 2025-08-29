@@ -620,7 +620,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
             suggestEmojiView.forbidCopy();
             this.suggestEmojiPanel.forbidSetAsStatus();
             this.suggestEmojiPanel.setHorizontalPadding(AndroidUtilities.dp(24.0f));
-            frameLayout.addView(this.suggestEmojiPanel, LayoutHelper.createFrame(-2, NotificationCenter.audioRecordTooShort, 51));
+            frameLayout.addView(this.suggestEmojiPanel, LayoutHelper.createFrame(-2, NotificationCenter.albumsDidLoad, 51));
         }
         this.keyboardNotifier = new KeyboardNotifier(this.sizeNotifierFrameLayout, null);
         checkDoneButton();
@@ -1224,10 +1224,10 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
         PollEditTextCell pollEditTextCell = (PollEditTextCell) view;
         if (i == this.questionRow) {
             CharSequence charSequence = this.questionString;
-            i3 = NotificationCenter.needCheckSystemBarColors;
+            i3 = NotificationCenter.didApplyNewTheme;
             if (charSequence != null) {
                 length2 = charSequence.length();
-                i2 = NotificationCenter.needCheckSystemBarColors;
+                i2 = NotificationCenter.didApplyNewTheme;
                 length = i3 - length2;
                 f = i2;
                 if (length <= f - (0.7f * f)) {
@@ -1241,7 +1241,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                 pollEditTextCell.setText2("");
                 return;
             }
-            i4 = NotificationCenter.needCheckSystemBarColors;
+            i4 = NotificationCenter.didApplyNewTheme;
             i2 = i4;
             length2 = 0;
             length = i3 - length2;
@@ -1250,16 +1250,16 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
             }
         } else if (i == this.solutionRow) {
             CharSequence charSequence2 = this.solutionString;
-            i3 = NotificationCenter.savedMessagesForwarded;
+            i3 = NotificationCenter.userIsPremiumBlockedUpadted;
             if (charSequence2 != null) {
                 length2 = charSequence2.length();
-                i2 = NotificationCenter.savedMessagesForwarded;
+                i2 = NotificationCenter.userIsPremiumBlockedUpadted;
                 length = i3 - length2;
                 f = i2;
                 if (length <= f - (0.7f * f)) {
                 }
             } else {
-                i4 = NotificationCenter.savedMessagesForwarded;
+                i4 = NotificationCenter.userIsPremiumBlockedUpadted;
                 i2 = i4;
                 length2 = 0;
                 length = i3 - length2;

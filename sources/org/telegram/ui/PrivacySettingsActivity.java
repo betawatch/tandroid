@@ -627,7 +627,7 @@ public class PrivacySettingsActivity extends BaseFragment implements Notificatio
         } else if (num.intValue() == 1) {
             i = 90;
         } else if (num.intValue() == 2) {
-            i = NotificationCenter.giftsToUserSent;
+            i = NotificationCenter.suggestedFiltersLoaded;
         } else if (num.intValue() == 3) {
             i = 365;
         } else if (num.intValue() == 4) {

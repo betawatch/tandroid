@@ -38,7 +38,7 @@ public class ContactsEmptyView extends LinearLayout {
         this.drawable = loadingStickerDrawable;
         this.stickerView.setImageDrawable(loadingStickerDrawable);
         if (!AndroidUtilities.isTablet()) {
-            addView(this.stickerView, LayoutHelper.createLinear(NotificationCenter.walletPendingTransactionsChanged, NotificationCenter.walletPendingTransactionsChanged, 49, 0, 2, 0, 0));
+            addView(this.stickerView, LayoutHelper.createLinear(NotificationCenter.dialogTranslate, NotificationCenter.dialogTranslate, 49, 0, 2, 0, 0));
         }
         TextView textView = new TextView(context);
         this.titleTextView = textView;

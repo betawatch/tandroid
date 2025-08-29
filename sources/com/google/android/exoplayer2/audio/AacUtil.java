@@ -104,7 +104,7 @@ public abstract class AacUtil {
     }
 
     public static byte[] buildAudioSpecificConfig(int i, int i2, int i3) {
-        return new byte[]{(byte) (((i << 3) & NotificationCenter.closeOtherAppActivities) | ((i2 >> 1) & 7)), (byte) (((i2 << 7) & 128) | ((i3 << 3) & 120))};
+        return new byte[]{(byte) (((i << 3) & NotificationCenter.emojiLoaded) | ((i2 >> 1) & 7)), (byte) (((i2 << 7) & 128) | ((i3 << 3) & 120))};
     }
 
     private static int getAudioObjectType(ParsableBitArray parsableBitArray) {

@@ -6228,9 +6228,9 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                         canvas.restore();
                         if (imageViewEmoji.getBackground() != null) {
                             imageViewEmoji.getBackground().setBounds((int) imageViewEmoji.getX(), (int) imageViewEmoji.getY(), ((int) imageViewEmoji.getX()) + imageViewEmoji.getWidth(), ((int) imageViewEmoji.getY()) + imageViewEmoji.getHeight());
-                            imageViewEmoji.getBackground().setAlpha((int) (NotificationCenter.needCheckSystemBarColors * imageViewEmoji.getAlpha()));
+                            imageViewEmoji.getBackground().setAlpha((int) (NotificationCenter.didApplyNewTheme * imageViewEmoji.getAlpha()));
                             imageViewEmoji.getBackground().draw(canvas);
-                            imageViewEmoji.getBackground().setAlpha(NotificationCenter.needCheckSystemBarColors);
+                            imageViewEmoji.getBackground().setAlpha(NotificationCenter.didApplyNewTheme);
                         }
                         if (arrayList3 == null) {
                             if (!this.unusedArrays.isEmpty()) {
@@ -6439,7 +6439,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                                 f *= ((1.0f - Math.max(imageViewEmoji.selectedProgress * 0.8f, imageViewEmoji.pressedProgress)) * 0.2f) + 0.8f;
                             }
                             if (premiumStar != null) {
-                                premiumStar.setAlpha(NotificationCenter.needCheckSystemBarColors);
+                                premiumStar.setAlpha(NotificationCenter.didApplyNewTheme);
                                 int width = (imageViewEmoji.getWidth() - imageViewEmoji.getPaddingLeft()) - imageViewEmoji.getPaddingRight();
                                 int height = (imageViewEmoji.getHeight() - imageViewEmoji.getPaddingTop()) - imageViewEmoji.getPaddingBottom();
                                 Rect rect = AndroidUtilities.rectTmp2;
@@ -6588,10 +6588,10 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                                     rect.inset((int) ((-rect.width()) * 0.15f), (int) ((-rect.height()) * 0.15f));
                                 }
                                 drawable.setBounds(rect);
-                                drawable.setAlpha(NotificationCenter.needCheckSystemBarColors);
+                                drawable.setAlpha(NotificationCenter.didApplyNewTheme);
                             } else if (!imageViewEmoji.isDefaultReaction && !imageViewEmoji.isStaticIcon) {
                                 if ((imageViewEmoji.span != null || SelectAnimatedEmojiDialog.this.type == 13) && !imageViewEmoji.notDraw && (drawable = imageViewEmoji.drawable) != null) {
-                                    drawable.setAlpha(NotificationCenter.needCheckSystemBarColors);
+                                    drawable.setAlpha(NotificationCenter.didApplyNewTheme);
                                     drawable.setBounds(rect);
                                 }
                             } else {
@@ -7040,7 +7040,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                             paint.setShader(new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(18.0f), 0.0f, new int[]{-1, 0}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
                             this.fadePaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
                         }
-                        canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.needCheckSystemBarColors, 31);
+                        canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.didApplyNewTheme, 31);
                         super.dispatchDraw(canvas);
                         this.fadePaint.setAlpha((int) (SearchBox.this.inputBoxGradientAlpha * 255.0f));
                         canvas.drawRect(0.0f, 0.0f, AndroidUtilities.dp(18.0f), getMeasuredHeight(), this.fadePaint);
@@ -7955,7 +7955,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                 }
             };
             this.emojiPreviewView = view2;
-            this.linearLayoutView.addView(view2, LayoutHelper.createLinear(NotificationCenter.audioRecordTooShort, NotificationCenter.audioRecordTooShort, 17, 0, 0, 0, 16));
+            this.linearLayoutView.addView(view2, LayoutHelper.createLinear(NotificationCenter.albumsDidLoad, NotificationCenter.albumsDidLoad, 17, 0, 0, 0, 16));
             ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(context, R.drawable.popup_fixed_alert2, resourcesProvider);
             this.menuView = actionBarPopupWindowLayout;
             this.linearLayoutView.addView(actionBarPopupWindowLayout, LayoutHelper.createLinear(-2, -2, 17, 0, 0, 0, 0));
@@ -8235,7 +8235,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                 this.parentDialogView.draw(canvas);
                 canvas.restore();
             }
-            Utilities.stackBlurBitmap(createBitmap, Math.max(10, Math.max(measuredWidth, measuredHeight) / NotificationCenter.suggestedFiltersLoaded));
+            Utilities.stackBlurBitmap(createBitmap, Math.max(10, Math.max(measuredWidth, measuredHeight) / NotificationCenter.dialogFiltersUpdated));
             this.blurBitmapPaint = new Paint(1);
             this.blurBitmap = createBitmap;
         }

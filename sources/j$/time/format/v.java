@@ -8,7 +8,7 @@ public final class v {
     public static final v a = new v();
 
     public final int hashCode() {
-        return NotificationCenter.giftsToUserSent;
+        return NotificationCenter.suggestedFiltersLoaded;
     }
 
     static {

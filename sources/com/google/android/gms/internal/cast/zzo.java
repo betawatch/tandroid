@@ -80,7 +80,7 @@ public final class zzo {
             zzmy zzmyVar = (zzmy) zza3.zzq();
             zznn zzc2 = zzno.zzc();
             zzc2.zzc(zzmyVar);
-            zzoVar.zzd.zze((zzno) zzc2.zzq(), NotificationCenter.wallpapersNeedReload);
+            zzoVar.zzd.zze((zzno) zzc2.zzq(), NotificationCenter.pushMessagesUpdated);
             SharedPreferences sharedPreferences = zzoVar.zze;
             Set set = zzoVar.zzj;
             Set set2 = zzoVar.zzi;

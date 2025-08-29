@@ -146,8 +146,8 @@ public class ImportingAlert extends BottomSheet implements NotificationCenter.No
         rLottieImageView.setAutoRepeat(true);
         this.imageView.setAnimation(R.raw.import_loop, 120, 120);
         this.imageView.playAnimation();
-        frameLayout.addView(this.imageView, LayoutHelper.createFrame(NotificationCenter.audioRecordTooShort, 160.0f, 49, 17.0f, 79.0f, 17.0f, 0.0f));
-        this.imageView.getAnimatedDrawable().setOnFinishCallback(runnable, NotificationCenter.dialogFiltersUpdated);
+        frameLayout.addView(this.imageView, LayoutHelper.createFrame(NotificationCenter.albumsDidLoad, 160.0f, 49, 17.0f, 79.0f, 17.0f, 0.0f));
+        this.imageView.getAnimatedDrawable().setOnFinishCallback(runnable, NotificationCenter.themeUploadedToServer);
         TextView textView2 = new TextView(context);
         this.percentTextView = textView2;
         textView2.setTypeface(AndroidUtilities.bold());

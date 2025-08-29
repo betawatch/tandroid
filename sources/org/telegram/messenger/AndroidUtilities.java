@@ -322,7 +322,7 @@ public class AndroidUtilities {
     }
 
     public static int getWallpaperRotation(int i, boolean z) {
-        int i2 = z ? i + NotificationCenter.suggestedFiltersLoaded : i - 180;
+        int i2 = z ? i + NotificationCenter.dialogFiltersUpdated : i - 180;
         while (i2 >= 360) {
             i2 -= 360;
         }
@@ -1337,7 +1337,7 @@ public class AndroidUtilities {
     }
 
     public static boolean doSafe(Utilities.Callback0Return<Boolean> callback0Return) {
-        return doSafe(callback0Return, NotificationCenter.savedMessagesForwarded);
+        return doSafe(callback0Return, NotificationCenter.userIsPremiumBlockedUpadted);
     }
 
     public static boolean doSafe(final Utilities.Callback0Return<Boolean> callback0Return, int i) {
@@ -1584,15 +1584,15 @@ public class AndroidUtilities {
             }
             i = -16777216;
         }
-        double[] rgbToHsv = rgbToHsv((i >> 16) & NotificationCenter.needCheckSystemBarColors, (i >> 8) & NotificationCenter.needCheckSystemBarColors, i & NotificationCenter.needCheckSystemBarColors);
+        double[] rgbToHsv = rgbToHsv((i >> 16) & NotificationCenter.didApplyNewTheme, (i >> 8) & NotificationCenter.didApplyNewTheme, i & NotificationCenter.didApplyNewTheme);
         double d = rgbToHsv[1];
         rgbToHsv[1] = Math.min(1.0d, 0.05d + d + ((1.0d - d) * 0.1d));
         int[] hsvToRgb = hsvToRgb(rgbToHsv[0], rgbToHsv[1], Math.max(0.0d, rgbToHsv[2] * 0.65d));
         iArr[0] = Color.argb(102, hsvToRgb[0], hsvToRgb[1], hsvToRgb[2]);
-        iArr[1] = Color.argb(NotificationCenter.fileUploadFailed, hsvToRgb[0], hsvToRgb[1], hsvToRgb[2]);
+        iArr[1] = Color.argb(NotificationCenter.didUpdateConnectionState, hsvToRgb[0], hsvToRgb[1], hsvToRgb[2]);
         int[] hsvToRgb2 = hsvToRgb(rgbToHsv[0], rgbToHsv[1], Math.max(0.0d, rgbToHsv[2] * 0.72d));
         iArr[2] = Color.argb(102, hsvToRgb2[0], hsvToRgb2[1], hsvToRgb2[2]);
-        iArr[3] = Color.argb(NotificationCenter.fileUploadFailed, hsvToRgb2[0], hsvToRgb2[1], hsvToRgb2[2]);
+        iArr[3] = Color.argb(NotificationCenter.didUpdateConnectionState, hsvToRgb2[0], hsvToRgb2[1], hsvToRgb2[2]);
         return iArr;
     }
 
@@ -1631,7 +1631,7 @@ public class AndroidUtilities {
 
     public static int hsvToColor(double d, double d2, double d3) {
         int[] hsvToRgb = hsvToRgb(d, d2, d3);
-        return Color.argb(NotificationCenter.needCheckSystemBarColors, hsvToRgb[0], hsvToRgb[1], hsvToRgb[2]);
+        return Color.argb(NotificationCenter.didApplyNewTheme, hsvToRgb[0], hsvToRgb[1], hsvToRgb[2]);
     }
 
     public static int[] hsvToRgb(double d, double d2, double d3) {
@@ -3187,21 +3187,23 @@ public class AndroidUtilities {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x001e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x0028, code lost:
     
-        r5 = r5 + 1;
+        r6 = r6 + 1;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static int charSequenceIndexOf(CharSequence charSequence, CharSequence charSequence2, int i) {
-        while (i < charSequence.length() - charSequence2.length()) {
-            for (int i2 = 0; i2 < charSequence2.length(); i2++) {
-                if (charSequence2.charAt(i2) != charSequence.charAt(i + i2)) {
-                    break;
+        if (charSequence2 != null && charSequence2.length() > 0) {
+            while (i <= charSequence.length() - charSequence2.length()) {
+                for (int i2 = 0; i2 < charSequence2.length(); i2++) {
+                    if (charSequence2.charAt(i2) != charSequence.charAt(i + i2)) {
+                        break;
+                    }
                 }
+                return i;
             }
-            return i;
         }
         return -1;
     }
@@ -5048,7 +5050,7 @@ public class AndroidUtilities {
             i2 = (int) ((f5 * 255.0f) + 0.5f);
             i3 = (int) ((f7 * 255.0f) + 0.5f);
         }
-        return ((i & NotificationCenter.needCheckSystemBarColors) << 16) | (-16777216) | ((i2 & NotificationCenter.needCheckSystemBarColors) << 8) | (i3 & NotificationCenter.needCheckSystemBarColors);
+        return ((i & NotificationCenter.didApplyNewTheme) << 16) | (-16777216) | ((i2 & NotificationCenter.didApplyNewTheme) << 8) | (i3 & NotificationCenter.didApplyNewTheme);
     }
 
     public static float computePerceivedBrightness(int i) {
@@ -5358,7 +5360,7 @@ public class AndroidUtilities {
     }
 
     public static int getAverageColor(int i, int i2) {
-        return Color.argb(NotificationCenter.needCheckSystemBarColors, (Color.red(i) / 2) + (Color.red(i2) / 2), (Color.green(i) / 2) + (Color.green(i2) / 2), (Color.blue(i) / 2) + (Color.blue(i2) / 2));
+        return Color.argb(NotificationCenter.didApplyNewTheme, (Color.red(i) / 2) + (Color.red(i2) / 2), (Color.green(i) / 2) + (Color.green(i2) / 2), (Color.blue(i) / 2) + (Color.blue(i2) / 2));
     }
 
     public static void setLightStatusBar(Window window, boolean z) {
@@ -6007,7 +6009,7 @@ public class AndroidUtilities {
         canvas.scale(f2, f2);
         canvas.drawColor(Theme.getColor(Theme.key_windowBackgroundWhite));
         view.draw(canvas);
-        Utilities.stackBlurBitmap(createBitmap, Math.max(i, Math.max(width, height) / NotificationCenter.suggestedFiltersLoaded));
+        Utilities.stackBlurBitmap(createBitmap, Math.max(i, Math.max(width, height) / NotificationCenter.dialogFiltersUpdated));
         return createBitmap;
     }
 
@@ -6121,7 +6123,7 @@ public class AndroidUtilities {
                         canvas.restore();
                     }
                 }
-                Utilities.stackBlurBitmap(createBitmap, Math.max(i, Math.max(width, i2) / NotificationCenter.suggestedFiltersLoaded));
+                Utilities.stackBlurBitmap(createBitmap, Math.max(i, Math.max(width, i2) / NotificationCenter.dialogFiltersUpdated));
                 callback.run(createBitmap);
             } catch (Exception e2) {
                 FileLog.e(e2);
@@ -6338,13 +6340,13 @@ public class AndroidUtilities {
         try {
             int i = 1;
             int attributeInt = exifInterface.getAttributeInt("Orientation", 1);
-            int i2 = NotificationCenter.notificationsCountUpdated;
+            int i2 = NotificationCenter.newLocationAvailable;
             switch (attributeInt) {
                 case 2:
                     i2 = 0;
                     break;
                 case 3:
-                    i2 = NotificationCenter.suggestedFiltersLoaded;
+                    i2 = NotificationCenter.dialogFiltersUpdated;
                     i = 0;
                     break;
                 case 4:
@@ -6429,7 +6431,7 @@ public class AndroidUtilities {
         if (i == 0) {
             return 0;
         }
-        return Color.argb(NotificationCenter.needCheckSystemBarColors, i4 / i, i3 / i, i2 / i);
+        return Color.argb(NotificationCenter.didApplyNewTheme, i4 / i, i3 / i, i2 / i);
     }
 
     public static String translitSafe(String str) {

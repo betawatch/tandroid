@@ -35,11 +35,11 @@ public class CellFlickerDrawable {
     int size;
 
     public CellFlickerDrawable() {
-        this(64, NotificationCenter.openBoostForUsersDialog, NotificationCenter.audioRecordTooShort);
+        this(64, NotificationCenter.smsJobStatusUpdate, NotificationCenter.albumsDidLoad);
     }
 
     public CellFlickerDrawable(int i, int i2) {
-        this(i, i2, NotificationCenter.audioRecordTooShort);
+        this(i, i2, NotificationCenter.albumsDidLoad);
     }
 
     public CellFlickerDrawable(int i, int i2, int i3) {
@@ -64,7 +64,7 @@ public class CellFlickerDrawable {
     }
 
     public void setColors(int i) {
-        setColors(i, 64, NotificationCenter.openBoostForUsersDialog);
+        setColors(i, 64, NotificationCenter.smsJobStatusUpdate);
     }
 
     public void setColors(int i, int i2, int i3) {

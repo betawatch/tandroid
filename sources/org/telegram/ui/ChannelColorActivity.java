@@ -1820,7 +1820,7 @@ public class ChannelColorActivity extends BaseFragment implements NotificationCe
             this.backgroundView = coloredActionBar;
             coloredActionBar.setProgressToGradient(1.0f);
             coloredActionBar.ignoreMeasure = true;
-            addView(coloredActionBar, LayoutHelper.createFrame(-1, ChannelColorActivity.this.isGroup ? NotificationCenter.nearEarEvent : NotificationCenter.locationPermissionDenied, 119));
+            addView(coloredActionBar, LayoutHelper.createFrame(-1, ChannelColorActivity.this.isGroup ? NotificationCenter.onReceivedChannelDifference : NotificationCenter.goingToPreviewTheme, 119));
             PeerColorActivity.ProfilePreview profilePreview = new PeerColorActivity.ProfilePreview(getContext(), ((BaseFragment) ChannelColorActivity.this).currentAccount, ChannelColorActivity.this.dialogId, ((BaseFragment) ChannelColorActivity.this).resourceProvider) { // from class: org.telegram.ui.ChannelColorActivity.ProfilePreview.1
                 @Override // org.telegram.ui.PeerColorActivity.ProfilePreview
                 public void setColor(int i, boolean z) {

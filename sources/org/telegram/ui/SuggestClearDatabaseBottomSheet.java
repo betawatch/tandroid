@@ -40,7 +40,7 @@ public class SuggestClearDatabaseBottomSheet extends BottomSheet {
         StickerImageView stickerImageView = new StickerImageView(parentActivity, this.currentAccount);
         stickerImageView.setStickerNum(7);
         stickerImageView.getImageReceiver().setAutoRepeat(1);
-        linearLayout.addView(stickerImageView, LayoutHelper.createLinear(NotificationCenter.dialogsUnreadCounterChanged, NotificationCenter.dialogsUnreadCounterChanged, 1, 0, 16, 0, 0));
+        linearLayout.addView(stickerImageView, LayoutHelper.createLinear(NotificationCenter.fileNewChunkAvailable, NotificationCenter.fileNewChunkAvailable, 1, 0, 16, 0, 0));
         TextView textView = new TextView(parentActivity);
         textView.setGravity(8388611);
         int i = Theme.key_dialogTextBlack;

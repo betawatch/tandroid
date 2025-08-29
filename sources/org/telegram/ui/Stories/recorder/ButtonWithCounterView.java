@@ -114,8 +114,8 @@ public class ButtonWithCounterView extends FrameLayout implements Loadable {
         this.countScale = 1.0f;
         this.enabledT = 1.0f;
         this.enabled = true;
-        this.globalAlpha = NotificationCenter.needCheckSystemBarColors;
-        this.subTextAlpha = NotificationCenter.savedMessagesForwarded;
+        this.globalAlpha = NotificationCenter.didApplyNewTheme;
+        this.subTextAlpha = NotificationCenter.userIsPremiumBlockedUpadted;
         this.filled = z;
         this.resourcesProvider = resourcesProvider;
         ScaleStateListAnimator.apply(this, 0.02f, 1.2f);

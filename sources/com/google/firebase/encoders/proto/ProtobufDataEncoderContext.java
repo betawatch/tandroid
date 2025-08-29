@@ -295,17 +295,17 @@ final class ProtobufDataEncoderContext implements ObjectEncoderContext {
 
     private void writeVarInt32(int i) {
         while ((i & (-128)) != 0) {
-            this.output.write((i & NotificationCenter.dialogIsTranslatable) | 128);
+            this.output.write((i & NotificationCenter.messageTranslated) | 128);
             i >>>= 7;
         }
-        this.output.write(i & NotificationCenter.dialogIsTranslatable);
+        this.output.write(i & NotificationCenter.messageTranslated);
     }
 
     private void writeVarInt64(long j) {
         while (((-128) & j) != 0) {
-            this.output.write((((int) j) & NotificationCenter.dialogIsTranslatable) | 128);
+            this.output.write((((int) j) & NotificationCenter.messageTranslated) | 128);
             j >>>= 7;
         }
-        this.output.write(((int) j) & NotificationCenter.dialogIsTranslatable);
+        this.output.write(((int) j) & NotificationCenter.messageTranslated);
     }
 }

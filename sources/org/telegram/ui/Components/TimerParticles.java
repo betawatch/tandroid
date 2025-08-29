@@ -108,7 +108,7 @@ public class TimerParticles {
                 particle.x = centerX;
                 particle.y = centerY;
             }
-            double nextInt = (Utilities.random.nextInt(NotificationCenter.fileLoadFailed) - 70) * d;
+            double nextInt = (Utilities.random.nextInt(NotificationCenter.fileLoadProgressChanged) - 70) * d;
             if (nextInt < 0.0d) {
                 nextInt += 6.283185307179586d;
             }
@@ -117,7 +117,7 @@ public class TimerParticles {
             particle.alpha = 1.0f;
             particle.currentTime = 0.0f;
             if (this.big) {
-                particle.lifeTime = Utilities.random.nextInt(NotificationCenter.savedMessagesForwarded) + 600;
+                particle.lifeTime = Utilities.random.nextInt(NotificationCenter.userIsPremiumBlockedUpadted) + 600;
                 particle.velocity = (Utilities.random.nextFloat() * 20.0f) + 30.0f;
             } else {
                 particle.lifeTime = Utilities.random.nextInt(100) + 400;

@@ -155,7 +155,7 @@ public class LanguageIdentifierImpl implements LanguageIdentifier {
         Float confidenceThreshold = this.zza.getConfidenceThreshold();
         long elapsedRealtime = SystemClock.elapsedRealtime();
         try {
-            String zzc2 = zzgVar.zzc(str.substring(0, Math.min(str.length(), NotificationCenter.savedMessagesForwarded)), confidenceThreshold != null ? confidenceThreshold.floatValue() : 0.5f);
+            String zzc2 = zzgVar.zzc(str.substring(0, Math.min(str.length(), NotificationCenter.userIsPremiumBlockedUpadted)), confidenceThreshold != null ? confidenceThreshold.floatValue() : 0.5f);
             if (zzc2 == null) {
                 zzc = null;
             } else {

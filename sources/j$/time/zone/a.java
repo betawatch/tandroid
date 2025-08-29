@@ -78,7 +78,7 @@ final class a implements Externalizable {
 
     static void d(ZoneOffset zoneOffset, ObjectOutput objectOutput) {
         int totalSeconds = zoneOffset.getTotalSeconds();
-        int i = totalSeconds % 900 == 0 ? totalSeconds / 900 : NotificationCenter.dialogIsTranslatable;
+        int i = totalSeconds % 900 == 0 ? totalSeconds / 900 : NotificationCenter.messageTranslated;
         objectOutput.writeByte(i);
         if (i == 127) {
             objectOutput.writeInt(totalSeconds);
@@ -93,12 +93,12 @@ final class a implements Externalizable {
     static void c(long j, ObjectOutput objectOutput) {
         if (j >= -4575744000L && j < 10413792000L && j % 900 == 0) {
             int i = (int) ((j + 4575744000L) / 900);
-            objectOutput.writeByte((i >>> 16) & NotificationCenter.needCheckSystemBarColors);
-            objectOutput.writeByte((i >>> 8) & NotificationCenter.needCheckSystemBarColors);
-            objectOutput.writeByte(i & NotificationCenter.needCheckSystemBarColors);
+            objectOutput.writeByte((i >>> 16) & NotificationCenter.didApplyNewTheme);
+            objectOutput.writeByte((i >>> 8) & NotificationCenter.didApplyNewTheme);
+            objectOutput.writeByte(i & NotificationCenter.didApplyNewTheme);
             return;
         }
-        objectOutput.writeByte(NotificationCenter.needCheckSystemBarColors);
+        objectOutput.writeByte(NotificationCenter.didApplyNewTheme);
         objectOutput.writeLong(j);
     }
 

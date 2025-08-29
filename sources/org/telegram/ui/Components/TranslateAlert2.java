@@ -763,7 +763,7 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
 
                         @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
                         public void updateDrawState(TextPaint textPaint) {
-                            int min = Math.min(textPaint.getAlpha(), (textPaint.getColor() >> 24) & NotificationCenter.needCheckSystemBarColors);
+                            int min = Math.min(textPaint.getAlpha(), (textPaint.getColor() >> 24) & NotificationCenter.didApplyNewTheme);
                             if (!(uRLSpan instanceof URLSpanNoUnderline)) {
                                 textPaint.setUnderlineText(true);
                             }
@@ -1153,7 +1153,7 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
                 }
             };
             actionBarPopupWindow.setPauseNotifications(true);
-            actionBarPopupWindow.setDismissAnimationDuration(NotificationCenter.botStarsTransactionsLoaded);
+            actionBarPopupWindow.setDismissAnimationDuration(NotificationCenter.factCheckLoaded);
             actionBarPopupWindow.setOutsideTouchable(true);
             actionBarPopupWindow.setClippingEnabled(true);
             actionBarPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);

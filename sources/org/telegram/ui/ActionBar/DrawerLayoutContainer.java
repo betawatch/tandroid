@@ -426,7 +426,7 @@ public class DrawerLayoutContainer extends FrameLayout {
         Canvas canvas = new Canvas(createBitmap);
         canvas.scale(0.16666667f, 0.16666667f);
         draw(canvas);
-        Utilities.stackBlurBitmap(createBitmap, Math.max(7, Math.max(i, i2) / NotificationCenter.suggestedFiltersLoaded));
+        Utilities.stackBlurBitmap(createBitmap, Math.max(7, Math.max(i, i2) / NotificationCenter.dialogFiltersUpdated));
         BitmapDrawable bitmapDrawable = new BitmapDrawable(createBitmap);
         this.previewBlurDrawable = bitmapDrawable;
         bitmapDrawable.setBounds(0, 0, measuredWidth, measuredHeight);

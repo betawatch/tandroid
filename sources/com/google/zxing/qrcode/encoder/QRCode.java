@@ -22,7 +22,7 @@ public final class QRCode {
     }
 
     public String toString() {
-        StringBuilder sb = new StringBuilder(NotificationCenter.savedMessagesForwarded);
+        StringBuilder sb = new StringBuilder(NotificationCenter.userIsPremiumBlockedUpadted);
         sb.append("<<\n");
         sb.append(" mode: ");
         sb.append(this.mode);

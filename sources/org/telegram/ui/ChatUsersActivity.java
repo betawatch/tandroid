@@ -240,7 +240,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             return 60;
         }
         if (i == 4) {
-            return NotificationCenter.premiumStickersPreviewLoaded;
+            return NotificationCenter.billingProductDetailsUpdated;
         }
         if (i == 5) {
             return 900;
@@ -787,7 +787,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
         super.onFragmentCreate();
         getNotificationCenter().addObserver(this, NotificationCenter.chatInfoDidLoad);
         getNotificationCenter().addObserver(this, NotificationCenter.dialogDeleted);
-        loadChatParticipants(0, NotificationCenter.savedMessagesForwarded);
+        loadChatParticipants(0, NotificationCenter.userIsPremiumBlockedUpadted);
         return true;
     }
 
@@ -2166,7 +2166,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                         if (indexOf >= 0) {
                             ChatUsersActivity.this.info.participants.participants.set(indexOf, tL_chatParticipant);
                         }
-                        ChatUsersActivity.this.loadChatParticipants(0, NotificationCenter.savedMessagesForwarded);
+                        ChatUsersActivity.this.loadChatParticipants(0, NotificationCenter.userIsPremiumBlockedUpadted);
                     }
                     i5++;
                 }
@@ -2415,7 +2415,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                 public final void run() {
                     ChatUsersActivity.this.lambda$createMenuForParticipant$13(user, j4);
                 }
-            }).setMinWidth(NotificationCenter.storiesBlocklistUpdate).show();
+            }).setMinWidth(NotificationCenter.didUpdatePremiumGiftFieldIcon).show();
             return true;
         }
         final long j5 = j;
@@ -2477,7 +2477,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             });
         }
         makeOptions.setScrimViewBackground(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundWhite)));
-        makeOptions.setMinWidth(NotificationCenter.storiesBlocklistUpdate);
+        makeOptions.setMinWidth(NotificationCenter.didUpdatePremiumGiftFieldIcon);
         boolean z13 = makeOptions.getItemsCount() > 0;
         if (z || !z13) {
             return z13;
@@ -2674,7 +2674,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$didReceivedNotification$22() {
-        loadChatParticipants(0, NotificationCenter.savedMessagesForwarded);
+        loadChatParticipants(0, NotificationCenter.userIsPremiumBlockedUpadted);
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -3068,7 +3068,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                     this.delayResults = 2;
                     tL_channels_getParticipants.filter = new TLRPC.TL_channelParticipantsContacts();
                     this.contactsEndReached = true;
-                    arrayList.addAll(loadChatParticipantsRequests(0, NotificationCenter.savedMessagesForwarded, false));
+                    arrayList.addAll(loadChatParticipantsRequests(0, NotificationCenter.userIsPremiumBlockedUpadted, false));
                 } else {
                     tL_channels_getParticipants.filter = new TLRPC.TL_channelParticipantsRecent();
                 }
@@ -3076,11 +3076,11 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                 this.delayResults = 3;
                 tL_channels_getParticipants.filter = new TLRPC.TL_channelParticipantsContacts();
                 this.contactsEndReached = true;
-                arrayList.addAll(loadChatParticipantsRequests(0, NotificationCenter.savedMessagesForwarded, false));
+                arrayList.addAll(loadChatParticipantsRequests(0, NotificationCenter.userIsPremiumBlockedUpadted, false));
             } else if (!this.botsEndReached) {
                 tL_channels_getParticipants.filter = new TLRPC.TL_channelParticipantsBots();
                 this.botsEndReached = true;
-                arrayList.addAll(loadChatParticipantsRequests(0, NotificationCenter.savedMessagesForwarded, false));
+                arrayList.addAll(loadChatParticipantsRequests(0, NotificationCenter.userIsPremiumBlockedUpadted, false));
             } else {
                 tL_channels_getParticipants.filter = new TLRPC.TL_channelParticipantsRecent();
             }
@@ -4934,7 +4934,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                 case 17:
                     SlideIntChooseView slideIntChooseView = (SlideIntChooseView) viewHolder.itemView;
                     if (i == ChatUsersActivity.this.priceRow) {
-                        slideIntChooseView.set((int) Utilities.clamp(ChatUsersActivity.this.starsPrice, ChatUsersActivity.this.getMessagesController().starsPaidMessageAmountMax, 1L), SlideIntChooseView.Options.make(1, SlideIntChooseView.cut(new int[]{1, 10, 50, 100, NotificationCenter.savedMessagesForwarded, 250, 400, 500, MediaDataController.MAX_STYLE_RUNS_COUNT, 2500, 5000, 7500, 9000, 10000}, (int) ChatUsersActivity.this.getMessagesController().starsPaidMessageAmountMax), 20, new Utilities.Callback2Return() { // from class: org.telegram.ui.ChatUsersActivity$ListAdapter$$ExternalSyntheticLambda0
+                        slideIntChooseView.set((int) Utilities.clamp(ChatUsersActivity.this.starsPrice, ChatUsersActivity.this.getMessagesController().starsPaidMessageAmountMax, 1L), SlideIntChooseView.Options.make(1, SlideIntChooseView.cut(new int[]{1, 10, 50, 100, NotificationCenter.userIsPremiumBlockedUpadted, 250, 400, 500, MediaDataController.MAX_STYLE_RUNS_COUNT, 2500, 5000, 7500, 9000, 10000}, (int) ChatUsersActivity.this.getMessagesController().starsPaidMessageAmountMax), 20, new Utilities.Callback2Return() { // from class: org.telegram.ui.ChatUsersActivity$ListAdapter$$ExternalSyntheticLambda0
                             @Override // org.telegram.messenger.Utilities.Callback2Return
                             public final Object run(Object obj, Object obj2) {
                                 CharSequence lambda$onBindViewHolder$3;

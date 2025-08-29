@@ -161,7 +161,7 @@ final class zzgk {
     static int zzj(int i, byte[] bArr, int i2, zzgj zzgjVar) {
         byte b = bArr[i2];
         int i3 = i2 + 1;
-        int i4 = i & NotificationCenter.dialogIsTranslatable;
+        int i4 = i & NotificationCenter.messageTranslated;
         if (b >= 0) {
             zzgjVar.zza = i4 | (b << 7);
             return i3;

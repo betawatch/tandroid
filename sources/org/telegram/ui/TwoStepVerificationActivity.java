@@ -278,7 +278,7 @@ public class TwoStepVerificationActivity extends BaseFragment implements Notific
                 this.passwordEditText.setHintTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteHintText));
                 this.passwordEditText.setBackground(null);
                 this.passwordEditText.setSingleLine(true);
-                this.passwordEditText.setInputType(NotificationCenter.didGenerateFingerprintKeyPair);
+                this.passwordEditText.setInputType(NotificationCenter.dialogIsTranslatable);
                 this.passwordEditText.setTransformationMethod(PasswordTransformationMethod.getInstance());
                 this.passwordEditText.setTypeface(Typeface.DEFAULT);
                 EditTextBoldCursor editTextBoldCursor2 = this.passwordEditText;
@@ -496,7 +496,7 @@ public class TwoStepVerificationActivity extends BaseFragment implements Notific
         this.passwordEditText.setHintTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteHintText));
         this.passwordEditText.setBackground(null);
         this.passwordEditText.setSingleLine(true);
-        this.passwordEditText.setInputType(NotificationCenter.didGenerateFingerprintKeyPair);
+        this.passwordEditText.setInputType(NotificationCenter.dialogIsTranslatable);
         this.passwordEditText.setTransformationMethod(PasswordTransformationMethod.getInstance());
         this.passwordEditText.setTypeface(Typeface.DEFAULT);
         EditTextBoldCursor editTextBoldCursor22 = this.passwordEditText;

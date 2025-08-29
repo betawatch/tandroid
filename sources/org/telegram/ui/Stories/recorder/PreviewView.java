@@ -47,11 +47,13 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.wallpaper.WallpaperBitmapHolder;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.EmojiThemes;
 import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.ActionBar.theme.ThemeKey;
 import org.telegram.ui.ChatBackgroundDrawable;
 import org.telegram.ui.Components.AnimatedFloat;
 import org.telegram.ui.Components.BlurringShader;
@@ -1597,7 +1599,7 @@ public abstract class PreviewView extends FrameLayout {
             this.audioPlayer.setPlayWhenReady(z2);
             this.audioPlayer.seekTo(j3);
         } else if (z) {
-            if (Math.abs(this.audioPlayer.getCurrentPosition() - j3) > (isCollage() ? NotificationCenter.premiumStickersPreviewLoaded : 120)) {
+            if (Math.abs(this.audioPlayer.getCurrentPosition() - j3) > (isCollage() ? NotificationCenter.billingProductDetailsUpdated : 120)) {
                 this.audioPlayer.seekTo(j3);
             }
         }
@@ -1656,7 +1658,7 @@ public abstract class PreviewView extends FrameLayout {
             this.roundPlayer.setPlayWhenReady(z2);
             this.roundPlayer.seekTo(j3);
         } else if (z) {
-            if (Math.abs(this.roundPlayer.getCurrentPosition() - j3) > (isCollage() ? NotificationCenter.premiumStickersPreviewLoaded : 120)) {
+            if (Math.abs(this.roundPlayer.getCurrentPosition() - j3) > (isCollage() ? NotificationCenter.billingProductDetailsUpdated : 120)) {
                 this.roundPlayer.seekTo(j3);
             }
         }
@@ -1810,7 +1812,7 @@ public abstract class PreviewView extends FrameLayout {
                     canvas.translate((-storyEntry2.width) / 2.0f, (-storyEntry2.height) / 2.0f);
                 }
                 canvas.scale(this.entry.width / this.thumbBitmap.getWidth(), this.entry.height / this.thumbBitmap.getHeight());
-                this.bitmapPaint.setAlpha(NotificationCenter.needCheckSystemBarColors);
+                this.bitmapPaint.setAlpha(NotificationCenter.didApplyNewTheme);
                 canvas.drawBitmap(this.thumbBitmap, 0.0f, 0.0f, this.bitmapPaint);
                 canvas.restore();
             }
@@ -1889,7 +1891,7 @@ public abstract class PreviewView extends FrameLayout {
         }
         this.matrix.reset();
         this.matrix.preScale(this.entry.width / this.bitmap.getWidth(), this.entry.height / this.bitmap.getHeight());
-        this.bitmapPaint.setAlpha(NotificationCenter.needCheckSystemBarColors);
+        this.bitmapPaint.setAlpha(NotificationCenter.didApplyNewTheme);
         canvas.drawBitmap(this.bitmap, this.matrix, this.bitmapPaint);
     }
 
@@ -2166,15 +2168,15 @@ public abstract class PreviewView extends FrameLayout {
         return getBackgroundDrawable(drawable, i, wallPaper, z);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:34:0x008f  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x00a4  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x00ba  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x00cc  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x00f2  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0093  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x00a8  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x00be  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x00d0  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x00f6  */
     /* JADX WARN: Removed duplicated region for block: B:52:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x00d0  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x00a9  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x0094  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x00d4  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00ad  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x0098  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2187,7 +2189,7 @@ public abstract class PreviewView extends FrameLayout {
         if (wallPaper != null && TextUtils.isEmpty(ChatThemeController.getWallpaperEmoticon(wallPaper))) {
             return ChatBackgroundDrawable.getOrCreate(drawable, wallPaper, z);
         }
-        EmojiThemes theme2 = (wallPaper == null || wallPaper.settings == null) ? null : ChatThemeController.getInstance(i).getTheme(wallPaper.settings.emoticon);
+        EmojiThemes theme2 = (wallPaper == null || wallPaper.settings == null) ? null : ChatThemeController.getInstance(i).getTheme(ThemeKey.ofEmoticon(wallPaper.settings.emoticon));
         if (theme2 != null) {
             return getBackgroundDrawableFromTheme(i, theme2, 0, z);
         }
@@ -2330,7 +2332,7 @@ public abstract class PreviewView extends FrameLayout {
     }
 
     public static Drawable getBackgroundDrawableFromTheme(int i, String str, boolean z, boolean z2) {
-        EmojiThemes theme = ChatThemeController.getInstance(i).getTheme(str);
+        EmojiThemes theme = ChatThemeController.getInstance(i).getTheme(ThemeKey.ofEmoticon(str));
         if (theme == null) {
             return Theme.getCachedWallpaper();
         }
@@ -2386,8 +2388,8 @@ public abstract class PreviewView extends FrameLayout {
             return;
         }
         long longValue = ((Long) pair.first).longValue();
-        Bitmap bitmap = (Bitmap) pair.second;
-        if (longValue != emojiThemes.getTlTheme(z ? 1 : 0).id || bitmap == null) {
+        Bitmap bitmap = ((WallpaperBitmapHolder) pair.second).bitmap;
+        if (longValue != emojiThemes.getThemeId(z ? 1 : 0) || bitmap == null) {
             return;
         }
         motionBackgroundDrawable.setPatternBitmap(emojiThemes.getWallpaper(z2 ? 1 : 0).settings.intensity, bitmap);

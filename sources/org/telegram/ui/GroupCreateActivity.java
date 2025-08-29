@@ -925,7 +925,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
             this.floatingButton.setImageResource(R.drawable.floating_check);
         } else {
             BackDrawable backDrawable = new BackDrawable(false);
-            backDrawable.setArrowRotation(NotificationCenter.suggestedFiltersLoaded);
+            backDrawable.setArrowRotation(NotificationCenter.dialogFiltersUpdated);
             this.floatingButton.setImageDrawable(backDrawable);
         }
         StateListAnimator stateListAnimator = new StateListAnimator();

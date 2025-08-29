@@ -53,7 +53,7 @@ public class VoIPBackgroundProvider {
         paint2.setAlpha(102);
         paint3.setColor(-16777216);
         paint3.setAlpha(35);
-        bitmapShaderTools2.paint.setAlpha(NotificationCenter.suggestedFiltersLoaded);
+        bitmapShaderTools2.paint.setAlpha(NotificationCenter.dialogFiltersUpdated);
     }
 
     public void invalidateViews() {
@@ -152,7 +152,7 @@ public class VoIPBackgroundProvider {
         this.revealShaderTools = new BitmapShaderTools(i3, i4);
         BitmapShaderTools bitmapShaderTools = new BitmapShaderTools(i3, i4);
         this.revealDarkShaderTools = bitmapShaderTools;
-        bitmapShaderTools.paint.setAlpha(NotificationCenter.suggestedFiltersLoaded);
+        bitmapShaderTools.paint.setAlpha(NotificationCenter.dialogFiltersUpdated);
     }
 
     public int getDegree() {

@@ -132,7 +132,7 @@ public class PostsSearchContainer extends FrameLayout {
         BackupImageView backupImageView = new BackupImageView(context);
         this.emptyImageView = backupImageView;
         backupImageView.setVisibility(8);
-        linearLayout.addView(backupImageView, LayoutHelper.createLinear(NotificationCenter.walletPendingTransactionsChanged, NotificationCenter.walletPendingTransactionsChanged, 1, 0, 0, 0, 12));
+        linearLayout.addView(backupImageView, LayoutHelper.createLinear(NotificationCenter.dialogTranslate, NotificationCenter.dialogTranslate, 1, 0, 0, 0, 12));
         TextView textView = new TextView(context);
         this.emptyTitleView = textView;
         textView.setTextSize(1, 16.0f);

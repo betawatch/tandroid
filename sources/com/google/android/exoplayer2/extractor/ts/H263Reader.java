@@ -36,7 +36,7 @@ public final class H263Reader implements ElementaryStreamReader {
     H263Reader(UserDataReader userDataReader) {
         this.userDataReader = userDataReader;
         if (userDataReader != null) {
-            this.userData = new NalUnitTargetBuffer(NotificationCenter.dialogFiltersUpdated, 128);
+            this.userData = new NalUnitTargetBuffer(NotificationCenter.themeUploadedToServer, 128);
             this.userDataParsable = new ParsableByteArray();
         } else {
             this.userData = null;
@@ -245,7 +245,7 @@ public final class H263Reader implements ElementaryStreamReader {
                                 this.isFilling = false;
                                 return true;
                             }
-                        } else if ((i & NotificationCenter.profileMusicUpdated) != 32) {
+                        } else if ((i & NotificationCenter.musicListLoaded) != 32) {
                             Log.w("H263Reader", "Unexpected start code value");
                             reset();
                         } else {

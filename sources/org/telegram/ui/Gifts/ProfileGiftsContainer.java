@@ -472,7 +472,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(getContext(), this.resourcesProvider);
             this.emptyView2Button = buttonWithCounterView;
             buttonWithCounterView.setText(LocaleController.getString(R.string.Gift2CollectionEmptyButton), false);
-            this.emptyView2Layout.addView(this.emptyView2Button, LayoutHelper.createLinear(NotificationCenter.savedMessagesForwarded, 44, 1, 0, 19, 0, 12));
+            this.emptyView2Layout.addView(this.emptyView2Button, LayoutHelper.createLinear(NotificationCenter.userIsPremiumBlockedUpadted, 44, 1, 0, 19, 0, 12));
             this.emptyView2Button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda21
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -1354,7 +1354,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                 buttonWithCounterView.setVisibility(!canSwitchNotify() ? 8 : 0);
                 linearLayout.setVisibility(canSwitchNotify() ? 0 : 8);
                 this.buttonContainerHeightDp = !canSwitchNotify() ? 50 : 68;
-                addView(frameLayout2, LayoutHelper.createFrame(-1, NotificationCenter.savedMessagesForwarded, 87));
+                addView(frameLayout2, LayoutHelper.createFrame(-1, NotificationCenter.userIsPremiumBlockedUpadted, 87));
                 updateColors();
                 updateTabsShown(false);
             }
@@ -1383,7 +1383,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         buttonWithCounterView2.setVisibility(!canSwitchNotify() ? 8 : 0);
         linearLayout.setVisibility(canSwitchNotify() ? 0 : 8);
         this.buttonContainerHeightDp = !canSwitchNotify() ? 50 : 68;
-        addView(frameLayout2, LayoutHelper.createFrame(-1, NotificationCenter.savedMessagesForwarded, 87));
+        addView(frameLayout2, LayoutHelper.createFrame(-1, NotificationCenter.userIsPremiumBlockedUpadted, 87));
         updateColors();
         updateTabsShown(false);
     }

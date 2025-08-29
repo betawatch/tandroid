@@ -450,7 +450,7 @@ public abstract class CodedOutputStream extends ByteOutput {
                     byte[] bArr = this.buffer;
                     int i2 = this.position;
                     this.position = i2 + 1;
-                    UnsafeUtil.putByte(bArr, i2, (byte) ((i & NotificationCenter.dialogIsTranslatable) | 128));
+                    UnsafeUtil.putByte(bArr, i2, (byte) ((i & NotificationCenter.messageTranslated) | 128));
                     i >>>= 7;
                 }
                 byte[] bArr2 = this.buffer;
@@ -464,7 +464,7 @@ public abstract class CodedOutputStream extends ByteOutput {
                 byte[] bArr3 = this.buffer;
                 int i4 = this.position;
                 this.position = i4 + 1;
-                bArr3[i4] = (byte) ((i & NotificationCenter.dialogIsTranslatable) | 128);
+                bArr3[i4] = (byte) ((i & NotificationCenter.messageTranslated) | 128);
                 this.totalBytesWritten++;
                 i >>>= 7;
             }
@@ -482,7 +482,7 @@ public abstract class CodedOutputStream extends ByteOutput {
                     byte[] bArr = this.buffer;
                     int i = this.position;
                     this.position = i + 1;
-                    UnsafeUtil.putByte(bArr, i, (byte) ((((int) j) & NotificationCenter.dialogIsTranslatable) | 128));
+                    UnsafeUtil.putByte(bArr, i, (byte) ((((int) j) & NotificationCenter.messageTranslated) | 128));
                     j >>>= 7;
                 }
                 byte[] bArr2 = this.buffer;
@@ -496,7 +496,7 @@ public abstract class CodedOutputStream extends ByteOutput {
                 byte[] bArr3 = this.buffer;
                 int i3 = this.position;
                 this.position = i3 + 1;
-                bArr3[i3] = (byte) ((((int) j) & NotificationCenter.dialogIsTranslatable) | 128);
+                bArr3[i3] = (byte) ((((int) j) & NotificationCenter.messageTranslated) | 128);
                 this.totalBytesWritten++;
                 j >>>= 7;
             }
@@ -512,15 +512,15 @@ public abstract class CodedOutputStream extends ByteOutput {
             int i2 = this.position;
             int i3 = i2 + 1;
             this.position = i3;
-            bArr[i2] = (byte) (i & NotificationCenter.needCheckSystemBarColors);
+            bArr[i2] = (byte) (i & NotificationCenter.didApplyNewTheme);
             int i4 = i2 + 2;
             this.position = i4;
-            bArr[i3] = (byte) ((i >> 8) & NotificationCenter.needCheckSystemBarColors);
+            bArr[i3] = (byte) ((i >> 8) & NotificationCenter.didApplyNewTheme);
             int i5 = i2 + 3;
             this.position = i5;
-            bArr[i4] = (byte) ((i >> 16) & NotificationCenter.needCheckSystemBarColors);
+            bArr[i4] = (byte) ((i >> 16) & NotificationCenter.didApplyNewTheme);
             this.position = i2 + 4;
-            bArr[i5] = (byte) ((i >> 24) & NotificationCenter.needCheckSystemBarColors);
+            bArr[i5] = (byte) ((i >> 24) & NotificationCenter.didApplyNewTheme);
             this.totalBytesWritten += 4;
         }
 
@@ -541,15 +541,15 @@ public abstract class CodedOutputStream extends ByteOutput {
             bArr[i4] = (byte) (255 & (j >> 24));
             int i6 = i + 5;
             this.position = i6;
-            bArr[i5] = (byte) (((int) (j >> 32)) & NotificationCenter.needCheckSystemBarColors);
+            bArr[i5] = (byte) (((int) (j >> 32)) & NotificationCenter.didApplyNewTheme);
             int i7 = i + 6;
             this.position = i7;
-            bArr[i6] = (byte) (((int) (j >> 40)) & NotificationCenter.needCheckSystemBarColors);
+            bArr[i6] = (byte) (((int) (j >> 40)) & NotificationCenter.didApplyNewTheme);
             int i8 = i + 7;
             this.position = i8;
-            bArr[i7] = (byte) (((int) (j >> 48)) & NotificationCenter.needCheckSystemBarColors);
+            bArr[i7] = (byte) (((int) (j >> 48)) & NotificationCenter.didApplyNewTheme);
             this.position = i + 8;
-            bArr[i8] = (byte) (((int) (j >> 56)) & NotificationCenter.needCheckSystemBarColors);
+            bArr[i8] = (byte) (((int) (j >> 56)) & NotificationCenter.didApplyNewTheme);
             this.totalBytesWritten += 8;
         }
     }

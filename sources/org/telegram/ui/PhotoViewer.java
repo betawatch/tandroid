@@ -2393,7 +2393,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             arrayList.add(ObjectAnimator.ofFloat(view, (Property<View, Float>) property2, 1.0f));
             arrayList.add(ObjectAnimator.ofFloat(view, (Property<View, Float>) property3, x));
             arrayList.add(ObjectAnimator.ofFloat(view, (Property<View, Float>) property4, y));
-            arrayList.add(ObjectAnimator.ofInt(this.backgroundDrawable, (Property<BackgroundDrawable, Integer>) AnimationProperties.COLOR_DRAWABLE_ALPHA, NotificationCenter.needCheckSystemBarColors));
+            arrayList.add(ObjectAnimator.ofInt(this.backgroundDrawable, (Property<BackgroundDrawable, Integer>) AnimationProperties.COLOR_DRAWABLE_ALPHA, NotificationCenter.didApplyNewTheme));
             FirstFrameView firstFrameView2 = this.firstFrameView;
             if (firstFrameView2 != null) {
                 arrayList.add(ObjectAnimator.ofFloat(firstFrameView2, (Property<FirstFrameView, Float>) property, 1.0f));
@@ -2553,10 +2553,10 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         public void restore() {
             PhotoViewer.this.placeProvider = this.provider;
             PhotoViewer.this.windowLayoutParams.flags = -2147286784;
-            PhotoViewer.this.windowLayoutParams.softInputMode = NotificationCenter.closeSearchByActiveAction;
+            PhotoViewer.this.windowLayoutParams.softInputMode = NotificationCenter.notificationsCountUpdated;
             PhotoViewer.this.windowView.setFocusable(false);
             PhotoViewer.this.containerView.setFocusable(false);
-            PhotoViewer.this.backgroundDrawable.setAlpha(NotificationCenter.needCheckSystemBarColors);
+            PhotoViewer.this.backgroundDrawable.setAlpha(NotificationCenter.didApplyNewTheme);
             PhotoViewer.this.containerView.setAlpha(1.0f);
             PhotoViewer photoViewer = PhotoViewer.this;
             ArrayList arrayList = this.messages;
@@ -2768,7 +2768,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                     ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(this, (Property<CounterView, Float>) View.SCALE_Y, 0.0f, 1.0f);
                     Paint paint2 = this.paint;
                     Property property2 = AnimationProperties.PAINT_ALPHA;
-                    animatorSet.playTogether(ofFloat3, ofFloat4, ObjectAnimator.ofInt(paint2, (Property<Paint, Integer>) property2, 0, NotificationCenter.needCheckSystemBarColors), ObjectAnimator.ofInt(this.textPaint, (Property<TextPaint, Integer>) property2, 0, NotificationCenter.needCheckSystemBarColors));
+                    animatorSet.playTogether(ofFloat3, ofFloat4, ObjectAnimator.ofInt(paint2, (Property<Paint, Integer>) property2, 0, NotificationCenter.didApplyNewTheme), ObjectAnimator.ofInt(this.textPaint, (Property<TextPaint, Integer>) property2, 0, NotificationCenter.didApplyNewTheme));
                     animatorSet.setInterpolator(new DecelerateInterpolator());
                 } else if (i < i2) {
                     animatorSet.playTogether(ObjectAnimator.ofFloat(this, (Property<CounterView, Float>) View.SCALE_X, 1.1f, 1.0f), ObjectAnimator.ofFloat(this, (Property<CounterView, Float>) View.SCALE_Y, 1.1f, 1.0f));
@@ -2792,7 +2792,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         @Override // android.view.View
         protected void onDraw(Canvas canvas) {
             int measuredHeight = getMeasuredHeight() / 2;
-            this.paint.setAlpha(NotificationCenter.needCheckSystemBarColors);
+            this.paint.setAlpha(NotificationCenter.didApplyNewTheme);
             this.rect.set(AndroidUtilities.dp(1.0f), measuredHeight - AndroidUtilities.dp(14.0f), getMeasuredWidth() - AndroidUtilities.dp(1.0f), measuredHeight + AndroidUtilities.dp(14.0f));
             canvas.drawRoundRect(this.rect, AndroidUtilities.dp(15.0f), AndroidUtilities.dp(15.0f), this.paint);
             if (this.staticLayout != null) {
@@ -2847,7 +2847,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             resetAlphas();
             PlayPauseDrawable playPauseDrawable = new PlayPauseDrawable(28);
             this.playPauseDrawable = playPauseDrawable;
-            playPauseDrawable.setDuration(NotificationCenter.savedMessagesForwarded);
+            playPauseDrawable.setDuration(NotificationCenter.userIsPremiumBlockedUpadted);
             this.playDrawable = new CombinedDrawable(ContextCompat.getDrawable(PhotoViewer.this.parentActivity, R.drawable.circle_big).mutate(), playPauseDrawable);
         }
 
@@ -6599,7 +6599,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 LinearSmoothScrollerEnd linearSmoothScrollerEnd = new LinearSmoothScrollerEnd(recyclerView.getContext()) { // from class: org.telegram.ui.PhotoViewer.36.1
                     @Override // androidx.recyclerview.widget.LinearSmoothScrollerEnd
                     protected int calculateTimeForDeceleration(int i12) {
-                        return Math.max(NotificationCenter.suggestedFiltersLoaded, super.calculateTimeForDeceleration(i12));
+                        return Math.max(NotificationCenter.dialogFiltersUpdated, super.calculateTimeForDeceleration(i12));
                     }
                 };
                 linearSmoothScrollerEnd.setTargetPosition(i11);
@@ -8550,7 +8550,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             if (this.muteHints == null) {
                 this.muteHints = new ArrayList();
             }
-            this.containerView.addView(hintView2, LayoutHelper.createFrame(-1, NotificationCenter.savedMessagesForwarded, 83));
+            this.containerView.addView(hintView2, LayoutHelper.createFrame(-1, NotificationCenter.userIsPremiumBlockedUpadted, 83));
             this.muteHints.add(hintView2);
             hintView2.show();
         }
@@ -9493,7 +9493,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 builder.setDialogButtonColorKey(Theme.key_voipgroup_listeningText);
                 AlertDialog create = builder.create();
                 create.setBlurParams(0.8f, false, true);
-                create.setBackgroundColor(ColorUtils.setAlphaComponent(-15461356, NotificationCenter.openBoostForUsersDialog));
+                create.setBackgroundColor(ColorUtils.setAlphaComponent(-15461356, NotificationCenter.smsJobStatusUpdate));
                 create.show();
                 create.setTextColor(Theme.getColor(Theme.key_voipgroup_nameText));
                 create.setOnDismissListener(photoViewer.new 38());
@@ -10699,7 +10699,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 this.loadingDrawable.draw(canvas);
             }
             if (this.loading) {
-                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.dialogFiltersUpdated, 31);
+                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.themeUploadedToServer, 31);
             }
             if (this.quoteBlocks != null && this.hasQuote) {
                 canvas.save();
@@ -16113,7 +16113,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
     private static class ActionBarToggleParams {
         public static final ActionBarToggleParams DEFAULT = new ActionBarToggleParams();
         public Interpolator animationInterpolator;
-        public int animationDuration = NotificationCenter.savedMessagesForwarded;
+        public int animationDuration = NotificationCenter.userIsPremiumBlockedUpadted;
         public boolean enableStatusBarAnimation = true;
         public boolean enableTranslationAnimation = true;
 
@@ -20978,7 +20978,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                         if (bitmapHolder6 == null || imageReceiver != this.centerImage) {
                             bitmapHolder6 = null;
                         }
-                        TLRPC.PhotoSize closestPhotoSizeWithSize4 = FileLoader.getClosestPhotoSizeWithSize(messageObject.photoThumbs, NotificationCenter.nearEarEvent);
+                        TLRPC.PhotoSize closestPhotoSizeWithSize4 = FileLoader.getClosestPhotoSizeWithSize(messageObject.photoThumbs, NotificationCenter.onReceivedChannelDifference);
                         imageReceiver.setNeedsQualityThumb(closestPhotoSizeWithSize4.w < 100 && closestPhotoSizeWithSize4.h < 100);
                         imageReceiver.setImage(null, null, bitmapHolder6 == null ? ImageLocation.getForObject(closestPhotoSizeWithSize4, messageObject.photoThumbsObject) : null, "b", bitmapHolder6 != null ? new BitmapDrawable(bitmapHolder6.bitmap) : null, 0L, null, messageObject, 1);
                         ImageReceiver.BitmapHolder bitmapHolder7 = this.currentThumb;
@@ -21278,7 +21278,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             this.skipFirstBufferingProgress = false;
             this.playerInjected = false;
             makeFocusable();
-            this.backgroundDrawable.setAlpha(NotificationCenter.needCheckSystemBarColors);
+            this.backgroundDrawable.setAlpha(NotificationCenter.didApplyNewTheme);
             this.containerView.setAlpha(1.0f);
             onPhotoShow(null, fileLocation, imageLocation, null, null, null, arrayList, i, null);
             initCropView();
@@ -21484,7 +21484,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         } else {
             makeFocusable();
         }
-        this.backgroundDrawable.setAlpha(NotificationCenter.needCheckSystemBarColors);
+        this.backgroundDrawable.setAlpha(NotificationCenter.didApplyNewTheme);
         this.containerView.setAlpha(1.0f);
         onPhotoShow(null, null, null, null, null, null, Collections.singletonList(orientation), 0, null);
         this.pickerView.setTranslationY(AndroidUtilities.dp(this.isCurrentVideo ? 154.0f : 96.0f));
@@ -21595,7 +21595,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                     }
                     this.windowLayoutParams.flags |= 8192;
                     AndroidUtilities.logFlagSecure();
-                    this.windowLayoutParams.softInputMode = NotificationCenter.closeSearchByActiveAction;
+                    this.windowLayoutParams.softInputMode = NotificationCenter.notificationsCountUpdated;
                     this.windowView.setFocusable(false);
                     this.containerView.setFocusable(false);
                     windowManager.addView(this.windowView, this.windowLayoutParams);
@@ -21804,7 +21804,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                                         super.onAnimationEnd(animator);
                                         PhotoViewer.this.animationInProgress = 0;
                                         PhotoViewer.this.invalidateBlur();
-                                        PhotoViewer.this.backgroundDrawable.setAlpha(NotificationCenter.needCheckSystemBarColors);
+                                        PhotoViewer.this.backgroundDrawable.setAlpha(NotificationCenter.didApplyNewTheme);
                                         PhotoViewer.this.containerView.invalidate();
                                         PhotoViewer.this.pickerView.setTranslationY(0.0f);
                                         if (PhotoViewer.this.isEmbedVideo) {
@@ -21834,7 +21834,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 if ((this.avatarsDialogId == 0 || !MessagesController.getInstance(this.currentAccount).isChatNoForwards(-this.avatarsDialogId)) && ((messageObject == null || (!MessagesController.getInstance(this.currentAccount).isChatNoForwards(messageObject.getChatId()) && ((message = messageObject.messageOwner) == null || !message.noforwards))) && (messageObject == null || !messageObject.hasRevealedExtendedMedia()))) {
                     this.windowLayoutParams.flags &= -8193;
                     AndroidUtilities.logFlagSecure();
-                    this.windowLayoutParams.softInputMode = NotificationCenter.closeSearchByActiveAction;
+                    this.windowLayoutParams.softInputMode = NotificationCenter.notificationsCountUpdated;
                     this.windowView.setFocusable(false);
                     this.containerView.setFocusable(false);
                     windowManager.addView(this.windowView, this.windowLayoutParams);
@@ -21902,7 +21902,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 }
                 this.windowLayoutParams.flags |= 8192;
                 AndroidUtilities.logFlagSecure();
-                this.windowLayoutParams.softInputMode = NotificationCenter.closeSearchByActiveAction;
+                this.windowLayoutParams.softInputMode = NotificationCenter.notificationsCountUpdated;
                 this.windowView.setFocusable(false);
                 this.containerView.setFocusable(false);
                 windowManager.addView(this.windowView, this.windowLayoutParams);
@@ -22112,7 +22112,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                     PhotoViewer.this.animationEndRunnable = null;
                 }
                 PhotoViewer.this.containerView.setAlpha(1.0f);
-                PhotoViewer.this.backgroundDrawable.setAlpha(NotificationCenter.needCheckSystemBarColors);
+                PhotoViewer.this.backgroundDrawable.setAlpha(NotificationCenter.didApplyNewTheme);
                 int i5 = 0;
                 while (true) {
                     ClippingImageView[] clippingImageViewArr5 = this.val$animatingImageViews;
@@ -22151,7 +22151,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 if (clippingImageViewArr.length > 1) {
                     arrayList2.add(ObjectAnimator.ofFloat(PhotoViewer.this.animatingImageView, (Property<ClippingImageView, Float>) View.ALPHA, 0.0f, 1.0f));
                 }
-                arrayList2.add(ObjectAnimator.ofInt(PhotoViewer.this.backgroundDrawable, (Property<BackgroundDrawable, Integer>) AnimationProperties.COLOR_DRAWABLE_ALPHA, 0, NotificationCenter.needCheckSystemBarColors));
+                arrayList2.add(ObjectAnimator.ofInt(PhotoViewer.this.backgroundDrawable, (Property<BackgroundDrawable, Integer>) AnimationProperties.COLOR_DRAWABLE_ALPHA, 0, NotificationCenter.didApplyNewTheme));
                 FrameLayoutDrawer frameLayoutDrawer = PhotoViewer.this.containerView;
                 Property property = View.ALPHA;
                 arrayList2.add(ObjectAnimator.ofFloat(frameLayoutDrawer, (Property<FrameLayoutDrawer, Float>) property, 0.0f, 1.0f));
@@ -22326,7 +22326,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
     public void makeFocusable() {
         WindowManager.LayoutParams layoutParams = this.windowLayoutParams;
         layoutParams.flags = -2147417856;
-        layoutParams.softInputMode = NotificationCenter.closeSearchByActiveAction;
+        layoutParams.softInputMode = NotificationCenter.notificationsCountUpdated;
         try {
             ((WindowManager) this.parentActivity.getSystemService("window")).updateViewLayout(this.windowView, this.windowLayoutParams);
         } catch (Exception e) {
@@ -22347,7 +22347,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
 
     /* JADX INFO: Access modifiers changed from: private */
     public void requestAdjust() {
-        this.windowLayoutParams.softInputMode = NotificationCenter.closeSearchByActiveAction;
+        this.windowLayoutParams.softInputMode = NotificationCenter.notificationsCountUpdated;
         try {
             ((WindowManager) this.parentActivity.getSystemService("window")).updateViewLayout(this.windowView, this.windowLayoutParams);
         } catch (Exception e) {
@@ -24448,7 +24448,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                     float f65 = containerViewWidth / 4.0f;
                     this.backgroundDrawable.setAlpha((int) Math.max(127.0f, (1.0f - (Math.min(Math.abs(f8), f65) / f65)) * 255.0f));
                 } else {
-                    this.backgroundDrawable.setAlpha(NotificationCenter.needCheckSystemBarColors);
+                    this.backgroundDrawable.setAlpha(NotificationCenter.didApplyNewTheme);
                 }
                 this.sideImage = null;
                 if (this.currentEditMode == 0 && (i33 = this.sendPhotoType) != 1 && i33 != 11) {
@@ -26069,13 +26069,13 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             this.topFancyShadowMatrix.reset();
             this.topFancyShadowMatrix.postScale(1.0f, f2 / 16.0f);
             this.topFancyShadow.setLocalMatrix(this.topFancyShadowMatrix);
-            this.topFancyShadowPaint.setAlpha(NotificationCenter.timezonesUpdated);
+            this.topFancyShadowPaint.setAlpha(NotificationCenter.chatWasBoostedByUser);
             canvas.drawRect(0.0f, 0.0f, this.containerView.getWidth(), f2, this.topFancyShadowPaint);
             this.bottomFancyShadowMatrix.reset();
             this.bottomFancyShadowMatrix.postScale(1.0f, height / 16.0f);
             this.bottomFancyShadowMatrix.postTranslate(0.0f, (this.containerView.getHeight() - height) + AndroidUtilities.navigationBarHeight);
             this.bottomFancyShadow.setLocalMatrix(this.bottomFancyShadowMatrix);
-            this.bottomFancyShadowPaint.setAlpha(NotificationCenter.didUpdateTonGiftStickers);
+            this.bottomFancyShadowPaint.setAlpha(NotificationCenter.boostByChannelCreated);
             canvas.drawRect(0.0f, (this.containerView.getHeight() + AndroidUtilities.navigationBarHeight) - height, this.containerView.getWidth(), this.containerView.getHeight() + AndroidUtilities.navigationBarHeight, this.bottomFancyShadowPaint);
             canvas.restore();
             canvas.restore();
@@ -26583,7 +26583,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             boolean[] zArr = this.drawPressedDrawable;
             if (!zArr[0] && !zArr[1]) {
                 float x = motionEvent.getX();
-                if (x < Math.min(NotificationCenter.fileUploaded, this.containerView.getMeasuredWidth() / 8)) {
+                if (x < Math.min(NotificationCenter.httpFileDidFailedLoad, this.containerView.getMeasuredWidth() / 8)) {
                     if (this.leftImage.hasImageSet()) {
                         this.drawPressedDrawable[0] = true;
                         this.containerView.invalidate();
@@ -26609,7 +26609,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             return true;
         }
         float x = motionEvent.getX();
-        if ((x < Math.min(NotificationCenter.fileUploaded, this.containerView.getMeasuredWidth() / 8) || x > this.containerView.getMeasuredWidth() - r3) && (messageObject = this.currentMessageObject) != null) {
+        if ((x < Math.min(NotificationCenter.httpFileDidFailedLoad, this.containerView.getMeasuredWidth() / 8) || x > this.containerView.getMeasuredWidth() - r3) && (messageObject = this.currentMessageObject) != null) {
             return (messageObject.isVideo() || ((photoViewerWebView = this.photoViewerWebView) != null && photoViewerWebView.isControllable())) && SystemClock.elapsedRealtime() - this.lastPhotoSetTime >= 500 && canDoubleTapSeekVideo(motionEvent);
         }
         return true;
@@ -26696,7 +26696,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         float x = motionEvent.getX();
         float y = motionEvent.getY();
         if (this.checkImageView.getVisibility() != 0 && SharedConfig.nextMediaTap && this.sendPhotoType != 11 && y > ActionBar.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight + AndroidUtilities.dp(40.0f)) {
-            if (x < Math.min(NotificationCenter.fileUploaded, this.containerView.getMeasuredWidth() / 8)) {
+            if (x < Math.min(NotificationCenter.httpFileDidFailedLoad, this.containerView.getMeasuredWidth() / 8)) {
                 if (this.leftImage.hasImageSet()) {
                     switchToNextIndex(-1, true);
                     return true;

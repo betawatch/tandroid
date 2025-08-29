@@ -205,7 +205,7 @@ public class BlurBehindDrawable {
 
     /* JADX INFO: Access modifiers changed from: private */
     public int getBlurRadius() {
-        return Math.max(7, Math.max(this.lastH, this.lastW) / NotificationCenter.suggestedFiltersLoaded);
+        return Math.max(7, Math.max(this.lastH, this.lastW) / NotificationCenter.dialogFiltersUpdated);
     }
 
     public void clear() {
@@ -355,7 +355,7 @@ public class BlurBehindDrawable {
                 this.behindView.setTag(67108867, null);
                 this.blurCanvas[i].restore();
                 Utilities.stackBlurBitmap(this.blurredBitmapTmp[i], getBlurRadius());
-                this.emptyPaint.setAlpha(NotificationCenter.needCheckSystemBarColors);
+                this.emptyPaint.setAlpha(NotificationCenter.didApplyNewTheme);
                 if (i == 1) {
                     this.renderingBitmap[i].eraseColor(getThemedColor(Theme.key_windowBackgroundWhite));
                 }
@@ -414,7 +414,7 @@ public class BlurBehindDrawable {
                 } else {
                     BlurBehindDrawable.this.backgroundBitmap[i2].eraseColor(0);
                 }
-                BlurBehindDrawable.this.emptyPaint.setAlpha(NotificationCenter.needCheckSystemBarColors);
+                BlurBehindDrawable.this.emptyPaint.setAlpha(NotificationCenter.didApplyNewTheme);
                 Utilities.stackBlurBitmap(BlurBehindDrawable.this.blurredBitmapTmp[i2], BlurBehindDrawable.this.getBlurRadius());
                 if (BlurBehindDrawable.this.backgroundBitmapCanvas[i2] != null) {
                     BlurBehindDrawable.this.backgroundBitmapCanvas[i2].drawBitmap(BlurBehindDrawable.this.blurredBitmapTmp[i2], 0.0f, 0.0f, BlurBehindDrawable.this.emptyPaint);

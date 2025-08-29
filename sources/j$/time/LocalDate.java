@@ -64,8 +64,8 @@ public final class LocalDate implements j$.time.temporal.m, j$.time.temporal.p, 
             j6 = j3 - ((j5 / 400) + (((j5 / 4) + (365 * j5)) - (j5 / 100)));
         }
         int i = (int) j6;
-        int i2 = ((i * 5) + 2) / NotificationCenter.recordStartError;
-        return new LocalDate(j$.time.temporal.a.YEAR.v(j5 + j2 + (i2 / 10)), ((i2 + 2) % 12) + 1, (i - (((i2 * NotificationCenter.chatSwitchedForum) + 5) / 10)) + 1);
+        int i2 = ((i * 5) + 2) / NotificationCenter.recordProgressChanged;
+        return new LocalDate(j$.time.temporal.a.YEAR.v(j5 + j2 + (i2 / 10)), ((i2 + 2) % 12) + 1, (i - (((i2 * NotificationCenter.activityPermissionsGranted) + 5) / 10)) + 1);
     }
 
     public static LocalDate D(j$.time.temporal.o oVar) {

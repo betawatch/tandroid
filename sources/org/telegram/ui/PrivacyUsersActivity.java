@@ -37,12 +37,11 @@ import org.telegram.ui.Components.EmptyTextProgressView;
 import org.telegram.ui.Components.ItemOptions;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.ContactsActivity;
 import org.telegram.ui.GroupCreateActivity;
 import org.telegram.ui.PrivacyUsersActivity;
 
 /* loaded from: classes4.dex */
-public class PrivacyUsersActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate, ContactsActivity.ContactsActivityDelegate {
+public class PrivacyUsersActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate {
     private int blockUserDetailRow;
     private int blockUserRow;
     private int deleteAllRow;
@@ -307,7 +306,7 @@ public class PrivacyUsersActivity extends BaseFragment implements NotificationCe
             public final void run() {
                 PrivacyUsersActivity.this.lambda$showUnblockAlert$6(l);
             }
-        }).setMinWidth(NotificationCenter.storiesBlocklistUpdate).show();
+        }).setMinWidth(NotificationCenter.didUpdatePremiumGiftFieldIcon).show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -414,14 +413,6 @@ public class PrivacyUsersActivity extends BaseFragment implements NotificationCe
         if (listAdapter != null) {
             listAdapter.notifyDataSetChanged();
         }
-    }
-
-    @Override // org.telegram.ui.ContactsActivity.ContactsActivityDelegate
-    public void didSelectContact(TLRPC.User user, String str, ContactsActivity contactsActivity) {
-        if (user == null) {
-            return;
-        }
-        getMessagesController().blockPeer(user.id);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

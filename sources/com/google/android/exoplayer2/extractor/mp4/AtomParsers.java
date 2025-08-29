@@ -780,9 +780,9 @@ abstract class AtomParsers {
         if (readInt2 == 0 && readInt3 == 65536 && readInt4 == -65536 && readInt5 == 0) {
             i2 = 90;
         } else if (readInt2 == 0 && readInt3 == -65536 && readInt4 == 65536 && readInt5 == 0) {
-            i2 = NotificationCenter.notificationsCountUpdated;
+            i2 = NotificationCenter.newLocationAvailable;
         } else if (readInt2 == -65536 && readInt3 == 0 && readInt4 == 0 && readInt5 == -65536) {
-            i2 = NotificationCenter.suggestedFiltersLoaded;
+            i2 = NotificationCenter.dialogFiltersUpdated;
         }
         return new TkhdData(readInt, j, i2);
     }
@@ -1519,7 +1519,7 @@ abstract class AtomParsers {
                 } else {
                     int readUnsignedByte = parsableByteArray.readUnsignedByte();
                     i3 = readUnsignedByte & 15;
-                    i4 = (readUnsignedByte & NotificationCenter.profileMusicUpdated) >> 4;
+                    i4 = (readUnsignedByte & NotificationCenter.musicListLoaded) >> 4;
                 }
                 boolean z = parsableByteArray.readUnsignedByte() == 1;
                 int readUnsignedByte2 = parsableByteArray.readUnsignedByte();
@@ -1551,10 +1551,10 @@ abstract class AtomParsers {
 
     private static int parseExpandableClassSize(ParsableByteArray parsableByteArray) {
         int readUnsignedByte = parsableByteArray.readUnsignedByte();
-        int i = readUnsignedByte & NotificationCenter.dialogIsTranslatable;
+        int i = readUnsignedByte & NotificationCenter.messageTranslated;
         while ((readUnsignedByte & 128) == 128) {
             readUnsignedByte = parsableByteArray.readUnsignedByte();
-            i = (i << 7) | (readUnsignedByte & NotificationCenter.dialogIsTranslatable);
+            i = (i << 7) | (readUnsignedByte & NotificationCenter.messageTranslated);
         }
         return i;
     }
@@ -1702,7 +1702,7 @@ abstract class AtomParsers {
             ParsableByteArray parsableByteArray = leafAtom.data;
             this.data = parsableByteArray;
             parsableByteArray.setPosition(12);
-            this.fieldSize = parsableByteArray.readUnsignedIntToInt() & NotificationCenter.needCheckSystemBarColors;
+            this.fieldSize = parsableByteArray.readUnsignedIntToInt() & NotificationCenter.didApplyNewTheme;
             this.sampleCount = parsableByteArray.readUnsignedIntToInt();
         }
 
@@ -1725,7 +1725,7 @@ abstract class AtomParsers {
             if (i2 % 2 == 0) {
                 int readUnsignedByte = this.data.readUnsignedByte();
                 this.currentByte = readUnsignedByte;
-                return (readUnsignedByte & NotificationCenter.profileMusicUpdated) >> 4;
+                return (readUnsignedByte & NotificationCenter.musicListLoaded) >> 4;
             }
             return this.currentByte & 15;
         }

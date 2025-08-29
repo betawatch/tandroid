@@ -158,7 +158,7 @@ public class VideoScreenPreview extends FrameLayout implements PagerHeaderView, 
             drawable.colorKey = Theme.key_premiumStartSmallStarsColor2;
             drawable.init();
         } else if (i2 == 2) {
-            SpeedLineParticles$Drawable speedLineParticles$Drawable = new SpeedLineParticles$Drawable(NotificationCenter.savedMessagesForwarded);
+            SpeedLineParticles$Drawable speedLineParticles$Drawable = new SpeedLineParticles$Drawable(NotificationCenter.userIsPremiumBlockedUpadted);
             this.speedLinesDrawable = speedLineParticles$Drawable;
             speedLineParticles$Drawable.init();
         } else if (i2 == 13) {

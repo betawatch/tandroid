@@ -164,7 +164,7 @@ public abstract class RoundedBitmapDrawable extends Drawable {
     }
 
     RoundedBitmapDrawable(Resources resources, Bitmap bitmap) {
-        this.mTargetDensity = NotificationCenter.audioRecordTooShort;
+        this.mTargetDensity = NotificationCenter.albumsDidLoad;
         if (resources != null) {
             this.mTargetDensity = resources.getDisplayMetrics().densityDpi;
         }

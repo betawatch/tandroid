@@ -178,6 +178,10 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
         return false;
     }
 
+    public TextView getMessageTextView() {
+        return this.messageTextView;
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$0() {
         if (isShowing()) {
@@ -271,7 +275,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
         this.shadowAnimation = new AnimatorSet[2];
         this.customViewOffset = 12;
         this.dialogButtonColorKey = Theme.key_dialogButton;
-        this.topHeight = NotificationCenter.httpFileDidLoad;
+        this.topHeight = NotificationCenter.walletPendingTransactionsChanged;
         this.messageTextViewClickable = true;
         this.canCacnel = true;
         this.dismissDialogByButtons = true;
@@ -1513,7 +1517,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
         this.shadowAnimation[i] = new AnimatorSet();
         BitmapDrawable bitmapDrawable = this.shadow[i];
         if (bitmapDrawable != null) {
-            this.shadowAnimation[i].playTogether(ObjectAnimator.ofInt(bitmapDrawable, "alpha", z ? NotificationCenter.needCheckSystemBarColors : 0));
+            this.shadowAnimation[i].playTogether(ObjectAnimator.ofInt(bitmapDrawable, "alpha", z ? NotificationCenter.didApplyNewTheme : 0));
         }
         this.shadowAnimation[i].setDuration(150L);
         this.shadowAnimation[i].addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.AlertDialog.8

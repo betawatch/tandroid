@@ -212,15 +212,15 @@ public class EditWidgetActivity extends BaseFragment {
                     linearLayout2.addView(this.cells[i], LayoutHelper.createLinear(-1, -2));
                     i++;
                 }
-                linearLayout2.addView(EditWidgetActivity.this.previewImageView, LayoutHelper.createLinear(NotificationCenter.factCheckLoaded, NotificationCenter.audioRecordTooShort, 17));
+                linearLayout2.addView(EditWidgetActivity.this.previewImageView, LayoutHelper.createLinear(NotificationCenter.starTransactionsLoaded, NotificationCenter.albumsDidLoad, 17));
                 EditWidgetActivity.this.previewImageView.setImageResource(R.drawable.chats_widget_preview);
             } else if (EditWidgetActivity.this.widgetType == 1) {
                 while (i < 2) {
                     this.cells[i] = (ViewGroup) EditWidgetActivity.this.getParentActivity().getLayoutInflater().inflate(R.layout.contacts_widget_item, (ViewGroup) null);
-                    linearLayout2.addView(this.cells[i], LayoutHelper.createLinear(NotificationCenter.audioRecordTooShort, -2));
+                    linearLayout2.addView(this.cells[i], LayoutHelper.createLinear(NotificationCenter.albumsDidLoad, -2));
                     i++;
                 }
-                linearLayout2.addView(EditWidgetActivity.this.previewImageView, LayoutHelper.createLinear(NotificationCenter.audioRecordTooShort, NotificationCenter.audioRecordTooShort, 17));
+                linearLayout2.addView(EditWidgetActivity.this.previewImageView, LayoutHelper.createLinear(NotificationCenter.albumsDidLoad, NotificationCenter.albumsDidLoad, 17));
                 EditWidgetActivity.this.previewImageView.setImageResource(R.drawable.contacts_widget_preview);
             }
             updateDialogs();
@@ -884,7 +884,7 @@ public class EditWidgetActivity extends BaseFragment {
                     if (i == 1 && this.oldBackgroundDrawable != null && ((BaseFragment) EditWidgetActivity.this).parentLayout != null) {
                         drawable.setAlpha((int) (255.0f * themeAnimationValue));
                     } else {
-                        drawable.setAlpha(NotificationCenter.needCheckSystemBarColors);
+                        drawable.setAlpha(NotificationCenter.didApplyNewTheme);
                     }
                     if ((drawable instanceof ColorDrawable) || (drawable instanceof GradientDrawable) || (drawable instanceof MotionBackgroundDrawable)) {
                         drawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());

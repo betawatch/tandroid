@@ -393,7 +393,7 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
             suggestEmojiView.forbidCopy();
             this.suggestEmojiPanel.forbidSetAsStatus();
             this.suggestEmojiPanel.setHorizontalPadding(AndroidUtilities.dp(24.0f));
-            addView(this.suggestEmojiPanel, LayoutHelper.createFrame(-2, NotificationCenter.audioRecordTooShort, 51));
+            addView(this.suggestEmojiPanel, LayoutHelper.createFrame(-2, NotificationCenter.albumsDidLoad, 51));
         }
         this.keyboardNotifier = new KeyboardNotifier(this.parentAlert.sizeNotifierFrameLayout, null);
         checkDoneButton();
@@ -1104,13 +1104,13 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
         if (view instanceof PollEditTextCell) {
             PollEditTextCell pollEditTextCell = (PollEditTextCell) view;
             if (i == this.questionRow) {
-                i2 = this.todo ? getMessagesController().todoTitleLengthMax : NotificationCenter.needCheckSystemBarColors;
+                i2 = this.todo ? getMessagesController().todoTitleLengthMax : NotificationCenter.didApplyNewTheme;
                 CharSequence charSequence = this.questionString;
                 length = i2 - (charSequence != null ? charSequence.length() : 0);
             } else if (i == this.solutionRow) {
                 CharSequence charSequence2 = this.solutionString;
                 length = 200 - (charSequence2 != null ? charSequence2.length() : 0);
-                i2 = NotificationCenter.savedMessagesForwarded;
+                i2 = NotificationCenter.userIsPremiumBlockedUpadted;
             } else {
                 int i3 = this.answerStartRow;
                 if (i < i3 || i >= this.answersCount + i3) {

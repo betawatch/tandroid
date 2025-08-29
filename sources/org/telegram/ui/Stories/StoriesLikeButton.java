@@ -47,7 +47,7 @@ public class StoriesLikeButton extends View {
             float f = this.progressToLiked.set(this.liked ? 1.0f : 0.0f);
             if (f < 1.0f) {
                 this.sharedResources.likeDrawable.setBounds(getPaddingLeft(), getPaddingTop(), getMeasuredWidth() - getPaddingRight(), getMeasuredHeight() - getPaddingBottom());
-                this.sharedResources.likeDrawable.setAlpha(NotificationCenter.needCheckSystemBarColors);
+                this.sharedResources.likeDrawable.setAlpha(NotificationCenter.didApplyNewTheme);
                 this.sharedResources.likeDrawable.draw(canvas);
             }
             if (f > 0.0f) {

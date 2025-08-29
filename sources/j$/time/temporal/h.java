@@ -248,7 +248,7 @@ abstract class h implements r {
         };
         WEEK_BASED_YEAR = hVar4;
         b = new h[]{hVar, hVar2, hVar3, hVar4};
-        a = new int[]{0, 90, NotificationCenter.updateBotMenuButton, NotificationCenter.messagePlayingSpeedChanged, 0, 91, NotificationCenter.giftsToUserSent, NotificationCenter.screenStateChanged};
+        a = new int[]{0, 90, NotificationCenter.filterSettingsUpdated, NotificationCenter.playerDidStartPlaying, 0, 91, NotificationCenter.suggestedFiltersLoaded, NotificationCenter.closeSearchByActiveAction};
     }
 
     static w E(LocalDate localDate) {
@@ -275,7 +275,7 @@ abstract class h implements r {
             i4 = i3 + 4;
         }
         if (G < i4) {
-            return (int) w.j(1L, G(F(localDate.U(NotificationCenter.suggestedFiltersLoaded).Q(-1L)))).d();
+            return (int) w.j(1L, G(F(localDate.U(NotificationCenter.dialogFiltersUpdated).Q(-1L)))).d();
         }
         int i5 = ((G - i4) / 7) + 1;
         if (i5 != 53 || i4 == -3 || (i4 == -2 && localDate.K())) {

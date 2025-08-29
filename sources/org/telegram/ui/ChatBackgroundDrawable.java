@@ -11,7 +11,6 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.text.TextUtils;
-import android.util.Pair;
 import android.view.View;
 import androidx.core.graphics.ColorUtils;
 import j$.util.Objects;
@@ -22,7 +21,8 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.ResultCallback;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.wallpaper.WallpaperBitmapHolder;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.EmojiThemes;
 import org.telegram.ui.Components.BackgroundGradientDrawable;
@@ -38,7 +38,7 @@ public class ChatBackgroundDrawable extends Drawable {
     View parent;
     private final boolean themeIsDark;
     final TLRPC.WallPaper wallpaper;
-    int alpha = NotificationCenter.needCheckSystemBarColors;
+    int alpha = NotificationCenter.didApplyNewTheme;
     ImageReceiver imageReceiver = new ImageReceiver() { // from class: org.telegram.ui.ChatBackgroundDrawable.1
         @Override // org.telegram.messenger.ImageReceiver
         public void invalidate() {
@@ -101,20 +101,10 @@ public class ChatBackgroundDrawable extends Drawable {
             this.motionBackgroundDrawable = motionBackgroundDrawable;
             TLRPC.WallPaperSettings wallPaperSettings3 = wallPaper.settings;
             motionBackgroundDrawable.setColors(wallPaperSettings3.background_color, wallPaperSettings3.second_background_color, wallPaperSettings3.third_background_color, wallPaperSettings3.fourth_background_color);
-            EmojiThemes.loadWallpaperImage(UserConfig.selectedAccount, wallPaper.id, wallPaper, new ResultCallback() { // from class: org.telegram.ui.ChatBackgroundDrawable$$ExternalSyntheticLambda0
-                @Override // org.telegram.tgnet.ResultCallback
-                public final void onComplete(Object obj) {
-                    ChatBackgroundDrawable.this.lambda$new$0(wallPaper, (Pair) obj);
-                }
-
-                @Override // org.telegram.tgnet.ResultCallback
-                public /* synthetic */ void onError(Throwable th) {
-                    ResultCallback.-CC.$default$onError(this, th);
-                }
-
-                @Override // org.telegram.tgnet.ResultCallback
-                public /* synthetic */ void onError(TLRPC.TL_error tL_error) {
-                    ResultCallback.-CC.$default$onError(this, tL_error);
+            EmojiThemes.loadWallpaperImage(UserConfig.selectedAccount, wallPaper.id, wallPaper, new Utilities.Callback() { // from class: org.telegram.ui.ChatBackgroundDrawable$$ExternalSyntheticLambda0
+                @Override // org.telegram.messenger.Utilities.Callback
+                public final void run(Object obj) {
+                    ChatBackgroundDrawable.this.lambda$new$0(wallPaper, (WallpaperBitmapHolder) obj);
                 }
             });
             return;
@@ -144,8 +134,8 @@ public class ChatBackgroundDrawable extends Drawable {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(TLRPC.WallPaper wallPaper, Pair pair) {
-        this.motionBackgroundDrawable.setPatternBitmap(wallPaper.settings.intensity, (Bitmap) pair.second);
+    public /* synthetic */ void lambda$new$0(TLRPC.WallPaper wallPaper, WallpaperBitmapHolder wallpaperBitmapHolder) {
+        this.motionBackgroundDrawable.setPatternBitmap(wallPaper.settings.intensity, wallpaperBitmapHolder.bitmap);
         View view = this.parent;
         if (view != null) {
             view.invalidate();
@@ -177,15 +167,15 @@ public class ChatBackgroundDrawable extends Drawable {
             if (wallPaperSettings == null || wallPaperSettings.intensity < 0) {
                 bitmapDrawableOf = bitmapDrawableOf(new ColorDrawable(-16777216));
             } else if (wallPaperSettings.second_background_color == 0) {
-                bitmapDrawableOf = bitmapDrawableOf(new ColorDrawable(ColorUtils.setAlphaComponent(wallPaper.settings.background_color, NotificationCenter.needCheckSystemBarColors)));
+                bitmapDrawableOf = bitmapDrawableOf(new ColorDrawable(ColorUtils.setAlphaComponent(wallPaper.settings.background_color, NotificationCenter.didApplyNewTheme)));
             } else if (wallPaperSettings.third_background_color == 0) {
-                bitmapDrawableOf = bitmapDrawableOf(new GradientDrawable(BackgroundGradientDrawable.getGradientOrientation(wallPaper.settings.rotation), new int[]{ColorUtils.setAlphaComponent(wallPaperSettings.background_color, NotificationCenter.needCheckSystemBarColors), ColorUtils.setAlphaComponent(wallPaper.settings.second_background_color, NotificationCenter.needCheckSystemBarColors)}));
+                bitmapDrawableOf = bitmapDrawableOf(new GradientDrawable(BackgroundGradientDrawable.getGradientOrientation(wallPaper.settings.rotation), new int[]{ColorUtils.setAlphaComponent(wallPaperSettings.background_color, NotificationCenter.didApplyNewTheme), ColorUtils.setAlphaComponent(wallPaper.settings.second_background_color, NotificationCenter.didApplyNewTheme)}));
             } else {
-                int alphaComponent = ColorUtils.setAlphaComponent(wallPaperSettings.background_color, NotificationCenter.needCheckSystemBarColors);
-                int alphaComponent2 = ColorUtils.setAlphaComponent(wallPaper.settings.second_background_color, NotificationCenter.needCheckSystemBarColors);
-                int alphaComponent3 = ColorUtils.setAlphaComponent(wallPaper.settings.third_background_color, NotificationCenter.needCheckSystemBarColors);
+                int alphaComponent = ColorUtils.setAlphaComponent(wallPaperSettings.background_color, NotificationCenter.didApplyNewTheme);
+                int alphaComponent2 = ColorUtils.setAlphaComponent(wallPaper.settings.second_background_color, NotificationCenter.didApplyNewTheme);
+                int alphaComponent3 = ColorUtils.setAlphaComponent(wallPaper.settings.third_background_color, NotificationCenter.didApplyNewTheme);
                 int i = wallPaper.settings.fourth_background_color;
-                r2 = i != 0 ? ColorUtils.setAlphaComponent(i, NotificationCenter.needCheckSystemBarColors) : 0;
+                r2 = i != 0 ? ColorUtils.setAlphaComponent(i, NotificationCenter.didApplyNewTheme) : 0;
                 MotionBackgroundDrawable motionBackgroundDrawable = new MotionBackgroundDrawable();
                 motionBackgroundDrawable.setColors(alphaComponent, alphaComponent2, alphaComponent3, r2);
                 bitmapDrawableOf = new BitmapDrawable(motionBackgroundDrawable.getBitmap());
@@ -257,12 +247,13 @@ public class ChatBackgroundDrawable extends Drawable {
         if (isAttached() && !this.attached) {
             this.attached = true;
             this.imageReceiver.onAttachedToWindow();
-        } else {
-            if (isAttached() || !this.attached) {
-                return;
-            }
+        } else if (!isAttached() && this.attached) {
             this.attached = false;
             this.imageReceiver.onDetachedFromWindow();
+        }
+        MotionBackgroundDrawable motionBackgroundDrawable = this.motionBackgroundDrawable;
+        if (motionBackgroundDrawable != null) {
+            motionBackgroundDrawable.onAttachedToWindow();
         }
     }
 
@@ -273,12 +264,13 @@ public class ChatBackgroundDrawable extends Drawable {
         if (isAttached() && !this.attached) {
             this.attached = true;
             this.imageReceiver.onAttachedToWindow();
-        } else {
-            if (isAttached() || !this.attached) {
-                return;
-            }
+        } else if (!isAttached() && this.attached) {
             this.attached = false;
             this.imageReceiver.onDetachedFromWindow();
+        }
+        MotionBackgroundDrawable motionBackgroundDrawable = this.motionBackgroundDrawable;
+        if (motionBackgroundDrawable != null) {
+            motionBackgroundDrawable.onDetachedFromWindow();
         }
     }
 

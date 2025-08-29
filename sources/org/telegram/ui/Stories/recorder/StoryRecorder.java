@@ -2061,7 +2061,7 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
                     this.topGradient = linearGradient;
                     this.topGradientPaint.setShader(linearGradient);
                 }
-                this.topGradientPaint.setAlpha(NotificationCenter.needCheckSystemBarColors);
+                this.topGradientPaint.setAlpha(NotificationCenter.didApplyNewTheme);
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(0.0f, 0.0f, getWidth(), AndroidUtilities.dp(84.0f) + f);
                 canvas.drawRoundRect(rectF, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), this.topGradientPaint);
@@ -4445,7 +4445,7 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
             int i3 = num.intValue() != -1 ? 0 : 90;
             if (num.intValue() != -1) {
                 if (i > i2) {
-                    i3 = NotificationCenter.notificationsCountUpdated;
+                    i3 = NotificationCenter.newLocationAvailable;
                 }
             } else if (i2 > i && i3 != 0) {
                 i3 = 0;
