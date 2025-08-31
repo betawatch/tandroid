@@ -1808,20 +1808,20 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
             this.initialTab = 13;
         } else if (userFull != null && (botInfo = userFull.bot_info) != null && botInfo.has_preview_medias) {
             this.initialTab = 8;
-        } else if ((profileTab instanceof TLRPC.TL_profileTabPosts) && ((userFull != null && userFull.stories_pinned_available) || ((chatFull != null && chatFull.stories_pinned_available) || isStoriesView()))) {
+        } else if (profileTab == TLRPC.ProfileTab.profileTabPosts && ((userFull != null && userFull.stories_pinned_available) || ((chatFull != null && chatFull.stories_pinned_available) || isStoriesView()))) {
             this.initialTab = 8;
-        } else if ((profileTab instanceof TLRPC.TL_profileTabGifts) && ((userFull != null && userFull.stargifts_count > 0) || (chatFull != null && chatFull.stargifts_count > 0))) {
+        } else if (profileTab == TLRPC.ProfileTab.profileTabGifts && ((userFull != null && userFull.stargifts_count > 0) || (chatFull != null && chatFull.stargifts_count > 0))) {
             this.initialTab = 14;
-        } else if ((profileTab instanceof TLRPC.TL_profileTabFiles) && ((i11 = this.hasMedia[1]) == -1 || i11 > 0)) {
+        } else if (profileTab == TLRPC.ProfileTab.profileTabFiles && ((i11 = this.hasMedia[1]) == -1 || i11 > 0)) {
             this.initialTab = 1;
-        } else if ((profileTab instanceof TLRPC.TL_profileTabGifs) && ((i10 = this.hasMedia[5]) == -1 || i10 > 0)) {
+        } else if (profileTab == TLRPC.ProfileTab.profileTabGifs && ((i10 = this.hasMedia[5]) == -1 || i10 > 0)) {
             this.initialTab = 5;
-        } else if ((profileTab instanceof TLRPC.TL_profileTabLinks) && ((i9 = this.hasMedia[3]) == -1 || i9 > 0)) {
+        } else if (profileTab == TLRPC.ProfileTab.profileTabLinks && ((i9 = this.hasMedia[3]) == -1 || i9 > 0)) {
             this.initialTab = 3;
-        } else if ((profileTab instanceof TLRPC.TL_profileTabMusic) && ((i8 = this.hasMedia[4]) == -1 || i8 > 0)) {
+        } else if (profileTab == TLRPC.ProfileTab.profileTabMusic && ((i8 = this.hasMedia[4]) == -1 || i8 > 0)) {
             this.initialTab = 4;
         } else {
-            if ((profileTab instanceof TLRPC.TL_profileTabVoice) && ((i7 = this.hasMedia[2]) == -1 || i7 > 0)) {
+            if (profileTab == TLRPC.ProfileTab.profileTabVoice && ((i7 = this.hasMedia[2]) == -1 || i7 > 0)) {
                 this.initialTab = 2;
             }
             if ((chatFull == null || !chatFull.stories_pinned_available) && !isStoriesView()) {
@@ -13317,30 +13317,30 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
             return null;
         }
         if (i == 8) {
-            return new TLRPC.TL_profileTabPosts();
+            return TLRPC.ProfileTab.profileTabPosts;
         }
         if (i == 14) {
-            return new TLRPC.TL_profileTabGifts();
+            return TLRPC.ProfileTab.profileTabGifts;
         }
         if (i == 0) {
-            return new TLRPC.TL_profileTabMedia();
+            return TLRPC.ProfileTab.profileTabMedia;
         }
         if (i == 1) {
-            return new TLRPC.TL_profileTabFiles();
+            return TLRPC.ProfileTab.profileTabFiles;
         }
         if (i == 2) {
-            return new TLRPC.TL_profileTabVoice();
+            return TLRPC.ProfileTab.profileTabVoice;
         }
         if (i == 3) {
-            return new TLRPC.TL_profileTabLinks();
+            return TLRPC.ProfileTab.profileTabLinks;
         }
         if (i == 4) {
-            return new TLRPC.TL_profileTabMusic();
+            return TLRPC.ProfileTab.profileTabMusic;
         }
         if (i != 5) {
             return null;
         }
-        return new TLRPC.TL_profileTabGifs();
+        return TLRPC.ProfileTab.profileTabGifs;
     }
 
     public static String getTabName(int i) {
@@ -13372,28 +13372,28 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
     }
 
     public static int getTabId(TLRPC.ProfileTab profileTab) {
-        if (profileTab instanceof TLRPC.TL_profileTabPosts) {
+        if (profileTab == TLRPC.ProfileTab.profileTabPosts) {
             return 8;
         }
-        if (profileTab instanceof TLRPC.TL_profileTabMedia) {
+        if (profileTab == TLRPC.ProfileTab.profileTabMedia) {
             return 0;
         }
-        if (profileTab instanceof TLRPC.TL_profileTabGifts) {
+        if (profileTab == TLRPC.ProfileTab.profileTabGifts) {
             return 14;
         }
-        if (profileTab instanceof TLRPC.TL_profileTabMusic) {
+        if (profileTab == TLRPC.ProfileTab.profileTabMusic) {
             return 4;
         }
-        if (profileTab instanceof TLRPC.TL_profileTabVoice) {
+        if (profileTab == TLRPC.ProfileTab.profileTabVoice) {
             return 2;
         }
-        if (profileTab instanceof TLRPC.TL_profileTabLinks) {
+        if (profileTab == TLRPC.ProfileTab.profileTabLinks) {
             return 3;
         }
-        if (profileTab instanceof TLRPC.TL_profileTabFiles) {
+        if (profileTab == TLRPC.ProfileTab.profileTabFiles) {
             return 1;
         }
-        return profileTab instanceof TLRPC.TL_profileTabGifs ? 5 : -1;
+        return profileTab == TLRPC.ProfileTab.profileTabGifs ? 5 : -1;
     }
 
     public void sendTabsOrder() {

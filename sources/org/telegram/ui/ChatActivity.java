@@ -15227,12 +15227,14 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createTopPanel$87(View view) {
-        TopicsController topicsController = getMessagesController().getTopicsController();
-        long j = this.currentChat.id;
-        TLRPC.TL_forumTopic tL_forumTopic = this.forumTopic;
-        int i = tL_forumTopic.id;
-        tL_forumTopic.closed = false;
-        topicsController.toggleCloseTopic(j, i, false);
+        if (this.forumTopic != null) {
+            TopicsController topicsController = getMessagesController().getTopicsController();
+            long j = this.currentChat.id;
+            TLRPC.TL_forumTopic tL_forumTopic = this.forumTopic;
+            int i = tL_forumTopic.id;
+            tL_forumTopic.closed = false;
+            topicsController.toggleCloseTopic(j, i, false);
+        }
         updateTopicButtons();
         updateBottomOverlay();
         updateTopPanel(true);

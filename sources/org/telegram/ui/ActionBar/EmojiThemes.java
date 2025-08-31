@@ -150,7 +150,7 @@ public class EmojiThemes {
         EmojiThemes emojiThemes = new EmojiThemes(i);
         emojiThemes.emoji = "🎨";
         emojiThemes.key = ThemeKey.ofEmoticon("🎨");
-        emojiThemes.chatTheme = TLRPC.ChatTheme.ofEmoticon("❌");
+        emojiThemes.chatTheme = TLRPC.ChatTheme.ofEmoticon(emojiThemes.emoji);
         int i2 = 0;
         SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0);
         String string = sharedPreferences.getString("lastDayCustomTheme", null);
@@ -211,7 +211,7 @@ public class EmojiThemes {
         EmojiThemes emojiThemes = new EmojiThemes(i);
         emojiThemes.emoji = "🏠";
         emojiThemes.key = ThemeKey.ofEmoticon("🏠");
-        emojiThemes.chatTheme = TLRPC.ChatTheme.ofEmoticon("❌");
+        emojiThemes.chatTheme = TLRPC.ChatTheme.ofEmoticon(emojiThemes.emoji);
         ThemeItem themeItem = new ThemeItem();
         themeItem.themeInfo = Theme.getTheme("Blue");
         themeItem.accentId = 99;
@@ -235,7 +235,7 @@ public class EmojiThemes {
         EmojiThemes emojiThemes = new EmojiThemes(i);
         emojiThemes.emoji = "🏠";
         emojiThemes.key = ThemeKey.ofEmoticon("🏠");
-        emojiThemes.chatTheme = TLRPC.ChatTheme.ofEmoticon("❌");
+        emojiThemes.chatTheme = TLRPC.ChatTheme.ofEmoticon(emojiThemes.emoji);
         ThemeItem themeItem = new ThemeItem();
         themeItem.themeInfo = Theme.getTheme("Blue");
         themeItem.accentId = 99;
