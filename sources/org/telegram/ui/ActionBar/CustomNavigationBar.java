@@ -3,28 +3,37 @@ package org.telegram.ui.ActionBar;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.os.Build;
 import android.view.View;
 import androidx.core.view.OnApplyWindowInsetsListener;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes4.dex */
 public class CustomNavigationBar extends View {
+    private static final boolean USE_INSETS;
     private int height;
     private final Paint paint;
+
+    static {
+        USE_INSETS = Build.VERSION.SDK_INT >= 35;
+    }
 
     public CustomNavigationBar(Context context) {
         super(context);
         this.paint = new Paint();
-        ViewCompat.setOnApplyWindowInsetsListener(this, new OnApplyWindowInsetsListener() { // from class: org.telegram.ui.ActionBar.CustomNavigationBar$$ExternalSyntheticLambda0
-            @Override // androidx.core.view.OnApplyWindowInsetsListener
-            public final WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
-                WindowInsetsCompat onApplyWindowInsets;
-                onApplyWindowInsets = CustomNavigationBar.this.onApplyWindowInsets(view, windowInsetsCompat);
-                return onApplyWindowInsets;
-            }
-        });
+        if (USE_INSETS) {
+            ViewCompat.setOnApplyWindowInsetsListener(this, new OnApplyWindowInsetsListener() { // from class: org.telegram.ui.ActionBar.CustomNavigationBar$$ExternalSyntheticLambda0
+                @Override // androidx.core.view.OnApplyWindowInsetsListener
+                public final WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
+                    WindowInsetsCompat onApplyWindowInsets;
+                    onApplyWindowInsets = CustomNavigationBar.this.onApplyWindowInsets(view, windowInsetsCompat);
+                    return onApplyWindowInsets;
+                }
+            });
+        }
     }
 
     public void setColor(int i) {
@@ -50,6 +59,9 @@ public class CustomNavigationBar extends View {
 
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
+        if (!USE_INSETS) {
+            this.height = AndroidUtilities.navigationBarHeight;
+        }
         super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(this.height, TLObject.FLAG_30));
     }
 
