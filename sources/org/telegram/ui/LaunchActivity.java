@@ -10,6 +10,7 @@ import android.app.PictureInPictureParams;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
@@ -220,6 +221,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     private ActionBarLayout actionBarLayout;
     private long alreadyShownFreeDiscSpaceAlertForced;
     private SizeNotifierFrameLayout backgroundTablet;
+    private final LiteMode.BatteryReceiver batteryReceiver;
     private BlockingUpdateView blockingUpdateView;
     private Consumer blurListener;
     private BottomSheetTabsOverlay bottomSheetTabsOverlay;
@@ -265,6 +267,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     private boolean navigateToPremiumBot;
     private Runnable navigateToPremiumGiftCallback;
     private ViewTreeObserver.OnGlobalLayoutListener onGlobalLayoutListener;
+    private Utilities.Callback onPowerSaverCallback;
     private List onUserLeaveHintListeners;
     private List overlayPasscodeViews;
     private PasscodeViewDialog passcodeDialog;
@@ -340,6 +343,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                 LaunchActivity.systemBlurEnabled = bool.booleanValue();
             }
         };
+        this.batteryReceiver = new LiteMode.BatteryReceiver();
         this.firstAppUpdateCheck = true;
     }
 
@@ -370,9 +374,9 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         instance = this;
         ApplicationLoader.postInitApplication();
         AndroidUtilities.checkDisplaySize(this, getResources().getConfiguration());
-        int i2 = UserConfig.selectedAccount;
-        this.currentAccount = i2;
-        if (!UserConfig.getInstance(i2).isClientActivated() && (intent = getIntent()) != null && intent.getAction() != null) {
+        this.currentAccount = UserConfig.selectedAccount;
+        registerReceiver(this.batteryReceiver, new IntentFilter("android.intent.action.BATTERY_CHANGED"));
+        if (!UserConfig.getInstance(this.currentAccount).isClientActivated() && (intent = getIntent()) != null && intent.getAction() != null) {
             if ("android.intent.action.SEND".equals(intent.getAction()) || "android.intent.action.SEND_MULTIPLE".equals(intent.getAction())) {
                 super.onCreate(bundle);
                 finish();
@@ -502,16 +506,16 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         RecyclerListView recyclerListView = new RecyclerListView(this) { // from class: org.telegram.ui.LaunchActivity.7
             @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
             public boolean drawChild(Canvas canvas, View view2, long j) {
-                int i3;
+                int i2;
                 if (LaunchActivity.this.itemAnimator != null && LaunchActivity.this.itemAnimator.isRunning() && LaunchActivity.this.itemAnimator.isAnimatingChild(view2)) {
-                    i3 = canvas.save();
+                    i2 = canvas.save();
                     canvas.clipRect(0, LaunchActivity.this.itemAnimator.getAnimationClipTop(), getMeasuredWidth(), getMeasuredHeight());
                 } else {
-                    i3 = -1;
+                    i2 = -1;
                 }
                 boolean drawChild = super.drawChild(canvas, view2, j);
-                if (i3 >= 0) {
-                    canvas.restoreToCount(i3);
+                if (i2 >= 0) {
+                    canvas.restoreToCount(i2);
                     invalidate();
                     invalidateViews();
                 }
@@ -523,9 +527,9 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         this.itemAnimator = sideMenultItemAnimator;
         this.sideMenu.setItemAnimator(sideMenultItemAnimator);
         RecyclerListView recyclerListView2 = this.sideMenu;
-        int i3 = Theme.key_chats_menuBackground;
-        recyclerListView2.setBackgroundColor(Theme.getColor(i3));
-        this.sideMenuContainer.setBackgroundColor(Theme.getColor(i3));
+        int i2 = Theme.key_chats_menuBackground;
+        recyclerListView2.setBackgroundColor(Theme.getColor(i2));
+        this.sideMenuContainer.setBackgroundColor(Theme.getColor(i2));
         this.sideMenu.setLayoutManager(new LinearLayoutManager(this, 1, false));
         this.sideMenu.setAllowItemsInteractionDuringAnimation(false);
         RecyclerListView recyclerListView3 = this.sideMenu;
@@ -547,18 +551,18 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         this.sideMenuContainer.setLayoutParams(layoutParams);
         this.sideMenu.setOnItemClickListener(new RecyclerListView.OnItemClickListenerExtended() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda17
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListenerExtended
-            public /* synthetic */ boolean hasDoubleTap(View view2, int i4) {
-                return RecyclerListView.OnItemClickListenerExtended.-CC.$default$hasDoubleTap(this, view2, i4);
+            public /* synthetic */ boolean hasDoubleTap(View view2, int i3) {
+                return RecyclerListView.OnItemClickListenerExtended.-CC.$default$hasDoubleTap(this, view2, i3);
             }
 
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListenerExtended
-            public /* synthetic */ void onDoubleTap(View view2, int i4, float f, float f2) {
-                RecyclerListView.OnItemClickListenerExtended.-CC.$default$onDoubleTap(this, view2, i4, f, f2);
+            public /* synthetic */ void onDoubleTap(View view2, int i3, float f, float f2) {
+                RecyclerListView.OnItemClickListenerExtended.-CC.$default$onDoubleTap(this, view2, i3, f, f2);
             }
 
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListenerExtended
-            public final void onItemClick(View view2, int i4, float f, float f2) {
-                LaunchActivity.this.lambda$onCreate$6(view2, i4, f, f2);
+            public final void onItemClick(View view2, int i3, float f, float f2) {
+                LaunchActivity.this.lambda$onCreate$6(view2, i3, f, f2);
             }
         });
         final ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(3, i) { // from class: org.telegram.ui.LaunchActivity.8
@@ -570,7 +574,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             }
 
             @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
-            public void onSwiped(RecyclerView.ViewHolder viewHolder, int i4) {
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int i3) {
             }
 
             @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
@@ -583,9 +587,9 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             }
 
             @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
-            public void onSelectedChanged(RecyclerView.ViewHolder viewHolder, int i4) {
+            public void onSelectedChanged(RecyclerView.ViewHolder viewHolder, int i3) {
                 clearSelectedViewHolder();
-                if (i4 != 0) {
+                if (i3 != 0) {
                     this.selectedViewHolder = viewHolder;
                     View view2 = viewHolder.itemView;
                     LaunchActivity.this.sideMenu.cancelClickRunnables(false);
@@ -618,7 +622,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             }
 
             @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
-            public void onChildDraw(Canvas canvas, RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, float f, float f2, int i4, boolean z2) {
+            public void onChildDraw(Canvas canvas, RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, float f, float f2, int i3, boolean z2) {
                 View view2;
                 View view3;
                 View view4 = viewHolder.itemView;
@@ -636,9 +640,9 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         itemTouchHelper.attachToRecyclerView(this.sideMenu);
         this.sideMenu.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda18
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListener
-            public final boolean onItemClick(View view2, int i4) {
+            public final boolean onItemClick(View view2, int i3) {
                 boolean lambda$onCreate$7;
-                lambda$onCreate$7 = LaunchActivity.this.lambda$onCreate$7(itemTouchHelper, view2, i4);
+                lambda$onCreate$7 = LaunchActivity.this.lambda$onCreate$7(itemTouchHelper, view2, i3);
                 return lambda$onCreate$7;
             }
         });
@@ -657,8 +661,8 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         checkCurrentAccount();
         updateCurrentConnectionState(this.currentAccount);
         NotificationCenter globalInstance = NotificationCenter.getGlobalInstance();
-        int i4 = NotificationCenter.closeOtherAppActivities;
-        globalInstance.lambda$postNotificationNameOnUIThread$1(i4, this);
+        int i3 = NotificationCenter.closeOtherAppActivities;
+        globalInstance.lambda$postNotificationNameOnUIThread$1(i3, this);
         this.currentConnectionState = ConnectionsManager.getInstance(this.currentAccount).getConnectionState();
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.needShowAlert);
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.reloadInterface);
@@ -666,7 +670,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.didSetNewTheme);
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.needSetDayNightTheme);
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.needCheckSystemBarColors);
-        NotificationCenter.getGlobalInstance().addObserver(this, i4);
+        NotificationCenter.getGlobalInstance().addObserver(this, i3);
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.didSetPasscode);
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.didSetNewWallpapper);
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.notificationsCountUpdated);
@@ -677,7 +681,14 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.requestPermissions);
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.billingConfirmPurchaseError);
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.currentUserPremiumStatusChanged);
-        LiteMode.addOnPowerSaverAppliedListener(new LaunchActivity$$ExternalSyntheticLambda20(this));
+        Utilities.Callback callback = new Utilities.Callback() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda20
+            @Override // org.telegram.messenger.Utilities.Callback
+            public final void run(Object obj) {
+                LaunchActivity.this.onPowerSaver(((Boolean) obj).booleanValue());
+            }
+        };
+        this.onPowerSaverCallback = callback;
+        LiteMode.addOnPowerSaverAppliedListener(callback);
         if (this.actionBarLayout.getFragmentStack().isEmpty() && ((actionBarLayout = this.layersActionBarLayout) == null || actionBarLayout.getFragmentStack().isEmpty())) {
             if (!UserConfig.getInstance(this.currentAccount).isClientActivated()) {
                 this.actionBarLayout.addFragmentToStack(getClientNotActivatedFragment());
@@ -792,8 +803,8 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             }
             this.drawerLayoutContainer.setAllowOpenDrawer(z, false);
         }
-        int i5 = Build.VERSION.SDK_INT;
-        if (i5 >= 35) {
+        int i4 = Build.VERSION.SDK_INT;
+        if (i4 >= 35) {
             requestCustomNavigationBar();
         }
         checkLayout();
@@ -807,7 +818,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             if (BuildVars.LOGS_ENABLED) {
                 FileLog.d("OS name " + lowerCase2 + " " + lowerCase3);
             }
-            if ((lowerCase2.contains("flyme") || lowerCase3.contains("flyme")) && i5 <= 24) {
+            if ((lowerCase2.contains("flyme") || lowerCase3.contains("flyme")) && i4 <= 24) {
                 AndroidUtilities.incorrectDisplaySizeFix = true;
                 final View rootView = getWindow().getDecorView().getRootView();
                 ViewTreeObserver viewTreeObserver = rootView.getViewTreeObserver();
@@ -829,18 +840,18 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         if (iUpdateLayout != null) {
             iUpdateLayout.updateAppUpdateViews(this.currentAccount, false);
         }
-        int i6 = Build.VERSION.SDK_INT;
-        if (i6 >= 23) {
+        int i5 = Build.VERSION.SDK_INT;
+        if (i5 >= 23) {
             FingerprintController.checkKeyReady();
         }
-        if (i6 >= 28) {
+        if (i5 >= 28) {
             isBackgroundRestricted = ((ActivityManager) getSystemService("activity")).isBackgroundRestricted();
             if (isBackgroundRestricted && System.currentTimeMillis() - SharedConfig.BackgroundActivityPrefs.getLastCheckedBackgroundActivity() >= 86400000 && SharedConfig.BackgroundActivityPrefs.getDismissedCount() < 3) {
                 AlertsCreator.createBackgroundActivityDialog(this).show();
                 SharedConfig.BackgroundActivityPrefs.setLastCheckedBackgroundActivity(System.currentTimeMillis());
             }
         }
-        if (i6 >= 31) {
+        if (i5 >= 31) {
             getWindow().getDecorView().addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() { // from class: org.telegram.ui.LaunchActivity.10
                 @Override // android.view.View.OnAttachStateChangeListener
                 public void onViewAttachedToWindow(View view2) {
@@ -853,7 +864,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                 }
             });
         }
-        if (i6 >= 35) {
+        if (i5 >= 35) {
             getWindow().setNavigationBarContrastEnforced(false);
             Bulletin.addDelegate(this.frameLayout, new Bulletin.Delegate() { // from class: org.telegram.ui.LaunchActivity.11
                 @Override // org.telegram.ui.Components.Bulletin.Delegate
@@ -867,13 +878,13 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                 }
 
                 @Override // org.telegram.ui.Components.Bulletin.Delegate
-                public /* synthetic */ boolean clipWithGradient(int i7) {
-                    return Bulletin.Delegate.-CC.$default$clipWithGradient(this, i7);
+                public /* synthetic */ boolean clipWithGradient(int i6) {
+                    return Bulletin.Delegate.-CC.$default$clipWithGradient(this, i6);
                 }
 
                 @Override // org.telegram.ui.Components.Bulletin.Delegate
-                public /* synthetic */ int getTopOffset(int i7) {
-                    return Bulletin.Delegate.-CC.$default$getTopOffset(this, i7);
+                public /* synthetic */ int getTopOffset(int i6) {
+                    return Bulletin.Delegate.-CC.$default$getTopOffset(this, i6);
                 }
 
                 @Override // org.telegram.ui.Components.Bulletin.Delegate
@@ -892,7 +903,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                 }
 
                 @Override // org.telegram.ui.Components.Bulletin.Delegate
-                public int getBottomOffset(int i7) {
+                public int getBottomOffset(int i6) {
                     return AndroidUtilities.navigationBarHeight + AndroidUtilities.dp(16.0f);
                 }
             });
@@ -6561,7 +6572,10 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.appUpdateLoading);
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.requestPermissions);
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.billingConfirmPurchaseError);
-        LiteMode.removeOnPowerSaverAppliedListener(new LaunchActivity$$ExternalSyntheticLambda20(this));
+        Utilities.Callback callback = this.onPowerSaverCallback;
+        if (callback != null) {
+            LiteMode.removeOnPowerSaverAppliedListener(callback);
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -6847,6 +6861,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     @Override // androidx.fragment.app.FragmentActivity, android.app.Activity
     protected void onDestroy() {
         isActive = false;
+        unregisterReceiver(this.batteryReceiver);
         if (PhotoViewer.getPipInstance() != null) {
             PhotoViewer.getPipInstance().destroyPhotoViewer();
         }
@@ -9208,11 +9223,13 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     public void requestCustomNavigationBar() {
-        int i = Build.VERSION.SDK_INT;
-        if (i >= 35 && this.customNavigationBar == null && i >= 26) {
-            this.customNavigationBar = new CustomNavigationBar(this);
-            ((FrameLayout) getWindow().getDecorView()).addView(this.customNavigationBar, LayoutHelper.createFrame(-1, -2, 80));
+        if (this.customNavigationBar != null || Build.VERSION.SDK_INT < 26) {
+            return;
         }
+        CustomNavigationBar customNavigationBar = new CustomNavigationBar(this);
+        this.customNavigationBar = customNavigationBar;
+        customNavigationBar.setActivityContentView(this.frameLayout);
+        ((FrameLayout) getWindow().getDecorView()).addView(this.customNavigationBar, LayoutHelper.createFrame(-1, -2, 80));
     }
 
     public int getNavigationBarColor() {

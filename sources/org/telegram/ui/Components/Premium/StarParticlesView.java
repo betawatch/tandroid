@@ -22,6 +22,7 @@ import androidx.core.math.MathUtils;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
@@ -38,6 +39,8 @@ public class StarParticlesView extends View {
     private Paint clipGradientPaint;
     public boolean doNotFling;
     public Drawable drawable;
+    private boolean isPowerSaverApplied;
+    private Utilities.Callback powerSaverCallback;
     int size;
 
     /* JADX WARN: Illegal instructions before constructor call */
@@ -51,6 +54,37 @@ public class StarParticlesView extends View {
             i = NotificationCenter.userIsPremiumBlockedUpadted;
         } else {
             i = SharedConfig.getDevicePerformanceClass() == 1 ? 100 : 50;
+        }
+    }
+
+    @Override // android.view.View
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        Utilities.Callback callback = new Utilities.Callback() { // from class: org.telegram.ui.Components.Premium.StarParticlesView$$ExternalSyntheticLambda0
+            @Override // org.telegram.messenger.Utilities.Callback
+            public final void run(Object obj) {
+                StarParticlesView.this.onApplyPowerSaverMode(((Boolean) obj).booleanValue());
+            }
+        };
+        this.powerSaverCallback = callback;
+        LiteMode.addOnPowerSaverAppliedListener(callback);
+        onApplyPowerSaverMode(LiteMode.isPowerSaverApplied());
+    }
+
+    @Override // android.view.View
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        Utilities.Callback callback = this.powerSaverCallback;
+        if (callback != null) {
+            LiteMode.removeOnPowerSaverAppliedListener(callback);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void onApplyPowerSaverMode(boolean z) {
+        if (this.isPowerSaverApplied != z) {
+            this.isPowerSaverApplied = z;
+            invalidate();
         }
     }
 
@@ -104,6 +138,9 @@ public class StarParticlesView extends View {
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        if (this.isPowerSaverApplied) {
+            return;
+        }
         if (this.clipGradientPaint != null) {
             canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didApplyNewTheme, 31);
         }
@@ -134,7 +171,7 @@ public class StarParticlesView extends View {
         }
         float f2 = f < 60.0f ? 5.0f : f < 180.0f ? 9.0f : 15.0f;
         AnimatorSet animatorSet = new AnimatorSet();
-        ValueAnimator.AnimatorUpdateListener animatorUpdateListener = new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Premium.StarParticlesView$$ExternalSyntheticLambda0
+        ValueAnimator.AnimatorUpdateListener animatorUpdateListener = new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Premium.StarParticlesView$$ExternalSyntheticLambda1
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                 StarParticlesView.this.lambda$flingParticles$0(valueAnimator);

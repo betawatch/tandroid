@@ -314,7 +314,7 @@ public class MessagePrivateSeenView extends FrameLayout {
         buttonWithCounterView.setLoading(true);
         if (z) {
             TL_account.setPrivacy setprivacy = new TL_account.setPrivacy();
-            setprivacy.key = TLRPC.InputPrivacyKey.inputPrivacyKeyStatusTimestamp;
+            setprivacy.key = new TLRPC.TL_inputPrivacyKeyStatusTimestamp();
             setprivacy.rules.add(new TLRPC.TL_inputPrivacyValueAllowAll());
             ConnectionsManager.getInstance(i).sendRequest(setprivacy, new RequestDelegate() { // from class: org.telegram.ui.Components.MessagePrivateSeenView$$ExternalSyntheticLambda4
                 @Override // org.telegram.tgnet.RequestDelegate

@@ -3539,20 +3539,20 @@ public class ContactsController extends BaseController {
         loadPrivacySettings(false);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x0039  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x003e  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0043  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0048  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x004d  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0052  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0057  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x005c  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0061  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0066  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x006b  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0070  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0075  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0085 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x003c  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0044  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x004c  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0054  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x005c  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0064  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x006c  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0074  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x007c  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0084  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x008c  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0094  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x009c  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x00af A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -3580,7 +3580,7 @@ public class ContactsController extends BaseController {
                 TL_account.getPrivacy getprivacy = new TL_account.getPrivacy();
                 switch (i) {
                     case 0:
-                        getprivacy.key = TLRPC.InputPrivacyKey.inputPrivacyKeyStatusTimestamp;
+                        getprivacy.key = new TLRPC.TL_inputPrivacyKeyStatusTimestamp();
                         getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda59
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
@@ -3589,7 +3589,7 @@ public class ContactsController extends BaseController {
                         });
                         break;
                     case 1:
-                        getprivacy.key = TLRPC.InputPrivacyKey.inputPrivacyKeyChatInvite;
+                        getprivacy.key = new TLRPC.TL_inputPrivacyKeyChatInvite();
                         getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda59
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
@@ -3598,7 +3598,7 @@ public class ContactsController extends BaseController {
                         });
                         break;
                     case 2:
-                        getprivacy.key = TLRPC.InputPrivacyKey.inputPrivacyKeyPhoneCall;
+                        getprivacy.key = new TLRPC.TL_inputPrivacyKeyPhoneCall();
                         getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda59
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
@@ -3607,7 +3607,7 @@ public class ContactsController extends BaseController {
                         });
                         break;
                     case 3:
-                        getprivacy.key = TLRPC.InputPrivacyKey.inputPrivacyKeyPhoneP2P;
+                        getprivacy.key = new TLRPC.TL_inputPrivacyKeyPhoneP2P();
                         getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda59
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
@@ -3616,7 +3616,7 @@ public class ContactsController extends BaseController {
                         });
                         break;
                     case 4:
-                        getprivacy.key = TLRPC.InputPrivacyKey.inputPrivacyKeyProfilePhoto;
+                        getprivacy.key = new TLRPC.TL_inputPrivacyKeyProfilePhoto();
                         getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda59
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
@@ -3625,7 +3625,7 @@ public class ContactsController extends BaseController {
                         });
                         break;
                     case 5:
-                        getprivacy.key = TLRPC.InputPrivacyKey.inputPrivacyKeyForwards;
+                        getprivacy.key = new TLRPC.TL_inputPrivacyKeyForwards();
                         getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda59
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
@@ -3634,7 +3634,7 @@ public class ContactsController extends BaseController {
                         });
                         break;
                     case 6:
-                        getprivacy.key = TLRPC.InputPrivacyKey.inputPrivacyKeyPhoneNumber;
+                        getprivacy.key = new TLRPC.TL_inputPrivacyKeyPhoneNumber();
                         getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda59
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
@@ -3643,7 +3643,7 @@ public class ContactsController extends BaseController {
                         });
                         break;
                     case 7:
-                        getprivacy.key = TLRPC.InputPrivacyKey.inputPrivacyKeyAddedByPhone;
+                        getprivacy.key = new TLRPC.TL_inputPrivacyKeyAddedByPhone();
                         getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda59
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
@@ -3652,7 +3652,7 @@ public class ContactsController extends BaseController {
                         });
                         break;
                     case 8:
-                        getprivacy.key = TLRPC.InputPrivacyKey.inputPrivacyKeyVoiceMessages;
+                        getprivacy.key = new TLRPC.TL_inputPrivacyKeyVoiceMessages();
                         getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda59
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
@@ -3661,7 +3661,7 @@ public class ContactsController extends BaseController {
                         });
                         break;
                     case 9:
-                        getprivacy.key = TLRPC.InputPrivacyKey.inputPrivacyKeyAbout;
+                        getprivacy.key = new TLRPC.TL_inputPrivacyKeyAbout();
                         getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda59
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
@@ -3670,7 +3670,7 @@ public class ContactsController extends BaseController {
                         });
                         break;
                     case 11:
-                        getprivacy.key = TLRPC.InputPrivacyKey.inputPrivacyKeyBirthday;
+                        getprivacy.key = new TLRPC.TL_inputPrivacyKeyBirthday();
                         getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda59
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
@@ -3679,7 +3679,7 @@ public class ContactsController extends BaseController {
                         });
                         break;
                     case 12:
-                        getprivacy.key = TLRPC.InputPrivacyKey.inputPrivacyKeyStarGiftsAutoSave;
+                        getprivacy.key = new TLRPC.TL_inputPrivacyKeyStarGiftsAutoSave();
                         getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda59
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
@@ -3688,7 +3688,7 @@ public class ContactsController extends BaseController {
                         });
                         break;
                     case 13:
-                        getprivacy.key = TLRPC.InputPrivacyKey.inputPrivacyKeyNoPaidMessages;
+                        getprivacy.key = new TLRPC.TL_inputPrivacyKeyNoPaidMessages();
                         getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda59
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {

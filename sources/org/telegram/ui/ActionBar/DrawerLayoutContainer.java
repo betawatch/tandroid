@@ -25,8 +25,6 @@ import android.view.WindowInsets;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.FrameLayout;
-import androidx.core.view.WindowInsetsCompat;
-import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
@@ -184,25 +182,6 @@ public class DrawerLayoutContainer extends FrameLayout {
         addView(frameLayout);
         this.drawerLayout.setVisibility(4);
         view.setVisibility(8);
-        this.drawerLayout.setFitsSystemWindows(true);
-        if (Build.VERSION.SDK_INT >= 35 && (view instanceof RecyclerView)) {
-            ((RecyclerView) view).setClipToPadding(false);
-            this.drawerLayout.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() { // from class: org.telegram.ui.ActionBar.DrawerLayoutContainer.1
-                @Override // android.view.View.OnApplyWindowInsetsListener
-                public WindowInsets onApplyWindowInsets(View view2, WindowInsets windowInsets) {
-                    Insets insets;
-                    int i;
-                    WindowInsets windowInsets2;
-                    insets = windowInsets.getInsets(WindowInsetsCompat.Type.displayCutout() | WindowInsetsCompat.Type.systemBars());
-                    View view3 = view;
-                    i = insets.bottom;
-                    view3.setPadding(0, 0, 0, i);
-                    DrawerLayoutContainer.this.drawerLayout.requestLayout();
-                    windowInsets2 = WindowInsets.CONSUMED;
-                    return windowInsets2;
-                }
-            });
-        }
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ActionBar.DrawerLayoutContainer$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
@@ -279,7 +258,7 @@ public class DrawerLayoutContainer extends FrameLayout {
         } else {
             animatorSet.setDuration(250L);
         }
-        animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.DrawerLayoutContainer.2
+        animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.DrawerLayoutContainer.1
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 DrawerLayoutContainer.this.onDrawerAnimationEnd(true);
@@ -302,7 +281,7 @@ public class DrawerLayoutContainer extends FrameLayout {
         } else {
             animatorSet.setDuration(250L);
         }
-        animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.DrawerLayoutContainer.3
+        animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.DrawerLayoutContainer.2
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 DrawerLayoutContainer.this.onDrawerAnimationEnd(false);
@@ -603,21 +582,16 @@ public class DrawerLayoutContainer extends FrameLayout {
             View childAt = getChildAt(i5);
             if (childAt.getVisibility() != 8) {
                 FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
-                if (BuildVars.DEBUG_VERSION) {
+                try {
                     if (this.drawerLayout != childAt) {
                         childAt.layout(layoutParams.leftMargin, layoutParams.topMargin + getPaddingTop(), layoutParams.leftMargin + childAt.getMeasuredWidth(), layoutParams.topMargin + childAt.getMeasuredHeight() + getPaddingTop());
                     } else {
                         childAt.layout(-childAt.getMeasuredWidth(), layoutParams.topMargin + getPaddingTop(), 0, layoutParams.topMargin + childAt.getMeasuredHeight() + getPaddingTop());
                     }
-                } else {
-                    try {
-                        if (this.drawerLayout != childAt) {
-                            childAt.layout(layoutParams.leftMargin, layoutParams.topMargin + getPaddingTop(), layoutParams.leftMargin + childAt.getMeasuredWidth(), layoutParams.topMargin + childAt.getMeasuredHeight() + getPaddingTop());
-                        } else {
-                            childAt.layout(-childAt.getMeasuredWidth(), layoutParams.topMargin + getPaddingTop(), 0, layoutParams.topMargin + childAt.getMeasuredHeight() + getPaddingTop());
-                        }
-                    } catch (Exception e) {
-                        FileLog.e(e);
+                } catch (Exception e) {
+                    FileLog.e(e);
+                    if (BuildVars.DEBUG_VERSION) {
+                        throw e;
                     }
                 }
             }

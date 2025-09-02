@@ -86,13 +86,13 @@ public class HeaderCell extends FrameLayout {
                 this.drawable.rect2.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - AndroidUtilities.dp(52.0f));
             }
 
-            @Override // android.view.View
+            @Override // org.telegram.ui.Components.Premium.StarParticlesView, android.view.View
             protected void onAttachedToWindow() {
                 super.onAttachedToWindow();
                 HeaderCell.this.starParticlesView.setPaused(false);
             }
 
-            @Override // android.view.View
+            @Override // org.telegram.ui.Components.Premium.StarParticlesView, android.view.View
             protected void onDetachedFromWindow() {
                 super.onDetachedFromWindow();
                 HeaderCell.this.starParticlesView.setPaused(true);

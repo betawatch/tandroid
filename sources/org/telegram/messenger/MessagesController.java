@@ -18077,27 +18077,27 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x0062, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x0063, code lost:
     
         if (r13.restricted == false) goto L31;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:54:0x006a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x006b, code lost:
     
         r2 = r0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:67:0x0090, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:67:0x0091, code lost:
     
         if (r3.restricted == false) goto L31;
      */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0134  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0135  */
     /* JADX WARN: Removed duplicated region for block: B:12:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x009e  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x00f6  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0104  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0115  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0108  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x00fa  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x00a3  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x009f  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00f7  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0105  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0116  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0109  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00fb  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00a4  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -25929,8 +25929,8 @@ public class MessagesController extends BaseController implements NotificationCe
     /* JADX WARN: Removed duplicated region for block: B:36:0x01db  */
     /* JADX WARN: Removed duplicated region for block: B:39:0x01ef  */
     /* JADX WARN: Removed duplicated region for block: B:42:0x01f6  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x026d  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0276  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x026e  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0277  */
     /* JADX WARN: Removed duplicated region for block: B:50:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:76:0x017d  */
     /*
@@ -31262,32 +31262,32 @@ public class MessagesController extends BaseController implements NotificationCe
                 if (update instanceof TLRPC.TL_updatePrivacy) {
                     TLRPC.TL_updatePrivacy tL_updatePrivacy = (TLRPC.TL_updatePrivacy) update;
                     TLRPC.PrivacyKey privacyKey = tL_updatePrivacy.key;
-                    if (privacyKey == TLRPC.PrivacyKey.privacyKeyStatusTimestamp) {
+                    if (privacyKey instanceof TLRPC.TL_privacyKeyStatusTimestamp) {
                         getContactsController().setPrivacyRules(tL_updatePrivacy.rules, i13);
-                    } else if (privacyKey == TLRPC.PrivacyKey.privacyKeyChatInvite) {
+                    } else if (privacyKey instanceof TLRPC.TL_privacyKeyChatInvite) {
                         getContactsController().setPrivacyRules(tL_updatePrivacy.rules, 1);
-                    } else if (privacyKey == TLRPC.PrivacyKey.privacyKeyPhoneCall) {
+                    } else if (privacyKey instanceof TLRPC.TL_privacyKeyPhoneCall) {
                         getContactsController().setPrivacyRules(tL_updatePrivacy.rules, 2);
-                    } else if (privacyKey == TLRPC.PrivacyKey.privacyKeyPhoneP2P) {
+                    } else if (privacyKey instanceof TLRPC.TL_privacyKeyPhoneP2P) {
                         getContactsController().setPrivacyRules(tL_updatePrivacy.rules, 3);
-                    } else if (privacyKey == TLRPC.PrivacyKey.privacyKeyProfilePhoto) {
+                    } else if (privacyKey instanceof TLRPC.TL_privacyKeyProfilePhoto) {
                         getContactsController().setPrivacyRules(tL_updatePrivacy.rules, 4);
-                    } else if (privacyKey == TLRPC.PrivacyKey.privacyKeyForwards) {
+                    } else if (privacyKey instanceof TLRPC.TL_privacyKeyForwards) {
                         getContactsController().setPrivacyRules(tL_updatePrivacy.rules, 5);
                         i9 = i14;
                         arrayList7 = arrayList11;
                         i10 = size;
-                    } else if (privacyKey == TLRPC.PrivacyKey.privacyKeyPhoneNumber) {
+                    } else if (privacyKey instanceof TLRPC.TL_privacyKeyPhoneNumber) {
                         getContactsController().setPrivacyRules(tL_updatePrivacy.rules, 6);
-                    } else if (privacyKey == TLRPC.PrivacyKey.privacyKeyAddedByPhone) {
+                    } else if (privacyKey instanceof TLRPC.TL_privacyKeyAddedByPhone) {
                         getContactsController().setPrivacyRules(tL_updatePrivacy.rules, 7);
-                    } else if (privacyKey == TLRPC.PrivacyKey.privacyKeyVoiceMessages) {
+                    } else if (privacyKey instanceof TLRPC.TL_privacyKeyVoiceMessages) {
                         getContactsController().setPrivacyRules(tL_updatePrivacy.rules, 8);
-                    } else if (privacyKey == TLRPC.PrivacyKey.privacyKeyAbout) {
+                    } else if (privacyKey instanceof TLRPC.TL_privacyKeyAbout) {
                         getContactsController().setPrivacyRules(tL_updatePrivacy.rules, 9);
-                    } else if (privacyKey == TLRPC.PrivacyKey.privacyKeyBirthday) {
+                    } else if (privacyKey instanceof TLRPC.TL_privacyKeyBirthday) {
                         getContactsController().setPrivacyRules(tL_updatePrivacy.rules, 11);
-                    } else if (privacyKey == TLRPC.PrivacyKey.privacyKeyStarGiftsAutoSave) {
+                    } else if (privacyKey instanceof TLRPC.TL_privacyKeyStarGiftsAutoSave) {
                         getContactsController().setPrivacyRules(tL_updatePrivacy.rules, 12);
                     }
                     i9 = i14;

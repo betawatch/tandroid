@@ -14,6 +14,7 @@ import org.telegram.tgnet.TLObject;
 /* loaded from: classes4.dex */
 public class CustomNavigationBar extends View {
     private static final boolean USE_INSETS;
+    private View activityContentView;
     private int height;
     private final Paint paint;
 
@@ -34,6 +35,10 @@ public class CustomNavigationBar extends View {
                 }
             });
         }
+    }
+
+    public void setActivityContentView(View view) {
+        this.activityContentView = view;
     }
 
     public void setColor(int i) {
@@ -63,6 +68,16 @@ public class CustomNavigationBar extends View {
             this.height = AndroidUtilities.navigationBarHeight;
         }
         super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(this.height, TLObject.FLAG_30));
+    }
+
+    @Override // android.view.View
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        if (!USE_INSETS && (getParent() instanceof View) && this.activityContentView.getMeasuredHeight() >= ((View) getParent()).getMeasuredHeight()) {
+            setTranslationY(this.height);
+        } else {
+            setTranslationY(0.0f);
+        }
     }
 
     @Override // android.view.View

@@ -22,6 +22,7 @@ import android.view.View;
 import androidx.core.graphics.ColorUtils;
 import java.lang.ref.WeakReference;
 import java.util.List;
+import java.util.Random;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.GenericProvider;
@@ -53,6 +54,7 @@ public class MotionBackgroundDrawable extends Drawable {
     private boolean fastAnimation;
     private ImageReceiver giftImageReceiver;
     private List giftPatternPositions;
+    private int giftPosition;
     private Canvas gradientCanvas;
     private GradientDrawable gradientDrawable;
     private Bitmap gradientFromBitmap;
@@ -497,6 +499,12 @@ public class MotionBackgroundDrawable extends Drawable {
         this.giftPatternPositions = list;
     }
 
+    public void setGiftPatternRandomSeed(long j) {
+        if (this.giftPatternPositions != null) {
+            this.giftPosition = new Random(j).nextInt(this.giftPatternPositions.size());
+        }
+    }
+
     public void setGiftPatternBitmap(Bitmap bitmap) {
         this.patternGiftBitmap = bitmap;
         this.invalidateLegacy = true;
@@ -864,7 +872,7 @@ public class MotionBackgroundDrawable extends Drawable {
                 this.paint2.setAlpha((int) ((Math.abs(this.intensity) / 100.0f) * this.alpha * this.patternAlpha));
                 canvas.drawBitmap(this.patternBitmap, (android.graphics.Rect) null, this.rect, this.paint2);
                 this.paint.setAlpha((int) ((Math.abs(this.intensity) / 100.0f) * this.alpha * this.patternAlpha * 0.8f));
-                drawGiftPatternsForPositiveIntensity(canvas, this.rect, this.paint2, 6);
+                drawGiftPatternsForPositiveIntensity(canvas, this.rect, this.paint2, this.giftPosition);
             }
         }
         canvas.restore();
@@ -1041,7 +1049,7 @@ public class MotionBackgroundDrawable extends Drawable {
                 this.paint2.setAlpha((int) ((Math.abs(this.intensity) / 100.0f) * this.alpha * this.patternAlpha));
                 canvas.drawBitmap(this.patternBitmap, (android.graphics.Rect) null, this.rect, this.paint2);
                 this.paint.setAlpha((int) ((Math.abs(this.intensity) / 100.0f) * this.alpha * this.patternAlpha * 0.8f));
-                drawGiftPatternsForPositiveIntensity(canvas, this.rect, this.paint2, 6);
+                drawGiftPatternsForPositiveIntensity(canvas, this.rect, this.paint2, this.giftPosition);
             }
         }
         canvas.restore();
@@ -1235,7 +1243,7 @@ public class MotionBackgroundDrawable extends Drawable {
             WallpaperGiftPatternPosition wallpaperGiftPatternPosition = (WallpaperGiftPatternPosition) this.giftPatternPositions.get(i);
             canvas.save();
             canvas.concat(wallpaperGiftPatternPosition.matrix);
-            if (i == 6 && (imageReceiver = this.giftImageReceiver) != null) {
+            if (i == this.giftPosition && (imageReceiver = this.giftImageReceiver) != null) {
                 imageReceiver.setImageCoords(wallpaperGiftPatternPosition.rect);
                 this.giftImageReceiver.draw(canvas);
             } else {

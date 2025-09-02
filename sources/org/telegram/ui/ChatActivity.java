@@ -1127,6 +1127,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     private boolean waitingForReplyMessageLoad;
     private boolean waitingForSendingMessageLoad;
     int waitingForWebpageId;
+    private long wallpaperRandomSeed;
     private boolean wasManualScroll;
     private boolean wasPaused;
     TextView webBotTitle;
@@ -2824,18 +2825,18 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         this.preventReopenSearchWithText = false;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:337:0x03b6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:337:0x03be, code lost:
     
         if (r0 != null) goto L115;
      */
-    /* JADX WARN: Type inference failed for: r12v17 */
-    /* JADX WARN: Type inference failed for: r12v19 */
-    /* JADX WARN: Type inference failed for: r12v22 */
-    /* JADX WARN: Type inference failed for: r12v23 */
+    /* JADX WARN: Type inference failed for: r12v18 */
+    /* JADX WARN: Type inference failed for: r12v20 */
     /* JADX WARN: Type inference failed for: r12v24 */
     /* JADX WARN: Type inference failed for: r12v25 */
     /* JADX WARN: Type inference failed for: r12v26 */
     /* JADX WARN: Type inference failed for: r12v27 */
+    /* JADX WARN: Type inference failed for: r12v28 */
+    /* JADX WARN: Type inference failed for: r12v29 */
     @Override // org.telegram.ui.ActionBar.BaseFragment
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -2890,6 +2891,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         this.scrollToTopOnResume = this.arguments.getBoolean("scrollToTopOnResume", false);
         this.needRemovePreviousSameChatActivity = this.arguments.getBoolean("need_remove_previous_same_chat_activity", true);
         this.justCreatedChat = this.arguments.getBoolean("just_created_chat", false);
+        this.wallpaperRandomSeed = Utilities.random.nextLong();
         if (this.quickReplyShortcut != null && (findReply = QuickRepliesController.getInstance(this.currentAccount).findReply(this.quickReplyShortcut)) != null) {
             setQuickReplyId(findReply.id);
         }
@@ -62150,6 +62152,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             }
             int i2 = emojiThemes.getWallpaper(z ? 1 : 0).settings.intensity;
             motionBackgroundDrawable.setPatternGiftPositions(((WallpaperBitmapHolder) pair.second).giftPatternPositions);
+            motionBackgroundDrawable.setGiftPatternRandomSeed(ChatActivity.this.wallpaperRandomSeed);
             motionBackgroundDrawable.setPatternBitmap(i2, bitmap);
             motionBackgroundDrawable.setPatternColorFilter(i);
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
