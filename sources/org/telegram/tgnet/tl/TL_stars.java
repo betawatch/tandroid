@@ -2182,7 +2182,7 @@ public class TL_stars {
             if ((this.flags & 65536) != 0) {
                 this.starref_commission_permille = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_17) != 0) {
+            if ((this.flags & 131072) != 0) {
                 this.starref_peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
                 this.starref_amount = StarsAmount.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
@@ -2271,7 +2271,7 @@ public class TL_stars {
             if ((this.flags & 65536) != 0) {
                 outputSerializedData.writeInt32(this.starref_commission_permille);
             }
-            if ((this.flags & TLObject.FLAG_17) != 0) {
+            if ((this.flags & 131072) != 0) {
                 this.starref_peer.serializeToStream(outputSerializedData);
                 this.starref_amount.serializeToStream(outputSerializedData);
             }
@@ -2347,7 +2347,7 @@ public class TL_stars {
             if ((this.flags & 65536) != 0) {
                 this.starref_commission_permille = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_17) != 0) {
+            if ((this.flags & 131072) != 0) {
                 this.starref_peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
                 this.starref_amount = StarsAmount.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
@@ -2426,7 +2426,7 @@ public class TL_stars {
             if ((this.flags & 65536) != 0) {
                 outputSerializedData.writeInt32(this.starref_commission_permille);
             }
-            if ((this.flags & TLObject.FLAG_17) != 0) {
+            if ((this.flags & 131072) != 0) {
                 this.starref_peer.serializeToStream(outputSerializedData);
                 this.starref_amount.serializeToStream(outputSerializedData);
             }
@@ -2497,7 +2497,7 @@ public class TL_stars {
             if ((this.flags & 65536) != 0) {
                 this.starref_commission_permille = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_17) != 0) {
+            if ((this.flags & 131072) != 0) {
                 this.starref_peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
                 this.starref_amount = StarsAmount.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
@@ -2571,7 +2571,7 @@ public class TL_stars {
             if ((this.flags & 65536) != 0) {
                 outputSerializedData.writeInt32(this.starref_commission_permille);
             }
-            if ((this.flags & TLObject.FLAG_17) != 0) {
+            if ((this.flags & 131072) != 0) {
                 this.starref_peer.serializeToStream(outputSerializedData);
                 this.starref_amount.serializeToStream(outputSerializedData);
             }
@@ -2638,7 +2638,7 @@ public class TL_stars {
             if ((this.flags & 65536) != 0) {
                 this.starref_commission_permille = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_17) != 0) {
+            if ((this.flags & 131072) != 0) {
                 this.starref_peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
                 this.starref_amount = StarsAmount.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
@@ -2707,7 +2707,7 @@ public class TL_stars {
             if ((this.flags & 65536) != 0) {
                 outputSerializedData.writeInt32(this.starref_commission_permille);
             }
-            if ((this.flags & TLObject.FLAG_17) != 0) {
+            if ((this.flags & 131072) != 0) {
                 this.starref_peer.serializeToStream(outputSerializedData);
                 this.starref_amount.serializeToStream(outputSerializedData);
             }
@@ -4202,7 +4202,7 @@ public class TL_stars {
             this.flags = i4;
             int i5 = this.pinned_to_top ? i4 | 4096 : i4 & (-4097);
             this.flags = i5;
-            int i6 = this.upgrade_separate ? i5 | TLObject.FLAG_17 : i5 & (-131073);
+            int i6 = this.upgrade_separate ? i5 | 131072 : i5 & (-131073);
             this.flags = i6;
             outputSerializedData.writeInt32(i6);
             if ((this.flags & 2) != 0) {

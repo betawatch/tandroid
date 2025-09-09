@@ -4315,7 +4315,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
         dialog.getWindow().clearFlags(TLObject.FLAG_27);
         dialog.getWindow().addFlags(TLObject.FLAG_31);
         dialog.getWindow().addFlags(512);
-        dialog.getWindow().addFlags(TLObject.FLAG_17);
+        dialog.getWindow().addFlags(131072);
         dialog.getWindow().getAttributes().windowAnimations = 0;
         dialog.getWindow().getDecorView().setSystemUiVisibility(1792);
         dialog.getWindow().setStatusBarColor(0);

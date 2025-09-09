@@ -276,7 +276,7 @@ public class FileLoadOperation {
             this.maxDownloadRequests = 8;
             this.maxDownloadRequestsBig = 8;
         } else {
-            this.downloadChunkSizeBig = TLObject.FLAG_17;
+            this.downloadChunkSizeBig = 131072;
             this.maxDownloadRequests = 4;
             this.maxDownloadRequestsBig = 4;
         }
@@ -286,13 +286,13 @@ public class FileLoadOperation {
     public FileLoadOperation(ImageLocation imageLocation, Object obj, String str, long j) {
         this.FULL_LOGS = false;
         this.downloadChunkSize = 32768;
-        this.downloadChunkSizeBig = TLObject.FLAG_17;
-        this.cdnChunkCheckSize = TLObject.FLAG_17;
+        this.downloadChunkSizeBig = 131072;
+        this.cdnChunkCheckSize = 131072;
         this.maxDownloadRequests = 4;
         this.maxDownloadRequestsBig = 4;
         this.bigFileSizeFrom = 10485760;
-        this.maxCdnParts = (int) (FileLoader.DEFAULT_MAX_FILE_SIZE / TLObject.FLAG_17);
-        this.downloadChunkSizeAnimation = TLObject.FLAG_17;
+        this.maxCdnParts = (int) (FileLoader.DEFAULT_MAX_FILE_SIZE / 131072);
+        this.downloadChunkSizeAnimation = 131072;
         this.maxDownloadRequestsAnimation = 4;
         this.preloadTempBuffer = new byte[24];
         this.state = 0;
@@ -400,13 +400,13 @@ public class FileLoadOperation {
     public FileLoadOperation(SecureDocument secureDocument) {
         this.FULL_LOGS = false;
         this.downloadChunkSize = 32768;
-        this.downloadChunkSizeBig = TLObject.FLAG_17;
-        this.cdnChunkCheckSize = TLObject.FLAG_17;
+        this.downloadChunkSizeBig = 131072;
+        this.cdnChunkCheckSize = 131072;
         this.maxDownloadRequests = 4;
         this.maxDownloadRequestsBig = 4;
         this.bigFileSizeFrom = 10485760;
-        this.maxCdnParts = (int) (FileLoader.DEFAULT_MAX_FILE_SIZE / TLObject.FLAG_17);
-        this.downloadChunkSizeAnimation = TLObject.FLAG_17;
+        this.maxCdnParts = (int) (FileLoader.DEFAULT_MAX_FILE_SIZE / 131072);
+        this.downloadChunkSizeAnimation = 131072;
         this.maxDownloadRequestsAnimation = 4;
         this.preloadTempBuffer = new byte[24];
         this.state = 0;
@@ -433,13 +433,13 @@ public class FileLoadOperation {
     public FileLoadOperation(int i, WebFile webFile) {
         this.FULL_LOGS = false;
         this.downloadChunkSize = 32768;
-        this.downloadChunkSizeBig = TLObject.FLAG_17;
-        this.cdnChunkCheckSize = TLObject.FLAG_17;
+        this.downloadChunkSizeBig = 131072;
+        this.cdnChunkCheckSize = 131072;
         this.maxDownloadRequests = 4;
         this.maxDownloadRequestsBig = 4;
         this.bigFileSizeFrom = 10485760;
-        this.maxCdnParts = (int) (FileLoader.DEFAULT_MAX_FILE_SIZE / TLObject.FLAG_17);
-        this.downloadChunkSizeAnimation = TLObject.FLAG_17;
+        this.maxCdnParts = (int) (FileLoader.DEFAULT_MAX_FILE_SIZE / 131072);
+        this.downloadChunkSizeAnimation = 131072;
         this.maxDownloadRequestsAnimation = 4;
         this.preloadTempBuffer = new byte[24];
         this.state = 0;
@@ -486,13 +486,13 @@ public class FileLoadOperation {
         int lastIndexOf;
         this.FULL_LOGS = false;
         this.downloadChunkSize = 32768;
-        this.downloadChunkSizeBig = TLObject.FLAG_17;
-        this.cdnChunkCheckSize = TLObject.FLAG_17;
+        this.downloadChunkSizeBig = 131072;
+        this.cdnChunkCheckSize = 131072;
         this.maxDownloadRequests = 4;
         this.maxDownloadRequestsBig = 4;
         this.bigFileSizeFrom = 10485760;
-        this.maxCdnParts = (int) (FileLoader.DEFAULT_MAX_FILE_SIZE / TLObject.FLAG_17);
-        this.downloadChunkSizeAnimation = TLObject.FLAG_17;
+        this.maxCdnParts = (int) (FileLoader.DEFAULT_MAX_FILE_SIZE / 131072);
+        this.downloadChunkSizeAnimation = 131072;
         this.maxDownloadRequestsAnimation = 4;
         this.preloadTempBuffer = new byte[24];
         this.state = 0;

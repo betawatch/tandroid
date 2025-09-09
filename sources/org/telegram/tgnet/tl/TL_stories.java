@@ -2113,7 +2113,7 @@ public class TL_stories {
             if ((this.flags & TLObject.FLAG_18) != 0) {
                 this.from_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_17) != 0) {
+            if ((this.flags & 131072) != 0) {
                 this.fwd_from = StoryFwdHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             this.expire_date = inputSerializedData.readInt32(z);
@@ -2170,7 +2170,7 @@ public class TL_stories {
             if ((this.flags & TLObject.FLAG_18) != 0) {
                 this.from_id.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_17) != 0) {
+            if ((this.flags & 131072) != 0) {
                 this.fwd_from.serializeToStream(outputSerializedData);
             }
             outputSerializedData.writeInt32(this.expire_date);
@@ -2220,7 +2220,7 @@ public class TL_stories {
             if ((this.flags & TLObject.FLAG_18) != 0) {
                 this.from_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_17) != 0) {
+            if ((this.flags & 131072) != 0) {
                 this.fwd_from = StoryFwdHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             this.expire_date = inputSerializedData.readInt32(z);
@@ -2272,7 +2272,7 @@ public class TL_stories {
             if ((this.flags & TLObject.FLAG_18) != 0) {
                 this.from_id.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_17) != 0) {
+            if ((this.flags & 131072) != 0) {
                 this.fwd_from.serializeToStream(outputSerializedData);
             }
             outputSerializedData.writeInt32(this.expire_date);
@@ -2316,7 +2316,7 @@ public class TL_stories {
             this.out = (readInt32 & 65536) != 0;
             this.id = inputSerializedData.readInt32(z);
             this.date = inputSerializedData.readInt32(z);
-            if ((this.flags & TLObject.FLAG_17) != 0) {
+            if ((this.flags & 131072) != 0) {
                 this.fwd_from = StoryFwdHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             this.expire_date = inputSerializedData.readInt32(z);
@@ -2365,7 +2365,7 @@ public class TL_stories {
             outputSerializedData.writeInt32(i9);
             outputSerializedData.writeInt32(this.id);
             outputSerializedData.writeInt32(this.date);
-            if ((this.flags & TLObject.FLAG_17) != 0) {
+            if ((this.flags & 131072) != 0) {
                 this.fwd_from.serializeToStream(outputSerializedData);
             }
             outputSerializedData.writeInt32(this.expire_date);

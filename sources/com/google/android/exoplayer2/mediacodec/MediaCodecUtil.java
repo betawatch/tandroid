@@ -83,7 +83,7 @@ public abstract class MediaCodecUtil {
             case 16:
                 return 65536;
             case 17:
-                return TLObject.FLAG_17;
+                return 131072;
             case 18:
                 return TLObject.FLAG_18;
             case 19:
@@ -180,7 +180,7 @@ public abstract class MediaCodecUtil {
             case 32768:
             case 65536:
                 return 9437184;
-            case TLObject.FLAG_17 /* 131072 */:
+            case 131072:
             case TLObject.FLAG_18 /* 262144 */:
             case TLObject.FLAG_19 /* 524288 */:
                 return 35651584;

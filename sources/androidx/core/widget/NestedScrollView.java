@@ -1034,7 +1034,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
         }
         if (findFocus != null && findFocus.isFocused() && isOffScreen(findFocus)) {
             int descendantFocusability = getDescendantFocusability();
-            setDescendantFocusability(TLObject.FLAG_17);
+            setDescendantFocusability(131072);
             requestFocus();
             setDescendantFocusability(descendantFocusability);
         }

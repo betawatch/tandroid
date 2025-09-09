@@ -131,7 +131,7 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
             }
         }
 
-        void didSelectFiles(ArrayList arrayList, String str, ArrayList arrayList2, boolean z, int i, long j, boolean z2, long j2);
+        void didSelectFiles(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z, int i, long j, boolean z2, long j2);
 
         void didSelectPhotos(ArrayList arrayList, boolean z, int i, long j);
 
@@ -850,20 +850,22 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
             arrayList.add((MessageObject) this.selectedMessages.get((FilteredSearchView.MessageHashId) it.next()));
         }
         final ArrayList arrayList2 = new ArrayList(this.selectedFilesOrder);
-        final String obj = this.parentAlert.getCommentView().getText().toString();
+        CharSequence[] charSequenceArr = {this.parentAlert.getCommentView().getText()};
+        final ArrayList<TLRPC.MessageEntity> entities = MediaDataController.getInstance(this.parentAlert.currentAccount).getEntities(charSequenceArr, true);
+        final String charSequence = charSequenceArr[0].toString();
         ChatAttachAlert chatAttachAlert = this.parentAlert;
-        return AlertsCreator.ensurePaidMessageConfirmation(chatAttachAlert.currentAccount, chatAttachAlert.getDialogId(), (!TextUtils.isEmpty(obj) ? 1 : 0) + arrayList2.size() + this.parentAlert.getAdditionalMessagesCount(), new Utilities.Callback() { // from class: org.telegram.ui.Components.ChatAttachAlertDocumentLayout$$ExternalSyntheticLambda8
+        return AlertsCreator.ensurePaidMessageConfirmation(chatAttachAlert.currentAccount, chatAttachAlert.getDialogId(), (1 ^ (TextUtils.isEmpty(charSequence) ? 1 : 0)) + arrayList2.size() + this.parentAlert.getAdditionalMessagesCount(), new Utilities.Callback() { // from class: org.telegram.ui.Components.ChatAttachAlertDocumentLayout$$ExternalSyntheticLambda8
             @Override // org.telegram.messenger.Utilities.Callback
-            public final void run(Object obj2) {
-                ChatAttachAlertDocumentLayout.this.lambda$sendSelectedItems$5(arrayList2, obj, arrayList, z, i, j, z2, (Long) obj2);
+            public final void run(Object obj) {
+                ChatAttachAlertDocumentLayout.this.lambda$sendSelectedItems$5(arrayList2, charSequence, entities, arrayList, z, i, j, z2, (Long) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$sendSelectedItems$5(ArrayList arrayList, String str, ArrayList arrayList2, boolean z, int i, long j, boolean z2, Long l) {
+    public /* synthetic */ void lambda$sendSelectedItems$5(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z, int i, long j, boolean z2, Long l) {
         this.sendPressed = true;
-        this.delegate.didSelectFiles(arrayList, str, arrayList2, z, i, j, z2, l.longValue());
+        this.delegate.didSelectFiles(arrayList, str, arrayList2, arrayList3, z, i, j, z2, l.longValue());
         this.parentAlert.dismiss(true);
     }
 

@@ -1239,7 +1239,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
         if (view6 != null && this.checkFocusable && canTextInput(view6)) {
             layoutParams3.softInputMode = 4;
         } else {
-            layoutParams3.flags |= TLObject.FLAG_17;
+            layoutParams3.flags |= 131072;
         }
         if (Build.VERSION.SDK_INT >= 28) {
             layoutParams3.layoutInDisplayCutoutMode = 0;
@@ -1423,7 +1423,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
             attributes.flags &= -131073;
         } else {
             attributes.softInputMode = 48;
-            attributes.flags |= TLObject.FLAG_17;
+            attributes.flags |= 131072;
         }
         window.setAttributes(attributes);
     }

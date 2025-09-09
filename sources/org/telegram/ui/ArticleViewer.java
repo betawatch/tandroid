@@ -4545,7 +4545,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         layoutParams.gravity = 51;
         layoutParams.type = 98;
         layoutParams.softInputMode = 48;
-        layoutParams.flags = TLObject.FLAG_17;
+        layoutParams.flags = 131072;
         int color = this.sheet == null ? Theme.getColor(Theme.key_windowBackgroundGray, null, true) : getThemedColor(Theme.key_windowBackgroundGray);
         int i4 = (AndroidUtilities.computePerceivedBrightness(color) < 0.721f || Build.VERSION.SDK_INT < 26) ? 1792 : 1808;
         this.navigationBarPaint.setColor(color);

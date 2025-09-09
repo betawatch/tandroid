@@ -2914,7 +2914,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             int i2 = this.selectedSlowmode;
             if (i2 != this.initialSlowmode && (chatFull = this.info) != null) {
                 chatFull.slowmode_seconds = getSecondsForIndex(i2);
-                this.info.flags |= TLObject.FLAG_17;
+                this.info.flags |= 131072;
                 getMessagesController().setChannelSlowMode(this.chatId, this.info.slowmode_seconds);
             }
             boolean z2 = this.enablePrice;

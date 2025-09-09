@@ -39,7 +39,7 @@ public class StarParticlesView extends View {
     private Paint clipGradientPaint;
     public boolean doNotFling;
     public Drawable drawable;
-    private boolean isPowerSaverApplied;
+    private boolean isLiteModeParticlesAllowed;
     private Utilities.Callback powerSaverCallback;
     int size;
 
@@ -63,12 +63,17 @@ public class StarParticlesView extends View {
         Utilities.Callback callback = new Utilities.Callback() { // from class: org.telegram.ui.Components.Premium.StarParticlesView$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                StarParticlesView.this.onApplyPowerSaverMode(((Boolean) obj).booleanValue());
+                StarParticlesView.this.lambda$onAttachedToWindow$0((Boolean) obj);
             }
         };
         this.powerSaverCallback = callback;
         LiteMode.addOnPowerSaverAppliedListener(callback);
-        onApplyPowerSaverMode(LiteMode.isPowerSaverApplied());
+        onApplyPowerSaverMode();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$onAttachedToWindow$0(Boolean bool) {
+        onApplyPowerSaverMode();
     }
 
     @Override // android.view.View
@@ -80,16 +85,17 @@ public class StarParticlesView extends View {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public void onApplyPowerSaverMode(boolean z) {
-        if (this.isPowerSaverApplied != z) {
-            this.isPowerSaverApplied = z;
+    private void onApplyPowerSaverMode() {
+        boolean isEnabled = LiteMode.isEnabled(131072);
+        if (this.isLiteModeParticlesAllowed != isEnabled) {
+            this.isLiteModeParticlesAllowed = isEnabled;
             invalidate();
         }
     }
 
     public StarParticlesView(Context context, int i) {
         super(context);
+        this.isLiteModeParticlesAllowed = true;
         this.drawable = new Drawable(i);
         configure();
     }
@@ -138,31 +144,30 @@ public class StarParticlesView extends View {
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        if (this.isPowerSaverApplied) {
-            return;
+        if (this.isLiteModeParticlesAllowed) {
+            if (this.clipGradientPaint != null) {
+                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didApplyNewTheme, 31);
+            }
+            this.drawable.onDraw(canvas);
+            if (this.clipGradientPaint != null) {
+                canvas.save();
+                this.clipGradientMatrix.reset();
+                this.clipGradientMatrix.postTranslate(0.0f, (getHeight() + 1) - AndroidUtilities.dp(12.0f));
+                this.clipGradient.setLocalMatrix(this.clipGradientMatrix);
+                canvas.drawRect(0.0f, getHeight() - AndroidUtilities.dp(12.0f), getWidth(), getHeight(), this.clipGradientPaint);
+                this.clipGradientMatrix.reset();
+                this.clipGradientMatrix.postRotate(180.0f);
+                this.clipGradientMatrix.postTranslate(0.0f, AndroidUtilities.dp(12.0f));
+                this.clipGradient.setLocalMatrix(this.clipGradientMatrix);
+                canvas.drawRect(0.0f, 0.0f, getWidth(), AndroidUtilities.dp(12.0f), this.clipGradientPaint);
+                canvas.restore();
+                canvas.restore();
+            }
+            if (this.drawable.paused) {
+                return;
+            }
+            invalidate();
         }
-        if (this.clipGradientPaint != null) {
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didApplyNewTheme, 31);
-        }
-        this.drawable.onDraw(canvas);
-        if (this.clipGradientPaint != null) {
-            canvas.save();
-            this.clipGradientMatrix.reset();
-            this.clipGradientMatrix.postTranslate(0.0f, (getHeight() + 1) - AndroidUtilities.dp(12.0f));
-            this.clipGradient.setLocalMatrix(this.clipGradientMatrix);
-            canvas.drawRect(0.0f, getHeight() - AndroidUtilities.dp(12.0f), getWidth(), getHeight(), this.clipGradientPaint);
-            this.clipGradientMatrix.reset();
-            this.clipGradientMatrix.postRotate(180.0f);
-            this.clipGradientMatrix.postTranslate(0.0f, AndroidUtilities.dp(12.0f));
-            this.clipGradient.setLocalMatrix(this.clipGradientMatrix);
-            canvas.drawRect(0.0f, 0.0f, getWidth(), AndroidUtilities.dp(12.0f), this.clipGradientPaint);
-            canvas.restore();
-            canvas.restore();
-        }
-        if (this.drawable.paused) {
-            return;
-        }
-        invalidate();
     }
 
     public void flingParticles(float f) {
@@ -174,7 +179,7 @@ public class StarParticlesView extends View {
         ValueAnimator.AnimatorUpdateListener animatorUpdateListener = new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Premium.StarParticlesView$$ExternalSyntheticLambda1
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                StarParticlesView.this.lambda$flingParticles$0(valueAnimator);
+                StarParticlesView.this.lambda$flingParticles$1(valueAnimator);
             }
         };
         ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f, f2);
@@ -188,7 +193,7 @@ public class StarParticlesView extends View {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$flingParticles$0(ValueAnimator valueAnimator) {
+    public /* synthetic */ void lambda$flingParticles$1(ValueAnimator valueAnimator) {
         this.drawable.speedScale = ((Float) valueAnimator.getAnimatedValue()).floatValue();
     }
 

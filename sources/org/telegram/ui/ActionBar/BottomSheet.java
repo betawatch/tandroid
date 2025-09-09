@@ -1822,7 +1822,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
             if (this.focusable) {
                 attributes.softInputMode = 16;
             } else {
-                attributes.flags = i3 | TLObject.FLAG_17;
+                attributes.flags = i3 | 131072;
             }
             if (this.isFullscreen) {
                 attributes.flags |= -2147416832;
@@ -1885,7 +1885,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
             attributes.flags &= -131073;
         } else {
             attributes.softInputMode = 48;
-            attributes.flags |= TLObject.FLAG_17;
+            attributes.flags |= 131072;
         }
         window.setAttributes(attributes);
     }

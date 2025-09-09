@@ -1749,13 +1749,13 @@ public class AndroidUtilities {
         if (activity == null) {
             return;
         }
-        activity.getWindow().setFlags(TLObject.FLAG_17, TLObject.FLAG_17);
+        activity.getWindow().setFlags(131072, 131072);
         altFocusableClassGuid = i;
     }
 
     public static void removeAltFocusable(Activity activity, int i) {
         if (activity != null && altFocusableClassGuid == i) {
-            activity.getWindow().clearFlags(TLObject.FLAG_17);
+            activity.getWindow().clearFlags(131072);
         }
     }
 
@@ -5186,10 +5186,14 @@ public class AndroidUtilities {
     }
 
     public static float lerp(float f, float f2, float f3, float f4) {
-        if (f4 < 0.5f) {
-            return lerp(f, f2, f4 / 0.5f);
+        return lerp(f, f2, f3, 0.5f, f4);
+    }
+
+    public static float lerp(float f, float f2, float f3, float f4, float f5) {
+        if (f5 < f4) {
+            return lerp(f, f2, f5 / f4);
         }
-        return lerp(f2, f3, (f4 - 0.5f) / 0.5f);
+        return lerp(f2, f3, (f5 - f4) / (1.0f - f4));
     }
 
     public static float lerp(float[] fArr, float f) {

@@ -39,7 +39,6 @@ import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.widget.NestedScrollView;
 import java.lang.ref.WeakReference;
-import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 class AlertController {
@@ -459,7 +458,7 @@ class AlertController {
         }
         boolean z = view != null;
         if (!z || !canTextInput(view)) {
-            this.mWindow.setFlags(TLObject.FLAG_17, TLObject.FLAG_17);
+            this.mWindow.setFlags(131072, 131072);
         }
         if (z) {
             FrameLayout frameLayout = (FrameLayout) this.mWindow.findViewById(R$id.custom);

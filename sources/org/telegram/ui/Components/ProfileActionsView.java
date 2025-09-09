@@ -115,6 +115,7 @@ public class ProfileActionsView extends View {
         this.textPadding = AndroidUtilities.dpf2(4.0f);
         this.targetHeight = (int) ((i - dpf2) - dpf22);
         textPaint.setTextSize(AndroidUtilities.dpf2(11.0f));
+        textPaint.setTypeface(AndroidUtilities.bold());
         textPaint.setColor(-1);
         setBackgroundColor(0);
     }
@@ -343,7 +344,7 @@ public class ProfileActionsView extends View {
         canvas.scale(scale, scale, centerX, centerY);
         canvas.clipRect(action.rect);
         updateBounds(action);
-        float height = (action.drawable.getBounds().bottom + action.drawable.getBounds().top) - ((action.text.getHeight() * action.textScale) / 2.0f);
+        float height = ((action.drawable.getBounds().bottom + action.drawable.getBounds().top) - ((action.text.getHeight() * action.textScale) / 2.0f)) - AndroidUtilities.dp(2.0f);
         canvas.save();
         canvas.scale(action.textScale, action.textScale, centerX, ((action.text.getHeight() * action.textScale) / 2.0f) + height);
         action.text.draw(canvas, centerX - (action.text.getWidth() / 2.0f), height, -1, alpha);
@@ -397,7 +398,7 @@ public class ProfileActionsView extends View {
     }
 
     public float getRoundRadius() {
-        return AndroidUtilities.dp(8.0f);
+        return AndroidUtilities.dp(10.0f);
     }
 
     @Override // android.view.View
@@ -908,7 +909,7 @@ public class ProfileActionsView extends View {
         private final RectF to;
 
         public void setText(CharSequence charSequence) {
-            this.text = new Text(charSequence, 11.0f).multiline(3).align(Layout.Alignment.ALIGN_CENTER);
+            this.text = new Text(charSequence, 11.0f, AndroidUtilities.bold()).multiline(3).align(Layout.Alignment.ALIGN_CENTER);
         }
 
         public Action() {

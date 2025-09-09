@@ -666,7 +666,7 @@ public class UndoView extends FrameLayout {
                                 str = ((TLRPC.Chat) obj).title;
                             }
                             replaceTags = i == 102 ? AndroidUtilities.replaceTags(LocaleController.formatString(R.string.VoipConferenceKicked, str)) : AndroidUtilities.replaceTags(LocaleController.formatString(R.string.VoipGroupRemovedFromGroup, str));
-                            i3 = R.raw.voip_group_removed;
+                            i3 = R.raw.ic_ban;
                             this.timeLeft = 3000L;
                         } else if (i == 9 || i == 10) {
                             TLRPC.User user4 = (TLRPC.User) obj;

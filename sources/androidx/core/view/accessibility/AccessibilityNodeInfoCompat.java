@@ -72,7 +72,7 @@ public class AccessibilityNodeInfoCompat {
         public static final AccessibilityActionCompat ACTION_COPY = new AccessibilityActionCompat(16384, null);
         public static final AccessibilityActionCompat ACTION_PASTE = new AccessibilityActionCompat(32768, null);
         public static final AccessibilityActionCompat ACTION_CUT = new AccessibilityActionCompat(65536, null);
-        public static final AccessibilityActionCompat ACTION_SET_SELECTION = new AccessibilityActionCompat(TLObject.FLAG_17, null, AccessibilityViewCommand.SetSelectionArguments.class);
+        public static final AccessibilityActionCompat ACTION_SET_SELECTION = new AccessibilityActionCompat(131072, null, AccessibilityViewCommand.SetSelectionArguments.class);
         public static final AccessibilityActionCompat ACTION_EXPAND = new AccessibilityActionCompat(TLObject.FLAG_18, null);
         public static final AccessibilityActionCompat ACTION_COLLAPSE = new AccessibilityActionCompat(TLObject.FLAG_19, null);
         public static final AccessibilityActionCompat ACTION_DISMISS = new AccessibilityActionCompat(1048576, null);
@@ -889,7 +889,7 @@ public class AccessibilityNodeInfoCompat {
                 return "ACTION_PASTE";
             case 65536:
                 return "ACTION_CUT";
-            case TLObject.FLAG_17 /* 131072 */:
+            case 131072:
                 return "ACTION_SET_SELECTION";
             case TLObject.FLAG_18 /* 262144 */:
                 return "ACTION_EXPAND";

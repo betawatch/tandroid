@@ -4072,7 +4072,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             return;
         }
         TLRPC.TL_upload_getFile tL_upload_getFile = new TLRPC.TL_upload_getFile();
-        tL_upload_getFile.limit = TLObject.FLAG_17;
+        tL_upload_getFile.limit = 131072;
         TLRPC.TL_inputGroupCallStream tL_inputGroupCallStream = new TLRPC.TL_inputGroupCallStream();
         tL_inputGroupCallStream.call = this.groupCall.getInputGroupCall();
         tL_inputGroupCallStream.time_ms = j;

@@ -226,7 +226,7 @@ public abstract class EditEmojiTextCell extends FrameLayout {
         }
         editText.setPadding(paddingLeft, paddingTop, AndroidUtilities.dp(f), editText.getPaddingBottom());
         editText.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        editText.setInputType((z ? TLObject.FLAG_17 : 0) | 573441);
+        editText.setInputType((z ? 131072 : 0) | 573441);
         editText.setRawInputType(573441);
         editText.setHint(str);
         editText.setCursorColor(Theme.getColor(i3, resourcesProvider));

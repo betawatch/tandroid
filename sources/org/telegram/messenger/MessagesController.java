@@ -13353,7 +13353,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     int i3 = chat2.participants_count;
                     if (i3 != 0 && chat.participants_count == 0) {
                         chat.participants_count = i3;
-                        chat.flags |= TLObject.FLAG_17;
+                        chat.flags |= 131072;
                     }
                     TLRPC.TL_chatBannedRights tL_chatBannedRights = chat2.banned_rights;
                     int i4 = tL_chatBannedRights != null ? tL_chatBannedRights.flags : 0;
@@ -13429,7 +13429,7 @@ public class MessagesController extends BaseController implements NotificationCe
                 int i8 = chat2.participants_count;
                 if (i8 != 0 && chat.participants_count == 0) {
                     chat.participants_count = i8;
-                    chat.flags |= TLObject.FLAG_17;
+                    chat.flags |= 131072;
                 }
                 this.chats.put(Long.valueOf(chat.id), chat);
             }

@@ -735,7 +735,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
         };
         this.fragmentView = viewGroup;
         viewGroup.setFocusableInTouchMode(true);
-        viewGroup.setDescendantFocusability(TLObject.FLAG_17);
+        viewGroup.setDescendantFocusability(131072);
         ScrollView scrollView = new ScrollView(context) { // from class: org.telegram.ui.GroupCreateActivity.3
             @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
             public boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z) {

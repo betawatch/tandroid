@@ -7975,7 +7975,7 @@ public class MessagesStorage extends BaseController {
                             } else {
                                 sQLitePreparedStatement.bindNull(17);
                             }
-                            if ((message.flags & TLObject.FLAG_17) != 0) {
+                            if ((message.flags & 131072) != 0) {
                                 nativeByteBuffer3 = nativeByteBuffer;
                                 sQLitePreparedStatement.bindLong(18, message.grouped_id);
                             } else {
@@ -17070,7 +17070,7 @@ public class MessagesStorage extends BaseController {
                 queryFinalized.dispose();
             }
             executeFast.requery();
-            chat.flags |= TLObject.FLAG_17;
+            chat.flags |= 131072;
             NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(chat.getObjectSize());
             chat.serializeToStream(nativeByteBuffer);
             executeFast.bindLong(1, chat.id);
@@ -25571,7 +25571,7 @@ public class MessagesStorage extends BaseController {
                         executeFast2.bindNull(i23);
                     }
                     if (!z2) {
-                        if ((message.flags & TLObject.FLAG_17) != 0) {
+                        if ((message.flags & 131072) != 0) {
                             executeFast2.bindLong(i11, message.grouped_id);
                             i11++;
                         } else {
@@ -27053,7 +27053,7 @@ public class MessagesStorage extends BaseController {
                                                                                                         try {
                                                                                                             executeFast3.bindInteger(1, message.date);
                                                                                                             executeFast3.bindInteger(2, message.id);
-                                                                                                            if ((message.flags & TLObject.FLAG_17) != 0) {
+                                                                                                            if ((message.flags & 131072) != 0) {
                                                                                                                 executeFast3.bindLong(3, message.grouped_id);
                                                                                                             } else {
                                                                                                                 executeFast3.bindNull(3);
@@ -27195,7 +27195,7 @@ public class MessagesStorage extends BaseController {
                                                                                                         executeFast3.bindInteger(13, -1);
                                                                                                         executeFast3.bindNull(14);
                                                                                                         executeFast3.bindInteger(15, 0);
-                                                                                                        if ((message.flags & TLObject.FLAG_17) != 0) {
+                                                                                                        if ((message.flags & 131072) != 0) {
                                                                                                             executeFast3.bindLong(16, message.grouped_id);
                                                                                                         } else {
                                                                                                             executeFast3.bindNull(16);
@@ -27461,7 +27461,7 @@ public class MessagesStorage extends BaseController {
                                                                                                 sQLitePreparedStatement35.bindByteBuffer(i55, writeLocalParams);
                                                                                             }
                                                                                             if (!z9) {
-                                                                                                if ((message.flags & TLObject.FLAG_17) != 0) {
+                                                                                                if ((message.flags & 131072) != 0) {
                                                                                                     i26 = i25 + 1;
                                                                                                     sQLitePreparedStatement35.bindLong(i25, message.grouped_id);
                                                                                                 } else {
@@ -28297,7 +28297,7 @@ public class MessagesStorage extends BaseController {
                                                                             sQLitePreparedStatement18 = sQLitePreparedStatement11;
                                                                         }
                                                                         Integer valueOf3 = Integer.valueOf(message8.id);
-                                                                        if ((message8.flags & TLObject.FLAG_17) != 0) {
+                                                                        if ((message8.flags & 131072) != 0) {
                                                                             arrayList2 = arrayList10;
                                                                             num2 = valueOf3;
                                                                             l = Long.valueOf(message8.grouped_id);

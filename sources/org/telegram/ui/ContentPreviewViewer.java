@@ -1799,7 +1799,7 @@ public class ContentPreviewViewer {
             layoutParams.flags &= -131073;
             layoutParams.softInputMode = 16;
         } else {
-            this.windowLayoutParams.flags |= TLObject.FLAG_17;
+            this.windowLayoutParams.flags |= 131072;
         }
         try {
             ((WindowManager) this.parentActivity.getSystemService("window")).updateViewLayout(this.windowView, this.windowLayoutParams);

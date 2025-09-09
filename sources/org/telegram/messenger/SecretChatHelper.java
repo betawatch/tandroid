@@ -936,7 +936,7 @@ public class SecretChatHelper extends BaseController {
                 long j3 = tL_decryptedMessage.grouped_id;
                 if (j3 != 0) {
                     tL_message_secret.grouped_id = j3;
-                    tL_message_secret.flags |= TLObject.FLAG_17;
+                    tL_message_secret.flags |= 131072;
                 }
                 tL_message_secret.dialog_id = DialogObject.makeEncryptedDialogId(encryptedChat.id);
                 if (tL_decryptedMessage.reply_to_random_id != 0) {
