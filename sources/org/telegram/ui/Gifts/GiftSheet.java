@@ -23,6 +23,7 @@ import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.text.style.ClickableSpan;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
@@ -1665,6 +1666,8 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
             this.priceView.setText(giftPremiumBottomSheet$GiftTier.getFormattedPrice());
             this.priceBackground.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(13.0f), 422810068));
             this.priceView.setTextColor(-13397548);
+            ((ViewGroup.MarginLayoutParams) this.priceLayout.getLayoutParams()).topMargin = AndroidUtilities.dp(130.0f);
+            ((FrameLayout.LayoutParams) this.priceLayout.getLayoutParams()).gravity = 49;
             this.lastTier = giftPremiumBottomSheet$GiftTier;
             this.lastDocument = null;
             this.premiumTier = giftPremiumBottomSheet$GiftTier;
@@ -1810,6 +1813,8 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                 this.tonOnlySaleView.setColorFilter(Theme.isCurrentThemeDark() ? -1333971 : -2722014);
                 this.tonOnlySaleView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(13.0f), z622 ? 1090519039 : Theme.isCurrentThemeDark() ? 518759725 : 1088989954));
             }
+            ((ViewGroup.MarginLayoutParams) this.priceLayout.getLayoutParams()).topMargin = AndroidUtilities.dp(103.0f);
+            ((FrameLayout.LayoutParams) this.priceLayout.getLayoutParams()).gravity = 49;
             this.starsPriceView.setVisibility(8);
             this.lastTier = null;
             this.premiumTier = null;
@@ -1916,6 +1921,8 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                 this.priceView.setTextColor(-1);
                 this.tonOnlySaleView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(13.0f), blendOver));
                 this.tonOnlySaleView.setColorFilter(-1);
+                ((FrameLayout.LayoutParams) this.priceLayout.getLayoutParams()).gravity = 49;
+                ((ViewGroup.MarginLayoutParams) this.priceLayout.getLayoutParams()).topMargin = AndroidUtilities.dp(79.0f);
             } else {
                 if (z) {
                     this.priceView.setVisibility(8);
@@ -1950,6 +1957,8 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                 this.priceBackground.setBackground(new StarsBackground(z3 ? 1090519039 : Theme.isCurrentThemeDark() ? 518759725 : 1088989954));
                 this.tonOnlySaleView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(13.0f), z3 ? 1090519039 : Theme.isCurrentThemeDark() ? 518759725 : 1088989954));
                 this.tonOnlySaleView.setColorFilter(z3 ? -1 : Theme.isCurrentThemeDark() ? -1333971 : -4229632);
+                ((FrameLayout.LayoutParams) this.priceLayout.getLayoutParams()).gravity = 49;
+                ((ViewGroup.MarginLayoutParams) this.priceLayout.getLayoutParams()).topMargin = AndroidUtilities.dp(103.0f);
             }
             this.starsPriceView.setVisibility(8);
             this.lastUserGift = savedStarGift;

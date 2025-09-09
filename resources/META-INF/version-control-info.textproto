@@ -1,5 +1,1 @@
-repositories {
-  system: GIT
-  local_root_path: "$PROJECT_DIR"
-  revision: "cfa7534bbaab72c22846b6f2584a959769ae64b0"
-}
+generate_error_reason: NO_VALID_GIT_FOUND
