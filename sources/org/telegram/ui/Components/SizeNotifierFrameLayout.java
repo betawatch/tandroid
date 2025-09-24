@@ -1018,7 +1018,7 @@ public class SizeNotifierFrameLayout extends FrameLayout {
         }
     }
 
-    private float getRenderNodeScale() {
+    public static float getRenderNodeScale() {
         int dp;
         int devicePerformanceClass = SharedConfig.getDevicePerformanceClass();
         if (devicePerformanceClass == 1) {
@@ -1032,7 +1032,7 @@ public class SizeNotifierFrameLayout extends FrameLayout {
         return dp;
     }
 
-    private float getBlurRadius() {
+    public static float getBlurRadius() {
         int devicePerformanceClass = SharedConfig.getDevicePerformanceClass();
         if (devicePerformanceClass != 1) {
             return devicePerformanceClass != 2 ? 3.0f : 60.0f;

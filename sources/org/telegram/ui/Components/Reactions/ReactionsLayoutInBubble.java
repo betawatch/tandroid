@@ -161,26 +161,28 @@ public class ReactionsLayoutInBubble {
         return (reaction instanceof TLRPC.TL_reactionCustomEmoji) && (reaction2 instanceof TLRPC.TL_reactionCustomEmoji) && ((TLRPC.TL_reactionCustomEmoji) reaction).document_id == ((TLRPC.TL_reactionCustomEmoji) reaction2).document_id;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:124:0x0275  */
-    /* JADX WARN: Removed duplicated region for block: B:127:0x0278 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x00ad  */
+    /* JADX WARN: Removed duplicated region for block: B:133:0x02a9  */
+    /* JADX WARN: Removed duplicated region for block: B:136:0x02ac A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x00bc  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x00d6  */
     /* JADX WARN: Type inference failed for: r11v0 */
     /* JADX WARN: Type inference failed for: r11v4, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r11v5 */
+    /* JADX WARN: Type inference failed for: r11v6 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void setMessage(MessageObject messageObject, boolean z, boolean z2, Theme.ResourcesProvider resourcesProvider) {
+        ArrayList arrayList;
+        boolean z3;
         int i;
         TLRPC.ReactionCount reactionCount;
         ReactionButton reactionButton;
-        int i2;
+        boolean z4 = z2;
         this.resourcesProvider = resourcesProvider;
         this.isSmall = z;
-        this.tags = z2;
+        this.tags = z4;
         this.messageObject = messageObject;
-        ArrayList arrayList = new ArrayList(this.reactionButtons);
+        ArrayList arrayList2 = new ArrayList(this.reactionButtons);
         ?? r11 = 0;
         this.hasUnreadReactions = false;
         this.hasPaidReaction = false;
@@ -189,148 +191,169 @@ public class ReactionsLayoutInBubble {
             comparator.dialogId = messageObject.getDialogId();
             TLRPC.TL_messageReactions tL_messageReactions = messageObject.messageOwner.reactions;
             if (tL_messageReactions != null && tL_messageReactions.results != null) {
-                int i3 = 0;
-                for (int i4 = 0; i4 < messageObject.messageOwner.reactions.results.size(); i4++) {
-                    i3 += messageObject.messageOwner.reactions.results.get(i4).count;
+                int i2 = 0;
+                for (int i3 = 0; i3 < messageObject.messageOwner.reactions.results.size(); i3++) {
+                    i2 += messageObject.messageOwner.reactions.results.get(i3).count;
                 }
                 TLRPC.ChatFull chatFull = MessagesController.getInstance(this.currentAccount).getChatFull(-messageObject.getDialogId());
-                int i5 = -1;
                 if (!z && !messageObject.messageOwner.reactions.results.isEmpty() && chatFull != null && chatFull.paid_reactions_available) {
-                    for (int i6 = 0; i6 < messageObject.messageOwner.reactions.results.size(); i6++) {
-                        if (!(messageObject.messageOwner.reactions.results.get(i6).reaction instanceof TLRPC.TL_reactionPaid)) {
+                    boolean z5 = false;
+                    for (int i4 = 0; i4 < messageObject.messageOwner.reactions.results.size(); i4++) {
+                        TLRPC.Reaction reaction = messageObject.messageOwner.reactions.results.get(i4).reaction;
+                        if (reaction instanceof TLRPC.TL_reactionPaid) {
+                            z5 = true;
+                        }
+                        if (reaction instanceof TLRPC.TL_reactionEmoji) {
+                            String str = ((TLRPC.TL_reactionEmoji) reaction).emoticon;
+                            TextUtils.equals("👍", str);
+                            TextUtils.equals("👎", str);
                         }
                     }
-                    i = -1;
-                    while (i < messageObject.messageOwner.reactions.results.size()) {
-                        if (i == i5) {
-                            reactionCount = new TLRPC.TL_reactionCount();
-                            reactionCount.reaction = new TLRPC.TL_reactionPaid();
-                            reactionCount.chosen = r11;
-                            reactionCount.count = r11;
-                        } else {
-                            reactionCount = messageObject.messageOwner.reactions.results.get(i);
+                    if (!z5) {
+                        z3 = true;
+                        ArrayList arrayList3 = new ArrayList();
+                        if (z3) {
+                            arrayList3.add(new TLRPC.TL_reactionPaid());
                         }
-                        TLRPC.ReactionCount reactionCount2 = reactionCount;
-                        int i7 = 0;
-                        while (true) {
-                            if (i7 >= arrayList.size()) {
-                                reactionButton = null;
-                                break;
+                        i = -arrayList3.size();
+                        while (i < messageObject.messageOwner.reactions.results.size()) {
+                            if (i < 0) {
+                                reactionCount = new TLRPC.TL_reactionCount();
+                                reactionCount.reaction = (TLRPC.Reaction) arrayList3.get(arrayList3.size() + i);
+                                reactionCount.chosen = r11;
+                                reactionCount.count = r11;
+                            } else {
+                                reactionCount = messageObject.messageOwner.reactions.results.get(i);
                             }
-                            ReactionButton reactionButton2 = (ReactionButton) arrayList.get(i7);
-                            if (reactionButton2.reaction.equals(reactionCount2.reaction)) {
-                                reactionButton = reactionButton2;
-                                break;
+                            TLRPC.ReactionCount reactionCount2 = reactionCount;
+                            int i5 = 0;
+                            while (true) {
+                                if (i5 >= arrayList2.size()) {
+                                    reactionButton = null;
+                                    break;
+                                }
+                                ReactionButton reactionButton2 = (ReactionButton) arrayList2.get(i5);
+                                if (reactionButton2.reaction.equals(reactionCount2.reaction)) {
+                                    reactionButton = reactionButton2;
+                                    break;
+                                }
+                                i5++;
                             }
-                            i7++;
-                        }
-                        ReactionLayoutButton reactionLayoutButton = new ReactionLayoutButton(reactionButton, reactionCount2, z, z2);
-                        reactionLayoutButton.inGroup = messageObject.hasValidGroupId();
-                        this.reactionButtons.add(reactionLayoutButton);
-                        this.hasPaidReaction = this.hasPaidReaction || reactionLayoutButton.paid;
-                        if (!z && !z2 && messageObject.messageOwner.reactions.recent_reactions != null) {
-                            if (messageObject.getDialogId() > 0 && !UserObject.isReplyUser(messageObject.getDialogId())) {
-                                ArrayList arrayList2 = new ArrayList();
-                                TLRPC.User currentUser = UserConfig.getInstance(this.currentAccount).getCurrentUser();
-                                TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(messageObject.getDialogId()));
-                                if (reactionCount2.count == 2) {
-                                    if (currentUser != null) {
-                                        arrayList2.add(currentUser);
-                                    }
-                                    if (user != null) {
-                                        arrayList2.add(user);
-                                    }
-                                } else if (reactionCount2.chosen) {
-                                    if (currentUser != null) {
-                                        arrayList2.add(currentUser);
-                                    }
-                                } else if (user != null) {
-                                    arrayList2.add(user);
-                                }
-                                reactionLayoutButton.setUsers(arrayList2);
-                                if (!arrayList2.isEmpty()) {
-                                    reactionLayoutButton.count = r11;
-                                    reactionLayoutButton.counterDrawable.setCount(r11, r11);
-                                }
-                            } else if (reactionCount2.count <= 3 && i3 <= 3) {
-                                ArrayList arrayList3 = null;
-                                int i8 = 0;
-                                while (i8 < messageObject.messageOwner.reactions.recent_reactions.size()) {
-                                    TLRPC.MessagePeerReaction messagePeerReaction = messageObject.messageOwner.reactions.recent_reactions.get(i8);
-                                    VisibleReaction fromTL = VisibleReaction.fromTL(messagePeerReaction.reaction);
-                                    VisibleReaction fromTL2 = VisibleReaction.fromTL(reactionCount2.reaction);
-                                    int i9 = i3;
-                                    TLObject userOrChat = MessagesController.getInstance(this.currentAccount).getUserOrChat(MessageObject.getPeerId(messagePeerReaction.peer_id));
-                                    if (fromTL.equals(fromTL2) && userOrChat != null) {
-                                        if (arrayList3 == null) {
-                                            arrayList3 = new ArrayList();
+                            ReactionLayoutButton reactionLayoutButton = new ReactionLayoutButton(reactionButton, reactionCount2, z, z2);
+                            reactionLayoutButton.inGroup = messageObject.hasValidGroupId();
+                            this.reactionButtons.add(reactionLayoutButton);
+                            this.hasPaidReaction = this.hasPaidReaction || reactionLayoutButton.paid;
+                            if (!z && !z4 && messageObject.messageOwner.reactions.recent_reactions != null) {
+                                if (messageObject.getDialogId() > 0 && !UserObject.isReplyUser(messageObject.getDialogId())) {
+                                    ArrayList arrayList4 = new ArrayList();
+                                    TLRPC.User currentUser = UserConfig.getInstance(this.currentAccount).getCurrentUser();
+                                    TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(messageObject.getDialogId()));
+                                    if (reactionCount2.count == 2) {
+                                        if (currentUser != null) {
+                                            arrayList4.add(currentUser);
                                         }
-                                        arrayList3.add(userOrChat);
+                                        if (user != null) {
+                                            arrayList4.add(user);
+                                        }
+                                    } else if (reactionCount2.chosen) {
+                                        if (currentUser != null) {
+                                            arrayList4.add(currentUser);
+                                        }
+                                    } else if (user != null) {
+                                        arrayList4.add(user);
                                     }
-                                    i8++;
-                                    i3 = i9;
+                                    reactionLayoutButton.setUsers(arrayList4);
+                                    if (!arrayList4.isEmpty()) {
+                                        reactionLayoutButton.count = 0;
+                                        reactionLayoutButton.counterDrawable.setCount(0, false);
+                                    }
+                                } else if (reactionCount2.count <= 3 && i2 <= 3) {
+                                    ArrayList arrayList5 = null;
+                                    int i6 = 0;
+                                    while (i6 < messageObject.messageOwner.reactions.recent_reactions.size()) {
+                                        TLRPC.MessagePeerReaction messagePeerReaction = messageObject.messageOwner.reactions.recent_reactions.get(i6);
+                                        VisibleReaction fromTL = VisibleReaction.fromTL(messagePeerReaction.reaction);
+                                        VisibleReaction fromTL2 = VisibleReaction.fromTL(reactionCount2.reaction);
+                                        ArrayList arrayList6 = arrayList2;
+                                        TLObject userOrChat = MessagesController.getInstance(this.currentAccount).getUserOrChat(MessageObject.getPeerId(messagePeerReaction.peer_id));
+                                        if (fromTL.equals(fromTL2) && userOrChat != null) {
+                                            if (arrayList5 == null) {
+                                                arrayList5 = new ArrayList();
+                                            }
+                                            arrayList5.add(userOrChat);
+                                        }
+                                        i6++;
+                                        arrayList2 = arrayList6;
+                                    }
+                                    arrayList = arrayList2;
+                                    reactionLayoutButton.setUsers(arrayList5);
+                                    if (arrayList5 != null && !arrayList5.isEmpty()) {
+                                        reactionLayoutButton.count = 0;
+                                        reactionLayoutButton.counterDrawable.setCount(0, false);
+                                    }
+                                    if (!z && reactionCount2.count > 1 && reactionCount2.chosen) {
+                                        ReactionLayoutButton reactionLayoutButton2 = new ReactionLayoutButton(null, reactionCount2, z, z2);
+                                        reactionLayoutButton2.inGroup = messageObject.hasValidGroupId();
+                                        this.reactionButtons.add(reactionLayoutButton2);
+                                        ((ReactionButton) this.reactionButtons.get(0)).isSelected = false;
+                                        ((ReactionButton) this.reactionButtons.get(1)).isSelected = true;
+                                        ((ReactionButton) this.reactionButtons.get(0)).realCount = 1;
+                                        ((ReactionButton) this.reactionButtons.get(1)).realCount = 1;
+                                        ((ReactionButton) this.reactionButtons.get(1)).key = ((ReactionButton) this.reactionButtons.get(1)).key + "_";
+                                        break;
+                                    }
+                                    if (!z && i == 2) {
+                                        break;
+                                    }
+                                    if (!this.attached) {
+                                        reactionLayoutButton.attach();
+                                    }
+                                    i++;
+                                    z4 = z2;
+                                    arrayList2 = arrayList;
+                                    r11 = 0;
                                 }
-                                i2 = i3;
-                                reactionLayoutButton.setUsers(arrayList3);
-                                if (arrayList3 != null && !arrayList3.isEmpty()) {
-                                    reactionLayoutButton.count = 0;
-                                    reactionLayoutButton.counterDrawable.setCount(0, false);
-                                }
-                                if (!z && reactionCount2.count > 1 && reactionCount2.chosen) {
-                                    ReactionLayoutButton reactionLayoutButton2 = new ReactionLayoutButton(null, reactionCount2, z, z2);
-                                    reactionLayoutButton2.inGroup = messageObject.hasValidGroupId();
-                                    this.reactionButtons.add(reactionLayoutButton2);
-                                    ((ReactionButton) this.reactionButtons.get(0)).isSelected = false;
-                                    ((ReactionButton) this.reactionButtons.get(1)).isSelected = true;
-                                    ((ReactionButton) this.reactionButtons.get(0)).realCount = 1;
-                                    ((ReactionButton) this.reactionButtons.get(1)).realCount = 1;
-                                    ((ReactionButton) this.reactionButtons.get(1)).key = ((ReactionButton) this.reactionButtons.get(1)).key + "_";
-                                    break;
-                                }
-                                if (!z && i == 2) {
-                                    break;
-                                }
-                                if (!this.attached) {
-                                    reactionLayoutButton.attach();
-                                }
-                                i++;
-                                i3 = i2;
-                                r11 = 0;
-                                i5 = -1;
                             }
+                            arrayList = arrayList2;
+                            if (!z) {
+                            }
+                            if (!z) {
+                            }
+                            if (!this.attached) {
+                            }
+                            i++;
+                            z4 = z2;
+                            arrayList2 = arrayList;
+                            r11 = 0;
                         }
-                        i2 = i3;
-                        if (!z) {
-                        }
-                        if (!z) {
-                        }
-                        if (!this.attached) {
-                        }
-                        i++;
-                        i3 = i2;
-                        r11 = 0;
-                        i5 = -1;
                     }
                 }
-                i = 0;
+                z3 = false;
+                ArrayList arrayList32 = new ArrayList();
+                if (z3) {
+                }
+                i = -arrayList32.size();
                 while (i < messageObject.messageOwner.reactions.results.size()) {
                 }
             }
+            arrayList = arrayList2;
             if (!z && !this.reactionButtons.isEmpty()) {
                 ButtonsComparator buttonsComparator = comparator;
                 buttonsComparator.currentAccount = this.currentAccount;
                 Collections.sort(this.reactionButtons, buttonsComparator);
-                for (int i10 = 0; i10 < this.reactionButtons.size(); i10++) {
-                    TLRPC.ReactionCount reactionCount3 = ((ReactionButton) this.reactionButtons.get(i10)).reactionCount;
-                    int i11 = pointer;
-                    pointer = i11 + 1;
-                    reactionCount3.lastDrawnPosition = i11;
+                for (int i7 = 0; i7 < this.reactionButtons.size(); i7++) {
+                    TLRPC.ReactionCount reactionCount3 = ((ReactionButton) this.reactionButtons.get(i7)).reactionCount;
+                    int i8 = pointer;
+                    pointer = i8 + 1;
+                    reactionCount3.lastDrawnPosition = i8;
                 }
             }
             this.hasUnreadReactions = MessageObject.hasUnreadReactions(messageObject.messageOwner);
+        } else {
+            arrayList = arrayList2;
         }
-        for (int i12 = 0; i12 < arrayList.size(); i12++) {
-            ((ReactionButton) arrayList.get(i12)).detach();
+        for (int i9 = 0; i9 < arrayList.size(); i9++) {
+            ((ReactionButton) arrayList.get(i9)).detach();
         }
         this.isEmpty = this.reactionButtons.isEmpty();
     }

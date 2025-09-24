@@ -255,7 +255,7 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
                 public final void run(Object obj) {
                     UserInfoActivity.this.lambda$onClick$2((TL_account.TL_birthday) obj);
                 }
-            }, null, getResourceProvider()).create());
+            }, null, false, getResourceProvider()).create());
             return;
         }
         if (i2 == 2) {

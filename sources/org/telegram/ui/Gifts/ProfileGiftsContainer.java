@@ -1089,11 +1089,11 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         return z ? this.viewPager.getCurrentPosition() >= this.collections.getCollections().size() : this.viewPager.getCurrentPosition() <= 0;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:25:0x029d  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x02aa  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x02b4  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x02b7  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x02a0  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x02ad  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x02ba  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x02c4  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x02c7  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x02b0  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1128,7 +1128,11 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         this.collections = profileGiftCollectionsList;
         profileGiftCollectionsList.all = profileGiftsList;
         profileGiftsList.shown = true;
-        profileGiftsList.resetFilters();
+        if ((baseFragment instanceof ProfileActivity) && ((ProfileActivity) baseFragment).openGiftsUpgradable) {
+            profileGiftsList.setFilters(4);
+        } else {
+            profileGiftsList.resetFilters();
+        }
         profileGiftsList.load();
         this.resourcesProvider = resourcesProvider;
         ViewPagerFixed viewPagerFixed = new ViewPagerFixed(context) { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.1

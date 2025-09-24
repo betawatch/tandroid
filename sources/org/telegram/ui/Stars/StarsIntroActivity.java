@@ -2998,9 +2998,9 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
             NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.starBalanceUpdated);
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:37:0x00e5, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:38:0x00e5, code lost:
         
-            if (org.telegram.messenger.LocaleController.nullable(org.telegram.messenger.LocaleController.getString(r2)) == null) goto L58;
+            if (org.telegram.messenger.LocaleController.nullable(org.telegram.messenger.LocaleController.getString(r2)) == null) goto L61;
          */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -3008,6 +3008,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         public StarsNeededSheet(Context context, Theme.ResourcesProvider resourcesProvider, long j, int i, String str, Runnable runnable, long j2) {
             super(context, null, false, false, false, resourcesProvider);
             String str2;
+            String str3;
             this.BUTTON_EXPAND = -1;
             this.topPadding = 0.2f;
             this.whenPurchased = runnable;
@@ -3036,7 +3037,6 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
             if (i == 1) {
                 str2 = "StarsNeededTextBuySubscription";
             } else {
-                String str3 = "StarsNeededTextKeepSubscription";
                 if (i != 2) {
                     if (i == 7) {
                         str2 = "StarsNeededTextKeepBotSubscription";
@@ -3068,18 +3068,21 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
                             str2 = "StarsNeededTextGiftBuyResale";
                         } else if (i == 15) {
                             str2 = "StarsNeededTextSearch";
+                        } else if (i == 16) {
+                            str2 = "StarsNeededRemoveGiftDescription";
                         } else {
                             str2 = "StarsNeededText";
                         }
                     }
                 }
-                str2 = str3;
+                str2 = "StarsNeededTextKeepSubscription";
             }
-            if (TextUtils.isEmpty(str2)) {
+            str3 = str2;
+            if (TextUtils.isEmpty(str3)) {
                 headerView.subtitleView.setText("");
             } else {
-                String nullable = LocaleController.nullable(LocaleController.formatString(str2, LocaleController.getStringResId(str2), str));
-                headerView.subtitleView.setText(AndroidUtilities.replaceTags(nullable == null ? LocaleController.getString(str2) : nullable));
+                String nullable = LocaleController.nullable(LocaleController.formatString(str3, LocaleController.getStringResId(str3), str));
+                headerView.subtitleView.setText(AndroidUtilities.replaceTags(nullable == null ? LocaleController.getString(str3) : nullable));
                 TextView textView = headerView.subtitleView;
                 textView.setMaxWidth(HintView2.cutInFancyHalf(textView.getText(), headerView.subtitleView.getPaint()));
             }

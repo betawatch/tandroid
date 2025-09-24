@@ -13,7 +13,6 @@ import com.google.android.exoplayer2.util.ConditionVariable;
 import com.google.android.exoplayer2.video.VideoListener;
 import com.google.android.exoplayer2.video.VideoSize;
 import java.util.List;
-import kotlin.NotImplementedError;
 import org.telegram.messenger.DispatchQueue;
 
 /* loaded from: classes.dex */
@@ -347,6 +346,6 @@ public class SimpleExoPlayer extends BasePlayer implements ExoPlayer {
 
     @Override // com.google.android.exoplayer2.ExoPlayer
     public void addVideoListener(VideoListener videoListener) {
-        throw new NotImplementedError();
+        throw new RuntimeException("NotImplementedError");
     }
 }

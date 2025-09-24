@@ -91,7 +91,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesController$$ExternalSyntheticLambda75;
+import org.telegram.messenger.MessagesController$$ExternalSyntheticLambda71;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
@@ -4349,7 +4349,7 @@ public abstract class Theme {
                 themeInfo = currentNightTheme;
             }
             applyTheme(themeInfo, false, false, needSwitchToTheme == 2);
-            AndroidUtilities.runOnUIThread(new MessagesController$$ExternalSyntheticLambda75());
+            AndroidUtilities.runOnUIThread(new MessagesController$$ExternalSyntheticLambda71());
             ambientSensorListener = new SensorEventListener() { // from class: org.telegram.ui.ActionBar.Theme.10
                 @Override // android.hardware.SensorEventListener
                 public void onAccuracyChanged(Sensor sensor, int i803) {
@@ -7951,7 +7951,11 @@ public abstract class Theme {
     }
 
     public static Drawable getSelectorDrawable(boolean z, ResourcesProvider resourcesProvider) {
-        return getSelectorDrawable(getColor(key_listSelector, resourcesProvider), z);
+        int color = getColor(key_listSelector, resourcesProvider);
+        if (z) {
+            return getSelectorDrawable(color, key_windowBackgroundWhite, resourcesProvider);
+        }
+        return createSelectorDrawable(color, 2);
     }
 
     public static Drawable getSelectorDrawable(int i, boolean z) {
@@ -7962,8 +7966,12 @@ public abstract class Theme {
     }
 
     public static Drawable getSelectorDrawable(int i, int i2) {
+        return getSelectorDrawable(i, i2, null);
+    }
+
+    public static Drawable getSelectorDrawable(int i, int i2, ResourcesProvider resourcesProvider) {
         if (i2 >= 0) {
-            return new BaseCell.RippleDrawableSafe(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{i}), new ColorDrawable(getColor(i2)), new ColorDrawable(-1));
+            return new BaseCell.RippleDrawableSafe(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{i}), new ColorDrawable(getColor(i2, resourcesProvider)), new ColorDrawable(-1));
         }
         return createSelectorDrawable(i, 2);
     }
@@ -8681,7 +8689,7 @@ public abstract class Theme {
                 if (isCurrentThemeNight()) {
                     switchNightThemeDelay = 2000;
                     lastDelayUpdateTime = SystemClock.elapsedRealtime();
-                    AndroidUtilities.runOnUIThread(new MessagesController$$ExternalSyntheticLambda75(), 2100L);
+                    AndroidUtilities.runOnUIThread(new MessagesController$$ExternalSyntheticLambda71(), 2100L);
                 }
             }
             currentTheme = themeInfo;
@@ -8820,7 +8828,7 @@ public abstract class Theme {
                 if (isCurrentThemeNight()) {
                     switchNightThemeDelay = 2000;
                     lastDelayUpdateTime = SystemClock.elapsedRealtime();
-                    AndroidUtilities.runOnUIThread(new MessagesController$$ExternalSyntheticLambda75(), 2100L);
+                    AndroidUtilities.runOnUIThread(new MessagesController$$ExternalSyntheticLambda71(), 2100L);
                 }
             }
             currentTheme = themeInfo;
@@ -8931,7 +8939,7 @@ public abstract class Theme {
                 if (isCurrentThemeNight()) {
                     switchNightThemeDelay = 2000;
                     lastDelayUpdateTime = SystemClock.elapsedRealtime();
-                    AndroidUtilities.runOnUIThread(new MessagesController$$ExternalSyntheticLambda75(), 2100L);
+                    AndroidUtilities.runOnUIThread(new MessagesController$$ExternalSyntheticLambda71(), 2100L);
                 }
             }
             currentTheme = themeInfo;
@@ -10461,7 +10469,7 @@ public abstract class Theme {
                                                             }
                                                             if (drawable != null) {
                                                             }
-                                                            messageDrawableArr[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.starGiveawayOptionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
+                                                            messageDrawableArr[1].setBounds(NotificationCenter.audioDidSent, 216, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
                                                             messageDrawableArr[1].setTop(0, 560, 522, false, false);
                                                             messageDrawableArr[1].draw(canvas);
                                                             messageDrawableArr[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
@@ -10529,7 +10537,7 @@ public abstract class Theme {
                                                             }
                                                             if (drawable != null) {
                                                             }
-                                                            messageDrawableArr2[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.starGiveawayOptionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
+                                                            messageDrawableArr2[1].setBounds(NotificationCenter.audioDidSent, 216, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
                                                             messageDrawableArr2[1].setTop(0, 560, 522, false, false);
                                                             messageDrawableArr2[1].draw(canvas);
                                                             messageDrawableArr2[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
@@ -10596,7 +10604,7 @@ public abstract class Theme {
                                                             }
                                                             if (drawable != null) {
                                                             }
-                                                            messageDrawableArr22[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.starGiveawayOptionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
+                                                            messageDrawableArr22[1].setBounds(NotificationCenter.audioDidSent, 216, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
                                                             messageDrawableArr22[1].setTop(0, 560, 522, false, false);
                                                             messageDrawableArr22[1].draw(canvas);
                                                             messageDrawableArr22[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
@@ -10712,7 +10720,7 @@ public abstract class Theme {
                                                                         }
                                                                         if (drawable != null) {
                                                                         }
-                                                                        messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.starGiveawayOptionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
+                                                                        messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 216, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
                                                                         messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                         messageDrawableArr222[1].draw(canvas);
                                                                         messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
@@ -10766,7 +10774,7 @@ public abstract class Theme {
                                                                 drawable.setBounds(width, intrinsicHeight2, drawable.getIntrinsicWidth() + width, drawable.getIntrinsicHeight() + intrinsicHeight2);
                                                                 drawable.draw(canvas);
                                                             }
-                                                            messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.starGiveawayOptionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
+                                                            messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 216, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
                                                             messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                             messageDrawableArr222[1].draw(canvas);
                                                             messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
@@ -10824,7 +10832,7 @@ public abstract class Theme {
                                                             }
                                                             if (drawable != null) {
                                                             }
-                                                            messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.starGiveawayOptionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
+                                                            messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 216, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
                                                             messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                             messageDrawableArr222[1].draw(canvas);
                                                             messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
@@ -10859,7 +10867,7 @@ public abstract class Theme {
                                                         }
                                                         if (drawable != null) {
                                                         }
-                                                        messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.starGiveawayOptionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
+                                                        messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 216, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
                                                         messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                         messageDrawableArr222[1].draw(canvas);
                                                         messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
@@ -10920,7 +10928,7 @@ public abstract class Theme {
                                                                                     }
                                                                                     if (drawable != null) {
                                                                                     }
-                                                                                    messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.starGiveawayOptionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
+                                                                                    messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 216, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
                                                                                     messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                                     messageDrawableArr222[1].draw(canvas);
                                                                                     messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
@@ -10954,7 +10962,7 @@ public abstract class Theme {
                                                                             }
                                                                             if (drawable != null) {
                                                                             }
-                                                                            messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.starGiveawayOptionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
+                                                                            messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 216, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
                                                                             messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                             messageDrawableArr222[1].draw(canvas);
                                                                             messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
@@ -10995,7 +11003,7 @@ public abstract class Theme {
                                                                     }
                                                                     if (drawable != null) {
                                                                     }
-                                                                    messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.starGiveawayOptionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
+                                                                    messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 216, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
                                                                     messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                     messageDrawableArr222[1].draw(canvas);
                                                                     messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
@@ -11064,7 +11072,7 @@ public abstract class Theme {
                                                                         }
                                                                         if (drawable != null) {
                                                                         }
-                                                                        messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.starGiveawayOptionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
+                                                                        messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 216, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
                                                                         messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                         messageDrawableArr222[1].draw(canvas);
                                                                         messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
@@ -11097,7 +11105,7 @@ public abstract class Theme {
                                                                 }
                                                                 if (drawable != null) {
                                                                 }
-                                                                messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.starGiveawayOptionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
+                                                                messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 216, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
                                                                 messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                 messageDrawableArr222[1].draw(canvas);
                                                                 messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
@@ -11133,7 +11141,7 @@ public abstract class Theme {
                                                         }
                                                         if (drawable != null) {
                                                         }
-                                                        messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.starGiveawayOptionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
+                                                        messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 216, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
                                                         messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                         messageDrawableArr222[1].draw(canvas);
                                                         messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
@@ -11168,7 +11176,7 @@ public abstract class Theme {
                                                 }
                                                 if (drawable != null) {
                                                 }
-                                                messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.starGiveawayOptionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
+                                                messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 216, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
                                                 messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                 messageDrawableArr222[1].draw(canvas);
                                                 messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
@@ -11224,7 +11232,7 @@ public abstract class Theme {
                                         }
                                         if (drawable != null) {
                                         }
-                                        messageDrawableArr2222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.starGiveawayOptionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
+                                        messageDrawableArr2222[1].setBounds(NotificationCenter.audioDidSent, 216, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
                                         messageDrawableArr2222[1].setTop(0, 560, 522, false, false);
                                         messageDrawableArr2222[1].draw(canvas);
                                         messageDrawableArr2222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
@@ -11287,7 +11295,7 @@ public abstract class Theme {
                                 }
                                 if (drawable != null) {
                                 }
-                                messageDrawableArr22222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.starGiveawayOptionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
+                                messageDrawableArr22222[1].setBounds(NotificationCenter.audioDidSent, 216, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
                                 messageDrawableArr22222[1].setTop(0, 560, 522, false, false);
                                 messageDrawableArr22222[1].draw(canvas);
                                 messageDrawableArr22222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
@@ -11364,7 +11372,7 @@ public abstract class Theme {
                         }
                         if (drawable != null) {
                         }
-                        messageDrawableArr222222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.starGiveawayOptionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
+                        messageDrawableArr222222[1].setBounds(NotificationCenter.audioDidSent, 216, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
                         messageDrawableArr222222[1].setTop(0, 560, 522, false, false);
                         messageDrawableArr222222[1].draw(canvas);
                         messageDrawableArr222222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
@@ -11456,7 +11464,7 @@ public abstract class Theme {
             }
             if (drawable != null) {
             }
-            messageDrawableArr2222222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.starGiveawayOptionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
+            messageDrawableArr2222222[1].setBounds(NotificationCenter.audioDidSent, 216, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
             messageDrawableArr2222222[1].setTop(0, 560, 522, false, false);
             messageDrawableArr2222222[1].draw(canvas);
             messageDrawableArr2222222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);

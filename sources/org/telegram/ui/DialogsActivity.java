@@ -7481,7 +7481,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             public final void run() {
                 DialogsActivity.this.lambda$updateDialogsHint$40();
             }
-        }, getResourceProvider()).create());
+        }, false, getResourceProvider()).create());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -7520,7 +7520,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
     public /* synthetic */ void lambda$updateDialogsHint$37(TLObject tLObject, TLRPC.UserFull userFull, TL_account.TL_birthday tL_birthday, TLRPC.TL_error tL_error) {
         String str;
         if (tLObject instanceof TLRPC.TL_boolTrue) {
-            BulletinFactory.of(this).createSimpleBulletin(R.raw.contact_check, LocaleController.getString(R.string.PrivacyBirthdaySetDone)).setDuration(5000).show();
+            BulletinFactory.of(this).createSimpleBulletin(R.raw.gift, LocaleController.getString(R.string.PrivacyBirthdaySetDone), LocaleController.getString(R.string.PrivacyBirthdaySetDoneInfo)).setDuration(5000).show();
             return;
         }
         if (userFull != null) {

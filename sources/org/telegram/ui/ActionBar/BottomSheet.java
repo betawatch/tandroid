@@ -99,6 +99,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
     public boolean drawDoubleNavigationBar;
     public boolean drawNavigationBar;
     private boolean focusable;
+    private int focusableSoftInputMode;
     private boolean forceKeyboardOnDismiss;
     private boolean fullHeight;
     protected boolean fullWidth;
@@ -706,14 +707,13 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
             }
             bottomSheet6.keyboardVisible = i5 > AndroidUtilities.dp(20.0f);
             if (BottomSheet.this.lastInsets != null) {
-                int i6 = Build.VERSION.SDK_INT;
                 BottomSheet bottomSheet7 = BottomSheet.this;
                 bottomSheet7.bottomInset = bottomSheet7.lastInsets.getSystemWindowInsetBottom();
                 BottomSheet bottomSheet8 = BottomSheet.this;
                 bottomSheet8.leftInset = bottomSheet8.lastInsets.getSystemWindowInsetLeft();
                 BottomSheet bottomSheet9 = BottomSheet.this;
                 bottomSheet9.rightInset = bottomSheet9.lastInsets.getSystemWindowInsetRight();
-                if (i6 >= 29) {
+                if (Build.VERSION.SDK_INT >= 29) {
                     BottomSheet bottomSheet10 = BottomSheet.this;
                     BottomSheet.access$1012(bottomSheet10, bottomSheet10.getAdditionalMandatoryOffsets());
                 }
@@ -731,10 +731,9 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
                     bottomSheet = BottomSheet.this;
                     bottomSheet.navigationBarHeight = 0;
                     if (bottomSheet.lastInsets != null) {
-                        int i7 = Build.VERSION.SDK_INT;
                         if (!BottomSheet.this.occupyNavigationBar) {
-                            int systemWindowInsetBottom = (int) (r4.lastInsets.getSystemWindowInsetBottom() * (1.0f - BottomSheet.this.hideSystemVerticalInsetsProgress));
-                            if (i7 >= 29) {
+                            int systemWindowInsetBottom = (int) (r2.lastInsets.getSystemWindowInsetBottom() * (1.0f - BottomSheet.this.hideSystemVerticalInsetsProgress));
+                            if (Build.VERSION.SDK_INT >= 29) {
                                 systemWindowInsetBottom += BottomSheet.this.getAdditionalMandatoryOffsets();
                             }
                             if (!BottomSheet.this.occupyNavigationBarWithoutKeyboard || systemWindowInsetBottom > AndroidUtilities.navigationBarHeight + AndroidUtilities.dp(10.0f)) {
@@ -743,13 +742,13 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
                             BottomSheet.this.navigationBarHeight = Math.min(systemWindowInsetBottom, AndroidUtilities.navigationBarHeight);
                         }
                     }
-                    int i8 = size2;
+                    int i6 = size2;
                     if (BottomSheet.this.lastInsets != null) {
                         size -= BottomSheet.this.getRightInset() + BottomSheet.this.getLeftInset();
                     }
-                    int i9 = size;
+                    int i7 = size;
                     BottomSheet bottomSheet13 = BottomSheet.this;
-                    bottomSheet13.isPortrait = i9 < i8;
+                    bottomSheet13.isPortrait = i7 < i6;
                     viewGroup = bottomSheet13.containerView;
                     if (viewGroup != null) {
                         if (!bottomSheet13.fullWidth) {
@@ -758,20 +757,20 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
                                 makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(((int) (Math.min(point.x, point.y) * 0.8f)) + (BottomSheet.this.backgroundPaddingLeft * 2), TLObject.FLAG_30);
                             } else {
                                 BottomSheet bottomSheet14 = BottomSheet.this;
-                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(bottomSheet14.getBottomSheetWidth(bottomSheet14.isPortrait, i9, i8) + (BottomSheet.this.backgroundPaddingLeft * 2), TLObject.FLAG_30);
+                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(bottomSheet14.getBottomSheetWidth(bottomSheet14.isPortrait, i7, i6) + (BottomSheet.this.backgroundPaddingLeft * 2), TLObject.FLAG_30);
                             }
-                            BottomSheet.this.containerView.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(i8, TLObject.FLAG_31));
+                            BottomSheet.this.containerView.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(i6, TLObject.FLAG_31));
                         } else {
-                            viewGroup.measure(View.MeasureSpec.makeMeasureSpec((bottomSheet13.backgroundPaddingLeft * 2) + i9, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i8, TLObject.FLAG_31));
+                            viewGroup.measure(View.MeasureSpec.makeMeasureSpec((bottomSheet13.backgroundPaddingLeft * 2) + i7, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i6, TLObject.FLAG_31));
                         }
                     }
                     childCount = getChildCount();
-                    for (int i10 = 0; i10 < childCount; i10++) {
-                        View childAt = getChildAt(i10);
+                    for (int i8 = 0; i8 < childCount; i8++) {
+                        View childAt = getChildAt(i8);
                         if (childAt.getVisibility() != 8) {
                             BottomSheet bottomSheet15 = BottomSheet.this;
-                            if (childAt != bottomSheet15.containerView && !bottomSheet15.onCustomMeasure(childAt, i9, i8)) {
-                                measureChildWithMargins(childAt, View.MeasureSpec.makeMeasureSpec(i9, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(i8, TLObject.FLAG_30), 0);
+                            if (childAt != bottomSheet15.containerView && !bottomSheet15.onCustomMeasure(childAt, i7, i6)) {
+                                measureChildWithMargins(childAt, View.MeasureSpec.makeMeasureSpec(i7, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(i6, TLObject.FLAG_30), 0);
                             }
                         }
                     }
@@ -783,17 +782,17 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
             bottomSheet.navigationBarHeight = 0;
             if (bottomSheet.lastInsets != null) {
             }
-            int i82 = size2;
+            int i62 = size2;
             if (BottomSheet.this.lastInsets != null) {
             }
-            int i92 = size;
+            int i72 = size;
             BottomSheet bottomSheet132 = BottomSheet.this;
-            bottomSheet132.isPortrait = i92 < i82;
+            bottomSheet132.isPortrait = i72 < i62;
             viewGroup = bottomSheet132.containerView;
             if (viewGroup != null) {
             }
             childCount = getChildCount();
-            while (i10 < childCount) {
+            while (i8 < childCount) {
             }
         }
 
@@ -829,15 +828,14 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
             if (viewGroup != null) {
                 int measuredHeight = (i4 - i2) - viewGroup.getMeasuredHeight();
                 if (BottomSheet.this.lastInsets != null) {
-                    int i15 = Build.VERSION.SDK_INT;
                     i13 = i + BottomSheet.this.getLeftInset();
                     i14 = i3 - BottomSheet.this.getRightInset();
                     BottomSheet bottomSheet2 = BottomSheet.this;
                     if (bottomSheet2.useSmoothKeyboard) {
                         measuredHeight = 0;
                     } else if (!bottomSheet2.occupyNavigationBar) {
-                        measuredHeight = (int) (measuredHeight - ((bottomSheet2.lastInsets.getSystemWindowInsetBottom() * (1.0f - BottomSheet.this.hideSystemVerticalInsetsProgress)) - (BottomSheet.this.drawNavigationBar ? 0 : r6.getBottomInset())));
-                        if (i15 >= 29) {
+                        measuredHeight = (int) (measuredHeight - ((bottomSheet2.lastInsets.getSystemWindowInsetBottom() * (1.0f - BottomSheet.this.hideSystemVerticalInsetsProgress)) - (BottomSheet.this.drawNavigationBar ? 0 : r5.getBottomInset())));
+                        if (Build.VERSION.SDK_INT >= 29) {
                             measuredHeight -= BottomSheet.this.getAdditionalMandatoryOffsets();
                         }
                     }
@@ -930,8 +928,8 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
                 i6 = i3;
             }
             int childCount = getChildCount();
-            for (int i16 = 0; i16 < childCount; i16++) {
-                View childAt = getChildAt(i16);
+            for (int i15 = 0; i15 < childCount; i15++) {
+                View childAt = getChildAt(i15);
                 if (childAt.getVisibility() != 8) {
                     BottomSheet bottomSheet8 = BottomSheet.this;
                     if (childAt != bottomSheet8.containerView) {
@@ -939,24 +937,24 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
                             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
                             int measuredWidth2 = childAt.getMeasuredWidth();
                             int measuredHeight2 = childAt.getMeasuredHeight();
-                            int i17 = layoutParams.gravity;
-                            if (i17 == -1) {
-                                i17 = 51;
+                            int i16 = layoutParams.gravity;
+                            if (i16 == -1) {
+                                i16 = 51;
                             }
-                            int i18 = i17 & 112;
-                            int i19 = i17 & 7;
-                            if (i19 == 1) {
+                            int i17 = i16 & 112;
+                            int i18 = i16 & 7;
+                            if (i18 == 1) {
                                 i7 = (((i6 - i5) - measuredWidth2) / 2) + layoutParams.leftMargin;
                                 i8 = layoutParams.rightMargin;
-                            } else if (i19 == 5) {
+                            } else if (i18 == 5) {
                                 i7 = i6 - measuredWidth2;
                                 i8 = layoutParams.rightMargin;
                             } else {
                                 i9 = layoutParams.leftMargin;
-                                if (i18 != 16) {
+                                if (i17 != 16) {
                                     i10 = (((i4 - i2) - measuredHeight2) / 2) + layoutParams.topMargin;
                                     i11 = layoutParams.bottomMargin;
-                                } else if (i18 == 80) {
+                                } else if (i17 == 80) {
                                     i10 = (i4 - i2) - measuredHeight2;
                                     i11 = layoutParams.bottomMargin;
                                 } else {
@@ -972,7 +970,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
                                 childAt.layout(i9, i12, measuredWidth2 + i9, measuredHeight2 + i12);
                             }
                             i9 = i7 - i8;
-                            if (i18 != 16) {
+                            if (i17 != 16) {
                             }
                             i12 = i10 - i11;
                             if (BottomSheet.this.lastInsets != null) {
@@ -1465,6 +1463,10 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
     }
 
     public BottomSheet(Context context, boolean z, Theme.ResourcesProvider resourcesProvider) {
+        this(context, z, false, resourcesProvider);
+    }
+
+    public BottomSheet(Context context, boolean z, boolean z2, Theme.ResourcesProvider resourcesProvider) {
         super(context, R.style.TransparentDialog);
         this.currentAccount = UserConfig.selectedAccount;
         this.allowDrawContent = true;
@@ -1484,6 +1486,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
         this.allowCustomAnimation = true;
         this.statusBarHeight = AndroidUtilities.statusBarHeight;
         this.openInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
+        this.focusableSoftInputMode = 16;
         this.dimBehind = true;
         this.dimBehindAlpha = 51;
         this.allowNestedScroll = true;
@@ -1502,6 +1505,9 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
         int i2 = Build.VERSION.SDK_INT;
         if (i2 >= 30) {
             getWindow().addFlags(-2147483392);
+            if (z2) {
+                this.focusableSoftInputMode = 48;
+            }
         } else {
             getWindow().addFlags(-2147417856);
         }
@@ -1598,15 +1604,17 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
         this.container.setClipToPadding(false);
         this.container.setBackground(this.backDrawable);
         this.focusable = z;
-        this.container.setFitsSystemWindows(true);
-        this.container.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() { // from class: org.telegram.ui.ActionBar.BottomSheet$$ExternalSyntheticLambda11
-            @Override // android.view.View.OnApplyWindowInsetsListener
-            public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-                WindowInsets lambda$new$1;
-                lambda$new$1 = BottomSheet.this.lambda$new$1(view, windowInsets);
-                return lambda$new$1;
-            }
-        });
+        if (!z2) {
+            this.container.setFitsSystemWindows(true);
+            this.container.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() { // from class: org.telegram.ui.ActionBar.BottomSheet$$ExternalSyntheticLambda11
+                @Override // android.view.View.OnApplyWindowInsetsListener
+                public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
+                    WindowInsets lambda$new$1;
+                    lambda$new$1 = BottomSheet.this.lambda$new$1(view, windowInsets);
+                    return lambda$new$1;
+                }
+            });
+        }
         if (i2 >= 30) {
             this.container.setSystemUiVisibility(1792);
         } else {
@@ -1820,7 +1828,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
             int i3 = attributes.flags & (-3);
             attributes.flags = i3;
             if (this.focusable) {
-                attributes.softInputMode = 16;
+                attributes.softInputMode = this.focusableSoftInputMode;
             } else {
                 attributes.flags = i3 | 131072;
             }
@@ -1881,7 +1889,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
         Window window = getWindow();
         WindowManager.LayoutParams attributes = window.getAttributes();
         if (this.focusable) {
-            attributes.softInputMode = 16;
+            attributes.softInputMode = this.focusableSoftInputMode;
             attributes.flags &= -131073;
         } else {
             attributes.softInputMode = 48;
@@ -1908,7 +1916,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
             }
             setShowing(true);
             if (this.focusable) {
-                getWindow().setSoftInputMode(16);
+                getWindow().setSoftInputMode(this.focusableSoftInputMode);
             }
             this.dismissed = false;
             cancelSheetAnimation();

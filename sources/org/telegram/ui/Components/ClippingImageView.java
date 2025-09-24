@@ -30,8 +30,10 @@ public class ClippingImageView extends View {
     private int clipRight;
     private int clipTop;
     private RectF drawRect;
+    private boolean fade;
     private int imageX;
     private int imageY;
+    private boolean in;
     private int invert;
     private Matrix matrix;
     private boolean needRadius;
@@ -58,8 +60,10 @@ public class ClippingImageView extends View {
         this.shaderMatrix = new Matrix();
     }
 
-    public void setAnimationValues(float[][] fArr) {
+    public void setAnimationValues(float[][] fArr, boolean z, boolean z2) {
         this.animationValues = fArr;
+        this.in = z;
+        this.fade = z2;
     }
 
     public void setAdditionalTranslationY(float f) {
@@ -129,6 +133,12 @@ public class ClippingImageView extends View {
             float[][] fArr11 = this.animationValues;
             float f12 = fArr11[0][12];
             setImageX((int) (f12 + ((fArr11[1][12] - f12) * this.animationProgress)));
+        }
+        if (this.fade) {
+            if (!this.in) {
+                f = 1.0f - f;
+            }
+            setAlpha(f);
         }
         invalidate();
     }

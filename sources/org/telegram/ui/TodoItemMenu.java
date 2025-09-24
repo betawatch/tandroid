@@ -1552,6 +1552,11 @@ public class TodoItemMenu extends Dialog {
                     final MessageObject messageObject3 = messageObject;
                     reactionsContainerLayout.setDelegate(new ReactionsContainerLayout.ReactionsContainerDelegate() { // from class: org.telegram.ui.TodoItemMenu.13
                         @Override // org.telegram.ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
+                        public /* synthetic */ boolean allowLongPress() {
+                            return ReactionsContainerLayout.ReactionsContainerDelegate.-CC.$default$allowLongPress(this);
+                        }
+
+                        @Override // org.telegram.ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
                         public /* synthetic */ boolean drawBackground() {
                             return ReactionsContainerLayout.ReactionsContainerDelegate.-CC.$default$drawBackground(this);
                         }

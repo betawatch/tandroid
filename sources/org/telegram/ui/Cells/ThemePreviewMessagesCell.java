@@ -98,8 +98,8 @@ public class ThemePreviewMessagesCell extends LinearLayout {
         this(context, iNavigationLayout, i, j, null);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0407  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x046e A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0409  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x0470 A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -200,6 +200,7 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                 tL_peerChannel2.channel_id = -j;
             }
             MessageObject messageObject3 = new MessageObject(UserConfig.selectedAccount, tL_message, true, false);
+            messageObject3.notime = true;
             messageObject3.forceAvatar = true;
             messageObject3.resetLayout();
             messageObject3.eventId = 1L;

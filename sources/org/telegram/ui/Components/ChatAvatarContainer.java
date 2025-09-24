@@ -25,6 +25,7 @@ import androidx.core.content.ContextCompat;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.BotForumHelper;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.Emoji;
@@ -99,6 +100,7 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
     private StatusDrawable[] statusDrawables;
     public boolean[] statusMadeShorter;
     private Integer storiesForceState;
+    private boolean subtitleIsThinkingBot;
     private AtomicReference subtitleTextLargerCopyView;
     private SimpleTextView subtitleTextView;
     private ImageView timeItem;
@@ -167,9 +169,9 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
         this(context, baseFragment, z, null);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:47:0x031d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x0325, code lost:
     
-        if (r2.isComments == false) goto L78;
+        if (r2.isComments == false) goto L80;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -212,7 +214,7 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
         this.avatarImageView = new 1(context, baseFragment, z3, resourcesProvider);
         if (z2 || (baseFragment instanceof TopicsFragment)) {
             ChatActivity chatActivity2 = this.parentFragment;
-            if (chatActivity2 == null || (chatActivity2.getChatMode() != 5 && this.parentFragment.getChatMode() != 6 && this.parentFragment.getChatMode() != 8)) {
+            if (chatActivity2 == null || (chatActivity2.getChatMode() != 5 && this.parentFragment.getChatMode() != 6 && this.parentFragment.getChatMode() != 8 && !this.parentFragment.isInBotForumMode())) {
                 this.sharedMediaPreloader = new SharedMediaLayout.SharedMediaPreloader(baseFragment);
             }
             ChatActivity chatActivity3 = this.parentFragment;
@@ -729,6 +731,9 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
                     bundle2.putLong("dialog_id", this.parentFragment.getDialogId());
                 }
             }
+            if (UserObject.isBotForum(currentUser)) {
+                bundle2.putLong("topic_id", this.parentFragment.getTopicId());
+            }
             bundle2.putBoolean("reportSpam", this.parentFragment.hasReportSpam());
             bundle2.putInt("actionBarColor", getThemedColor(Theme.key_actionBarDefault));
             ProfileActivity profileActivity2 = new ProfileActivity(bundle2, this.sharedMediaPreloader);
@@ -1161,7 +1166,7 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
         int i = 0;
         if (z) {
             try {
-                int intValue = MessagesController.getInstance(this.currentAccount).getPrintingStringType(this.parentFragment.getDialogId(), this.parentFragment.getThreadId()).intValue();
+                int intValue = this.subtitleIsThinkingBot ? 0 : MessagesController.getInstance(this.currentAccount).getPrintingStringType(this.parentFragment.getDialogId(), this.parentFragment.getThreadId()).intValue();
                 StatusDrawable statusDrawable = this.statusDrawables[intValue];
                 if (statusDrawable == null) {
                     return;
@@ -1219,8 +1224,7 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
     public void updateSubtitle(boolean z) {
         int i;
         String string;
-        boolean z2 = false;
-        boolean z3 = true;
+        boolean z2 = true;
         ChatActivity chatActivity = this.parentFragment;
         if (chatActivity == null) {
             return;
@@ -1238,7 +1242,12 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
             }
             return;
         }
+        this.subtitleIsThinkingBot = false;
         CharSequence printingString = MessagesController.getInstance(this.currentAccount).getPrintingString(this.parentFragment.getDialogId(), this.parentFragment.getThreadId(), false);
+        if (printingString == null && UserObject.isBotForum(currentUser) && BotForumHelper.getInstance(this.currentAccount).isThinking(currentUser.id, (int) this.parentFragment.getTopicId())) {
+            this.subtitleIsThinkingBot = true;
+            printingString = "thinking";
+        }
         CharSequence charSequence = "";
         if (printingString != null) {
             printingString = TextUtils.replace(printingString, new String[]{"..."}, new String[]{""});
@@ -1326,16 +1335,17 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
                                 } else if (MessagesController.isSupportUser(currentUser)) {
                                     charSequence = LocaleController.getString(R.string.SupportStatus);
                                 } else {
-                                    boolean z4 = currentUser.bot;
-                                    if (z4 && (i = currentUser.bot_active_users) != 0) {
+                                    boolean z3 = currentUser.bot;
+                                    if (z3 && (i = currentUser.bot_active_users) != 0) {
                                         charSequence = LocaleController.formatPluralStringComma("BotUsers", i, ',');
-                                    } else if (z4) {
+                                    } else if (z3) {
                                         charSequence = LocaleController.getString(R.string.Bot);
                                     } else {
                                         boolean[] zArr = this.isOnline;
                                         zArr[0] = false;
                                         charSequence = LocaleController.formatUserStatus(this.currentAccount, currentUser, zArr, this.allowShorterStatus ? this.statusMadeShorter : null);
                                         z2 = this.isOnline[0];
+                                        printingString = charSequence;
                                     }
                                 }
                             }
@@ -1343,7 +1353,7 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
                     }
                 }
             }
-            z3 = z2;
+            z2 = false;
             printingString = charSequence;
         } else {
             if (this.parentFragment.isThreadChat() && this.titleTextView.getTag() != null) {
@@ -1371,12 +1381,13 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
                     getSubtitleTextView().setAlpha(1.0f);
                 }
             }
-            if (MessagesController.getInstance(this.currentAccount).getPrintingStringType(this.parentFragment.getDialogId(), this.parentFragment.getThreadId()).intValue() == 5) {
+            Integer printingStringType = MessagesController.getInstance(this.currentAccount).getPrintingStringType(this.parentFragment.getDialogId(), this.parentFragment.getThreadId());
+            if (printingStringType != null && printingStringType.intValue() == 5) {
                 printingString = Emoji.replaceEmoji(printingString, getSubtitlePaint().getFontMetricsInt(), false);
             }
             setTypingAnimation(true);
         }
-        this.lastSubtitleColorKey = z3 ? Theme.key_chat_status : Theme.key_actionBarDefaultSubtitle;
+        this.lastSubtitleColorKey = z2 ? Theme.key_chat_status : Theme.key_actionBarDefaultSubtitle;
         if (this.lastSubtitle == null) {
             SimpleTextView simpleTextView = this.subtitleTextView;
             if (simpleTextView != null) {

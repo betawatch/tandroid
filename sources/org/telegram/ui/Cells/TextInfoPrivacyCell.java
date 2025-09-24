@@ -142,6 +142,10 @@ public class TextInfoPrivacyCell extends FrameLayout {
         this.fixedSize = i;
     }
 
+    public int getFixedSize() {
+        return this.fixedSize;
+    }
+
     public CharSequence getText() {
         return this.textView.getText();
     }

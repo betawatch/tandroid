@@ -3087,7 +3087,7 @@ public class PrivacyControlActivity extends BaseFragment implements Notification
                 public final void run(Object obj) {
                     PrivacyControlActivity.ListAdapter.this.lambda$onBindViewHolder$4((TL_account.TL_birthday) obj);
                 }
-            }, null, PrivacyControlActivity.this.getResourceProvider()).create());
+            }, null, false, PrivacyControlActivity.this.getResourceProvider()).create());
         }
 
         /* JADX INFO: Access modifiers changed from: private */

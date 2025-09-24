@@ -144,6 +144,7 @@ public class MessageObject {
     public static final int TYPE_STICKER = 13;
     public static final int TYPE_STORY = 23;
     public static final int TYPE_STORY_MENTION = 24;
+    public static final int TYPE_SUGGEST_BIRTHDAY = 32;
     public static final int TYPE_SUGGEST_PHOTO = 21;
     public static final int TYPE_TEXT = 0;
     public static final int TYPE_VIDEO = 3;
@@ -229,6 +230,7 @@ public class MessageObject {
     public VideoPlayer.VideoUri highestQuality;
     public ArrayList<String> highlightedWords;
     private BotInlineKeyboard.Source inlineKeyboardSource;
+    public boolean isBotPendingDraft;
     public boolean isDateObject;
     public boolean isDownloadingFile;
     private Boolean isEmbedVideoCached;
@@ -280,6 +282,7 @@ public class MessageObject {
     public boolean openedInViewer;
     public int overrideLinkColor;
     public long overrideLinkEmoji;
+    public TLRPC.TL_peerColorCollectible overrideLinkPeerColor;
     public StoriesController.StoriesList parentStoriesList;
     public int parentWidth;
     public SvgHelper.SvgDrawable pathThumb;
@@ -326,7 +329,7 @@ public class MessageObject {
     public String sponsoredAdditionalInfo;
     public String sponsoredButtonText;
     public boolean sponsoredCanReport;
-    public TLRPC.TL_peerColor sponsoredColor;
+    public TLRPC.PeerColor sponsoredColor;
     public byte[] sponsoredId;
     public String sponsoredInfo;
     public TLRPC.MessageMedia sponsoredMedia;
@@ -459,6 +462,10 @@ public class MessageObject {
     public long getTopicId() {
         TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-getDialogId()));
         return getTopicId(this.currentAccount, this.messageOwner, ChatObject.isForum(chat), ChatObject.isMonoForum(chat));
+    }
+
+    public static long getTopicId(int i, TLRPC.Message message, int i2) {
+        return getTopicId(i, message, (i2 & 1) != 0, (i2 & 4) != 0);
     }
 
     public static long getTopicId(int i, TLRPC.Message message, boolean z) {
@@ -950,6 +957,7 @@ public class MessageObject {
         public int padTop;
         public boolean quote;
         public boolean quoteCollapse;
+        public int start;
         public StaticLayout textLayout;
         public AtomicReference<Layout> spoilersPatchedTextLayout = new AtomicReference<>();
         public List<SpoilerEffect> spoilers = new ArrayList();
@@ -1239,7 +1247,7 @@ public class MessageObject {
             return this.maxSizeWidth / f;
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:302:0x07b5, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:302:0x07b6, code lost:
         
             if (r15[2] > r15[3]) goto L251;
          */
@@ -1247,16 +1255,16 @@ public class MessageObject {
         
             if ((org.telegram.messenger.MessageObject.getMedia(r15.messageOwner) instanceof org.telegram.tgnet.TLRPC.TL_messageMediaInvoice) == false) goto L44;
          */
-        /* JADX WARN: Removed duplicated region for block: B:119:0x086f  */
+        /* JADX WARN: Removed duplicated region for block: B:119:0x0870  */
         /* JADX WARN: Removed duplicated region for block: B:17:0x0068  */
         /* JADX WARN: Removed duplicated region for block: B:19:0x006e  */
         /* JADX WARN: Removed duplicated region for block: B:42:0x00ef  */
         /* JADX WARN: Removed duplicated region for block: B:45:0x00ff  */
-        /* JADX WARN: Removed duplicated region for block: B:48:0x0122  */
-        /* JADX WARN: Removed duplicated region for block: B:51:0x013d  */
-        /* JADX WARN: Removed duplicated region for block: B:58:0x0159  */
-        /* JADX WARN: Removed duplicated region for block: B:61:0x0162  */
-        /* JADX WARN: Removed duplicated region for block: B:67:0x0154  */
+        /* JADX WARN: Removed duplicated region for block: B:48:0x0123  */
+        /* JADX WARN: Removed duplicated region for block: B:51:0x013e  */
+        /* JADX WARN: Removed duplicated region for block: B:58:0x015a  */
+        /* JADX WARN: Removed duplicated region for block: B:61:0x0163  */
+        /* JADX WARN: Removed duplicated region for block: B:67:0x0155  */
         /* JADX WARN: Removed duplicated region for block: B:68:0x0106  */
         /* JADX WARN: Removed duplicated region for block: B:72:0x00f2  */
         /* JADX WARN: Removed duplicated region for block: B:89:0x00c2  */
@@ -5068,96 +5076,73 @@ public class MessageObject {
         return false;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0053  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0060  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x0120 A[ADDED_TO_REGION, ORIG_RETURN, RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x005b  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public void measureInlineBotButtons() {
-        BotInlineKeyboard.Source source;
         TLRPC.TL_messageReactions tL_messageReactions;
         CharSequence replaceEmoji;
-        StringBuilder sb;
         if (this.isRestrictedMessage) {
             return;
         }
         this.wantedBotKeyboardWidth = 0;
         this.inlineKeyboardSource = null;
+        BotInlineKeyboard.Builder builder = new BotInlineKeyboard.Builder();
         TLRPC.Message message = this.messageOwner;
         if (message != null) {
             TLRPC.ReplyMarkup replyMarkup = message.reply_markup;
             if ((replyMarkup instanceof TLRPC.TL_replyInlineMarkup) && replyMarkup.rows != null) {
-                this.inlineKeyboardSource = BotInlineKeyboard.fromBot((TLRPC.TL_replyInlineMarkup) replyMarkup, hasSuggestionInlineButtons());
-                source = this.inlineKeyboardSource;
-                if ((source != null && !hasExtendedMedia()) || ((tL_messageReactions = this.messageOwner.reactions) != null && !tL_messageReactions.results.isEmpty())) {
-                    Theme.createCommonMessageResources();
-                    sb = this.botButtonsLayout;
-                    if (sb == null) {
-                        this.botButtonsLayout = new StringBuilder();
-                    } else {
-                        sb.setLength(0);
-                    }
-                }
-                if (source == null || hasExtendedMedia()) {
-                    return;
-                }
-                for (int i = 0; i < source.getRowsCount(); i++) {
-                    int columnsCount = source.getColumnsCount(i);
-                    int i2 = 0;
-                    for (int i3 = 0; i3 < columnsCount; i3++) {
-                        BotInlineKeyboard.Button button = source.getButton(i, i3);
-                        StringBuilder sb2 = this.botButtonsLayout;
-                        sb2.append(i);
-                        sb2.append(i3);
-                        if ((button instanceof BotInlineKeyboard.ButtonBot) && (((BotInlineKeyboard.ButtonBot) button).button instanceof TLRPC.TL_keyboardButtonBuy) && (getMedia(this.messageOwner).flags & 4) != 0) {
-                            replaceEmoji = LocaleController.getString(R.string.PaymentReceipt);
-                        } else {
-                            String text = button.getText();
-                            if (text == null) {
-                                text = "";
-                            }
-                            replaceEmoji = Emoji.replaceEmoji(text, Theme.chat_msgBotButtonPaint.getFontMetricsInt(), false);
-                        }
-                        StaticLayout staticLayout = new StaticLayout(replaceEmoji, Theme.chat_msgBotButtonPaint, AndroidUtilities.dp(2000.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-                        if (staticLayout.getLineCount() > 0) {
-                            float lineWidth = staticLayout.getLineWidth(0);
-                            float lineLeft = staticLayout.getLineLeft(0);
-                            if (lineLeft < lineWidth) {
-                                lineWidth -= lineLeft;
-                            }
-                            if (button.getIcon() != 0) {
-                                lineWidth += AndroidUtilities.dp(36.0f);
-                            }
-                            i2 = Math.max(i2, ((int) Math.ceil(lineWidth)) + AndroidUtilities.dp(4.0f));
-                        }
-                    }
-                    this.wantedBotKeyboardWidth = Math.max(this.wantedBotKeyboardWidth, ((i2 + AndroidUtilities.dp(12.0f)) * columnsCount) + (AndroidUtilities.dp(5.0f) * (columnsCount - 1)));
-                }
-                return;
+                builder.addBotKeyboard((TLRPC.TL_replyInlineMarkup) replyMarkup);
             }
         }
         if (hasSuggestionInlineButtons()) {
-            this.inlineKeyboardSource = BotInlineKeyboard.fromSuggestion();
+            builder.addSeparator();
+            builder.addSuggestionKeyboard();
         }
-        source = this.inlineKeyboardSource;
-        if (source != null) {
+        if (builder.isNotEmpty()) {
+            this.inlineKeyboardSource = builder.build();
+        }
+        BotInlineKeyboard.Source source = this.inlineKeyboardSource;
+        if ((source != null && !hasExtendedMedia()) || ((tL_messageReactions = this.messageOwner.reactions) != null && !tL_messageReactions.results.isEmpty())) {
             Theme.createCommonMessageResources();
-            sb = this.botButtonsLayout;
+            StringBuilder sb = this.botButtonsLayout;
             if (sb == null) {
-            }
-            if (source == null) {
-                return;
+                this.botButtonsLayout = new StringBuilder();
             } else {
-                return;
+                sb.setLength(0);
             }
         }
-        Theme.createCommonMessageResources();
-        sb = this.botButtonsLayout;
-        if (sb == null) {
+        if (source == null || hasExtendedMedia()) {
+            return;
         }
-        if (source == null) {
+        for (int i = 0; i < source.getRowsCount(); i++) {
+            int columnsCount = source.getColumnsCount(i);
+            int i2 = 0;
+            for (int i3 = 0; i3 < columnsCount; i3++) {
+                BotInlineKeyboard.Button button = source.getButton(i, i3);
+                StringBuilder sb2 = this.botButtonsLayout;
+                sb2.append(i);
+                sb2.append(i3);
+                if ((button instanceof BotInlineKeyboard.ButtonBot) && (((BotInlineKeyboard.ButtonBot) button).button instanceof TLRPC.TL_keyboardButtonBuy) && (getMedia(this.messageOwner).flags & 4) != 0) {
+                    replaceEmoji = LocaleController.getString(R.string.PaymentReceipt);
+                } else {
+                    String text = button.getText();
+                    if (text == null) {
+                        text = "";
+                    }
+                    replaceEmoji = Emoji.replaceEmoji(text, Theme.chat_msgBotButtonPaint.getFontMetricsInt(), false);
+                }
+                StaticLayout staticLayout = new StaticLayout(replaceEmoji, Theme.chat_msgBotButtonPaint, AndroidUtilities.dp(2000.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                if (staticLayout.getLineCount() > 0) {
+                    float lineWidth = staticLayout.getLineWidth(0);
+                    float lineLeft = staticLayout.getLineLeft(0);
+                    if (lineLeft < lineWidth) {
+                        lineWidth -= lineLeft;
+                    }
+                    if (button.getIcon() != 0) {
+                        lineWidth += AndroidUtilities.dp(36.0f);
+                    }
+                    i2 = Math.max(i2, ((int) Math.ceil(lineWidth)) + AndroidUtilities.dp(4.0f));
+                }
+            }
+            this.wantedBotKeyboardWidth = Math.max(this.wantedBotKeyboardWidth, ((i2 + AndroidUtilities.dp(12.0f)) * columnsCount) + (AndroidUtilities.dp(5.0f) * (columnsCount - 1)));
         }
     }
 
@@ -5195,15 +5180,15 @@ public class MessageObject {
         updateMessageText(MessagesController.getInstance(this.currentAccount).getUsers(), MessagesController.getInstance(this.currentAccount).getChats(), null, null);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:1295:0x20b6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:1304:0x20f2, code lost:
     
-        if ((((org.telegram.tgnet.TLRPC.TL_messageExtendedMediaPreview) r4).flags & 4) != 0) goto L1274;
+        if ((((org.telegram.tgnet.TLRPC.TL_messageExtendedMediaPreview) r4).flags & 4) != 0) goto L1283;
      */
-    /* JADX WARN: Removed duplicated region for block: B:1202:0x1eb6  */
-    /* JADX WARN: Removed duplicated region for block: B:1217:0x1f0d  */
-    /* JADX WARN: Removed duplicated region for block: B:1219:0x1f10  */
-    /* JADX WARN: Removed duplicated region for block: B:1392:0x0039  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x232f  */
+    /* JADX WARN: Removed duplicated region for block: B:1211:0x1ef2  */
+    /* JADX WARN: Removed duplicated region for block: B:1226:0x1f49  */
+    /* JADX WARN: Removed duplicated region for block: B:1228:0x1f4c  */
+    /* JADX WARN: Removed duplicated region for block: B:1401:0x0039  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x236b  */
     /* JADX WARN: Removed duplicated region for block: B:296:0x07ff  */
     /* JADX WARN: Removed duplicated region for block: B:305:0x081e  */
     /* JADX WARN: Removed duplicated region for block: B:323:0x085c  */
@@ -5212,15 +5197,15 @@ public class MessageObject {
     /* JADX WARN: Removed duplicated region for block: B:347:0x086c  */
     /* JADX WARN: Removed duplicated region for block: B:362:0x08f7  */
     /* JADX WARN: Removed duplicated region for block: B:370:0x091d  */
-    /* JADX WARN: Removed duplicated region for block: B:597:0x0f2b  */
-    /* JADX WARN: Removed duplicated region for block: B:601:0x0f45  */
-    /* JADX WARN: Removed duplicated region for block: B:620:0x0fa3  */
-    /* JADX WARN: Removed duplicated region for block: B:621:0x0fb7  */
-    /* JADX WARN: Removed duplicated region for block: B:637:0x0ffd  */
-    /* JADX WARN: Removed duplicated region for block: B:638:0x1007  */
+    /* JADX WARN: Removed duplicated region for block: B:606:0x0f67  */
+    /* JADX WARN: Removed duplicated region for block: B:610:0x0f81  */
+    /* JADX WARN: Removed duplicated region for block: B:629:0x0fdf  */
+    /* JADX WARN: Removed duplicated region for block: B:630:0x0ff3  */
+    /* JADX WARN: Removed duplicated region for block: B:646:0x1039  */
+    /* JADX WARN: Removed duplicated region for block: B:647:0x1043  */
     /* JADX WARN: Removed duplicated region for block: B:6:0x0037  */
-    /* JADX WARN: Removed duplicated region for block: B:729:0x11f0  */
-    /* JADX WARN: Removed duplicated region for block: B:749:0x1290  */
+    /* JADX WARN: Removed duplicated region for block: B:738:0x122c  */
+    /* JADX WARN: Removed duplicated region for block: B:758:0x12cc  */
     /* JADX WARN: Removed duplicated region for block: B:9:0x004c  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -5841,6 +5826,8 @@ public class MessageObject {
                                                         CharSequence replaceWithLink9 = replaceWithLink(replaceTags2, "un1", chat8);
                                                         this.messageText = replaceWithLink9;
                                                         this.messageText = replaceWithLink(replaceWithLink9, "un2", chat9);
+                                                    } else if (tL_messageActionStarGiftUnique.assigned) {
+                                                        this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionUniqueGiftTransferOutboundAssigned)), "un1", chat8);
                                                     } else {
                                                         this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(isOutOwner() ? R.string.ActionUniqueGiftTransferOutbound : R.string.ActionUniqueGiftTransferInbound)), "un1", chat8);
                                                     }
@@ -5892,7 +5879,13 @@ public class MessageObject {
                                                 } else {
                                                     TLRPC.Message message4 = this.messageOwner;
                                                     TLRPC.MessageAction messageAction6 = message4.action;
-                                                    if (messageAction6 instanceof TLRPC.TL_messageActionSuggestProfilePhoto) {
+                                                    if (messageAction6 instanceof TLRPC.TL_messageActionSuggestBirthday) {
+                                                        if (isOutOwner()) {
+                                                            this.messageText = LocaleController.getString(R.string.ActionYouSuggestBirthday);
+                                                        } else {
+                                                            this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionSuggestBirthday)), "un1", tLObject3);
+                                                        }
+                                                    } else if (messageAction6 instanceof TLRPC.TL_messageActionSuggestProfilePhoto) {
                                                         TLRPC.Photo photo = messageAction6.photo;
                                                         if (photo != null && (arrayList = photo.video_sizes) != null && !arrayList.isEmpty()) {
                                                             this.messageText = LocaleController.getString(R.string.ActionSuggestVideoShort);
@@ -7160,6 +7153,9 @@ public class MessageObject {
                             this.type = 16;
                         } else if ((messageAction instanceof TLRPC.TL_messageActionSetChatTheme) && (((TLRPC.TL_messageActionSetChatTheme) messageAction).theme instanceof TLRPC.TL_chatThemeUniqueGift)) {
                             this.type = 31;
+                            this.contentType = 1;
+                        } else if (messageAction instanceof TLRPC.TL_messageActionSuggestBirthday) {
+                            this.type = 32;
                             this.contentType = 1;
                         } else {
                             this.contentType = 1;
@@ -9220,26 +9216,26 @@ public class MessageObject {
         return new StaticLayout(charSequence, textPaint, i, Layout.Alignment.ALIGN_NORMAL, f, f2, false);
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(14:265|(3:266|267|268)|269|(1:271)(11:300|(1:302)|273|274|275|(1:277)|278|(2:280|(3:282|(5:285|286|(1:291)|288|289)|290))(1:297)|296|(1:295)(5:285|286|(0)|288|289)|290)|272|273|274|275|(0)|278|(0)(0)|296|(0)(0)|290) */
+    /* JADX WARN: Can't wrap try/catch for region: R(16:265|266|267|268|269|(1:271)(11:300|(1:302)|273|274|275|(1:277)|278|(2:280|(3:282|(5:285|286|(1:291)|288|289)|290))(1:297)|296|(1:295)(5:285|286|(0)|288|289)|290)|272|273|274|275|(0)|278|(0)(0)|296|(0)(0)|290) */
     /* JADX WARN: Can't wrap try/catch for region: R(48:144|(1:146)|147|(1:149)(1:416)|150|(1:152)(1:415)|153|(1:155)|(1:157)|(1:414)(1:162)|163|(1:413)(1:170)|171|(2:173|(2:(1:396)|397)(1:176))(2:398|(7:400|(1:402)(1:412)|403|(1:405)(1:411)|406|(1:408)(1:410)|409))|177|(3:179|(1:181)(1:(1:392)(1:393))|182)(1:394)|183|(1:185)(2:387|(1:389)(1:390))|186|(5:188|(1:363)(8:194|(1:196)(1:362)|197|198|(1:200)(1:361)|201|(1:203)(1:360)|204)|205|(2:207|(2:209|(2:211|(1:213))(1:214))(1:215))|216)(3:364|(2:366|367)(8:368|369|370|(1:381)(1:374)|375|376|(1:378)(1:380)|379)|329)|217|218|219|220|(2:224|225)|356|231|232|233|(1:235)(17:350|(1:352)|237|(1:239)|240|(1:242)|243|(3:245|(7:247|248|249|250|251|253|254)|260)|261|(6:263|(16:265|266|267|268|269|(1:271)(11:300|(1:302)|273|274|275|(1:277)|278|(2:280|(3:282|(5:285|286|(1:291)|288|289)|290))(1:297)|296|(1:295)(5:285|286|(0)|288|289)|290)|272|273|274|275|(0)|278|(0)(0)|296|(0)(0)|290)|305|306|(2:(1:309)|310)(1:(1:336))|311)(3:337|(5:339|(1:341)(1:348)|342|(1:344)(1:347)|345)(1:349)|346)|312|(3:314|(1:316)(1:318)|317)|319|(1:334)(3:323|(1:325)(3:330|(1:332)|333)|326)|327|328|329)|236|237|(0)|240|(0)|243|(0)|261|(0)(0)|312|(0)|319|(1:321)|334|327|328|329|142) */
-    /* JADX WARN: Code restructure failed: missing block: B:299:0x060e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:299:0x0612, code lost:
     
         r13 = 0.0f;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:354:0x0562, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:354:0x0566, code lost:
     
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:355:0x0563, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:355:0x0567, code lost:
     
         org.telegram.messenger.FileLog.e(r0);
         r0 = 0.0f;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:358:0x054f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:358:0x0553, code lost:
     
         r0 = e;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:359:0x0550, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:359:0x0554, code lost:
     
         r11 = 0.0f;
      */
@@ -9249,22 +9245,22 @@ public class MessageObject {
     /* JADX WARN: Removed duplicated region for block: B:132:0x0247  */
     /* JADX WARN: Removed duplicated region for block: B:135:0x025b  */
     /* JADX WARN: Removed duplicated region for block: B:144:0x02f5  */
-    /* JADX WARN: Removed duplicated region for block: B:235:0x056b  */
-    /* JADX WARN: Removed duplicated region for block: B:239:0x058a  */
-    /* JADX WARN: Removed duplicated region for block: B:242:0x058f  */
-    /* JADX WARN: Removed duplicated region for block: B:245:0x05a9  */
-    /* JADX WARN: Removed duplicated region for block: B:263:0x05d1  */
-    /* JADX WARN: Removed duplicated region for block: B:277:0x0617  */
-    /* JADX WARN: Removed duplicated region for block: B:280:0x061e  */
-    /* JADX WARN: Removed duplicated region for block: B:284:0x0648 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:291:0x0653 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:295:0x0653 A[ADDED_TO_REGION, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:297:0x0633  */
-    /* JADX WARN: Removed duplicated region for block: B:314:0x06ec  */
-    /* JADX WARN: Removed duplicated region for block: B:321:0x071a  */
-    /* JADX WARN: Removed duplicated region for block: B:337:0x06a2  */
-    /* JADX WARN: Removed duplicated region for block: B:350:0x0574  */
-    /* JADX WARN: Removed duplicated region for block: B:420:0x076c  */
+    /* JADX WARN: Removed duplicated region for block: B:235:0x056f  */
+    /* JADX WARN: Removed duplicated region for block: B:239:0x058e  */
+    /* JADX WARN: Removed duplicated region for block: B:242:0x0593  */
+    /* JADX WARN: Removed duplicated region for block: B:245:0x05ad  */
+    /* JADX WARN: Removed duplicated region for block: B:263:0x05d5  */
+    /* JADX WARN: Removed duplicated region for block: B:277:0x061b  */
+    /* JADX WARN: Removed duplicated region for block: B:280:0x0622  */
+    /* JADX WARN: Removed duplicated region for block: B:284:0x064c A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:291:0x0657 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:295:0x0657 A[ADDED_TO_REGION, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:297:0x0637  */
+    /* JADX WARN: Removed duplicated region for block: B:314:0x06f0  */
+    /* JADX WARN: Removed duplicated region for block: B:321:0x071e  */
+    /* JADX WARN: Removed duplicated region for block: B:337:0x06a6  */
+    /* JADX WARN: Removed duplicated region for block: B:350:0x0578  */
+    /* JADX WARN: Removed duplicated region for block: B:420:0x0770  */
     /* JADX WARN: Removed duplicated region for block: B:435:0x026d  */
     /* JADX WARN: Removed duplicated region for block: B:449:0x02b7  */
     /* JADX WARN: Removed duplicated region for block: B:452:0x02ba  */
@@ -9450,6 +9446,7 @@ public class MessageObject {
                                     textLayoutBlock.messageObject = this;
                                 }
                                 textLayoutBlock.index = i4;
+                                textLayoutBlock.start = textRange.start;
                                 textLayoutBlock.first = i4 == 0;
                                 boolean z8 = i4 == arrayList.size() - 1;
                                 textLayoutBlock.last = z8;
@@ -9638,15 +9635,15 @@ public class MessageObject {
                                         while (i24 < lineCount2) {
                                             try {
                                                 i10 = ceil;
-                                            } catch (Exception unused) {
-                                                i10 = ceil;
-                                            }
-                                            try {
-                                                textLayoutBlock.maxRight = Math.max(textLayoutBlock.maxRight, textLayoutBlock.textLayout.getLineRight(i24));
+                                                try {
+                                                    textLayoutBlock.maxRight = Math.max(textLayoutBlock.maxRight, textLayoutBlock.textLayout.getLineRight(i24));
+                                                } catch (Exception unused) {
+                                                    textLayoutBlock.maxRight = this.textWidth;
+                                                    i24++;
+                                                    ceil = i10;
+                                                }
                                             } catch (Exception unused2) {
-                                                textLayoutBlock.maxRight = this.textWidth;
-                                                i24++;
-                                                ceil = i10;
+                                                i10 = ceil;
                                             }
                                             i24++;
                                             ceil = i10;
@@ -10074,34 +10071,34 @@ public class MessageObject {
             }
         }
 
-        /* JADX WARN: Can't wrap try/catch for region: R(16:210|211|212|213|214|(1:216)(11:245|(1:247)|218|219|220|(1:222)|223|(2:225|(3:227|(5:230|231|(1:236)|233|234)|235))(1:242)|241|(1:240)(5:230|231|(0)|233|234)|235)|217|218|219|220|(0)|223|(0)(0)|241|(0)(0)|235) */
+        /* JADX WARN: Can't wrap try/catch for region: R(14:210|(3:211|212|213)|214|(1:216)(11:245|(1:247)|218|219|220|(1:222)|223|(2:225|(3:227|(5:230|231|(1:236)|233|234)|235))(1:242)|241|(1:240)(5:230|231|(0)|233|234)|235)|217|218|219|220|(0)|223|(0)(0)|241|(0)(0)|235) */
         /* JADX WARN: Can't wrap try/catch for region: R(43:117|(1:119)|120|(1:122)(1:354)|123|(1:125)(1:353)|126|(1:128)|(1:130)|(1:352)(1:135)|136|(2:138|(2:(1:335)|336)(1:141))(2:337|(7:339|(1:341)(1:351)|342|(1:344)(1:350)|345|(1:347)(1:349)|348))|142|(3:144|(1:146)(2:329|(1:331)(1:332))|147)(1:333)|148|(1:150)(1:(1:327)(1:328))|151|(3:153|(1:306)(4:159|(1:161)(1:305)|162|163)|164)(3:307|(2:309|310)(6:311|312|313|(1:320)(1:317)|318|319)|276)|165|(1:171)|172|173|174|(1:178)|179|180|181|182|(1:184)|185|(1:187)|188|(3:190|(7:192|193|194|195|196|198|199)|205)|206|(6:208|(16:210|211|212|213|214|(1:216)(11:245|(1:247)|218|219|220|(1:222)|223|(2:225|(3:227|(5:230|231|(1:236)|233|234)|235))(1:242)|241|(1:240)(5:230|231|(0)|233|234)|235)|217|218|219|220|(0)|223|(0)(0)|241|(0)(0)|235)|250|251|(2:(1:254)|255)(1:(1:283))|256)(3:284|(5:286|(1:288)(1:295)|289|(1:291)(1:294)|292)(1:296)|293)|257|(3:259|(1:261)(1:263)|262)|264|(1:281)(3:270|(1:272)(3:277|(1:279)|280)|273)|274|275|276|115) */
-        /* JADX WARN: Code restructure failed: missing block: B:244:0x0554, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:244:0x0558, code lost:
         
             r2 = 0.0f;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:298:0x04c4, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:298:0x04c8, code lost:
         
             r0 = move-exception;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:299:0x04c5, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:299:0x04c9, code lost:
         
             org.telegram.messenger.FileLog.e(r0);
             r0 = 0.0f;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:301:0x04ae, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:301:0x04b2, code lost:
         
             r0 = move-exception;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:302:0x04b2, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:302:0x04b6, code lost:
         
             if (r8 == 0) goto L247;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:303:0x04b4, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:303:0x04b8, code lost:
         
             r31.textXOffset = 0.0f;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:304:0x04b7, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:304:0x04bb, code lost:
         
             org.telegram.messenger.FileLog.e(r0);
             r12 = 0.0f;
@@ -10110,12 +10107,12 @@ public class MessageObject {
         /* JADX WARN: Removed duplicated region for block: B:103:0x01f8  */
         /* JADX WARN: Removed duplicated region for block: B:106:0x01ff  */
         /* JADX WARN: Removed duplicated region for block: B:117:0x0271  */
-        /* JADX WARN: Removed duplicated region for block: B:222:0x055d  */
-        /* JADX WARN: Removed duplicated region for block: B:225:0x0564  */
-        /* JADX WARN: Removed duplicated region for block: B:229:0x058e A[ADDED_TO_REGION] */
-        /* JADX WARN: Removed duplicated region for block: B:236:0x0599 A[SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:240:0x0599 A[ADDED_TO_REGION, SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:242:0x0579  */
+        /* JADX WARN: Removed duplicated region for block: B:222:0x0561  */
+        /* JADX WARN: Removed duplicated region for block: B:225:0x0568  */
+        /* JADX WARN: Removed duplicated region for block: B:229:0x0592 A[ADDED_TO_REGION] */
+        /* JADX WARN: Removed duplicated region for block: B:236:0x059d A[SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:240:0x059d A[ADDED_TO_REGION, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:242:0x057d  */
         /* JADX WARN: Removed duplicated region for block: B:370:0x0201  */
         /* JADX WARN: Removed duplicated region for block: B:371:0x01fa  */
         /* JADX WARN: Removed duplicated region for block: B:372:0x01df  */
@@ -10284,6 +10281,7 @@ public class MessageObject {
                             textLayoutBlock.messageObject = messageObject3;
                         }
                         textLayoutBlock.index = i3;
+                        textLayoutBlock.start = textRange.start;
                         textLayoutBlock.first = i3 == 0;
                         boolean z8 = i3 == arrayList.size() - 1;
                         textLayoutBlock.last = z8;
@@ -12111,6 +12109,9 @@ public class MessageObject {
         if (i3 == 11 || i3 == 18 || i3 == 31 || i3 == 30 || i3 == 25 || i3 == 21) {
             return AndroidUtilities.dp(50.0f);
         }
+        if (i3 == 32) {
+            return AndroidUtilities.dp(234.0f);
+        }
         if (i3 == 5) {
             return AndroidUtilities.roundMessageSize;
         }
@@ -12768,7 +12769,7 @@ public class MessageObject {
 
     public boolean canForwardMessage() {
         int i;
-        return (isQuickReply() || (i = this.type) == 30 || i == 31 || (this.messageOwner instanceof TLRPC.TL_message_secret) || needDrawBluredPreview() || isLiveLocation() || this.type == 16 || isSponsored() || this.messageOwner.noforwards) ? false : true;
+        return (isQuickReply() || (i = this.type) == 30 || i == 31 || i == 32 || (this.messageOwner instanceof TLRPC.TL_message_secret) || needDrawBluredPreview() || isLiveLocation() || this.type == 16 || isSponsored() || this.messageOwner.noforwards) ? false : true;
     }
 
     public boolean isNoforwards() {

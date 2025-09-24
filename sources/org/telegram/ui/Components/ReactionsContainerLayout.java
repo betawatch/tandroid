@@ -185,6 +185,10 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
     public interface ReactionsContainerDelegate {
 
         public abstract /* synthetic */ class -CC {
+            public static boolean $default$allowLongPress(ReactionsContainerDelegate reactionsContainerDelegate) {
+                return true;
+            }
+
             public static boolean $default$drawBackground(ReactionsContainerDelegate reactionsContainerDelegate) {
                 return false;
             }
@@ -199,6 +203,8 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
             public static void $default$onEmojiWindowDismissed(ReactionsContainerDelegate reactionsContainerDelegate) {
             }
         }
+
+        boolean allowLongPress();
 
         boolean drawBackground();
 
@@ -533,7 +539,7 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
             }
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.pullingLeftOffset, 0.0f);
             this.pullingDownBackAnimator = ofFloat;
-            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ReactionsContainerLayout$$ExternalSyntheticLambda3
+            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ReactionsContainerLayout$$ExternalSyntheticLambda4
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
                     ReactionsContainerLayout.this.lambda$animatePullingBack$2(valueAnimator2);
@@ -574,9 +580,12 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
         if (this.reactionsWindow != null) {
             return;
         }
-        this.reactionsWindow = new CustomEmojiReactionsWindow(this.type, this.fragment, this.allReactionsList, this.selectedReactions, this, this.resourcesProvider, this.forceAttachToParent);
+        CustomEmojiReactionsWindow customEmojiReactionsWindow = new CustomEmojiReactionsWindow(this.type, this.fragment, this.allReactionsList, this.selectedReactions, this, this.resourcesProvider, this.forceAttachToParent);
+        this.reactionsWindow = customEmojiReactionsWindow;
+        ReactionsContainerDelegate reactionsContainerDelegate = this.delegate;
+        customEmojiReactionsWindow.setLongPressEnabled(reactionsContainerDelegate == null || reactionsContainerDelegate.allowLongPress());
         invalidateLoopViews();
-        this.reactionsWindow.onDismissListener(new Runnable() { // from class: org.telegram.ui.Components.ReactionsContainerLayout$$ExternalSyntheticLambda4
+        this.reactionsWindow.onDismissListener(new Runnable() { // from class: org.telegram.ui.Components.ReactionsContainerLayout$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
                 ReactionsContainerLayout.this.lambda$showCustomEmojiReactionDialog$3();
@@ -690,15 +699,15 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
     }
 
     /* JADX WARN: Removed duplicated region for block: B:11:0x0081  */
-    /* JADX WARN: Removed duplicated region for block: B:178:0x050f  */
-    /* JADX WARN: Removed duplicated region for block: B:186:0x053e  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0093  */
-    /* JADX WARN: Removed duplicated region for block: B:206:0x027a  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x00f4  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0126  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x018b  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x01f9  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x0299  */
+    /* JADX WARN: Removed duplicated region for block: B:182:0x051b  */
+    /* JADX WARN: Removed duplicated region for block: B:190:0x054a  */
+    /* JADX WARN: Removed duplicated region for block: B:210:0x0286  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x009d  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x0100  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0132  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x0197  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x0205  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x02a5  */
     /* JADX WARN: Removed duplicated region for block: B:8:0x004b  */
     @Override // android.view.ViewGroup, android.view.View
     /*
@@ -710,7 +719,6 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
         float f;
         float f2;
         ReactionsLayoutInBubble.VisibleReaction visibleReaction;
-        ReactionsLayoutInBubble.VisibleReaction visibleReaction2;
         float width;
         float f3;
         float f4;
@@ -723,6 +731,7 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
         float f8;
         boolean showCustomEmojiReaction;
         int dp;
+        ReactionsContainerDelegate reactionsContainerDelegate;
         float f9;
         long min = Math.min(16L, System.currentTimeMillis() - this.lastUpdate);
         this.lastUpdate = System.currentTimeMillis();
@@ -745,11 +754,10 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
                 if (this.prepareAnimation) {
                     invalidate();
                 }
-                visibleReaction = this.pressedReaction;
-                if (visibleReaction != null && this.type != 5) {
+                if (this.pressedReaction != null && this.type != 5 && ((reactionsContainerDelegate = this.delegate) == null || reactionsContainerDelegate.allowLongPress())) {
                     f9 = this.pressedProgress;
                     if (f9 != 1.0f) {
-                        float longPressTimeout = f9 + (16.0f / (visibleReaction.isStar ? ViewConfiguration.getLongPressTimeout() : 1500.0f));
+                        float longPressTimeout = f9 + (16.0f / (this.pressedReaction.isStar ? ViewConfiguration.getLongPressTimeout() : 1500.0f));
                         this.pressedProgress = longPressTimeout;
                         if (longPressTimeout >= 1.0f) {
                             this.pressedProgress = 1.0f;
@@ -757,8 +765,8 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
                         invalidate();
                     }
                 }
-                visibleReaction2 = this.pressedReaction;
-                if (visibleReaction2 == null && visibleReaction2.isStar) {
+                visibleReaction = this.pressedReaction;
+                if (visibleReaction == null && visibleReaction.isStar) {
                     this.pressedViewScale = 1.0f;
                     this.otherViewsScale = 1.0f;
                 } else {
@@ -993,14 +1001,13 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
         this.lastVisibleViews.clear();
         if (this.prepareAnimation) {
         }
-        visibleReaction = this.pressedReaction;
-        if (visibleReaction != null) {
+        if (this.pressedReaction != null) {
             f9 = this.pressedProgress;
             if (f9 != 1.0f) {
             }
         }
-        visibleReaction2 = this.pressedReaction;
-        if (visibleReaction2 == null) {
+        visibleReaction = this.pressedReaction;
+        if (visibleReaction == null) {
         }
         float f112 = this.pressedProgress;
         this.pressedViewScale = (f112 * 2.0f) + 1.0f;
@@ -1783,7 +1790,7 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
         this.pullingLeftOffset = 0.0f;
         this.pressedReaction = null;
         this.clicked = false;
-        AndroidUtilities.forEachViews((RecyclerView) this.recyclerListView, new Consumer() { // from class: org.telegram.ui.Components.ReactionsContainerLayout$$ExternalSyntheticLambda5
+        AndroidUtilities.forEachViews((RecyclerView) this.recyclerListView, new Consumer() { // from class: org.telegram.ui.Components.ReactionsContainerLayout$$ExternalSyntheticLambda3
             @Override // com.google.android.exoplayer2.util.Consumer
             public final void accept(Object obj) {
                 ReactionsContainerLayout.this.lambda$reset$6((View) obj);
@@ -2488,7 +2495,7 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
                 this.pressed = true;
                 this.pressedX = motionEvent.getX();
                 this.pressedY = motionEvent.getY();
-                if (this.sideScale == 1.0f && !this.isLocked && ReactionsContainerLayout.this.type != 3 && ReactionsContainerLayout.this.type != 4 && ReactionsContainerLayout.this.type != 5) {
+                if (this.sideScale == 1.0f && !this.isLocked && ReactionsContainerLayout.this.type != 3 && ReactionsContainerLayout.this.type != 4 && ReactionsContainerLayout.this.type != 5 && (ReactionsContainerLayout.this.delegate == null || ReactionsContainerLayout.this.delegate.allowLongPress())) {
                     AndroidUtilities.runOnUIThread(this.longPressRunnable, ViewConfiguration.getLongPressTimeout());
                 }
             }

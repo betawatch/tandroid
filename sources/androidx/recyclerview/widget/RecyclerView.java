@@ -184,8 +184,6 @@ public abstract class RecyclerView extends ViewGroup {
     public static abstract class ViewCacheExtension {
     }
 
-    public abstract View findChildViewUnder(float f, float f2);
-
     public OnFlingListener getOnFlingListener() {
         return null;
     }
@@ -3194,6 +3192,18 @@ public abstract class RecyclerView extends ViewGroup {
             }
         }
         return viewHolder;
+    }
+
+    public View findChildViewUnder(float f, float f2) {
+        for (int childCount = this.mChildHelper.getChildCount() - 1; childCount >= 0; childCount--) {
+            View childAt = this.mChildHelper.getChildAt(childCount);
+            float translationX = childAt.getTranslationX();
+            float translationY = childAt.getTranslationY();
+            if (f >= childAt.getLeft() + translationX && f <= childAt.getRight() + translationX && f2 >= childAt.getTop() + translationY && f2 <= childAt.getBottom() + translationY) {
+                return childAt;
+            }
+        }
+        return null;
     }
 
     @Override // android.view.ViewGroup

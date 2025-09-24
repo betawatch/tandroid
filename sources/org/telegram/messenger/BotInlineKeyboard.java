@@ -31,6 +31,7 @@ public class BotInlineKeyboard {
     }
 
     public static class ButtonCustom extends Button {
+        public static final int OPEN_MESSAGE_THREAD = 4;
         public static final int SUGGESTION_ACCEPT = 2;
         public static final int SUGGESTION_DECLINE = 1;
         public static final int SUGGESTION_EDIT = 3;
@@ -73,29 +74,6 @@ public class BotInlineKeyboard {
         }
     }
 
-    public static Source fromBot(TLRPC.TL_replyInlineMarkup tL_replyInlineMarkup, boolean z) {
-        int i = 0;
-        Button[][] buttonArr = new Button[tL_replyInlineMarkup.rows.size() + (z ? 2 : 0)][];
-        for (int i2 = 0; i2 < tL_replyInlineMarkup.rows.size(); i2++) {
-            ArrayList<TLRPC.KeyboardButton> arrayList = tL_replyInlineMarkup.rows.get(i2).buttons;
-            buttonArr[i2] = new ButtonBot[arrayList.size()];
-            for (int i3 = 0; i3 < arrayList.size(); i3++) {
-                buttonArr[i2][i3] = new ButtonBot(arrayList.get(i3));
-            }
-        }
-        if (z) {
-            int size = !tL_replyInlineMarkup.rows.isEmpty() ? 1 << (tL_replyInlineMarkup.rows.size() - 1) : 0;
-            buttonArr[tL_replyInlineMarkup.rows.size()] = new Button[]{new ButtonCustom(1, R.string.PostSuggestionsInlineDecline, R.drawable.filled_bot_decline_24), new ButtonCustom(2, R.string.PostSuggestionsInlineAccept, R.drawable.filled_bot_approve_24)};
-            buttonArr[tL_replyInlineMarkup.rows.size() + 1] = new Button[]{new ButtonCustom(3, R.string.PostSuggestionsInlineEdit, R.drawable.filled_bot_suggest_24)};
-            i = size;
-        }
-        return new KeyboardSourceArray(buttonArr, i);
-    }
-
-    public static Source fromSuggestion() {
-        return new KeyboardSourceArray(new Button[][]{new Button[]{new ButtonCustom(1, R.string.PostSuggestionsInlineDecline, R.drawable.filled_bot_decline_24), new ButtonCustom(2, R.string.PostSuggestionsInlineAccept, R.drawable.filled_bot_approve_24)}, new Button[]{new ButtonCustom(3, R.string.PostSuggestionsInlineEdit, R.drawable.filled_bot_suggest_24)}}, 0);
-    }
-
     private static class KeyboardSourceArray implements Source {
         private final Button[][] buttons;
         private final int separators;
@@ -128,6 +106,69 @@ public class BotInlineKeyboard {
         @Override // org.telegram.messenger.BotInlineKeyboard.Source
         public boolean hasSeparator(int i) {
             return ((1 << i) & this.separators) != 0;
+        }
+    }
+
+    public static class Builder {
+        private final ArrayList<Button[]> buttons = new ArrayList<>();
+        private int separators;
+
+        public void addBotKeyboard(TLRPC.TL_replyInlineMarkup tL_replyInlineMarkup) {
+            for (int i = 0; i < tL_replyInlineMarkup.rows.size(); i++) {
+                ArrayList<TLRPC.KeyboardButton> arrayList = tL_replyInlineMarkup.rows.get(i).buttons;
+                ButtonBot[] buttonBotArr = new ButtonBot[arrayList.size()];
+                for (int i2 = 0; i2 < arrayList.size(); i2++) {
+                    buttonBotArr[i2] = new ButtonBot(arrayList.get(i2));
+                }
+                this.buttons.add(buttonBotArr);
+            }
+        }
+
+        public void addSuggestionKeyboard() {
+            this.buttons.add(new Button[]{new ButtonCustom(1, R.string.PostSuggestionsInlineDecline, R.drawable.filled_bot_decline_24), new ButtonCustom(2, R.string.PostSuggestionsInlineAccept, R.drawable.filled_bot_approve_24)});
+            this.buttons.add(new Button[]{new ButtonCustom(3, R.string.PostSuggestionsInlineEdit, R.drawable.filled_bot_suggest_24)});
+        }
+
+        public void addContinueThreadKeyboard() {
+            this.buttons.add(new Button[]{new ButtonCustom(4, R.string.BotForumContinueChat, 0)});
+        }
+
+        public void addKeyboardSource(Source source) {
+            if (source == null) {
+                return;
+            }
+            int rowsCount = source.getRowsCount();
+            for (int i = 0; i < rowsCount; i++) {
+                int columnsCount = source.getColumnsCount(i);
+                Button[] buttonArr = new Button[columnsCount];
+                for (int i2 = 0; i2 < columnsCount; i2++) {
+                    buttonArr[i2] = source.getButton(i, i2);
+                }
+                this.buttons.add(buttonArr);
+                if (source.hasSeparator(i)) {
+                    addSeparator();
+                }
+            }
+        }
+
+        public void addSeparator() {
+            if (this.buttons.isEmpty()) {
+                return;
+            }
+            this.separators |= 1 << (this.buttons.size() - 1);
+        }
+
+        public boolean isEmpty() {
+            return this.buttons.isEmpty();
+        }
+
+        public boolean isNotEmpty() {
+            return !this.buttons.isEmpty();
+        }
+
+        public Source build() {
+            ArrayList<Button[]> arrayList = this.buttons;
+            return new KeyboardSourceArray((Button[][]) arrayList.toArray(new Button[arrayList.size()][]), this.separators);
         }
     }
 }

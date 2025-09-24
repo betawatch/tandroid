@@ -3,6 +3,7 @@ package org.telegram.tgnet.tl;
 import java.util.ArrayList;
 import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.OutputSerializedData;
+import org.telegram.tgnet.TLMethod;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1;
@@ -1478,6 +1479,42 @@ public class TL_phone {
             outputSerializedData.writeInt32(this.sub_chain_id);
             outputSerializedData.writeInt32(this.offset);
             outputSerializedData.writeInt32(this.limit);
+        }
+    }
+
+    public static class sendGroupCallMessage extends TLMethod<TLRPC.Bool> {
+        public static final int constructor = -614432696;
+        public TLRPC.InputGroupCall call;
+        public TLRPC.TL_textWithEntities message;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            this.call.serializeToStream(outputSerializedData);
+            this.message.serializeToStream(outputSerializedData);
+        }
+
+        @Override // org.telegram.tgnet.TLMethod
+        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i, boolean z) {
+            return TLRPC.Bool.TLdeserialize(inputSerializedData, i, z);
+        }
+    }
+
+    public static class sendGroupCallEncryptedMessage extends TLMethod<TLRPC.Bool> {
+        public static final int constructor = -441473683;
+        public TLRPC.InputGroupCall call;
+        public byte[] encrypted_message;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            this.call.serializeToStream(outputSerializedData);
+            outputSerializedData.writeByteArray(this.encrypted_message);
+        }
+
+        @Override // org.telegram.tgnet.TLMethod
+        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i, boolean z) {
+            return TLRPC.Bool.TLdeserialize(inputSerializedData, i, z);
         }
     }
 }

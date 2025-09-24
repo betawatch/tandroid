@@ -17,6 +17,10 @@ public class BaseController {
         return this.parentAccountInstance;
     }
 
+    protected final AppGlobalConfig getAppGlobalConfig() {
+        return getMessagesController().config;
+    }
+
     protected final MessagesController getMessagesController() {
         return this.parentAccountInstance.getMessagesController();
     }

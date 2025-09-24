@@ -34,6 +34,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_forum;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow;
@@ -308,7 +309,7 @@ public class TopicCreateFragment extends BaseFragment {
         1() {
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:41:0x0100, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:41:0x0101, code lost:
         
             if (r12.topicForEdit.icon_emoji_id != r12.selectedEmojiDocumentId) goto L43;
          */
@@ -338,19 +339,19 @@ public class TopicCreateFragment extends BaseFragment {
                 final AlertDialog alertDialog = new AlertDialog(TopicCreateFragment.this.getParentActivity(), 3);
                 alertDialog.showDelayed(500L);
                 TopicCreateFragment.this.created = true;
-                TLRPC.TL_channels_createForumTopic tL_channels_createForumTopic = new TLRPC.TL_channels_createForumTopic();
-                tL_channels_createForumTopic.channel = TopicCreateFragment.this.getMessagesController().getInputChannel(TopicCreateFragment.this.chatId);
-                tL_channels_createForumTopic.title = obj;
+                TL_forum.TL_messages_createForumTopic tL_messages_createForumTopic = new TL_forum.TL_messages_createForumTopic();
+                tL_messages_createForumTopic.peer = TopicCreateFragment.this.getMessagesController().getInputPeer(-TopicCreateFragment.this.chatId);
+                tL_messages_createForumTopic.title = obj;
                 long j = TopicCreateFragment.this.selectedEmojiDocumentId;
                 if (j != 0) {
-                    tL_channels_createForumTopic.icon_emoji_id = j;
-                    tL_channels_createForumTopic.flags |= 8;
+                    tL_messages_createForumTopic.icon_emoji_id = j;
+                    tL_messages_createForumTopic.flags |= 8;
                 }
-                tL_channels_createForumTopic.random_id = Utilities.random.nextLong();
+                tL_messages_createForumTopic.random_id = Utilities.random.nextLong();
                 TopicCreateFragment topicCreateFragment = TopicCreateFragment.this;
-                tL_channels_createForumTopic.icon_color = topicCreateFragment.iconColor;
-                tL_channels_createForumTopic.flags |= 1;
-                ConnectionsManager.getInstance(((BaseFragment) topicCreateFragment).currentAccount).sendRequest(tL_channels_createForumTopic, new RequestDelegate() { // from class: org.telegram.ui.TopicCreateFragment$1$$ExternalSyntheticLambda0
+                tL_messages_createForumTopic.icon_color = topicCreateFragment.iconColor;
+                tL_messages_createForumTopic.flags |= 1;
+                ConnectionsManager.getInstance(((BaseFragment) topicCreateFragment).currentAccount).sendRequest(tL_messages_createForumTopic, new RequestDelegate() { // from class: org.telegram.ui.TopicCreateFragment$1$$ExternalSyntheticLambda0
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                         TopicCreateFragment.1.this.lambda$onItemClick$1(obj, alertDialog, tLObject, tL_error);
@@ -371,22 +372,22 @@ public class TopicCreateFragment extends BaseFragment {
                 if (TopicCreateFragment.this.topicForEdit.title.equals(obj)) {
                     TopicCreateFragment topicCreateFragment2 = TopicCreateFragment.this;
                 }
-                TLRPC.TL_channels_editForumTopic tL_channels_editForumTopic = new TLRPC.TL_channels_editForumTopic();
-                tL_channels_editForumTopic.channel = TopicCreateFragment.this.getMessagesController().getInputChannel(TopicCreateFragment.this.chatId);
+                TL_forum.TL_messages_editForumTopic tL_messages_editForumTopic = new TL_forum.TL_messages_editForumTopic();
+                tL_messages_editForumTopic.peer = TopicCreateFragment.this.getMessagesController().getInputPeer(-TopicCreateFragment.this.chatId);
                 TLRPC.TL_forumTopic tL_forumTopic = TopicCreateFragment.this.topicForEdit;
-                tL_channels_editForumTopic.topic_id = tL_forumTopic.id;
+                tL_messages_editForumTopic.topic_id = tL_forumTopic.id;
                 if (!tL_forumTopic.title.equals(obj)) {
-                    tL_channels_editForumTopic.title = obj;
-                    tL_channels_editForumTopic.flags |= 1;
+                    tL_messages_editForumTopic.title = obj;
+                    tL_messages_editForumTopic.flags |= 1;
                 }
                 TopicCreateFragment topicCreateFragment3 = TopicCreateFragment.this;
                 long j2 = topicCreateFragment3.topicForEdit.icon_emoji_id;
                 long j3 = topicCreateFragment3.selectedEmojiDocumentId;
                 if (j2 != j3) {
-                    tL_channels_editForumTopic.icon_emoji_id = j3;
-                    tL_channels_editForumTopic.flags |= 2;
+                    tL_messages_editForumTopic.icon_emoji_id = j3;
+                    tL_messages_editForumTopic.flags |= 2;
                 }
-                ConnectionsManager.getInstance(((BaseFragment) topicCreateFragment3).currentAccount).sendRequest(tL_channels_editForumTopic, new RequestDelegate() { // from class: org.telegram.ui.TopicCreateFragment$1$$ExternalSyntheticLambda1
+                ConnectionsManager.getInstance(((BaseFragment) topicCreateFragment3).currentAccount).sendRequest(tL_messages_editForumTopic, new RequestDelegate() { // from class: org.telegram.ui.TopicCreateFragment$1$$ExternalSyntheticLambda1
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                         TopicCreateFragment.1.lambda$onItemClick$2(tLObject, tL_error);
@@ -394,12 +395,12 @@ public class TopicCreateFragment extends BaseFragment {
                 });
                 TopicCreateFragment topicCreateFragment4 = TopicCreateFragment.this;
                 if (topicCreateFragment4.checkBoxCell != null && topicCreateFragment4.topicForEdit.id == 1 && (!r2.isChecked()) != TopicCreateFragment.this.topicForEdit.hidden) {
-                    TLRPC.TL_channels_editForumTopic tL_channels_editForumTopic2 = new TLRPC.TL_channels_editForumTopic();
-                    tL_channels_editForumTopic2.channel = TopicCreateFragment.this.getMessagesController().getInputChannel(TopicCreateFragment.this.chatId);
-                    tL_channels_editForumTopic2.topic_id = TopicCreateFragment.this.topicForEdit.id;
-                    tL_channels_editForumTopic2.hidden = !r2.checkBoxCell.isChecked();
-                    tL_channels_editForumTopic2.flags |= 8;
-                    ConnectionsManager.getInstance(((BaseFragment) TopicCreateFragment.this).currentAccount).sendRequest(tL_channels_editForumTopic2, new RequestDelegate() { // from class: org.telegram.ui.TopicCreateFragment$1$$ExternalSyntheticLambda2
+                    TL_forum.TL_messages_editForumTopic tL_messages_editForumTopic2 = new TL_forum.TL_messages_editForumTopic();
+                    tL_messages_editForumTopic2.peer = TopicCreateFragment.this.getMessagesController().getInputPeer(-TopicCreateFragment.this.chatId);
+                    tL_messages_editForumTopic2.topic_id = TopicCreateFragment.this.topicForEdit.id;
+                    tL_messages_editForumTopic2.hidden = !r2.checkBoxCell.isChecked();
+                    tL_messages_editForumTopic2.flags |= 8;
+                    ConnectionsManager.getInstance(((BaseFragment) TopicCreateFragment.this).currentAccount).sendRequest(tL_messages_editForumTopic2, new RequestDelegate() { // from class: org.telegram.ui.TopicCreateFragment$1$$ExternalSyntheticLambda2
                         @Override // org.telegram.tgnet.RequestDelegate
                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                             TopicCreateFragment.1.lambda$onItemClick$3(tLObject, tL_error);

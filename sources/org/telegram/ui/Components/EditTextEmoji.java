@@ -364,6 +364,10 @@ public class EditTextEmoji extends FrameLayout implements NotificationCenter.Not
             this.emojiIconDrawable.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_chat_messagePanelIcons), PorterDuff.Mode.MULTIPLY));
             this.emojiIconDrawable.setIcon(R.drawable.input_smile, false);
             addView(this.emojiButton, LayoutHelper.createFrame(48, 48.0f, 53, 0.0f, 0.0f, 0.0f, 0.0f));
+        } else if (i == 5) {
+            this.emojiIconDrawable.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_graySectionText), PorterDuff.Mode.MULTIPLY));
+            this.emojiIconDrawable.setIcon(R.drawable.input_smile, false);
+            addView(this.emojiButton, LayoutHelper.createFrame(48, 48.0f, 83, 0.0f, 0.0f, 0.0f, 0.0f));
         } else {
             this.emojiIconDrawable.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_chat_messagePanelIcons), PorterDuff.Mode.MULTIPLY));
             this.emojiIconDrawable.setIcon(R.drawable.input_smile, false);
@@ -439,7 +443,7 @@ public class EditTextEmoji extends FrameLayout implements NotificationCenter.Not
 
     protected boolean allowEntities() {
         int i = this.currentStyle;
-        return i == 2 || i == 3;
+        return i == 2 || i == 3 || i == 5;
     }
 
     public void setSuggestionsEnabled(boolean z) {
@@ -838,7 +842,7 @@ public class EditTextEmoji extends FrameLayout implements NotificationCenter.Not
         Context context = getContext();
         boolean allowSearch = allowSearch();
         int i = this.currentStyle;
-        EmojiView emojiView2 = new EmojiView(baseFragment, z, false, false, context, allowSearch, null, null, (i == 2 || i == 3) ? false : true, this.resourcesProvider, false) { // from class: org.telegram.ui.Components.EditTextEmoji.6
+        EmojiView emojiView2 = new EmojiView(baseFragment, z, false, false, context, allowSearch, null, null, (i == 2 || i == 3 || i == 5) ? false : true, this.resourcesProvider, false) { // from class: org.telegram.ui.Components.EditTextEmoji.6
             private boolean changedExpanded;
             private boolean lastExpanded;
             private int lastHeight;

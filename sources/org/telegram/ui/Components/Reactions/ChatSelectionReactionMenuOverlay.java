@@ -123,6 +123,11 @@ public class ChatSelectionReactionMenuOverlay extends FrameLayout {
 
     class 3 implements ReactionsContainerLayout.ReactionsContainerDelegate {
         @Override // org.telegram.ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
+        public /* synthetic */ boolean allowLongPress() {
+            return ReactionsContainerLayout.ReactionsContainerDelegate.-CC.$default$allowLongPress(this);
+        }
+
+        @Override // org.telegram.ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
         public /* synthetic */ boolean drawBackground() {
             return ReactionsContainerLayout.ReactionsContainerDelegate.-CC.$default$drawBackground(this);
         }

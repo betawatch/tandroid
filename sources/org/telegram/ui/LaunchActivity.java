@@ -121,6 +121,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_chatlists;
+import org.telegram.tgnet.tl.TL_forum;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBar;
@@ -2532,7 +2533,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0135  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0136  */
     /* JADX WARN: Removed duplicated region for block: B:25:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -2540,10 +2541,10 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     private void openTopicRequest(final int i, final int i2, final TLRPC.Chat chat, final int i3, TLRPC.TL_forumTopic tL_forumTopic, final Runnable runnable, final String str, final Integer num, final int i4, final ArrayList arrayList, final int i5) {
         TLRPC.TL_forumTopic findTopic = tL_forumTopic == null ? MessagesController.getInstance(i).getTopicsController().findTopic(chat.id, i2) : tL_forumTopic;
         if (findTopic == null) {
-            TLRPC.TL_channels_getForumTopicsByID tL_channels_getForumTopicsByID = new TLRPC.TL_channels_getForumTopicsByID();
-            tL_channels_getForumTopicsByID.channel = MessagesController.getInstance(this.currentAccount).getInputChannel(chat.id);
-            tL_channels_getForumTopicsByID.topics.add(Integer.valueOf(i2));
-            ConnectionsManager.getInstance(i).sendRequest(tL_channels_getForumTopicsByID, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda158
+            TL_forum.TL_messages_getForumTopicsByID tL_messages_getForumTopicsByID = new TL_forum.TL_messages_getForumTopicsByID();
+            tL_messages_getForumTopicsByID.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(-chat.id);
+            tL_messages_getForumTopicsByID.topics.add(Integer.valueOf(i2));
+            ConnectionsManager.getInstance(i).sendRequest(tL_messages_getForumTopicsByID, new RequestDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda158
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                     LaunchActivity.this.lambda$openTopicRequest$34(i, chat, i2, i3, runnable, str, num, i4, arrayList, i5, tLObject, tL_error);
@@ -3575,7 +3576,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             BaseFragment safeLastFragment = getSafeLastFragment();
             TL_stars.StarGift starGift = tL_payments_uniqueStarGift.gift;
             if (starGift instanceof TL_stars.TL_starGiftUnique) {
-                StarGiftSheet starGiftSheet = new StarGiftSheet(this, i, 0L, null).set(str, (TL_stars.TL_starGiftUnique) starGift, (StarsController.IGiftsList) null);
+                StarGiftSheet starGiftSheet = new StarGiftSheet(this, i, 0L, null).set(str, (TL_stars.TL_starGiftUnique) starGift, null);
                 if (safeLastFragment != null) {
                     if (safeLastFragment.getLastStoryViewer() != null && safeLastFragment.getLastStoryViewer().isFullyVisible()) {
                         safeLastFragment.getLastStoryViewer().showDialog(starGiftSheet);

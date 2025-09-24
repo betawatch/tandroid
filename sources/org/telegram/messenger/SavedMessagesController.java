@@ -25,41 +25,30 @@ import org.telegram.ui.LaunchActivity;
 
 /* loaded from: classes3.dex */
 public class SavedMessagesController {
-    public ArrayList<SavedDialog> allDialogs;
-    private ArrayList<SavedDialog> cachedDialogs;
-    private final LongSparseArray checkMessagesCallbacks;
     private final int currentAccount;
     private int dialogsCount;
     private int dialogsCountHidden;
     public boolean dialogsEndReached;
     private boolean dialogsLoaded;
     private boolean dialogsLoading;
-    private final long forumDialogId;
     private boolean loadedCache;
-    private ArrayList<SavedDialog> loadedDialogs;
     private boolean loadingCache;
     private boolean loadingCacheOnly;
-    private final Runnable saveCacheRunnable;
     private boolean saving;
     public boolean unsupported;
+    private ArrayList<SavedDialog> cachedDialogs = new ArrayList<>();
+    private ArrayList<SavedDialog> loadedDialogs = new ArrayList<>();
+    public ArrayList<SavedDialog> allDialogs = new ArrayList<>();
+    private final Runnable saveCacheRunnable = new Runnable() { // from class: org.telegram.messenger.SavedMessagesController$$ExternalSyntheticLambda16
+        @Override // java.lang.Runnable
+        public final void run() {
+            SavedMessagesController.this.saveCache();
+        }
+    };
+    private final LongSparseArray checkMessagesCallbacks = new LongSparseArray();
 
     public SavedMessagesController(int i) {
-        this(i, 0L);
-    }
-
-    public SavedMessagesController(int i, long j) {
-        this.cachedDialogs = new ArrayList<>();
-        this.loadedDialogs = new ArrayList<>();
-        this.allDialogs = new ArrayList<>();
-        this.saveCacheRunnable = new Runnable() { // from class: org.telegram.messenger.SavedMessagesController$$ExternalSyntheticLambda17
-            @Override // java.lang.Runnable
-            public final void run() {
-                SavedMessagesController.this.saveCache();
-            }
-        };
-        this.checkMessagesCallbacks = new LongSparseArray();
         this.currentAccount = i;
-        this.forumDialogId = j;
         this.unsupported = MessagesController.getMainSettings(i).getBoolean("savedMessagesUnsupported", true);
     }
 
@@ -120,7 +109,7 @@ public class SavedMessagesController {
         });
         this.allDialogs.addAll(arrayList);
         if (z) {
-            NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.savedMessagesDialogsUpdate, Long.valueOf(this.forumDialogId));
+            NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.savedMessagesDialogsUpdate, new Object[0]);
             if (hasDialogs() || !MessagesController.getInstance(this.currentAccount).savedViewAsChats) {
                 return;
             }
@@ -286,10 +275,6 @@ public class SavedMessagesController {
             tL_messages_getSavedDialogs.offset_peer = new TLRPC.TL_inputPeerEmpty();
         }
         tL_messages_getSavedDialogs.limit = 20;
-        if (this.forumDialogId != 0) {
-            tL_messages_getSavedDialogs.flags |= 2;
-            tL_messages_getSavedDialogs.parent_peer = MessagesController.getInstance(this.currentAccount).getInputPeer(this.forumDialogId);
-        }
         final ArrayList arrayList2 = new ArrayList();
         arrayList2.addAll(this.allDialogs.subList(Math.min(this.loadedDialogs.size(), this.allDialogs.size()), Math.min(this.loadedDialogs.size() + tL_messages_getSavedDialogs.limit, this.allDialogs.size())));
         for (int i = 0; i < arrayList2.size(); i++) {
@@ -336,7 +321,7 @@ public class SavedMessagesController {
             MessagesStorage.getInstance(this.currentAccount).putUsersAndChats(tL_messages_savedDialogs.users, tL_messages_savedDialogs.chats, true, true);
             MessagesStorage.getInstance(this.currentAccount).putMessages(tL_messages_savedDialogs.messages, false, true, false, 0, false, 3, 0L);
             for (int i = 0; i < tL_messages_savedDialogs.dialogs.size(); i++) {
-                SavedDialog fromTL = SavedDialog.fromTL(this.currentAccount, tL_messages_savedDialogs.dialogs.get(i), tL_messages_savedDialogs.messages, this.forumDialogId == 0);
+                SavedDialog fromTL = SavedDialog.fromTL(this.currentAccount, tL_messages_savedDialogs.dialogs.get(i), tL_messages_savedDialogs.messages, true);
                 int i2 = 0;
                 while (true) {
                     if (i2 >= this.cachedDialogs.size()) {
@@ -376,7 +361,7 @@ public class SavedMessagesController {
             MessagesStorage.getInstance(this.currentAccount).putUsersAndChats(tL_messages_savedDialogsSlice.users, tL_messages_savedDialogsSlice.chats, true, true);
             MessagesStorage.getInstance(this.currentAccount).putMessages(tL_messages_savedDialogsSlice.messages, false, true, false, 0, false, 3, 0L);
             for (int i4 = 0; i4 < tL_messages_savedDialogsSlice.dialogs.size(); i4++) {
-                SavedDialog fromTL2 = SavedDialog.fromTL(this.currentAccount, tL_messages_savedDialogsSlice.dialogs.get(i4), tL_messages_savedDialogsSlice.messages, this.forumDialogId == 0);
+                SavedDialog fromTL2 = SavedDialog.fromTL(this.currentAccount, tL_messages_savedDialogsSlice.dialogs.get(i4), tL_messages_savedDialogsSlice.messages, true);
                 int i5 = 0;
                 while (true) {
                     if (i5 >= this.cachedDialogs.size()) {
@@ -434,9 +419,6 @@ public class SavedMessagesController {
         if (this.unsupported != z) {
             MessagesController.getMainSettings(this.currentAccount).edit().putBoolean("savedMessagesUnsupported", this.unsupported).apply();
         }
-        if (this.forumDialogId != 0 && this.dialogsEndReached) {
-            UserConfig.getInstance(this.currentAccount).getPreferences().edit().putBoolean("topics_end_reached_" + (-this.forumDialogId), true).apply();
-        }
         this.dialogsLoading = false;
     }
 
@@ -469,95 +451,93 @@ public class SavedMessagesController {
             long keyAt = longSparseArray.keyAt(i4);
             TLRPC.Message message3 = (TLRPC.Message) longSparseArray.valueAt(i4);
             Integer num2 = (Integer) longSparseArray2.get(keyAt);
-            if (this.forumDialogId == 0 || MessageObject.getMonoForumTopicId(message3) != 0) {
-                int i5 = 0;
-                while (true) {
-                    if (i5 >= this.cachedDialogs.size()) {
-                        z = false;
-                        break;
-                    }
-                    SavedDialog savedDialog = this.cachedDialogs.get(i5);
-                    if (savedDialog.dialogId == keyAt) {
-                        int i6 = savedDialog.top_message_id;
-                        int i7 = message3.id;
-                        if (i6 < i7 || (i7 < 0 && message3.date > savedDialog.getDate())) {
-                            if (savedDialog.top_message_id < message3.id) {
-                                int i8 = 0;
-                                for (int i9 = 0; i9 < arrayList.size(); i9++) {
-                                    if (arrayList.get(i9).id > savedDialog.top_message_id) {
-                                        i8++;
-                                    }
+            int i5 = 0;
+            while (true) {
+                if (i5 >= this.cachedDialogs.size()) {
+                    z = false;
+                    break;
+                }
+                SavedDialog savedDialog = this.cachedDialogs.get(i5);
+                if (savedDialog.dialogId == keyAt) {
+                    int i6 = savedDialog.top_message_id;
+                    int i7 = message3.id;
+                    if (i6 < i7 || (i7 < 0 && message3.date > savedDialog.getDate())) {
+                        if (savedDialog.top_message_id < message3.id) {
+                            int i8 = 0;
+                            for (int i9 = 0; i9 < arrayList.size(); i9++) {
+                                if (arrayList.get(i9).id > savedDialog.top_message_id) {
+                                    i8++;
                                 }
-                                savedDialog.messagesCount += i8;
                             }
-                            MessageObject messageObject = new MessageObject(this.currentAccount, message3, false, false);
-                            savedDialog.message = messageObject;
-                            savedDialog.top_message_id = messageObject.getId();
-                            z3 = true;
+                            savedDialog.messagesCount += i8;
                         }
-                        if (num2 != null) {
-                            i2 = Math.max(num2.intValue(), savedDialog.messagesCount);
-                        } else {
-                            i2 = savedDialog.messagesCount;
-                        }
-                        num2 = Integer.valueOf(i2);
-                        z = true;
-                    } else {
-                        i5++;
+                        MessageObject messageObject = new MessageObject(this.currentAccount, message3, false, false);
+                        savedDialog.message = messageObject;
+                        savedDialog.top_message_id = messageObject.getId();
+                        z3 = true;
                     }
-                }
-                if (!z) {
-                    SavedDialog fromMessage = SavedDialog.fromMessage(this.currentAccount, message3, this.forumDialogId == 0);
                     if (num2 != null) {
-                        fromMessage.messagesCount = num2.intValue();
+                        i2 = Math.max(num2.intValue(), savedDialog.messagesCount);
+                    } else {
+                        i2 = savedDialog.messagesCount;
                     }
-                    this.cachedDialogs.add(fromMessage);
-                    z3 = true;
+                    num2 = Integer.valueOf(i2);
+                    z = true;
+                } else {
+                    i5++;
                 }
-                int i10 = 0;
-                while (true) {
-                    if (i10 >= this.loadedDialogs.size()) {
-                        z2 = false;
-                        break;
-                    }
-                    SavedDialog savedDialog2 = this.loadedDialogs.get(i10);
-                    if (savedDialog2.dialogId == keyAt) {
-                        int i11 = savedDialog2.top_message_id;
-                        int i12 = message3.id;
-                        if (i11 < i12 || (i12 < 0 && message3.date > savedDialog2.getDate())) {
-                            if (savedDialog2.top_message_id < message3.id) {
-                                int i13 = 0;
-                                for (int i14 = 0; i14 < arrayList.size(); i14++) {
-                                    if (arrayList.get(i14).id > savedDialog2.top_message_id) {
-                                        i13++;
-                                    }
+            }
+            if (!z) {
+                SavedDialog fromMessage = SavedDialog.fromMessage(this.currentAccount, message3, true);
+                if (num2 != null) {
+                    fromMessage.messagesCount = num2.intValue();
+                }
+                this.cachedDialogs.add(fromMessage);
+                z3 = true;
+            }
+            int i10 = 0;
+            while (true) {
+                if (i10 >= this.loadedDialogs.size()) {
+                    z2 = false;
+                    break;
+                }
+                SavedDialog savedDialog2 = this.loadedDialogs.get(i10);
+                if (savedDialog2.dialogId == keyAt) {
+                    int i11 = savedDialog2.top_message_id;
+                    int i12 = message3.id;
+                    if (i11 < i12 || (i12 < 0 && message3.date > savedDialog2.getDate())) {
+                        if (savedDialog2.top_message_id < message3.id) {
+                            int i13 = 0;
+                            for (int i14 = 0; i14 < arrayList.size(); i14++) {
+                                if (arrayList.get(i14).id > savedDialog2.top_message_id) {
+                                    i13++;
                                 }
-                                savedDialog2.messagesCount += i13;
                             }
-                            MessageObject messageObject2 = new MessageObject(this.currentAccount, message3, false, false);
-                            savedDialog2.message = messageObject2;
-                            savedDialog2.top_message_id = messageObject2.getId();
-                            z3 = true;
+                            savedDialog2.messagesCount += i13;
                         }
-                        if (num2 != null) {
-                            i = Math.max(num2.intValue(), savedDialog2.messagesCount);
-                        } else {
-                            i = savedDialog2.messagesCount;
-                        }
-                        num2 = Integer.valueOf(i);
-                        z2 = true;
-                    } else {
-                        i10++;
+                        MessageObject messageObject2 = new MessageObject(this.currentAccount, message3, false, false);
+                        savedDialog2.message = messageObject2;
+                        savedDialog2.top_message_id = messageObject2.getId();
+                        z3 = true;
                     }
-                }
-                if (!z2) {
-                    SavedDialog fromMessage2 = SavedDialog.fromMessage(this.currentAccount, message3, this.forumDialogId == 0);
                     if (num2 != null) {
-                        fromMessage2.messagesCount = num2.intValue();
+                        i = Math.max(num2.intValue(), savedDialog2.messagesCount);
+                    } else {
+                        i = savedDialog2.messagesCount;
                     }
-                    this.loadedDialogs.add(fromMessage2);
-                    z3 = true;
+                    num2 = Integer.valueOf(i);
+                    z2 = true;
+                } else {
+                    i10++;
                 }
+            }
+            if (!z2) {
+                SavedDialog fromMessage2 = SavedDialog.fromMessage(this.currentAccount, message3, true);
+                if (num2 != null) {
+                    fromMessage2.messagesCount = num2.intValue();
+                }
+                this.loadedDialogs.add(fromMessage2);
+                z3 = true;
             }
         }
         return z3;
@@ -720,9 +700,6 @@ public class SavedMessagesController {
                 this.cachedDialogs.add(savedDialog2);
             }
         }
-        if (this.forumDialogId != 0) {
-            UserConfig.getInstance(this.currentAccount).getPreferences().edit().remove("topics_end_reached_" + (-this.forumDialogId)).apply();
-        }
         this.loadedDialogs.clear();
         this.dialogsLoaded = false;
         this.dialogsCount = 0;
@@ -779,9 +756,6 @@ public class SavedMessagesController {
                 i--;
             }
             i++;
-        }
-        if (this.forumDialogId != 0) {
-            MessagesStorage.getInstance(this.currentAccount).removeTopic(this.forumDialogId, j);
         }
         return Math.max(i3, i5);
     }
@@ -989,142 +963,179 @@ public class SavedMessagesController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:71:0x0184, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:41:0x01a2, code lost:
     
-        if (r14 != null) goto L63;
+        if (r16 != null) goto L81;
      */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x01ae  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x01b3  */
+    /* JADX WARN: Code restructure failed: missing block: B:42:0x01a4, code lost:
+    
+        r16.dispose();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:43:0x01a7, code lost:
+    
+        org.telegram.messenger.AndroidUtilities.runOnUIThread(new org.telegram.messenger.SavedMessagesController$$ExternalSyntheticLambda2(r35, r9, r10, r12, r11, r39));
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:44:0x01b7, code lost:
+    
+        return;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:90:0x018a, code lost:
+    
+        if (r16 != null) goto L81;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x019f  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x01bb  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x01c0  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public /* synthetic */ void lambda$loadCache$7(MessagesStorage messagesStorage, long j, final Runnable runnable) {
         SQLiteCursor sQLiteCursor;
-        SavedDialog savedDialog;
-        SQLiteDatabase sQLiteDatabase;
-        long j2;
-        ArrayList arrayList;
-        ArrayList<Long> arrayList2;
-        int i = 0;
+        SQLiteCursor sQLiteCursor2;
+        SQLiteCursor sQLiteCursor3;
+        int i = 1;
+        int i2 = 0;
         SQLiteDatabase database = messagesStorage.getDatabase();
-        final ArrayList arrayList3 = new ArrayList();
-        ArrayList<Long> arrayList4 = new ArrayList<>();
-        ArrayList arrayList5 = new ArrayList();
-        ArrayList arrayList6 = new ArrayList();
-        final ArrayList<TLRPC.User> arrayList7 = new ArrayList<>();
-        final ArrayList<TLRPC.Chat> arrayList8 = new ArrayList<>();
-        final ArrayList<TLRPC.Document> arrayList9 = new ArrayList<>();
-        SQLiteCursor sQLiteCursor2 = null;
+        final ArrayList arrayList = new ArrayList();
+        ArrayList<Long> arrayList2 = new ArrayList<>();
+        ArrayList arrayList3 = new ArrayList();
+        ArrayList arrayList4 = new ArrayList();
+        final ArrayList<TLRPC.User> arrayList5 = new ArrayList<>();
+        final ArrayList<TLRPC.Chat> arrayList6 = new ArrayList<>();
+        final ArrayList<TLRPC.Document> arrayList7 = new ArrayList<>();
         try {
-            SQLiteCursor queryFinalized = database.queryFinalized("SELECT did, date, last_mid, pinned, flags, folder_id, last_mid_group, count, unread_count, max_read_id, read_outbox FROM saved_dialogs WHERE forumChatId = ? ORDER BY pinned ASC, date DESC", Long.valueOf(this.forumDialogId));
-            while (queryFinalized.next()) {
+            sQLiteCursor = database.queryFinalized("SELECT did, date, last_mid, pinned, flags, folder_id, last_mid_group, count, unread_count, max_read_id, read_outbox FROM saved_dialogs WHERE forumChatId = ? ORDER BY pinned ASC, date DESC", 0);
+            sQLiteCursor2 = null;
+            while (sQLiteCursor.next()) {
                 try {
-                    try {
-                        savedDialog = new SavedDialog();
-                        sQLiteDatabase = database;
-                        savedDialog.dialogId = queryFinalized.longValue(i);
-                        savedDialog.localDate = queryFinalized.intValue(1);
-                        savedDialog.top_message_id = queryFinalized.intValue(2);
-                        savedDialog.pinnedOrder = queryFinalized.intValue(3);
-                        savedDialog.messagesCountLoaded = (queryFinalized.intValue(4) & 1) != 0;
-                        savedDialog.pinned = savedDialog.pinnedOrder != 999;
-                        savedDialog.messagesCount = queryFinalized.intValue(7);
-                        savedDialog.unreadCount = queryFinalized.longValue(8);
-                        savedDialog.readInboxMaxId = queryFinalized.longValue(9);
-                        savedDialog.readOutboxMaxId = queryFinalized.longValue(10);
-                        long j3 = savedDialog.dialogId;
-                        if (j3 < 0) {
-                            arrayList5.add(Long.valueOf(-j3));
-                        } else {
-                            arrayList4.add(Long.valueOf(j3));
-                        }
-                        j2 = this.forumDialogId;
-                        if (j2 == 0) {
-                            j2 = j;
-                        }
-                        arrayList = arrayList3;
-                    } catch (Exception e) {
-                        e = e;
-                    }
-                    try {
-                        database = sQLiteDatabase;
-                        sQLiteCursor2 = database.queryFinalized("SELECT data FROM messages_topics WHERE uid = ? AND mid = ? AND topic_id = ?", Long.valueOf(j2), Integer.valueOf(savedDialog.top_message_id), Long.valueOf(savedDialog.dialogId));
-                        if (sQLiteCursor2.next()) {
-                            NativeByteBuffer byteBufferValue = sQLiteCursor2.byteBufferValue(0);
-                            TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(true), true);
-                            MessagesStorage.addUsersAndChatsFromMessage(TLdeserialize, arrayList4, arrayList5, arrayList6);
-                            arrayList2 = arrayList4;
-                            savedDialog.message = new MessageObject(this.currentAccount, TLdeserialize, null, null, null, null, null, false, false, 0L, false, false, this.forumDialogId == 0);
-                        } else {
-                            arrayList2 = arrayList4;
-                        }
-                        sQLiteCursor2.dispose();
-                        arrayList3 = arrayList;
-                        arrayList3.add(savedDialog);
-                        arrayList4 = arrayList2;
-                        i = 0;
-                    } catch (Exception e2) {
-                        e = e2;
-                        arrayList3 = arrayList;
-                        SQLiteCursor sQLiteCursor3 = sQLiteCursor2;
-                        sQLiteCursor2 = queryFinalized;
-                        sQLiteCursor = sQLiteCursor3;
+                    SavedDialog savedDialog = new SavedDialog();
+                    savedDialog.dialogId = sQLiteCursor.longValue(i2);
+                    savedDialog.localDate = sQLiteCursor.intValue(i);
+                    savedDialog.top_message_id = sQLiteCursor.intValue(2);
+                    savedDialog.pinnedOrder = sQLiteCursor.intValue(3);
+                    savedDialog.messagesCountLoaded = (sQLiteCursor.intValue(4) & i) != 0;
+                    savedDialog.pinned = savedDialog.pinnedOrder != 999;
+                    savedDialog.messagesCount = sQLiteCursor.intValue(7);
+                    savedDialog.unreadCount = sQLiteCursor.longValue(8);
+                    savedDialog.readInboxMaxId = sQLiteCursor.longValue(9);
+                    savedDialog.readOutboxMaxId = sQLiteCursor.longValue(10);
+                    long j2 = savedDialog.dialogId;
+                    if (j2 < 0) {
                         try {
-                            FileLog.e(e);
-                            if (sQLiteCursor2 != null) {
-                                sQLiteCursor2.dispose();
-                            }
-                            if (sQLiteCursor != null) {
-                                sQLiteCursor2 = sQLiteCursor;
-                                sQLiteCursor2.dispose();
-                            }
-                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SavedMessagesController$$ExternalSyntheticLambda2
-                                @Override // java.lang.Runnable
-                                public final void run() {
-                                    SavedMessagesController.this.lambda$loadCache$6(arrayList7, arrayList8, arrayList9, arrayList3, runnable);
+                            arrayList3.add(Long.valueOf(-j2));
+                        } catch (Exception e) {
+                            e = e;
+                            try {
+                                FileLog.e(e);
+                                if (sQLiteCursor != null) {
                                 }
-                            });
-                            return;
-                        } catch (Throwable th) {
-                            th = th;
-                            if (sQLiteCursor2 != null) {
+                            } catch (Throwable th) {
+                                th = th;
+                                if (sQLiteCursor != null) {
+                                    sQLiteCursor.dispose();
+                                }
+                                if (sQLiteCursor2 != null) {
+                                    sQLiteCursor2.dispose();
+                                }
+                                throw th;
                             }
+                        } catch (Throwable th2) {
+                            th = th2;
                             if (sQLiteCursor != null) {
+                            }
+                            if (sQLiteCursor2 != null) {
                             }
                             throw th;
                         }
+                    } else {
+                        arrayList2.add(Long.valueOf(j2));
                     }
-                } catch (Throwable th2) {
-                    th = th2;
-                    SQLiteCursor sQLiteCursor4 = sQLiteCursor2;
-                    sQLiteCursor2 = queryFinalized;
-                    sQLiteCursor = sQLiteCursor4;
-                    if (sQLiteCursor2 != null) {
-                        sQLiteCursor2.dispose();
+                    sQLiteCursor3 = sQLiteCursor;
+                    try {
+                        SQLiteCursor queryFinalized = database.queryFinalized("SELECT data FROM messages_topics WHERE uid = ? AND mid = ? AND topic_id = ?", Long.valueOf(j), Integer.valueOf(savedDialog.top_message_id), Long.valueOf(savedDialog.dialogId));
+                        try {
+                            if (queryFinalized.next()) {
+                                NativeByteBuffer byteBufferValue = queryFinalized.byteBufferValue(0);
+                                TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(true), true);
+                                MessagesStorage.addUsersAndChatsFromMessage(TLdeserialize, arrayList2, arrayList3, arrayList4);
+                                try {
+                                    savedDialog.message = new MessageObject(this.currentAccount, TLdeserialize, null, null, null, null, null, false, false, 0L, false, false, true);
+                                } catch (Exception e2) {
+                                    e = e2;
+                                    sQLiteCursor2 = queryFinalized;
+                                    sQLiteCursor = sQLiteCursor3;
+                                    FileLog.e(e);
+                                    if (sQLiteCursor != null) {
+                                    }
+                                } catch (Throwable th3) {
+                                    th = th3;
+                                    sQLiteCursor2 = queryFinalized;
+                                    sQLiteCursor = sQLiteCursor3;
+                                    if (sQLiteCursor != null) {
+                                    }
+                                    if (sQLiteCursor2 != null) {
+                                    }
+                                    throw th;
+                                }
+                            }
+                            queryFinalized.dispose();
+                            arrayList.add(savedDialog);
+                            sQLiteCursor2 = queryFinalized;
+                            sQLiteCursor = sQLiteCursor3;
+                            i = 1;
+                            i2 = 0;
+                        } catch (Exception e3) {
+                            e = e3;
+                        } catch (Throwable th4) {
+                            th = th4;
+                        }
+                    } catch (Exception e4) {
+                        e = e4;
+                    } catch (Throwable th5) {
+                        th = th5;
                     }
-                    if (sQLiteCursor != null) {
-                        sQLiteCursor.dispose();
-                    }
-                    throw th;
+                } catch (Exception e5) {
+                    e = e5;
+                } catch (Throwable th6) {
+                    th = th6;
                 }
             }
-            ArrayList<Long> arrayList10 = arrayList4;
-            if (!arrayList10.isEmpty()) {
-                messagesStorage.getUsersInternal(arrayList10, arrayList7);
+            sQLiteCursor3 = sQLiteCursor;
+            try {
+                if (!arrayList2.isEmpty()) {
+                    messagesStorage.getUsersInternal(arrayList2, arrayList5);
+                }
+                if (!arrayList3.isEmpty()) {
+                    messagesStorage.getChatsInternal(TextUtils.join(",", arrayList3), arrayList6);
+                }
+                if (!arrayList4.isEmpty()) {
+                    messagesStorage.getAnimatedEmoji(TextUtils.join(",", arrayList4), arrayList7);
+                }
+                sQLiteCursor3.dispose();
+            } catch (Exception e6) {
+                e = e6;
+                sQLiteCursor = sQLiteCursor3;
+                FileLog.e(e);
+                if (sQLiteCursor != null) {
+                    sQLiteCursor.dispose();
+                }
+            } catch (Throwable th7) {
+                th = th7;
+                sQLiteCursor = sQLiteCursor3;
+                if (sQLiteCursor != null) {
+                }
+                if (sQLiteCursor2 != null) {
+                }
+                throw th;
             }
-            if (!arrayList5.isEmpty()) {
-                messagesStorage.getChatsInternal(TextUtils.join(",", arrayList5), arrayList8);
-            }
-            if (!arrayList6.isEmpty()) {
-                messagesStorage.getAnimatedEmoji(TextUtils.join(",", arrayList6), arrayList9);
-            }
-            queryFinalized.dispose();
-        } catch (Exception e3) {
-            e = e3;
+        } catch (Exception e7) {
+            e = e7;
             sQLiteCursor = null;
-        } catch (Throwable th3) {
-            th = th3;
+            sQLiteCursor2 = null;
+        } catch (Throwable th8) {
+            th = th8;
             sQLiteCursor = null;
+            sQLiteCursor2 = null;
         }
     }
 
@@ -1147,7 +1158,7 @@ public class SavedMessagesController {
     private void updateDialogsLastMessage(final ArrayList<SavedDialog> arrayList) {
         final long clientUserId = UserConfig.getInstance(this.currentAccount).getClientUserId();
         final MessagesStorage messagesStorage = MessagesStorage.getInstance(this.currentAccount);
-        messagesStorage.getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.SavedMessagesController$$ExternalSyntheticLambda16
+        messagesStorage.getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.SavedMessagesController$$ExternalSyntheticLambda17
             @Override // java.lang.Runnable
             public final void run() {
                 SavedMessagesController.this.lambda$updateDialogsLastMessage$9(messagesStorage, arrayList, clientUserId);
@@ -1156,126 +1167,77 @@ public class SavedMessagesController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x00f0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x00b2, code lost:
     
-        if (r11 == null) goto L56;
+        if (r11 != null) goto L28;
      */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0106  */
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x00bd, code lost:
+    
+        org.telegram.messenger.AndroidUtilities.runOnUIThread(new org.telegram.messenger.SavedMessagesController$$ExternalSyntheticLambda3(r18, r6, r7, r10, r8, r9));
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x00cb, code lost:
+    
+        return;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x00ba, code lost:
+    
+        r11.dispose();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x00b8, code lost:
+    
+        if (r11 == null) goto L29;
+     */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public /* synthetic */ void lambda$updateDialogsLastMessage$9(MessagesStorage messagesStorage, ArrayList arrayList, long j) {
-        ArrayList<TLRPC.Document> arrayList2;
-        ArrayList<TLRPC.Document> arrayList3;
-        SQLiteCursor sQLiteCursor;
-        SavedDialog savedDialog;
         SQLiteDatabase database = messagesStorage.getDatabase();
-        final ArrayList arrayList4 = new ArrayList();
+        final ArrayList arrayList2 = new ArrayList();
         final LongSparseArray longSparseArray = new LongSparseArray();
-        ArrayList<Long> arrayList5 = new ArrayList<>();
-        ArrayList arrayList6 = new ArrayList();
-        ArrayList arrayList7 = new ArrayList();
-        final ArrayList<TLRPC.User> arrayList8 = new ArrayList<>();
-        final ArrayList<TLRPC.Chat> arrayList9 = new ArrayList<>();
-        ArrayList<TLRPC.Document> arrayList10 = new ArrayList<>();
-        SQLiteCursor sQLiteCursor2 = null;
+        ArrayList<Long> arrayList3 = new ArrayList<>();
+        ArrayList arrayList4 = new ArrayList();
+        ArrayList arrayList5 = new ArrayList();
+        final ArrayList<TLRPC.User> arrayList6 = new ArrayList<>();
+        final ArrayList<TLRPC.Chat> arrayList7 = new ArrayList<>();
+        final ArrayList<TLRPC.Document> arrayList8 = new ArrayList<>();
+        SQLiteCursor sQLiteCursor = null;
         int i = 0;
         while (i < arrayList.size()) {
             try {
                 try {
-                    try {
-                        savedDialog = (SavedDialog) arrayList.get(i);
-                        arrayList3 = arrayList10;
-                        sQLiteCursor = sQLiteCursor2;
-                    } catch (Exception e) {
-                        e = e;
-                        arrayList3 = arrayList10;
+                    SavedDialog savedDialog = (SavedDialog) arrayList.get(i);
+                    int i2 = i;
+                    sQLiteCursor = database.queryFinalized("SELECT mid, data FROM messages_topics WHERE uid = ? AND topic_id = ? ORDER BY mid DESC LIMIT 1", Long.valueOf(j), Long.valueOf(savedDialog.dialogId));
+                    if (sQLiteCursor.next()) {
+                        sQLiteCursor.intValue(0);
+                        NativeByteBuffer byteBufferValue = sQLiteCursor.byteBufferValue(1);
+                        TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(true), true);
+                        MessagesStorage.addUsersAndChatsFromMessage(TLdeserialize, arrayList3, arrayList4, arrayList5);
+                        longSparseArray.put(savedDialog.dialogId, TLdeserialize);
+                    } else {
+                        arrayList2.add(Long.valueOf(savedDialog.dialogId));
                     }
-                } catch (Throwable th) {
-                    th = th;
+                    sQLiteCursor.dispose();
+                    i = i2 + 1;
+                } catch (Exception e) {
+                    FileLog.e(e);
                 }
-                try {
-                    try {
-                        long j2 = this.forumDialogId;
-                        if (j2 == 0) {
-                            j2 = j;
-                        }
-                        sQLiteCursor2 = database.queryFinalized("SELECT mid, data FROM messages_topics WHERE uid = ? AND topic_id = ? ORDER BY mid DESC LIMIT 1", Long.valueOf(j2), Long.valueOf(savedDialog.dialogId));
-                        try {
-                            try {
-                                if (sQLiteCursor2.next()) {
-                                    sQLiteCursor2.intValue(0);
-                                    NativeByteBuffer byteBufferValue = sQLiteCursor2.byteBufferValue(1);
-                                    TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(true), true);
-                                    MessagesStorage.addUsersAndChatsFromMessage(TLdeserialize, arrayList5, arrayList6, arrayList7);
-                                    longSparseArray.put(savedDialog.dialogId, TLdeserialize);
-                                } else {
-                                    arrayList4.add(Long.valueOf(savedDialog.dialogId));
-                                }
-                                sQLiteCursor2.dispose();
-                                i++;
-                                arrayList10 = arrayList3;
-                            } catch (Throwable th2) {
-                                th = th2;
-                                if (sQLiteCursor2 != null) {
-                                    sQLiteCursor2.dispose();
-                                }
-                                throw th;
-                            }
-                        } catch (Exception e2) {
-                            e = e2;
-                            arrayList2 = arrayList3;
-                            FileLog.e(e);
-                        }
-                    } catch (Exception e3) {
-                        e = e3;
-                        arrayList2 = arrayList3;
-                        sQLiteCursor2 = sQLiteCursor;
-                        FileLog.e(e);
-                    }
-                } catch (Throwable th3) {
-                    th = th3;
-                    sQLiteCursor2 = sQLiteCursor;
-                    if (sQLiteCursor2 != null) {
-                    }
-                    throw th;
+            } catch (Throwable th) {
+                if (sQLiteCursor != null) {
+                    sQLiteCursor.dispose();
                 }
-            } catch (Exception e4) {
-                e = e4;
-                arrayList2 = arrayList10;
+                throw th;
             }
         }
-        arrayList3 = arrayList10;
-        sQLiteCursor = sQLiteCursor2;
+        if (!arrayList3.isEmpty()) {
+            messagesStorage.getUsersInternal(arrayList3, arrayList6);
+        }
+        if (!arrayList4.isEmpty()) {
+            messagesStorage.getChatsInternal(TextUtils.join(",", arrayList4), arrayList7);
+        }
         if (!arrayList5.isEmpty()) {
-            messagesStorage.getUsersInternal(arrayList5, arrayList8);
+            messagesStorage.getAnimatedEmoji(TextUtils.join(",", arrayList5), arrayList8);
         }
-        if (!arrayList6.isEmpty()) {
-            messagesStorage.getChatsInternal(TextUtils.join(",", arrayList6), arrayList9);
-        }
-        if (arrayList7.isEmpty()) {
-            arrayList2 = arrayList3;
-        } else {
-            arrayList2 = arrayList3;
-            try {
-                messagesStorage.getAnimatedEmoji(TextUtils.join(",", arrayList7), arrayList2);
-            } catch (Exception e5) {
-                e = e5;
-                sQLiteCursor2 = sQLiteCursor;
-                FileLog.e(e);
-            }
-        }
-        if (sQLiteCursor != null) {
-            sQLiteCursor2 = sQLiteCursor;
-            sQLiteCursor2.dispose();
-        }
-        final ArrayList<TLRPC.Document> arrayList11 = arrayList2;
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SavedMessagesController$$ExternalSyntheticLambda3
-            @Override // java.lang.Runnable
-            public final void run() {
-                SavedMessagesController.this.lambda$updateDialogsLastMessage$8(arrayList8, arrayList9, arrayList11, arrayList4, longSparseArray);
-            }
-        });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1288,7 +1250,7 @@ public class SavedMessagesController {
         }
         for (int i2 = 0; i2 < longSparseArray.size(); i2++) {
             long keyAt = longSparseArray.keyAt(i2);
-            MessageObject messageObject = new MessageObject(this.currentAccount, (TLRPC.Message) longSparseArray.valueAt(i2), null, null, null, null, null, false, false, 0L, false, false, this.forumDialogId == 0);
+            MessageObject messageObject = new MessageObject(this.currentAccount, (TLRPC.Message) longSparseArray.valueAt(i2), null, null, null, null, null, false, false, 0L, false, false, true);
             for (int i3 = 0; i3 < this.loadedDialogs.size(); i3++) {
                 SavedDialog savedDialog = this.loadedDialogs.get(i3);
                 if (savedDialog.dialogId == keyAt) {
@@ -1329,7 +1291,7 @@ public class SavedMessagesController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x0095, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x0093, code lost:
     
         if (r0 == null) goto L20;
      */
@@ -1344,7 +1306,7 @@ public class SavedMessagesController {
             try {
                 SQLitePreparedStatement executeFast = database.executeFast("DELETE FROM saved_dialogs WHERE forumChatId = ?");
                 executeFast.requery();
-                executeFast.bindLong(1, this.forumDialogId);
+                executeFast.bindLong(1, 0L);
                 executeFast.step();
                 executeFast.dispose();
                 sQLitePreparedStatement = database.executeFast("REPLACE INTO saved_dialogs VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
@@ -1359,7 +1321,7 @@ public class SavedMessagesController {
                     sQLitePreparedStatement.bindInteger(6, 0);
                     sQLitePreparedStatement.bindInteger(7, 0);
                     sQLitePreparedStatement.bindInteger(8, savedDialog.messagesCount);
-                    sQLitePreparedStatement.bindLong(9, this.forumDialogId);
+                    sQLitePreparedStatement.bindLong(9, 0L);
                     sQLitePreparedStatement.bindLong(10, savedDialog.unreadCount);
                     sQLitePreparedStatement.bindLong(11, savedDialog.readInboxMaxId);
                     sQLitePreparedStatement.bindLong(12, savedDialog.readOutboxMaxId);
@@ -1408,7 +1370,7 @@ public class SavedMessagesController {
         try {
             SQLitePreparedStatement executeFast = messagesStorage.getDatabase().executeFast("DELETE FROM saved_dialogs WHERE forumChatId = ?");
             executeFast.requery();
-            executeFast.bindLong(1, this.forumDialogId);
+            executeFast.bindLong(1, 0L);
             executeFast.step();
             executeFast.dispose();
         } catch (Exception e) {
@@ -1546,9 +1508,6 @@ public class SavedMessagesController {
         this.checkMessagesCallbacks.put(j, arrayList2);
         TLRPC.TL_messages_getSavedHistory tL_messages_getSavedHistory = new TLRPC.TL_messages_getSavedHistory();
         tL_messages_getSavedHistory.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(j);
-        if (this.forumDialogId != 0) {
-            tL_messages_getSavedHistory.parent_peer = MessagesController.getInstance(this.currentAccount).getInputPeer(this.forumDialogId);
-        }
         tL_messages_getSavedHistory.limit = 1;
         tL_messages_getSavedHistory.hash = 0L;
         tL_messages_getSavedHistory.offset_id = ConnectionsManager.DEFAULT_DATACENTER_ID;
@@ -1579,8 +1538,6 @@ public class SavedMessagesController {
             int size = messages_messages.messages.size();
             if (messages_messages instanceof TLRPC.TL_messages_messagesSlice) {
                 size = ((TLRPC.TL_messages_messagesSlice) messages_messages).count;
-            } else if (this.forumDialogId != 0 && (messages_messages instanceof TLRPC.TL_messages_channelMessages)) {
-                size = messages_messages.count;
             }
             MessagesController.getInstance(this.currentAccount).putUsers(messages_messages.users, false);
             MessagesController.getInstance(this.currentAccount).putChats(messages_messages.chats, false);
@@ -1589,7 +1546,7 @@ public class SavedMessagesController {
             if (size > 0) {
                 if (!updatedDialogCount(j, size, true)) {
                     if (!messages_messages.messages.isEmpty()) {
-                        SavedDialog fromMessage = SavedDialog.fromMessage(this.currentAccount, messages_messages.messages.get(0), this.forumDialogId == 0);
+                        SavedDialog fromMessage = SavedDialog.fromMessage(this.currentAccount, messages_messages.messages.get(0), true);
                         fromMessage.messagesCount = size;
                         fromMessage.messagesCountLoaded = true;
                         this.cachedDialogs.add(fromMessage);

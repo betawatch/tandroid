@@ -788,7 +788,7 @@ public class QuickShareSelectorDrawable extends Drawable implements Animator.Ani
             bgScale = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 40, NotificationCenter.onReceivedChannelDifference, 560);
             heightExpansion = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), 0, 250, 560);
             widthExpansion = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 0, 460, 560);
-            bubbleY = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 0, 325, 560);
+            bubbleY = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 0, NotificationCenter.botForumTopicDidCreate, 560);
             ballsRadius = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), 150, 250, 560);
             overshootCancel = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), NotificationCenter.userIsPremiumBlockedUpadted, 480, 560);
             avatar1 = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 60, NotificationCenter.onReceivedChannelDifference, 560);

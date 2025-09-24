@@ -177,7 +177,7 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
                 @Override // android.view.ViewGroup, android.view.View
                 public boolean dispatchTouchEvent(MotionEvent motionEvent) {
                     if (motionEvent.getAction() == 0 && motionEvent.getY() < ((BottomSheet) BottomSheetWithRecyclerListView.this).shadowDrawable.getBounds().top) {
-                        BottomSheetWithRecyclerListView.this.lambda$new$0();
+                        BottomSheetWithRecyclerListView.this.dismiss();
                     }
                     return super.dispatchTouchEvent(motionEvent);
                 }
@@ -267,7 +267,7 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
                 @Override // android.view.ViewGroup, android.view.View
                 public boolean dispatchTouchEvent(MotionEvent motionEvent) {
                     if (motionEvent.getAction() == 0 && motionEvent.getY() < ((BottomSheet) BottomSheetWithRecyclerListView.this).shadowDrawable.getBounds().top) {
-                        BottomSheetWithRecyclerListView.this.lambda$new$0();
+                        BottomSheetWithRecyclerListView.this.dismiss();
                     }
                     return super.dispatchTouchEvent(motionEvent);
                 }
@@ -429,7 +429,7 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
                 @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
                 public void onItemClick(int i) {
                     if (i == -1) {
-                        BottomSheetWithRecyclerListView.this.lambda$new$0();
+                        BottomSheetWithRecyclerListView.this.dismiss();
                     }
                 }
             });

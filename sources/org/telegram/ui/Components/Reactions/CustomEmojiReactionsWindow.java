@@ -398,6 +398,10 @@ public class CustomEmojiReactionsWindow {
         createTransition(true);
     }
 
+    public void setLongPressEnabled(boolean z) {
+        this.selectAnimatedEmojiDialog.setLongPressEnabled(z);
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     public void updateWindowPosition() {
         if (this.dismissed) {

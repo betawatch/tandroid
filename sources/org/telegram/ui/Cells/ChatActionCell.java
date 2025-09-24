@@ -99,6 +99,7 @@ import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.ScaleStateListAnimator;
+import org.telegram.ui.Components.SuggestBirthdayActionLayout;
 import org.telegram.ui.Components.Text;
 import org.telegram.ui.Components.TopicSeparator;
 import org.telegram.ui.Components.TypefaceSpan;
@@ -136,7 +137,8 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
     private RectF backgroundRect;
     private int backgroundRectHeight;
     private int backgroundRight;
-    private ButtonBounce bounce;
+    public SuggestBirthdayActionLayout birthdayLayout;
+    private final ButtonBounce bounce;
     private boolean buttonClickableAsImage;
     private boolean canDrawInParent;
     private GiftSheet.CardBackground cardBackground;
@@ -647,22 +649,22 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:113:0x01b4  */
-    /* JADX WARN: Removed duplicated region for block: B:121:0x0272  */
-    /* JADX WARN: Removed duplicated region for block: B:123:0x0280  */
-    /* JADX WARN: Removed duplicated region for block: B:125:0x01d9  */
-    /* JADX WARN: Removed duplicated region for block: B:209:0x044c  */
-    /* JADX WARN: Removed duplicated region for block: B:210:0x0468  */
-    /* JADX WARN: Removed duplicated region for block: B:78:0x07a3  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x0794  */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x07c3  */
+    /* JADX WARN: Removed duplicated region for block: B:121:0x01e3  */
+    /* JADX WARN: Removed duplicated region for block: B:129:0x02a1  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x02af  */
+    /* JADX WARN: Removed duplicated region for block: B:133:0x0208  */
+    /* JADX WARN: Removed duplicated region for block: B:217:0x047b  */
+    /* JADX WARN: Removed duplicated region for block: B:218:0x0497  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x07d2  */
     /* JADX WARN: Type inference failed for: r15v2 */
     /* JADX WARN: Type inference failed for: r15v3, types: [boolean] */
     /* JADX WARN: Type inference failed for: r15v4 */
     /* JADX WARN: Type inference failed for: r15v6 */
     /* JADX WARN: Type inference failed for: r1v36, types: [org.telegram.messenger.ImageReceiver] */
-    /* JADX WARN: Type inference failed for: r2v160 */
-    /* JADX WARN: Type inference failed for: r2v161 */
-    /* JADX WARN: Type inference failed for: r2v34, types: [org.telegram.tgnet.TLRPC$messages_StickerSet] */
+    /* JADX WARN: Type inference failed for: r2v167 */
+    /* JADX WARN: Type inference failed for: r2v168 */
+    /* JADX WARN: Type inference failed for: r2v36, types: [org.telegram.tgnet.TLRPC$messages_StickerSet] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -728,6 +730,21 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                     this.reactionsLayoutInBubble.setMessage(messageObject, !messageObject.shouldDrawReactionsInLayout(), z7, this.themeDelegate);
                 } else {
                     this.reactionsLayoutInBubble.setMessage(null, false, false, this.themeDelegate);
+                }
+            }
+            if (messageObject.type == 32) {
+                if (this.birthdayLayout == null) {
+                    this.birthdayLayout = new SuggestBirthdayActionLayout(this.currentAccount, this, this.themeDelegate);
+                    if (isCellAttachedToWindow()) {
+                        this.birthdayLayout.attach();
+                    }
+                }
+                this.birthdayLayout.set(messageObject);
+            } else {
+                SuggestBirthdayActionLayout suggestBirthdayActionLayout = this.birthdayLayout;
+                if (suggestBirthdayActionLayout != null) {
+                    suggestBirthdayActionLayout.detach();
+                    this.birthdayLayout = null;
                 }
             }
             boolean z8 = !z6;
@@ -1287,6 +1304,10 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         if (topicSeparator != null) {
             topicSeparator.detach();
         }
+        SuggestBirthdayActionLayout suggestBirthdayActionLayout = this.birthdayLayout;
+        if (suggestBirthdayActionLayout != null) {
+            suggestBirthdayActionLayout.detach();
+        }
     }
 
     public boolean isCellAttachedToWindow() {
@@ -1319,6 +1340,10 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         if (topicSeparator != null) {
             topicSeparator.attach();
         }
+        SuggestBirthdayActionLayout suggestBirthdayActionLayout = this.birthdayLayout;
+        if (suggestBirthdayActionLayout != null) {
+            suggestBirthdayActionLayout.attach();
+        }
     }
 
     private void setStarsPaused(boolean z) {
@@ -1337,8 +1362,8 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         invalidate();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:129:0x0499  */
-    /* JADX WARN: Removed duplicated region for block: B:131:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:134:0x04be  */
+    /* JADX WARN: Removed duplicated region for block: B:136:? A[RETURN, SYNTHETIC] */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1361,6 +1386,10 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         }
         TopicSeparator topicSeparator = this.topicSeparator;
         if (topicSeparator != null && topicSeparator.onTouchEvent(motionEvent, false)) {
+            return true;
+        }
+        SuggestBirthdayActionLayout suggestBirthdayActionLayout = this.birthdayLayout;
+        if (suggestBirthdayActionLayout != null && suggestBirthdayActionLayout.onTouchEvent(motionEvent)) {
             return true;
         }
         if ((this.starGiftLayout.has() && this.starGiftLayout.onTouchEvent(this.starGiftLayoutX, this.starGiftLayoutY, motionEvent)) || this.reactionsLayoutInBubble.checkTouchEvent(motionEvent)) {
@@ -1429,17 +1458,23 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                     this.bounce.setPressed(false);
                     if (this.delegate != null && messageObject.replyMessageObject != null && (message = messageObject.messageOwner) != null && TlUtils.isInstance(message.action, TLRPC.TL_messageActionTodoAppendTasks.class, TLRPC.TL_messageActionTodoCompletions.class, TLRPC.TL_messageActionSuggestedPostApproval.class, TLRPC.TL_messageActionSuggestedPostRefund.class, TLRPC.TL_messageActionSuggestedPostSuccess.class)) {
                         this.delegate.didPressReplyMessage(this, this.currentMessageObject.getReplyMsgId());
-                    } else if (this.giftPremiumTextCollapsed && !this.giftPremiumTextUncollapsed && (textLayout2 = this.giftPremiumText) != null) {
-                        int height = textLayout2.layout.getHeight() - this.giftPremiumTextCollapsedHeight;
-                        this.giftPremiumTextUncollapsed = true;
-                        ChatActionCellDelegate chatActionCellDelegate = this.delegate;
-                        if (chatActionCellDelegate != null) {
-                            chatActionCellDelegate.forceUpdate(this, false);
-                            if (getParent() instanceof RecyclerListView) {
-                                ((RecyclerListView) getParent()).smoothScrollBy(0, height + AndroidUtilities.dp(24.0f));
+                    } else {
+                        if (this.giftPremiumTextCollapsed && !this.giftPremiumTextUncollapsed && (textLayout2 = this.giftPremiumText) != null) {
+                            int height = textLayout2.layout.getHeight() - this.giftPremiumTextCollapsedHeight;
+                            this.giftPremiumTextUncollapsed = true;
+                            ChatActionCellDelegate chatActionCellDelegate = this.delegate;
+                            if (chatActionCellDelegate != null) {
+                                chatActionCellDelegate.forceUpdate(this, false);
+                                if (getParent() instanceof RecyclerListView) {
+                                    ((RecyclerListView) getParent()).smoothScrollBy(0, height + AndroidUtilities.dp(24.0f));
+                                }
                             }
+                            return true;
                         }
-                        return true;
+                        if (this.birthdayLayout != null && this.backgroundRect.contains(motionEvent.getX(), motionEvent.getY())) {
+                            this.birthdayLayout.open();
+                            return true;
+                        }
                     }
                 } else if (action == 2) {
                     TextLayout textLayout4 = this.giftPremiumText;
@@ -1757,7 +1792,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                 if (chatTheme instanceof TLRPC.TL_chatThemeUniqueGift) {
                     TL_stars.StarGift starGift = ((TLRPC.TL_chatThemeUniqueGift) chatTheme).gift;
                     if (starGift instanceof TL_stars.TL_starGiftUnique) {
-                        new StarGiftSheet(getContext(), this.currentAccount, this.currentMessageObject.getDialogId(), this.themeDelegate).set(starGift.slug, (TL_stars.TL_starGiftUnique) starGift, (StarsController.IGiftsList) null).show();
+                        new StarGiftSheet(getContext(), this.currentAccount, this.currentMessageObject.getDialogId(), this.themeDelegate).set(starGift.slug, (TL_stars.TL_starGiftUnique) starGift, null).show();
                     }
                 }
             }
@@ -1929,9 +1964,9 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
     }
 
     /* JADX WARN: Removed duplicated region for block: B:40:0x0109  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x046d  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x0487  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x013d  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x048f  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x04a9  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x013d  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1942,8 +1977,9 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         float dp2;
         TLRPC.Message message;
         int i4;
-        int dp3;
         int i5;
+        int dp3;
+        int i6;
         MessageObject messageObject = this.currentMessageObject;
         if (messageObject == null && this.customText == null) {
             setMeasuredDimension(View.MeasureSpec.getSize(i), this.topicSeparatorTopPadding + this.textHeight + AndroidUtilities.dp(14.0f));
@@ -1951,7 +1987,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         }
         if (isButtonLayout(messageObject)) {
             this.giftRectSize = Math.min((int) (AndroidUtilities.isTablet() ? AndroidUtilities.getMinTabletSide() * 0.6f : (AndroidUtilities.displaySize.x * 0.62f) - AndroidUtilities.dp(34.0f)), ((AndroidUtilities.displaySize.y - ActionBar.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(64.0f));
-            if (!AndroidUtilities.isTablet() && ((i5 = messageObject.type) == 18 || i5 == 30 || isMessageActionSuggestedPostApproval())) {
+            if (!AndroidUtilities.isTablet() && ((i6 = messageObject.type) == 18 || i6 == 30 || isMessageActionSuggestedPostApproval())) {
                 this.giftRectSize = (int) (this.giftRectSize * 1.2f);
             }
             this.stickerSize = this.giftRectSize - AndroidUtilities.dp(106.0f);
@@ -1973,19 +2009,47 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         }
         if (messageObject != null) {
             if (messageObject.type == 11) {
-                i4 = AndroidUtilities.roundMessageSize;
+                i5 = AndroidUtilities.roundMessageSize;
                 dp3 = AndroidUtilities.dp(10.0f);
             } else if (isButtonLayout(messageObject)) {
-                i4 = this.giftRectSize;
+                i5 = this.giftRectSize;
                 dp3 = AndroidUtilities.dp(12.0f);
             }
-            i3 = i4 + dp3;
+            i3 = i5 + dp3;
             if (!this.starGiftLayout.has()) {
                 r7 = (this.starGiftLayout.repost ? 0 : this.textY + this.textHeight + AndroidUtilities.dp(16.0f)) + ((int) this.starGiftLayout.getHeight()) + AndroidUtilities.dp(8.0f);
                 ReactionsLayoutInBubble reactionsLayoutInBubble = this.reactionsLayoutInBubble;
                 if (!reactionsLayoutInBubble.isEmpty) {
                     reactionsLayoutInBubble.totalHeight = reactionsLayoutInBubble.height + AndroidUtilities.dp(8.0f);
-                    r7 += this.reactionsLayoutInBubble.totalHeight;
+                    i4 = this.reactionsLayoutInBubble.totalHeight;
+                    r7 += i4;
+                }
+                if (this.currentMessageObject != null) {
+                    ReactionsLayoutInBubble reactionsLayoutInBubble2 = this.reactionsLayoutInBubble;
+                    if (!reactionsLayoutInBubble2.isEmpty) {
+                        reactionsLayoutInBubble2.totalHeight = reactionsLayoutInBubble2.height + AndroidUtilities.dp(8.0f);
+                        i3 += this.reactionsLayoutInBubble.totalHeight;
+                    }
+                }
+                if (isMessageActionSuggestedPostApproval()) {
+                    i3 += this.titleHeight + AndroidUtilities.dp(24.0f);
+                }
+                if (messageObject == null && isNewStyleButtonLayout()) {
+                    setMeasuredDimension(max, this.topicSeparatorTopPadding + r7);
+                } else {
+                    setMeasuredDimension(max, this.topicSeparatorTopPadding + this.textHeight + i3 + AndroidUtilities.dp(14.0f));
+                }
+                this.reactionsLayoutInBubble.y = (getMeasuredHeight() - getPaddingTop()) - this.reactionsLayoutInBubble.totalHeight;
+                return;
+            }
+            SuggestBirthdayActionLayout suggestBirthdayActionLayout = this.birthdayLayout;
+            if (suggestBirthdayActionLayout != null) {
+                r7 = suggestBirthdayActionLayout.height() + AndroidUtilities.dp(12.0f);
+                ReactionsLayoutInBubble reactionsLayoutInBubble3 = this.reactionsLayoutInBubble;
+                if (!reactionsLayoutInBubble3.isEmpty) {
+                    reactionsLayoutInBubble3.totalHeight = reactionsLayoutInBubble3.height + AndroidUtilities.dp(8.0f);
+                    i4 = this.reactionsLayoutInBubble.totalHeight;
+                    r7 += i4;
                 }
             } else if (isButtonLayout(messageObject)) {
                 boolean isGiftChannel = isGiftChannel(messageObject);
@@ -1996,9 +2060,9 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                     if (imageSize > 0) {
                         dp5 = (dp5 * 2) + imageSize;
                     }
-                    int i6 = dp4 + dp5;
+                    int i7 = dp4 + dp5;
                     TextLayout textLayout = this.giftPremiumText;
-                    dp = i6 + (textLayout == null ? 0 : textLayout.layout.getHeight() + AndroidUtilities.dp(4.0f));
+                    dp = i7 + (textLayout == null ? 0 : textLayout.layout.getHeight() + AndroidUtilities.dp(4.0f));
                 } else {
                     dp = this.textY + this.textHeight + (this.giftRectSize * 0.075f) + imageSize + AndroidUtilities.dp(4.0f) + (this.giftPremiumText == null ? 0 : r5.layout.getHeight() + AndroidUtilities.dp(4.0f));
                 }
@@ -2079,11 +2143,11 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                     if (this.giftPremiumReleasedText != null) {
                         this.backgroundRectHeight += AndroidUtilities.dp(24.0f);
                     }
-                    int i7 = this.backgroundRectHeight + height2;
-                    this.backgroundRectHeight = i7;
+                    int i8 = this.backgroundRectHeight + height2;
+                    this.backgroundRectHeight = i8;
                     float f2 = (this.previousWidth - this.giftPremiumButtonWidth) / 2.0f;
                     if (this.giftPremiumButtonLayout != null) {
-                        this.backgroundButtonTop = i7 + dp8 + AndroidUtilities.dp(10.0f);
+                        this.backgroundButtonTop = i8 + dp8 + AndroidUtilities.dp(10.0f);
                         this.giftButtonRect.set(f2 - AndroidUtilities.dp(18.0f), this.backgroundButtonTop, f2 + this.giftPremiumButtonWidth + AndroidUtilities.dp(18.0f), this.backgroundButtonTop + this.giftPremiumButtonLayout.getHeight() + (AndroidUtilities.dp(8.0f) * 2));
                         this.backgroundRectHeight = (int) (this.backgroundRectHeight + AndroidUtilities.dp(10.0f) + this.giftButtonRect.height());
                     } else if (!isMessageActionSuggestedPostApproval()) {
@@ -2093,47 +2157,32 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                     int dp10 = this.backgroundRectHeight + AndroidUtilities.dp(16.0f);
                     this.backgroundRectHeight = dp10;
                     r7 = dp8 + dp10 + AndroidUtilities.dp(6.0f);
-                    ReactionsLayoutInBubble reactionsLayoutInBubble2 = this.reactionsLayoutInBubble;
-                    if (!reactionsLayoutInBubble2.isEmpty) {
-                        reactionsLayoutInBubble2.totalHeight = reactionsLayoutInBubble2.height + AndroidUtilities.dp(8.0f);
+                    ReactionsLayoutInBubble reactionsLayoutInBubble4 = this.reactionsLayoutInBubble;
+                    if (!reactionsLayoutInBubble4.isEmpty) {
+                        reactionsLayoutInBubble4.totalHeight = reactionsLayoutInBubble4.height + AndroidUtilities.dp(8.0f);
                         r7 += this.reactionsLayoutInBubble.totalHeight;
                     }
                 }
             }
             if (this.currentMessageObject != null) {
-                ReactionsLayoutInBubble reactionsLayoutInBubble3 = this.reactionsLayoutInBubble;
-                if (!reactionsLayoutInBubble3.isEmpty) {
-                    reactionsLayoutInBubble3.totalHeight = reactionsLayoutInBubble3.height + AndroidUtilities.dp(8.0f);
-                    i3 += this.reactionsLayoutInBubble.totalHeight;
-                }
             }
             if (isMessageActionSuggestedPostApproval()) {
-                i3 += this.titleHeight + AndroidUtilities.dp(24.0f);
             }
-            if (messageObject == null && isNewStyleButtonLayout()) {
-                setMeasuredDimension(max, this.topicSeparatorTopPadding + r7);
-            } else {
-                setMeasuredDimension(max, this.topicSeparatorTopPadding + this.textHeight + i3 + AndroidUtilities.dp(14.0f));
+            if (messageObject == null) {
             }
+            setMeasuredDimension(max, this.topicSeparatorTopPadding + this.textHeight + i3 + AndroidUtilities.dp(14.0f));
             this.reactionsLayoutInBubble.y = (getMeasuredHeight() - getPaddingTop()) - this.reactionsLayoutInBubble.totalHeight;
+            return;
         }
         i3 = 0;
         if (!this.starGiftLayout.has()) {
         }
-        if (this.currentMessageObject != null) {
-        }
-        if (isMessageActionSuggestedPostApproval()) {
-        }
-        if (messageObject == null) {
-        }
-        setMeasuredDimension(max, this.topicSeparatorTopPadding + this.textHeight + i3 + AndroidUtilities.dp(14.0f));
-        this.reactionsLayoutInBubble.y = (getMeasuredHeight() - getPaddingTop()) - this.reactionsLayoutInBubble.totalHeight;
     }
 
     private boolean isNewStyleButtonLayout() {
         MessageObject messageObject;
         int i;
-        if (!this.starGiftLayout.has() && (i = (messageObject = this.currentMessageObject).type) != 31 && i != 21 && i != 22 && !messageObject.isStoryMention()) {
+        if (!this.starGiftLayout.has() && this.birthdayLayout == null && (i = (messageObject = this.currentMessageObject).type) != 31 && i != 21 && i != 22 && !messageObject.isStoryMention()) {
             TLRPC.Message message = this.currentMessageObject.messageOwner;
             if (message != null) {
                 TLRPC.MessageAction messageAction = message.action;
@@ -2159,15 +2208,15 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         return i;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:161:0x0559, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:163:0x0567, code lost:
     
-        if (r1 == false) goto L250;
+        if (r1 == false) goto L252;
      */
-    /* JADX WARN: Removed duplicated region for block: B:134:0x0338  */
-    /* JADX WARN: Removed duplicated region for block: B:146:0x03ba  */
-    /* JADX WARN: Removed duplicated region for block: B:159:0x0555  */
-    /* JADX WARN: Removed duplicated region for block: B:177:0x03c3  */
-    /* JADX WARN: Removed duplicated region for block: B:234:0x0342  */
+    /* JADX WARN: Removed duplicated region for block: B:136:0x0346  */
+    /* JADX WARN: Removed duplicated region for block: B:148:0x03c8  */
+    /* JADX WARN: Removed duplicated region for block: B:161:0x0563  */
+    /* JADX WARN: Removed duplicated region for block: B:179:0x03d1  */
+    /* JADX WARN: Removed duplicated region for block: B:236:0x0350  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2263,6 +2312,13 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
             }
         }
         createLayout(charSequence, this.previousWidth);
+        if (this.birthdayLayout != null) {
+            this.textLayout = null;
+            this.textHeight = 0;
+            this.titleLayout = null;
+            this.titleHeight = 0;
+            this.textY = 0;
+        }
         if (messageObject != null) {
             TLRPC.Message message3 = messageObject.messageOwner;
             if (message3 != null) {
@@ -2620,18 +2676,18 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         String formatPluralString = i == 12 ? LocaleController.formatPluralString("BoldYears", 1, new Object[0]) : LocaleController.formatPluralString("BoldMonths", i, new Object[0]);
         if (z) {
             if (tL_messageActionGiftCode.unclaimed) {
-                spannableStringBuilder = new SpannableStringBuilder(AndroidUtilities.replaceTags(LocaleController.formatString("BoostingYouHaveUnclaimedPrize", R.string.BoostingYouHaveUnclaimedPrize, str)));
+                spannableStringBuilder = new SpannableStringBuilder(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BoostingYouHaveUnclaimedPrize, str)));
                 spannableStringBuilder.append((CharSequence) "\n\n");
-                spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString("BoostingUnclaimedPrizeDuration", R.string.BoostingUnclaimedPrizeDuration, formatPluralString)));
+                spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BoostingUnclaimedPrizeDuration, formatPluralString)));
             } else {
-                spannableStringBuilder = new SpannableStringBuilder(AndroidUtilities.replaceTags(LocaleController.formatString("BoostingReceivedPrizeFrom", R.string.BoostingReceivedPrizeFrom, str)));
+                spannableStringBuilder = new SpannableStringBuilder(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BoostingReceivedPrizeFrom, str)));
                 spannableStringBuilder.append((CharSequence) "\n\n");
-                spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString("BoostingReceivedPrizeDuration", R.string.BoostingReceivedPrizeDuration, formatPluralString)));
+                spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BoostingReceivedPrizeDuration, formatPluralString)));
             }
         } else {
-            spannableStringBuilder = new SpannableStringBuilder(AndroidUtilities.replaceTags(str == null ? LocaleController.getString("BoostingReceivedGiftNoName", R.string.BoostingReceivedGiftNoName) : LocaleController.formatString("BoostingReceivedGiftFrom", R.string.BoostingReceivedGiftFrom, str)));
+            spannableStringBuilder = new SpannableStringBuilder(AndroidUtilities.replaceTags(str == null ? LocaleController.getString(R.string.BoostingReceivedGiftNoName) : LocaleController.formatString("BoostingReceivedGiftFrom", R.string.BoostingReceivedGiftFrom, str)));
             spannableStringBuilder.append((CharSequence) "\n\n");
-            spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString("BoostingReceivedGiftDuration", R.string.BoostingReceivedGiftDuration, formatPluralString)));
+            spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BoostingReceivedGiftDuration, formatPluralString)));
         }
         String string2 = LocaleController.getString("BoostingReceivedGiftOpenBtn", R.string.BoostingReceivedGiftOpenBtn);
         SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(string);
@@ -2797,45 +2853,45 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         return this.customDate;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:102:0x0514  */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x0517  */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x0576  */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x0583  */
-    /* JADX WARN: Removed duplicated region for block: B:123:0x05f6  */
-    /* JADX WARN: Removed duplicated region for block: B:126:0x0609  */
-    /* JADX WARN: Removed duplicated region for block: B:136:0x068b  */
-    /* JADX WARN: Removed duplicated region for block: B:140:0x06b6  */
-    /* JADX WARN: Removed duplicated region for block: B:143:0x06c6  */
-    /* JADX WARN: Removed duplicated region for block: B:145:0x06ca  */
-    /* JADX WARN: Removed duplicated region for block: B:148:0x0715  */
-    /* JADX WARN: Removed duplicated region for block: B:151:0x0728  */
-    /* JADX WARN: Removed duplicated region for block: B:181:0x0bf9  */
-    /* JADX WARN: Removed duplicated region for block: B:184:0x0c00  */
-    /* JADX WARN: Removed duplicated region for block: B:187:0x0c0f  */
-    /* JADX WARN: Removed duplicated region for block: B:190:0x0c1c  */
-    /* JADX WARN: Removed duplicated region for block: B:193:0x0c62  */
-    /* JADX WARN: Removed duplicated region for block: B:225:0x0d48  */
-    /* JADX WARN: Removed duplicated region for block: B:230:0x0d73  */
-    /* JADX WARN: Removed duplicated region for block: B:236:0x0dc6  */
-    /* JADX WARN: Removed duplicated region for block: B:241:0x0e0e  */
-    /* JADX WARN: Removed duplicated region for block: B:247:0x0e9a  */
-    /* JADX WARN: Removed duplicated region for block: B:253:0x0ed0  */
-    /* JADX WARN: Removed duplicated region for block: B:256:0x0f0d  */
-    /* JADX WARN: Removed duplicated region for block: B:263:0x0f76  */
-    /* JADX WARN: Removed duplicated region for block: B:271:0x0f3c  */
-    /* JADX WARN: Removed duplicated region for block: B:274:0x0f48  */
-    /* JADX WARN: Removed duplicated region for block: B:276:0x0f4c  */
-    /* JADX WARN: Removed duplicated region for block: B:277:0x0f40  */
-    /* JADX WARN: Removed duplicated region for block: B:278:0x0f12  */
-    /* JADX WARN: Removed duplicated region for block: B:279:0x0ee6  */
-    /* JADX WARN: Removed duplicated region for block: B:280:0x0e6c  */
-    /* JADX WARN: Removed duplicated region for block: B:286:0x0d59  */
-    /* JADX WARN: Removed duplicated region for block: B:289:0x0c30  */
-    /* JADX WARN: Removed duplicated region for block: B:307:0x0a47  */
-    /* JADX WARN: Removed duplicated region for block: B:328:0x067c  */
-    /* JADX WARN: Removed duplicated region for block: B:331:0x05a7  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x04f0  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x053e A[LOOP:1: B:95:0x0538->B:97:0x053e, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x0528  */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x052b  */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x058a  */
+    /* JADX WARN: Removed duplicated region for block: B:117:0x0597  */
+    /* JADX WARN: Removed duplicated region for block: B:125:0x060a  */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x061d  */
+    /* JADX WARN: Removed duplicated region for block: B:138:0x069f  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x06ca  */
+    /* JADX WARN: Removed duplicated region for block: B:145:0x06da  */
+    /* JADX WARN: Removed duplicated region for block: B:147:0x06de  */
+    /* JADX WARN: Removed duplicated region for block: B:150:0x0729  */
+    /* JADX WARN: Removed duplicated region for block: B:153:0x073c  */
+    /* JADX WARN: Removed duplicated region for block: B:183:0x0c0d  */
+    /* JADX WARN: Removed duplicated region for block: B:186:0x0c14  */
+    /* JADX WARN: Removed duplicated region for block: B:189:0x0c23  */
+    /* JADX WARN: Removed duplicated region for block: B:192:0x0c30  */
+    /* JADX WARN: Removed duplicated region for block: B:195:0x0c76  */
+    /* JADX WARN: Removed duplicated region for block: B:227:0x0d5c  */
+    /* JADX WARN: Removed duplicated region for block: B:232:0x0d87  */
+    /* JADX WARN: Removed duplicated region for block: B:238:0x0dda  */
+    /* JADX WARN: Removed duplicated region for block: B:243:0x0e22  */
+    /* JADX WARN: Removed duplicated region for block: B:249:0x0eae  */
+    /* JADX WARN: Removed duplicated region for block: B:255:0x0ee4  */
+    /* JADX WARN: Removed duplicated region for block: B:258:0x0f21  */
+    /* JADX WARN: Removed duplicated region for block: B:265:0x0f8a  */
+    /* JADX WARN: Removed duplicated region for block: B:273:0x0f50  */
+    /* JADX WARN: Removed duplicated region for block: B:276:0x0f5c  */
+    /* JADX WARN: Removed duplicated region for block: B:278:0x0f60  */
+    /* JADX WARN: Removed duplicated region for block: B:279:0x0f54  */
+    /* JADX WARN: Removed duplicated region for block: B:280:0x0f26  */
+    /* JADX WARN: Removed duplicated region for block: B:281:0x0efa  */
+    /* JADX WARN: Removed duplicated region for block: B:282:0x0e80  */
+    /* JADX WARN: Removed duplicated region for block: B:288:0x0d6d  */
+    /* JADX WARN: Removed duplicated region for block: B:291:0x0c44  */
+    /* JADX WARN: Removed duplicated region for block: B:309:0x0a5b  */
+    /* JADX WARN: Removed duplicated region for block: B:330:0x0690  */
+    /* JADX WARN: Removed duplicated region for block: B:333:0x05bb  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x0504  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x0552 A[LOOP:1: B:97:0x054c->B:99:0x0552, LOOP_END] */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -2871,7 +2927,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         MessageObject messageObject = this.currentMessageObject;
         float f7 = this.giftPremiumTextExpandedAnimated.set(!this.giftPremiumTextCollapsed);
         int i5 = this.stickerSize;
-        if (!this.starGiftLayout.has() && isButtonLayout(messageObject)) {
+        if (!this.starGiftLayout.has() && this.birthdayLayout == null && isButtonLayout(messageObject)) {
             this.stickerSize = this.giftRectSize - AndroidUtilities.dp(106.0f);
             if (isNewStyleButtonLayout()) {
                 int imageSize = getImageSize(messageObject);
@@ -2953,6 +3009,10 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
             if (chatActionCellDelegate2 == null || chatActionCellDelegate2.canDrawOutboundsContent()) {
                 this.starGiftLayout.drawOutbounds(canvas);
             }
+            canvas.restore();
+        } else if (this.birthdayLayout != null) {
+            canvas.save();
+            this.birthdayLayout.draw(canvas);
             canvas.restore();
         } else if (isButtonLayout(messageObject) || (messageObject != null && messageObject.type == 11)) {
             GiftSheet.CardBackground cardBackground = this.cardBackground;
@@ -4022,28 +4082,43 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
             if (hasGradientService()) {
                 canvas2.drawRoundRect(this.backgroundRect, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), paint3);
             }
-        } else if (isButtonLayout(messageObject2)) {
-            float width3 = (getWidth() - this.giftRectSize) / 2.0f;
-            float f14 = this.textY + this.textHeight;
-            if (isNewStyleButtonLayout()) {
-                float dp6 = f14 + AndroidUtilities.dp(4.0f);
-                AndroidUtilities.rectTmp.set(width3, dp6, this.giftRectSize + width3, this.backgroundRectHeight + dp6);
-            } else {
-                float dp7 = f14 + AndroidUtilities.dp(12.0f);
-                RectF rectF3 = AndroidUtilities.rectTmp;
-                float f15 = this.giftRectSize;
-                rectF3.set(width3, dp7, width3 + f15, f15 + dp7 + this.giftPremiumAdditionalHeight);
-            }
-            if (messageObject2 != null && messageObject2.type == 18 && !this.giftPremiumTextCollapsed && (textLayout = this.giftPremiumText) != null && this.giftPremiumTextCollapsedHeight > 0) {
-                AndroidUtilities.rectTmp.bottom -= (textLayout.layout.getHeight() - this.giftPremiumTextCollapsedHeight) * (1.0f - this.giftPremiumTextExpandedAnimated.get());
-            }
-            if (this.backgroundRect == null) {
-                this.backgroundRect = new RectF();
-            }
-            this.backgroundRect.set(AndroidUtilities.rectTmp);
-            canvas2.drawRoundRect(this.backgroundRect, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), paint4);
-            if (hasGradientService()) {
-                canvas2.drawRoundRect(this.backgroundRect, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), paint3);
+        } else {
+            SuggestBirthdayActionLayout suggestBirthdayActionLayout = this.birthdayLayout;
+            if (suggestBirthdayActionLayout != null) {
+                float width3 = suggestBirthdayActionLayout.width();
+                float height = this.birthdayLayout.height();
+                float width4 = (getWidth() - width3) / 2.0f;
+                if (this.backgroundRect == null) {
+                    this.backgroundRect = new RectF();
+                }
+                this.backgroundRect.set(width4, AndroidUtilities.dp(4.0f), width3 + width4, AndroidUtilities.dp(4.0f) + height);
+                canvas2.drawRoundRect(this.backgroundRect, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), paint4);
+                if (hasGradientService()) {
+                    canvas2.drawRoundRect(this.backgroundRect, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), paint3);
+                }
+            } else if (isButtonLayout(messageObject2)) {
+                float width5 = (getWidth() - this.giftRectSize) / 2.0f;
+                float f14 = this.textY + this.textHeight;
+                if (isNewStyleButtonLayout()) {
+                    float dp6 = f14 + AndroidUtilities.dp(4.0f);
+                    AndroidUtilities.rectTmp.set(width5, dp6, this.giftRectSize + width5, this.backgroundRectHeight + dp6);
+                } else {
+                    float dp7 = f14 + AndroidUtilities.dp(12.0f);
+                    RectF rectF3 = AndroidUtilities.rectTmp;
+                    float f15 = this.giftRectSize;
+                    rectF3.set(width5, dp7, width5 + f15, f15 + dp7 + this.giftPremiumAdditionalHeight);
+                }
+                if (messageObject2 != null && messageObject2.type == 18 && !this.giftPremiumTextCollapsed && (textLayout = this.giftPremiumText) != null && this.giftPremiumTextCollapsedHeight > 0) {
+                    AndroidUtilities.rectTmp.bottom -= (textLayout.layout.getHeight() - this.giftPremiumTextCollapsedHeight) * (1.0f - this.giftPremiumTextExpandedAnimated.get());
+                }
+                if (this.backgroundRect == null) {
+                    this.backgroundRect = new RectF();
+                }
+                this.backgroundRect.set(AndroidUtilities.rectTmp);
+                canvas2.drawRoundRect(this.backgroundRect, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), paint4);
+                if (hasGradientService()) {
+                    canvas2.drawRoundRect(this.backgroundRect, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), paint3);
+                }
             }
         }
         if (i >= 0) {

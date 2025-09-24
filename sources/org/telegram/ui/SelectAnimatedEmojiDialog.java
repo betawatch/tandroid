@@ -207,6 +207,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
     public boolean includeHint;
     private ArrayList installedEmojiSets;
     private boolean isAttached;
+    private boolean isLongPressEnabled;
     private String lastQuery;
     private GridLayoutManager layoutManager;
     private Integer listStateId;
@@ -568,35 +569,35 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x01d8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x01da, code lost:
     
         if (r11 != 7) goto L36;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:64:0x02d4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:64:0x02d6, code lost:
     
         if (r11 != 5) goto L81;
      */
-    /* JADX WARN: Removed duplicated region for block: B:110:0x03e0  */
-    /* JADX WARN: Removed duplicated region for block: B:122:0x0403  */
-    /* JADX WARN: Removed duplicated region for block: B:125:0x0437  */
-    /* JADX WARN: Removed duplicated region for block: B:128:0x0445  */
-    /* JADX WARN: Removed duplicated region for block: B:130:0x0462  */
-    /* JADX WARN: Removed duplicated region for block: B:133:0x046a  */
-    /* JADX WARN: Removed duplicated region for block: B:143:0x046f  */
-    /* JADX WARN: Removed duplicated region for block: B:144:0x0464  */
-    /* JADX WARN: Removed duplicated region for block: B:145:0x044e  */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x040b  */
-    /* JADX WARN: Removed duplicated region for block: B:159:0x04d5 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:164:0x05b2  */
-    /* JADX WARN: Removed duplicated region for block: B:167:0x05cd  */
-    /* JADX WARN: Removed duplicated region for block: B:170:0x06df A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:176:0x07f5  */
-    /* JADX WARN: Removed duplicated region for block: B:179:0x083f  */
-    /* JADX WARN: Removed duplicated region for block: B:184:0x05d7  */
-    /* JADX WARN: Removed duplicated region for block: B:209:0x03b8  */
-    /* JADX WARN: Removed duplicated region for block: B:210:0x032b  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x0324  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x0342  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x03e2  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x0405  */
+    /* JADX WARN: Removed duplicated region for block: B:125:0x0439  */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x0447  */
+    /* JADX WARN: Removed duplicated region for block: B:130:0x0464  */
+    /* JADX WARN: Removed duplicated region for block: B:133:0x046c  */
+    /* JADX WARN: Removed duplicated region for block: B:143:0x0471  */
+    /* JADX WARN: Removed duplicated region for block: B:144:0x0466  */
+    /* JADX WARN: Removed duplicated region for block: B:145:0x0450  */
+    /* JADX WARN: Removed duplicated region for block: B:152:0x040d  */
+    /* JADX WARN: Removed duplicated region for block: B:159:0x04d7 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:164:0x05b4  */
+    /* JADX WARN: Removed duplicated region for block: B:167:0x05cf  */
+    /* JADX WARN: Removed duplicated region for block: B:170:0x06e1 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:176:0x07f7  */
+    /* JADX WARN: Removed duplicated region for block: B:179:0x0841  */
+    /* JADX WARN: Removed duplicated region for block: B:184:0x05d9  */
+    /* JADX WARN: Removed duplicated region for block: B:209:0x03ba  */
+    /* JADX WARN: Removed duplicated region for block: B:210:0x032d  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x0326  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x0344  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -656,6 +657,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
         this.includeHint = false;
         this.drawBackground = true;
         this.bigReactionImageReceiver = new ImageReceiver();
+        this.isLongPressEnabled = true;
         this.maxDim = 0.25f;
         this.scrimAlpha = 1.0f;
         this.emojiSelectAlpha = 1.0f;
@@ -2309,10 +2311,12 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
 
         @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListenerExtended
         public boolean onItemClick(final View view, int i, float f, float f2) {
-            int i2 = this.val$type;
-            if (i2 != 11 && i2 != 13) {
+            int i2;
+            int i3;
+            int i4 = this.val$type;
+            if (i4 != 11 && i4 != 13 && SelectAnimatedEmojiDialog.this.isLongPressEnabled) {
                 boolean z = view instanceof ImageViewEmoji;
-                if (z && (i2 == 1 || i2 == 8)) {
+                if (z && ((i3 = this.val$type) == 1 || i3 == 8)) {
                     SelectAnimatedEmojiDialog.this.incrementHintUse();
                     try {
                         SelectAnimatedEmojiDialog.this.performHapticFeedback(0);
@@ -2346,7 +2350,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                 }
                 if (z) {
                     ImageViewEmoji imageViewEmoji2 = (ImageViewEmoji) view;
-                    if (imageViewEmoji2.span != null && (i2 == 0 || i2 == 12 || i2 == 9 || i2 == 10)) {
+                    if (imageViewEmoji2.span != null && ((i2 = this.val$type) == 0 || i2 == 12 || i2 == 9 || i2 == 10)) {
                         final TL_stars.TL_starGiftUnique tL_starGiftUnique = imageViewEmoji2.starGift;
                         SelectAnimatedEmojiDialog.this.selectStatusDateDialog = new SelectStatusDurationDialog(this.val$context, SelectAnimatedEmojiDialog.this.dismiss, SelectAnimatedEmojiDialog.this, imageViewEmoji2, this.val$resourcesProvider) { // from class: org.telegram.ui.SelectAnimatedEmojiDialog.17.1
                             {
@@ -2541,6 +2545,10 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onRecentLongClick$6(DialogInterface dialogInterface) {
         setDim(0.0f, true);
+    }
+
+    public void setLongPressEnabled(boolean z) {
+        this.isLongPressEnabled = z;
     }
 
     private void setDim(float f, boolean z) {
@@ -7727,7 +7735,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
         ImageViewEmoji imageViewEmoji = this.selectedReactionView;
         if (imageViewEmoji != null) {
             float f = this.pressedProgress;
-            if (f != 1.0f && !this.cancelPressed) {
+            if (f != 1.0f && !this.cancelPressed && this.isLongPressEnabled) {
                 float f2 = f + 0.010666667f;
                 this.pressedProgress = f2;
                 if (f2 >= 1.0f) {

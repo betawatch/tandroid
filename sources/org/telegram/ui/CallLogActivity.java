@@ -466,7 +466,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             addView(avatarsImageView, LayoutHelper.createFrame(72, -1.0f, LocaleController.isRTL ? 5 : 3, -2.0f, 0.0f, 0.0f, 0.0f));
             ImageView imageView = new ImageView(context);
             this.imageView = imageView;
-            imageView.setAlpha(214);
+            imageView.setAlpha(NotificationCenter.starOptionsLoaded);
             imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_featuredStickers_addButton), PorterDuff.Mode.MULTIPLY));
             imageView.setBackgroundDrawable(Theme.createSelectorDrawable(Theme.getColor(Theme.key_listSelector), 1));
             imageView.setScaleType(ImageView.ScaleType.CENTER);

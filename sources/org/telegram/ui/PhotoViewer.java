@@ -1206,6 +1206,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         public int clipBottomAddition;
         public int clipTopAddition;
         public long dialogId;
+        public boolean fadeIn;
         public ImageReceiver imageReceiver;
         public boolean isEvent;
         public View parentView;
@@ -5163,11 +5164,11 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         this.scroller = new Scroller(parentActivity);
         14 r0 = new 14(parentActivity);
         this.windowView = r0;
-        r0.setBackgroundDrawable(this.backgroundDrawable);
+        r0.setBackground(this.backgroundDrawable);
         this.windowView.setFocusable(false);
         ClippingImageView clippingImageView = new ClippingImageView(parentActivity);
         this.animatingImageView = clippingImageView;
-        clippingImageView.setAnimationValues(this.animationValues);
+        clippingImageView.setAnimationValues(this.animationValues, false, false);
         this.windowView.addView(this.animatingImageView, LayoutHelper.createFrame(40, 40.0f));
         FrameLayoutDrawer frameLayoutDrawer = new FrameLayoutDrawer(parentActivity, parentActivity) { // from class: org.telegram.ui.PhotoViewer.15
             @Override // org.telegram.ui.Components.SizeNotifierFrameLayout
@@ -21550,12 +21551,12 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         this.padImageForHorizontalInsets = true;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:112:0x0415  */
-    /* JADX WARN: Removed duplicated region for block: B:118:0x03a9  */
-    /* JADX WARN: Removed duplicated region for block: B:134:0x01ef  */
-    /* JADX WARN: Removed duplicated region for block: B:139:0x01b7  */
-    /* JADX WARN: Removed duplicated region for block: B:140:0x01ad  */
-    /* JADX WARN: Removed duplicated region for block: B:141:0x00e8  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x041c  */
+    /* JADX WARN: Removed duplicated region for block: B:121:0x03b0  */
+    /* JADX WARN: Removed duplicated region for block: B:137:0x01ef  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x01b7  */
+    /* JADX WARN: Removed duplicated region for block: B:143:0x01ad  */
+    /* JADX WARN: Removed duplicated region for block: B:144:0x00e8  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x00e6  */
     /* JADX WARN: Removed duplicated region for block: B:30:0x00ef  */
     /* JADX WARN: Removed duplicated region for block: B:33:0x0102  */
@@ -21704,7 +21705,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                         ClippingImageView[] animatingImageViews = getAnimatingImageViews(placeForPhoto);
                         this.clippingImageProgress = 1.0f;
                         for (int i2 = 0; i2 < animatingImageViews.length; i2++) {
-                            animatingImageViews[i2].setAnimationValues(this.animationValues);
+                            animatingImageViews[i2].setAnimationValues(this.animationValues, true, placeForPhoto.fadeIn);
                             animatingImageViews[i2].setVisibility(0);
                             animatingImageViews[i2].setRadius(placeForPhoto.radius);
                             animatingImageViews[i2].setOrientation(orientation, placeForPhoto.imageReceiver.getInvert());
@@ -21725,12 +21726,12 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                             layoutParams2.height = 100;
                         }
                         for (int i3 = 0; i3 < animatingImageViews.length; i3++) {
-                            if (animatingImageViews.length > 1) {
+                            if (animatingImageViews.length > 1 || placeForPhoto.fadeIn) {
                                 f = 0.0f;
                                 animatingImageViews[i3].setAlpha(0.0f);
                             } else {
-                                f = 0.0f;
                                 animatingImageViews[i3].setAlpha(1.0f);
+                                f = 0.0f;
                             }
                             animatingImageViews[i3].setPivotX(f);
                             animatingImageViews[i3].setPivotY(f);
@@ -22624,7 +22625,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 if (z) {
                     ClippingImageView[] animatingImageViews = getAnimatingImageViews(placeProviderObject2);
                     for (int i4 = 0; i4 < animatingImageViews.length; i4++) {
-                        animatingImageViews[i4].setAnimationValues(this.animationValues);
+                        animatingImageViews[i4].setAnimationValues(this.animationValues, r13, placeProviderObject2 == null ? false : placeProviderObject2.fadeIn);
                         animatingImageViews[i4].setVisibility(r13);
                     }
                     final AnimatorSet animatorSet = new AnimatorSet();

@@ -1063,7 +1063,7 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
         this.bottomSpeakerBtn = new VoIpSwitchLayout(context, this.backgroundProvider);
         this.bottomVideoBtn = new VoIpSwitchLayout(context, this.backgroundProvider);
         this.bottomMuteBtn = new VoIpSwitchLayout(context, this.backgroundProvider);
-        this.bottomEndCallBtn = new VoIPToggleButton(context) { // from class: org.telegram.ui.VoIPFragment.7
+        this.bottomEndCallBtn = new VoIPToggleButton(context, 52.0f) { // from class: org.telegram.ui.VoIPFragment.7
             @Override // android.view.ViewGroup, android.view.View
             protected void dispatchSetPressed(boolean z2) {
                 super.dispatchSetPressed(z2);

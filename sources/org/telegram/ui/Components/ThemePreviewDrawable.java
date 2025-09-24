@@ -177,7 +177,7 @@ public class ThemePreviewDrawable extends BitmapDrawable {
             drawable6.setBounds(width2, intrinsicHeight2, drawable6.getIntrinsicWidth() + width2, drawable6.getIntrinsicHeight() + intrinsicHeight2);
             drawable6.draw(canvas);
         }
-        messageDrawableArr[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.starGiveawayOptionsLoaded, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
+        messageDrawableArr[1].setBounds(NotificationCenter.audioDidSent, 216, createBitmap.getWidth() - 20, NotificationCenter.chatSwitchedForum);
         messageDrawableArr[1].setTop(0, 560, 522, false, false);
         messageDrawableArr[1].draw(canvas);
         messageDrawableArr[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);

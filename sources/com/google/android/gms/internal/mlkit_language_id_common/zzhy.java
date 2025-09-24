@@ -53,7 +53,7 @@ public enum zzhy implements zzak {
     zzU(NotificationCenter.nearEarEvent),
     zzV(NotificationCenter.translationModelDownloading),
     zzW(NotificationCenter.translationModelDownloaded),
-    zzX(325),
+    zzX(NotificationCenter.botForumTopicDidCreate),
     zzY(331),
     zzZ(332),
     zzaa(333),

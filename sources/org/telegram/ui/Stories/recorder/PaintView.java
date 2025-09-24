@@ -1863,6 +1863,11 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
                 BlurringShader.StoryBlurDrawer windowBackgroundBlur;
 
                 @Override // org.telegram.ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
+                public /* synthetic */ boolean allowLongPress() {
+                    return ReactionsContainerLayout.ReactionsContainerDelegate.-CC.$default$allowLongPress(this);
+                }
+
+                @Override // org.telegram.ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
                 public boolean drawBackground() {
                     return true;
                 }
