@@ -5180,15 +5180,15 @@ public class MessageObject {
         updateMessageText(MessagesController.getInstance(this.currentAccount).getUsers(), MessagesController.getInstance(this.currentAccount).getChats(), null, null);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:1304:0x20f2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:1304:0x2114, code lost:
     
         if ((((org.telegram.tgnet.TLRPC.TL_messageExtendedMediaPreview) r4).flags & 4) != 0) goto L1283;
      */
-    /* JADX WARN: Removed duplicated region for block: B:1211:0x1ef2  */
-    /* JADX WARN: Removed duplicated region for block: B:1226:0x1f49  */
-    /* JADX WARN: Removed duplicated region for block: B:1228:0x1f4c  */
+    /* JADX WARN: Removed duplicated region for block: B:1211:0x1f14  */
+    /* JADX WARN: Removed duplicated region for block: B:1226:0x1f6b  */
+    /* JADX WARN: Removed duplicated region for block: B:1228:0x1f6e  */
     /* JADX WARN: Removed duplicated region for block: B:1401:0x0039  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x236b  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x238d  */
     /* JADX WARN: Removed duplicated region for block: B:296:0x07ff  */
     /* JADX WARN: Removed duplicated region for block: B:305:0x081e  */
     /* JADX WARN: Removed duplicated region for block: B:323:0x085c  */
@@ -5197,15 +5197,15 @@ public class MessageObject {
     /* JADX WARN: Removed duplicated region for block: B:347:0x086c  */
     /* JADX WARN: Removed duplicated region for block: B:362:0x08f7  */
     /* JADX WARN: Removed duplicated region for block: B:370:0x091d  */
-    /* JADX WARN: Removed duplicated region for block: B:606:0x0f67  */
-    /* JADX WARN: Removed duplicated region for block: B:610:0x0f81  */
-    /* JADX WARN: Removed duplicated region for block: B:629:0x0fdf  */
-    /* JADX WARN: Removed duplicated region for block: B:630:0x0ff3  */
-    /* JADX WARN: Removed duplicated region for block: B:646:0x1039  */
-    /* JADX WARN: Removed duplicated region for block: B:647:0x1043  */
+    /* JADX WARN: Removed duplicated region for block: B:606:0x0f89  */
+    /* JADX WARN: Removed duplicated region for block: B:610:0x0fa3  */
+    /* JADX WARN: Removed duplicated region for block: B:629:0x1001  */
+    /* JADX WARN: Removed duplicated region for block: B:630:0x1015  */
+    /* JADX WARN: Removed duplicated region for block: B:646:0x105b  */
+    /* JADX WARN: Removed duplicated region for block: B:647:0x1065  */
     /* JADX WARN: Removed duplicated region for block: B:6:0x0037  */
-    /* JADX WARN: Removed duplicated region for block: B:738:0x122c  */
-    /* JADX WARN: Removed duplicated region for block: B:758:0x12cc  */
+    /* JADX WARN: Removed duplicated region for block: B:738:0x124e  */
+    /* JADX WARN: Removed duplicated region for block: B:758:0x12ee  */
     /* JADX WARN: Removed duplicated region for block: B:9:0x004c  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -5827,7 +5827,7 @@ public class MessageObject {
                                                         this.messageText = replaceWithLink9;
                                                         this.messageText = replaceWithLink(replaceWithLink9, "un2", chat9);
                                                     } else if (tL_messageActionStarGiftUnique.assigned) {
-                                                        this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionUniqueGiftTransferOutboundAssigned)), "un1", chat8);
+                                                        this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.ActionUniqueGiftTransferOutboundAssigned, tL_messageActionStarGiftUnique.gift.title + " #" + tL_messageActionStarGiftUnique.gift.num)), "un1", chat8);
                                                     } else {
                                                         this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(isOutOwner() ? R.string.ActionUniqueGiftTransferOutbound : R.string.ActionUniqueGiftTransferInbound)), "un1", chat8);
                                                     }

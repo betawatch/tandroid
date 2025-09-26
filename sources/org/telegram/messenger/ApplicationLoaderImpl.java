@@ -99,8 +99,8 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
             }
             if (BuildVars.DEBUG_VERSION) {
                 Distribute.setEnabledForDebuggableBuild(true);
-                if (!TextUtils.isEmpty("null")) {
-                    AppCenter.start(activity.getApplication(), "null", Distribute.class, Crashes.class, Analytics.class);
+                if (!TextUtils.isEmpty(BuildConfig.APP_CENTER_HASH)) {
+                    AppCenter.start(activity.getApplication(), BuildConfig.APP_CENTER_HASH, Distribute.class, Crashes.class, Analytics.class);
                     Crashes.getMinidumpDirectory().thenAccept(new AppCenterConsumer() { // from class: org.telegram.messenger.ApplicationLoaderImpl$$ExternalSyntheticLambda2
                         @Override // com.microsoft.appcenter.utils.async.AppCenterConsumer
                         public final void accept(Object obj) {
@@ -214,7 +214,7 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
 
     @Override // org.telegram.messenger.ApplicationLoader
     public boolean isCustomUpdate() {
-        return !TextUtils.isEmpty("null");
+        return !TextUtils.isEmpty(BuildConfig.BETA_URL);
     }
 
     @Override // org.telegram.messenger.ApplicationLoader

@@ -3,15 +3,16 @@ package org.telegram.messenger.voip;
 import android.util.LongSparseArray;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BaseController;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.FileLog;
-import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.json.TLJsonBuilder;
@@ -41,10 +42,11 @@ public class GroupCallMessagesController extends BaseController {
     public void processUpdate(TLRPC.TL_updateGroupCallMessage tL_updateGroupCallMessage) {
         final long j = tL_updateGroupCallMessage.call.id;
         long peerDialogId = DialogObject.getPeerDialogId(tL_updateGroupCallMessage.from_id);
+        long j2 = tL_updateGroupCallMessage.random_id;
         if (getUserConfig().clientUserId == peerDialogId) {
             return;
         }
-        final GroupCallMessage groupCallMessage = new GroupCallMessage(this.currentAccount, peerDialogId, tL_updateGroupCallMessage.message);
+        final GroupCallMessage groupCallMessage = new GroupCallMessage(this.currentAccount, peerDialogId, j2, tL_updateGroupCallMessage.message);
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.GroupCallMessagesController$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
@@ -70,7 +72,7 @@ public class GroupCallMessagesController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Removed duplicated region for block: B:6:0x0021  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0033  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x0037  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -85,7 +87,7 @@ public class GroupCallMessagesController extends BaseController {
         if (groupCallMessageDecrypt != null) {
             tL_groupCallMessage = TLRPC.TL_groupCallMessage.TLJsonDeserialize(new TLJsonParser(new JSONObject(new String(groupCallMessageDecrypt))));
             if (tL_groupCallMessage == null) {
-                final GroupCallMessage groupCallMessage = new GroupCallMessage(this.currentAccount, j2, tL_groupCallMessage.message);
+                final GroupCallMessage groupCallMessage = new GroupCallMessage(this.currentAccount, j2, tL_groupCallMessage.random_id, tL_groupCallMessage.message);
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.GroupCallMessagesController$$ExternalSyntheticLambda2
                     @Override // java.lang.Runnable
                     public final void run() {
@@ -98,7 +100,7 @@ public class GroupCallMessagesController extends BaseController {
             TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
             tL_groupCallMessage2.message = tL_textWithEntities;
             tL_textWithEntities.text = "Unsupported";
-            final GroupCallMessage groupCallMessage2 = new GroupCallMessage(this.currentAccount, j2, tL_textWithEntities);
+            final GroupCallMessage groupCallMessage2 = new GroupCallMessage(this.currentAccount, j2, 0L, tL_textWithEntities);
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.GroupCallMessagesController$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -121,6 +123,7 @@ public class GroupCallMessagesController extends BaseController {
         if (sharedInstance == null || sharedInstance.getAccount() != this.currentAccount) {
             return false;
         }
+        long nextRandomId = getSendMessagesHelper().getNextRandomId();
         if (sharedInstance.isConference()) {
             ConferenceCall conferenceCall = sharedInstance.conference;
             if (conferenceCall == null || (groupCall = conferenceCall.groupCall) == null || groupCall.id != inputGroupCall.id) {
@@ -132,6 +135,7 @@ public class GroupCallMessagesController extends BaseController {
             }
             TLRPC.TL_groupCallMessage tL_groupCallMessage = new TLRPC.TL_groupCallMessage();
             tL_groupCallMessage.message = tL_textWithEntities;
+            tL_groupCallMessage.random_id = nextRandomId;
             JSONObject serialize = TLJsonBuilder.serialize(tL_groupCallMessage);
             if (serialize == null || (groupCallMessageEncryptImpl = groupCallMessageEncryptImpl(callId, serialize.toString().getBytes(StandardCharsets.UTF_8))) == null) {
                 return false;
@@ -144,11 +148,10 @@ public class GroupCallMessagesController extends BaseController {
             TL_phone.sendGroupCallMessage sendgroupcallmessage2 = new TL_phone.sendGroupCallMessage();
             sendgroupcallmessage2.call = inputGroupCall;
             sendgroupcallmessage2.message = tL_textWithEntities;
+            sendgroupcallmessage2.random_id = nextRandomId;
             sendgroupcallmessage = sendgroupcallmessage2;
         }
-        long j = inputGroupCall.id;
-        int i = this.currentAccount;
-        lambda$processUpdate$2(j, new GroupCallMessage(i, UserConfig.getInstance(i).clientUserId, tL_textWithEntities));
+        lambda$processUpdate$2(inputGroupCall.id, new GroupCallMessage(this.currentAccount, getUserConfig().getClientUserId(), nextRandomId, tL_textWithEntities));
         getConnectionsManager().sendRequestTyped(sendgroupcallmessage, new Utilities.Callback2() { // from class: org.telegram.messenger.voip.GroupCallMessagesController$$ExternalSyntheticLambda5
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
@@ -191,27 +194,28 @@ public class GroupCallMessagesController extends BaseController {
             messagesList = new MessagesList();
             this.callMessagesList.put(j, messagesList);
         }
-        messagesList.push(groupCallMessage);
-        List<CallMessageListener> list = this.callMessagesListeners.get(j);
-        if (list != null) {
-            Iterator<CallMessageListener> it = list.iterator();
-            while (it.hasNext()) {
-                it.next().onNewGroupCallMessage(groupCallMessage);
+        if (messagesList.push(groupCallMessage)) {
+            List<CallMessageListener> list = this.callMessagesListeners.get(j);
+            if (list != null) {
+                Iterator<CallMessageListener> it = list.iterator();
+                while (it.hasNext()) {
+                    it.next().onNewGroupCallMessage(groupCallMessage);
+                }
             }
+            List<CallMessageListener> list2 = this.callMessagesListeners.get(0L);
+            if (list2 != null) {
+                Iterator<CallMessageListener> it2 = list2.iterator();
+                while (it2.hasNext()) {
+                    it2.next().onNewGroupCallMessage(groupCallMessage);
+                }
+            }
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.GroupCallMessagesController$$ExternalSyntheticLambda0
+                @Override // java.lang.Runnable
+                public final void run() {
+                    GroupCallMessagesController.this.lambda$pushMessageToList$5(j);
+                }
+            }, getAppGlobalConfig().groupCallMessageTtl.get(TimeUnit.MILLISECONDS));
         }
-        List<CallMessageListener> list2 = this.callMessagesListeners.get(0L);
-        if (list2 != null) {
-            Iterator<CallMessageListener> it2 = list2.iterator();
-            while (it2.hasNext()) {
-                it2.next().onNewGroupCallMessage(groupCallMessage);
-            }
-        }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.GroupCallMessagesController$$ExternalSyntheticLambda0
-            @Override // java.lang.Runnable
-            public final void run() {
-                GroupCallMessagesController.this.lambda$pushMessageToList$5(j);
-            }
-        }, getAppGlobalConfig().groupCallMessageTtl.get(TimeUnit.MILLISECONDS));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -243,20 +247,30 @@ public class GroupCallMessagesController extends BaseController {
 
     private static class MessagesList {
         private final List<GroupCallMessage> messages;
+        private final Set<Long> randomIds;
 
         private MessagesList() {
             this.messages = new ArrayList();
+            this.randomIds = new HashSet();
         }
 
-        void push(GroupCallMessage groupCallMessage) {
+        boolean push(GroupCallMessage groupCallMessage) {
+            long j = groupCallMessage.randomId;
+            if (j != 0 && !this.randomIds.add(Long.valueOf(j))) {
+                return false;
+            }
             this.messages.add(0, groupCallMessage);
+            return true;
         }
 
         void pop() {
             if (this.messages.isEmpty()) {
                 return;
             }
-            this.messages.remove(r0.size() - 1);
+            long j = this.messages.remove(r0.size() - 1).randomId;
+            if (j != 0) {
+                this.randomIds.remove(Long.valueOf(j));
+            }
         }
 
         boolean isEmpty() {

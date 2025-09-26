@@ -202,42 +202,11 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
         private final int type;
         final ArrayList uniqueGifts;
 
-        /* JADX WARN: Removed duplicated region for block: B:25:0x028c  */
-        /* JADX WARN: Removed duplicated region for block: B:29:0x02b1  */
-        /*
-            Code decompiled incorrectly, please refer to instructions dump.
-        */
-        public Page(Context context, final int i) {
-            super(context);
-            CharSequence charSequence;
+        public void setupValues() {
             TLRPC.TL_emojiStatusCollectible tL_emojiStatusCollectible;
             TLRPC.TL_emojiStatusCollectible tL_emojiStatusCollectible2;
-            this.selectedColor = -1;
-            this.selectedEmoji = 0L;
             TLRPC.TL_peerColorCollectible tL_peerColorCollectible = null;
-            this.selectedEmojiCollectible = null;
-            this.selectedPeerCollectible = null;
-            this.tabs = new ArrayList();
-            this.index2gift = new HashMap();
-            this.colorPickerRow = -1;
-            this.infoRow = -1;
-            this.iconRow = -1;
-            this.info2Row = -1;
-            this.buttonRow = -1;
-            this.clearRow = -1;
-            this.shadowRow = -1;
-            this.giftsHeaderRow = -1;
-            this.giftsStartRow = -1;
-            this.giftsEndRow = -1;
-            this.giftsLoadingStartRow = -1;
-            this.giftsLoadingEndRow = -1;
-            this.giftsCount = 0;
-            this.giftsInfoRow = -1;
-            this.giftsTabsRow = -1;
-            this.giftsEmptyRow = -1;
-            this.uniqueGifts = new ArrayList();
-            this.type = i;
-            if (i == 0) {
+            if (this.type == 0) {
                 if (PeerColorActivity.this.dialogId < 0) {
                     TLRPC.Chat chat = PeerColorActivity.this.getMessagesController().getChat(Long.valueOf(-PeerColorActivity.this.dialogId));
                     this.selectedColor = ChatObject.getProfileColorId(chat);
@@ -294,10 +263,46 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
                 }
                 this.selectedPeerCollectible = tL_peerColorCollectible;
             }
-            if (this.selectedEmojiCollectible != null || this.selectedPeerCollectible != null) {
-                this.selectedColor = -1;
-                this.selectedEmoji = 0L;
+            if (this.selectedEmojiCollectible == null && this.selectedPeerCollectible == null) {
+                return;
             }
+            this.selectedColor = -1;
+            this.selectedEmoji = 0L;
+        }
+
+        /* JADX WARN: Removed duplicated region for block: B:11:0x01cd  */
+        /* JADX WARN: Removed duplicated region for block: B:15:0x01f2  */
+        /*
+            Code decompiled incorrectly, please refer to instructions dump.
+        */
+        public Page(Context context, final int i) {
+            super(context);
+            CharSequence charSequence;
+            this.selectedColor = -1;
+            this.selectedEmoji = 0L;
+            this.selectedEmojiCollectible = null;
+            this.selectedPeerCollectible = null;
+            this.tabs = new ArrayList();
+            this.index2gift = new HashMap();
+            this.colorPickerRow = -1;
+            this.infoRow = -1;
+            this.iconRow = -1;
+            this.info2Row = -1;
+            this.buttonRow = -1;
+            this.clearRow = -1;
+            this.shadowRow = -1;
+            this.giftsHeaderRow = -1;
+            this.giftsStartRow = -1;
+            this.giftsEndRow = -1;
+            this.giftsLoadingStartRow = -1;
+            this.giftsLoadingEndRow = -1;
+            this.giftsCount = 0;
+            this.giftsInfoRow = -1;
+            this.giftsTabsRow = -1;
+            this.giftsEmptyRow = -1;
+            this.uniqueGifts = new ArrayList();
+            this.type = i;
+            setupValues();
             RecyclerListView recyclerListView = new RecyclerListView(getContext(), PeerColorActivity.this.getResourceProvider()) { // from class: org.telegram.ui.PeerColorActivity.Page.1
                 @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.View
                 protected void onMeasure(int i2, int i3) {
@@ -380,9 +385,9 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
             });
             this.listView.setLayoutManager(this.layoutManager);
             RecyclerListView recyclerListView2 = this.listView;
-            4 r2 = new 4(PeerColorActivity.this, context, i);
-            this.listAdapter = r2;
-            recyclerListView2.setAdapter(r2);
+            4 r3 = new 4(PeerColorActivity.this, context, i);
+            this.listAdapter = r3;
+            recyclerListView2.setAdapter(r3);
             this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.PeerColorActivity$Page$$ExternalSyntheticLambda0
                 @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
                 public final void onItemClick(View view, int i2) {
@@ -510,7 +515,7 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
 
             @Override // org.telegram.ui.Components.RecyclerListView.SelectionAdapter
             public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
-                return viewHolder.getItemViewType() == 3 || viewHolder.getItemViewType() == 6 || viewHolder.getItemViewType() == 8;
+                return viewHolder.getItemViewType() == 3 || viewHolder.getItemViewType() == 6 || viewHolder.getItemViewType() == 8 || viewHolder.getItemViewType() == 12;
             }
 
             @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -935,26 +940,28 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
                     return;
                 }
                 TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) PeerColorActivity.this.resaleGifts.gifts.get(i4);
-                TLRPC.PeerColor peerColor = tL_starGiftUnique.peer_color;
-                if (peerColor instanceof TLRPC.TL_peerColorCollectible) {
-                    this.selectedEmoji = 0L;
-                    this.selectedColor = -1;
-                    if (i == 1) {
-                        this.selectedEmojiCollectible = null;
-                        this.selectedPeerCollectible = (TLRPC.TL_peerColorCollectible) peerColor;
-                    } else {
-                        this.selectedEmojiCollectible = MessagesController.emojiStatusCollectibleFromGift(tL_starGiftUnique);
-                        this.selectedPeerCollectible = null;
-                    }
-                    this.selectedResaleGift = tL_starGiftUnique;
-                    updateProfilePreview(true);
-                    updateMessages();
-                    updateButton(true);
-                    SetReplyIconCell setReplyIconCell2 = this.setReplyIconCell;
-                    if (setReplyIconCell2 != null) {
-                        setReplyIconCell2.update(true);
+                if (i == 1) {
+                    TLRPC.PeerColor peerColor = tL_starGiftUnique.peer_color;
+                    if (!(peerColor instanceof TLRPC.TL_peerColorCollectible)) {
                         return;
                     }
+                    this.selectedEmoji = 0L;
+                    this.selectedColor = -1;
+                    this.selectedEmojiCollectible = null;
+                    this.selectedPeerCollectible = (TLRPC.TL_peerColorCollectible) peerColor;
+                } else {
+                    this.selectedEmoji = 0L;
+                    this.selectedColor = -1;
+                    this.selectedEmojiCollectible = MessagesController.emojiStatusCollectibleFromGift(tL_starGiftUnique);
+                    this.selectedPeerCollectible = null;
+                }
+                this.selectedResaleGift = tL_starGiftUnique;
+                updateProfilePreview(true);
+                updateMessages();
+                updateButton(true);
+                SetReplyIconCell setReplyIconCell2 = this.setReplyIconCell;
+                if (setReplyIconCell2 != null) {
+                    setReplyIconCell2.update(true);
                     return;
                 }
                 return;
@@ -963,25 +970,29 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
                 return;
             }
             TL_stars.TL_starGiftUnique tL_starGiftUnique2 = (TL_stars.TL_starGiftUnique) this.uniqueGifts.get(i4);
-            TLRPC.PeerColor peerColor2 = tL_starGiftUnique2.peer_color;
-            if (peerColor2 instanceof TLRPC.TL_peerColorCollectible) {
+            if (i == 1) {
+                TLRPC.PeerColor peerColor2 = tL_starGiftUnique2.peer_color;
+                if (!(peerColor2 instanceof TLRPC.TL_peerColorCollectible)) {
+                    return;
+                }
                 this.selectedEmoji = 0L;
                 this.selectedColor = -1;
                 this.selectedResaleGift = null;
-                if (i == 1) {
-                    this.selectedEmojiCollectible = null;
-                    this.selectedPeerCollectible = (TLRPC.TL_peerColorCollectible) peerColor2;
-                } else {
-                    this.selectedEmojiCollectible = MessagesController.emojiStatusCollectibleFromGift(tL_starGiftUnique2);
-                    this.selectedPeerCollectible = null;
-                }
-                updateProfilePreview(true);
-                updateMessages();
-                updateButton(true);
-                SetReplyIconCell setReplyIconCell3 = this.setReplyIconCell;
-                if (setReplyIconCell3 != null) {
-                    setReplyIconCell3.update(true);
-                }
+                this.selectedEmojiCollectible = null;
+                this.selectedPeerCollectible = (TLRPC.TL_peerColorCollectible) peerColor2;
+            } else {
+                this.selectedEmoji = 0L;
+                this.selectedColor = -1;
+                this.selectedResaleGift = null;
+                this.selectedEmojiCollectible = MessagesController.emojiStatusCollectibleFromGift(tL_starGiftUnique2);
+                this.selectedPeerCollectible = null;
+            }
+            updateProfilePreview(true);
+            updateMessages();
+            updateButton(true);
+            SetReplyIconCell setReplyIconCell3 = this.setReplyIconCell;
+            if (setReplyIconCell3 != null) {
+                setReplyIconCell3.update(true);
             }
         }
 

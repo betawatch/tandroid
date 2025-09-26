@@ -61564,7 +61564,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             }
         }
 
-        private boolean isGiftTheme() {
+        public boolean isGiftTheme() {
             EmojiThemes currentTheme = getCurrentTheme();
             return (currentTheme == null || currentTheme.getThemeGift() == null) ? false : true;
         }

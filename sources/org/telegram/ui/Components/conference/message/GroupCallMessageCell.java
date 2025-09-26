@@ -12,9 +12,13 @@ import android.graphics.RectF;
 import android.graphics.RenderNode;
 import android.os.Build;
 import android.text.SpannableStringBuilder;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
+import me.vkryl.android.util.ClickHelper;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
@@ -34,24 +38,122 @@ import org.telegram.ui.Components.TypefaceSpan;
 import org.telegram.ui.Components.spoilers.SpoilersTextView;
 
 /* loaded from: classes5.dex */
-public class GroupCallMessageCell extends ViewGroup implements NotificationCenter.NotificationCenterDelegate {
+public class GroupCallMessageCell extends ViewGroup implements ClickHelper.Delegate, NotificationCenter.NotificationCenterDelegate {
     private static final Rect tmpRect = new Rect();
     private AnimatedEmojiDrawable animatedReactionDrawable;
     private final ImageReceiver animatedReactionReceiver;
     private final ImageReceiver avatarReceiver;
     private final Paint bgPaint;
     private View blurRoot;
+    private final ClickHelper clickHelper;
+    private Delegate delegate;
+    private GroupCallMessage groupCallMessage;
     private Layout layout;
     private boolean layoutInvalidated;
     private ReactionsLayoutInBubble.VisibleReaction messageReaction;
     private final SpoilersTextView messageTextView;
     private RenderNode renderNode;
     private float renderNodeScale;
+    private final ClickableSpan senderNameSpan;
+    private final RectF tmpRectF;
+
+    public interface Delegate {
+        void didClickAvatar(GroupCallMessageCell groupCallMessageCell, GroupCallMessage groupCallMessage, float f, float f2);
+
+        void didClickSenderName(GroupCallMessageCell groupCallMessageCell, GroupCallMessage groupCallMessage);
+    }
+
+    @Override // me.vkryl.android.util.ClickHelper.Delegate
+    public /* synthetic */ boolean forceEnableVibration() {
+        return ClickHelper.Delegate.-CC.$default$forceEnableVibration(this);
+    }
+
+    /*  JADX ERROR: JadxRuntimeException in pass: ModVisitor
+        jadx.core.utils.exceptions.JadxRuntimeException: Can't remove SSA var: r0v0 long, still in use, count: 1, list:
+          (r0v0 long) from 0x0004: RETURN (r0v0 long)
+        	at jadx.core.utils.InsnRemover.removeSsaVar(InsnRemover.java:162)
+        	at jadx.core.utils.InsnRemover.unbindResult(InsnRemover.java:127)
+        	at jadx.core.utils.InsnRemover.unbindInsn(InsnRemover.java:91)
+        	at jadx.core.utils.InsnRemover.addAndUnbind(InsnRemover.java:57)
+        	at jadx.core.dex.visitors.ModVisitor.removeStep(ModVisitor.java:452)
+        	at jadx.core.dex.visitors.ModVisitor.visit(ModVisitor.java:96)
+        */
+    @Override // me.vkryl.android.util.ClickHelper.Delegate
+    public /* bridge */ /* synthetic */ long getLongPressDuration() {
+        /*
+            r2 = this;
+            long r0 = me.vkryl.android.util.ClickHelper.Delegate.-CC.$default$getLongPressDuration(r2)
+            return r0
+        */
+        throw new UnsupportedOperationException("Method not decompiled: org.telegram.ui.Components.conference.message.GroupCallMessageCell.getLongPressDuration():long");
+    }
+
+    @Override // me.vkryl.android.util.ClickHelper.Delegate
+    public /* synthetic */ boolean ignoreHapticFeedbackSettings(float f, float f2) {
+        return ClickHelper.Delegate.-CC.$default$ignoreHapticFeedbackSettings(this, f, f2);
+    }
+
+    @Override // me.vkryl.android.util.ClickHelper.Delegate
+    public /* synthetic */ boolean needLongPress(float f, float f2) {
+        return ClickHelper.Delegate.-CC.$default$needLongPress(this, f, f2);
+    }
+
+    @Override // me.vkryl.android.util.ClickHelper.Delegate
+    public /* synthetic */ void onClickTouchDown(View view, float f, float f2) {
+        ClickHelper.Delegate.-CC.$default$onClickTouchDown(this, view, f, f2);
+    }
+
+    @Override // me.vkryl.android.util.ClickHelper.Delegate
+    public /* synthetic */ void onClickTouchMove(View view, float f, float f2) {
+        ClickHelper.Delegate.-CC.$default$onClickTouchMove(this, view, f, f2);
+    }
+
+    @Override // me.vkryl.android.util.ClickHelper.Delegate
+    public /* synthetic */ void onClickTouchUp(View view, float f, float f2) {
+        ClickHelper.Delegate.-CC.$default$onClickTouchUp(this, view, f, f2);
+    }
+
+    @Override // me.vkryl.android.util.ClickHelper.Delegate
+    public /* synthetic */ void onLongPressCancelled(View view, float f, float f2) {
+        ClickHelper.Delegate.-CC.$default$onLongPressCancelled(this, view, f, f2);
+    }
+
+    @Override // me.vkryl.android.util.ClickHelper.Delegate
+    public /* synthetic */ void onLongPressFinish(View view, float f, float f2) {
+        ClickHelper.Delegate.-CC.$default$onLongPressFinish(this, view, f, f2);
+    }
+
+    @Override // me.vkryl.android.util.ClickHelper.Delegate
+    public /* synthetic */ void onLongPressMove(View view, MotionEvent motionEvent, float f, float f2, float f3, float f4) {
+        ClickHelper.Delegate.-CC.$default$onLongPressMove(this, view, motionEvent, f, f2, f3, f4);
+    }
+
+    @Override // me.vkryl.android.util.ClickHelper.Delegate
+    public /* synthetic */ boolean onLongPressRequestedAt(View view, float f, float f2) {
+        return ClickHelper.Delegate.-CC.$default$onLongPressRequestedAt(this, view, f, f2);
+    }
 
     public GroupCallMessageCell(Context context) {
         super(context);
+        this.clickHelper = new ClickHelper(this);
         Paint paint = new Paint(1);
         this.bgPaint = paint;
+        this.senderNameSpan = new ClickableSpan() { // from class: org.telegram.ui.Components.conference.message.GroupCallMessageCell.1
+            @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+            public void updateDrawState(TextPaint textPaint) {
+            }
+
+            @Override // android.text.style.ClickableSpan
+            public void onClick(View view) {
+                if (GroupCallMessageCell.this.delegate == null || GroupCallMessageCell.this.groupCallMessage == null) {
+                    return;
+                }
+                Delegate delegate = GroupCallMessageCell.this.delegate;
+                GroupCallMessageCell groupCallMessageCell = GroupCallMessageCell.this;
+                delegate.didClickSenderName(groupCallMessageCell, groupCallMessageCell.groupCallMessage);
+            }
+        };
+        this.tmpRectF = new RectF();
         SpoilersTextView spoilersTextView = new SpoilersTextView(context);
         this.messageTextView = spoilersTextView;
         spoilersTextView.setDisablePaddingsOffset(true);
@@ -75,6 +177,7 @@ public class GroupCallMessageCell extends ViewGroup implements NotificationCente
     }
 
     public void set(GroupCallMessage groupCallMessage) {
+        this.groupCallMessage = groupCallMessage;
         TLRPC.User user = MessagesController.getInstance(UserConfig.selectedAccount).getUser(Long.valueOf(groupCallMessage.fromId));
         String firstName = UserObject.getFirstName(user);
         this.avatarReceiver.setForUserOrChat(user, new AvatarDrawable(user));
@@ -85,6 +188,7 @@ public class GroupCallMessageCell extends ViewGroup implements NotificationCente
         this.animatedReactionDrawable = null;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(firstName);
         spannableStringBuilder.setSpan(new TypefaceSpan(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(this.senderNameSpan, 0, spannableStringBuilder.length(), 33);
         ReactionsLayoutInBubble.VisibleReaction visibleReaction = groupCallMessage.visibleReaction;
         if (visibleReaction == null) {
             spannableStringBuilder.append((CharSequence) "  ");
@@ -106,6 +210,14 @@ public class GroupCallMessageCell extends ViewGroup implements NotificationCente
         this.layoutInvalidated = true;
         this.messageTextView.setText(spannableStringBuilder);
         requestLayout();
+    }
+
+    public void setDelegate(Delegate delegate) {
+        this.delegate = delegate;
+    }
+
+    public GroupCallMessage getMessage() {
+        return this.groupCallMessage;
     }
 
     @Override // android.view.View
@@ -169,6 +281,39 @@ public class GroupCallMessageCell extends ViewGroup implements NotificationCente
             return false;
         }
         return layout.bubble.contains(f, f2);
+    }
+
+    @Override // me.vkryl.android.util.ClickHelper.Delegate
+    public boolean needClickAt(View view, float f, float f2) {
+        return getClickTarget(f, f2) == 1;
+    }
+
+    @Override // me.vkryl.android.util.ClickHelper.Delegate
+    public void onClickAt(View view, float f, float f2) {
+        Delegate delegate;
+        GroupCallMessage groupCallMessage;
+        if (getClickTarget(f, f2) != 1 || (delegate = this.delegate) == null || (groupCallMessage = this.groupCallMessage) == null) {
+            return;
+        }
+        delegate.didClickAvatar(this, groupCallMessage, f, f2);
+    }
+
+    private int getClickTarget(float f, float f2) {
+        Layout layout = this.layout;
+        if (layout == null) {
+            return -1;
+        }
+        this.tmpRectF.set(layout.avatar);
+        this.tmpRectF.inset(-AndroidUtilities.dp(5.0f), -AndroidUtilities.dp(5.0f));
+        if (this.tmpRectF.contains(f, f2)) {
+            return 1;
+        }
+        return this.layout.bubble.contains(f, f2) ? 0 : -1;
+    }
+
+    @Override // android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        return this.clickHelper.onTouchEvent(this, motionEvent);
     }
 
     @Override // android.view.ViewGroup, android.view.View

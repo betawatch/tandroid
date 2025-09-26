@@ -2733,9 +2733,10 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public ActionBar createActionBar(Context context) {
+        ChatActivity chatActivity;
         ChatActivity.ThemeDelegate themeDelegate;
         BaseFragment lastFragment = this.parentLayout.getLastFragment();
-        if ((lastFragment instanceof ChatActivity) && (themeDelegate = ((ChatActivity) lastFragment).themeDelegate) != null && themeDelegate.getCurrentTheme() != null) {
+        if ((lastFragment instanceof ChatActivity) && (themeDelegate = (chatActivity = (ChatActivity) lastFragment).themeDelegate) != null && themeDelegate.getCurrentTheme() != null && !chatActivity.themeDelegate.isGiftTheme()) {
             this.resourcesProvider = lastFragment.getResourceProvider();
         }
         ActionBar actionBar = new ActionBar(context, this.resourcesProvider) { // from class: org.telegram.ui.ProfileActivity.5
@@ -2864,11 +2865,12 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         ChatAvatarContainer avatarContainer;
         TLRPC.UserFull userFull2;
         TLRPC.ChatParticipants chatParticipants;
+        ChatActivity chatActivity;
         ChatActivity.ThemeDelegate themeDelegate;
         Theme.createProfileResources(context);
         Theme.createChatResources(context, false);
         BaseFragment lastFragment = this.parentLayout.getLastFragment();
-        if ((lastFragment instanceof ChatActivity) && (themeDelegate = ((ChatActivity) lastFragment).themeDelegate) != null && themeDelegate.getCurrentTheme() != null) {
+        if ((lastFragment instanceof ChatActivity) && (themeDelegate = (chatActivity = (ChatActivity) lastFragment).themeDelegate) != null && themeDelegate.getCurrentTheme() != null && !chatActivity.themeDelegate.isGiftTheme()) {
             this.resourcesProvider = lastFragment.getResourceProvider();
         }
         this.searchTransitionOffset = 0;
@@ -3736,6 +3738,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         StarRatingView starRatingView = new StarRatingView(context2);
         this.ratingView = starRatingView;
         starRatingView.setLayoutParams(LayoutHelper.createFrame(32, 32.0f, 3, 112.0f, -2.0f, 0.0f, 0.0f));
+        this.ratingView.setResourcesProvider(this.resourcesProvider);
         checkStarRatingVisible();
         this.ratingView.setDelegate(new StarRatingView.Delegate() { // from class: org.telegram.ui.ProfileActivity$$ExternalSyntheticLambda21
             @Override // org.telegram.ui.Components.StarRatingView.Delegate
@@ -16585,7 +16588,8 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     break;
                 case 2:
                 case 19:
-                    TextDetailCell textDetailCell = new TextDetailCell(this.mContext, ProfileActivity.this.resourcesProvider, i == 19) { // from class: org.telegram.ui.ProfileActivity.ListAdapter.1
+                case 30:
+                    TextDetailCell textDetailCell = new TextDetailCell(this.mContext, ProfileActivity.this.resourcesProvider, i == 30, i == 19) { // from class: org.telegram.ui.ProfileActivity.ListAdapter.1
                         @Override // org.telegram.ui.Cells.TextDetailCell
                         protected int processColor(int i2) {
                             return ProfileActivity.this.dontApplyPeerColor(i2, false);
@@ -16987,6 +16991,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     break;
                 case 2:
                 case 19:
+                case 30:
                     TextDetailCell textDetailCell = (TextDetailCell) viewHolder.itemView;
                     ProfileActivity profileActivity2 = ProfileActivity.this;
                     if (i == profileActivity2.birthdayRow) {
@@ -17970,7 +17975,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             if (i == ProfileActivity.this.infoHeaderRow || i == ProfileActivity.this.membersHeaderRow || i == ProfileActivity.this.settingsSectionRow2 || i == ProfileActivity.this.numberSectionRow || i == ProfileActivity.this.helpHeaderRow || i == ProfileActivity.this.debugHeaderRow || i == ProfileActivity.this.botPermissionsHeader) {
                 return 1;
             }
-            if (i == ProfileActivity.this.phoneRow || i == ProfileActivity.this.noteRow || i == ProfileActivity.this.locationRow || i == ProfileActivity.this.numberRow) {
+            if (i == ProfileActivity.this.phoneRow || i == ProfileActivity.this.locationRow || i == ProfileActivity.this.numberRow) {
                 return 2;
             }
             ProfileActivity profileActivity = ProfileActivity.this;
@@ -17979,6 +17984,9 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             }
             if (i == profileActivity.usernameRow || i == ProfileActivity.this.setUsernameRow) {
                 return 19;
+            }
+            if (i == ProfileActivity.this.noteRow) {
+                return 30;
             }
             if (i == ProfileActivity.this.userInfoRow || i == ProfileActivity.this.channelInfoRow || i == ProfileActivity.this.bioRow) {
                 return 3;

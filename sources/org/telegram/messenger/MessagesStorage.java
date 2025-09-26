@@ -40,7 +40,6 @@ import org.telegram.messenger.TopicsController;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
@@ -2449,7 +2448,7 @@ public class MessagesStorage extends BaseController {
             NativeByteBuffer byteBufferValue = queryFinalized.byteBufferValue(0);
             i3 = queryFinalized.intValue(1);
             if (byteBufferValue != null) {
-                tL_forumTopic2 = TLRPC.TL_forumTopic.TLdeserialize((InputSerializedData) byteBufferValue, byteBufferValue.readInt32(true), true);
+                tL_forumTopic2 = TLRPC.TL_forumTopic.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(true), true);
                 byteBufferValue.reuse();
                 queryFinalized.dispose();
                 if (tL_forumTopic2 != null && (i3 == 0 || i3 <= i2)) {
@@ -2664,7 +2663,7 @@ public class MessagesStorage extends BaseController {
                         int intValue = queryFinalized.intValue(0);
                         NativeByteBuffer byteBufferValue2 = queryFinalized.byteBufferValue(i);
                         if (byteBufferValue2 != null) {
-                            TLRPC.TL_forumTopic TLdeserialize = TLRPC.TL_forumTopic.TLdeserialize((InputSerializedData) byteBufferValue2, byteBufferValue2.readInt32(false), false);
+                            TLRPC.TL_forumTopic TLdeserialize = TLRPC.TL_forumTopic.TLdeserialize(byteBufferValue2, byteBufferValue2.readInt32(false), false);
                             if (TLdeserialize != null) {
                                 TLdeserialize.top_message = intValue;
                                 ArrayList arrayList5 = (ArrayList) sparseArray.get(intValue);
@@ -18896,7 +18895,7 @@ public class MessagesStorage extends BaseController {
     }
 
     /*  JADX ERROR: Type inference failed
-        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r1v33 ??), method size: 9111
+        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r3v46 ?? I:??[OBJECT, ARRAY]), method size: 9111
         	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
