@@ -1772,7 +1772,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
             public final void onFactorChanged(int i4, float f, float f2, FactorAnimator factorAnimator) {
                 EmojiView.this.lambda$new$11(i4, f, f2, factorAnimator);
             }
-        }, CubicBezierInterpolator.EASE_OUT_QUINT, 380L);
+        }, CubicBezierInterpolator.EASE_OUT_QUINT, 380L, true);
         this.updateStickersLoadedDelayed = new Runnable() { // from class: org.telegram.ui.Components.EmojiView$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
