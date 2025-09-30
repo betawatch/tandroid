@@ -13,6 +13,8 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BaseController;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.json.TLJsonBuilder;
@@ -99,8 +101,8 @@ public class GroupCallMessagesController extends BaseController {
             TLRPC.TL_groupCallMessage tL_groupCallMessage2 = new TLRPC.TL_groupCallMessage();
             TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
             tL_groupCallMessage2.message = tL_textWithEntities;
-            tL_textWithEntities.text = "Unsupported";
-            final GroupCallMessage groupCallMessage2 = new GroupCallMessage(this.currentAccount, j2, 0L, tL_textWithEntities);
+            tL_textWithEntities.text = LocaleController.getString(R.string.GroupCalMessageDecryptionError);
+            final GroupCallMessage groupCallMessage2 = new GroupCallMessage(this.currentAccount, j2, 0L, tL_groupCallMessage2.message);
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.GroupCallMessagesController$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {

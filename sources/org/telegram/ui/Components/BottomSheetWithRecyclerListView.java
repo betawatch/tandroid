@@ -373,7 +373,27 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
                 return BottomSheetWithRecyclerListView.this.canHighlightChildAt(view, f, f2);
             }
         };
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context) { // from class: org.telegram.ui.Components.BottomSheetWithRecyclerListView.4
+            @Override // androidx.recyclerview.widget.LinearLayoutManager
+            public void scrollToPositionWithOffset(int i, int i2) {
+                super.scrollToPositionWithOffset(i, i2);
+            }
+
+            @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
+            public void scrollToPosition(int i) {
+                super.scrollToPosition(i);
+            }
+
+            @Override // androidx.recyclerview.widget.LinearLayoutManager
+            public void scrollToPositionWithOffset(int i, int i2, boolean z5) {
+                super.scrollToPositionWithOffset(i, i2, z5);
+            }
+
+            @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
+            public void smoothScrollToPosition(RecyclerView recyclerView, RecyclerView.State state, int i) {
+                super.smoothScrollToPosition(recyclerView, state, i);
+            }
+        };
         this.layoutManager = linearLayoutManager;
         if (z4) {
             linearLayoutManager.setStackFromEnd(true);
@@ -393,7 +413,7 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
         } else {
             resetAdapter(context);
             this.containerView = sizeNotifierFrameLayout;
-            ActionBar actionBar = new ActionBar(context) { // from class: org.telegram.ui.Components.BottomSheetWithRecyclerListView.4
+            ActionBar actionBar = new ActionBar(context) { // from class: org.telegram.ui.Components.BottomSheetWithRecyclerListView.5
                 @Override // android.view.View
                 public void setAlpha(float f) {
                     if (getAlpha() != f) {
@@ -425,7 +445,7 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
             this.actionBar.setItemsColor(getThemedColor(Theme.key_actionBarActionModeDefaultIcon), false);
             this.actionBar.setCastShadows(true);
             this.actionBar.setTitle(getTitle());
-            this.actionBar.setActionBarMenuOnItemClick(new ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.Components.BottomSheetWithRecyclerListView.5
+            this.actionBar.setActionBarMenuOnItemClick(new ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.Components.BottomSheetWithRecyclerListView.6
                 @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
                 public void onItemClick(int i) {
                     if (i == -1) {
@@ -435,7 +455,7 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
             });
             sizeNotifierFrameLayout.addView(this.recyclerListView);
             sizeNotifierFrameLayout.addView(this.actionBar, LayoutHelper.createFrame(-1, -2.0f, 0, 6.0f, 0.0f, 6.0f, 0.0f));
-            this.recyclerListView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.BottomSheetWithRecyclerListView.6
+            this.recyclerListView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.BottomSheetWithRecyclerListView.7
                 @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
                 public void onScrolled(RecyclerView recyclerView, int i, int i2) {
                     super.onScrolled(recyclerView, i, i2);
@@ -497,7 +517,7 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
 
     protected void resetAdapter(final Context context) {
         final RecyclerListView.SelectionAdapter createAdapter = createAdapter(this.recyclerListView);
-        this.recyclerListView.setAdapter(new RecyclerListView.SelectionAdapter() { // from class: org.telegram.ui.Components.BottomSheetWithRecyclerListView.7
+        this.recyclerListView.setAdapter(new RecyclerListView.SelectionAdapter() { // from class: org.telegram.ui.Components.BottomSheetWithRecyclerListView.8
             @Override // org.telegram.ui.Components.RecyclerListView.SelectionAdapter
             public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
                 return createAdapter.isEnabled(viewHolder);
@@ -533,7 +553,7 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
 
             @Override // androidx.recyclerview.widget.RecyclerView.Adapter
             public void registerAdapterDataObserver(final RecyclerView.AdapterDataObserver adapterDataObserver) {
-                createAdapter.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() { // from class: org.telegram.ui.Components.BottomSheetWithRecyclerListView.7.1
+                createAdapter.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() { // from class: org.telegram.ui.Components.BottomSheetWithRecyclerListView.8.1
                     @Override // androidx.recyclerview.widget.RecyclerView.AdapterDataObserver
                     public void onChanged() {
                         adapterDataObserver.onChanged();

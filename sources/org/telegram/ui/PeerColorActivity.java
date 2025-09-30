@@ -21,6 +21,7 @@ import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.text.SpannableStringBuilder;
+import android.text.TextPaint;
 import android.text.style.ReplacementSpan;
 import android.util.SparseIntArray;
 import android.view.MotionEvent;
@@ -77,6 +78,7 @@ import org.telegram.ui.Cells.TextInfoPrivacyCell;
 import org.telegram.ui.Cells.ThemePreviewMessagesCell;
 import org.telegram.ui.Components.AnimatedColor;
 import org.telegram.ui.Components.AnimatedEmojiDrawable;
+import org.telegram.ui.Components.AnimatedEmojiSpan;
 import org.telegram.ui.Components.AnimatedFloat;
 import org.telegram.ui.Components.AvatarDrawable;
 import org.telegram.ui.Components.BackupImageView;
@@ -127,6 +129,7 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
     private float changeDayNightViewProgress;
     private ColoredActionBar colorBar;
     private FrameLayout contentView;
+    private final SparseIntArray currentColors = new SparseIntArray();
     private ImageView dayNightItem;
     private final long dialogId;
     private boolean forceDark;
@@ -140,14 +143,11 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
     public Page namePage;
     private Theme.ResourcesProvider parentResourcesProvider;
     public Page profilePage;
-    private ResaleGiftsFragment.ResaleGiftsList resaleGifts;
     private boolean startAtProfile;
     private RLottieDrawable sunDrawable;
     private FilledTabsView tabsView;
     private SimpleTextView titleView;
     private ViewPagerFixed viewPager;
-    private TL_stars.StarGift selectedTabGift = null;
-    private final SparseIntArray currentColors = new SparseIntArray();
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ boolean lambda$toggleTheme$10(View view, MotionEvent motionEvent) {
@@ -189,6 +189,7 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
         private ThemePreviewMessagesCell messagesCellPreview;
         private PeerColorGrid peerColorPicker;
         private ProfilePreview profilePreview;
+        private ResaleGiftsFragment.ResaleGiftsList resaleGifts;
         int rowCount;
         private SelectAnimatedEmojiDialog.SelectAnimatedEmojiDialogWindow selectAnimatedEmojiDialog;
         private int selectedColor;
@@ -196,6 +197,7 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
         private TLRPC.TL_emojiStatusCollectible selectedEmojiCollectible;
         private TLRPC.TL_peerColorCollectible selectedPeerCollectible;
         private TL_stars.TL_starGiftUnique selectedResaleGift;
+        private TL_stars.StarGift selectedTabGift;
         private SetReplyIconCell setReplyIconCell;
         int shadowRow;
         private final ArrayList tabs;
@@ -270,8 +272,8 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
             this.selectedEmoji = 0L;
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:11:0x01cd  */
-        /* JADX WARN: Removed duplicated region for block: B:15:0x01f2  */
+        /* JADX WARN: Removed duplicated region for block: B:11:0x01cf  */
+        /* JADX WARN: Removed duplicated region for block: B:15:0x01f4  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
@@ -282,6 +284,7 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
             this.selectedEmoji = 0L;
             this.selectedEmojiCollectible = null;
             this.selectedPeerCollectible = null;
+            this.selectedTabGift = null;
             this.tabs = new ArrayList();
             this.index2gift = new HashMap();
             this.colorPickerRow = -1;
@@ -314,11 +317,11 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
                 protected void onLayout(boolean z, int i2, int i3, int i4, int i5) {
                     super.onLayout(z, i2, i3, i4, i5);
                     Page.this.updateButtonY();
-                    if (PeerColorActivity.this.selectedTabGift != null) {
-                        if (PeerColorActivity.this.resaleGifts == null || !Page.this.seesLoading()) {
+                    if (Page.this.selectedTabGift != null) {
+                        if (Page.this.resaleGifts == null || !Page.this.seesLoading()) {
                             return;
                         }
-                        PeerColorActivity.this.resaleGifts.load();
+                        Page.this.resaleGifts.load();
                         return;
                     }
                     StarsController.GiftsList giftsList = i == 1 ? PeerColorActivity.this.giftsWithPeerColor : PeerColorActivity.this.gifts;
@@ -398,11 +401,11 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
                 @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
                 public void onScrolled(RecyclerView recyclerView, int i2, int i3) {
                     super.onScrolled(recyclerView, i2, i3);
-                    if (PeerColorActivity.this.selectedTabGift != null) {
-                        if (PeerColorActivity.this.resaleGifts == null || !Page.this.seesLoading()) {
+                    if (Page.this.selectedTabGift != null) {
+                        if (Page.this.resaleGifts == null || !Page.this.seesLoading()) {
                             return;
                         }
-                        PeerColorActivity.this.resaleGifts.load();
+                        Page.this.resaleGifts.load();
                         return;
                     }
                     StarsController.GiftsList giftsList = i == 1 ? PeerColorActivity.this.giftsWithPeerColor : PeerColorActivity.this.gifts;
@@ -596,11 +599,11 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
                         linearLayout.addView(backupImageView, LayoutHelper.createLinear(120, 120, 1, 0, 6, 0, 0));
                         LinkSpanDrawable.LinksTextView makeLinkTextView = TextHelper.makeLinkTextView(Page.this.getContext(), 14.0f, Theme.key_windowBackgroundWhiteGrayText, false, ((BaseFragment) PeerColorActivity.this).resourceProvider);
                         makeLinkTextView.setGravity(17);
-                        makeLinkTextView.setText("You don't have any gifts you can use as profile covers.");
-                        linearLayout.addView(makeLinkTextView, LayoutHelper.createLinear(-1, -2, 1, 32, 8, 32, 8));
+                        makeLinkTextView.setText(LocaleController.getString(this.val$type == 0 ? R.string.Gift2PeerColorProfileEmptyTitle : R.string.Gift2PeerColorReplyEmptyTitle));
+                        linearLayout.addView(makeLinkTextView, LayoutHelper.createLinear(-1, -2, 1, 64, 8, 64, 8));
                         LinkSpanDrawable.LinksTextView makeLinkTextView2 = TextHelper.makeLinkTextView(Page.this.getContext(), 14.0f, Theme.key_chat_messageLinkIn, false, ((BaseFragment) PeerColorActivity.this).resourceProvider);
                         makeLinkTextView2.setGravity(17);
-                        makeLinkTextView2.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag("**Browse gifts available for purchase >**", new Runnable() { // from class: org.telegram.ui.PeerColorActivity$Page$4$$ExternalSyntheticLambda2
+                        makeLinkTextView2.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.Gift2PeerColorEmptyButton), new Runnable() { // from class: org.telegram.ui.PeerColorActivity$Page$4$$ExternalSyntheticLambda2
                             @Override // java.lang.Runnable
                             public final void run() {
                                 PeerColorActivity.Page.4.this.lambda$onCreateViewHolder$2();
@@ -652,23 +655,24 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
                 }
                 tabs.setSelected(1, true);
                 Page page = Page.this;
-                PeerColorActivity.this.selectedTabGift = (TL_stars.StarGift) page.index2gift.get(1);
-                if (PeerColorActivity.this.selectedTabGift == null) {
-                    if (PeerColorActivity.this.resaleGifts != null) {
-                        PeerColorActivity.this.resaleGifts.cancel();
-                        PeerColorActivity.this.resaleGifts = null;
+                page.selectedTabGift = (TL_stars.StarGift) page.index2gift.get(1);
+                if (Page.this.selectedTabGift == null) {
+                    if (Page.this.resaleGifts != null) {
+                        Page.this.resaleGifts.cancel();
+                        Page.this.resaleGifts = null;
                     }
-                } else if (PeerColorActivity.this.resaleGifts == null || PeerColorActivity.this.resaleGifts.gift_id != PeerColorActivity.this.selectedTabGift.id) {
-                    PeerColorActivity peerColorActivity = PeerColorActivity.this;
-                    peerColorActivity.resaleGifts = new ResaleGiftsFragment.ResaleGiftsList(((BaseFragment) peerColorActivity).currentAccount, PeerColorActivity.this.selectedTabGift.id, new Utilities.Callback() { // from class: org.telegram.ui.PeerColorActivity$Page$4$$ExternalSyntheticLambda5
+                } else if (Page.this.resaleGifts == null || Page.this.resaleGifts.gift_id != Page.this.selectedTabGift.id) {
+                    Page page2 = Page.this;
+                    page2.resaleGifts = new ResaleGiftsFragment.ResaleGiftsList(((BaseFragment) PeerColorActivity.this).currentAccount, Page.this.selectedTabGift.id, new Utilities.Callback() { // from class: org.telegram.ui.PeerColorActivity$Page$4$$ExternalSyntheticLambda5
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj) {
                             PeerColorActivity.Page.4.this.lambda$onCreateViewHolder$1((Boolean) obj);
                         }
                     });
-                    PeerColorActivity.this.resaleGifts.load();
+                    Page.this.resaleGifts.load();
                 }
                 Page.this.update();
+                (PeerColorActivity.this.viewPager.getCurrentPosition() == 1 ? PeerColorActivity.this.profilePage : PeerColorActivity.this.namePage).update();
             }
 
             /* JADX INFO: Access modifiers changed from: private */
@@ -721,11 +725,18 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
                         TL_stars.StarGift starGift = (TL_stars.StarGift) arrayList.get(i4);
                         int i5 = this.val$type;
                         if ((i5 == 0 || (i5 == 1 && starGift.peer_color_available)) && starGift.availability_resale > 0) {
-                            if (PeerColorActivity.this.selectedTabGift == starGift) {
+                            if (Page.this.selectedTabGift == starGift) {
                                 i3 = Page.this.tabs.size();
                             }
                             Page.this.index2gift.put(Integer.valueOf(Page.this.tabs.size()), starGift);
-                            Page.this.tabs.add(starGift.title);
+                            TextPaint textPaint = new TextPaint(1);
+                            textPaint.setTextSize(AndroidUtilities.dp(14.0f));
+                            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("x ");
+                            AnimatedEmojiSpan animatedEmojiSpan = new AnimatedEmojiSpan(starGift.getDocument(), textPaint.getFontMetricsInt());
+                            animatedEmojiSpan.size = AndroidUtilities.dp(14.0f);
+                            spannableStringBuilder.setSpan(animatedEmojiSpan, 0, 1, 33);
+                            spannableStringBuilder.append((CharSequence) starGift.title);
+                            Page.this.tabs.add(spannableStringBuilder);
                         }
                     }
                     tabs.set(0, Page.this.tabs, i3, new Utilities.Callback() { // from class: org.telegram.ui.PeerColorActivity$Page$4$$ExternalSyntheticLambda0
@@ -740,8 +751,8 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
                     GiftSheet.GiftCell giftCell = (GiftSheet.GiftCell) viewHolder.itemView;
                     Page page2 = Page.this;
                     int i6 = i - page2.giftsStartRow;
-                    if (PeerColorActivity.this.resaleGifts != null && i6 >= 0 && i6 < PeerColorActivity.this.resaleGifts.gifts.size()) {
-                        TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) PeerColorActivity.this.resaleGifts.gifts.get(i6);
+                    if (page2.resaleGifts != null && i6 >= 0 && i6 < Page.this.uniqueGifts.size()) {
+                        TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) Page.this.uniqueGifts.get(i6);
                         giftCell.setStarsGift(tL_starGiftUnique, false, false, false, true);
                         if ((Page.this.selectedEmojiCollectible == null || Page.this.selectedEmojiCollectible.collectible_id != tL_starGiftUnique.id) && (Page.this.selectedPeerCollectible == null || Page.this.selectedPeerCollectible.collectible_id != tL_starGiftUnique.id)) {
                             z = false;
@@ -794,23 +805,24 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
 
             /* JADX INFO: Access modifiers changed from: private */
             public /* synthetic */ void lambda$onBindViewHolder$5(Integer num) {
-                PeerColorActivity.this.selectedTabGift = num.intValue() == 0 ? null : (TL_stars.StarGift) Page.this.index2gift.get(num);
-                if (PeerColorActivity.this.selectedTabGift == null) {
-                    if (PeerColorActivity.this.resaleGifts != null) {
-                        PeerColorActivity.this.resaleGifts.cancel();
-                        PeerColorActivity.this.resaleGifts = null;
+                Page.this.selectedTabGift = num.intValue() == 0 ? null : (TL_stars.StarGift) Page.this.index2gift.get(num);
+                if (Page.this.selectedTabGift == null) {
+                    if (Page.this.resaleGifts != null) {
+                        Page.this.resaleGifts.cancel();
+                        Page.this.resaleGifts = null;
                     }
-                } else if (PeerColorActivity.this.resaleGifts == null || PeerColorActivity.this.resaleGifts.gift_id != PeerColorActivity.this.selectedTabGift.id) {
-                    PeerColorActivity peerColorActivity = PeerColorActivity.this;
-                    peerColorActivity.resaleGifts = new ResaleGiftsFragment.ResaleGiftsList(((BaseFragment) peerColorActivity).currentAccount, PeerColorActivity.this.selectedTabGift.id, new Utilities.Callback() { // from class: org.telegram.ui.PeerColorActivity$Page$4$$ExternalSyntheticLambda4
+                } else if (Page.this.resaleGifts == null || Page.this.resaleGifts.gift_id != Page.this.selectedTabGift.id) {
+                    Page page = Page.this;
+                    page.resaleGifts = new ResaleGiftsFragment.ResaleGiftsList(((BaseFragment) PeerColorActivity.this).currentAccount, Page.this.selectedTabGift.id, new Utilities.Callback() { // from class: org.telegram.ui.PeerColorActivity$Page$4$$ExternalSyntheticLambda4
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj) {
                             PeerColorActivity.Page.4.this.lambda$onBindViewHolder$4((Boolean) obj);
                         }
                     });
-                    PeerColorActivity.this.resaleGifts.load();
+                    Page.this.resaleGifts.load();
                 }
                 Page.this.update();
+                (PeerColorActivity.this.viewPager.getCurrentPosition() == 1 ? PeerColorActivity.this.profilePage : PeerColorActivity.this.namePage).update();
             }
 
             /* JADX INFO: Access modifiers changed from: private */
@@ -843,8 +855,8 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
                     int adapterPosition2 = viewHolder.getAdapterPosition();
                     Page page2 = Page.this;
                     int i2 = adapterPosition2 - page2.giftsStartRow;
-                    if (PeerColorActivity.this.resaleGifts != null && i2 >= 0 && i2 < PeerColorActivity.this.resaleGifts.gifts.size()) {
-                        TL_stars.TL_starGiftUnique tL_starGiftUnique2 = (TL_stars.TL_starGiftUnique) PeerColorActivity.this.resaleGifts.gifts.get(i2);
+                    if (page2.resaleGifts != null && i2 >= 0 && i2 < Page.this.uniqueGifts.size()) {
+                        TL_stars.TL_starGiftUnique tL_starGiftUnique2 = (TL_stars.TL_starGiftUnique) Page.this.uniqueGifts.get(i2);
                         giftCell2.setStarsGift(tL_starGiftUnique2, false, false, false, true);
                         if ((Page.this.selectedEmojiCollectible == null || Page.this.selectedEmojiCollectible.collectible_id != tL_starGiftUnique2.id) && (Page.this.selectedPeerCollectible == null || Page.this.selectedPeerCollectible.collectible_id != tL_starGiftUnique2.id)) {
                             z = false;
@@ -885,7 +897,7 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
                         return 7;
                     }
                     if (i >= page.giftsStartRow && i < page.giftsEndRow) {
-                        return PeerColorActivity.this.selectedTabGift == null ? 8 : 12;
+                        return page.selectedTabGift == null ? 8 : 12;
                     }
                     if (i >= page.giftsLoadingStartRow && i < page.giftsLoadingEndRow) {
                         return 9;
@@ -935,11 +947,11 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
                 return;
             }
             int i4 = i2 - i3;
-            if (PeerColorActivity.this.selectedTabGift != null) {
-                if (PeerColorActivity.this.resaleGifts == null || i4 < 0 || i4 >= PeerColorActivity.this.resaleGifts.gifts.size()) {
+            if (this.selectedTabGift == null) {
+                if (i4 < 0 || i4 >= this.uniqueGifts.size()) {
                     return;
                 }
-                TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) PeerColorActivity.this.resaleGifts.gifts.get(i4);
+                TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) this.uniqueGifts.get(i4);
                 if (i == 1) {
                     TLRPC.PeerColor peerColor = tL_starGiftUnique.peer_color;
                     if (!(peerColor instanceof TLRPC.TL_peerColorCollectible)) {
@@ -947,15 +959,16 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
                     }
                     this.selectedEmoji = 0L;
                     this.selectedColor = -1;
+                    this.selectedResaleGift = null;
                     this.selectedEmojiCollectible = null;
                     this.selectedPeerCollectible = (TLRPC.TL_peerColorCollectible) peerColor;
                 } else {
                     this.selectedEmoji = 0L;
                     this.selectedColor = -1;
+                    this.selectedResaleGift = null;
                     this.selectedEmojiCollectible = MessagesController.emojiStatusCollectibleFromGift(tL_starGiftUnique);
                     this.selectedPeerCollectible = null;
                 }
-                this.selectedResaleGift = tL_starGiftUnique;
                 updateProfilePreview(true);
                 updateMessages();
                 updateButton(true);
@@ -966,7 +979,7 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
                 }
                 return;
             }
-            if (i4 < 0 || i4 >= this.uniqueGifts.size()) {
+            if (this.resaleGifts == null || i4 < 0 || i4 >= this.uniqueGifts.size()) {
                 return;
             }
             TL_stars.TL_starGiftUnique tL_starGiftUnique2 = (TL_stars.TL_starGiftUnique) this.uniqueGifts.get(i4);
@@ -977,16 +990,15 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
                 }
                 this.selectedEmoji = 0L;
                 this.selectedColor = -1;
-                this.selectedResaleGift = null;
                 this.selectedEmojiCollectible = null;
                 this.selectedPeerCollectible = (TLRPC.TL_peerColorCollectible) peerColor2;
             } else {
                 this.selectedEmoji = 0L;
                 this.selectedColor = -1;
-                this.selectedResaleGift = null;
                 this.selectedEmojiCollectible = MessagesController.emojiStatusCollectibleFromGift(tL_starGiftUnique2);
                 this.selectedPeerCollectible = null;
             }
+            this.selectedResaleGift = tL_starGiftUnique2;
             updateProfilePreview(true);
             updateMessages();
             updateButton(true);
@@ -1306,7 +1318,6 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
         }
 
         private void updateRows() {
-            int i;
             this.clearRow = -1;
             this.shadowRow = -1;
             this.giftsHeaderRow = -1;
@@ -1317,84 +1328,102 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
             this.giftsInfoRow = -1;
             this.giftsTabsRow = -1;
             this.giftsEmptyRow = -1;
+            int i = 0;
             this.giftsCount = 0;
             this.uniqueGifts.clear();
             this.colorPickerRow = 0;
             this.iconRow = 1;
+            int i2 = 3;
             this.rowCount = 3;
             this.infoRow = 2;
-            int i2 = this.type;
-            if (i2 == 0 && (this.selectedColor >= 0 || this.selectedEmojiCollectible != null || this.selectedPeerCollectible != null)) {
+            int i3 = this.type;
+            if (i3 == 0 && (this.selectedColor >= 0 || this.selectedEmojiCollectible != null || this.selectedPeerCollectible != null)) {
                 this.clearRow = 3;
                 this.rowCount = 5;
                 this.shadowRow = 4;
             }
-            StarsController.GiftsList giftsList = i2 == 1 ? PeerColorActivity.this.giftsWithPeerColor : PeerColorActivity.this.gifts;
-            int i3 = this.type;
-            if ((i3 == 0 || i3 == 1) && giftsList != null) {
-                for (int i4 = 0; i4 < giftsList.gifts.size(); i4++) {
-                    TL_stars.StarGift starGift = ((TL_stars.SavedStarGift) giftsList.gifts.get(i4)).gift;
-                    if (starGift instanceof TL_stars.TL_starGiftUnique) {
-                        this.uniqueGifts.add((TL_stars.TL_starGiftUnique) starGift);
-                    }
-                }
+            StarsController.GiftsList giftsList = i3 == 1 ? PeerColorActivity.this.giftsWithPeerColor : PeerColorActivity.this.gifts;
+            int i4 = this.type;
+            if ((i4 == 0 || i4 == 1) && giftsList != null) {
                 int i5 = this.rowCount;
                 this.rowCount = i5 + 1;
                 this.giftsTabsRow = i5;
-                if (PeerColorActivity.this.selectedTabGift != null) {
-                    if (PeerColorActivity.this.selectedTabGift != null && PeerColorActivity.this.resaleGifts != null) {
-                        int i6 = this.rowCount;
-                        this.giftsStartRow = i6;
-                        this.rowCount = i6 + PeerColorActivity.this.resaleGifts.gifts.size();
-                        this.giftsCount += PeerColorActivity.this.resaleGifts.gifts.size();
-                        this.giftsEndRow = this.rowCount;
-                        if (PeerColorActivity.this.resaleGifts.loading || !PeerColorActivity.this.resaleGifts.endReached) {
-                            int i7 = this.rowCount;
-                            this.giftsLoadingStartRow = i7;
-                            int i8 = this.giftsCount;
-                            int i9 = 3 - (i8 % 3);
-                            i = i9 > 0 ? i9 : 3;
-                            int i10 = i7 + i;
-                            this.rowCount = i10;
-                            this.giftsCount = i8 + i;
-                            this.giftsLoadingEndRow = i10;
+                if (this.selectedTabGift == null) {
+                    while (i < giftsList.gifts.size()) {
+                        TL_stars.StarGift starGift = ((TL_stars.SavedStarGift) giftsList.gifts.get(i)).gift;
+                        if (starGift instanceof TL_stars.TL_starGiftUnique) {
+                            this.uniqueGifts.add((TL_stars.TL_starGiftUnique) starGift);
                         }
-                        if (PeerColorActivity.this.resaleGifts != null && seesLoading()) {
-                            PeerColorActivity.this.resaleGifts.load();
-                        }
+                        i++;
                     }
-                } else {
-                    int i11 = this.rowCount;
-                    this.giftsStartRow = i11;
-                    this.rowCount = i11 + this.uniqueGifts.size();
+                    int i6 = this.rowCount;
+                    this.giftsStartRow = i6;
+                    this.rowCount = i6 + this.uniqueGifts.size();
                     this.giftsCount += this.uniqueGifts.size();
                     this.giftsEndRow = this.rowCount;
                     if (PeerColorActivity.this.gifts.loading || !PeerColorActivity.this.gifts.endReached) {
-                        int i12 = this.rowCount;
-                        this.giftsLoadingStartRow = i12;
-                        int i13 = this.giftsCount;
-                        int i14 = 3 - (i13 % 3);
-                        i = i14 > 0 ? i14 : 3;
-                        int i15 = i12 + i;
-                        this.rowCount = i15;
-                        this.giftsCount = i13 + i;
-                        this.giftsLoadingEndRow = i15;
+                        int i7 = this.rowCount;
+                        this.giftsLoadingStartRow = i7;
+                        int i8 = this.giftsCount;
+                        int i9 = 3 - (i8 % 3);
+                        if (i8 <= 0) {
+                            i2 = 9;
+                        } else if (i9 > 0) {
+                            i2 = i9;
+                        }
+                        int i10 = i7 + i2;
+                        this.rowCount = i10;
+                        this.giftsCount = i8 + i2;
+                        this.giftsLoadingEndRow = i10;
                     } else if (this.uniqueGifts.isEmpty()) {
-                        int i16 = this.rowCount;
-                        this.rowCount = i16 + 1;
-                        this.giftsEmptyRow = i16;
+                        int i11 = this.rowCount;
+                        this.rowCount = i11 + 1;
+                        this.giftsEmptyRow = i11;
                     }
                     if (seesLoading()) {
                         giftsList.load();
                     }
+                } else if (this.resaleGifts != null) {
+                    long clientUserId = UserConfig.getInstance(((BaseFragment) PeerColorActivity.this).currentAccount).getClientUserId();
+                    while (i < this.resaleGifts.gifts.size()) {
+                        TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) this.resaleGifts.gifts.get(i);
+                        if (DialogObject.getPeerDialogId(tL_starGiftUnique.owner_id) != clientUserId && DialogObject.getPeerDialogId(tL_starGiftUnique.host_id) != clientUserId) {
+                            this.uniqueGifts.add(tL_starGiftUnique);
+                        }
+                        i++;
+                    }
+                    int i12 = this.rowCount;
+                    this.giftsStartRow = i12;
+                    this.rowCount = i12 + this.uniqueGifts.size();
+                    int size = this.giftsCount + this.uniqueGifts.size();
+                    this.giftsCount = size;
+                    int i13 = this.rowCount;
+                    this.giftsEndRow = i13;
+                    ResaleGiftsFragment.ResaleGiftsList resaleGiftsList = this.resaleGifts;
+                    if (resaleGiftsList.loading || !resaleGiftsList.endReached) {
+                        this.giftsLoadingStartRow = i13;
+                        int i14 = 3 - (size % 3);
+                        if (size <= 0) {
+                            i2 = 9;
+                        } else if (i14 > 0) {
+                            i2 = i14;
+                        }
+                        int i15 = i13 + i2;
+                        this.rowCount = i15;
+                        this.giftsCount = size + i2;
+                        this.giftsLoadingEndRow = i15;
+                    }
+                    if (seesLoading()) {
+                        this.resaleGifts.load();
+                    }
                 }
-                int i17 = this.rowCount;
-                this.rowCount = i17 + 1;
-                this.giftsInfoRow = i17;
+                int i16 = this.rowCount;
+                this.rowCount = i16 + 1;
+                this.giftsInfoRow = i16;
             }
-            int i18 = this.rowCount;
-            this.rowCount = i18 + 1;
-            this.buttonRow = i18;
+            int i17 = this.rowCount;
+            this.rowCount = i17 + 1;
+            this.buttonRow = i17;
         }
 
         public boolean seesLoading() {
@@ -2059,7 +2088,7 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
         }
         final Page page = this.viewPager.getCurrentPosition() == 1 ? this.namePage : this.profilePage;
         if (page.selectedResaleGift != null) {
-            (this.viewPager.getCurrentPosition() == 1 ? this.profilePage : this.namePage).selectedResaleGift = null;
+            (this.viewPager.getCurrentPosition() == 1 ? this.profilePage : this.namePage).setupValues();
             this.loading = true;
             page.button.setLoading(true);
             buy(page.selectedResaleGift, new Utilities.Callback() { // from class: org.telegram.ui.PeerColorActivity$$ExternalSyntheticLambda6

@@ -65,6 +65,7 @@ import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.TopicsController;
+import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
@@ -2774,11 +2775,11 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         updateChatInfo(false);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0231  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x0281  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x0290  */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x0292  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x0284  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x024c  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x029c  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x02ab  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x02ad  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x029f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2789,7 +2790,10 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             return;
         }
         TLRPC.Chat chat = getMessagesController().getChat(Long.valueOf(this.chatId));
-        if (ChatObject.isMonoForum(chat)) {
+        TLRPC.User user = getMessagesController().getUser(Long.valueOf(-this.chatId));
+        if (UserObject.isBotForum(user)) {
+            this.avatarContainer.setUserAvatar(user);
+        } else if (ChatObject.isMonoForum(chat)) {
             TLRPC.Chat chat2 = getMessagesController().getChat(Long.valueOf(chat.linked_monoforum_id));
             if (chat2 != null) {
                 this.avatarContainer.setChatAvatar(chat2);

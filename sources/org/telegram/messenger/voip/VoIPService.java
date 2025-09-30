@@ -1952,8 +1952,9 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0046  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0049  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0038  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0050  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0053  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1975,6 +1976,9 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
                         optBoolean = new JSONObject(this.myParams.data).optBoolean("stream");
                     } catch (Exception e) {
                         FileLog.e(e);
+                    }
+                    if (this.conference != null) {
+                        this.groupCall.processGroupCallUpdate(groupCall);
                     }
                     if ((this.currentState == 1 && optBoolean == this.currentGroupModeStreaming) || (tL_dataJSON = this.myParams) == null) {
                         return;
@@ -2006,6 +2010,8 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
                     }
                 }
                 optBoolean = false;
+                if (this.conference != null) {
+                }
                 if (this.currentState == 1) {
                 }
                 nativeInstance = this.tgVoip[0];

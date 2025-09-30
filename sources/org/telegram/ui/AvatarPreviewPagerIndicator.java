@@ -22,7 +22,7 @@ import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.ProfileGalleryView;
 
 /* loaded from: classes4.dex */
-public class AvatarPreviewPagerIndicator extends View implements ProfileGalleryView.Callback {
+public abstract class AvatarPreviewPagerIndicator extends View implements ProfileGalleryView.Callback {
     private float alpha;
     private float[] alphas;
     private final ValueAnimator animator;
