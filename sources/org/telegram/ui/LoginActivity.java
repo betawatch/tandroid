@@ -4647,6 +4647,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.didReceiveSmsCode);
                         this.waitingForEvent = false;
                         destroyCodeTimer();
+                        this.isResendingCode = false;
                         resendCode();
                         return;
                     }
@@ -5230,12 +5231,12 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             }
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:179:0x0484, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:179:0x0483, code lost:
         
-            if (r3 == 16) goto L184;
+            if (r3 == 16) goto L185;
          */
-        /* JADX WARN: Removed duplicated region for block: B:166:0x0464  */
-        /* JADX WARN: Removed duplicated region for block: B:167:0x046f  */
+        /* JADX WARN: Removed duplicated region for block: B:166:0x0463  */
+        /* JADX WARN: Removed duplicated region for block: B:167:0x046e  */
         @Override // org.telegram.ui.Components.SlideView
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -5372,16 +5373,16 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 if (i7 == 1) {
                     int i8 = this.nextType;
                     if (i8 == 3 || i8 == 4 || i8 == 11) {
-                        this.problemText.setText(LocaleController.getString("DidNotGetTheCodePhone", org.telegram.messenger.R.string.DidNotGetTheCodePhone));
+                        this.problemText.setText(LocaleController.getString(org.telegram.messenger.R.string.DidNotGetTheCodePhone));
                     } else if (i8 == 15) {
-                        this.problemText.setText(LocaleController.getString("DidNotGetTheCodeFragment", org.telegram.messenger.R.string.DidNotGetTheCodeFragment));
+                        this.problemText.setText(LocaleController.getString(org.telegram.messenger.R.string.DidNotGetTheCodeFragment));
                     } else if (i8 == 0) {
-                        this.problemText.setText(LocaleController.getString("DidNotGetTheCode", org.telegram.messenger.R.string.DidNotGetTheCode));
+                        this.problemText.setText(LocaleController.getString(org.telegram.messenger.R.string.DidNotGetTheCode));
                     } else {
-                        this.problemText.setText(LocaleController.getString("DidNotGetTheCodeSms", org.telegram.messenger.R.string.DidNotGetTheCodeSms));
+                        this.problemText.setText(LocaleController.getString(org.telegram.messenger.R.string.DidNotGetTheCodeSms));
                     }
                 } else {
-                    this.problemText.setText(LocaleController.getString("DidNotGetTheCode", org.telegram.messenger.R.string.DidNotGetTheCode));
+                    this.problemText.setText(LocaleController.getString(org.telegram.messenger.R.string.DidNotGetTheCode));
                 }
             }
             if (this.currentType != 3) {
@@ -5413,6 +5414,8 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     } else if (i11 == 2 || i11 == 17 || i11 == 16) {
                         this.timeText.setText(LocaleController.formatString("SmsAvailableIn", org.telegram.messenger.R.string.SmsAvailableIn, 1, 0));
                     }
+                } else {
+                    this.timeText.setVisibility(8);
                 }
                 String obtainLoginPhoneCall = z ? AndroidUtilities.obtainLoginPhoneCall(this.pattern) : null;
                 if (obtainLoginPhoneCall != null) {
@@ -5645,7 +5648,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     if (LoginActivitySmsView.this.nextType == 4) {
                         LoginActivitySmsView.this.timeText.setText(LocaleController.getString("RequestCallButton", org.telegram.messenger.R.string.RequestCallButton));
                     } else if (LoginActivitySmsView.this.nextType == 11 || LoginActivitySmsView.this.nextType == 3) {
-                        LoginActivitySmsView.this.timeText.setText(LocaleController.getString("RequestMissedCall", org.telegram.messenger.R.string.RequestMissedCall));
+                        LoginActivitySmsView.this.timeText.setText(LocaleController.getString(org.telegram.messenger.R.string.RequestMissedCall));
                     } else {
                         LoginActivitySmsView.this.timeText.setText(LocaleController.getString("RequestSmsButton", org.telegram.messenger.R.string.RequestSmsButton));
                     }
@@ -12295,6 +12298,8 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     i = org.telegram.messenger.R.string.ReturnEnteringPhrase;
                 } else if (i2 == 16) {
                     i = org.telegram.messenger.R.string.ReturnEnteringWord;
+                } else if (i2 == 3) {
+                    i = org.telegram.messenger.R.string.ReturnPhoneCall;
                 } else {
                     i = org.telegram.messenger.R.string.ReturnEnteringSMS;
                 }

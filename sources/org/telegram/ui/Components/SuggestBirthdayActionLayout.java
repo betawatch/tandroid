@@ -72,7 +72,7 @@ public class SuggestBirthdayActionLayout {
         this.hasButton = !messageObject.isOutOwner();
         Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
         this.buttonPaint.setColor(Theme.multAlpha(resourcesProvider != null ? resourcesProvider.isDark() : Theme.isCurrentThemeDark() ? -1 : -16777216, 0.12f));
-        this.button = new Text("View", 14.0f, AndroidUtilities.bold());
+        this.button = new Text(LocaleController.getString(R.string.SuggestedDateOfBirthView), 14.0f, AndroidUtilities.bold());
     }
 
     private final String getMonthName(int i) {
@@ -155,7 +155,7 @@ public class SuggestBirthdayActionLayout {
     }
 
     public void open() {
-        AlertsCreator.createBirthdayPickerDialog(this.view.getContext(), "Date Of Birth", "Add to My Profile", this.birthday, new Utilities.Callback() { // from class: org.telegram.ui.Components.SuggestBirthdayActionLayout$$ExternalSyntheticLambda0
+        AlertsCreator.createBirthdayPickerDialog(this.view.getContext(), LocaleController.getString(R.string.DateOfBirth), LocaleController.getString(R.string.DateOfBirthAddToProfile), this.birthday, new Utilities.Callback() { // from class: org.telegram.ui.Components.SuggestBirthdayActionLayout$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 SuggestBirthdayActionLayout.this.lambda$open$2((TL_account.TL_birthday) obj);

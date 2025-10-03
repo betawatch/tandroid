@@ -4973,7 +4973,7 @@ public abstract class AlertsCreator {
         }
         if (z) {
             ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(context, false, resourcesProvider);
-            buttonWithCounterView.setText("Hide Year", false);
+            buttonWithCounterView.setText(LocaleController.getString(R.string.DateOfBirthHideYear), false);
             buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda76
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {

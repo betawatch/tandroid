@@ -1371,17 +1371,17 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:250:0x0cf7 A[ADDED_TO_REGION, REMOVE, RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:251:0x0cf8  */
-    /* JADX WARN: Removed duplicated region for block: B:737:0x06b4  */
-    /* JADX WARN: Removed duplicated region for block: B:744:0x0771 A[Catch: Exception -> 0x069a, TRY_LEAVE, TryCatch #13 {Exception -> 0x069a, blocks: (B:728:0x0671, B:744:0x0771, B:748:0x06bc, B:750:0x06c1, B:764:0x0701, B:765:0x0704, B:766:0x0707, B:767:0x06db, B:770:0x06e5, B:773:0x06ed, B:776:0x070a, B:777:0x0714, B:789:0x075b, B:790:0x075f, B:791:0x0763, B:792:0x0767, B:793:0x076b, B:794:0x0718, B:797:0x0722, B:800:0x072c, B:803:0x0736, B:806:0x0740, B:809:0x0690, B:812:0x069d, B:815:0x06a7), top: B:727:0x0671 }] */
-    /* JADX WARN: Removed duplicated region for block: B:759:0x06fa  */
-    /* JADX WARN: Removed duplicated region for block: B:766:0x0707 A[Catch: Exception -> 0x069a, TryCatch #13 {Exception -> 0x069a, blocks: (B:728:0x0671, B:744:0x0771, B:748:0x06bc, B:750:0x06c1, B:764:0x0701, B:765:0x0704, B:766:0x0707, B:767:0x06db, B:770:0x06e5, B:773:0x06ed, B:776:0x070a, B:777:0x0714, B:789:0x075b, B:790:0x075f, B:791:0x0763, B:792:0x0767, B:793:0x076b, B:794:0x0718, B:797:0x0722, B:800:0x072c, B:803:0x0736, B:806:0x0740, B:809:0x0690, B:812:0x069d, B:815:0x06a7), top: B:727:0x0671 }] */
-    /* JADX WARN: Removed duplicated region for block: B:776:0x070a A[Catch: Exception -> 0x069a, TryCatch #13 {Exception -> 0x069a, blocks: (B:728:0x0671, B:744:0x0771, B:748:0x06bc, B:750:0x06c1, B:764:0x0701, B:765:0x0704, B:766:0x0707, B:767:0x06db, B:770:0x06e5, B:773:0x06ed, B:776:0x070a, B:777:0x0714, B:789:0x075b, B:790:0x075f, B:791:0x0763, B:792:0x0767, B:793:0x076b, B:794:0x0718, B:797:0x0722, B:800:0x072c, B:803:0x0736, B:806:0x0740, B:809:0x0690, B:812:0x069d, B:815:0x06a7), top: B:727:0x0671 }] */
-    /* JADX WARN: Removed duplicated region for block: B:946:0x0deb  */
-    /* JADX WARN: Removed duplicated region for block: B:989:0x04af  */
-    /* JADX WARN: Removed duplicated region for block: B:993:0x04bd A[Catch: Exception -> 0x0481, TRY_LEAVE, TryCatch #41 {Exception -> 0x0481, blocks: (B:975:0x0462, B:977:0x0472, B:979:0x0478, B:982:0x0483, B:993:0x04bd, B:996:0x04b4, B:998:0x04b8, B:999:0x0498, B:1002:0x04a2), top: B:974:0x0462 }] */
-    /* JADX WARN: Removed duplicated region for block: B:998:0x04b8 A[Catch: Exception -> 0x0481, TryCatch #41 {Exception -> 0x0481, blocks: (B:975:0x0462, B:977:0x0472, B:979:0x0478, B:982:0x0483, B:993:0x04bd, B:996:0x04b4, B:998:0x04b8, B:999:0x0498, B:1002:0x04a2), top: B:974:0x0462 }] */
+    /* JADX WARN: Removed duplicated region for block: B:269:0x0cf9 A[ADDED_TO_REGION, REMOVE, RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:270:0x0cfa  */
+    /* JADX WARN: Removed duplicated region for block: B:700:0x06b4  */
+    /* JADX WARN: Removed duplicated region for block: B:707:0x0771 A[Catch: Exception -> 0x069a, TRY_LEAVE, TryCatch #11 {Exception -> 0x069a, blocks: (B:691:0x0671, B:707:0x0771, B:711:0x06bc, B:713:0x06c1, B:727:0x0701, B:728:0x0704, B:729:0x0707, B:730:0x06db, B:733:0x06e5, B:736:0x06ed, B:739:0x070a, B:740:0x0714, B:752:0x075b, B:753:0x075f, B:754:0x0763, B:755:0x0767, B:756:0x076b, B:757:0x0718, B:760:0x0722, B:763:0x072c, B:766:0x0736, B:769:0x0740, B:772:0x0690, B:775:0x069d, B:778:0x06a7), top: B:690:0x0671 }] */
+    /* JADX WARN: Removed duplicated region for block: B:722:0x06fa  */
+    /* JADX WARN: Removed duplicated region for block: B:729:0x0707 A[Catch: Exception -> 0x069a, TryCatch #11 {Exception -> 0x069a, blocks: (B:691:0x0671, B:707:0x0771, B:711:0x06bc, B:713:0x06c1, B:727:0x0701, B:728:0x0704, B:729:0x0707, B:730:0x06db, B:733:0x06e5, B:736:0x06ed, B:739:0x070a, B:740:0x0714, B:752:0x075b, B:753:0x075f, B:754:0x0763, B:755:0x0767, B:756:0x076b, B:757:0x0718, B:760:0x0722, B:763:0x072c, B:766:0x0736, B:769:0x0740, B:772:0x0690, B:775:0x069d, B:778:0x06a7), top: B:690:0x0671 }] */
+    /* JADX WARN: Removed duplicated region for block: B:739:0x070a A[Catch: Exception -> 0x069a, TryCatch #11 {Exception -> 0x069a, blocks: (B:691:0x0671, B:707:0x0771, B:711:0x06bc, B:713:0x06c1, B:727:0x0701, B:728:0x0704, B:729:0x0707, B:730:0x06db, B:733:0x06e5, B:736:0x06ed, B:739:0x070a, B:740:0x0714, B:752:0x075b, B:753:0x075f, B:754:0x0763, B:755:0x0767, B:756:0x076b, B:757:0x0718, B:760:0x0722, B:763:0x072c, B:766:0x0736, B:769:0x0740, B:772:0x0690, B:775:0x069d, B:778:0x06a7), top: B:690:0x0671 }] */
+    /* JADX WARN: Removed duplicated region for block: B:903:0x0ded  */
+    /* JADX WARN: Removed duplicated region for block: B:990:0x04af  */
+    /* JADX WARN: Removed duplicated region for block: B:994:0x04bd A[Catch: Exception -> 0x0481, TRY_LEAVE, TryCatch #41 {Exception -> 0x0481, blocks: (B:976:0x0462, B:978:0x0472, B:980:0x0478, B:983:0x0483, B:994:0x04bd, B:997:0x04b4, B:999:0x04b8, B:1000:0x0498, B:1003:0x04a2), top: B:975:0x0462 }] */
+    /* JADX WARN: Removed duplicated region for block: B:999:0x04b8 A[Catch: Exception -> 0x0481, TryCatch #41 {Exception -> 0x0481, blocks: (B:976:0x0462, B:978:0x0472, B:980:0x0478, B:983:0x0483, B:994:0x04bd, B:997:0x04b4, B:999:0x04b8, B:1000:0x0498, B:1003:0x04a2), top: B:975:0x0462 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1391,20 +1391,20 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         int i;
         int i2;
         boolean z;
+        String str3;
         boolean z2;
         boolean z3;
         JSONArray jSONArray;
-        String str3;
         String str4;
         boolean z4;
+        boolean z5;
+        LaunchActivity launchActivity;
+        BottomSheetTabs.WebTabData webTabData;
         char c3;
         char c4;
         BotWebViewVibrationEffect botWebViewVibrationEffect;
         BotWebViewVibrationEffect botWebViewVibrationEffect2;
         char c5;
-        boolean z5;
-        LaunchActivity launchActivity;
-        BottomSheetTabs.WebTabData webTabData;
         String str5;
         int parseColor;
         BottomSheet bottomSheet;
@@ -2410,7 +2410,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                             int i11 = this.currentAccount;
                             this.secureStorage = new BotStorage(context4, i11, UserConfig.getInstance(i11).getClientUserId(), this.botUser.id, true);
                         }
-                        restoreStorageKey(this.secureStorage, str2, "secure_storage_key_restored", "secure_storage_cleared");
+                        restoreStorageKey(this.secureStorage, str2, "secure_storage_key_restored", "secure_storage_failed");
                         break;
                     }
                     break;
@@ -2444,6 +2444,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                             str12 = str9;
                             str13 = str8;
                             if (str10 == null) {
+                                return;
                             }
                         }
                         if (optJSONObject != null) {
@@ -2459,7 +2460,6 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                                 str12 = str9;
                                 str13 = str8;
                                 if (str10 == null) {
-                                    return;
                                 }
                             }
                             str12 = str9;

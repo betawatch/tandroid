@@ -494,37 +494,37 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
         VoIPService.StateListener.-CC.$default$onVideoAvailableChange(this, z);
     }
 
-    static /* synthetic */ float access$12516(GroupCallActivity groupCallActivity, float f) {
+    static /* synthetic */ float access$12616(GroupCallActivity groupCallActivity, float f) {
         float f2 = groupCallActivity.amplitude + f;
         groupCallActivity.amplitude = f2;
         return f2;
     }
 
-    static /* synthetic */ float access$14516(GroupCallActivity groupCallActivity, float f) {
+    static /* synthetic */ float access$14616(GroupCallActivity groupCallActivity, float f) {
         float f2 = groupCallActivity.switchProgress + f;
         groupCallActivity.switchProgress = f2;
         return f2;
     }
 
-    static /* synthetic */ float access$15616(GroupCallActivity groupCallActivity, float f) {
+    static /* synthetic */ float access$15716(GroupCallActivity groupCallActivity, float f) {
         float f2 = groupCallActivity.showWavesProgress + f;
         groupCallActivity.showWavesProgress = f2;
         return f2;
     }
 
-    static /* synthetic */ float access$15624(GroupCallActivity groupCallActivity, float f) {
+    static /* synthetic */ float access$15724(GroupCallActivity groupCallActivity, float f) {
         float f2 = groupCallActivity.showWavesProgress - f;
         groupCallActivity.showWavesProgress = f2;
         return f2;
     }
 
-    static /* synthetic */ float access$15716(GroupCallActivity groupCallActivity, float f) {
+    static /* synthetic */ float access$15816(GroupCallActivity groupCallActivity, float f) {
         float f2 = groupCallActivity.showLightingProgress + f;
         groupCallActivity.showLightingProgress = f2;
         return f2;
     }
 
-    static /* synthetic */ float access$15724(GroupCallActivity groupCallActivity, float f) {
+    static /* synthetic */ float access$15824(GroupCallActivity groupCallActivity, float f) {
         float f2 = groupCallActivity.showLightingProgress - f;
         groupCallActivity.showLightingProgress = f2;
         return f2;
@@ -2765,6 +2765,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                     GroupCallActivity.this.dismissAvatarPreview(false);
                 }
                 GroupCallActivity.this.cellFlickerDrawable.setParentWidth(getMeasuredWidth());
+                GroupCallActivity.this.checkGroupCallUiPositions_MessagesList();
             }
 
             @Override // org.telegram.ui.Components.SizeNotifierFrameLayout, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
@@ -3779,7 +3780,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                 GroupCallActivity.this.bigWaveDrawable.maxRadius = (AndroidUtilities.dp(65.0f) + (AndroidUtilities.dp(20.0f) * BlobDrawable.FORM_BIG_MAX)) * 0.48076922f;
                 if (GroupCallActivity.this.animateToAmplitude != GroupCallActivity.this.amplitude) {
                     GroupCallActivity groupCallActivity = GroupCallActivity.this;
-                    GroupCallActivity.access$12516(groupCallActivity, groupCallActivity.animateAmplitudeDiff * j2);
+                    GroupCallActivity.access$12616(groupCallActivity, groupCallActivity.animateAmplitudeDiff * j2);
                     if (GroupCallActivity.this.animateAmplitudeDiff > 0.0f) {
                         if (GroupCallActivity.this.amplitude > GroupCallActivity.this.animateToAmplitude) {
                             GroupCallActivity groupCallActivity2 = GroupCallActivity.this;
@@ -3803,9 +3804,9 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                         if (z2) {
                             if (GroupCallActivity.this.switchProgress != 1.0f) {
                                 if (GroupCallActivity.this.prevState != null && GroupCallActivity.this.prevState.currentState == 3) {
-                                    GroupCallActivity.access$14516(GroupCallActivity.this, j2 / 100.0f);
+                                    GroupCallActivity.access$14616(GroupCallActivity.this, j2 / 100.0f);
                                 } else {
-                                    GroupCallActivity.access$14516(GroupCallActivity.this, j2 / 180.0f);
+                                    GroupCallActivity.access$14616(GroupCallActivity.this, j2 / 180.0f);
                                 }
                                 if (GroupCallActivity.this.switchProgress >= 1.0f) {
                                     GroupCallActivity.this.switchProgress = 1.0f;
@@ -3858,28 +3859,28 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                                 if (GroupCallActivity.this.currentState.currentState != 3) {
                                     z4 = true;
                                     if (GroupCallActivity.this.prevState == null && GroupCallActivity.this.currentState != null && GroupCallActivity.this.currentState.currentState == 3) {
-                                        GroupCallActivity.access$15624(GroupCallActivity.this, j2 / 180.0f);
+                                        GroupCallActivity.access$15724(GroupCallActivity.this, j2 / 180.0f);
                                         if (GroupCallActivity.this.showWavesProgress < 0.0f) {
                                             GroupCallActivity.this.showWavesProgress = 0.0f;
                                         }
                                     } else if (!z3 && GroupCallActivity.this.showWavesProgress != 1.0f) {
-                                        GroupCallActivity.access$15616(GroupCallActivity.this, j2 / 350.0f);
+                                        GroupCallActivity.access$15716(GroupCallActivity.this, j2 / 350.0f);
                                         if (GroupCallActivity.this.showWavesProgress > 1.0f) {
                                             GroupCallActivity.this.showWavesProgress = 1.0f;
                                         }
                                     } else if (!z3 && GroupCallActivity.this.showWavesProgress != 0.0f) {
-                                        GroupCallActivity.access$15624(GroupCallActivity.this, j2 / 350.0f);
+                                        GroupCallActivity.access$15724(GroupCallActivity.this, j2 / 350.0f);
                                         if (GroupCallActivity.this.showWavesProgress < 0.0f) {
                                             GroupCallActivity.this.showWavesProgress = 0.0f;
                                         }
                                     }
                                     if (!z4 && GroupCallActivity.this.showLightingProgress != 1.0f) {
-                                        GroupCallActivity.access$15716(GroupCallActivity.this, j2 / 350.0f);
+                                        GroupCallActivity.access$15816(GroupCallActivity.this, j2 / 350.0f);
                                         if (GroupCallActivity.this.showLightingProgress > 1.0f) {
                                             GroupCallActivity.this.showLightingProgress = 1.0f;
                                         }
                                     } else if (!z4 && GroupCallActivity.this.showLightingProgress != 0.0f) {
-                                        GroupCallActivity.access$15724(GroupCallActivity.this, j2 / 350.0f);
+                                        GroupCallActivity.access$15824(GroupCallActivity.this, j2 / 350.0f);
                                         if (GroupCallActivity.this.showLightingProgress < 0.0f) {
                                             GroupCallActivity.this.showLightingProgress = 0.0f;
                                         }
@@ -3894,14 +3895,14 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                             if (!z3) {
                             }
                             if (!z3) {
-                                GroupCallActivity.access$15624(GroupCallActivity.this, j2 / 350.0f);
+                                GroupCallActivity.access$15724(GroupCallActivity.this, j2 / 350.0f);
                                 if (GroupCallActivity.this.showWavesProgress < 0.0f) {
                                 }
                             }
                             if (!z4) {
                             }
                             if (!z4) {
-                                GroupCallActivity.access$15724(GroupCallActivity.this, j2 / 350.0f);
+                                GroupCallActivity.access$15824(GroupCallActivity.this, j2 / 350.0f);
                                 if (GroupCallActivity.this.showLightingProgress < 0.0f) {
                                 }
                             }
@@ -4895,27 +4896,28 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                 if (lastFragment == null) {
                     return;
                 }
-                if ((lastFragment instanceof ProfileActivity) && ((ProfileActivity) lastFragment).getDialogId() == groupCallMessage.fromId) {
+                if (!(lastFragment instanceof ProfileActivity) || ((ProfileActivity) lastFragment).getDialogId() != groupCallMessage.fromId) {
+                    int calculateScrollTopOffset = GroupCallActivity.this.calculateScrollTopOffset();
+                    Bundle bundle = new Bundle();
+                    long j = groupCallMessage.fromId;
+                    if (j > 0) {
+                        bundle.putLong("user_id", j);
+                    } else {
+                        bundle.putLong("chat_id", -j);
+                    }
+                    long j2 = groupCallMessage.fromId;
+                    boolean z2 = true;
+                    if (j2 == GroupCallActivity.this.accountInstance.getUserConfig().getClientUserId()) {
+                        bundle.putBoolean("my_profile", true);
+                    }
+                    ProfileActivity profileActivity = new ProfileActivity(bundle);
+                    if (calculateScrollTopOffset > 0 && calculateScrollTopOffset != Integer.MAX_VALUE) {
+                        z2 = false;
+                    }
+                    lastFragment.presentFragment(profileActivity, false, z2);
+                    GroupCallActivity.this.dismiss();
                     return;
                 }
-                int calculateScrollTopOffset = GroupCallActivity.this.calculateScrollTopOffset();
-                Bundle bundle = new Bundle();
-                long j = groupCallMessage.fromId;
-                if (j > 0) {
-                    bundle.putLong("user_id", j);
-                } else {
-                    bundle.putLong("chat_id", -j);
-                }
-                long j2 = groupCallMessage.fromId;
-                boolean z2 = true;
-                if (j2 == GroupCallActivity.this.accountInstance.getUserConfig().getClientUserId()) {
-                    bundle.putBoolean("my_profile", true);
-                }
-                ProfileActivity profileActivity = new ProfileActivity(bundle);
-                if (calculateScrollTopOffset > 0 && calculateScrollTopOffset != Integer.MAX_VALUE) {
-                    z2 = false;
-                }
-                lastFragment.presentFragment(profileActivity, false, z2);
                 GroupCallActivity.this.dismiss();
             }
         });
@@ -12304,12 +12306,19 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
     /* JADX INFO: Access modifiers changed from: private */
     public void sendGroupCallMessage(TLRPC.TL_textWithEntities tL_textWithEntities) {
         TLRPC.InputGroupCall inputGroupCall;
+        long j;
         this.callMessageEnterView.setText("");
         ChatObject.Call call = this.call;
         if (call == null || (inputGroupCall = call.getInputGroupCall(false)) == null) {
             return;
         }
-        GroupCallMessagesController.getInstance(this.currentAccount).sendCallMessage(tL_textWithEntities, inputGroupCall);
+        TLRPC.Peer peer = this.call.selfPeer;
+        if (peer != null) {
+            j = DialogObject.getPeerDialogId(peer);
+        } else {
+            j = UserConfig.getInstance(this.currentAccount).clientUserId;
+        }
+        GroupCallMessagesController.getInstance(this.currentAccount).sendCallMessage(j, tL_textWithEntities, inputGroupCall);
     }
 
     @Override // me.vkryl.android.animator.FactorAnimator.Target
@@ -12377,7 +12386,8 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
         }
     }
 
-    private void checkGroupCallUiPositions_MessagesList() {
+    /* JADX INFO: Access modifiers changed from: private */
+    public void checkGroupCallUiPositions_MessagesList() {
         float floatValue;
         float f = -(this.animatorKeyboardHeight.getFactor() + this.animatorMessageInputHeight.getFactor() + (AndroidUtilities.dp(68.0f) * this.animatorMessageIsEmpty.getFloatValue()) + AndroidUtilities.dp(10.0f));
         if (isTabletMode) {
@@ -12385,7 +12395,11 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
         } else {
             floatValue = isLandscapeMode ? 0.0f : ((this.animatorHideButtons.getFloatValue() * AndroidUtilities.dp(94.0f)) - (AndroidUtilities.dp(104.0f) * this.renderersContainer.progressToFullscreenMode)) - AndroidUtilities.dp(91.0f);
         }
-        this.groupCallMessagesListView.setTranslationY(AndroidUtilities.lerp(floatValue, f, this.animatorKeyboardVisible.getFloatValue()));
+        float lerp = AndroidUtilities.lerp(floatValue, f, this.animatorKeyboardVisible.getFloatValue());
+        float measuredHeight = ((this.containerView.getMeasuredHeight() - this.scrollOffsetY) + lerp) - this.backgroundPaddingTop;
+        float max = Math.max((measuredHeight / 3.0f) * 2.0f, measuredHeight - AndroidUtilities.dp(250.0f));
+        this.groupCallMessagesListView.setTranslationY(lerp);
+        this.groupCallMessagesListView.setVisibleHeight((int) max);
     }
 
     private void checkGroupCallUiPositions_ButtonsList() {
