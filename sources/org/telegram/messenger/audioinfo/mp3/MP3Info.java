@@ -102,15 +102,14 @@ public class MP3Info extends AudioInfo {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0013  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:67:0x00cf -> B:4:0x00d0). Please report as a decompilation issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x0012  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:58:0x00c9 -> B:4:0x00ca). Please report as a decompilation issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     MP3Frame readFirstFrame(MP3Input mP3Input, StopReadCondition stopReadCondition) {
         int read;
         int i;
-        MP3Frame.Header header;
         if (!stopReadCondition.stopRead(mP3Input)) {
             read = mP3Input.read();
             i = 0;
@@ -125,49 +124,44 @@ public class MP3Info extends AudioInfo {
                 mP3Input.mark(2);
                 int read2 = stopReadCondition.stopRead(mP3Input) ? -1 : mP3Input.read();
                 if (read2 == -1) {
-                    break;
+                    return null;
                 }
                 int read3 = stopReadCondition.stopRead(mP3Input) ? -1 : mP3Input.read();
                 if (read3 == -1) {
-                    break;
+                    return null;
                 }
+                MP3Frame.Header header = new MP3Frame.Header(read, read2, read3);
+                mP3Input.reset();
+                mP3Input.mark(header.getFrameSize() + 2);
+                int frameSize = header.getFrameSize();
+                byte[] bArr = new byte[frameSize];
+                bArr[0] = -1;
+                bArr[1] = (byte) read;
+                int i2 = frameSize - 2;
                 try {
-                } catch (MP3Exception unused) {
-                    header = null;
-                }
-                header = new MP3Frame.Header(read, read2, read3);
-                if (header != null) {
-                    mP3Input.reset();
-                    mP3Input.mark(header.getFrameSize() + 2);
-                    int frameSize = header.getFrameSize();
-                    byte[] bArr = new byte[frameSize];
-                    bArr[0] = -1;
-                    bArr[1] = (byte) read;
-                    int i2 = frameSize - 2;
-                    try {
-                        mP3Input.readFully(bArr, 2, i2);
-                        MP3Frame mP3Frame = new MP3Frame(header, bArr);
-                        if (!mP3Frame.isChecksumError()) {
-                            int read4 = stopReadCondition.stopRead(mP3Input) ? -1 : mP3Input.read();
-                            int read5 = stopReadCondition.stopRead(mP3Input) ? -1 : mP3Input.read();
-                            if (read4 != -1 && read5 != -1) {
-                                if (read4 == 255 && (read5 & NotificationCenter.themeListUpdated) == (read & NotificationCenter.themeListUpdated)) {
-                                    int read6 = stopReadCondition.stopRead(mP3Input) ? -1 : mP3Input.read();
-                                    int read7 = stopReadCondition.stopRead(mP3Input) ? -1 : mP3Input.read();
-                                    if (read6 != -1 && read7 != -1) {
-                                        if (new MP3Frame.Header(read5, read6, read7).isCompatible(header)) {
-                                            mP3Input.reset();
-                                            mP3Input.skipFully(i2);
-                                        }
+                    mP3Input.readFully(bArr, 2, i2);
+                    MP3Frame mP3Frame = new MP3Frame(header, bArr);
+                    if (!mP3Frame.isChecksumError()) {
+                        int read4 = stopReadCondition.stopRead(mP3Input) ? -1 : mP3Input.read();
+                        int read5 = stopReadCondition.stopRead(mP3Input) ? -1 : mP3Input.read();
+                        if (read4 != -1 && read5 != -1) {
+                            if (read4 == 255 && (read5 & NotificationCenter.themeListUpdated) == (read & NotificationCenter.themeListUpdated)) {
+                                int read6 = stopReadCondition.stopRead(mP3Input) ? -1 : mP3Input.read();
+                                int read7 = stopReadCondition.stopRead(mP3Input) ? -1 : mP3Input.read();
+                                if (read6 != -1 && read7 != -1) {
+                                    if (new MP3Frame.Header(read5, read6, read7).isCompatible(header)) {
+                                        mP3Input.reset();
+                                        mP3Input.skipFully(i2);
                                     }
                                 }
                             }
-                            return mP3Frame;
                         }
-                    } catch (EOFException unused2) {
+                        return mP3Frame;
                     }
+                    mP3Input.reset();
+                } catch (EOFException unused) {
+                    return null;
                 }
-                mP3Input.reset();
             }
             if (stopReadCondition.stopRead(mP3Input)) {
                 i = read;
@@ -192,27 +186,33 @@ public class MP3Info extends AudioInfo {
             if (read == 255 && (read2 & NotificationCenter.webViewResolved) == 224) {
                 int read3 = stopReadCondition.stopRead(mP3Input) ? -1 : mP3Input.read();
                 int read4 = stopReadCondition.stopRead(mP3Input) ? -1 : mP3Input.read();
-                if (read3 != -1 && read4 != -1) {
-                    try {
-                        header = new MP3Frame.Header(read2, read3, read4);
-                    } catch (MP3Exception unused) {
-                        header = null;
+                if (read3 == -1 || read4 == -1) {
+                    return null;
+                }
+                try {
+                    header = new MP3Frame.Header(read2, read3, read4);
+                } catch (MP3Exception e) {
+                    int i = mP3Input.exceptionsCount + 1;
+                    mP3Input.exceptionsCount = i;
+                    if (i > 5) {
+                        throw e;
                     }
-                    if (header != null && header.isCompatible(header2)) {
-                        int frameSize = header.getFrameSize();
-                        byte[] bArr = new byte[frameSize];
-                        bArr[0] = (byte) read;
-                        bArr[1] = (byte) read2;
-                        bArr[2] = (byte) read3;
-                        bArr[3] = (byte) read4;
-                        try {
-                            mP3Input.readFully(bArr, 4, frameSize - 4);
-                            return new MP3Frame(header, bArr);
-                        } catch (EOFException unused2) {
-                        }
+                    header = null;
+                }
+                if (header != null && header.isCompatible(header2)) {
+                    int frameSize = header.getFrameSize();
+                    byte[] bArr = new byte[frameSize];
+                    bArr[0] = (byte) read;
+                    bArr[1] = (byte) read2;
+                    bArr[2] = (byte) read3;
+                    bArr[3] = (byte) read4;
+                    try {
+                        mP3Input.readFully(bArr, 4, frameSize - 4);
+                        return new MP3Frame(header, bArr);
+                    } catch (EOFException unused) {
+                        return null;
                     }
                 }
-                return null;
             }
             mP3Input.reset();
         }

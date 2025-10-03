@@ -126,7 +126,7 @@ public class BetaUpdaterController {
             public final void run(Object obj) {
                 BetaUpdaterController.this.lambda$checkForUpdate$2(runnable, (String) obj);
             }
-        }).execute(BuildConfig.BETA_URL);
+        }).execute("null");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -256,7 +256,7 @@ public class BetaUpdaterController {
             if (runnable != null) {
             }
         } catch (Exception e3) {
-            FileLog.e("Failed to check for beta update at https://telegram.org/dl/android/apk-public-beta.json received: " + str, e3);
+            FileLog.e("Failed to check for beta update at null received: " + str, e3);
         }
     }
 
